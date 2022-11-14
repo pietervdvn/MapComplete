@@ -19,7 +19,7 @@ import { GlobalFilter } from "../../Logic/State/MapState"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import { Tag } from "../../Logic/Tags/Tag"
 import { WayId } from "../../Models/OsmFeature"
-import {Translation} from "../i18n/Translation";
+import { Translation } from "../i18n/Translation"
 
 export default class ConfirmLocationOfPoint extends Combine {
     constructor(
@@ -42,7 +42,7 @@ export default class ConfirmLocationOfPoint extends Combine {
         cancel: () => void,
         closePopup: () => void,
         options?: {
-            cancelIcon: BaseUIElement,
+            cancelIcon: BaseUIElement
             cancelText?: string | Translation
         }
     ) {
