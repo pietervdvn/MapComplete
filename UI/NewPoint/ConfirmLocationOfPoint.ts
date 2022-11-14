@@ -19,6 +19,7 @@ import { GlobalFilter } from "../../Logic/State/MapState"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import { Tag } from "../../Logic/Tags/Tag"
 import { WayId } from "../../Models/OsmFeature"
+import {Translation} from "../i18n/Translation";
 
 export default class ConfirmLocationOfPoint extends Combine {
     constructor(
@@ -39,7 +40,11 @@ export default class ConfirmLocationOfPoint extends Combine {
             snapOntoWayId: WayId | undefined
         ) => void,
         cancel: () => void,
-        closePopup: () => void
+        closePopup: () => void,
+        options?: {
+            cancelIcon: BaseUIElement,
+            cancelText?: string | Translation
+        }
     ) {
         let preciseInput: LocationInput = undefined
         if (preset.preciseInput !== undefined) {
@@ -222,8 +227,8 @@ export default class ConfirmLocationOfPoint extends Combine {
         const tagInfo = SimpleAddUI.CreateTagInfoFor(preset, state.osmConnection)
 
         const cancelButton = new SubtleButton(
-            Svg.close_ui(),
-            Translations.t.general.cancel
+            options?.cancelIcon ?? Svg.close_ui(),
+            options?.cancelText ?? Translations.t.general.cancel
         ).onClick(cancel)
 
         let examples: BaseUIElement = undefined
