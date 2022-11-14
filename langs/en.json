@@ -208,7 +208,7 @@
         "nameInlineQuestion": "The name of this {category} is $$$",
         "newlyCreated": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
         "next": "Next",
-        "noMatchingMapping": "No entries mapped your search…",
+        "noMatchingMapping": "No entries match your search…",
         "noNameCategory": "{category} without a name",
         "noTagsSelected": "No tags selected",
         "notValid": "Select a valid value to continue",
@@ -310,7 +310,7 @@
             "uploading": "Uploading your trace..."
         },
         "useSearch": "Use the search above to see presets",
-        "useSearchForMore": "Use the search function to search within {total} more values....",
+        "useSearchForMore": "Use the search function to search within {total} more values…",
         "weekdays": {
             "abbreviations": {
                 "friday": "Fri",
