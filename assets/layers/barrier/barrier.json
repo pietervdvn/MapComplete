@@ -394,7 +394,8 @@
         "hu": "Legnagyobb szélesség: {maxwidth:physical} m",
         "es": "Anchura máxima: {maxwidth:physical} m",
         "da": "Maksimal bredde: {maxwidth:physical} m",
-        "cs": "Maximální šířka: {maxwidth:physical} m"
+        "cs": "Maximální šířka: {maxwidth:physical} m",
+        "pt": "Largura máxima: {maxwidth:physical} m"
       },
       "question": {
         "en": "How wide is the gap left over besides the barrier?",

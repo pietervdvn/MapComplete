@@ -140,7 +140,8 @@
         "es": "¿Qué tipo de banco es este?",
         "fr": "Quel type de banc est-ce ?",
         "da": "Hvilken slags bænk er dette?",
-        "cs": "Co je to za lavičku?"
+        "cs": "Co je to za lavičku?",
+        "pt": "Que tipo de banco é este?"
       },
       "mappings": [
         {
@@ -180,7 +181,8 @@
             "nl": "Er is hier geen bank",
             "es": "No hay ningún banco aquí",
             "da": "Der er ingen bænk her",
-            "cs": "Zde není žádná lavička"
+            "cs": "Zde není žádná lavička",
+            "pt": "Não há nenhum banco aqui"
           }
         }
       ]

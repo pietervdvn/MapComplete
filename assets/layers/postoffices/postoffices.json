@@ -144,7 +144,8 @@
           "if": "post_office:brand=DHL",
           "then": {
             "en": "This location offers services for DHL",
-            "de": "Dieser Standort bietet Dienstleistungen für DHL an"
+            "de": "Dieser Standort bietet Dienstleistungen für DHL an",
+            "nl": "Deze locatie biedt diensten aan voor DHL"
           },
           "hideInAnswer": "_country=de"
         },
@@ -152,21 +153,24 @@
           "if": "post_office:brand=DPD",
           "then": {
             "en": "This location offers services for DPD",
-            "de": "Dieser Standort bietet Dienstleistungen für DPD an"
+            "de": "Dieser Standort bietet Dienstleistungen für DPD an",
+            "nl": "Deze locatie biedt diensten aan voor DPD"
           }
         },
         {
           "if": "post_office:brand=GLS",
           "then": {
             "en": "This location offers services for GLS",
-            "de": "Dieser Standort bietet Dienstleistungen für GLS an"
+            "de": "Dieser Standort bietet Dienstleistungen für GLS an",
+            "nl": "Deze locatie biedt diensten aan voor GLS"
           }
         },
         {
           "if": "post_office:brand=UPS",
           "then": {
             "en": "This location offers services for UPS",
-            "de": "Dieser Standort bietet Dienstleistungen für UPS an"
+            "de": "Dieser Standort bietet Dienstleistungen für UPS an",
+            "nl": "Deze locatie biedt diensten aan voor UPS"
           }
         },
         {
@@ -189,7 +193,8 @@
           "if": "post_office:brand=PostNL",
           "then": {
             "en": "This location is a PostNL-point",
-            "de": "Dieser Standort ist ein PostNL-Punkt"
+            "de": "Dieser Standort ist ein PostNL-Punkt",
+            "nl": "Deze locatie is een PostNL-punt"
           },
           "hideInAnswer": {
             "and": [
@@ -202,7 +207,8 @@
           "if": "post_office:brand=bpost",
           "then": {
             "en": "This location offers services for bpost",
-            "de": "Dieser Standort bietet Dienstleistungen für bpost an"
+            "de": "Dieser Standort bietet Dienstleistungen für bpost an",
+            "nl": "Deze locatie biedt diensten aan voor bpost"
           },
           "hideInAnswer": "_country!=be"
         }
@@ -243,11 +249,13 @@
       "id": "parcel-from",
       "render": {
         "en": "You can post parcels with these companies: {post_office:parcel_from}",
-        "de": "Sie können Pakete mit diesen Unternehmen versenden: {post_office:parcel_from}"
+        "de": "Sie können Pakete mit diesen Unternehmen versenden: {post_office:parcel_from}",
+        "nl": "Je kan pakketten versturen met deze bedrijven: {post_office:parcel_from}"
       },
       "question": {
         "en": "Can you send a parcel here?",
-        "de": "Können Sie hier Pakete versenden?"
+        "de": "Können Sie hier Pakete versenden?",
+        "nl": "Kan je hier pakketten versturen?"
       },
       "freeform": {
         "key": "post_office:parcel_from",
@@ -258,14 +266,16 @@
           "if": "post_office:parcel_from=yes",
           "then": {
             "en": "You can send parcels here",
-            "de": "Hier können Sie Pakete versenden"
+            "de": "Hier können Sie Pakete versenden",
+            "nl": "Je kan hier pakketten versturen"
           }
         },
         {
           "if": "post_office:parcel_from=no",
           "then": {
             "en": "You can't send parcels here",
-            "de": "Sie können hier keine Pakete versenden"
+            "de": "Sie können hier keine Pakete versenden",
+            "nl": "Je kan hier geen pakketten versturen"
           }
         }
       ]
@@ -336,11 +346,13 @@
       "id": "stamps",
       "render": {
         "en": "You can buy stamps from companies: {post_office:stamps}",
-        "de": "Sie können Briefmarken folgender Unternehmen kaufen: {post_office:stamps}"
+        "de": "Sie können Briefmarken folgender Unternehmen kaufen: {post_office:stamps}",
+        "nl": "Je kan hier postzegels kopen van de volgende bedrijven: {post_office:stamps}"
       },
       "question": {
         "en": "Can you buy stamps here?",
-        "de": "Kann man hier Briefmarken kaufen?"
+        "de": "Kann man hier Briefmarken kaufen?",
+        "nl": "Kan je hier postzegels kopen?"
       },
       "freeform": {
         "key": "post_office:stamps",
@@ -351,14 +363,16 @@
           "if": "post_office:stamps=yes",
           "then": {
             "en": "You can buy stamps here",
-            "de": "Sie können hier Briefmarken kaufen"
+            "de": "Sie können hier Briefmarken kaufen",
+            "nl": "Je kan hier postzegels kopen"
           }
         },
         {
           "if": "post_office:stamps=no",
           "then": {
             "en": "You can't buy stamps here",
-            "de": "Sie können hier keine Briefmarken kaufen"
+            "de": "Sie können hier keine Briefmarken kaufen",
+            "nl": "Je kan hier geen postzegels kopen"
           }
         }
       ]

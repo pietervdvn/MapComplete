@@ -138,7 +138,8 @@
       "id": "ramp",
       "question": {
         "en": "Is there a ramp at these stairs?",
-        "de": "Gibt es eine Rampe an dieser Treppe?"
+        "de": "Gibt es eine Rampe an dieser Treppe?",
+        "nl": "Is er een helling bij deze trap?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -147,7 +148,8 @@
           "ifnot": "ramp:bicycle=no",
           "then": {
             "en": "There is a ramp for bicycles here",
-            "de": "Hier gibt es eine Rampe für Fahrräder"
+            "de": "Hier gibt es eine Rampe für Fahrräder",
+            "nl": "Er is hier een helling voor fietsen"
           }
         },
         {
@@ -155,14 +157,16 @@
           "ifnot": "ramp:wheelchair=no",
           "then": {
             "en": "There is a ramp for wheelchairs here",
-            "de": "Hier gibt es eine Rampe für Rollstühle"
+            "de": "Hier gibt es eine Rampe für Rollstühle",
+            "nl": "Er is hier een helling voor rolstoelen"
           }
         },
         {
           "if": "ramp=separate",
           "then": {
             "en": "There is ramp for wheelchairs here, but it is shown separately on the map",
-            "de": "Hier gibt es eine Rampe für Rollstühle, die jedoch auf der Karte separat angezeigt wird"
+            "de": "Hier gibt es eine Rampe für Rollstühle, die jedoch auf der Karte separat angezeigt wird",
+            "nl": "Er is hier een helling voor rolstoelen, maar deze is los aangegeven op de kaart"
           },
           "hideInAnswer": true
         },
@@ -171,7 +175,8 @@
           "ifnot": "ramp:stroller=no",
           "then": {
             "en": "There is a ramp for strollers here",
-            "de": "Hier gibt es eine Rampe für Kinderwagen"
+            "de": "Hier gibt es eine Rampe für Kinderwagen",
+            "nl": "Er is hier een helling voor kinderwagens"
           }
         },
         {
@@ -179,7 +184,8 @@
           "ifnot": "ramp=",
           "then": {
             "en": "There is no ramp at these stairs",
-            "de": "An dieser Treppe gibt es keine Rampe"
+            "de": "An dieser Treppe gibt es keine Rampe",
+            "nl": "Er is hier geen helling"
           }
         }
       ]

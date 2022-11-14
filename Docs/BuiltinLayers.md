@@ -109,6 +109,8 @@ Meta layer showing the current location of the user. Add this to your theme and 
 
   - This layer is shown at zoomlevel **0** and higher
   - **This layer is included automatically in every theme. This layer might contain no points**
+  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
+  - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
 

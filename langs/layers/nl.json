@@ -2445,6 +2445,7 @@
         },
         "title": {
             "mappings": {
+                "0": {},
                 "1": {
                     "then": "Klimsite <b>{name}</b>"
                 },
@@ -5549,18 +5550,6 @@
                     "question": "Wat zijn de openingsuren voor dit postkantoor?"
                 }
             },
-            "stamps": {
-                "render": "Je kan hier postzegels kopen van de volgende bedrijven: {post_office:stamps}",
-                "mappings": {
-                    "0": {
-                        "then": "Je kan hier postzegels kopen"
-                    },
-                    "1": {
-                        "then": "Je kan hier geen postzegels kopen"
-                    }
-                },
-                "question": "Kan je hier postzegels kopen?"
-            },
             "parcel-from": {
                 "mappings": {
                     "0": {
@@ -5581,9 +5570,6 @@
                     "1": {
                         "then": "Deze locatie biedt diensten aan voor DPD"
                     },
-                    "7": {
-                        "then": "Deze locatie biedt diensten aan voor bpost"
-                    },
                     "2": {
                         "then": "Deze locatie biedt diensten aan voor GLS"
                     },
@@ -5592,8 +5578,23 @@
                     },
                     "6": {
                         "then": "Deze locatie is een PostNL-punt"
+                    },
+                    "7": {
+                        "then": "Deze locatie biedt diensten aan voor bpost"
                     }
                 }
+            },
+            "stamps": {
+                "mappings": {
+                    "0": {
+                        "then": "Je kan hier postzegels kopen"
+                    },
+                    "1": {
+                        "then": "Je kan hier geen postzegels kopen"
+                    }
+                },
+                "question": "Kan je hier postzegels kopen?",
+                "render": "Je kan hier postzegels kopen van de volgende bedrijven: {post_office:stamps}"
             }
         },
         "title": {
@@ -6392,14 +6393,14 @@
             },
             "ramp": {
                 "mappings": {
+                    "0": {
+                        "then": "Er is hier een helling voor fietsen"
+                    },
                     "1": {
                         "then": "Er is hier een helling voor rolstoelen"
                     },
                     "2": {
                         "then": "Er is hier een helling voor rolstoelen, maar deze is los aangegeven op de kaart"
-                    },
-                    "0": {
-                        "then": "Er is hier een helling voor fietsen"
                     },
                     "3": {
                         "then": "Er is hier een helling voor kinderwagens"
@@ -6956,8 +6957,8 @@
                         "then": "Publiek toegankelijk"
                     }
                 },
-                "render": "Toegankelijkheid is {toilets:access}",
-                "question": "Zijn deze toiletten publiek toegankelijk?"
+                "question": "Zijn deze toiletten publiek toegankelijk?",
+                "render": "Toegankelijkheid is {toilets:access}"
             },
             "toilet-charge": {
                 "question": "Hoeveel moet men betalen om deze toiletten te gebruiken?",
@@ -6993,6 +6994,13 @@
                 "render": "De deur naar de rolstoeltoegankelijke toilet is {canonical(toilets:door:width)} wide"
             }
         },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Toilet bij {name}"
+                }
+            }
+        },
         "units": {
             "0": {
                 "applicableUnits": {
@@ -7002,13 +7010,6 @@
                     "1": {
                         "human": "centimeter"
                     }
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Toilet bij {name}"
                 }
             }
         }
@@ -7083,6 +7084,13 @@
     },
     "transit_routes": {
         "description": "Laag met buslijnen",
+        "mapRendering": {
+            "0": {
+                "color": {
+                    "render": "#ff0000"
+                }
+            }
+        },
         "name": "Buslijnen",
         "tagRenderings": {
             "colour": {
@@ -7114,19 +7122,12 @@
             }
         },
         "title": {
-            "render": "Buslijn",
             "mappings": {
                 "0": {
                     "then": "{name}"
                 }
-            }
-        },
-        "mapRendering": {
-            "0": {
-                "color": {
-                    "render": "#ff0000"
-                }
-            }
+            },
+            "render": "Buslijn"
         }
     },
     "transit_stops": {

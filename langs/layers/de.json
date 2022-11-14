@@ -1532,6 +1532,11 @@
                 "question": "Ist diese Ladestation Teil eines Netzwerks?",
                 "render": "Teil des Netzwerks <b>{network}</b>"
             },
+            "OH": {
+                "override": {
+                    "question": "Wann ist die Ladestation geöffnet?"
+                }
+            },
             "Operational status": {
                 "mappings": {
                     "0": {
@@ -2233,11 +2238,6 @@
             "website": {
                 "question": "Auf welcher Webseite kann man weitere Informationen über diese Ladestation finden?",
                 "render": "Weitere Informationen unter <a href='{website}'>{website}</a>"
-            },
-            "OH": {
-                "override": {
-                    "question": "Wann ist die Ladestation geöffnet?"
-                }
             }
         },
         "title": {
@@ -5538,6 +5538,11 @@
             }
         },
         "name": "Apotheke",
+        "presets": {
+            "0": {
+                "title": "eine Apotheke"
+            }
+        },
         "tagRenderings": {
             "name": {
                 "freeform": {
@@ -5568,11 +5573,6 @@
                 }
             },
             "render": "{name}"
-        },
-        "presets": {
-            "0": {
-                "title": "eine Apotheke"
-            }
         }
     },
     "picnic_table": {
@@ -7366,11 +7366,6 @@
             "wheelchair-door-width": {
                 "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
                 "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "Wann ist die Einrichtung, in der sich die Toilette befindet, geöffnet?"
-                }
             }
         },
         "title": {

@@ -34,7 +34,8 @@
         "then": {
           "en": "{name}",
           "de": "{name}",
-          "da": "{name}"
+          "da": "{name}",
+          "nl": "{name}"
         }
       }
     ]
@@ -45,7 +46,8 @@
         "render": {
           "en": "#ff0000",
           "de": "#ff0000",
-          "da": "#ff0000"
+          "da": "#ff0000",
+          "nl": "#ff0000"
         },
         "mappings": [
           {
