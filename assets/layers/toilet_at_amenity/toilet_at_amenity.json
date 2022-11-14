@@ -18,7 +18,8 @@
         "if": "name~*",
         "then": {
           "en": "Toilet at {name}",
-          "de": "Toilette in {name}"
+          "de": "Toilette in {name}",
+          "nl": "Toilet bij {name}"
         }
       }
     ]
@@ -29,7 +30,8 @@
     {
       "question": {
         "en": "Are these toilets publicly accessible?",
-        "de": "Ist die Toilette öffentlich zugänglich?"
+        "de": "Ist die Toilette öffentlich zugänglich?",
+        "nl": "Zijn deze toiletten publiek toegankelijk?"
       },
       "render": {
         "en": "Access is {toilets:access}",

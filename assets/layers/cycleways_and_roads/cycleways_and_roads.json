@@ -1002,7 +1002,7 @@
       },
       "question": {
         "en": "What is the carriage width of this road (in meters)?<br/><span class='subtle'>This is measured curb to curb and thus includes the width of parallell parking lanes</span>",
-        "nl": "Hoe breed is de rijbaan in deze straat (in meters)?<br/><span class='subtle'>Dit is </span><br/><span class='subtle'>Meet dit van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook</span>",
+        "nl": "Hoe breed is de rijbaan in deze straat (in meters)?<br/><span class='subtle'>Dit is gemeten van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook</span>",
         "de": "Wie groß ist die Fahrbahnbreite dieser Straße (in Metern)?<br/><span class='subtle'>Diese wird von Bordstein zu Bordstein gemessen und schließt daher die Breite von parallelen Parkspuren ein</span>",
         "fr": "Quelle est la largeur de cette chaussée (en mètres) ?<br/><span class='subtle'>Elle est mesurée d'une bordure à l'autre et inclut donc la largeur des voies de stationnement parallèles</span>"
       },

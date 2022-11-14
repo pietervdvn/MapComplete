@@ -3,6 +3,17 @@
         "description": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos",
         "title": "Abrir mapa AED"
     },
+    "bag": {
+        "layers": {
+            "2": {
+                "tagRenderings": {
+                    "Build year": {
+                        "render": "Esta construção é de <b>{_bag_obj:start_date}</b>"
+                    }
+                }
+            }
+        }
+    },
     "benches": {
         "shortDescription": "Um mapa de bancadas",
         "title": "Bancadas"
@@ -168,16 +179,5 @@
     },
     "ghostbikes": {
         "title": "Bicicleta fantasma"
-    },
-    "bag": {
-        "layers": {
-            "2": {
-                "tagRenderings": {
-                    "Build year": {
-                        "render": "Esta construção é de <b>{_bag_obj:start_date}</b>"
-                    }
-                }
-            }
-        }
     }
 }

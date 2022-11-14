@@ -86,6 +86,7 @@
         "add": {
             "addNew": "Add {category}",
             "addNewMapLabel": "Click here to add a new item",
+            "backToSelect": "Select a different category",
             "confirmButton": "Add a {category}<br/><div class='alert'>Your addition is visible for everyone</div>",
             "confirmIntro": "<h3>Add a {title}?</h3>The feature you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
             "disableFilters": "Disable all filters",
