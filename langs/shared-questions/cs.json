@@ -198,6 +198,18 @@
                 }
             },
             "question": "Jaká je odpovídající položka ve Wikipedii?"
+        },
+        "description": {
+            "question": "Je ještě něco relevantního, co jste nemohli uvést v předchozích otázkách? Přidejte to sem.<br/><span style='font-size: small'>Neopakujte již uvedená fakta</span>"
+        },
+        "opening_hours_24_7": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Otevřeno 24/7 (včetně svátků)"
+                    }
+                }
+            }
         }
     }
 }
