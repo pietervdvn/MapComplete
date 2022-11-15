@@ -6,8 +6,6 @@
     "osmTags": "id=gps",
     "maxCacheAge": 0
   },
-  "title": "Current position",
-  "name": "GPS Location",
   "mapRendering": [
     {
       "icon": {

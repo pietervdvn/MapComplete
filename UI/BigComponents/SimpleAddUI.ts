@@ -157,6 +157,10 @@ export default class SimpleAddUI extends Toggle {
                     cancel,
                     () => {
                         isShown.setData(false)
+                    },
+                    {
+                        cancelIcon: Svg.back_svg(),
+                        cancelText: Translations.t.general.add.backToSelect,
                     }
                 )
             })

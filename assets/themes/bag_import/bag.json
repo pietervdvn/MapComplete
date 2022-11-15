@@ -244,7 +244,8 @@
           "id": "Build year",
           "render": {
             "en": "This building was built in <b>{_bag_obj:start_date}</b>",
-            "de": "Dieses Gebäude wurde gebaut in <b>{_bag_obj:start_date}</b>"
+            "de": "Dieses Gebäude wurde gebaut in <b>{_bag_obj:start_date}</b>",
+            "pt_BR": "Esta construção é de <b>{_bag_obj:start_date}</b>"
           },
           "mappings": [
             {

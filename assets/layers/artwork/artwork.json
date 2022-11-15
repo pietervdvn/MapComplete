@@ -438,7 +438,8 @@
             "nl": "Houtsculptuur",
             "en": "Woodcarving",
             "de": "Holzschnitzerei",
-            "cs": "Dřevořezba"
+            "cs": "Dřevořezba",
+            "pt": "Entalhe em madeira"
           }
         }
       ],
@@ -450,13 +451,15 @@
         "en": "This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
         "de": "Dieses Kunstwerk wurde geschaffen von {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
         "nl": "Dit kunstwerk is gemaakt door {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
-        "cs": "Toto dílo vytvořil {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+        "cs": "Toto dílo vytvořil {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "pt": "Esta obra de arte foi feita por {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
       },
       "question": {
         "en": "Who made this artwork?",
         "de": "Wer hat dieses Kunstwerk geschaffen?",
         "nl": "Wie heeft dit kunstwerk gemaakt?",
-        "cs": "Kdo je autorem tohoto díla?"
+        "cs": "Kdo je autorem tohoto díla?",
+        "pt": "Quem fez essa obra de arte?"
       },
       "freeform": {
         "key": "artist:wikidata",
@@ -565,7 +568,8 @@
         "en": "What does this artwork depict?",
         "de": "Was zeigt dieses Kunstwerk?",
         "nl": "Wat beeldt dit kunstwerk af?",
-        "cs": "Co zobrazuje toto umělecké dílo?"
+        "cs": "Co zobrazuje toto umělecké dílo?",
+        "pt": "O que esta obra de arte representa?"
       },
       "freeform": {
         "key": "subject:wikidata",
@@ -575,7 +579,8 @@
         "en": "This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "de": "Das Kunstwerk zeigt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "nl": "Dit kunstwerk beeldt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)} af",
-        "cs": "Toto dílo zobrazuje {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+        "cs": "Toto dílo zobrazuje {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "pt": "A obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
       }
     }
   ],

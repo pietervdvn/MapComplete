@@ -1347,10 +1347,10 @@
                         "question": "Heeft een <div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
                     "5": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Type 1 <i>zonder</i> kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                        "question": "Heeft een <div style='display: inline-block'><b>Type 1 <i>zonder</i> kabel (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
                     "6": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Type 1 CCS</b> (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
+                        "question": "Heeft een <div style='display: inline-block'><b>Type 1 CCS (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
                     },
                     "7": {
                         "question": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
@@ -3056,7 +3056,7 @@
                 "question": "Is deze weg verlicht?"
             },
             "width:carriageway": {
-                "question": "Hoe breed is de rijbaan in deze straat (in meters)?<br/><span class='subtle'>Dit is </span><br/><span class='subtle'>Meet dit van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook</span>",
+                "question": "Hoe breed is de rijbaan in deze straat (in meters)?<br/><span class='subtle'>Dit is gemeten van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook</span>",
                 "render": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
             }
         },
@@ -3922,7 +3922,7 @@
                         "then": "Je <b>moet</b> je eigen containers meenemen om je bestelling in mee te nemen."
                     }
                 },
-                "question": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?"
+                "question": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?<br/>"
             },
             "friture-vegan": {
                 "mappings": {
@@ -5549,6 +5549,52 @@
                 "override": {
                     "question": "Wat zijn de openingsuren voor dit postkantoor?"
                 }
+            },
+            "parcel-from": {
+                "mappings": {
+                    "0": {
+                        "then": "Je kan hier pakketten versturen"
+                    },
+                    "1": {
+                        "then": "Je kan hier geen pakketten versturen"
+                    }
+                },
+                "question": "Kan je hier pakketten versturen?",
+                "render": "Je kan pakketten versturen met deze bedrijven: {post_office:parcel_from}"
+            },
+            "partner-brand": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze locatie biedt diensten aan voor DHL"
+                    },
+                    "1": {
+                        "then": "Deze locatie biedt diensten aan voor DPD"
+                    },
+                    "2": {
+                        "then": "Deze locatie biedt diensten aan voor GLS"
+                    },
+                    "3": {
+                        "then": "Deze locatie biedt diensten aan voor UPS"
+                    },
+                    "6": {
+                        "then": "Deze locatie is een PostNL-punt"
+                    },
+                    "7": {
+                        "then": "Deze locatie biedt diensten aan voor bpost"
+                    }
+                }
+            },
+            "stamps": {
+                "mappings": {
+                    "0": {
+                        "then": "Je kan hier postzegels kopen"
+                    },
+                    "1": {
+                        "then": "Je kan hier geen postzegels kopen"
+                    }
+                },
+                "question": "Kan je hier postzegels kopen?",
+                "render": "Je kan hier postzegels kopen van de volgende bedrijven: {post_office:stamps}"
             }
         },
         "title": {
@@ -6344,6 +6390,26 @@
                     }
                 },
                 "question": "Heeft deze trap een leuning?"
+            },
+            "ramp": {
+                "mappings": {
+                    "0": {
+                        "then": "Er is hier een helling voor fietsen"
+                    },
+                    "1": {
+                        "then": "Er is hier een helling voor rolstoelen"
+                    },
+                    "2": {
+                        "then": "Er is hier een helling voor rolstoelen, maar deze is los aangegeven op de kaart"
+                    },
+                    "3": {
+                        "then": "Er is hier een helling voor kinderwagens"
+                    },
+                    "4": {
+                        "then": "Er is hier geen helling"
+                    }
+                },
+                "question": "Is er een helling bij deze trap?"
             }
         },
         "title": {
@@ -6891,6 +6957,7 @@
                         "then": "Publiek toegankelijk"
                     }
                 },
+                "question": "Zijn deze toiletten publiek toegankelijk?",
                 "render": "Toegankelijkheid is {toilets:access}"
             },
             "toilet-charge": {
@@ -6925,6 +6992,13 @@
             "wheelchair-door-width": {
                 "question": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?",
                 "render": "De deur naar de rolstoeltoegankelijke toilet is {canonical(toilets:door:width)} wide"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Toilet bij {name}"
+                }
             }
         },
         "units": {
@@ -7010,6 +7084,13 @@
     },
     "transit_routes": {
         "description": "Laag met buslijnen",
+        "mapRendering": {
+            "0": {
+                "color": {
+                    "render": "#ff0000"
+                }
+            }
+        },
         "name": "Buslijnen",
         "tagRenderings": {
             "colour": {
@@ -7041,6 +7122,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "{name}"
+                }
+            },
             "render": "Buslijn"
         }
     },

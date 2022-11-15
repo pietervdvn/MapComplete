@@ -1,7 +1,21 @@
 {
     "address": {
         "description": "Endereços",
-        "name": "Endereços conhecidos no OSM"
+        "name": "Endereços conhecidos no OSM",
+        "tagRenderings": {
+            "fixme": {
+                "question": "O que deve ser corrigido aqui? Explique"
+            },
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "Este prédio não tem número"
+                    }
+                },
+                "question": "Qual é o número desta casa?",
+                "render": "The house number is <b>{addr:housenumber}</b>"
+            }
+        }
     },
     "artwork": {
         "description": "Diversas obras de arte",
@@ -12,6 +26,10 @@
             }
         },
         "tagRenderings": {
+            "artwork-artist-wikidata": {
+                "question": "Quem fez essa obra de arte?",
+                "render": "Esta obra de arte foi feita por {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+            },
             "artwork-artist_name": {
                 "question": "Que artista criou isto?",
                 "render": "Criado por {artist_name}"
@@ -53,6 +71,9 @@
                     },
                     "11": {
                         "then": "Ladrilhos"
+                    },
+                    "12": {
+                        "then": "Entalhe em madeira"
                     }
                 },
                 "question": "Qual é o tipo desta obra de arte?",
@@ -61,6 +82,10 @@
             "artwork-website": {
                 "question": "Existe um site com mais informações sobre esta obra de arte?",
                 "render": "Mais informações <a href='{website}' target='_blank'>neste site</a>"
+            },
+            "artwork_subject": {
+                "question": "O que esta obra de arte representa?",
+                "render": "A obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
             }
         },
         "title": {
@@ -70,6 +95,13 @@
                 }
             },
             "render": "Obra de arte"
+        }
+    },
+    "barrier": {
+        "tagRenderings": {
+            "MaxWidth": {
+                "render": "Largura máxima: {maxwidth:physical} m"
+            }
         }
     },
     "bench": {
@@ -165,6 +197,14 @@
     "bench_at_pt": {
         "name": "Bancos em pontos de transporte público",
         "tagRenderings": {
+            "bench_at_pt-bench_type": {
+                "mappings": {
+                    "2": {
+                        "then": "Não há nenhum banco aqui"
+                    }
+                },
+                "question": "Que tipo de banco é este?"
+            },
             "bench_at_pt-name": {
                 "render": "{name}"
             }

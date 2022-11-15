@@ -1532,6 +1532,11 @@
                 "question": "Ist diese Ladestation Teil eines Netzwerks?",
                 "render": "Teil des Netzwerks <b>{network}</b>"
             },
+            "OH": {
+                "override": {
+                    "question": "Wann ist die Ladestation geöffnet?"
+                }
+            },
             "Operational status": {
                 "mappings": {
                     "0": {
@@ -5533,6 +5538,11 @@
             }
         },
         "name": "Apotheke",
+        "presets": {
+            "0": {
+                "title": "eine Apotheke"
+            }
+        },
         "tagRenderings": {
             "name": {
                 "freeform": {
