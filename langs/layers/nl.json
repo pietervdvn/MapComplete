@@ -6391,6 +6391,12 @@
                 },
                 "question": "Heeft deze trap een leuning?"
             },
+            "multilevels": {
+                "override": {
+                    "question": "Tussen welke verdiepingen loopt deze trap?",
+                    "render": "Deze trap loopt tussen de verdiepingen {level}"
+                }
+            },
             "ramp": {
                 "mappings": {
                     "0": {
