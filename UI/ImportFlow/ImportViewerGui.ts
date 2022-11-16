@@ -128,7 +128,7 @@ class MassAction extends Combine {
             },
             /*
             {
-               // This was a one-off for one of the first imports 
+               // This was a one-off for one of the first imports
                 value:{
                     predicate: p => p.status === "open" && p.comments[0].text.split("\n").find(l => l.startsWith("note=")) !== undefined,
                     action: async p => {
@@ -440,7 +440,10 @@ class ImportInspector extends VariableUiElement {
                     )
                 }
                 // We only care about the properties here
-                const props: NoteProperties[] = notes["success"].features.map((f) => f.properties)
+                let props: NoteProperties[] = notes["success"].features.map((f) => f.properties)
+                if(userDetails["uid"]){
+                    props = props.filter(n => n.comments[0].uid === userDetails["uid"])
+                }
                 const perBatch: NoteState[][] = Array.from(
                     ImportInspector.SplitNotesIntoBatches(props).values()
                 )

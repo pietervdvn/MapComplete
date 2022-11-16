@@ -18,7 +18,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
     private readonly state: {
         locationControl: Store<{ zoom: number }>
         selectedElement: Store<any>
-        globalFilters: Store<{ filter: FilterState }[]>
+        globalFilters?: Store<{ filter: FilterState }[]>
         allElements: ElementStorage
     }
     private readonly _alreadyRegistered = new Set<UIEventSource<any>>()
@@ -30,7 +30,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
             locationControl: Store<{ zoom: number }>
             selectedElement: Store<any>
             allElements: ElementStorage
-            globalFilters: Store<{ filter: FilterState }[]>
+            globalFilters?: Store<{ filter: FilterState }[]>
         },
         tileIndex,
         upstream: FeatureSourceForLayer,
@@ -63,7 +63,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
             self._is_dirty.setData(true)
         })
 
-        state.globalFilters.addCallback((_) => {
+        state.globalFilters?.addCallback((_) => {
             self.update()
         })
 
@@ -76,7 +76,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
         const features: { feature: OsmFeature; freshness: Date }[] =
             this.upstream.features.data ?? []
         const includedFeatureIds = new Set<string>()
-        const globalFilters = self.state.globalFilters.data.map((f) => f.filter)
+        const globalFilters = self.state.globalFilters?.data?.map((f) => f.filter)
         const newFeatures = (features ?? []).filter((f) => {
             self.registerCallback(f.feature)
 
@@ -98,7 +98,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
                 }
             }
 
-            for (const filter of globalFilters) {
+            for (const filter of (globalFilters ?? [])) {
                 const neededTags: TagsFilter = filter?.currentFilter
                 if (
                     neededTags !== undefined &&
