@@ -57,6 +57,12 @@
           ]
         }
       },
+      "name": {
+        "en": "Train Stations"
+      },
+      "description": {
+        "en": "Layer showing train stations"
+      },
       "mapRendering": [
         {
           "icon": "./assets/themes/stations/rail-light.svg",
@@ -151,7 +157,8 @@
         "entrance",
         "elevator",
         "bench",
-        "waste_basket"
+        "waste_basket",
+        "atm"
       ],
       "override": {
         "minzoom": 19
