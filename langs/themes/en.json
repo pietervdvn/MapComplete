@@ -1091,7 +1091,11 @@
     "stations": {
         "description": "View, edit and add details to a train station",
         "layers": {
-            "11": {
+            "3": {
+                "description": "Layer showing train stations",
+                "name": "Train Stations"
+            },
+            "14": {
                 "description": "Displays showing the trains that will leave from this station",
                 "name": "Departures boards",
                 "presets": {

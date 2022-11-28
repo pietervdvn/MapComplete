@@ -153,6 +153,46 @@
             "render": "Artwork"
         }
     },
+    "atm": {
+        "description": "ATMS to withdraw money",
+        "name": "ATMs",
+        "presets": {
+            "0": {
+                "title": "an ATM"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Brand name"
+                },
+                "question": "What brand is this ATM?",
+                "render": "The brand of this ATM is {brand}"
+            },
+            "name": {
+                "freeform": {
+                    "placeholder": "Name of the ATM"
+                },
+                "question": "What is the name of this ATM?",
+                "render": "The name of this ATM is {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Operator"
+                },
+                "question": "What company operates this ATM?",
+                "render": "The ATM is operated by {operator}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{brand} ATM"
+                }
+            },
+            "render": "ATM"
+        }
+    },
     "barrier": {
         "description": "Obstacles while cycling, such as bollards and cycle barriers",
         "name": "Barriers",
