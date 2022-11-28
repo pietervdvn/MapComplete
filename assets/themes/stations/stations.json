@@ -86,9 +86,7 @@
     },
     {
       "builtin": [
-        "shops",
-        "bike_parking",
-        "bicycle_rental"
+        "shops"
       ],
       "override": {
         "isShown": {
@@ -99,6 +97,42 @@
         },
         "presets": null,
         "minzoom": 19
+      }
+    },
+    {
+      "builtin": "bike_parking",
+      "override": {
+        "isShown": {
+          "or": [
+            "indoor=room",
+            "indoor=area"
+          ]
+        },
+        "presets": null,
+        "minzoom": 19,
+        "mapRendering": [
+          {
+            "icon": "circle:white;./assets/themes/stations/bicycle_parking.svg"
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "bicycle_rental",
+      "override": {
+        "isShown": {
+          "or": [
+            "indoor=room",
+            "indoor=area"
+          ]
+        },
+        "presets": null,
+        "minzoom": 19,
+        "mapRendering": [
+          {
+            "icon": "circle:white;./assets/themes/stations/rental_bicycle.svg"
+          }
+        ]
       }
     },
     {
@@ -157,12 +191,22 @@
       "builtin": [
         "entrance",
         "elevator",
-        "bench",
         "waste_basket",
         "atm"
       ],
       "override": {
         "minzoom": 19
+      }
+    },
+    {
+      "builtin": "bench",
+      "override": {
+        "minzoom": 19,
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/stations/bench.svg"
+          }
+        ]
       }
     },
     {
