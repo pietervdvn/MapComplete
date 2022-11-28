@@ -32,18 +32,21 @@
         {
           "id": "last_check",
           "freeform": {
-            "key": "xmas:lastcheck",
+            "key": "survey:date",
             "type": "date"
           },
           "render": {
-            "en": "Last checked on {xmas:lastcheck}"
+            "en": "Last checked on {survey:date}"
           },
           "mappings": [
             {
-              "if": "xmas:lastcheck={_now:date}",
+              "if": "survey:date={_now:date}",
               "then": "Checked today!"
             }
-          ]
+          ],
+          "question": {
+            "en": "When was this tree last checked?"
+          }
         }
       ],
       "allowMove": {
@@ -55,7 +58,7 @@
           "id": "check_date",
           "options": [
             {
-              "osmTags": "xmas:lastcheck<{search}",
+              "osmTags": "survey:date<{search}",
               "fields": [
                 {
                   "name": "search",
