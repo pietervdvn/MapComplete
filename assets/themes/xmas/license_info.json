@@ -8,5 +8,15 @@
     "sources": [
       "https://freesvg.org/christmas-icon-vector-graphics"
     ]
+  },
+  {
+    "path": "xmas-market.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipArt"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/166276/christmas-hat"
+    ]
   }
 ]
