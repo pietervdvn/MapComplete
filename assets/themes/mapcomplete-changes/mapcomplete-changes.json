@@ -409,6 +409,10 @@
               {
                 "if": "theme=width",
                 "then": "./assets/themes/width/icon.svg"
+              },
+              {
+                "if": "theme=xmas",
+                "then": "./assets/themes/xmas/xmas-tree.svg"
               }
             ]
           },

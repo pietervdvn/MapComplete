@@ -1,0 +1,96 @@
+{
+  "id": "xmas",
+  "title": {
+    "en": "Christmas"
+  },
+  "description": {
+    "en": "Find christmas trees and more"
+  },
+  "icon": "./assets/themes/xmas/xmas-tree.svg",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 0,
+  "layers": [
+    {
+      "id": "xmas_trees",
+      "name": {
+        "en": "Christmas trees"
+      },
+      "description": {
+        "en": "Layer with christmas trees"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": "xmas:feature=tree"
+      },
+      "title": {
+        "render": {
+          "en": "Christmas tree"
+        }
+      },
+      "tagRenderings": [
+        {
+          "id": "last_check",
+          "freeform": {
+            "key": "xmas:lastcheck",
+            "type": "date"
+          },
+          "render": {
+            "en": "Last checked on {xmas:lastcheck}"
+          },
+          "mappings": [
+            {
+              "if": "xmas:lastcheck={_now:date}",
+              "then": "Checked today!"
+            }
+          ]
+        }
+      ],
+      "allowMove": {
+        "enableImproveAccuracy": true
+      },
+      "deletion": true,
+      "filter": [
+        {
+          "id": "check_date",
+          "options": [
+            {
+              "osmTags": "xmas:lastcheck<{search}",
+              "fields": [
+                {
+                  "name": "search",
+                  "type": "date"
+                }
+              ],
+              "question": {
+                "en": "Last checked before {search}"
+              }
+            }
+          ]
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": "./assets/themes/xmas/xmas-tree.svg",
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "tags": [
+            "xmas:feature=tree"
+          ],
+          "title": {
+            "en": "a christmas tree"
+          },
+          "description": {
+            "en": "A public, usually large christmas tree"
+          }
+        }
+      ]
+    }
+  ]
+}
