@@ -55,18 +55,24 @@
       "deletion": true,
       "filter": [
         {
-          "id": "check_date",
+          "id": "recently_surveyed",
           "options": [
             {
-              "osmTags": "survey:date<{search}",
-              "fields": [
-                {
-                  "name": "search",
-                  "type": "date"
-                }
-              ],
+              "default": true,
               "question": {
-                "en": "Last checked before {search}"
+                "en": "Show all trees"
+              }
+            },
+            {
+              "osmTags": "_recently_surveyed=true",
+              "question": {
+                "en": "Show only recently surveyed trees"
+              }
+            },
+            {
+              "osmTags": "_recently_surveyed=false",
+              "question": {
+                "en": "Show only trees that have not been surveyed recently"
               }
             }
           ]
@@ -78,6 +84,16 @@
           "location": [
             "point",
             "centroid"
+          ],
+          "iconBadges": [
+            {
+              "if": "_recently_surveyed=false",
+              "then": "circle:red"
+            },
+            {
+              "if": "_recently_surveyed=true",
+              "then": "circle:green"
+            }
           ]
         }
       ],
@@ -93,6 +109,10 @@
             "en": "A public, usually large christmas tree"
           }
         }
+      ],
+      "calculatedTags": [
+        "_days_since_last_survey=Math.floor(new Date() - new Date(feat.properties['survey:date'])/(1000*60*60*24))",
+        "_recently_surveyed=Number(feat.properties._days_since_last_survey) <= 90"
       ]
     }
   ]
