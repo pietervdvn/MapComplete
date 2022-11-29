@@ -239,7 +239,15 @@
           "shop=greengrocer",
           "shop=health_food",
           "shop=clothes",
-          "shop=shoes"
+          "shop=shoes",
+          "shop=butcher",
+          "shop=cosmetics",
+          "shop=deli",
+          "shop=bakery",
+          "shop=alcohol",
+          "shop=seafood",
+          "shop=beverages",
+          "shop=florist"
         ]
       }
     },
