@@ -2,7 +2,11 @@
   {
     "path": "bench.svg",
     "license": "CC0",
-    "authors": [],
-    "sources": []
+    "authors": [
+      "Tobias Zwick"
+    ],
+    "sources": [
+      "https://github.com/streetcomplete/StreetComplete/"
+    ]
   }
 ]

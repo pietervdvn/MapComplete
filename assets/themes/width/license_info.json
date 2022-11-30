@@ -2,7 +2,9 @@
   {
     "path": "icon.svg",
     "license": "CC0; trivial",
-    "authors": ["Pieter Vander Vennet"],
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "sources": []
   }
 ]
