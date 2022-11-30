@@ -18,9 +18,6 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
-  - [note_import_tertiary_education](../Layers/note_import_tertiary_education.md)
-  - [note_import_school](../Layers/note_import_school.md)
-  - [note_import_kindergarten_childcare](../Layers/note_import_kindergarten_childcare.md)
 
 
 Available languages:

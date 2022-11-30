@@ -25,13 +25,6 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
-  - [note_import_charging_station_ebikes](../Layers/note_import_charging_station_ebikes.md)
-  - [note_import_toilet](../Layers/note_import_toilet.md)
-  - [note_import_bench](../Layers/note_import_bench.md)
-  - [note_import_picnic_table](../Layers/note_import_picnic_table.md)
-  - [note_import_bike_repair_station](../Layers/note_import_bike_repair_station.md)
-  - [note_import_bicycle_rental_non_docking](../Layers/note_import_bicycle_rental_non_docking.md)
-  - [note_import_playground](../Layers/note_import_playground.md)
 
 
 Available languages:

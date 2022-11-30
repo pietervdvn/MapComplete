@@ -20,8 +20,6 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
-  - [note_import_bike_parking](../Layers/note_import_bike_parking.md)
-  - [note_import_parking](../Layers/note_import_parking.md)
 
 
 Available languages:

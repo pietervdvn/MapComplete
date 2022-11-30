@@ -28,16 +28,6 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
-  - [note_import_bike_cafe](../Layers/note_import_bike_cafe.md)
-  - [note_import_bicycle_rental](../Layers/note_import_bicycle_rental.md)
-  - [note_import_bike_shop](../Layers/note_import_bike_shop.md)
-  - [note_import_bicycle_library](../Layers/note_import_bicycle_library.md)
-  - [note_import_bike_repair_station](../Layers/note_import_bike_repair_station.md)
-  - [note_import_bicycle_tube_vending_machine](../Layers/note_import_bicycle_tube_vending_machine.md)
-  - [note_import_drinking_water](../Layers/note_import_drinking_water.md)
-  - [note_import_bike_cleaning](../Layers/note_import_bike_cleaning.md)
-  - [note_import_bike_parking](../Layers/note_import_bike_parking.md)
-  - [note_import_charging_station](../Layers/note_import_charging_station.md)
 
 
 Available languages:

@@ -20,11 +20,6 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
-  - [note_import_sport_pitch](../Layers/note_import_sport_pitch.md)
-  - [note_import_fitness_centre](../Layers/note_import_fitness_centre.md)
-  - [note_import_fitness_station](../Layers/note_import_fitness_station.md)
-  - [note_import_sports_centre](../Layers/note_import_sports_centre.md)
-  - [note_import_shops](../Layers/note_import_shops.md)
 
 
 Available languages:

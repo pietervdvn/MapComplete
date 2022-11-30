@@ -19,10 +19,6 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
-  - [note_import_nature_reserve_buurtnatuur](../Layers/note_import_nature_reserve_buurtnatuur.md)
-  - [note_import_parks](../Layers/note_import_parks.md)
-  - [note_import_forest](../Layers/note_import_forest.md)
-  - [note_import_viewpoint](../Layers/note_import_viewpoint.md)
 
 
 Available languages:

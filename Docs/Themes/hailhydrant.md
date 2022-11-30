@@ -23,10 +23,6 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
-  - [note_import_hydrant](../Layers/note_import_hydrant.md)
-  - [note_import_extinguisher](../Layers/note_import_extinguisher.md)
-  - [note_import_fire_station](../Layers/note_import_fire_station.md)
-  - [note_import_ambulancestation](../Layers/note_import_ambulancestation.md)
 
 
 Available languages:

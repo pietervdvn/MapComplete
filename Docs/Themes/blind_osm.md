@@ -21,9 +21,6 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
-  - [note_import_crossings](../Layers/note_import_crossings.md)
-  - [note_import_kerbs](../Layers/note_import_kerbs.md)
-  - [note_import_elevator](../Layers/note_import_elevator.md)
 
 
 Available languages:

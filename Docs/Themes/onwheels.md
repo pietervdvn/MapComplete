@@ -35,19 +35,6 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
-  - [note_import_cafe_pub](../Layers/note_import_cafe_pub.md)
-  - [note_import_entrance](../Layers/note_import_entrance.md)
-  - [note_import_food](../Layers/note_import_food.md)
-  - [note_import_kerbs](../Layers/note_import_kerbs.md)
-  - [note_import_parking](../Layers/note_import_parking.md)
-  - [note_import_shops](../Layers/note_import_shops.md)
-  - [note_import_toilet](../Layers/note_import_toilet.md)
-  - [note_import_pharmacy](../Layers/note_import_pharmacy.md)
-  - [note_import_doctors](../Layers/note_import_doctors.md)
-  - [note_import_reception_desk](../Layers/note_import_reception_desk.md)
-  - [note_import_elevator](../Layers/note_import_elevator.md)
-  - [note_import_hotel](../Layers/note_import_hotel.md)
-  - [note_import_governments](../Layers/note_import_governments.md)
 
 
 Available languages:

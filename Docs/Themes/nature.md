@@ -23,14 +23,6 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
-  - [note_import_drinking_water](../Layers/note_import_drinking_water.md)
-  - [note_import_birdhide](../Layers/note_import_birdhide.md)
-  - [note_import_nature_reserve](../Layers/note_import_nature_reserve.md)
-  - [note_import_map](../Layers/note_import_map.md)
-  - [note_import_information_board](../Layers/note_import_information_board.md)
-  - [note_import_bench](../Layers/note_import_bench.md)
-  - [note_import_picnic_table](../Layers/note_import_picnic_table.md)
-  - [note_import_toilet](../Layers/note_import_toilet.md)
 
 
 Available languages:

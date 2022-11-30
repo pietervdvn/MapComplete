@@ -19,7 +19,6 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
-  - [note_import_entrance](../Layers/note_import_entrance.md)
 
 
 Available languages:

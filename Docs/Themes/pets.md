@@ -22,12 +22,6 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
-  - [note_import_dogpark](../Layers/note_import_dogpark.md)
-  - [note_import_dogshop](../Layers/note_import_dogshop.md)
-  - [note_import_veterinary](../Layers/note_import_veterinary.md)
-  - [note_import_food](../Layers/note_import_food.md)
-  - [note_import_waste_basket](../Layers/note_import_waste_basket.md)
-  - [note_import_shops](../Layers/note_import_shops.md)
 
 
 Available languages:

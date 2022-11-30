@@ -20,9 +20,6 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
-  - [note_import_waste_basket](../Layers/note_import_waste_basket.md)
-  - [note_import_recycling](../Layers/note_import_recycling.md)
-  - [note_import_waste_disposal](../Layers/note_import_waste_disposal.md)
 
 
 Available languages:

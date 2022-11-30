@@ -18,9 +18,6 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
-  - [note_import_postboxes](../Layers/note_import_postboxes.md)
-  - [note_import_postoffices](../Layers/note_import_postoffices.md)
-  - [note_import_parcel_lockers](../Layers/note_import_parcel_lockers.md)
 
 
 Available languages:
