@@ -82,6 +82,10 @@
             }
         },
         "tagRenderings": {
+            "artwork-artist-wikidata": {
+                "question": "¿Quién creó esta obra de arte?",
+                "render": "Esta obra de la creó {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+            },
             "artwork-artist_name": {
                 "question": "¿Que artista creó esto?",
                 "render": "Creado por {artist_name}"
@@ -131,10 +135,6 @@
             "artwork-website": {
                 "question": "¿Hay un sitio web con más información sobre esta obra de arte?",
                 "render": "Más información en <a href='{website}' target='_blank'>este sitio web</a>"
-            },
-            "artwork-artist-wikidata": {
-                "question": "¿Quién creó esta obra de arte?",
-                "render": "Esta obra de la creó {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
             },
             "artwork_subject": {
                 "question": "¿Qué representa esta obra de arte?",
@@ -500,6 +500,12 @@
                 "question": "¿Qué tipo de alquiler de bicicletas es este?"
             },
             "rental_types": {
+                "renderings": {
+                    "0": {
+                        "question": "¿Cuántas type_plural pueden alquilarse aquí?",
+                        "render": "{capacity:bicycle_type} type_plural pueden alquilarse aquí"
+                    }
+                },
                 "rewrite": {
                     "into": {
                         "0": {
@@ -523,12 +529,6 @@
                         "6": {
                             "1": "tándem"
                         }
-                    }
-                },
-                "renderings": {
-                    "0": {
-                        "question": "¿Cuántas type_plural pueden alquilarse aquí?",
-                        "render": "{capacity:bicycle_type} type_plural pueden alquilarse aquí"
                     }
                 }
             }
@@ -3575,6 +3575,11 @@
                 },
                 "question": "¿De qué color es la luz que emite esta lámpara?",
                 "render": "Esta lámpara emite luz {light:colour}"
+            },
+            "count": {
+                "mappings": {
+                    "0": {}
+                }
             },
             "direction": {
                 "question": "¿Hacia donde apunta esta lámpara?",

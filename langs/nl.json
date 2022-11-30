@@ -170,6 +170,7 @@
         "error": "Er ging iets mis",
         "example": "Voorbeeld",
         "examples": "Voorbeelden",
+        "feelFreeToSkip": "Je kan hieronder nog informatie toevoegen of updaten, maar <b>sla gerust vragen over</b> waarvoor je het antwoord niet kent.",
         "fewChangesBefore": "Gelieve eerst enkele vragen van bestaande objecten te beantwoorden vooraleer zelf objecten toe te voegen.",
         "getStartedLogin": "Login met OpenStreetMap om te beginnen",
         "getStartedNewAccount": " of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak een nieuwe account aan</a>",
@@ -200,6 +201,7 @@
             "streetcomplete": "Een andere, gelijkaardige Android applicatie is <a href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" class=\"underline hover:text-blue-800\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "De naam van dit {category} is $$$",
+        "newlyCreated": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
         "next": "Volgende",
         "noNameCategory": "{category} zonder naam",
         "noTagsSelected": "Geen tags geselecteerd",
@@ -315,9 +317,7 @@
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        },
-        "feelFreeToSkip": "Je kan hieronder nog informatie toevoegen of updaten, maar <b>sla gerust vragen over</b> waarvoor je het antwoord niet kent.",
-        "newlyCreated": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen."
+        }
     },
     "image": {
         "addPicture": "Voeg foto toe",
@@ -398,6 +398,7 @@
             "osmLoaded": "{count} elementen werden uit OpenStreetMap ingeladen die laag in laag <b>{name}</b> zitten.",
             "reloadTheCache": "Verwijder de cache en bevraag Overpass opnieuw",
             "setRangeToZero": "Set de radius op 0 of 1 indien je toch alle punten wenst te importeren",
+            "showOsmLayerInConflationMap": "Toon objecten van OpenStreetMap",
             "states": {
                 "error": "Kon geen recente data ophalen van Overpass door {error}",
                 "idle": "Cache bevragen…",
@@ -407,8 +408,7 @@
             "title": "Vergelijking met bestaande data",
             "titleLive": "Data van OSM",
             "titleNearby": "Objecten in de buurt",
-            "zoomIn": "Het huidige zoomniveau is {current}",
-            "showOsmLayerInConflationMap": "Toon objecten van OpenStreetMap"
+            "zoomIn": "Het huidige zoomniveau is {current}"
         },
         "createNotes": {
             "creating": "<b>{count}</b> van {total} kaartnota's werden gemaakt",

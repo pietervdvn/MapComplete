@@ -91,7 +91,8 @@
     "hu": "Szobrok, mellszobrok, graffitik és egyéb műalkotások nyílt világtérképe",
     "da": "Et åbent kort over statuer, buster, graffitis og andre kunstværker over hele verden",
     "ca": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món",
-    "cs": "Otevřená mapa soch, bust, graffiti a dalších uměleckých děl po celém světě"
+    "cs": "Otevřená mapa soch, bust, graffiti a dalších uměleckých děl po celém světě",
+    "zh_Hans": "一个雕塑、半身像、涂鸦和其他全球艺术品的地图"
   },
   "minzoom": 12,
   "presets": [
@@ -452,14 +453,16 @@
         "de": "Dieses Kunstwerk wurde geschaffen von {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
         "nl": "Dit kunstwerk is gemaakt door {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
         "cs": "Toto dílo vytvořil {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
-        "pt": "Esta obra de arte foi feita por {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+        "pt": "Esta obra de arte foi feita por {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "es": "Esta obra de la creó {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
       },
       "question": {
         "en": "Who made this artwork?",
         "de": "Wer hat dieses Kunstwerk geschaffen?",
         "nl": "Wie heeft dit kunstwerk gemaakt?",
         "cs": "Kdo je autorem tohoto díla?",
-        "pt": "Quem fez essa obra de arte?"
+        "pt": "Quem fez essa obra de arte?",
+        "es": "¿Quién creó esta obra de arte?"
       },
       "freeform": {
         "key": "artist:wikidata",
@@ -569,7 +572,8 @@
         "de": "Was zeigt dieses Kunstwerk?",
         "nl": "Wat beeldt dit kunstwerk af?",
         "cs": "Co zobrazuje toto umělecké dílo?",
-        "pt": "O que esta obra de arte representa?"
+        "pt": "O que esta obra de arte representa?",
+        "es": "¿Qué representa esta obra de arte?"
       },
       "freeform": {
         "key": "subject:wikidata",
@@ -580,7 +584,8 @@
         "de": "Das Kunstwerk zeigt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "nl": "Dit kunstwerk beeldt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)} af",
         "cs": "Toto dílo zobrazuje {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
-        "pt": "A obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+        "pt": "A obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "es": "Esta obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
       }
     }
   ],
