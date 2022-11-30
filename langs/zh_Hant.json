@@ -791,5 +791,11 @@
         "wikidata": {
             "description": "Wikidata 編號"
         }
+    },
+    "flyer": {
+        "description": "宣傳 MapComplete 的 A4 大小傳單",
+        "aerial": "這份地圖使用不同的背景，是 Agentschap Informatie Vlaanderen 釋出的空照圖",
+        "callToAction": "在 mapcomplete.osm.be 測試",
+        "cyclofix": "單車設施修正上的單車甬筒、修理站、飲水機與單車店"
     }
 }
