@@ -129,6 +129,11 @@ AllKnownLayouts.GenOverviewsForSingleLayer((layer, element, inlineSource) => {
     }
     WriteFile("./Docs/Layers/" + layer.id + ".md", element, [source], { noTableOfContents: true })
 })
+
+Array.from(AllKnownLayouts.allKnownLayouts.values()).map(theme => {
+const docs = AllKnownLayouts.GenerateDocumentationForTheme(theme)
+    WriteFile("./Docs/Themes/" + theme.id + ".md", docs, [`assets/themes/${theme.id}/${theme.id}.json`], { noTableOfContents: true })
+})
 WriteFile("./Docs/SpecialRenderings.md", SpecialVisualizations.HelpMessage(), [
     "UI/SpecialVisualizations.ts",
 ])
