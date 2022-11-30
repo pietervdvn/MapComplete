@@ -13,7 +13,7 @@
                     }
                 },
                 "question": "这个屋子的门牌号是多少？",
-                "render": "门牌号是<b>{addr:housenumber}</b>"
+                "render": "门牌号是 <b>{addr:housenumber}</b>"
             },
             "street": {
                 "question": "这个地址位于哪条街道？",
@@ -33,6 +33,9 @@
             }
         }
     },
+    "artwork": {
+        "description": "一个雕塑、半身像、涂鸦和其他全球艺术品的地图"
+    },
     "bench": {
         "name": "长椅",
         "presets": {
@@ -44,10 +47,10 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "靠背：有"
+                        "then": "有靠背"
                     },
                     "1": {
-                        "then": "靠背：无"
+                        "then": "<b>没有</b>靠背"
                     }
                 },
                 "question": "这个长椅有靠背吗？"
@@ -89,29 +92,30 @@
             "bench-material": {
                 "mappings": {
                     "0": {
-                        "then": "材质：木"
+                        "then": "座椅是木制的"
                     },
                     "1": {
-                        "then": "材质：金属"
+                        "then": "座椅是金属制的"
                     },
                     "2": {
-                        "then": "材质：石头"
+                        "then": "座椅是石制的"
                     },
                     "3": {
-                        "then": "材质：混凝土"
+                        "then": "座椅是混凝土制的"
                     },
                     "4": {
-                        "then": "材质：塑料"
+                        "then": "座椅是塑料制的"
                     },
                     "5": {
-                        "then": "材质：不锈钢"
+                        "then": "座椅是不锈钢制的"
                     }
                 },
                 "question": "这个长椅（或座椅）是用什么材料做的？",
                 "render": "材质: {material}"
             },
             "bench-seats": {
-                "question": "这个长椅有几个座位？"
+                "question": "这个长椅有几个座位？",
+                "render": "{seats}座"
             },
             "bench-survey:date": {
                 "question": "上次对这个长椅实地调查是什么时候？",
@@ -151,7 +155,7 @@
     "bicycle_library": {
         "tagRenderings": {
             "bicycle-library-target-group": {
-                "question": "谁可以从这里借自行车？"
+                "question": "谁可以从这里借出自行车？"
             }
         }
     },

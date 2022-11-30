@@ -170,6 +170,7 @@
         "error": "Er ging iets mis",
         "example": "Voorbeeld",
         "examples": "Voorbeelden",
+        "feelFreeToSkip": "Je kan hieronder nog informatie toevoegen of updaten, maar <b>sla gerust vragen over</b> waarvoor je het antwoord niet kent.",
         "fewChangesBefore": "Gelieve eerst enkele vragen van bestaande objecten te beantwoorden vooraleer zelf objecten toe te voegen.",
         "getStartedLogin": "Login met OpenStreetMap om te beginnen",
         "getStartedNewAccount": " of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak een nieuwe account aan</a>",
@@ -200,6 +201,7 @@
             "streetcomplete": "Een andere, gelijkaardige Android applicatie is <a href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" class=\"underline hover:text-blue-800\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "De naam van dit {category} is $$$",
+        "newlyCreated": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
         "next": "Volgende",
         "noNameCategory": "{category} zonder naam",
         "noTagsSelected": "Geen tags geselecteerd",
@@ -396,6 +398,7 @@
             "osmLoaded": "{count} elementen werden uit OpenStreetMap ingeladen die laag in laag <b>{name}</b> zitten.",
             "reloadTheCache": "Verwijder de cache en bevraag Overpass opnieuw",
             "setRangeToZero": "Set de radius op 0 of 1 indien je toch alle punten wenst te importeren",
+            "showOsmLayerInConflationMap": "Toon objecten van OpenStreetMap",
             "states": {
                 "error": "Kon geen recente data ophalen van Overpass door {error}",
                 "idle": "Cache bevragen…",
@@ -411,7 +414,7 @@
             "creating": "<b>{count}</b> van {total} kaartnota's werden gemaakt",
             "done": "Alle {count} kaartnota's zijn gemaakt!",
             "loading": "Aan het laden…",
-            "openImportViewer": "Bekijk de voortgang van je kaartnotas in de &lt;i&gt;import_viewer&lt;/i&gt;",
+            "openImportViewer": "Bekijk de voortgang van je kaartnotas in de import_viewer",
             "title": "Kaartnota's maken"
         },
         "gotoImportViewer": "Bekijk je vorige importeer-kaartnota's",
@@ -485,7 +488,7 @@
         "importHandled": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
         "layerName": "Hier is misschien een {title}",
         "nearbyImagesIntro": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
-        "notFound": "Ik kon hier g{title} vinden - verwijder deze van de kaart",
+        "notFound": "Ik kon hier geen {title} vinden - verwijder deze van de kaart",
         "popupTitle": "Is hier {title}?"
     },
     "index": {

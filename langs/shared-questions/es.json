@@ -23,6 +23,43 @@
         "email": {
             "question": "¿Cual es la direccióm de correo electrónico de {title()}?"
         },
+        "internet": {
+            "mappings": {
+                "0": {
+                    "then": "Este lugar ofrece acceso a internet inalámbrico"
+                },
+                "1": {
+                    "then": "Este lugar <b>no</b> ofrece acceso a internet"
+                },
+                "2": {
+                    "then": "Este lugar ofrece acceso a internet"
+                },
+                "3": {
+                    "then": "Este lugar ofrece acceso a internet a través de una terminal o un ordenador"
+                },
+                "4": {
+                    "then": "Este lugar ofrece acceso a internet por cable"
+                }
+            },
+            "question": "¿Ofrece este lugar acceso a internet?"
+        },
+        "internet-fee": {
+            "mappings": {
+                "1": {
+                    "then": "El acceso a internet es gratuito en este lugar"
+                },
+                "2": {
+                    "then": "El acceso a internet es gratis en este lugar, solamente para clientes"
+                }
+            }
+        },
+        "internet-ssid": {
+            "freeform": {
+                "placeholder": "Introduzca el nombre de red"
+            },
+            "question": "¿Cuál es el nombre de red para el acceso inalámbrico a internet?",
+            "render": "El nombre de red es <b>{internet_access:ssid}</b>"
+        },
         "level": {
             "mappings": {
                 "0": {
@@ -43,6 +80,12 @@
             },
             "question": "¿En qué nivel se encuentra esta característica?",
             "render": "Localizada en la {level}° planta"
+        },
+        "multilevels": {
+            "override": {
+                "question": "¿A qué pisos va este ascensor?",
+                "render": "Este ascensor va a los pisos {level}"
+            }
         },
         "opening_hours": {
             "question": "¿Cuales son las horas de apertura de {title()}?",
