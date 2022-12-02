@@ -15,7 +15,7 @@
     "es": "Este tema es un intento de automatizar la importación GRB.",
     "da": "Dette tema er et forsøg på at hjælpe med at automatisere GRB-importen."
   },
-  "icon": "./assets/themes/grb_import/logo.svg",
+  "icon": "./assets/themes/grb/logo.svg",
   "startLat": 51.0249,
   "startLon": 4.026489,
   "startZoom": 9,
@@ -651,11 +651,11 @@
             "mappings": [
               {
                 "if": "_intersects_with_other_features~*",
-                "then": "./assets/themes/grb_import/warning.svg"
+                "then": "./assets/themes/grb/warning.svg"
               },
               {
                 "if": "addr:housenumber~*",
-                "then": "./assets/themes/grb_import/housenumber_blank.svg"
+                "then": "./assets/themes/grb/housenumber_blank.svg"
               }
             ]
           },

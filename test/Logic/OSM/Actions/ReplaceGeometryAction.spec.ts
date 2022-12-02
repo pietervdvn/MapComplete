@@ -294,7 +294,7 @@ describe("ReplaceGeometryAction", () => {
                 mapRendering: [
                     {
                         iconSize: "50,50,center",
-                        icon: "./assets/themes/grb_import/housenumber_blank.svg",
+                        icon: "./assets/themes/grb/housenumber_blank.svg",
                         location: ["point", "centroid"],
                     },
                 ],
