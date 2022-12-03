@@ -7366,6 +7366,11 @@
             "wheelchair-door-width": {
                 "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
                 "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist die Einrichtung, in der sich die Toilette befindet, geöffnet?"
+                }
             }
         },
         "title": {
