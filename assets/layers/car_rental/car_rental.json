@@ -1,0 +1,97 @@
+{
+  "id": "car_rental",
+  "name": {
+    "en": "Car Rental",
+    "nl": "Autoverhuur"
+  },
+  "source": {
+    "osmTags": "amenity=car_rental"
+  },
+  "minzoom": 12,
+  "title": {
+    "render": {
+      "en": "Car Rental",
+      "nl": "Autoverhuur"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": "{name}"
+      }
+    ]
+  },
+  "description": {
+    "en": "Places where you can rent a car",
+    "nl": "Plaatsen waar je een auto kunt huren"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "id": "name",
+      "freeform": {
+        "key": "name",
+        "type": "string",
+        "placeholder": {
+          "en": "Name of the car rental",
+          "nl": "Naam van de autoverhuur"
+        }
+      },
+      "question": {
+        "en": "What is the name of this car rental?",
+        "nl": "Wat is de naam van deze autoverhuur?"
+      },
+      "mappings": [
+        {
+          "if": "noname=yes",
+          "then": {
+            "en": "This car rental has no name",
+            "nl": "Deze autoverhuur heeft geen naam"
+          }
+        }
+      ],
+      "render": {
+        "en": "This car rental is called {name}",
+        "nl": "Deze autoverhuur heet {name}"
+      }
+    },
+    "website",
+    "email",
+    "phone",
+    "opening_hours"
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=car_rental"
+      ],
+      "title": {
+        "en": "a car rental",
+        "nl": "een autoverhuur"
+      },
+      "description": {
+        "en": "A place where you can rent a car",
+        "nl": "Een plaats waar je een auto kunt huren"
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": "circle:white;./assets/layers/car_rental/car_rental.svg",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": "<div class='bg-white block p-1 rounded'>{name}</div>"
+    },
+    {
+      "color": "darkblue",
+      "width": 2
+    }
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true
+  },
+  "filter": [
+    "open_now"
+  ]
+}

@@ -136,6 +136,19 @@
       }
     },
     {
+      "builtin": "car_rental",
+      "override": {
+        "isShown": {
+          "or": [
+            "indoor=room",
+            "indoor=area"
+          ]
+        },
+        "presets": null,
+        "minzoom": 19
+      }
+    },
+    {
       "builtin": [
         "food",
         "cafe_pub"

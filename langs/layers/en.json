@@ -1337,6 +1337,33 @@
             "render": "Pub"
         }
     },
+    "car_rental": {
+        "description": "Places where you can rent a car",
+        "name": "Car Rental",
+        "presets": {
+            "0": {
+                "description": "A place where you can rent a car",
+                "title": "a car rental"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name of the car rental"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This car rental has no name"
+                    }
+                },
+                "question": "What is the name of this car rental?",
+                "render": "This car rental is called {name}"
+            }
+        },
+        "title": {
+            "render": "Car Rental"
+        }
+    },
     "charging_station": {
         "description": "A charging station",
         "filter": {
