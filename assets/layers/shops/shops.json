@@ -206,6 +206,51 @@
     "internet",
     "internet-fee",
     "internet-ssid",
+    {
+      "id": "organic",
+      "question": {
+        "en": "Does this shop offer organic products?"
+      },
+      "mappings": [
+        {
+          "if": "organic=yes",
+          "then": {
+            "en": "This shop offers organic products"
+          }
+        },
+        {
+          "if": "organic=only",
+          "then": {
+            "en": "This shop only offers organic products"
+          }
+        },
+        {
+          "if": "organic=no",
+          "then": {
+            "en": "This shop does not offer organic products"
+          }
+        }
+      ],
+      "condition": {
+        "or": [
+          "shop=supermarket",
+          "shop=convenience",
+          "shop=farm",
+          "shop=greengrocer",
+          "shop=health_food",
+          "shop=clothes",
+          "shop=shoes",
+          "shop=butcher",
+          "shop=cosmetics",
+          "shop=deli",
+          "shop=bakery",
+          "shop=alcohol",
+          "shop=seafood",
+          "shop=beverages",
+          "shop=florist"
+        ]
+      }
+    },
     "questions",
     "reviews"
   ],
@@ -269,6 +314,15 @@
         {
           "if": "opening_hours~*",
           "then": "isOpen"
+        },
+        {
+          "if": {
+            "or": [
+              "organic=yes",
+              "organic=only"
+            ]
+          },
+          "then": "./assets/layers/food/organic.svg"
         }
       ],
       "label": {
@@ -341,6 +395,7 @@
       ]
     },
     "accepts_cash",
-    "accepts_cards"
+    "accepts_cards",
+    "has_organic"
   ]
 }

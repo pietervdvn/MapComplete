@@ -152,6 +152,22 @@
           }
         }
       ]
+    },
+    {
+      "id": "has_organic",
+      "options": [
+        {
+          "osmTags": {
+            "or": [
+              "organic=yes",
+              "organic=only"
+            ]
+          },
+          "question": {
+            "en": "Has organic options"
+          }
+        }
+      ]
     }
   ]
 }

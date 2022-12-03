@@ -607,6 +607,33 @@
       "id": "halal (no friture)"
     },
     {
+      "id": "organic (no friture)",
+      "question": {
+        "en": "Does this restaurant offer organic food?"
+      },
+      "mappings": [
+        {
+          "if": "organic=no",
+          "then": {
+            "en": "There are no organic options available"
+          }
+        },
+        {
+          "if": "organic=yes",
+          "then": {
+            "en": "There is an organic menu"
+          }
+        },
+        {
+          "if": "organic=only",
+          "then": {
+            "en": "Only organic options are available"
+          }
+        }
+      ],
+      "condition": "cuisine!=friture"
+    },
+    {
       "id": "friture-vegetarian",
       "question": {
         "en": "Does this fries shop have vegetarian snacks?",
@@ -679,6 +706,37 @@
             "nl": "Geen veganistische snacks beschikbaar",
             "fr": "Pas d'en-cas végétaliens disponibles",
             "de": "Es sind keine veganen Snacks verfügbar"
+          }
+        }
+      ],
+      "condition": "cuisine=friture"
+    },
+    {
+      "id": "friture-organic",
+      "question": {
+        "en": "Does this fries shop offer organic snacks?",
+        "nl": "Heeft deze frituur biologische snacks?"
+      },
+      "mappings": [
+        {
+          "if": "organic=yes",
+          "then": {
+            "en": "Organic snacks are available",
+            "nl": "Er zijn biologische snacks aanwezig"
+          }
+        },
+        {
+          "if": "organic=no",
+          "then": {
+            "en": "No organic snacks are available",
+            "nl": "Geen biologische snacks beschikbaar"
+          }
+        },
+        {
+          "if": "organic=only",
+          "then": {
+            "en": "Only organic snacks are available",
+            "nl": "Enkel biologische snacks zijn beschikbaar"
           }
         }
       ],
@@ -836,6 +894,7 @@
         }
       ]
     },
+    "has_organic",
     "accepts_cash",
     "accepts_cards"
   ],
@@ -913,7 +972,18 @@
             ]
           },
           "then": {
-            "render": "circle:white;./assets/themes/fritures/Vegetarian-mark.svg"
+            "render": "circle:white;./assets/layers/food/Vegetarian-mark.svg"
+          }
+        },
+        {
+          "if": {
+            "or": [
+              "organic=yes",
+              "organic=only"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/food/organic.svg"
           }
         }
       ],
