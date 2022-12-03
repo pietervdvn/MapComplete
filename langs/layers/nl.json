@@ -3910,6 +3910,20 @@
                 },
                 "question": "Bakt deze frituur met dierlijk vet of met plantaardige olie?"
             },
+            "friture-organic": {
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn biologische snacks aanwezig"
+                    },
+                    "1": {
+                        "then": "Geen biologische snacks beschikbaar"
+                    },
+                    "2": {
+                        "then": "Enkel biologische snacks zijn beschikbaar"
+                    }
+                },
+                "question": "Heeft deze frituur biologische snacks?"
+            },
             "friture-take-your-container": {
                 "mappings": {
                     "0": {

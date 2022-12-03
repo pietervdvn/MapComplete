@@ -218,10 +218,11 @@ export class AllKnownLayouts {
             new Title(new Combine([theme.title, "(", theme.id + ")"]), 2),
             theme.description,
             "This theme contains the following layers:",
-            new List(theme.layers.map((l) => l.id)),
+            new List(theme.layers.filter(l => !l.id.startsWith("note_import_")).map((l) =>
+                new Link(l.id, "../Layers/"+l.id+".md"))),
             "Available languages:",
-            new List(theme.language),
-        ])
+            new List(theme.language.filter(ln => ln !== "_context")),
+        ]).SetClass("flex flex-col")
     }
 
     public static getSharedLayers(): Map<string, LayerConfig> {

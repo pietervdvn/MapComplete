@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 208,
+      "commits": 211,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 181,
+      "commits": 185,
       "contributor": "kjon"
     },
     {
@@ -37,7 +37,7 @@
       "contributor": "Artem"
     },
     {
-      "commits": 26,
+      "commits": 27,
       "contributor": "Supaplex"
     },
     {
@@ -82,11 +82,11 @@
     },
     {
       "commits": 11,
-      "contributor": "Olivier"
+      "contributor": "Jiří Podhorecký"
     },
     {
-      "commits": 10,
-      "contributor": "Jiří Podhorecký"
+      "commits": 11,
+      "contributor": "Olivier"
     },
     {
       "commits": 10,
@@ -107,6 +107,10 @@
     {
       "commits": 9,
       "contributor": "Jacque Fresco"
+    },
+    {
+      "commits": 7,
+      "contributor": "快乐的老鼠宝宝"
     },
     {
       "commits": 7,
@@ -170,10 +174,6 @@
     },
     {
       "commits": 5,
-      "contributor": "快乐的老鼠宝宝"
-    },
-    {
-      "commits": 5,
       "contributor": "David Haberthür"
     },
     {
@@ -207,6 +207,10 @@
     {
       "commits": 4,
       "contributor": "Fabio Bettani"
+    },
+    {
+      "commits": 3,
+      "contributor": "Jaime Marquínez Ferrándiz"
     },
     {
       "commits": 3,
@@ -335,10 +339,6 @@
     {
       "commits": 1,
       "contributor": "Stéphane De Greef"
-    },
-    {
-      "commits": 1,
-      "contributor": "Jaime Marquínez Ferrándiz"
     },
     {
       "commits": 1,

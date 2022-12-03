@@ -3763,6 +3763,13 @@
                         "question": "No information about tactile paving"
                     }
                 }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Has organic options"
+                    }
+                }
             }
         }
     },
@@ -4156,6 +4163,20 @@
                 },
                 "question": "Does this fries shop use vegetable or animal oil for cooking?"
             },
+            "friture-organic": {
+                "mappings": {
+                    "0": {
+                        "then": "Organic snacks are available"
+                    },
+                    "1": {
+                        "then": "No organic snacks are available"
+                    },
+                    "2": {
+                        "then": "Only organic snacks are available"
+                    }
+                },
+                "question": "Does this fries shop offer organic snacks?"
+            },
             "friture-take-your-container": {
                 "mappings": {
                     "0": {
@@ -4214,6 +4235,20 @@
                     }
                 },
                 "question": "Does this restaurant offer a halal menu?"
+            },
+            "organic (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "There are no organic options available"
+                    },
+                    "1": {
+                        "then": "There is an organic menu"
+                    },
+                    "2": {
+                        "then": "Only organic options are available"
+                    }
+                },
+                "question": "Does this restaurant offer organic food?"
             }
         },
         "title": {
@@ -6510,6 +6545,20 @@
                     "question": "What kind of shop is this?",
                     "render": "This is a {shop}"
                 }
+            },
+            "organic": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop offers organic products"
+                    },
+                    "1": {
+                        "then": "This shop only offers organic products"
+                    },
+                    "2": {
+                        "then": "This shop does not offer organic products"
+                    }
+                },
+                "question": "Does this shop offer organic products?"
             },
             "shops-name": {
                 "question": "What is the name of this shop?",

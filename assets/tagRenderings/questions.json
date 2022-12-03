@@ -595,7 +595,8 @@
       "es": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.<br/><span style='font-size: small'>No repita datos ya expresados</span>",
       "sl": "Ali je še kaj pomembnega, česar niste mogli povedati v prejšnjih vprašanjih? Dopišite tukaj.<br/><span style='font-size: small'>Ne ponavljajte že navedenih dejstev</span>",
       "fil": "Mayroon pa bang mga bagay na nau-ugnay at hindi mo maibigay sa mga nakaraang tanong? Idagdag dito.<br/><span style='font-size: small'>Huwag ulitin ang mga nai-saad na</span>",
-      "da": "Er der stadig noget relevant, du ikke kunne give i de foregående spørgsmål? Tilføj det her.<br/><span style='font-size: small'>Gentag ikke allerede nævnte fakta</span>"
+      "da": "Er der stadig noget relevant, du ikke kunne give i de foregående spørgsmål? Tilføj det her.<br/><span style='font-size: small'>Gentag ikke allerede nævnte fakta</span>",
+      "cs": "Je ještě něco relevantního, co jste nemohli uvést v předchozích otázkách? Přidejte to sem.<br/><span style='font-size: small'>Neopakujte již uvedená fakta</span>"
     },
     "render": "{description}",
     "freeform": {
@@ -673,7 +674,8 @@
             "es": "Abierta 24/7 (incluyendo festivos)",
             "nl": "24/7 open (ook tijdens feestdagen)",
             "fr": "Ouvert 24h/24 (jours fériés compris)",
-            "nb_NO": "Døgnåpent (inkludert helligdager)"
+            "nb_NO": "Døgnåpent (inkludert helligdager)",
+            "cs": "Otevřeno 24/7 (včetně svátků)"
           }
         }
       ]
@@ -948,7 +950,8 @@
         "id": "Pada lantai berapa saja lift ini berjalan?",
         "cs": "Do jakých podlaží tento výtah jezdí?",
         "nb_NO": "Hvilke etasjer går heisen til?",
-        "nl": "Naar welke verdiepingen gaat deze lift?"
+        "nl": "Naar welke verdiepingen gaat deze lift?",
+        "es": "¿A qué pisos va este ascensor?"
       },
       "render": {
         "en": "This elevator goes to floors {level}",
@@ -959,7 +962,8 @@
         "id": "Lift ini berjalan ke lantai {level}",
         "cs": "Tento výtah jede do {level} patra",
         "nb_NO": "Heisen går til etasje {level}",
-        "nl": "Deze lift gaat naar de verdiepingen {level}"
+        "nl": "Deze lift gaat naar de verdiepingen {level}",
+        "es": "Este ascensor va a los pisos {level}"
       },
       "freeform": {
         "key": "level",
@@ -1278,7 +1282,8 @@
       "da": "Tilbyder dette sted internetadgang?",
       "id": "Apa tempat ini menyediakan jaringan internet?",
       "cs": "Nabízí toto místo připojení k internetu?",
-      "nb_NO": "Tilbyr dette stedet tilgang til Internett?"
+      "nb_NO": "Tilbyr dette stedet tilgang til Internett?",
+      "es": "¿Ofrece este lugar acceso a internet?"
     },
     "mappings": [
       {
@@ -1292,7 +1297,8 @@
           "da": "Dette sted tilbyder trådløs internetadgang",
           "id": "Tempat ini menyediakan jaringan internet nirkabel",
           "cs": "Toto místo nabízí bezdrátové připojení k internetu",
-          "nb_NO": "Dette stedet tilbyr trådløs tilgang til Internett"
+          "nb_NO": "Dette stedet tilbyr trådløs tilgang til Internett",
+          "es": "Este lugar ofrece acceso a internet inalámbrico"
         }
       },
       {
@@ -1306,7 +1312,8 @@
           "da": "Dette sted <b>tilbyder ikke</b> internetadgang",
           "id": "Tempat ini <b>tidak</b> menyediakan jaringan internet",
           "cs": "Toto místo <b>neposkytuje</b> připojení k internetu",
-          "nb_NO": "Dette stedet tilbyr <b>ikke</b> tilgang til Internett"
+          "nb_NO": "Dette stedet tilbyr <b>ikke</b> tilgang til Internett",
+          "es": "Este lugar <b>no</b> ofrece acceso a internet"
         }
       },
       {
@@ -1320,7 +1327,8 @@
           "da": "Dette sted tilbyder internetadgang",
           "id": "Tempat ini menyediakan jaringan internet",
           "cs": "Toto místo nabízí přístup k internetu",
-          "nb_NO": "Dette stedet tilbyr tilgang til Internett"
+          "nb_NO": "Dette stedet tilbyr tilgang til Internett",
+          "es": "Este lugar ofrece acceso a internet"
         },
         "hideInAnswer": true
       },
@@ -1334,7 +1342,8 @@
           "da": "Dette sted tilbyder internetadgang via en terminal eller computer",
           "id": "Tempat ini menyediakan jaringan internet melalui terminal atau komputer",
           "cs": "Toto místo nabízí přístup k internetu prostřednictvím terminálu nebo počítače",
-          "nb_NO": "Dette stedet tilbyr tilgang til Internett via en terminal eller datamaskin"
+          "nb_NO": "Dette stedet tilbyr tilgang til Internett via en terminal eller datamaskin",
+          "es": "Este lugar ofrece acceso a internet a través de una terminal o un ordenador"
         }
       },
       {
@@ -1347,7 +1356,8 @@
           "da": "Dette sted tilbyder internetadgang via kabel",
           "id": "Tempat ini menyediakan jaringan internet kabel",
           "cs": "Toto místo nabízí kabelové připojení k internetu",
-          "nb_NO": "Dette stedet tilbyr trådbunden tilgang til Internett"
+          "nb_NO": "Dette stedet tilbyr trådbunden tilgang til Internett",
+          "es": "Este lugar ofrece acceso a internet por cable"
         }
       }
     ]
@@ -1393,7 +1403,8 @@
           "da": "Internetadgang er gratis på dette sted",
           "id": "Jaringan internet tersedia gratis di tempat ini",
           "cs": "Přístup k internetu je zde zdarma",
-          "nb_NO": "Tilgang til Internett er gratis på dette stedet"
+          "nb_NO": "Tilgang til Internett er gratis på dette stedet",
+          "es": "El acceso a internet es gratuito en este lugar"
         }
       },
       {
@@ -1406,7 +1417,8 @@
           "da": "Internetadgang er gratis på dette sted, kun for kunder",
           "id": "Jaringan internet tersedia gratis di tempat ini, hanya untuk pelanggan",
           "cs": "Přístup k internetu je na tomto místě zdarma, pouze pro zákazníky",
-          "nb_NO": "Tilgang til Internett på dette stedet er gratis, men kun for kunder"
+          "nb_NO": "Tilgang til Internett på dette stedet er gratis, men kun for kunder",
+          "es": "El acceso a internet es gratis en este lugar, solamente para clientes"
         }
       }
     ]
@@ -1421,7 +1433,8 @@
       "da": "Hvad er netværksnavnet for den trådløse internetadgang?",
       "id": "Apa nama jaringan internet nirkabelnya?",
       "cs": "Jaký je název sítě pro bezdrátový přístup k internetu?",
-      "nb_NO": "Hva er nettverksnavnet for det trådløse nettverket?"
+      "nb_NO": "Hva er nettverksnavnet for det trådløse nettverket?",
+      "es": "¿Cuál es el nombre de red para el acceso inalámbrico a internet?"
     },
     "freeform": {
       "key": "internet_access:ssid",
@@ -1435,7 +1448,8 @@
         "id": "Masukkan nama jaringan",
         "cs": "Zadejte název sítě",
         "nb_NO": "Skriv inn nettverksnavnet",
-        "pa_PK": "نیٹورک دا ناں پایو"
+        "pa_PK": "نیٹورک دا ناں پایو",
+        "es": "Introduzca el nombre de red"
       }
     },
     "mappings": [
@@ -1453,7 +1467,8 @@
       "da": "Netværksnavnet er <b>{internet_access:ssid}</b>",
       "id": "Nama jaringan ini adalah <b>{internet_access:ssid}</b>",
       "cs": "Název sítě je <b>{internet_access:ssid}</b>",
-      "nb_NO": "Nettverksnavnet er <b>{internet_access:ssid}</b>"
+      "nb_NO": "Nettverksnavnet er <b>{internet_access:ssid}</b>",
+      "es": "El nombre de red es <b>{internet_access:ssid}</b>"
     }
   }
 }

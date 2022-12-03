@@ -39,6 +39,12 @@
         "panelIntro": "<h3>你的個人主題</h3>從所有官方主題啟用你喜愛的圖層",
         "reload": "重新載入資料"
     },
+    "flyer": {
+        "aerial": "這份地圖使用不同的背景，是 Agentschap Informatie Vlaanderen 釋出的空照圖",
+        "callToAction": "在 mapcomplete.osm.be 測試",
+        "cyclofix": "單車設施修正上的單車甬筒、修理站、飲水機與單車店",
+        "description": "宣傳 MapComplete 的 A4 大小傳單"
+    },
     "general": {
         "about": "相當容易編輯，而且能為開放街圖新增特定主題",
         "aboutMapcomplete": "<h3>關於</h3><p>使用 MapComplete 你可以藉由<b>單一主題</b>新增開放街圖的圖資。回答幾個問題，然後幾分鐘之內你的貢獻立刻就傳遍全球！大部分的主題都能新增圖片甚至留下評論。<b>主題維護者</b>定議主題的元素、問題與語言。</p><h3>發現更多</h3><p>MapComplete 總是提供學習更多開放街圖<b>下一步的知識</b>。</p><ul><li>當你內嵌網站，網頁內嵌會連結到全螢幕的 MapComplete</li><li>全螢幕的版本提供關於開放街圖的資訊</li><li>不登入檢視成果，但是要編輯則需要 OSM 帳號。</li><li>如果你沒有登入，你會被要求先登入</li><li>當你回答單一問題時，你可以在地圖新增新的圖徵</li><li>過了一陣子，實際的 OSM-標籤會顯示，之後會連結到 wiki</li></ul><p></p><br><p>你有注意到<b>問題</b>嗎？你想請求<b>功能</b>嗎？想要<b>幫忙翻譯</b>嗎？來到<a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">原始碼</a>或是<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">問題追蹤器。</a></p><p>想要看到<b>你的進度</b>嗎？到<a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>追蹤編輯數。</p>",

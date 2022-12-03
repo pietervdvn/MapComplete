@@ -82,6 +82,10 @@
             }
         },
         "tagRenderings": {
+            "artwork-artist-wikidata": {
+                "question": "¿Quién creó esta obra de arte?",
+                "render": "Esta obra de la creó {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+            },
             "artwork-artist_name": {
                 "question": "¿Que artista creó esto?",
                 "render": "Creado por {artist_name}"
@@ -131,6 +135,10 @@
             "artwork-website": {
                 "question": "¿Hay un sitio web con más información sobre esta obra de arte?",
                 "render": "Más información en <a href='{website}' target='_blank'>este sitio web</a>"
+            },
+            "artwork_subject": {
+                "question": "¿Qué representa esta obra de arte?",
+                "render": "Esta obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
             }
         },
         "title": {
@@ -255,10 +263,10 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Respaldo: sí"
+                        "then": "Tiene respaldo"
                     },
                     "1": {
-                        "then": "Respaldo: no"
+                        "then": "<b>No</b> tiene respaldo"
                     }
                 },
                 "question": "¿Este banco tiene respaldo?"
@@ -300,22 +308,22 @@
             "bench-material": {
                 "mappings": {
                     "0": {
-                        "then": "Material: madera"
+                        "then": "El asiento está hecho de madera"
                     },
                     "1": {
-                        "then": "Material: metal"
+                        "then": "El asiento está hecho de metal"
                     },
                     "2": {
-                        "then": "Material: piedra"
+                        "then": "El asiento está hecho de piedra"
                     },
                     "3": {
-                        "then": "Material: concreto"
+                        "then": "El asiento está hecho de hormigón"
                     },
                     "4": {
-                        "then": "Material: plastico"
+                        "then": "El asiento está hecho de plástico"
                     },
                     "5": {
-                        "then": "Material: acero"
+                        "then": "El asiento está hecho de acero"
                     }
                 },
                 "question": "¿De que está hecho el banco (asiento)?",
@@ -492,6 +500,12 @@
                 "question": "¿Qué tipo de alquiler de bicicletas es este?"
             },
             "rental_types": {
+                "renderings": {
+                    "0": {
+                        "question": "¿Cuántas type_plural pueden alquilarse aquí?",
+                        "render": "{capacity:bicycle_type} type_plural pueden alquilarse aquí"
+                    }
+                },
                 "rewrite": {
                     "into": {
                         "0": {
@@ -566,10 +580,10 @@
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
-                        "then": "Un servicio de limpieza gratis"
+                        "then": "Servicio de limpieza gratis"
                     },
                     "1": {
-                        "then": "Gratis"
+                        "then": "Gratuito"
                     }
                 },
                 "question": "¿Cuánto cuesta utilizar el servicio de limpieza?",
@@ -578,7 +592,7 @@
             "bike_cleaning-service:bicycle:cleaning:charge": {
                 "mappings": {
                     "0": {
-                        "then": "El servicio de limpieza es gratis"
+                        "then": "El servicio de limpieza es gratuito"
                     },
                     "1": {
                         "then": "Gratis"
