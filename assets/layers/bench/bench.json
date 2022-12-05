@@ -50,6 +50,15 @@
       "pa_PK": "بینچ"
     }
   },
+  "description": {
+    "nl": "Een zitbank is een houten, metalen, stenen, … oppervlak waar een mens kan zitten. Deze laag toont ze en stelt er enkele vragen over.",
+    "en": "A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them.",
+    "fr": "Un banc est une surface en bois, métal, pierre… sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet.",
+    "de": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, … dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen.",
+    "es": "Un banco es una superficie de madera, metal, piedra, ... donde un humano se puede sentar. Estas capas los visualizan y hacen algunas preguntas sobre ellos.",
+    "da": "En bænk er en træ-, metal-, sten-, ... overflade, hvor et menneske kan sidde. Dette lag visualiserer dem og stiller et par spørgsmål om dem.",
+    "cs": "Lavička je dřevěná, kovová, kamenná, ... plocha, na které může člověk sedět. Tato vrstva je vizualizuje a klade si o nich několik otázek."
+  },
   "tagRenderings": [
     "images",
     {
@@ -167,7 +176,16 @@
         "da": "Hvor mange pladser har denne bænk?",
         "cs": "Kolik má tato lavice míst k sezení?"
       },
-      "id": "bench-seats"
+      "id": "bench-seats",
+      "mappings": [
+        {
+          "if": "seats:separated=no",
+          "then": {
+            "en": "This bench does not have separated seats",
+            "nl": "Deze bank is niet ingedeeld in aparte zitplaatsen"
+          }
+        }
+      ]
     },
     {
       "render": {
@@ -680,10 +698,93 @@
       "mappings": [
         {
           "if": "survey:date:={_now:date}",
-          "then": "Surveyed today!"
+          "then": {
+           "en": "Surveyed today!",
+            "nl": "Vandaag nagekeken!"
+          }
         }
       ],
       "id": "bench-survey:date"
+    },
+    {
+      "id": "bench-inscription",
+      "render": {
+        "en": "This bench does have the following inscription:<br/><p><i>{inscription}</i></p>",
+        "nl": "Deze bank heeft een inscriptie: <br/><p><i>{inscription}</i></p>"
+      },
+      "question": {
+        "en": "Does this bench have an inscription?<div class='subtle text-lg'>E.g. on a mounted plaque, in the backrest, ...</div>",
+        "nl": "Heeft deze bank een inscriptie?<div class='subtle text-lg'>Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...</div>"
+      },
+      "freeform": {
+        "key": "inscription",
+        "type": "text",
+        "addExtraTags": [
+          "not:inscription="
+        ]
+      },
+      "mappings": [
+        {
+          "if": "not:inscription=yes",
+          "then": {
+            "en": "This bench does not have an inscription",
+            "nl": "Deze bank heeft geen inscriptie"
+          },
+          "addExtraTags": [
+            "inscription="
+          ]
+        },
+        {
+          "if": "inscription=",
+          "then": {
+            "en": "This bench does <span class='subtle'>(probably)</span> not have an inscription",
+            "nl": "Deze bank heeft <span class='subtle'>(waarschijnlijk)</span> geen inscriptie"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "bench-memorial",
+      "condition": {
+        "or": [
+          "historic=memorial",
+          "inscription~*",
+          "memorial=bench"
+        ]
+      },
+      "question": {
+        "en": "Does this bench act as memorial for someone or something?",
+        "nl": "Is deze bank een gedenkteken voor iemand of iets?"
+      },
+      "mappings": [
+        {
+          "if": "historic=memorial",
+          "then": {
+            "en": "This bench is a memorial for someone or something",
+            "nl": "Deze bank is een gedenkteken aan iemand of iets"
+          },
+          "addExtraTags": [
+            "memorial=bench"
+          ]
+        },
+        {
+          "if": {
+            "and": [
+              "historic=",
+              "memorial=",
+              "not:historic=memorial"
+            ]
+          },
+          "then": {
+            "en": "This bench is a <b>not</b> a memorial for someone or something",
+            "nl": "Deze bank is <b>geen</b> gedenkteken aan iemand of iets"
+          },
+          "addExtraTags": [
+            "memorial=bench"
+          ]
+        }
+      ]
     }
   ],
   "presets": [
@@ -743,13 +844,45 @@
       ]
     }
   ],
-  "description": {
-    "nl": "Een zitbank is een houten, metalen, stenen, … oppervlak waar een mens kan zitten. Deze laag toont ze en stelt er enkele vragen over.",
-    "en": "A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them.",
-    "fr": "Un banc est une surface en bois, métal, pierre… sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet.",
-    "de": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, … dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen.",
-    "es": "Un banco es una superficie de madera, metal, piedra, ... donde un humano se puede sentar. Estas capas los visualizan y hacen algunas preguntas sobre ellos.",
-    "da": "En bænk er en træ-, metal-, sten-, ... overflade, hvor et menneske kan sidde. Dette lag visualiserer dem og stiller et par spørgsmål om dem.",
-    "cs": "Lavička je dřevěná, kovová, kamenná, ... plocha, na které může člověk sedět. Tato vrstva je vizualizuje a klade si o nich několik otázek."
-  }
+  "filter": [
+    {
+      "id": "bench_is_memorial",
+      "options": [{
+        "osmTags": {
+          "or": ["historic=memorial","memorial=bench"]
+        },
+        "question": {
+          "en": "is a memorial",
+          "nl": "is een gedenkteken"
+        }
+      }
+      ]
+    },
+    {
+      "id": "has_backrest",
+      "options": [
+        {
+          "question": {
+            "en":"With and without backrest",
+            "nl": "Met en zonder rugleuning"
+          }
+        },
+        {
+          "osmTags": "backrest=yes",
+          "question": {
+            "en": "Has a backrest",
+            "nl": "Heeft een rugleuning"
+          }
+        },
+        {
+          "osmTags": "backrest=no",
+          "question": {
+            "en": "Has no backrest",
+            "nl": "Heeft geen rugleuning"
+          }
+        }
+      ]
+    },
+    "has_image"
+  ]
 }
