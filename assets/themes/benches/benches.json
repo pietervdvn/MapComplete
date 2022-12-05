@@ -58,9 +58,9 @@
   "startZoom": 1,
   "widenFactor": 1.5,
   "layers": [
+    "picnic_table",
     "bench",
-    "bench_at_pt",
-    "picnic_table"
+    "bench_at_pt"
   ],
   "credits": "Florian Edelmann"
 }
