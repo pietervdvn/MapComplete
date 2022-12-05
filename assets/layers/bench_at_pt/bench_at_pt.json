@@ -21,9 +21,14 @@
   "minzoom": 14,
   "source": {
     "osmTags": {
-      "or": [
-        "bench=yes",
-        "bench=stand_up_bench"
+      "and": [
+        "highway=bus_stop",
+        {
+          "or": [
+            "bench=yes",
+            "bench=stand_up_bench"
+          ]
+        }
       ]
     }
   },
@@ -209,6 +214,28 @@
       }
     }
   ],
+  "deletion": {
+    "omitDefaultDeleteReasons": true,
+    "nonDeleteMappings": [
+      {
+        "if": "bench=no",
+        "then": {
+          "en": "This bus stop does not have a bench (there never was one or it has been removed)"
+        }
+      }
+    ],
+    "extraDeleteReasons": [
+      {
+        "changesetMessage": "discontinued",
+        "explanation": {
+          "en": "This bus stop is not used anymore"
+        }
+      }
+    ],
+    "softDeletionTags": {
+      "and": ["disused:highway=bus_stop","bench=no"]
+    }
+  },
   "description": {
     "en": "A layer showing all public-transport-stops which do have a bench",
     "es": "Una capa que muestra todas las paradas de transporte público que tienen bancos",
