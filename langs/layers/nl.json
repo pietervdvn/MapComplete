@@ -6183,6 +6183,20 @@
             "shops-name": {
                 "question": "Wat is de naam van deze winkel?",
                 "render": "Deze zaak heet <i>{name}</i>"
+            },
+            "organic": {
+                "mappings": {
+                    "1": {
+                        "then": "Deze winkel biedt uitluitend biologische producten aan"
+                    },
+                    "0": {
+                        "then": "Deze winkel biedt biologische producten aan"
+                    },
+                    "2": {
+                        "then": "Deze winkel heeft geen biologische producten"
+                    }
+                },
+                "question": "Biedt deze winkel biologische producten aan?"
             }
         },
         "title": {
