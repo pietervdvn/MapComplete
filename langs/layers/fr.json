@@ -2123,22 +2123,25 @@
             "render": "Défibrillateur"
         }
     },
+    "dentist": {
+        "presets": {
+            "0": {
+                "title": "un cabinet de dentistes"
+            }
+        },
+        "title": {
+            "render": "Cabinet medical {name}"
+        }
+    },
     "direction": {
         "description": "Cette couche visualise les directions",
         "name": "Visualisation de la direction"
     },
     "doctors": {
-        "description": "Ce calque montre les cabinets médicaux, les dentistes et autres établissements de santé",
         "name": "Médecins",
         "presets": {
             "0": {
                 "title": "un cabinet médical"
-            },
-            "1": {
-                "title": "un cabinet de dentistes"
-            },
-            "2": {
-                "title": "un cabinet de kinésithérapeutes"
             }
         },
         "tagRenderings": {
@@ -3195,6 +3198,13 @@
     "pedestrian_path": {
         "description": "Sentiers piétonniers, particulièrement utilisés pour la navigation intérieure et les entrées d'accrochage à cette couche",
         "name": "Sentiers piétons"
+    },
+    "physiotherapist": {
+        "presets": {
+            "0": {
+                "title": "un cabinet de kinésithérapeutes"
+            }
+        }
     },
     "picnic_table": {
         "description": "La couche montrant les tables de pique-nique",

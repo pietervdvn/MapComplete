@@ -3273,22 +3273,25 @@
             "render": "Defibrillator"
         }
     },
+    "dentist": {
+        "presets": {
+            "0": {
+                "title": "eine Zahnarztpraxis"
+            }
+        },
+        "title": {
+            "render": "Arztpraxis {name}"
+        }
+    },
     "direction": {
         "description": "Diese Ebene visualisiert Richtungen",
         "name": "Aufnahmewinkel der Kamera anzeigen"
     },
     "doctors": {
-        "description": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen",
         "name": "Ärzte",
         "presets": {
             "0": {
                 "title": "eine Arztpraxis"
-            },
-            "1": {
-                "title": "eine Zahnarztpraxis"
-            },
-            "2": {
-                "title": "Praxis eines Physiotherapeuten"
             }
         },
         "tagRenderings": {
@@ -5573,6 +5576,13 @@
                 }
             },
             "render": "{name}"
+        }
+    },
+    "physiotherapist": {
+        "presets": {
+            "0": {
+                "title": "Praxis eines Physiotherapeuten"
+            }
         }
     },
     "picnic_table": {

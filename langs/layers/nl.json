@@ -3220,22 +3220,26 @@
             "render": "Defibrillator"
         }
     },
+    "dentist": {
+        "name": "Tandarts",
+        "presets": {
+            "0": {
+                "title": "een tandartspraktijk"
+            }
+        },
+        "title": {
+            "render": "Dokterspraktijk {name}"
+        }
+    },
     "direction": {
         "description": "Deze laag toont de oriëntatie van een object",
         "name": "Richtingsvisualisatie"
     },
     "doctors": {
-        "description": "Deze laag toont dokterspraktijken, tandartsen en andere gezondheidszorgfaciliteiten",
         "name": "Dokters",
         "presets": {
             "0": {
                 "title": "een dokterspraktijk"
-            },
-            "1": {
-                "title": "een tandartspraktijk"
-            },
-            "2": {
-                "title": "een fysiotherapeutenpraktijk"
             }
         },
         "tagRenderings": {
@@ -5357,6 +5361,24 @@
                 }
             },
             "render": "{name}"
+        }
+    },
+    "physiotherapist": {
+        "description": "Deze laag toont kinesisten",
+        "name": "Kinesist",
+        "presets": {
+            "0": {
+                "title": "een fysiotherapeutenpraktijk"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wat is de naam van deze kinesistenpraktijk?",
+                "render": "Deze kinesistenpraktijk heet {name}"
+            }
+        },
+        "title": {
+            "render": "Kinesist {name}"
         }
     },
     "picnic_table": {
