@@ -805,7 +805,7 @@
                     },
                     "host": {
                         "question": "What host (website) was this change made with?",
-                        "render": "Change with with <a href='{host}'>{host}</a>"
+                        "render": "Change with <a href='{host}'>{host}</a>"
                     },
                     "locale": {
                         "question": "What locale (language) was this change made in?",
