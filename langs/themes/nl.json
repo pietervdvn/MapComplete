@@ -938,6 +938,33 @@
                         }
                     }
                 }
+            },
+            "19": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importeren"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Voeg alle gesuggereerde tags toe"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "18": {
+                "override": {
+                    "=title": {
+                        "render": "Statistieken"
+                    }
+                }
             }
         },
         "title": "OnWheels"
@@ -1041,6 +1068,28 @@
                 "tagRenderings": {
                     "streetname": {
                         "render": "Deze straat heet {name}"
+                    },
+                    "left-right-questions": {
+                        "renderings": {
+                            "1": {
+                                "mappings": {
+                                    "2": {
+                                        "then": "Er is een apart ingetekende stoep om op te lopen"
+                                    },
+                                    "1": {
+                                        "then": "Nee, er is geen stoep om op te lopen"
+                                    },
+                                    "0": {
+                                        "then": "Ja, er is een stoep aan deze kant van de weg"
+                                    }
+                                },
+                                "question": "Is er een stoep aan deze kant van de weg?"
+                            },
+                            "2": {
+                                "question": "Hoe breed is de stoep aan deze kant van de weg?",
+                                "render": "Deze stoep is {sidewalk:left|right:width}m breed"
+                            }
+                        }
                     }
                 },
                 "title": {
@@ -1211,11 +1260,17 @@
                 },
                 "tagRenderings": {
                     "contributor": {
-                        "render": ""
+                        "render": "Wijziging gemaakt door <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
                     },
                     "theme-id": {
                         "render": "Wijziging met thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
                         "question": "Welk thema is gebruikt voor deze wijziging?"
+                    },
+                    "host": {
+                        "render": "Wijziging met <a href='{host}'>{host}</a>"
+                    },
+                    "show_changeset_id": {
+                        "render": "Wijzigingenset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
                     }
                 },
                 "filter": {
@@ -1260,12 +1315,39 @@
                                 "question": "Themanaam bevat {search}"
                             }
                         }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Gebruikerstaal (iso-code) {search}"
+                            }
+                        }
+                    }
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "Meer statistieken zijn <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a> te vinden"
+                        }
                     }
                 }
             }
-        }
+        },
+        "title": "Wijzigingen gemaakt met MapComplete",
+        "shortDescription": "Toont wijzigingen gemaakt met MapComplete"
     },
     "transit": {
-        "title": "Busroutes"
+        "title": "Busroutes",
+        "description": "Plan je trip met behulp van het openbaar vervoer."
+    },
+    "walls_and_buildings": {
+        "title": "Muren en gebouwen",
+        "description": "Speciale ingebouwde laag voor alle muren en gebouwen. Deze laag is nuttig in voorkeuzen voor objecten die tegen muren geplaatst kunnen worden (bv. AEDs, brievenbussen, ingangen, adressen, beveiligingscamera's,…). Deze laag is standaard onzichtbaar en niet in te schakelen door de gebruiker."
+    },
+    "maproulette": {
+        "title": "MapRoulette taken",
+        "description": "Thema met MapRoulette taken, waar je ze kunt zoeken, filteren en ze oplossen."
     }
 }
