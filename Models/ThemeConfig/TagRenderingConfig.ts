@@ -684,9 +684,8 @@ export default class TagRenderingConfig {
         let condition: BaseUIElement = undefined
         if (this.condition !== undefined && !this.condition?.matchesProperties({})) {
             condition = new Combine([
-                "Only visible if ",
-                new FixedUiElement(this.condition.asHumanString(false, false, {})).SetClass("code"),
-                " is shown",
+                "This tagrendering is only visible in the popup if the following condition is met:",
+                new FixedUiElement(this.condition.asHumanString(false, false, {})).SetClass("code")
             ])
         }
 
