@@ -131,7 +131,10 @@
         "da": "Har denne bænk et ryglæn?",
         "cs": "Má tato lavička opěradlo?"
       },
-      "id": "bench-backrest"
+      "id": "bench-backrest",
+      "labels": [
+        "bench-questions"
+      ]
     },
     {
       "render": {
@@ -177,6 +180,9 @@
         "cs": "Kolik má tato lavice míst k sezení?"
       },
       "id": "bench-seats",
+      "labels": [
+        "bench-questions"
+      ],
       "mappings": [
         {
           "if": "seats:separated=no",
@@ -375,7 +381,10 @@
         "da": "Hvad er bænken (sædet) lavet af?",
         "cs": "Z čeho je vyrobena lavice (sedadlo)?"
       },
-      "id": "bench-material"
+      "id": "bench-material",
+      "labels": [
+        "bench-questions"
+      ]
     },
     {
       "question": {
@@ -416,6 +425,9 @@
         "key": "direction",
         "type": "direction"
       },
+      "labels": [
+        "bench-questions"
+      ],
       "id": "bench-direction"
     },
     {
@@ -656,6 +668,9 @@
           }
         }
       ],
+      "labels": [
+        "bench-questions"
+      ],
       "id": "bench-colour"
     },
     {
@@ -699,15 +714,21 @@
         {
           "if": "survey:date:={_now:date}",
           "then": {
-           "en": "Surveyed today!",
+            "en": "Surveyed today!",
             "nl": "Vandaag nagekeken!"
           }
         }
+      ],
+      "labels": [
+        "bench-questions"
       ],
       "id": "bench-survey:date"
     },
     {
       "id": "bench-inscription",
+      "labels": [
+        "bench-questions"
+      ],
       "render": {
         "en": "This bench does have the following inscription:<br/><p><i>{inscription}</i></p>",
         "nl": "Deze bank heeft een inscriptie: <br/><p><i>{inscription}</i></p>"
@@ -745,12 +766,39 @@
       ]
     },
     {
+      "id": "bench-artwork",
+      "question": {
+        "en": "Does this bench have an artistic element?<div class='subtle text-lg'>E.g. it has an integrated painting, statue or other non-trivial, creative work</div>",
+        "nl": "Heeft deze bank een geïntegreerd kunstwerk?<div class='subtle text-lg'>Bijvoorbeeld een standbeeld, schildering of ander, niet-triviaal kunstwerk</div>"
+      },
+      "mappings": [
+        {
+          "if": "tourism=artwork",
+          "then": {
+            "en": "This bench has an integrated artwork",
+            "nl": "Deze bank heeft een geïntegreerd kunstwerk"
+          }
+        },
+        {
+          "if": "tourism=",
+          "then": {
+            "en": "This bench does not have an integrated artwork",
+            "nl": "Deze bank heeft geen geïntegreerd kunstwerk"
+          }
+        }
+      ]
+    },
+    {
       "id": "bench-memorial",
+      "labels": [
+        "bench-questions"
+      ],
       "condition": {
         "or": [
           "historic=memorial",
           "inscription~*",
-          "memorial=bench"
+          "memorial=bench",
+          "tourism=artwork"
         ]
       },
       "question": {
@@ -772,7 +820,6 @@
           "if": {
             "and": [
               "historic=",
-              "memorial=",
               "not:historic=memorial"
             ]
           },
@@ -781,11 +828,18 @@
             "nl": "Deze bank is <b>geen</b> gedenkteken aan iemand of iets"
           },
           "addExtraTags": [
-            "memorial=bench"
+            "memorial="
           ]
         }
       ]
+    },
+    {
+      "builtin": "artwork.*artwork-question",
+      "override": {
+        "condition": "tourism=artwork"
+      }
     }
+   
   ],
   "presets": [
     {
@@ -847,15 +901,19 @@
   "filter": [
     {
       "id": "bench_is_memorial",
-      "options": [{
-        "osmTags": {
-          "or": ["historic=memorial","memorial=bench"]
-        },
-        "question": {
-          "en": "is a memorial",
-          "nl": "is een gedenkteken"
+      "options": [
+        {
+          "osmTags": {
+            "or": [
+              "historic=memorial",
+              "memorial=bench"
+            ]
+          },
+          "question": {
+            "en": "is a memorial",
+            "nl": "is een gedenkteken"
+          }
         }
-      }
       ]
     },
     {
@@ -863,7 +921,7 @@
       "options": [
         {
           "question": {
-            "en":"With and without backrest",
+            "en": "With and without backrest",
             "nl": "Met en zonder rugleuning"
           }
         },
