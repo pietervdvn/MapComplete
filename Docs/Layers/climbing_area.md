@@ -125,7 +125,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-Only visible if  `_contained_climbing_routes~.+`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `_contained_climbing_routes~.+`
 
 
 
@@ -182,7 +182,7 @@ This is rendered with  The rock type is {rock}
   - Limestone  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:rock' target='_blank'>rock</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rock%3Dlimestone' target='_blank'>limestone</a>`
 
 
-Only visible if  `climbing=crag|natural=cliff|natural=bare_rock`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `climbing=crag|natural=cliff|natural=bare_rock`
 
 
 
@@ -198,7 +198,7 @@ This is rendered with  <a href='{url}' target='_blank'>{url}</a>
 
 
 
-Only visible if  `leisure!~^(sports_centre)$&sport=climbing`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `leisure!~^(sports_centre)$&sport=climbing`
 
 
 

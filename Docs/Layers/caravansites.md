@@ -131,7 +131,7 @@ This is rendered with  This place charges {charge}
 
 
 
-Only visible if  `fee=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `fee=yes`
 
 
 
@@ -197,7 +197,7 @@ The question is  Do you have to pay for the internet access?
   - You do not need to pay extra for internet access  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>`
 
 
-Only visible if  `internet_access=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `internet_access=yes`
 
 
 

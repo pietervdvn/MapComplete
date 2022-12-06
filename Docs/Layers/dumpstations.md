@@ -113,7 +113,7 @@ This is rendered with  This place charges {charge}
 
 
 
-Only visible if  `fee=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `fee=yes`
 
 
 

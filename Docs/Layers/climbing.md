@@ -77,7 +77,7 @@ This is rendered with  <a href='{url}' target='_blank'>{url}</a>
 
 
 
-Only visible if  `leisure!~^(sports_centre)$&sport=climbing`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `leisure!~^(sports_centre)$&sport=climbing`
 
 
 
@@ -121,7 +121,7 @@ This is rendered with  The highest grade is {climbing:grade:french:max} accordin
 
 
 
-Only visible if  `climbing!~^(route)$&climbing:sport=yes|sport=climbing`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `climbing!~^(route)$&climbing:sport=yes|sport=climbing`
 
 
 

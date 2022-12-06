@@ -475,6 +475,11 @@
       "description": "Layer 'Benches' shows and asks freeform values for key 'seats' (in the MapComplete.osm.be theme 'Into nature')"
     },
     {
+      "key": "seats:separated",
+      "description": "Layer 'Benches' shows seats:separated=no with a fixed text, namely 'This bench does not have separated seats' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "no"
+    },
+    {
       "key": "material",
       "description": "Layer 'Benches' shows and asks freeform values for key 'material' (in the MapComplete.osm.be theme 'Into nature')"
     },
@@ -564,6 +569,45 @@
       "key": "survey:date",
       "description": "Layer 'Benches' shows survey:date= with a fixed text, namely 'Surveyed today!' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key survey:date.",
       "value": ""
+    },
+    {
+      "key": "inscription",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'inscription' (in the MapComplete.osm.be theme 'Into nature')"
+    },
+    {
+      "key": "not:inscription",
+      "description": "Layer 'Benches' shows not:inscription=yes with a fixed text, namely 'This bench does not have an inscription' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "yes"
+    },
+    {
+      "key": "inscription",
+      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench does <span class='subtle'>(probably)</span> not have an inscription' (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key inscription.",
+      "value": ""
+    },
+    {
+      "key": "tourism",
+      "description": "Layer 'Benches' shows tourism=artwork with a fixed text, namely 'This bench has an integrated artwork' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "artwork"
+    },
+    {
+      "key": "tourism",
+      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench does not have an integrated artwork' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key tourism.",
+      "value": ""
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "memorial"
+    },
+    {
+      "key": "historic",
+      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key historic.",
+      "value": ""
+    },
+    {
+      "key": "not:historic",
+      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "value": "memorial"
     },
     {
       "key": "leisure",

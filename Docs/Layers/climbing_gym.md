@@ -238,7 +238,7 @@ This is rendered with  The highest grade is {climbing:grade:french:max} accordin
 
 
 
-Only visible if  `climbing!~^(route)$&climbing:sport=yes|sport=climbing`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `climbing!~^(route)$&climbing:sport=yes|sport=climbing`
 
 
 
@@ -291,7 +291,7 @@ This is rendered with  The sport climbing routes here have at most {climbing:bol
 
 
 
-Only visible if  `climbing:sport=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `climbing:sport=yes`
 
 
 

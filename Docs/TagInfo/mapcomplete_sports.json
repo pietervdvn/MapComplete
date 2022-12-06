@@ -1453,6 +1453,21 @@
       "key": "internet_access:ssid",
       "description": "Layer 'Shop' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sports')",
       "value": "Telekom"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Shop' shows organic=yes with a fixed text, namely 'This shop offers organic products' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sports')",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Shop' shows organic=only with a fixed text, namely 'This shop only offers organic products' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sports')",
+      "value": "only"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Shop' shows organic=no with a fixed text, namely 'This shop does not offer organic products' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sports')",
+      "value": "no"
     }
   ]
 }
