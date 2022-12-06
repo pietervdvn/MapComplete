@@ -82,7 +82,7 @@
     },
     "general": {
         "about": "Bewerk en voeg data toe aan OpenStreetMap over een specifiek onderwerp op een gemakkelijke manier",
-        "aboutMapcomplete": "<h3>Over MapComplete</h3><p>Met MapComplete kun je OpenStreetMap verrijken met informatie over een bepaald thema. Beantwoord enkele vragen, en binnen een paar minuten is jouw bijdrage wereldwijd beschikbaar! De <b>maker van het thema</b> bepaalt de elementen, vragen en taalversies voor het thema.</p><h3>Ontdek meer</h3><p>MapComplete <b>biedt altijd de volgende stap</b> naar meer OpenStreetMap:</p><ul><li>Indien ingebed in een website linkt het iframe naar de volledige MapComplete</li><li>De volledige versie heeft uitleg over OpenStreetMap</li><li>Bekijken kan altijd, maar wijzigen vereist een OSM-account</li><li>Als je niet aangemeld bent, wordt je gevraagd dit te doen</li><li>Als je minstens één vraag hebt beantwoord, kan je ook elementen toevoegen</li><li>Heb je genoeg changesets, dan verschijnen de OSM-tags, nog later links naar de wiki</li></ul><p></p><p>Merk je <b>een bug</b> of wil je een <b>extra feature</b>? Wil je <b>helpen vertalen</b>? Bezoek dan de <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">broncode</a> en <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker</a>. </p><p></p>Wil je <b>je vorderingen</b> zien? Volg de edits <a href=\"{osmcha_link}\" target=\"_blank\">op OsmCha</a>.<p></p>",
+        "aboutMapcomplete": "<h3>Over MapComplete</h3><p>Met MapComplete kun je OpenStreetMap verrijken met informatie over een bepaald thema. Beantwoord enkele vragen, en binnen een paar minuten is jouw bijdrage wereldwijd beschikbaar! In de meeste thema's kan je foto's toevoegen of zelfs een review achterlaten. De <b>maker van het thema</b> bepaalt de elementen, vragen en taalversies voor het thema.</p><h3>Ontdek meer</h3><p>MapComplete <b>biedt altijd de volgende stap</b> naar meer OpenStreetMap:</p><ul><li>Indien ingebed in een website linkt het iframe naar de volledige MapComplete</li><li>De volledige versie heeft uitleg over OpenStreetMap</li><li>Bekijken kan altijd, maar wijzigen vereist een OSM-account</li><li>Als je niet aangemeld bent, wordt je gevraagd dit te doen</li><li>Als je minstens één vraag hebt beantwoord, kan je ook elementen toevoegen</li><li>Heb je genoeg changesets, dan verschijnen de OSM-tags, nog later links naar de wiki</li></ul><p></p><p>Merk je <b>een bug</b> of wil je een <b>extra feature</b>? Wil je <b>helpen vertalen</b>? Bezoek dan de <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">broncode</a> en <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker</a>. </p><p></p>Wil je <b>je vorderingen</b> zien? Volg de edits <a href=\"{osmcha_link}\" target=\"_blank\">op OsmCha</a>.<p></p>",
         "add": {
             "addNew": "Voeg {category} toe",
             "addNewMapLabel": "Klik hier om een item toe te voegen",
@@ -317,6 +317,21 @@
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
+        },
+        "levelSelection": {
+            "confirmLevel": "Ja, voeg {preset} toe op verdieping {level}",
+            "addNewOnLevel": "Is het nieuwe punt op verdieping {level}?"
+        },
+        "uploadGpx": {
+            "confirm": "Bevestig upload",
+            "modes": {
+                "private": {
+                    "name": "Anoniem"
+                },
+                "public": {
+                    "name": "Publiek"
+                }
+            }
         }
     },
     "image": {
@@ -929,6 +944,13 @@
         },
         "wikidata": {
             "description": "Een Wikidata-code"
+        }
+    },
+    "plantDetection": {
+        "howTo": {
+            "li0": "neem een foto waar de boom in het midden staat zonder te veel achtergrond",
+            "li1": "neem een foto met een enkel blad",
+            "intro": "Voor optimale resultaten,"
         }
     }
 }
