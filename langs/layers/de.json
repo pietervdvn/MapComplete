@@ -5540,7 +5540,7 @@
                 }
             }
         },
-        "name": "Apotheke",
+        "name": "Apotheken",
         "presets": {
             "0": {
                 "title": "eine Apotheke"
@@ -6463,6 +6463,20 @@
             "shops-name": {
                 "question": "Wie ist der Name dieses Geschäfts?",
                 "render": "Der Name des Geschäfts lautet <i>{name}</i>"
+            },
+            "organic": {
+                "mappings": {
+                    "1": {
+                        "then": "Dieses Geschäft bietet ausschließlich Bio-Produkte an"
+                    },
+                    "2": {
+                        "then": "Dieses Geschäft bietet keine Bioprodukte an"
+                    },
+                    "0": {
+                        "then": "Dieses Geschäft bietet Bio-Produkte an"
+                    }
+                },
+                "question": "Bietet dieses Geschäft Bioprodukte an?"
             }
         },
         "title": {
@@ -7376,6 +7390,11 @@
             "wheelchair-door-width": {
                 "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
                 "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist die Einrichtung, in der sich die Toilette befindet, geöffnet?"
+                }
             }
         },
         "title": {

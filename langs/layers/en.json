@@ -4548,7 +4548,7 @@
     },
     "indoors": {
         "description": "Basic indoor mapping: shows room outlines",
-        "name": "indoors",
+        "name": "Indoors",
         "tagRenderings": {
             "name": {
                 "freeform": {
@@ -5584,7 +5584,7 @@
                 }
             }
         },
-        "name": "pharmacy",
+        "name": "Pharmacies",
         "presets": {
             "0": {
                 "title": "a pharmacy"

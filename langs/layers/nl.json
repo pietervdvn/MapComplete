@@ -1925,7 +1925,7 @@
                     }
                 },
                 "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> levert een vermogen van maximaal {socket:tesla_supercharger_ccs:output}"
+                "render": "<div style='display: inline-block'><div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> levert een vermogen van maximaal {socket:tesla_supercharger_ccs:output}"
             },
             "power-output-11": {
                 "mappings": {
@@ -2445,7 +2445,6 @@
         },
         "title": {
             "mappings": {
-                "0": {},
                 "1": {
                     "then": "Klimsite <b>{name}</b>"
                 },
@@ -3665,6 +3664,13 @@
                         "question": "Geen informatie over voelbare bestrating"
                     }
                 }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Heeft biologische opties"
+                    }
+                }
             }
         }
     },
@@ -3986,6 +3992,20 @@
                     }
                 },
                 "question": "Heeft dit restaurant halal opties?"
+            },
+            "organic (no friture)": {
+                "question": "Biedt dit restaurant biologisch eten?",
+                "mappings": {
+                    "2": {
+                        "then": "Er zijn alleen biologische opties beschikbaar"
+                    },
+                    "0": {
+                        "then": "Er zijn geen biologische opties beschikbaar"
+                    },
+                    "1": {
+                        "then": "Er is een biologisch menu"
+                    }
+                }
             }
         },
         "title": {
@@ -5325,7 +5345,7 @@
                 }
             }
         },
-        "name": "apotheek",
+        "name": "Apotheken",
         "presets": {
             "0": {
                 "title": "een apotheek"
@@ -6163,6 +6183,20 @@
             "shops-name": {
                 "question": "Wat is de naam van deze winkel?",
                 "render": "Deze zaak heet <i>{name}</i>"
+            },
+            "organic": {
+                "mappings": {
+                    "1": {
+                        "then": "Deze winkel biedt uitluitend biologische producten aan"
+                    },
+                    "0": {
+                        "then": "Deze winkel biedt biologische producten aan"
+                    },
+                    "2": {
+                        "then": "Deze winkel heeft geen biologische producten"
+                    }
+                },
+                "question": "Biedt deze winkel biologische producten aan?"
             }
         },
         "title": {
@@ -7195,6 +7229,43 @@
                     }
                 },
                 "question": "Heeft deze halte een vuilnisbak?"
+            },
+            "lit": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze halte is niet verlicht"
+                    },
+                    "1": {
+                        "then": "Deze halte is niet verlicht"
+                    }
+                },
+                "question": "Is deze halte verlicht?"
+            },
+            "shelter": {
+                "mappings": {
+                    "2": {
+                        "then": "Deze halte heeft een schuilplaats, die apart op de kaart staat"
+                    },
+                    "1": {
+                        "then": "Deze halte heeft geen schuilplaats"
+                    },
+                    "0": {
+                        "then": "Deze halte heeft een schuilplaats"
+                    }
+                },
+                "question": "Heeft deze halte een schuilplaats?"
+            },
+            "stop_name": {
+                "render": "Deze halte heet <b>{name}</b>",
+                "freeform": {
+                    "placeholder": "Naam van de halte"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze halte heeft geen naam"
+                    }
+                },
+                "question": "Wat is de naam van deze halte?"
             }
         },
         "title": {
@@ -7393,7 +7464,7 @@
         }
     },
     "walls_and_buildings": {
-        "description": "Speciale laag met alle muren en gebouwen. Deze laag is nuttig om objecten toe te voegen die met een muur verbonden zijn (zoals AEDs, brievenbussen, adressen, bewakingscamera's,…). Deze laag is standaard onzichtbaar en kan niet aangezet worden door de gebruiker.",
+        "description": "Speciale ingebouwde laag voor alle muren en gebouwen. Deze laag is nuttig in voorkeuzen voor objecten die tegen muren geplaatst kunnen worden (bv. AEDs, brievenbussen, ingangen, adressen, beveiligingscamera's,…). Deze laag is standaard onzichtbaar en niet in te schakelen door de gebruiker.",
         "tagRenderings": {
             "entrance_info": {
                 "render": {
@@ -7405,6 +7476,18 @@
         },
         "title": {
             "render": "Muur of gebouw"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
         }
     },
     "waste_basket": {
