@@ -269,7 +269,18 @@
             "searchToShort": "Votre requête est trop courte, entrez un texte plus long.",
             "searchWikidata": "Rechercher sur Wikidata",
             "wikipediaboxTitle": "Wikipédia"
-        }
+        },
+        "uploadGpx": {
+            "modes": {
+                "private": {
+                    "name": "Anonyme"
+                },
+                "public": {
+                    "name": "Publique"
+                }
+            }
+        },
+        "noMatchingMapping": "Aucun résultat ne correspond à votre recherche…"
     },
     "image": {
         "addPicture": "Ajoutez une photo",
@@ -281,7 +292,17 @@
         "dontDelete": "Annuler",
         "isDeleted": "Supprimé",
         "nearbyPictures": {
-            "browseNearby": "Parcourir les images à proximité…"
+            "browseNearby": "Parcourir les images à proximité…",
+            "loadMore": "Charger plus d'images",
+            "removeFilters": "Cliquez ici pour retirer les filtres",
+            "title": "Images à proximité",
+            "withinRadius": "N'afficher que les images prises dans un rayon de {radius} mètres autour de cet objet",
+            "loading": "Chargement des images alentours…",
+            "confirm": "L'image sélectionnée représente {title()}",
+            "allFiltered": "Aucune image ne correspond à votre filtre",
+            "hasMatchingPicture": "Est-ce qu'une image correspond à cet objet ? Sélectionnez ci-dessous",
+            "noImageSelected": "Sélectionnez une image à lier à l'objet",
+            "nothingFound": "Aucune image trouvée à proximité…"
         },
         "pleaseLogin": "Connectez-vous pour téléverser une photo",
         "respectPrivacy": "Ne photographiez ni les personnes ni les plaques d'immatriculation. Ne téléversez rien issu de Google Maps, Google Streetview ou d'autre sources soumises à des droits d'auteurs.",
@@ -295,7 +316,9 @@
     },
     "importHelper": {
         "askMetadata": {
-            "shouldBeUrl": "URL invalide"
+            "shouldBeUrl": "URL invalide",
+            "intro": "Avant d'ajouter {count} notes, merci de fournir quelques informations supplémentaires.",
+            "giveDescription": "Merci d'écrire une petite description pour la personne qui lira la note. Une bonne note décrit ce que le contributeur devra faire, par ex. <i>Il pourrait y avoir un banc ici. Si vous êtes dans le coin, pouvez-vous vérifier et indiquer si le banc est présent ou non ?</i> (Un lien vers MapComplete sera ajouté automatiquement)"
         },
         "login": {
             "loginRequired": "Connectez-vous pour continuer",
@@ -375,5 +398,90 @@
     "translations": {
         "isTranslator": "Mode traduction activé, votre pseudo correspond à celui d’une personne de l’équipe de traduction",
         "missing": "{count} segments non traduits"
+    },
+    "notes": {
+        "reopenNote": "Rouvrir la note",
+        "textNeeded": "Saisir un texte descriptif pour créer une note",
+        "warnAnonymous": "Vous n'êtes pas connecté. Nous ne pourrons pas vous contacter pour résoudre ce problème.",
+        "reopenNoteAndComment": "Rouvrir la note et commenter"
+    },
+    "validation": {
+        "email": {
+            "noAt": "Une adresse email doit contenir un @"
+        },
+        "url": {
+            "feedback": "Ceci n'est pas une adresse web valide",
+            "description": "lien vers un site web"
+        },
+        "int": {
+            "description": "un nombre entier"
+        },
+        "nat": {
+            "notANumber": "Entrez un nombre",
+            "mustBePositive": "Ce nombre doit être positif",
+            "mustBeWhole": "Seuls les nombres entiers sont autorisés"
+        },
+        "opening_hours": {
+            "description": "Horaires d'ouverture"
+        },
+        "tooLong": "",
+        "float": {
+            "description": "un nombre",
+            "feedback": "Ceci n'est pas un nombre"
+        },
+        "pfloat": {
+            "description": "un nombre positif"
+        },
+        "phone": {
+            "description": "un numéro de téléphone",
+            "feedback": "Ceci n'est pas un numéro de téléphone valide"
+        },
+        "pnat": {
+            "description": "un nombre entier, positif",
+            "noZero": "Zéro n'est pas autorisé"
+        }
+    },
+    "matrixbot": {
+        "commands": {
+            "dm": {
+                "failed": "Je n'ai pas pu exécuter <code>{cmd}</code> à cause de {message}"
+            },
+            "documentation": {
+                "file": {
+                    "singular": "fichier",
+                    "plural": "fichiers"
+                },
+                "theme": {
+                    "plural": "thèmes",
+                    "singular": "thème"
+                }
+            }
+        }
+    },
+    "privacy": {
+        "geodataTitle": "Votre géolocalisation",
+        "miscCookiesTitle": "Autres cookies",
+        "trackingTitle": "Données statistiques"
+    },
+    "plantDetection": {
+        "seeInfo": "Voir plus d'informations sur les espèces",
+        "howTo": {
+            "li3": "prenez une photo des fleurs",
+            "li0": "prenez une photo montant l'arbre au centre avec un peu d'élément à l'arrière plan",
+            "li1": "prenez une photo montrant une feuille seule",
+            "li2": "prenez une photo montant l'écorce",
+            "intro": "Pour de résultats optimaux,"
+        },
+        "loadingWikidata": "Chargement des infos sur {species}",
+        "matchPercentage": "Correspondance {match} %",
+        "overviewIntro": "L'IA de <a href='https://plantnet.org/' target='_blank'>PlantNet.org</a> pense que les images représentes les espèces ci-dessous.",
+        "error": "Une erreur est survenue lors de la détection de l'espèce de l'arbre : {error}"
+    },
+    "flyer": {
+        "fakeui": {
+            "edit": "Une info fausse ou pas à jour ? Le bouton de modification est juste ici"
+        },
+        "description": "Un flyer format A4 paysage pour promouvoir MapComplete",
+        "title": "MapComplete.osm.be"
     }
 }
