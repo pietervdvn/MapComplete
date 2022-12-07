@@ -12,6 +12,7 @@
     + [images](#images)
     + [wikipedia](#wikipedia)
     + [bench.*bench-questions](#bench*bench-questions)
+    + [artwork.*artwork-question](#artwork*artwork-question)
     + [website](#website)
     + [phone](#phone)
     + [email](#email)
@@ -34,6 +35,7 @@
     + [climbing.website](#climbingwebsite)
     + [climbing.fee](#climbingfee)
     + [climbing.bouldering](#climbingbouldering)
+    + [climbing.toprope](#climbingtoprope)
     + [climbing.average_length](#climbingaverage_length)
     + [climbing.min_difficulty](#climbingmin_difficulty)
     + [climbing.max_difficulty](#climbingmax_difficulty)
@@ -173,6 +175,17 @@
 
 
   - artwork
+
+
+
+
+### artwork.*artwork-question 
+
+
+
+
+
+  - bench
 
 
 
@@ -562,6 +575,17 @@
 
 
   - climbing_area
+  - climbing_gym
+
+
+
+
+### climbing.toprope 
+
+
+
+
+
   - climbing_gym
 
 

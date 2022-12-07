@@ -71,14 +71,14 @@ attribute | type | values which are supported by this layer
 
 
 
-The question is  It this dog park fenced in?
+The question is  *It this dog park fenced in?*
 
 
 
 
 
-  - This dogpark is fenced all around  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dfence' target='_blank'>fence</a>`
-  - This dogpark is not fenced all around  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dno' target='_blank'>no</a>`
+  - *This dogpark is fenced all around*  corresponds with  `barrier=fence`
+  - *This dogpark is not fenced all around*  corresponds with  `barrier=no`
 
 
 
@@ -87,14 +87,14 @@ The question is  It this dog park fenced in?
 
 
 
-The question is  Does this dog park have a separate fenced in area for small dogs and puppies?
+The question is  *Does this dog park have a separate fenced in area for small dogs and puppies?*
 
 
 
 
 
-  - Have separate area for puppies and small dogs  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:small_dog' target='_blank'>small_dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dseparate' target='_blank'>separate</a>`
-  - Does <strong>not</strong> have a separate area for puppies and small dogs  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:small_dog' target='_blank'>small_dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:small_dog%3Dshared' target='_blank'>shared</a>`
+  - *Have separate area for puppies and small dogs*  corresponds with  `small_dog=separate`
+  - *Does <strong>not</strong> have a separate area for puppies and small dogs*  corresponds with  `small_dog=shared`
 
 
 
@@ -103,11 +103,11 @@ The question is  Does this dog park have a separate fenced in area for small dog
 
 
 
-The question is  What is the name of this dog park?
+The question is  *What is the name of this dog park?*
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with  The name of this dog park is {name}
+This is rendered with  `The name of this dog park is {name}`
 
 
 

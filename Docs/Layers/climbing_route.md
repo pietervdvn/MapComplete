@@ -87,17 +87,17 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What is the name of this climbing route?
+The question is  *What is the name of this climbing route?*
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with  <strong>{name}</strong>
+This is rendered with  `<strong>{name}</strong>`
 
 
 
 
 
-  - This climbing route doesn't have a name  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>`
+  - *This climbing route doesn't have a name*  corresponds with  `noname=yes`
 
 
 
@@ -106,11 +106,11 @@ This is rendered with  <strong>{name}</strong>
 
 
 
-The question is  How long is this climbing route (in meters)?
+The question is  *How long is this climbing route (in meters)?*
 
 This rendering asks information about the property  [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) 
 
-This is rendered with  This route is {canonical(climbing:length)} long
+This is rendered with  `This route is {canonical(climbing:length)} long`
 
 
 
@@ -120,11 +120,11 @@ This is rendered with  This route is {canonical(climbing:length)} long
 
 
 
-The question is  What is the grade of this climbing route according to the french/belgian system?
+The question is  *What is the grade of this climbing route according to the french/belgian system?*
 
 This rendering asks information about the property  [climbing:grade:french](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french) 
 
-This is rendered with  The grade is {climbing:grade:french} according to the french/belgian system
+This is rendered with  `The grade is {climbing:grade:french} according to the french/belgian system`
 
 
 
@@ -134,17 +134,17 @@ This is rendered with  The grade is {climbing:grade:french} according to the fre
 
 
 
-The question is  How many bolts does this route have before reaching the anchor?
+The question is  *How many bolts does this route have before reaching the anchor?*
 
 This rendering asks information about the property  [climbing:bolts](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts) 
 
-This is rendered with  This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>
+This is rendered with  `This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>`
 
 
 
 
 
-  - This route is not bolted  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:bolted' target='_blank'>climbing:bolted</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:bolted%3Dno' target='_blank'>no</a>`
+  - *This route is not bolted*  corresponds with  `climbing:bolted=no`
 
 
 
@@ -153,11 +153,11 @@ This is rendered with  This route has {climbing:bolts} bolts <div class='subtle'
 
 
 
-The question is  Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>
+The question is  *Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>*
 
 This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
 
-This is rendered with  {description}
+This is rendered with  `{description}`
 
 
 
@@ -171,7 +171,7 @@ This tagrendering has no question and is thus read-only
 
 This rendering asks information about the property  [_embedding_features_with_rock:rock](https://wiki.openstreetmap.org/wiki/Key:_embedding_features_with_rock:rock) 
 
-This is rendered with  The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>
+This is rendered with  `The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>`
 
  
 

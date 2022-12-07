@@ -87,14 +87,14 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - Task is created  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DCreated' target='_blank'>Created</a>`
-  - Task is fixed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFixed' target='_blank'>Fixed</a>`
-  - Task is a false positive  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DFalse positive' target='_blank'>False positive</a>`
-  - Task is skipped  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DSkipped' target='_blank'>Skipped</a>`
-  - Task is deleted  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDeleted' target='_blank'>Deleted</a>`
-  - Task is already fixed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DAlready fixed' target='_blank'>Already fixed</a>`
-  - Task is marked as too hard  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DToo hard' target='_blank'>Too hard</a>`
-  - Task is disabled  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:mr_taskStatus' target='_blank'>mr_taskStatus</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:mr_taskStatus%3DDisabled' target='_blank'>Disabled</a>`
+  - *Task is created*  corresponds with  `mr_taskStatus=Created`
+  - *Task is fixed*  corresponds with  `mr_taskStatus=Fixed`
+  - *Task is a false positive*  corresponds with  `mr_taskStatus=False positive`
+  - *Task is skipped*  corresponds with  `mr_taskStatus=Skipped`
+  - *Task is deleted*  corresponds with  `mr_taskStatus=Deleted`
+  - *Task is already fixed*  corresponds with  `mr_taskStatus=Already fixed`
+  - *Task is marked as too hard*  corresponds with  `mr_taskStatus=Too hard`
+  - *Task is disabled*  corresponds with  `mr_taskStatus=Disabled`
 
 
 

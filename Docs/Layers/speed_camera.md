@@ -70,11 +70,11 @@ attribute | type | values which are supported by this layer
 
 
 
-The question is  What is the maximum speed allowed at this speed camera?
+The question is  *What is the maximum speed allowed at this speed camera?*
 
 This rendering asks information about the property  [maxspeed](https://wiki.openstreetmap.org/wiki/Key:maxspeed) 
 
-This is rendered with  The maximum speed allowed is {canonical(maxspeed)}
+This is rendered with  `The maximum speed allowed is {canonical(maxspeed)}`
 
 
 

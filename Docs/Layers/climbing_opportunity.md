@@ -71,15 +71,15 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  Is climbing possible here?
+The question is  *Is climbing possible here?*
 
 
 
 
 
-  - Climbing is possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:sport' target='_blank'>sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:sport%3Dclimbing' target='_blank'>climbing</a>`
-  - Climbing is not possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing' target='_blank'>climbing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing%3Dno' target='_blank'>no</a>`
-  - Climbing is not possible here  corresponds with  `sport!~^(climbing)$`
+  - *Climbing is possible here*  corresponds with  `sport=climbing`
+  - *Climbing is not possible here*  corresponds with  `climbing=no`
+  - *Climbing is not possible here*  corresponds with  `sport!~^(climbing)$`
   - This option cannot be chosen as answer
  
 

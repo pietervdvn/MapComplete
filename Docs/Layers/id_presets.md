@@ -67,166 +67,166 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - Farm Supply Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dagrarian' target='_blank'>agrarian</a>`
-  - Liquor Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dalcohol' target='_blank'>alcohol</a>`
-  - Anime / Manga Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Danime' target='_blank'>anime</a>`
-  - Antiques Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dantiques' target='_blank'>antiques</a>`
-  - Appliance Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dappliance' target='_blank'>appliance</a>`
-  - Art Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dart' target='_blank'>art</a>`
-  - Baby Goods Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbaby_goods' target='_blank'>baby_goods</a>`
-  - Bag/Luggage Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbag' target='_blank'>bag</a>`
-  - Bakery  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbakery' target='_blank'>bakery</a>`
-  - Bathroom Furnishing Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbathroom_furnishing' target='_blank'>bathroom_furnishing</a>`
-  - Beauty Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeauty' target='_blank'>beauty</a>`
-  - Bedding/Mattress Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbed' target='_blank'>bed</a>`
-  - Beverage Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeverages' target='_blank'>beverages</a>`
-  - Bicycle Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a>`
-  - Boat Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dboat' target='_blank'>boat</a>`
-  - Bookmaker  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbookmaker' target='_blank'>bookmaker</a>`
-  - Book Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbooks' target='_blank'>books</a>`
-  - Brewing Supply Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbrewing_supplies' target='_blank'>brewing_supplies</a>`
-  - Butcher  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbutcher' target='_blank'>butcher</a>`
-  - Camera Equipment Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcamera' target='_blank'>camera</a>`
-  - Candle Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcandles' target='_blank'>candles</a>`
-  - Cannabis Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcannabis' target='_blank'>cannabis</a>`
-  - Car Dealership  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar' target='_blank'>car</a>`
-  - Car Parts Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar_parts' target='_blank'>car_parts</a>`
-  - Car Repair Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar_repair' target='_blank'>car_repair</a>`
-  - RV Dealership  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcaravan' target='_blank'>caravan</a>`
-  - Carpet Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcarpet' target='_blank'>carpet</a>`
-  - Catalog Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcatalogue' target='_blank'>catalogue</a>`
-  - Charity Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcharity' target='_blank'>charity</a>`
-  - Cheese Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcheese' target='_blank'>cheese</a>`
-  - Drugstore  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dchemist' target='_blank'>chemist</a>`
-  - Chocolate Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dchocolate' target='_blank'>chocolate</a>`
-  - Clothing Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dclothes' target='_blank'>clothes</a>`
-  - Coffee Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcoffee' target='_blank'>coffee</a>`
-  - Collectibles Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcollector' target='_blank'>collector</a>`
-  - Computer Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcomputer' target='_blank'>computer</a>`
-  - Candy Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconfectionery' target='_blank'>confectionery</a>`
-  - Convenience Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience' target='_blank'>convenience</a>`
-  - Copy Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcopyshop' target='_blank'>copyshop</a>`
-  - Cosmetics Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcosmetics' target='_blank'>cosmetics</a>`
-  - Country Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcountry_store' target='_blank'>country_store</a>`
-  - Arts & Crafts Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcraft' target='_blank'>craft</a>`
-  - Curtain Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcurtain' target='_blank'>curtain</a>`
-  - Dairy Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddairy' target='_blank'>dairy</a>`
-  - Deli  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddeli' target='_blank'>deli</a>`
-  - Department Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddepartment_store' target='_blank'>department_store</a>`
-  - DIY Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoityourself' target='_blank'>doityourself</a>`
-  - Door Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoors' target='_blank'>doors</a>`
-  - Dry Cleaner  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddry_cleaning' target='_blank'>dry_cleaning</a>`
-  - E-Cigarette Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3De-cigarette' target='_blank'>e-cigarette</a>`
-  - Electrical Equipment Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Delectrical' target='_blank'>electrical</a>`
-  - Electronics Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Delectronics' target='_blank'>electronics</a>`
-  - Erotic Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Derotic' target='_blank'>erotic</a>`
-  - Fabric Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfabric' target='_blank'>fabric</a>`
-  - Produce Stand  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfarm' target='_blank'>farm</a>`
-  - Fashion Accessories Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfashion_accessories' target='_blank'>fashion_accessories</a>`
-  - Fireplace Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfireplace' target='_blank'>fireplace</a>`
-  - Fishing Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfishing' target='_blank'>fishing</a>`
-  - Flooring Supply Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dflooring' target='_blank'>flooring</a>`
-  - Florist  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dflorist' target='_blank'>florist</a>`
-  - Framing Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dframe' target='_blank'>frame</a>`
-  - Frozen Food Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfrozen_food' target='_blank'>frozen_food</a>`
-  - Fuel Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfuel' target='_blank'>fuel</a>`
-  - Funeral Home  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfuneral_directors' target='_blank'>funeral_directors</a>`
-  - Furniture Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfurniture' target='_blank'>furniture</a>`
-  - Tabletop Game Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgames' target='_blank'>games</a>`
-  - Garden Center  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgarden_centre' target='_blank'>garden_centre</a>`
-  - Bottled Gas Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgas' target='_blank'>gas</a>`
-  - General Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgeneral' target='_blank'>general</a>`
-  - Gift Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgift' target='_blank'>gift</a>`
-  - Greengrocer  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgreengrocer' target='_blank'>greengrocer</a>`
-  - Hairdresser  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhairdresser' target='_blank'>hairdresser</a>`
-  - Hairdresser Supply Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhairdresser_supply' target='_blank'>hairdresser_supply</a>`
-  - Hardware Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhardware' target='_blank'>hardware</a>`
-  - Health Food Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhealth_food' target='_blank'>health_food</a>`
-  - Hearing Aids Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhearing_aids' target='_blank'>hearing_aids</a>`
-  - Herbalist  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dherbalist' target='_blank'>herbalist</a>`
-  - Hifi Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhifi' target='_blank'>hifi</a>`
-  - Hobby Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhobby' target='_blank'>hobby</a>`
-  - Household Linen Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhousehold_linen' target='_blank'>household_linen</a>`
-  - Houseware Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhouseware' target='_blank'>houseware</a>`
-  - Hunting Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhunting' target='_blank'>hunting</a>`
-  - Interior Decoration Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dinterior_decoration' target='_blank'>interior_decoration</a>`
-  - Jewelry Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Djewelry' target='_blank'>jewelry</a>`
-  - Kiosk  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dkiosk' target='_blank'>kiosk</a>`
-  - Kitchen Design Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dkitchen' target='_blank'>kitchen</a>`
-  - Laundry  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlaundry' target='_blank'>laundry</a>`
-  - Leather Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dleather' target='_blank'>leather</a>`
-  - Lighting Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlighting' target='_blank'>lighting</a>`
-  - Locksmith  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlocksmith' target='_blank'>locksmith</a>`
-  - Lottery Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlottery' target='_blank'>lottery</a>`
-  - Mall  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmall' target='_blank'>mall</a>`
-  - Massage Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmassage' target='_blank'>massage</a>`
-  - Medical Supply Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmedical_supply' target='_blank'>medical_supply</a>`
-  - Military Surplus Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmilitary_surplus' target='_blank'>military_surplus</a>`
-  - Mobile Phone Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmobile_phone' target='_blank'>mobile_phone</a>`
-  - Model Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmodel' target='_blank'>model</a>`
-  - Money Lender  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmoney_lender' target='_blank'>money_lender</a>`
-  - Motorcycle Dealership  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmotorcycle' target='_blank'>motorcycle</a>`
-  - Motorcycle Repair Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmotorcycle_repair' target='_blank'>motorcycle_repair</a>`
-  - Music Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmusic' target='_blank'>music</a>`
-  - Musical Instrument Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmusical_instrument' target='_blank'>musical_instrument</a>`
-  - Newspaper/Magazine Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dnewsagent' target='_blank'>newsagent</a>`
-  - Nutrition Supplements Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dnutrition_supplements' target='_blank'>nutrition_supplements</a>`
-  - Optician  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doptician' target='_blank'>optician</a>`
-  - Outdoors Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a>`
-  - Online Retailer Outpost  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutpost' target='_blank'>outpost</a>`
-  - Paint Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpaint' target='_blank'>paint</a>`
-  - Party Supply Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dparty' target='_blank'>party</a>`
-  - Pastry Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpastry' target='_blank'>pastry</a>`
-  - Pawn Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpawnbroker' target='_blank'>pawnbroker</a>`
-  - Perfume Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dperfumery' target='_blank'>perfumery</a>`
-  - Pet Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpet' target='_blank'>pet</a>`
-  - Pet Grooming Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpet_grooming' target='_blank'>pet_grooming</a>`
-  - Photography Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dphoto' target='_blank'>photo</a>`
-  - Pottery Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpottery' target='_blank'>pottery</a>`
-  - Printer Ink Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dprinter_ink' target='_blank'>printer_ink</a>`
-  - Psychic  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpsychic' target='_blank'>psychic</a>`
-  - Fireworks Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpyrotechnics' target='_blank'>pyrotechnics</a>`
-  - Radio/Electronic Component Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dradiotechnics' target='_blank'>radiotechnics</a>`
-  - Religious Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dreligion' target='_blank'>religion</a>`
-  - Rental Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a>`
-  - Repair Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drepair' target='_blank'>repair</a>`
-  - Scuba Diving Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dscuba_diving' target='_blank'>scuba_diving</a>`
-  - Seafood Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dseafood' target='_blank'>seafood</a>`
-  - Consignment/Thrift Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsecond_hand' target='_blank'>second_hand</a>`
-  - Sewing Supply Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsewing' target='_blank'>sewing</a>`
-  - Shoe Repair Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dshoe_repair' target='_blank'>shoe_repair</a>`
-  - Shoe Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dshoes' target='_blank'>shoes</a>`
-  - Spice Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dspices' target='_blank'>spices</a>`
-  - Sporting Goods Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a>`
-  - Stationery Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dstationery' target='_blank'>stationery</a>`
-  - Storage Rental  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dstorage_rental' target='_blank'>storage_rental</a>`
-  - Supermarket  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket' target='_blank'>supermarket</a>`
-  - Pool Supply Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dswimming_pool' target='_blank'>swimming_pool</a>`
-  - Tailor  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtailor' target='_blank'>tailor</a>`
-  - Tattoo Parlor  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtattoo' target='_blank'>tattoo</a>`
-  - Tea Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtea' target='_blank'>tea</a>`
-  - Telecom Retail Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtelecommunication' target='_blank'>telecommunication</a>`
-  - Ticket Seller  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dticket' target='_blank'>ticket</a>`
-  - Tile Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtiles' target='_blank'>tiles</a>`
-  - Tobacco Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtobacco' target='_blank'>tobacco</a>`
-  - Tool Rental  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtool_hire' target='_blank'>tool_hire</a>`
-  - Toy Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtoys' target='_blank'>toys</a>`
-  - Trade Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtrade' target='_blank'>trade</a>`
-  - Travel Agency  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtravel_agency' target='_blank'>travel_agency</a>`
-  - Trophy Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtrophy' target='_blank'>trophy</a>`
-  - Tire Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtyres' target='_blank'>tyres</a>`
-  - Vacuum Cleaner Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvacuum_cleaner' target='_blank'>vacuum_cleaner</a>`
-  - Variety Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvariety_store' target='_blank'>variety_store</a>`
-  - Video Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvideo' target='_blank'>video</a>`
-  - Video Game Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvideo_games' target='_blank'>video_games</a>`
-  - Watches Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwatches' target='_blank'>watches</a>`
-  - Drinking Water Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwater' target='_blank'>water</a>`
-  - Watersport/Swim Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwater_sports' target='_blank'>water_sports</a>`
-  - Weapon Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dweapons' target='_blank'>weapons</a>`
-  - Wholesale Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwholesale' target='_blank'>wholesale</a>`
-  - Wig Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwigs' target='_blank'>wigs</a>`
-  - Window Blind Store  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwindow_blind' target='_blank'>window_blind</a>`
-  - Wine Shop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwine' target='_blank'>wine</a>`
+  - *Farm Supply Shop*  corresponds with  `shop=agrarian`
+  - *Liquor Store*  corresponds with  `shop=alcohol`
+  - *Anime / Manga Shop*  corresponds with  `shop=anime`
+  - *Antiques Shop*  corresponds with  `shop=antiques`
+  - *Appliance Store*  corresponds with  `shop=appliance`
+  - *Art Store*  corresponds with  `shop=art`
+  - *Baby Goods Store*  corresponds with  `shop=baby_goods`
+  - *Bag/Luggage Store*  corresponds with  `shop=bag`
+  - *Bakery*  corresponds with  `shop=bakery`
+  - *Bathroom Furnishing Store*  corresponds with  `shop=bathroom_furnishing`
+  - *Beauty Shop*  corresponds with  `shop=beauty`
+  - *Bedding/Mattress Store*  corresponds with  `shop=bed`
+  - *Beverage Store*  corresponds with  `shop=beverages`
+  - *Bicycle Shop*  corresponds with  `shop=bicycle`
+  - *Boat Store*  corresponds with  `shop=boat`
+  - *Bookmaker*  corresponds with  `shop=bookmaker`
+  - *Book Store*  corresponds with  `shop=books`
+  - *Brewing Supply Store*  corresponds with  `shop=brewing_supplies`
+  - *Butcher*  corresponds with  `shop=butcher`
+  - *Camera Equipment Store*  corresponds with  `shop=camera`
+  - *Candle Shop*  corresponds with  `shop=candles`
+  - *Cannabis Shop*  corresponds with  `shop=cannabis`
+  - *Car Dealership*  corresponds with  `shop=car`
+  - *Car Parts Store*  corresponds with  `shop=car_parts`
+  - *Car Repair Shop*  corresponds with  `shop=car_repair`
+  - *RV Dealership*  corresponds with  `shop=caravan`
+  - *Carpet Store*  corresponds with  `shop=carpet`
+  - *Catalog Shop*  corresponds with  `shop=catalogue`
+  - *Charity Store*  corresponds with  `shop=charity`
+  - *Cheese Store*  corresponds with  `shop=cheese`
+  - *Drugstore*  corresponds with  `shop=chemist`
+  - *Chocolate Store*  corresponds with  `shop=chocolate`
+  - *Clothing Store*  corresponds with  `shop=clothes`
+  - *Coffee Store*  corresponds with  `shop=coffee`
+  - *Collectibles Shop*  corresponds with  `shop=collector`
+  - *Computer Store*  corresponds with  `shop=computer`
+  - *Candy Store*  corresponds with  `shop=confectionery`
+  - *Convenience Store*  corresponds with  `shop=convenience`
+  - *Copy Store*  corresponds with  `shop=copyshop`
+  - *Cosmetics Store*  corresponds with  `shop=cosmetics`
+  - *Country Store*  corresponds with  `shop=country_store`
+  - *Arts & Crafts Store*  corresponds with  `shop=craft`
+  - *Curtain Store*  corresponds with  `shop=curtain`
+  - *Dairy Store*  corresponds with  `shop=dairy`
+  - *Deli*  corresponds with  `shop=deli`
+  - *Department Store*  corresponds with  `shop=department_store`
+  - *DIY Store*  corresponds with  `shop=doityourself`
+  - *Door Shop*  corresponds with  `shop=doors`
+  - *Dry Cleaner*  corresponds with  `shop=dry_cleaning`
+  - *E-Cigarette Shop*  corresponds with  `shop=e-cigarette`
+  - *Electrical Equipment Store*  corresponds with  `shop=electrical`
+  - *Electronics Store*  corresponds with  `shop=electronics`
+  - *Erotic Store*  corresponds with  `shop=erotic`
+  - *Fabric Store*  corresponds with  `shop=fabric`
+  - *Produce Stand*  corresponds with  `shop=farm`
+  - *Fashion Accessories Store*  corresponds with  `shop=fashion_accessories`
+  - *Fireplace Store*  corresponds with  `shop=fireplace`
+  - *Fishing Shop*  corresponds with  `shop=fishing`
+  - *Flooring Supply Shop*  corresponds with  `shop=flooring`
+  - *Florist*  corresponds with  `shop=florist`
+  - *Framing Shop*  corresponds with  `shop=frame`
+  - *Frozen Food Store*  corresponds with  `shop=frozen_food`
+  - *Fuel Shop*  corresponds with  `shop=fuel`
+  - *Funeral Home*  corresponds with  `shop=funeral_directors`
+  - *Furniture Store*  corresponds with  `shop=furniture`
+  - *Tabletop Game Store*  corresponds with  `shop=games`
+  - *Garden Center*  corresponds with  `shop=garden_centre`
+  - *Bottled Gas Shop*  corresponds with  `shop=gas`
+  - *General Store*  corresponds with  `shop=general`
+  - *Gift Shop*  corresponds with  `shop=gift`
+  - *Greengrocer*  corresponds with  `shop=greengrocer`
+  - *Hairdresser*  corresponds with  `shop=hairdresser`
+  - *Hairdresser Supply Store*  corresponds with  `shop=hairdresser_supply`
+  - *Hardware Store*  corresponds with  `shop=hardware`
+  - *Health Food Shop*  corresponds with  `shop=health_food`
+  - *Hearing Aids Store*  corresponds with  `shop=hearing_aids`
+  - *Herbalist*  corresponds with  `shop=herbalist`
+  - *Hifi Store*  corresponds with  `shop=hifi`
+  - *Hobby Shop*  corresponds with  `shop=hobby`
+  - *Household Linen Shop*  corresponds with  `shop=household_linen`
+  - *Houseware Store*  corresponds with  `shop=houseware`
+  - *Hunting Shop*  corresponds with  `shop=hunting`
+  - *Interior Decoration Store*  corresponds with  `shop=interior_decoration`
+  - *Jewelry Store*  corresponds with  `shop=jewelry`
+  - *Kiosk*  corresponds with  `shop=kiosk`
+  - *Kitchen Design Store*  corresponds with  `shop=kitchen`
+  - *Laundry*  corresponds with  `shop=laundry`
+  - *Leather Store*  corresponds with  `shop=leather`
+  - *Lighting Store*  corresponds with  `shop=lighting`
+  - *Locksmith*  corresponds with  `shop=locksmith`
+  - *Lottery Shop*  corresponds with  `shop=lottery`
+  - *Mall*  corresponds with  `shop=mall`
+  - *Massage Shop*  corresponds with  `shop=massage`
+  - *Medical Supply Store*  corresponds with  `shop=medical_supply`
+  - *Military Surplus Store*  corresponds with  `shop=military_surplus`
+  - *Mobile Phone Store*  corresponds with  `shop=mobile_phone`
+  - *Model Shop*  corresponds with  `shop=model`
+  - *Money Lender*  corresponds with  `shop=money_lender`
+  - *Motorcycle Dealership*  corresponds with  `shop=motorcycle`
+  - *Motorcycle Repair Shop*  corresponds with  `shop=motorcycle_repair`
+  - *Music Store*  corresponds with  `shop=music`
+  - *Musical Instrument Store*  corresponds with  `shop=musical_instrument`
+  - *Newspaper/Magazine Shop*  corresponds with  `shop=newsagent`
+  - *Nutrition Supplements Store*  corresponds with  `shop=nutrition_supplements`
+  - *Optician*  corresponds with  `shop=optician`
+  - *Outdoors Store*  corresponds with  `shop=outdoor`
+  - *Online Retailer Outpost*  corresponds with  `shop=outpost`
+  - *Paint Store*  corresponds with  `shop=paint`
+  - *Party Supply Store*  corresponds with  `shop=party`
+  - *Pastry Shop*  corresponds with  `shop=pastry`
+  - *Pawn Shop*  corresponds with  `shop=pawnbroker`
+  - *Perfume Store*  corresponds with  `shop=perfumery`
+  - *Pet Store*  corresponds with  `shop=pet`
+  - *Pet Grooming Store*  corresponds with  `shop=pet_grooming`
+  - *Photography Store*  corresponds with  `shop=photo`
+  - *Pottery Store*  corresponds with  `shop=pottery`
+  - *Printer Ink Store*  corresponds with  `shop=printer_ink`
+  - *Psychic*  corresponds with  `shop=psychic`
+  - *Fireworks Store*  corresponds with  `shop=pyrotechnics`
+  - *Radio/Electronic Component Store*  corresponds with  `shop=radiotechnics`
+  - *Religious Store*  corresponds with  `shop=religion`
+  - *Rental Shop*  corresponds with  `shop=rental`
+  - *Repair Shop*  corresponds with  `shop=repair`
+  - *Scuba Diving Shop*  corresponds with  `shop=scuba_diving`
+  - *Seafood Shop*  corresponds with  `shop=seafood`
+  - *Consignment/Thrift Store*  corresponds with  `shop=second_hand`
+  - *Sewing Supply Shop*  corresponds with  `shop=sewing`
+  - *Shoe Repair Shop*  corresponds with  `shop=shoe_repair`
+  - *Shoe Store*  corresponds with  `shop=shoes`
+  - *Spice Shop*  corresponds with  `shop=spices`
+  - *Sporting Goods Store*  corresponds with  `shop=sports`
+  - *Stationery Store*  corresponds with  `shop=stationery`
+  - *Storage Rental*  corresponds with  `shop=storage_rental`
+  - *Supermarket*  corresponds with  `shop=supermarket`
+  - *Pool Supply Store*  corresponds with  `shop=swimming_pool`
+  - *Tailor*  corresponds with  `shop=tailor`
+  - *Tattoo Parlor*  corresponds with  `shop=tattoo`
+  - *Tea Store*  corresponds with  `shop=tea`
+  - *Telecom Retail Store*  corresponds with  `shop=telecommunication`
+  - *Ticket Seller*  corresponds with  `shop=ticket`
+  - *Tile Shop*  corresponds with  `shop=tiles`
+  - *Tobacco Shop*  corresponds with  `shop=tobacco`
+  - *Tool Rental*  corresponds with  `shop=tool_hire`
+  - *Toy Store*  corresponds with  `shop=toys`
+  - *Trade Shop*  corresponds with  `shop=trade`
+  - *Travel Agency*  corresponds with  `shop=travel_agency`
+  - *Trophy Shop*  corresponds with  `shop=trophy`
+  - *Tire Store*  corresponds with  `shop=tyres`
+  - *Vacuum Cleaner Store*  corresponds with  `shop=vacuum_cleaner`
+  - *Variety Store*  corresponds with  `shop=variety_store`
+  - *Video Store*  corresponds with  `shop=video`
+  - *Video Game Store*  corresponds with  `shop=video_games`
+  - *Watches Shop*  corresponds with  `shop=watches`
+  - *Drinking Water Shop*  corresponds with  `shop=water`
+  - *Watersport/Swim Shop*  corresponds with  `shop=water_sports`
+  - *Weapon Shop*  corresponds with  `shop=weapons`
+  - *Wholesale Store*  corresponds with  `shop=wholesale`
+  - *Wig Shop*  corresponds with  `shop=wigs`
+  - *Window Blind Store*  corresponds with  `shop=window_blind`
+  - *Wine Shop*  corresponds with  `shop=wine`
 
 
 
@@ -241,158 +241,158 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dboutique' target='_blank'>boutique</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfashion' target='_blank'>fashion</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvacant' target='_blank'>vacant</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dyes' target='_blank'>yes</a>`
-  - circle:white;./assets/layers/id_presets/fas-tractor.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dagrarian' target='_blank'>agrarian</a>`
-  - circle:white;./assets/layers/id_presets/fas-wine-bottle.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dalcohol' target='_blank'>alcohol</a>`
-  - circle:white;./assets/layers/id_presets/fas-dragon.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Danime' target='_blank'>anime</a>`
-  - circle:white;./assets/layers/id_presets/temaki-furniture.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dantiques' target='_blank'>antiques</a>`
-  - circle:white;./assets/layers/id_presets/temaki-laundry.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dappliance' target='_blank'>appliance</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dart' target='_blank'>art</a>`
-  - circle:white;./assets/layers/id_presets/fas-baby-carriage.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbaby_goods' target='_blank'>baby_goods</a>`
-  - circle:white;./assets/layers/id_presets/fas-suitcase-rolling.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbag' target='_blank'>bag</a>`
-  - circle:white;./assets/layers/id_presets/maki-bakery.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbakery' target='_blank'>bakery</a>`
-  - circle:white;./assets/layers/id_presets/fas-bath.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbathroom_furnishing' target='_blank'>bathroom_furnishing</a>`
-  - circle:white;./assets/layers/id_presets/temaki-lipstick.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeauty' target='_blank'>beauty</a>`
-  - circle:white;./assets/layers/id_presets/maki-lodging.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbed' target='_blank'>bed</a>`
-  - circle:white;./assets/layers/id_presets/temaki-bottles.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbeverages' target='_blank'>beverages</a>`
-  - circle:white;./assets/layers/id_presets/maki-bicycle.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbicycle' target='_blank'>bicycle</a>`
-  - circle:white;./assets/layers/id_presets/temaki-boat.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dboat' target='_blank'>boat</a>`
-  - circle:white;./assets/layers/id_presets/temaki-money_hand.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbookmaker' target='_blank'>bookmaker</a>`
-  - circle:white;./assets/layers/id_presets/fas-book.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbooks' target='_blank'>books</a>`
-  - circle:white;./assets/layers/id_presets/temaki-storage_fermenter.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbrewing_supplies' target='_blank'>brewing_supplies</a>`
-  - circle:white;./assets/layers/id_presets/temaki-cleaver.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dbutcher' target='_blank'>butcher</a>`
-  - circle:white;./assets/layers/id_presets/fas-camera-retro.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcamera' target='_blank'>camera</a>`
-  - circle:white;./assets/layers/id_presets/fas-cannabis.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcannabis' target='_blank'>cannabis</a>`
-  - circle:white;./assets/layers/id_presets/maki-car.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar' target='_blank'>car</a>`
-  - circle:white;./assets/layers/id_presets/fas-car-battery.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar_parts' target='_blank'>car_parts</a>`
-  - circle:white;./assets/layers/id_presets/maki-car-repair.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcar_repair' target='_blank'>car_repair</a>`
-  - circle:white;./assets/layers/id_presets/temaki-camper_trailer.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcaravan' target='_blank'>caravan</a>`
-  - circle:white;./assets/layers/id_presets/fas-tape.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcarpet' target='_blank'>carpet</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcatalogue' target='_blank'>catalogue</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcharity' target='_blank'>charity</a>`
-  - circle:white;./assets/layers/id_presets/fas-cheese.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcheese' target='_blank'>cheese</a>`
-  - circle:white;./assets/layers/id_presets/maki-confectionery.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dchocolate' target='_blank'>chocolate</a>`
-  - circle:white;./assets/layers/id_presets/maki-clothing-store.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dclothes' target='_blank'>clothes</a>`
-  - circle:white;./assets/layers/id_presets/temaki-coffee.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcoffee' target='_blank'>coffee</a>`
-  - circle:white;./assets/layers/id_presets/fas-laptop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcomputer' target='_blank'>computer</a>`
-  - circle:white;./assets/layers/id_presets/maki-confectionery.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconfectionery' target='_blank'>confectionery</a>`
-  - circle:white;./assets/layers/id_presets/fas-print.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcopyshop' target='_blank'>copyshop</a>`
-  - circle:white;./assets/layers/id_presets/temaki-lipstick.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcosmetics' target='_blank'>cosmetics</a>`
-  - circle:white;./assets/layers/id_presets/fas-hat-cowboy-side.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcountry_store' target='_blank'>country_store</a>`
-  - circle:white;./assets/layers/id_presets/temaki-curtains.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dcurtain' target='_blank'>curtain</a>`
-  - circle:white;./assets/layers/id_presets/fas-cheese.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddairy' target='_blank'>dairy</a>`
-  - circle:white;./assets/layers/id_presets/temaki-meat.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddeli' target='_blank'>deli</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddepartment_store' target='_blank'>department_store</a>`
-  - circle:white;./assets/layers/id_presets/temaki-tools.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoityourself' target='_blank'>doityourself</a>`
-  - circle:white;./assets/layers/id_presets/fas-door-open.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddoors' target='_blank'>doors</a>`
-  - circle:white;./assets/layers/id_presets/temaki-clothes_hanger.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Ddry_cleaning' target='_blank'>dry_cleaning</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3De-cigarette' target='_blank'>e-cigarette</a>`
-  - circle:white;./assets/layers/id_presets/temaki-power.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Delectrical' target='_blank'>electrical</a>`
-  - circle:white;./assets/layers/id_presets/fas-plug.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Delectronics' target='_blank'>electronics</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Derotic' target='_blank'>erotic</a>`
-  - circle:white;./assets/layers/id_presets/fas-tape.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfabric' target='_blank'>fabric</a>`
-  - circle:white;./assets/layers/id_presets/temaki-fashion_accessories.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfashion_accessories' target='_blank'>fashion_accessories</a>`
-  - circle:white;./assets/layers/id_presets/temaki-fireplace.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfireplace' target='_blank'>fireplace</a>`
-  - circle:white;./assets/layers/id_presets/temaki-ice_fishing.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfishing' target='_blank'>fishing</a>`
-  - circle:white;./assets/layers/id_presets/temaki-tools.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dflooring' target='_blank'>flooring</a>`
-  - circle:white;./assets/layers/id_presets/maki-florist.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dflorist' target='_blank'>florist</a>`
-  - circle:white;./assets/layers/id_presets/fas-vector-square.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dframe' target='_blank'>frame</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfrozen_food' target='_blank'>frozen_food</a>`
-  - circle:white;./assets/layers/id_presets/temaki-propane_tank.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfuel' target='_blank'>fuel</a>`
-  - circle:white;./assets/layers/id_presets/maki-cemetery.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfuneral_directors' target='_blank'>funeral_directors</a>`
-  - circle:white;./assets/layers/id_presets/fas-couch.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dfurniture' target='_blank'>furniture</a>`
-  - circle:white;./assets/layers/id_presets/fas-dice.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgames' target='_blank'>games</a>`
-  - circle:white;./assets/layers/id_presets/maki-garden-centre.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgarden_centre' target='_blank'>garden_centre</a>`
-  - circle:white;./assets/layers/id_presets/temaki-propane_tank.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgas' target='_blank'>gas</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgeneral' target='_blank'>general</a>`
-  - circle:white;./assets/layers/id_presets/maki-gift.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgift' target='_blank'>gift</a>`
-  - circle:white;./assets/layers/id_presets/fas-carrot.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dgreengrocer' target='_blank'>greengrocer</a>`
-  - circle:white;./assets/layers/id_presets/temaki-beauty_salon.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhairdresser' target='_blank'>hairdresser</a>`
-  - circle:white;./assets/layers/id_presets/temaki-hair_care.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhairdresser_supply' target='_blank'>hairdresser_supply</a>`
-  - circle:white;./assets/layers/id_presets/temaki-tools.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhardware' target='_blank'>hardware</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhealth_food' target='_blank'>health_food</a>`
-  - circle:white;./assets/layers/id_presets/temaki-hearing_aid.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhearing_aids' target='_blank'>hearing_aids</a>`
-  - circle:white;./assets/layers/id_presets/fas-leaf.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dherbalist' target='_blank'>herbalist</a>`
-  - circle:white;./assets/layers/id_presets/temaki-speaker.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhifi' target='_blank'>hifi</a>`
-  - circle:white;./assets/layers/id_presets/fas-dragon.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhobby' target='_blank'>hobby</a>`
-  - circle:white;./assets/layers/id_presets/temaki-cloth.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhousehold_linen' target='_blank'>household_linen</a>`
-  - circle:white;./assets/layers/id_presets/fas-blender.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhouseware' target='_blank'>houseware</a>`
-  - circle:white;./assets/layers/id_presets/temaki-bow_and_arrow.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dhunting' target='_blank'>hunting</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dinterior_decoration' target='_blank'>interior_decoration</a>`
-  - circle:white;./assets/layers/id_presets/maki-jewelry-store.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Djewelry' target='_blank'>jewelry</a>`
-  - circle:white;./assets/layers/id_presets/fas-store.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dkiosk' target='_blank'>kiosk</a>`
-  - circle:white;./assets/layers/id_presets/temaki-kitchen_sink.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dkitchen' target='_blank'>kitchen</a>`
-  - circle:white;./assets/layers/id_presets/temaki-laundry.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlaundry' target='_blank'>laundry</a>`
-  - circle:white;./assets/layers/id_presets/temaki-handbag.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dleather' target='_blank'>leather</a>`
-  - circle:white;./assets/layers/id_presets/temaki-desk_lamp.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlighting' target='_blank'>lighting</a>`
-  - circle:white;./assets/layers/id_presets/fas-key.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dlocksmith' target='_blank'>locksmith</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmall' target='_blank'>mall</a>`
-  - circle:white;./assets/layers/id_presets/temaki-spa.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmassage' target='_blank'>massage</a>`
-  - circle:white;./assets/layers/id_presets/fas-crutch.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmedical_supply' target='_blank'>medical_supply</a>`
-  - circle:white;./assets/layers/id_presets/temaki-military.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmilitary_surplus' target='_blank'>military_surplus</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmodel' target='_blank'>model</a>`
-  - circle:white;./assets/layers/id_presets/temaki-money_hand.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmoney_lender' target='_blank'>money_lender</a>`
-  - circle:white;./assets/layers/id_presets/fas-motorcycle.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmotorcycle' target='_blank'>motorcycle</a>`
-  - circle:white;./assets/layers/id_presets/temaki-motorcycle_repair.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmotorcycle_repair' target='_blank'>motorcycle_repair</a>`
-  - circle:white;./assets/layers/id_presets/fas-compact-disc.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmusic' target='_blank'>music</a>`
-  - circle:white;./assets/layers/id_presets/fas-guitar.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dmusical_instrument' target='_blank'>musical_instrument</a>`
-  - circle:white;./assets/layers/id_presets/fas-newspaper.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dnewsagent' target='_blank'>newsagent</a>`
-  - circle:white;./assets/layers/id_presets/fas-pills.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dnutrition_supplements' target='_blank'>nutrition_supplements</a>`
-  - circle:white;./assets/layers/id_presets/maki-optician.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doptician' target='_blank'>optician</a>`
-  - circle:white;./assets/layers/id_presets/temaki-compass.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutdoor' target='_blank'>outdoor</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Doutpost' target='_blank'>outpost</a>`
-  - circle:white;./assets/layers/id_presets/fas-paint-roller.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpaint' target='_blank'>paint</a>`
-  - circle:white;./assets/layers/id_presets/temaki-balloon.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dparty' target='_blank'>party</a>`
-  - circle:white;./assets/layers/id_presets/maki-bakery.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpastry' target='_blank'>pastry</a>`
-  - circle:white;./assets/layers/id_presets/temaki-money_hand.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpawnbroker' target='_blank'>pawnbroker</a>`
-  - circle:white;./assets/layers/id_presets/temaki-perfume.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dperfumery' target='_blank'>perfumery</a>`
-  - circle:white;./assets/layers/id_presets/fas-cat.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpet' target='_blank'>pet</a>`
-  - circle:white;./assets/layers/id_presets/temaki-pet_grooming.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpet_grooming' target='_blank'>pet_grooming</a>`
-  - circle:white;./assets/layers/id_presets/fas-camera-retro.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dphoto' target='_blank'>photo</a>`
-  - circle:white;./assets/layers/id_presets/temaki-vase.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpottery' target='_blank'>pottery</a>`
-  - circle:white;./assets/layers/id_presets/fas-print.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dprinter_ink' target='_blank'>printer_ink</a>`
-  - circle:white;./assets/layers/id_presets/temaki-psychic.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpsychic' target='_blank'>psychic</a>`
-  - circle:white;./assets/layers/id_presets/temaki-rocket_firework.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dpyrotechnics' target='_blank'>pyrotechnics</a>`
-  - circle:white;./assets/layers/id_presets/fas-microchip.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dradiotechnics' target='_blank'>radiotechnics</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dreligion' target='_blank'>religion</a>`
-  - circle:white;./assets/layers/id_presets/fas-dolly.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Drental' target='_blank'>rental</a>`
-  - circle:white;./assets/layers/id_presets/temaki-scuba_diving.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dscuba_diving' target='_blank'>scuba_diving</a>`
-  - circle:white;./assets/layers/id_presets/temaki-fish_cleaning.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dseafood' target='_blank'>seafood</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsecond_hand' target='_blank'>second_hand</a>`
-  - circle:white;./assets/layers/id_presets/temaki-needle_and_spool.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsewing' target='_blank'>sewing</a>`
-  - circle:white;./assets/layers/id_presets/temaki-hammer_shoe.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dshoe_repair' target='_blank'>shoe_repair</a>`
-  - circle:white;./assets/layers/id_presets/maki-shoe.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dshoes' target='_blank'>shoes</a>`
-  - circle:white;./assets/layers/id_presets/temaki-spice_bottle.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dspices' target='_blank'>spices</a>`
-  - circle:white;./assets/layers/id_presets/fas-futbol.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a>`
-  - circle:white;./assets/layers/id_presets/fas-paperclip.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dstationery' target='_blank'>stationery</a>`
-  - circle:white;./assets/layers/id_presets/temaki-storage_rental.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dstorage_rental' target='_blank'>storage_rental</a>`
-  - circle:white;./assets/layers/id_presets/maki-grocery.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket' target='_blank'>supermarket</a>`
-  - circle:white;./assets/layers/id_presets/temaki-needle_and_spool.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtailor' target='_blank'>tailor</a>`
-  - circle:white;./assets/layers/id_presets/temaki-tattoo_machine.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtattoo' target='_blank'>tattoo</a>`
-  - circle:white;./assets/layers/id_presets/maki-teahouse.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtea' target='_blank'>tea</a>`
-  - circle:white;./assets/layers/id_presets/maki-telephone.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtelecommunication' target='_blank'>telecommunication</a>`
-  - circle:white;./assets/layers/id_presets/temaki-tiling.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtiles' target='_blank'>tiles</a>`
-  - circle:white;./assets/layers/id_presets/temaki-pipe.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtobacco' target='_blank'>tobacco</a>`
-  - circle:white;./assets/layers/id_presets/temaki-tools.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtool_hire' target='_blank'>tool_hire</a>`
-  - circle:white;./assets/layers/id_presets/fas-rocket.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtoys' target='_blank'>toys</a>`
-  - circle:white;./assets/layers/id_presets/temaki-tools.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtrade' target='_blank'>trade</a>`
-  - circle:white;./assets/layers/id_presets/fas-suitcase.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtravel_agency' target='_blank'>travel_agency</a>`
-  - circle:white;./assets/layers/id_presets/fas-trophy.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtrophy' target='_blank'>trophy</a>`
-  - circle:white;./assets/layers/id_presets/temaki-tire.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dtyres' target='_blank'>tyres</a>`
-  - circle:white;./assets/layers/id_presets/temaki-vacuum.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvacuum_cleaner' target='_blank'>vacuum_cleaner</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvariety_store' target='_blank'>variety_store</a>`
-  - circle:white;./assets/layers/id_presets/temaki-movie_rental.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvideo' target='_blank'>video</a>`
-  - circle:white;./assets/layers/id_presets/maki-gaming.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dvideo_games' target='_blank'>video_games</a>`
-  - circle:white;./assets/layers/id_presets/maki-watch.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwatches' target='_blank'>watches</a>`
-  - circle:white;./assets/layers/id_presets/temaki-water_bottle.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwater' target='_blank'>water</a>`
-  - circle:white;./assets/layers/id_presets/temaki-dagger.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dweapons' target='_blank'>weapons</a>`
-  - circle:white;./assets/layers/id_presets/maki-warehouse.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwholesale' target='_blank'>wholesale</a>`
-  - circle:white;./assets/layers/id_presets/maki-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwigs' target='_blank'>wigs</a>`
-  - circle:white;./assets/layers/id_presets/temaki-window.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwindow_blind' target='_blank'>window_blind</a>`
-  - circle:white;./assets/layers/id_presets/maki-alcohol-shop.svg  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dwine' target='_blank'>wine</a>`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=boutique`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=fashion`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=vacant`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=yes`
+  - *circle:white;./assets/layers/id_presets/fas-tractor.svg*  corresponds with  `shop=agrarian`
+  - *circle:white;./assets/layers/id_presets/fas-wine-bottle.svg*  corresponds with  `shop=alcohol`
+  - *circle:white;./assets/layers/id_presets/fas-dragon.svg*  corresponds with  `shop=anime`
+  - *circle:white;./assets/layers/id_presets/temaki-furniture.svg*  corresponds with  `shop=antiques`
+  - *circle:white;./assets/layers/id_presets/temaki-laundry.svg*  corresponds with  `shop=appliance`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=art`
+  - *circle:white;./assets/layers/id_presets/fas-baby-carriage.svg*  corresponds with  `shop=baby_goods`
+  - *circle:white;./assets/layers/id_presets/fas-suitcase-rolling.svg*  corresponds with  `shop=bag`
+  - *circle:white;./assets/layers/id_presets/maki-bakery.svg*  corresponds with  `shop=bakery`
+  - *circle:white;./assets/layers/id_presets/fas-bath.svg*  corresponds with  `shop=bathroom_furnishing`
+  - *circle:white;./assets/layers/id_presets/temaki-lipstick.svg*  corresponds with  `shop=beauty`
+  - *circle:white;./assets/layers/id_presets/maki-lodging.svg*  corresponds with  `shop=bed`
+  - *circle:white;./assets/layers/id_presets/temaki-bottles.svg*  corresponds with  `shop=beverages`
+  - *circle:white;./assets/layers/id_presets/maki-bicycle.svg*  corresponds with  `shop=bicycle`
+  - *circle:white;./assets/layers/id_presets/temaki-boat.svg*  corresponds with  `shop=boat`
+  - *circle:white;./assets/layers/id_presets/temaki-money_hand.svg*  corresponds with  `shop=bookmaker`
+  - *circle:white;./assets/layers/id_presets/fas-book.svg*  corresponds with  `shop=books`
+  - *circle:white;./assets/layers/id_presets/temaki-storage_fermenter.svg*  corresponds with  `shop=brewing_supplies`
+  - *circle:white;./assets/layers/id_presets/temaki-cleaver.svg*  corresponds with  `shop=butcher`
+  - *circle:white;./assets/layers/id_presets/fas-camera-retro.svg*  corresponds with  `shop=camera`
+  - *circle:white;./assets/layers/id_presets/fas-cannabis.svg*  corresponds with  `shop=cannabis`
+  - *circle:white;./assets/layers/id_presets/maki-car.svg*  corresponds with  `shop=car`
+  - *circle:white;./assets/layers/id_presets/fas-car-battery.svg*  corresponds with  `shop=car_parts`
+  - *circle:white;./assets/layers/id_presets/maki-car-repair.svg*  corresponds with  `shop=car_repair`
+  - *circle:white;./assets/layers/id_presets/temaki-camper_trailer.svg*  corresponds with  `shop=caravan`
+  - *circle:white;./assets/layers/id_presets/fas-tape.svg*  corresponds with  `shop=carpet`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=catalogue`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=charity`
+  - *circle:white;./assets/layers/id_presets/fas-cheese.svg*  corresponds with  `shop=cheese`
+  - *circle:white;./assets/layers/id_presets/maki-confectionery.svg*  corresponds with  `shop=chocolate`
+  - *circle:white;./assets/layers/id_presets/maki-clothing-store.svg*  corresponds with  `shop=clothes`
+  - *circle:white;./assets/layers/id_presets/temaki-coffee.svg*  corresponds with  `shop=coffee`
+  - *circle:white;./assets/layers/id_presets/fas-laptop.svg*  corresponds with  `shop=computer`
+  - *circle:white;./assets/layers/id_presets/maki-confectionery.svg*  corresponds with  `shop=confectionery`
+  - *circle:white;./assets/layers/id_presets/fas-print.svg*  corresponds with  `shop=copyshop`
+  - *circle:white;./assets/layers/id_presets/temaki-lipstick.svg*  corresponds with  `shop=cosmetics`
+  - *circle:white;./assets/layers/id_presets/fas-hat-cowboy-side.svg*  corresponds with  `shop=country_store`
+  - *circle:white;./assets/layers/id_presets/temaki-curtains.svg*  corresponds with  `shop=curtain`
+  - *circle:white;./assets/layers/id_presets/fas-cheese.svg*  corresponds with  `shop=dairy`
+  - *circle:white;./assets/layers/id_presets/temaki-meat.svg*  corresponds with  `shop=deli`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=department_store`
+  - *circle:white;./assets/layers/id_presets/temaki-tools.svg*  corresponds with  `shop=doityourself`
+  - *circle:white;./assets/layers/id_presets/fas-door-open.svg*  corresponds with  `shop=doors`
+  - *circle:white;./assets/layers/id_presets/temaki-clothes_hanger.svg*  corresponds with  `shop=dry_cleaning`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=e-cigarette`
+  - *circle:white;./assets/layers/id_presets/temaki-power.svg*  corresponds with  `shop=electrical`
+  - *circle:white;./assets/layers/id_presets/fas-plug.svg*  corresponds with  `shop=electronics`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=erotic`
+  - *circle:white;./assets/layers/id_presets/fas-tape.svg*  corresponds with  `shop=fabric`
+  - *circle:white;./assets/layers/id_presets/temaki-fashion_accessories.svg*  corresponds with  `shop=fashion_accessories`
+  - *circle:white;./assets/layers/id_presets/temaki-fireplace.svg*  corresponds with  `shop=fireplace`
+  - *circle:white;./assets/layers/id_presets/temaki-ice_fishing.svg*  corresponds with  `shop=fishing`
+  - *circle:white;./assets/layers/id_presets/temaki-tools.svg*  corresponds with  `shop=flooring`
+  - *circle:white;./assets/layers/id_presets/maki-florist.svg*  corresponds with  `shop=florist`
+  - *circle:white;./assets/layers/id_presets/fas-vector-square.svg*  corresponds with  `shop=frame`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=frozen_food`
+  - *circle:white;./assets/layers/id_presets/temaki-propane_tank.svg*  corresponds with  `shop=fuel`
+  - *circle:white;./assets/layers/id_presets/maki-cemetery.svg*  corresponds with  `shop=funeral_directors`
+  - *circle:white;./assets/layers/id_presets/fas-couch.svg*  corresponds with  `shop=furniture`
+  - *circle:white;./assets/layers/id_presets/fas-dice.svg*  corresponds with  `shop=games`
+  - *circle:white;./assets/layers/id_presets/maki-garden-centre.svg*  corresponds with  `shop=garden_centre`
+  - *circle:white;./assets/layers/id_presets/temaki-propane_tank.svg*  corresponds with  `shop=gas`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=general`
+  - *circle:white;./assets/layers/id_presets/maki-gift.svg*  corresponds with  `shop=gift`
+  - *circle:white;./assets/layers/id_presets/fas-carrot.svg*  corresponds with  `shop=greengrocer`
+  - *circle:white;./assets/layers/id_presets/temaki-beauty_salon.svg*  corresponds with  `shop=hairdresser`
+  - *circle:white;./assets/layers/id_presets/temaki-hair_care.svg*  corresponds with  `shop=hairdresser_supply`
+  - *circle:white;./assets/layers/id_presets/temaki-tools.svg*  corresponds with  `shop=hardware`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=health_food`
+  - *circle:white;./assets/layers/id_presets/temaki-hearing_aid.svg*  corresponds with  `shop=hearing_aids`
+  - *circle:white;./assets/layers/id_presets/fas-leaf.svg*  corresponds with  `shop=herbalist`
+  - *circle:white;./assets/layers/id_presets/temaki-speaker.svg*  corresponds with  `shop=hifi`
+  - *circle:white;./assets/layers/id_presets/fas-dragon.svg*  corresponds with  `shop=hobby`
+  - *circle:white;./assets/layers/id_presets/temaki-cloth.svg*  corresponds with  `shop=household_linen`
+  - *circle:white;./assets/layers/id_presets/fas-blender.svg*  corresponds with  `shop=houseware`
+  - *circle:white;./assets/layers/id_presets/temaki-bow_and_arrow.svg*  corresponds with  `shop=hunting`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=interior_decoration`
+  - *circle:white;./assets/layers/id_presets/maki-jewelry-store.svg*  corresponds with  `shop=jewelry`
+  - *circle:white;./assets/layers/id_presets/fas-store.svg*  corresponds with  `shop=kiosk`
+  - *circle:white;./assets/layers/id_presets/temaki-kitchen_sink.svg*  corresponds with  `shop=kitchen`
+  - *circle:white;./assets/layers/id_presets/temaki-laundry.svg*  corresponds with  `shop=laundry`
+  - *circle:white;./assets/layers/id_presets/temaki-handbag.svg*  corresponds with  `shop=leather`
+  - *circle:white;./assets/layers/id_presets/temaki-desk_lamp.svg*  corresponds with  `shop=lighting`
+  - *circle:white;./assets/layers/id_presets/fas-key.svg*  corresponds with  `shop=locksmith`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=mall`
+  - *circle:white;./assets/layers/id_presets/temaki-spa.svg*  corresponds with  `shop=massage`
+  - *circle:white;./assets/layers/id_presets/fas-crutch.svg*  corresponds with  `shop=medical_supply`
+  - *circle:white;./assets/layers/id_presets/temaki-military.svg*  corresponds with  `shop=military_surplus`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=model`
+  - *circle:white;./assets/layers/id_presets/temaki-money_hand.svg*  corresponds with  `shop=money_lender`
+  - *circle:white;./assets/layers/id_presets/fas-motorcycle.svg*  corresponds with  `shop=motorcycle`
+  - *circle:white;./assets/layers/id_presets/temaki-motorcycle_repair.svg*  corresponds with  `shop=motorcycle_repair`
+  - *circle:white;./assets/layers/id_presets/fas-compact-disc.svg*  corresponds with  `shop=music`
+  - *circle:white;./assets/layers/id_presets/fas-guitar.svg*  corresponds with  `shop=musical_instrument`
+  - *circle:white;./assets/layers/id_presets/fas-newspaper.svg*  corresponds with  `shop=newsagent`
+  - *circle:white;./assets/layers/id_presets/fas-pills.svg*  corresponds with  `shop=nutrition_supplements`
+  - *circle:white;./assets/layers/id_presets/maki-optician.svg*  corresponds with  `shop=optician`
+  - *circle:white;./assets/layers/id_presets/temaki-compass.svg*  corresponds with  `shop=outdoor`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=outpost`
+  - *circle:white;./assets/layers/id_presets/fas-paint-roller.svg*  corresponds with  `shop=paint`
+  - *circle:white;./assets/layers/id_presets/temaki-balloon.svg*  corresponds with  `shop=party`
+  - *circle:white;./assets/layers/id_presets/maki-bakery.svg*  corresponds with  `shop=pastry`
+  - *circle:white;./assets/layers/id_presets/temaki-money_hand.svg*  corresponds with  `shop=pawnbroker`
+  - *circle:white;./assets/layers/id_presets/temaki-perfume.svg*  corresponds with  `shop=perfumery`
+  - *circle:white;./assets/layers/id_presets/fas-cat.svg*  corresponds with  `shop=pet`
+  - *circle:white;./assets/layers/id_presets/temaki-pet_grooming.svg*  corresponds with  `shop=pet_grooming`
+  - *circle:white;./assets/layers/id_presets/fas-camera-retro.svg*  corresponds with  `shop=photo`
+  - *circle:white;./assets/layers/id_presets/temaki-vase.svg*  corresponds with  `shop=pottery`
+  - *circle:white;./assets/layers/id_presets/fas-print.svg*  corresponds with  `shop=printer_ink`
+  - *circle:white;./assets/layers/id_presets/temaki-psychic.svg*  corresponds with  `shop=psychic`
+  - *circle:white;./assets/layers/id_presets/temaki-rocket_firework.svg*  corresponds with  `shop=pyrotechnics`
+  - *circle:white;./assets/layers/id_presets/fas-microchip.svg*  corresponds with  `shop=radiotechnics`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=religion`
+  - *circle:white;./assets/layers/id_presets/fas-dolly.svg*  corresponds with  `shop=rental`
+  - *circle:white;./assets/layers/id_presets/temaki-scuba_diving.svg*  corresponds with  `shop=scuba_diving`
+  - *circle:white;./assets/layers/id_presets/temaki-fish_cleaning.svg*  corresponds with  `shop=seafood`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=second_hand`
+  - *circle:white;./assets/layers/id_presets/temaki-needle_and_spool.svg*  corresponds with  `shop=sewing`
+  - *circle:white;./assets/layers/id_presets/temaki-hammer_shoe.svg*  corresponds with  `shop=shoe_repair`
+  - *circle:white;./assets/layers/id_presets/maki-shoe.svg*  corresponds with  `shop=shoes`
+  - *circle:white;./assets/layers/id_presets/temaki-spice_bottle.svg*  corresponds with  `shop=spices`
+  - *circle:white;./assets/layers/id_presets/fas-futbol.svg*  corresponds with  `shop=sports`
+  - *circle:white;./assets/layers/id_presets/fas-paperclip.svg*  corresponds with  `shop=stationery`
+  - *circle:white;./assets/layers/id_presets/temaki-storage_rental.svg*  corresponds with  `shop=storage_rental`
+  - *circle:white;./assets/layers/id_presets/maki-grocery.svg*  corresponds with  `shop=supermarket`
+  - *circle:white;./assets/layers/id_presets/temaki-needle_and_spool.svg*  corresponds with  `shop=tailor`
+  - *circle:white;./assets/layers/id_presets/temaki-tattoo_machine.svg*  corresponds with  `shop=tattoo`
+  - *circle:white;./assets/layers/id_presets/maki-teahouse.svg*  corresponds with  `shop=tea`
+  - *circle:white;./assets/layers/id_presets/maki-telephone.svg*  corresponds with  `shop=telecommunication`
+  - *circle:white;./assets/layers/id_presets/temaki-tiling.svg*  corresponds with  `shop=tiles`
+  - *circle:white;./assets/layers/id_presets/temaki-pipe.svg*  corresponds with  `shop=tobacco`
+  - *circle:white;./assets/layers/id_presets/temaki-tools.svg*  corresponds with  `shop=tool_hire`
+  - *circle:white;./assets/layers/id_presets/fas-rocket.svg*  corresponds with  `shop=toys`
+  - *circle:white;./assets/layers/id_presets/temaki-tools.svg*  corresponds with  `shop=trade`
+  - *circle:white;./assets/layers/id_presets/fas-suitcase.svg*  corresponds with  `shop=travel_agency`
+  - *circle:white;./assets/layers/id_presets/fas-trophy.svg*  corresponds with  `shop=trophy`
+  - *circle:white;./assets/layers/id_presets/temaki-tire.svg*  corresponds with  `shop=tyres`
+  - *circle:white;./assets/layers/id_presets/temaki-vacuum.svg*  corresponds with  `shop=vacuum_cleaner`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=variety_store`
+  - *circle:white;./assets/layers/id_presets/temaki-movie_rental.svg*  corresponds with  `shop=video`
+  - *circle:white;./assets/layers/id_presets/maki-gaming.svg*  corresponds with  `shop=video_games`
+  - *circle:white;./assets/layers/id_presets/maki-watch.svg*  corresponds with  `shop=watches`
+  - *circle:white;./assets/layers/id_presets/temaki-water_bottle.svg*  corresponds with  `shop=water`
+  - *circle:white;./assets/layers/id_presets/temaki-dagger.svg*  corresponds with  `shop=weapons`
+  - *circle:white;./assets/layers/id_presets/maki-warehouse.svg*  corresponds with  `shop=wholesale`
+  - *circle:white;./assets/layers/id_presets/maki-shop.svg*  corresponds with  `shop=wigs`
+  - *circle:white;./assets/layers/id_presets/temaki-window.svg*  corresponds with  `shop=window_blind`
+  - *circle:white;./assets/layers/id_presets/maki-alcohol-shop.svg*  corresponds with  `shop=wine`
  
 
 This document is autogenerated from [assets/layers/id_presets/id_presets.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/id_presets/id_presets.json)

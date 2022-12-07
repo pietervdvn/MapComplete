@@ -86,20 +86,20 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What is the brand of the parcel locker?
+The question is  *What is the brand of the parcel locker?*
 
 This rendering asks information about the property  [brand](https://wiki.openstreetmap.org/wiki/Key:brand) 
 
-This is rendered with  This is a {brand} parcel locker
+This is rendered with  `This is a {brand} parcel locker`
 
 
 
 
 
-  - This is an Amazon Locker  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DAmazon Locker' target='_blank'>Amazon Locker</a>`
-  - This is a DHL Packstation  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DDHL Packstation' target='_blank'>DHL Packstation</a>`
-  - This is a DPD Pickup Station  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DPickup Station' target='_blank'>Pickup Station</a>`
-  - This is a PostNL Parcel Locker  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:brand' target='_blank'>brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:brand%3DPostNL' target='_blank'>PostNL</a>`
+  - *This is an Amazon Locker*  corresponds with  `brand=Amazon Locker`
+  - *This is a DHL Packstation*  corresponds with  `brand=DHL Packstation`
+  - *This is a DPD Pickup Station*  corresponds with  `brand=Pickup Station`
+  - *This is a PostNL Parcel Locker*  corresponds with  `brand=PostNL`
 
 
 
@@ -108,11 +108,11 @@ This is rendered with  This is a {brand} parcel locker
 
 
 
-The question is  What is the operator of the parcel locker?
+The question is  *What is the operator of the parcel locker?*
 
 This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
 
-This is rendered with  This parcel locker is operated by {operator}
+This is rendered with  `This parcel locker is operated by {operator}`
 
 
 
@@ -122,17 +122,17 @@ This is rendered with  This parcel locker is operated by {operator}
 
 
 
-The question is  What are the opening hours of {title()}?
+The question is  *What are the opening hours of {title()}?*
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
+This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
 
 
-  - 24/7 opened (including holidays)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>`
+  - *24/7 opened (including holidays)*  corresponds with  `opening_hours=24/7`
 
 
 
@@ -141,11 +141,11 @@ This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-The question is  What is the reference number/identifier of this parcel locker?
+The question is  *What is the reference number/identifier of this parcel locker?*
 
 This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) 
 
-This is rendered with  This parcel locker has the reference {ref}
+This is rendered with  `This parcel locker has the reference {ref}`
 
 
 
@@ -155,14 +155,14 @@ This is rendered with  This parcel locker has the reference {ref}
 
 
 
-The question is  Can you send packages from this parcel locker?
+The question is  *Can you send packages from this parcel locker?*
 
 
 
 
 
-  - You can send packages from this parcel locker  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:parcel_mail_in' target='_blank'>parcel_mail_in</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parcel_mail_in%3Dyes' target='_blank'>yes</a>`
-  - You <b>can't</b> send packages from this parcel locker  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:parcel_mail_in' target='_blank'>parcel_mail_in</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parcel_mail_in%3Dno' target='_blank'>no</a>`
+  - *You can send packages from this parcel locker*  corresponds with  `parcel_mail_in=yes`
+  - *You <b>can't</b> send packages from this parcel locker*  corresponds with  `parcel_mail_in=no`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `amenity=parcel_locker`
@@ -173,14 +173,14 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  Can you pick up packages from this parcel locker?
+The question is  *Can you pick up packages from this parcel locker?*
 
 
 
 
 
-  - You can pick up packages from this parcel locker  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:parcel_pickup' target='_blank'>parcel_pickup</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parcel_pickup%3Dyes' target='_blank'>yes</a>`
-  - You <b>can't</b> pick up packages from this parcel locker  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:parcel_pickup' target='_blank'>parcel_pickup</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:parcel_pickup%3Dno' target='_blank'>no</a>`
+  - *You can pick up packages from this parcel locker*  corresponds with  `parcel_pickup=yes`
+  - *You <b>can't</b> pick up packages from this parcel locker*  corresponds with  `parcel_pickup=no`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `amenity=parcel_locker`

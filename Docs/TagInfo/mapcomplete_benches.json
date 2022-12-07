@@ -250,6 +250,91 @@
       "value": "memorial"
     },
     {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'artwork_type' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "architecture"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "mural"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "painting"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "sculpture"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "statue"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "bust"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "stone"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "installation"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "graffiti"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "relief"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "azulejo"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "tilework"
+    },
+    {
+      "key": "artwork_type",
+      "description": "Layer 'Benches' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "woodcarving"
+    },
+    {
+      "key": "artist:wikidata",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'artist:wikidata' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "artist_name",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'artist_name' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "website",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "subject:wikidata",
+      "description": "Layer 'Benches' shows and asks freeform values for key 'subject:wikidata' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
       "key": "highway",
       "description": "The MapComplete theme Benches has a layer Benches at public transport stops showing features with this tag",
       "value": "bus_stop"

@@ -89,11 +89,11 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What is the name of this bike cafe?
+The question is  *What is the name of this bike cafe?*
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with  This bike cafe is called {name}
+This is rendered with  `This bike cafe is called {name}`
 
 
 
@@ -103,14 +103,14 @@ This is rendered with  This bike cafe is called {name}
 
 
 
-The question is  Does this bike cafe offer a bike pump for use by anyone?
+The question is  *Does this bike cafe offer a bike pump for use by anyone?*
 
 
 
 
 
-  - This bike cafe offers a bike pump for anyone  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>`
-  - This bike cafe doesn't offer a bike pump for anyone  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>`
+  - *This bike cafe offers a bike pump for anyone*  corresponds with  `service:bicycle:pump=yes`
+  - *This bike cafe doesn't offer a bike pump for anyone*  corresponds with  `service:bicycle:pump=no`
 
 
 
@@ -119,14 +119,14 @@ The question is  Does this bike cafe offer a bike pump for use by anyone?
 
 
 
-The question is  Are there tools here to repair your own bike?
+The question is  *Are there tools here to repair your own bike?*
 
 
 
 
 
-  - This bike cafe offers tools for DIY repair  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dyes' target='_blank'>yes</a>`
-  - This bike cafe doesn't offer tools for DIY repair  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:diy' target='_blank'>service:bicycle:diy</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:diy%3Dno' target='_blank'>no</a>`
+  - *This bike cafe offers tools for DIY repair*  corresponds with  `service:bicycle:diy=yes`
+  - *This bike cafe doesn't offer tools for DIY repair*  corresponds with  `service:bicycle:diy=no`
 
 
 
@@ -135,14 +135,14 @@ The question is  Are there tools here to repair your own bike?
 
 
 
-The question is  Does this bike cafe repair bikes?
+The question is  *Does this bike cafe repair bikes?*
 
 
 
 
 
-  - This bike cafe repairs bikes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dyes' target='_blank'>yes</a>`
-  - This bike cafe doesn't repair bikes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:repair' target='_blank'>service:bicycle:repair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:repair%3Dno' target='_blank'>no</a>`
+  - *This bike cafe repairs bikes*  corresponds with  `service:bicycle:repair=yes`
+  - *This bike cafe doesn't repair bikes*  corresponds with  `service:bicycle:repair=no`
 
 
 
@@ -151,17 +151,17 @@ The question is  Does this bike cafe repair bikes?
 
 
 
-The question is  What is the website of {title()}?
+The question is  *What is the website of {title()}?*
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with  <a href='{website}' target='_blank'>{website}</a>
+This is rendered with  `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
+  - *<a href='{contact:website}' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -171,17 +171,17 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-The question is  What is the phone number of {title()}?
+The question is  *What is the phone number of {title()}?*
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
-This is rendered with  <a href='tel:{phone}'>{phone}</a>
+This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~.+`
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
   - This option cannot be chosen as answer
 
 
@@ -191,17 +191,17 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-The question is  What is the email address of {title()}?
+The question is  *What is the email address of {title()}?*
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
-This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
+This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~.+`
+  - *<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>*  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
 
@@ -211,11 +211,11 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-The question is  When it this bike café opened?
+The question is  *When it this bike café opened?*
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
+This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
  
 

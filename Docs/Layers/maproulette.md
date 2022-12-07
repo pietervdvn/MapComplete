@@ -64,14 +64,14 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - Task is created  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D0' target='_blank'>0</a>`
-  - Task is fixed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D1' target='_blank'>1</a>`
-  - Task is a false positive  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D2' target='_blank'>2</a>`
-  - Task is skipped  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D3' target='_blank'>3</a>`
-  - Task is deleted  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D4' target='_blank'>4</a>`
-  - Task is already fixed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D5' target='_blank'>5</a>`
-  - Task is marked as too hard  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D6' target='_blank'>6</a>`
-  - Task is disabled  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:status' target='_blank'>status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:status%3D9' target='_blank'>9</a>`
+  - *Task is created*  corresponds with  `status=0`
+  - *Task is fixed*  corresponds with  `status=1`
+  - *Task is a false positive*  corresponds with  `status=2`
+  - *Task is skipped*  corresponds with  `status=3`
+  - *Task is deleted*  corresponds with  `status=4`
+  - *Task is already fixed*  corresponds with  `status=5`
+  - *Task is marked as too hard*  corresponds with  `status=6`
+  - *Task is disabled*  corresponds with  `status=9`
 
 
 

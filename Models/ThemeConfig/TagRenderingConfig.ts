@@ -642,7 +642,7 @@ export default class TagRenderingConfig {
                 new Paragraph(
                     new Combine([
                         "This is rendered with ",
-                        new FixedUiElement(this.render.txt).SetClass("literalcode bold"),
+                        new FixedUiElement(this.render.txt).SetClass("code font-bold"),
                     ])
                 ),
             ]
@@ -655,9 +655,9 @@ export default class TagRenderingConfig {
                     ...this.mappings.map((m) => {
                         const msgs: (string | BaseUIElement)[] = [
                             new Combine([
-                                new FixedUiElement(m.then.txt).SetClass("bold"),
+                                new FixedUiElement(m.then.txt).SetClass("font-bold"),
                                 " corresponds with ",
-                                new FixedUiElement(m.if.asHumanString(true, false, {})).SetClass(
+                                new FixedUiElement(m.if.asHumanString(false, false, {})).SetClass(
                                     "code"
                                 ),
                             ]),

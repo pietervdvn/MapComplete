@@ -16,6 +16,9 @@ export class FixedUiElement extends BaseUIElement {
         if (this.HasClass("code")) {
             return "`" + this.content + "`"
         }
+        if (this.HasClass("font-bold")) {
+            return "*" + this.content + "*"
+        }
         return this.content
     }
 
