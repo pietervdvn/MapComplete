@@ -45,6 +45,9 @@
             "en": "Dutch Railways (NS)",
             "nl": "Nederlandse Spoorwegen (NS)"
           },
+          "addExtraTags": [
+            "operator:wikidata=Q23076"
+          ],
           "hideInAnswer": "_country!=nl"
         }
       ]
