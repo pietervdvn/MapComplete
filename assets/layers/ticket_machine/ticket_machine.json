@@ -37,9 +37,158 @@
         "placeholder": {
           "en": "Name of the operator"
         }
-      }
+      },
+      "mappings": [
+        {
+          "if": "operator=Nederlandse Spoorwegen",
+          "then": {
+            "en": "Dutch Railways (NS)",
+            "nl": "Nederlandse Spoorwegen (NS)"
+          },
+          "hideInAnswer": "_country!=nl"
+        }
+      ]
     },
-    "payment-options"
+    {
+      "id": "payment-options",
+      "question": {
+        "en": "How can you pay for tickets at this ticket machine?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "payment:coins=yes",
+          "ifnot": "payment:coins=no",
+          "icon": "./assets/layers/ticket_machine/coins.svg",
+          "then": {
+            "en": "You can pay using coins"
+          }
+        },
+        {
+          "if": "payment:notes=yes",
+          "ifnot": "payment:notes=no",
+          "icon": "./assets/layers/ticket_machine/notes.svg",
+          "then": {
+            "en": "You can pay using bank notes"
+          }
+        },
+        {
+          "if": "payment:cash=yes",
+          "ifnot": "payment:cash=",
+          "icon": "./assets/tagRenderings/cash.svg",
+          "then": {
+            "en": "You can pay here using coins and bank notes"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "payment:debit_cards=yes",
+          "ifnot": "payment_debit_cards=no",
+          "icon": "./assets/tagRenderings/payment_card.svg",
+          "then": {
+            "en": "You can pay here using debit cards"
+          }
+        },
+        {
+          "if": "payment:credit_cards=yes",
+          "ifnot": "payment:credit_cards=no",
+          "icon": "./assets/tagRenderings/payment_card.svg",
+          "then": {
+            "en": "You can pay here using credit cards"
+          }
+        },
+        {
+          "if": "payment:cards=yes",
+          "ifnot": "payment:cards=",
+          "icon": "./assets/tagRenderings/payment_card.svg",
+          "then": {
+            "en": "You can pay here using cards"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "denominations-coins",
+      "condition": {
+        "and": [
+          {
+            "or": [
+              "payment:coins=yes",
+              "payment:cash=yes"
+            ]
+          },
+          {
+            "or": [
+              "_country=nl",
+              "_country=be"
+            ]
+          }
+        ]
+      },
+      "question": {
+        "en": "Whith what coins can you pay here?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "payment:coins:denomination=0.01 EUR",
+          "icon": "./assets/layers/ticket_machine/1cent.svg",
+          "then": {
+            "en": "1 cent coins are accepted"
+          }
+        },
+        {
+          "if": "payment:coins:denomination=0.02 EUR",
+          "icon": "./assets/layers/ticket_machine/2cent.svg",
+          "then": {
+            "en": "2 cent coins are accepted"
+          }
+        },
+        {
+          "if": "payment:coins:denomination=0.05 EUR",
+          "icon": "./assets/layers/ticket_machine/5cent.svg",
+          "then": {
+            "en": "5 cent coins are accepted"
+          }
+        },
+        {
+          "if": "payment:coins:denomination=0.10 EUR",
+          "icon": "./assets/layers/ticket_machine/10cent.svg",
+          "then": {
+            "en": "10 cent coins are accepted"
+          }
+        },
+        {
+          "if": "payment:coins:denomination=0.20 EUR",
+          "icon": "./assets/layers/ticket_machine/20cent.svg",
+          "then": {
+            "en": "20 cent coins are accepted"
+          }
+        },
+        {
+          "if": "payment:coins:denomination=0.50 EUR",
+          "icon": "./assets/layers/ticket_machine/50cent.svg",
+          "then": {
+            "en": "50 cent coins are accepted"
+          }
+        },
+        {
+          "if": "payment:coins:denomination=1.00 EUR",
+          "icon": "./assets/layers/ticket_machine/1euro.svg",
+          "then": {
+            "en": "1 euro coins are accepted"
+          }
+        },
+        {
+          "if": "payment:coins:denomination=2.00 EUR",
+          "icon": "./assets/layers/ticket_machine/2euro.svg",
+          "then": {
+            "en": "2 euro coins are accepted"
+          }
+        }
+      ]
+    }
   ],
   "presets": [
     {
