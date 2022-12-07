@@ -120,8 +120,26 @@
           },
           {
             "or": [
+              "_country=at",
+              "_country=be",
+              "_country=cy",
+              "_country=de",
+              "_country=ee",
+              "_country=es",
+              "_country=fi",
+              "_country=fr",
+              "_country=gr",
+              "_country=hr",
+              "_country=ie",
+              "_country=it",
+              "_country=lt",
+              "_country=lu",
+              "_country=lv",
+              "_country=mt",
               "_country=nl",
-              "_country=be"
+              "_country=pt",
+              "_country=si",
+              "_country=sk"
             ]
           }
         ]
