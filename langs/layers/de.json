@@ -3281,6 +3281,14 @@
         },
         "title": {
             "render": "Arztpraxis {name}"
+        },
+        "description": "Diese Ebene zeigt Zahnarztpraxen",
+        "name": "Zahnarzt",
+        "tagRenderings": {
+            "name": {
+                "render": "Dieser Zahnarzt heißt {name}",
+                "question": "Wie lautet der Name dieses Zahnarztes?"
+            }
         }
     },
     "direction": {
@@ -3320,7 +3328,8 @@
         },
         "title": {
             "render": "Arztpraxis {name}"
-        }
+        },
+        "description": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen"
     },
     "dogpark": {
         "name": "Hundeparks",
@@ -3724,6 +3733,13 @@
                     },
                     "3": {
                         "question": "Keine Informationen über taktiles Pflaster"
+                    }
+                }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Hat Bio-Produkte"
                     }
                 }
             }
@@ -4177,6 +4193,34 @@
                     }
                 },
                 "question": "Werden hier halal Gerichte angeboten?"
+            },
+            "friture-organic": {
+                "mappings": {
+                    "1": {
+                        "then": "Es sind keine biologischen Snacks erhältlich"
+                    },
+                    "2": {
+                        "then": "Nur biologische Snacks sind erhältlich"
+                    },
+                    "0": {
+                        "then": "Biologische Snacks sind erhältlich"
+                    }
+                },
+                "question": "Bietet diese Pommesbude biologische Snacks an?"
+            },
+            "organic (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "Es sind keine biologischen Produkte verfügbar"
+                    },
+                    "1": {
+                        "then": "Es gibt ein biologisches Menü"
+                    },
+                    "2": {
+                        "then": "Nur biologische Produkte sind erhältlich"
+                    }
+                },
+                "question": "Bietet dieses Restaurant biologische Speisen an?"
             }
         },
         "title": {
@@ -5582,6 +5626,17 @@
         "presets": {
             "0": {
                 "title": "Praxis eines Physiotherapeuten"
+            }
+        },
+        "name": "Physiotherapeut",
+        "title": {
+            "render": "Physiotherapeut {name}"
+        },
+        "description": "Diese Ebene zeigt Physiotherapeuten",
+        "tagRenderings": {
+            "name": {
+                "question": "Wie heißt die Praxis des Physiotherapeuten?",
+                "render": "Die Praxis des Physiotherapeuten heißt {name}"
             }
         }
     },
