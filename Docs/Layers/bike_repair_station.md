@@ -120,7 +120,7 @@ The question is  Is the bike pump still operational?
   - The bike pump is operational  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status' target='_blank'>service:bicycle:pump:operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Doperational' target='_blank'>operational</a>`
 
 
-Only visible if  `service:bicycle:pump=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `service:bicycle:pump=yes`
 
 
 
@@ -226,7 +226,7 @@ The question is  Does this bike repair station have a special tool to repair you
   - There is no chain tool  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:chain_tool' target='_blank'>service:bicycle:chain_tool</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:chain_tool%3Dno' target='_blank'>no</a>`
 
 
-Only visible if  `service:bicycle:tools=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `service:bicycle:tools=yes`
 
 
 
@@ -244,7 +244,7 @@ The question is  Does this bike station have a hook to hang your bike on or a st
   - There is no hook or stand  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:stand' target='_blank'>service:bicycle:stand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:stand%3Dno' target='_blank'>no</a>`
 
 
-Only visible if  `service:bicycle:tools=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `service:bicycle:tools=yes`
 
 
 
@@ -256,7 +256,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-Only visible if  `email~.+&service:bicycle:pump:operational_status=broken`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `email~.+&service:bicycle:pump:operational_status=broken`
 
 
 
@@ -295,7 +295,7 @@ The question is  Is this an electric bike pump?
   - Electrical pump  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:manual' target='_blank'>manual</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manual%3Dno' target='_blank'>no</a>`
 
 
-Only visible if  `service:bicycle:pump=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `service:bicycle:pump=yes`
 
 
 
@@ -314,7 +314,7 @@ The question is  Does the pump have a pressure indicator or manometer?
   - There is manometer but it is broken  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:manometer' target='_blank'>manometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dbroken' target='_blank'>broken</a>`
 
 
-Only visible if  `service:bicycle:pump=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `service:bicycle:pump=yes`
 
 
 

@@ -15,7 +15,7 @@
     "de": "Auf dieser Karte werden verschiedene Gesundheitseinrichtungen angezeigt",
     "fr": "Cette carte affiche différents éléments liés à la santé",
     "da": "På dette kort er forskellige sundhedsrelaterede emner vist",
-    "nl": "Op deze kaart vind je dokters en apothekers"
+    "nl": "Op deze kaart vind je dokters, apothekers, kinesisten, ziekenhuizen en andere gezondheidsgerelateerde diensten"
   },
   "icon": "./assets/layers/doctors/doctors.svg",
   "startLat": 50.8465573,
@@ -25,6 +25,8 @@
   "widenFactor": 2,
   "layers": [
     "doctors",
+    "physiotherapist",
+    "dentist",
     "hospital",
     "pharmacy"
   ]

@@ -83,7 +83,7 @@ The question is  Does this crossing has rainbow paintings?
   - This option cannot be chosen as answer
 
 
-Only visible if  `highway=crossing`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `highway=crossing`
 
 
 

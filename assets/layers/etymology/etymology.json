@@ -328,7 +328,7 @@
         "de": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Suche auf inventaris onroerend erfgoed</a>",
         "fr": "<a href='https://inventaris.onroerenderfgoed.be/erfgoedobjecten?tekst={name}' target='_blank'>Chercher sur inventaris onroerend erfgoed</a>"
       },
-      "conditions": "_country=be"
+      "condition": "_country=be"
     },
     {
       "id": "simple etymology",

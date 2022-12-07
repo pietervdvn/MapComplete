@@ -87,7 +87,7 @@
     "idb-keyval": "^6.0.3",
     "jspdf": "^2.5.1",
     "latlon2country": "^1.2.6",
-    "leaflet": "^1.8.0",
+    "leaflet": "^1.9.2",
     "leaflet-polylineoffset": "^1.1.1",
     "leaflet-providers": "^1.13.0",
     "leaflet-simple-map-screenshoter": "^0.4.5",

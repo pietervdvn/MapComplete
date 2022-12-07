@@ -980,6 +980,21 @@
       "value": "Telekom"
     },
     {
+      "key": "organic",
+      "description": "Layer 'Shop' shows organic=yes with a fixed text, namely 'This shop offers organic products' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Shop' shows organic=only with a fixed text, namely 'This shop only offers organic products' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "value": "only"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Shop' shows organic=no with a fixed text, namely 'This shop does not offer organic products' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "value": "no"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Open Shop Map has a layer pharmacy showing features with this tag",
       "value": "pharmacy"

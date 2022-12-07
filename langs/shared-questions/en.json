@@ -115,6 +115,18 @@
                 }
             }
         },
+        "opening_hours_by_appointment": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Only by appointment"
+                    },
+                    "1": {
+                        "then": "Only by appointment"
+                    }
+                }
+            }
+        },
         "payment-options": {
             "mappings": {
                 "0": {

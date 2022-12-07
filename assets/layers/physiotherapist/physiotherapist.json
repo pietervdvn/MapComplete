@@ -1,0 +1,73 @@
+{
+  "id": "physiotherapist",
+  "name": {
+    "en": "Physiotherapist",
+    "nl": "Kinesist"
+  },
+  "description": {
+    "en": "This layer shows physiotherapists",
+    "nl": "Deze laag toont kinesisten"
+  },
+  "source": {
+    "osmTags": "healthcare=physiotherapist"
+  },
+  "title": {
+    "render": {
+      "en": "Physiotherapist {name}",
+      "nl": "Kinesist {name}"
+    }
+  },
+  "minzoom": 13,
+  "tagRenderings": [
+    "images",
+    {
+      "question": {
+        "en": "What is the name of this physiotherapists office?",
+        "nl": "Wat is de naam van deze kinesistenpraktijk?"
+      },
+      "render": {
+        "en": "This physiotherapists office is called {name}",
+        "nl": "Deze kinesistenpraktijk heet {name}"
+      },
+      "freeform": {
+        "key": "name"
+      },
+      "id": "name"
+    },
+    "opening_hours_by_appointment",
+    "phone",
+    "email",
+    "website"
+
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "a physiotherapists office",
+        "de": "Praxis eines Physiotherapeuten",
+        "nl": "een fysiotherapeutenpraktijk",
+        "fr": "un cabinet de kinésithérapeutes"
+      },
+      "tags": [
+        "healthcare=physiotherapist"
+      ]
+    }
+  ],
+  "filter": [
+    "open_now"
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "render": "circle:white;./assets/layers/physiotherapist/doctors.svg"
+      },
+      "iconSize": "40,40,center",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "deletion": true,
+  "allowMove": true
+}

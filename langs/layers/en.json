@@ -3340,22 +3340,34 @@
             "render": "Defibrillator"
         }
     },
+    "dentist": {
+        "description": "This layer shows dentist offices",
+        "name": "Dentist",
+        "presets": {
+            "0": {
+                "title": "a dentists office"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "What is the name of this dentist?",
+                "render": "This dentist is called {name}"
+            }
+        },
+        "title": {
+            "render": "Dentist Office {name}"
+        }
+    },
     "direction": {
         "description": "This layer visualizes directions",
         "name": "Direction visualization"
     },
     "doctors": {
-        "description": "This layer shows doctor offices, dentists and other healthcare facilities",
+        "description": "This layer shows doctor offices",
         "name": "Doctors",
         "presets": {
             "0": {
                 "title": "a doctors office"
-            },
-            "1": {
-                "title": "a dentists office"
-            },
-            "2": {
-                "title": "a physiotherapists office"
             }
         },
         "tagRenderings": {
@@ -5675,6 +5687,24 @@
                 }
             },
             "render": "{name}"
+        }
+    },
+    "physiotherapist": {
+        "description": "This layer shows physiotherapists",
+        "name": "Physiotherapist",
+        "presets": {
+            "0": {
+                "title": "a physiotherapists office"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "What is the name of this physiotherapists office?",
+                "render": "This physiotherapists office is called {name}"
+            }
+        },
+        "title": {
+            "render": "Physiotherapist {name}"
         }
     },
     "picnic_table": {

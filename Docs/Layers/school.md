@@ -121,7 +121,7 @@ The question is  What level of education is given on this school?
   - This school offers post-secondary education (e.g. a seventh or eight specialisation year)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:school' target='_blank'>school</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school%3Dpost_secondary' target='_blank'>post_secondary</a>`
 
 
-Only visible if  `_country=be`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `_country=be`
 
 
 
@@ -169,7 +169,7 @@ This is rendered with  This school has facilities for students with {school:for}
   - This is a school for students with special needs  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:school:for' target='_blank'>school:for</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:school:for%3Dspecial_needs' target='_blank'>special_needs</a>`
 
 
-Only visible if  `school:for~.+`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `school:for~.+`
 
 
 

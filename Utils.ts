@@ -1,4 +1,5 @@
 import * as colors from "./assets/colors.json"
+import HTML = Mocha.reporters.HTML;
 
 export class Utils {
     /**
@@ -1221,4 +1222,20 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         d.setUTCMilliseconds(0)
         d.setUTCMinutes(0)
     }
+
+    public static findParentWithScrolling(element: HTMLElement): HTMLElement {
+        // Check if the element itself has scrolling
+        if (element.scrollHeight > element.clientHeight) {
+            return element;
+        }
+
+        // If the element does not have scrolling, check if it has a parent element
+        if (!element.parentElement) {
+            return null;
+        }
+
+        // If the element has a parent, repeat the process for the parent element
+        return Utils.findParentWithScrolling(element.parentElement);
+    }
+
 }

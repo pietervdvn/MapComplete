@@ -235,7 +235,7 @@ export default class DeleteWizard extends Toggle {
                                     return t.explanations.hardDelete
                                 }
                                 // This is a soft deletion: we explain _why_ the deletion is soft
-                                return t.explanations.softDelete.Subs({ reason: reason })
+                                return t.explanations.softDelete.Subs({ reason: reason})
                             })
                         )
                     }
@@ -263,21 +263,10 @@ export default class DeleteWizard extends Toggle {
             )
         }
 
-        for (const extraDeleteReason of config.extraDeleteReasons ?? []) {
+        for (const extraDeleteReason of config.deleteReasons ?? []) {
             elements.push(
                 new FixedInputElement(
                     new SubstitutedTranslation(extraDeleteReason.explanation, tagsSource, state),
-                    {
-                        deleteReason: extraDeleteReason.changesetMessage,
-                    }
-                )
-            )
-        }
-
-        for (const extraDeleteReason of DeleteConfig.defaultDeleteReasons) {
-            elements.push(
-                new FixedInputElement(
-                    extraDeleteReason.explanation.Clone(/*Must clone here, as this explanation might be used on many locations*/),
                     {
                         deleteReason: extraDeleteReason.changesetMessage,
                     }
@@ -453,7 +442,7 @@ class DeleteabilityChecker {
                 return
             }
             if (waysOrRelations) {
-                // not deleteble by mapcomplete
+                // not deleteable by mapcomplete
                 state.setData({
                     canBeDeleted: false,
                     reason: t.partOfOthers,

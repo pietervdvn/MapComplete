@@ -158,13 +158,13 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             try {
                 self.InitMap()
             } catch (e) {
-                console.warn("Could not construct a minimap:", e)
+                console.debug("Could not construct a minimap:", e)
             }
 
             try {
                 self.leafletMap?.data?.invalidateSize()
             } catch (e) {
-                console.warn("Could not invalidate size of a minimap:", e)
+                console.debug("Could not invalidate size of a minimap:", e)
             }
         })
 

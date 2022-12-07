@@ -681,6 +681,26 @@
       ]
     }
   },
+  "opening_hours_by_appointment": {
+    "builtin": "opening_hours",
+    "override": {
+      "mappings": [
+        {
+          "if": "opening_hours=\"by appointment\"",
+          "then": {
+            "en": "Only by appointment"
+          }
+        },
+        {
+          "if": "opening_hours~i~\"by appointment\"|by appointment",
+          "then": {
+            "en": "Only by appointment"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    }
+  },
   "service:electricity": {
     "#": "service:socket describes if a pub, restaurant or café offers electricity to their customers.",
     "question": {

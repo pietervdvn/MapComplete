@@ -12,6 +12,8 @@ This theme contains the following layers:
 
 
   - [doctors](../Layers/doctors.md)
+  - [physiotherapist](../Layers/physiotherapist.md)
+  - [dentist](../Layers/dentist.md)
   - [hospital](../Layers/hospital.md)
   - [pharmacy](../Layers/pharmacy.md)
   - [gps_location](../Layers/gps_location.md)

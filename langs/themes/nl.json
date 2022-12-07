@@ -3,10 +3,6 @@
         "description": "Op deze kaart kan je informatie over AEDs vinden en verbeteren",
         "title": "Open AED-kaart"
     },
-    "aed_brugge": {
-        "description": "Op deze kaart kan je informatie over AEDs vinden en verbeteren + een export van de brugse defibrillatoren",
-        "title": "Open AED-kaart - Brugge edition"
-    },
     "artwork": {
         "description": "Een vrije kaart met standbeelden, bustes, graffiti en andere kunstwerken van over de hele wereld",
         "title": "Open kunstwerken-kaart"
@@ -790,7 +786,7 @@
         "title": "Brandkranen, brandblussers, brandweerposten en ambulanceposten"
     },
     "healthcare": {
-        "description": "Op deze kaart vind je dokters en apothekers",
+        "description": "Op deze kaart vind je dokters, apothekers, kinesisten, ziekenhuizen en andere gezondheidsgerelateerde diensten",
         "title": "Gezondheidszorg"
     },
     "hotels": {
@@ -812,11 +808,6 @@
     "maxspeed": {
         "shortDescription": "Deze kaart toont de maximumsnelheid voor elke straat.",
         "title": "Maximale snelheden"
-    },
-    "missing_streets": {
-        "description": "Dit thema voegt automatisch straatnamen toe aan gebouwen met huisnummer en overeenkomstig CRAB-adres.",
-        "shortDescription": "Voegt ontbrekende straten toe aan gebouwen met huisnumer adhv CRAB",
-        "title": "Fix ontbrekende straten"
     },
     "nature": {
         "description": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ...",

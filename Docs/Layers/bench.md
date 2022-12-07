@@ -67,6 +67,9 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/direction#values) [direction](https://wiki.openstreetmap.org/wiki/Key:direction) | [direction](../SpecialInputElements.md#direction) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/colour#values) [colour](https://wiki.openstreetmap.org/wiki/Key:colour) | [color](../SpecialInputElements.md#color) | [brown](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dbrown) [green](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen) [gray](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgray) [white](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dwhite) [red](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred) [black](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblack) [blue](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue) [yellow](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/survey:date#values) [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:survey:date%3D)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/inscription#values) [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [text](../SpecialInputElements.md#text) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/tourism#values) [tourism](https://wiki.openstreetmap.org/wiki/Key:tourism) | Multiple choice | [artwork](https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork) [](https://wiki.openstreetmap.org/wiki/Tag:tourism%3D)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/historic#values) [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [memorial](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D)
 
 
 
@@ -97,6 +100,8 @@ The question is  Does this bench have a backrest?
   - Does <b>not</b> have a backrest  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dno' target='_blank'>no</a>`
 
 
+This tagrendering has labels  `bench-questions`
+
 
 
 ### bench-seats 
@@ -110,6 +115,13 @@ This rendering asks information about the property  [seats](https://wiki.openstr
 This is rendered with  {seats} seats
 
 
+
+
+
+  - This bench does not have separated seats  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:seats:separated' target='_blank'>seats:separated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:seats:separated%3Dno' target='_blank'>no</a>`
+
+
+This tagrendering has labels  `bench-questions`
 
 
 
@@ -135,6 +147,8 @@ This is rendered with  Material: {material}
   - The seating is made from steel  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dsteel' target='_blank'>steel</a>`
 
 
+This tagrendering has labels  `bench-questions`
+
 
 
 ### bench-direction 
@@ -148,6 +162,8 @@ This rendering asks information about the property  [direction](https://wiki.ope
 This is rendered with  When sitting on the bench, one looks towards {direction}°.
 
 
+
+This tagrendering has labels  `bench-questions`
 
 
 
@@ -175,6 +191,8 @@ This is rendered with  Colour: {colour}
   - Colour: yellow  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>`
 
 
+This tagrendering has labels  `bench-questions`
+
 
 
 ### bench-survey:date 
@@ -192,6 +210,98 @@ This is rendered with  This bench was last surveyed on {survey:date}
 
 
   - Surveyed today!  corresponds with  `survey:date=`
+
+
+This tagrendering has labels  `bench-questions`
+
+
+
+### bench-inscription 
+
+
+
+The question is  Does this bench have an inscription?<div class='subtle text-lg'>E.g. on a mounted plaque, in the backrest, ...</div>
+
+This rendering asks information about the property  [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) 
+
+This is rendered with  This bench does have the following inscription:<br/><p><i>{inscription}</i></p>
+
+
+
+
+
+  - This bench does not have an inscription  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:not:inscription' target='_blank'>not:inscription</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:inscription%3Dyes' target='_blank'>yes</a>`
+  - This bench does <span class='subtle'>(probably)</span> not have an inscription  corresponds with  ``
+  - This option cannot be chosen as answer
+
+
+This tagrendering has labels  `bench-questions`
+
+
+
+### bench-artwork 
+
+
+
+The question is  Does this bench have an artistic element?<div class='subtle text-lg'>E.g. it has an integrated painting, statue or other non-trivial, creative work</div>
+
+
+
+
+
+  - This bench has an integrated artwork  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>`
+  - This bench does not have an integrated artwork  corresponds with  ``
+
+
+
+
+### bench-memorial 
+
+
+
+The question is  Does this bench act as memorial for someone or something?
+
+
+
+
+
+  - This bench is a memorial for someone or something  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:historic' target='_blank'>historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial' target='_blank'>memorial</a>`
+  - This bench is a <b>not</b> a memorial for someone or something  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:not:historic' target='_blank'>not:historic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:not:historic%3Dmemorial' target='_blank'>memorial</a>`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `historic=memorial|inscription~.+|memorial=bench|tourism=artwork`
+
+This tagrendering has labels  `bench-questions`
+
+
+
+#### Filters 
+
+
+
+
+
+| id                  | question      | osmTags            |
+|---------------------|---------------|--------------------|
+| bench_is_memorial.0 | is a memorial | historic=memorial\|memorial=bench |
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+has_backrest.0 | With and without backrest (default) | 
+has_backrest.1 | Has a backrest | backrest=yes
+has_backrest.2 | Has no backrest | backrest=no
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+has_image.0 | With and without images (default) | 
+has_image.1 | Has at least one image | image~.+\|image:0~.+|image:1~.+|image:2~.+|image:3~.+|mapillary~.+
+has_image.2 | Probably does not have an image | 
  
 
 This document is autogenerated from [assets/layers/bench/bench.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bench/bench.json)

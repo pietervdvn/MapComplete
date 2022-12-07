@@ -70,6 +70,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access#values) [internet_access](https://wiki.openstreetmap.org/wiki/Key:internet_access) | Multiple choice | [wlan](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno) [terminal](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal) [wired](https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access:fee#values) [internet_access:fee](https://wiki.openstreetmap.org/wiki/Key:internet_access:fee) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno) [customers](https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/internet_access:ssid#values) [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) | [string](../SpecialInputElements.md#string) | [Telekom](https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/organic#values) [organic](https://wiki.openstreetmap.org/wiki/Key:organic) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly) [no](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno)
 
 
 
@@ -417,7 +418,7 @@ The question is  What paper formats does this shop offer?
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A0' target='_blank'>service:print:A0</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A0%3Dno' target='_blank'>no</a>
 
 
-Only visible if  `shop~^(.*copyshop.*)$|shop~^(.*stationary.*)$|service:print=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `shop~^(.*copyshop.*)$|shop~^(.*stationary.*)$|service:print=yes`
 
 
 
@@ -456,7 +457,7 @@ The question is  Is there a fee for internet access?
   - Internet access is free at this place, for customers only  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>`
 
 
-Only visible if  `internet_access!=no&internet_access~.+`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no&internet_access~.+`
 
 
 
@@ -477,7 +478,26 @@ This is rendered with  The network name is <b>{internet_access:ssid}</b>
   - Telekom  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>`
 
 
-Only visible if  `internet_access=wlan`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `internet_access=wlan`
+
+
+
+### organic 
+
+
+
+The question is  Does this shop offer organic products?
+
+
+
+
+
+  - This shop offers organic products  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes' target='_blank'>yes</a>`
+  - This shop only offers organic products  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly' target='_blank'>only</a>`
+  - This shop does not offer organic products  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno' target='_blank'>no</a>`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `shop=supermarket|shop=convenience|shop=farm|shop=greengrocer|shop=health_food|shop=clothes|shop=shoes|shop=butcher|shop=cosmetics|shop=deli|shop=bakery|shop=alcohol|shop=seafood|shop=beverages|shop=florist`
 
 
 
@@ -523,6 +543,54 @@ Shows a small map with the feature. Added by default to every popup
 
 This tagrendering has no question and is thus read-only
 
+
+
+
+
+#### Filters 
+
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+open_now.0 | Opened now | _isOpen=yes
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+shop-type.0 | Only show shops selling {search} |  | search (string)
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+shop-name.0 | Only show shops with name {search} |  | search (string)
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+accepts_cash.0 | Accepts cash | payment:cash=yes
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+accepts_cards.0 | Accepts payment cards | payment:cards=yes
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+has_organic.0 | Has organic options | organic=yes\|organic=only
  
 
 This document is autogenerated from [assets/themes/pets/pets.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/themes/pets/pets.json)
