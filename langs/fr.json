@@ -424,7 +424,6 @@
         "opening_hours": {
             "description": "Horaires d'ouverture"
         },
-        "tooLong": "",
         "float": {
             "description": "un nombre",
             "feedback": "Ceci n'est pas un nombre"
