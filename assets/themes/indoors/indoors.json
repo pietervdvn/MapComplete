@@ -14,7 +14,8 @@
     "en": "On this map, publicly accessible indoor places are shown",
     "de": "Diese Karte zeigt öffentlich zugängliche Innenräume",
     "fr": "Cette carte présente les lieux intérieurs accessibles au public",
-    "da": "På dette kort er offentligt tilgængelige indendørs steder vist"
+    "da": "På dette kort er offentligt tilgængelige indendørs steder vist",
+    "nl": "Op deze kaart worden publiek toegankelijke binnenruimtes getoond"
   },
   "icon": "./assets/layers/entrance/entrance.svg",
   "startLat": 51.17181,

@@ -209,25 +209,33 @@
     {
       "id": "organic",
       "question": {
-        "en": "Does this shop offer organic products?"
+        "en": "Does this shop offer organic products?",
+        "de": "Bietet dieses Geschäft Bioprodukte an?",
+        "nl": "Biedt deze winkel biologische producten aan?"
       },
       "mappings": [
         {
           "if": "organic=yes",
           "then": {
-            "en": "This shop offers organic products"
+            "en": "This shop offers organic products",
+            "de": "Dieses Geschäft bietet Bio-Produkte an",
+            "nl": "Deze winkel biedt biologische producten aan"
           }
         },
         {
           "if": "organic=only",
           "then": {
-            "en": "This shop only offers organic products"
+            "en": "This shop only offers organic products",
+            "de": "Dieses Geschäft bietet ausschließlich Bio-Produkte an",
+            "nl": "Deze winkel biedt uitluitend biologische producten aan"
           }
         },
         {
           "if": "organic=no",
           "then": {
-            "en": "This shop does not offer organic products"
+            "en": "This shop does not offer organic products",
+            "de": "Dieses Geschäft bietet keine Bioprodukte an",
+            "nl": "Deze winkel heeft geen biologische producten"
           }
         }
       ],

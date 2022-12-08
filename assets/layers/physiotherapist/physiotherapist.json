@@ -2,11 +2,13 @@
   "id": "physiotherapist",
   "name": {
     "en": "Physiotherapist",
-    "nl": "Kinesist"
+    "nl": "Kinesist",
+    "de": "Physiotherapeut"
   },
   "description": {
     "en": "This layer shows physiotherapists",
-    "nl": "Deze laag toont kinesisten"
+    "nl": "Deze laag toont kinesisten",
+    "de": "Diese Ebene zeigt Physiotherapeuten"
   },
   "source": {
     "osmTags": "healthcare=physiotherapist"
@@ -14,7 +16,8 @@
   "title": {
     "render": {
       "en": "Physiotherapist {name}",
-      "nl": "Kinesist {name}"
+      "nl": "Kinesist {name}",
+      "de": "Physiotherapeut {name}"
     }
   },
   "minzoom": 13,
@@ -23,11 +26,13 @@
     {
       "question": {
         "en": "What is the name of this physiotherapists office?",
-        "nl": "Wat is de naam van deze kinesistenpraktijk?"
+        "nl": "Wat is de naam van deze kinesistenpraktijk?",
+        "de": "Wie heißt die Praxis des Physiotherapeuten?"
       },
       "render": {
         "en": "This physiotherapists office is called {name}",
-        "nl": "Deze kinesistenpraktijk heet {name}"
+        "nl": "Deze kinesistenpraktijk heet {name}",
+        "de": "Die Praxis des Physiotherapeuten heißt {name}"
       },
       "freeform": {
         "key": "name"
@@ -38,7 +43,6 @@
     "phone",
     "email",
     "website"
-
   ],
   "presets": [
     {

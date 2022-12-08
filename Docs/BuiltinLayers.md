@@ -463,7 +463,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-Only visible if  `_opened_by_anonymous_user=false`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `_opened_by_anonymous_user=false`
 
 
 
@@ -817,6 +817,7 @@ The following layers are included in MapComplete:
   - [current_view](./Layers/current_view.md)
   - [cycleways_and_roads](./Layers/cycleways_and_roads.md)
   - [defibrillator](./Layers/defibrillator.md)
+  - [dentist](./Layers/dentist.md)
   - [direction](./Layers/direction.md)
   - [doctors](./Layers/doctors.md)
   - [dogpark](./Layers/dogpark.md)
@@ -863,6 +864,7 @@ The following layers are included in MapComplete:
   - [parking_spaces](./Layers/parking_spaces.md)
   - [pedestrian_path](./Layers/pedestrian_path.md)
   - [pharmacy](./Layers/pharmacy.md)
+  - [physiotherapist](./Layers/physiotherapist.md)
   - [picnic_table](./Layers/picnic_table.md)
   - [play_forest](./Layers/play_forest.md)
   - [playground](./Layers/playground.md)

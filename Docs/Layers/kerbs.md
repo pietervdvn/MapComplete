@@ -103,7 +103,7 @@ The question is  What is the height of this kerb?
   - This option cannot be chosen as answer
 
 
-Only visible if  `_geometry:type=Point`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `_geometry:type=Point`
 
 
 
@@ -123,7 +123,7 @@ The question is  Is there tactile paving at this kerb?
   - This option cannot be chosen as answer
 
 
-Only visible if  `_geometry:type=Point`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `_geometry:type=Point`
 
 
 

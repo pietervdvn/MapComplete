@@ -2445,6 +2445,7 @@
         },
         "title": {
             "mappings": {
+                "0": {},
                 "1": {
                     "then": "Klimsite <b>{name}</b>"
                 },
@@ -3994,18 +3995,18 @@
                 "question": "Heeft dit restaurant halal opties?"
             },
             "organic (no friture)": {
-                "question": "Biedt dit restaurant biologisch eten?",
                 "mappings": {
-                    "2": {
-                        "then": "Er zijn alleen biologische opties beschikbaar"
-                    },
                     "0": {
                         "then": "Er zijn geen biologische opties beschikbaar"
                     },
                     "1": {
                         "then": "Er is een biologisch menu"
+                    },
+                    "2": {
+                        "then": "Er zijn alleen biologische opties beschikbaar"
                     }
-                }
+                },
+                "question": "Biedt dit restaurant biologisch eten?"
             }
         },
         "title": {
@@ -6180,23 +6181,23 @@
                     "render": "Dit is een {shop}"
                 }
             },
-            "shops-name": {
-                "question": "Wat is de naam van deze winkel?",
-                "render": "Deze zaak heet <i>{name}</i>"
-            },
             "organic": {
                 "mappings": {
-                    "1": {
-                        "then": "Deze winkel biedt uitluitend biologische producten aan"
-                    },
                     "0": {
                         "then": "Deze winkel biedt biologische producten aan"
+                    },
+                    "1": {
+                        "then": "Deze winkel biedt uitluitend biologische producten aan"
                     },
                     "2": {
                         "then": "Deze winkel heeft geen biologische producten"
                     }
                 },
                 "question": "Biedt deze winkel biologische producten aan?"
+            },
+            "shops-name": {
+                "question": "Wat is de naam van deze winkel?",
+                "render": "Deze zaak heet <i>{name}</i>"
             }
         },
         "title": {
@@ -7243,20 +7244,19 @@
             },
             "shelter": {
                 "mappings": {
-                    "2": {
-                        "then": "Deze halte heeft een schuilplaats, die apart op de kaart staat"
+                    "0": {
+                        "then": "Deze halte heeft een schuilplaats"
                     },
                     "1": {
                         "then": "Deze halte heeft geen schuilplaats"
                     },
-                    "0": {
-                        "then": "Deze halte heeft een schuilplaats"
+                    "2": {
+                        "then": "Deze halte heeft een schuilplaats, die apart op de kaart staat"
                     }
                 },
                 "question": "Heeft deze halte een schuilplaats?"
             },
             "stop_name": {
-                "render": "Deze halte heet <b>{name}</b>",
                 "freeform": {
                     "placeholder": "Naam van de halte"
                 },
@@ -7265,7 +7265,8 @@
                         "then": "Deze halte heeft geen naam"
                     }
                 },
-                "question": "Wat is de naam van deze halte?"
+                "question": "Wat is de naam van deze halte?",
+                "render": "Deze halte heet <b>{name}</b>"
             }
         },
         "title": {

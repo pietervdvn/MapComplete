@@ -83,7 +83,8 @@
           "id": "Reference",
           "render": {
             "en": "The reference in BAG is <b>{ref:bag}</b>",
-            "de": "Die Referenz in BAG ist <b>{ref:bag}</b>"
+            "de": "Die Referenz in BAG ist <b>{ref:bag}</b>",
+            "nl": "De referentie in BAG is <b>{ref:bag}</b>"
           },
           "mappings": [
             {
@@ -91,7 +92,8 @@
               "then": {
                 "en": "This building has no reference in the BAG",
                 "cs": "Tato budova nemá v BAG žádný odkaz",
-                "de": "Dieses Gebäude hat keinen Verweis im BAG"
+                "de": "Dieses Gebäude hat keinen Verweis im BAG",
+                "nl": "Dit gebouw heeft geen referentie in de BAG"
               }
             }
           ]
@@ -152,7 +154,8 @@
       "title": "BAG Building",
       "description": {
         "en": "Buildings from BAG register",
-        "de": "Gebäude aus dem BAG-Register"
+        "de": "Gebäude aus dem BAG-Register",
+        "nl": "Gebouw uit de BAG"
       },
       "source": {
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
@@ -214,7 +217,8 @@
               },
               "then": {
                 "en": "Didn't calculate the correct values yet. Refresh this page",
-                "de": "Richtige Werte noch nicht berechnet. Aktualisieren Sie diese Seite"
+                "de": "Richtige Werte noch nicht berechnet. Aktualisieren Sie diese Seite",
+                "nl": "Correcte waarden nog niet berekend. Herlaad deze pagina"
               }
             },
             {
@@ -237,7 +241,8 @@
           "id": "Reference",
           "render": {
             "en": "The reference in BAG is <b>{_bag_obj:ref:bag}</b>",
-            "de": "Die Referenz in BAG ist <b>{_bag_obj:ref:bag}</b>"
+            "de": "Die Referenz in BAG ist <b>{_bag_obj:ref:bag}</b>",
+            "nl": "De referentie in BAG is <b>{_bag_obj:ref:bag}</b>"
           }
         },
         {
@@ -245,14 +250,16 @@
           "render": {
             "en": "This building was built in <b>{_bag_obj:start_date}</b>",
             "de": "Dieses Gebäude wurde gebaut in <b>{_bag_obj:start_date}</b>",
-            "pt_BR": "Esta construção é de <b>{_bag_obj:start_date}</b>"
+            "pt_BR": "Esta construção é de <b>{_bag_obj:start_date}</b>",
+            "nl": "Dit gebouw is gebouwd in <b>{_bag_obj:start_date}</b>"
           },
           "mappings": [
             {
               "if": "_bag_obj:in_construction=true",
               "then": {
                 "en": "The building was started in <b>{_bag_obj:start_date}</b>",
-                "de": "Der Bau wurde in <b>{_bag_obj:start_date}</b> begonnen"
+                "de": "Der Bau wurde in <b>{_bag_obj:start_date}</b> begonnen",
+                "nl": "De bouw van dit gebouw is gestart in <b>{_bag_obj:start_date}</b>"
               }
             }
           ]
@@ -261,14 +268,16 @@
           "id": "Building type",
           "render": {
             "en": "The building type is a <b>{_bag_obj:building}</b>",
-            "de": "Der Gebäudetyp ist ein <b>{_bag_obj:building}</b>"
+            "de": "Der Gebäudetyp ist ein <b>{_bag_obj:building}</b>",
+            "nl": "Het gebouwtype is <b>{_bag_obj:building}</b>"
           },
           "mappings": [
             {
               "if": "_bag_obj:in_construction=true",
               "then": {
                 "en": "The building type will be a <b>{_bag_obj:construction}</b>",
-                "de": "Der Gebäudetyp ist ein <b>{_bag_obj:construction}</b>"
+                "de": "Der Gebäudetyp ist ein <b>{_bag_obj:construction}</b>",
+                "nl": "Het gebouwtype wordt <b>{_bag_obj:construction}</b>"
               }
             }
           ]

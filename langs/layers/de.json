@@ -3274,21 +3274,21 @@
         }
     },
     "dentist": {
+        "description": "Diese Ebene zeigt Zahnarztpraxen",
+        "name": "Zahnarzt",
         "presets": {
             "0": {
                 "title": "eine Zahnarztpraxis"
             }
         },
-        "title": {
-            "render": "Arztpraxis {name}"
-        },
-        "description": "Diese Ebene zeigt Zahnarztpraxen",
-        "name": "Zahnarzt",
         "tagRenderings": {
             "name": {
-                "render": "Dieser Zahnarzt heißt {name}",
-                "question": "Wie lautet der Name dieses Zahnarztes?"
+                "question": "Wie lautet der Name dieses Zahnarztes?",
+                "render": "Dieser Zahnarzt heißt {name}"
             }
+        },
+        "title": {
+            "render": "Arztpraxis {name}"
         }
     },
     "direction": {
@@ -3296,6 +3296,7 @@
         "name": "Aufnahmewinkel der Kamera anzeigen"
     },
     "doctors": {
+        "description": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen",
         "name": "Ärzte",
         "presets": {
             "0": {
@@ -3328,8 +3329,7 @@
         },
         "title": {
             "render": "Arztpraxis {name}"
-        },
-        "description": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen"
+        }
     },
     "dogpark": {
         "name": "Hundeparks",
@@ -4135,6 +4135,20 @@
                 },
                 "question": "Wird in dieser Pommesbude pflanzliches oder tierisches Fett zum Frittieren verwendet?"
             },
+            "friture-organic": {
+                "mappings": {
+                    "0": {
+                        "then": "Biologische Snacks sind erhältlich"
+                    },
+                    "1": {
+                        "then": "Es sind keine biologischen Snacks erhältlich"
+                    },
+                    "2": {
+                        "then": "Nur biologische Snacks sind erhältlich"
+                    }
+                },
+                "question": "Bietet diese Pommesbude biologische Snacks an?"
+            },
             "friture-take-your-container": {
                 "mappings": {
                     "0": {
@@ -4193,20 +4207,6 @@
                     }
                 },
                 "question": "Werden hier halal Gerichte angeboten?"
-            },
-            "friture-organic": {
-                "mappings": {
-                    "1": {
-                        "then": "Es sind keine biologischen Snacks erhältlich"
-                    },
-                    "2": {
-                        "then": "Nur biologische Snacks sind erhältlich"
-                    },
-                    "0": {
-                        "then": "Biologische Snacks sind erhältlich"
-                    }
-                },
-                "question": "Bietet diese Pommesbude biologische Snacks an?"
             },
             "organic (no friture)": {
                 "mappings": {
@@ -5623,21 +5623,21 @@
         }
     },
     "physiotherapist": {
+        "description": "Diese Ebene zeigt Physiotherapeuten",
+        "name": "Physiotherapeut",
         "presets": {
             "0": {
                 "title": "Praxis eines Physiotherapeuten"
             }
         },
-        "name": "Physiotherapeut",
-        "title": {
-            "render": "Physiotherapeut {name}"
-        },
-        "description": "Diese Ebene zeigt Physiotherapeuten",
         "tagRenderings": {
             "name": {
                 "question": "Wie heißt die Praxis des Physiotherapeuten?",
                 "render": "Die Praxis des Physiotherapeuten heißt {name}"
             }
+        },
+        "title": {
+            "render": "Physiotherapeut {name}"
         }
     },
     "picnic_table": {
@@ -6515,23 +6515,23 @@
                     "render": "Das ist ein {shop}"
                 }
             },
-            "shops-name": {
-                "question": "Wie ist der Name dieses Geschäfts?",
-                "render": "Der Name des Geschäfts lautet <i>{name}</i>"
-            },
             "organic": {
                 "mappings": {
+                    "0": {
+                        "then": "Dieses Geschäft bietet Bio-Produkte an"
+                    },
                     "1": {
                         "then": "Dieses Geschäft bietet ausschließlich Bio-Produkte an"
                     },
                     "2": {
                         "then": "Dieses Geschäft bietet keine Bioprodukte an"
-                    },
-                    "0": {
-                        "then": "Dieses Geschäft bietet Bio-Produkte an"
                     }
                 },
                 "question": "Bietet dieses Geschäft Bioprodukte an?"
+            },
+            "shops-name": {
+                "question": "Wie ist der Name dieses Geschäfts?",
+                "render": "Der Name des Geschäfts lautet <i>{name}</i>"
             }
         },
         "title": {
@@ -7445,11 +7445,6 @@
             "wheelchair-door-width": {
                 "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
                 "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "Wann ist die Einrichtung, in der sich die Toilette befindet, geöffnet?"
-                }
             }
         },
         "title": {

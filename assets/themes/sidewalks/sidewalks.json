@@ -135,7 +135,8 @@
               "question": {
                 "en": "Is there a sidewalk on this side of the road?",
                 "de": "Gibt es auf dieser Straßenseite einen Bürgersteig?",
-                "da": "Er der et fortov på denne side af vejen?"
+                "da": "Er der et fortov på denne side af vejen?",
+                "nl": "Is er een stoep aan deze kant van de weg?"
               },
               "mappings": [
                 {
@@ -143,7 +144,8 @@
                   "then": {
                     "en": "Yes, there is a sidewalk on this side of the road",
                     "de": "Ja, es gibt einen Bürgersteig auf dieser Straßenseite",
-                    "da": "Ja, der er et fortov på denne side af vejen"
+                    "da": "Ja, der er et fortov på denne side af vejen",
+                    "nl": "Ja, er is een stoep aan deze kant van de weg"
                   }
                 },
                 {
@@ -151,7 +153,8 @@
                   "then": {
                     "en": "No, there is no sidewalk to walk on",
                     "de": "Nein, es gibt keinen Bürgersteig für Fußgänger",
-                    "da": "Nej, der er ikke noget fortov at gå på"
+                    "da": "Nej, der er ikke noget fortov at gå på",
+                    "nl": "Nee, er is geen stoep om op te lopen"
                   }
                 },
                 {
@@ -159,7 +162,8 @@
                   "then": {
                     "en": "There is a separately mapped sidewalk to walk on",
                     "de": "Es gibt einen separat kartierten Bürgersteig für Fußgänger",
-                    "da": "Der er et særskilt kortlagt fortov at gå på"
+                    "da": "Der er et særskilt kortlagt fortov at gå på",
+                    "nl": "Er is een apart ingetekende stoep om op te lopen"
                   }
                 }
               ]
@@ -169,12 +173,14 @@
               "question": {
                 "en": "What is the width of the sidewalk on this side of the road?",
                 "de": "Wie breit ist der Bürgersteig auf dieser Straßenseite?",
-                "da": "Hvad er bredden af fortovet på denne side af vejen?"
+                "da": "Hvad er bredden af fortovet på denne side af vejen?",
+                "nl": "Hoe breed is de stoep aan deze kant van de weg?"
               },
               "render": {
                 "en": "This sidewalk is {sidewalk:left|right:width}m wide",
                 "de": "Dieser Bürgersteig ist {sidewalk:left|right:width}m breit",
-                "da": "Dette fortov er {sidewalk:left|right:width}m bredt"
+                "da": "Dette fortov er {sidewalk:left|right:width}m bredt",
+                "nl": "Deze stoep is {sidewalk:left|right:width}m breed"
               },
               "condition": "sidewalk:left|right=yes",
               "freeform": {

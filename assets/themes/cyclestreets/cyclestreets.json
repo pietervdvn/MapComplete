@@ -404,7 +404,8 @@
             "if": "bicycle_road=yes",
             "then": {
               "en": "This street is a bicycle road",
-              "de": "Diese Straße ist eine Fahrradstraße"
+              "de": "Diese Straße ist eine Fahrradstraße",
+              "nl": "Deze straat is een fietsstraat"
             },
             "hideInAnswer": true
           },
@@ -421,7 +422,8 @@
             },
             "then": {
               "en": "This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)",
-              "de": "Diese Straße ist eine Fahrradstraße (hat eine Geschwindigkeitsbegrenzung von 30 km/h und Fahrzeuge sind nicht erlaubt) (Schild wird später abgefragt)"
+              "de": "Diese Straße ist eine Fahrradstraße (hat eine Geschwindigkeitsbegrenzung von 30 km/h und Fahrzeuge sind nicht erlaubt) (Schild wird später abgefragt)",
+              "nl": "Deze straat is een fietsstraat (snelheid van 30 km/h en voertuigen niet toegestaan) (bord wordt later gevraagd)"
             },
             "hideInAnswer": "_country!=de"
           },
@@ -483,7 +485,8 @@
             },
             "then": {
               "en": "This street will become a bicycle road soon",
-              "de": "Diese Straße wird bald zu einer Fahrradstraße"
+              "de": "Diese Straße wird bald zu einer Fahrradstraße",
+              "nl": "Deze straat wordt binnenkort een fietsstraat"
             },
             "hideInAnswer": "_country!=de"
           },
@@ -522,14 +525,16 @@
         },
         "question": {
           "en": "What sign does this bicycle road have?",
-          "de": "Welches Schild hat diese Fahrradstraße?"
+          "de": "Welches Schild hat diese Fahrradstraße?",
+          "nl": "Welk bord heeft deze fietsstraat?"
         },
         "mappings": [
           {
             "if": "traffic_sign=DE:244.1,1020-30",
             "then": {
               "en": "Residents allowed",
-              "de": "Anlieger frei"
+              "de": "Anlieger frei",
+              "nl": "Aanwonenden toegestaan"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg",
@@ -546,7 +551,8 @@
             "if": "traffic_sign=DE:244.1,1022-12,1024-10",
             "then": {
               "en": "Motor vehicles allowed",
-              "de": "KFZ frei"
+              "de": "KFZ frei",
+              "nl": "Motorvoertuigen toegestaan"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg",
@@ -564,7 +570,8 @@
             "then": {
               "en": "Motorcycles allowed",
               "de": "Motorräder frei",
-              "pa_PK": "موٹرسائیکلاں دی اِجازت اے"
+              "pa_PK": "موٹرسائیکلاں دی اِجازت اے",
+              "nl": "Motoren toegestaan"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg",
@@ -582,7 +589,8 @@
             "then": {
               "en": "Cars allowed",
               "de": "Autos erlaubt",
-              "pa_PK": "موٹرکاراں دی اِجازت اے"
+              "pa_PK": "موٹرکاراں دی اِجازت اے",
+              "nl": "Auto's toegestaan"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg",
@@ -599,7 +607,8 @@
             "if": "traffic_sign=DE:244.1",
             "then": {
               "en": "There are no supplementary signs at this bicycle road.",
-              "de": "An dieser Fahrradstraße gibt es keine zusätzlichen Schilder."
+              "de": "An dieser Fahrradstraße gibt es keine zusätzlichen Schilder.",
+              "nl": "Er zijn geen onderborden bij deze fietsstraat."
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244.svg",

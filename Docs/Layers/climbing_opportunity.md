@@ -63,7 +63,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-Only visible if  `name~.+`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `name~.+`
 
 
 

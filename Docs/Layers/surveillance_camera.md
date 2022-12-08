@@ -170,7 +170,7 @@ The question is  Is the public space surveilled by this camera an indoor or outd
   - This option cannot be chosen as answer
 
 
-Only visible if  `surveillance:type=public`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `surveillance:type=public`
 
 
 
@@ -186,7 +186,7 @@ This is rendered with  Located on level {level}
 
 
 
-Only visible if  `indoor=yes|surveillance:type=ye`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `indoor=yes|surveillance:type=ye`
 
 
 

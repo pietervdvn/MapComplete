@@ -150,7 +150,7 @@ The question is  Is this a a regular automatic defibrillator or a manual defibri
   - This option cannot be chosen as answer
 
 
-Only visible if  `access=no`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `access=no`
 
 
 
@@ -172,7 +172,7 @@ This is rendered with  This defibrillator is on floor {level}
   - This defibrillator is on the <b>first floor</b>  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>`
 
 
-Only visible if  `indoor=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `indoor=yes`
 
 
 

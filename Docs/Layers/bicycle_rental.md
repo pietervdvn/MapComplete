@@ -107,7 +107,7 @@ The question is  What kind of bicycle rental is this?
   - This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_rental' target='_blank'>bicycle_rental</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_rental%3Ddropoff_point' target='_blank'>dropoff_point</a>`
 
 
-Only visible if  `amenity=bicycle_rental`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `amenity=bicycle_rental`
 
 
 
@@ -183,7 +183,7 @@ This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-Only visible if  `shop~.+|opening_hours~.+`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `shop~.+|opening_hours~.+`
 
 
 
@@ -203,7 +203,7 @@ The question is  Which methods of payment are accepted here?
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
 
 
-Only visible if  `shop~.+`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `shop~.+`
 
 
 
@@ -269,7 +269,7 @@ This is rendered with  {capacity:city_bike} city bikes can be rented here
 
 
 
-Only visible if  `rental~^(.*city_bike.*)$`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*city_bike.*)$`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -287,7 +287,7 @@ This is rendered with  {capacity:ebike} electrical bikes can be rented here
 
 
 
-Only visible if  `rental~^(.*ebike.*)$`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*ebike.*)$`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -305,7 +305,7 @@ This is rendered with  {capacity:kid_bike} bikes for children can be rented here
 
 
 
-Only visible if  `rental~^(.*kid_bike.*)$`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*kid_bike.*)$`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -323,7 +323,7 @@ This is rendered with  {capacity:bmx} BMX bikes can be rented here
 
 
 
-Only visible if  `rental~^(.*bmx.*)$`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*bmx.*)$`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -341,7 +341,7 @@ This is rendered with  {capacity:mtb} mountainbike can be rented here
 
 
 
-Only visible if  `rental~^(.*mtb.*)$`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*mtb.*)$`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -359,7 +359,7 @@ This is rendered with  {capacity:bicycle_pannier} bicycle panniers can be rented
 
 
 
-Only visible if  `rental~^(.*bicycle_pannier.*)$`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*bicycle_pannier.*)$`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -377,7 +377,7 @@ This is rendered with  {capacity:tandem_bicycle} tandem can be rented here
 
 
 
-Only visible if  `rental~^(.*tandem_bicycle.*)$`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*tandem_bicycle.*)$`
 
 This tagrendering has labels  `bicycle_rental` 
 

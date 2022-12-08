@@ -152,7 +152,7 @@ This is rendered with  Visiting this tower costs <b>{charge}</b>
   - Free to visit  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>`
 
 
-Only visible if  `access=yes|access=guided`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `access=yes|access=guided`
 
 
 
@@ -172,7 +172,7 @@ The question is  Which methods of payment are accepted here?
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
 
 
-Only visible if  `fee=yes|charge~.+`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `fee=yes|charge~.+`
 
 
 
@@ -208,7 +208,7 @@ This is rendered with  This tower has {step_count} steps to reach the top
 
 
 
-Only visible if  `access=yes|access=guided`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `access=yes|access=guided`
 
 
 
@@ -226,7 +226,7 @@ The question is  Does this tower have an elevator?
   - This tower does not have an elevator  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:elevator' target='_blank'>elevator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:elevator%3Dno' target='_blank'>no</a>`
 
 
-Only visible if  `access=yes|access=guided`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `access=yes|access=guided`
 
 
 
@@ -260,7 +260,7 @@ The question is  Is this place accessible with a wheelchair?
   - This place is not reachable with a wheelchair  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>`
 
 
-Only visible if  `elevator=yes&access=yes|access=guided`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `elevator=yes&access=yes|access=guided`
 
 
 

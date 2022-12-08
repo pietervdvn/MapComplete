@@ -166,7 +166,7 @@ This is rendered with  The fee is {toilets:charge}
 
 
 
-Only visible if  `toilets:fee=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `toilets:fee=yes`
 
 
 
@@ -213,7 +213,7 @@ This is rendered with  The door to the wheelchair-accessible toilet is {canonica
 
 
 
-Only visible if  `toilets:wheelchair=yes|toilets:wheelchair=designated`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `toilets:wheelchair=yes|toilets:wheelchair=designated`
 
 
 
@@ -271,7 +271,7 @@ This is rendered with  The changing table is located at {changing_table:location
   - The changing table is in a dedicated room.   corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Ddedicated_room' target='_blank'>dedicated_room</a>`
 
 
-Only visible if  `changing_table=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `changing_table=yes`
 
 
 

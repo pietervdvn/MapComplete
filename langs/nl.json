@@ -182,6 +182,10 @@
             "title": "Selecteer lagen",
             "zoomInToSeeThisLayer": "Vergroot de kaart om deze laag te zien"
         },
+        "levelSelection": {
+            "addNewOnLevel": "Is het nieuwe punt op verdieping {level}?",
+            "confirmLevel": "Ja, voeg {preset} toe op verdieping {level}"
+        },
         "loading": "Aan het laden…",
         "loadingTheme": "{theme} wordt geladen…",
         "loginFailed": "Het inloggen op OpenStreetMap is gefaald",
@@ -277,6 +281,17 @@
         "skip": "Sla deze vraag over",
         "skippedQuestions": "Enkele vragen werden overgeslaan",
         "testing": "Testmode - wijzigingen worden niet opgeslaan",
+        "uploadGpx": {
+            "confirm": "Bevestig upload",
+            "modes": {
+                "private": {
+                    "name": "Anoniem"
+                },
+                "public": {
+                    "name": "Publiek"
+                }
+            }
+        },
         "weekdays": {
             "abbreviations": {
                 "friday": "Vrij",
@@ -317,21 +332,6 @@
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        },
-        "levelSelection": {
-            "confirmLevel": "Ja, voeg {preset} toe op verdieping {level}",
-            "addNewOnLevel": "Is het nieuwe punt op verdieping {level}?"
-        },
-        "uploadGpx": {
-            "confirm": "Bevestig upload",
-            "modes": {
-                "private": {
-                    "name": "Anoniem"
-                },
-                "public": {
-                    "name": "Publiek"
-                }
-            }
         }
     },
     "image": {
@@ -735,6 +735,13 @@
         "typeText": "Typ eerst een commentaar om deze toe te voegen",
         "warnAnonymous": "Je bent niet aangemeld. We gaan je niet kunnen contacteren om deze kaartnota te verwerken."
     },
+    "plantDetection": {
+        "howTo": {
+            "intro": "Voor optimale resultaten,",
+            "li0": "neem een foto waar de boom in het midden staat zonder te veel achtergrond",
+            "li1": "neem een foto met een enkel blad"
+        }
+    },
     "privacy": {
         "editing": "Wanneer je een wijziging maakt, wordt deze wijziging opgeslaan op OpenStreetMap. Dit is zichtbaar voor iedereen. Een wijzigingenset gemaakt met MapComplete bevat de volgende data:\n<ul><li>De aanpassingen aan de data</li><li>Je gebruikersnaam</li><li>Wanneer deze wijziging werd gemaakt</li><li>Het thema dat je gebruikt om de wijziging te maken</li><li>De taal van de gebruikersinterface</li><li>Een indicatie hoe ver jij je van de gewijzigde objecten bevindt. Andere bijdragers kunnen deze informatie gebruiken om af te leiden of de wijziging gemaakt door lokaal te gaan kijken of door onderzoek vanop afstand</li></ul> Bekijk ook <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">de privacy-policy op OpenStreetMap.org</a> voor gedetailleerde info. We herinneren je eraan dat je een pseudoniem of fictieve naam kan gebruiken wanneer je je registreert.",
         "editingTitle": "Wanneer je wijzigingen maakt",
@@ -944,13 +951,6 @@
         },
         "wikidata": {
             "description": "Een Wikidata-code"
-        }
-    },
-    "plantDetection": {
-        "howTo": {
-            "li0": "neem een foto waar de boom in het midden staat zonder te veel achtergrond",
-            "li1": "neem een foto met een enkel blad",
-            "intro": "Voor optimale resultaten,"
         }
     }
 }
