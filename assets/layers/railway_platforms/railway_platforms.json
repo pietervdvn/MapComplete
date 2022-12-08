@@ -1,0 +1,69 @@
+{
+  "id": "railway_platforms",
+  "name": {
+    "en": "Railway Platforms"
+  },
+  "description": {
+    "en": "Find every platform in the station, and the train routes that use them."
+  },
+  "title": {
+    "render": {
+      "en": "Platform"
+    },
+    "mappings": [
+      {
+        "if": "ref~*",
+        "then": {
+          "en": "Platform {ref}"
+        }
+      }
+    ]
+  },
+  "source": {
+    "osmTags": {
+      "or": [
+        "railway=platform"
+      ]
+    }
+  },
+  "minzoom": 18,
+  "tagRenderings": [
+    {
+      "id": "ref",
+      "question": {
+        "en": "What is the number for this platform?"
+      },
+      "freeform": {
+        "key": "ref",
+        "type": "string",
+        "placeholder": {
+          "en": "Platform number"
+        }
+      },
+      "render": {
+        "en": "Platform {ref}"
+      }
+    },
+    "level"
+  ],
+  "mapRendering": [
+    {
+      "color": "gray"
+    },
+    {
+      "icon": "./assets/themes/stations/rail-light.svg",
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "label": {
+        "mappings": [
+          {
+            "if": "ref~*",
+            "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{ref}</div>"
+          }
+        ]
+      }
+    }
+  ]
+}

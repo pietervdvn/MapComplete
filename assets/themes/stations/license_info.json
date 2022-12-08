@@ -1,0 +1,61 @@
+[
+  {
+    "path": "bench.svg",
+    "license": "CC0",
+    "authors": [
+      "Matthijs Melissen"
+    ],
+    "sources": [
+      "https://github.com/gravitystorm/openstreetmap-carto/blob/master/symbols/amenity/bench.svg"
+    ]
+  },
+  {
+    "path": "bicycle_parking.svg",
+    "license": "CC0",
+    "authors": [
+      "Matthijs Melissen"
+    ],
+    "sources": [
+      "https://github.com/gravitystorm/openstreetmap-carto/blob/master/symbols/amenity/bicycle_parking.svg"
+    ]
+  },
+  {
+    "path": "departures_board.svg",
+    "license": "CC0",
+    "authors": [
+      "Robin van der Linde"
+    ],
+    "sources": []
+  },
+  {
+    "path": "public_transport_tickets.svg",
+    "license": "CC0",
+    "authors": [
+      "Jérémy Ragusa"
+    ],
+    "sources": [
+      "https://github.com/gravitystorm/openstreetmap-carto/blob/master/symbols/amenity/public_transport_tickets.svg"
+    ]
+  },
+  {
+    "path": "rail-light.svg",
+    "license": "CC0",
+    "authors": [
+      "Maki"
+    ],
+    "sources": [
+      "https://labs.mapbox.com/maki-icons/"
+    ]
+  },
+  {
+    "path": "rental_bicycle.svg",
+    "license": "CC0",
+    "authors": [
+      "Michael Glanznig",
+      "Andy Allan"
+    ],
+    "sources": [
+      "https://github.com/gravitystorm/openstreetmap-carto/blob/master/symbols/amenity/rental_bicycle.svg"
+    ]
+  }
+]
