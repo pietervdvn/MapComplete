@@ -1081,14 +1081,14 @@
         }
       },
       {
-        "if": "payment:coins:denominations=1.00 EUR",
+        "if": "payment:coins:denominations=1 EUR",
         "icon": "./assets/tagRenderings/1euro.svg",
         "then": {
           "en": "1 euro coins are accepted"
         }
       },
       {
-        "if": "payment:coins:denominations=2.00 EUR",
+        "if": "payment:coins:denominations=2 EUR",
         "icon": "./assets/tagRenderings/2euro.svg",
         "then": {
           "en": "2 euro coins are accepted"
