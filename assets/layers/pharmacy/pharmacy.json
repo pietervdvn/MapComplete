@@ -1,9 +1,9 @@
 {
   "id": "pharmacy",
   "name": {
-    "en": "pharmacy",
-    "de": "Apotheke",
-    "nl": "apotheek",
+    "en": "Pharmacies",
+    "de": "Apotheken",
+    "nl": "Apotheken",
     "pa_PK": "فارمیسی"
   },
   "description": {

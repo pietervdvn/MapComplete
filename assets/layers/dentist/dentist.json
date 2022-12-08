@@ -2,13 +2,15 @@
   "id": "dentist",
   "name": {
     "en": "Dentist",
-    "nl": "Tandarts"
+    "nl": "Tandarts",
+    "de": "Zahnarzt"
   },
   "description": {
-    "en": "This layer shows dentist offices"
+    "en": "This layer shows dentist offices",
+    "de": "Diese Ebene zeigt Zahnarztpraxen"
   },
   "source": {
-    "osmTags":      "amenity=dentist"
+    "osmTags": "amenity=dentist"
   },
   "title": {
     "render": {
@@ -27,10 +29,12 @@
     "website",
     {
       "question": {
-        "en": "What is the name of this dentist?"
+        "en": "What is the name of this dentist?",
+        "de": "Wie lautet der Name dieses Zahnarztes?"
       },
       "render": {
-        "en": "This dentist is called {name}"
+        "en": "This dentist is called {name}",
+        "de": "Dieser Zahnarzt heißt {name}"
       },
       "freeform": {
         "key": "name"

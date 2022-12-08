@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 4661,
+      "commits": 4686,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 255,
+      "commits": 259,
       "contributor": "Robin van der Linde"
     },
     {
@@ -50,6 +50,10 @@
     },
     {
       "commits": 19,
+      "contributor": "Hosted Weblate"
+    },
+    {
+      "commits": 19,
       "contributor": "Niels Elgaard Larsen"
     },
     {
@@ -59,10 +63,6 @@
     {
       "commits": 19,
       "contributor": "Sebastian Kürten"
-    },
-    {
-      "commits": 18,
-      "contributor": "Hosted Weblate"
     },
     {
       "commits": 18,

@@ -996,70 +996,70 @@
     },
     {
       "key": "amenity",
-      "description": "The MapComplete theme Open Shop Map has a layer pharmacy showing features with this tag",
+      "description": "The MapComplete theme Open Shop Map has a layer Pharmacies showing features with this tag",
       "value": "pharmacy"
     },
     {
       "key": "image",
-      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Pharmacies allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Pharmacies allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Pharmacies allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Pharmacies allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",
-      "description": "Layer 'pharmacy' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Open Shop Map')"
+      "description": "Layer 'Pharmacies' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Open Shop Map')"
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'pharmacy' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open Shop Map')"
+      "description": "Layer 'Pharmacies' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open Shop Map')"
     },
     {
       "key": "phone",
-      "description": "Layer 'pharmacy' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Open Shop Map')"
+      "description": "Layer 'Pharmacies' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Open Shop Map')"
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'pharmacy' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
+      "description": "Layer 'Pharmacies' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
     },
     {
       "key": "email",
-      "description": "Layer 'pharmacy' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Open Shop Map')"
+      "description": "Layer 'Pharmacies' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Open Shop Map')"
     },
     {
       "key": "contact:email",
-      "description": "Layer 'pharmacy' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
+      "description": "Layer 'Pharmacies' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
     },
     {
       "key": "website",
-      "description": "Layer 'pharmacy' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Open Shop Map')"
+      "description": "Layer 'Pharmacies' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Open Shop Map')"
     },
     {
       "key": "contact:website",
-      "description": "Layer 'pharmacy' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
+      "description": "Layer 'Pharmacies' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Open Shop Map')"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'pharmacy' shows wheelchair=yes with a fixed text, namely 'This pharmacy is easy to access on a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "description": "Layer 'Pharmacies' shows wheelchair=yes with a fixed text, namely 'This pharmacy is easy to access on a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
       "value": "yes"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'pharmacy' shows wheelchair=no with a fixed text, namely 'This pharmacy is hard to access on a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "description": "Layer 'Pharmacies' shows wheelchair=no with a fixed text, namely 'This pharmacy is hard to access on a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
       "value": "no"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'pharmacy' shows wheelchair=limited with a fixed text, namely 'This pharmacy has limited access for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
+      "description": "Layer 'Pharmacies' shows wheelchair=limited with a fixed text, namely 'This pharmacy has limited access for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Shop Map')",
       "value": "limited"
     }
   ]

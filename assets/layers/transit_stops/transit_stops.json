@@ -62,7 +62,8 @@
       "render": {
         "en": "This stop is called <b>{name}</b>",
         "de": "Der Name der Haltestelle lautet <b>{name}</b>",
-        "da": "Dette stop hedder <b>{name}</b>"
+        "da": "Dette stop hedder <b>{name}</b>",
+        "nl": "Deze halte heet <b>{name}</b>"
       },
       "freeform": {
         "key": "name",
@@ -73,7 +74,8 @@
         "placeholder": {
           "en": "Name of the stop",
           "de": "Name der Haltestelle",
-          "da": "Navn på stoppestedet"
+          "da": "Navn på stoppestedet",
+          "nl": "Naam van de halte"
         }
       },
       "mappings": [
@@ -87,14 +89,16 @@
           "then": {
             "en": "This stop has no name",
             "de": "Die Haltestelle hat keinen Namen",
-            "da": "Dette stop har intet navn"
+            "da": "Dette stop har intet navn",
+            "nl": "Deze halte heeft geen naam"
           }
         }
       ],
       "question": {
         "en": "What is the name of this stop?",
         "de": "Wie lautet der Name der Haltestelle?",
-        "da": "Hvad er navnet på dette stop?"
+        "da": "Hvad er navnet på dette stop?",
+        "nl": "Wat is de naam van deze halte?"
       }
     },
     "images",
@@ -106,7 +110,8 @@
           "then": {
             "en": "This stop has a shelter",
             "de": "Die Haltestelle hat einen Unterstand",
-            "da": "Dette stop har et ly"
+            "da": "Dette stop har et ly",
+            "nl": "Deze halte heeft een schuilplaats"
           }
         },
         {
@@ -114,14 +119,16 @@
           "then": {
             "en": "This stop does not have a shelter",
             "de": "Die Haltestelle hat keinen Unterstand",
-            "da": "Dette stop har ikke et ly"
+            "da": "Dette stop har ikke et ly",
+            "nl": "Deze halte heeft geen schuilplaats"
           }
         },
         {
           "if": "shelter=separate",
           "then": {
             "en": "This stop has a shelter, that's separately mapped",
-            "de": "Die Haltestelle hat einen Unterstand, der separat kariert ist"
+            "de": "Die Haltestelle hat einen Unterstand, der separat kariert ist",
+            "nl": "Deze halte heeft een schuilplaats, die apart op de kaart staat"
           },
           "hideInAnswer": true
         }
@@ -129,7 +136,8 @@
       "question": {
         "en": "Does this stop have a shelter?",
         "de": "Hat die Haltestelle einen Unterstand?",
-        "da": "Har dette stop et ly?"
+        "da": "Har dette stop et ly?",
+        "nl": "Heeft deze halte een schuilplaats?"
       }
     },
     {
@@ -239,7 +247,8 @@
           "if": "lit=yes",
           "then": {
             "en": "This stop is lit",
-            "de": "Die Haltestelle ist beleuchtet"
+            "de": "Die Haltestelle ist beleuchtet",
+            "nl": "Deze halte is niet verlicht"
           }
         },
         {
@@ -247,13 +256,15 @@
           "then": {
             "en": "This stop is not lit",
             "de": "Die Haltestelle ist nicht beleuchtet",
-            "da": "Dette stop lyser ikke"
+            "da": "Dette stop lyser ikke",
+            "nl": "Deze halte is niet verlicht"
           }
         }
       ],
       "question": {
         "en": "Is this stop lit?",
-        "de": "Ist die Haltestelle beleuchtet?"
+        "de": "Ist die Haltestelle beleuchtet?",
+        "nl": "Is deze halte verlicht?"
       }
     },
     {

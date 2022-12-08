@@ -11,75 +11,6 @@
   },
   "tags": [
     {
-      "key": "leisure",
-      "description": "The MapComplete theme Benches has a layer Picnic tables showing features with this tag",
-      "value": "picnic_table"
-    },
-    {
-      "key": "image",
-      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "mapillary",
-      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikidata",
-      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "wikipedia",
-      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Picnic tables' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Benches')"
-    },
-    {
-      "key": "location",
-      "description": "Layer 'Picnic tables' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Benches')",
-      "value": "underground"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Picnic tables' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "0"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Picnic tables' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Benches') Picking this answer will delete the key level.",
-      "value": ""
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Picnic tables' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "1"
-    },
-    {
-      "key": "level",
-      "description": "Layer 'Picnic tables' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "-1"
-    },
-    {
-      "key": "material",
-      "description": "Layer 'Picnic tables' shows and asks freeform values for key 'material' (in the MapComplete.osm.be theme 'Benches')"
-    },
-    {
-      "key": "material",
-      "description": "Layer 'Picnic tables' shows material=wood with a fixed text, namely 'This is a wooden picnic table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "wood"
-    },
-    {
-      "key": "material",
-      "description": "Layer 'Picnic tables' shows material=concrete with a fixed text, namely 'This is a concrete picnic table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "concrete"
-    },
-    {
-      "key": "material",
-      "description": "Layer 'Picnic tables' shows material=plastic with a fixed text, namely 'This picnic table is made from (recycled) plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "plastic"
-    },
-    {
       "key": "amenity",
       "description": "The MapComplete theme Benches has a layer Benches showing features with this tag",
       "value": "bench"
@@ -113,11 +44,6 @@
     {
       "key": "seats",
       "description": "Layer 'Benches' shows and asks freeform values for key 'seats' (in the MapComplete.osm.be theme 'Benches')"
-    },
-    {
-      "key": "seats:separated",
-      "description": "Layer 'Benches' shows seats:separated=no with a fixed text, namely 'This bench does not have separated seats' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "no"
     },
     {
       "key": "material",
@@ -211,135 +137,6 @@
       "value": ""
     },
     {
-      "key": "inscription",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'inscription' (in the MapComplete.osm.be theme 'Benches')"
-    },
-    {
-      "key": "not:inscription",
-      "description": "Layer 'Benches' shows not:inscription=yes with a fixed text, namely 'This bench does not have an inscription' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "yes"
-    },
-    {
-      "key": "inscription",
-      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench does <span class='subtle'>(probably)</span> not have an inscription' (in the MapComplete.osm.be theme 'Benches') Picking this answer will delete the key inscription.",
-      "value": ""
-    },
-    {
-      "key": "tourism",
-      "description": "Layer 'Benches' shows tourism=artwork with a fixed text, namely 'This bench has an integrated artwork' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "artwork"
-    },
-    {
-      "key": "tourism",
-      "description": "Layer 'Benches' shows  with a fixed text, namely 'This bench does not have an integrated artwork' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches') Picking this answer will delete the key tourism.",
-      "value": ""
-    },
-    {
-      "key": "historic",
-      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "memorial"
-    },
-    {
-      "key": "historic",
-      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches') Picking this answer will delete the key historic.",
-      "value": ""
-    },
-    {
-      "key": "not:historic",
-      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "memorial"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'artwork_type' (in the MapComplete.osm.be theme 'Benches')"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "architecture"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "mural"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "painting"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "sculpture"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "statue"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "bust"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "stone"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "installation"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "graffiti"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "relief"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "azulejo"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "tilework"
-    },
-    {
-      "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
-      "value": "woodcarving"
-    },
-    {
-      "key": "artist:wikidata",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'artist:wikidata' (in the MapComplete.osm.be theme 'Benches')"
-    },
-    {
-      "key": "artist_name",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'artist_name' (in the MapComplete.osm.be theme 'Benches')"
-    },
-    {
-      "key": "website",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Benches')"
-    },
-    {
-      "key": "subject:wikidata",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'subject:wikidata' (in the MapComplete.osm.be theme 'Benches')"
-    },
-    {
-      "key": "highway",
-      "description": "The MapComplete theme Benches has a layer Benches at public transport stops showing features with this tag",
-      "value": "bus_stop"
-    },
-    {
       "key": "bench",
       "description": "The MapComplete theme Benches has a layer Benches at public transport stops showing features with this tag",
       "value": "yes"
@@ -383,6 +180,75 @@
       "key": "bench",
       "description": "Layer 'Benches at public transport stops' shows bench=no with a fixed text, namely 'There is no bench here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
       "value": "no"
+    },
+    {
+      "key": "leisure",
+      "description": "The MapComplete theme Benches has a layer Picnic tables showing features with this tag",
+      "value": "picnic_table"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Picnic tables allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Picnic tables' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Picnic tables' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Benches')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Picnic tables' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Picnic tables' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Benches') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Picnic tables' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Picnic tables' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "-1"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Picnic tables' shows and asks freeform values for key 'material' (in the MapComplete.osm.be theme 'Benches')"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Picnic tables' shows material=wood with a fixed text, namely 'This is a wooden picnic table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "wood"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Picnic tables' shows material=concrete with a fixed text, namely 'This is a concrete picnic table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "concrete"
+    },
+    {
+      "key": "material",
+      "description": "Layer 'Picnic tables' shows material=plastic with a fixed text, namely 'This picnic table is made from (recycled) plastic' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "plastic"
     }
   ]
 }

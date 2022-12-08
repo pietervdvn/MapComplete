@@ -3274,9 +3274,17 @@
         }
     },
     "dentist": {
+        "description": "Diese Ebene zeigt Zahnarztpraxen",
+        "name": "Zahnarzt",
         "presets": {
             "0": {
                 "title": "eine Zahnarztpraxis"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wie lautet der Name dieses Zahnarztes?",
+                "render": "Dieser Zahnarzt heißt {name}"
             }
         },
         "title": {
@@ -3288,6 +3296,7 @@
         "name": "Aufnahmewinkel der Kamera anzeigen"
     },
     "doctors": {
+        "description": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen",
         "name": "Ärzte",
         "presets": {
             "0": {
@@ -3726,6 +3735,13 @@
                         "question": "Keine Informationen über taktiles Pflaster"
                     }
                 }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Hat Bio-Produkte"
+                    }
+                }
             }
         }
     },
@@ -4119,6 +4135,20 @@
                 },
                 "question": "Wird in dieser Pommesbude pflanzliches oder tierisches Fett zum Frittieren verwendet?"
             },
+            "friture-organic": {
+                "mappings": {
+                    "0": {
+                        "then": "Biologische Snacks sind erhältlich"
+                    },
+                    "1": {
+                        "then": "Es sind keine biologischen Snacks erhältlich"
+                    },
+                    "2": {
+                        "then": "Nur biologische Snacks sind erhältlich"
+                    }
+                },
+                "question": "Bietet diese Pommesbude biologische Snacks an?"
+            },
             "friture-take-your-container": {
                 "mappings": {
                     "0": {
@@ -4177,6 +4207,20 @@
                     }
                 },
                 "question": "Werden hier halal Gerichte angeboten?"
+            },
+            "organic (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "Es sind keine biologischen Produkte verfügbar"
+                    },
+                    "1": {
+                        "then": "Es gibt ein biologisches Menü"
+                    },
+                    "2": {
+                        "then": "Nur biologische Produkte sind erhältlich"
+                    }
+                },
+                "question": "Bietet dieses Restaurant biologische Speisen an?"
             }
         },
         "title": {
@@ -5540,7 +5584,7 @@
                 }
             }
         },
-        "name": "Apotheke",
+        "name": "Apotheken",
         "presets": {
             "0": {
                 "title": "eine Apotheke"
@@ -5579,10 +5623,21 @@
         }
     },
     "physiotherapist": {
+        "description": "Diese Ebene zeigt Physiotherapeuten",
+        "name": "Physiotherapeut",
         "presets": {
             "0": {
                 "title": "Praxis eines Physiotherapeuten"
             }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wie heißt die Praxis des Physiotherapeuten?",
+                "render": "Die Praxis des Physiotherapeuten heißt {name}"
+            }
+        },
+        "title": {
+            "render": "Physiotherapeut {name}"
         }
     },
     "picnic_table": {
@@ -6459,6 +6514,20 @@
                     "question": "Um was für ein Geschäft handelt es sich?",
                     "render": "Das ist ein {shop}"
                 }
+            },
+            "organic": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Geschäft bietet Bio-Produkte an"
+                    },
+                    "1": {
+                        "then": "Dieses Geschäft bietet ausschließlich Bio-Produkte an"
+                    },
+                    "2": {
+                        "then": "Dieses Geschäft bietet keine Bioprodukte an"
+                    }
+                },
+                "question": "Bietet dieses Geschäft Bioprodukte an?"
             },
             "shops-name": {
                 "question": "Wie ist der Name dieses Geschäfts?",

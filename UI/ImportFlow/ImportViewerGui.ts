@@ -441,8 +441,8 @@ class ImportInspector extends VariableUiElement {
                 }
                 // We only care about the properties here
                 let props: NoteProperties[] = notes["success"].features.map((f) => f.properties)
-                if(userDetails["uid"]){
-                    props = props.filter(n => n.comments[0].uid === userDetails["uid"])
+                if (userDetails["uid"]) {
+                    props = props.filter((n) => n.comments[0].uid === userDetails["uid"])
                 }
                 const perBatch: NoteState[][] = Array.from(
                     ImportInspector.SplitNotesIntoBatches(props).values()

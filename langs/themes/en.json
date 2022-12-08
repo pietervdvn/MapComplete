@@ -742,7 +742,7 @@
         "title": "Kerbs and crossings"
     },
     "mapcomplete-changes": {
-        "description": "This maps shows all the changes made with MapComplete",
+        "description": "This map shows all the changes made with MapComplete",
         "layers": {
             "0": {
                 "description": "Shows all MapComplete changes",
@@ -805,7 +805,7 @@
                     },
                     "host": {
                         "question": "What host (website) was this change made with?",
-                        "render": "Change with with <a href='{host}'>{host}</a>"
+                        "render": "Change with <a href='{host}'>{host}</a>"
                     },
                     "locale": {
                         "question": "What locale (language) was this change made in?",

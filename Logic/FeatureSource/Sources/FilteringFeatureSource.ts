@@ -98,7 +98,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
                 }
             }
 
-            for (const filter of (globalFilters ?? [])) {
+            for (const filter of globalFilters ?? []) {
                 const neededTags: TagsFilter = filter?.currentFilter
                 if (
                     neededTags !== undefined &&

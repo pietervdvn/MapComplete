@@ -167,20 +167,6 @@
       "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
-      "key": "climbing:toprope",
-      "description": "Layer 'Climbing gyms' shows climbing:toprope=yes with a fixed text, namely 'Toprope climbing is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
-      "value": "yes"
-    },
-    {
-      "key": "climbing:toprope",
-      "description": "Layer 'Climbing gyms' shows climbing:toprope=no with a fixed text, namely 'Toprope climbing is not possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
-      "value": "no"
-    },
-    {
-      "key": "climbing:toprope",
-      "description": "Layer 'Climbing gyms' shows climbing:toprope~.+ with a fixed text, namely 'There are {climbing:toprope} toprope routes' (in the MapComplete.osm.be theme 'Open Climbing Map')"
-    },
-    {
       "key": "climbing:length",
       "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:length' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },

@@ -688,13 +688,15 @@
         {
           "if": "opening_hours=\"by appointment\"",
           "then": {
-            "en": "Only by appointment"
+            "en": "Only by appointment",
+            "de": "Nur nach Vereinbarung"
           }
         },
         {
           "if": "opening_hours~i~\"by appointment\"|by appointment",
           "then": {
-            "en": "Only by appointment"
+            "en": "Only by appointment",
+            "de": "Nur nach Vereinbarung"
           },
           "hideInAnswer": true
         }
