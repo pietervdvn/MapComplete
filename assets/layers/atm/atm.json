@@ -36,16 +36,6 @@
   "tagRenderings": [
     {
       "id": "name",
-      "question": {
-        "en": "What is the name of this ATM?"
-      },
-      "freeform": {
-        "key": "name",
-        "type": "string",
-        "placeholder": {
-          "en": "Name of the ATM"
-        }
-      },
       "render": {
         "en": "The name of this ATM is {name}"
       }

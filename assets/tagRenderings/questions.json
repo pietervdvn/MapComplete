@@ -895,6 +895,55 @@
       }
     ]
   },
+  "payment-options-split": {
+    "builtin": "payment-options",
+    "override": {
+      "mappings": [
+        {
+          "hideInAnswer": true,
+          "ifnot": "payment:cash="
+        },
+        {
+          "hideInAnswer": true,
+          "ifnot": "payment:cards="
+        }
+      ],
+      "mappings+": [
+        {
+          "if": "payment:coins=yes",
+          "ifnot": "payment:coins=no",
+          "icon": "./assets/tagRenderings/coins.svg",
+          "then": {
+            "en": "Coins are accepted here"
+          }
+        },
+        {
+          "if": "payment:notes=yes",
+          "ifnot": "payment:notes=no",
+          "icon": "./assets/tagRenderings/notes.svg",
+          "then": {
+            "en": "Bank notes are accepted here"
+          }
+        },
+        {
+          "if": "payment:debit_cards=yes",
+          "ifnot": "payment_debit_cards=no",
+          "icon": "./assets/tagRenderings/payment_card.svg",
+          "then": {
+            "en": "Debit cards are accepted here"
+          }
+        },
+        {
+          "if": "payment:credit_cards=yes",
+          "ifnot": "payment:credit_cards=no",
+          "icon": "./assets/tagRenderings/payment_card.svg",
+          "then": {
+            "en": "Credit cards are accepted here"
+          }
+        }
+      ]
+    }
+  },
   "payment-options-advanced": {
     "builtin": "payment-options",
     "override": {
@@ -948,6 +997,104 @@
         }
       ]
     }
+  },
+  "denominations-coins": {
+    "condition": {
+      "and": [
+        {
+          "or": [
+            "payment:coins=yes",
+            "payment:cash=yes"
+          ]
+        },
+        {
+          "or": [
+            "_country=at",
+            "_country=be",
+            "_country=cy",
+            "_country=de",
+            "_country=ee",
+            "_country=es",
+            "_country=fi",
+            "_country=fr",
+            "_country=gr",
+            "_country=hr",
+            "_country=ie",
+            "_country=it",
+            "_country=lt",
+            "_country=lu",
+            "_country=lv",
+            "_country=mt",
+            "_country=nl",
+            "_country=pt",
+            "_country=si",
+            "_country=sk"
+          ]
+        }
+      ]
+    },
+    "question": {
+      "en": "Whith what coins can you pay here?"
+    },
+    "multiAnswer": true,
+    "mappings": [
+      {
+        "if": "payment:coins:denominations=0.01 EUR",
+        "icon": "./assets/tagRenderings/1cent.svg",
+        "then": {
+          "en": "1 cent coins are accepted"
+        }
+      },
+      {
+        "if": "payment:coins:denominations=0.02 EUR",
+        "icon": "./assets/tagRenderings/2cent.svg",
+        "then": {
+          "en": "2 cent coins are accepted"
+        }
+      },
+      {
+        "if": "payment:coins:denominations=0.05 EUR",
+        "icon": "./assets/tagRenderings/5cent.svg",
+        "then": {
+          "en": "5 cent coins are accepted"
+        }
+      },
+      {
+        "if": "payment:coins:denominations=0.10 EUR",
+        "icon": "./assets/tagRenderings/10cent.svg",
+        "then": {
+          "en": "10 cent coins are accepted"
+        }
+      },
+      {
+        "if": "payment:coins:denominations=0.20 EUR",
+        "icon": "./assets/tagRenderings/20cent.svg",
+        "then": {
+          "en": "20 cent coins are accepted"
+        }
+      },
+      {
+        "if": "payment:coins:denominations=0.50 EUR",
+        "icon": "./assets/tagRenderings/50cent.svg",
+        "then": {
+          "en": "50 cent coins are accepted"
+        }
+      },
+      {
+        "if": "payment:coins:denominations=1.00 EUR",
+        "icon": "./assets/tagRenderings/1euro.svg",
+        "then": {
+          "en": "1 euro coins are accepted"
+        }
+      },
+      {
+        "if": "payment:coins:denominations=2.00 EUR",
+        "icon": "./assets/tagRenderings/2euro.svg",
+        "then": {
+          "en": "2 euro coins are accepted"
+        }
+      }
+    ]
   },
   "last_edit": {
     "#": "Gives some metainfo about the last edit and who did edit it - rendering only",

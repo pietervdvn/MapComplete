@@ -170,10 +170,6 @@
                 "render": "The brand of this ATM is {brand}"
             },
             "name": {
-                "freeform": {
-                    "placeholder": "Name of the ATM"
-                },
-                "question": "What is the name of this ATM?",
                 "render": "The name of this ATM is {name}"
             },
             "operator": {
