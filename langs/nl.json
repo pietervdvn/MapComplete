@@ -111,7 +111,8 @@
             "warnVisibleForEveryone": "Je toevoeging is voor iedereen zichtbaar",
             "wrongType": "Dit object is geen punt of lijn en kan daarom niet geïmporteerd worden",
             "zoomInFurther": "Gelieve verder in te zoomen om een object toe te voegen.",
-            "zoomInMore": "Zoom meer in om dit object te importeren"
+            "zoomInMore": "Zoom meer in om dit object te importeren",
+            "backToSelect": "Selecteer een andere categorie"
         },
         "apply_button": {
             "appliedOnAnotherObject": "Object {id} zal deze tags ontvangen: {tags}",
