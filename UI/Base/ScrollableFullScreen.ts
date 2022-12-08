@@ -1,8 +1,7 @@
-import { UIElement } from "../UIElement"
 import Svg from "../../Svg"
 import Combine from "./Combine"
-import { FixedUiElement } from "./FixedUiElement"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import {FixedUiElement} from "./FixedUiElement"
+import {UIEventSource} from "../../Logic/UIEventSource"
 import Hash from "../../Logic/Web/Hash"
 import BaseUIElement from "../BaseUIElement"
 import Title from "./Title"
@@ -16,12 +15,11 @@ import Title from "./Title"
  *
  *
  */
-export default class ScrollableFullScreen extends UIElement {
+export default class ScrollableFullScreen {
     private static readonly empty = new FixedUiElement("")
     private static _currentlyOpen: ScrollableFullScreen
     public isShown: UIEventSource<boolean>
     private hashToShow: string
-    private _component: BaseUIElement
     private _fullscreencomponent: BaseUIElement
     private _resetScrollSignal: UIEventSource<void> = new UIEventSource<void>(undefined)
 
@@ -37,7 +35,6 @@ export default class ScrollableFullScreen extends UIElement {
             setHash?: true | boolean
         }
     ) {
-        super()
         this.hashToShow = hashToShow
         this.isShown = isShown
 
@@ -45,20 +42,11 @@ export default class ScrollableFullScreen extends UIElement {
             throw "HashToShow should be defined as it is vital for the 'back' key functionality"
         }
 
-        const desktopOptions = {
-            mode: "desktop",
-            resetScrollSignal: this._resetScrollSignal,
-        }
-
         const mobileOptions = {
             mode: "mobile",
             resetScrollSignal: this._resetScrollSignal,
         }
 
-        this._component = this.BuildComponent(
-            title(desktopOptions),
-            content(desktopOptions)
-        ).SetClass("hidden md:block")
         this._fullscreencomponent = this.BuildComponent(
             title(mobileOptions),
             content(mobileOptions).SetClass("pb-20")
@@ -95,17 +83,15 @@ export default class ScrollableFullScreen extends UIElement {
         })
     }
 
-    InnerRender(): BaseUIElement {
-        return this._component
-    }
-
     Destroy() {
-        super.Destroy()
-        this._component.Destroy()
         this._fullscreencomponent.Destroy()
     }
 
-    Activate(): void {
+    /**
+     * Actually show this in the 'fullscreen'-div
+     * @constructor
+     */
+    public Activate(): void {
         this.isShown.setData(true)
         this._fullscreencomponent.AttachTo("fullscreen")
         const fs = document.getElementById("fullscreen")

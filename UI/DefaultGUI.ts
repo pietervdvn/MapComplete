@@ -1,7 +1,7 @@
 import FeaturePipelineState from "../Logic/State/FeaturePipelineState"
 import State from "../State"
-import { Utils } from "../Utils"
-import { UIEventSource } from "../Logic/UIEventSource"
+import {Utils} from "../Utils"
+import {UIEventSource} from "../Logic/UIEventSource"
 import FullWelcomePaneWithTabs from "./BigComponents/FullWelcomePaneWithTabs"
 import MapControlButton from "./MapControlButton"
 import Svg from "../Svg"
@@ -17,7 +17,7 @@ import ScrollableFullScreen from "./Base/ScrollableFullScreen"
 import Translations from "./i18n/Translations"
 import SimpleAddUI from "./BigComponents/SimpleAddUI"
 import StrayClickHandler from "../Logic/Actors/StrayClickHandler"
-import { DefaultGuiState } from "./DefaultGuiState"
+import {DefaultGuiState} from "./DefaultGuiState"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import * as home_location_json from "../assets/layers/home_location/home_location.json"
 import NewNoteUi from "./Popup/NewNoteUi"
@@ -27,9 +27,9 @@ import FilteredLayer from "../Models/FilteredLayer"
 import ExtraLinkButton from "./BigComponents/ExtraLinkButton"
 
 /**
- * The default MapComplete GUI initializor
+ * The default MapComplete GUI initializer
  *
- * Adds a welcome pane, contorl buttons, ... etc to index.html
+ * Adds a welcome pane, control buttons, ... etc to index.html
  */
 export default class DefaultGUI {
     private readonly guiState: DefaultGuiState
@@ -53,7 +53,7 @@ export default class DefaultGUI {
 
         Utils.downloadJson("./service-worker-version")
             .then((data) => console.log("Service worker", data))
-            .catch((e) => console.log("Service worker not active"))
+            .catch((_) => console.log("Service worker not active"))
     }
 
     public setupClickDialogOnMap(
@@ -218,7 +218,7 @@ export default class DefaultGUI {
 
     private InitWelcomeMessage(): BaseUIElement {
         const isOpened = this.guiState.welcomeMessageIsOpened
-        const fullOptions = new FullWelcomePaneWithTabs(
+        new FullWelcomePaneWithTabs(
             isOpened,
             this.guiState.welcomeMessageOpenedTab,
             this.state
@@ -242,10 +242,6 @@ export default class DefaultGUI {
             isOpened.setData(false)
         })
 
-        return new Toggle(
-            fullOptions.SetClass("welcomeMessage pointer-events-auto"),
-            help.SetClass("pointer-events-auto"),
-            isOpened
-        )
+       return help.SetClass("pointer-events-auto")
     }
 }

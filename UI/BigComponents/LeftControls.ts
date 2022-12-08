@@ -45,30 +45,21 @@ export default class LeftControls extends Combine {
                     })
                 ).SetClass("inline-block w-full h-full")
 
-                const featureBox = new VariableUiElement(
-                    feature.map((feature) => {
-                        if (feature === undefined) {
-                            return undefined
-                        }
-                        return new Lazy(() => {
-                            const tagsSource = state.allElements.getEventSourceById(
-                                feature.properties.id
-                            )
-                            return new FeatureInfoBox(tagsSource, currentViewFL.layerDef, state, {
-                                hashToShow: "currentview",
-                                isShown: guiState.currentViewControlIsOpened,
-                            }).SetClass("md:floating-element-width")
-                        })
-                    })
-                )
-                    .SetStyle("width: 40rem")
-                    .SetClass("block")
 
-                return new Toggle(
-                    featureBox,
-                    new MapControlButton(icon),
-                    guiState.currentViewControlIsOpened
-                )
+                feature.map((feature) => {
+                    if (feature === undefined) {
+                        return undefined
+                    }
+                    const tagsSource = state.allElements.getEventSourceById(
+                        feature.properties.id
+                    )
+                    return new FeatureInfoBox(tagsSource, currentViewFL.layerDef, state, {
+                        hashToShow: "currentview",
+                        isShown: guiState.currentViewControlIsOpened,
+                    })
+                })
+
+                return new MapControlButton(icon)
             }).onClick(() => {
                 guiState.currentViewControlIsOpened.setData(true)
             }),
@@ -79,14 +70,9 @@ export default class LeftControls extends Combine {
             )
         )
 
-        const toggledDownload = new Toggle(
-            new AllDownloads(guiState.downloadControlIsOpened, state).SetClass(
-                "block p-1 rounded-full md:floating-element-width"
-            ),
-            new MapControlButton(Svg.download_svg()).onClick(() =>
-                guiState.downloadControlIsOpened.setData(true)
-            ),
-            guiState.downloadControlIsOpened
+        new AllDownloads(guiState.downloadControlIsOpened, state)
+        const toggledDownload = new MapControlButton(Svg.download_svg()).onClick(() =>
+            guiState.downloadControlIsOpened.setData(true)
         )
 
         const downloadButtonn = new Toggle(
@@ -98,21 +84,19 @@ export default class LeftControls extends Combine {
             )
         )
 
-        const toggledFilter = new Toggle(
-            new ScrollableFullScreen(
-                () => Translations.t.general.layerSelection.title.Clone(),
-                () =>
-                    new FilterView(state.filteredLayers, state.overlayToggles, state).SetClass(
-                        "block p-1"
-                    ),
-                "filters",
-                guiState.filterViewIsOpened
-            ).SetClass("rounded-lg md:floating-element-width"),
-            new MapControlButton(Svg.layers_svg()).onClick(() =>
-                guiState.filterViewIsOpened.setData(true)
-            ),
+
+        new ScrollableFullScreen(
+            () => Translations.t.general.layerSelection.title.Clone(),
+            () =>
+                new FilterView(state.filteredLayers, state.overlayToggles, state).SetClass(
+                    "block p-1"
+                ),
+            "filters",
             guiState.filterViewIsOpened
         )
+        const toggledFilter = new MapControlButton(Svg.layers_svg()).onClick(() =>
+                guiState.filterViewIsOpened.setData(true)
+            )
 
         const filterButton = new Toggle(toggledFilter, undefined, state.featureSwitchFilter)
 
@@ -127,18 +111,19 @@ export default class LeftControls extends Combine {
             undefined,
             new Lazy(
                 () =>
-                    new Toggle(
-                        new ScrollableFullScreen(
-                            () => Translations.t.general.attribution.attributionTitle,
-                            () => new CopyrightPanel(state),
-                            "copyright",
-                            guiState.copyrightViewIsOpened
-                        ),
-                        new MapControlButton(Svg.copyright_svg()).onClick(() =>
-                            guiState.copyrightViewIsOpened.setData(true)
-                        ),
+                {
+
+                    new ScrollableFullScreen(
+                        () => Translations.t.general.attribution.attributionTitle,
+                        () => new CopyrightPanel(state),
+                        "copyright",
                         guiState.copyrightViewIsOpened
-                    )
+                    );
+                 return                          new MapControlButton(Svg.copyright_svg()).onClick(() =>
+                            guiState.copyrightViewIsOpened.setData(true)
+                        )
+
+                }
             ),
             state.featureSwitchWelcomeMessage
         )
