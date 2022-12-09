@@ -123,6 +123,9 @@ export default class DefaultGUI {
                 addNewPoint,
                 hasPresets ? new AddNewMarker(state.filteredLayers) : noteMarker
             )
+            state.LastClickLocation.addCallbackAndRunD(_ => {
+                ScrollableFullScreen.collapse()
+            })
         }
 
         if (noteLayer !== undefined) {
@@ -151,6 +154,16 @@ export default class DefaultGUI {
             layerToShow: new LayerConfig(home_location_json, "home_location", true),
             features: state.homeLocation,
             state,
+        })
+
+        const selectedElement: FilteredLayer = state.filteredLayers.data.filter(
+            (l) => l.layerDef.id === "selected_element"
+        )[0]
+        new ShowDataLayer({
+            leafletMap: state.leafletMap,
+            layerToShow: selectedElement.layerDef,
+            features: state.selectedElementsLayer,
+            state
         })
 
         state.leafletMap.addCallbackAndRunD((_) => {

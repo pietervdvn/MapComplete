@@ -71,16 +71,20 @@ export default class ScrollableFullScreen {
                 self.Activate()
             } else {
                 // Some cleanup...
+                ScrollableFullScreen.collapse()
 
-                const fs = document.getElementById("fullscreen")
-                if (fs !== null) {
-                    ScrollableFullScreen.empty.AttachTo("fullscreen")
-                    fs.classList.add("hidden")
-                }
-
-                ScrollableFullScreen._currentlyOpen?.isShown?.setData(false)
             }
         })
+    }
+
+    public static collapse(){
+        const fs = document.getElementById("fullscreen")
+        if (fs !== null) {
+            ScrollableFullScreen.empty.AttachTo("fullscreen")
+            fs.classList.add("hidden")
+        }
+
+        ScrollableFullScreen._currentlyOpen?.isShown?.setData(false)
     }
 
     Destroy() {
@@ -98,6 +102,7 @@ export default class ScrollableFullScreen {
         ScrollableFullScreen._currentlyOpen = this
         fs.classList.remove("hidden")
     }
+
 
     private BuildComponent(title: BaseUIElement, content: BaseUIElement): BaseUIElement {
         const returnToTheMap = new Combine([

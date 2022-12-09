@@ -12,6 +12,7 @@ import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Img from "../../UI/Base/Img"
 import Combine from "../../UI/Base/Combine"
 import { VariableUiElement } from "../../UI/Base/VariableUIElement"
+import {TagRenderingConfigJson} from "./Json/TagRenderingConfigJson";
 
 export default class PointRenderingConfig extends WithContextLoader {
     private static readonly allowed_location_codes = new Set<string>([
@@ -25,11 +26,13 @@ export default class PointRenderingConfig extends WithContextLoader {
         "point" | "centroid" | "start" | "end" | "projected_centerpoint" | string
     >
 
-    public readonly icon: TagRenderingConfig
+    public readonly icon?: TagRenderingConfig
     public readonly iconBadges: { if: TagsFilter; then: TagRenderingConfig }[]
     public readonly iconSize: TagRenderingConfig
     public readonly label: TagRenderingConfig
     public readonly rotation: TagRenderingConfig
+    public readonly cssDef: TagRenderingConfig
+    public readonly cssClasses?: TagRenderingConfig
 
     constructor(json: PointRenderingConfigJson, context: string) {
         super(json, context)
@@ -61,6 +64,10 @@ export default class PointRenderingConfig extends WithContextLoader {
             )
         }
         this.icon = this.tr("icon", undefined)
+        if(json.css !== undefined){
+            this.cssDef = this.tr("css", undefined)
+        }
+        this.cssClasses = this.tr("cssClasses", undefined)
         this.iconBadges = (json.iconBadges ?? []).map((overlay, i) => {
             let tr: TagRenderingConfig
             if (
@@ -240,6 +247,9 @@ export default class PointRenderingConfig extends WithContextLoader {
             iconAndBadges.SetClass("w-full h-full")
         }
 
+        const css= this.cssDef?.GetRenderValue(tags , undefined)?.txt
+        const cssClasses = this.cssClasses?.GetRenderValue(tags , undefined)?.txt
+
         let label = this.GetLabel(tags)
         let htmlEl: BaseUIElement
         if (icon === undefined && label === undefined) {
@@ -252,6 +262,13 @@ export default class PointRenderingConfig extends WithContextLoader {
             htmlEl = new Combine([iconAndBadges, label]).SetStyle("flex flex-col")
         }
 
+        if(css !== undefined){
+            htmlEl?.SetStyle(css)
+        }
+
+        if(cssClasses !== undefined){
+            htmlEl?.SetClass(cssClasses)
+        }
         return {
             html: htmlEl,
             iconSize: [iconW, iconH],

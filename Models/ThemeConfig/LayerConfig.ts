@@ -301,7 +301,7 @@ export default class LayerConfig extends WithContextLoader {
 
             const hasCenterRendering = this.mapRendering.some(
                 (r) =>
-                    r.location.has("centroid") || r.location.has("start") || r.location.has("end")
+                    r.location.has("centroid")  || r.location.has("projected_centerpoint") || r.location.has("start") || r.location.has("end")
             )
 
             if (this.lineRendering.length === 0 && this.mapRendering.length === 0) {

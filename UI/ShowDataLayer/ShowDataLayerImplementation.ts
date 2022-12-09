@@ -286,7 +286,6 @@ export default class ShowDataLayerImplementation {
         // Leaflet cannot handle geojson points natively
         // We have to convert them to the appropriate icon
         // Click handling is done in the next step
-
         const layer: LayerConfig = this._layerToShow
         if (layer === undefined) {
             return
@@ -337,7 +336,6 @@ export default class ShowDataLayerImplementation {
         const self = this
 
         function activate (event: LeafletMouseEvent) {
-            console.log("Activating!")
             if (infobox === undefined) {
                 const tags =
                     self.allElements?.getEventSourceById(key) ??
@@ -350,6 +348,14 @@ export default class ShowDataLayerImplementation {
                 })
             }
             infobox.Activate()
+            self._selectedElement.setData( self.allElements.ContainingFeatures.get(feature.id) ?? feature )
+            event?.originalEvent?.preventDefault()
+            event?.originalEvent?.stopPropagation()
+            event?.originalEvent?.stopImmediatePropagation()
+            if(event?.originalEvent){
+                // This is a total workaround, as 'preventDefault' and everything above seems to be not working
+                event.originalEvent["dismissed"] = true
+            }
         }
 
         leafletLayer.addEventListener('click', activate)

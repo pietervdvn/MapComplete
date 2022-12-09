@@ -27,6 +27,7 @@ export default class Constants {
     ]
 
     public static readonly added_by_default: string[] = [
+        "selected_element",
         "gps_location",
         "gps_location_history",
         "home_location",
