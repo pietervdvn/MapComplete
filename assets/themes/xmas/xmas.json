@@ -133,7 +133,13 @@
       "title": {
         "render": {
           "en": "Christmas market"
-        }
+        },
+        "mappings": [
+          {
+            "if": "name={name}",
+            "then": "{name}"
+          }
+        ]
       },
       "tagRenderings": [
         {
@@ -158,7 +164,7 @@
             "key": "xmas:day_date",
             "type": "date",
             "placeholder": {
-              "en": "Dates of the market"
+              "en": "Dates of the market (e.g. 2022-12-01 - 2022-12-24)"
             }
           },
           "render": {
@@ -246,6 +252,146 @@
           ],
           "title": {
             "en": "a christmas market"
+          }
+        }
+      ],
+      "calculatedTags": [
+        "_days_since_last_survey=Math.floor((new Date() - new Date(feat.properties['survey:date']))/(1000*60*60*24))",
+        "_recently_surveyed=Number(feat.properties._days_since_last_survey) <= 90"
+      ]
+    },
+    {
+      "id": "xmas_tree_shops",
+      "name": {
+        "en": "Christmas tree shops"
+      },
+      "description": {
+        "en": "Layer showing places selling christmas trees"
+      },
+      "minzoom": 12,
+      "source": {
+        "osmTags": {
+          "and": [
+            "xmas:feature=shop",
+            "xmas:feature:shop=tree"
+          ]
+        }
+      },
+      "title": {
+        "render": {
+          "en": "Christmas tree shop"
+        },
+        "mappings": [
+          {
+            "if": "name~*",
+            "then": "{name}"
+          }
+        ]
+      },
+      "tagRenderings": [
+        {
+          "id": "name",
+          "freeform": {
+            "key": "name",
+            "type": "string",
+            "placeholder": {
+              "en": "Name of the shop"
+            }
+          },
+          "render": {
+            "en": "This shop is called {name}"
+          },
+          "question": {
+            "en": "What is the name of this shop?"
+          }
+        },
+        {
+          "id": "last_check",
+          "freeform": {
+            "key": "survey:date",
+            "type": "date",
+            "placeholder": {
+              "en": "Last time this shop was checked"
+            }
+          },
+          "render": {
+            "en": "Last checked on {survey:date}"
+          },
+          "mappings": [
+            {
+              "if": "survey:date={_now:date}",
+              "then": "Checked today!"
+            }
+          ],
+          "question": {
+            "en": "When was this shop last checked?"
+          }
+        },
+        "opening_hours"
+      ],
+      "allowMove": {
+        "enableImproveAccuracy": true
+      },
+      "deletion": false,
+      "filter": [
+        {
+          "id": "recently_surveyed",
+          "options": [
+            {
+              "default": true,
+              "question": {
+                "en": "Show all shops"
+              }
+            },
+            {
+              "osmTags": "_recently_surveyed=true",
+              "question": {
+                "en": "Show only recently surveyed shops"
+              }
+            },
+            {
+              "osmTags": "_recently_surveyed=false",
+              "question": {
+                "en": "Show only shops that have not been surveyed recently"
+              }
+            }
+          ]
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": "./assets/layers/id_presets/maki-shop.svg",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "iconBadges": [
+            {
+              "if": "opening_hours~*",
+              "then": "isOpen"
+            },
+            {
+              "if": "_recently_surveyed=false",
+              "then": "circle:red"
+            },
+            {
+              "if": "_recently_surveyed=true",
+              "then": "circle:green"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "tags": [
+            "xmas:feature=shop",
+            "xmas:feature:shop=tree"
+          ],
+          "title": {
+            "en": "a christmas tree shop"
+          },
+          "description": {
+            "en": "A shop selling christmas trees"
           }
         }
       ],
