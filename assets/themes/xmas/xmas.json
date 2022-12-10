@@ -273,7 +273,7 @@
         "osmTags": {
           "and": [
             "xmas:feature=shop",
-            "xmas:feature:shop=tree"
+            "xmas:feature:shop=christmas_tree"
           ]
         }
       },
@@ -308,18 +308,18 @@
         {
           "id": "last_check",
           "freeform": {
-            "key": "survey:date",
+            "key": "xmas:lastcheck",
             "type": "date",
             "placeholder": {
               "en": "Last time this shop was checked"
             }
           },
           "render": {
-            "en": "Last checked on {survey:date}"
+            "en": "Last checked on {xmas:lastcheck}"
           },
           "mappings": [
             {
-              "if": "survey:date={_now:date}",
+              "if": "xmas:lastcheck={_now:date}",
               "then": "Checked today!"
             }
           ],
@@ -385,7 +385,7 @@
         {
           "tags": [
             "xmas:feature=shop",
-            "xmas:feature:shop=tree"
+            "xmas:feature:shop=christmas_tree"
           ],
           "title": {
             "en": "a christmas tree shop"
@@ -396,7 +396,7 @@
         }
       ],
       "calculatedTags": [
-        "_days_since_last_survey=Math.floor((new Date() - new Date(feat.properties['survey:date']))/(1000*60*60*24))",
+        "_days_since_last_survey=Math.floor((new Date() - new Date(feat.properties['xmas:lastcheck']))/(1000*60*60*24))",
         "_recently_surveyed=Number(feat.properties._days_since_last_survey) <= 90"
       ]
     }
