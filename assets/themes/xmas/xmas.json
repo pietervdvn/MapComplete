@@ -87,16 +87,6 @@
           "location": [
             "point",
             "centroid"
-          ],
-          "iconBadges": [
-            {
-              "if": "_recently_surveyed=false",
-              "then": "circle:red"
-            },
-            {
-              "if": "_recently_surveyed=true",
-              "then": "circle:green"
-            }
           ]
         }
       ],
@@ -232,16 +222,6 @@
           "location": [
             "point",
             "centroid"
-          ],
-          "iconBadges": [
-            {
-              "if": "_recently_surveyed=false",
-              "then": "circle:red"
-            },
-            {
-              "if": "_recently_surveyed=true",
-              "then": "circle:green"
-            }
           ]
         }
       ],
@@ -369,14 +349,6 @@
             {
               "if": "opening_hours~*",
               "then": "isOpen"
-            },
-            {
-              "if": "_recently_surveyed=false",
-              "then": "circle:red"
-            },
-            {
-              "if": "_recently_surveyed=true",
-              "then": "circle:green"
             }
           ]
         }
