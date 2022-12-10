@@ -31,7 +31,7 @@
             "test": "Dit object was een test - het was nooit echt aanwezig"
         },
         "safeDelete": "Dit object kan veilig verwijderd worden van de kaart.",
-        "useSomethingElse": "Gebruik een ander OpenStreetMap-editeerprogramma om dit object te verwijderen",
+        "useSomethingElse": "Gebruik een ander OpenStreetMap-bewerkprogramma om dit object te verwijderen",
         "whyDelete": "Waarom moet dit object van de kaart verwijderd worden?"
     },
     "favourite": {
@@ -55,7 +55,7 @@
             "attributes": "Attributen worden getoond op begrijpbare wijze",
             "edit": "Foute of verouderde gegevens? Aanpassen kan hier",
             "question": "Is een attribuut nog niet gekend?\nMapComplete toont een vraag",
-            "see_images": "Toont afbeeldingen van eerdere bijdragers, Wikipedia, Mapillary, ...",
+            "see_images": "Toont afbeeldingen van eerdere bijdragers, Wikipedia, Mapillary, ... ",
             "wikipedia": "Gelinkte Wikipedia-artikelen worden getoond"
         },
         "frontParagraph": "MapComplete is een web-applicatie om OpenStreetMap-data te tonen en aan te passen op thematische kaarten.\nHet maakt het mogelijk om open geodata te crowdsourcen en te managen op een makkelijke manier.\n\nNieuwe categorieën en attributen kunnen op vraag worden toegevoegd.",
@@ -332,7 +332,17 @@
                 "public": {
                     "name": "Publiek"
                 }
-            }
+            },
+            "intro0": "Door het uploaden van je traject, bewaart OpenStreetMap.org een volledige kopie van je traject.",
+            "intro1": "Je kan je traject weer downloaden en laden in OpenStreetMap editor",
+            "meta": {
+                "descriptionIntro": "Optioneel, kan je hier een beschrijving van je traject toevoegen:",
+                "title": "Titel en beschrijving",
+                "descriptionPlaceHolder": "Voer een beschrijving in van je traject",
+                "intro": "Voeg een titel toe aan je traject:",
+                "titlePlaceholder": "Vul de titel van je traject in"
+            },
+            "choosePermission": "Kies hieronder of je traject gedeeld moet worden:"
         }
     },
     "image": {
