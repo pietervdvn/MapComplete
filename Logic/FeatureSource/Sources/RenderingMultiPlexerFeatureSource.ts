@@ -1,8 +1,8 @@
 /**
  * This feature source helps the ShowDataLayer class: it introduces the necessary extra features and indicates with what renderConfig it should be rendered.
  */
-import { Store } from "../../UIEventSource"
-import { GeoOperations } from "../../GeoOperations"
+import {Store} from "../../UIEventSource"
+import {GeoOperations} from "../../GeoOperations"
 import FeatureSource from "../FeatureSource"
 import PointRenderingConfig from "../../../Models/ThemeConfig/PointRenderingConfig"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
@@ -16,70 +16,12 @@ export default class RenderingMultiPlexerFeatureSource {
         })[]
     >
     private readonly pointRenderings: { rendering: PointRenderingConfig; index: number }[]
-    private centroidRenderings: { rendering: PointRenderingConfig; index: number }[]
-    private projectedCentroidRenderings: { rendering: PointRenderingConfig; index: number }[]
-    private startRenderings: { rendering: PointRenderingConfig; index: number }[]
-    private endRenderings: { rendering: PointRenderingConfig; index: number }[]
-    private hasCentroid: boolean
+    private readonly centroidRenderings: { rendering: PointRenderingConfig; index: number }[]
+    private readonly projectedCentroidRenderings: { rendering: PointRenderingConfig; index: number }[]
+    private readonly startRenderings: { rendering: PointRenderingConfig; index: number }[]
+    private readonly endRenderings: { rendering: PointRenderingConfig; index: number }[]
+    private readonly hasCentroid: boolean
     private lineRenderObjects: LineRenderingConfig[]
-
-    private inspectFeature(
-        feat,
-        addAsPoint: (feat, rendering, centerpoint: [number, number]) => void,
-        withIndex: any[]
-    ) {
-        if (feat.geometry.type === "Point") {
-            for (const rendering of this.pointRenderings) {
-                withIndex.push({
-                    ...feat,
-                    pointRenderingIndex: rendering.index,
-                })
-            }
-        } else {
-            // This is a a line: add the centroids
-            let centerpoint: [number, number] = undefined
-            let projectedCenterPoint: [number, number] = undefined
-            if (this.hasCentroid) {
-                centerpoint = GeoOperations.centerpointCoordinates(feat)
-                if (this.projectedCentroidRenderings.length > 0) {
-                    projectedCenterPoint = <[number, number]>(
-                        GeoOperations.nearestPoint(feat, centerpoint).geometry.coordinates
-                    )
-                }
-            }
-            for (const rendering of this.centroidRenderings) {
-                addAsPoint(feat, rendering, centerpoint)
-            }
-
-            if (feat.geometry.type === "LineString") {
-                for (const rendering of this.projectedCentroidRenderings) {
-                    addAsPoint(feat, rendering, projectedCenterPoint)
-                }
-
-                // Add start- and endpoints
-                const coordinates = feat.geometry.coordinates
-                for (const rendering of this.startRenderings) {
-                    addAsPoint(feat, rendering, coordinates[0])
-                }
-                for (const rendering of this.endRenderings) {
-                    const coordinate = coordinates[coordinates.length - 1]
-                    addAsPoint(feat, rendering, coordinate)
-                }
-            } else {
-                for (const rendering of this.projectedCentroidRenderings) {
-                    addAsPoint(feat, rendering, centerpoint)
-                }
-            }
-
-            // AT last, add it 'as is' to what we should render
-            for (let i = 0; i < this.lineRenderObjects.length; i++) {
-                withIndex.push({
-                    ...feat,
-                    lineRenderingIndex: i,
-                })
-            }
-        }
-    }
 
     constructor(upstream: FeatureSource, layer: LayerConfig) {
         const pointRenderObjects: { rendering: PointRenderingConfig; index: number }[] =
@@ -129,5 +71,95 @@ export default class RenderingMultiPlexerFeatureSource {
 
             return withIndex
         })
+    }
+
+    /**
+     * For every source feature, adds the necessary rendering-features
+     */
+    private inspectFeature(
+        feat,
+        addAsPoint: (feat, rendering, centerpoint: [number, number]) => void,
+        withIndex: any[]
+    ) {
+        if (feat.geometry.type === "Point") {
+            for (const rendering of this.pointRenderings) {
+                withIndex.push({
+                    ...feat,
+                    pointRenderingIndex: rendering.index,
+                })
+            }
+        } else if (feat.geometry.type === "MultiPolygon") {
+            if (this.centroidRenderings.length > 0 || this.projectedCentroidRenderings.length > 0) {
+
+                const centerpoints: [number, number][] = (<[number, number][][][]>feat.geometry.coordinates).map(rings => GeoOperations.centerpointCoordinates(
+                    {type: "Feature", properties: {}, geometry: {type: "Polygon", coordinates: rings}}
+                ))
+                for (const centroidRendering of this.centroidRenderings) {
+                    for (const centerpoint of centerpoints) {
+                        addAsPoint(feat, centroidRendering, centerpoint)
+                    }
+                }
+
+                for (const centroidRendering of this.projectedCentroidRenderings) {
+                    for (const centerpoint of centerpoints) {
+                        addAsPoint(feat, centroidRendering, centerpoint)
+                    }
+                }
+
+
+            }
+
+            // AT last, add it 'as is' to what we should render
+            for (let i = 0; i < this.lineRenderObjects.length; i++) {
+                withIndex.push({
+                    ...feat,
+                    lineRenderingIndex: i,
+                })
+            }
+
+        } else {
+            // This is a a line or polygon: add the centroids
+            let centerpoint: [number, number] = undefined
+            let projectedCenterPoint: [number, number] = undefined
+            if (this.hasCentroid) {
+                centerpoint = GeoOperations.centerpointCoordinates(feat)
+                if (this.projectedCentroidRenderings.length > 0) {
+                    projectedCenterPoint = <[number, number]>(
+                        GeoOperations.nearestPoint(feat, centerpoint).geometry.coordinates
+                    )
+                }
+            }
+            for (const rendering of this.centroidRenderings) {
+                addAsPoint(feat, rendering, centerpoint)
+            }
+
+            if (feat.geometry.type === "LineString") {
+                for (const rendering of this.projectedCentroidRenderings) {
+                    addAsPoint(feat, rendering, projectedCenterPoint)
+                }
+
+                // Add start- and endpoints
+                const coordinates = feat.geometry.coordinates
+                for (const rendering of this.startRenderings) {
+                    addAsPoint(feat, rendering, coordinates[0])
+                }
+                for (const rendering of this.endRenderings) {
+                    const coordinate = coordinates[coordinates.length - 1]
+                    addAsPoint(feat, rendering, coordinate)
+                }
+            } else {
+                for (const rendering of this.projectedCentroidRenderings) {
+                    addAsPoint(feat, rendering, centerpoint)
+                }
+            }
+
+            // AT last, add it 'as is' to what we should render
+            for (let i = 0; i < this.lineRenderObjects.length; i++) {
+                withIndex.push({
+                    ...feat,
+                    lineRenderingIndex: i,
+                })
+            }
+        }
     }
 }

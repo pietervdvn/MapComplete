@@ -69,6 +69,7 @@ We do however encourage you to try to create your own theme yourself - we'll gla
   them.
 - [Map of Maps](https://mapcomplete.osm.be/maps.html),
   after a tweet
+- [A build of the develop branch can be found here](https://pietervdvn.github.io/mc/develop)
 
 There are plenty more. [Discover them in the app](https://mapcomplete.osm.be/index.html).
 

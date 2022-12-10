@@ -327,7 +327,8 @@
             "da": "Statistikker",
             "nb_NO": "Statistikk",
             "ca": "Estadístiques",
-            "pa_PK": "انکڑے"
+            "pa_PK": "انکڑے",
+            "nl": "Statistieken"
           }
         },
         "tagRenderings": [
@@ -365,7 +366,8 @@
                   "da": "Importere",
                   "nb_NO": "Importer",
                   "ca": "Importar",
-                  "pa_PK": "ایمپورٹ کرو"
+                  "pa_PK": "ایمپورٹ کرو",
+                  "nl": "Importeren"
                 },
                 "icon": "./assets/svg/addSmall.svg",
                 "location_picker": "photo",
@@ -385,7 +387,8 @@
                   "de": "Alle vorgeschlagenen Tags hinzufügen",
                   "fr": "Ajouter tous les attributs suggérés",
                   "da": "Tilføj alle de foreslåede tags",
-                  "nb_NO": "Legg til alle foreslåtte"
+                  "nb_NO": "Legg til alle foreslåtte",
+                  "nl": "Voeg alle gesuggereerde tags toe"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "id_of_object_to_apply_this_one": "_closest_osm_hotel"

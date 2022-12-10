@@ -1,5 +1,8 @@
 {
     "shared_questions": {
+        "description": {
+            "question": "Je ještě něco relevantního, co jste nemohli uvést v předchozích otázkách? Přidejte to sem.<br/><span style='font-size: small'>Neopakujte již uvedená fakta</span>"
+        },
         "dog-access": {
             "mappings": {
                 "0": {
@@ -102,6 +105,15 @@
         "opening_hours": {
             "question": "Jaká je otevírací doba {title()}?",
             "render": "<h3>Otevírací hodiny</h3>{opening_hours_table(opening_hours)}"
+        },
+        "opening_hours_24_7": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Otevřeno 24/7 (včetně svátků)"
+                    }
+                }
+            }
         },
         "payment-options": {
             "mappings": {

@@ -1,0 +1,307 @@
+{
+  "id": "stations",
+  "title": {
+    "en": "Train Stations"
+  },
+  "description": {
+    "en": "View, edit and add details to a train station"
+  },
+  "icon": "./assets/themes/stations/rail-light.svg",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 0,
+  "hideFromOverview": true,
+  "defaultBackgroundId": "CartoDB.Positron",
+  "layers": [
+    {
+      "builtin": "indoors",
+      "override": {
+        "minzoom": 19,
+        "passAllFeatures": true,
+        "mapRendering": [
+          {},
+          {},
+          {
+            "label": {
+              "render": null,
+              "mappings": null
+            },
+            "iconSize": "0,0,bottom"
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "stairs",
+      "override": {
+        "minzoom": 19
+      }
+    },
+    {
+      "builtin": "pedestrian_path",
+      "override": {
+        "title": null,
+        "name": null,
+        "mapRendering": null
+      }
+    },
+    {
+      "id": "train_station",
+      "minzoom": 12,
+      "minzoomVisible": 17,
+      "source": {
+        "osmTags": {
+          "or": [
+            "railway=station",
+            "railway=halt"
+          ]
+        }
+      },
+      "name": {
+        "en": "Train Stations"
+      },
+      "description": {
+        "en": "Layer showing train stations"
+      },
+      "mapRendering": [
+        {
+          "icon": "./assets/themes/stations/rail-light.svg",
+          "location": [
+            "point",
+            "centroid"
+          ],
+          "label": {
+            "mappings": [
+              {
+                "if": "name~*",
+                "then": "<div style='background: white; padding: 0.25em; border-radius:0.5em'>{name}</div>"
+              }
+            ]
+          }
+        },
+        {
+          "color": "green"
+        }
+      ]
+    },
+    {
+      "builtin": [
+        "shops"
+      ],
+      "override": {
+        "isShown": {
+          "or": [
+            "indoor=room",
+            "indoor=area"
+          ]
+        },
+        "presets": null,
+        "minzoom": 19
+      }
+    },
+    {
+      "builtin": "bike_parking",
+      "override": {
+        "isShown": {
+          "or": [
+            "indoor=room",
+            "indoor=area"
+          ]
+        },
+        "presets": null,
+        "minzoom": 19,
+        "mapRendering": [
+          {
+            "icon": "circle:white;./assets/themes/stations/bicycle_parking.svg"
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "bicycle_rental",
+      "override": {
+        "isShown": {
+          "or": [
+            "indoor=room",
+            "indoor=area"
+          ]
+        },
+        "presets": null,
+        "minzoom": 19,
+        "mapRendering": [
+          {
+            "icon": "circle:white;./assets/themes/stations/rental_bicycle.svg"
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "car_rental",
+      "override": {
+        "isShown": {
+          "or": [
+            "indoor=room",
+            "indoor=area"
+          ]
+        },
+        "presets": null,
+        "minzoom": 19
+      }
+    },
+    {
+      "builtin": [
+        "food",
+        "cafe_pub"
+      ],
+      "override": {
+        "isShown": {
+          "or": [
+            "indoor=room",
+            "indoor=area"
+          ]
+        },
+        "presets": null,
+        "minzoom": 19,
+        "mapRendering+": [
+          {
+            "color": {
+              "render": "#00f"
+            },
+            "width": {
+              "render": "8"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "toilet",
+      "override": {
+        "isShown": {
+          "or": [
+            "indoor=room",
+            "indoor=area"
+          ]
+        },
+        "presets": null,
+        "minzoom": 19,
+        "mapRendering+": [
+          {
+            "color": {
+              "render": "yellow"
+            },
+            "width": {
+              "render": "8"
+            }
+          }
+        ]
+      }
+    },
+    "railway_platforms",
+    "ticket_machine",
+    "ticket_validator",
+    {
+      "builtin": [
+        "entrance",
+        "elevator",
+        "waste_basket",
+        "atm"
+      ],
+      "override": {
+        "minzoom": 19
+      }
+    },
+    {
+      "builtin": "bench",
+      "override": {
+        "minzoom": 19,
+        "mapRendering": [
+          {
+            "icon": "./assets/themes/stations/bench.svg"
+          }
+        ]
+      }
+    },
+    {
+      "id": "departures_board",
+      "name": {
+        "en": "Departures boards"
+      },
+      "description": {
+        "en": "Displays showing the trains that will leave from this station"
+      },
+      "title": {
+        "render": {
+          "en": "Departures board"
+        }
+      },
+      "minzoom": 19,
+      "source": {
+        "osmTags": {
+          "and": [
+            "departures_board~*",
+            "departures_board!=no",
+            "public_transport="
+          ]
+        }
+      },
+      "tagRenderings": [
+        {
+          "id": "type",
+          "question": {
+            "en": "What kind of departures board is this?"
+          },
+          "mappings": [
+            {
+              "if": "departures_board=yes",
+              "then": {
+                "en": "This is a departures board of an unknown type"
+              }
+            },
+            {
+              "if": "departures_board=realtime",
+              "then": {
+                "en": "This is an electronic board, showing the next departures in realtime"
+              }
+            },
+            {
+              "if": "departures_board=timetable",
+              "then": {
+                "en": "This is a paper timetable"
+              }
+            },
+            {
+              "if": "departures_board=delay",
+              "then": {
+                "en": "There is a sign showing the frequency of the trains"
+              }
+            }
+          ]
+        },
+        "level"
+      ],
+      "presets": [
+        {
+          "tags": [
+            "departures_board=yes"
+          ],
+          "title": {
+            "en": "a departures board"
+          },
+          "description": {
+            "en": "Add a board showing departures, either electronic or paper"
+          }
+        }
+      ],
+      "mapRendering": [
+        {
+          "icon": "./assets/themes/stations/departures_board.svg",
+          "location": [
+            "point",
+            "centroid"
+          ]
+        }
+      ]
+    }
+  ]
+}

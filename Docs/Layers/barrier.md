@@ -90,14 +90,14 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  Can a bicycle go past this barrier?
+The question is  *Can a bicycle go past this barrier?*
 
 
 
 
 
-  - A cyclist can go past this.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>`
-  - A cyclist can not go past this.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dno' target='_blank'>no</a>`
+  - *A cyclist can go past this.*  corresponds with  `bicycle=yes`
+  - *A cyclist can not go past this.*  corresponds with  `bicycle=no`
 
 
 
@@ -112,8 +112,8 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - This is a single bollard in the road  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dbollard' target='_blank'>bollard</a>`
-  - This is a cycle barrier slowing down cyclists  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:barrier' target='_blank'>barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dcycle_barrier' target='_blank'>cycle_barrier</a>`
+  - *This is a single bollard in the road*  corresponds with  `barrier=bollard`
+  - *This is a cycle barrier slowing down cyclists*  corresponds with  `barrier=cycle_barrier`
 
 
 
@@ -122,20 +122,20 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What kind of bollard is this?
+The question is  *What kind of bollard is this?*
 
 
 
 
 
-  - Removable bollard  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dremovable' target='_blank'>removable</a>`
-  - Fixed bollard  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfixed' target='_blank'>fixed</a>`
-  - Bollard that can be folded down  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dfoldable' target='_blank'>foldable</a>`
-  - Flexible bollard, usually plastic  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Dflexible' target='_blank'>flexible</a>`
-  - Rising bollard  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bollard' target='_blank'>bollard</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bollard%3Drising' target='_blank'>rising</a>`
+  - *Removable bollard*  corresponds with  `bollard=removable`
+  - *Fixed bollard*  corresponds with  `bollard=fixed`
+  - *Bollard that can be folded down*  corresponds with  `bollard=foldable`
+  - *Flexible bollard, usually plastic*  corresponds with  `bollard=flexible`
+  - *Rising bollard*  corresponds with  `bollard=rising`
 
 
-Only visible if  `barrier=bollard`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `barrier=bollard`
 
 
 
@@ -143,19 +143,19 @@ Only visible if  `barrier=bollard`  is shown
 
 
 
-The question is  What kind of cycling barrier is this?
+The question is  *What kind of cycling barrier is this?*
 
 
 
 
 
-  - Single, just two barriers with a space inbetween  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsingle' target='_blank'>single</a>`
-  - Double, two barriers behind each other  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Ddouble' target='_blank'>double</a>`
-  - Triple, three barriers behind each other  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dtriple' target='_blank'>triple</a>`
-  - Squeeze gate, gap is smaller at top, than at the bottom  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cycle_barrier' target='_blank'>cycle_barrier</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycle_barrier%3Dsqueeze' target='_blank'>squeeze</a>`
+  - *Single, just two barriers with a space inbetween*  corresponds with  `cycle_barrier=single`
+  - *Double, two barriers behind each other*  corresponds with  `cycle_barrier=double`
+  - *Triple, three barriers behind each other*  corresponds with  `cycle_barrier=triple`
+  - *Squeeze gate, gap is smaller at top, than at the bottom*  corresponds with  `cycle_barrier=squeeze`
 
 
-Only visible if  `barrier=cycle_barrier`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `barrier=cycle_barrier`
 
 
 
@@ -163,11 +163,11 @@ Only visible if  `barrier=cycle_barrier`  is shown
 
 
 
-The question is  How wide is the gap left over besides the barrier?
+The question is  *How wide is the gap left over besides the barrier?*
 
 This rendering asks information about the property  [maxwidth:physical](https://wiki.openstreetmap.org/wiki/Key:maxwidth:physical) 
 
-This is rendered with  Maximum width: {maxwidth:physical} m
+This is rendered with  `Maximum width: {maxwidth:physical} m`
 
 
 
@@ -177,15 +177,15 @@ This is rendered with  Maximum width: {maxwidth:physical} m
 
 
 
-The question is  How much space is there between the barriers (along the length of the road)?
+The question is  *How much space is there between the barriers (along the length of the road)?*
 
 This rendering asks information about the property  [width:separation](https://wiki.openstreetmap.org/wiki/Key:width:separation) 
 
-This is rendered with  Space between barriers (along the length of the road): {width:separation} m
+This is rendered with  `Space between barriers (along the length of the road): {width:separation} m`
 
 
 
-Only visible if  `cycle_barrier=double|cycle_barrier=triple`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `cycle_barrier=double|cycle_barrier=triple`
 
 
 
@@ -193,15 +193,15 @@ Only visible if  `cycle_barrier=double|cycle_barrier=triple`  is shown
 
 
 
-The question is  How wide is the smallest opening next to the barriers?
+The question is  *How wide is the smallest opening next to the barriers?*
 
 This rendering asks information about the property  [width:opening](https://wiki.openstreetmap.org/wiki/Key:width:opening) 
 
-This is rendered with  Width of opening: {width:opening} m
+This is rendered with  `Width of opening: {width:opening} m`
 
 
 
-Only visible if  `cycle_barrier=double|cycle_barrier=triple`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `cycle_barrier=double|cycle_barrier=triple`
 
 
 
@@ -209,14 +209,14 @@ Only visible if  `cycle_barrier=double|cycle_barrier=triple`  is shown
 
 
 
-The question is  How much overlap do the barriers have?
+The question is  *How much overlap do the barriers have?*
 
 This rendering asks information about the property  [overlap](https://wiki.openstreetmap.org/wiki/Key:overlap) 
 
-This is rendered with  Overlap: {overlap} m
+This is rendered with  `Overlap: {overlap} m`
 
 
 
-Only visible if  `cycle_barrier=double|cycle_barrier=triple`  is shown 
+This tagrendering is only visible in the popup if the following condition is met: `cycle_barrier=double|cycle_barrier=triple` 
 
 This document is autogenerated from [assets/layers/barrier/barrier.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/barrier/barrier.json)

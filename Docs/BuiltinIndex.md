@@ -11,6 +11,8 @@
   - [Existing builtin tagrenderings](#existing-builtin-tagrenderings)
     + [images](#images)
     + [wikipedia](#wikipedia)
+    + [bench.*bench-questions](#bench*bench-questions)
+    + [artwork.*artwork-question](#artwork*artwork-question)
     + [website](#website)
     + [phone](#phone)
     + [email](#email)
@@ -33,12 +35,14 @@
     + [climbing.website](#climbingwebsite)
     + [climbing.fee](#climbingfee)
     + [climbing.bouldering](#climbingbouldering)
+    + [climbing.toprope](#climbingtoprope)
     + [climbing.average_length](#climbingaverage_length)
     + [climbing.min_difficulty](#climbingmin_difficulty)
     + [climbing.max_difficulty](#climbingmax_difficulty)
     + [climbing.sportclimbing](#climbingsportclimbing)
     + [climbing.max_bolts](#climbingmax_bolts)
     + [all_tags](#all_tags)
+    + [opening_hours_by_appointment](#opening_hours_by_appointment)
     + [multilevels](#multilevels)
     + [induction-loop](#induction-loop)
     + [questions](#questions)
@@ -95,6 +99,7 @@
   - climbing_route
   - crossings
   - defibrillator
+  - dentist
   - doctors
   - dogpark
   - drinking_water
@@ -119,6 +124,7 @@
   - parcel_lockers
   - parking
   - pharmacy
+  - physiotherapist
   - picnic_table
   - play_forest
   - playground
@@ -162,6 +168,28 @@
 
 
 
+### bench.*bench-questions 
+
+
+
+
+
+  - artwork
+
+
+
+
+### artwork.*artwork-question 
+
+
+
+
+
+  - bench
+
+
+
+
 ### website 
 
 
@@ -176,6 +204,7 @@
   - cafe_pub
   - climbing_club
   - climbing_gym
+  - dentist
   - doctors
   - fitness_centre
   - food
@@ -187,6 +216,7 @@
   - nature_reserve
   - observation_tower
   - pharmacy
+  - physiotherapist
   - playground
   - recycling
   - school
@@ -212,6 +242,7 @@
   - cafe_pub
   - climbing_club
   - climbing_gym
+  - dentist
   - doctors
   - fitness_centre
   - food
@@ -221,6 +252,7 @@
   - hotel
   - kindergarten_childcare
   - pharmacy
+  - physiotherapist
   - recycling
   - school
   - shops
@@ -245,6 +277,7 @@
   - cafe_pub
   - climbing_club
   - climbing_gym
+  - dentist
   - doctors
   - fitness_centre
   - food
@@ -254,6 +287,7 @@
   - hotel
   - kindergarten_childcare
   - pharmacy
+  - physiotherapist
   - recycling
   - school
   - shops
@@ -277,7 +311,7 @@
   - cafe_pub
   - climbing_club
   - climbing_gym
-  - doctors
+  - dentist
   - fitness_centre
   - fitness_station
   - food
@@ -546,6 +580,17 @@
 
 
 
+### climbing.toprope 
+
+
+
+
+
+  - climbing_gym
+
+
+
+
 ### climbing.average_length 
 
 
@@ -608,6 +653,18 @@
 
 
   - cluster_style
+
+
+
+
+### opening_hours_by_appointment 
+
+
+
+
+
+  - doctors
+  - physiotherapist
 
 
 

@@ -28,6 +28,7 @@
     {
       "builtin": "shops",
       "override": {
+        "id": "sport_shops",
         "source": {
           "osmTags": {
             "and": [

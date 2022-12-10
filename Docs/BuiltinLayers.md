@@ -39,6 +39,7 @@
     + [nearby-images](#nearby-images)
     + [report-contributor](#report-contributor)
     + [report-note](#report-note)
+      * [Filters](#filters)
 1. [import_candidate](#import_candidate)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -463,7 +464,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-Only visible if  `_opened_by_anonymous_user=false`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `_opened_by_anonymous_user=false`
 
 
 
@@ -473,6 +474,91 @@ Only visible if  `_opened_by_anonymous_user=false`  is shown
 
 This tagrendering has no question and is thus read-only
 
+
+
+
+
+#### Filters 
+
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+search.0 | Should mention {search} in the first comment |  | search (string)
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+not.0 | Should <b>not</b> mention {search} in the first comment |  | search (string)
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+opened_by.0 | Opened by contributor {search} |  | search (string)
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+not_opened_by.0 | <b>Not</b> opened by contributor {search} |  | search (string)
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+edited_by.0 | Last edited by contributor {search} |  | search (string)
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+not_edited_by.0 | Opened after {search} |  | search (string)
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+opened_before.0 | Created before {search} |  | search (date)
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+opened_after.0 | Created after {search} |  | search (date)
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+anonymous.0 | Only show notes opened by an anonymous contributor | _opened_by_anonymous_user=true
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+is_open.0 | Only show open notes | 
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+no_imports.0 | All Notes (default) | 
+no_imports.1 | Hide import notes | 
+no_imports.2 | Show only import Notes | _is_import_note~.+
 
 
 
@@ -817,6 +903,7 @@ The following layers are included in MapComplete:
   - [current_view](./Layers/current_view.md)
   - [cycleways_and_roads](./Layers/cycleways_and_roads.md)
   - [defibrillator](./Layers/defibrillator.md)
+  - [dentist](./Layers/dentist.md)
   - [direction](./Layers/direction.md)
   - [doctors](./Layers/doctors.md)
   - [dogpark](./Layers/dogpark.md)
@@ -863,6 +950,7 @@ The following layers are included in MapComplete:
   - [parking_spaces](./Layers/parking_spaces.md)
   - [pedestrian_path](./Layers/pedestrian_path.md)
   - [pharmacy](./Layers/pharmacy.md)
+  - [physiotherapist](./Layers/physiotherapist.md)
   - [picnic_table](./Layers/picnic_table.md)
   - [play_forest](./Layers/play_forest.md)
   - [playground](./Layers/playground.md)

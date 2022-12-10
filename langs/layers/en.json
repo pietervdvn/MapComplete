@@ -153,6 +153,42 @@
             "render": "Artwork"
         }
     },
+    "atm": {
+        "description": "ATMS to withdraw money",
+        "name": "ATMs",
+        "presets": {
+            "0": {
+                "title": "an ATM"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Brand name"
+                },
+                "question": "What brand is this ATM?",
+                "render": "The brand of this ATM is {brand}"
+            },
+            "name": {
+                "render": "The name of this ATM is {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Operator"
+                },
+                "question": "What company operates this ATM?",
+                "render": "The ATM is operated by {operator}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{brand} ATM"
+                }
+            },
+            "render": "ATM"
+        }
+    },
     "barrier": {
         "description": "Obstacles while cycling, such as bollards and cycle barriers",
         "name": "Barriers",
@@ -1295,6 +1331,33 @@
                 }
             },
             "render": "Pub"
+        }
+    },
+    "car_rental": {
+        "description": "Places where you can rent a car",
+        "name": "Car Rental",
+        "presets": {
+            "0": {
+                "description": "A place where you can rent a car",
+                "title": "a car rental"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name of the car rental"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This car rental has no name"
+                    }
+                },
+                "question": "What is the name of this car rental?",
+                "render": "This car rental is called {name}"
+            }
+        },
+        "title": {
+            "render": "Car Rental"
         }
     },
     "charging_station": {
@@ -3273,22 +3336,34 @@
             "render": "Defibrillator"
         }
     },
+    "dentist": {
+        "description": "This layer shows dentist offices",
+        "name": "Dentist",
+        "presets": {
+            "0": {
+                "title": "a dentists office"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "What is the name of this dentist?",
+                "render": "This dentist is called {name}"
+            }
+        },
+        "title": {
+            "render": "Dentist Office {name}"
+        }
+    },
     "direction": {
         "description": "This layer visualizes directions",
         "name": "Direction visualization"
     },
     "doctors": {
-        "description": "This layer shows doctor offices, dentists and other healthcare facilities",
+        "description": "This layer shows doctor offices",
         "name": "Doctors",
         "presets": {
             "0": {
                 "title": "a doctors office"
-            },
-            "1": {
-                "title": "a dentists office"
-            },
-            "2": {
-                "title": "a physiotherapists office"
             }
         },
         "tagRenderings": {
@@ -3723,6 +3798,13 @@
                         "question": "No information about tactile paving"
                     }
                 }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Has organic options"
+                    }
+                }
             }
         }
     },
@@ -4116,6 +4198,20 @@
                 },
                 "question": "Does this fries shop use vegetable or animal oil for cooking?"
             },
+            "friture-organic": {
+                "mappings": {
+                    "0": {
+                        "then": "Organic snacks are available"
+                    },
+                    "1": {
+                        "then": "No organic snacks are available"
+                    },
+                    "2": {
+                        "then": "Only organic snacks are available"
+                    }
+                },
+                "question": "Does this fries shop offer organic snacks?"
+            },
             "friture-take-your-container": {
                 "mappings": {
                     "0": {
@@ -4174,6 +4270,20 @@
                     }
                 },
                 "question": "Does this restaurant offer a halal menu?"
+            },
+            "organic (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "There are no organic options available"
+                    },
+                    "1": {
+                        "then": "There is an organic menu"
+                    },
+                    "2": {
+                        "then": "Only organic options are available"
+                    }
+                },
+                "question": "Does this restaurant offer organic food?"
             }
         },
         "title": {
@@ -4501,7 +4611,7 @@
     },
     "indoors": {
         "description": "Basic indoor mapping: shows room outlines",
-        "name": "indoors",
+        "name": "Indoors",
         "tagRenderings": {
             "name": {
                 "freeform": {
@@ -5537,7 +5647,7 @@
                 }
             }
         },
-        "name": "pharmacy",
+        "name": "Pharmacies",
         "presets": {
             "0": {
                 "title": "a pharmacy"
@@ -5573,6 +5683,24 @@
                 }
             },
             "render": "{name}"
+        }
+    },
+    "physiotherapist": {
+        "description": "This layer shows physiotherapists",
+        "name": "Physiotherapist",
+        "presets": {
+            "0": {
+                "title": "a physiotherapists office"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "What is the name of this physiotherapists office?",
+                "render": "This physiotherapists office is called {name}"
+            }
+        },
+        "title": {
+            "render": "Physiotherapist {name}"
         }
     },
     "picnic_table": {
@@ -5988,6 +6116,27 @@
                 }
             },
             "render": "Bookcase"
+        }
+    },
+    "railway_platforms": {
+        "description": "Find every platform in the station, and the train routes that use them.",
+        "name": "Railway Platforms",
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Platform number"
+                },
+                "question": "What is the number for this platform?",
+                "render": "Platform {ref}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Platform {ref}"
+                }
+            },
+            "render": "Platform"
         }
     },
     "rainbow_crossings": {
@@ -6450,6 +6599,20 @@
                     "render": "This is a {shop}"
                 }
             },
+            "organic": {
+                "mappings": {
+                    "0": {
+                        "then": "This shop offers organic products"
+                    },
+                    "1": {
+                        "then": "This shop only offers organic products"
+                    },
+                    "2": {
+                        "then": "This shop does not offer organic products"
+                    }
+                },
+                "question": "Does this shop offer organic products?"
+            },
             "shops-name": {
                 "question": "What is the name of this shop?",
                 "render": "This shop is called <i>{name}</i>"
@@ -6736,6 +6899,12 @@
                     }
                 },
                 "question": "Does this stair have a handrail?"
+            },
+            "multilevels": {
+                "override": {
+                    "question": "Between which levels are these stairs?",
+                    "render": "These stairs are between the levels {level}"
+                }
             },
             "ramp": {
                 "mappings": {
@@ -7104,6 +7273,68 @@
                     "then": "School providing tertiary education"
                 }
             }
+        }
+    },
+    "ticket_machine": {
+        "description": "Find ticket machines for public transport tickets",
+        "name": "Ticket Machines",
+        "presets": {
+            "0": {
+                "title": "a ticket machine"
+            }
+        },
+        "tagRenderings": {
+            "operator": {
+                "freeform": {
+                    "placeholder": "Name of the operator"
+                },
+                "question": "Who is the operator of this ticket machine?",
+                "render": "This ticket machine is operated by {operator}"
+            }
+        },
+        "title": {
+            "render": "Ticket Machine"
+        }
+    },
+    "ticket_validator": {
+        "description": "Find ticket validators to validate public transport tickets",
+        "name": "Ticket Validators",
+        "presets": {
+            "0": {
+                "title": "a ticket validator"
+            }
+        },
+        "tagRenderings": {
+            "barrier": {
+                "mappings": {
+                    "0": {
+                        "then": "This ticket validator is part of a gate"
+                    }
+                },
+                "render": "This ticket validator is part of a barrier of type {barrier}"
+            },
+            "payment-options": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "This ticket validator accepts OV-Chipkaart"
+                        },
+                        "1": {
+                            "then": "This ticket validator accepts OV-Chipkaart"
+                        }
+                    }
+                }
+            },
+            "validator-operator": {
+                "freeform": {
+                    "placeholder": "Name of the operator"
+                },
+                "question": "Who is the operator of this ticket validator?",
+                "render": "This ticket validator is operated by {operator}"
+            }
+        },
+        "title": {
+            "render": "Ticket Validator"
         }
     },
     "toilet": {

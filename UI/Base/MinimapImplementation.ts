@@ -5,7 +5,7 @@ import Loc from "../../Models/Loc"
 import BaseLayer from "../../Models/BaseLayer"
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
 import * as L from "leaflet"
-import { Map } from "leaflet"
+import {LeafletMouseEvent, Map} from "leaflet"
 import Minimap, { MinimapObj, MinimapOptions } from "./Minimap"
 import { BBox } from "../../Logic/BBox"
 import "leaflet-polylineoffset"
@@ -158,13 +158,13 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             try {
                 self.InitMap()
             } catch (e) {
-                console.warn("Could not construct a minimap:", e)
+                console.debug("Could not construct a minimap:", e)
             }
 
             try {
                 self.leafletMap?.data?.invalidateSize()
             } catch (e) {
-                console.warn("Could not invalidate size of a minimap:", e)
+                console.debug("Could not invalidate size of a minimap:", e)
             }
         })
 
@@ -316,8 +316,10 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
 
         if (this._options.lastClickLocation) {
             const lastClickLocation = this._options.lastClickLocation
-            map.on("click", function (e) {
-                // @ts-ignore
+            map.on("click", function (e: LeafletMouseEvent) {
+                if(e.originalEvent["dismissed"] ){
+                    return
+                }
                 lastClickLocation?.setData({ lat: e.latlng.lat, lon: e.latlng.lng })
             })
 

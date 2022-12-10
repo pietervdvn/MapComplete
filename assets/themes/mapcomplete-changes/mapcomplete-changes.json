@@ -119,16 +119,12 @@
                 "then": "./assets/themes/aed/aed.svg"
               },
               {
-                "if": "theme=aed_brugge",
-                "then": "./assets/themes/aed/aed.svg"
-              },
-              {
                 "if": "theme=artwork",
                 "then": "./assets/themes/artwork/artwork.svg"
               },
               {
                 "if": "theme=bag",
-                "then": "./assets/themes/bag_import/logo.svg"
+                "then": "./assets/themes/bag/logo.svg"
               },
               {
                 "if": "theme=benches",
@@ -228,15 +224,11 @@
               },
               {
                 "if": "theme=grb",
-                "then": "./assets/themes/grb_import/logo.svg"
+                "then": "./assets/themes/grb/logo.svg"
               },
               {
                 "if": "theme=grb_fixme",
                 "then": "./assets/svg/bug.svg"
-              },
-              {
-                "if": "theme=missing_streets",
-                "then": "./assets/svg/robot.svg"
               },
               {
                 "if": "theme=hackerspaces",
@@ -357,6 +349,10 @@
               {
                 "if": "theme=sports",
                 "then": "./assets/themes/sports/sport.svg"
+              },
+              {
+                "if": "theme=stations",
+                "then": "./assets/themes/stations/rail-light.svg"
               },
               {
                 "if": "theme=street_lighting",

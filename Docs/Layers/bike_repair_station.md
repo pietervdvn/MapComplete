@@ -93,15 +93,15 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  Which services are available at this location?
+The question is  *Which services are available at this location?*
 
 
 
 
 
-  - There is only a pump present  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dno' target='_blank'>no</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>`
-  - There are only tools (screwdrivers, pliers, …) present  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dno' target='_blank'>no</a>`
-  - There are both tools and a pump present  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools' target='_blank'>service:bicycle:tools</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump' target='_blank'>service:bicycle:pump</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump%3Dyes' target='_blank'>yes</a>`
+  - *There is only a pump present*  corresponds with  `service:bicycle:tools=no&service:bicycle:pump=yes`
+  - *There are only tools (screwdrivers, pliers, …) present*  corresponds with  `service:bicycle:tools=yes&service:bicycle:pump=no`
+  - *There are both tools and a pump present*  corresponds with  `service:bicycle:tools=yes&service:bicycle:pump=yes`
 
 
 
@@ -110,17 +110,17 @@ The question is  Which services are available at this location?
 
 
 
-The question is  Is the bike pump still operational?
+The question is  *Is the bike pump still operational?*
 
 
 
 
 
-  - The bike pump is broken  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status' target='_blank'>service:bicycle:pump:operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Dbroken' target='_blank'>broken</a>`
-  - The bike pump is operational  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status' target='_blank'>service:bicycle:pump:operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Doperational' target='_blank'>operational</a>`
+  - *The bike pump is broken*  corresponds with  `service:bicycle:pump:operational_status=broken`
+  - *The bike pump is operational*  corresponds with  `service:bicycle:pump:operational_status=operational`
 
 
-Only visible if  `service:bicycle:pump=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `service:bicycle:pump=yes`
 
 
 
@@ -128,17 +128,17 @@ Only visible if  `service:bicycle:pump=yes`  is shown
 
 
 
-The question is  When is this bicycle repair point open?
+The question is  *When is this bicycle repair point open?*
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
+This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
 
 
-  - 24/7 opened (including holidays)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>`
+  - *24/7 opened (including holidays)*  corresponds with  `opening_hours=24/7`
 
 
 
@@ -147,18 +147,18 @@ This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-The question is  Who is allowed to use this repair station?
+The question is  *Who is allowed to use this repair station?*
 
 
 
 
 
-  - Publicly accessible  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>`
-  - Publicly accessible  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpublic' target='_blank'>public</a>`
+  - *Publicly accessible*  corresponds with  `access=yes`
+  - *Publicly accessible*  corresponds with  `access=public`
   - This option cannot be chosen as answer
-  - Only for customers  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>`
-  - Not accessible to the general public  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>`
-  - Not accessible to the general public  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>`
+  - *Only for customers*  corresponds with  `access=customers`
+  - *Not accessible to the general public*  corresponds with  `access=private`
+  - *Not accessible to the general public*  corresponds with  `access=no`
   - This option cannot be chosen as answer
 
 
@@ -168,11 +168,11 @@ The question is  Who is allowed to use this repair station?
 
 
 
-The question is  Who maintains this cycle pump?
+The question is  *Who maintains this cycle pump?*
 
 This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
 
-This is rendered with  Maintained by {operator}
+This is rendered with  `Maintained by {operator}`
 
 
 
@@ -184,11 +184,11 @@ This tagrendering has labels  `operator-info`
 
 
 
-The question is  What is the email address of the maintainer?
+The question is  *What is the email address of the maintainer?*
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
-This is rendered with  <a href='mailto:{email}'>{email}</a>
+This is rendered with  `<a href='mailto:{email}'>{email}</a>`
 
 
 
@@ -200,11 +200,11 @@ This tagrendering has labels  `operator-info`
 
 
 
-The question is  What is the phone number of the maintainer?
+The question is  *What is the phone number of the maintainer?*
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
-This is rendered with  <a href='tel:{phone}'>{phone}</a>
+This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
@@ -216,17 +216,17 @@ This tagrendering has labels  `operator-info`
 
 
 
-The question is  Does this bike repair station have a special tool to repair your bike chain?
+The question is  *Does this bike repair station have a special tool to repair your bike chain?*
 
 
 
 
 
-  - There is a chain tool  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:chain_tool' target='_blank'>service:bicycle:chain_tool</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:chain_tool%3Dyes' target='_blank'>yes</a>`
-  - There is no chain tool  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:chain_tool' target='_blank'>service:bicycle:chain_tool</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:chain_tool%3Dno' target='_blank'>no</a>`
+  - *There is a chain tool*  corresponds with  `service:bicycle:chain_tool=yes`
+  - *There is no chain tool*  corresponds with  `service:bicycle:chain_tool=no`
 
 
-Only visible if  `service:bicycle:tools=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `service:bicycle:tools=yes`
 
 
 
@@ -234,17 +234,17 @@ Only visible if  `service:bicycle:tools=yes`  is shown
 
 
 
-The question is  Does this bike station have a hook to hang your bike on or a stand to raise it?
+The question is  *Does this bike station have a hook to hang your bike on or a stand to raise it?*
 
 
 
 
 
-  - There is a hook or stand  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:stand' target='_blank'>service:bicycle:stand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:stand%3Dyes' target='_blank'>yes</a>`
-  - There is no hook or stand  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:service:bicycle:stand' target='_blank'>service:bicycle:stand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:stand%3Dno' target='_blank'>no</a>`
+  - *There is a hook or stand*  corresponds with  `service:bicycle:stand=yes`
+  - *There is no hook or stand*  corresponds with  `service:bicycle:stand=no`
 
 
-Only visible if  `service:bicycle:tools=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `service:bicycle:tools=yes`
 
 
 
@@ -256,7 +256,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-Only visible if  `email~.+&service:bicycle:pump:operational_status=broken`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `email~.+&service:bicycle:pump:operational_status=broken`
 
 
 
@@ -264,19 +264,19 @@ Only visible if  `email~.+&service:bicycle:pump:operational_status=broken`  is s
 
 
 
-The question is  What valves are supported?
+The question is  *What valves are supported?*
 
 This rendering asks information about the property  [valves](https://wiki.openstreetmap.org/wiki/Key:valves) 
 
-This is rendered with  This pump supports the following valves: {valves}
+This is rendered with  `This pump supports the following valves: {valves}`
 
 
 
 
 
-  - Sclaverand/Presta (narrow-width bike tires)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Dsclaverand' target='_blank'>sclaverand</a>`
-  - Dunlop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Ddunlop' target='_blank'>dunlop</a>`
-  - Schrader (cars and mountainbikes)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:valves' target='_blank'>valves</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:valves%3Dschrader' target='_blank'>schrader</a>`
+  - *Sclaverand/Presta (narrow-width bike tires)*  corresponds with  `valves=sclaverand`
+  - *Dunlop*  corresponds with  `valves=dunlop`
+  - *Schrader (cars and mountainbikes)*  corresponds with  `valves=schrader`
 
 
 
@@ -285,17 +285,17 @@ This is rendered with  This pump supports the following valves: {valves}
 
 
 
-The question is  Is this an electric bike pump?
+The question is  *Is this an electric bike pump?*
 
 
 
 
 
-  - Manual pump  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:manual' target='_blank'>manual</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manual%3Dyes' target='_blank'>yes</a>`
-  - Electrical pump  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:manual' target='_blank'>manual</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manual%3Dno' target='_blank'>no</a>`
+  - *Manual pump*  corresponds with  `manual=yes`
+  - *Electrical pump*  corresponds with  `manual=no`
 
 
-Only visible if  `service:bicycle:pump=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `service:bicycle:pump=yes`
 
 
 
@@ -303,18 +303,18 @@ Only visible if  `service:bicycle:pump=yes`  is shown
 
 
 
-The question is  Does the pump have a pressure indicator or manometer?
+The question is  *Does the pump have a pressure indicator or manometer?*
 
 
 
 
 
-  - There is a manometer  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:manometer' target='_blank'>manometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dyes' target='_blank'>yes</a>`
-  - There is no manometer  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:manometer' target='_blank'>manometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dno' target='_blank'>no</a>`
-  - There is manometer but it is broken  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:manometer' target='_blank'>manometer</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dbroken' target='_blank'>broken</a>`
+  - *There is a manometer*  corresponds with  `manometer=yes`
+  - *There is no manometer*  corresponds with  `manometer=no`
+  - *There is manometer but it is broken*  corresponds with  `manometer=broken`
 
 
-Only visible if  `service:bicycle:pump=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `service:bicycle:pump=yes`
 
 
 
@@ -322,23 +322,23 @@ Only visible if  `service:bicycle:pump=yes`  is shown
 
 
 
-The question is  On what level is this feature located?
+The question is  *On what level is this feature located?*
 
 This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
 
-This is rendered with  Located on the {level}th floor
+This is rendered with  `Located on the {level}th floor`
 
 
 
 
 
-  - Located underground  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>`
+  - *Located underground*  corresponds with  `location=underground`
   - This option cannot be chosen as answer
-  - Located on the ground floor  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>`
-  - Located on the ground floor  corresponds with  ``
+  - *Located on the ground floor*  corresponds with  `level=0`
+  - *Located on the ground floor*  corresponds with  ``
   - This option cannot be chosen as answer
-  - Located on the first floor  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>`
-  - Located on the first basement level  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>`
+  - *Located on the first floor*  corresponds with  `level=1`
+  - *Located on the first basement level*  corresponds with  `level=-1`
  
 
 This document is autogenerated from [assets/layers/bike_repair_station/bike_repair_station.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_repair_station/bike_repair_station.json)

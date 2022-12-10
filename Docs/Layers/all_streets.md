@@ -82,20 +82,20 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  Is the street <b>{name}</b> a cyclestreet?
+The question is  *Is the street <b>{name}</b> a cyclestreet?*
 
 
 
 
 
-  - This street is a cyclestreet (and has a speed limit of 30 km/h)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cyclestreet' target='_blank'>cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D30' target='_blank'>30</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:overtaking:motor_vehicle' target='_blank'>overtaking:motor_vehicle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:overtaking:motor_vehicle%3Dno' target='_blank'>no</a>`
-  - This street is a bicycle road  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_road' target='_blank'>bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_road%3Dyes' target='_blank'>yes</a>`
+  - *This street is a cyclestreet (and has a speed limit of 30 km/h)*  corresponds with  `cyclestreet=yes&maxspeed=30&overtaking:motor_vehicle=no`
+  - *This street is a bicycle road*  corresponds with  `bicycle_road=yes`
   - This option cannot be chosen as answer
-  - This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_road' target='_blank'>bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_road%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:maxspeed' target='_blank'>maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:maxspeed%3D30' target='_blank'>30</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:source:maxspeed' target='_blank'>source:maxspeed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:source:maxspeed%3DDE:bicycle_road' target='_blank'>DE:bicycle_road</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:vehicle' target='_blank'>vehicle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vehicle%3Dno' target='_blank'>no</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Ddesignated' target='_blank'>designated</a>`
-  - This street is a cyclestreet  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cyclestreet' target='_blank'>cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes' target='_blank'>yes</a>`
-  - This street will become a cyclestreet soon  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:proposed:cyclestreet' target='_blank'>proposed:cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:proposed:cyclestreet%3Dyes' target='_blank'>yes</a>`
-  - This street will become a bicycle road soon  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:proposed:bicycle_road' target='_blank'>proposed:bicycle_road</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:proposed:bicycle_road%3Dyes' target='_blank'>yes</a>`
-  - This street is not a cyclestreet  corresponds with  ``
+  - *This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)*  corresponds with  `bicycle_road=yes&maxspeed=30&source:maxspeed=DE:bicycle_road&vehicle=no&bicycle=designated`
+  - *This street is a cyclestreet*  corresponds with  `cyclestreet=yes`
+  - *This street will become a cyclestreet soon*  corresponds with  `proposed:cyclestreet=yes`
+  - *This street will become a bicycle road soon*  corresponds with  `proposed:bicycle_road=yes`
+  - *This street is not a cyclestreet*  corresponds with  ``
 
 
 
@@ -104,20 +104,20 @@ The question is  Is the street <b>{name}</b> a cyclestreet?
 
 
 
-The question is  What sign does this bicycle road have?
+The question is  *What sign does this bicycle road have?*
 
 
 
 
 
-  - Residents allowed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1020-30' target='_blank'>DE:244.1,1020-30</a>`
-  - Motor vehicles allowed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12,1024-10' target='_blank'>DE:244.1,1022-12,1024-10</a>`
-  - Motorcycles allowed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1022-12' target='_blank'>DE:244.1,1022-12</a>`
-  - Cars allowed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1,1024-10' target='_blank'>DE:244.1,1024-10</a>`
-  - There are no supplementary signs at this bicycle road.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1' target='_blank'>DE:244.1</a>`
+  - *Residents allowed*  corresponds with  `traffic_sign=DE:244.1,1020-30`
+  - *Motor vehicles allowed*  corresponds with  `traffic_sign=DE:244.1,1022-12,1024-10`
+  - *Motorcycles allowed*  corresponds with  `traffic_sign=DE:244.1,1022-12`
+  - *Cars allowed*  corresponds with  `traffic_sign=DE:244.1,1024-10`
+  - *There are no supplementary signs at this bicycle road.*  corresponds with  `traffic_sign=DE:244.1`
 
 
-Only visible if  `bicycle_road=yes&_country=de`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `bicycle_road=yes&_country=de`
 
 
 
@@ -125,15 +125,15 @@ Only visible if  `bicycle_road=yes&_country=de`  is shown
 
 
 
-The question is  When will this street become a cyclestreet?
+The question is  *When will this street become a cyclestreet?*
 
 This rendering asks information about the property  [cyclestreet:start_date](https://wiki.openstreetmap.org/wiki/Key:cyclestreet:start_date) 
 
-This is rendered with  This street will become a cyclestreet at {cyclestreet:start_date}
+This is rendered with  `This street will become a cyclestreet at {cyclestreet:start_date}`
 
 
 
-Only visible if  `proposed:cyclestreet=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `proposed:cyclestreet=yes`
 
 
 

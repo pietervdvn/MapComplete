@@ -827,13 +827,13 @@
                 "override": {
                     "tagRenderings": {
                         "link_to_more": {
-                            "render": "Weitere Statistiken finden Sie unter <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
+                            "render": "Weitere Statistiken <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>"
                         }
                     }
                 }
             }
         },
-        "shortDescription": "Zeigt Änderungen an, die von MapComplete vorgenommen wurden",
+        "shortDescription": "Zeigt Änderungen, die von MapComplete vorgenommen wurden",
         "title": "Mit MapComplete vorgenommene Änderungen"
     },
     "maproulette": {

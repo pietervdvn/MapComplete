@@ -291,7 +291,7 @@ class ExpandTagRendering extends Conversion<
                             name +
                             " was not found.\n\tDid you mean one of " +
                             candidates.join(", ") +
-                            "?"
+                            "?\n(Hint: did you add a new label and are you trying to use this label at the same time? Run 'reset:layeroverview' first"
                     )
                     continue
                 }

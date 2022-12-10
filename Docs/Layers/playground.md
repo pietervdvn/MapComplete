@@ -91,25 +91,25 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  Which is the surface of this playground?<br/><i>If there are multiple, select the most occuring one</i>
+The question is  *Which is the surface of this playground?<br/><i>If there are multiple, select the most occuring one</i>*
 
 This rendering asks information about the property  [surface](https://wiki.openstreetmap.org/wiki/Key:surface) 
 
-This is rendered with  The surface is <b>{surface}</b>
+This is rendered with  `The surface is <b>{surface}</b>`
 
 
 
 
 
-  - The surface is <b>grass</b>  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dgrass' target='_blank'>grass</a>`
-  - The surface is <b>sand</b>  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dsand' target='_blank'>sand</a>`
-  - The surface consist of <b>woodchips</b>  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dwoodchips' target='_blank'>woodchips</a>`
-  - The surface is <b>paving stones</b>  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaving_stones' target='_blank'>paving_stones</a>`
-  - The surface is <b>asphalt</b>  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt' target='_blank'>asphalt</a>`
-  - The surface is <b>concrete</b>  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dconcrete' target='_blank'>concrete</a>`
-  - The surface is <b>unpaved</b>  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dunpaved' target='_blank'>unpaved</a>`
+  - *The surface is <b>grass</b>*  corresponds with  `surface=grass`
+  - *The surface is <b>sand</b>*  corresponds with  `surface=sand`
+  - *The surface consist of <b>woodchips</b>*  corresponds with  `surface=woodchips`
+  - *The surface is <b>paving stones</b>*  corresponds with  `surface=paving_stones`
+  - *The surface is <b>asphalt</b>*  corresponds with  `surface=asphalt`
+  - *The surface is <b>concrete</b>*  corresponds with  `surface=concrete`
+  - *The surface is <b>unpaved</b>*  corresponds with  `surface=unpaved`
   - This option cannot be chosen as answer
-  - The surface is <b>paved</b>  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:surface' target='_blank'>surface</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface%3Dpaved' target='_blank'>paved</a>`
+  - *The surface is <b>paved</b>*  corresponds with  `surface=paved`
   - This option cannot be chosen as answer
 
 
@@ -119,14 +119,14 @@ This is rendered with  The surface is <b>{surface}</b>
 
 
 
-The question is  Is this playground lit at night?
+The question is  *Is this playground lit at night?*
 
 
 
 
 
-  - This playground is lit at night  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>`
-  - This playground is not lit at night  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a>`
+  - *This playground is lit at night*  corresponds with  `lit=yes`
+  - *This playground is not lit at night*  corresponds with  `lit=no`
 
 
 This tagrendering has labels  `extra`
@@ -137,11 +137,11 @@ This tagrendering has labels  `extra`
 
 
 
-The question is  What is the minimum age required to access this playground?
+The question is  *What is the minimum age required to access this playground?*
 
 This rendering asks information about the property  [min_age](https://wiki.openstreetmap.org/wiki/Key:min_age) 
 
-This is rendered with  Accessible to kids older than {min_age} years
+This is rendered with  `Accessible to kids older than {min_age} years`
 
 
 
@@ -153,11 +153,11 @@ This tagrendering has labels  `extra`
 
 
 
-The question is  What is the maximum age allowed to access this playground?
+The question is  *What is the maximum age allowed to access this playground?*
 
 This rendering asks information about the property  [max_age](https://wiki.openstreetmap.org/wiki/Key:max_age) 
 
-This is rendered with  Accessible to kids of at most {max_age}
+This is rendered with  `Accessible to kids of at most {max_age}`
 
 
 
@@ -169,11 +169,11 @@ This tagrendering has labels  `extra`
 
 
 
-The question is  Who operates this playground?
+The question is  *Who operates this playground?*
 
 This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
 
-This is rendered with  Operated by {operator}
+This is rendered with  `Operated by {operator}`
 
 
 
@@ -183,19 +183,19 @@ This is rendered with  Operated by {operator}
 
 
 
-The question is  Is this playground accessible to the general public?
+The question is  *Is this playground accessible to the general public?*
 
 
 
 
 
-  - Accessible to the general public  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>`
-  - This is a <b>paid</b> playground  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
-  - Only accessible for clients of the operating business  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>`
-  - Only accessible to students of the school  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dstudents' target='_blank'>students</a>`
+  - *Accessible to the general public*  corresponds with  `access=yes`
+  - *This is a <b>paid</b> playground*  corresponds with  `fee=yes`
+  - *Only accessible for clients of the operating business*  corresponds with  `access=customers`
+  - *Only accessible to students of the school*  corresponds with  `access=students`
   - This option cannot be chosen as answer
-  - Not accessible  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>`
-  - This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dschoolyard' target='_blank'>schoolyard</a>`
+  - *Not accessible*  corresponds with  `access=private`
+  - *This is a schoolyard - an outdoor area where the pupils can play during their breaks; but it is not accessible to the general public*  corresponds with  `leisure=schoolyard`
 
 
 
@@ -204,17 +204,17 @@ The question is  Is this playground accessible to the general public?
 
 
 
-The question is  What is the website of {title()}?
+The question is  *What is the website of {title()}?*
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with  <a href='{website}' target='_blank'>{website}</a>
+This is rendered with  `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
+  - *<a href='{contact:website}' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -224,11 +224,11 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-The question is  What is the email address of the playground maintainer?
+The question is  *What is the email address of the playground maintainer?*
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
-This is rendered with  <a href='mailto:{email}'>{email}</a>
+This is rendered with  `<a href='mailto:{email}'>{email}</a>`
 
 
 
@@ -238,11 +238,11 @@ This is rendered with  <a href='mailto:{email}'>{email}</a>
 
 
 
-The question is  What is the phone number of the playground maintainer?
+The question is  *What is the phone number of the playground maintainer?*
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
-This is rendered with  <a href='tel:{phone}'>{phone}</a>
+This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
@@ -252,15 +252,15 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-The question is  Is this playground accessible to wheelchair users?
+The question is  *Is this playground accessible to wheelchair users?*
 
 
 
 
 
-  - Completely accessible for wheelchair users  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>`
-  - Limited accessibility for wheelchair users  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>`
-  - Not accessible for wheelchair users  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>`
+  - *Completely accessible for wheelchair users*  corresponds with  `wheelchair=yes`
+  - *Limited accessibility for wheelchair users*  corresponds with  `wheelchair=limited`
+  - *Not accessible for wheelchair users*  corresponds with  `wheelchair=no`
 
 
 
@@ -269,18 +269,18 @@ The question is  Is this playground accessible to wheelchair users?
 
 
 
-The question is  When is this playground accessible?
+The question is  *When is this playground accessible?*
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with  {opening_hours_table(opening_hours)}
+This is rendered with  `{opening_hours_table(opening_hours)}`
 
 
 
 
 
-  - Accessible from sunrise till sunset  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3Dsunrise-sunset' target='_blank'>sunrise-sunset</a>`
-  - Always accessible  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>`
+  - *Accessible from sunrise till sunset*  corresponds with  `opening_hours=sunrise-sunset`
+  - *Always accessible*  corresponds with  `opening_hours=24/7`
 
 
 

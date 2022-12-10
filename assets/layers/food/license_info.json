@@ -30,6 +30,16 @@
     ]
   },
   {
+    "path": "organic.svg",
+    "license": "CC0",
+    "authors": [
+      "European Commission"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Organic-Logo.svg"
+    ]
+  },
+  {
     "path": "restaurant.svg",
     "license": "CC0",
     "authors": [

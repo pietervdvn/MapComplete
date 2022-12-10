@@ -94,11 +94,11 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What is the name of this climbing gym?
+The question is  *What is the name of this climbing gym?*
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with  <strong>{name}</strong>
+This is rendered with  `<strong>{name}</strong>`
 
 
 
@@ -108,17 +108,17 @@ This is rendered with  <strong>{name}</strong>
 
 
 
-The question is  What is the website of {title()}?
+The question is  *What is the website of {title()}?*
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with  <a href='{website}' target='_blank'>{website}</a>
+This is rendered with  `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
+  - *<a href='{contact:website}' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -128,17 +128,17 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-The question is  What is the phone number of {title()}?
+The question is  *What is the phone number of {title()}?*
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
-This is rendered with  <a href='tel:{phone}'>{phone}</a>
+This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~.+`
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
   - This option cannot be chosen as answer
 
 
@@ -148,17 +148,17 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-The question is  What is the email address of {title()}?
+The question is  *What is the email address of {title()}?*
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
-This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
+This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~.+`
+  - *<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>*  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
 
@@ -168,18 +168,18 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-The question is  Is a fee required to climb here?
+The question is  *Is a fee required to climb here?*
 
 This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
 
-This is rendered with  A fee of {charge} should be paid for climbing here
+This is rendered with  `A fee of {charge} should be paid for climbing here`
 
 
 
 
 
-  - Climbing here is free of charge  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>`
-  - Paying a fee is required to climb here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
+  - *Climbing here is free of charge*  corresponds with  `fee=no`
+  - *Paying a fee is required to climb here*  corresponds with  `fee=yes`
 
 
 
@@ -188,11 +188,11 @@ This is rendered with  A fee of {charge} should be paid for climbing here
 
 
 
-The question is  What are the opening hours of {title()}?
+The question is  *What are the opening hours of {title()}?*
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
+This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
@@ -202,11 +202,11 @@ This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-The question is  What is the (average) length of the routes in meters?
+The question is  *What is the (average) length of the routes in meters?*
 
 This rendering asks information about the property  [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) 
 
-This is rendered with  The routes are <b>{canonical(climbing:length)}</b> long on average
+This is rendered with  `The routes are <b>{canonical(climbing:length)}</b> long on average`
 
 
 
@@ -216,11 +216,11 @@ This is rendered with  The routes are <b>{canonical(climbing:length)}</b> long o
 
 
 
-The question is  What is the grade of the easiest route here, according to the french classification system?
+The question is  *What is the grade of the easiest route here, according to the french classification system?*
 
 This rendering asks information about the property  [climbing:grade:french:min](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:min) 
 
-This is rendered with  The lowest grade is {climbing:grade:french:min} according to the french/belgian system
+This is rendered with  `The lowest grade is {climbing:grade:french:min} according to the french/belgian system`
 
 
 
@@ -230,15 +230,15 @@ This is rendered with  The lowest grade is {climbing:grade:french:min} according
 
 
 
-The question is  What is the highest grade route here, according to the french classification system?
+The question is  *What is the highest grade route here, according to the french classification system?*
 
 This rendering asks information about the property  [climbing:grade:french:max](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:max) 
 
-This is rendered with  The highest grade is {climbing:grade:french:max} according to the french/belgian system
+This is rendered with  `The highest grade is {climbing:grade:french:max} according to the french/belgian system`
 
 
 
-Only visible if  `climbing!~^(route)$&climbing:sport=yes|sport=climbing`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `climbing!~^(route)$&climbing:sport=yes|sport=climbing`
 
 
 
@@ -246,16 +246,16 @@ Only visible if  `climbing!~^(route)$&climbing:sport=yes|sport=climbing`  is sho
 
 
 
-The question is  Is bouldering possible here?
+The question is  *Is bouldering possible here?*
 
 
 
 
 
-  - Bouldering is possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes' target='_blank'>yes</a>`
-  - Bouldering is not possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno' target='_blank'>no</a>`
-  - Bouldering is possible, allthough there are only a few routes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited' target='_blank'>limited</a>`
-  - There are {climbing:boulder} boulder routes  corresponds with  `climbing:boulder~.+`
+  - *Bouldering is possible here*  corresponds with  `climbing:boulder=yes`
+  - *Bouldering is not possible here*  corresponds with  `climbing:boulder=no`
+  - *Bouldering is possible, allthough there are only a few routes*  corresponds with  `climbing:boulder=limited`
+  - *There are {climbing:boulder} boulder routes*  corresponds with  `climbing:boulder~.+`
   - This option cannot be chosen as answer
 
 
@@ -265,15 +265,15 @@ The question is  Is bouldering possible here?
 
 
 
-The question is  Is sport climbing possible here on fixed anchors?
+The question is  *Is sport climbing possible here on fixed anchors?*
 
 
 
 
 
-  - Sport climbing is possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes' target='_blank'>yes</a>`
-  - Sport climbing is not possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dno' target='_blank'>no</a>`
-  - There are {climbing:sport} sport climbing routes  corresponds with  `climbing:sport~.+`
+  - *Sport climbing is possible here*  corresponds with  `climbing:sport=yes`
+  - *Sport climbing is not possible here*  corresponds with  `climbing:sport=no`
+  - *There are {climbing:sport} sport climbing routes*  corresponds with  `climbing:sport~.+`
   - This option cannot be chosen as answer
 
 
@@ -283,15 +283,15 @@ The question is  Is sport climbing possible here on fixed anchors?
 
 
 
-The question is  How many bolts do routes in {title()} have at most?
+The question is  *How many bolts do routes in {title()} have at most?*
 
 This rendering asks information about the property  [climbing:bolts:max](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts:max) 
 
-This is rendered with  The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>
+This is rendered with  `The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>`
 
 
 
-Only visible if  `climbing:sport=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `climbing:sport=yes`
 
 
 
@@ -299,15 +299,15 @@ Only visible if  `climbing:sport=yes`  is shown
 
 
 
-The question is  Is there a speed climbing wall?
+The question is  *Is there a speed climbing wall?*
 
 
 
 
 
-  - There is a speed climbing wall  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dyes' target='_blank'>yes</a>`
-  - There is no speed climbing wall  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:speed' target='_blank'>climbing:speed</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:speed%3Dno' target='_blank'>no</a>`
-  - There are {climbing:speed} speed climbing walls  corresponds with  `climbing:speed~.+`
+  - *There is a speed climbing wall*  corresponds with  `climbing:speed=yes`
+  - *There is no speed climbing wall*  corresponds with  `climbing:speed=no`
+  - *There are {climbing:speed} speed climbing walls*  corresponds with  `climbing:speed~.+`
   - This option cannot be chosen as answer
  
 

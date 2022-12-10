@@ -101,11 +101,11 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What is the name of this hotel?
+The question is  *What is the name of this hotel?*
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with  This hotel is called {name}
+This is rendered with  `This hotel is called {name}`
 
 
 
@@ -115,17 +115,17 @@ This is rendered with  This hotel is called {name}
 
 
 
-The question is  What is the phone number of {title()}?
+The question is  *What is the phone number of {title()}?*
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
-This is rendered with  <a href='tel:{phone}'>{phone}</a>
+This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~.+`
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
   - This option cannot be chosen as answer
 
 
@@ -135,17 +135,17 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-The question is  What is the email address of {title()}?
+The question is  *What is the email address of {title()}?*
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
-This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
+This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~.+`
+  - *<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>*  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
 
@@ -155,17 +155,17 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-The question is  What is the website of {title()}?
+The question is  *What is the website of {title()}?*
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with  <a href='{website}' target='_blank'>{website}</a>
+This is rendered with  `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
+  - *<a href='{contact:website}' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -175,16 +175,16 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-The question is  Is this place accessible with a wheelchair?
+The question is  *Is this place accessible with a wheelchair?*
 
 
 
 
 
-  - This place is specially adapted for wheelchair users  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated' target='_blank'>designated</a>`
-  - This place is easily reachable with a wheelchair  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes' target='_blank'>yes</a>`
-  - It is possible to reach this place in a wheelchair, but it is not easy  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited' target='_blank'>limited</a>`
-  - This place is not reachable with a wheelchair  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:wheelchair' target='_blank'>wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno' target='_blank'>no</a>`
+  - *This place is specially adapted for wheelchair users*  corresponds with  `wheelchair=designated`
+  - *This place is easily reachable with a wheelchair*  corresponds with  `wheelchair=yes`
+  - *It is possible to reach this place in a wheelchair, but it is not easy*  corresponds with  `wheelchair=limited`
+  - *This place is not reachable with a wheelchair*  corresponds with  `wheelchair=no`
 
 
 
@@ -193,18 +193,18 @@ The question is  Is this place accessible with a wheelchair?
 
 
 
-The question is  Does this place offer internet access?
+The question is  *Does this place offer internet access?*
 
 
 
 
 
-  - This place offers wireless internet access  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwlan' target='_blank'>wlan</a>`
-  - This place <b>does not</b> offer internet access  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dno' target='_blank'>no</a>`
-  - This place offers internet access  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dyes' target='_blank'>yes</a>`
+  - *This place offers wireless internet access*  corresponds with  `internet_access=wlan`
+  - *This place <b>does not</b> offer internet access*  corresponds with  `internet_access=no`
+  - *This place offers internet access*  corresponds with  `internet_access=yes`
   - This option cannot be chosen as answer
-  - This place offers internet access via a terminal or computer  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dterminal' target='_blank'>terminal</a>`
-  - This place offers wired internet access  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access' target='_blank'>internet_access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access%3Dwired' target='_blank'>wired</a>`
+  - *This place offers internet access via a terminal or computer*  corresponds with  `internet_access=terminal`
+  - *This place offers wired internet access*  corresponds with  `internet_access=wired`
 
 
 
@@ -213,18 +213,18 @@ The question is  Does this place offer internet access?
 
 
 
-The question is  Is there a fee for internet access?
+The question is  *Is there a fee for internet access?*
 
 
 
 
 
-  - There is a fee for the internet access at this place  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dyes' target='_blank'>yes</a>`
-  - Internet access is free at this place  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dno' target='_blank'>no</a>`
-  - Internet access is free at this place, for customers only  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>`
+  - *There is a fee for the internet access at this place*  corresponds with  `internet_access:fee=yes`
+  - *Internet access is free at this place*  corresponds with  `internet_access:fee=no`
+  - *Internet access is free at this place, for customers only*  corresponds with  `internet_access:fee=customers`
 
 
-Only visible if  `internet_access!=no&internet_access~.+`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no&internet_access~.+`
 
 
 
@@ -232,19 +232,19 @@ Only visible if  `internet_access!=no&internet_access~.+`  is shown
 
 
 
-The question is  What is the network name for the wireless internet access?
+The question is  *What is the network name for the wireless internet access?*
 
 This rendering asks information about the property  [internet_access:ssid](https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid) 
 
-This is rendered with  The network name is <b>{internet_access:ssid}</b>
+This is rendered with  `The network name is <b>{internet_access:ssid}</b>`
 
 
 
 
 
-  - Telekom  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>`
+  - *Telekom*  corresponds with  `internet_access:ssid=Telekom`
 
 
-Only visible if  `internet_access=wlan`  is shown 
+This tagrendering is only visible in the popup if the following condition is met: `internet_access=wlan` 
 
 This document is autogenerated from [assets/layers/hotel/hotel.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/hotel/hotel.json)

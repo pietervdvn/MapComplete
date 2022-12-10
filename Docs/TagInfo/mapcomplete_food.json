@@ -302,6 +302,21 @@
       "value": "only"
     },
     {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=no with a fixed text, namely 'There are no organic options available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=yes with a fixed text, namely 'There is an organic menu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=only with a fixed text, namely 'Only organic options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "value": "only"
+    },
+    {
       "key": "diet:vegetarian",
       "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "yes"
@@ -330,6 +345,21 @@
       "key": "diet:vegan",
       "description": "Layer 'Restaurants and fast food' shows diet:vegan=no with a fixed text, namely 'No vegan snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=yes with a fixed text, namely 'Organic snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=no with a fixed text, namely 'No organic snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=only with a fixed text, namely 'Only organic snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
+      "value": "only"
     },
     {
       "key": "friture:oil",

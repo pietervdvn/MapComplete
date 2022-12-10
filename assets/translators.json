@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 208,
+      "commits": 213,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 181,
+      "commits": 190,
       "contributor": "kjon"
     },
     {
@@ -18,11 +18,11 @@
     },
     {
       "commits": 45,
-      "contributor": "Anonymous"
+      "contributor": "Robin van der Linde"
     },
     {
-      "commits": 39,
-      "contributor": "Robin van der Linde"
+      "commits": 45,
+      "contributor": "Anonymous"
     },
     {
       "commits": 36,
@@ -37,7 +37,7 @@
       "contributor": "Artem"
     },
     {
-      "commits": 26,
+      "commits": 27,
       "contributor": "Supaplex"
     },
     {
@@ -82,11 +82,11 @@
     },
     {
       "commits": 11,
-      "contributor": "Olivier"
+      "contributor": "Jiří Podhorecký"
     },
     {
-      "commits": 10,
-      "contributor": "Jiří Podhorecký"
+      "commits": 11,
+      "contributor": "Olivier"
     },
     {
       "commits": 10,
@@ -109,8 +109,12 @@
       "contributor": "Jacque Fresco"
     },
     {
-      "commits": 7,
+      "commits": 8,
       "contributor": "Vinicius"
+    },
+    {
+      "commits": 7,
+      "contributor": "快乐的老鼠宝宝"
     },
     {
       "commits": 7,
@@ -170,10 +174,6 @@
     },
     {
       "commits": 5,
-      "contributor": "快乐的老鼠宝宝"
-    },
-    {
-      "commits": 5,
       "contributor": "David Haberthür"
     },
     {
@@ -207,6 +207,10 @@
     {
       "commits": 4,
       "contributor": "Fabio Bettani"
+    },
+    {
+      "commits": 3,
+      "contributor": "Jaime Marquínez Ferrándiz"
     },
     {
       "commits": 3,
@@ -251,6 +255,10 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
+    },
+    {
+      "commits": 2,
+      "contributor": "mcliquid"
     },
     {
       "commits": 2,
@@ -322,6 +330,10 @@
     },
     {
       "commits": 1,
+      "contributor": "Lucas"
+    },
+    {
+      "commits": 1,
       "contributor": "Magnitudee"
     },
     {
@@ -335,10 +347,6 @@
     {
       "commits": 1,
       "contributor": "Stéphane De Greef"
-    },
-    {
-      "commits": 1,
-      "contributor": "Jaime Marquínez Ferrándiz"
     },
     {
       "commits": 1,

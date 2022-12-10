@@ -423,22 +423,6 @@
     "indoors": {
         "title": "Indoors"
     },
-    "mapcomplete-changes": {
-        "layers": {
-            "0": {
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "El nom de la petició conté {search}"
-                            }
-                        }
-                    }
-                },
-                "name": "Centres del conjunt de canvis"
-            }
-        }
-    },
     "maproulette": {
         "title": "Tasques de MapRoulette"
     },

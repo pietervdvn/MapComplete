@@ -88,11 +88,11 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What is the reference number of this street lamp?
+The question is  *What is the reference number of this street lamp?*
 
 This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) 
 
-This is rendered with  This street lamp has the reference number {ref}
+This is rendered with  `This street lamp has the reference number {ref}`
 
 
 
@@ -102,19 +102,19 @@ This is rendered with  This street lamp has the reference number {ref}
 
 
 
-The question is  How is this street lamp mounted?
+The question is  *How is this street lamp mounted?*
 
 
 
 
 
-  - This lamp is suspended using cables  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dcatenary' target='_blank'>catenary</a>`
-  - This lamp is mounted on a ceiling  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dceiling' target='_blank'>ceiling</a>`
-  - This lamp is mounted in the ground  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dground' target='_blank'>ground</a>`
-  - This lamp is mounted on a short pole (mostly < 1.5m)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dpedestal' target='_blank'>pedestal</a>`
-  - This lamp is mounted on a pole  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dpole' target='_blank'>pole</a>`
-  - This lamp is mounted directly to the wall  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall' target='_blank'>wall</a>`
-  - This lamp is mounted to the wall using a metal bar  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:support' target='_blank'>support</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:support%3Dwall_mount' target='_blank'>wall_mount</a>`
+  - *This lamp is suspended using cables*  corresponds with  `support=catenary`
+  - *This lamp is mounted on a ceiling*  corresponds with  `support=ceiling`
+  - *This lamp is mounted in the ground*  corresponds with  `support=ground`
+  - *This lamp is mounted on a short pole (mostly < 1.5m)*  corresponds with  `support=pedestal`
+  - *This lamp is mounted on a pole*  corresponds with  `support=pole`
+  - *This lamp is mounted directly to the wall*  corresponds with  `support=wall`
+  - *This lamp is mounted to the wall using a metal bar*  corresponds with  `support=wall_mount`
 
 
 
@@ -123,17 +123,17 @@ The question is  How is this street lamp mounted?
 
 
 
-The question is  How is this lamp mounted to the pole?
+The question is  *How is this lamp mounted to the pole?*
 
 
 
 
 
-  - This lamp sits atop of a straight mast  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:lamp_mount' target='_blank'>lamp_mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lamp_mount%3Dstraight_mast' target='_blank'>straight_mast</a>`
-  - This lamp sits at the end of a bent mast  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:lamp_mount' target='_blank'>lamp_mount</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lamp_mount%3Dbent_mast' target='_blank'>bent_mast</a>`
+  - *This lamp sits atop of a straight mast*  corresponds with  `lamp_mount=straight_mast`
+  - *This lamp sits at the end of a bent mast*  corresponds with  `lamp_mount=bent_mast`
 
 
-Only visible if  `support=pole`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `support=pole`
 
 
 
@@ -141,25 +141,25 @@ Only visible if  `support=pole`  is shown
 
 
 
-The question is  What kind of lighting does this lamp use?
+The question is  *What kind of lighting does this lamp use?*
 
 
 
 
 
-  - This lamp is lit electrically  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3Delectric' target='_blank'>electric</a>`
+  - *This lamp is lit electrically*  corresponds with  `light:method=electric`
   - This option cannot be chosen as answer
-  - This lamp uses LEDs  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3DLED' target='_blank'>LED</a>`
-  - This lamp uses incandescent lighting  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3Dincandescent' target='_blank'>incandescent</a>`
-  - This lamp uses halogen lighting  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3Dhalogen' target='_blank'>halogen</a>`
-  - This lamp uses discharge lamps (unknown type)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3Ddischarge' target='_blank'>discharge</a>`
-  - This lamp uses a mercury-vapour lamp (lightly blueish)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3Dmercury' target='_blank'>mercury</a>`
-  - This lamp uses metal-halide lamps (bright white)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3Dmetal-halide' target='_blank'>metal-halide</a>`
-  - This lamp uses fluorescent lighting  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3Dfluorescent' target='_blank'>fluorescent</a>`
-  - This lamp uses sodium lamps (unknown type)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3Dsodium' target='_blank'>sodium</a>`
-  - This lamp uses low pressure sodium lamps (monochrome orange)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3Dlow_pressure_sodium' target='_blank'>low_pressure_sodium</a>`
-  - This lamp uses high pressure sodium lamps (orange with white)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3Dhigh_pressure_sodium' target='_blank'>high_pressure_sodium</a>`
-  - This lamp is lit using gas  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:method' target='_blank'>light:method</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:method%3Dgas' target='_blank'>gas</a>`
+  - *This lamp uses LEDs*  corresponds with  `light:method=LED`
+  - *This lamp uses incandescent lighting*  corresponds with  `light:method=incandescent`
+  - *This lamp uses halogen lighting*  corresponds with  `light:method=halogen`
+  - *This lamp uses discharge lamps (unknown type)*  corresponds with  `light:method=discharge`
+  - *This lamp uses a mercury-vapour lamp (lightly blueish)*  corresponds with  `light:method=mercury`
+  - *This lamp uses metal-halide lamps (bright white)*  corresponds with  `light:method=metal-halide`
+  - *This lamp uses fluorescent lighting*  corresponds with  `light:method=fluorescent`
+  - *This lamp uses sodium lamps (unknown type)*  corresponds with  `light:method=sodium`
+  - *This lamp uses low pressure sodium lamps (monochrome orange)*  corresponds with  `light:method=low_pressure_sodium`
+  - *This lamp uses high pressure sodium lamps (orange with white)*  corresponds with  `light:method=high_pressure_sodium`
+  - *This lamp is lit using gas*  corresponds with  `light:method=gas`
 
 
 
@@ -168,19 +168,19 @@ The question is  What kind of lighting does this lamp use?
 
 
 
-The question is  What colour light does this lamp emit?
+The question is  *What colour light does this lamp emit?*
 
 This rendering asks information about the property  [light:colour](https://wiki.openstreetmap.org/wiki/Key:light:colour) 
 
-This is rendered with  This lamp emits {light:colour} light
+This is rendered with  `This lamp emits {light:colour} light`
 
 
 
 
 
-  - This lamp emits white light  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:colour' target='_blank'>light:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:colour%3Dwhite' target='_blank'>white</a>`
-  - This lamp emits green light  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:colour' target='_blank'>light:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:colour%3Dgreen' target='_blank'>green</a>`
-  - This lamp emits orange light  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:colour' target='_blank'>light:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:colour%3Dorange' target='_blank'>orange</a>`
+  - *This lamp emits white light*  corresponds with  `light:colour=white`
+  - *This lamp emits green light*  corresponds with  `light:colour=green`
+  - *This lamp emits orange light*  corresponds with  `light:colour=orange`
 
 
 
@@ -189,21 +189,21 @@ This is rendered with  This lamp emits {light:colour} light
 
 
 
-The question is  How many fixtures does this light have?
+The question is  *How many fixtures does this light have?*
 
 This rendering asks information about the property  [light:count](https://wiki.openstreetmap.org/wiki/Key:light:count) 
 
-This is rendered with  This lamp has {light:count} fixtures
+This is rendered with  `This lamp has {light:count} fixtures`
 
 
 
 
 
-  - This lamp has 1 fixture  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:count' target='_blank'>light:count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:count%3D1' target='_blank'>1</a>`
-  - This lamp has 2 fixtures  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:count' target='_blank'>light:count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:count%3D2' target='_blank'>2</a>`
+  - *This lamp has 1 fixture*  corresponds with  `light:count=1`
+  - *This lamp has 2 fixtures*  corresponds with  `light:count=2`
 
 
-Only visible if  `support=pole`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `support=pole`
 
 
 
@@ -211,16 +211,16 @@ Only visible if  `support=pole`  is shown
 
 
 
-The question is  When is this lamp lit?
+The question is  *When is this lamp lit?*
 
 
 
 
 
-  - This lamp is lit at night  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:lit' target='_blank'>light:lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:lit%3Ddusk-dawn' target='_blank'>dusk-dawn</a>`
-  - This lamp is lit 24/7  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:lit' target='_blank'>light:lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:lit%3D24/7' target='_blank'>24/7</a>`
-  - This lamp is lit based on motion  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:lit' target='_blank'>light:lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:lit%3Dmotion' target='_blank'>motion</a>`
-  - This lamp is lit based on demand (e.g. with a pushbutton)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:light:lit' target='_blank'>light:lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:light:lit%3Ddemand' target='_blank'>demand</a>`
+  - *This lamp is lit at night*  corresponds with  `light:lit=dusk-dawn`
+  - *This lamp is lit 24/7*  corresponds with  `light:lit=24/7`
+  - *This lamp is lit based on motion*  corresponds with  `light:lit=motion`
+  - *This lamp is lit based on demand (e.g. with a pushbutton)*  corresponds with  `light:lit=demand`
 
 
 
@@ -229,14 +229,14 @@ The question is  When is this lamp lit?
 
 
 
-The question is  Where does this lamp point to?
+The question is  *Where does this lamp point to?*
 
 This rendering asks information about the property  [light:direction](https://wiki.openstreetmap.org/wiki/Key:light:direction) 
 
-This is rendered with  This lamp points towards {light:direction}
+This is rendered with  `This lamp points towards {light:direction}`
 
 
 
-Only visible if  `light:count=1`  is shown 
+This tagrendering is only visible in the popup if the following condition is met: `light:count=1` 
 
 This document is autogenerated from [assets/layers/street_lamps/street_lamps.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/street_lamps/street_lamps.json)

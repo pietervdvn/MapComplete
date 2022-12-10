@@ -684,7 +684,6 @@ export default class TagRenderingQuestion extends Combine {
         const tagsData = tags.data
         const feature = state?.allElements?.ContainingFeatures?.get(tagsData.id)
         const center = feature != undefined ? GeoOperations.centerpointCoordinates(feature) : [0, 0]
-        console.log("Creating a tr-question with applicableUnit", applicableUnit)
         const input: InputElement<string> = ValidatedTextField.ForType(
             configuration.freeform.type
         )?.ConstructInputElement({

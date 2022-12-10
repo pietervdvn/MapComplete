@@ -372,6 +372,21 @@
       "value": "only"
     },
     {
+      "key": "organic",
+      "description": "Layer 'Dog friendly eateries' shows organic=no with a fixed text, namely 'There are no organic options available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Dog friendly eateries' shows organic=yes with a fixed text, namely 'There is an organic menu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Dog friendly eateries' shows organic=only with a fixed text, namely 'Only organic options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "only"
+    },
+    {
       "key": "diet:vegetarian",
       "description": "Layer 'Dog friendly eateries' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "yes"
@@ -400,6 +415,21 @@
       "key": "diet:vegan",
       "description": "Layer 'Dog friendly eateries' shows diet:vegan=no with a fixed text, namely 'No vegan snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Dog friendly eateries' shows organic=yes with a fixed text, namely 'Organic snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Dog friendly eateries' shows organic=no with a fixed text, namely 'No organic snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Dog friendly eateries' shows organic=only with a fixed text, namely 'Only organic snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "only"
     },
     {
       "key": "friture:oil",
@@ -1498,6 +1528,21 @@
       "key": "internet_access:ssid",
       "description": "Layer 'Dog-friendly shops' shows internet_access:ssid=Telekom with a fixed text, namely 'Telekom' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "Telekom"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Dog-friendly shops' shows organic=yes with a fixed text, namely 'This shop offers organic products' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Dog-friendly shops' shows organic=only with a fixed text, namely 'This shop only offers organic products' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "only"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Dog-friendly shops' shows organic=no with a fixed text, namely 'This shop does not offer organic products' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "no"
     },
     {
       "key": "amenity",

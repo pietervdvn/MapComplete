@@ -82,17 +82,17 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  How much does one have to pay to use these binoculars?
+The question is  *How much does one have to pay to use these binoculars?*
 
 This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
 
-This is rendered with  Using these binoculars costs {charge}
+This is rendered with  `Using these binoculars costs {charge}`
 
 
 
 
 
-  - Free to use  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>`
+  - *Free to use*  corresponds with  `fee=no`
 
 
 
@@ -101,11 +101,11 @@ This is rendered with  Using these binoculars costs {charge}
 
 
 
-The question is  When looking through this binocular, in what direction does one look?
+The question is  *When looking through this binocular, in what direction does one look?*
 
 This rendering asks information about the property  [direction](https://wiki.openstreetmap.org/wiki/Key:direction) 
 
-This is rendered with  Looks towards {direction}°
+This is rendered with  `Looks towards {direction}°`
 
  
 

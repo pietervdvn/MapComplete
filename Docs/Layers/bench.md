@@ -87,14 +87,14 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  Does this bench have a backrest?
+The question is  *Does this bench have a backrest?*
 
 
 
 
 
-  - Does have a backrest  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes' target='_blank'>yes</a>`
-  - Does <b>not</b> have a backrest  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:backrest' target='_blank'>backrest</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dno' target='_blank'>no</a>`
+  - *Does have a backrest*  corresponds with  `backrest=yes`
+  - *Does <b>not</b> have a backrest*  corresponds with  `backrest=no`
 
 
 
@@ -103,11 +103,11 @@ The question is  Does this bench have a backrest?
 
 
 
-The question is  How many seats does this bench have?
+The question is  *How many seats does this bench have?*
 
 This rendering asks information about the property  [seats](https://wiki.openstreetmap.org/wiki/Key:seats) 
 
-This is rendered with  {seats} seats
+This is rendered with  `{seats} seats`
 
 
 
@@ -117,22 +117,22 @@ This is rendered with  {seats} seats
 
 
 
-The question is  What is the bench (seating) made from?
+The question is  *What is the bench (seating) made from?*
 
 This rendering asks information about the property  [material](https://wiki.openstreetmap.org/wiki/Key:material) 
 
-This is rendered with  Material: {material}
+This is rendered with  `Material: {material}`
 
 
 
 
 
-  - The seating is made from wood  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dwood' target='_blank'>wood</a>`
-  - The seating is made from metal  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dmetal' target='_blank'>metal</a>`
-  - The seating is made from stone  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dstone' target='_blank'>stone</a>`
-  - The seating is made from concrete  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dconcrete' target='_blank'>concrete</a>`
-  - The seating is made from plastic  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dplastic' target='_blank'>plastic</a>`
-  - The seating is made from steel  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:material' target='_blank'>material</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:material%3Dsteel' target='_blank'>steel</a>`
+  - *The seating is made from wood*  corresponds with  `material=wood`
+  - *The seating is made from metal*  corresponds with  `material=metal`
+  - *The seating is made from stone*  corresponds with  `material=stone`
+  - *The seating is made from concrete*  corresponds with  `material=concrete`
+  - *The seating is made from plastic*  corresponds with  `material=plastic`
+  - *The seating is made from steel*  corresponds with  `material=steel`
 
 
 
@@ -141,11 +141,11 @@ This is rendered with  Material: {material}
 
 
 
-The question is  In which direction are you looking when sitting on the bench?
+The question is  *In which direction are you looking when sitting on the bench?*
 
 This rendering asks information about the property  [direction](https://wiki.openstreetmap.org/wiki/Key:direction) 
 
-This is rendered with  When sitting on the bench, one looks towards {direction}°.
+This is rendered with  `When sitting on the bench, one looks towards {direction}°.`
 
 
 
@@ -155,24 +155,24 @@ This is rendered with  When sitting on the bench, one looks towards {direction}�
 
 
 
-The question is  Which colour does this bench have?
+The question is  *Which colour does this bench have?*
 
 This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) 
 
-This is rendered with  Colour: {colour}
+This is rendered with  `Colour: {colour}`
 
 
 
 
 
-  - Colour: brown  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dbrown' target='_blank'>brown</a>`
-  - Colour: green  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen' target='_blank'>green</a>`
-  - Colour: gray  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgray' target='_blank'>gray</a>`
-  - Colour: white  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dwhite' target='_blank'>white</a>`
-  - Colour: red  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>`
-  - Colour: black  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblack' target='_blank'>black</a>`
-  - Colour: blue  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue' target='_blank'>blue</a>`
-  - Colour: yellow  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>`
+  - *Colour: brown*  corresponds with  `colour=brown`
+  - *Colour: green*  corresponds with  `colour=green`
+  - *Colour: gray*  corresponds with  `colour=gray`
+  - *Colour: white*  corresponds with  `colour=white`
+  - *Colour: red*  corresponds with  `colour=red`
+  - *Colour: black*  corresponds with  `colour=black`
+  - *Colour: blue*  corresponds with  `colour=blue`
+  - *Colour: yellow*  corresponds with  `colour=yellow`
 
 
 
@@ -181,17 +181,17 @@ This is rendered with  Colour: {colour}
 
 
 
-The question is  When was this bench last surveyed?
+The question is  *When was this bench last surveyed?*
 
 This rendering asks information about the property  [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) 
 
-This is rendered with  This bench was last surveyed on {survey:date}
+This is rendered with  `This bench was last surveyed on {survey:date}`
 
 
 
 
 
-  - Surveyed today!  corresponds with  `survey:date=`
+  - *Surveyed today!*  corresponds with  `survey:date=`
  
 
 This document is autogenerated from [assets/layers/bench/bench.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bench/bench.json)

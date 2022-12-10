@@ -86,29 +86,29 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What is the type of this artwork?
+The question is  *What is the type of this artwork?*
 
 This rendering asks information about the property  [artwork_type](https://wiki.openstreetmap.org/wiki/Key:artwork_type) 
 
-This is rendered with  This is a {artwork_type}
+This is rendered with  `This is a {artwork_type}`
 
 
 
 
 
-  - Architecture  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Darchitecture' target='_blank'>architecture</a>`
-  - Mural  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dmural' target='_blank'>mural</a>`
-  - Painting  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dpainting' target='_blank'>painting</a>`
-  - Sculpture  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dsculpture' target='_blank'>sculpture</a>`
-  - Statue  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstatue' target='_blank'>statue</a>`
-  - Bust  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dbust' target='_blank'>bust</a>`
-  - Stone  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstone' target='_blank'>stone</a>`
-  - Installation  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dinstallation' target='_blank'>installation</a>`
-  - Graffiti  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dgraffiti' target='_blank'>graffiti</a>`
-  - Relief  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Drelief' target='_blank'>relief</a>`
-  - Azulejo (Spanish decorative tilework)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dazulejo' target='_blank'>azulejo</a>`
-  - Tilework  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dtilework' target='_blank'>tilework</a>`
-  - Woodcarving  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:artwork_type' target='_blank'>artwork_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dwoodcarving' target='_blank'>woodcarving</a>`
+  - *Architecture*  corresponds with  `artwork_type=architecture`
+  - *Mural*  corresponds with  `artwork_type=mural`
+  - *Painting*  corresponds with  `artwork_type=painting`
+  - *Sculpture*  corresponds with  `artwork_type=sculpture`
+  - *Statue*  corresponds with  `artwork_type=statue`
+  - *Bust*  corresponds with  `artwork_type=bust`
+  - *Stone*  corresponds with  `artwork_type=stone`
+  - *Installation*  corresponds with  `artwork_type=installation`
+  - *Graffiti*  corresponds with  `artwork_type=graffiti`
+  - *Relief*  corresponds with  `artwork_type=relief`
+  - *Azulejo (Spanish decorative tilework)*  corresponds with  `artwork_type=azulejo`
+  - *Tilework*  corresponds with  `artwork_type=tilework`
+  - *Woodcarving*  corresponds with  `artwork_type=woodcarving`
 
 
 
@@ -117,11 +117,11 @@ This is rendered with  This is a {artwork_type}
 
 
 
-The question is  Who made this artwork?
+The question is  *Who made this artwork?*
 
 This rendering asks information about the property  [artist:wikidata](https://wiki.openstreetmap.org/wiki/Key:artist:wikidata) 
 
-This is rendered with  This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}
+This is rendered with  `This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}`
 
 
 
@@ -131,11 +131,11 @@ This is rendered with  This artwork was made by {wikidata_label(artist:wikidata)
 
 
 
-The question is  Which artist created this?
+The question is  *Which artist created this?*
 
 This rendering asks information about the property  [artist_name](https://wiki.openstreetmap.org/wiki/Key:artist_name) 
 
-This is rendered with  Created by {artist_name}
+This is rendered with  `Created by {artist_name}`
 
 
 
@@ -145,11 +145,11 @@ This is rendered with  Created by {artist_name}
 
 
 
-The question is  Is there a website with more information about this artwork?
+The question is  *Is there a website with more information about this artwork?*
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with  More information on <a href='{website}' target='_blank'>this website</a>
+This is rendered with  `More information on <a href='{website}' target='_blank'>this website</a>`
 
 
 
@@ -161,19 +161,19 @@ This is rendered with  More information on <a href='{website}' target='_blank'>t
 
 Shows a wikipedia box with the corresponding wikipedia article; the wikidata-item link can be changed by a contributor
 
-The question is  What is the corresponding Wikidata entity?
+The question is  *What is the corresponding Wikidata entity?*
 
 This rendering asks information about the property  [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) 
 
-This is rendered with  {wikipedia():max-height:25rem}
+This is rendered with  `{wikipedia():max-height:25rem}`
 
 
 
 
 
-  - {wikipedia():max-height:25rem}  corresponds with  `wikipedia~.+`
+  - *{wikipedia():max-height:25rem}*  corresponds with  `wikipedia~.+`
   - This option cannot be chosen as answer
-  - No Wikipedia page has been linked yet  corresponds with  ``
+  - *No Wikipedia page has been linked yet*  corresponds with  ``
   - This option cannot be chosen as answer
 
 
@@ -183,14 +183,29 @@ This is rendered with  {wikipedia():max-height:25rem}
 
 
 
-The question is  What does this artwork depict?
+The question is  *What does this artwork depict?*
 
 This rendering asks information about the property  [subject:wikidata](https://wiki.openstreetmap.org/wiki/Key:subject:wikidata) 
 
-This is rendered with  This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}
+This is rendered with  `This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}`
 
 
 
-Only visible if  `subject:wikidata~.+`  is shown 
+This tagrendering is only visible in the popup if the following condition is met: `subject:wikidata~.+`
+
+
+
+#### Filters 
+
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+has_image.0 | With and without images (default) | 
+has_image.1 | Has at least one image | image~.+\|image:0~.+|image:1~.+|image:2~.+|image:3~.+|mapillary~.+
+has_image.2 | Probably does not have an image | 
+ 
 
 This document is autogenerated from [assets/layers/artwork/artwork.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/artwork/artwork.json)

@@ -82,7 +82,7 @@
     },
     "general": {
         "about": "Bewerk en voeg data toe aan OpenStreetMap over een specifiek onderwerp op een gemakkelijke manier",
-        "aboutMapcomplete": "<h3>Over MapComplete</h3><p>Met MapComplete kun je OpenStreetMap verrijken met informatie over een bepaald thema. Beantwoord enkele vragen, en binnen een paar minuten is jouw bijdrage wereldwijd beschikbaar! De <b>maker van het thema</b> bepaalt de elementen, vragen en taalversies voor het thema.</p><h3>Ontdek meer</h3><p>MapComplete <b>biedt altijd de volgende stap</b> naar meer OpenStreetMap:</p><ul><li>Indien ingebed in een website linkt het iframe naar de volledige MapComplete</li><li>De volledige versie heeft uitleg over OpenStreetMap</li><li>Bekijken kan altijd, maar wijzigen vereist een OSM-account</li><li>Als je niet aangemeld bent, wordt je gevraagd dit te doen</li><li>Als je minstens één vraag hebt beantwoord, kan je ook elementen toevoegen</li><li>Heb je genoeg changesets, dan verschijnen de OSM-tags, nog later links naar de wiki</li></ul><p></p><p>Merk je <b>een bug</b> of wil je een <b>extra feature</b>? Wil je <b>helpen vertalen</b>? Bezoek dan de <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">broncode</a> en <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker</a>. </p><p></p>Wil je <b>je vorderingen</b> zien? Volg de edits <a href=\"{osmcha_link}\" target=\"_blank\">op OsmCha</a>.<p></p>",
+        "aboutMapcomplete": "<h3>Over MapComplete</h3><p>Met MapComplete kun je OpenStreetMap verrijken met informatie over een bepaald thema. Beantwoord enkele vragen, en binnen een paar minuten is jouw bijdrage wereldwijd beschikbaar! In de meeste thema's kan je foto's toevoegen of zelfs een review achterlaten. De <b>maker van het thema</b> bepaalt de elementen, vragen en taalversies voor het thema.</p><h3>Ontdek meer</h3><p>MapComplete <b>biedt altijd de volgende stap</b> naar meer OpenStreetMap:</p><ul><li>Indien ingebed in een website linkt het iframe naar de volledige MapComplete</li><li>De volledige versie heeft uitleg over OpenStreetMap</li><li>Bekijken kan altijd, maar wijzigen vereist een OSM-account</li><li>Als je niet aangemeld bent, wordt je gevraagd dit te doen</li><li>Als je minstens één vraag hebt beantwoord, kan je ook elementen toevoegen</li><li>Heb je genoeg changesets, dan verschijnen de OSM-tags, nog later links naar de wiki</li></ul><p></p><p>Merk je <b>een bug</b> of wil je een <b>extra feature</b>? Wil je <b>helpen vertalen</b>? Bezoek dan de <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">broncode</a> en <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker</a>. </p><p></p>Wil je <b>je vorderingen</b> zien? Volg de edits <a href=\"{osmcha_link}\" target=\"_blank\">op OsmCha</a>.<p></p>",
         "add": {
             "addNew": "Voeg {category} toe",
             "addNewMapLabel": "Klik hier om een item toe te voegen",
@@ -170,6 +170,7 @@
         "error": "Er ging iets mis",
         "example": "Voorbeeld",
         "examples": "Voorbeelden",
+        "feelFreeToSkip": "Je kan hieronder nog informatie toevoegen of updaten, maar <b>sla gerust vragen over</b> waarvoor je het antwoord niet kent.",
         "fewChangesBefore": "Gelieve eerst enkele vragen van bestaande objecten te beantwoorden vooraleer zelf objecten toe te voegen.",
         "getStartedLogin": "Login met OpenStreetMap om te beginnen",
         "getStartedNewAccount": " of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak een nieuwe account aan</a>",
@@ -180,6 +181,10 @@
         "layerSelection": {
             "title": "Selecteer lagen",
             "zoomInToSeeThisLayer": "Vergroot de kaart om deze laag te zien"
+        },
+        "levelSelection": {
+            "addNewOnLevel": "Is het nieuwe punt op verdieping {level}?",
+            "confirmLevel": "Ja, voeg {preset} toe op verdieping {level}"
         },
         "loading": "Aan het laden…",
         "loadingTheme": "{theme} wordt geladen…",
@@ -200,6 +205,7 @@
             "streetcomplete": "Een andere, gelijkaardige Android applicatie is <a href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" class=\"underline hover:text-blue-800\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "De naam van dit {category} is $$$",
+        "newlyCreated": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
         "next": "Volgende",
         "noNameCategory": "{category} zonder naam",
         "noTagsSelected": "Geen tags geselecteerd",
@@ -275,6 +281,17 @@
         "skip": "Sla deze vraag over",
         "skippedQuestions": "Enkele vragen werden overgeslaan",
         "testing": "Testmode - wijzigingen worden niet opgeslaan",
+        "uploadGpx": {
+            "confirm": "Bevestig upload",
+            "modes": {
+                "private": {
+                    "name": "Anoniem"
+                },
+                "public": {
+                    "name": "Publiek"
+                }
+            }
+        },
         "weekdays": {
             "abbreviations": {
                 "friday": "Vrij",
@@ -396,6 +413,7 @@
             "osmLoaded": "{count} elementen werden uit OpenStreetMap ingeladen die laag in laag <b>{name}</b> zitten.",
             "reloadTheCache": "Verwijder de cache en bevraag Overpass opnieuw",
             "setRangeToZero": "Set de radius op 0 of 1 indien je toch alle punten wenst te importeren",
+            "showOsmLayerInConflationMap": "Toon objecten van OpenStreetMap",
             "states": {
                 "error": "Kon geen recente data ophalen van Overpass door {error}",
                 "idle": "Cache bevragen…",
@@ -411,7 +429,7 @@
             "creating": "<b>{count}</b> van {total} kaartnota's werden gemaakt",
             "done": "Alle {count} kaartnota's zijn gemaakt!",
             "loading": "Aan het laden…",
-            "openImportViewer": "Bekijk de voortgang van je kaartnotas in de &lt;i&gt;import_viewer&lt;/i&gt;",
+            "openImportViewer": "Bekijk de voortgang van je kaartnotas in de import_viewer",
             "title": "Kaartnota's maken"
         },
         "gotoImportViewer": "Bekijk je vorige importeer-kaartnota's",
@@ -485,7 +503,7 @@
         "importHandled": "<div class='thanks'>Dit object is afgehandeld. Bedankt om mee te helpen!</div>",
         "layerName": "Hier is misschien een {title}",
         "nearbyImagesIntro": "<h3>Afbeeldingen in de buurt</h3>De volgende afbeeldingen zijn in de buurt gemaakt en kunnen mogelijks helpen. {nearby_images(open)}",
-        "notFound": "Ik kon hier g{title} vinden - verwijder deze van de kaart",
+        "notFound": "Ik kon hier geen {title} vinden - verwijder deze van de kaart",
         "popupTitle": "Is hier {title}?"
     },
     "index": {
@@ -716,6 +734,13 @@
         "textNeeded": "Geef een beschrijvende tekst om een kaartnota te maken",
         "typeText": "Typ eerst een commentaar om deze toe te voegen",
         "warnAnonymous": "Je bent niet aangemeld. We gaan je niet kunnen contacteren om deze kaartnota te verwerken."
+    },
+    "plantDetection": {
+        "howTo": {
+            "intro": "Voor optimale resultaten,",
+            "li0": "neem een foto waar de boom in het midden staat zonder te veel achtergrond",
+            "li1": "neem een foto met een enkel blad"
+        }
     },
     "privacy": {
         "editing": "Wanneer je een wijziging maakt, wordt deze wijziging opgeslaan op OpenStreetMap. Dit is zichtbaar voor iedereen. Een wijzigingenset gemaakt met MapComplete bevat de volgende data:\n<ul><li>De aanpassingen aan de data</li><li>Je gebruikersnaam</li><li>Wanneer deze wijziging werd gemaakt</li><li>Het thema dat je gebruikt om de wijziging te maken</li><li>De taal van de gebruikersinterface</li><li>Een indicatie hoe ver jij je van de gewijzigde objecten bevindt. Andere bijdragers kunnen deze informatie gebruiken om af te leiden of de wijziging gemaakt door lokaal te gaan kijken of door onderzoek vanop afstand</li></ul> Bekijk ook <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">de privacy-policy op OpenStreetMap.org</a> voor gedetailleerde info. We herinneren je eraan dat je een pseudoniem of fictieve naam kan gebruiken wanneer je je registreert.",

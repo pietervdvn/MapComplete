@@ -33,6 +33,19 @@
   "tagRenderings": [
     "images",
     {
+      "builtin": "multilevels",
+      "override": {
+        "question": {
+          "en": "Between which levels are these stairs?",
+          "nl": "Tussen welke verdiepingen loopt deze trap?"
+        },
+        "render": {
+          "en": "These stairs are between the levels {level}",
+          "nl": "Deze trap loopt tussen de verdiepingen {level}"
+        }
+      }
+    },
+    {
       "id": "handrail",
       "question": {
         "en": "Does this stair have a handrail?",
@@ -195,7 +208,7 @@
     {
       "color": "gray",
       "width": 10,
-      "dashArray": "2 2"
+      "dashArray": "6 12"
     }
   ]
 }

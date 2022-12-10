@@ -72,4 +72,10 @@ export interface DeleteConfigJson {
      * For some small features (e.g. bicycle racks) this is too much and this requirement can be lowered or dropped, which can be done here.
      */
     neededChangesets?: number
+
+    /**
+     * Set this flag if the default delete reasons should be omitted from the dialog.
+     * This requires at least one extraDeleteReason or nonDeleteMapping
+     */
+    omitDefaultDeleteReasons?: false | boolean
 }

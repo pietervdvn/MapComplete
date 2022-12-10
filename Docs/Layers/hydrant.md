@@ -74,20 +74,20 @@ attribute | type | values which are supported by this layer
 
 
 
-The question is  What color is the hydrant?
+The question is  *What color is the hydrant?*
 
 This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) 
 
-This is rendered with  The hydrant color is {colour}
+This is rendered with  `The hydrant color is {colour}`
 
 
 
 
 
-  - The hydrant color is unknown.  corresponds with  ``
+  - *The hydrant color is unknown.*  corresponds with  ``
   - This option cannot be chosen as answer
-  - The hydrant color is yellow.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow' target='_blank'>yellow</a>`
-  - The hydrant color is red.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:colour' target='_blank'>colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred' target='_blank'>red</a>`
+  - *The hydrant color is yellow.*  corresponds with  `colour=yellow`
+  - *The hydrant color is red.*  corresponds with  `colour=red`
 
 
 
@@ -96,22 +96,22 @@ This is rendered with  The hydrant color is {colour}
 
 
 
-The question is  What type of hydrant is it?
+The question is  *What type of hydrant is it?*
 
 This rendering asks information about the property  [fire_hydrant:type](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type) 
 
-This is rendered with   Hydrant type: {fire_hydrant:type}
+This is rendered with  ` Hydrant type: {fire_hydrant:type}`
 
 
 
 
 
-  - The hydrant type is unknown.  corresponds with  ``
+  - *The hydrant type is unknown.*  corresponds with  ``
   - This option cannot be chosen as answer
-  - Pillar type.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpillar' target='_blank'>pillar</a>`
-  - Pipe type.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpipe' target='_blank'>pipe</a>`
-  - Wall type.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dwall' target='_blank'>wall</a>`
-  - Underground type.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type' target='_blank'>fire_hydrant:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dunderground' target='_blank'>underground</a>`
+  - *Pillar type.*  corresponds with  `fire_hydrant:type=pillar`
+  - *Pipe type.*  corresponds with  `fire_hydrant:type=pipe`
+  - *Wall type.*  corresponds with  `fire_hydrant:type=wall`
+  - *Underground type.*  corresponds with  `fire_hydrant:type=underground`
 
 
 
@@ -120,15 +120,15 @@ This is rendered with   Hydrant type: {fire_hydrant:type}
 
 
 
-The question is  Is this hydrant still working?
+The question is  *Is this hydrant still working?*
 
 
 
 
 
-  - The hydrant is (fully or partially) working  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:emergency' target='_blank'>emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>`
-  - The hydrant is unavailable  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:disused:emergency' target='_blank'>disused:emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:disused:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>`
-  - The hydrant has been removed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:removed:emergency' target='_blank'>removed:emergency</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:removed:emergency%3Dfire_hydrant' target='_blank'>fire_hydrant</a>`
+  - *The hydrant is (fully or partially) working*  corresponds with  `emergency=fire_hydrant`
+  - *The hydrant is unavailable*  corresponds with  `disused:emergency=fire_hydrant`
+  - *The hydrant has been removed*  corresponds with  `removed:emergency=fire_hydrant`
 
 
 
@@ -137,11 +137,11 @@ The question is  Is this hydrant still working?
 
 
 
-The question is  What is the pipe diameter of this hydrant?
+The question is  *What is the pipe diameter of this hydrant?*
 
 This rendering asks information about the property  [fire_hydrant:diameter](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:diameter) 
 
-This is rendered with  Pipe diameter: {canonical(fire_hydrant:diameter)}
+This is rendered with  `Pipe diameter: {canonical(fire_hydrant:diameter)}`
 
 
 
@@ -151,19 +151,19 @@ This is rendered with  Pipe diameter: {canonical(fire_hydrant:diameter)}
 
 
 
-The question is  What kind of couplings does this hydrant have?
+The question is  *What kind of couplings does this hydrant have?*
 
 This rendering asks information about the property  [couplings:type](https://wiki.openstreetmap.org/wiki/Key:couplings:type) 
 
-This is rendered with  Couplings: {couplings:type}
+This is rendered with  `Couplings: {couplings:type}`
 
 
 
 
 
-  - Storz coupling  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:couplings:type' target='_blank'>couplings:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DStorz' target='_blank'>Storz</a>`
-  - UNI coupling  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:couplings:type' target='_blank'>couplings:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DUNI' target='_blank'>UNI</a>`
-  - Barcelona coupling  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:couplings:type' target='_blank'>couplings:type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DBarcelona' target='_blank'>Barcelona</a>`
+  - *Storz coupling*  corresponds with  `couplings:type=Storz`
+  - *UNI coupling*  corresponds with  `couplings:type=UNI`
+  - *Barcelona coupling*  corresponds with  `couplings:type=Barcelona`
 
 
 
@@ -172,11 +172,11 @@ This is rendered with  Couplings: {couplings:type}
 
 
 
-The question is  What diameter are the couplings of this hydrant?
+The question is  *What diameter are the couplings of this hydrant?*
 
 This rendering asks information about the property  [couplings:diameters](https://wiki.openstreetmap.org/wiki/Key:couplings:diameters) 
 
-This is rendered with  Coupling diameters: {couplings:diameters}
+This is rendered with  `Coupling diameters: {couplings:diameters}`
 
 
 

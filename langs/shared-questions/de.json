@@ -115,6 +115,18 @@
                 }
             }
         },
+        "opening_hours_by_appointment": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Nur nach Vereinbarung"
+                    },
+                    "1": {
+                        "then": "Nur nach Vereinbarung"
+                    }
+                }
+            }
+        },
         "payment-options": {
             "mappings": {
                 "0": {

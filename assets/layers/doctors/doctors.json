@@ -8,19 +8,11 @@
     "pa_PK": "ڈاکٹر"
   },
   "description": {
-    "en": "This layer shows doctor offices, dentists and other healthcare facilities",
-    "de": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen",
-    "nl": "Deze laag toont dokterspraktijken, tandartsen en andere gezondheidszorgfaciliteiten",
-    "fr": "Ce calque montre les cabinets médicaux, les dentistes et autres établissements de santé"
+    "en": "This layer shows doctor offices",
+    "de": "Diese Ebene zeigt Arztpraxen, Zahnärzte und andere Gesundheitseinrichtungen"
   },
   "source": {
-    "osmTags": {
-      "or": [
-        "amenity=doctors",
-        "amenity=dentist",
-        "healthcare=physiotherapist"
-      ]
-    }
+    "osmTags": "amenity=doctors"
   },
   "title": {
     "render": {
@@ -28,29 +20,11 @@
       "de": "Arztpraxis {name}",
       "nl": "Dokterspraktijk {name}",
       "fr": "Cabinet medical {name}"
-    },
-    "mappings": [
-      {
-        "if": "amenity=doctors",
-        "then": "Doctors Office {name}"
-      },
-      {
-        "if": "amenity=dentist",
-        "then": "Dentists office {name}"
-      },
-      {
-        "if": "healthcare=physiotherapist",
-        "then": "Physiotherapists office {name}"
-      }
-    ]
+    }
   },
   "minzoom": 13,
   "tagRenderings": [
     "images",
-    "opening_hours",
-    "phone",
-    "email",
-    "website",
     {
       "question": {
         "en": "What is the name of this doctors place?",
@@ -69,8 +43,11 @@
       },
       "id": "name"
     },
+    "opening_hours_by_appointment",
+    "phone",
+    "email",
+    "website",
     {
-      "condition": "amenity=doctors",
       "id": "specialty",
       "render": {
         "en": "This doctor is specialized in {healthcare:speciality}",
@@ -87,6 +64,7 @@
       "freeform": {
         "key": "healthcare:speciality"
       },
+      "multiAnswer": true,
       "mappings": [
         {
           "if": "healthcare:speciality=general",
@@ -138,28 +116,6 @@
       "tags": [
         "amenity=doctors"
       ]
-    },
-    {
-      "title": {
-        "en": "a dentists office",
-        "de": "eine Zahnarztpraxis",
-        "nl": "een tandartspraktijk",
-        "fr": "un cabinet de dentistes"
-      },
-      "tags": [
-        "amenity=dentist"
-      ]
-    },
-    {
-      "title": {
-        "en": "a physiotherapists office",
-        "de": "Praxis eines Physiotherapeuten",
-        "nl": "een fysiotherapeutenpraktijk",
-        "fr": "un cabinet de kinésithérapeutes"
-      },
-      "tags": [
-        "healthcare=physiotherapist"
-      ]
     }
   ],
   "filter": [
@@ -177,5 +133,6 @@
       ]
     }
   ],
-  "deletion": true
+  "deletion": true,
+  "allowMove": true
 }

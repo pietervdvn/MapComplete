@@ -69,15 +69,15 @@ attribute | type | values which are supported by this layer
 
 
 
-The question is  Is there a (unofficial) website with more informations (e.g. topos)?
+The question is  *Is there a (unofficial) website with more informations (e.g. topos)?*
 
 This rendering asks information about the property  [url](https://wiki.openstreetmap.org/wiki/Key:url) 
 
-This is rendered with  <a href='{url}' target='_blank'>{url}</a>
+This is rendered with  `<a href='{url}' target='_blank'>{url}</a>`
 
 
 
-Only visible if  `leisure!~^(sports_centre)$&sport=climbing`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `leisure!~^(sports_centre)$&sport=climbing`
 
 
 
@@ -85,11 +85,11 @@ Only visible if  `leisure!~^(sports_centre)$&sport=climbing`  is shown
 
 
 
-The question is  What is the (average) length of the routes in meters?
+The question is  *What is the (average) length of the routes in meters?*
 
 This rendering asks information about the property  [climbing:length](https://wiki.openstreetmap.org/wiki/Key:climbing:length) 
 
-This is rendered with  The routes are <b>{canonical(climbing:length)}</b> long on average
+This is rendered with  `The routes are <b>{canonical(climbing:length)}</b> long on average`
 
 
 
@@ -99,11 +99,11 @@ This is rendered with  The routes are <b>{canonical(climbing:length)}</b> long o
 
 
 
-The question is  What is the grade of the easiest route here, according to the french classification system?
+The question is  *What is the grade of the easiest route here, according to the french classification system?*
 
 This rendering asks information about the property  [climbing:grade:french:min](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:min) 
 
-This is rendered with  The lowest grade is {climbing:grade:french:min} according to the french/belgian system
+This is rendered with  `The lowest grade is {climbing:grade:french:min} according to the french/belgian system`
 
 
 
@@ -113,15 +113,15 @@ This is rendered with  The lowest grade is {climbing:grade:french:min} according
 
 
 
-The question is  What is the highest grade route here, according to the french classification system?
+The question is  *What is the highest grade route here, according to the french classification system?*
 
 This rendering asks information about the property  [climbing:grade:french:max](https://wiki.openstreetmap.org/wiki/Key:climbing:grade:french:max) 
 
-This is rendered with  The highest grade is {climbing:grade:french:max} according to the french/belgian system
+This is rendered with  `The highest grade is {climbing:grade:french:max} according to the french/belgian system`
 
 
 
-Only visible if  `climbing!~^(route)$&climbing:sport=yes|sport=climbing`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `climbing!~^(route)$&climbing:sport=yes|sport=climbing`
 
 
 
@@ -129,16 +129,16 @@ Only visible if  `climbing!~^(route)$&climbing:sport=yes|sport=climbing`  is sho
 
 
 
-The question is  Is bouldering possible here?
+The question is  *Is bouldering possible here?*
 
 
 
 
 
-  - Bouldering is possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dyes' target='_blank'>yes</a>`
-  - Bouldering is not possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dno' target='_blank'>no</a>`
-  - Bouldering is possible, allthough there are only a few routes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:boulder' target='_blank'>climbing:boulder</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:boulder%3Dlimited' target='_blank'>limited</a>`
-  - There are {climbing:boulder} boulder routes  corresponds with  `climbing:boulder~.+`
+  - *Bouldering is possible here*  corresponds with  `climbing:boulder=yes`
+  - *Bouldering is not possible here*  corresponds with  `climbing:boulder=no`
+  - *Bouldering is possible, allthough there are only a few routes*  corresponds with  `climbing:boulder=limited`
+  - *There are {climbing:boulder} boulder routes*  corresponds with  `climbing:boulder~.+`
   - This option cannot be chosen as answer
 
 
@@ -148,15 +148,15 @@ The question is  Is bouldering possible here?
 
 
 
-The question is  Is toprope climbing possible here?
+The question is  *Is toprope climbing possible here?*
 
 
 
 
 
-  - Toprope climbing is possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:toprope' target='_blank'>climbing:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dyes' target='_blank'>yes</a>`
-  - Toprope climbing is not possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:toprope' target='_blank'>climbing:toprope</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:toprope%3Dno' target='_blank'>no</a>`
-  - There are {climbing:toprope} toprope routes  corresponds with  `climbing:toprope~.+`
+  - *Toprope climbing is possible here*  corresponds with  `climbing:toprope=yes`
+  - *Toprope climbing is not possible here*  corresponds with  `climbing:toprope=no`
+  - *There are {climbing:toprope} toprope routes*  corresponds with  `climbing:toprope~.+`
   - This option cannot be chosen as answer
 
 
@@ -166,15 +166,15 @@ The question is  Is toprope climbing possible here?
 
 
 
-The question is  Is sport climbing possible here on fixed anchors?
+The question is  *Is sport climbing possible here on fixed anchors?*
 
 
 
 
 
-  - Sport climbing is possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dyes' target='_blank'>yes</a>`
-  - Sport climbing is not possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:sport' target='_blank'>climbing:sport</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:sport%3Dno' target='_blank'>no</a>`
-  - There are {climbing:sport} sport climbing routes  corresponds with  `climbing:sport~.+`
+  - *Sport climbing is possible here*  corresponds with  `climbing:sport=yes`
+  - *Sport climbing is not possible here*  corresponds with  `climbing:sport=no`
+  - *There are {climbing:sport} sport climbing routes*  corresponds with  `climbing:sport~.+`
   - This option cannot be chosen as answer
 
 
@@ -184,15 +184,15 @@ The question is  Is sport climbing possible here on fixed anchors?
 
 
 
-The question is  Is traditional climbing possible here (using own gear e.g. chocks)?
+The question is  *Is traditional climbing possible here (using own gear e.g. chocks)?*
 
 
 
 
 
-  - Traditional climbing is possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:traditional' target='_blank'>climbing:traditional</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:traditional%3Dyes' target='_blank'>yes</a>`
-  - Traditional climbing is not possible here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:climbing:traditional' target='_blank'>climbing:traditional</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:climbing:traditional%3Dno' target='_blank'>no</a>`
-  - There are {climbing:traditional} traditional climbing routes  corresponds with  `climbing:traditional~.+`
+  - *Traditional climbing is possible here*  corresponds with  `climbing:traditional=yes`
+  - *Traditional climbing is not possible here*  corresponds with  `climbing:traditional=no`
+  - *There are {climbing:traditional} traditional climbing routes*  corresponds with  `climbing:traditional~.+`
   - This option cannot be chosen as answer
 
 
@@ -202,11 +202,11 @@ The question is  Is traditional climbing possible here (using own gear e.g. choc
 
 
 
-The question is  How many bolts do routes in {title()} have at most?
+The question is  *How many bolts do routes in {title()} have at most?*
 
 This rendering asks information about the property  [climbing:bolts:max](https://wiki.openstreetmap.org/wiki/Key:climbing:bolts:max) 
 
-This is rendered with  The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>
+This is rendered with  `The sport climbing routes here have at most {climbing:bolts:max} bolts.<div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>`
 
 
 
@@ -216,18 +216,18 @@ This is rendered with  The sport climbing routes here have at most {climbing:bol
 
 
 
-The question is  Is a fee required to climb here?
+The question is  *Is a fee required to climb here?*
 
 This rendering asks information about the property  [charge](https://wiki.openstreetmap.org/wiki/Key:charge) 
 
-This is rendered with  A fee of {charge} should be paid for climbing here
+This is rendered with  `A fee of {charge} should be paid for climbing here`
 
 
 
 
 
-  - Climbing here is free of charge  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dno' target='_blank'>no</a>`
-  - Paying a fee is required to climb here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
+  - *Climbing here is free of charge*  corresponds with  `fee=no`
+  - *Paying a fee is required to climb here*  corresponds with  `fee=yes`
  
 
 This document is autogenerated from [assets/layers/climbing/climbing.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/climbing/climbing.json)

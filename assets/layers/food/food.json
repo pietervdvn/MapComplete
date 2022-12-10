@@ -607,6 +607,41 @@
       "id": "halal (no friture)"
     },
     {
+      "id": "organic (no friture)",
+      "question": {
+        "en": "Does this restaurant offer organic food?",
+        "de": "Bietet dieses Restaurant biologische Speisen an?",
+        "nl": "Biedt dit restaurant biologisch eten?"
+      },
+      "mappings": [
+        {
+          "if": "organic=no",
+          "then": {
+            "en": "There are no organic options available",
+            "de": "Es sind keine biologischen Produkte verfügbar",
+            "nl": "Er zijn geen biologische opties beschikbaar"
+          }
+        },
+        {
+          "if": "organic=yes",
+          "then": {
+            "en": "There is an organic menu",
+            "de": "Es gibt ein biologisches Menü",
+            "nl": "Er is een biologisch menu"
+          }
+        },
+        {
+          "if": "organic=only",
+          "then": {
+            "en": "Only organic options are available",
+            "de": "Nur biologische Produkte sind erhältlich",
+            "nl": "Er zijn alleen biologische opties beschikbaar"
+          }
+        }
+      ],
+      "condition": "cuisine!=friture"
+    },
+    {
       "id": "friture-vegetarian",
       "question": {
         "en": "Does this fries shop have vegetarian snacks?",
@@ -679,6 +714,41 @@
             "nl": "Geen veganistische snacks beschikbaar",
             "fr": "Pas d'en-cas végétaliens disponibles",
             "de": "Es sind keine veganen Snacks verfügbar"
+          }
+        }
+      ],
+      "condition": "cuisine=friture"
+    },
+    {
+      "id": "friture-organic",
+      "question": {
+        "en": "Does this fries shop offer organic snacks?",
+        "nl": "Heeft deze frituur biologische snacks?",
+        "de": "Bietet diese Pommesbude biologische Snacks an?"
+      },
+      "mappings": [
+        {
+          "if": "organic=yes",
+          "then": {
+            "en": "Organic snacks are available",
+            "nl": "Er zijn biologische snacks aanwezig",
+            "de": "Biologische Snacks sind erhältlich"
+          }
+        },
+        {
+          "if": "organic=no",
+          "then": {
+            "en": "No organic snacks are available",
+            "nl": "Geen biologische snacks beschikbaar",
+            "de": "Es sind keine biologischen Snacks erhältlich"
+          }
+        },
+        {
+          "if": "organic=only",
+          "then": {
+            "en": "Only organic snacks are available",
+            "nl": "Enkel biologische snacks zijn beschikbaar",
+            "de": "Nur biologische Snacks sind erhältlich"
           }
         }
       ],
@@ -836,6 +906,7 @@
         }
       ]
     },
+    "has_organic",
     "accepts_cash",
     "accepts_cards"
   ],
@@ -913,7 +984,18 @@
             ]
           },
           "then": {
-            "render": "circle:white;./assets/themes/fritures/Vegetarian-mark.svg"
+            "render": "circle:white;./assets/layers/food/Vegetarian-mark.svg"
+          }
+        },
+        {
+          "if": {
+            "or": [
+              "organic=yes",
+              "organic=only"
+            ]
+          },
+          "then": {
+            "render": "./assets/layers/food/organic.svg"
           }
         }
       ],

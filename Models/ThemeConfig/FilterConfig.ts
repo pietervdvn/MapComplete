@@ -10,6 +10,9 @@ import { FilterState } from "../FilteredLayer"
 import { QueryParameters } from "../../Logic/Web/QueryParameters"
 import { Utils } from "../../Utils"
 import { RegexTag } from "../../Logic/Tags/RegexTag"
+import BaseUIElement from "../../UI/BaseUIElement";
+import Table from "../../UI/Base/Table";
+import Combine from "../../UI/Base/Combine";
 
 export default class FilterConfig {
     public readonly id: string
@@ -241,5 +244,22 @@ export default class FilterConfig {
             [],
             reset
         )
+    }
+
+    public GenerateDocs(): BaseUIElement {
+        const hasField = this.options.some(opt => opt.fields?.length > 0)
+        return new Table(
+            Utils.NoNull(["id","question","osmTags",hasField ? "fields" : undefined]),
+            this.options.map((opt, i) => {
+                const isDefault = this.options.length > 1 && ((this.defaultSelection ?? 0) == i)
+                return Utils.NoNull([
+                    this.id + "." + i,
+                    isDefault ? new Combine([opt.question.SetClass("font-bold"), "(default)"]) : opt.question ,
+                    opt.osmTags?.asHumanString(false, false, {}) ?? "",
+                   opt.fields?.length > 0 ?  new Combine(opt.fields.map(f => f.name+" ("+f.type+")")) : undefined
+
+                ]);
+            })
+        );
     }
 }

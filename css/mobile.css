@@ -8,10 +8,6 @@ Contains tweaks for small screens
         display: none !important;
     }
 
-    .desktop\:max-h-65vh {
-        max-height: 65vh;
-    }
-
 }
 
 

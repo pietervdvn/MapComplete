@@ -61,7 +61,10 @@
       "id": "has_image",
       "options": [
         {
-          "question": "With and without images"
+          "question": {
+            "en":"With and without images",
+            "nl": "Met en zonder afbeelding"
+          }
         },
         {
           "question": {
@@ -149,6 +152,24 @@
             "de": "Keine Informationen über taktiles Pflaster",
             "fr": "Sans information sur le revêtement podotactile",
             "nl": "Geen informatie over voelbare bestrating"
+          }
+        }
+      ]
+    },
+    {
+      "id": "has_organic",
+      "options": [
+        {
+          "osmTags": {
+            "or": [
+              "organic=yes",
+              "organic=only"
+            ]
+          },
+          "question": {
+            "en": "Has organic options",
+            "de": "Hat Bio-Produkte",
+            "nl": "Heeft biologische opties"
           }
         }
       ]

@@ -1306,6 +1306,33 @@
             "render": "Café"
         }
     },
+    "car_rental": {
+        "description": "Plaatsen waar je een auto kunt huren",
+        "name": "Autoverhuur",
+        "presets": {
+            "0": {
+                "description": "Een plaats waar je een auto kunt huren",
+                "title": "een autoverhuur"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Naam van de autoverhuur"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze autoverhuur heeft geen naam"
+                    }
+                },
+                "question": "Wat is de naam van deze autoverhuur?",
+                "render": "Deze autoverhuur heet {name}"
+            }
+        },
+        "title": {
+            "render": "Autoverhuur"
+        }
+    },
     "charging_station": {
         "description": "Oplaadpunten",
         "filter": {
@@ -1925,7 +1952,7 @@
                     }
                 },
                 "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> levert een vermogen van maximaal {socket:tesla_supercharger_ccs:output}"
+                "render": "<div style='display: inline-block'><div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> levert een vermogen van maximaal {socket:tesla_supercharger_ccs:output}"
             },
             "power-output-11": {
                 "mappings": {
@@ -2429,7 +2456,7 @@
             "Type": {
                 "mappings": {
                     "0": {
-                        "then": "Een klimboulder- eenn enkele rots of klif met één of enkele klimroutes die veilig zonder touw kunnen worden beklommen"
+                        "then": "Een klimboulder - een enkele rots of klif met één of enkele klimroutes die veilig zonder touw kunnen worden beklommen"
                     }
                 }
             },
@@ -3220,22 +3247,26 @@
             "render": "Defibrillator"
         }
     },
+    "dentist": {
+        "name": "Tandarts",
+        "presets": {
+            "0": {
+                "title": "een tandartspraktijk"
+            }
+        },
+        "title": {
+            "render": "Dokterspraktijk {name}"
+        }
+    },
     "direction": {
         "description": "Deze laag toont de oriëntatie van een object",
         "name": "Richtingsvisualisatie"
     },
     "doctors": {
-        "description": "Deze laag toont dokterspraktijken, tandartsen en andere gezondheidszorgfaciliteiten",
         "name": "Dokters",
         "presets": {
             "0": {
                 "title": "een dokterspraktijk"
-            },
-            "1": {
-                "title": "een tandartspraktijk"
-            },
-            "2": {
-                "title": "een fysiotherapeutenpraktijk"
             }
         },
         "tagRenderings": {
@@ -3661,6 +3692,13 @@
                         "question": "Geen informatie over voelbare bestrating"
                     }
                 }
+            },
+            "6": {
+                "options": {
+                    "0": {
+                        "question": "Heeft biologische opties"
+                    }
+                }
             }
         }
     },
@@ -3910,6 +3948,20 @@
                 },
                 "question": "Bakt deze frituur met dierlijk vet of met plantaardige olie?"
             },
+            "friture-organic": {
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn biologische snacks aanwezig"
+                    },
+                    "1": {
+                        "then": "Geen biologische snacks beschikbaar"
+                    },
+                    "2": {
+                        "then": "Enkel biologische snacks zijn beschikbaar"
+                    }
+                },
+                "question": "Heeft deze frituur biologische snacks?"
+            },
             "friture-take-your-container": {
                 "mappings": {
                     "0": {
@@ -3968,6 +4020,20 @@
                     }
                 },
                 "question": "Heeft dit restaurant halal opties?"
+            },
+            "organic (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "Er zijn geen biologische opties beschikbaar"
+                    },
+                    "1": {
+                        "then": "Er is een biologisch menu"
+                    },
+                    "2": {
+                        "then": "Er zijn alleen biologische opties beschikbaar"
+                    }
+                },
+                "question": "Biedt dit restaurant biologisch eten?"
             }
         },
         "title": {
@@ -5307,7 +5373,7 @@
                 }
             }
         },
-        "name": "apotheek",
+        "name": "Apotheken",
         "presets": {
             "0": {
                 "title": "een apotheek"
@@ -5343,6 +5409,24 @@
                 }
             },
             "render": "{name}"
+        }
+    },
+    "physiotherapist": {
+        "description": "Deze laag toont kinesisten",
+        "name": "Kinesist",
+        "presets": {
+            "0": {
+                "title": "een fysiotherapeutenpraktijk"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wat is de naam van deze kinesistenpraktijk?",
+                "render": "Deze kinesistenpraktijk heet {name}"
+            }
+        },
+        "title": {
+            "render": "Kinesist {name}"
         }
     },
     "picnic_table": {
@@ -6124,6 +6208,20 @@
                     "render": "Dit is een {shop}"
                 }
             },
+            "organic": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze winkel biedt biologische producten aan"
+                    },
+                    "1": {
+                        "then": "Deze winkel biedt uitluitend biologische producten aan"
+                    },
+                    "2": {
+                        "then": "Deze winkel heeft geen biologische producten"
+                    }
+                },
+                "question": "Biedt deze winkel biologische producten aan?"
+            },
             "shops-name": {
                 "question": "Wat is de naam van deze winkel?",
                 "render": "Deze zaak heet <i>{name}</i>"
@@ -6390,6 +6488,12 @@
                     }
                 },
                 "question": "Heeft deze trap een leuning?"
+            },
+            "multilevels": {
+                "override": {
+                    "question": "Tussen welke verdiepingen loopt deze trap?",
+                    "render": "Deze trap loopt tussen de verdiepingen {level}"
+                }
             },
             "ramp": {
                 "mappings": {
@@ -7159,6 +7263,43 @@
                     }
                 },
                 "question": "Heeft deze halte een vuilnisbak?"
+            },
+            "lit": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze halte is niet verlicht"
+                    },
+                    "1": {
+                        "then": "Deze halte is niet verlicht"
+                    }
+                },
+                "question": "Is deze halte verlicht?"
+            },
+            "shelter": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze halte heeft een schuilplaats"
+                    },
+                    "1": {
+                        "then": "Deze halte heeft geen schuilplaats"
+                    },
+                    "2": {
+                        "then": "Deze halte heeft een schuilplaats, die apart op de kaart staat"
+                    }
+                },
+                "question": "Heeft deze halte een schuilplaats?"
+            },
+            "stop_name": {
+                "freeform": {
+                    "placeholder": "Naam van de halte"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze halte heeft geen naam"
+                    }
+                },
+                "question": "Wat is de naam van deze halte?",
+                "render": "Deze halte heet <b>{name}</b>"
             }
         },
         "title": {
@@ -7357,7 +7498,7 @@
         }
     },
     "walls_and_buildings": {
-        "description": "Speciale laag met alle muren en gebouwen. Deze laag is nuttig om objecten toe te voegen die met een muur verbonden zijn (zoals AEDs, brievenbussen, adressen, bewakingscamera's,…). Deze laag is standaard onzichtbaar en kan niet aangezet worden door de gebruiker.",
+        "description": "Speciale ingebouwde laag voor alle muren en gebouwen. Deze laag is nuttig in voorkeuzen voor objecten die tegen muren geplaatst kunnen worden (bv. AEDs, brievenbussen, ingangen, adressen, beveiligingscamera's,…). Deze laag is standaard onzichtbaar en niet in te schakelen door de gebruiker.",
         "tagRenderings": {
             "entrance_info": {
                 "render": {
@@ -7369,6 +7510,18 @@
         },
         "title": {
             "render": "Muur of gebouw"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "meter"
+                    },
+                    "1": {
+                        "human": "centimeter"
+                    }
+                }
+            }
         }
     },
     "waste_basket": {

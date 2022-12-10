@@ -75,14 +75,14 @@ attribute | type | values which are supported by this layer
 
 
 
-The question is  What type of facility is this?
+The question is  *What type of facility is this?*
 
 
 
 
 
-  - This is a kindergarten (also known as <i>preschool</i>) where small kids receive early education.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dkindergarten' target='_blank'>kindergarten</a>`
-  - This is a childcare facility, such as a nursery or daycare where small kids are looked after. They do not offer an education and are ofter run as private businesses  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dchildcare' target='_blank'>childcare</a>`
+  - *This is a kindergarten (also known as <i>preschool</i>) where small kids receive early education.*  corresponds with  `amenity=kindergarten`
+  - *This is a childcare facility, such as a nursery or daycare where small kids are looked after. They do not offer an education and are ofter run as private businesses*  corresponds with  `amenity=childcare`
 
 
 
@@ -91,11 +91,11 @@ The question is  What type of facility is this?
 
 
 
-The question is  What is the name of this facility?
+The question is  *What is the name of this facility?*
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with  This facility is named <b>{name}</b>
+This is rendered with  `This facility is named <b>{name}</b>`
 
 
 
@@ -105,17 +105,17 @@ This is rendered with  This facility is named <b>{name}</b>
 
 
 
-The question is  What is the website of {title()}?
+The question is  *What is the website of {title()}?*
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with  <a href='{website}' target='_blank'>{website}</a>
+This is rendered with  `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
+  - *<a href='{contact:website}' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -125,17 +125,17 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-The question is  What is the email address of {title()}?
+The question is  *What is the email address of {title()}?*
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
-This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
+This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~.+`
+  - *<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>*  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
 
@@ -145,17 +145,17 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-The question is  What is the phone number of {title()}?
+The question is  *What is the phone number of {title()}?*
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
-This is rendered with  <a href='tel:{phone}'>{phone}</a>
+This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~.+`
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
   - This option cannot be chosen as answer
 
 
@@ -165,15 +165,15 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-The question is  When is this childcare opened?
+The question is  *When is this childcare opened?*
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
+This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
-Only visible if  `amenity=childcare`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `amenity=childcare`
 
 
 
@@ -181,11 +181,11 @@ Only visible if  `amenity=childcare`  is shown
 
 
 
-The question is  How much kids (at most) can be enrolled here?
+The question is  *How much kids (at most) can be enrolled here?*
 
 This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) 
 
-This is rendered with  This facility has room for {capacity} kids
+This is rendered with  `This facility has room for {capacity} kids`
 
  
 
