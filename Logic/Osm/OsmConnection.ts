@@ -16,9 +16,12 @@ export default class UserDetails {
     public csCount = 0
     public img: string
     public unreadMessages = 0
-    public totalMessages = 0
-    home: { lon: number; lat: number }
+    public totalMessages: number = 0
+    public home: { lon: number; lat: number }
     public backend: string
+    public account_created: string;
+    public tracesCount: number = 0;
+    public description: string;
 
     constructor(backend: string) {
         this.backend = backend
@@ -209,16 +212,22 @@ export class OsmConnection {
                 data.loggedIn = true
                 console.log("Login completed, userinfo is ", userInfo)
                 data.name = userInfo.getAttribute("display_name")
+                data.account_created = userInfo.getAttribute("account_created")
                 data.uid = Number(userInfo.getAttribute("id"))
-                data.csCount = userInfo.getElementsByTagName("changesets")[0].getAttribute("count")
+                data.csCount = Number.parseInt( userInfo.getElementsByTagName("changesets")[0].getAttribute("count") ?? 0)
+                data.tracesCount = Number.parseInt( userInfo.getElementsByTagName("changesets")[0].getAttribute("count") ?? 0)
 
                 data.img = undefined
                 const imgEl = userInfo.getElementsByTagName("img")
                 if (imgEl !== undefined && imgEl[0] !== undefined) {
                     data.img = imgEl[0].getAttribute("href")
                 }
-                data.img = data.img ?? Img.AsData(Svg.osm_logo)
+                data.img = data.img ?? Img.AsData(Svg.person_img)
 
+                const description = userInfo.getElementsByTagName("description")
+                if (description !== undefined && description[0] !== undefined) {
+                    data.description = description[0]?.innerHTML
+                }
                 const homeEl = userInfo.getElementsByTagName("home")
                 if (homeEl !== undefined && homeEl[0] !== undefined) {
                     const lat = parseFloat(homeEl[0].getAttribute("lat"))

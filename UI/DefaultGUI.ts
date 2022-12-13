@@ -6,7 +6,6 @@ import FullWelcomePaneWithTabs from "./BigComponents/FullWelcomePaneWithTabs"
 import MapControlButton from "./MapControlButton"
 import Svg from "../Svg"
 import Toggle from "./Input/Toggle"
-import UserBadge from "./BigComponents/UserBadge"
 import SearchAndGo from "./BigComponents/SearchAndGo"
 import BaseUIElement from "./BaseUIElement"
 import LeftControls from "./BigComponents/LeftControls"
@@ -25,6 +24,11 @@ import Combine from "./Base/Combine"
 import AddNewMarker from "./BigComponents/AddNewMarker"
 import FilteredLayer from "../Models/FilteredLayer"
 import ExtraLinkButton from "./BigComponents/ExtraLinkButton"
+import {VariableUiElement} from "./Base/VariableUIElement";
+import Img from "./Base/Img";
+import UserInformationPanel from "./BigComponents/UserInformation";
+import {LoginToggle} from "./Popup/LoginButton";
+import {FixedUiElement} from "./Base/FixedUiElement";
 
 /**
  * The default MapComplete GUI initializer
@@ -180,14 +184,38 @@ export default class DefaultGUI {
 
         const self = this
         new Combine([
-            Toggle.If(state.featureSwitchUserbadge, () => new UserBadge(state)),
+            Toggle.If(state.featureSwitchUserbadge, () => {
+
+                const userInfo = new UserInformationPanel(state)
+
+                const mapControl = new MapControlButton(
+                        new VariableUiElement(state.osmConnection.userDetails.map(ud => {
+                            if (ud?.img === undefined) {
+                                return Svg.person_ui().SetClass("mt-1 block")
+                            }
+                            return new Img(ud?.img);
+                        })).SetClass("block rounded-full overflow-hidden"),
+                        {
+                            dontStyle: true
+                        }
+                    ).onClick(() => userInfo.Activate());
+
+                return new LoginToggle(
+                    mapControl, Translations.t.general.loginWithOpenStreetMap, state
+                )
+
+
+
+            }),
             Toggle.If(
                 state.featureSwitchExtraLinkEnabled,
                 () => new ExtraLinkButton(state, state.layoutToUse.extraLink)
             ),
+            Toggle.If(state.featureSwitchWelcomeMessage, () => self.InitWelcomeMessage()),
+            Toggle.If(state.featureSwitchIsTesting, () => new FixedUiElement("TESTING").SetClass("alert m-2 border-2 border-black"))
         ])
             .SetClass("flex flex-col")
-            .AttachTo("userbadge")
+            .AttachTo("top-left")
 
         new Combine([
             new ExtraLinkButton(state, {
@@ -201,11 +229,8 @@ export default class DefaultGUI {
             .SetClass("flex items-center justify-center normal-background h-full")
             .AttachTo("on-small-screen")
 
-        Toggle.If(state.featureSwitchSearch, () => new SearchAndGo(state)).AttachTo("searchbox")
+        Toggle.If(state.featureSwitchSearch, () => new SearchAndGo(state).SetClass("shadow rounded-full h-min w-full overflow-hidden sm:max-w-sm pointer-events-auto")).AttachTo("top-right")
 
-        Toggle.If(state.featureSwitchWelcomeMessage, () => self.InitWelcomeMessage()).AttachTo(
-            "messagesbox"
-        )
 
         new LeftControls(state, guiState).AttachTo("bottom-left")
         new RightControls(state).AttachTo("bottom-right")

@@ -16,7 +16,7 @@ import Title from "./Title"
  *
  */
 export default class ScrollableFullScreen {
-    private static readonly empty = new FixedUiElement("")
+    private static readonly empty = ScrollableFullScreen.initEmpty()
     private static _currentlyOpen: ScrollableFullScreen
     public isShown: UIEventSource<boolean>
     private hashToShow: string
@@ -61,6 +61,7 @@ export default class ScrollableFullScreen {
                 }
             })
         }
+
         isShown.addCallback((isShown) => {
             if (isShown) {
                 // We first must set the hash, then activate the panel
@@ -68,8 +69,13 @@ export default class ScrollableFullScreen {
                 if (setHash) {
                     Hash.hash.setData(hashToShow)
                 }
+                ScrollableFullScreen._currentlyOpen = self
                 self.Activate()
+
             } else {
+                if(self.hashToShow !== undefined){
+                    Hash.hash.setData(undefined)
+                }
                 // Some cleanup...
                 ScrollableFullScreen.collapse()
 
@@ -77,6 +83,18 @@ export default class ScrollableFullScreen {
         })
     }
 
+    private static initEmpty(): FixedUiElement{
+
+        document.addEventListener("keyup", function (event) {
+            if (event.code === "Escape") {
+                ScrollableFullScreen.collapse()
+                event.preventDefault()
+            }
+        })
+
+        return new FixedUiElement("")
+
+    }
     public static collapse(){
         const fs = document.getElementById("fullscreen")
         if (fs !== null) {
@@ -84,7 +102,10 @@ export default class ScrollableFullScreen {
             fs.classList.add("hidden")
         }
 
-        ScrollableFullScreen._currentlyOpen?.isShown?.setData(false)
+        const opened = ScrollableFullScreen._currentlyOpen
+        if( opened !== undefined){
+       opened?.isShown?.setData(false)
+        }
     }
 
     Destroy() {

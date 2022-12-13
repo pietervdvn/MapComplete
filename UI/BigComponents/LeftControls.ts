@@ -13,6 +13,7 @@ import { VariableUiElement } from "../Base/VariableUIElement"
 import FeatureInfoBox from "../Popup/FeatureInfoBox"
 import CopyrightPanel from "./CopyrightPanel"
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
+import {FixedUiElement} from "../Base/FixedUiElement";
 
 export default class LeftControls extends Combine {
     constructor(

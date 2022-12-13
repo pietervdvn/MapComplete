@@ -24,7 +24,7 @@ class LoginButton extends SubtleButton {
 
 export class LoginToggle extends VariableUiElement {
     constructor(
-        el,
+        el: BaseUIElement,
         text: BaseUIElement | string,
         state: {
             osmConnection: OsmConnection
