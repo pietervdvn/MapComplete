@@ -80,9 +80,7 @@
             "donate": "A MapComplete pénzügyi támogatása",
             "editId": "Az OpenStreetMap online szerkesztőjének megnyitása itt",
             "editJosm": "Szerkesztés itt JOSM-mal",
-            "followBridge": "A Mastodon- és Twitter-fiókok összekapcsolódnak",
             "followOnMastodon": "Kövesse a MapComplete-et a Mastodonon",
-            "followOnTwitter": "Kövesse a MapComplete-et a Twitteren",
             "iconAttribution": {
                 "title": "Felhasznált ikonok"
             },

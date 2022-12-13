@@ -546,9 +546,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     /**
      * Walks the specified path into the object till the end.
      *
-     * If a list is encountered, this is tranparently walked recursively on every object.
+     * If a list is encountered, this is transparently walked recursively on every object.
+     * If 'null' or 'undefined' is encountered, this method stops
      *
-     * The leaf objects are replaced in the object itself by the specified function
+     * The leaf objects are replaced in the object itself by the specified function.
      */
     public static WalkPath(
         path: string[],
@@ -569,6 +570,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     object[head] = leaf.map((o) => replaceLeaf(o, travelledPath))
                 } else {
                     object[head] = replaceLeaf(leaf, travelledPath)
+                    if(object[head] === undefined){
+                        delete object[head]
+                    }
                 }
             }
             return

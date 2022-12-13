@@ -89,9 +89,7 @@
             "donate": "財務上支援 MapComplete",
             "editId": "開啟開放街圖線上編輯器",
             "editJosm": "採用 JOSM 編輯",
-            "followBridge": "已經連結 Mastodon 與 Twitter 帳號",
             "followOnMastodon": "在 Mastodon 追蹤 MapComplete",
-            "followOnTwitter": "在 Twitter 追蹤 MapComplete",
             "iconAttribution": {
                 "title": "使用的圖示"
             },
