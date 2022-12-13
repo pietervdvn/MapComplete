@@ -154,7 +154,7 @@
                                 "then": "Hier wonen geen permanente gasten"
                             },
                             "2": {
-                                "then": "Hier kan je enkel verblijven met een langetermijnscontract (deze plaats zal verborgen worden van deze kaart als je dit kiest)"
+                                "then": "Hier kan je enkel verblijven met een langetermijnscontract (deze plaats verdwijnt van deze kaart als je dit kiest)"
                             }
                         },
                         "question": "Kan men hier plekken huren voor langere termijn?"
@@ -882,7 +882,8 @@
     },
     "maxspeed": {
         "shortDescription": "Deze kaart toont de maximumsnelheid voor elke straat.",
-        "title": "Maximale snelheden"
+        "title": "Maximale snelheden",
+        "description": "Deze kaart toont de maximum toegestane snelheid voor elke weg. Als er een maximumsnelheid mist of niet klopt, kan je hem hier aanpassen."
     },
     "nature": {
         "description": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ...",
@@ -1260,17 +1261,23 @@
                 },
                 "tagRenderings": {
                     "contributor": {
-                        "render": "Wijziging gemaakt door <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                        "render": "Wijziging gemaakt door <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>",
+                        "question": "Welke bijdrager heeft deze wijziging gemaakt?"
                     },
                     "theme-id": {
                         "render": "Wijziging met thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
                         "question": "Welk thema is gebruikt voor deze wijziging?"
                     },
                     "host": {
-                        "render": "Wijziging met <a href='{host}'>{host}</a>"
+                        "render": "Wijziging met <a href='{host}'>{host}</a>",
+                        "question": "Met welke host (website) is deze wijziging gemaakt?"
                     },
                     "show_changeset_id": {
                         "render": "Wijzigingenset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "locale": {
+                        "render": "Taal van gebruiker is {locale}",
+                        "question": "In welke taal is deze wijziging gemaakt?"
                     }
                 },
                 "filter": {
@@ -1323,7 +1330,8 @@
                             }
                         }
                     }
-                }
+                },
+                "name": "Middelpunten wijzigingensets"
             },
             "1": {
                 "override": {
@@ -1349,5 +1357,14 @@
     "maproulette": {
         "title": "MapRoulette taken",
         "description": "Thema met MapRoulette taken, waar je ze kunt zoeken, filteren en ze oplossen."
+    },
+    "osm_community_index": {
+        "description": "Een lijst van hulpmiddelen van gebruikers van OpenStreetMap. 'Hulpmiddelen' kunnen fora, meetups, Slack groepen, IRC kanalen, mailinglijsten, en meer zijn. Alles dat mappers, vooral beginners, nuttig of behulpzaam kunnen vinden.",
+        "shortDescription": "Een overzicht van hulpbronnen voor OpenStreetMap van de community.",
+        "title": "OSM Community Overzicht"
+    },
+    "blind_osm": {
+        "title": "OSM voor blinden",
+        "description": "Help zaken die relevant zijn voor blinden in kaart te brengen"
     }
 }
