@@ -149,9 +149,7 @@ export default class CopyrightPanel extends Combine {
             ),
             new SubtleButton(
                 Svg.mastodon_ui(),
-                new Combine([t.followOnMastodon.SetClass("font-bold"), t.followBridge]).SetClass(
-                    "flex flex-col"
-                ),
+                t.followOnMastodon,
                 {
                     url: "https://en.osm.town/web/notifications",
                     newTab: true,
