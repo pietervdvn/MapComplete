@@ -158,11 +158,6 @@ export default class CopyrightPanel extends Combine {
                     imgSize,
                 }
             ),
-            new SubtleButton(Svg.twitter_ui(), t.followOnTwitter, {
-                url: "https://twitter.com/mapcomplete",
-                newTab: true,
-                imgSize,
-            }),
             new OpenIdEditor(state, iconStyle),
             new MapillaryLink(state, iconStyle),
             new OpenJosm(state, iconStyle),
