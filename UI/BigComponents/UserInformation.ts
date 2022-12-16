@@ -127,7 +127,7 @@ class UserInformationMainPanel extends Combine {
                         new ImportViewerLinks(osmConnection),
                         new SubtleButton(Svg.logout_svg(), Translations.t.general.logout, {
                             imgSize,
-                        }).onClick(osmConnection.LogOut),
+                        }).onClick(() => {osmConnection.LogOut()}),
                     ])
                 })
             ).SetClass("flex flex-col"),
