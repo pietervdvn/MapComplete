@@ -14,6 +14,27 @@ import BaseUIElement from "../BaseUIElement";
 import Showdown from "showdown"
 import LanguagePicker from "../LanguagePicker";
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
+import Constants from "../../Models/Constants";
+
+export class ImportViewerLinks extends VariableUiElement {
+    constructor(osmConnection: OsmConnection) {
+        super(
+            osmConnection.userDetails.map((ud) => {
+                if (ud.csCount < Constants.userJourney.importHelperUnlock) {
+                    return undefined
+                }
+                return new Combine([
+                    new SubtleButton(undefined, Translations.t.importHelper.title, {
+                        url: "import_helper.html",
+                    }),
+                    new SubtleButton(Svg.note_svg(), Translations.t.importInspector.title, {
+                        url: "import_viewer.html",
+                    }),
+                ])
+            })
+        )
+    }
+}
 
 class UserInformationMainPanel extends Combine {
     constructor(osmConnection: OsmConnection, locationControl: UIEventSource<Loc>, layout: LayoutConfig) {
@@ -71,15 +92,16 @@ class UserInformationMainPanel extends Combine {
 
                     return new Combine([
                         new Combine([img, description]).SetClass("flex border border-black rounded-md"),
-                new LanguagePicker(layout.language, Translations.t.general.pickLanguage.Clone()),
+                        new LanguagePicker(layout.language, Translations.t.general.pickLanguage.Clone()),
 
-                new SubtleButton(Svg.envelope_svg(), new Combine([t.gotoInbox,
+                        new SubtleButton(Svg.envelope_svg(), new Combine([t.gotoInbox,
                                 ud.unreadMessages == 0 ? undefined : t.newMessages.SetClass("alert block")
                             ]),
                             {imgSize, url: `${ud.backend}/messages/inbox`, newTab: true}),
                         new SubtleButton(Svg.gear_svg(), t.gotoSettings,
                             {imgSize, url: `${ud.backend}/user/${encodeURIComponent(ud.name)}/account`, newTab: true}),
                         panToHome,
+                        new ImportViewerLinks(osmConnection),
                         new SubtleButton(Svg.logout_svg(), Translations.t.general.logout, {imgSize}).onClick(osmConnection.LogOut)
 
                     ])
@@ -94,7 +116,8 @@ class UserInformationMainPanel extends Combine {
 export default class UserInformationPanel extends ScrollableFullScreen {
     constructor(state: {
         layoutToUse: LayoutConfig;
-        osmConnection: OsmConnection, locationControl: UIEventSource<Loc> }) {
+        osmConnection: OsmConnection, locationControl: UIEventSource<Loc>
+    }) {
         const t = Translations.t.general;
         super(
             () => {
