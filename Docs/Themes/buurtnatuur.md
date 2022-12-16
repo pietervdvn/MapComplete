@@ -15,6 +15,7 @@ This theme contains the following layers:
   - [parks](../Layers/parks.md)
   - [forest](../Layers/forest.md)
   - [viewpoint](../Layers/viewpoint.md)
+  - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)

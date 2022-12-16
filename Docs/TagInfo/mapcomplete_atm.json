@@ -1,0 +1,31 @@
+{
+  "data_format": 1,
+  "project": {
+    "name": "MapComplete ATM Machines",
+    "description": "This map shows ATMs to withdraw or deposit money",
+    "project_url": "https://mapcomplete.osm.be/atm",
+    "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
+    "icon_url": "https://mapcomplete.osm.be/assets/themes/atm/logo.svg",
+    "contact_name": "Pieter Vander Vennet",
+    "contact_email": "pietervdvn@posteo.net"
+  },
+  "tags": [
+    {
+      "key": "amenity",
+      "description": "The MapComplete theme ATM Machines has a layer ATMs showing features with this tag",
+      "value": "atm"
+    },
+    {
+      "key": "brand",
+      "description": "Layer 'ATMs' shows and asks freeform values for key 'brand' (in the MapComplete.osm.be theme 'ATM Machines')"
+    },
+    {
+      "key": "operator",
+      "description": "Layer 'ATMs' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'ATM Machines')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'ATMs' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'ATM Machines')"
+    }
+  ]
+}

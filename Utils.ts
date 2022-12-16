@@ -1,5 +1,6 @@
 import * as colors from "./assets/colors.json"
 
+
 export class Utils {
     /**
      * In the 'deploy'-step, some code needs to be run by ts-node.
@@ -138,7 +139,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         "false",
     ]
     private static injectedDownloads = {}
-    private static _download_cache = new Map<string, { promise: Promise<any>; timestamp: number }>()
+    private static _download_cache = new Map<string, { promise: Promise<any | {error: string, url: string, statuscode?: number}>; timestamp: number }>()
 
     /**
      * Parses the arguments for special visualisations
@@ -545,9 +546,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     /**
      * Walks the specified path into the object till the end.
      *
-     * If a list is encountered, this is tranparently walked recursively on every object.
+     * If a list is encountered, this is transparently walked recursively on every object.
+     * If 'null' or 'undefined' is encountered, this method stops
      *
-     * The leaf objects are replaced in the object itself by the specified function
+     * The leaf objects are replaced in the object itself by the specified function.
      */
     public static WalkPath(
         path: string[],
@@ -568,6 +570,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                     object[head] = leaf.map((o) => replaceLeaf(o, travelledPath))
                 } else {
                     object[head] = replaceLeaf(leaf, travelledPath)
+                    if(object[head] === undefined){
+                        delete object[head]
+                    }
                 }
             }
             return
@@ -797,7 +802,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     public static async download(url: string, headers?: any): Promise<string | undefined> {
-        return (await Utils.downloadAdvanced(url, headers))["content"]
+        const result = await Utils.downloadAdvanced(url, headers)
+        if(result["error"] !== undefined){
+            throw result["error"]
+        }
+        return result["content"]
     }
 
     /**
@@ -807,12 +816,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     public static downloadAdvanced(
         url: string,
-        headers?: any
-    ): Promise<{ content: string } | { redirect: string }> {
+        headers?: any,
+    ): Promise<{ content: string } | { redirect: string } | { error: string,url: string, statuscode?: number}> {
         if (this.externalDownloadFunction !== undefined) {
             return this.externalDownloadFunction(url, headers)
         }
 
+        console.trace("Fetching XHR", url)
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest()
             xhr.onload = () => {
@@ -821,9 +831,9 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 } else if (xhr.status === 302) {
                     resolve({ redirect: xhr.getResponseHeader("location") })
                 } else if (xhr.status === 509 || xhr.status === 429) {
-                    reject("rate limited")
+                    resolve ({error: "rate limited", url, statuscode: xhr.status})
                 } else {
-                    reject("Could not download " + url + " due to " + xhr.statusText)
+                    resolve ({error: "other error: "+xhr.statusText, url, statuscode: xhr.status})
                 }
             }
             xhr.open("GET", url)
@@ -867,13 +877,25 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         maxCacheTimeMs: number,
         headers?: any
     ): Promise<any> {
+        const result = await Utils.downloadJsonAdvanced(url, headers)
+        if(result["content"]){
+            return result["content"]
+        }
+        throw result["error"]
+    }
+
+    public static async downloadJsonCachedAdvanced(
+        url: string,
+        maxCacheTimeMs: number,
+        headers?: any
+    ): Promise<any | {error: string, url: string, statuscode?: number}> {
         const cached = Utils._download_cache.get(url)
         if (cached !== undefined) {
             if (new Date().getTime() - cached.timestamp <= maxCacheTimeMs) {
                 return cached.promise
             }
         }
-        const promise = /*NO AWAIT as we work with the promise directly */ Utils.downloadJson(
+        const promise = /*NO AWAIT as we work with the promise directly */ Utils.downloadJsonAdvanced(
             url,
             headers
         )
@@ -882,25 +904,39 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     public static async downloadJson(url: string, headers?: any): Promise<any> {
+        const result = await Utils.downloadJsonAdvanced(url, headers)
+        if(result["content"]){
+            return result["content"]
+        }
+        throw result["error"]
+    }
+
+
+    public static async downloadJsonAdvanced(url: string, headers?: any): Promise<{content: any} | {error: string, url: string, statuscode?: number}> {
         const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
             console.log("Using injected resource for test for URL", url)
-            return new Promise((resolve, _) => resolve(injected))
+            return new Promise((resolve, _) => resolve({content: injected}))
         }
-        const data = await Utils.download(
+        const result = await Utils.downloadAdvanced(
             url,
             Utils.Merge({ accept: "application/json" }, headers ?? {})
         )
+        if(result["error"] !== undefined){
+            return <{error: string, url: string, statuscode?: number}> result
+        }
+        const data = result["content"]
         try {
             if (typeof data === "string") {
-                return JSON.parse(data)
+                return {content: JSON.parse(data)}
             }
-            return data
+            return {"content": data}
         } catch (e) {
             console.error("Could not parse ", data, "due to", e, "\n", e.stack)
-            throw e
+            return {error: "malformed", url}
         }
     }
+
 
     /**
      * Triggers a 'download file' popup which will download the contents
@@ -1221,4 +1257,20 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         d.setUTCMilliseconds(0)
         d.setUTCMinutes(0)
     }
+
+    public static findParentWithScrolling(element: HTMLElement): HTMLElement {
+        // Check if the element itself has scrolling
+        if (element.scrollHeight > element.clientHeight) {
+            return element;
+        }
+
+        // If the element does not have scrolling, check if it has a parent element
+        if (!element.parentElement) {
+            return null;
+        }
+
+        // If the element has a parent, repeat the process for the parent element
+        return Utils.findParentWithScrolling(element.parentElement);
+    }
+
 }

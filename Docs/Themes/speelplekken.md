@@ -19,6 +19,7 @@ This theme contains the following layers:
   - [sport_pitch](../Layers/sport_pitch.md)
   - [slow_roads](../Layers/slow_roads.md)
   - [walking_routes](../Layers/walking_routes.md)
+  - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)

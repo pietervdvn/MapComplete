@@ -26,10 +26,10 @@ export default class Table extends BaseUIElement {
 
     AsMarkdown(): string {
         const headerMarkdownParts = this._header.map((hel) => hel?.AsMarkdown() ?? " ")
-        const header = headerMarkdownParts.join(" | ")
+        const header = Utils.NoNull(headerMarkdownParts).join(" | ")
         const headerSep = headerMarkdownParts.map((part) => "-".repeat(part.length + 2)).join(" | ")
         const table = this._contents
-            .map((row) => row.map((el) => el.AsMarkdown() ?? " ").join(" | "))
+            .map((row) => row.map((el) => el?.AsMarkdown()?.replace("|", "\\|") ?? " ").join(" | "))
             .join("\n")
 
         return "\n\n" + [header, headerSep, table, ""].join("\n")

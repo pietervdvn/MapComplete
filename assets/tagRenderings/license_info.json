@@ -1,5 +1,93 @@
 [
   {
+    "path": "10cent.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/311337/worksheet-10-cent-coloured"
+    ]
+  },
+  {
+    "path": "1cent.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/311334/worksheet-1-cent-coloured"
+    ]
+  },
+  {
+    "path": "1euro.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/311340/worksheet-1-euro-coloured"
+    ]
+  },
+  {
+    "path": "20cent.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/311338/worksheet-20-cent-coloured"
+    ]
+  },
+  {
+    "path": "2cent.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/311335/worksheet-2-cent-coloured"
+    ]
+  },
+  {
+    "path": "2euro.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/311341/worksheet-2-euro-coloured"
+    ]
+  },
+  {
+    "path": "50cent.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/311339/worksheet-50-cent-coloured"
+    ]
+  },
+  {
+    "path": "5cent.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/311336/worksheet-5-cent-coloured"
+    ]
+  },
+  {
     "path": "audio_induction_loop.svg",
     "license": "CC-BY 4.0",
     "authors": [
@@ -30,6 +118,16 @@
     ]
   },
   {
+    "path": "coins.svg",
+    "license": "CC-BY 3.0",
+    "authors": [
+      "Online Web Fonts"
+    ],
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/464488"
+    ]
+  },
+  {
     "path": "nfc_card.svg",
     "license": "CC0",
     "authors": [
@@ -48,6 +146,16 @@
     "sources": [
       "https://upload.wikimedia.org/wikipedia/commons/6/6b/No_Smoking.svg",
       "https://www.aiga.org/content.cfm/symbol-signs"
+    ]
+  },
+  {
+    "path": "notes.svg",
+    "license": "CC-BY 3.0",
+    "authors": [
+      "Online Web Fonts"
+    ],
+    "sources": [
+      "https://www.onlinewebfonts.com/icon/464507"
     ]
   },
   {

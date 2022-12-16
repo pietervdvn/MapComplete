@@ -14,6 +14,7 @@ This theme contains the following layers:
   - [postal_code_boundary](../Layers/postal_code_boundary.md)
   - [wrong_postal_code](../Layers/wrong_postal_code.md)
   - [town_hall](../Layers/town_hall.md)
+  - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)

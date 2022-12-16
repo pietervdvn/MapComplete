@@ -96,17 +96,17 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What kind of crossing is this?
+The question is  *What kind of crossing is this?*
 
 
 
 
 
-  - Crossing, without traffic lights  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:crossing' target='_blank'>crossing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing%3Duncontrolled' target='_blank'>uncontrolled</a>`
-  - Crossing with traffic signals  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:crossing' target='_blank'>crossing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing%3Dtraffic_signals' target='_blank'>traffic_signals</a>`
-  - Zebra crossing  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:crossing' target='_blank'>crossing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing%3Dzebra' target='_blank'>zebra</a>`
+  - *Crossing, without traffic lights*  corresponds with  `crossing=uncontrolled`
+  - *Crossing with traffic signals*  corresponds with  `crossing=traffic_signals`
+  - *Zebra crossing*  corresponds with  `crossing=zebra`
   - This option cannot be chosen as answer
-  - Crossing without crossing markings  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:crossing' target='_blank'>crossing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing%3Dunmarked' target='_blank'>unmarked</a>`
+  - *Crossing without crossing markings*  corresponds with  `crossing=unmarked`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `highway=crossing`
@@ -117,14 +117,14 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  Is this is a zebra crossing?
+The question is  *Is this is a zebra crossing?*
 
 
 
 
 
-  - This is a zebra crossing  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:crossing_ref' target='_blank'>crossing_ref</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing_ref%3Dzebra' target='_blank'>zebra</a>`
-  - This is not a zebra crossing  corresponds with  ``
+  - *This is a zebra crossing*  corresponds with  `crossing_ref=zebra`
+  - *This is not a zebra crossing*  corresponds with  ``
 
 
 This tagrendering is only visible in the popup if the following condition is met: `crossing=uncontrolled`
@@ -135,14 +135,14 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  Is this crossing also for bicycles?
+The question is  *Is this crossing also for bicycles?*
 
 
 
 
 
-  - A cyclist can use this crossing  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dyes' target='_blank'>yes</a>`
-  - A cyclist can not use this crossing  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Dno' target='_blank'>no</a>`
+  - *A cyclist can use this crossing*  corresponds with  `bicycle=yes`
+  - *A cyclist can not use this crossing*  corresponds with  `bicycle=no`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `highway=crossing`
@@ -153,14 +153,14 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  Does this crossing have an island in the middle?
+The question is  *Does this crossing have an island in the middle?*
 
 
 
 
 
-  - This crossing has an island in the middle  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:crossing:island' target='_blank'>crossing:island</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing:island%3Dyes' target='_blank'>yes</a>`
-  - This crossing does not have an island in the middle  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:crossing:island' target='_blank'>crossing:island</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing:island%3Dno' target='_blank'>no</a>`
+  - *This crossing has an island in the middle*  corresponds with  `crossing:island=yes`
+  - *This crossing does not have an island in the middle*  corresponds with  `crossing:island=no`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `highway=crossing`
@@ -171,15 +171,15 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  Does this crossing have tactile paving?
+The question is  *Does this crossing have tactile paving?*
 
 
 
 
 
-  - This crossing has tactile paving  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dyes' target='_blank'>yes</a>`
-  - This crossing does not have tactile paving  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dno' target='_blank'>no</a>`
-  - This crossing has tactile paving, but is not correct  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:tactile_paving' target='_blank'>tactile_paving</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_paving%3Dincorrect' target='_blank'>incorrect</a>`
+  - *This crossing has tactile paving*  corresponds with  `tactile_paving=yes`
+  - *This crossing does not have tactile paving*  corresponds with  `tactile_paving=no`
+  - *This crossing has tactile paving, but is not correct*  corresponds with  `tactile_paving=incorrect`
   - This option cannot be chosen as answer
 
 
@@ -191,14 +191,14 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  Does this traffic light have a button to request green light?
+The question is  *Does this traffic light have a button to request green light?*
 
 
 
 
 
-  - This traffic light has a button to request green light  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:button_operated' target='_blank'>button_operated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:button_operated%3Dyes' target='_blank'>yes</a>`
-  - This traffic light does not have a button to request green light  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:button_operated' target='_blank'>button_operated</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:button_operated%3Dno' target='_blank'>no</a>`
+  - *This traffic light has a button to request green light*  corresponds with  `button_operated=yes`
+  - *This traffic light does not have a button to request green light*  corresponds with  `button_operated=no`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `highway=traffic_signals|crossing=traffic_signals`
@@ -209,16 +209,16 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  Does this traffic light have sound signals to aid crossing?
+The question is  *Does this traffic light have sound signals to aid crossing?*
 
 
 
 
 
-  - This traffic light has sound signals to help crossing, both for finding the crossing and for crossing.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:sound' target='_blank'>traffic_signals:sound</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:sound%3Dyes' target='_blank'>yes</a>`
-  - This traffic light does not have sound signals to help crossing.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:sound' target='_blank'>traffic_signals:sound</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:sound%3Dno' target='_blank'>no</a>`
-  - This traffic light has a sound signal to help locate the pole, but no signal to sign that it is safe to cross.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:sound' target='_blank'>traffic_signals:sound</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:sound%3Dlocate' target='_blank'>locate</a>`
-  - This traffic light has a sound signal to sign that it is safe to cross, but no signal to help locate the pole.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:sound' target='_blank'>traffic_signals:sound</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:sound%3Dwalk' target='_blank'>walk</a>`
+  - *This traffic light has sound signals to help crossing, both for finding the crossing and for crossing.*  corresponds with  `traffic_signals:sound=yes`
+  - *This traffic light does not have sound signals to help crossing.*  corresponds with  `traffic_signals:sound=no`
+  - *This traffic light has a sound signal to help locate the pole, but no signal to sign that it is safe to cross.*  corresponds with  `traffic_signals:sound=locate`
+  - *This traffic light has a sound signal to sign that it is safe to cross, but no signal to help locate the pole.*  corresponds with  `traffic_signals:sound=walk`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `crossing=traffic_signals`
@@ -229,14 +229,14 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  Does this traffic light have vibration signals to aid crossing? (usually located at the bottom of the crossing button)
+The question is  *Does this traffic light have vibration signals to aid crossing? (usually located at the bottom of the crossing button)*
 
 
 
 
 
-  - The button for this traffic light has a vibration signal to indicate that it is safe to cross.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:vibration' target='_blank'>traffic_signals:vibration</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:vibration%3Dyes' target='_blank'>yes</a>`
-  - The button for this traffic light does not have a vibration signal to indicate that it is safe to cross.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:vibration' target='_blank'>traffic_signals:vibration</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:vibration%3Dno' target='_blank'>no</a>`
+  - *The button for this traffic light has a vibration signal to indicate that it is safe to cross.*  corresponds with  `traffic_signals:vibration=yes`
+  - *The button for this traffic light does not have a vibration signal to indicate that it is safe to cross.*  corresponds with  `traffic_signals:vibration=no`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `crossing=traffic_signals&button_operated=yes`
@@ -247,14 +247,14 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  Does this traffic light have an arrow pointing in the direction of crossing?
+The question is  *Does this traffic light have an arrow pointing in the direction of crossing?*
 
 
 
 
 
-  - This traffic light has an arrow pointing in the direction of crossing.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:arrow' target='_blank'>traffic_signals:arrow</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:arrow%3Dyes' target='_blank'>yes</a>`
-  - This traffic light does <b>not</b> have an arrow pointing in the direction of crossing.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:arrow' target='_blank'>traffic_signals:arrow</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:arrow%3Dno' target='_blank'>no</a>`
+  - *This traffic light has an arrow pointing in the direction of crossing.*  corresponds with  `traffic_signals:arrow=yes`
+  - *This traffic light does <b>not</b> have an arrow pointing in the direction of crossing.*  corresponds with  `traffic_signals:arrow=no`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `crossing=traffic_signals`
@@ -265,14 +265,14 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  Does this traffic light have a tactile map showing the layout of the crossing?
+The question is  *Does this traffic light have a tactile map showing the layout of the crossing?*
 
 
 
 
 
-  - This traffic light has a tactile map showing the layout of the crossing.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:minimap' target='_blank'>traffic_signals:minimap</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:minimap%3Dyes' target='_blank'>yes</a>`
-  - This traffic light does <b>not</b> have a tactile map showing the layout of the crossing.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_signals:minimap' target='_blank'>traffic_signals:minimap</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_signals:minimap%3Dno' target='_blank'>no</a>`
+  - *This traffic light has a tactile map showing the layout of the crossing.*  corresponds with  `traffic_signals:minimap=yes`
+  - *This traffic light does <b>not</b> have a tactile map showing the layout of the crossing.*  corresponds with  `traffic_signals:minimap=no`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `crossing=traffic_signals`
@@ -283,15 +283,15 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  Can a cyclist turn right when the light is red?
+The question is  *Can a cyclist turn right when the light is red?*
 
 
 
 
 
-  - A cyclist can turn right if the light is red  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:right:bicycle' target='_blank'>red_turn:right:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dyes' target='_blank'>yes</a>`
-  - A cyclist can turn right if the light is red  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:right:bicycle' target='_blank'>red_turn:right:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dyes' target='_blank'>yes</a>`
-  - A cyclist can not turn right if the light is red  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:right:bicycle' target='_blank'>red_turn:right:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:right:bicycle%3Dno' target='_blank'>no</a>`
+  - *A cyclist can turn right if the light is red*  corresponds with  `red_turn:right:bicycle=yes`
+  - *A cyclist can turn right if the light is red*  corresponds with  `red_turn:right:bicycle=yes`
+  - *A cyclist can not turn right if the light is red*  corresponds with  `red_turn:right:bicycle=no`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `highway=traffic_signals`
@@ -302,17 +302,33 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  Can a cyclist go straight on when the light is red?
+The question is  *Can a cyclist go straight on when the light is red?*
 
 
 
 
 
-  - A cyclist can go straight on if the light is red  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:straight:bicycle' target='_blank'>red_turn:straight:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dyes' target='_blank'>yes</a>`
-  - A cyclist can go straight on if the light is red  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:straight:bicycle' target='_blank'>red_turn:straight:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dyes' target='_blank'>yes</a>`
-  - A cyclist can not go straight on if the light is red  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:red_turn:straight:bicycle' target='_blank'>red_turn:straight:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:red_turn:straight:bicycle%3Dno' target='_blank'>no</a>`
+  - *A cyclist can go straight on if the light is red*  corresponds with  `red_turn:straight:bicycle=yes`
+  - *A cyclist can go straight on if the light is red*  corresponds with  `red_turn:straight:bicycle=yes`
+  - *A cyclist can not go straight on if the light is red*  corresponds with  `red_turn:straight:bicycle=no`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `highway=traffic_signals` 
+This tagrendering is only visible in the popup if the following condition is met: `highway=traffic_signals`
+
+
+
+#### Filters 
+
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+tactile_paving_advanced.0 | With or without tactile paving (default) | 
+tactile_paving_advanced.1 | With tactile paving | tactile_paving=yes
+tactile_paving_advanced.2 | Without tactile paving | tactile_paving=no
+tactile_paving_advanced.3 | No information about tactile paving | 
+ 
 
 This document is autogenerated from [assets/layers/crossings/crossings.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/crossings/crossings.json)

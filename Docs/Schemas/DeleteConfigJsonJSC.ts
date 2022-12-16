@@ -60,6 +60,10 @@ export default {
     "neededChangesets": {
       "description": "*\nBy default, the contributor needs 20 previous changesets to delete points edited by others.\nFor some small features (e.g. bicycle racks) this is too much and this requirement can be lowered or dropped, which can be done here.",
       "type": "number"
+    },
+    "omitDefaultDeleteReasons": {
+      "description": "Set this flag if the default delete reasons should be omitted from the dialog.\nThis requires at least one extraDeleteReason or nonDeleteMapping",
+      "type": "boolean"
     }
   },
   "definitions": {

@@ -125,9 +125,7 @@
             "donate": "MapComplete finanziell unterstützen",
             "editId": "Den OpenStreetMap Editor öffnen",
             "editJosm": "Mit JOSM bearbeiten",
-            "followBridge": "Die Mastodon- und Twitter-Konten werden überbrückt",
             "followOnMastodon": "MapComplete auf Mastodon folgen",
-            "followOnTwitter": "MapComplete auf Twitter folgen",
             "iconAttribution": {
                 "title": "Verwendete Symbole"
             },

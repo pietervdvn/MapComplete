@@ -84,11 +84,11 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What is the reference number of this room?
+The question is  *What is the reference number of this room?*
 
 This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) 
 
-This is rendered with  This room has the reference number {ref}
+This is rendered with  `This room has the reference number {ref}`
 
 
 
@@ -100,11 +100,11 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  What is the name of this room?
+The question is  *What is the name of this room?*
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with  This room is named {name}
+This is rendered with  `This room is named {name}`
 
 
 

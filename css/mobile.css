@@ -8,14 +8,10 @@ Contains tweaks for small screens
         display: none !important;
     }
 
-    .desktop\:max-h-65vh {
-        max-height: 65vh;
-    }
-
 }
 
 
-@media only screen and (min-height: 300px) and (min-width: 225px) {
+@media only screen and (min-height: 175px) and (min-width: 175px) {
     .very-small-screen {
         display: none !important;
     }
@@ -27,7 +23,7 @@ Contains tweaks for small screens
 }
 
 
-@media not screen and (min-height: 300px) and (min-width: 225px) {
+@media not screen and (min-height: 175px) and (min-width: 175px) {
     .very-small-screen {
     }
 

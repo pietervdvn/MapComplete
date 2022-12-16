@@ -1,11 +1,13 @@
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import {Store, UIEventSource} from "../../Logic/UIEventSource"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import { ShowDataLayerOptions } from "./ShowDataLayerOptions"
-import { ElementStorage } from "../../Logic/ElementStorage"
+import {ShowDataLayerOptions} from "./ShowDataLayerOptions"
+import {ElementStorage} from "../../Logic/ElementStorage"
 import RenderingMultiPlexerFeatureSource from "../../Logic/FeatureSource/Sources/RenderingMultiPlexerFeatureSource"
 import ScrollableFullScreen from "../Base/ScrollableFullScreen"
+import {LeafletMouseEvent} from "leaflet";
+import Hash from "../../Logic/Web/Hash";
 /*
-// import 'leaflet-polylineoffset'; 
+// import 'leaflet-polylineoffset';
 We don't actually import it here. It is imported in the 'MinimapImplementation'-class, which'll result in a patched 'L' object.
  Even though actually importing this here would seem cleaner, we don't do this as this breaks some scripts:
  - Scripts are ran in ts-node
@@ -41,7 +43,7 @@ export default class ShowDataLayerImplementation {
      * Note: the key of this dictionary is 'feature.properties.id+features.geometry.type' as one feature might have multiple presentations
      * @private
      */
-    private readonly leafletLayersPerId = new Map<string, { feature: any; leafletlayer: any }>()
+    private readonly leafletLayersPerId = new Map<string, { feature: any; activateFunc: (event: LeafletMouseEvent) => void }>()
     private readonly showDataLayerid: number
     private readonly createPopup: (
         tags: UIEventSource<any>,
@@ -128,11 +130,7 @@ export default class ShowDataLayerImplementation {
         if (v === undefined) {
             return
         }
-        const leafletLayer = v.leafletlayer
         const feature = v.feature
-        if (leafletLayer.getPopup().isOpen()) {
-            return
-        }
         if (selected.properties.id !== feature.properties.id) {
             return
         }
@@ -143,11 +141,7 @@ export default class ShowDataLayerImplementation {
             console.log("Not opening the popup for", feature, "as probably renamed")
             return
         }
-        if (
-            selected.geometry.type === feature.geometry.type // If a feature is rendered both as way and as point, opening one popup might trigger the other to open, which might trigger the one to open again
-        ) {
-            leafletLayer.openPopup()
-        }
+        v.activateFunc(null)
     }
 
     private update(options: ShowDataLayerOptions): boolean {
@@ -292,7 +286,6 @@ export default class ShowDataLayerImplementation {
         // Leaflet cannot handle geojson points natively
         // We have to convert them to the appropriate icon
         // Click handling is done in the next step
-
         const layer: LayerConfig = this._layerToShow
         if (layer === undefined) {
             return
@@ -323,64 +316,58 @@ export default class ShowDataLayerImplementation {
      * @param leafletLayer
      * @private
      */
-    private postProcessFeature(feature, leafletLayer: L.Layer) {
+    private postProcessFeature(feature, leafletLayer: L.Evented) {
         const layer: LayerConfig = this._layerToShow
         if (layer.title === undefined || !this._enablePopups) {
             // No popup action defined -> Don't do anything
             // or probably a map in the popup - no popups needed!
             return
         }
-
-        const popup = L.popup(
-            {
-                autoPan: true,
-                closeOnEscapeKey: true,
-                closeButton: false,
-                autoPanPaddingTopLeft: [15, 15],
-            },
-            leafletLayer
-        )
-
-        leafletLayer.bindPopup(popup)
-
+        const key = feature.properties.id
+        if(this.leafletLayersPerId.has(key)){
+            const activate = this.leafletLayersPerId.get(key)
+            leafletLayer.addEventListener('click', activate.activateFunc)
+            if(Hash.hash.data === key ){
+                activate.activateFunc(null)
+            }
+            return;
+        }
         let infobox: ScrollableFullScreen = undefined
-        const id = `popup-${feature.properties.id}-${feature.geometry.type}-${
-            this.showDataLayerid
-        }-${this._cleanCount}-${feature.pointRenderingIndex ?? feature.lineRenderingIndex}-${
-            feature.multiLineStringIndex ?? ""
-        }`
-        popup.setContent(
-            `<div style='height: 65vh' id='${id}'>Popup for ${feature.properties.id} ${feature.geometry.type} ${id} is loading</div>`
-        )
-        const createpopup = this.createPopup
-        leafletLayer.on("popupopen", () => {
+        const self = this
+
+        function activate (event: LeafletMouseEvent) {
             if (infobox === undefined) {
                 const tags =
-                    this.allElements?.getEventSourceById(feature.properties.id) ??
+                    self.allElements?.getEventSourceById(key) ??
                     new UIEventSource<any>(feature.properties)
-                infobox = createpopup(tags, layer)
+                infobox = self.createPopup(tags, layer)
 
-                infobox.isShown.addCallback((isShown) => {
-                    if (!isShown) {
-                        leafletLayer.closePopup()
-                    }
+                self.unregister.push(() => {
+                    console.log("Destroying infobox")
+                    infobox.Destroy()
                 })
             }
-            infobox.AttachTo(id)
             infobox.Activate()
-            this.unregister.push(() => {
-                console.log("Destroying infobox")
-                infobox.Destroy()
-            })
-            if (this._selectedElement?.data?.properties?.id !== feature.properties.id) {
-                this._selectedElement?.setData(feature)
+            self._selectedElement.setData( self.allElements.ContainingFeatures.get(feature.id) ?? feature )
+            event?.originalEvent?.preventDefault()
+            event?.originalEvent?.stopPropagation()
+            event?.originalEvent?.stopImmediatePropagation()
+            if(event?.originalEvent){
+                // This is a total workaround, as 'preventDefault' and everything above seems to be not working
+                event.originalEvent["dismissed"] = true
             }
-        })
+        }
+
+        leafletLayer.addEventListener('click', activate)
+
 
         // Add the feature to the index to open the popup when needed
-        this.leafletLayersPerId.set(feature.properties.id + feature.geometry.type, {
+        this.leafletLayersPerId.set(key, {
             feature: feature,
-            leafletlayer: leafletLayer,
+            activateFunc: activate,
         })
+        if(Hash.hash.data === key ){
+            activate(null)
+        }
     }
 }

@@ -149,20 +149,13 @@ export default class CopyrightPanel extends Combine {
             ),
             new SubtleButton(
                 Svg.mastodon_ui(),
-                new Combine([t.followOnMastodon.SetClass("font-bold"), t.followBridge]).SetClass(
-                    "flex flex-col"
-                ),
+                t.followOnMastodon,
                 {
                     url: "https://en.osm.town/web/notifications",
                     newTab: true,
                     imgSize,
                 }
             ),
-            new SubtleButton(Svg.twitter_ui(), t.followOnTwitter, {
-                url: "https://twitter.com/mapcomplete",
-                newTab: true,
-                imgSize,
-            }),
             new OpenIdEditor(state, iconStyle),
             new MapillaryLink(state, iconStyle),
             new OpenJosm(state, iconStyle),

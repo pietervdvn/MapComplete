@@ -27,7 +27,6 @@ export class Tag extends TagsFilter {
     }
 
     /**
-     * imort
      *
      * const tag = new Tag("key","value")
      * tag.matchesProperties({"key": "value"}) // =>  true

@@ -19,6 +19,7 @@ This theme contains the following layers:
   - [toursistic_places_without_etymology](../Layers/toursistic_places_without_etymology.md)
   - [health_and_social_places_without_etymology](../Layers/health_and_social_places_without_etymology.md)
   - [sport_places_without_etymology](../Layers/sport_places_without_etymology.md)
+  - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)

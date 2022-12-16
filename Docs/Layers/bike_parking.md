@@ -88,24 +88,24 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What is the type of this bicycle parking?
+The question is  *What is the type of this bicycle parking?*
 
 This rendering asks information about the property  [bicycle_parking](https://wiki.openstreetmap.org/wiki/Key:bicycle_parking) 
 
-This is rendered with  This is a bicycle parking of the type: {bicycle_parking}
+This is rendered with  `This is a bicycle parking of the type: {bicycle_parking}`
 
 
 
 
 
-  - Staple racks  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dstands' target='_blank'>stands</a>`
-  - Wheel rack/loops  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dwall_loops' target='_blank'>wall_loops</a>`
-  - Handlebar holder  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dhandlebar_holder' target='_blank'>handlebar_holder</a>`
-  - Rack  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Drack' target='_blank'>rack</a>`
-  - Two-tiered  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dtwo_tier' target='_blank'>two_tier</a>`
-  - Shed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dshed' target='_blank'>shed</a>`
-  - Bollard  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dbollard' target='_blank'>bollard</a>`
-  - An area on the floor which is  marked for bicycle parking  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle_parking' target='_blank'>bicycle_parking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle_parking%3Dfloor' target='_blank'>floor</a>`
+  - *Staple racks*  corresponds with  `bicycle_parking=stands`
+  - *Wheel rack/loops*  corresponds with  `bicycle_parking=wall_loops`
+  - *Handlebar holder*  corresponds with  `bicycle_parking=handlebar_holder`
+  - *Rack*  corresponds with  `bicycle_parking=rack`
+  - *Two-tiered*  corresponds with  `bicycle_parking=two_tier`
+  - *Shed*  corresponds with  `bicycle_parking=shed`
+  - *Bollard*  corresponds with  `bicycle_parking=bollard`
+  - *An area on the floor which is  marked for bicycle parking*  corresponds with  `bicycle_parking=floor`
 
 
 
@@ -114,16 +114,16 @@ This is rendered with  This is a bicycle parking of the type: {bicycle_parking}
 
 
 
-The question is  What is the relative location of this bicycle parking?
+The question is  *What is the relative location of this bicycle parking?*
 
 
 
 
 
-  - Underground parking  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>`
-  - Surface level parking  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dsurface' target='_blank'>surface</a>`
-  - Rooftop parking  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Drooftop' target='_blank'>rooftop</a>`
-  - Surface level parking  corresponds with  ``
+  - *Underground parking*  corresponds with  `location=underground`
+  - *Surface level parking*  corresponds with  `location=surface`
+  - *Rooftop parking*  corresponds with  `location=rooftop`
+  - *Surface level parking*  corresponds with  ``
   - This option cannot be chosen as answer
 
 
@@ -133,14 +133,14 @@ The question is  What is the relative location of this bicycle parking?
 
 
 
-The question is  Is this parking covered? Also select "covered" for indoor parkings.
+The question is  *Is this parking covered? Also select "covered" for indoor parkings.*
 
 
 
 
 
-  - This parking is covered (it has a roof)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dyes' target='_blank'>yes</a>`
-  - This parking is not covered  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:covered' target='_blank'>covered</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:covered%3Dno' target='_blank'>no</a>`
+  - *This parking is covered (it has a roof)*  corresponds with  `covered=yes`
+  - *This parking is not covered*  corresponds with  `covered=no`
 
 
 
@@ -149,11 +149,11 @@ The question is  Is this parking covered? Also select "covered" for indoor parki
 
 
 
-The question is  How many bicycles fit in this bicycle parking (including possible cargo bicycles)?
+The question is  *How many bicycles fit in this bicycle parking (including possible cargo bicycles)?*
 
 This rendering asks information about the property  [capacity](https://wiki.openstreetmap.org/wiki/Key:capacity) 
 
-This is rendered with  Place for {capacity} bikes
+This is rendered with  `Place for {capacity} bikes`
 
 
 
@@ -163,19 +163,19 @@ This is rendered with  Place for {capacity} bikes
 
 
 
-The question is  Who can use this bicycle parking?
+The question is  *Who can use this bicycle parking?*
 
 This rendering asks information about the property  [access](https://wiki.openstreetmap.org/wiki/Key:access) 
 
-This is rendered with  {access}
+This is rendered with  `{access}`
 
 
 
 
 
-  - Publicly accessible  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>`
-  - Access is primarily for visitors to a business  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dcustomers' target='_blank'>customers</a>`
-  - Access is limited to members of a school, company or organisation  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>`
+  - *Publicly accessible*  corresponds with  `access=yes`
+  - *Access is primarily for visitors to a business*  corresponds with  `access=customers`
+  - *Access is limited to members of a school, company or organisation*  corresponds with  `access=private`
 
 
 
@@ -184,15 +184,15 @@ This is rendered with  {access}
 
 
 
-The question is  Does this bicycle parking have spots for cargo bikes?
+The question is  *Does this bicycle parking have spots for cargo bikes?*
 
 
 
 
 
-  - This parking has room for cargo bikes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dyes' target='_blank'>yes</a>`
-  - This parking has designated (official) spots for cargo bikes.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Ddesignated' target='_blank'>designated</a>`
-  - You're not allowed to park cargo bikes  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:cargo_bike' target='_blank'>cargo_bike</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cargo_bike%3Dno' target='_blank'>no</a>`
+  - *This parking has room for cargo bikes*  corresponds with  `cargo_bike=yes`
+  - *This parking has designated (official) spots for cargo bikes.*  corresponds with  `cargo_bike=designated`
+  - *You're not allowed to park cargo bikes*  corresponds with  `cargo_bike=no`
 
 
 
@@ -201,11 +201,11 @@ The question is  Does this bicycle parking have spots for cargo bikes?
 
 
 
-The question is  How many cargo bicycles fit in this bicycle parking?
+The question is  *How many cargo bicycles fit in this bicycle parking?*
 
 This rendering asks information about the property  [capacity:cargo_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:cargo_bike) 
 
-This is rendered with  This parking fits {capacity:cargo_bike} cargo bikes
+This is rendered with  `This parking fits {capacity:cargo_bike} cargo bikes`
 
 
 

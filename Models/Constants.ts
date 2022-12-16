@@ -1,7 +1,7 @@
 import { Utils } from "../Utils"
 
 export default class Constants {
-    public static vNumber = "0.24.0"
+    public static vNumber = "0.25.0"
 
     public static ImgurApiKey = "7070e7167f0a25a"
     public static readonly mapillary_client_token_v4 =
@@ -27,6 +27,7 @@ export default class Constants {
     ]
 
     public static readonly added_by_default: string[] = [
+        "selected_element",
         "gps_location",
         "gps_location_history",
         "home_location",

@@ -125,9 +125,7 @@
             "donate": "Geef MapComplete financiële steun",
             "editId": "Hier bewerken met de OpenStreetMap online editor",
             "editJosm": "Hier bewerken met JOSM",
-            "followBridge": "De Mastodon- en Twitter-accounts worden gesynchronizeerd",
             "followOnMastodon": "Volg MapComplete op Mastodon",
-            "followOnTwitter": "Volg MapComplete op Twitter",
             "iconAttribution": {
                 "title": "Iconen en afbeeldingen"
             },

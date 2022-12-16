@@ -80,11 +80,11 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What is the Wikidata-item that this object is named after?
+The question is  *What is the Wikidata-item that this object is named after?*
 
 This rendering asks information about the property  [name:etymology:wikidata](https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata) 
 
-This is rendered with  <h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}
+This is rendered with  `<h3>Wikipedia article of the name giver</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}`
 
 
 
@@ -98,23 +98,25 @@ This tagrendering has no question and is thus read-only
 
 
 
+This tagrendering is only visible in the popup if the following condition is met: `_country=be`
+
 
 
 ### simple etymology 
 
 
 
-The question is  What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>
+The question is  *What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>*
 
 This rendering asks information about the property  [name:etymology](https://wiki.openstreetmap.org/wiki/Key:name:etymology) 
 
-This is rendered with  Named after {name:etymology}
+This is rendered with  `Named after {name:etymology}`
 
 
 
 
 
-  - The origin of this name is unknown in all literature  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:name:etymology' target='_blank'>name:etymology</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:name:etymology%3Dunknown' target='_blank'>unknown</a>`
+  - *The origin of this name is unknown in all literature*  corresponds with  `name:etymology=unknown`
 
 
 

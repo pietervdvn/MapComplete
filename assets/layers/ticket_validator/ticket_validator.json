@@ -1,0 +1,96 @@
+{
+  "id": "ticket_validator",
+  "name": {
+    "en": "Ticket Validators"
+  },
+  "description": {
+    "en": "Find ticket validators to validate public transport tickets"
+  },
+  "source": {
+    "osmTags": "amenity=ticket_validator"
+  },
+  "minzoom": 19,
+  "title": {
+    "render": {
+      "en": "Ticket Validator"
+    }
+  },
+  "tagRenderings": [
+    "images",
+    "level",
+    {
+      "id": "barrier",
+      "condition": "barrier~*",
+      "render": {
+        "en": "This ticket validator is part of a barrier of type {barrier}"
+      },
+      "mappings": [
+        {
+          "if": "barrier=gate",
+          "then": {
+            "en": "This ticket validator is part of a gate"
+          }
+        }
+      ]
+    },
+    {
+      "id": "validator-operator",
+      "question": {
+        "en": "Who is the operator of this ticket validator?"
+      },
+      "render": {
+        "en": "This ticket validator is operated by {operator}"
+      },
+      "freeform": {
+        "key": "operator",
+        "type": "string",
+        "placeholder": {
+          "en": "Name of the operator"
+        }
+      }
+    },
+    {
+      "builtin": "payment-options",
+      "override": {
+        "mappings+": [
+          {
+            "if": "payment:OV-Chipkaart=yes",
+            "ifnot": "payment:OV-Chipkaart=no",
+            "then": {
+              "en": "This ticket validator accepts OV-Chipkaart"
+            },
+            "hideInAnswer": "_country!=nl"
+          },
+          {
+            "if": "payment:ov-chipkaart=yes",
+            "ifnot": "payment:ov-chipkaart=no",
+            "then": {
+              "en": "This ticket validator accepts OV-Chipkaart"
+            },
+            "hideInAnswer": true
+          }
+        ]
+      }
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=ticket_validator"
+      ],
+      "title": {
+        "en": "a ticket validator"
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": "square:green;./assets/themes/stations/public_transport_tickets.svg",
+      "iconSize": "20,20,center",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ]
+}

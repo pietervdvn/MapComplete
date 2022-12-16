@@ -87,15 +87,15 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What type of recycling is this?
+The question is  *What type of recycling is this?*
 
 
 
 
 
-  - This is a recycling container  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcontainer' target='_blank'>container</a>`
-  - This is a recycling centre  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling_type' target='_blank'>recycling_type</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling_type%3Dcentre' target='_blank'>centre</a>`
-  - Waste disposal container for residual waste  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dwaste_disposal' target='_blank'>waste_disposal</a>`
+  - *This is a recycling container*  corresponds with  `recycling_type=container`
+  - *This is a recycling centre*  corresponds with  `recycling_type=centre`
+  - *Waste disposal container for residual waste*  corresponds with  `amenity=waste_disposal`
 
 
 
@@ -104,17 +104,17 @@ The question is  What type of recycling is this?
 
 
 
-The question is  What is the name of this recycling centre?
+The question is  *What is the name of this recycling centre?*
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with  This recycling centre is named <b>{name}</b>
+This is rendered with  `This recycling centre is named <b>{name}</b>`
 
 
 
 
 
-  - This recycling centre doesn't have a specific name  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>`
+  - *This recycling centre doesn't have a specific name*  corresponds with  `noname=yes`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `recycling_type=centre`
@@ -125,15 +125,15 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  Where is this container located?
+The question is  *Where is this container located?*
 
 
 
 
 
-  - This is an underground container  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>`
-  - This container is located indoors  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dindoor' target='_blank'>indoor</a>`
-  - This container is located outdoors  corresponds with  ``
+  - *This is an underground container*  corresponds with  `location=underground`
+  - *This container is located indoors*  corresponds with  `location=indoor`
+  - *This container is located outdoors*  corresponds with  ``
 
 
 This tagrendering is only visible in the popup if the following condition is met: `recycling_type=container`
@@ -144,55 +144,55 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  What can be recycled here?
+The question is  *What can be recycled here?*
 
 
 
 
 
-  - Batteries can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:batteries' target='_blank'>recycling:batteries</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:batteries%3Dyes' target='_blank'>yes</a>`
+  - *Batteries can be recycled here*  corresponds with  `recycling:batteries=yes`
   - Unselecting this answer will add 
-  - Beverage cartons can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:beverage_cartons' target='_blank'>recycling:beverage_cartons</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:beverage_cartons%3Dyes' target='_blank'>yes</a>`
+  - *Beverage cartons can be recycled here*  corresponds with  `recycling:beverage_cartons=yes`
   - Unselecting this answer will add 
-  - Cans can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:cans' target='_blank'>recycling:cans</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:cans%3Dyes' target='_blank'>yes</a>`
+  - *Cans can be recycled here*  corresponds with  `recycling:cans=yes`
   - Unselecting this answer will add 
-  - Clothes can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:clothes' target='_blank'>recycling:clothes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:clothes%3Dyes' target='_blank'>yes</a>`
+  - *Clothes can be recycled here*  corresponds with  `recycling:clothes=yes`
   - Unselecting this answer will add 
-  - Cooking oil can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:cooking_oil' target='_blank'>recycling:cooking_oil</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:cooking_oil%3Dyes' target='_blank'>yes</a>`
+  - *Cooking oil can be recycled here*  corresponds with  `recycling:cooking_oil=yes`
   - Unselecting this answer will add 
-  - Engine oil can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:engine_oil' target='_blank'>recycling:engine_oil</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:engine_oil%3Dyes' target='_blank'>yes</a>`
+  - *Engine oil can be recycled here*  corresponds with  `recycling:engine_oil=yes`
   - Unselecting this answer will add 
-  - Green waste can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:green_waste' target='_blank'>recycling:green_waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:green_waste%3Dyes' target='_blank'>yes</a>`
+  - *Green waste can be recycled here*  corresponds with  `recycling:green_waste=yes`
   - Unselecting this answer will add 
-  - Organic waste can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:organic' target='_blank'>recycling:organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:organic%3Dyes' target='_blank'>yes</a>`
+  - *Organic waste can be recycled here*  corresponds with  `recycling:organic=yes`
   - This option cannot be chosen as answer
   - Unselecting this answer will add 
-  - Glass bottles can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:glass_bottles' target='_blank'>recycling:glass_bottles</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:glass_bottles%3Dyes' target='_blank'>yes</a>`
+  - *Glass bottles can be recycled here*  corresponds with  `recycling:glass_bottles=yes`
   - Unselecting this answer will add 
-  - Glass can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:glass' target='_blank'>recycling:glass</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:glass%3Dyes' target='_blank'>yes</a>`
+  - *Glass can be recycled here*  corresponds with  `recycling:glass=yes`
   - Unselecting this answer will add 
-  - Newspapers can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:newspaper' target='_blank'>recycling:newspaper</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:newspaper%3Dyes' target='_blank'>yes</a>`
+  - *Newspapers can be recycled here*  corresponds with  `recycling:newspaper=yes`
   - Unselecting this answer will add 
-  - Paper can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:paper' target='_blank'>recycling:paper</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:paper%3Dyes' target='_blank'>yes</a>`
+  - *Paper can be recycled here*  corresponds with  `recycling:paper=yes`
   - Unselecting this answer will add 
-  - Plastic bottles can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:plastic_bottles' target='_blank'>recycling:plastic_bottles</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:plastic_bottles%3Dyes' target='_blank'>yes</a>`
+  - *Plastic bottles can be recycled here*  corresponds with  `recycling:plastic_bottles=yes`
   - Unselecting this answer will add 
-  - Plastic packaging can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:plastic_packaging' target='_blank'>recycling:plastic_packaging</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:plastic_packaging%3Dyes' target='_blank'>yes</a>`
+  - *Plastic packaging can be recycled here*  corresponds with  `recycling:plastic_packaging=yes`
   - Unselecting this answer will add 
-  - Plastic can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:plastic' target='_blank'>recycling:plastic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:plastic%3Dyes' target='_blank'>yes</a>`
+  - *Plastic can be recycled here*  corresponds with  `recycling:plastic=yes`
   - Unselecting this answer will add 
-  - Scrap metal can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:scrap_metal' target='_blank'>recycling:scrap_metal</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:scrap_metal%3Dyes' target='_blank'>yes</a>`
+  - *Scrap metal can be recycled here*  corresponds with  `recycling:scrap_metal=yes`
   - Unselecting this answer will add 
-  - Shoes can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:shoes' target='_blank'>recycling:shoes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:shoes%3Dyes' target='_blank'>yes</a>`
+  - *Shoes can be recycled here*  corresponds with  `recycling:shoes=yes`
   - Unselecting this answer will add 
-  - Small electrical appliances can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:small_appliances' target='_blank'>recycling:small_appliances</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:small_appliances%3Dyes' target='_blank'>yes</a>`
+  - *Small electrical appliances can be recycled here*  corresponds with  `recycling:small_appliances=yes`
   - Unselecting this answer will add 
-  - Small electrical appliances can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:small_electrical_appliances' target='_blank'>recycling:small_electrical_appliances</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:small_electrical_appliances%3Dyes' target='_blank'>yes</a>`
+  - *Small electrical appliances can be recycled here*  corresponds with  `recycling:small_electrical_appliances=yes`
   - This option cannot be chosen as answer
   - Unselecting this answer will add 
-  - Needles can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:needles' target='_blank'>recycling:needles</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:needles%3Dyes' target='_blank'>yes</a>`
+  - *Needles can be recycled here*  corresponds with  `recycling:needles=yes`
   - Unselecting this answer will add 
-  - Residual waste can be recycled here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:recycling:waste' target='_blank'>recycling:waste</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:recycling:waste%3Dyes' target='_blank'>yes</a>`
+  - *Residual waste can be recycled here*  corresponds with  `recycling:waste=yes`
   - Unselecting this answer will add 
 
 
@@ -202,11 +202,11 @@ The question is  What can be recycled here?
 
 
 
-The question is  What company operates this recycling facility?
+The question is  *What company operates this recycling facility?*
 
 This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
 
-This is rendered with  This recycling facility is operated by {operator}
+This is rendered with  `This recycling facility is operated by {operator}`
 
 
 
@@ -216,17 +216,17 @@ This is rendered with  This recycling facility is operated by {operator}
 
 
 
-The question is  What is the website of {title()}?
+The question is  *What is the website of {title()}?*
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with  <a href='{website}' target='_blank'>{website}</a>
+This is rendered with  `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
+  - *<a href='{contact:website}' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -238,17 +238,17 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  What is the email address of {title()}?
+The question is  *What is the email address of {title()}?*
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
-This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
+This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~.+`
+  - *<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>*  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
 
@@ -260,17 +260,17 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  What is the phone number of {title()}?
+The question is  *What is the phone number of {title()}?*
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
-This is rendered with  <a href='tel:{phone}'>{phone}</a>
+This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~.+`
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
   - This option cannot be chosen as answer
 
 
@@ -282,17 +282,54 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  What are the opening hours of this recycling facility?
+The question is  *What are the opening hours of this recycling facility?*
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
+This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
 
 
-  - 24/7 opened (including holidays)  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7' target='_blank'>24/7</a>`
+  - *24/7 opened (including holidays)*  corresponds with  `opening_hours=24/7`
+
+
+
+
+#### Filters 
+
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+open_now.0 | Opened now | _isOpen=yes
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+recyclingType.0 | All recycling types (default) | 
+recyclingType.1 | Recycling of batteries | recycling:batteries=yes
+recyclingType.2 | Recycling of beverage cartons | recycling:beverage_cartons=yes
+recyclingType.3 | Recycling of cans | recycling:cans=yes
+recyclingType.4 | Recycling of clothes | recycling:clothes=yes
+recyclingType.5 | Recycling of cooking oil | recycling:cooking_oil=yes
+recyclingType.6 | Recycling of engine oil | recycling:engine_oil=yes
+recyclingType.7 | Recycling of green waste | recycling:green_waste=yes\|recycling:organic=yes
+recyclingType.8 | Recycling of glass bottles | recycling:glass_bottles=yes
+recyclingType.9 | Recycling of glass | recycling:glass=yes
+recyclingType.10 | Recycling of newspapers | recycling:newspaper=yes
+recyclingType.11 | Recycling of paper | recycling:paper=yes
+recyclingType.12 | Recycling of plastic bottles | recycling:plastic_bottles=yes
+recyclingType.13 | Recycling of plastic packaging | recycling:plastic_packaging=yes
+recyclingType.14 | Recycling of plastic | recycling:plastic=yes
+recyclingType.15 | Recycling of scrap metal | recycling:scrap_metal=yes
+recyclingType.16 | Recycling of small electrical appliances | recycling:small_appliances=yes\|recycling:small_electrical_appliances=yes
+recyclingType.17 | Recycling of residual waste | recycling:waste=yes
  
 
 This document is autogenerated from [assets/layers/recycling/recycling.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/recycling/recycling.json)

@@ -1,0 +1,79 @@
+{
+  "id": "ticket_machine",
+  "name": {
+    "en": "Ticket Machines"
+  },
+  "description": {
+    "en": "Find ticket machines for public transport tickets"
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=vending_machine",
+        "vending=public_transport_tickets"
+      ]
+    }
+  },
+  "minzoom": 19,
+  "title": {
+    "render": {
+      "en": "Ticket Machine"
+    }
+  },
+  "tagRenderings": [
+    "images",
+    "level",
+    {
+      "id": "operator",
+      "question": {
+        "en": "Who is the operator of this ticket machine?"
+      },
+      "render": {
+        "en": "This ticket machine is operated by {operator}"
+      },
+      "freeform": {
+        "key": "operator",
+        "type": "string",
+        "placeholder": {
+          "en": "Name of the operator"
+        }
+      },
+      "mappings": [
+        {
+          "if": "operator=Nederlandse Spoorwegen",
+          "then": {
+            "en": "Dutch Railways (NS)",
+            "nl": "Nederlandse Spoorwegen (NS)"
+          },
+          "addExtraTags": [
+            "operator:wikidata=Q23076"
+          ],
+          "hideInAnswer": "_country!=nl"
+        }
+      ]
+    },
+    "payment-options-split",
+    "denominations-coins"
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=vending_machine",
+        "vending=public_transport_tickets"
+      ],
+      "title": {
+        "en": "a ticket machine"
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "icon": "square:lightblue;./assets/themes/stations/public_transport_tickets.svg",
+      "iconSize": "20,20,center",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ]
+}

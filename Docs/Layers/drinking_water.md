@@ -89,19 +89,19 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  Is this drinking water spot still operational?
+The question is  *Is this drinking water spot still operational?*
 
 This rendering asks information about the property  [operational_status](https://wiki.openstreetmap.org/wiki/Key:operational_status) 
 
-This is rendered with  The operational status is <i>{operational_status}</i>
+This is rendered with  `The operational status is <i>{operational_status}</i>`
 
 
 
 
 
-  - This drinking water works  corresponds with  ``
-  - This drinking water is broken  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a>`
-  - This drinking water is closed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>`
+  - *This drinking water works*  corresponds with  ``
+  - *This drinking water is broken*  corresponds with  `operational_status=broken`
+  - *This drinking water is closed*  corresponds with  `operational_status=closed`
 
 
 
@@ -110,14 +110,14 @@ This is rendered with  The operational status is <i>{operational_status}</i>
 
 
 
-The question is  How easy is it to fill water bottles?
+The question is  *How easy is it to fill water bottles?*
 
 
 
 
 
-  - It is easy to refill water bottles  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bottle' target='_blank'>bottle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dyes' target='_blank'>yes</a>`
-  - Water bottles may not fit  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:bottle' target='_blank'>bottle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bottle%3Dno' target='_blank'>no</a>`
+  - *It is easy to refill water bottles*  corresponds with  `bottle=yes`
+  - *Water bottles may not fit*  corresponds with  `bottle=no`
 
 
 

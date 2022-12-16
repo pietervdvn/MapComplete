@@ -127,7 +127,8 @@ export default class MangroveReviews {
         this._lastUpdate = new Date()
 
         const self = this
-        mangrove.getReviews({ sub: this.GetSubjectUri() }).then((data) => {
+        mangrove.getReviews({ sub: this.GetSubjectUri() })
+            .then((data) => {
             const reviews = []
             const reviewsByUser = []
             for (const review of data.reviews) {
@@ -153,6 +154,9 @@ export default class MangroveReviews {
             }
             self._reviews.setData(reviewsByUser.concat(reviews))
         })
+            .catch(e => {
+                console.error("Could not download review for ", e);
+            })
         return this._reviews
     }
 

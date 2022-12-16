@@ -61,7 +61,7 @@ export abstract class OsmObject {
         return src
     }
 
-    static async DownloadPropertiesOf(id: string): Promise<any> {
+    static async DownloadPropertiesOf(id: string): Promise<OsmTags | "deleted"> {
         const splitted = id.split("/")
         const idN = Number(splitted[1])
         if (idN < 0) {
@@ -69,8 +69,12 @@ export abstract class OsmObject {
         }
 
         const url = `${OsmObject.backendURL}api/0.6/${id}`
-        const rawData = await Utils.downloadJsonCached(url, 1000)
-        return rawData.elements[0].tags
+        const rawData = await Utils.downloadJsonCachedAdvanced(url, 1000)
+        console.log(rawData)
+        if(rawData["error"] !== undefined && rawData["statuscode"] === 410){
+            return "deleted"
+        }
+        return rawData["contents"].elements[0].tags
     }
 
     static async DownloadObjectAsync(

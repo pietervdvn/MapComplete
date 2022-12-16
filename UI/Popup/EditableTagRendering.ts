@@ -1,16 +1,15 @@
-import { UIEventSource } from "../../Logic/UIEventSource"
+import {UIEventSource} from "../../Logic/UIEventSource"
 import TagRenderingQuestion from "./TagRenderingQuestion"
 import Translations from "../i18n/Translations"
 import Combine from "../Base/Combine"
 import TagRenderingAnswer from "./TagRenderingAnswer"
-import Svg from "../../Svg"
 import Toggle from "../Input/Toggle"
 import BaseUIElement from "../BaseUIElement"
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
-import { Unit } from "../../Models/Unit"
+import {Unit} from "../../Models/Unit"
 import Lazy from "../Base/Lazy"
-import { FixedUiElement } from "../Base/FixedUiElement"
-import { EditButton } from "./SaveButton"
+import {FixedUiElement} from "../Base/FixedUiElement"
+import {EditButton} from "./SaveButton"
 
 export default class EditableTagRendering extends Toggle {
     constructor(
@@ -31,10 +30,9 @@ export default class EditableTagRendering extends Toggle {
                 configuration.IsKnown(tags) &&
                 (configuration?.condition?.matchesProperties(tags) ?? true)
         )
-
+        const editMode = options.editMode ?? new UIEventSource<boolean>(false)
         super(
             new Lazy(() => {
-                const editMode = options.editMode ?? new UIEventSource<boolean>(false)
                 let rendering = EditableTagRendering.CreateRendering(
                     state,
                     tags,
@@ -54,6 +52,13 @@ export default class EditableTagRendering extends Toggle {
             undefined,
             renderingIsShown
         )
+        const self = this;
+        editMode.addCallback(editing => {
+            if(editing){
+                console.log("Scrolling etr into view")
+                self.ScrollIntoView()
+            }
+        })
     }
 
     private static CreateRendering(
@@ -69,12 +74,6 @@ export default class EditableTagRendering extends Toggle {
 
         if (configuration.question !== undefined && state?.featureSwitchUserbadge?.data) {
             // We have a question and editing is enabled
-            const answerWithEditButton = new Combine([
-                answer,
-                new EditButton(state.osmConnection, () => {
-                    editMode.setData(true)
-                }),
-            ]).SetClass("flex justify-between w-full")
 
             const question = new Lazy(
                 () =>
@@ -92,7 +91,18 @@ export default class EditableTagRendering extends Toggle {
                     })
             )
 
+             const answerWithEditButton = new Combine([
+                answer,
+                new EditButton(state.osmConnection, () => {
+                    editMode.setData(true)
+                    question.ScrollIntoView({
+                        onlyIfPartiallyHidden:true
+                    })
+
+                }),
+            ]).SetClass("flex justify-between w-full")
             rendering = new Toggle(question, answerWithEditButton, editMode)
+
         }
         return rendering
     }

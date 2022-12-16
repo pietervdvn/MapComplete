@@ -11,9 +11,10 @@ This theme contains the following layers:
 
 
 
+  - [picnic_table](../Layers/picnic_table.md)
   - [bench](../Layers/bench.md)
   - [bench_at_pt](../Layers/bench_at_pt.md)
-  - [picnic_table](../Layers/picnic_table.md)
+  - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)

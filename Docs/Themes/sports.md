@@ -16,6 +16,7 @@ This theme contains the following layers:
   - [fitness_station](../Layers/fitness_station.md)
   - [sports_centre](../Layers/sports_centre.md)
   - [sport_shops](../Layers/sport_shops.md)
+  - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)

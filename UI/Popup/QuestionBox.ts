@@ -33,6 +33,8 @@ export default class QuestionBox extends VariableUiElement {
             .filter((tr) => tr.question !== undefined)
             .filter((tr) => tr.question !== null)
 
+        let focus: () => void = () => {};
+
         const tagRenderingQuestions = tagRenderings.map(
             (tagRendering, i) =>
                 new Lazy(
@@ -42,6 +44,7 @@ export default class QuestionBox extends VariableUiElement {
                             afterSave: () => {
                                 // We save and indicate progress by pinging and recalculating
                                 skippedQuestions.ping()
+                                focus()
                             },
                             cancelButton: Translations.t.general.skip
                                 .Clone()
@@ -49,6 +52,8 @@ export default class QuestionBox extends VariableUiElement {
                                 .onClick(() => {
                                     skippedQuestions.data.push(i)
                                     skippedQuestions.ping()
+                                    focus()
+
                                 }),
                         })
                 )
@@ -136,5 +141,8 @@ export default class QuestionBox extends VariableUiElement {
 
         this.skippedQuestions = skippedQuestions
         this.restingQuestions = questionsToAsk
+        focus = () => this.ScrollIntoView({
+            onlyIfPartiallyHidden: true
+        })
     }
 }

@@ -1,12 +1,11 @@
 import FeaturePipelineState from "../Logic/State/FeaturePipelineState"
 import State from "../State"
-import { Utils } from "../Utils"
-import { UIEventSource } from "../Logic/UIEventSource"
+import {Utils} from "../Utils"
+import {UIEventSource} from "../Logic/UIEventSource"
 import FullWelcomePaneWithTabs from "./BigComponents/FullWelcomePaneWithTabs"
 import MapControlButton from "./MapControlButton"
 import Svg from "../Svg"
 import Toggle from "./Input/Toggle"
-import UserBadge from "./BigComponents/UserBadge"
 import SearchAndGo from "./BigComponents/SearchAndGo"
 import BaseUIElement from "./BaseUIElement"
 import LeftControls from "./BigComponents/LeftControls"
@@ -17,7 +16,7 @@ import ScrollableFullScreen from "./Base/ScrollableFullScreen"
 import Translations from "./i18n/Translations"
 import SimpleAddUI from "./BigComponents/SimpleAddUI"
 import StrayClickHandler from "../Logic/Actors/StrayClickHandler"
-import { DefaultGuiState } from "./DefaultGuiState"
+import {DefaultGuiState} from "./DefaultGuiState"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import * as home_location_json from "../assets/layers/home_location/home_location.json"
 import NewNoteUi from "./Popup/NewNoteUi"
@@ -25,11 +24,16 @@ import Combine from "./Base/Combine"
 import AddNewMarker from "./BigComponents/AddNewMarker"
 import FilteredLayer from "../Models/FilteredLayer"
 import ExtraLinkButton from "./BigComponents/ExtraLinkButton"
+import {VariableUiElement} from "./Base/VariableUIElement";
+import Img from "./Base/Img";
+import UserInformationPanel from "./BigComponents/UserInformation";
+import {LoginToggle} from "./Popup/LoginButton";
+import {FixedUiElement} from "./Base/FixedUiElement";
 
 /**
- * The default MapComplete GUI initializor
+ * The default MapComplete GUI initializer
  *
- * Adds a welcome pane, contorl buttons, ... etc to index.html
+ * Adds a welcome pane, control buttons, ... etc to index.html
  */
 export default class DefaultGUI {
     private readonly guiState: DefaultGuiState
@@ -53,7 +57,7 @@ export default class DefaultGUI {
 
         Utils.downloadJson("./service-worker-version")
             .then((data) => console.log("Service worker", data))
-            .catch((e) => console.log("Service worker not active"))
+            .catch((_) => console.log("Service worker not active"))
     }
 
     public setupClickDialogOnMap(
@@ -123,6 +127,9 @@ export default class DefaultGUI {
                 addNewPoint,
                 hasPresets ? new AddNewMarker(state.filteredLayers) : noteMarker
             )
+            state.LastClickLocation.addCallbackAndRunD(_ => {
+                ScrollableFullScreen.collapse()
+            })
         }
 
         if (noteLayer !== undefined) {
@@ -153,6 +160,16 @@ export default class DefaultGUI {
             state,
         })
 
+        const selectedElement: FilteredLayer = state.filteredLayers.data.filter(
+            (l) => l.layerDef.id === "selected_element"
+        )[0]
+        new ShowDataLayer({
+            leafletMap: state.leafletMap,
+            layerToShow: selectedElement.layerDef,
+            features: state.selectedElementsLayer,
+            state
+        })
+
         state.leafletMap.addCallbackAndRunD((_) => {
             // Lets assume that all showDataLayers are initialized at this point
             state.selectedElement.ping()
@@ -167,14 +184,38 @@ export default class DefaultGUI {
 
         const self = this
         new Combine([
-            Toggle.If(state.featureSwitchUserbadge, () => new UserBadge(state)),
+            Toggle.If(state.featureSwitchUserbadge, () => {
+
+                const userInfo = new UserInformationPanel(state)
+
+                const mapControl = new MapControlButton(
+                        new VariableUiElement(state.osmConnection.userDetails.map(ud => {
+                            if (ud?.img === undefined) {
+                                return Svg.person_ui().SetClass("mt-1 block")
+                            }
+                            return new Img(ud?.img);
+                        })).SetClass("block rounded-full overflow-hidden"),
+                        {
+                            dontStyle: true
+                        }
+                    ).onClick(() => userInfo.Activate());
+
+                return new LoginToggle(
+                    mapControl, Translations.t.general.loginWithOpenStreetMap, state
+                )
+
+
+
+            }),
             Toggle.If(
                 state.featureSwitchExtraLinkEnabled,
                 () => new ExtraLinkButton(state, state.layoutToUse.extraLink)
             ),
+            Toggle.If(state.featureSwitchWelcomeMessage, () => self.InitWelcomeMessage()),
+            Toggle.If(state.featureSwitchIsTesting, () => new FixedUiElement("TESTING").SetClass("alert m-2 border-2 border-black"))
         ])
             .SetClass("flex flex-col")
-            .AttachTo("userbadge")
+            .AttachTo("top-left")
 
         new Combine([
             new ExtraLinkButton(state, {
@@ -188,11 +229,8 @@ export default class DefaultGUI {
             .SetClass("flex items-center justify-center normal-background h-full")
             .AttachTo("on-small-screen")
 
-        Toggle.If(state.featureSwitchSearch, () => new SearchAndGo(state)).AttachTo("searchbox")
+        Toggle.If(state.featureSwitchSearch, () => new SearchAndGo(state).SetClass("shadow rounded-full h-min w-full overflow-hidden sm:max-w-sm pointer-events-auto")).AttachTo("top-right")
 
-        Toggle.If(state.featureSwitchWelcomeMessage, () => self.InitWelcomeMessage()).AttachTo(
-            "messagesbox"
-        )
 
         new LeftControls(state, guiState).AttachTo("bottom-left")
         new RightControls(state).AttachTo("bottom-right")
@@ -218,7 +256,7 @@ export default class DefaultGUI {
 
     private InitWelcomeMessage(): BaseUIElement {
         const isOpened = this.guiState.welcomeMessageIsOpened
-        const fullOptions = new FullWelcomePaneWithTabs(
+        new FullWelcomePaneWithTabs(
             isOpened,
             this.guiState.welcomeMessageOpenedTab,
             this.state
@@ -242,10 +280,6 @@ export default class DefaultGUI {
             isOpened.setData(false)
         })
 
-        return new Toggle(
-            fullOptions.SetClass("welcomeMessage pointer-events-auto"),
-            help.SetClass("pointer-events-auto"),
-            isOpened
-        )
+       return help.SetClass("pointer-events-auto")
     }
 }

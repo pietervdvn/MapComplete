@@ -127,6 +127,7 @@
   "tagRenderings": [
     "images",
     {
+      "labels": ["artwork-question"],
       "render": {
         "en": "This is a {artwork_type}",
         "nl": "Dit is een {artwork_type}",
@@ -448,6 +449,7 @@
     },
     {
       "id": "artwork-artist-wikidata",
+      "labels": ["artwork-question"],
       "render": {
         "en": "This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
         "de": "Dieses Kunstwerk wurde geschaffen von {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
@@ -518,7 +520,8 @@
         "key": "artist_name"
       },
       "condition": "artist:wikidata=",
-      "id": "artwork-artist_name"
+      "id": "artwork-artist_name",
+      "labels": ["artwork-question"]
     },
     {
       "question": {
@@ -561,7 +564,8 @@
         "key": "website",
         "type": "url"
       },
-      "id": "artwork-website"
+      "id": "artwork-website",
+      "labels": ["artwork-question"]
     },
     "wikipedia",
     {
@@ -586,6 +590,40 @@
         "cs": "Toto dílo zobrazuje {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "pt": "A obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "es": "Esta obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+      },
+      "labels": ["artwork-question"]
+    },
+    {
+      "id": "doubles_as_bench",
+      "question": {
+        "en": "Does this artwork serve as a bench?"
+      },
+      "mappings": [
+        {
+          "if": "amenity=bench",
+          "then": {
+            "en": "This artwork also serves as a bench"
+          }
+        },
+        {
+          "if": "amenity=",
+          "then": {
+            "en": "This artwork does not serve as a bench"
+          }
+        },
+        {
+          "if": "amenity!=bench",
+          "then": {
+            "en": "This artwork does not serve as a bench"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "builtin": "bench.*bench-questions",
+      "override": {
+        "condition": "amenity=bench"
       }
     }
   ],

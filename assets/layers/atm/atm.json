@@ -1,0 +1,87 @@
+{
+  "id": "atm",
+  "name": {
+    "en": "ATMs"
+  },
+  "description": {
+    "en": "ATMS to withdraw money"
+  },
+  "title": {
+    "render": {
+      "en": "ATM"
+    },
+    "mappings": [
+      {
+        "if": "brand~*",
+        "then": {
+          "en": "{brand} ATM"
+        }
+      }
+    ]
+  },
+  "source": {
+    "osmTags": "amenity=atm"
+  },
+  "minzoom": 13,
+  "presets": [
+    {
+      "tags": [
+        "amenity=atm"
+      ],
+      "title": {
+        "en": "an ATM"
+      }
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "name",
+      "render": {
+        "en": "The name of this ATM is {name}"
+      },
+      "condition": "name~*"
+    },
+    {
+      "id": "brand",
+      "question": {
+        "en": "What brand is this ATM?"
+      },
+      "freeform": {
+        "key": "brand",
+        "type": "string",
+        "placeholder": {
+          "en": "Brand name"
+        }
+      },
+      "render": {
+        "en": "The brand of this ATM is {brand}"
+      }
+    },
+    {
+      "id": "operator",
+      "question": {
+        "en": "What company operates this ATM?"
+      },
+      "freeform": {
+        "key": "operator",
+        "type": "string",
+        "placeholder": {
+          "en": "Operator"
+        }
+      },
+      "render": {
+        "en": "The ATM is operated by {operator}"
+      }
+    },
+    "opening_hours"
+  ],
+  "mapRendering": [
+    {
+      "icon": "circle:white;./assets/layers/atm/atm.svg",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ]
+}

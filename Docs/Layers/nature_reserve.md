@@ -91,22 +91,22 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  Is this nature reserve accessible to the public?
+The question is  *Is this nature reserve accessible to the public?*
 
 This rendering asks information about the property  [access:description](https://wiki.openstreetmap.org/wiki/Key:access:description) 
 
-This is rendered with  Accessin this nature reserve: {access:description}
+This is rendered with  `Accessin this nature reserve: {access:description}`
 
 
 
 
 
-  - Publicly accessible  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>`
-  - Not accessible  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>`
-  - Not accessible as this is a private area  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>`
-  - Accessible despite being a privately owned area  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive' target='_blank'>permissive</a>`
-  - Only accessible with a guide or during organised activities  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a>`
-  - Accessible with fee  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
+  - *Publicly accessible*  corresponds with  `access=yes`
+  - *Not accessible*  corresponds with  `access=no`
+  - *Not accessible as this is a private area*  corresponds with  `access=private`
+  - *Accessible despite being a privately owned area*  corresponds with  `access=permissive`
+  - *Only accessible with a guide or during organised activities*  corresponds with  `access=guided`
+  - *Accessible with fee*  corresponds with  `access=yes&fee=yes`
 
 
 
@@ -115,20 +115,20 @@ This is rendered with  Accessin this nature reserve: {access:description}
 
 
 
-The question is  Who operates this area?
+The question is  *Who operates this area?*
 
 This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
 
-This is rendered with  Operated by {operator}
+This is rendered with  `Operated by {operator}`
 
 
 
 
 
-  - Operated by Natuurpunt  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>`
-  - Operated by {operator}  corresponds with  `operator~^((n|N)atuurpunt.*)$`
+  - *Operated by Natuurpunt*  corresponds with  `operator=Natuurpunt`
+  - *Operated by {operator}*  corresponds with  `operator~^((n|N)atuurpunt.*)$`
   - This option cannot be chosen as answer
-  - Operated by <i>Agentschap Natuur en Bos</i>  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DAgentschap Natuur en Bos' target='_blank'>Agentschap Natuur en Bos</a>`
+  - *Operated by <i>Agentschap Natuur en Bos</i>*  corresponds with  `operator=Agentschap Natuur en Bos`
 
 
 
@@ -137,17 +137,17 @@ This is rendered with  Operated by {operator}
 
 
 
-The question is  What is the name of this area?
+The question is  *What is the name of this area?*
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with  This area is named {name}
+This is rendered with  `This area is named {name}`
 
 
 
 
 
-  - This area doesn't have a name  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>`
+  - *This area doesn't have a name*  corresponds with  `noname=yes`
 
 
 
@@ -156,15 +156,15 @@ This is rendered with  This area is named {name}
 
 
 
-The question is  Are dogs allowed in this nature reserve?
+The question is  *Are dogs allowed in this nature reserve?*
 
 
 
 
 
-  - Dogs have to be leashed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dleashed' target='_blank'>leashed</a>`
-  - No dogs allowed  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dno' target='_blank'>no</a>`
-  - Dogs are allowed to roam freely  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:dog' target='_blank'>dog</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:dog%3Dyes' target='_blank'>yes</a>`
+  - *Dogs have to be leashed*  corresponds with  `dog=leashed`
+  - *No dogs allowed*  corresponds with  `dog=no`
+  - *Dogs are allowed to roam freely*  corresponds with  `dog=yes`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `access=yes|access=permissive|access=guided`
@@ -175,17 +175,17 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  What is the website of {title()}?
+The question is  *What is the website of {title()}?*
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with  <a href='{website}' target='_blank'>{website}</a>
+This is rendered with  `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
+  - *<a href='{contact:website}' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -195,11 +195,11 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-The question is  Whom is the curator of this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a name if this is widely published
+The question is  *Whom is the curator of this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a name if this is widely published*
 
 This rendering asks information about the property  [curator](https://wiki.openstreetmap.org/wiki/Key:curator) 
 
-This is rendered with  {curator} is the curator of this nature reserve
+This is rendered with  `{curator} is the curator of this nature reserve`
 
 
 
@@ -209,11 +209,11 @@ This is rendered with  {curator} is the curator of this nature reserve
 
 
 
-The question is  What email adress can one send to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal email address if this is widely published
+The question is  *What email adress can one send to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal email address if this is widely published*
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
-This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
+This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 
 
@@ -223,11 +223,11 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-The question is  What phone number can one call to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal phone number address if this is widely published
+The question is  *What phone number can one call to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal phone number address if this is widely published*
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
-This is rendered with  <a href='tel:{phone}' target='_blank'>{phone}</a>
+This is rendered with  `<a href='tel:{phone}' target='_blank'>{phone}</a>`
 
 
 
@@ -241,7 +241,7 @@ This tagrendering has no question and is thus read-only
 
 This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
 
-This is rendered with  Extra information: <i>{description}</i>
+This is rendered with  `Extra information: <i>{description}</i>`
 
 
 
@@ -251,11 +251,11 @@ This is rendered with  Extra information: <i>{description}</i>
 
 
 
-The question is  Is there some extra info?
+The question is  *Is there some extra info?*
 
 This rendering asks information about the property  [description:0](https://wiki.openstreetmap.org/wiki/Key:description:0) 
 
-This is rendered with  Extra info: <i>{description:0}</i>
+This is rendered with  `Extra info: <i>{description:0}</i>`
 
 
 
@@ -277,20 +277,42 @@ This tagrendering has no question and is thus read-only
 
 Shows a wikipedia box with the corresponding wikipedia article; the wikidata-item link can be changed by a contributor
 
-The question is  What is the corresponding Wikidata entity?
+The question is  *What is the corresponding Wikidata entity?*
 
 This rendering asks information about the property  [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) 
 
-This is rendered with  {wikipedia():max-height:25rem}
+This is rendered with  `{wikipedia():max-height:25rem}`
 
 
 
 
 
-  - {wikipedia():max-height:25rem}  corresponds with  `wikipedia~.+`
+  - *{wikipedia():max-height:25rem}*  corresponds with  `wikipedia~.+`
   - This option cannot be chosen as answer
-  - No Wikipedia page has been linked yet  corresponds with  ``
+  - *No Wikipedia page has been linked yet*  corresponds with  ``
   - This option cannot be chosen as answer
+
+
+
+
+#### Filters 
+
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+access.0 | Freely accesible | access=yes
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+dogs.0 | All nature reserves (default) | 
+dogs.1 | Dogs are allowed to roam freely | dog=yes
+dogs.2 | Dogs are allowed if they are leashed | dog=yes\|dog=leashed
  
 
 This document is autogenerated from [assets/layers/nature_reserve/nature_reserve.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/nature_reserve/nature_reserve.json)

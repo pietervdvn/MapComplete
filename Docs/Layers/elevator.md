@@ -88,23 +88,23 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What levels does this elevator go to?
+The question is  *What levels does this elevator go to?*
 
 This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
 
-This is rendered with  This elevator goes to floors {level}
+This is rendered with  `This elevator goes to floors {level}`
 
 
 
 
 
-  - Located underground  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:location' target='_blank'>location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:location%3Dunderground' target='_blank'>underground</a>`
+  - *Located underground*  corresponds with  `location=underground`
   - This option cannot be chosen as answer
-  - Located on the ground floor  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D0' target='_blank'>0</a>`
-  - Located on the ground floor  corresponds with  ``
+  - *Located on the ground floor*  corresponds with  `level=0`
+  - *Located on the ground floor*  corresponds with  ``
   - This option cannot be chosen as answer
-  - Located on the first floor  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D1' target='_blank'>1</a>`
-  - Located on the first basement level  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:level' target='_blank'>level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:level%3D-1' target='_blank'>-1</a>`
+  - *Located on the first floor*  corresponds with  `level=1`
+  - *Located on the first basement level*  corresponds with  `level=-1`
 
 
 
@@ -113,16 +113,16 @@ This is rendered with  This elevator goes to floors {level}
 
 
 
-The question is  Does this elevator work?
+The question is  *Does this elevator work?*
 
 
 
 
 
-  - This elevator is broken  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dbroken' target='_blank'>broken</a>`
-  - This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dclosed' target='_blank'>closed</a>`
-  - This elevator works  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operational_status' target='_blank'>operational_status</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operational_status%3Dok' target='_blank'>ok</a>`
-  - This elevator works  corresponds with  ``
+  - *This elevator is broken*  corresponds with  `operational_status=broken`
+  - *This elevator is closed <span class='subtle'>e.g. because renovation works are going on</span>*  corresponds with  `operational_status=closed`
+  - *This elevator works*  corresponds with  `operational_status=ok`
+  - *This elevator works*  corresponds with  ``
   - This option cannot be chosen as answer
 
 
@@ -132,11 +132,11 @@ The question is  Does this elevator work?
 
 
 
-The question is  What is the width of this elevator's entrance?
+The question is  *What is the width of this elevator's entrance?*
 
 This rendering asks information about the property  [door:width](https://wiki.openstreetmap.org/wiki/Key:door:width) 
 
-This is rendered with  This elevator's doors have a width of {canonical(door:width)}
+This is rendered with  `This elevator's doors have a width of {canonical(door:width)}`
 
 
 
@@ -146,11 +146,11 @@ This is rendered with  This elevator's doors have a width of {canonical(door:wid
 
 
 
-The question is  What is the width of this elevator?
+The question is  *What is the width of this elevator?*
 
 This rendering asks information about the property  [elevator:width](https://wiki.openstreetmap.org/wiki/Key:elevator:width) 
 
-This is rendered with  This elevator has a width of {canonical(elevator:width)}
+This is rendered with  `This elevator has a width of {canonical(elevator:width)}`
 
 
 
@@ -160,11 +160,11 @@ This is rendered with  This elevator has a width of {canonical(elevator:width)}
 
 
 
-The question is  What is the depth of this elevator?
+The question is  *What is the depth of this elevator?*
 
 This rendering asks information about the property  [elevator:depth](https://wiki.openstreetmap.org/wiki/Key:elevator:depth) 
 
-This is rendered with  This elevator has a depth of {canonical(elevator:depth)}
+This is rendered with  `This elevator has a depth of {canonical(elevator:depth)}`
 
 
 
@@ -176,14 +176,14 @@ This is rendered with  This elevator has a depth of {canonical(elevator:depth)}
 
 An accessibility feature: induction loops are for hard-hearing persons which have an FM-receiver.
 
-The question is  Does this place have an audio induction loop for people with reduced hearing?
+The question is  *Does this place have an audio induction loop for people with reduced hearing?*
 
 
 
 
 
-  - This place has an audio induction loop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dyes' target='_blank'>yes</a>`
-  - This place <b>does not</b> have an audio induction loop  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:hearing_loop' target='_blank'>hearing_loop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:hearing_loop%3Dno' target='_blank'>no</a>`
+  - *This place has an audio induction loop*  corresponds with  `hearing_loop=yes`
+  - *This place <b>does not</b> have an audio induction loop*  corresponds with  `hearing_loop=no`
 
 
 

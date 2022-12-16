@@ -160,6 +160,11 @@ export default class FeaturePipeline {
                 continue
             }
 
+            if (id === "selected_element") {
+                handlePriviligedFeatureSource(state.selectedElementsLayer)
+                continue
+            }
+
             if (id === "gps_location") {
                 handlePriviligedFeatureSource(state.currentUserLocation)
                 continue

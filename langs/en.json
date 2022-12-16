@@ -125,9 +125,7 @@
             "donate": "Support MapComplete financially",
             "editId": "Open the OpenStreetMap online editor here",
             "editJosm": "Edit here with JOSM",
-            "followBridge": "The Mastodon- and Twitter-accounts are bridged",
             "followOnMastodon": "Follow MapComplete on Mastodon",
-            "followOnTwitter": "Follow MapComplete on Twitter",
             "iconAttribution": {
                 "title": "Used icons"
             },
@@ -926,6 +924,15 @@
         "isTranslator": "Translation mode is active as your username matches the name of a previous translator",
         "missing": "{count} untranslated strings",
         "notImmediate": "Translations are not updated directly. This typically takes a few days"
+    },
+    "userinfo": {
+        "gotoInbox": "Open your inbox",
+        "gotoSettings": "Go to your settings on OpenStreetMap.org",
+        "moveToHome": "Move the map to your home location",
+        "newMessages": "you have new messages",
+        "noDescription": "You don't have a description on your profile yet",
+        "noDescriptionCallToAction": "Add a profile description",
+        "welcome": "Welcome {user}"
     },
     "validation": {
         "color": {

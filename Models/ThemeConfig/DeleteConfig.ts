@@ -5,7 +5,7 @@ import Translations from "../../UI/i18n/Translations"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
 
 export default class DeleteConfig {
-    public static readonly defaultDeleteReasons: {
+    private static readonly defaultDeleteReasons: {
         changesetMessage: string
         explanation: Translation
     }[] = [
@@ -27,8 +27,8 @@ export default class DeleteConfig {
         },
     ]
 
-    public readonly extraDeleteReasons?: {
-        explanation: TypedTranslation<object>
+    public readonly deleteReasons?: {
+        explanation: TypedTranslation<object> | Translation
         changesetMessage: string
     }[]
 
@@ -38,7 +38,7 @@ export default class DeleteConfig {
     public readonly neededChangesets?: number
 
     constructor(json: DeleteConfigJson, context: string) {
-        this.extraDeleteReasons = (json.extraDeleteReasons ?? []).map((reason, i) => {
+        this.deleteReasons = (json.extraDeleteReasons ?? []).map((reason, i) => {
             const ctx = `${context}.extraDeleteReasons[${i}]`
             if ((reason.changesetMessage ?? "").length <= 5) {
                 throw `${ctx}.explanation is too short, needs at least 4 characters`
@@ -48,6 +48,16 @@ export default class DeleteConfig {
                 changesetMessage: reason.changesetMessage,
             }
         })
+
+        if(!json.omitDefaultDeleteReasons ){
+            for (const defaultDeleteReason of DeleteConfig.defaultDeleteReasons) {
+                this.deleteReasons.push({
+                    changesetMessage: defaultDeleteReason.changesetMessage,
+                    explanation: defaultDeleteReason.explanation.Clone(/*Must clone, hides translation otherwise*/)
+                })
+            }
+        }
+
         this.nonDeleteMappings = (json.nonDeleteMappings ?? []).map((nonDelete, i) => {
             const ctx = `${context}.extraDeleteReasons[${i}]`
             return {
@@ -55,6 +65,10 @@ export default class DeleteConfig {
                 then: Translations.T(nonDelete.then, ctx + ".then"),
             }
         })
+
+        if(this.nonDeleteMappings.length + this.deleteReasons.length == 0){
+            throw "At "+context+": a deleteconfig should have some reasons to delete: either the default delete reasons or a nonDeleteMapping or extraDeletereason should be given"
+        }
 
         this.softDeletionTags = undefined
         if (json.softDeletionTags !== undefined) {

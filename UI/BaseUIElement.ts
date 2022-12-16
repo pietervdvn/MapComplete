@@ -3,6 +3,8 @@
  *
  * Assumes a read-only configuration, so it has no 'ListenTo'
  */
+import {Utils} from "../Utils";
+
 export default abstract class BaseUIElement {
     protected _constructedHtmlElement: HTMLElement
     protected isDestroyed = false
@@ -41,6 +43,34 @@ export default abstract class BaseUIElement {
         this._constructedHtmlElement?.scrollTo(0, 0)
     }
 
+    public ScrollIntoView(options?: {
+        onlyIfPartiallyHidden?: boolean
+    }) {
+        if(this._constructedHtmlElement === undefined){
+            return
+        }
+        let alignToTop = true;
+        if(options?.onlyIfPartiallyHidden){
+            // Is the element completely in the view?
+            const parentRect = Utils.findParentWithScrolling(this._constructedHtmlElement.parentElement).getBoundingClientRect();
+            const elementRect = this._constructedHtmlElement.getBoundingClientRect();
+
+            // Check if the element is within the vertical bounds of the parent element
+            const topIsVisible = elementRect.top >= parentRect.top
+            const bottomIsVisible = elementRect.bottom <= parentRect.bottom
+            const inView = topIsVisible && bottomIsVisible ;
+            if(inView){
+                return
+            }
+            if(topIsVisible){
+                alignToTop = false
+            }
+        }
+        this._constructedHtmlElement?.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        })
+    }
     /**
      * Adds all the relevant classes, space separated
      */

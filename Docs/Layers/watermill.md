@@ -70,22 +70,22 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  Is dit gebied toegankelijk?
+The question is  *Is dit gebied toegankelijk?*
 
 This rendering asks information about the property  [access:description](https://wiki.openstreetmap.org/wiki/Key:access:description) 
 
-This is rendered with  De toegankelijkheid van dit gebied is: {access:description}
+This is rendered with  `De toegankelijkheid van dit gebied is: {access:description}`
 
 
 
 
 
-  - Vrij toegankelijk  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>`
-  - Niet toegankelijk  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dno' target='_blank'>no</a>`
-  - Niet toegankelijk, want privégebied  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dprivate' target='_blank'>private</a>`
-  - Toegankelijk, ondanks dat het privegebied is  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dpermissive' target='_blank'>permissive</a>`
-  - Enkel toegankelijk met een gids of tijdens een activiteit  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dguided' target='_blank'>guided</a>`
-  - Toegankelijk mits betaling  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:access' target='_blank'>access</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:access%3Dyes' target='_blank'>yes</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:fee' target='_blank'>fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:fee%3Dyes' target='_blank'>yes</a>`
+  - *Vrij toegankelijk*  corresponds with  `access=yes`
+  - *Niet toegankelijk*  corresponds with  `access=no`
+  - *Niet toegankelijk, want privégebied*  corresponds with  `access=private`
+  - *Toegankelijk, ondanks dat het privegebied is*  corresponds with  `access=permissive`
+  - *Enkel toegankelijk met een gids of tijdens een activiteit*  corresponds with  `access=guided`
+  - *Toegankelijk mits betaling*  corresponds with  `access=yes&fee=yes`
 
 
 
@@ -94,18 +94,18 @@ This is rendered with  De toegankelijkheid van dit gebied is: {access:descriptio
 
 
 
-The question is  Wie beheert dit pad?
+The question is  *Wie beheert dit pad?*
 
 This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
 
-This is rendered with  Beheer door {operator}
+This is rendered with  `Beheer door {operator}`
 
 
 
 
 
-  - Dit gebied wordt beheerd door Natuurpunt  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:operator' target='_blank'>operator</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:operator%3DNatuurpunt' target='_blank'>Natuurpunt</a>`
-  - Dit gebied wordt beheerd door {operator}  corresponds with  `operator~^((n|N)atuurpunt.*)$`
+  - *Dit gebied wordt beheerd door Natuurpunt*  corresponds with  `operator=Natuurpunt`
+  - *Dit gebied wordt beheerd door {operator}*  corresponds with  `operator~^((n|N)atuurpunt.*)$`
   - This option cannot be chosen as answer
  
 

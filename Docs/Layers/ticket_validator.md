@@ -1,0 +1,147 @@
+
+
+ ticket_validator 
+==================
+
+
+
+<img src='https://mapcomplete.osm.be/square:green;./assets/themes/stations/public_transport_tickets.svg' height="100px"> 
+
+Find ticket validators to validate public transport tickets
+
+
+
+
+
+
+  - This layer is shown at zoomlevel **19** and higher
+
+
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dticket_validator' target='_blank'>ticket_validator</a>
+
+
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22ticket_validator%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+
+
+
+ Supported attributes 
+----------------------
+
+
+
+Warning: 
+
+this quick overview is incomplete
+
+
+
+attribute | type | values which are supported by this layer
+----------- | ------ | ------------------------------------------
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/barrier#values) [barrier](https://wiki.openstreetmap.org/wiki/Key:barrier) | Multiple choice | [gate](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dgate)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
+
+
+
+
+### images 
+
+
+
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### level 
+
+
+
+The question is  *On what level is this feature located?*
+
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
+
+This is rendered with  `Located on the {level}th floor`
+
+
+
+
+
+  - *Located underground*  corresponds with  `location=underground`
+  - This option cannot be chosen as answer
+  - *Located on the ground floor*  corresponds with  `level=0`
+  - *Located on the ground floor*  corresponds with  ``
+  - This option cannot be chosen as answer
+  - *Located on the first floor*  corresponds with  `level=1`
+  - *Located on the first basement level*  corresponds with  `level=-1`
+
+
+
+
+### barrier 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *This ticket validator is part of a gate*  corresponds with  `barrier=gate`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `barrier~.+`
+
+
+
+### validator-operator 
+
+
+
+The question is  *Who is the operator of this ticket validator?*
+
+This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
+
+This is rendered with  `This ticket validator is operated by {operator}`
+
+
+
+
+
+### payment-options 
+
+
+
+The question is  *Which methods of payment are accepted here?*
+
+
+
+
+
+  - *Cash is accepted here*  corresponds with  `payment:cash=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
+  - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+  - *This ticket validator accepts OV-Chipkaart*  corresponds with  `payment:OV-Chipkaart=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:OV-Chipkaart' target='_blank'>payment:OV-Chipkaart</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:OV-Chipkaart%3Dno' target='_blank'>no</a>
+  - *This ticket validator accepts OV-Chipkaart*  corresponds with  `payment:ov-chipkaart=yes`
+  - This option cannot be chosen as answer
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:ov-chipkaart' target='_blank'>payment:ov-chipkaart</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:ov-chipkaart%3Dno' target='_blank'>no</a>
+ 
+
+This document is autogenerated from [assets/layers/ticket_validator/ticket_validator.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/ticket_validator/ticket_validator.json)

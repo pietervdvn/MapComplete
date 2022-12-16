@@ -14,6 +14,7 @@ This theme contains the following layers:
   - [maxspeed](../Layers/maxspeed.md)
   - [speed_camera](../Layers/speed_camera.md)
   - [speed_display](../Layers/speed_display.md)
+  - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)

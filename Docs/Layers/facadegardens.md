@@ -87,11 +87,11 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What is the orientation of the garden?
+The question is  *What is the orientation of the garden?*
 
 This rendering asks information about the property  [direction](https://wiki.openstreetmap.org/wiki/Key:direction) 
 
-This is rendered with  Orientation: {direction} (where 0=N and 90=O)
+This is rendered with  `Orientation: {direction} (where 0=N and 90=O)`
 
 
 
@@ -101,15 +101,15 @@ This is rendered with  Orientation: {direction} (where 0=N and 90=O)
 
 
 
-The question is  Is the garden shaded or sunny?
+The question is  *Is the garden shaded or sunny?*
 
 
 
 
 
-  - The garden is in full sun  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dyes' target='_blank'>yes</a>`
-  - The garden is in partial shade  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dpartial' target='_blank'>partial</a>`
-  - The garden is in the shade  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:direct_sunlight' target='_blank'>direct_sunlight</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:direct_sunlight%3Dno' target='_blank'>no</a>`
+  - *The garden is in full sun*  corresponds with  `direct_sunlight=yes`
+  - *The garden is in partial shade*  corresponds with  `direct_sunlight=partial`
+  - *The garden is in the shade*  corresponds with  `direct_sunlight=no`
 
 
 
@@ -118,14 +118,14 @@ The question is  Is the garden shaded or sunny?
 
 
 
-The question is  Is there a water barrel installed for the garden?
+The question is  *Is there a water barrel installed for the garden?*
 
 
 
 
 
-  - There is a rain barrel  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dyes' target='_blank'>yes</a>`
-  - There is no rain barrel  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:rain_barrel' target='_blank'>rain_barrel</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:rain_barrel%3Dno' target='_blank'>no</a>`
+  - *There is a rain barrel*  corresponds with  `rain_barrel=yes`
+  - *There is no rain barrel*  corresponds with  `rain_barrel=no`
 
 
 
@@ -134,11 +134,11 @@ The question is  Is there a water barrel installed for the garden?
 
 
 
-The question is  When was the garden constructed? (a year is sufficient)
+The question is  *When was the garden constructed? (a year is sufficient)*
 
 This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) 
 
-This is rendered with  Construction date of the garden: {start_date}
+This is rendered with  `Construction date of the garden: {start_date}`
 
 
 
@@ -148,14 +148,14 @@ This is rendered with  Construction date of the garden: {start_date}
 
 
 
-The question is  Are there any edible plants?
+The question is  *Are there any edible plants?*
 
 
 
 
 
-  - There are edible plants  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dyes' target='_blank'>yes</a>`
-  - There are no edible plants  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:edible' target='_blank'>edible</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:edible%3Dno' target='_blank'>no</a>`
+  - *There are edible plants*  corresponds with  `edible=yes`
+  - *There are no edible plants*  corresponds with  `edible=no`
 
 
 
@@ -164,16 +164,16 @@ The question is  Are there any edible plants?
 
 
 
-The question is  What kinds of plants grow here?
+The question is  *What kinds of plants grow here?*
 
 
 
 
 
-  - There are vines  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dvine' target='_blank'>vine</a>`
-  - There are flowering plants  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dflower' target='_blank'>flower</a>`
-  - There are shrubs  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dshrub' target='_blank'>shrub</a>`
-  - There are groundcovering plants  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:plant' target='_blank'>plant</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:plant%3Dgroundcover' target='_blank'>groundcover</a>`
+  - *There are vines*  corresponds with  `plant=vine`
+  - *There are flowering plants*  corresponds with  `plant=flower`
+  - *There are shrubs*  corresponds with  `plant=shrub`
+  - *There are groundcovering plants*  corresponds with  `plant=groundcover`
 
 
 
@@ -182,11 +182,11 @@ The question is  What kinds of plants grow here?
 
 
 
-The question is  Extra describing info about the garden (if needed and not yet described above)
+The question is  *Extra describing info about the garden (if needed and not yet described above)*
 
 This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
 
-This is rendered with  More details: {description}
+This is rendered with  `More details: {description}`
 
 
 

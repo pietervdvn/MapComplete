@@ -13,6 +13,7 @@ This theme contains the following layers:
 
   - [mapcomplete-changes](../Layers/mapcomplete-changes.md)
   - [current_view](../Layers/current_view.md)
+  - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)

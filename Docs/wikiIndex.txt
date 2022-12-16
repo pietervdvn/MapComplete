@@ -110,6 +110,15 @@
 |genre= POI, editor, artwork
 }}
 {{service_item
+|name= [https://mapcomplete.osm.be/atm atm]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:_context|en}}
+|descr= A MapComplete theme: This map shows ATMs to withdraw or deposit money
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, atm
+}}
+{{service_item
 |name= [https://mapcomplete.osm.be/benches benches]
 |region= Worldwide
 |lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nb_NO|en}}, {{#language:pt_BR|en}}, {{#language:hu|en}}, {{#language:id|en}}, {{#language:ca|en}}, {{#language:es|en}}, {{#language:zh_Hans|en}}, {{#language:da|en}}, {{#language:_context|en}}

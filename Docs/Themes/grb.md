@@ -20,6 +20,7 @@ This theme contains the following layers:
   - [crab_address](../Layers/crab_address.md)
   - [grb](../Layers/grb.md)
   - [current_view](../Layers/current_view.md)
+  - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)

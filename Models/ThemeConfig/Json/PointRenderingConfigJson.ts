@@ -64,4 +64,15 @@ export default interface PointRenderingConfigJson {
      * Note that, if the wayhandling hides the icon then no label is shown as well.
      */
     label?: string | TagRenderingConfigJson
+
+    /**
+     * A snippet of css code
+     */
+    css?: string | TagRenderingConfigJson
+
+
+    /**
+     * A snippet of css-classes. They can be space-separated
+     */
+    cssClasses?: string | TagRenderingConfigJson
 }

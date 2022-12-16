@@ -1,29 +1,29 @@
 import UserRelatedState from "./UserRelatedState"
-import { Store, Stores, UIEventSource } from "../UIEventSource"
+import {Store, Stores, UIEventSource} from "../UIEventSource"
 import BaseLayer from "../../Models/BaseLayer"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import AvailableBaseLayers from "../Actors/AvailableBaseLayers"
 import Attribution from "../../UI/BigComponents/Attribution"
-import Minimap, { MinimapObj } from "../../UI/Base/Minimap"
-import { Tiles } from "../../Models/TileRange"
+import Minimap, {MinimapObj} from "../../UI/Base/Minimap"
+import {Tiles} from "../../Models/TileRange"
 import BaseUIElement from "../../UI/BaseUIElement"
-import FilteredLayer, { FilterState } from "../../Models/FilteredLayer"
+import FilteredLayer, {FilterState} from "../../Models/FilteredLayer"
 import TilesourceConfig from "../../Models/ThemeConfig/TilesourceConfig"
-import { QueryParameters } from "../Web/QueryParameters"
+import {QueryParameters} from "../Web/QueryParameters"
 import ShowOverlayLayer from "../../UI/ShowDataLayer/ShowOverlayLayer"
-import { FeatureSourceForLayer, Tiled } from "../FeatureSource/FeatureSource"
+import {FeatureSourceForLayer, Tiled} from "../FeatureSource/FeatureSource"
 import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource"
-import { LocalStorageSource } from "../Web/LocalStorageSource"
-import { GeoOperations } from "../GeoOperations"
+import {LocalStorageSource} from "../Web/LocalStorageSource"
+import {GeoOperations} from "../GeoOperations"
 import TitleHandler from "../Actors/TitleHandler"
-import { BBox } from "../BBox"
+import {BBox} from "../BBox"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import { TiledStaticFeatureSource } from "../FeatureSource/Sources/StaticFeatureSource"
-import { Translation, TypedTranslation } from "../../UI/i18n/Translation"
-import { Tag } from "../Tags/Tag"
-import { OsmConnection } from "../Osm/OsmConnection"
-import { Feature, GeoJSON, LineString } from "geojson"
-import { OsmTags } from "../../Models/OsmFeature"
+import {TiledStaticFeatureSource} from "../FeatureSource/Sources/StaticFeatureSource"
+import {Translation, TypedTranslation} from "../../UI/i18n/Translation"
+import {Tag} from "../Tags/Tag"
+import {OsmConnection} from "../Osm/OsmConnection"
+import {Feature, LineString} from "geojson"
+import {OsmTags} from "../../Models/OsmFeature"
 
 export interface GlobalFilter {
     filter: FilterState
@@ -92,6 +92,13 @@ export default class MapState extends UserRelatedState {
      * A feature source containing the current home location of the user
      */
     public homeLocation: FeatureSourceForLayer & Tiled
+
+    /**
+     * A builtin layer which contains the selected element.
+     * Loads 'selected_element.json'
+     * This _might_ contain multiple points, e.g. every center of a multipolygon
+     */
+    public selectedElementsLayer: FeatureSourceForLayer & Tiled
 
     public readonly mainMapObject: BaseUIElement & MinimapObj
 
@@ -168,6 +175,7 @@ export default class MapState extends UserRelatedState {
         this.initGpsLocation()
         this.initUserLocationTrail()
         this.initCurrentView()
+        this.initSelectedElement()
 
         new TitleHandler(this)
     }
@@ -249,13 +257,36 @@ export default class MapState extends UserRelatedState {
 
     private initGpsLocation() {
         // Initialize the gps layer data. This is emtpy for now, the actual writing happens in the Geolocationhandler
-        let gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(
+        const gpsLayerDef: FilteredLayer = this.filteredLayers.data.filter(
             (l) => l.layerDef.id === "gps_location"
         )[0]
         if (gpsLayerDef === undefined) {
             return
         }
         this.currentUserLocation = new SimpleFeatureSource(gpsLayerDef, Tiles.tile_index(0, 0, 0))
+    }
+
+    private initSelectedElement(){
+        const layerDef: FilteredLayer = this.filteredLayers.data.filter(
+            (l) => l.layerDef.id === "selected_element"
+        )[0]
+        const empty = []
+        const store = this.selectedElement.map(feature => {
+            if(feature === undefined || feature === null){
+                return empty
+            }
+            return [{
+                feature: {
+                    type:"Feature",
+                    properties: {
+                        selected: "yes",
+                        id: "selected" + feature.properties.id
+                    },
+                    geometry:feature.geometry
+                }
+                , freshness: new Date()}];
+        });
+        this.selectedElementsLayer =  new TiledStaticFeatureSource(store,layerDef);
     }
 
     private initUserLocationTrail() {

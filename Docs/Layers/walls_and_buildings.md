@@ -75,8 +75,8 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - No entrance has been marked  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:_entrances_count' target='_blank'>_entrances_count</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_entrances_count%3D0' target='_blank'>0</a>`
-  - None of the {_entrance_count} entrances have width information yet  corresponds with  `_entrances_count_without_width=_entrances_count`
+  - *No entrance has been marked*  corresponds with  `_entrances_count=0`
+  - *None of the {_entrance_count} entrances have width information yet*  corresponds with  `_entrances_count_without_width=_entrances_count`
 
 
 

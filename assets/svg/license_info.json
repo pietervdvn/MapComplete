@@ -736,6 +736,14 @@
     "sources": []
   },
   {
+    "path": "login.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "logo.svg",
     "license": "CC0; trivial",
     "authors": [],
@@ -980,6 +988,14 @@
       "https://github.com/primer/octicons",
       " https://commons.wikimedia.org/wiki/File:Octicons-pencil.svg"
     ]
+  },
+  {
+    "path": "person.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
   },
   {
     "path": "pin.svg",
@@ -1292,16 +1308,6 @@
       "Robin van der Linde"
     ],
     "sources": []
-  },
-  {
-    "path": "twitter.svg",
-    "license": "Logo - all rights reserved",
-    "authors": [
-      "Twitter Inc."
-    ],
-    "sources": [
-      "https://about.twitter.com/en/who-we-are/brand-toolkit"
-    ]
   },
   {
     "path": "up.svg",

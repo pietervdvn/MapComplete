@@ -11,10 +11,12 @@
   - [Existing builtin tagrenderings](#existing-builtin-tagrenderings)
     + [images](#images)
     + [wikipedia](#wikipedia)
+    + [bench.*bench-questions](#bench*bench-questions)
+    + [opening_hours](#opening_hours)
+    + [artwork.*artwork-question](#artwork*artwork-question)
     + [website](#website)
     + [phone](#phone)
     + [email](#email)
-    + [opening_hours](#opening_hours)
     + [description](#description)
     + [payment-options](#payment-options)
     + [payment-options-advanced](#payment-options-advanced)
@@ -33,6 +35,7 @@
     + [climbing.website](#climbingwebsite)
     + [climbing.fee](#climbingfee)
     + [climbing.bouldering](#climbingbouldering)
+    + [climbing.toprope](#climbingtoprope)
     + [climbing.average_length](#climbingaverage_length)
     + [climbing.min_difficulty](#climbingmin_difficulty)
     + [climbing.max_difficulty](#climbingmax_difficulty)
@@ -50,6 +53,8 @@
     + [id_presets.shop_types](#id_presetsshop_types)
     + [school.capacity](#schoolcapacity)
     + [school.gender](#schoolgender)
+    + [payment-options-split](#payment-options-split)
+    + [denominations-coins](#denominations-coins)
     + [toilet.toilets-type](#toilettoilets-type)
     + [toilet.toilets-changing-table](#toilettoilets-changing-table)
     + [toilet.toilet-changing_table:location](#toilettoilet-changing_table:location)
@@ -90,6 +95,7 @@
   - binocular
   - birdhide
   - cafe_pub
+  - car_rental
   - charging_station
   - climbing_area
   - climbing_gym
@@ -138,6 +144,8 @@
   - stairs
   - street_lamps
   - surveillance_camera
+  - ticket_machine
+  - ticket_validator
   - toilet
   - toilet_at_amenity
   - trail
@@ -165,6 +173,59 @@
 
 
 
+### bench.*bench-questions 
+
+
+
+
+
+  - artwork
+
+
+
+
+### opening_hours 
+
+
+
+
+
+  - atm
+  - bicycle_library
+  - bicycle_rental
+  - bike_cafe
+  - bike_shop
+  - bike_themed_object
+  - cafe_pub
+  - car_rental
+  - climbing_club
+  - climbing_gym
+  - dentist
+  - fitness_centre
+  - fitness_station
+  - food
+  - kindergarten_childcare
+  - pharmacy
+  - postoffices
+  - shops
+  - sports_centre
+  - toilet_at_amenity
+  - veterinary
+
+
+
+
+### artwork.*artwork-question 
+
+
+
+
+
+  - bench
+
+
+
+
 ### website 
 
 
@@ -177,6 +238,7 @@
   - bike_shop
   - bike_themed_object
   - cafe_pub
+  - car_rental
   - climbing_club
   - climbing_gym
   - dentist
@@ -215,6 +277,7 @@
   - bike_shop
   - bike_themed_object
   - cafe_pub
+  - car_rental
   - climbing_club
   - climbing_gym
   - dentist
@@ -250,6 +313,7 @@
   - bike_shop
   - bike_themed_object
   - cafe_pub
+  - car_rental
   - climbing_club
   - climbing_gym
   - dentist
@@ -268,35 +332,6 @@
   - shops
   - sports_centre
   - tertiary_education
-
-
-
-
-### opening_hours 
-
-
-
-
-
-  - bicycle_library
-  - bicycle_rental
-  - bike_cafe
-  - bike_shop
-  - bike_themed_object
-  - cafe_pub
-  - climbing_club
-  - climbing_gym
-  - dentist
-  - fitness_centre
-  - fitness_station
-  - food
-  - kindergarten_childcare
-  - pharmacy
-  - postoffices
-  - shops
-  - sports_centre
-  - toilet_at_amenity
-  - veterinary
 
 
 
@@ -328,6 +363,7 @@
   - food
   - observation_tower
   - shops
+  - ticket_validator
   - toilet
 
 
@@ -376,8 +412,11 @@
   - food
   - parking
   - picnic_table
+  - railway_platforms
   - reception_desk
   - shops
+  - ticket_machine
+  - ticket_validator
   - toilet
   - toilet_at_amenity
 
@@ -555,6 +594,17 @@
 
 
 
+### climbing.toprope 
+
+
+
+
+
+  - climbing_gym
+
+
+
+
 ### climbing.average_length 
 
 
@@ -640,6 +690,7 @@
 
 
   - elevator
+  - stairs
 
 
 
@@ -744,6 +795,28 @@
 
 
   - tertiary_education
+
+
+
+
+### payment-options-split 
+
+
+
+
+
+  - ticket_machine
+
+
+
+
+### denominations-coins 
+
+
+
+
+
+  - ticket_machine
 
 
 

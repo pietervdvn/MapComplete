@@ -77,10 +77,16 @@
       "builtin": "climbing.fee"
     },
     "opening_hours",
+    "climbing.toprope",
+{
+      "builtin": "climbing.average_length",
+      "override": {
+        "condition": "climbing:toprope!=no"
+      }
+    },
     {
       "id": "climbing_gym_questions",
       "builtin": [
-        "climbing.average_length",
         "climbing.min_difficulty",
         "climbing.max_difficulty",
         "climbing.bouldering",

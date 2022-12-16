@@ -9,6 +9,9 @@
 
 1. [Special and other useful layers](#special-and-other-useful-layers)
 1. [Priviliged layers](#priviliged-layers)
+1. [selected_element](#selected_element)
+  - [Basic tags for this layer](#basic-tags-for-this-layer)
+  - [Supported attributes](#supported-attributes)
 1. [gps_location](#gps_location)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -39,6 +42,7 @@
     + [nearby-images](#nearby-images)
     + [report-contributor](#report-contributor)
     + [report-note](#report-note)
+      * [Filters](#filters)
 1. [import_candidate](#import_candidate)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -76,6 +80,7 @@ MapComplete has a few data layers available in the theme which have special prop
 
 
 
+  - [selected_element](#selected_element)
   - [gps_location](#gps_location)
   - [gps_location_history](#gps_location_history)
   - [home_location](#home_location)
@@ -89,6 +94,49 @@ MapComplete has a few data layers available in the theme which have special prop
   - [split_point](#split_point)
   - [current_view](#current_view)
   - [matchpoint](#matchpoint)
+
+
+
+
+ selected_element 
+==================
+
+
+
+<img src='https://mapcomplete.osm.be/circle:red' height="100px"> 
+
+Highlights the currently selected element. Override this layer to have different colors
+
+
+
+
+
+
+  - This layer is shown at zoomlevel **0** and higher
+  - **This layer is included automatically in every theme. This layer might contain no points**
+  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
+  - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
+
+
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:selected' target='_blank'>selected</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:selected%3Dyes' target='_blank'>yes</a>
+
+
+
+
+ Supported attributes 
+----------------------
+
 
 
 
@@ -477,6 +525,91 @@ This tagrendering has no question and is thus read-only
 
 
 
+#### Filters 
+
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+search.0 | Should mention {search} in the first comment |  | search (string)
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+not.0 | Should <b>not</b> mention {search} in the first comment |  | search (string)
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+opened_by.0 | Opened by contributor {search} |  | search (string)
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+not_opened_by.0 | <b>Not</b> opened by contributor {search} |  | search (string)
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+edited_by.0 | Last edited by contributor {search} |  | search (string)
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+not_edited_by.0 | Opened after {search} |  | search (string)
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+opened_before.0 | Created before {search} |  | search (date)
+
+
+
+
+id | question | osmTags | fields
+---- | ---------- | --------- | --------
+opened_after.0 | Created after {search} |  | search (date)
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+anonymous.0 | Only show notes opened by an anonymous contributor | _opened_by_anonymous_user=true
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+is_open.0 | Only show open notes | 
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+no_imports.0 | All Notes (default) | 
+no_imports.1 | Hide import notes | 
+no_imports.2 | Show only import Notes | _is_import_note~.+
+
+
+
+
  import_candidate 
 ==================
 
@@ -788,6 +921,7 @@ The following layers are included in MapComplete:
   - [address](./Layers/address.md)
   - [ambulancestation](./Layers/ambulancestation.md)
   - [artwork](./Layers/artwork.md)
+  - [atm](./Layers/atm.md)
   - [barrier](./Layers/barrier.md)
   - [bench](./Layers/bench.md)
   - [bench_at_pt](./Layers/bench_at_pt.md)
@@ -803,6 +937,7 @@ The following layers are included in MapComplete:
   - [binocular](./Layers/binocular.md)
   - [birdhide](./Layers/birdhide.md)
   - [cafe_pub](./Layers/cafe_pub.md)
+  - [car_rental](./Layers/car_rental.md)
   - [charging_station](./Layers/charging_station.md)
   - [climbing](./Layers/climbing.md)
   - [climbing_area](./Layers/climbing_area.md)
@@ -871,10 +1006,12 @@ The following layers are included in MapComplete:
   - [postboxes](./Layers/postboxes.md)
   - [postoffices](./Layers/postoffices.md)
   - [public_bookcase](./Layers/public_bookcase.md)
+  - [railway_platforms](./Layers/railway_platforms.md)
   - [rainbow_crossings](./Layers/rainbow_crossings.md)
   - [reception_desk](./Layers/reception_desk.md)
   - [recycling](./Layers/recycling.md)
   - [school](./Layers/school.md)
+  - [selected_element](./Layers/selected_element.md)
   - [shelter](./Layers/shelter.md)
   - [shops](./Layers/shops.md)
   - [slow_roads](./Layers/slow_roads.md)
@@ -887,6 +1024,8 @@ The following layers are included in MapComplete:
   - [street_lamps](./Layers/street_lamps.md)
   - [surveillance_camera](./Layers/surveillance_camera.md)
   - [tertiary_education](./Layers/tertiary_education.md)
+  - [ticket_machine](./Layers/ticket_machine.md)
+  - [ticket_validator](./Layers/ticket_validator.md)
   - [toilet](./Layers/toilet.md)
   - [toilet_at_amenity](./Layers/toilet_at_amenity.md)
   - [trail](./Layers/trail.md)

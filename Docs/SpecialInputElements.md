@@ -102,7 +102,7 @@ name | doc
 key | the value of this tag will initialize search (default: name)
 options | A JSON-object of type `{ removePrefixes: string[], removePostfixes: string[] }`. 
 
-subarg | doc
+subarg \| doc
 -------- | -----
 removePrefixes | remove these snippets of text from the start of the passed string to search. This is either a list OR a hash of languages to a list
 removePostfixes | remove these snippets of text from the end of the passed string to search. This is either a list OR a hash of languages to a list
@@ -219,7 +219,7 @@ name | doc
 ------ | -----
 options | A JSON-object of type `{ prefix: string, postfix: string }`.  
 
-subarg | doc
+subarg \| doc
 -------- | -----
 prefix | Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse
 postfix | Piece of text that will always be added to the end of the generated opening hours

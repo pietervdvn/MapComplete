@@ -17,6 +17,7 @@ This theme contains the following layers:
   - [transit_stops](../Layers/transit_stops.md)
   - [elevator](../Layers/elevator.md)
   - [stairs](../Layers/stairs.md)
+  - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)

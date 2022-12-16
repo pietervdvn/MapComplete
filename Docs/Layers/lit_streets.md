@@ -82,17 +82,17 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  Is this street lit?
+The question is  *Is this street lit?*
 
 
 
 
 
-  - This street is lit  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes' target='_blank'>yes</a>`
-  - This street is not lit  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno' target='_blank'>no</a>`
-  - This street is lit at night  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3Dsunset-sunrise' target='_blank'>sunset-sunrise</a>`
+  - *This street is lit*  corresponds with  `lit=yes`
+  - *This street is not lit*  corresponds with  `lit=no`
+  - *This street is lit at night*  corresponds with  `lit=sunset-sunrise`
   - This option cannot be chosen as answer
-  - This street is lit 24/7  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:lit' target='_blank'>lit</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:lit%3D24/7' target='_blank'>24/7</a>`
+  - *This street is lit 24/7*  corresponds with  `lit=24/7`
 
 
 

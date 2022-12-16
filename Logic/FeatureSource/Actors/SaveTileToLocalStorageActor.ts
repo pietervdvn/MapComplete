@@ -11,7 +11,7 @@ import Loc from "../../../Models/Loc"
 /***
  * Saves all the features that are passed in to localstorage, so they can be retrieved on the next run
  *
- * Technically, more an Actor then a featuresource, but it fits more neatly this ay
+ * Technically, more an Actor then a featuresource, but it fits more neatly this way
  */
 export default class SaveTileToLocalStorageActor {
     private readonly visitedTiles: UIEventSource<Map<number, Date>>

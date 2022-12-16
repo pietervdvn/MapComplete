@@ -14,6 +14,7 @@ This theme contains the following layers:
   - [street_lamps](../Layers/street_lamps.md)
   - [lit_streets](../Layers/lit_streets.md)
   - [all_streets](../Layers/all_streets.md)
+  - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)

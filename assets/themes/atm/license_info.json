@@ -1,0 +1,13 @@
+[
+  {
+    "path": "logo.svg",
+    "license": "CC0",
+    "authors": [
+      "Michael Glanznig",
+      "Andy Allan"
+    ],
+    "sources": [
+      "https://github.com/gravitystorm/openstreetmap-carto/blob/master/symbols/amenity/atm.svg"
+    ]
+  }
+]

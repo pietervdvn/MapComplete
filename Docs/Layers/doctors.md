@@ -87,11 +87,11 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  What is the name of this doctors place?
+The question is  *What is the name of this doctors place?*
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with  This doctors place is called {name}
+This is rendered with  `This doctors place is called {name}`
 
 
 
@@ -101,18 +101,18 @@ This is rendered with  This doctors place is called {name}
 
 
 
-The question is  What are the opening hours of {title()}?
+The question is  *What are the opening hours of {title()}?*
 
 This rendering asks information about the property  [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) 
 
-This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)}
+This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
 
 
 
 
-  - Only by appointment  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:opening_hours' target='_blank'>opening_hours</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D"by appointment"' target='_blank'>"by appointment"</a>`
-  - Only by appointment  corresponds with  `opening_hours~^("by appointment"|by appointment)$`
+  - *Only by appointment*  corresponds with  `opening_hours="by appointment"`
+  - *Only by appointment*  corresponds with  `opening_hours~^("by appointment"|by appointment)$`
   - This option cannot be chosen as answer
 
 
@@ -122,17 +122,17 @@ This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-The question is  What is the phone number of {title()}?
+The question is  *What is the phone number of {title()}?*
 
 This rendering asks information about the property  [phone](https://wiki.openstreetmap.org/wiki/Key:phone) 
 
-This is rendered with  <a href='tel:{phone}'>{phone}</a>
+This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 
 
 
-  - <a href='tel:{contact:phone}'>{contact:phone}</a>  corresponds with  `contact:phone~.+`
+  - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
   - This option cannot be chosen as answer
 
 
@@ -142,17 +142,17 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
 
 
 
-The question is  What is the email address of {title()}?
+The question is  *What is the email address of {title()}?*
 
 This rendering asks information about the property  [email](https://wiki.openstreetmap.org/wiki/Key:email) 
 
-This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
+This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 
 
 
 
-  - <a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>  corresponds with  `contact:email~.+`
+  - *<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>*  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
 
@@ -162,17 +162,17 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
 
 
 
-The question is  What is the website of {title()}?
+The question is  *What is the website of {title()}?*
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with  <a href='{website}' target='_blank'>{website}</a>
+This is rendered with  `<a href='{website}' target='_blank'>{website}</a>`
 
 
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>  corresponds with  `contact:website~.+`
+  - *<a href='{contact:website}' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -182,20 +182,33 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
 
 
 
-The question is  What is this doctor specialized in?
+The question is  *What is this doctor specialized in?*
 
 This rendering asks information about the property  [healthcare:speciality](https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality) 
 
-This is rendered with  This doctor is specialized in {healthcare:speciality}
+This is rendered with  `This doctor is specialized in {healthcare:speciality}`
 
 
 
 
 
-  - This is a general practitioner  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dgeneral' target='_blank'>general</a>`
-  - This is a gynaecologist  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dgynaecology' target='_blank'>gynaecology</a>`
-  - This is a psychiatrist  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dpsychiatry' target='_blank'>psychiatry</a>`
-  - This is a paediatrician  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:healthcare:speciality' target='_blank'>healthcare:speciality</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:healthcare:speciality%3Dpaediatrics' target='_blank'>paediatrics</a>`
+  - *This is a general practitioner*  corresponds with  `healthcare:speciality=general`
+  - *This is a gynaecologist*  corresponds with  `healthcare:speciality=gynaecology`
+  - *This is a psychiatrist*  corresponds with  `healthcare:speciality=psychiatry`
+  - *This is a paediatrician*  corresponds with  `healthcare:speciality=paediatrics`
+
+
+
+
+#### Filters 
+
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+open_now.0 | Opened now | _isOpen=yes
  
 
 This document is autogenerated from [assets/layers/doctors/doctors.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/doctors/doctors.json)

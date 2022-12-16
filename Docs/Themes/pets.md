@@ -18,6 +18,7 @@ This theme contains the following layers:
   - [food](../Layers/food.md)
   - [waste_basket](../Layers/waste_basket.md)
   - [shops](../Layers/shops.md)
+  - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)

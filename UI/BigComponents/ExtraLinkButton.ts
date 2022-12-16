@@ -42,11 +42,11 @@ export default class ExtraLinkButton extends UIElement {
 
         const isIframe = window !== window.top
 
-        if (c.requirements.has("iframe") && !isIframe) {
+        if (c.requirements?.has("iframe") && !isIframe) {
             return undefined
         }
 
-        if (c.requirements.has("no-iframe") && isIframe) {
+        if (c.requirements?.has("no-iframe") && isIframe) {
             return undefined
         }
 
@@ -82,11 +82,11 @@ export default class ExtraLinkButton extends UIElement {
             newTab: c.newTab,
         })
 
-        if (c.requirements.has("no-welcome-message")) {
+        if (c.requirements?.has("no-welcome-message")) {
             link = new Toggle(undefined, link, this.state.featureSwitchWelcomeMessage)
         }
 
-        if (c.requirements.has("welcome-message")) {
+        if (c.requirements?.has("welcome-message")) {
             link = new Toggle(link, undefined, this.state.featureSwitchWelcomeMessage)
         }
 

@@ -1,0 +1,16 @@
+{
+  "id": "atm",
+  "title": {
+    "en": "ATM Machines"
+  },
+  "description": {
+    "en": "This map shows ATMs to withdraw or deposit money"
+  },
+  "icon": "./assets/themes/atm/logo.svg",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 0,
+  "layers": [
+    "atm"
+  ]
+}

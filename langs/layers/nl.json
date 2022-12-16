@@ -1306,6 +1306,33 @@
             "render": "Café"
         }
     },
+    "car_rental": {
+        "description": "Plaatsen waar je een auto kunt huren",
+        "name": "Autoverhuur",
+        "presets": {
+            "0": {
+                "description": "Een plaats waar je een auto kunt huren",
+                "title": "een autoverhuur"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Naam van de autoverhuur"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze autoverhuur heeft geen naam"
+                    }
+                },
+                "question": "Wat is de naam van deze autoverhuur?",
+                "render": "Deze autoverhuur heet {name}"
+            }
+        },
+        "title": {
+            "render": "Autoverhuur"
+        }
+    },
     "charging_station": {
         "description": "Oplaadpunten",
         "filter": {
@@ -6461,6 +6488,12 @@
                     }
                 },
                 "question": "Heeft deze trap een leuning?"
+            },
+            "multilevels": {
+                "override": {
+                    "question": "Tussen welke verdiepingen loopt deze trap?",
+                    "render": "Deze trap loopt tussen de verdiepingen {level}"
+                }
             },
             "ramp": {
                 "mappings": {

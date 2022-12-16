@@ -61,6 +61,7 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [string](../SpecialInputElements.md#string) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/handrail#values) [handrail](https://wiki.openstreetmap.org/wiki/Key:handrail) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/tactile_writing#values) [tactile_writing](https://wiki.openstreetmap.org/wiki/Key:tactile_writing) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/conveying#values) [conveying](https://wiki.openstreetmap.org/wiki/Key:conveying) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dno)
@@ -80,18 +81,43 @@ This tagrendering has no question and is thus read-only
 
 
 
+### multilevels 
+
+
+
+The question is  *Between which levels are these stairs?*
+
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
+
+This is rendered with  `These stairs are between the levels {level}`
+
+
+
+
+
+  - *Located underground*  corresponds with  `location=underground`
+  - This option cannot be chosen as answer
+  - *Located on the ground floor*  corresponds with  `level=0`
+  - *Located on the ground floor*  corresponds with  ``
+  - This option cannot be chosen as answer
+  - *Located on the first floor*  corresponds with  `level=1`
+  - *Located on the first basement level*  corresponds with  `level=-1`
+
+
+
+
 ### handrail 
 
 
 
-The question is  Does this stair have a handrail?
+The question is  *Does this stair have a handrail?*
 
 
 
 
 
-  - These stairs have a handrail  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:handrail' target='_blank'>handrail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dyes' target='_blank'>yes</a>`
-  - These stairs do <b>not</b> have a handrail  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:handrail' target='_blank'>handrail</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:handrail%3Dno' target='_blank'>no</a>`
+  - *These stairs have a handrail*  corresponds with  `handrail=yes`
+  - *These stairs do <b>not</b> have a handrail*  corresponds with  `handrail=no`
 
 
 
@@ -100,14 +126,14 @@ The question is  Does this stair have a handrail?
 
 
 
-The question is  Do these stairs have tactile writing on the handrail?
+The question is  *Do these stairs have tactile writing on the handrail?*
 
 
 
 
 
-  - There is tactile writing on the handrail  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing' target='_blank'>tactile_writing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dyes' target='_blank'>yes</a>`
-  - There is no tactile writing on the handrail  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing' target='_blank'>tactile_writing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dno' target='_blank'>no</a>`
+  - *There is tactile writing on the handrail*  corresponds with  `tactile_writing=yes`
+  - *There is no tactile writing on the handrail*  corresponds with  `tactile_writing=no`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `handrail=yes`
@@ -136,9 +162,9 @@ This tagrendering has no question and is thus read-only
 
 
 
-  - This is an escalator  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:conveying' target='_blank'>conveying</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dyes' target='_blank'>yes</a>`
-  - This is not an escalator  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:conveying' target='_blank'>conveying</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:conveying%3Dno' target='_blank'>no</a>`
-  - This is not an escalator  corresponds with  ``
+  - *This is an escalator*  corresponds with  `conveying=yes`
+  - *This is not an escalator*  corresponds with  `conveying=no`
+  - *This is not an escalator*  corresponds with  ``
   - This option cannot be chosen as answer
 
 
@@ -148,21 +174,21 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  Is there a ramp at these stairs?
+The question is  *Is there a ramp at these stairs?*
 
 
 
 
 
-  - There is a ramp for bicycles here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:ramp:bicycle' target='_blank'>ramp:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:bicycle%3Dyes' target='_blank'>yes</a>`
+  - *There is a ramp for bicycles here*  corresponds with  `ramp:bicycle=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:bicycle' target='_blank'>ramp:bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:bicycle%3Dno' target='_blank'>no</a>
-  - There is a ramp for wheelchairs here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:ramp:wheelchair' target='_blank'>ramp:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:wheelchair%3Dyes' target='_blank'>yes</a>`
+  - *There is a ramp for wheelchairs here*  corresponds with  `ramp:wheelchair=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:wheelchair' target='_blank'>ramp:wheelchair</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:wheelchair%3Dno' target='_blank'>no</a>
-  - There is ramp for wheelchairs here, but it is shown separately on the map  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:ramp' target='_blank'>ramp</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp%3Dseparate' target='_blank'>separate</a>`
+  - *There is ramp for wheelchairs here, but it is shown separately on the map*  corresponds with  `ramp=separate`
   - This option cannot be chosen as answer
-  - There is a ramp for strollers here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:ramp:stroller' target='_blank'>ramp:stroller</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:stroller%3Dyes' target='_blank'>yes</a>`
+  - *There is a ramp for strollers here*  corresponds with  `ramp:stroller=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:ramp:stroller' target='_blank'>ramp:stroller</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp:stroller%3Dno' target='_blank'>no</a>
-  - There is no ramp at these stairs  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:ramp' target='_blank'>ramp</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:ramp%3Dno' target='_blank'>no</a>`
+  - *There is no ramp at these stairs*  corresponds with  `ramp=no`
   - Unselecting this answer will add 
  
 

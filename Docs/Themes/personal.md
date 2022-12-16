@@ -13,6 +13,7 @@ This theme contains the following layers:
 
   - [ambulancestation](../Layers/ambulancestation.md)
   - [artwork](../Layers/artwork.md)
+  - [atm](../Layers/atm.md)
   - [barrier](../Layers/barrier.md)
   - [bench](../Layers/bench.md)
   - [bench_at_pt](../Layers/bench_at_pt.md)
@@ -100,6 +101,7 @@ This theme contains the following layers:
   - [waste_basket](../Layers/waste_basket.md)
   - [waste_disposal](../Layers/waste_disposal.md)
   - [windturbine](../Layers/windturbine.md)
+  - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
