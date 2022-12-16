@@ -799,6 +799,21 @@
       "value": "only"
     },
     {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=no with a fixed text, namely 'There are no organic options available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=yes with a fixed text, namely 'There is an organic menu' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=only with a fixed text, namely 'Only organic options are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "value": "only"
+    },
+    {
       "key": "diet:vegetarian",
       "description": "Layer 'Restaurants and fast food' shows diet:vegetarian=yes with a fixed text, namely 'Vegetarian snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
       "value": "yes"
@@ -827,6 +842,21 @@
       "key": "diet:vegan",
       "description": "Layer 'Restaurants and fast food' shows diet:vegan=no with a fixed text, namely 'No vegan snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
       "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=yes with a fixed text, namely 'Organic snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=no with a fixed text, namely 'No organic snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "value": "no"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Restaurants and fast food' shows organic=only with a fixed text, namely 'Only organic snacks are available' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "value": "only"
     },
     {
       "key": "friture:oil",
@@ -2105,6 +2135,21 @@
       "value": "Telekom"
     },
     {
+      "key": "organic",
+      "description": "Layer 'Shop' shows organic=yes with a fixed text, namely 'This shop offers organic products' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "value": "yes"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Shop' shows organic=only with a fixed text, namely 'This shop only offers organic products' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "value": "only"
+    },
+    {
+      "key": "organic",
+      "description": "Layer 'Shop' shows organic=no with a fixed text, namely 'This shop does not offer organic products' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "value": "no"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme OnWheels has a layer Toilets showing features with this tag",
       "value": "toilets"
@@ -2315,70 +2360,70 @@
     },
     {
       "key": "amenity",
-      "description": "The MapComplete theme OnWheels has a layer pharmacy showing features with this tag",
+      "description": "The MapComplete theme OnWheels has a layer Pharmacies showing features with this tag",
       "value": "pharmacy"
     },
     {
       "key": "image",
-      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Pharmacies allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Pharmacies allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Pharmacies allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'pharmacy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Pharmacies allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",
-      "description": "Layer 'pharmacy' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'Pharmacies' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'pharmacy' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'Pharmacies' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "phone",
-      "description": "Layer 'pharmacy' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'Pharmacies' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'pharmacy' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'Pharmacies' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "email",
-      "description": "Layer 'pharmacy' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'Pharmacies' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "contact:email",
-      "description": "Layer 'pharmacy' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'Pharmacies' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "website",
-      "description": "Layer 'pharmacy' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'Pharmacies' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "contact:website",
-      "description": "Layer 'pharmacy' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'Pharmacies' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'pharmacy' shows wheelchair=yes with a fixed text, namely 'This pharmacy is easy to access on a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "description": "Layer 'Pharmacies' shows wheelchair=yes with a fixed text, namely 'This pharmacy is easy to access on a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
       "value": "yes"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'pharmacy' shows wheelchair=no with a fixed text, namely 'This pharmacy is hard to access on a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "description": "Layer 'Pharmacies' shows wheelchair=no with a fixed text, namely 'This pharmacy is hard to access on a wheelchair' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
       "value": "no"
     },
     {
       "key": "wheelchair",
-      "description": "Layer 'pharmacy' shows wheelchair=limited with a fixed text, namely 'This pharmacy has limited access for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "description": "Layer 'Pharmacies' shows wheelchair=limited with a fixed text, namely 'This pharmacy has limited access for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
       "value": "limited"
     },
     {
@@ -2387,16 +2432,6 @@
       "value": "doctors"
     },
     {
-      "key": "amenity",
-      "description": "The MapComplete theme OnWheels has a layer Doctors showing features with this tag",
-      "value": "dentist"
-    },
-    {
-      "key": "healthcare",
-      "description": "The MapComplete theme OnWheels has a layer Doctors showing features with this tag",
-      "value": "physiotherapist"
-    },
-    {
       "key": "image",
       "description": "The layer 'Doctors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -2413,8 +2448,21 @@
       "description": "The layer 'Doctors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
+      "key": "name",
+      "description": "Layer 'Doctors' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'OnWheels')"
+    },
+    {
       "key": "opening_hours",
       "description": "Layer 'Doctors' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'OnWheels')"
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Doctors' shows opening_hours=\"by appointment\" with a fixed text, namely 'Only by appointment' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "value": "\"by appointment\""
+    },
+    {
+      "key": "opening_hours",
+      "description": "Layer 'Doctors' shows opening_hours~^(\"by appointment\"|by appointment)$ with a fixed text, namely 'Only by appointment' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "phone",
@@ -2439,10 +2487,6 @@
     {
       "key": "contact:website",
       "description": "Layer 'Doctors' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
-    },
-    {
-      "key": "name",
-      "description": "Layer 'Doctors' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "healthcare:speciality",

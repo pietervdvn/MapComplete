@@ -5,13 +5,15 @@
     "de": "Wände und Gebäude",
     "fr": "Murs et bâtiments",
     "da": "Mure og bygninger",
-    "nb_NO": "Murer og bygninger"
+    "nb_NO": "Murer og bygninger",
+    "nl": "Muren en gebouwen"
   },
   "description": {
     "en": "Special builtin layer providing all walls and buildings. This layer is useful in presets for objects which can be placed against walls (e.g. AEDs, postboxes, entrances, addresses, surveillance cameras, …). This layer is invisible by default and not toggleable by the user.",
     "de": "Spezielle Ebene, die alle Wände und Gebäude bereitstellt. Diese Ebene ist nützlich in Voreinstellungen für Objekte, die an Wänden platziert werden können (z. B. AEDs, Briefkästen, Eingänge, Adressen, Überwachungskameras, ...). Diese Ebene ist standardmäßig unsichtbar und kann vom Benutzer nicht umgeschaltet werden.",
     "fr": "Couche intégrée spéciale fournissant tous les murs et bâtiments. Cette couche est utile dans les préréglages pour les objets qui peuvent être placés contre les murs (par exemple, les DEA, les boîtes aux lettres, les entrées, les adresses, les caméras de surveillance, …). Ce calque est invisible par défaut et non inchangeable par l'utilisateur.",
-    "da": "Specielt indbygget lag giver alle vægge og bygninger. Dette lag er nyttigt i forudindstillinger til objekter, der kan placeres mod vægge (f.eks. AED'er, postkasser, indgange, adresser, overvågningskameraer, …). Dette lag er usynligt som standard og kan ikke skiftes af brugeren."
+    "da": "Specielt indbygget lag giver alle vægge og bygninger. Dette lag er nyttigt i forudindstillinger til objekter, der kan placeres mod vægge (f.eks. AED'er, postkasser, indgange, adresser, overvågningskameraer, …). Dette lag er usynligt som standard og kan ikke skiftes af brugeren.",
+    "nl": "Speciale ingebouwde laag voor alle muren en gebouwen. Deze laag is nuttig in voorkeuzen voor objecten die tegen muren geplaatst kunnen worden (bv. AEDs, brievenbussen, ingangen, adressen, beveiligingscamera's,…). Deze laag is standaard onzichtbaar en niet in te schakelen door de gebruiker."
   },
   "icon": "./assets/layers/walls_and_buildings/walls_and_buildings.png",
   "startLat": 50.8465573,

@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 211,
+      "commits": 213,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 186,
+      "commits": 190,
       "contributor": "kjon"
     },
     {
@@ -18,11 +18,11 @@
     },
     {
       "commits": 45,
-      "contributor": "Anonymous"
+      "contributor": "Robin van der Linde"
     },
     {
-      "commits": 39,
-      "contributor": "Robin van der Linde"
+      "commits": 45,
+      "contributor": "Anonymous"
     },
     {
       "commits": 36,
@@ -258,6 +258,10 @@
     },
     {
       "commits": 2,
+      "contributor": "mcliquid"
+    },
+    {
+      "commits": 2,
       "contributor": "Tarcila Cataldi"
     },
     {
@@ -323,6 +327,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "Lucas"
     },
     {
       "commits": 1,

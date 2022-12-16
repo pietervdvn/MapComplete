@@ -122,7 +122,7 @@ The question is  Is this a post partner?
   - This shop is not a post partner  corresponds with  ``
 
 
-Only visible if  `post_office=post_partner`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `post_office=post_partner`
 
 
 
@@ -150,7 +150,7 @@ This is rendered with  This location offers services for {post_office:brand}
   - This location offers services for bpost  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:post_office:brand' target='_blank'>post_office:brand</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3Dbpost' target='_blank'>bpost</a>`
 
 
-Only visible if  `post_office=post_partner`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `post_office=post_partner`
 
 
 

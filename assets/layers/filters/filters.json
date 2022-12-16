@@ -164,7 +164,9 @@
             ]
           },
           "question": {
-            "en": "Has organic options"
+            "en": "Has organic options",
+            "de": "Hat Bio-Produkte",
+            "nl": "Heeft biologische opties"
           }
         }
       ]

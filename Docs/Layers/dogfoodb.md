@@ -74,8 +74,10 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:vegetarian#values) [diet:vegetarian](https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Donly)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:vegan#values) [diet:vegan](https://wiki.openstreetmap.org/wiki/Key:diet:vegan) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Donly)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:halal#values) [diet:halal](https://wiki.openstreetmap.org/wiki/Key:diet:halal) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:halal%3Donly)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/organic#values) [organic](https://wiki.openstreetmap.org/wiki/Key:organic) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:vegetarian#values) [diet:vegetarian](https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:vegan#values) [diet:vegan](https://wiki.openstreetmap.org/wiki/Key:diet:vegan) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/organic#values) [organic](https://wiki.openstreetmap.org/wiki/Key:organic) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno) [only](https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/friture:oil#values) [friture:oil](https://wiki.openstreetmap.org/wiki/Key:friture:oil) | Multiple choice | [vegetable](https://wiki.openstreetmap.org/wiki/Tag:friture:oil%3Dvegetable) [animal](https://wiki.openstreetmap.org/wiki/Tag:friture:oil%3Danimal)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/reusable_packaging:accept#values) [reusable_packaging:accept](https://wiki.openstreetmap.org/wiki/Key:reusable_packaging:accept) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Dno) [only](https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Donly)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:electricity#values) [service:electricity](https://wiki.openstreetmap.org/wiki/Key:service:electricity) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dlimited) [ask](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dask) [no](https://wiki.openstreetmap.org/wiki/Tag:service:electricity%3Dno)
@@ -384,6 +386,23 @@ The question is  Does this restaurant offer a halal menu?
 
 
 
+### organic (no friture) 
+
+
+
+The question is  Does this restaurant offer organic food?
+
+
+
+
+
+  - There are no organic options available  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno' target='_blank'>no</a>`
+  - There is an organic menu  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes' target='_blank'>yes</a>`
+  - Only organic options are available  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly' target='_blank'>only</a>`
+
+
+
+
 ### friture-vegetarian 
 
 
@@ -399,7 +418,7 @@ The question is  Does this fries shop have vegetarian snacks?
   - No vegetarian snacks are available  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian' target='_blank'>diet:vegetarian</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno' target='_blank'>no</a>`
 
 
-Only visible if  `cuisine=friture`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `cuisine=friture`
 
 
 
@@ -418,7 +437,26 @@ The question is  Does this fries shop have vegan snacks?
   - No vegan snacks are available  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:diet:vegan' target='_blank'>diet:vegan</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:diet:vegan%3Dno' target='_blank'>no</a>`
 
 
-Only visible if  `cuisine=friture`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `cuisine=friture`
+
+
+
+### friture-organic 
+
+
+
+The question is  Does this fries shop offer organic snacks?
+
+
+
+
+
+  - Organic snacks are available  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Dyes' target='_blank'>yes</a>`
+  - No organic snacks are available  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Dno' target='_blank'>no</a>`
+  - Only organic snacks are available  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:organic' target='_blank'>organic</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:organic%3Donly' target='_blank'>only</a>`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `cuisine=friture`
 
 
 
@@ -436,7 +474,7 @@ The question is  Does this fries shop use vegetable or animal oil for cooking?
   - The frying is done with animal oil  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:friture:oil' target='_blank'>friture:oil</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:friture:oil%3Danimal' target='_blank'>animal</a>`
 
 
-Only visible if  `cuisine=friture`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `cuisine=friture`
 
 
 
@@ -455,7 +493,7 @@ The question is  If you bring your own container (such as a cooking pot and smal
   - You <b>must</b> bring your own container to order here.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:reusable_packaging:accept' target='_blank'>reusable_packaging:accept</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:reusable_packaging:accept%3Donly' target='_blank'>only</a>`
 
 
-Only visible if  `cuisine=friture`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `cuisine=friture`
 
 
 
@@ -530,7 +568,7 @@ The question is  Is there a fee for internet access?
   - Internet access is free at this place, for customers only  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>`
 
 
-Only visible if  `internet_access!=no&internet_access~.+`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no&internet_access~.+`
 
 
 
@@ -551,7 +589,7 @@ This is rendered with  The network name is <b>{internet_access:ssid}</b>
   - Telekom  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>`
 
 
-Only visible if  `internet_access=wlan`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `internet_access=wlan`
 
 
 

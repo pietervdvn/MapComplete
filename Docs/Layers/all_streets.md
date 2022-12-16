@@ -117,7 +117,7 @@ The question is  What sign does this bicycle road have?
   - There are no supplementary signs at this bicycle road.  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:traffic_sign' target='_blank'>traffic_sign</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:traffic_sign%3DDE:244.1' target='_blank'>DE:244.1</a>`
 
 
-Only visible if  `bicycle_road=yes&_country=de`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `bicycle_road=yes&_country=de`
 
 
 
@@ -133,7 +133,7 @@ This is rendered with  This street will become a cyclestreet at {cyclestreet:sta
 
 
 
-Only visible if  `proposed:cyclestreet=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `proposed:cyclestreet=yes`
 
 
 

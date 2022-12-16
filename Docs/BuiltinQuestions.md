@@ -28,6 +28,7 @@ The following items can be easily reused in your layers
     + [description](#description)
     + [opening_hours](#opening_hours)
     + [opening_hours_24_7](#opening_hours_24_7)
+    + [opening_hours_by_appointment](#opening_hours_by_appointment)
     + [service:electricity](#serviceelectricity)
     + [payment-options](#payment-options)
     + [payment-options-advanced](#payment-options-advanced)
@@ -275,6 +276,22 @@ What are the opening hours of {title()}?
 
 
   - 24/7 opened (including holidays)
+
+
+
+
+### opening_hours_by_appointment 
+
+
+
+<h3>Opening hours</h3>{opening_hours_table(opening_hours)}
+
+What are the opening hours of {title()}?
+
+
+
+  - Only by appointment
+  - Only by appointment
 
 
 

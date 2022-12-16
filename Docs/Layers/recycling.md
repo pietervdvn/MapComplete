@@ -117,7 +117,7 @@ This is rendered with  This recycling centre is named <b>{name}</b>
   - This recycling centre doesn't have a specific name  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:noname' target='_blank'>noname</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:noname%3Dyes' target='_blank'>yes</a>`
 
 
-Only visible if  `recycling_type=centre`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `recycling_type=centre`
 
 
 
@@ -136,7 +136,7 @@ The question is  Where is this container located?
   - This container is located outdoors  corresponds with  ``
 
 
-Only visible if  `recycling_type=container`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `recycling_type=container`
 
 
 
@@ -230,7 +230,7 @@ This is rendered with  <a href='{website}' target='_blank'>{website}</a>
   - This option cannot be chosen as answer
 
 
-Only visible if  `recycling_type=centre`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `recycling_type=centre`
 
 
 
@@ -252,7 +252,7 @@ This is rendered with  <a href='mailto:{email}' target='_blank'>{email}</a>
   - This option cannot be chosen as answer
 
 
-Only visible if  `recycling_type=centre`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `recycling_type=centre`
 
 
 
@@ -274,7 +274,7 @@ This is rendered with  <a href='tel:{phone}'>{phone}</a>
   - This option cannot be chosen as answer
 
 
-Only visible if  `recycling_type=centre`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `recycling_type=centre`
 
 
 

@@ -102,7 +102,7 @@ The question is  What level of education is given here?
   - Doctorate degrees are awarded here  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:isced:2011:level' target='_blank'>isced:2011:level</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:isced:2011:level%3Ddoctorate' target='_blank'>doctorate</a>`
 
 
-Only visible if  `amenity=university`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `amenity=university`
 
 
 

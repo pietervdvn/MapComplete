@@ -348,7 +348,7 @@ The question is  Is there a fee for internet access?
   - Internet access is free at this place, for customers only  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:fee' target='_blank'>internet_access:fee</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:fee%3Dcustomers' target='_blank'>customers</a>`
 
 
-Only visible if  `internet_access!=no&internet_access~.+`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `internet_access!=no&internet_access~.+`
 
 
 
@@ -369,7 +369,7 @@ This is rendered with  The network name is <b>{internet_access:ssid}</b>
   - Telekom  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:internet_access:ssid' target='_blank'>internet_access:ssid</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:internet_access:ssid%3DTelekom' target='_blank'>Telekom</a>`
 
 
-Only visible if  `internet_access=wlan`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `internet_access=wlan`
 
 
 

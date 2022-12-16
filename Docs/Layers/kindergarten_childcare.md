@@ -173,7 +173,7 @@ This is rendered with  <h3>Opening hours</h3>{opening_hours_table(opening_hours)
 
 
 
-Only visible if  `amenity=childcare`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `amenity=childcare`
 
 
 

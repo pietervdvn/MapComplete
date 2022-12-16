@@ -168,7 +168,7 @@ This is rendered with  The fee is {charge}
 
 
 
-Only visible if  `fee=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `fee=yes`
 
 
 
@@ -188,7 +188,7 @@ The question is  Which methods of payment are accepted here?
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
 
 
-Only visible if  `fee=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `fee=yes`
 
 
 
@@ -240,7 +240,7 @@ This is rendered with  The door to the wheelchair-accessible toilet is {canonica
 
 
 
-Only visible if  `wheelchair=yes|wheelchair=designated`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `wheelchair=yes|wheelchair=designated`
 
 
 
@@ -298,7 +298,7 @@ This is rendered with  The changing table is located at {changing_table:location
   - The changing table is in a dedicated room.   corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:changing_table:location' target='_blank'>changing_table:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Ddedicated_room' target='_blank'>dedicated_room</a>`
 
 
-Only visible if  `changing_table=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `changing_table=yes`
 
 
 

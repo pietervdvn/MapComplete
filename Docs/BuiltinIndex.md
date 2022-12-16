@@ -39,6 +39,7 @@
     + [climbing.sportclimbing](#climbingsportclimbing)
     + [climbing.max_bolts](#climbingmax_bolts)
     + [all_tags](#all_tags)
+    + [opening_hours_by_appointment](#opening_hours_by_appointment)
     + [multilevels](#multilevels)
     + [induction-loop](#induction-loop)
     + [questions](#questions)
@@ -95,6 +96,7 @@
   - climbing_route
   - crossings
   - defibrillator
+  - dentist
   - doctors
   - dogpark
   - drinking_water
@@ -119,6 +121,7 @@
   - parcel_lockers
   - parking
   - pharmacy
+  - physiotherapist
   - picnic_table
   - play_forest
   - playground
@@ -176,6 +179,7 @@
   - cafe_pub
   - climbing_club
   - climbing_gym
+  - dentist
   - doctors
   - fitness_centre
   - food
@@ -187,6 +191,7 @@
   - nature_reserve
   - observation_tower
   - pharmacy
+  - physiotherapist
   - playground
   - recycling
   - school
@@ -212,6 +217,7 @@
   - cafe_pub
   - climbing_club
   - climbing_gym
+  - dentist
   - doctors
   - fitness_centre
   - food
@@ -221,6 +227,7 @@
   - hotel
   - kindergarten_childcare
   - pharmacy
+  - physiotherapist
   - recycling
   - school
   - shops
@@ -245,6 +252,7 @@
   - cafe_pub
   - climbing_club
   - climbing_gym
+  - dentist
   - doctors
   - fitness_centre
   - food
@@ -254,6 +262,7 @@
   - hotel
   - kindergarten_childcare
   - pharmacy
+  - physiotherapist
   - recycling
   - school
   - shops
@@ -277,7 +286,7 @@
   - cafe_pub
   - climbing_club
   - climbing_gym
-  - doctors
+  - dentist
   - fitness_centre
   - fitness_station
   - food
@@ -608,6 +617,18 @@
 
 
   - cluster_style
+
+
+
+
+### opening_hours_by_appointment 
+
+
+
+
+
+  - doctors
+  - physiotherapist
 
 
 

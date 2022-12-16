@@ -110,7 +110,7 @@ The question is  Do these stairs have tactile writing on the handrail?
   - There is no tactile writing on the handrail  corresponds with  `<a href='https://wiki.openstreetmap.org/wiki/Key:tactile_writing' target='_blank'>tactile_writing</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tactile_writing%3Dno' target='_blank'>no</a>`
 
 
-Only visible if  `handrail=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `handrail=yes`
 
 
 
@@ -122,7 +122,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-Only visible if  `tactile_writing=yes`  is shown
+This tagrendering is only visible in the popup if the following condition is met: `tactile_writing=yes`
 
 
 
