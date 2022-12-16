@@ -38,7 +38,8 @@
       "id": "name",
       "render": {
         "en": "The name of this ATM is {name}"
-      }
+      },
+      "condition": "name~*"
     },
     {
       "id": "brand",
