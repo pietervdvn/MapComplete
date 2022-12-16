@@ -6,10 +6,23 @@ import { OsmTags } from "../../../Models/OsmFeature"
 
 export default class ChangeTagAction extends OsmChangeAction {
     private readonly _elementId: string
+    /**
+     * The tags to apply onto the object
+     */
     private readonly _tagsFilter: TagsFilter
+    /**
+     * The current tags of the object to change
+     */
     private readonly _currentTags: Record<string, string> | OsmTags
     private readonly _meta: { theme: string; changeType: string }
 
+    /**
+     *
+     * @param elementId: the element to change
+     * @param tagsFilter: the tags to apply
+     * @param currentTags: the current tags of the object
+     * @param meta: some metainformation
+     */
     constructor(
         elementId: string,
         tagsFilter: TagsFilter,
