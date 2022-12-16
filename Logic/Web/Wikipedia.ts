@@ -147,6 +147,9 @@ export default class Wikipedia {
                 },
             ]
         }
+        if(result["error"]){
+            throw "Could not download: "+JSON.stringify(result)
+        }
         const el = document.createElement("html")
         el.innerHTML = result["content"].replace(/href="\//g, 'href="' + this.backend + "/")
         const searchResults = el.getElementsByClassName("mw-search-results")
