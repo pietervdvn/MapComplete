@@ -79,8 +79,19 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     public static GenerateContent(
         tags: UIEventSource<any>,
         layerConfig: LayerConfig,
+        state: FeaturePipelineState): BaseUIElement{
+        return new Toggle(
+            "This object is deleted",
+            FeatureInfoBox.GenerateMainContent(tags, layerConfig, state),
+            tags.map(t => t["_deleted"] == "yes")
+        )
+    }
+    private static GenerateMainContent(
+        tags: UIEventSource<any>,
+        layerConfig: LayerConfig,
         state: FeaturePipelineState
     ): BaseUIElement {
+
         let questionBoxes: Map<string, QuestionBox> = new Map<string, QuestionBox>()
         const t = Translations.t.general
         const allGroupNames = Utils.Dedup(layerConfig.tagRenderings.map((tr) => tr.group))
