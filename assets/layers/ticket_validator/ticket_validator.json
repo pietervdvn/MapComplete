@@ -59,7 +59,7 @@
             "then": {
               "en": "This ticket validator accepts OV-Chipkaart"
             },
-            "hideInAnswer": "_country!=nl"
+            "hideInAnswer": true
           },
           {
             "if": "payment:ov-chipkaart=yes",
@@ -67,7 +67,7 @@
             "then": {
               "en": "This ticket validator accepts OV-Chipkaart"
             },
-            "hideInAnswer": true
+            "hideInAnswer": "_country!=nl"
           }
         ]
       }
