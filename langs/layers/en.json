@@ -169,6 +169,15 @@
     },
     "atm": {
         "description": "ATMS to withdraw money",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "With speech output"
+                    }
+                }
+            }
+        },
         "name": "ATMs",
         "presets": {
             "0": {
@@ -183,6 +192,34 @@
                 "question": "What brand is this ATM?",
                 "render": "The brand of this ATM is {brand}"
             },
+            "cash_in": {
+                "mappings": {
+                    "0": {
+                        "then": "You probably cannot deposit cash into this ATM"
+                    },
+                    "1": {
+                        "then": "You can deposit cash into this ATM"
+                    },
+                    "2": {
+                        "then": "You cannot deposit cash into this ATM"
+                    }
+                },
+                "question": "Can you deposit cash into this ATM?"
+            },
+            "cash_out": {
+                "mappings": {
+                    "0": {
+                        "then": "You can withdraw cash from this ATM"
+                    },
+                    "1": {
+                        "then": "You can withdraw cash from this ATM"
+                    },
+                    "2": {
+                        "then": "You cannot withdraw cash from this ATM"
+                    }
+                },
+                "question": "Can you withdraw cash from this ATM?"
+            },
             "name": {
                 "render": "The name of this ATM is {name}"
             },
@@ -192,6 +229,26 @@
                 },
                 "question": "What company operates this ATM?",
                 "render": "The ATM is operated by {operator}"
+            },
+            "speech_output": {
+                "mappings": {
+                    "0": {
+                        "then": "This ATM has speech output, usually available through a headphone jack"
+                    },
+                    "1": {
+                        "then": "This ATM does not have speech output"
+                    }
+                },
+                "question": "Does this ATM have speech output for visually impaired users?"
+            },
+            "speech_output_language": {
+                "render": {
+                    "special": {
+                        "question": "In which languages does this ATM have speech output?",
+                        "render_list_item": "This ATM has speech output in {language():font-bold}",
+                        "render_single_language": "This ATM has speech output in {language():font-bold}"
+                    }
+                }
             }
         },
         "title": {

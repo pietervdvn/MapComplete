@@ -918,7 +918,8 @@
           "ifnot": "payment:coins=no",
           "icon": "./assets/tagRenderings/coins.svg",
           "then": {
-            "en": "Coins are accepted here"
+            "en": "Coins are accepted here",
+            "nl": "Muntgeld wordt hier aanvaard"
           }
         },
         {
@@ -926,7 +927,8 @@
           "ifnot": "payment:notes=no",
           "icon": "./assets/tagRenderings/notes.svg",
           "then": {
-            "en": "Bank notes are accepted here"
+            "en": "Bank notes are accepted here",
+            "nl": "Bankbiljetten worden hier aanvaard"
           }
         },
         {
@@ -934,7 +936,8 @@
           "ifnot": "payment_debit_cards=no",
           "icon": "./assets/tagRenderings/payment_card.svg",
           "then": {
-            "en": "Debit cards are accepted here"
+            "en": "Debit cards are accepted here",
+            "nl": "Betalen met debetkaarten kan hier"
           }
         },
         {
@@ -942,7 +945,8 @@
           "ifnot": "payment:credit_cards=no",
           "icon": "./assets/tagRenderings/payment_card.svg",
           "then": {
-            "en": "Credit cards are accepted here"
+            "en": "Credit cards are accepted here",
+            "nl": "Betalen met creditkaarten kan hier"
           }
         }
       ]
