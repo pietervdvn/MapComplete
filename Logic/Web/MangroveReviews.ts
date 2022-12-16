@@ -127,35 +127,38 @@ export default class MangroveReviews {
         this._lastUpdate = new Date()
 
         const self = this
-        mangrove.getReviews({ sub: this.GetSubjectUri() })
+        mangrove
+            .getReviews({ sub: this.GetSubjectUri() })
             .then((data) => {
-            const reviews = []
-            const reviewsByUser = []
-            for (const review of data.reviews) {
-                const r = review.payload
+                const reviews = []
+                const reviewsByUser = []
+                for (const review of data.reviews) {
+                    const r = review.payload
 
-                console.log(
-                    "PublicKey is ",
-                    self._mangroveIdentity.kid.data,
-                    "reviews.kid is",
-                    review.kid
-                )
-                const byUser = self._mangroveIdentity.kid.map((data) => data === review.signature)
-                const rev: Review = {
-                    made_by_user: byUser,
-                    date: new Date(r.iat * 1000),
-                    comment: r.opinion,
-                    author: r.metadata.nickname,
-                    affiliated: r.metadata.is_affiliated,
-                    rating: r.rating, // percentage points
+                    console.log(
+                        "PublicKey is ",
+                        self._mangroveIdentity.kid.data,
+                        "reviews.kid is",
+                        review.kid
+                    )
+                    const byUser = self._mangroveIdentity.kid.map(
+                        (data) => data === review.signature
+                    )
+                    const rev: Review = {
+                        made_by_user: byUser,
+                        date: new Date(r.iat * 1000),
+                        comment: r.opinion,
+                        author: r.metadata.nickname,
+                        affiliated: r.metadata.is_affiliated,
+                        rating: r.rating, // percentage points
+                    }
+
+                    ;(rev.made_by_user ? reviewsByUser : reviews).push(rev)
                 }
-
-                ;(rev.made_by_user ? reviewsByUser : reviews).push(rev)
-            }
-            self._reviews.setData(reviewsByUser.concat(reviews))
-        })
-            .catch(e => {
-                console.error("Could not download review for ", e);
+                self._reviews.setData(reviewsByUser.concat(reviews))
+            })
+            .catch((e) => {
+                console.error("Could not download review for ", e)
             })
         return this._reviews
     }

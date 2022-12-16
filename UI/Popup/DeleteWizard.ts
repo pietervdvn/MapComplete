@@ -235,7 +235,7 @@ export default class DeleteWizard extends Toggle {
                                     return t.explanations.hardDelete
                                 }
                                 // This is a soft deletion: we explain _why_ the deletion is soft
-                                return t.explanations.softDelete.Subs({ reason: reason})
+                                return t.explanations.softDelete.Subs({ reason: reason })
                             })
                         )
                     }

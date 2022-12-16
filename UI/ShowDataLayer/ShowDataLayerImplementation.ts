@@ -1,11 +1,11 @@
-import {Store, UIEventSource} from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import {ShowDataLayerOptions} from "./ShowDataLayerOptions"
-import {ElementStorage} from "../../Logic/ElementStorage"
+import { ShowDataLayerOptions } from "./ShowDataLayerOptions"
+import { ElementStorage } from "../../Logic/ElementStorage"
 import RenderingMultiPlexerFeatureSource from "../../Logic/FeatureSource/Sources/RenderingMultiPlexerFeatureSource"
 import ScrollableFullScreen from "../Base/ScrollableFullScreen"
-import {LeafletMouseEvent} from "leaflet";
-import Hash from "../../Logic/Web/Hash";
+import { LeafletMouseEvent } from "leaflet"
+import Hash from "../../Logic/Web/Hash"
 /*
 // import 'leaflet-polylineoffset';
 We don't actually import it here. It is imported in the 'MinimapImplementation'-class, which'll result in a patched 'L' object.
@@ -43,7 +43,10 @@ export default class ShowDataLayerImplementation {
      * Note: the key of this dictionary is 'feature.properties.id+features.geometry.type' as one feature might have multiple presentations
      * @private
      */
-    private readonly leafletLayersPerId = new Map<string, { feature: any; activateFunc: (event: LeafletMouseEvent) => void }>()
+    private readonly leafletLayersPerId = new Map<
+        string,
+        { feature: any; activateFunc: (event: LeafletMouseEvent) => void }
+    >()
     private readonly showDataLayerid: number
     private readonly createPopup: (
         tags: UIEventSource<any>,
@@ -324,18 +327,18 @@ export default class ShowDataLayerImplementation {
             return
         }
         const key = feature.properties.id
-        if(this.leafletLayersPerId.has(key)){
+        if (this.leafletLayersPerId.has(key)) {
             const activate = this.leafletLayersPerId.get(key)
-            leafletLayer.addEventListener('click', activate.activateFunc)
-            if(Hash.hash.data === key ){
+            leafletLayer.addEventListener("click", activate.activateFunc)
+            if (Hash.hash.data === key) {
                 activate.activateFunc(null)
             }
-            return;
+            return
         }
         let infobox: ScrollableFullScreen = undefined
         const self = this
 
-        function activate (event: LeafletMouseEvent) {
+        function activate(event: LeafletMouseEvent) {
             if (infobox === undefined) {
                 const tags =
                     self.allElements?.getEventSourceById(key) ??
@@ -348,25 +351,26 @@ export default class ShowDataLayerImplementation {
                 })
             }
             infobox.Activate()
-            self._selectedElement.setData( self.allElements.ContainingFeatures.get(feature.id) ?? feature )
+            self._selectedElement.setData(
+                self.allElements.ContainingFeatures.get(feature.id) ?? feature
+            )
             event?.originalEvent?.preventDefault()
             event?.originalEvent?.stopPropagation()
             event?.originalEvent?.stopImmediatePropagation()
-            if(event?.originalEvent){
+            if (event?.originalEvent) {
                 // This is a total workaround, as 'preventDefault' and everything above seems to be not working
                 event.originalEvent["dismissed"] = true
             }
         }
 
-        leafletLayer.addEventListener('click', activate)
-
+        leafletLayer.addEventListener("click", activate)
 
         // Add the feature to the index to open the popup when needed
         this.leafletLayersPerId.set(key, {
             feature: feature,
             activateFunc: activate,
         })
-        if(Hash.hash.data === key ){
+        if (Hash.hash.data === key) {
             activate(null)
         }
     }

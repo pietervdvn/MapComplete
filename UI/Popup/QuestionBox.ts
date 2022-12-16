@@ -33,7 +33,7 @@ export default class QuestionBox extends VariableUiElement {
             .filter((tr) => tr.question !== undefined)
             .filter((tr) => tr.question !== null)
 
-        let focus: () => void = () => {};
+        let focus: () => void = () => {}
 
         const tagRenderingQuestions = tagRenderings.map(
             (tagRendering, i) =>
@@ -53,7 +53,6 @@ export default class QuestionBox extends VariableUiElement {
                                     skippedQuestions.data.push(i)
                                     skippedQuestions.ping()
                                     focus()
-
                                 }),
                         })
                 )
@@ -141,8 +140,9 @@ export default class QuestionBox extends VariableUiElement {
 
         this.skippedQuestions = skippedQuestions
         this.restingQuestions = questionsToAsk
-        focus = () => this.ScrollIntoView({
-            onlyIfPartiallyHidden: true
-        })
+        focus = () =>
+            this.ScrollIntoView({
+                onlyIfPartiallyHidden: true,
+            })
     }
 }

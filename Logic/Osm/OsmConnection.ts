@@ -19,9 +19,9 @@ export default class UserDetails {
     public totalMessages: number = 0
     public home: { lon: number; lat: number }
     public backend: string
-    public account_created: string;
-    public tracesCount: number = 0;
-    public description: string;
+    public account_created: string
+    public tracesCount: number = 0
+    public description: string
 
     constructor(backend: string) {
         this.backend = backend
@@ -214,8 +214,12 @@ export class OsmConnection {
                 data.name = userInfo.getAttribute("display_name")
                 data.account_created = userInfo.getAttribute("account_created")
                 data.uid = Number(userInfo.getAttribute("id"))
-                data.csCount = Number.parseInt( userInfo.getElementsByTagName("changesets")[0].getAttribute("count") ?? 0)
-                data.tracesCount = Number.parseInt( userInfo.getElementsByTagName("changesets")[0].getAttribute("count") ?? 0)
+                data.csCount = Number.parseInt(
+                    userInfo.getElementsByTagName("changesets")[0].getAttribute("count") ?? 0
+                )
+                data.tracesCount = Number.parseInt(
+                    userInfo.getElementsByTagName("changesets")[0].getAttribute("count") ?? 0
+                )
 
                 data.img = undefined
                 const imgEl = userInfo.getElementsByTagName("img")

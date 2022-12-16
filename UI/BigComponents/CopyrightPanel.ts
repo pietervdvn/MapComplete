@@ -147,15 +147,11 @@ export default class CopyrightPanel extends Combine {
                     imgSize,
                 }
             ),
-            new SubtleButton(
-                Svg.mastodon_ui(),
-                t.followOnMastodon,
-                {
-                    url: "https://en.osm.town/web/notifications",
-                    newTab: true,
-                    imgSize,
-                }
-            ),
+            new SubtleButton(Svg.mastodon_ui(), t.followOnMastodon, {
+                url: "https://en.osm.town/web/notifications",
+                newTab: true,
+                imgSize,
+            }),
             new OpenIdEditor(state, iconStyle),
             new MapillaryLink(state, iconStyle),
             new OpenJosm(state, iconStyle),

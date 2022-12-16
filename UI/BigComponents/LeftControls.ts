@@ -13,7 +13,7 @@ import { VariableUiElement } from "../Base/VariableUIElement"
 import FeatureInfoBox from "../Popup/FeatureInfoBox"
 import CopyrightPanel from "./CopyrightPanel"
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
-import {FixedUiElement} from "../Base/FixedUiElement";
+import { FixedUiElement } from "../Base/FixedUiElement"
 
 export default class LeftControls extends Combine {
     constructor(
@@ -46,14 +46,11 @@ export default class LeftControls extends Combine {
                     })
                 ).SetClass("inline-block w-full h-full")
 
-
                 feature.map((feature) => {
                     if (feature === undefined) {
                         return undefined
                     }
-                    const tagsSource = state.allElements.getEventSourceById(
-                        feature.properties.id
-                    )
+                    const tagsSource = state.allElements.getEventSourceById(feature.properties.id)
                     return new FeatureInfoBox(tagsSource, currentViewFL.layerDef, state, {
                         hashToShow: "currentview",
                         isShown: guiState.currentViewControlIsOpened,
@@ -85,7 +82,6 @@ export default class LeftControls extends Combine {
             )
         )
 
-
         new ScrollableFullScreen(
             () => Translations.t.general.layerSelection.title.Clone(),
             () =>
@@ -96,8 +92,8 @@ export default class LeftControls extends Combine {
             guiState.filterViewIsOpened
         )
         const toggledFilter = new MapControlButton(Svg.layers_svg()).onClick(() =>
-                guiState.filterViewIsOpened.setData(true)
-            )
+            guiState.filterViewIsOpened.setData(true)
+        )
 
         const filterButton = new Toggle(toggledFilter, undefined, state.featureSwitchFilter)
 
@@ -110,22 +106,17 @@ export default class LeftControls extends Combine {
         // If the welcomeMessage is disabled, the copyright is hidden (as that is where the copyright is located
         const copyright = new Toggle(
             undefined,
-            new Lazy(
-                () =>
-                {
-
-                    new ScrollableFullScreen(
-                        () => Translations.t.general.attribution.attributionTitle,
-                        () => new CopyrightPanel(state),
-                        "copyright",
-                        guiState.copyrightViewIsOpened
-                    );
-                 return                          new MapControlButton(Svg.copyright_svg()).onClick(() =>
-                            guiState.copyrightViewIsOpened.setData(true)
-                        )
-
-                }
-            ),
+            new Lazy(() => {
+                new ScrollableFullScreen(
+                    () => Translations.t.general.attribution.attributionTitle,
+                    () => new CopyrightPanel(state),
+                    "copyright",
+                    guiState.copyrightViewIsOpened
+                )
+                return new MapControlButton(Svg.copyright_svg()).onClick(() =>
+                    guiState.copyrightViewIsOpened.setData(true)
+                )
+            }),
             state.featureSwitchWelcomeMessage
         )
 

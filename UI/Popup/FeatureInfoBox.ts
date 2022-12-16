@@ -79,11 +79,15 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     public static GenerateContent(
         tags: UIEventSource<any>,
         layerConfig: LayerConfig,
-        state: FeaturePipelineState): BaseUIElement{
+        state: FeaturePipelineState
+    ): BaseUIElement {
         return new Toggle(
-            new Combine([Svg.delete_icon_svg().SetClass("w-8 h-8"), Translations.t.delete.isDeleted]).SetClass("flex justify-center font-bold items-center") ,
+            new Combine([
+                Svg.delete_icon_svg().SetClass("w-8 h-8"),
+                Translations.t.delete.isDeleted,
+            ]).SetClass("flex justify-center font-bold items-center"),
             FeatureInfoBox.GenerateMainContent(tags, layerConfig, state),
-            tags.map(t => t["_deleted"] == "yes")
+            tags.map((t) => t["_deleted"] == "yes")
         )
     }
     private static GenerateMainContent(
@@ -91,7 +95,6 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         layerConfig: LayerConfig,
         state: FeaturePipelineState
     ): BaseUIElement {
-
         let questionBoxes: Map<string, QuestionBox> = new Map<string, QuestionBox>()
         const t = Translations.t.general
         const allGroupNames = Utils.Dedup(layerConfig.tagRenderings.map((tr) => tr.group))

@@ -5,7 +5,7 @@ import Loc from "../../Models/Loc"
 import BaseLayer from "../../Models/BaseLayer"
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
 import * as L from "leaflet"
-import {LeafletMouseEvent, Map} from "leaflet"
+import { LeafletMouseEvent, Map } from "leaflet"
 import Minimap, { MinimapObj, MinimapOptions } from "./Minimap"
 import { BBox } from "../../Logic/BBox"
 import "leaflet-polylineoffset"
@@ -317,7 +317,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
         if (this._options.lastClickLocation) {
             const lastClickLocation = this._options.lastClickLocation
             map.on("click", function (e: LeafletMouseEvent) {
-                if(e.originalEvent["dismissed"] ){
+                if (e.originalEvent["dismissed"]) {
                     return
                 }
                 lastClickLocation?.setData({ lat: e.latlng.lat, lon: e.latlng.lng })

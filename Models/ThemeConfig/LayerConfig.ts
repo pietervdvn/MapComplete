@@ -301,7 +301,10 @@ export default class LayerConfig extends WithContextLoader {
 
             const hasCenterRendering = this.mapRendering.some(
                 (r) =>
-                    r.location.has("centroid")  || r.location.has("projected_centerpoint") || r.location.has("start") || r.location.has("end")
+                    r.location.has("centroid") ||
+                    r.location.has("projected_centerpoint") ||
+                    r.location.has("start") ||
+                    r.location.has("end")
             )
 
             if (this.lineRendering.length === 0 && this.mapRendering.length === 0) {
@@ -602,10 +605,10 @@ export default class LayerConfig extends WithContextLoader {
             }
         }
 
-        const filterDocs: (string | BaseUIElement)[]  = []
-        if(this.filters.length > 0){
+        const filterDocs: (string | BaseUIElement)[] = []
+        if (this.filters.length > 0) {
             filterDocs.push(new Title("Filters", 4))
-            filterDocs.push(...this.filters.map(filter => filter.GenerateDocs()))
+            filterDocs.push(...this.filters.map((filter) => filter.GenerateDocs()))
         }
         return new Combine([
             new Combine([new Title(this.id, 1), iconImg, this.description, "\n"]).SetClass(
@@ -621,7 +624,7 @@ export default class LayerConfig extends WithContextLoader {
             new Title("Supported attributes", 2),
             quickOverview,
             ...this.tagRenderings.map((tr) => tr.GenerateDocumentation()),
-            ...filterDocs
+            ...filterDocs,
         ])
             .SetClass("flex-col")
             .SetClass("link-underline")

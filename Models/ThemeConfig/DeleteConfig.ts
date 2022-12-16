@@ -49,11 +49,12 @@ export default class DeleteConfig {
             }
         })
 
-        if(!json.omitDefaultDeleteReasons ){
+        if (!json.omitDefaultDeleteReasons) {
             for (const defaultDeleteReason of DeleteConfig.defaultDeleteReasons) {
                 this.deleteReasons.push({
                     changesetMessage: defaultDeleteReason.changesetMessage,
-                    explanation: defaultDeleteReason.explanation.Clone(/*Must clone, hides translation otherwise*/)
+                    explanation:
+                        defaultDeleteReason.explanation.Clone(/*Must clone, hides translation otherwise*/),
                 })
             }
         }
@@ -66,8 +67,12 @@ export default class DeleteConfig {
             }
         })
 
-        if(this.nonDeleteMappings.length + this.deleteReasons.length == 0){
-            throw "At "+context+": a deleteconfig should have some reasons to delete: either the default delete reasons or a nonDeleteMapping or extraDeletereason should be given"
+        if (this.nonDeleteMappings.length + this.deleteReasons.length == 0) {
+            throw (
+                "At " +
+                context +
+                ": a deleteconfig should have some reasons to delete: either the default delete reasons or a nonDeleteMapping or extraDeletereason should be given"
+            )
         }
 
         this.softDeletionTags = undefined

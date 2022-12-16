@@ -70,7 +70,6 @@ export default interface PointRenderingConfigJson {
      */
     css?: string | TagRenderingConfigJson
 
-
     /**
      * A snippet of css-classes. They can be space-separated
      */

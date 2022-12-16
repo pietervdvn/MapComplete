@@ -1,28 +1,28 @@
-import {SubtleButton} from "../Base/SubtleButton"
+import { SubtleButton } from "../Base/SubtleButton"
 import Combine from "../Base/Combine"
 import Svg from "../../Svg"
-import {OsmConnection} from "../../Logic/Osm/OsmConnection"
+import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import Toggle from "../Input/Toggle"
-import {UIEventSource} from "../../Logic/UIEventSource"
+import { UIEventSource } from "../../Logic/UIEventSource"
 import Translations from "../i18n/Translations"
-import {VariableUiElement} from "../Base/VariableUIElement"
-import {Translation} from "../i18n/Translation"
+import { VariableUiElement } from "../Base/VariableUIElement"
+import { Translation } from "../i18n/Translation"
 import BaseUIElement from "../BaseUIElement"
 import LocationInput from "../Input/LocationInput"
 import Loc from "../../Models/Loc"
-import {GeoOperations} from "../../Logic/GeoOperations"
-import {OsmObject} from "../../Logic/Osm/OsmObject"
-import {Changes} from "../../Logic/Osm/Changes"
+import { GeoOperations } from "../../Logic/GeoOperations"
+import { OsmObject } from "../../Logic/Osm/OsmObject"
+import { Changes } from "../../Logic/Osm/Changes"
 import ChangeLocationAction from "../../Logic/Osm/Actions/ChangeLocationAction"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import MoveConfig from "../../Models/ThemeConfig/MoveConfig"
-import {ElementStorage} from "../../Logic/ElementStorage"
+import { ElementStorage } from "../../Logic/ElementStorage"
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
 import BaseLayer from "../../Models/BaseLayer"
-import SearchAndGo from "../BigComponents/SearchAndGo";
-import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction";
-import {And} from "../../Logic/Tags/And";
-import {Tag} from "../../Logic/Tags/Tag";
+import SearchAndGo from "../BigComponents/SearchAndGo"
+import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
+import { And } from "../../Logic/Tags/And"
+import { Tag } from "../../Logic/Tags/Tag"
 
 interface MoveReason {
     text: Translation | string
@@ -71,7 +71,7 @@ export default class MoveWizard extends Toggle {
                 includeSearch: true,
                 startZoom: 12,
                 minZoom: 6,
-                eraseAddressFields: true
+                eraseAddressFields: true,
             })
         }
         if (options.enableImproveAccuracy) {
@@ -85,7 +85,7 @@ export default class MoveWizard extends Toggle {
                 background: "photo",
                 startZoom: 17,
                 minZoom: 16,
-                eraseAddressFields: false
+                eraseAddressFields: false,
             })
         }
 
@@ -166,7 +166,7 @@ export default class MoveWizard extends Toggle {
             let searchPanel: BaseUIElement = undefined
             if (reason.includeSearch) {
                 searchPanel = new SearchAndGo({
-                    leafletMap: locationInput.leafletMap
+                    leafletMap: locationInput.leafletMap,
                 })
             }
 
@@ -186,12 +186,14 @@ export default class MoveWizard extends Toggle {
 
                 if (reason.eraseAddressFields) {
                     await state.changes.applyAction(
-                        new ChangeTagAction(featureToMove.properties.id,
-                            new And([new Tag("addr:housenumber", ""),
+                        new ChangeTagAction(
+                            featureToMove.properties.id,
+                            new And([
+                                new Tag("addr:housenumber", ""),
                                 new Tag("addr:street", ""),
                                 new Tag("addr:city", ""),
-                                new Tag("addr:postcode","")]
-                            ),
+                                new Tag("addr:postcode", ""),
+                            ]),
                             featureToMove.properties,
                             {
                                 changeType: "relocated",

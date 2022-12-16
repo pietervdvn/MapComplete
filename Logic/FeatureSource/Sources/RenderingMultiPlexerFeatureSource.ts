@@ -1,8 +1,8 @@
 /**
  * This feature source helps the ShowDataLayer class: it introduces the necessary extra features and indicates with what renderConfig it should be rendered.
  */
-import {Store} from "../../UIEventSource"
-import {GeoOperations} from "../../GeoOperations"
+import { Store } from "../../UIEventSource"
+import { GeoOperations } from "../../GeoOperations"
 import FeatureSource from "../FeatureSource"
 import PointRenderingConfig from "../../../Models/ThemeConfig/PointRenderingConfig"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
@@ -17,7 +17,10 @@ export default class RenderingMultiPlexerFeatureSource {
     >
     private readonly pointRenderings: { rendering: PointRenderingConfig; index: number }[]
     private readonly centroidRenderings: { rendering: PointRenderingConfig; index: number }[]
-    private readonly projectedCentroidRenderings: { rendering: PointRenderingConfig; index: number }[]
+    private readonly projectedCentroidRenderings: {
+        rendering: PointRenderingConfig
+        index: number
+    }[]
     private readonly startRenderings: { rendering: PointRenderingConfig; index: number }[]
     private readonly endRenderings: { rendering: PointRenderingConfig; index: number }[]
     private readonly hasCentroid: boolean
@@ -90,10 +93,15 @@ export default class RenderingMultiPlexerFeatureSource {
             }
         } else if (feat.geometry.type === "MultiPolygon") {
             if (this.centroidRenderings.length > 0 || this.projectedCentroidRenderings.length > 0) {
-
-                const centerpoints: [number, number][] = (<[number, number][][][]>feat.geometry.coordinates).map(rings => GeoOperations.centerpointCoordinates(
-                    {type: "Feature", properties: {}, geometry: {type: "Polygon", coordinates: rings}}
-                ))
+                const centerpoints: [number, number][] = (<[number, number][][][]>(
+                    feat.geometry.coordinates
+                )).map((rings) =>
+                    GeoOperations.centerpointCoordinates({
+                        type: "Feature",
+                        properties: {},
+                        geometry: { type: "Polygon", coordinates: rings },
+                    })
+                )
                 for (const centroidRendering of this.centroidRenderings) {
                     for (const centerpoint of centerpoints) {
                         addAsPoint(feat, centroidRendering, centerpoint)
@@ -105,8 +113,6 @@ export default class RenderingMultiPlexerFeatureSource {
                         addAsPoint(feat, centroidRendering, centerpoint)
                     }
                 }
-
-
             }
 
             // AT last, add it 'as is' to what we should render
@@ -116,7 +122,6 @@ export default class RenderingMultiPlexerFeatureSource {
                     lineRenderingIndex: i,
                 })
             }
-
         } else {
             // This is a a line or polygon: add the centroids
             let centerpoint: [number, number] = undefined

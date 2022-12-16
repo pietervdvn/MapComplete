@@ -1,11 +1,11 @@
 /**
  * This actor will download the latest version of the selected element from OSM and update the tags if necessary.
  */
-import {UIEventSource} from "../UIEventSource"
-import {ElementStorage} from "../ElementStorage"
-import {Changes} from "../Osm/Changes"
-import {OsmObject} from "../Osm/OsmObject"
-import {OsmConnection} from "../Osm/OsmConnection"
+import { UIEventSource } from "../UIEventSource"
+import { ElementStorage } from "../ElementStorage"
+import { Changes } from "../Osm/Changes"
+import { OsmObject } from "../Osm/OsmObject"
+import { OsmConnection } from "../Osm/OsmConnection"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import SimpleMetaTagger from "../SimpleMetaTagger"
 
@@ -59,17 +59,16 @@ export default class SelectedElementTagsUpdater {
                 return
             }
             try {
-
                 const latestTags = await OsmObject.DownloadPropertiesOf(id)
                 if (latestTags === "deleted") {
                     console.warn("The current selected element has been deleted upstream!")
                     const currentTagsSource = state.allElements.getEventSourceById(id)
-                    if(currentTagsSource.data["_deleted"] === "yes"){
+                    if (currentTagsSource.data["_deleted"] === "yes") {
                         return
                     }
                     currentTagsSource.data["_deleted"] = "yes"
                     currentTagsSource.ping()
-                    return;
+                    return
                 }
                 SelectedElementTagsUpdater.applyUpdate(state, latestTags, id)
                 console.log("Updated", id)

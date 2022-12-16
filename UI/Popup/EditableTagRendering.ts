@@ -1,4 +1,4 @@
-import {UIEventSource} from "../../Logic/UIEventSource"
+import { UIEventSource } from "../../Logic/UIEventSource"
 import TagRenderingQuestion from "./TagRenderingQuestion"
 import Translations from "../i18n/Translations"
 import Combine from "../Base/Combine"
@@ -6,10 +6,10 @@ import TagRenderingAnswer from "./TagRenderingAnswer"
 import Toggle from "../Input/Toggle"
 import BaseUIElement from "../BaseUIElement"
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
-import {Unit} from "../../Models/Unit"
+import { Unit } from "../../Models/Unit"
 import Lazy from "../Base/Lazy"
-import {FixedUiElement} from "../Base/FixedUiElement"
-import {EditButton} from "./SaveButton"
+import { FixedUiElement } from "../Base/FixedUiElement"
+import { EditButton } from "./SaveButton"
 
 export default class EditableTagRendering extends Toggle {
     constructor(
@@ -52,9 +52,9 @@ export default class EditableTagRendering extends Toggle {
             undefined,
             renderingIsShown
         )
-        const self = this;
-        editMode.addCallback(editing => {
-            if(editing){
+        const self = this
+        editMode.addCallback((editing) => {
+            if (editing) {
                 console.log("Scrolling etr into view")
                 self.ScrollIntoView()
             }
@@ -91,18 +91,16 @@ export default class EditableTagRendering extends Toggle {
                     })
             )
 
-             const answerWithEditButton = new Combine([
+            const answerWithEditButton = new Combine([
                 answer,
                 new EditButton(state.osmConnection, () => {
                     editMode.setData(true)
                     question.ScrollIntoView({
-                        onlyIfPartiallyHidden:true
+                        onlyIfPartiallyHidden: true,
                     })
-
                 }),
             ]).SetClass("flex justify-between w-full")
             rendering = new Toggle(question, answerWithEditButton, editMode)
-
         }
         return rendering
     }

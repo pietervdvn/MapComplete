@@ -1,7 +1,7 @@
 import Svg from "../../Svg"
 import Combine from "./Combine"
-import {FixedUiElement} from "./FixedUiElement"
-import {UIEventSource} from "../../Logic/UIEventSource"
+import { FixedUiElement } from "./FixedUiElement"
+import { UIEventSource } from "../../Logic/UIEventSource"
 import Hash from "../../Logic/Web/Hash"
 import BaseUIElement from "../BaseUIElement"
 import Title from "./Title"
@@ -71,20 +71,17 @@ export default class ScrollableFullScreen {
                 }
                 ScrollableFullScreen._currentlyOpen = self
                 self.Activate()
-
             } else {
-                if(self.hashToShow !== undefined){
+                if (self.hashToShow !== undefined) {
                     Hash.hash.setData(undefined)
                 }
                 // Some cleanup...
                 ScrollableFullScreen.collapse()
-
             }
         })
     }
 
-    private static initEmpty(): FixedUiElement{
-
+    private static initEmpty(): FixedUiElement {
         document.addEventListener("keyup", function (event) {
             if (event.code === "Escape") {
                 ScrollableFullScreen.collapse()
@@ -93,9 +90,8 @@ export default class ScrollableFullScreen {
         })
 
         return new FixedUiElement("")
-
     }
-    public static collapse(){
+    public static collapse() {
         const fs = document.getElementById("fullscreen")
         if (fs !== null) {
             ScrollableFullScreen.empty.AttachTo("fullscreen")
@@ -103,8 +99,8 @@ export default class ScrollableFullScreen {
         }
 
         const opened = ScrollableFullScreen._currentlyOpen
-        if( opened !== undefined){
-       opened?.isShown?.setData(false)
+        if (opened !== undefined) {
+            opened?.isShown?.setData(false)
         }
     }
 
@@ -123,7 +119,6 @@ export default class ScrollableFullScreen {
         ScrollableFullScreen._currentlyOpen = this
         fs.classList.remove("hidden")
     }
-
 
     private BuildComponent(title: BaseUIElement, content: BaseUIElement): BaseUIElement {
         const returnToTheMap = new Combine([

@@ -85,7 +85,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
             if (isShown !== undefined && !isShown.matchesProperties(tags)) {
                 return false
             }
-            if(tags._deleted === "yes"){
+            if (tags._deleted === "yes") {
                 return false
             }
 
