@@ -831,7 +831,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return this.externalDownloadFunction(url, headers)
         }
 
-        console.trace("Fetching XHR", url)
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest()
             xhr.onload = () => {

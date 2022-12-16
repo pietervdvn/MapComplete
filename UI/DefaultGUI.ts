@@ -231,11 +231,12 @@ export default class DefaultGUI {
             .SetClass("flex items-center justify-center normal-background h-full")
             .AttachTo("on-small-screen")
 
-        Toggle.If(state.featureSwitchSearch, () =>
+        new Combine([Toggle.If(state.featureSwitchSearch, () =>
             new SearchAndGo(state).SetClass(
                 "shadow rounded-full h-min w-full overflow-hidden sm:max-w-sm pointer-events-auto"
             )
-        ).AttachTo("top-right")
+        )])
+            .AttachTo("top-right")
 
         new LeftControls(state, guiState).AttachTo("bottom-left")
         new RightControls(state).AttachTo("bottom-right")
