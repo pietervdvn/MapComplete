@@ -36,9 +36,7 @@ export default class AllThemesGui {
                         .onClick(() => state.osmConnection.AttemptLogin()),
                     state.osmConnection.isLoggedIn
                 ),
-                new ImportViewerLinks(state.osmConnection).SetClass(
-                    "p-4 border-2 border-gray-500 m-4 block"
-                ),
+                new ImportViewerLinks(state.osmConnection),
                 Translations.t.general.aboutMapcomplete
                     .Subs({ osmcha_link: Utils.OsmChaLinkFor(7) })
                     .SetClass("link-underline"),
