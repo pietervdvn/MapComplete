@@ -152,7 +152,7 @@ export class ChangesetHandler {
                 )
                 if (hasSpecialMotivationChanges) {
                     // At this point, 'extraMetaTags' will have changed - we need to set the tags again
-                    this.UpdateTags(csId, extraMetaTags)
+                    await this.UpdateTags(csId, extraMetaTags)
                 }
             } catch (e) {
                 console.error("Could not open/upload changeset due to ", e)

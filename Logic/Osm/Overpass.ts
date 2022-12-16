@@ -49,7 +49,7 @@ export class Overpass {
             bounds.getEast() +
             "]"
         const query = this.buildScript(bbox)
-        return this.ExecuteQuery(query)
+        return await this.ExecuteQuery(query)
     }
 
     public buildUrl(query: string) {
