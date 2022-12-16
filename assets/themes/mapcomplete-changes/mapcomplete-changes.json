@@ -123,6 +123,10 @@
                 "then": "./assets/themes/artwork/artwork.svg"
               },
               {
+                "if": "theme=atm",
+                "then": "./assets/themes/atm/logo.svg"
+              },
+              {
                 "if": "theme=bag",
                 "then": "./assets/themes/bag/logo.svg"
               },

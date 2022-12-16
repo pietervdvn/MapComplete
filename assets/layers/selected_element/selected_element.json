@@ -12,7 +12,10 @@
     {
       "icon": "circle:red",
       "iconSize": "1,1,center",
-      "location": ["point","projected_centerpoint"],
+      "location": [
+        "point",
+        "projected_centerpoint"
+      ],
       "css": "box-shadow: red 0 0 20px 20px; z-index: -1; height: 1px; width: 1px;",
       "cssClasses": "block relative rounded-full"
     }

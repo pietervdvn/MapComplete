@@ -12,7 +12,7 @@ import Toggle from "./Input/Toggle"
 import { SubtleButton } from "./Base/SubtleButton"
 import { VariableUiElement } from "./Base/VariableUIElement"
 import Svg from "../Svg"
-import {ImportViewerLinks} from "./BigComponents/UserInformation";
+import { ImportViewerLinks } from "./BigComponents/UserInformation"
 
 export default class AllThemesGui {
     setup() {
@@ -36,7 +36,9 @@ export default class AllThemesGui {
                         .onClick(() => state.osmConnection.AttemptLogin()),
                     state.osmConnection.isLoggedIn
                 ),
-                new ImportViewerLinks(state.osmConnection).SetClass("p-4 border-2 border-gray-500 m-4 block"),
+                new ImportViewerLinks(state.osmConnection).SetClass(
+                    "p-4 border-2 border-gray-500 m-4 block"
+                ),
                 Translations.t.general.aboutMapcomplete
                     .Subs({ osmcha_link: Utils.OsmChaLinkFor(7) })
                     .SetClass("link-underline"),

@@ -256,6 +256,28 @@
     },
     "bench": {
         "description": "Een zitbank is een houten, metalen, stenen, … oppervlak waar een mens kan zitten. Deze laag toont ze en stelt er enkele vragen over.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "is een gedenkteken"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Met en zonder rugleuning"
+                    },
+                    "1": {
+                        "question": "Heeft een rugleuning"
+                    },
+                    "2": {
+                        "question": "Heeft geen rugleuning"
+                    }
+                }
+            }
+        },
         "name": "Zitbanken",
         "presets": {
             "0": {
@@ -263,6 +285,17 @@
             }
         },
         "tagRenderings": {
+            "bench-artwork": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze bank heeft een geïntegreerd kunstwerk"
+                    },
+                    "1": {
+                        "then": "Deze bank heeft geen geïntegreerd kunstwerk"
+                    }
+                },
+                "question": "Heeft deze bank een geïntegreerd kunstwerk?<div class='subtle text-lg'>Bijvoorbeeld een standbeeld, schildering of ander, niet-triviaal kunstwerk</div>"
+            },
             "bench-backrest": {
                 "mappings": {
                     "0": {
@@ -308,6 +341,18 @@
                 "question": "In welke richting kijk je wanneer je op deze zitbank zit?",
                 "render": "Wanneer je op deze bank zit, dan kijk je in {direction}°."
             },
+            "bench-inscription": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze bank heeft geen inscriptie"
+                    },
+                    "1": {
+                        "then": "Deze bank heeft <span class='subtle'>(waarschijnlijk)</span> geen inscriptie"
+                    }
+                },
+                "question": "Heeft deze bank een inscriptie?<div class='subtle text-lg'>Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...</div>",
+                "render": "Deze bank heeft een inscriptie: <br/><p><i>{inscription}</i></p>"
+            },
             "bench-material": {
                 "mappings": {
                     "0": {
@@ -332,11 +377,32 @@
                 "question": "Uit welk materiaal is het zitgedeelte van deze zitbank gemaakt?",
                 "render": "Gemaakt van {material}"
             },
+            "bench-memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze bank is een gedenkteken aan iemand of iets"
+                    },
+                    "1": {
+                        "then": "Deze bank is <b>geen</b> gedenkteken aan iemand of iets"
+                    }
+                },
+                "question": "Is deze bank een gedenkteken voor iemand of iets?"
+            },
             "bench-seats": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze bank is niet ingedeeld in aparte zitplaatsen"
+                    }
+                },
                 "question": "Hoeveel zitplaatsen heeft deze bank?",
                 "render": "{seats} zitplaatsen"
             },
             "bench-survey:date": {
+                "mappings": {
+                    "0": {
+                        "then": "Vandaag nagekeken!"
+                    }
+                },
                 "question": "Wanneer is deze laatste bank laatst gesurveyed?",
                 "render": "Deze bank is laatst gesurveyd op {survey:date}"
             }
@@ -3662,6 +3728,9 @@
             },
             "3": {
                 "options": {
+                    "0": {
+                        "question": "Met en zonder afbeelding"
+                    },
                     "1": {
                         "question": "Heeft minstens één afbeelding"
                     },
@@ -6133,6 +6202,9 @@
             "render": "School <i>{name}</i>"
         }
     },
+    "selected_element": {
+        "description": "Toont het geselecteerde element"
+    },
     "shelter": {
         "name": "Schuilplaats",
         "tagRenderings": {
@@ -6840,6 +6912,17 @@
                 },
                 "3": {
                     "then": "Onderwijsinstelling die tertiair onderwijs geeft"
+                }
+            }
+        }
+    },
+    "ticket_machine": {
+        "tagRenderings": {
+            "operator": {
+                "mappings": {
+                    "0": {
+                        "then": "Nederlandse Spoorwegen (NS)"
+                    }
                 }
             }
         }

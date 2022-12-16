@@ -78,7 +78,7 @@
     },
     "opening_hours",
     "climbing.toprope",
-{
+    {
       "builtin": "climbing.average_length",
       "override": {
         "condition": "climbing:toprope!=no"

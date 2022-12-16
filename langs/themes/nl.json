@@ -76,6 +76,10 @@
         "shortDescription": "Een kaart met publieke verrekijker",
         "title": "Verrekijkers"
     },
+    "blind_osm": {
+        "description": "Help zaken die relevant zijn voor blinden in kaart te brengen",
+        "title": "OSM voor blinden"
+    },
     "bookcases": {
         "description": "Een boekenruilkast is een kastje waar iedereen een boek kan nemen of achterlaten. Op deze kaart kan je deze boekenruilkasten terugvinden en met een gratis OpenStreetMap-account, ook boekenruilkasten toevoegen of informatie verbeteren",
         "title": "Open boekenruilkasten-kaart"
@@ -973,9 +977,9 @@
         "title": "Een kaart van kaarten"
     },
     "maxspeed": {
+        "description": "Deze kaart toont de maximum toegestane snelheid voor elke weg. Als er een maximumsnelheid mist of niet klopt, kan je hem hier aanpassen.",
         "shortDescription": "Deze kaart toont de maximumsnelheid voor elke straat.",
-        "title": "Maximale snelheden",
-        "description": "Deze kaart toont de maximum toegestane snelheid voor elke weg. Als er een maximumsnelheid mist of niet klopt, kan je hem hier aanpassen."
+        "title": "Maximale snelheden"
     },
     "nature": {
         "description": "Op deze kaart vind je informatie voor natuurliefhebbers, zoals info over het natuurgebied waar je inzit, vogelkijkhutten, informatieborden, ...",
@@ -1065,6 +1069,11 @@
     "openwindpowermap": {
         "description": "Een kaart om windturbines te tonen en te bewerken.",
         "title": "Windmolens"
+    },
+    "osm_community_index": {
+        "description": "Een lijst van hulpmiddelen van gebruikers van OpenStreetMap. 'Hulpmiddelen' kunnen fora, meetups, Slack groepen, IRC kanalen, mailinglijsten, en meer zijn. Alles dat mappers, vooral beginners, nuttig of behulpzaam kunnen vinden.",
+        "shortDescription": "Een overzicht van hulpbronnen voor OpenStreetMap van de community.",
+        "title": "OSM Community Overzicht"
     },
     "parkings": {
         "description": "Deze kaart toont verschillende parkeerplekken",
@@ -1350,14 +1359,5 @@
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbak"
-    },
-    "osm_community_index": {
-        "description": "Een lijst van hulpmiddelen van gebruikers van OpenStreetMap. 'Hulpmiddelen' kunnen fora, meetups, Slack groepen, IRC kanalen, mailinglijsten, en meer zijn. Alles dat mappers, vooral beginners, nuttig of behulpzaam kunnen vinden.",
-        "shortDescription": "Een overzicht van hulpbronnen voor OpenStreetMap van de community.",
-        "title": "OSM Community Overzicht"
-    },
-    "blind_osm": {
-        "title": "OSM voor blinden",
-        "description": "Help zaken die relevant zijn voor blinden in kaart te brengen"
     }
 }

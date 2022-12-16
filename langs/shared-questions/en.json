@@ -1,5 +1,34 @@
 {
     "shared_questions": {
+        "denominations-coins": {
+            "mappings": {
+                "0": {
+                    "then": "1 cent coins are accepted"
+                },
+                "1": {
+                    "then": "2 cent coins are accepted"
+                },
+                "2": {
+                    "then": "5 cent coins are accepted"
+                },
+                "3": {
+                    "then": "10 cent coins are accepted"
+                },
+                "4": {
+                    "then": "20 cent coins are accepted"
+                },
+                "5": {
+                    "then": "50 cent coins are accepted"
+                },
+                "6": {
+                    "then": "1 euro coins are accepted"
+                },
+                "7": {
+                    "then": "2 euro coins are accepted"
+                }
+            },
+            "question": "Whith what coins can you pay here?"
+        },
         "description": {
             "question": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>"
         },
@@ -146,6 +175,24 @@
                     },
                     "1": {
                         "then": "Payment is done using a membership card"
+                    }
+                }
+            }
+        },
+        "payment-options-split": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Coins are accepted here"
+                    },
+                    "1": {
+                        "then": "Bank notes are accepted here"
+                    },
+                    "2": {
+                        "then": "Debit cards are accepted here"
+                    },
+                    "3": {
+                        "then": "Credit cards are accepted here"
                     }
                 }
             }

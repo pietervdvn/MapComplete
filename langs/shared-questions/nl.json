@@ -115,6 +115,18 @@
                 }
             }
         },
+        "opening_hours_by_appointment": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Alleen op afspraak"
+                    },
+                    "1": {
+                        "then": "Alleen op afspraak"
+                    }
+                }
+            }
+        },
         "payment-options": {
             "mappings": {
                 "0": {
@@ -210,18 +222,6 @@
                 }
             },
             "question": "Welk Wikipedia-artikel beschrijft dit object?"
-        },
-        "opening_hours_by_appointment": {
-            "override": {
-                "mappings": {
-                    "1": {
-                        "then": "Alleen op afspraak"
-                    },
-                    "0": {
-                        "then": "Alleen op afspraak"
-                    }
-                }
-            }
         }
     }
 }

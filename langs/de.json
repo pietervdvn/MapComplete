@@ -86,6 +86,7 @@
         "add": {
             "addNew": "{category} hinzufügen",
             "addNewMapLabel": "Hier klicken, um ein neues Element hinzuzufügen",
+            "backToSelect": "Wählen Sie eine andere Kategorie",
             "confirmButton": "Eine {category} hinzufügen.<br><div class=\"alert\">Ihre Ergänzung ist für alle sichtbar</div>",
             "confirmIntro": "<h3>Einen {title} hinzufügen?</h3>Das Objekt, das Sie erstellen wird <b>für alle sichtbar sein</b>. Bitte nur Dinge hinzufügen, die wirklich existieren. Viele Anwendungen verwenden diese Daten.",
             "disableFilters": "Alle Filter deaktivieren",
@@ -111,8 +112,7 @@
             "warnVisibleForEveryone": "Ihre Ergänzung wird für alle sichtbar sein",
             "wrongType": "Dieses Objekt ist weder ein Punkt noch ein Weg und kann nicht importiert werden",
             "zoomInFurther": "Ausschnitt vergrößern, um ein Objekt hinzuzufügen.",
-            "zoomInMore": "Ansicht vergrößern, um dieses Element zu importieren",
-            "backToSelect": "Wählen Sie eine andere Kategorie"
+            "zoomInMore": "Ansicht vergrößern, um dieses Element zu importieren"
         },
         "apply_button": {
             "appliedOnAnotherObject": "Das Objekt {id} erhält {tags}",

@@ -7,6 +7,10 @@
         "description": "An open map of statues, busts, graffitis and other artwork all over the world",
         "title": "Open Artwork Map"
     },
+    "atm": {
+        "description": "This map shows ATMs to withdraw or deposit money",
+        "title": "ATM Machines"
+    },
     "bag": {
         "description": "This theme helps with importing data from BAG",
         "layers": {

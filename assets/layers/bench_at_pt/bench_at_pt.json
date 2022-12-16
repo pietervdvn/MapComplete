@@ -233,7 +233,10 @@
       }
     ],
     "softDeletionTags": {
-      "and": ["disused:highway=bus_stop","bench=no"]
+      "and": [
+        "disused:highway=bus_stop",
+        "bench=no"
+      ]
     }
   },
   "description": {

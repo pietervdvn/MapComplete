@@ -21,7 +21,8 @@
     "en": "This map shows the legally allowed maximum speed on every road. If a maxspeed is missing or wrong, you can correct it here.",
     "de": "Diese Karte zeigt die zulässige Höchstgeschwindigkeit auf jeder Straße. Wenn eine Höchstgeschwindigkeit fehlt oder falsch ist, können Sie dies hier korrigieren.",
     "fr": "Cette carte montre la vitesse maximale autorisée sur les routes. Si la vitesse maximale est manquante ou erronée, vous pouvez la corriger ici.",
-    "da": "Dette kort viser den lovligt tilladte maksimale hastighed på hver vej. Hvis en maxspeed mangler eller er forkert, kan du rette den her."
+    "da": "Dette kort viser den lovligt tilladte maksimale hastighed på hver vej. Hvis en maxspeed mangler eller er forkert, kan du rette den her.",
+    "nl": "Deze kaart toont de maximum toegestane snelheid voor elke weg. Als er een maximumsnelheid mist of niet klopt, kan je hem hier aanpassen."
   },
   "icon": "./assets/themes/maxspeed/maxspeed_logo.svg",
   "startLat": 0,

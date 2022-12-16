@@ -127,7 +127,9 @@
   "tagRenderings": [
     "images",
     {
-      "labels": ["artwork-question"],
+      "labels": [
+        "artwork-question"
+      ],
       "render": {
         "en": "This is a {artwork_type}",
         "nl": "Dit is een {artwork_type}",
@@ -449,7 +451,9 @@
     },
     {
       "id": "artwork-artist-wikidata",
-      "labels": ["artwork-question"],
+      "labels": [
+        "artwork-question"
+      ],
       "render": {
         "en": "This artwork was made by {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
         "de": "Dieses Kunstwerk wurde geschaffen von {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
@@ -521,7 +525,9 @@
       },
       "condition": "artist:wikidata=",
       "id": "artwork-artist_name",
-      "labels": ["artwork-question"]
+      "labels": [
+        "artwork-question"
+      ]
     },
     {
       "question": {
@@ -565,7 +571,9 @@
         "type": "url"
       },
       "id": "artwork-website",
-      "labels": ["artwork-question"]
+      "labels": [
+        "artwork-question"
+      ]
     },
     "wikipedia",
     {
@@ -591,7 +599,9 @@
         "pt": "A obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "es": "Esta obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
       },
-      "labels": ["artwork-question"]
+      "labels": [
+        "artwork-question"
+      ]
     },
     {
       "id": "doubles_as_bench",

@@ -157,7 +157,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/blind_osm blind_osm]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:_context|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:_context|en}}
 |descr= A MapComplete theme: Help to map features relevant for the blind
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -364,7 +364,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/osm_community_index osm_community_index]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:_context|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:_context|en}}
 |descr= A MapComplete theme: An index of community resources for OpenStreetMap.
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png

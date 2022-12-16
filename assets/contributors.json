@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 4686,
+      "commits": 4735,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 259,
+      "commits": 300,
       "contributor": "Robin van der Linde"
     },
     {
@@ -81,12 +81,12 @@
       "contributor": "ToastHawaii"
     },
     {
-      "commits": 13,
-      "contributor": "Nicole"
+      "commits": 14,
+      "contributor": "dependabot[bot]"
     },
     {
-      "commits": 12,
-      "contributor": "dependabot[bot]"
+      "commits": 13,
+      "contributor": "Nicole"
     },
     {
       "commits": 12,

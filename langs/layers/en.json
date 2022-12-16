@@ -142,6 +142,20 @@
             "artwork_subject": {
                 "question": "What does this artwork depict?",
                 "render": "This artwork depicts {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+            },
+            "doubles_as_bench": {
+                "mappings": {
+                    "0": {
+                        "then": "This artwork also serves as a bench"
+                    },
+                    "1": {
+                        "then": "This artwork does not serve as a bench"
+                    },
+                    "2": {
+                        "then": "This artwork does not serve as a bench"
+                    }
+                },
+                "question": "Does this artwork serve as a bench?"
             }
         },
         "title": {
@@ -292,6 +306,28 @@
     },
     "bench": {
         "description": "A bench is a wooden, metal, stone, … surface where a human can sit. This layers visualises them and asks a few questions about them.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "is a memorial"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "With and without backrest"
+                    },
+                    "1": {
+                        "question": "Has a backrest"
+                    },
+                    "2": {
+                        "question": "Has no backrest"
+                    }
+                }
+            }
+        },
         "name": "Benches",
         "presets": {
             "0": {
@@ -299,6 +335,17 @@
             }
         },
         "tagRenderings": {
+            "bench-artwork": {
+                "mappings": {
+                    "0": {
+                        "then": "This bench has an integrated artwork"
+                    },
+                    "1": {
+                        "then": "This bench does not have an integrated artwork"
+                    }
+                },
+                "question": "Does this bench have an artistic element?<div class='subtle text-lg'>E.g. it has an integrated painting, statue or other non-trivial, creative work</div>"
+            },
             "bench-backrest": {
                 "mappings": {
                     "0": {
@@ -344,6 +391,18 @@
                 "question": "In which direction are you looking when sitting on the bench?",
                 "render": "When sitting on the bench, one looks towards {direction}°."
             },
+            "bench-inscription": {
+                "mappings": {
+                    "0": {
+                        "then": "This bench does not have an inscription"
+                    },
+                    "1": {
+                        "then": "This bench does <span class='subtle'>(probably)</span> not have an inscription"
+                    }
+                },
+                "question": "Does this bench have an inscription?<div class='subtle text-lg'>E.g. on a mounted plaque, in the backrest, ...</div>",
+                "render": "This bench does have the following inscription:<br/><p><i>{inscription}</i></p>"
+            },
             "bench-material": {
                 "mappings": {
                     "0": {
@@ -368,11 +427,32 @@
                 "question": "What is the bench (seating) made from?",
                 "render": "Material: {material}"
             },
+            "bench-memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "This bench is a memorial for someone or something"
+                    },
+                    "1": {
+                        "then": "This bench is a <b>not</b> a memorial for someone or something"
+                    }
+                },
+                "question": "Does this bench act as memorial for someone or something?"
+            },
             "bench-seats": {
+                "mappings": {
+                    "0": {
+                        "then": "This bench does not have separated seats"
+                    }
+                },
                 "question": "How many seats does this bench have?",
                 "render": "{seats} seats"
             },
             "bench-survey:date": {
+                "mappings": {
+                    "0": {
+                        "then": "Surveyed today!"
+                    }
+                },
                 "question": "When was this bench last surveyed?",
                 "render": "This bench was last surveyed on {survey:date}"
             }
@@ -382,6 +462,18 @@
         }
     },
     "bench_at_pt": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "This bus stop is not used anymore"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "This bus stop does not have a bench (there never was one or it has been removed)"
+                }
+            }
+        },
         "description": "A layer showing all public-transport-stops which do have a bench",
         "name": "Benches at public transport stops",
         "tagRenderings": {
@@ -3768,6 +3860,9 @@
             },
             "3": {
                 "options": {
+                    "0": {
+                        "question": "With and without images"
+                    },
                     "1": {
                         "question": "Has at least one image"
                     },
@@ -6507,6 +6602,9 @@
             "render": "School <i>{name}</i>"
         }
     },
+    "selected_element": {
+        "description": "Highlights the currently selected element. Override this layer to have different colors"
+    },
     "shelter": {
         "description": "Layer showing shelter structures",
         "name": "Shelter",
@@ -7287,6 +7385,11 @@
             "operator": {
                 "freeform": {
                     "placeholder": "Name of the operator"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Dutch Railways (NS)"
+                    }
                 },
                 "question": "Who is the operator of this ticket machine?",
                 "render": "This ticket machine is operated by {operator}"
