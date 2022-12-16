@@ -85,6 +85,9 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
             if (isShown !== undefined && !isShown.matchesProperties(tags)) {
                 return false
             }
+            if(tags._deleted === "yes"){
+                return false
+            }
 
             const tagsFilter = Array.from(layer.appliedFilters?.data?.values() ?? [])
             for (const filter of tagsFilter) {

@@ -81,7 +81,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         layerConfig: LayerConfig,
         state: FeaturePipelineState): BaseUIElement{
         return new Toggle(
-            "This object is deleted",
+            new Combine([Svg.delete_icon_svg().SetClass("w-8 h-8"), Translations.t.delete.isDeleted]).SetClass("flex justify-center font-bold items-center") ,
             FeatureInfoBox.GenerateMainContent(tags, layerConfig, state),
             tags.map(t => t["_deleted"] == "yes")
         )
