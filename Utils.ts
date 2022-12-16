@@ -802,30 +802,30 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     public static async download(url: string, headers?: any): Promise<string | undefined> {
-        return (await Utils.downloadAdvanced(url, headers))["content"]
+        const result = await Utils.downloadAdvanced(url, headers)
+        if(result["error"] !== undefined){
+            throw result["error"]
+        }
+        return result["content"]
     }
 
     /**
      * Download function which also indicates advanced options, such as redirects
      * @param url
      * @param headers
-     * @param onStatusCode Callback which is always triggered with the status code
      */
     public static downloadAdvanced(
         url: string,
         headers?: any,
-        onStatusCode?: (code:number) => void
     ): Promise<{ content: string } | { redirect: string } | { error: string,url: string, statuscode?: number}> {
         if (this.externalDownloadFunction !== undefined) {
             return this.externalDownloadFunction(url, headers)
         }
 
+        console.trace("Fetching XHR", url)
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest()
             xhr.onload = () => {
-                if(onStatusCode ){
-                    onStatusCode(xhr.status)
-                }
                 if (xhr.status == 200) {
                     resolve({ content: xhr.response })
                 } else if (xhr.status === 302) {
@@ -922,13 +922,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             url,
             Utils.Merge({ accept: "application/json" }, headers ?? {})
         )
-        if(result["error"]){
+        if(result["error"] !== undefined){
             return <{error: string, url: string, statuscode?: number}> result
         }
         const data = result["content"]
         try {
             if (typeof data === "string") {
-                return JSON.parse(data)
+                return {content: JSON.parse(data)}
             }
             return {"content": data}
         } catch (e) {
