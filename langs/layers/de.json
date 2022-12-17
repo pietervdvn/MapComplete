@@ -142,6 +142,20 @@
             "artwork_subject": {
                 "question": "Was zeigt dieses Kunstwerk?",
                 "render": "Das Kunstwerk zeigt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+            },
+            "doubles_as_bench": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Kunstwerk dient auch als Sitzbank"
+                    },
+                    "1": {
+                        "then": "Dieses Kunstwerk dient nicht als Sitzbank"
+                    },
+                    "2": {
+                        "then": "Dieses Kunstwerk dient nicht als Sitzbank"
+                    }
+                },
+                "question": "Dient dieses Kunstwerk auch als Sitzbank?"
             }
         },
         "title": {
@@ -334,15 +348,81 @@
             },
             "bench-seats": {
                 "question": "Wie viele Sitzplätze hat diese Bank?",
-                "render": "Die Sitzbank hat {seats} Sitzplätze"
+                "render": "Die Sitzbank hat {seats} Sitzplätze",
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank hat keine getrennten Sitze"
+                    }
+                }
             },
             "bench-survey:date": {
                 "question": "Wann wurde diese Bank zuletzt überprüft?",
-                "render": "Diese Bank wurde zuletzt überprüft am {survey:date}"
+                "render": "Diese Bank wurde zuletzt überprüft am {survey:date}",
+                "mappings": {
+                    "0": {
+                        "then": "Heute geprüft!"
+                    }
+                }
+            },
+            "bench-memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank ist ein Denkmal für jemanden oder etwas"
+                    },
+                    "1": {
+                        "then": "Diese Bank ist <b>kein</b> Denkmal für jemanden oder etwas"
+                    }
+                },
+                "question": "Dient diese Bank als Denkmal für jemanden oder etwas?"
+            },
+            "bench-artwork": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank hat ein integriertes Kunstwerk"
+                    },
+                    "1": {
+                        "then": "Diese Bank hat kein integriertes Kunstwerk"
+                    }
+                },
+                "question": "Hat diese Bank ein künstlerisches Element? <div class='subtle text-lg'>Z.B. hat es ein integriertes Gemälde, eine Statue oder eine andere nicht triviale, kreative Arbeit</div>"
+            },
+            "bench-inscription": {
+                "render": "Diese Bank hat folgende Inschrift:<br/><p><i>{inscription}</i></p>",
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank hat keine Inschrift"
+                    },
+                    "1": {
+                        "then": "Diese Bank hat <span class='subtle'>(wahrscheinlich)</span> keine Inschrift"
+                    }
+                },
+                "question": "Hat diese Bank eine Inschrift? <div class='subtle text-lg'>Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ... </div>"
             }
         },
         "title": {
             "render": "Sitzbank"
+        },
+        "filter": {
+            "1": {
+                "options": {
+                    "2": {
+                        "question": "Hat keine Rückenlehne"
+                    },
+                    "1": {
+                        "question": "Hat eine Rückenlehne"
+                    },
+                    "0": {
+                        "question": "Mit und ohne Rückenlehne"
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "ist ein Denkmal"
+                    }
+                }
+            }
         }
     },
     "bench_at_pt": {
@@ -377,6 +457,18 @@
                 }
             },
             "render": "Sitzbank"
+        },
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "Diese Bushaltestelle wird nicht mehr genutzt"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Diese Bushaltestelle hat keine Bank (es gab nie eine oder sie wurde entfernt)"
+                }
+            }
         }
     },
     "bicycle_library": {
@@ -3710,6 +3802,9 @@
                     },
                     "2": {
                         "question": "Hat wahrscheinlich kein Bild"
+                    },
+                    "0": {
+                        "question": "Mit und ohne Bilder"
                     }
                 }
             },
@@ -6855,6 +6950,12 @@
                         "render_single_language": "Die Treppe hat taktile Schrift in {language():font-bold}"
                     }
                 }
+            },
+            "multilevels": {
+                "override": {
+                    "question": "Welchen Ebenen verbindet diese Treppe?",
+                    "render": "Diese Treppe verbindet die Ebenen {level}"
+                }
             }
         },
         "title": {
@@ -7445,6 +7546,11 @@
             "wheelchair-door-width": {
                 "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
                 "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist die Einrichtung, in der sich die Toilette befindet, geöffnet?"
+                }
             }
         },
         "title": {
@@ -8111,5 +8217,159 @@
                 }
             }
         }
+    },
+    "car_rental": {
+        "description": "Orte, an denen Sie ein Auto mieten können",
+        "name": "Autovermietung",
+        "presets": {
+            "0": {
+                "description": "Ein Ort, an dem Sie ein Auto mieten können",
+                "title": "eine Autovermietung"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Wie lautet der Name dieser Autovermietung?",
+                "render": "Der Name der Autovermietung lautet {name}",
+                "freeform": {
+                    "placeholder": "Name der Autovermietung"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Diese Autovermietung hat keinen Namen"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Autovermietung"
+        }
+    },
+    "railway_platforms": {
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Bahnsteignummer"
+                },
+                "question": "Wie lautet die Nummer dieses Bahnsteigs?",
+                "render": "Bahnsteig {ref}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bahnsteig {ref}"
+                }
+            },
+            "render": "Bahnsteig"
+        },
+        "description": "Finden Sie alle Bahnsteige im Bahnhof und die Zugstrecken, die sie benutzen.",
+        "name": "Bahnsteige"
+    },
+    "ticket_machine": {
+        "presets": {
+            "0": {
+                "title": "einen Fahrkartenautomat"
+            }
+        },
+        "description": "Fahrkartenautomaten für ÖPNV-Tickets finden",
+        "name": "Fahrkartenautomaten",
+        "tagRenderings": {
+            "operator": {
+                "freeform": {
+                    "placeholder": "Name des Betreibers"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Niederländische Eisenbahn (NS)"
+                    }
+                },
+                "question": "Wer ist der Betreiber dieses Fahrkartenautomaten?",
+                "render": "Dieser Fahrkartenautomat wird betrieben von {operator}"
+            }
+        },
+        "title": {
+            "render": "Fahrkartenautomat"
+        }
+    },
+    "ticket_validator": {
+        "tagRenderings": {
+            "validator-operator": {
+                "freeform": {
+                    "placeholder": "Name des Betreibers"
+                },
+                "question": "Wer ist der Betreiber dieses Fahrkartenentwerters?",
+                "render": "Dieser Fahrkartenentwerter wird betrieben von {operator}"
+            },
+            "barrier": {
+                "render": "Dieser Fahrkartenentwerter ist Teil einer Zugangsbarriere vom Typ {barrier}",
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Fahrscheinentwerter ist Teil einer Zugangsbarriere"
+                    }
+                }
+            },
+            "payment-options": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
+                        },
+                        "1": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
+                        }
+                    }
+                }
+            }
+        },
+        "description": "Finden Sie Fahrkartenentwerter, um Tickets für den öffentlichen Nahverkehr zu entwerten",
+        "name": "Fahrkartenentwerter",
+        "presets": {
+            "0": {
+                "title": "einen Fahrkartenentwerter"
+            }
+        },
+        "title": {
+            "render": "Fahrkartenentwerter"
+        }
+    },
+    "atm": {
+        "tagRenderings": {
+            "operator": {
+                "question": "Welches Unternehmen betreibt den Geldautomaten?",
+                "freeform": {
+                    "placeholder": "Betreiber"
+                },
+                "render": "Der Geldautomat wird von {operator} betrieben"
+            },
+            "brand": {
+                "freeform": {
+                    "placeholder": "Markenname"
+                },
+                "question": "Von welcher Marke ist dieser Geldautomat?",
+                "render": "Die Marke dieses Geldautomaten ist {brand}"
+            },
+            "name": {
+                "render": "Der Name dieses Geldautomaten ist {name}"
+            }
+        },
+        "name": "Geldautomaten",
+        "title": {
+            "render": "Geldautomat",
+            "mappings": {
+                "0": {
+                    "then": "{brand} Geldautomat"
+                }
+            }
+        },
+        "description": "Geldautomaten zum Geld abheben",
+        "presets": {
+            "0": {
+                "title": "ein Geldautomat"
+            }
+        }
+    },
+    "selected_element": {
+        "description": "Hebt das aktuell ausgewählte Element hervor. Überschreiben Sie diese Ebene, um unterschiedliche Farben zu erhalten"
     }
 }
