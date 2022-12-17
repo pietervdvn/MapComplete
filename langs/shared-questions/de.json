@@ -249,7 +249,8 @@
                 "7": {
                     "then": "2-Euro-Münzen werden akzeptiert"
                 }
-            }
+            },
+            "question": "Mit welchen Münzen kann man hier bezahlen?"
         },
         "payment-options-split": {
             "override": {
