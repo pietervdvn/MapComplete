@@ -222,6 +222,9 @@
                 }
             },
             "question": "Welk Wikipedia-artikel beschrijft dit object?"
+        },
+        "denominations-coins": {
+            "question": "Met welke munten kan je hier betalen?"
         }
     }
 }
