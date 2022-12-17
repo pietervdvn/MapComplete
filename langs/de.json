@@ -984,5 +984,14 @@
         "wikidata": {
             "description": "Eine Wikidata-Kennung"
         }
+    },
+    "userinfo": {
+        "gotoInbox": "Öffnen Sie Ihren Posteingang",
+        "moveToHome": "Verschieben Sie die Karte an Ihren Heimatstandort",
+        "noDescription": "Sie haben noch keine Beschreibung in Ihrem Profil",
+        "noDescriptionCallToAction": "Eine Profilbeschreibung hinzufügen",
+        "gotoSettings": "Gehen Sie zu Ihren Einstellungen auf OpenStreetMap.org",
+        "newMessages": "Sie haben neue Nachrichten",
+        "welcome": "Willkommen {user}"
     }
 }
