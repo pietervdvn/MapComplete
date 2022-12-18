@@ -1174,5 +1174,51 @@
         "description": "Auf dieser Karte findest Du Abfalleimer in Deiner Nähe. Wenn ein Abfalleimer auf dieser Karte fehlt, kannst du ihn selbst hinzufügen",
         "shortDescription": "Eine Karte mit Abfalleimern",
         "title": "Abfalleimer"
+    },
+    "stations": {
+        "layers": {
+            "15": {
+                "presets": {
+                    "0": {
+                        "description": "Fügen Sie eine Tafel hinzu, auf der Abfahrten angezeigt werden, entweder elektronisch oder in Papierform",
+                        "title": "eine Abfahrtstafel"
+                    }
+                },
+                "description": "Anzeigen der Züge, die von diesem Bahnhof abfahren",
+                "name": "Abfahrtstafeln",
+                "title": {
+                    "render": "Abfahrtstafel"
+                },
+                "tagRenderings": {
+                    "type": {
+                        "mappings": {
+                            "1": {
+                                "then": "Dies ist eine elektronische Tafel, die nächste Abfahrten in Echtzeit anzeigt"
+                            },
+                            "0": {
+                                "then": "Dies ist eine Abfahrtstafel eines unbekannten Typs"
+                            },
+                            "3": {
+                                "then": "Es gibt ein Schild, das den Takt der Züge anzeigt"
+                            },
+                            "2": {
+                                "then": "Dies ist ein Papierfahrplan"
+                            }
+                        },
+                        "question": "Was ist das für eine Abfahrtstafel?"
+                    }
+                }
+            },
+            "3": {
+                "description": "Ebene mit Bahnhöfen",
+                "name": "Bahnhöfe"
+            }
+        },
+        "description": "Bahnhofsdetails ansehen, bearbeiten und hinzufügen",
+        "title": "Bahnhöfe"
+    },
+    "atm": {
+        "description": "Diese Karte zeigt Geldautomaten zum Abheben oder Einzahlen von Geld",
+        "title": "Geldautomaten"
     }
 }

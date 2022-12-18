@@ -1359,5 +1359,47 @@
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
         "shortDescription": "Een kaart met vuilnisbakken",
         "title": "Vuilnisbak"
+    },
+    "stations": {
+        "layers": {
+            "3": {
+                "name": "Treinstations",
+                "description": "Laag met treinstations"
+            },
+            "15": {
+                "tagRenderings": {
+                    "type": {
+                        "mappings": {
+                            "2": {
+                                "then": "Dit is een papieren vertrekstaat"
+                            },
+                            "1": {
+                                "then": "Dit is een elektronisch bord, met realtime vertrektijden"
+                            },
+                            "0": {
+                                "then": "Dit is een vertrektijdenbord van een onbekend type"
+                            },
+                            "3": {
+                                "then": "Er is een bord met de tijden tussen treinen"
+                            }
+                        },
+                        "question": "Wat voor vertrektijdenbord is dit?"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "description": "Voeg een bord met vertrektijden toe, elektronisch of op papier",
+                        "title": "een vertrektijdenbord"
+                    }
+                },
+                "name": "Vertrektijdenborden",
+                "title": {
+                    "render": "Vertrektijdenbord"
+                },
+                "description": "Schermen die treinen tonen die van dit station vertrekken"
+            }
+        },
+        "title": "Treinstations",
+        "description": "Bekijk, bewerk en voeg details to aan een treinstation"
     }
 }

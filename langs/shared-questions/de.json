@@ -222,6 +222,53 @@
                 }
             },
             "question": "Wie lautet der zugehörige Wikipedia Artikel?"
+        },
+        "denominations-coins": {
+            "mappings": {
+                "0": {
+                    "then": "1-Cent-Münzen werden akzeptiert"
+                },
+                "1": {
+                    "then": "2-Cent-Münzen werden akzeptiert"
+                },
+                "2": {
+                    "then": "5-Cent-Münzen werden akzeptiert"
+                },
+                "5": {
+                    "then": "50-Cent-Münzen werden akzeptiert"
+                },
+                "6": {
+                    "then": "1-Euro-Münzen werden akzeptiert"
+                },
+                "3": {
+                    "then": "10-Cent-Münzen werden akzeptiert"
+                },
+                "4": {
+                    "then": "20-Cent-Münzen werden akzeptiert"
+                },
+                "7": {
+                    "then": "2-Euro-Münzen werden akzeptiert"
+                }
+            },
+            "question": "Mit welchen Münzen kann man hier bezahlen?"
+        },
+        "payment-options-split": {
+            "override": {
+                "mappings+": {
+                    "3": {
+                        "then": "Kreditkarten werden hier akzeptiert"
+                    },
+                    "0": {
+                        "then": "Münzen werden hier akzeptiert"
+                    },
+                    "2": {
+                        "then": "Debitkarten werden hier akzeptiert"
+                    },
+                    "1": {
+                        "then": "Geldscheine werden hier akzeptiert"
+                    }
+                }
+            }
         }
     }
 }

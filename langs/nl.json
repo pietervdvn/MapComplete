@@ -961,5 +961,14 @@
         "wikidata": {
             "description": "Een Wikidata-code"
         }
+    },
+    "userinfo": {
+        "gotoSettings": "Ga naar je instellingen op OpenStreetMap.org",
+        "newMessages": "je hebt nieuwe berichten",
+        "moveToHome": "Beweeg de kaart naar je thuislocatie",
+        "gotoInbox": "Open je inbox",
+        "noDescriptionCallToAction": "Voeg een profielbeschrijving toe",
+        "noDescription": "Je hebt nog een beschrijving op je profiel",
+        "welcome": "Welkom {user}"
     }
 }
