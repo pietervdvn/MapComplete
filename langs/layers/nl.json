@@ -2538,7 +2538,6 @@
         },
         "title": {
             "mappings": {
-                "0": {},
                 "1": {
                     "then": "Klimsite <b>{name}</b>"
                 },
@@ -6586,6 +6585,26 @@
                     }
                 },
                 "question": "Is er een helling bij deze trap?"
+            },
+            "tactile_writing": {
+                "question": "Heeft deze trap voelbaar schrift op de leuning?",
+                "mappings": {
+                    "0": {
+                        "then": "Er is voelbaar schrift op de leuning"
+                    },
+                    "1": {
+                        "then": "Er is geen voelbaar schrift op de leuning"
+                    }
+                }
+            },
+            "tactile_writing_language": {
+                "render": {
+                    "special": {
+                        "render_list_item": "Deze trap heeft voelbaar schrijft in {language():font-bold}",
+                        "render_single_language": "Deze trap heeft voelbaar schrijft in {language():font-bold}",
+                        "question": "In welke talen is er voelbaar schrift (braille) voor navigatie? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
+                    }
+                }
             }
         },
         "title": {
@@ -6595,7 +6614,8 @@
                 }
             },
             "render": "Trap"
-        }
+        },
+        "description": "Laag met trappen en roltrappen"
     },
     "street_lamps": {
         "description": "Een laag die alle straatlantaarns toont",
@@ -6923,8 +6943,23 @@
                     "0": {
                         "then": "Nederlandse Spoorwegen (NS)"
                     }
-                }
+                },
+                "freeform": {
+                    "placeholder": "Naam van de beheerder"
+                },
+                "question": "Wie is de beheerder van deze kaartautomaat?",
+                "render": "Deze kaartautomaat wordt beheerd door {operator}"
             }
+        },
+        "name": "Kaartautomaten",
+        "description": "Zoek kaartautomaten voor het openbaar vervoer",
+        "presets": {
+            "0": {
+                "title": "een kaartautomaat"
+            }
+        },
+        "title": {
+            "render": "Kaartautomaat"
         }
     },
     "toilet": {
@@ -7587,6 +7622,16 @@
                 "render": {
                     "special": {
                         "tagrendering": "Een <a href='#{id}'>ingang</a> van {canonical(width)}"
+                    },
+                    "after": "{_entrances_count_without_width_count} ingangen hebben nog geen informatie over de breedte",
+                    "before": "<h3>Ingangen</h3>Dit gebouw heeft {_entrances_count} ingangen:"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Geen ingang is gemarkeerd"
+                    },
+                    "1": {
+                        "then": "Geen van de {_entrance_count} ingangen hebben al informatie over de breedte"
                     }
                 }
             }
@@ -7871,5 +7916,26 @@
                 }
             }
         }
+    },
+    "railway_platforms": {
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Perronnummer"
+                },
+                "question": "Wat is het nummer van dit perron?",
+                "render": "Perron {ref}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Perron {ref}"
+                }
+            },
+            "render": "Perron"
+        },
+        "description": "Vind elk perron in het station, en de routes die ze gebruiken.",
+        "name": "Treinperrons"
     }
 }
