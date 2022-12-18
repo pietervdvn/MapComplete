@@ -7631,7 +7631,7 @@
                         "then": "Geen ingang is gemarkeerd"
                     },
                     "1": {
-                        "then": "Geen van de {_entrance_count ingangen hebben al informatie over de breedte"
+                        "then": "Geen van de {_entrance_count} ingangen hebben al informatie over de breedte"
                     }
                 }
             }
