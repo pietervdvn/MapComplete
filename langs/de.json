@@ -913,7 +913,7 @@
         "inviteToSplit": "Die Straße in Abschnitte teilen. Dadurch können je Abschnitt unterschiedliche Eigenschaften angegeben werden.",
         "loginToSplit": "Anmeldung erforderlich, um Straßen zu teilen",
         "split": "Teilen",
-        "splitTitle": "Auf der Karte auswählen, wo die Straße geteilt werden soll"
+        "splitTitle": "Wähle auf der Karte aus, wo sich die Eigenschaften dieser Straße ändern"
     },
     "translations": {
         "activateButton": "MapComplete übersetzen",
