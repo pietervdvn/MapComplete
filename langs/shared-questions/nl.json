@@ -224,7 +224,33 @@
             "question": "Welk Wikipedia-artikel beschrijft dit object?"
         },
         "denominations-coins": {
-            "question": "Met welke munten kan je hier betalen?"
+            "question": "Met welke munten kan je hier betalen?",
+            "mappings": {
+                "0": {
+                    "then": "Munten van 1 cent worden geaccepteerd"
+                },
+                "5": {
+                    "then": "Munten van 50 cent worden geaccepteerd"
+                },
+                "1": {
+                    "then": "Munten van 2 cent worden geaccepteerd"
+                },
+                "2": {
+                    "then": "Munten van 5 cent worden geaccepteerd"
+                },
+                "3": {
+                    "then": "Munten van 10 cent worden geaccepteerd"
+                },
+                "4": {
+                    "then": "Munten van 20 cent worden geaccepteerd"
+                },
+                "6": {
+                    "then": "Munten van 1 euro worden geaccepteerd"
+                },
+                "7": {
+                    "then": "Munten van 2 euro worden geaccepteerd"
+                }
+            }
         }
     }
 }
