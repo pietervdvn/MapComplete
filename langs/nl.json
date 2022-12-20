@@ -890,7 +890,7 @@
         "inviteToSplit": "Knip deze weg in kleinere segmenten (om andere eigenschappen per segment toe te kennen)",
         "loginToSplit": "Je moet aangemeld zijn om een weg te knippen",
         "split": "Knip weg",
-        "splitTitle": "Duid op de kaart aan waar de weg geknipt moet worden"
+        "splitTitle": "Duid op de kaart aan waar de eigenschappen van de weg veranderen"
     },
     "translations": {
         "activateButton": "Help met het vertalen van MapComplete",
