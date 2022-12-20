@@ -123,6 +123,9 @@
                     },
                     "11": {
                         "then": "Carrelage"
+                    },
+                    "12": {
+                        "then": "Sculpture sur bois"
                     }
                 },
                 "question": "Quel est le type de cette œuvre d'art ?",
@@ -131,6 +134,26 @@
             "artwork-website": {
                 "question": "Existe-t-il un site web où trouver plus d'informations sur cette œuvre d'art ?",
                 "render": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>"
+            },
+            "doubles_as_bench": {
+                "question": "Cette oeuvre d'art sert-elle de banc ?",
+                "mappings": {
+                    "0": {
+                        "then": "Cette oeuvre d'art sert aussi de banc"
+                    },
+                    "1": {
+                        "then": "Cette oeuvre d'art ne sert pas de banc"
+                    },
+                    "2": {
+                        "then": "Cette oeuvre d'art ne sert pas de banc"
+                    }
+                }
+            },
+            "artwork-artist-wikidata": {
+                "question": "Qui a fait cette oeuvre d'art ?"
+            },
+            "artwork_subject": {
+                "question": "Que représente cette oeuvre d'art ?"
             }
         },
         "title": {
@@ -323,15 +346,80 @@
             },
             "bench-seats": {
                 "question": "De combien de places dispose ce banc ?",
-                "render": "{seats} places"
+                "render": "{seats} places",
+                "mappings": {
+                    "0": {
+                        "then": "Ce banc n'a pas de sièges séparés"
+                    }
+                }
             },
             "bench-survey:date": {
                 "question": "Quand ce banc a-t-il été contrôlé pour la dernière fois ?",
-                "render": "Ce banc a été contrôlé pour la dernière fois le {survey:date}"
+                "render": "Ce banc a été contrôlé pour la dernière fois le {survey:date}",
+                "mappings": {
+                    "0": {
+                        "then": "Vérifié sur le terrain aujourd'hui !"
+                    }
+                }
+            },
+            "bench-inscription": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce banc n'a pas d'inscription"
+                    },
+                    "1": {
+                        "then": "Ce banc n'a<span class='subtle'>(probablement)</span> pas d'inscription"
+                    }
+                },
+                "question": "Est-ce que ce banc possède une inscription ?<div class='subtle text-lg'>Par exemple, sur une plaque accrochée, sur le dossier, ...</div>",
+                "render": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>"
+            },
+            "bench-artwork": {
+                "mappings": {
+                    "0": {
+                        "then": "Une oeuvre d'art est intégrée à ce banc"
+                    },
+                    "1": {
+                        "then": "Ce banc n'a pas d'oeuvre d'art intégrée"
+                    }
+                }
+            },
+            "bench-memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce banc est un mémorial pour quelqu'un ou quelque chose"
+                    },
+                    "1": {
+                        "then": "Ce banc n'est <b>pas</b> un mémorial pour quelqu'un ou quelque chose"
+                    }
+                },
+                "question": "Ce banc sert-il de mémorial pour quelqu'un ou quelque chose ?"
             }
         },
         "title": {
             "render": "Banc"
+        },
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Avec et sans dossier"
+                    },
+                    "1": {
+                        "question": "A un dossier"
+                    },
+                    "2": {
+                        "question": "N'a pas de dossier"
+                    }
+                }
+            },
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "est un mémorial"
+                    }
+                }
+            }
         }
     },
     "bench_at_pt": {
@@ -366,6 +454,18 @@
                 }
             },
             "render": "Banc"
+        },
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "Cette station de bus n'est plus utilisée"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Cette station de bus n'a pas de banc (il n'y en a jamais eu ou il a été retiré)"
+                }
+            }
         }
     },
     "bicycle_library": {
@@ -1357,6 +1457,10 @@
                     }
                 },
                 "question": "Doit-on payer des frais de stationnement pendant la recharge ?"
+            },
+            "phone": {
+                "question": "Quel numéro peut on appeler s'il y a un problème avec cette station de charge ?",
+                "render": "En cas de problèmes, appelez le <a href='tel:{phone}'>{phone}</a>"
             }
         }
     },
@@ -1625,6 +1729,57 @@
                 }
             },
             "render": "Traversée"
+        },
+        "tagRenderings": {
+            "crossing-has-island": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce passage a une île au milieu"
+                    },
+                    "1": {
+                        "then": "Ce passage n'a pas d'île au milieu"
+                    }
+                },
+                "question": "Est-ce que ce passage a une île au milieu ?"
+            },
+            "crossing-is-zebra": {
+                "mappings": {
+                    "0": {
+                        "then": "C'est un passage piéton"
+                    },
+                    "1": {
+                        "then": "Ce n'est pas un passage piéton"
+                    }
+                },
+                "question": "Est-ce un passage piéton ?"
+            },
+            "crossing-right-turn-through-red": {
+                "mappings": {
+                    "0": {
+                        "then": "Un cycliste peut tourner à droite si le feu est rouge"
+                    },
+                    "1": {
+                        "then": "Un cycliste peut tourner à droite si le feu est rouge"
+                    },
+                    "2": {
+                        "then": "Un cycliste ne peut pas tourner à droite si le feu est rouge"
+                    }
+                },
+                "question": "Un cycliste peut-il tourner à droite quand le feu est rouge ?"
+            },
+            "crossing-sound": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce feu de signalisation a une alarme sonore pour aider à traverser, à la fois pour trouver le passage piéton, et pour traverser."
+                    },
+                    "1": {
+                        "then": "Ce feu de signalisation n'a pas de signal sonore pour aider à traverser."
+                    }
+                }
+            },
+            "crossing-continue-through-red": {
+                "question": "Est-ce qu'un cycliste peut aller tout droit quand le feu est rouge ?"
+            }
         }
     },
     "cycleways_and_roads": {
@@ -4531,5 +4686,68 @@
                 }
             }
         }
+    },
+    "atm": {
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Nom de marque"
+                },
+                "question": "De quelle marque est ce DAB ?",
+                "render": "La marque de ce DAB est {brand}"
+            },
+            "name": {
+                "render": "Le nom de ce DAB est {name}"
+            },
+            "operator": {
+                "question": "Quelle société exploite ce DAB ?",
+                "freeform": {
+                    "placeholder": "Opérateur"
+                },
+                "render": "Ce DAB est exploité par {operator}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "DAB {brand}"
+                }
+            },
+            "render": "DAB"
+        },
+        "description": "DAB pour retirer de l'argent",
+        "name": "DABs",
+        "presets": {
+            "0": {
+                "title": "un DAB"
+            }
+        }
+    },
+    "car_rental": {
+        "presets": {
+            "0": {
+                "description": "Un lieu où vous pouvez louer une voiture",
+                "title": "Une société de location de véhicules"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Nom de la société de location de véhicules"
+                },
+                "render": "Cette société de location de véhicules est appelée {name}",
+                "mappings": {
+                    "0": {
+                        "then": "Cette société de location de véhicules n'a pas de nom"
+                    }
+                },
+                "question": "Quel est le nom de cette société de location de véhicules ?"
+            }
+        },
+        "name": "Société de location de véhicules",
+        "title": {
+            "render": "Société de location de véhicules"
+        },
+        "description": "Lieu où vous pouvez louer une voiture"
     }
 }
