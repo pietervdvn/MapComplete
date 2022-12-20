@@ -71,44 +71,6 @@
   "tagRenderings": [
     "images",
     {
-      "id": "tree-height",
-      "render": {
-        "nl": "Hoogte: {height}",
-        "en": "Height: {height}",
-        "it": "Altezza: {height}",
-        "ru": "Высота: {height}",
-        "fr": "Hauteur : {height}",
-        "de": "Höhe: {height}",
-        "es": "Altura: {height}",
-        "id": "Tinggi: {height}",
-        "da": "Højde: {height}"
-      },
-      "condition": {
-        "and": [
-          "height~*"
-        ]
-      },
-      "mappings": [
-        {
-          "if": {
-            "and": [
-              "height~^[0-9.]+$"
-            ]
-          },
-          "then": {
-            "nl": "Hoogte: {height}&nbsp;m",
-            "en": "Height: {height}&nbsp;m",
-            "it": "Altezza: {height}&nbsp;m",
-            "ru": "Высота: {height}&nbsp;м",
-            "fr": "Hauteur&nbsp;: {height}&nbsp;m",
-            "de": "Höhe: {height}&nbsp;m",
-            "es": "Altura: {height}&nbsp;m",
-            "da": "Højde: {height}&nbsp;m"
-          }
-        }
-      ]
-    },
-    {
       "id": "plantnet",
       "render": "{plantnet_detection()}",
       "condition": "species:wikidata="
@@ -153,6 +115,34 @@
           "wikidata~*"
         ]
       }
+    },
+    {
+      "id": "circumference",
+      "question": {
+        "en": "What is the circumference of the tree trunk?<p class='subtle'>This is measured at a height of 1.30m</p>"
+      },
+      "render": {
+        "en": "The tree trunk has a circumference of {circumference} meter"
+      },
+      "freeform": {
+        "key": "circumference",
+        "inline": true,
+        "type": "pfloat"
+      }
+    },
+    {
+      "id": "height",
+      "question": {
+        "en": "What is the height of this tree?"
+      },
+      "freeform": {
+        "key": "height",
+        "type": "pfloat",
+        "inline": true
+      },
+      "render": {
+        "en": "This tree is {height} meter high"
+    }
     },
     {
       "id": "tree-denotation",
