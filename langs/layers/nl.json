@@ -3495,6 +3495,15 @@
                     }
                 },
                 "question": "Werkt deze lift?"
+            },
+            "tactile_writing_language": {
+                "render": {
+                    "special": {
+                        "render_list_item": "Deze lift heeft voelbaar schrift in het {language():font-bold}",
+                        "question": "In welke talen heeft deze lift voelbaar schrift (braille)?",
+                        "render_single_language": "Deze lift heeft voelbaar schrift in het {language():font-bold}"
+                    }
+                }
             }
         },
         "title": {
@@ -7937,5 +7946,50 @@
         },
         "description": "Vind elk perron in het station, en de routes die ze gebruiken.",
         "name": "Treinperrons"
+    },
+    "atm": {
+        "tagRenderings": {
+            "operator": {
+                "render": "Deze geldautomaat wordt beheerd door {operator}",
+                "question": "Welk bedrijf beheert deze geldautomaat?",
+                "freeform": {
+                    "placeholder": "Beheerder"
+                }
+            },
+            "name": {
+                "render": "De naam van deze geldautomaat is {name}"
+            },
+            "brand": {
+                "question": "Van welk merk is deze geldautomaat?",
+                "render": "Het merk van deze geldautomaat is {brand}",
+                "freeform": {
+                    "placeholder": "Merknaam"
+                }
+            }
+        },
+        "title": {
+            "render": "Geldautomaat",
+            "mappings": {
+                "0": {
+                    "then": "{brand} Geldautomaat"
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "een geldautomaat"
+            }
+        },
+        "name": "Geldautomaten",
+        "description": "Geldautomaten om geld op te nemen"
+    },
+    "ticket_validator": {
+        "tagRenderings": {
+            "validator-operator": {
+                "freeform": {
+                    "placeholder": "Naam van de beheerder"
+                }
+            }
+        }
     }
 }
