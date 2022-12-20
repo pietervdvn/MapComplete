@@ -70,7 +70,6 @@ export abstract class OsmObject {
 
         const url = `${OsmObject.backendURL}api/0.6/${id}`
         const rawData = await Utils.downloadJsonCachedAdvanced(url, 1000)
-        console.log(rawData)
         if (rawData["error"] !== undefined && rawData["statuscode"] === 410) {
             return "deleted"
         }
