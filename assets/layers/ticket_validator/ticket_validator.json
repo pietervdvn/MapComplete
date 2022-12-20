@@ -1,10 +1,12 @@
 {
   "id": "ticket_validator",
   "name": {
-    "en": "Ticket Validators"
+    "en": "Ticket Validators",
+    "de": "Fahrkartenentwerter"
   },
   "description": {
-    "en": "Find ticket validators to validate public transport tickets"
+    "en": "Find ticket validators to validate public transport tickets",
+    "de": "Finden Sie Fahrkartenentwerter, um Tickets für den öffentlichen Nahverkehr zu entwerten"
   },
   "source": {
     "osmTags": "amenity=ticket_validator"
@@ -12,7 +14,8 @@
   "minzoom": 19,
   "title": {
     "render": {
-      "en": "Ticket Validator"
+      "en": "Ticket Validator",
+      "de": "Fahrkartenentwerter"
     }
   },
   "tagRenderings": [
@@ -22,13 +25,15 @@
       "id": "barrier",
       "condition": "barrier~*",
       "render": {
-        "en": "This ticket validator is part of a barrier of type {barrier}"
+        "en": "This ticket validator is part of a barrier of type {barrier}",
+        "de": "Dieser Fahrkartenentwerter ist Teil einer Zugangsbarriere vom Typ {barrier}"
       },
       "mappings": [
         {
           "if": "barrier=gate",
           "then": {
-            "en": "This ticket validator is part of a gate"
+            "en": "This ticket validator is part of a gate",
+            "de": "Dieser Fahrscheinentwerter ist Teil einer Zugangsbarriere"
           }
         }
       ]
@@ -36,16 +41,20 @@
     {
       "id": "validator-operator",
       "question": {
-        "en": "Who is the operator of this ticket validator?"
+        "en": "Who is the operator of this ticket validator?",
+        "de": "Wer ist der Betreiber dieses Fahrkartenentwerters?"
       },
       "render": {
-        "en": "This ticket validator is operated by {operator}"
+        "en": "This ticket validator is operated by {operator}",
+        "de": "Dieser Fahrkartenentwerter wird betrieben von {operator}"
       },
       "freeform": {
         "key": "operator",
         "type": "string",
         "placeholder": {
-          "en": "Name of the operator"
+          "en": "Name of the operator",
+          "de": "Name des Betreibers",
+          "nl": "Naam van de beheerder"
         }
       }
     },
@@ -79,7 +88,8 @@
         "amenity=ticket_validator"
       ],
       "title": {
-        "en": "a ticket validator"
+        "en": "a ticket validator",
+        "de": "einen Fahrkartenentwerter"
       }
     }
   ],

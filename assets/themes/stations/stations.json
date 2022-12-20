@@ -1,10 +1,14 @@
 {
   "id": "stations",
   "title": {
-    "en": "Train Stations"
+    "en": "Train Stations",
+    "de": "Bahnhöfe",
+    "nl": "Treinstations"
   },
   "description": {
-    "en": "View, edit and add details to a train station"
+    "en": "View, edit and add details to a train station",
+    "de": "Bahnhofsdetails ansehen, bearbeiten und hinzufügen",
+    "nl": "Bekijk, bewerk en voeg details to aan een treinstation"
   },
   "icon": "./assets/themes/stations/rail-light.svg",
   "startLat": 0,
@@ -58,10 +62,14 @@
         }
       },
       "name": {
-        "en": "Train Stations"
+        "en": "Train Stations",
+        "de": "Bahnhöfe",
+        "nl": "Treinstations"
       },
       "description": {
-        "en": "Layer showing train stations"
+        "en": "Layer showing train stations",
+        "de": "Ebene mit Bahnhöfen",
+        "nl": "Laag met treinstations"
       },
       "mapRendering": [
         {
@@ -225,14 +233,20 @@
     {
       "id": "departures_board",
       "name": {
-        "en": "Departures boards"
+        "en": "Departures boards",
+        "de": "Abfahrtstafeln",
+        "nl": "Vertrektijdenborden"
       },
       "description": {
-        "en": "Displays showing the trains that will leave from this station"
+        "en": "Displays showing the trains that will leave from this station",
+        "de": "Anzeigen der Züge, die von diesem Bahnhof abfahren",
+        "nl": "Schermen die treinen tonen die van dit station vertrekken"
       },
       "title": {
         "render": {
-          "en": "Departures board"
+          "en": "Departures board",
+          "de": "Abfahrtstafel",
+          "nl": "Vertrektijdenbord"
         }
       },
       "minzoom": 19,
@@ -249,31 +263,41 @@
         {
           "id": "type",
           "question": {
-            "en": "What kind of departures board is this?"
+            "en": "What kind of departures board is this?",
+            "de": "Was ist das für eine Abfahrtstafel?",
+            "nl": "Wat voor vertrektijdenbord is dit?"
           },
           "mappings": [
             {
               "if": "departures_board=yes",
               "then": {
-                "en": "This is a departures board of an unknown type"
+                "en": "This is a departures board of an unknown type",
+                "de": "Dies ist eine Abfahrtstafel eines unbekannten Typs",
+                "nl": "Dit is een vertrektijdenbord van een onbekend type"
               }
             },
             {
               "if": "departures_board=realtime",
               "then": {
-                "en": "This is an electronic board, showing the next departures in realtime"
+                "en": "This is an electronic board, showing the next departures in realtime",
+                "de": "Dies ist eine elektronische Tafel, die nächste Abfahrten in Echtzeit anzeigt",
+                "nl": "Dit is een elektronisch bord, met realtime vertrektijden"
               }
             },
             {
               "if": "departures_board=timetable",
               "then": {
-                "en": "This is a paper timetable"
+                "en": "This is a paper timetable",
+                "de": "Dies ist ein Papierfahrplan",
+                "nl": "Dit is een papieren vertrekstaat"
               }
             },
             {
               "if": "departures_board=delay",
               "then": {
-                "en": "There is a sign showing the frequency of the trains"
+                "en": "There is a sign showing the frequency of the trains",
+                "de": "Es gibt ein Schild, das den Takt der Züge anzeigt",
+                "nl": "Er is een bord met de tijden tussen treinen"
               }
             }
           ]
@@ -286,10 +310,14 @@
             "departures_board=yes"
           ],
           "title": {
-            "en": "a departures board"
+            "en": "a departures board",
+            "de": "eine Abfahrtstafel",
+            "nl": "een vertrektijdenbord"
           },
           "description": {
-            "en": "Add a board showing departures, either electronic or paper"
+            "en": "Add a board showing departures, either electronic or paper",
+            "de": "Fügen Sie eine Tafel hinzu, auf der Abfahrten angezeigt werden, entweder elektronisch oder in Papierform",
+            "nl": "Voeg een bord met vertrektijden toe, elektronisch of op papier"
           }
         }
       ],

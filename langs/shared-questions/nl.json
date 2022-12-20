@@ -1,5 +1,34 @@
 {
     "shared_questions": {
+        "denominations-coins": {
+            "mappings": {
+                "0": {
+                    "then": "Munten van 1 cent worden geaccepteerd"
+                },
+                "1": {
+                    "then": "Munten van 2 cent worden geaccepteerd"
+                },
+                "2": {
+                    "then": "Munten van 5 cent worden geaccepteerd"
+                },
+                "3": {
+                    "then": "Munten van 10 cent worden geaccepteerd"
+                },
+                "4": {
+                    "then": "Munten van 20 cent worden geaccepteerd"
+                },
+                "5": {
+                    "then": "Munten van 50 cent worden geaccepteerd"
+                },
+                "6": {
+                    "then": "Munten van 1 euro worden geaccepteerd"
+                },
+                "7": {
+                    "then": "Munten van 2 euro worden geaccepteerd"
+                }
+            },
+            "question": "Met welke munten kan je hier betalen?"
+        },
         "description": {
             "question": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.<br/><span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>"
         },
@@ -222,35 +251,6 @@
                 }
             },
             "question": "Welk Wikipedia-artikel beschrijft dit object?"
-        },
-        "denominations-coins": {
-            "question": "Met welke munten kan je hier betalen?",
-            "mappings": {
-                "0": {
-                    "then": "Munten van 1 cent worden geaccepteerd"
-                },
-                "5": {
-                    "then": "Munten van 50 cent worden geaccepteerd"
-                },
-                "1": {
-                    "then": "Munten van 2 cent worden geaccepteerd"
-                },
-                "2": {
-                    "then": "Munten van 5 cent worden geaccepteerd"
-                },
-                "3": {
-                    "then": "Munten van 10 cent worden geaccepteerd"
-                },
-                "4": {
-                    "then": "Munten van 20 cent worden geaccepteerd"
-                },
-                "6": {
-                    "then": "Munten van 1 euro worden geaccepteerd"
-                },
-                "7": {
-                    "then": "Munten van 2 euro worden geaccepteerd"
-                }
-            }
         }
     }
 }

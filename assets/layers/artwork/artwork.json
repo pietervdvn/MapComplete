@@ -443,7 +443,8 @@
             "en": "Woodcarving",
             "de": "Holzschnitzerei",
             "cs": "Dřevořezba",
-            "pt": "Entalhe em madeira"
+            "pt": "Entalhe em madeira",
+            "fr": "Sculpture sur bois"
           }
         }
       ],
@@ -468,7 +469,8 @@
         "nl": "Wie heeft dit kunstwerk gemaakt?",
         "cs": "Kdo je autorem tohoto díla?",
         "pt": "Quem fez essa obra de arte?",
-        "es": "¿Quién creó esta obra de arte?"
+        "es": "¿Quién creó esta obra de arte?",
+        "fr": "Qui a fait cette oeuvre d'art ?"
       },
       "freeform": {
         "key": "artist:wikidata",
@@ -585,7 +587,8 @@
         "nl": "Wat beeldt dit kunstwerk af?",
         "cs": "Co zobrazuje toto umělecké dílo?",
         "pt": "O que esta obra de arte representa?",
-        "es": "¿Qué representa esta obra de arte?"
+        "es": "¿Qué representa esta obra de arte?",
+        "fr": "Que représente cette oeuvre d'art ?"
       },
       "freeform": {
         "key": "subject:wikidata",
@@ -606,25 +609,33 @@
     {
       "id": "doubles_as_bench",
       "question": {
-        "en": "Does this artwork serve as a bench?"
+        "en": "Does this artwork serve as a bench?",
+        "de": "Dient dieses Kunstwerk auch als Sitzbank?",
+        "fr": "Cette oeuvre d'art sert-elle de banc ?"
       },
       "mappings": [
         {
           "if": "amenity=bench",
           "then": {
-            "en": "This artwork also serves as a bench"
+            "en": "This artwork also serves as a bench",
+            "de": "Dieses Kunstwerk dient auch als Sitzbank",
+            "fr": "Cette oeuvre d'art sert aussi de banc"
           }
         },
         {
           "if": "amenity=",
           "then": {
-            "en": "This artwork does not serve as a bench"
+            "en": "This artwork does not serve as a bench",
+            "de": "Dieses Kunstwerk dient nicht als Sitzbank",
+            "fr": "Cette oeuvre d'art ne sert pas de banc"
           }
         },
         {
           "if": "amenity!=bench",
           "then": {
-            "en": "This artwork does not serve as a bench"
+            "en": "This artwork does not serve as a bench",
+            "de": "Dieses Kunstwerk dient nicht als Sitzbank",
+            "fr": "Cette oeuvre d'art ne sert pas de banc"
           },
           "hideInAnswer": true
         }

@@ -902,6 +902,15 @@
         "missing": "{count} niet-vertaalde teksten",
         "notImmediate": "Vertalingen worden niet onmiddelijk geupdate. Dit duurt gemiddeld enkele dagen"
     },
+    "userinfo": {
+        "gotoInbox": "Open je inbox",
+        "gotoSettings": "Ga naar je instellingen op OpenStreetMap.org",
+        "moveToHome": "Beweeg de kaart naar je thuislocatie",
+        "newMessages": "je hebt nieuwe berichten",
+        "noDescription": "Je hebt nog een beschrijving op je profiel",
+        "noDescriptionCallToAction": "Voeg een profielbeschrijving toe",
+        "welcome": "Welkom {user}"
+    },
     "validation": {
         "color": {
             "description": "Een kleur of hexadecimale code voor een kleur"
@@ -961,14 +970,5 @@
         "wikidata": {
             "description": "Een Wikidata-code"
         }
-    },
-    "userinfo": {
-        "gotoSettings": "Ga naar je instellingen op OpenStreetMap.org",
-        "newMessages": "je hebt nieuwe berichten",
-        "moveToHome": "Beweeg de kaart naar je thuislocatie",
-        "gotoInbox": "Open je inbox",
-        "noDescriptionCallToAction": "Voeg een profielbeschrijving toe",
-        "noDescription": "Je hebt nog een beschrijving op je profiel",
-        "welcome": "Welkom {user}"
     }
 }

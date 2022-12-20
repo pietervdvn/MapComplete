@@ -4207,14 +4207,16 @@
         "nl": "Wat is het telefoonnummer van de beheerder van dit oplaadpunt?",
         "da": "Hvilket nummer kan man ringe til, hvis der er et problem med denne ladestation?",
         "de": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?",
-        "es": "¿A qué número se puede llamar si hay un problema con esta estación de carga?"
+        "es": "¿A qué número se puede llamar si hay un problema con esta estación de carga?",
+        "fr": "Quel numéro peut on appeler s'il y a un problème avec cette station de charge ?"
       },
       "render": {
         "en": "In case of problems, call <a href='tel:{phone}'>{phone}</a>",
         "nl": "Bij problemen, bel naar <a href='tel:{phone}'>{phone}</a>",
         "da": "I tilfælde af problemer, ring til <a href='tel:{phone}'>{phone}</a>",
         "de": "Bei Problemen, anrufen unter <a href='tel:{phone}'>{phone}</a>",
-        "es": "En caso de problemas, llama a <a href='tel:{phone}'>{phone}</a>"
+        "es": "En caso de problemas, llama a <a href='tel:{phone}'>{phone}</a>",
+        "fr": "En cas de problèmes, appelez le <a href='tel:{phone}'>{phone}</a>"
       },
       "freeform": {
         "key": "phone",

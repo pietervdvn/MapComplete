@@ -11532,12 +11532,16 @@
       "description": "The layer 'Tree allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
-      "key": "height",
-      "description": "Layer 'Tree' shows height~^(^[0-9.]+$)$ with a fixed text, namely 'Height: {height}&nbsp;m' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
       "key": "species:wikidata",
       "description": "Layer 'Tree' shows and asks freeform values for key 'species:wikidata' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "circumference",
+      "description": "Layer 'Tree' shows and asks freeform values for key 'circumference' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "height",
+      "description": "Layer 'Tree' shows and asks freeform values for key 'height' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "denotation",

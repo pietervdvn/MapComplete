@@ -82,6 +82,9 @@
             }
         },
         "tagRenderings": {
+            "artwork-artist-wikidata": {
+                "question": "Qui a fait cette oeuvre d'art ?"
+            },
             "artwork-artist_name": {
                 "question": "Quel artiste a créé cette œuvre ?",
                 "render": "Créé par {artist_name}"
@@ -135,8 +138,10 @@
                 "question": "Existe-t-il un site web où trouver plus d'informations sur cette œuvre d'art ?",
                 "render": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>"
             },
+            "artwork_subject": {
+                "question": "Que représente cette oeuvre d'art ?"
+            },
             "doubles_as_bench": {
-                "question": "Cette oeuvre d'art sert-elle de banc ?",
                 "mappings": {
                     "0": {
                         "then": "Cette oeuvre d'art sert aussi de banc"
@@ -147,13 +152,8 @@
                     "2": {
                         "then": "Cette oeuvre d'art ne sert pas de banc"
                     }
-                }
-            },
-            "artwork-artist-wikidata": {
-                "question": "Qui a fait cette oeuvre d'art ?"
-            },
-            "artwork_subject": {
-                "question": "Que représente cette oeuvre d'art ?"
+                },
+                "question": "Cette oeuvre d'art sert-elle de banc ?"
             }
         },
         "title": {
@@ -163,6 +163,42 @@
                 }
             },
             "render": "Œuvre d'art"
+        }
+    },
+    "atm": {
+        "description": "DAB pour retirer de l'argent",
+        "name": "DABs",
+        "presets": {
+            "0": {
+                "title": "un DAB"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Nom de marque"
+                },
+                "question": "De quelle marque est ce DAB ?",
+                "render": "La marque de ce DAB est {brand}"
+            },
+            "name": {
+                "render": "Le nom de ce DAB est {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Opérateur"
+                },
+                "question": "Quelle société exploite ce DAB ?",
+                "render": "Ce DAB est exploité par {operator}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "DAB {brand}"
+                }
+            },
+            "render": "DAB"
         }
     },
     "barrier": {
@@ -268,6 +304,28 @@
     },
     "bench": {
         "description": "Un banc est une surface en bois, métal, pierre… sur laquelle un humain peut s'asseoir. Cette couche permet de les visualiser et pose des questions à leur sujet.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "est un mémorial"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Avec et sans dossier"
+                    },
+                    "1": {
+                        "question": "A un dossier"
+                    },
+                    "2": {
+                        "question": "N'a pas de dossier"
+                    }
+                }
+            }
+        },
         "name": "Bancs",
         "presets": {
             "0": {
@@ -275,6 +333,16 @@
             }
         },
         "tagRenderings": {
+            "bench-artwork": {
+                "mappings": {
+                    "0": {
+                        "then": "Une oeuvre d'art est intégrée à ce banc"
+                    },
+                    "1": {
+                        "then": "Ce banc n'a pas d'oeuvre d'art intégrée"
+                    }
+                }
+            },
             "bench-backrest": {
                 "mappings": {
                     "0": {
@@ -320,6 +388,18 @@
                 "question": "Dans quelle direction regardez-vous quand vous êtes assis sur le banc ?",
                 "render": "Assis sur le banc, on regarde vers {direction}°."
             },
+            "bench-inscription": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce banc n'a pas d'inscription"
+                    },
+                    "1": {
+                        "then": "Ce banc n'a<span class='subtle'>(probablement)</span> pas d'inscription"
+                    }
+                },
+                "question": "Est-ce que ce banc possède une inscription ?<div class='subtle text-lg'>Par exemple, sur une plaque accrochée, sur le dossier, ...</div>",
+                "render": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>"
+            },
             "bench-material": {
                 "mappings": {
                     "0": {
@@ -344,46 +424,6 @@
                 "question": "De quel matériau ce banc est-il fait ?",
                 "render": "Matériau : {material}"
             },
-            "bench-seats": {
-                "question": "De combien de places dispose ce banc ?",
-                "render": "{seats} places",
-                "mappings": {
-                    "0": {
-                        "then": "Ce banc n'a pas de sièges séparés"
-                    }
-                }
-            },
-            "bench-survey:date": {
-                "question": "Quand ce banc a-t-il été contrôlé pour la dernière fois ?",
-                "render": "Ce banc a été contrôlé pour la dernière fois le {survey:date}",
-                "mappings": {
-                    "0": {
-                        "then": "Vérifié sur le terrain aujourd'hui !"
-                    }
-                }
-            },
-            "bench-inscription": {
-                "mappings": {
-                    "0": {
-                        "then": "Ce banc n'a pas d'inscription"
-                    },
-                    "1": {
-                        "then": "Ce banc n'a<span class='subtle'>(probablement)</span> pas d'inscription"
-                    }
-                },
-                "question": "Est-ce que ce banc possède une inscription ?<div class='subtle text-lg'>Par exemple, sur une plaque accrochée, sur le dossier, ...</div>",
-                "render": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>"
-            },
-            "bench-artwork": {
-                "mappings": {
-                    "0": {
-                        "then": "Une oeuvre d'art est intégrée à ce banc"
-                    },
-                    "1": {
-                        "then": "Ce banc n'a pas d'oeuvre d'art intégrée"
-                    }
-                }
-            },
             "bench-memorial": {
                 "mappings": {
                     "0": {
@@ -394,35 +434,43 @@
                     }
                 },
                 "question": "Ce banc sert-il de mémorial pour quelqu'un ou quelque chose ?"
+            },
+            "bench-seats": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce banc n'a pas de sièges séparés"
+                    }
+                },
+                "question": "De combien de places dispose ce banc ?",
+                "render": "{seats} places"
+            },
+            "bench-survey:date": {
+                "mappings": {
+                    "0": {
+                        "then": "Vérifié sur le terrain aujourd'hui !"
+                    }
+                },
+                "question": "Quand ce banc a-t-il été contrôlé pour la dernière fois ?",
+                "render": "Ce banc a été contrôlé pour la dernière fois le {survey:date}"
             }
         },
         "title": {
             "render": "Banc"
-        },
-        "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Avec et sans dossier"
-                    },
-                    "1": {
-                        "question": "A un dossier"
-                    },
-                    "2": {
-                        "question": "N'a pas de dossier"
-                    }
-                }
-            },
-            "0": {
-                "options": {
-                    "0": {
-                        "question": "est un mémorial"
-                    }
-                }
-            }
         }
     },
     "bench_at_pt": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "Cette station de bus n'est plus utilisée"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Cette station de bus n'a pas de banc (il n'y en a jamais eu ou il a été retiré)"
+                }
+            }
+        },
         "description": "Une couche montrant tous les arrêts de transports publics qui ont un banc",
         "name": "Bancs des arrêts de transport en commun",
         "tagRenderings": {
@@ -454,18 +502,6 @@
                 }
             },
             "render": "Banc"
-        },
-        "deletion": {
-            "extraDeleteReasons": {
-                "0": {
-                    "explanation": "Cette station de bus n'est plus utilisée"
-                }
-            },
-            "nonDeleteMappings": {
-                "0": {
-                    "then": "Cette station de bus n'a pas de banc (il n'y en a jamais eu ou il a été retiré)"
-                }
-            }
         }
     },
     "bicycle_library": {
@@ -1386,6 +1422,33 @@
             "render": "Bar"
         }
     },
+    "car_rental": {
+        "description": "Lieu où vous pouvez louer une voiture",
+        "name": "Société de location de véhicules",
+        "presets": {
+            "0": {
+                "description": "Un lieu où vous pouvez louer une voiture",
+                "title": "Une société de location de véhicules"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Nom de la société de location de véhicules"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Cette société de location de véhicules n'a pas de nom"
+                    }
+                },
+                "question": "Quel est le nom de cette société de location de véhicules ?",
+                "render": "Cette société de location de véhicules est appelée {name}"
+            }
+        },
+        "title": {
+            "render": "Société de location de véhicules"
+        }
+    },
     "charging_station": {
         "description": "Une station de recharge",
         "filter": {
@@ -1719,18 +1782,10 @@
                 "title": "une feu de signalisation"
             }
         },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Feu de signalisation"
-                },
-                "1": {
-                    "then": "Traversée avec feu de signalisation"
-                }
-            },
-            "render": "Traversée"
-        },
         "tagRenderings": {
+            "crossing-continue-through-red": {
+                "question": "Est-ce qu'un cycliste peut aller tout droit quand le feu est rouge ?"
+            },
             "crossing-has-island": {
                 "mappings": {
                     "0": {
@@ -1776,10 +1831,18 @@
                         "then": "Ce feu de signalisation n'a pas de signal sonore pour aider à traverser."
                     }
                 }
-            },
-            "crossing-continue-through-red": {
-                "question": "Est-ce qu'un cycliste peut aller tout droit quand le feu est rouge ?"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Feu de signalisation"
+                },
+                "1": {
+                    "then": "Traversée avec feu de signalisation"
+                }
+            },
+            "render": "Traversée"
         }
     },
     "cycleways_and_roads": {
@@ -4506,14 +4569,6 @@
                 },
                 "question": "Quelle est l'importance de cet arbre ? Choisissez la première réponse qui s'applique."
             },
-            "tree-height": {
-                "mappings": {
-                    "0": {
-                        "then": "Hauteur&nbsp;: {height}&nbsp;m"
-                    }
-                },
-                "render": "Hauteur : {height}"
-            },
             "tree-heritage": {
                 "mappings": {
                     "0": {
@@ -4686,68 +4741,5 @@
                 }
             }
         }
-    },
-    "atm": {
-        "tagRenderings": {
-            "brand": {
-                "freeform": {
-                    "placeholder": "Nom de marque"
-                },
-                "question": "De quelle marque est ce DAB ?",
-                "render": "La marque de ce DAB est {brand}"
-            },
-            "name": {
-                "render": "Le nom de ce DAB est {name}"
-            },
-            "operator": {
-                "question": "Quelle société exploite ce DAB ?",
-                "freeform": {
-                    "placeholder": "Opérateur"
-                },
-                "render": "Ce DAB est exploité par {operator}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "DAB {brand}"
-                }
-            },
-            "render": "DAB"
-        },
-        "description": "DAB pour retirer de l'argent",
-        "name": "DABs",
-        "presets": {
-            "0": {
-                "title": "un DAB"
-            }
-        }
-    },
-    "car_rental": {
-        "presets": {
-            "0": {
-                "description": "Un lieu où vous pouvez louer une voiture",
-                "title": "Une société de location de véhicules"
-            }
-        },
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Nom de la société de location de véhicules"
-                },
-                "render": "Cette société de location de véhicules est appelée {name}",
-                "mappings": {
-                    "0": {
-                        "then": "Cette société de location de véhicules n'a pas de nom"
-                    }
-                },
-                "question": "Quel est le nom de cette société de location de véhicules ?"
-            }
-        },
-        "name": "Société de location de véhicules",
-        "title": {
-            "render": "Société de location de véhicules"
-        },
-        "description": "Lieu où vous pouvez louer une voiture"
     }
 }

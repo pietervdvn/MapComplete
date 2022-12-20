@@ -411,9 +411,6 @@
             }
         },
         "tagRenderings": {
-            "tree-height": {
-                "render": "Tinggi: {height}"
-            },
             "tree-heritage": {
                 "mappings": {
                     "0": {

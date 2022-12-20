@@ -180,7 +180,8 @@
         "en": "Is this is a zebra crossing?",
         "nl": "Is dit een zebrapad?",
         "de": "Ist das ein Zebrastreifen?",
-        "es": "¿Esto es un paso de cebra?"
+        "es": "¿Esto es un paso de cebra?",
+        "fr": "Est-ce un passage piéton ?"
       },
       "condition": "crossing=uncontrolled",
       "mappings": [
@@ -190,7 +191,8 @@
             "en": "This is a zebra crossing",
             "nl": "Dit is een zebrapad",
             "de": "Dies ist ein Zebrastreifen",
-            "es": "Esto es un paso de cebra"
+            "es": "Esto es un paso de cebra",
+            "fr": "C'est un passage piéton"
           }
         },
         {
@@ -199,7 +201,8 @@
             "en": "This is not a zebra crossing",
             "nl": "Dit is geen zebrapad",
             "de": "Dies ist kein Zebrastreifen",
-            "es": "Esto no es un paso de cebra"
+            "es": "Esto no es un paso de cebra",
+            "fr": "Ce n'est pas un passage piéton"
           }
         }
       ]
@@ -243,7 +246,8 @@
         "en": "Does this crossing have an island in the middle?",
         "nl": "Heeft deze oversteekplaats een verkeerseiland in het midden?",
         "de": "Gibt es an diesem Übergang eine Verkehrsinsel?",
-        "es": "¿Tiene una isla en el medio este cruce?"
+        "es": "¿Tiene una isla en el medio este cruce?",
+        "fr": "Est-ce que ce passage a une île au milieu ?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -253,7 +257,8 @@
             "en": "This crossing has an island in the middle",
             "nl": "Deze oversteekplaats heeft een verkeerseiland in het midden",
             "de": "Der Übergang hat eine Verkehrsinsel",
-            "es": "Este cruce tiene una isla en el medio"
+            "es": "Este cruce tiene una isla en el medio",
+            "fr": "Ce passage a une île au milieu"
           }
         },
         {
@@ -262,7 +267,8 @@
             "en": "This crossing does not have an island in the middle",
             "nl": "Deze oversteekplaats heeft geen verkeerseiland in het midden",
             "de": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern",
-            "es": "Este cruce no tiene una isla en el medio"
+            "es": "Este cruce no tiene una isla en el medio",
+            "fr": "Ce passage n'a pas d'île au milieu"
           }
         }
       ]
@@ -354,14 +360,16 @@
           "if": "traffic_signals:sound=yes",
           "then": {
             "en": "This traffic light has sound signals to help crossing, both for finding the crossing and for crossing.",
-            "de": "Die Ampel gibt akustische Signale, um das Auffinden und Überqueren der Kreuzung zu erleichtern."
+            "de": "Die Ampel gibt akustische Signale, um das Auffinden und Überqueren der Kreuzung zu erleichtern.",
+            "fr": "Ce feu de signalisation a une alarme sonore pour aider à traverser, à la fois pour trouver le passage piéton, et pour traverser."
           }
         },
         {
           "if": "traffic_signals:sound=no",
           "then": {
             "en": "This traffic light does not have sound signals to help crossing.",
-            "de": "Die Ampel gibt keine akustischen Signale, um das Überqueren zu erleichtern."
+            "de": "Die Ampel gibt keine akustischen Signale, um das Überqueren zu erleichtern.",
+            "fr": "Ce feu de signalisation n'a pas de signal sonore pour aider à traverser."
           }
         },
         {
@@ -471,7 +479,8 @@
         "en": "Can a cyclist turn right when the light is red?",
         "nl": "Mag een fietser rechtsaf slaan als het licht rood is?",
         "de": "Dürfen Radfahrer bei roter Ampel rechts abbiegen?",
-        "es": "¿Puede girar a la derecha un ciclista cuando la luz está roja?"
+        "es": "¿Puede girar a la derecha un ciclista cuando la luz está roja?",
+        "fr": "Un cycliste peut-il tourner à droite quand le feu est rouge ?"
       },
       "condition": "highway=traffic_signals",
       "mappings": [
@@ -481,7 +490,8 @@
             "en": "A cyclist can turn right if the light is red",
             "nl": "Een fietser mag wel rechtsaf slaan als het licht rood is",
             "de": "Ein Radfahrer kann bei roter Ampel rechts abbiegen",
-            "es": "Un ciclista puede girar a la derecha si la luz está roja"
+            "es": "Un ciclista puede girar a la derecha si la luz está roja",
+            "fr": "Un cycliste peut tourner à droite si le feu est rouge"
           },
           "hideInAnswer": "_country!=be",
           "icon": {
@@ -495,7 +505,8 @@
             "en": "A cyclist can turn right if the light is red",
             "nl": "Een fietser mag wel rechtsaf slaan als het licht rood is",
             "de": "Radfahrer dürfen bei roter Ampel rechts abbiegen",
-            "es": "Un ciclista puede girar a la derecha si la luz está roja"
+            "es": "Un ciclista puede girar a la derecha si la luz está roja",
+            "fr": "Un cycliste peut tourner à droite si le feu est rouge"
           },
           "hideInAnswer": "_country=be"
         },
@@ -505,7 +516,8 @@
             "en": "A cyclist can not turn right if the light is red",
             "nl": "Een fietser mag niet rechtsaf slaan als het licht rood is",
             "de": "Radfahrer dürfen bei roter Ampel nicht rechts abbiegen",
-            "es": "Un ciclista no puede girar a la derecha si la luz está roja"
+            "es": "Un ciclista no puede girar a la derecha si la luz está roja",
+            "fr": "Un cycliste ne peut pas tourner à droite si le feu est rouge"
           }
         }
       ]
@@ -516,7 +528,8 @@
         "en": "Can a cyclist go straight on when the light is red?",
         "nl": "Mag een fietser rechtdoor gaan als het licht rood is?",
         "de": "Dürfen Radfahrer bei roter Ampel geradeaus fahren?",
-        "es": "¿Puede ir de frente un ciclista cuando la luz está roja?"
+        "es": "¿Puede ir de frente un ciclista cuando la luz está roja?",
+        "fr": "Est-ce qu'un cycliste peut aller tout droit quand le feu est rouge ?"
       },
       "condition": "highway=traffic_signals",
       "mappings": [

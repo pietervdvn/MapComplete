@@ -1,10 +1,12 @@
 {
   "id": "atm",
   "title": {
-    "en": "ATM Machines"
+    "en": "ATM Machines",
+    "de": "Geldautomaten"
   },
   "description": {
-    "en": "This map shows ATMs to withdraw or deposit money"
+    "en": "This map shows ATMs to withdraw or deposit money",
+    "de": "Diese Karte zeigt Geldautomaten zum Abheben oder Einzahlen von Geld"
   },
   "icon": "./assets/themes/atm/logo.svg",
   "startLat": 0,

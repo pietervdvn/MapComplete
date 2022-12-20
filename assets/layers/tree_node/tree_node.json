@@ -142,7 +142,7 @@
       },
       "render": {
         "en": "This tree is {height} meter high"
-    }
+      }
     },
     {
       "id": "tree-denotation",

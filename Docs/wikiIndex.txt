@@ -112,7 +112,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/atm atm]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:_context|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:_context|en}}
 |descr= A MapComplete theme: This map shows ATMs to withdraw or deposit money
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
