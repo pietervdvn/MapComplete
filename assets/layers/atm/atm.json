@@ -32,7 +32,14 @@
     ]
   },
   "source": {
-    "osmTags": "amenity=atm"
+    "osmTags": {
+      "or": [
+        "amenity=atm",
+        {
+          "and": ["amenity=bank","atm=yes"]
+        }
+      ]
+    }
   },
   "minzoom": 13,
   "presets": [
@@ -49,6 +56,12 @@
     }
   ],
   "tagRenderings": [
+    {
+      "condition": "amenity=bank",
+      "render": {
+        "en": "This ATM is located in or near a bank"
+      }
+    },
     {
       "id": "name",
       "render": {
@@ -86,6 +99,7 @@
     },
     {
       "id": "operator",
+      "condition": "amenity!=bank",
       "question": {
         "en": "What company operates this ATM?",
         "de": "Welches Unternehmen betreibt den Geldautomaten?",
@@ -109,7 +123,12 @@
         "nl": "Deze geldautomaat wordt beheerd door {operator}"
       }
     },
-    "opening_hours"
+    {
+      "builtin": "opening_hours",
+      "override": {
+        "condition": "amenity!=bank"
+      }
+    }
   ],
   "mapRendering": [
     {
