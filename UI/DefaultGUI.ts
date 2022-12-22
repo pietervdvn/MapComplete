@@ -29,6 +29,8 @@ import Img from "./Base/Img"
 import UserInformationPanel from "./BigComponents/UserInformation"
 import { LoginToggle } from "./Popup/LoginButton"
 import { FixedUiElement } from "./Base/FixedUiElement"
+import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
+import { GeoLocationState } from "../Logic/State/GeoLocationState"
 
 /**
  * The default MapComplete GUI initializer
@@ -38,10 +40,14 @@ import { FixedUiElement } from "./Base/FixedUiElement"
 export default class DefaultGUI {
     private readonly guiState: DefaultGuiState
     private readonly state: FeaturePipelineState
+    private readonly geolocationHandler: GeoLocationHandler | undefined
 
     constructor(state: FeaturePipelineState, guiState: DefaultGuiState) {
         this.state = state
         this.guiState = guiState
+        if (this.state.featureSwitchGeolocation.data) {
+            this.geolocationHandler = new GeoLocationHandler(new GeoLocationState(), state)
+        }
     }
 
     public setup() {
@@ -231,15 +237,16 @@ export default class DefaultGUI {
             .SetClass("flex items-center justify-center normal-background h-full")
             .AttachTo("on-small-screen")
 
-        new Combine([Toggle.If(state.featureSwitchSearch, () =>
-            new SearchAndGo(state).SetClass(
-                "shadow rounded-full h-min w-full overflow-hidden sm:max-w-sm pointer-events-auto"
-            )
-        )])
-            .AttachTo("top-right")
+        new Combine([
+            Toggle.If(state.featureSwitchSearch, () =>
+                new SearchAndGo(state).SetClass(
+                    "shadow rounded-full h-min w-full overflow-hidden sm:max-w-sm pointer-events-auto"
+                )
+            ),
+        ]).AttachTo("top-right")
 
         new LeftControls(state, guiState).AttachTo("bottom-left")
-        new RightControls(state).AttachTo("bottom-right")
+        new RightControls(state, this.geolocationHandler).AttachTo("bottom-right")
 
         new CenterMessageBox(state).AttachTo("centermessage")
         document.getElementById("centermessage").classList.add("pointer-events-none")

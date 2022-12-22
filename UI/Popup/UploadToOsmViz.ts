@@ -1,7 +1,7 @@
 import { Utils } from "../../Utils"
 import { Feature } from "geojson"
 import { Point } from "@turf/turf"
-import { GeoLocationPointProperties } from "../../Logic/Actors/GeoLocationHandler"
+import { GeoLocationPointProperties } from "../../Logic/State/GeoLocationState"
 import UploadTraceToOsmUI from "../BigComponents/UploadTraceToOsmUI"
 import { SpecialVisualization } from "../SpecialVisualization"
 

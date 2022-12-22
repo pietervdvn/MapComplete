@@ -5,18 +5,16 @@ import GeoLocationHandler from "../../Logic/Actors/GeoLocationHandler"
 import Svg from "../../Svg"
 import MapState from "../../Logic/State/MapState"
 import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline"
-import { Utils } from "../../Utils"
-import { TagUtils } from "../../Logic/Tags/TagUtils"
-import { BBox } from "../../Logic/BBox"
-import { OsmFeature } from "../../Models/OsmFeature"
 import LevelSelector from "./LevelSelector"
+import { GeolocationControl } from "./GeolocationControl"
 
 export default class RightControls extends Combine {
-    constructor(state: MapState & { featurePipeline: FeaturePipeline }) {
-        const geolocatioHandler = new GeoLocationHandler(state)
-
+    constructor(
+        state: MapState & { featurePipeline: FeaturePipeline },
+        geolocationHandler: GeoLocationHandler
+    ) {
         const geolocationButton = new Toggle(
-            new MapControlButton(geolocatioHandler, {
+            new MapControlButton(new GeolocationControl(geolocationHandler), {
                 dontStyle: true,
             }).SetClass("p-1"),
             undefined,
