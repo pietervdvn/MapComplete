@@ -57,6 +57,19 @@
   ],
   "tagRenderings": [
     {
+      "builtin": "images",
+      "override": {
+        "condition": "amenity!=bank"
+      }
+    },
+    {
+      "id": "bank-images",
+      "render": "{image_carousel()}",
+      "condition": "amenity=bank"
+    },
+    
+    {
+      "id": "atm-in-bank-notice",
       "condition": "amenity=bank",
       "render": {
         "en": "This ATM is located in or near a bank"
