@@ -282,11 +282,16 @@ function main(args: string[]) {
 
     let invalid = 0
     for (const licenseInfo of licenseInfos) {
-
-        if(licenseInfo.sources.length + licenseInfo.authors.length == 0){
+        const isTrivial =
+            licenseInfo.license
+                .split(";")
+                .map((l) => l.trim().toLowerCase())
+                .indexOf("trivial") >= 0
+        if (licenseInfo.sources.length + licenseInfo.authors.length == 0 && !isTrivial) {
             invalid++
             invalidLicenses.push(
-                "Invalid license: No sources nor authors given in the license for " + JSON.stringify(licenseInfo)
+                "Invalid license: No sources nor authors given in the license for " +
+                    JSON.stringify(licenseInfo)
             )
             continue
         }

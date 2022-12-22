@@ -502,12 +502,6 @@
   {
     "path": "gender_female.svg",
     "license": "CC0",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "gender_female.svg",
-    "license": "CC0",
     "authors": [
       "Gender Icon Pack"
     ],
@@ -528,12 +522,6 @@
   {
     "path": "gender_male.svg",
     "license": "CC0",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "gender_male.svg",
-    "license": "CC0",
     "authors": [
       "Gender Icon Pack"
     ],
@@ -550,12 +538,6 @@
     "sources": [
       "https://www.iconpacks.net/free-icon-pack/gender-107.html"
     ]
-  },
-  {
-    "path": "gender_trans.svg",
-    "license": "CC0",
-    "authors": [],
-    "sources": []
   },
   {
     "path": "gender_trans.svg",
@@ -891,7 +873,7 @@
   },
   {
     "path": "none.svg",
-    "license": "CC0",
+    "license": "trivial",
     "authors": [],
     "sources": []
   },
