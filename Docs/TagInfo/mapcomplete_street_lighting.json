@@ -72,12 +72,12 @@
     },
     {
       "key": "lamp_mount",
-      "description": "Layer 'Street Lamps' shows lamp_mount=straight_mast with a fixed text, namely 'This lamp sits atop of a straight mast' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Street Lighting')",
+      "description": "Layer 'Street Lamps' shows lamp_mount=straight_mast with a fixed text, namely 'This lamp sits atop of a straight mast' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Street Lighting') (This is only shown if support=pole)",
       "value": "straight_mast"
     },
     {
       "key": "lamp_mount",
-      "description": "Layer 'Street Lamps' shows lamp_mount=bent_mast with a fixed text, namely 'This lamp sits at the end of a bent mast' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Street Lighting')",
+      "description": "Layer 'Street Lamps' shows lamp_mount=bent_mast with a fixed text, namely 'This lamp sits at the end of a bent mast' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Street Lighting') (This is only shown if support=pole)",
       "value": "bent_mast"
     },
     {
@@ -161,16 +161,16 @@
     },
     {
       "key": "light:count",
-      "description": "Layer 'Street Lamps' shows and asks freeform values for key 'light:count' (in the MapComplete.osm.be theme 'Street Lighting')"
+      "description": "Layer 'Street Lamps' shows and asks freeform values for key 'light:count' (in the MapComplete.osm.be theme 'Street Lighting') (This is only shown if support=pole)"
     },
     {
       "key": "light:count",
-      "description": "Layer 'Street Lamps' shows light:count=1 with a fixed text, namely 'This lamp has 1 fixture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Street Lighting')",
+      "description": "Layer 'Street Lamps' shows light:count=1 with a fixed text, namely 'This lamp has 1 fixture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Street Lighting') (This is only shown if support=pole)",
       "value": "1"
     },
     {
       "key": "light:count",
-      "description": "Layer 'Street Lamps' shows light:count=2 with a fixed text, namely 'This lamp has 2 fixtures' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Street Lighting')",
+      "description": "Layer 'Street Lamps' shows light:count=2 with a fixed text, namely 'This lamp has 2 fixtures' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Street Lighting') (This is only shown if support=pole)",
       "value": "2"
     },
     {
@@ -195,7 +195,7 @@
     },
     {
       "key": "light:direction",
-      "description": "Layer 'Street Lamps' shows and asks freeform values for key 'light:direction' (in the MapComplete.osm.be theme 'Street Lighting')"
+      "description": "Layer 'Street Lamps' shows and asks freeform values for key 'light:direction' (in the MapComplete.osm.be theme 'Street Lighting') (This is only shown if light:count=1)"
     },
     {
       "key": "highway",

@@ -121,22 +121,22 @@
     },
     {
       "key": "reservation",
-      "description": "Layer 'Sport pitches' shows reservation=required with a fixed text, namely 'Making an appointment is obligatory to use this sport pitch' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+      "description": "Layer 'Sport pitches' shows reservation=required with a fixed text, namely 'Making an appointment is obligatory to use this sport pitch' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches') (This is only shown if access!=public&access!=private&access!=members)",
       "value": "required"
     },
     {
       "key": "reservation",
-      "description": "Layer 'Sport pitches' shows reservation=recommended with a fixed text, namely 'Making an appointment is recommended when using this sport pitch' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+      "description": "Layer 'Sport pitches' shows reservation=recommended with a fixed text, namely 'Making an appointment is recommended when using this sport pitch' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches') (This is only shown if access!=public&access!=private&access!=members)",
       "value": "recommended"
     },
     {
       "key": "reservation",
-      "description": "Layer 'Sport pitches' shows reservation=yes with a fixed text, namely 'Making an appointment is possible, but not necessary to use this sport pitch' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+      "description": "Layer 'Sport pitches' shows reservation=yes with a fixed text, namely 'Making an appointment is possible, but not necessary to use this sport pitch' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches') (This is only shown if access!=public&access!=private&access!=members)",
       "value": "yes"
     },
     {
       "key": "reservation",
-      "description": "Layer 'Sport pitches' shows reservation=no with a fixed text, namely 'Making an appointment is not possible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+      "description": "Layer 'Sport pitches' shows reservation=no with a fixed text, namely 'Making an appointment is not possible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches') (This is only shown if access!=public&access!=private&access!=members)",
       "value": "no"
     },
     {
@@ -149,16 +149,16 @@
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Sport pitches' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Sport pitches')"
+      "description": "Layer 'Sport pitches' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Sport pitches') (This is only shown if access~.+)"
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Sport pitches' shows  with a fixed text, namely 'Always accessible' (in the MapComplete.osm.be theme 'Sport pitches') Picking this answer will delete the key opening_hours.",
+      "description": "Layer 'Sport pitches' shows  with a fixed text, namely 'Always accessible' (in the MapComplete.osm.be theme 'Sport pitches') Picking this answer will delete the key opening_hours. (This is only shown if access~.+)",
       "value": ""
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Sport pitches' shows opening_hours=24/7 with a fixed text, namely 'Always accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+      "description": "Layer 'Sport pitches' shows opening_hours=24/7 with a fixed text, namely 'Always accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches') (This is only shown if access~.+)",
       "value": "24/7"
     }
   ]

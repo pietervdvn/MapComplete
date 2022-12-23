@@ -80,12 +80,12 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Bookcases' shows access=yes with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map')",
+      "description": "Layer 'Bookcases' shows access=yes with a fixed text, namely 'Publicly accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map') (This is only shown if indoor=yes)",
       "value": "yes"
     },
     {
       "key": "access",
-      "description": "Layer 'Bookcases' shows access=customers with a fixed text, namely 'Only accessible to customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map')",
+      "description": "Layer 'Bookcases' shows access=customers with a fixed text, namely 'Only accessible to customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map') (This is only shown if indoor=yes)",
       "value": "customers"
     },
     {
@@ -118,21 +118,21 @@
     },
     {
       "key": "ref",
-      "description": "Layer 'Bookcases' shows and asks freeform values for key 'ref' (in the MapComplete.osm.be theme 'Open Bookcase Map')"
+      "description": "Layer 'Bookcases' shows and asks freeform values for key 'ref' (in the MapComplete.osm.be theme 'Open Bookcase Map') (This is only shown if brand~.+)"
     },
     {
       "key": "nobrand",
-      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map')",
+      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map') (This is only shown if brand~.+)",
       "value": "yes"
     },
     {
       "key": "brand",
-      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map') Picking this answer will delete the key brand.",
+      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map') Picking this answer will delete the key brand. (This is only shown if brand~.+)",
       "value": ""
     },
     {
       "key": "ref",
-      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map') Picking this answer will delete the key ref.",
+      "description": "Layer 'Bookcases' shows nobrand=yes with a fixed text, namely 'This bookcase is not part of a bigger network' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Bookcase Map') Picking this answer will delete the key ref. (This is only shown if brand~.+)",
       "value": ""
     },
     {

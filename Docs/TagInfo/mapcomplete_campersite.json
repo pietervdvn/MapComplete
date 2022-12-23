@@ -52,7 +52,7 @@
     },
     {
       "key": "charge",
-      "description": "Layer 'Camper sites' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Campersites')"
+      "description": "Layer 'Camper sites' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Campersites') (This is only shown if fee=yes)"
     },
     {
       "key": "sanitary_dump_station",
@@ -90,12 +90,12 @@
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Camper sites' shows internet_access:fee=yes with a fixed text, namely 'You need to pay extra for internet access' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
+      "description": "Layer 'Camper sites' shows internet_access:fee=yes with a fixed text, namely 'You need to pay extra for internet access' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites') (This is only shown if internet_access=yes)",
       "value": "yes"
     },
     {
       "key": "internet_access:fee",
-      "description": "Layer 'Camper sites' shows internet_access:fee=no with a fixed text, namely 'You do not need to pay extra for internet access' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites')",
+      "description": "Layer 'Camper sites' shows internet_access:fee=no with a fixed text, namely 'You do not need to pay extra for internet access' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Campersites') (This is only shown if internet_access=yes)",
       "value": "no"
     },
     {
@@ -178,7 +178,7 @@
     },
     {
       "key": "charge",
-      "description": "Layer 'Sanitary dump stations' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Campersites')"
+      "description": "Layer 'Sanitary dump stations' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Campersites') (This is only shown if fee=yes)"
     },
     {
       "key": "water_point",

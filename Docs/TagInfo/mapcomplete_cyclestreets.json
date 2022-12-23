@@ -148,32 +148,32 @@
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cyclestreets' shows traffic_sign=DE:244.1,1020-30 with a fixed text, namely 'Residents allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'Cyclestreets' shows traffic_sign=DE:244.1,1020-30 with a fixed text, namely 'Residents allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if bicycle_road=yes&_country=de)",
       "value": "DE:244.1,1020-30"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cyclestreets' shows traffic_sign=DE:244.1,1022-12,1024-10 with a fixed text, namely 'Motor vehicles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'Cyclestreets' shows traffic_sign=DE:244.1,1022-12,1024-10 with a fixed text, namely 'Motor vehicles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if bicycle_road=yes&_country=de)",
       "value": "DE:244.1,1022-12,1024-10"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cyclestreets' shows traffic_sign=DE:244.1,1022-12 with a fixed text, namely 'Motorcycles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'Cyclestreets' shows traffic_sign=DE:244.1,1022-12 with a fixed text, namely 'Motorcycles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if bicycle_road=yes&_country=de)",
       "value": "DE:244.1,1022-12"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cyclestreets' shows traffic_sign=DE:244.1,1024-10 with a fixed text, namely 'Cars allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'Cyclestreets' shows traffic_sign=DE:244.1,1024-10 with a fixed text, namely 'Cars allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if bicycle_road=yes&_country=de)",
       "value": "DE:244.1,1024-10"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Cyclestreets' shows traffic_sign=DE:244.1 with a fixed text, namely 'There are no supplementary signs at this bicycle road.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'Cyclestreets' shows traffic_sign=DE:244.1 with a fixed text, namely 'There are no supplementary signs at this bicycle road.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if bicycle_road=yes&_country=de)",
       "value": "DE:244.1"
     },
     {
       "key": "cyclestreet:start_date",
-      "description": "Layer 'Cyclestreets' shows and asks freeform values for key 'cyclestreet:start_date' (in the MapComplete.osm.be theme 'Cyclestreets')"
+      "description": "Layer 'Cyclestreets' shows and asks freeform values for key 'cyclestreet:start_date' (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if proposed:cyclestreet=yes)"
     },
     {
       "key": "proposed:cyclestreet",
@@ -313,32 +313,32 @@
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Future cyclestreet' shows traffic_sign=DE:244.1,1020-30 with a fixed text, namely 'Residents allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'Future cyclestreet' shows traffic_sign=DE:244.1,1020-30 with a fixed text, namely 'Residents allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if bicycle_road=yes&_country=de)",
       "value": "DE:244.1,1020-30"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Future cyclestreet' shows traffic_sign=DE:244.1,1022-12,1024-10 with a fixed text, namely 'Motor vehicles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'Future cyclestreet' shows traffic_sign=DE:244.1,1022-12,1024-10 with a fixed text, namely 'Motor vehicles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if bicycle_road=yes&_country=de)",
       "value": "DE:244.1,1022-12,1024-10"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Future cyclestreet' shows traffic_sign=DE:244.1,1022-12 with a fixed text, namely 'Motorcycles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'Future cyclestreet' shows traffic_sign=DE:244.1,1022-12 with a fixed text, namely 'Motorcycles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if bicycle_road=yes&_country=de)",
       "value": "DE:244.1,1022-12"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Future cyclestreet' shows traffic_sign=DE:244.1,1024-10 with a fixed text, namely 'Cars allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'Future cyclestreet' shows traffic_sign=DE:244.1,1024-10 with a fixed text, namely 'Cars allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if bicycle_road=yes&_country=de)",
       "value": "DE:244.1,1024-10"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'Future cyclestreet' shows traffic_sign=DE:244.1 with a fixed text, namely 'There are no supplementary signs at this bicycle road.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'Future cyclestreet' shows traffic_sign=DE:244.1 with a fixed text, namely 'There are no supplementary signs at this bicycle road.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if bicycle_road=yes&_country=de)",
       "value": "DE:244.1"
     },
     {
       "key": "cyclestreet:start_date",
-      "description": "Layer 'Future cyclestreet' shows and asks freeform values for key 'cyclestreet:start_date' (in the MapComplete.osm.be theme 'Cyclestreets')"
+      "description": "Layer 'Future cyclestreet' shows and asks freeform values for key 'cyclestreet:start_date' (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if proposed:cyclestreet=yes)"
     },
     {
       "key": "highway",
@@ -483,32 +483,32 @@
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'All streets' shows traffic_sign=DE:244.1,1020-30 with a fixed text, namely 'Residents allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'All streets' shows traffic_sign=DE:244.1,1020-30 with a fixed text, namely 'Residents allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if bicycle_road=yes&_country=de)",
       "value": "DE:244.1,1020-30"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'All streets' shows traffic_sign=DE:244.1,1022-12,1024-10 with a fixed text, namely 'Motor vehicles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'All streets' shows traffic_sign=DE:244.1,1022-12,1024-10 with a fixed text, namely 'Motor vehicles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if bicycle_road=yes&_country=de)",
       "value": "DE:244.1,1022-12,1024-10"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'All streets' shows traffic_sign=DE:244.1,1022-12 with a fixed text, namely 'Motorcycles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'All streets' shows traffic_sign=DE:244.1,1022-12 with a fixed text, namely 'Motorcycles allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if bicycle_road=yes&_country=de)",
       "value": "DE:244.1,1022-12"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'All streets' shows traffic_sign=DE:244.1,1024-10 with a fixed text, namely 'Cars allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'All streets' shows traffic_sign=DE:244.1,1024-10 with a fixed text, namely 'Cars allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if bicycle_road=yes&_country=de)",
       "value": "DE:244.1,1024-10"
     },
     {
       "key": "traffic_sign",
-      "description": "Layer 'All streets' shows traffic_sign=DE:244.1 with a fixed text, namely 'There are no supplementary signs at this bicycle road.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets')",
+      "description": "Layer 'All streets' shows traffic_sign=DE:244.1 with a fixed text, namely 'There are no supplementary signs at this bicycle road.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if bicycle_road=yes&_country=de)",
       "value": "DE:244.1"
     },
     {
       "key": "cyclestreet:start_date",
-      "description": "Layer 'All streets' shows and asks freeform values for key 'cyclestreet:start_date' (in the MapComplete.osm.be theme 'Cyclestreets')"
+      "description": "Layer 'All streets' shows and asks freeform values for key 'cyclestreet:start_date' (in the MapComplete.osm.be theme 'Cyclestreets') (This is only shown if proposed:cyclestreet=yes)"
     }
   ]
 }

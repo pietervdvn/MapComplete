@@ -36,15 +36,15 @@
     },
     {
       "key": "name:etymology:wikidata",
-      "description": "Layer 'Has etymolgy' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Has etymolgy' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology!=unknown)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Has etymolgy' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Has etymolgy' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Has etymolgy' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map')",
+      "description": "Layer 'Has etymolgy' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)",
       "value": "unknown"
     },
     {
@@ -89,15 +89,15 @@
     },
     {
       "key": "name:etymology:wikidata",
-      "description": "Layer 'Streets without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Streets without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology!=unknown)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Streets without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Streets without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Streets without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map')",
+      "description": "Layer 'Streets without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)",
       "value": "unknown"
     },
     {
@@ -148,15 +148,15 @@
     },
     {
       "key": "name:etymology:wikidata",
-      "description": "Layer 'Parks and forests without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Parks and forests without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology!=unknown)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Parks and forests without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Parks and forests without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Parks and forests without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map')",
+      "description": "Layer 'Parks and forests without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)",
       "value": "unknown"
     },
     {
@@ -222,15 +222,15 @@
     },
     {
       "key": "name:etymology:wikidata",
-      "description": "Layer 'Education institutions without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Education institutions without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology!=unknown)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Education institutions without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Education institutions without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Education institutions without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map')",
+      "description": "Layer 'Education institutions without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)",
       "value": "unknown"
     },
     {
@@ -296,15 +296,15 @@
     },
     {
       "key": "name:etymology:wikidata",
-      "description": "Layer 'Cultural places without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Cultural places without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology!=unknown)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Cultural places without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Cultural places without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Cultural places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map')",
+      "description": "Layer 'Cultural places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)",
       "value": "unknown"
     },
     {
@@ -365,15 +365,15 @@
     },
     {
       "key": "name:etymology:wikidata",
-      "description": "Layer 'Toursistic places without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Toursistic places without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology!=unknown)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Toursistic places without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Toursistic places without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Toursistic places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map')",
+      "description": "Layer 'Toursistic places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)",
       "value": "unknown"
     },
     {
@@ -429,15 +429,15 @@
     },
     {
       "key": "name:etymology:wikidata",
-      "description": "Layer 'Health and social places without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Health and social places without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology!=unknown)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Health and social places without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Health and social places without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Health and social places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map')",
+      "description": "Layer 'Health and social places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)",
       "value": "unknown"
     },
     {
@@ -493,15 +493,15 @@
     },
     {
       "key": "name:etymology:wikidata",
-      "description": "Layer 'Sport places without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Sport places without etymology information' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology!=unknown)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Sport places without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map')"
+      "description": "Layer 'Sport places without etymology information' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Sport places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map')",
+      "description": "Layer 'Sport places without etymology information' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if name:etymology~.+|)",
       "value": "unknown"
     },
     {

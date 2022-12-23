@@ -68,27 +68,27 @@
     },
     {
       "key": "vending",
-      "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') (This is only shown if waste=dog_excrement|waste=trash|)",
       "value": "dog_excrement_bag"
     },
     {
       "key": "not:vending",
-      "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') Picking this answer will delete the key not:vending.",
+      "description": "Layer 'Waste Basket' shows vending=dog_excrement_bag with a fixed text, namely 'This waste basket has a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') Picking this answer will delete the key not:vending. (This is only shown if waste=dog_excrement|waste=trash|)",
       "value": ""
     },
     {
       "key": "not:vending",
-      "description": "Layer 'Waste Basket' shows not:vending=dog_excrement_bag with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "description": "Layer 'Waste Basket' shows not:vending=dog_excrement_bag with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') (This is only shown if waste=dog_excrement|waste=trash|)",
       "value": "dog_excrement_bag"
     },
     {
       "key": "vending",
-      "description": "Layer 'Waste Basket' shows not:vending=dog_excrement_bag with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') Picking this answer will delete the key vending.",
+      "description": "Layer 'Waste Basket' shows not:vending=dog_excrement_bag with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') Picking this answer will delete the key vending. (This is only shown if waste=dog_excrement|waste=trash|)",
       "value": ""
     },
     {
       "key": "vending",
-      "description": "Layer 'Waste Basket' shows  with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' (in the MapComplete.osm.be theme 'Waste') Picking this answer will delete the key vending.",
+      "description": "Layer 'Waste Basket' shows  with a fixed text, namely 'This waste basket <b>does not</b> have a dispenser for (dog) excrement bags' (in the MapComplete.osm.be theme 'Waste') Picking this answer will delete the key vending. (This is only shown if waste=dog_excrement|waste=trash|)",
       "value": ""
     },
     {
@@ -129,26 +129,26 @@
     },
     {
       "key": "name",
-      "description": "Layer 'Recycling' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Waste')"
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Waste') (This is only shown if recycling_type=centre)"
     },
     {
       "key": "noname",
-      "description": "Layer 'Recycling' shows noname=yes with a fixed text, namely 'This recycling centre doesn't have a specific name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "description": "Layer 'Recycling' shows noname=yes with a fixed text, namely 'This recycling centre doesn't have a specific name' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') (This is only shown if recycling_type=centre)",
       "value": "yes"
     },
     {
       "key": "location",
-      "description": "Layer 'Recycling' shows location=underground with a fixed text, namely 'This is an underground container' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "description": "Layer 'Recycling' shows location=underground with a fixed text, namely 'This is an underground container' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') (This is only shown if recycling_type=container)",
       "value": "underground"
     },
     {
       "key": "location",
-      "description": "Layer 'Recycling' shows location=indoor with a fixed text, namely 'This container is located indoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "description": "Layer 'Recycling' shows location=indoor with a fixed text, namely 'This container is located indoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') (This is only shown if recycling_type=container)",
       "value": "indoor"
     },
     {
       "key": "location",
-      "description": "Layer 'Recycling' shows  with a fixed text, namely 'This container is located outdoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') Picking this answer will delete the key location.",
+      "description": "Layer 'Recycling' shows  with a fixed text, namely 'This container is located outdoors' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste') Picking this answer will delete the key location. (This is only shown if recycling_type=container)",
       "value": ""
     },
     {
@@ -262,27 +262,27 @@
     },
     {
       "key": "website",
-      "description": "Layer 'Recycling' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Waste')"
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Waste') (This is only shown if recycling_type=centre)"
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Recycling' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Waste')"
+      "description": "Layer 'Recycling' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Waste') (This is only shown if recycling_type=centre)"
     },
     {
       "key": "email",
-      "description": "Layer 'Recycling' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Waste')"
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'email' (in the MapComplete.osm.be theme 'Waste') (This is only shown if recycling_type=centre)"
     },
     {
       "key": "contact:email",
-      "description": "Layer 'Recycling' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Waste')"
+      "description": "Layer 'Recycling' shows contact:email~.+ with a fixed text, namely '<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>' (in the MapComplete.osm.be theme 'Waste') (This is only shown if recycling_type=centre)"
     },
     {
       "key": "phone",
-      "description": "Layer 'Recycling' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Waste')"
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'phone' (in the MapComplete.osm.be theme 'Waste') (This is only shown if recycling_type=centre)"
     },
     {
       "key": "contact:phone",
-      "description": "Layer 'Recycling' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Waste')"
+      "description": "Layer 'Recycling' shows contact:phone~.+ with a fixed text, namely '<a href='tel:{contact:phone}'>{contact:phone}</a>' (in the MapComplete.osm.be theme 'Waste') (This is only shown if recycling_type=centre)"
     },
     {
       "key": "opening_hours",

@@ -285,12 +285,12 @@
     },
     {
       "key": "covered",
-      "description": "Layer 'Bike parking' shows covered=yes with a fixed text, namely 'This parking is covered (it has a roof)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
+      "description": "Layer 'Bike parking' shows covered=yes with a fixed text, namely 'This parking is covered (it has a roof)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes') (This is only shown if bicycle_parking!=shed&location!=underground)",
       "value": "yes"
     },
     {
       "key": "covered",
-      "description": "Layer 'Bike parking' shows covered=no with a fixed text, namely 'This parking is not covered' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
+      "description": "Layer 'Bike parking' shows covered=no with a fixed text, namely 'This parking is not covered' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes') (This is only shown if bicycle_parking!=shed&location!=underground)",
       "value": "no"
     },
     {
@@ -333,7 +333,7 @@
     },
     {
       "key": "capacity:cargo_bike",
-      "description": "Layer 'Bike parking' shows and asks freeform values for key 'capacity:cargo_bike' (in the MapComplete.osm.be theme 'Bus routes')"
+      "description": "Layer 'Bike parking' shows and asks freeform values for key 'capacity:cargo_bike' (in the MapComplete.osm.be theme 'Bus routes') (This is only shown if cargo_bike~^(designated|yes)$)"
     },
     {
       "key": "amenity",

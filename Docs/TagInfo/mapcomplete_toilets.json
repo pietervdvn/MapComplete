@@ -91,35 +91,55 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Toilets' shows fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets' shows fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if access!=no)",
       "value": "yes"
     },
     {
       "key": "fee",
-      "description": "Layer 'Toilets' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if access!=no)",
       "value": "no"
     },
     {
       "key": "charge",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if fee=yes)"
     },
     {
       "key": "payment:cash",
-      "description": "Layer 'Toilets' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if fee=yes)",
       "value": "yes"
     },
     {
       "key": "payment:cards",
-      "description": "Layer 'Toilets' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Toilets' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Toilets' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Toilets' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Toilets' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if fee=yes)",
       "value": "yes"
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if access!=no)"
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Toilets' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if access!=no)",
       "value": "24/7"
     },
     {
@@ -139,7 +159,7 @@
     },
     {
       "key": "door:width",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'door:width' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'door:width' (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if wheelchair=yes|wheelchair=designated)"
     },
     {
       "key": "toilets:position",
@@ -173,26 +193,26 @@
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'changing_table:location' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'changing_table:location' (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if changing_table=yes)"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets' shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if changing_table=yes)",
       "value": "female_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets' shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if changing_table=yes)",
       "value": "male_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if changing_table=yes)",
       "value": "wheelchair_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if changing_table=yes)",
       "value": "dedicated_room"
     },
     {
@@ -207,12 +227,12 @@
     },
     {
       "key": "toilets:paper_supplied",
-      "description": "Layer 'Toilets' shows toilets:paper_supplied=yes with a fixed text, namely 'This toilet is equipped with toilet paper' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets' shows toilets:paper_supplied=yes with a fixed text, namely 'This toilet is equipped with toilet paper' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if toilets:position!=urinal)",
       "value": "yes"
     },
     {
       "key": "toilets:paper_supplied",
-      "description": "Layer 'Toilets' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if toilets:position!=urinal)",
       "value": "no"
     },
     {
@@ -300,21 +320,21 @@
     },
     {
       "key": "toilets:fee",
-      "description": "Layer 'Toilets at other amenities' shows toilets:fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets at other amenities' shows toilets:fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if toilets:access!=no)",
       "value": "yes"
     },
     {
       "key": "toilets:fee",
-      "description": "Layer 'Toilets at other amenities' shows toilets:fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets at other amenities' shows toilets:fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if toilets:access!=no)",
       "value": "no"
     },
     {
       "key": "toilets:charge",
-      "description": "Layer 'Toilets at other amenities' shows and asks freeform values for key 'toilets:charge' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+      "description": "Layer 'Toilets at other amenities' shows and asks freeform values for key 'toilets:charge' (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if toilets:fee=yes)"
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Toilets at other amenities' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+      "description": "Layer 'Toilets at other amenities' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if toilets:access!=no)"
     },
     {
       "key": "toilets:wheelchair",
@@ -333,7 +353,7 @@
     },
     {
       "key": "toilets:door:width",
-      "description": "Layer 'Toilets at other amenities' shows and asks freeform values for key 'toilets:door:width' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+      "description": "Layer 'Toilets at other amenities' shows and asks freeform values for key 'toilets:door:width' (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if toilets:wheelchair=yes|toilets:wheelchair=designated)"
     },
     {
       "key": "toilets:position",
@@ -367,26 +387,26 @@
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets at other amenities' shows and asks freeform values for key 'changing_table:location' (in the MapComplete.osm.be theme 'Open Toilet Map')"
+      "description": "Layer 'Toilets at other amenities' shows and asks freeform values for key 'changing_table:location' (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if changing_table=yes)"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets at other amenities' shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets at other amenities' shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if changing_table=yes)",
       "value": "female_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets at other amenities' shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets at other amenities' shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if changing_table=yes)",
       "value": "male_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets at other amenities' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets at other amenities' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if changing_table=yes)",
       "value": "wheelchair_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets at other amenities' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets at other amenities' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if changing_table=yes)",
       "value": "dedicated_room"
     },
     {
@@ -401,12 +421,12 @@
     },
     {
       "key": "toilets:paper_supplied",
-      "description": "Layer 'Toilets at other amenities' shows toilets:paper_supplied=yes with a fixed text, namely 'This toilet is equipped with toilet paper' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets at other amenities' shows toilets:paper_supplied=yes with a fixed text, namely 'This toilet is equipped with toilet paper' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if toilets:position!=urinal)",
       "value": "yes"
     },
     {
       "key": "toilets:paper_supplied",
-      "description": "Layer 'Toilets at other amenities' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map')",
+      "description": "Layer 'Toilets at other amenities' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Toilet Map') (This is only shown if toilets:position!=urinal)",
       "value": "no"
     },
     {

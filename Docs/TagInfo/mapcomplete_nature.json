@@ -299,17 +299,17 @@
     },
     {
       "key": "dog",
-      "description": "Layer 'Nature reserve' shows dog=leashed with a fixed text, namely 'Dogs have to be leashed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows dog=leashed with a fixed text, namely 'Dogs have to be leashed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if access=yes|access=permissive|access=guided)",
       "value": "leashed"
     },
     {
       "key": "dog",
-      "description": "Layer 'Nature reserve' shows dog=no with a fixed text, namely 'No dogs allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows dog=no with a fixed text, namely 'No dogs allowed' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if access=yes|access=permissive|access=guided)",
       "value": "no"
     },
     {
       "key": "dog",
-      "description": "Layer 'Nature reserve' shows dog=yes with a fixed text, namely 'Dogs are allowed to roam freely' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Nature reserve' shows dog=yes with a fixed text, namely 'Dogs are allowed to roam freely' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if access=yes|access=permissive|access=guided)",
       "value": "yes"
     },
     {
@@ -395,27 +395,27 @@
     },
     {
       "key": "map_source:attribution",
-      "description": "Layer 'Maps' shows map_source:attribution=yes with a fixed text, namely 'OpenStreetMap is clearly attributed, including the ODBL-license' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Maps' shows map_source:attribution=yes with a fixed text, namely 'OpenStreetMap is clearly attributed, including the ODBL-license' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$|map_source=osm|map_source=OSM)",
       "value": "yes"
     },
     {
       "key": "map_source:attribution",
-      "description": "Layer 'Maps' shows map_source:attribution=incomplete with a fixed text, namely 'OpenStreetMap is clearly attributed, but the license is not mentioned' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Maps' shows map_source:attribution=incomplete with a fixed text, namely 'OpenStreetMap is clearly attributed, but the license is not mentioned' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$|map_source=osm|map_source=OSM)",
       "value": "incomplete"
     },
     {
       "key": "map_source:attribution",
-      "description": "Layer 'Maps' shows map_source:attribution=sticker with a fixed text, namely 'OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Maps' shows map_source:attribution=sticker with a fixed text, namely 'OpenStreetMap wasn't mentioned, but someone put an OpenStreetMap-sticker on it' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$|map_source=osm|map_source=OSM)",
       "value": "sticker"
     },
     {
       "key": "map_source:attribution",
-      "description": "Layer 'Maps' shows map_source:attribution=none with a fixed text, namely 'There is no attribution at all' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Maps' shows map_source:attribution=none with a fixed text, namely 'There is no attribution at all' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$|map_source=osm|map_source=OSM)",
       "value": "none"
     },
     {
       "key": "map_source:attribution",
-      "description": "Layer 'Maps' shows map_source:attribution=no with a fixed text, namely 'There is no attribution at all' (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Maps' shows map_source:attribution=no with a fixed text, namely 'There is no attribution at all' (in the MapComplete.osm.be theme 'Into nature') (This is only shown if map_source~^((O|)pen(S|s)treet(M|m)ap)$|map_source=osm|map_source=OSM)",
       "value": "no"
     },
     {
@@ -596,103 +596,103 @@
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows historic=memorial with a fixed text, namely 'This bench is a memorial for someone or something' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if historic=memorial|inscription~.+|memorial=bench|tourism=artwork)",
       "value": "memorial"
     },
     {
       "key": "historic",
-      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key historic.",
+      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') Picking this answer will delete the key historic. (This is only shown if historic=memorial|inscription~.+|memorial=bench|tourism=artwork)",
       "value": ""
     },
     {
       "key": "not:historic",
-      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows not:historic=memorial with a fixed text, namely 'This bench is a <b>not</b> a memorial for someone or something' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if historic=memorial|inscription~.+|memorial=bench|tourism=artwork)",
       "value": "memorial"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'artwork_type' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'artwork_type' (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows artwork_type=architecture with a fixed text, namely 'Architecture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)",
       "value": "architecture"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows artwork_type=mural with a fixed text, namely 'Mural' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)",
       "value": "mural"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows artwork_type=painting with a fixed text, namely 'Painting' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)",
       "value": "painting"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows artwork_type=sculpture with a fixed text, namely 'Sculpture' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)",
       "value": "sculpture"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows artwork_type=statue with a fixed text, namely 'Statue' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)",
       "value": "statue"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows artwork_type=bust with a fixed text, namely 'Bust' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)",
       "value": "bust"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows artwork_type=stone with a fixed text, namely 'Stone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)",
       "value": "stone"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows artwork_type=installation with a fixed text, namely 'Installation' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)",
       "value": "installation"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows artwork_type=graffiti with a fixed text, namely 'Graffiti' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)",
       "value": "graffiti"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows artwork_type=relief with a fixed text, namely 'Relief' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)",
       "value": "relief"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows artwork_type=azulejo with a fixed text, namely 'Azulejo (Spanish decorative tilework)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)",
       "value": "azulejo"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows artwork_type=tilework with a fixed text, namely 'Tilework' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)",
       "value": "tilework"
     },
     {
       "key": "artwork_type",
-      "description": "Layer 'Benches' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Benches' shows artwork_type=woodcarving with a fixed text, namely 'Woodcarving' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)",
       "value": "woodcarving"
     },
     {
       "key": "artist:wikidata",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'artist:wikidata' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'artist:wikidata' (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)"
     },
     {
       "key": "artist_name",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'artist_name' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'artist_name' (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)"
     },
     {
       "key": "website",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)"
     },
     {
       "key": "subject:wikidata",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'subject:wikidata' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'subject:wikidata' (in the MapComplete.osm.be theme 'Into nature') (This is only shown if tourism=artwork)"
     },
     {
       "key": "leisure",
@@ -844,35 +844,55 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Toilets' shows fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Toilets' shows fee=yes with a fixed text, namely 'These are paid toilets' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if access!=no)",
       "value": "yes"
     },
     {
       "key": "fee",
-      "description": "Layer 'Toilets' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Toilets' shows fee=no with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if access!=no)",
       "value": "no"
     },
     {
       "key": "charge",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'charge' (in the MapComplete.osm.be theme 'Into nature') (This is only shown if fee=yes)"
     },
     {
       "key": "payment:cash",
-      "description": "Layer 'Toilets' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Toilets' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the MapComplete.osm.be theme 'Into nature') (This is only shown if fee=yes)",
       "value": "yes"
     },
     {
       "key": "payment:cards",
-      "description": "Layer 'Toilets' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Toilets' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the MapComplete.osm.be theme 'Into nature') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Toilets' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Toilets' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Toilets' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Toilets' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if fee=yes)",
       "value": "yes"
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Into nature') (This is only shown if access!=no)"
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Toilets' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Toilets' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if access!=no)",
       "value": "24/7"
     },
     {
@@ -892,7 +912,7 @@
     },
     {
       "key": "door:width",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'door:width' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'door:width' (in the MapComplete.osm.be theme 'Into nature') (This is only shown if wheelchair=yes|wheelchair=designated)"
     },
     {
       "key": "toilets:position",
@@ -926,26 +946,26 @@
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows and asks freeform values for key 'changing_table:location' (in the MapComplete.osm.be theme 'Into nature')"
+      "description": "Layer 'Toilets' shows and asks freeform values for key 'changing_table:location' (in the MapComplete.osm.be theme 'Into nature') (This is only shown if changing_table=yes)"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Toilets' shows changing_table:location=female_toilet with a fixed text, namely 'The changing table is in the toilet for women. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if changing_table=yes)",
       "value": "female_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Toilets' shows changing_table:location=male_toilet with a fixed text, namely 'The changing table is in the toilet for men. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if changing_table=yes)",
       "value": "male_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Toilets' shows changing_table:location=wheelchair_toilet with a fixed text, namely 'The changing table is in the toilet for wheelchair users. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if changing_table=yes)",
       "value": "wheelchair_toilet"
     },
     {
       "key": "changing_table:location",
-      "description": "Layer 'Toilets' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Toilets' shows changing_table:location=dedicated_room with a fixed text, namely 'The changing table is in a dedicated room. ' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if changing_table=yes)",
       "value": "dedicated_room"
     },
     {
@@ -960,12 +980,12 @@
     },
     {
       "key": "toilets:paper_supplied",
-      "description": "Layer 'Toilets' shows toilets:paper_supplied=yes with a fixed text, namely 'This toilet is equipped with toilet paper' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Toilets' shows toilets:paper_supplied=yes with a fixed text, namely 'This toilet is equipped with toilet paper' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if toilets:position!=urinal)",
       "value": "yes"
     },
     {
       "key": "toilets:paper_supplied",
-      "description": "Layer 'Toilets' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature')",
+      "description": "Layer 'Toilets' shows toilets:paper_supplied=no with a fixed text, namely 'You have to bring your own toilet paper to this toilet' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if toilets:position!=urinal)",
       "value": "no"
     },
     {
