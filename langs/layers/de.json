@@ -192,6 +192,9 @@
                 },
                 "question": "Welches Unternehmen betreibt den Geldautomaten?",
                 "render": "Der Geldautomat wird von {operator} betrieben"
+            },
+            "atm-in-bank-notice": {
+                "render": "Dieser Geldautomat befindet sich in oder in der Nähe einer Bank"
             }
         },
         "title": {
@@ -7036,6 +7039,12 @@
                         "render_list_item": "Die Treppe hat taktile Schrift in {language():font-bold}",
                         "render_single_language": "Die Treppe hat taktile Schrift in {language():font-bold}"
                     }
+                }
+            },
+            "multilevels": {
+                "override": {
+                    "question": "Zwischen welchen Stockwerken befindet sich diese Treppe?",
+                    "render": "Diese Treppe befindet sich zwischen den Stockwerken {level}"
                 }
             }
         },
