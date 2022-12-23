@@ -529,7 +529,7 @@
       },
       "preciseInput": {
         "snapToLayer": "walls_and_buildings",
-        "preferredBackground": "photo"
+        "preferredBackground": ["photo", "osmbasedmap","map"]
       }
     }
   ],
