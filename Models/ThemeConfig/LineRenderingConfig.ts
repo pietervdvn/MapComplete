@@ -22,8 +22,11 @@ export default class LineRenderingConfig extends WithContextLoader {
         this.fill = this.tr("fill", undefined)
         this.fillColor = this.tr("fillColor", undefined)
 
-        this.leftRightSensitive =
-            json.offset !== undefined && json.offset !== 0 && json.offset !== "0"
+        if (typeof json.offset === "string") {
+            json.offset = parseFloat(json.offset)
+        }
+
+        this.leftRightSensitive = json.offset !== undefined && json.offset !== 0
 
         this.offset = this.tr("offset", "0")
     }
