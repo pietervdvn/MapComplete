@@ -107,9 +107,11 @@
   },
   {
     "path": "logo.svg",
-    "license": "CC0",
+    "license": "Creative Commons 4.0 BY-NC",
     "authors": [],
-    "sources": []
+    "sources": [
+      "https://pngimg.com/image/46283"
+    ]
   },
   {
     "path": "observation_platform.svg",

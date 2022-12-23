@@ -13,8 +13,13 @@
   {
     "path": "car.svg",
     "license": "CC0",
-    "authors": [],
-    "sources": []
+    "authors": [
+      "Simon Child",
+      "The Noun Project"
+    ],
+    "sources": [
+      "https://thenounproject.com/icon/electric-car-55511/"
+    ]
   },
   {
     "path": "logo.svg",

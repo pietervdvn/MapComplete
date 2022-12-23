@@ -324,24 +324,6 @@
       }
     },
     {
-      "builtin": "watermill",
-      "override": {
-        "minzoom": "14",
-        "source": {
-          "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/natuurpunt_cache/natuurpunt_{layer}_{z}_{x}_{y}.geojson",
-          "geoJsonZoomLevel": 12,
-          "isOsmCache": true
-        },
-        "mapRendering": [
-          {
-            "icon": {
-              "render": "circle:#FE6F32;./assets/themes/natuurpunt/watermill.svg"
-            }
-          }
-        ]
-      }
-    },
-    {
       "builtin": "gps_track",
       "override": {
         "name": null

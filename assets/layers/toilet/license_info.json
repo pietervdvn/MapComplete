@@ -12,7 +12,7 @@
     "license": "CC-BY",
     "authors": [
       "asianson.design",
-      " Pieter Vander Vennet"
+      "Pieter Vander Vennet"
     ],
     "sources": [
       "https://thenounproject.com/term/urinal/1307984/"
@@ -22,6 +22,8 @@
     "path": "wheelchair.svg",
     "license": "CC0",
     "authors": [],
-    "sources": []
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Wheelchair_symbol.svg"
+    ]
   }
 ]
