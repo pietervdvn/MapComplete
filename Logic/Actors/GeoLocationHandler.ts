@@ -117,19 +117,14 @@ export default class GeoLocationHandler {
 
     private CopyGeolocationIntoMapstate() {
         const state = this._state
-        this.geolocationState.currentGPSLocation.addCallback((location) => {
+        this.geolocationState.currentGPSLocation.addCallbackAndRunD((location) => {
             const feature = {
                 type: "Feature",
                 properties: <GeoLocationPointProperties>{
                     id: "gps",
                     "user:location": "yes",
                     date: new Date().toISOString(),
-                    latitude: location.latitude,
-                    longitude: location.longitude,
-                    speed: location.speed,
-                    accuracy: location.accuracy,
-                    heading: location.heading,
-                    altitude: location.altitude,
+                    ...location,
                 },
                 geometry: {
                     type: "Point",
