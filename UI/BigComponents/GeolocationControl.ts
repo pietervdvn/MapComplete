@@ -28,10 +28,10 @@ export class GeolocationControl extends VariableUiElement {
                         return Svg.location_locked_svg()
                     }
 
-                    if (permission === "prompt") {
-                        return Svg.location_empty_svg()
-                    }
-                    if (geolocationState.currentGPSLocation === undefined) {
+                    if (geolocationState.currentGPSLocation.data === undefined) {
+                        if (permission === "prompt") {
+                            return Svg.location_empty_svg()
+                        }
                         // Position not yet found, but permission is either requested or granted: we spin to indicate activity
                         const icon = !geolocationHandler.mapHasMoved.data
                             ? Svg.location_svg()
@@ -40,6 +40,8 @@ export class GeolocationControl extends VariableUiElement {
                             .SetClass("cursor-wait")
                             .SetStyle("animation: spin 4s linear infinite;")
                     }
+
+                    // We have a location, so we show a dot in the center
 
                     if (
                         lastClickWithinThreeSecs.data &&

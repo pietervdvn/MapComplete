@@ -8,6 +8,7 @@ import { UIEventSource } from "../UIEventSource"
 /**
  * The geolocation-handler takes a map-location and a geolocation state.
  * It'll move the map as appropriate given the state of the geolocation-API
+ * It will also copy the geolocation into the appropriate FeatureSource to display on the map
  */
 export default class GeoLocationHandler {
     public readonly geolocationState: GeoLocationState
@@ -117,7 +118,11 @@ export default class GeoLocationHandler {
 
     private CopyGeolocationIntoMapstate() {
         const state = this._state
-        this.geolocationState.currentGPSLocation.addCallbackAndRunD((location) => {
+        this.geolocationState.currentGPSLocation.addCallbackAndRun((location) => {
+            if (location === undefined) {
+                state.currentUserLocation?.features?.setData([])
+                return
+            }
             const feature = {
                 type: "Feature",
                 properties: <GeoLocationPointProperties>{

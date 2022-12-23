@@ -57,7 +57,6 @@ export class GeoLocationState {
             if (state === "granted") {
                 self._previousLocationGrant.setData("true")
                 self._grantedThisSession.setData(true)
-                await self.startWatching()
             }
             if (state === "prompt" && self._grantedThisSession.data) {
                 // This is _really_ weird: we had a grant earlier, but it's 'prompt' now?
@@ -65,6 +64,7 @@ export class GeoLocationState {
                 //   self.permission.setData("denied")
                 self._previousLocationGrant.setData("false")
                 self.permission.setData("denied")
+                self.currentGPSLocation.setData(undefined)
                 console.warn("Detected a downgrade in permissions!")
             }
             if (state === "denied") {
@@ -72,6 +72,7 @@ export class GeoLocationState {
             }
         })
 
+        console.log("Previous location grant:", this._previousLocationGrant.data)
         if (this._previousLocationGrant.data === "true") {
             // A previous visit successfully granted permission. Chance is high that we are allowed to use it again!
 
@@ -80,6 +81,7 @@ export class GeoLocationState {
             console.log("Requesting access to GPS as this was previously granted")
             this.requestPermission()
         }
+        window["geolocation_state"] = this
     }
 
     /**
@@ -91,6 +93,7 @@ export class GeoLocationState {
         navigator.geolocation.watchPosition(
             function (position) {
                 self.currentGPSLocation.setData(position.coords)
+                self._previousLocationGrant.setData("true")
             },
             function () {
                 console.warn("Could not get location with navigator.geolocation")
@@ -121,12 +124,13 @@ export class GeoLocationState {
             navigator?.permissions
                 ?.query({ name: "geolocation" })
                 .then((status) => {
-                    console.log("Geolocation permission is ", status.state)
+                    console.log("Status update: received geolocation permission is ", status.state)
                     this.permission.setData(status.state)
                     const self = this
                     status.onchange = function () {
                         self.permission.setData(status.state)
                     }
+                    this.permission.setData("requested")
                     // We _must_ call 'startWatching', as that is the actual trigger for the popup...
                     self.startWatching()
                 })
