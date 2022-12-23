@@ -115,7 +115,9 @@ export class GeoLocationState {
             this.permission.setData("denied")
             return
         }
-        if (this.permission.data !== "prompt") {
+        if (this.permission.data !== "prompt" && this.permission.data !== "requested") {
+            // If the user denies the first prompt, revokes the deny and then tries again, we have to run the flow as well
+            // Hence that we continue the flow if it is "requested"
             return
         }
         this.requestMoment.setData(new Date())
