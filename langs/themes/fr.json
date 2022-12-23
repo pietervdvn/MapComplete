@@ -7,6 +7,60 @@
         "description": "Une carte ouverte de statues, bustes, graffitis et autres œuvres d'art de par le monde",
         "title": "Carte ouverte des œuvres d'art"
     },
+    "atm": {
+        "description": "Cette carte montre les DABs pour retirer ou déposer de l'argent",
+        "title": "Distributeurs DAB"
+    },
+    "bag": {
+        "description": "Ce thème aide à l'importation de données depuis BAG",
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "Ce bâtiment n'a pas de référence dans le BAG"
+                            }
+                        },
+                        "render": "La référence dans le BAG est <b>{ref:bag}</b>"
+                    }
+                }
+            },
+            "2": {
+                "description": "Bâtiments du registre BAG",
+                "tagRenderings": {
+                    "Build year": {
+                        "mappings": {
+                            "0": {
+                                "then": "Le bâtiment a été commencé en <b>{_bag_obj:start_date}</b>"
+                            }
+                        },
+                        "render": "Le bâtiment a été construit en <b>{_bag_obj:start_date}</b>"
+                    },
+                    "Building type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Le type de bâtiment sera <b>{_bag_obj:construction}</b>"
+                            }
+                        },
+                        "render": "Le type de bâtiment est <b>{_bag_obj:building}</b>"
+                    },
+                    "Import button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Les valeurs correctes n'ont pas encore été calculées. Rafraichissez la page"
+                            }
+                        }
+                    },
+                    "Reference": {
+                        "render": "La référence dans BAG est <b>{_bag_obj:ref:bag}</b>"
+                    }
+                }
+            }
+        },
+        "shortDescription": "Outil de facilitation d'import BAG",
+        "title": "Facilitateur d'import BAG"
+    },
     "benches": {
         "description": "Cette carte affiche les bancs cartographiés dans OpenStreetMap, entre autres : bancs des transports en commun, bancs publics, etc. À l'aide de votre compte OpenStreetMap, vous pourrez ajouter de nouveaux bancs ou modifier les bancs existants.",
         "shortDescription": "Carte des bancs",
@@ -25,6 +79,10 @@
         "description": "Une carte des longue-vues fixes. Se trouve typiquement sur les sites touristiques, les points de vue, les tours panoramiques ou dans les réserves naturelles.",
         "shortDescription": "Une carte de jumelles panoramiques",
         "title": "Jumelles"
+    },
+    "blind_osm": {
+        "description": "Aidez à cartographier les caractéristiques importantes pour les malvoyants",
+        "title": "OSM pour les malvoyants"
     },
     "bookcases": {
         "description": "Une microbibliothèques, également appelée boite à livre, est un élément de mobilier urbain (étagère, armoire, etc) dans lequel sont stockés des livres et autres objets en accès libre. Découvrez les boites à livres prêt de chez vous, ou ajouter en une nouvelle à l'aide de votre compte OpenStreetMap.",
@@ -414,50 +472,50 @@
                         "0": {
                             "then": "Cette rue est une rue cyclable (et est limitée à 30 km/h)"
                         },
-                        "3": {
-                            "then": "Cette rue est une rue cyclable"
-                        },
-                        "4": {
-                            "then": "Cette rue sera bientôt une rue cyclable"
-                        },
-                        "6": {
-                            "then": "Cette rue n’est pas une rue cyclable"
-                        },
                         "1": {
                             "then": "Cette rue est une piste cyclable"
                         },
                         "2": {
                             "then": "Cette rue est une piste cyclable (avec une limitation de vitesse a 30 km/h et les véhicules ne sont pas autorisés) (un panneau sera demandé plus tard)"
                         },
+                        "3": {
+                            "then": "Cette rue est une rue cyclable"
+                        },
+                        "4": {
+                            "then": "Cette rue sera bientôt une rue cyclable"
+                        },
                         "5": {
                             "then": "Cette rue va bientôt devenir une piste cyclable"
+                        },
+                        "6": {
+                            "then": "Cette rue n’est pas une rue cyclable"
                         }
                     },
                     "question": "La rue <b>{name}</b> est-elle une rue cyclable ?"
                 },
-                "2": {
-                    "question": "Quand cette rue deviendra-t-elle cyclable ?",
-                    "render": "Cette rue deviendra une rue cyclable le {cyclestreet:start_date}"
-                },
                 "1": {
                     "mappings": {
-                        "2": {
-                            "then": "Motos autorisées"
-                        },
-                        "3": {
-                            "then": "Voitures autorisées"
-                        },
                         "0": {
                             "then": "Riverains autorisés"
                         },
                         "1": {
                             "then": "Véhicules motorisés autorisés"
                         },
+                        "2": {
+                            "then": "Motos autorisées"
+                        },
+                        "3": {
+                            "then": "Voitures autorisées"
+                        },
                         "4": {
                             "then": "Il n'y a pas de panneaux supplémentaires à cette piste cyclable."
                         }
                     },
                     "question": "Quel panneau comporte cette piste cyclable ?"
+                },
+                "2": {
+                    "question": "Quand cette rue deviendra-t-elle cyclable ?",
+                    "render": "Cette rue deviendra une rue cyclable le {cyclestreet:start_date}"
                 }
             }
         },
@@ -675,6 +733,10 @@
         "description": "Cette carte affiche différents éléments liés à la santé",
         "title": "Services de santé"
     },
+    "hotels": {
+        "description": "Sur cette carte, vous trouverez les hôtels dans votre zone",
+        "title": "Hôtels"
+    },
     "indoors": {
         "description": "Sur cette carte, les lieux intérieurs accessibles au public sont montrés",
         "title": "Intérieurs"
@@ -682,6 +744,80 @@
     "kerbs_and_crossings": {
         "description": "Une carte affichant les ressauts et traversées.",
         "title": "Ressauts et traversées"
+    },
+    "mapcomplete-changes": {
+        "description": "Cette carte montre tous les changements faits avec MapComplete",
+        "layers": {
+            "0": {
+                "description": "Montre tous les changements de MapComplete",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Nom de thème contenant {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Fait par le contributeur {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Non</b> réalisé par le contributeur{search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "Fait avant {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Fait après {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Langage utilisateur (code-iso) {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Fait par le serveur {search}"
+                            }
+                        }
+                    }
+                },
+                "name": "Centres de modifications de paramètres",
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "Quel contributeur a fait ce changement ?",
+                        "render": "Modification faite par <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "Depuis quel serveur (site web) ce changement a-t-il été fait ?",
+                        "render": "Changement avec <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "En quelle langue est-ce que ce changement a été fait ?",
+                        "render": "La langue de l'utilisateur est {locale}"
+                    }
+                }
+            }
+        }
     },
     "maproulette": {
         "description": "Thème MapRoulette permettant d’afficher, rechercher, filtrer et résoudre les tâches.",
@@ -977,141 +1113,5 @@
         "description": "Retrouvez les poubelles près de vous. Si une poubelle est manquante, vous pouvez l’ajouter vous même",
         "shortDescription": "Une carte des poubelles",
         "title": "Poubelles"
-    },
-    "mapcomplete-changes": {
-        "layers": {
-            "0": {
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Nom de thème contenant {search}"
-                            }
-                        }
-                    },
-                    "5": {
-                        "options": {
-                            "0": {
-                                "question": "Langage utilisateur (code-iso) {search}"
-                            }
-                        }
-                    },
-                    "6": {
-                        "options": {
-                            "0": {
-                                "question": "Fait par le serveur {search}"
-                            }
-                        }
-                    },
-                    "3": {
-                        "options": {
-                            "0": {
-                                "question": "Fait avant {search}"
-                            }
-                        }
-                    },
-                    "4": {
-                        "options": {
-                            "0": {
-                                "question": "Fait après {search}"
-                            }
-                        }
-                    },
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Fait par le contributeur {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Non</b> réalisé par le contributeur{search}"
-                            }
-                        }
-                    }
-                },
-                "name": "Centres de modifications de paramètres",
-                "tagRenderings": {
-                    "host": {
-                        "render": "Changement avec <a href='{host}'>{host}</a>",
-                        "question": "Depuis quel serveur (site web) ce changement a-t-il été fait ?"
-                    },
-                    "locale": {
-                        "question": "En quelle langue est-ce que ce changement a été fait ?",
-                        "render": "La langue de l'utilisateur est {locale}"
-                    },
-                    "contributor": {
-                        "question": "Quel contributeur a fait ce changement ?",
-                        "render": "Modification faite par <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
-                    }
-                },
-                "description": "Montre tous les changements de MapComplete"
-            }
-        },
-        "description": "Cette carte montre tous les changements faits avec MapComplete"
-    },
-    "bag": {
-        "description": "Ce thème aide à l'importation de données depuis BAG",
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "Reference": {
-                        "mappings": {
-                            "0": {
-                                "then": "Ce bâtiment n'a pas de référence dans le BAG"
-                            }
-                        },
-                        "render": "La référence dans le BAG est <b>{ref:bag}</b>"
-                    }
-                }
-            },
-            "2": {
-                "description": "Bâtiments du registre BAG",
-                "tagRenderings": {
-                    "Build year": {
-                        "render": "Le bâtiment a été construit en <b>{_bag_obj:start_date}</b>",
-                        "mappings": {
-                            "0": {
-                                "then": "Le bâtiment a été commencé en <b>{_bag_obj:start_date}</b>"
-                            }
-                        }
-                    },
-                    "Building type": {
-                        "mappings": {
-                            "0": {
-                                "then": "Le type de bâtiment sera <b>{_bag_obj:construction}</b>"
-                            }
-                        },
-                        "render": "Le type de bâtiment est <b>{_bag_obj:building}</b>"
-                    },
-                    "Import button": {
-                        "mappings": {
-                            "0": {
-                                "then": "Les valeurs correctes n'ont pas encore été calculées. Rafraichissez la page"
-                            }
-                        }
-                    },
-                    "Reference": {
-                        "render": "La référence dans BAG est <b>{_bag_obj:ref:bag}</b>"
-                    }
-                }
-            }
-        },
-        "shortDescription": "Outil de facilitation d'import BAG",
-        "title": "Facilitateur d'import BAG"
-    },
-    "atm": {
-        "title": "Distributeurs DAB",
-        "description": "Cette carte montre les DABs pour retirer ou déposer de l'argent"
-    },
-    "hotels": {
-        "description": "Sur cette carte, vous trouverez les hôtels dans votre zone",
-        "title": "Hôtels"
-    },
-    "blind_osm": {
-        "description": "Aidez à cartographier les caractéristiques importantes pour les malvoyants",
-        "title": "OSM pour les malvoyants"
     }
 }

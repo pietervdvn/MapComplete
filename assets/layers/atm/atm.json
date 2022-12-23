@@ -36,7 +36,10 @@
       "or": [
         "amenity=atm",
         {
-          "and": ["amenity=bank","atm=yes"]
+          "and": [
+            "amenity=bank",
+            "atm=yes"
+          ]
         }
       ]
     }
@@ -67,7 +70,6 @@
       "render": "{image_carousel()}",
       "condition": "amenity=bank"
     },
-    
     {
       "id": "atm-in-bank-notice",
       "condition": "amenity=bank",

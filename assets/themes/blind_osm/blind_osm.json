@@ -3,12 +3,14 @@
   "title": {
     "en": "OSM for the blind",
     "de": "OSM für Blinde",
-    "nl": "OSM voor blinden"
+    "nl": "OSM voor blinden",
+    "fr": "OSM pour les malvoyants"
   },
   "description": {
     "en": "Help to map features relevant for the blind",
     "de": "Hilfe zur Kartierung blindenrelevanter Merkmale",
-    "nl": "Help zaken die relevant zijn voor blinden in kaart te brengen"
+    "nl": "Help zaken die relevant zijn voor blinden in kaart te brengen",
+    "fr": "Aidez à cartographier les caractéristiques importantes pour les malvoyants"
   },
   "icon": "./assets/themes/blind_osm/Blindicon.svg",
   "startLat": 52.99238,

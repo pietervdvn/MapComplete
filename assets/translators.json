@@ -186,6 +186,10 @@
     },
     {
       "commits": 4,
+      "contributor": "mcliquid"
+    },
+    {
+      "commits": 4,
       "contributor": "Hiroshi Miura"
     },
     {
@@ -210,7 +214,7 @@
     },
     {
       "commits": 3,
-      "contributor": "mcliquid"
+      "contributor": "aleksej0R"
     },
     {
       "commits": 3,
@@ -327,10 +331,6 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
-    },
-    {
-      "commits": 1,
-      "contributor": "aleksej0R"
     },
     {
       "commits": 1,

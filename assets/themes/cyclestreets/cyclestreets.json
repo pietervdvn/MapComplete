@@ -405,7 +405,8 @@
             "then": {
               "en": "This street is a bicycle road",
               "de": "Diese Straße ist eine Fahrradstraße",
-              "nl": "Deze straat is een fietsstraat"
+              "nl": "Deze straat is een fietsstraat",
+              "fr": "Cette rue est une piste cyclable"
             },
             "hideInAnswer": true
           },
@@ -423,7 +424,8 @@
             "then": {
               "en": "This street is a bicycle road (has a speed limit of 30 km/h and vehicles are not allowed) (sign will be asked later)",
               "de": "Diese Straße ist eine Fahrradstraße (hat eine Geschwindigkeitsbegrenzung von 30 km/h und Fahrzeuge sind nicht erlaubt) (Schild wird später abgefragt)",
-              "nl": "Deze straat is een fietsstraat (snelheid van 30 km/h en voertuigen niet toegestaan) (bord wordt later gevraagd)"
+              "nl": "Deze straat is een fietsstraat (snelheid van 30 km/h en voertuigen niet toegestaan) (bord wordt later gevraagd)",
+              "fr": "Cette rue est une piste cyclable (avec une limitation de vitesse a 30 km/h et les véhicules ne sont pas autorisés) (un panneau sera demandé plus tard)"
             },
             "hideInAnswer": "_country!=de"
           },
@@ -486,7 +488,8 @@
             "then": {
               "en": "This street will become a bicycle road soon",
               "de": "Diese Straße wird bald zu einer Fahrradstraße",
-              "nl": "Deze straat wordt binnenkort een fietsstraat"
+              "nl": "Deze straat wordt binnenkort een fietsstraat",
+              "fr": "Cette rue va bientôt devenir une piste cyclable"
             },
             "hideInAnswer": "_country!=de"
           },
@@ -526,7 +529,8 @@
         "question": {
           "en": "What sign does this bicycle road have?",
           "de": "Welches Schild hat diese Fahrradstraße?",
-          "nl": "Welk bord heeft deze fietsstraat?"
+          "nl": "Welk bord heeft deze fietsstraat?",
+          "fr": "Quel panneau comporte cette piste cyclable ?"
         },
         "mappings": [
           {
@@ -534,7 +538,8 @@
             "then": {
               "en": "Residents allowed",
               "de": "Anlieger frei",
-              "nl": "Aanwonenden toegestaan"
+              "nl": "Aanwonenden toegestaan",
+              "fr": "Riverains autorisés"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg",
@@ -552,7 +557,8 @@
             "then": {
               "en": "Motor vehicles allowed",
               "de": "KFZ frei",
-              "nl": "Motorvoertuigen toegestaan"
+              "nl": "Motorvoertuigen toegestaan",
+              "fr": "Véhicules motorisés autorisés"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg",
@@ -571,7 +577,8 @@
               "en": "Motorcycles allowed",
               "de": "Motorräder frei",
               "pa_PK": "موٹرسائیکلاں دی اِجازت اے",
-              "nl": "Motoren toegestaan"
+              "nl": "Motoren toegestaan",
+              "fr": "Motos autorisées"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg",
@@ -590,7 +597,8 @@
               "en": "Cars allowed",
               "de": "Autos erlaubt",
               "pa_PK": "موٹرکاراں دی اِجازت اے",
-              "nl": "Auto's toegestaan"
+              "nl": "Auto's toegestaan",
+              "fr": "Voitures autorisées"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg",
@@ -608,7 +616,8 @@
             "then": {
               "en": "There are no supplementary signs at this bicycle road.",
               "de": "An dieser Fahrradstraße gibt es keine zusätzlichen Schilder.",
-              "nl": "Er zijn geen onderborden bij deze fietsstraat."
+              "nl": "Er zijn geen onderborden bij deze fietsstraat.",
+              "fr": "Il n'y a pas de panneaux supplémentaires à cette piste cyclable."
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244.svg",

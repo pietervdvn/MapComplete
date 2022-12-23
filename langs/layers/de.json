@@ -7037,12 +7037,6 @@
                         "render_single_language": "Die Treppe hat taktile Schrift in {language():font-bold}"
                     }
                 }
-            },
-            "multilevels": {
-                "override": {
-                    "render": "Diese Treppen befinden sich zwischen den Ebenen {level}",
-                    "question": "Zwischen welchen Ebenen befinden sich diese Treppen?"
-                }
             }
         },
         "title": {
@@ -7422,18 +7416,6 @@
                 },
                 "question": "Wer ist der Betreiber dieses Fahrkartenentwerters?",
                 "render": "Dieser Fahrkartenentwerter wird betrieben von {operator}"
-            },
-            "payment-options": {
-                "override": {
-                    "mappings+": {
-                        "0": {
-                            "then": "Dieser Ticketentwerter akzeptiert OV-Chipkarten"
-                        },
-                        "1": {
-                            "then": "Dieser Ticketentwerter akzeptiert OV-Chipkarten"
-                        }
-                    }
-                }
             }
         },
         "title": {
@@ -7700,11 +7682,6 @@
             "wheelchair-door-width": {
                 "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
                 "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "Wann ist die Einrichtung, in der sich diese Toiletten befinden, geöffnet?"
-                }
             }
         },
         "title": {
@@ -7959,6 +7936,14 @@
             }
         },
         "tagRenderings": {
+            "circumference": {
+                "question": "Wie groß ist der Umfang des Baumstammes?<p class='subtle'>Dies wird in einer Höhe von 1,30 m gemessen</p>",
+                "render": "Der Baumstamm hat einen Umfang von {circumference} Meter"
+            },
+            "height": {
+                "question": "Wie hoch ist dieser Baum?",
+                "render": "Dieser Baum ist {height} Meter hoch"
+            },
             "tree-decidouous": {
                 "mappings": {
                     "0": {
@@ -8052,14 +8037,6 @@
             "tree_node-wikidata": {
                 "question": "Was ist das passende Wikidata Element zu diesem Baum?",
                 "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
-            },
-            "circumference": {
-                "question": "Wie groß ist der Umfang des Baumstammes?<p class='subtle'>Dies wird in einer Höhe von 1,30 m gemessen</p>",
-                "render": "Der Baumstamm hat einen Umfang von {circumference} Meter"
-            },
-            "height": {
-                "question": "Wie hoch ist dieser Baum?",
-                "render": "Dieser Baum ist {height} Meter hoch"
             }
         },
         "title": {

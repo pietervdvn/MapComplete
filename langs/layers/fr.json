@@ -1833,8 +1833,25 @@
                 },
                 "question": "Est-ce que le feu de signalisation a une signalisation sonore pour aider à traverser ?"
             },
+            "crossing-tactile": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce passage piéton a une surface podotactile"
+                    },
+                    "1": {
+                        "then": "Ce passage piéton n'a pas de surface podotactile"
+                    },
+                    "2": {
+                        "then": "Ce passage piéton a une surface podotactile, mais elle n'est pas adéquate"
+                    }
+                },
+                "question": "Est-ce que ce passage piéton a une surface podotactile ?"
+            },
             "crossing-type": {
                 "mappings": {
+                    "0": {
+                        "then": "Passage piéton, sans feux de signalisation"
+                    },
                     "1": {
                         "then": "Passage piéton avec des feux de signalisation"
                     },
@@ -1843,26 +1860,9 @@
                     },
                     "3": {
                         "then": "Passage piéton sans marquages"
-                    },
-                    "0": {
-                        "then": "Passage piéton, sans feux de signalisation"
                     }
                 },
                 "question": "Quel type de passage piéton est-ce ?"
-            },
-            "crossing-tactile": {
-                "mappings": {
-                    "2": {
-                        "then": "Ce passage piéton a une surface podotactile, mais elle n'est pas adéquate"
-                    },
-                    "0": {
-                        "then": "Ce passage piéton a une surface podotactile"
-                    },
-                    "1": {
-                        "then": "Ce passage piéton n'a pas de surface podotactile"
-                    }
-                },
-                "question": "Est-ce que ce passage piéton a une surface podotactile ?"
             }
         },
         "title": {

@@ -119,10 +119,12 @@
     {
       "id": "circumference",
       "question": {
-        "en": "What is the circumference of the tree trunk?<p class='subtle'>This is measured at a height of 1.30m</p>"
+        "en": "What is the circumference of the tree trunk?<p class='subtle'>This is measured at a height of 1.30m</p>",
+        "de": "Wie groß ist der Umfang des Baumstammes?<p class='subtle'>Dies wird in einer Höhe von 1,30 m gemessen</p>"
       },
       "render": {
-        "en": "The tree trunk has a circumference of {circumference} meter"
+        "en": "The tree trunk has a circumference of {circumference} meter",
+        "de": "Der Baumstamm hat einen Umfang von {circumference} Meter"
       },
       "freeform": {
         "key": "circumference",
@@ -133,7 +135,8 @@
     {
       "id": "height",
       "question": {
-        "en": "What is the height of this tree?"
+        "en": "What is the height of this tree?",
+        "de": "Wie hoch ist dieser Baum?"
       },
       "freeform": {
         "key": "height",
@@ -141,7 +144,8 @@
         "inline": true
       },
       "render": {
-        "en": "This tree is {height} meter high"
+        "en": "This tree is {height} meter high",
+        "de": "Dieser Baum ist {height} Meter hoch"
       }
     },
     {

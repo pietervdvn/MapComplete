@@ -80,6 +80,7 @@
 
   - ambulancestation
   - artwork
+  - atm
   - barrier
   - bench
   - bench_at_pt

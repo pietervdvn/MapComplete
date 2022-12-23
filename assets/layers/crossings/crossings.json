@@ -130,7 +130,8 @@
         "en": "What kind of crossing is this?",
         "nl": "Wat voor oversteekplaats is dit?",
         "de": "Was ist das für eine Kreuzung?",
-        "es": "¿Qué tipo de cruce es este?"
+        "es": "¿Qué tipo de cruce es este?",
+        "fr": "Quel type de passage piéton est-ce ?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -140,7 +141,8 @@
             "en": "Crossing, without traffic lights",
             "nl": "Oversteekplaats, zonder verkeerslichten",
             "de": "Kreuzungen ohne Ampeln",
-            "es": "Cruce, sin semáforos"
+            "es": "Cruce, sin semáforos",
+            "fr": "Passage piéton, sans feux de signalisation"
           }
         },
         {
@@ -149,7 +151,8 @@
             "en": "Crossing with traffic signals",
             "nl": "Oversteekplaats met verkeerslichten",
             "de": "Kreuzungen mit Ampeln",
-            "es": "Cruce con señales de tráfico"
+            "es": "Cruce con señales de tráfico",
+            "fr": "Passage piéton avec des feux de signalisation"
           }
         },
         {
@@ -159,7 +162,8 @@
             "nl": "Zebrapad",
             "de": "Zebrastreifen",
             "ca": "Pas de zebra",
-            "es": "Paso de cebra"
+            "es": "Paso de cebra",
+            "fr": "Passage piéton"
           },
           "hideInAnswer": true
         },
@@ -169,7 +173,8 @@
             "en": "Crossing without crossing markings",
             "nl": "Oversteekplaats zonder kruispuntmarkeringen",
             "de": "Kreuzung ohne Kreuzungsmarkierungen",
-            "es": "Cruce sin marcas de cruce"
+            "es": "Cruce sin marcas de cruce",
+            "fr": "Passage piéton sans marquages"
           }
         }
       ]
@@ -279,7 +284,8 @@
         "en": "Does this crossing have tactile paving?",
         "nl": "Heeft deze oversteekplaats een geleidelijn?",
         "de": "Gibt es an dieser Kreuzung ein Blindenleitsystem?",
-        "es": "¿Tiene pavimento táctil este cruce?"
+        "es": "¿Tiene pavimento táctil este cruce?",
+        "fr": "Est-ce que ce passage piéton a une surface podotactile ?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -289,7 +295,8 @@
             "en": "This crossing has tactile paving",
             "nl": "Deze oversteekplaats heeft een geleidelijn",
             "de": "An dieser Kreuzung gibt es ein Blindenleitsystem",
-            "es": "Este cruce tiene pavimento táctil"
+            "es": "Este cruce tiene pavimento táctil",
+            "fr": "Ce passage piéton a une surface podotactile"
           }
         },
         {
@@ -298,7 +305,8 @@
             "en": "This crossing does not have tactile paving",
             "nl": "Deze oversteekplaats heeft geen geleidelijn",
             "de": "Diese Kreuzung hat kein Blindenleitsystem",
-            "es": "Este cruce no tiene pavimento táctil"
+            "es": "Este cruce no tiene pavimento táctil",
+            "fr": "Ce passage piéton n'a pas de surface podotactile"
           }
         },
         {
@@ -307,7 +315,8 @@
             "en": "This crossing has tactile paving, but is not correct",
             "nl": "Deze oversteekplaats heeft een geleidelijn, die incorrect is.",
             "de": "Diese Kreuzung hat taktile Pflasterung, ist aber nicht korrekt",
-            "es": "Este cruce tiene pavimento táctil, pero no es correcto"
+            "es": "Este cruce tiene pavimento táctil, pero no es correcto",
+            "fr": "Ce passage piéton a une surface podotactile, mais elle n'est pas adéquate"
           },
           "hideInAnswer": true
         }
@@ -352,7 +361,8 @@
       "id": "crossing-sound",
       "question": {
         "en": "Does this traffic light have sound signals to aid crossing?",
-        "de": "Gibt die Ampel akustische Signale, um das Überqueren zu erleichtern?"
+        "de": "Gibt die Ampel akustische Signale, um das Überqueren zu erleichtern?",
+        "fr": "Est-ce que le feu de signalisation a une signalisation sonore pour aider à traverser ?"
       },
       "condition": "crossing=traffic_signals",
       "mappings": [

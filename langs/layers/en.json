@@ -176,6 +176,9 @@
             }
         },
         "tagRenderings": {
+            "atm-in-bank-notice": {
+                "render": "This ATM is located in or near a bank"
+            },
             "brand": {
                 "freeform": {
                     "placeholder": "Brand name"
