@@ -1,26 +1,48 @@
 {
   "id": "atm",
   "name": {
-    "en": "ATMs"
+    "en": "ATMs",
+    "de": "Geldautomaten",
+    "fr": "DABs",
+    "nl": "Geldautomaten"
   },
   "description": {
-    "en": "ATMS to withdraw money"
+    "en": "ATMS to withdraw money",
+    "de": "Geldautomaten zum Geld abheben",
+    "fr": "DAB pour retirer de l'argent",
+    "nl": "Geldautomaten om geld op te nemen"
   },
   "title": {
     "render": {
-      "en": "ATM"
+      "en": "ATM",
+      "de": "Geldautomat",
+      "fr": "DAB",
+      "nl": "Geldautomaat"
     },
     "mappings": [
       {
         "if": "brand~*",
         "then": {
-          "en": "{brand} ATM"
+          "en": "{brand} ATM",
+          "de": "{brand} Geldautomat",
+          "fr": "DAB {brand}",
+          "nl": "{brand} Geldautomaat"
         }
       }
     ]
   },
   "source": {
-    "osmTags": "amenity=atm"
+    "osmTags": {
+      "or": [
+        "amenity=atm",
+        {
+          "and": [
+            "amenity=bank",
+            "atm=yes"
+          ]
+        }
+      ]
+    }
   },
   "minzoom": 13,
   "presets": [
@@ -29,51 +51,99 @@
         "amenity=atm"
       ],
       "title": {
-        "en": "an ATM"
+        "en": "an ATM",
+        "de": "ein Geldautomat",
+        "fr": "un DAB",
+        "nl": "een geldautomaat"
       }
     }
   ],
   "tagRenderings": [
     {
+      "builtin": "images",
+      "override": {
+        "condition": "amenity!=bank"
+      }
+    },
+    {
+      "id": "bank-images",
+      "render": "{image_carousel()}",
+      "condition": "amenity=bank"
+    },
+    {
+      "id": "atm-in-bank-notice",
+      "condition": "amenity=bank",
+      "render": {
+        "en": "This ATM is located in or near a bank"
+      }
+    },
+    {
       "id": "name",
       "render": {
-        "en": "The name of this ATM is {name}"
+        "en": "The name of this ATM is {name}",
+        "de": "Der Name dieses Geldautomaten ist {name}",
+        "fr": "Le nom de ce DAB est {name}",
+        "nl": "De naam van deze geldautomaat is {name}"
       },
       "condition": "name~*"
     },
     {
       "id": "brand",
       "question": {
-        "en": "What brand is this ATM?"
+        "en": "What brand is this ATM?",
+        "de": "Von welcher Marke ist dieser Geldautomat?",
+        "fr": "De quelle marque est ce DAB ?",
+        "nl": "Van welk merk is deze geldautomaat?"
       },
       "freeform": {
         "key": "brand",
         "type": "string",
         "placeholder": {
-          "en": "Brand name"
+          "en": "Brand name",
+          "de": "Markenname",
+          "fr": "Nom de marque",
+          "nl": "Merknaam"
         }
       },
       "render": {
-        "en": "The brand of this ATM is {brand}"
+        "en": "The brand of this ATM is {brand}",
+        "de": "Die Marke dieses Geldautomaten ist {brand}",
+        "fr": "La marque de ce DAB est {brand}",
+        "nl": "Het merk van deze geldautomaat is {brand}"
       }
     },
     {
       "id": "operator",
+      "condition": "amenity!=bank",
       "question": {
-        "en": "What company operates this ATM?"
+        "en": "What company operates this ATM?",
+        "de": "Welches Unternehmen betreibt den Geldautomaten?",
+        "fr": "Quelle société exploite ce DAB ?",
+        "nl": "Welk bedrijf beheert deze geldautomaat?"
       },
       "freeform": {
         "key": "operator",
         "type": "string",
         "placeholder": {
-          "en": "Operator"
+          "en": "Operator",
+          "de": "Betreiber",
+          "fr": "Opérateur",
+          "nl": "Beheerder"
         }
       },
       "render": {
-        "en": "The ATM is operated by {operator}"
+        "en": "The ATM is operated by {operator}",
+        "de": "Der Geldautomat wird von {operator} betrieben",
+        "fr": "Ce DAB est exploité par {operator}",
+        "nl": "Deze geldautomaat wordt beheerd door {operator}"
       }
     },
-    "opening_hours",
+    {
+      "builtin": "opening_hours",
+      "override": {
+        "condition": "amenity!=bank"
+      }
+    },
     {
       "id": "cash_out",
       "question": {

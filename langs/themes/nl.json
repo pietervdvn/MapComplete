@@ -1265,6 +1265,48 @@
         "shortDescription": "Kaart met sportfaciliteiten.",
         "title": "Sport"
     },
+    "stations": {
+        "description": "Bekijk, bewerk en voeg details to aan een treinstation",
+        "layers": {
+            "3": {
+                "description": "Laag met treinstations",
+                "name": "Treinstations"
+            },
+            "15": {
+                "description": "Schermen die treinen tonen die van dit station vertrekken",
+                "name": "Vertrektijdenborden",
+                "presets": {
+                    "0": {
+                        "description": "Voeg een bord met vertrektijden toe, elektronisch of op papier",
+                        "title": "een vertrektijdenbord"
+                    }
+                },
+                "tagRenderings": {
+                    "type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dit is een vertrektijdenbord van een onbekend type"
+                            },
+                            "1": {
+                                "then": "Dit is een elektronisch bord, met realtime vertrektijden"
+                            },
+                            "2": {
+                                "then": "Dit is een papieren vertrekstaat"
+                            },
+                            "3": {
+                                "then": "Er is een bord met de tijden tussen treinen"
+                            }
+                        },
+                        "question": "Wat voor vertrektijdenbord is dit?"
+                    }
+                },
+                "title": {
+                    "render": "Vertrektijdenbord"
+                }
+            }
+        },
+        "title": "Treinstations"
+    },
     "street_lighting": {
         "description": "Op deze kaart vind je alles over straatlantaarns",
         "layers": {

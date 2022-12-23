@@ -2,7 +2,8 @@
   "id": "selected_element",
   "description": {
     "en": "Highlights the currently selected element. Override this layer to have different colors",
-    "nl": "Toont het geselecteerde element"
+    "nl": "Toont het geselecteerde element",
+    "de": "Hebt das aktuell ausgewählte Element hervor. Überschreiben Sie diese Ebene, um unterschiedliche Farben zu erhalten"
   },
   "source": {
     "osmTags": "selected=yes",

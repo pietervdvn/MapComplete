@@ -103,12 +103,14 @@
         "before": {
           "en": "<h3>Entrances</h3>This building has {_entrances_count} entrances:",
           "de": "<h3>Eingänge</h3>Das Gebäude hat {_entrances_count} Eingänge:",
-          "da": "<h3>Indgange</h3>Denne bygning har {_entrances_count} indgange:"
+          "da": "<h3>Indgange</h3>Denne bygning har {_entrances_count} indgange:",
+          "nl": "<h3>Ingangen</h3>Dit gebouw heeft {_entrances_count} ingangen:"
         },
         "after": {
           "en": "{_entrances_count_without_width_count} entrances don't have width information yet",
           "de": "{_entrances_count_without_width_count} Eingänge haben keine Angaben zur Breite",
-          "da": "{_entrances_count_without_width_count} indgange har endnu ikke oplysninger om bredde"
+          "da": "{_entrances_count_without_width_count} indgange har endnu ikke oplysninger om bredde",
+          "nl": "{_entrances_count_without_width_count} ingangen hebben nog geen informatie over de breedte"
         },
         "special": {
           "type": "multi",
@@ -127,7 +129,8 @@
           "then": {
             "en": "No entrance has been marked",
             "de": "Es wurde kein Eingang markiert",
-            "da": "Der er ikke markeret nogen indgang"
+            "da": "Der er ikke markeret nogen indgang",
+            "nl": "Geen ingang is gemarkeerd"
           }
         },
         {
@@ -135,7 +138,8 @@
           "then": {
             "en": "None of the {_entrance_count} entrances have width information yet",
             "de": "Keiner der {_entrance_count} Eingänge hat bisher Angaben zur Breite",
-            "da": "Ingen af {_entrance_count}-indgangene har oplysninger om bredde endnu"
+            "da": "Ingen af {_entrance_count}-indgangene har oplysninger om bredde endnu",
+            "nl": "Geen van de {_entrance_count} ingangen hebben al informatie over de breedte"
           }
         }
       ]

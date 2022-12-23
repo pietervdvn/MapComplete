@@ -145,15 +145,18 @@
           "key": "tactile_writing:braille",
           "question": {
             "en": "In which languages does this elevator have tactile writing (braille)?",
-            "de": "In welchen Sprachen hat der Aufzug taktile Schrift (Braille)?"
+            "de": "In welchen Sprachen hat der Aufzug taktile Schrift (Braille)?",
+            "nl": "In welke talen heeft deze lift voelbaar schrift (braille)?"
           },
           "render_list_item": {
             "en": "This elevator has tactile writing in {language():font-bold}",
-            "de": "Der Aufzug hat taktile Schrift in {language():font-bold}"
+            "de": "Der Aufzug hat taktile Schrift in {language():font-bold}",
+            "nl": "Deze lift heeft voelbaar schrift in het {language():font-bold}"
           },
           "render_single_language": {
             "en": "This elevator has tactile writing in {language():font-bold}",
-            "de": "Der Aufzug hat taktile Schrift in {language():font-bold}"
+            "de": "Der Aufzug hat taktile Schrift in {language():font-bold}",
+            "nl": "Deze lift heeft voelbaar schrift in het {language():font-bold}"
           }
         }
       }

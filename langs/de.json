@@ -913,7 +913,7 @@
         "inviteToSplit": "Die Straße in Abschnitte teilen. Dadurch können je Abschnitt unterschiedliche Eigenschaften angegeben werden.",
         "loginToSplit": "Anmeldung erforderlich, um Straßen zu teilen",
         "split": "Teilen",
-        "splitTitle": "Auf der Karte auswählen, wo die Straße geteilt werden soll"
+        "splitTitle": "Wähle auf der Karte aus, wo sich die Eigenschaften dieser Straße ändern"
     },
     "translations": {
         "activateButton": "MapComplete übersetzen",
@@ -924,6 +924,15 @@
         "isTranslator": "Der Übersetzungsmodus ist aktiv, da Ihr Benutzername mit dem Namen eines früheren Übersetzers übereinstimmt",
         "missing": "{count} nicht übersetzte Zeichenfolgen",
         "notImmediate": "Die Übersetzung wird nicht direkt aktualisiert. Dies dauert in der Regel ein paar Tage"
+    },
+    "userinfo": {
+        "gotoInbox": "Öffnen Sie Ihren Posteingang",
+        "gotoSettings": "Gehen Sie zu Ihren Einstellungen auf OpenStreetMap.org",
+        "moveToHome": "Verschieben Sie die Karte an Ihren Heimatstandort",
+        "newMessages": "Sie haben neue Nachrichten",
+        "noDescription": "Sie haben noch keine Beschreibung in Ihrem Profil",
+        "noDescriptionCallToAction": "Eine Profilbeschreibung hinzufügen",
+        "welcome": "Willkommen {user}"
     },
     "validation": {
         "color": {

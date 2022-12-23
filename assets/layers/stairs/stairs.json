@@ -7,7 +7,8 @@
   },
   "description": {
     "en": "Layer showing stairs and escalators",
-    "de": "Ebene mit Treppen und Rolltreppen"
+    "de": "Ebene mit Treppen und Rolltreppen",
+    "nl": "Laag met trappen en roltrappen"
   },
   "title": {
     "render": {
@@ -76,21 +77,24 @@
       "condition": "handrail=yes",
       "question": {
         "en": "Do these stairs have tactile writing on the handrail?",
-        "de": "Hat die Treppe eine taktile Schrift am Handlauf?"
+        "de": "Hat die Treppe eine taktile Schrift am Handlauf?",
+        "nl": "Heeft deze trap voelbaar schrift op de leuning?"
       },
       "mappings": [
         {
           "if": "tactile_writing=yes",
           "then": {
             "en": "There is tactile writing on the handrail",
-            "de": "Am Handlauf gibt es taktile Schrift"
+            "de": "Am Handlauf gibt es taktile Schrift",
+            "nl": "Er is voelbaar schrift op de leuning"
           }
         },
         {
           "if": "tactile_writing=no",
           "then": {
             "en": "There is no tactile writing on the handrail",
-            "de": "Am Handlauf gibt es keine taktile Schrift"
+            "de": "Am Handlauf gibt es keine taktile Schrift",
+            "nl": "Er is geen voelbaar schrift op de leuning"
           }
         }
       ]
@@ -104,15 +108,18 @@
           "key": "tactile_writing:braille",
           "question": {
             "en": "In which languages is there tactile writing (braille) for navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
-            "de": "In welchen Sprachen gibt es taktile Schrift (Braille) für die Navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
+            "de": "In welchen Sprachen gibt es taktile Schrift (Braille) für die Navigation? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
+            "nl": "In welke talen is er voelbaar schrift (braille) voor navigatie? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />"
           },
           "render_list_item": {
             "en": "These stairs have tactile writing in {language():font-bold}",
-            "de": "Die Treppe hat taktile Schrift in {language():font-bold}"
+            "de": "Die Treppe hat taktile Schrift in {language():font-bold}",
+            "nl": "Deze trap heeft voelbaar schrijft in {language():font-bold}"
           },
           "render_single_language": {
             "en": "These stairs have tactile writing in {language():font-bold}",
-            "de": "Die Treppe hat taktile Schrift in {language():font-bold}"
+            "de": "Die Treppe hat taktile Schrift in {language():font-bold}",
+            "nl": "Deze trap heeft voelbaar schrijft in {language():font-bold}"
           }
         }
       }

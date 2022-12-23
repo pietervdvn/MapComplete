@@ -890,7 +890,7 @@
         "inviteToSplit": "Knip deze weg in kleinere segmenten (om andere eigenschappen per segment toe te kennen)",
         "loginToSplit": "Je moet aangemeld zijn om een weg te knippen",
         "split": "Knip weg",
-        "splitTitle": "Duid op de kaart aan waar de weg geknipt moet worden"
+        "splitTitle": "Duid op de kaart aan waar de eigenschappen van de weg veranderen"
     },
     "translations": {
         "activateButton": "Help met het vertalen van MapComplete",
@@ -901,6 +901,15 @@
         "isTranslator": "Vertaalmode is actief: je gebruikersnaam is dezelfde als van een vertaler. We gaan er dus vanuit dat jij die vertaler bent",
         "missing": "{count} niet-vertaalde teksten",
         "notImmediate": "Vertalingen worden niet onmiddelijk geupdate. Dit duurt gemiddeld enkele dagen"
+    },
+    "userinfo": {
+        "gotoInbox": "Open je inbox",
+        "gotoSettings": "Ga naar je instellingen op OpenStreetMap.org",
+        "moveToHome": "Beweeg de kaart naar je thuislocatie",
+        "newMessages": "je hebt nieuwe berichten",
+        "noDescription": "Je hebt nog een beschrijving op je profiel",
+        "noDescriptionCallToAction": "Voeg een profielbeschrijving toe",
+        "welcome": "Welkom {user}"
     },
     "validation": {
         "color": {

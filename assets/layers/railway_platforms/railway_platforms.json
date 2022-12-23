@@ -1,20 +1,28 @@
 {
   "id": "railway_platforms",
   "name": {
-    "en": "Railway Platforms"
+    "en": "Railway Platforms",
+    "de": "Bahnsteige",
+    "nl": "Treinperrons"
   },
   "description": {
-    "en": "Find every platform in the station, and the train routes that use them."
+    "en": "Find every platform in the station, and the train routes that use them.",
+    "de": "Finden Sie alle Bahnsteige im Bahnhof und die Zugstrecken, die sie benutzen.",
+    "nl": "Vind elk perron in het station, en de routes die ze gebruiken."
   },
   "title": {
     "render": {
-      "en": "Platform"
+      "en": "Platform",
+      "de": "Bahnsteig",
+      "nl": "Perron"
     },
     "mappings": [
       {
         "if": "ref~*",
         "then": {
-          "en": "Platform {ref}"
+          "en": "Platform {ref}",
+          "de": "Bahnsteig {ref}",
+          "nl": "Perron {ref}"
         }
       }
     ]
@@ -31,17 +39,23 @@
     {
       "id": "ref",
       "question": {
-        "en": "What is the number for this platform?"
+        "en": "What is the number for this platform?",
+        "de": "Wie lautet die Nummer dieses Bahnsteigs?",
+        "nl": "Wat is het nummer van dit perron?"
       },
       "freeform": {
         "key": "ref",
         "type": "string",
         "placeholder": {
-          "en": "Platform number"
+          "en": "Platform number",
+          "de": "Bahnsteignummer",
+          "nl": "Perronnummer"
         }
       },
       "render": {
-        "en": "Platform {ref}"
+        "en": "Platform {ref}",
+        "de": "Bahnsteig {ref}",
+        "nl": "Perron {ref}"
       }
     },
     "level"

@@ -1621,14 +1621,6 @@
                 },
                 "question": "Это дерево вечнозелёное или листопадное?"
             },
-            "tree-height": {
-                "mappings": {
-                    "0": {
-                        "then": "Высота: {height}&nbsp;м"
-                    }
-                },
-                "render": "Высота: {height}"
-            },
             "tree_node-name": {
                 "mappings": {
                     "0": {

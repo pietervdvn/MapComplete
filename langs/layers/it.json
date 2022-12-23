@@ -2411,14 +2411,6 @@
                 },
                 "question": "Quanto significativo è questo albero? Scegli la prima risposta che corrisponde."
             },
-            "tree-height": {
-                "mappings": {
-                    "0": {
-                        "then": "Altezza: {height}&nbsp;m"
-                    }
-                },
-                "render": "Altezza: {height}"
-            },
             "tree-heritage": {
                 "mappings": {
                     "0": {

@@ -185,6 +185,9 @@
             }
         },
         "tagRenderings": {
+            "atm-in-bank-notice": {
+                "render": "This ATM is located in or near a bank"
+            },
             "brand": {
                 "freeform": {
                     "placeholder": "Brand name"
@@ -8016,6 +8019,14 @@
             }
         },
         "tagRenderings": {
+            "circumference": {
+                "question": "What is the circumference of the tree trunk?<p class='subtle'>This is measured at a height of 1.30m</p>",
+                "render": "The tree trunk has a circumference of {circumference} meter"
+            },
+            "height": {
+                "question": "What is the height of this tree?",
+                "render": "This tree is {height} meter high"
+            },
             "tree-decidouous": {
                 "mappings": {
                     "0": {
@@ -8055,14 +8066,6 @@
                     }
                 },
                 "question": "How significant is this tree? Choose the first answer that applies."
-            },
-            "tree-height": {
-                "mappings": {
-                    "0": {
-                        "then": "Height: {height}&nbsp;m"
-                    }
-                },
-                "render": "Height: {height}"
             },
             "tree-heritage": {
                 "mappings": {

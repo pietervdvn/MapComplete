@@ -142,6 +142,20 @@
             "artwork_subject": {
                 "question": "Was zeigt dieses Kunstwerk?",
                 "render": "Das Kunstwerk zeigt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+            },
+            "doubles_as_bench": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieses Kunstwerk dient auch als Sitzbank"
+                    },
+                    "1": {
+                        "then": "Dieses Kunstwerk dient nicht als Sitzbank"
+                    },
+                    "2": {
+                        "then": "Dieses Kunstwerk dient nicht als Sitzbank"
+                    }
+                },
+                "question": "Dient dieses Kunstwerk auch als Sitzbank?"
             }
         },
         "title": {
@@ -151,6 +165,42 @@
                 }
             },
             "render": "Kunstwerk"
+        }
+    },
+    "atm": {
+        "description": "Geldautomaten zum Geld abheben",
+        "name": "Geldautomaten",
+        "presets": {
+            "0": {
+                "title": "ein Geldautomat"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Markenname"
+                },
+                "question": "Von welcher Marke ist dieser Geldautomat?",
+                "render": "Die Marke dieses Geldautomaten ist {brand}"
+            },
+            "name": {
+                "render": "Der Name dieses Geldautomaten ist {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Betreiber"
+                },
+                "question": "Welches Unternehmen betreibt den Geldautomaten?",
+                "render": "Der Geldautomat wird von {operator} betrieben"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{brand} Geldautomat"
+                }
+            },
+            "render": "Geldautomat"
         }
     },
     "barrier": {
@@ -256,6 +306,28 @@
     },
     "bench": {
         "description": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, … dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "ist ein Denkmal"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Mit und ohne Rückenlehne"
+                    },
+                    "1": {
+                        "question": "Hat eine Rückenlehne"
+                    },
+                    "2": {
+                        "question": "Hat keine Rückenlehne"
+                    }
+                }
+            }
+        },
         "name": "Sitzbänke",
         "presets": {
             "0": {
@@ -263,6 +335,17 @@
             }
         },
         "tagRenderings": {
+            "bench-artwork": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank hat ein integriertes Kunstwerk"
+                    },
+                    "1": {
+                        "then": "Diese Bank hat kein integriertes Kunstwerk"
+                    }
+                },
+                "question": "Hat diese Bank ein künstlerisches Element? <div class='subtle text-lg'>Z.B. hat es ein integriertes Gemälde, eine Statue oder eine andere nicht triviale, kreative Arbeit</div>"
+            },
             "bench-backrest": {
                 "mappings": {
                     "0": {
@@ -308,6 +391,18 @@
                 "question": "In welche Richtung schaut man, wenn man auf der Bank sitzt?",
                 "render": "Wenn man auf der Bank sitzt, schaut man in Richtung {direction}°."
             },
+            "bench-inscription": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank hat keine Inschrift"
+                    },
+                    "1": {
+                        "then": "Diese Bank hat <span class='subtle'>(wahrscheinlich)</span> keine Inschrift"
+                    }
+                },
+                "question": "Hat diese Bank eine Inschrift? <div class='subtle text-lg'>Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ... </div>",
+                "render": "Diese Bank hat folgende Inschrift:<br/><p><i>{inscription}</i></p>"
+            },
             "bench-material": {
                 "mappings": {
                     "0": {
@@ -332,11 +427,32 @@
                 "question": "Aus welchem Material ist die Sitzfläche der Bank?",
                 "render": "Material: {material}"
             },
+            "bench-memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank ist ein Denkmal für jemanden oder etwas"
+                    },
+                    "1": {
+                        "then": "Diese Bank ist <b>kein</b> Denkmal für jemanden oder etwas"
+                    }
+                },
+                "question": "Dient diese Bank als Denkmal für jemanden oder etwas?"
+            },
             "bench-seats": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank hat keine getrennten Sitze"
+                    }
+                },
                 "question": "Wie viele Sitzplätze hat diese Bank?",
                 "render": "Die Sitzbank hat {seats} Sitzplätze"
             },
             "bench-survey:date": {
+                "mappings": {
+                    "0": {
+                        "then": "Heute geprüft!"
+                    }
+                },
                 "question": "Wann wurde diese Bank zuletzt überprüft?",
                 "render": "Diese Bank wurde zuletzt überprüft am {survey:date}"
             }
@@ -346,6 +462,18 @@
         }
     },
     "bench_at_pt": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "Diese Bushaltestelle wird nicht mehr genutzt"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Diese Bushaltestelle hat keine Bank (es gab nie eine oder sie wurde entfernt)"
+                }
+            }
+        },
         "description": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen",
         "name": "Sitzbänke an Haltestellen",
         "tagRenderings": {
@@ -1295,6 +1423,33 @@
                 }
             },
             "render": "Kneipe"
+        }
+    },
+    "car_rental": {
+        "description": "Orte, an denen Sie ein Auto mieten können",
+        "name": "Autovermietung",
+        "presets": {
+            "0": {
+                "description": "Ein Ort, an dem Sie ein Auto mieten können",
+                "title": "eine Autovermietung"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Name der Autovermietung"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Diese Autovermietung hat keinen Namen"
+                    }
+                },
+                "question": "Wie lautet der Name dieser Autovermietung?",
+                "render": "Der Name der Autovermietung lautet {name}"
+            }
+        },
+        "title": {
+            "render": "Autovermietung"
         }
     },
     "charging_station": {
@@ -3705,6 +3860,9 @@
             },
             "3": {
                 "options": {
+                    "0": {
+                        "question": "Mit und ohne Bilder"
+                    },
                     "1": {
                         "question": "Hat mindestens ein Bild"
                     },
@@ -6055,6 +6213,27 @@
             "render": "Bücherschrank"
         }
     },
+    "railway_platforms": {
+        "description": "Finden Sie alle Bahnsteige im Bahnhof und die Zugstrecken, die sie benutzen.",
+        "name": "Bahnsteige",
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Bahnsteignummer"
+                },
+                "question": "Wie lautet die Nummer dieses Bahnsteigs?",
+                "render": "Bahnsteig {ref}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bahnsteig {ref}"
+                }
+            },
+            "render": "Bahnsteig"
+        }
+    },
     "rainbow_crossings": {
         "description": "Eine Ebene mit Fußgängerüberwegen in Regenbogenfarben",
         "name": "Fußgängerüberwege in Regenbogenfarben",
@@ -6422,6 +6601,9 @@
         "title": {
             "render": "Schule <i>{name}</i>"
         }
+    },
+    "selected_element": {
+        "description": "Hebt das aktuell ausgewählte Element hervor. Überschreiben Sie diese Ebene, um unterschiedliche Farben zu erhalten"
     },
     "shelter": {
         "description": "Eine Ebene, die verschiedene Bauformen von Unterständen zeigt",
@@ -7185,6 +7367,61 @@
             }
         }
     },
+    "ticket_machine": {
+        "description": "Fahrkartenautomaten für ÖPNV-Tickets finden",
+        "name": "Fahrkartenautomaten",
+        "presets": {
+            "0": {
+                "title": "einen Fahrkartenautomat"
+            }
+        },
+        "tagRenderings": {
+            "operator": {
+                "freeform": {
+                    "placeholder": "Name des Betreibers"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Niederländische Eisenbahn (NS)"
+                    }
+                },
+                "question": "Wer ist der Betreiber dieses Fahrkartenautomaten?",
+                "render": "Dieser Fahrkartenautomat wird betrieben von {operator}"
+            }
+        },
+        "title": {
+            "render": "Fahrkartenautomat"
+        }
+    },
+    "ticket_validator": {
+        "description": "Finden Sie Fahrkartenentwerter, um Tickets für den öffentlichen Nahverkehr zu entwerten",
+        "name": "Fahrkartenentwerter",
+        "presets": {
+            "0": {
+                "title": "einen Fahrkartenentwerter"
+            }
+        },
+        "tagRenderings": {
+            "barrier": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Fahrscheinentwerter ist Teil einer Zugangsbarriere"
+                    }
+                },
+                "render": "Dieser Fahrkartenentwerter ist Teil einer Zugangsbarriere vom Typ {barrier}"
+            },
+            "validator-operator": {
+                "freeform": {
+                    "placeholder": "Name des Betreibers"
+                },
+                "question": "Wer ist der Betreiber dieses Fahrkartenentwerters?",
+                "render": "Dieser Fahrkartenentwerter wird betrieben von {operator}"
+            }
+        },
+        "title": {
+            "render": "Fahrkartenentwerter"
+        }
+    },
     "toilet": {
         "description": "Eine Ebene mit (öffentlichen) Toiletten",
         "filter": {
@@ -7699,6 +7936,14 @@
             }
         },
         "tagRenderings": {
+            "circumference": {
+                "question": "Wie groß ist der Umfang des Baumstammes?<p class='subtle'>Dies wird in einer Höhe von 1,30 m gemessen</p>",
+                "render": "Der Baumstamm hat einen Umfang von {circumference} Meter"
+            },
+            "height": {
+                "question": "Wie hoch ist dieser Baum?",
+                "render": "Dieser Baum ist {height} Meter hoch"
+            },
             "tree-decidouous": {
                 "mappings": {
                     "0": {
@@ -7738,14 +7983,6 @@
                     }
                 },
                 "question": "Wie bedeutsam ist dieser Baum? Wählen Sie die erste Antwort, die zutrifft."
-            },
-            "tree-height": {
-                "mappings": {
-                    "0": {
-                        "then": "Höhe: {height}&nbsp;m"
-                    }
-                },
-                "render": "Höhe: {height}"
             },
             "tree-heritage": {
                 "mappings": {

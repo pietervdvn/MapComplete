@@ -2677,14 +2677,6 @@
                 },
                 "question": "Hvor vigtigt er dette træ? Vælg det første svar, der passer."
             },
-            "tree-height": {
-                "mappings": {
-                    "0": {
-                        "then": "Højde: {height}&nbsp;m"
-                    }
-                },
-                "render": "Højde: {height}"
-            },
             "tree-heritage": {
                 "mappings": {
                     "1": {

@@ -153,6 +153,42 @@
             "render": "Kunstwerk"
         }
     },
+    "atm": {
+        "description": "Geldautomaten om geld op te nemen",
+        "name": "Geldautomaten",
+        "presets": {
+            "0": {
+                "title": "een geldautomaat"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Merknaam"
+                },
+                "question": "Van welk merk is deze geldautomaat?",
+                "render": "Het merk van deze geldautomaat is {brand}"
+            },
+            "name": {
+                "render": "De naam van deze geldautomaat is {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Beheerder"
+                },
+                "question": "Welk bedrijf beheert deze geldautomaat?",
+                "render": "Deze geldautomaat wordt beheerd door {operator}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{brand} Geldautomaat"
+                }
+            },
+            "render": "Geldautomaat"
+        }
+    },
     "barrier": {
         "description": "Hindernissen tijdens het fietsen, zoals paaltjes en fietshekjes",
         "name": "Barrières",
@@ -3496,6 +3532,15 @@
                     }
                 },
                 "question": "Werkt deze lift?"
+            },
+            "tactile_writing_language": {
+                "render": {
+                    "special": {
+                        "question": "In welke talen heeft deze lift voelbaar schrift (braille)?",
+                        "render_list_item": "Deze lift heeft voelbaar schrift in het {language():font-bold}",
+                        "render_single_language": "Deze lift heeft voelbaar schrift in het {language():font-bold}"
+                    }
+                }
             }
         },
         "title": {
@@ -5870,6 +5915,27 @@
             "render": "Boekenruilkast"
         }
     },
+    "railway_platforms": {
+        "description": "Vind elk perron in het station, en de routes die ze gebruiken.",
+        "name": "Treinperrons",
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Perronnummer"
+                },
+                "question": "Wat is het nummer van dit perron?",
+                "render": "Perron {ref}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Perron {ref}"
+                }
+            },
+            "render": "Perron"
+        }
+    },
     "rainbow_crossings": {
         "presets": {
             "0": {
@@ -6535,6 +6601,7 @@
         }
     },
     "stairs": {
+        "description": "Laag met trappen en roltrappen",
         "name": "Trappen",
         "tagRenderings": {
             "conveying": {
@@ -6586,6 +6653,26 @@
                     }
                 },
                 "question": "Is er een helling bij deze trap?"
+            },
+            "tactile_writing": {
+                "mappings": {
+                    "0": {
+                        "then": "Er is voelbaar schrift op de leuning"
+                    },
+                    "1": {
+                        "then": "Er is geen voelbaar schrift op de leuning"
+                    }
+                },
+                "question": "Heeft deze trap voelbaar schrift op de leuning?"
+            },
+            "tactile_writing_language": {
+                "render": {
+                    "special": {
+                        "question": "In welke talen is er voelbaar schrift (braille) voor navigatie? <img src='./assets/layers/stairs/Braille_stairs.jpg' style='height: 300px; width: auto; display: block;' />",
+                        "render_list_item": "Deze trap heeft voelbaar schrijft in {language():font-bold}",
+                        "render_single_language": "Deze trap heeft voelbaar schrijft in {language():font-bold}"
+                    }
+                }
             }
         },
         "title": {
@@ -6917,12 +7004,36 @@
         }
     },
     "ticket_machine": {
+        "description": "Zoek kaartautomaten voor het openbaar vervoer",
+        "name": "Kaartautomaten",
+        "presets": {
+            "0": {
+                "title": "een kaartautomaat"
+            }
+        },
         "tagRenderings": {
             "operator": {
+                "freeform": {
+                    "placeholder": "Naam van de beheerder"
+                },
                 "mappings": {
                     "0": {
                         "then": "Nederlandse Spoorwegen (NS)"
                     }
+                },
+                "question": "Wie is de beheerder van deze kaartautomaat?",
+                "render": "Deze kaartautomaat wordt beheerd door {operator}"
+            }
+        },
+        "title": {
+            "render": "Kaartautomaat"
+        }
+    },
+    "ticket_validator": {
+        "tagRenderings": {
+            "validator-operator": {
+                "freeform": {
+                    "placeholder": "Naam van de beheerder"
                 }
             }
         }
@@ -7451,14 +7562,6 @@
                 },
                 "question": "Hoe significant is deze boom? Kies het eerste antwoord dat van toepassing is."
             },
-            "tree-height": {
-                "mappings": {
-                    "0": {
-                        "then": "Hoogte: {height}&nbsp;m"
-                    }
-                },
-                "render": "Hoogte: {height}"
-            },
             "tree-heritage": {
                 "mappings": {
                     "0": {
@@ -7584,7 +7687,17 @@
         "description": "Speciale ingebouwde laag voor alle muren en gebouwen. Deze laag is nuttig in voorkeuzen voor objecten die tegen muren geplaatst kunnen worden (bv. AEDs, brievenbussen, ingangen, adressen, beveiligingscamera's,…). Deze laag is standaard onzichtbaar en niet in te schakelen door de gebruiker.",
         "tagRenderings": {
             "entrance_info": {
+                "mappings": {
+                    "0": {
+                        "then": "Geen ingang is gemarkeerd"
+                    },
+                    "1": {
+                        "then": "Geen van de {_entrance_count} ingangen hebben al informatie over de breedte"
+                    }
+                },
                 "render": {
+                    "after": "{_entrances_count_without_width_count} ingangen hebben nog geen informatie over de breedte",
+                    "before": "<h3>Ingangen</h3>Dit gebouw heeft {_entrances_count} ingangen:",
                     "special": {
                         "tagrendering": "Een <a href='#{id}'>ingang</a> van {canonical(width)}"
                     }

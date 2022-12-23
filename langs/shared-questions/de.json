@@ -1,5 +1,34 @@
 {
     "shared_questions": {
+        "denominations-coins": {
+            "mappings": {
+                "0": {
+                    "then": "1-Cent-Münzen werden akzeptiert"
+                },
+                "1": {
+                    "then": "2-Cent-Münzen werden akzeptiert"
+                },
+                "2": {
+                    "then": "5-Cent-Münzen werden akzeptiert"
+                },
+                "3": {
+                    "then": "10-Cent-Münzen werden akzeptiert"
+                },
+                "4": {
+                    "then": "20-Cent-Münzen werden akzeptiert"
+                },
+                "5": {
+                    "then": "50-Cent-Münzen werden akzeptiert"
+                },
+                "6": {
+                    "then": "1-Euro-Münzen werden akzeptiert"
+                },
+                "7": {
+                    "then": "2-Euro-Münzen werden akzeptiert"
+                }
+            },
+            "question": "Mit welchen Münzen kann man hier bezahlen?"
+        },
         "description": {
             "question": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.<br/><span style='font-size: small'>Bitte keine bereits erhobenen Informationen.</span>"
         },
@@ -146,6 +175,24 @@
                     },
                     "1": {
                         "then": "Die Bezahlung erfolgt mit einer Mitgliedskarte"
+                    }
+                }
+            }
+        },
+        "payment-options-split": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Münzen werden hier akzeptiert"
+                    },
+                    "1": {
+                        "then": "Geldscheine werden hier akzeptiert"
+                    },
+                    "2": {
+                        "then": "Debitkarten werden hier akzeptiert"
+                    },
+                    "3": {
+                        "then": "Kreditkarten werden hier akzeptiert"
                     }
                 }
             }

@@ -40,7 +40,8 @@ class UserInformationMainPanel extends Combine {
     constructor(
         osmConnection: OsmConnection,
         locationControl: UIEventSource<Loc>,
-        layout: LayoutConfig
+        layout: LayoutConfig,
+        isOpened: UIEventSource<boolean>
     ) {
         const t = Translations.t.userinfo
         const imgSize = "h-6 w-6"
@@ -50,8 +51,8 @@ class UserInformationMainPanel extends Combine {
                 ud.map((ud) => {
                     if (!ud?.loggedIn) {
                         // Not logged in
-                        return new SubtleButton(Svg.login_svg(), "Login", { imgSize }).onClick(
-                            osmConnection.AttemptLogin
+                        return new SubtleButton(Svg.login_svg(), "Login", { imgSize }).onClick(() =>
+                            osmConnection.AttemptLogin()
                         )
                     }
 
@@ -96,6 +97,7 @@ class UserInformationMainPanel extends Combine {
                                 return
                             }
                             locationControl.setData({ ...home, zoom: 16 })
+                            isOpened.setData(false)
                         })
                     }
 
@@ -127,7 +129,9 @@ class UserInformationMainPanel extends Combine {
                         new ImportViewerLinks(osmConnection),
                         new SubtleButton(Svg.logout_svg(), Translations.t.general.logout, {
                             imgSize,
-                        }).onClick(() => {osmConnection.LogOut()}),
+                        }).onClick(() => {
+                            osmConnection.LogOut()
+                        }),
                     ])
                 })
             ).SetClass("flex flex-col"),
@@ -141,7 +145,7 @@ export default class UserInformationPanel extends ScrollableFullScreen {
         osmConnection: OsmConnection
         locationControl: UIEventSource<Loc>
     }) {
-        const t = Translations.t.general
+        const isOpened = new UIEventSource<boolean>(false)
         super(
             () => {
                 return new VariableUiElement(
@@ -152,10 +156,12 @@ export default class UserInformationPanel extends ScrollableFullScreen {
                 return new UserInformationMainPanel(
                     state.osmConnection,
                     state.locationControl,
-                    state.layoutToUse
+                    state.layoutToUse,
+                    isOpened
                 )
             },
-            "userinfo"
+            "userinfo",
+            isOpened
         )
     }
 }

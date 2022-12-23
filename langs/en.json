@@ -913,7 +913,7 @@
         "inviteToSplit": "Split this road in smaller segments. This allows to give different properties to parts of the road.",
         "loginToSplit": "You must be logged in to split a road",
         "split": "Split",
-        "splitTitle": "Choose on the map where to split this road"
+        "splitTitle": "Choose on the map where the properties of this road change"
     },
     "translations": {
         "activateButton": "Help translate MapComplete",

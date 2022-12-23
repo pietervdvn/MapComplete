@@ -7,6 +7,10 @@
         "description": "Eine freie Karte mit Statuen, Büsten, Graffitis und anderen Kunstwerken auf der ganzen Welt",
         "title": "Freie Kunstkarte"
     },
+    "atm": {
+        "description": "Diese Karte zeigt Geldautomaten zum Abheben oder Einzahlen von Geld",
+        "title": "Geldautomaten"
+    },
     "bag": {
         "description": "Dieses Thema hilft beim Importieren von BAG-Daten",
         "layers": {
@@ -1087,6 +1091,48 @@
         },
         "shortDescription": "Karte mit Sporteinrichtungen.",
         "title": "Sport"
+    },
+    "stations": {
+        "description": "Bahnhofsdetails ansehen, bearbeiten und hinzufügen",
+        "layers": {
+            "3": {
+                "description": "Ebene mit Bahnhöfen",
+                "name": "Bahnhöfe"
+            },
+            "15": {
+                "description": "Anzeigen der Züge, die von diesem Bahnhof abfahren",
+                "name": "Abfahrtstafeln",
+                "presets": {
+                    "0": {
+                        "description": "Fügen Sie eine Tafel hinzu, auf der Abfahrten angezeigt werden, entweder elektronisch oder in Papierform",
+                        "title": "eine Abfahrtstafel"
+                    }
+                },
+                "tagRenderings": {
+                    "type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dies ist eine Abfahrtstafel eines unbekannten Typs"
+                            },
+                            "1": {
+                                "then": "Dies ist eine elektronische Tafel, die nächste Abfahrten in Echtzeit anzeigt"
+                            },
+                            "2": {
+                                "then": "Dies ist ein Papierfahrplan"
+                            },
+                            "3": {
+                                "then": "Es gibt ein Schild, das den Takt der Züge anzeigt"
+                            }
+                        },
+                        "question": "Was ist das für eine Abfahrtstafel?"
+                    }
+                },
+                "title": {
+                    "render": "Abfahrtstafel"
+                }
+            }
+        },
+        "title": "Bahnhöfe"
     },
     "street_lighting": {
         "description": "Eine Karte für alles zum Thema Straßenbeleuchtung",
