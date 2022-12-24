@@ -26,7 +26,7 @@ export class DownloadPanel extends Toggle {
         currentBounds: UIEventSource<BBox>
     }) {
         const t = Translations.t.general.download
-        const name = State.state.layoutToUse.id
+        const name = state.layoutToUse.id
 
         const includeMetaToggle = new CheckBoxes([t.includeMetaData])
         const metaisIncluded = includeMetaToggle.GetValue().map((selected) => selected.length > 0)

@@ -20,6 +20,7 @@ import FilteredLayer from "../../Models/FilteredLayer"
 import CopyrightPanel from "./CopyrightPanel"
 import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline"
 import PrivacyPolicy from "./PrivacyPolicy"
+import Hotkeys from "../Base/Hotkeys"
 
 export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
     public static MoreThemesTabIndex = 1
@@ -126,6 +127,7 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
                     osmcha_link: Utils.OsmChaLinkFor(7),
                 }),
                 "<br/>Version " + Constants.vNumber,
+                Hotkeys.generateDocumentationDynamic(),
             ]).SetClass("link-underline"),
         })
 

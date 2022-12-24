@@ -4,6 +4,7 @@ import { UIEventSource } from "../../Logic/UIEventSource"
 import GeoLocationHandler from "../../Logic/Actors/GeoLocationHandler"
 import { BBox } from "../../Logic/BBox"
 import Loc from "../../Models/Loc"
+import Hotkeys from "../Base/Hotkeys"
 
 /**
  * Displays an icon depending on the state of the geolocation.
@@ -70,7 +71,7 @@ export class GeolocationControl extends VariableUiElement {
             )
         )
 
-        this.onClick(async () => {
+        async function handleClick() {
             if (geolocationState.permission.data !== "granted") {
                 await geolocationState.requestPermission()
             }
@@ -108,7 +109,14 @@ export class GeolocationControl extends VariableUiElement {
             }
 
             lastClick.setData(new Date())
-        })
+        }
+
+        this.onClick(handleClick)
+        Hotkeys.RegisterHotkey(
+            { nomod: "L" },
+            "Pan the map to the current location or zoom the map to the current location. Requests geopermission",
+            handleClick
+        )
 
         lastClick.addCallbackAndRunD((_) => {
             window.setTimeout(() => {

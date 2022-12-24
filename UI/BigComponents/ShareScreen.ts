@@ -80,7 +80,7 @@ export default class ShareScreen extends Combine {
             includeCurrentBackground.GetValue().map(
                 (includeBG) => {
                     if (includeBG) {
-                        return "background=" + currentLayer.data.id
+                        return "background=" + currentLayer.data?.id
                     } else {
                         return null
                     }
@@ -168,7 +168,7 @@ export default class ShareScreen extends Combine {
                 return `<span class='literal-code iframe-code-block'>
                          &lt;iframe src="${url}" allow="geolocation" width="100%" height="100%" style="min-width: 250px; min-height: 250px" title="${
                     layout.title?.txt ?? "MapComplete"
-                } with MapComplete"&gt;&lt;/iframe&gt 
+                } with MapComplete"&gt;&lt;/iframe&gt
                     </span>`
             })
         )

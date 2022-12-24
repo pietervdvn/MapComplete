@@ -31,6 +31,8 @@ import { LoginToggle } from "./Popup/LoginButton"
 import { FixedUiElement } from "./Base/FixedUiElement"
 import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
 import { GeoLocationState } from "../Logic/State/GeoLocationState"
+import Hotkeys from "./Base/Hotkeys"
+import AvailableBaseLayers from "../Logic/Actors/AvailableBaseLayers"
 
 /**
  * The default MapComplete GUI initializer
@@ -60,6 +62,14 @@ export default class DefaultGUI {
         ) {
             Utils.LoadCustomCss(this.state.layoutToUse.customCss)
         }
+
+        Hotkeys.RegisterHotkey(
+            { shift: "O" },
+            "Switch to default Mapnik-OpenStreetMap background",
+            () => {
+                this.state.backgroundLayer.setData(AvailableBaseLayers.osmCarto)
+            }
+        )
 
         Utils.downloadJson("./service-worker-version")
             .then((data) => console.log("Service worker", data))
@@ -128,7 +138,7 @@ export default class DefaultGUI {
                     .SetStyle("left: calc( 50% - 15px )") // This is a bit hacky, yes I know!
             }
 
-            new StrayClickHandler(
+            StrayClickHandler.construct(
                 state,
                 addNewPoint,
                 hasPresets ? new AddNewMarker(state.filteredLayers) : noteMarker
@@ -151,6 +161,9 @@ export default class DefaultGUI {
     }
 
     private SetupMap() {
+        if (Utils.runningFromConsole) {
+            return
+        }
         const state = this.state
         const guiState = this.guiState
 
@@ -242,12 +255,14 @@ export default class DefaultGUI {
                 const search = new SearchAndGo(state).SetClass(
                     "shadow rounded-full h-min w-full overflow-hidden sm:max-w-sm pointer-events-auto"
                 )
-                document.addEventListener("keydown", function (event) {
-                    if (event.ctrlKey && event.code === "KeyF") {
+                Hotkeys.RegisterHotkey(
+                    { ctrl: "F" },
+                    "Select the search bar to search locations",
+                    () => {
                         search.focus()
-                        event.preventDefault()
                     }
-                })
+                )
+
                 return search
             }),
         ]).AttachTo("top-right")
@@ -256,7 +271,7 @@ export default class DefaultGUI {
         new RightControls(state, this.geolocationHandler).AttachTo("bottom-right")
 
         new CenterMessageBox(state).AttachTo("centermessage")
-        document.getElementById("centermessage").classList.add("pointer-events-none")
+        document?.getElementById("centermessage")?.classList?.add("pointer-events-none")
 
         // We have to ping the welcomeMessageIsOpened and other isOpened-stuff to activate the FullScreenMessage if needed
         for (const state of guiState.allFullScreenStates) {

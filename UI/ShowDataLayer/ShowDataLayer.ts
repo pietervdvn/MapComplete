@@ -17,7 +17,10 @@ export default class ShowDataLayer {
      */
     constructor(options: ShowDataLayerOptions & { layerToShow: LayerConfig }) {
         if (ShowDataLayer.actualContstructor === undefined) {
-            throw "Show data layer is called, but it isn't initialized yet. Call ` ShowDataLayer.actualContstructor = (options => new ShowDataLayerImplementation(options)) ` somewhere, e.g. in your init"
+            console.error(
+                "Show data layer is called, but it isn't initialized yet. Call ` ShowDataLayer.actualContstructor = (options => new ShowDataLayerImplementation(options)) ` somewhere, e.g. in your init"
+            )
+            return
         }
         ShowDataLayer.actualContstructor(options)
     }
