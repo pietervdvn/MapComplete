@@ -5,6 +5,7 @@ import Title from "./Title"
 import Table from "./Table"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import { VariableUiElement } from "./VariableUIElement"
+import doc = Mocha.reporters.doc
 
 export default class Hotkeys {
     private static readonly _docs: UIEventSource<
@@ -18,6 +19,11 @@ export default class Hotkeys {
             documentation: string
         }[]
     >([])
+
+    private static textElementSelected(): boolean {
+        console.log(document.activeElement)
+        return document?.activeElement?.tagName?.toLowerCase() === "input"
+    }
     public static RegisterHotkey(
         key: (
             | {
@@ -61,6 +67,10 @@ export default class Hotkeys {
             })
         } else if (key["shift"] !== undefined) {
             document.addEventListener(type, function (event) {
+                if (Hotkeys.textElementSelected()) {
+                    // A text element is selected, we don't do anything special
+                    return
+                }
                 if (event.shiftKey && event.key === keycode) {
                     action()
                     event.preventDefault()
@@ -75,6 +85,10 @@ export default class Hotkeys {
             })
         } else if (key["nomod"] !== undefined) {
             document.addEventListener(type, function (event) {
+                if (Hotkeys.textElementSelected()) {
+                    // A text element is selected, we don't do anything special
+                    return
+                }
                 if (event.key === keycode) {
                     action()
                     event.preventDefault()
