@@ -14,7 +14,7 @@ export default class RightControls extends Combine {
         geolocationHandler: GeoLocationHandler
     ) {
         const geolocationButton = new Toggle(
-            new MapControlButton(new GeolocationControl(geolocationHandler), {
+            new MapControlButton(new GeolocationControl(geolocationHandler, state), {
                 dontStyle: true,
             }).SetClass("p-1"),
             undefined,

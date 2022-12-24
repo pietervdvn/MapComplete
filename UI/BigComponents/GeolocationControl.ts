@@ -2,13 +2,21 @@ import { VariableUiElement } from "../Base/VariableUIElement"
 import Svg from "../../Svg"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import GeoLocationHandler from "../../Logic/Actors/GeoLocationHandler"
+import { BBox } from "../../Logic/BBox"
+import Loc from "../../Models/Loc"
 
 /**
  * Displays an icon depending on the state of the geolocation.
  * Will set the 'lock' if clicked twice
  */
 export class GeolocationControl extends VariableUiElement {
-    constructor(geolocationHandler: GeoLocationHandler) {
+    constructor(
+        geolocationHandler: GeoLocationHandler,
+        state: {
+            locationControl: UIEventSource<Loc>
+            currentBounds: UIEventSource<BBox>
+        }
+    ) {
         const lastClick = new UIEventSource<Date>(undefined)
         const lastClickWithinThreeSecs = lastClick.map((lastClick) => {
             if (lastClick === undefined) {
@@ -78,8 +86,20 @@ export class GeolocationControl extends VariableUiElement {
                 return
             }
 
-            // A location _is_ known! Let's zoom to this location
+            // A location _is_ known! Let's move to this location
+            const currentLocation = geolocationState.currentGPSLocation.data
+            const inBounds = state.currentBounds.data.contains([
+                currentLocation.longitude,
+                currentLocation.latitude,
+            ])
             geolocationHandler.MoveMapToCurrentLocation()
+            if (inBounds) {
+                const lc = state.locationControl.data
+                state.locationControl.setData({
+                    ...lc,
+                    zoom: lc.zoom + 3,
+                })
+            }
 
             if (lastClickWithinThreeSecs.data && geolocationState.permission.data === "granted") {
                 geolocationState.isLocked.setData(true)
