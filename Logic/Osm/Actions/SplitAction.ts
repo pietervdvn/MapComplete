@@ -16,6 +16,7 @@ export default class SplitAction extends OsmChangeAction {
     private readonly _splitPointsCoordinates: [number, number][] // lon, lat
     private _meta: { theme: string; changeType: "split" }
     private _toleranceInMeters: number
+    private _withNewCoordinates: (coordinates: [number, number][]) => void
 
     /**
      * Create a changedescription for splitting a point.
@@ -24,17 +25,20 @@ export default class SplitAction extends OsmChangeAction {
      * @param splitPointCoordinates: lon, lat
      * @param meta
      * @param toleranceInMeters: if a splitpoint closer then this amount of meters to an existing point, the existing point will be used to split the line instead of a new point
+     * @param withNewCoordinates: an optional callback which will leak the new coordinates of the original way
      */
     constructor(
         wayId: string,
         splitPointCoordinates: [number, number][],
         meta: { theme: string },
-        toleranceInMeters = 5
+        toleranceInMeters = 5,
+        withNewCoordinates?: (coordinates: [number, number][]) => void
     ) {
         super(wayId, true)
         this.wayId = wayId
         this._splitPointsCoordinates = splitPointCoordinates
         this._toleranceInMeters = toleranceInMeters
+        this._withNewCoordinates = withNewCoordinates
         this._meta = { ...meta, changeType: "split" }
     }
 
@@ -59,7 +63,7 @@ export default class SplitAction extends OsmChangeAction {
         const originalElement = <OsmWay>await OsmObject.DownloadObjectAsync(this.wayId)
         const originalNodes = originalElement.nodes
 
-        // First, calculate splitpoints and remove points close to one another
+        // First, calculate the splitpoints and remove points close to one another
         const splitInfo = this.CalculateSplitCoordinates(originalElement, this._toleranceInMeters)
         // Now we have a list with e.g.
         // [ { originalIndex: 0}, {originalIndex: 1, doSplit: true}, {originalIndex: 2}, {originalIndex: undefined, doSplit: true}, {originalIndex: 3}]
@@ -90,7 +94,7 @@ export default class SplitAction extends OsmChangeAction {
         }
 
         const changeDescription: ChangeDescription[] = []
-        // Let's create the new points as needed
+        // Let's create the new nodes as needed
         for (const element of splitInfo) {
             if (element.originalIndex >= 0) {
                 continue
@@ -114,17 +118,21 @@ export default class SplitAction extends OsmChangeAction {
         for (const wayPart of wayParts) {
             let isOriginal = wayPart === longest
             if (isOriginal) {
-                // We change the actual element!
+                // We change the existing way
                 const nodeIds = wayPart.map((p) => p.originalIndex)
+                const newCoordinates = wayPart.map((p) => p.lngLat)
                 changeDescription.push({
                     type: "way",
                     id: originalElement.id,
                     changes: {
-                        coordinates: wayPart.map((p) => p.lngLat),
+                        coordinates: newCoordinates,
                         nodes: nodeIds,
                     },
                     meta: this._meta,
                 })
+                if (this._withNewCoordinates) {
+                    this._withNewCoordinates(newCoordinates)
+                }
                 allWayIdsInOrder.push(originalElement.id)
                 allWaysNodesInOrder.push(nodeIds)
             } else {
@@ -141,6 +149,10 @@ export default class SplitAction extends OsmChangeAction {
                     kv.push({ k: k, v: originalElement.tags[k] })
                 }
                 const nodeIds = wayPart.map((p) => p.originalIndex)
+                if (nodeIds.length <= 1) {
+                    console.error("Got a segment with only one node - skipping")
+                    continue
+                }
                 changeDescription.push({
                     type: "way",
                     id: id,
