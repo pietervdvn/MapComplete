@@ -238,11 +238,18 @@ export default class DefaultGUI {
             .AttachTo("on-small-screen")
 
         new Combine([
-            Toggle.If(state.featureSwitchSearch, () =>
-                new SearchAndGo(state).SetClass(
+            Toggle.If(state.featureSwitchSearch, () => {
+                const search = new SearchAndGo(state).SetClass(
                     "shadow rounded-full h-min w-full overflow-hidden sm:max-w-sm pointer-events-auto"
                 )
-            ),
+                document.addEventListener("keydown", function (event) {
+                    if (event.ctrlKey && event.code === "KeyF") {
+                        search.focus()
+                        event.preventDefault()
+                    }
+                })
+                return search
+            }),
         ]).AttachTo("top-right")
 
         new LeftControls(state, guiState).AttachTo("bottom-left")
