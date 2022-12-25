@@ -190,6 +190,20 @@
       }
     },
     {
+      "builtin": "parking_spaces",
+      "override": {
+        "source": {
+          "osmTags": "parking_space=disabled"
+        },
+        "mapRendering": [
+          {
+            "render": "./assets/themes/onwheels/parking.svg"
+          }
+        ]
+      },
+      "hideTagRenderingsWithLabels": ["type", "capacity"]
+    },
+    {
       "builtin": "shops",
       "override": {
         "minzoom": 15,
