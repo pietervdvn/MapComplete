@@ -24,6 +24,10 @@ export default abstract class BaseUIElement {
     AttachTo(divId: string) {
         let element = document.getElementById(divId)
         if (element === null) {
+            if (Utils.runningFromConsole) {
+                this.ConstructElement()
+                return
+            }
             throw "SEVERE: could not attach UIElement to " + divId
         }
 

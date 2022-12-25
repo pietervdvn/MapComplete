@@ -528,7 +528,8 @@
         "de": "eine an einer Wand montierte Überwachungskamera"
       },
       "preciseInput": {
-        "snapToLayer": "walls_and_buildings"
+        "snapToLayer": "walls_and_buildings",
+        "preferredBackground": ["photo", "osmbasedmap","map"]
       }
     }
   ],

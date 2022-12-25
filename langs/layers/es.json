@@ -3189,28 +3189,28 @@
                     "6": {
                         "question": "Reciclaje de aceite de motor"
                     },
-                    "8": {
+                    "9": {
                         "question": "Reciclaje de botellas de cristal"
                     },
-                    "9": {
+                    "10": {
                         "question": "Reciclaje de cristal"
                     },
-                    "10": {
+                    "12": {
                         "question": "Reciclaje de periódicos"
                     },
-                    "11": {
+                    "13": {
                         "question": "Reciclaje de papel"
                     },
-                    "12": {
+                    "14": {
                         "question": "Reciclaje de botellas de papel"
                     },
-                    "13": {
+                    "15": {
                         "question": "Reciclaje de embalajes plásticos"
                     },
-                    "14": {
+                    "16": {
                         "question": "Reciclaje de plástico"
                     },
-                    "15": {
+                    "17": {
                         "question": "Reciclaje de chatarra"
                     }
                 }
@@ -3266,34 +3266,34 @@
                     "5": {
                         "then": "Aquí se puede reciclar aceite de motor"
                     },
-                    "7": {
+                    "8": {
                         "then": "Aquí se pueden reciclar residuos orgánicos"
                     },
-                    "8": {
+                    "9": {
                         "then": "Aquí se pueden reciclar botellas de cristal"
                     },
-                    "9": {
+                    "10": {
                         "then": "Aquí se puede reciclar cristal"
                     },
-                    "10": {
+                    "12": {
                         "then": "Aquí se pueden reciclar periódicos"
                     },
-                    "11": {
+                    "13": {
                         "then": "Aquí se puede reciclar papel"
                     },
-                    "12": {
+                    "14": {
                         "then": "Aquí se pueden reciclar botellas de plástico"
                     },
-                    "13": {
+                    "15": {
                         "then": "Aquí se pueden reciclar embalajes plásticos"
                     },
-                    "14": {
+                    "16": {
                         "then": "Aquí se puede reciclar plástico"
                     },
-                    "15": {
+                    "17": {
                         "then": "Aquí se puede reciclar chatarra"
                     },
-                    "16": {
+                    "18": {
                         "then": "Aquí se pueden reciclar zapatos"
                     }
                 },

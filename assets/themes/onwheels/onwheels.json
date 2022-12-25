@@ -190,6 +190,25 @@
       }
     },
     {
+      "builtin": "parking_spaces",
+      "override": {
+        "source": {
+          "osmTags": "parking_space=disabled"
+        },
+        "mapRendering": [
+          {
+            "icon": {
+              "mappings": null
+            }
+          }
+        ]
+      },
+      "hideTagRenderingsWithLabels": [
+        "type",
+        "capacity"
+      ]
+    },
+    {
       "builtin": "shops",
       "override": {
         "minzoom": 15,

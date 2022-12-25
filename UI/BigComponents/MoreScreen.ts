@@ -92,13 +92,13 @@ export default class MoreScreen extends Combine {
 
         if (onMainScreen) {
             search.focus()
+            document.addEventListener("keydown", function (event) {
+                if (event.ctrlKey && event.code === "KeyF") {
+                    search.focus()
+                    event.preventDefault()
+                }
+            })
         }
-        document.addEventListener("keydown", function (event) {
-            if (event.ctrlKey && event.code === "KeyF") {
-                search.focus()
-                event.preventDefault()
-            }
-        })
 
         const searchBar = new Combine([
             Svg.search_svg().SetClass("w-8"),

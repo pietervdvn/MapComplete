@@ -5,6 +5,7 @@ import { UIEventSource } from "../../Logic/UIEventSource"
 import Hash from "../../Logic/Web/Hash"
 import BaseUIElement from "../BaseUIElement"
 import Title from "./Title"
+import Hotkeys from "./Hotkeys"
 
 /**
  *
@@ -82,12 +83,11 @@ export default class ScrollableFullScreen {
     }
 
     private static initEmpty(): FixedUiElement {
-        document.addEventListener("keyup", function (event) {
-            if (event.code === "Escape") {
-                ScrollableFullScreen.collapse()
-                event.preventDefault()
-            }
-        })
+        Hotkeys.RegisterHotkey(
+            { nomod: "Escape", onUp: true },
+            "Close the sidebar",
+            ScrollableFullScreen.collapse
+        )
 
         return new FixedUiElement("")
     }
@@ -117,7 +117,7 @@ export default class ScrollableFullScreen {
         this._fullscreencomponent.AttachTo("fullscreen")
         const fs = document.getElementById("fullscreen")
         ScrollableFullScreen._currentlyOpen = this
-        fs.classList.remove("hidden")
+        fs?.classList?.remove("hidden")
     }
 
     private BuildComponent(title: BaseUIElement, content: BaseUIElement): BaseUIElement {

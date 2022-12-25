@@ -16,7 +16,13 @@ import SharedTagRenderings from "../Customizations/SharedTagRenderings"
 import { writeFile } from "fs"
 import Translations from "../UI/i18n/Translations"
 import * as themeOverview from "../assets/generated/theme_overview.json"
-
+import DefaultGUI from "../UI/DefaultGUI"
+import FeaturePipelineState from "../Logic/State/FeaturePipelineState"
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import * as bookcases from "../assets/generated/themes/bookcases.json"
+import { DefaultGuiState } from "../UI/DefaultGuiState"
+import * as fakedom from "fake-dom"
+import Hotkeys from "../UI/Base/Hotkeys"
 function WriteFile(
     filename,
     html: BaseUIElement,
@@ -217,5 +223,13 @@ WriteFile("./Docs/URL_Parameters.md", QueryParameterDocumentation.GenerateQueryP
     "Logic/Web/QueryParameters.ts",
     "UI/QueryParameterDocumentation.ts",
 ])
+if (fakedom === undefined || window === undefined) {
+    throw "FakeDom not initialized"
+}
+new DefaultGUI(
+    new FeaturePipelineState(new LayoutConfig(<any>bookcases)),
+    new DefaultGuiState()
+).setup()
 
+WriteFile("./Docs/Hotkeys.md", Hotkeys.generateDocumentation(), [])
 console.log("Generated docs")

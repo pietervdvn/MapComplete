@@ -5988,36 +5988,42 @@
                         "question": "Recycling van motorolie"
                     },
                     "7": {
-                        "question": "Recycling van groen afval"
+                        "question": "Recycling van tl-buizen"
                     },
                     "8": {
-                        "question": "Recycling van glazen flessen"
+                        "question": "Recycling van groen afval"
                     },
                     "9": {
-                        "question": "Recycling van glas"
+                        "question": "Recycling van glazen flessen"
                     },
                     "10": {
-                        "question": "Recycling van kranten"
+                        "question": "Recycling van glas"
                     },
                     "11": {
-                        "question": "Recycling van papier"
+                        "question": "Recycling van lampen"
                     },
                     "12": {
-                        "question": "Recycling van plastic flessen"
+                        "question": "Recycling van kranten"
                     },
                     "13": {
-                        "question": "Recycling van plastic verpakking"
+                        "question": "Recycling van papier"
                     },
                     "14": {
-                        "question": "Recycling van plastic"
+                        "question": "Recycling van plastic flessen"
                     },
                     "15": {
-                        "question": "Recycling van oud metaal"
+                        "question": "Recycling van plastic verpakking"
                     },
                     "16": {
-                        "question": "Recycling van kleine elektrische apparaten"
+                        "question": "Recycling van plastic"
                     },
                     "17": {
+                        "question": "Recycling van oud metaal"
+                    },
+                    "18": {
+                        "question": "Recycling van kleine elektrische apparaten"
+                    },
+                    "19": {
                         "question": "Recycling van restafval"
                     }
                 }
@@ -6077,48 +6083,54 @@
                         "then": "Motorolie kan hier gerecycled worden"
                     },
                     "6": {
-                        "then": "Groen afval kan hier gerecycled worden"
+                        "then": "TL-buizen kunnen hier gerecycled worden"
                     },
                     "7": {
-                        "then": "Organisch afval kan hier gerecycled worden"
+                        "then": "Groen afval kan hier gerecycled worden"
                     },
                     "8": {
-                        "then": "Glazen flessen kunnen hier gerecycled worden"
+                        "then": "Organisch afval kan hier gerecycled worden"
                     },
                     "9": {
-                        "then": "Glas kan hier gerecycled worden"
+                        "then": "Glazen flessen kunnen hier gerecycled worden"
                     },
                     "10": {
-                        "then": "Kranten kunnen hier gerecycled worden"
+                        "then": "Glas kan hier gerecycled worden"
                     },
                     "11": {
-                        "then": "Papier kan hier gerecycled worden"
+                        "then": "Lampen kunnen hier gerecycled worden"
                     },
                     "12": {
-                        "then": "Plastic flessen kunnen hier gerecycled worden"
+                        "then": "Kranten kunnen hier gerecycled worden"
                     },
                     "13": {
-                        "then": "Plastic verpakking kan hier gerecycled worden"
+                        "then": "Papier kan hier gerecycled worden"
                     },
                     "14": {
-                        "then": "Plastic kan hier gerecycled worden"
+                        "then": "Plastic flessen kunnen hier gerecycled worden"
                     },
                     "15": {
-                        "then": "Oud metaal kan hier gerecycled worden"
+                        "then": "Plastic verpakking kan hier gerecycled worden"
                     },
                     "16": {
-                        "then": "Schoenen kunnen hier gerecycled worden"
+                        "then": "Plastic kan hier gerecycled worden"
                     },
                     "17": {
-                        "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
+                        "then": "Oud metaal kan hier gerecycled worden"
                     },
                     "18": {
-                        "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
+                        "then": "Schoenen kunnen hier gerecycled worden"
                     },
                     "19": {
-                        "then": "Injectienaalden kunnen hier gerecycled worden"
+                        "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
                     },
                     "20": {
+                        "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
+                    },
+                    "21": {
+                        "then": "Injectienaalden kunnen hier gerecycled worden"
+                    },
+                    "22": {
                         "then": "Restafval kan hier gerecycled worden"
                     }
                 },
@@ -7870,59 +7882,6 @@
         },
         "title": {
             "render": "Afvalbak"
-        }
-    },
-    "watermill": {
-        "description": "Watermolens",
-        "name": "Watermolens",
-        "tagRenderings": {
-            "Access tag": {
-                "mappings": {
-                    "0": {
-                        "then": "Vrij toegankelijk"
-                    },
-                    "1": {
-                        "then": "Niet toegankelijk"
-                    },
-                    "2": {
-                        "then": "Niet toegankelijk, want privégebied"
-                    },
-                    "3": {
-                        "then": "Toegankelijk, ondanks dat het privegebied is"
-                    },
-                    "4": {
-                        "then": "Enkel toegankelijk met een gids of tijdens een activiteit"
-                    },
-                    "5": {
-                        "then": "Toegankelijk mits betaling"
-                    }
-                },
-                "question": "Is dit gebied toegankelijk?",
-                "render": "De toegankelijkheid van dit gebied is: {access:description}"
-            },
-            "Operator tag": {
-                "mappings": {
-                    "0": {
-                        "then": "Dit gebied wordt beheerd door Natuurpunt"
-                    },
-                    "1": {
-                        "then": "Dit gebied wordt beheerd door {operator}"
-                    }
-                },
-                "question": "Wie beheert dit pad?",
-                "render": "Beheer door {operator}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name:nl}"
-                },
-                "1": {
-                    "then": "{name}"
-                }
-            },
-            "render": "Watermolens"
         }
     },
     "windturbine": {

@@ -169,6 +169,15 @@
     },
     "atm": {
         "description": "ATMS to withdraw money",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "With speech output"
+                    }
+                }
+            }
+        },
         "name": "ATMs",
         "presets": {
             "0": {
@@ -186,6 +195,34 @@
                 "question": "What brand is this ATM?",
                 "render": "The brand of this ATM is {brand}"
             },
+            "cash_in": {
+                "mappings": {
+                    "0": {
+                        "then": "You probably cannot deposit cash into this ATM"
+                    },
+                    "1": {
+                        "then": "You can deposit cash into this ATM"
+                    },
+                    "2": {
+                        "then": "You cannot deposit cash into this ATM"
+                    }
+                },
+                "question": "Can you deposit cash into this ATM?"
+            },
+            "cash_out": {
+                "mappings": {
+                    "0": {
+                        "then": "You can withdraw cash from this ATM"
+                    },
+                    "1": {
+                        "then": "You can withdraw cash from this ATM"
+                    },
+                    "2": {
+                        "then": "You cannot withdraw cash from this ATM"
+                    }
+                },
+                "question": "Can you withdraw cash from this ATM?"
+            },
             "name": {
                 "render": "The name of this ATM is {name}"
             },
@@ -195,6 +232,26 @@
                 },
                 "question": "What company operates this ATM?",
                 "render": "The ATM is operated by {operator}"
+            },
+            "speech_output": {
+                "mappings": {
+                    "0": {
+                        "then": "This ATM has speech output, usually available through a headphone jack"
+                    },
+                    "1": {
+                        "then": "This ATM does not have speech output"
+                    }
+                },
+                "question": "Does this ATM have speech output for visually impaired users?"
+            },
+            "speech_output_language": {
+                "render": {
+                    "special": {
+                        "question": "In which languages does this ATM have speech output?",
+                        "render_list_item": "This ATM has speech output in {language():font-bold}",
+                        "render_single_language": "This ATM has speech output in {language():font-bold}"
+                    }
+                }
             }
         },
         "title": {
@@ -6323,36 +6380,42 @@
                         "question": "Recycling of engine oil"
                     },
                     "7": {
-                        "question": "Recycling of green waste"
+                        "question": "Recycling of fluorescent tubes"
                     },
                     "8": {
-                        "question": "Recycling of glass bottles"
+                        "question": "Recycling of green waste"
                     },
                     "9": {
-                        "question": "Recycling of glass"
+                        "question": "Recycling of glass bottles"
                     },
                     "10": {
-                        "question": "Recycling of newspapers"
+                        "question": "Recycling of glass"
                     },
                     "11": {
-                        "question": "Recycling of paper"
+                        "question": "Recycling of light bulbs"
                     },
                     "12": {
-                        "question": "Recycling of plastic bottles"
+                        "question": "Recycling of newspapers"
                     },
                     "13": {
-                        "question": "Recycling of plastic packaging"
+                        "question": "Recycling of paper"
                     },
                     "14": {
-                        "question": "Recycling of plastic"
+                        "question": "Recycling of plastic bottles"
                     },
                     "15": {
-                        "question": "Recycling of scrap metal"
+                        "question": "Recycling of plastic packaging"
                     },
                     "16": {
-                        "question": "Recycling of small electrical appliances"
+                        "question": "Recycling of plastic"
                     },
                     "17": {
+                        "question": "Recycling of scrap metal"
+                    },
+                    "18": {
+                        "question": "Recycling of small electrical appliances"
+                    },
+                    "19": {
                         "question": "Recycling of residual waste"
                     }
                 }
@@ -6412,48 +6475,54 @@
                         "then": "Engine oil can be recycled here"
                     },
                     "6": {
-                        "then": "Green waste can be recycled here"
+                        "then": "Fluorescent tubes can be recycled here"
                     },
                     "7": {
-                        "then": "Organic waste can be recycled here"
+                        "then": "Green waste can be recycled here"
                     },
                     "8": {
-                        "then": "Glass bottles can be recycled here"
+                        "then": "Organic waste can be recycled here"
                     },
                     "9": {
-                        "then": "Glass can be recycled here"
+                        "then": "Glass bottles can be recycled here"
                     },
                     "10": {
-                        "then": "Newspapers can be recycled here"
+                        "then": "Glass can be recycled here"
                     },
                     "11": {
-                        "then": "Paper can be recycled here"
+                        "then": "Light bulbs can be recycled here"
                     },
                     "12": {
-                        "then": "Plastic bottles can be recycled here"
+                        "then": "Newspapers can be recycled here"
                     },
                     "13": {
-                        "then": "Plastic packaging can be recycled here"
+                        "then": "Paper can be recycled here"
                     },
                     "14": {
-                        "then": "Plastic can be recycled here"
+                        "then": "Plastic bottles can be recycled here"
                     },
                     "15": {
-                        "then": "Scrap metal can be recycled here"
+                        "then": "Plastic packaging can be recycled here"
                     },
                     "16": {
-                        "then": "Shoes can be recycled here"
+                        "then": "Plastic can be recycled here"
                     },
                     "17": {
-                        "then": "Small electrical appliances can be recycled here"
+                        "then": "Scrap metal can be recycled here"
                     },
                     "18": {
-                        "then": "Small electrical appliances can be recycled here"
+                        "then": "Shoes can be recycled here"
                     },
                     "19": {
-                        "then": "Needles can be recycled here"
+                        "then": "Small electrical appliances can be recycled here"
                     },
                     "20": {
+                        "then": "Small electrical appliances can be recycled here"
+                    },
+                    "21": {
+                        "then": "Needles can be recycled here"
+                    },
+                    "22": {
                         "then": "Residual waste can be recycled here"
                     }
                 },
@@ -7407,6 +7476,7 @@
         "name": "Ticket Validators",
         "presets": {
             "0": {
+                "description": "A ticket validator to validate a public transport ticket. This can be either a digital reader, reading a card or ticket, or a machine stamping or punching a ticket.",
                 "title": "a ticket validator"
             }
         },
@@ -8307,9 +8377,6 @@
         "title": {
             "render": "Waste Disposal"
         }
-    },
-    "watermill": {
-        "name": "Watermill"
     },
     "windturbine": {
         "description": "Modern windmills generating electricity",

@@ -143,6 +143,99 @@
       "override": {
         "condition": "amenity!=bank"
       }
+    },
+    {
+      "id": "cash_out",
+      "question": {
+        "en": "Can you withdraw cash from this ATM?"
+      },
+      "mappings": [
+        {
+          "if": "cash_out=",
+          "then": {
+            "en": "You can withdraw cash from this ATM"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "cash_out=yes",
+          "then": {
+            "en": "You can withdraw cash from this ATM"
+          }
+        },
+        {
+          "if": "cash_out=no",
+          "then": {
+            "en": "You cannot withdraw cash from this ATM"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cash_in",
+      "question": {
+        "en": "Can you deposit cash into this ATM?"
+      },
+      "mappings": [
+        {
+          "if": "cash_in=",
+          "then": {
+            "en": "You probably cannot deposit cash into this ATM"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "cash_in=yes",
+          "then": {
+            "en": "You can deposit cash into this ATM"
+          }
+        },
+        {
+          "if": "cash_in=no",
+          "then": {
+            "en": "You cannot deposit cash into this ATM"
+          }
+        }
+      ]
+    },
+    {
+      "id": "speech_output",
+      "question": {
+        "en": "Does this ATM have speech output for visually impaired users?"
+      },
+      "mappings": [
+        {
+          "if": "speech_output=yes",
+          "then": {
+            "en": "This ATM has speech output, usually available through a headphone jack"
+          }
+        },
+        {
+          "if": "speech_output=no",
+          "then": {
+            "en": "This ATM does not have speech output"
+          }
+        }
+      ]
+    },
+    {
+      "id": "speech_output_language",
+      "condition": "speech_output=yes",
+      "render": {
+        "special": {
+          "type": "language_chooser",
+          "key": "speech_output",
+          "question": {
+            "en": "In which languages does this ATM have speech output?"
+          },
+          "render_list_item": {
+            "en": "This ATM has speech output in {language():font-bold}"
+          },
+          "render_single_language": {
+            "en": "This ATM has speech output in {language():font-bold}"
+          }
+        }
+      }
     }
   ],
   "mapRendering": [
@@ -151,6 +244,20 @@
       "location": [
         "point",
         "centroid"
+      ]
+    }
+  ],
+  "filter": [
+    "open_now",
+    {
+      "id": "speech_output",
+      "options": [
+        {
+          "question": {
+            "en": "With speech output"
+          },
+          "osmTags": "speech_output=yes"
+        }
       ]
     }
   ]

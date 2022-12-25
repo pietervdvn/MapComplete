@@ -260,7 +260,7 @@ export interface LayerConfigJson {
                   /**
                    * The type of background picture
                    */
-                  preferredBackground:
+                  preferredBackground?:
                       | "osmbasedmap"
                       | "photo"
                       | "historicphoto"

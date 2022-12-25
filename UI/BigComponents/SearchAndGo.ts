@@ -1,6 +1,5 @@
 import { UIEventSource } from "../../Logic/UIEventSource"
 import { Translation } from "../i18n/Translation"
-import { VariableUiElement } from "../Base/VariableUIElement"
 import Svg from "../../Svg"
 import { TextField } from "../Input/TextField"
 import { Geocoding } from "../../Logic/Osm/Geocoding"
@@ -10,6 +9,7 @@ import Combine from "../Base/Combine"
 import Locale from "../i18n/Locale"
 
 export default class SearchAndGo extends Combine {
+    private readonly _searchField: TextField
     constructor(state: { leafletMap: UIEventSource<any>; selectedElement?: UIEventSource<any> }) {
         const goButton = Svg.search_ui().SetClass("w-8 h-8 full-rounded border-black float-right")
 
@@ -74,6 +74,11 @@ export default class SearchAndGo extends Combine {
         }
 
         searchField.enterPressed.addCallback(runSearch)
+        this._searchField = searchField
         goButton.onClick(runSearch)
+    }
+
+    focus() {
+        this._searchField.focus()
     }
 }

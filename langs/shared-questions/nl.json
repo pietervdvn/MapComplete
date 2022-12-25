@@ -179,6 +179,24 @@
                 }
             }
         },
+        "payment-options-split": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Muntgeld wordt hier aanvaard"
+                    },
+                    "1": {
+                        "then": "Bankbiljetten worden hier aanvaard"
+                    },
+                    "2": {
+                        "then": "Betalen met debetkaarten kan hier"
+                    },
+                    "3": {
+                        "then": "Betalen met creditkaarten kan hier"
+                    }
+                }
+            }
+        },
         "phone": {
             "question": "Wat is het telefoonnummer van {title()}?"
         },

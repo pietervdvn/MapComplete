@@ -233,7 +233,7 @@
       "id": "toilet-charge"
     },
     {
-      "builtin": "payment-options",
+      "builtin": "payment-options-split",
       "override": {
         "condition": "fee=yes"
       }

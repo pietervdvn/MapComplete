@@ -314,7 +314,10 @@
             "cs": "Zde si můžete půjčit cyklistické přilby"
           }
         }
-      ]
+      ],
+      "condition": {
+        "and": []
+      }
     },
     {
       "id": "rental_types",
@@ -443,7 +446,9 @@
             "key": "capacity:bicycle_type",
             "type": "pnat"
           },
-          "condition": "rental~.*bicycle_type.*"
+          "condition": {"and": 
+            ["rental~.*bicycle_type.*"]
+          }
         }
       ]
     }

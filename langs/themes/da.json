@@ -680,14 +680,14 @@
                     }
                 }
             },
-            "18": {
+            "19": {
                 "override": {
                     "=title": {
                         "render": "Statistikker"
                     }
                 }
             },
-            "19": {
+            "20": {
                 "override": {
                     "+tagRenderings": {
                         "0": {

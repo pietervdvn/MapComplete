@@ -15,6 +15,7 @@
     "osmTags": "amenity=parking_space"
   },
   "tagRenderings": [
+    "images",
     {
       "id": "type",
       "question": {

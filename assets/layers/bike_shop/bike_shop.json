@@ -487,7 +487,14 @@
         }
       ]
     },
-    "bicycle_rental.*bicycle_rental",
+    {
+      "builtin":  "bicycle_rental.*bicycle_rental",
+      "override": {
+        "condition": {
+          "and+": ["service:bicycle:rental=yes"]
+        }
+      }
+    },
     {
       "id": "bike_repair_second-hand-bikes",
       "question": {
