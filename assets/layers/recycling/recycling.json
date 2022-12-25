@@ -132,6 +132,15 @@
             "if": {
               "and": [
                 "_waste_amount=1",
+                "recycling:fluorescent_tubes=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/fluorescent_tubes.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
                 "recycling:glass=yes"
               ]
             },
@@ -159,6 +168,15 @@
               ]
             },
             "then": "circle:white;./assets/layers/recycling/garden_waste.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:light_bulbs=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/light_bulbs.svg"
           },
           {
             "if": {
@@ -307,6 +325,15 @@
           "if": {
             "and": [
               "_waste_amount>1",
+              "recycling:fluorescent_tubes=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/fluorescent_tubes.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
               "recycling:glass=yes"
             ]
           },
@@ -334,6 +361,15 @@
             ]
           },
           "then": "circle:white;./assets/layers/recycling/garden_waste.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:light_bulbs=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/light_bulbs.svg"
         },
         {
           "if": {
@@ -500,7 +536,9 @@
             "recycling:clothes=",
             "recycling:cooking_oil=",
             "recycling:engine_oil=",
+            "recycling:fluorescent_tubes=",
             "recycling:green_waste=",
+            "recycling:light_bulbs=",
             "recycling:organic=",
             "recycling:glass_bottles=",
             "recycling:glass=",
@@ -699,6 +737,18 @@
           }
         },
         {
+          "if": "recycling:fluorescent_tubes=yes",
+          "ifnot": "recycling:fluorescent_tubes=",
+          "then": {
+            "en": "Fluorescent tubes can be recycled here",
+            "nl": "TL-buizen kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/fluorescent_tubes.svg",
+            "class": "medium"
+          }
+        },
+        {
           "if": "recycling:green_waste=yes",
           "ifnot": "recycling:green_waste=",
           "then": {
@@ -758,6 +808,18 @@
           },
           "icon": {
             "path": "./assets/layers/recycling/glass.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": "recycling:light_bulbs=yes",
+          "ifnot": "recycling:light_bulbs=",
+          "then": {
+            "en": "Light bulbs can be recycled here",
+            "nl": "Lampen kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/light_bulbs.svg",
             "class": "medium"
           }
         },
@@ -1049,6 +1111,13 @@
         },
         {
           "question": {
+            "en": "Recycling of fluorescent tubes",
+            "nl": "Recycling van tl-buizen"
+          },
+          "osmTags": "recycling:fluorescent_tubes=yes"
+        },
+        {
+          "question": {
             "en": "Recycling of green waste",
             "nl": "Recycling van groen afval",
             "de": "Recycling von Grünabfällen",
@@ -1080,6 +1149,13 @@
             "it": "Riciclo di vetro"
           },
           "osmTags": "recycling:glass=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of light bulbs",
+            "nl": "Recycling van lampen"
+          },
+          "osmTags": "recycling:light_bulbs=yes"
         },
         {
           "question": {
