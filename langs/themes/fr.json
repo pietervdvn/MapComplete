@@ -888,14 +888,14 @@
                     }
                 }
             },
-            "18": {
+            "19": {
                 "override": {
                     "=title": {
                         "render": "Statistiques"
                     }
                 }
             },
-            "19": {
+            "20": {
                 "override": {
                     "+tagRenderings": {
                         "0": {

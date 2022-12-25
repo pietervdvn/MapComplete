@@ -881,31 +881,31 @@
                     "2": {
                         "then": "Ací es poden reciclar llaunes"
                     },
-                    "7": {
+                    "8": {
                         "then": "Ací es poden reciclar residus orgànics"
                     },
-                    "8": {
+                    "9": {
                         "then": "Ací es poden reciclar ampolles de vidre"
                     },
-                    "9": {
+                    "10": {
                         "then": "Ací es pot reciclar vidre"
                     },
-                    "10": {
+                    "12": {
                         "then": "Ací es poden reciclar diaris"
                     },
-                    "11": {
+                    "13": {
                         "then": "Ací es pot reciclar paper"
                     },
-                    "12": {
+                    "14": {
                         "then": "Ací es poden reciclar ampolles de plàstic"
                     },
-                    "13": {
+                    "15": {
                         "then": "Ací es poden reciclar envasos de plàstic"
                     },
-                    "14": {
+                    "16": {
                         "then": "Ací es pot reciclar plàstic"
                     },
-                    "20": {
+                    "22": {
                         "then": "Ací es pot reciclar el rebuig"
                     }
                 }
@@ -1051,9 +1051,6 @@
         "title": {
             "render": "Paperera"
         }
-    },
-    "watermill": {
-        "name": "Molí d'aigua"
     },
     "windturbine": {
         "title": {

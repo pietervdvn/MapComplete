@@ -61,6 +61,17 @@
     ]
   },
   {
+    "path": "fluorescent_tubes.svg",
+    "license": "CC-BY",
+    "authors": [
+      "Noun Project",
+      "shashank singh"
+    ],
+    "sources": [
+      "https://thenounproject.com/icon/tube-fluorescent-light-3756518/"
+    ]
+  },
+  {
     "path": "garden_waste.svg",
     "license": "CC-BY-SA",
     "authors": [
@@ -89,6 +100,17 @@
     ],
     "sources": [
       "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/glass_bottles.svg"
+    ]
+  },
+  {
+    "path": "light_bulbs.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipArt",
+      "fabiovaleggia"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/175842/basic-light-bulb"
     ]
   },
   {
