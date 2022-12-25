@@ -6319,37 +6319,37 @@
                     "6": {
                         "question": "Recycling von Motoröl"
                     },
-                    "7": {
+                    "8": {
                         "question": "Recycling von Grünabfällen"
                     },
-                    "8": {
+                    "9": {
                         "question": "Recycling von Glasflaschen"
                     },
-                    "9": {
+                    "10": {
                         "question": "Recycling von Glas"
                     },
-                    "10": {
+                    "12": {
                         "question": "Recycling von Zeitungen"
                     },
-                    "11": {
+                    "13": {
                         "question": "Recycling von Papier"
                     },
-                    "12": {
+                    "14": {
                         "question": "Recycling von Plastikflaschen"
                     },
-                    "13": {
+                    "15": {
                         "question": "Recycling von Kunststoffverpackungen"
                     },
-                    "14": {
+                    "16": {
                         "question": "Recycling von Kunststoffen"
                     },
-                    "15": {
+                    "17": {
                         "question": "Recycling von Metallschrott"
                     },
-                    "16": {
+                    "18": {
                         "question": "Recycling von Elektrokleingeräten"
                     },
-                    "17": {
+                    "19": {
                         "question": "Recycling von Restabfällen"
                     }
                 }
@@ -6408,49 +6408,49 @@
                     "5": {
                         "then": "Motoröl kann hier recycelt werden"
                     },
-                    "6": {
+                    "7": {
                         "then": "Grünabfälle können hier recycelt werden"
                     },
-                    "7": {
+                    "8": {
                         "then": "Bio-Abfall kann hier recycelt werden"
                     },
-                    "8": {
+                    "9": {
                         "then": "Glasflaschen können hier recycelt werden"
                     },
-                    "9": {
+                    "10": {
                         "then": "Glas kann hier recycelt werden"
                     },
-                    "10": {
+                    "12": {
                         "then": "Zeitungen können hier recycelt werden"
                     },
-                    "11": {
+                    "13": {
                         "then": "Papier kann hier recycelt werden"
                     },
-                    "12": {
+                    "14": {
                         "then": "Plastikflaschen können hier recycelt werden"
                     },
-                    "13": {
+                    "15": {
                         "then": "Kunststoffverpackungen können hier recycelt werden"
                     },
-                    "14": {
+                    "16": {
                         "then": "Kunststoff kann hier recycelt werden"
                     },
-                    "15": {
+                    "17": {
                         "then": "Metallschrott kann hier recycelt werden"
                     },
-                    "16": {
+                    "18": {
                         "then": "Schuhe können hier recycelt werden"
                     },
-                    "17": {
-                        "then": "Elektrokleingeräte können hier recycelt werden"
-                    },
-                    "18": {
-                        "then": "Elektrokleingeräte können hier recycelt werden"
-                    },
                     "19": {
-                        "then": "Nadeln können hier recycelt werden"
+                        "then": "Elektrokleingeräte können hier recycelt werden"
                     },
                     "20": {
+                        "then": "Elektrokleingeräte können hier recycelt werden"
+                    },
+                    "21": {
+                        "then": "Nadeln können hier recycelt werden"
+                    },
+                    "22": {
                         "then": "Restmüll kann hier recycelt werden"
                     }
                 },
@@ -8281,9 +8281,6 @@
         "title": {
             "render": "Mülltonne"
         }
-    },
-    "watermill": {
-        "name": "Wassermühlen"
     },
     "windturbine": {
         "description": "Moderne Windmühlen zur Stromerzeugung",

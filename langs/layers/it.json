@@ -1766,37 +1766,37 @@
                     "6": {
                         "question": "Riciclo di olio da motore"
                     },
-                    "7": {
+                    "8": {
                         "question": "Riciclo di umido"
                     },
-                    "8": {
+                    "9": {
                         "question": "Riciclo di bottiglie di vetro"
                     },
-                    "9": {
+                    "10": {
                         "question": "Riciclo di vetro"
                     },
-                    "10": {
+                    "12": {
                         "question": "Riciclo di giornali"
                     },
-                    "11": {
+                    "13": {
                         "question": "Riciclo di carta"
                     },
-                    "12": {
+                    "14": {
                         "question": "Riciclo di bottiglie di plastica"
                     },
-                    "13": {
+                    "15": {
                         "question": "Riciclo di confezioni di plastica"
                     },
-                    "14": {
+                    "16": {
                         "question": "Riciclo di plastica"
                     },
-                    "15": {
+                    "17": {
                         "question": "Riciclo di rottami metallici"
                     },
-                    "16": {
+                    "18": {
                         "question": "Riciclo di piccoli elettrodomestici"
                     },
-                    "17": {
+                    "19": {
                         "question": "Riciclo di secco"
                     }
                 }
@@ -1855,49 +1855,49 @@
                     "5": {
                         "then": "Olio di motore"
                     },
-                    "6": {
+                    "7": {
                         "then": "Verde"
                     },
-                    "7": {
+                    "8": {
                         "then": "Umido"
                     },
-                    "8": {
+                    "9": {
                         "then": "Bottiglie di vetro"
                     },
-                    "9": {
+                    "10": {
                         "then": "Vetro"
                     },
-                    "10": {
+                    "12": {
                         "then": "Giornali"
                     },
-                    "11": {
+                    "13": {
                         "then": "Carta"
                     },
-                    "12": {
+                    "14": {
                         "then": "Bottiglie di platica"
                     },
-                    "13": {
+                    "15": {
                         "then": "Confezioni di plastica"
                     },
-                    "14": {
+                    "16": {
                         "then": "Plastica"
                     },
-                    "15": {
+                    "17": {
                         "then": "Rottami metallici"
                     },
-                    "16": {
+                    "18": {
                         "then": "Scarpe"
                     },
-                    "17": {
-                        "then": "Piccoli elettrodomestici"
-                    },
-                    "18": {
-                        "then": "Piccoli elettrodomestici"
-                    },
                     "19": {
-                        "then": "Aghi e oggetti appuntiti"
+                        "then": "Piccoli elettrodomestici"
                     },
                     "20": {
+                        "then": "Piccoli elettrodomestici"
+                    },
+                    "21": {
+                        "then": "Aghi e oggetti appuntiti"
+                    },
+                    "22": {
                         "then": "Secco"
                     }
                 },

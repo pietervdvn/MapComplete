@@ -197,11 +197,16 @@
         },
         "mapRendering": [
           {
-            "render": "./assets/themes/onwheels/parking.svg"
+            "icon": {
+              "mappings": null
+            }
           }
         ]
       },
-      "hideTagRenderingsWithLabels": ["type", "capacity"]
+      "hideTagRenderingsWithLabels": [
+        "type",
+        "capacity"
+      ]
     },
     {
       "builtin": "shops",
