@@ -199,9 +199,19 @@
           {
             "icon": {
               "mappings": null
-            }
+            },
+            "iconSize": "30,30,center",
+            "iconBadges": [
+              {
+                "if": "parking_space=disabled",
+                "then": "./assets/layers/toilet/wheelchair.svg"
+              }
+            ]
           }
-        ]
+        ],
+        "name": {
+          "en": "Disabled parking spaces"
+        }
       },
       "hideTagRenderingsWithLabels": [
         "type",
