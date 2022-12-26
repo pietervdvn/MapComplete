@@ -181,7 +181,20 @@
         "mapRendering": [
           {
             "icon": "./assets/themes/onwheels/parking.svg",
-            "iconSize": "40,40,bottom"
+            "iconSize": {
+              "render": "20,20,bottom",
+              "mappings": [
+                {
+                  "if": {
+                    "or": [
+                      "capacity:disabled>0",
+                      "capacity:disabled=yes"
+                    ]
+                  },
+                  "then": "40,40,bottom"
+                }
+              ]
+            }
           },
           {
             "color": "#225f92"
