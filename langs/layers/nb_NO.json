@@ -4,6 +4,20 @@
         "name": "Kjente adresser i OSM",
         "title": {
             "render": "Kjent adresse"
+        },
+        "tagRenderings": {
+            "housenumber": {
+                "question": "Hvilket husnummer har dette huset?",
+                "mappings": {
+                    "0": {
+                        "then": "Denne bygningen har ikke noe husnummer"
+                    }
+                },
+                "render": "Husnummeret er <b>{addr:housenumber}</b>"
+            },
+            "fixme": {
+                "question": "Hva bør fikses her? Forklar."
+            }
         }
     },
     "ambulancestation": {
@@ -69,6 +83,9 @@
                     },
                     "11": {
                         "then": "Flisarbeid"
+                    },
+                    "12": {
+                        "then": "Treskjæring"
                     }
                 },
                 "question": "Hvilken type kunstverk er dette?",
