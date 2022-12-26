@@ -39,7 +39,7 @@
     },
     "general": {
         "about": "Rediger og legg til OpenStreetMap for et gitt tema",
-        "aboutMapcomplete": "<h3>Om</h3><p>Bruk MapComplete til å legge til OpenStreetMap-info i <b>ett tema. </b>Besvar spørsmål og få endringene vist i løpet av minutter. I de fleste temaene kan du legge inn bilder eller legge igjen en vurdering. <b>Temavedlikeholderen</b> definerer elementer, spørsmål og språk for det.</p><h3>Finn ut mer</h3><p>MapComplete tilbyr alltid <b>neste steg</b> for å lære mer om OpenStreetMap.</p><ul><li>Når bygd inn på en nettside lenker iframe-elementet til en fullskjermsversjon av MapComplete.</li><li>Fullskjermsversjonen tilbyr info om OpenStreetMap.</li><li>Visning fungerer uten innlogging, men redigering krever en OSM-konto.</li><li>Hvis du ikke er innlogget blir du spurt om å gjøre det.</li><li>Når du har besvart ett spørsmål, kan du legge til nye funksjoner på kartet.</li><li>Etter en stund vil OSM-etiketter bli vist, som i sin tur lenker til wiki-en.</li></ul><p></p><br/><p>Har du oppdaget <b>et problem</b>? Har du en <b>funksjonsforespørsel</b>? Vil du bistå <b>oversettelsen</b>? Gå til <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>kildekoden</a> eller <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>problemsporeren.</a> </p><p>Vil du se <b>din framdrift</b>? Følg redigeringsantallet på <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
+        "aboutMapcomplete": "<h3>Om</h3><p>Bruk MapComplete til å legge til OpenStreetMap-info i <b>ett tema. </b>Besvar spørsmål og få endringene vist i løpet av minutter. I de fleste temaene kan du legge inn bilder eller legge igjen en vurdering. <b>Temavedlikeholderen</b> definerer elementer, spørsmål og språk for det.</p><h3>Finn ut mer</h3><p>MapComplete tilbyr alltid <b>neste steg</b> for å lære mer om OpenStreetMap.<ul><li>Når bygd inn på en nettside lenker iframe-elementet til en fullskjermsversjon av MapComplete.</li><li>Fullskjermsversjonen tilbyr info om OpenStreetMap.</li><li>Visning fungerer uten innlogging, men redigering krever en OSM-konto.</li><li>Hvis du ikke er innlogget blir du spurt om å gjøre det.</li><li>Når du har besvart ett spørsmål, kan du legge til nye funksjoner på kartet.</li><li>Etter en stund vil OSM-etiketter bli vist, som i sin tur lenker til wiki-en.</li></ul></p><br/><p>Har du oppdaget <b>et problem</b>? Har du en <b>funksjonsforespørsel</b>? Vil du bistå <b>oversettelsen</b>? Gå til <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>kildekoden</a> eller <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>problemsporeren.</a> </p><p>Vil du se <b>din framdrift</b>? Følg redigeringsantallet på <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
         "add": {
             "addNew": "Legg til {category} her",
             "addNewMapLabel": "Legg til nytt element",
@@ -67,7 +67,8 @@
             "warnVisibleForEveryone": "Din endring vil være synlig for alle",
             "wrongType": "Dette er ikke et punkt eller en vei og kan ikke importeres",
             "zoomInFurther": "Forstørr mer for å legge til et punkt.",
-            "zoomInMore": "Forstørr mer for å importere denne funksjonen"
+            "zoomInMore": "Forstørr mer for å importere denne funksjonen",
+            "backToSelect": "Velg en annen kategori"
         },
         "apply_button": {
             "appliedOnAnotherObject": "{id}-objektet vil motta {tags}",
@@ -256,6 +257,16 @@
             },
             "searchWikidata": "Søk på Wikipedia",
             "wikipediaboxTitle": "Wikipedia"
+        },
+        "uploadGpx": {
+            "modes": {
+                "public": {
+                    "name": "Offentlig"
+                }
+            },
+            "uploadFinished": "Sporet ditt har blitt opplastet.",
+            "uploading": "Laster opp sporet ditt …",
+            "title": "Last opp sporet ditt til OpenStreetMap.org"
         }
     },
     "image": {
@@ -270,7 +281,8 @@
             "noImageSelected": "Velg et bilde for å knytte det til objektet",
             "nothingFound": "Fant ingen bilder i nærheten …",
             "removeFilters": "Klikk her for å fjerne filterne",
-            "title": "Bilder i nærheten"
+            "title": "Bilder i nærheten",
+            "loadMore": "Last inn flere bilder"
         },
         "pleaseLogin": "Logg inn for å legge til et bilde",
         "respectPrivacy": "Ikke ta bilder av folk eller bilskilt. Ikke last opp Google Maps, Google Streetview eller andre opphavsrettsbeskyttede kilder.",
@@ -293,7 +305,9 @@
         },
         "compareToAlreadyExistingNotes": {
             "noPreviousNotesFound": "Ingen tidligere importnotater ble funnet",
-            "title": "Sammenlign med eksisterende noder"
+            "title": "Sammenlign med eksisterende noder",
+            "loadingFailed": "Kunne ikke laste inn notater fordi {error}",
+            "loading": "Henter notater fra OSM …"
         },
         "confirmProcess": {
             "contactedCommunity": "Jeg kontatet (local)-gemenskapen om denne importen",
@@ -412,17 +426,27 @@
         "reopenNote": "Gjenåpne notat",
         "reopenNoteAndComment": "Gjenåpne notat og kommenter",
         "textNeeded": "Skriv inn beskrivende tekst for å opprettet et notat",
-        "typeText": "Skriv inn tekst for å legge til en kommentar"
+        "typeText": "Skriv inn tekst for å legge til en kommentar",
+        "addCommentAndClose": "Legg til kommentar og lukk",
+        "disableAllNoteFilters": "Skru av alle filtre",
+        "closeNote": "Lukk notat",
+        "createNote": "Opprett nytt notat",
+        "loginToAddComment": "Logg inn for å legge til en kommentar"
     },
     "privacy": {
-        "whileYoureHere": "Bryr du deg om personvern?"
+        "whileYoureHere": "Bryr du deg om personvern?",
+        "title": "Personvernspraksis",
+        "trackingTitle": "Statistisk data"
     },
     "professional": {
         "aboutMc": {
             "survey": {
                 "title": "Undersøkelsesmuligheter"
             },
-            "title": "Bruk av MapComplete i din organisasjon"
+            "title": "Bruk av MapComplete i din organisasjon",
+            "internalUse": {
+                "title": "Bruk av data i interne prosesser"
+            }
         },
         "aboutOsm": {
             "aboutOsm": {
@@ -507,7 +531,8 @@
         },
         "nat": {
             "mustBeWhole": "Kun heltall tillates",
-            "notANumber": "Skriv inn et tall"
+            "notANumber": "Skriv inn et tall",
+            "mustBePositive": "Dette tallet skal være positivt"
         },
         "opening_hours": {
             "description": "Åpningstider"
@@ -535,6 +560,93 @@
         },
         "wikidata": {
             "description": "En Wikidata-identifikator"
+        },
+        "distance": {
+            "description": "En avstand i meter"
+        },
+        "color": {
+            "description": "En farge eller heksadesimal kode"
         }
+    },
+    "plantDetection": {
+        "seeInfo": "Finn mer info om artene",
+        "poweredByPlantnet": "Drevet av <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
+        "howTo": {
+            "li3": "ta et bilde av blomstene"
+        },
+        "matchPercentage": "{match}% treff",
+        "loadingWikidata": "Laster inn info om species} …",
+        "overviewTitle": "Automatisk oppdagede arter"
+    },
+    "matrixbot": {
+        "commands": {
+            "scheme": {
+                "notype": "ingen type angitt",
+                "argkey": "Navnet på nøkkelen"
+            },
+            "documentation": {
+                "layer": {
+                    "singular": "lag",
+                    "plural": "lag"
+                },
+                "file": {
+                    "plural": "filer",
+                    "singular": "fil"
+                },
+                "didYouMean": "Mente du",
+                "inputElement": {
+                    "plural": "inndataelementer",
+                    "singular": "inndataelement"
+                },
+                "visualisation": {
+                    "plural": "visualiseringer",
+                    "singular": "visualisering"
+                },
+                "urlParam": "Nettadresse-parameter <code>{id}<code>"
+            },
+            "language": {
+                "arglang": "Språket å bruke fra nå av",
+                "helpTranslating": "Bistå oversettelsen av svarene mine på Weblate.",
+                "knownLanguages": "Du kan velge ett av følgende språk:"
+            },
+            "info": {
+                "closedTodayAndTomorrow": "Stengt i dag og i morgen",
+                "couldNotDownload": "Kunne ikke laste ned <code>{id}</code>",
+                "editWith": "Rediger dette elementet med {title}",
+                "fetchingInfoAbout": "Henter data om {id} …",
+                "noInfo": "Ingen relevant info enda",
+                "closed": "Stengt"
+            },
+            "dm": {
+                "selectValidCommand": "Angi en gyldig kommando",
+                "selectValidUser": "Angi en gyldig målbruker"
+            },
+            "role": {
+                "noPreviousRoles": "<b>{user}</b> har ingen tidligere roller",
+                "docs": "Endre hva en bruker kan og ikke kan gjøre"
+            },
+            "dream": {
+                "docs": "Sender en datamaskinsgenerert tekst"
+            }
+        }
+    },
+    "flyer": {
+        "fakeui": {
+            "wikipedia": "Lenkede Wikipedia-artikler vises",
+            "add_images": "Legg til bilder med få klikk",
+            "see_images": "Viser bilder fra tidligere bidragsytere, Wikipedia, Mapillary, … "
+        },
+        "mapcomplete": {
+            "li0": "Vis hvor det finnes interessepunkter",
+            "title": "Hva er MapComplete?",
+            "intro": "MapComplete er en nettside som har {mapCount} interaktive kart. Hvert enkelt kart tillater å legge til eller oppdatere info. Det har mange funksjoner:",
+            "li1": "Legg til nye punkter og oppdater info om eksisterende"
+        },
+        "onwheels": "Innendørskart for rullestolsbrukere er også tilgjengelig.",
+        "cyclofix": "Sykkelpumper, reperasjonsstasjoner, drikkevann og sykkelbutikker finner du på cyclofix."
+    },
+    "userinfo": {
+        "noDescriptionCallToAction": "Legg til profilbeskrivelse",
+        "welcome": "Velkommen {user}"
     }
 }
