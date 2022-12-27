@@ -8,6 +8,7 @@ import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
 import BaseUIElement from "../BaseUIElement"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import Hotkeys from "../Base/Hotkeys"
+import Translations from "../i18n/Translations";
 
 class SingleLayerSelectionButton extends Toggle {
     public readonly activate: () => void
@@ -204,7 +205,7 @@ export default class BackgroundMapSwitch extends Combine {
             if (options?.enableHotkeys) {
                 Hotkeys.RegisterHotkey(
                     { nomod: category.charAt(0).toUpperCase() },
-                    "Switch to a background layer of category " + category,
+                    Translations.t.hotkeyDocumentation.selectBackground.Subs({category}),
                     () => {
                         button.activate()
                     }

@@ -6,6 +6,7 @@ import Hash from "../../Logic/Web/Hash"
 import BaseUIElement from "../BaseUIElement"
 import Title from "./Title"
 import Hotkeys from "./Hotkeys"
+import Translations from "../i18n/Translations";
 
 /**
  *
@@ -85,7 +86,7 @@ export default class ScrollableFullScreen {
     private static initEmpty(): FixedUiElement {
         Hotkeys.RegisterHotkey(
             { nomod: "Escape", onUp: true },
-            "Close the sidebar",
+            Translations.t.hotkeyDocumentation.closeSidebar,
             ScrollableFullScreen.collapse
         )
 

@@ -5,6 +5,7 @@ import GeoLocationHandler from "../../Logic/Actors/GeoLocationHandler"
 import { BBox } from "../../Logic/BBox"
 import Loc from "../../Models/Loc"
 import Hotkeys from "../Base/Hotkeys"
+import Translations from "../i18n/Translations"
 
 /**
  * Displays an icon depending on the state of the geolocation.
@@ -52,10 +53,7 @@ export class GeolocationControl extends VariableUiElement {
 
                     // We have a location, so we show a dot in the center
 
-                    if (
-                        lastClickWithinThreeSecs.data &&
-                        geolocationState.permission.data === "granted"
-                    ) {
+                    if (lastClickWithinThreeSecs.data) {
                         return Svg.location_unlocked_svg()
                     }
 
@@ -72,7 +70,10 @@ export class GeolocationControl extends VariableUiElement {
         )
 
         async function handleClick() {
-            if (geolocationState.permission.data !== "granted") {
+            if (
+                geolocationState.permission.data !== "granted" &&
+                geolocationState.currentGPSLocation.data === undefined
+            ) {
                 await geolocationState.requestPermission()
             }
 
@@ -102,7 +103,7 @@ export class GeolocationControl extends VariableUiElement {
                 })
             }
 
-            if (lastClickWithinThreeSecs.data && geolocationState.permission.data === "granted") {
+            if (lastClickWithinThreeSecs.data) {
                 geolocationState.isLocked.setData(true)
                 lastClick.setData(undefined)
                 return
@@ -114,7 +115,7 @@ export class GeolocationControl extends VariableUiElement {
         this.onClick(handleClick)
         Hotkeys.RegisterHotkey(
             { nomod: "L" },
-            "Pan the map to the current location or zoom the map to the current location. Requests geopermission",
+            Translations.t.hotkeyDocumentation.geolocate,
             handleClick
         )
 
