@@ -622,7 +622,8 @@
         "title": "Åpent toalettkart"
     },
     "transit": {
-        "title": "Bussruter"
+        "title": "Bussruter",
+        "description": "Planlegg turen din med offentlig transport"
     },
     "trees": {
         "description": "Kartlegg trærne.",
@@ -638,5 +639,11 @@
     "waste_basket": {
         "shortDescription": "Oversikt over søppelkurver",
         "title": "Søppelkurv"
+    },
+    "bag": {
+        "title": "BAG-importhjelper"
+    },
+    "blind_osm": {
+        "title": "OSM for blinde"
     }
 }

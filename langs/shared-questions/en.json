@@ -27,7 +27,7 @@
                     "then": "2 euro coins are accepted"
                 }
             },
-            "question": "With what coins can you pay here?"
+            "question": "What coins can you use to pay here?"
         },
         "description": {
             "question": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>"
