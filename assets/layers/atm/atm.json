@@ -7,7 +7,7 @@
     "nl": "Geldautomaten"
   },
   "description": {
-    "en": "ATMS to withdraw money",
+    "en": "ATMs to withdraw money",
     "de": "Geldautomaten zum Geld abheben",
     "fr": "DAB pour retirer de l'argent",
     "nl": "Geldautomaten om geld op te nemen"
@@ -74,7 +74,8 @@
       "id": "atm-in-bank-notice",
       "condition": "amenity=bank",
       "render": {
-        "en": "This ATM is located in or near a bank"
+        "en": "This ATM is located in or near a bank",
+        "de": "Dieser Geldautomat befindet sich in oder in der Nähe einer Bank"
       }
     },
     {

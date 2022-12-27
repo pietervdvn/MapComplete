@@ -366,7 +366,7 @@ Which methods of payment are accepted here?
 
 
 
-With what coins can you pay here?
+What coins can you use to pay here?
 
 
 

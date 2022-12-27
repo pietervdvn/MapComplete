@@ -488,10 +488,12 @@
       ]
     },
     {
-      "builtin":  "bicycle_rental.*bicycle_rental",
+      "builtin": "bicycle_rental.*bicycle_rental",
       "override": {
         "condition": {
-          "and+": ["service:bicycle:rental=yes"]
+          "and+": [
+            "service:bicycle:rental=yes"
+          ]
         }
       }
     },

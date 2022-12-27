@@ -19,6 +19,7 @@ This theme contains the following layers:
   - [food](../Layers/food.md)
   - [kerbs](../Layers/kerbs.md)
   - [parking](../Layers/parking.md)
+  - [parking_spaces](../Layers/parking_spaces.md)
   - [shops](../Layers/shops.md)
   - [toilet](../Layers/toilet.md)
   - [pharmacy](../Layers/pharmacy.md)

@@ -446,8 +446,10 @@
             "key": "capacity:bicycle_type",
             "type": "pnat"
           },
-          "condition": {"and": 
-            ["rental~.*bicycle_type.*"]
+          "condition": {
+            "and": [
+              "rental~.*bicycle_type.*"
+            ]
           }
         }
       ]

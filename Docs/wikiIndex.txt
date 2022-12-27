@@ -454,7 +454,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/transit transit]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:_context|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:nb_NO|en}}, {{#language:_context|en}}
 |descr= A MapComplete theme: Plan your trip with the help of the public transport system
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png

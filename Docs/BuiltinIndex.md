@@ -127,6 +127,7 @@
   - observation_tower
   - parcel_lockers
   - parking
+  - parking_spaces
   - pharmacy
   - physiotherapist
   - picnic_table
@@ -155,7 +156,6 @@
   - viewpoint
   - village_green
   - waste_basket
-  - watermill
   - windturbine
 
 
@@ -365,7 +365,6 @@
   - observation_tower
   - shops
   - ticket_validator
-  - toilet
 
 
 
@@ -807,6 +806,7 @@
 
 
   - ticket_machine
+  - toilet
 
 
 

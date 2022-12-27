@@ -293,6 +293,8 @@ This is rendered with  `{rental} is rented here`
   - *Bike helmets can be rented here*  corresponds with  `rental=bike_helmet`
 
 
+This tagrendering is only visible in the popup if the following condition is met: `service:bicycle:rental=yes`
+
 This tagrendering has labels  `bicycle_rental`
 
 
@@ -309,7 +311,7 @@ This is rendered with  `{capacity:city_bike} city bikes can be rented here`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*city_bike.*)$`
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*city_bike.*)$&service:bicycle:rental=yes`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -327,7 +329,7 @@ This is rendered with  `{capacity:ebike} electrical bikes can be rented here`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*ebike.*)$`
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*ebike.*)$&service:bicycle:rental=yes`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -345,7 +347,7 @@ This is rendered with  `{capacity:kid_bike} bikes for children can be rented her
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*kid_bike.*)$`
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*kid_bike.*)$&service:bicycle:rental=yes`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -363,7 +365,7 @@ This is rendered with  `{capacity:bmx} BMX bikes can be rented here`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*bmx.*)$`
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*bmx.*)$&service:bicycle:rental=yes`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -381,7 +383,7 @@ This is rendered with  `{capacity:mtb} mountainbike can be rented here`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*mtb.*)$`
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*mtb.*)$&service:bicycle:rental=yes`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -399,7 +401,7 @@ This is rendered with  `{capacity:bicycle_pannier} bicycle panniers can be rente
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*bicycle_pannier.*)$`
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*bicycle_pannier.*)$&service:bicycle:rental=yes`
 
 This tagrendering has labels  `bicycle_rental`
 
@@ -417,7 +419,7 @@ This is rendered with  `{capacity:tandem_bicycle} tandem can be rented here`
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*tandem_bicycle.*)$`
+This tagrendering is only visible in the popup if the following condition is met: `rental~^(.*tandem_bicycle.*)$&service:bicycle:rental=yes`
 
 This tagrendering has labels  `bicycle_rental`
 

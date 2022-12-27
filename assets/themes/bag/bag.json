@@ -4,7 +4,8 @@
     "nl": "BAG import helper",
     "en": "BAG import helper",
     "de": "BAG-Importhilfe",
-    "fr": "Facilitateur d'import BAG"
+    "fr": "Facilitateur d'import BAG",
+    "nb_NO": "BAG-importhjelper"
   },
   "shortDescription": {
     "nl": "BAG import helper tool",

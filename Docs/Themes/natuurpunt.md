@@ -22,7 +22,6 @@ This theme contains the following layers:
   - [parking](../Layers/parking.md)
   - [information_board](../Layers/information_board.md)
   - [bench](../Layers/bench.md)
-  - [watermill](../Layers/watermill.md)
   - [gps_track](../Layers/gps_track.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)

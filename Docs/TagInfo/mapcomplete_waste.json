@@ -182,6 +182,11 @@
       "value": "yes"
     },
     {
+      "key": "recycling:fluorescent_tubes",
+      "description": "Layer 'Recycling' shows recycling:fluorescent_tubes=yes with a fixed text, namely 'Fluorescent tubes can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
       "key": "recycling:green_waste",
       "description": "Layer 'Recycling' shows recycling:green_waste=yes with a fixed text, namely 'Green waste can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
       "value": "yes"
@@ -199,6 +204,11 @@
     {
       "key": "recycling:glass",
       "description": "Layer 'Recycling' shows recycling:glass=yes with a fixed text, namely 'Glass can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:light_bulbs",
+      "description": "Layer 'Recycling' shows recycling:light_bulbs=yes with a fixed text, namely 'Light bulbs can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
       "value": "yes"
     },
     {

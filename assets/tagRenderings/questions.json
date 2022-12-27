@@ -1046,7 +1046,7 @@
       ]
     },
     "question": {
-      "en": "With what coins can you pay here?",
+      "en": "What coins can you use to pay here?",
       "de": "Mit welchen Münzen kann man hier bezahlen?",
       "nl": "Met welke munten kan je hier betalen?"
     },
@@ -1058,7 +1058,8 @@
         "then": {
           "en": "1 cent coins are accepted",
           "de": "1-Cent-Münzen werden akzeptiert",
-          "nl": "Munten van 1 cent worden geaccepteerd"
+          "nl": "Munten van 1 cent worden geaccepteerd",
+          "nb_NO": "1-cent mynter aksepteres"
         }
       },
       {
@@ -1067,7 +1068,8 @@
         "then": {
           "en": "2 cent coins are accepted",
           "de": "2-Cent-Münzen werden akzeptiert",
-          "nl": "Munten van 2 cent worden geaccepteerd"
+          "nl": "Munten van 2 cent worden geaccepteerd",
+          "nb_NO": "2-cent mynter aksepteres"
         }
       },
       {
@@ -1076,7 +1078,8 @@
         "then": {
           "en": "5 cent coins are accepted",
           "de": "5-Cent-Münzen werden akzeptiert",
-          "nl": "Munten van 5 cent worden geaccepteerd"
+          "nl": "Munten van 5 cent worden geaccepteerd",
+          "nb_NO": "5-cent mynter aksepteres"
         }
       },
       {
@@ -1085,7 +1088,8 @@
         "then": {
           "en": "10 cent coins are accepted",
           "de": "10-Cent-Münzen werden akzeptiert",
-          "nl": "Munten van 10 cent worden geaccepteerd"
+          "nl": "Munten van 10 cent worden geaccepteerd",
+          "nb_NO": "10-cent mynter aksepteres"
         }
       },
       {
@@ -1094,7 +1098,8 @@
         "then": {
           "en": "20 cent coins are accepted",
           "de": "20-Cent-Münzen werden akzeptiert",
-          "nl": "Munten van 20 cent worden geaccepteerd"
+          "nl": "Munten van 20 cent worden geaccepteerd",
+          "nb_NO": "20-cent mynter aksepteres"
         }
       },
       {
@@ -1103,7 +1108,8 @@
         "then": {
           "en": "50 cent coins are accepted",
           "de": "50-Cent-Münzen werden akzeptiert",
-          "nl": "Munten van 50 cent worden geaccepteerd"
+          "nl": "Munten van 50 cent worden geaccepteerd",
+          "nb_NO": "50-cent mynter aksepteres"
         }
       },
       {
@@ -1112,7 +1118,8 @@
         "then": {
           "en": "1 euro coins are accepted",
           "de": "1-Euro-Münzen werden akzeptiert",
-          "nl": "Munten van 1 euro worden geaccepteerd"
+          "nl": "Munten van 1 euro worden geaccepteerd",
+          "nb_NO": "1-euro mynter aksepteres"
         }
       },
       {
@@ -1121,7 +1128,8 @@
         "then": {
           "en": "2 euro coins are accepted",
           "de": "2-Euro-Münzen werden akzeptiert",
-          "nl": "Munten van 2 euro worden geaccepteerd"
+          "nl": "Munten van 2 euro worden geaccepteerd",
+          "nb_NO": "2-euro mynter aksepteres"
         }
       }
     ]

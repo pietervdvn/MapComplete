@@ -1689,9 +1689,6 @@
             "render": "Контейнер для мусора"
         }
     },
-    "watermill": {
-        "name": "Водяная мельница"
-    },
     "windturbine": {
         "title": {
             "mappings": {

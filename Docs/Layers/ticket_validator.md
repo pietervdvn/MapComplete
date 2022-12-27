@@ -138,9 +138,9 @@ The question is  *Which methods of payment are accepted here?*
   - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
   - *This ticket validator accepts OV-Chipkaart*  corresponds with  `payment:OV-Chipkaart=yes`
+  - This option cannot be chosen as answer
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:OV-Chipkaart' target='_blank'>payment:OV-Chipkaart</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:OV-Chipkaart%3Dno' target='_blank'>no</a>
   - *This ticket validator accepts OV-Chipkaart*  corresponds with  `payment:ov-chipkaart=yes`
-  - This option cannot be chosen as answer
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:ov-chipkaart' target='_blank'>payment:ov-chipkaart</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:ov-chipkaart%3Dno' target='_blank'>no</a>
  
 

@@ -399,6 +399,46 @@
       "description": "Layer 'ATMs' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if amenity!=bank)"
     },
     {
+      "key": "cash_out",
+      "description": "Layer 'ATMs' shows  with a fixed text, namely 'You can withdraw cash from this ATM' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key cash_out.",
+      "value": ""
+    },
+    {
+      "key": "cash_out",
+      "description": "Layer 'ATMs' shows cash_out=yes with a fixed text, namely 'You can withdraw cash from this ATM' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "cash_out",
+      "description": "Layer 'ATMs' shows cash_out=no with a fixed text, namely 'You cannot withdraw cash from this ATM' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "cash_in",
+      "description": "Layer 'ATMs' shows  with a fixed text, namely 'You probably cannot deposit cash into this ATM' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key cash_in.",
+      "value": ""
+    },
+    {
+      "key": "cash_in",
+      "description": "Layer 'ATMs' shows cash_in=yes with a fixed text, namely 'You can deposit cash into this ATM' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "cash_in",
+      "description": "Layer 'ATMs' shows cash_in=no with a fixed text, namely 'You cannot deposit cash into this ATM' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "speech_output",
+      "description": "Layer 'ATMs' shows speech_output=yes with a fixed text, namely 'This ATM has speech output, usually available through a headphone jack' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "speech_output",
+      "description": "Layer 'ATMs' shows speech_output=no with a fixed text, namely 'This ATM does not have speech output' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
       "key": "barrier",
       "description": "The MapComplete theme Personal theme has a layer Barriers showing features with this tag",
       "value": "bollard"
@@ -1884,75 +1924,75 @@
     },
     {
       "key": "rental",
-      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'rental' (in the MapComplete.osm.be theme 'Personal theme')"
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'rental' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if service:bicycle:rental=yes)"
     },
     {
       "key": "rental",
-      "description": "Layer 'Bike repair/shop' shows rental=city_bike with a fixed text, namely 'Normal city bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bike repair/shop' shows rental=city_bike with a fixed text, namely 'Normal city bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if service:bicycle:rental=yes)",
       "value": "city_bike"
     },
     {
       "key": "rental",
-      "description": "Layer 'Bike repair/shop' shows rental=ebike with a fixed text, namely 'Electrical bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bike repair/shop' shows rental=ebike with a fixed text, namely 'Electrical bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if service:bicycle:rental=yes)",
       "value": "ebike"
     },
     {
       "key": "rental",
-      "description": "Layer 'Bike repair/shop' shows rental=bmx with a fixed text, namely 'BMX bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bike repair/shop' shows rental=bmx with a fixed text, namely 'BMX bikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if service:bicycle:rental=yes)",
       "value": "bmx"
     },
     {
       "key": "rental",
-      "description": "Layer 'Bike repair/shop' shows rental=mtb with a fixed text, namely 'Mountainbikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bike repair/shop' shows rental=mtb with a fixed text, namely 'Mountainbikes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if service:bicycle:rental=yes)",
       "value": "mtb"
     },
     {
       "key": "rental",
-      "description": "Layer 'Bike repair/shop' shows rental=kid_bike with a fixed text, namely 'Bikes for children can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bike repair/shop' shows rental=kid_bike with a fixed text, namely 'Bikes for children can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if service:bicycle:rental=yes)",
       "value": "kid_bike"
     },
     {
       "key": "rental",
-      "description": "Layer 'Bike repair/shop' shows rental=tandem with a fixed text, namely 'Tandem bicycles can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bike repair/shop' shows rental=tandem with a fixed text, namely 'Tandem bicycles can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if service:bicycle:rental=yes)",
       "value": "tandem"
     },
     {
       "key": "rental",
-      "description": "Layer 'Bike repair/shop' shows rental=racebike with a fixed text, namely 'Race bicycles can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bike repair/shop' shows rental=racebike with a fixed text, namely 'Race bicycles can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if service:bicycle:rental=yes)",
       "value": "racebike"
     },
     {
       "key": "rental",
-      "description": "Layer 'Bike repair/shop' shows rental=bike_helmet with a fixed text, namely 'Bike helmets can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bike repair/shop' shows rental=bike_helmet with a fixed text, namely 'Bike helmets can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if service:bicycle:rental=yes)",
       "value": "bike_helmet"
     },
     {
       "key": "capacity:city_bike",
-      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:city_bike' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if rental~^(.*city_bike.*)$)"
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:city_bike' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if rental~^(.*city_bike.*)$&service:bicycle:rental=yes)"
     },
     {
       "key": "capacity:ebike",
-      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:ebike' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if rental~^(.*ebike.*)$)"
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:ebike' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if rental~^(.*ebike.*)$&service:bicycle:rental=yes)"
     },
     {
       "key": "capacity:kid_bike",
-      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:kid_bike' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if rental~^(.*kid_bike.*)$)"
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:kid_bike' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if rental~^(.*kid_bike.*)$&service:bicycle:rental=yes)"
     },
     {
       "key": "capacity:bmx",
-      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:bmx' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if rental~^(.*bmx.*)$)"
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:bmx' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if rental~^(.*bmx.*)$&service:bicycle:rental=yes)"
     },
     {
       "key": "capacity:mtb",
-      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:mtb' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if rental~^(.*mtb.*)$)"
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:mtb' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if rental~^(.*mtb.*)$&service:bicycle:rental=yes)"
     },
     {
       "key": "capacity:bicycle_pannier",
-      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:bicycle_pannier' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if rental~^(.*bicycle_pannier.*)$)"
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:bicycle_pannier' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if rental~^(.*bicycle_pannier.*)$&service:bicycle:rental=yes)"
     },
     {
       "key": "capacity:tandem_bicycle",
-      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:tandem_bicycle' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if rental~^(.*tandem_bicycle.*)$)"
+      "description": "Layer 'Bike repair/shop' shows and asks freeform values for key 'capacity:tandem_bicycle' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if rental~^(.*tandem_bicycle.*)$&service:bicycle:rental=yes)"
     },
     {
       "key": "service:bicycle:second_hand",
@@ -7927,6 +7967,22 @@
       "value": "parking_space"
     },
     {
+      "key": "image",
+      "description": "The layer 'Parking Spaces allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Parking Spaces allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Parking Spaces allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Parking Spaces allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
       "key": "parking_space",
       "description": "Layer 'Parking Spaces' shows  with a fixed text, namely 'This is a normal parking space.' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key parking_space.",
       "value": ""
@@ -8881,6 +8937,11 @@
       "value": "yes"
     },
     {
+      "key": "recycling:fluorescent_tubes",
+      "description": "Layer 'Recycling' shows recycling:fluorescent_tubes=yes with a fixed text, namely 'Fluorescent tubes can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
       "key": "recycling:green_waste",
       "description": "Layer 'Recycling' shows recycling:green_waste=yes with a fixed text, namely 'Green waste can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
@@ -8898,6 +8959,11 @@
     {
       "key": "recycling:glass",
       "description": "Layer 'Recycling' shows recycling:glass=yes with a fixed text, namely 'Glass can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:light_bulbs",
+      "description": "Layer 'Recycling' shows recycling:light_bulbs=yes with a fixed text, namely 'Light bulbs can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
     },
     {
@@ -11056,12 +11122,32 @@
     },
     {
       "key": "payment:cash",
-      "description": "Layer 'Toilets' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes)",
+      "description": "Layer 'Toilets' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes)",
       "value": "yes"
     },
     {
       "key": "payment:cards",
-      "description": "Layer 'Toilets' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes)",
+      "description": "Layer 'Toilets' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Toilets' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Toilets' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Toilets' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Toilets' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if fee=yes)",
       "value": "yes"
     },
     {

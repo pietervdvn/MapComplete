@@ -1040,7 +1040,6 @@ The following layers are included in MapComplete:
   - [walls_and_buildings](./Layers/walls_and_buildings.md)
   - [waste_basket](./Layers/waste_basket.md)
   - [waste_disposal](./Layers/waste_disposal.md)
-  - [watermill](./Layers/watermill.md)
   - [windturbine](./Layers/windturbine.md)
  
 

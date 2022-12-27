@@ -2,22 +2,22 @@
     "address": {
         "description": "Adresser",
         "name": "Kjente adresser i OSM",
-        "title": {
-            "render": "Kjent adresse"
-        },
         "tagRenderings": {
+            "fixme": {
+                "question": "Hva bør fikses her? Forklar."
+            },
             "housenumber": {
-                "question": "Hvilket husnummer har dette huset?",
                 "mappings": {
                     "0": {
                         "then": "Denne bygningen har ikke noe husnummer"
                     }
                 },
+                "question": "Hvilket husnummer har dette huset?",
                 "render": "Husnummeret er <b>{addr:housenumber}</b>"
-            },
-            "fixme": {
-                "question": "Hva bør fikses her? Forklar."
             }
+        },
+        "title": {
+            "render": "Kjent adresse"
         }
     },
     "ambulancestation": {
