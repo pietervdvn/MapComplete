@@ -171,7 +171,16 @@
       "en": "Parking Space",
       "de": "Stellplatz",
       "nl": "Parkeerplek"
-    }
+    },
+    "mappings": [
+      {
+        "if": "parking_space=disabled",
+        "then": {
+          "en": "Disabled Parking Space",
+          "nl": "Parkeerplek voor gehandicapten"
+        }
+      }
+    ]
   },
   "mapRendering": [
     {
