@@ -575,7 +575,7 @@
             "li3": "ta et bilde av blomstene"
         },
         "matchPercentage": "{match}% treff",
-        "loadingWikidata": "Laster inn info om species} …",
+        "loadingWikidata": "Laster inn info om {species} …",
         "overviewTitle": "Automatisk oppdagede arter"
     },
     "matrixbot": {
