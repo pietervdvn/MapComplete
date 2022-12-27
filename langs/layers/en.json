@@ -168,7 +168,7 @@
         }
     },
     "atm": {
-        "description": "ATMS to withdraw money",
+        "description": "ATMs to withdraw money",
         "filter": {
             "1": {
                 "options": {
