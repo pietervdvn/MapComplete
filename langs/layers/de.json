@@ -195,6 +195,54 @@
                 },
                 "question": "Welches Unternehmen betreibt den Geldautomaten?",
                 "render": "Der Geldautomat wird von {operator} betrieben"
+            },
+            "cash_in": {
+                "mappings": {
+                    "1": {
+                        "then": "Sie können Bargeld in diesen Geldautomaten einzahlen"
+                    },
+                    "2": {
+                        "then": "Sie können an diesem Geldautomaten kein Bargeld einzahlen"
+                    },
+                    "0": {
+                        "then": "Sie können wahrscheinlich kein Bargeld in diesen Geldautomaten einzahlen"
+                    }
+                },
+                "question": "Kann man an diesem Geldautomaten Bargeld einzahlen?"
+            },
+            "cash_out": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie können an diesem Geldautomaten Bargeld abheben"
+                    },
+                    "1": {
+                        "then": "An diesem Geldautomaten können Sie Bargeld abheben"
+                    },
+                    "2": {
+                        "then": "Sie können an diesem Geldautomaten kein Bargeld abheben"
+                    }
+                },
+                "question": "Kann man an diesem Geldautomaten Bargeld abheben?"
+            },
+            "speech_output": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Geldautomat verfügt über eine Sprachausgabe, die normalerweise über eine Kopfhörerbuchse verfügbar ist"
+                    },
+                    "1": {
+                        "then": "Dieser Geldautomat hat keine Sprachausgabe"
+                    }
+                },
+                "question": "Verfügt dieser Geldautomat über eine Sprachausgabe für sehbehinderte Benutzer?"
+            },
+            "speech_output_language": {
+                "render": {
+                    "special": {
+                        "render_single_language": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}",
+                        "question": "In welchen Sprachen hat dieser Geldautomat eine Sprachausgabe?",
+                        "render_list_item": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}"
+                    }
+                }
             }
         },
         "title": {
@@ -204,6 +252,15 @@
                 }
             },
             "render": "Geldautomat"
+        },
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Mit Sprachausgabe"
+                    }
+                }
+            }
         }
     },
     "barrier": {
@@ -6354,6 +6411,12 @@
                     },
                     "19": {
                         "question": "Recycling von Restabfällen"
+                    },
+                    "11": {
+                        "question": "Recycling von Glühbirnen"
+                    },
+                    "7": {
+                        "question": "Recycling von Leuchtstoffröhren"
                     }
                 }
             }
@@ -6455,6 +6518,12 @@
                     },
                     "22": {
                         "then": "Restmüll kann hier recycelt werden"
+                    },
+                    "11": {
+                        "then": "Hier können Glühbirnen recycelt werden"
+                    },
+                    "6": {
+                        "then": "Hier können Leuchtstoffröhren recycelt werden"
                     }
                 },
                 "question": "Was kann hier recycelt werden?"
@@ -7040,6 +7109,12 @@
                         "render_single_language": "Die Treppe hat taktile Schrift in {language():font-bold}"
                     }
                 }
+            },
+            "multilevels": {
+                "override": {
+                    "question": "Zwischen welchen Stockwerken befindet sich die Treppe?",
+                    "render": "Die Treppe befindet sich zwischen den Stockwerken {level}"
+                }
             }
         },
         "title": {
@@ -7401,7 +7476,8 @@
         "name": "Fahrkartenentwerter",
         "presets": {
             "0": {
-                "title": "einen Fahrkartenentwerter"
+                "title": "einen Fahrkartenentwerter",
+                "description": "Ein Fahrkartenentwerter zur Entwertung einer Fahrkarte für öffentliche Verkehrsmittel. Dabei kann es sich entweder um ein digitales Lesegerät handeln, das eine Karte oder einen Fahrschein liest, oder um eine Maschine, die einen Fahrschein stempelt oder locht."
             }
         },
         "tagRenderings": {
@@ -7419,6 +7495,18 @@
                 },
                 "question": "Wer ist der Betreiber dieses Fahrkartenentwerters?",
                 "render": "Dieser Fahrkartenentwerter wird betrieben von {operator}"
+            },
+            "payment-options": {
+                "override": {
+                    "mappings+": {
+                        "1": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
+                        },
+                        "0": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
+                        }
+                    }
+                }
             }
         },
         "title": {
@@ -7685,6 +7773,11 @@
             "wheelchair-door-width": {
                 "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
                 "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist die Einrichtung, in der sich diese Toiletten befinden, geöffnet?"
+                }
             }
         },
         "title": {
