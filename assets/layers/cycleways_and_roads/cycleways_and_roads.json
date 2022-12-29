@@ -1241,7 +1241,7 @@
             "moped=no"
           ],
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G11.svg",
+            "path": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G11.svg",
             "class": "medium"
           }
         },
@@ -1259,7 +1259,7 @@
             "moped=designated"
           ],
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G12a.svg",
+            "path": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G12a.svg",
             "class": "medium"
           }
         },
@@ -1277,7 +1277,7 @@
             "moped=no"
           ],
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G13.svg",
+            "path": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G13.svg",
             "class": "medium"
           }
         },
