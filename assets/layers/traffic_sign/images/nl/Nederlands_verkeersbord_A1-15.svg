@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Nederlands_verkeersbord_A1"
+   width="300"
+   height="300"
+   viewBox="0 0 100 100"
+   version="1.1"
+   sodipodi:docname="Nederlands_verkeersbord_A1-15.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="3.6184615"
+     inkscape:cx="65.77381"
+     inkscape:cy="144.81293"
+     inkscape:window-width="2256"
+     inkscape:window-height="1435"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Nederlands_verkeersbord_A1" />
+  <circle
+     id="witte cirkel met rode rand"
+     cx="50"
+     cy="50"
+     r="43.5"
+     fill="#f7fbf5"
+     stroke="#c1121c"
+     stroke-width="13" />
+  <g
+     aria-label="15"
+     id="text169"
+     style="font-weight:bold;font-size:48px;-inkscape-font-specification:'sans-serif Bold';letter-spacing:-4px;fill:#2a2d2f;stroke-width:0.333333">
+    <path
+       d="m 33.847656,41.292969 h -4.828125 v -4.992188 l 1.148438,-0.28125 q 1.382812,-0.46875 2.0625,-0.960937 2.203125,-1.570313 2.203125,-2.695313 h 5.414062 v 35.039063 h -6 z"
+       style="font-family:'Anwb Eex VL';-inkscape-font-specification:'Anwb Eex VL Bold'"
+       id="path1858" />
+    <path
+       d="m 49.957031,50.949219 -5.695312,-1.828125 0.75,-16.757813 h 22.664062 v 6 H 51.058594 l -0.234375,5.859375 q 4.359375,-1.40625 7.148437,-1.40625 5.859375,0 9.234375,3.375 3.773438,3.84375 3.773438,9.070313 0,4.992187 -4.125,9.117187 -3.328125,3.257813 -8.34375,3.257813 -2.203125,-0.04687 -3.890625,-0.210938 -1.664063,-0.140625 -3.585938,-0.515625 -1.921875,-0.398437 -3.5625,-0.9375 -2.953125,-0.984375 -4.617187,-2.015625 l 2.742187,-5.765625 q 0.609375,0.421875 2.671875,1.21875 2.0625,0.796875 4.617188,1.40625 2.554687,0.585938 4.523437,0.585938 4.125,0 5.695313,-1.96875 1.59375,-1.992188 1.59375,-4.453125 0,-1.242188 -0.679688,-2.601563 -0.65625,-1.359375 -2.0625,-2.296875 -1.40625,-0.960937 -3.445312,-0.960937 -2.742188,0 -4.359375,0.421875 -1.617188,0.421875 -4.195313,1.40625 z"
+       style="font-family:'Anwb Eex VL';-inkscape-font-specification:'Anwb Eex VL Bold'"
+       id="path1860" />
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Nederlands_verkeersbord_A1"
+   width="500"
+   height="500"
+   viewBox="0 0 166.66667 166.66667"
+   version="1.1"
+   sodipodi:docname="unknown.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="3.6184615"
+     inkscape:cx="117.72959"
+     inkscape:cy="144.81293"
+     inkscape:window-width="3840"
+     inkscape:window-height="2091"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Nederlands_verkeersbord_A1" />
+  <g
+     id="g229"
+     transform="scale(1.6666667)">
+    <circle
+       id="witte cirkel met rode rand"
+       cx="50"
+       cy="50"
+       r="43.5"
+       fill="#f7fbf5"
+       stroke="#c1121c"
+       stroke-width="13" />
+    <g
+       aria-label="?"
+       id="text169"
+       style="font-weight:bold;font-size:48px;-inkscape-font-specification:'sans-serif Bold';letter-spacing:-4px;fill:#2a2d2f;stroke-width:0.333333">
+      <path
+         d="m 45.536,53.960003 q 0,-1.584 0.432,-2.832 0.432,-1.248 1.392,-2.352 1.008,-1.104 2.64,-2.256 1.44,-1.056 2.304,-1.872 0.912,-0.816 1.296,-1.632 0.432,-0.816 0.432,-1.824 0,-1.536 -1.152,-2.304 -1.104,-0.816 -3.12,-0.816 -2.016,0 -3.984,0.624 -1.968,0.624 -4.032,1.68 l -2.544,-5.136 q 2.352,-1.296 5.088,-2.112 2.736,-0.816 6,-0.816 4.992,0 7.728,2.4 2.784,2.4 2.784,6.096 0,1.968 -0.624,3.408 -0.624,1.44 -1.872,2.688 -1.248,1.2 -3.12,2.592 -1.392,1.008 -2.16,1.728 -0.768,0.72 -1.056,1.392 -0.24,0.672 -0.24,1.68 v 1.392 h -6.192 z m -0.768,9.744 q 0,-2.208 1.2,-3.072 1.2,-0.912 2.928,-0.912 1.68,0 2.88,0.912 1.2,0.864 1.2,3.072 0,2.112 -1.2,3.072 -1.2,0.912 -2.88,0.912 -1.728,0 -2.928,-0.912 -1.2,-0.96 -1.2,-3.072 z"
+         id="path116" />
+    </g>
+  </g>
+</svg>

@@ -379,6 +379,10 @@
                 "then": "./assets/themes/toilets/toilets.svg"
               },
               {
+                "if": "theme=traffic_sign",
+                "then": "./assets/layers/traffic_sign/images/unknown.svg"
+              },
+              {
                 "if": "theme=transit",
                 "then": "./assets/layers/transit_stops/bus_stop.svg"
               },

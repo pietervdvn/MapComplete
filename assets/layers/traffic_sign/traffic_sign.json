@@ -1,0 +1,179 @@
+{
+  "id": "traffic_sign",
+  "name": {
+    "en": "Traffic Signs",
+    "nl": "Verkeersborden"
+  },
+  "description": {
+    "en": "Layer showing various traffic signs",
+    "nl": "Laag met verscheidene verkeersborden"
+  },
+  "minzoom": 13,
+  "source": {
+    "osmTags": "traffic_sign~*"
+  },
+  "isShown": "id~node/.*",
+  "title": {
+    "render": {
+      "en": "Traffic Sign {traffic_sign}",
+      "nl": "Verkeersbord {traffic_sign}"
+    },
+    "mappings": [
+      {
+        "if": "traffic_sign=yes",
+        "then": {
+          "en": "Unknown Traffic Sign",
+          "nl": "Onbekend Verkeersbord"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "id": "direction",
+      "question": {
+        "en": "In which direction is this traffic sign visible?",
+        "nl": "In welke richting is dit verkeersbord zichtbaar?"
+      },
+      "freeform": {
+        "key": "direction",
+        "type": "direction"
+      },
+      "render": {
+        "en": "Traffic sign is visible in direction {direction}",
+        "nl": "Verkeersbord is zichtbaar in richting {direction}"
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": {
+        "render": "./assets/layers/traffic_sign/images/unknown.svg",
+        "mappings": [
+          {
+            "if": "traffic_sign~NL:A01-5(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_A1-5.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A01-10(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_A1-10.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A01-15(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_A1-15.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A01-20(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_A1-20.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A01-30(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_A1-30.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A01-50(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_A1-50.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A01-60(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_A1-60.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A01-70(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_A1-70.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A01-80(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_A1-80.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A01-90(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_A1-90.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A01-100(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_A1-100.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A01-120(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_A1-120.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A01-130(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_A1-130.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G01(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G1.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G02(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G2.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G03(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G3.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G04(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G4.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G05(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G5.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G06(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G6.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G07(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G7.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G08(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G8.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G09(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G9.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G10(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G10.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G11(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G11.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G12(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G12.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G12a(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G12a.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G12b(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G12b.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G13(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G13.svg"
+          },
+          {
+            "if": "traffic_sign~NL:G14(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/Nederlands_verkeersbord_G14.svg"
+          }
+        ]
+      },
+      "rotation": "calc({direction}deg + 180deg)"
+    }
+  ]
+}
