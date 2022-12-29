@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="Nederlands_verkeersbord_D4" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" version="1.1">
+
+<circle id="blauwe_cirkel" cx="150" cy="150" r="150" fill="#0e518d"/>
+
+<circle id="doorzichtige_cirkel_met_witte_rand" cx="150" cy="150" r="141.942" fill="none" stroke="#f7fbf5" stroke-width="6.736"/>
+
+<path id="witte_pijl" fill="#f7fbf5" d="M 162.2836,259.67606 L 162.2836,113.53672 L 193.33247,120.74433 C 200.83137,123.69979 206.7515,119.82656 202.50863,112.55156 L 155.14592,44.53396 C 150.87023,38.44625 147.25215,38.44625 142.97645,44.53396 L 95.613746,112.55156 C 91.370866,119.82656 97.291006,123.69979 104.7899,120.74433 L 135.83877,113.53672 L 135.83877,259.67606 L 162.2836,259.67606"/>
+
+</svg>
