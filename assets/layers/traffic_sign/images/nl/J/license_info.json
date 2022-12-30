@@ -10,66 +10,6 @@
     ]
   },
   {
-    "path": "Nederlands_verkeersbord_J2.svg",
-    "license": "CC0",
-    "authors": [
-      "Ministerie van Infrastructuur en Waterstaat"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_J2.svg"
-    ]
-  },
-  {
-    "path": "Nederlands_verkeersbord_J3.svg",
-    "license": "CC0",
-    "authors": [
-      "Ministerie van Infrastructuur en Waterstaat"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_J3.svg"
-    ]
-  },
-  {
-    "path": "Nederlands_verkeersbord_J4.svg",
-    "license": "CC0",
-    "authors": [
-      "Ministerie van Infrastructuur en Waterstaat"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_J4.svg"
-    ]
-  },
-  {
-    "path": "Nederlands_verkeersbord_J5.svg",
-    "license": "CC0",
-    "authors": [
-      "Ministerie van Infrastructuur en Waterstaat"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_J5.svg"
-    ]
-  },
-  {
-    "path": "Nederlands_verkeersbord_J8.svg",
-    "license": "CC0",
-    "authors": [
-      "Ministerie van Infrastructuur en Waterstaat"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_J8.svg"
-    ]
-  },
-  {
-    "path": "Nederlands_verkeersbord_J9.svg",
-    "license": "CC0",
-    "authors": [
-      "Ministerie van Infrastructuur en Waterstaat"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_J9.svg"
-    ]
-  },
-  {
     "path": "Nederlands_verkeersbord_J10.svg",
     "license": "CC0",
     "authors": [
@@ -167,6 +107,16 @@
     ],
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_J19.svg"
+    ]
+  },
+  {
+    "path": "Nederlands_verkeersbord_J2.svg",
+    "license": "CC0",
+    "authors": [
+      "Ministerie van Infrastructuur en Waterstaat"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_J2.svg"
     ]
   },
   {
@@ -270,6 +220,16 @@
     ]
   },
   {
+    "path": "Nederlands_verkeersbord_J3.svg",
+    "license": "CC0",
+    "authors": [
+      "Ministerie van Infrastructuur en Waterstaat"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_J3.svg"
+    ]
+  },
+  {
     "path": "Nederlands_verkeersbord_J30.svg",
     "license": "CC0",
     "authors": [
@@ -367,6 +327,46 @@
     ],
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_J39.svg"
+    ]
+  },
+  {
+    "path": "Nederlands_verkeersbord_J4.svg",
+    "license": "CC0",
+    "authors": [
+      "Ministerie van Infrastructuur en Waterstaat"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_J4.svg"
+    ]
+  },
+  {
+    "path": "Nederlands_verkeersbord_J5.svg",
+    "license": "CC0",
+    "authors": [
+      "Ministerie van Infrastructuur en Waterstaat"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_J5.svg"
+    ]
+  },
+  {
+    "path": "Nederlands_verkeersbord_J8.svg",
+    "license": "CC0",
+    "authors": [
+      "Ministerie van Infrastructuur en Waterstaat"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_J8.svg"
+    ]
+  },
+  {
+    "path": "Nederlands_verkeersbord_J9.svg",
+    "license": "CC0",
+    "authors": [
+      "Ministerie van Infrastructuur en Waterstaat"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_J9.svg"
     ]
   }
 ]

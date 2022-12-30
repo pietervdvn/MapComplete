@@ -160,37 +160,7 @@
     ]
   },
   {
-    "path": "Netherlands_traffic_sign_A2-30-ZE.svg",
-    "license": "CC0",
-    "authors": [
-      "Modified from Ad Verburg"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Netherlands_traffic_sign_A2-30-ZE.svg"
-    ]
-  },
-  {
-    "path": "Netherlands_traffic_sign_A2-50-ZE.svg",
-    "license": "CC0",
-    "authors": [
-      "Modified from Ad Verburg"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Netherlands_traffic_sign_A2-30-ZE.svg"
-    ]
-  },
-  {
-    "path": "Netherlands_traffic_sign_A2-60-ZE.svg",
-    "license": "CC0",
-    "authors": [
-      "Modified from Ad Verburg"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Netherlands_traffic_sign_A2-30-ZE.svg"
-    ]
-  },
-  {
-    "path": "Nederlands_verkeersbord_A2-5.svg",
+    "path": "Nederlands_verkeersbord_A2-10.svg",
     "license": "CC0",
     "authors": [
       "Modified from Ministerie van Infrastructuur en Waterstaat"
@@ -200,17 +170,27 @@
     ]
   },
   {
-    "path": "Nederlands_verkeersbord_A2-30.svg",
+    "path": "Nederlands_verkeersbord_A2-100.svg",
     "license": "CC0",
     "authors": [
-      "Ministerie van Infrastructuur en Waterstaat"
+      "Modified from Ministerie van Infrastructuur en Waterstaat"
     ],
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_A2.svg"
     ]
   },
   {
-    "path": "Nederlands_verkeersbord_A2-10.svg",
+    "path": "Nederlands_verkeersbord_A2-120.svg",
+    "license": "CC0",
+    "authors": [
+      "Modified from Ministerie van Infrastructuur en Waterstaat"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_A2.svg"
+    ]
+  },
+  {
+    "path": "Nederlands_verkeersbord_A2-130.svg",
     "license": "CC0",
     "authors": [
       "Modified from Ministerie van Infrastructuur en Waterstaat"
@@ -231,6 +211,26 @@
   },
   {
     "path": "Nederlands_verkeersbord_A2-20.svg",
+    "license": "CC0",
+    "authors": [
+      "Modified from Ministerie van Infrastructuur en Waterstaat"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_A2.svg"
+    ]
+  },
+  {
+    "path": "Nederlands_verkeersbord_A2-30.svg",
+    "license": "CC0",
+    "authors": [
+      "Ministerie van Infrastructuur en Waterstaat"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_A2.svg"
+    ]
+  },
+  {
+    "path": "Nederlands_verkeersbord_A2-5.svg",
     "license": "CC0",
     "authors": [
       "Modified from Ministerie van Infrastructuur en Waterstaat"
@@ -290,33 +290,33 @@
     ]
   },
   {
-    "path": "Nederlands_verkeersbord_A2-100.svg",
+    "path": "Netherlands_traffic_sign_A2-30-ZE.svg",
     "license": "CC0",
     "authors": [
-      "Modified from Ministerie van Infrastructuur en Waterstaat"
+      "Modified from Ad Verburg"
     ],
     "sources": [
-      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_A2.svg"
+      "https://commons.wikimedia.org/wiki/File:Netherlands_traffic_sign_A2-30-ZE.svg"
     ]
   },
   {
-    "path": "Nederlands_verkeersbord_A2-120.svg",
+    "path": "Netherlands_traffic_sign_A2-50-ZE.svg",
     "license": "CC0",
     "authors": [
-      "Modified from Ministerie van Infrastructuur en Waterstaat"
+      "Modified from Ad Verburg"
     ],
     "sources": [
-      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_A2.svg"
+      "https://commons.wikimedia.org/wiki/File:Netherlands_traffic_sign_A2-30-ZE.svg"
     ]
   },
   {
-    "path": "Nederlands_verkeersbord_A2-130.svg",
+    "path": "Netherlands_traffic_sign_A2-60-ZE.svg",
     "license": "CC0",
     "authors": [
-      "Modified from Ministerie van Infrastructuur en Waterstaat"
+      "Modified from Ad Verburg"
     ],
     "sources": [
-      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_A2.svg"
+      "https://commons.wikimedia.org/wiki/File:Netherlands_traffic_sign_A2-30-ZE.svg"
     ]
   }
 ]

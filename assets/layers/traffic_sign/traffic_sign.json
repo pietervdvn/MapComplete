@@ -457,14 +457,6 @@
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J5.svg"
           },
           {
-            "if": "traffic_sign~NL:J06(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J6.svg"
-          },
-          {
-            "if": "traffic_sign~NL:J07(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J7.svg"
-          },
-          {
             "if": "traffic_sign~NL:J08(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J8.svg"
           },
