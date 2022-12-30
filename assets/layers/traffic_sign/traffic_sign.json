@@ -116,16 +116,68 @@
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-130.svg"
           },
           {
+            "if": "traffic_sign~NL:A02-5(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-5.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A02-10(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-10.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A02-15(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-15.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A02-20(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-20.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A02-30(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-30.svg"
+          },
+          {
             "if": "traffic_sign~NL:A02-30-ZE(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Netherlands_traffic_sign_A2-30-ZE.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A02-50(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-50.svg"
           },
           {
             "if": "traffic_sign~NL:A02-50-ZE(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Netherlands_traffic_sign_A2-50-ZE.svg"
           },
           {
+            "if": "traffic_sign~NL:A02-60(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-60.svg"
+          },
+          {
             "if": "traffic_sign~NL:A02-60-ZE(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Netherlands_traffic_sign_A2-60-ZE.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A02-70(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-70.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A02-80(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-80.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A02-90(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-90.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A02-100(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-100.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A02-120(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-120.svg"
+          },
+          {
+            "if": "traffic_sign~NL:A02-130(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-130.svg"
           },
           {
             "if": "traffic_sign~NL:B01(;.*)*$",
@@ -269,6 +321,58 @@
             "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D7.svg"
           },
           {
+            "if": "traffic_sign~NL:E01(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E1.svg"
+          },
+          {
+            "if": "traffic_sign~NL:E02(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E2.svg"
+          },
+          {
+            "if": "traffic_sign~NL:E03(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E3.svg"
+          },
+          {
+            "if": "traffic_sign~NL:E04(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E4.svg"
+          },
+          {
+            "if": "traffic_sign~NL:E05(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E5.svg"
+          },
+          {
+            "if": "traffic_sign~NL:E06(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E6.svg"
+          },
+          {
+            "if": "traffic_sign~NL:E07(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E7.svg"
+          },
+          {
+            "if": "traffic_sign~NL:E08(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E8.svg"
+          },
+          {
+            "if": "traffic_sign~NL:E09(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E9.svg"
+          },
+          {
+            "if": "traffic_sign~NL:E10(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E10.svg"
+          },
+          {
+            "if": "traffic_sign~NL:E11(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E11.svg"
+          },
+          {
+            "if": "traffic_sign~NL:E12(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E12.svg"
+          },
+          {
+            "if": "traffic_sign~NL:E13(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E13.svg"
+          },
+          {
             "if": "traffic_sign~NL:G01(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G1.svg"
           },
@@ -331,6 +435,190 @@
           {
             "if": "traffic_sign~NL:G14(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G14.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J01(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J1.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J02(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J2.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J03(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J3.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J04(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J4.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J05(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J5.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J06(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J6.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J07(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J7.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J08(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J8.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J09(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J9.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J10(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J10.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J11(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J11.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J12(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J12.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J13(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J13.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J14(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J14.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J15(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J15.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J16(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J16.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J17(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J17.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J18(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J18.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J19(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J19.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J20(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J20.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J21(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J21.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J22(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J22.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J23(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J23.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J24(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J24.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J25(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J25.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J26(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J26.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J27(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J27.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J28(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J28.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J29(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J29.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J30(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J30.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J31(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J31.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J32(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J32.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J33(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J33.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J34(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J34.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J35(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J35.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J36(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J36.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J37(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J37_zonder_onderbord.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J38(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J38.svg"
+          },
+          {
+            "if": "traffic_sign~NL:J39(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J39.svg"
+          },
+          {
+            "if": "traffic_sign~NL:L02(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/L/Nederlands_verkeersbord_L2.svg"
+          },
+          {
+            "if": "traffic_sign~NL:L03a(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/L/Nederlands_verkeersbord_L3a.svg"
+          },
+          {
+            "if": "traffic_sign~NL:L03b(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/L/Nederlands_verkeersbord_L3b.svg"
+          },
+          {
+            "if": "traffic_sign~NL:L03c(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/L/Nederlands_verkeersbord_L3c.svg"
+          },
+          {
+            "if": "traffic_sign~NL:L08(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/L/Nederlands_verkeersbord_L8.svg"
+          },
+          {
+            "if": "traffic_sign~NL:L09(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/L/Nederlands_verkeersbord_L9.svg"
+          },
+          {
+            "if": "traffic_sign~NL:L51(;.*)*$",
+            "then": "./assets/themes/cyclestreets/F111.svg"
           }
         ]
       },
