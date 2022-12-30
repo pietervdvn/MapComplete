@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Nederlands_verkeersbord_D6"
+   width="300"
+   height="300"
+   viewBox="0 0 300 300"
+   version="1.1"
+   sodipodi:docname="Nederlands_verkeersbord_D6-L.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs423" />
+  <sodipodi:namedview
+     id="namedview421"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="0.78666667"
+     inkscape:cx="150"
+     inkscape:cy="150"
+     inkscape:window-width="3840"
+     inkscape:window-height="2091"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Nederlands_verkeersbord_D6" />
+  <circle
+     id="blauwe_cirkel"
+     cx="-150"
+     cy="150"
+     r="150"
+     fill="#0e518d"
+     transform="scale(-1,1)" />
+  <circle
+     id="doorzichtige_cirkel_met_witte_rand"
+     cx="-150"
+     cy="150"
+     r="141.942"
+     fill="none"
+     stroke="#f7fbf5"
+     stroke-width="6.736"
+     transform="scale(-1,1)" />
+  <path
+     id="witte_pijlen"
+     fill="#f7fbf5"
+     d="m 172.81784,205.26493 v 56.29353 h 21.4238 V 94.995368 l 25.16095,5.869482 c 6.09708,2.39317 10.89245,-0.75572 7.44078,-6.625192 L 188.46368,39.130046 c -3.44327,-4.95422 -6.39943,-4.95422 -9.87628,0 l -38.34611,55.109612 c -3.44326,5.869472 1.34372,9.018362 7.44919,6.625192 l 25.12736,-5.869482 v 77.999852 l -0.0336,0.22673 c 0,0 -4.76179,-8.95126 -21.25582,-8.95126 H 94.08485 l 5.83674,-25.15746 c 2.39349,-6.07103 -0.75583,-10.85729 -6.62616,-7.41449 l -55.1089,38.34075 c -4.92134,3.47629 -4.92134,6.39844 0,9.87484 l 55.1089,38.37432 c 5.87033,3.44282 9.01965,-1.37712 6.62616,-7.43974 l -5.83674,-25.1658 h 57.44359 c 18.10651,0 21.25582,20.04362 21.25582,20.04362 l 0.0336,-0.4618" />
+</svg>

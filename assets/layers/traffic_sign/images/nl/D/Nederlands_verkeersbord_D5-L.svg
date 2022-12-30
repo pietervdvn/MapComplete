@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Nederlands_verkeersbord_D5"
+   width="300"
+   height="300"
+   viewBox="0 0 300 300"
+   version="1.1"
+   sodipodi:docname="Nederlands_verkeersbord_D5-L.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs112" />
+  <sodipodi:namedview
+     id="namedview110"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="0.78666667"
+     inkscape:cx="150"
+     inkscape:cy="150"
+     inkscape:window-width="2256"
+     inkscape:window-height="1435"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Nederlands_verkeersbord_D5" />
+  <circle
+     id="blauwe_cirkel"
+     cx="-150"
+     cy="150"
+     r="150"
+     fill="#0e518d"
+     transform="scale(-1,1)" />
+  <circle
+     id="doorzichtige_cirkel_met_witte_rand"
+     cx="-150"
+     cy="150"
+     r="141.942"
+     fill="none"
+     stroke="#f7fbf5"
+     stroke-width="6.736"
+     transform="scale(-1,1)" />
+  <path
+     id="witte_pijl"
+     fill="#f7fbf5"
+     d="m 149.52128,116.98343 h -32.4086 l 7.34842,31.52593 c 2.98135,7.60852 -0.949,13.61306 -8.33101,9.31336 L 47.07182,109.76123 c -6.16428,-4.35856 -6.16428,-8.03686 0,-12.361823 l 69.05827,-48.095091 c 7.38201,-4.291283 11.31236,1.704846 8.33101,9.321786 l -8.03708,30.37539 h 32.90409 c 55.70519,0.0336 55.47003,55.863168 55.47003,55.863168 V 254.96177 H 176.94976 V 144.86466 c 0,-27.39412 -27.42848,-27.88123 -27.42848,-27.88123" />
+</svg>

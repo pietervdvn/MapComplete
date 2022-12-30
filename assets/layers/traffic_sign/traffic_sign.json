@@ -92,6 +92,10 @@
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-60.svg"
           },
           {
+            "if": "traffic_sign~NL:A01-60-ZB(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1_60_Zone.svg"
+          },
+          {
             "if": "traffic_sign~NL:A01-70(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-70.svg"
           },
@@ -309,12 +313,20 @@
             "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D4.svg"
           },
           {
-            "if": "traffic_sign~NL:D05(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D5.svg"
+            "if": "traffic_sign~NL:D05-R(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D5-R.svg"
           },
           {
-            "if": "traffic_sign~NL:D06(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D6.svg"
+            "if": "traffic_sign~NL:D05-L(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D5-L.svg"
+          },
+          {
+            "if": "traffic_sign~NL:D06-R(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D6-R.svg"
+          },
+          {
+            "if": "traffic_sign~NL:D06-L(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D6-L.svg"
           },
           {
             "if": "traffic_sign~NL:D07(;.*)*$",
@@ -615,6 +627,1144 @@
         ]
       },
       "rotation": "calc({direction}deg + 180deg)"
+    }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "A1-5 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-5"
+      ]
+    },
+    {
+      "title": {
+        "en": "A1-10 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-10"
+      ]
+    },
+    {
+      "title": {
+        "en": "A1-15 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-15"
+      ]
+    },
+    {
+      "title": {
+        "en": "A1-20 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-20"
+      ]
+    },
+    {
+      "title": {
+        "en": "A1-30 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-30"
+      ]
+    },
+    {
+      "title": {
+        "en": "A1-30-ZB traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-30-ZB"
+      ]
+    },
+    {
+      "title": {
+        "en": "A1-50 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-50"
+      ]
+    },
+    {
+      "title": {
+        "en": "A1-50-ZB traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-50-ZB"
+      ]
+    },
+    {
+      "title": {
+        "en": "A1-60 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-60"
+      ]
+    },
+    {
+      "title": {
+        "en": "A1-60-ZB traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-60-ZB"
+      ]
+    },
+    {
+      "title": {
+        "en": "A1-70 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-70"
+      ]
+    },
+    {
+      "title": {
+        "en": "A1-80 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-80"
+      ]
+    },
+    {
+      "title": {
+        "en": "A1-90 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-90"
+      ]
+    },
+    {
+      "title": {
+        "en": "A1-100 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-100"
+      ]
+    },
+    {
+      "title": {
+        "en": "A1-120 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-120"
+      ]
+    },
+    {
+      "title": {
+        "en": "A1-130 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A01-130"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-5 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-5"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-10 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-10"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-15 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-15"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-20 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-20"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-30 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-30"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-30-ZE traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-30-ZE"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-50 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-50"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-50-ZE traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-50-ZE"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-60 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-60"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-60-ZE traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-60-ZE"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-70 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-70"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-80 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-80"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-90 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-90"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-100 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-100"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-120 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-120"
+      ]
+    },
+    {
+      "title": {
+        "en": "A2-130 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:A02-130"
+      ]
+    },
+    {
+      "title": {
+        "en": "B1 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:B01"
+      ]
+    },
+    {
+      "title": {
+        "en": "B2 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:B02"
+      ]
+    },
+    {
+      "title": {
+        "en": "B3 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:B03"
+      ]
+    },
+    {
+      "title": {
+        "en": "B4 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:B04"
+      ]
+    },
+    {
+      "title": {
+        "en": "B5 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:B05"
+      ]
+    },
+    {
+      "title": {
+        "en": "B6 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:B06"
+      ]
+    },
+    {
+      "title": {
+        "en": "B7 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:B07"
+      ]
+    },
+    {
+      "title": {
+        "en": "C1 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C01"
+      ]
+    },
+    {
+      "title": {
+        "en": "C2 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C02"
+      ]
+    },
+    {
+      "title": {
+        "en": "C3 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C03"
+      ]
+    },
+    {
+      "title": {
+        "en": "C4-L traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C04-L"
+      ]
+    },
+    {
+      "title": {
+        "en": "C4-R traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C04-R"
+      ]
+    },
+    {
+      "title": {
+        "en": "C5 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C05"
+      ]
+    },
+    {
+      "title": {
+        "en": "C6 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C06"
+      ]
+    },
+    {
+      "title": {
+        "en": "C7 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C07"
+      ]
+    },
+    {
+      "title": {
+        "en": "C7a traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C07a"
+      ]
+    },
+    {
+      "title": {
+        "en": "C7b traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C07b"
+      ]
+    },
+    {
+      "title": {
+        "en": "C8 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C08"
+      ]
+    },
+    {
+      "title": {
+        "en": "C9 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C09"
+      ]
+    },
+    {
+      "title": {
+        "en": "C10 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C10"
+      ]
+    },
+    {
+      "title": {
+        "en": "C11 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C11"
+      ]
+    },
+    {
+      "title": {
+        "en": "C12 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C12"
+      ]
+    },
+    {
+      "title": {
+        "en": "C13 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C13"
+      ]
+    },
+    {
+      "title": {
+        "en": "C14 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C14"
+      ]
+    },
+    {
+      "title": {
+        "en": "C15 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C15"
+      ]
+    },
+    {
+      "title": {
+        "en": "C16 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C16"
+      ]
+    },
+    {
+      "title": {
+        "en": "C22 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C22"
+      ]
+    },
+    {
+      "title": {
+        "en": "C22a traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C22a"
+      ]
+    },
+    {
+      "title": {
+        "en": "C22b traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:C22b"
+      ]
+    },
+    {
+      "title": {
+        "en": "D1 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:D01"
+      ]
+    },
+    {
+      "title": {
+        "en": "D2-RO traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:D02-RO"
+      ]
+    },
+    {
+      "title": {
+        "en": "D3 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:D03"
+      ]
+    },
+    {
+      "title": {
+        "en": "D4 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:D04"
+      ]
+    },
+    {
+      "title": {
+        "en": "D5-L traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:D05-L"
+      ]
+    },
+    {
+      "title": {
+        "en": "D5-R traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:D05-R"
+      ]
+    },
+    {
+      "title": {
+        "en": "D6-L traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:D06-L"
+      ]
+    },
+    {
+      "title": {
+        "en": "D6-R traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:D06-R"
+      ]
+    },
+    {
+      "title": {
+        "en": "D7 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:D07"
+      ]
+    },
+    {
+      "title": {
+        "en": "E1 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:E01"
+      ]
+    },
+    {
+      "title": {
+        "en": "E2 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:E02"
+      ]
+    },
+    {
+      "title": {
+        "en": "E3 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:E03"
+      ]
+    },
+    {
+      "title": {
+        "en": "E4 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:E04"
+      ]
+    },
+    {
+      "title": {
+        "en": "E5 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:E05"
+      ]
+    },
+    {
+      "title": {
+        "en": "E6 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:E06"
+      ]
+    },
+    {
+      "title": {
+        "en": "E7 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:E07"
+      ]
+    },
+    {
+      "title": {
+        "en": "E8 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:E08"
+      ]
+    },
+    {
+      "title": {
+        "en": "E9 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:E09"
+      ]
+    },
+    {
+      "title": {
+        "en": "E10 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:E10"
+      ]
+    },
+    {
+      "title": {
+        "en": "E11 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:E11"
+      ]
+    },
+    {
+      "title": {
+        "en": "E12 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:E12"
+      ]
+    },
+    {
+      "title": {
+        "en": "E13 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:E13"
+      ]
+    },
+    {
+      "title": {
+        "en": "G1 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G01"
+      ]
+    },
+    {
+      "title": {
+        "en": "G2 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G02"
+      ]
+    },
+    {
+      "title": {
+        "en": "G3 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G03"
+      ]
+    },
+    {
+      "title": {
+        "en": "G4 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G04"
+      ]
+    },
+    {
+      "title": {
+        "en": "G5 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G05"
+      ]
+    },
+    {
+      "title": {
+        "en": "G6 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G06"
+      ]
+    },
+    {
+      "title": {
+        "en": "G7 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G07"
+      ]
+    },
+    {
+      "title": {
+        "en": "G8 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G08"
+      ]
+    },
+    {
+      "title": {
+        "en": "G9 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G09"
+      ]
+    },
+    {
+      "title": {
+        "en": "G10 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G10"
+      ]
+    },
+    {
+      "title": {
+        "en": "G11 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G11"
+      ]
+    },
+    {
+      "title": {
+        "en": "G12 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G12"
+      ]
+    },
+    {
+      "title": {
+        "en": "G12a traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G12a"
+      ]
+    },
+    {
+      "title": {
+        "en": "G12b traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G12b"
+      ]
+    },
+    {
+      "title": {
+        "en": "G13 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G13"
+      ]
+    },
+    {
+      "title": {
+        "en": "G14 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:G14"
+      ]
+    },
+    {
+      "title": {
+        "en": "J1 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J01"
+      ]
+    },
+    {
+      "title": {
+        "en": "J2 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J02"
+      ]
+    },
+    {
+      "title": {
+        "en": "J3 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J03"
+      ]
+    },
+    {
+      "title": {
+        "en": "J4 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J04"
+      ]
+    },
+    {
+      "title": {
+        "en": "J5 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J05"
+      ]
+    },
+    {
+      "title": {
+        "en": "J8 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J08"
+      ]
+    },
+    {
+      "title": {
+        "en": "J9 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J09"
+      ]
+    },
+    {
+      "title": {
+        "en": "J10 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J10"
+      ]
+    },
+    {
+      "title": {
+        "en": "J11 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J11"
+      ]
+    },
+    {
+      "title": {
+        "en": "J12 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J12"
+      ]
+    },
+    {
+      "title": {
+        "en": "J13 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J13"
+      ]
+    },
+    {
+      "title": {
+        "en": "J14 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J14"
+      ]
+    },
+    {
+      "title": {
+        "en": "J15 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J15"
+      ]
+    },
+    {
+      "title": {
+        "en": "J16 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J16"
+      ]
+    },
+    {
+      "title": {
+        "en": "J17 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J17"
+      ]
+    },
+    {
+      "title": {
+        "en": "J18 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J18"
+      ]
+    },
+    {
+      "title": {
+        "en": "J19 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J19"
+      ]
+    },
+    {
+      "title": {
+        "en": "J20 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J20"
+      ]
+    },
+    {
+      "title": {
+        "en": "J21 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J21"
+      ]
+    },
+    {
+      "title": {
+        "en": "J22 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J22"
+      ]
+    },
+    {
+      "title": {
+        "en": "J23 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J23"
+      ]
+    },
+    {
+      "title": {
+        "en": "J24 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J24"
+      ]
+    },
+    {
+      "title": {
+        "en": "J25 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J25"
+      ]
+    },
+    {
+      "title": {
+        "en": "J26 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J26"
+      ]
+    },
+    {
+      "title": {
+        "en": "J27 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J27"
+      ]
+    },
+    {
+      "title": {
+        "en": "J28 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J28"
+      ]
+    },
+    {
+      "title": {
+        "en": "J29 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J29"
+      ]
+    },
+    {
+      "title": {
+        "en": "J30 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J30"
+      ]
+    },
+    {
+      "title": {
+        "en": "J31 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J31"
+      ]
+    },
+    {
+      "title": {
+        "en": "J32 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J32"
+      ]
+    },
+    {
+      "title": {
+        "en": "J33 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J33"
+      ]
+    },
+    {
+      "title": {
+        "en": "J34 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J34"
+      ]
+    },
+    {
+      "title": {
+        "en": "J35 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J35"
+      ]
+    },
+    {
+      "title": {
+        "en": "J36 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J36"
+      ]
+    },
+    {
+      "title": {
+        "en": "J37 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J37"
+      ]
+    },
+    {
+      "title": {
+        "en": "J38 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J38"
+      ]
+    },
+    {
+      "title": {
+        "en": "J39 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:J39"
+      ]
+    },
+    {
+      "title": {
+        "en": "L2 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:L02"
+      ]
+    },
+    {
+      "title": {
+        "en": "L3a traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:L03a"
+      ]
+    },
+    {
+      "title": {
+        "en": "L3b traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:L03b"
+      ]
+    },
+    {
+      "title": {
+        "en": "L3c traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:L03c"
+      ]
+    },
+    {
+      "title": {
+        "en": "L8 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:L08"
+      ]
+    },
+    {
+      "title": {
+        "en": "L9 traffic sign"
+      },
+      "tags": [
+        "traffic_sign=NL:L09"
+      ]
     }
   ]
 }

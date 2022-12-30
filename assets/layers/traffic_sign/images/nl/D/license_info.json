@@ -40,7 +40,17 @@
     ]
   },
   {
-    "path": "Nederlands_verkeersbord_D5.svg",
+    "path": "Nederlands_verkeersbord_D5-L.svg",
+    "license": "CC0",
+    "authors": [
+      "Modified from Ministerie van Infrastructuur en Waterstaat"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_D5.svg"
+    ]
+  },
+  {
+    "path": "Nederlands_verkeersbord_D5-R.svg",
     "license": "CC0",
     "authors": [
       "Ministerie van Infrastructuur en Waterstaat"
@@ -50,7 +60,17 @@
     ]
   },
   {
-    "path": "Nederlands_verkeersbord_D6.svg",
+    "path": "Nederlands_verkeersbord_D6-L.svg",
+    "license": "CC0",
+    "authors": [
+      "Modified from Ministerie van Infrastructuur en Waterstaat"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Nederlands_verkeersbord_D6.svg"
+    ]
+  },
+  {
+    "path": "Nederlands_verkeersbord_D6-R.svg",
     "license": "CC0",
     "authors": [
       "Ministerie van Infrastructuur en Waterstaat"
