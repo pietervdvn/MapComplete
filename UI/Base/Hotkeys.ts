@@ -22,8 +22,7 @@ export default class Hotkeys {
     >([])
 
     private static textElementSelected(): boolean {
-        console.log(document.activeElement)
-        return document?.activeElement?.tagName?.toLowerCase() === "input"
+        return ["input", "textarea"].includes(document?.activeElement?.tagName?.toLowerCase())
     }
     public static RegisterHotkey(
         key: (
