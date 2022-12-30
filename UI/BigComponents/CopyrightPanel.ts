@@ -148,7 +148,7 @@ export default class CopyrightPanel extends Combine {
                 }
             ),
             new SubtleButton(Svg.mastodon_ui(), t.followOnMastodon, {
-                url: "https://en.osm.town/web/notifications",
+                url: "https://en.osm.town/@MapComplete",
                 newTab: true,
                 imgSize,
             }),
