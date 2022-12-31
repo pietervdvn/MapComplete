@@ -6,7 +6,7 @@ import Hash from "../../Logic/Web/Hash"
 import BaseUIElement from "../BaseUIElement"
 import Title from "./Title"
 import Hotkeys from "./Hotkeys"
-import Translations from "../i18n/Translations";
+import Translations from "../i18n/Translations"
 
 /**
  *
