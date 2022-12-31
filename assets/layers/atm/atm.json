@@ -148,26 +148,30 @@
     {
       "id": "cash_out",
       "question": {
-        "en": "Can you withdraw cash from this ATM?"
+        "en": "Can you withdraw cash from this ATM?",
+        "de": "Kann man an diesem Geldautomaten Bargeld abheben?"
       },
       "mappings": [
         {
           "if": "cash_out=",
           "then": {
-            "en": "You can withdraw cash from this ATM"
+            "en": "You can withdraw cash from this ATM",
+            "de": "Sie können an diesem Geldautomaten Bargeld abheben"
           },
           "hideInAnswer": true
         },
         {
           "if": "cash_out=yes",
           "then": {
-            "en": "You can withdraw cash from this ATM"
+            "en": "You can withdraw cash from this ATM",
+            "de": "An diesem Geldautomaten können Sie Bargeld abheben"
           }
         },
         {
           "if": "cash_out=no",
           "then": {
-            "en": "You cannot withdraw cash from this ATM"
+            "en": "You cannot withdraw cash from this ATM",
+            "de": "Sie können an diesem Geldautomaten kein Bargeld abheben"
           }
         }
       ]
@@ -175,26 +179,30 @@
     {
       "id": "cash_in",
       "question": {
-        "en": "Can you deposit cash into this ATM?"
+        "en": "Can you deposit cash into this ATM?",
+        "de": "Kann man an diesem Geldautomaten Bargeld einzahlen?"
       },
       "mappings": [
         {
           "if": "cash_in=",
           "then": {
-            "en": "You probably cannot deposit cash into this ATM"
+            "en": "You probably cannot deposit cash into this ATM",
+            "de": "Sie können wahrscheinlich kein Bargeld in diesen Geldautomaten einzahlen"
           },
           "hideInAnswer": true
         },
         {
           "if": "cash_in=yes",
           "then": {
-            "en": "You can deposit cash into this ATM"
+            "en": "You can deposit cash into this ATM",
+            "de": "Sie können Bargeld in diesen Geldautomaten einzahlen"
           }
         },
         {
           "if": "cash_in=no",
           "then": {
-            "en": "You cannot deposit cash into this ATM"
+            "en": "You cannot deposit cash into this ATM",
+            "de": "Sie können an diesem Geldautomaten kein Bargeld einzahlen"
           }
         }
       ]
@@ -202,19 +210,22 @@
     {
       "id": "speech_output",
       "question": {
-        "en": "Does this ATM have speech output for visually impaired users?"
+        "en": "Does this ATM have speech output for visually impaired users?",
+        "de": "Verfügt dieser Geldautomat über eine Sprachausgabe für sehbehinderte Benutzer?"
       },
       "mappings": [
         {
           "if": "speech_output=yes",
           "then": {
-            "en": "This ATM has speech output, usually available through a headphone jack"
+            "en": "This ATM has speech output, usually available through a headphone jack",
+            "de": "Dieser Geldautomat verfügt über eine Sprachausgabe, die normalerweise über eine Kopfhörerbuchse verfügbar ist"
           }
         },
         {
           "if": "speech_output=no",
           "then": {
-            "en": "This ATM does not have speech output"
+            "en": "This ATM does not have speech output",
+            "de": "Dieser Geldautomat hat keine Sprachausgabe"
           }
         }
       ]
@@ -227,13 +238,16 @@
           "type": "language_chooser",
           "key": "speech_output",
           "question": {
-            "en": "In which languages does this ATM have speech output?"
+            "en": "In which languages does this ATM have speech output?",
+            "de": "In welchen Sprachen hat dieser Geldautomat eine Sprachausgabe?"
           },
           "render_list_item": {
-            "en": "This ATM has speech output in {language():font-bold}"
+            "en": "This ATM has speech output in {language():font-bold}",
+            "de": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}"
           },
           "render_single_language": {
-            "en": "This ATM has speech output in {language():font-bold}"
+            "en": "This ATM has speech output in {language():font-bold}",
+            "de": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}"
           }
         }
       }
@@ -255,7 +269,8 @@
       "options": [
         {
           "question": {
-            "en": "With speech output"
+            "en": "With speech output",
+            "de": "Mit Sprachausgabe"
           },
           "osmTags": "speech_output=yes"
         }

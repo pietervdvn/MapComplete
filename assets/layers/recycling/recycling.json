@@ -741,7 +741,8 @@
           "ifnot": "recycling:fluorescent_tubes=",
           "then": {
             "en": "Fluorescent tubes can be recycled here",
-            "nl": "TL-buizen kunnen hier gerecycled worden"
+            "nl": "TL-buizen kunnen hier gerecycled worden",
+            "de": "Hier können Leuchtstoffröhren recycelt werden"
           },
           "icon": {
             "path": "./assets/layers/recycling/fluorescent_tubes.svg",
@@ -816,7 +817,8 @@
           "ifnot": "recycling:light_bulbs=",
           "then": {
             "en": "Light bulbs can be recycled here",
-            "nl": "Lampen kunnen hier gerecycled worden"
+            "nl": "Lampen kunnen hier gerecycled worden",
+            "de": "Hier können Glühbirnen recycelt werden"
           },
           "icon": {
             "path": "./assets/layers/recycling/light_bulbs.svg",
@@ -1112,7 +1114,8 @@
         {
           "question": {
             "en": "Recycling of fluorescent tubes",
-            "nl": "Recycling van tl-buizen"
+            "nl": "Recycling van tl-buizen",
+            "de": "Recycling von Leuchtstoffröhren"
           },
           "osmTags": "recycling:fluorescent_tubes=yes"
         },
@@ -1153,7 +1156,8 @@
         {
           "question": {
             "en": "Recycling of light bulbs",
-            "nl": "Recycling van lampen"
+            "nl": "Recycling van lampen",
+            "de": "Recycling von Glühbirnen"
           },
           "osmTags": "recycling:light_bulbs=yes"
         },

@@ -4072,6 +4072,26 @@
       "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
+      "key": "service:rental:climbing_shoes",
+      "description": "Layer 'Climbing gyms' shows service:rental:climbing_shoes=yes with a fixed text, namely 'Climbing shoes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:rental:climbing_shoes",
+      "description": "Layer 'Climbing gyms' shows service:rental:climbing_shoes=no with a fixed text, namely 'Climbing shoes can <b>not</b> be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "service:rental:climbing_harness",
+      "description": "Layer 'Climbing gyms' shows service:rental:climbing_harness=yes with a fixed text, namely 'A climbing harness can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "service:rental:climbing_harness",
+      "description": "Layer 'Climbing gyms' shows service:rental:climbing_harness=no with a fixed text, namely 'A climbing harness can <b>not</b> be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
       "key": "climbing:toprope",
       "description": "Layer 'Climbing gyms' shows climbing:toprope=yes with a fixed text, namely 'Toprope climbing is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"

@@ -5462,6 +5462,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Parkeerplek voor gehandicapten"
+                }
+            },
             "render": "Parkeerplek"
         }
     },
