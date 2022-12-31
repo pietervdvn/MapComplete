@@ -80,6 +80,7 @@ function main(){
     const signs = JSON.parse(signFile) as SignFile;
     for(const sign of signs.traffic_signs){
       const originalMapping = originalSignMappings.find(m => m.if === "traffic_sign=" + sign.id);
+      const iconPath = "./assets/layers/traffic_sign/images/"+signs.country.toLowerCase()+"/"+sign.image.file
       // Create new mapping, reusing original translations
       const mapping: MappingConfigJson = {
         if: "traffic_sign=" + sign.id,
@@ -87,12 +88,16 @@ function main(){
           ...originalMapping?.then,
           en: sign.name,
         },
-        hideInAnswer: "_country!="+signs.country.toLowerCase()
+        hideInAnswer: "_country!="+signs.country.toLowerCase(),
+        icon: {
+          path: iconPath,
+          class: "large"
+        }
       };
       const icon: MappingConfigJson = {
-        if: "traffic_sign=" + sign.id + "(;.*)*$",
-        then: 
-          "./assets/layers/traffic_sign/images/"+signs.country.toLowerCase()+"/"+sign.image.file
+        if: "traffic_sign~" + sign.id + "(;.*)*$",
+        then: iconPath
+          
       };
       mappings.push(mapping);
       iconMappings.push(icon);
