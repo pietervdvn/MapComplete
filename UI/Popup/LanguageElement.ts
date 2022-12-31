@@ -88,7 +88,7 @@ export class LanguageElement implements SpecialVisualization {
         if (mode === undefined || mode.length == 0) {
             mode = "multi"
         }
-        if (item_render === undefined) {
+        if (item_render === undefined || item_render.trim() === "") {
             item_render = "{language()}"
         }
         if (all_render === undefined || all_render.length == 0) {
@@ -100,8 +100,17 @@ export class LanguageElement implements SpecialVisualization {
                 mode
             )
         }
-        if (single_render.indexOf("{language()") < 0 || item_render.indexOf("{language()") < 0) {
-            throw "Error while calling language_chooser: render_single_language and render_list_item must contain '{language()}'"
+        if (single_render.indexOf("{language()") < 0) {
+            throw (
+                "Error while calling language_chooser: render_single_language must contain '{language()}' but it is " +
+                single_render
+            )
+        }
+        if (item_render.indexOf("{language()") < 0) {
+            throw (
+                "Error while calling language_chooser: render_list_item must contain '{language()}' but it is " +
+                item_render
+            )
         }
         if (all_render.indexOf("{list()") < 0) {
             throw "Error while calling language_chooser: render_all must contain '{list()}'"
