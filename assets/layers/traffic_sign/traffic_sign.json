@@ -31,6 +31,1072 @@
   "tagRenderings": [
     "images",
     {
+      "id": "traffic_sign",
+      "question": {
+        "en": "What kind of traffic sign is this?",
+        "nl": "Wat voor soort verkeersbord is dit?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "traffic_sign=city_limit",
+          "then": {
+            "en": "City limit"
+          }
+        },
+        {
+          "if": "traffic_sign=maxspeed",
+          "then": {
+            "en": "Maximum speed"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:A01-5",
+          "then": {
+            "en": "Maximum speed of 5 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A01-10",
+          "then": {
+            "en": "Maximum speed of 10 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A01-15",
+          "then": {
+            "en": "Maximum speed of 15 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A01-20",
+          "then": {
+            "en": "Maximum speed of 20 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A01-30",
+          "then": {
+            "en": "Maximum speed of 30 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A01-30-ZB",
+          "then": {
+            "en": "Start of 30 km/h zone"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A01-50",
+          "then": {
+            "en": "Maximum speed of 50 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A01-50-ZB",
+          "then": {
+            "en": "Start of 50 km/h zone"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A01-60",
+          "then": {
+            "en": "Maximum speed of 60 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A01-60-ZB",
+          "then": {
+            "en": "Start of 60 km/h zone"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A01-70",
+          "then": {
+            "en": "Maximum speed of 70 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A01-80",
+          "then": {
+            "en": "Maximum speed of 80 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A01-90",
+          "then": {
+            "en": "Maximum speed of 90 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A01-100",
+          "then": {
+            "en": "Maximum speed of 100 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A01-120",
+          "then": {
+            "en": "Maximum speed of 120 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A01-130",
+          "then": {
+            "en": "Maximum speed of 130 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-5",
+          "then": {
+            "en": "End of maximum speed of 5 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-10",
+          "then": {
+            "en": "End of maximum speed of 10 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-15",
+          "then": {
+            "en": "End of maximum speed of 15 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-20",
+          "then": {
+            "en": "End of maximum speed of 20 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-30",
+          "then": {
+            "en": "End of maximum speed of 30 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-30-ZE",
+          "then": {
+            "en": "End of 30 km/h zone"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-50",
+          "then": {
+            "en": "End of maximum speed of 50 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-50-ZE",
+          "then": {
+            "en": "End of 50 km/h zone"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-60",
+          "then": {
+            "en": "End of maximum speed of 60 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-60-ZE",
+          "then": {
+            "en": "End of 60 km/h zone"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-70",
+          "then": {
+            "en": "End of maximum speed of 70 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-80",
+          "then": {
+            "en": "End of maximum speed of 80 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-90",
+          "then": {
+            "en": "End of maximum speed of 90 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-100",
+          "then": {
+            "en": "End of maximum speed of 100 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-120",
+          "then": {
+            "en": "End of maximum speed of 120 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:A02-130",
+          "then": {
+            "en": "End of maximum speed of 130 km/h"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:B01",
+          "then": {
+            "en": "Priority road"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:B02",
+          "then": {
+            "en": "End of priority road"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:B03",
+          "then": {
+            "en": "Priority road with side roads"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:B04",
+          "then": {
+            "en": "Priority road with side road on the right"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:B05",
+          "then": {
+            "en": "Priority road with side road on the left"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:B06",
+          "then": {
+            "en": "Give way"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:B07",
+          "then": {
+            "en": "Stop"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C01",
+          "then": {
+            "en": "Closed to all traffic"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C02",
+          "then": {
+            "en": "No entry, one-way street"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C03",
+          "then": {
+            "en": "One-way street"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C04-L",
+          "then": {
+            "en": "One-way street, traffic to the left"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C04-R",
+          "then": {
+            "en": "One-way street, traffic to the right"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C05",
+          "then": {
+            "en": "Two-way street"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C06",
+          "then": {
+            "en": "Closed for motor vehicles with more than 2 wheels"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C07",
+          "then": {
+            "en": "Closed for heavy goods vehicles"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C07a",
+          "then": {
+            "en": "Closed for buses"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C07b",
+          "then": {
+            "en": "Closed for heavy goods vehicles and buses"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C08",
+          "then": {
+            "en": "Closed for motor vehicles with a top speed less than 25km/h (agricultural vehicles)"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C09",
+          "then": {
+            "en": "Closed for motor vehicles with a top speed less than 25km/h (agricultural vehicles), mopeds, mofas, bicycles and disabled vehicles"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C10",
+          "then": {
+            "en": "Closed for motor vehicles with a trailer"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C11",
+          "then": {
+            "en": "Closed for motorbikes"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C12",
+          "then": {
+            "en": "Closed for motor vehicles"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C13",
+          "then": {
+            "en": "Closed for mopeds, mofas and disabled vehicles"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C14",
+          "then": {
+            "en": "Closed for bicycles"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C15",
+          "then": {
+            "en": "Closed for mopeds, mofas, bicycles and disabled vehicles"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C16",
+          "then": {
+            "en": "Closed for pedestrians"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C22",
+          "then": {
+            "en": "Closed for heavy goods vehicles carrying dangerous goods"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C22a",
+          "then": {
+            "en": "Start of low emission zone"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:C22b",
+          "then": {
+            "en": "End of low emission zone"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:D01",
+          "then": {
+            "en": "Roundabout",
+            "nl": "Rotonde"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:D02-RO",
+          "then": {
+            "en": "Passing allowed on the right"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:D03",
+          "then": {
+            "en": "Passing allowed on both sides"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:D04",
+          "then": {
+            "en": "Only straight on allowed"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:D05-L",
+          "then": {
+            "en": "Only left turn allowed"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:D05-R",
+          "then": {
+            "en": "Only right turn allowed"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:D06-L",
+          "then": {
+            "en": "Only left turn and straight on allowed"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:D06-R",
+          "then": {
+            "en": "Only right turn and straight on allowed"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:D07",
+          "then": {
+            "en": "Only left and right turn allowed"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:E01",
+          "then": {
+            "en": "No parking allowed"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:E02",
+          "then": {
+            "en": "No stopping allowed"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:E03",
+          "then": {
+            "en": "No parking allowed for mopeds, mofas and bicycles"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:E04",
+          "then": {
+            "en": "Parking"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:E05",
+          "then": {
+            "en": "Parking for taxis"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:E06",
+          "then": {
+            "en": "Parking for disabled persons"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:E07",
+          "then": {
+            "en": "Parking for delivery vehicles"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:E08",
+          "then": {
+            "en": "Parking for cars"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:E09",
+          "then": {
+            "en": "Parking for permit holders only"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:E10",
+          "then": {
+            "en": "Start of disc parking zone"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:E11",
+          "then": {
+            "en": "End of disc parking zone"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:E12",
+          "then": {
+            "en": "Park and ride"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:E13",
+          "then": {
+            "en": "Carpool parking"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:F01",
+          "then": {
+            "en": "Overtaking not allowed"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:F02",
+          "then": {
+            "en": "Overtaking allowed"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:F03",
+          "then": {
+            "en": "Overtaking not allow for heavy goods vehicles"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:F04",
+          "then": {
+            "en": "Overtaking allowed for heavy goods vehicles"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:F05",
+          "then": {
+            "en": "Priority for traffic in other direction"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:F06",
+          "then": {
+            "en": "Priority for traffic in current direction"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:F07",
+          "then": {
+            "en": "No U-turn allowed"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:F08",
+          "then": {
+            "en": "End of prohibitions from signs"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G01",
+          "then": {
+            "en": "Start of motorway"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G02",
+          "then": {
+            "en": "End of motorway"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G03",
+          "then": {
+            "en": "Start of motorroad"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G04",
+          "then": {
+            "en": "End of motorroad"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G05",
+          "then": {
+            "en": "Woonerf"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G06",
+          "then": {
+            "en": "End of woonerf"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G07",
+          "then": {
+            "en": "Footpath"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G08",
+          "then": {
+            "en": "End of footpath"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G09",
+          "then": {
+            "en": "Bridal path"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G10",
+          "then": {
+            "en": "End of bridal path"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G11",
+          "then": {
+            "en": "Mandatory cycleway"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G12",
+          "then": {
+            "en": "End of mandatory cycleway"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G12a",
+          "then": {
+            "en": "Mandatory cycleway for mopeds, mofas and bicycles"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G12b",
+          "then": {
+            "en": "End of mandatory cycleway for mopeds, mofas and bicycles"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G13",
+          "then": {
+            "en": "Non-mandatory cycleway"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:G14",
+          "then": {
+            "en": "End of non-mandatory cycleway"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J01",
+          "then": {
+            "en": "Bad road surface"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J02",
+          "then": {
+            "en": "Corner to the right"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J03",
+          "then": {
+            "en": "Corner to the left"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J04",
+          "then": {
+            "en": "S-bend to the right"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J05",
+          "then": {
+            "en": "S-bend to the left"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J08",
+          "then": {
+            "en": "Dangerous intersection"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J09",
+          "then": {
+            "en": "Roundabout ahead"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J10",
+          "then": {
+            "en": "Protected railway crossing"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J11",
+          "then": {
+            "en": "Unprotected railway crossing"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J12",
+          "then": {
+            "en": "Single track railway crossing without barriers"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J13",
+          "then": {
+            "en": "Double track railway crossing without barriers"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J14",
+          "then": {
+            "en": "Trams crossing"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J15",
+          "then": {
+            "en": "Movable bridge"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J16",
+          "then": {
+            "en": "Road works"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J17",
+          "then": {
+            "en": "Road narrows"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J18",
+          "then": {
+            "en": "Road narrows on the right"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J19",
+          "then": {
+            "en": "Road narrows on the left"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J20",
+          "then": {
+            "en": "Slippery road"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J21",
+          "then": {
+            "en": "Playing children"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J22",
+          "then": {
+            "en": "Pedestrian crossing"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J23",
+          "then": {
+            "en": "Pedestrians"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J24",
+          "then": {
+            "en": "Bicycles and mopeds"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J25",
+          "then": {
+            "en": "Loose chippings"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J26",
+          "then": {
+            "en": "Quay or river bank"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J27",
+          "then": {
+            "en": "Dangerous animals"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J28",
+          "then": {
+            "en": "Cattle"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J29",
+          "then": {
+            "en": "Oncoming traffic"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J30",
+          "then": {
+            "en": "Low-flying aircraft"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J31",
+          "then": {
+            "en": "Side wind"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J32",
+          "then": {
+            "en": "Traffic lights ahead"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J33",
+          "then": {
+            "en": "Chance of traffic jams"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J34",
+          "then": {
+            "en": "Chance of accidents"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J35",
+          "then": {
+            "en": "Bad visibility"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J36",
+          "then": {
+            "en": "Black ice or snow"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J37",
+          "then": {
+            "en": "Danger ahead"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J38",
+          "then": {
+            "en": "Speed bump"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:J39",
+          "then": {
+            "en": "Automatic rising bollard"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:L02",
+          "then": {
+            "en": "Zebra crossing"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:L03a",
+          "then": {
+            "en": "Tram and bus stop"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:L03b",
+          "then": {
+            "en": "Bus stop"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:L03c",
+          "then": {
+            "en": "Tram stop"
+          },
+          "hideInAnswer": "_country!=nl"
+        },
+        {
+          "if": "traffic_sign=NL:L08",
+          "then": {
+            "en": "Dead end"
+          },
+          "hideInAnswer": "_country!=nl"
+        }
+      ]
+    },
+    {
       "id": "direction",
       "question": {
         "en": "In which direction is this traffic sign visible?",
@@ -44,6 +1110,22 @@
         "en": "Traffic sign is visible in direction {direction}",
         "nl": "Verkeersbord is zichtbaar in richting {direction}"
       }
+    },
+    {
+      "id": "maxspeed",
+      "condition": "traffic_sign=maxspeed",
+      "question": {
+        "en": "What is the maximum speed allowed?",
+        "nl": "Wat is de maximale snelheid toegestaan?"
+      },
+      "freeform": {
+        "key": "maxspeed",
+        "type": "pnat"
+      },
+      "render": {
+        "en": "Maximum speed is {canonical(maxspeed)}",
+        "nl": "Maximale snelheid is {canonical(maxspeed)}"
+      }
     }
   ],
   "mapRendering": [
@@ -56,1715 +1138,681 @@
         "render": "./assets/layers/traffic_sign/images/unknown.svg",
         "mappings": [
           {
-            "if": "traffic_sign~NL:A01-5(;.*)*$",
+            "if": "traffic_sign=NL:A01-5(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-5.svg"
           },
           {
-            "if": "traffic_sign~NL:A01-10(;.*)*$",
+            "if": "traffic_sign=NL:A01-10(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-10.svg"
           },
           {
-            "if": "traffic_sign~NL:A01-15(;.*)*$",
+            "if": "traffic_sign=NL:A01-15(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-15.svg"
           },
           {
-            "if": "traffic_sign~NL:A01-20(;.*)*$",
+            "if": "traffic_sign=NL:A01-20(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-20.svg"
           },
           {
-            "if": "traffic_sign~NL:A01-30(;.*)*$",
+            "if": "traffic_sign=NL:A01-30(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-30.svg"
           },
           {
-            "if": "traffic_sign~NL:A01-30-ZB(;.*)*$",
+            "if": "traffic_sign=NL:A01-30-ZB(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1_30_Zone.svg"
           },
           {
-            "if": "traffic_sign~NL:A01-50(;.*)*$",
+            "if": "traffic_sign=NL:A01-50(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-50.svg"
           },
           {
-            "if": "traffic_sign~NL:A01-50-ZB(;.*)*$",
+            "if": "traffic_sign=NL:A01-50-ZB(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1_50_Zone.svg"
           },
           {
-            "if": "traffic_sign~NL:A01-60(;.*)*$",
+            "if": "traffic_sign=NL:A01-60(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-60.svg"
           },
           {
-            "if": "traffic_sign~NL:A01-60-ZB(;.*)*$",
+            "if": "traffic_sign=NL:A01-60-ZB(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1_60_Zone.svg"
           },
           {
-            "if": "traffic_sign~NL:A01-70(;.*)*$",
+            "if": "traffic_sign=NL:A01-70(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-70.svg"
           },
           {
-            "if": "traffic_sign~NL:A01-80(;.*)*$",
+            "if": "traffic_sign=NL:A01-80(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-80.svg"
           },
           {
-            "if": "traffic_sign~NL:A01-90(;.*)*$",
+            "if": "traffic_sign=NL:A01-90(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-90.svg"
           },
           {
-            "if": "traffic_sign~NL:A01-100(;.*)*$",
+            "if": "traffic_sign=NL:A01-100(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-100.svg"
           },
           {
-            "if": "traffic_sign~NL:A01-120(;.*)*$",
+            "if": "traffic_sign=NL:A01-120(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-120.svg"
           },
           {
-            "if": "traffic_sign~NL:A01-130(;.*)*$",
+            "if": "traffic_sign=NL:A01-130(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-130.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-5(;.*)*$",
+            "if": "traffic_sign=NL:A02-5(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-5.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-10(;.*)*$",
+            "if": "traffic_sign=NL:A02-10(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-10.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-15(;.*)*$",
+            "if": "traffic_sign=NL:A02-15(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-15.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-20(;.*)*$",
+            "if": "traffic_sign=NL:A02-20(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-20.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-30(;.*)*$",
+            "if": "traffic_sign=NL:A02-30(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-30.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-30-ZE(;.*)*$",
+            "if": "traffic_sign=NL:A02-30-ZE(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Netherlands_traffic_sign_A2-30-ZE.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-50(;.*)*$",
+            "if": "traffic_sign=NL:A02-50(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-50.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-50-ZE(;.*)*$",
+            "if": "traffic_sign=NL:A02-50-ZE(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Netherlands_traffic_sign_A2-50-ZE.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-60(;.*)*$",
+            "if": "traffic_sign=NL:A02-60(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-60.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-60-ZE(;.*)*$",
+            "if": "traffic_sign=NL:A02-60-ZE(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Netherlands_traffic_sign_A2-60-ZE.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-70(;.*)*$",
+            "if": "traffic_sign=NL:A02-70(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-70.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-80(;.*)*$",
+            "if": "traffic_sign=NL:A02-80(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-80.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-90(;.*)*$",
+            "if": "traffic_sign=NL:A02-90(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-90.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-100(;.*)*$",
+            "if": "traffic_sign=NL:A02-100(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-100.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-120(;.*)*$",
+            "if": "traffic_sign=NL:A02-120(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-120.svg"
           },
           {
-            "if": "traffic_sign~NL:A02-130(;.*)*$",
+            "if": "traffic_sign=NL:A02-130(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A2-130.svg"
           },
           {
-            "if": "traffic_sign~NL:B01(;.*)*$",
+            "if": "traffic_sign=NL:B01(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/B/Nederlands_verkeersbord_B1.svg"
           },
           {
-            "if": "traffic_sign~NL:B02(;.*)*$",
+            "if": "traffic_sign=NL:B02(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/B/Nederlands_verkeersbord_B2.svg"
           },
           {
-            "if": "traffic_sign~NL:B03(;.*)*$",
+            "if": "traffic_sign=NL:B03(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/B/Nederlands_verkeersbord_B3.svg"
           },
           {
-            "if": "traffic_sign~NL:B04(;.*)*$",
+            "if": "traffic_sign=NL:B04(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/B/Nederlands_verkeersbord_B4.svg"
           },
           {
-            "if": "traffic_sign~NL:B05(;.*)*$",
+            "if": "traffic_sign=NL:B05(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/B/Nederlands_verkeersbord_B5.svg"
           },
           {
-            "if": "traffic_sign~NL:B06(;.*)*$",
+            "if": "traffic_sign=NL:B06(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/B/Nederlands_verkeersbord_B6.svg"
           },
           {
-            "if": "traffic_sign~NL:B07(;.*)*$",
+            "if": "traffic_sign=NL:B07(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/B/Nederlands_verkeersbord_B7.svg"
           },
           {
-            "if": "traffic_sign~NL:C01(;.*)*$",
+            "if": "traffic_sign=NL:C01(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C1.svg"
           },
           {
-            "if": "traffic_sign~NL:C02(;.*)*$",
+            "if": "traffic_sign=NL:C02(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C2.svg"
           },
           {
-            "if": "traffic_sign~NL:C03(;.*)*$",
+            "if": "traffic_sign=NL:C03(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C3.svg"
           },
           {
-            "if": "traffic_sign~NL:C04-L(;.*)*$",
+            "if": "traffic_sign=NL:C04-L(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C4_(links).svg"
           },
           {
-            "if": "traffic_sign~NL:C04-R(;.*)*$",
+            "if": "traffic_sign=NL:C04-R(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C4_(rechts).svg"
           },
           {
-            "if": "traffic_sign~NL:C05(;.*)*$",
+            "if": "traffic_sign=NL:C05(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C5.svg"
           },
           {
-            "if": "traffic_sign~NL:C06(;.*)*$",
+            "if": "traffic_sign=NL:C06(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C6.svg"
           },
           {
-            "if": "traffic_sign~NL:C07(;.*)*$",
+            "if": "traffic_sign=NL:C07(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C7.svg"
           },
           {
-            "if": "traffic_sign~NL:C08(;.*)*$",
+            "if": "traffic_sign=NL:C07a(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C7a.svg"
+          },
+          {
+            "if": "traffic_sign=NL:C07b(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C7b.svg"
+          },
+          {
+            "if": "traffic_sign=NL:C08(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C8.svg"
           },
           {
-            "if": "traffic_sign~NL:C09(;.*)*$",
+            "if": "traffic_sign=NL:C09(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C9.svg"
           },
           {
-            "if": "traffic_sign~NL:C10(;.*)*$",
+            "if": "traffic_sign=NL:C10(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C10.svg"
           },
           {
-            "if": "traffic_sign~NL:C11(;.*)*$",
+            "if": "traffic_sign=NL:C11(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C11.svg"
           },
           {
-            "if": "traffic_sign~NL:C12(;.*)*$",
+            "if": "traffic_sign=NL:C12(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C12.svg"
           },
           {
-            "if": "traffic_sign~NL:C13(;.*)*$",
+            "if": "traffic_sign=NL:C13(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C13.svg"
           },
           {
-            "if": "traffic_sign~NL:C14(;.*)*$",
+            "if": "traffic_sign=NL:C14(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C14.svg"
           },
           {
-            "if": "traffic_sign~NL:C15(;.*)*$",
+            "if": "traffic_sign=NL:C15(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C15.svg"
           },
           {
-            "if": "traffic_sign~NL:C16(;.*)*$",
+            "if": "traffic_sign=NL:C16(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C16.svg"
           },
           {
-            "if": "traffic_sign~NL:C22(;.*)*$",
+            "if": "traffic_sign=NL:C22(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C22.svg"
           },
           {
-            "if": "traffic_sign~NL:C22a(;.*)*$",
+            "if": "traffic_sign=NL:C22a(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C22a.svg"
           },
           {
-            "if": "traffic_sign~NL:C22b(;.*)*$",
+            "if": "traffic_sign=NL:C22b(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/C/Nederlands_verkeersbord_C22b.svg"
           },
           {
-            "if": "traffic_sign~NL:D01(;.*)*$",
+            "if": "traffic_sign=NL:D01(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D1.svg"
           },
           {
-            "if": {
-              "or": [
-                "traffic_sign~NL:D02(;.*)*$",
-                "traffic_sign~NL:D02-RO(;.*)*$"
-              ]
-            },
+            "if": "traffic_sign=NL:D02-RO(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D2.svg"
           },
           {
-            "if": "traffic_sign~NL:D03(;.*)*$",
+            "if": "traffic_sign=NL:D03(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D3.svg"
           },
           {
-            "if": "traffic_sign~NL:D04(;.*)*$",
+            "if": "traffic_sign=NL:D04(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D4.svg"
           },
           {
-            "if": "traffic_sign~NL:D05-R(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D5-R.svg"
-          },
-          {
-            "if": "traffic_sign~NL:D05-L(;.*)*$",
+            "if": "traffic_sign=NL:D05-L(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D5-L.svg"
           },
           {
-            "if": "traffic_sign~NL:D06-R(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D6-R.svg"
+            "if": "traffic_sign=NL:D05-R(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D5-R.svg"
           },
           {
-            "if": "traffic_sign~NL:D06-L(;.*)*$",
+            "if": "traffic_sign=NL:D06-L(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D6-L.svg"
           },
           {
-            "if": "traffic_sign~NL:D07(;.*)*$",
+            "if": "traffic_sign=NL:D06-R(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D6-R.svg"
+          },
+          {
+            "if": "traffic_sign=NL:D07(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/D/Nederlands_verkeersbord_D7.svg"
           },
           {
-            "if": "traffic_sign~NL:E01(;.*)*$",
+            "if": "traffic_sign=NL:E01(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E1.svg"
           },
           {
-            "if": "traffic_sign~NL:E02(;.*)*$",
+            "if": "traffic_sign=NL:E02(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E2.svg"
           },
           {
-            "if": "traffic_sign~NL:E03(;.*)*$",
+            "if": "traffic_sign=NL:E03(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E3.svg"
           },
           {
-            "if": "traffic_sign~NL:E04(;.*)*$",
+            "if": "traffic_sign=NL:E04(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E4.svg"
           },
           {
-            "if": "traffic_sign~NL:E05(;.*)*$",
+            "if": "traffic_sign=NL:E05(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E5.svg"
           },
           {
-            "if": "traffic_sign~NL:E06(;.*)*$",
+            "if": "traffic_sign=NL:E06(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E6.svg"
           },
           {
-            "if": "traffic_sign~NL:E07(;.*)*$",
+            "if": "traffic_sign=NL:E07(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E7.svg"
           },
           {
-            "if": "traffic_sign~NL:E08(;.*)*$",
+            "if": "traffic_sign=NL:E08(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E8.svg"
           },
           {
-            "if": "traffic_sign~NL:E09(;.*)*$",
+            "if": "traffic_sign=NL:E09(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E9.svg"
           },
           {
-            "if": "traffic_sign~NL:E10(;.*)*$",
+            "if": "traffic_sign=NL:E10(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E10.svg"
           },
           {
-            "if": "traffic_sign~NL:E11(;.*)*$",
+            "if": "traffic_sign=NL:E11(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E11.svg"
           },
           {
-            "if": "traffic_sign~NL:E12(;.*)*$",
+            "if": "traffic_sign=NL:E12(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E12.svg"
           },
           {
-            "if": "traffic_sign~NL:E13(;.*)*$",
+            "if": "traffic_sign=NL:E13(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/E/Nederlands_verkeersbord_E13.svg"
           },
           {
-            "if": "traffic_sign~NL:G01(;.*)*$",
+            "if": "traffic_sign=NL:F01(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/F/Nederlands_verkeersbord_F1.svg"
+          },
+          {
+            "if": "traffic_sign=NL:F02(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/F/Nederlands_verkeersbord_F2.svg"
+          },
+          {
+            "if": "traffic_sign=NL:F03(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/F/Nederlands_verkeersbord_F3.svg"
+          },
+          {
+            "if": "traffic_sign=NL:F04(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/F/Nederlands_verkeersbord_F4.svg"
+          },
+          {
+            "if": "traffic_sign=NL:F05(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/F/Nederlands_verkeersbord_F5.svg"
+          },
+          {
+            "if": "traffic_sign=NL:F06(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/F/Nederlands_verkeersbord_F6.svg"
+          },
+          {
+            "if": "traffic_sign=NL:F07(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/F/Nederlands_verkeersbord_F7.svg"
+          },
+          {
+            "if": "traffic_sign=NL:F08(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/F/Nederlands_verkeersbord_F8.svg"
+          },
+          {
+            "if": "traffic_sign=NL:G01(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G1.svg"
           },
           {
-            "if": "traffic_sign~NL:G02(;.*)*$",
+            "if": "traffic_sign=NL:G02(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G2.svg"
           },
           {
-            "if": "traffic_sign~NL:G03(;.*)*$",
+            "if": "traffic_sign=NL:G03(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G3.svg"
           },
           {
-            "if": "traffic_sign~NL:G04(;.*)*$",
+            "if": "traffic_sign=NL:G04(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G4.svg"
           },
           {
-            "if": "traffic_sign~NL:G05(;.*)*$",
+            "if": "traffic_sign=NL:G05(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G5.svg"
           },
           {
-            "if": "traffic_sign~NL:G06(;.*)*$",
+            "if": "traffic_sign=NL:G06(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G6.svg"
           },
           {
-            "if": "traffic_sign~NL:G07(;.*)*$",
+            "if": "traffic_sign=NL:G07(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G7.svg"
           },
           {
-            "if": "traffic_sign~NL:G08(;.*)*$",
+            "if": "traffic_sign=NL:G08(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G8.svg"
           },
           {
-            "if": "traffic_sign~NL:G09(;.*)*$",
+            "if": "traffic_sign=NL:G09(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G9.svg"
           },
           {
-            "if": "traffic_sign~NL:G10(;.*)*$",
+            "if": "traffic_sign=NL:G10(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G10.svg"
           },
           {
-            "if": "traffic_sign~NL:G11(;.*)*$",
+            "if": "traffic_sign=NL:G11(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G11.svg"
           },
           {
-            "if": "traffic_sign~NL:G12(;.*)*$",
+            "if": "traffic_sign=NL:G12(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G12.svg"
           },
           {
-            "if": "traffic_sign~NL:G12a(;.*)*$",
+            "if": "traffic_sign=NL:G12a(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G12a.svg"
           },
           {
-            "if": "traffic_sign~NL:G12b(;.*)*$",
+            "if": "traffic_sign=NL:G12b(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G12b.svg"
           },
           {
-            "if": "traffic_sign~NL:G13(;.*)*$",
+            "if": "traffic_sign=NL:G13(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G13.svg"
           },
           {
-            "if": "traffic_sign~NL:G14(;.*)*$",
+            "if": "traffic_sign=NL:G14(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/G/Nederlands_verkeersbord_G14.svg"
           },
           {
-            "if": "traffic_sign~NL:J01(;.*)*$",
+            "if": "traffic_sign=NL:J01(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J1.svg"
           },
           {
-            "if": "traffic_sign~NL:J02(;.*)*$",
+            "if": "traffic_sign=NL:J02(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J2.svg"
           },
           {
-            "if": "traffic_sign~NL:J03(;.*)*$",
+            "if": "traffic_sign=NL:J03(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J3.svg"
           },
           {
-            "if": "traffic_sign~NL:J04(;.*)*$",
+            "if": "traffic_sign=NL:J04(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J4.svg"
           },
           {
-            "if": "traffic_sign~NL:J05(;.*)*$",
+            "if": "traffic_sign=NL:J05(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J5.svg"
           },
           {
-            "if": "traffic_sign~NL:J08(;.*)*$",
+            "if": "traffic_sign=NL:J08(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J8.svg"
           },
           {
-            "if": "traffic_sign~NL:J09(;.*)*$",
+            "if": "traffic_sign=NL:J09(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J9.svg"
           },
           {
-            "if": "traffic_sign~NL:J10(;.*)*$",
+            "if": "traffic_sign=NL:J10(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J10.svg"
           },
           {
-            "if": "traffic_sign~NL:J11(;.*)*$",
+            "if": "traffic_sign=NL:J11(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J11.svg"
           },
           {
-            "if": "traffic_sign~NL:J12(;.*)*$",
+            "if": "traffic_sign=NL:J12(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J12.svg"
           },
           {
-            "if": "traffic_sign~NL:J13(;.*)*$",
+            "if": "traffic_sign=NL:J13(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J13.svg"
           },
           {
-            "if": "traffic_sign~NL:J14(;.*)*$",
+            "if": "traffic_sign=NL:J14(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J14.svg"
           },
           {
-            "if": "traffic_sign~NL:J15(;.*)*$",
+            "if": "traffic_sign=NL:J15(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J15.svg"
           },
           {
-            "if": "traffic_sign~NL:J16(;.*)*$",
+            "if": "traffic_sign=NL:J16(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J16.svg"
           },
           {
-            "if": "traffic_sign~NL:J17(;.*)*$",
+            "if": "traffic_sign=NL:J17(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J17.svg"
           },
           {
-            "if": "traffic_sign~NL:J18(;.*)*$",
+            "if": "traffic_sign=NL:J18(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J18.svg"
           },
           {
-            "if": "traffic_sign~NL:J19(;.*)*$",
+            "if": "traffic_sign=NL:J19(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J19.svg"
           },
           {
-            "if": "traffic_sign~NL:J20(;.*)*$",
+            "if": "traffic_sign=NL:J20(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J20.svg"
           },
           {
-            "if": "traffic_sign~NL:J21(;.*)*$",
+            "if": "traffic_sign=NL:J21(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J21.svg"
           },
           {
-            "if": "traffic_sign~NL:J22(;.*)*$",
+            "if": "traffic_sign=NL:J22(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J22.svg"
           },
           {
-            "if": "traffic_sign~NL:J23(;.*)*$",
+            "if": "traffic_sign=NL:J23(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J23.svg"
           },
           {
-            "if": "traffic_sign~NL:J24(;.*)*$",
+            "if": "traffic_sign=NL:J24(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J24.svg"
           },
           {
-            "if": "traffic_sign~NL:J25(;.*)*$",
+            "if": "traffic_sign=NL:J25(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J25.svg"
           },
           {
-            "if": "traffic_sign~NL:J26(;.*)*$",
+            "if": "traffic_sign=NL:J26(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J26.svg"
           },
           {
-            "if": "traffic_sign~NL:J27(;.*)*$",
+            "if": "traffic_sign=NL:J27(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J27.svg"
           },
           {
-            "if": "traffic_sign~NL:J28(;.*)*$",
+            "if": "traffic_sign=NL:J28(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J28.svg"
           },
           {
-            "if": "traffic_sign~NL:J29(;.*)*$",
+            "if": "traffic_sign=NL:J29(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J29.svg"
           },
           {
-            "if": "traffic_sign~NL:J30(;.*)*$",
+            "if": "traffic_sign=NL:J30(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J30.svg"
           },
           {
-            "if": "traffic_sign~NL:J31(;.*)*$",
+            "if": "traffic_sign=NL:J31(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J31.svg"
           },
           {
-            "if": "traffic_sign~NL:J32(;.*)*$",
+            "if": "traffic_sign=NL:J32(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J32.svg"
           },
           {
-            "if": "traffic_sign~NL:J33(;.*)*$",
+            "if": "traffic_sign=NL:J33(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J33.svg"
           },
           {
-            "if": "traffic_sign~NL:J34(;.*)*$",
+            "if": "traffic_sign=NL:J34(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J34.svg"
           },
           {
-            "if": "traffic_sign~NL:J35(;.*)*$",
+            "if": "traffic_sign=NL:J35(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J35.svg"
           },
           {
-            "if": "traffic_sign~NL:J36(;.*)*$",
+            "if": "traffic_sign=NL:J36(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J36.svg"
           },
           {
-            "if": "traffic_sign~NL:J37(;.*)*$",
+            "if": "traffic_sign=NL:J37(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J37_zonder_onderbord.svg"
           },
           {
-            "if": "traffic_sign~NL:J38(;.*)*$",
+            "if": "traffic_sign=NL:J38(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J38.svg"
           },
           {
-            "if": "traffic_sign~NL:J39(;.*)*$",
+            "if": "traffic_sign=NL:J39(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/J/Nederlands_verkeersbord_J39.svg"
           },
           {
-            "if": "traffic_sign~NL:L02(;.*)*$",
+            "if": "traffic_sign=NL:L02(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/L/Nederlands_verkeersbord_L2.svg"
           },
           {
-            "if": "traffic_sign~NL:L03a(;.*)*$",
+            "if": "traffic_sign=NL:L03a(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/L/Nederlands_verkeersbord_L3a.svg"
           },
           {
-            "if": "traffic_sign~NL:L03b(;.*)*$",
+            "if": "traffic_sign=NL:L03b(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/L/Nederlands_verkeersbord_L3b.svg"
           },
           {
-            "if": "traffic_sign~NL:L03c(;.*)*$",
+            "if": "traffic_sign=NL:L03c(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/L/Nederlands_verkeersbord_L3c.svg"
           },
           {
-            "if": "traffic_sign~NL:L08(;.*)*$",
+            "if": "traffic_sign=NL:L08(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/L/Nederlands_verkeersbord_L8.svg"
-          },
-          {
-            "if": "traffic_sign~NL:L09(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/nl/L/Nederlands_verkeersbord_L9.svg"
-          },
-          {
-            "if": "traffic_sign~NL:L51(;.*)*$",
-            "then": "./assets/themes/cyclestreets/F111.svg"
           }
         ]
-      },
-      "rotation": "calc({direction}deg + 180deg)"
+      }
     }
   ],
   "presets": [
     {
       "title": {
-        "en": "A1-5 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-5"
-      ]
-    },
-    {
-      "title": {
-        "en": "A1-10 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-10"
-      ]
-    },
-    {
-      "title": {
-        "en": "A1-15 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-15"
-      ]
-    },
-    {
-      "title": {
-        "en": "A1-20 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-20"
-      ]
-    },
-    {
-      "title": {
-        "en": "A1-30 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-30"
-      ]
-    },
-    {
-      "title": {
-        "en": "A1-30-ZB traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-30-ZB"
-      ]
-    },
-    {
-      "title": {
-        "en": "A1-50 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-50"
-      ]
-    },
-    {
-      "title": {
-        "en": "A1-50-ZB traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-50-ZB"
-      ]
-    },
-    {
-      "title": {
-        "en": "A1-60 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-60"
-      ]
-    },
-    {
-      "title": {
-        "en": "A1-60-ZB traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-60-ZB"
-      ]
-    },
-    {
-      "title": {
-        "en": "A1-70 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-70"
-      ]
-    },
-    {
-      "title": {
-        "en": "A1-80 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-80"
-      ]
-    },
-    {
-      "title": {
-        "en": "A1-90 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-90"
-      ]
-    },
-    {
-      "title": {
-        "en": "A1-100 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-100"
-      ]
-    },
-    {
-      "title": {
-        "en": "A1-120 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-120"
-      ]
-    },
-    {
-      "title": {
-        "en": "A1-130 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A01-130"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-5 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-5"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-10 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-10"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-15 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-15"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-20 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-20"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-30 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-30"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-30-ZE traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-30-ZE"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-50 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-50"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-50-ZE traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-50-ZE"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-60 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-60"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-60-ZE traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-60-ZE"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-70 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-70"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-80 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-80"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-90 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-90"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-100 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-100"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-120 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-120"
-      ]
-    },
-    {
-      "title": {
-        "en": "A2-130 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:A02-130"
-      ]
-    },
-    {
-      "title": {
-        "en": "B1 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:B01"
-      ]
-    },
-    {
-      "title": {
-        "en": "B2 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:B02"
-      ]
-    },
-    {
-      "title": {
-        "en": "B3 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:B03"
-      ]
-    },
-    {
-      "title": {
-        "en": "B4 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:B04"
-      ]
-    },
-    {
-      "title": {
-        "en": "B5 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:B05"
-      ]
-    },
-    {
-      "title": {
-        "en": "B6 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:B06"
-      ]
-    },
-    {
-      "title": {
-        "en": "B7 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:B07"
-      ]
-    },
-    {
-      "title": {
-        "en": "C1 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C01"
-      ]
-    },
-    {
-      "title": {
-        "en": "C2 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C02"
-      ]
-    },
-    {
-      "title": {
-        "en": "C3 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C03"
-      ]
-    },
-    {
-      "title": {
-        "en": "C4-L traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C04-L"
-      ]
-    },
-    {
-      "title": {
-        "en": "C4-R traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C04-R"
-      ]
-    },
-    {
-      "title": {
-        "en": "C5 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C05"
-      ]
-    },
-    {
-      "title": {
-        "en": "C6 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C06"
-      ]
-    },
-    {
-      "title": {
-        "en": "C7 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C07"
-      ]
-    },
-    {
-      "title": {
-        "en": "C7a traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C07a"
-      ]
-    },
-    {
-      "title": {
-        "en": "C7b traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C07b"
-      ]
-    },
-    {
-      "title": {
-        "en": "C8 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C08"
-      ]
-    },
-    {
-      "title": {
-        "en": "C9 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C09"
-      ]
-    },
-    {
-      "title": {
-        "en": "C10 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C10"
-      ]
-    },
-    {
-      "title": {
-        "en": "C11 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C11"
-      ]
-    },
-    {
-      "title": {
-        "en": "C12 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C12"
-      ]
-    },
-    {
-      "title": {
-        "en": "C13 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C13"
-      ]
-    },
-    {
-      "title": {
-        "en": "C14 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C14"
-      ]
-    },
-    {
-      "title": {
-        "en": "C15 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C15"
-      ]
-    },
-    {
-      "title": {
-        "en": "C16 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C16"
-      ]
-    },
-    {
-      "title": {
-        "en": "C22 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C22"
-      ]
-    },
-    {
-      "title": {
-        "en": "C22a traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C22a"
-      ]
-    },
-    {
-      "title": {
-        "en": "C22b traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:C22b"
-      ]
-    },
-    {
-      "title": {
-        "en": "D1 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:D01"
-      ]
-    },
-    {
-      "title": {
-        "en": "D2-RO traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:D02-RO"
-      ]
-    },
-    {
-      "title": {
-        "en": "D3 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:D03"
-      ]
-    },
-    {
-      "title": {
-        "en": "D4 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:D04"
-      ]
-    },
-    {
-      "title": {
-        "en": "D5-L traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:D05-L"
-      ]
-    },
-    {
-      "title": {
-        "en": "D5-R traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:D05-R"
-      ]
-    },
-    {
-      "title": {
-        "en": "D6-L traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:D06-L"
-      ]
-    },
-    {
-      "title": {
-        "en": "D6-R traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:D06-R"
-      ]
-    },
-    {
-      "title": {
-        "en": "D7 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:D07"
-      ]
-    },
-    {
-      "title": {
-        "en": "E1 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:E01"
-      ]
-    },
-    {
-      "title": {
-        "en": "E2 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:E02"
-      ]
-    },
-    {
-      "title": {
-        "en": "E3 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:E03"
-      ]
-    },
-    {
-      "title": {
-        "en": "E4 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:E04"
-      ]
-    },
-    {
-      "title": {
-        "en": "E5 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:E05"
-      ]
-    },
-    {
-      "title": {
-        "en": "E6 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:E06"
-      ]
-    },
-    {
-      "title": {
-        "en": "E7 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:E07"
-      ]
-    },
-    {
-      "title": {
-        "en": "E8 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:E08"
-      ]
-    },
-    {
-      "title": {
-        "en": "E9 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:E09"
-      ]
-    },
-    {
-      "title": {
-        "en": "E10 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:E10"
-      ]
-    },
-    {
-      "title": {
-        "en": "E11 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:E11"
-      ]
-    },
-    {
-      "title": {
-        "en": "E12 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:E12"
-      ]
-    },
-    {
-      "title": {
-        "en": "E13 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:E13"
-      ]
-    },
-    {
-      "title": {
-        "en": "G1 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G01"
-      ]
-    },
-    {
-      "title": {
-        "en": "G2 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G02"
-      ]
-    },
-    {
-      "title": {
-        "en": "G3 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G03"
-      ]
-    },
-    {
-      "title": {
-        "en": "G4 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G04"
-      ]
-    },
-    {
-      "title": {
-        "en": "G5 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G05"
-      ]
-    },
-    {
-      "title": {
-        "en": "G6 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G06"
-      ]
-    },
-    {
-      "title": {
-        "en": "G7 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G07"
-      ]
-    },
-    {
-      "title": {
-        "en": "G8 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G08"
-      ]
-    },
-    {
-      "title": {
-        "en": "G9 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G09"
-      ]
-    },
-    {
-      "title": {
-        "en": "G10 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G10"
-      ]
-    },
-    {
-      "title": {
-        "en": "G11 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G11"
-      ]
-    },
-    {
-      "title": {
-        "en": "G12 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G12"
-      ]
-    },
-    {
-      "title": {
-        "en": "G12a traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G12a"
-      ]
-    },
-    {
-      "title": {
-        "en": "G12b traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G12b"
-      ]
-    },
-    {
-      "title": {
-        "en": "G13 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G13"
-      ]
-    },
-    {
-      "title": {
-        "en": "G14 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:G14"
-      ]
-    },
-    {
-      "title": {
-        "en": "J1 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J01"
-      ]
-    },
-    {
-      "title": {
-        "en": "J2 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J02"
-      ]
-    },
-    {
-      "title": {
-        "en": "J3 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J03"
-      ]
-    },
-    {
-      "title": {
-        "en": "J4 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J04"
-      ]
-    },
-    {
-      "title": {
-        "en": "J5 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J05"
-      ]
-    },
-    {
-      "title": {
-        "en": "J8 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J08"
-      ]
-    },
-    {
-      "title": {
-        "en": "J9 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J09"
-      ]
-    },
-    {
-      "title": {
-        "en": "J10 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J10"
-      ]
-    },
-    {
-      "title": {
-        "en": "J11 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J11"
-      ]
-    },
-    {
-      "title": {
-        "en": "J12 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J12"
-      ]
-    },
-    {
-      "title": {
-        "en": "J13 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J13"
-      ]
-    },
-    {
-      "title": {
-        "en": "J14 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J14"
-      ]
-    },
-    {
-      "title": {
-        "en": "J15 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J15"
-      ]
-    },
-    {
-      "title": {
-        "en": "J16 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J16"
-      ]
-    },
-    {
-      "title": {
-        "en": "J17 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J17"
-      ]
-    },
-    {
-      "title": {
-        "en": "J18 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J18"
-      ]
-    },
-    {
-      "title": {
-        "en": "J19 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J19"
-      ]
-    },
-    {
-      "title": {
-        "en": "J20 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J20"
-      ]
-    },
-    {
-      "title": {
-        "en": "J21 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J21"
-      ]
-    },
-    {
-      "title": {
-        "en": "J22 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J22"
-      ]
-    },
-    {
-      "title": {
-        "en": "J23 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J23"
-      ]
-    },
-    {
-      "title": {
-        "en": "J24 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J24"
-      ]
-    },
-    {
-      "title": {
-        "en": "J25 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J25"
-      ]
-    },
-    {
-      "title": {
-        "en": "J26 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J26"
-      ]
-    },
-    {
-      "title": {
-        "en": "J27 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J27"
-      ]
-    },
-    {
-      "title": {
-        "en": "J28 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J28"
-      ]
-    },
-    {
-      "title": {
-        "en": "J29 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J29"
-      ]
-    },
-    {
-      "title": {
-        "en": "J30 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J30"
-      ]
-    },
-    {
-      "title": {
-        "en": "J31 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J31"
-      ]
-    },
-    {
-      "title": {
-        "en": "J32 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J32"
-      ]
-    },
-    {
-      "title": {
-        "en": "J33 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J33"
-      ]
-    },
-    {
-      "title": {
-        "en": "J34 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J34"
-      ]
-    },
-    {
-      "title": {
-        "en": "J35 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J35"
-      ]
-    },
-    {
-      "title": {
-        "en": "J36 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J36"
-      ]
-    },
-    {
-      "title": {
-        "en": "J37 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J37"
-      ]
-    },
-    {
-      "title": {
-        "en": "J38 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J38"
-      ]
-    },
-    {
-      "title": {
-        "en": "J39 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:J39"
-      ]
-    },
-    {
-      "title": {
-        "en": "L2 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:L02"
-      ]
-    },
-    {
-      "title": {
-        "en": "L3a traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:L03a"
-      ]
-    },
-    {
-      "title": {
-        "en": "L3b traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:L03b"
-      ]
-    },
-    {
-      "title": {
-        "en": "L3c traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:L03c"
-      ]
-    },
-    {
-      "title": {
-        "en": "L8 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:L08"
-      ]
-    },
-    {
-      "title": {
-        "en": "L9 traffic sign"
-      },
-      "tags": [
-        "traffic_sign=NL:L09"
+        "en": "a traffic sign",
+        "nl": "een verkeersbord"
+      },
+      "tags": [
+        "traffic_sign=yes"
+      ],
+      "description": {
+        "en": "any kind of traffic sign, the exact one is asked later",
+        "nl": "een verkeersbord, het exacte type wordt later gevraagd"
+      }
+    }
+  ],
+  "units": [
+    {
+      "applicableUnits": [
+        {
+          "#": "km/h is the default for a maxspeed; should be empty string",
+          "canonicalDenomination": "",
+          "alternativeDenomination": [
+            "km/u",
+            "kmh",
+            "kph"
+          ],
+          "human": {
+            "en": "kilometers/hour",
+            "ca": "quilòmetres/hora",
+            "es": "kilómetros/hora",
+            "nl": "kilometers/uur",
+            "de": "Kilometer/Stunde",
+            "pa_PK": "ہر گھنٹہ وچ کیلومیٹر"
+          },
+          "humanShort": {
+            "en": "km/h",
+            "ca": "km/h",
+            "es": "km/h",
+            "nl": "km/u",
+            "de": "km/h",
+            "pa_PK": "ہر گھنٹے وچ کیلومیٹر"
+          }
+        },
+        {
+          "canonicalDenomination": "mph",
+          "useIfNoUnitGiven": [
+            "gb",
+            "us"
+          ],
+          "alternativeDenomination": [
+            "m/u",
+            "mh",
+            "m/ph"
+          ],
+          "human": {
+            "en": "miles/hour",
+            "ca": "milles/hora",
+            "es": "millas/hora",
+            "nl": "miles/uur",
+            "de": "Meilen/Stunde",
+            "pa_PK": "ہر گھنٹہ وچ میل"
+          },
+          "humanShort": {
+            "en": "mph",
+            "ca": "mph",
+            "es": "mph",
+            "nl": "mph",
+            "de": "mph",
+            "pa_PK": "ہر گھنٹہ وچ میل"
+          }
+        }
+      ],
+      "appliesToKey": [
+        "maxspeed"
       ]
     }
-  ]
+  ],
+  "deletion": true
 }

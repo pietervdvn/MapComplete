@@ -1,0 +1,1052 @@
+{
+  "$schema": "https://osm.rlin.eu/traffic_sign/schema/schema.json",
+  "name": "Traffic signs of the Netherlands",
+  "description": "List of Dutch traffic signs",
+  "version": "2022-12-31",
+  "country": "NL",
+  "traffic_signs": [
+    {
+      "id": "NL:A01-5",
+      "name": "Maximum speed of 5 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1-5.svg"
+      }
+    },
+    {
+      "id": "NL:A01-10",
+      "name": "Maximum speed of 10 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1-10.svg"
+      }
+    },
+    {
+      "id": "NL:A01-15",
+      "name": "Maximum speed of 15 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1-15.svg"
+      }
+    },
+    {
+      "id": "NL:A01-20",
+      "name": "Maximum speed of 20 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1-20.svg"
+      }
+    },
+    {
+      "id": "NL:A01-30",
+      "name": "Maximum speed of 30 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1-30.svg"
+      }
+    },
+    {
+      "id": "NL:A01-30-ZB",
+      "name": "Start of 30 km/h zone",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1_30_Zone.svg"
+      }
+    },
+    {
+      "id": "NL:A01-50",
+      "name": "Maximum speed of 50 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1-50.svg"
+      }
+    },
+    {
+      "id": "NL:A01-50-ZB",
+      "name": "Start of 50 km/h zone",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1_50_Zone.svg"
+      }
+    },
+    {
+      "id": "NL:A01-60",
+      "name": "Maximum speed of 60 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1-60.svg"
+      }
+    },
+    {
+      "id": "NL:A01-60-ZB",
+      "name": "Start of 60 km/h zone",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1_60_Zone.svg"
+      }
+    },
+    {
+      "id": "NL:A01-70",
+      "name": "Maximum speed of 70 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1-70.svg"
+      }
+    },
+    {
+      "id": "NL:A01-80",
+      "name": "Maximum speed of 80 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1-80.svg"
+      }
+    },
+    {
+      "id": "NL:A01-90",
+      "name": "Maximum speed of 90 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1-90.svg"
+      }
+    },
+    {
+      "id": "NL:A01-100",
+      "name": "Maximum speed of 100 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1-100.svg"
+      }
+    },
+    {
+      "id": "NL:A01-120",
+      "name": "Maximum speed of 120 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1-120.svg"
+      }
+    },
+    {
+      "id": "NL:A01-130",
+      "name": "Maximum speed of 130 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A1-130.svg"
+      }
+    },
+    {
+      "id": "NL:A02-5",
+      "name": "End of maximum speed of 5 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A2-5.svg"
+      }
+    },
+    {
+      "id": "NL:A02-10",
+      "name": "End of maximum speed of 10 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A2-10.svg"
+      }
+    },
+    {
+      "id": "NL:A02-15",
+      "name": "End of maximum speed of 15 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A2-15.svg"
+      }
+    },
+    {
+      "id": "NL:A02-20",
+      "name": "End of maximum speed of 20 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A2-20.svg"
+      }
+    },
+    {
+      "id": "NL:A02-30",
+      "name": "End of maximum speed of 30 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A2-30.svg"
+      }
+    },
+    {
+      "id": "NL:A02-30-ZE",
+      "name": "End of 30 km/h zone",
+      "image": {
+        "file": "A/Netherlands_traffic_sign_A2-30-ZE.svg"
+      }
+    },
+    {
+      "id": "NL:A02-50",
+      "name": "End of maximum speed of 50 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A2-50.svg"
+      }
+    },
+    {
+      "id": "NL:A02-50-ZE",
+      "name": "End of 50 km/h zone",
+      "image": {
+        "file": "A/Netherlands_traffic_sign_A2-50-ZE.svg"
+      }
+    },
+    {
+      "id": "NL:A02-60",
+      "name": "End of maximum speed of 60 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A2-60.svg"
+      }
+    },
+    {
+      "id": "NL:A02-60-ZE",
+      "name": "End of 60 km/h zone",
+      "image": {
+        "file": "A/Netherlands_traffic_sign_A2-60-ZE.svg"
+      }
+    },
+    {
+      "id": "NL:A02-70",
+      "name": "End of maximum speed of 70 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A2-70.svg"
+      }
+    },
+    {
+      "id": "NL:A02-80",
+      "name": "End of maximum speed of 80 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A2-80.svg"
+      }
+    },
+    {
+      "id": "NL:A02-90",
+      "name": "End of maximum speed of 90 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A2-90.svg"
+      }
+    },
+    {
+      "id": "NL:A02-100",
+      "name": "End of maximum speed of 100 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A2-100.svg"
+      }
+    },
+    {
+      "id": "NL:A02-120",
+      "name": "End of maximum speed of 120 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A2-120.svg"
+      }
+    },
+    {
+      "id": "NL:A02-130",
+      "name": "End of maximum speed of 130 km/h",
+      "image": {
+        "file": "A/Nederlands_verkeersbord_A2-130.svg"
+      }
+    },
+    {
+      "id": "NL:B01",
+      "name": "Priority road",
+      "image": {
+        "file": "B/Nederlands_verkeersbord_B1.svg"
+      }
+    },
+    {
+      "id": "NL:B02",
+      "name": "End of priority road",
+      "image": {
+        "file": "B/Nederlands_verkeersbord_B2.svg"
+      }
+    },
+    {
+      "id": "NL:B03",
+      "name": "Priority road with side roads",
+      "image": {
+        "file": "B/Nederlands_verkeersbord_B3.svg"
+      }
+    },
+    {
+      "id": "NL:B04",
+      "name": "Priority road with side road on the right",
+      "image": {
+        "file": "B/Nederlands_verkeersbord_B4.svg"
+      }
+    },
+    {
+      "id": "NL:B05",
+      "name": "Priority road with side road on the left",
+      "image": {
+        "file": "B/Nederlands_verkeersbord_B5.svg"
+      }
+    },
+    {
+      "id": "NL:B06",
+      "name": "Give way",
+      "image": {
+        "file": "B/Nederlands_verkeersbord_B6.svg"
+      }
+    },
+    {
+      "id": "NL:B07",
+      "name": "Stop",
+      "image": {
+        "file": "B/Nederlands_verkeersbord_B7.svg"
+      }
+    },
+    {
+      "id": "NL:C01",
+      "name": "Closed to all traffic",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C1.svg"
+      }
+    },
+    {
+      "id": "NL:C02",
+      "name": "No entry, one-way street",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C2.svg"
+      }
+    },
+    {
+      "id": "NL:C03",
+      "name": "One-way street",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C3.svg"
+      }
+    },
+    {
+      "id": "NL:C04-L",
+      "name": "One-way street, traffic to the left",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C4_(links).svg"
+      }
+    },
+    {
+      "id": "NL:C04-R",
+      "name": "One-way street, traffic to the right",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C4_(rechts).svg"
+      }
+    },
+    {
+      "id": "NL:C05",
+      "name": "Two-way street",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C5.svg"
+      }
+    },
+    {
+      "id": "NL:C06",
+      "name": "Closed for motor vehicles with more than 2 wheels",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C6.svg"
+      }
+    },
+    {
+      "id": "NL:C07",
+      "name": "Closed for heavy goods vehicles",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C7.svg"
+      }
+    },
+    {
+      "id": "NL:C07a",
+      "name": "Closed for buses",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C7a.svg"
+      }
+    },
+    {
+      "id": "NL:C07b",
+      "name": "Closed for heavy goods vehicles and buses",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C7b.svg"
+      }
+    },
+    {
+      "id": "NL:C08",
+      "name": "Closed for motor vehicles with a top speed less than 25km/h (agricultural vehicles)",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C8.svg"
+      }
+    },
+    {
+      "id": "NL:C09",
+      "name": "Closed for motor vehicles with a top speed less than 25km/h (agricultural vehicles), mopeds, mofas, bicycles and disabled vehicles",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C9.svg"
+      }
+    },
+    {
+      "id": "NL:C10",
+      "name": "Closed for motor vehicles with a trailer",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C10.svg"
+      }
+    },
+    {
+      "id": "NL:C11",
+      "name": "Closed for motorbikes",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C11.svg"
+      }
+    },
+    {
+      "id": "NL:C12",
+      "name": "Closed for motor vehicles",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C12.svg"
+      }
+    },
+    {
+      "id": "NL:C13",
+      "name": "Closed for mopeds, mofas and disabled vehicles",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C13.svg"
+      }
+    },
+    {
+      "id": "NL:C14",
+      "name": "Closed for bicycles",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C14.svg"
+      }
+    },
+    {
+      "id": "NL:C15",
+      "name": "Closed for mopeds, mofas, bicycles and disabled vehicles",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C15.svg"
+      }
+    },
+    {
+      "id": "NL:C16",
+      "name": "Closed for pedestrians",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C16.svg"
+      }
+    },
+    {
+      "id": "NL:C22",
+      "name": "Closed for heavy goods vehicles carrying dangerous goods",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C22.svg"
+      }
+    },
+    {
+      "id": "NL:C22a",
+      "name": "Start of low emission zone",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C22a.svg"
+      }
+    },
+    {
+      "id": "NL:C22b",
+      "name": "End of low emission zone",
+      "image": {
+        "file": "C/Nederlands_verkeersbord_C22b.svg"
+      }
+    },
+    {
+      "id": "NL:D01",
+      "name": "Roundabout",
+      "image": {
+        "file": "D/Nederlands_verkeersbord_D1.svg"
+      }
+    },
+    {
+      "id": "NL:D02-RO",
+      "name": "Passing allowed on the right",
+      "image": {
+        "file": "D/Nederlands_verkeersbord_D2.svg"
+      }
+    },
+    {
+      "id": "NL:D03",
+      "name": "Passing allowed on both sides",
+      "image": {
+        "file": "D/Nederlands_verkeersbord_D3.svg"
+      }
+    },
+    {
+      "id": "NL:D04",
+      "name": "Only straight on allowed",
+      "image": {
+        "file": "D/Nederlands_verkeersbord_D4.svg"
+      }
+    },
+    {
+      "id": "NL:D05-L",
+      "name": "Only left turn allowed",
+      "image": {
+        "file": "D/Nederlands_verkeersbord_D5-L.svg"
+      }
+    },
+    {
+      "id": "NL:D05-R",
+      "name": "Only right turn allowed",
+      "image": {
+        "file": "D/Nederlands_verkeersbord_D5-R.svg"
+      }
+    },
+    {
+      "id": "NL:D06-L",
+      "name": "Only left turn and straight on allowed",
+      "image": {
+        "file": "D/Nederlands_verkeersbord_D6-L.svg"
+      }
+    },
+    {
+      "id": "NL:D06-R",
+      "name": "Only right turn and straight on allowed",
+      "image": {
+        "file": "D/Nederlands_verkeersbord_D6-R.svg"
+      }
+    },
+    {
+      "id": "NL:D07",
+      "name": "Only left and right turn allowed",
+      "image": {
+        "file": "D/Nederlands_verkeersbord_D7.svg"
+      }
+    },
+    {
+      "id": "NL:E01",
+      "name": "No parking allowed",
+      "image": {
+        "file": "E/Nederlands_verkeersbord_E1.svg"
+      }
+    },
+    {
+      "id": "NL:E02",
+      "name": "No stopping allowed",
+      "image": {
+        "file": "E/Nederlands_verkeersbord_E2.svg"
+      }
+    },
+    {
+      "id": "NL:E03",
+      "name": "No parking allowed for mopeds, mofas and bicycles",
+      "image": {
+        "file": "E/Nederlands_verkeersbord_E3.svg"
+      }
+    },
+    {
+      "id": "NL:E04",
+      "name": "Parking",
+      "image": {
+        "file": "E/Nederlands_verkeersbord_E4.svg"
+      }
+    },
+    {
+      "id": "NL:E05",
+      "name": "Parking for taxis",
+      "image": {
+        "file": "E/Nederlands_verkeersbord_E5.svg"
+      }
+    },
+    {
+      "id": "NL:E06",
+      "name": "Parking for disabled persons",
+      "image": {
+        "file": "E/Nederlands_verkeersbord_E6.svg"
+      }
+    },
+    {
+      "id": "NL:E07",
+      "name": "Parking for delivery vehicles",
+      "image": {
+        "file": "E/Nederlands_verkeersbord_E7.svg"
+      }
+    },
+    {
+      "id": "NL:E08",
+      "name": "Parking for cars",
+      "image": {
+        "file": "E/Nederlands_verkeersbord_E8.svg"
+      }
+    },
+    {
+      "id": "NL:E09",
+      "name": "Parking for permit holders only",
+      "image": {
+        "file": "E/Nederlands_verkeersbord_E9.svg"
+      }
+    },
+    {
+      "id": "NL:E10",
+      "name": "Start of disc parking zone",
+      "image": {
+        "file": "E/Nederlands_verkeersbord_E10.svg"
+      }
+    },
+    {
+      "id": "NL:E11",
+      "name": "End of disc parking zone",
+      "image": {
+        "file": "E/Nederlands_verkeersbord_E11.svg"
+      }
+    },
+    {
+      "id": "NL:E12",
+      "name": "Park and ride",
+      "image": {
+        "file": "E/Nederlands_verkeersbord_E12.svg"
+      }
+    },
+    {
+      "id": "NL:E13",
+      "name": "Carpool parking",
+      "image": {
+        "file": "E/Nederlands_verkeersbord_E13.svg"
+      }
+    },
+    {
+      "id": "NL:F01",
+      "name": "Overtaking not allowed",
+      "image": {
+        "file": "F/Nederlands_verkeersbord_F1.svg"
+      }
+    },
+    {
+      "id": "NL:F02",
+      "name": "Overtaking allowed",
+      "image": {
+        "file": "F/Nederlands_verkeersbord_F2.svg"
+      }
+    },
+    {
+      "id": "NL:F03",
+      "name": "Overtaking not allow for heavy goods vehicles",
+      "image": {
+        "file": "F/Nederlands_verkeersbord_F3.svg"
+      }
+    },
+    {
+      "id": "NL:F04",
+      "name": "Overtaking allowed for heavy goods vehicles",
+      "image": {
+        "file": "F/Nederlands_verkeersbord_F4.svg"
+      }
+    },
+    {
+      "id": "NL:F05",
+      "name": "Priority for traffic in other direction",
+      "image": {
+        "file": "F/Nederlands_verkeersbord_F5.svg"
+      }
+    },
+    {
+      "id": "NL:F06",
+      "name": "Priority for traffic in current direction",
+      "image": {
+        "file": "F/Nederlands_verkeersbord_F6.svg"
+      }
+    },
+    {
+      "id": "NL:F07",
+      "name": "No U-turn allowed",
+      "image": {
+        "file": "F/Nederlands_verkeersbord_F7.svg"
+      }
+    },
+    {
+      "id": "NL:F08",
+      "name": "End of prohibitions from signs",
+      "image": {
+        "file": "F/Nederlands_verkeersbord_F8.svg"
+      }
+    },
+    {
+      "id": "NL:G01",
+      "name": "Start of motorway",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G1.svg"
+      }
+    },
+    {
+      "id": "NL:G02",
+      "name": "End of motorway",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G2.svg"
+      }
+    },
+    {
+      "id": "NL:G03",
+      "name": "Start of motorroad",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G3.svg"
+      }
+    },
+    {
+      "id": "NL:G04",
+      "name": "End of motorroad",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G4.svg"
+      }
+    },
+    {
+      "id": "NL:G05",
+      "name": "Woonerf",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G5.svg"
+      }
+    },
+    {
+      "id": "NL:G06",
+      "name": "End of woonerf",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G6.svg"
+      }
+    },
+    {
+      "id": "NL:G07",
+      "name": "Footpath",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G7.svg"
+      }
+    },
+    {
+      "id": "NL:G08",
+      "name": "End of footpath",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G8.svg"
+      }
+    },
+    {
+      "id": "NL:G09",
+      "name": "Bridal path",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G9.svg"
+      }
+    },
+    {
+      "id": "NL:G10",
+      "name": "End of bridal path",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G10.svg"
+      }
+    },
+    {
+      "id": "NL:G11",
+      "name": "Mandatory cycleway",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G11.svg"
+      }
+    },
+    {
+      "id": "NL:G12",
+      "name": "End of mandatory cycleway",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G12.svg"
+      }
+    },
+    {
+      "id": "NL:G12a",
+      "name": "Mandatory cycleway for mopeds, mofas and bicycles",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G12a.svg"
+      }
+    },
+    {
+      "id": "NL:G12b",
+      "name": "End of mandatory cycleway for mopeds, mofas and bicycles",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G12b.svg"
+      }
+    },
+    {
+      "id": "NL:G13",
+      "name": "Non-mandatory cycleway",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G13.svg"
+      }
+    },
+    {
+      "id": "NL:G14",
+      "name": "End of non-mandatory cycleway",
+      "image": {
+        "file": "G/Nederlands_verkeersbord_G14.svg"
+      }
+    },
+    {
+      "id": "NL:J01",
+      "name": "Bad road surface",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J1.svg"
+      }
+    },
+    {
+      "id": "NL:J02",
+      "name": "Corner to the right",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J2.svg"
+      }
+    },
+    {
+      "id": "NL:J03",
+      "name": "Corner to the left",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J3.svg"
+      }
+    },
+    {
+      "id": "NL:J04",
+      "name": "S-bend to the right",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J4.svg"
+      }
+    },
+    {
+      "id": "NL:J05",
+      "name": "S-bend to the left",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J5.svg"
+      }
+    },
+    {
+      "id": "NL:J08",
+      "name": "Dangerous intersection",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J8.svg"
+      }
+    },
+    {
+      "id": "NL:J09",
+      "name": "Roundabout ahead",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J9.svg"
+      }
+    },
+    {
+      "id": "NL:J10",
+      "name": "Protected railway crossing",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J10.svg"
+      }
+    },
+    {
+      "id": "NL:J11",
+      "name": "Unprotected railway crossing",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J11.svg"
+      }
+    },
+    {
+      "id": "NL:J12",
+      "name": "Single track railway crossing without barriers",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J12.svg"
+      }
+    },
+    {
+      "id": "NL:J13",
+      "name": "Double track railway crossing without barriers",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J13.svg"
+      }
+    },
+    {
+      "id": "NL:J14",
+      "name": "Trams crossing",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J14.svg"
+      }
+    },
+    {
+      "id": "NL:J15",
+      "name": "Movable bridge",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J15.svg"
+      }
+    },
+    {
+      "id": "NL:J16",
+      "name": "Road works",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J16.svg"
+      }
+    },
+    {
+      "id": "NL:J17",
+      "name": "Road narrows",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J17.svg"
+      }
+    },
+    {
+      "id": "NL:J18",
+      "name": "Road narrows on the right",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J18.svg"
+      }
+    },
+    {
+      "id": "NL:J19",
+      "name": "Road narrows on the left",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J19.svg"
+      }
+    },
+    {
+      "id": "NL:J20",
+      "name": "Slippery road",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J20.svg"
+      }
+    },
+    {
+      "id": "NL:J21",
+      "name": "Playing children",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J21.svg"
+      }
+    },
+    {
+      "id": "NL:J22",
+      "name": "Pedestrian crossing",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J22.svg"
+      }
+    },
+    {
+      "id": "NL:J23",
+      "name": "Pedestrians",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J23.svg"
+      }
+    },
+    {
+      "id": "NL:J24",
+      "name": "Bicycles and mopeds",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J24.svg"
+      }
+    },
+    {
+      "id": "NL:J25",
+      "name": "Loose chippings",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J25.svg"
+      }
+    },
+    {
+      "id": "NL:J26",
+      "name": "Quay or river bank",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J26.svg"
+      }
+    },
+    {
+      "id": "NL:J27",
+      "name": "Dangerous animals",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J27.svg"
+      }
+    },
+    {
+      "id": "NL:J28",
+      "name": "Cattle",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J28.svg"
+      }
+    },
+    {
+      "id": "NL:J29",
+      "name": "Oncoming traffic",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J29.svg"
+      }
+    },
+    {
+      "id": "NL:J30",
+      "name": "Low-flying aircraft",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J30.svg"
+      }
+    },
+    {
+      "id": "NL:J31",
+      "name": "Side wind",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J31.svg"
+      }
+    },
+    {
+      "id": "NL:J32",
+      "name": "Traffic lights ahead",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J32.svg"
+      }
+    },
+    {
+      "id": "NL:J33",
+      "name": "Chance of traffic jams",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J33.svg"
+      }
+    },
+    {
+      "id": "NL:J34",
+      "name": "Chance of accidents",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J34.svg"
+      }
+    },
+    {
+      "id": "NL:J35",
+      "name": "Bad visibility",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J35.svg"
+      }
+    },
+    {
+      "id": "NL:J36",
+      "name": "Black ice or snow",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J36.svg"
+      }
+    },
+    {
+      "id": "NL:J37",
+      "name": "Danger ahead",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J37_zonder_onderbord.svg"
+      }
+    },
+    {
+      "id": "NL:J38",
+      "name": "Speed bump",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J38.svg"
+      }
+    },
+    {
+      "id": "NL:J39",
+      "name": "Automatic rising bollard",
+      "image": {
+        "file": "J/Nederlands_verkeersbord_J39.svg"
+      }
+    },
+    {
+      "id": "NL:L02",
+      "name": "Zebra crossing",
+      "image": {
+        "file": "L/Nederlands_verkeersbord_L2.svg"
+      }
+    },
+    {
+      "id": "NL:L03a",
+      "name": "Tram and bus stop",
+      "image": {
+        "file": "L/Nederlands_verkeersbord_L3a.svg"
+      }
+    },
+    {
+      "id": "NL:L03b",
+      "name": "Bus stop",
+      "image": {
+        "file": "L/Nederlands_verkeersbord_L3b.svg"
+      }
+    },
+    {
+      "id": "NL:L03c",
+      "name": "Tram stop",
+      "image": {
+        "file": "L/Nederlands_verkeersbord_L3c.svg"
+      }
+    },
+    {
+      "id": "NL:L08",
+      "name": "Dead end",
+      "image": {
+        "file": "L/Nederlands_verkeersbord_L8.svg"
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="sign" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+<circle id="circle" fill="#F7FBF5" stroke="#808080" stroke-width="0.5" cx="150" cy="150" r="149.8"/>
+<g id="stripes">
+	<line fill="none" stroke="#2a2d2f" stroke-width="10" x1="63" y1="265" x2="206" y2="17"/>
+	<line fill="none" stroke="#2a2d2f" stroke-width="10" x1="77" y1="276" x2="221" y2="24"/>
+	<line fill="none" stroke="#2a2d2f" stroke-width="10" x1="94" y1="282" x2="236" y2="33"/>
+</g>
+<circle id="white" fill="none" stroke="#F7FBF5" stroke-width="9" cx="150" cy="150" r="144"/>
+</svg>
