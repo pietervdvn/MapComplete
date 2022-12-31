@@ -305,7 +305,7 @@
             },
             "title": "Laden Sie Ihre Strecke auf OpenStreetMap.org hoch",
             "uploadFinished": "Ihre Strecke wurde hochgeladen!",
-            "uploading": "Hochladen Ihrer Strecke..."
+            "uploading": "Hochladen Ihrer Strecke…"
         },
         "useSearch": "Verwenden Sie die Suche oben, um Voreinstellungen anzuzeigen",
         "useSearchForMore": "Verwenden Sie die Suchfunktion, um innerhalb von {total} weitere Werte zu suchen…",
@@ -401,7 +401,7 @@
         },
         "compareToAlreadyExistingNotes": {
             "completelyImported": "Alle vorgeschlagenen Punkte haben (oder hatten) bereits eine Importnotiz",
-            "loading": "Notizen von OSM abrufen",
+            "loading": "Notizen von OSM abrufen…",
             "loadingFailed": "Laden von Notizen fehlgeschlagen aufgrund von {error}",
             "mapExplanation": "Die roten Elemente auf der nächsten Karte sind alle Datenpunkte aus Ihrem Datensatz. Es gibt <b>{length}</b> Elemente in Ihrem Datensatz.",
             "noPreviousNotesFound": "Keine früheren Importnotizen gefunden",
@@ -542,9 +542,9 @@
                 "commandNotFound": "Befehl {key} nicht gefunden - siehe <code>help</code> für alle Befehle",
                 "docs": "Führt einen Befehl aus und sendet die Ausgabe an eine andere Person",
                 "executing": "Führt <code>{_}</code> aus und sendet das Ergebnis an <b>{to}</b>…",
-                "failed": "Ich konnte <code>{cmd}</code> aufgrund von {message} nicht ausführen",
+                "failed": "Konnte <code>{cmd}</code> aufgrund von {message} nicht ausführen",
                 "noDm": "Ich konnte keinen Raum mit {to} erstellen",
-                "receipt": "Ich habe die Nachricht an {to} übermittelt",
+                "receipt": "Nachricht an {to} übermittelt",
                 "selectValidCommand": "Geben Sie einen gültigen Befehl an",
                 "selectValidUser": "Geben Sie einen gültigen Zielbenutzer an",
                 "sendReason": "Ich habe Ihnen diese Nachricht geschickt, weil <b>{sender}</b> mich gebeten hat, diese mit <code>{cmd}</code> zu senden"
@@ -565,7 +565,7 @@
                     "plural": "Ebenen",
                     "singular": "Ebene"
                 },
-                "noIdIntro": "Geben Sie eine ID an, um weitere Informationen über ein MapComplete-Programmierelement zu erhalten. Bekannte Typen sind {list}",
+                "noIdIntro": "Geben Sie eine ID an, um weitere Infos über ein MapComplete-Programmierelement zu erhalten. Bekannte Typen sind {list}",
                 "notFound": "Kein {singular} mit Namen <code>{id}</code> gefunden",
                 "overview": "Die folgenden {plural} existieren:",
                 "theme": {
@@ -617,7 +617,7 @@
                 "arglang": "Die von nun an zu verwendende Sprache",
                 "currentLanguage": "Die Sprache im aktuellen Raum ist {language}",
                 "docs": "Legt die Sprache der Antworten für diesen Raum fest",
-                "hasBeenSet": "Die Sprache wurde auf {language} eingestellt.",
+                "hasBeenSet": "Sprache auf {language} eingestellt.",
                 "helpTranslating": "Helfen Sie mit, meine Antworten auf Weblate zu übersetzen.",
                 "knownLanguages": "Sie können eine der folgenden Sprachen wählen:",
                 "notFound": "Die Sprache {language} wurde nicht gefunden"
@@ -764,7 +764,7 @@
             "li2": "machen Sie ein Foto, das die Rinde zeigt",
             "li3": "machen Sie ein Foto von den Blüten"
         },
-        "loadingWikidata": "Informationen über {species} werden geladen",
+        "loadingWikidata": "Informationen über {species} werden geladen…",
         "matchPercentage": "{match}% Übereinstimmung",
         "overviewIntro": "Die KI auf <a href='https://plantnet.org/' target='_blank'>PlantNet.org</a> denkt, dass die Fotos die folgende Art zeigen.",
         "overviewTitle": "Automatisch erkannte Art",
