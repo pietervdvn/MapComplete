@@ -97,7 +97,7 @@ export default class LeftControls extends Combine {
         state.featureSwitchFilter.addCallbackAndRun((f) => {
             Hotkeys.RegisterHotkey(
                 { nomod: "B" },
-                "Opens the Background, layers and filters panel",
+                Translations.t.hotkeyDocumentation.openLayersPanel,
                 () => {
                     guiState.filterViewIsOpened.setData(!guiState.filterViewIsOpened.data)
                 }

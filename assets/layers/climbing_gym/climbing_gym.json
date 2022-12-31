@@ -77,6 +77,46 @@
       "builtin": "climbing.fee"
     },
     "opening_hours",
+    {
+      "id": "shoe_rental",
+      "question": {
+        "en": "Can one rent climbing shoes here?"
+      },
+      "mappings": [
+        {
+          "if": "service:rental:climbing_shoes=yes",
+          "then": {
+            "en": "Climbing shoes can be rented here"
+          }
+        },
+        {
+          "if": "service:rental:climbing_shoes=no",
+          "then": {
+            "en": "Climbing shoes can <b>not</b> be rented here"
+          }
+        }
+      ]
+    },
+    {
+      "id": "harness_rental",
+      "question": {
+        "en": "Can one rent a climbing harness here?"
+      },
+      "mappings": [
+        {
+          "if": "service:rental:climbing_harness=yes",
+          "then": {
+            "en": "A climbing harness can be rented here"
+          }
+        },
+        {
+          "if": "service:rental:climbing_harness=no",
+          "then": {
+            "en": "A climbing harness can <b>not</b> be rented here"
+          }
+        }
+      ]
+    },
     "climbing.toprope",
     {
       "builtin": "climbing.average_length",

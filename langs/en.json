@@ -351,6 +351,14 @@
             "wikipediaboxTitle": "Wikipedia"
         }
     },
+    "hotkeyDocumentation": {
+        "closeSidebar": "Close the sidebar",
+        "geolocate": "Pan the map to the current location or zoom the map to the current location. Requests geopermission",
+        "openLayersPanel": "Opens the Background, layers and filters panel",
+        "selectBackground": "Select a background layer of category {category}",
+        "selectMapnik": "Sets the background layer to OpenStreetMap-carto",
+        "selectSearch": "Select the search bar to search locations"
+    },
     "image": {
         "addPicture": "Add picture",
         "ccb": "under the CC-BY-license",

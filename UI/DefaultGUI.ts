@@ -33,6 +33,7 @@ import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
 import { GeoLocationState } from "../Logic/State/GeoLocationState"
 import Hotkeys from "./Base/Hotkeys"
 import AvailableBaseLayers from "../Logic/Actors/AvailableBaseLayers"
+import { Translation } from "./i18n/Translation"
 
 /**
  * The default MapComplete GUI initializer
@@ -65,7 +66,7 @@ export default class DefaultGUI {
 
         Hotkeys.RegisterHotkey(
             { shift: "O" },
-            "Switch to default Mapnik-OpenStreetMap background",
+            Translations.t.hotkeyDocumentation.selectMapnik,
             () => {
                 this.state.backgroundLayer.setData(AvailableBaseLayers.osmCarto)
             }
@@ -257,7 +258,7 @@ export default class DefaultGUI {
                 )
                 Hotkeys.RegisterHotkey(
                     { ctrl: "F" },
-                    "Select the search bar to search locations",
+                    Translations.t.hotkeyDocumentation.selectSearch,
                     () => {
                         search.focus()
                     }

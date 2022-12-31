@@ -5,24 +5,24 @@ import Title from "./Title"
 import Table from "./Table"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import { VariableUiElement } from "./VariableUIElement"
-import doc = Mocha.reporters.doc
+import { Translation } from "../i18n/Translation"
+import { FixedUiElement } from "./FixedUiElement"
 
 export default class Hotkeys {
     private static readonly _docs: UIEventSource<
         {
             key: { ctrl?: string; shift?: string; alt?: string; nomod?: string; onUp?: boolean }
-            documentation: string
+            documentation: string | Translation
         }[]
     > = new UIEventSource<
         {
             key: { ctrl?: string; shift?: string; alt?: string; nomod?: string; onUp?: boolean }
-            documentation: string
+            documentation: string | Translation
         }[]
     >([])
 
     private static textElementSelected(): boolean {
-        console.log(document.activeElement)
-        return document?.activeElement?.tagName?.toLowerCase() === "input"
+        return ["input", "textarea"].includes(document?.activeElement?.tagName?.toLowerCase())
     }
     public static RegisterHotkey(
         key: (
@@ -41,7 +41,7 @@ export default class Hotkeys {
         ) & {
             onUp?: boolean
         },
-        documentation: string,
+        documentation: string | Translation,
         action: () => void
     ) {
         const type = key["onUp"] ? "keyup" : "keypress"
@@ -98,22 +98,22 @@ export default class Hotkeys {
     }
 
     static generateDocumentation(): BaseUIElement {
+        const byKey: [string, string | Translation][] = Hotkeys._docs.data
+            .map(({ key, documentation }) => {
+                const modifiers = Object.keys(key).filter((k) => k !== "nomod" && k !== "onUp")
+                const keycode: string = key["ctrl"] ?? key["shift"] ?? key["alt"] ?? key["nomod"]
+                modifiers.push(keycode)
+                return <[string, string | Translation]>[modifiers.join("+"), documentation]
+            })
+            .sort()
         return new Combine([
             new Title("Hotkeys", 1),
             "MapComplete supports the following keys:",
             new Table(
                 ["Key combination", "Action"],
-                Hotkeys._docs.data
-                    .map(({ key, documentation }) => {
-                        const modifiers = Object.keys(key).filter(
-                            (k) => k !== "nomod" && k !== "onUp"
-                        )
-                        const keycode: string =
-                            key["ctrl"] ?? key["shift"] ?? key["alt"] ?? key["nomod"]
-                        modifiers.push(keycode)
-                        return [modifiers.join("+"), documentation]
-                    })
-                    .sort()
+                byKey.map(([key, doc]) => {
+                    return [new FixedUiElement(key).SetClass("code"), doc]
+                })
             ),
         ])
     }
