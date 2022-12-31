@@ -122,7 +122,6 @@ export default class GeoLocationHandler {
             if (location === undefined) {
                 return
             }
-            console.log("GeoLocationCoordinates are", location)
             const feature = {
                 type: "Feature",
                 properties: <GeoLocationPointProperties>{
