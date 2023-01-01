@@ -2478,7 +2478,8 @@
             "then": "./assets/layers/traffic_sign/images/nl/L/Nederlands_verkeersbord_L8.svg"
           }
         ]
-      }
+      },
+      "rotation": "calc({direction}deg + 180deg)"
     }
   ],
   "presets": [
