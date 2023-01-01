@@ -441,14 +441,14 @@
     },
     {
       "id": "NL:D02-RO",
-      "name": "Passing allowed on the right",
+      "name": "Passing allowed on the right of the sign",
       "image": {
         "file": "D/Nederlands_verkeersbord_D2.svg"
       }
     },
     {
       "id": "NL:D03",
-      "name": "Passing allowed on both sides",
+      "name": "Passing allowed on both sides of the sign",
       "image": {
         "file": "D/Nederlands_verkeersbord_D3.svg"
       }

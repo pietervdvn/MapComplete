@@ -53,7 +53,8 @@
         {
           "if": "traffic_sign=NL:A01-5",
           "then": {
-            "en": "Maximum speed of 5 km/h"
+            "en": "Maximum speed of 5 km/h",
+            "nl": "Maximumsnelheid van 5 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -64,7 +65,8 @@
         {
           "if": "traffic_sign=NL:A01-10",
           "then": {
-            "en": "Maximum speed of 10 km/h"
+            "en": "Maximum speed of 10 km/h",
+            "nl": "Maximumsnelheid van 10 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -75,7 +77,8 @@
         {
           "if": "traffic_sign=NL:A01-15",
           "then": {
-            "en": "Maximum speed of 15 km/h"
+            "en": "Maximum speed of 15 km/h",
+            "nl": "Maximumsnelheid van 15 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -86,7 +89,8 @@
         {
           "if": "traffic_sign=NL:A01-20",
           "then": {
-            "en": "Maximum speed of 20 km/h"
+            "en": "Maximum speed of 20 km/h",
+            "nl": "Maximumsnelheid van 20 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -97,7 +101,8 @@
         {
           "if": "traffic_sign=NL:A01-30",
           "then": {
-            "en": "Maximum speed of 30 km/h"
+            "en": "Maximum speed of 30 km/h",
+            "nl": "Maximumsnelheid van 30 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -108,7 +113,8 @@
         {
           "if": "traffic_sign=NL:A01-30-ZB",
           "then": {
-            "en": "Start of 30 km/h zone"
+            "en": "Start of 30 km/h zone",
+            "nl": "Begin van 30 km/h zone"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -119,7 +125,8 @@
         {
           "if": "traffic_sign=NL:A01-50",
           "then": {
-            "en": "Maximum speed of 50 km/h"
+            "en": "Maximum speed of 50 km/h",
+            "nl": "Maximumsnelheid van 50 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -130,7 +137,8 @@
         {
           "if": "traffic_sign=NL:A01-50-ZB",
           "then": {
-            "en": "Start of 50 km/h zone"
+            "en": "Start of 50 km/h zone",
+            "nl": "Begin van 50 km/h zone"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -141,7 +149,8 @@
         {
           "if": "traffic_sign=NL:A01-60",
           "then": {
-            "en": "Maximum speed of 60 km/h"
+            "en": "Maximum speed of 60 km/h",
+            "nl": "Maximumsnelheid van 60 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -152,7 +161,8 @@
         {
           "if": "traffic_sign=NL:A01-60-ZB",
           "then": {
-            "en": "Start of 60 km/h zone"
+            "en": "Start of 60 km/h zone",
+            "nl": "Begin van 60 km/h zone"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -163,7 +173,8 @@
         {
           "if": "traffic_sign=NL:A01-70",
           "then": {
-            "en": "Maximum speed of 70 km/h"
+            "en": "Maximum speed of 70 km/h",
+            "nl": "Maximumsnelheid van 70 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -174,7 +185,8 @@
         {
           "if": "traffic_sign=NL:A01-80",
           "then": {
-            "en": "Maximum speed of 80 km/h"
+            "en": "Maximum speed of 80 km/h",
+            "nl": "Maximumsnelheid van 80 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -185,7 +197,8 @@
         {
           "if": "traffic_sign=NL:A01-90",
           "then": {
-            "en": "Maximum speed of 90 km/h"
+            "en": "Maximum speed of 90 km/h",
+            "nl": "Maximumsnelheid van 90 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -196,7 +209,8 @@
         {
           "if": "traffic_sign=NL:A01-100",
           "then": {
-            "en": "Maximum speed of 100 km/h"
+            "en": "Maximum speed of 100 km/h",
+            "nl": "Maximumsnelheid van 100 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -207,7 +221,8 @@
         {
           "if": "traffic_sign=NL:A01-120",
           "then": {
-            "en": "Maximum speed of 120 km/h"
+            "en": "Maximum speed of 120 km/h",
+            "nl": "Maximumsnelheid van 120 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -218,7 +233,8 @@
         {
           "if": "traffic_sign=NL:A01-130",
           "then": {
-            "en": "Maximum speed of 130 km/h"
+            "en": "Maximum speed of 130 km/h",
+            "nl": "Maximumsnelheid van 130 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -229,7 +245,8 @@
         {
           "if": "traffic_sign=NL:A02-5",
           "then": {
-            "en": "End of maximum speed of 5 km/h"
+            "en": "End of maximum speed of 5 km/h",
+            "nl": "Einde van maximumsnelheid van 5 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -240,7 +257,8 @@
         {
           "if": "traffic_sign=NL:A02-10",
           "then": {
-            "en": "End of maximum speed of 10 km/h"
+            "en": "End of maximum speed of 10 km/h",
+            "nl": "Einde van maximumsnelheid van 10 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -251,7 +269,8 @@
         {
           "if": "traffic_sign=NL:A02-15",
           "then": {
-            "en": "End of maximum speed of 15 km/h"
+            "en": "End of maximum speed of 15 km/h",
+            "nl": "Einde van maximumsnelheid van 15 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -262,7 +281,8 @@
         {
           "if": "traffic_sign=NL:A02-20",
           "then": {
-            "en": "End of maximum speed of 20 km/h"
+            "en": "End of maximum speed of 20 km/h",
+            "nl": "Einde van maximumsnelheid van 20 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -273,7 +293,8 @@
         {
           "if": "traffic_sign=NL:A02-30",
           "then": {
-            "en": "End of maximum speed of 30 km/h"
+            "en": "End of maximum speed of 30 km/h",
+            "nl": "Einde van maximumsnelheid van 30 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -284,7 +305,8 @@
         {
           "if": "traffic_sign=NL:A02-30-ZE",
           "then": {
-            "en": "End of 30 km/h zone"
+            "en": "End of 30 km/h zone",
+            "nl": "Einde van 30 km/h zone"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -295,7 +317,8 @@
         {
           "if": "traffic_sign=NL:A02-50",
           "then": {
-            "en": "End of maximum speed of 50 km/h"
+            "en": "End of maximum speed of 50 km/h",
+            "nl": "Einde van maximumsnelheid van 50 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -306,7 +329,8 @@
         {
           "if": "traffic_sign=NL:A02-50-ZE",
           "then": {
-            "en": "End of 50 km/h zone"
+            "en": "End of 50 km/h zone",
+            "nl": "Einde van 50 km/h zone"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -317,7 +341,8 @@
         {
           "if": "traffic_sign=NL:A02-60",
           "then": {
-            "en": "End of maximum speed of 60 km/h"
+            "en": "End of maximum speed of 60 km/h",
+            "nl": "Einde van maximumsnelheid van 60 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -328,7 +353,8 @@
         {
           "if": "traffic_sign=NL:A02-60-ZE",
           "then": {
-            "en": "End of 60 km/h zone"
+            "en": "End of 60 km/h zone",
+            "nl": "Einde van 60 km/h zone"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -339,7 +365,8 @@
         {
           "if": "traffic_sign=NL:A02-70",
           "then": {
-            "en": "End of maximum speed of 70 km/h"
+            "en": "End of maximum speed of 70 km/h",
+            "nl": "Einde van maximumsnelheid van 70 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -350,7 +377,8 @@
         {
           "if": "traffic_sign=NL:A02-80",
           "then": {
-            "en": "End of maximum speed of 80 km/h"
+            "en": "End of maximum speed of 80 km/h",
+            "nl": "Einde van maximumsnelheid van 80 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -361,7 +389,8 @@
         {
           "if": "traffic_sign=NL:A02-90",
           "then": {
-            "en": "End of maximum speed of 90 km/h"
+            "en": "End of maximum speed of 90 km/h",
+            "nl": "Einde van maximumsnelheid van 90 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -372,7 +401,8 @@
         {
           "if": "traffic_sign=NL:A02-100",
           "then": {
-            "en": "End of maximum speed of 100 km/h"
+            "en": "End of maximum speed of 100 km/h",
+            "nl": "Einde van maximumsnelheid van 100 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -383,7 +413,8 @@
         {
           "if": "traffic_sign=NL:A02-120",
           "then": {
-            "en": "End of maximum speed of 120 km/h"
+            "en": "End of maximum speed of 120 km/h",
+            "nl": "Einde van maximumsnelheid van 120 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -394,7 +425,8 @@
         {
           "if": "traffic_sign=NL:A02-130",
           "then": {
-            "en": "End of maximum speed of 130 km/h"
+            "en": "End of maximum speed of 130 km/h",
+            "nl": "Einde van maximumsnelheid van 130 km/h"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -405,7 +437,8 @@
         {
           "if": "traffic_sign=NL:B01",
           "then": {
-            "en": "Priority road"
+            "en": "Priority road",
+            "nl": "Voorrangsweg"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -416,7 +449,8 @@
         {
           "if": "traffic_sign=NL:B02",
           "then": {
-            "en": "End of priority road"
+            "en": "End of priority road",
+            "nl": "Einde van voorrangsweg"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -427,7 +461,8 @@
         {
           "if": "traffic_sign=NL:B03",
           "then": {
-            "en": "Priority road with side roads"
+            "en": "Priority road with side roads",
+            "nl": "Voorrangskruispunt met zijwegen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -438,7 +473,8 @@
         {
           "if": "traffic_sign=NL:B04",
           "then": {
-            "en": "Priority road with side road on the right"
+            "en": "Priority road with side road on the right",
+            "nl": "Voorrangskruispunt met zijweg rechts"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -449,7 +485,8 @@
         {
           "if": "traffic_sign=NL:B05",
           "then": {
-            "en": "Priority road with side road on the left"
+            "en": "Priority road with side road on the left",
+            "nl": "Voorrangskruispunt met zijweg links"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -460,7 +497,8 @@
         {
           "if": "traffic_sign=NL:B06",
           "then": {
-            "en": "Give way"
+            "en": "Give way",
+            "nl": "Voorrang verlenen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -471,7 +509,8 @@
         {
           "if": "traffic_sign=NL:B07",
           "then": {
-            "en": "Stop"
+            "en": "Stop",
+            "nl": "Stop"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -482,7 +521,8 @@
         {
           "if": "traffic_sign=NL:C01",
           "then": {
-            "en": "Closed to all traffic"
+            "en": "Closed to all traffic",
+            "nl": "Gesloten voor alle verkeer"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -493,7 +533,8 @@
         {
           "if": "traffic_sign=NL:C02",
           "then": {
-            "en": "No entry, one-way street"
+            "en": "No entry, one-way street",
+            "nl": "Verboden in te rijden, eenrichtingsweg"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -504,7 +545,8 @@
         {
           "if": "traffic_sign=NL:C03",
           "then": {
-            "en": "One-way street"
+            "en": "One-way street",
+            "nl": "Eenrichtingsweg"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -515,7 +557,8 @@
         {
           "if": "traffic_sign=NL:C04-L",
           "then": {
-            "en": "One-way street, traffic to the left"
+            "en": "One-way street, traffic to the left",
+            "nl": "Eenrichtingsweg, verkeer naar links"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -526,7 +569,8 @@
         {
           "if": "traffic_sign=NL:C04-R",
           "then": {
-            "en": "One-way street, traffic to the right"
+            "en": "One-way street, traffic to the right",
+            "nl": "Eenrichtingsweg, verkeer naar rechts"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -537,7 +581,8 @@
         {
           "if": "traffic_sign=NL:C05",
           "then": {
-            "en": "Two-way street"
+            "en": "Two-way street",
+            "nl": "Tweerichtingsweg"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -548,7 +593,8 @@
         {
           "if": "traffic_sign=NL:C06",
           "then": {
-            "en": "Closed for motor vehicles with more than 2 wheels"
+            "en": "Closed for motor vehicles with more than 2 wheels",
+            "nl": "Gesloten voor motorvoertuigen met meer dan 2 wielen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -559,7 +605,8 @@
         {
           "if": "traffic_sign=NL:C07",
           "then": {
-            "en": "Closed for heavy goods vehicles"
+            "en": "Closed for heavy goods vehicles",
+            "nl": "Gesloten voor vrachtwagens"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -570,7 +617,8 @@
         {
           "if": "traffic_sign=NL:C07a",
           "then": {
-            "en": "Closed for buses"
+            "en": "Closed for buses",
+            "nl": "Gesloten voor bussen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -581,7 +629,8 @@
         {
           "if": "traffic_sign=NL:C07b",
           "then": {
-            "en": "Closed for heavy goods vehicles and buses"
+            "en": "Closed for heavy goods vehicles and buses",
+            "nl": "Gesloten voor vrachtwagens en bussen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -592,7 +641,8 @@
         {
           "if": "traffic_sign=NL:C08",
           "then": {
-            "en": "Closed for motor vehicles with a top speed less than 25km/h (agricultural vehicles)"
+            "en": "Closed for motor vehicles with a top speed less than 25km/h (agricultural vehicles)",
+            "nl": "Gesloten voor motorvoertuigen met een topsnelheid van minder dan 25km/h (landbouwvoertuigen)"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -603,7 +653,8 @@
         {
           "if": "traffic_sign=NL:C09",
           "then": {
-            "en": "Closed for motor vehicles with a top speed less than 25km/h (agricultural vehicles), mopeds, mofas, bicycles and disabled vehicles"
+            "en": "Closed for motor vehicles with a top speed less than 25km/h (agricultural vehicles), mopeds, mofas, bicycles and disabled vehicles",
+            "nl": "Gesloten voor motorvoertuigen met een topsnelheid van minder dan 25km/h (landbouwvoertuigen), bromfietsen, snorfietsen, fietsen en gehandicaptenvoertuigen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -614,7 +665,8 @@
         {
           "if": "traffic_sign=NL:C10",
           "then": {
-            "en": "Closed for motor vehicles with a trailer"
+            "en": "Closed for motor vehicles with a trailer",
+            "nl": "Gesloten voor motorvoertuigen met aanhangwagen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -625,7 +677,8 @@
         {
           "if": "traffic_sign=NL:C11",
           "then": {
-            "en": "Closed for motorbikes"
+            "en": "Closed for motorbikes",
+            "nl": "Gesloten voor motoren"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -636,7 +689,8 @@
         {
           "if": "traffic_sign=NL:C12",
           "then": {
-            "en": "Closed for motor vehicles"
+            "en": "Closed for motor vehicles",
+            "nl": "Gesloten voor motorvoertuigen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -647,7 +701,8 @@
         {
           "if": "traffic_sign=NL:C13",
           "then": {
-            "en": "Closed for mopeds, mofas and disabled vehicles"
+            "en": "Closed for mopeds, mofas and disabled vehicles",
+            "nl": "Gesloten voor bromfietsen, snorfietsen en gehandicaptenvoertuigen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -658,7 +713,8 @@
         {
           "if": "traffic_sign=NL:C14",
           "then": {
-            "en": "Closed for bicycles"
+            "en": "Closed for bicycles",
+            "nl": "Gesloten voor fietsen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -669,7 +725,8 @@
         {
           "if": "traffic_sign=NL:C15",
           "then": {
-            "en": "Closed for mopeds, mofas, bicycles and disabled vehicles"
+            "en": "Closed for mopeds, mofas, bicycles and disabled vehicles",
+            "nl": "Gesloten voor bromfietsen, snorfietsen, fietsen en gehandicaptenvoertuigen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -680,7 +737,8 @@
         {
           "if": "traffic_sign=NL:C16",
           "then": {
-            "en": "Closed for pedestrians"
+            "en": "Closed for pedestrians",
+            "nl": "Gesloten voor voetgangers"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -691,7 +749,8 @@
         {
           "if": "traffic_sign=NL:C22",
           "then": {
-            "en": "Closed for heavy goods vehicles carrying dangerous goods"
+            "en": "Closed for heavy goods vehicles carrying dangerous goods",
+            "nl": "Gesloten voor vrachtwagens met gevaarlijke stoffen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -702,7 +761,8 @@
         {
           "if": "traffic_sign=NL:C22a",
           "then": {
-            "en": "Start of low emission zone"
+            "en": "Start of low emission zone",
+            "nl": "Begin van milieuzone"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -713,7 +773,8 @@
         {
           "if": "traffic_sign=NL:C22b",
           "then": {
-            "en": "End of low emission zone"
+            "en": "End of low emission zone",
+            "nl": "Einde van milieuzone"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -736,7 +797,8 @@
         {
           "if": "traffic_sign=NL:D02-RO",
           "then": {
-            "en": "Passing allowed on the right"
+            "en": "Passing allowed on the right of the sign",
+            "nl": "Verkeersbord rechts passeren"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -747,7 +809,8 @@
         {
           "if": "traffic_sign=NL:D03",
           "then": {
-            "en": "Passing allowed on both sides"
+            "en": "Passing allowed on both sides of the sign",
+            "nl": "Verkeersbord passeren aan beide zijden toegestaan"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -758,7 +821,8 @@
         {
           "if": "traffic_sign=NL:D04",
           "then": {
-            "en": "Only straight on allowed"
+            "en": "Only straight on allowed",
+            "nl": "Verplicht rechtdoor"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -769,7 +833,8 @@
         {
           "if": "traffic_sign=NL:D05-L",
           "then": {
-            "en": "Only left turn allowed"
+            "en": "Only left turn allowed",
+            "nl": "Verplicht linksaf"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -780,7 +845,8 @@
         {
           "if": "traffic_sign=NL:D05-R",
           "then": {
-            "en": "Only right turn allowed"
+            "en": "Only right turn allowed",
+            "nl": "Verplicht rechtsaf"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -791,7 +857,8 @@
         {
           "if": "traffic_sign=NL:D06-L",
           "then": {
-            "en": "Only left turn and straight on allowed"
+            "en": "Only left turn and straight on allowed",
+            "nl": "Verplicht linksaf of rechtdoor"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -802,7 +869,8 @@
         {
           "if": "traffic_sign=NL:D06-R",
           "then": {
-            "en": "Only right turn and straight on allowed"
+            "en": "Only right turn and straight on allowed",
+            "nl": "Verplicht rechtsaf of rechtdoor"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -813,7 +881,8 @@
         {
           "if": "traffic_sign=NL:D07",
           "then": {
-            "en": "Only left and right turn allowed"
+            "en": "Only left and right turn allowed",
+            "nl": "Verplicht linksaf of rechtsaf"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -824,7 +893,8 @@
         {
           "if": "traffic_sign=NL:E01",
           "then": {
-            "en": "No parking allowed"
+            "en": "No parking allowed",
+            "nl": "Parkeren verboden"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -835,7 +905,8 @@
         {
           "if": "traffic_sign=NL:E02",
           "then": {
-            "en": "No stopping allowed"
+            "en": "No stopping allowed",
+            "nl": "Stilstaan verboden"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -846,7 +917,8 @@
         {
           "if": "traffic_sign=NL:E03",
           "then": {
-            "en": "No parking allowed for mopeds, mofas and bicycles"
+            "en": "No parking allowed for mopeds, mofas and bicycles",
+            "nl": "Parkeren verboden voor bromfietsen, snorfietsen en fietsen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -857,7 +929,8 @@
         {
           "if": "traffic_sign=NL:E04",
           "then": {
-            "en": "Parking"
+            "en": "Parking",
+            "nl": "Parkeerplaats"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -868,7 +941,8 @@
         {
           "if": "traffic_sign=NL:E05",
           "then": {
-            "en": "Parking for taxis"
+            "en": "Parking for taxis",
+            "nl": "Parkeerplaats voor taxi's"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -879,7 +953,8 @@
         {
           "if": "traffic_sign=NL:E06",
           "then": {
-            "en": "Parking for disabled persons"
+            "en": "Parking for disabled persons",
+            "nl": "Parkeerplaats voor gehandicapten"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -890,7 +965,8 @@
         {
           "if": "traffic_sign=NL:E07",
           "then": {
-            "en": "Parking for delivery vehicles"
+            "en": "Parking for delivery vehicles",
+            "nl": "Parkeerplaats voor laden en lossen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -901,7 +977,8 @@
         {
           "if": "traffic_sign=NL:E08",
           "then": {
-            "en": "Parking for cars"
+            "en": "Parking for cars",
+            "nl": "Parkeerplaats voor auto's"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -912,7 +989,8 @@
         {
           "if": "traffic_sign=NL:E09",
           "then": {
-            "en": "Parking for permit holders only"
+            "en": "Parking for permit holders only",
+            "nl": "Parkeerplaats alleen voor vergunninghouders"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -923,7 +1001,8 @@
         {
           "if": "traffic_sign=NL:E10",
           "then": {
-            "en": "Start of disc parking zone"
+            "en": "Start of disc parking zone",
+            "nl": "Begin van parkeerzone met parkeerschijf"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -934,7 +1013,8 @@
         {
           "if": "traffic_sign=NL:E11",
           "then": {
-            "en": "End of disc parking zone"
+            "en": "End of disc parking zone",
+            "nl": "Einde van parkeerzone met parkeerschijf"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -945,7 +1025,8 @@
         {
           "if": "traffic_sign=NL:E12",
           "then": {
-            "en": "Park and ride"
+            "en": "Park and ride",
+            "nl": "P+R"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -956,7 +1037,8 @@
         {
           "if": "traffic_sign=NL:E13",
           "then": {
-            "en": "Carpool parking"
+            "en": "Carpool parking",
+            "nl": "Carpoolplaats"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -967,7 +1049,8 @@
         {
           "if": "traffic_sign=NL:F01",
           "then": {
-            "en": "Overtaking not allowed"
+            "en": "Overtaking not allowed",
+            "nl": "Inhalen niet toegestaan"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -978,7 +1061,8 @@
         {
           "if": "traffic_sign=NL:F02",
           "then": {
-            "en": "Overtaking allowed"
+            "en": "Overtaking allowed",
+            "nl": "Inhalen toegestaan"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -989,7 +1073,8 @@
         {
           "if": "traffic_sign=NL:F03",
           "then": {
-            "en": "Overtaking not allow for heavy goods vehicles"
+            "en": "Overtaking not allow for heavy goods vehicles",
+            "nl": "Inhalen niet toegestaan voor vrachtwagens"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1000,7 +1085,8 @@
         {
           "if": "traffic_sign=NL:F04",
           "then": {
-            "en": "Overtaking allowed for heavy goods vehicles"
+            "en": "Overtaking allowed for heavy goods vehicles",
+            "nl": "Inhalen toegestaan voor vrachtwagens"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1011,7 +1097,8 @@
         {
           "if": "traffic_sign=NL:F05",
           "then": {
-            "en": "Priority for traffic in other direction"
+            "en": "Priority for traffic in other direction",
+            "nl": "Voorrang voor verkeer in tegengestelde richting"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1022,7 +1109,8 @@
         {
           "if": "traffic_sign=NL:F06",
           "then": {
-            "en": "Priority for traffic in current direction"
+            "en": "Priority for traffic in current direction",
+            "nl": "Voorrang voor verkeer in de huidige richting"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1033,7 +1121,8 @@
         {
           "if": "traffic_sign=NL:F07",
           "then": {
-            "en": "No U-turn allowed"
+            "en": "No U-turn allowed",
+            "nl": "Niet toegestaan om te keren"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1044,7 +1133,8 @@
         {
           "if": "traffic_sign=NL:F08",
           "then": {
-            "en": "End of prohibitions from signs"
+            "en": "End of prohibitions from signs",
+            "nl": "Einde van verboden van verkeersborden"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1055,7 +1145,8 @@
         {
           "if": "traffic_sign=NL:G01",
           "then": {
-            "en": "Start of motorway"
+            "en": "Start of motorway",
+            "nl": "Begin van autosnelweg"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1066,7 +1157,8 @@
         {
           "if": "traffic_sign=NL:G02",
           "then": {
-            "en": "End of motorway"
+            "en": "End of motorway",
+            "nl": "Einde van autosnelweg"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1077,7 +1169,8 @@
         {
           "if": "traffic_sign=NL:G03",
           "then": {
-            "en": "Start of motorroad"
+            "en": "Start of motorroad",
+            "nl": "Begin van autoweg"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1088,7 +1181,8 @@
         {
           "if": "traffic_sign=NL:G04",
           "then": {
-            "en": "End of motorroad"
+            "en": "End of motorroad",
+            "nl": "Einde van autoweg"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1099,7 +1193,8 @@
         {
           "if": "traffic_sign=NL:G05",
           "then": {
-            "en": "Woonerf"
+            "en": "Woonerf",
+            "nl": "Woonerf"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1110,7 +1205,8 @@
         {
           "if": "traffic_sign=NL:G06",
           "then": {
-            "en": "End of woonerf"
+            "en": "End of woonerf",
+            "nl": "Einde van woonerf"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1121,7 +1217,8 @@
         {
           "if": "traffic_sign=NL:G07",
           "then": {
-            "en": "Footpath"
+            "en": "Footpath",
+            "nl": "Voetpad"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1132,7 +1229,8 @@
         {
           "if": "traffic_sign=NL:G08",
           "then": {
-            "en": "End of footpath"
+            "en": "End of footpath",
+            "nl": "Einde van voetpad"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1143,7 +1241,8 @@
         {
           "if": "traffic_sign=NL:G09",
           "then": {
-            "en": "Bridal path"
+            "en": "Bridal path",
+            "nl": "Ruiterpad"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1154,7 +1253,8 @@
         {
           "if": "traffic_sign=NL:G10",
           "then": {
-            "en": "End of bridal path"
+            "en": "End of bridal path",
+            "nl": "Einde van ruiterpad"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1165,7 +1265,8 @@
         {
           "if": "traffic_sign=NL:G11",
           "then": {
-            "en": "Mandatory cycleway"
+            "en": "Mandatory cycleway",
+            "nl": "Verplicht fietspad"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1176,7 +1277,8 @@
         {
           "if": "traffic_sign=NL:G12",
           "then": {
-            "en": "End of mandatory cycleway"
+            "en": "End of mandatory cycleway",
+            "nl": "Einde van verplicht fietspad"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1187,7 +1289,8 @@
         {
           "if": "traffic_sign=NL:G12a",
           "then": {
-            "en": "Mandatory cycleway for mopeds, mofas and bicycles"
+            "en": "Mandatory cycleway for mopeds, mofas and bicycles",
+            "nl": "Verplicht (brom)fietspad"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1198,7 +1301,8 @@
         {
           "if": "traffic_sign=NL:G12b",
           "then": {
-            "en": "End of mandatory cycleway for mopeds, mofas and bicycles"
+            "en": "End of mandatory cycleway for mopeds, mofas and bicycles",
+            "nl": "Einde van verplicht (brom)fietspad"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1209,7 +1313,8 @@
         {
           "if": "traffic_sign=NL:G13",
           "then": {
-            "en": "Non-mandatory cycleway"
+            "en": "Non-mandatory cycleway",
+            "nl": "Onverplicht fietspad"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1220,7 +1325,8 @@
         {
           "if": "traffic_sign=NL:G14",
           "then": {
-            "en": "End of non-mandatory cycleway"
+            "en": "End of non-mandatory cycleway",
+            "nl": "Einde van onverplicht fietspad"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1231,7 +1337,8 @@
         {
           "if": "traffic_sign=NL:J01",
           "then": {
-            "en": "Bad road surface"
+            "en": "Bad road surface",
+            "nl": "Slecht wegdek"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1242,7 +1349,8 @@
         {
           "if": "traffic_sign=NL:J02",
           "then": {
-            "en": "Corner to the right"
+            "en": "Corner to the right",
+            "nl": "Bocht naar rechts"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1253,7 +1361,8 @@
         {
           "if": "traffic_sign=NL:J03",
           "then": {
-            "en": "Corner to the left"
+            "en": "Corner to the left",
+            "nl": "Bocht naar links"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1264,7 +1373,8 @@
         {
           "if": "traffic_sign=NL:J04",
           "then": {
-            "en": "S-bend to the right"
+            "en": "S-bend to the right",
+            "nl": "S-bocht naar rechts"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1275,7 +1385,8 @@
         {
           "if": "traffic_sign=NL:J05",
           "then": {
-            "en": "S-bend to the left"
+            "en": "S-bend to the left",
+            "nl": "S-bocht naar links"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1286,7 +1397,8 @@
         {
           "if": "traffic_sign=NL:J08",
           "then": {
-            "en": "Dangerous intersection"
+            "en": "Dangerous intersection",
+            "nl": "Gevaarlijke kruising"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1297,7 +1409,8 @@
         {
           "if": "traffic_sign=NL:J09",
           "then": {
-            "en": "Roundabout ahead"
+            "en": "Roundabout ahead",
+            "nl": "Rotonde"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1308,7 +1421,8 @@
         {
           "if": "traffic_sign=NL:J10",
           "then": {
-            "en": "Protected railway crossing"
+            "en": "Protected railway crossing",
+            "nl": "Beveiligde spoorwegovergang"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1319,7 +1433,8 @@
         {
           "if": "traffic_sign=NL:J11",
           "then": {
-            "en": "Unprotected railway crossing"
+            "en": "Unprotected railway crossing",
+            "nl": "Onbeveiligde spoorwegovergang"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1330,7 +1445,8 @@
         {
           "if": "traffic_sign=NL:J12",
           "then": {
-            "en": "Single track railway crossing without barriers"
+            "en": "Single track railway crossing without barriers",
+            "nl": "Enkele spoorwegovergang zonder hekken"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1341,7 +1457,8 @@
         {
           "if": "traffic_sign=NL:J13",
           "then": {
-            "en": "Double track railway crossing without barriers"
+            "en": "Double track railway crossing without barriers",
+            "nl": "Dubbele spoorwegovergang zonder hekken"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1352,7 +1469,8 @@
         {
           "if": "traffic_sign=NL:J14",
           "then": {
-            "en": "Trams crossing"
+            "en": "Trams crossing",
+            "nl": "Tramspoorwegovergang"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1363,7 +1481,8 @@
         {
           "if": "traffic_sign=NL:J15",
           "then": {
-            "en": "Movable bridge"
+            "en": "Movable bridge",
+            "nl": "Beweegbare brug"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1374,7 +1493,8 @@
         {
           "if": "traffic_sign=NL:J16",
           "then": {
-            "en": "Road works"
+            "en": "Road works",
+            "nl": "Wegwerkzaamheden"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1385,7 +1505,8 @@
         {
           "if": "traffic_sign=NL:J17",
           "then": {
-            "en": "Road narrows"
+            "en": "Road narrows",
+            "nl": "Wegversmalling"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1396,7 +1517,8 @@
         {
           "if": "traffic_sign=NL:J18",
           "then": {
-            "en": "Road narrows on the right"
+            "en": "Road narrows on the right",
+            "nl": "Wegversmalling aan de rechterkant"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1407,7 +1529,8 @@
         {
           "if": "traffic_sign=NL:J19",
           "then": {
-            "en": "Road narrows on the left"
+            "en": "Road narrows on the left",
+            "nl": "Wegversmalling aan de linkerkant"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1418,7 +1541,8 @@
         {
           "if": "traffic_sign=NL:J20",
           "then": {
-            "en": "Slippery road"
+            "en": "Slippery road",
+            "nl": "Slipgevaar"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1429,7 +1553,8 @@
         {
           "if": "traffic_sign=NL:J21",
           "then": {
-            "en": "Playing children"
+            "en": "Playing children",
+            "nl": "Spelende kinderen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1440,7 +1565,8 @@
         {
           "if": "traffic_sign=NL:J22",
           "then": {
-            "en": "Pedestrian crossing"
+            "en": "Pedestrian crossing",
+            "nl": "Voetgangersoversteekplaats"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1451,7 +1577,8 @@
         {
           "if": "traffic_sign=NL:J23",
           "then": {
-            "en": "Pedestrians"
+            "en": "Pedestrians",
+            "nl": "Voetgangers"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1462,7 +1589,8 @@
         {
           "if": "traffic_sign=NL:J24",
           "then": {
-            "en": "Bicycles and mopeds"
+            "en": "Bicycles and mopeds",
+            "nl": "Fietsers en bromfietsers"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1473,7 +1601,8 @@
         {
           "if": "traffic_sign=NL:J25",
           "then": {
-            "en": "Loose chippings"
+            "en": "Loose chippings",
+            "nl": "Opspattend grind"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1484,7 +1613,8 @@
         {
           "if": "traffic_sign=NL:J26",
           "then": {
-            "en": "Quay or river bank"
+            "en": "Quay or river bank",
+            "nl": "Kade of rivieroever"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1495,7 +1625,8 @@
         {
           "if": "traffic_sign=NL:J27",
           "then": {
-            "en": "Dangerous animals"
+            "en": "Dangerous animals",
+            "nl": "Gevaarlijk wild"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1506,7 +1637,8 @@
         {
           "if": "traffic_sign=NL:J28",
           "then": {
-            "en": "Cattle"
+            "en": "Cattle",
+            "nl": "Vee"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1517,7 +1649,8 @@
         {
           "if": "traffic_sign=NL:J29",
           "then": {
-            "en": "Oncoming traffic"
+            "en": "Oncoming traffic",
+            "nl": "Tegenliggers"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1528,7 +1661,8 @@
         {
           "if": "traffic_sign=NL:J30",
           "then": {
-            "en": "Low-flying aircraft"
+            "en": "Low-flying aircraft",
+            "nl": "Laagvliegende vliegtuigen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1539,7 +1673,8 @@
         {
           "if": "traffic_sign=NL:J31",
           "then": {
-            "en": "Side wind"
+            "en": "Side wind",
+            "nl": "Zijwind"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1550,7 +1685,8 @@
         {
           "if": "traffic_sign=NL:J32",
           "then": {
-            "en": "Traffic lights ahead"
+            "en": "Traffic lights ahead",
+            "nl": "Verkeerslichten"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1561,7 +1697,8 @@
         {
           "if": "traffic_sign=NL:J33",
           "then": {
-            "en": "Chance of traffic jams"
+            "en": "Chance of traffic jams",
+            "nl": "Kans op files"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1572,7 +1709,8 @@
         {
           "if": "traffic_sign=NL:J34",
           "then": {
-            "en": "Chance of accidents"
+            "en": "Chance of accidents",
+            "nl": "Kans op ongevallen"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1583,7 +1721,8 @@
         {
           "if": "traffic_sign=NL:J35",
           "then": {
-            "en": "Bad visibility"
+            "en": "Bad visibility",
+            "nl": "Slecht zicht"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1594,7 +1733,8 @@
         {
           "if": "traffic_sign=NL:J36",
           "then": {
-            "en": "Black ice or snow"
+            "en": "Black ice or snow",
+            "nl": "IJzel of sneeuw"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1605,7 +1745,8 @@
         {
           "if": "traffic_sign=NL:J37",
           "then": {
-            "en": "Danger ahead"
+            "en": "Danger ahead",
+            "nl": "Gevaar"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1616,7 +1757,8 @@
         {
           "if": "traffic_sign=NL:J38",
           "then": {
-            "en": "Speed bump"
+            "en": "Speed bump",
+            "nl": "Drempel"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1627,7 +1769,8 @@
         {
           "if": "traffic_sign=NL:J39",
           "then": {
-            "en": "Automatic rising bollard"
+            "en": "Automatic rising bollard",
+            "nl": "Automatische paal"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1638,7 +1781,8 @@
         {
           "if": "traffic_sign=NL:L02",
           "then": {
-            "en": "Zebra crossing"
+            "en": "Zebra crossing",
+            "nl": "Zebra"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1649,7 +1793,8 @@
         {
           "if": "traffic_sign=NL:L03a",
           "then": {
-            "en": "Tram and bus stop"
+            "en": "Tram and bus stop",
+            "nl": "Tram- en bushalte"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1660,7 +1805,8 @@
         {
           "if": "traffic_sign=NL:L03b",
           "then": {
-            "en": "Bus stop"
+            "en": "Bus stop",
+            "nl": "Bushalte"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1671,7 +1817,8 @@
         {
           "if": "traffic_sign=NL:L03c",
           "then": {
-            "en": "Tram stop"
+            "en": "Tram stop",
+            "nl": "Tramhalte"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
@@ -1682,7 +1829,8 @@
         {
           "if": "traffic_sign=NL:L08",
           "then": {
-            "en": "Dead end"
+            "en": "Dead end",
+            "nl": "Doodlopende weg"
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
