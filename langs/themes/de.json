@@ -935,6 +935,11 @@
                         }
                     }
                 }
+            },
+            "8": {
+                "override": {
+                    "name": "Behindertenparkplätze"
+                }
             }
         },
         "title": "Auf Rädern"

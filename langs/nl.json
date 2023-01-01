@@ -341,7 +341,8 @@
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        }
+        },
+        "useSearch": "Gebruik de zoekfunctie hierboven om meer opties te zien"
     },
     "image": {
         "addPicture": "Voeg foto toe",
