@@ -142,6 +142,20 @@
             "artwork_subject": {
                 "question": "Wat beeldt dit kunstwerk af?",
                 "render": "Dit kunstwerk beeldt {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)} af"
+            },
+            "doubles_as_bench": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit kunstwerk doet ook dienst als zitbank"
+                    },
+                    "1": {
+                        "then": "Dit kunstwerk doet geen dienst als zitbank"
+                    },
+                    "2": {
+                        "then": "Dit kunstwerk doet geen dienst als zitbank"
+                    }
+                },
+                "question": "Is dit kunstwerk ook een zitbank?"
             }
         },
         "title": {
@@ -178,6 +192,22 @@
                 },
                 "question": "Welk bedrijf beheert deze geldautomaat?",
                 "render": "Deze geldautomaat wordt beheerd door {operator}"
+            },
+            "atm-in-bank-notice": {
+                "render": "Deze geldautomaat bevindt zich in of bij een bank"
+            },
+            "cash_in": {
+                "mappings": {
+                    "1": {
+                        "then": "Je kan geld deponeren in deze geldautomaat"
+                    },
+                    "0": {
+                        "then": "Je kan waarschijnlijk geen geld deponeren in deze geldautomaat"
+                    },
+                    "2": {
+                        "then": "Je kan geen geld deponeren in deze geldautomaat"
+                    }
+                }
             }
         },
         "title": {
@@ -187,6 +217,15 @@
                 }
             },
             "render": "Geldautomaat"
+        },
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Heeft spraak"
+                    }
+                }
+            }
         }
     },
     "barrier": {
@@ -2574,7 +2613,6 @@
         },
         "title": {
             "mappings": {
-                "0": {},
                 "1": {
                     "then": "Klimsite <b>{name}</b>"
                 },
