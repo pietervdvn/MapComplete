@@ -13,6 +13,7 @@ import { SubtleButton } from "./Base/SubtleButton"
 import { VariableUiElement } from "./Base/VariableUIElement"
 import Svg from "../Svg"
 import { ImportViewerLinks } from "./BigComponents/UserInformation"
+import UserSurveyPanel from "./UserSurveyPanel"
 
 export default class AllThemesGui {
     setup() {
@@ -28,6 +29,7 @@ export default class AllThemesGui {
             new Combine([
                 intro,
                 new FeaturedMessage().SetClass("mb-4 block"),
+                new Combine([new UserSurveyPanel()]).SetClass("flex justify-center"),
                 new MoreScreen(state, true),
                 new Toggle(
                     undefined,

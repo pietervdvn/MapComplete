@@ -9,6 +9,7 @@ import Svg from "../../Svg"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import FullWelcomePaneWithTabs from "./FullWelcomePaneWithTabs"
+import UserSurveyPanel from "../UserSurveyPanel"
 
 export default class ThemeIntroductionPanel extends Combine {
     constructor(
@@ -51,7 +52,8 @@ export default class ThemeIntroductionPanel extends Combine {
 
         const hasPresets = layout.layers.some((l) => l.presets?.length > 0)
         super([
-            layout.description.Clone().SetClass("blcok mb-4"),
+            layout.description.Clone().SetClass("block mb-4"),
+            new UserSurveyPanel(),
             new Combine([
                 t.welcomeExplanation.general,
                 hasPresets

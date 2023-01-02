@@ -624,6 +624,10 @@ video {
   position: relative;
 }
 
+.\!relative {
+  position: relative !important;
+}
+
 .sticky {
   position: -webkit-sticky;
   position: sticky;
@@ -811,10 +815,6 @@ video {
   margin-top: 1rem;
 }
 
-.ml-3 {
-  margin-left: 0.75rem;
-}
-
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -837,6 +837,10 @@ video {
 
 .ml-2 {
   margin-left: 0.5rem;
+}
+
+.ml-3 {
+  margin-left: 0.75rem;
 }
 
 .ml-12 {
