@@ -60,6 +60,44 @@ export class Unit {
         }
     }
 
+    /**
+     *
+     * // Should detect invalid defaultInput
+     * let threwError = false
+     * try{
+     *   Unit.fromJson({
+     *     appliesToKey: ["length"],
+     *     defaultInput: "xcm",
+     *     applicableUnits: [
+     *         {
+     *             canonicalDenomination: "m",
+     *             useIfNoUnitGiven: true,
+     *             human: "meter"
+     *         }
+     *     ]
+     *   },"test")
+     * }catch(e){
+     *     threwError =true
+     * }
+     * threwError // => false
+     *
+     * // Should work
+     * Unit.fromJson({
+     *     appliesToKey: ["length"],
+     *     defaultInput: "xcm",
+     *     applicableUnits: [
+     *         {
+     *             canonicalDenomination: "m",
+     *             useIfNoUnitGiven: true,
+     *             humen: "meter"
+     *         },
+     *         {
+     *             canonicalDenomination: "cm",
+     *             human: "centimeter"
+     *         }
+     *     ]
+     * }, "test")
+     */
     static fromJson(json: UnitConfigJson, ctx: string) {
         const appliesTo = json.appliesToKey
         for (let i = 0; i < appliesTo.length; i++) {
@@ -74,14 +112,13 @@ export class Unit {
         }
         // Some keys do have unit handling
 
-        if (json.applicableUnits.some((denom) => denom.useAsDefaultInput !== undefined)) {
-            json.applicableUnits.forEach((denom) => {
-                denom.useAsDefaultInput = denom.useAsDefaultInput ?? false
-            })
-        }
-
         const applicable = json.applicableUnits.map(
-            (u, i) => new Denomination(u, `${ctx}.units[${i}]`)
+            (u, i) =>
+                new Denomination(
+                    u,
+                    u.canonicalDenomination.trim() === json.defaultInput,
+                    `${ctx}.units[${i}]`
+                )
         )
         return new Unit(appliesTo, applicable, json.eraseInvalidValues ?? false)
     }

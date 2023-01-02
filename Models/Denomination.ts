@@ -15,7 +15,7 @@ export class Denomination {
     private readonly _human: Translation
     private readonly _humanSingular?: Translation
 
-    constructor(json: DenominationConfigJson, context: string) {
+    constructor(json: DenominationConfigJson, useAsDefaultInput: boolean, context: string) {
         context = `${context}.unit(${json.canonicalDenomination})`
         this.canonical = json.canonicalDenomination.trim()
         if (this.canonical === undefined) {
@@ -35,7 +35,7 @@ export class Denomination {
             throw `${context} uses the old 'default'-key. Use "useIfNoUnitGiven" or "useAsDefaultInput" instead`
         }
         this.useIfNoUnitGiven = json.useIfNoUnitGiven
-        this.useAsDefaultInput = json.useAsDefaultInput ?? json.useIfNoUnitGiven
+        this.useAsDefaultInput = useAsDefaultInput ?? json.useIfNoUnitGiven
 
         this._human = Translations.T(json.human, context + "human")
         this._humanSingular = Translations.T(json.humanSingular, context + "humanSingular")
@@ -69,7 +69,7 @@ export class Denomination {
      *               human: {
      *                   en: "meter"
      *               }
-     *           }, "test")
+     *           }, false, "test")
      * unit.canonicalValue("42m", true) // =>"42 m"
      * unit.canonicalValue("42", true) // =>"42 m"
      * unit.canonicalValue("42 m", true) // =>"42 m"
@@ -84,7 +84,7 @@ export class Denomination {
      *               human: {
      *                   en: "meter"
      *               }
-     *           }, "test")
+     *           }, false, "test")
      * unit.canonicalValue("42m", true) // =>"42"
      * unit.canonicalValue("42", true) // =>"42"
      * unit.canonicalValue("42 m", true) // =>"42"

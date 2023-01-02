@@ -63,6 +63,7 @@
         "width",
         "_biggest_width"
       ],
+      "defaultUnit": "cm",
       "applicableUnits": [
         {
           "useIfNoUnitGiven": true,
@@ -79,7 +80,6 @@
           }
         },
         {
-          "useAsDefaultInput": true,
           "canonicalDenomination": "cm",
           "alternativeDenomination": [
             "centimeter",
