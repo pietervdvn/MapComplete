@@ -116,7 +116,9 @@ export class Unit {
             (u, i) =>
                 new Denomination(
                     u,
-                    u.canonicalDenomination.trim() === json.defaultInput,
+                    u.canonicalDenomination === undefined
+                        ? undefined
+                        : u.canonicalDenomination.trim() === json.defaultInput,
                     `${ctx}.units[${i}]`
                 )
         )
