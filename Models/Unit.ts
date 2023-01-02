@@ -77,9 +77,9 @@ export class Unit {
      *     ]
      *   },"test")
      * }catch(e){
-     *     threwError =true
+     *     threwError = true
      * }
-     * threwError // => false
+     * threwError // => true
      *
      * // Should work
      * Unit.fromJson({
