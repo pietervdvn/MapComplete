@@ -4,7 +4,7 @@
 
 Name: Tom
 Age: 46
-Occupation: Safety advison in the city councli
+Occupation: Safety advisor in the city administration
 Computer skills: Moderate
 
 (Also see Maarten)
@@ -18,8 +18,11 @@ His days are swamped with big and little tasks to keep everyone in the municipal
 
 ## Goals
 
-One of his tasks is to keep an up-to-date list of all AEDs; 
+One of his tasks is to keep an up-to-date list of all the AEDs.
+Today, a citizen sent an email that they have installed an AED in their shop
 
 ## Needs and expectations
+
+
 
 ## Pain points & frustrations
