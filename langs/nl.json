@@ -206,6 +206,7 @@
         "nameInlineQuestion": "De naam van dit {category} is $$$",
         "newlyCreated": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
         "next": "Volgende",
+        "noMatchingMapping": "Geen overeenkomsten gevonden…",
         "noNameCategory": "{category} zonder naam",
         "noTagsSelected": "Geen tags geselecteerd",
         "notValid": "Kies een geldige waarde om verder te gaan",
@@ -294,19 +295,20 @@
             },
             "modes": {
                 "private": {
-                    "name": "Anoniem",
-                    "docs": "Je afgelegde traject wordt samengevoegd met andere tracks. Je afgelegde traject is enkel zichtbaar voor jou en je zal dit kunnen bekijken in andere editeerprogrammas. OpenStreetMap.org houdt een kopie van dit traject"
+                    "docs": "Je afgelegde traject wordt samengevoegd met andere tracks. Je afgelegde traject is enkel zichtbaar voor jou en je zal dit kunnen bekijken in andere editeerprogrammas. OpenStreetMap.org houdt een kopie van dit traject",
+                    "name": "Anoniem"
                 },
                 "public": {
-                    "name": "Publiek",
-                    "docs": "Je traject is zichtbaar voor iedereen, vindbaar op je profielpagina en in de lijst met publieke GPS-trajecten"
+                    "docs": "Je traject is zichtbaar voor iedereen, vindbaar op je profielpagina en in de lijst met publieke GPS-trajecten",
+                    "name": "Publiek"
                 }
             },
-            "uploadFinished": "Je traject is geupload!",
             "title": "Upload je traject naar OpenStreetMap.org",
+            "uploadFinished": "Je traject is geupload!",
             "uploading": "Traject uploaden…"
         },
         "useSearch": "Gebruik de zoekfunctie hierboven om meer opties te zien",
+        "useSearchForMore": "Gebruik de zoekfunctie om {total} meer waarden te vinden…",
         "weekdays": {
             "abbreviations": {
                 "friday": "Vrij",
@@ -347,9 +349,15 @@
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        },
-        "useSearchForMore": "Gebruik de zoekfunctie om {total} meer waarden te vinden…",
-        "noMatchingMapping": "Geen overeenkomsten gevonden…"
+        }
+    },
+    "hotkeyDocumentation": {
+        "closeSidebar": "Sluit de zijbalk",
+        "geolocate": "Centreer de map op je huidige positie of zoom verder in naar de huidige positie. Vraagt geolocatie-toegang",
+        "openLayersPanel": "Open het paneel met lagen, filters en achtergrondkaart",
+        "selectBackground": "Selecteer een achtergrondlaag van category {category}",
+        "selectMapnik": "Selecteer OpenStreetMap-carto als achtergrondlaag",
+        "selectSearch": "Selecteer de zoekbalk om locaties te zoeken"
     },
     "image": {
         "addPicture": "Voeg foto toe",
@@ -754,25 +762,25 @@
         "warnAnonymous": "Je bent niet aangemeld. We gaan je niet kunnen contacteren om deze kaartnota te verwerken."
     },
     "plantDetection": {
+        "back": "Ga terug naar het soorten-overzicht",
+        "confirm": "Selecteer soort",
+        "error": "Er ging iets mis met het detecteren van de soort: {error}",
         "howTo": {
             "intro": "Voor optimale resultaten,",
             "li0": "neem een foto waar de boom in het midden staat zonder te veel achtergrond",
             "li1": "neem een foto met een enkel blad",
-            "li3": "neem een foto van de bloesems",
-            "li2": "neem een foto die de schors toont"
+            "li2": "neem een foto die de schors toont",
+            "li3": "neem een foto van de bloesems"
         },
         "loadingWikidata": "Informatie over {species} aan het laden",
-        "overviewVerify": "Verifieer dat het de juiste soort is en link dit aan de boom",
+        "matchPercentage": "{match}% overeenkomst",
         "overviewIntro": "De AI van <a href='https://plantnet.org/' target='_blank'>PlantNet.org</a> denkt dat het om één van deze soorten gaat.",
+        "overviewTitle": "Gedetecteerd plantensoorten",
+        "overviewVerify": "Verifieer dat het de juiste soort is en link dit aan de boom",
+        "poweredByPlantnet": "Met dank aan <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
         "querying": "Plantnet.org aan het bevragen met {length} afbeeldingen",
         "seeInfo": "Bekijk meer informatie van deze plantensoort",
-        "takeImages": "Neem afbeeldingen van de boom om de soort automatisch te herkennen",
-        "confirm": "Selecteer soort",
-        "error": "Er ging iets mis met het detecteren van de soort: {error}",
-        "back": "Ga terug naar het soorten-overzicht",
-        "matchPercentage": "{match}% overeenkomst",
-        "overviewTitle": "Gedetecteerd plantensoorten",
-        "poweredByPlantnet": "Met dank aan <a href='https://plantnet.org' target='_blank'>plantnet.org</a>"
+        "takeImages": "Neem afbeeldingen van de boom om de soort automatisch te herkennen"
     },
     "privacy": {
         "editing": "Wanneer je een wijziging maakt, wordt deze wijziging opgeslaan op OpenStreetMap. Dit is zichtbaar voor iedereen. Een wijzigingenset gemaakt met MapComplete bevat de volgende data:\n<ul><li>De aanpassingen aan de data</li><li>Je gebruikersnaam</li><li>Wanneer deze wijziging werd gemaakt</li><li>Het thema dat je gebruikt om de wijziging te maken</li><li>De taal van de gebruikersinterface</li><li>Een indicatie hoe ver jij je van de gewijzigde objecten bevindt. Andere bijdragers kunnen deze informatie gebruiken om af te leiden of de wijziging gemaakt door lokaal te gaan kijken of door onderzoek vanop afstand</li></ul> Bekijk ook <a href=\"https://wiki.osmfoundation.org/wiki/Privacy_Policy\" target=\"_blank\">de privacy-policy op OpenStreetMap.org</a> voor gedetailleerde info. We herinneren je eraan dat je een pseudoniem of fictieve naam kan gebruiken wanneer je je registreert.",
@@ -913,8 +921,8 @@
         "inviteToSplit": "Deel deze weg op in kleinere segmenten (om andere eigenschappen per segment toe te kennen)",
         "loginToSplit": "Je moet aangemeld zijn om een weg te knippen",
         "split": "Bevestig het opdelen",
-        "splitTitle": "Duid op de kaart aan waar de eigenschappen van de weg veranderen",
-        "splitAgain": "Deel deze weg opnieuw op"
+        "splitAgain": "Deel deze weg opnieuw op",
+        "splitTitle": "Duid op de kaart aan waar de eigenschappen van de weg veranderen"
     },
     "translations": {
         "activateButton": "Help met het vertalen van MapComplete",
@@ -994,13 +1002,5 @@
         "wikidata": {
             "description": "Een Wikidata-code"
         }
-    },
-    "hotkeyDocumentation": {
-        "closeSidebar": "Sluit de zijbalk",
-        "geolocate": "Centreer de map op je huidige positie of zoom verder in naar de huidige positie. Vraagt geolocatie-toegang",
-        "openLayersPanel": "Open het paneel met lagen, filters en achtergrondkaart",
-        "selectMapnik": "Selecteer OpenStreetMap-carto als achtergrondlaag",
-        "selectSearch": "Selecteer de zoekbalk om locaties te zoeken",
-        "selectBackground": "Selecteer een achtergrondlaag van category {category}"
     }
 }

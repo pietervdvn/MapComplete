@@ -3,12 +3,14 @@
   "title": {
     "en": "ATM Machines",
     "de": "Geldautomaten",
-    "fr": "Distributeurs DAB"
+    "fr": "Distributeurs DAB",
+    "nl": "Geldautomaten"
   },
   "description": {
     "en": "This map shows ATMs to withdraw or deposit money",
     "de": "Diese Karte zeigt Geldautomaten zum Abheben oder Einzahlen von Geld",
-    "fr": "Cette carte montre les DABs pour retirer ou déposer de l'argent"
+    "fr": "Cette carte montre les DABs pour retirer ou déposer de l'argent",
+    "nl": "Deze kaart toont geldautomaten waar je geld kunt afhalen of geld op de bank kan zetten"
   },
   "icon": "./assets/themes/atm/logo.svg",
   "startLat": 0,
