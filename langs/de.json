@@ -42,7 +42,7 @@
     "flyer": {
         "aerial": "Diese Karte verwendet einen anderen Hintergrund, nämlich Luftaufnahmen der Agentschap Informatie Vlaanderen",
         "callToAction": "Testen Sie es auf mapcomplete.osm.be",
-        "cyclofix": "Fahrradpumpen, Reparaturstationen, Trinkwasserstellen und Fahrradgeschäfte sind auf cyclofix",
+        "cyclofix": "Fahrradpumpen, Reparaturstationen, Trinkwasserstellen und Fahrradgeschäfte sind auf CycloFix",
         "description": "Ein Flyer im A4-Querformat zur Werbung von MapComplete",
         "editing": {
             "ex": "Ein vereinfachtes Beispiel, wie dies für ein Naturschutzgebiet aussieht, ist unten dargestellt.",
@@ -64,7 +64,7 @@
             "customize": "MapComplete kann auf Ihre Bedürfnisse zugeschnitten werden, mit neuen Kartenebenen, neuen Funktionalitäten oder mit den Farben und der Schriftart Ihrer Organisation gestaltet werden.\nWir haben auch Erfahrung mit dem Start von Kampagnen für Crowdsourcing von Geodaten.\nKontaktieren Sie pietervdvn@posteo.net für ein Angebot.",
             "intro": "MapComplete ist eine Website, die {mapCount} interaktive Karten enthält. Jede einzelne Karte erlaubt es, Informationen hinzuzufügen oder zu aktualisieren. Es hat viele Funktionen:",
             "li0": "Anzeigen, wo sich Interessante Ort befinden",
-            "li1": "Hinzufügen neuer Punkte und Aktualisieren von Informationen zu bestehenden Punkten",
+            "li1": "Neue Punkte hinzufügen und Informationen über bestehende Punkte aktualisieren",
             "li2": "Einfaches Hinzufügen von Kontaktinformationen und Öffnungszeiten",
             "li3": "Kann als iFrame in andere Websites eingefügt werden",
             "li4": "Eingebettet in das OpenStreetMap-Ökosystem, das über zahlreiche Tools verfügt",

@@ -606,9 +606,6 @@
             "render": "Pembuangan Limbah"
         }
     },
-    "watermill": {
-        "name": "Kincir Air"
-    },
     "windturbine": {
         "tagRenderings": {
             "turbine-operator": {

@@ -168,7 +168,7 @@
         }
     },
     "atm": {
-        "description": "ATMS to withdraw money",
+        "description": "ATMs to withdraw money",
         "filter": {
             "1": {
                 "options": {
@@ -2716,8 +2716,30 @@
                 },
                 "question": "Is there a speed climbing wall?"
             },
+            "harness_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "A climbing harness can be rented here"
+                    },
+                    "1": {
+                        "then": "A climbing harness can <b>not</b> be rented here"
+                    }
+                },
+                "question": "Can one rent a climbing harness here?"
+            },
             "name": {
                 "question": "What is the name of this climbing gym?"
+            },
+            "shoe_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Climbing shoes can be rented here"
+                    },
+                    "1": {
+                        "then": "Climbing shoes can <b>not</b> be rented here"
+                    }
+                },
+                "question": "Can one rent climbing shoes here?"
             }
         },
         "title": {
@@ -5777,6 +5799,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Disabled Parking Space"
+                }
+            },
             "render": "Parking Space"
         }
     },

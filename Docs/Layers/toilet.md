@@ -172,7 +172,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-### payment-options 
+### payment-options-split 
 
 
 
@@ -183,9 +183,19 @@ The question is  *Which methods of payment are accepted here?*
 
 
   - *Cash is accepted here*  corresponds with  `payment:cash=yes`
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
+  - This option cannot be chosen as answer
+  - Unselecting this answer will add 
   - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
-  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+  - This option cannot be chosen as answer
+  - Unselecting this answer will add 
+  - *Coins are accepted here*  corresponds with  `payment:coins=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dno' target='_blank'>no</a>
+  - *Bank notes are accepted here*  corresponds with  `payment:notes=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:notes' target='_blank'>payment:notes</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:notes%3Dno' target='_blank'>no</a>
+  - *Debit cards are accepted here*  corresponds with  `payment:debit_cards=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment_debit_cards' target='_blank'>payment_debit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment_debit_cards%3Dno' target='_blank'>no</a>
+  - *Credit cards are accepted here*  corresponds with  `payment:credit_cards=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:credit_cards' target='_blank'>payment:credit_cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:credit_cards%3Dno' target='_blank'>no</a>
 
 
 This tagrendering is only visible in the popup if the following condition is met: `fee=yes`

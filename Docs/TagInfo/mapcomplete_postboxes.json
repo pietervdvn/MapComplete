@@ -63,56 +63,56 @@
     },
     {
       "key": "post_office",
-      "description": "Layer 'Post offices' shows post_office=post_partner with a fixed text, namely 'This shop is a post partner' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map')",
+      "description": "Layer 'Post offices' shows post_office=post_partner with a fixed text, namely 'This shop is a post partner' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map') (This is only shown if post_office=post_partner)",
       "value": "post_partner"
     },
     {
       "key": "post_office",
-      "description": "Layer 'Post offices' shows  with a fixed text, namely 'This shop is not a post partner' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map') Picking this answer will delete the key post_office.",
+      "description": "Layer 'Post offices' shows  with a fixed text, namely 'This shop is not a post partner' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map') Picking this answer will delete the key post_office. (This is only shown if post_office=post_partner)",
       "value": ""
     },
     {
       "key": "post_office:brand",
-      "description": "Layer 'Post offices' shows and asks freeform values for key 'post_office:brand' (in the MapComplete.osm.be theme 'Postbox and Post Office Map')"
+      "description": "Layer 'Post offices' shows and asks freeform values for key 'post_office:brand' (in the MapComplete.osm.be theme 'Postbox and Post Office Map') (This is only shown if post_office=post_partner)"
     },
     {
       "key": "post_office:brand",
-      "description": "Layer 'Post offices' shows post_office:brand=DHL with a fixed text, namely 'This location offers services for DHL' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map')",
+      "description": "Layer 'Post offices' shows post_office:brand=DHL with a fixed text, namely 'This location offers services for DHL' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map') (This is only shown if post_office=post_partner)",
       "value": "DHL"
     },
     {
       "key": "post_office:brand",
-      "description": "Layer 'Post offices' shows post_office:brand=DPD with a fixed text, namely 'This location offers services for DPD' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map')",
+      "description": "Layer 'Post offices' shows post_office:brand=DPD with a fixed text, namely 'This location offers services for DPD' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map') (This is only shown if post_office=post_partner)",
       "value": "DPD"
     },
     {
       "key": "post_office:brand",
-      "description": "Layer 'Post offices' shows post_office:brand=GLS with a fixed text, namely 'This location offers services for GLS' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map')",
+      "description": "Layer 'Post offices' shows post_office:brand=GLS with a fixed text, namely 'This location offers services for GLS' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map') (This is only shown if post_office=post_partner)",
       "value": "GLS"
     },
     {
       "key": "post_office:brand",
-      "description": "Layer 'Post offices' shows post_office:brand=UPS with a fixed text, namely 'This location offers services for UPS' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map')",
+      "description": "Layer 'Post offices' shows post_office:brand=UPS with a fixed text, namely 'This location offers services for UPS' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map') (This is only shown if post_office=post_partner)",
       "value": "UPS"
     },
     {
       "key": "post_office:brand",
-      "description": "Layer 'Post offices' shows post_office:brand=DHL Paketshop with a fixed text, namely 'This location is a DHL Paketshop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map')",
+      "description": "Layer 'Post offices' shows post_office:brand=DHL Paketshop with a fixed text, namely 'This location is a DHL Paketshop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map') (This is only shown if post_office=post_partner)",
       "value": "DHL Paketshop"
     },
     {
       "key": "post_office:brand",
-      "description": "Layer 'Post offices' shows post_office:brand=Hermes PaketShop with a fixed text, namely 'This location is a Hermes PaketShop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map')",
+      "description": "Layer 'Post offices' shows post_office:brand=Hermes PaketShop with a fixed text, namely 'This location is a Hermes PaketShop' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map') (This is only shown if post_office=post_partner)",
       "value": "Hermes PaketShop"
     },
     {
       "key": "post_office:brand",
-      "description": "Layer 'Post offices' shows post_office:brand=PostNL with a fixed text, namely 'This location is a PostNL-point' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map')",
+      "description": "Layer 'Post offices' shows post_office:brand=PostNL with a fixed text, namely 'This location is a PostNL-point' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map') (This is only shown if post_office=post_partner)",
       "value": "PostNL"
     },
     {
       "key": "post_office:brand",
-      "description": "Layer 'Post offices' shows post_office:brand=bpost with a fixed text, namely 'This location offers services for bpost' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map')",
+      "description": "Layer 'Post offices' shows post_office:brand=bpost with a fixed text, namely 'This location offers services for bpost' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map') (This is only shown if post_office=post_partner)",
       "value": "bpost"
     },
     {
@@ -259,22 +259,22 @@
     },
     {
       "key": "parcel_mail_in",
-      "description": "Layer 'Parcel Lockers' shows parcel_mail_in=yes with a fixed text, namely 'You can send packages from this parcel locker' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map')",
+      "description": "Layer 'Parcel Lockers' shows parcel_mail_in=yes with a fixed text, namely 'You can send packages from this parcel locker' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map') (This is only shown if amenity=parcel_locker)",
       "value": "yes"
     },
     {
       "key": "parcel_mail_in",
-      "description": "Layer 'Parcel Lockers' shows parcel_mail_in=no with a fixed text, namely 'You <b>can't</b> send packages from this parcel locker' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map')",
+      "description": "Layer 'Parcel Lockers' shows parcel_mail_in=no with a fixed text, namely 'You <b>can't</b> send packages from this parcel locker' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map') (This is only shown if amenity=parcel_locker)",
       "value": "no"
     },
     {
       "key": "parcel_pickup",
-      "description": "Layer 'Parcel Lockers' shows parcel_pickup=yes with a fixed text, namely 'You can pick up packages from this parcel locker' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map')",
+      "description": "Layer 'Parcel Lockers' shows parcel_pickup=yes with a fixed text, namely 'You can pick up packages from this parcel locker' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map') (This is only shown if amenity=parcel_locker)",
       "value": "yes"
     },
     {
       "key": "parcel_pickup",
-      "description": "Layer 'Parcel Lockers' shows parcel_pickup=no with a fixed text, namely 'You <b>can't</b> pick up packages from this parcel locker' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map')",
+      "description": "Layer 'Parcel Lockers' shows parcel_pickup=no with a fixed text, namely 'You <b>can't</b> pick up packages from this parcel locker' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Postbox and Post Office Map') (This is only shown if amenity=parcel_locker)",
       "value": "no"
     }
   ]

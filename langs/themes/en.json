@@ -909,6 +909,11 @@
                     }
                 }
             },
+            "8": {
+                "override": {
+                    "name": "Disabled parking spaces"
+                }
+            },
             "19": {
                 "override": {
                     "=title": {

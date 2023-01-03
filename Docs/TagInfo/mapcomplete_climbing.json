@@ -62,27 +62,27 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing club' shows access=yes with a fixed text, namely 'Publicly accessible to anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing club' shows access=yes with a fixed text, namely 'Publicly accessible to anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "yes"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing club' shows access=permit with a fixed text, namely 'You need a permit to access here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing club' shows access=permit with a fixed text, namely 'You need a permit to access here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "permit"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing club' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing club' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "customers"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing club' shows access=members with a fixed text, namely 'Only club members' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing club' shows access=members with a fixed text, namely 'Only club members' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "members"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing club' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing club' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "no"
     },
     {
@@ -167,6 +167,26 @@
       "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
     {
+      "key": "service:rental:climbing_shoes",
+      "description": "Layer 'Climbing gyms' shows service:rental:climbing_shoes=yes with a fixed text, namely 'Climbing shoes can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "value": "yes"
+    },
+    {
+      "key": "service:rental:climbing_shoes",
+      "description": "Layer 'Climbing gyms' shows service:rental:climbing_shoes=no with a fixed text, namely 'Climbing shoes can <b>not</b> be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "value": "no"
+    },
+    {
+      "key": "service:rental:climbing_harness",
+      "description": "Layer 'Climbing gyms' shows service:rental:climbing_harness=yes with a fixed text, namely 'A climbing harness can be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "value": "yes"
+    },
+    {
+      "key": "service:rental:climbing_harness",
+      "description": "Layer 'Climbing gyms' shows service:rental:climbing_harness=no with a fixed text, namely 'A climbing harness can <b>not</b> be rented here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "value": "no"
+    },
+    {
       "key": "climbing:toprope",
       "description": "Layer 'Climbing gyms' shows climbing:toprope=yes with a fixed text, namely 'Toprope climbing is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
       "value": "yes"
@@ -182,7 +202,7 @@
     },
     {
       "key": "climbing:length",
-      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:length' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:length' (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if climbing:toprope!=no)"
     },
     {
       "key": "climbing:grade:french:min",
@@ -190,7 +210,7 @@
     },
     {
       "key": "climbing:grade:french:max",
-      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:grade:french:max' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:grade:french:max' (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if climbing!~^(route)$&climbing:sport=yes|sport=climbing)"
     },
     {
       "key": "climbing:boulder",
@@ -227,7 +247,7 @@
     },
     {
       "key": "climbing:bolts:max",
-      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:bolts:max' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+      "description": "Layer 'Climbing gyms' shows and asks freeform values for key 'climbing:bolts:max' (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if climbing:sport=yes)"
     },
     {
       "key": "climbing:speed",
@@ -245,27 +265,27 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing gyms' shows access=yes with a fixed text, namely 'Publicly accessible to anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing gyms' shows access=yes with a fixed text, namely 'Publicly accessible to anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "yes"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing gyms' shows access=permit with a fixed text, namely 'You need a permit to access here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing gyms' shows access=permit with a fixed text, namely 'You need a permit to access here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "permit"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing gyms' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing gyms' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "customers"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing gyms' shows access=members with a fixed text, namely 'Only club members' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing gyms' shows access=members with a fixed text, namely 'Only club members' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "members"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing gyms' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing gyms' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "no"
     },
     {
@@ -330,27 +350,27 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing routes' shows access=yes with a fixed text, namely 'Publicly accessible to anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing routes' shows access=yes with a fixed text, namely 'Publicly accessible to anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "yes"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing routes' shows access=permit with a fixed text, namely 'You need a permit to access here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing routes' shows access=permit with a fixed text, namely 'You need a permit to access here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "permit"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing routes' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing routes' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "customers"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing routes' shows access=members with a fixed text, namely 'Only club members' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing routes' shows access=members with a fixed text, namely 'Only club members' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "members"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing routes' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing routes' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "no"
     },
     {
@@ -409,16 +429,16 @@
     },
     {
       "key": "rock",
-      "description": "Layer 'Climbing opportunities' shows and asks freeform values for key 'rock' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+      "description": "Layer 'Climbing opportunities' shows and asks freeform values for key 'rock' (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if climbing=crag|natural=cliff|natural=bare_rock)"
     },
     {
       "key": "rock",
-      "description": "Layer 'Climbing opportunities' shows rock=limestone with a fixed text, namely 'Limestone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities' shows rock=limestone with a fixed text, namely 'Limestone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if climbing=crag|natural=cliff|natural=bare_rock)",
       "value": "limestone"
     },
     {
       "key": "url",
-      "description": "Layer 'Climbing opportunities' shows and asks freeform values for key 'url' (in the MapComplete.osm.be theme 'Open Climbing Map')"
+      "description": "Layer 'Climbing opportunities' shows and asks freeform values for key 'url' (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if leisure!~^(sports_centre)$&sport=climbing)"
     },
     {
       "key": "charge",
@@ -460,27 +480,27 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing opportunities' shows access=yes with a fixed text, namely 'Publicly accessible to anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities' shows access=yes with a fixed text, namely 'Publicly accessible to anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "yes"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing opportunities' shows access=permit with a fixed text, namely 'You need a permit to access here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities' shows access=permit with a fixed text, namely 'You need a permit to access here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "permit"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing opportunities' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "customers"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing opportunities' shows access=members with a fixed text, namely 'Only club members' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities' shows access=members with a fixed text, namely 'Only club members' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "members"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing opportunities' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "no"
     },
     {
@@ -534,27 +554,27 @@
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing opportunities?' shows access=yes with a fixed text, namely 'Publicly accessible to anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities?' shows access=yes with a fixed text, namely 'Publicly accessible to anyone' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "yes"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing opportunities?' shows access=permit with a fixed text, namely 'You need a permit to access here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities?' shows access=permit with a fixed text, namely 'You need a permit to access here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "permit"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing opportunities?' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities?' shows access=customers with a fixed text, namely 'Only customers' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "customers"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing opportunities?' shows access=members with a fixed text, namely 'Only club members' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities?' shows access=members with a fixed text, namely 'Only club members' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "members"
     },
     {
       "key": "access",
-      "description": "Layer 'Climbing opportunities?' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map')",
+      "description": "Layer 'Climbing opportunities?' shows access=no with a fixed text, namely 'Not accessible' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if access~.+|)",
       "value": "no"
     },
     {

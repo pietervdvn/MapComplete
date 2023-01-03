@@ -45,17 +45,17 @@
     },
     {
       "key": "isced:2011:level",
-      "description": "Layer 'Colleges and universities' shows isced:2011:level=bachelor with a fixed text, namely 'Bachelor degrees are awarded here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Colleges and universities' shows isced:2011:level=bachelor with a fixed text, namely 'Bachelor degrees are awarded here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if amenity=university)",
       "value": "bachelor"
     },
     {
       "key": "isced:2011:level",
-      "description": "Layer 'Colleges and universities' shows isced:2011:level=master with a fixed text, namely 'Master degrees are awarded here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Colleges and universities' shows isced:2011:level=master with a fixed text, namely 'Master degrees are awarded here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if amenity=university)",
       "value": "master"
     },
     {
       "key": "isced:2011:level",
-      "description": "Layer 'Colleges and universities' shows isced:2011:level=doctorate with a fixed text, namely 'Doctorate degrees are awarded here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Colleges and universities' shows isced:2011:level=doctorate with a fixed text, namely 'Doctorate degrees are awarded here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if amenity=university)",
       "value": "doctorate"
     },
     {
@@ -121,37 +121,37 @@
     },
     {
       "key": "school",
-      "description": "Layer 'Primary and secondary schools' shows school=kindergarten with a fixed text, namely 'This is a school with a kindergarten section where young kids receive some education which prepares reading and writing.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school=kindergarten with a fixed text, namely 'This is a school with a kindergarten section where young kids receive some education which prepares reading and writing.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if _country=be)",
       "value": "kindergarten"
     },
     {
       "key": "school",
-      "description": "Layer 'Primary and secondary schools' shows school=primary with a fixed text, namely 'This is a school where one learns primary skills such as basic literacy and numerical skills. <div class='subtle'>Pupils typically enroll from 6 years old till 12 years old</div>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school=primary with a fixed text, namely 'This is a school where one learns primary skills such as basic literacy and numerical skills. <div class='subtle'>Pupils typically enroll from 6 years old till 12 years old</div>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if _country=be)",
       "value": "primary"
     },
     {
       "key": "school",
-      "description": "Layer 'Primary and secondary schools' shows school=secondary with a fixed text, namely 'This is a secondary school which offers all grades' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school=secondary with a fixed text, namely 'This is a secondary school which offers all grades' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if _country=be)",
       "value": "secondary"
     },
     {
       "key": "school",
-      "description": "Layer 'Primary and secondary schools' shows school=lower_secondary with a fixed text, namely 'This is a secondary school which does <i>not</i> have all grades, but offers <b>first and second</b> grade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school=lower_secondary with a fixed text, namely 'This is a secondary school which does <i>not</i> have all grades, but offers <b>first and second</b> grade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if _country=be)",
       "value": "lower_secondary"
     },
     {
       "key": "school",
-      "description": "Layer 'Primary and secondary schools' shows school=middle_secondary with a fixed text, namely 'This is a secondary school which does <i>not</i> have all grades, but offers <b>third and fourth</b> grade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school=middle_secondary with a fixed text, namely 'This is a secondary school which does <i>not</i> have all grades, but offers <b>third and fourth</b> grade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if _country=be)",
       "value": "middle_secondary"
     },
     {
       "key": "school",
-      "description": "Layer 'Primary and secondary schools' shows school=upper_secondary with a fixed text, namely 'This is a secondary school which does <i>not</i> have all grades, but offers <b>fifth and sixth</b> grade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school=upper_secondary with a fixed text, namely 'This is a secondary school which does <i>not</i> have all grades, but offers <b>fifth and sixth</b> grade' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if _country=be)",
       "value": "upper_secondary"
     },
     {
       "key": "school",
-      "description": "Layer 'Primary and secondary schools' shows school=post_secondary with a fixed text, namely 'This school offers post-secondary education (e.g. a seventh or eight specialisation year)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school=post_secondary with a fixed text, namely 'This school offers post-secondary education (e.g. a seventh or eight specialisation year)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if _country=be)",
       "value": "post_secondary"
     },
     {
@@ -176,51 +176,51 @@
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'school:for' (in the MapComplete.osm.be theme 'Education')"
+      "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'school:for' (in the MapComplete.osm.be theme 'Education') (This is only shown if school:for~.+)"
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows  with a fixed text, namely 'This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div>' (in the MapComplete.osm.be theme 'Education') Picking this answer will delete the key school:for.",
+      "description": "Layer 'Primary and secondary schools' shows  with a fixed text, namely 'This is a school where students study skills at their age-adequate level. <div>There are little or no special facilities to cater for students with special needs or facilities are ad-hoc</div>' (in the MapComplete.osm.be theme 'Education') Picking this answer will delete the key school:for. (This is only shown if school:for~.+)",
       "value": ""
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=mainstream with a fixed text, namely 'This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school:for=mainstream with a fixed text, namely 'This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if school:for~.+)",
       "value": "mainstream"
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=adults with a fixed text, namely 'This is a school where adults are taught skills on the level as specified.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school:for=adults with a fixed text, namely 'This is a school where adults are taught skills on the level as specified.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if school:for~.+)",
       "value": "adults"
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=autism with a fixed text, namely 'This is a school for students with autism' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school:for=autism with a fixed text, namely 'This is a school for students with autism' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if school:for~.+)",
       "value": "autism"
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=learning_disabilities with a fixed text, namely 'This is a school for students with learning disabilities' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school:for=learning_disabilities with a fixed text, namely 'This is a school for students with learning disabilities' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if school:for~.+)",
       "value": "learning_disabilities"
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=blind with a fixed text, namely 'This is a school for blind students or students with sight impairments' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school:for=blind with a fixed text, namely 'This is a school for blind students or students with sight impairments' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if school:for~.+)",
       "value": "blind"
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=deaf with a fixed text, namely 'This is a school for deaf students or students with hearing impairments' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school:for=deaf with a fixed text, namely 'This is a school for deaf students or students with hearing impairments' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if school:for~.+)",
       "value": "deaf"
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=disabilities with a fixed text, namely 'This is a school for students with disabilities' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school:for=disabilities with a fixed text, namely 'This is a school for students with disabilities' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if school:for~.+)",
       "value": "disabilities"
     },
     {
       "key": "school:for",
-      "description": "Layer 'Primary and secondary schools' shows school:for=special_needs with a fixed text, namely 'This is a school for students with special needs' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
+      "description": "Layer 'Primary and secondary schools' shows school:for=special_needs with a fixed text, namely 'This is a school for students with special needs' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education') (This is only shown if school:for~.+)",
       "value": "special_needs"
     },
     {
@@ -302,7 +302,7 @@
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'Kindergartens and childcare' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Education')"
+      "description": "Layer 'Kindergartens and childcare' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Education') (This is only shown if amenity=childcare)"
     },
     {
       "key": "capacity",

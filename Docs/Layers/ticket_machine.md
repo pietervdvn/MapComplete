@@ -144,7 +144,7 @@ The question is  *Which methods of payment are accepted here?*
 
 
 
-The question is  *With what coins can you pay here?*
+The question is  *What coins can you use to pay here?*
 
 
 

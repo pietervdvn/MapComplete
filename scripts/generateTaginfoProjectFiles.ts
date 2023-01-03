@@ -6,6 +6,8 @@ import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import Constants from "../Models/Constants"
 import { Utils } from "../Utils"
+import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
+import { And } from "../Logic/Tags/And"
 
 /**
  * Generates all the files in "Docs/TagInfo". These are picked up by the taginfo project, showing a link to the mapcomplete theme if the key is used
@@ -34,6 +36,8 @@ function generateTagOverview(
     return overview
 }
 
+function tagrenderingToTaginfoDescription(tr: TagRenderingConfig) {}
+
 function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any[] {
     if (layer.name === undefined) {
         return [] // Probably a duplicate or irrelevant layer
@@ -56,6 +60,12 @@ function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any[] {
     }
 
     for (const tr of layer.tagRenderings) {
+        let condition = tr.condition?.asHumanString(false, false, {}) ?? ""
+
+        if (condition !== "") {
+            condition = ` (This is only shown if ${condition})`
+        }
+
         {
             const usesImageCarousel = (tr.render?.txt?.indexOf("image_carousel") ?? -2) > 0
             const usesImageUpload = (tr.render?.txt?.indexOf("image_upload") ?? -2) > 0
@@ -64,7 +74,8 @@ function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any[] {
                 const descrNoUpload = `The layer '${layer.name.txt} shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary`
                 const descrUpload = `The layer '${layer.name.txt} allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary`
 
-                const descr = usesImageUpload ? descrUpload : descrNoUpload
+                const descr = (usesImageUpload ? descrUpload : descrNoUpload) + condition
+
                 result.push(generateTagOverview({ k: "image", v: undefined }, descr))
                 result.push(generateTagOverview({ k: "mapillary", v: undefined }, descr))
                 result.push(generateTagOverview({ k: "wikidata", v: undefined }, descr))
@@ -82,7 +93,7 @@ function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any[] {
                 descr += " shows and asks freeform values for"
             }
             descr += ` key '${key}' (in the MapComplete.osm.be theme '${layout.title.txt}')`
-            result.push(generateTagOverview({ k: key, v: undefined }, descr))
+            result.push(generateTagOverview({ k: key, v: undefined }, descr + condition))
         }
 
         const mappings = tr.mappings ?? []
@@ -106,7 +117,7 @@ function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any[] {
                 if (q != undefined && kv.v == "") {
                     d = `${descr} Picking this answer will delete the key ${kv.k}.`
                 }
-                result.push(generateTagOverview(kv, d))
+                result.push(generateTagOverview(kv, d + condition))
             }
         }
     }

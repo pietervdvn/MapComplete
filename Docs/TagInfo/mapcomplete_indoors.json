@@ -53,11 +53,11 @@
     },
     {
       "key": "ref",
-      "description": "Layer 'Indoors' shows and asks freeform values for key 'ref' (in the MapComplete.osm.be theme 'Indoors')"
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'ref' (in the MapComplete.osm.be theme 'Indoors') (This is only shown if indoor=room|indoor=area|indoor=corridor)"
     },
     {
       "key": "name",
-      "description": "Layer 'Indoors' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Indoors')"
+      "description": "Layer 'Indoors' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Indoors') (This is only shown if indoor=room|indoor=area|indoor=corridor)"
     },
     {
       "key": "highway",
@@ -346,47 +346,47 @@
     },
     {
       "key": "automatic_door",
-      "description": "Layer 'Entrance' shows automatic_door=yes with a fixed text, namely 'This is an automatic door' (in the MapComplete.osm.be theme 'Indoors')",
+      "description": "Layer 'Entrance' shows automatic_door=yes with a fixed text, namely 'This is an automatic door' (in the MapComplete.osm.be theme 'Indoors') (This is only shown if door!=no)",
       "value": "yes"
     },
     {
       "key": "automatic_door",
-      "description": "Layer 'Entrance' shows automatic_door=no with a fixed text, namely 'This door is <b>not</b> automated' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors')",
+      "description": "Layer 'Entrance' shows automatic_door=no with a fixed text, namely 'This door is <b>not</b> automated' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors') (This is only shown if door!=no)",
       "value": "no"
     },
     {
       "key": "automatic_door",
-      "description": "Layer 'Entrance' shows automatic_door=motion with a fixed text, namely 'This door will open automatically when <b>motion</b> is detected' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors')",
+      "description": "Layer 'Entrance' shows automatic_door=motion with a fixed text, namely 'This door will open automatically when <b>motion</b> is detected' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors') (This is only shown if door!=no)",
       "value": "motion"
     },
     {
       "key": "automatic_door",
-      "description": "Layer 'Entrance' shows automatic_door=floor with a fixed text, namely 'This door will open automatically when a <b>sensor in the floor</b> is triggered' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors')",
+      "description": "Layer 'Entrance' shows automatic_door=floor with a fixed text, namely 'This door will open automatically when a <b>sensor in the floor</b> is triggered' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors') (This is only shown if door!=no)",
       "value": "floor"
     },
     {
       "key": "automatic_door",
-      "description": "Layer 'Entrance' shows automatic_door=button with a fixed text, namely 'This door will open automatically when a <b>button is pressed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors')",
+      "description": "Layer 'Entrance' shows automatic_door=button with a fixed text, namely 'This door will open automatically when a <b>button is pressed</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors') (This is only shown if door!=no)",
       "value": "button"
     },
     {
       "key": "automatic_door",
-      "description": "Layer 'Entrance' shows automatic_door=slowdown_button with a fixed text, namely 'This door revolves automatically all the time, but has a <b>button to slow it down</b>, e.g. for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors')",
+      "description": "Layer 'Entrance' shows automatic_door=slowdown_button with a fixed text, namely 'This door revolves automatically all the time, but has a <b>button to slow it down</b>, e.g. for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors') (This is only shown if door!=no)",
       "value": "slowdown_button"
     },
     {
       "key": "automatic_door",
-      "description": "Layer 'Entrance' shows automatic_door=continuous with a fixed text, namely 'This door revolves automatically all the time' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors')",
+      "description": "Layer 'Entrance' shows automatic_door=continuous with a fixed text, namely 'This door revolves automatically all the time' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors') (This is only shown if door!=no)",
       "value": "continuous"
     },
     {
       "key": "automatic_door",
-      "description": "Layer 'Entrance' shows automatic_door=serviced_on_button_press with a fixed text, namely 'This door will be opened by staff when requested by <b>pressing a button</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors')",
+      "description": "Layer 'Entrance' shows automatic_door=serviced_on_button_press with a fixed text, namely 'This door will be opened by staff when requested by <b>pressing a button</b>' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors') (This is only shown if door!=no)",
       "value": "serviced_on_button_press"
     },
     {
       "key": "automatic_door",
-      "description": "Layer 'Entrance' shows automatic_door=serviced_on_request with a fixed text, namely 'This door will be opened by staff when requested' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors')",
+      "description": "Layer 'Entrance' shows automatic_door=serviced_on_request with a fixed text, namely 'This door will be opened by staff when requested' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Indoors') (This is only shown if door!=no)",
       "value": "serviced_on_request"
     },
     {

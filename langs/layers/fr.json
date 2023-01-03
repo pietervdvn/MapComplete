@@ -4708,9 +4708,6 @@
             }
         }
     },
-    "watermill": {
-        "name": "Moulin à eau"
-    },
     "windturbine": {
         "name": "Éolienne",
         "presets": {

@@ -15,7 +15,8 @@
     "de": "Planen Sie Ihre Reise mit Hilfe von öffentlichen Verkehrsmitteln.",
     "fr": "Planifier votre itinéraire avec le système de transports en commun.",
     "da": "Planlæg din rejse ved hjælp af det offentlige transportsystem.",
-    "nl": "Plan je trip met behulp van het openbaar vervoer."
+    "nl": "Plan je trip met behulp van het openbaar vervoer.",
+    "nb_NO": "Planlegg turen din med offentlig transport"
   },
   "icon": "./assets/layers/transit_stops/bus_stop.svg",
   "startZoom": 20,

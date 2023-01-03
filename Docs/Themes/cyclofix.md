@@ -12,9 +12,9 @@ This theme contains the following layers:
 
 
   - [bike_cafe](../Layers/bike_cafe.md)
+  - [bike_shop](../Layers/bike_shop.md)
   - [bicycle_rental_non_docking](../Layers/bicycle_rental_non_docking.md)
   - [bicycle_rental](../Layers/bicycle_rental.md)
-  - [bike_shop](../Layers/bike_shop.md)
   - [bicycle_library](../Layers/bicycle_library.md)
   - [bike_repair_station](../Layers/bike_repair_station.md)
   - [bicycle_tube_vending_machine](../Layers/bicycle_tube_vending_machine.md)

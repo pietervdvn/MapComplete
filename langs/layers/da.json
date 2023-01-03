@@ -2959,9 +2959,6 @@
             "render": "Bortskaffelse af affald"
         }
     },
-    "watermill": {
-        "name": "Vandmølle"
-    },
     "windturbine": {
         "description": "Moderne vindmøller til produktion af elektricitet",
         "name": "vindmølle",

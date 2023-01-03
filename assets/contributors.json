@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 4755,
+      "commits": 4798,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 302,
+      "commits": 316,
       "contributor": "Robin van der Linde"
     },
     {
@@ -13,7 +13,7 @@
       "contributor": "Tobias"
     },
     {
-      "commits": 33,
+      "commits": 34,
       "contributor": "Win Olario"
     },
     {
@@ -38,11 +38,11 @@
     },
     {
       "commits": 24,
-      "contributor": "Ward"
+      "contributor": "riQQ"
     },
     {
-      "commits": 23,
-      "contributor": "riQQ"
+      "commits": 24,
+      "contributor": "Ward"
     },
     {
       "commits": 21,
@@ -73,16 +73,16 @@
       "contributor": "pgm-chardelv1"
     },
     {
+      "commits": 16,
+      "contributor": "dependabot[bot]"
+    },
+    {
       "commits": 15,
       "contributor": "Brice Maron"
     },
     {
       "commits": 15,
       "contributor": "ToastHawaii"
-    },
-    {
-      "commits": 14,
-      "contributor": "dependabot[bot]"
     },
     {
       "commits": 13,

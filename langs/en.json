@@ -42,7 +42,7 @@
     "flyer": {
         "aerial": "This map uses a different background, namely aerial imagery by Agentschap Informatie Vlaanderen",
         "callToAction": "Test it on mapcomplete.osm.be",
-        "cyclofix": "Bicycle pumps, repair stations, drinking water and cycle shops are on cyclofix",
+        "cyclofix": "Bicycle pumps, repair stations, drinking water and cycle shops are on CycloFix",
         "description": "An A4-landscape flyer to promote MapComplete",
         "editing": {
             "ex": "A simplified example of what this looks like for a nature reserve is shown below.",
@@ -64,7 +64,7 @@
             "customize": "MapComplete can be tailored to your needs, with new map layers, new functionalities or styled with your organisations colours and font.\nWe also have experience with starting campaigns to crowdsource geodata.\nContact pietervdvn@posteo.net for a quote.",
             "intro": "MapComplete is a website which has {mapCount} interactive maps. Every single map allows to add or update information. It has many features:",
             "li0": "Show where POI are",
-            "li1": "Add new points and update information on existing points",
+            "li1": "Add new points and update info on existing ones",
             "li2": "Add contact information and opening hours easily",
             "li3": "Can be placed in other websites as iFrame",
             "li4": "Embedded within the OpenStreetMap-ecosystem, which has many tools available",
@@ -305,7 +305,7 @@
             },
             "title": "Upload your track to OpenStreetMap.org",
             "uploadFinished": "Your track has been uploaded!",
-            "uploading": "Uploading your trace..."
+            "uploading": "Uploading your trace…"
         },
         "useSearch": "Use the search above to see presets",
         "useSearchForMore": "Use the search function to search within {total} more values…",
@@ -409,7 +409,7 @@
         },
         "compareToAlreadyExistingNotes": {
             "completelyImported": "All of the proposed points have (or had) an import note already",
-            "loading": "Fetching notes from OSM",
+            "loading": "Fetching notes from OSM…",
             "loadingFailed": "Loading notes failed due to {error}",
             "mapExplanation": "The red elements on the next map are all the data points from your dataset. There are <b>{length}</b> elements in your dataset.",
             "noPreviousNotesFound": "No previous import notes found",
@@ -550,9 +550,9 @@
                 "commandNotFound": "Command {key} not found - see <code>help</code> for all commands",
                 "docs": "Executes a command and send the output to someone else",
                 "executing": "Executing <code>{_}</code> and sending the result to <b>{to}</b>…",
-                "failed": "I couldn't execute <code>{cmd}</code> due to {message}",
+                "failed": "Could not execute <code>{cmd}</code> due to {message}",
                 "noDm": "I couldn't create a room with {to}",
-                "receipt": "I delivered the message to {to}",
+                "receipt": "Message delivered to {to}",
                 "selectValidCommand": "Specify a valid command",
                 "selectValidUser": "Specify a valid target user",
                 "sendReason": "I sent you this message because <b>{sender}</b> requested me to send this with <code>{cmd}</code>"
@@ -573,7 +573,7 @@
                     "plural": "layers",
                     "singular": "layer"
                 },
-                "noIdIntro": "Give an id to get more information about a MapComplete programming related item. Known types are {list}",
+                "noIdIntro": "Give an ID to get more info about a MapComplete-programming related item. Known types are {list}",
                 "notFound": "No {singular} found with name <code>{id}</code>",
                 "overview": "The following {plural} exist:",
                 "theme": {
@@ -582,8 +582,8 @@
                 },
                 "urlParam": "URL-parameter <code>{id}<code>",
                 "url_parameter": {
-                    "plural": "url-parameters",
-                    "singular": "url-parameter"
+                    "plural": "URL-parameters",
+                    "singular": "URL-parameter"
                 },
                 "visualisation": {
                     "plural": "visualisations",
@@ -625,7 +625,7 @@
                 "arglang": "The language to be used from now on",
                 "currentLanguage": "The current room language is {language}",
                 "docs": "Sets the language of the responses for this room",
-                "hasBeenSet": "Language has been set to {language}.",
+                "hasBeenSet": "Language set to {language}.",
                 "helpTranslating": "Help to translate my responses on Weblate.",
                 "knownLanguages": "You can pick one of the following languages:",
                 "notFound": "The language {language} was not found"
@@ -749,7 +749,7 @@
         "isCreated": "Your note has been created!",
         "loginToAddComment": "Log in to add a comment",
         "loginToAddPicture": "Log in to add a picture",
-        "loginToClose": "Login to close this note",
+        "loginToClose": "Log in to close this note",
         "noteIsPublic": "This will be visible to everyone",
         "noteLayerDoEnable": "Enable the layer showing notes",
         "noteLayerHasFilters": "Some notes might be hidden by a filter",
@@ -772,7 +772,7 @@
             "li2": "take a picture which shows the bark",
             "li3": "take a picture of the flowers"
         },
-        "loadingWikidata": "Loading information about {species}",
+        "loadingWikidata": "Loading information about {species}…",
         "matchPercentage": "{match}% match",
         "overviewIntro": "The AI on <a href='https://plantnet.org/' target='_blank'>PlantNet.org</a> thinks the images show the species below.",
         "overviewTitle": "Automatically detected species",
@@ -957,9 +957,9 @@
             "description": "A distance in meter"
         },
         "email": {
-            "description": "email-adres",
+            "description": "e-mail address",
             "feedback": "This is not a valid email address",
-            "noAt": "An email address should contain an @"
+            "noAt": "An e-mail address should contain an @"
         },
         "float": {
             "description": "a number",

@@ -27,35 +27,35 @@
     },
     {
       "key": "image",
-      "description": "The layer 'ATMs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'ATMs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary (This is only shown if amenity!=bank)"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'ATMs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'ATMs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary (This is only shown if amenity!=bank)"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'ATMs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'ATMs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary (This is only shown if amenity!=bank)"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'ATMs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'ATMs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary (This is only shown if amenity!=bank)"
     },
     {
       "key": "image",
-      "description": "The layer 'ATMs shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'ATMs shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary (This is only shown if amenity=bank)"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'ATMs shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'ATMs shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary (This is only shown if amenity=bank)"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'ATMs shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'ATMs shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary (This is only shown if amenity=bank)"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'ATMs shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'ATMs shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary (This is only shown if amenity=bank)"
     },
     {
       "key": "brand",
@@ -63,11 +63,51 @@
     },
     {
       "key": "operator",
-      "description": "Layer 'ATMs' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'ATM Machines')"
+      "description": "Layer 'ATMs' shows and asks freeform values for key 'operator' (in the MapComplete.osm.be theme 'ATM Machines') (This is only shown if amenity!=bank)"
     },
     {
       "key": "opening_hours",
-      "description": "Layer 'ATMs' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'ATM Machines')"
+      "description": "Layer 'ATMs' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'ATM Machines') (This is only shown if amenity!=bank)"
+    },
+    {
+      "key": "cash_out",
+      "description": "Layer 'ATMs' shows  with a fixed text, namely 'You can withdraw cash from this ATM' (in the MapComplete.osm.be theme 'ATM Machines') Picking this answer will delete the key cash_out.",
+      "value": ""
+    },
+    {
+      "key": "cash_out",
+      "description": "Layer 'ATMs' shows cash_out=yes with a fixed text, namely 'You can withdraw cash from this ATM' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines')",
+      "value": "yes"
+    },
+    {
+      "key": "cash_out",
+      "description": "Layer 'ATMs' shows cash_out=no with a fixed text, namely 'You cannot withdraw cash from this ATM' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines')",
+      "value": "no"
+    },
+    {
+      "key": "cash_in",
+      "description": "Layer 'ATMs' shows  with a fixed text, namely 'You probably cannot deposit cash into this ATM' (in the MapComplete.osm.be theme 'ATM Machines') Picking this answer will delete the key cash_in.",
+      "value": ""
+    },
+    {
+      "key": "cash_in",
+      "description": "Layer 'ATMs' shows cash_in=yes with a fixed text, namely 'You can deposit cash into this ATM' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines')",
+      "value": "yes"
+    },
+    {
+      "key": "cash_in",
+      "description": "Layer 'ATMs' shows cash_in=no with a fixed text, namely 'You cannot deposit cash into this ATM' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines')",
+      "value": "no"
+    },
+    {
+      "key": "speech_output",
+      "description": "Layer 'ATMs' shows speech_output=yes with a fixed text, namely 'This ATM has speech output, usually available through a headphone jack' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines')",
+      "value": "yes"
+    },
+    {
+      "key": "speech_output",
+      "description": "Layer 'ATMs' shows speech_output=no with a fixed text, namely 'This ATM does not have speech output' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'ATM Machines')",
+      "value": "no"
     }
   ]
 }

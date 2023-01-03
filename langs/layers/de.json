@@ -169,6 +169,15 @@
     },
     "atm": {
         "description": "Geldautomaten zum Geld abheben",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Mit Sprachausgabe"
+                    }
+                }
+            }
+        },
         "name": "Geldautomaten",
         "presets": {
             "0": {
@@ -176,12 +185,43 @@
             }
         },
         "tagRenderings": {
+            "atm-in-bank-notice": {
+                "render": "Dieser Geldautomat befindet sich in oder in der Nähe einer Bank"
+            },
             "brand": {
                 "freeform": {
                     "placeholder": "Markenname"
                 },
                 "question": "Von welcher Marke ist dieser Geldautomat?",
                 "render": "Die Marke dieses Geldautomaten ist {brand}"
+            },
+            "cash_in": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie können wahrscheinlich kein Bargeld in diesen Geldautomaten einzahlen"
+                    },
+                    "1": {
+                        "then": "Sie können Bargeld in diesen Geldautomaten einzahlen"
+                    },
+                    "2": {
+                        "then": "Sie können an diesem Geldautomaten kein Bargeld einzahlen"
+                    }
+                },
+                "question": "Kann man an diesem Geldautomaten Bargeld einzahlen?"
+            },
+            "cash_out": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie können an diesem Geldautomaten Bargeld abheben"
+                    },
+                    "1": {
+                        "then": "An diesem Geldautomaten können Sie Bargeld abheben"
+                    },
+                    "2": {
+                        "then": "Sie können an diesem Geldautomaten kein Bargeld abheben"
+                    }
+                },
+                "question": "Kann man an diesem Geldautomaten Bargeld abheben?"
             },
             "name": {
                 "render": "Der Name dieses Geldautomaten ist {name}"
@@ -192,6 +232,26 @@
                 },
                 "question": "Welches Unternehmen betreibt den Geldautomaten?",
                 "render": "Der Geldautomat wird von {operator} betrieben"
+            },
+            "speech_output": {
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Geldautomat verfügt über eine Sprachausgabe, die normalerweise über eine Kopfhörerbuchse verfügbar ist"
+                    },
+                    "1": {
+                        "then": "Dieser Geldautomat hat keine Sprachausgabe"
+                    }
+                },
+                "question": "Verfügt dieser Geldautomat über eine Sprachausgabe für sehbehinderte Benutzer?"
+            },
+            "speech_output_language": {
+                "render": {
+                    "special": {
+                        "question": "In welchen Sprachen hat dieser Geldautomat eine Sprachausgabe?",
+                        "render_list_item": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}",
+                        "render_single_language": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}"
+                    }
+                }
             }
         },
         "title": {
@@ -6319,6 +6379,9 @@
                     "6": {
                         "question": "Recycling von Motoröl"
                     },
+                    "7": {
+                        "question": "Recycling von Leuchtstoffröhren"
+                    },
                     "8": {
                         "question": "Recycling von Grünabfällen"
                     },
@@ -6327,6 +6390,9 @@
                     },
                     "10": {
                         "question": "Recycling von Glas"
+                    },
+                    "11": {
+                        "question": "Recycling von Glühbirnen"
                     },
                     "12": {
                         "question": "Recycling von Zeitungen"
@@ -6408,6 +6474,9 @@
                     "5": {
                         "then": "Motoröl kann hier recycelt werden"
                     },
+                    "6": {
+                        "then": "Hier können Leuchtstoffröhren recycelt werden"
+                    },
                     "7": {
                         "then": "Grünabfälle können hier recycelt werden"
                     },
@@ -6419,6 +6488,9 @@
                     },
                     "10": {
                         "then": "Glas kann hier recycelt werden"
+                    },
+                    "11": {
+                        "then": "Hier können Glühbirnen recycelt werden"
                     },
                     "12": {
                         "then": "Zeitungen können hier recycelt werden"
@@ -7398,6 +7470,7 @@
         "name": "Fahrkartenentwerter",
         "presets": {
             "0": {
+                "description": "Ein Fahrkartenentwerter zur Entwertung einer Fahrkarte für öffentliche Verkehrsmittel. Dabei kann es sich entweder um ein digitales Lesegerät handeln, das eine Karte oder einen Fahrschein liest, oder um eine Maschine, die einen Fahrschein stempelt oder locht.",
                 "title": "einen Fahrkartenentwerter"
             }
         },

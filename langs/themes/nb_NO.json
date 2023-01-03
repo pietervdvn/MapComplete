@@ -7,6 +7,9 @@
         "description": "Velkommen til det åpne kunstverkskartet, et kart over statuer, byster, grafitti, og andre kunstverk i verden",
         "title": "Kunstkort"
     },
+    "bag": {
+        "title": "BAG-importhjelper"
+    },
     "benches": {
         "description": "Viser alle benker som er registrert i OpenStreetMap: Individuelle benker, og benker som tilhører offentlig transport eller -skur. Med en OpenStreetMap-konto kan du kartlegge nye benker eller redigere eksisterende.",
         "shortDescription": "Et benkekart",
@@ -25,6 +28,9 @@
         "description": "Stedsbundne kikkerter på påle. Vanligvis på turiststeder, utkikkspunkter, på toppen av utsiktstårn, og noen ganger i naturreservat.",
         "shortDescription": "Et kart over fastmonterte kikkerter",
         "title": "Kikkerter"
+    },
+    "blind_osm": {
+        "title": "OSM for blinde"
     },
     "bookcases": {
         "title": "Kart over åpne bokhyller"
@@ -622,6 +628,7 @@
         "title": "Åpent toalettkart"
     },
     "transit": {
+        "description": "Planlegg turen din med offentlig transport",
         "title": "Bussruter"
     },
     "trees": {

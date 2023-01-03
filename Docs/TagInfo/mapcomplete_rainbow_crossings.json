@@ -33,12 +33,12 @@
     },
     {
       "key": "crossing:marking",
-      "description": "Layer 'Crossings with rainbow paintings' shows crossing:marking=rainbow with a fixed text, namely 'This crossing has rainbow paintings' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings')",
+      "description": "Layer 'Crossings with rainbow paintings' shows crossing:marking=rainbow with a fixed text, namely 'This crossing has rainbow paintings' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings') (This is only shown if highway=crossing)",
       "value": "rainbow"
     },
     {
       "key": "not:crossing:marking",
-      "description": "Layer 'Crossings with rainbow paintings' shows not:crossing:marking=rainbow with a fixed text, namely 'No rainbow paintings here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings')",
+      "description": "Layer 'Crossings with rainbow paintings' shows not:crossing:marking=rainbow with a fixed text, namely 'No rainbow paintings here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings') (This is only shown if highway=crossing)",
       "value": "rainbow"
     }
   ]

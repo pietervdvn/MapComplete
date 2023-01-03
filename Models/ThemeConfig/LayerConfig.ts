@@ -395,7 +395,7 @@ export default class LayerConfig extends WithContextLoader {
             this.allowMove = null
         } else if (json.allowMove === true) {
             this.allowMove = new MoveConfig({}, context + ".allowMove")
-        } else if (json.allowMove !== undefined && json.allowMove !== false) {
+        } else if (json.allowMove !== undefined) {
             this.allowMove = new MoveConfig(json.allowMove, context + ".allowMove")
         }
 

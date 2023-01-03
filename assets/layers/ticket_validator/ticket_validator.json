@@ -92,7 +92,8 @@
         "de": "einen Fahrkartenentwerter"
       },
       "description": {
-        "en": "A ticket validator to validate a public transport ticket. This can be either a digital reader, reading a card or ticket, or a machine stamping or punching a ticket."
+        "en": "A ticket validator to validate a public transport ticket. This can be either a digital reader, reading a card or ticket, or a machine stamping or punching a ticket.",
+        "de": "Ein Fahrkartenentwerter zur Entwertung einer Fahrkarte für öffentliche Verkehrsmittel. Dabei kann es sich entweder um ein digitales Lesegerät handeln, das eine Karte oder einen Fahrschein liest, oder um eine Maschine, die einen Fahrschein stempelt oder locht."
       }
     }
   ],

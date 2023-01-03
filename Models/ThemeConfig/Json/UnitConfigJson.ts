@@ -1,3 +1,61 @@
+/**
+ * In some cases, a value is represented in a certain unit (such as meters for heigt/distance/..., km/h for speed, ...)
+ *
+ * Sometimes, multiple denominations are possible (e.g. km/h vs mile/h; megawatt vs kilowatt vs gigawatt for power generators, ...)
+ *
+ * This brings in some troubles, as there are multiple ways to write it (no denomitation, 'm' vs 'meter' 'metre', ...)
+ *
+ * Not only do we want to write consistent data to OSM, we also want to present this consistently to the user.
+ * This is handled by defining units.
+ *
+ * # Rendering
+ *
+ * To render a value with long (human) denomination, use {canonical(key)}
+ *
+ * # Usage
+ *
+ * First of all, you define which keys have units applied, for example:
+ *
+ * ```
+ * units: [
+ *  appliesTo: ["maxspeed", "maxspeed:hgv", "maxspeed:bus"]
+ *  applicableUnits: [
+ *      ...
+ *  ]
+ * ]
+ * ```
+ *
+ * ApplicableUnits defines which is the canonical extension, how it is presented to the user, ...:
+ *
+ * ```
+ * applicableUnits: [
+ * {
+ *     canonicalDenomination: "km/h",
+ *     alternativeDenomination: ["km/u", "kmh", "kph"]
+ *     default: true,
+ *     human: {
+ *         en: "kilometer/hour",
+ *         nl: "kilometer/uur"
+ *     },
+ *     humanShort: {
+ *         en: "km/h",
+ *         nl: "km/u"
+ *     }
+ * },
+ * {
+ *     canoncialDenomination: "mph",
+ *     ... similar for miles an hour ...
+ * }
+ * ]
+ * ```
+ *
+ *
+ * If this is defined, then every key which the denominations apply to (`maxspeed`, `maxspeed:hgv` and `maxspeed:bus`) will be rewritten at the metatagging stage:
+ * every value will be parsed and the canonical extension will be added add presented to the other parts of the code.
+ *
+ * Also, if a freeform text field is used, an extra dropdown with applicable denominations will be given
+ *
+ */
 export default interface UnitConfigJson {
     /**
      * Every key from this list will be normalized.
@@ -11,9 +69,19 @@ export default interface UnitConfigJson {
      */
     eraseInvalidValues?: boolean
     /**
-     * The possible denominations
+     * The possible denominations for this unit.
+     * For length, denominations could be "meter", "kilometer", "miles", "foot"
      */
     applicableUnits: DenominationConfigJson[]
+
+    /**
+     * In some cases, the default denomination is not the most user friendly to input.
+     * E.g., when measuring kerb heights, it is illogical to ask contributors to input an amount in meters.
+     *
+     * When a default input method should be used, this can be specified by setting the canonical denomination here, e.g.
+     * `defaultInput: "cm"`. This must be a denomination which appears in the applicableUnits
+     */
+    defaultInput?: string
 }
 
 export interface DenominationConfigJson {
@@ -29,12 +97,6 @@ export interface DenominationConfigJson {
     useIfNoUnitGiven?: boolean | string[]
 
     /**
-     * Use this value as default denomination when the user inputs a value (e.g. to force using 'centimeters' instead of 'meters' by default).
-     * If unset for all values, this will use 'useIfNoUnitGiven'. If at least one denomination has this set, this will default to false
-     */
-    useAsDefaultInput?: boolean | string[]
-
-    /**
      * The canonical value for this denomination which will be added to the value in OSM.
      * e.g. "m" for meters
      * If the user inputs '42', the canonical value will be added and it'll become '42m'.
@@ -46,12 +108,15 @@ export interface DenominationConfigJson {
 
     /**
      * The canonical denomination in the case that the unit is precisely '1'.
-     * Used for display purposes
+     * Used for display purposes only.
+     *
+     * E.g.: for duration of something in minutes: `2 minutes` but `1 minute`; the `minute` goes here
      */
     canonicalDenominationSingular?: string
 
     /**
      * A list of alternative values which can occur in the OSM database - used for parsing.
+     * E.g.: while 'm' is canonical, `meter`, `mtrs`, ... can occur as well
      */
     alternativeDenomination?: string[]
 
@@ -62,16 +127,16 @@ export interface DenominationConfigJson {
      *     "fr": "metre"
      * }
      */
-    human?: string | any
+    human?: string | Record<string, string>
 
     /**
      * The value for humans in the dropdown. This should not use abbreviations and should be translated, e.g.
      * {
      *     "en": "minute",
-     *     "nl": "minuut"x²
+     *     "nl": "minuut"
      * }
      */
-    humanSingular?: string | any
+    humanSingular?: string | Record<string, string>
 
     /**
      * If set, then the canonical value will be prefixed instead, e.g. for '€'
