@@ -188,7 +188,7 @@
         "loading": "Loading…",
         "loadingTheme": "Loading {theme}…",
         "loginFailed": "Logging in into OpenStreetMap failed",
-        "loginOnlyNeededToEdit": "if you want to edit the map",
+        "loginOnlyNeededToEdit": "if you want to make changes",
         "loginToStart": "Log in to answer this question",
         "loginWithOpenStreetMap": "Login with OpenStreetMap",
         "logout": "Log out",
