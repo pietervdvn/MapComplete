@@ -46,6 +46,7 @@ const worldWideMappings: MappingConfigJson[] = [
     then: {
       en: "City limit",
     },
+    icon: "./assets/layers/traffic_sign/images/city_limit.svg"
   },
   {
     if: "traffic_sign=maxspeed",
@@ -73,6 +74,7 @@ function main(){
 
   // Add world wide mappings
   for(const mapping of worldWideMappings){
+    // Add them to the list of mappings
     mappings.push({
       ...mapping,
       then: {
@@ -80,6 +82,13 @@ function main(){
         ...originalSignMappings.find(m => m.if === mapping.if)?.then,
       }
     })
+    // Add them to the list of icon mappings, if they have an icon
+    if(mapping.icon){
+      iconMappings.push({
+        if: mapping.if,
+        then: mapping.icon,
+      })
+    }
   }
 
   // Check which different files there are
@@ -156,6 +165,7 @@ function main(){
     ]
   };
 
+  // Re-add all other tagrenderings
   for (let i = 2; i < originalLayer.tagRenderings.length; i++) {
     newLayer.tagRenderings.push(originalLayer.tagRenderings[i]);
   }

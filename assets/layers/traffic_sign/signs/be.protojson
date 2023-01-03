@@ -161,7 +161,7 @@
     },
     {
       "id": "BE:A39",
-      "name": "Two-way traffic",
+      "name": "Oncoming traffic",
       "image": {
         "file": "A/Belgian_road_sign_A39.svg"
       }
@@ -202,10 +202,87 @@
       }
     },
     {
+      "id": "BE:A50",
+      "name": "Chance of traffic jams",
+      "image": {
+        "file": "A/Belgian_road_sign_A50.svg"
+      }
+    },
+    {
       "id": "BE:A51",
       "name": "Danger ahead",
       "image": {
         "file": "A/Belgian_road_sign_A51.svg"
+      }
+    },
+    {
+      "id": "BE:B1",
+      "name": "Give way",
+      "image": {
+        "file": "B/Belgian_road_sign_B1.svg"
+      }
+    },
+    {
+      "id": "BE:B5",
+      "name": "Stop",
+      "image": {
+        "file": "B/Belgian_road_sign_B5.svg"
+      }
+    },
+    {
+      "id": "BE:B9",
+      "name": "Priority road",
+      "image": {
+        "file": "B/Belgian_road_sign_B9.svg"
+      }
+    },
+    {
+      "id": "BE:B11",
+      "name": "End of priority road",
+      "image": {
+        "file": "B/Belgian_road_sign_B11.svg"
+      }
+    },
+    {
+      "id": "BE:B15",
+      "name": "Priority road with side roads",
+      "image": {
+        "file": "B/Belgian_road_sign_B15.svg"
+      }
+    },
+    {
+      "id": "BE:B17",
+      "name": "Intersection with priority for the road on the right",
+      "image": {
+        "file": "B/Belgian_road_sign_B17.svg"
+      }
+    },
+    {
+      "id": "BE:B19",
+      "name": "Priority for traffic in other direction",
+      "image": {
+        "file": "B/Belgian_road_sign_B19.svg"
+      }
+    },
+    {
+      "id": "BE:B21",
+      "name": "Priority for traffic in current direction",
+      "image": {
+        "file": "B/Belgian_road_sign_B21.svg"
+      }
+    },
+    {
+      "id": "BE:B22",
+      "name": "Bike can pass red light to turn right, after yielding",
+      "image": {
+        "file": "B/Belgian_road_sign_B22.svg"
+      }
+    },
+    {
+      "id": "BE:B23",
+      "name": "Bike can pass red light to go straight, after yielding",
+      "image": {
+        "file": "B/Belgian_road_sign_B23.svg"
       }
     }
   ]
