@@ -4,8 +4,10 @@ import ScrollableFullScreen from "../../UI/Base/ScrollableFullScreen"
 import BaseUIElement from "../../UI/BaseUIElement"
 
 /**
- * The stray-click-hanlders adds a marker to the map if no feature was clicked.
+ * The stray-click-handler adds a marker to the map if no feature was clicked.
  * Shows the given uiToShow-element in the messagebox
+ *
+ * Note: the actual implementation is in StrayClickHandlerImplementation
  */
 export default class StrayClickHandler {
     public static construct = (

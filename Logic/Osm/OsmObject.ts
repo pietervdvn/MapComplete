@@ -73,7 +73,7 @@ export abstract class OsmObject {
         if (rawData["error"] !== undefined && rawData["statuscode"] === 410) {
             return "deleted"
         }
-        return rawData["contents"].elements[0].tags
+        return rawData["content"].elements[0].tags
     }
 
     static async DownloadObjectAsync(
