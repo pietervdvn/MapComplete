@@ -113,7 +113,7 @@ export default class SplitRoadWizard extends Combine {
         })
 
         saveButton.SetClass("btn btn-primary mr-3")
-        const disabledSaveButton = new Button("Split", undefined)
+        const disabledSaveButton = new Button(t.split.Clone(), undefined)
         disabledSaveButton.SetClass("btn btn-disabled mr-3")
         // Only show the save button if there are split points defined
         const saveToggle = new Toggle(
