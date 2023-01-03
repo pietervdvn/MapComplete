@@ -169,6 +169,15 @@
     },
     "atm": {
         "description": "Geldautomaten om geld op te nemen",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Heeft spraak"
+                    }
+                }
+            }
+        },
         "name": "Geldautomaten",
         "presets": {
             "0": {
@@ -176,12 +185,28 @@
             }
         },
         "tagRenderings": {
+            "atm-in-bank-notice": {
+                "render": "Deze geldautomaat bevindt zich in of bij een bank"
+            },
             "brand": {
                 "freeform": {
                     "placeholder": "Merknaam"
                 },
                 "question": "Van welk merk is deze geldautomaat?",
                 "render": "Het merk van deze geldautomaat is {brand}"
+            },
+            "cash_in": {
+                "mappings": {
+                    "0": {
+                        "then": "Je kan waarschijnlijk geen geld deponeren in deze geldautomaat"
+                    },
+                    "1": {
+                        "then": "Je kan geld deponeren in deze geldautomaat"
+                    },
+                    "2": {
+                        "then": "Je kan geen geld deponeren in deze geldautomaat"
+                    }
+                }
             },
             "name": {
                 "render": "De naam van deze geldautomaat is {name}"
@@ -192,22 +217,6 @@
                 },
                 "question": "Welk bedrijf beheert deze geldautomaat?",
                 "render": "Deze geldautomaat wordt beheerd door {operator}"
-            },
-            "atm-in-bank-notice": {
-                "render": "Deze geldautomaat bevindt zich in of bij een bank"
-            },
-            "cash_in": {
-                "mappings": {
-                    "1": {
-                        "then": "Je kan geld deponeren in deze geldautomaat"
-                    },
-                    "0": {
-                        "then": "Je kan waarschijnlijk geen geld deponeren in deze geldautomaat"
-                    },
-                    "2": {
-                        "then": "Je kan geen geld deponeren in deze geldautomaat"
-                    }
-                }
             }
         },
         "title": {
@@ -217,15 +226,6 @@
                 }
             },
             "render": "Geldautomaat"
-        },
-        "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Heeft spraak"
-                    }
-                }
-            }
         }
     },
     "barrier": {
@@ -2613,6 +2613,7 @@
         },
         "title": {
             "mappings": {
+                "0": {},
                 "1": {
                     "then": "Klimsite <b>{name}</b>"
                 },

@@ -75,7 +75,8 @@
       "condition": "amenity=bank",
       "render": {
         "en": "This ATM is located in or near a bank",
-        "de": "Dieser Geldautomat befindet sich in oder in der Nähe einer Bank"
+        "de": "Dieser Geldautomat befindet sich in oder in der Nähe einer Bank",
+        "nl": "Deze geldautomaat bevindt zich in of bij een bank"
       }
     },
     {
@@ -187,7 +188,8 @@
           "if": "cash_in=",
           "then": {
             "en": "You probably cannot deposit cash into this ATM",
-            "de": "Sie können wahrscheinlich kein Bargeld in diesen Geldautomaten einzahlen"
+            "de": "Sie können wahrscheinlich kein Bargeld in diesen Geldautomaten einzahlen",
+            "nl": "Je kan waarschijnlijk geen geld deponeren in deze geldautomaat"
           },
           "hideInAnswer": true
         },
@@ -195,14 +197,16 @@
           "if": "cash_in=yes",
           "then": {
             "en": "You can deposit cash into this ATM",
-            "de": "Sie können Bargeld in diesen Geldautomaten einzahlen"
+            "de": "Sie können Bargeld in diesen Geldautomaten einzahlen",
+            "nl": "Je kan geld deponeren in deze geldautomaat"
           }
         },
         {
           "if": "cash_in=no",
           "then": {
             "en": "You cannot deposit cash into this ATM",
-            "de": "Sie können an diesem Geldautomaten kein Bargeld einzahlen"
+            "de": "Sie können an diesem Geldautomaten kein Bargeld einzahlen",
+            "nl": "Je kan geen geld deponeren in deze geldautomaat"
           }
         }
       ]
@@ -270,7 +274,8 @@
         {
           "question": {
             "en": "With speech output",
-            "de": "Mit Sprachausgabe"
+            "de": "Mit Sprachausgabe",
+            "nl": "Heeft spraak"
           },
           "osmTags": "speech_output=yes"
         }

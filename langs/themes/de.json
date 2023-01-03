@@ -909,6 +909,11 @@
                     }
                 }
             },
+            "8": {
+                "override": {
+                    "name": "Behindertenparkplätze"
+                }
+            },
             "19": {
                 "override": {
                     "=title": {
@@ -934,11 +939,6 @@
                             }
                         }
                     }
-                }
-            },
-            "8": {
-                "override": {
-                    "name": "Behindertenparkplätze"
                 }
             }
         },

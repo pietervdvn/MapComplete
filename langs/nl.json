@@ -306,6 +306,7 @@
             "title": "Upload je traject naar OpenStreetMap.org",
             "uploading": "Traject uploaden…"
         },
+        "useSearch": "Gebruik de zoekfunctie hierboven om meer opties te zien",
         "weekdays": {
             "abbreviations": {
                 "friday": "Vrij",
@@ -347,7 +348,6 @@
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
         },
-        "useSearch": "Gebruik de zoekfunctie hierboven om meer opties te zien",
         "useSearchForMore": "Gebruik de zoekfunctie om {total} meer waarden te vinden…",
         "noMatchingMapping": "Geen overeenkomsten gevonden…"
     },

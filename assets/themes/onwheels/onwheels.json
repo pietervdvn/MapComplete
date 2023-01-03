@@ -223,7 +223,8 @@
           }
         ],
         "name": {
-          "en": "Disabled parking spaces"
+          "en": "Disabled parking spaces",
+          "de": "Behindertenparkplätze"
         }
       },
       "hideTagRenderingsWithLabels": [

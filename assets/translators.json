@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 217,
+      "commits": 220,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 197,
+      "commits": 198,
       "contributor": "kjon"
     },
     {
@@ -114,6 +114,10 @@
     },
     {
       "commits": 7,
+      "contributor": "mcliquid"
+    },
+    {
+      "commits": 7,
       "contributor": "快乐的老鼠宝宝"
     },
     {
@@ -127,10 +131,6 @@
     {
       "commits": 7,
       "contributor": "Niels Elgaard Larsen"
-    },
-    {
-      "commits": 6,
-      "contributor": "mcliquid"
     },
     {
       "commits": 6,
