@@ -1,5 +1,15 @@
 [
   {
+    "path": "city_limit.svg",
+    "license": "GPLv2+",
+    "authors": [
+      "JOSM"
+    ],
+    "sources": [
+      "https://github.com/JOSM/josm/blob/master/resources/images/presets/vehicle/restriction/city_limit.svg"
+    ]
+  },
+  {
     "path": "unknown.svg",
     "license": "CC0",
     "authors": [
