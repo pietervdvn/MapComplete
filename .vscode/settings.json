@@ -17,5 +17,8 @@
     ],
     "editor.tabSize": 2,
     "files.autoSave": "onFocusChange",
-    "search.useIgnoreFiles": true
+    "search.useIgnoreFiles": true,
+    "files.associations": {
+        "*.protojson": "json"
+    }
     }

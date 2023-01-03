@@ -32,6 +32,14 @@ interface Implication {
   value: string;
 }
 
+interface Translations {
+  [key: string]: Translation;
+}
+
+interface Translation {
+  [key: string]: string;
+}
+
 const worldWideMappings: MappingConfigJson[] = [
   {
     if: "traffic_sign=city_limit",
@@ -61,6 +69,7 @@ function main(){
   // Create new list of mappings
   const mappings: MappingConfigJson[] = [];
   const iconMappings: MappingConfigJson[] = [];
+  const translationMemory: Translations = {};
 
   // Add world wide mappings
   for(const mapping of worldWideMappings){
@@ -79,9 +88,20 @@ function main(){
     const signFile = readFileSync("signs/" + file, "utf8");
     const signs = JSON.parse(signFile) as SignFile;
     for(const sign of signs.traffic_signs){
+      // Find item in traffic_signs.json file and save the translations
       const originalMapping = originalSignMappings.find(m => m.if === "traffic_sign=" + sign.id);
-      const iconPath = "./assets/layers/traffic_sign/images/"+signs.country.toLowerCase()+"/"+sign.image.file
+      translationMemory[sign.name] = {
+        ...originalMapping?.then,
+        en: sign.name,
+      }
+
+      // Check if the sign starts with the country
+      if(!sign.id.toLowerCase().startsWith(signs.country.toLowerCase())){
+        throw new Error("Sign " + sign.id + " does not start with country " + signs.country + ", you should fix this!");
+      }
+
       // Create new mapping, reusing original translations
+      const iconPath = "./assets/layers/traffic_sign/images/"+signs.country.toLowerCase()+"/"+sign.image.file
       const mapping: MappingConfigJson = {
         if: "traffic_sign=" + sign.id,
         then: {
@@ -101,6 +121,17 @@ function main(){
       };
       mappings.push(mapping);
       iconMappings.push(icon);
+    }
+  }
+
+  // Re-run over all mappings, and add translations
+  for(const mapping of mappings){
+    const memoryTranslation = translationMemory[mapping.then.en];
+    if(memoryTranslation){
+      mapping.then = {
+        ...mapping.then,
+        ...memoryTranslation,
+      }
     }
   }
 

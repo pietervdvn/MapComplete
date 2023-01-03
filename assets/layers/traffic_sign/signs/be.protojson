@@ -1,0 +1,212 @@
+{
+  "$schema": "https://osm.rlin.eu/traffic_sign/schema/schema.json",
+  "name": "Traffic signs of Belgium",
+  "description": "Traffic signs of Belgium",
+  "version": "2023-01-03",
+  "country": "BE",
+  "traffic_signs": [
+    {
+      "id": "BE:A1a",
+      "name": "Corner to the left",
+      "image": {
+        "file": "A/Belgian_road_sign_A1a.svg"
+      }
+    },
+    {
+      "id": "BE:A1b",
+      "name": "Corner to the right",
+      "image": {
+        "file": "A/Belgian_road_sign_A1b.svg"
+      }
+    },
+    {
+      "id": "BE:A1c",
+      "name": "S-bend to the left",
+      "image": {
+        "file": "A/Belgian_road_sign_A1c.svg"
+      }
+    },
+    {
+      "id": "BE:A1d",
+      "name": "S-bend to the right",
+      "image": {
+        "file": "A/Belgian_road_sign_A1d.svg"
+      }
+    },
+    {
+      "id": "BE:A7a",
+      "name": "Road narrows",
+      "image": {
+        "file": "A/Belgian_road_sign_A7a.svg"
+      }
+    },
+    {
+      "id": "BE:A7b",
+      "name": "Road narrows on the left",
+      "image": {
+        "file": "A/Belgian_road_sign_A7b_(2).svg"
+      }
+    },
+    {
+      "id": "BE:A9",
+      "name": "Movable bridge",
+      "image": {
+        "file": "A/Belgian_road_sign_A9.svg"
+      }
+    },
+    {
+      "id": "BE:A11",
+      "name": "Quay or river bank",
+      "image": {
+        "file": "A/Belgian_road_sign_A11.svg"
+      }
+    },
+    {
+      "id": "BE:A13",
+      "name": "Bad road surface",
+      "image": {
+        "file": "A/Belgian_road_sign_A13.svg"
+      }
+    },
+    {
+      "id": "BE:A14",
+      "name": "Speed bump",
+      "image": {
+        "file": "A/Belgian_road_sign_A14.svg"
+      }
+    },
+    {
+      "id": "BE:A15",
+      "name": "Slippery road",
+      "image": {
+        "file": "A/Belgian_road_sign_A15.svg"
+      }
+    },
+    {
+      "id": "BE:A17",
+      "name": "Loose chippings",
+      "image": {
+        "file": "A/Belgian_road_sign_A17.svg"
+      }
+    },
+    {
+      "id": "BE:A19",
+      "name": "Falling rocks",
+      "image": {
+        "file": "A/Belgian_road_sign_A19.svg"
+      }
+    },
+    {
+      "id": "BE:A21",
+      "name": "Pedestrian crossing",
+      "image": {
+        "file": "A/Belgian_road_sign_A21.svg"
+      }
+    },
+    {
+      "id": "BE:A23",
+      "name": "Playing children",
+      "image": {
+        "file": "A/Belgian_road_sign_A23.svg"
+      }
+    },
+    {
+      "id": "BE:A25",
+      "name": "Cyclists",
+      "image": {
+        "file": "A/Belgian_road_sign_A25.svg"
+      }
+    },
+    {
+      "id": "BE:A27",
+      "name": "Dangerous animals",
+      "image": {
+        "file": "A/Belgian_road_sign_A27.svg"
+      }
+    },
+    {
+      "id": "BE:A29",
+      "name": "Cattle",
+      "image": {
+        "file": "A/Belgian_road_sign_A29.svg"
+      }
+    },
+    {
+      "id": "BE:A31",
+      "name": "Road works",
+      "image": {
+        "file": "A/Belgian_road_sign_A31.svg"
+      }
+    },
+    {
+      "id": "BE:A33",
+      "name": "Traffic lights",
+      "image": {
+        "file": "A/Belgian_road_sign_A33.svg"
+      }
+    },
+    {
+      "id": "BE:A35",
+      "name": "Low-flying aircraft",
+      "image": {
+        "file": "A/Belgian_road_sign_A35.svg"
+      }
+    },
+    {
+      "id": "BE:A37",
+      "name": "Side wind",
+      "image": {
+        "file": "A/Belgian_road_sign_A37.svg"
+      }
+    },
+    {
+      "id": "BE:A39",
+      "name": "Two-way traffic",
+      "image": {
+        "file": "A/Belgian_road_sign_A39.svg"
+      }
+    },
+    {
+      "id": "BE:A41",
+      "name": "Protected railway crossing",
+      "image": {
+        "file": "A/Belgian_road_sign_A41.svg"
+      }
+    },
+    {
+      "id": "BE:A43",
+      "name": "Unprotected railway crossing",
+      "image": {
+        "file": "A/Belgian_road_sign_A43.svg"
+      }
+    },
+    {
+      "id": "BE:A45",
+      "name": "Single-track railway crossing",
+      "image": {
+        "file": "A/Belgian_road_sign_A45.svg"
+      }
+    },
+    {
+      "id": "BE:A47",
+      "name": "Multiple-track railway crossing",
+      "image": {
+        "file": "A/Belgian_road_sign_A47.svg"
+      }
+    },
+    {
+      "id": "BE:A49",
+      "name": "Tramway crossing",
+      "image": {
+        "file": "A/Belgian_road_sign_A49.svg"
+      }
+    },
+    {
+      "id": "BE:A51",
+      "name": "Danger ahead",
+      "image": {
+        "file": "A/Belgian_road_sign_A51.svg"
+      }
+    }
+  ]
+}

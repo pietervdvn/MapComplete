@@ -51,6 +51,347 @@
           }
         },
         {
+          "if": "traffic_sign=BE:A1a",
+          "then": {
+            "en": "Corner to the left",
+            "nl": "Bocht naar links"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A1a.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A1b",
+          "then": {
+            "en": "Corner to the right",
+            "nl": "Bocht naar rechts"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A1b.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A1c",
+          "then": {
+            "en": "S-bend to the left",
+            "nl": "S-bocht naar links"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A1c.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A1d",
+          "then": {
+            "en": "S-bend to the right",
+            "nl": "S-bocht naar rechts"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A1d.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A7a",
+          "then": {
+            "en": "Road narrows",
+            "nl": "Wegversmalling"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A7a.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A7b",
+          "then": {
+            "en": "Road narrows on the left",
+            "nl": "Wegversmalling aan de linkerkant"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A7b_(2).svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A9",
+          "then": {
+            "en": "Movable bridge",
+            "nl": "Beweegbare brug"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A9.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A11",
+          "then": {
+            "en": "Quay or river bank",
+            "nl": "Kade of rivieroever"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A11.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A13",
+          "then": {
+            "en": "Bad road surface",
+            "nl": "Slecht wegdek"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A13.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A14",
+          "then": {
+            "en": "Speed bump",
+            "nl": "Drempel"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A14.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A15",
+          "then": {
+            "en": "Slippery road",
+            "nl": "Slipgevaar"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A15.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A17",
+          "then": {
+            "en": "Loose chippings",
+            "nl": "Opspattend grind"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A17.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A19",
+          "then": {
+            "en": "Falling rocks"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A19.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A21",
+          "then": {
+            "en": "Pedestrian crossing",
+            "nl": "Voetgangersoversteekplaats"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A21.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A23",
+          "then": {
+            "en": "Playing children",
+            "nl": "Spelende kinderen"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A23.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A25",
+          "then": {
+            "en": "Cyclists"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A25.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A27",
+          "then": {
+            "en": "Dangerous animals",
+            "nl": "Gevaarlijk wild"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A27.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A29",
+          "then": {
+            "en": "Cattle",
+            "nl": "Vee"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A29.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A31",
+          "then": {
+            "en": "Road works",
+            "nl": "Wegwerkzaamheden"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A31.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A33",
+          "then": {
+            "en": "Traffic lights"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A33.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A35",
+          "then": {
+            "en": "Low-flying aircraft",
+            "nl": "Laagvliegende vliegtuigen"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A35.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A37",
+          "then": {
+            "en": "Side wind",
+            "nl": "Zijwind"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A37.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A39",
+          "then": {
+            "en": "Two-way traffic"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A39.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A41",
+          "then": {
+            "en": "Protected railway crossing",
+            "nl": "Beveiligde spoorwegovergang"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A41.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A43",
+          "then": {
+            "en": "Unprotected railway crossing",
+            "nl": "Onbeveiligde spoorwegovergang"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A43.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A45",
+          "then": {
+            "en": "Single-track railway crossing"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A45.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A47",
+          "then": {
+            "en": "Multiple-track railway crossing"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A47.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A49",
+          "then": {
+            "en": "Tramway crossing"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A49.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:A51",
+          "then": {
+            "en": "Danger ahead",
+            "nl": "Gevaar"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A51.svg",
+            "class": "large"
+          }
+        },
+        {
           "if": "traffic_sign=NL:A01-5",
           "then": {
             "en": "Maximum speed of 5 km/h",
@@ -1881,6 +2222,122 @@
       "icon": {
         "render": "./assets/layers/traffic_sign/images/unknown.svg",
         "mappings": [
+          {
+            "if": "traffic_sign~BE:A1a(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A1a.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A1b(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A1b.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A1c(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A1c.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A1d(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A1d.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A7a(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A7a.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A7b(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A7b_(2).svg"
+          },
+          {
+            "if": "traffic_sign~BE:A9(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A9.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A11(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A11.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A13(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A13.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A14(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A14.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A15(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A15.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A17(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A17.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A19(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A19.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A21(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A21.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A23(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A23.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A25(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A25.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A27(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A27.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A29(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A29.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A31(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A31.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A33(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A33.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A35(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A35.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A37(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A37.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A39(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A39.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A41(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A41.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A43(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A43.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A45(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A45.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A47(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A47.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A49(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A49.svg"
+          },
+          {
+            "if": "traffic_sign~BE:A51(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/A/Belgian_road_sign_A51.svg"
+          },
           {
             "if": "traffic_sign~NL:A01-5(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/A/Nederlands_verkeersbord_A1-5.svg"
