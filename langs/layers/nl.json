@@ -217,6 +217,40 @@
                 },
                 "question": "Welk bedrijf beheert deze geldautomaat?",
                 "render": "Deze geldautomaat wordt beheerd door {operator}"
+            },
+            "speech_output": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze automaat heeft spraak, waarschijnlijk beschikbaar via een hoofdtelefoon-aansluiting"
+                    },
+                    "1": {
+                        "then": "Deze automaat heeft geen spraak"
+                    }
+                },
+                "question": "Heeft deze automaat spraak voor slechtziende en blinde gebruikers?"
+            },
+            "speech_output_language": {
+                "render": {
+                    "special": {
+                        "render_list_item": "Deze geldautomaat heeft spraak in {language():font-bold}",
+                        "question": "In welke taal is de srpaak van deze geldautomaat?",
+                        "render_single_language": "Deze automaat heeft spraak in {language():font-bold)"
+                    }
+                }
+            },
+            "cash_out": {
+                "mappings": {
+                    "1": {
+                        "then": "Je kan geld ophalen bij deze geldautomaat"
+                    },
+                    "0": {
+                        "then": "Je kan geld ophalen bij deze geldautomaat"
+                    },
+                    "2": {
+                        "then": "Je kan geen geld ophalen bij deze geldautomaat"
+                    }
+                },
+                "question": "Kan je geld ophalen bij deze geldautomaat?"
             }
         },
         "title": {
@@ -518,6 +552,18 @@
                 }
             },
             "render": "Zitbank"
+        },
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "Deze bushalte wordt niet meer gebruikt"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Deze bushalte heeft geen zitbank (er is er nooit een geweest of deze is verwijderd)"
+                }
+            }
         }
     },
     "bicycle_library": {
@@ -2735,6 +2781,14 @@
                 },
                 "question": "Hoe heet deze klimroute?",
                 "render": "<strong>{name}</strong>"
+            },
+            "bolts": {
+                "question": "Hoeveel bouten heeft deze route voordat je het relay bereikt?",
+                "mappings": {
+                    "0": {
+                        "then": "Deze route heeft geen bouten"
+                    }
+                }
             }
         },
         "title": {
@@ -3436,7 +3490,8 @@
         },
         "title": {
             "render": "Dokterspraktijk {name}"
-        }
+        },
+        "description": "Deze laag toont dokterspraktijken"
     },
     "dogpark": {
         "name": "hondenweides",
