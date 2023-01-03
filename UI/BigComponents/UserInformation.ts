@@ -140,12 +140,17 @@ class UserInformationMainPanel extends Combine {
 }
 
 export default class UserInformationPanel extends ScrollableFullScreen {
-    constructor(state: {
-        layoutToUse: LayoutConfig
-        osmConnection: OsmConnection
-        locationControl: UIEventSource<Loc>
-    }) {
-        const isOpened = new UIEventSource<boolean>(false)
+    constructor(
+        state: {
+            layoutToUse: LayoutConfig
+            osmConnection: OsmConnection
+            locationControl: UIEventSource<Loc>
+        },
+        options?: {
+            isOpened?: UIEventSource<boolean>
+        }
+    ) {
+        const isOpened = options?.isOpened ?? new UIEventSource<boolean>(false)
         super(
             () => {
                 return new VariableUiElement(

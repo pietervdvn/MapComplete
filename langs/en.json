@@ -327,7 +327,7 @@
             "tuesday": "Tuesday",
             "wednesday": "Wednesday"
         },
-        "welcomeBack": "You are logged in, welcome back!",
+        "welcomeBack": "Welcome back!",
         "welcomeExplanation": {
             "addNew": "Tap the map to add a new POI.",
             "browseMoreMaps": "Discover more maps",

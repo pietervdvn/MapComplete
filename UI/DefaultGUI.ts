@@ -33,7 +33,6 @@ import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
 import { GeoLocationState } from "../Logic/State/GeoLocationState"
 import Hotkeys from "./Base/Hotkeys"
 import AvailableBaseLayers from "../Logic/Actors/AvailableBaseLayers"
-import { Translation } from "./i18n/Translation"
 
 /**
  * The default MapComplete GUI initializer
@@ -205,7 +204,9 @@ export default class DefaultGUI {
         const self = this
         new Combine([
             Toggle.If(state.featureSwitchUserbadge, () => {
-                const userInfo = new UserInformationPanel(state)
+                const userInfo = new UserInformationPanel(state, {
+                    isOpened: guiState.userInfoIsOpened,
+                })
 
                 const mapControl = new MapControlButton(
                     new VariableUiElement(
@@ -219,7 +220,7 @@ export default class DefaultGUI {
                     {
                         dontStyle: true,
                     }
-                ).onClick(() => userInfo.Activate())
+                ).onClick(() => guiState.userInfoIsOpened.setData(true))
 
                 return new LoginToggle(
                     mapControl,
@@ -292,7 +293,12 @@ export default class DefaultGUI {
 
     private InitWelcomeMessage(): BaseUIElement {
         const isOpened = this.guiState.welcomeMessageIsOpened
-        new FullWelcomePaneWithTabs(isOpened, this.guiState.welcomeMessageOpenedTab, this.state)
+        new FullWelcomePaneWithTabs(
+            isOpened,
+            this.guiState.welcomeMessageOpenedTab,
+            this.state,
+            this.guiState
+        )
 
         // ?-Button on Desktop, opens panel with close-X.
         const help = new MapControlButton(Svg.help_svg())
