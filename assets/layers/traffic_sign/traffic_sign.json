@@ -704,14 +704,13 @@
           }
         },
         {
-          "if": "traffic_sign=BE:C31e",
+          "if": "traffic_sign=BE:C31g",
           "then": {
-            "en": "Left turn prohibited",
-            "nl": "Linksaf slaan verboden"
+            "en": "Left turn prohibited"
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C31e.svg",
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C31g.svg",
             "class": "large"
           }
         },
@@ -903,7 +902,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E1.svg",
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E1.svg",
             "class": "large"
           }
         },
@@ -915,7 +914,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E3.svg",
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E3.svg",
             "class": "large"
           }
         },
@@ -927,7 +926,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E5.svg",
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E5.svg",
             "class": "large"
           }
         },
@@ -939,7 +938,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E7.svg",
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E7.svg",
             "class": "large"
           }
         },
@@ -951,7 +950,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9a.svg",
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9a.svg",
             "class": "large"
           }
         },
@@ -963,7 +962,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9a_Parkeerschijf.svg",
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9a_Parkeerschijf.svg",
             "class": "large"
           }
         },
@@ -975,7 +974,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9b.svg",
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9b.svg",
             "class": "large"
           }
         },
@@ -987,7 +986,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9c.svg",
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9c.svg",
             "class": "large"
           }
         },
@@ -999,7 +998,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9d.svg",
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9d.svg",
             "class": "large"
           }
         },
@@ -1011,7 +1010,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9e.svg",
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9e.svg",
             "class": "large"
           }
         },
@@ -1023,7 +1022,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9f.svg",
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9f.svg",
             "class": "large"
           }
         },
@@ -1035,7 +1034,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9g.svg",
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9g.svg",
             "class": "large"
           }
         },
@@ -1047,7 +1046,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9h.svg",
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9h.svg",
             "class": "large"
           }
         },
@@ -1059,7 +1058,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9i.svg",
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9i.svg",
             "class": "large"
           }
         },
@@ -1071,7 +1070,7 @@
           },
           "hideInAnswer": "_country!=be",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E11.svg",
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E11.svg",
             "class": "large"
           }
         },
@@ -3015,7 +3014,7 @@
           },
           "hideInAnswer": "_country!=nl",
           "icon": {
-            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB13.svg",
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_NL_OB13.svg",
             "class": "large"
           }
         },
@@ -3559,8 +3558,8 @@
             "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C31d.svg"
           },
           {
-            "if": "traffic_sign~BE:C31e(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C31e.svg"
+            "if": "traffic_sign~BE:C31g(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C31g.svg"
           },
           {
             "if": "traffic_sign~BE:C33(;.*)*$",
@@ -3624,63 +3623,63 @@
           },
           {
             "if": "traffic_sign~BE:E1(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E1.svg"
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E1.svg"
           },
           {
             "if": "traffic_sign~BE:E3(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E3.svg"
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E3.svg"
           },
           {
             "if": "traffic_sign~BE:E5(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E5.svg"
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E5.svg"
           },
           {
             "if": "traffic_sign~BE:E7(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E7.svg"
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E7.svg"
           },
           {
             "if": "traffic_sign~BE:E9a(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9a.svg"
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9a.svg"
           },
           {
             "if": "traffic_sign~BE:E9a;BE:GVIIb(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9a_Parkeerschijf.svg"
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9a_Parkeerschijf.svg"
           },
           {
             "if": "traffic_sign~BE:E9b(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9b.svg"
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9b.svg"
           },
           {
             "if": "traffic_sign~BE:E9c(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9c.svg"
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9c.svg"
           },
           {
             "if": "traffic_sign~BE:E9d(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9d.svg"
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9d.svg"
           },
           {
             "if": "traffic_sign~BE:E9e(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9e.svg"
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9e.svg"
           },
           {
             "if": "traffic_sign~BE:E9f(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9f.svg"
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9f.svg"
           },
           {
             "if": "traffic_sign~BE:E9g(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9g.svg"
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9g.svg"
           },
           {
             "if": "traffic_sign~BE:E9h(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9h.svg"
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9h.svg"
           },
           {
             "if": "traffic_sign~BE:E9i(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9i.svg"
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E9i.svg"
           },
           {
             "if": "traffic_sign~BE:E11(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E11.svg"
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_traffic_sign_E11.svg"
           },
           {
             "if": "traffic_sign~NL:A01-5(;.*)*$",
@@ -4328,7 +4327,7 @@
           },
           {
             "if": "traffic_sign~NL:OB13(;.*)*$",
-            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB13.svg"
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_NL_OB13.svg"
           },
           {
             "if": "traffic_sign~NL:OB14(;.*)*$",

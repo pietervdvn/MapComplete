@@ -391,10 +391,10 @@
       }
     },
     {
-      "id": "BE:C31e",
+      "id": "BE:C31g",
       "name": "Left turn prohibited",
       "image": {
-        "file": "C/Belgian_road_sign_C31e.svg"
+        "file": "C/Belgian_road_sign_C31g.svg"
       }
     },
     {
@@ -506,105 +506,105 @@
       "id": "BE:E1",
       "name": "No parking allowed",
       "image": {
-        "file": "E/Belgian_road_sign_E1.svg"
+        "file": "E/Belgian_traffic_sign_E1.svg"
       }
     },
     {
       "id": "BE:E3",
       "name": "No stopping allowed",
       "image": {
-        "file": "E/Belgian_road_sign_E3.svg"
+        "file": "E/Belgian_traffic_sign_E3.svg"
       }
     },
     {
       "id": "BE:E5",
       "name": "Parking prohibited from 1st to 15th of the month",
       "image": {
-        "file": "E/Belgian_road_sign_E5.svg"
+        "file": "E/Belgian_traffic_sign_E5.svg"
       }
     },
     {
       "id": "BE:E7",
       "name": "Parking prohibited from 16th to last day of the month",
       "image": {
-        "file": "E/Belgian_road_sign_E7.svg"
+        "file": "E/Belgian_traffic_sign_E7.svg"
       }
     },
     {
       "id": "BE:E9a",
       "name": "Parking",
       "image": {
-        "file": "E/Belgian_road_sign_E9a.svg"
+        "file": "E/Belgian_traffic_sign_E9a.svg"
       }
     },
     {
       "id": "BE:E9a;BE:GVIIb",
       "name": "Parking, with parking disc",
       "image": {
-        "file": "E/Belgian_road_sign_E9a_Parkeerschijf.svg"
+        "file": "E/Belgian_traffic_sign_E9a_Parkeerschijf.svg"
       }
     },
     {
       "id": "BE:E9b",
       "name": "Parking for cars and motorcycles",
       "image": {
-        "file": "E/Belgian_road_sign_E9b.svg"
+        "file": "E/Belgian_traffic_sign_E9b.svg"
       }
     },
     {
       "id": "BE:E9c",
       "name": "Parking for heavy goods vehicles",
       "image": {
-        "file": "E/Belgian_road_sign_E9c.svg"
+        "file": "E/Belgian_traffic_sign_E9c.svg"
       }
     },
     {
       "id": "BE:E9d",
       "name": "Parking for buses",
       "image": {
-        "file": "E/Belgian_road_sign_E9d.svg"
+        "file": "E/Belgian_traffic_sign_E9d.svg"
       }
     },
     {
       "id": "BE:E9e",
       "name": "Parking on pavement",
       "image": {
-        "file": "E/Belgian_road_sign_E9e.svg"
+        "file": "E/Belgian_traffic_sign_E9e.svg"
       }
     },
     {
       "id": "BE:E9f",
       "name": "Parking partly on pavement",
       "image": {
-        "file": "E/Belgian_road_sign_E9f.svg"
+        "file": "E/Belgian_traffic_sign_E9f.svg"
       }
     },
     {
       "id": "BE:E9g",
       "name": "Parking on roadway",
       "image": {
-        "file": "E/Belgian_road_sign_E9g.svg"
+        "file": "E/Belgian_traffic_sign_E9g.svg"
       }
     },
     {
       "id": "BE:E9h",
       "name": "Parking for motorhomes",
       "image": {
-        "file": "E/Belgian_road_sign_E9h.svg"
+        "file": "E/Belgian_traffic_sign_E9h.svg"
       }
     },
     {
       "id": "BE:E9i",
       "name": "Parking for motorcycles",
       "image": {
-        "file": "E/Belgian_road_sign_E9i.svg"
+        "file": "E/Belgian_traffic_sign_E9i.svg"
       }
     },
     {
       "id": "BE:E11",
       "name": "Parking allowed on side with odd-numbered house numbers from 1st to 15th of the month, even-numbered house numbers from 16th to last day of the month. Applies to whole built-up area",
       "image": {
-        "file": "E/Belgian_road_sign_E11.svg"
+        "file": "E/Belgian_traffic_sign_E11.svg"
       }
     }
   ]
