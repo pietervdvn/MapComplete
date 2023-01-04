@@ -4,8 +4,10 @@ import { ShowDataLayerOptions } from "./ShowDataLayerOptions"
 import { ElementStorage } from "../../Logic/ElementStorage"
 import RenderingMultiPlexerFeatureSource from "../../Logic/FeatureSource/Sources/RenderingMultiPlexerFeatureSource"
 import ScrollableFullScreen from "../Base/ScrollableFullScreen"
-import { LeafletMouseEvent } from "leaflet"
+import { LeafletMouseEvent, PathOptions } from "leaflet"
 import Hash from "../../Logic/Web/Hash"
+import { BBox } from "../../Logic/BBox"
+import { Utils } from "../../Utils"
 /*
 // import 'leaflet-polylineoffset';
 We don't actually import it here. It is imported in the 'MinimapImplementation'-class, which'll result in a patched 'L' object.
@@ -47,6 +49,7 @@ export default class ShowDataLayerImplementation {
         string,
         { feature: any; activateFunc: (event: LeafletMouseEvent) => void }
     >()
+
     private readonly showDataLayerid: number
     private readonly createPopup: (
         tags: UIEventSource<any>,
@@ -81,7 +84,7 @@ export default class ShowDataLayerImplementation {
         }
         const self = this
 
-        options.leafletMap.addCallback((_) => {
+        options.leafletMap.addCallback(() => {
             return self.update(options)
         })
 
@@ -171,17 +174,8 @@ export default class ShowDataLayerImplementation {
         }
 
         const self = this
-        const data = {
-            type: "FeatureCollection",
-            features: [],
-        }
-        // @ts-ignore
-        this.geoLayer = L.geoJSON(data, {
-            style: (feature) => self.createStyleFor(feature),
-            pointToLayer: (feature, latLng) => self.pointToLayer(feature, latLng),
-            onEachFeature: (feature, leafletLayer) =>
-                self.postProcessFeature(feature, leafletLayer),
-        })
+
+        this.geoLayer = new L.LayerGroup()
 
         const selfLayer = this.geoLayer
         const allFeats = this._features.features.data
@@ -189,6 +183,31 @@ export default class ShowDataLayerImplementation {
             if (feat === undefined) {
                 continue
             }
+
+            // Why not one geojson layer with _all_ features, and attaching a right-click onto every feature individually?
+            // Because that somehow doesn't work :(
+            const feature = feat
+            const geojsonLayer = L.geoJSON(feature, {
+                style: (feature) => <PathOptions>self.createStyleFor(feature),
+                pointToLayer: (feature, latLng) => self.pointToLayer(feature, latLng),
+                onEachFeature: (feature, leafletLayer) =>
+                    self.postProcessFeature(feature, leafletLayer),
+            })
+            if (feature.geometry.type === "Point") {
+                geojsonLayer.on({
+                    contextmenu: (e) => {
+                        const o = self.leafletLayersPerId.get(feature?.properties?.id)
+                        o?.activateFunc(<LeafletMouseEvent>e)
+                        Utils.preventDefaultOnMouseEvent(e.originalEvent)
+                    },
+                    dblclick: (e) => {
+                        const o = self.leafletLayersPerId.get(feature?.properties?.id)
+                        o?.activateFunc(<LeafletMouseEvent>e)
+                        Utils.preventDefaultOnMouseEvent(e.originalEvent)
+                    },
+                })
+            }
+            this.geoLayer.addLayer(geojsonLayer)
             try {
                 if (feat.geometry.type === "LineString") {
                     const coords = L.GeoJSON.coordsToLatLngs(feat.geometry.coordinates)
@@ -229,7 +248,7 @@ export default class ShowDataLayerImplementation {
                             return self.geoLayer !== selfLayer
                         })
                 } else {
-                    this.geoLayer.addData(feat)
+                    geojsonLayer.addData(feat)
                 }
             } catch (e) {
                 console.error(
@@ -242,14 +261,14 @@ export default class ShowDataLayerImplementation {
             }
         }
 
-        if (options.zoomToFeatures ?? false) {
-            if (this.geoLayer.getLayers().length > 0) {
-                try {
-                    const bounds = this.geoLayer.getBounds()
-                    mp.fitBounds(bounds, { animate: false })
-                } catch (e) {
-                    console.debug("Invalid bounds", e)
-                }
+        if ((options.zoomToFeatures ?? false) && allFeats.length > 0) {
+            let bound = undefined
+            for (const feat of allFeats) {
+                const fbound = BBox.get(feat)
+                bound = bound?.unionWith(fbound) ?? fbound
+            }
+            if (bound !== undefined) {
+                mp.fitBounds(bound?.toLeaflet(), { animate: false })
             }
         }
 
@@ -312,29 +331,7 @@ export default class ShowDataLayerImplementation {
             icon: L.divIcon(style),
         })
     }
-
-    /**
-     * Post processing - basically adding the popup
-     * @param feature
-     * @param leafletLayer
-     * @private
-     */
-    private postProcessFeature(feature, leafletLayer: L.Evented) {
-        const layer: LayerConfig = this._layerToShow
-        if (layer.title === undefined || !this._enablePopups) {
-            // No popup action defined -> Don't do anything
-            // or probably a map in the popup - no popups needed!
-            return
-        }
-        const key = feature.properties.id
-        if (this.leafletLayersPerId.has(key)) {
-            const activate = this.leafletLayersPerId.get(key)
-            leafletLayer.addEventListener("click", activate.activateFunc)
-            if (Hash.hash.data === key) {
-                activate.activateFunc(null)
-            }
-            return
-        }
+    private createActivateFunction(feature, key: string, layer: LayerConfig): (event) => void {
         let infobox: ScrollableFullScreen = undefined
         const self = this
 
@@ -354,17 +351,36 @@ export default class ShowDataLayerImplementation {
             self._selectedElement.setData(
                 self.allElements.ContainingFeatures.get(feature.id) ?? feature
             )
-            event?.originalEvent?.preventDefault()
-            event?.originalEvent?.stopPropagation()
-            event?.originalEvent?.stopImmediatePropagation()
-            if (event?.originalEvent) {
-                // This is a total workaround, as 'preventDefault' and everything above seems to be not working
-                event.originalEvent["dismissed"] = true
-            }
+        }
+        return activate
+    }
+    /**
+     * Post processing - basically adding the popup
+     * @param feature
+     * @param leafletLayer
+     * @private
+     */
+    private postProcessFeature(feature, leafletLayer: L.Evented) {
+        const layer: LayerConfig = this._layerToShow
+        if (layer.title === undefined || !this._enablePopups) {
+            // No popup action defined -> Don't do anything
+            // or probably a map in the popup - no popups needed!
+            return
+        }
+        const key = feature.properties.id
+        let activate: (event) => void
+        if (this.leafletLayersPerId.has(key)) {
+            activate = this.leafletLayersPerId.get(key).activateFunc
+        } else {
+            activate = this.createActivateFunction(feature, key, layer)
         }
 
-        leafletLayer.addEventListener("click", activate)
-
+        // We also have to open on rightclick, doubleclick, ... as users sometimes do this. See #1219
+        leafletLayer.on({
+            dblclick: activate,
+            contextmenu: activate,
+            click: activate,
+        })
         // Add the feature to the index to open the popup when needed
         this.leafletLayersPerId.set(key, {
             feature: feature,

@@ -900,7 +900,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         url: string,
         maxCacheTimeMs: number,
         headers?: any
-    ): Promise<any | { error: string; url: string; statuscode?: number }> {
+    ): Promise<{ content: any } | { error: string; url: string; statuscode?: number }> {
         const cached = Utils._download_cache.get(url)
         if (cached !== undefined) {
             if (new Date().getTime() - cached.timestamp <= maxCacheTimeMs) {
@@ -1072,6 +1072,16 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             },
             false
         )
+    }
+
+    public static preventDefaultOnMouseEvent(event: any) {
+        event?.originalEvent?.preventDefault()
+        event?.originalEvent?.stopPropagation()
+        event?.originalEvent?.stopImmediatePropagation()
+        if (event?.originalEvent) {
+            // This is a total workaround, as 'preventDefault' and everything above seems to be not working
+            event.originalEvent["dismissed"] = true
+        }
     }
 
     public static OsmChaLinkFor(daysInThePast, theme = undefined): string {
