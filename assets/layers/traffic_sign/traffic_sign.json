@@ -3306,6 +3306,7 @@
     },
     {
       "id": "name",
+      "condition": "traffic_sign=city_limit",
       "question": {
         "en": "What place name is on the traffic sign?",
         "nl": "Welke plaatsnaam staat er op het verkeersbord?"

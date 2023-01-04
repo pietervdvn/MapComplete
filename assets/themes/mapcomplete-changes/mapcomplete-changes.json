@@ -380,7 +380,7 @@
               },
               {
                 "if": "theme=traffic_sign",
-                "then": "./assets/layers/traffic_sign/images/unknown.svg"
+                "then": "./assets/themes/traffic_sign/icon.svg"
               },
               {
                 "if": "theme=transit",

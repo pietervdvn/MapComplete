@@ -9,7 +9,7 @@
     "nl": "Kaart met verkeersborden."
   },
   "hideFromOverview": false,
-  "icon": "./assets/layers/traffic_sign/images/unknown.svg",
+  "icon": "./assets/themes/traffic_sign/icon.svg",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 0,
