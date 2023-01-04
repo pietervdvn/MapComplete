@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="Netherlands_traffic_sign_OB64" width="300" height="150" viewBox="0 0 300 150" version="1.1">
+ <g font-family="Arial,Helvetica,Sans,Liberation Sans,sans-serif">
+	<rect id="white_surface" width="300" height="150" fill="#f7fbf5"> </rect>
+	<rect id="border" x="5" y="5" rx="10" ry="10" width="290" height="140" stroke="gray" stroke-width="3px" fill="none"/>
+	<text textLength="260" lengthAdjust="spacingAndGlyphs">
+		<tspan font-weight="bold" font-size="32px" x="50%" y="25%" alignment-baseline="centre" text-anchor="middle">uitgezonderd</tspan>
+	</text>
+        <g id="tram" transform="translate(-60, -166) scale(1.2)">
+		<path fill="#2a2d2f" d="M 173,193 L 147,211 L 121,193 L 147,176 L 173,193"/>
+		<path fill="#f7fbf5" d="M 167,194 L 147,207 L 127,194 L 127,193 L 147,180 L 167,193 L 167,194"/>
+		<path fill="#2a2d2f" d="M 130,250 C 129,252 127,254 124,254 C 120,254 117,251 117,248 L 117,246 L 152,246 L 152,248 C 152,251 149,254 145,254 C 142,254 140,252 139,250 L 130,250"/>
+		<path fill="#2a2d2f" d="M 217,250 C 218,252 220,254 223,254 C 227,254 230,251 230,248 L 230,246 L 195,246 L 195,248 C 195,251 198,254 202,254 C 205,254 207,252 208,250 L 217,250"/>
+		<path fill="#2a2d2f" d="M 191,248 L 192,243 L 233,243 L 235,248 L 247,248 L 247,228 L 243,213 L 244,208 L 103,208 L 104,213 L 100,228 L 100,248 L 112,248 L 113,243 L 155,243 L 156,248 L 191,248"/>
+		<path fill="#f7fbf5" d="M 229,213 L 240,213 L 244,228 L 229,228 L 229,213"/>
+		<path fill="#f7fbf5" d="M 208,228 L 226,228 L 226,212 L 208,212 L 208,228"/>
+		<path fill="#f7fbf5" d="M 186,228 L 205,228 L 205,212 L 186,212 L 186,228"/>
+		<path fill="#f7fbf5" d="M 164,228 L 183,228 L 183,212 L 164,212 L 164,228"/>
+		<path fill="#f7fbf5" d="M 118,213 L 107,213 L 102,228 L 118,228 L 118,213"/>
+		<path fill="#f7fbf5" d="M 121,228 L 139,228 L 139,212 L 121,212 L 121,228"/>
+		<path fill="#f7fbf5" d="M 142,228 L 161,228 L 161,212 L 142,212 L 142,228"/>
+	</g>
+ </g>
+</svg>

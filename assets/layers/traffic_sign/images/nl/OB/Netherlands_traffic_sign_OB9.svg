@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="Netherlands_traffic_sign_OB9" width="300" height="100" viewBox="0 0 300 100" version="1.0">
+ <g>	<rect id="white_surface" width="300" height="100" fill="#f7fbf5"> </rect>
+	<g id="car" transform="scale(0.9) translate(10, -115)">
+		<circle cx="88" cy="200" r="14" stroke="black fill:none"/>
+		<circle cx="224" cy="200" r="14" stroke="black fill:none"/>
+		<path id="frame" fill="#2a2d2f" d="M45,190 L70,200 a18,18 0 0,1 36,0 h100 a18,18 0 0,1 36,0 L270,190 v-22 l-25,-10 l-15,-30 h-90 l-30,30 l-60,10 z"/>
+		<path id="windowFront" fill="#f7fbf5" d="M120,160 h60 v-27 h-35 z"/>
+		<path id="windowRear" fill="#f7fbf5" d="M186,160 h50 l-12,-27 h-38 z"/>
+	</g>
+	<rect id="border" x="5" y="5" rx="10" ry="10" width="290" height="90" stroke="gray" stroke-width="3px" fill="none"/>
+  </g>
+</svg>

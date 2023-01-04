@@ -357,7 +357,7 @@
     },
     {
       "id": "NL:C09",
-      "name": "Closed for motor vehicles with a top speed less than 25km/h (agricultural vehicles), mopeds, mofas, bicycles and disabled vehicles",
+      "name": "Closed for motor vehicles with a top speed less than 25km/h (agricultural vehicles), mopeds, mofas, cyclists and disabled vehicles",
       "image": {
         "file": "C/Nederlands_verkeersbord_C9.svg"
       }
@@ -392,14 +392,14 @@
     },
     {
       "id": "NL:C14",
-      "name": "Closed for bicycles",
+      "name": "Closed for cyclists",
       "image": {
         "file": "C/Nederlands_verkeersbord_C14.svg"
       }
     },
     {
       "id": "NL:C15",
-      "name": "Closed for mopeds, mofas, bicycles and disabled vehicles",
+      "name": "Closed for mopeds, mofas, cyclists and disabled vehicles",
       "image": {
         "file": "C/Nederlands_verkeersbord_C15.svg"
       }
@@ -588,7 +588,7 @@
     },
     {
       "id": "NL:F01",
-      "name": "Overtaking not allowed",
+      "name": "Overtaking prohibited",
       "image": {
         "file": "F/Nederlands_verkeersbord_F1.svg"
       }
@@ -602,7 +602,7 @@
     },
     {
       "id": "NL:F03",
-      "name": "Overtaking not allow for heavy goods vehicles",
+      "name": "Overtaking prohibited for heavy goods vehicles",
       "image": {
         "file": "F/Nederlands_verkeersbord_F3.svg"
       }
@@ -630,7 +630,7 @@
     },
     {
       "id": "NL:F07",
-      "name": "No U-turn allowed",
+      "name": "U-turn prohibited",
       "image": {
         "file": "F/Nederlands_verkeersbord_F7.svg"
       }
@@ -903,7 +903,7 @@
     },
     {
       "id": "NL:J24",
-      "name": "Bicycles and mopeds",
+      "name": "Cyclists and mopeds",
       "image": {
         "file": "J/Nederlands_verkeersbord_J24.svg"
       }
@@ -1046,6 +1046,244 @@
       "name": "Dead end",
       "image": {
         "file": "L/Nederlands_verkeersbord_L8.svg"
+      }
+    },
+    {
+      "id": "NL:OB01",
+      "name": "Only for horse riders",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB1.svg"
+      }
+    },
+    {
+      "id": "NL:OB02",
+      "name": "Only for cyclists",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB2.svg"
+      }
+    },
+    {
+      "id": "NL:OB03",
+      "name": "Only for mopeds",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB3.svg"
+      }
+    },
+    {
+      "id": "NL:OB04",
+      "name": "Only for cyclists and mopeds",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB4.svg"
+      }
+    },
+    {
+      "id": "NL:OB05",
+      "name": "Only for agricultural vehicles",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB5.svg"
+      }
+    },
+    {
+      "id": "NL:OB06",
+      "name": "Only for motorbikes",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB6.svg"
+      }
+    },
+    {
+      "id": "NL:OB07",
+      "name": "Only for motorbikes and cars",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB7.svg"
+      }
+    },
+    {
+      "id": "NL:OB08",
+      "name": "Only for motor vehicles with more than 2 wheels",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB8.svg"
+      }
+    },
+    {
+      "id": "NL:OB09",
+      "name": "Only for cars",
+      "image": {
+        "file": "OB/Netherlands_traffic_sign_OB9.svg"
+      }
+    },
+    {
+      "id": "NL:OB10",
+      "name": "Only for vehicles towing trailers",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB10.svg"
+      }
+    },
+    {
+      "id": "NL:OB11",
+      "name": "Only for heavy goods vehicles",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB11.svg"
+      }
+    },
+    {
+      "id": "NL:OB12",
+      "name": "Only for buses",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB12.svg"
+      }
+    },
+    {
+      "id": "NL:OB13",
+      "name": "Only for heavy goods vehicles and buses",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB13.svg"
+      }
+    },
+    {
+      "id": "NL:OB14",
+      "name": "Only for trams",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB14.svg"
+      }
+    },
+    {
+      "id": "NL:OB51",
+      "name": "Except for horse riders",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB51.svg"
+      }
+    },
+    {
+      "id": "NL:OB52",
+      "name": "Except for cyclists",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB52.svg"
+      }
+    },
+    {
+      "id": "NL:OB53",
+      "name": "Except for mopeds",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB53.svg"
+      }
+    },
+    {
+      "id": "NL:OB54",
+      "name": "Except for cyclists and mopeds",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB54.svg"
+      }
+    },
+    {
+      "id": "NL:OB55",
+      "name": "Except for agricultural vehicles",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB55.svg"
+      }
+    },
+    {
+      "id": "NL:OB56",
+      "name": "Except for motorbikes",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB56.svg"
+      }
+    },
+    {
+      "id": "NL:OB57",
+      "name": "Except for motorbikes and cars",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB57.svg"
+      }
+    },
+    {
+      "id": "NL:OB58",
+      "name": "Except for motor vehicles with more than 2 wheels",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB58.svg"
+      }
+    },
+    {
+      "id": "NL:OB59",
+      "name": "Except for cars",
+      "image": {
+        "file": "OB/Netherlands_traffic_sign_OB59.svg"
+      }
+    },
+    {
+      "id": "NL:OB60",
+      "name": "Except for vehicles towing trailers",
+      "image": {
+        "file": "OB/Netherlands_traffic_sign_OB60.svg"
+      }
+    },
+    {
+      "id": "NL:OB61",
+      "name": "Except for heavy goods vehicles",
+      "image": {
+        "file": "OB/Netherlands_traffic_sign_OB61.svg"
+      }
+    },
+    {
+      "id": "NL:OB62",
+      "name": "Except for buses",
+      "image": {
+        "file": "OB/Netherlands_traffic_sign_OB62.svg"
+      }
+    },
+    {
+      "id": "NL:OB63",
+      "name": "Except for heavy goods vehicles and buses",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB63.svg"
+      }
+    },
+    {
+      "id": "NL:OB64",
+      "name": "Except for trams",
+      "image": {
+        "file": "OB/Netherlands_traffic_sign_OB64.svg"
+      }
+    },
+    {
+      "id": "NL:OB65",
+      "name": "Except for quadricycles",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB65.svg"
+      }
+    },
+    {
+      "id": "NL:OB66",
+      "name": "Except for disabled vehicles",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB66.svg"
+      }
+    },
+    {
+      "id": "NL:OB108",
+      "name": "Except for destination traffic",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB108.svg"
+      }
+    },
+    {
+      "id": "NL:OB109",
+      "name": "Except for destination traffic to adjacent parcels",
+      "image": {
+        "file": "OB/Nederlands_verkeersbord_OB109.svg"
+      }
+    },
+    {
+      "id": "NL:OB504",
+      "name": "For spaces marked by the arrows",
+      "image": {
+        "file": "OB/Netherlands_traffic_sign_OB504.svg"
+      }
+    },
+    {
+      "id": "NL:OB705",
+      "name": "Go back",
+      "image": {
+        "file": "OB/Netherlands_traffic_sign_OB705.svg"
       }
     }
   ]

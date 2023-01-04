@@ -284,6 +284,328 @@
       "image": {
         "file": "B/Belgian_road_sign_B23.svg"
       }
+    },
+    {
+      "id": "BE:C1",
+      "name": "No entry, one-way street",
+      "image": {
+        "file": "C/Belgian_road_sign_C1.svg"
+      }
+    },
+    {
+      "id": "BE:C3",
+      "name": "Closed to all traffic",
+      "image": {
+        "file": "C/Belgian_road_sign_C3.svg"
+      }
+    },
+    {
+      "id": "BE:C5",
+      "name": "Closed for motor vehicles with more than 2 wheels",
+      "image": {
+        "file": "C/Belgian_road_sign_C5.svg"
+      }
+    },
+    {
+      "id": "BE:C7",
+      "name": "Closed for motorbikes",
+      "image": {
+        "file": "C/Belgian_road_sign_C7.svg"
+      }
+    },
+    {
+      "id": "BE:C9",
+      "name": "Closed for mopeds",
+      "image": {
+        "file": "C/Belgian_road_sign_C9.svg"
+      }
+    },
+    {
+      "id": "BE:C11",
+      "name": "Closed for cyclists",
+      "image": {
+        "file": "C/Belgian_road_sign_C11.svg"
+      }
+    },
+    {
+      "id": "BE:C13",
+      "name": "Closed for horse-drawn vehicles",
+      "image": {
+        "file": "C/Belgian_road_sign_C13.svg"
+      }
+    },
+    {
+      "id": "BE:C15",
+      "name": "Closed for horse riders",
+      "image": {
+        "file": "C/Belgian_road_sign_C15.svg"
+      }
+    },
+    {
+      "id": "BE:C17",
+      "name": "Closed for handcarts",
+      "image": {
+        "file": "C/Belgian_road_sign_C17.svg"
+      }
+    },
+    {
+      "id": "BE:C19",
+      "name": "Closed for pedestrians",
+      "image": {
+        "file": "C/Belgian_road_sign_C19.svg"
+      }
+    },
+    {
+      "id": "BE:C22",
+      "name": "Closed for buses",
+      "image": {
+        "file": "C/Belgian_road_sign_C22.svg"
+      }
+    },
+    {
+      "id": "BE:C24a",
+      "name": "Closed for vehicles carrying dangerous goods",
+      "image": {
+        "file": "C/Belgian_road_sign_C24a.svg"
+      }
+    },
+    {
+      "id": "BE:C24b",
+      "name": "Closed for vehicles carrying inflammable goods or explosives",
+      "image": {
+        "file": "C/Belgian_road_sign_C24b.svg"
+      }
+    },
+    {
+      "id": "BE:C24c",
+      "name": "Closed for vehicles carrying pollutants",
+      "image": {
+        "file": "C/Belgian_road_sign_C24c.svg"
+      }
+    },
+    {
+      "id": "BE:C31d",
+      "name": "Right turn prohibited",
+      "image": {
+        "file": "C/Belgian_road_sign_C31d.svg"
+      }
+    },
+    {
+      "id": "BE:C31e",
+      "name": "Left turn prohibited",
+      "image": {
+        "file": "C/Belgian_road_sign_C31e.svg"
+      }
+    },
+    {
+      "id": "BE:C33",
+      "name": "U-turn prohibited",
+      "image": {
+        "file": "C/Belgian_road_sign_C33.svg"
+      }
+    },
+    {
+      "id": "BE:C35",
+      "name": "Overtaking prohibited",
+      "image": {
+        "file": "C/Belgian_road_sign_C35.svg"
+      }
+    },
+    {
+      "id": "BE:C37",
+      "name": "Overtaking allowed",
+      "image": {
+        "file": "C/Belgian_road_sign_C37.svg"
+      }
+    },
+    {
+      "id": "BE:C39",
+      "name": "Overtaking prohibited for heavy goods vehicles",
+      "image": {
+        "file": "C/Belgian_road_sign_C39.svg"
+      }
+    },
+    {
+      "id": "BE:C41",
+      "name": "Overtaking allowed for heavy goods vehicles",
+      "image": {
+        "file": "C/Belgian_road_sign_C41.svg"
+      }
+    },
+    {
+      "id": "BE:C46",
+      "name": "End of prohibitions from signs",
+      "image": {
+        "file": "C/Belgian_road_sign_C46.svg"
+      }
+    },
+    {
+      "id": "BE:C47",
+      "name": "Toll booth",
+      "image": {
+        "file": "C/Belgian_road_sign_C47.svg"
+      }
+    },
+    {
+      "id": "BE:C48",
+      "name": "Cruise control prohibited",
+      "image": {
+        "file": "C/Belgian_road_sign_C48.svg"
+      }
+    },
+    {
+      "id": "BE:C49",
+      "name": "Cruise control allowed",
+      "image": {
+        "file": "C/Belgian_road_sign_C49.svg"
+      }
+    },
+    {
+      "id": "BE:D05",
+      "name": "Roundabout",
+      "image": {
+        "file": "D/Belgian_road_sign_D05.svg"
+      }
+    },
+    {
+      "id": "BE:D07",
+      "name": "Mandatory cycleway",
+      "image": {
+        "file": "D/Belgian_road_sign_D07.svg"
+      }
+    },
+    {
+      "id": "BE:D09",
+      "name": "Segregated shared cycleway",
+      "image": {
+        "file": "D/Belgian_road_sign_D09.svg"
+      }
+    },
+    {
+      "id": "BE:D10",
+      "name": "Unsegregated shared cycleway",
+      "image": {
+        "file": "D/Belgian_road_sign_D10.svg"
+      }
+    },
+    {
+      "id": "BE:D11",
+      "name": "Footpath",
+      "image": {
+        "file": "D/Belgian_road_sign_D11.svg"
+      }
+    },
+    {
+      "id": "BE:D13",
+      "name": "Mandatory bridleway",
+      "image": {
+        "file": "D/Belgian_road_sign_D13.svg"
+      }
+    },
+    {
+      "id": "BE:E1",
+      "name": "No parking allowed",
+      "image": {
+        "file": "E/Belgian_road_sign_E1.svg"
+      }
+    },
+    {
+      "id": "BE:E3",
+      "name": "No stopping allowed",
+      "image": {
+        "file": "E/Belgian_road_sign_E3.svg"
+      }
+    },
+    {
+      "id": "BE:E5",
+      "name": "Parking prohibited from 1st to 15th of the month",
+      "image": {
+        "file": "E/Belgian_road_sign_E5.svg"
+      }
+    },
+    {
+      "id": "BE:E7",
+      "name": "Parking prohibited from 16th to last day of the month",
+      "image": {
+        "file": "E/Belgian_road_sign_E7.svg"
+      }
+    },
+    {
+      "id": "BE:E9a",
+      "name": "Parking",
+      "image": {
+        "file": "E/Belgian_road_sign_E9a.svg"
+      }
+    },
+    {
+      "id": "BE:E9a;BE:GVIIb",
+      "name": "Parking, with parking disc",
+      "image": {
+        "file": "E/Belgian_road_sign_E9a_Parkeerschijf.svg"
+      }
+    },
+    {
+      "id": "BE:E9b",
+      "name": "Parking for cars and motorcycles",
+      "image": {
+        "file": "E/Belgian_road_sign_E9b.svg"
+      }
+    },
+    {
+      "id": "BE:E9c",
+      "name": "Parking for heavy goods vehicles",
+      "image": {
+        "file": "E/Belgian_road_sign_E9c.svg"
+      }
+    },
+    {
+      "id": "BE:E9d",
+      "name": "Parking for buses",
+      "image": {
+        "file": "E/Belgian_road_sign_E9d.svg"
+      }
+    },
+    {
+      "id": "BE:E9e",
+      "name": "Parking on pavement",
+      "image": {
+        "file": "E/Belgian_road_sign_E9e.svg"
+      }
+    },
+    {
+      "id": "BE:E9f",
+      "name": "Parking partly on pavement",
+      "image": {
+        "file": "E/Belgian_road_sign_E9f.svg"
+      }
+    },
+    {
+      "id": "BE:E9g",
+      "name": "Parking on roadway",
+      "image": {
+        "file": "E/Belgian_road_sign_E9g.svg"
+      }
+    },
+    {
+      "id": "BE:E9h",
+      "name": "Parking for motorhomes",
+      "image": {
+        "file": "E/Belgian_road_sign_E9h.svg"
+      }
+    },
+    {
+      "id": "BE:E9i",
+      "name": "Parking for motorcycles",
+      "image": {
+        "file": "E/Belgian_road_sign_E9i.svg"
+      }
+    },
+    {
+      "id": "BE:E11",
+      "name": "Parking allowed on side with odd-numbered house numbers from 1st to 15th of the month, even-numbered house numbers from 16th to last day of the month. Applies to whole built-up area",
+      "image": {
+        "file": "E/Belgian_road_sign_E11.svg"
+      }
     }
   ]
 }

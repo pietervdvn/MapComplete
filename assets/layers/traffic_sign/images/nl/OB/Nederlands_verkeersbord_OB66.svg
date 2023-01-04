@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1" id="Netherlands_traffic_sign_OB66" width="300" height="150" viewBox="0 0 300 150"> 
+ <g font-family="Verdana,Arial,Helvetica,Sans,Liberation Sans,sans-serif">
+	<rect id="white_surface" width="300" height="150" fill="#f7fbf5"></rect>
+        <rect id="border" x="2" y="2" rx="10" ry="10" width="296" height="146" stroke="gray" stroke-width="4px" fill="none"/>
+	<text font-weight="bold" font-size="36" >
+		<tspan x="8%" y="28%" alignment-baseline="centre">uitgezonderd</tspan>
+		<tspan x="8%" y="58%" alignment-baseline="centre">gehandicapten-</tspan>
+		<tspan x="8%" y="88%" alignment-baseline="centre">voertuigen</tspan>
+	</text>
+ </g>
+</svg>

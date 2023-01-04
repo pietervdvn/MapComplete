@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="Netherlands_traffic_sign_OB60" width="300" height="150" viewBox="0 0 300 150" version="1.1">
+ <g font-family="Arial,Helvetica,Sans,Liberation Sans,sans-serif">
+	<rect id="surface" width="300" height="150" fill="#f7fbf5"> </rect>
+	<rect id="border" x="5" y="5" rx="10" ry="10" width="290" height="140" stroke="gray" stroke-width="3px" fill="none"/>
+	<text textLength="260" lengthAdjust="spacingAndGlyphs">
+		<tspan font-weight="bold" font-size="32px" x="50%" y="25%" alignment-baseline="centre" text-anchor="middle">uitgezonderd</tspan>
+	</text>
+	<g id="trailer" transform="scale(0.7) translate(80, -20)">
+		<path fill="#2a2d2f" d="M 82,186 L 218,186 L 218,111 L 82,111 L 82,186 z"/>
+		<path fill="#2a2d2f" d="M 82,185 v-4 h-50 v4 z"/>
+		<circle cx="149" cy="185" r="24" stroke="#f7fbf5" stroke-width="4" fill="black"/>
+	</g>
+ </g>
+</svg>

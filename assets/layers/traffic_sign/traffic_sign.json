@@ -524,6 +524,558 @@
           }
         },
         {
+          "if": "traffic_sign=BE:C1",
+          "then": {
+            "en": "No entry, one-way street",
+            "nl": "Verboden in te rijden, eenrichtingsweg"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C1.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C3",
+          "then": {
+            "en": "Closed to all traffic",
+            "nl": "Gesloten voor alle verkeer"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C3.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C5",
+          "then": {
+            "en": "Closed for motor vehicles with more than 2 wheels",
+            "nl": "Gesloten voor motorvoertuigen met meer dan 2 wielen"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C5.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C7",
+          "then": {
+            "en": "Closed for motorbikes",
+            "nl": "Gesloten voor motoren"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C7.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C9",
+          "then": {
+            "en": "Closed for mopeds",
+            "nl": "Gesloten voor bromfietsen"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C9.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C11",
+          "then": {
+            "en": "Closed for cyclists",
+            "nl": "Gesloten voor fietsen"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C11.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C13",
+          "then": {
+            "en": "Closed for horse-drawn vehicles",
+            "nl": "Gesloten voor paardengeleide voertuigen"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C13.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C15",
+          "then": {
+            "en": "Closed for horse riders",
+            "nl": "Gesloten voor ruiters"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C15.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C17",
+          "then": {
+            "en": "Closed for handcarts",
+            "nl": "Gesloten voor handkarren"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C17.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C19",
+          "then": {
+            "en": "Closed for pedestrians",
+            "nl": "Gesloten voor voetgangers"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C19.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C22",
+          "then": {
+            "en": "Closed for buses",
+            "nl": "Gesloten voor bussen"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C22.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C24a",
+          "then": {
+            "en": "Closed for vehicles carrying dangerous goods",
+            "nl": "Gesloten voor voertuigen met gevaarlijke stoffen"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C24a.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C24b",
+          "then": {
+            "en": "Closed for vehicles carrying inflammable goods or explosives",
+            "nl": "Gesloten voor voertuigen met ontvlambare of explosieve stoffen"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C24b.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C24c",
+          "then": {
+            "en": "Closed for vehicles carrying pollutants",
+            "nl": "Gesloten voor voertuigen met vervuilende stoffen"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C24c.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C31d",
+          "then": {
+            "en": "Right turn prohibited",
+            "nl": "Rechtsaf slaan verboden"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C31d.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C31e",
+          "then": {
+            "en": "Left turn prohibited",
+            "nl": "Linksaf slaan verboden"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C31e.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C33",
+          "then": {
+            "en": "U-turn prohibited",
+            "nl": "Niet toegestaan om te keren"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C33.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C35",
+          "then": {
+            "en": "Overtaking prohibited",
+            "nl": "Inhalen niet toegestaan"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C35.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C37",
+          "then": {
+            "en": "Overtaking allowed",
+            "nl": "Inhalen toegestaan"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C37.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C39",
+          "then": {
+            "en": "Overtaking prohibited for heavy goods vehicles",
+            "nl": "Inhalen niet toegestaan voor vrachtwagens"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C39.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C41",
+          "then": {
+            "en": "Overtaking allowed for heavy goods vehicles",
+            "nl": "Inhalen toegestaan voor vrachtwagens"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C41.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C46",
+          "then": {
+            "en": "End of prohibitions from signs",
+            "nl": "Einde van verboden van verkeersborden"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C46.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C47",
+          "then": {
+            "en": "Toll booth",
+            "nl": "Tolweg"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C47.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C48",
+          "then": {
+            "en": "Cruise control prohibited",
+            "nl": "Cruise control verboden"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C48.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:C49",
+          "then": {
+            "en": "Cruise control allowed",
+            "nl": "Cruise control toegestaan"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C49.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:D05",
+          "then": {
+            "en": "Roundabout",
+            "nl": "Rotonde"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/D/Belgian_road_sign_D05.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:D07",
+          "then": {
+            "en": "Mandatory cycleway",
+            "nl": "Verplicht fietspad"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/D/Belgian_road_sign_D07.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:D09",
+          "then": {
+            "en": "Segregated shared cycleway",
+            "nl": "Gescheiden fietspad"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/D/Belgian_road_sign_D09.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:D10",
+          "then": {
+            "en": "Unsegregated shared cycleway",
+            "nl": "Gedeeld fietspad"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/D/Belgian_road_sign_D10.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:D11",
+          "then": {
+            "en": "Footpath",
+            "nl": "Voetpad"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/D/Belgian_road_sign_D11.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:D13",
+          "then": {
+            "en": "Mandatory bridleway",
+            "nl": "Verplicht ruiterpad"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/D/Belgian_road_sign_D13.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:E1",
+          "then": {
+            "en": "No parking allowed",
+            "nl": "Parkeren verboden"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E1.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:E3",
+          "then": {
+            "en": "No stopping allowed",
+            "nl": "Stilstaan verboden"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E3.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:E5",
+          "then": {
+            "en": "Parking prohibited from 1st to 15th of the month",
+            "nl": "Parkeren verboden van 1ste tot 15de van de maand"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E5.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:E7",
+          "then": {
+            "en": "Parking prohibited from 16th to last day of the month",
+            "nl": "Parkeren verboden van 16de tot laatste dag van de maand"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E7.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:E9a",
+          "then": {
+            "en": "Parking",
+            "nl": "Parkeerplaats"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9a.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:E9a;BE:GVIIb",
+          "then": {
+            "en": "Parking, with parking disc",
+            "nl": "Parkeerplaats, met parkeerschijf"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9a_Parkeerschijf.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:E9b",
+          "then": {
+            "en": "Parking for cars and motorcycles",
+            "nl": "Parkeerplaats voor auto's en motoren"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9b.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:E9c",
+          "then": {
+            "en": "Parking for heavy goods vehicles",
+            "nl": "Parkeerplaats voor vrachtwagens"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9c.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:E9d",
+          "then": {
+            "en": "Parking for buses",
+            "nl": "Parkeerplaats voor bussen"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9d.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:E9e",
+          "then": {
+            "en": "Parking on pavement",
+            "nl": "Parkeren op trottoir"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9e.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:E9f",
+          "then": {
+            "en": "Parking partly on pavement",
+            "nl": "Parkeren gedeeltelijk op trottoir"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9f.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:E9g",
+          "then": {
+            "en": "Parking on roadway",
+            "nl": "Parkeren op rijbaan"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9g.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:E9h",
+          "then": {
+            "en": "Parking for motorhomes",
+            "nl": "Parkeerplaats voor campers"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9h.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:E9i",
+          "then": {
+            "en": "Parking for motorcycles",
+            "nl": "Parkeerplaats voor motoren"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9i.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=BE:E11",
+          "then": {
+            "en": "Parking allowed on side with odd-numbered house numbers from 1st to 15th of the month, even-numbered house numbers from 16th to last day of the month. Applies to whole built-up area",
+            "nl": "Parkeren toegelaten aan zijde met oneven huisnummers van 1ste tot 15de van de maand, even huisnummers van 16de tot laatste dag van de maand. Is van toepassing op volledige bebouwde kom"
+          },
+          "hideInAnswer": "_country!=be",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E11.svg",
+            "class": "large"
+          }
+        },
+        {
           "if": "traffic_sign=NL:A01-5",
           "then": {
             "en": "Maximum speed of 5 km/h",
@@ -1126,7 +1678,7 @@
         {
           "if": "traffic_sign=NL:C09",
           "then": {
-            "en": "Closed for motor vehicles with a top speed less than 25km/h (agricultural vehicles), mopeds, mofas, bicycles and disabled vehicles",
+            "en": "Closed for motor vehicles with a top speed less than 25km/h (agricultural vehicles), mopeds, mofas, cyclists and disabled vehicles",
             "nl": "Gesloten voor motorvoertuigen met een topsnelheid van minder dan 25km/h (landbouwvoertuigen), bromfietsen, snorfietsen, fietsen en gehandicaptenvoertuigen"
           },
           "hideInAnswer": "_country!=nl",
@@ -1186,7 +1738,7 @@
         {
           "if": "traffic_sign=NL:C14",
           "then": {
-            "en": "Closed for bicycles",
+            "en": "Closed for cyclists",
             "nl": "Gesloten voor fietsen"
           },
           "hideInAnswer": "_country!=nl",
@@ -1198,7 +1750,7 @@
         {
           "if": "traffic_sign=NL:C15",
           "then": {
-            "en": "Closed for mopeds, mofas, bicycles and disabled vehicles",
+            "en": "Closed for mopeds, mofas, cyclists and disabled vehicles",
             "nl": "Gesloten voor bromfietsen, snorfietsen, fietsen en gehandicaptenvoertuigen"
           },
           "hideInAnswer": "_country!=nl",
@@ -1522,7 +2074,7 @@
         {
           "if": "traffic_sign=NL:F01",
           "then": {
-            "en": "Overtaking not allowed",
+            "en": "Overtaking prohibited",
             "nl": "Inhalen niet toegestaan"
           },
           "hideInAnswer": "_country!=nl",
@@ -1546,7 +2098,7 @@
         {
           "if": "traffic_sign=NL:F03",
           "then": {
-            "en": "Overtaking not allow for heavy goods vehicles",
+            "en": "Overtaking prohibited for heavy goods vehicles",
             "nl": "Inhalen niet toegestaan voor vrachtwagens"
           },
           "hideInAnswer": "_country!=nl",
@@ -1594,7 +2146,7 @@
         {
           "if": "traffic_sign=NL:F07",
           "then": {
-            "en": "No U-turn allowed",
+            "en": "U-turn prohibited",
             "nl": "Niet toegestaan om te keren"
           },
           "hideInAnswer": "_country!=nl",
@@ -2062,7 +2614,7 @@
         {
           "if": "traffic_sign=NL:J24",
           "then": {
-            "en": "Bicycles and mopeds",
+            "en": "Cyclists and mopeds",
             "nl": "Fietsers en bromfietsers"
           },
           "hideInAnswer": "_country!=nl",
@@ -2310,6 +2862,414 @@
             "path": "./assets/layers/traffic_sign/images/nl/L/Nederlands_verkeersbord_L8.svg",
             "class": "large"
           }
+        },
+        {
+          "if": "traffic_sign=NL:OB01",
+          "then": {
+            "en": "Only for horse riders",
+            "nl": "Alleen voor ruiters"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB1.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB02",
+          "then": {
+            "en": "Only for cyclists",
+            "nl": "Alleen voor fietsers"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB2.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB03",
+          "then": {
+            "en": "Only for mopeds",
+            "nl": "Alleen voor bromfietsers"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB3.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB04",
+          "then": {
+            "en": "Only for cyclists and mopeds",
+            "nl": "Alleen voor fietsers en bromfietsers"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB4.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB05",
+          "then": {
+            "en": "Only for agricultural vehicles",
+            "nl": "Alleen voor landbouwvoertuigen"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB5.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB06",
+          "then": {
+            "en": "Only for motorbikes",
+            "nl": "Alleen voor motoren"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB6.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB07",
+          "then": {
+            "en": "Only for motorbikes and cars",
+            "nl": "Alleen voor motoren en auto's"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB7.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB08",
+          "then": {
+            "en": "Only for motor vehicles with more than 2 wheels",
+            "nl": "Alleen voor motorvoertuigen met meer dan 2 wielen"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB8.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB09",
+          "then": {
+            "en": "Only for cars",
+            "nl": "Alleen voor auto's"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB9.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB10",
+          "then": {
+            "en": "Only for vehicles towing trailers",
+            "nl": "Alleen voor voertuigen met aanhangwagen"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB10.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB11",
+          "then": {
+            "en": "Only for heavy goods vehicles",
+            "nl": "Alleen voor vrachtwagens"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB11.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB12",
+          "then": {
+            "en": "Only for buses",
+            "nl": "Alleen voor bussen"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB12.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB13",
+          "then": {
+            "en": "Only for heavy goods vehicles and buses",
+            "nl": "Alleen voor vrachtwagens en bussen"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB13.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB14",
+          "then": {
+            "en": "Only for trams",
+            "nl": "Alleen voor trams"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB14.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB51",
+          "then": {
+            "en": "Except for horse riders",
+            "nl": "Uitgezonderd ruiters"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB51.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB52",
+          "then": {
+            "en": "Except for cyclists",
+            "nl": "Uitgezonderd fietsers"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB52.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB53",
+          "then": {
+            "en": "Except for mopeds",
+            "nl": "Uitgezonderd bromfietsers"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB53.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB54",
+          "then": {
+            "en": "Except for cyclists and mopeds",
+            "nl": "Uitgezonderd (brom-)fietsers"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB54.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB55",
+          "then": {
+            "en": "Except for agricultural vehicles",
+            "nl": "Uitgezonderd landbouwvoertuigen"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB55.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB56",
+          "then": {
+            "en": "Except for motorbikes",
+            "nl": "Uitgezonderd motoren"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB56.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB57",
+          "then": {
+            "en": "Except for motorbikes and cars",
+            "nl": "Uitgezonderd motoren en auto's"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB57.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB58",
+          "then": {
+            "en": "Except for motor vehicles with more than 2 wheels",
+            "nl": "Uitgezonderd motorvoertuigen met meer dan 2 wielen"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB58.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB59",
+          "then": {
+            "en": "Except for cars",
+            "nl": "Uitgezonderd auto's"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB59.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB60",
+          "then": {
+            "en": "Except for vehicles towing trailers",
+            "nl": "Uitgezonderd voertuigen met aanhangwagen"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB60.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB61",
+          "then": {
+            "en": "Except for heavy goods vehicles",
+            "nl": "Uitgezonderd vrachtwagens"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB61.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB62",
+          "then": {
+            "en": "Except for buses",
+            "nl": "Uitgezonderd bussen"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB62.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB63",
+          "then": {
+            "en": "Except for heavy goods vehicles and buses",
+            "nl": "Uitgezonderd vrachtwagens en bussen"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB63.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB64",
+          "then": {
+            "en": "Except for trams",
+            "nl": "Uitgezonderd trams"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB64.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB65",
+          "then": {
+            "en": "Except for quadricycles",
+            "nl": "Uitgezonderd brommobielen"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB65.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB66",
+          "then": {
+            "en": "Except for disabled vehicles",
+            "nl": "Uitgezonderd gehandicaptenvoertuigen"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB66.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB108",
+          "then": {
+            "en": "Except for destination traffic",
+            "nl": "Uitgezonderd bestemmingsverkeer"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB108.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB109",
+          "then": {
+            "en": "Except for destination traffic to adjacent parcels",
+            "nl": "Uitgezonderd bestemmingsverkeer naar aangrenzende percelen"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB109.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB504",
+          "then": {
+            "en": "For spaces marked by the arrows",
+            "nl": "Voor plaatsen aangegeven door de pijlen"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB504.svg",
+            "class": "large"
+          }
+        },
+        {
+          "if": "traffic_sign=NL:OB705",
+          "then": {
+            "en": "Go back",
+            "nl": "Ga terug"
+          },
+          "hideInAnswer": "_country!=nl",
+          "icon": {
+            "path": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB705.svg",
+            "class": "large"
+          }
         }
       ]
     },
@@ -2537,6 +3497,190 @@
           {
             "if": "traffic_sign~BE:B23(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/be/B/Belgian_road_sign_B23.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C1(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C1.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C3(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C3.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C5(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C5.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C7(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C7.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C9(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C9.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C11(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C11.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C13(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C13.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C15(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C15.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C17(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C17.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C19(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C19.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C22(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C22.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C24a(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C24a.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C24b(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C24b.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C24c(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C24c.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C31d(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C31d.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C31e(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C31e.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C33(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C33.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C35(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C35.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C37(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C37.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C39(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C39.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C41(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C41.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C46(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C46.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C47(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C47.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C48(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C48.svg"
+          },
+          {
+            "if": "traffic_sign~BE:C49(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/C/Belgian_road_sign_C49.svg"
+          },
+          {
+            "if": "traffic_sign~BE:D05(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/D/Belgian_road_sign_D05.svg"
+          },
+          {
+            "if": "traffic_sign~BE:D07(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/D/Belgian_road_sign_D07.svg"
+          },
+          {
+            "if": "traffic_sign~BE:D09(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/D/Belgian_road_sign_D09.svg"
+          },
+          {
+            "if": "traffic_sign~BE:D10(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/D/Belgian_road_sign_D10.svg"
+          },
+          {
+            "if": "traffic_sign~BE:D11(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/D/Belgian_road_sign_D11.svg"
+          },
+          {
+            "if": "traffic_sign~BE:D13(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/D/Belgian_road_sign_D13.svg"
+          },
+          {
+            "if": "traffic_sign~BE:E1(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E1.svg"
+          },
+          {
+            "if": "traffic_sign~BE:E3(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E3.svg"
+          },
+          {
+            "if": "traffic_sign~BE:E5(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E5.svg"
+          },
+          {
+            "if": "traffic_sign~BE:E7(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E7.svg"
+          },
+          {
+            "if": "traffic_sign~BE:E9a(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9a.svg"
+          },
+          {
+            "if": "traffic_sign~BE:E9a;BE:GVIIb(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9a_Parkeerschijf.svg"
+          },
+          {
+            "if": "traffic_sign~BE:E9b(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9b.svg"
+          },
+          {
+            "if": "traffic_sign~BE:E9c(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9c.svg"
+          },
+          {
+            "if": "traffic_sign~BE:E9d(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9d.svg"
+          },
+          {
+            "if": "traffic_sign~BE:E9e(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9e.svg"
+          },
+          {
+            "if": "traffic_sign~BE:E9f(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9f.svg"
+          },
+          {
+            "if": "traffic_sign~BE:E9g(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9g.svg"
+          },
+          {
+            "if": "traffic_sign~BE:E9h(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9h.svg"
+          },
+          {
+            "if": "traffic_sign~BE:E9i(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E9i.svg"
+          },
+          {
+            "if": "traffic_sign~BE:E11(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/be/E/Belgian_road_sign_E11.svg"
           },
           {
             "if": "traffic_sign~NL:A01-5(;.*)*$",
@@ -3133,6 +4277,142 @@
           {
             "if": "traffic_sign~NL:L08(;.*)*$",
             "then": "./assets/layers/traffic_sign/images/nl/L/Nederlands_verkeersbord_L8.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB01(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB1.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB02(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB2.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB03(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB3.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB04(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB4.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB05(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB5.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB06(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB6.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB07(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB7.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB08(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB8.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB09(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB9.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB10(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB10.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB11(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB11.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB12(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB12.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB13(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB13.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB14(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB14.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB51(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB51.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB52(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB52.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB53(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB53.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB54(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB54.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB55(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB55.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB56(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB56.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB57(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB57.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB58(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB58.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB59(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB59.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB60(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB60.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB61(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB61.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB62(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB62.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB63(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB63.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB64(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB64.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB65(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB65.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB66(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB66.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB108(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB108.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB109(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Nederlands_verkeersbord_OB109.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB504(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB504.svg"
+          },
+          {
+            "if": "traffic_sign~NL:OB705(;.*)*$",
+            "then": "./assets/layers/traffic_sign/images/nl/OB/Netherlands_traffic_sign_OB705.svg"
           }
         ]
       },
