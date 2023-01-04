@@ -115,6 +115,10 @@ export default class ShowDataLayerImplementation {
         })
 
         this._selectedElement?.addCallbackAndRunD((selected) => {
+            if (selected === undefined) {
+                ScrollableFullScreen.collapse()
+                return
+            }
             self.openPopupOfSelectedElement(selected)
         })
 
