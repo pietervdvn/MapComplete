@@ -38,9 +38,6 @@ export default class ElementsState extends FeatureSwitchState {
     constructor(layoutToUse: LayoutConfig) {
         super(layoutToUse)
 
-        this.selectedElement.addCallbackAndRun((e) => {
-            console.trace("Selected element is now", e)
-        })
         function localStorageSynced(
             key: string,
             deflt: number,
