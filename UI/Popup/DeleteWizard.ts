@@ -176,6 +176,13 @@ export default class DeleteWizard extends Toggle {
             undefined,
             isShown
         )
+
+        const self = this
+        confirm.addCallbackAndRunD((dialogIsOpened) => {
+            if (dialogIsOpened) {
+                self.ScrollIntoView()
+            }
+        })
     }
 
     private static constructConfirmButton(
