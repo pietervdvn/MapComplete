@@ -234,7 +234,7 @@
                     "special": {
                         "render_list_item": "Deze geldautomaat heeft spraak in {language():font-bold}",
                         "question": "In welke taal is de srpaak van deze geldautomaat?",
-                        "render_single_language": "Deze automaat heeft spraak in {language():font-bold)"
+                        "render_single_language": "Deze automaat heeft spraak in {language():font-bold}"
                     }
                 }
             },
@@ -2644,6 +2644,9 @@
                 "mappings": {
                     "0": {
                         "then": "Een klimboulder - een enkele rots of klif met één of enkele klimroutes die veilig zonder touw kunnen worden beklommen"
+                    },
+                    "1": {
+                        "then": "Een klimzone - een enkele rots of klif met klimroutes"
                     }
                 }
             },
@@ -2659,7 +2662,6 @@
         },
         "title": {
             "mappings": {
-                "0": {},
                 "1": {
                     "then": "Klimsite <b>{name}</b>"
                 },
@@ -2668,6 +2670,9 @@
                 },
                 "3": {
                     "then": "Klimgelegenheid <b>{name}</b>"
+                },
+                "0": {
+                    "then": "Klimrots of klimzone <b>{name}</b>"
                 }
             },
             "render": "Klimgelegenheid"
@@ -2721,6 +2726,28 @@
             },
             "name": {
                 "question": "Wat is de naam van dit Klimzaal?"
+            },
+            "shoe_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Klimschoenen kunnen hier gehuurd worden"
+                    },
+                    "1": {
+                        "then": "Hier kunnen <b>geen</b> klimschoenen gehuurd worden"
+                    }
+                },
+                "question": "Kunnen hier klimschoenen gehuurd worden?"
+            },
+            "harness_rental": {
+                "question": "Kan een klimgordel hier gehuurd worden?",
+                "mappings": {
+                    "0": {
+                        "then": "Een klimgordel kan hier gehuurd worden"
+                    },
+                    "1": {
+                        "then": "Hier kunnen <b>geen</b> klimgordels gehuurd worden"
+                    }
+                }
             }
         },
         "title": {
@@ -2788,7 +2815,11 @@
                     "0": {
                         "then": "Deze route heeft geen bouten"
                     }
-                }
+                },
+                "render": "Deze route heeft {climbing:bolts} klimbouten. <div class='subtle'>Dit is zonder het relay mee te tellen. Een klimmer heeft dus minstens {climbing:bolts} klimsetjes nodig om boven te raken</div>"
+            },
+            "Rock type via embedded feature": {
+                "render": "De steensoort is {_embedding_features_with_rock:rock} zoals vermeld op <a href='#{_embedding_features_with_rock:id}'>de omliggende klimzone</a>"
             }
         },
         "title": {
@@ -2798,7 +2829,8 @@
                 }
             },
             "render": "Klimroute"
-        }
+        },
+        "description": "Een klimroute en de eigenschappen van deze klimroute. Sommige eigenschappen worden afgeleid van omliggende kaart-objecten"
     },
     "crab_address": {
         "tagRenderings": {
@@ -4324,7 +4356,7 @@
         "name": "Jouw afgelegde route",
         "tagRenderings": {
             "Privacy notice": {
-                "render": "Dit is waar je was sinds je deze website hebt geopened. Dit is enkel zichtbaar voor jou en niemand anders, je locatie wordt niet verstuurd"
+                "render": "Dit is waar je was sinds je deze website hebt geopend. Dit is enkel zichtbaar voor jou en niemand anders. Je locatie wordt niet verstuurd buiten je apparaat."
             }
         }
     },
@@ -7364,6 +7396,12 @@
                     },
                     "4": {
                         "then": "Publiek toegankelijk"
+                    },
+                    "1": {
+                        "then": "Enkel toegankelijk voor klanten van de voorziening"
+                    },
+                    "2": {
+                        "then": "Niet toegankelijk, ook niet voor klanten van de voorziening"
                     }
                 },
                 "question": "Zijn deze toiletten publiek toegankelijk?",
@@ -7401,6 +7439,11 @@
             "wheelchair-door-width": {
                 "question": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?",
                 "render": "De deur naar de rolstoeltoegankelijke toilet is {canonical(toilets:door:width)} wide"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wanneer is de voorziening geopend waarin deze toiletten zich bevinden?"
+                }
             }
         },
         "title": {
@@ -7408,7 +7451,8 @@
                 "0": {
                     "then": "Toilet bij {name}"
                 }
-            }
+            },
+            "render": "Toilet in een voorziening"
         },
         "units": {
             "0": {
@@ -7421,7 +7465,9 @@
                     }
                 }
             }
-        }
+        },
+        "description": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen.",
+        "name": "Toilet in een voorziening"
     },
     "trail": {
         "description": "Aangeduide wandeltochten",
