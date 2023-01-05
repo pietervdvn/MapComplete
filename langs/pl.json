@@ -1,17 +1,19 @@
 {
     "centerMessage": {
-        "loadingData": "Ładowanie danych…",
+        "loadingData": "Wczytywanie danych…",
         "ready": "Zrobione!",
-        "retrying": "Ładowanie danych nie powiodło się. Spróbujemy ponownie za {count} sekund…",
+        "retrying": "Wczytywanie danych nie powiodło się. Spróbujemy ponownie za {count} sekund…",
         "zoomIn": "Przybliż żeby zobaczyć lub edytować"
     },
     "delete": {
         "cancel": "Anuluj",
         "cannotBeDeleted": "Ten obiekt nie może zostać usunięty",
         "delete": "Usuń",
-        "explanations": {},
         "isDeleted": "Ten obiekt został usunięty",
-        "reasons": {}
+        "loading": "Sprawdzanie właściwości w celu sprawdzenia, czy tę funkcję można usunąć.",
+        "explanations": {
+            "hardDelete": "Ta funkcja zostanie usunięta w OpenStreetMap. Może zostać odzyskana przez doświadczonego współtwórcę"
+        }
     },
     "favourite": {
         "loginNeeded": "<h3>Zaloguj się</h3>Osobisty układ jest dostępny tylko dla użytkowników OpenStreetMap",
@@ -25,36 +27,27 @@
             "addNew": "Dodaj nową {category} tutaj",
             "confirmButton": "Dodaj tutaj {category}.<br><div class=\"alert\">Twój dodatek jest widoczny dla wszystkich</div>",
             "confirmIntro": "<h3>Czy dodać tutaj {title}?</h3> Punkt, który tutaj utworzysz, będzie <b>widoczny dla wszystkich<b>. Proszę, dodawaj rzeczy do mapy tylko wtedy, gdy naprawdę istnieją. Wiele aplikacji korzysta z tych danych.</b></b>",
-            "import": {},
             "intro": "Kliknąłeś gdzieś, gdzie nie są jeszcze znane żadne dane.<br>",
             "layerNotEnabled": "Warstwa {layer} nie jest włączona. Włącz tę warstwę, aby dodać punkt",
             "openLayerControl": "Otwórz okno sterowania warstwą",
             "pleaseLogin": "Zaloguj się, aby dodać nowy punkt",
-            "stillLoading": "Dane wciąż się ładują. Poczekaj chwilę, zanim dodasz nowy punkt.",
+            "stillLoading": "Dane nadal są wczytywane. Poczekaj chwilę, zanim dodasz nową funkcję.",
             "title": "Czy dodać nowy punkt?",
             "zoomInFurther": "Powiększ jeszcze bardziej, aby dodać punkt."
-        },
-        "apply_button": {},
-        "attribution": {
-            "iconAttribution": {}
         },
         "backgroundMap": "Tło mapy",
         "cancel": "Anuluj",
         "customThemeIntro": "<h3>Motywy własne</h3>Są to wcześniej odwiedzone motywy stworzone przez użytkowników.",
-        "download": {},
         "fewChangesBefore": "Proszę odpowiedzieć na kilka pytań dotyczących istniejących punktów przed dodaniem nowego punktu.",
         "getStartedLogin": "Zaloguj się za pomocą OpenStreetMap, aby rozpocząć",
         "getStartedNewAccount": " lub <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">utwórz nowe konto</a>",
         "goToInbox": "Otwórz skrzynkę odbiorczą",
-        "histogram": {},
         "layerSelection": {
             "title": "Wybierz warstwy",
             "zoomInToSeeThisLayer": "Powiększ, aby zobaczyć tę warstwę"
         },
-        "levelSelection": {},
         "loginToStart": "Zaloguj się, aby odpowiedzieć na to pytanie",
         "loginWithOpenStreetMap": "Zaloguj z OpenStreetMap",
-        "morescreen": {},
         "nameInlineQuestion": "Nazwa tej {category} to $$$",
         "noNameCategory": "{category} bez nazwy",
         "noTagsSelected": "Nie wybrano tagów",
@@ -71,10 +64,10 @@
             "opensAt": "z",
             "ph_closed": "zamknięte",
             "ph_not_known": " ",
-            "ph_open": "otwarte"
+            "ph_open": "otwarte",
+            "loadingCountry": "Określanie kraju…"
         },
         "osmLinkTooltip": "Zobacz ten obiekt na OpenStreetMap, aby uzyskać historię i więcej opcji edycji",
-        "pdf": {},
         "pickLanguage": "Wybierz język: ",
         "questions": {
             "emailIs": "Adres e-mail {category} to <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
@@ -133,10 +126,19 @@
             "wednesday": "Środa"
         },
         "welcomeBack": "Jesteś zalogowany, witaj z powrotem!",
-        "welcomeExplanation": {},
+        "loadingTheme": "Wczytywanie {theme}…",
+        "histogram": {
+            "error_loading": "Nie można wczytać histogramu"
+        },
+        "uploadGpx": {
+            "uploading": "Przesyłanie śladu…",
+            "intro0": "Przesyłając swój ślad, OpenStreetMap.org zachowa pełną kopię śladu."
+        },
         "wikipedia": {
-            "previewbox": {}
-        }
+            "failed": "Wczytywanie wpisu z Wikipedii nie powiodło się",
+            "loading": "Wczytywanie Wikipedii…"
+        },
+        "loading": "Wczytywanie…"
     },
     "image": {
         "addPicture": "Dodaj zdjęcie",
@@ -147,91 +149,22 @@
         "doDelete": "Usuń ilustrację",
         "dontDelete": "Anuluj",
         "isDeleted": "Usunięte",
-        "nearbyPictures": {},
         "pleaseLogin": "Zaloguj się, by dodać zdjęcie",
         "respectPrivacy": "Nie fotografuj ludzi i tablic rejestracyjnych. Nie wysyłaj także treści z Google Maps, Google Streetview ani innych licencjonowanych źródeł.",
         "uploadDone": "Twoje zdjęcie zostało dodane. Dzięki za pomoc!",
         "uploadFailed": "Wysyłanie zdjęcia nie powiodło się. Czy masz połączenie z internetem i włączony dostęp zewnętrznych API? Przeglądarki Brave i UMatrix mogą je blokować.",
         "uploadingMultiple": "Wysyłanie {count} zdjęć…",
         "uploadingPicture": "Wysyłanie zdjęcia…",
-        "willBePublished": "Twoje zdjęcie zostanie opublikowane "
+        "willBePublished": "Twoje zdjęcie zostanie opublikowane ",
+        "nearbyPictures": {
+            "loading": "Wczytywanie obrazów w pobliżu…"
+        }
     },
-    "importHelper": {
-        "askMetadata": {},
-        "compareToAlreadyExistingNotes": {},
-        "confirmProcess": {},
-        "conflationChecker": {
-            "states": {}
-        },
-        "createNotes": {},
-        "introduction": {},
-        "login": {},
-        "mapPreview": {},
-        "noteParts": {},
-        "previewAttributes": {},
-        "selectFile": {},
-        "selectTheme": {}
-    },
-    "importInspector": {},
-    "importLayer": {},
     "index": {
         "#": "Te teksty są wyświetlane nad przyciskami motywu, gdy nie jest załadowany żaden motyw",
         "intro": "MapComplete to przeglądarka i edytor OpenStreetMap, który pokazuje informacje podzielone według tematu.",
         "pickTheme": "Wybierz temat z dostępnych poniżej by zacząć.",
         "title": "Witaj w MapComplete"
-    },
-    "matrixbot": {
-        "commands": {
-            "dm": {},
-            "documentation": {
-                "file": {},
-                "inputElement": {},
-                "layer": {},
-                "theme": {},
-                "url_parameter": {},
-                "visualisation": {}
-            },
-            "dream": {},
-            "help": {},
-            "info": {},
-            "language": {},
-            "role": {},
-            "scheme": {},
-            "search": {},
-            "shutdown": {},
-            "tags": {},
-            "welcome": {},
-            "wiki": {}
-        }
-    },
-    "move": {
-        "inviteToMove": {},
-        "reasons": {}
-    },
-    "multi_apply": {},
-    "notes": {},
-    "privacy": {},
-    "professional": {
-        "aboutMc": {
-            "internalUse": {},
-            "layers": {},
-            "survey": {}
-        },
-        "aboutOsm": {
-            "aboutOsm": {},
-            "benefits": {},
-            "license": {},
-            "vandalism": {}
-        },
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseGatheringOpenData": {},
-                "usecaseMapDifferentSources": {}
-            },
-            "unsuitedData": {}
-        },
-        "indexPage": {},
-        "services": {}
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Recenzja powiązana)",
@@ -255,25 +188,31 @@
         "inviteToSplit": "Podziel tę drogę na mniejsze segmenty. Pozwala to na nadanie różnych właściwości do poszczególnych części drogi.",
         "loginToSplit": "Musisz się zalogować, by podzielić drogę",
         "split": "Podziel",
-        "splitTitle": "Wybierz na mapie gdzie podzielić tę drogę"
+        "splitTitle": "Wybierz na mapie miejsce zmiany właściwości tej drogi",
+        "splitAgain": "Podziel tę drogę ponownie"
     },
-    "translations": {},
     "validation": {
-        "color": {},
-        "date": {},
-        "direction": {},
-        "distance": {},
-        "email": {},
-        "float": {},
-        "int": {},
-        "nat": {},
-        "opening_hours": {},
-        "pfloat": {},
-        "phone": {},
-        "pnat": {},
-        "string": {},
-        "text": {},
-        "url": {},
-        "wikidata": {}
+        "color": {
+            "description": "Kolor lub kod szesnastkowy"
+        },
+        "date": {
+            "description": "Data rozpoczynająca się od roku"
+        }
+    },
+    "translations": {
+        "activateButton": "Pomóż przetłumaczyć MapComplete",
+        "notImmediate": "Tłumaczenia nie są aktualizowane bezpośrednio. Zwykle trwa to kilka dni",
+        "isTranslator": "Tryb tłumaczenia jest aktywny, ponieważ Twoja nazwa użytkownika odpowiada nazwisku poprzedniego tłumacza",
+        "allMissing": "Brak tłumaczeń",
+        "deactivate": "Wyłącz przyciski tłumaczenia"
+    },
+    "userinfo": {
+        "gotoInbox": "Otwórz swoją skrzynkę odbiorczą",
+        "moveToHome": "Przesuń mapę do Twojej lokalizacji domowej",
+        "noDescription": "Nie masz jeszcze opisu w swoim profilu",
+        "welcome": "Witaj {user}",
+        "noDescriptionCallToAction": "Dodaj opis profilu",
+        "gotoSettings": "Przejdź do swoich ustawień na OpenStreetMap.org",
+        "newMessages": "masz nowe wiadomości"
     }
 }
