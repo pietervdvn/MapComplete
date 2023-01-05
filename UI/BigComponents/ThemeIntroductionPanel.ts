@@ -9,6 +9,7 @@ import Svg from "../../Svg"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import FullWelcomePaneWithTabs from "./FullWelcomePaneWithTabs"
+import LoggedInUserIndicator from "../LoggedInUserIndicator"
 
 export default class ThemeIntroductionPanel extends Combine {
     constructor(
@@ -20,7 +21,8 @@ export default class ThemeIntroductionPanel extends Combine {
             featureSwitchUserbadge: UIEventSource<boolean>
             layoutToUse: LayoutConfig
             osmConnection: OsmConnection
-        }
+        },
+        guistate?: { userInfoIsOpened: UIEventSource<boolean> }
     ) {
         const t = Translations.t.general
         const layout = state.layoutToUse
@@ -36,9 +38,18 @@ export default class ThemeIntroductionPanel extends Combine {
             })
             .SetClass("only-on-mobile")
 
+        const loggedInUserInfo = new LoggedInUserIndicator(state.osmConnection, {
+            firstLine: Translations.t.general.welcomeBack.Clone(),
+        })
+        if (guistate?.userInfoIsOpened) {
+            loggedInUserInfo.onClick(() => {
+                guistate.userInfoIsOpened.setData(true)
+            })
+        }
+
         const loginStatus = new Toggle(
             new LoginToggle(
-                undefined,
+                loggedInUserInfo,
                 new Combine([
                     Translations.t.general.loginWithOpenStreetMap.SetClass("text-xl font-bold"),
                     Translations.t.general.loginOnlyNeededToEdit.Clone().SetClass("font-bold"),
@@ -60,7 +71,7 @@ export default class ThemeIntroductionPanel extends Combine {
             ]).SetClass("flex flex-col mt-2"),
 
             toTheMap,
-            loginStatus.SetClass("block"),
+            loginStatus.SetClass("block mt-6 pt-2 md:border-t-2 border-dotted border-gray-400"),
             layout.descriptionTail?.Clone().SetClass("block mt-4"),
 
             languagePicker?.SetClass("block mt-4"),

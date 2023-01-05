@@ -62,7 +62,7 @@ export class OsmConnection {
     private readonly _singlePage: boolean
     private isChecking = false
 
-    constructor(options: {
+    constructor(options?: {
         dryRun?: UIEventSource<boolean>
         fakeUser?: false | boolean
         oauth_token?: UIEventSource<string>
@@ -71,6 +71,7 @@ export class OsmConnection {
         osmConfiguration?: "osm" | "osm-test"
         attemptLogin?: true | boolean
     }) {
+        options = options ?? {}
         this.fakeUser = options.fakeUser ?? false
         this._singlePage = options.singlePage ?? true
         this._oauth_config =

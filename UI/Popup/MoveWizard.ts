@@ -284,5 +284,13 @@ export default class MoveWizard extends Toggle {
             ]).SetClass("flex m-2 p-2 rounded-lg bg-gray-200"),
             moveDisallowedReason.map((r) => r === undefined)
         )
+
+        const self = this
+        currentStep.addCallback((state) => {
+            if (state === "start") {
+                return
+            }
+            self.ScrollIntoView()
+        })
     }
 }

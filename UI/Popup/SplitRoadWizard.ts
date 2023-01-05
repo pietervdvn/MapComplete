@@ -24,6 +24,7 @@ import BaseLayer from "../../Models/BaseLayer"
 import FilteredLayer from "../../Models/FilteredLayer"
 import BaseUIElement from "../BaseUIElement"
 import { VariableUiElement } from "../Base/VariableUIElement"
+import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 
 export default class SplitRoadWizard extends Combine {
     // @ts-ignore
@@ -54,6 +55,7 @@ export default class SplitRoadWizard extends Combine {
             changes: Changes
             layoutToUse: LayoutConfig
             allElements: ElementStorage
+            selectedElement: UIEventSource<any>
         }
     ) {
         const t = Translations.t.split
@@ -79,9 +81,6 @@ export default class SplitRoadWizard extends Combine {
                 hasBeenSplit
             )
         )
-        splitButton.onClick(() => {
-            splitClicked.setData(true)
-        })
 
         // Only show the splitButton if logged in, else show login prompt
         const loginBtn = t.loginToSplit
@@ -110,6 +109,9 @@ export default class SplitRoadWizard extends Combine {
             // We throw away the old map and splitpoints, and create a new map from scratch
             splitPoints.setData([])
             leafletMap.setData(SplitRoadWizard.setupMapComponent(id, splitPoints, state))
+
+            // Close the popup. The contributor has to select a segment again to make sure they continue editing the correct segment; see #1219
+            ScrollableFullScreen.collapse()
         })
 
         saveButton.SetClass("btn btn-primary mr-3")
@@ -147,6 +149,11 @@ export default class SplitRoadWizard extends Combine {
             new Toggle(mapView, splitToggle, splitClicked),
         ])
         this.dialogIsOpened = splitClicked
+        const self = this
+        splitButton.onClick(() => {
+            splitClicked.setData(true)
+            self.ScrollIntoView()
+        })
     }
 
     private static setupMapComponent(

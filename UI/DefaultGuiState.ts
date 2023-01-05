@@ -9,6 +9,7 @@ export class DefaultGuiState {
     public readonly filterViewIsOpened: UIEventSource<boolean>
     public readonly copyrightViewIsOpened: UIEventSource<boolean>
     public readonly currentViewControlIsOpened: UIEventSource<boolean>
+    public readonly userInfoIsOpened: UIEventSource<boolean>
     public readonly welcomeMessageOpenedTab: UIEventSource<number>
     public readonly allFullScreenStates: UIEventSource<boolean>[] = []
 
@@ -43,8 +44,14 @@ export class DefaultGuiState {
         this.currentViewControlIsOpened = QueryParameters.GetBooleanQueryParameter(
             "currentview-toggle",
             false,
-            "Whether or not the current view box is shown"
+            "Whether or not the current view box is shown (metalayer showing current view, allows to do calculate stats for all in view)"
         )
+        this.userInfoIsOpened = QueryParameters.GetBooleanQueryParameter(
+            "userinfo-toggle",
+            false,
+            "Whether or not the user info is shown"
+        )
+
         const states = {
             download: this.downloadControlIsOpened,
             filters: this.filterViewIsOpened,
@@ -66,7 +73,8 @@ export class DefaultGuiState {
             this.filterViewIsOpened,
             this.copyrightViewIsOpened,
             this.welcomeMessageIsOpened,
-            this.currentViewControlIsOpened
+            this.currentViewControlIsOpened,
+            this.userInfoIsOpened
         )
 
         for (let i = 0; i < this.allFullScreenStates.length; i++) {
