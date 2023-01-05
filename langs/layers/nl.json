@@ -3483,7 +3483,14 @@
         },
         "title": {
             "render": "Dokterspraktijk {name}"
-        }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Hoe heet deze tandarts?",
+                "render": "Deze tandarts heet {naam}"
+            }
+        },
+        "description": "Deze laag toont tandartsen"
     },
     "direction": {
         "description": "Deze laag toont de oriëntatie van een object",
