@@ -114,6 +114,42 @@
                 }
             },
             "question": "Jaki jest link do strony Wikipedii?"
+        },
+        "denominations-coins": {
+            "mappings": {
+                "0": {
+                    "then": "Akceptowane są monety 1 centowe"
+                },
+                "1": {
+                    "then": "Akceptowane są monety 2 centowe"
+                },
+                "2": {
+                    "then": "Akceptowane są monety 5 centowe"
+                },
+                "3": {
+                    "then": "Akceptowane są monety 10-centowe"
+                },
+                "4": {
+                    "then": "Akceptowane są monety 20-centowe"
+                },
+                "5": {
+                    "then": "Akceptowane są monety 50-centowe"
+                },
+                "6": {
+                    "then": "Akceptowane są monety 1 euro"
+                },
+                "7": {
+                    "then": "Akceptowane są monety 2 euro"
+                }
+            },
+            "question": "Jakimi monetami można tutaj zapłacić?"
+        },
+        "induction-loop": {
+            "mappings": {
+                "0": {
+                    "then": "To miejsce ma pętlę indukcyjną audio"
+                }
+            }
         }
     }
 }
