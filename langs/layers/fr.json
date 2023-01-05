@@ -1584,6 +1584,18 @@
             },
             "website": {
                 "question": "Existe-t’il un site avec plus d’informations (ex : topographie) ?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Grimper ici est gratuit"
+                    },
+                    "1": {
+                        "then": "Il faut payer une taxe pour grimper ici"
+                    }
+                },
+                "question": "Est-ce que la grimpe sur ce site est payante ?",
+                "render": "Une taxe de {charge} doit être payée pour grimper ici"
             }
         }
     },
@@ -1658,7 +1670,7 @@
         "presets": {
             "0": {
                 "description": "Un club d’escalade",
-                "title": "une club d’escalade"
+                "title": "un club d’escalade"
             },
             "1": {
                 "description": "Une association d’escalade",
@@ -1686,6 +1698,42 @@
         "tagRenderings": {
             "name": {
                 "question": "Quel est le nom de la salle d’escalade ?"
+            },
+            "Speed climbing?": {
+                "mappings": {
+                    "0": {
+                        "then": "Il y a un mur d'escalade de vitesse"
+                    },
+                    "1": {
+                        "then": "Il n'y a pas de mur d'escalade de vitesse"
+                    },
+                    "2": {
+                        "then": "Il existe {climbing:speed} murs d'escalade de vitesse"
+                    }
+                },
+                "question": "Y a-t-il un mur d'escalade de vitesse ?"
+            },
+            "shoe_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Les chaussures d'escalade peuvent être louées ici"
+                    },
+                    "1": {
+                        "then": "Les chaussures d'escalade ne peuvent <b>pas</b> être louées ici"
+                    }
+                },
+                "question": "Peut-on louer des chaussures d'escalade ici ?"
+            },
+            "harness_rental": {
+                "question": "Peut-on louer un baudrier d'escalade ici ?",
+                "mappings": {
+                    "0": {
+                        "then": "Un baudrier d'escalade peut être loué ici"
+                    },
+                    "1": {
+                        "then": "Un baudrier d'escalade ne peut <b>pas</b> être loué ici"
+                    }
+                }
             }
         },
         "title": {
@@ -1767,7 +1815,8 @@
                 }
             },
             "render": "Voie d’escalade"
-        }
+        },
+        "description": "Une seule voie d'escalade et ses propriétés. Certaines propriétés sont dérivées des objets qui les contiennent"
     },
     "crossings": {
         "description": "Traversée pour piétons et cyclistes",
@@ -4604,7 +4653,7 @@
             "tree-heritage": {
                 "mappings": {
                     "0": {
-                        "then": "Fait partie du patrimoine par <i>Onroerend Erfgoed</i>"
+                        "then": "Inscrit au registre du Patrimoine Immobilier (<i>Onroerend Erfgoed</i>) Flammand"
                     },
                     "1": {
                         "then": "Enregistré comme patrimoine par la <i>Direction du Patrimoine culturel</i> Bruxelles"
@@ -4654,6 +4703,14 @@
             "tree_node-wikidata": {
                 "question": "Quel est l'identifiant Wikidata de cet arbre ?",
                 "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata : <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
+            },
+            "height": {
+                "render": "Cet arbre a une hauteur de {height} mètre(s)",
+                "question": "Quelle est la hauteur de cette arbre ?"
+            },
+            "circumference": {
+                "question": "Quelle est la circonférence du tronc ? <p class='subtle'>La mesure est effectuée à 1.30m de hauteur</p>",
+                "render": "Le tronc a une circonférence de {circumference} mètre(s)"
             }
         },
         "title": {
@@ -4661,7 +4718,19 @@
         }
     },
     "veterinary": {
-        "name": "vétérinaire"
+        "name": "vétérinaire",
+        "tagRenderings": {
+            "vetName": {
+                "render": "Le nom de ce vétérinaire est {name}",
+                "question": "Quel est le nom de ce vétérinaire ?"
+            }
+        },
+        "presets": {
+            "0": {
+                "description": "un vétérinaire, qui soigne les chiens",
+                "title": "un vétérinaire"
+            }
+        }
     },
     "viewpoint": {
         "description": "Un beau point de vue ou une belle vue. Idéal pour ajouter une image si aucune autre catégorie ne convient",
