@@ -44,7 +44,13 @@
         "fakeui": {
             "edit": "Une info fausse ou pas à jour ? Le bouton de modification est juste ici"
         },
-        "title": "MapComplete.osm.be"
+        "title": "MapComplete.osm.be",
+        "editing": {
+            "intro": "L'utilisateur est accueilli par une carte avec des objets. Lorsqu'il en sélectionne un, les informations relatives à cet objet s'affichent."
+        },
+        "mapcomplete": {
+            "li2": "Ajouter facilement des informations de contact et des heures d'ouverture"
+        }
     },
     "general": {
         "about": "Éditer facilement et ajouter OpenStreetMap pour un certain thème",
@@ -153,7 +159,7 @@
         "loginWithOpenStreetMap": "Se connecter avec OpenStreetMap",
         "logout": "Déconnexion",
         "morescreen": {
-            "createYourOwnTheme": "Créez votre propre MapComplete carte",
+            "createYourOwnTheme": "Créez votre propre thème MapComplete à partir de zéro",
             "hiddenExplanation": "Ces thèmes sont seulement accessibles par lien. Vous avez découvert {hidden_discovered} des {total_hidden} thèmes cachés.",
             "intro": "<h3>Plus de thèmes ?</h3>Vous aimez collecter des données géographiques ?<br>Il y a plus de thèmes disponibles.",
             "noMatchingThemes": "Aucun thème ne correspond à vos critères de recherche",
@@ -280,7 +286,7 @@
             "doSearch": "Rechercher ci-dessus pour voir les résultats",
             "failed": "Le chargement de Wikipédia a échoué",
             "loading": "Chargement de Wikipédia…",
-            "noResults": "Pas de résultats pour {search}",
+            "noResults": "Pas de résultats pour <i>{search}</i>",
             "noWikipediaPage": "Cet élément Wikidata n’a pas encore de page Wikipédia correspondante.",
             "searchToShort": "Votre requête est trop courte, entrez un texte plus long.",
             "searchWikidata": "Rechercher sur Wikidata",
@@ -390,7 +396,15 @@
         "reopenNote": "Rouvrir la note",
         "reopenNoteAndComment": "Rouvrir la note et commenter",
         "textNeeded": "Saisir un texte descriptif pour créer une note",
-        "warnAnonymous": "Vous n'êtes pas connecté. Nous ne pourrons pas vous contacter pour résoudre ce problème."
+        "warnAnonymous": "Vous n'êtes pas connecté. Nous ne pourrons pas vous contacter pour résoudre ce problème.",
+        "createNote": "Créer une nouvelle note",
+        "createNoteTitle": "Créer une nouvelle note ici",
+        "createNoteIntro": "Quelque chose ne va pas ou manque sur la carte ? Créez une note ici. Celles-ci seront vérifiées par des contributeurs.",
+        "addAComment": "Ajouter un commentaire",
+        "typeText": "Écrivez du texte pour ajouter un commentaire",
+        "addComment": "Ajouter un commentaire",
+        "closeNote": "Fermer la note",
+        "anonymous": "Utilisateur anonyme"
     },
     "plantDetection": {
         "error": "Une erreur est survenue lors de la détection de l'espèce de l'arbre : {error}",
@@ -404,12 +418,17 @@
         "loadingWikidata": "Chargement des infos sur {species}",
         "matchPercentage": "Correspondance {match} %",
         "overviewIntro": "L'IA de <a href='https://plantnet.org/' target='_blank'>PlantNet.org</a> pense que les images représentes les espèces ci-dessous.",
-        "seeInfo": "Voir plus d'informations sur les espèces"
+        "seeInfo": "Voir plus d'informations sur les espèces",
+        "overviewTitle": "Espèces détectées automatiquement",
+        "poweredByPlantnet": "Propulsé par <a href='https://plantnet.org' target='_blank'>plantnet.org</a>"
     },
     "privacy": {
         "geodataTitle": "Votre géolocalisation",
         "miscCookiesTitle": "Autres cookies",
-        "trackingTitle": "Données statistiques"
+        "trackingTitle": "Données statistiques",
+        "title": "Politique de confidentialité",
+        "intro": "La vie privée est importante - tant pour l'individu que pour la société. MapComplete s'efforce de respecter votre vie privée autant que possible - jusqu'au point où aucune bannière de cookie gênante n'est nécessaire. Toutefois, nous tenons à vous informer des informations qui sont recueillies et partagées, des circonstances dans lesquelles elles le sont et des raisons pour lesquelles ces compromis sont faits.",
+        "tracking": "Afin d'avoir une idée des personnes qui visitent notre site web, certaines informations techniques sont collectées. Il s'agit notamment du pays depuis lequel vous avez visité la page Web, du site Web qui vous a renvoyé vers MapComplete, du type de votre appareil et de la taille de l'écran. Un cookie est placé sur votre appareil pour indiquer que vous avez visité MapComplete plus tôt dans la journée. Ces données ne sont pas suffisamment détaillées pour vous identifier personnellement. Ces statistiques ne sont accessibles à quiconque que sous forme agrégée et sont <a href='https://pietervdvn.goatcounter.com' target='_blank'>accessible à tout le monde</a>"
     },
     "professional": {
         "indexPage": {
@@ -444,7 +463,10 @@
     },
     "translations": {
         "isTranslator": "Mode traduction activé, votre pseudo correspond à celui d’une personne de l’équipe de traduction",
-        "missing": "{count} segments non traduits"
+        "missing": "{count} segments non traduits",
+        "activateButton": "Aidez à traduire MapComplete",
+        "help": "Cliquez sur l'icône \"traduire\" à côté d'une chaîne de caractères pour saisir ou mettre à jour la chaine de texte. Vous aurez besoin d'un compte Weblate pour cela. Créez-en un avec votre nom d'utilisateur OSM pour déverrouiller automatiquement le mode traduction.",
+        "deactivate": "Désactiver les boutons de traduction"
     },
     "validation": {
         "email": {
@@ -480,5 +502,16 @@
             "description": "lien vers un site web",
             "feedback": "Ceci n'est pas une adresse web valide"
         }
+    },
+    "hotkeyDocumentation": {
+        "selectSearch": "Sélectionner la barre de recherche de lieux",
+        "closeSidebar": "Fermer la barre latérale",
+        "selectBackground": "Sélectionnez un fond de carte de type {category}",
+        "openLayersPanel": "Ouvre le panneau fond-de-plan, couches et filtres",
+        "selectMapnik": "Appliquer le fond de carte OpenStreetMap-carto"
+    },
+    "userinfo": {
+        "gotoInbox": "Ouvrir sa boite de réception",
+        "gotoSettings": "Paramètres sur OpenStreetMap.org"
     }
 }
