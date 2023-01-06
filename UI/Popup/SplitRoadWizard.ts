@@ -25,6 +25,7 @@ import FilteredLayer from "../../Models/FilteredLayer"
 import BaseUIElement from "../BaseUIElement"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import ScrollableFullScreen from "../Base/ScrollableFullScreen"
+import { LoginToggle } from "./LoginButton"
 
 export default class SplitRoadWizard extends Combine {
     // @ts-ignore
@@ -82,12 +83,7 @@ export default class SplitRoadWizard extends Combine {
             )
         )
 
-        // Only show the splitButton if logged in, else show login prompt
-        const loginBtn = t.loginToSplit
-            .Clone()
-            .onClick(() => state.osmConnection.AttemptLogin())
-            .SetClass("login-button-friendly")
-        const splitToggle = new Toggle(splitButton, loginBtn, state.osmConnection.isLoggedIn)
+        const splitToggle = new LoginToggle(splitButton, t.loginToSplit.Clone(), state)
 
         // Save button
         const saveButton = new Button(t.split.Clone(), async () => {

@@ -1,7 +1,7 @@
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
  */
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import Svg from "../../Svg"
 import { SubtleButton } from "../Base/SubtleButton"
 import Combine from "../Base/Combine"
@@ -28,6 +28,7 @@ import Hash from "../../Logic/Web/Hash"
 import { GlobalFilter } from "../../Logic/State/MapState"
 import { WayId } from "../../Models/OsmFeature"
 import { Tag } from "../../Logic/Tags/Tag"
+import { LoginToggle } from "../Popup/LoginButton"
 
 /*
  * The SimpleAddUI is a single panel, which can have multiple states:
@@ -44,7 +45,7 @@ export interface PresetInfo extends PresetConfig {
     boundsFactor?: 0.25 | number
 }
 
-export default class SimpleAddUI extends Toggle {
+export default class SimpleAddUI extends LoginToggle {
     /**
      *
      * @param isShown
@@ -59,6 +60,7 @@ export default class SimpleAddUI extends Toggle {
         filterViewIsOpened: UIEventSource<boolean>,
         state: {
             featureSwitchIsTesting: UIEventSource<boolean>
+            featureSwitchUserbadge: Store<boolean>
             layoutToUse: LayoutConfig
             osmConnection: OsmConnection
             changes: Changes
@@ -74,10 +76,6 @@ export default class SimpleAddUI extends Toggle {
         },
         takeLocationFrom?: UIEventSource<{ lat: number; lon: number }>
     ) {
-        const loginButton = new SubtleButton(
-            Svg.osm_logo_ui(),
-            Translations.t.general.add.pleaseLogin.Clone()
-        ).onClick(() => state.osmConnection.AttemptLogin())
         const readYourMessages = new Combine([
             Translations.t.general.readYourMessages.Clone().SetClass("alert"),
             new SubtleButton(Svg.envelope_ui(), Translations.t.general.goToInbox, {
@@ -187,8 +185,8 @@ export default class SimpleAddUI extends Toggle {
                         userdetails.unreadMessages == 0
                 )
             ),
-            loginButton,
-            state.osmConnection.isLoggedIn
+            Translations.t.general.add.pleaseLogin,
+            state
         )
     }
 

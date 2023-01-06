@@ -23,6 +23,7 @@ import { SubstitutedTranslation } from "../SubstitutedTranslation"
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
 import TagRenderingQuestion from "./TagRenderingQuestion"
 import { OsmId } from "../../Models/OsmFeature"
+import { LoginToggle } from "./LoginButton"
 
 export default class DeleteWizard extends Toggle {
     /**
@@ -122,6 +123,40 @@ export default class DeleteWizard extends Toggle {
             ]).SetClass("flex mt-2 justify-between"),
         ]).SetClass("question")
 
+        const deleteFlow = new Toggle(
+            new Toggle(
+                new Toggle(
+                    deleteDialog,
+                    new SubtleButton(Svg.envelope_ui(), t.readMessages),
+                    state.osmConnection.userDetails.map(
+                        (ud) =>
+                            ud.csCount >
+                                Constants.userJourney.addNewPointWithUnreadMessagesUnlock ||
+                            ud.unreadMessages == 0
+                    )
+                ),
+
+                deleteButton,
+                confirm
+            ),
+            new VariableUiElement(
+                deleteAbility.canBeDeleted.map((cbd) =>
+                    new Combine([
+                        Svg.delete_not_allowed_svg()
+                            .SetStyle("height: 2rem; width: auto")
+                            .SetClass("mr-2"),
+                        new Combine([
+                            t.cannotBeDeleted,
+                            cbd.reason.SetClass("subtle"),
+                            t.useSomethingElse.SetClass("subtle"),
+                        ]).SetClass("flex flex-col"),
+                    ]).SetClass("flex m-2 p-2 rounded-lg bg-gray-200 bg-gray-200")
+                )
+            ),
+
+            deleteAbility.canBeDeleted.map((cbd) => allowSoftDeletion || cbd.canBeDeleted !== false)
+        )
+
         super(
             new Toggle(
                 new Combine([
@@ -130,47 +165,7 @@ export default class DeleteWizard extends Toggle {
                     ),
                     t.isDeleted,
                 ]).SetClass("flex m-2 rounded-full"),
-                new Toggle(
-                    new Toggle(
-                        new Toggle(
-                            new Toggle(
-                                deleteDialog,
-                                new SubtleButton(Svg.envelope_ui(), t.readMessages),
-                                state.osmConnection.userDetails.map(
-                                    (ud) =>
-                                        ud.csCount >
-                                            Constants.userJourney
-                                                .addNewPointWithUnreadMessagesUnlock ||
-                                        ud.unreadMessages == 0
-                                )
-                            ),
-
-                            deleteButton,
-                            confirm
-                        ),
-                        new VariableUiElement(
-                            deleteAbility.canBeDeleted.map((cbd) =>
-                                new Combine([
-                                    Svg.delete_not_allowed_svg()
-                                        .SetStyle("height: 2rem; width: auto")
-                                        .SetClass("mr-2"),
-                                    new Combine([
-                                        t.cannotBeDeleted,
-                                        cbd.reason.SetClass("subtle"),
-                                        t.useSomethingElse.SetClass("subtle"),
-                                    ]).SetClass("flex flex-col"),
-                                ]).SetClass("flex m-2 p-2 rounded-lg bg-gray-200 bg-gray-200")
-                            )
-                        ),
-
-                        deleteAbility.canBeDeleted.map(
-                            (cbd) => allowSoftDeletion || cbd.canBeDeleted !== false
-                        )
-                    ),
-
-                    t.loginToDelete.onClick(state.osmConnection.AttemptLogin),
-                    state.osmConnection.isLoggedIn
-                ),
+                new LoginToggle(deleteFlow, undefined, state),
                 isDeleted
             ),
             undefined,

@@ -1,6 +1,6 @@
 import { InputElement } from "../Input/InputElement"
 import { Review } from "../../Logic/Web/Review"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { TextField } from "../Input/TextField"
 import Translations from "../i18n/Translations"
 import Combine from "../Base/Combine"
@@ -11,6 +11,7 @@ import CheckBoxes from "../Input/Checkboxes"
 import UserDetails, { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import BaseUIElement from "../BaseUIElement"
 import Toggle from "../Input/Toggle"
+import { LoginToggle } from "../Popup/LoginButton"
 
 export default class ReviewForm extends InputElement<Review> {
     IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false)
@@ -20,11 +21,21 @@ export default class ReviewForm extends InputElement<Review> {
     private _saveButton: BaseUIElement
     private readonly _isAffiliated: BaseUIElement
     private readonly _postingAs: BaseUIElement
-    private readonly _osmConnection: OsmConnection
+    private readonly _state: {
+        readonly osmConnection: OsmConnection
+        readonly featureSwitchUserbadge: Store<boolean>
+    }
 
-    constructor(onSave: (r: Review, doneSaving: () => void) => void, osmConnection: OsmConnection) {
+    constructor(
+        onSave: (r: Review, doneSaving: () => void) => void,
+        state: {
+            readonly osmConnection: OsmConnection
+            readonly featureSwitchUserbadge: Store<boolean>
+        }
+    ) {
         super()
-        this._osmConnection = osmConnection
+        this._state = state
+        const osmConnection = state.osmConnection
         this._value = new UIEventSource({
             made_by_user: new UIEventSource<boolean>(true),
             rating: undefined,
@@ -112,12 +123,11 @@ export default class ReviewForm extends InputElement<Review> {
                     "    border: 2px solid var(--subtle-detail-color-contrast)"
             )
 
-        const connection = this._osmConnection
-        const login = Translations.t.reviews.plz_login
-            .Clone()
-            .onClick(() => connection.AttemptLogin())
-
-        return new Toggle(form, login, connection.isLoggedIn).ConstructElement()
+        return new LoginToggle(
+            form,
+            Translations.t.reviews.plz_login.Clone(),
+            this._state
+        ).ConstructElement()
     }
 
     IsValid(r: Review): boolean {

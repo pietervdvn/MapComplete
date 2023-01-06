@@ -219,7 +219,7 @@ export default class SpecialVisualizations {
                     )
                     const form = new ReviewForm(
                         (r, whenDone) => mangrove.AddReview(r, whenDone),
-                        state.osmConnection
+                        state
                     )
                     return new ReviewElement(mangrove.GetSubjectUri(), mangrove.GetReviews(), form)
                 },

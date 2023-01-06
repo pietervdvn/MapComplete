@@ -13,6 +13,7 @@ import { SubtleButton } from "./Base/SubtleButton"
 import { VariableUiElement } from "./Base/VariableUIElement"
 import Svg from "../Svg"
 import { ImportViewerLinks } from "./BigComponents/UserInformation"
+import {LoginToggle} from "./Popup/LoginButton";
 
 export default class AllThemesGui {
     setup() {
@@ -29,12 +30,10 @@ export default class AllThemesGui {
                 intro,
                 new FeaturedMessage().SetClass("mb-4 block"),
                 new MoreScreen(state, true),
-                new Toggle(
+                new LoginToggle(
                     undefined,
-                    new SubtleButton(undefined, Translations.t.index.logIn)
-                        .SetStyle("height:min-content")
-                        .onClick(() => state.osmConnection.AttemptLogin()),
-                    state.osmConnection.isLoggedIn
+                   Translations.t.index.logIn,
+                    state
                 ),
                 new ImportViewerLinks(state.osmConnection),
                 Translations.t.general.aboutMapcomplete
