@@ -14,17 +14,10 @@ import FeatureInfoBox from "../Popup/FeatureInfoBox"
 import CopyrightPanel from "./CopyrightPanel"
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
 import Hotkeys from "../Base/Hotkeys"
+import { DefaultGuiState } from "../DefaultGuiState"
 
 export default class LeftControls extends Combine {
-    constructor(
-        state: FeaturePipelineState,
-        guiState: {
-            currentViewControlIsOpened: UIEventSource<boolean>
-            downloadControlIsOpened: UIEventSource<boolean>
-            filterViewIsOpened: UIEventSource<boolean>
-            copyrightViewIsOpened: UIEventSource<boolean>
-        }
-    ) {
+    constructor(state: FeaturePipelineState, guiState: DefaultGuiState) {
         const currentViewFL = state.currentView?.layer
         const currentViewAction = new Toggle(
             new Lazy(() => {
