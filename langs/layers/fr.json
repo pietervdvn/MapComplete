@@ -1550,6 +1550,18 @@
                 },
                 "question": "L’escalade de bloc est-elle possible ici ?"
             },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Grimper ici est gratuit"
+                    },
+                    "1": {
+                        "then": "Il faut payer une taxe pour grimper ici"
+                    }
+                },
+                "question": "Est-ce que la grimpe sur ce site est payante ?",
+                "render": "Une taxe de {charge} doit être payée pour grimper ici"
+            },
             "max_difficulty": {
                 "question": "Quel est le niveau de la voie la plus difficile selon la classification franco-belge ?",
                 "render": "La difficulté maximale est {climbing:grade:french:max} selon la classification franco-belge"
@@ -1658,7 +1670,7 @@
         "presets": {
             "0": {
                 "description": "Un club d’escalade",
-                "title": "une club d’escalade"
+                "title": "un club d’escalade"
             },
             "1": {
                 "description": "Une association d’escalade",
@@ -1684,8 +1696,44 @@
         "description": "Une salle d’escalade",
         "name": "Salle d’escalade",
         "tagRenderings": {
+            "Speed climbing?": {
+                "mappings": {
+                    "0": {
+                        "then": "Il y a un mur d'escalade de vitesse"
+                    },
+                    "1": {
+                        "then": "Il n'y a pas de mur d'escalade de vitesse"
+                    },
+                    "2": {
+                        "then": "Il existe {climbing:speed} murs d'escalade de vitesse"
+                    }
+                },
+                "question": "Y a-t-il un mur d'escalade de vitesse ?"
+            },
+            "harness_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Un baudrier d'escalade peut être loué ici"
+                    },
+                    "1": {
+                        "then": "Un baudrier d'escalade ne peut <b>pas</b> être loué ici"
+                    }
+                },
+                "question": "Peut-on louer un baudrier d'escalade ici ?"
+            },
             "name": {
                 "question": "Quel est le nom de la salle d’escalade ?"
+            },
+            "shoe_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Les chaussures d'escalade peuvent être louées ici"
+                    },
+                    "1": {
+                        "then": "Les chaussures d'escalade ne peuvent <b>pas</b> être louées ici"
+                    }
+                },
+                "question": "Peut-on louer des chaussures d'escalade ici ?"
             }
         },
         "title": {
@@ -1723,6 +1771,7 @@
         }
     },
     "climbing_route": {
+        "description": "Une seule voie d'escalade et ses propriétés. Certaines propriétés sont dérivées des objets qui les contiennent",
         "name": "Voies d’escalade",
         "presets": {
             "0": {
@@ -4561,6 +4610,14 @@
             }
         },
         "tagRenderings": {
+            "circumference": {
+                "question": "Quelle est la circonférence du tronc ? <p class='subtle'>La mesure est effectuée à 1.30m de hauteur</p>",
+                "render": "Le tronc a une circonférence de {circumference} mètre(s)"
+            },
+            "height": {
+                "question": "Quelle est la hauteur de cette arbre ?",
+                "render": "Cet arbre a une hauteur de {height} mètre(s)"
+            },
             "tree-decidouous": {
                 "mappings": {
                     "0": {
@@ -4604,7 +4661,7 @@
             "tree-heritage": {
                 "mappings": {
                     "0": {
-                        "then": "Fait partie du patrimoine par <i>Onroerend Erfgoed</i>"
+                        "then": "Inscrit au registre du Patrimoine Immobilier (<i>Onroerend Erfgoed</i>) Flammand"
                     },
                     "1": {
                         "then": "Enregistré comme patrimoine par la <i>Direction du Patrimoine culturel</i> Bruxelles"
@@ -4661,7 +4718,19 @@
         }
     },
     "veterinary": {
-        "name": "vétérinaire"
+        "name": "vétérinaire",
+        "presets": {
+            "0": {
+                "description": "un vétérinaire, qui soigne les chiens",
+                "title": "un vétérinaire"
+            }
+        },
+        "tagRenderings": {
+            "vetName": {
+                "question": "Quel est le nom de ce vétérinaire ?",
+                "render": "Le nom de ce vétérinaire est {name}"
+            }
+        }
     },
     "viewpoint": {
         "description": "Un beau point de vue ou une belle vue. Idéal pour ajouter une image si aucune autre catégorie ne convient",

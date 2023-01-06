@@ -3475,10 +3475,17 @@
         }
     },
     "dentist": {
+        "description": "Deze laag toont tandartsen",
         "name": "Tandarts",
         "presets": {
             "0": {
                 "title": "een tandartspraktijk"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "question": "Hoe heet deze tandarts?",
+                "render": "Deze tandarts heet {name}"
             }
         },
         "title": {

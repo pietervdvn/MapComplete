@@ -345,13 +345,15 @@
         "en": "Is a fee required to climb here?",
         "es": "¿Se requiere una tasa para escalar aquí?",
         "de": "Ist das Klettern hier gebührenpflichtig?",
-        "nl": "Moet men betalen om hier te klimmen?"
+        "nl": "Moet men betalen om hier te klimmen?",
+        "fr": "Est-ce que la grimpe sur ce site est payante ?"
       },
       "render": {
         "en": "A fee of {charge} should be paid for climbing here",
         "de": "Zum Klettern wird eine Gebühr von {charge} erhoben",
         "es": "Se debe de pagar una tasa de {charge} para escalar aquí",
-        "nl": "Men moet {charge} betalen om hier te klimmen"
+        "nl": "Men moet {charge} betalen om hier te klimmen",
+        "fr": "Une taxe de {charge} doit être payée pour grimper ici"
       },
       "freeform": {
         "key": "charge",
@@ -370,7 +372,8 @@
             "en": "Climbing here is free of charge",
             "de": "Das Klettern ist hier kostenlos",
             "es": "La escalada es gratis",
-            "nl": "Hier klimmen is gratis"
+            "nl": "Hier klimmen is gratis",
+            "fr": "Grimper ici est gratuit"
           }
         },
         {
@@ -384,7 +387,8 @@
             "en": "Paying a fee is required to climb here",
             "es": "Hay que pagar una tasa para escalar aquí",
             "de": "Zum Klettern ist eine Gebühr zu zahlen",
-            "nl": "Men moet betalen om hier te klimmen"
+            "nl": "Men moet betalen om hier te klimmen",
+            "fr": "Il faut payer une taxe pour grimper ici"
           },
           "hideInAnswer": "charge~*"
         }

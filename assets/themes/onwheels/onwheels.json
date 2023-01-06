@@ -225,7 +225,8 @@
         "name": {
           "en": "Disabled parking spaces",
           "de": "Behindertenparkplätze",
-          "nl": "Parkeerplaatsen voor personen met een beperking"
+          "nl": "Parkeerplaatsen voor personen met een beperking",
+          "fr": "Places de stationnement pour personnes handicapées"
         }
       },
       "hideTagRenderingsWithLabels": [

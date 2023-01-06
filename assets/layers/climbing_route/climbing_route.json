@@ -12,7 +12,8 @@
   "description": {
     "en": "A single climbing route and its properties. Some properties are derived from the containing features",
     "de": "Eine einzelne Kletterroute und ihre Eigenschaften. Einige Eigenschaften werden von übergeordneten Objekten abgeleitet",
-    "nl": "Een klimroute en de eigenschappen van deze klimroute. Sommige eigenschappen worden afgeleid van omliggende kaart-objecten"
+    "nl": "Een klimroute en de eigenschappen van deze klimroute. Sommige eigenschappen worden afgeleid van omliggende kaart-objecten",
+    "fr": "Une seule voie d'escalade et ses propriétés. Certaines propriétés sont dérivées des objets qui les contiennent"
   },
   "minzoom": 18,
   "source": {

@@ -81,21 +81,24 @@
       "id": "shoe_rental",
       "question": {
         "en": "Can one rent climbing shoes here?",
-        "nl": "Kunnen hier klimschoenen gehuurd worden?"
+        "nl": "Kunnen hier klimschoenen gehuurd worden?",
+        "fr": "Peut-on louer des chaussures d'escalade ici ?"
       },
       "mappings": [
         {
           "if": "service:rental:climbing_shoes=yes",
           "then": {
             "en": "Climbing shoes can be rented here",
-            "nl": "Klimschoenen kunnen hier gehuurd worden"
+            "nl": "Klimschoenen kunnen hier gehuurd worden",
+            "fr": "Les chaussures d'escalade peuvent être louées ici"
           }
         },
         {
           "if": "service:rental:climbing_shoes=no",
           "then": {
             "en": "Climbing shoes can <b>not</b> be rented here",
-            "nl": "Hier kunnen <b>geen</b> klimschoenen gehuurd worden"
+            "nl": "Hier kunnen <b>geen</b> klimschoenen gehuurd worden",
+            "fr": "Les chaussures d'escalade ne peuvent <b>pas</b> être louées ici"
           }
         }
       ]
@@ -104,21 +107,24 @@
       "id": "harness_rental",
       "question": {
         "en": "Can one rent a climbing harness here?",
-        "nl": "Kan een klimgordel hier gehuurd worden?"
+        "nl": "Kan een klimgordel hier gehuurd worden?",
+        "fr": "Peut-on louer un baudrier d'escalade ici ?"
       },
       "mappings": [
         {
           "if": "service:rental:climbing_harness=yes",
           "then": {
             "en": "A climbing harness can be rented here",
-            "nl": "Een klimgordel kan hier gehuurd worden"
+            "nl": "Een klimgordel kan hier gehuurd worden",
+            "fr": "Un baudrier d'escalade peut être loué ici"
           }
         },
         {
           "if": "service:rental:climbing_harness=no",
           "then": {
             "en": "A climbing harness can <b>not</b> be rented here",
-            "nl": "Hier kunnen <b>geen</b> klimgordels gehuurd worden"
+            "nl": "Hier kunnen <b>geen</b> klimgordels gehuurd worden",
+            "fr": "Un baudrier d'escalade ne peut <b>pas</b> être loué ici"
           }
         }
       ]
@@ -152,7 +158,8 @@
         "en": "Is there a speed climbing wall?",
         "nl": "Is er een snelklimmuur (speed climbing)?",
         "ja": "スピードクライミングウォールはありますか?",
-        "it": "È presente una prete per l’arrampicata di velocità?"
+        "it": "È presente una prete per l’arrampicata di velocità?",
+        "fr": "Y a-t-il un mur d'escalade de vitesse ?"
       },
       "mappings": [
         {
@@ -162,7 +169,8 @@
             "en": "There is a speed climbing wall",
             "nl": "Er is een snelklimmuur voor speed climbing",
             "ja": "スピードクライミングウォールがある",
-            "it": "È presente una parete per l’arrampicata di velocità"
+            "it": "È presente una parete per l’arrampicata di velocità",
+            "fr": "Il y a un mur d'escalade de vitesse"
           }
         },
         {
@@ -172,7 +180,8 @@
             "en": "There is no speed climbing wall",
             "nl": "Er is geen snelklimmuur voor speed climbing",
             "ja": "スピードクライミングウォールがない",
-            "it": "Non è presente una parete per l’arrampicata di velocità"
+            "it": "Non è presente una parete per l’arrampicata di velocità",
+            "fr": "Il n'y a pas de mur d'escalade de vitesse"
           }
         },
         {
@@ -182,7 +191,8 @@
             "en": "There are {climbing:speed} speed climbing walls",
             "nl": "Er zijn hier {climbing:speed} snelklimmuren",
             "ja": "{climbing:speed} のスピードクライミングウォールがある",
-            "it": "Sono presenti {climbing:speed} pareti per l’arrampicata di velocità"
+            "it": "Sono presenti {climbing:speed} pareti per l’arrampicata di velocità",
+            "fr": "Il existe {climbing:speed} murs d'escalade de vitesse"
           },
           "hideInAnswer": true
         }
