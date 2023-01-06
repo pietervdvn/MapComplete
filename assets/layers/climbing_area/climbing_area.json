@@ -43,7 +43,7 @@
           "fr": "Mur d’escalade <b>{name}</b>",
           "it": "Muro da arrampicata <b>{name}</b>",
           "de": "Klettergarten <b>{name}</b>",
-          "nl": ""
+          "nl": "Klimrots of klimzone <b>{name}</b>"
         }
       },
       {
@@ -210,7 +210,8 @@
             "en": "A climbing crag - a single rock or cliff with at least a few climbing routes",
             "fr": "Mur d’escalade, rocher avec plusieurs voies d’escalades",
             "it": "Un muro da arrampicata (un singolo masso o falesia con almeno qualche via per arrampicata)",
-            "de": "Ein Kletterfelsen - ein einzelner Fels oder eine Klippe mit mindestens einigen Kletterrouten"
+            "de": "Ein Kletterfelsen - ein einzelner Fels oder eine Klippe mit mindestens einigen Kletterrouten",
+            "nl": "Een klimzone - een enkele rots of klif met klimroutes"
           }
         },
         {

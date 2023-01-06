@@ -80,19 +80,22 @@
     {
       "id": "shoe_rental",
       "question": {
-        "en": "Can one rent climbing shoes here?"
+        "en": "Can one rent climbing shoes here?",
+        "nl": "Kunnen hier klimschoenen gehuurd worden?"
       },
       "mappings": [
         {
           "if": "service:rental:climbing_shoes=yes",
           "then": {
-            "en": "Climbing shoes can be rented here"
+            "en": "Climbing shoes can be rented here",
+            "nl": "Klimschoenen kunnen hier gehuurd worden"
           }
         },
         {
           "if": "service:rental:climbing_shoes=no",
           "then": {
-            "en": "Climbing shoes can <b>not</b> be rented here"
+            "en": "Climbing shoes can <b>not</b> be rented here",
+            "nl": "Hier kunnen <b>geen</b> klimschoenen gehuurd worden"
           }
         }
       ]
@@ -100,19 +103,22 @@
     {
       "id": "harness_rental",
       "question": {
-        "en": "Can one rent a climbing harness here?"
+        "en": "Can one rent a climbing harness here?",
+        "nl": "Kan een klimgordel hier gehuurd worden?"
       },
       "mappings": [
         {
           "if": "service:rental:climbing_harness=yes",
           "then": {
-            "en": "A climbing harness can be rented here"
+            "en": "A climbing harness can be rented here",
+            "nl": "Een klimgordel kan hier gehuurd worden"
           }
         },
         {
           "if": "service:rental:climbing_harness=no",
           "then": {
-            "en": "A climbing harness can <b>not</b> be rented here"
+            "en": "A climbing harness can <b>not</b> be rented here",
+            "nl": "Hier kunnen <b>geen</b> klimgordels gehuurd worden"
           }
         }
       ]

@@ -988,6 +988,10 @@ video {
   height: 3rem;
 }
 
+.h-6 {
+  height: 1.5rem;
+}
+
 .h-4 {
   height: 1rem;
 }
@@ -1002,10 +1006,6 @@ video {
 
 .h-11 {
   height: 2.75rem;
-}
-
-.h-6 {
-  height: 1.5rem;
 }
 
 .h-96 {
@@ -1501,6 +1501,11 @@ video {
 
 .p-0\.5 {
   padding: 0.125rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .px-0 {
