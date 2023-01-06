@@ -1,5 +1,34 @@
 {
     "shared_questions": {
+        "denominations-coins": {
+            "mappings": {
+                "0": {
+                    "then": "Les pièces d'1 cent sont acceptées"
+                },
+                "1": {
+                    "then": "Les pièces de 2 cents sont acceptées"
+                },
+                "2": {
+                    "then": "Les pièces de 5 cents sont acceptées"
+                },
+                "3": {
+                    "then": "Les pièces de 10 cents sont acceptées"
+                },
+                "4": {
+                    "then": "Les pièces de 20 cents sont acceptées"
+                },
+                "5": {
+                    "then": "Les pièces de 50 cents sont acceptées"
+                },
+                "6": {
+                    "then": "Les pièces de 1 euro sont acceptées"
+                },
+                "7": {
+                    "then": "Les pièces de 2 euros sont acceptées"
+                }
+            },
+            "question": "Quelles pièces peut-on utiliser pour payer ici ?"
+        },
         "description": {
             "question": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.<br/><span style='font-size: small'>Ne répétez pas des réponses déjà données</span>"
         },
@@ -54,6 +83,27 @@
             },
             "question": "Cet endroit offre-t-il un accès à Internet ?"
         },
+        "internet-fee": {
+            "mappings": {
+                "0": {
+                    "then": "L'accès à l'internet est payant à cet endroit"
+                },
+                "1": {
+                    "then": "L'accès à Internet est gratuit dans cet endroit"
+                },
+                "2": {
+                    "then": "L'accès à l'internet dans cet endroit est gratuit pour les clients uniquement"
+                }
+            },
+            "question": "L'accès à l'internet est-il payant ?"
+        },
+        "internet-ssid": {
+            "freeform": {
+                "placeholder": "Entrez le nom du réseau"
+            },
+            "question": "Quel est le nom du réseau pour l'accès Internet sans fil ?",
+            "render": "Le nom du réseau est <b>{internet_access:ssid}</b>"
+        },
         "level": {
             "mappings": {
                 "0": {
@@ -94,6 +144,18 @@
                 }
             }
         },
+        "opening_hours_by_appointment": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Uniquement sur rendez-vous"
+                    },
+                    "1": {
+                        "then": "Uniquement sur rendez-vous"
+                    }
+                }
+            }
+        },
         "payment-options": {
             "mappings": {
                 "0": {
@@ -113,6 +175,24 @@
                     },
                     "1": {
                         "then": "Paiement via une carte de membre"
+                    }
+                }
+            }
+        },
+        "payment-options-split": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Les pièces sont acceptées ici"
+                    },
+                    "1": {
+                        "then": "Les billets de banque sont acceptés ici"
+                    },
+                    "2": {
+                        "then": "Les cartes de débit sont acceptées ici"
+                    },
+                    "3": {
+                        "then": "Les cartes de crédit sont acceptées ici"
                     }
                 }
             }
@@ -189,86 +269,6 @@
                 }
             },
             "question": "Quel est l’élément Wikipédia correspondant ?"
-        },
-        "denominations-coins": {
-            "mappings": {
-                "3": {
-                    "then": "Les pièces de 10 cents sont acceptées"
-                },
-                "4": {
-                    "then": "Les pièces de 20 cents sont acceptées"
-                },
-                "0": {
-                    "then": "Les pièces d'1 cent sont acceptées"
-                },
-                "1": {
-                    "then": "Les pièces de 2 cents sont acceptées"
-                },
-                "2": {
-                    "then": "Les pièces de 5 cents sont acceptées"
-                },
-                "5": {
-                    "then": "Les pièces de 50 cents sont acceptées"
-                },
-                "6": {
-                    "then": "Les pièces de 1 euro sont acceptées"
-                },
-                "7": {
-                    "then": "Les pièces de 2 euros sont acceptées"
-                }
-            },
-            "question": "Quelles pièces peut-on utiliser pour payer ici ?"
-        },
-        "internet-fee": {
-            "mappings": {
-                "0": {
-                    "then": "L'accès à l'internet est payant à cet endroit"
-                },
-                "1": {
-                    "then": "L'accès à Internet est gratuit dans cet endroit"
-                },
-                "2": {
-                    "then": "L'accès à l'internet dans cet endroit est gratuit pour les clients uniquement"
-                }
-            },
-            "question": "L'accès à l'internet est-il payant ?"
-        },
-        "internet-ssid": {
-            "freeform": {
-                "placeholder": "Entrez le nom du réseau"
-            },
-            "question": "Quel est le nom du réseau pour l'accès Internet sans fil ?",
-            "render": "Le nom du réseau est <b>{internet_access:ssid}</b>"
-        },
-        "payment-options-split": {
-            "override": {
-                "mappings+": {
-                    "1": {
-                        "then": "Les billets de banque sont acceptés ici"
-                    },
-                    "2": {
-                        "then": "Les cartes de débit sont acceptées ici"
-                    },
-                    "3": {
-                        "then": "Les cartes de crédit sont acceptées ici"
-                    },
-                    "0": {
-                        "then": "Les pièces sont acceptées ici"
-                    }
-                }
-            }
-        },
-        "opening_hours_by_appointment": {
-            "override": {
-                "mappings": {
-                    "0": {
-                        "then": "Uniquement sur rendez-vous"
-                    },
-                    "1": {
-                        "then": "Uniquement sur rendez-vous"
-                    }
-                }
-            }
         }
     }
 }

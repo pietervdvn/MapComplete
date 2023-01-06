@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 228,
+      "commits": 230,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -194,6 +194,10 @@
     },
     {
       "commits": 4,
+      "contributor": "sylvain-m"
+    },
+    {
+      "commits": 4,
       "contributor": "Hiroshi Miura"
     },
     {
@@ -263,6 +267,10 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
+    },
+    {
+      "commits": 2,
+      "contributor": "Piotr Strebski"
     },
     {
       "commits": 2,

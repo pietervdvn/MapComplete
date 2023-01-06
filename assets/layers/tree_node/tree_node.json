@@ -120,11 +120,13 @@
       "id": "circumference",
       "question": {
         "en": "What is the circumference of the tree trunk?<p class='subtle'>This is measured at a height of 1.30m</p>",
-        "de": "Wie groß ist der Umfang des Baumstammes?<p class='subtle'>Dies wird in einer Höhe von 1,30 m gemessen</p>"
+        "de": "Wie groß ist der Umfang des Baumstammes?<p class='subtle'>Dies wird in einer Höhe von 1,30 m gemessen</p>",
+        "fr": "Quelle est la circonférence du tronc ? <p class='subtle'>La mesure est effectuée à 1.30m de hauteur</p>"
       },
       "render": {
         "en": "The tree trunk has a circumference of {circumference} meter",
-        "de": "Der Baumstamm hat einen Umfang von {circumference} Meter"
+        "de": "Der Baumstamm hat einen Umfang von {circumference} Meter",
+        "fr": "Le tronc a une circonférence de {circumference} mètre(s)"
       },
       "freeform": {
         "key": "circumference",
@@ -136,7 +138,8 @@
       "id": "height",
       "question": {
         "en": "What is the height of this tree?",
-        "de": "Wie hoch ist dieser Baum?"
+        "de": "Wie hoch ist dieser Baum?",
+        "fr": "Quelle est la hauteur de cette arbre ?"
       },
       "freeform": {
         "key": "height",
@@ -145,7 +148,8 @@
       },
       "render": {
         "en": "This tree is {height} meter high",
-        "de": "Dieser Baum ist {height} Meter hoch"
+        "de": "Dieser Baum ist {height} Meter hoch",
+        "fr": "Cet arbre a une hauteur de {height} mètre(s)"
       }
     },
     {
@@ -515,7 +519,7 @@
             "nl": "Erkend als houtig erfgoed door <i>Onroerend Erfgoed Vlaanderen</i>",
             "en": "Registered as heritage by <i>Onroerend Erfgoed</i> Flanders",
             "it": "Registrato come patrimonio da <i>Onroerend Erfgoed</i> Flanders",
-            "fr": "Fait partie du patrimoine par <i>Onroerend Erfgoed</i>",
+            "fr": "Inscrit au registre du Patrimoine Immobilier (<i>Onroerend Erfgoed</i>) Flammand",
             "de": "Als Denkmal registriert von der <i>Onroerend Erfgoed</i> Flandern",
             "es": "Registrado como patrimonio por <i>Onroerend Erfgoed</i> Flandes",
             "id": "Terdaftar sebagai warisan oleh <i>Onroerend Erfgoed</i> Flanders"

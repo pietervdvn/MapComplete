@@ -7,7 +7,8 @@
   },
   "description": {
     "en": "This layer shows dentist offices",
-    "de": "Diese Ebene zeigt Zahnarztpraxen"
+    "de": "Diese Ebene zeigt Zahnarztpraxen",
+    "nl": "Deze laag toont tandartsen"
   },
   "source": {
     "osmTags": "amenity=dentist"
@@ -30,11 +31,13 @@
     {
       "question": {
         "en": "What is the name of this dentist?",
-        "de": "Wie lautet der Name dieses Zahnarztes?"
+        "de": "Wie lautet der Name dieses Zahnarztes?",
+        "nl": "Hoe heet deze tandarts?"
       },
       "render": {
         "en": "This dentist is called {name}",
-        "de": "Dieser Zahnarzt heißt {name}"
+        "de": "Dieser Zahnarzt heißt {name}",
+        "nl": "Deze tandarts heet {name}"
       },
       "freeform": {
         "key": "name"

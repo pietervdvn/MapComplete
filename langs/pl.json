@@ -9,11 +9,11 @@
         "cancel": "Anuluj",
         "cannotBeDeleted": "Ten obiekt nie może zostać usunięty",
         "delete": "Usuń",
-        "isDeleted": "Ten obiekt został usunięty",
-        "loading": "Sprawdzanie właściwości w celu sprawdzenia, czy tę funkcję można usunąć.",
         "explanations": {
             "hardDelete": "Ta funkcja zostanie usunięta w OpenStreetMap. Może zostać odzyskana przez doświadczonego współtwórcę"
-        }
+        },
+        "isDeleted": "Ten obiekt został usunięty",
+        "loading": "Sprawdzanie właściwości w celu sprawdzenia, czy tę funkcję można usunąć."
     },
     "favourite": {
         "loginNeeded": "<h3>Zaloguj się</h3>Osobisty układ jest dostępny tylko dla użytkowników OpenStreetMap",
@@ -42,10 +42,15 @@
         "getStartedLogin": "Zaloguj się za pomocą OpenStreetMap, aby rozpocząć",
         "getStartedNewAccount": " lub <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">utwórz nowe konto</a>",
         "goToInbox": "Otwórz skrzynkę odbiorczą",
+        "histogram": {
+            "error_loading": "Nie można wczytać histogramu"
+        },
         "layerSelection": {
             "title": "Wybierz warstwy",
             "zoomInToSeeThisLayer": "Powiększ, aby zobaczyć tę warstwę"
         },
+        "loading": "Wczytywanie…",
+        "loadingTheme": "Wczytywanie {theme}…",
         "loginToStart": "Zaloguj się, aby odpowiedzieć na to pytanie",
         "loginWithOpenStreetMap": "Zaloguj z OpenStreetMap",
         "nameInlineQuestion": "Nazwa tej {category} to $$$",
@@ -57,6 +62,7 @@
             "closed_permanently": "Zamknięte na nieokreślony czas",
             "closed_until": "Zamknięte do {date}",
             "error_loading": "Błąd: nie można zwizualizować tych godzin otwarcia.",
+            "loadingCountry": "Określanie kraju…",
             "not_all_rules_parsed": "Godziny otwarcia tego sklepu są skomplikowane. Następujące reguły są ignorowane w elemencie wejściowym:",
             "openTill": "do",
             "open_24_7": "Otwarte przez całą dobę",
@@ -64,8 +70,7 @@
             "opensAt": "z",
             "ph_closed": "zamknięte",
             "ph_not_known": " ",
-            "ph_open": "otwarte",
-            "loadingCountry": "Określanie kraju…"
+            "ph_open": "otwarte"
         },
         "osmLinkTooltip": "Zobacz ten obiekt na OpenStreetMap, aby uzyskać historię i więcej opcji edycji",
         "pickLanguage": "Wybierz język: ",
@@ -107,6 +112,10 @@
         },
         "skip": "Pomiń to pytanie",
         "skippedQuestions": "Niektóre pytania są pominięte",
+        "uploadGpx": {
+            "intro0": "Przesyłając swój ślad, OpenStreetMap.org zachowa pełną kopię śladu.",
+            "uploading": "Przesyłanie śladu…"
+        },
         "weekdays": {
             "abbreviations": {
                 "friday": "Pt",
@@ -126,19 +135,10 @@
             "wednesday": "Środa"
         },
         "welcomeBack": "Jesteś zalogowany, witaj z powrotem!",
-        "loadingTheme": "Wczytywanie {theme}…",
-        "histogram": {
-            "error_loading": "Nie można wczytać histogramu"
-        },
-        "uploadGpx": {
-            "uploading": "Przesyłanie śladu…",
-            "intro0": "Przesyłając swój ślad, OpenStreetMap.org zachowa pełną kopię śladu."
-        },
         "wikipedia": {
             "failed": "Wczytywanie wpisu z Wikipedii nie powiodło się",
             "loading": "Wczytywanie Wikipedii…"
-        },
-        "loading": "Wczytywanie…"
+        }
     },
     "image": {
         "addPicture": "Dodaj zdjęcie",
@@ -149,16 +149,16 @@
         "doDelete": "Usuń ilustrację",
         "dontDelete": "Anuluj",
         "isDeleted": "Usunięte",
+        "nearbyPictures": {
+            "loading": "Wczytywanie obrazów w pobliżu…"
+        },
         "pleaseLogin": "Zaloguj się, by dodać zdjęcie",
         "respectPrivacy": "Nie fotografuj ludzi i tablic rejestracyjnych. Nie wysyłaj także treści z Google Maps, Google Streetview ani innych licencjonowanych źródeł.",
         "uploadDone": "Twoje zdjęcie zostało dodane. Dzięki za pomoc!",
         "uploadFailed": "Wysyłanie zdjęcia nie powiodło się. Czy masz połączenie z internetem i włączony dostęp zewnętrznych API? Przeglądarki Brave i UMatrix mogą je blokować.",
         "uploadingMultiple": "Wysyłanie {count} zdjęć…",
         "uploadingPicture": "Wysyłanie zdjęcia…",
-        "willBePublished": "Twoje zdjęcie zostanie opublikowane ",
-        "nearbyPictures": {
-            "loading": "Wczytywanie obrazów w pobliżu…"
-        }
+        "willBePublished": "Twoje zdjęcie zostanie opublikowane "
     },
     "index": {
         "#": "Te teksty są wyświetlane nad przyciskami motywu, gdy nie jest załadowany żaden motyw",
@@ -188,8 +188,24 @@
         "inviteToSplit": "Podziel tę drogę na mniejsze segmenty. Pozwala to na nadanie różnych właściwości do poszczególnych części drogi.",
         "loginToSplit": "Musisz się zalogować, by podzielić drogę",
         "split": "Podziel",
-        "splitTitle": "Wybierz na mapie miejsce zmiany właściwości tej drogi",
-        "splitAgain": "Podziel tę drogę ponownie"
+        "splitAgain": "Podziel tę drogę ponownie",
+        "splitTitle": "Wybierz na mapie miejsce zmiany właściwości tej drogi"
+    },
+    "translations": {
+        "activateButton": "Pomóż przetłumaczyć MapComplete",
+        "allMissing": "Brak tłumaczeń",
+        "deactivate": "Wyłącz przyciski tłumaczenia",
+        "isTranslator": "Tryb tłumaczenia jest aktywny, ponieważ Twoja nazwa użytkownika odpowiada nazwisku poprzedniego tłumacza",
+        "notImmediate": "Tłumaczenia nie są aktualizowane bezpośrednio. Zwykle trwa to kilka dni"
+    },
+    "userinfo": {
+        "gotoInbox": "Otwórz swoją skrzynkę odbiorczą",
+        "gotoSettings": "Przejdź do swoich ustawień na OpenStreetMap.org",
+        "moveToHome": "Przesuń mapę do Twojej lokalizacji domowej",
+        "newMessages": "masz nowe wiadomości",
+        "noDescription": "Nie masz jeszcze opisu w swoim profilu",
+        "noDescriptionCallToAction": "Dodaj opis profilu",
+        "welcome": "Witaj {user}"
     },
     "validation": {
         "color": {
@@ -198,21 +214,5 @@
         "date": {
             "description": "Data rozpoczynająca się od roku"
         }
-    },
-    "translations": {
-        "activateButton": "Pomóż przetłumaczyć MapComplete",
-        "notImmediate": "Tłumaczenia nie są aktualizowane bezpośrednio. Zwykle trwa to kilka dni",
-        "isTranslator": "Tryb tłumaczenia jest aktywny, ponieważ Twoja nazwa użytkownika odpowiada nazwisku poprzedniego tłumacza",
-        "allMissing": "Brak tłumaczeń",
-        "deactivate": "Wyłącz przyciski tłumaczenia"
-    },
-    "userinfo": {
-        "gotoInbox": "Otwórz swoją skrzynkę odbiorczą",
-        "moveToHome": "Przesuń mapę do Twojej lokalizacji domowej",
-        "noDescription": "Nie masz jeszcze opisu w swoim profilu",
-        "welcome": "Witaj {user}",
-        "noDescriptionCallToAction": "Dodaj opis profilu",
-        "gotoSettings": "Przejdź do swoich ustawień na OpenStreetMap.org",
-        "newMessages": "masz nowe wiadomości"
     }
 }

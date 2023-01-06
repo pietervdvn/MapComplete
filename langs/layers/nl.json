@@ -3475,14 +3475,12 @@
         }
     },
     "dentist": {
+        "description": "Deze laag toont tandartsen",
         "name": "Tandarts",
         "presets": {
             "0": {
                 "title": "een tandartspraktijk"
             }
-        },
-        "title": {
-            "render": "Dokterspraktijk {name}"
         },
         "tagRenderings": {
             "name": {
@@ -3490,7 +3488,9 @@
                 "render": "Deze tandarts heet {name}"
             }
         },
-        "description": "Deze laag toont tandartsen"
+        "title": {
+            "render": "Dokterspraktijk {name}"
+        }
     },
     "direction": {
         "description": "Deze laag toont de oriëntatie van een object",

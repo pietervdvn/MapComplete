@@ -4,12 +4,14 @@
     "en": "Sports",
     "nl": "Sport",
     "de": "Sport",
-    "pa_PK": "کھیڈاں"
+    "pa_PK": "کھیڈاں",
+    "fr": "Sports"
   },
   "shortDescription": {
     "en": "Map showing sport facilities.",
     "nl": "Kaart met sportfaciliteiten.",
-    "de": "Karte mit Sporteinrichtungen."
+    "de": "Karte mit Sporteinrichtungen.",
+    "fr": "Carte des équipements sportifs"
   },
   "description": {
     "en": "All about sports, find sport pitches, fitness centres and more.",
