@@ -24,6 +24,7 @@ export default class ScrollableFullScreen {
     private hashToShow: string
     private _fullscreencomponent: BaseUIElement
     private _resetScrollSignal: UIEventSource<void> = new UIEventSource<void>(undefined)
+    private _setHash: boolean
 
     constructor(
         title: (options: { mode: string }) => BaseUIElement,
@@ -32,12 +33,16 @@ export default class ScrollableFullScreen {
             resetScrollSignal: UIEventSource<void>
         }) => BaseUIElement,
         hashToShow: string,
-        isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+        isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false),
+        options?: {
+            setHash?: boolean
+        }
     ) {
         this.hashToShow = hashToShow
         this.isShown = isShown
+        this._setHash = options?.setHash ?? true
 
-        if (hashToShow === undefined || hashToShow === "") {
+        if ((hashToShow === undefined || hashToShow === "") && this._setHash) {
             throw "HashToShow should be defined as it is vital for the 'back' key functionality"
         }
 
@@ -52,17 +57,18 @@ export default class ScrollableFullScreen {
         )
 
         const self = this
-        Hash.hash.addCallback((h) => {
-            if (h === undefined) {
-                isShown.setData(false)
-            }
-        })
+        if (this._setHash) {
+            Hash.hash.addCallback((h) => {
+                if (h === undefined) {
+                    isShown.setData(false)
+                }
+            })
+        }
 
         isShown.addCallbackD((isShown) => {
             if (isShown) {
                 // We first must set the hash, then activate the panel
                 // If the order is wrong, this will cause the panel to disactivate again
-                Hash.hash.setData(hashToShow)
                 ScrollableFullScreen._currentlyOpen = self
                 self.Activate()
             } else {
@@ -74,7 +80,6 @@ export default class ScrollableFullScreen {
             }
         })
         if (isShown.data) {
-            Hash.hash.setData(hashToShow)
             ScrollableFullScreen._currentlyOpen = self
             this.Activate()
         }
@@ -111,10 +116,10 @@ export default class ScrollableFullScreen {
      * @constructor
      */
     public Activate(): void {
-        this.isShown.setData(true)
-        if (this.hashToShow && this.hashToShow !== "") {
+        if (this.hashToShow && this.hashToShow !== "" && this._setHash) {
             Hash.hash.setData(this.hashToShow)
         }
+        this.isShown.setData(true)
         this._fullscreencomponent.AttachTo("fullscreen")
         const fs = document.getElementById("fullscreen")
         ScrollableFullScreen._currentlyOpen = this

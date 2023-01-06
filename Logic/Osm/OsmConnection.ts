@@ -122,7 +122,10 @@ export class OsmConnection {
 
         this.updateAuthObject()
 
-        this.preferencesHandler = new OsmPreferences(this.auth, this)
+        this.preferencesHandler = new OsmPreferences(
+            this.auth,
+            <any /*This is needed to make the tests work*/>this
+        )
 
         if (options.oauth_token?.data !== undefined) {
             console.log(options.oauth_token.data)
@@ -146,7 +149,13 @@ export class OsmConnection {
     }
 
     public CreateChangesetHandler(allElements: ElementStorage, changes: Changes) {
-        return new ChangesetHandler(this._dryRun, this, allElements, changes, this.auth)
+        return new ChangesetHandler(
+            this._dryRun,
+            <any>/*casting is needed to make the tests work*/ this,
+            allElements,
+            changes,
+            this.auth
+        )
     }
 
     public GetPreference(
