@@ -32,15 +32,12 @@ export default class ScrollableFullScreen {
             resetScrollSignal: UIEventSource<void>
         }) => BaseUIElement,
         hashToShow: string,
-        isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false),
-        options?: {
-            setHash?: true | boolean
-        }
+        isShown: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     ) {
         this.hashToShow = hashToShow
         this.isShown = isShown
 
-        if (hashToShow === undefined) {
+        if (hashToShow === undefined || hashToShow === "") {
             throw "HashToShow should be defined as it is vital for the 'back' key functionality"
         }
 
@@ -55,22 +52,17 @@ export default class ScrollableFullScreen {
         )
 
         const self = this
-        const setHash = options?.setHash ?? true
-        if (setHash) {
-            Hash.hash.addCallback((h) => {
-                if (h === undefined) {
-                    isShown.setData(false)
-                }
-            })
-        }
+        Hash.hash.addCallback((h) => {
+            if (h === undefined) {
+                isShown.setData(false)
+            }
+        })
 
-        isShown.addCallback((isShown) => {
+        isShown.addCallbackD((isShown) => {
             if (isShown) {
                 // We first must set the hash, then activate the panel
                 // If the order is wrong, this will cause the panel to disactivate again
-                if (setHash) {
-                    Hash.hash.setData(hashToShow)
-                }
+                Hash.hash.setData(hashToShow)
                 ScrollableFullScreen._currentlyOpen = self
                 self.Activate()
             } else {
@@ -81,6 +73,11 @@ export default class ScrollableFullScreen {
                 ScrollableFullScreen.collapse()
             }
         })
+        if (isShown.data) {
+            Hash.hash.setData(hashToShow)
+            ScrollableFullScreen._currentlyOpen = self
+            this.Activate()
+        }
     }
 
     private static initEmpty(): FixedUiElement {
@@ -115,6 +112,9 @@ export default class ScrollableFullScreen {
      */
     public Activate(): void {
         this.isShown.setData(true)
+        if (this.hashToShow && this.hashToShow !== "") {
+            Hash.hash.setData(this.hashToShow)
+        }
         this._fullscreencomponent.AttachTo("fullscreen")
         const fs = document.getElementById("fullscreen")
         ScrollableFullScreen._currentlyOpen = this
@@ -156,5 +156,9 @@ export default class ScrollableFullScreen {
         ]).SetClass(
             "fixed top-0 left-0 right-0 h-screen w-screen desktop:max-h-65vh md:w-auto md:relative z-above-controls md:rounded-xl overflow-hidden"
         )
+    }
+
+    static ActivateCurrent() {
+        ScrollableFullScreen._currentlyOpen?.Activate()
     }
 }
