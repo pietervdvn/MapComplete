@@ -551,7 +551,9 @@
             "centroid"
           ]
         }
-      ]
+      ],
+      "deletion": true,
+      "allowMove": { "enableImproveAccuracy": true, "enableRelocation": false }
     }
   ],
   "credits": "joost schouppe; stla"
