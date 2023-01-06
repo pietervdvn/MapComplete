@@ -150,14 +150,16 @@
       "id": "cash_out",
       "question": {
         "en": "Can you withdraw cash from this ATM?",
-        "de": "Kann man an diesem Geldautomaten Bargeld abheben?"
+        "de": "Kann man an diesem Geldautomaten Bargeld abheben?",
+        "nl": "Kan je geld ophalen bij deze geldautomaat?"
       },
       "mappings": [
         {
           "if": "cash_out=",
           "then": {
             "en": "You can withdraw cash from this ATM",
-            "de": "Sie können an diesem Geldautomaten Bargeld abheben"
+            "de": "Sie können an diesem Geldautomaten Bargeld abheben",
+            "nl": "Je kan geld ophalen bij deze geldautomaat"
           },
           "hideInAnswer": true
         },
@@ -165,14 +167,16 @@
           "if": "cash_out=yes",
           "then": {
             "en": "You can withdraw cash from this ATM",
-            "de": "An diesem Geldautomaten können Sie Bargeld abheben"
+            "de": "An diesem Geldautomaten können Sie Bargeld abheben",
+            "nl": "Je kan geld ophalen bij deze geldautomaat"
           }
         },
         {
           "if": "cash_out=no",
           "then": {
             "en": "You cannot withdraw cash from this ATM",
-            "de": "Sie können an diesem Geldautomaten kein Bargeld abheben"
+            "de": "Sie können an diesem Geldautomaten kein Bargeld abheben",
+            "nl": "Je kan geen geld ophalen bij deze geldautomaat"
           }
         }
       ]
@@ -215,21 +219,24 @@
       "id": "speech_output",
       "question": {
         "en": "Does this ATM have speech output for visually impaired users?",
-        "de": "Verfügt dieser Geldautomat über eine Sprachausgabe für sehbehinderte Benutzer?"
+        "de": "Verfügt dieser Geldautomat über eine Sprachausgabe für sehbehinderte Benutzer?",
+        "nl": "Heeft deze automaat spraak voor slechtziende en blinde gebruikers?"
       },
       "mappings": [
         {
           "if": "speech_output=yes",
           "then": {
             "en": "This ATM has speech output, usually available through a headphone jack",
-            "de": "Dieser Geldautomat verfügt über eine Sprachausgabe, die normalerweise über eine Kopfhörerbuchse verfügbar ist"
+            "de": "Dieser Geldautomat verfügt über eine Sprachausgabe, die normalerweise über eine Kopfhörerbuchse verfügbar ist",
+            "nl": "Deze automaat heeft spraak, waarschijnlijk beschikbaar via een hoofdtelefoon-aansluiting"
           }
         },
         {
           "if": "speech_output=no",
           "then": {
             "en": "This ATM does not have speech output",
-            "de": "Dieser Geldautomat hat keine Sprachausgabe"
+            "de": "Dieser Geldautomat hat keine Sprachausgabe",
+            "nl": "Deze automaat heeft geen spraak"
           }
         }
       ]
@@ -243,15 +250,18 @@
           "key": "speech_output",
           "question": {
             "en": "In which languages does this ATM have speech output?",
-            "de": "In welchen Sprachen hat dieser Geldautomat eine Sprachausgabe?"
+            "de": "In welchen Sprachen hat dieser Geldautomat eine Sprachausgabe?",
+            "nl": "In welke taal is de srpaak van deze geldautomaat?"
           },
           "render_list_item": {
             "en": "This ATM has speech output in {language():font-bold}",
-            "de": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}"
+            "de": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}",
+            "nl": "Deze geldautomaat heeft spraak in {language():font-bold}"
           },
           "render_single_language": {
             "en": "This ATM has speech output in {language():font-bold}",
-            "de": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}"
+            "de": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}",
+            "nl": "Deze automaat heeft spraak in {language():font-bold}"
           }
         }
       }

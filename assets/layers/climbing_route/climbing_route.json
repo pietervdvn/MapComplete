@@ -11,7 +11,8 @@
   },
   "description": {
     "en": "A single climbing route and its properties. Some properties are derived from the containing features",
-    "de": "Eine einzelne Kletterroute und ihre Eigenschaften. Einige Eigenschaften werden von übergeordneten Objekten abgeleitet"
+    "de": "Eine einzelne Kletterroute und ihre Eigenschaften. Einige Eigenschaften werden von übergeordneten Objekten abgeleitet",
+    "nl": "Een klimroute en de eigenschappen van deze klimroute. Sommige eigenschappen worden afgeleid van omliggende kaart-objecten"
   },
   "minzoom": 18,
   "source": {
@@ -150,13 +151,15 @@
         "en": "How many bolts does this route have before reaching the anchor?",
         "fr": "Combien de prises cette voie possède avant d’atteindre la moulinette ?",
         "de": "Wie viele Haken gibt es auf dieser Kletterroute bevor der Umlenker bzw. Standhaken erreicht ist?",
-        "it": "Quanti bulloni sono presenti in questo percorso prima di arrivare alla moulinette?"
+        "it": "Quanti bulloni sono presenti in questo percorso prima di arrivare alla moulinette?",
+        "nl": "Hoeveel bouten heeft deze route voordat je het relay bereikt?"
       },
       "render": {
         "en": "This route has {climbing:bolts} bolts <div class='subtle'>This is without relays and indicates how much quickdraws a climber needs</div>",
         "fr": "Cette voie a {climbing:bolts} prises <div class='subtle'>C'est sans relai et indique de combien de dégaine un grimpeur a besoin</div>",
         "de": "Diese Route hat {climbing:bolts} Haken <div class='subtle'>Dies ist ohne Relais und gibt an, wie viel Schnellspanner ein Kletterer braucht</div>",
-        "it": "Questo percorso ha {climbing:bolts} bulloni"
+        "it": "Questo percorso ha {climbing:bolts} bulloni",
+        "nl": "Deze route heeft {climbing:bolts} klimbouten. <div class='subtle'>Dit is zonder het relay mee te tellen. Een klimmer heeft dus minstens {climbing:bolts} klimsetjes nodig om boven te raken</div>"
       },
       "freeform": {
         "key": "climbing:bolts",
@@ -173,7 +176,8 @@
             "en": "This route is not bolted",
             "fr": "Cette voie n’a pas de prises",
             "de": "Auf dieser Kletterroute sind keine Haken vorhanden",
-            "it": "In questo percorso non sono presenti bulloni"
+            "it": "In questo percorso non sono presenti bulloni",
+            "nl": "Deze route heeft geen bouten"
           },
           "addExtraTags": [
             "climbing:bolts="
@@ -188,7 +192,8 @@
         "en": "The rock type is {_embedding_features_with_rock:rock} as stated <a href='#{_embedding_features_with_rock:id}'>on the surrounding crag</a>",
         "fr": "Le type de roche est {_embedding_features_with_rock:rock} selon <a href='#{_embedding_features_with_rock:id}'>le mur</a>",
         "it": "Il tipo di roccia è {_embedding_features_with_rock:rock} come dichiarato sul <a href='#{_embedding_features_with_rock:id}'>muro circostante</a>",
-        "de": "Der Gesteinstyp ist {_embedding_features_with_rock:rock}, wie <a href='#{_embedding_features_with_rock:id}'>auf dem umgebenden Felsen angegeben</a>"
+        "de": "Der Gesteinstyp ist {_embedding_features_with_rock:rock}, wie <a href='#{_embedding_features_with_rock:id}'>auf dem umgebenden Felsen angegeben</a>",
+        "nl": "De steensoort is {_embedding_features_with_rock:rock} zoals vermeld op <a href='#{_embedding_features_with_rock:id}'>de omliggende klimzone</a>"
       },
       "freeform": {
         "key": "_embedding_features_with_rock:rock"

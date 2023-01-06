@@ -208,6 +208,20 @@
                     }
                 }
             },
+            "cash_out": {
+                "mappings": {
+                    "0": {
+                        "then": "Je kan geld ophalen bij deze geldautomaat"
+                    },
+                    "1": {
+                        "then": "Je kan geld ophalen bij deze geldautomaat"
+                    },
+                    "2": {
+                        "then": "Je kan geen geld ophalen bij deze geldautomaat"
+                    }
+                },
+                "question": "Kan je geld ophalen bij deze geldautomaat?"
+            },
             "name": {
                 "render": "De naam van deze geldautomaat is {name}"
             },
@@ -232,25 +246,11 @@
             "speech_output_language": {
                 "render": {
                     "special": {
-                        "render_list_item": "Deze geldautomaat heeft spraak in {language():font-bold}",
                         "question": "In welke taal is de srpaak van deze geldautomaat?",
+                        "render_list_item": "Deze geldautomaat heeft spraak in {language():font-bold}",
                         "render_single_language": "Deze automaat heeft spraak in {language():font-bold}"
                     }
                 }
-            },
-            "cash_out": {
-                "mappings": {
-                    "1": {
-                        "then": "Je kan geld ophalen bij deze geldautomaat"
-                    },
-                    "0": {
-                        "then": "Je kan geld ophalen bij deze geldautomaat"
-                    },
-                    "2": {
-                        "then": "Je kan geen geld ophalen bij deze geldautomaat"
-                    }
-                },
-                "question": "Kan je geld ophalen bij deze geldautomaat?"
             }
         },
         "title": {
@@ -521,6 +521,18 @@
         }
     },
     "bench_at_pt": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "Deze bushalte wordt niet meer gebruikt"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Deze bushalte heeft geen zitbank (er is er nooit een geweest of deze is verwijderd)"
+                }
+            }
+        },
         "description": "Een laag die stopplaatsen van openbaar vervoer toont waar er een zitbank is",
         "name": "Zitbanken aan bushaltes",
         "tagRenderings": {
@@ -552,18 +564,6 @@
                 }
             },
             "render": "Zitbank"
-        },
-        "deletion": {
-            "extraDeleteReasons": {
-                "0": {
-                    "explanation": "Deze bushalte wordt niet meer gebruikt"
-                }
-            },
-            "nonDeleteMappings": {
-                "0": {
-                    "then": "Deze bushalte heeft geen zitbank (er is er nooit een geweest of deze is verwijderd)"
-                }
-            }
         }
     },
     "bicycle_library": {
@@ -2662,6 +2662,9 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "Klimrots of klimzone <b>{name}</b>"
+                },
                 "1": {
                     "then": "Klimsite <b>{name}</b>"
                 },
@@ -2670,9 +2673,6 @@
                 },
                 "3": {
                     "then": "Klimgelegenheid <b>{name}</b>"
-                },
-                "0": {
-                    "then": "Klimrots of klimzone <b>{name}</b>"
                 }
             },
             "render": "Klimgelegenheid"
@@ -2724,6 +2724,17 @@
                 },
                 "question": "Is er een snelklimmuur (speed climbing)?"
             },
+            "harness_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Een klimgordel kan hier gehuurd worden"
+                    },
+                    "1": {
+                        "then": "Hier kunnen <b>geen</b> klimgordels gehuurd worden"
+                    }
+                },
+                "question": "Kan een klimgordel hier gehuurd worden?"
+            },
             "name": {
                 "question": "Wat is de naam van dit Klimzaal?"
             },
@@ -2737,17 +2748,6 @@
                     }
                 },
                 "question": "Kunnen hier klimschoenen gehuurd worden?"
-            },
-            "harness_rental": {
-                "question": "Kan een klimgordel hier gehuurd worden?",
-                "mappings": {
-                    "0": {
-                        "then": "Een klimgordel kan hier gehuurd worden"
-                    },
-                    "1": {
-                        "then": "Hier kunnen <b>geen</b> klimgordels gehuurd worden"
-                    }
-                }
             }
         },
         "title": {
@@ -2785,6 +2785,7 @@
         }
     },
     "climbing_route": {
+        "description": "Een klimroute en de eigenschappen van deze klimroute. Sommige eigenschappen worden afgeleid van omliggende kaart-objecten",
         "name": "Klimroute",
         "presets": {
             "0": {
@@ -2809,17 +2810,17 @@
                 "question": "Hoe heet deze klimroute?",
                 "render": "<strong>{name}</strong>"
             },
+            "Rock type via embedded feature": {
+                "render": "De steensoort is {_embedding_features_with_rock:rock} zoals vermeld op <a href='#{_embedding_features_with_rock:id}'>de omliggende klimzone</a>"
+            },
             "bolts": {
-                "question": "Hoeveel bouten heeft deze route voordat je het relay bereikt?",
                 "mappings": {
                     "0": {
                         "then": "Deze route heeft geen bouten"
                     }
                 },
+                "question": "Hoeveel bouten heeft deze route voordat je het relay bereikt?",
                 "render": "Deze route heeft {climbing:bolts} klimbouten. <div class='subtle'>Dit is zonder het relay mee te tellen. Een klimmer heeft dus minstens {climbing:bolts} klimsetjes nodig om boven te raken</div>"
-            },
-            "Rock type via embedded feature": {
-                "render": "De steensoort is {_embedding_features_with_rock:rock} zoals vermeld op <a href='#{_embedding_features_with_rock:id}'>de omliggende klimzone</a>"
             }
         },
         "title": {
@@ -2829,8 +2830,7 @@
                 }
             },
             "render": "Klimroute"
-        },
-        "description": "Een klimroute en de eigenschappen van deze klimroute. Sommige eigenschappen worden afgeleid van omliggende kaart-objecten"
+        }
     },
     "crab_address": {
         "tagRenderings": {
@@ -3490,6 +3490,7 @@
         "name": "Richtingsvisualisatie"
     },
     "doctors": {
+        "description": "Deze laag toont dokterspraktijken",
         "name": "Dokters",
         "presets": {
             "0": {
@@ -3522,8 +3523,7 @@
         },
         "title": {
             "render": "Dokterspraktijk {name}"
-        },
-        "description": "Deze laag toont dokterspraktijken"
+        }
     },
     "dogpark": {
         "name": "hondenweides",
@@ -7362,6 +7362,7 @@
         }
     },
     "toilet_at_amenity": {
+        "description": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen.",
         "filter": {
             "0": {
                 "options": {
@@ -7385,16 +7386,11 @@
                 }
             }
         },
+        "name": "Toilet in een voorziening",
         "tagRenderings": {
             "toilet-access": {
                 "mappings": {
                     "0": {
-                        "then": "Publiek toegankelijk"
-                    },
-                    "3": {
-                        "then": "Toegankelijk na het vragen van de sleutel"
-                    },
-                    "4": {
                         "then": "Publiek toegankelijk"
                     },
                     "1": {
@@ -7402,6 +7398,12 @@
                     },
                     "2": {
                         "then": "Niet toegankelijk, ook niet voor klanten van de voorziening"
+                    },
+                    "3": {
+                        "then": "Toegankelijk na het vragen van de sleutel"
+                    },
+                    "4": {
+                        "then": "Publiek toegankelijk"
                     }
                 },
                 "question": "Zijn deze toiletten publiek toegankelijk?",
@@ -7439,11 +7441,6 @@
             "wheelchair-door-width": {
                 "question": "Hoe breed is de deur van de rolstoeltoegankelijke toilet?",
                 "render": "De deur naar de rolstoeltoegankelijke toilet is {canonical(toilets:door:width)} wide"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "Wanneer is de voorziening geopend waarin deze toiletten zich bevinden?"
-                }
             }
         },
         "title": {
@@ -7465,9 +7462,7 @@
                     }
                 }
             }
-        },
-        "description": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen.",
-        "name": "Toilet in een voorziening"
+        }
     },
     "trail": {
         "description": "Aangeduide wandeltochten",

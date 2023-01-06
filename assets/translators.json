@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 223,
+      "commits": 228,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -17,7 +17,7 @@
       "contributor": "danieldegroot2"
     },
     {
-      "commits": 57,
+      "commits": 58,
       "contributor": "Robin van der Linde"
     },
     {
@@ -162,6 +162,10 @@
     },
     {
       "commits": 5,
+      "contributor": "Fabio Bettani"
+    },
+    {
+      "commits": 5,
       "contributor": "BMN"
     },
     {
@@ -207,10 +211,6 @@
     {
       "commits": 4,
       "contributor": "Jan Zabel"
-    },
-    {
-      "commits": 4,
-      "contributor": "Fabio Bettani"
     },
     {
       "commits": 3,
