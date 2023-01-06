@@ -3,13 +3,16 @@ import LanguagePicker from "../LanguagePicker"
 import Translations from "../i18n/Translations"
 import Toggle from "../Input/Toggle"
 import { SubtleButton } from "../Base/SubtleButton"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { LoginToggle } from "../Popup/LoginButton"
 import Svg from "../../Svg"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import FullWelcomePaneWithTabs from "./FullWelcomePaneWithTabs"
 import LoggedInUserIndicator from "../LoggedInUserIndicator"
+import { ActionButtons } from "./ActionButtons"
+import { BBox } from "../../Logic/BBox"
+import Loc from "../../Models/Loc"
 
 export default class ThemeIntroductionPanel extends Combine {
     constructor(
@@ -21,6 +24,9 @@ export default class ThemeIntroductionPanel extends Combine {
             featureSwitchUserbadge: UIEventSource<boolean>
             layoutToUse: LayoutConfig
             osmConnection: OsmConnection
+            currentBounds: Store<BBox>
+            locationControl: UIEventSource<Loc>
+            isTranslator: Store<boolean>
         },
         guistate?: { userInfoIsOpened: UIEventSource<boolean> }
     ) {
@@ -74,7 +80,7 @@ export default class ThemeIntroductionPanel extends Combine {
             loginStatus.SetClass("block mt-6 pt-2 md:border-t-2 border-dotted border-gray-400"),
             layout.descriptionTail?.Clone().SetClass("block mt-4"),
 
-            languagePicker?.SetClass("block mt-4"),
+            languagePicker?.SetClass("block mt-4 pb-8 border-b-2 border-dotted border-gray-400"),
 
             Toggle.If(state.featureSwitchMoreQuests, () =>
                 new Combine([
@@ -89,6 +95,7 @@ export default class ThemeIntroductionPanel extends Combine {
                         .SetClass("h-12"),
                 ]).SetClass("flex flex-col mt-6")
             ),
+            new ActionButtons(state),
 
             ...layout.CustomCodeSnippets(),
         ])
