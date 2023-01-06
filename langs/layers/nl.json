@@ -3487,7 +3487,7 @@
         "tagRenderings": {
             "name": {
                 "question": "Hoe heet deze tandarts?",
-                "render": "Deze tandarts heet {naam}"
+                "render": "Deze tandarts heet {name}"
             }
         },
         "description": "Deze laag toont tandartsen"
