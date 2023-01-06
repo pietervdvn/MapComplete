@@ -2,11 +2,11 @@
 
 ## Background
 
-Name:
-Age:
-Occupation:
-Computer skills:
-Demography:
+- Name:
+- Age:
+- Occupation:
+- Computer skills:
+- Demography:
 
 
 ## Interests & Influences
