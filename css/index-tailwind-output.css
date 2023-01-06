@@ -1382,6 +1382,10 @@ video {
   border-bottom-width: 1px;
 }
 
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
 .border-dotted {
   border-style: dotted;
 }
@@ -1559,6 +1563,10 @@ video {
 
 .pr-2 {
   padding-right: 0.5rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
 }
 
 .pl-5 {
