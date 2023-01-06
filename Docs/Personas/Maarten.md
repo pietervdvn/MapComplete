@@ -2,10 +2,11 @@
 
 ## Background
 
-Name: Maarten
-Age: 20
-Occupation: student of safety prevention
-Computer skills: moderate
+- Name: Maarten
+- Age: 20
+- Gender: Male
+- Occupation: student of safety prevention
+- Computer skills: moderate
 
 ## Background
 
