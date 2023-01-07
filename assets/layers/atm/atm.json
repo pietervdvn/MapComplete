@@ -32,17 +32,7 @@
     ]
   },
   "source": {
-    "osmTags": {
-      "or": [
-        "amenity=atm",
-        {
-          "and": [
-            "amenity=bank",
-            "atm=yes"
-          ]
-        }
-      ]
-    }
+    "osmTags": "amenity=atm"
   },
   "minzoom": 13,
   "presets": [
@@ -59,26 +49,7 @@
     }
   ],
   "tagRenderings": [
-    {
-      "builtin": "images",
-      "override": {
-        "condition": "amenity!=bank"
-      }
-    },
-    {
-      "id": "bank-images",
-      "render": "{image_carousel()}",
-      "condition": "amenity=bank"
-    },
-    {
-      "id": "atm-in-bank-notice",
-      "condition": "amenity=bank",
-      "render": {
-        "en": "This ATM is located in or near a bank",
-        "de": "Dieser Geldautomat befindet sich in oder in der Nähe einer Bank",
-        "nl": "Deze geldautomaat bevindt zich in of bij een bank"
-      }
-    },
+    "images",
     {
       "id": "name",
       "render": {
@@ -140,12 +111,7 @@
         "nl": "Deze geldautomaat wordt beheerd door {operator}"
       }
     },
-    {
-      "builtin": "opening_hours",
-      "override": {
-        "condition": "amenity!=bank"
-      }
-    },
+    "opening_hours",
     {
       "id": "cash_out",
       "question": {
@@ -276,6 +242,18 @@
       ]
     }
   ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
+  "deletion": {
+    "softDeletionTags": {
+      "and": [
+        "disused:amenity=atm",
+        "amenity="
+      ]
+    }
+  },
   "filter": [
     "open_now",
     {

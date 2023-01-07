@@ -4,30 +4,22 @@ import { FixedInputElement } from "../Input/FixedInputElement"
 import Combine from "../Base/Combine"
 import Translations from "../i18n/Translations"
 import { TextField } from "../Input/TextField"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import Title from "../Base/Title"
 import { SubtleButton } from "../Base/SubtleButton"
 import Svg from "../../Svg"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { Translation } from "../i18n/Translation"
+import { LoginToggle } from "../Popup/LoginButton"
 
-export default class UploadTraceToOsmUI extends Toggle {
-    private static createDefault(s: string, defaultValue: string) {
-        if (defaultValue.length < 1) {
-            throw "Default value should have some characters"
-        }
-        if (s === undefined || s === null || s === "") {
-            return defaultValue
-        }
-        return s
-    }
-
+export default class UploadTraceToOsmUI extends LoginToggle {
     constructor(
         trace: (title: string) => string,
         state: {
             layoutToUse: LayoutConfig
             osmConnection: OsmConnection
+            readonly featureSwitchUserbadge: Store<boolean>
         },
         options?: {
             whenUploaded?: () => void | Promise<void>
@@ -119,15 +111,41 @@ export default class UploadTraceToOsmUI extends Toggle {
         ]).SetClass("flex flex-col p-4 rounded border-2 m-2 border-subtle")
 
         super(
-            new Combine([Svg.confirm_svg().SetClass("w-12 h-12 mr-2"), t.uploadFinished]).SetClass(
-                "flex p-2 rounded-xl border-2 subtle-border items-center"
-            ),
             new Toggle(
-                confirmPanel,
-                new SubtleButton(Svg.upload_svg(), t.title).onClick(() => clicked.setData(true)),
-                clicked
+                new Toggle(
+                    new Combine([
+                        Svg.confirm_svg().SetClass("w-12 h-12 mr-2"),
+                        t.uploadFinished,
+                    ]).SetClass("flex p-2 rounded-xl border-2 subtle-border items-center"),
+                    new Toggle(
+                        confirmPanel,
+                        new SubtleButton(Svg.upload_svg(), t.title).onClick(() =>
+                            clicked.setData(true)
+                        ),
+                        clicked
+                    ),
+                    uploadFinished
+                ),
+                new Combine([
+                    Svg.invalid_ui().SetClass("w-8 h-8 m-2"),
+                    t.gpxServiceOffline.SetClass("p-2"),
+                ]).SetClass("flex border alert items-center"),
+                state.osmConnection.gpxServiceIsOnline.map(
+                    (serviceState) => serviceState === "online"
+                )
             ),
-            uploadFinished
+            undefined,
+            state
         )
+    }
+
+    private static createDefault(s: string, defaultValue: string) {
+        if (defaultValue.length < 1) {
+            throw "Default value should have some characters"
+        }
+        if (s === undefined || s === null || s === "") {
+            return defaultValue
+        }
+        return s
     }
 }

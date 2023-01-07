@@ -414,6 +414,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             map.on("contextmenu", function (e) {
                 // @ts-ignore
                 lastClickLocation?.setData({ lat: e.latlng.lat, lon: e.latlng.lng })
+                map.setZoom(map.getZoom() + 1)
             })
         }
 

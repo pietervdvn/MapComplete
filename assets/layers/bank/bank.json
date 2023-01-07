@@ -1,0 +1,70 @@
+{
+  "id": "bank",
+  "description": {
+    "en": "A financial institution to deposit money"
+  },
+  "name": {
+    "en": "Banks"
+  },
+  "title": {
+    "render": "Bank",
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": "{name}"
+      }
+    ]
+  },
+  "source": {
+    "osmTags": "amenity=bank"
+  },
+  "mapRendering": [
+    {
+      "icon": "circle:white;./assets/layers/bank/bank.svg",
+      "location": [
+        "point",
+        "centroid"
+      ]
+    }
+  ],
+  "tagRenderings": [
+    {
+      "id": "has_atm",
+      "question": {
+        "en": "Does this bank have an ATM?"
+      },
+      "mappings": [
+        {
+          "if": "atm=yes",
+          "then": {
+            "en": "This bank has an ATM"
+          }
+        },
+        {
+          "if": "atm=no",
+          "then": {
+            "en": "This bank does <b>not</b> have an ATM"
+          }
+        },
+        {
+          "if": "atm=separate",
+          "then": {
+            "en": "This bank does have an ATM, but it is mapped as a different icon"
+          }
+        }
+      ]
+    }
+  ],
+  "filter": [
+    "open_now",
+    {
+      "id": "has_atm",
+      "options": [{
+        "question": {
+          "en": "With an ATM"
+        },
+        "osmTags": "atm=yes"
+      }]
+    }
+  ]
+}

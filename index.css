@@ -113,6 +113,10 @@ body {
   box-sizing: initial !important;
 }
 
+.leaflet-marker-icon img {
+  -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+}
+
 .leaflet-control-attribution {
   display: block ruby;
 }

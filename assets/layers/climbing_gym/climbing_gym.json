@@ -226,5 +226,17 @@
         ]
       }
     }
+  ],
+  "presets": [
+    {
+      "title": {
+        "en": "Climbing gym",
+        "nl": "Klimzaal"
+      },
+      "tags": [
+        "leisure=sports_centre",
+        "sport=climbing"
+      ]
+    }
   ]
 }

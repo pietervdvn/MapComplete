@@ -22,8 +22,11 @@
     {
       "builtin": "cycleways_and_roads",
       "override": {
-        "mapRendering": null,
-        "title": null
+        "title": null,
+        "forceLoad": true,
+        "minzoom": 18,
+        "passAllFeatures": true,
+        "shownByDefault": false
       }
     },
     {

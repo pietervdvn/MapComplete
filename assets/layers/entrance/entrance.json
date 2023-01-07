@@ -473,6 +473,7 @@
         "kerb:height",
         "width"
       ],
+      "defaultInput": "cm",
       "applicableUnits": [
         {
           "useIfNoUnitGiven": true,
@@ -489,7 +490,6 @@
           }
         },
         {
-          "useAsDefaultInput": true,
           "canonicalDenomination": "cm",
           "alternativeDenomination": [
             "centimeter",

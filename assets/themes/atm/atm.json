@@ -17,6 +17,32 @@
   "startLon": 0,
   "startZoom": 0,
   "layers": [
-    "atm"
+    "atm",
+    {
+      "builtin": "bank",
+      "override": {
+        "id": "banks_with_atm",
+        "name": null,
+        "source": {
+          "osmTags": {
+            "and+": [
+              "atm=yes"
+            ]
+          }
+        },
+        "filter": [
+          "open_now"
+        ]
+      }
+    },
+    {
+      "builtin": "bank",
+      "override": {
+        "minzoom": 18,
+        "filter": {
+          "sameAs": "bank"
+        }
+      }
+    }
   ]
 }

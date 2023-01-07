@@ -205,6 +205,7 @@
         "elevator:width",
         "elevator:depth"
       ],
+      "defaultInput": "cm",
       "applicableUnits": [
         {
           "canonicalDenomination": "m",
@@ -221,7 +222,6 @@
           }
         },
         {
-          "useAsDefaultInput": true,
           "canonicalDenomination": "cm",
           "alternativeDenomination": [
             "centimeter",

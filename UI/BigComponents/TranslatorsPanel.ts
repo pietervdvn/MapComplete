@@ -66,7 +66,7 @@ class TranslatorsPanelContent extends Combine {
                 "missingLayers:",
                 missingLayers
             )
-            return [
+            return Utils.NoNull([
                 hasMissingTheme
                     ? new Link(
                           "themes:" + layout.id + ".* (zen mode)",
@@ -86,7 +86,7 @@ class TranslatorsPanelContent extends Combine {
                     (context) =>
                         new Link(context, LinkToWeblate.hrefToWeblate(language, context), true)
                 ),
-            ]
+            ])
         }
 
         // "translationCompleteness": "Translations for {theme} in {language} are at {percentage}: {translated} out of {total}",

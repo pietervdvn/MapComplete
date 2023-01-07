@@ -42,7 +42,13 @@ export default class Translations {
      *
      */
     static T(
-        t: string | undefined | null | Translation | TypedTranslation<object>,
+        t:
+            | string
+            | Record<string, string>
+            | undefined
+            | null
+            | Translation
+            | TypedTranslation<object>,
         context = undefined
     ): TypedTranslation<object> {
         if (t === undefined || t === null) {

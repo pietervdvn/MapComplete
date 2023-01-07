@@ -16,6 +16,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { Changes } from "../../Logic/Osm/Changes"
 import Loading from "../Base/Loading"
+import {LoginToggle} from "../Popup/LoginButton";
 
 export class ImageUploadFlow extends Toggle {
     private static readonly uploadCountsPerId = new Map<string, UIEventSource<number>>()
@@ -180,16 +181,12 @@ export class ImageUploadFlow extends Toggle {
             chosenLicense.SetClass("subtle text-sm"),
         ]).SetClass("flex flex-col image-upload-flow mt-4 mb-8 text-center")
 
-        const pleaseLoginButton = t.pleaseLogin
-            .Clone()
-            .onClick(() => state.osmConnection.AttemptLogin())
-            .SetClass("login-button-friendly")
         super(
-            new Toggle(
+            new LoginToggle(
                 /*We can show the actual upload button!*/
                 uploadFlow,
-                /* User not logged in*/ pleaseLoginButton,
-                state?.osmConnection?.isLoggedIn
+                /* User not logged in*/ t.pleaseLogin.Clone(),
+                state
             ),
             undefined /* Nothing as the user badge is disabled*/,
             state?.featureSwitchUserbadge

@@ -8,11 +8,8 @@ import { Utils } from "../Utils"
 import LanguagePicker1 from "./LanguagePicker"
 import IndexText from "./BigComponents/IndexText"
 import FeaturedMessage from "./BigComponents/FeaturedMessage"
-import Toggle from "./Input/Toggle"
-import { SubtleButton } from "./Base/SubtleButton"
-import { VariableUiElement } from "./Base/VariableUIElement"
-import Svg from "../Svg"
 import { ImportViewerLinks } from "./BigComponents/UserInformation"
+import { LoginToggle } from "./Popup/LoginButton"
 import UserSurveyPanel from "./UserSurveyPanel"
 
 export default class AllThemesGui {
@@ -31,13 +28,7 @@ export default class AllThemesGui {
                 new FeaturedMessage().SetClass("mb-4 block"),
                 new Combine([new UserSurveyPanel()]).SetClass("flex justify-center"),
                 new MoreScreen(state, true),
-                new Toggle(
-                    undefined,
-                    new SubtleButton(undefined, Translations.t.index.logIn)
-                        .SetStyle("height:min-content")
-                        .onClick(() => state.osmConnection.AttemptLogin()),
-                    state.osmConnection.isLoggedIn
-                ),
+                new LoginToggle(undefined, Translations.t.index.logIn, state),
                 new ImportViewerLinks(state.osmConnection),
                 Translations.t.general.aboutMapcomplete
                     .Subs({ osmcha_link: Utils.OsmChaLinkFor(7) })

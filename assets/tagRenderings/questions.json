@@ -284,7 +284,7 @@
       "da": "Hvad er webstedet for {title()}?",
       "cs": "Jaká je webová stránka {title()}?"
     },
-    "render": "<a href='{website}' target='_blank'>{website}</a>",
+    "render": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>",
     "freeform": {
       "key": "website",
       "type": "url",
@@ -295,7 +295,7 @@
     "mappings": [
       {
         "if": "contact:website~*",
-        "then": "<a href='{contact:website}' target='_blank'>{contact:website}</a>",
+        "then": "<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>",
         "hideInAnswer": true
       }
     ]

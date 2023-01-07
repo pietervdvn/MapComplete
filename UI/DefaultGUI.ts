@@ -33,7 +33,6 @@ import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
 import { GeoLocationState } from "../Logic/State/GeoLocationState"
 import Hotkeys from "./Base/Hotkeys"
 import AvailableBaseLayers from "../Logic/Actors/AvailableBaseLayers"
-import { Translation } from "./i18n/Translation"
 
 /**
  * The default MapComplete GUI initializer
@@ -56,6 +55,7 @@ export default class DefaultGUI {
     public setup() {
         this.SetupUIElements()
         this.SetupMap()
+        ScrollableFullScreen.ActivateCurrent()
 
         if (
             this.state.layoutToUse.customCss !== undefined &&
@@ -203,39 +203,43 @@ export default class DefaultGUI {
         const guiState = this.guiState
 
         const self = this
-        new Combine([
-            Toggle.If(state.featureSwitchUserbadge, () => {
-                const userInfo = new UserInformationPanel(state)
 
-                const mapControl = new MapControlButton(
-                    new VariableUiElement(
-                        state.osmConnection.userDetails.map((ud) => {
-                            if (ud?.img === undefined) {
-                                return Svg.person_ui().SetClass("mt-1 block")
-                            }
-                            return new Img(ud?.img)
-                        })
-                    ).SetClass("block rounded-full overflow-hidden"),
-                    {
-                        dontStyle: true,
-                    }
-                ).onClick(() => userInfo.Activate())
+        const userInfoMapControl = Toggle.If(state.featureSwitchUserbadge, () => {
+            console.log("Guistate is", guiState)
+            new UserInformationPanel(state, {
+                isOpened: guiState.userInfoIsOpened,
+            })
 
-                return new LoginToggle(
-                    mapControl,
-                    Translations.t.general.loginWithOpenStreetMap,
-                    state
-                )
-            }),
-            Toggle.If(
-                state.featureSwitchExtraLinkEnabled,
-                () => new ExtraLinkButton(state, state.layoutToUse.extraLink)
-            ),
-            Toggle.If(state.featureSwitchWelcomeMessage, () => self.InitWelcomeMessage()),
-            Toggle.If(state.featureSwitchIsTesting, () =>
-                new FixedUiElement("TESTING").SetClass("alert m-2 border-2 border-black")
-            ),
-        ])
+            const mapControl = new MapControlButton(
+                new VariableUiElement(
+                    state.osmConnection.userDetails.map((ud) => {
+                        if (ud?.img === undefined) {
+                            return Svg.person_ui().SetClass("mt-1 block")
+                        }
+                        return new Img(ud?.img)
+                    })
+                ).SetClass("block rounded-full overflow-hidden"),
+                {
+                    dontStyle: true,
+                }
+            ).onClick(() => {
+                self.guiState.userInfoIsOpened.setData(true)
+            })
+
+            return new LoginToggle(mapControl, Translations.t.general.loginWithOpenStreetMap, state)
+        })
+        const extraLink = Toggle.If(
+            state.featureSwitchExtraLinkEnabled,
+            () => new ExtraLinkButton(state, state.layoutToUse.extraLink)
+        )
+
+        const welcomeMessageMapControl = Toggle.If(state.featureSwitchWelcomeMessage, () =>
+            self.InitWelcomeMessage()
+        )
+        const testingBadge = Toggle.If(state.featureSwitchIsTesting, () =>
+            new FixedUiElement("TESTING").SetClass("alert m-2 border-2 border-black")
+        )
+        new Combine([welcomeMessageMapControl, userInfoMapControl, extraLink, testingBadge])
             .SetClass("flex flex-col")
             .AttachTo("top-left")
 
@@ -273,26 +277,16 @@ export default class DefaultGUI {
 
         new CenterMessageBox(state).AttachTo("centermessage")
         document?.getElementById("centermessage")?.classList?.add("pointer-events-none")
-
-        // We have to ping the welcomeMessageIsOpened and other isOpened-stuff to activate the FullScreenMessage if needed
-        for (const state of guiState.allFullScreenStates) {
-            if (state.data) {
-                state.ping()
-            }
-        }
-
-        /**
-         * At last, if the map moves or an element is selected, we close all the panels just as well
-         */
-
-        state.selectedElement.addCallbackAndRunD((_) => {
-            guiState.allFullScreenStates.forEach((s) => s.setData(false))
-        })
     }
 
     private InitWelcomeMessage(): BaseUIElement {
         const isOpened = this.guiState.welcomeMessageIsOpened
-        new FullWelcomePaneWithTabs(isOpened, this.guiState.welcomeMessageOpenedTab, this.state)
+        new FullWelcomePaneWithTabs(
+            isOpened,
+            this.guiState.welcomeMessageOpenedTab,
+            this.state,
+            this.guiState
+        )
 
         // ?-Button on Desktop, opens panel with close-X.
         const help = new MapControlButton(Svg.help_svg())

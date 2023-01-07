@@ -188,6 +188,9 @@
         "loading": "Loading…",
         "loadingTheme": "Loading {theme}…",
         "loginFailed": "Logging in into OpenStreetMap failed",
+        "loginFailedOfflineMode": "OpenStreetMap.org is currently not available due to maintenance. Making edits will be possible soon",
+        "loginFailedReadonlyMode": "OpenStreetMap.org is currently in readonly mode due to maintenance. Making edits will be possible soon",
+        "loginFailedUnreachableMode": "OpenStreetMap.org is currently not reachable. Are you connected to the internet or do you block third parties? Try again later",
         "loginOnlyNeededToEdit": "if you want to make changes",
         "loginToStart": "Log in to answer this question",
         "loginWithOpenStreetMap": "Login with OpenStreetMap",
@@ -284,6 +287,7 @@
         "uploadGpx": {
             "choosePermission": "Choose below if your track should be shared:",
             "confirm": "Confirm upload",
+            "gpxServiceOffline": "The GPX-service is currently offline - uploading is currently not possible. Try again later.",
             "intro0": "By uploading your track, OpenStreetMap.org will retain a full copy of the track.",
             "intro1": "You will be able to download your track again and to load them into OpenStreetMap editing programs",
             "meta": {
@@ -327,7 +331,7 @@
             "tuesday": "Tuesday",
             "wednesday": "Wednesday"
         },
-        "welcomeBack": "You are logged in, welcome back!",
+        "welcomeBack": "Welcome back!",
         "welcomeExplanation": {
             "addNew": "Tap the map to add a new POI.",
             "browseMoreMaps": "Discover more maps",

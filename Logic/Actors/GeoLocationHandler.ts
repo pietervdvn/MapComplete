@@ -120,7 +120,6 @@ export default class GeoLocationHandler {
         const state = this._state
         this.geolocationState.currentGPSLocation.addCallbackAndRun((location) => {
             if (location === undefined) {
-                state.currentUserLocation?.features?.setData([])
                 return
             }
             const feature = {
