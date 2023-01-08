@@ -17,7 +17,7 @@
             "softDelete": "Esta característica se actualizará y ocultará en esta aplicación. &lt;spann class='subtle'&gt;{reason}"
         },
         "isDeleted": "Esta función se ha eliminado",
-        "isntAPoint": "Solo los puntos pueden ser eliminados, esta característica es una vía, área o relación.",
+        "isntAPoint": "Solo los nodos pueden ser eliminados, esta característica es una vía, área o relación.",
         "loading": "Inspeccionando las propiedades para comprobar si esta característica puede ser eliminada.",
         "loginToDelete": "Debes de haber iniciado sesión para eliminar un punto",
         "notEnoughExperience": "Este punto fue hecho por otra persona.",
@@ -137,7 +137,6 @@
             "title": "Seleccionar capas",
             "zoomInToSeeThisLayer": "Amplía para ver esta capa"
         },
-        "levelSelection": {},
         "loading": "Cargando…",
         "loadingTheme": "Cargando {theme}…",
         "loginFailed": "El inicio de sesión en OpenStreetMap falló",
@@ -250,7 +249,6 @@
             "wednesday": "Miércoles"
         },
         "welcomeBack": "Has entrado, bienvenido.",
-        "welcomeExplanation": {},
         "wikipedia": {
             "createNewWikidata": "Crear un nuevo ítem Wikidata",
             "doSearch": "Busca arriba para ver los resultados",
@@ -448,14 +446,8 @@
             },
             "documentation": {
                 "docs": "Obtiene la documentación sobre una capa, un tema o un parámetro de URL de Mapcomplete",
-                "file": {},
-                "inputElement": {},
-                "layer": {},
                 "noIdIntro": "Da un id para obtener más información sobre un ítem relacionado con la programación de MapComplete. Los tipos conocidos son {list}",
-                "theme": {},
-                "urlParam": "Parámetro de URL <code>{id}</code>",
-                "url_parameter": {},
-                "visualisation": {}
+                "urlParam": "Parámetro de URL <code>{id}</code>"
             },
             "dream": {
                 "docs": "Envía un texto generado por ordenador",
@@ -503,7 +495,6 @@
                 "noRolesYet": "<b>{user}</b> actualmente no tiene roles.",
                 "userHasRoles": "<b>{user}</b> actualmente tiene los siguientes roles:"
             },
-            "scheme": {},
             "search": {
                 "searching": "Buscando {layerTitle} {mode} <code>{search}</code>…"
             },
@@ -741,7 +732,6 @@
         "direction": {
             "description": "Una orientación"
         },
-        "distance": {},
         "email": {
             "description": "dirección-electrónica",
             "feedback": "Esta no es una dirección de correo electrónico válida",
