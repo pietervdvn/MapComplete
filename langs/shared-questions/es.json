@@ -50,8 +50,12 @@
                 },
                 "2": {
                     "then": "El acceso a internet es gratis en este lugar, solamente para clientes"
+                },
+                "0": {
+                    "then": "Hay que pagar para acceder a internet en este lugar"
                 }
-            }
+            },
+            "question": "¿Hay que pagar para acceder a internet?"
         },
         "internet-ssid": {
             "freeform": {
@@ -195,6 +199,65 @@
                 }
             },
             "question": "¿Cual es el ítem correspondiente en Wikipedia?"
+        },
+        "opening_hours_by_appointment": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Sólo con cita previa"
+                    },
+                    "1": {
+                        "then": "Sólo con cita previa"
+                    }
+                }
+            }
+        },
+        "denominations-coins": {
+            "mappings": {
+                "0": {
+                    "then": "Se aceptan monedas de 1 céntimo"
+                },
+                "2": {
+                    "then": "Se aceptan monedas de 5 céntimos"
+                },
+                "3": {
+                    "then": "Se aceptan monedas de 10 céntimos"
+                },
+                "1": {
+                    "then": "Se aceptan monedas de 2 céntimos"
+                },
+                "4": {
+                    "then": "Se aceptan monedas de 20 céntimos"
+                },
+                "5": {
+                    "then": "Se aceptan monedas de 50 céntimos"
+                },
+                "6": {
+                    "then": "Se aceptan monedas de 1 euro"
+                },
+                "7": {
+                    "then": "Se aceptan monedas de 2 euros"
+                }
+            },
+            "question": "¿Qué monedas se pueden usar aquí para pagar?"
+        },
+        "payment-options-split": {
+            "override": {
+                "mappings+": {
+                    "1": {
+                        "then": "Aquí se aceptan billetes"
+                    },
+                    "2": {
+                        "then": "Aquí se aceptan tarjetas de débito"
+                    },
+                    "0": {
+                        "then": "Aquí se aceptan monedas"
+                    },
+                    "3": {
+                        "then": "Aquí se aceptan tarjetas de crédito"
+                    }
+                }
+            }
         }
     }
 }
