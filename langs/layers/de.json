@@ -3666,7 +3666,7 @@
     },
     "elevator": {
         "description": "Diese Ebene zeigt Aufzüge an und fragt nach dem Betriebsstatus und den Abmessungen des Aufzugs. Nützlich für Informationen zur Zugänglichkeit für Rollstuhlfahrer",
-        "name": "Aufzug",
+        "name": "Aufzüge",
         "presets": {
             "0": {
                 "title": "einen Aufzug"
@@ -7546,7 +7546,7 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Rollstuhlgerecht"
+                        "question": "Barrierefrei"
                     }
                 }
             },
