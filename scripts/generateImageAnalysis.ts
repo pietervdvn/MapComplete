@@ -189,7 +189,7 @@ export default class GenerateImageAnalysis extends Script {
         const datapath = args[0] ?? "../MapComplete-data/ImageLicenseInfo"
         await this.downloadData(datapath)
 
-        //   await this.downloadMetadata(datapath)
+        await this.downloadMetadata(datapath)
         this.analyze(datapath)
     }
 }
