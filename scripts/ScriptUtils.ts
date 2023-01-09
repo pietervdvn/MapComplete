@@ -11,6 +11,13 @@ export default class ScriptUtils {
         Utils.externalDownloadFunction = ScriptUtils.Download
     }
 
+    /**
+     * Returns all files in a directory, recursively reads subdirectories.
+     * The returned paths include the path given and subdirectories.
+     *
+     * @param path
+     * @param maxDepth
+     */
     public static readDirRecSync(path, maxDepth = 999): string[] {
         const result = []
         if (maxDepth <= 0) {
@@ -46,13 +53,13 @@ export default class ScriptUtils {
         process.stdout.write("\r " + text.join(" ") + "                \r")
     }
 
-    public static sleep(ms) {
+    public static sleep(ms: number, text?: string) {
         if (ms <= 0) {
             process.stdout.write("\r                                       \r")
             return
         }
         return new Promise((resolve) => {
-            process.stdout.write("\r Sleeping for " + ms / 1000 + "s \r")
+            process.stdout.write("\r" + (text ?? "") + " Sleeping for " + ms / 1000 + "s \r")
             setTimeout(resolve, 1000)
         }).then(() => ScriptUtils.sleep(ms - 1000))
     }

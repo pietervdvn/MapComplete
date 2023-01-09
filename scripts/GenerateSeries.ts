@@ -1,8 +1,11 @@
-import { existsSync, mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "fs"
-import ScriptUtils from "../../scripts/ScriptUtils"
-import { Utils } from "../../Utils"
-
-ScriptUtils.fixUtils()
+import fs, { existsSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "fs"
+import ScriptUtils from "./ScriptUtils"
+import { Utils } from "../Utils"
+import Script from "./Script"
+import TiledFeatureSource from "../Logic/FeatureSource/TiledFeatureSource/TiledFeatureSource"
+import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource"
+import { GeoOperations } from "../Logic/GeoOperations"
+import { Feature, Polygon } from "geojson"
 
 class StatsDownloader {
     private readonly urlTemplate =
@@ -158,7 +161,7 @@ class StatsDownloader {
     }
 }
 
-interface ChangeSetData {
+interface ChangeSetData extends Feature<Polygon> {
     id: number
     type: "Feature"
     geometry: {
@@ -196,56 +199,130 @@ interface ChangeSetData {
     }
 }
 
-async function main(): Promise<void> {
-    if (!existsSync("graphs")) {
-        mkdirSync("graphs")
+class GenerateSeries extends Script {
+    constructor() {
+        super("Downloads metadata about changesets made by MapComplete from OsmCha")
     }
 
-    const targetDir = "Docs/Tools/stats"
-    let year = 2020
-    let month = 5
-    let day = 1
-    if (!isNaN(Number(process.argv[2]))) {
-        year = Number(process.argv[2])
-    }
-    if (!isNaN(Number(process.argv[3]))) {
-        month = Number(process.argv[3])
-    }
+    async main(args: string[]): Promise<void> {
+        const targetDir = args[0] ?? "../MapComplete-data"
 
-    if (!isNaN(Number(process.argv[4]))) {
-        day = Number(process.argv[4])
-    }
-
-    do {
-        try {
-            await new StatsDownloader(targetDir).DownloadStats(year, month, day)
-            break
-        } catch (e) {
-            console.log(e)
-        }
-    } while (true)
-    const allPaths = readdirSync(targetDir).filter(
-        (p) => p.startsWith("stats.") && p.endsWith(".json")
-    )
-    let allFeatures: ChangeSetData[] = [].concat(
-        ...allPaths.map(
-            (path) => JSON.parse(readFileSync("Docs/Tools/stats/" + path, "utf-8")).features
+        await this.downloadStatistics(targetDir + "/changeset-metadata")
+        await this.generateCenterPoints(
+            targetDir + "/changeset-metadata",
+            targetDir + "/mapcomplete-changes/",
+            {
+                zoomlevel: 8,
+            }
         )
-    )
-    allFeatures = allFeatures.filter(
-        (f) =>
-            f?.properties !== undefined &&
-            (f.properties.editor === null ||
-                f.properties.editor.toLowerCase().startsWith("mapcomplete"))
-    )
-
-    allFeatures = allFeatures.filter((f) => f.properties.metadata?.theme !== "EMPTY CS")
-
-    if (process.argv.indexOf("--no-graphs") >= 0) {
-        return
     }
-    const allFiles = readdirSync("Docs/Tools/stats").filter((p) => p.endsWith(".json"))
-    writeFileSync("Docs/Tools/stats/file-overview.json", JSON.stringify(allFiles))
+
+    private async downloadStatistics(targetDir: string) {
+        let year = 2020
+        let month = 5
+        let day = 1
+        if (!isNaN(Number(process.argv[2]))) {
+            year = Number(process.argv[2])
+        }
+        if (!isNaN(Number(process.argv[3]))) {
+            month = Number(process.argv[3])
+        }
+
+        if (!isNaN(Number(process.argv[4]))) {
+            day = Number(process.argv[4])
+        }
+
+        do {
+            try {
+                await new StatsDownloader(targetDir).DownloadStats(year, month, day)
+                break
+            } catch (e) {
+                console.log(e)
+            }
+        } while (true)
+
+        const allFiles = readdirSync(targetDir).filter((p) => p.endsWith(".json"))
+        writeFileSync(targetDir + "file-overview.json", JSON.stringify(allFiles))
+    }
+
+    private generateCenterPoints(
+        sourceDir: string,
+        targetDir: string,
+        options: {
+            zoomlevel: number
+        }
+    ) {
+        const allPaths = readdirSync(sourceDir).filter(
+            (p) => p.startsWith("stats.") && p.endsWith(".json")
+        )
+        let allFeatures: ChangeSetData[] = [].concat(
+            ...allPaths.map(
+                (path) => JSON.parse(readFileSync(sourceDir + "/" + path, "utf-8")).features
+            )
+        )
+        allFeatures = allFeatures.filter(
+            (f) =>
+                f?.properties !== undefined &&
+                (f.properties.editor === null ||
+                    f.properties.editor.toLowerCase().startsWith("mapcomplete"))
+        )
+
+        allFeatures = allFeatures.filter(
+            (f) => f.geometry !== null && f.properties.metadata?.theme !== "EMPTY CS"
+        )
+        allFeatures = allFeatures.filter(
+            (f) =>
+                f?.properties !== undefined &&
+                (f.properties.editor === null ||
+                    f.properties.editor.toLowerCase().startsWith("mapcomplete"))
+        )
+
+        allFeatures = allFeatures.filter((f) => f.properties.metadata?.theme !== "EMPTY CS")
+        const centerpoints = allFeatures.map((f) => GeoOperations.centerpoint(f))
+        console.log("Found", centerpoints.length, " changesets in total")
+        const path = `${targetDir}/all_centerpoints.geojson`
+        /*fs.writeFileSync(
+            path,
+            JSON.stringify(
+                {
+                    type: "FeatureCollection",
+                    features: centerpoints,
+                },
+                null,
+                "  "
+            )
+        )//*/
+        TiledFeatureSource.createHierarchy(StaticFeatureSource.fromGeojson(centerpoints), {
+            minZoomLevel: options.zoomlevel,
+            maxZoomLevel: options.zoomlevel,
+            maxFeatureCount: Number.MAX_VALUE,
+            registerTile: (tile) => {
+                const path = `${targetDir}/tile_${tile.z}_${tile.x}_${tile.y}.geojson`
+                const features = tile.features.data.map((ff) => ff.feature)
+                features.forEach((f) => {
+                    delete f.bbox
+                })
+                fs.writeFileSync(
+                    path,
+                    JSON.stringify(
+                        {
+                            type: "FeatureCollection",
+                            features: features,
+                        },
+                        null,
+                        "  "
+                    )
+                )
+                ScriptUtils.erasableLog(
+                    "Written ",
+                    path,
+                    "which has ",
+                    tile.features.data.length,
+                    "features"
+                )
+            },
+        })
+    }
 }
 
-main().then((_) => console.log("All done!"))
+new GenerateSeries().run()
