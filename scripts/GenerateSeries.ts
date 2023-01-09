@@ -242,7 +242,7 @@ class GenerateSeries extends Script {
         } while (true)
 
         const allFiles = readdirSync(targetDir).filter((p) => p.endsWith(".json"))
-        writeFileSync(targetDir + "file-overview.json", JSON.stringify(allFiles))
+        writeFileSync(targetDir + "/file-overview.json", JSON.stringify(allFiles))
     }
 
     private generateCenterPoints(
