@@ -100,7 +100,7 @@ export default class SimpleAddUI extends LoginToggle {
             location: { lat: number; lon: number },
             snapOntoWay?: OsmWay
         ): Promise<void> {
-            tags.push(Tag.newlyCreated)
+            tags.push(new Tag(Tag.newlyCreated.key, new Date().toISOString()))
             const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {
                 theme: state.layoutToUse?.id ?? "unkown",
                 changeType: "create",
