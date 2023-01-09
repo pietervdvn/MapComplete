@@ -632,5 +632,19 @@
     },
     "waste": {
         "title": "Basura y reciclaje"
+    },
+    "bag": {
+        "layers": {
+            "2": {
+                "tagRenderings": {
+                    "Build year": {
+                        "render": "El edificio fue construido en <b>{_bag_obj:start_date}</b>"
+                    }
+                }
+            }
+        }
+    },
+    "atm": {
+        "title": "Cajeros automáticos"
     }
 }

@@ -188,7 +188,7 @@
         "loading": "Laden…",
         "loadingTheme": "Lade {theme}…",
         "loginFailed": "Anmeldung bei OpenStreetMap fehlgeschlagen",
-        "loginOnlyNeededToEdit": "zum Bearbeiten der Karte",
+        "loginOnlyNeededToEdit": "wenn Sie Änderungen vornehmen möchten",
         "loginToStart": "Anmelden, um diese Frage zu beantworten",
         "loginWithOpenStreetMap": "Bei OpenStreetMap anmelden",
         "logout": "Abmelden",
@@ -327,7 +327,7 @@
             "tuesday": "Dienstag",
             "wednesday": "Mittwoch"
         },
-        "welcomeBack": "Sie sind angemeldet, willkommen zurück!",
+        "welcomeBack": "Willkommen zurück!",
         "welcomeExplanation": {
             "addNew": "Tippen oden klicken Sie auf die Karte, um einen neuen Ort hinzuzufügen.",
             "browseMoreMaps": "Weitere Karten entdecken",
@@ -913,7 +913,8 @@
         "inviteToSplit": "Die Straße in Abschnitte teilen. Dadurch können je Abschnitt unterschiedliche Eigenschaften angegeben werden.",
         "loginToSplit": "Anmeldung erforderlich, um Straßen zu teilen",
         "split": "Teilen",
-        "splitTitle": "Wähle auf der Karte aus, wo sich die Eigenschaften dieser Straße ändern"
+        "splitTitle": "Wähle auf der Karte aus, wo sich die Eigenschaften dieser Straße ändern",
+        "splitAgain": "Diese Straße erneut teilen"
     },
     "translations": {
         "activateButton": "MapComplete übersetzen",
@@ -927,11 +928,11 @@
     },
     "userinfo": {
         "gotoInbox": "Öffnen Sie Ihren Posteingang",
-        "gotoSettings": "Gehen Sie zu Ihren Einstellungen auf OpenStreetMap.org",
+        "gotoSettings": "Öffnen Sie Ihre Einstellungen auf OpenStreetMap.org",
         "moveToHome": "Verschieben Sie die Karte an Ihren Heimatstandort",
         "newMessages": "Sie haben neue Nachrichten",
         "noDescription": "Sie haben noch keine Beschreibung in Ihrem Profil",
-        "noDescriptionCallToAction": "Eine Profilbeschreibung hinzufügen",
+        "noDescriptionCallToAction": "Profilbeschreibung hinzufügen",
         "welcome": "Willkommen {user}"
     },
     "validation": {
@@ -993,5 +994,13 @@
         "wikidata": {
             "description": "Eine Wikidata-Kennung"
         }
+    },
+    "hotkeyDocumentation": {
+        "closeSidebar": "Seitenleiste schließen",
+        "selectMapnik": "Setzt die Hintergrundebene auf OpenStreetMap-carto",
+        "selectSearch": "Suchleiste auswählen, um nach Orten zu suchen",
+        "geolocate": "Verschieben Sie die Karte auf den aktuellen Standort oder zoomen Sie die Karte auf den aktuellen Standort. Beantragt Standortberechtigung",
+        "openLayersPanel": "Öffnet das Bedienfeld Hintergrund, Ebenen und Filter",
+        "selectBackground": "Wählen Sie eine Hintergrundebene der Kategorie {category} aus"
     }
 }
