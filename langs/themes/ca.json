@@ -5,7 +5,7 @@
     },
     "artwork": {
         "description": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món",
-        "title": "Open Artwork Map"
+        "title": "Mapa Obert d'Art"
     },
     "benches": {
         "description": "Aquest mapa mostra tots els bancs que hi ha a OpenStreetMap: bancs individuals i els bancs que hi ha a parades o refugis de transport públic. Amb un compte d'OpenStreetMap pots afegir nous bancs o editar detalls dels existents.",
@@ -24,7 +24,7 @@
     "binoculars": {
         "description": "Un mapa amb prismàtics fixos en un pal. Sol trobar-se en llocs turístics, miradors, a la part alta de torres panoràmiques o ocasionalment en una reserva natural.",
         "shortDescription": "Un mapa amb prismàtics fixos",
-        "title": "Binoculars"
+        "title": "Prismàtics"
     },
     "bookcases": {
         "description": "Una llibreria pública és un xicotet armari al carrer, una caixa, una vella cabina telefònica o algun altre objecte on es guarden llibres. Tothom pot col·locar o agafar un llibre. Aquest mapa pretén recollir totes aquestes llibreries. Pots descobrir noves llibreries pròximes i, amb un compte gratuït de OpenStreetMap, afegir ràpidament les teues llibreries favorites.",
@@ -183,8 +183,49 @@
                         "mappings": {
                             "0": {
                                 "then": "Es pot desfer de les aigües grises aquí"
+                            },
+                            "1": {
+                                "then": "Aquí no pots desfer-te de les aigües grises"
+                            }
+                        },
+                        "question": "Aquí pots desfer-te de les aigües grises?"
+                    },
+                    "dumpstations-waterpoint": {
+                        "mappings": {
+                            "0": {
+                                "then": "Aquest lloc té un punt d'aigua"
+                            },
+                            "1": {
+                                "then": "Aquest lloc no té un punt d'aigua"
+                            }
+                        },
+                        "question": "Aquest lloc té un punt d'aigua?"
+                    },
+                    "dumpstations-fee": {
+                        "question": "Aquest lloc cobra una taxa?",
+                        "mappings": {
+                            "0": {
+                                "then": "Has de pagar per a utilitzar-ho"
+                            },
+                            "1": {
+                                "then": "Es pot utilitzar gratuïtament"
                             }
                         }
+                    },
+                    "dumpstations-network": {
+                        "render": "Aquesta estació forma part de la xarxa {network}",
+                        "question": "A quina xarxa forma part aquest lloc? (Salta si a cap)"
+                    },
+                    "dumpstations-chemical-waste": {
+                        "mappings": {
+                            "0": {
+                                "then": "Aquí pots depositar els residus del vàter químic"
+                            },
+                            "1": {
+                                "then": "Aquí no pots depositar els residus del vàter químic"
+                            }
+                        },
+                        "question": "Aquí pots depositar els residus del vàter químic?"
                     }
                 },
                 "title": {
@@ -197,10 +238,32 @@
                 }
             }
         },
-        "title": "Llocs d'acampada"
+        "title": "Llocs d'acampada",
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "render": "Aquest lloc és operat per {operator}",
+                    "question": "Qui opera aquest lloc?"
+                },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "Aquest lloc té subministrament elèctric"
+                        },
+                        "1": {
+                            "then": "Aquest lloc no té subministrament elèctric"
+                        }
+                    },
+                    "question": "Aquest lloc té subministrament elèctric?"
+                }
+            }
+        },
+        "shortDescription": "Troba llocs on passar la nit amb la teua caravana"
     },
     "charging_stations": {
-        "title": "Estacions de càrrega"
+        "title": "Estacions de càrrega",
+        "description": "A aquest mapa, un pot trobar i marcar informació sobre punts de càrrega",
+        "shortDescription": "Un mapa mundial d'estacions de càrrega"
     },
     "climbing": {
         "layers": {
@@ -214,6 +277,9 @@
                                 },
                                 "3": {
                                     "then": "Només membres del club"
+                                },
+                                "1": {
+                                    "then": "Necesites un permís per a accedir ací"
                                 }
                             },
                             "question": "Qui pot accedir aquí?"
@@ -306,7 +372,7 @@
             }
         },
         "shortDescription": "Un mapa de carrers ciclistes",
-        "title": "Carrers ciclistes"
+        "title": "Ciclocarrers"
     },
     "cyclofix": {
         "title": "Cyclofix - un mapa obert per a ciclistes"
@@ -421,7 +487,7 @@
         "title": "Hotels"
     },
     "indoors": {
-        "title": "Indoors"
+        "title": "Interiors"
     },
     "maproulette": {
         "title": "Tasques de MapRoulette"
@@ -470,7 +536,7 @@
         "title": "OpenWindPowerMap"
     },
     "personal": {
-        "description": "Crea una interfície basada en totes les capes disponibles de totes les interfícies",
+        "description": "Crea un tema personal basat en totes les capes disponibles de totes els temes. Per a mostrar les dades, obri <a href='#filter'>selecció de capes</a>",
         "title": "Interfície personal"
     },
     "pets": {
@@ -563,7 +629,7 @@
         "title": "Rutes de bus"
     },
     "trees": {
-        "description": "Mapeja tots els arbres.",
+        "description": "Mapeja tots els arbres!",
         "shortDescription": "Mapeja tots els arbres",
         "title": "Arbres"
     },
@@ -573,5 +639,13 @@
     },
     "waste_basket": {
         "title": "Papepera"
+    },
+    "atm": {
+        "description": "Aquest mapa mostra caixers automàtics on retirar o ingresar diners",
+        "title": "Caixers automàtics"
+    },
+    "blind_osm": {
+        "description": "Ajuda a mapejar elements rellevants per a persones amb discapacitat visual",
+        "title": "OSM per als cecs"
     }
 }
