@@ -206,7 +206,8 @@
                     "2": {
                         "then": "Je kan geen geld deponeren in deze geldautomaat"
                     }
-                }
+                },
+                "question": "Kan je geld storten bij deze geldautomaat?"
             },
             "cash_out": {
                 "mappings": {
@@ -834,10 +835,10 @@
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
-                        "then": "Gratis fietsschoonmaakpunt"
+                        "then": "Dit fietsschoonmaakpunt is gratis te gebruiken"
                     },
                     "1": {
-                        "then": "Gratis te gebruiken"
+                        "then": "Dit fietsschoonmaakpunt is betalend"
                     }
                 },
                 "question": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
@@ -5931,6 +5932,18 @@
                 },
                 "question": "Kan je hier postzegels kopen?",
                 "render": "Je kan hier postzegels kopen van de volgende bedrijven: {post_office:stamps}"
+            },
+            "letter-from": {
+                "mappings": {
+                    "1": {
+                        "then": "Je kan hier geen brieven posten"
+                    },
+                    "0": {
+                        "then": "Je kan hier brieven posten"
+                    }
+                },
+                "question": "Kan je hier een brief posten?",
+                "render": "Je kan brieven posten met de volgende bedrijven: {post_office:letter_from}"
             }
         },
         "title": {
