@@ -107,7 +107,7 @@
             "mapillaryHelp": "<b>Mapillary</b> est un service en ligne qui rassemble des photos au niveau des rues et les propose sous une licence libre. Les contributeurs sont autorisés à utiliser ces photos pour améliorer OpenStreetMap.",
             "openIssueTracker": "Signaler un problème",
             "openMapillary": "Ouvrez Mapillary ici",
-            "openOsmcha": "Voir les dernières modifications faite avec {theme}",
+            "openOsmcha": "Voir les dernières modifications faites avec {theme}",
             "themeBy": "Thème maintenu par {author}",
             "translatedBy": "MapComplete est traduite par {contributors} et <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} autres personnes</a>"
         },
