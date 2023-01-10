@@ -166,7 +166,7 @@
         }
     },
     "atm": {
-        "description": "DAB pour retirer de l'argent",
+        "description": "DABs pour retirer de l'argent",
         "name": "DABs",
         "presets": {
             "0": {
@@ -403,22 +403,22 @@
             "bench-material": {
                 "mappings": {
                     "0": {
-                        "then": "Matériau : bois"
+                        "then": "Matériau du siège : bois"
                     },
                     "1": {
-                        "then": "Matériau : métal"
+                        "then": "Matériau du siège : métal"
                     },
                     "2": {
                         "then": "Matériau : pierre"
                     },
                     "3": {
-                        "then": "Matériau : béton"
+                        "then": "Matériau du siège : béton"
                     },
                     "4": {
                         "then": "Matériau : plastique"
                     },
                     "5": {
-                        "then": "Matériau : acier"
+                        "then": "Matériau  du siège : acier"
                     }
                 },
                 "question": "De quel matériau ce banc est-il fait ?",
@@ -1479,6 +1479,9 @@
                     },
                     "1": {
                         "question": "Dispose d’une <div style='display: inline-block'><b><b>prise murale Schuko</b> sans terre (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
+                    },
+                    "6": {
+                        "question": "A un connecteur de   <div style='display: inline-block'><b>Type 1 <i>sans</i> câble (J1772) càd  Type 1 Combo </b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     }
                 }
             }
@@ -1844,7 +1847,7 @@
                         "then": "Ce passage n'a pas d'île au milieu"
                     }
                 },
-                "question": "Est-ce que ce passage a une île au milieu ?"
+                "question": "Est-ce que ce passage a un refuge au milieu ?"
             },
             "crossing-is-zebra": {
                 "mappings": {
@@ -1956,10 +1959,10 @@
             "Cycleway:smoothness": {
                 "mappings": {
                     "0": {
-                        "then": "Utilisable pour les patins: patins à roulettes, skateboard"
+                        "then": "Utilisable pour les patins : patins à roulettes, skateboard"
                     },
                     "1": {
-                        "then": "Utilisable pour les roues fines: vélo de course"
+                        "then": "Utilisable pour les roues fines : vélo de course"
                     },
                     "2": {
                         "then": "Utilisable pour les roues traditionelles : vélo, chaise roulante, trotinettes"
@@ -2030,13 +2033,13 @@
             "Is this a cyclestreet? (For a road)": {
                 "mappings": {
                     "0": {
-                        "then": "Ceci est une route cyclable, et une zone à 30 km/h"
+                        "then": "Ceci est une rue cyclable, et une zone à 30 km/h"
                     },
                     "1": {
                         "then": "Ceci est une route cyclable"
                     },
                     "2": {
-                        "then": "Ceci n'est pas une route cyclable"
+                        "then": "Ceci n'est pas une rue cyclable"
                     }
                 },
                 "question": "Est-ce une route cyclable ?"
@@ -2110,7 +2113,7 @@
             "Surface of the street": {
                 "mappings": {
                     "0": {
-                        "then": "Utilisable pour les patins: patins à roulettes, skateboard"
+                        "then": "Utilisable pour les patins : patins à roulettes, skateboard"
                     },
                     "1": {
                         "then": "Utilisable pour les roues fines : vélo de course"
@@ -4839,5 +4842,16 @@
                 }
             }
         }
+    },
+    "waste_basket": {
+        "presets": {
+            "0": {
+                "title": "un poubelle"
+            }
+        },
+        "description": "c'est une poubelle publique dans laquelle vous pouvez jeter vos mégots."
+    },
+    "selected_element": {
+        "description": "Met en surbrillance l'élément actuellement sélectioné. Surcharger cette couche pour avoir d'autres couleurs."
     }
 }
