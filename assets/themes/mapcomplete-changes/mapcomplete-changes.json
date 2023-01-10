@@ -499,17 +499,6 @@
           ]
         },
         {
-          "id": "added-image",
-          "options": [
-            {
-              "osmTags": "add-image>0",
-              "question": {
-                "en": "Changeset added at least one image"
-              }
-            }
-          ]
-        },
-        {
           "id": "locale-filter",
           "options": [
             {
@@ -537,6 +526,17 @@
               ],
               "question": {
                 "en": "Made with host {search}"
+              }
+            }
+          ]
+        },
+        {
+          "id": "added-image",
+          "options": [
+            {
+              "osmTags": "add-image>0",
+              "question": {
+                "en": "Changeset added at least one image"
               }
             }
           ]
