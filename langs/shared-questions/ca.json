@@ -129,6 +129,146 @@
                 }
             },
             "question": "Quin és l'ítem a Viquipèdia?"
+        },
+        "induction-loop": {
+            "mappings": {
+                "0": {
+                    "then": "El lloc té un bucle magnètic"
+                },
+                "1": {
+                    "then": "El lloc <b>no</b> té un bucle magnètic"
+                }
+            },
+            "question": "Aquest lloc té un bucle magnètic per a la gent amb dificultats auditives?"
+        },
+        "internet": {
+            "mappings": {
+                "1": {
+                    "then": "Aquest lloc <b>no</b> ofereix accés a internet"
+                },
+                "4": {
+                    "then": "Aquest lloc ofereix accés a internet per cable"
+                },
+                "0": {
+                    "then": "Aquest lloc ofereix accés a internet inalàmbric"
+                },
+                "2": {
+                    "then": "Aquest lloc ofereix accés a internet"
+                },
+                "3": {
+                    "then": "Aquest lloc ofereix accés a internet a través d'una terminal o ordinador"
+                }
+            },
+            "question": "Aquest lloc ofereix accés a internet?"
+        },
+        "denominations-coins": {
+            "mappings": {
+                "0": {
+                    "then": "S'accepten monedes de 1 cèntim"
+                },
+                "1": {
+                    "then": "S'accepten monedes de 2 cèntims"
+                },
+                "3": {
+                    "then": "S'accepten monedes de 10 cèntims"
+                },
+                "2": {
+                    "then": "S'accepten monedes de 5 cèntims"
+                },
+                "4": {
+                    "then": "S'accepten monedes de 20 cèntims"
+                },
+                "5": {
+                    "then": "S'accepten monedes de 50 cèntims"
+                },
+                "6": {
+                    "then": "S'accepten monedes de 1 euro"
+                },
+                "7": {
+                    "then": "S'accepten monedes de 2 euros"
+                }
+            },
+            "question": "Quines monedes es poden utilitzar per a pagar aquí?"
+        },
+        "internet-fee": {
+            "question": "Hi ha que pagar per a accedir a internet?",
+            "mappings": {
+                "2": {
+                    "then": "Aquí l'accés a internet és gratuït sols per als clients"
+                },
+                "0": {
+                    "then": "Aquí hi ha que pagar per a accedir a internet"
+                },
+                "1": {
+                    "then": "Aquí l'accés a internet és gratuït"
+                }
+            }
+        },
+        "multilevels": {
+            "override": {
+                "question": "A quins pisos va aquest ascensor?",
+                "render": "Aquest ascensor va als pisos {level}"
+            }
+        },
+        "internet-ssid": {
+            "question": "Quin és el nom de la xarxa per a l'accés inalàmbric a internet?",
+            "render": "El nom de la xarxa és <b>{internet_access:ssid}</b>",
+            "freeform": {
+                "placeholder": "Intruduixca el nom de la xarxa"
+            }
+        },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Està <b>permès</b> fumar"
+                },
+                "1": {
+                    "then": "<b>No</b> està permés fumar"
+                },
+                "2": {
+                    "then": "Està permés fumar <b>a l'exterior</b>."
+                }
+            },
+            "question": "Està permés fumar a {title()}?"
+        },
+        "payment-options-split": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Aquí s'accepten monedes"
+                    },
+                    "1": {
+                        "then": "Aquí s'accepten bitllets"
+                    },
+                    "2": {
+                        "then": "Aquí s'accepten targetes de dèbit"
+                    },
+                    "3": {
+                        "then": "Aquí s'accepten targetes de crèdit"
+                    }
+                }
+            }
+        },
+        "opening_hours_24_7": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Obert 24/7 (incloent-hi festius)"
+                    }
+                }
+            }
+        },
+        "opening_hours_by_appointment": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Sols amb cita prèvia"
+                    },
+                    "1": {
+                        "then": "Sols amb cita prèvia"
+                    }
+                }
+            }
         }
     }
 }
