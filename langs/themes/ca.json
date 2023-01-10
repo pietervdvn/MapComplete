@@ -650,7 +650,8 @@
         "title": "Brossa"
     },
     "waste_basket": {
-        "title": "Papepera"
+        "title": "Papepera",
+        "shortDescription": "Un mapa amb papereres"
     },
     "atm": {
         "description": "Aquest mapa mostra caixers automàtics on retirar o ingresar diners",
@@ -685,10 +686,30 @@
                             }
                         },
                         "render": "L’edifici va ser construït al <b> {_bag_obj:start_date}4</b>"
+                    },
+                    "Reference": {
+                        "render": "La referència a BAG és <b>{_bag_obj:ref:bag}</b>"
+                    },
+                    "Building type": {
+                        "mappings": {
+                            "0": {
+                                "then": "El tipus d'edifici serà <b>{_bag_obj:construction}</b>"
+                            }
+                        },
+                        "render": "El tipus d'edifici és <b>{_bag_obj:building}</b>"
+                    },
+                    "Import button": {
+                        "mappings": {
+                            "0": {
+                                "then": "El valors correctes encara no s'ha calculat. Refresca la pàgina"
+                            }
+                        }
                     }
                 }
             }
-        }
+        },
+        "shortDescription": "Ferramenta d'ajuda per a importar el BAG",
+        "title": "Assistent d'importació del BAG"
     },
     "mapcomplete-changes": {
         "description": "Aquest mapa mostra tots els canvis fets amb MapComplete",
