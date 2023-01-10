@@ -185,9 +185,6 @@
             }
         },
         "tagRenderings": {
-            "atm-in-bank-notice": {
-                "render": "Dieser Geldautomat befindet sich in oder in der Nähe einer Bank"
-            },
             "brand": {
                 "freeform": {
                     "placeholder": "Markenname"
@@ -2716,11 +2713,7 @@
                 },
                 "question": "Gibt es hier eine Speedkletter-Wand?"
             },
-            "name": {
-                "question": "Wie heißt diese Kletterhalle?"
-            },
             "harness_rental": {
-                "question": "Kann man hier einen Klettergurt ausleihen?",
                 "mappings": {
                     "0": {
                         "then": "Ein Klettergurt kann hier ausgeliehen werden"
@@ -2728,7 +2721,11 @@
                     "1": {
                         "then": "Ein Klettergurt kann hier <b>nicht</b> ausgeliehen werden"
                     }
-                }
+                },
+                "question": "Kann man hier einen Klettergurt ausleihen?"
+            },
+            "name": {
+                "question": "Wie heißt diese Kletterhalle?"
             },
             "shoe_rental": {
                 "mappings": {
@@ -5799,12 +5796,12 @@
             }
         },
         "title": {
-            "render": "Stellplatz",
             "mappings": {
                 "0": {
                     "then": "Behindertenparkplatz"
                 }
-            }
+            },
+            "render": "Stellplatz"
         }
     },
     "pedestrian_path": {
@@ -7136,12 +7133,6 @@
                         "render_single_language": "Die Treppe hat taktile Schrift in {language():font-bold}"
                     }
                 }
-            },
-            "multilevels": {
-                "override": {
-                    "question": "Zwischen welchen Stockwerken befindet sich die Treppe?",
-                    "render": "Die Treppe befindet sich zwischen den Stockwerken {level}"
-                }
             }
         },
         "title": {
@@ -7522,18 +7513,6 @@
                 },
                 "question": "Wer ist der Betreiber dieses Fahrkartenentwerters?",
                 "render": "Dieser Fahrkartenentwerter wird betrieben von {operator}"
-            },
-            "payment-options": {
-                "override": {
-                    "mappings+": {
-                        "1": {
-                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
-                        },
-                        "0": {
-                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
-                        }
-                    }
-                }
             }
         },
         "title": {
@@ -7800,11 +7779,6 @@
             "wheelchair-door-width": {
                 "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
                 "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "Wann ist die Einrichtung, in der sich diese Toiletten befinden, geöffnet?"
-                }
             }
         },
         "title": {

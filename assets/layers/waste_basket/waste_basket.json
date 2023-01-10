@@ -212,7 +212,8 @@
         "eo": "Rubujo",
         "it": "un cestino dei rifiuti",
         "id": "sebuah keranjang sampah",
-        "da": "en affaldskurv"
+        "da": "en affaldskurv",
+        "ca": "una paperera"
       },
       "presiceInput": {
         "preferredBackground": "photo"

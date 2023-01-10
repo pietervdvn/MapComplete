@@ -185,9 +185,6 @@
             }
         },
         "tagRenderings": {
-            "atm-in-bank-notice": {
-                "render": "This ATM is located in or near a bank"
-            },
             "brand": {
                 "freeform": {
                     "placeholder": "Brand name"
@@ -261,6 +258,35 @@
                 }
             },
             "render": "ATM"
+        }
+    },
+    "bank": {
+        "description": "A financial institution to deposit money",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "With an ATM"
+                    }
+                }
+            }
+        },
+        "name": "Banks",
+        "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "This bank has an ATM"
+                    },
+                    "1": {
+                        "then": "This bank does <b>not</b> have an ATM"
+                    },
+                    "2": {
+                        "then": "This bank does have an ATM, but it is mapped as a different icon"
+                    }
+                },
+                "question": "Does this bank have an ATM?"
+            }
         }
     },
     "barrier": {
@@ -2701,6 +2727,11 @@
     "climbing_gym": {
         "description": "A climbing gym",
         "name": "Climbing gyms",
+        "presets": {
+            "0": {
+                "title": "Climbing gym"
+            }
+        },
         "tagRenderings": {
             "Speed climbing?": {
                 "mappings": {

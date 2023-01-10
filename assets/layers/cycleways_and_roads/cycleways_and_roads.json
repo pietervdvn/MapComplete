@@ -42,7 +42,8 @@
       "en": "Way",
       "nl": "Weg",
       "de": "Weg",
-      "pa_PK": "راہ"
+      "pa_PK": "راہ",
+      "ca": "Via"
     },
     "mappings": [
       {
@@ -56,7 +57,8 @@
           "nl": "Fietsweg {name}",
           "en": "Cycleway {name}",
           "de": "Radweg {name}",
-          "fr": "Piste cyclable {name}"
+          "fr": "Piste cyclable {name}",
+          "ca": "Via ciclista {name}"
         }
       },
       {
@@ -89,7 +91,8 @@
           "nl": "Weg met fietssugestiestrook {name}",
           "en": "Road with shared lane {name}",
           "de": "Straße mit gemeinsam genutzter Fahrspur {name}",
-          "fr": "Route avec voie partagée {name}"
+          "fr": "Route avec voie partagée {name}",
+          "ca": "Carretera amb un carril compartit {name}"
         }
       },
       {
@@ -114,7 +117,8 @@
           "nl": "Weg met fietsstrook {name}",
           "en": "Road with bike lane {name}",
           "de": "Straße mit Fahrradstreifen {name}",
-          "fr": "Route avec voie cyclable {name}"
+          "fr": "Route avec voie cyclable {name}",
+          "ca": "Ciclocarrer {name}"
         }
       },
       {
@@ -1668,6 +1672,7 @@
     "nl": "Alle infrastructuur waar je over kunt fietsen, met vragen over die infrastructuur",
     "de": "Infrastruktur, die man mit dem Fahrrad befahren kann, begleitet von diesbezüglichen Fragen",
     "es": "Toda la infraestructura sobre la que alguien puede ir en bici, acompañado de preguntas sobre esta infraestructura\"",
-    "fr": "Toutes les infrastructures sur lesquelles quelqu'un peut rouler, accompagnées de questions sur cette infrastructure"
+    "fr": "Toutes les infrastructures sur lesquelles quelqu'un peut rouler, accompagnées de questions sur cette infrastructure",
+    "ca": "Totes les infraestructures per les quals algú pot ciclar, acompanyades de preguntes sobre aquesta infraestructura"
   }
 }

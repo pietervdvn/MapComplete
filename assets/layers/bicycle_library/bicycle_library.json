@@ -217,7 +217,8 @@
         "pt": "Quem pode emprestar bicicletas aqui?",
         "da": "Hvem kan låne cykler her?",
         "es": "¿Quién puede alquilar bicicletas aquí?",
-        "cs": "Kdo si zde může půjčit jízdní kolo?"
+        "cs": "Kdo si zde může půjčit jízdní kolo?",
+        "ca": "Qui pot llogar bicicletes aquí?"
       },
       "multiAnswer": true,
       "mappings": [

@@ -169,7 +169,8 @@
             "en": "This kerb has tactile paving, but it is incorrect.",
             "de": "Der Bordstein hat ein taktiles Pflaster, das aber falsch ist.",
             "fr": "Cette bordure a un pavage tactile, mais il est incorrect.",
-            "nl": "Deze stoeprand heeft voelbare bestrating, maar deze is incorrect."
+            "nl": "Deze stoeprand heeft voelbare bestrating, maar deze is incorrect.",
+            "ca": "La vorera té superfície podotàctil, però és incorrecte."
           },
           "hideInAnswer": true
         }

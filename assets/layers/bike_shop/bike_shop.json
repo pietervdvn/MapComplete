@@ -249,7 +249,8 @@
             "de": "Dieses Geschäft konzentriert sich auf die Vermietung",
             "da": "Denne virksomhed fokuserer på udlejning",
             "es": "Este negocio se centra en el alquiler",
-            "fr": "Ce commerce est spécialisé dans la location"
+            "fr": "Ce commerce est spécialisé dans la location",
+            "ca": "Aquest negoci es centra en el lloguer"
           }
         }
       ]
@@ -279,7 +280,8 @@
         "pt_BR": "Esta loja de bicicletas se chama {name}",
         "pt": "Esta loja de bicicletas se chama {name}",
         "es": "Esta tienda de bicicletas se llama {name}",
-        "da": "Denne cykelbutik hedder {name}"
+        "da": "Denne cykelbutik hedder {name}",
+        "ca": "Aquesta botiga de bicicletes és diu {name}"
       },
       "freeform": {
         "key": "name"
@@ -317,7 +319,8 @@
         "pt_BR": "Esta loja vende bicicletas?",
         "pt": "Esta loja vende bicicletas?",
         "es": "¿Vende bicis esta tienda?",
-        "da": "Sælger denne butik cykler?"
+        "da": "Sælger denne butik cykler?",
+        "ca": "Aquesta botiga ven bicicletes?"
       },
       "mappings": [
         {
@@ -333,7 +336,8 @@
             "pt_BR": "Esta loja vende bicicletas",
             "pt": "Esta loja vende bicicletas",
             "es": "Esta tienda vende bicis",
-            "da": "Denne butik sælger cykler"
+            "da": "Denne butik sælger cykler",
+            "ca": "Aquesta tenda ven bicicletes"
           }
         },
         {
@@ -349,7 +353,8 @@
             "pt_BR": "Esta loja não vende bicicletas",
             "pt": "Esta loja não vende bicicletas",
             "es": "Esta tienda no vende bicis",
-            "da": "Denne butik sælger ikke cykler"
+            "da": "Denne butik sælger ikke cykler",
+            "ca": "Aquesta tenda no ven bicicletes"
           }
         }
       ]
@@ -367,7 +372,8 @@
         "pt_BR": "Esta loja conserta bicicletas?",
         "pt": "Esta loja conserta bicicletas?",
         "es": "¿Repara bicis esta tienda?",
-        "da": "Reparerer denne butik cykler?"
+        "da": "Reparerer denne butik cykler?",
+        "ca": "Aquesta botiga repara bicicletes?"
       },
       "mappings": [
         {
@@ -383,7 +389,8 @@
             "pt_BR": "Esta loja conserta bicicletas",
             "pt": "Esta loja conserta bicicletas",
             "es": "Esta tienda repara bicis",
-            "da": "Denne butik reparerer cykler"
+            "da": "Denne butik reparerer cykler",
+            "ca": "Aquesta botiga repara bicicletes"
           }
         },
         {
@@ -399,7 +406,8 @@
             "pt_BR": "Esta loja não conserta bicicletas",
             "pt": "Esta loja não conserta bicicletas",
             "es": "Esta tienda no repara bicis",
-            "da": "Denne butik reparerer ikke cykler"
+            "da": "Denne butik reparerer ikke cykler",
+            "ca": "Aquesta botiga no repara bicicletes"
           }
         },
         {
@@ -466,7 +474,8 @@
             "pt_BR": "Esta loja aluga bicicletas",
             "pt": "Esta loja aluga bicicletas",
             "es": "Esta tienda alquila bicis",
-            "da": "Denne butik udlejer cykler"
+            "da": "Denne butik udlejer cykler",
+            "ca": "Aquesta botiga lloga bicicletes"
           }
         },
         {
@@ -606,7 +615,8 @@
             "it": "C’è una pompa per bici, è mostrata come punto separato",
             "de": "Es gibt eine Luftpumpe, sie ist als separater Punkt eingetragen",
             "es": "Hay una bomba para bicicletas, se muestra como un punto separado",
-            "da": "Der er cykelpumpe, den er vist som et separat punkt"
+            "da": "Der er cykelpumpe, den er vist som et separat punkt",
+            "ca": "Hi ha una manxa per a bicicletes, es mostra com a un punt separat"
           }
         }
       ]

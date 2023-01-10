@@ -80,7 +80,8 @@
         "en": "A fastfood-business focused on french fries",
         "nl": "Een fastfood-zaak waar je frieten koopt",
         "de": "Eine Pommesbude",
-        "fr": "Une restauration rapide centré sur la vente de frites"
+        "fr": "Une restauration rapide centré sur la vente de frites",
+        "ca": "Un local de menjar ràpid centrat en les patates fregides"
       },
       "preciseInput": {
         "preferredBackground": "map"
@@ -187,7 +188,8 @@
             "de": "Es handelt sich um einen Schnellimbiss, mit Fokus auf schnelle Bedienung am Tresen. Sitzmöglichkeiten sind begrenzt und funktional.",
             "es": "Este es un negocio de comida rápida, centrado en servicio rápido. Si hay asientos disponibles, son más bien limitados y funcionales.",
             "fr": "C'est un fast-food, centrée sur le service rapide. Si des places sont disponibles, elles sont plutôt limitées et fonctionnelles.",
-            "hu": "Ez egy gyorsétterem (büfé), amely a gyors kiszolgálásra összpontosít. Ha vannak is ülőhelyek, ezek meglehetősen korlátozottak és funkcionálisak."
+            "hu": "Ez egy gyorsétterem (büfé), amely a gyors kiszolgálásra összpontosít. Ha vannak is ülőhelyek, ezek meglehetősen korlátozottak és funkcionálisak.",
+            "ca": "Aquest és un negoci de menjar ràpid, centrat en el servei ràpid. Si hi han seients disponibles, aquests seràn limitats i funcionals."
           }
         },
         {
@@ -197,7 +199,8 @@
             "nl": "Dit is een <b>restaurant</b>. De focus ligt op een aangename ervaring waar je aan tafel wordt bediend",
             "de": "Es handelt sich um ein <b>Restaurant</b>, mit Fokus auf eine nette Atmosphäre und Tischbedienung",
             "es": "Un <b>restaurante</b>, centrado en crear una buena experiencia donde se sirve en la mesa",
-            "fr": "Un <b>restaurant</b>, axé sur la création d'une expérience agréable où l'on est servi à table"
+            "fr": "Un <b>restaurant</b>, axé sur la création d'une expérience agréable où l'on est servi à table",
+            "ca": "Un <b>restaurant</b>, centrat en crear una bona experiència on es serveix a taula"
           }
         }
       ],
@@ -387,7 +390,8 @@
         "en": "Does this place offer take-away?",
         "de": "Werden Gerichte zum Mitnehmen angeboten?",
         "es": "¿Este lugar ofrece para llevar?",
-        "fr": "Cet établissement propose-t-il des plats à emporter ?"
+        "fr": "Cet établissement propose-t-il des plats à emporter ?",
+        "ca": "Aquest lloc ofereix per a emportar?"
       },
       "mappings": [
         {
@@ -760,7 +764,8 @@
         "en": "Does this fries shop use vegetable or animal oil for cooking?",
         "nl": "Bakt deze frituur met dierlijk vet of met plantaardige olie?",
         "fr": "Cette friteuse fonctionne-t-elle avec de la graisse animale pour la cuisson ?",
-        "de": "Wird in dieser Pommesbude pflanzliches oder tierisches Fett zum Frittieren verwendet?"
+        "de": "Wird in dieser Pommesbude pflanzliches oder tierisches Fett zum Frittieren verwendet?",
+        "ca": "Aquesta botiga de patates fregides utilitza oli vegetal o animal per a cuinar?"
       },
       "mappings": [
         {
@@ -770,7 +775,8 @@
             "nl": "Bakt in plantaardige olie",
             "fr": "La friture est faite avec de l'huile végétale",
             "de": "Es wird pflanzliches Fett zum Frittieren verwendet",
-            "es": "Aceite vegetal"
+            "es": "La fritura se hace con aceite vegetal",
+            "ca": "El fregit es fa amb oli vegetal"
           }
         },
         {
@@ -780,7 +786,8 @@
             "nl": "Dierlijk vet",
             "fr": "La friture est faite avec de la graisse animale",
             "de": "Es wird tierisches Fett zum Frittieren verwendet",
-            "es": "Aceite animal"
+            "es": "La fritura se hace con aceite animal",
+            "ca": "El fregit es fa amb oli animal"
           }
         }
       ],

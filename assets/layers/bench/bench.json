@@ -57,7 +57,8 @@
     "de": "Diese Karte stellt Sitzbänke aus Holz, Metall, Stein, … dar und stellt ein paar Fragen, um weitere Informationen zu ergänzen.",
     "es": "Un banco es una superficie de madera, metal, piedra, ... donde un humano se puede sentar. Estas capas los visualizan y hacen algunas preguntas sobre ellos.",
     "da": "En bænk er en træ-, metal-, sten-, ... overflade, hvor et menneske kan sidde. Dette lag visualiserer dem og stiller et par spørgsmål om dem.",
-    "cs": "Lavička je dřevěná, kovová, kamenná, ... plocha, na které může člověk sedět. Tato vrstva je vizualizuje a klade si o nich několik otázek."
+    "cs": "Lavička je dřevěná, kovová, kamenná, ... plocha, na které může člověk sedět. Tato vrstva je vizualizuje a klade si o nich několik otázek.",
+    "ca": "Un banc és una superfície de madera, metall, pedra, … on un humà s’hi pot sentar. Aquesta capa els mostra i fa algunes preguntes sobre ells."
   },
   "tagRenderings": [
     "images",
@@ -82,7 +83,7 @@
             "pl": "Oparcie: Tak",
             "pt_BR": "Encosto: Sim",
             "pt": "Encosto: Sim",
-            "ca": "Respatller: sí",
+            "ca": "Té espatller",
             "da": "Har et ryglæn",
             "cs": "Má opěradlo"
           }
@@ -106,7 +107,7 @@
             "pl": "Oparcie: Nie",
             "pt_BR": "Encosto: Não",
             "pt": "Encosto: Não",
-            "ca": "Respatller: No",
+            "ca": "<b>No</b> té espatller",
             "da": "Har <b>ikke</b> et ryglæn",
             "cs": "<b>nemá</b> opěradlo"
           }
@@ -241,7 +242,7 @@
             "pl": "Materiał: drewno",
             "pt": "Material: madeira",
             "eo": "Materialo: ligna",
-            "ca": "Material: fusta",
+            "ca": "El seient està fet de fusta",
             "da": "Siddepladserne er lavet af træ",
             "cs": "Sedací část je vyrobena ze dřeva"
           }
@@ -264,7 +265,7 @@
             "pt_BR": "Material: metal",
             "pt": "Material: metal",
             "eo": "Materialo: metala",
-            "ca": "Material: metall",
+            "ca": "El seient està fet de metall",
             "da": "Sædet er lavet af metal",
             "cs": "Sedací část je vyrobena z kovu"
           }
@@ -288,7 +289,7 @@
             "pl": "Materiał: kamień",
             "pt": "Material: pedra",
             "eo": "Materialo: ŝtona",
-            "ca": "Material: pedra",
+            "ca": "El seient està fet de pedra",
             "da": "Siddepladserne er lavet af sten",
             "cs": "Sedací část je vyrobena z kamene"
           }
@@ -312,7 +313,7 @@
             "pl": "Materiał: beton",
             "pt": "Material: concreto",
             "eo": "Materialo: betona",
-            "ca": "Material: ciment",
+            "ca": "El seient està fet de ciment",
             "da": "Siddepladserne er lavet af beton",
             "cs": "Sedací část je vyrobena z betonu"
           }
@@ -336,7 +337,7 @@
             "pl": "Materiał: plastik",
             "pt": "Material: plástico",
             "eo": "Materialo: plasta",
-            "ca": "Material: plàstic",
+            "ca": "El seient està fet de plàstic",
             "da": "Sædet er lavet af plastik",
             "cs": "Sedací část je vyrobena z plastu"
           }
@@ -360,7 +361,7 @@
             "pl": "Materiał: stal",
             "pt": "Material: aço",
             "eo": "Materialo: ŝtala",
-            "ca": "Material: acer",
+            "ca": "El seient està fet d'acer",
             "da": "Siddepladserne er lavet af stål",
             "cs": "Sedací část je vyrobena z oceli"
           }

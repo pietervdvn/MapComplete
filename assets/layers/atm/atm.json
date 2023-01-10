@@ -10,7 +10,8 @@
     "en": "ATMs to withdraw money",
     "de": "Geldautomaten zum Geld abheben",
     "fr": "DAB pour retirer de l'argent",
-    "nl": "Geldautomaten om geld op te nemen"
+    "nl": "Geldautomaten om geld op te nemen",
+    "ca": "Caixers automàtics on retirar diners"
   },
   "title": {
     "render": {
@@ -56,7 +57,8 @@
         "en": "The name of this ATM is {name}",
         "de": "Der Name dieses Geldautomaten ist {name}",
         "fr": "Le nom de ce DAB est {name}",
-        "nl": "De naam van deze geldautomaat is {name}"
+        "nl": "De naam van deze geldautomaat is {name}",
+        "ca": "El d’aquest caixer és {name}"
       },
       "condition": "name~*"
     },
@@ -66,7 +68,8 @@
         "en": "What brand is this ATM?",
         "de": "Von welcher Marke ist dieser Geldautomat?",
         "fr": "De quelle marque est ce DAB ?",
-        "nl": "Van welk merk is deze geldautomaat?"
+        "nl": "Van welk merk is deze geldautomaat?",
+        "ca": "De quina marca és aquest caixer?"
       },
       "freeform": {
         "key": "brand",
@@ -125,7 +128,8 @@
           "then": {
             "en": "You can withdraw cash from this ATM",
             "de": "Sie können an diesem Geldautomaten Bargeld abheben",
-            "nl": "Je kan geld ophalen bij deze geldautomaat"
+            "nl": "Je kan geld ophalen bij deze geldautomaat",
+            "ca": "Pots retirar diners a aquest caixer"
           },
           "hideInAnswer": true
         },
@@ -151,7 +155,8 @@
       "id": "cash_in",
       "question": {
         "en": "Can you deposit cash into this ATM?",
-        "de": "Kann man an diesem Geldautomaten Bargeld einzahlen?"
+        "de": "Kann man an diesem Geldautomaten Bargeld einzahlen?",
+        "nl": "Kan je geld storten bij deze geldautomaat?"
       },
       "mappings": [
         {
@@ -159,7 +164,8 @@
           "then": {
             "en": "You probably cannot deposit cash into this ATM",
             "de": "Sie können wahrscheinlich kein Bargeld in diesen Geldautomaten einzahlen",
-            "nl": "Je kan waarschijnlijk geen geld deponeren in deze geldautomaat"
+            "nl": "Je kan waarschijnlijk geen geld deponeren in deze geldautomaat",
+            "ca": "Probablement no pots ingressar diners a aquest caixer"
           },
           "hideInAnswer": true
         },
@@ -186,7 +192,8 @@
       "question": {
         "en": "Does this ATM have speech output for visually impaired users?",
         "de": "Verfügt dieser Geldautomat über eine Sprachausgabe für sehbehinderte Benutzer?",
-        "nl": "Heeft deze automaat spraak voor slechtziende en blinde gebruikers?"
+        "nl": "Heeft deze automaat spraak voor slechtziende en blinde gebruikers?",
+        "ca": "Aquest caixer té un lector de pantalla per a usuaris amb discapacitat visual?"
       },
       "mappings": [
         {
@@ -194,7 +201,8 @@
           "then": {
             "en": "This ATM has speech output, usually available through a headphone jack",
             "de": "Dieser Geldautomat verfügt über eine Sprachausgabe, die normalerweise über eine Kopfhörerbuchse verfügbar ist",
-            "nl": "Deze automaat heeft spraak, waarschijnlijk beschikbaar via een hoofdtelefoon-aansluiting"
+            "nl": "Deze automaat heeft spraak, waarschijnlijk beschikbaar via een hoofdtelefoon-aansluiting",
+            "ca": "Aquest caixer té lector de pantalla, normalment disponible a través d'un connector d'auriculars \"jack\""
           }
         },
         {
@@ -202,7 +210,8 @@
           "then": {
             "en": "This ATM does not have speech output",
             "de": "Dieser Geldautomat hat keine Sprachausgabe",
-            "nl": "Deze automaat heeft geen spraak"
+            "nl": "Deze automaat heeft geen spraak",
+            "ca": "Aquest caixer no té lector de pantalla"
           }
         }
       ]

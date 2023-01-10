@@ -467,7 +467,8 @@
         "nl": "een recycling container",
         "de": "einen Recyclingcontainer",
         "es": "un contenedor de reciclaje",
-        "it": "un contenitore per il riciclo"
+        "it": "un contenitore per il riciclo",
+        "ca": "un contenidor de reciclatge"
       },
       "tags": [
         "amenity=recycling",
@@ -480,7 +481,8 @@
         "nl": "een containerpark (recycling center)",
         "de": "einen Wertstoffhof",
         "es": "un centro de reciclado",
-        "it": "un centro di riciclo"
+        "it": "un centro di riciclo",
+        "ca": "un centre de reciclatge"
       },
       "tags": [
         "amenity=recycling",
@@ -756,7 +758,8 @@
             "en": "Green waste can be recycled here",
             "nl": "Groen afval kan hier gerecycled worden",
             "de": "Grünabfälle können hier recycelt werden",
-            "it": "Verde"
+            "it": "Verde",
+            "ca": "Aquí es poden reciclar residus verds"
           },
           "icon": {
             "path": "./assets/layers/recycling/garden_waste.svg",
@@ -818,7 +821,8 @@
           "then": {
             "en": "Light bulbs can be recycled here",
             "nl": "Lampen kunnen hier gerecycled worden",
-            "de": "Hier können Glühbirnen recycelt werden"
+            "de": "Hier können Glühbirnen recycelt werden",
+            "ca": "Aquí es poden reciclar bombetes"
           },
           "icon": {
             "path": "./assets/layers/recycling/light_bulbs.svg",
@@ -956,7 +960,8 @@
             "en": "Small electrical appliances can be recycled here",
             "nl": "Kleine elektrische apparaten kunnen hier gerecycled worden",
             "de": "Elektrokleingeräte können hier recycelt werden",
-            "it": "Piccoli elettrodomestici"
+            "it": "Piccoli elettrodomestici",
+            "ca": "Aquí es poden reciclar petits aparells elèctrics"
           },
           "hideInAnswer": true,
           "icon": {

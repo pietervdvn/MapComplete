@@ -241,7 +241,8 @@
             "fr": "Cet arbre est dans une jardin de résidence.",
             "es": "El árbol está en un jardín privado o residencial.",
             "de": "Der Baum steht in einem Wohngarten.",
-            "da": "Træet står i en villahave."
+            "da": "Træet står i en villahave.",
+            "ca": "L'arbre està en un jardí residencial."
           }
         },
         {
@@ -273,7 +274,8 @@
             "fr": "L'arbre est dans une zone urbaine.",
             "es": "El árbol está en un zona urbana.",
             "de": "Der Baum steht in einem städtischen Gebiet.",
-            "da": "Træet står i et byområde."
+            "da": "Træet står i et byområde.",
+            "ca": "L'arbre està en una àrea urbana."
           }
         },
         {

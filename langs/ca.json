@@ -80,6 +80,7 @@
             "donate": "Donar suport econòmic a MapComplete",
             "editId": "Obre l'editor en línia d'OpenStreetMap aquí",
             "editJosm": "Editar aquí amb JOSM",
+            "followOnMastodon": "Segueix MapComplet a Mastodon",
             "iconAttribution": {
                 "title": "Icones utilitzades"
             },
@@ -91,8 +92,7 @@
             "openMapillary": "Obrir Mapillary aquí",
             "openOsmcha": "Veure darreres edicions fetes amb {theme}",
             "themeBy": "Tema mantingut per {author}",
-            "translatedBy": "MapComplete ha estat traduït per {contributors} i <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} col·laboradors més</a>",
-            "followOnMastodon": "Segueix MapComplet a Mastodon"
+            "translatedBy": "MapComplete ha estat traduït per {contributors} i <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} col·laboradors més</a>"
         },
         "back": "Tornar",
         "backToMapcomplete": "Tornar a l'explicació general de la petició",
@@ -144,10 +144,10 @@
             "createYourOwnTheme": "Crea la teva pròpia petició completa de MapComplete des de zero",
             "hiddenExplanation": "Aquestes peticions només funcionen amb l'enllaç. Has descobert {hidden_discovered} de {total_hidden} peticions amagades.",
             "intro": "<h3>Més peticions</h3>T'agrada captar dades? <br>Hi ha més capes disponibles.",
+            "noMatchingThemes": "Cap tema coincideix amb els teus criteris de cerca",
             "previouslyHiddenTitle": "Peticions visitades i amagades",
             "requestATheme": "Si vols que et fem una petició pròpia , demana-la al registre d'incidències",
-            "streetcomplete": "Una altra aplicació similar és <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
-            "noMatchingThemes": "Cap tema coincideix amb els teus criteris de cerca"
+            "streetcomplete": "Una altra aplicació similar és <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "{category}: El seu nom és $$$",
         "next": "Següent",

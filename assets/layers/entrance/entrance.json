@@ -14,7 +14,8 @@
     "nl": "Een laag met ingangen (van gebouwen etc.) waarmee je details kunt aanvullen die belangrijk zijn voor bijvoorbeeld rolstoelgebruikers (en fietsers, leveranciers, …)",
     "de": "Eine Ebene, die Eingänge anzeigt und die Möglichkeit bietet, weitere Daten zu erheben, die z. B. für Rollstuhlfahrer wichtig sind (aber auch für Radfahrer, Lieferpersonal, …)",
     "es": "Una capa que muestra capas y ofrece la posibilidad de sondear algunos datos avanzados que son importantes para, por ejemplo, usuarios de sillas de ruedas (pero también incluye ciclistas, gente que quiere repartir, ...)",
-    "fr": "Une couche montrant les entrées et offrant des capacités pour étudier certaines données avancées qui sont importantes, par exemple. les utilisateurs de fauteuils roulants (mais aussi les utilisateurs de vélos, les personnes qui veulent faire des livraisons, …)"
+    "fr": "Une couche montrant les entrées et offrant des capacités pour étudier certaines données avancées qui sont importantes, par exemple. les utilisateurs de fauteuils roulants (mais aussi les utilisateurs de vélos, les personnes qui veulent faire des livraisons, …)",
+    "ca": "Una capa que mostra entrades i ofereix la possibilitat de sondejar algunes dades avançades que són importants per a, per exemple, usuaris de cadires de rodes (però també ciclistes, repartidors, …)"
   },
   "source": {
     "osmTags": {
@@ -119,7 +120,8 @@
             "nl": "Dit is een dienstingang - normaal gezien enkel gebruikt door werknemers, leveranciers, …",
             "de": "Dies ist ein Diensteingang - normalerweise nur für Mitarbeiter, Anlieferung, …",
             "es": "Esta es una entrada de servicio - normalmente solo la utilizan empleados, repartidores, …",
-            "fr": "Ceci est une entrée de service - normalement utilisée uniquement pour les employés, la livraison, …"
+            "fr": "Ceci est une entrée de service - normalement utilisée uniquement pour les employés, la livraison, …",
+            "ca": "Aquesta és una entrada de servei - normalment utilitzada per empleats, repartidors, …"
           }
         },
         {
@@ -342,7 +344,8 @@
             "nl": "De deur wordt geopend door personeel als je dat vraagt <b>door op een knop te duwen</b>",
             "de": "Diese Tür wird von Mitarbeitern geöffnet auf Anfrage <b>per Rufknopf</b>",
             "es": "Esta puerta la abre el personal cuando se pide <b>pulsando un botón</b>",
-            "fr": "Cette porte sera ouverte par le personnel à la demande en <b>appuyant sur un bouton</b>"
+            "fr": "Cette porte sera ouverte par le personnel à la demande en <b>appuyant sur un bouton</b>",
+            "ca": "Aquesta porta l'obri el personal quan es sol·licita<b>polsant un botó</b>"
           }
         },
         {
@@ -364,7 +367,8 @@
         "nl": "Deze deur heeft een breedte van {canonical(width)}",
         "de": "Diese Tür hat eine Durchgangsbreite von {canonical(width)}",
         "es": "Esta puerta tiene una ancho de {canonical(width)} metros",
-        "fr": "Cette porte a une largeur de {canonical(width)} mètre"
+        "fr": "Cette porte a une largeur de {canonical(width)} mètre",
+        "ca": "Aquesta porta té una amplària de {canonical(width)}"
       },
       "question": {
         "en": "What is the width of this door/entrance?",

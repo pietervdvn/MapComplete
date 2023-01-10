@@ -201,7 +201,8 @@
         "en": "This school has facilities for students with {school:for}",
         "nl": "Deze school richt zich op studenten met {school:for}",
         "de": "Diese Schule verfügt über Einrichtungen für Schüler mit {school:for}",
-        "fr": "Cet établissement scolaire a des installations pour étudiants ayant {school:for}"
+        "fr": "Cet établissement scolaire a des installations pour étudiants ayant {school:for}",
+        "ca": "Aquesta escola té instal·lacions per a estudiants amb {school:for}"
       },
       "freeform": {
         "key": "school:for",
@@ -224,7 +225,8 @@
             "en": "This is a school for students without special needs<div class='subtle'>This includes students who can follow the courses with small, ad hoc measurements</div>",
             "nl": "Deze school richt zich op studenten zonder extra zorgbehoefte<div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>",
             "de": "Dies ist eine Schule für Schüler ohne besondere Bedürfnisse<div class='subtle'>Dazu gehören auch Schüler, die den Kursen mit kleinen Ad-hoc-Maßnahmen folgen können</div>",
-            "fr": "Ceci est un établissement scolaire pour étudiants sans besoins partucliers. <div class='subtle'>Sont inclus les étudiants qui peuvent suivre les cours avec de petites adaptations.</div>"
+            "fr": "Ceci est un établissement scolaire pour étudiants sans besoins partucliers. <div class='subtle'>Sont inclus les étudiants qui peuvent suivre les cours avec de petites adaptations.</div>",
+            "ca": "Aquesta és una escola per a estudiants sense necesitats especials <div class='subtle'> Açò inclou alumnes que poden seguir les classes amb petites messures</div>"
           }
         },
         {
@@ -242,7 +244,8 @@
             "en": "This is a school for students with autism",
             "nl": "Deze school richt zich op studenten in het autisme-spectrum",
             "de": "Dies ist eine Schule für Schüler mit Autismus",
-            "fr": "Ceci est un établissement scolaire pour les étudiants ayant un trouble du spectre de l’autisme (TSA)"
+            "fr": "Ceci est un établissement scolaire pour les étudiants ayant un trouble du spectre de l’autisme (TSA)",
+            "ca": "Aquesta és una escola per a estudiants amb autisme"
           }
         },
         {
@@ -251,7 +254,8 @@
             "en": "This is a school for students with learning disabilities",
             "nl": "Deze school richt zich op leerlingen met een leerprobleem",
             "de": "Dies ist eine Schule für Schüler mit Lernschwierigkeiten",
-            "fr": "Ceci est un établissement scolaire pour les étudiants ayant des troubles dapprentissage"
+            "fr": "Ceci est un établissement scolaire pour les étudiants ayant des troubles dapprentissage",
+            "ca": "Aquesta és una escola per a estudiants amb dificultats de l'aprenentatge"
           }
         },
         {
@@ -269,7 +273,8 @@
             "en": "This is a school for deaf students or students with hearing impairments",
             "nl": "Deze school richt zich op dove en hardhorende studenten",
             "de": "Dies ist eine Schule für gehörlose oder hörgeschädigte Schüler",
-            "fr": "Ceci est un établissement scolaire pour les étudiants sourds ou malentendants"
+            "fr": "Ceci est un établissement scolaire pour les étudiants sourds ou malentendants",
+            "ca": "Aquesta és una escola per a estudiants sords o amb dificultats auditives"
           }
         },
         {
@@ -278,7 +283,8 @@
             "en": "This is a school for students with disabilities",
             "nl": "Deze school richt zich op studenten met een beperking",
             "de": "Dies ist eine Schule für Schüler mit Behinderungen",
-            "fr": "Ceci est un établissement scolaire pour les étudiants en situation de handicap"
+            "fr": "Ceci est un établissement scolaire pour les étudiants en situation de handicap",
+            "ca": "Aquesta és una escola per a estudiants amb discapacitats"
           }
         },
         {
@@ -287,7 +293,8 @@
             "en": "This is a school for students with special needs",
             "nl": "Deze school richt zich op studenten met extra zorgbehoeften",
             "de": "Dies ist eine Schule für Schüler mit besonderen Bedürfnissen",
-            "fr": "Ceci est un établissement scolaire pour les étudiants ayant des besoins particuliers"
+            "fr": "Ceci est un établissement scolaire pour les étudiants ayant des besoins particuliers",
+            "ca": "Aquesta és una escola per a estudiants amb necessitats especials"
           }
         }
       ]

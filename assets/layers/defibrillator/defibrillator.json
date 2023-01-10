@@ -359,7 +359,8 @@
         "it": "<i>Informazioni supplementari circa la posizione (in lingua locale):</i><br/>{defibrillator:location}",
         "de": "<i>Zusätzliche Informationen über den Standort (in der Landessprache):</i><br/>{defibrillator:location}",
         "sl": "<i>Dodatne informacije o lokaciji (v lokalnem jeziku):</i><br/>{defibrillator:location}",
-        "es": "<i>Información a mayores sobre la localización (en el idioma local):</i><br/>{defibrillator:location}"
+        "es": "<i>Información a mayores sobre la localización (en el idioma local):</i><br/>{defibrillator:location}",
+        "ca": "<i>Informació extra sobre la localització (en la llengua local):</i><br/> {defibrillator:location}"
       },
       "question": {
         "en": "Please give some explanation on where the defibrillator can be found (in the local language)",

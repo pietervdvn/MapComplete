@@ -12,7 +12,8 @@
     "ru": "Услуги по чистке велосипедов",
     "es": "Servicio de limpieza de bicis",
     "da": "Cykelrengøring",
-    "cs": "Služba mytí jízdních kol"
+    "cs": "Služba mytí jízdních kol",
+    "ca": "Servei de neteja de bicicletes"
   },
   "title": {
     "render": {
@@ -186,9 +187,9 @@
         {
           "if": "fee=no",
           "then": {
-            "en": "Free to use cleaning service",
+            "en": "This cleaning service is free to use",
             "de": "Kostenloser Reinigungsservice",
-            "nl": "Gratis fietsschoonmaakpunt",
+            "nl": "Dit fietsschoonmaakpunt is gratis te gebruiken",
             "es": "Servicio de limpieza gratis",
             "fr": "Service de nettoyage gratuit",
             "da": "Gratis at bruge rengøringsservice",
@@ -201,13 +202,14 @@
         {
           "if": "fee=yes",
           "then": {
-            "en": "Free to use",
+            "en": "This cleaning service is paid",
             "de": "Kostenlose Nutzung",
-            "nl": "Gratis te gebruiken",
+            "nl": "Dit fietsschoonmaakpunt is betalend",
             "es": "Gratuito",
             "fr": "Libre d'utilisation",
             "da": "Gratis at bruge",
-            "cs": "Bezplatné používání"
+            "cs": "Bezplatné používání",
+            "ca": ""
           }
         }
       ],

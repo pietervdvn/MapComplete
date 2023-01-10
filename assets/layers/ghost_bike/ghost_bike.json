@@ -148,7 +148,8 @@
         "it": "<a href='{source}' target='_blank'>Sono disponibili ulteriori informazioni</a>",
         "ru": "<a href='{source}' target='_blank'>Доступна более подробная информация</a>",
         "fr": "<a href='{source}' target='_blank'>Plus d'informations sont disponibles</a>",
-        "id": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>"
+        "id": "<a href='{source}' target='_blank'>Informasi lanjut tersedia</a>",
+        "ca": "<a href='{source}' target='_blank'>Més informació disponible</a>"
       },
       "freeform": {
         "type": "url",

@@ -29,7 +29,8 @@
     "hu": "Elektromos töltőpontok világtérképe",
     "fr": "Une carte mondiale des points de recharge",
     "es": "Un mapa mundial de estaciones de carga",
-    "da": "Et verdensomspændende kort over ladestationer"
+    "da": "Et verdensomspændende kort over ladestationer",
+    "ca": "Un mapa mundial d'estacions de càrrega"
   },
   "description": {
     "en": "On this open map, one can find and mark information about charging stations",
@@ -43,7 +44,8 @@
     "nl": "Met deze kaart kan je informatie over oplaadpunten vinden en toevoegen",
     "es": "En este mapa, uno puede encontrar y marcar información sobre estaciones de carga",
     "nb_NO": "Finn og merk info om ladestasjoner",
-    "da": "På dette åbne kort kan man finde og markere oplysninger om ladestandere"
+    "da": "På dette åbne kort kan man finde og markere oplysninger om ladestandere",
+    "ca": "A aquest mapa, un pot trobar i marcar informació sobre punts de càrrega"
   },
   "icon": "./assets/themes/charging_stations/logo.svg",
   "startLat": 0,

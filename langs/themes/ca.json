@@ -7,6 +7,60 @@
         "description": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món",
         "title": "Mapa Obert d'Art"
     },
+    "atm": {
+        "description": "Aquest mapa mostra caixers automàtics on retirar o ingresar diners",
+        "title": "Caixers automàtics"
+    },
+    "bag": {
+        "description": "Aquest tema ajuda amb la importació de dades del BAG",
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "Aquest edifici no té referència al BAG"
+                            }
+                        },
+                        "render": "La referència al BAG és <b>{ref:bag}</b>"
+                    }
+                }
+            },
+            "2": {
+                "description": "Edificis del registre BAG",
+                "tagRenderings": {
+                    "Build year": {
+                        "mappings": {
+                            "0": {
+                                "then": "L’edifici es va començar al <b> {_bag_obj:start_date}</b>"
+                            }
+                        },
+                        "render": "L’edifici va ser construït al <b> {_bag_obj:start_date}4</b>"
+                    },
+                    "Building type": {
+                        "mappings": {
+                            "0": {
+                                "then": "El tipus d'edifici serà <b>{_bag_obj:construction}</b>"
+                            }
+                        },
+                        "render": "El tipus d'edifici és <b>{_bag_obj:building}</b>"
+                    },
+                    "Import button": {
+                        "mappings": {
+                            "0": {
+                                "then": "El valors correctes encara no s'ha calculat. Refresca la pàgina"
+                            }
+                        }
+                    },
+                    "Reference": {
+                        "render": "La referència a BAG és <b>{_bag_obj:ref:bag}</b>"
+                    }
+                }
+            }
+        },
+        "shortDescription": "Ferramenta d'ajuda per a importar el BAG",
+        "title": "Assistent d'importació del BAG"
+    },
     "benches": {
         "description": "Aquest mapa mostra tots els bancs que hi ha a OpenStreetMap: bancs individuals i els bancs que hi ha a parades o refugis de transport públic. Amb un compte d'OpenStreetMap pots afegir nous bancs o editar detalls dels existents.",
         "shortDescription": "Un mapa de bancs",
@@ -25,6 +79,10 @@
         "description": "Un mapa amb prismàtics fixos en un pal. Sol trobar-se en llocs turístics, miradors, a la part alta de torres panoràmiques o ocasionalment en una reserva natural.",
         "shortDescription": "Un mapa amb prismàtics fixos",
         "title": "Prismàtics"
+    },
+    "blind_osm": {
+        "description": "Ajuda a mapejar elements rellevants per a persones amb discapacitat visual",
+        "title": "OSM per als cecs"
     },
     "bookcases": {
         "description": "Una llibreria pública és un xicotet armari al carrer, una caixa, una vella cabina telefònica o algun altre objecte on es guarden llibres. Tothom pot col·locar o agafar un llibre. Aquest mapa pretén recollir totes aquestes llibreries. Pots descobrir noves llibreries pròximes i, amb un compte gratuït de OpenStreetMap, afegir ràpidament les teues llibreries favorites.",
@@ -179,6 +237,28 @@
                         "question": "Quant costa aquest lloc?",
                         "render": "Aquest lloc costa {charge}"
                     },
+                    "dumpstations-chemical-waste": {
+                        "mappings": {
+                            "0": {
+                                "then": "Aquí pots depositar els residus del vàter químic"
+                            },
+                            "1": {
+                                "then": "Aquí no pots depositar els residus del vàter químic"
+                            }
+                        },
+                        "question": "Aquí pots depositar els residus del vàter químic?"
+                    },
+                    "dumpstations-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Has de pagar per a utilitzar-ho"
+                            },
+                            "1": {
+                                "then": "Es pot utilitzar gratuïtament"
+                            }
+                        },
+                        "question": "Aquest lloc cobra una taxa?"
+                    },
                     "dumpstations-grey-water": {
                         "mappings": {
                             "0": {
@@ -190,6 +270,10 @@
                         },
                         "question": "Aquí pots desfer-te de les aigües grises?"
                     },
+                    "dumpstations-network": {
+                        "question": "A quina xarxa forma part aquest lloc? (Salta si a cap)",
+                        "render": "Aquesta estació forma part de la xarxa {network}"
+                    },
                     "dumpstations-waterpoint": {
                         "mappings": {
                             "0": {
@@ -200,32 +284,6 @@
                             }
                         },
                         "question": "Aquest lloc té un punt d'aigua?"
-                    },
-                    "dumpstations-fee": {
-                        "question": "Aquest lloc cobra una taxa?",
-                        "mappings": {
-                            "0": {
-                                "then": "Has de pagar per a utilitzar-ho"
-                            },
-                            "1": {
-                                "then": "Es pot utilitzar gratuïtament"
-                            }
-                        }
-                    },
-                    "dumpstations-network": {
-                        "render": "Aquesta estació forma part de la xarxa {network}",
-                        "question": "A quina xarxa forma part aquest lloc? (Salta si a cap)"
-                    },
-                    "dumpstations-chemical-waste": {
-                        "mappings": {
-                            "0": {
-                                "then": "Aquí pots depositar els residus del vàter químic"
-                            },
-                            "1": {
-                                "then": "Aquí no pots depositar els residus del vàter químic"
-                            }
-                        },
-                        "question": "Aquí pots depositar els residus del vàter químic?"
                     }
                 },
                 "title": {
@@ -238,12 +296,11 @@
                 }
             }
         },
-        "title": "Llocs d'acampada",
         "overrideAll": {
             "tagRenderings+": {
                 "0": {
-                    "render": "Aquest lloc és operat per {operator}",
-                    "question": "Qui opera aquest lloc?"
+                    "question": "Qui opera aquest lloc?",
+                    "render": "Aquest lloc és operat per {operator}"
                 },
                 "1": {
                     "mappings": {
@@ -258,12 +315,13 @@
                 }
             }
         },
-        "shortDescription": "Troba llocs on passar la nit amb la teua caravana"
+        "shortDescription": "Troba llocs on passar la nit amb la teua caravana",
+        "title": "Llocs d'acampada"
     },
     "charging_stations": {
-        "title": "Estacions de càrrega",
         "description": "A aquest mapa, un pot trobar i marcar informació sobre punts de càrrega",
-        "shortDescription": "Un mapa mundial d'estacions de càrrega"
+        "shortDescription": "Un mapa mundial d'estacions de càrrega",
+        "title": "Estacions de càrrega"
     },
     "climbing": {
         "layers": {
@@ -272,14 +330,14 @@
                     "tagRenderings+": {
                         "1": {
                             "mappings": {
+                                "1": {
+                                    "then": "Necesites un permís per a accedir ací"
+                                },
                                 "2": {
                                     "then": "Només clients"
                                 },
                                 "3": {
                                     "then": "Només membres del club"
-                                },
-                                "1": {
-                                    "then": "Necesites un permís per a accedir ací"
                                 }
                             },
                             "question": "Qui pot accedir aquí?"
@@ -340,6 +398,7 @@
         "title": "Xarxa de nodes ciclistes"
     },
     "cyclestreets": {
+        "description": "Un ciclocarrer és un carrer en el que <b>el trànsit motoritzat no pot sobrepassar als ciclistes</b>. Està senyalitzat per una senyal de trànsit especial. Els ciclocarrers es poden trobar a Holanda i Bèlgica, però també a Alemnya i França. ",
         "layers": {
             "0": {
                 "name": "Carrers ciclistes"
@@ -361,25 +420,24 @@
             "tagRenderings+": {
                 "0": {
                     "mappings": {
-                        "3": {
-                            "then": "Aquest carrer és una ciclocarrer"
-                        },
-                        "4": {
-                            "then": "Aquest carrer es convertirà en un ciclocarrer pròximament"
-                        },
                         "1": {
                             "then": "Aquest carrer és una pista ciclable"
                         },
                         "2": {
                             "then": "Aquest carrer és una carretera ciclista (té un límit de velocitat de 30km/h i els vehicles no estan permesos)(el senyal es preguntarà més tard)"
+                        },
+                        "3": {
+                            "then": "Aquest carrer és una ciclocarrer"
+                        },
+                        "4": {
+                            "then": "Aquest carrer es convertirà en un ciclocarrer pròximament"
                         }
                     }
                 }
             }
         },
         "shortDescription": "Un mapa de carrers ciclistes",
-        "title": "Ciclocarrers",
-        "description": "Un ciclocarrer és un carrer en el que <b>el trànsit motoritzat no pot sobrepassar als ciclistes</b>. Està senyalitzat per una senyal de trànsit especial. Els ciclocarrers es poden trobar a Holanda i Bèlgica, però també a Alemnya i França. "
+        "title": "Ciclocarrers"
     },
     "cyclofix": {
         "title": "Cyclofix - un mapa obert per a ciclistes"
@@ -448,15 +506,15 @@
                     "facadegardens-description": {
                         "render": "Més detalls: {description}"
                     },
+                    "facadegardens-direction": {
+                        "render": "Orientació: {direction} (on 0=N y 90=O)"
+                    },
                     "facadegardens-plants": {
                         "mappings": {
                             "2": {
                                 "then": "Hi ha arbustos"
                             }
                         }
-                    },
-                    "facadegardens-direction": {
-                        "render": "Orientació: {direction} (on 0=N y 90=O)"
                     }
                 },
                 "title": {
@@ -486,9 +544,9 @@
         "title": "Espai per a hackers"
     },
     "hailhydrant": {
+        "description": "A aquest mapa pots trobar i actualizar boques d'incendis, parcs de bombers, estacions d'ambulàncies i extintors als seus veïnats preferits.\n\nPots rastrejar la teua localització precisa (sols mòbil) i seleccionar les capes que són rellevats per a tu al cantó inferior esquerre. També pots utilitzar aquesta ferramenta per a afegir o editar pins (punts d'interés) al mapa i proveir detalls addicionals contestant les preguntes disponibles.\n\nTots el canvis que faces es guardaran automàticament a la base de dades global d'OpenStreetMap i poden ser reutilitzats lliurement per altres.",
         "shortDescription": "Mapa per a mostrar hidrants, extintors, parcs de bombers i estacions d'ambulàncies.",
-        "title": "Hidrants, Extintors, Parcs de Bombers i estacions d'Ambulàncies",
-        "description": "A aquest mapa pots trobar i actualizar boques d'incendis, parcs de bombers, estacions d'ambulàncies i extintors als seus veïnats preferits.\n\nPots rastrejar la teua localització precisa (sols mòbil) i seleccionar les capes que són rellevats per a tu al cantó inferior esquerre. També pots utilitzar aquesta ferramenta per a afegir o editar pins (punts d'interés) al mapa i proveir detalls addicionals contestant les preguntes disponibles.\n\nTots el canvis que faces es guardaran automàticament a la base de dades global d'OpenStreetMap i poden ser reutilitzats lliurement per altres."
+        "title": "Hidrants, Extintors, Parcs de Bombers i estacions d'Ambulàncies"
     },
     "healthcare": {
         "description": "En aquest mapa es mostren diversos elements relacionats amb la salut",
@@ -499,6 +557,18 @@
     },
     "indoors": {
         "title": "Interiors"
+    },
+    "mapcomplete-changes": {
+        "description": "Aquest mapa mostra tots els canvis fets amb MapComplete",
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "host": {
+                        "render": "Canvi amb <a href='{host}'>{host}</a>"
+                    }
+                }
+            }
+        }
     },
     "maproulette": {
         "title": "Tasques de MapRoulette"
@@ -564,8 +634,8 @@
                 "override": {
                     "presets": {
                         "0": {
-                            "title": "botiga amiga dels gossos",
-                            "description": "Una botiga on pots dur al gos gairebé a tot arreu"
+                            "description": "Una botiga on pots dur al gos gairebé a tot arreu",
+                            "title": "botiga amiga dels gossos"
                         }
                     }
                 }
@@ -650,77 +720,7 @@
         "title": "Brossa"
     },
     "waste_basket": {
-        "title": "Papepera",
-        "shortDescription": "Un mapa amb papereres"
-    },
-    "atm": {
-        "description": "Aquest mapa mostra caixers automàtics on retirar o ingresar diners",
-        "title": "Caixers automàtics"
-    },
-    "blind_osm": {
-        "description": "Ajuda a mapejar elements rellevants per a persones amb discapacitat visual",
-        "title": "OSM per als cecs"
-    },
-    "bag": {
-        "description": "Aquest tema ajuda amb la importació de dades del BAG",
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "Reference": {
-                        "mappings": {
-                            "0": {
-                                "then": "Aquest edifici no té referència al BAG"
-                            }
-                        },
-                        "render": "La referència al BAG és <b>{ref:bag}</b>"
-                    }
-                }
-            },
-            "2": {
-                "description": "Edificis del registre BAG",
-                "tagRenderings": {
-                    "Build year": {
-                        "mappings": {
-                            "0": {
-                                "then": "L’edifici es va començar al <b> {_bag_obj:start_date}</b>"
-                            }
-                        },
-                        "render": "L’edifici va ser construït al <b> {_bag_obj:start_date}4</b>"
-                    },
-                    "Reference": {
-                        "render": "La referència a BAG és <b>{_bag_obj:ref:bag}</b>"
-                    },
-                    "Building type": {
-                        "mappings": {
-                            "0": {
-                                "then": "El tipus d'edifici serà <b>{_bag_obj:construction}</b>"
-                            }
-                        },
-                        "render": "El tipus d'edifici és <b>{_bag_obj:building}</b>"
-                    },
-                    "Import button": {
-                        "mappings": {
-                            "0": {
-                                "then": "El valors correctes encara no s'ha calculat. Refresca la pàgina"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "shortDescription": "Ferramenta d'ajuda per a importar el BAG",
-        "title": "Assistent d'importació del BAG"
-    },
-    "mapcomplete-changes": {
-        "description": "Aquest mapa mostra tots els canvis fets amb MapComplete",
-        "layers": {
-            "0": {
-                "tagRenderings": {
-                    "host": {
-                        "render": "Canvi amb <a href='{host}'>{host}</a>"
-                    }
-                }
-            }
-        }
+        "shortDescription": "Un mapa amb papereres",
+        "title": "Papepera"
     }
 }

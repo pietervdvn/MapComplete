@@ -259,7 +259,8 @@
         "fr": "Y a-t-il des toilettes réservées aux personnes en fauteuil roulant ?",
         "nl": "Is er een rolstoeltoegankelijke toilet voorzien?",
         "it": "C'è un WC riservato alle persone in sedia a rotelle",
-        "da": "Er der et særligt toilet til kørestolsbrugere?"
+        "da": "Er der et særligt toilet til kørestolsbrugere?",
+        "ca": "Hi ha un lavabo específic per a usuaris de cadira de rodes?"
       },
       "mappings": [
         {
@@ -580,7 +581,7 @@
           "question": {
             "en": "Wheelchair accessible",
             "nl": "Rolstoel toegankelijk",
-            "de": "Rollstuhlgerecht",
+            "de": "Barrierefrei",
             "es": "Accesible con sillas de ruedas",
             "fr": "Accessible aux fauteuils roulants",
             "da": "Tilgængelig for kørestolsbrugere"

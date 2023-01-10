@@ -351,6 +351,14 @@
             "wikipediaboxTitle": "Wikipedia"
         }
     },
+    "hotkeyDocumentation": {
+        "closeSidebar": "Seitenleiste schließen",
+        "geolocate": "Verschieben Sie die Karte auf den aktuellen Standort oder zoomen Sie die Karte auf den aktuellen Standort. Beantragt Standortberechtigung",
+        "openLayersPanel": "Öffnet das Bedienfeld Hintergrund, Ebenen und Filter",
+        "selectBackground": "Wählen Sie eine Hintergrundebene der Kategorie {category} aus",
+        "selectMapnik": "Setzt die Hintergrundebene auf OpenStreetMap-carto",
+        "selectSearch": "Suchleiste auswählen, um nach Orten zu suchen"
+    },
     "image": {
         "addPicture": "Bild hinzufügen",
         "ccb": "unter der 'CC-BY-Lizenz'",
@@ -913,8 +921,8 @@
         "inviteToSplit": "Die Straße in Abschnitte teilen. Dadurch können je Abschnitt unterschiedliche Eigenschaften angegeben werden.",
         "loginToSplit": "Anmeldung erforderlich, um Straßen zu teilen",
         "split": "Teilen",
-        "splitTitle": "Wähle auf der Karte aus, wo sich die Eigenschaften dieser Straße ändern",
-        "splitAgain": "Diese Straße erneut teilen"
+        "splitAgain": "Diese Straße erneut teilen",
+        "splitTitle": "Wähle auf der Karte aus, wo sich die Eigenschaften dieser Straße ändern"
     },
     "translations": {
         "activateButton": "MapComplete übersetzen",
@@ -994,13 +1002,5 @@
         "wikidata": {
             "description": "Eine Wikidata-Kennung"
         }
-    },
-    "hotkeyDocumentation": {
-        "closeSidebar": "Seitenleiste schließen",
-        "selectMapnik": "Setzt die Hintergrundebene auf OpenStreetMap-carto",
-        "selectSearch": "Suchleiste auswählen, um nach Orten zu suchen",
-        "geolocate": "Verschieben Sie die Karte auf den aktuellen Standort oder zoomen Sie die Karte auf den aktuellen Standort. Beantragt Standortberechtigung",
-        "openLayersPanel": "Öffnet das Bedienfeld Hintergrund, Ebenen und Filter",
-        "selectBackground": "Wählen Sie eine Hintergrundebene der Kategorie {category} aus"
     }
 }

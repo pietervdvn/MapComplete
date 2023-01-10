@@ -224,6 +224,7 @@
           "then": {
             "en": "Not accessible to the general public (e.g. only accessible to the owners, employees, …)",
             "nl": "Niet toegankelijk voor het publiek <br/><span class='subtle'>Bv. enkel toegankelijk voor de eigenaar, medewerkers, ...</span>",
+            "ca": "No accessible per al públic general (p.e. només accessible pels propietaris, empleats, …)",
             "da": "Ikke tilgængelig for offentligheden (f.eks. kun tilgængelig for ejere, ansatte, ...)",
             "de": "Die Station ist nicht für die Allgemeinheit zugänglich (z. B. nur für die Eigentümer, Mitarbeiter, …)",
             "es": "No accesible al público general (ej. solo accesible a los propietarios, empleados, ...)"
@@ -3843,6 +3844,7 @@
           "then": {
             "nl": "Betalend te gebruiken, maar gratis voor klanten van het bijhorende hotel/café/ziekenhuis/…",
             "en": "Paid use, but free for customers of the hotel/pub/hospital/… who operates the charging station",
+            "ca": "De pagament, però gratuït per als clients de l'hotel/bar/hospital/… que opera l'estació de càrrega",
             "da": "Betalt brug, men gratis for kunder på det hotel/pub/hospital/... der driver ladestationen",
             "de": "Die Nutzung ist kostenpflichtig, aber für Kunden des Betreibers der Einrichtung, wie Hotel, Krankenhaus, … kostenlos",
             "es": "De pago, pero gratis para clientes del hotel/pub/hostpital... quien opera la estación de carga"
@@ -4045,6 +4047,7 @@
       "question": {
         "en": "What is the maximum amount of time one is allowed to stay here?",
         "nl": "Hoelang mag een voertuig hier blijven staan?",
+        "ca": "Quina és la quantitat màxima de temps que es permet permaneixer aquí?",
         "da": "Hvad er den maksimale tid, man må opholde sig her?",
         "de": "Wie lange darf man hier maximal parken?",
         "es": "¿Cuál es la máxima cantidad de tiempo que se permite permanecer aquí?"
@@ -4065,6 +4068,7 @@
           "then": {
             "en": "No timelimit on leaving your vehicle here",
             "nl": "Geen maximum parkeertijd",
+            "ca": "No hi ha límit de temps per a deixar el teu vehicle aquí",
             "da": "Ingen tidsbegrænsning på at forlade dit køretøj her",
             "de": "Keine Höchstparkdauer",
             "es": "No hay límite de tiempo para dejar tu vehículo aquí"
@@ -4092,6 +4096,7 @@
       "question": {
         "en": "Is this charging station part of a network?",
         "nl": "Is dit oplaadpunt deel van een groter netwerk?",
+        "ca": "Aquesta estació de càrrega forma part d'una xarxa?",
         "da": "Er denne ladestation en del af et netværk?",
         "de": "Ist diese Ladestation Teil eines Netzwerks?",
         "es": "¿Esta estación de carga forma parte de una red?"
@@ -4105,6 +4110,7 @@
           "then": {
             "en": "Not part of a bigger network, e.g. because the charging station is maintained by a local business",
             "nl": "Maakt geen deel uit van een groter netwerk, een lokale zaak of organisatie beheert dit oplaadpunt",
+            "ca": "No forma part d'una xarxa més gran, p.e. perqué l'estació de càrrega la manté un negoci local",
             "da": "Ikke en del af et større netværk, f.eks. fordi ladestationen vedligeholdes af en lokal virksomhed",
             "de": "Nicht Teil eines größeren Netzwerks, z. B. weil die Ladestation von einem lokalen Unternehmen betrieben wird",
             "es": "No forma parte de una red más grande, ej. porque la estación de carga la mantiene un negocio local"
@@ -4205,6 +4211,7 @@
       "question": {
         "en": "What number can one call if there is a problem with this charging station?",
         "nl": "Wat is het telefoonnummer van de beheerder van dit oplaadpunt?",
+        "ca": "A quin número es pot cridar si hi ha algun problema amb aquesta estació de càrrega?",
         "da": "Hvilket nummer kan man ringe til, hvis der er et problem med denne ladestation?",
         "de": "Welche Nummer kann man anrufen, wenn es ein Problem mit dieser Ladestation gibt?",
         "es": "¿A qué número se puede llamar si hay un problema con esta estación de carga?",
@@ -4664,6 +4671,7 @@
           "question": {
             "en": "Has a <div style='display: inline-block'><b>Type 1 <i>without</i> cable (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b>Type 1 <i>zonder</i> kabel (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>",
+            "ca": "Té un connecgtor de <div style='display: inline-block'><b>Tipus 1<i>sense</i>cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>",
             "da": "Har et <div style='display: inline-block'><b>Type 1 <i>uden</i> kabel (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> stik",
             "de": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 (J1772)</b>Stecker <i>ohne</i> Kabel<img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>",
             "es": "Tiene un conector de <div style='display: inline-block'><b>Tipo 1 <i>sin</i> cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
@@ -4674,6 +4682,7 @@
           "question": {
             "en": "Has a <div style='display: inline-block'><b>Type 1 CCS (aka Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b>Type 1 CCS (ook gekend als Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>",
+            "ca": "Té un connector <div style='display: inline-block'><b>Tipus 1 CSS (Combo Tipus 1)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>",
             "da": "Har et <div style='display: inline-block'><b>Type 1 CCS-stik (også kendt som Type 1 Combo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> stik",
             "de": "Verfügt über einen <div style='display: inline-block'><b>Typ 1 CCS (Typ 1 Combo)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div> Stecker",
             "es": "Tiene un conector <div style='display: inline-block'><b>Tipo 1 CCS (Combo Tipo 1)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
@@ -4744,6 +4753,7 @@
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (A Type 2 with cable branded as tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>",
+            "ca": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>",
             "da": "Har et <div style='display: inline-block'><b><b> Tesla Supercharger (Destination)</b> (En type 2 med kabel med tesla-mærket kabel)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> stik",
             "de": "Hat einen <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Typ 2 von Tesla)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> Anschluss mit Kabel",
             "es": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipo2 A con un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
