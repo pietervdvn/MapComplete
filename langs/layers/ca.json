@@ -1,6 +1,28 @@
 {
     "address": {
-        "description": "Adreces"
+        "description": "Adreces",
+        "title": {
+            "render": "Adreça coneguda"
+        },
+        "tagRenderings": {
+            "housenumber": {
+                "render": "El número de porta és <b>{addr:housenumber}</b>",
+                "mappings": {
+                    "0": {
+                        "then": "Aquest edifici no té número"
+                    }
+                },
+                "question": "Quin és el número d'aquesta casa?"
+            },
+            "fixme": {
+                "question": "Què s’hauria de corregir aquí? Exposa-ho"
+            },
+            "street": {
+                "question": "A quin carrer es troba l'adreça?",
+                "render": "L'adreça està a aquest carrer <b>{addr:street}</b>"
+            }
+        },
+        "name": "Adreces conegudes a OSM"
     },
     "artwork": {
         "description": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món",
@@ -93,10 +115,10 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Respatller: sí"
+                        "then": "Té espatller"
                     },
                     "1": {
-                        "then": "Respatller: No"
+                        "then": "<b>No</b> té espatller"
                     }
                 }
             },
@@ -132,22 +154,22 @@
             "bench-material": {
                 "mappings": {
                     "0": {
-                        "then": "Material: fusta"
+                        "then": "El seient està fet de fusta"
                     },
                     "1": {
-                        "then": "Material: metall"
+                        "then": "El seient està fet de metall"
                     },
                     "2": {
-                        "then": "Material: pedra"
+                        "then": "El seient està fet de pedra"
                     },
                     "3": {
-                        "then": "Material: ciment"
+                        "then": "El seient està fet de ciment"
                     },
                     "4": {
-                        "then": "Material: plàstic"
+                        "then": "El seient està fet de plàstic"
                     },
                     "5": {
-                        "then": "Material: acer"
+                        "then": "El seient està fet d'acer"
                     }
                 },
                 "render": "Material: {material}"
@@ -158,7 +180,8 @@
         },
         "title": {
             "render": "Banc"
-        }
+        },
+        "description": "Un banc és una superfície de madera, metall, pedra, … on un humà s’hi pot sentar. Aquesta capa els mostra i fa algunes preguntes sobre ells."
     },
     "bench_at_pt": {
         "tagRenderings": {
@@ -174,6 +197,11 @@
         "name": "Biblioteca per a bicicletes",
         "title": {
             "render": "Biblioteca per a bicicletes"
+        },
+        "tagRenderings": {
+            "bicycle-library-target-group": {
+                "question": "Qui pot llogar bicicletes aquí?"
+            }
         }
     },
     "bicycle_rental": {
@@ -189,6 +217,13 @@
                         }
                     }
                 }
+            },
+            "bicycle-types": {
+                "mappings": {
+                    "4": {
+                        "then": "Aquí es poden llogar bicicletes infantils"
+                    }
+                }
             }
         },
         "title": {
@@ -197,13 +232,25 @@
                     "then": "{name}"
                 }
             }
-        }
+        },
+        "description": "Estacions de lloguer de bicicletes",
+        "presets": {
+            "0": {
+                "title": "una botiga de lloguer de bicicletes",
+                "description": "Una botiga atesa que es centra en el lloguer de bicicletes"
+            },
+            "1": {
+                "title": "un lloguer de bicicletes"
+            }
+        },
+        "name": "Lloguer de bicicletes"
     },
     "bike_cafe": {
         "name": "Cafeteria per a bicicletes",
         "title": {
             "render": "Cafeteria per a bicicletes"
-        }
+        },
+        "description": "Un cafè ciclista és un cafè enfocat a ciclistes, per exemple, amb serveis com una manxa, amb molta decoració relacionada amb el ciclisme, …"
     },
     "bike_parking": {
         "name": "Aparcament per a bicicletes",
@@ -264,6 +311,23 @@
                         "then": "Bomba elèctrica"
                     }
                 }
+            },
+            "bike_repair_station-valves": {
+                "mappings": {
+                    "0": {
+                        "then": "Sclaverand/Presta (pneumàtics per a bicis estrets)"
+                    },
+                    "2": {
+                        "then": "Schrader (cotxes i bicicletes de muntanya)"
+                    }
+                }
+            },
+            "bike_repair_station-available-services": {
+                "mappings": {
+                    "1": {
+                        "then": "Només hi ha present ferramentes (tornavísos, pinces, …)"
+                    }
+                }
             }
         },
         "title": {
@@ -275,12 +339,61 @@
                     "then": "Bomba de bicicleta"
                 }
             }
-        }
+        },
+        "name": "Manxa i reparació de bicicletes"
     },
     "bike_shop": {
         "name": "Botiga/reparació de bicicletes",
         "title": {
             "render": "Botiga/reparació de bicicletes"
+        },
+        "tagRenderings": {
+            "bike_repair_sells-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta tenda ven bicicletes"
+                    },
+                    "1": {
+                        "then": "Aquesta tenda no ven bicicletes"
+                    }
+                },
+                "question": "Aquesta botiga ven bicicletes?"
+            },
+            "bike_repair_repairs-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta botiga repara bicicletes"
+                    },
+                    "1": {
+                        "then": "Aquesta botiga no repara bicicletes"
+                    }
+                },
+                "question": "Aquesta botiga repara bicicletes?"
+            },
+            "bike_shop-name": {
+                "render": "Aquesta botiga de bicicletes és diu {name}"
+            },
+            "bike_repair_bike-pump-service": {
+                "mappings": {
+                    "2": {
+                        "then": "Hi ha una manxa per a bicicletes, es mostra com a un punt separat"
+                    }
+                }
+            },
+            "bike_repair_rents-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta botiga lloga bicicletes"
+                    }
+                }
+            },
+            "bike_shop-is-bicycle_shop": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest negoci es centra en el lloguer"
+                    }
+                }
+            }
         }
     },
     "bike_themed_object": {
@@ -290,7 +403,8 @@
                     "then": "Pista ciclable"
                 }
             }
-        }
+        },
+        "name": "Objectes relacionats amb bicicletes"
     },
     "binocular": {
         "description": "Prismàtics",
@@ -334,6 +448,16 @@
                 }
             },
             "render": "Bar"
+        },
+        "tagRenderings": {
+            "Classification": {
+                "question": "Quin tipus de cafeteria és aquesta?",
+                "mappings": {
+                    "1": {
+                        "then": "Un <b>bar de copes</b> més modern i comercial, possiblement amb equipació de música i llums"
+                    }
+                }
+            }
         }
     },
     "charging_station": {
@@ -342,6 +466,15 @@
                 "options": {
                     "0": {
                         "question": "Tots els connectors"
+                    },
+                    "5": {
+                        "question": "Té un connecgtor de <div style='display: inline-block'><b>Tipus 1<i>sense</i>cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                    },
+                    "6": {
+                        "question": "Té un connector <div style='display: inline-block'><b>Tipus 1 CSS (Combo Tipus 1)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
+                    },
+                    "13": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     }
                 }
             }
@@ -364,6 +497,39 @@
                         "then": "Aquesta estació de càrrega funciona"
                     }
                 }
+            },
+            "access": {
+                "mappings": {
+                    "4": {
+                        "then": "No accessible per al públic general (p.e. només accessible pels propietaris, empleats, …)"
+                    }
+                }
+            },
+            "Network": {
+                "mappings": {
+                    "0": {
+                        "then": "No forma part d'una xarxa més gran, p.e. perqué l'estació de càrrega la manté un negoci local"
+                    }
+                },
+                "question": "Aquesta estació de càrrega forma part d'una xarxa?"
+            },
+            "phone": {
+                "question": "A quin número es pot cridar si hi ha algun problema amb aquesta estació de càrrega?"
+            },
+            "fee": {
+                "mappings": {
+                    "3": {
+                        "then": "De pagament, però gratuït per als clients de l'hotel/bar/hospital/… que opera l'estació de càrrega"
+                    }
+                }
+            },
+            "maxstay": {
+                "mappings": {
+                    "0": {
+                        "then": "No hi ha límit de temps per a deixar el teu vehicle aquí"
+                    }
+                },
+                "question": "Quina és la quantitat màxima de temps que es permet permaneixer aquí?"
             }
         },
         "title": {
@@ -424,7 +590,8 @@
                     "then": "Llocs d'escalada"
                 }
             }
-        }
+        },
+        "description": "Una àrea on l'escalada és possible, p.e. una penya, lloc, bloc, … Conté l'agregació de rutes"
     },
     "climbing_club": {
         "tagRenderings": {
@@ -517,9 +684,20 @@
                 },
                 "9": {
                     "then": "Carrer ciclista"
+                },
+                "2": {
+                    "then": "Carretera amb un carril compartit {name}"
+                },
+                "0": {
+                    "then": "Via ciclista {name}"
+                },
+                "4": {
+                    "then": "Ciclocarrer {name}"
                 }
-            }
-        }
+            },
+            "render": "Via"
+        },
+        "description": "Totes les infraestructures per les quals algú pot ciclar, acompanyades de preguntes sobre aquesta infraestructura"
     },
     "defibrillator": {
         "name": "Desfibril·ladors",
@@ -548,7 +726,8 @@
                 "render": "L'accés és {access}"
             },
             "defibrillator-defibrillator:location": {
-                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
+                "question": "Dóna detalls d'on es pot trobar el desfibril·lador",
+                "render": "<i>Informació extra sobre la localització (en la llengua local):</i><br/> {defibrillator:location}"
             },
             "defibrillator-defibrillator:location:en": {
                 "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
@@ -591,18 +770,63 @@
         "name": "Aigua potable",
         "title": {
             "render": "Aigua potable"
+        },
+        "tagRenderings": {
+            "Bottle refill": {
+                "mappings": {
+                    "0": {
+                        "then": "És fàcil reomplir botelles d'aigua"
+                    },
+                    "1": {
+                        "then": "Les botelles d'aigua podrien no cabre"
+                    }
+                },
+                "question": "Com de fàcil és reomplir botelles d'aigua?"
+            },
+            "render-closest-drinking-water": {
+                "render": "<a href='#{_closest_other_drinking_water_id}'>Hi ha una altra font d'aigua potable a {_closest_other_drinking_water_distance} metres</a>"
+            },
+            "Still in use?": {
+                "mappings": {
+                    "0": {
+                        "then": "La font d'aigua funciona"
+                    }
+                }
+            }
         }
     },
     "entrance": {
         "name": "Entrada",
         "title": {
             "render": "Entrada"
-        }
+        },
+        "tagRenderings": {
+            "automatic_door": {
+                "mappings": {
+                    "7": {
+                        "then": "Aquesta porta l'obri el personal quan es sol·licita<b>polsant un botó</b>"
+                    }
+                }
+            },
+            "width": {
+                "render": "Aquesta porta té una amplària de {canonical(width)}"
+            },
+            "Entrance type": {
+                "mappings": {
+                    "4": {
+                        "then": "Aquesta és una entrada de servei - normalment utilitzada per empleats, repartidors, …"
+                    }
+                }
+            }
+        },
+        "description": "Una capa que mostra entrades i ofereix la possibilitat de sondejar algunes dades avançades que són importants per a, per exemple, usuaris de cadires de rodes (però també ciclistes, repartidors, …)"
     },
     "extinguisher": {
         "title": {
             "render": "Extintors"
-        }
+        },
+        "description": "Capa que mostra extintors.",
+        "name": "Mapa d'extintors"
     },
     "filters": {
         "filter": {
@@ -622,6 +846,9 @@
             },
             "1": {
                 "title": "un de menjar ràpid"
+            },
+            "2": {
+                "description": "Un local de menjar ràpid centrat en les patates fregides"
             }
         },
         "title": {
@@ -637,6 +864,32 @@
                 }
             },
             "render": "Restaurant"
+        },
+        "tagRenderings": {
+            "friture-oil": {
+                "question": "Aquesta botiga de patates fregides utilitza oli vegetal o animal per a cuinar?",
+                "mappings": {
+                    "0": {
+                        "then": "El fregit es fa amb oli vegetal"
+                    },
+                    "1": {
+                        "then": "El fregit es fa amb oli animal"
+                    }
+                }
+            },
+            "Fastfood vs restaurant": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest és un negoci de menjar ràpid, centrat en el servei ràpid. Si hi han seients disponibles, aquests seràn limitats i funcionals."
+                    },
+                    "1": {
+                        "then": "Un <b>restaurant</b>, centrat en crear una bona experiència on es serveix a taula"
+                    }
+                }
+            },
+            "Takeaway": {
+                "question": "Aquest lloc ofereix per a emportar?"
+            }
         }
     },
     "ghost_bike": {
@@ -644,6 +897,9 @@
         "tagRenderings": {
             "ghost_bike-inscription": {
                 "render": "<i>{inscription}</i>"
+            },
+            "ghost_bike-source": {
+                "render": "<a href='{source}' target='_blank'>Més informació disponible</a>"
             }
         },
         "title": {
@@ -657,14 +913,21 @@
                     "then": " {name}"
                 }
             }
+        },
+        "presets": {
+            "1": {
+                "description": "Un espai maker és un lloc on entusiastes del DIY es reuneixen per a experimentar amb electrònica com arudino, tires LED, …"
+            }
         }
     },
     "hospital": {
         "tagRenderings": {
             "name": {
-                "render": "El nom del nom de l'hospital és {name}"
+                "render": "Aquest hospital es diu {name}",
+                "question": "Quin és el nom d'aquest hospital?"
             }
-        }
+        },
+        "name": "Hospitals"
     },
     "hydrant": {
         "tagRenderings": {
@@ -691,7 +954,8 @@
         "name": "Panells d'informació",
         "title": {
             "render": "Panell d'informació"
-        }
+        },
+        "description": "Una capa que mostra panells informatius turístics (p.e. informen sobre el paissatge, una construcció, una característica, un mapa, …)"
     },
     "kindergarten_childcare": {
         "tagRenderings": {
@@ -725,7 +989,8 @@
         "name": "Velocitat",
         "tagRenderings": {
             "maxspeed-maxspeed": {
-                "question": "Quina velocitat té"
+                "question": "Quina és la velocitat màxima legal que es permet conduir en aquesta carretera?",
+                "render": "La velocitat màxima permesa a aquesta via és {canonical(maxspeed)}"
             }
         },
         "units": {
@@ -787,7 +1052,8 @@
                     }
                 }
             }
-        }
+        },
+        "name": "Farmàcies"
     },
     "picnic_table": {
         "name": "Taules de pícnic",
@@ -907,6 +1173,15 @@
                     },
                     "22": {
                         "then": "Ací es pot reciclar el rebuig"
+                    },
+                    "7": {
+                        "then": "Aquí es poden reciclar residus verds"
+                    },
+                    "11": {
+                        "then": "Aquí es poden reciclar bombetes"
+                    },
+                    "20": {
+                        "then": "Aquí es poden reciclar petits aparells elèctrics"
                     }
                 }
             },
@@ -922,6 +1197,14 @@
                         "then": "Açò és un centre de reciclatge"
                     }
                 }
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "un contenidor de reciclatge"
+            },
+            "1": {
+                "title": "un centre de reciclatge"
             }
         }
     },
@@ -975,18 +1258,50 @@
         "name": "Camps d'esports",
         "title": {
             "render": "Camp d'esports"
+        },
+        "tagRenderings": {
+            "sport-pitch-access": {
+                "mappings": {
+                    "1": {
+                        "then": "Accés limitat (p.e. només amb cita, durant certes hores, …)"
+                    }
+                }
+            }
         }
     },
     "surveillance_camera": {
         "name": "Càmeres de videovigilància",
         "title": {
             "render": "Càmera de videovigilància"
+        },
+        "tagRenderings": {
+            "Surveillance type: public, outdoor, indoor": {
+                "mappings": {
+                    "1": {
+                        "then": "Es vigila una àrea exterior, encara que privada (p.e. una plaça d'aparcament, una estació de servei, pati, entrada, via d'accés privada, …)"
+                    },
+                    "0": {
+                        "then": "Es vigila una àrea pública, com un carrer, un pont, una plaça, un parc, una estació de tren, un túnel públic, …"
+                    },
+                    "2": {
+                        "then": "Es vigila una àrea interior privada, p.e. una botiga, un parking subterrani privat, …"
+                    }
+                }
+            },
+            "Surveillance:zone": {
+                "render": "Vigila un/a {surveillance:zone}"
+            }
         }
     },
     "toilet": {
         "name": "Lavabos",
         "title": {
             "render": "Lavabo"
+        },
+        "tagRenderings": {
+            "toilets-wheelchair": {
+                "question": "Hi ha un lavabo específic per a usuaris de cadira de rodes?"
+            }
         }
     },
     "trail": {
@@ -1017,6 +1332,16 @@
                     },
                     "1": {
                         "then": "Amb fulles d'agulla"
+                    }
+                }
+            },
+            "tree-denotation": {
+                "mappings": {
+                    "6": {
+                        "then": "L'arbre està en una àrea urbana."
+                    },
+                    "4": {
+                        "then": "L'arbre està en un jardí residencial."
                     }
                 }
             }
@@ -1050,6 +1375,11 @@
         "name": "Paperera",
         "title": {
             "render": "Paperera"
+        },
+        "presets": {
+            "0": {
+                "title": "una paperera"
+            }
         }
     },
     "windturbine": {
@@ -1081,6 +1411,147 @@
                 "applicableUnits": {
                     "0": {
                         "human": " metre"
+                    }
+                }
+            }
+        }
+    },
+    "indoors": {
+        "name": "Interiors"
+    },
+    "waste_disposal": {
+        "presets": {
+            "0": {
+                "title": "un contenidor de basura"
+            }
+        }
+    },
+    "ambulancestation": {
+        "tagRenderings": {
+            "ambulance-street": {
+                "question": "Quin és el nom del carrer on es troba l'estació?"
+            },
+            "ambulance-agency": {
+                "question": "Quina agència opera aquesta estació?"
+            }
+        },
+        "presets": {
+            "0": {
+                "description": "Afegeix una estació d'ambulàncies al mapa"
+            }
+        },
+        "name": "Mapa d'estacions d'ambulàncies",
+        "description": "Una estició d'abulàncies és una àrea per a emmagatzemar ambulàncies, equipament mèdic, equips de protecció personal i altres subministraments mèdics."
+    },
+    "bike_cleaning": {
+        "name": "Servei de neteja de bicicletes"
+    },
+    "school": {
+        "tagRenderings": {
+            "target-audience": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquesta és una escola per a estudiants sense necesitats especials <div class='subtle'> Açò inclou alumnes que poden seguir les classes amb petites messures</div>"
+                    },
+                    "4": {
+                        "then": "Aquesta és una escola per a estudiants amb dificultats de l'aprenentatge"
+                    },
+                    "6": {
+                        "then": "Aquesta és una escola per a estudiants sords o amb dificultats auditives"
+                    },
+                    "8": {
+                        "then": "Aquesta és una escola per a estudiants amb necessitats especials"
+                    },
+                    "7": {
+                        "then": "Aquesta és una escola per a estudiants amb discapacitats"
+                    },
+                    "3": {
+                        "then": "Aquesta és una escola per a estudiants amb autisme"
+                    }
+                },
+                "render": "Aquesta escola té instal·lacions per a estudiants amb {school:for}"
+            }
+        }
+    },
+    "village_green": {
+        "description": "Una capa que mostra “village-green” (que són zones verdes comunals, però no parcs del tot)"
+    },
+    "parking_spaces": {
+        "tagRenderings": {
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "És un lloc normal d'aparcament."
+                    }
+                }
+            }
+        }
+    },
+    "pedestrian_path": {
+        "name": "Camins per a vianants"
+    },
+    "atm": {
+        "description": "Caixers automàtics on retirar diners",
+        "tagRenderings": {
+            "cash_out": {
+                "mappings": {
+                    "0": {
+                        "then": "Pots retirar diners a aquest caixer"
+                    }
+                }
+            },
+            "cash_in": {
+                "mappings": {
+                    "0": {
+                        "then": "Probablement no pots ingressar diners a aquest caixer"
+                    }
+                }
+            },
+            "brand": {
+                "question": "De quina marca és aquest caixer?"
+            },
+            "name": {
+                "render": "El d’aquest caixer és {name}"
+            },
+            "speech_output": {
+                "question": "Aquest caixer té un lector de pantalla per a usuaris amb discapacitat visual?",
+                "mappings": {
+                    "1": {
+                        "then": "Aquest caixer no té lector de pantalla"
+                    },
+                    "0": {
+                        "then": "Aquest caixer té lector de pantalla, normalment disponible a través d'un connector d'auriculars \"jack\""
+                    }
+                }
+            }
+        }
+    },
+    "doctors": {
+        "name": "Metges"
+    },
+    "dentist": {
+        "tagRenderings": {
+            "name": {
+                "render": "El dentista s'anomena {name}"
+            }
+        }
+    },
+    "etymology": {
+        "tagRenderings": {
+            "wikipedia-etymology": {
+                "render": "<h3> Article de la Viquipèdia del nom donant</h3>{wikipedia(name:etymology:wikidata):max-height:20rem}"
+            },
+            "street-name-sign-image": {
+                "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Afegeix una imatge de la placa amb el nom del carrer)}"
+            }
+        }
+    },
+    "kerbs": {
+        "tagRenderings": {
+            "tactile-paving": {
+                "mappings": {
+                    "2": {
+                        "then": "La vorera té superfície podotàctil, però és incorrecte."
                     }
                 }
             }
