@@ -1444,7 +1444,16 @@
         "description": "Una estició d'abulàncies és una àrea per a emmagatzemar ambulàncies, equipament mèdic, equips de protecció personal i altres subministraments mèdics."
     },
     "bike_cleaning": {
-        "name": "Servei de neteja de bicicletes"
+        "name": "Servei de neteja de bicicletes",
+        "tagRenderings": {
+            "bike_cleaning-charge": {
+                "mappings": {
+                    "1": {
+                        "then": ""
+                    }
+                }
+            }
+        }
     },
     "school": {
         "tagRenderings": {
