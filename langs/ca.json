@@ -146,7 +146,8 @@
             "intro": "<h3>Més peticions</h3>T'agrada captar dades? <br>Hi ha més capes disponibles.",
             "previouslyHiddenTitle": "Peticions visitades i amagades",
             "requestATheme": "Si vols que et fem una petició pròpia , demana-la al registre d'incidències",
-            "streetcomplete": "Una altra aplicació similar és <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
+            "streetcomplete": "Una altra aplicació similar és <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
+            "noMatchingThemes": "Cap tema coincideix amb els teus criteris de cerca"
         },
         "nameInlineQuestion": "{category}: El seu nom és $$$",
         "next": "Següent",

@@ -366,13 +366,20 @@
                         },
                         "4": {
                             "then": "Aquest carrer es convertirà en un ciclocarrer pròximament"
+                        },
+                        "1": {
+                            "then": "Aquest carrer és una pista ciclable"
+                        },
+                        "2": {
+                            "then": "Aquest carrer és una carretera ciclista (té un límit de velocitat de 30km/h i els vehicles no estan permesos)(el senyal es preguntarà més tard)"
                         }
                     }
                 }
             }
         },
         "shortDescription": "Un mapa de carrers ciclistes",
-        "title": "Ciclocarrers"
+        "title": "Ciclocarrers",
+        "description": "Un ciclocarrer és un carrer en el que <b>el trànsit motoritzat no pot sobrepassar als ciclistes</b>. Està senyalitzat per una senyal de trànsit especial. Els ciclocarrers es poden trobar a Holanda i Bèlgica, però també a Alemnya i França. "
     },
     "cyclofix": {
         "title": "Cyclofix - un mapa obert per a ciclistes"
@@ -447,6 +454,9 @@
                                 "then": "Hi ha arbustos"
                             }
                         }
+                    },
+                    "facadegardens-direction": {
+                        "render": "Orientació: {direction} (on 0=N y 90=O)"
                     }
                 },
                 "title": {
@@ -477,7 +487,8 @@
     },
     "hailhydrant": {
         "shortDescription": "Mapa per a mostrar hidrants, extintors, parcs de bombers i estacions d'ambulàncies.",
-        "title": "Hidrants, Extintors, Parcs de Bombers i estacions d'Ambulàncies"
+        "title": "Hidrants, Extintors, Parcs de Bombers i estacions d'Ambulàncies",
+        "description": "A aquest mapa pots trobar i actualizar boques d'incendis, parcs de bombers, estacions d'ambulàncies i extintors als seus veïnats preferits.\n\nPots rastrejar la teua localització precisa (sols mòbil) i seleccionar les capes que són rellevats per a tu al cantó inferior esquerre. També pots utilitzar aquesta ferramenta per a afegir o editar pins (punts d'interés) al mapa i proveir detalls addicionals contestant les preguntes disponibles.\n\nTots el canvis que faces es guardaran automàticament a la base de dades global d'OpenStreetMap i poden ser reutilitzats lliurement per altres."
     },
     "healthcare": {
         "description": "En aquest mapa es mostren diversos elements relacionats amb la salut",
@@ -553,7 +564,8 @@
                 "override": {
                     "presets": {
                         "0": {
-                            "title": "botiga amiga dels gossos"
+                            "title": "botiga amiga dels gossos",
+                            "description": "Una botiga on pots dur al gos gairebé a tot arreu"
                         }
                     }
                 }
@@ -647,5 +659,47 @@
     "blind_osm": {
         "description": "Ajuda a mapejar elements rellevants per a persones amb discapacitat visual",
         "title": "OSM per als cecs"
+    },
+    "bag": {
+        "description": "Aquest tema ajuda amb la importació de dades del BAG",
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "Reference": {
+                        "mappings": {
+                            "0": {
+                                "then": "Aquest edifici no té referència al BAG"
+                            }
+                        },
+                        "render": "La referència al BAG és <b>{ref:bag}</b>"
+                    }
+                }
+            },
+            "2": {
+                "description": "Edificis del registre BAG",
+                "tagRenderings": {
+                    "Build year": {
+                        "mappings": {
+                            "0": {
+                                "then": "L’edifici es va començar al <b> {_bag_obj:start_date}</b>"
+                            }
+                        },
+                        "render": "L’edifici va ser construït al <b> {_bag_obj:start_date}4</b>"
+                    }
+                }
+            }
+        }
+    },
+    "mapcomplete-changes": {
+        "description": "Aquest mapa mostra tots els canvis fets amb MapComplete",
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "host": {
+                        "render": "Canvi amb <a href='{host}'>{host}</a>"
+                    }
+                }
+            }
+        }
     }
 }
