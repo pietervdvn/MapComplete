@@ -2485,10 +2485,10 @@
             "friture-oil": {
                 "mappings": {
                     "0": {
-                        "then": "Aceite vegetal"
+                        "then": "La fritura se hace con aceite vegetal"
                     },
                     "1": {
-                        "then": "Aceite animal"
+                        "then": "La fritura se hace con aceite animal"
                     }
                 }
             },
@@ -3575,11 +3575,6 @@
                 },
                 "question": "¿De qué color es la luz que emite esta lámpara?",
                 "render": "Esta lámpara emite luz {light:colour}"
-            },
-            "count": {
-                "mappings": {
-                    "0": {}
-                }
             },
             "direction": {
                 "question": "¿Hacia donde apunta esta lámpara?",
