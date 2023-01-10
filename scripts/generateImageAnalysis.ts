@@ -23,7 +23,7 @@ export default class GenerateImageAnalysis extends Script {
             console.log("Skipping", key)
             return
         }
-        const tag = new RegexTag("image", /https:\/\/i.imgur.com\/.*/i)
+        const tag = new RegexTag(key, /^https:\/\/i.imgur.com\/.*$/i)
         const overpass = new Overpass(
             tag,
             [],
@@ -45,6 +45,7 @@ export default class GenerateImageAnalysis extends Script {
         }
 
         await this.fetchImages("image", datapath)
+        await this.fetchImages("image:streetsign", datapath)
         for (let i = 0; i < 5; i++) {
             await this.fetchImages("image:" + i, datapath)
         }
@@ -69,8 +70,7 @@ export default class GenerateImageAnalysis extends Script {
         if (image === undefined) {
             return false
         }
-        if (image.endsWith(".png") || image.endsWith(".jpeg")) {
-            console.log("Skipped invalid image")
+        if (!image.match(/https:\/\/i\.imgur\.com\/[a-zA-Z0-9]+\.jpg/)) {
             return false
         }
         const targetPath = datapath + "/" + image.replace(/[\/:.\-%]/g, "_") + ".json"
@@ -113,7 +113,7 @@ export default class GenerateImageAnalysis extends Script {
                 } downloaded: ${d},skipped: ${s}, failed: ${f}, running: ${runningSecs}sec, ETA: ${estimatedActualMinutes}:${
                     estimatedActualSeconds % 60
                 }`
-                console.log(msg)
+                ScriptUtils.erasableLog(msg)
                 if (downloaded) {
                     d++
                 } else {
@@ -139,13 +139,16 @@ export default class GenerateImageAnalysis extends Script {
                 continue
             }
             const attr = <LicenseInfo>JSON.parse(fs.readFileSync(file, "UTF8"))
+            const license = attr.licenseShortName
 
+            if (license === undefined || attr.artist === undefined) {
+                continue
+            }
             if (byAuthor.get(attr.artist) === undefined) {
                 byAuthor.set(attr.artist, [])
             }
             byAuthor.get(attr.artist).push(file)
 
-            const license = attr.licenseShortName
             if (byLicense.get(license) === undefined) {
                 byLicense.set(license, [])
             }
@@ -163,9 +166,34 @@ export default class GenerateImageAnalysis extends Script {
         const byLicenseCount = Utils.MapToObj(byLicense, (a) => a.length)
         const byAuthorCount = Utils.MapToObj(byAuthor, (a) => a.length)
         const licenseByAuthorCount = Utils.MapToObj(licenseByAuthor, (a) => a.size)
-        console.log(byAuthorCount)
-        console.log(byLicenseCount)
-        console.log(licenseByAuthorCount)
+
+        const countsPerAuthor: number[] = Array.from(Object.keys(byAuthorCount)).map(
+            (k) => byAuthorCount[k]
+        )
+        console.log(countsPerAuthor)
+        countsPerAuthor.sort()
+        const median = countsPerAuthor[Math.floor(countsPerAuthor.length / 2)]
+        for (let i = 0; i < 100; i++) {
+            let maxAuthor: string = undefined
+            let maxCount = 0
+            for (const author in byAuthorCount) {
+                const count = byAuthorCount[author]
+                if (maxAuthor === undefined || count > maxCount) {
+                    maxAuthor = author
+                    maxCount = count
+                }
+            }
+            console.log(
+                "|",
+                i + 1,
+                "|",
+                `[${maxAuthor}](https://openstreetmap.org/user/${maxAuthor.replace(/ /g, "%20")})`,
+                "|",
+                maxCount,
+                "|"
+            )
+            delete byAuthorCount[maxAuthor]
+        }
 
         const totalAuthors = byAuthor.size
         let totalLicensedImages = 0
@@ -183,13 +211,26 @@ export default class GenerateImageAnalysis extends Script {
                 }%), ${Math.floor(total / authors)} images/author`
             )
         }
+
+        const nonDefaultAuthors = [
+            ...Array.from(licenseByAuthor.get("CC-BY 4.0").values()),
+            ...Array.from(licenseByAuthor.get("CC-BY-SA 4.0").values()),
+        ]
+
+        console.log("Total number of correctly licenses pictures: ", totalLicensedImages)
+        console.log("Total number of authors:", byAuthor.size)
+        console.log(
+            "Total number of authors which used a valid, non CC0 license at one point in time",
+            nonDefaultAuthors.length
+        )
+        console.log("Median contributions per author:", median)
     }
 
     async main(args: string[]): Promise<void> {
         const datapath = args[0] ?? "../MapComplete-data/ImageLicenseInfo"
         await this.downloadData(datapath)
 
-        await this.downloadMetadata(datapath)
+        //await this.downloadMetadata(datapath)
         this.analyze(datapath)
     }
 }
