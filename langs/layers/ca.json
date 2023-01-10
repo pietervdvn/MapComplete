@@ -310,8 +310,14 @@
         "tagRenderings": {
             "bike_cleaning-charge": {
                 "mappings": {
-                    "1": {}
-                }
+                    "1": {
+                        "then": "Aquest servei de neteja és de pagament"
+                    },
+                    "0": {
+                        "then": "Aquest servei de neteja és gratuït"
+                    }
+                },
+                "question": "Molt costa utilitzar aquest servei de neteja?"
             }
         }
     },
