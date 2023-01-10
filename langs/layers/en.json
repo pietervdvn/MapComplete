@@ -835,10 +835,10 @@
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
-                        "then": "Free to use cleaning service"
+                        "then": "This cleaning service is free to use"
                     },
                     "1": {
-                        "then": "Free to use"
+                        "then": "This cleaning service is paid"
                     }
                 },
                 "question": "How much does it cost to use the cleaning service?",
