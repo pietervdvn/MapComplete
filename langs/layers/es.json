@@ -1113,11 +1113,11 @@
         "presets": {
             "0": {
                 "description": "Un bar, principalmente para beber cervezas en un interior templado y relajado",
-                "title": "un pub"
+                "title": "un bar"
             },
             "1": {
                 "description": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz",
-                "title": "un bar"
+                "title": "un bar de copas"
             },
             "2": {
                 "description": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo",
@@ -1947,7 +1947,7 @@
         "name": "Desfibriladores",
         "presets": {
             "0": {
-                "title": "una desfibrilador"
+                "title": "un desfibrilador"
             },
             "1": {
                 "title": "un desfibrilador montado en una pared"
@@ -3575,11 +3575,6 @@
                 },
                 "question": "¿De qué color es la luz que emite esta lámpara?",
                 "render": "Esta lámpara emite luz {light:colour}"
-            },
-            "count": {
-                "mappings": {
-                    "0": {}
-                }
             },
             "direction": {
                 "question": "¿Hacia donde apunta esta lámpara?",
