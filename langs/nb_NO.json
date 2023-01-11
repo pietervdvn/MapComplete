@@ -588,7 +588,7 @@
     },
     "userinfo": {
         "noDescriptionCallToAction": "Legg til profilbeskrivelse",
-        "welcome": "Velkommen {user}"
+        "welcome": "Velkommen {name}"
     },
     "validation": {
         "color": {

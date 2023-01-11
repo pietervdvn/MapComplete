@@ -17,7 +17,7 @@ class LoginButton extends SubtleButton {
         },
         icon?: BaseUIElement | string
     ) {
-        super(icon ?? Svg.osm_logo_ui(), text)
+        super(icon ?? Svg.login_ui(), text)
         this.onClick(() => {
             state.osmConnection.AttemptLogin()
         })

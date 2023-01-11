@@ -14,7 +14,7 @@ export default class UserDetails {
     public name = "Not logged in"
     public uid: number
     public csCount = 0
-    public img: string
+    public img?: string
     public unreadMessages = 0
     public totalMessages: number = 0
     public home: { lon: number; lat: number }
@@ -257,7 +257,6 @@ export class OsmConnection {
                 if (imgEl !== undefined && imgEl[0] !== undefined) {
                     data.img = imgEl[0].getAttribute("href")
                 }
-                data.img = data.img ?? Img.AsData(Svg.person_img)
 
                 const description = userInfo.getElementsByTagName("description")
                 if (description !== undefined && description[0] !== undefined) {

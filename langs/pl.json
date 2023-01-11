@@ -200,7 +200,7 @@
         "newMessages": "masz nowe wiadomości",
         "noDescription": "Nie masz jeszcze opisu w swoim profilu",
         "noDescriptionCallToAction": "Dodaj opis profilu",
-        "welcome": "Witaj {user}"
+        "welcome": "Witaj {name}"
     },
     "validation": {
         "color": {

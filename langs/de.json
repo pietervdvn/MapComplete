@@ -934,7 +934,7 @@
         "newMessages": "Sie haben neue Nachrichten",
         "noDescription": "Sie haben noch keine Beschreibung in Ihrem Profil",
         "noDescriptionCallToAction": "Profilbeschreibung hinzufügen",
-        "welcome": "Willkommen {user}"
+        "welcome": "Willkommen {name}"
     },
     "validation": {
         "color": {

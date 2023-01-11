@@ -938,7 +938,8 @@
         "newMessages": "you have new messages",
         "noDescription": "You don't have a description on your profile yet",
         "noDescriptionCallToAction": "Add a profile description",
-        "welcome": "Welcome {user}"
+        "titleNotLoggedIn": "Welcome",
+        "welcome": "Welcome {name}"
     },
     "validation": {
         "color": {

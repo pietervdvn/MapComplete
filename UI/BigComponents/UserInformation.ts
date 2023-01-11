@@ -8,7 +8,7 @@ import { VariableUiElement } from "../Base/VariableUIElement"
 import Img from "../Base/Img"
 import { FixedUiElement } from "../Base/FixedUiElement"
 import Link from "../Base/Link"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import Loc from "../../Models/Loc"
 import BaseUIElement from "../BaseUIElement"
 import Showdown from "showdown"
@@ -21,6 +21,9 @@ import { SaveButton } from "../Popup/SaveButton"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
 import * as questions from "../../assets/tagRenderings/questions.json"
 import { TagRenderingConfigJson } from "../../Models/ThemeConfig/Json/TagRenderingConfigJson"
+import * as os from "os"
+import { LoginToggle } from "../Popup/LoginButton"
+import { userInfo } from "os"
 
 export class ImportViewerLinks extends VariableUiElement {
     constructor(osmConnection: OsmConnection) {
@@ -54,33 +57,30 @@ class UserInformationMainPanel extends VariableUiElement {
         const ud = osmConnection.userDetails
         super(
             ud.map((ud) => {
-                if (!ud?.loggedIn) {
-                    // Not logged in
-                    return new SubtleButton(Svg.login_svg(), "Login", { imgSize }).onClick(() =>
-                        osmConnection.AttemptLogin()
-                    )
-                }
-
-                let img: Img = Svg.person_svg()
+                let img: BaseUIElement = Svg.person_ui().SetClass("block")
                 if (ud.img !== undefined) {
                     img = new Img(ud.img)
                 }
                 img.SetClass("rounded-full h-12 w-12 m-4")
 
                 let description: BaseUIElement = undefined
+                const editLink = osmConnection.Backend() + "/profile/edit"
                 if (ud.description) {
                     const editButton = new Link(
                         Svg.pencil_svg().SetClass("h-4 w-4"),
-                        "https://www.openstreetmap.org/profile/edit",
+                        editLink,
                         true
                     ).SetClass(
                         "absolute block bg-subtle rounded-full p-2 bottom-2 right-2 w-min self-end"
                     )
 
+                    const htmlString = new Showdown.Converter()
+                        .makeHtml(ud.description)
+                        .replace(/&gt;/g, ">")
+                        .replace(/&lt;/g, "<")
+                    console.log("Before:", ud.description, "after", htmlString)
                     description = new Combine([
-                        new FixedUiElement(
-                            new Showdown.Converter().makeHtml(ud.description)
-                        ).SetClass("link-underline"),
+                        new FixedUiElement(htmlString).SetClass("link-underline"),
                         editButton,
                     ]).SetClass("relative w-full m-2")
                 } else {
@@ -88,6 +88,8 @@ class UserInformationMainPanel extends VariableUiElement {
                         t.noDescription,
                         new SubtleButton(Svg.pencil_svg(), t.noDescriptionCallToAction, {
                             imgSize,
+                            url: editLink,
+                            newTab: true,
                         }),
                     ]).SetClass("w-full m-2")
                 }
@@ -177,9 +179,10 @@ class UserInformationMainPanel extends VariableUiElement {
 export default class UserInformationPanel extends ScrollableFullScreen {
     constructor(
         state: {
-            layoutToUse: LayoutConfig
-            osmConnection: OsmConnection
-            locationControl: UIEventSource<Loc>
+            readonly layoutToUse: LayoutConfig
+            readonly osmConnection: OsmConnection
+            readonly locationControl: UIEventSource<Loc>
+            readonly featureSwitchUserbadge: Store<boolean>
         },
         options?: {
             isOpened?: UIEventSource<boolean>
@@ -189,17 +192,25 @@ export default class UserInformationPanel extends ScrollableFullScreen {
         super(
             () => {
                 return new VariableUiElement(
-                    state.osmConnection.userDetails.map((ud) => "Welcome " + ud.name)
+                    state.osmConnection.userDetails.map((ud) => {
+                        if (ud.loggedIn === false) {
+                            return Translations.t.userinfo.titleNotLoggedIn
+                        }
+                        return Translations.t.userinfo.welcome.Subs(ud)
+                    })
                 )
             },
-            () => {
-                return new UserInformationMainPanel(
-                    state.osmConnection,
-                    state.locationControl,
-                    state.layoutToUse,
-                    isOpened
-                )
-            },
+            () =>
+                new LoginToggle(
+                    new UserInformationMainPanel(
+                        state.osmConnection,
+                        state.locationControl,
+                        state.layoutToUse,
+                        isOpened
+                    ),
+                    Translations.t.general.getStartedLogin,
+                    state
+                ),
             "userinfo",
             isOpened
         )

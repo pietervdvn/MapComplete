@@ -934,7 +934,7 @@
         "newMessages": "je hebt nieuwe berichten",
         "noDescription": "Je hebt nog een beschrijving op je profiel",
         "noDescriptionCallToAction": "Voeg een profielbeschrijving toe",
-        "welcome": "Welkom {user}"
+        "welcome": "Welkom {name}"
     },
     "validation": {
         "color": {
