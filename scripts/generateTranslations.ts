@@ -360,7 +360,9 @@ function transformTranslation(
         return `new Translation( ${JSON.stringify(obj)} )`
     }
 
-    let values = ""
+    let values: string[] = []
+    const spaces = Utils.Times((_) => "  ", path.length + 1)
+
     for (const key in obj) {
         if (key === "#") {
             continue
@@ -405,18 +407,14 @@ function transformTranslation(
                 )}, "core:${path.join(".")}.${key}")`
             }
 
-            values += `${Utils.Times((_) => "  ", path.length + 1)}get ${key}() { ${expr} },
-`
+            values.push(`${spaces}get ${key}() { ${expr} }`)
         } else {
-            values +=
-                Utils.Times((_) => "  ", path.length + 1) +
-                key +
-                ": " +
-                transformTranslation(value, [...path, key], languageWhitelist) +
-                ",\n"
+            values.push(
+                spaces + key + ": " + transformTranslation(value, [...path, key], languageWhitelist)
+            )
         }
     }
-    return `{${values}}`
+    return `{${values.join(",\n")}}`
 }
 
 function sortKeys(o: object): object {
