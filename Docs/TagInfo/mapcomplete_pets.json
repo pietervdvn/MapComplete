@@ -159,7 +159,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Dog friendly eateries' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+      "description": "Layer 'Dog friendly eateries' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
     },
     {
       "key": "email",
@@ -1398,7 +1398,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Dog-friendly shops' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+      "description": "Layer 'Dog-friendly shops' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
     },
     {
       "key": "email",
@@ -1555,7 +1555,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'veterinary' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+      "description": "Layer 'veterinary' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
     },
     {
       "key": "phone",

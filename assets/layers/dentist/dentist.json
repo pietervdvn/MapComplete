@@ -37,7 +37,8 @@
       "render": {
         "en": "This dentist is called {name}",
         "de": "Dieser Zahnarzt heißt {name}",
-        "nl": "Deze tandarts heet {name}"
+        "nl": "Deze tandarts heet {name}",
+        "ca": "El dentista s'anomena {name}"
       },
       "freeform": {
         "key": "name"

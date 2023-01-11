@@ -185,9 +185,6 @@
             }
         },
         "tagRenderings": {
-            "atm-in-bank-notice": {
-                "render": "Dieser Geldautomat befindet sich in oder in der Nähe einer Bank"
-            },
             "brand": {
                 "freeform": {
                     "placeholder": "Markenname"
@@ -836,9 +833,6 @@
                 "mappings": {
                     "0": {
                         "then": "Kostenloser Reinigungsservice"
-                    },
-                    "1": {
-                        "then": "Kostenlose Nutzung"
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
@@ -2716,8 +2710,30 @@
                 },
                 "question": "Gibt es hier eine Speedkletter-Wand?"
             },
+            "harness_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Ein Klettergurt kann hier ausgeliehen werden"
+                    },
+                    "1": {
+                        "then": "Ein Klettergurt kann hier <b>nicht</b> ausgeliehen werden"
+                    }
+                },
+                "question": "Kann man hier einen Klettergurt ausleihen?"
+            },
             "name": {
                 "question": "Wie heißt diese Kletterhalle?"
+            },
+            "shoe_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Kletterschuhe können hier ausgeliehen werden"
+                    },
+                    "1": {
+                        "then": "Kletterschuhe können hier <b>nicht</b> ausgeliehen werden"
+                    }
+                },
+                "question": "Kann man hier Kletterschuhe ausleihen?"
             }
         },
         "title": {
@@ -3644,7 +3660,7 @@
     },
     "elevator": {
         "description": "Diese Ebene zeigt Aufzüge an und fragt nach dem Betriebsstatus und den Abmessungen des Aufzugs. Nützlich für Informationen zur Zugänglichkeit für Rollstuhlfahrer",
-        "name": "Aufzug",
+        "name": "Aufzüge",
         "presets": {
             "0": {
                 "title": "einen Aufzug"
@@ -5777,6 +5793,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Behindertenparkplatz"
+                }
+            },
             "render": "Stellplatz"
         }
     },
@@ -7501,7 +7522,7 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Rollstuhlgerecht"
+                        "question": "Barrierefrei"
                     }
                 }
             },

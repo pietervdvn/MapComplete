@@ -5,7 +5,8 @@
     "de": "Ärzte",
     "nl": "Dokters",
     "fr": "Médecins",
-    "pa_PK": "ڈاکٹر"
+    "pa_PK": "ڈاکٹر",
+    "ca": "Metges"
   },
   "description": {
     "en": "This layer shows doctor offices",

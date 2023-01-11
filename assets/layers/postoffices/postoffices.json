@@ -218,11 +218,13 @@
       "id": "letter-from",
       "render": {
         "en": "You can post letters with these companies: {post_office:letter_from}",
-        "de": "Mit diesen Unternehmen können Sie Briefe aufgeben: {post_office:letter_from}"
+        "de": "Mit diesen Unternehmen können Sie Briefe aufgeben: {post_office:letter_from}",
+        "nl": "Je kan brieven posten met de volgende bedrijven: {post_office:letter_from}"
       },
       "question": {
         "en": "Can you post a letter here?",
-        "de": "Können Sie hier einen Brief aufgeben?"
+        "de": "Können Sie hier einen Brief aufgeben?",
+        "nl": "Kan je hier een brief posten?"
       },
       "freeform": {
         "key": "post_office:letter_from",
@@ -233,14 +235,16 @@
           "if": "post_office:letter_from=yes",
           "then": {
             "en": "You can post letters here",
-            "de": "Sie können Briefe hier aufgeben"
+            "de": "Sie können Briefe hier aufgeben",
+            "nl": "Je kan hier brieven posten"
           }
         },
         {
           "if": "post_office:letter_from=no",
           "then": {
             "en": "You can't post letters here",
-            "de": "Sie können hier keine Briefe aufgeben"
+            "de": "Sie können hier keine Briefe aufgeben",
+            "nl": "Je kan hier geen brieven posten"
           }
         }
       ]

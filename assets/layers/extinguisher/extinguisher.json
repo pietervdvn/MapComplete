@@ -9,7 +9,8 @@
     "de": "Feuerlöscher",
     "it": "Cartina degli estintori.",
     "nl": "Kaart van brandblussers",
-    "es": "Mapa de extintores"
+    "es": "Mapa de extintores",
+    "ca": "Mapa d'extintors"
   },
   "minzoom": 14,
   "source": {
@@ -44,7 +45,8 @@
     "it": "Livello della mappa che mostra gli idranti antincendio.",
     "nl": "Kaartlaag met brandblussers.",
     "da": "Kortlag til visning af ildslukkere.",
-    "es": "Capa del mapa que muestra extintores."
+    "es": "Capa del mapa que muestra extintores.",
+    "ca": "Capa que mostra extintors."
   },
   "tagRenderings": [
     {

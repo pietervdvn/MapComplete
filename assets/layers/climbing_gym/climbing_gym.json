@@ -82,7 +82,8 @@
       "question": {
         "en": "Can one rent climbing shoes here?",
         "nl": "Kunnen hier klimschoenen gehuurd worden?",
-        "fr": "Peut-on louer des chaussures d'escalade ici ?"
+        "fr": "Peut-on louer des chaussures d'escalade ici ?",
+        "de": "Kann man hier Kletterschuhe ausleihen?"
       },
       "mappings": [
         {
@@ -90,7 +91,8 @@
           "then": {
             "en": "Climbing shoes can be rented here",
             "nl": "Klimschoenen kunnen hier gehuurd worden",
-            "fr": "Les chaussures d'escalade peuvent être louées ici"
+            "fr": "Les chaussures d'escalade peuvent être louées ici",
+            "de": "Kletterschuhe können hier ausgeliehen werden"
           }
         },
         {
@@ -98,7 +100,8 @@
           "then": {
             "en": "Climbing shoes can <b>not</b> be rented here",
             "nl": "Hier kunnen <b>geen</b> klimschoenen gehuurd worden",
-            "fr": "Les chaussures d'escalade ne peuvent <b>pas</b> être louées ici"
+            "fr": "Les chaussures d'escalade ne peuvent <b>pas</b> être louées ici",
+            "de": "Kletterschuhe können hier <b>nicht</b> ausgeliehen werden"
           }
         }
       ]
@@ -108,7 +111,8 @@
       "question": {
         "en": "Can one rent a climbing harness here?",
         "nl": "Kan een klimgordel hier gehuurd worden?",
-        "fr": "Peut-on louer un baudrier d'escalade ici ?"
+        "fr": "Peut-on louer un baudrier d'escalade ici ?",
+        "de": "Kann man hier einen Klettergurt ausleihen?"
       },
       "mappings": [
         {
@@ -116,7 +120,8 @@
           "then": {
             "en": "A climbing harness can be rented here",
             "nl": "Een klimgordel kan hier gehuurd worden",
-            "fr": "Un baudrier d'escalade peut être loué ici"
+            "fr": "Un baudrier d'escalade peut être loué ici",
+            "de": "Ein Klettergurt kann hier ausgeliehen werden"
           }
         },
         {
@@ -124,7 +129,8 @@
           "then": {
             "en": "A climbing harness can <b>not</b> be rented here",
             "nl": "Hier kunnen <b>geen</b> klimgordels gehuurd worden",
-            "fr": "Un baudrier d'escalade ne peut <b>pas</b> être loué ici"
+            "fr": "Un baudrier d'escalade ne peut <b>pas</b> être loué ici",
+            "de": "Ein Klettergurt kann hier <b>nicht</b> ausgeliehen werden"
           }
         }
       ]

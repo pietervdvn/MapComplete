@@ -8,6 +8,7 @@ import Img from "../../UI/Base/Img"
 import { Utils } from "../../Utils"
 import { OsmObject } from "./OsmObject"
 import { Changes } from "./Changes"
+import ScriptUtils from "../../scripts/ScriptUtils"
 
 export default class UserDetails {
     public loggedIn = false
@@ -544,6 +545,9 @@ export class OsmConnection {
     }
 
     private async FetchCapabilities(): Promise<{ api: OsmServiceState; gpx: OsmServiceState }> {
+        if (Utils.runningFromConsole) {
+            return { api: "online", gpx: "online" }
+        }
         const result = await Utils.downloadAdvanced(this.Backend() + "/api/0.6/capabilities")
         if (result["content"] === undefined) {
             console.log("Something went wrong:", result)

@@ -194,7 +194,8 @@
         "hu": "Milyen fajta kávézó ez?",
         "da": "Hvilken slags cafe er dette?",
         "es": "Qué tipo de cafetería es esta",
-        "fr": "Quel genre de café est-ce ?"
+        "fr": "Quel genre de café est-ce ?",
+        "ca": "Quin tipus de cafeteria és aquesta?"
       },
       "mappings": [
         {
@@ -216,7 +217,8 @@
             "de": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation",
             "da": "En mere moderne og kommerciel <b>bar</b>, eventuelt med en musik- og lysinstallation",
             "es": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz",
-            "fr": "Un <b>bar</b> plus moderne et commercial, avec éventuellement musique et jeux de lumière"
+            "fr": "Un <b>bar</b> plus moderne et commercial, avec éventuellement musique et jeux de lumière",
+            "ca": "Un <b>bar de copes</b> més modern i comercial, possiblement amb equipació de música i llums"
           }
         },
         {

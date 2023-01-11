@@ -185,9 +185,6 @@
             }
         },
         "tagRenderings": {
-            "atm-in-bank-notice": {
-                "render": "Deze geldautomaat bevindt zich in of bij een bank"
-            },
             "brand": {
                 "freeform": {
                     "placeholder": "Merknaam"
@@ -206,7 +203,8 @@
                     "2": {
                         "then": "Je kan geen geld deponeren in deze geldautomaat"
                     }
-                }
+                },
+                "question": "Kan je geld storten bij deze geldautomaat?"
             },
             "cash_out": {
                 "mappings": {
@@ -834,10 +832,10 @@
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
-                        "then": "Gratis fietsschoonmaakpunt"
+                        "then": "Dit fietsschoonmaakpunt is gratis te gebruiken"
                     },
                     "1": {
-                        "then": "Gratis te gebruiken"
+                        "then": "Dit fietsschoonmaakpunt is betalend"
                     }
                 },
                 "question": "Hoeveel kost het gebruik van het fietsschoonmaakpunt?",
@@ -2709,6 +2707,11 @@
     "climbing_gym": {
         "description": "Een klimzaal",
         "name": "Klimzalen",
+        "presets": {
+            "0": {
+                "title": "Klimzaal"
+            }
+        },
         "tagRenderings": {
             "Speed climbing?": {
                 "mappings": {
@@ -5881,6 +5884,18 @@
             }
         },
         "tagRenderings": {
+            "letter-from": {
+                "mappings": {
+                    "0": {
+                        "then": "Je kan hier brieven posten"
+                    },
+                    "1": {
+                        "then": "Je kan hier geen brieven posten"
+                    }
+                },
+                "question": "Kan je hier een brief posten?",
+                "render": "Je kan brieven posten met de volgende bedrijven: {post_office:letter_from}"
+            },
             "opening_hours": {
                 "override": {
                     "question": "Wat zijn de openingsuren voor dit postkantoor?"

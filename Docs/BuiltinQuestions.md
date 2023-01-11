@@ -204,13 +204,13 @@ What is the email address of {title()}?
 
 
 
-<a href='{website}' target='_blank'>{website}</a>
+<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>
 
 What is the website of {title()}?
 
 
 
-  - <a href='{contact:website}' target='_blank'>{contact:website}</a>
+  - <a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>
 
 
 

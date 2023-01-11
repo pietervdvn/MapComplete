@@ -13,7 +13,8 @@
     "id": "Peta stasiun ambulans",
     "es": "Mapa de estaciones de ambulancias",
     "da": "Kort over ambulancestationer",
-    "cs": "Mapa stanic rychlé záchranné služby"
+    "cs": "Mapa stanic rychlé záchranné služby",
+    "ca": "Mapa d'estacions d'ambulàncies"
   },
   "minzoom": 12,
   "source": {
@@ -49,7 +50,8 @@
     "nl": "Een ambulancestation is een plaats waar ambulances, medisch materiaal, persoonlijk beschermingsmateriaal en aanverwanten worden bewaard.",
     "es": "Una estación de ambulancias es una zona para almacenar vehículos de ambulancia, equipamiento médico, equipos de protección personal y otros suministros médicos.",
     "da": "En ambulancestation er et område til opbevaring af ambulancekøretøjer, medicinsk udstyr, personlige værnemidler og andre medicinske forsyninger.",
-    "cs": "Stanice záchranné služby je prostor pro umístění sanitních vozidel, zdravotnického vybavení, osobních ochranných prostředků a dalšího zdravotnického materiálu."
+    "cs": "Stanice záchranné služby je prostor pro umístění sanitních vozidel, zdravotnického vybavení, osobních ochranných prostředků a dalšího zdravotnického materiálu.",
+    "ca": "Una estició d'abulàncies és una àrea per a emmagatzemar ambulàncies, equipament mèdic, equips de protecció personal i altres subministraments mèdics."
   },
   "tagRenderings": [
     {
@@ -102,7 +104,8 @@
         "nl": "In welke straat ligt dit station?",
         "es": "¿Cual es el nombre de la calle en la que se encuentra la estación?",
         "da": "Hvad er vejnavnet, hvor stationen ligger?",
-        "cs": "Jak se jmenuje ulice, kde se stanice nachází?"
+        "cs": "Jak se jmenuje ulice, kde se stanice nachází?",
+        "ca": "Quin és el nom del carrer on es troba l'estació?"
       },
       "render": {
         "en": "This station is along a highway called {addr:street}.",
@@ -162,7 +165,8 @@
         "nl": "Welke organisatie beheert dit station?",
         "es": "¿Qué agencia opera esta estación?",
         "da": "Hvilket agentur driver denne station?",
-        "cs": "Jaká organizace tuto stanici provozuje?"
+        "cs": "Jaká organizace tuto stanici provozuje?",
+        "ca": "Quina agència opera aquesta estació?"
       },
       "render": {
         "en": "This station is operated by {operator}.",
@@ -329,7 +333,8 @@
         "es": "Añadir una estación de ambulancias al mapa",
         "nb_NO": "Legg til en ambulansestasjon på kartet",
         "da": "Tilføj en ambulancestation til kortet",
-        "cs": "Přidat na mapu stanici záchranné služby"
+        "cs": "Přidat na mapu stanici záchranné služby",
+        "ca": "Afegeix una estació d'ambulàncies al mapa"
       }
     }
   ],

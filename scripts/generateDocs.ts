@@ -79,11 +79,9 @@ function generateWikipage() {
             return ""
         }
 
-        const languagesInDescr = []
-        for (const shortDescriptionKey in layout.shortDescription) {
-            languagesInDescr.push(shortDescriptionKey)
-        }
-
+        const languagesInDescr = Array.from(Object.keys(layout.shortDescription)).filter(
+            (k) => k !== "_context"
+        )
         const languages = languagesInDescr.map((ln) => `{{#language:${ln}|en}}`).join(", ")
         let auth = "Yes"
         return `{{service_item
@@ -122,6 +120,7 @@ function generateWikipage() {
 }
 
 console.log("Starting documentation generation...")
+ScriptUtils.fixUtils()
 generateWikipage()
 
 AllKnownLayouts.GenOverviewsForSingleLayer((layer, element, inlineSource) => {

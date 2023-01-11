@@ -11,7 +11,8 @@
     "ru": "Велостанции (ремонт, накачка шин или сразу всё)",
     "es": "Bomba y reparación de bicicletas",
     "da": "Cykelpumpe og reparation",
-    "cs": "Vzduchový kompresor a opravy jízdních kol"
+    "cs": "Vzduchový kompresor a opravy jízdních kol",
+    "ca": "Manxa i reparació de bicicletes"
   },
   "minzoom": 13,
   "source": {
@@ -216,7 +217,8 @@
             "pt": "Há somente ferramentas (chaves de fenda, alicates...) presentes",
             "es": "Solo hay herramientas (destornilladores, pinzas...) presentes",
             "da": "Der er kun værktøj (skruetrækkere, tænger, ...) til stede",
-            "cs": "K dispozici je pouze nářadí (šroubováky, kleště, ...)."
+            "cs": "K dispozici je pouze nářadí (šroubováky, kleště, ...).",
+            "ca": "Només hi ha present ferramentes (tornavísos, pinces, …)"
           }
         },
         {
@@ -646,7 +648,8 @@
             "ru": "Клапан Presta (также известный как французский клапан)",
             "da": "Sclaverand/Presta (cykeldæk med smal bredde)",
             "es": "Sclaverand/Presata (ruedas de bicicleta estrechas)",
-            "cs": "Sclaverand/Presta (úzké cyklistické pláště)"
+            "cs": "Sclaverand/Presta (úzké cyklistické pláště)",
+            "ca": "Sclaverand/Presta (pneumàtics per a bicis estrets)"
           }
         },
         {
@@ -675,7 +678,8 @@
             "it": "Schrader (valvola delle auto)",
             "da": "Schrader (biler og mountainbikes)",
             "es": "Schrader (coches y bicicletas de montaña)",
-            "cs": "Schrader (automobily a horská kola)"
+            "cs": "Schrader (automobily a horská kola)",
+            "ca": "Schrader (cotxes i bicicletes de muntanya)"
           }
         }
       ],

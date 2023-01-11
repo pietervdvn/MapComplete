@@ -47,7 +47,8 @@
         "de": "eine Mülltonne",
         "it": "un raccoglitore per lo smaltimento rifiuti",
         "id": "tempat pembuangan sampahh",
-        "da": "en affaldsbeholder"
+        "da": "en affaldsbeholder",
+        "ca": "un contenidor de basura"
       },
       "tags": [
         "amenity=waste_disposal"

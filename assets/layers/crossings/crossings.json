@@ -252,7 +252,7 @@
         "nl": "Heeft deze oversteekplaats een verkeerseiland in het midden?",
         "de": "Gibt es an diesem Übergang eine Verkehrsinsel?",
         "es": "¿Tiene una isla en el medio este cruce?",
-        "fr": "Est-ce que ce passage a une île au milieu ?"
+        "fr": "Est-ce que ce passage a un refuge au milieu ?"
       },
       "condition": "highway=crossing",
       "mappings": [

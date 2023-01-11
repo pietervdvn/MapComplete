@@ -4,7 +4,8 @@
     "en": "Pedestrian paths",
     "nl": "Pad voor voetgangers",
     "de": "Fußgängerwege",
-    "fr": "Sentiers piétons"
+    "fr": "Sentiers piétons",
+    "ca": "Camins per a vianants"
   },
   "minzoom": 18,
   "source": {

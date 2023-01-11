@@ -28,7 +28,8 @@
     "de": "Finden Sie Plätze zum Übernachten mit Ihrem Wohnmobil",
     "hu": "Helyek, ahol lakóautóval eltöltheti az éjszakát",
     "es": "Encuentra sitios para pasar la noche con tu caravana",
-    "da": "Find steder, hvor du kan overnatte med din autocamper"
+    "da": "Find steder, hvor du kan overnatte med din autocamper",
+    "ca": "Troba llocs on passar la nit amb la teua caravana"
   },
   "description": {
     "en": "This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews. This is a website and a webapp. The data is stored in OpenStreetMap, so it will be free forever and can be re-used by any app.",
@@ -937,7 +938,8 @@
             "zh_Hant": "這個地方需要付費嗎？",
             "nl": "Vraagt deze plaats een vergoeding?",
             "es": "¿Este lugar cobra una tasa?",
-            "da": "Opkræver dette sted et gebyr?"
+            "da": "Opkræver dette sted et gebyr?",
+            "ca": "Aquest lloc cobra una taxa?"
           },
           "mappings": [
             {
@@ -958,7 +960,8 @@
                 "nb_NO": "Man må betale for bruk",
                 "nl": "Je moet betalen voor het gebruik",
                 "es": "Tienes que pagar por el uso",
-                "da": "Du skal betale for brug"
+                "da": "Du skal betale for brug",
+                "ca": "Has de pagar per a utilitzar-ho"
               }
             },
             {
@@ -979,7 +982,8 @@
                 "nl": "Kan gratis gebruikt worden",
                 "nb_NO": "Kan brukes gratis",
                 "es": "Se puede utilizar gratis",
-                "da": "Kan bruges gratis"
+                "da": "Kan bruges gratis",
+                "ca": "Es pot utilitzar gratuïtament"
               }
             }
           ]
@@ -1037,7 +1041,8 @@
             "zh_Hant": "這個地方有取水點嗎？",
             "nl": "Heeft deze loosplaats een waterkraan om je camper bij te vullen?",
             "nb_NO": "Har dette stedet et vannkranssted?",
-            "da": "Har dette sted et vandpost?"
+            "da": "Har dette sted et vandpost?",
+            "ca": "Aquest lloc té un punt d'aigua?"
           },
           "mappings": [
             {
@@ -1056,7 +1061,8 @@
                 "de": "Dieser Ort hat eine Wasserzapfstelle",
                 "zh_Hant": "這個地方有取水點",
                 "nl": "Deze loosplaats heeft een waterkraan om je camper bij te vullen",
-                "da": "Dette sted har et vandpost"
+                "da": "Dette sted har et vandpost",
+                "ca": "Aquest lloc té un punt d'aigua"
               }
             },
             {
@@ -1075,7 +1081,8 @@
                 "de": "Dieser Ort hat keine Wasserzapfstelle",
                 "zh_Hant": "這個地方沒有取水點",
                 "nl": "Deze loosplaats heeft geen waterkraan om je camper bij te vullen",
-                "da": "Dette sted har ikke et vandpost"
+                "da": "Dette sted har ikke et vandpost",
+                "ca": "Aquest lloc no té un punt d'aigua"
               }
             }
           ]
@@ -1091,7 +1098,8 @@
             "de": "Können Sie hier Brauch-/Grauwasser entsorgen?",
             "zh_Hant": "你能在這裡排放洗滌水嗎？",
             "nl": "Mag je hier grijs water lozen?",
-            "da": "Kan du komme af med gråt vand her?"
+            "da": "Kan du komme af med gråt vand her?",
+            "ca": "Aquí pots desfer-te de les aigües grises?"
           },
           "mappings": [
             {
@@ -1128,7 +1136,8 @@
                 "de": "Hier können Sie kein Brauch-/Grauwasser entsorgen",
                 "zh_Hant": "你無法在這裡排放洗滌水",
                 "nl": "Je kan hier geen grijs water lozen",
-                "da": "Du kan ikke bortskaffe gråt vand her"
+                "da": "Du kan ikke bortskaffe gråt vand her",
+                "ca": "Aquí no pots desfer-te de les aigües grises"
               }
             }
           ]
@@ -1145,7 +1154,8 @@
             "de": "Können Sie hier chemische Toilettenabfälle entsorgen?",
             "hu": "Elhelyezhető-e itt a vegyi WC hulladéka?",
             "nl": "Mag je hier je chemisch toilet lozen?",
-            "da": "Kan man bortskaffe kemisk toiletaffald her?"
+            "da": "Kan man bortskaffe kemisk toiletaffald her?",
+            "ca": "Aquí pots depositar els residus del vàter químic?"
           },
           "mappings": [
             {
@@ -1164,7 +1174,8 @@
                 "de": "Hier können Sie chemische Toilettenabfälle entsorgen",
                 "hu": "Itt ártalmatlanítható a vegyi WC hulladéka",
                 "nl": "Je kan hier een chemisch toilet lozen",
-                "da": "Her kan du bortskaffe kemisk toiletaffald"
+                "da": "Her kan du bortskaffe kemisk toiletaffald",
+                "ca": "Aquí pots depositar els residus del vàter químic"
               }
             },
             {
@@ -1183,7 +1194,8 @@
                 "de": "Hier können Sie keine chemischen Toilettenabfälle entsorgen",
                 "hu": "Itt nem ártalmatlanítható a vegyi WC hulladéka",
                 "nl": "Je kan hier geen chemisch toilet lozen",
-                "da": "Du kan ikke bortskaffe kemisk toiletaffald her"
+                "da": "Du kan ikke bortskaffe kemisk toiletaffald her",
+                "ca": "Aquí no pots depositar els residus del vàter químic"
               }
             }
           ]
@@ -1292,7 +1304,8 @@
             "zh_Hant": "這車站是屬於 {network} 網路的一部分",
             "nl": "Deze loosplaats is deel van het {network} netwerk",
             "es": "Esta estación forma parte de la red {network}",
-            "da": "Denne station er en del af netværket {network}"
+            "da": "Denne station er en del af netværket {network}",
+            "ca": "Aquesta estació forma part de la xarxa {network}"
           },
           "question": {
             "en": "What network is this place a part of? (skip if none)",
@@ -1304,7 +1317,8 @@
             "zh_Hant": "這裡是屬於那個網路的？ (沒有則跳過)",
             "nl": "Van welk netwerk vormt deze plaats een deel? (Sla over als het geen deel uitmaakt van een netwerk)",
             "es": "¿A qué red forma parte este lugar? (saltar si a ninguna)",
-            "da": "Hvilket netværk er dette sted en del af? (spring over hvis ingen)"
+            "da": "Hvilket netværk er dette sted en del af? (spring over hvis ingen)",
+            "ca": "A quina xarxa forma part aquest lloc? (Salta si a cap)"
           },
           "freeform": {
             "key": "network"
@@ -1378,7 +1392,8 @@
           "nl": "Deze plaats wordt beheerd door {operator}",
           "es": "Este lugar lo opera {operator}",
           "da": "Dette sted drives af {operator}",
-          "nb_NO": "Dette stedet drives av {operator}"
+          "nb_NO": "Dette stedet drives av {operator}",
+          "ca": "Aquest lloc és operat per {operator}"
         },
         "question": {
           "en": "Who operates this place?",
@@ -1390,7 +1405,8 @@
           "nl": "Wie beheert deze plaats?",
           "es": "¿Quién opera este lugar?",
           "da": "Hvem driver dette sted?",
-          "nb_NO": "Hvem driver dette stedet?"
+          "nb_NO": "Hvem driver dette stedet?",
+          "ca": "Qui opera aquest lloc?"
         },
         "freeform": {
           "key": "operator"
@@ -1408,7 +1424,8 @@
           "nl": "Beschikt deze plaats over stroomvoorziening?",
           "nb_NO": "Har dette stedet strømforsyning?",
           "es": "¿Tiene suministro eléctrico este lugar?",
-          "da": "Har dette sted en strømforsyning?"
+          "da": "Har dette sted en strømforsyning?",
+          "ca": "Aquest lloc té subministrament elèctric?"
         },
         "mappings": [
           {
@@ -1427,7 +1444,8 @@
               "nb_NO": "Dette stedet har strømforsyning",
               "nl": "Deze plaats heeft stroomvoorziening",
               "es": "Este lugar tiene suministro eléctrico",
-              "da": "Dette sted har en strømforsyning"
+              "da": "Dette sted har en strømforsyning",
+              "ca": "Aquest lloc té subministrament elèctric"
             }
           },
           {
@@ -1446,7 +1464,8 @@
               "nl": "Deze plaats beschikt niet over stroomvoorziening",
               "nb_NO": "Dette stedet har ikke strømforsyning",
               "es": "Este lugar no tiene suministro eléctrico",
-              "da": "Dette sted har ikke strømforsyning"
+              "da": "Dette sted har ikke strømforsyning",
+              "ca": "Aquest lloc no té subministrament elèctric"
             }
           }
         ]

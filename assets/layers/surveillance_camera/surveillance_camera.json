@@ -192,7 +192,8 @@
             "fr": "Une zone publique est surveillée, telle qu'une rue, un pont, une place, un parc, une gare, un couloir, un tunnel public…",
             "it": "Sorveglia un'area pubblica, come una strada, un ponte, una piazza, un parco, una stazione, un passaggio o un sottopasso pubblico, ...",
             "de": "Die Kamera überwacht einen öffentlichen Bereich, z. B. Straßen, Brücken, Plätze, Parks, Bahnhöfe, öffentliche Gänge oder Tunnel, …",
-            "da": "Et offentligt område overvåges, f.eks. en gade, en bro, et torv, en park, en togstation, en offentlig korridor eller en tunnel, …"
+            "da": "Et offentligt område overvåges, f.eks. en gade, en bro, et torv, en park, en togstation, en offentlig korridor eller en tunnel, …",
+            "ca": "Es vigila una àrea pública, com un carrer, un pont, una plaça, un parc, una estació de tren, un túnel públic, …"
           }
         },
         {
@@ -207,7 +208,8 @@
             "fr": "Une zone extérieure, mais privée, est surveillée (par exemple, un parking, une station-service, une cour, une entrée, une allée privée…)",
             "it": "Sorveglia un'area esterna di proprietà privata (un parcheggio, una stazione di servizio, un cortile, un ingresso, un vialetto privato, ...)",
             "de": "Die Kamera überwacht einen privaten Außenbereich (z.B. Parkplätze, Tankstellen, Innenhöfe, Eingänge, private Einfahrten, …)",
-            "da": "Et udendørs, men privat område overvåges (f.eks. en parkeringsplads, en tankstation, en gårdsplads, en indgang, en privat indkørsel, ...)"
+            "da": "Et udendørs, men privat område overvåges (f.eks. en parkeringsplads, en tankstation, en gårdsplads, en indgang, en privat indkørsel, ...)",
+            "ca": "Es vigila una àrea exterior, encara que privada (p.e. una plaça d'aparcament, una estació de servei, pati, entrada, via d'accés privada, …)"
           }
         },
         {
@@ -222,7 +224,8 @@
             "fr": "Une zone intérieure privée est surveillée, par exemple un magasin, un parking souterrain privé…",
             "it": "Sorveglia un ambiente interno di proprietà privata, per esempio un negozio, un parcheggio sotterraneo privato, ...",
             "de": "Die Kamera überwacht einen privaten Innenbereich, z. B. Geschäfte, private Tiefgaragen, …",
-            "da": "Et privat indendørs område overvåges, f.eks. en butik, en privat parkeringskælder, …"
+            "da": "Et privat indendørs område overvåges, f.eks. en butik, en privat parkeringskælder, …",
+            "ca": "Es vigila una àrea interior privada, p.e. una botiga, un parking subterrani privat, …"
           }
         }
       ],
@@ -327,7 +330,8 @@
         "fr": "Surveille un(e) {surveillance:zone}",
         "it": " Sorveglia una {surveillance:zone}",
         "de": "Überwacht ein/e {surveillance:zone}",
-        "da": "Overvåger en {surveillance:zone}"
+        "da": "Overvåger en {surveillance:zone}",
+        "ca": "Vigila un/a {surveillance:zone}"
       },
       "mappings": [
         {
