@@ -4,7 +4,6 @@ import Translations from "../i18n/Translations"
 import Svg from "../../Svg"
 import { Tag } from "../../Logic/Tags/Tag"
 import BaseUIElement from "../BaseUIElement"
-import LicensePicker from "../BigComponents/LicensePicker"
 import Toggle from "../Input/Toggle"
 import FileSelectorButton from "../Input/FileSelectorButton"
 import ImgurUploader from "../../Logic/ImageProviders/ImgurUploader"
@@ -17,6 +16,7 @@ import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { Changes } from "../../Logic/Osm/Changes"
 import Loading from "../Base/Loading"
 import { LoginToggle } from "../Popup/LoginButton"
+import Constants from "../../Models/Constants"
 
 export class ImageUploadFlow extends Toggle {
     private static readonly uploadCountsPerId = new Map<string, UIEventSource<number>>()
@@ -62,12 +62,6 @@ export class ImageUploadFlow extends Toggle {
             uploadedCount.ping()
         })
 
-        const licensePicker = new LicensePicker(state)
-        const explanations = LicensePicker.LicenseExplanations()
-        const chosenLicense = new VariableUiElement(
-            licensePicker.GetValue().map((license) => explanations.get(license))
-        )
-
         const t = Translations.t.image
 
         let labelContent: BaseUIElement
@@ -108,7 +102,11 @@ export class ImageUploadFlow extends Toggle {
             }
 
             console.log("Received images from the user, starting upload")
-            const license = licensePicker.GetValue()?.data ?? "CC0"
+            const license =
+                state?.osmConnection?.GetPreference(
+                    Constants.OsmPreferenceKeyPicturesLicense,
+                    "CC0"
+                )?.data ?? "CC0"
 
             const tags = tagsSource.data
 
@@ -177,8 +175,6 @@ export class ImageUploadFlow extends Toggle {
 
             fileSelector,
             Translations.t.image.respectPrivacy.Clone().SetStyle("font-size:small;"),
-            licensePicker,
-            chosenLicense.SetClass("subtle text-sm"),
         ]).SetClass("flex flex-col image-upload-flow mt-4 mb-8 text-center")
 
         super(

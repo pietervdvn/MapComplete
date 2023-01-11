@@ -15,6 +15,12 @@ import Showdown from "showdown"
 import LanguagePicker from "../LanguagePicker"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import Constants from "../../Models/Constants"
+import EditableTagRendering from "../Popup/EditableTagRendering"
+import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
+import { SaveButton } from "../Popup/SaveButton"
+import { TagUtils } from "../../Logic/Tags/TagUtils"
+import * as questions from "../../assets/tagRenderings/questions.json"
+import { TagRenderingConfigJson } from "../../Models/ThemeConfig/Json/TagRenderingConfigJson"
 
 export class ImportViewerLinks extends VariableUiElement {
     constructor(osmConnection: OsmConnection) {
@@ -36,7 +42,7 @@ export class ImportViewerLinks extends VariableUiElement {
     }
 }
 
-class UserInformationMainPanel extends Combine {
+class UserInformationMainPanel extends VariableUiElement {
     constructor(
         osmConnection: OsmConnection,
         locationControl: UIEventSource<Loc>,
@@ -46,96 +52,125 @@ class UserInformationMainPanel extends Combine {
         const t = Translations.t.userinfo
         const imgSize = "h-6 w-6"
         const ud = osmConnection.userDetails
-        super([
-            new VariableUiElement(
-                ud.map((ud) => {
-                    if (!ud?.loggedIn) {
-                        // Not logged in
-                        return new SubtleButton(Svg.login_svg(), "Login", { imgSize }).onClick(() =>
-                            osmConnection.AttemptLogin()
-                        )
-                    }
+        super(
+            ud.map((ud) => {
+                if (!ud?.loggedIn) {
+                    // Not logged in
+                    return new SubtleButton(Svg.login_svg(), "Login", { imgSize }).onClick(() =>
+                        osmConnection.AttemptLogin()
+                    )
+                }
 
-                    let img: Img = Svg.person_svg()
-                    if (ud.img !== undefined) {
-                        img = new Img(ud.img)
-                    }
-                    img.SetClass("rounded-full h-12 w-12 m-4")
+                let img: Img = Svg.person_svg()
+                if (ud.img !== undefined) {
+                    img = new Img(ud.img)
+                }
+                img.SetClass("rounded-full h-12 w-12 m-4")
 
-                    let description: BaseUIElement = undefined
-                    if (ud.description) {
-                        const editButton = new Link(
-                            Svg.pencil_svg().SetClass("h-4 w-4"),
-                            "https://www.openstreetmap.org/profile/edit",
-                            true
-                        ).SetClass(
-                            "absolute block bg-subtle rounded-full p-2 bottom-2 right-2 w-min self-end"
-                        )
+                let description: BaseUIElement = undefined
+                if (ud.description) {
+                    const editButton = new Link(
+                        Svg.pencil_svg().SetClass("h-4 w-4"),
+                        "https://www.openstreetmap.org/profile/edit",
+                        true
+                    ).SetClass(
+                        "absolute block bg-subtle rounded-full p-2 bottom-2 right-2 w-min self-end"
+                    )
 
-                        description = new Combine([
-                            new FixedUiElement(
-                                new Showdown.Converter().makeHtml(ud.description)
-                            ).SetClass("link-underline"),
-                            editButton,
-                        ]).SetClass("relative w-full m-2")
-                    } else {
-                        description = new Combine([
-                            t.noDescription,
-                            new SubtleButton(Svg.pencil_svg(), t.noDescriptionCallToAction, {
-                                imgSize,
+                    description = new Combine([
+                        new FixedUiElement(
+                            new Showdown.Converter().makeHtml(ud.description)
+                        ).SetClass("link-underline"),
+                        editButton,
+                    ]).SetClass("relative w-full m-2")
+                } else {
+                    description = new Combine([
+                        t.noDescription,
+                        new SubtleButton(Svg.pencil_svg(), t.noDescriptionCallToAction, {
+                            imgSize,
+                        }),
+                    ]).SetClass("w-full m-2")
+                }
+
+                let panToHome: BaseUIElement
+                if (ud.home) {
+                    panToHome = new SubtleButton(Svg.home_svg(), t.moveToHome, {
+                        imgSize,
+                    }).onClick(() => {
+                        const home = ud?.home
+                        if (home === undefined) {
+                            return
+                        }
+                        locationControl.setData({ ...home, zoom: 16 })
+                        isOpened.setData(false)
+                    })
+                }
+
+                const editMode = new UIEventSource(false)
+                const licensePicker = new EditableTagRendering(
+                    osmConnection.preferencesHandler.preferences,
+                    new TagRenderingConfig(
+                        <TagRenderingConfigJson>{
+                            source: "shared-questions",
+                            ...questions["picture-license"],
+                        },
+                        "shared-questions"
+                    ),
+                    [],
+                    { osmConnection },
+                    {
+                        editMode,
+                        createSaveButton: (store) =>
+                            new SaveButton(
+                                osmConnection.preferencesHandler.preferences,
+                                osmConnection
+                            ).onClick(() => {
+                                const prefs = osmConnection.preferencesHandler.preferences
+                                const selection = TagUtils.FlattenMultiAnswer(
+                                    TagUtils.FlattenAnd(store.data, prefs.data)
+                                ).asChange(prefs.data)
+                                for (const kv of selection) {
+                                    osmConnection.GetPreference(kv.k, "", "").setData(kv.v)
+                                }
+
+                                editMode.setData(false)
                             }),
-                        ]).SetClass("w-full m-2")
                     }
+                )
 
-                    let panToHome: BaseUIElement
-                    if (ud.home) {
-                        panToHome = new SubtleButton(Svg.home_svg(), t.moveToHome, {
-                            imgSize,
-                        }).onClick(() => {
-                            const home = ud?.home
-                            if (home === undefined) {
-                                return
-                            }
-                            locationControl.setData({ ...home, zoom: 16 })
-                            isOpened.setData(false)
-                        })
-                    }
-
-                    return new Combine([
-                        new Combine([img, description]).SetClass(
-                            "flex border border-black rounded-md"
-                        ),
-                        new LanguagePicker(
-                            layout.language,
-                            Translations.t.general.pickLanguage.Clone()
-                        ),
-
-                        new SubtleButton(
-                            Svg.envelope_svg(),
-                            new Combine([
-                                t.gotoInbox,
-                                ud.unreadMessages == 0
-                                    ? undefined
-                                    : t.newMessages.SetClass("alert block"),
-                            ]),
-                            { imgSize, url: `${ud.backend}/messages/inbox`, newTab: true }
-                        ),
-                        new SubtleButton(Svg.gear_svg(), t.gotoSettings, {
-                            imgSize,
-                            url: `${ud.backend}/user/${encodeURIComponent(ud.name)}/account`,
-                            newTab: true,
-                        }),
-                        panToHome,
-                        new ImportViewerLinks(osmConnection),
-                        new SubtleButton(Svg.logout_svg(), Translations.t.general.logout, {
-                            imgSize,
-                        }).onClick(() => {
-                            osmConnection.LogOut()
-                        }),
-                    ])
-                })
-            ).SetClass("flex flex-col"),
-        ])
+                return new Combine([
+                    new Combine([img, description]).SetClass("flex border border-black rounded-md"),
+                    new LanguagePicker(
+                        layout.language,
+                        Translations.t.general.pickLanguage.Clone()
+                    ),
+                    licensePicker.SetClass("block my-4"),
+                    new SubtleButton(
+                        Svg.envelope_svg(),
+                        new Combine([
+                            t.gotoInbox,
+                            ud.unreadMessages == 0
+                                ? undefined
+                                : t.newMessages.SetClass("alert block"),
+                        ]),
+                        { imgSize, url: `${ud.backend}/messages/inbox`, newTab: true }
+                    ),
+                    new SubtleButton(Svg.gear_svg(), t.gotoSettings, {
+                        imgSize,
+                        url: `${ud.backend}/user/${encodeURIComponent(ud.name)}/account`,
+                        newTab: true,
+                    }),
+                    panToHome,
+                    new ImportViewerLinks(osmConnection),
+                    new SubtleButton(Svg.logout_svg(), Translations.t.general.logout, {
+                        imgSize,
+                    }).onClick(() => {
+                        osmConnection.LogOut()
+                    }),
+                ])
+            })
+        )
+        this.SetClass("flex flex-col")
     }
 }
 

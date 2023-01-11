@@ -8,7 +8,6 @@ import Img from "../../UI/Base/Img"
 import { Utils } from "../../Utils"
 import { OsmObject } from "./OsmObject"
 import { Changes } from "./Changes"
-import ScriptUtils from "../../scripts/ScriptUtils"
 
 export default class UserDetails {
     public loggedIn = false

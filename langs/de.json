@@ -361,12 +361,6 @@
     },
     "image": {
         "addPicture": "Bild hinzufügen",
-        "ccb": "unter der 'CC-BY-Lizenz'",
-        "ccbExplanation": "Die CC-BY-Lizenz besagt, dass jeder Ihr Bild für jeden Zweck verwenden darf, aber Sie müssen als Urheber genannt werden",
-        "ccbs": "unter der 'CC-BY-SA-Lizenz'",
-        "ccbsExplanation": "Die CC-BY-SA-Lizenz bedeutet, dass jeder Ihr Bild für jeden Zweck verwenden darf, aber Sie müssen genannt werden, und Remixe des Bildes müssen unter derselben Lizenz veröffentlicht werden",
-        "cco": "als 'Public Domain'",
-        "ccoExplanation": "Das Hinzufügen eines gemeinfreien Bildes impliziert, dass jeder alles mit Ihrem Bild machen kann",
         "doDelete": "Bild entfernen",
         "dontDelete": "Abbrechen",
         "isDeleted": "Gelöscht",
@@ -391,8 +385,7 @@
         "uploadFailed": "Das Bild konnte nicht hochladen werden. Haben Sie eine aktive Internetverbindung und sind APIs von Dritten erlaubt? Der Brave Browser oder UMatrix blockieren diese eventuell.",
         "uploadMultipleDone": "{count} Bilder wurden hinzugefügt. Vielen Dank für die Hilfe!",
         "uploadingMultiple": "{count} Bilder hochladen…",
-        "uploadingPicture": "Bild wird hochgeladen…",
-        "willBePublished": "Ihr Bild wird veröffentlicht "
+        "uploadingPicture": "Bild wird hochgeladen…"
     },
     "importHelper": {
         "askMetadata": {

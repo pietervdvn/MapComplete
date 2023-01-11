@@ -142,10 +142,6 @@
     },
     "image": {
         "addPicture": "Dodaj zdjęcie",
-        "ccb": "na licencji CC-BY",
-        "ccbs": "na licencji CC-BY-SA",
-        "cco": "w domenie publicznej",
-        "ccoExplanation": "Dodanie zdjęcia do domeny publicznej oznacza, że każdy może zrobić z nim cokolwiek zechce",
         "doDelete": "Usuń ilustrację",
         "dontDelete": "Anuluj",
         "isDeleted": "Usunięte",
@@ -157,8 +153,7 @@
         "uploadDone": "Twoje zdjęcie zostało dodane. Dzięki za pomoc!",
         "uploadFailed": "Wysyłanie zdjęcia nie powiodło się. Czy masz połączenie z internetem i włączony dostęp zewnętrznych API? Przeglądarki Brave i UMatrix mogą je blokować.",
         "uploadingMultiple": "Wysyłanie {count} zdjęć…",
-        "uploadingPicture": "Wysyłanie zdjęcia…",
-        "willBePublished": "Twoje zdjęcie zostanie opublikowane "
+        "uploadingPicture": "Wysyłanie zdjęcia…"
     },
     "index": {
         "#": "Te teksty są wyświetlane nad przyciskami motywu, gdy nie jest załadowany żaden motyw",

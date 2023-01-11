@@ -791,6 +791,11 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -1092,11 +1097,6 @@ video {
   width: 2.75rem;
 }
 
-.w-min {
-  width: -webkit-min-content;
-  width: min-content;
-}
-
 .w-max {
   width: -webkit-max-content;
   width: max-content;
@@ -1104,6 +1104,11 @@ video {
 
 .w-96 {
   width: 24rem;
+}
+
+.w-min {
+  width: -webkit-min-content;
+  width: min-content;
 }
 
 .w-auto {

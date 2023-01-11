@@ -799,6 +799,13 @@
                                 "question": "Made with host {search}"
                             }
                         }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Changeset added at least one image"
+                            }
+                        }
                     }
                 },
                 "name": "Changeset centers",

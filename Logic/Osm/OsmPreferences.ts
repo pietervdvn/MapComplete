@@ -144,6 +144,14 @@ export class OsmPreferences {
             this.UploadPreference(key, v)
         })
 
+        this.preferences.addCallbackD((allPrefs) => {
+            const v = allPrefs[key]
+            if (v === undefined) {
+                return
+            }
+            pref.setData(v)
+        })
+
         this.preferenceSources.set(key, pref)
         return pref
     }
@@ -220,6 +228,7 @@ export class OsmPreferences {
         if (this.preferences.data[k] === v) {
             return
         }
+        const self = this
         console.debug("Updating preference", k, " to ", Utils.EllipsesAfter(v, 15))
 
         if (v === undefined || v === "") {
@@ -234,6 +243,8 @@ export class OsmPreferences {
                         console.warn("Could not remove preference", error)
                         return
                     }
+                    delete self.preferences.data[k]
+                    self.preferences.ping()
                     console.debug("Preference ", k, "removed!")
                 }
             )
@@ -252,6 +263,8 @@ export class OsmPreferences {
                     console.warn(`Could not set preference "${k}"'`, error)
                     return
                 }
+                self.preferences.data[k] = v
+                self.preferences.ping()
                 console.debug(`Preference ${k} written!`)
             }
         )

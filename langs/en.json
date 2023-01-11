@@ -365,12 +365,6 @@
     },
     "image": {
         "addPicture": "Add picture",
-        "ccb": "under the CC-BY-license",
-        "ccbExplanation": "The CC-BY license implies that anyone may use your picture for any purpose, but they have to attribute you",
-        "ccbs": "under the CC-BY-SA-license",
-        "ccbsExplanation": "The CC-BY-SA license implies that anyone may use your picture for any purpose, but they have to attribute you and remixes of the picture have to be republished under the same license",
-        "cco": "in the public domain",
-        "ccoExplanation": "Adding a picture in the public domain implies that anyone can do anything with your picture",
         "doDelete": "Remove image",
         "dontDelete": "Cancel",
         "isDeleted": "Deleted",
@@ -395,8 +389,7 @@
         "uploadFailed": "Could not upload your picture. Are you connected to the Internet, and allow third party API's? The Brave browser or the uMatrix plugin might block them.",
         "uploadMultipleDone": "{count} pictures have been added. Thanks for helping out!",
         "uploadingMultiple": "Uploading {count} pictures…",
-        "uploadingPicture": "Uploading your picture…",
-        "willBePublished": "Your picture will be published "
+        "uploadingPicture": "Uploading your picture…"
     },
     "importHelper": {
         "askMetadata": {

@@ -1,4 +1,4 @@
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import TagRenderingQuestion from "./TagRenderingQuestion"
 import Translations from "../i18n/Translations"
 import Combine from "../Base/Combine"
@@ -9,7 +9,9 @@ import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import { Unit } from "../../Models/Unit"
 import Lazy from "../Base/Lazy"
 import { FixedUiElement } from "../Base/FixedUiElement"
-import { EditButton } from "./SaveButton"
+import { EditButton, SaveButton } from "./SaveButton"
+import { TagsFilter } from "../../Logic/Tags/TagsFilter"
+import { TagUtils, UploadableTag } from "../../Logic/Tags/TagUtils"
 
 export default class EditableTagRendering extends Toggle {
     constructor(
@@ -20,6 +22,8 @@ export default class EditableTagRendering extends Toggle {
         options: {
             editMode?: UIEventSource<boolean>
             innerElementClasses?: string
+            /* Default will apply the tags to the relevant object, only use in special cases */
+            createSaveButton?: (src: Store<UploadableTag>) => BaseUIElement
         }
     ) {
         // The tagrendering is hidden if:
@@ -31,6 +35,7 @@ export default class EditableTagRendering extends Toggle {
                 (configuration?.condition?.matchesProperties(tags) ?? true)
         )
         const editMode = options.editMode ?? new UIEventSource<boolean>(false)
+
         super(
             new Lazy(() => {
                 let rendering = EditableTagRendering.CreateRendering(
@@ -38,10 +43,11 @@ export default class EditableTagRendering extends Toggle {
                     tags,
                     configuration,
                     units,
-                    editMode
+                    editMode,
+                    { saveButtonConstructor: options?.createSaveButton }
                 )
                 rendering.SetClass(options.innerElementClasses)
-                if (state.featureSwitchIsDebugging.data || state.featureSwitchIsTesting.data) {
+                if (state?.featureSwitchIsDebugging?.data || state?.featureSwitchIsTesting?.data) {
                     rendering = new Combine([
                         new FixedUiElement(configuration.id).SetClass("self-end subtle"),
                         rendering,
@@ -55,7 +61,6 @@ export default class EditableTagRendering extends Toggle {
         const self = this
         editMode.addCallback((editing) => {
             if (editing) {
-                console.log("Scrolling etr into view")
                 self.ScrollIntoView()
             }
         })
@@ -66,13 +71,16 @@ export default class EditableTagRendering extends Toggle {
         tags: UIEventSource<any>,
         configuration: TagRenderingConfig,
         units: Unit[],
-        editMode: UIEventSource<boolean>
+        editMode: UIEventSource<boolean>,
+        options?: {
+            saveButtonConstructor?: (src: Store<UploadableTag>) => BaseUIElement
+        }
     ): BaseUIElement {
         const answer: BaseUIElement = new TagRenderingAnswer(tags, configuration, state)
         answer.SetClass("w-full")
         let rendering = answer
 
-        if (configuration.question !== undefined && state?.featureSwitchUserbadge?.data) {
+        if (configuration.question !== undefined && (state?.featureSwitchUserbadge?.data ?? true)) {
             // We have a question and editing is enabled
 
             const question = new Lazy(
@@ -85,6 +93,7 @@ export default class EditableTagRendering extends Toggle {
                             .onClick(() => {
                                 editMode.setData(false)
                             }),
+                        saveButtonConstr: options?.saveButtonConstructor,
                         afterSave: () => {
                             editMode.setData(false)
                         },
@@ -93,7 +102,7 @@ export default class EditableTagRendering extends Toggle {
 
             const answerWithEditButton = new Combine([
                 answer,
-                new EditButton(state.osmConnection, () => {
+                new EditButton(state?.osmConnection, () => {
                     editMode.setData(true)
                     question.ScrollIntoView({
                         onlyIfPartiallyHidden: true,

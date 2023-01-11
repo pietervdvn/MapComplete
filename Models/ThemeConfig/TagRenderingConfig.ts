@@ -86,7 +86,7 @@ export default class TagRenderingConfig {
 
         let translationKey = context
         if (json["id"] !== undefined) {
-            const layerId = context.split(".")[0]
+            const layerId = (context ?? "").split(".")[0]
             if (json["source"]) {
                 let src = json["source"] + ":"
                 if (json["source"] === "shared-questions") {

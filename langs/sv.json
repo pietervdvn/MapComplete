@@ -66,9 +66,6 @@
     },
     "image": {
         "addPicture": "Lägg till bild",
-        "ccb": "under CC-BY-licensen",
-        "ccbs": "under CC-BY-SA-licensen",
-        "cco": "med fri användning (public domain)",
         "doDelete": "Ta bort bild",
         "dontDelete": "Avbryt",
         "isDeleted": "Borttagen",
@@ -80,8 +77,7 @@
         "uploadFailed": "Misslyckades med att ladda upp din bild. Är du säker på att du är uppkopplad och tredjeparts-API:er tillåts? Brave eller uMatrix kanske blockerar dem.",
         "uploadMultipleDone": "{count} bilder har lagts till. Tack för att du hjälper till!",
         "uploadingMultiple": "Laddar upp {count} bilder…",
-        "uploadingPicture": "Laddar upp din bild…",
-        "willBePublished": "Din bild kommer att publiceras: "
+        "uploadingPicture": "Laddar upp din bild…"
     },
     "importHelper": {
         "askMetadata": {},

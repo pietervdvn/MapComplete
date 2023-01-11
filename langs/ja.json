@@ -150,9 +150,6 @@
     },
     "image": {
         "addPicture": "写真の追加",
-        "ccb": "CC-BY-ライセンスで",
-        "ccbs": "CC-BY-SA-ライセンスで",
-        "cco": "パブリックドメインで",
         "doDelete": "イメージの削除",
         "dontDelete": "[キャンセル]",
         "isDeleted": "削除済み",
@@ -162,8 +159,7 @@
         "uploadDone": "<span class=\"thanks\">あなたの写真が追加されました。ご協力ありがとうございます!</span>",
         "uploadFailed": "写真をアップロードできませんでした。インターネット接続があり、外部のAPIが許可されていますか？Brave ブラウザやUMatrixは、これらをブロックするかもしれません。",
         "uploadingMultiple": "{count} 枚の写真をアップロードします…",
-        "uploadingPicture": "写真をアップロードします…",
-        "willBePublished": "写真は公開されます: "
+        "uploadingPicture": "写真をアップロードします…"
     },
     "importHelper": {
         "askMetadata": {},

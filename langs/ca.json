@@ -261,12 +261,6 @@
     },
     "image": {
         "addPicture": "Afegir foto",
-        "ccb": "sota la llicència CC-BY",
-        "ccbExplanation": "La llicència CC-BY implica que qualsevol persona pot utilitzar la teva imatge per a qualsevol propòsit, però t'ha d'atribuir",
-        "ccbs": "sota llicència CC-BY-SA",
-        "ccbsExplanation": "La llicència CC-BY-SA implica que qualsevol persona pot utilitzar la teva imatge per a qualsevol propòsit, però t'ha d'atribuir i les modificacions de la imatge s'han de tornar a publicar sota la mateixa llicència",
-        "cco": "en domini públic",
-        "ccoExplanation": "Afegir una imatge al domini públic implica que qualsevol pot fer qualsevol cosa amb la teva imatge",
         "doDelete": "Esborrar imatge",
         "dontDelete": "Cancel·lar",
         "isDeleted": "Esborrada",
@@ -280,8 +274,7 @@
         "uploadFailed": "No s'ha pogut pujar la imatge. Tens Internet i es permeten API de tercers? El navegador Brave o UMatrix podria bloquejar-les.",
         "uploadMultipleDone": "{count} imatges afegides. Gràcies per ajudar.",
         "uploadingMultiple": "Pujant {count} imatges…",
-        "uploadingPicture": "Pujant la teva imatge…",
-        "willBePublished": "La teva foto serà publicada: "
+        "uploadingPicture": "Pujant la teva imatge…"
     },
     "importHelper": {
         "introduction": {

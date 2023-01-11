@@ -302,10 +302,6 @@
     },
     "image": {
         "addPicture": "Ajoutez une photo",
-        "ccb": "sous la license CC-BY",
-        "ccbExplanation": "La licence CC-BY implique que quiconque peut utiliser votre photo à n'importe quelle fin, mais qu'il doit vous citer.",
-        "ccbs": "sous la license CC-BY-SA",
-        "cco": "dans le domaine public",
         "doDelete": "Supprimer l'image",
         "dontDelete": "Annuler",
         "isDeleted": "Supprimé",
@@ -329,8 +325,7 @@
         "uploadFailed": "L'ajout de la photo a échoué. Avez-vous accès à Internet ? Les API tierces sont-elles autorisées ? Le navigateur Brave ou UMatrix peuvent les bloquer.",
         "uploadMultipleDone": "{count} images ont été ajoutées. Merci de votre contribution !",
         "uploadingMultiple": "Mise en ligne de {count} photos…",
-        "uploadingPicture": "Mise en ligne de votre photo…",
-        "willBePublished": "Votre photo va être publiée : "
+        "uploadingPicture": "Mise en ligne de votre photo…"
     },
     "importHelper": {
         "askMetadata": {

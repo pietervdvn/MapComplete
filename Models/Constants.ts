@@ -109,6 +109,7 @@ export default class Constants {
     static zoomToLocationTimeout = 60
     static countryCoderEndpoint: string =
         "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country"
+    public static readonly OsmPreferenceKeyPicturesLicense = "pictures-license"
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {

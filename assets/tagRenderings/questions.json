@@ -1493,6 +1493,39 @@
       }
     ]
   },
+  "picture-license": {
+    "description": "This question is not meant to be placed on an OpenStreetMap-element; however it is used in the user information panel to ask which license the user wants",
+    "question": {
+      "en": "Under what license do you want to publish your pictures?"
+    },
+    "mappings": [
+      {
+        "if": "mapcomplete-pictures-license=",
+        "then": {
+          "en": "No license has been chosen yet"
+        },
+        "hideInAnswer": true
+      },
+      {
+        "if": "mapcomplete-pictures-license=CC0",
+        "then": {
+          "en": "Pictures you take will be licensed with CC0 and added to the public domain. This means that everyone can use your pictures for any purpose."
+        }
+      },
+      {
+        "if": "mapcomplete-pictures-license=CC-BY 4.0",
+        "then": {
+          "en": "Pictures you take will be licensed with CC-BY 4.0 which requires everyone using your picture that they have to attribute you"
+        }
+      },
+      {
+        "if": "mapcomplete-pictures-license=CC-BY-SA 4.0",
+        "then": {
+          "en": "Pictures you take will be licensed with CC-BY-SA 4.0 which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license."
+        }
+      }
+    ]
+  },
   "induction-loop": {
     "description": "An accessibility feature: induction loops are for hard-hearing persons which have an FM-receiver.",
     "question": {

@@ -48,7 +48,7 @@ export default class TagRenderingQuestion extends Combine {
             afterSave?: () => void
             cancelButton?: BaseUIElement
             saveButtonConstr?: (src: Store<TagsFilter>) => BaseUIElement
-            bottomText?: (src: Store<TagsFilter>) => BaseUIElement
+            bottomText?: (src: Store<UploadableTag>) => BaseUIElement
         }
     ) {
         const applicableMappingsSrc = Stores.ListStabilized(
@@ -100,28 +100,28 @@ export default class TagRenderingQuestion extends Combine {
             })
         )
 
-        const save = () => {
-            const selection = TagUtils.FlattenMultiAnswer(
-                TagUtils.FlattenAnd(inputElement.GetValue().data, tags.data)
-            )
-            if (selection) {
-                ;(state?.changes)
-                    .applyAction(
-                        new ChangeTagAction(tags.data.id, selection, tags.data, {
-                            theme: state?.layoutToUse?.id ?? "unkown",
-                            changeType: "answer",
+        if (options.saveButtonConstr === undefined) {
+            const save = () => {
+                const selection = TagUtils.FlattenMultiAnswer(
+                    TagUtils.FlattenAnd(inputElement.GetValue().data, tags.data)
+                )
+                if (selection) {
+                    ;(state?.changes)
+                        .applyAction(
+                            new ChangeTagAction(tags.data.id, selection, tags.data, {
+                                theme: state?.layoutToUse?.id ?? "unkown",
+                                changeType: "answer",
+                            })
+                        )
+                        .then((_) => {
+                            console.log("Tagchanges applied")
                         })
-                    )
-                    .then((_) => {
-                        console.log("Tagchanges applied")
-                    })
-                if (options.afterSave) {
-                    options.afterSave()
+                    if (options.afterSave) {
+                        options.afterSave()
+                    }
                 }
             }
-        }
 
-        if (options.saveButtonConstr === undefined) {
             options.saveButtonConstr = (v) => new SaveButton(v, state?.osmConnection).onClick(save)
         }
 

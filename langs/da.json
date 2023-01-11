@@ -275,12 +275,6 @@
     },
     "image": {
         "addPicture": "Tilføj Billede",
-        "ccb": "under CC-BY-licensen",
-        "ccbExplanation": "The CC-BY licensen siger, at alle kan bruge dit billede til ethvert formål, men at de skal kreditere dig",
-        "ccbs": "under CC-BY-SA-licensen",
-        "ccbsExplanation": "CC-BY-SA licensen siger, at alle kan bruge dit billede til ethvert formål, men at de skal kreditere dig og at bearbejdelser af billedet skal offentliggøres under samme licens",
-        "cco": "i offentligt domæne",
-        "ccoExplanation": "At tilføje et billede til det offentlig domæne betyder, at alle kan gøre hvad som helst med dit billede",
         "doDelete": "Fjern billede",
         "dontDelete": "Afbryd",
         "isDeleted": "Slettet",
@@ -305,8 +299,7 @@
         "uploadFailed": "Kunne ikke uploade dit billede. Er du forbundet til Internettet og tillader du tredieparts API'er. Brave browseren eller uMatrix plugin'et kunne blokerer dem.",
         "uploadMultipleDone": "{count} billeder tilføjet. Tak for at hjælpe til!",
         "uploadingMultiple": "Uploader {count} billeder…",
-        "uploadingPicture": "Uploading dit billede…",
-        "willBePublished": "Dit billede vil blive offentliggjort "
+        "uploadingPicture": "Uploading dit billede…"
     },
     "importHelper": {
         "askMetadata": {

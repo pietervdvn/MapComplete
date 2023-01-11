@@ -67,8 +67,6 @@
     },
     "image": {
         "addPicture": "Lisää kuva",
-        "ccb": "CC-BY-lisenssillä",
-        "ccbs": "CC-BY-SA-lisenssillä",
         "doDelete": "Poista kuva",
         "dontDelete": "Peruuta",
         "isDeleted": "Poistettu",

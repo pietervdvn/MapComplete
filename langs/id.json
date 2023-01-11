@@ -147,17 +147,13 @@
     },
     "image": {
         "addPicture": "Tambahkan foto",
-        "ccb": "di bawah lisensi CC-BY",
-        "ccbs": "di bawah lisensi CC-BY-SA",
-        "cco": "di domain publik",
         "doDelete": "Buang gambar",
         "dontDelete": "Batal",
         "isDeleted": "Dihapus",
         "nearbyPictures": {},
         "pleaseLogin": "Silakan masuk untuk menambah gambar",
         "uploadingMultiple": "Mengunggah {count} gambar…",
-        "uploadingPicture": "Mengunggah gambar Anda…",
-        "willBePublished": "Gambarmu akan dipublikasikan "
+        "uploadingPicture": "Mengunggah gambar Anda…"
     },
     "importHelper": {
         "askMetadata": {},

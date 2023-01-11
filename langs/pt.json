@@ -276,12 +276,6 @@
     },
     "image": {
         "addPicture": "Adicionar imagem",
-        "ccb": "sob a licença CC-BY",
-        "ccbExplanation": "A licença CC-BY implica que qualquer pessoa pode usar sua fotografia para qualquer finalidade, mas têm de atribuir a autoria a si",
-        "ccbs": "sob a licença CC-BY-SA",
-        "ccbsExplanation": "A licença CC-BY-SA implica que qualquer pessoa pode usar sua imagem para qualquer finalidade, mas têm de atribuir a autoria a si e remixes da imagem devem ser republicados sob a mesma licença",
-        "cco": "no domínio público",
-        "ccoExplanation": "Adicionar uma fotografia no domínio público implica que qualquer pessoa pode fazer qualquer coisa com a sua fotografia",
         "doDelete": "Remover imagem",
         "dontDelete": "Cancelar",
         "isDeleted": "Eliminada",
@@ -306,8 +300,7 @@
         "uploadFailed": "Não foi possível enviar a sua imagem. Está conectado à Internet e permite APIs de terceiros? O navegador \"Brave\" ou o plugin \"uMatrix\" podem estar a bloqueá-los.",
         "uploadMultipleDone": "Foram adicionadas {count} fotografias. Obrigado por ajudar!",
         "uploadingMultiple": "A enviar {count} imagens…",
-        "uploadingPicture": "A enviar a sua imagem…",
-        "willBePublished": "A sua imagem será publicada: "
+        "uploadingPicture": "A enviar a sua imagem…"
     },
     "importHelper": {
         "askMetadata": {
