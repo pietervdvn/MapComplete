@@ -16,7 +16,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { Changes } from "../../Logic/Osm/Changes"
 import Loading from "../Base/Loading"
-import {LoginToggle} from "../Popup/LoginButton";
+import { LoginToggle } from "../Popup/LoginButton"
 
 export class ImageUploadFlow extends Toggle {
     private static readonly uploadCountsPerId = new Map<string, UIEventSource<number>>()
