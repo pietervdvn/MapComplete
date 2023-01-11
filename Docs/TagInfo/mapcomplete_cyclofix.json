@@ -106,7 +106,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Bike cafe' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+      "description": "Layer 'Bike cafe' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
     },
     {
       "key": "phone",
@@ -194,7 +194,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Bike repair/shop' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+      "description": "Layer 'Bike repair/shop' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
     },
     {
       "key": "phone",
@@ -495,7 +495,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Bicycle rental' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+      "description": "Layer 'Bicycle rental' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
     },
     {
       "key": "email",
@@ -650,7 +650,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Bicycle library' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+      "description": "Layer 'Bicycle library' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
     },
     {
       "key": "phone",
@@ -1157,7 +1157,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Bike-related object' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
+      "description": "Layer 'Bike-related object' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')"
     },
     {
       "key": "email",
@@ -1240,12 +1240,12 @@
     },
     {
       "key": "fee",
-      "description": "Layer 'Bike cleaning service' shows fee=no with a fixed text, namely 'Free to use cleaning service' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') (This is only shown if amenity=bike_wash|amenity=bicycle_wash)",
+      "description": "Layer 'Bike cleaning service' shows fee=no with a fixed text, namely 'This cleaning service is free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') (This is only shown if amenity=bike_wash|amenity=bicycle_wash)",
       "value": "no"
     },
     {
       "key": "fee",
-      "description": "Layer 'Bike cleaning service' shows fee=yes with a fixed text, namely 'Free to use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') (This is only shown if amenity=bike_wash|amenity=bicycle_wash)",
+      "description": "Layer 'Bike cleaning service' shows fee=yes with a fixed text, namely 'This cleaning service is paid' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') (This is only shown if amenity=bike_wash|amenity=bicycle_wash)",
       "value": "yes"
     },
     {

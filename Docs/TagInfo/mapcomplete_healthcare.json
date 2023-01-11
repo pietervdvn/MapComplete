@@ -70,7 +70,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Doctors' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+      "description": "Layer 'Doctors' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
       "key": "healthcare:speciality",
@@ -156,7 +156,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Physiotherapist' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+      "description": "Layer 'Physiotherapist' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
       "key": "amenity",
@@ -205,7 +205,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Dentist' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+      "description": "Layer 'Dentist' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
       "key": "name",
@@ -242,7 +242,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Hospitals' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+      "description": "Layer 'Hospitals' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
       "key": "amenity",
@@ -295,7 +295,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Pharmacies' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
+      "description": "Layer 'Pharmacies' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
       "key": "wheelchair",
