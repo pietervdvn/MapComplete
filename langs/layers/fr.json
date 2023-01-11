@@ -773,9 +773,6 @@
                 "mappings": {
                     "0": {
                         "then": "Service de nettoyage gratuit"
-                    },
-                    "1": {
-                        "then": "Libre d'utilisation"
                     }
                 },
                 "question": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?",
@@ -3926,6 +3923,9 @@
             "render": "School <i>{name}</i>"
         }
     },
+    "selected_element": {
+        "description": "Met en surbrillance l'élément actuellement sélectioné. Surcharger cette couche pour avoir d'autres couleurs."
+    },
     "shops": {
         "deletion": {
             "extraDeleteReasons": {
@@ -4780,6 +4780,14 @@
             }
         }
     },
+    "waste_basket": {
+        "description": "c'est une poubelle publique dans laquelle vous pouvez jeter vos mégots.",
+        "presets": {
+            "0": {
+                "title": "un poubelle"
+            }
+        }
+    },
     "windturbine": {
         "name": "Éolienne",
         "presets": {
@@ -4842,16 +4850,5 @@
                 }
             }
         }
-    },
-    "waste_basket": {
-        "presets": {
-            "0": {
-                "title": "un poubelle"
-            }
-        },
-        "description": "c'est une poubelle publique dans laquelle vous pouvez jeter vos mégots."
-    },
-    "selected_element": {
-        "description": "Met en surbrillance l'élément actuellement sélectioné. Surcharger cette couche pour avoir d'autres couleurs."
     }
 }

@@ -3,7 +3,8 @@
   "description": {
     "en": "Highlights the currently selected element. Override this layer to have different colors",
     "nl": "Toont het geselecteerde element",
-    "de": "Hebt das aktuell ausgewählte Element hervor. Überschreiben Sie diese Ebene, um unterschiedliche Farben zu erhalten"
+    "de": "Hebt das aktuell ausgewählte Element hervor. Überschreiben Sie diese Ebene, um unterschiedliche Farben zu erhalten",
+    "fr": "Met en surbrillance l'élément actuellement sélectioné. Surcharger cette couche pour avoir d'autres couleurs."
   },
   "source": {
     "osmTags": "selected=yes",

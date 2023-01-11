@@ -38,7 +38,8 @@
     "hu": "Ez egy nyilvános szemétkosár vagy kuka, ahová kidobhatod a szemetedet.",
     "it": "Questo è un cestino dei rifiuti pubblico, un bidone della spazzatura, dove puoi buttare via la tua spazzatura",
     "es": "Esta es una papelera pública, donde puedes tirar tu basura.",
-    "da": "Dette er en offentlig affaldskurv, en skraldespand, hvor du kan smide dit affald."
+    "da": "Dette er en offentlig affaldskurv, en skraldespand, hvor du kan smide dit affald.",
+    "fr": "c'est une poubelle publique dans laquelle vous pouvez jeter vos mégots."
   },
   "tagRenderings": [
     "images",
@@ -213,7 +214,8 @@
         "it": "un cestino dei rifiuti",
         "id": "sebuah keranjang sampah",
         "da": "en affaldskurv",
-        "ca": "una paperera"
+        "ca": "una paperera",
+        "fr": "un poubelle"
       },
       "presiceInput": {
         "preferredBackground": "photo"

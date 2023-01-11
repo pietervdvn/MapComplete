@@ -160,7 +160,8 @@
         "es": "¿Cuánto cuesta utilizar el servicio de limpieza?",
         "fr": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?",
         "da": "Hvor meget koster det at bruge rengøringsservicen?",
-        "cs": "Kolik stojí využívání služby mytí?"
+        "cs": "Kolik stojí využívání služby mytí?",
+        "ca": "Molt costa utilitzar aquest servei de neteja?"
       },
       "render": {
         "en": "Using the cleaning service costs {charge}",
@@ -193,7 +194,8 @@
             "es": "Servicio de limpieza gratis",
             "fr": "Service de nettoyage gratuit",
             "da": "Gratis at bruge rengøringsservice",
-            "cs": "Bezplatné využívání mycích služeb"
+            "cs": "Bezplatné využívání mycích služeb",
+            "ca": "Aquest servei de neteja és gratuït"
           },
           "addExtraTags": [
             "charge="
@@ -203,13 +205,9 @@
           "if": "fee=yes",
           "then": {
             "en": "This cleaning service is paid",
-            "de": "Kostenlose Nutzung",
             "nl": "Dit fietsschoonmaakpunt is betalend",
-            "es": "Gratuito",
-            "fr": "Libre d'utilisation",
-            "da": "Gratis at bruge",
-            "cs": "Bezplatné používání",
-            "ca": ""
+            "es": "Este servicio de limpieza es de pago",
+            "ca": "Aquest servei de neteja és de pagament"
           }
         }
       ],

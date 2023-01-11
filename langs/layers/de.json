@@ -833,9 +833,6 @@
                 "mappings": {
                     "0": {
                         "then": "Kostenloser Reinigungsservice"
-                    },
-                    "1": {
-                        "then": "Kostenlose Nutzung"
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",

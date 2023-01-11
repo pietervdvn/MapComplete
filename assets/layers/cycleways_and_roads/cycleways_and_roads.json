@@ -356,7 +356,7 @@
             "nl": "Dit is een fietsstraat, en dus een 30km/h zone",
             "de": "Dies ist eine Fahrradstraße in einer 30km/h Zone.",
             "es": "Esta es una ciclocalle, y una zona 30km/h.",
-            "fr": "Ceci est une route cyclable, et une zone à 30 km/h"
+            "fr": "Ceci est une rue cyclable, et une zone à 30 km/h"
           },
           "addExtraTags": [
             "overtaking:motor_vehicle=no",
@@ -382,7 +382,7 @@
             "nl": "Dit is geen fietsstraat",
             "de": "Dies ist keine Fahrradstraße.",
             "es": "Esta no es una ciclocalle.",
-            "fr": "Ceci n'est pas une route cyclable"
+            "fr": "Ceci n'est pas une rue cyclable"
           },
           "addExtraTags": [
             "overtaking:motor_vehicle="
@@ -655,7 +655,7 @@
             "en": "Usable for thin rollers: rollerblade, skateboard",
             "nl": "Geschikt voor fijne rollers: rollerblade, skateboard",
             "de": "Geeignet für dünne Rollen: Rollerblades, Skateboard",
-            "fr": "Utilisable pour les patins: patins à roulettes, skateboard"
+            "fr": "Utilisable pour les patins : patins à roulettes, skateboard"
           }
         },
         {
@@ -664,7 +664,7 @@
             "en": "Usable for thin wheels: racing bike",
             "nl": "Geschikt voor fijne wielen: racefiets",
             "de": "Geeignet für dünne Reifen: Rennrad",
-            "fr": "Utilisable pour les roues fines: vélo de course"
+            "fr": "Utilisable pour les roues fines : vélo de course"
           }
         },
         {
@@ -908,7 +908,7 @@
             "de": "Geeignet für dünne Rollen: Rollerblades, Skateboard",
             "id": "Dapat digunakan untuk roller tipis: rollerblade, skateboard",
             "nl": "Bruikbaar voor kleine, harde wielen: rollerblade, skateboard",
-            "fr": "Utilisable pour les patins: patins à roulettes, skateboard"
+            "fr": "Utilisable pour les patins : patins à roulettes, skateboard"
           }
         },
         {

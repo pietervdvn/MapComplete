@@ -640,9 +640,6 @@
                 "mappings": {
                     "0": {
                         "then": "Bezplatné využívání mycích služeb"
-                    },
-                    "1": {
-                        "then": "Bezplatné používání"
                     }
                 },
                 "question": "Kolik stojí využívání služby mytí?",

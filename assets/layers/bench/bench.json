@@ -228,7 +228,7 @@
           "then": {
             "en": "The seating is made from wood",
             "de": "Die Sitzfläche ist aus Holz",
-            "fr": "Matériau : bois",
+            "fr": "Matériau du siège : bois",
             "nl": "Gemaakt uit hout",
             "es": "El asiento está hecho de madera",
             "hu": "Ülőfelület: fa",
@@ -252,7 +252,7 @@
           "then": {
             "en": "The seating is made from metal",
             "de": "Die Sitzfläche ist aus Metall",
-            "fr": "Matériau : métal",
+            "fr": "Matériau du siège : métal",
             "nl": "Gemaakt uit metaal",
             "es": "El asiento está hecho de metal",
             "hu": "Ülőfelület: fém",
@@ -299,7 +299,7 @@
           "then": {
             "en": "The seating is made from concrete",
             "de": "Die Sitzfläche ist aus Beton",
-            "fr": "Matériau : béton",
+            "fr": "Matériau du siège : béton",
             "nl": "Het zitgedeelte is gemaakt uit beton",
             "es": "El asiento está hecho de hormigón",
             "hu": "Ülőfelület: beton",
@@ -347,7 +347,7 @@
           "then": {
             "en": "The seating is made from steel",
             "de": "Die Sitzfläche ist aus Stahl",
-            "fr": "Matériau : acier",
+            "fr": "Matériau  du siège : acier",
             "nl": "Het zitgedeelte is gemaakt uit staal",
             "es": "El asiento está hecho de acero",
             "hu": "Ülőfelület: acél",
