@@ -141,6 +141,7 @@
             "translatedBy": "MapComplete has been translated by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>"
         },
         "back": "Back",
+        "backToIndex": "Go back to the overview with all thematic maps",
         "backToMapcomplete": "Back to the theme overview",
         "backgroundMap": "Background map",
         "cancel": "Cancel",
@@ -334,8 +335,6 @@
         "welcomeBack": "Welcome back!",
         "welcomeExplanation": {
             "addNew": "Tap the map to add a new POI.",
-            "browseMoreMaps": "Discover more maps",
-            "browseOtherThemesIntro": "Various thematic maps exist on MapComplete",
             "general": "On this map, you can see, edit and add <i>points of interest</i>. Zoom around to see the POI, tap one to see or edit the information. All data is sourced from and saved to OpenStreetMap, which can be freely reused."
         },
         "wikipedia": {

@@ -83,20 +83,6 @@ export default class ThemeIntroductionPanel extends Combine {
             layout.descriptionTail?.Clone().SetClass("block mt-4"),
 
             languagePicker?.SetClass("block mt-4 pb-8 border-b-2 border-dotted border-gray-400"),
-
-            Toggle.If(state.featureSwitchMoreQuests, () =>
-                new Combine([
-                    t.welcomeExplanation.browseOtherThemesIntro,
-                    new SubtleButton(
-                        Svg.add_ui().SetClass("h-6"),
-                        t.welcomeExplanation.browseMoreMaps
-                    )
-                        .onClick(() =>
-                            currentTab.setData(FullWelcomePaneWithTabs.MoreThemesTabIndex)
-                        )
-                        .SetClass("h-12"),
-                ]).SetClass("flex flex-col mt-6")
-            ),
             new ActionButtons(state),
 
             ...layout.CustomCodeSnippets(),

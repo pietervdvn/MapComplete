@@ -253,8 +253,6 @@
         "welcomeBack": "Hai effettuato l’accesso. Bentornato/a!",
         "welcomeExplanation": {
             "addNew": "Tocca la mappa per aggiungere un nuovo punto di interesse.",
-            "browseMoreMaps": "Scopri ulteriori mappe",
-            "browseOtherThemesIntro": "In MapComplete esistono diverse mappe tematiche",
             "general": "Su questa mappa puoi vedere, modificare ed aggiungere <i>punti di interesse</i>. Esplora per trovare il punto di interesse, toccane uno per vedere o modificarne le informazioni. Tutti i dati sono raccolti e salvati su OpenStreetMap, e potranno essere riutilizzati liberamente."
         },
         "wikipedia": {

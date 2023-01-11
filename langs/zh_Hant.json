@@ -259,8 +259,6 @@
         "welcomeBack": "你已經登入了，歡迎回來！",
         "welcomeExplanation": {
             "addNew": "點一下地圖來新增新興趣點。",
-            "browseMoreMaps": "探索更多地圖",
-            "browseOtherThemesIntro": "MapComplete 上有相當多樣的主題地圖",
             "general": "在這份地圖，你可以檢視、編輯與新增<i>興趣點</i>。在附近放大來檢視興趣點，點一個來檢視或是編輯資訊。所有資料來源以及儲存到開放街圖，能夠自由被再利用。"
         },
         "wikipedia": {

@@ -844,6 +844,10 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -2499,22 +2503,6 @@ input {
 
 .layer-toggle {
   /* The checkbox that toggles a single layer */
-}
-
-.layer-filters {
-  /* If needed, the panel which contains the extra filters for a layer */
-  margin-bottom: 1rem;
-  border-bottom: 2px solid var(--foreground-color);
-}
-
-.filter-panel {
-  /* The panel for a single layer, containing both the toggle and the filters (if any) */
-  border-bottom: 2px solid lightgrey;
-  margin-bottom: 0.5rem;
-}
-
-.first-filter-panel {
-  /* Additional class on the first layer filter */
 }
 
 .mapping-icon-small-height {

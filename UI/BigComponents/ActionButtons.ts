@@ -1,6 +1,6 @@
 import Combine from "../Base/Combine"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import { Store } from "../../Logic/UIEventSource"
 import { BBox } from "../../Logic/BBox"
 import Loc from "../../Models/Loc"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
@@ -11,6 +11,28 @@ import { Utils } from "../../Utils"
 import { MapillaryLink } from "./MapillaryLink"
 import TranslatorsPanel from "./TranslatorsPanel"
 import { OpenIdEditor, OpenJosm } from "./CopyrightPanel"
+import Toggle from "../Input/Toggle"
+
+export class BackToThemeOverview extends Toggle {
+    constructor(
+        state: {
+            readonly featureSwitchMoreQuests: Store<boolean>
+        },
+        options: {
+            imgSize: string
+        }
+    ) {
+        const t = Translations.t.general
+        const button = new SubtleButton(Svg.add_ui(), t.backToIndex, options).onClick(() => {
+            const path = window.location.href.split("/")
+            path.pop()
+            path.push("index.html")
+            window.location.href = path.join("/")
+        })
+
+        super(button, undefined, state.featureSwitchMoreQuests)
+    }
+}
 
 export class ActionButtons extends Combine {
     constructor(state: {
@@ -19,12 +41,15 @@ export class ActionButtons extends Combine {
         readonly locationControl: Store<Loc>
         readonly osmConnection: OsmConnection
         readonly isTranslator: Store<boolean>
+        readonly featureSwitchMoreQuests: Store<boolean>
     }) {
         const imgSize = "h-6 w-6"
         const iconStyle = "height: 1.5rem; width: 1.5rem"
         const t = Translations.t.general.attribution
 
         super([
+            new BackToThemeOverview(state, { imgSize }),
+
             new SubtleButton(Svg.liberapay_ui(), t.donate, {
                 url: "https://liberapay.com/pietervdvn/",
                 newTab: true,

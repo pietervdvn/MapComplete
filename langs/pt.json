@@ -253,8 +253,6 @@
         "welcomeBack": "Iniciou a sessão, bem-vindo de volta!",
         "welcomeExplanation": {
             "addNew": "Toque no mapa para adicionar um novo POI.",
-            "browseMoreMaps": "Descobrir mais mapas",
-            "browseOtherThemesIntro": "Existem vários mapas temáticos no MapComplete",
             "general": "Neste mapa, pode ver, editar e adicionar <i>pontos de interesse</i>. Aproxime a visualização para ver o POI, toque num para ver ou editar a informação. Todos os dados são obtidos e guardados no OpenStreetMap, que pode ser livremente reutilizado."
         },
         "wikipedia": {

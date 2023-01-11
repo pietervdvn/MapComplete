@@ -277,8 +277,6 @@
         "welcomeBack": "Vous êtes connecté. Bienvenue !",
         "welcomeExplanation": {
             "addNew": "Cliquez sur la carte pour ajouter un nouveau POI.",
-            "browseMoreMaps": "Découvrez d’autres cartes",
-            "browseOtherThemesIntro": "De nombreuses cartes thématiques existent sur MapComplete",
             "general": "Cette carte permet de visualiser et ajouter des <i>points d’intérêt</i>. Zoomez sur un POI et cliquez dessus pour en voir les détails ou les modifier. Les données proviennent et sont transmises avec OpenStreetMap, qui peut être librement réutilisé."
         },
         "wikipedia": {

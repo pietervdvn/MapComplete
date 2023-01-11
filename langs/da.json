@@ -252,8 +252,6 @@
         "welcomeBack": "Du er logget ind, velkommen tilbage!",
         "welcomeExplanation": {
             "addNew": "Klik på kortet for at tilføje et nyt POI.",
-            "browseMoreMaps": "Se flere kort",
-            "browseOtherThemesIntro": "Forskellige tematiske kort findes på MapComplete",
             "general": "På dette kort kan du se, redigere og tilføje <i> interessepunkter</i>. Zoom rundt for at se POI'et, tryk på et for at se eller redigere oplysningerne. Alle data er hentet fra og gemt i OpenStreetMap, som frit kan genbruges."
         },
         "wikipedia": {
