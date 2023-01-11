@@ -451,8 +451,6 @@ export default class SpecialVisualizations {
                     const ti = Translations.t.image
                     const uploadPanel = new Combine([
                         fileSelector,
-                        new Combine([ti.willBePublished, ti.cco]),
-                        ti.ccoExplanation.SetClass("subtle text-sm"),
                         ti.respectPrivacy.SetClass("text-sm"),
                     ]).SetClass("flex flex-col")
                     return new LoginToggle(
