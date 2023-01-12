@@ -699,7 +699,8 @@
                 }
             }
         },
-        "title": "Il·luminació als carrers"
+        "title": "Il·luminació als carrers",
+        "description": "En aquest mapa pots trobar tot el relacionat amb l'enllumenat públic"
     },
     "surveillance": {
         "title": "Vigilància sota vigilància"
