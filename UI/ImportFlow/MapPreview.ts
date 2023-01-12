@@ -25,6 +25,9 @@ import Title from "../Base/Title"
 import CheckBoxes from "../Input/Checkboxes"
 import { AllTagsPanel } from "../AllTagsPanel"
 import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch"
+import { Feature, Point } from "geojson"
+import DivContainer from "../Base/DivContainer"
+import ShowDataLayer from "../ShowDataLayer/ShowDataLayer"
 
 class PreviewPanel extends ScrollableFullScreen {
     constructor(tags: UIEventSource<any>) {
@@ -41,15 +44,12 @@ class PreviewPanel extends ScrollableFullScreen {
  */
 export class MapPreview
     extends Combine
-    implements FlowStep<{ bbox: BBox; layer: LayerConfig; features: any[] }>
+    implements FlowStep<{ bbox: BBox; layer: LayerConfig; features: Feature<Point>[] }>
 {
     public readonly IsValid: Store<boolean>
     public readonly Value: Store<{ bbox: BBox; layer: LayerConfig; features: any[] }>
 
-    constructor(
-        state: UserRelatedState,
-        geojson: { features: { properties: any; geometry: { coordinates: [number, number] } }[] }
-    ) {
+    constructor(state: UserRelatedState, geojson: { features: Feature[] }) {
         const t = Translations.t.importHelper.mapPreview
 
         const propertyKeys = new Set<string>()
@@ -90,22 +90,23 @@ export class MapPreview
             return copy
         })
 
-        const matching: Store<{ properties: any; geometry: { coordinates: [number, number] } }[]> =
-            layerPicker.GetValue().map((layer: LayerConfig) => {
-                if (layer === undefined) {
-                    return []
-                }
-                const matching: { properties: any; geometry: { coordinates: [number, number] } }[] =
-                    []
+        // Create a store which has only features matching the selected layer
+        const matching: Store<Feature[]> = layerPicker.GetValue().map((layer: LayerConfig) => {
+            if (layer === undefined) {
+                console.log("No matching layer found")
+                return []
+            }
+            const matching: Feature[] = []
 
-                for (const feature of withId) {
-                    if (layer.source.osmTags.matchesProperties(feature.properties)) {
-                        matching.push(feature)
-                    }
+            for (const feature of withId) {
+                if (layer.source.osmTags.matchesProperties(feature.properties)) {
+                    matching.push(feature)
                 }
+            }
+            console.log("Matching features: ", matching)
 
-                return matching
-            })
+            return matching
+        })
         const background = new UIEventSource<BaseLayer>(AvailableBaseLayers.osmCarto)
         const location = new UIEventSource<Loc>({ lat: 0, lon: 0, zoom: 1 })
         const currentBounds = new UIEventSource<BBox>(undefined)
@@ -130,25 +131,22 @@ export class MapPreview
         )
         map.SetClass("w-full").SetStyle("height: 500px")
 
-        new ShowDataMultiLayer({
-            layers: new UIEventSource<FilteredLayer[]>(
-                AllKnownLayouts.AllPublicLayers()
-                    .filter((l) => l.source.geojsonSource === undefined)
-                    .map((l) => ({
-                        layerDef: l,
-                        isDisplayed: new UIEventSource<boolean>(true),
-                        appliedFilters: new UIEventSource<Map<string, FilterState>>(undefined),
-                    }))
-            ),
-            zoomToFeatures: true,
-            features: StaticFeatureSource.fromDateless(
-                matching.map((features) => features.map((feature) => ({ feature })))
-            ),
-            leafletMap: map.leafletMap,
-            popup: (tag) => new PreviewPanel(tag).SetClass("font-lg"),
+        layerPicker.GetValue().addCallbackAndRunD((layerToShow) => {
+            new ShowDataLayer({
+                layerToShow,
+                zoomToFeatures: true,
+                features: StaticFeatureSource.fromDateless(
+                    matching.map((features) => features.map((feature) => ({ feature })))
+                ),
+                leafletMap: map.leafletMap,
+                popup: (tag) => new PreviewPanel(tag),
+            })
         })
-        var bbox = matching.map((feats) =>
-            BBox.bboxAroundAll(feats.map((f) => new BBox([f.geometry.coordinates])))
+
+        const bbox = matching.map((feats) =>
+            BBox.bboxAroundAll(
+                feats.map((f) => new BBox([(<Feature<Point>>f).geometry.coordinates]))
+            )
         )
 
         const mismatchIndicator = new VariableUiElement(
@@ -171,10 +169,11 @@ export class MapPreview
         super([
             new Title(t.title, 1),
             layerPicker,
-            new Toggle(t.autodetected.SetClass("thank"), undefined, autodetected),
+            new Toggle(t.autodetected.SetClass("thanks"), undefined, autodetected),
 
             mismatchIndicator,
             map,
+            new DivContainer("fullscreen"),
             layerControl,
             confirm,
         ])
@@ -182,10 +181,10 @@ export class MapPreview
         this.Value = bbox.map(
             (bbox) => ({
                 bbox,
-                features: geojson.features,
+                features: matching.data,
                 layer: layerPicker.GetValue().data,
             }),
-            [layerPicker.GetValue()]
+            [layerPicker.GetValue(), matching]
         )
 
         this.IsValid = matching.map(

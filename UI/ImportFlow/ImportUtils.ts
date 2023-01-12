@@ -1,10 +1,10 @@
 import { Store } from "../../Logic/UIEventSource"
 import { GeoOperations } from "../../Logic/GeoOperations"
-import { Feature, Geometry } from "@turf/turf"
+import { Feature, Point } from "geojson"
 
 export class ImportUtils {
     public static partitionFeaturesIfNearby(
-        toPartitionFeatureCollection: { features: Feature<Geometry>[] },
+        toPartitionFeatureCollection: { features: Feature[] },
         compareWith: Store<{ features: Feature[] }>,
         cutoffDistanceInMeters: Store<number>
     ): Store<{ hasNearby: Feature[]; noNearby: Feature[] }> {
@@ -25,7 +25,7 @@ export class ImportUtils {
                         (f) =>
                             maxDist >=
                             GeoOperations.distanceBetween(
-                                <any>toImportElement.geometry.coordinates,
+                                <any>(<Point>toImportElement.geometry).coordinates,
                                 GeoOperations.centerpointCoordinates(f)
                             )
                     )
