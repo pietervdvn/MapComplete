@@ -19,11 +19,9 @@ import EditableTagRendering from "../Popup/EditableTagRendering"
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import { SaveButton } from "../Popup/SaveButton"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
-import * as questions from "../../assets/tagRenderings/questions.json"
-import { TagRenderingConfigJson } from "../../Models/ThemeConfig/Json/TagRenderingConfigJson"
-import * as os from "os"
+import * as usersettings from "../../assets/generated/layers/usersettings.json"
 import { LoginToggle } from "../Popup/LoginButton"
-import { userInfo } from "os"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 
 export class ImportViewerLinks extends VariableUiElement {
     constructor(osmConnection: OsmConnection) {
@@ -41,6 +39,36 @@ export class ImportViewerLinks extends VariableUiElement {
                     }),
                 ])
             })
+        )
+    }
+}
+
+class SingleUserSettingsPanel extends EditableTagRendering {
+    constructor(config: TagRenderingConfig, osmConnection: OsmConnection) {
+        const editMode = new UIEventSource(false)
+        super(
+            osmConnection.preferencesHandler.preferences,
+            config,
+            [],
+            { osmConnection },
+            {
+                editMode,
+                createSaveButton: (store) =>
+                    new SaveButton(
+                        osmConnection.preferencesHandler.preferences,
+                        osmConnection
+                    ).onClick(() => {
+                        const prefs = osmConnection.preferencesHandler.preferences
+                        const selection = TagUtils.FlattenMultiAnswer(
+                            TagUtils.FlattenAnd(store.data, prefs.data)
+                        ).asChange(prefs.data)
+                        for (const kv of selection) {
+                            osmConnection.GetPreference(kv.k, "", "").setData(kv.v)
+                        }
+
+                        editMode.setData(false)
+                    }),
+            }
         )
     }
 }
@@ -78,7 +106,6 @@ class UserInformationMainPanel extends VariableUiElement {
                         .makeHtml(ud.description)
                         .replace(/&gt;/g, ">")
                         .replace(/&lt;/g, "<")
-                    console.log("Before:", ud.description, "after", htmlString)
                     description = new Combine([
                         new FixedUiElement(htmlString).SetClass("link-underline"),
                         editButton,
@@ -108,36 +135,10 @@ class UserInformationMainPanel extends VariableUiElement {
                     })
                 }
 
-                const editMode = new UIEventSource(false)
-                const licensePicker = new EditableTagRendering(
-                    osmConnection.preferencesHandler.preferences,
-                    new TagRenderingConfig(
-                        <TagRenderingConfigJson>{
-                            source: "shared-questions",
-                            ...questions["picture-license"],
-                        },
-                        "shared-questions"
-                    ),
-                    [],
-                    { osmConnection },
-                    {
-                        editMode,
-                        createSaveButton: (store) =>
-                            new SaveButton(
-                                osmConnection.preferencesHandler.preferences,
-                                osmConnection
-                            ).onClick(() => {
-                                const prefs = osmConnection.preferencesHandler.preferences
-                                const selection = TagUtils.FlattenMultiAnswer(
-                                    TagUtils.FlattenAnd(store.data, prefs.data)
-                                ).asChange(prefs.data)
-                                for (const kv of selection) {
-                                    osmConnection.GetPreference(kv.k, "", "").setData(kv.v)
-                                }
+                const usersettingsConfig = new LayerConfig(usersettings, "userinformationpanel")
 
-                                editMode.setData(false)
-                            }),
-                    }
+                const questions = usersettingsConfig.tagRenderings.map((c) =>
+                    new SingleUserSettingsPanel(c, osmConnection).SetClass("block my-4")
                 )
 
                 return new Combine([
@@ -146,7 +147,7 @@ class UserInformationMainPanel extends VariableUiElement {
                         layout.language,
                         Translations.t.general.pickLanguage.Clone()
                     ),
-                    licensePicker.SetClass("block my-4"),
+                    ...questions,
                     new SubtleButton(
                         Svg.envelope_svg(),
                         new Combine([

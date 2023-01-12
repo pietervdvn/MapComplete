@@ -9,9 +9,8 @@ import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import { Unit } from "../../Models/Unit"
 import Lazy from "../Base/Lazy"
 import { FixedUiElement } from "../Base/FixedUiElement"
-import { EditButton, SaveButton } from "./SaveButton"
-import { TagsFilter } from "../../Logic/Tags/TagsFilter"
-import { TagUtils, UploadableTag } from "../../Logic/Tags/TagUtils"
+import { EditButton } from "./SaveButton"
+import { UploadableTag } from "../../Logic/Tags/TagUtils"
 
 export default class EditableTagRendering extends Toggle {
     constructor(
