@@ -92,7 +92,8 @@
             "openMapillary": "Obrir Mapillary aquí",
             "openOsmcha": "Veure darreres edicions fetes amb {theme}",
             "themeBy": "Tema mantingut per {author}",
-            "translatedBy": "MapComplete ha estat traduït per {contributors} i <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} col·laboradors més</a>"
+            "translatedBy": "MapComplete ha estat traduït per {contributors} i <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} col·laboradors més</a>",
+            "mapillaryHelp": "<b>Mapillary</b> és un servei en línea que arreplega imatges a peu de carrer i les ofereix sota una llicència lliure. Els contribuïdors poden utilizar aquestes imatges per a millorar OpenStreetMap"
         },
         "back": "Tornar",
         "backToMapcomplete": "Tornar a l'explicació general de la petició",
@@ -242,7 +243,10 @@
         },
         "welcomeBack": "Has entrat, benvingut/da.",
         "welcomeExplanation": {
-            "addNew": "Toqueu el mapa per afegir un nou PDI."
+            "addNew": "Toqueu el mapa per afegir un nou PDI.",
+            "browseMoreMaps": "Descobreix més mapes",
+            "browseOtherThemesIntro": "Varios mapes temàtics existents a MapComplete",
+            "general": "A aquest mapa, podeu observar, editar i afegir <i>punt d'interés</i>. Feu zoom pel voltant per veure el PDI, toque una vegada per a veure o editar la informació. Totes les dades s'obtenen i es desen a OpenStreetMap, que es poden reutilitzar lliurement."
         },
         "wikipedia": {
             "createNewWikidata": "Crear un ítem de Wikidata",
@@ -257,7 +261,9 @@
             },
             "searchWikidata": "Cercar a Wikidata",
             "wikipediaboxTitle": "Viquipèdia"
-        }
+        },
+        "feelFreeToSkip": "Podeu afegir més informació a sota, però sentiu-vos lliures de <b>botar preguntes</b> que no conegueu la resposta.",
+        "newlyCreated": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món."
     },
     "image": {
         "addPicture": "Afegir foto",
@@ -605,5 +611,10 @@
         "wikidata": {
             "description": "Un identificador de Wikidata"
         }
+    },
+    "userinfo": {
+        "gotoInbox": "Obre la teva safata d'entrada",
+        "gotoSettings": "Aneu a la vostra configuració a OpenStreetMap.org",
+        "moveToHome": "Mou el mapa a la vostra ubicació de casa"
     }
 }
