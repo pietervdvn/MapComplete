@@ -1498,8 +1498,8 @@
                 "question": "What kind of cafe is this?"
             },
             "Name": {
-                "question": "What is the name of this pub?",
-                "render": "This pub is named {name}"
+                "question": "What is the name of this business?",
+                "render": "This business is named {name}"
             }
         },
         "title": {
@@ -4235,18 +4235,25 @@
             "1": {
                 "options": {
                     "0": {
-                        "question": "Has a vegetarian menu"
+                        "question": "Reservation not required"
                     }
                 }
             },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Has a vegan menu"
+                        "question": "Has a vegetarian menu"
                     }
                 }
             },
             "3": {
+                "options": {
+                    "0": {
+                        "question": "Has a vegan menu"
+                    }
+                }
+            },
+            "4": {
                 "options": {
                     "0": {
                         "question": "Has a halal menu"
@@ -4333,8 +4340,25 @@
                 "question": "What type of business is this?"
             },
             "Name": {
-                "question": "What is the name of this restaurant?",
-                "render": "The name of this restaurant is {name}"
+                "question": "What is the name of this business?",
+                "render": "The name of this business is {name}"
+            },
+            "Reservation": {
+                "mappings": {
+                    "0": {
+                        "then": "A reservation is required at this place"
+                    },
+                    "1": {
+                        "then": "A reservation is not required, but still recommended to make sure you get a table"
+                    },
+                    "2": {
+                        "then": "Reservation is possible at this place"
+                    },
+                    "3": {
+                        "then": "Reservation is not possible at this place"
+                    }
+                },
+                "question": "Is a reservation required for this place?"
             },
             "Takeaway": {
                 "mappings": {

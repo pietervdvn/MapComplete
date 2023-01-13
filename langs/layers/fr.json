@@ -2875,21 +2875,21 @@
         },
         "description": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
         "filter": {
-            "1": {
+            "2": {
                 "options": {
                     "0": {
                         "question": "A un menu végétarien"
                     }
                 }
             },
-            "2": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "A un menu végétalien"
                     }
                 }
             },
-            "3": {
+            "4": {
                 "options": {
                     "0": {
                         "question": "A un menu halal"

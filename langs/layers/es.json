@@ -2344,21 +2344,21 @@
         },
         "description": "Una capa que muestra restaurantes y facilidades de comida rápida",
         "filter": {
-            "1": {
+            "2": {
                 "options": {
                     "0": {
                         "question": "Tiene menú vegetariano"
                     }
                 }
             },
-            "2": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Tiene menú vegano"
                     }
                 }
             },
-            "3": {
+            "4": {
                 "options": {
                     "0": {
                         "question": "Tiene menú halah"
