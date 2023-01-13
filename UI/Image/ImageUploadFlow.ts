@@ -17,6 +17,8 @@ import { Changes } from "../../Logic/Osm/Changes"
 import Loading from "../Base/Loading"
 import { LoginToggle } from "../Popup/LoginButton"
 import Constants from "../../Models/Constants"
+import { DefaultGuiState } from "../DefaultGuiState"
+import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 
 export class ImageUploadFlow extends Toggle {
     private static readonly uploadCountsPerId = new Map<string, UIEventSource<number>>()
@@ -80,6 +82,10 @@ export class ImageUploadFlow extends Toggle {
         ]).SetClass(
             "p-2 border-4 border-detail rounded-full font-bold h-full align-middle w-full flex justify-center"
         )
+        const licenseStore = state?.osmConnection?.GetPreference(
+            Constants.OsmPreferenceKeyPicturesLicense,
+            "CC0"
+        )
 
         const fileSelector = new FileSelectorButton(label)
         fileSelector.GetValue().addCallback((filelist) => {
@@ -101,12 +107,7 @@ export class ImageUploadFlow extends Toggle {
                 }
             }
 
-            console.log("Received images from the user, starting upload")
-            const license =
-                state?.osmConnection?.GetPreference(
-                    Constants.OsmPreferenceKeyPicturesLicense,
-                    "CC0"
-                )?.data ?? "CC0"
+            const license = licenseStore?.data ?? "CC0"
 
             const tags = tagsSource.data
 
@@ -174,7 +175,21 @@ export class ImageUploadFlow extends Toggle {
             ),
 
             fileSelector,
-            Translations.t.image.respectPrivacy.Clone().SetStyle("font-size:small;"),
+            new Combine([
+                Translations.t.image.respectPrivacy,
+                new VariableUiElement(
+                    licenseStore.map((license) =>
+                        Translations.t.image.currentLicense.Subs({ license })
+                    )
+                )
+                    .onClick(() => {
+                        console.log("Opening the license settings... ")
+                        ScrollableFullScreen.collapse()
+                        DefaultGuiState.state.userInfoIsOpened.setData(true)
+                        DefaultGuiState.state.userInfoFocusedQuestion.setData("picture-license")
+                    })
+                    .SetClass("underline"),
+            ]).SetStyle("font-size:small;"),
         ]).SetClass("flex flex-col image-upload-flow mt-4 mb-8 text-center")
 
         super(

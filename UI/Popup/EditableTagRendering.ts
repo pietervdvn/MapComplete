@@ -21,6 +21,8 @@ export default class EditableTagRendering extends Toggle {
         options: {
             editMode?: UIEventSource<boolean>
             innerElementClasses?: string
+            /* Classes applied _only_ on the rendered element, not on the question*/
+            answerElementClasses?: string
             /* Default will apply the tags to the relevant object, only use in special cases */
             createSaveButton?: (src: Store<UploadableTag>) => BaseUIElement
         }
@@ -43,7 +45,10 @@ export default class EditableTagRendering extends Toggle {
                     configuration,
                     units,
                     editMode,
-                    { saveButtonConstructor: options?.createSaveButton }
+                    {
+                        saveButtonConstructor: options?.createSaveButton,
+                        answerElementClasses: options?.answerElementClasses,
+                    }
                 )
                 rendering.SetClass(options.innerElementClasses)
                 if (state?.featureSwitchIsDebugging?.data || state?.featureSwitchIsTesting?.data) {
@@ -73,6 +78,7 @@ export default class EditableTagRendering extends Toggle {
         editMode: UIEventSource<boolean>,
         options?: {
             saveButtonConstructor?: (src: Store<UploadableTag>) => BaseUIElement
+            answerElementClasses?: string
         }
     ): BaseUIElement {
         const answer: BaseUIElement = new TagRenderingAnswer(tags, configuration, state)
@@ -107,7 +113,7 @@ export default class EditableTagRendering extends Toggle {
                         onlyIfPartiallyHidden: true,
                     })
                 }),
-            ]).SetClass("flex justify-between w-full")
+            ]).SetClass("flex justify-between w-full " + (options?.answerElementClasses ?? ""))
             rendering = new Toggle(question, answerWithEditButton, editMode)
         }
         return rendering

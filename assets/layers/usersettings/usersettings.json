@@ -18,29 +18,45 @@
         {
           "if": "mapcomplete-pictures-license=",
           "then": {
-            "en": "No license has been chosen yet"
+            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>"
           },
           "hideInAnswer": true
         },
         {
           "if": "mapcomplete-pictures-license=CC0",
           "then": {
-            "en": "Pictures you take will be licensed with CC0 and added to the public domain. This means that everyone can use your pictures for any purpose."
+            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose."
           }
         },
         {
           "if": "mapcomplete-pictures-license=CC-BY 4.0",
           "then": {
-            "en": "Pictures you take will be licensed with CC-BY 4.0 which requires everyone using your picture that they have to attribute you"
+            "en": "Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you"
           }
         },
         {
           "if": "mapcomplete-pictures-license=CC-BY-SA 4.0",
           "then": {
-            "en": "Pictures you take will be licensed with CC-BY-SA 4.0 which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license."
+            "en": "Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license."
           }
         }
       ]
+    },
+    {
+      "id": "translation-thanks",
+      "condition": "_is_translator=true",
+      "mappings": [{
+        "if": "_is_translator=true",
+        "then": {
+          "en": "You have contributed to translating MapComplete! That's awesome!"
+        },
+        "icon": "party"
+      }]
+    },
+    {
+      "id": "debug",
+      "condition": "_name=Pieter Vander Vennet",
+      "render": "{all_tags()}"
     }
   ],
   "mapRendering": null

@@ -2505,6 +2505,21 @@ input {
   /* The checkbox that toggles a single layer */
 }
 
+.glowing-shadow {
+  -webkit-animation: glowing 1s ease-in-out infinite alternate;
+  animation: glowing 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glowing {
+  from {
+    box-shadow: 0 0 20px 10px #eaaf2588, inset 0 0 0px 1px #eaaf25;
+  }
+
+  to {
+    box-shadow: 0 0 20px 20px #eaaf2588, inset 0 0 5px 1px #eaaf25;
+  }
+}
+
 .mapping-icon-small-height {
   /* A mapping icon type */
   height: 1.5rem;

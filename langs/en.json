@@ -364,6 +364,7 @@
     },
     "image": {
         "addPicture": "Add picture",
+        "currentLicense": "Your images will be published under {license}",
         "doDelete": "Remove image",
         "dontDelete": "Cancel",
         "isDeleted": "Deleted",

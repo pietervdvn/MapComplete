@@ -205,9 +205,9 @@ export default class DefaultGUI {
         const self = this
 
         const userInfoMapControl = Toggle.If(state.featureSwitchUserbadge, () => {
-            console.log("Guistate is", guiState)
             new UserInformationPanel(state, {
                 isOpened: guiState.userInfoIsOpened,
+                userInfoFocusedQuestion: guiState.userInfoFocusedQuestion,
             })
 
             const mapControl = new MapControlButton(

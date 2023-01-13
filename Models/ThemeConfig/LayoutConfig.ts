@@ -6,7 +6,8 @@ import Constants from "../Constants"
 import TilesourceConfig from "./TilesourceConfig"
 import { ExtractImages } from "./Conversion/FixImages"
 import ExtraLinkConfig from "./ExtraLinkConfig"
-
+import { Utils } from "../../Utils"
+import * as used_languages from "../../assets/generated/used_languages.json"
 export default class LayoutConfig {
     public static readonly defaultSocialImage = "assets/SocialImage.png"
     public readonly id: string
@@ -235,6 +236,54 @@ export default class LayoutConfig {
         return this.layers.some((l) => l.isLeftRightSensitive())
     }
 
+    public missingTranslations(): {
+        completeness: Map<string, number>
+        untranslated: Map<string, string[]>
+        total: number
+    } {
+        const layout = this
+        let total = 0
+        const completeness = new Map<string, number>()
+        const untranslated = new Map<string, string[]>()
+
+        Utils.WalkObject(
+            layout,
+            (o) => {
+                const translation = <Translation>(<any>o)
+                if (translation.translations["*"] !== undefined) {
+                    return
+                }
+                if (translation.context === undefined || translation.context.indexOf(":") < 0) {
+                    // no source given - lets ignore
+                    return
+                }
+
+                total++
+                used_languages.languages.forEach((ln) => {
+                    const trans = translation.translations
+                    if (trans["*"] !== undefined) {
+                        return
+                    }
+                    if (trans[ln] === undefined) {
+                        if (!untranslated.has(ln)) {
+                            untranslated.set(ln, [])
+                        }
+                        untranslated.get(ln).push(translation.context)
+                    } else {
+                        completeness.set(ln, 1 + (completeness.get(ln) ?? 0))
+                    }
+                })
+            },
+            (o) => {
+                if (o === undefined || o === null) {
+                    return false
+                }
+                return o instanceof Translation
+            }
+        )
+
+        return { completeness, untranslated, total }
+    }
     public getMatchingLayer(tags: any): LayerConfig | undefined {
         if (tags === undefined) {
             return undefined

@@ -19,6 +19,9 @@ export class DefaultGuiState {
         false
     )
     public readonly userInfoIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+    public readonly userInfoFocusedQuestion: UIEventSource<string> = new UIEventSource<string>(
+        undefined
+    )
     public readonly welcomeMessageOpenedTab: UIEventSource<number>
 
     constructor() {
@@ -37,6 +40,14 @@ export class DefaultGuiState {
             currentview: this.currentViewControlIsOpened,
             userinfo: this.userInfoIsOpened,
         }
+
+        const self = this
+        this.userInfoIsOpened.addCallback((isOpen) => {
+            if (!isOpen) {
+                console.log("Resetting focused question")
+                self.userInfoFocusedQuestion.setData(undefined)
+            }
+        })
 
         sources[Hash.hash.data?.toLowerCase()]?.setData(true)
 

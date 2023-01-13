@@ -22,7 +22,7 @@ import { TagUtils } from "../../Logic/Tags/TagUtils"
 import * as usersettings from "../../assets/generated/layers/usersettings.json"
 import { LoginToggle } from "../Popup/LoginButton"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-
+import * as translators from "../../assets/translators.json"
 export class ImportViewerLinks extends VariableUiElement {
     constructor(osmConnection: OsmConnection) {
         super(
@@ -44,24 +44,27 @@ export class ImportViewerLinks extends VariableUiElement {
 }
 
 class SingleUserSettingsPanel extends EditableTagRendering {
-    constructor(config: TagRenderingConfig, osmConnection: OsmConnection) {
+    constructor(
+        config: TagRenderingConfig,
+        osmConnection: OsmConnection,
+        amendedPrefs: UIEventSource<any>,
+        userInfoFocusedQuestion?: UIEventSource<string>
+    ) {
         const editMode = new UIEventSource(false)
+        // Isolate the preferences. THey'll be updated explicitely later on anyway
         super(
-            osmConnection.preferencesHandler.preferences,
+            amendedPrefs,
             config,
             [],
             { osmConnection },
             {
+                answerElementClasses: "p-2",
                 editMode,
                 createSaveButton: (store) =>
-                    new SaveButton(
-                        osmConnection.preferencesHandler.preferences,
-                        osmConnection
-                    ).onClick(() => {
-                        const prefs = osmConnection.preferencesHandler.preferences
+                    new SaveButton(amendedPrefs, osmConnection).onClick(() => {
                         const selection = TagUtils.FlattenMultiAnswer(
-                            TagUtils.FlattenAnd(store.data, prefs.data)
-                        ).asChange(prefs.data)
+                            TagUtils.FlattenAnd(store.data, amendedPrefs.data)
+                        ).asChange(amendedPrefs.data)
                         for (const kv of selection) {
                             osmConnection.GetPreference(kv.k, "", "").setData(kv.v)
                         }
@@ -70,6 +73,16 @@ class SingleUserSettingsPanel extends EditableTagRendering {
                     }),
             }
         )
+        const self = this
+        this.SetClass("rounded-xl")
+        userInfoFocusedQuestion.addCallbackAndRun((selected) => {
+            if (config.id !== selected) {
+                console.log("Removing the glowingshadow...")
+                self.RemoveClass("glowing-shadow")
+            } else {
+                self.SetClass("glowing-shadow")
+            }
+        })
     }
 }
 
@@ -78,11 +91,35 @@ class UserInformationMainPanel extends VariableUiElement {
         osmConnection: OsmConnection,
         locationControl: UIEventSource<Loc>,
         layout: LayoutConfig,
-        isOpened: UIEventSource<boolean>
+        isOpened: UIEventSource<boolean>,
+        userInfoFocusedQuestion?: UIEventSource<string>
     ) {
         const t = Translations.t.userinfo
         const imgSize = "h-6 w-6"
         const ud = osmConnection.userDetails
+
+        const amendedPrefs = new UIEventSource<any>({})
+        osmConnection.preferencesHandler.preferences.addCallback((newPrefs) => {
+            for (const k in newPrefs) {
+                amendedPrefs.data[k] = newPrefs[k]
+            }
+            amendedPrefs.ping()
+        })
+        osmConnection.userDetails.addCallback((userDetails) => {
+            for (const k in userDetails) {
+                amendedPrefs.data["_" + k] = "" + userDetails[k]
+            }
+            const simplifiedName = userDetails.name.toLowerCase().replace(/\s+/g, "")
+            const isTranslator = translators.contributors.some(
+                (c: { contributor: string; commits: number }) => {
+                    const replaced = c.contributor.toLowerCase().replace(/\s+/g, "")
+                    return replaced === simplifiedName
+                }
+            )
+            amendedPrefs.data["_is_translator"] = "" + isTranslator
+            amendedPrefs.ping()
+        })
+
         super(
             ud.map((ud) => {
                 let img: BaseUIElement = Svg.person_ui().SetClass("block")
@@ -138,7 +175,12 @@ class UserInformationMainPanel extends VariableUiElement {
                 const usersettingsConfig = new LayerConfig(usersettings, "userinformationpanel")
 
                 const questions = usersettingsConfig.tagRenderings.map((c) =>
-                    new SingleUserSettingsPanel(c, osmConnection).SetClass("block my-4")
+                    new SingleUserSettingsPanel(
+                        c,
+                        osmConnection,
+                        amendedPrefs,
+                        userInfoFocusedQuestion
+                    ).SetClass("block my-4")
                 )
 
                 return new Combine([
@@ -187,6 +229,7 @@ export default class UserInformationPanel extends ScrollableFullScreen {
         },
         options?: {
             isOpened?: UIEventSource<boolean>
+            userInfoFocusedQuestion?: UIEventSource<string>
         }
     ) {
         const isOpened = options?.isOpened ?? new UIEventSource<boolean>(false)
@@ -207,7 +250,8 @@ export default class UserInformationPanel extends ScrollableFullScreen {
                         state.osmConnection,
                         state.locationControl,
                         state.layoutToUse,
-                        isOpened
+                        isOpened,
+                        options?.userInfoFocusedQuestion
                     ),
                     Translations.t.general.getStartedLogin,
                     state

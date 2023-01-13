@@ -1493,7 +1493,7 @@
       }
     ]
   },
-   "induction-loop": {
+  "induction-loop": {
     "description": "An accessibility feature: induction loops are for hard-hearing persons which have an FM-receiver.",
     "question": {
       "en": "Does this place have an audio induction loop for people with reduced hearing?",
