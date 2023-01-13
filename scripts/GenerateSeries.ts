@@ -17,7 +17,7 @@ class StatsDownloader {
         this._targetDirectory = targetDirectory
     }
 
-    public async DownloadStats(startYear = 2020, startMonth = 5, startDay = 1) {
+    public async DownloadStats(startYear = 2020, startMonth = 5, startDay = 1): Promise<void> {
         const today = new Date()
         const currentYear = today.getFullYear()
         const currentMonth = today.getMonth() + 1
@@ -62,7 +62,7 @@ class StatsDownloader {
                         console.log(
                             "Loaded ",
                             path,
-                            "from disk, has",
+                            "from disk, which has",
                             features.length,
                             "features now"
                         )
@@ -70,7 +70,7 @@ class StatsDownloader {
                     }
                     let dayFeatures: any[] = undefined
                     try {
-                        dayFeatures = await this.DownloadStatsForDay(year, month, day, path)
+                        dayFeatures = await this.DownloadStatsForDay(year, month, day)
                     } catch (e) {
                         console.error(e)
                         console.error(
@@ -82,7 +82,7 @@ class StatsDownloader {
                                 day +
                                 "... Trying again"
                         )
-                        dayFeatures = await this.DownloadStatsForDay(year, month, day, path)
+                        dayFeatures = await this.DownloadStatsForDay(year, month, day)
                     }
                     writeFileSync(path, JSON.stringify(dayFeatures))
                     features.push(...dayFeatures)
@@ -101,11 +101,10 @@ class StatsDownloader {
     public async DownloadStatsForDay(
         year: number,
         month: number,
-        day: number,
-        path: string
-    ): Promise<any[]> {
+        day: number
+    ): Promise<ChangeSetData[]> {
         let page = 1
-        let allFeatures = []
+        let allFeatures: ChangeSetData[] = []
         let endDay = new Date(year, month - 1 /* Zero-indexed: 0 = january*/, day + 1)
         let endDate = `${endDay.getFullYear()}-${Utils.TwoDigits(
             endDay.getMonth() + 1
@@ -146,16 +145,11 @@ class StatsDownloader {
             }
             url = result.next
         }
-        console.log(
-            `Writing ${allFeatures.length} features to `,
-            path,
-            Utils.Times((_) => " ", 80)
-        )
         allFeatures = Utils.NoNull(allFeatures)
         allFeatures.forEach((f) => {
             f.properties = { ...f.properties, ...f.properties.metadata }
             delete f.properties.metadata
-            f.properties.id = f.id
+            f.properties["id"] = f.id
         })
         return allFeatures
     }
