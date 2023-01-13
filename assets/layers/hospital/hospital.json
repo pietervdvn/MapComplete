@@ -29,7 +29,7 @@
       "id": "name",
       "render": {
         "en": "This hospital is called {name}",
-        "ca": "Aquest hospital es diu {name}",
+        "ca": "Aquest hospital s'anomena {name}",
         "de": "Der Name des Krankenhauses lautet {name}",
         "nl": "Dit ziekenhuis heet {name}"
       },

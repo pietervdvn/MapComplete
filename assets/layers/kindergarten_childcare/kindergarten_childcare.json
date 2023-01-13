@@ -77,7 +77,8 @@
       "question": {
         "en": "What is the name of this facility?",
         "de": "Wie lautet der Name dieser Einrichtung?",
-        "nl": "Wat is de naam van deze faciliteit?"
+        "nl": "Wat is de naam van deze faciliteit?",
+        "ca": "Com s'anomena aquesta instal·lació?"
       },
       "render": {
         "en": "This facility is named <b>{name}</b>",

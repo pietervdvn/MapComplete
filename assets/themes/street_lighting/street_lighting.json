@@ -21,7 +21,8 @@
     "de": "Eine Karte für alles zum Thema Straßenbeleuchtung",
     "es": "En este mapa puedes encontrar todo sobre la iluminación callejera",
     "fr": "Retrouvez tout ce qui touche à l’éclairage de rue sur cette carte",
-    "da": "På dette kort kan du finde alt om gadebelysning"
+    "da": "På dette kort kan du finde alt om gadebelysning",
+    "ca": "En aquest mapa pots trobar tot el relacionat amb l'enllumenat públic"
   },
   "icon": "./assets/layers/street_lamps/street_lamp.svg",
   "startZoom": 19,

@@ -7,7 +7,7 @@
 
 ## Table of contents
 
-1. [Hotkeys](#hotkeys)
+1. [Hotkeys](#)
 
 
 

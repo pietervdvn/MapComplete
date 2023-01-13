@@ -189,7 +189,7 @@
           "if": "fee=no",
           "then": {
             "en": "This cleaning service is free to use",
-            "de": "Kostenloser Reinigungsservice",
+            "de": "Der Reinigungsservice ist kostenlos",
             "nl": "Dit fietsschoonmaakpunt is gratis te gebruiken",
             "es": "Servicio de limpieza gratis",
             "fr": "Service de nettoyage gratuit",
@@ -207,7 +207,8 @@
             "en": "This cleaning service is paid",
             "nl": "Dit fietsschoonmaakpunt is betalend",
             "es": "Este servicio de limpieza es de pago",
-            "ca": "Aquest servei de neteja és de pagament"
+            "ca": "Aquest servei de neteja és de pagament",
+            "de": "Dieser Reinigungsservice ist kostenpflichtig"
           }
         }
       ],

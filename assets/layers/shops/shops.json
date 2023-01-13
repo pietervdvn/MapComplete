@@ -98,7 +98,8 @@
       "render": {
         "en": "This shop is called <i>{name}</i>",
         "de": "Der Name des Geschäfts lautet <i>{name}</i>",
-        "nl": "Deze zaak heet <i>{name}</i>"
+        "nl": "Deze zaak heet <i>{name}</i>",
+        "ca": "La botiga s'anomena <i>{name}</i>"
       },
       "freeform": {
         "key": "name"
@@ -219,7 +220,8 @@
           "then": {
             "en": "This shop offers organic products",
             "de": "Dieses Geschäft bietet Bio-Produkte an",
-            "nl": "Deze winkel biedt biologische producten aan"
+            "nl": "Deze winkel biedt biologische producten aan",
+            "ca": "Aquesta botiga ofereix productes orgànics"
           }
         },
         {

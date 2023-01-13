@@ -41,7 +41,8 @@
             "en": "This is a surface parking lot",
             "nl": "Dit is een bovengronds parkeerterrein",
             "de": "Dies ist ein oberirdischer Parkplatz",
-            "fr": "Il s'agit d'un parking en surface"
+            "fr": "Il s'agit d'un parking en surface",
+            "ca": "Aquest és un aparcament en superfície"
           }
         },
         {
@@ -180,7 +181,8 @@
         "en": "How many disabled parking spots are there at this parking?",
         "nl": "Hoeveel parkeerplaatsen voor gehandicapten zijn er op deze parking?",
         "de": "Wie viele barrierefreie Stellplätze gibt es auf diesem Parkplatz?",
-        "fr": "Combien y a-t-il de places de stationnement pour personnes à mobilité réduite dans ce parking ?"
+        "fr": "Combien y a-t-il de places de stationnement pour personnes à mobilité réduite dans ce parking ?",
+        "ca": "Quantes places d'aparcament per a persones amb mobilitat reduïda hi ha al parking?"
       },
       "render": {
         "en": "There are {capacity:disabled} disabled parking spots",

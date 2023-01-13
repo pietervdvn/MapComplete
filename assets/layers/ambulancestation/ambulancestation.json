@@ -317,7 +317,8 @@
         "es": "una estación de ambulancias",
         "nb_NO": "en ambulansestasjon",
         "da": "en ambulancestation",
-        "cs": "stanice rychlé záchranné služby"
+        "cs": "stanice rychlé záchranné služby",
+        "ca": "una estació d'ambulàncies"
       },
       "description": {
         "en": "Add an ambulance station to the map",

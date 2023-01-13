@@ -90,7 +90,8 @@
         "nl": "Toegankelijkheid is {access}",
         "it": "L'accesso è {access}",
         "es": "El acceso es {access}",
-        "da": "Adgang er {access}"
+        "da": "Adgang er {access}",
+        "ca": "L'accés és {access}"
       },
       "freeform": {
         "key": "access",
@@ -294,7 +295,8 @@
             "en": "There is only a dedicated toilet for wheelchair users",
             "nl": "Er is alleen een toilet voor rolstoelgebruikers",
             "de": "Es gibt nur eine barrierefreie Toilette für Rollstuhlfahrer",
-            "da": "Der er kun et særligt toilet til kørestolsbrugere"
+            "da": "Der er kun et særligt toilet til kørestolsbrugere",
+            "ca": "Sols hi ha un lavabo per a usuaris amb cadira de rodes"
           }
         }
       ]
@@ -381,7 +383,8 @@
             "nl": "Er zijn zowel urinoirs als zittoiletten",
             "it": "Ci sono sia sedili, sia urinali",
             "es": "Aquí hay tanto váteres de sentarse como orinales",
-            "da": "Både siddende toiletter og urinaler er tilgængelige her"
+            "da": "Både siddende toiletter og urinaler er tilgængelige her",
+            "ca": "Aquí hi ha lavabos per a utilitzar tant de peu com asseguts"
           }
         }
       ]

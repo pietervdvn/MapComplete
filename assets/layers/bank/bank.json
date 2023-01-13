@@ -1,10 +1,13 @@
 {
   "id": "bank",
   "description": {
-    "en": "A financial institution to deposit money"
+    "en": "A financial institution to deposit money",
+    "de": "Ein Finanzinstitut, um Geld einzuzahlen",
+    "nl": "Een financiële instelling waar je geld kunt"
   },
   "name": {
-    "en": "Banks"
+    "en": "Banks",
+    "de": "Banken"
   },
   "title": {
     "render": "Bank",
@@ -31,25 +34,29 @@
     {
       "id": "has_atm",
       "question": {
-        "en": "Does this bank have an ATM?"
+        "en": "Does this bank have an ATM?",
+        "de": "Hat diese Bank einen Geldautomaten?"
       },
       "mappings": [
         {
           "if": "atm=yes",
           "then": {
-            "en": "This bank has an ATM"
+            "en": "This bank has an ATM",
+            "de": "Diese Bank hat einen Geldautomaten"
           }
         },
         {
           "if": "atm=no",
           "then": {
-            "en": "This bank does <b>not</b> have an ATM"
+            "en": "This bank does <b>not</b> have an ATM",
+            "de": "Diese Bank hat <b>keinen</b> Geldautomaten"
           }
         },
         {
           "if": "atm=separate",
           "then": {
-            "en": "This bank does have an ATM, but it is mapped as a different icon"
+            "en": "This bank does have an ATM, but it is mapped as a different icon",
+            "de": "Diese Bank hat zwar einen Geldautomaten, aber dieser ist mit einem anderen Symbol dargestellt"
           }
         }
       ]
@@ -62,7 +69,8 @@
       "options": [
         {
           "question": {
-            "en": "With an ATM"
+            "en": "With an ATM",
+            "de": "Mit einem Geldautomaten"
           },
           "osmTags": "atm=yes"
         }
