@@ -87,6 +87,9 @@ class SingleUserSettingsPanel extends EditableTagRendering {
 }
 
 class UserInformationMainPanel extends VariableUiElement {
+    private readonly settings: UIEventSource<Record<string, BaseUIElement>>
+    private readonly userInfoFocusedQuestion?: UIEventSource<string>
+
     constructor(
         osmConnection: OsmConnection,
         locationControl: UIEventSource<Loc>,
@@ -97,6 +100,7 @@ class UserInformationMainPanel extends VariableUiElement {
         const t = Translations.t.userinfo
         const imgSize = "h-6 w-6"
         const ud = osmConnection.userDetails
+        const settings = new UIEventSource<Record<string, BaseUIElement>>({})
 
         const amendedPrefs = new UIEventSource<any>({})
         osmConnection.preferencesHandler.preferences.addCallback((newPrefs) => {
@@ -173,15 +177,18 @@ class UserInformationMainPanel extends VariableUiElement {
                 }
 
                 const usersettingsConfig = new LayerConfig(usersettings, "userinformationpanel")
-
-                const questions = usersettingsConfig.tagRenderings.map((c) =>
-                    new SingleUserSettingsPanel(
+                const settingElements = []
+                for (const c of usersettingsConfig.tagRenderings) {
+                    const settingsPanel = new SingleUserSettingsPanel(
                         c,
                         osmConnection,
                         amendedPrefs,
                         userInfoFocusedQuestion
                     ).SetClass("block my-4")
-                )
+                    settings.data[c.id] = settingsPanel
+                    settingElements.push(settingsPanel)
+                }
+                settings.ping()
 
                 return new Combine([
                     new Combine([img, description]).SetClass("flex border border-black rounded-md"),
@@ -189,7 +196,7 @@ class UserInformationMainPanel extends VariableUiElement {
                         layout.language,
                         Translations.t.general.pickLanguage.Clone()
                     ),
-                    ...questions,
+                    ...settingElements,
                     new SubtleButton(
                         Svg.envelope_svg(),
                         new Combine([
@@ -216,10 +223,26 @@ class UserInformationMainPanel extends VariableUiElement {
             })
         )
         this.SetClass("flex flex-col")
+        this.settings = settings
+        this.userInfoFocusedQuestion = userInfoFocusedQuestion
+        const self = this
+        userInfoFocusedQuestion.addCallbackD((_) => {
+            self.focusOnSelectedQuestion()
+        })
+    }
+
+    public focusOnSelectedQuestion() {
+        const focusedId = this.userInfoFocusedQuestion.data
+        console.log("Focusing on", focusedId, this.settings.data[focusedId])
+        if (focusedId === undefined) {
+            return
+        }
+        this.settings.data[focusedId]?.ScrollIntoView()
     }
 }
 
 export default class UserInformationPanel extends ScrollableFullScreen {
+    private readonly userPanel: UserInformationMainPanel
     constructor(
         state: {
             readonly layoutToUse: LayoutConfig
@@ -233,6 +256,13 @@ export default class UserInformationPanel extends ScrollableFullScreen {
         }
     ) {
         const isOpened = options?.isOpened ?? new UIEventSource<boolean>(false)
+        const userPanel = new UserInformationMainPanel(
+            state.osmConnection,
+            state.locationControl,
+            state.layoutToUse,
+            isOpened,
+            options?.userInfoFocusedQuestion
+        )
         super(
             () => {
                 return new VariableUiElement(
@@ -244,20 +274,15 @@ export default class UserInformationPanel extends ScrollableFullScreen {
                     })
                 )
             },
-            () =>
-                new LoginToggle(
-                    new UserInformationMainPanel(
-                        state.osmConnection,
-                        state.locationControl,
-                        state.layoutToUse,
-                        isOpened,
-                        options?.userInfoFocusedQuestion
-                    ),
-                    Translations.t.general.getStartedLogin,
-                    state
-                ),
+            () => new LoginToggle(userPanel, Translations.t.general.getStartedLogin, state),
             "userinfo",
             isOpened
         )
+        this.userPanel = userPanel
+    }
+
+    Activate() {
+        super.Activate()
+        this.userPanel.focusOnSelectedQuestion()
     }
 }

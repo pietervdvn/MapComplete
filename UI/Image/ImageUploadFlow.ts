@@ -190,7 +190,7 @@ export class ImageUploadFlow extends Toggle {
                     })
                     .SetClass("underline"),
             ]).SetStyle("font-size:small;"),
-        ]).SetClass("flex flex-col image-upload-flow mt-4 mb-8 text-center")
+        ]).SetClass("flex flex-col image-upload-flow mt-4 mb-8 text-center leading-none")
 
         super(
             new LoginToggle(
