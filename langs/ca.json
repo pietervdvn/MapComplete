@@ -246,8 +246,6 @@
         "welcomeBack": "Has entrat, benvingut/da.",
         "welcomeExplanation": {
             "addNew": "Toqueu el mapa per afegir un nou PDI.",
-            "browseMoreMaps": "Descobreix més mapes",
-            "browseOtherThemesIntro": "Varios mapes temàtics existents a MapComplete",
             "general": "A aquest mapa, podeu observar, editar i afegir <i>punt d'interés</i>. Feu zoom pel voltant per veure el PDI, toque una vegada per a veure o editar la informació. Totes les dades s'obtenen i es desen a OpenStreetMap, que es poden reutilitzar lliurement."
         },
         "wikipedia": {

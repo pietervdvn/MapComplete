@@ -45,13 +45,15 @@
     {
       "id": "translation-thanks",
       "condition": "_is_translator=true",
-      "mappings": [{
-        "if": "_is_translator=true",
-        "then": {
-          "en": "You have contributed to translating MapComplete! That's awesome!"
-        },
-        "icon": "party"
-      }]
+      "mappings": [
+        {
+          "if": "_is_translator=true",
+          "then": {
+            "en": "You have contributed to translating MapComplete! That's awesome!"
+          },
+          "icon": "party"
+        }
+      ]
     },
     {
       "id": "debug",
