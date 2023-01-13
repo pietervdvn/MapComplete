@@ -254,6 +254,12 @@
                 "public": {
                     "name": "Publique"
                 }
+            },
+            "meta": {
+                "title": "Titre et description",
+                "descriptionPlaceHolder": "Entrer la description de votre trace",
+                "titlePlaceholder": "Entrer le titre de votre trace",
+                "descriptionIntro": "En option, vous pouvez entrer une description de votre trace :"
             }
         },
         "weekdays": {
@@ -290,7 +296,8 @@
             "noWikipediaPage": "Cet élément Wikidata n’a pas encore de page Wikipédia correspondante.",
             "searchToShort": "Votre requête est trop courte, entrez un texte plus long.",
             "searchWikidata": "Rechercher sur Wikidata",
-            "wikipediaboxTitle": "Wikipédia"
+            "wikipediaboxTitle": "Wikipédia",
+            "fromWikipedia": "Depuis Wikipédia, l'encyclopédie libre"
         }
     },
     "hotkeyDocumentation": {
@@ -477,7 +484,8 @@
     },
     "userinfo": {
         "gotoInbox": "Ouvrir sa boite de réception",
-        "gotoSettings": "Paramètres sur OpenStreetMap.org"
+        "gotoSettings": "Paramètres sur OpenStreetMap.org",
+        "moveToHome": "Déplacez la carte vers votre emplacement"
     },
     "validation": {
         "email": {
