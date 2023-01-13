@@ -237,7 +237,8 @@
     {
       "title": {
         "en": "Climbing gym",
-        "nl": "Klimzaal"
+        "nl": "Klimzaal",
+        "de": "Kletterhalle"
       },
       "tags": [
         "leisure=sports_centre",

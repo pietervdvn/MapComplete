@@ -436,7 +436,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/street_lighting street_lighting]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:ca|en}}
 |descr= A MapComplete theme: On this map you can find everything about street lighting
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png

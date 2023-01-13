@@ -260,6 +260,9 @@
             "render": "Geldautomaat"
         }
     },
+    "bank": {
+        "description": "Een financiële instelling waar je geld kunt"
+    },
     "barrier": {
         "description": "Hindernissen tijdens het fietsen, zoals paaltjes en fietshekjes",
         "name": "Barrières",

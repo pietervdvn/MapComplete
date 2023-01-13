@@ -32,13 +32,15 @@
         "en": "This school is named {name}",
         "nl": "Deze school heet <b>{name}</b>",
         "de": "Diese Schule heißt {name}",
-        "fr": "Cet établissement scolaire s'appelle {name}"
+        "fr": "Cet établissement scolaire s'appelle {name}",
+        "ca": "L'escola s'anomena {name}"
       },
       "question": {
         "en": "What is the name of this school?",
         "nl": "Wat is de naam van deze school?",
         "de": "Wie lautet der Name dieser Schule?",
-        "fr": "Quel est le nom de cet établissement scolaire?"
+        "fr": "Quel est le nom de cet établissement scolaire?",
+        "ca": "Quin és el nom d'aquesta escola?"
       },
       "freeform": {
         "key": "name"
@@ -51,7 +53,8 @@
         "en": "How much students can at most enroll in this school?",
         "de": "Wie viele Schüler können sich maximal an dieser Schule anmelden?",
         "nl": "Ten hoogste hoeveel studenten kunnen er les volgen in deze school?",
-        "fr": "Combien d'élèves peuvent s'inscrire au maximum dans cette école ?"
+        "fr": "Combien d'élèves peuvent s'inscrire au maximum dans cette école ?",
+        "ca": "Quants alumnes poden matricular-se com a màxim a aquesta escola?"
       },
       "render": {
         "en": "This school can enroll at most {capacity} students",
@@ -146,7 +149,8 @@
         "en": "Which genders can enroll at this school?",
         "nl": "Mogen jongens en meisjes les volgen op deze school?",
         "de": "Welche Geschlechter können sich an dieser Schule anmelden?",
-        "fr": "Quels genres de personnes peuvent s'inscrire dans cette école ?"
+        "fr": "Quels genres de personnes peuvent s'inscrire dans cette école ?",
+        "ca": "Quins gèneres poden inscriure's a aquesta escola?"
       },
       "mappings": [
         {
@@ -155,7 +159,8 @@
             "en": "Both boys and girls can enroll here and have classes together",
             "nl": "Zowel jongens als meisjes kunnen hier les volgen. In de lessen zitten jongens en meisjes samen.",
             "de": "Sowohl Jungen als auch Mädchen können sich hier anmelden und gemeinsam unterrichtet werden",
-            "fr": "Les garçons et les filles peuvent s'inscrire ici et suivre des cours ensemble"
+            "fr": "Les garçons et les filles peuvent s'inscrire ici et suivre des cours ensemble",
+            "ca": "Els dos, nois i noies poden inscriure's aquí i prendre classes junts"
           }
         },
         {
@@ -164,7 +169,8 @@
             "en": "Both boys and girls can enroll here but they are separated (e.g. they have lessons in different classrooms or at different times)",
             "nl": "Jongens en meisjes kunnen hier lesvolgen, maar de lessen zijn gescheiden (bv. de lessen zijn in andere lokalen of op andere momenten)",
             "de": "Hier können sich sowohl Jungen als auch Mädchen anmelden, aber sie werden getrennt unterrichtet (z. B. in verschiedenen Klassenräumen oder zu verschiedenen Zeiten)",
-            "fr": "Les garçons et les filles peuvent s'inscrire ici, mais ils sont séparés (par exemple, ils ont des cours dans des classes différentes ou à des heures différentes)"
+            "fr": "Les garçons et les filles peuvent s'inscrire ici, mais ils sont séparés (par exemple, ils ont des cours dans des classes différentes ou à des heures différentes)",
+            "ca": "Els dos, nois i noies poden inscriure's aquí, però estan separats (p. e. prenen les classes a diferents aules o diferentes hores)"
           }
         },
         {
@@ -173,7 +179,8 @@
             "en": "This is a boys only-school",
             "nl": "Deze school is enkel voor jongens",
             "de": "Dies ist eine reine Jungenschule",
-            "fr": "C'est une école réservée aux garçons"
+            "fr": "C'est une école réservée aux garçons",
+            "ca": "Aquesta és una escola exclusivament per a nois"
           }
         },
         {
@@ -182,7 +189,8 @@
             "en": "This is a girls-only school",
             "nl": "Deze school is enkel voor meisjes",
             "de": "Dies ist eine reine Mädchenschule",
-            "fr": "C'est une école réservée aux filles"
+            "fr": "C'est une école réservée aux filles",
+            "ca": "Aquesta és una escola exclusivament per a noies"
           }
         }
       ]
@@ -226,7 +234,7 @@
             "nl": "Deze school richt zich op studenten zonder extra zorgbehoefte<div class='subtle>Dit omvat leerlingen waarbij kleine, ad-hoc maatregelen volstaan om de lessen te volgen.</div>",
             "de": "Dies ist eine Schule für Schüler ohne besondere Bedürfnisse<div class='subtle'>Dazu gehören auch Schüler, die den Kursen mit kleinen Ad-hoc-Maßnahmen folgen können</div>",
             "fr": "Ceci est un établissement scolaire pour étudiants sans besoins partucliers. <div class='subtle'>Sont inclus les étudiants qui peuvent suivre les cours avec de petites adaptations.</div>",
-            "ca": "Aquesta és una escola per a estudiants sense necesitats especials <div class='subtle'> Açò inclou alumnes que poden seguir les classes amb petites messures</div>"
+            "ca": "Aquesta és una escola per a estudiants sense necessitats especials <div class='subtle'> Açò inclou alumnes que poden seguir les classes amb petites mesures</div>"
           }
         },
         {
@@ -235,7 +243,8 @@
             "en": "This is a school where adults are taught skills on the level as specified.",
             "nl": "Deze school richt zich op volwassenen",
             "de": "Dies ist eine Schule, in der Erwachsene auf dem angegebenen Niveau unterrichtet werden.",
-            "fr": "Ceci est un établissement où des adultes sont formés au niveau mentionné."
+            "fr": "Ceci est un établissement où des adultes sont formés au niveau mentionné.",
+            "ca": "Aquesta és una escola on els adults reben competències al nivell especificat."
           }
         },
         {
@@ -310,23 +319,27 @@
           "key": "language",
           "render_all": {
             "en": "The following languages are used in this school:{list()}",
-            "de": "Folgende Sprachen werden in der Schule verwendet:{list()}"
+            "de": "Folgende Sprachen werden in der Schule verwendet:{list()}",
+            "ca": "En aquesta escola s'utilitzen els idiomes següents:{list()}"
           },
           "render_single_language": {
             "en": "{language():font-bold} is the main language of this school",
-            "de": "{language():font-bold} ist die Hauptsprache der Schule"
+            "de": "{language():font-bold} ist die Hauptsprache der Schule",
+            "ca": "{language():font-bold} és la llengua principal d'aquesta escola"
           },
           "question": {
             "en": "What is the main language of this school?<div class='subtle'>What language is spoken with the students in non-language related courses and with the administration?</div>",
             "nl": "Wat is de voertaal van deze school?<div class='subtle'>Welke taal wordt met de studenten gesproken in niet-taal-gerelateerde vakken en met de administratie?</div>",
             "de": "Was ist die Hauptsprache dieser Schule?<div class='subtle'>Welche Sprache wird mit den Schülern in den nicht sprachbezogenen Kursen und mit der Verwaltung gesprochen?</div>",
-            "fr": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>"
+            "fr": "Quelle est la langue principale de cette école ?<div class='subtle'>Quelle langue est parlée avec les élèves des cours non linguistiques et avec l'administration ?</div>",
+            "ca": "Quina és la llengua principal d'aquesta escola?<div class='subtle'>Quina llengua es parla amb els estudiants en classes no relacionades amb la llengua i l'administració?</div>"
           },
           "no_known_languages": {
             "en": "The main language of this school is unknown",
             "nl": "De voertaal van deze school is niet gekend",
             "de": "Die Unterrichtssprache der Schule ist unbekannt",
-            "fr": "La langue principale de cette école est inconnue"
+            "fr": "La langue principale de cette école est inconnue",
+            "ca": "La llengua principal d'aquesta escola és desconeguda"
           }
         }
       }

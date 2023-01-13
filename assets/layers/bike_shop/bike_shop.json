@@ -281,7 +281,7 @@
         "pt": "Esta loja de bicicletas se chama {name}",
         "es": "Esta tienda de bicicletas se llama {name}",
         "da": "Denne cykelbutik hedder {name}",
-        "ca": "Aquesta botiga de bicicletes és diu {name}"
+        "ca": "Aquesta botiga de bicicletes s'anomena {name}"
       },
       "freeform": {
         "key": "name"

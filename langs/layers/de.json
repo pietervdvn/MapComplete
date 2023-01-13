@@ -260,6 +260,35 @@
             "render": "Geldautomat"
         }
     },
+    "bank": {
+        "description": "Ein Finanzinstitut, um Geld einzuzahlen",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Mit einem Geldautomaten"
+                    }
+                }
+            }
+        },
+        "name": "Banken",
+        "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank hat einen Geldautomaten"
+                    },
+                    "1": {
+                        "then": "Diese Bank hat <b>keinen</b> Geldautomaten"
+                    },
+                    "2": {
+                        "then": "Diese Bank hat zwar einen Geldautomaten, aber dieser ist mit einem anderen Symbol dargestellt"
+                    }
+                },
+                "question": "Hat diese Bank einen Geldautomaten?"
+            }
+        }
+    },
     "barrier": {
         "description": "Hindernisse beim Fahrradfahren, wie zum Beispiel Poller und Fahrrad Barrieren",
         "name": "Hindernisse",
@@ -832,7 +861,10 @@
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
-                        "then": "Kostenloser Reinigungsservice"
+                        "then": "Der Reinigungsservice ist kostenlos"
+                    },
+                    "1": {
+                        "then": "Dieser Reinigungsservice ist kostenpflichtig"
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
@@ -2695,6 +2727,11 @@
     "climbing_gym": {
         "description": "Eine Kletterhalle",
         "name": "Kletterhallen",
+        "presets": {
+            "0": {
+                "title": "Kletterhalle"
+            }
+        },
         "tagRenderings": {
             "Speed climbing?": {
                 "mappings": {

@@ -88,6 +88,7 @@
             "josmOpened": "JOSM és obert",
             "mapContributionsBy": "Les dades mostrades tenen edicions fetes per {contributors}",
             "mapContributionsByAndHidden": "Les dades mostrades tenen edicions fetes per {contributors} i {hiddenCount} col·laboradors més",
+            "mapillaryHelp": "<b>Mapillary</b> és un servei en línea que arreplega imatges a peu de carrer i les ofereix sota una llicència lliure. Els contribuïdors poden utilizar aquestes imatges per a millorar OpenStreetMap",
             "openIssueTracker": "Registrar un error",
             "openMapillary": "Obrir Mapillary aquí",
             "openOsmcha": "Veure darreres edicions fetes amb {theme}",
@@ -122,6 +123,7 @@
         },
         "example": "Exemple",
         "examples": "Exemples",
+        "feelFreeToSkip": "Podeu afegir més informació a sota, però sentiu-vos lliures de <b>botar preguntes</b> que no conegueu la resposta.",
         "fewChangesBefore": "Contesta unes quantes preguntes sobre punts existents abans d'afegir-ne un de nou.",
         "getStartedLogin": "Entra a OpenStreetMap per començar",
         "getStartedNewAccount": " o <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">crea un nou compte</a>",
@@ -150,6 +152,7 @@
             "streetcomplete": "Una altra aplicació similar és <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "{category}: El seu nom és $$$",
+        "newlyCreated": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
         "next": "Següent",
         "noNameCategory": "{category} sense nom",
         "noTagsSelected": "No s'han seleccionat etiquetes",
@@ -242,7 +245,10 @@
         },
         "welcomeBack": "Has entrat, benvingut/da.",
         "welcomeExplanation": {
-            "addNew": "Toqueu el mapa per afegir un nou PDI."
+            "addNew": "Toqueu el mapa per afegir un nou PDI.",
+            "browseMoreMaps": "Descobreix més mapes",
+            "browseOtherThemesIntro": "Varios mapes temàtics existents a MapComplete",
+            "general": "A aquest mapa, podeu observar, editar i afegir <i>punt d'interés</i>. Feu zoom pel voltant per veure el PDI, toque una vegada per a veure o editar la informació. Totes les dades s'obtenen i es desen a OpenStreetMap, que es poden reutilitzar lliurement."
         },
         "wikipedia": {
             "createNewWikidata": "Crear un ítem de Wikidata",
@@ -541,6 +547,11 @@
         "isTranslator": "El mode de traducció està actiu, ja que el vostre nom d'usuari coincideix amb el nom d'un traductor anterior",
         "missing": "{count} cadenes sense traduir",
         "notImmediate": "Les traduccions no s'actualitzen directament. Això sol trigar uns quants dies"
+    },
+    "userinfo": {
+        "gotoInbox": "Obre la teva safata d'entrada",
+        "gotoSettings": "Aneu a la vostra configuració a OpenStreetMap.org",
+        "moveToHome": "Mou el mapa a la vostra ubicació de casa"
     },
     "validation": {
         "color": {

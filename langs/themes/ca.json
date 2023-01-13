@@ -685,6 +685,7 @@
         "title": "Camps d'esports"
     },
     "street_lighting": {
+        "description": "En aquest mapa pots trobar tot el relacionat amb l'enllumenat públic",
         "layers": {
             "1": {
                 "name": "Il·luminació de carrers",

@@ -34,7 +34,8 @@
     "nl": "Jouw afgelegde route",
     "de": "Zurückgelegte Strecke anzeigen",
     "fr": "Votre chemin parcouru",
-    "da": "Dit tilbagelagte spor"
+    "da": "Dit tilbagelagte spor",
+    "ca": "La teva pista recorreguda"
   },
   "mapRendering": [
     {

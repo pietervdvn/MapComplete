@@ -831,7 +831,8 @@
         "pt_BR": "uma bomba de bicicleta",
         "es": "una bomba de bicicletas",
         "da": "en cykelpumpe",
-        "cs": "pumpa na kolo"
+        "cs": "pumpa na kolo",
+        "ca": "una manxa per a bicicletes"
       },
       "tags": [
         "amenity=bicycle_repair_station",

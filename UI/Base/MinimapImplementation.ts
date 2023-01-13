@@ -404,7 +404,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
 
         if (this._options.lastClickLocation) {
             const lastClickLocation = this._options.lastClickLocation
-            map.on("click", function (e: LeafletMouseEvent) {
+            map.addEventListener("click", function (e: LeafletMouseEvent) {
                 if (e.originalEvent["dismissed"]) {
                     return
                 }

@@ -340,6 +340,7 @@ export default class ShowDataLayerImplementation {
         const self = this
 
         function activate(event: LeafletMouseEvent) {
+            Utils.preventDefaultOnMouseEvent(event)
             if (infobox === undefined) {
                 const tags =
                     self.allElements?.getEventSourceById(key) ??
@@ -383,8 +384,9 @@ export default class ShowDataLayerImplementation {
         leafletLayer.on({
             dblclick: activate,
             contextmenu: activate,
-            click: activate,
+            //  click: activate,
         })
+        leafletLayer.addEventListener("click", activate)
         // Add the feature to the index to open the popup when needed
         this.leafletLayersPerId.set(key, {
             feature: feature,

@@ -930,7 +930,7 @@
         "gotoSettings": "Ga naar je instellingen op OpenStreetMap.org",
         "moveToHome": "Beweeg de kaart naar je thuislocatie",
         "newMessages": "je hebt nieuwe berichten",
-        "noDescription": "Je hebt nog een beschrijving op je profiel",
+        "noDescription": "Je hebt nog geen beschrijving op je profiel",
         "noDescriptionCallToAction": "Voeg een profielbeschrijving toe",
         "welcome": "Welkom {name}"
     },

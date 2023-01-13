@@ -70,7 +70,8 @@
         "en": "a fries shop",
         "nl": "een frituur",
         "de": "eine Pommesbude",
-        "fr": "Une friterie"
+        "fr": "Une friterie",
+        "ca": "una botiga de patates fregides"
       },
       "tags": [
         "amenity=fast_food",

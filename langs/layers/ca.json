@@ -29,7 +29,8 @@
         "name": "Mapa d'estacions d'ambulàncies",
         "presets": {
             "0": {
-                "description": "Afegeix una estació d'ambulàncies al mapa"
+                "description": "Afegeix una estació d'ambulàncies al mapa",
+                "title": "una estació d'ambulàncies"
             }
         },
         "tagRenderings": {
@@ -89,6 +90,11 @@
     },
     "atm": {
         "description": "Caixers automàtics on retirar diners",
+        "presets": {
+            "0": {
+                "title": "un caixer automàtic"
+            }
+        },
         "tagRenderings": {
             "brand": {
                 "question": "De quina marca és aquest caixer?"
@@ -371,6 +377,11 @@
     },
     "bike_repair_station": {
         "name": "Manxa i reparació de bicicletes",
+        "presets": {
+            "0": {
+                "title": "una manxa per a bicicletes"
+            }
+        },
         "tagRenderings": {
             "bike_repair_station-available-services": {
                 "mappings": {
@@ -458,7 +469,7 @@
                 }
             },
             "bike_shop-name": {
-                "render": "Aquesta botiga de bicicletes és diu {name}"
+                "render": "Aquesta botiga de bicicletes s'anomena {name}"
             }
         },
         "title": {
@@ -504,7 +515,7 @@
                 "title": "un bar"
             },
             "1": {
-                "title": "un pub"
+                "title": "un bar de copes"
             },
             "2": {
                 "title": "un cafè"
@@ -772,7 +783,7 @@
         "name": "Desfibril·ladors",
         "presets": {
             "0": {
-                "title": "Desfibril·lador"
+                "title": "un desfibril·lador"
             }
         },
         "tagRenderings": {
@@ -937,7 +948,8 @@
                 "title": "un de menjar ràpid"
             },
             "2": {
-                "description": "Un local de menjar ràpid centrat en les patates fregides"
+                "description": "Un local de menjar ràpid centrat en les patates fregides",
+                "title": "una botiga de patates fregides"
             }
         },
         "tagRenderings": {
@@ -995,6 +1007,9 @@
             "render": "Bicicleta blanca"
         }
     },
+    "gps_track": {
+        "name": "La teva pista recorreguda"
+    },
     "hackerspace": {
         "presets": {
             "1": {
@@ -1014,7 +1029,14 @@
         "tagRenderings": {
             "name": {
                 "question": "Quin és el nom d'aquest hospital?",
-                "render": "Aquest hospital es diu {name}"
+                "render": "Aquest hospital s'anomena {name}"
+            }
+        }
+    },
+    "hotel": {
+        "presets": {
+            "0": {
+                "title": "un hotel"
             }
         }
     },
@@ -1073,6 +1095,7 @@
                 }
             },
             "name": {
+                "question": "Com s'anomena aquesta instal·lació?",
                 "render": "Aquesta instal·lació s'anomena <b>{name}</b>"
             }
         }
@@ -1144,7 +1167,19 @@
         }
     },
     "parking": {
-        "name": "Aparcament"
+        "name": "Aparcament",
+        "tagRenderings": {
+            "capacity-disabled": {
+                "question": "Quantes places d'aparcament per a persones amb mobilitat reduïda hi ha al parking?"
+            },
+            "parking-type": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest és un aparcament en superfície"
+                    }
+                }
+            }
+        }
     },
     "parking_spaces": {
         "tagRenderings": {
@@ -1327,10 +1362,47 @@
     },
     "school": {
         "tagRenderings": {
+            "capacity": {
+                "question": "Quants alumnes poden matricular-se com a màxim a aquesta escola?"
+            },
+            "gender": {
+                "mappings": {
+                    "0": {
+                        "then": "Els dos, nois i noies poden inscriure's aquí i prendre classes junts"
+                    },
+                    "1": {
+                        "then": "Els dos, nois i noies poden inscriure's aquí, però estan separats (p. e. prenen les classes a diferents aules o diferentes hores)"
+                    },
+                    "2": {
+                        "then": "Aquesta és una escola exclusivament per a nois"
+                    },
+                    "3": {
+                        "then": "Aquesta és una escola exclusivament per a noies"
+                    }
+                },
+                "question": "Quins gèneres poden inscriure's a aquesta escola?"
+            },
+            "school-language": {
+                "render": {
+                    "special": {
+                        "no_known_languages": "La llengua principal d'aquesta escola és desconeguda",
+                        "question": "Quina és la llengua principal d'aquesta escola?<div class='subtle'>Quina llengua es parla amb els estudiants en classes no relacionades amb la llengua i l'administració?</div>",
+                        "render_all": "En aquesta escola s'utilitzen els idiomes següents:{list()}",
+                        "render_single_language": "{language():font-bold} és la llengua principal d'aquesta escola"
+                    }
+                }
+            },
+            "school-name": {
+                "question": "Quin és el nom d'aquesta escola?",
+                "render": "L'escola s'anomena {name}"
+            },
             "target-audience": {
                 "mappings": {
                     "1": {
-                        "then": "Aquesta és una escola per a estudiants sense necesitats especials <div class='subtle'> Açò inclou alumnes que poden seguir les classes amb petites messures</div>"
+                        "then": "Aquesta és una escola per a estudiants sense necessitats especials <div class='subtle'> Açò inclou alumnes que poden seguir les classes amb petites mesures</div>"
+                    },
+                    "2": {
+                        "then": "Aquesta és una escola on els adults reben competències al nivell especificat."
                     },
                     "3": {
                         "then": "Aquesta és una escola per a estudiants amb autisme"
@@ -1354,6 +1426,18 @@
     },
     "shops": {
         "name": "Botiga",
+        "tagRenderings": {
+            "organic": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta botiga ofereix productes orgànics"
+                    }
+                }
+            },
+            "shops-name": {
+                "render": "La botiga s'anomena <i>{name}</i>"
+            }
+        },
         "title": {
             "mappings": {
                 "0": {
@@ -1413,6 +1497,119 @@
             "render": "Camp d'esports"
         }
     },
+    "street_lamps": {
+        "name": "Fanals",
+        "presets": {
+            "0": {
+                "title": "un fanal"
+            }
+        },
+        "tagRenderings": {
+            "colour": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest fanal emet llum blanca"
+                    },
+                    "1": {
+                        "then": "Aquest fanal emet llum verda"
+                    },
+                    "2": {
+                        "then": "Aquest fanal emet llum taronja"
+                    }
+                },
+                "question": "Quin color de llum emet aquest fanal?"
+            },
+            "count": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest fanal té 1 aparell"
+                    },
+                    "1": {
+                        "then": "Aquest fanal té 2 aparells"
+                    }
+                }
+            },
+            "direction": {
+                "question": "Cap a on apunta aquest fanal?",
+                "render": "Aquest fanal apunta cap a {light:direction}"
+            },
+            "lamp_mount": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest fanal es troba al final d'un pal recte"
+                    },
+                    "1": {
+                        "then": "Aquest fanal es troba al final d'un pal doblegat"
+                    }
+                },
+                "question": "Com està muntat aquest fanal al pal?"
+            },
+            "lit": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest fanal s'encén a la nit"
+                    },
+                    "1": {
+                        "then": "Aquest fanal està encès les 24 hores del dia"
+                    },
+                    "2": {
+                        "then": "Aquest fanal s'encén en funció del moviment"
+                    },
+                    "3": {
+                        "then": "Aquest fanal s'encén segons la demanda (per exemple, amb un polsador)"
+                    }
+                },
+                "question": "Quan s'encén aquest fanal?"
+            },
+            "method": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquest fanal utilitza LED"
+                    },
+                    "2": {
+                        "then": "Aquest fanal utilitza il·luminació incandescent"
+                    },
+                    "3": {
+                        "then": "Aquest fanal utilitza il·luminació halògena"
+                    },
+                    "4": {
+                        "then": "Aquest fanal utilitza làmpades de descàrrega (tipus desconegut)"
+                    },
+                    "5": {
+                        "then": "Aquest fanal utilitza una làmpada de vapor de mercuri (lleugerament blau)"
+                    },
+                    "6": {
+                        "then": "Aquest fanal utilitza làmpades d'halogenurs metàl·lics (blanc brillant)"
+                    },
+                    "7": {
+                        "then": "Aquest fanal utilitza il·luminació fluorescent"
+                    },
+                    "8": {
+                        "then": "Aquest fanal utilitza làmpades de sodi (tipus desconegut)"
+                    },
+                    "9": {
+                        "then": "Aquest fanal utilitza làmpades de sodi de baixa pressió (taronja monocroma)"
+                    },
+                    "10": {
+                        "then": "Aquest fanal utilitza làmpades de sodi d'alta pressió (taronja amb blanc)"
+                    },
+                    "11": {
+                        "then": "Aquest fanal s'il·lumina amb gas"
+                    }
+                }
+            },
+            "ref": {
+                "question": "Quin és el número de referència d'aquest fanal?"
+            },
+            "support": {
+                "mappings": {
+                    "4": {
+                        "then": "Aquest fanal està muntat en un pal"
+                    }
+                }
+            }
+        }
+    },
     "surveillance_camera": {
         "name": "Càmeres de videovigilància",
         "tagRenderings": {
@@ -1440,7 +1637,22 @@
     "toilet": {
         "name": "Lavabos",
         "tagRenderings": {
+            "toilet-access": {
+                "render": "L'accés és {access}"
+            },
+            "toilets-type": {
+                "mappings": {
+                    "3": {
+                        "then": "Aquí hi ha lavabos per a utilitzar tant de peu com asseguts"
+                    }
+                }
+            },
             "toilets-wheelchair": {
+                "mappings": {
+                    "2": {
+                        "then": "Sols hi ha un lavabo per a usuaris amb cadira de rodes"
+                    }
+                },
                 "question": "Hi ha un lavabo específic per a usuaris de cadira de rodes?"
             }
         },

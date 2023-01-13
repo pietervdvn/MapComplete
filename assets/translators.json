@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 230,
+      "commits": 233,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 198,
+      "commits": 204,
       "contributor": "kjon"
     },
     {
@@ -14,11 +14,11 @@
     },
     {
       "commits": 61,
-      "contributor": "danieldegroot2"
+      "contributor": "Robin van der Linde"
     },
     {
-      "commits": 58,
-      "contributor": "Robin van der Linde"
+      "commits": 61,
+      "contributor": "danieldegroot2"
     },
     {
       "commits": 45,
@@ -35,6 +35,10 @@
     {
       "commits": 29,
       "contributor": "Artem"
+    },
+    {
+      "commits": 28,
+      "contributor": "paunofu"
     },
     {
       "commits": 27,
@@ -67,10 +71,6 @@
     {
       "commits": 14,
       "contributor": "J. Lavoie"
-    },
-    {
-      "commits": 13,
-      "contributor": "paunofu"
     },
     {
       "commits": 13,
@@ -131,6 +131,10 @@
     {
       "commits": 7,
       "contributor": "Niels Elgaard Larsen"
+    },
+    {
+      "commits": 6,
+      "contributor": "Jaime Marquínez Ferrándiz"
     },
     {
       "commits": 6,
@@ -218,11 +222,11 @@
     },
     {
       "commits": 3,
-      "contributor": "aleksej0R"
+      "contributor": "Bibi56"
     },
     {
       "commits": 3,
-      "contributor": "Jaime Marquínez Ferrándiz"
+      "contributor": "aleksej0R"
     },
     {
       "commits": 3,
