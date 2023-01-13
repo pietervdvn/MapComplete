@@ -832,7 +832,10 @@
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
-                        "then": "Kostenloser Reinigungsservice"
+                        "then": "Der Reinigungsservice ist kostenlos"
+                    },
+                    "1": {
+                        "then": "Dieser Reinigungsservice ist kostenpflichtig"
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
@@ -2743,6 +2746,11 @@
                 }
             },
             "render": "Kletterhalle"
+        },
+        "presets": {
+            "0": {
+                "title": "Kletterhalle"
+            }
         }
     },
     "climbing_opportunity": {
@@ -7130,6 +7138,12 @@
                         "render_single_language": "Die Treppe hat taktile Schrift in {language():font-bold}"
                     }
                 }
+            },
+            "multilevels": {
+                "override": {
+                    "question": "Zwischen welchen Stockwerken befindet sich die Treppe?",
+                    "render": "Die Treppe befindet sich zwischen den Stockwerken {level}"
+                }
             }
         },
         "title": {
@@ -7510,6 +7524,18 @@
                 },
                 "question": "Wer ist der Betreiber dieses Fahrkartenentwerters?",
                 "render": "Dieser Fahrkartenentwerter wird betrieben von {operator}"
+            },
+            "payment-options": {
+                "override": {
+                    "mappings+": {
+                        "1": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
+                        },
+                        "0": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
+                        }
+                    }
+                }
             }
         },
         "title": {
@@ -7776,6 +7802,11 @@
             "wheelchair-door-width": {
                 "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
                 "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist die Einrichtung, in der sich diese Toiletten befinden, geöffnet?"
+                }
             }
         },
         "title": {
@@ -8437,6 +8468,35 @@
                         "human": " Meter"
                     }
                 }
+            }
+        }
+    },
+    "bank": {
+        "description": "Ein Finanzinstitut, um Geld einzuzahlen",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Mit einem Geldautomaten"
+                    }
+                }
+            }
+        },
+        "name": "Banken",
+        "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank hat einen Geldautomaten"
+                    },
+                    "1": {
+                        "then": "Diese Bank hat <b>keinen</b> Geldautomaten"
+                    },
+                    "2": {
+                        "then": "Diese Bank hat zwar einen Geldautomaten, aber dieser ist mit einem anderen Symbol dargestellt"
+                    }
+                },
+                "question": "Hat diese Bank einen Geldautomaten?"
             }
         }
     }

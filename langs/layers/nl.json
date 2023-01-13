@@ -8105,5 +8105,8 @@
                 }
             }
         }
+    },
+    "bank": {
+        "description": "Een financiële instelling waar je geld kunt"
     }
 }
