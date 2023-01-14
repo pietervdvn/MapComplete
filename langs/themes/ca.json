@@ -611,7 +611,7 @@
                 }
             }
         },
-        "title": "OnWheels"
+        "title": "Sobre rodes"
     },
     "openwindpowermap": {
         "title": "OpenWindPowerMap"
@@ -640,7 +640,8 @@
                     }
                 }
             }
-        }
+        },
+        "title": "Veterinaris, parcs canins i altres instal·lacions per a mascotes"
     },
     "playgrounds": {
         "shortDescription": "Un mapa de parcs infantils",
@@ -703,7 +704,8 @@
         "title": "Il·luminació als carrers"
     },
     "surveillance": {
-        "title": "Vigilància sota vigilància"
+        "title": "Vigilància sota vigilància",
+        "shortDescription": "Càmeres de vigilància i altres tipus de vigilància"
     },
     "toilets": {
         "title": "Open Toilet Map"
@@ -723,5 +725,14 @@
     "waste_basket": {
         "shortDescription": "Un mapa amb papereres",
         "title": "Papepera"
+    },
+    "parkings": {
+        "title": "Aparcament"
+    },
+    "sports": {
+        "title": "Esports"
+    },
+    "postboxes": {
+        "title": "Mapa de bústies i oficines de correus"
     }
 }
