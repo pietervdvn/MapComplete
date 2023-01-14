@@ -155,14 +155,14 @@
     {
       "question": {
         "nl": "Wat is de naam van deze eetgelegenheid?",
-        "en": "What is the name of this restaurant?",
+        "en": "What is the name of this business?",
         "de": "Wie heißt dieses Restaurant?",
         "es": "¿Cual es el nombre de este restaurante?",
         "fr": "Quel est le nom de ce restaurant ?"
       },
       "render": {
         "nl": "De naam van deze eetgelegeheid is {name}",
-        "en": "The name of this restaurant is {name}",
+        "en": "The name of this business is {name}",
         "de": "Das Restaurant heißt {name}",
         "es": "El nombre de este restaurante es {name}",
         "fr": "Le nom de ce restaurant est {name}"
@@ -384,6 +384,44 @@
         }
       ],
       "id": "Cuisine"
+    },
+    {
+      "id": "Reservation",
+      "condition": "amenity=restaurant",
+      "question": {
+        "en": "Is a reservation required for this place?",
+        "nl": "Is reserveren verplicht voor deze zaak?"
+      },
+      "mappings": [
+        {
+          "if": "reservation=required",
+          "then": {
+            "en": "A reservation is required at this place",
+            "nl": "Reserveren is verplicht voor deze zaak"
+          }
+        },
+        {
+          "if": "reservation=recommended",
+          "then": {
+            "en": "A reservation is not required, but still recommended to make sure you get a table",
+            "nl": "Reserveren is niet verplicht, maar wordt wel aangeraden om zeker te zijn van een tafel"
+          }
+        },
+        {
+          "if": "reservation=yes",
+          "then": {
+            "en": "Reservation is possible at this place",
+            "nl": "Reserveren is mogelijk voor deze zaak"
+          }
+        },
+        {
+          "if": "reservation=no",
+          "then": {
+            "en": "Reservation is not possible at this place",
+            "nl": "Reserveren is niet mogelijk voor deze zaak"
+          }
+        }
+      ]
     },
     {
       "question": {
@@ -851,6 +889,24 @@
   ],
   "filter": [
     "open_now",
+    {
+      "id": "reservation",
+      "options": [
+        {
+          "question": {
+            "en": "Reservation not required",
+            "nl": "Reserveren niet vereist"
+          },
+          "osmTags": {
+            "or": [
+              "reservation=no",
+              "reservation=optional",
+              "reservation="
+            ]
+          }
+        }
+      ]
+    },
     {
       "id": "vegetarian",
       "options": [

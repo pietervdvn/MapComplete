@@ -164,8 +164,8 @@
     "level",
     {
       "question": {
-        "nl": "Wat is de naam van dit café?",
-        "en": "What is the name of this pub?",
+        "nl": "Wat is de naam van deze zaak?",
+        "en": "What is the name of this business?",
         "de": "Wie heißt diese Kneipe?",
         "fr": "Quel est le nom de ce pub ?",
         "hu": "Mi a neve ennek a kocsmának?",
@@ -173,8 +173,8 @@
         "es": "¿Cual es el nombre de este pub?"
       },
       "render": {
-        "nl": "De naam van dit café is {name}",
-        "en": "This pub is named {name}",
+        "nl": "De naam van deze zaak is {name}",
+        "en": "This business is named {name}",
         "de": "Diese Kneipe heißt {name}",
         "fr": "Ce pub se nomme {name}",
         "hu": "A kocsma neve: {name}",
