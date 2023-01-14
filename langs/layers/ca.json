@@ -1228,9 +1228,13 @@
             "playground-opening_hours": {
                 "mappings": {
                     "1": {
-                        "then": "Sempre accessible--"
+                        "then": "Sempre accessible"
+                    },
+                    "0": {
+                        "then": "Accesible des de la sortida del sol fins al vespre"
                     }
-                }
+                },
+                "question": "Quan és accesible aquest parc infantil?"
             },
             "playground-phone": {
                 "render": "<a href='tel:{phone}'>{phone}</a>"
