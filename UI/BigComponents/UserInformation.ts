@@ -23,6 +23,8 @@ import * as usersettings from "../../assets/generated/layers/usersettings.json"
 import { LoginToggle } from "../Popup/LoginButton"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import * as translators from "../../assets/translators.json"
+import * as codeContributors from "../../assets/contributors.json"
+
 export class ImportViewerLinks extends VariableUiElement {
     constructor(osmConnection: OsmConnection) {
         super(
@@ -101,6 +103,7 @@ class UserInformationMainPanel extends VariableUiElement {
         const imgSize = "h-6 w-6"
         const ud = osmConnection.userDetails
         const settings = new UIEventSource<Record<string, BaseUIElement>>({})
+        const usersettingsConfig = new LayerConfig(usersettings, "userinformationpanel")
 
         const amendedPrefs = new UIEventSource<any>({})
         osmConnection.preferencesHandler.preferences.addCallback((newPrefs) => {
@@ -113,14 +116,44 @@ class UserInformationMainPanel extends VariableUiElement {
             for (const k in userDetails) {
                 amendedPrefs.data["_" + k] = "" + userDetails[k]
             }
+
+            for (const [name, code, _] of usersettingsConfig.calculatedTags) {
+                try {
+                    let result = new Function("feat", "return " + code + ";")({
+                        properties: amendedPrefs.data,
+                    })
+                    console.warn("Calculation for", name, "yielded", result)
+                    if (result !== undefined && result !== "" && result !== null) {
+                        if (typeof result !== "string") {
+                            result = JSON.stringify(result)
+                        }
+                        amendedPrefs.data[name] = result
+                    }
+                } catch (e) {
+                    console.error(
+                        "Calculating a tag for userprofile-settings failed for variable",
+                        name,
+                        e
+                    )
+                }
+            }
+
             const simplifiedName = userDetails.name.toLowerCase().replace(/\s+/g, "")
-            const isTranslator = translators.contributors.some(
+            const isTranslator = translators.contributors.find(
                 (c: { contributor: string; commits: number }) => {
                     const replaced = c.contributor.toLowerCase().replace(/\s+/g, "")
                     return replaced === simplifiedName
                 }
             )
-            amendedPrefs.data["_is_translator"] = "" + isTranslator
+            amendedPrefs.data["_translation_contributions"] = "" + isTranslator.commits
+
+            const isCodeContributor = codeContributors.contributors.find(
+                (c: { contributor: string; commits: number }) => {
+                    const replaced = c.contributor.toLowerCase().replace(/\s+/g, "")
+                    return replaced === simplifiedName
+                }
+            )
+            amendedPrefs.data["_code_contributions"] = "" + isCodeContributor.commits
             amendedPrefs.ping()
         })
 
@@ -176,7 +209,6 @@ class UserInformationMainPanel extends VariableUiElement {
                     })
                 }
 
-                const usersettingsConfig = new LayerConfig(usersettings, "userinformationpanel")
                 const settingElements = []
                 for (const c of usersettingsConfig.tagRenderings) {
                     const settingsPanel = new SingleUserSettingsPanel(
@@ -243,6 +275,7 @@ class UserInformationMainPanel extends VariableUiElement {
 
 export default class UserInformationPanel extends ScrollableFullScreen {
     private readonly userPanel: UserInformationMainPanel
+
     constructor(
         state: {
             readonly layoutToUse: LayoutConfig
@@ -283,6 +316,6 @@ export default class UserInformationPanel extends ScrollableFullScreen {
 
     Activate() {
         super.Activate()
-        this.userPanel.focusOnSelectedQuestion()
+        this.userPanel?.focusOnSelectedQuestion()
     }
 }
