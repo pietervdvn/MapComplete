@@ -927,7 +927,7 @@
                     "5": {
                         "options": {
                             "0": {
-                                "question": "Gebruikerstaal (iso-code) {search}"
+                                "question": "Gebruikerstaal (ISO-code) {search}"
                             }
                         }
                     },
