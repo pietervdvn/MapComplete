@@ -12,7 +12,7 @@ class TranslationPart {
         const files = ScriptUtils.readDirRecSync(path, 1).filter((file) => file.endsWith(".json"))
         const rootTranslation = new TranslationPart()
         for (const file of files) {
-            const content = JSON.parse(readFileSync(file, "UTF8"))
+            const content = JSON.parse(readFileSync(file, { encoding: "utf8" }))
             rootTranslation.addTranslation(file.substr(0, file.length - ".json".length), content)
         }
         return rootTranslation

@@ -3,7 +3,7 @@ import { writeFileSync } from "fs"
 import ScriptUtils from "../ScriptUtils"
 
 function handleFile(file: string, postalCode: number) {
-    const geojson = JSON.parse(fs.readFileSync(file, "UTF8"))
+    const geojson = JSON.parse(fs.readFileSync(file, { encoding: "utf8" }))
     geojson.properties = {
         type: "boundary",
         boundary: "postal_code",
@@ -14,7 +14,7 @@ function handleFile(file: string, postalCode: number) {
 
 function getKnownPostalCodes(): number[] {
     return fs
-        .readFileSync("./scripts/postal_code_tools/knownPostalCodes.csv", "UTF8")
+        .readFileSync("./scripts/postal_code_tools/knownPostalCodes.csv", { encoding: "utf8" })
         .split("\n")
         .map((line) => Number(line.split(",")[1]))
 }

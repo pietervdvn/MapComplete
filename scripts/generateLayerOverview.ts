@@ -125,7 +125,7 @@ class LayerOverviewUtils {
         writeFileSync(
             "./assets/generated/theme_overview.json",
             JSON.stringify(sorted, null, "  "),
-            "UTF8"
+            { encoding: "utf8" }
         )
     }
 
@@ -136,7 +136,7 @@ class LayerOverviewUtils {
         writeFileSync(
             `${LayerOverviewUtils.themePath}${theme.id}.json`,
             JSON.stringify(theme, null, "  "),
-            "UTF8"
+            { encoding: "utf8" }
         )
     }
 
@@ -147,7 +147,7 @@ class LayerOverviewUtils {
         writeFileSync(
             `${LayerOverviewUtils.layerPath}${layer.id}.json`,
             JSON.stringify(layer, null, "  "),
-            "UTF8"
+            { encoding: "utf8" }
         )
     }
 
@@ -219,7 +219,7 @@ class LayerOverviewUtils {
                 continue
             }
 
-            const contents = readFileSync(path, "UTF8")
+            const contents = readFileSync(path, { encoding: "utf8" })
             if (contents.indexOf("data:image/png;") >= 0) {
                 console.warn("The SVG at " + path + " is a fake SVG: it contains PNG data!")
                 errCount++
@@ -283,7 +283,7 @@ class LayerOverviewUtils {
             const proto: LayoutConfigJson = JSON.parse(
                 readFileSync(
                     "./assets/themes/mapcomplete-changes/mapcomplete-changes.proto.json",
-                    "UTF8"
+                    { encoding: "utf8" }
                 )
             )
             const protolayer = <LayerConfigJson>(

@@ -15,7 +15,7 @@ function main(args) {
     const spec = args[1]
     const output = args[2]
 
-    const data = JSON.parse(fs.readFileSync(path, "UTF8"))
+    const data = JSON.parse(fs.readFileSync(path, { encoding: "utf8" }))
     let filter: TagsFilter
     try {
         filter = TagUtils.Tag(JSON.parse(spec))

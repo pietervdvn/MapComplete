@@ -11,7 +11,7 @@ function main(args) {
     const path = args[0]
     const key = args[1]
 
-    const data = JSON.parse(fs.readFileSync(path, "UTF8"))
+    const data = JSON.parse(fs.readFileSync(path, { encoding: "utf8" }))
     const perProperty = new Map<string, any[]>()
 
     console.log("Partitioning", data.features.length, "features")

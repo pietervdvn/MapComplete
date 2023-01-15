@@ -138,7 +138,7 @@ export default class GenerateImageAnalysis extends Script {
             if (!file.endsWith(".json")) {
                 continue
             }
-            const attr = <LicenseInfo>JSON.parse(fs.readFileSync(file, "UTF8"))
+            const attr = <LicenseInfo>JSON.parse(fs.readFileSync(file, { encoding: "utf8" }))
             const license = attr.licenseShortName
 
             if (license === undefined || attr.artist === undefined) {

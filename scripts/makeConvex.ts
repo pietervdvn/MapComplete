@@ -9,7 +9,7 @@ import ScriptUtils from "./ScriptUtils"
 
 function makeConvex(file) {
     ScriptUtils.erasableLog("Handling", file)
-    const geoJson = JSON.parse(fs.readFileSync(file, "UTF8"))
+    const geoJson = JSON.parse(fs.readFileSync(file, { encoding: "utf8" }))
     const convex = GeoOperations.convexHull(geoJson, { concavity: 2 })
     if (convex.properties === undefined) {
         convex.properties = {}

@@ -176,7 +176,7 @@ function generateTagInfoEntry(layout: LayoutConfig): any {
 function generateProjectsOverview(files: string[]) {
     try {
         const tagInfoList = "../taginfo-projects/project_list.txt"
-        let projectList = readFileSync(tagInfoList, "UTF8")
+        let projectList = readFileSync(tagInfoList, { encoding: "utf8" })
             .split("\n")
             .filter((entry) => entry.indexOf("mapcomplete_") < 0)
             .concat(

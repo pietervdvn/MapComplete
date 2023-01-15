@@ -1,5 +1,5 @@
-import * as fs from "fs"
-import { existsSync, lstatSync, readdirSync, readFileSync } from "fs"
+// import * as fs from "fs"
+// import { existsSync, lstatSync, readdirSync, readFileSync } from "fs"
 import { Utils } from "../Utils"
 import * as https from "https"
 import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
@@ -19,21 +19,21 @@ export default class ScriptUtils {
      * @param maxDepth
      */
     public static readDirRecSync(path, maxDepth = 999): string[] {
-        const result = []
+        const result: string[] = []
         if (maxDepth <= 0) {
             return []
         }
-        for (const entry of readdirSync(path)) {
-            const fullEntry = path + "/" + entry
-            const stats = lstatSync(fullEntry)
-            if (stats.isDirectory()) {
-                // Subdirectory
-                // @ts-ignore
-                result.push(...ScriptUtils.readDirRecSync(fullEntry, maxDepth - 1))
-            } else {
-                result.push(fullEntry)
-            }
-        }
+        // for (const entry of readdirSync(path)) {
+        //     const fullEntry = path + "/" + entry
+        //     const stats = lstatSync(fullEntry)
+        //     if (stats.isDirectory()) {
+        //         // Subdirectory
+        //         // @ts-ignore
+        //         result.push(...ScriptUtils.readDirRecSync(fullEntry, maxDepth - 1))
+        //     } else {
+        //         result.push(fullEntry)
+        //     }
+        // }
         return result
     }
 
@@ -78,7 +78,8 @@ export default class ScriptUtils {
             .filter((path) => path.indexOf("license_info.json") < 0)
             .map((path) => {
                 try {
-                    const contents = readFileSync(path, "UTF8")
+                    // const contents = readFileSync(path, { encoding: "utf8" })
+                    const contents = ""
                     if (contents === "") {
                         throw "The file " + path + " is empty, did you properly save?"
                     }
@@ -101,7 +102,8 @@ export default class ScriptUtils {
     public static getThemeFiles(): { parsed: LayoutConfigJson; path: string }[] {
         return this.getThemePaths().map((path) => {
             try {
-                const contents = readFileSync(path, "UTF8")
+                // const contents = readFileSync(path, { encoding: "utf8" })
+                const contents = ""
                 if (contents === "") {
                     throw "The file " + path + " is empty, did you properly save?"
                 }
@@ -122,20 +124,25 @@ export default class ScriptUtils {
     }
 
     public static async ReadSvg(path: string): Promise<any> {
-        if (!existsSync(path)) {
-            throw "File not found: " + path
-        }
-        const root = await xml2js.parseStringPromise(readFileSync(path, "UTF8"))
-        return root.svg
+        // if (!existsSync(path)) {
+        //     throw "File not found: " + path
+        // }
+        // const root = await xml2js.parseStringPromise(readFileSync(path, { encoding: "utf8" }))
+        // return root.svg
+        return ""
     }
 
     public static ReadSvgSync(path: string, callback: (svg: any) => void): any {
-        xml2js.parseString(readFileSync(path, "UTF8"), { async: false }, (err, root) => {
-            if (err) {
-                throw err
-            }
-            callback(root["svg"])
-        })
+        // xml2js.parseString(
+        //     readFileSync(path, { encoding: "utf8" }),
+        //     { async: false },
+        //     (err, root) => {
+        //         if (err) {
+        //             throw err
+        //         }
+        //         callback(root["svg"])
+        //     }
+        // )
     }
 
     private static async DownloadJSON(url: string, headers?: any): Promise<any> {

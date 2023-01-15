@@ -212,7 +212,7 @@ function loadAllTiles(
             }
 
             // We read the raw OSM-file and convert it to a geojson
-            const rawOsm = JSON.parse(readFileSync(filename, "UTF8"))
+            const rawOsm = JSON.parse(readFileSync(filename, { encoding: "utf8" }))
 
             // Create and save the geojson file - which is the main chunk of the data
             const geojson = OsmToGeoJson.default(rawOsm)

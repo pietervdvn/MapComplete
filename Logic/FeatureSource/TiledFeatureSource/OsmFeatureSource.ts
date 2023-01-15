@@ -147,7 +147,7 @@ export default class OsmFeatureSource {
                 this.rawDataHandlers.forEach((handler) =>
                     handler(osmJson, Tiles.tile_index(z, x, y))
                 )
-                const geojson = <FeatureCollection<any, { id: string }>>OsmToGeoJson.default(
+                const geojson = <FeatureCollection<any, { id: string }>>OsmToGeoJson(
                     osmJson,
                     // @ts-ignore
                     {
