@@ -799,6 +799,13 @@
                                 "question": "Erstellt mit host {search}"
                             }
                         }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Im Änderungssatz wurde mindestens ein Bild hinzugefügt"
+                            }
+                        }
                     }
                 },
                 "name": "Zentrum der Änderungssätze",
