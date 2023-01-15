@@ -5,7 +5,7 @@
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 204,
+      "commits": 205,
       "contributor": "kjon"
     },
     {
@@ -33,12 +33,12 @@
       "contributor": "Babos Gábor"
     },
     {
-      "commits": 29,
-      "contributor": "Artem"
+      "commits": 31,
+      "contributor": "paunofu"
     },
     {
-      "commits": 28,
-      "contributor": "paunofu"
+      "commits": 29,
+      "contributor": "Artem"
     },
     {
       "commits": 27,
@@ -166,6 +166,10 @@
     },
     {
       "commits": 5,
+      "contributor": "sylvain-m"
+    },
+    {
+      "commits": 5,
       "contributor": "Fabio Bettani"
     },
     {
@@ -195,10 +199,6 @@
     {
       "commits": 5,
       "contributor": "Alexey Shabanov"
-    },
-    {
-      "commits": 4,
-      "contributor": "sylvain-m"
     },
     {
       "commits": 4,

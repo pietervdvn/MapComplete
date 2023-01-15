@@ -486,7 +486,8 @@
         "fr": "Quand ce terrain de jeux est-il accessible ?",
         "it": "Quando si può accedere a questo campetto?",
         "ru": "Когда открыта эта игровая площадка?",
-        "de": "Wann ist dieser Spielplatz zugänglich?"
+        "de": "Wann ist dieser Spielplatz zugänglich?",
+        "ca": "Quan és accesible aquest parc infantil?"
       },
       "mappings": [
         {
@@ -498,7 +499,8 @@
             "it": "Si può accedere dall'alba al tramonto",
             "ru": "Открыто от рассвета до заката",
             "de": "Zugänglich von Sonnenaufgang bis Sonnenuntergang",
-            "es": "Accesible desde el amanecer hasta el anochecer"
+            "es": "Accesible desde el amanecer hasta el anochecer",
+            "ca": "Accesible des de la sortida del sol fins al vespre"
           }
         },
         {
@@ -510,7 +512,7 @@
             "ru": "Всегда доступен",
             "it": "Si può sempre accedere",
             "de": "Immer zugänglich",
-            "ca": "Sempre accessible--",
+            "ca": "Sempre accessible",
             "es": "Siempre accesible"
           }
         }

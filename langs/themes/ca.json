@@ -611,10 +611,13 @@
                 }
             }
         },
-        "title": "OnWheels"
+        "title": "Sobre rodes"
     },
     "openwindpowermap": {
         "title": "OpenWindPowerMap"
+    },
+    "parkings": {
+        "title": "Aparcament"
     },
     "personal": {
         "description": "Crea un tema personal basat en totes les capes disponibles de totes els temes. Per a mostrar les dades, obri <a href='#filter'>selecció de capes</a>",
@@ -640,7 +643,8 @@
                     }
                 }
             }
-        }
+        },
+        "title": "Veterinaris, parcs canins i altres instal·lacions per a mascotes"
     },
     "playgrounds": {
         "shortDescription": "Un mapa de parcs infantils",
@@ -665,6 +669,9 @@
         "shortDescription": "Codis postals",
         "title": "Codis postals"
     },
+    "postboxes": {
+        "title": "Mapa de bústies i oficines de correus"
+    },
     "shops": {
         "title": "Open Shop Map"
     },
@@ -683,6 +690,9 @@
     },
     "sport_pitches": {
         "title": "Camps d'esports"
+    },
+    "sports": {
+        "title": "Esports"
     },
     "street_lighting": {
         "description": "En aquest mapa pots trobar tot el relacionat amb l'enllumenat públic",
@@ -703,6 +713,7 @@
         "title": "Il·luminació als carrers"
     },
     "surveillance": {
+        "shortDescription": "Càmeres de vigilància i altres tipus de vigilància",
         "title": "Vigilància sota vigilància"
     },
     "toilets": {

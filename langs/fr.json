@@ -247,6 +247,12 @@
         "skippedQuestions": "Questions passées",
         "testing": "Test - les changements ne seront pas sauvegardés",
         "uploadGpx": {
+            "meta": {
+                "descriptionIntro": "En option, vous pouvez entrer une description de votre trace :",
+                "descriptionPlaceHolder": "Entrer la description de votre trace",
+                "title": "Titre et description",
+                "titlePlaceholder": "Entrer le titre de votre trace"
+            },
             "modes": {
                 "private": {
                     "name": "Anonyme"
@@ -283,6 +289,7 @@
             "createNewWikidata": "Créer un nouvel élément Wikidata",
             "doSearch": "Rechercher ci-dessus pour voir les résultats",
             "failed": "Le chargement de Wikipédia a échoué",
+            "fromWikipedia": "Depuis Wikipédia, l'encyclopédie libre",
             "loading": "Chargement de Wikipédia…",
             "noResults": "Pas de résultats pour <i>{search}</i>",
             "noWikipediaPage": "Cet élément Wikidata n’a pas encore de page Wikipédia correspondante.",
@@ -470,7 +477,8 @@
     },
     "userinfo": {
         "gotoInbox": "Ouvrir sa boite de réception",
-        "gotoSettings": "Paramètres sur OpenStreetMap.org"
+        "gotoSettings": "Paramètres sur OpenStreetMap.org",
+        "moveToHome": "Déplacez la carte vers votre emplacement"
     },
     "validation": {
         "email": {
