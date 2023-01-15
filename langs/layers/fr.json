@@ -4815,6 +4815,9 @@
             "turbine-start-date": {
                 "question": "Depuis quand l’éolienne est-elle en fonctionnement ?",
                 "render": "L’éolienne est active depuis {start_date}."
+            },
+            "windturbine-fixme": {
+                "render": "Informations supplémentaires pour les experts d'OpenStreetMap : {fixme}"
             }
         },
         "title": {

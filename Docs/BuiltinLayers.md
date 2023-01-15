@@ -1034,6 +1034,7 @@ The following layers are included in MapComplete:
   - [transit_stops](./Layers/transit_stops.md)
   - [tree_node](./Layers/tree_node.md)
   - [type_node](./Layers/type_node.md)
+  - [usersettings](./Layers/usersettings.md)
   - [veterinary](./Layers/veterinary.md)
   - [viewpoint](./Layers/viewpoint.md)
   - [village_green](./Layers/village_green.md)

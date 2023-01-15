@@ -8097,6 +8097,10 @@
             "turbine-start-date": {
                 "question": "Wanneer werd deze windturbine in gebruik genomen?",
                 "render": "Deze windturbine werd op {start_date} in gebruik genomen"
+            },
+            "windturbine-fixme": {
+                "question": "Is er iets mis met de informatie over deze windturbine dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)",
+                "render": "Extra informatie voor OpenStreetMap experts: {fixme}"
             }
         },
         "title": {

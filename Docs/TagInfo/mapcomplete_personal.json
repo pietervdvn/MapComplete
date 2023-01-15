@@ -6352,6 +6352,26 @@
       "value": "thai"
     },
     {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=required with a fixed text, namely 'A reservation is required at this place' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if amenity=restaurant)",
+      "value": "required"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=recommended with a fixed text, namely 'A reservation is not required, but still recommended to make sure you get a table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if amenity=restaurant)",
+      "value": "recommended"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=yes with a fixed text, namely 'Reservation is possible at this place' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if amenity=restaurant)",
+      "value": "yes"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=no with a fixed text, namely 'Reservation is not possible at this place' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if amenity=restaurant)",
+      "value": "no"
+    },
+    {
       "key": "takeaway",
       "description": "Layer 'Restaurants and fast food' shows takeaway=only with a fixed text, namely 'This is a take-away only business' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "only"
@@ -11989,6 +12009,10 @@
     {
       "key": "start_date",
       "description": "Layer 'wind turbine' shows and asks freeform values for key 'start_date' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "fixme",
+      "description": "Layer 'wind turbine' shows and asks freeform values for key 'fixme' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "image",

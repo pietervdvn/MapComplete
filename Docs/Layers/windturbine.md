@@ -65,6 +65,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/height#values) [height](https://wiki.openstreetmap.org/wiki/Key:height) | [pfloat](../SpecialInputElements.md#pfloat) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/rotor:diameter#values) [rotor:diameter](https://wiki.openstreetmap.org/wiki/Key:rotor:diameter) | [float](../SpecialInputElements.md#float) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/start_date#values) [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) | [date](../SpecialInputElements.md#date) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fixme#values) [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) | [text](../SpecialInputElements.md#text) | 
 
 
 
@@ -134,6 +135,20 @@ The question is  *When did this wind turbine go into operation?*
 This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) 
 
 This is rendered with  `This wind turbine went into operation on/in {start_date}.`
+
+
+
+
+
+### windturbine-fixme 
+
+
+
+The question is  *Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)*
+
+This rendering asks information about the property  [fixme](https://wiki.openstreetmap.org/wiki/Key:fixme) 
+
+This is rendered with  `Extra information for OpenStreetMap experts: {fixme}`
 
 
 

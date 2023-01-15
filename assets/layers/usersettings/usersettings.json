@@ -74,7 +74,7 @@
         {
           "if": "_translation_contributions>0",
           "then": {
-            "en": "You have contributed to translating MapComplete with {_translation_contributions} commits! That's awesome!"
+            "en": "You have contributed to translating MapComplete! That's awesome!"
           },
           "icon": "party"
         }

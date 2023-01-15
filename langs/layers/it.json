@@ -2663,6 +2663,9 @@
             "turbine-start-date": {
                 "question": "Quando è entrata in funzione questa pala eolica?",
                 "render": "Questa pala eolica è entrata in funzione in data {start_date}."
+            },
+            "windturbine-fixme": {
+                "render": "Informazioni supplementari per gli esperti di OpenStreetMap: {fixme}"
             }
         },
         "title": {

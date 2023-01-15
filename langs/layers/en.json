@@ -8224,6 +8224,13 @@
     "usersettings": {
         "description": "A special layer which is not meant to be shown on a map, but which is used to set user settings",
         "tagRenderings": {
+            "contributor-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "You have contributed code to MapComplete with {_code_contributions} commits! That's awesome!"
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -8245,6 +8252,16 @@
                 "mappings": {
                     "0": {
                         "then": "You have contributed to translating MapComplete! That's awesome!"
+                    }
+                }
+            },
+            "verified-mastodon": {
+                "mappings": {
+                    "0": {
+                        "then": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                    },
+                    "1": {
+                        "then": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
                     }
                 }
             }
@@ -8517,6 +8534,10 @@
             "turbine-start-date": {
                 "question": "When did this wind turbine go into operation?",
                 "render": "This wind turbine went into operation on/in {start_date}."
+            },
+            "windturbine-fixme": {
+                "question": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)",
+                "render": "Extra information for OpenStreetMap experts: {fixme}"
             }
         },
         "title": {

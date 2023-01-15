@@ -4069,5 +4069,12 @@
                 }
             }
         }
+    },
+    "windturbine": {
+        "tagRenderings": {
+            "windturbine-fixme": {
+                "render": "Información extra para expertos en OpenStreetMap: {fixme}"
+            }
+        }
     }
 }

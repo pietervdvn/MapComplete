@@ -120,11 +120,11 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
-The question is  *What is the name of this pub?*
+The question is  *What is the name of this business?*
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with  `This pub is named {name}`
+This is rendered with  `This business is named {name}`
 
 
 

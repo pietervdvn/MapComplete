@@ -8441,6 +8441,9 @@
             "turbine-start-date": {
                 "question": "Wann wurde das Windrad in Betrieb genommen?",
                 "render": "Das Windrad wurde am {start_date} in Betrieb genommen."
+            },
+            "windturbine-fixme": {
+                "render": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}"
             }
         },
         "title": {
