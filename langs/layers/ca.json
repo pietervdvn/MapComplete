@@ -1228,9 +1228,13 @@
             "playground-opening_hours": {
                 "mappings": {
                     "1": {
-                        "then": "Sempre accessible--"
+                        "then": "Sempre accessible"
+                    },
+                    "0": {
+                        "then": "Accesible des de la sortida del sol fins al vespre"
                     }
-                }
+                },
+                "question": "Quan és accesible aquest parc infantil?"
             },
             "playground-phone": {
                 "render": "<a href='tel:{phone}'>{phone}</a>"
@@ -1276,6 +1280,22 @@
         },
         "title": {
             "render": "Bústia per llibres"
+        },
+        "tagRenderings": {
+            "public_bookcase-brand": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquesta prestatgeria pública no és part d'una xarxa més gran"
+                    }
+                }
+            },
+            "bookcase-is-indoors": {
+                "mappings": {
+                    "2": {
+                        "then": "La prestatgeria està ubicada a l'exterior"
+                    }
+                }
+            }
         }
     },
     "recycling": {
@@ -1777,6 +1797,31 @@
                 "applicableUnits": {
                     "0": {
                         "human": " metre"
+                    }
+                }
+            }
+        }
+    },
+    "tertiary_education": {
+        "tagRenderings": {
+            "isced": {
+                "question": "Quin nivell d'educació és dona aquí?",
+                "mappings": {
+                    "0": {
+                        "then": "Aquí s'imparteixen carreres universitàries"
+                    },
+                    "2": {
+                        "then": "Aquí s'imparteixen doctorats"
+                    },
+                    "1": {
+                        "then": "Aquí s'imparteixen masters"
+                    }
+                }
+            },
+            "institution-kind": {
+                "mappings": {
+                    "1": {
+                        "then": "Açò és una universitat, una institució d'educació terciaria on s'imparteixen carreres universitàries o superior."
                     }
                 }
             }
