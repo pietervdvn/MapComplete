@@ -1498,8 +1498,8 @@
                 "question": "Was ist das für ein Café?"
             },
             "Name": {
-                "question": "Wie heißt diese Kneipe?",
-                "render": "Diese Kneipe heißt {name}"
+                "question": "Was ist der Name dieses Unternehmens?",
+                "render": "Dieses Unternehmen heißt {name}"
             }
         },
         "title": {
@@ -4252,6 +4252,13 @@
                         "question": "Halal Gerichte im Angebot"
                     }
                 }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Reservierung nicht erforderlich"
+                    }
+                }
             }
         },
         "name": "Restaurants und Imbisse",
@@ -4333,8 +4340,8 @@
                 "question": "Um was für einen Ort handelt es sich?"
             },
             "Name": {
-                "question": "Wie heißt dieses Restaurant?",
-                "render": "Das Restaurant heißt {name}"
+                "question": "Was ist der Name dieses Unternehmens?",
+                "render": "Dieses Unternehmen heißt {name}"
             },
             "Takeaway": {
                 "mappings": {
@@ -4492,6 +4499,23 @@
                     }
                 },
                 "question": "Bietet dieses Restaurant biologische Speisen an?"
+            },
+            "Reservation": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier ist eine Reservierung erforderlich"
+                    },
+                    "2": {
+                        "then": "Eine Reservierung ist an diesem Ort möglich"
+                    },
+                    "3": {
+                        "then": "Eine Reservierung ist an diesem Ort nicht möglich"
+                    },
+                    "1": {
+                        "then": "Eine Reservierung ist nicht erforderlich, wird aber empfohlen, damit Sie einen Tisch bekommen"
+                    }
+                },
+                "question": "Ist an diesem Ort eine Reservierung erforderlich?"
             }
         },
         "title": {
