@@ -445,7 +445,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/surveillance surveillance]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:fr|en}}, {{#language:pl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:fr|en}}, {{#language:pl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}
 |descr= A MapComplete theme: Surveillance cameras and other means of surveillance
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png

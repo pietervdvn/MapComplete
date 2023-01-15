@@ -96,7 +96,8 @@
             "nl": "Dit is een universiteit (of hogeschool), een onderwijsinstelling van tertaire educatie. De gegeven opleidingen halen het niveau van een bachelor-opleiding of hoger.",
             "de": "Dies ist eine Universität, eine Einrichtung des tertiären Bildungsbereichs, an der Bachelor-Abschlüsse oder höhere Abschlüsse verliehen werden.",
             "fr": "Il s'agit d'une université, d'un établissement d'enseignement supérieur où sont délivrés des diplômes de bachelor ou plus.",
-            "da": "Dette er et universitet, en institution for videregående uddannelse, hvor der tildeles bachelorgrader eller højere."
+            "da": "Dette er et universitet, en institution for videregående uddannelse, hvor der tildeles bachelorgrader eller højere.",
+            "ca": "Açò és una universitat, una institució d'educació terciaria on s'imparteixen carreres universitàries o superior."
           }
         }
       ]
@@ -108,7 +109,8 @@
         "nl": "Wat is het niveau van onderwijs?",
         "de": "Welche Bildungsabschlüsse werden hier verliehen?",
         "fr": "Quel niveau d'éducation est donné ici ?",
-        "da": "Hvilket uddannelsesniveau gives her?"
+        "da": "Hvilket uddannelsesniveau gives her?",
+        "ca": "Quin nivell d'educació és dona aquí?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -119,7 +121,8 @@
             "nl": "Bacheloropleidingen (of equivalent) worden hier gegeven",
             "de": "Bachelor-Abschlüsse werden hier verliehen",
             "fr": "Les diplômes de bachelor y sont décernés",
-            "da": "Her udstedes bachelorgrader"
+            "da": "Her udstedes bachelorgrader",
+            "ca": "Aquí s'imparteixen carreres universitàries"
           }
         },
         {
@@ -129,7 +132,8 @@
             "nl": "Masteropleidingen (of equivalent) worden hier gegeven",
             "de": "Hier werden Master-Abschlüsse verliehen",
             "fr": "Des masters y sont décernés",
-            "da": "Mastergrader udstedes her"
+            "da": "Mastergrader udstedes her",
+            "ca": "Aquí s'imparteixen masters"
           }
         },
         {
@@ -138,7 +142,8 @@
             "en": "Doctorate degrees are awarded here",
             "nl": "Doctoraatsopleidingen (of equivalent) worden hier gegeven",
             "de": "Hier werden die Doktortitel verliehen",
-            "fr": "Des doctorats y sont décernés"
+            "fr": "Des doctorats y sont décernés",
+            "ca": "Aquí s'imparteixen doctorats"
           }
         }
       ],

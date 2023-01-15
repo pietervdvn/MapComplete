@@ -234,7 +234,8 @@
             "de": "Der Bücherschrank befindet sich im Freien",
             "fr": "Cette microbibliothèque est en extérieur",
             "it": "Questa microbiblioteca si trova all'aperto",
-            "hu": "Ez a könyvszekrény a szabadban van"
+            "hu": "Ez a könyvszekrény a szabadban van",
+            "ca": "La prestatgeria està ubicada a l'exterior"
           },
           "if": "indoor=",
           "hideInAnswer": true
@@ -359,7 +360,8 @@
             "de": "Der Bücherschrank gehört zu keinem Netzwerk",
             "fr": "Cette microbibliothèque ne fait pas partie d'un réseau/groupe",
             "it": "Questa microbiblioteca non fa parte di una rete",
-            "hu": "Ez a nyilvános könyvespolc nem része egy nagyobb hálózatnak"
+            "hu": "Ez a nyilvános könyvespolc nem része egy nagyobb hálózatnak",
+            "ca": "Aquesta prestatgeria pública no és part d'una xarxa més gran"
           }
         }
       ],

@@ -1227,11 +1227,11 @@
             },
             "playground-opening_hours": {
                 "mappings": {
-                    "1": {
-                        "then": "Sempre accessible"
-                    },
                     "0": {
                         "then": "Accesible des de la sortida del sol fins al vespre"
+                    },
+                    "1": {
+                        "then": "Sempre accessible"
                     }
                 },
                 "question": "Quan és accesible aquest parc infantil?"
@@ -1278,24 +1278,24 @@
                 "title": "una bústia per a llibres"
             }
         },
-        "title": {
-            "render": "Bústia per llibres"
-        },
         "tagRenderings": {
-            "public_bookcase-brand": {
-                "mappings": {
-                    "1": {
-                        "then": "Aquesta prestatgeria pública no és part d'una xarxa més gran"
-                    }
-                }
-            },
             "bookcase-is-indoors": {
                 "mappings": {
                     "2": {
                         "then": "La prestatgeria està ubicada a l'exterior"
                     }
                 }
+            },
+            "public_bookcase-brand": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquesta prestatgeria pública no és part d'una xarxa més gran"
+                    }
+                }
             }
+        },
+        "title": {
+            "render": "Bústia per llibres"
         }
     },
     "recycling": {
@@ -1654,6 +1654,31 @@
             "render": "Càmera de videovigilància"
         }
     },
+    "tertiary_education": {
+        "tagRenderings": {
+            "institution-kind": {
+                "mappings": {
+                    "1": {
+                        "then": "Açò és una universitat, una institució d'educació terciaria on s'imparteixen carreres universitàries o superior."
+                    }
+                }
+            },
+            "isced": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí s'imparteixen carreres universitàries"
+                    },
+                    "1": {
+                        "then": "Aquí s'imparteixen masters"
+                    },
+                    "2": {
+                        "then": "Aquí s'imparteixen doctorats"
+                    }
+                },
+                "question": "Quin nivell d'educació és dona aquí?"
+            }
+        }
+    },
     "toilet": {
         "name": "Lavabos",
         "tagRenderings": {
@@ -1797,31 +1822,6 @@
                 "applicableUnits": {
                     "0": {
                         "human": " metre"
-                    }
-                }
-            }
-        }
-    },
-    "tertiary_education": {
-        "tagRenderings": {
-            "isced": {
-                "question": "Quin nivell d'educació és dona aquí?",
-                "mappings": {
-                    "0": {
-                        "then": "Aquí s'imparteixen carreres universitàries"
-                    },
-                    "2": {
-                        "then": "Aquí s'imparteixen doctorats"
-                    },
-                    "1": {
-                        "then": "Aquí s'imparteixen masters"
-                    }
-                }
-            },
-            "institution-kind": {
-                "mappings": {
-                    "1": {
-                        "then": "Açò és una universitat, una institució d'educació terciaria on s'imparteixen carreres universitàries o superior."
                     }
                 }
             }
