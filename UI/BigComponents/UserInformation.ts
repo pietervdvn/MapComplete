@@ -79,7 +79,6 @@ class SingleUserSettingsPanel extends EditableTagRendering {
         this.SetClass("rounded-xl")
         userInfoFocusedQuestion.addCallbackAndRun((selected) => {
             if (config.id !== selected) {
-                console.log("Removing the glowingshadow...")
                 self.RemoveClass("glowing-shadow")
             } else {
                 self.SetClass("glowing-shadow")
@@ -122,7 +121,6 @@ class UserInformationMainPanel extends VariableUiElement {
                     let result = new Function("feat", "return " + code + ";")({
                         properties: amendedPrefs.data,
                     })
-                    console.warn("Calculation for", name, "yielded", result)
                     if (result !== undefined && result !== "" && result !== null) {
                         if (typeof result !== "string") {
                             result = JSON.stringify(result)
@@ -145,15 +143,18 @@ class UserInformationMainPanel extends VariableUiElement {
                     return replaced === simplifiedName
                 }
             )
-            amendedPrefs.data["_translation_contributions"] = "" + isTranslator.commits
-
+            if(isTranslator){
+                amendedPrefs.data["_translation_contributions"] = "" + isTranslator.commits
+            }
             const isCodeContributor = codeContributors.contributors.find(
                 (c: { contributor: string; commits: number }) => {
                     const replaced = c.contributor.toLowerCase().replace(/\s+/g, "")
                     return replaced === simplifiedName
                 }
             )
-            amendedPrefs.data["_code_contributions"] = "" + isCodeContributor.commits
+            if(isCodeContributor){
+                amendedPrefs.data["_code_contributions"] = "" + isCodeContributor.commits
+            }
             amendedPrefs.ping()
         })
 
