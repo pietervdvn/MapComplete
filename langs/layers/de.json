@@ -7167,6 +7167,12 @@
                         "render_single_language": "Die Treppe hat taktile Schrift in {language():font-bold}"
                     }
                 }
+            },
+            "multilevels": {
+                "override": {
+                    "question": "Zwischen welchen Stockwerken befindet sich die Treppe?",
+                    "render": "Die Treppe befindet sich zwischen den Stockwerken {level}"
+                }
             }
         },
         "title": {
@@ -7547,6 +7553,18 @@
                 },
                 "question": "Wer ist der Betreiber dieses Fahrkartenentwerters?",
                 "render": "Dieser Fahrkartenentwerter wird betrieben von {operator}"
+            },
+            "payment-options": {
+                "override": {
+                    "mappings+": {
+                        "1": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
+                        },
+                        "0": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
+                        }
+                    }
+                }
             }
         },
         "title": {
@@ -7813,6 +7831,11 @@
             "wheelchair-door-width": {
                 "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
                 "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist die Einrichtung, in der sich diese Toiletten befinden, geöffnet?"
+                }
             }
         },
         "title": {
@@ -8443,7 +8466,8 @@
                 "render": "Das Windrad wurde am {start_date} in Betrieb genommen."
             },
             "windturbine-fixme": {
-                "render": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}"
+                "render": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}",
+                "question": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlassen Sie eine Nachricht an OpenStreetMap-Experten)"
             }
         },
         "title": {
@@ -8479,5 +8503,51 @@
                 }
             }
         }
+    },
+    "usersettings": {
+        "tagRenderings": {
+            "verified-mastodon": {
+                "mappings": {
+                    "1": {
+                        "then": "Wir haben einen Link gefunden, der aussieht wie ein Mastodon-Konto, aber nicht verifiziert ist. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Bearbeiten Sie Ihre Profilbeschreibung</a> und fügen Sie dort Folgendes ein: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+                    },
+                    "0": {
+                        "then": "Es wurde ein Link zu deinem Mastodon-Profil gefunden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                    }
+                }
+            },
+            "picture-license": {
+                "mappings": {
+                    "2": {
+                        "then": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss"
+                    },
+                    "0": {
+                        "then": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann. <span class='subtle'>Dies ist die Standardeinstellung.</span>"
+                    },
+                    "1": {
+                        "then": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann."
+                    },
+                    "3": {
+                        "then": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY-SA 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss und dass Ableitungen Ihres Bildes mit der gleichen Lizenz weitergegeben werden müssen."
+                    }
+                },
+                "question": "Unter welcher Lizenz möchten Sie Ihre Bilder veröffentlichen?"
+            },
+            "contributor-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie haben Code zu MapComplete mit {_code_contributions} Commits beigetragen! Das ist großartig!"
+                    }
+                }
+            },
+            "translation-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie haben dazu beigetragen, MapComplete zu übersetzen! Das ist großartig!"
+                    }
+                }
+            }
+        },
+        "description": "Eine spezielle Ebene, die nicht für die Darstellung auf einer Karte gedacht ist, sondern für die Festlegung von Benutzereinstellungen verwendet wird"
     }
 }
