@@ -927,7 +927,7 @@
                     "5": {
                         "options": {
                             "0": {
-                                "question": "Gebruikerstaal (iso-code) {search}"
+                                "question": "Gebruikerstaal (ISO-code) {search}"
                             }
                         }
                     },
@@ -935,6 +935,13 @@
                         "options": {
                             "0": {
                                 "question": "Gemaakt met host {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Changeset die een of meerdere afbeeldingen toevoegt"
                             }
                         }
                     }

@@ -305,7 +305,8 @@
             },
             "title": "Upload je traject naar OpenStreetMap.org",
             "uploadFinished": "Je traject is geupload!",
-            "uploading": "Traject uploaden…"
+            "uploading": "Traject uploaden…",
+            "gpxServiceOffline": "De GPX-service is momenteel niet-operationeel. Probeer later opnieuw."
         },
         "useSearch": "Gebruik de zoekfunctie hierboven om meer opties te zien",
         "useSearchForMore": "Gebruik de zoekfunctie om {total} meer waarden te vinden…",
@@ -347,7 +348,11 @@
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        }
+        },
+        "loginFailedReadonlyMode": "OpenStreetMap.org is op dit moment in alleen-lezen modus door onderhoud. Kaartwijzigingen maken zal binnenkort weer mogelijk zijn.",
+        "loginFailedOfflineMode": "OpenStreetMap.org is op dit moment niet beschikbaar door onderhoud. Kaartwijzigingen maken zal binnenkort weer mogelijk zijn.",
+        "loginFailedUnreachableMode": "OpenStreetMap.org kan op dit moment niet bereikt worden. Ben je verbonden met het internet of blokkeer je toegang tot externe website? Probeer later opnieuw.",
+        "backToIndex": "Keer terug naar het overzicht met alle thematische kaarten"
     },
     "hotkeyDocumentation": {
         "closeSidebar": "Sluit de zijbalk",
@@ -355,7 +360,11 @@
         "openLayersPanel": "Open het paneel met lagen, filters en achtergrondkaart",
         "selectBackground": "Selecteer een achtergrondlaag van category {category}",
         "selectMapnik": "Selecteer OpenStreetMap-carto als achtergrondlaag",
-        "selectSearch": "Selecteer de zoekbalk om locaties te zoeken"
+        "selectSearch": "Selecteer de zoekbalk om locaties te zoeken",
+        "title": "Sneltoetsen",
+        "key": "Toets-combinatie",
+        "action": "Actie",
+        "intro": "MapComplete ondersteunt de volgende sneltoetsen:"
     },
     "image": {
         "addPicture": "Voeg foto toe",
@@ -383,7 +392,8 @@
         "uploadFailed": "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten.",
         "uploadMultipleDone": "{count} afbeeldingen zijn toegevoegd. Bedankt voor je bijdrage!",
         "uploadingMultiple": "Bezig met {count} foto's te uploaden…",
-        "uploadingPicture": "Bezig met een foto te uploaden…"
+        "uploadingPicture": "Bezig met een foto te uploaden…",
+        "currentLicense": "Je afbeelding wordt gepubliceerd met de {license}-licentie"
     },
     "importHelper": {
         "askMetadata": {
@@ -932,7 +942,8 @@
         "newMessages": "je hebt nieuwe berichten",
         "noDescription": "Je hebt nog geen beschrijving op je profiel",
         "noDescriptionCallToAction": "Voeg een profielbeschrijving toe",
-        "welcome": "Welkom {name}"
+        "welcome": "Welkom {name}",
+        "titleNotLoggedIn": "Welkom"
     },
     "validation": {
         "color": {
