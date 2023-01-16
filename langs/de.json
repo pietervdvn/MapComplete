@@ -305,7 +305,8 @@
             },
             "title": "Laden Sie Ihre Strecke auf OpenStreetMap.org hoch",
             "uploadFinished": "Ihre Strecke wurde hochgeladen!",
-            "uploading": "Hochladen Ihrer Strecke…"
+            "uploading": "Hochladen Ihrer Strecke…",
+            "gpxServiceOffline": "Der GPX-Dienst ist derzeit offline - ein Hochladen ist derzeit nicht möglich. Versuchen Sie es später noch einmal."
         },
         "useSearch": "Verwenden Sie die Suche oben, um Voreinstellungen anzuzeigen",
         "useSearchForMore": "Verwenden Sie die Suchfunktion, um innerhalb von {total} weitere Werte zu suchen…",
@@ -330,7 +331,7 @@
         "welcomeBack": "Willkommen zurück!",
         "welcomeExplanation": {
             "addNew": "Tippen oden klicken Sie auf die Karte, um einen neuen Ort hinzuzufügen.",
-            "general": "Auf dieser Karte können Sie <i>Interessante Orte</i> sehen, bearbeiten und hinzufügen. Verschieben Sie den Kartenausschnitt, um die Orte zu entdecken, tippen Sie auf einen, um weitere Informationen zu sehen oder zu bearbeiten. Alle Daten stammen von OpenStreetMap und sind dort gespeichert, so dass sie frei weiterverwendet werden können."
+            "general": "Auf dieser Karte können Sie <i>themenspezifische Kartenobjekte</i> sehen, bearbeiten und hinzufügen. Verschieben Sie den Kartenausschnitt, um die Objekte zu entdecken, tippen Sie auf eines, um weitere Informationen zu sehen oder zu bearbeiten. Alle Daten stammen von OpenStreetMap und sind dort gespeichert, so dass sie frei weiterverwendet werden können."
         },
         "wikipedia": {
             "createNewWikidata": "Einen neues Wikidata Element erstellen",
@@ -347,7 +348,11 @@
             "searchToShort": "Ihre Suchanfrage ist zu kurz, geben Sie einen längeren Text ein",
             "searchWikidata": "Wikidata durchsuchen",
             "wikipediaboxTitle": "Wikipedia"
-        }
+        },
+        "loginFailedOfflineMode": "OpenStreetMap.org ist derzeit wegen Wartungsarbeiten nicht verfügbar. Bearbeitungen werden bald wieder möglich sein",
+        "loginFailedReadonlyMode": "OpenStreetMap.org ist derzeit wegen Wartungsarbeiten im Lesemodus. Bearbeitungen werden bald wieder möglich sein",
+        "loginFailedUnreachableMode": "OpenStreetMap.org ist zurzeit nicht erreichbar. Sind Sie mit dem Internet verbunden oder blockieren Sie Drittanbieter? Versuchen Sie es später noch einmal",
+        "backToIndex": "Zurück zur Übersicht aller thematischen Karten"
     },
     "hotkeyDocumentation": {
         "closeSidebar": "Seitenleiste schließen",
@@ -355,7 +360,11 @@
         "openLayersPanel": "Öffnet das Bedienfeld Hintergrund, Ebenen und Filter",
         "selectBackground": "Wählen Sie eine Hintergrundebene der Kategorie {category} aus",
         "selectMapnik": "Setzt die Hintergrundebene auf OpenStreetMap-carto",
-        "selectSearch": "Suchleiste auswählen, um nach Orten zu suchen"
+        "selectSearch": "Suchleiste auswählen, um nach Orten zu suchen",
+        "key": "Tastenkombination",
+        "title": "Tastaturbefehle",
+        "intro": "MapComplete unterstützt folgende Tastaturbefehle:",
+        "action": "Aktion"
     },
     "image": {
         "addPicture": "Bild hinzufügen",
@@ -383,7 +392,8 @@
         "uploadFailed": "Das Bild konnte nicht hochladen werden. Haben Sie eine aktive Internetverbindung und sind APIs von Dritten erlaubt? Der Brave Browser oder UMatrix blockieren diese eventuell.",
         "uploadMultipleDone": "{count} Bilder wurden hinzugefügt. Vielen Dank für die Hilfe!",
         "uploadingMultiple": "{count} Bilder hochladen…",
-        "uploadingPicture": "Bild wird hochgeladen…"
+        "uploadingPicture": "Bild wird hochgeladen…",
+        "currentLicense": "Ihre Bilder werden unter {license} veröffentlicht"
     },
     "importHelper": {
         "askMetadata": {
@@ -932,7 +942,8 @@
         "newMessages": "Sie haben neue Nachrichten",
         "noDescription": "Sie haben noch keine Profilbeschreibung",
         "noDescriptionCallToAction": "Profilbeschreibung hinzufügen",
-        "welcome": "Willkommen {name}"
+        "welcome": "Willkommen {name}",
+        "titleNotLoggedIn": "Willkommen"
     },
     "validation": {
         "color": {
