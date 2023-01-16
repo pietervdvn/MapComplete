@@ -113,6 +113,7 @@ export default class LocationInput
         minZoom?: number
         mapBackground?: UIEventSource<BaseLayer>
         snapTo?: UIEventSource<{ feature: Feature }[]>
+        renderLayerForSnappedPoint?: LayerConfig
         maxSnapDistance?: number
         snappedPointTags?: any
         requiresSnapping?: boolean
@@ -149,24 +150,11 @@ export default class LocationInput
         this._bounds = options?.bounds
         this._minZoom = options?.minZoom
         this._state = options?.state
+        const self = this
         if (this._snapTo === undefined) {
             this._value = this._centerLocation
         } else {
-            const self = this
-
-            if (self._snappedPointTags !== undefined) {
-                const layout = this._state.layoutToUse
-
-                let matchingLayer = LocationInput.matchLayer
-                for (const layer of layout.layers) {
-                    if (layer.source.osmTags.matchesProperties(self._snappedPointTags)) {
-                        matchingLayer = layer
-                    }
-                }
-                this._matching_layer = matchingLayer
-            } else {
-                this._matching_layer = LocationInput.matchLayer
-            }
+            this._matching_layer = options?.renderLayerForSnappedPoint ?? LocationInput.matchLayer
 
             // Calculate the location of the point based by snapping it onto a way
             // As a side-effect, the actual snapped-onto way (if any) is saved into 'snappedOnto'
@@ -220,10 +208,6 @@ export default class LocationInput
                         }
                     }
                     min.properties = options?.snappedPointTags ?? min.properties
-                    if (matchedWay.properties.id.startsWith("relation/")) {
-                        // We matched a relation instead of a way
-                        console.log("Snapping onto a relation. The relation is", matchedWay)
-                    }
                     self.snappedOnto.setData(<any>matchedWay)
                     return min
                 },
@@ -277,7 +261,6 @@ export default class LocationInput
             const startLocation = { ...this._centerLocation.data }
             this._centerLocation.addCallbackD((newLocation) => {
                 const f = 100000
-                console.log(newLocation.lon, startLocation.lon)
                 const diff =
                     Math.abs(newLocation.lon * f - startLocation.lon * f) +
                     Math.abs(newLocation.lat * f - startLocation.lat * f)
@@ -292,7 +275,6 @@ export default class LocationInput
             )
             if (this._snapToRaw !== undefined) {
                 // Show the lines to snap to
-                console.log("Constructing the snap-to layer", this._snapToRaw)
                 new ShowDataMultiLayer({
                     features: StaticFeatureSource.fromDateless(this._snapToRaw),
                     zoomToFeatures: false,
@@ -306,8 +288,8 @@ export default class LocationInput
                     }
                     return [{ feature: loc }]
                 })
-                console.log("Constructing the match layer", matchPoint)
 
+                // The 'matchlayer' is the layer which shows the target location
                 new ShowDataLayer({
                     features: StaticFeatureSource.fromDateless(matchPoint),
                     zoomToFeatures: false,
