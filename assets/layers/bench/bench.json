@@ -915,6 +915,12 @@
       "iconSize": {
         "render": "35,35,center"
       },
+      "iconBadges": [
+        {
+          "if": "tourism=artwork",
+          "then": "./assets/themes/artwork/artwork.svg"
+        }
+      ],
       "location": [
         "point",
         "centroid"
