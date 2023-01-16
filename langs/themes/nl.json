@@ -937,6 +937,13 @@
                                 "question": "Gemaakt met host {search}"
                             }
                         }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Changeset die een of meerdere afbeeldingen toevoegt"
+                            }
+                        }
                     }
                 },
                 "name": "Middelpunt van de wijzigingenset",
