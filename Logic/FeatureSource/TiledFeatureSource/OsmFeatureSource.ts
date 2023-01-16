@@ -1,5 +1,5 @@
 import { Utils } from "../../../Utils"
-import * as OsmToGeoJson from "osmtogeojson"
+import OsmToGeoJson from "osmtogeojson"
 import StaticFeatureSource from "../Sources/StaticFeatureSource"
 import PerLayerFeatureSourceSplitter from "../PerLayerFeatureSourceSplitter"
 import { Store, UIEventSource } from "../../UIEventSource"

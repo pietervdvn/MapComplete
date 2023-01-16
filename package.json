@@ -9,6 +9,8 @@
   "type": "module",
   "scripts": {
     "vitedev": "vite",
+    "vitebuild": "tsc && vite build",
+    "vitepreview": "vite preview",
     "start": "npm run generate:layeroverview && npm run strt",
     "strt": "export NODE_OPTIONS=--max_old_space_size=8364 && parcel serve *.html UI/** Logic/** assets/*.json assets/svg/* assets/templates/* assets/generated/* assets/layers/*/*.svg assets/layers/*/*/*/*.svg assets/layers/*/*.jpg assets/layers/*/*.png assets/layers/*/*.css assets/tagRenderings/*.json assets/themes/*/*.svg assets/themes/*/*.ttf assets/themes/*/*/*.ttf assets/themes/*/*.otf assets/themes/*/*/*.otf assets/themes/*/*.css assets/themes/*/*.jpg assets/themes/*/*.woff assets/themes/*/*.png vendor/* vendor/*/* assets/tagRenderings/*.svg",
     "strttest": "export NODE_OPTIONS=--max_old_space_size=8364 && parcel serve test.html assets/templates/*.svg assets/templates/fonts/*.ttf",
@@ -111,6 +113,7 @@
     "@babel/polyfill": "^7.10.4",
     "@babel/preset-env": "7.13.8",
     "@parcel/service-worker": "^2.6.0",
+    "@rollup/plugin-json": "^6.0.0",
     "@types/chai": "^4.3.0",
     "@types/geojson": "^7946.0.10",
     "@types/leaflet-markercluster": "^1.0.3",
