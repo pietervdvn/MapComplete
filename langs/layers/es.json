@@ -173,7 +173,7 @@
                         "then": "Bolardo fijo"
                     },
                     "2": {
-                        "then": "Bolardo que se puede doblar"
+                        "then": "Bolardo retráctil"
                     },
                     "3": {
                         "then": "Bolardo flexible, normalmente plástico"
@@ -670,7 +670,7 @@
                         "then": "No está permitido aparcar bicicletas de carga"
                     }
                 },
-                "question": "¿Este aparcamiento de bicicletas tiene huevos para bicicletas de carga?"
+                "question": "¿Este aparcamiento de bicicletas tiene huecos para bicicletas de carga?"
             },
             "Is covered?": {
                 "mappings": {
@@ -3576,11 +3576,6 @@
                 "question": "¿De qué color es la luz que emite esta lámpara?",
                 "render": "Esta lámpara emite luz {light:colour}"
             },
-            "count": {
-                "mappings": {
-                    "0": {}
-                }
-            },
             "direction": {
                 "question": "¿Hacia donde apunta esta lámpara?",
                 "render": "Esta lámpara apunta hacia {light:direction}"
@@ -3758,7 +3753,7 @@
                         "then": "Estos baños <b>no</b> tienen una pileta para lavarse las manos"
                     }
                 },
-                "question": "¿Esto baños tienen una pileta para lavarte los baños?"
+                "question": "¿Esto baños tienen una pileta para lavarte las manos?"
             },
             "toilet-has-paper": {
                 "mappings": {
