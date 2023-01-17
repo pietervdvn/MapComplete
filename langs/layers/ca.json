@@ -39,7 +39,8 @@
                 "render": "Aquesta estació l'opera {operator}."
             },
             "ambulance-street": {
-                "question": "Quin és el nom del carrer on es troba l'estació?"
+                "question": "Quin és el nom del carrer on es troba l'estació?",
+                "render": "Aquesta estació es troba al costat d'una via anomenada {addr:street}."
             },
             "ambulance-name": {
                 "render": "Aquesta estació es diu {name}.",
@@ -51,6 +52,9 @@
                         "then": "El govern opera aquesta estació."
                     }
                 }
+            },
+            "ambulance-place": {
+                "question": "On es troba aquesta estació? (p.e. nom del barri, poble o ciutat)"
             }
         }
     },
@@ -775,7 +779,7 @@
                     }
                 },
                 "question": "Quin corrent fan els endolls amb <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?",
-                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destinació)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> sortides com a màxim {socket:tesla}destinació:current}A"
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destinació)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> sortida com a màxim {socket:tesla_destination:current}A"
             }
         },
         "title": {
@@ -966,6 +970,9 @@
                     },
                     "3": {
                         "then": "No accessible al públic en general (ex. només accesible a treballadors, propietaris, ...)"
+                    },
+                    "4": {
+                        "then": "No accessible, posiblemente només d'ús profesional"
                     }
                 },
                 "question": "Està el desfibril·lador accessible lliurement?",
@@ -993,8 +1000,16 @@
                 "question": "Està el desfibril·lador a l'interior?"
             },
             "defibrillator-level": {
-                "question": "A quina planta està el desfibril·lador localitzat?",
-                "render": "Aquest desfibril·lador és a la planta {level}"
+                "question": "A quina planta està el ubicat el desfibril·lador?",
+                "render": "Aquest desfibril·lador és a la planta {level}",
+                "mappings": {
+                    "0": {
+                        "then": "Aquest desfribil·lador està a la <b>planta baixa</b>"
+                    },
+                    "1": {
+                        "then": "Aquest desfribil·lador està a la <b>primera planta</b>"
+                    }
+                }
             },
             "defibrillator-survey:date": {
                 "mappings": {
@@ -1092,6 +1107,12 @@
         "name": "Mapa d'extintors",
         "title": {
             "render": "Extintors"
+        },
+        "presets": {
+            "0": {
+                "description": "Un extintor és un dispositiu petit i portàtil utilitzat per a para un foc",
+                "title": "un extintor"
+            }
         }
     },
     "filters": {
@@ -1215,22 +1236,79 @@
             "hydrant-color": {
                 "mappings": {
                     "2": {
-                        "then": "El color de l'hidrant és roig."
+                        "then": "L'hidrant és de color roig."
+                    },
+                    "0": {
+                        "then": "El color de l'hidrant és desconegut."
+                    },
+                    "1": {
+                        "then": "L'hidrant és de color groc."
                     }
-                }
+                },
+                "question": "De quin color es l'hidrant?"
             },
             "hydrant-type": {
                 "mappings": {
                     "4": {
-                        "then": "L'hidrant està soterrat."
+                        "then": "Subterrani."
+                    },
+                    "2": {
+                        "then": "De tuberia."
+                    },
+                    "1": {
+                        "then": "De pilar."
+                    },
+                    "3": {
+                        "then": "De paret."
                     }
-                }
+                },
+                "question": "Quin tipus d'hidrant és?"
+            },
+            "hydrant-state": {
+                "mappings": {
+                    "0": {
+                        "then": "L'hidrant funciona (total o parcialment)"
+                    },
+                    "1": {
+                        "then": "L'hidrant no està disponible"
+                    },
+                    "2": {
+                        "then": "L'hidrant s'ha retirat"
+                    }
+                },
+                "question": "Encara funciona aquest hidrant?"
+            },
+            "hydrant-couplings-diameters": {
+                "question": "Quin és diàmetre dels acoblaments d'aquest hidrant?"
+            },
+            "hydrant-couplings": {
+                "mappings": {
+                    "0": {
+                        "then": "Acoblament Storz"
+                    },
+                    "1": {
+                        "then": "Acoblament UNI"
+                    },
+                    "2": {
+                        "then": "Acoblament Barcelona"
+                    }
+                },
+                "question": "Quin tipus d‘acoblament té aquest hidrant?"
+            },
+            "hydrant-diameter": {
+                "question": "Quin és el diàmetre d'aquest hidrant?"
             }
         },
         "title": {
             "render": "Hidrant"
         },
-        "name": "Mapa d'hidrants"
+        "name": "Mapa d'hidrants",
+        "presets": {
+            "0": {
+                "title": "un hidrant",
+                "description": "Un hidrant és un punt de connexió on els bombers poden aconseguir aigua. Pot estar baix terra."
+            }
+        }
     },
     "indoors": {
         "name": "Interiors"
@@ -2272,7 +2350,7 @@
                 "question": "Quin és el punt inicial d'aquesta línea d'autobús?"
             },
             "colour": {
-                "render": "Aquesta línea d'autobús té el color {name}"
+                "render": "Aquesta línea d'autobús té el color {colour}"
             },
             "operator": {
                 "render": "{operator} opera aquesta línea d'autobús"
@@ -2316,5 +2394,48 @@
     },
     "walls_and_buildings": {
         "description": "Capa construïda especial que proporciona totes les parets i edificis. Aquesta capa és útil als predefinits per a objectes que es poden col·locar a les parets (p. ex. DEA, bústies de correus, entrades, adreces, càmeres de vigilància, ...). Aquesta capa és invisible per defecte i no es pot activar per l'usuari."
+    },
+    "fire_station": {
+        "presets": {
+            "0": {
+                "description": "Un parc de bombers és on els bombers i els camions es troben quan no estan en ús.",
+                "title": "un parc de bombers"
+            }
+        },
+        "name": "Mapa de parcs de bombers",
+        "tagRenderings": {
+            "station-place": {
+                "question": "On es troba aquesta estació? (p.e. nom del barri, poble o ciutat)",
+                "render": "Aquesta estació es troba dins de {addr:place}."
+            },
+            "station-agency": {
+                "render": "{operator} opera aquest parc.",
+                "question": "Quina agència opera aquesta estació?"
+            },
+            "station-operator": {
+                "question": "Com es classifica l‘operador d'aquesta estació?",
+                "mappings": {
+                    "1": {
+                        "then": "Una comunitat o organització informal opera aquesta estació."
+                    },
+                    "2": {
+                        "then": "Un grup formal de voluntaris opera aquesta estació."
+                    },
+                    "3": {
+                        "then": "Una entitat privada opera aquesta estació."
+                    },
+                    "0": {
+                        "then": "El govern opera aquest parc."
+                    }
+                }
+            },
+            "station-street": {
+                "question": " Quin és el nom del carrer on es troba aquesta estació?"
+            },
+            "station-name": {
+                "question": "Quin és el nom d'aquest parc de bombers?",
+                "render": "Aquest parc de bombers es diu {name}."
+            }
+        }
     }
 }
