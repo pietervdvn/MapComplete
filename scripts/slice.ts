@@ -76,7 +76,7 @@ async function readGeojsonLineByLine(inputFile: string): Promise<any[]> {
 
 async function readFeaturesFromGeoJson(inputFile: string): Promise<any[]> {
     try {
-        return JSON.parse(fs.readFileSync(inputFile, "UTF-8")).features
+        return JSON.parse(fs.readFileSync(inputFile, { encoding: "utf-8" })).features
     } catch (e) {
         // We retry, but with a line-by-line approach
         return await readGeojsonLineByLine(inputFile)
