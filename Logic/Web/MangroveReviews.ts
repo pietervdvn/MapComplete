@@ -1,7 +1,5 @@
-import * as mangrove from "mangrove-reviews"
 import { UIEventSource } from "../UIEventSource"
 import { Review } from "./Review"
-import { Utils } from "../../Utils"
 
 export class MangroveIdentity {
     public keypair: any = undefined
@@ -10,6 +8,7 @@ export class MangroveIdentity {
 
     constructor(mangroveIdentity: UIEventSource<string>) {
         const self = this
+        /*
         this._mangroveIdentity = mangroveIdentity
         mangroveIdentity.addCallbackAndRunD((str) => {
             if (str === "") {
@@ -30,6 +29,8 @@ export class MangroveIdentity {
         } catch (e) {
             console.error("Could not create identity: ", e)
         }
+
+        // */
     }
 
     /**
@@ -42,12 +43,12 @@ export class MangroveIdentity {
             throw "Identity already defined - not creating a new one"
         }
         const self = this
-        mangrove.generateKeypair().then((keypair) => {
+        /*mangrove.generateKeypair().then((keypair) => {
             self.keypair = keypair
             mangrove.keypairToJwk(keypair).then((jwk) => {
                 self._mangroveIdentity.setData(JSON.stringify(jwk))
             })
-        })
+        })//*/
     }
 }
 
@@ -116,6 +117,7 @@ export default class MangroveReviews {
      * Note: rating is between 1 and 100
      */
     public GetReviews(): UIEventSource<Review[]> {
+        /*
         if (
             this._lastUpdate !== undefined &&
             this._reviews.data !== undefined &&
@@ -160,6 +162,7 @@ export default class MangroveReviews {
             .catch((e) => {
                 console.error("Could not download review for ", e)
             })
+         //*/
         return this._reviews
     }
 
@@ -192,13 +195,13 @@ export default class MangroveReviews {
                 this._reviews.ping()
             }
         } else {
-            mangrove.signAndSubmitReview(this._mangroveIdentity.keypair, payload).then(() => {
+            /*mangrove.signAndSubmitReview(this._mangroveIdentity.keypair, payload).then(() => {
                 if (callback) {
                     callback()
                 }
                 this._reviews.data.push(r)
                 this._reviews.ping()
-            })
+            })//*/
         }
     }
 }
