@@ -33,7 +33,7 @@ then
     echo "Source maps are enabled"
 fi
 
-export NODE_OPTIONS=--max-old-space-size=8192
+export NODE_OPTIONS=--max-old-space-size=6500
 vite build $SRC_MAPS 
 
 
