@@ -28,6 +28,7 @@
     ]
   },
   "tagRenderings": [
+        "images",
     {
       "id": "name",
       "question": {
