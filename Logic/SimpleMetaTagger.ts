@@ -10,6 +10,7 @@ import { CountryCoder } from "latlon2country"
 import Constants from "../Models/Constants"
 import { TagUtils } from "./Tags/TagUtils"
 import { Feature, LineString } from "geojson"
+import { OsmObject } from "./Osm/OsmObject"
 
 export class SimpleMetaTagger {
     public readonly keys: string[]
@@ -484,6 +485,33 @@ export default class SimpleMetaTaggers {
             return true
         }
     )
+
+    public static referencingWays = new SimpleMetaTagger(
+        {
+            keys: ["_referencing_ways"],
+            isLazy: true,
+            doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry.",
+        },
+        (feature, _, __, state) => {
+            const id = feature.properties.id
+            if (!id.startsWith("node/")) {
+                return false
+            }
+            OsmObject.DownloadReferencingWays(id).then((referencingWays) => {
+                const currentTagsSource = state.allElements.getEventSourceById(id)
+                const wayIds = referencingWays.map((w) => "way/" + w.id)
+                wayIds.sort()
+                const wayIdsStr = wayIds.join(";")
+                if (wayIdsStr !== "" && currentTagsSource.data["_referencing_ways"] !== wayIdsStr) {
+                    currentTagsSource.data["_referencing_ways"] = wayIdsStr
+                    currentTagsSource.ping()
+                }
+            })
+
+            return true
+        }
+    )
+
     public static metatags: SimpleMetaTagger[] = [
         SimpleMetaTaggers.latlon,
         SimpleMetaTaggers.layerInfo,
@@ -499,6 +527,7 @@ export default class SimpleMetaTaggers {
         SimpleMetaTaggers.noBothButLeftRight,
         SimpleMetaTaggers.geometryType,
         SimpleMetaTaggers.levels,
+        SimpleMetaTaggers.referencingWays,
     ]
     public static readonly lazyTags: string[] = [].concat(
         ...SimpleMetaTaggers.metatags.filter((tagger) => tagger.isLazy).map((tagger) => tagger.keys)
