@@ -14,4 +14,7 @@ module.exports = defineConfig({
       input,
     },
   },
+  server: {
+    port: 1234,
+  },
 })
