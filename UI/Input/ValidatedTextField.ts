@@ -297,11 +297,11 @@ class WikidataTextField extends TextFieldDef {
             ],
              "nl": ["straat","plein","pad","weg",laan"]
              },
-            
+
             "#": "Remove streets and parks from the search results:"
-             "notInstanceOf": ["Q79007","Q22698"] 
+             "notInstanceOf": ["Q79007","Q22698"]
         }
-        
+
     ]
 }
 \`\`\`
@@ -477,7 +477,7 @@ class OpeningHoursTextField extends TextFieldDef {
 }
 
 class UrlTextfieldDef extends TextFieldDef {
-    inputmode: "url"
+    declare inputmode: "url"
 
     constructor() {
         super(
@@ -582,8 +582,7 @@ class StringTextField extends TextFieldDef {
 }
 
 class TextTextField extends TextFieldDef {
-    inputmode: "text"
-
+    declare inputmode: "text"
     constructor() {
         super("text", "A longer piece of text")
     }
