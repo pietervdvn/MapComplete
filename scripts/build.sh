@@ -32,18 +32,9 @@ cp assets/*.png dist/assets/
 cp assets/*.svg dist/assets/
 
 
-SRC_MAPS="--no-source-maps"
-BRANCH=`git rev-parse --abbrev-ref HEAD`
-echo "The branch name is $BRANCH"
-if [ $BRANCH = "develop" ]
-then
-    SRC_MAPS=""
-    echo "Source maps are enabled"
-fi
-
 echo -e "\n\n   Building non-theme pages"
 echo -e "  ==========================\n\n"
-parcel build --public-url "./" $SRC_MAPS "index.html" "404.html" "professional.html" "automaton.html" "import_helper.html" "import_viewer.html" "land.html" "customGenerator.html" "theme.html" vendor
+vite build "index.html" "404.html" "professional.html" "automaton.html" "import_helper.html" "import_viewer.html" "land.html" "customGenerator.html" "theme.html" vendor
 if [ $? -ne 0 ]; then
     echo "ERROR - stopping the build"
     exit 1
@@ -57,7 +48,7 @@ do
     echo -e "\n\n  $theme"
     echo -e " ------------ \n\n"
     # Builds the necessary files for just one theme, e.g. 'bookcases.html' + 'index_bookcases.ts' + supporting file
-    parcel build --public-url './' $SRC_MAPS "$theme.html"
+    vite build './' "$theme.html"
     if [ $? -ne 0 ]; then
         echo "ERROR - stopping the build"
         exit 1

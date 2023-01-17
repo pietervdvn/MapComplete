@@ -151,9 +151,11 @@ describe("OsmFeatureSource", () => {
         ScriptUtils.fixUtils()
         Utils.injectJsonDownloadForTests(
             "https://www.openstreetmap.org/api/0.6/relation/5759328/full",
-            JSON.parse(readFileSync("./test/data/relation_5759328.json", "UTF-8"))
+            JSON.parse(readFileSync("./test/data/relation_5759328.json", { encoding: "utf-8" }))
         )
-        let data = JSON.parse(readFileSync("./test/Logic/FeatureSource/small_box.json", "utf8"))
+        let data = JSON.parse(
+            readFileSync("./test/Logic/FeatureSource/small_box.json", { encoding: "utf-8" })
+        )
         Utils.injectJsonDownloadForTests(
             "https://osm.org/api/0.6/map?bbox=4.24346923828125,50.732978448277514,4.2462158203125,50.73471682490244",
             data
