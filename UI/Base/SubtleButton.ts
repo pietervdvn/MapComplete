@@ -1,13 +1,11 @@
-import Translations from "../i18n/Translations"
-import Combine from "./Combine"
 import BaseUIElement from "../BaseUIElement"
-import Link from "./Link"
-import Img from "./Img"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { UIElement } from "../UIElement"
 import { VariableUiElement } from "./VariableUIElement"
 import Lazy from "./Lazy"
 import Loading from "./Loading"
+import SubtleButtonSvelte from "./SubtleButton.svelte"
+import SvelteUIElement from "./SvelteUIElement"
 
 export class SubtleButton extends UIElement {
     private readonly imageUrl: string | BaseUIElement
@@ -15,7 +13,7 @@ export class SubtleButton extends UIElement {
     private readonly options: {
         url?: string | Store<string>
         newTab?: boolean
-        imgSize?: string
+        imgSize?: string,
         extraClasses?: string
     }
 
@@ -25,9 +23,9 @@ export class SubtleButton extends UIElement {
         options: {
             url?: string | Store<string>
             newTab?: boolean
-            imgSize?: "h-11 w-11" | string
+            imgSize?: "h-11 w-11" | string,
             extraClasses?: string
-        } = undefined
+        } = {}
     ) {
         super()
         this.imageUrl = imageUrl
@@ -36,30 +34,11 @@ export class SubtleButton extends UIElement {
     }
 
     protected InnerRender(): string | BaseUIElement {
-        const classes =
-            "block flex p-3 my-2 bg-subtle rounded-lg hover:shadow-xl hover:bg-unsubtle transition-colors transition-shadow link-no-underline " +
-            (this?.options?.extraClasses ?? "")
-        const message = Translations.W(this.message)?.SetClass(
-            "block text-ellipsis no-images flex-shrink"
-        )
-        let img
-        const imgClasses =
-            "block justify-center flex-none mr-4 " + (this.options?.imgSize ?? "h-11 w-11")
-        if ((this.imageUrl ?? "") === "") {
-            img = undefined
-        } else if (typeof this.imageUrl === "string") {
-            img = new Img(this.imageUrl)?.SetClass(imgClasses)
-        } else {
-            img = this.imageUrl?.SetClass(imgClasses)
-        }
-        const button = new Combine([img, message]).SetClass("flex items-center group w-full")
-
-        if (this.options?.url == undefined) {
-            this.SetClass(classes)
-            return button
-        }
-
-        return new Link(button, this.options.url, this.options.newTab ?? false).SetClass(classes)
+        return new SvelteUIElement(SubtleButtonSvelte, {
+            imageUrl: this?.imageUrl ?? undefined,
+            message: this?.message ?? "",
+            options: this?.options ?? {},
+        })
     }
 
     public OnClickWithLoading(
