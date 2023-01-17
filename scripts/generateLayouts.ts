@@ -270,8 +270,8 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
             layout.shortDescription.textFor(targetLanguage)
         )
         .replace(
-            '<script src="./index.ts"></script>',
-            `<script src='./index_${layout.id}.ts'></script>`
+            '<script type="module" src="./index.ts"></script>',
+            `<script type="module"  src='./index_${layout.id}.ts'></script>`
         )
     0
     try {
