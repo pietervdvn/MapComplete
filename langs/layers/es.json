@@ -66,7 +66,7 @@
             },
             "ambulance-street": {
                 "question": "¿Cual es el nombre de la calle en la que se encuentra la estación?",
-                "render": "Esta estación se encuentra al lado de una autovía llamada {addr:street}."
+                "render": "Esta estación se encuentra al lado de una via llamada {addr:street}."
             }
         },
         "title": {
