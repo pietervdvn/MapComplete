@@ -56,7 +56,7 @@ class StatsDownloader {
                     }.day.json`
                     writtenFiles.push(path)
                     if (existsSync(path)) {
-                        let features = JSON.parse(readFileSync(path, "UTF-8"))
+                        let features = JSON.parse(readFileSync(path, { encoding: "utf-8" }))
                         features = features?.features ?? features
                         features.push(...features.features) // day-stats are generally a list already, but in some ad-hoc cases might be a geojson-collection too
                         console.log(

@@ -15,5 +15,14 @@
     // "noImplicitReturns": true,
     "skipLibCheck": true
   },
+  "ts-node": {
+    "compilerOptions": {
+      "isolatedModules": false,
+      "esModuleInterop": true,
+      "moduleResolution": "node",
+      "target": "ES5",
+      "module": "CommonJS"
+    }
+  },
   "exclude": ["node_modules", "test", "scripts"]
 }

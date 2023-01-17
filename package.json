@@ -6,7 +6,6 @@
   "bugs": "https://github.com/pietervdvn/MapComplete/issues",
   "homepage": "https://mapcomplete.osm.be",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "vitedev": "vite",
     "vitebuild": "tsc && vite build",
