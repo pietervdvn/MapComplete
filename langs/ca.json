@@ -67,7 +67,8 @@
             "warnVisibleForEveryone": "La teva contribució serà vista per tothom",
             "wrongType": "Aquest element no és un punt o una via i no pot ser importat",
             "zoomInFurther": "Apropa per afegir un punt.",
-            "zoomInMore": "Ampliar per importar aquest element"
+            "zoomInMore": "Ampliar per importar aquest element",
+            "backToSelect": "Selecciona una categoria diferent"
         },
         "apply_button": {
             "appliedOnAnotherObject": "L'objecte {id} rebrà {tags}",
@@ -261,7 +262,8 @@
             },
             "searchWikidata": "Cercar a Wikidata",
             "wikipediaboxTitle": "Viquipèdia"
-        }
+        },
+        "backToIndex": "Torna a la vista general amb tots els mapes temàtics"
     },
     "image": {
         "addPicture": "Afegir foto",
@@ -278,7 +280,8 @@
         "uploadFailed": "No s'ha pogut pujar la imatge. Tens Internet i es permeten API de tercers? El navegador Brave o UMatrix podria bloquejar-les.",
         "uploadMultipleDone": "{count} imatges afegides. Gràcies per ajudar.",
         "uploadingMultiple": "Pujant {count} imatges…",
-        "uploadingPicture": "Pujant la teva imatge…"
+        "uploadingPicture": "Pujant la teva imatge…",
+        "currentLicense": "Les vostres imatges seran publicades sota la {license}"
     },
     "importHelper": {
         "introduction": {
@@ -549,7 +552,8 @@
     "userinfo": {
         "gotoInbox": "Obre la teva safata d'entrada",
         "gotoSettings": "Aneu a la vostra configuració a OpenStreetMap.org",
-        "moveToHome": "Mou el mapa a la vostra ubicació de casa"
+        "moveToHome": "Mou el mapa a la vostra ubicació de casa",
+        "welcome": "Benvingut/da {name}"
     },
     "validation": {
         "color": {
