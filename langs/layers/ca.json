@@ -35,10 +35,22 @@
         },
         "tagRenderings": {
             "ambulance-agency": {
-                "question": "Quina agència opera aquesta estació?"
+                "question": "Quina agència opera aquesta estació?",
+                "render": "Aquesta estació l'opera {operator}."
             },
             "ambulance-street": {
                 "question": "Quin és el nom del carrer on es troba l'estació?"
+            },
+            "ambulance-name": {
+                "render": "Aquesta estació es diu {name}.",
+                "question": "Quin és el nom d'aquesta estació d'ambulàncies?"
+            },
+            "ambulance-operator-type": {
+                "mappings": {
+                    "0": {
+                        "then": "El govern opera aquesta estació."
+                    }
+                }
             }
         }
     },
@@ -89,7 +101,7 @@
         }
     },
     "atm": {
-        "description": "Caixers automàtics on retirar diners",
+        "description": "Caixers automàtics per a retirar diners",
         "presets": {
             "0": {
                 "title": "un caixer automàtic"
@@ -147,8 +159,34 @@
                     },
                     "4": {
                         "then": "Pilona retràctil"
+                    },
+                    "2": {
+                        "then": "Piló retràctil"
+                    },
+                    "3": {
+                        "then": "Piló flexible, normalment de plàstic"
                     }
                 }
+            },
+            "barrier_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest és un únic piló a la carretera"
+                    }
+                }
+            },
+            "bicycle=yes/no": {
+                "mappings": {
+                    "0": {
+                        "then": "Un ciclista pot passar-hi."
+                    },
+                    "1": {
+                        "then": "Un ciclista pot passar-hi."
+                    }
+                }
+            },
+            "MaxWidth": {
+                "question": "Com d'ample és el buit que queda als costats de la barrera?"
             }
         },
         "title": {
@@ -324,6 +362,15 @@
                     }
                 },
                 "question": "Molt costa utilitzar aquest servei de neteja?"
+            },
+            "bike_cleaning-service:bicycle:cleaning:charge": {
+                "mappings": {
+                    "0": {
+                        "then": "El servei de rentat és gratuït"
+                    }
+                },
+                "render": "Utilitzar el servei de rentat costa {service:bicycle:cleaning:charge}",
+                "question": "Molt costa utilitzar el servei de rentat?"
             }
         }
     },
@@ -334,9 +381,16 @@
                 "mappings": {
                     "0": {
                         "then": "Accessible al públic"
+                    },
+                    "2": {
+                        "then": "L'accés està limitat a membres d'una escola, companyia o organització"
+                    },
+                    "1": {
+                        "then": "L'accés és principalment per a visitants d'un negoci"
                     }
                 },
-                "render": "{access}"
+                "render": "{access}",
+                "question": "Qui pot utilitzar aquest aparcament de bicicletes?"
             },
             "Bicycle parking type": {
                 "mappings": {
@@ -367,12 +421,52 @@
                     },
                     "2": {
                         "then": "Aparcament al terrat"
+                    },
+                    "3": {
+                        "then": "Aparcament a nivell de carrer"
+                    },
+                    "1": {
+                        "then": "Aparcament a nivell de carrer"
+                    }
+                },
+                "question": "Quina és la ubicació relativa d'aquest aparcament per a bicicletes?"
+            },
+            "Is covered?": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquest aparcament no està cobert"
+                    },
+                    "0": {
+                        "then": "Aquest aparcament està cobert (té un sostre)"
+                    }
+                }
+            },
+            "Capacity": {
+                "render": "Espai per a {capacity} bicis",
+                "question": "Quantes bicicletes caben en aquest aparcament de bicicletes (incloent possibles bicicletes de càrrega)?"
+            },
+            "Cargo bike spaces?": {
+                "question": "Aquest aparcament de bicicletes té punts per a bicicletes de càrrega?",
+                "mappings": {
+                    "0": {
+                        "then": "Aquest aparcament té espai per a bicicletes de càrrega"
+                    },
+                    "1": {
+                        "then": "Aquest aparcament hi han llocs designats (oficialment) per a bicicletes de càrrega."
+                    },
+                    "2": {
+                        "then": "No teniu permís per aparcar bicicletes de càrrega"
                     }
                 }
             }
         },
         "title": {
             "render": "Aparcament per a bicicletes"
+        },
+        "presets": {
+            "0": {
+                "title": "un aparcament per a bicis"
+            }
         }
     },
     "bike_repair_station": {
@@ -428,24 +522,41 @@
             "bike_repair_bike-pump-service": {
                 "mappings": {
                     "2": {
-                        "then": "Hi ha una manxa per a bicicletes, es mostra com a un punt separat"
+                        "then": "Hi ha una manxa, es mostra com a un punt separat"
+                    },
+                    "0": {
+                        "then": "Aquesta botiga ofereix una manxa per a tothom"
+                    },
+                    "1": {
+                        "then": "Aquesta botiga no ofereix una manxa per a tothom"
                     }
-                }
+                },
+                "question": "Aquesta botiga ofereix una manxa perquè la utilitzi qualsevol?"
             },
             "bike_repair_rents-bikes": {
                 "mappings": {
                     "0": {
-                        "then": "Aquesta botiga lloga bicicletes"
+                        "then": "Aquesta botiga lloga bicis"
+                    },
+                    "1": {
+                        "then": "Aquesta botiga no lloga bicis"
                     }
-                }
+                },
+                "question": "Aquesta botiga alquila bicicletes?"
             },
             "bike_repair_repairs-bikes": {
                 "mappings": {
                     "0": {
-                        "then": "Aquesta botiga repara bicicletes"
+                        "then": "Aquesta botiga repara bicis"
                     },
                     "1": {
-                        "then": "Aquesta botiga no repara bicicletes"
+                        "then": "Aquesta botiga no repara bicis"
+                    },
+                    "2": {
+                        "then": "Aquesta botiga sols repara bicis comprades aquí"
+                    },
+                    "3": {
+                        "then": "Aquesta tenda sols repara bicis d’una marca concreta"
                     }
                 },
                 "question": "Aquesta botiga repara bicicletes?"
@@ -453,10 +564,10 @@
             "bike_repair_sells-bikes": {
                 "mappings": {
                     "0": {
-                        "then": "Aquesta tenda ven bicicletes"
+                        "then": "Aquesta botiga ven bicis"
                     },
                     "1": {
-                        "then": "Aquesta tenda no ven bicicletes"
+                        "then": "Aquesta botiga no ven bicis"
                     }
                 },
                 "question": "Aquesta botiga ven bicicletes?"
@@ -469,7 +580,50 @@
                 }
             },
             "bike_shop-name": {
-                "render": "Aquesta botiga de bicicletes s'anomena {name}"
+                "render": "Aquesta botiga de bicicletes s'anomena {name}",
+                "question": "Quin és el nom d'aquesta botiga de bicicletes?"
+            },
+            "bike_repair_bike-wash": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquesta botiga té una instal·lació on un pot rentar les bicis per un mateix"
+                    },
+                    "0": {
+                        "then": "Aquesta botiga renta bicicletes"
+                    },
+                    "2": {
+                        "then": "Aquesta botiga no ofereix rentat de bicis"
+                    }
+                },
+                "question": "Aquí es renten bicicletes?"
+            },
+            "bike_repair_tools-service": {
+                "mappings": {
+                    "2": {
+                        "then": "Les ferramentes per a reparacions DIY sols estan disponibles si vas comprar/llogar la bici a la botiga"
+                    },
+                    "1": {
+                        "then": "Aquesta botiga no ofereix ferramentes per a la reparació DIY"
+                    },
+                    "0": {
+                        "then": "Aquesta botiga ofereix ferramentes per a la reparació DIY"
+                    }
+                },
+                "question": "Hi ha ferramentes perquè reparis la teva bici?"
+            },
+            "bike_repair_second-hand-bikes": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquesta botiga no ven bicis de segona mà"
+                    },
+                    "2": {
+                        "then": "Aquesta botiga sols ven bicis de segona mà"
+                    },
+                    "0": {
+                        "then": "Aquesta botiga ven bicis de segona mà"
+                    }
+                },
+                "question": "Aquesta botiga ven bicicletes de segona mà?"
             }
         },
         "title": {
@@ -564,7 +718,7 @@
             "Available_charging_stations (generated)": {
                 "mappings": {
                     "4": {
-                        "then": "<b>Chademo</b>"
+                        "then": "<b>CHAdeMo</b>"
                     },
                     "5": {
                         "then": "<b>Chademo</b>"
@@ -610,6 +764,18 @@
             },
             "phone": {
                 "question": "A quin número es pot cridar si hi ha algun problema amb aquesta estació de càrrega?"
+            },
+            "current-11": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Tesla Supercharger (Destinació)</b> emet com a màxim 125 A"
+                    },
+                    "1": {
+                        "then": "<b>Tesla Supercharger (Destinació)</b> emet com a màxim 350 A"
+                    }
+                },
+                "question": "Quin corrent fan els endolls amb <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?",
+                "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destinació)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> sortides com a màxim {socket:tesla}destinació:current}A"
             }
         },
         "title": {
@@ -976,6 +1142,9 @@
                     }
                 },
                 "question": "Aquesta botiga de patates fregides utilitza oli vegetal o animal per a cuinar?"
+            },
+            "Name": {
+                "render": "El nom d'aquest negoci és {name}"
             }
         },
         "title": {
@@ -1000,7 +1169,8 @@
                 "render": "<i>{inscription}</i>"
             },
             "ghost_bike-source": {
-                "render": "<a href='{source}' target='_blank'>Més informació disponible</a>"
+                "render": "<a href='{source}' target='_blank'>Més informació disponible</a>",
+                "question": "En quina pàgina web es pot trobar més informació sobre la bicicleta blanca o l'accident?"
             }
         },
         "title": {
@@ -1059,7 +1229,8 @@
         },
         "title": {
             "render": "Hidrant"
-        }
+        },
+        "name": "Mapa d'hidrants"
     },
     "indoors": {
         "name": "Interiors"
@@ -1170,14 +1341,31 @@
         "name": "Aparcament",
         "tagRenderings": {
             "capacity-disabled": {
-                "question": "Quantes places d'aparcament per a persones amb mobilitat reduïda hi ha al parking?"
+                "question": "Quantes places d'aparcament per a persones amb mobilitat reduïda hi ha al parking?",
+                "mappings": {
+                    "2": {
+                        "then": "No hi han places d'aparcament per a persones mobilitat reduïda"
+                    }
+                }
             },
             "parking-type": {
                 "mappings": {
                     "0": {
                         "then": "Aquest és un aparcament en superfície"
+                    },
+                    "2": {
+                        "then": "Aquest és un aparcament subterrani"
                     }
-                }
+                },
+                "question": "Quin tipus d'aparcament és aquest?"
+            },
+            "capacity": {
+                "question": "Quantes places d'aparcament hi han a aquest aparcament?"
+            }
+        },
+        "presets": {
+            "0": {
+                "title": "un aparcament per a cotxes"
             }
         }
     },
@@ -1202,8 +1390,18 @@
                 "mappings": {
                     "0": {
                         "then": "Aquesta farmàcia és fàcil d'accedir en una cadira de rodes"
+                    },
+                    "2": {
+                        "then": "Aquesta farmàcia té un accés limitat per a usuaris amb cadira de rodes"
+                    },
+                    "1": {
+                        "then": "Aquesta farmàcia es difícil d'accedir amb una cadira de rodes"
                     }
-                }
+                },
+                "question": "És fàcil accedir a aquesta farmàcia amb una cadira de rodes?"
+            },
+            "name": {
+                "render": "Aquesta farmàcia es diu {name}"
             }
         }
     },
@@ -1269,6 +1467,80 @@
         },
         "title": {
             "render": "Oficina de correus"
+        },
+        "tagRenderings": {
+            "post_partner": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta botiga és un col·laborador postal"
+                    },
+                    "1": {
+                        "then": "Aquesta botiga no és un col·laborador postal"
+                    }
+                },
+                "question": "Aquesta botiga és un col·laborador postal?"
+            },
+            "letter-from": {
+                "mappings": {
+                    "0": {
+                        "then": "Pots enviar cartes des d'aquí"
+                    },
+                    "1": {
+                        "then": "No pots enviar cartes des d'aquí"
+                    }
+                },
+                "question": "Pots enviar cartes des d'aquí?"
+            },
+            "parcel-from": {
+                "mappings": {
+                    "0": {
+                        "then": "Pots enviar paquets des d'aquí"
+                    },
+                    "1": {
+                        "then": "No pots enviar paquets des d'aquí"
+                    }
+                },
+                "question": "Pots enviar un paquet des d'aquí?"
+            },
+            "partner-brand": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquesta localització ofereix serveis per a DPD"
+                    },
+                    "2": {
+                        "then": "Aquesta localització ofereix serveis per a GLS"
+                    },
+                    "3": {
+                        "then": "Aquesta localització ofereix serveis per a UPS"
+                    },
+                    "0": {
+                        "then": "Aquesta localització ofereix serveis per a DHL"
+                    }
+                },
+                "question": "Per a quina marca ofereix serveis aquesta localització?"
+            },
+            "parcel-to": {
+                "mappings": {
+                    "0": {
+                        "then": "Pots enviar paquets aquí per a arreplegar-los"
+                    },
+                    "1": {
+                        "then": "No pots enviar paquets ací per a arreplegar-los"
+                    }
+                },
+                "question": "Pots enviar paquets aquí per a arreplegar-los?"
+            },
+            "stamps": {
+                "question": "Pots comprar segells aquí?",
+                "mappings": {
+                    "1": {
+                        "then": "No pots comprar segells aquí"
+                    },
+                    "0": {
+                        "then": "Pots comprar segells aquí"
+                    }
+                }
+            }
         }
     },
     "public_bookcase": {
@@ -1438,11 +1710,32 @@
                     },
                     "8": {
                         "then": "Aquesta és una escola per a estudiants amb necessitats especials"
+                    },
+                    "5": {
+                        "then": "Aquesta és una escola per a estudiants cecs o estudiants amb deficiències visuals"
                     }
                 },
-                "render": "Aquesta escola té instal·lacions per a estudiants amb {school:for}"
+                "render": "Aquesta escola té instal·lacions per a estudiants amb {school:for}",
+                "question": "Aquesta escola es dirigeix a estudiants amb necessitats especials? Quines instal·lacions estructurals té aquesta escola?<div class='subtle'>Ad-hoc "
+            },
+            "education-level-belgium": {
+                "mappings": {
+                    "4": {
+                        "then": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>tercer i quart</b> grau"
+                    },
+                    "6": {
+                        "then": "Aquesta escola ofereix educació post secundària (p.e. un sèptim o vuité any d'especialitzció)"
+                    },
+                    "5": {
+                        "then": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>cinqué i sisé</b> grau"
+                    },
+                    "3": {
+                        "then": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>primer i segon</b> grau"
+                    }
+                }
             }
-        }
+        },
+        "name": "Escoles de primària i secundària"
     },
     "shops": {
         "name": "Botiga",
@@ -1683,22 +1976,96 @@
         "name": "Lavabos",
         "tagRenderings": {
             "toilet-access": {
-                "render": "L'accés és {access}"
+                "render": "L'accés és {access}",
+                "question": "Aquests serveis són d'accés públic?",
+                "mappings": {
+                    "2": {
+                        "then": "No accessible"
+                    },
+                    "3": {
+                        "then": "Accessible, però s'ha de demanar la clau per a entrar"
+                    },
+                    "0": {
+                        "then": "Accés públic"
+                    },
+                    "1": {
+                        "then": "Sols accessible per a clients"
+                    }
+                }
             },
             "toilets-type": {
                 "mappings": {
                     "3": {
                         "then": "Aquí hi ha lavabos per a utilitzar tant de peu com asseguts"
+                    },
+                    "2": {
+                        "then": "Aquí només hi han lavabos a la gatzoneta"
+                    },
+                    "0": {
+                        "then": "Només hi han lavabos asseguts"
+                    },
+                    "1": {
+                        "then": "Aquí només hi han urinals"
                     }
-                }
+                },
+                "question": "Quin tipus de lavabo són aquests?"
             },
             "toilets-wheelchair": {
                 "mappings": {
                     "2": {
                         "then": "Sols hi ha un lavabo per a usuaris amb cadira de rodes"
+                    },
+                    "0": {
+                        "then": "Hi ha un lavabo dedicat per a usuaris amb cadira de rodes"
+                    },
+                    "1": {
+                        "then": "Sense accés per a cadires de rodes"
                     }
                 },
-                "question": "Hi ha un lavabo específic per a usuaris de cadira de rodes?"
+                "question": "Hi ha un lavabo específic per a usuaris amb cadira de rodes?"
+            },
+            "toilet-handwashing": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquests lavabos <b>no</b> tenen una pica per a rentar-te les mans"
+                    },
+                    "0": {
+                        "then": "Aquests lavabos tenen una pica per a rentar-te les mans"
+                    }
+                },
+                "question": "Aquests lavabos tenen una pica per a rentar-te les mans?"
+            },
+            "wheelchair-door-width": {
+                "question": "Quina és l'amplada de la porta per al lavabo accéssible?"
+            },
+            "toilet-has-paper": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest lavabo està equipat amb paper higiènic"
+                    },
+                    "1": {
+                        "then": "Has de portar el teu paper higiènic a aquest lavabo"
+                    }
+                },
+                "question": "Hi ha que portar el teu propi paper higiènic a aquest lavabo?"
+            },
+            "toilets-changing-table": {
+                "mappings": {
+                    "1": {
+                        "then": "No hi ha canviador per a nadons"
+                    }
+                }
+            },
+            "toilets-fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquests serveis són de pagament"
+                    },
+                    "1": {
+                        "then": "Gratuït"
+                    }
+                },
+                "question": "Aquest serveis són gratuïts?"
             }
         },
         "title": {
@@ -1825,6 +2192,129 @@
                     }
                 }
             }
+        },
+        "name": "Turbina Eòlica"
+    },
+    "transit_stops": {
+        "tagRenderings": {
+            "bin": {
+                "question": "Aquesta parada té una paperera?",
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta parada té una paperera"
+                    },
+                    "1": {
+                        "then": "Aquesta parada no té una paperera"
+                    }
+                }
+            },
+            "lit": {
+                "question": "Aquesta parada té il·luminació?",
+                "mappings": {
+                    "1": {
+                        "then": "Aquesta parada no té il·luminació"
+                    },
+                    "0": {
+                        "then": "Aquesta parada té il·luminacio"
+                    }
+                }
+            },
+            "bench": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquesta parada no té un banc"
+                    },
+                    "0": {
+                        "then": "Aquesta parada té un banc"
+                    }
+                },
+                "question": "Aquesta parada té un banc?"
+            },
+            "stop_name": {
+                "render": "Aquesta parada es diu <b>{name}</b>",
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta parada no té nom"
+                    }
+                },
+                "question": "Quin és el nom d'aquesta parada?"
+            },
+            "tactile_paving": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta parada té una superfície podotàctil"
+                    },
+                    "1": {
+                        "then": "Aquesta parada no té una superfície podotàctil"
+                    }
+                },
+                "question": "Aquesta parada té una superfície podotàctil?"
+            },
+            "shelter": {
+                "question": "Aquesta parada té una coberta?",
+                "mappings": {
+                    "1": {
+                        "then": "Aquesta parada no té una coberta"
+                    },
+                    "0": {
+                        "then": "Aquesta parada té una coberta"
+                    }
+                }
+            }
         }
+    },
+    "veterinary": {
+        "name": "Veterinari"
+    },
+    "transit_routes": {
+        "tagRenderings": {
+            "from": {
+                "question": "Quin és el punt inicial d'aquesta línea d'autobús?"
+            },
+            "colour": {
+                "render": "Aquesta línea d'autobús té el color {name}"
+            },
+            "operator": {
+                "render": "{operator} opera aquesta línea d'autobús"
+            },
+            "network": {
+                "render": "Aquesta línea d'autobús és part de la xarxa {network}",
+                "question": "A quina xarxa pertany aquesta línea d'autobús?"
+            },
+            "to": {
+                "question": "Quin és el punt final d'aquesta línea d'autobús?"
+            }
+        },
+        "name": "Línies de bus"
+    },
+    "bicycle_tube_vending_machine": {
+        "description": "Una capa que mostra màquines expenedores per a tubs de bicicleta (ja siguin màquines expenedores de tubs de bicicleta o màquines expenedores clàssiques amb tubs de bicicleta i opcionalment objectes addicionals relacionats amb la bicicleta com ara llums, guants, panys, ...)"
+    },
+    "shelter": {
+        "name": "Refugi"
+    },
+    "grass_in_parks": {
+        "description": "Cerques per a tots els camins d'herba accessibles dins dels parcs públics - aquests són «groenzones»"
+    },
+    "usersettings": {
+        "tagRenderings": {
+            "picture-license": {
+                "mappings": {
+                    "2": {
+                        "then": "Les fotografies que facis es publicaran sota <b>CC-BY 4.0</b> que requereix que qualsevol que utilitzi la vostra imatge us ha de donar crèdits"
+                    }
+                }
+            },
+            "translation-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Has contribuït a traduir MapComplete! Això és fantàstic!"
+                    }
+                }
+            }
+        }
+    },
+    "walls_and_buildings": {
+        "description": "Capa construïda especial que proporciona totes les parets i edificis. Aquesta capa és útil als predefinits per a objectes que es poden col·locar a les parets (p. ex. DEA, bústies de correus, entrades, adreces, càmeres de vigilància, ...). Aquesta capa és invisible per defecte i no es pot activar per l'usuari."
     }
 }
