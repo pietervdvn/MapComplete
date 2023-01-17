@@ -456,6 +456,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         console.log("Added custom css file ", location)
     }
 
+    public static PushList<T>(target: T[], source?: T[]) {
+        if (source === undefined) {
+            return
+        }
+        target.push(...source)
+    }
+
     /**
      * Copies all key-value pairs of the source into the target. This will change the target
      * If the key starts with a '+', the values of the list will be appended to the target instead of overwritten

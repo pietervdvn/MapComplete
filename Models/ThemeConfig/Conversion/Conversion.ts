@@ -72,6 +72,7 @@ export abstract class DesugaringStep<T> extends Conversion<T, T> {}
 class Pipe<TIn, TInter, TOut> extends Conversion<TIn, TOut> {
     private readonly _step0: Conversion<TIn, TInter>
     private readonly _step1: Conversion<TInter, TOut>
+
     constructor(step0: Conversion<TIn, TInter>, step1: Conversion<TInter, TOut>) {
         super("Merges two steps with different types", [], `Pipe(${step0.name}, ${step1.name})`)
         this._step0 = step0
@@ -92,9 +93,9 @@ class Pipe<TIn, TInter, TOut> extends Conversion<TIn, TOut> {
         }
 
         const r = this._step1.convert(result, context)
-        errors.push(...r.errors)
-        information.push(...r.information)
-        warnings.push(...r.warnings)
+        Utils.PushList(errors, r.errors)
+        Utils.PushList(warnings, r.warnings)
+        Utils.PushList(information, r.information)
         return {
             result: r.result,
             errors,
@@ -106,6 +107,7 @@ class Pipe<TIn, TInter, TOut> extends Conversion<TIn, TOut> {
 
 class Pure<TIn, TOut> extends Conversion<TIn, TOut> {
     private readonly _f: (t: TIn) => TOut
+
     constructor(f: (t: TIn) => TOut) {
         super("Wrapper around a pure function", [], "Pure")
         this._f = f
@@ -145,9 +147,9 @@ export class Each<X, Y> extends Conversion<X[], Y[]> {
         const result: Y[] = []
         for (let i = 0; i < values.length; i++) {
             const r = step.convert(values[i], context + "[" + i + "]")
-            information.push(...r.information)
-            warnings.push(...r.warnings)
-            errors.push(...r.errors)
+            Utils.PushList(information, r.information)
+            Utils.PushList(warnings, r.warnings)
+            Utils.PushList(errors, r.errors)
             result.push(r.result)
         }
         return {
