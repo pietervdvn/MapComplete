@@ -281,10 +281,9 @@ class LayerOverviewUtils {
                 then: th.icon,
             }))
             const proto: LayoutConfigJson = JSON.parse(
-                readFileSync(
-                    "./assets/themes/mapcomplete-changes/mapcomplete-changes.proto.json",
-                    { encoding: "utf8" }
-                )
+                readFileSync("./assets/themes/mapcomplete-changes/mapcomplete-changes.proto.json", {
+                    encoding: "utf8",
+                })
             )
             const protolayer = <LayerConfigJson>(
                 proto.layers.filter((l) => l["id"] === "mapcomplete-changes")[0]
@@ -440,6 +439,34 @@ class LayerOverviewUtils {
                     true,
                     convertState.tagRenderings
                 ).convertStrict(themeFile, themePath)
+
+                if (themeFile.icon.endsWith(".svg")) {
+                    try {
+                        ScriptUtils.ReadSvgSync(json.icon, (svg) => {
+                            const width: string = svg.$.width
+                            const height: string = svg.$.height
+                            if (width !== height) {
+                                const e =
+                                    `the icon for theme ${json.id} is not square. Please square the icon at ${json.icon}` +
+                                    ` Width = ${width} height = ${height}`
+                                ;(json.hideFromOverview ? warnings : errors).push(e)
+                            }
+
+                            const w = parseInt(width)
+                            const h = parseInt(height)
+                            if (w < 370 || h < 370) {
+                                const e: string = [
+                                    `the icon for theme ${json.id} is too small. Please rescale the icon at ${json.icon}`,
+                                    `Even though an SVG is 'infinitely scaleable', the icon should be dimensioned bigger. One of the build steps of the theme does convert the image to a PNG (to serve as PWA-icon) and having a small dimension will cause blurry images.`,
+                                    ` Width = ${width} height = ${height}; we recommend a size of at least 500px * 500px and to use a square aspect ratio.`,
+                                ].join("\n")
+                                ;(json.hideFromOverview ? warnings : errors).push(e)
+                            }
+                        })
+                    } catch (e) {
+                        console.error("Could not read " + json.icon + " due to " + e)
+                    }
+                }
 
                 this.writeTheme(themeFile)
                 fixed.set(themeFile.id, themeFile)
