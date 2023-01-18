@@ -58,7 +58,7 @@
                     }
                 },
                 "question": "¿Como está clasificada la operadora de la estación?",
-                "render": "La operador a no es una entidad de tipo {operator:type}."
+                "render": "La operadora es una entidad de tipo {operator:type}."
             },
             "ambulance-place": {
                 "question": "¿Dónde se encuentra la estación? (ej. nombre del barrio, pueblo o ciudad)",
@@ -1135,7 +1135,7 @@
                         "then": "Un bar, principalmente para beber cervezas en un interior cálido y relajado"
                     },
                     "1": {
-                        "then": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz"
+                        "then": "Un <b>bar de copas</b> más moderno y comercial, posiblemente con una instalación de música y luz"
                     },
                     "2": {
                         "then": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo"
