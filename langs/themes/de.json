@@ -867,7 +867,7 @@
         "title": "In die Natur"
     },
     "notes": {
-        "description": "Eine Notiz enthält eine Fehlerbeschreibung und ist als Stecknadel auf der Karte sichtbar.<br/><br/>In der <a href='#filters'>Ebenenauswahl</a> kann nach Ersteller, Bearbeiter und Text gesucht werden.",
+        "description": "Eine Notiz enthält eine Fehlerbeschreibung und ist als Markierung auf der Karte sichtbar.<br/><br/>In der <a href='#filters'>Ebenenauswahl</a> kann nach Ersteller, Bearbeiter und Inhalt gesucht werden.",
         "title": "Notizen von OpenStreetMap"
     },
     "observation_towers": {
