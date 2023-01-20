@@ -60,11 +60,17 @@
                     "1": {
                         "then": "Aquesta estació l'opera una comunitat o organització informal."
                     }
-                }
+                },
+                "render": "L'operadora és una entitat del tipus {operator:type}.",
+                "question": "Com es classifica l'operador de l'estació?"
             },
             "ambulance-place": {
-                "question": "On es troba aquesta estació? (p.e. nom del barri, poble o ciutat)"
+                "question": "On es troba aquesta estació? (p.e. nom del barri, poble o ciutat)",
+                "render": "Aquesta estació es troba a {addr:place}."
             }
+        },
+        "title": {
+            "render": "Estació d'Ambulàncies"
         }
     },
     "artwork": {
@@ -105,12 +111,28 @@
                     },
                     "11": {
                         "then": "Enrajolat"
+                    },
+                    "10": {
+                        "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
                     }
                 }
+            },
+            "artwork-artist_name": {
+                "render": "Creat per {artist_name}",
+                "question": "Quin artista va crear açò?"
+            },
+            "artwork-artist-wikidata": {
+                "question": "Qui va crear aquesta obra d'art?",
+                "render": "Aquesta obra d'art la va crear {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
             }
         },
         "title": {
             "render": "Obra d'art"
+        },
+        "presets": {
+            "0": {
+                "title": "una obra d'art"
+            }
         }
     },
     "atm": {
@@ -786,7 +808,7 @@
                         "then": "<b>Supercarregador Tesla (destí)</b> (Un tipus 2 amb un cable marca tesla)"
                     }
                 },
-                "question": "Quins tipus de connexió de càrrega estan disponibles aquí?"
+                "question": "Quins tipus de connexions de càrrega estan disponibles aquí?"
             },
             "Network": {
                 "mappings": {
@@ -1148,7 +1170,12 @@
         "name": "Direcció de la visualització"
     },
     "doctors": {
-        "name": "Metges"
+        "name": "Metges",
+        "tagRenderings": {
+            "name": {
+                "question": "Com es diu aquesta consulta mèdica?"
+            }
+        }
     },
     "drinking_water": {
         "name": "Aigua potable",
@@ -1397,7 +1424,7 @@
                 "question": "Encara funciona aquest hidrant?"
             },
             "hydrant-couplings-diameters": {
-                "question": "Quin és diàmetre dels acoblaments d'aquest hidrant?"
+                "question": "Quin és el diàmetre dels acoblaments d'aquest hidrant?"
             },
             "hydrant-couplings": {
                 "mappings": {
@@ -1569,7 +1596,7 @@
                 "question": "Quantes places d'aparcament per a persones amb mobilitat reduïda hi ha al parking?",
                 "mappings": {
                     "2": {
-                        "then": "No hi han places d'aparcament per a persones mobilitat reduïda"
+                        "then": "No hi han places d'aparcament per a persones amb mobilitat reduïda"
                     }
                 }
             },
@@ -2625,7 +2652,7 @@
                         "then": "Aquesta parada no té il·luminació"
                     },
                     "0": {
-                        "then": "Aquesta parada té il·luminacio"
+                        "then": "Aquesta parada té il·luminació"
                     }
                 }
             },
@@ -2745,7 +2772,7 @@
                 "question": "Quina agència opera aquesta estació?"
             },
             "station-operator": {
-                "question": "Com es classifica l‘operador d'aquesta estació?",
+                "question": "Com es classifica l'operador de l'estació?",
                 "mappings": {
                     "1": {
                         "then": "Aquesta estació l'opera una comunitat o organització informal."
@@ -2814,5 +2841,12 @@
     },
     "bank": {
         "name": "Bancs"
+    },
+    "governments": {
+        "tagRenderings": {
+            "name": {
+                "question": "Quin és el nom d'aquesta oficina gornavental?"
+            }
+        }
     }
 }
