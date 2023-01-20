@@ -84,7 +84,7 @@
         "tagRenderings": {
             "artwork-artist-wikidata": {
                 "question": "¿Quién creó esta obra de arte?",
-                "render": "Esta obra de la creó {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+                "render": "Esta obra de arte la creó {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
             },
             "artwork-artist_name": {
                 "question": "¿Que artista creó esto?",

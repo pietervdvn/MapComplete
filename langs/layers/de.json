@@ -181,7 +181,7 @@
         "name": "Geldautomaten",
         "presets": {
             "0": {
-                "title": "ein Geldautomat"
+                "title": "einen Geldautomaten"
             }
         },
         "tagRenderings": {
@@ -190,7 +190,7 @@
                     "placeholder": "Markenname"
                 },
                 "question": "Von welcher Marke ist dieser Geldautomat?",
-                "render": "Die Marke dieses Geldautomaten ist {brand}"
+                "render": "Die Marke des Geldautomaten ist {brand}"
             },
             "cash_in": {
                 "mappings": {
@@ -221,14 +221,14 @@
                 "question": "Kann man an diesem Geldautomaten Bargeld abheben?"
             },
             "name": {
-                "render": "Der Name dieses Geldautomaten ist {name}"
+                "render": "Der Name des Geldautomaten ist {name}"
             },
             "operator": {
                 "freeform": {
                     "placeholder": "Betreiber"
                 },
                 "question": "Welches Unternehmen betreibt den Geldautomaten?",
-                "render": "Der Geldautomat wird von {operator} betrieben"
+                "render": "Der Geldautomat wird betrieben von {operator}"
             },
             "speech_output": {
                 "mappings": {
@@ -666,31 +666,31 @@
             "bicycle-types": {
                 "mappings": {
                     "0": {
-                        "then": "Normale Stadtfahrräder können hier gemietet werden"
+                        "then": "Normale Stadtfahrräder können geliehen werden"
                     },
                     "1": {
-                        "then": "Elektrofahrräder können hier gemietet werden"
+                        "then": "Elektrofahrräder können geliehen werden"
                     },
                     "2": {
-                        "then": "BMX-Räder können hier gemietet werden"
+                        "then": "BMX-Räder können geliehen werden"
                     },
                     "3": {
-                        "then": "Mountainbikes können hier gemietet werden"
+                        "then": "Mountainbikes können geliehen werden"
                     },
                     "4": {
-                        "then": "Kinderfahrräder können hier gemietet werden"
+                        "then": "Kinderfahrräder können geliehen werden"
                     },
                     "5": {
-                        "then": "Tandems können hier gemietet werden"
+                        "then": "Tandems können geliehen werden"
                     },
                     "6": {
-                        "then": "Rennräder können hier gemietet werden"
+                        "then": "Rennräder können geliehen werden"
                     },
                     "7": {
-                        "then": "Fahrradhelme können hier gemietet werden"
+                        "then": "Fahrradhelme können geliehen werden"
                     }
                 },
-                "question": "Welche Art von Fahrrädern und Zubehör wird hier vermietet?",
+                "question": "Welche Fahrräder und welches Zubehör kann hier geliehen werden?",
                 "render": "{rental} können hier gemietet werden"
             },
             "bicycle_rental_type": {
@@ -880,7 +880,7 @@
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
-                "render": "Nutzung des Reinigungsservice kostet {service:bicycle:cleaning:charge}"
+                "render": "Der Reinigungsservice kostet {service:bicycle:cleaning:charge}"
             }
         },
         "title": {
@@ -1053,13 +1053,13 @@
             "bike_repair_station-available-services": {
                 "mappings": {
                     "0": {
-                        "then": "Es ist nur eine Pumpe vorhanden"
+                        "then": "Nur eine Pumpe ist vorhanden"
                     },
                     "1": {
-                        "then": "Es ist nur Werkzeug (Schraubenzieher, Zangen, …) vorhanden"
+                        "then": "Nur Werkzeug (Schraubenzieher, Zangen, …) ist vorhanden"
                     },
                     "2": {
-                        "then": "Es sind sowohl Werkzeuge als auch eine Pumpe vorhanden"
+                        "then": "Werkzeug und Pumpe sind vorhanden"
                     }
                 },
                 "question": "Welche Geräte sind hier vorhanden?"
@@ -1116,7 +1116,7 @@
             },
             "bike_repair_station-operator": {
                 "question": "Wer betreibt die Reparaturstation?",
-                "render": "Gewartet von {operator}"
+                "render": "Betrieben von {operator}"
             },
             "bike_repair_station-phone": {
                 "question": "Wie lautet die Telefonnummer des Betreibers?"
@@ -4021,7 +4021,7 @@
         "name": "Feuerwachen",
         "presets": {
             "0": {
-                "description": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
+                "description": "Eine Feuerwache ist ein Ort, an dem Feuerwehrfahrzeuge und Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
                 "title": "eine Feuerwache"
             }
         },
