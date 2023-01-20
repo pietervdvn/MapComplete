@@ -261,7 +261,33 @@
         }
     },
     "bank": {
-        "description": "Een financiële instelling waar je geld kunt"
+        "description": "Een financiële instelling waar je geld kunt",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Met een bankautomaat"
+                    }
+                }
+            }
+        },
+        "name": "Banken",
+        "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze bank heeft een bankautomaat"
+                    },
+                    "1": {
+                        "then": "Deze bank heeft <b>geen</b> bankautomaaat"
+                    },
+                    "2": {
+                        "then": "Deze bank heeft een bankautomaat, maar deze staat apart op de kaart aangeduid"
+                    }
+                },
+                "question": "Heeft deze bank een bankautomaat?"
+            }
+        }
     },
     "barrier": {
         "description": "Hindernissen tijdens het fietsen, zoals paaltjes en fietshekjes",
@@ -7702,7 +7728,8 @@
                 "0": {
                     "then": "Halte {name}"
                 }
-            }
+            },
+            "render": "Bushalte"
         }
     },
     "tree_node": {
@@ -7816,6 +7843,14 @@
             "tree_node-wikidata": {
                 "question": "Wat is het Wikidata-ID van deze boom?",
                 "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
+            },
+            "height": {
+                "render": "Deze boom is {height} meter hoog",
+                "question": "Wat is de hoogte van deze boom?"
+            },
+            "circumference": {
+                "render": "De boomstam heeft een omtrek van {circumference} meter",
+                "question": "Wat is de omtrek van de boomstam? <p class='subtle'>Dit wordt 1.30m boven de grond gemeten</p>"
             }
         },
         "title": {
@@ -8101,6 +8136,10 @@
             "windturbine-fixme": {
                 "question": "Is er iets mis met de informatie over deze windturbine dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)",
                 "render": "Extra informatie voor OpenStreetMap experts: {fixme}"
+            },
+            "turbine-height": {
+                "question": "Wat is de totale hoogte in meter van deze windturbine (inclusief rotor-radius)?",
+                "render": "De totale hoogte (inclusief rotor-radius) van deze windturbine is {height} meter"
             }
         },
         "title": {
@@ -8136,5 +8175,105 @@
                 }
             }
         }
+    },
+    "fitness_station": {
+        "tagRenderings": {
+            "operator": {
+                "render": "Dit fitness-toestel wordt beheerd door {operator}",
+                "question": "Wie beheert dit fitness-toestel?",
+                "freeform": {
+                    "placeholder": "Beheerder van het fitness-toestel"
+                }
+            },
+            "name": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit fitness-toestel heeft geen naam"
+                    }
+                },
+                "render": "Dit fitness-toestel heet {name}",
+                "freeform": {
+                    "placeholder": "Naam van het fitness-toestell"
+                },
+                "question": "Wat is de naam van dit fitness-toestel?"
+            }
+        },
+        "description": "Vind een fitness-centrum in je buurt en voeg ontbrekende fitness-centra toe",
+        "name": "Fitness-toestel",
+        "presets": {
+            "0": {
+                "title": "een fitness-toestel"
+            }
+        }
+    },
+    "fitness_centre": {
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Naam van dit fitness-centrum"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Dit fitness-centrum heeft geen naam"
+                    }
+                },
+                "render": "Dit fitness-centrum heet {name}",
+                "question": "Wat is de naam van dit fitness-centrum?"
+            }
+        },
+        "title": {
+            "render": "Fitness-centrum"
+        },
+        "presets": {
+            "0": {
+                "title": "een fitness-centrum"
+            }
+        }
+    },
+    "usersettings": {
+        "tagRenderings": {
+            "verified-mastodon": {
+                "mappings": {
+                    "1": {
+                        "then": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+                    },
+                    "0": {
+                        "then": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                    }
+                }
+            },
+            "contributor-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Je hebt mee geprogrammeerd aan MapComplete met {_code_contributions} commits! Das supercool van je! Bedankt hiervoor!"
+                    }
+                }
+            },
+            "picture-license": {
+                "mappings": {
+                    "0": {
+                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik. <span class='subtle'>Dit is de standaard-instelling</span>"
+                    },
+                    "1": {
+                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik."
+                    },
+                    "3": {
+                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden."
+                    },
+                    "2": {
+                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam"
+                    }
+                },
+                "question": "Met welke licentie wil je je afbeeldingen toevoegen?"
+            },
+            "translation-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Je hebt MapComplete helpen vertalen! Dat is fantastisch! Bedankt hiervoor!"
+                    }
+                }
+            }
+        },
+        "description": "Een speciale lag die niet getoond wordt op de kaart, maar die de instellingen van de gebruiker weergeeft"
     }
 }

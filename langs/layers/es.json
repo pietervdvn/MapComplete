@@ -58,7 +58,7 @@
                     }
                 },
                 "question": "¿Como está clasificada la operadora de la estación?",
-                "render": "La operador a no es una entidad de tipo {operator:type}."
+                "render": "La operadora es una entidad de tipo {operator:type}."
             },
             "ambulance-place": {
                 "question": "¿Dónde se encuentra la estación? (ej. nombre del barrio, pueblo o ciudad)",
@@ -66,7 +66,7 @@
             },
             "ambulance-street": {
                 "question": "¿Cual es el nombre de la calle en la que se encuentra la estación?",
-                "render": "Esta estación se encuentra al lado de una autovía llamada {addr:street}."
+                "render": "Esta estación se encuentra al lado de una via llamada {addr:street}."
             }
         },
         "title": {
@@ -173,7 +173,7 @@
                         "then": "Bolardo fijo"
                     },
                     "2": {
-                        "then": "Bolardo que se puede doblar"
+                        "then": "Bolardo retráctil"
                     },
                     "3": {
                         "then": "Bolardo flexible, normalmente plástico"
@@ -670,7 +670,7 @@
                         "then": "No está permitido aparcar bicicletas de carga"
                     }
                 },
-                "question": "¿Este aparcamiento de bicicletas tiene huevos para bicicletas de carga?"
+                "question": "¿Este aparcamiento de bicicletas tiene huecos para bicicletas de carga?"
             },
             "Is covered?": {
                 "mappings": {
@@ -1135,7 +1135,7 @@
                         "then": "Un bar, principalmente para beber cervezas en un interior cálido y relajado"
                     },
                     "1": {
-                        "then": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz"
+                        "then": "Un <b>bar de copas</b> más moderno y comercial, posiblemente con una instalación de música y luz"
                     },
                     "2": {
                         "then": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo"
@@ -3576,11 +3576,6 @@
                 "question": "¿De qué color es la luz que emite esta lámpara?",
                 "render": "Esta lámpara emite luz {light:colour}"
             },
-            "count": {
-                "mappings": {
-                    "0": {}
-                }
-            },
             "direction": {
                 "question": "¿Hacia donde apunta esta lámpara?",
                 "render": "Esta lámpara apunta hacia {light:direction}"
@@ -3758,7 +3753,7 @@
                         "then": "Estos baños <b>no</b> tienen una pileta para lavarse las manos"
                     }
                 },
-                "question": "¿Esto baños tienen una pileta para lavarte los baños?"
+                "question": "¿Esto baños tienen una pileta para lavarte las manos?"
             },
             "toilet-has-paper": {
                 "mappings": {
