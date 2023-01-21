@@ -1,36 +1,37 @@
-import { UIEventSource } from "../UIEventSource"
-import { Review } from "./Review"
+import { ImmutableStore, Store, UIEventSource } from "../UIEventSource"
+import { MangroveReviews, Review } from "mangrove-reviews-typescript"
+import { Utils } from "../../Utils"
+import { Feature, Geometry, Position } from "geojson"
+import { GeoOperations } from "../GeoOperations"
+import { OsmTags } from "../../Models/OsmFeature"
+import { ElementStorage } from "../ElementStorage"
 
 export class MangroveIdentity {
-    public keypair: any = undefined
-    public readonly kid: UIEventSource<string> = new UIEventSource<string>(undefined)
-    private readonly _mangroveIdentity: UIEventSource<string>
+    public readonly keypair: Store<CryptoKeyPair>
+    public readonly key_id: Store<string>
 
     constructor(mangroveIdentity: UIEventSource<string>) {
-        const self = this
-        /*
-        this._mangroveIdentity = mangroveIdentity
-        mangroveIdentity.addCallbackAndRunD((str) => {
-            if (str === "") {
+        const key_id = new UIEventSource<string>(undefined)
+        this.key_id = key_id
+        const keypairEventSource = new UIEventSource<CryptoKeyPair>(undefined)
+        this.keypair = keypairEventSource
+        mangroveIdentity.addCallbackAndRunD(async (data) => {
+            if (data === "") {
                 return
             }
-            mangrove.jwkToKeypair(JSON.parse(str)).then((keypair) => {
-                self.keypair = keypair
-                mangrove.publicToPem(keypair.publicKey).then((pem) => {
-                    console.log("Identity loaded")
-                    self.kid.setData(pem)
-                })
-            })
+            const keypair = await MangroveReviews.jwkToKeypair(JSON.parse(data))
+            keypairEventSource.setData(keypair)
+            const pem = await MangroveReviews.publicToPem(keypair.publicKey)
+            key_id.setData(pem)
         })
+
         try {
             if (!Utils.runningFromConsole && (mangroveIdentity.data ?? "") === "") {
-                this.CreateIdentity()
+                MangroveIdentity.CreateIdentity(mangroveIdentity).then((_) => {})
             }
         } catch (e) {
             console.error("Could not create identity: ", e)
         }
-
-        // */
     }
 
     /**
@@ -38,170 +39,204 @@ export class MangroveIdentity {
      * Is written into the UIEventsource, which was passed into the constructor
      * @constructor
      */
-    private CreateIdentity() {
-        if ("" !== (this._mangroveIdentity.data ?? "")) {
-            throw "Identity already defined - not creating a new one"
+    private static async CreateIdentity(identity: UIEventSource<string>): Promise<void> {
+        const keypair = await MangroveReviews.generateKeypair()
+        const jwk = await MangroveReviews.keypairToJwk(keypair)
+        if ((identity.data ?? "") !== "") {
+            // Identity has been loaded via osmPreferences by now - we don't overwrite
+            return
         }
-        const self = this
-        /*mangrove.generateKeypair().then((keypair) => {
-            self.keypair = keypair
-            mangrove.keypairToJwk(keypair).then((jwk) => {
-                self._mangroveIdentity.setData(JSON.stringify(jwk))
-            })
-        })//*/
+        identity.setData(JSON.stringify(jwk))
     }
 }
 
-export default class MangroveReviews {
-    private static _reviewsCache = {}
-    private static didWarn = false
-    private readonly _lon: number
+/**
+ * Tracks all reviews of a given feature, allows to create a new review
+ */
+export default class FeatureReviews {
+    private static readonly _featureReviewsCache: Record<string, FeatureReviews> = {}
+    public readonly subjectUri: Store<string>
+    private readonly _reviews: UIEventSource<(Review & { madeByLoggedInUser: Store<boolean> })[]> =
+        new UIEventSource([])
+    public readonly reviews: Store<(Review & { madeByLoggedInUser: Store<boolean> })[]> =
+        this._reviews
     private readonly _lat: number
-    private readonly _name: string
-    private readonly _reviews: UIEventSource<Review[]> = new UIEventSource<Review[]>([])
-    private _dryRun: boolean
-    private _mangroveIdentity: MangroveIdentity
-    private _lastUpdate: Date = undefined
+    private readonly _lon: number
+    private readonly _uncertainty: number
+    private readonly _name: Store<string>
+    private readonly _identity: MangroveIdentity
 
     private constructor(
-        lon: number,
-        lat: number,
-        name: string,
-        identity: MangroveIdentity,
-        dryRun?: boolean
-    ) {
-        this._lon = lon
-        this._lat = lat
-        this._name = name
-        this._mangroveIdentity = identity
-        this._dryRun = dryRun
-        if (dryRun && !MangroveReviews.didWarn) {
-            MangroveReviews.didWarn = true
-            console.warn("Mangrove reviews will _not_ be saved as dryrun is specified")
+        feature: Feature<Geometry, OsmTags>,
+        state: {
+            allElements: ElementStorage
+            mangroveIdentity?: MangroveIdentity
+        },
+        options?: {
+            nameKey?: "name" | string
+            fallbackName?: string
+            uncertaintyRadius?: number
         }
+    ) {
+        const centerLonLat = GeoOperations.centerpointCoordinates(feature)
+        ;[this._lon, this._lat] = centerLonLat
+        this._identity =
+            state?.mangroveIdentity ?? new MangroveIdentity(new UIEventSource<string>(undefined))
+        const nameKey = options?.nameKey ?? "name"
+
+        if (feature.geometry.type === "Point") {
+            this._uncertainty = options?.uncertaintyRadius ?? 10
+        } else {
+            let coords: Position[][]
+            if (feature.geometry.type === "LineString") {
+                coords = [feature.geometry.coordinates]
+            } else if (
+                feature.geometry.type === "MultiLineString" ||
+                feature.geometry.type === "Polygon"
+            ) {
+                coords = feature.geometry.coordinates
+            }
+            let maxDistance = 0
+            for (const coord of coords) {
+                maxDistance = Math.max(
+                    maxDistance,
+                    GeoOperations.distanceBetween(centerLonLat, <any>coord)
+                )
+            }
+
+            this._uncertainty = options?.uncertaintyRadius ?? maxDistance
+        }
+        this._name = state.allElements
+            .getEventSourceById(feature.properties.id)
+            .map((tags) => tags[nameKey] ?? options?.fallbackName)
+
+        this.subjectUri = this.ConstructSubjectUri()
+
+        const self = this
+        this.subjectUri.addCallbackAndRunD(async (sub) => {
+            const reviews = await MangroveReviews.getReviews({ sub })
+            self.addReviews(reviews.reviews)
+        })
+        /* We also construct all subject queries _without_ encoding the name to work around a previous bug
+         * See https://github.com/giggls/opencampsitemap/issues/30
+         */
+        this.ConstructSubjectUri(true).addCallbackAndRunD(async (sub) => {
+            try {
+                const reviews = await MangroveReviews.getReviews({ sub })
+                self.addReviews(reviews.reviews)
+            } catch (e) {
+                console.log("Could not fetch reviews for partially incorrect query ", sub)
+            }
+        })
     }
 
-    public static Get(
-        lon: number,
-        lat: number,
-        name: string,
-        identity: MangroveIdentity,
-        dryRun?: boolean
+    /**
+     * Construct a featureReviewsFor or fetches it from the cache
+     */
+    public static construct(
+        feature: Feature<Geometry, OsmTags>,
+        state: {
+            allElements: ElementStorage
+            mangroveIdentity?: MangroveIdentity
+        },
+        options?: {
+            nameKey?: "name" | string
+            fallbackName?: string
+            uncertaintyRadius?: number
+        }
     ) {
-        const newReviews = new MangroveReviews(lon, lat, name, identity, dryRun)
-
-        const uri = newReviews.GetSubjectUri()
-        const cached = MangroveReviews._reviewsCache[uri]
+        const key = feature.properties.id
+        const cached = FeatureReviews._featureReviewsCache[key]
         if (cached !== undefined) {
             return cached
         }
-        MangroveReviews._reviewsCache[uri] = newReviews
+        const featureReviews = new FeatureReviews(feature, state, options)
+        FeatureReviews._featureReviewsCache[key] = featureReviews
+        return featureReviews
+    }
 
-        return newReviews
+    /**
+     * The given review is uploaded to mangrove.reviews and added to the list of known reviews
+     */
+    public async createReview(review: Omit<Review, "sub">): Promise<void> {
+        const r: Review = {
+            sub: this.subjectUri.data,
+            ...review,
+        }
+        const keypair: CryptoKeyPair = this._identity.keypair.data
+        console.log(r)
+        const jwt = await MangroveReviews.signReview(keypair, r)
+        console.log("Signed:", jwt)
+        await MangroveReviews.submitReview(jwt)
+        this._reviews.data.push({ ...r, madeByLoggedInUser: new ImmutableStore(true) })
+        this._reviews.ping()
+    }
+
+    /**
+     * Adds given reviews to the 'reviews'-UI-eventsource
+     * @param reviews
+     * @private
+     */
+    private addReviews(reviews: { payload: Review; kid: string }[]) {
+        const self = this
+        const alreadyKnown = new Set(self._reviews.data.map((r) => r.rating + " " + r.opinion))
+
+        let hasNew = false
+        for (const reviewData of reviews) {
+            const review = reviewData.payload
+
+            try {
+                const url = new URL(review.sub)
+                console.log("URL is", url)
+                if (url.protocol === "geo:") {
+                    const coordinate = <[number, number]>(
+                        url.pathname.split(",").map((n) => Number(n))
+                    )
+                    const distance = GeoOperations.distanceBetween(
+                        [this._lat, this._lon],
+                        coordinate
+                    )
+                    if (distance > this._uncertainty) {
+                        continue
+                    }
+                }
+            } catch (e) {
+                console.warn(e)
+            }
+
+            const key = review.rating + " " + review.opinion
+            if (alreadyKnown.has(key)) {
+                continue
+            }
+            self._reviews.data.push({
+                ...review,
+                madeByLoggedInUser: this._identity.key_id.map((user_key_id) => {
+                    return reviewData.kid === user_key_id
+                }),
+            })
+            hasNew = true
+        }
+        if (hasNew) {
+            self._reviews.ping()
+        }
     }
 
     /**
      * Gets an URI which represents the item in a mangrove-compatible way
+     *
+     * See https://mangrove.reviews/standard#mangrove-core-uri-schemes
      * @constructor
      */
-    public GetSubjectUri() {
-        let uri = `geo:${this._lat},${this._lon}?u=50`
-        if (this._name !== undefined && this._name !== null) {
-            uri += "&q=" + this._name
-        }
-        return uri
-    }
-
-    /**
-     * Gives a UIEVentsource with all reviews.
-     * Note: rating is between 1 and 100
-     */
-    public GetReviews(): UIEventSource<Review[]> {
-        /*
-        if (
-            this._lastUpdate !== undefined &&
-            this._reviews.data !== undefined &&
-            new Date().getTime() - this._lastUpdate.getTime() < 15000
-        ) {
-            // Last update was pretty recent
-            return this._reviews
-        }
-        this._lastUpdate = new Date()
-
+    private ConstructSubjectUri(dontEncodeName: boolean = false): Store<string> {
+        // https://www.rfc-editor.org/rfc/rfc5870#section-3.4.2
+        // `u` stands for `uncertainty`, https://www.rfc-editor.org/rfc/rfc5870#section-3.4.3
         const self = this
-        mangrove
-            .getReviews({ sub: this.GetSubjectUri() })
-            .then((data) => {
-                const reviews = []
-                const reviewsByUser = []
-                for (const review of data.reviews) {
-                    const r = review.payload
-
-                    console.log(
-                        "PublicKey is ",
-                        self._mangroveIdentity.kid.data,
-                        "reviews.kid is",
-                        review.kid
-                    )
-                    const byUser = self._mangroveIdentity.kid.map(
-                        (data) => data === review.signature
-                    )
-                    const rev: Review = {
-                        made_by_user: byUser,
-                        date: new Date(r.iat * 1000),
-                        comment: r.opinion,
-                        author: r.metadata.nickname,
-                        affiliated: r.metadata.is_affiliated,
-                        rating: r.rating, // percentage points
-                    }
-
-                    ;(rev.made_by_user ? reviewsByUser : reviews).push(rev)
-                }
-                self._reviews.setData(reviewsByUser.concat(reviews))
-            })
-            .catch((e) => {
-                console.error("Could not download review for ", e)
-            })
-         //*/
-        return this._reviews
-    }
-
-    AddReview(r: Review, callback?: () => void) {
-        callback =
-            callback ??
-            (() => {
-                return undefined
-            })
-
-        const payload = {
-            sub: this.GetSubjectUri(),
-            rating: r.rating,
-            opinion: r.comment,
-            metadata: {
-                nickname: r.author,
-            },
-        }
-        if (r.affiliated) {
-            // @ts-ignore
-            payload.metadata.is_affiliated = true
-        }
-        if (this._dryRun) {
-            console.warn("DRYRUNNING mangrove reviews: ", payload)
-            if (callback) {
-                if (callback) {
-                    callback()
-                }
-                this._reviews.data.push(r)
-                this._reviews.ping()
+        return this._name.map(function (name) {
+            let uri = `geo:${self._lat},${self._lon}?u=${self._uncertainty}`
+            if (name) {
+                uri += "&q=" + (dontEncodeName ? name : encodeURIComponent(name))
             }
-        } else {
-            /*mangrove.signAndSubmitReview(this._mangroveIdentity.keypair, payload).then(() => {
-                if (callback) {
-                    callback()
-                }
-                this._reviews.data.push(r)
-                this._reviews.ping()
-            })//*/
-        }
+            return uri
+        })
     }
 }

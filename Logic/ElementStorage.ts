@@ -22,7 +22,7 @@ export class ElementStorage {
      *
      * Note: it will cleverly merge the tags, if needed
      */
-    addOrGetElement(feature: any): UIEventSource<any> {
+    addOrGetElement(feature: Feature<Geometry, OsmTags>): UIEventSource<any> {
         const elementId = feature.properties.id
         const newProperties = feature.properties
 

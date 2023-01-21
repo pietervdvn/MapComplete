@@ -52,6 +52,7 @@ import { GeoOperations } from "../Logic/GeoOperations"
 import StatisticsPanel from "./BigComponents/StatisticsPanel"
 import AutoApplyButton from "./Popup/AutoApplyButton"
 import { LanguageElement } from "./Popup/LanguageElement"
+import FeatureReviews from "../Logic/Web/MangroveReviews"
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
@@ -204,24 +205,16 @@ export default class SpecialVisualizations {
                     },
                 ],
                 constr: (state, tags, args) => {
-                    const tgs = tags.data
-                    const key = args[0] ?? "name"
-                    let subject = tgs[key] ?? args[1]
-                    if (subject === undefined || subject === "") {
-                        return Translations.t.reviews.name_required
-                    }
-                    const mangrove = MangroveReviews.Get(
-                        Number(tgs._lon),
-                        Number(tgs._lat),
-                        encodeURIComponent(subject),
-                        state.mangroveIdentity,
-                        state.featureSwitchIsTesting.data
-                    )
-                    const form = new ReviewForm(
-                        (r, whenDone) => mangrove.AddReview(r, whenDone),
-                        state
-                    )
-                    return new ReviewElement(mangrove.GetSubjectUri(), mangrove.GetReviews(), form)
+                    const nameKey = args[0] ?? "name"
+                    let fallbackName = args[1]
+                    const feature = state.allElements.ContainingFeatures.get(tags.data.id)
+                    const mangrove = FeatureReviews.construct(feature, state, {
+                        nameKey: nameKey,
+                        fallbackName,
+                    })
+
+                    const form = new ReviewForm((r) => mangrove.createReview(r), state)
+                    return new ReviewElement(mangrove, form)
                 },
             },
             {

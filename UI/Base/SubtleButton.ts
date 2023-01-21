@@ -12,7 +12,12 @@ import Loading from "./Loading"
 export class SubtleButton extends UIElement {
     private readonly imageUrl: string | BaseUIElement
     private readonly message: string | BaseUIElement
-    private readonly options: { url?: string | Store<string>; newTab?: boolean; imgSize?: string }
+    private readonly options: {
+        url?: string | Store<string>
+        newTab?: boolean
+        imgSize?: string
+        extraClasses?: string
+    }
 
     constructor(
         imageUrl: string | BaseUIElement,
@@ -21,6 +26,7 @@ export class SubtleButton extends UIElement {
             url?: string | Store<string>
             newTab?: boolean
             imgSize?: "h-11 w-11" | string
+            extraClasses?: string
         } = undefined
     ) {
         super()
@@ -31,7 +37,8 @@ export class SubtleButton extends UIElement {
 
     protected InnerRender(): string | BaseUIElement {
         const classes =
-            "block flex p-3 my-2 bg-subtle rounded-lg hover:shadow-xl hover:bg-unsubtle transition-colors transition-shadow link-no-underline"
+            "block flex p-3 my-2 bg-subtle rounded-lg hover:shadow-xl hover:bg-unsubtle transition-colors transition-shadow link-no-underline " +
+            (this?.options?.extraClasses ?? "")
         const message = Translations.W(this.message)?.SetClass(
             "block text-ellipsis no-images flex-shrink"
         )

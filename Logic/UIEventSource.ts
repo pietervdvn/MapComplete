@@ -371,12 +371,12 @@ class ListenerTracker<T> {
  * It'll fuse
  */
 class MappedStore<TIn, T> extends Store<T> {
-    private _upstream: Store<TIn>
-    private _upstreamCallbackHandler: ListenerTracker<TIn> | undefined
+    private readonly _upstream: Store<TIn>
+    private readonly _upstreamCallbackHandler: ListenerTracker<TIn> | undefined
     private _upstreamPingCount: number = -1
     private _unregisterFromUpstream: () => void
 
-    private _f: (t: TIn) => T
+    private readonly _f: (t: TIn) => T
     private readonly _extraStores: Store<any>[] | undefined
     private _unregisterFromExtraStores: (() => void)[] | undefined
 
