@@ -254,7 +254,7 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "{brand} Geldautomat"
+                    "then": "{brand}-Geldautomat"
                 }
             },
             "render": "Geldautomat"
@@ -1499,7 +1499,7 @@
             },
             "Name": {
                 "question": "Was ist der Name dieses Unternehmens?",
-                "render": "Dieses Unternehmen heißt {name}"
+                "render": "Das Unternehmen heißt {name}"
             }
         },
         "title": {
