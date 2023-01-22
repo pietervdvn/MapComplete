@@ -1,5 +1,8 @@
 import BaseUIElement from "../BaseUIElement"
 
+/**
+ * The SvelteUIComponent serves as a translating class which which wraps a SvelteElement into the BaseUIElement framework.
+ */
 export default class SvelteUIElement extends BaseUIElement {
     private readonly _svelteComponent
     private readonly _props: Record<string, any>
