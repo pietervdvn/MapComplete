@@ -65,6 +65,7 @@ export default class GenerateReviewsAnalysis extends Script {
                         opinion: review.opinion,
                         client: review.metadata.client_id,
                         nickname: review.metadata.nickname,
+                        affiliated: "" + review.metadata.is_affiliated,
                     },
                 })
             } catch (e) {
@@ -78,10 +79,25 @@ export default class GenerateReviewsAnalysis extends Script {
             type: "FeatureCollection",
             features: geojsonFeatures,
         }
+
+        const fcmc: FeatureCollection = {
+            type: "FeatureCollection",
+            features: geojsonFeatures.filter(
+                (f) =>
+                    f.properties.client.indexOf("mapcomplete") >= 0 ||
+                    f.properties.client.indexOf("pietervdvn.github.io") >= 0
+            ),
+        }
         fs.writeFileSync(
             "../MapComplete-data/reviews.geojson",
 
             JSON.stringify(fc),
+            { encoding: "utf-8" }
+        )
+        fs.writeFileSync(
+            "../MapComplete-data/reviewsmc.geojson",
+
+            JSON.stringify(fcmc),
             { encoding: "utf-8" }
         )
     }
