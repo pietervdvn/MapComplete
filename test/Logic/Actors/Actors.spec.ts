@@ -9,6 +9,8 @@ import { UIEventSource } from "../../../Logic/UIEventSource"
 import Loc from "../../../Models/Loc"
 import SelectedFeatureHandler from "../../../Logic/Actors/SelectedFeatureHandler"
 import { ElementStorage } from "../../../Logic/ElementStorage"
+import { OsmTags } from "../../../Models/OsmFeature"
+import { Feature, Geometry } from "geojson"
 
 const latestTags = {
     amenity: "public_bookcase",
@@ -47,7 +49,7 @@ Utils.injectJsonDownloadForTests("https://www.openstreetmap.org/api/0.6/node/556
 
 it("should download the latest version", () => {
     const state = new UserRelatedState(new LayoutConfig(<any>bookcaseJson, true))
-    const feature = {
+    const feature: Feature<Geometry, OsmTags> = {
         type: "Feature",
         id: "node/5568693115",
         properties: {
@@ -70,14 +72,6 @@ it("should download the latest version", () => {
             type: "Point",
             coordinates: [3.2154662, 51.2179199],
         },
-        bbox: {
-            maxLat: 51.2179199,
-            maxLon: 3.2154662,
-            minLat: 51.2179199,
-            minLon: 3.2154662,
-        },
-        _lon: 3.2154662,
-        _lat: 51.2179199,
     }
     state.allElements.addOrGetElement(feature)
     SelectedElementTagsUpdater.installCallback(state)
