@@ -1499,7 +1499,7 @@
             },
             "Name": {
                 "question": "Was ist der Name dieses Unternehmens?",
-                "render": "Dieses Unternehmen heißt {name}"
+                "render": "Das Unternehmen heißt {name}"
             }
         },
         "title": {
