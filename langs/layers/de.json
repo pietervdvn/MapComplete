@@ -254,7 +254,7 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "{brand} Geldautomat"
+                    "then": "{brand}-Geldautomat"
                 }
             },
             "render": "Geldautomat"
