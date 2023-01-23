@@ -7991,7 +7991,7 @@
                         "then": "This stop has a bench"
                     },
                     "1": {
-                        "then": "This stop does not have a bench"
+                        "then": "This stop does <b>not</b> have a bench"
                     },
                     "2": {
                         "then": "This stop has a bench, that's separately mapped"
@@ -8005,7 +8005,7 @@
                         "then": "This stop has a bin"
                     },
                     "1": {
-                        "then": "This stop does not have a bin"
+                        "then": "This stop does <b>not</b> have a bin"
                     },
                     "2": {
                         "then": "This stop has a bin, that's separately mapped"
@@ -8034,7 +8034,7 @@
                         "then": "This stop has a timetable containing just the interval between departures"
                     },
                     "5": {
-                        "then": "This stop does not have a departures board"
+                        "then": "This stop does <b>not</b> have a departures board"
                     }
                 }
             },
@@ -8044,7 +8044,7 @@
                         "then": "This stop is lit"
                     },
                     "1": {
-                        "then": "This stop is not lit"
+                        "then": "This stop is <b>not</b> lit"
                     }
                 },
                 "question": "Is this stop lit?"
@@ -8055,7 +8055,7 @@
                         "then": "This stop has a shelter"
                     },
                     "1": {
-                        "then": "This stop does not have a shelter"
+                        "then": "This stop does <b>not</b> have a shelter"
                     },
                     "2": {
                         "then": "This stop has a shelter, that's separately mapped"
@@ -8081,7 +8081,7 @@
                         "then": "This stop has tactile paving"
                     },
                     "1": {
-                        "then": "This stop does not have tactile paving"
+                        "then": "This stop does <b>not</b> have tactile paving"
                     }
                 },
                 "question": "Does this stop have tactile paving?"
