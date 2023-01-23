@@ -525,7 +525,8 @@
         "title": "Jardins verticals"
     },
     "food": {
-        "title": "Restaurants i menjar ràpid"
+        "title": "Restaurants i menjar ràpid",
+        "description": "Restaurants i menjar ràpid"
     },
     "fritures": {
         "layers": {
