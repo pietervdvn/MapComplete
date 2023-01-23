@@ -72,6 +72,7 @@ export default class GenerateReviewsAnalysis extends Script {
                 console.error(e)
             }
         }
+        console.log("Total number of reviews", reviews.length)
         this.print("Website", clientWebsites)
         this.print("Theme", themeHist)
         this.print("language", languageHist)
