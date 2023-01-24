@@ -115,7 +115,9 @@
                     "10": {
                         "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
                     }
-                }
+                },
+                "question": "Quin tipus d'obra és aquesta peça?",
+                "render": "Aquesta és un {artwork_type}"
             },
             "artwork-artist_name": {
                 "render": "Creat per {artist_name}",
@@ -124,10 +126,18 @@
             "artwork-artist-wikidata": {
                 "question": "Qui va crear aquesta obra d'art?",
                 "render": "Aquesta obra d'art la va crear {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+            },
+            "artwork-website": {
+                "question": "Hi ha un lloc web amb més informació sobre aquesta obra d'art?"
             }
         },
         "title": {
-            "render": "Obra d'art"
+            "render": "Obra d'art",
+            "mappings": {
+                "0": {
+                    "then": "Obra d'art <i>{name}</i>"
+                }
+            }
         },
         "presets": {
             "0": {
@@ -174,7 +184,8 @@
                 },
                 "question": "Aquest caixer té un lector de pantalla per a usuaris amb discapacitat visual?"
             }
-        }
+        },
+        "name": "Caixers Automàtics"
     },
     "barrier": {
         "name": "Barreres",
