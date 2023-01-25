@@ -1,7 +1,7 @@
 {
     "centerMessage": {
         "loadingData": "Carregant dades…",
-        "ready": "Fet.",
+        "ready": "Fet!",
         "retrying": "La càrrega de dades ha fallat. Tornant-ho a intentar en ({count}) segons…",
         "zoomIn": "Amplia per veure o editar les dades"
     },
@@ -10,27 +10,29 @@
         "cannotBeDeleted": "Aquest element no pot ser esborrat",
         "delete": "Esborrar",
         "explanations": {
-            "hardDelete": "Aquest punt s'esborrarà a OpenStreetMap. Es podria recuperar per part d'un contribuïdor experimentat",
+            "hardDelete": "Aquest element s'esborrarà a OpenStreetMap. Es podria recuperar per part d'un contribuïdor experimentat",
             "selectReason": "Selecciona per què s'hauria d'esborrar aquest element",
-            "softDelete": "Aquest element s'actualitzarà i s'amagarà d'aquesta aplicació. <span class=\"subtle\">{reason}</span>"
+            "softDelete": "Aquest element s'actualitzarà i s'amagarà d'aquesta aplicació. <span class=\"subtle\">{reason}</span>",
+            "retagOtherThemes": "Aquest element serà reetiquetat i visible a {otherThemes}",
+            "retagNoOtherThemes": "Aquest element serà reclasificada i ocultada a aquesta aplicació"
         },
         "isDeleted": "Aquest element s'esborrarà",
-        "isntAPoint": "Només es poden esborrar punts, l'element seleccionat és una via, àrea o relació.",
+        "isntAPoint": "Només es poden esborrar elements, l'element seleccionat és una via, àrea o relació.",
         "loading": "Inspeccionant propietats per si aquest element pot ser esborrat.",
-        "loginToDelete": "Has d'entrar per esborrar un punt",
-        "notEnoughExperience": "Aquest punt l'ha fet una altra persona.",
-        "onlyEditedByLoggedInUser": "Aquest punt només l'has editat tu, el pots esborrar amb seguretat.",
-        "partOfOthers": "Aquest punt és part d'una via o relació i no es pot esborrar directament.",
-        "readMessages": "Tens missatges sense llegir. Llegeix això abans d'esborrar un punt - algú potser t'ha escrit",
+        "loginToDelete": "Has d'entrar per esborrar un element",
+        "notEnoughExperience": "Aquest element l'ha fet una altra persona.",
+        "onlyEditedByLoggedInUser": "Aquest element només l'has editat tu, pots esborrar-lo amb seguretat.",
+        "partOfOthers": "Aquest element és part d'una via o relació i no es pot esborrar directament.",
+        "readMessages": "Tens missatges sense llegir. Llegeix això abans d'esborrar un element - algú potser t'ha escrit",
         "reasons": {
             "disused": "Aquest element ja no funciona o s'ha eliminat",
-            "duplicate": "Aquest punt és un element duplicat",
+            "duplicate": "Aquest element és un duplicat d'un altre",
             "notFound": "No es pot trobar l'element",
             "test": "És una prova - l'element realment no existeix."
         },
-        "safeDelete": "Aquest punt es pot esborrar amb seguretat.",
+        "safeDelete": "Aquest element es pot esborrar amb seguretat.",
         "useSomethingElse": "Utilitza un altre editor d'OpenStreetMap per esborrar-lo",
-        "whyDelete": "Per què s'hauria d'esborrar aquest punt?"
+        "whyDelete": "Per què s'hauria d'esborrar aquest element?"
     },
     "favourite": {
         "loginNeeded": "<h3>Entrar</h3>El disseny personalitzat només està disponible pels usuaris d'OpenstreetMap",
@@ -43,7 +45,7 @@
         "add": {
             "addNew": "Afegir {category} aquí",
             "addNewMapLabel": "Afegir nou element",
-            "confirmButton": "Afegir {category} aquí",
+            "confirmButton": "Afegir una {category}<br/><div class='alert'>La teva atribució és visible per a tots</div>",
             "confirmIntro": "<h3>Afegir {title} aquí?</h3>El punt que estàs creant <b>el veurà tothom</b>. Només afegeix coses que realment existeixin. Moltes aplicacions fan servir aquestes dades.",
             "disableFilters": "Deshabilitar tots els filtres",
             "disableFiltersExplanation": "Alguns elements s'amagaran en passar un filtre",
@@ -57,7 +59,7 @@
                 "zoomInMore": "Ampliar més per importar aquest element"
             },
             "importTags": "L'element rebrà {tags}",
-            "intro": "Has marcat un lloc on no coneixem les dades.<br>",
+            "intro": "Has marcat un lloc on no coneixem les dades.<br/>",
             "layerNotEnabled": "La capa {layer} no està habilitada. Fes-ho per poder afegir un punt a aquesta capa",
             "openLayerControl": "Obrir el control de capes",
             "pleaseLogin": "Entra per afegir un nou punt",
@@ -136,8 +138,8 @@
             "title": "Seleccionar capes",
             "zoomInToSeeThisLayer": "Amplia per veure aquesta capa"
         },
-        "loading": "Carregant...",
-        "loadingTheme": "Carregant {theme}...",
+        "loading": "Carregant…",
+        "loadingTheme": "Carregant {theme}…",
         "loginFailed": "Ha fallat l'entrada a OpenStreetMap",
         "loginOnlyNeededToEdit": "Si vols ajudar a editar el mapa",
         "loginToStart": "Entra per contestar aquesta pregunta",
@@ -146,7 +148,7 @@
         "morescreen": {
             "createYourOwnTheme": "Crea la teva pròpia petició completa de MapComplete des de zero",
             "hiddenExplanation": "Aquestes peticions només funcionen amb l'enllaç. Has descobert {hidden_discovered} de {total_hidden} peticions amagades.",
-            "intro": "<h3>Més peticions</h3>T'agrada captar dades? <br>Hi ha més capes disponibles.",
+            "intro": "<h3>Més mapes temàtics?</h3>T'agrada captar dades? <br/>Hi ha més temes disponibles.",
             "noMatchingThemes": "Cap tema coincideix amb els teus criteris de cerca",
             "previouslyHiddenTitle": "Peticions visitades i amagades",
             "requestATheme": "Si vols que et fem una petició pròpia , demana-la al registre d'incidències",
@@ -159,7 +161,7 @@
         "noTagsSelected": "No s'han seleccionat etiquetes",
         "number": "nombre",
         "oneSkippedQuestion": "Has ignorat una pregunta",
-        "openStreetMapIntro": "<h3>Un mapa obert</h3><p></p>Un que tothom pogués utilitzar i editar lliurement. Un sol lloc on emmagatzemar tota la informació geogràfica. Llavors tots aquests llocs web amb mapes diferents petits i incompatibles (que sempre estaran desactualitzats) ja no serien necessaris.<p></p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> no és el mapa de l'enemic. Les dades del mapa es poden utilitzar de franc (amb <a href=\"https://osm.org/copyright\" target=\"_blank\"> atribució i publicació de canvis en aquestes dades</a>). A més a més, tothom pot agregar lliurement noves dades i corregir errors. Aquest lloc web també fa servir OpenStreetMap. Totes les dades provenen d'allà i les teves respostes i correccions també s'afegiran allà.</p><p>Moltes persones i aplicacions ja utilitzen OpenStreetMap: <a href=\"https://organicmaps.app/\" target=\"_blank\">Organic Maps</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, però també els mapes de Facebook, Instagram, Apple i Bing són (en part) impulsats per OpenStreetMap. .</p>",
+        "openStreetMapIntro": "<h3>Un mapa obert</h3><p>Un que tothom pogués utilitzar i editar lliurement. Un sol lloc on emmagatzemar tota la informació geogràfica. Llavors tots aquests llocs web amb mapes diferents petits i incompatibles (que sempre estaran desactualitzats) ja no serien necessaris.<p></p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> no és el mapa de l'enemic. Les dades del mapa es poden utilitzar gratuïtament (amb <a href='https://osm.org/copyright' target='_blank'> atribució i publicació de canvis en aquestes dades</a>). A més a més, tothom pot agregar lliurement noves dades i corregir errors. Aquest lloc web també fa servir OpenStreetMap. Totes les dades provenen d'allà i les teves respostes i correccions també s'afegiran allà.</p><p>Moltes persones i aplicacions ja utilitzen OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, però també els mapes de Facebook, Instagram, Apple i Bing són (en part) impulsats per OpenStreetMap .</p>",
         "openTheMap": "Obrir el mapa",
         "opening_hours": {
             "closed_permanently": "Tancat - sense dia d'obertura conegut",
@@ -188,7 +190,7 @@
         "questions": {
             "emailIs": "L'adreça de correu d'aquesta {category} és <a href=\"mailto:{email}\" target=\"_blank\">{email}</a>",
             "emailOf": "Quina és l'adreça de correu-e de {category}?",
-            "phoneNumberIs": "El número de telèfon de {category} és <a target=\"_blank\">{phone}</a>",
+            "phoneNumberIs": "El número de telèfon de {category} és <a href='tel:{phone}' target='_blank'>{phone}</a>",
             "phoneNumberOf": "Quin és el telèfon de {category}?",
             "websiteIs": "Pàgina web: <a href=\"{website}\" target=\"_blank\">{website}</a>",
             "websiteOf": "Quina és la pàgina web de {category}?"
@@ -209,7 +211,7 @@
             "copiedToClipboard": "Enllaç copiat al portapapers",
             "editThemeDescription": "Afegir o canviar preguntes d'aquesta petició",
             "editThisTheme": "Editar aquest repte",
-            "embedIntro": "<h3>Inclou-ho a la teva pàgina web</h3>Inclou aquest mapa dins de la teva pàgina web. <br> T'animem a que ho facis, no cal que demanis permís. <br> És de franc, i sempre ho serà. A més gent que ho faci servir més valuós serà.",
+            "embedIntro": "<h3>Inclou-ho a la teva pàgina web</h3>Per favor, inclou aquest mapa dins de la teva pàgina web. <br/>T'animem a que ho facis, no cal que demanis permís. <br/> És gratuït, i sempre ho serà. A més gent que ho faci servir més valuós serà.",
             "fsAddNew": "Activar el botó d'afegir nou PDI'",
             "fsGeolocation": "Activar el botó de 'geolocalitza'm' (només mòbil)",
             "fsIncludeCurrentBackgroundMap": "Incloure l'opció de fons actual <b>{name}</b>",
@@ -221,7 +223,7 @@
             "fsUserbadge": "Activar el botó d'entrada",
             "fsWelcomeMessage": "Mostra el missatge emergent de benvinguda i pestanyes associades",
             "intro": "<h3>Comparteix aquest mapa</h3> Comparteix aquest mapa copiant l'enllaç de sota i enviant-lo a amics i família:",
-            "thanksForSharing": "Gràcies per compartir."
+            "thanksForSharing": "Gràcies per compartir!"
         },
         "skip": "Saltar aquesta pregunta",
         "skippedQuestions": "Has ignorat algunes preguntes",
@@ -244,7 +246,7 @@
             "tuesday": "Dimarts",
             "wednesday": "Dimecres"
         },
-        "welcomeBack": "Has entrat, benvingut/da.",
+        "welcomeBack": "Has entrat, benvingut/da!",
         "welcomeExplanation": {
             "addNew": "Toqueu el mapa per afegir un nou PDI.",
             "general": "A aquest mapa, podeu observar, editar i afegir <i>punt d'interés</i>. Feu zoom pel voltant per veure el PDI, toque una vegada per a veure o editar la informació. Totes les dades s'obtenen i es desen a OpenStreetMap, que es poden reutilitzar lliurement."
@@ -253,7 +255,7 @@
             "createNewWikidata": "Crear un ítem de Wikidata",
             "doSearch": "Cerca adalt per veure els resultats",
             "failed": "Ha fallat la càrrega d'entrada de la Viquipèdia",
-            "loading": "Carregant Viquipèdia...",
+            "loading": "Carregant Viquipèdia…",
             "noResults": "Res trobat per <i>{search}</i>",
             "noWikipediaPage": "Aquest ítem de Wikidata no té cap pàgina de Viquipèdia corresponent.",
             "previewbox": {
@@ -276,9 +278,9 @@
         "pleaseLogin": "Entrar per pujar una foto",
         "respectPrivacy": "Respecta la privacitat. No fotografiïs gent o matrícules. No facis servir imatges de Google Maps, Google Streetview o altres fonts amb copyright.",
         "toBig": "La teva imatge és massa gran ara que medeix {actual_size}. Usa imatges de com a molt {max_size}",
-        "uploadDone": "La teva imatge ha estat afegida. Gràcies per ajudar.",
+        "uploadDone": "La teva imatge ha estat afegida. Gràcies per ajudar!",
         "uploadFailed": "No s'ha pogut pujar la imatge. Tens Internet i es permeten API de tercers? El navegador Brave o UMatrix podria bloquejar-les.",
-        "uploadMultipleDone": "{count} imatges afegides. Gràcies per ajudar.",
+        "uploadMultipleDone": "S'han afegit {count} imatges. Gràcies per ajudar!",
         "uploadingMultiple": "Pujant {count} imatges…",
         "uploadingPicture": "Pujant la teva imatge…",
         "currentLicense": "Les vostres imatges seran publicades sota la {license}"
@@ -376,7 +378,7 @@
         "addAComment": "Afegir un comentari",
         "addComment": "Afegir comentari",
         "addCommentAndClose": "Afegir comentari i tancar",
-        "addCommentPlaceholder": "Afegir un comentari...",
+        "addCommentPlaceholder": "Afegir un comentari…",
         "anonymous": "Usuari/a anònim/a",
         "closeNote": "Tancar nota",
         "createNote": "Crear una nova nota",
@@ -384,7 +386,7 @@
         "createNoteTitle": "Crear una nova nota aquí",
         "disableAllNoteFilters": "Deshabilitar tots els filtres",
         "isClosed": "Aquesta nota s'ha resolt",
-        "isCreated": "La teva nota ha estat creada.",
+        "isCreated": "La teva nota ha estat creada!",
         "loginToAddComment": "Entrar per afegir un comentari",
         "loginToAddPicture": "Entrar per afegir una imatge",
         "loginToClose": "Entrar per tancar aquesta nota",
@@ -407,7 +409,7 @@
         "intro": "La privadesa és important, tant per a l'individu com per a la societat. MapComplete intenta respectar la vostra privadesa tant com sigui possible, fins al punt que no es necessita cap banner de galetes molest. No obstant això, encara volem informar-vos quina informació es recopila i es comparteix, en quines circumstàncies i per què es fan aquestes compensacions.",
         "miscCookies": "MapComplete s'integra amb diversos altres serveis, especialment per carregar imatges de característiques. Les imatges s'allotgen en diversos servidors de tercers, que poden establir galetes per si mateixos.",
         "miscCookiesTitle": "Altres galetes",
-        "surveillance": "Mentre llegeixes la política de privadesa, probablement t'interessa la privadesa, a nosaltres també! Fins i tot hem creat <a href=\"https://mapcomplete.osm.be/surveillance\">una petició que mostra les càmeres de vigilància.</a> No dubtis a mapejar-les totes.",
+        "surveillance": "Ja que estàs llegint la política de privadesa, probablement t'interessa la privadesa, a nosaltres també! Fins i tot hem creat <a href=\"https://mapcomplete.osm.be/surveillance\">una tema que mostra les càmeres de vigilància.</a> No dubtis a mapejar-les totes.",
         "title": "Política de privacitat",
         "tracking": "Per obtenir informació sobre qui visita el nostre lloc web, es recopila informació tècnica. S'inclou el país des del qual has visitat la pàgina web, quin lloc web t'ha remès a MapComplete, el tipus de dispositiu i la mida de la pantalla. Es col·loca una galeta al teu dispositiu per indicar que has visitat MapComplete avui. Aquestes dades no són prou detallades per identificar-te personalment. Aquestes estadístiques només estan disponibles per a tothom en conjunt i estan <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">disponibles públicament per a tothom</a>",
         "trackingTitle": "Dades estadístiques",
@@ -434,7 +436,7 @@
         },
         "aboutOsm": {
             "aboutOsm": {
-                "intro": "OpenStreetMap és una base de dades global compartida, creada per voluntaris. Totes les geodades es poden aportar a OpenStreetMap, sempre que <b>es puguin verificar sobre el terreny</b>.<br> OpenStreetMap s'ha convertit en un conjunt de dades molt ampli i profund, ja que conté dades de milers de categories de objectes. Un objecte individual també pot tenir un munt d'atributs, aportant molts matisos, per exemple:",
+                "intro": "OpenStreetMap és una base de dades global compartida, creada per voluntaris. Totes les geodades es poden aportar a OpenStreetMap, sempre que <b>es puguin verificar sobre el terreny</b>.<br/> OpenStreetMap s'ha convertit en un conjunt de dades molt ampli i profund, ja que conté dades de milers de categories de objectes. Un objecte individual també pot tenir un munt d'atributs, aportant molts matisos, per exemple:",
                 "li0": "Els carrers tenen geometria, però també poden tenir informació sobre la velocitat màxima, la superfície, si estan il·luminats, el seu nom, un enllaç a la Viquipèdia, un enllaç al nom que reben, quines rutes de senderisme, bicicletes i autobús hi circulen, …",
                 "li1": "Les botigues i altres serveis poden tenir un horari d'obertura, un número de telèfon, un enllaç al lloc web, quines formes de pagament s'admeten, què venen, quins serveis ofereixen, …",
                 "li2": "Els lavabos poden tenir informació sobre l'accessibilitat per a cadira de rodes, un canviador, si cal pagar, …",
@@ -442,7 +444,7 @@
                 "title": "Què és OpenStreetMap?"
             },
             "benefits": {
-                "intro": "Pot ser molt difícil deixar el teu propi conjunt de dades enrere, ja que la creació d'aquest conjunt de dades sovint necessitava molt de temps i esforç.<br>No obstant això, els avantatges de canviar a OSM són enormes:",
+                "intro": "Pot ser molt difícil deixar el teu propi conjunt de dades enrere, ja que la creació d'aquest conjunt de dades sovint necessitava molt de temps i esforç.<br/>No obstant això, els avantatges de canviar a OSM són enormes:",
                 "li0": "Ja no estàs sol per reunir i mantenir aquest conjunt de dades: tota una comunitat està al teu costat",
                 "li1": "Les teves dades arribaran a un públic més gran que mai a través de Bing Maps, Apple Maps, Facebook, Instagram, Pokemon Go, OsmAnd, Organic Maps, Maps.me, Mapbox, Komoot, gairebé totes les aplicacions de cicle, …",
                 "li2": "Moltes organitzacions governamentals i municipis també utilitzen OpenStreetMap als seus llocs web",
@@ -512,14 +514,14 @@
             "outro": "Aquests serveis s'ofereixen a preus competitius. Es pot configurar una petició senzilla sense suport addicional per tan sols 2000 € i un petit cost addicional d'hostatjament anual.",
             "title": "Serveis de Mapcomplete"
         },
-        "text0": "<p>Mantenir un conjunt de geodades actualitzades és difícil, propens a errors i costós.<br>Per fer més gran la ferida, moltes organitzacions acaben recopilant les mateixes dades de manera independent, donant lloc a esforços duplicats i dades no estandarditzades. formats i molts conjunts de dades incomplets i sense manteniment.</p><p>Al mateix temps, hi ha una comunitat enorme que reuneix moltes geodades en una base de dades compartida, global i estandaritzada, és a dir, OpenStreetMap.org.</p>",
+        "text0": "<p>Mantenir un conjunt de geodades actualitzades és difícil, propens a errors i costós.<br/>Per fer més gran la ferida, moltes organitzacions acaben recopilant les mateixes dades de manera independent, donant lloc a esforços duplicats i dades no estandarditzades. formats i molts conjunts de dades incomplets i sense manteniment.</p><p>Al mateix temps, hi ha una comunitat enorme que reuneix moltes geodades en una base de dades compartida, global i estandaritzada, és a dir, OpenStreetMap.org.</p>",
         "text1": "<p>MapComplete és l'editor per facilitar la contribució de dades a OpenStreetMap.</p>",
         "title": "Suport professional amb MapComplete"
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Ressenya afiliada)",
         "attribution": "Les ressenyes funcionen gràcies a <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> i estan disponibles sota <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
-        "i_am_affiliated": "<span>Tinc alguna filiació amb aquest objecte</span><br><span class=\"subtle\">MArca-ho si n'ets cap, creador, treballador, …</span>",
+        "i_am_affiliated": "<span>Tinc alguna filiació amb aquest objecte</span><br/><span class='subtle'>Marca-ho si n'ets cap, creador, treballador, …</span>",
         "name_required": "És requerit un nom per mostrar i crear revisions",
         "no_rating": "Sense qualificació",
         "no_reviews_yet": "No hi ha revisions encara. Sigues el primer a escriure'n una i ajuda al negoci i a les dades lliures!",
@@ -603,13 +605,24 @@
         "text": {
             "description": "un tros de text"
         },
-        "tooLong": "El text és massa llarg, es permeten com a màxim 255 caràcters. Ara tens {count} caràcters",
+        "tooLong": "El text és massa llarg, es permeten com a màxim 255 caràcters. Ara tens {count} caràcters.",
         "url": {
             "description": "enllaç a un lloc web",
             "feedback": "Aquesta adreça web no és vàlida"
         },
         "wikidata": {
             "description": "Un identificador de Wikidata"
+        }
+    },
+    "hotkeyDocumentation": {
+        "title": "Dreceres"
+    },
+    "flyer": {
+        "callToAction": "Prova'l a mapcomplete.osm.be",
+        "cyclofix": "A CycloFix hi han mManxes, estacions de reparacions, fonts d'aigua i botigues per a ciclistes",
+        "description": "Un full de mà A4-apaisat per a promocionar MapComplete",
+        "fakeui": {
+            "add_images": "Afegeix imatges amb pocs clics"
         }
     }
 }
