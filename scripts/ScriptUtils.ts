@@ -147,7 +147,7 @@ export default class ScriptUtils {
         return JSON.parse(data.content)
     }
 
-    private static Download(url, headers?: any): Promise<{ content: string }> {
+    private static Download(url: string, headers?: any): Promise<{ content: string }> {
         return new Promise((resolve, reject) => {
             try {
                 headers = headers ?? {}
