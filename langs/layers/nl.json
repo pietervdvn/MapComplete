@@ -7804,7 +7804,7 @@
                 "question": "Heeft deze halte een geleidelijn?"
             },
             "contained_routes": {
-                "render": "<h3>{_contained_routes_count} lijnen stoppen bij deze halte</h3> <ul>{_contained_routes</ul>"
+                "render": "<h3>{_contained_routes_count} lijnen stoppen bij deze halte</h3> <ul>{_contained_routes}</ul>"
             }
         },
         "title": {
