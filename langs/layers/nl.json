@@ -2987,6 +2987,23 @@
                     }
                 },
                 "question": "Wat voor oversteekplaats is dit?"
+            },
+            "crossing-sound": {
+                "mappings": {
+                    "3": {
+                        "then": "Dit verkeerslicht heeft een geluidssignaal om aan te geven dat oversteken veilig kan, maar geen signaal om de paal te vinden."
+                    },
+                    "1": {
+                        "then": "Dit verkeerslicht heeft geen geluidssignalen om te helpen bij het oversteken."
+                    },
+                    "2": {
+                        "then": "Dit verkeerslicht heeft een geluidssignaal om de paal te vinden, maar niet om aan te geven dat oversteken veilig kan."
+                    },
+                    "0": {
+                        "then": "Dit verkeerslicht heeft geluidssignalen om te helpen bij het oversteken, zowel voor het vinden van de oversteekplaats als voor het oversteken."
+                    }
+                },
+                "question": "Heeft dit verkeerslicht geluidssignalen om te helpen bij het oversteken?"
             }
         },
         "title": {
@@ -4765,7 +4782,12 @@
                     "placeholder": "Hoogte van de stoeprand"
                 },
                 "question": "Hoe hoog is deze stoeprand?",
-                "render": "Stoeprandhoogte: {kerb:height}"
+                "render": "Stoeprandhoogte: {kerb:height}",
+                "mappings": {
+                    "0": {
+                        "then": "Deze stoeprand is vlak en lager als 1 cm."
+                    }
+                }
             },
             "kerb-type": {
                 "mappings": {
@@ -6684,6 +6706,28 @@
                     }
                 }
             }
+        },
+        "tagRenderings": {
+            "maxspeed": {
+                "question": "Wat is de maximum toegestane snelheid bij deze flitspaal?",
+                "render": "De maximum toegestane snelheid is {canonical(maxspeed)}",
+                "freeform": {
+                    "placeholder": "Maximum toegestane snelheid"
+                }
+            },
+            "ref": {
+                "render": "De referentie van deze flitspaal is {ref}"
+            }
+        },
+        "title": {
+            "render": "Flitspaal"
+        },
+        "description": "Laag met flitspalen",
+        "name": "Flitspaal",
+        "presets": {
+            "0": {
+                "title": "een flitspaal"
+            }
         }
     },
     "speed_display": {
@@ -6699,6 +6743,32 @@
                         "humanShort": "mph"
                     }
                 }
+            }
+        },
+        "description": "Laag met snelheidsdisplays om bestuurders op hun snelheid te wijzen.",
+        "name": "Snelheidsdisplay",
+        "tagRenderings": {
+            "inscription": {
+                "render": "De tekst op dit snelheidsdisplay is {inscription}",
+                "freeform": {
+                    "placeholder": "Tekst op snelheidsdisplay (b.v. 'Uw snelheid')"
+                },
+                "question": "Wat is de tekst op dit snelheidsdisplay?"
+            },
+            "maxspeed": {
+                "freeform": {
+                    "placeholder": "Maximum toegestane snelheid bij snelheidsdisplay"
+                },
+                "question": "Wat is de maximum toegestane snelheid bij dit snelheidsdisplay?",
+                "render": "De maximum toegestane snelheid bij dit snelheidsdisplay is {canonical(maxspeed)}"
+            }
+        },
+        "title": {
+            "render": "Snelheidsdisplay"
+        },
+        "presets": {
+            "0": {
+                "title": "een snelheidsdisplay"
             }
         }
     },
@@ -7663,7 +7733,7 @@
                         "then": "Deze halte heeft een zitbank"
                     },
                     "1": {
-                        "then": "Deze halte heeft geen zitbank"
+                        "then": "Deze halte heeft <b>geen</b> zitbank"
                     },
                     "2": {
                         "then": "Deze halte heeft een zitbank, die los aangegeven is op de kaart"
@@ -7677,7 +7747,7 @@
                         "then": "Deze halte heeft een vuilnisbak"
                     },
                     "1": {
-                        "then": "Deze halte heeft geen vuilnisbak"
+                        "then": "Deze halte heeft <b>geen</b> vuilnisbak"
                     },
                     "2": {
                         "then": "Deze heeft een vuilnisbak, die los op de kaart staat"
@@ -7688,10 +7758,10 @@
             "lit": {
                 "mappings": {
                     "0": {
-                        "then": "Deze halte is niet verlicht"
+                        "then": "Deze halte is verlicht"
                     },
                     "1": {
-                        "then": "Deze halte is niet verlicht"
+                        "then": "Deze halte is <b>niet</b> verlicht"
                     }
                 },
                 "question": "Is deze halte verlicht?"
@@ -7702,7 +7772,7 @@
                         "then": "Deze halte heeft een schuilplaats"
                     },
                     "1": {
-                        "then": "Deze halte heeft geen schuilplaats"
+                        "then": "Deze halte heeft <b>geen</b> schuilplaats"
                     },
                     "2": {
                         "then": "Deze halte heeft een schuilplaats, die apart op de kaart staat"
@@ -7721,6 +7791,20 @@
                 },
                 "question": "Wat is de naam van deze halte?",
                 "render": "Deze halte heet <b>{name}</b>"
+            },
+            "tactile_paving": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze halte heeft een geleidelijn"
+                    },
+                    "1": {
+                        "then": "Deze halte heeft <b>geen</b> geleidelijn"
+                    }
+                },
+                "question": "Heeft deze halte een geleidelijn?"
+            },
+            "contained_routes": {
+                "render": "<h3>{_contained_routes_count} lijnen stoppen bij deze halte</h3> <ul>{_contained_routes}</ul>"
             }
         },
         "title": {

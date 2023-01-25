@@ -7991,7 +7991,7 @@
                         "then": "Die Haltestelle hat eine Bank"
                     },
                     "1": {
-                        "then": "Die Haltestelle hat keine Bank"
+                        "then": "Die Haltestelle hat <b>keine</b> Sitzbank"
                     },
                     "2": {
                         "then": "Die Haltestelle hat eine Bank, die separat kartiert ist"
@@ -8005,7 +8005,7 @@
                         "then": "Die Haltestelle hat einen Mülleimer"
                     },
                     "1": {
-                        "then": "Die Haltestelle hat keinen Mülleimer"
+                        "then": "Die Haltestelle hat <b>keinen</b> Mülleimer"
                     },
                     "2": {
                         "then": "Die Haltestelle hat einen Mülleimer, der separat kartiert ist"
@@ -8034,7 +8034,7 @@
                         "then": "Die Haltestelle hat einen Fahrplan, der den Abstand zwischen Abfahrten anzeigt"
                     },
                     "5": {
-                        "then": "Die Haltestelle hat keinen Fahrplan"
+                        "then": "Die Haltestelle hat <b>keinen</b> Fahrplan"
                     }
                 }
             },
@@ -8044,7 +8044,7 @@
                         "then": "Die Haltestelle ist beleuchtet"
                     },
                     "1": {
-                        "then": "Die Haltestelle ist nicht beleuchtet"
+                        "then": "Die Haltestelle hat <b>keine</b> Beleuchtung"
                     }
                 },
                 "question": "Ist die Haltestelle beleuchtet?"
@@ -8055,7 +8055,7 @@
                         "then": "Die Haltestelle hat einen Unterstand"
                     },
                     "1": {
-                        "then": "Die Haltestelle hat keinen Unterstand"
+                        "then": "Die Haltestelle hat <b>keinen</b> Unterstand"
                     },
                     "2": {
                         "then": "Die Haltestelle hat einen Unterstand, der separat kariert ist"
@@ -8081,7 +8081,7 @@
                         "then": "Die Haltestelle hat ein taktiles Pflaster"
                     },
                     "1": {
-                        "then": "Die Haltestelle hat kein taktiles Pflaster"
+                        "then": "Die Haltestelle hat <b>kein</b> taktiles Pflaster"
                     }
                 },
                 "question": "Hat die Haltestelle hat ein taktiles Pflaster?"
