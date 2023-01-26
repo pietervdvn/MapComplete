@@ -783,4 +783,14 @@ export class GeoOperations {
     ): boolean {
         return booleanWithin(feature, possiblyEncloingFeature)
     }
+
+    /**
+     * Create a union between two features
+     */
+    static union = turf.union
+
+    /**
+     * Create an intersection between two features
+     */
+    static intersect = turf.intersect
 }
