@@ -4,7 +4,6 @@ import Translations from "../i18n/Translations"
 import Svg from "../../Svg"
 import { Tag } from "../../Logic/Tags/Tag"
 import BaseUIElement from "../BaseUIElement"
-import LicensePicker from "../BigComponents/LicensePicker"
 import Toggle from "../Input/Toggle"
 import FileSelectorButton from "../Input/FileSelectorButton"
 import ImgurUploader from "../../Logic/ImageProviders/ImgurUploader"
@@ -16,6 +15,10 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { Changes } from "../../Logic/Osm/Changes"
 import Loading from "../Base/Loading"
+import { LoginToggle } from "../Popup/LoginButton"
+import Constants from "../../Models/Constants"
+import { DefaultGuiState } from "../DefaultGuiState"
+import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 
 export class ImageUploadFlow extends Toggle {
     private static readonly uploadCountsPerId = new Map<string, UIEventSource<number>>()
@@ -61,12 +64,6 @@ export class ImageUploadFlow extends Toggle {
             uploadedCount.ping()
         })
 
-        const licensePicker = new LicensePicker(state)
-        const explanations = LicensePicker.LicenseExplanations()
-        const chosenLicense = new VariableUiElement(
-            licensePicker.GetValue().map((license) => explanations.get(license))
-        )
-
         const t = Translations.t.image
 
         let labelContent: BaseUIElement
@@ -84,6 +81,10 @@ export class ImageUploadFlow extends Toggle {
             labelContent,
         ]).SetClass(
             "p-2 border-4 border-detail rounded-full font-bold h-full align-middle w-full flex justify-center"
+        )
+        const licenseStore = state?.osmConnection?.GetPreference(
+            Constants.OsmPreferenceKeyPicturesLicense,
+            "CC0"
         )
 
         const fileSelector = new FileSelectorButton(label)
@@ -106,8 +107,7 @@ export class ImageUploadFlow extends Toggle {
                 }
             }
 
-            console.log("Received images from the user, starting upload")
-            const license = licensePicker.GetValue()?.data ?? "CC0"
+            const license = licenseStore?.data ?? "CC0"
 
             const tags = tagsSource.data
 
@@ -175,21 +175,29 @@ export class ImageUploadFlow extends Toggle {
             ),
 
             fileSelector,
-            Translations.t.image.respectPrivacy.Clone().SetStyle("font-size:small;"),
-            licensePicker,
-            chosenLicense.SetClass("subtle text-sm"),
-        ]).SetClass("flex flex-col image-upload-flow mt-4 mb-8 text-center")
+            new Combine([
+                Translations.t.image.respectPrivacy,
+                new VariableUiElement(
+                    licenseStore.map((license) =>
+                        Translations.t.image.currentLicense.Subs({ license })
+                    )
+                )
+                    .onClick(() => {
+                        console.log("Opening the license settings... ")
+                        ScrollableFullScreen.collapse()
+                        DefaultGuiState.state.userInfoIsOpened.setData(true)
+                        DefaultGuiState.state.userInfoFocusedQuestion.setData("picture-license")
+                    })
+                    .SetClass("underline"),
+            ]).SetStyle("font-size:small;"),
+        ]).SetClass("flex flex-col image-upload-flow mt-4 mb-8 text-center leading-none")
 
-        const pleaseLoginButton = t.pleaseLogin
-            .Clone()
-            .onClick(() => state.osmConnection.AttemptLogin())
-            .SetClass("login-button-friendly")
         super(
-            new Toggle(
+            new LoginToggle(
                 /*We can show the actual upload button!*/
                 uploadFlow,
-                /* User not logged in*/ pleaseLoginButton,
-                state?.osmConnection?.isLoggedIn
+                /* User not logged in*/ t.pleaseLogin.Clone(),
+                state
             ),
             undefined /* Nothing as the user badge is disabled*/,
             state?.featureSwitchUserbadge

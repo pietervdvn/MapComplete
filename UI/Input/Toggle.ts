@@ -31,7 +31,7 @@ export default class Toggle extends VariableUiElement {
  * Same as `Toggle`, but will swap on click
  */
 export class ClickableToggle extends Toggle {
-    public readonly isEnabled: UIEventSource<boolean>
+    public declare readonly isEnabled: UIEventSource<boolean>
 
     constructor(
         showEnabled: string | BaseUIElement,

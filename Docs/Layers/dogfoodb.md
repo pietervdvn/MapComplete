@@ -69,6 +69,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wheelchair#values) [wheelchair](https://wiki.openstreetmap.org/wiki/Key:wheelchair) | Multiple choice | [designated](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Ddesignated) [yes](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dyes) [limited](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dlimited) [no](https://wiki.openstreetmap.org/wiki/Tag:wheelchair%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cuisine#values) [cuisine](https://wiki.openstreetmap.org/wiki/Key:cuisine) | [string](../SpecialInputElements.md#string) | [pizza](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dpizza) [friture](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfriture) [pasta](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dpasta) [kebab](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dkebab) [sandwich](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dsandwich) [burger](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dburger) [sushi](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dsushi) [coffee](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dcoffee) [italian](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Ditalian) [french](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dfrench) [chinese](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dchinese) [greek](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dgreek) [indian](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dindian) [turkish](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dturkish) [thai](https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dthai)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/reservation#values) [reservation](https://wiki.openstreetmap.org/wiki/Key:reservation) | Multiple choice | [required](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drequired) [recommended](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Drecommended) [yes](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:reservation%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/takeaway#values) [takeaway](https://wiki.openstreetmap.org/wiki/Key:takeaway) | Multiple choice | [only](https://wiki.openstreetmap.org/wiki/Tag:takeaway%3Donly) [yes](https://wiki.openstreetmap.org/wiki/Tag:takeaway%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:takeaway%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/delivery#values) [delivery](https://wiki.openstreetmap.org/wiki/Key:delivery) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:delivery%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/diet:vegetarian#values) [diet:vegetarian](https://wiki.openstreetmap.org/wiki/Key:diet:vegetarian) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dno) [limited](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dlimited) [yes](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Dyes) [only](https://wiki.openstreetmap.org/wiki/Tag:diet:vegetarian%3Donly)
@@ -130,11 +131,11 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
-The question is  *What is the name of this restaurant?*
+The question is  *What is the name of this business?*
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with  `The name of this restaurant is {name}`
+This is rendered with  `The name of this business is {name}`
 
 
 
@@ -178,13 +179,13 @@ The question is  *What is the website of {title()}?*
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with  `<a href='{website}' target='_blank'>{website}</a>`
+This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
 
 
 
 
 
-  - *<a href='{contact:website}' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
+  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 
@@ -296,6 +297,26 @@ This is rendered with  `This place mostly serves {cuisine}`
   - *Turkish dishes are served here*  corresponds with  `cuisine=turkish`
   - *Thai dishes are served here*  corresponds with  `cuisine=thai`
 
+
+
+
+### Reservation 
+
+
+
+The question is  *Is a reservation required for this place?*
+
+
+
+
+
+  - *A reservation is required at this place*  corresponds with  `reservation=required`
+  - *A reservation is not required, but still recommended to make sure you get a table*  corresponds with  `reservation=recommended`
+  - *Reservation is possible at this place*  corresponds with  `reservation=yes`
+  - *Reservation is not possible at this place*  corresponds with  `reservation=no`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `amenity=restaurant`
 
 
 
@@ -638,6 +659,13 @@ This tagrendering has no question and is thus read-only
 id | question | osmTags
 ---- | ---------- | ---------
 open_now.0 | Opened now | _isOpen=yes
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+reservation.0 | Reservation not required | reservation=no\|reservation=optional|
 
 
 

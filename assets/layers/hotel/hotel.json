@@ -38,7 +38,8 @@
       "title": {
         "en": "a hotel",
         "nl": "een hotel",
-        "de": "ein Hotel"
+        "de": "ein Hotel",
+        "ca": "un hotel"
       },
       "tags": [
         "tourism=hotel"

@@ -37,12 +37,13 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
             featurePipeline: FeaturePipeline
             backgroundLayer: UIEventSource<BaseLayer>
             filteredLayers: UIEventSource<FilteredLayer[]>
-        } & UserRelatedState
+        } & UserRelatedState,
+        guistate?: { userInfoIsOpened: UIEventSource<boolean> }
     ) {
         const layoutToUse = state.layoutToUse
         super(
             () => layoutToUse.title.Clone(),
-            () => FullWelcomePaneWithTabs.GenerateContents(state, currentTab, isShown),
+            () => FullWelcomePaneWithTabs.GenerateContents(state, currentTab, isShown, guistate),
             "welcome",
             isShown
         )
@@ -60,12 +61,13 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
             filteredLayers: UIEventSource<FilteredLayer[]>
         } & UserRelatedState,
         isShown: UIEventSource<boolean>,
-        currentTab: UIEventSource<number>
+        currentTab: UIEventSource<number>,
+        guistate?: { userInfoIsOpened: UIEventSource<boolean> }
     ): { header: string | BaseUIElement; content: BaseUIElement }[] {
         const tabs: { header: string | BaseUIElement; content: BaseUIElement }[] = [
             {
                 header: `<img src='${state.layoutToUse.icon}'>`,
-                content: new ThemeIntroductionPanel(isShown, currentTab, state),
+                content: new ThemeIntroductionPanel(isShown, currentTab, state, guistate),
             },
         ]
 
@@ -113,11 +115,12 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
             filteredLayers: UIEventSource<FilteredLayer[]>
         } & UserRelatedState,
         currentTab: UIEventSource<number>,
-        isShown: UIEventSource<boolean>
+        isShown: UIEventSource<boolean>,
+        guistate?: { userInfoIsOpened: UIEventSource<boolean> }
     ) {
-        const tabs = FullWelcomePaneWithTabs.ConstructBaseTabs(state, isShown, currentTab)
+        const tabs = FullWelcomePaneWithTabs.ConstructBaseTabs(state, isShown, currentTab, guistate)
         const tabsWithAboutMc = [
-            ...FullWelcomePaneWithTabs.ConstructBaseTabs(state, isShown, currentTab),
+            ...FullWelcomePaneWithTabs.ConstructBaseTabs(state, isShown, currentTab, guistate),
         ]
 
         tabsWithAboutMc.push({

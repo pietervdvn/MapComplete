@@ -231,6 +231,17 @@
               }
             }
           ]
+        },
+        {
+          "id": "added-image",
+          "options": [
+            {
+              "osmTags": "add-image>0",
+              "question":{
+                "en": "Changeset added at least one image"
+              }
+            }
+          ]
         }
       ]
     },

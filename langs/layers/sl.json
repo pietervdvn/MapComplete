@@ -122,5 +122,12 @@
         "title": {
             "render": "Defibrilator"
         }
+    },
+    "windturbine": {
+        "tagRenderings": {
+            "windturbine-fixme": {
+                "render": "Dodatne informacije za OpenStreetMap strokovnjake: {fixme}"
+            }
+        }
     }
 }

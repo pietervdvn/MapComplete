@@ -11,8 +11,15 @@ export default class ScriptUtils {
         Utils.externalDownloadFunction = ScriptUtils.Download
     }
 
+    /**
+     * Returns all files in a directory, recursively reads subdirectories.
+     * The returned paths include the path given and subdirectories.
+     *
+     * @param path
+     * @param maxDepth
+     */
     public static readDirRecSync(path, maxDepth = 999): string[] {
-        const result = []
+        const result: string[] = []
         if (maxDepth <= 0) {
             return []
         }
@@ -46,13 +53,13 @@ export default class ScriptUtils {
         process.stdout.write("\r " + text.join(" ") + "                \r")
     }
 
-    public static sleep(ms) {
+    public static sleep(ms: number, text?: string) {
         if (ms <= 0) {
             process.stdout.write("\r                                       \r")
             return
         }
         return new Promise((resolve) => {
-            process.stdout.write("\r Sleeping for " + ms / 1000 + "s \r")
+            process.stdout.write("\r" + (text ?? "") + " Sleeping for " + ms / 1000 + "s \r")
             setTimeout(resolve, 1000)
         }).then(() => ScriptUtils.sleep(ms - 1000))
     }
@@ -71,7 +78,7 @@ export default class ScriptUtils {
             .filter((path) => path.indexOf("license_info.json") < 0)
             .map((path) => {
                 try {
-                    const contents = readFileSync(path, "UTF8")
+                    const contents = readFileSync(path, { encoding: "utf8" })
                     if (contents === "") {
                         throw "The file " + path + " is empty, did you properly save?"
                     }
@@ -94,7 +101,7 @@ export default class ScriptUtils {
     public static getThemeFiles(): { parsed: LayoutConfigJson; path: string }[] {
         return this.getThemePaths().map((path) => {
             try {
-                const contents = readFileSync(path, "UTF8")
+                const contents = readFileSync(path, { encoding: "utf8" })
                 if (contents === "") {
                     throw "The file " + path + " is empty, did you properly save?"
                 }
@@ -118,17 +125,21 @@ export default class ScriptUtils {
         if (!existsSync(path)) {
             throw "File not found: " + path
         }
-        const root = await xml2js.parseStringPromise(readFileSync(path, "UTF8"))
+        const root = await xml2js.parseStringPromise(readFileSync(path, { encoding: "utf8" }))
         return root.svg
     }
 
     public static ReadSvgSync(path: string, callback: (svg: any) => void): any {
-        xml2js.parseString(readFileSync(path, "UTF8"), { async: false }, (err, root) => {
-            if (err) {
-                throw err
+        xml2js.parseString(
+            readFileSync(path, { encoding: "utf8" }),
+            { async: false },
+            (err, root) => {
+                if (err) {
+                    throw err
+                }
+                callback(root["svg"])
             }
-            callback(root["svg"])
-        })
+        )
     }
 
     private static async DownloadJSON(url: string, headers?: any): Promise<any> {
@@ -136,7 +147,7 @@ export default class ScriptUtils {
         return JSON.parse(data.content)
     }
 
-    private static Download(url, headers?: any): Promise<{ content: string }> {
+    private static Download(url: string, headers?: any): Promise<{ content: string }> {
         return new Promise((resolve, reject) => {
             try {
                 headers = headers ?? {}

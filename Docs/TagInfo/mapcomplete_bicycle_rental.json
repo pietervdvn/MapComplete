@@ -90,7 +90,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Bicycle rental' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Bicycle rental')"
+      "description": "Layer 'Bicycle rental' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Bicycle rental')"
     },
     {
       "key": "email",

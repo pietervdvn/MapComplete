@@ -222,7 +222,8 @@
         "then": {
           "en": "This bus stop does not have a bench (there never was one or it has been removed)",
           "de": "Diese Bushaltestelle hat keine Bank (es gab nie eine oder sie wurde entfernt)",
-          "fr": "Cette station de bus n'a pas de banc (il n'y en a jamais eu ou il a été retiré)"
+          "fr": "Cette station de bus n'a pas de banc (il n'y en a jamais eu ou il a été retiré)",
+          "nl": "Deze bushalte heeft geen zitbank (er is er nooit een geweest of deze is verwijderd)"
         }
       }
     ],
@@ -232,7 +233,8 @@
         "explanation": {
           "en": "This bus stop is not used anymore",
           "de": "Diese Bushaltestelle wird nicht mehr genutzt",
-          "fr": "Cette station de bus n'est plus utilisée"
+          "fr": "Cette station de bus n'est plus utilisée",
+          "nl": "Deze bushalte wordt niet meer gebruikt"
         }
       }
     ],

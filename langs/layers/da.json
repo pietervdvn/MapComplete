@@ -631,9 +631,6 @@
                 "mappings": {
                     "0": {
                         "then": "Gratis at bruge rengøringsservice"
-                    },
-                    "1": {
-                        "then": "Gratis at bruge"
                     }
                 },
                 "question": "Hvor meget koster det at bruge rengøringsservicen?",
@@ -2055,7 +2052,7 @@
     },
     "food": {
         "filter": {
-            "3": {
+            "4": {
                 "options": {
                     "0": {
                         "question": "Har en halalmenu"

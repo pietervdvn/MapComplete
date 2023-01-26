@@ -256,12 +256,6 @@
     },
     "image": {
         "addPicture": "Kép hozzáadása",
-        "ccb": "CC-BY licenc szerint",
-        "ccbExplanation": "A CC-BY licenc azt jelenti, hogy bárki bármilyen célra felhasználhatja a képet, de meg kell adnia a nevedet",
-        "ccbs": "CC-BY-SA licenc szerint",
-        "ccbsExplanation": "A CC-BY-SA licenc azt jelenti, hogy bárki bármilyen célra felhasználhatja a képet, de meg kell jelölnie Téged, a kép módosított változatait pedig ugyanezen licenc alatt kell újra közzétenni",
-        "cco": "közkincsként",
-        "ccoExplanation": "A kép közkinccsé tétele azt jelenti, hogy bárki bármit megtehet a képpel",
         "doDelete": "Kép eltávolítása",
         "dontDelete": "Mégse",
         "isDeleted": "Törölve",
@@ -273,8 +267,7 @@
         "uploadFailed": "Nem sikerült feltölteni a képet. Van-e internetkapcsolatod, és engedélyezted-e a harmadik féltől származó API-kat? A Brave böngésző vagy a uMatrix bővítmény blokkolhatja őket.",
         "uploadMultipleDone": "{count} kép hozzáadva. Köszönjük a segítséget!",
         "uploadingMultiple": "{count} kép feltöltése folyamatban…",
-        "uploadingPicture": "Kép feltöltése folyamatban…",
-        "willBePublished": "A képed így lesz közzétéve: "
+        "uploadingPicture": "Kép feltöltése folyamatban…"
     },
     "importHelper": {
         "askMetadata": {},

@@ -259,8 +259,6 @@
         "welcomeBack": "你已經登入了，歡迎回來！",
         "welcomeExplanation": {
             "addNew": "點一下地圖來新增新興趣點。",
-            "browseMoreMaps": "探索更多地圖",
-            "browseOtherThemesIntro": "MapComplete 上有相當多樣的主題地圖",
             "general": "在這份地圖，你可以檢視、編輯與新增<i>興趣點</i>。在附近放大來檢視興趣點，點一個來檢視或是編輯資訊。所有資料來源以及儲存到開放街圖，能夠自由被再利用。"
         },
         "wikipedia": {
@@ -282,12 +280,6 @@
     },
     "image": {
         "addPicture": "新增圖片",
-        "ccb": "以 CC-BY 授權條款",
-        "ccbExplanation": "創用CC性名標示意味著任何人可以居於任何目標使用你的圖片，但必須署名作者為你",
-        "ccbs": "以 CC-BY-SA 授權條款",
-        "ccbsExplanation": "創用CC姓名標示相同方式分享授權意味著任何人能居於任何目的都能使用你的圖片，但必須標示你為作者，如果會混搭運用圖片的話，圖片的再釋出也必須遵循相同的授權條款",
-        "cco": "公有領域",
-        "ccoExplanation": "將圖片以公眾領域釋出，意味著任何人能夠運用你的圖片做任何事情",
         "doDelete": "移除圖片",
         "dontDelete": "取消",
         "isDeleted": "已移除",
@@ -312,8 +304,7 @@
         "uploadFailed": "無法上傳您的圖片。您是否已連線至網際網路，並允許第三方 API？Brave 瀏覽器或 uMatrix 外掛程式都可能會封鎖它們。",
         "uploadMultipleDone": "已經新增 {count} 圖片，謝謝你的幫忙！",
         "uploadingMultiple": "正在上傳 {count} 張圖片…",
-        "uploadingPicture": "正在上傳你的圖片…",
-        "willBePublished": "你的圖片將依以下授權釋出： "
+        "uploadingPicture": "正在上傳你的圖片…"
     },
     "importHelper": {
         "askMetadata": {

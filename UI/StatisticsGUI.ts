@@ -184,7 +184,7 @@ class StatisticsForOverviewFile extends Combine {
 
 export default class StatisticsGUI extends VariableUiElement {
     private static readonly homeUrl =
-        "https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/Docs/Tools/stats/"
+        "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/changeset-metadata/"
     private static readonly stats_files = "file-overview.json"
 
     constructor() {

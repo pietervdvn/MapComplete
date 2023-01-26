@@ -436,26 +436,26 @@
                 "render": "È un parcheggio bici del tipo: {bicycle_parking}"
             },
             "Capacity": {
-                "question": "Quante biciclette entrano in questo parcheggio per bici (incluse le eventuali bici da trasporto)?",
+                "question": "Quante biciclette entrano in questo parcheggio per bici (incluse le eventuali bici cargo)?",
                 "render": "Posti per {capacity} bici"
             },
             "Cargo bike capacity?": {
-                "question": "Quante bici da trasporto entrano in questo parcheggio per bici?",
-                "render": "Questo parcheggio può contenere {capacity:cargo_bike} bici da trasporto"
+                "question": "Quante bici cargo entrano in questo parcheggio per bici?",
+                "render": "Questo parcheggio può contenere {capacity:cargo_bike} bici cargo"
             },
             "Cargo bike spaces?": {
                 "mappings": {
                     "0": {
-                        "then": "Questo parcheggio ha posto per bici da trasporto"
+                        "then": "Questo parcheggio ha posto per bici cargo"
                     },
                     "1": {
-                        "then": "Questo parcheggio ha posti destinati (ufficialmente) alle bici da trasporto."
+                        "then": "Questo parcheggio ha posti destinati (ufficialmente) alle bici cargo."
                     },
                     "2": {
-                        "then": "Il parcheggio delle bici da trasporto è proibito"
+                        "then": "Il parcheggio delle bici cargo è proibito"
                     }
                 },
-                "question": "Questo parcheggio dispone di posti specifici per le bici da trasporto?"
+                "question": "Questo parcheggio dispone di posti specifici per le bici cargo?"
             },
             "Is covered?": {
                 "mappings": {
@@ -2663,6 +2663,9 @@
             "turbine-start-date": {
                 "question": "Quando è entrata in funzione questa pala eolica?",
                 "render": "Questa pala eolica è entrata in funzione in data {start_date}."
+            },
+            "windturbine-fixme": {
+                "render": "Informazioni supplementari per gli esperti di OpenStreetMap: {fixme}"
             }
         },
         "title": {

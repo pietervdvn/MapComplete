@@ -54,9 +54,9 @@ function main(args: string[]): void {
         )
         return
     }
-    const reference = JSON.parse(readFileSync("./langs/en.json", "UTF8"))
+    const reference = JSON.parse(readFileSync("./langs/en.json", { encoding: "utf8" }))
     const path = `./langs/${l}.json`
-    const file = JSON.parse(readFileSync(path, "UTF8"))
+    const file = JSON.parse(readFileSync(path, { encoding: "utf8" }))
     fixSection(file[sectionName], reference[sectionName], l)
     writeFileSync(path, JSON.stringify(file, null, "    ") + "\n")
 }

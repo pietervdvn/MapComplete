@@ -131,11 +131,11 @@ notInstanceof | A list of Q-identifiers which indicates that the search results 
             ],
              "nl": ["straat","plein","pad","weg",laan"]
              },
-            
+
             "#": "Remove streets and parks from the search results:"
-             "notInstanceOf": ["Q79007","Q22698"] 
+             "notInstanceOf": ["Q79007","Q22698"]
         }
-        
+
     ]
 }
 ```

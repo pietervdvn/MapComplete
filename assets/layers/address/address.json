@@ -16,7 +16,8 @@
     "pt": "Endereços conhecidos no OSM",
     "eo": "Konataj adresoj en OSM",
     "cs": "Známé adresy v OSM",
-    "pa_PK": "او‌ایس‌ایم وچ جاݨ پچھاݨے پتے"
+    "pa_PK": "او‌ایس‌ایم وچ جاݨ پچھاݨے پتے",
+    "ca": "Adreces conegudes a OSM"
   },
   "minzoom": 18,
   "source": {
@@ -47,7 +48,8 @@
       "id": "Alamat yang diketahui",
       "nb_NO": "Kjent adresse",
       "da": "Kendt adresse",
-      "cs": "Známá adresa"
+      "cs": "Známá adresa",
+      "ca": "Adreça coneguda"
     }
   },
   "description": {
@@ -87,7 +89,8 @@
         "da": "Husnummeret er <b>{addr:housenumber}</b>",
         "cs": "Číslo domu je <b>{addr:housenumber}</b>",
         "pt": "The house number is <b>{addr:housenumber}</b>",
-        "nb_NO": "Husnummeret er <b>{addr:housenumber}</b>"
+        "nb_NO": "Husnummeret er <b>{addr:housenumber}</b>",
+        "ca": "El número de porta és <b>{addr:housenumber}</b>"
       },
       "question": {
         "en": "What is the number of this house?",
@@ -103,7 +106,8 @@
         "da": "Hvad er nummeret på dette hus?",
         "cs": "Jaké je číslo tohoto domu?",
         "pt": "Qual é o número desta casa?",
-        "nb_NO": "Hvilket husnummer har dette huset?"
+        "nb_NO": "Hvilket husnummer har dette huset?",
+        "ca": "Quin és el número d'aquesta casa?"
       },
       "freeform": {
         "key": "addr:housenumber",
@@ -133,7 +137,8 @@
             "zh_Hant": "這棟建築沒有門牌",
             "cs": "Tato budova nemá číslo domu",
             "pt": "Este prédio não tem número",
-            "nb_NO": "Denne bygningen har ikke noe husnummer"
+            "nb_NO": "Denne bygningen har ikke noe husnummer",
+            "ca": "Aquest edifici no té número"
           }
         }
       ]
@@ -151,7 +156,8 @@
         "id": "Alamat ini ada di jalan <b>{addr:street}</b>",
         "es": "La dirección está en esta calle <b>{addr:street}</b>",
         "da": "Denne adresse er på gaden <b>{addr:street}</b>",
-        "cs": "Tato adresa se nachází v ulici <b>{addr:street}</b>"
+        "cs": "Tato adresa se nachází v ulici <b>{addr:street}</b>",
+        "ca": "L'adreça està a aquest carrer <b>{addr:street}</b>"
       },
       "question": {
         "en": "What street is this address located in?",
@@ -165,7 +171,8 @@
         "zh_Hans": "这个地址位于哪条街道？",
         "id": "Alamat ini di jalan apa?",
         "da": "Hvilken gade ligger denne adresse på?",
-        "cs": "V jaké ulici se nachází tato adresa?"
+        "cs": "V jaké ulici se nachází tato adresa?",
+        "ca": "A quin carrer es troba l'adreça?"
       },
       "freeform": {
         "key": "addr:street"
@@ -210,7 +217,8 @@
         "da": "Hvad skal rettes her? Forklar venligst",
         "cs": "Co by se zde mělo opravit? Vysvětlete to, prosím",
         "pt": "O que deve ser corrigido aqui? Explique",
-        "nb_NO": "Hva bør fikses her? Forklar."
+        "nb_NO": "Hva bør fikses her? Forklar.",
+        "ca": "Què s’hauria de corregir aquí? Exposa-ho"
       },
       "freeform": {
         "key": "fixme"

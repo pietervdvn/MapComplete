@@ -6,7 +6,7 @@
     "fr": "OnWheels",
     "nl": "OnWheels",
     "nb_NO": "På hjul",
-    "ca": "OnWheels",
+    "ca": "Sobre rodes",
     "pa_PK": "آن‌ویل"
   },
   "description": {
@@ -223,7 +223,10 @@
           }
         ],
         "name": {
-          "en": "Disabled parking spaces"
+          "en": "Disabled parking spaces",
+          "de": "Barrierefreie Parkplätze",
+          "nl": "Parkeerplaatsen voor personen met een beperking",
+          "fr": "Places de stationnement pour personnes handicapées"
         }
       },
       "hideTagRenderingsWithLabels": [

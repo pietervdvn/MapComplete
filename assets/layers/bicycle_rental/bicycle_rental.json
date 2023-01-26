@@ -7,7 +7,8 @@
     "de": "Fahrradverleih",
     "da": "Cykeludlejning",
     "es": "Alquiler de bicicletas",
-    "cs": "Půjčovna kol"
+    "cs": "Půjčovna kol",
+    "ca": "Lloguer de bicicletes"
   },
   "source": {
     "osmTags": {
@@ -61,7 +62,8 @@
     "de": "Fahrradverleihstationen",
     "es": "Estaciones de alquiler de bicicletas",
     "da": "Stationer til udlejning af cykler",
-    "cs": "Půjčovny jízdních kol"
+    "cs": "Půjčovny jízdních kol",
+    "ca": "Estacions de lloguer de bicicletes"
   },
   "tagRenderings": [
     "images",
@@ -275,7 +277,8 @@
             "es": "Aquí se pueden alquilar bicis infantiles",
             "da": "Børnecykler kan lejes her",
             "fr": "Des vélos d'enfants peuvent être loués ici",
-            "cs": "Zde si můžete půjčit dětská kola"
+            "cs": "Zde si můžete půjčit dětská kola",
+            "ca": "Aquí es poden llogar bicicletes infantils"
           }
         },
         {
@@ -464,7 +467,8 @@
         "de": "ein Geschäft mit Fahrradverleih",
         "es": "una tienda de alquiler de bicicletas",
         "da": "en cykeludlejningsforretning",
-        "cs": "půjčovna jízdních kol"
+        "cs": "půjčovna jízdních kol",
+        "ca": "una botiga de lloguer de bicicletes"
       },
       "tags": [
         "amenity=bicycle_rental",
@@ -477,7 +481,8 @@
         "de": "Ein Geschäft, das sich auf den Fahrradverleih konzentriert",
         "da": "En bemandet butik, der fokuserer på cykeludlejning",
         "es": "Una tienda atendida que se centra en el alquiler de bicicletas",
-        "cs": "Obsluhovaný obchod zaměřený na půjčování jízdních kol"
+        "cs": "Obsluhovaný obchod zaměřený na půjčování jízdních kol",
+        "ca": "Una botiga atesa que es centra en el lloguer de bicicletes"
       }
     },
     {
@@ -488,7 +493,8 @@
         "da": "cykeludlejning",
         "es": "un alquiler de bicicletas",
         "fr": "une location de vélos",
-        "cs": "půjčovna kol"
+        "cs": "půjčovna kol",
+        "ca": "un lloguer de bicicletes"
       },
       "tags": [
         "amenity=bicycle_rental"

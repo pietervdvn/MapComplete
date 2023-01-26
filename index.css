@@ -113,6 +113,10 @@ body {
   box-sizing: initial !important;
 }
 
+.leaflet-marker-icon img {
+  -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+}
+
 .leaflet-control-attribution {
   display: block ruby;
 }
@@ -633,20 +637,18 @@ input {
   /* The checkbox that toggles a single layer */
 }
 
-.layer-filters {
-  /* If needed, the panel which contains the extra filters for a layer */
-  margin-bottom: 1rem;
-  border-bottom: 2px solid var(--foreground-color);
+.glowing-shadow {
+  -webkit-animation: glowing 1s ease-in-out infinite alternate;
+  -moz-animation: glowing 1s ease-in-out infinite alternate;
+  animation: glowing 1s ease-in-out infinite alternate;
 }
-
-.filter-panel {
-  /* The panel for a single layer, containing both the toggle and the filters (if any) */
-  border-bottom: 2px solid lightgrey;
-  margin-bottom: 0.5rem;
-}
-
-.first-filter-panel {
-  /* Additional class on the first layer filter */
+@-webkit-keyframes glowing {
+  from {
+    box-shadow: 0 0 20px 10px #eaaf2588, inset 0 0 0px 1px #eaaf25;
+  }
+  to {
+    box-shadow: 0 0 20px 20px #eaaf2588, inset 0 0 5px 1px #eaaf25;
+  }
 }
 
 .mapping-icon-small-height {

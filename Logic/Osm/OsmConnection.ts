@@ -14,7 +14,7 @@ export default class UserDetails {
     public name = "Not logged in"
     public uid: number
     public csCount = 0
-    public img: string
+    public img?: string
     public unreadMessages = 0
     public totalMessages: number = 0
     public home: { lon: number; lat: number }
@@ -27,6 +27,8 @@ export default class UserDetails {
         this.backend = backend
     }
 }
+
+export type OsmServiceState = "online" | "readonly" | "offline" | "unknown" | "unreachable"
 
 export class OsmConnection {
     public static readonly oauth_configs = {
@@ -46,6 +48,13 @@ export class OsmConnection {
     public auth
     public userDetails: UIEventSource<UserDetails>
     public isLoggedIn: Store<boolean>
+    public gpxServiceIsOnline: UIEventSource<OsmServiceState> = new UIEventSource<OsmServiceState>(
+        "unknown"
+    )
+    public apiIsOnline: UIEventSource<OsmServiceState> = new UIEventSource<OsmServiceState>(
+        "unknown"
+    )
+
     public loadingStatus = new UIEventSource<"not-attempted" | "loading" | "error" | "logged-in">(
         "not-attempted"
     )
@@ -62,7 +71,7 @@ export class OsmConnection {
     private readonly _singlePage: boolean
     private isChecking = false
 
-    constructor(options: {
+    constructor(options?: {
         dryRun?: UIEventSource<boolean>
         fakeUser?: false | boolean
         oauth_token?: UIEventSource<string>
@@ -71,6 +80,7 @@ export class OsmConnection {
         osmConfiguration?: "osm" | "osm-test"
         attemptLogin?: true | boolean
     }) {
+        options = options ?? {}
         this.fakeUser = options.fakeUser ?? false
         this._singlePage = options.singlePage ?? true
         this._oauth_config =
@@ -93,7 +103,13 @@ export class OsmConnection {
             ud.totalMessages = 42
         }
         const self = this
-        this.isLoggedIn = this.userDetails.map((user) => user.loggedIn)
+        this.UpdateCapabilities()
+        this.isLoggedIn = this.userDetails.map(
+            (user) =>
+                user.loggedIn &&
+                (self.apiIsOnline.data === "unknown" || self.apiIsOnline.data === "online"),
+            [this.apiIsOnline]
+        )
         this.isLoggedIn.addCallback((isLoggedIn) => {
             if (self.userDetails.data.loggedIn == false && isLoggedIn == true) {
                 // We have an inconsistency: the userdetails say we _didn't_ log in, but this actor says we do
@@ -106,7 +122,10 @@ export class OsmConnection {
 
         this.updateAuthObject()
 
-        this.preferencesHandler = new OsmPreferences(this.auth, this)
+        this.preferencesHandler = new OsmPreferences(
+            this.auth,
+            <any /*This is needed to make the tests work*/>this
+        )
 
         if (options.oauth_token?.data !== undefined) {
             console.log(options.oauth_token.data)
@@ -130,7 +149,13 @@ export class OsmConnection {
     }
 
     public CreateChangesetHandler(allElements: ElementStorage, changes: Changes) {
-        return new ChangesetHandler(this._dryRun, this, allElements, changes, this.auth)
+        return new ChangesetHandler(
+            this._dryRun,
+            <any>/*casting is needed to make the tests work*/ this,
+            allElements,
+            changes,
+            this.auth
+        )
     }
 
     public GetPreference(
@@ -159,11 +184,17 @@ export class OsmConnection {
         this.loadingStatus.setData("not-attempted")
     }
 
+    /**
+     * The backend host, without path or trailing '/'
+     *
+     * new OsmConnection().Backend() // => "https://www.openstreetmap.org"
+     */
     public Backend(): string {
         return this._oauth_config.url
     }
 
     public AttemptLogin() {
+        this.UpdateCapabilities()
         this.loadingStatus.setData("loading")
         if (this.fakeUser) {
             this.loadingStatus.setData("logged-in")
@@ -226,7 +257,6 @@ export class OsmConnection {
                 if (imgEl !== undefined && imgEl[0] !== undefined) {
                     data.img = imgEl[0].getAttribute("href")
                 }
-                data.img = data.img ?? Img.AsData(Svg.person_img)
 
                 const description = userInfo.getElementsByTagName("description")
                 if (description !== undefined && description[0] !== undefined) {
@@ -502,5 +532,30 @@ export class OsmConnection {
                 self.AttemptLogin()
             }
         })
+    }
+
+    private UpdateCapabilities(): void {
+        const self = this
+        this.FetchCapabilities().then(({ api, gpx }) => {
+            self.apiIsOnline.setData(api)
+            self.gpxServiceIsOnline.setData(gpx)
+        })
+    }
+
+    private async FetchCapabilities(): Promise<{ api: OsmServiceState; gpx: OsmServiceState }> {
+        if (Utils.runningFromConsole) {
+            return { api: "online", gpx: "online" }
+        }
+        const result = await Utils.downloadAdvanced(this.Backend() + "/api/0.6/capabilities")
+        if (result["content"] === undefined) {
+            console.log("Something went wrong:", result)
+            return { api: "unreachable", gpx: "unreachable" }
+        }
+        const xmlRaw = result["content"]
+        const parsed = new DOMParser().parseFromString(xmlRaw, "text/xml")
+        const statusEl = parsed.getElementsByTagName("status")[0]
+        const api = <OsmServiceState>statusEl.getAttribute("api")
+        const gpx = <OsmServiceState>statusEl.getAttribute("gpx")
+        return { api, gpx }
     }
 }

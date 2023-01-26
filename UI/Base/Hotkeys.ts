@@ -7,6 +7,7 @@ import { UIEventSource } from "../../Logic/UIEventSource"
 import { VariableUiElement } from "./VariableUIElement"
 import { Translation } from "../i18n/Translation"
 import { FixedUiElement } from "./FixedUiElement"
+import Translations from "../i18n/Translations"
 
 export default class Hotkeys {
     private static readonly _docs: UIEventSource<
@@ -106,11 +107,12 @@ export default class Hotkeys {
                 return <[string, string | Translation]>[modifiers.join("+"), documentation]
             })
             .sort()
+        const t = Translations.t.hotkeyDocumentation
         return new Combine([
-            new Title("Hotkeys", 1),
-            "MapComplete supports the following keys:",
+            new Title(t.title, 1),
+            t.intro,
             new Table(
-                ["Key combination", "Action"],
+                [t.key, t.action],
                 byKey.map(([key, doc]) => {
                     return [new FixedUiElement(key).SetClass("code"), doc]
                 })

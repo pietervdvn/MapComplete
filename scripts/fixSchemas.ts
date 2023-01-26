@@ -99,7 +99,7 @@ function WalkScheme<T>(
 
 function extractMeta(typename: string, path: string) {
     const themeSchema = JSON.parse(
-        readFileSync("./Docs/Schemas/" + typename + ".schema.json", "UTF-8")
+        readFileSync("./Docs/Schemas/" + typename + ".schema.json", { encoding: "utf8" })
     )
     const withTypes = WalkScheme((schemePart) => {
         if (schemePart.description === undefined) {
@@ -126,7 +126,7 @@ function main() {
     for (const path of allSchemas) {
         const dir = path.substring(0, path.lastIndexOf("/"))
         const name = path.substring(path.lastIndexOf("/"), path.length - "JSC.ts".length)
-        let content = readFileSync(path, "UTF-8")
+        let content = readFileSync(path, { encoding: "utf8" })
         content = content.substring("export default ".length)
         let parsed = JSON.parse(content)
         parsed["additionalProperties"] = false
@@ -137,7 +137,7 @@ function main() {
                 def["additionalProperties"] = false
             }
         }
-        writeFileSync(dir + "/" + name + ".schema.json", JSON.stringify(parsed, null, "  "), "UTF8")
+        writeFileSync(dir + "/" + name + ".schema.json", JSON.stringify(parsed, null, "  "), { encoding: "utf8" })
     }
 
     extractMeta("LayoutConfigJson", "layoutconfigmeta")

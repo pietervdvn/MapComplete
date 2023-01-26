@@ -89,7 +89,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Restaurants and fast food' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Restaurants and fast food')"
+      "description": "Layer 'Restaurants and fast food' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Restaurants and fast food')"
     },
     {
       "key": "email",
@@ -215,6 +215,26 @@
       "key": "cuisine",
       "description": "Layer 'Restaurants and fast food' shows cuisine=thai with a fixed text, namely 'Thai dishes are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food')",
       "value": "thai"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=required with a fixed text, namely 'A reservation is required at this place' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food') (This is only shown if amenity=restaurant)",
+      "value": "required"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=recommended with a fixed text, namely 'A reservation is not required, but still recommended to make sure you get a table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food') (This is only shown if amenity=restaurant)",
+      "value": "recommended"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=yes with a fixed text, namely 'Reservation is possible at this place' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food') (This is only shown if amenity=restaurant)",
+      "value": "yes"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=no with a fixed text, namely 'Reservation is not possible at this place' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Restaurants and fast food') (This is only shown if amenity=restaurant)",
+      "value": "no"
     },
     {
       "key": "takeaway",

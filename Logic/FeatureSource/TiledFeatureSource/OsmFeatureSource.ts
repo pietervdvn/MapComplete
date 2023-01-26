@@ -1,5 +1,5 @@
 import { Utils } from "../../../Utils"
-import * as OsmToGeoJson from "osmtogeojson"
+import OsmToGeoJson from "osmtogeojson"
 import StaticFeatureSource from "../Sources/StaticFeatureSource"
 import PerLayerFeatureSourceSplitter from "../PerLayerFeatureSourceSplitter"
 import { Store, UIEventSource } from "../../UIEventSource"
@@ -143,11 +143,10 @@ export default class OsmFeatureSource {
         try {
             const osmJson = await Utils.downloadJson(url)
             try {
-                console.log("Got tile", z, x, y, "from the osm api")
                 this.rawDataHandlers.forEach((handler) =>
                     handler(osmJson, Tiles.tile_index(z, x, y))
                 )
-                const geojson = <FeatureCollection<any, { id: string }>>OsmToGeoJson.default(
+                const geojson = <FeatureCollection<any, { id: string }>>OsmToGeoJson(
                     osmJson,
                     // @ts-ignore
                     {

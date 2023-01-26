@@ -1,6 +1,9 @@
 name: Deployment on pietervdvn
-on: push
-
+on:
+  push:
+    branches:
+      - develop
+      - feature/vite
 jobs:
   build:
     runs-on: ubuntu-latest

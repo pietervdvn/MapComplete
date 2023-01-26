@@ -612,7 +612,8 @@
       "question": {
         "en": "Does this artwork serve as a bench?",
         "de": "Dient dieses Kunstwerk auch als Sitzbank?",
-        "fr": "Cette oeuvre d'art sert-elle de banc ?"
+        "fr": "Cette oeuvre d'art sert-elle de banc ?",
+        "nl": "Is dit kunstwerk ook een zitbank?"
       },
       "mappings": [
         {
@@ -620,7 +621,8 @@
           "then": {
             "en": "This artwork also serves as a bench",
             "de": "Dieses Kunstwerk dient auch als Sitzbank",
-            "fr": "Cette oeuvre d'art sert aussi de banc"
+            "fr": "Cette oeuvre d'art sert aussi de banc",
+            "nl": "Dit kunstwerk doet ook dienst als zitbank"
           }
         },
         {
@@ -628,7 +630,8 @@
           "then": {
             "en": "This artwork does not serve as a bench",
             "de": "Dieses Kunstwerk dient nicht als Sitzbank",
-            "fr": "Cette oeuvre d'art ne sert pas de banc"
+            "fr": "Cette oeuvre d'art ne sert pas de banc",
+            "nl": "Dit kunstwerk doet geen dienst als zitbank"
           }
         },
         {
@@ -636,7 +639,8 @@
           "then": {
             "en": "This artwork does not serve as a bench",
             "de": "Dieses Kunstwerk dient nicht als Sitzbank",
-            "fr": "Cette oeuvre d'art ne sert pas de banc"
+            "fr": "Cette oeuvre d'art ne sert pas de banc",
+            "nl": "Dit kunstwerk doet geen dienst als zitbank"
           },
           "hideInAnswer": true
         }

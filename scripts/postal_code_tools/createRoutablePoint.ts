@@ -13,14 +13,14 @@ async function main(args: string[]) {
 
     const alreadyLoaded = new Set<number>()
     if (existsSync(output)) {
-        const lines = readFileSync(output, "UTF8").split("\n")
+        const lines = readFileSync(output, { encoding: "utf8" }).split("\n")
         lines.shift()
         lines.forEach((line) => {
             const postalCode = Number(line.split(",")[0])
             alreadyLoaded.add(postalCode)
         })
     } else {
-        writeFileSync(output, "postal_code,lon,lat\n", "UTF-8")
+        writeFileSync(output, "postal_code,lon,lat\n", { encoding: "utf8" })
     }
 
     for (const boundary of postcodes.features) {
@@ -104,7 +104,7 @@ async function main(args: string[]) {
             " are ",
             JSON.stringify(depPoints)
         )
-        appendFileSync(output, [postcode, ...depPoints[0]].join(", ") + "\n", "UTF-8")
+        appendFileSync(output, [postcode, ...depPoints[0]].join(", ") + "\n", { encoding: "utf8" })
     }
 }
 

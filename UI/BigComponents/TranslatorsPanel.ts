@@ -15,15 +15,13 @@ import { Store } from "../../Logic/UIEventSource"
 import { SubtleButton } from "../Base/SubtleButton"
 import Svg from "../../Svg"
 import * as native_languages from "../../assets/language_native.json"
-import * as used_languages from "../../assets/generated/used_languages.json"
 import BaseUIElement from "../BaseUIElement"
 
 class TranslatorsPanelContent extends Combine {
     constructor(layout: LayoutConfig, isTranslator: Store<boolean>) {
         const t = Translations.t.translations
 
-        const { completeness, untranslated, total } =
-            TranslatorsPanel.MissingTranslationsFor(layout)
+        const { completeness, untranslated, total } = layout.missingTranslations()
 
         const seed = t.completeness
         for (const ln of Array.from(completeness.keys())) {
@@ -66,7 +64,7 @@ class TranslatorsPanelContent extends Combine {
                 "missingLayers:",
                 missingLayers
             )
-            return [
+            return Utils.NoNull([
                 hasMissingTheme
                     ? new Link(
                           "themes:" + layout.id + ".* (zen mode)",
@@ -86,7 +84,7 @@ class TranslatorsPanelContent extends Combine {
                     (context) =>
                         new Link(context, LinkToWeblate.hrefToWeblate(language, context), true)
                 ),
-            ]
+            ])
         }
 
         // "translationCompleteness": "Translations for {theme} in {language} are at {percentage}: {translated} out of {total}",
@@ -146,53 +144,5 @@ export default class TranslatorsPanel extends Toggle {
             Locale.showLinkToWeblate
         )
         this.SetClass("hidden-on-mobile")
-    }
-
-    public static MissingTranslationsFor(layout: LayoutConfig): {
-        completeness: Map<string, number>
-        untranslated: Map<string, string[]>
-        total: number
-    } {
-        let total = 0
-        const completeness = new Map<string, number>()
-        const untranslated = new Map<string, string[]>()
-
-        Utils.WalkObject(
-            layout,
-            (o) => {
-                const translation = <Translation>(<any>o)
-                if (translation.translations["*"] !== undefined) {
-                    return
-                }
-                if (translation.context === undefined || translation.context.indexOf(":") < 0) {
-                    // no source given - lets ignore
-                    return
-                }
-
-                total++
-                used_languages.languages.forEach((ln) => {
-                    const trans = translation.translations
-                    if (trans["*"] !== undefined) {
-                        return
-                    }
-                    if (trans[ln] === undefined) {
-                        if (!untranslated.has(ln)) {
-                            untranslated.set(ln, [])
-                        }
-                        untranslated.get(ln).push(translation.context)
-                    } else {
-                        completeness.set(ln, 1 + (completeness.get(ln) ?? 0))
-                    }
-                })
-            },
-            (o) => {
-                if (o === undefined || o === null) {
-                    return false
-                }
-                return o instanceof Translation
-            }
-        )
-
-        return { completeness, untranslated, total }
     }
 }

@@ -1690,6 +1690,11 @@
         }
     },
     "windturbine": {
+        "tagRenderings": {
+            "windturbine-fixme": {
+                "render": "Дополнительная информация для экспертов OpenStreetMap: {fixme}"
+            }
+        },
         "title": {
             "mappings": {
                 "0": {

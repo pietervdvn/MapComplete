@@ -141,6 +141,7 @@
             "translatedBy": "MapComplete has been translated by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>"
         },
         "back": "Back",
+        "backToIndex": "Go back to the overview with all thematic maps",
         "backToMapcomplete": "Back to the theme overview",
         "backgroundMap": "Background map",
         "cancel": "Cancel",
@@ -188,7 +189,10 @@
         "loading": "Loading…",
         "loadingTheme": "Loading {theme}…",
         "loginFailed": "Logging in into OpenStreetMap failed",
-        "loginOnlyNeededToEdit": "if you want to edit the map",
+        "loginFailedOfflineMode": "OpenStreetMap.org is currently not available due to maintenance. Making edits will be possible soon",
+        "loginFailedReadonlyMode": "OpenStreetMap.org is currently in readonly mode due to maintenance. Making edits will be possible soon",
+        "loginFailedUnreachableMode": "OpenStreetMap.org is currently not reachable. Are you connected to the internet or do you block third parties? Try again later",
+        "loginOnlyNeededToEdit": "if you want to make changes",
         "loginToStart": "Log in to answer this question",
         "loginWithOpenStreetMap": "Login with OpenStreetMap",
         "logout": "Log out",
@@ -284,6 +288,7 @@
         "uploadGpx": {
             "choosePermission": "Choose below if your track should be shared:",
             "confirm": "Confirm upload",
+            "gpxServiceOffline": "The GPX-service is currently offline - uploading is currently not possible. Try again later.",
             "intro0": "By uploading your track, OpenStreetMap.org will retain a full copy of the track.",
             "intro1": "You will be able to download your track again and to load them into OpenStreetMap editing programs",
             "meta": {
@@ -327,11 +332,9 @@
             "tuesday": "Tuesday",
             "wednesday": "Wednesday"
         },
-        "welcomeBack": "You are logged in, welcome back!",
+        "welcomeBack": "Welcome back!",
         "welcomeExplanation": {
             "addNew": "Tap the map to add a new POI.",
-            "browseMoreMaps": "Discover more maps",
-            "browseOtherThemesIntro": "Various thematic maps exist on MapComplete",
             "general": "On this map, you can see, edit and add <i>points of interest</i>. Zoom around to see the POI, tap one to see or edit the information. All data is sourced from and saved to OpenStreetMap, which can be freely reused."
         },
         "wikipedia": {
@@ -352,21 +355,20 @@
         }
     },
     "hotkeyDocumentation": {
+        "action": "Action",
         "closeSidebar": "Close the sidebar",
         "geolocate": "Pan the map to the current location or zoom the map to the current location. Requests geopermission",
+        "intro": "MapComplete supports the following keys:",
+        "key": "Key combination",
         "openLayersPanel": "Opens the Background, layers and filters panel",
         "selectBackground": "Select a background layer of category {category}",
         "selectMapnik": "Sets the background layer to OpenStreetMap-carto",
-        "selectSearch": "Select the search bar to search locations"
+        "selectSearch": "Select the search bar to search locations",
+        "title": "Hotkeys"
     },
     "image": {
         "addPicture": "Add picture",
-        "ccb": "under the CC-BY-license",
-        "ccbExplanation": "The CC-BY license implies that anyone may use your picture for any purpose, but they have to attribute you",
-        "ccbs": "under the CC-BY-SA-license",
-        "ccbsExplanation": "The CC-BY-SA license implies that anyone may use your picture for any purpose, but they have to attribute you and remixes of the picture have to be republished under the same license",
-        "cco": "in the public domain",
-        "ccoExplanation": "Adding a picture in the public domain implies that anyone can do anything with your picture",
+        "currentLicense": "Your images will be published under {license}",
         "doDelete": "Remove image",
         "dontDelete": "Cancel",
         "isDeleted": "Deleted",
@@ -391,8 +393,7 @@
         "uploadFailed": "Could not upload your picture. Are you connected to the Internet, and allow third party API's? The Brave browser or the uMatrix plugin might block them.",
         "uploadMultipleDone": "{count} pictures have been added. Thanks for helping out!",
         "uploadingMultiple": "Uploading {count} pictures…",
-        "uploadingPicture": "Uploading your picture…",
-        "willBePublished": "Your picture will be published "
+        "uploadingPicture": "Uploading your picture…"
     },
     "importHelper": {
         "askMetadata": {
@@ -904,10 +905,11 @@
         "attribution": "Reviews are powered by <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> and are available under <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>.",
         "i_am_affiliated": "<span>I am affiliated with this object</span><br/><span class='subtle'>Check if you are an owner, creator, employee, …</span>",
         "name_required": "A name is required in order to display and create reviews",
-        "no_rating": "No rating given",
+        "no_rating": "Give a rating before submitting…",
         "no_reviews_yet": "There are no reviews yet. Be the first to write one and help open data and the business!",
         "plz_login": "Log in to leave a review",
         "posting_as": "Posting as",
+        "save": "Save",
         "saved": "<span class='thanks'>Review saved. Thanks for sharing!</span>",
         "saving_review": "Saving…",
         "title": "{count} reviews",
@@ -941,7 +943,8 @@
         "newMessages": "you have new messages",
         "noDescription": "You don't have a description on your profile yet",
         "noDescriptionCallToAction": "Add a profile description",
-        "welcome": "Welcome {user}"
+        "titleNotLoggedIn": "Welcome",
+        "welcome": "Welcome {name}"
     },
     "validation": {
         "color": {

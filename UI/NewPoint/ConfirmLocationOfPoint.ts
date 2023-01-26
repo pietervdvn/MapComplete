@@ -78,6 +78,7 @@ export default class ConfirmLocationOfPoint extends Combine {
                 mapBackground: backgroundLayer,
                 centerLocation: locationSrc,
                 snapTo: snapToFeatures,
+                renderLayerForSnappedPoint: preset.layerToAddTo.layerDef,
                 snappedPointTags: tags,
                 maxSnapDistance: preset.preciseInput.maxSnapDistance,
                 bounds: mapBounds,

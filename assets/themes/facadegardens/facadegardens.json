@@ -105,7 +105,8 @@
             "it": "Orientamento: {direction} (0 per il Nord e 90 per l’Est)",
             "hu": "Tájolás: {direction} (0=észak, 90=kelet stb.)",
             "es": "Orientación: {direction} (donde 0=N y 90=O)",
-            "da": "Orientering: {direction} (hvor 0=N og 90=O)"
+            "da": "Orientering: {direction} (hvor 0=N og 90=O)",
+            "ca": "Orientació: {direction} (on 0=N y 90=O)"
           },
           "question": {
             "nl": "Hoe is de tuin georiënteerd?",
@@ -551,7 +552,12 @@
             "centroid"
           ]
         }
-      ]
+      ],
+      "deletion": true,
+      "allowMove": {
+        "enableImproveAccuracy": true,
+        "enableRelocation": false
+      }
     }
   ],
   "credits": "joost schouppe; stla"

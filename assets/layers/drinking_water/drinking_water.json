@@ -101,7 +101,8 @@
             "fr": "Cette fontaine fonctionne",
             "de": "Diese Trinkwasserstelle ist in Betrieb",
             "hu": "Ez az ivóvízkút működik",
-            "es": "Esta agua potable funciona"
+            "es": "Esta agua potable funciona",
+            "ca": "La font d'aigua funciona"
           }
         },
         {
@@ -139,7 +140,8 @@
         "it": "Quanto è facile riempire d’acqua le bottiglie?",
         "fr": "Est-il facile de remplir des bouteilles d'eau ?",
         "hu": "Mennyire könnyű itt vizespalackot tölteni?",
-        "es": "¿Cómo de fácil es rellenar botellas de agua?"
+        "es": "¿Cómo de fácil es rellenar botellas de agua?",
+        "ca": "Com de fàcil és reomplir botelles d'aigua?"
       },
       "mappings": [
         {
@@ -151,7 +153,8 @@
             "it": "È facile riempire d’acqua le bottiglie",
             "fr": "Il est facile de remplir les bouteilles d'eau",
             "hu": "Könnyen lehet vizespalackot tölteni",
-            "es": "Es fácil rellenar botellas de agua"
+            "es": "Es fácil rellenar botellas de agua",
+            "ca": "És fàcil reomplir botelles d'aigua"
           }
         },
         {
@@ -163,7 +166,8 @@
             "it": "Le bottiglie d’acqua potrebbero non entrare",
             "fr": "Les bouteilles d'eau peuvent ne pas passer",
             "hu": "Lehet, hogy nem fér alá egy vizespalack",
-            "es": "Las botellas de agua pueden no caber"
+            "es": "Las botellas de agua pueden no caber",
+            "ca": "Les botelles d'aigua podrien no cabre"
           }
         }
       ],
@@ -178,7 +182,8 @@
         "de": "<a href='#{_closest_other_drinking_water_id}'>Eine weitere Trinkwasserstelle befindet sich in {_closest_other_drinking_water_distance} Meter</a>",
         "fr": "<a href='#{_closest_other_drinking_water_id}'>Une autre source d’eau potable est à {_closest_other_drinking_water_distance} mètres</a>",
         "hu": "<a href='#{_closest_other_drinking_water_id}'>Van egy másik ivóvízkút {_closest_other_drinking_water_distance} méter távolságra</a>",
-        "es": "<a href='#{_closest_other_drinking_water_id}'>Hay otra fuente de agua potable a {_closest_other_drinking_water_distance} metros</a>"
+        "es": "<a href='#{_closest_other_drinking_water_id}'>Hay otra fuente de agua potable a {_closest_other_drinking_water_distance} metros</a>",
+        "ca": "<a href='#{_closest_other_drinking_water_id}'>Hi ha una altra font d'aigua potable a {_closest_other_drinking_water_distance} metres</a>"
       },
       "condition": "_closest_other_drinking_water_id~*"
     }

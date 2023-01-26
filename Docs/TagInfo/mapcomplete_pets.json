@@ -159,7 +159,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Dog friendly eateries' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+      "description": "Layer 'Dog friendly eateries' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
     },
     {
       "key": "email",
@@ -285,6 +285,26 @@
       "key": "cuisine",
       "description": "Layer 'Dog friendly eateries' shows cuisine=thai with a fixed text, namely 'Thai dishes are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "thai"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Dog friendly eateries' shows reservation=required with a fixed text, namely 'A reservation is required at this place' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if amenity=restaurant)",
+      "value": "required"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Dog friendly eateries' shows reservation=recommended with a fixed text, namely 'A reservation is not required, but still recommended to make sure you get a table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if amenity=restaurant)",
+      "value": "recommended"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Dog friendly eateries' shows reservation=yes with a fixed text, namely 'Reservation is possible at this place' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if amenity=restaurant)",
+      "value": "yes"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Dog friendly eateries' shows reservation=no with a fixed text, namely 'Reservation is not possible at this place' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if amenity=restaurant)",
+      "value": "no"
     },
     {
       "key": "takeaway",
@@ -1398,7 +1418,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Dog-friendly shops' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+      "description": "Layer 'Dog-friendly shops' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
     },
     {
       "key": "email",
@@ -1555,7 +1575,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'veterinary' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
+      "description": "Layer 'veterinary' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')"
     },
     {
       "key": "phone",

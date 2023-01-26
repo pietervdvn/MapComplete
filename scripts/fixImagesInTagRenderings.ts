@@ -63,7 +63,7 @@ function main() {
     const path = args[0]
     const iconClass = args[1] ?? "small"
     const targetFile = args[2] ?? path + ".autoconverted.json"
-    const parsed = JSON.parse(readFileSync(path, "UTF8"))
+    const parsed = JSON.parse(readFileSync(path, { encoding: "utf8" }))
     const converted = new ConvertImagesToIcon(iconClass).convertStrict(
         parsed,
         "While running the fixImagesInTagRenderings-script"

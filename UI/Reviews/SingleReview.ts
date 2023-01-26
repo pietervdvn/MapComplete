@@ -1,33 +1,47 @@
-import { Review } from "../../Logic/Web/Review"
 import Combine from "../Base/Combine"
 import { FixedUiElement } from "../Base/FixedUiElement"
 import Translations from "../i18n/Translations"
 import { Utils } from "../../Utils"
 import BaseUIElement from "../BaseUIElement"
 import Img from "../Base/Img"
+import { Review } from "mangrove-reviews-typescript"
+import { Store } from "../../Logic/UIEventSource"
+import WikidataPreviewBox from "../Wikipedia/WikidataPreviewBox"
 
 export default class SingleReview extends Combine {
-    constructor(review: Review) {
-        const d = review.date
+    constructor(review: Review & { madeByLoggedInUser: Store<boolean> }) {
+        const d = review
+        const date = new Date(review.iat * 1000)
+        const reviewAuthor =
+            review.metadata.nickname ??
+            (review.metadata.given_name ?? "") + (review.metadata.family_name ?? "")
         super([
             new Combine([SingleReview.GenStars(review.rating)]),
-            new FixedUiElement(review.comment),
+            new FixedUiElement(review.opinion),
             new Combine([
                 new Combine([
-                    new FixedUiElement(review.author).SetClass("font-bold"),
-                    review.affiliated ? Translations.t.reviews.affiliated_reviewer_warning : "",
+                    new FixedUiElement(reviewAuthor).SetClass("font-bold"),
+                    review.metadata.is_affiliated
+                        ? Translations.t.reviews.affiliated_reviewer_warning
+                        : "",
                 ]).SetStyle("margin-right: 0.5em"),
                 new FixedUiElement(
-                    `${d.getFullYear()}-${Utils.TwoDigits(d.getMonth() + 1)}-${Utils.TwoDigits(
-                        d.getDate()
-                    )} ${Utils.TwoDigits(d.getHours())}:${Utils.TwoDigits(d.getMinutes())}`
+                    `${date.getFullYear()}-${Utils.TwoDigits(
+                        date.getMonth() + 1
+                    )}-${Utils.TwoDigits(date.getDate())} ${Utils.TwoDigits(
+                        date.getHours()
+                    )}:${Utils.TwoDigits(date.getMinutes())}`
                 ).SetClass("subtle-lighter"),
             ]).SetClass("flex mb-4 justify-end"),
         ])
         this.SetClass("block p-2 m-4 rounded-xl subtle-background review-element")
-        if (review.made_by_user.data) {
-            this.SetClass("border-attention-catch")
-        }
+        review.madeByLoggedInUser.addCallbackAndRun((madeByUser) => {
+            if (madeByUser) {
+                this.SetClass("border-attention-catch")
+            } else {
+                this.RemoveClass("border-attention-catch")
+            }
+        })
     }
 
     public static GenStars(rating: number): BaseUIElement {

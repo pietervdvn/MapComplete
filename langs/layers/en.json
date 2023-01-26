@@ -185,9 +185,6 @@
             }
         },
         "tagRenderings": {
-            "atm-in-bank-notice": {
-                "render": "This ATM is located in or near a bank"
-            },
             "brand": {
                 "freeform": {
                     "placeholder": "Brand name"
@@ -261,6 +258,35 @@
                 }
             },
             "render": "ATM"
+        }
+    },
+    "bank": {
+        "description": "A financial institution to deposit money",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "With an ATM"
+                    }
+                }
+            }
+        },
+        "name": "Banks",
+        "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "This bank has an ATM"
+                    },
+                    "1": {
+                        "then": "This bank does <b>not</b> have an ATM"
+                    },
+                    "2": {
+                        "then": "This bank does have an ATM, but it is mapped as a different icon"
+                    }
+                },
+                "question": "Does this bank have an ATM?"
+            }
         }
     },
     "barrier": {
@@ -835,10 +861,10 @@
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
-                        "then": "Free to use cleaning service"
+                        "then": "This cleaning service is free to use"
                     },
                     "1": {
-                        "then": "Free to use"
+                        "then": "This cleaning service is paid"
                     }
                 },
                 "question": "How much does it cost to use the cleaning service?",
@@ -1472,8 +1498,8 @@
                 "question": "What kind of cafe is this?"
             },
             "Name": {
-                "question": "What is the name of this pub?",
-                "render": "This pub is named {name}"
+                "question": "What is the name of this business?",
+                "render": "This business is named {name}"
             }
         },
         "title": {
@@ -2701,6 +2727,11 @@
     "climbing_gym": {
         "description": "A climbing gym",
         "name": "Climbing gyms",
+        "presets": {
+            "0": {
+                "title": "Climbing gym"
+            }
+        },
         "tagRenderings": {
             "Speed climbing?": {
                 "mappings": {
@@ -4204,18 +4235,25 @@
             "1": {
                 "options": {
                     "0": {
-                        "question": "Has a vegetarian menu"
+                        "question": "Reservation not required"
                     }
                 }
             },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Has a vegan menu"
+                        "question": "Has a vegetarian menu"
                     }
                 }
             },
             "3": {
+                "options": {
+                    "0": {
+                        "question": "Has a vegan menu"
+                    }
+                }
+            },
+            "4": {
                 "options": {
                     "0": {
                         "question": "Has a halal menu"
@@ -4302,8 +4340,25 @@
                 "question": "What type of business is this?"
             },
             "Name": {
-                "question": "What is the name of this restaurant?",
-                "render": "The name of this restaurant is {name}"
+                "question": "What is the name of this business?",
+                "render": "The name of this business is {name}"
+            },
+            "Reservation": {
+                "mappings": {
+                    "0": {
+                        "then": "A reservation is required at this place"
+                    },
+                    "1": {
+                        "then": "A reservation is not required, but still recommended to make sure you get a table"
+                    },
+                    "2": {
+                        "then": "Reservation is possible at this place"
+                    },
+                    "3": {
+                        "then": "Reservation is not possible at this place"
+                    }
+                },
+                "question": "Is a reservation required for this place?"
             },
             "Takeaway": {
                 "mappings": {
@@ -8166,6 +8221,52 @@
             "render": "Tree"
         }
     },
+    "usersettings": {
+        "description": "A special layer which is not meant to be shown on a map, but which is used to set user settings",
+        "tagRenderings": {
+            "contributor-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "You have contributed code to MapComplete with {_code_contributions} commits! That's awesome!"
+                    }
+                }
+            },
+            "picture-license": {
+                "mappings": {
+                    "0": {
+                        "then": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>"
+                    },
+                    "1": {
+                        "then": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose."
+                    },
+                    "2": {
+                        "then": "Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you"
+                    },
+                    "3": {
+                        "then": "Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license."
+                    }
+                },
+                "question": "Under what license do you want to publish your pictures?"
+            },
+            "translation-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "You have contributed to translating MapComplete! That's awesome!"
+                    }
+                }
+            },
+            "verified-mastodon": {
+                "mappings": {
+                    "0": {
+                        "then": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                    },
+                    "1": {
+                        "then": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+                    }
+                }
+            }
+        }
+    },
     "veterinary": {
         "name": "veterinary",
         "presets": {
@@ -8433,6 +8534,10 @@
             "turbine-start-date": {
                 "question": "When did this wind turbine go into operation?",
                 "render": "This wind turbine went into operation on/in {start_date}."
+            },
+            "windturbine-fixme": {
+                "question": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)",
+                "render": "Extra information for OpenStreetMap experts: {fixme}"
             }
         },
         "title": {

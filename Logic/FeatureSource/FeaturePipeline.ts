@@ -136,7 +136,7 @@ export default class FeaturePipeline {
             // Passthrough to passed function, except that it registers as well
             handleFeatureSource(src)
             src.features.addCallbackAndRunD((fs) => {
-                fs.forEach((ff) => state.allElements.addOrGetElement(ff.feature))
+                fs.forEach((ff) => state.allElements.addOrGetElement(<any>ff.feature))
             })
         }
 

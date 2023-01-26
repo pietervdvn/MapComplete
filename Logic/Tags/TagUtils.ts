@@ -7,7 +7,6 @@ import { RegexTag } from "./RegexTag"
 import SubstitutingTag from "./SubstitutingTag"
 import { Or } from "./Or"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
-import { isRegExp } from "util"
 import * as key_counts from "../../assets/key_totals.json"
 
 type Tags = Record<string, string>
@@ -94,7 +93,7 @@ export class TagUtils {
 
             if (allowRegex && tagsFilter instanceof RegexTag) {
                 const key = tagsFilter.key
-                if (isRegExp(key)) {
+                if (typeof key !== "string") {
                     console.error(
                         "Invalid type to flatten the multiAnswer: key is a regex too",
                         tagsFilter

@@ -6,6 +6,20 @@
     "artwork": {
         "description": "Un mapa abierto de estatus, bustos, grafitis y otras obras de arte en todo el mundo"
     },
+    "atm": {
+        "title": "Cajeros automáticos"
+    },
+    "bag": {
+        "layers": {
+            "2": {
+                "tagRenderings": {
+                    "Build year": {
+                        "render": "El edificio fue construido en <b>{_bag_obj:start_date}</b>"
+                    }
+                }
+            }
+        }
+    },
     "benches": {
         "description": "Este mapa muestra todos los bancos que están grabados en OpenStreetMap: Bancos individuales, bancos que pertenecen a paradas o marquesinas del transporte público. Con una cuenta de OpenStreetMap, puedes mapear nuevos bancos o editar detalles de bancos existentes.",
         "shortDescription": "Un mapa de bancos",

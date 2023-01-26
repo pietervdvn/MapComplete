@@ -138,7 +138,7 @@ async function main(wipeCache = false) {
         console.log("Reusing the cached file")
     }
 
-    const data = JSON.parse(readFileSync(cacheFile, "UTF8"))
+    const data = JSON.parse(readFileSync(cacheFile, { encoding: "utf8" }))
     const perId = WikidataUtils.extractLanguageData(data, WikidataUtils.languageRemapping)
     const nativeList = getNativeList(perId)
     writeFileSync("./assets/language_native.json", JSON.stringify(nativeList, null, "  "))

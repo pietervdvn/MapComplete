@@ -23,13 +23,10 @@ import Constants from "../../Models/Constants"
 import ContributorCount from "../../Logic/ContributorCount"
 import Img from "../Base/Img"
 import { TypedTranslation } from "../i18n/Translation"
-import TranslatorsPanel from "./TranslatorsPanel"
-import { MapillaryLink } from "./MapillaryLink"
-import FullWelcomePaneWithTabs from "./FullWelcomePaneWithTabs"
 
 export class OpenIdEditor extends VariableUiElement {
     constructor(
-        state: { locationControl: UIEventSource<Loc> },
+        state: { readonly locationControl: Store<Loc> },
         iconStyle?: string,
         objectId?: string
     ) {
@@ -125,38 +122,6 @@ export default class CopyrightPanel extends Combine {
     }) {
         const t = Translations.t.general.attribution
         const layoutToUse = state.layoutToUse
-        const imgSize = "h-6 w-6"
-        const iconStyle = "height: 1.5rem; width: 1.5rem"
-        const actionButtons = [
-            new SubtleButton(Svg.liberapay_ui(), t.donate, {
-                url: "https://liberapay.com/pietervdvn/",
-                newTab: true,
-                imgSize,
-            }),
-            new SubtleButton(Svg.bug_ui(), t.openIssueTracker, {
-                url: "https://github.com/pietervdvn/MapComplete/issues",
-                newTab: true,
-                imgSize,
-            }),
-            new SubtleButton(
-                Svg.statistics_ui(),
-                t.openOsmcha.Subs({ theme: state.layoutToUse.title }),
-                {
-                    url: Utils.OsmChaLinkFor(31, state.layoutToUse.id),
-                    newTab: true,
-                    imgSize,
-                }
-            ),
-            new SubtleButton(Svg.mastodon_ui(), t.followOnMastodon, {
-                url: "https://en.osm.town/@MapComplete",
-                newTab: true,
-                imgSize,
-            }),
-            new OpenIdEditor(state, iconStyle),
-            new MapillaryLink(state, iconStyle),
-            new OpenJosm(state, iconStyle),
-            new TranslatorsPanel(state, iconStyle),
-        ]
 
         const iconAttributions = layoutToUse.usedImages.map(CopyrightPanel.IconAttribution)
 
@@ -213,7 +178,6 @@ export default class CopyrightPanel extends Combine {
                 CopyrightPanel.CodeContributors(contributors, t.codeContributionsBy),
                 CopyrightPanel.CodeContributors(translators, t.translatedBy),
                 new FixedUiElement("MapComplete " + Constants.vNumber).SetClass("font-bold"),
-                new Combine(actionButtons).SetClass("block w-full link-no-underline"),
                 new Title(t.iconAttribution.title, 3),
                 ...iconAttributions,
             ].map((e) => e?.SetClass("mt-4"))

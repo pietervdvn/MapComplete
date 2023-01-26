@@ -286,8 +286,6 @@
     },
     "image": {
         "addPicture": "Legg til bilde",
-        "ccb": "med CC-BY-lisens",
-        "ccbs": "med CC-BY-SA-lisens",
         "doDelete": "Fjern bilde",
         "dontDelete": "Avbryt",
         "isDeleted": "Slettet",
@@ -306,8 +304,7 @@
         "uploadFailed": "Kunne ikke laste opp bildet ditt. Er du tilkoblet Internett og tillater tredjeparts-API-er? Brave-nettleseren eller uMatrix-programtillegget kan blokkere dem.",
         "uploadMultipleDone": "{count} bilder har blitt lagt til. Takk for at du hjelper til.",
         "uploadingMultiple": "Laster opp {count} bilder …",
-        "uploadingPicture": "Laster opp bildet ditt …",
-        "willBePublished": "Ditt bilde vil bli publisert: "
+        "uploadingPicture": "Laster opp bildet ditt …"
     },
     "importHelper": {
         "askMetadata": {
@@ -591,7 +588,7 @@
     },
     "userinfo": {
         "noDescriptionCallToAction": "Legg til profilbeskrivelse",
-        "welcome": "Velkommen {user}"
+        "welcome": "Velkommen {name}"
     },
     "validation": {
         "color": {

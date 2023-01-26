@@ -80,6 +80,7 @@
             "donate": "Donar suport econòmic a MapComplete",
             "editId": "Obre l'editor en línia d'OpenStreetMap aquí",
             "editJosm": "Editar aquí amb JOSM",
+            "followOnMastodon": "Segueix MapComplet a Mastodon",
             "iconAttribution": {
                 "title": "Icones utilitzades"
             },
@@ -87,6 +88,7 @@
             "josmOpened": "JOSM és obert",
             "mapContributionsBy": "Les dades mostrades tenen edicions fetes per {contributors}",
             "mapContributionsByAndHidden": "Les dades mostrades tenen edicions fetes per {contributors} i {hiddenCount} col·laboradors més",
+            "mapillaryHelp": "<b>Mapillary</b> és un servei en línea que arreplega imatges a peu de carrer i les ofereix sota una llicència lliure. Els contribuïdors poden utilizar aquestes imatges per a millorar OpenStreetMap",
             "openIssueTracker": "Registrar un error",
             "openMapillary": "Obrir Mapillary aquí",
             "openOsmcha": "Veure darreres edicions fetes amb {theme}",
@@ -121,6 +123,7 @@
         },
         "example": "Exemple",
         "examples": "Exemples",
+        "feelFreeToSkip": "Podeu afegir més informació a sota, però sentiu-vos lliures de <b>botar preguntes</b> que no conegueu la resposta.",
         "fewChangesBefore": "Contesta unes quantes preguntes sobre punts existents abans d'afegir-ne un de nou.",
         "getStartedLogin": "Entra a OpenStreetMap per començar",
         "getStartedNewAccount": " o <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">crea un nou compte</a>",
@@ -132,7 +135,6 @@
             "title": "Seleccionar capes",
             "zoomInToSeeThisLayer": "Amplia per veure aquesta capa"
         },
-        "levelSelection": {},
         "loading": "Carregant...",
         "loadingTheme": "Carregant {theme}...",
         "loginFailed": "Ha fallat l'entrada a OpenStreetMap",
@@ -144,11 +146,13 @@
             "createYourOwnTheme": "Crea la teva pròpia petició completa de MapComplete des de zero",
             "hiddenExplanation": "Aquestes peticions només funcionen amb l'enllaç. Has descobert {hidden_discovered} de {total_hidden} peticions amagades.",
             "intro": "<h3>Més peticions</h3>T'agrada captar dades? <br>Hi ha més capes disponibles.",
+            "noMatchingThemes": "Cap tema coincideix amb els teus criteris de cerca",
             "previouslyHiddenTitle": "Peticions visitades i amagades",
             "requestATheme": "Si vols que et fem una petició pròpia , demana-la al registre d'incidències",
             "streetcomplete": "Una altra aplicació similar és <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "{category}: El seu nom és $$$",
+        "newlyCreated": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
         "next": "Següent",
         "noNameCategory": "{category} sense nom",
         "noTagsSelected": "No s'han seleccionat etiquetes",
@@ -241,7 +245,8 @@
         },
         "welcomeBack": "Has entrat, benvingut/da.",
         "welcomeExplanation": {
-            "addNew": "Toqueu el mapa per afegir un nou PDI."
+            "addNew": "Toqueu el mapa per afegir un nou PDI.",
+            "general": "A aquest mapa, podeu observar, editar i afegir <i>punt d'interés</i>. Feu zoom pel voltant per veure el PDI, toque una vegada per a veure o editar la informació. Totes les dades s'obtenen i es desen a OpenStreetMap, que es poden reutilitzar lliurement."
         },
         "wikipedia": {
             "createNewWikidata": "Crear un ítem de Wikidata",
@@ -260,12 +265,6 @@
     },
     "image": {
         "addPicture": "Afegir foto",
-        "ccb": "sota la llicència CC-BY",
-        "ccbExplanation": "La llicència CC-BY implica que qualsevol persona pot utilitzar la teva imatge per a qualsevol propòsit, però t'ha d'atribuir",
-        "ccbs": "sota llicència CC-BY-SA",
-        "ccbsExplanation": "La llicència CC-BY-SA implica que qualsevol persona pot utilitzar la teva imatge per a qualsevol propòsit, però t'ha d'atribuir i les modificacions de la imatge s'han de tornar a publicar sota la mateixa llicència",
-        "cco": "en domini públic",
-        "ccoExplanation": "Afegir una imatge al domini públic implica que qualsevol pot fer qualsevol cosa amb la teva imatge",
         "doDelete": "Esborrar imatge",
         "dontDelete": "Cancel·lar",
         "isDeleted": "Esborrada",
@@ -279,17 +278,9 @@
         "uploadFailed": "No s'ha pogut pujar la imatge. Tens Internet i es permeten API de tercers? El navegador Brave o UMatrix podria bloquejar-les.",
         "uploadMultipleDone": "{count} imatges afegides. Gràcies per ajudar.",
         "uploadingMultiple": "Pujant {count} imatges…",
-        "uploadingPicture": "Pujant la teva imatge…",
-        "willBePublished": "La teva foto serà publicada: "
+        "uploadingPicture": "Pujant la teva imatge…"
     },
     "importHelper": {
-        "askMetadata": {},
-        "compareToAlreadyExistingNotes": {},
-        "confirmProcess": {},
-        "conflationChecker": {
-            "states": {}
-        },
-        "createNotes": {},
         "introduction": {
             "description": "L'ajudant d'importació converteix un conjunt de dades extern en notes. El conjunt de dades extern ha de coincidir amb una de les capes MapComplete existents. Per a cada article que introdueixes a l'importador, es crearà una nota única. Aquestes notes es mostraran juntament amb les característiques rellevants en aquests mapes per afegir-les fàcilment.",
             "importFormat": "Un text d'una nota ha de tenir el format següent per poder ser recollit: <br><div class=\"literal-code\">[Una petita introducció]<br>https://mapcomplete.osm.be /[themename].html?[paràmetres com ara lat i lon]#import<br>[totes les etiquetes de la funció] </div>"
@@ -308,7 +299,6 @@
             "selectLayer": "Amb quina capa coincideix aquesta importació?",
             "title": "Vista prèvia del mapa"
         },
-        "noteParts": {},
         "previewAttributes": {
             "allAttributesSame": "Totes les funcions a importar tenen aquesta etiqueta",
             "inspectDataTitle": "Inspecciona les dades de {count} funcions per importar",
@@ -329,7 +319,6 @@
             "noFilesLoaded": "No s'ha carregat cap arxiu",
             "title": "Seleccionar arxiu"
         },
-        "selectTheme": {},
         "title": "Assistent d'importació"
     },
     "importInspector": {
@@ -351,30 +340,6 @@
         "logIn": "Entra per veure altres temes que has visitat anteriorment",
         "pickTheme": "Tria una petició de sota per començar.",
         "title": "Benvingut/da a MapComplete"
-    },
-    "matrixbot": {
-        "commands": {
-            "dm": {},
-            "documentation": {
-                "file": {},
-                "inputElement": {},
-                "layer": {},
-                "theme": {},
-                "url_parameter": {},
-                "visualisation": {}
-            },
-            "dream": {},
-            "help": {},
-            "info": {},
-            "language": {},
-            "role": {},
-            "scheme": {},
-            "search": {},
-            "shutdown": {},
-            "tags": {},
-            "welcome": {},
-            "wiki": {}
-        }
     },
     "move": {
         "cancel": "Cancel·lar moviment",
@@ -574,12 +539,17 @@
     },
     "translations": {
         "activateButton": "Ajudar a traduir MapComplete",
-        "completeness": "Les traduccions de {theme} en {language} tenen un {percentage}%: {translated} cadenes de {total} es tradueixen",
+        "completeness": "Les traduccions de {theme} en {language} tenen un {percentage}%: {translated} cadenes de {total} estan traduïdes",
         "deactivate": "Deshabilitar els botons de traducció",
         "help": "Fes clic a la icona 'tradueix' al costat d'una cadena per introduir o actualitzar un fragment de text. Necessites un compte de Weblate per a això. Crea'n un amb el teu nom d'usuari OSM per desbloquejar automàticament el mode de traducció.",
         "isTranslator": "El mode de traducció està actiu, ja que el vostre nom d'usuari coincideix amb el nom d'un traductor anterior",
         "missing": "{count} cadenes sense traduir",
         "notImmediate": "Les traduccions no s'actualitzen directament. Això sol trigar uns quants dies"
+    },
+    "userinfo": {
+        "gotoInbox": "Obre la teva safata d'entrada",
+        "gotoSettings": "Aneu a la vostra configuració a OpenStreetMap.org",
+        "moveToHome": "Mou el mapa a la vostra ubicació de casa"
     },
     "validation": {
         "color": {
@@ -591,7 +561,6 @@
         "direction": {
             "description": "Una orientació"
         },
-        "distance": {},
         "email": {
             "description": "Adreça de correu electrònic",
             "feedback": "Aquesta adreça de correu electrònic no és vàlida",

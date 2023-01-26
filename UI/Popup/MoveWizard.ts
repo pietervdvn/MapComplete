@@ -23,6 +23,7 @@ import SearchAndGo from "../BigComponents/SearchAndGo"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
 import { And } from "../../Logic/Tags/And"
 import { Tag } from "../../Logic/Tags/Tag"
+import { LoginToggle } from "./LoginButton"
 
 interface MoveReason {
     text: Translation | string
@@ -220,7 +221,7 @@ export default class MoveWizard extends Toggle {
 
         const dialogClasses = "p-2 md:p-4 m-2 border border-gray-400 rounded-xl flex flex-col"
 
-        const moveFlow = new Toggle(
+        const moveFlow = new LoginToggle(
             new VariableUiElement(
                 currentStep.map((currentStep) => {
                     switch (currentStep) {
@@ -246,8 +247,8 @@ export default class MoveWizard extends Toggle {
                     }
                 })
             ),
-            loginButton,
-            state.osmConnection.isLoggedIn
+            undefined,
+            state
         )
         let id = featureToMove.properties.id
         const backend = state.osmConnection._oauth_config.url
@@ -284,5 +285,13 @@ export default class MoveWizard extends Toggle {
             ]).SetClass("flex m-2 p-2 rounded-lg bg-gray-200"),
             moveDisallowedReason.map((r) => r === undefined)
         )
+
+        const self = this
+        currentStep.addCallback((state) => {
+            if (state === "start") {
+                return
+            }
+            self.ScrollIntoView()
+        })
     }
 }

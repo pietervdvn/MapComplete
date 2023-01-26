@@ -17,6 +17,7 @@ import {
 } from "./Json/QuestionableTagRenderingConfigJson"
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import { Paragraph } from "../../UI/Base/Paragraph"
+import Svg from "../../Svg"
 
 export interface Mapping {
     readonly if: UploadableTag
@@ -86,7 +87,7 @@ export default class TagRenderingConfig {
 
         let translationKey = context
         if (json["id"] !== undefined) {
-            const layerId = context.split(".")[0]
+            const layerId = (context ?? "").split(".")[0]
             if (json["source"]) {
                 let src = json["source"] + ":"
                 if (json["source"] === "shared-questions") {
@@ -398,7 +399,17 @@ export default class TagRenderingConfig {
         let iconClass = commonSize
         if (mapping.icon !== undefined) {
             if (typeof mapping.icon === "string" && mapping.icon !== "") {
-                icon = mapping.icon
+                if (
+                    Svg.All[mapping.icon] !== undefined ||
+                    Svg.All[mapping.icon + ".svg"] !== undefined
+                ) {
+                    icon = "./assets/svg/" + mapping.icon
+                    if (!icon.endsWith(".svg")) {
+                        icon += ".svg"
+                    }
+                } else {
+                    icon = mapping.icon
+                }
             } else {
                 icon = mapping.icon["path"]
                 iconClass = mapping.icon["class"] ?? iconClass

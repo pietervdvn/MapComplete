@@ -120,11 +120,11 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
-The question is  *What is the name of this pub?*
+The question is  *What is the name of this business?*
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
-This is rendered with  `This pub is named {name}`
+This is rendered with  `This business is named {name}`
 
 
 
@@ -172,13 +172,13 @@ The question is  *What is the website of {title()}?*
 
 This rendering asks information about the property  [website](https://wiki.openstreetmap.org/wiki/Key:website) 
 
-This is rendered with  `<a href='{website}' target='_blank'>{website}</a>`
+This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>`
 
 
 
 
 
-  - *<a href='{contact:website}' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
+  - *<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>*  corresponds with  `contact:website~.+`
   - This option cannot be chosen as answer
 
 

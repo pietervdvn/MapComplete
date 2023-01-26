@@ -166,7 +166,7 @@
         }
     },
     "atm": {
-        "description": "DAB pour retirer de l'argent",
+        "description": "DABs pour retirer de l'argent",
         "name": "DABs",
         "presets": {
             "0": {
@@ -403,22 +403,22 @@
             "bench-material": {
                 "mappings": {
                     "0": {
-                        "then": "Matériau : bois"
+                        "then": "Matériau du siège : bois"
                     },
                     "1": {
-                        "then": "Matériau : métal"
+                        "then": "Matériau du siège : métal"
                     },
                     "2": {
                         "then": "Matériau : pierre"
                     },
                     "3": {
-                        "then": "Matériau : béton"
+                        "then": "Matériau du siège : béton"
                     },
                     "4": {
                         "then": "Matériau : plastique"
                     },
                     "5": {
-                        "then": "Matériau : acier"
+                        "then": "Matériau  du siège : acier"
                     }
                 },
                 "question": "De quel matériau ce banc est-il fait ?",
@@ -773,9 +773,6 @@
                 "mappings": {
                     "0": {
                         "then": "Service de nettoyage gratuit"
-                    },
-                    "1": {
-                        "then": "Libre d'utilisation"
                     }
                 },
                 "question": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?",
@@ -1479,6 +1476,9 @@
                     },
                     "1": {
                         "question": "Dispose d’une <div style='display: inline-block'><b><b>prise murale Schuko</b> sans terre (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
+                    },
+                    "6": {
+                        "question": "A un connecteur de   <div style='display: inline-block'><b>Type 1 <i>sans</i> câble (J1772) càd  Type 1 Combo </b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     }
                 }
             }
@@ -1549,6 +1549,18 @@
                     }
                 },
                 "question": "L’escalade de bloc est-elle possible ici ?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "Grimper ici est gratuit"
+                    },
+                    "1": {
+                        "then": "Il faut payer une taxe pour grimper ici"
+                    }
+                },
+                "question": "Est-ce que la grimpe sur ce site est payante ?",
+                "render": "Une taxe de {charge} doit être payée pour grimper ici"
             },
             "max_difficulty": {
                 "question": "Quel est le niveau de la voie la plus difficile selon la classification franco-belge ?",
@@ -1658,7 +1670,7 @@
         "presets": {
             "0": {
                 "description": "Un club d’escalade",
-                "title": "une club d’escalade"
+                "title": "un club d’escalade"
             },
             "1": {
                 "description": "Une association d’escalade",
@@ -1684,8 +1696,44 @@
         "description": "Une salle d’escalade",
         "name": "Salle d’escalade",
         "tagRenderings": {
+            "Speed climbing?": {
+                "mappings": {
+                    "0": {
+                        "then": "Il y a un mur d'escalade de vitesse"
+                    },
+                    "1": {
+                        "then": "Il n'y a pas de mur d'escalade de vitesse"
+                    },
+                    "2": {
+                        "then": "Il existe {climbing:speed} murs d'escalade de vitesse"
+                    }
+                },
+                "question": "Y a-t-il un mur d'escalade de vitesse ?"
+            },
+            "harness_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Un baudrier d'escalade peut être loué ici"
+                    },
+                    "1": {
+                        "then": "Un baudrier d'escalade ne peut <b>pas</b> être loué ici"
+                    }
+                },
+                "question": "Peut-on louer un baudrier d'escalade ici ?"
+            },
             "name": {
                 "question": "Quel est le nom de la salle d’escalade ?"
+            },
+            "shoe_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Les chaussures d'escalade peuvent être louées ici"
+                    },
+                    "1": {
+                        "then": "Les chaussures d'escalade ne peuvent <b>pas</b> être louées ici"
+                    }
+                },
+                "question": "Peut-on louer des chaussures d'escalade ici ?"
             }
         },
         "title": {
@@ -1723,6 +1771,7 @@
         }
     },
     "climbing_route": {
+        "description": "Une seule voie d'escalade et ses propriétés. Certaines propriétés sont dérivées des objets qui les contiennent",
         "name": "Voies d’escalade",
         "presets": {
             "0": {
@@ -1795,7 +1844,7 @@
                         "then": "Ce passage n'a pas d'île au milieu"
                     }
                 },
-                "question": "Est-ce que ce passage a une île au milieu ?"
+                "question": "Est-ce que ce passage a un refuge au milieu ?"
             },
             "crossing-is-zebra": {
                 "mappings": {
@@ -1907,10 +1956,10 @@
             "Cycleway:smoothness": {
                 "mappings": {
                     "0": {
-                        "then": "Utilisable pour les patins: patins à roulettes, skateboard"
+                        "then": "Utilisable pour les patins : patins à roulettes, skateboard"
                     },
                     "1": {
-                        "then": "Utilisable pour les roues fines: vélo de course"
+                        "then": "Utilisable pour les roues fines : vélo de course"
                     },
                     "2": {
                         "then": "Utilisable pour les roues traditionelles : vélo, chaise roulante, trotinettes"
@@ -1981,13 +2030,13 @@
             "Is this a cyclestreet? (For a road)": {
                 "mappings": {
                     "0": {
-                        "then": "Ceci est une route cyclable, et une zone à 30 km/h"
+                        "then": "Ceci est une rue cyclable, et une zone à 30 km/h"
                     },
                     "1": {
                         "then": "Ceci est une route cyclable"
                     },
                     "2": {
-                        "then": "Ceci n'est pas une route cyclable"
+                        "then": "Ceci n'est pas une rue cyclable"
                     }
                 },
                 "question": "Est-ce une route cyclable ?"
@@ -2061,7 +2110,7 @@
             "Surface of the street": {
                 "mappings": {
                     "0": {
-                        "then": "Utilisable pour les patins: patins à roulettes, skateboard"
+                        "then": "Utilisable pour les patins : patins à roulettes, skateboard"
                     },
                     "1": {
                         "then": "Utilisable pour les roues fines : vélo de course"
@@ -2826,21 +2875,21 @@
         },
         "description": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
         "filter": {
-            "1": {
+            "2": {
                 "options": {
                     "0": {
                         "question": "A un menu végétarien"
                     }
                 }
             },
-            "2": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "A un menu végétalien"
                     }
                 }
             },
-            "3": {
+            "4": {
                 "options": {
                     "0": {
                         "question": "A un menu halal"
@@ -3874,6 +3923,9 @@
             "render": "School <i>{name}</i>"
         }
     },
+    "selected_element": {
+        "description": "Met en surbrillance l'élément actuellement sélectioné. Surcharger cette couche pour avoir d'autres couleurs."
+    },
     "shops": {
         "deletion": {
             "extraDeleteReasons": {
@@ -4561,6 +4613,14 @@
             }
         },
         "tagRenderings": {
+            "circumference": {
+                "question": "Quelle est la circonférence du tronc ? <p class='subtle'>La mesure est effectuée à 1.30m de hauteur</p>",
+                "render": "Le tronc a une circonférence de {circumference} mètre(s)"
+            },
+            "height": {
+                "question": "Quelle est la hauteur de cette arbre ?",
+                "render": "Cet arbre a une hauteur de {height} mètre(s)"
+            },
             "tree-decidouous": {
                 "mappings": {
                     "0": {
@@ -4604,7 +4664,7 @@
             "tree-heritage": {
                 "mappings": {
                     "0": {
-                        "then": "Fait partie du patrimoine par <i>Onroerend Erfgoed</i>"
+                        "then": "Inscrit au registre du Patrimoine Immobilier (<i>Onroerend Erfgoed</i>) Flammand"
                     },
                     "1": {
                         "then": "Enregistré comme patrimoine par la <i>Direction du Patrimoine culturel</i> Bruxelles"
@@ -4661,7 +4721,19 @@
         }
     },
     "veterinary": {
-        "name": "vétérinaire"
+        "name": "vétérinaire",
+        "presets": {
+            "0": {
+                "description": "un vétérinaire, qui soigne les chiens",
+                "title": "un vétérinaire"
+            }
+        },
+        "tagRenderings": {
+            "vetName": {
+                "question": "Quel est le nom de ce vétérinaire ?",
+                "render": "Le nom de ce vétérinaire est {name}"
+            }
+        }
     },
     "viewpoint": {
         "description": "Un beau point de vue ou une belle vue. Idéal pour ajouter une image si aucune autre catégorie ne convient",
@@ -4708,6 +4780,14 @@
             }
         }
     },
+    "waste_basket": {
+        "description": "c'est une poubelle publique dans laquelle vous pouvez jeter vos mégots.",
+        "presets": {
+            "0": {
+                "title": "un poubelle"
+            }
+        }
+    },
     "windturbine": {
         "name": "Éolienne",
         "presets": {
@@ -4735,6 +4815,9 @@
             "turbine-start-date": {
                 "question": "Depuis quand l’éolienne est-elle en fonctionnement ?",
                 "render": "L’éolienne est active depuis {start_date}."
+            },
+            "windturbine-fixme": {
+                "render": "Informations supplémentaires pour les experts d'OpenStreetMap : {fixme}"
             }
         },
         "title": {

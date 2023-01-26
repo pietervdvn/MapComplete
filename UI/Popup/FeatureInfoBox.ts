@@ -124,9 +124,15 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                 tags
                     .map((data) => data[Tag.newlyCreated.key])
                     .map((isCreated) => {
-                        if (isCreated !== Tag.newlyCreated.value) {
+                        if (isCreated === undefined) {
                             return undefined
                         }
+                        const createdDate = new Date(isCreated)
+                        const secondsSinceCreation = (Date.now() - createdDate.getTime()) / 1000
+                        if (secondsSinceCreation >= 60 * 5) {
+                            return undefined
+                        }
+
                         const els = []
                         const thanks = new Combine([
                             Svg.party_svg().SetClass(

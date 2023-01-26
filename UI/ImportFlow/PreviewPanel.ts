@@ -10,24 +10,19 @@ import Histogram from "../BigComponents/Histogram"
 import Toggleable from "../Base/Toggleable"
 import List from "../Base/List"
 import CheckBoxes from "../Input/Checkboxes"
+import { Feature, Point } from "geojson"
 
 /**
  * Shows the attributes by value, requests to check them of
  */
 export class PreviewAttributesPanel
     extends Combine
-    implements
-        FlowStep<{ features: { properties: any; geometry: { coordinates: [number, number] } }[] }>
+    implements FlowStep<{ features: Feature<Point>[] }>
 {
     public readonly IsValid: Store<boolean>
-    public readonly Value: Store<{
-        features: { properties: any; geometry: { coordinates: [number, number] } }[]
-    }>
+    public readonly Value: Store<{ features: Feature<Point>[] }>
 
-    constructor(
-        state: UserRelatedState,
-        geojson: { features: { properties: any; geometry: { coordinates: [number, number] } }[] }
-    ) {
+    constructor(state: UserRelatedState, geojson: { features: Feature<Point>[] }) {
         const t = Translations.t.importHelper.previewAttributes
 
         const propertyKeys = new Set<string>()
@@ -93,9 +88,7 @@ export class PreviewAttributesPanel
             confirm,
         ])
 
-        this.Value = new UIEventSource<{
-            features: { properties: any; geometry: { coordinates: [number, number] } }[]
-        }>(geojson)
+        this.Value = new UIEventSource<{ features: Feature<Point>[] }>(geojson)
         this.IsValid = confirm.GetValue().map((selected) => selected.length == 1)
     }
 }

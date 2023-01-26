@@ -456,9 +456,19 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         console.log("Added custom css file ", location)
     }
 
+    public static PushList<T>(target: T[], source?: T[]) {
+        if (source === undefined) {
+            return
+        }
+        target.push(...source)
+    }
+
     /**
      * Copies all key-value pairs of the source into the target. This will change the target
      * If the key starts with a '+', the values of the list will be appended to the target instead of overwritten
+     * If the key starts with `=`, the property will be overwritten.
+     *
+     * 'Source' will not be modified, but 'Target' will be
      *
      * const obj = {someValue: 42};
      * const override = {someValue: null};
@@ -494,7 +504,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * result.list2.length // =>  1
      * result.list2[0] // => "should-be-untouched"
      */
-    static Merge<T, S>(source: S, target: T): T & S {
+    static Merge<T, S>(source: Readonly<S>, target: T): T & S {
         if (target === null) {
             return <T & S>source
         }
@@ -900,7 +910,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         url: string,
         maxCacheTimeMs: number,
         headers?: any
-    ): Promise<any | { error: string; url: string; statuscode?: number }> {
+    ): Promise<{ content: any } | { error: string; url: string; statuscode?: number }> {
         const cached = Utils._download_cache.get(url)
         if (cached !== undefined) {
             if (new Date().getTime() - cached.timestamp <= maxCacheTimeMs) {
@@ -1072,6 +1082,16 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             },
             false
         )
+    }
+
+    public static preventDefaultOnMouseEvent(event: any) {
+        event?.originalEvent?.preventDefault()
+        event?.originalEvent?.stopPropagation()
+        event?.originalEvent?.stopImmediatePropagation()
+        if (event?.originalEvent) {
+            // This is a total workaround, as 'preventDefault' and everything above seems to be not working
+            event.originalEvent["dismissed"] = true
+        }
     }
 
     public static OsmChaLinkFor(daysInThePast, theme = undefined): string {

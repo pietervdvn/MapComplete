@@ -1,5 +1,34 @@
 {
     "shared_questions": {
+        "denominations-coins": {
+            "mappings": {
+                "0": {
+                    "then": "Se aceptan monedas de 1 céntimo"
+                },
+                "1": {
+                    "then": "Se aceptan monedas de 2 céntimos"
+                },
+                "2": {
+                    "then": "Se aceptan monedas de 5 céntimos"
+                },
+                "3": {
+                    "then": "Se aceptan monedas de 10 céntimos"
+                },
+                "4": {
+                    "then": "Se aceptan monedas de 20 céntimos"
+                },
+                "5": {
+                    "then": "Se aceptan monedas de 50 céntimos"
+                },
+                "6": {
+                    "then": "Se aceptan monedas de 1 euro"
+                },
+                "7": {
+                    "then": "Se aceptan monedas de 2 euros"
+                }
+            },
+            "question": "¿Qué monedas se pueden usar aquí para pagar?"
+        },
         "description": {
             "question": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.<br/><span style='font-size: small'>No repita datos ya expresados</span>"
         },
@@ -45,13 +74,17 @@
         },
         "internet-fee": {
             "mappings": {
+                "0": {
+                    "then": "Hay que pagar para acceder a internet en este lugar"
+                },
                 "1": {
                     "then": "El acceso a internet es gratuito en este lugar"
                 },
                 "2": {
                     "then": "El acceso a internet es gratis en este lugar, solamente para clientes"
                 }
-            }
+            },
+            "question": "¿Hay que pagar para acceder a internet?"
         },
         "internet-ssid": {
             "freeform": {
@@ -100,6 +133,18 @@
                 }
             }
         },
+        "opening_hours_by_appointment": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Sólo con cita previa"
+                    },
+                    "1": {
+                        "then": "Sólo con cita previa"
+                    }
+                }
+            }
+        },
         "payment-options": {
             "mappings": {
                 "0": {
@@ -119,6 +164,24 @@
                     },
                     "1": {
                         "then": "El pago se realiza con una tarjeta de membresía"
+                    }
+                }
+            }
+        },
+        "payment-options-split": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Aquí se aceptan monedas"
+                    },
+                    "1": {
+                        "then": "Aquí se aceptan billetes"
+                    },
+                    "2": {
+                        "then": "Aquí se aceptan tarjetas de débito"
+                    },
+                    "3": {
+                        "then": "Aquí se aceptan tarjetas de crédito"
                     }
                 }
             }

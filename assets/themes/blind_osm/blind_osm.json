@@ -5,13 +5,15 @@
     "de": "OSM für Blinde",
     "nl": "OSM voor blinden",
     "fr": "OSM pour les malvoyants",
-    "nb_NO": "OSM for blinde"
+    "nb_NO": "OSM for blinde",
+    "ca": "OSM per als cecs"
   },
   "description": {
     "en": "Help to map features relevant for the blind",
     "de": "Hilfe zur Kartierung blindenrelevanter Merkmale",
     "nl": "Help zaken die relevant zijn voor blinden in kaart te brengen",
-    "fr": "Aidez à cartographier les caractéristiques importantes pour les malvoyants"
+    "fr": "Aidez à cartographier les caractéristiques importantes pour les malvoyants",
+    "ca": "Ajuda a mapejar elements rellevants per a persones amb discapacitat visual"
   },
   "icon": "./assets/themes/blind_osm/Blindicon.svg",
   "startLat": 52.99238,

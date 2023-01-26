@@ -190,6 +190,27 @@
         "type": "date"
       }
     },
+    {
+      "render": {
+        "en": "Extra information for OpenStreetMap experts: {fixme}",
+        "nl": "Extra informatie voor OpenStreetMap experts: {fixme}",
+        "fr": "Informations supplémentaires pour les experts d'OpenStreetMap : {fixme}",
+        "it": "Informazioni supplementari per gli esperti di OpenStreetMap: {fixme}",
+        "de": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}",
+        "ru": "Дополнительная информация для экспертов OpenStreetMap: {fixme}",
+        "sl": "Dodatne informacije za OpenStreetMap strokovnjake: {fixme}",
+        "es": "Información extra para expertos en OpenStreetMap: {fixme}"
+      },
+      "question": {
+        "en": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)",
+        "nl": "Is er iets mis met de informatie over deze windturbine dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)"
+      },
+      "freeform": {
+        "key": "fixme",
+        "type": "text"
+      },
+      "id": "windturbine-fixme"
+    },
     "images"
   ],
   "presets": [

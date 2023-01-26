@@ -1,0 +1,102 @@
+{
+  "id": "usersettings",
+  "description": {
+    "en": "A special layer which is not meant to be shown on a map, but which is used to set user settings"
+  },
+  "title": null,
+  "source": {
+    "osmTags": "id~*"
+  },
+  "calculatedTags": [
+    "_mastodon_candidate_md=feat.properties._description.match(/\\[[^\\]]*\\]\\((.*(mastodon|en.osm.town).*)\\).*/)?.at(1)",
+    "_d=feat.properties._description?.replace(/&lt;/g,'<')?.replace(/&gt;/g,'>') ?? ''",
+    "_mastodon_candidate_a=(feat => {const e = document.createElement('div');e.innerHTML = feat.properties._d;return Array.from(e.getElementsByTagName(\"a\")).filter(a => a.href.match(/mastodon|en.osm.town/) !== null)[0]?.href   }) (feat) ",
+    "_mastodon_link=(feat => {const e = document.createElement('div');e.innerHTML = feat.properties._d;return Array.from(e.getElementsByTagName(\"a\")).filter(a => a.getAttribute(\"rel\")?.indexOf('me') >= 0)[0]?.href})(feat) ",
+    "_mastodon_candidate=feat.properties._mastodon_candidate_md ?? feat.properties._mastodon_candidate_a"
+  ],
+  "tagRenderings": [
+    {
+      "id": "picture-license",
+      "description": "This question is not meant to be placed on an OpenStreetMap-element; however it is used in the user information panel to ask which license the user wants",
+      "question": {
+        "en": "Under what license do you want to publish your pictures?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-pictures-license=",
+          "then": {
+            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>"
+          },
+          "hideInAnswer": true
+        },
+        {
+          "if": "mapcomplete-pictures-license=CC0",
+          "then": {
+            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose."
+          }
+        },
+        {
+          "if": "mapcomplete-pictures-license=CC-BY 4.0",
+          "then": {
+            "en": "Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you"
+          }
+        },
+        {
+          "if": "mapcomplete-pictures-license=CC-BY-SA 4.0",
+          "then": {
+            "en": "Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license."
+          }
+        }
+      ]
+    },
+    {
+      "id": "verified-mastodon",
+      "mappings": [
+        {
+          "if": "_mastodon_link~*",
+          "then": {
+            "en": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+          },
+          "icon": "mastodon"
+        },
+        {
+          "if": "_mastodon_candidate~*",
+          "then": {
+            "en": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+          },
+          "icon": "invalid"
+        }
+      ]
+    },
+    {
+      "id": "translation-thanks",
+      "mappings": [
+        {
+          "if": "_translation_contributions>0",
+          "then": {
+            "en": "You have contributed to translating MapComplete! That's awesome!"
+          },
+          "icon": "party"
+        }
+      ]
+    },
+    {
+      "id": "contributor-thanks",
+      "mappings": [
+        {
+          "if": "_code_contributions>0",
+          "then": {
+            "en": "You have contributed code to MapComplete with {_code_contributions} commits! That's awesome!"
+          },
+          "icon": "party"
+        }
+      ]
+    },
+    {
+      "id": "debug",
+      "condition": "_name=Pieter Vander Vennet",
+      "render": "{all_tags()}"
+    }
+  ],
+  "mapRendering": null
+}

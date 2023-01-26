@@ -7,6 +7,7 @@ import { VariableUiElement } from "../Base/VariableUIElement"
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import { Unit } from "../../Models/Unit"
 import Lazy from "../Base/Lazy"
+import { OsmServiceState } from "../../Logic/Osm/OsmConnection"
 
 /**
  * Generates all the questions, one by one
@@ -119,30 +120,34 @@ export default class QuestionBox extends VariableUiElement {
         )
 
         super(
-            questionsToAsk.map((allQuestions) => {
-                const els: BaseUIElement[] = []
-                if (
-                    options.showAllQuestionsAtOnce === true ||
-                    options.showAllQuestionsAtOnce["data"]
-                ) {
-                    els.push(...questionsToAsk.data)
-                } else {
-                    els.push(allQuestions[0])
-                }
+            questionsToAsk.map(
+                (allQuestions) => {
+                    const apiState: OsmServiceState = state.osmConnection.apiIsOnline.data
+                    if (apiState !== "online" && apiState !== "unknown") {
+                        return undefined
+                    }
+                    const els: BaseUIElement[] = []
+                    if (
+                        options.showAllQuestionsAtOnce === true ||
+                        options.showAllQuestionsAtOnce["data"]
+                    ) {
+                        els.push(...questionsToAsk.data)
+                    } else {
+                        els.push(allQuestions[0])
+                    }
 
-                if (skippedQuestions.data.length > 0) {
-                    els.push(skippedQuestionsButton)
-                }
+                    if (skippedQuestions.data.length > 0) {
+                        els.push(skippedQuestionsButton)
+                    }
 
-                return new Combine(els).SetClass("block mb-8")
-            })
+                    return new Combine(els).SetClass("block mb-8")
+                },
+                [state.osmConnection.apiIsOnline]
+            )
         )
 
         this.skippedQuestions = skippedQuestions
         this.restingQuestions = questionsToAsk
-        focus = () =>
-            this.ScrollIntoView({
-                onlyIfPartiallyHidden: true,
-            })
+        focus = () => this.ScrollIntoView()
     }
 }

@@ -7,6 +7,10 @@
         "description": "Een vrije kaart met standbeelden, bustes, graffiti en andere kunstwerken van over de hele wereld",
         "title": "Open kunstwerken-kaart"
     },
+    "atm": {
+        "description": "Deze kaart toont geldautomaten waar je geld kunt afhalen of geld op de bank kan zetten",
+        "title": "Geldautomaten"
+    },
     "bag": {
         "description": "Dit thema helpt het importeren van BAG data",
         "layers": {
@@ -435,7 +439,7 @@
         "title": "Fietsknooppuntennetwerken"
     },
     "cyclestreets": {
-        "description": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
+        "description": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. <b>Fietszones</b> worden aangeduid door elke straat apart als fietsstraat te markeren. <br/>Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
         "layers": {
             "0": {
                 "description": "Een fietsstraat is een straat waar gemotoriseerd verkeer een fietser niet mag inhalen",
@@ -516,7 +520,7 @@
             }
         },
         "shortDescription": "Een kaart met alle gekende fietsstraten",
-        "title": "Fietsstraten"
+        "title": "Fietsstraten en fietszones"
     },
     "cyclofix": {
         "description": "Het doel van deze kaart is om fietsers een gebruiksvriendelijke oplossing te bieden voor het vinden van de juiste infrastructuur voor hun behoeften.<br><br>U kunt uw exacte locatie volgen (enkel mobiel) en in de linkerbenedenhoek categorieën selecteren die voor u relevant zijn. U kunt deze tool ook gebruiken om 'spelden' aan de kaart toe te voegen of te bewerken en meer gegevens te verstrekken door de vragen te beantwoorden.<br><br>Alle wijzigingen die u maakt worden automatisch opgeslagen in de wereldwijde database van OpenStreetMap en kunnen  door anderen vrij worden hergebruikt.<br><br>Bekijk voor meer info over cyclofix ook <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
@@ -935,12 +939,19 @@
                         }
                     }
                 },
+                "name": "Middelpunt van de wijzigingenset",
                 "tagRenderings": {
                     "contributor": {
+                        "question": "Welke bijdrager maakte deze wijziging?",
                         "render": "Wijziging gemaakt door <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
                     },
                     "host": {
+                        "question": "Op welk webadres werd deze wijziging gemaakt?",
                         "render": "Wijziging met <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "In welke taal (en cultuur) werd deze wijziging gemaakt?",
+                        "render": "De locale van de bijdrager is {locale}"
                     },
                     "show_changeset_id": {
                         "render": "Wijzigingenset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
@@ -1034,6 +1045,11 @@
                             }
                         }
                     }
+                }
+            },
+            "8": {
+                "override": {
+                    "name": "Parkeerplaatsen voor personen met een beperking"
                 }
             },
             "19": {

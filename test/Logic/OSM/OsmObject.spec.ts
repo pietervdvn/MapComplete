@@ -89,7 +89,7 @@ describe("OsmObject", () => {
             ScriptUtils.fixUtils()
             Utils.injectJsonDownloadForTests(
                 "https://www.openstreetmap.org/api/0.6/relation/5759328/full",
-                JSON.parse(readFileSync("./test/data/relation_5759328.json", "UTF-8"))
+                JSON.parse(readFileSync("./test/data/relation_5759328.json", { encoding: "utf-8" }))
             )
             const r = await OsmObject.DownloadObjectAsync("relation/5759328").then((x) => x)
             const geojson = r.asGeoJson()

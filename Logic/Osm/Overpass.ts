@@ -3,7 +3,7 @@ import RelationsTracker from "./RelationsTracker"
 import { Utils } from "../../Utils"
 import { ImmutableStore, Store } from "../UIEventSource"
 import { BBox } from "../BBox"
-import * as osmtogeojson from "osmtogeojson"
+import osmtogeojson from "osmtogeojson"
 import { FeatureCollection } from "@turf/turf"
 
 /**
@@ -69,7 +69,7 @@ export class Overpass {
         }
 
         self._relationTracker?.RegisterRelations(json)
-        const geojson = osmtogeojson.default(json)
+        const geojson = osmtogeojson(json)
         const osmTime = new Date(json.osm3s.timestamp_osm_base)
         return [<any>geojson, osmTime]
     }

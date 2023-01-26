@@ -27,24 +27,26 @@ import { GeoOperations } from "../../Logic/GeoOperations"
 import FeatureInfoBox from "../Popup/FeatureInfoBox"
 import { ImportUtils } from "./ImportUtils"
 import Translations from "../i18n/Translations"
-import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer"
-import FilteredLayer, { FilterState } from "../../Models/FilteredLayer"
-import { Feature, FeatureCollection } from "@turf/turf"
 import * as currentview from "../../assets/layers/current_view/current_view.json"
 import { CheckBox } from "../Input/Checkboxes"
 import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch"
+import { Feature, FeatureCollection, Point } from "geojson"
+import DivContainer from "../Base/DivContainer"
 
 /**
  * Given the data to import, the bbox and the layer, will query overpass for similar items
  */
 export default class ConflationChecker
     extends Combine
-    implements FlowStep<{ features: any[]; theme: string }>
+    implements FlowStep<{ features: Feature<Point>[]; theme: string }>
 {
     public readonly IsValid
-    public readonly Value: Store<{ features: any[]; theme: string }>
+    public readonly Value: Store<{ features: Feature<Point>[]; theme: string }>
 
-    constructor(state, params: { bbox: BBox; layer: LayerConfig; theme: string; features: any[] }) {
+    constructor(
+        state,
+        params: { bbox: BBox; layer: LayerConfig; theme: string; features: Feature<Point>[] }
+    ) {
         const t = Translations.t.importHelper.conflationChecker
 
         const bbox = params.bbox.padAbsolute(0.0001)
@@ -175,15 +177,8 @@ export default class ConflationChecker
             features: StaticFeatureSource.fromGeojson([bbox.asGeoJson({})]),
         })
 
-        new ShowDataMultiLayer({
-            //layerToShow: layer,
-            layers: new UIEventSource<FilteredLayer[]>([
-                {
-                    layerDef: layer,
-                    isDisplayed: new UIEventSource<boolean>(true),
-                    appliedFilters: new UIEventSource<Map<string, FilterState>>(undefined),
-                },
-            ]),
+        new ShowDataLayer({
+            layerToShow: layer,
             state,
             leafletMap: osmLiveData.leafletMap,
             popup: (tags, layer) => new FeatureInfoBox(tags, layer, state, { setHash: false }),
@@ -239,7 +234,7 @@ export default class ConflationChecker
 
         // Featuresource showing OSM-features which are nearby a toImport-feature
         const toImportWithNearby = StaticFeatureSource.fromGeojsonStore(
-            paritionedImport.map((els) => els?.hasNearby ?? [])
+            paritionedImport.map((els) => <Feature[]>els?.hasNearby ?? [])
         )
         toImportWithNearby.features.addCallback((nearby) =>
             console.log("The following features are near an already existing object:", nearby)
@@ -325,6 +320,7 @@ export default class ConflationChecker
                     })
                 ),
             ]).SetClass("flex"),
+            new DivContainer("fullscreen"),
             new Title(t.titleNearby),
             new Combine([t.mapShowingNearbyIntro, nearbyCutoff]).SetClass("flex"),
             new VariableUiElement(
@@ -369,7 +365,7 @@ export default class ConflationChecker
 
         this.Value = paritionedImport.map((feats) => ({
             theme: params.theme,
-            features: feats?.noNearby,
+            features: <any>feats?.noNearby,
             layer: params.layer,
         }))
         this.IsValid = this.Value.map((v) => v?.features !== undefined && v.features.length > 0)

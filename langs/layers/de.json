@@ -185,9 +185,6 @@
             }
         },
         "tagRenderings": {
-            "atm-in-bank-notice": {
-                "render": "Dieser Geldautomat befindet sich in oder in der Nähe einer Bank"
-            },
             "brand": {
                 "freeform": {
                     "placeholder": "Markenname"
@@ -261,6 +258,35 @@
                 }
             },
             "render": "Geldautomat"
+        }
+    },
+    "bank": {
+        "description": "Ein Finanzinstitut, um Geld einzuzahlen",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Mit einem Geldautomaten"
+                    }
+                }
+            }
+        },
+        "name": "Banken",
+        "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Diese Bank hat einen Geldautomaten"
+                    },
+                    "1": {
+                        "then": "Diese Bank hat <b>keinen</b> Geldautomaten"
+                    },
+                    "2": {
+                        "then": "Diese Bank hat zwar einen Geldautomaten, aber dieser ist mit einem anderen Symbol dargestellt"
+                    }
+                },
+                "question": "Hat diese Bank einen Geldautomaten?"
+            }
         }
     },
     "barrier": {
@@ -835,10 +861,10 @@
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
-                        "then": "Kostenloser Reinigungsservice"
+                        "then": "Der Reinigungsservice ist kostenlos"
                     },
                     "1": {
-                        "then": "Kostenlose Nutzung"
+                        "then": "Dieser Reinigungsservice ist kostenpflichtig"
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
@@ -2701,6 +2727,11 @@
     "climbing_gym": {
         "description": "Eine Kletterhalle",
         "name": "Kletterhallen",
+        "presets": {
+            "0": {
+                "title": "Kletterhalle"
+            }
+        },
         "tagRenderings": {
             "Speed climbing?": {
                 "mappings": {
@@ -2716,8 +2747,30 @@
                 },
                 "question": "Gibt es hier eine Speedkletter-Wand?"
             },
+            "harness_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Ein Klettergurt kann hier ausgeliehen werden"
+                    },
+                    "1": {
+                        "then": "Ein Klettergurt kann hier <b>nicht</b> ausgeliehen werden"
+                    }
+                },
+                "question": "Kann man hier einen Klettergurt ausleihen?"
+            },
             "name": {
                 "question": "Wie heißt diese Kletterhalle?"
+            },
+            "shoe_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Kletterschuhe können hier ausgeliehen werden"
+                    },
+                    "1": {
+                        "then": "Kletterschuhe können hier <b>nicht</b> ausgeliehen werden"
+                    }
+                },
+                "question": "Kann man hier Kletterschuhe ausleihen?"
             }
         },
         "title": {
@@ -3644,7 +3697,7 @@
     },
     "elevator": {
         "description": "Diese Ebene zeigt Aufzüge an und fragt nach dem Betriebsstatus und den Abmessungen des Aufzugs. Nützlich für Informationen zur Zugänglichkeit für Rollstuhlfahrer",
-        "name": "Aufzug",
+        "name": "Aufzüge",
         "presets": {
             "0": {
                 "title": "einen Aufzug"
@@ -4179,21 +4232,21 @@
         },
         "description": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
         "filter": {
-            "1": {
+            "2": {
                 "options": {
                     "0": {
                         "question": "Vegetarische Gerichte im Angebot"
                     }
                 }
             },
-            "2": {
+            "3": {
                 "options": {
                     "0": {
                         "question": "Vegane Gerichte im Angebot"
                     }
                 }
             },
-            "3": {
+            "4": {
                 "options": {
                     "0": {
                         "question": "Halal Gerichte im Angebot"
@@ -5777,6 +5830,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Behindertenparkplatz"
+                }
+            },
             "render": "Stellplatz"
         }
     },
@@ -7501,7 +7559,7 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Rollstuhlgerecht"
+                        "question": "Barrierefrei"
                     }
                 }
             },
@@ -8383,6 +8441,9 @@
             "turbine-start-date": {
                 "question": "Wann wurde das Windrad in Betrieb genommen?",
                 "render": "Das Windrad wurde am {start_date} in Betrieb genommen."
+            },
+            "windturbine-fixme": {
+                "render": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}"
             }
         },
         "title": {

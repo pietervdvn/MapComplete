@@ -155,14 +155,13 @@ export class Translation extends BaseUIElement {
             return el
         }
 
-        const linkToWeblate = new LinkToWeblate(self.context, self.translations)
-
         const wrapper = document.createElement("span")
         wrapper.appendChild(el)
         Locale.showLinkToWeblate.addCallbackAndRun((doShow) => {
             if (!doShow) {
                 return
             }
+            const linkToWeblate = new LinkToWeblate(self.context, self.translations)
             wrapper.appendChild(linkToWeblate.ConstructElement())
             return true
         })

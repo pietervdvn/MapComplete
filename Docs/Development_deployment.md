@@ -24,23 +24,23 @@ the switch ;) ). If you are using Visual Studio Code you can use
 a [WSL Remote](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) window, or use the
 Devcontainer (see more details later).
 
+You need at least 3Gb available to run MapComplete.
+
 To develop and build MapComplete, you
 
 0. Make a fork and clone the repository. (We recommend a shallow clone with `git clone --filter=blob:none <repo>`)
-0. Install `python3` if you do not have it already
+1. Install `python3` if you do not have it already
     - On linux: `sudo apt install python3`
     - On windows: find the latest download on the [Python Releases for Windows page](https://www.python.org/downloads/windows/)
-0. Install the nodejs version specified in [/.tool-versions](/.tool-versions)
+2. Install the nodejs version specified in [/.tool-versions](/.tool-versions)
     - On linux: install npm first `sudo apt install npm`, then install `n` using npm: ` npm install -g n`, which can
-      then install node with `n install <node-version>`
-    - You can [use asdf to manage your runtime versions](https://asdf-vm.com/).
-0. Install `npm`. Linux: `sudo apt install npm` (or your favourite package manager), Windows: install
-   nodeJS: https://nodejs.org/en/download/
-0. Run `npm run init` which …
+      then install node with `n install <node-version>`. You can [use asdf to manage your runtime versions](https://asdf-vm.com/).
+    - Windows: install nodeJS: https://nodejs.org/en/download/
+3. Run `npm run init` which …
     - runs `npm install`
     - generates some additional dependencies and files
-0. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
-0. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename`
+4. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
+5. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename`
    or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (
    e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
 

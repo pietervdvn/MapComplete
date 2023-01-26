@@ -4,7 +4,9 @@ import * as fs from "fs"
 
 async function main(args: string[]) {
     if (args.length !== 1) {
-        console.log("Usage: first argument is the fully qualified key of the string to remove")
+        console.log(
+            "Usage: first argument is the fully qualified key of the string to remove. Only removes translations in the core translations"
+        )
         return
     }
     const path = args[0].split(".")

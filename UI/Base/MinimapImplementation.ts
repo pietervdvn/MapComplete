@@ -404,7 +404,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
 
         if (this._options.lastClickLocation) {
             const lastClickLocation = this._options.lastClickLocation
-            map.on("click", function (e: LeafletMouseEvent) {
+            map.addEventListener("click", function (e: LeafletMouseEvent) {
                 if (e.originalEvent["dismissed"]) {
                     return
                 }
@@ -414,6 +414,7 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
             map.on("contextmenu", function (e) {
                 // @ts-ignore
                 lastClickLocation?.setData({ lat: e.latlng.lat, lon: e.latlng.lng })
+                map.setZoom(map.getZoom() + 1)
             })
         }
 

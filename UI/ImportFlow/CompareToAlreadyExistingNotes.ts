@@ -21,6 +21,8 @@ import { VariableUiElement } from "../Base/VariableUIElement"
 import * as known_layers from "../../assets/generated/known_layers.json"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import Translations from "../i18n/Translations"
+import { Feature } from "geojson"
+import DivContainer from "../Base/DivContainer"
 
 /**
  * Filters out points for which the import-note already exists, to prevent duplicates
@@ -105,7 +107,7 @@ export class CompareToAlreadyExistingNotes
             zoomToFeatures: true,
             leafletMap: comparisonMap.leafletMap,
             features: StaticFeatureSource.fromGeojsonStore(
-                partitionedImportPoints.map((p) => p.hasNearby)
+                partitionedImportPoints.map((p) => <Feature[]>p.hasNearby)
             ),
             popup: (tags, layer) => new FeatureInfoBox(tags, layer, state),
         })
@@ -134,7 +136,7 @@ export class CompareToAlreadyExistingNotes
                         return new Combine([
                             t.mapExplanation.Subs(params.features),
                             map,
-
+                            new DivContainer("fullscreen"),
                             new VariableUiElement(
                                 partitionedImportPoints.map(({ noNearby, hasNearby }) => {
                                     if (noNearby.length === 0) {

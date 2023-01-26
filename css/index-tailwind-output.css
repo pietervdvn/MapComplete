@@ -624,6 +624,10 @@ video {
   position: relative;
 }
 
+.\!relative {
+  position: relative !important;
+}
+
 .sticky {
   position: -webkit-sticky;
   position: sticky;
@@ -787,6 +791,11 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -807,16 +816,20 @@ video {
   margin-top: 0.25rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.ml-3 {
-  margin-left: 0.75rem;
-}
-
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mr-4 {
+  margin-right: 1rem;
+}
+
+.mr-6 {
+  margin-right: 1.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .ml-4 {
@@ -827,16 +840,20 @@ video {
   margin-bottom: 6rem;
 }
 
-.mr-4 {
-  margin-right: 1rem;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
 .ml-2 {
   margin-left: 0.5rem;
+}
+
+.ml-3 {
+  margin-left: 0.75rem;
 }
 
 .ml-12 {
@@ -960,12 +977,28 @@ video {
   height: 16rem;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
+.h-16 {
+  height: 4rem;
+}
+
+.h-32 {
+  height: 8rem;
+}
+
 .h-10 {
   height: 2.5rem;
 }
 
 .h-12 {
   height: 3rem;
+}
+
+.h-6 {
+  height: 1.5rem;
 }
 
 .h-4 {
@@ -984,24 +1017,8 @@ video {
   height: 2.75rem;
 }
 
-.h-6 {
-  height: 1.5rem;
-}
-
-.h-8 {
-  height: 2rem;
-}
-
-.h-32 {
-  height: 8rem;
-}
-
 .h-96 {
   height: 24rem;
-}
-
-.h-16 {
-  height: 4rem;
 }
 
 .h-0 {
@@ -1048,6 +1065,18 @@ video {
   width: 1.5rem;
 }
 
+.w-8 {
+  width: 2rem;
+}
+
+.w-16 {
+  width: 4rem;
+}
+
+.w-32 {
+  width: 8rem;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -1072,15 +1101,6 @@ video {
   width: 2.75rem;
 }
 
-.w-8 {
-  width: 2rem;
-}
-
-.w-min {
-  width: -webkit-min-content;
-  width: min-content;
-}
-
 .w-max {
   width: -webkit-max-content;
   width: max-content;
@@ -1090,12 +1110,9 @@ video {
   width: 24rem;
 }
 
-.w-32 {
-  width: 8rem;
-}
-
-.w-16 {
-  width: 4rem;
+.w-min {
+  width: -webkit-min-content;
+  width: min-content;
 }
 
 .w-auto {
@@ -1374,6 +1391,14 @@ video {
   border-bottom-width: 1px;
 }
 
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
+.border-dotted {
+  border-style: dotted;
+}
+
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -1487,6 +1512,11 @@ video {
   padding: 0.125rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
@@ -1547,6 +1577,10 @@ video {
 
 .pr-2 {
   padding-right: 0.5rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
 }
 
 .pl-5 {
@@ -1651,6 +1685,10 @@ video {
 .ordinal {
   --tw-ordinal: ordinal;
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
+}
+
+.leading-none {
+  line-height: 1;
 }
 
 .tracking-tight {
@@ -1862,6 +1900,11 @@ body {
   width: initial !important;
   height: initial !important;
   box-sizing: initial !important;
+}
+
+.leaflet-marker-icon img {
+  -webkit-touch-callout: none;
+  /* prevent callout to copy image, etc when tap to hold */
 }
 
 .leaflet-control-attribution {
@@ -2466,20 +2509,19 @@ input {
   /* The checkbox that toggles a single layer */
 }
 
-.layer-filters {
-  /* If needed, the panel which contains the extra filters for a layer */
-  margin-bottom: 1rem;
-  border-bottom: 2px solid var(--foreground-color);
+.glowing-shadow {
+  -webkit-animation: glowing 1s ease-in-out infinite alternate;
+  animation: glowing 1s ease-in-out infinite alternate;
 }
 
-.filter-panel {
-  /* The panel for a single layer, containing both the toggle and the filters (if any) */
-  border-bottom: 2px solid lightgrey;
-  margin-bottom: 0.5rem;
-}
+@-webkit-keyframes glowing {
+  from {
+    box-shadow: 0 0 20px 10px #eaaf2588, inset 0 0 0px 1px #eaaf25;
+  }
 
-.first-filter-panel {
-  /* Additional class on the first layer filter */
+  to {
+    box-shadow: 0 0 20px 20px #eaaf2588, inset 0 0 5px 1px #eaaf25;
+  }
 }
 
 .mapping-icon-small-height {
@@ -2736,6 +2778,10 @@ input {
 
   .md\:rounded-xl {
     border-radius: 0.75rem;
+  }
+
+  .md\:border-t-2 {
+    border-top-width: 2px;
   }
 
   .md\:p-1 {

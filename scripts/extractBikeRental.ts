@@ -51,7 +51,7 @@ function rewrite(obj, key) {
 
 const stuff = fs.readFileSync(
     "/home/pietervdvn/Documents/Freelance/ToerismeVlaanderen 2021-09/TeImporteren/allchannels-bike_rental.json",
-    "UTF8"
+    { encoding: "utf8" }
 )
 const data: any[] = JSON.parse(stuff)
 

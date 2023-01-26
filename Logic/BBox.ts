@@ -178,7 +178,7 @@ export class BBox {
         ])
     }
 
-    toLeaflet() {
+    toLeaflet(): [[number, number], [number, number]] {
         return [
             [this.minLat, this.minLon],
             [this.maxLat, this.maxLon],

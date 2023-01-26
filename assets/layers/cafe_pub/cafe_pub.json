@@ -34,7 +34,7 @@
         "hu": "kocsma",
         "ca": "un bar",
         "da": "en pub",
-        "es": "un pub",
+        "es": "un bar",
         "fr": "un pub"
       },
       "description": {
@@ -59,9 +59,9 @@
         "de": "eine Bar",
         "ru": "бар",
         "hu": "bár",
-        "ca": "un pub",
+        "ca": "un bar de copes",
         "da": "en bar",
-        "es": "un bar",
+        "es": "un bar de copas",
         "fr": "un bar"
       },
       "description": {
@@ -164,8 +164,8 @@
     "level",
     {
       "question": {
-        "nl": "Wat is de naam van dit café?",
-        "en": "What is the name of this pub?",
+        "nl": "Wat is de naam van deze zaak?",
+        "en": "What is the name of this business?",
         "de": "Wie heißt diese Kneipe?",
         "fr": "Quel est le nom de ce pub ?",
         "hu": "Mi a neve ennek a kocsmának?",
@@ -173,8 +173,8 @@
         "es": "¿Cual es el nombre de este pub?"
       },
       "render": {
-        "nl": "De naam van dit café is {name}",
-        "en": "This pub is named {name}",
+        "nl": "De naam van deze zaak is {name}",
+        "en": "This business is named {name}",
         "de": "Diese Kneipe heißt {name}",
         "fr": "Ce pub se nomme {name}",
         "hu": "A kocsma neve: {name}",
@@ -194,7 +194,8 @@
         "hu": "Milyen fajta kávézó ez?",
         "da": "Hvilken slags cafe er dette?",
         "es": "Qué tipo de cafetería es esta",
-        "fr": "Quel genre de café est-ce ?"
+        "fr": "Quel genre de café est-ce ?",
+        "ca": "Quin tipus de cafeteria és aquesta?"
       },
       "mappings": [
         {
@@ -216,7 +217,8 @@
             "de": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation",
             "da": "En mere moderne og kommerciel <b>bar</b>, eventuelt med en musik- og lysinstallation",
             "es": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz",
-            "fr": "Un <b>bar</b> plus moderne et commercial, avec éventuellement musique et jeux de lumière"
+            "fr": "Un <b>bar</b> plus moderne et commercial, avec éventuellement musique et jeux de lumière",
+            "ca": "Un <b>bar de copes</b> més modern i comercial, possiblement amb equipació de música i llums"
           }
         },
         {

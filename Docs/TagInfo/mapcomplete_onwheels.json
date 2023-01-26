@@ -124,7 +124,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Cafés and pubs' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'Cafés and pubs' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "email",
@@ -586,7 +586,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Restaurants and fast food' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'Restaurants and fast food' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "email",
@@ -712,6 +712,26 @@
       "key": "cuisine",
       "description": "Layer 'Restaurants and fast food' shows cuisine=thai with a fixed text, namely 'Thai dishes are served here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
       "value": "thai"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=required with a fixed text, namely 'A reservation is required at this place' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if amenity=restaurant)",
+      "value": "required"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=recommended with a fixed text, namely 'A reservation is not required, but still recommended to make sure you get a table' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if amenity=restaurant)",
+      "value": "recommended"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=yes with a fixed text, namely 'Reservation is possible at this place' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if amenity=restaurant)",
+      "value": "yes"
+    },
+    {
+      "key": "reservation",
+      "description": "Layer 'Restaurants and fast food' shows reservation=no with a fixed text, namely 'Reservation is not possible at this place' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if amenity=restaurant)",
+      "value": "no"
     },
     {
       "key": "takeaway",
@@ -2024,7 +2044,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Shop' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'Shop' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "email",
@@ -2450,7 +2470,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Pharmacies' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'Pharmacies' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "wheelchair",
@@ -2527,7 +2547,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Doctors' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'Doctors' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "healthcare:speciality",
@@ -2584,7 +2604,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Hospitals' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'Hospitals' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "amenity",
@@ -2789,7 +2809,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'Hotels' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'Hotels' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "wheelchair",
@@ -2903,7 +2923,7 @@
     },
     {
       "key": "contact:website",
-      "description": "Layer 'governments' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
+      "description": "Layer 'governments' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "name",

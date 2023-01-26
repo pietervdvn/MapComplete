@@ -22,7 +22,7 @@ function generateLicenseInfos(paths: string[]): SmallLicense[] {
     const licenses = []
     for (const path of paths) {
         try {
-            const parsed = JSON.parse(readFileSync(path, "UTF-8"))
+            const parsed = JSON.parse(readFileSync(path, { encoding: "utf8" }))
             if (Array.isArray(parsed)) {
                 const l: SmallLicense[] = parsed
                 for (const smallLicens of l) {
@@ -242,7 +242,7 @@ function createFullLicenseOverview(licensePaths: string[]) {
         if (!existsSync(licensePath)) {
             continue
         }
-        const licenses = <SmallLicense[]>JSON.parse(readFileSync(licensePath, "UTF-8"))
+        const licenses = <SmallLicense[]>JSON.parse(readFileSync(licensePath, { encoding: "utf8" }))
         for (const license of licenses) {
             validateLicenseInfo(license)
             const dir = licensePath.substring(0, licensePath.length - "license_info.json".length)

@@ -22,16 +22,18 @@ import { DropDown } from "../Input/DropDown"
 import { FixedUiElement } from "../Base/FixedUiElement"
 import BaseLayer from "../../Models/BaseLayer"
 import Loc from "../../Models/Loc"
+import { BackToThemeOverview } from "./ActionButtons"
 
 export default class FilterView extends VariableUiElement {
     constructor(
         filteredLayer: Store<FilteredLayer[]>,
         tileLayers: { config: TilesourceConfig; isDisplayed: UIEventSource<boolean> }[],
         state: {
-            availableBackgroundLayers?: Store<BaseLayer[]>
-            featureSwitchBackgroundSelection?: UIEventSource<boolean>
-            featureSwitchIsDebugging?: UIEventSource<boolean>
-            locationControl?: UIEventSource<Loc>
+            readonly availableBackgroundLayers?: Store<BaseLayer[]>
+            readonly featureSwitchBackgroundSelection?: UIEventSource<boolean>
+            readonly featureSwitchIsDebugging?: UIEventSource<boolean>
+            readonly locationControl?: UIEventSource<Loc>
+            readonly featureSwitchMoreQuests: Store<boolean>
         }
     ) {
         const backgroundSelector = new Toggle(
@@ -53,8 +55,12 @@ export default class FilterView extends VariableUiElement {
                 elements = elements.concat(
                     tileLayers.map((tl) => FilterView.createOverlayToggle(state, tl))
                 )
-                // ... and add the dropdown to select a different background
-                return elements.concat(backgroundSelector)
+
+                elements.push(
+                    backgroundSelector,
+                    new BackToThemeOverview(state, { imgSize: "h-6 w-6" }).SetClass("block mt-12")
+                )
+                return elements
             })
         )
     }

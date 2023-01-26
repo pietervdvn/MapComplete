@@ -105,7 +105,7 @@ export class Imgur extends ImageProvider {
     }
 
     /**
-     * Download the attribution from attribution
+     * Download the attribution and license info for the picture at the given URL
      *
      * const data = {"data":{"id":"I9t6B7B","title":"Station Knokke","description":"author:Pieter Vander Vennet\r\nlicense:CC-BY 4.0\r\nosmid:node\/9812712386","datetime":1655052078,"type":"image\/jpeg","animated":false,"width":2400,"height":1795,"size":910872,"views":2,"bandwidth":1821744,"vote":null,"favorite":false,"nsfw":false,"section":null,"account_url":null,"account_id":null,"is_ad":false,"in_most_viral":false,"has_sound":false,"tags":[],"ad_type":0,"ad_url":"","edited":"0","in_gallery":false,"link":"https:\/\/i.imgur.com\/I9t6B7B.jpg","ad_config":{"safeFlags":["not_in_gallery","share"],"highRiskFlags":[],"unsafeFlags":["sixth_mod_unsafe"],"wallUnsafeFlags":[],"showsAds":false,"showAdLevel":1}},"success":true,"status":200}
      * Utils.injectJsonDownloadForTests("https://api.imgur.com/3/image/E0RuAK3", data)

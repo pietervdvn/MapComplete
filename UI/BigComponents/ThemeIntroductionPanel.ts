@@ -3,12 +3,17 @@ import LanguagePicker from "../LanguagePicker"
 import Translations from "../i18n/Translations"
 import Toggle from "../Input/Toggle"
 import { SubtleButton } from "../Base/SubtleButton"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { LoginToggle } from "../Popup/LoginButton"
 import Svg from "../../Svg"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import FullWelcomePaneWithTabs from "./FullWelcomePaneWithTabs"
+import LoggedInUserIndicator from "../LoggedInUserIndicator"
+import { ActionButtons } from "./ActionButtons"
+import { BBox } from "../../Logic/BBox"
+import Loc from "../../Models/Loc"
+import UserSurveyPanel from "../UserSurveyPanel"
 
 export default class ThemeIntroductionPanel extends Combine {
     constructor(
@@ -20,7 +25,11 @@ export default class ThemeIntroductionPanel extends Combine {
             featureSwitchUserbadge: UIEventSource<boolean>
             layoutToUse: LayoutConfig
             osmConnection: OsmConnection
-        }
+            currentBounds: Store<BBox>
+            locationControl: UIEventSource<Loc>
+            isTranslator: Store<boolean>
+        },
+        guistate?: { userInfoIsOpened: UIEventSource<boolean> }
     ) {
         const t = Translations.t.general
         const layout = state.layoutToUse
@@ -36,9 +45,18 @@ export default class ThemeIntroductionPanel extends Combine {
             })
             .SetClass("only-on-mobile")
 
+        const loggedInUserInfo = new LoggedInUserIndicator(state.osmConnection, {
+            firstLine: Translations.t.general.welcomeBack.Clone(),
+        })
+        if (guistate?.userInfoIsOpened) {
+            loggedInUserInfo.onClick(() => {
+                guistate.userInfoIsOpened.setData(true)
+            })
+        }
+
         const loginStatus = new Toggle(
             new LoginToggle(
-                undefined,
+                loggedInUserInfo,
                 new Combine([
                     Translations.t.general.loginWithOpenStreetMap.SetClass("text-xl font-bold"),
                     Translations.t.general.loginOnlyNeededToEdit.Clone().SetClass("font-bold"),
@@ -51,7 +69,8 @@ export default class ThemeIntroductionPanel extends Combine {
 
         const hasPresets = layout.layers.some((l) => l.presets?.length > 0)
         super([
-            layout.description.Clone().SetClass("blcok mb-4"),
+            layout.description.Clone().SetClass("block mb-4"),
+            new UserSurveyPanel(),
             new Combine([
                 t.welcomeExplanation.general,
                 hasPresets
@@ -60,24 +79,11 @@ export default class ThemeIntroductionPanel extends Combine {
             ]).SetClass("flex flex-col mt-2"),
 
             toTheMap,
-            loginStatus.SetClass("block"),
+            loginStatus.SetClass("block mt-6 pt-2 md:border-t-2 border-dotted border-gray-400"),
             layout.descriptionTail?.Clone().SetClass("block mt-4"),
 
-            languagePicker?.SetClass("block mt-4"),
-
-            Toggle.If(state.featureSwitchMoreQuests, () =>
-                new Combine([
-                    t.welcomeExplanation.browseOtherThemesIntro,
-                    new SubtleButton(
-                        Svg.add_ui().SetClass("h-6"),
-                        t.welcomeExplanation.browseMoreMaps
-                    )
-                        .onClick(() =>
-                            currentTab.setData(FullWelcomePaneWithTabs.MoreThemesTabIndex)
-                        )
-                        .SetClass("h-12"),
-                ]).SetClass("flex flex-col mt-6")
-            ),
+            languagePicker?.SetClass("block mt-4 pb-8 border-b-2 border-dotted border-gray-400"),
+            new ActionButtons(state),
 
             ...layout.CustomCodeSnippets(),
         ])

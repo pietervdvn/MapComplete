@@ -12,7 +12,8 @@
     "ru": "Услуги по чистке велосипедов",
     "es": "Servicio de limpieza de bicis",
     "da": "Cykelrengøring",
-    "cs": "Služba mytí jízdních kol"
+    "cs": "Služba mytí jízdních kol",
+    "ca": "Servei de neteja de bicicletes"
   },
   "title": {
     "render": {
@@ -159,7 +160,8 @@
         "es": "¿Cuánto cuesta utilizar el servicio de limpieza?",
         "fr": "Combien cela coûte-t-il d'utiliser le service de nettoyage ?",
         "da": "Hvor meget koster det at bruge rengøringsservicen?",
-        "cs": "Kolik stojí využívání služby mytí?"
+        "cs": "Kolik stojí využívání služby mytí?",
+        "ca": "Molt costa utilitzar aquest servei de neteja?"
       },
       "render": {
         "en": "Using the cleaning service costs {charge}",
@@ -186,13 +188,14 @@
         {
           "if": "fee=no",
           "then": {
-            "en": "Free to use cleaning service",
-            "de": "Kostenloser Reinigungsservice",
-            "nl": "Gratis fietsschoonmaakpunt",
+            "en": "This cleaning service is free to use",
+            "de": "Der Reinigungsservice ist kostenlos",
+            "nl": "Dit fietsschoonmaakpunt is gratis te gebruiken",
             "es": "Servicio de limpieza gratis",
             "fr": "Service de nettoyage gratuit",
             "da": "Gratis at bruge rengøringsservice",
-            "cs": "Bezplatné využívání mycích služeb"
+            "cs": "Bezplatné využívání mycích služeb",
+            "ca": "Aquest servei de neteja és gratuït"
           },
           "addExtraTags": [
             "charge="
@@ -201,13 +204,11 @@
         {
           "if": "fee=yes",
           "then": {
-            "en": "Free to use",
-            "de": "Kostenlose Nutzung",
-            "nl": "Gratis te gebruiken",
-            "es": "Gratuito",
-            "fr": "Libre d'utilisation",
-            "da": "Gratis at bruge",
-            "cs": "Bezplatné používání"
+            "en": "This cleaning service is paid",
+            "nl": "Dit fietsschoonmaakpunt is betalend",
+            "es": "Este servicio de limpieza es de pago",
+            "ca": "Aquest servei de neteja és de pagament",
+            "de": "Dieser Reinigungsservice ist kostenpflichtig"
           }
         }
       ],

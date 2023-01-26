@@ -31,13 +31,19 @@ export default abstract class BaseUIElement {
             throw "SEVERE: could not attach UIElement to " + divId
         }
 
-        while (element.firstChild) {
-            //The list is LIVE so it will re-index each call
-            element.removeChild(element.firstChild)
+        let alreadyThere = false
+        const elementToAdd = this.ConstructElement()
+        const childs = Array.from(element.childNodes)
+        for (const child of childs) {
+            if (child === elementToAdd) {
+                alreadyThere = true
+                continue
+            }
+            element.removeChild(child)
         }
-        const el = this.ConstructElement()
-        if (el !== undefined) {
-            element.appendChild(el)
+
+        if (elementToAdd !== undefined && !alreadyThere) {
+            element.appendChild(elementToAdd)
         }
 
         return this

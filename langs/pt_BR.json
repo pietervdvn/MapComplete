@@ -130,9 +130,6 @@
     },
     "image": {
         "addPicture": "Adicionar imagem",
-        "ccb": "sob a licença CC-BY",
-        "ccbs": "sob a licença CC-BY-SA",
-        "cco": "no domínio público",
         "doDelete": "Remover imagem",
         "dontDelete": "Cancelar",
         "isDeleted": "Excluída",
@@ -141,8 +138,7 @@
         "uploadDone": "<span class=\"thanks\">Sua foto foi adicionada. Obrigado por ajudar!</span>",
         "uploadFailed": "Não foi possível enviar sua foto. Você está conectado à Internet e permite APIs de terceiros? O navegador Brave ou o plugin uMatrix podem bloqueá-los.",
         "uploadingMultiple": "Fazendo upload de {count} imagens…",
-        "uploadingPicture": "Enviando sua imagem…",
-        "willBePublished": "Sua imagem será publicada: "
+        "uploadingPicture": "Enviando sua imagem…"
     },
     "index": {
         "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado",

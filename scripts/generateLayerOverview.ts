@@ -125,7 +125,7 @@ class LayerOverviewUtils {
         writeFileSync(
             "./assets/generated/theme_overview.json",
             JSON.stringify(sorted, null, "  "),
-            "UTF8"
+            { encoding: "utf8" }
         )
     }
 
@@ -136,7 +136,7 @@ class LayerOverviewUtils {
         writeFileSync(
             `${LayerOverviewUtils.themePath}${theme.id}.json`,
             JSON.stringify(theme, null, "  "),
-            "UTF8"
+            { encoding: "utf8" }
         )
     }
 
@@ -147,7 +147,7 @@ class LayerOverviewUtils {
         writeFileSync(
             `${LayerOverviewUtils.layerPath}${layer.id}.json`,
             JSON.stringify(layer, null, "  "),
-            "UTF8"
+            { encoding: "utf8" }
         )
     }
 
@@ -219,7 +219,7 @@ class LayerOverviewUtils {
                 continue
             }
 
-            const contents = readFileSync(path, "UTF8")
+            const contents = readFileSync(path, { encoding: "utf8" })
             if (contents.indexOf("data:image/png;") >= 0) {
                 console.warn("The SVG at " + path + " is a fake SVG: it contains PNG data!")
                 errCount++
@@ -281,10 +281,9 @@ class LayerOverviewUtils {
                 then: th.icon,
             }))
             const proto: LayoutConfigJson = JSON.parse(
-                readFileSync(
-                    "./assets/themes/mapcomplete-changes/mapcomplete-changes.proto.json",
-                    "UTF8"
-                )
+                readFileSync("./assets/themes/mapcomplete-changes/mapcomplete-changes.proto.json", {
+                    encoding: "utf8",
+                })
             )
             const protolayer = <LayerConfigJson>(
                 proto.layers.filter((l) => l["id"] === "mapcomplete-changes")[0]
@@ -440,6 +439,35 @@ class LayerOverviewUtils {
                     true,
                     convertState.tagRenderings
                 ).convertStrict(themeFile, themePath)
+
+                if (themeFile.icon.endsWith(".svg")) {
+                    try {
+                        ScriptUtils.ReadSvgSync(themeFile.icon, (svg) => {
+                            const width: string = svg.$.width
+                            const height: string = svg.$.height
+                            const err = themeFile.hideFromOverview ? console.warn : console.error
+                            if (width !== height) {
+                                const e =
+                                    `the icon for theme ${themeFile.id} is not square. Please square the icon at ${themeFile.icon}` +
+                                    ` Width = ${width} height = ${height}`
+                                err(e)
+                            }
+
+                            const w = parseInt(width)
+                            const h = parseInt(height)
+                            if (w < 370 || h < 370) {
+                                const e: string = [
+                                    `the icon for theme ${themeFile.id} is too small. Please rescale the icon at ${themeFile.icon}`,
+                                    `Even though an SVG is 'infinitely scaleable', the icon should be dimensioned bigger. One of the build steps of the theme does convert the image to a PNG (to serve as PWA-icon) and having a small dimension will cause blurry images.`,
+                                    ` Width = ${width} height = ${height}; we recommend a size of at least 500px * 500px and to use a square aspect ratio.`,
+                                ].join("\n")
+                                err(e)
+                            }
+                        })
+                    } catch (e) {
+                        console.error("Could not read " + themeFile.icon + " due to " + e)
+                    }
+                }
 
                 this.writeTheme(themeFile)
                 fixed.set(themeFile.id, themeFile)

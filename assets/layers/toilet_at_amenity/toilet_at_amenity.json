@@ -2,7 +2,8 @@
   "id": "toilet_at_amenity",
   "name": {
     "en": "Toilets at other amenities",
-    "de": "Toiletten in anderen Einrichtungen"
+    "de": "Toiletten in anderen Einrichtungen",
+    "nl": "Toilet in een voorziening"
   },
   "minzoom": 12,
   "source": {
@@ -11,7 +12,8 @@
   "title": {
     "render": {
       "en": "Toilet at amenity",
-      "de": "Toilette in Einrichtung"
+      "de": "Toilette in Einrichtung",
+      "nl": "Toilet in een voorziening"
     },
     "mappings": [
       {
@@ -66,14 +68,16 @@
           "if": "toilets:access=customers",
           "then": {
             "en": "Only access to customers of the amenity",
-            "de": "Nur Zugang für Kunden der Einrichtung"
+            "de": "Nur Zugang für Kunden der Einrichtung",
+            "nl": "Enkel toegankelijk voor klanten van de voorziening"
           }
         },
         {
           "if": "toilets:access=no",
           "then": {
             "en": "Not accessible, even for customers of the amenity",
-            "de": "Nicht zugänglich, auch nicht für Kunden der Einrichtung"
+            "de": "Nicht zugänglich, auch nicht für Kunden der Einrichtung",
+            "nl": "Niet toegankelijk, ook niet voor klanten van de voorziening"
           }
         },
         {
@@ -423,7 +427,8 @@
   ],
   "description": {
     "en": "A layer showing (public) toilets located at different places.",
-    "de": "Eine Ebene mit (öffentlichen) Toiletten an verschiedenen Orten."
+    "de": "Eine Ebene mit (öffentlichen) Toiletten an verschiedenen Orten.",
+    "nl": "Een laag die (publiek toegankelijke) toiletten toont in verschillende andere voorzieningen."
   },
   "units": [
     {

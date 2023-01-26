@@ -11,6 +11,7 @@ import { FlowStep } from "./FlowStep"
 import { parse } from "papaparse"
 import { FixedUiElement } from "../Base/FixedUiElement"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
+import { Feature, Point } from "geojson"
 
 class FileSelector extends InputElementMap<FileList, { name: string; contents: Promise<string> }> {
     constructor(label: BaseUIElement) {
@@ -40,7 +41,7 @@ export class RequestFile extends Combine implements FlowStep<{ features: any[] }
     /**
      * The loaded GeoJSON
      */
-    public readonly Value: Store<{ features: any[] }>
+    public readonly Value: Store<{ features: Feature<Point>[] }>
 
     constructor() {
         const t = Translations.t.importHelper.selectFile

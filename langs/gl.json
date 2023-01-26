@@ -149,9 +149,6 @@
     },
     "image": {
         "addPicture": "Engadir imaxe",
-        "ccb": "baixo a licenza CC-BY",
-        "ccbs": "baixo a licenza CC-BY-SA",
-        "cco": "no dominio público",
         "doDelete": "Eliminar imaxe",
         "dontDelete": "Cancelar",
         "isDeleted": "Eliminada",
@@ -161,8 +158,7 @@
         "uploadDone": "<span class='thanks'>A túa imaxe foi engadida. Grazas por axudar.</span>",
         "uploadFailed": "Non foi posíbel subir a imaxe. Tes internet e permites API de terceiros? O navegador Brave ou UMatrix podería bloquealas.",
         "uploadingMultiple": "Subindo {count} das túas imaxes...",
-        "uploadingPicture": "Subindo a túa imaxe...",
-        "willBePublished": "A túa imaxe será publicada: "
+        "uploadingPicture": "Subindo a túa imaxe..."
     },
     "importHelper": {
         "askMetadata": {},
