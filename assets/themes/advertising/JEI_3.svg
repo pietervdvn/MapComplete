@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg8532"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="JEI3_3.svg">
+  <defs
+     id="defs8534" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.175"
+     inkscape:cx="-564.71852"
+     inkscape:cy="0.43478815"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1535"
+     inkscape:window-height="876"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid9080" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata8537">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g9110"
+       style="fill:#000000;fill-opacity:1;stroke:#2c6823;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.99722266,0,0,1.0000373,0.3772123,2.6352865)">
+      <rect
+         y="77.790833"
+         x="124.963"
+         height="366.91931"
+         width="501.42053"
+         id="rect7422-8-4"
+         style="fill:#000000;fill-opacity:1;stroke:#2c6823;stroke-width:10;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <rect
+       style="fill:#76fe89;fill-opacity:1;stroke:#2c6823;stroke-width:24.91833305;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect7422-8"
+       width="11.873252"
+       height="557.59143"
+       x="369.20731"
+       y="461.82748" />
+    <rect
+       style="fill:#2c6823;fill-opacity:1;stroke:#2c6823;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect7422-8-4-2"
+       width="540"
+       height="54.066139"
+       x="105.00001"
+       y="36.715485" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:50px;line-height:125%;font-family:'Century Schoolbook L';-inkscape-font-specification:'Century Schoolbook L, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#fff900;fill-opacity:1;stroke:#686423;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="123.95176"
+       y="204.64833"
+       id="text16055"
+       sodipodi:linespacing="125%"
+       transform="scale(1.2027765,0.83140964)"><tspan
+         sodipodi:role="line"
+         id="tspan16059"
+         x="123.95176"
+         y="204.64833">AUJOURD'HUI</tspan><tspan
+         sodipodi:role="line"
+         id="tspan16061"
+         x="123.95176"
+         y="267.14835">     8H / 13H</tspan><tspan
+         sodipodi:role="line"
+         id="tspan16063"
+         x="123.95176"
+         y="329.64835"> MARCHÉ DE </tspan><tspan
+         sodipodi:role="line"
+         id="tspan16065"
+         x="123.95176"
+         y="392.14832">   PLEIN VENT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:43.75px;line-height:125%;font-family:'Century Schoolbook L';-inkscape-font-specification:'Century Schoolbook L, Medium';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="144.99217"
+       y="79.869102"
+       id="text16075"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan8708"
+         x="144.99217"
+         y="79.869102">Commune de Bergerac</tspan></text>
+  </g>
+</svg>

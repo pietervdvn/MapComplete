@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.1 15371"
+   sodipodi:docname="Political_Board_3.svg">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="1063.7116 : 820.59039 : 1"
+       inkscape:vp_y="-491.90589 : 452.23512 : 0"
+       inkscape:vp_z="673.15686 : 960.67113 : 1"
+       inkscape:persp3d-origin="1288.2911 : 1099.5644 : 1"
+       id="perspective7227" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.2774832"
+     inkscape:cx="276.24699"
+     inkscape:cy="637.43881"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1553"
+     inkscape:window-height="876"
+     inkscape:window-x="47"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4298" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#7c7c7c;fill-opacity:1;stroke:#656565;stroke-width:14.13415623;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect7422-8-4"
+       width="402.11584"
+       height="304.61584"
+       x="194.56708"
+       y="309.42929" />
+    <rect
+       style="fill:#7c7c7c;fill-opacity:1;stroke:#656565;stroke-width:10.43360233;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect7422-8"
+       width="8.3163977"
+       height="139.56639"
+       x="216.1543"
+       y="626.32904" />
+    <rect
+       style="fill:#2c6823;fill-opacity:1;stroke:#656565;stroke-width:10.43360138;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect7422-8-0"
+       width="8.3163986"
+       height="139.56641"
+       x="553.72968"
+       y="626.32904" />
+    <rect
+       style="fill:#75b0ff;fill-opacity:1;stroke:#3955f9;stroke-width:9.30446434;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4683"
+       width="175.54144"
+       height="134.64572"
+       x="212.22928"
+       y="336.46649" />
+    <rect
+       style="fill:#ff75ee;fill-opacity:1;stroke:#f939bf;stroke-width:9.30446434;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4683-3"
+       width="175.54144"
+       height="134.64572"
+       x="403.20786"
+       y="336.46649" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:123.88310242px;line-height:77.42736816px;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:65.78704834;stroke-miterlimit:4;stroke-dasharray:none"
+       x="285.52011"
+       y="457.22934"
+       id="text4689"
+       transform="scale(0.75772161,1.3197459)"><tspan
+         sodipodi:role="line"
+         id="tspan4687"
+         x="285.52011"
+         y="457.22934"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:123.88310242px;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:65.78704834;stroke-miterlimit:4;stroke-dasharray:none">VOTE !</tspan></text>
+  </g>
+</svg>
