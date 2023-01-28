@@ -147,6 +147,7 @@
   "tagRenderings": [
     "images",
     {
+      "condition": "_referencing_ways~*",
       "question": {
         "en": "Can a bicycle go past this barrier?",
         "nl": "Kan een fietser langs deze barrière?",
@@ -410,7 +411,8 @@
       "condition": {
         "and": [
           "cycle_barrier!=double",
-          "cycle_barrier!=triple"
+          "cycle_barrier!=triple",
+          "_referencing_ways~*"
         ]
       },
       "freeform": {
