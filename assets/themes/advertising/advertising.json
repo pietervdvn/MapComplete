@@ -208,6 +208,10 @@
                 "ca": "Açò és una tanca publicitària",
                 "es": "Esto es una valla publicitaria",
                 "en": "This is a billboard"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/Billboard.svg",
+                "class": "medium"
               }
             },
             {
@@ -220,6 +224,10 @@
                 "ca": "Açò és un tauló d'anunis",
                 "es": "Esto es un tablón de anuncios",
                 "en": "This is a board"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/Board.svg",
+                "class": "medium"
               }
             },
             {
@@ -232,6 +240,10 @@
                 "ca": "Açò és una columna",
                 "es": "Esto es una columna",
                 "en": "This is a column"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/column.svg",
+                "class": "medium"
               }
             },
             {
@@ -244,6 +256,10 @@
                 "ca": "Açò és una bandera",
                 "es": "Esto es una bndera",
                 "en": "This is a flag"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/icon.svg",
+                "class": "medium"
               }
             },
             {
@@ -256,6 +272,10 @@
                 "ca": "Açò és un mupi",
                 "es": "Esto es un mupi",
                 "en": "This is a poster Box"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/poster_box.svg",
+                "class": "medium"
               }
             },
             {
@@ -268,6 +288,10 @@
                 "ca": "Açò és una pantalla",
                 "es": "Esto es una pantalla",
                 "en": "This is a screen"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/icon.svg",
+                "class": "medium"
               }
             },
             {
@@ -280,6 +304,10 @@
                 "ca": "Açò és una esculptura",
                 "es": "Esto es una escultura",
                 "en": "This is a sculpture"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/icon.svg",
+                "class": "medium"
               }
             },
             {
@@ -292,6 +320,10 @@
                 "ca": "Açò és un cartell",
                 "es": "Esto es un cartel",
                 "en": "This is a sign"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/icon.svg",
+                "class": "medium"
               }
             },
             {
@@ -304,6 +336,10 @@
                 "ca": "Açò és una lona",
                 "es": "Esto es una lona",
                 "en": "This is a tarp"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/icon.svg",
+                "class": "medium"
               }
             },
             {
@@ -316,6 +352,10 @@
                 "ca": "Açò és un tòtem",
                 "es": "Esto es un tótem",
                 "en": "This is a totem"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/totem.svg",
+                "class": "medium"
               }
             },
             {
@@ -328,6 +368,10 @@
                 "ca": "Açò és una paret pintada",
                 "es": "Esto es una pared pintada",
                 "en": "This is a wall painted"
+              },
+              "icon": {
+                "path": "./assets/themes/advertising/icon.svg",
+                "class": "medium"
               }
             }
           ]
@@ -520,6 +564,145 @@
               }
             }
           ]
+        },
+        {
+          "render": {
+            "*": " {message}"
+            },
+            "question": {
+            "ca": "Quin tipus de missatge es mostra?",
+            "es": "Que tipo de mensaje se muestra?",
+            "en": "What kind of message is shown?"
+            },
+            "freeform": {
+                "key": "message"
+              },
+              "mappings": [
+                {
+                  "if": {
+                    "and": [
+                      "message=commercial"
+                    ]
+                  },
+                  "then": {
+                    "ca": "Missatge comercial",
+                    "es": "Mensaje comercial",
+                    "en": "Commercial message"
+                  }
+                },
+                {
+                  "if": {
+                    "and": [
+                        "message=local"
+                    ]
+                  },
+                  "then": {
+                    "ca": "Informació municipal",
+                    "es": "Información municipal",
+                    "en": "Local information"
+                  }
+                },
+                {
+                  "if": {
+                    "and": [
+                      "message=safety"
+                    ]
+                  },
+                  "then": {
+                    "ca": "Informació de seguretat",
+                    "es": "Información de seguridad",
+                    "en": "Securty information"
+                  }
+                },
+                {
+                  "if": {
+                    "and": [
+                      "message=political"
+                    ]
+                  },
+                  "then": {
+                    "ca": "Cartell electoral",
+                    "es": "Cartel electoral",
+                    "en": "Electoral sign"
+                  }
+                },
+                {
+                  "if": {
+                    "and": [
+                      "message=showbiz"
+                    ]
+                  },
+                  "then": {
+                    "ca": "Informació sobre teatres, concerts, ...",
+                    "es": "Información sobre teatros, conciertos, ...",
+                    "en": "Inormation related to theatre, concerts, ..."
+                  }
+                },
+                {
+                  "if": {
+                    "and": [
+                      "message=non_profit"
+                    ]
+                  },
+                  "then": {
+                    "ca": "Cartell d'organitzacions sense ànim de lucre",
+                    "es": "Cartel de organizaciones sin ánimo de lucro",
+                    "en": "Sign from non-profit organizations"
+                  }
+                },
+                {
+                  "if": {
+                    "and": [
+                      "message=opinion"
+                    ]
+                  },
+                  "then": {
+                    "ca": "Per a expressar la teua opinió",
+                    "es": "Para expresar tu opinión",
+                    "en": "To expres your opinion"
+                  }
+                },
+                {
+                  "if": {
+                    "and": [
+                      "message=religion"
+                    ]
+                  },
+                  "then": {
+                    "ca": "Missatge religiós",
+                    "es": "Mensaje religioso",
+                    "en": "Religious message"
+                  }
+                },
+                {
+                  "if": {
+                    "and": [
+                      "message=funding"
+                    ]
+                  },
+                  "then": {
+                    "ca": "Cartell de financiació",
+                    "es": "Cartel de financiación",
+                    "en": "Funding sign"
+                  }
+                }
+            ]
+        },
+        {
+          "render": {
+            "ca": "Pots veure publicitat per {sides} costats",
+            "es": "Puedes ver publicidad por {sides} lados",
+            "en": "You can see adverstismetns from {sides} sides"
+            },
+            "question": {
+            "ca": "Per quants costats pots veure publicitat?",
+            "es": "¿Por cuantos lados puedes ver publicidad?",
+            "en": "From how many sides you can watch advertisments?"
+            },
+            "freeform": {
+            "key": "sides"
+            },
+            "mappings": []
         }
       ],
       "mapRendering": [
