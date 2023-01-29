@@ -140,21 +140,19 @@ export default class TagRenderingQuestion extends Combine {
         super([
             question,
             inputElement,
-            new Combine([
-                new VariableUiElement(
-                    feedback.map(
-                        (t) =>
-                            t
-                                ?.SetStyle("padding-left: 0.75rem; padding-right: 0.75rem")
-                                ?.SetClass("alert flex") ?? bottomTags
-                    )
-                ),
-                new Combine([new Combine([options.cancelButton]), saveButton]).SetClass(
-                    "flex justify-end flex-wrap-reverse"
-                ),
-            ]).SetClass("flex mt-2 justify-between"),
+            new VariableUiElement(
+                feedback.map(
+                    (t) =>
+                        t
+                            ?.SetStyle("padding-left: 0.75rem; padding-right: 0.75rem")
+                            ?.SetClass("alert flex") ?? bottomTags
+                )
+            ),
+            new Combine([options.cancelButton, saveButton]).SetClass(
+                "flex justify-end flex-wrap-reverse"
+            ),
             new Toggle(
-                Translations.t.general.testing.SetClass("alert"),
+                Translations.t.general.testing.SetClass("block alert"),
                 undefined,
                 state?.featureSwitchIsTesting
             ),
