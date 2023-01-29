@@ -89,7 +89,7 @@
         "title": "Open Bookcase Map"
     },
     "cafes_and_pubs": {
-        "description": "Pubs and bars",
+        "description": "Coffeehouses, pubs and bars",
         "title": "Cafés and pubs"
     },
     "campersite": {
@@ -679,7 +679,7 @@
         "title": "Fries shops"
     },
     "ghostbikes": {
-        "description": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.<br/><br/>On this map, one can see all the ghost bikes which are known by OpenStreetMap. Is a ghost bike missing? Everyone can add or update information here - you only need to have a (free) OpenStreetMap account.",
+        "description": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location.<br/><br/>On this map, one can see all the ghost bikes which are known by OpenStreetMap. Is a ghost bike missing? Everyone can add or update information here - you only need to have a (free) OpenStreetMap account. <p>There exists an <a href='https://masto.bike/@ghostbikebot' target='_blank'>automated account on Mastodon which posts a monthly overview of ghost bikes worldwide</a></p>",
         "title": "Ghost bikes"
     },
     "grb": {
@@ -789,7 +789,7 @@
                     "5": {
                         "options": {
                             "0": {
-                                "question": "User language (iso-code) {search}"
+                                "question": "User language (ISO-code) {search}"
                             }
                         }
                     },

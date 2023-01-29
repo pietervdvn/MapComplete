@@ -130,7 +130,7 @@
             },
             "artwork-website": {
                 "question": "Er der et websted med mere information om dette kunstværk?",
-                "render": "Yderligere oplysninger på <a href='{website}' target='_blank'>dette websted</a>"
+                "render": "Yderligere oplysninger på <a href='{website}' target='_blank'> dette websted</a>"
             }
         },
         "title": {

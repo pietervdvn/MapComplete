@@ -238,6 +238,36 @@
                 }
             },
             "question": "Hva er respektivt element på Wikipedia?"
+        },
+        "opening_hours_by_appointment": {
+            "override": {
+                "mappings": {
+                    "1": {
+                        "then": "Kun ved avtale"
+                    },
+                    "0": {
+                        "then": "Kun ved avtale"
+                    }
+                }
+            }
+        },
+        "payment-options-split": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Mynter aksepteres her"
+                    },
+                    "1": {
+                        "then": "Sedler aksepteres her"
+                    },
+                    "2": {
+                        "then": "Debetkort aksepteres her"
+                    },
+                    "3": {
+                        "then": "Kredittkort aksepteres her"
+                    }
+                }
+            }
         }
     }
 }

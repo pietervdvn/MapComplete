@@ -53,7 +53,7 @@
         "fakeui": {
             "add_images": "Add images with a few clicks",
             "attributes": "Shows attributes in a friendly way",
-            "edit": "Wrong or outdated info? The edit button is right there",
+            "edit": "Wrong or outdated info? The edit button is right there.",
             "question": "If an attribute is not yet known, MapComplete shows a question",
             "see_images": "Shows images from previous contributors, Wikipedia, Mapillary, ... ",
             "wikipedia": "Linked Wikipedia articles are shown"
@@ -70,12 +70,12 @@
             "li4": "Embedded within the OpenStreetMap-ecosystem, which has many tools available",
             "li5": "Functionality to import existing datasets",
             "li6": "Many advanced features, such as tree detection and advanced input methods",
-            "li7": "Fully open source (GPL) and free to use",
+            "li7": "Copylefted libre software (GPL licensed) and gratis to use",
             "title": "What is MapComplete?"
         },
         "onwheels": "Indoor maps for wheelchair users are available as well.",
         "osm": "OpenStreetMap is an online map which can be edited and reused by anyone for any purpose as long as attribution is given and the data is kept open.\n\nIt is the biggest geospatial database in the world and is reused by thousands of applications and websites.",
-        "tagline": "Collect geodata easily with OpenStreetMap",
+        "tagline": "Collect geodata with OpenStreetMap",
         "title": "MapComplete.osm.be",
         "toerisme_vlaanderen": "For joint project with Visit Flanders, 'Pin your point' was created. Over 160 contributors added a few thousand benches and picnictables and spotted 100 charging station for bicycles.",
         "whatIsOsm": "What is OpenStreetMap?"
