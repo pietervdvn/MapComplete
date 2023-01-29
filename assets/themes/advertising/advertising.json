@@ -775,6 +775,10 @@
           }
         }
       ],
+      "allowMove": {
+        "enableImproveAccuracy": true,
+        "enableRelocation": false
+      },
       "presets": [
         {
           "tags": [
