@@ -1,7 +1,7 @@
 
 
- Fries shops ( fritures) 
--------------------------
+ Fries shops ( [fritures](https://mapcomplete.osm.be/fritures) ) 
+-----------------------------------------------------------------
 
 
 

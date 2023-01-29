@@ -1,7 +1,7 @@
 
 
- Indoors ( indoors) 
---------------------
+ Indoors ( [indoors](https://mapcomplete.osm.be/indoors) ) 
+-----------------------------------------------------------
 
 
 

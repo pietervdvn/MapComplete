@@ -23,6 +23,7 @@
     + [sidewalk:left, sidewalk:right, generic_key:left:property, generic_key:right:property](#sidewalkleft,-sidewalk:right,-generic_key:left:property,-generic_key:right:property)
     + [_geometry:type](#_geometrytype)
     + [_level](#_level)
+    + [_referencing_ways](#_referencing_ways)
     + [distanceTo](#distanceto)
     + [overlapWith](#overlapwith)
     + [enclosingFeatures](#enclosingfeatures)
@@ -188,6 +189,16 @@ Adds the geometry type as property. This is identical to the GoeJson geometry ty
 Extract the 'level'-tag into a normalized, ';'-separated value
 
 
+
+
+
+### _referencing_ways 
+
+
+
+_referencing_ways contains - for a node - which ways use this this node as point in their geometry. 
+
+This is a lazy metatag and is only calculated when needed
 
 
 

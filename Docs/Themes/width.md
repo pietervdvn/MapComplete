@@ -1,7 +1,7 @@
 
 
- Straatbreedtes ( width) 
--------------------------
+ Straatbreedtes ( [width](https://mapcomplete.osm.be/width) ) 
+--------------------------------------------------------------
 
 
 

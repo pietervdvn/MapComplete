@@ -1,7 +1,7 @@
 
 
- OSM Community Index ( osm_community_index) 
---------------------------------------------
+ OSM Community Index ( [osm_community_index](https://mapcomplete.osm.be/osm_community_index) ) 
+-----------------------------------------------------------------------------------------------
 
 
 

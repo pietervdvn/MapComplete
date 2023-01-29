@@ -1,7 +1,7 @@
 
 
- Observation towers ( observation_towers) 
-------------------------------------------
+ Observation towers ( [observation_towers](https://mapcomplete.osm.be/observation_towers) ) 
+--------------------------------------------------------------------------------------------
 
 
 

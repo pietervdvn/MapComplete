@@ -1,7 +1,7 @@
 
 
- Campersites ( campersite) 
----------------------------
+ Campersites ( [campersite](https://mapcomplete.osm.be/campersite) ) 
+---------------------------------------------------------------------
 
 
 

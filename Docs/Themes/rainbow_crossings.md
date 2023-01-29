@@ -1,7 +1,7 @@
 
 
- Rainbow pedestrian crossings ( rainbow_crossings) 
----------------------------------------------------
+ Rainbow pedestrian crossings ( [rainbow_crossings](https://mapcomplete.osm.be/rainbow_crossings) ) 
+----------------------------------------------------------------------------------------------------
 
 
 

@@ -1,7 +1,7 @@
 
 
- Drinking Water ( drinking_water) 
-----------------------------------
+ Drinking Water ( [drinking_water](https://mapcomplete.osm.be/drinking_water) ) 
+--------------------------------------------------------------------------------
 
 
 

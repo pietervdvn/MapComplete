@@ -1,7 +1,7 @@
 
 
- Bicycle rental ( bicycle_rental) 
-----------------------------------
+ Bicycle rental ( [bicycle_rental](https://mapcomplete.osm.be/bicycle_rental) ) 
+--------------------------------------------------------------------------------
 
 
 

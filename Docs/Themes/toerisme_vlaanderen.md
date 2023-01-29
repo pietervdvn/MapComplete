@@ -1,7 +1,7 @@
 
 
- Pin je punt ( toerisme_vlaanderen) 
-------------------------------------
+ Pin je punt ( [toerisme_vlaanderen](https://mapcomplete.osm.be/toerisme_vlaanderen) ) 
+---------------------------------------------------------------------------------------
 
 
 

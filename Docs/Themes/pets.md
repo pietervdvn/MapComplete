@@ -1,7 +1,7 @@
 
 
- Veterinarians, dog parks and other pet-amenities ( pets) 
-----------------------------------------------------------
+ Veterinarians, dog parks and other pet-amenities ( [pets](https://mapcomplete.osm.be/pets) ) 
+----------------------------------------------------------------------------------------------
 
 
 

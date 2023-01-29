@@ -1,7 +1,7 @@
 
 
- Changes made with MapComplete ( mapcomplete-changes) 
-------------------------------------------------------
+ Changes made with MapComplete ( [mapcomplete-changes](https://mapcomplete.osm.be/mapcomplete-changes) ) 
+---------------------------------------------------------------------------------------------------------
 
 
 

@@ -1,7 +1,7 @@
 
 
- Parking ( parkings) 
----------------------
+ Parking ( [parkings](https://mapcomplete.osm.be/parkings) ) 
+-------------------------------------------------------------
 
 
 

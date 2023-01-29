@@ -1,7 +1,7 @@
 
 
- Hotels ( hotels) 
-------------------
+ Hotels ( [hotels](https://mapcomplete.osm.be/hotels) ) 
+--------------------------------------------------------
 
 
 

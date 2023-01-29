@@ -15,7 +15,7 @@ A layer showing the OpenStreetMap Communities
 
 
   - This layer is shown at zoomlevel **0** and higher
-  - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely  `https://raw.githubusercontent.com/osmlab/osm-community-index/main/dist/completeFeatureCollection.json`
+  - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely  `https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/tile_{z}_{x}_{y}.geojson`
 
 
 

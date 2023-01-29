@@ -1,7 +1,7 @@
 
 
- Hackerspaces ( hackerspaces) 
-------------------------------
+ Hackerspaces ( [hackerspaces](https://mapcomplete.osm.be/hackerspaces) ) 
+--------------------------------------------------------------------------
 
 
 

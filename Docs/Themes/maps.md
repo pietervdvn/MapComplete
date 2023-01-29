@@ -1,7 +1,7 @@
 
 
- A map of maps ( maps) 
------------------------
+ A map of maps ( [maps](https://mapcomplete.osm.be/maps) ) 
+-----------------------------------------------------------
 
 
 
