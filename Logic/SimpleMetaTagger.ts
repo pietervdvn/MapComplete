@@ -490,9 +490,10 @@ export default class SimpleMetaTaggers {
         {
             keys: ["_referencing_ways"],
             isLazy: true,
-            doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry.",
+            doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry. ",
         },
         (feature, _, __, state) => {
+            //this function has some extra code to make it work in SimpleAddUI.ts to also work for newly added points
             const id = feature.properties.id
             if (!id.startsWith("node/")) {
                 return false

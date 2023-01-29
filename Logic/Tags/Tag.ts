@@ -18,12 +18,6 @@ export class Tag extends TagsFilter {
         if (value === "*") {
             console.warn(`Got suspicious tag ${key}=*   ; did you mean ${key}~* ?`)
         }
-        if (value.indexOf("&") >= 0) {
-            const tags = (key + "=" + value).split("&")
-            throw `Invalid value for a tag: it contains '&'. You probably meant to use '{"and":[${tags
-                .map((kv) => '"' + kv + '"')
-                .join(", ")}]}'`
-        }
     }
 
     /**

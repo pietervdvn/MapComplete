@@ -1,7 +1,7 @@
 
 
- Restaurants and fast food ( food) 
------------------------------------
+ Restaurants and fast food ( [food](https://mapcomplete.osm.be/food) ) 
+-----------------------------------------------------------------------
 
 
 

@@ -1,7 +1,7 @@
 
 
- Education ( education) 
-------------------------
+ Education ( [education](https://mapcomplete.osm.be/education) ) 
+-----------------------------------------------------------------
 
 
 

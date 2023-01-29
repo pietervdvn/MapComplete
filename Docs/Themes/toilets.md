@@ -1,7 +1,7 @@
 
 
- Open Toilet Map ( toilets) 
-----------------------------
+ Open Toilet Map ( [toilets](https://mapcomplete.osm.be/toilets) ) 
+-------------------------------------------------------------------
 
 
 

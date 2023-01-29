@@ -1,7 +1,7 @@
 
 
- Breng jouw buurtnatuur in kaart ( buurtnatuur) 
-------------------------------------------------
+ Breng jouw buurtnatuur in kaart ( [buurtnatuur](https://mapcomplete.osm.be/buurtnatuur) ) 
+-------------------------------------------------------------------------------------------
 
 
 

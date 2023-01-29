@@ -181,7 +181,7 @@
         "name": "Geldautomaten",
         "presets": {
             "0": {
-                "title": "ein Geldautomat"
+                "title": "einen Geldautomaten"
             }
         },
         "tagRenderings": {
@@ -190,7 +190,7 @@
                     "placeholder": "Markenname"
                 },
                 "question": "Von welcher Marke ist dieser Geldautomat?",
-                "render": "Die Marke dieses Geldautomaten ist {brand}"
+                "render": "Die Marke des Geldautomaten ist {brand}"
             },
             "cash_in": {
                 "mappings": {
@@ -221,14 +221,14 @@
                 "question": "Kann man an diesem Geldautomaten Bargeld abheben?"
             },
             "name": {
-                "render": "Der Name dieses Geldautomaten ist {name}"
+                "render": "Der Name des Geldautomaten ist {name}"
             },
             "operator": {
                 "freeform": {
                     "placeholder": "Betreiber"
                 },
                 "question": "Welches Unternehmen betreibt den Geldautomaten?",
-                "render": "Der Geldautomat wird von {operator} betrieben"
+                "render": "Der Geldautomat wird betrieben von {operator}"
             },
             "speech_output": {
                 "mappings": {
@@ -254,7 +254,7 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "{brand} Geldautomat"
+                    "then": "{brand}-Geldautomat"
                 }
             },
             "render": "Geldautomat"
@@ -666,31 +666,31 @@
             "bicycle-types": {
                 "mappings": {
                     "0": {
-                        "then": "Normale Stadtfahrräder können hier gemietet werden"
+                        "then": "Normale Stadtfahrräder können geliehen werden"
                     },
                     "1": {
-                        "then": "Elektrofahrräder können hier gemietet werden"
+                        "then": "Elektrofahrräder können geliehen werden"
                     },
                     "2": {
-                        "then": "BMX-Räder können hier gemietet werden"
+                        "then": "BMX-Räder können geliehen werden"
                     },
                     "3": {
-                        "then": "Mountainbikes können hier gemietet werden"
+                        "then": "Mountainbikes können geliehen werden"
                     },
                     "4": {
-                        "then": "Kinderfahrräder können hier gemietet werden"
+                        "then": "Kinderfahrräder können geliehen werden"
                     },
                     "5": {
-                        "then": "Tandems können hier gemietet werden"
+                        "then": "Tandems können geliehen werden"
                     },
                     "6": {
-                        "then": "Rennräder können hier gemietet werden"
+                        "then": "Rennräder können geliehen werden"
                     },
                     "7": {
-                        "then": "Fahrradhelme können hier gemietet werden"
+                        "then": "Fahrradhelme können geliehen werden"
                     }
                 },
-                "question": "Welche Art von Fahrrädern und Zubehör wird hier vermietet?",
+                "question": "Welche Fahrräder und welches Zubehör kann hier geliehen werden?",
                 "render": "{rental} können hier gemietet werden"
             },
             "bicycle_rental_type": {
@@ -880,7 +880,7 @@
                     }
                 },
                 "question": "Wie viel kostet die Nutzung des Reinigungsdienstes?",
-                "render": "Nutzung des Reinigungsservice kostet {service:bicycle:cleaning:charge}"
+                "render": "Der Reinigungsservice kostet {service:bicycle:cleaning:charge}"
             }
         },
         "title": {
@@ -1053,13 +1053,13 @@
             "bike_repair_station-available-services": {
                 "mappings": {
                     "0": {
-                        "then": "Es ist nur eine Pumpe vorhanden"
+                        "then": "Nur eine Pumpe ist vorhanden"
                     },
                     "1": {
-                        "then": "Es ist nur Werkzeug (Schraubenzieher, Zangen, …) vorhanden"
+                        "then": "Nur Werkzeug (Schraubenzieher, Zangen, …) ist vorhanden"
                     },
                     "2": {
-                        "then": "Es sind sowohl Werkzeuge als auch eine Pumpe vorhanden"
+                        "then": "Werkzeug und Pumpe sind vorhanden"
                     }
                 },
                 "question": "Welche Geräte sind hier vorhanden?"
@@ -1116,7 +1116,7 @@
             },
             "bike_repair_station-operator": {
                 "question": "Wer betreibt die Reparaturstation?",
-                "render": "Gewartet von {operator}"
+                "render": "Betrieben von {operator}"
             },
             "bike_repair_station-phone": {
                 "question": "Wie lautet die Telefonnummer des Betreibers?"
@@ -1498,8 +1498,8 @@
                 "question": "Was ist das für ein Café?"
             },
             "Name": {
-                "question": "Wie heißt diese Kneipe?",
-                "render": "Diese Kneipe heißt {name}"
+                "question": "Was ist der Name dieses Unternehmens?",
+                "render": "Das Unternehmen heißt {name}"
             }
         },
         "title": {
@@ -4021,7 +4021,7 @@
         "name": "Feuerwachen",
         "presets": {
             "0": {
-                "description": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
+                "description": "Eine Feuerwache ist ein Ort, an dem Feuerwehrfahrzeuge und Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
                 "title": "eine Feuerwache"
             }
         },
@@ -4252,6 +4252,13 @@
                         "question": "Halal Gerichte im Angebot"
                     }
                 }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Reservierung nicht erforderlich"
+                    }
+                }
             }
         },
         "name": "Restaurants und Imbisse",
@@ -4333,8 +4340,8 @@
                 "question": "Um was für einen Ort handelt es sich?"
             },
             "Name": {
-                "question": "Wie heißt dieses Restaurant?",
-                "render": "Das Restaurant heißt {name}"
+                "question": "Was ist der Name dieses Unternehmens?",
+                "render": "Dieses Unternehmen heißt {name}"
             },
             "Takeaway": {
                 "mappings": {
@@ -4492,6 +4499,23 @@
                     }
                 },
                 "question": "Bietet dieses Restaurant biologische Speisen an?"
+            },
+            "Reservation": {
+                "mappings": {
+                    "0": {
+                        "then": "Hier ist eine Reservierung erforderlich"
+                    },
+                    "2": {
+                        "then": "Eine Reservierung ist an diesem Ort möglich"
+                    },
+                    "3": {
+                        "then": "Eine Reservierung ist an diesem Ort nicht möglich"
+                    },
+                    "1": {
+                        "then": "Eine Reservierung ist nicht erforderlich, wird aber empfohlen, damit Sie einen Tisch bekommen"
+                    }
+                },
+                "question": "Ist an diesem Ort eine Reservierung erforderlich?"
             }
         },
         "title": {
@@ -7167,6 +7191,12 @@
                         "render_single_language": "Die Treppe hat taktile Schrift in {language():font-bold}"
                     }
                 }
+            },
+            "multilevels": {
+                "override": {
+                    "question": "Zwischen welchen Stockwerken befindet sich die Treppe?",
+                    "render": "Die Treppe befindet sich zwischen den Stockwerken {level}"
+                }
             }
         },
         "title": {
@@ -7547,6 +7577,18 @@
                 },
                 "question": "Wer ist der Betreiber dieses Fahrkartenentwerters?",
                 "render": "Dieser Fahrkartenentwerter wird betrieben von {operator}"
+            },
+            "payment-options": {
+                "override": {
+                    "mappings+": {
+                        "1": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
+                        },
+                        "0": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
+                        }
+                    }
+                }
             }
         },
         "title": {
@@ -7813,6 +7855,11 @@
             "wheelchair-door-width": {
                 "question": "Wie breit ist die Tür zur rollstuhlgerechten Toilette?",
                 "render": "Die Tür zur rollstuhlgerechten Toilette ist {canonical(toilets:door:width)} breit"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist die Einrichtung, in der sich diese Toiletten befinden, geöffnet?"
+                }
             }
         },
         "title": {
@@ -7944,7 +7991,7 @@
                         "then": "Die Haltestelle hat eine Bank"
                     },
                     "1": {
-                        "then": "Die Haltestelle hat keine Bank"
+                        "then": "Die Haltestelle hat <b>keine</b> Sitzbank"
                     },
                     "2": {
                         "then": "Die Haltestelle hat eine Bank, die separat kartiert ist"
@@ -7958,7 +8005,7 @@
                         "then": "Die Haltestelle hat einen Mülleimer"
                     },
                     "1": {
-                        "then": "Die Haltestelle hat keinen Mülleimer"
+                        "then": "Die Haltestelle hat <b>keinen</b> Mülleimer"
                     },
                     "2": {
                         "then": "Die Haltestelle hat einen Mülleimer, der separat kartiert ist"
@@ -7987,7 +8034,7 @@
                         "then": "Die Haltestelle hat einen Fahrplan, der den Abstand zwischen Abfahrten anzeigt"
                     },
                     "5": {
-                        "then": "Die Haltestelle hat keinen Fahrplan"
+                        "then": "Die Haltestelle hat <b>keinen</b> Fahrplan"
                     }
                 }
             },
@@ -7997,7 +8044,7 @@
                         "then": "Die Haltestelle ist beleuchtet"
                     },
                     "1": {
-                        "then": "Die Haltestelle ist nicht beleuchtet"
+                        "then": "Die Haltestelle hat <b>keine</b> Beleuchtung"
                     }
                 },
                 "question": "Ist die Haltestelle beleuchtet?"
@@ -8008,7 +8055,7 @@
                         "then": "Die Haltestelle hat einen Unterstand"
                     },
                     "1": {
-                        "then": "Die Haltestelle hat keinen Unterstand"
+                        "then": "Die Haltestelle hat <b>keinen</b> Unterstand"
                     },
                     "2": {
                         "then": "Die Haltestelle hat einen Unterstand, der separat kariert ist"
@@ -8034,7 +8081,7 @@
                         "then": "Die Haltestelle hat ein taktiles Pflaster"
                     },
                     "1": {
-                        "then": "Die Haltestelle hat kein taktiles Pflaster"
+                        "then": "Die Haltestelle hat <b>kein</b> taktiles Pflaster"
                     }
                 },
                 "question": "Hat die Haltestelle hat ein taktiles Pflaster?"
@@ -8443,7 +8490,8 @@
                 "render": "Das Windrad wurde am {start_date} in Betrieb genommen."
             },
             "windturbine-fixme": {
-                "render": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}"
+                "render": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}",
+                "question": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlassen Sie eine Nachricht an OpenStreetMap-Experten)"
             }
         },
         "title": {
@@ -8479,5 +8527,51 @@
                 }
             }
         }
+    },
+    "usersettings": {
+        "tagRenderings": {
+            "verified-mastodon": {
+                "mappings": {
+                    "1": {
+                        "then": "Wir haben einen Link gefunden, der aussieht wie ein Mastodon-Konto, aber nicht verifiziert ist. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Bearbeiten Sie Ihre Profilbeschreibung</a> und fügen Sie dort Folgendes ein: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+                    },
+                    "0": {
+                        "then": "Es wurde ein Link zu deinem Mastodon-Profil gefunden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                    }
+                }
+            },
+            "picture-license": {
+                "mappings": {
+                    "2": {
+                        "then": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss"
+                    },
+                    "0": {
+                        "then": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann. <span class='subtle'>Dies ist die Standardeinstellung.</span>"
+                    },
+                    "1": {
+                        "then": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann."
+                    },
+                    "3": {
+                        "then": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY-SA 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss und dass Ableitungen Ihres Bildes mit der gleichen Lizenz weitergegeben werden müssen."
+                    }
+                },
+                "question": "Unter welcher Lizenz möchten Sie Ihre Bilder veröffentlichen?"
+            },
+            "contributor-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie haben Code zu MapComplete mit {_code_contributions} Commits beigetragen! Das ist großartig!"
+                    }
+                }
+            },
+            "translation-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Sie haben dazu beigetragen, MapComplete zu übersetzen! Das ist großartig!"
+                    }
+                }
+            }
+        },
+        "description": "Eine spezielle Ebene, die nicht für die Darstellung auf einer Karte gedacht ist, sondern für die Festlegung von Benutzereinstellungen verwendet wird"
     }
 }

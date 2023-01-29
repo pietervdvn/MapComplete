@@ -112,6 +112,7 @@
   - extinguisher
   - fire_station
   - fitness_centre
+  - fitness_station
   - food
   - ghost_bike
   - governments

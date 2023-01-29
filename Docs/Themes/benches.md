@@ -1,7 +1,7 @@
 
 
- Benches ( benches) 
---------------------
+ Benches ( [benches](https://mapcomplete.osm.be/benches) ) 
+-----------------------------------------------------------
 
 
 

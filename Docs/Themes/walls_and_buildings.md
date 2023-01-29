@@ -1,7 +1,7 @@
 
 
- Walls and buildings ( walls_and_buildings) 
---------------------------------------------
+ Walls and buildings ( [walls_and_buildings](https://mapcomplete.osm.be/walls_and_buildings) ) 
+-----------------------------------------------------------------------------------------------
 
 
 

@@ -1,7 +1,7 @@
 
 
- Speelbossen ( play_forests) 
------------------------------
+ Speelbossen ( [play_forests](https://mapcomplete.osm.be/play_forests) ) 
+-------------------------------------------------------------------------
 
 
 

@@ -1,7 +1,7 @@
 
 
- Street Lighting ( street_lighting) 
-------------------------------------
+ Street Lighting ( [street_lighting](https://mapcomplete.osm.be/street_lighting) ) 
+-----------------------------------------------------------------------------------
 
 
 

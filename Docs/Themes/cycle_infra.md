@@ -1,7 +1,7 @@
 
 
- Bicycle infrastructure ( cycle_infra) 
----------------------------------------
+ Bicycle infrastructure ( [cycle_infra](https://mapcomplete.osm.be/cycle_infra) ) 
+----------------------------------------------------------------------------------
 
 
 

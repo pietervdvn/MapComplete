@@ -1,7 +1,7 @@
 
 
- Cycle highways ( cycle_highways) 
-----------------------------------
+ Cycle highways ( [cycle_highways](https://mapcomplete.osm.be/cycle_highways) ) 
+--------------------------------------------------------------------------------
 
 
 

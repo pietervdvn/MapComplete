@@ -1,7 +1,7 @@
 
 
- Open Etymology Map ( etymology) 
----------------------------------
+ Open Etymology Map ( [etymology](https://mapcomplete.osm.be/etymology) ) 
+--------------------------------------------------------------------------
 
 
 

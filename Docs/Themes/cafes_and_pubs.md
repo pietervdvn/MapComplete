@@ -1,7 +1,7 @@
 
 
- Cafés and pubs ( cafes_and_pubs) 
-----------------------------------
+ Cafés and pubs ( [cafes_and_pubs](https://mapcomplete.osm.be/cafes_and_pubs) ) 
+--------------------------------------------------------------------------------
 
 
 

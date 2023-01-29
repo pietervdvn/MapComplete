@@ -134,20 +134,40 @@ class Slice extends Script {
             }
             delete f.bbox
         }
+        const maxNumberOfTiles = Math.pow(2, zoomlevel) * Math.pow(2, zoomlevel)
+        let handled = 0
         TiledFeatureSource.createHierarchy(StaticFeatureSource.fromGeojson(allFeatures), {
             minZoomLevel: zoomlevel,
             maxZoomLevel: zoomlevel,
             maxFeatureCount: Number.MAX_VALUE,
             registerTile: (tile) => {
+                handled = handled + 1
                 const path = `${outputDirectory}/tile_${tile.z}_${tile.x}_${tile.y}.geojson`
                 const box = BBox.fromTile(tile.z, tile.x, tile.y)
                 let features = tile.features.data.map((ff) => ff.feature)
                 if (doSlice) {
                     features = Utils.NoNull(
                         features.map((f) => {
+                            const bbox = box.asGeoJson({})
+                            const properties = {
+                                ...f.properties,
+                                id:
+                                    (f.properties?.id ?? "") +
+                                    "_" +
+                                    tile.z +
+                                    "_" +
+                                    tile.x +
+                                    "_" +
+                                    tile.y,
+                            }
+
+                            if (GeoOperations.completelyWithin(bbox, f)) {
+                                bbox.properties = properties
+                                return bbox
+                            }
                             const intersection = GeoOperations.intersect(f, box.asGeoJson({}))
                             if (intersection) {
-                                intersection.properties = f.properties
+                                intersection.properties = properties
                             }
                             return intersection
                         })
@@ -156,6 +176,15 @@ class Slice extends Script {
                 features.forEach((f) => {
                     delete f.bbox
                 })
+                if (features.length === 0) {
+                    ScriptUtils.erasableLog(
+                        handled + "/" + maxNumberOfTiles,
+                        "Not writing ",
+                        path,
+                        ": no features"
+                    )
+                    return
+                }
                 fs.writeFileSync(
                     path,
                     JSON.stringify(
@@ -168,6 +197,7 @@ class Slice extends Script {
                     )
                 )
                 ScriptUtils.erasableLog(
+                    handled + "/" + maxNumberOfTiles,
                     "Written ",
                     path,
                     "which has ",

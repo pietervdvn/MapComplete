@@ -215,7 +215,15 @@ export class AllKnownLayouts {
 
     public static GenerateDocumentationForTheme(theme: LayoutConfig): BaseUIElement {
         return new Combine([
-            new Title(new Combine([theme.title, "(", theme.id + ")"]), 2),
+            new Title(
+                new Combine([
+                    theme.title,
+                    "(",
+                    new Link(theme.id, "https://mapcomplete.osm.be/" + theme.id),
+                    ")",
+                ]),
+                2
+            ),
             theme.description,
             "This theme contains the following layers:",
             new List(

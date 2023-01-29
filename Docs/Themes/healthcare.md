@@ -1,7 +1,7 @@
 
 
- Healthcare ( healthcare) 
---------------------------
+ Healthcare ( [healthcare](https://mapcomplete.osm.be/healthcare) ) 
+--------------------------------------------------------------------
 
 
 

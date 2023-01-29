@@ -89,7 +89,7 @@
         "title": "Karte öffentlicher Bücherschränke"
     },
     "cafes_and_pubs": {
-        "description": "Kneipen und Bars",
+        "description": "Cafés, Kneipen und Bars",
         "title": "Cafés und Kneipen"
     },
     "campersite": {
@@ -573,7 +573,7 @@
                 }
             }
         },
-        "shortDescription": "Was ist der Ursprung eines Ortsnamens?",
+        "shortDescription": "Woher stammt der Name einer Straße oder eines Ortes?",
         "title": "Karte zur Herkunft der Namen"
     },
     "facadegardens": {
@@ -679,7 +679,7 @@
         "title": "Pommes-frites-Läden"
     },
     "ghostbikes": {
-        "description": "<b>Geisterräder</b> sind weiße Fahrräder, die zum Gedenken tödlich verunglückter Radfahrer vor Ort aufgestellt wurden.<br/><br/> Auf dieser Karte sehen Sie alle Geisterräder, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen nur ein (kostenloses) OpenStreetMap-Konto.",
+        "description": "<b>Geisterräder</b> sind weiße Fahrräder, die zum Gedenken tödlich verunglückter Radfahrer vor Ort aufgestellt wurden.<br/><br/> Auf dieser Karte sehen Sie alle Geisterräder, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen nur ein (kostenloses) OpenStreetMap-Konto.<p>Es gibt ein Konto <a href='https://masto.bike/@ghostbikebot' target='_blank'>auf Mastodon, das monatliche eine weltweite Übersicht von Geisterfahrrädern veröffentlicht</a></p>",
         "title": "Geisterräder"
     },
     "grb": {
@@ -799,6 +799,13 @@
                                 "question": "Erstellt mit host {search}"
                             }
                         }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Im Änderungssatz wurde mindestens ein Bild hinzugefügt"
+                            }
+                        }
                     }
                 },
                 "name": "Zentrum der Änderungssätze",
@@ -860,7 +867,7 @@
         "title": "In die Natur"
     },
     "notes": {
-        "description": "Eine Notiz enthält eine Fehlerbeschreibung und ist als Stecknadel auf der Karte sichtbar.<br/><br/>In der <a href='#filters'>Ebenenauswahl</a> kann nach Ersteller, Bearbeiter und Text gesucht werden.",
+        "description": "Eine Notiz enthält eine Fehlerbeschreibung und ist als Markierung auf der Karte sichtbar.<br/><br/>In der <a href='#filters'>Ebenenauswahl</a> kann nach Ersteller, Bearbeiter und Inhalt gesucht werden.",
         "title": "Notizen von OpenStreetMap"
     },
     "observation_towers": {

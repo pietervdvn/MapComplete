@@ -1,7 +1,7 @@
 
 
- Cyclestreets ( cyclestreets) 
-------------------------------
+ Cyclestreets ( [cyclestreets](https://mapcomplete.osm.be/cyclestreets) ) 
+--------------------------------------------------------------------------
 
 
 

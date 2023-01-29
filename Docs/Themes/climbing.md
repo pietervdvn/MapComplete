@@ -1,7 +1,7 @@
 
 
- Open Climbing Map ( climbing) 
--------------------------------
+ Open Climbing Map ( [climbing](https://mapcomplete.osm.be/climbing) ) 
+-----------------------------------------------------------------------
 
 
 

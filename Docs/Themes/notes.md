@@ -1,7 +1,7 @@
 
 
- Notes on OpenStreetMap ( notes) 
----------------------------------
+ Notes on OpenStreetMap ( [notes](https://mapcomplete.osm.be/notes) ) 
+----------------------------------------------------------------------
 
 
 

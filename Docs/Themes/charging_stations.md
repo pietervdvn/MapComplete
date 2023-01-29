@@ -1,7 +1,7 @@
 
 
- Charging stations ( charging_stations) 
-----------------------------------------
+ Charging stations ( [charging_stations](https://mapcomplete.osm.be/charging_stations) ) 
+-----------------------------------------------------------------------------------------
 
 
 

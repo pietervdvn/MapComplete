@@ -1,7 +1,7 @@
 
 
- Maxspeed ( maxspeed) 
-----------------------
+ Maxspeed ( [maxspeed](https://mapcomplete.osm.be/maxspeed) ) 
+--------------------------------------------------------------
 
 
 

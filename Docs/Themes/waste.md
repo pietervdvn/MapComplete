@@ -1,7 +1,7 @@
 
 
- Waste ( waste) 
-----------------
+ Waste ( [waste](https://mapcomplete.osm.be/waste) ) 
+-----------------------------------------------------
 
 
 

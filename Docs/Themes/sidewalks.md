@@ -1,7 +1,7 @@
 
 
- Sidewalks ( sidewalks) 
-------------------------
+ Sidewalks ( [sidewalks](https://mapcomplete.osm.be/sidewalks) ) 
+-----------------------------------------------------------------
 
 
 

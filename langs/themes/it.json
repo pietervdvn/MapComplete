@@ -26,7 +26,8 @@
         "title": "Mappa libera delle microbiblioteche"
     },
     "cafes_and_pubs": {
-        "title": "Caffè e pub"
+        "title": "Caffè e pub",
+        "description": "Pub e bar"
     },
     "campersite": {
         "description": "Questo sito raccoglie tutti i luoghi ufficiali dove sostare con il camper e aree dove è possibile scaricare acque grigie e nere. Puoi aggiungere dettagli riguardanti i servizi forniti e il loro costo. Aggiungi foto e recensioni. Questo è al contempo un sito web e una web app. I dati sono memorizzati su OpenStreetMap in modo tale che siano per sempre liberi e riutilizzabili da qualsiasi app.",
