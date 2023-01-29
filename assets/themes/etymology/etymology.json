@@ -11,19 +11,21 @@
     "fr": "Open Etymology Map",
     "ca": "Open Etymology Map",
     "da": "Åbn oprindelseskort",
-    "nb_NO": "Åpent etymologikart"
+    "nb_NO": "Åpent etymologikart",
+    "cs": "Otevřít etymologickou mapu"
   },
   "shortDescription": {
     "en": "What is the origin of a toponym?",
     "nl": "Wat is de oorsprong van een plaatsnaam?",
-    "de": "Was ist der Ursprung eines Ortsnamens?",
+    "de": "Woher stammt der Name einer Straße oder eines Ortes?",
     "it": "Qual è l’origine di un toponimo?",
     "zh_Hant": "地名的由來是？",
     "hu": "Mi az eredete egy helynévnek?",
     "fr": "Quelle est l'origine de ce toponyme ?",
     "es": "¿Cual es el origen de un topónimo?",
     "ca": "Quin és l'origen d'un topònim?",
-    "da": "Hvad er oprindelsen af et stednavn?"
+    "da": "Hvad er oprindelsen af et stednavn?",
+    "cs": "Jaký je původ toponyma?"
   },
   "description": {
     "en": "On this map, you can see what an object is named after. The streets, buildings, ... come from OpenStreetMap which got linked with Wikidata. In the popup, you'll see the Wikipedia article (if it exists) or a wikidata box of what the object is named after. If the object itself has a wikipedia page, that'll be shown too.<br/><br/><b>You can help contribute too!</b>Zoom in enough and <i>all</i> streets will show up. You can click one and a Wikidata-search box will popup. With a few clicks, you can add an etymology link. Note that you need a free OpenStreetMap account to do this.",
@@ -33,7 +35,8 @@
     "zh_Hant": "在這份地圖，你可以看到物件是以何命名，道路、 建築等的命名由來連到 Wikidata。在跳出選單，你可以看到物件命名由來的維基條目 (如果有的話)，或是 Wikidata 框。如果物件本身有維基頁面，也會顯示。<br/><br/><b>你也可以貢獻！</b>放大到夠大的層級，然後<i>所有</i>道路都會顯示。你可以點選一個之後 Wikidata 搜尋框會跳出來。只要點幾下，你可以新增詞源連結。注意你要有開放街圖帳號才能這麼做。",
     "hu": "Ezen a térképen az látható, hogy egy objektum milyen névre hallgat. Az utcák, épületek stb. az OpenStreetMapről származnak, amely össze van kapcsolva a Wikidata adatbázissal. A felugró ablakban megjelenik a megfelelő Wikipedia-szócikk (ha van) vagy egy Wikidata-doboz arról, amiről az objektumot elnevezték. Ha magának az objektumnak van Wikipédia-oldala, az is megjelenik.<br/><br/><b>A térképet Ön is szerkesztheti!</b>nagyítson rá, és <i>az összes</i> utca megjelenik. Ha valamelyikre rákattint, megjelenik Wikidata-kereső doboz. Néhány kattintással hozzáadhat egy etimológiai linket. Ne feledje, hogy ehhez szüksége van egy ingyenes OpenStreetMap-fiókra.",
     "fr": "Retrouvez sur cette carte l’origine du nom d’un élément. Les rues, bâtiments, etc. proviennent d’OpenStreetMap et sont liés aux données venant de Wikidata. La fenêtre pop-up affiche l’article Wikipedia (s’il existe) ou l’infobox Wikidata de l’objet dont provient le nom. Si l’objet a sa propre page Wikipedia, elle sera aussi affichée.<br/><br/><b>Vous pouvez contribuer aussi !</b>Zoomez suffisamment et <i>toutes</i> les rues seront affichées. Cliquez sur l'une d'elles et une boîte de recherche Wikidata apparaîtra. En quelques clics, vous pouvez ajouter un lien étymologique. Vous devez disposer d’un compte OpenStreetMap gratuit.",
-    "da": "På dette kort kan du se, hvad et objekt er opkaldt efter. Gaderne, bygningerne, ... kommer fra OpenStreetMap, som blev forbundet med Wikidata. I pop op-vinduet vil du se Wikipedia-artiklen (hvis den findes) eller en wikidata-boks med, hvad objektet er opkaldt efter. Hvis selve objektet har en wikipedia-side, vil det også blive vist.<br/><br/><b>Du kan også hjælpe med at bidrage!</b>Zoom nok ind og <i>alle</i> gader vil dukke op. Du kan klikke på en og en Wikidata-søgeboks vil poppe op. Med et par klik kan du tilføje et etymologilink. Bemærk, at du har brug for en gratis OpenStreetMap-konto for at gøre dette."
+    "da": "På dette kort kan du se, hvad et objekt er opkaldt efter. Gaderne, bygningerne, ... kommer fra OpenStreetMap, som blev forbundet med Wikidata. I pop op-vinduet vil du se Wikipedia-artiklen (hvis den findes) eller en wikidata-boks med, hvad objektet er opkaldt efter. Hvis selve objektet har en wikipedia-side, vil det også blive vist.<br/><br/><b>Du kan også hjælpe med at bidrage!</b>Zoom nok ind og <i>alle</i> gader vil dukke op. Du kan klikke på en og en Wikidata-søgeboks vil poppe op. Med et par klik kan du tilføje et etymologilink. Bemærk, at du har brug for en gratis OpenStreetMap-konto for at gøre dette.",
+    "cs": "Na této mapě se můžete podívat, podle čeho je objekt pojmenován. Ulice, budovy, ... pocházejí z OpenStreetMap, které byly propojeny s Wikidaty. Ve vyskakovacím okně se zobrazí článek na Wikipedii (pokud existuje) nebo wikidatové pole toho, po čem je objekt pojmenován. Pokud má samotný objekt stránku na Wikipedii, zobrazí se i ta.<br/><br/><b> Přispět můžete i vy!</b>Dostatečně si objekt přiblížíte a zobrazí se <i>všechny</i>ulice. Na některou z nich můžete kliknout a objeví se okno pro vyhledávání na Wikidatech. Několika kliknutími můžete přidat etymologický odkaz. K provádění těchto úprav potřebujete bezplatný účet na OpenStreetMap."
   },
   "icon": "./assets/layers/etymology/logo.svg",
   "startLat": 0,
@@ -61,7 +64,8 @@
           "es": "Calles sin información etimológica",
           "ca": "Carrers sense informació etimològica",
           "da": "Gader uden oprindelses information",
-          "nb_NO": "Gater uten etymologi-info"
+          "nb_NO": "Gater uten etymologi-info",
+          "cs": "Ulice bez etymologických informací"
         },
         "minzoom": 18,
         "source": {
@@ -90,7 +94,8 @@
           "es": "Parques y bosques sin información etimológica",
           "ca": "Parcs i boscos sense informació etimològica",
           "da": "Parker og skove uden oprindelses information",
-          "nb_NO": "Parker og skoger uten etymologi-info"
+          "nb_NO": "Parker og skoger uten etymologi-info",
+          "cs": "Parky a lesy bez etymologických informací"
         },
         "minzoom": 18,
         "source": {
@@ -120,7 +125,8 @@
           "nl": "Onderwijsinstelling zonder etymologische informatie",
           "ca": "Institucions educatives sense informació d'etimològica",
           "da": "Uddannelsesinstitutioner uden oprindelses oplysninger",
-          "nb_NO": "Utdannelsesinstitusjoner uten etymologi-info"
+          "nb_NO": "Utdannelsesinstitusjoner uten etymologi-info",
+          "cs": "Vzdělávací instituce bez etymologických informací"
         },
         "minzoom": 18,
         "source": {
@@ -153,7 +159,8 @@
           "nl": "Culturele plaatsen zonder etymologische informatie",
           "ca": "Llocs culturals sense informació etimològica",
           "da": "Kulturelle steder uden oprindelses information",
-          "nb_NO": "Kulturelle steder uten etymologi-info"
+          "nb_NO": "Kulturelle steder uten etymologi-info",
+          "cs": "Kulturní místa bez etymologických informací"
         },
         "minzoom": 18,
         "source": {
@@ -186,7 +193,8 @@
           "nl": "Toeristische plaatsen zonder etymologische informatie",
           "ca": "Llocs turístics sense informació etimològica",
           "da": "Turistiske steder uden oprindelses information",
-          "nb_NO": "Turiststeder uten etymologi-info"
+          "nb_NO": "Turiststeder uten etymologi-info",
+          "cs": "Toursistická místa bez etymologických informací"
         },
         "minzoom": 18,
         "source": {
@@ -217,7 +225,8 @@
           "nl": "Gezondheidsinstellingen en maatschappelijke plaatsen zonder etymologische informatie",
           "ca": "Llocs socials i de salut sense informació etimològica",
           "da": "Sundhed og sociale steder uden oprindelses information",
-          "nb_NO": "Helse- og sosiale steder uten etymologi-info"
+          "nb_NO": "Helse- og sosiale steder uten etymologi-info",
+          "cs": "Zdravotní a sociální místa bez etymologických informací"
         },
         "minzoom": 18,
         "source": {
@@ -248,7 +257,8 @@
           "nl": "Sportplekken zonder etymologische informatie",
           "ca": "Llocs esportius sense informació etimològica",
           "da": "Sportspladser uden oprindelses information",
-          "nb_NO": "Sportssteder uten etymologi-info"
+          "nb_NO": "Sportssteder uten etymologi-info",
+          "cs": "Sportovní místa bez etymologických informací"
         },
         "minzoom": 18,
         "source": {

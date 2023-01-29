@@ -12,7 +12,8 @@
     "it": "Una mappa di mappe",
     "nb_NO": "Et kart over kart",
     "ca": "Un mapa de mapes",
-    "es": "Un mapa de mapas"
+    "es": "Un mapa de mapas",
+    "cs": "Mapa map"
   },
   "shortDescription": {
     "en": "This theme shows all (touristic) maps that OpenStreetMap knows of",
@@ -34,7 +35,8 @@
     "de": "Auf dieser Karte findest du alle Karten, die OpenStreetMap kennt - typischerweise eine große Karte auf einer Informationstafel, die das Gebiet, die Stadt oder die Region zeigt, z.B. eine touristische Karte auf der Rückseite einer Plakatwand, eine Karte eines Naturschutzgebietes, eine Karte der Radwegenetze in der Region, ...) <br/><br/>Wenn eine Karte fehlt, können Sie diese leicht auf OpenStreetMap kartieren.",
     "it": "In questa carta puoi trovare tutte le mappe conosciute da OpenStreetMap (tipicamente una grossa mappa su di un pannello informativo che mostra l’area, la città o la regione, ad es. una mappa turistica dietro a un manifesto, la mappa di una riserva naturale, la mappa della rete ciclistica regionale, etc.)<br/><br/>Se manca una mappa, puoi aggiungerla facilmente a questa su OpenStreetMap.",
     "es": "En este mapa puedes encontrar todos los mapas que OpenStreetMap conoce - típicamente un mapa grande con un tablero que muestra el área, la ciudad o la región, ej. un mapa turista detrás de una vaya publicitaria, un mapa de una reserva natural, un mapa de redes ciclistas en la región, ...)<br/><br/>Si falta un mapa, puedes mapear este mapa fácilmente en OpenStreetMap.",
-    "da": "På dette kort kan du finde alle kort, OpenStreetMap kender - typisk et stort kort på en informationstavle, der viser området, byen eller regionen, f.eks. et turistkort på bagsiden af en tavle, et kort over et naturreservat, et kort over cykelnetværk i regionen, ...) <br/><br/>Hvis der mangler et kort, kan du nemt kortlægge dette kort på OpenStreetMap."
+    "da": "På dette kort kan du finde alle kort, OpenStreetMap kender - typisk et stort kort på en informationstavle, der viser området, byen eller regionen, f.eks. et turistkort på bagsiden af en tavle, et kort over et naturreservat, et kort over cykelnetværk i regionen, ...) <br/><br/>Hvis der mangler et kort, kan du nemt kortlægge dette kort på OpenStreetMap.",
+    "cs": "Na této mapě najdete všechny mapy, které OpenStreetMap zná - typicky je zde velká mapa na informační tabuli zobrazující oblast, město nebo region, (např. turistická mapa na zadní straně billboardu, mapa přírodní rezervace, mapa cyklistických sítí v regionu, ...). <br/><br/>Pokud mapa chybí, můžete ji snadno zmapovat na OpenStreetMap."
   },
   "icon": "./assets/themes/maps/logo.svg",
   "startLat": 0,

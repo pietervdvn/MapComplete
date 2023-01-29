@@ -91,16 +91,18 @@
         "es": "¿Cuánto cuesta utilizar el servicio de limpieza?",
         "fr": "Combien coûte le service de nettoyage ?",
         "da": "Hvor meget koster det at bruge rengøringsservicen?",
-        "cs": "Kolik stojí využívání služby mytí?"
+        "cs": "Kolik stojí využívání služby mytí?",
+        "ca": "Molt costa utilitzar el servei de rentat?"
       },
       "render": {
         "en": "Using the cleaning service costs {service:bicycle:cleaning:charge}",
-        "de": "Nutzung des Reinigungsservice kostet {service:bicycle:cleaning:charge}",
+        "de": "Der Reinigungsservice kostet {service:bicycle:cleaning:charge}",
         "nl": "Het gebruik van het fietsschoonmaakpunt kost {service:bicycle:cleaning:charge}",
         "es": "Utilizar el servicio de limpieza cuesta {service:bicycle:cleaning:charge}",
         "fr": "Le service de nettoyage coûte {service:bicycle:cleaning:charge}",
         "da": "Brug af rengøringsservice koster {service:bicycle:cleaning:charge}",
-        "cs": "Využití služby mytí stojí {service:bicycle:cleaning:charge}"
+        "cs": "Využití služby mytí stojí {service:bicycle:cleaning:charge}",
+        "ca": "Utilitzar el servei de rentat costa {service:bicycle:cleaning:charge}"
       },
       "condition": {
         "and": [
@@ -125,7 +127,8 @@
             "es": "El servicio de limpieza es gratuito",
             "fr": "Le service de nettoyage est gratuit",
             "da": "Rengøringsservicen er gratis at bruge",
-            "cs": "Služba mytí je k dispozici zdarma"
+            "cs": "Služba mytí je k dispozici zdarma",
+            "ca": "El servei de rentat és gratuït"
           },
           "addExtraTags": [
             "service:bicycle:cleaning:charge="

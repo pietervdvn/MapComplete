@@ -694,7 +694,8 @@
             "nl": "Alleen op afspraak",
             "fr": "Uniquement sur rendez-vous",
             "ca": "Sols amb cita prèvia",
-            "es": "Sólo con cita previa"
+            "es": "Sólo con cita previa",
+            "nb_NO": "Kun ved avtale"
           }
         },
         {
@@ -705,7 +706,8 @@
             "nl": "Alleen op afspraak",
             "fr": "Uniquement sur rendez-vous",
             "ca": "Sols amb cita prèvia",
-            "es": "Sólo con cita previa"
+            "es": "Sólo con cita previa",
+            "nb_NO": "Kun ved avtale"
           },
           "hideInAnswer": true
         }
@@ -930,7 +932,8 @@
             "de": "Münzen werden hier akzeptiert",
             "fr": "Les pièces sont acceptées ici",
             "ca": "Aquí s'accepten monedes",
-            "es": "Aquí se aceptan monedas"
+            "es": "Aquí se aceptan monedas",
+            "nb_NO": "Mynter aksepteres her"
           }
         },
         {
@@ -943,7 +946,8 @@
             "de": "Geldscheine werden hier akzeptiert",
             "fr": "Les billets de banque sont acceptés ici",
             "ca": "Aquí s'accepten bitllets",
-            "es": "Aquí se aceptan billetes"
+            "es": "Aquí se aceptan billetes",
+            "nb_NO": "Sedler aksepteres her"
           }
         },
         {
@@ -956,7 +960,8 @@
             "de": "Debitkarten werden hier akzeptiert",
             "fr": "Les cartes de débit sont acceptées ici",
             "ca": "Aquí s'accepten targetes de dèbit",
-            "es": "Aquí se aceptan tarjetas de débito"
+            "es": "Aquí se aceptan tarjetas de débito",
+            "nb_NO": "Debetkort aksepteres her"
           }
         },
         {
@@ -969,7 +974,8 @@
             "de": "Kreditkarten werden hier akzeptiert",
             "fr": "Les cartes de crédit sont acceptées ici",
             "ca": "Aquí s'accepten targetes de crèdit",
-            "es": "Aquí se aceptan tarjetas de crédito"
+            "es": "Aquí se aceptan tarjetas de crédito",
+            "nb_NO": "Kredittkort aksepteres her"
           }
         }
       ]
@@ -1358,7 +1364,7 @@
           "hu": "A földszinten",
           "it": "Si trova al pianoterra",
           "nb_NO": "På gateplan",
-          "ca": "Situat a planta zero",
+          "ca": "Situat a la planta zero",
           "ja": "1階にあります",
           "id": "Terletak di lantai dasar",
           "sl": "Nahaja se v pritličju",
@@ -1503,7 +1509,8 @@
       "cs": "Má toto místo zvukovou indukční smyčku pro osoby se sluchovým postižením?",
       "nb_NO": "Har stedet en teleslynge for folk med redusert hørsel?",
       "nl": "Heeft deze plaats een ringleiding voor slechthorenden?",
-      "ca": "Aquest lloc té un bucle magnètic per a la gent amb dificultats auditives?"
+      "ca": "Aquest lloc té un bucle magnètic per a la gent amb dificultats auditives?",
+      "es": "¿Este lugar tiene un bucle auditivo para personas con discapacidad auditiva?"
     },
     "mappings": [
       {
@@ -1517,7 +1524,8 @@
           "nb_NO": "Dette stedet har en teleslynge",
           "nl": "Deze plaats heeft een ringleiding",
           "pl": "To miejsce ma pętlę indukcyjną audio",
-          "ca": "El lloc té un bucle magnètic"
+          "ca": "El lloc té un bucle magnètic",
+          "es": "Este lugar tiene un bucle auditivo"
         },
         "icon": {
           "path": "./assets/tagRenderings/audio_induction_loop.svg",
@@ -1534,7 +1542,8 @@
           "cs": "Toto místo <b>nemá indukční zvukovou smyčku</b>",
           "nb_NO": "Dette stedet <b>har ikke</b> en teleslynge",
           "nl": "Deze plaats heeft <b>geen</b> ringleiding",
-          "ca": "El lloc <b>no</b> té un bucle magnètic"
+          "ca": "El lloc <b>no</b> té un bucle magnètic",
+          "es": "Este lugar <b>no</b> tiene bucle auditivo"
         },
         "icon": {
           "path": "./assets/tagRenderings/audio_induction_loop_missing.svg",

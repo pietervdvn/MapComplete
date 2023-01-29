@@ -59,7 +59,8 @@
       "render": {
         "en": "This pharmacy is called {name}",
         "de": "Der Name der Apotheke lautet {name}",
-        "nl": "Deze apotheek heet {name}"
+        "nl": "Deze apotheek heet {name}",
+        "ca": "Aquesta farmàcia es diu {name}"
       }
     },
     "opening_hours",
@@ -71,7 +72,8 @@
       "question": {
         "en": "Is this pharmacy easy to access on a wheelchair?",
         "de": "Ist die Apotheke für Rollstuhlfahrer leicht zugänglich?",
-        "nl": "Is het mogelijk om deze apotheek te bereiken met een rolstoel?"
+        "nl": "Is het mogelijk om deze apotheek te bereiken met een rolstoel?",
+        "ca": "És fàcil accedir a aquesta farmàcia amb una cadira de rodes?"
       },
       "mappings": [
         {
@@ -88,7 +90,8 @@
           "then": {
             "en": "This pharmacy is hard to access on a wheelchair",
             "de": "Die Apotheke ist für Rollstuhlfahrer nur schwer zugänglich",
-            "nl": "Deze apotheek is moeilijk te bereiken met een rolstoel"
+            "nl": "Deze apotheek is moeilijk te bereiken met een rolstoel",
+            "ca": "Aquesta farmàcia es difícil d'accedir amb una cadira de rodes"
           }
         },
         {
@@ -96,7 +99,8 @@
           "then": {
             "en": "This pharmacy has limited access for wheelchair users",
             "de": "Die Apotheke ist für Rollstuhlfahrer nur eingeschränkt zugänglich",
-            "nl": "Deze apotheek is bereikbaar met een rolstoel, maar het is niet makkelijk"
+            "nl": "Deze apotheek is bereikbaar met een rolstoel, maar het is niet makkelijk",
+            "ca": "Aquesta farmàcia té un accés limitat per a usuaris amb cadira de rodes"
           }
         }
       ]

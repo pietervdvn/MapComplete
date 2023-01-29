@@ -60,7 +60,8 @@
             "en": "This is an underground parking garage",
             "nl": "Dit is een ondergrondse parkeergarage",
             "de": "Dies ist eine Tiefgarage",
-            "fr": "Il s'agit d'un parking souterrain"
+            "fr": "Il s'agit d'un parking souterrain",
+            "ca": "Aquest és un aparcament subterrani"
           }
         },
         {
@@ -131,7 +132,8 @@
         "en": "What kind of parking is this?",
         "nl": "Wat voor parking is dit?",
         "de": "Was ist das für ein Parkplatz?",
-        "fr": "De quel type de stationnement s'agit-il ?"
+        "fr": "De quel type de stationnement s'agit-il ?",
+        "ca": "Quin tipus d'aparcament és aquest?"
       }
     },
     {
@@ -173,7 +175,8 @@
             "en": "There are no disabled parking spots",
             "nl": "Er zijn geen parkeerplaatsen voor gehandicapten",
             "de": "Es gibt keine barrierefreien Stellplätze",
-            "fr": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite"
+            "fr": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite",
+            "ca": "No hi han places d'aparcament per a persones amb mobilitat reduïda"
           }
         }
       ],
@@ -207,7 +210,8 @@
         "en": "How many parking spots are there at this parking?",
         "nl": "Hoeveel parkeerplaatsen zijn er op deze parking?",
         "de": "Wie viele Stellplätze gibt es auf diesem Parkplatz?",
-        "fr": "Combien de places de stationnement y a-t-il dans ce parking ?"
+        "fr": "Combien de places de stationnement y a-t-il dans ce parking ?",
+        "ca": "Quantes places d'aparcament hi han a aquest aparcament?"
       },
       "render": {
         "en": "There are {capacity} parking spots",
@@ -227,7 +231,8 @@
         "en": "a car parking",
         "de": "einen Parkplatz",
         "es": "un aparcamiento de coches",
-        "fr": "un lieu de stationnement pour voitures"
+        "fr": "un lieu de stationnement pour voitures",
+        "ca": "un aparcament per a cotxes"
       }
     }
   ],

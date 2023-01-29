@@ -22,7 +22,8 @@
     "render": {
       "en": "Transit Stop",
       "de": "Haltestelle",
-      "da": "Transit Stop"
+      "da": "Transit Stop",
+      "nl": "Bushalte"
     },
     "mappings": [
       {
@@ -63,7 +64,8 @@
         "en": "This stop is called <b>{name}</b>",
         "de": "Der Name der Haltestelle lautet <b>{name}</b>",
         "da": "Dette stop hedder <b>{name}</b>",
-        "nl": "Deze halte heet <b>{name}</b>"
+        "nl": "Deze halte heet <b>{name}</b>",
+        "ca": "Aquesta parada es diu <b>{name}</b>"
       },
       "freeform": {
         "key": "name",
@@ -90,7 +92,8 @@
             "en": "This stop has no name",
             "de": "Die Haltestelle hat keinen Namen",
             "da": "Dette stop har intet navn",
-            "nl": "Deze halte heeft geen naam"
+            "nl": "Deze halte heeft geen naam",
+            "ca": "Aquesta parada no té nom"
           }
         }
       ],
@@ -98,7 +101,8 @@
         "en": "What is the name of this stop?",
         "de": "Wie lautet der Name der Haltestelle?",
         "da": "Hvad er navnet på dette stop?",
-        "nl": "Wat is de naam van deze halte?"
+        "nl": "Wat is de naam van deze halte?",
+        "ca": "Quin és el nom d'aquesta parada?"
       }
     },
     "images",
@@ -111,16 +115,18 @@
             "en": "This stop has a shelter",
             "de": "Die Haltestelle hat einen Unterstand",
             "da": "Dette stop har et ly",
-            "nl": "Deze halte heeft een schuilplaats"
+            "nl": "Deze halte heeft een schuilplaats",
+            "ca": "Aquesta parada té una coberta"
           }
         },
         {
           "if": "shelter=no",
           "then": {
-            "en": "This stop does not have a shelter",
-            "de": "Die Haltestelle hat keinen Unterstand",
+            "en": "This stop does <b>not</b> have a shelter",
+            "de": "Die Haltestelle hat <b>keinen</b> Unterstand",
             "da": "Dette stop har ikke et ly",
-            "nl": "Deze halte heeft geen schuilplaats"
+            "nl": "Deze halte heeft <b>geen</b> schuilplaats",
+            "ca": "Aquesta parada no té una coberta"
           }
         },
         {
@@ -137,7 +143,8 @@
         "en": "Does this stop have a shelter?",
         "de": "Hat die Haltestelle einen Unterstand?",
         "da": "Har dette stop et ly?",
-        "nl": "Heeft deze halte een schuilplaats?"
+        "nl": "Heeft deze halte een schuilplaats?",
+        "ca": "Aquesta parada té una coberta?"
       }
     },
     {
@@ -149,16 +156,18 @@
             "en": "This stop has a bench",
             "de": "Die Haltestelle hat eine Bank",
             "da": "Dette stop har en bænk",
-            "nl": "Deze halte heeft een zitbank"
+            "nl": "Deze halte heeft een zitbank",
+            "ca": "Aquesta parada té un banc"
           }
         },
         {
           "if": "bench=no",
           "then": {
-            "en": "This stop does not have a bench",
-            "de": "Die Haltestelle hat keine Bank",
+            "en": "This stop does <b>not</b> have a bench",
+            "de": "Die Haltestelle hat <b>keine</b> Sitzbank",
             "da": "Dette stoppested har ingen bænk",
-            "nl": "Deze halte heeft geen zitbank"
+            "nl": "Deze halte heeft <b>geen</b> zitbank",
+            "ca": "Aquesta parada no té un banc"
           }
         },
         {
@@ -175,7 +184,8 @@
         "en": "Does this stop have a bench?",
         "de": "Gibt es an der Haltestelle eine Sitzbank?",
         "da": "Har dette stop en bænk?",
-        "nl": "Heeft deze halte een zitbank?"
+        "nl": "Heeft deze halte een zitbank?",
+        "ca": "Aquesta parada té un banc?"
       }
     },
     {
@@ -187,16 +197,18 @@
             "en": "This stop has a bin",
             "de": "Die Haltestelle hat einen Mülleimer",
             "da": "Dette stop har en skraldespand",
-            "nl": "Deze halte heeft een vuilnisbak"
+            "nl": "Deze halte heeft een vuilnisbak",
+            "ca": "Aquesta parada té una paperera"
           }
         },
         {
           "if": "bin=no",
           "then": {
-            "en": "This stop does not have a bin",
-            "de": "Die Haltestelle hat keinen Mülleimer",
+            "en": "This stop does <b>not</b> have a bin",
+            "de": "Die Haltestelle hat <b>keinen</b> Mülleimer",
             "da": "Dette stoppested har ikke en skraldespand",
-            "nl": "Deze halte heeft geen vuilnisbak"
+            "nl": "Deze halte heeft <b>geen</b> vuilnisbak",
+            "ca": "Aquesta parada no té una paperera"
           }
         },
         {
@@ -213,7 +225,8 @@
         "en": "Does this stop have a bin?",
         "de": "Hat die Haltestelle einen Mülleimer?",
         "da": "Har dette stop en skraldespand?",
-        "nl": "Heeft deze halte een vuilnisbak?"
+        "nl": "Heeft deze halte een vuilnisbak?",
+        "ca": "Aquesta parada té una paperera?"
       }
     },
     "wheelchair-access",
@@ -224,20 +237,26 @@
           "if": "tactile_paving=yes",
           "then": {
             "en": "This stop has tactile paving",
-            "de": "Die Haltestelle hat ein taktiles Pflaster"
+            "de": "Die Haltestelle hat ein taktiles Pflaster",
+            "ca": "Aquesta parada té una superfície podotàctil",
+            "nl": "Deze halte heeft een geleidelijn"
           }
         },
         {
           "if": "tactile_paving=no",
           "then": {
-            "en": "This stop does not have tactile paving",
-            "de": "Die Haltestelle hat kein taktiles Pflaster"
+            "en": "This stop does <b>not</b> have tactile paving",
+            "de": "Die Haltestelle hat <b>kein</b> taktiles Pflaster",
+            "ca": "Aquesta parada no té una superfície podotàctil",
+            "nl": "Deze halte heeft <b>geen</b> geleidelijn"
           }
         }
       ],
       "question": {
         "en": "Does this stop have tactile paving?",
-        "de": "Hat die Haltestelle hat ein taktiles Pflaster?"
+        "de": "Hat die Haltestelle hat ein taktiles Pflaster?",
+        "ca": "Aquesta parada té una superfície podotàctil?",
+        "nl": "Heeft deze halte een geleidelijn?"
       }
     },
     {
@@ -248,23 +267,26 @@
           "then": {
             "en": "This stop is lit",
             "de": "Die Haltestelle ist beleuchtet",
-            "nl": "Deze halte is niet verlicht"
+            "nl": "Deze halte is verlicht",
+            "ca": "Aquesta parada té il·luminació"
           }
         },
         {
           "if": "lit=no",
           "then": {
-            "en": "This stop is not lit",
-            "de": "Die Haltestelle ist nicht beleuchtet",
+            "en": "This stop is <b>not</b> lit",
+            "de": "Die Haltestelle hat <b>keine</b> Beleuchtung",
             "da": "Dette stop lyser ikke",
-            "nl": "Deze halte is niet verlicht"
+            "nl": "Deze halte is <b>niet</b> verlicht",
+            "ca": "Aquesta parada no té il·luminació"
           }
         }
       ],
       "question": {
         "en": "Is this stop lit?",
         "de": "Ist die Haltestelle beleuchtet?",
-        "nl": "Is deze halte verlicht?"
+        "nl": "Is deze halte verlicht?",
+        "ca": "Aquesta parada té il·luminació?"
       }
     },
     {
@@ -315,8 +337,8 @@
         {
           "if": "departures_board=no",
           "then": {
-            "en": "This stop does not have a departures board",
-            "de": "Die Haltestelle hat keinen Fahrplan",
+            "en": "This stop does <b>not</b> have a departures board",
+            "de": "Die Haltestelle hat <b>keinen</b> Fahrplan",
             "da": "Dette stop har ikke en afgangstavle"
           }
         }
@@ -326,7 +348,8 @@
       "render": {
         "en": "<h3>{_contained_routes_count} routes stop at this stop</h3> <ul>{_contained_routes}</ul>",
         "de": "<h3>{_contained_routes_count} Linien halten an der Haltestelle</h3> <ul>{_contained_routes}</ul>",
-        "da": "<h3>{_contained_routes_count} ruter stopper ved dette stoppested</h3> <ul>{_contained_routes}</ul>"
+        "da": "<h3>{_contained_routes_count} ruter stopper ved dette stoppested</h3> <ul>{_contained_routes}</ul>",
+        "nl": "<h3>{_contained_routes_count} lijnen stoppen bij deze halte</h3> <ul>{_contained_routes}</ul>"
       },
       "condition": "_contained_routes~*",
       "id": "contained_routes"

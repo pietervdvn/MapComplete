@@ -212,7 +212,8 @@
       "question": {
         "en": "Does this shop offer organic products?",
         "de": "Bietet dieses Geschäft Bioprodukte an?",
-        "nl": "Biedt deze winkel biologische producten aan?"
+        "nl": "Biedt deze winkel biologische producten aan?",
+        "ca": "Aquesta botiga ofereix productes orgànics?"
       },
       "mappings": [
         {
@@ -229,7 +230,8 @@
           "then": {
             "en": "This shop only offers organic products",
             "de": "Dieses Geschäft bietet ausschließlich Bio-Produkte an",
-            "nl": "Deze winkel biedt uitluitend biologische producten aan"
+            "nl": "Deze winkel biedt uitluitend biologische producten aan",
+            "ca": "Aquesta botiga sols ofereix productes orgànics"
           }
         },
         {
@@ -237,7 +239,8 @@
           "then": {
             "en": "This shop does not offer organic products",
             "de": "Dieses Geschäft bietet keine Bioprodukte an",
-            "nl": "Deze winkel heeft geen biologische producten"
+            "nl": "Deze winkel heeft geen biologische producten",
+            "ca": "Aquesta botiga no ofereix productes orgànics"
           }
         }
       ],

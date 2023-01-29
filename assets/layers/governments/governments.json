@@ -35,7 +35,8 @@
       "question": {
         "en": "What is the name of this Governmental Office?",
         "de": "Wie lautet der Name dieser Behörde?",
-        "nl": "Wat is de naam van deze overheidsdienst?"
+        "nl": "Wat is de naam van deze overheidsdienst?",
+        "ca": "Quin és el nom d'aquesta oficina gornavental?"
       },
       "render": {
         "en": "This Governmental Office is called {name}",

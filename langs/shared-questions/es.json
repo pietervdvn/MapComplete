@@ -52,6 +52,17 @@
         "email": {
             "question": "¿Cual es la direccióm de correo electrónico de {title()}?"
         },
+        "induction-loop": {
+            "mappings": {
+                "0": {
+                    "then": "Este lugar tiene un bucle auditivo"
+                },
+                "1": {
+                    "then": "Este lugar <b>no</b> tiene bucle auditivo"
+                }
+            },
+            "question": "¿Este lugar tiene un bucle auditivo para personas con discapacidad auditiva?"
+        },
         "internet": {
             "mappings": {
                 "0": {
@@ -258,17 +269,6 @@
                 }
             },
             "question": "¿Cual es el ítem correspondiente en Wikipedia?"
-        },
-        "induction-loop": {
-            "mappings": {
-                "1": {
-                    "then": "Este lugar <b>no</b> tiene bucle auditivo"
-                },
-                "0": {
-                    "then": "Este lugar tiene un bucle auditivo"
-                }
-            },
-            "question": "¿Este lugar tiene un bucle auditivo para personas con discapacidad auditiva?"
         }
     }
 }

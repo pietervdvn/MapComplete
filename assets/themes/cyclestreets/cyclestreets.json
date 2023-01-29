@@ -13,7 +13,8 @@
     "es": "Ciclocalles",
     "fr": "Rue cyclables",
     "da": "Cykelgader",
-    "pa_PK": "سائیکل سڑکاں"
+    "pa_PK": "سائیکل سڑکاں",
+    "cs": "Cyklostezky"
   },
   "shortDescription": {
     "nl": "Een kaart met alle gekende fietsstraten",
@@ -27,7 +28,8 @@
     "ca": "Un mapa de carrers ciclistes",
     "es": "Un mapa de ciclocalles",
     "fr": "Une carte des rues cyclables",
-    "da": "Et kort over cykelgader"
+    "da": "Et kort over cykelgader",
+    "cs": "Mapa cyklostezek"
   },
   "description": {
     "nl": "Een fietsstraat is een straat waar <ul><li><b>automobilisten geen fietsers mogen inhalen</b></li><li>Er een maximumsnelheid van <b>30km/u</b> geldt</li><li>Fietsers gemotoriseerde voertuigen links mogen inhalen</li><li>Fietsers nog steeds voorrang aan rechts moeten verlenen - ook aan auto's en voetgangers op het zebrapad</li></ul><br/><br/>Op deze open kaart kan je alle gekende fietsstraten zien en kan je ontbrekende fietsstraten aanduiden. <b>Fietszones</b> worden aangeduid door elke straat apart als fietsstraat te markeren. <br/>Om de kaart aan te passen, moet je je aanmelden met OpenStreetMap en helemaal inzoomen tot straatniveau. ",
@@ -40,7 +42,8 @@
     "es": "Una ciclocalle es una calle en la que <b>el tráfico motorizado no puede sobrepasar a los ciclistas</b>. Están marcados por una señal de tráfico especial. Las ciclocalles se pueden encontrar en los Países Bajos y Bélgica, pero también en Alemania y Francia. ",
     "fr": "Une rue cyclable est une rue où <b>les véhicules motorisés ne sont pas autorisés à dépasser les cyclistes</b>. Elles sont signalées par un signal routier particulier. On trouve des rues cyclables en Belgique et aux Pays-Bas, mais aussi en Allemagne et en France. ",
     "da": "En cykelgade er en gade, hvor <b>motoriseret trafik ikke må overhale cyklister</b>. De er skiltet med et særligt trafikskilt. Cykelgader findes i Holland og Belgien, men også i Tyskland og Frankrig. ",
-    "ca": "Un ciclocarrer és un carrer en el que <b>el trànsit motoritzat no pot sobrepassar als ciclistes</b>. Està senyalitzat per una senyal de trànsit especial. Els ciclocarrers es poden trobar a Holanda i Bèlgica, però també a Alemnya i França. "
+    "ca": "Un ciclocarrer és un carrer en el que <b>el trànsit motoritzat no pot sobrepassar als ciclistes</b>. Està senyalitzat per una senyal de trànsit especial. Els ciclocarrers es poden trobar a Holanda i Bèlgica, però també a Alemnya i França. ",
+    "cs": "Cyklostezka je ulice, kde <b>motorizovaná doprava nesmí předjíždět cyklisty</b>. Jsou označeny speciální dopravní značkou. Cyklostezky najdete v Nizozemsku a Belgii, ale také v Německu a Francii. "
   },
   "icon": "./assets/themes/cyclestreets/logo.svg",
   "startLat": 51.2095,
@@ -68,7 +71,8 @@
         "es": "Ciclocalles",
         "fr": "Rue cyclables",
         "da": "Cykelgader",
-        "pa_PK": "سائیکاں دیاں سڑکاں"
+        "pa_PK": "سائیکاں دیاں سڑکاں",
+        "cs": "Cyklostezky"
       },
       "minzoom": 7,
       "source": {
@@ -89,7 +93,8 @@
         "hu": "A kerékpárosutca olyan utca, ahol gépjármű nem előzhet meg a kerékpárost",
         "es": "Una ciclocalle es una calle en la que el tráfico motorizado no puede sobrepasar a un ciclista",
         "fr": "Une rue cyclable est une rue où les véhicules motorisés ne sont pas autorisés à dépasser les cyclistes",
-        "da": "En cykelgade er en gade, hvor motoriseret trafik ikke må overhale en cyklist"
+        "da": "En cykelgade er en gade, hvor motoriseret trafik ikke må overhale en cyklist",
+        "cs": "Cyklostezka je ulice, kde motorová doprava nesmí předjíždět cyklisty"
       },
       "title": "{name}",
       "tagRenderings": [
@@ -174,7 +179,8 @@
         "es": "Futura ciclocalle",
         "fr": "Future rue cyclable",
         "da": "Fremtidig cykelgade",
-        "pa_PK": "بھُوکھی سائیکل سڑک"
+        "pa_PK": "بھُوکھی سائیکل سڑک",
+        "cs": "Budoucí cyklostezka"
       },
       "description": {
         "nl": "Deze straat wordt binnenkort een fietsstraat",
@@ -186,7 +192,8 @@
         "hu": "Ez az utca hamarosan kerékpárosutcává válik",
         "es": "Esta calle se convertirá en una ciclocalle próximamente",
         "fr": "Cette rue va bientôt devenir une rue cyclable",
-        "da": "Denne gade bliver snart en cykelgade"
+        "da": "Denne gade bliver snart en cykelgade",
+        "cs": "Tato ulice se brzy stane cyklostezkou"
       },
       "minzoom": 9,
       "source": {
@@ -210,7 +217,8 @@
           "es": "Futura ciclocalle",
           "fr": "Future rue cyclable",
           "da": "Fremtidig cykelgade",
-          "pa_PK": "بھُوکھی سائیکل سڑک"
+          "pa_PK": "بھُوکھی سائیکل سڑک",
+          "cs": "Budoucí cyklostezka"
         },
         "mappings": [
           {
@@ -224,7 +232,8 @@
               "hu": "{name} nemsokára kerékpárosutca lesz",
               "es": "{name} se convertirá en una ciclocalle próximamente",
               "fr": "{name} va bientôt devenir une rue cyclable",
-              "da": "{name} bliver snart en cykelgade"
+              "da": "{name} bliver snart en cykelgade",
+              "cs": "{name} se brzy stane cyklostezkou"
             },
             "if": "name~*"
           }
@@ -274,7 +283,8 @@
         "es": "Todas las calles",
         "fr": "Toutes les rues",
         "da": "Alle gader",
-        "pa_PK": "ساریاں سڑکاں"
+        "pa_PK": "ساریاں سڑکاں",
+        "cs": "Všechny ulice"
       },
       "description": {
         "nl": "Laag waar je een straat als fietsstraat kan markeren",
@@ -286,7 +296,8 @@
         "hu": "Réteg bármely utca kerékpárosutcaként való megjelöléséhez",
         "es": "Capa para marcar cualquier calle como ciclocalle",
         "fr": "Calque pour marquer une rue comme cyclable",
-        "da": "Lag for at markere enhver gade som cykelgade"
+        "da": "Lag for at markere enhver gade som cykelgade",
+        "cs": "Vrstva pro označení jakékoli ulice jako cyklostezky"
       },
       "source": {
         "osmTags": {
@@ -313,7 +324,8 @@
           "es": "Calle",
           "fr": "Rue",
           "da": "Gade",
-          "pa_PK": "سڑک"
+          "pa_PK": "سڑک",
+          "cs": "Ulice"
         },
         "mappings": [
           {
@@ -375,7 +387,8 @@
           "es": "¿La calle <b>{name}</b> es una ciclocalle?",
           "fr": "La rue <b>{name}</b> est-elle une rue cyclable ?",
           "nb_NO": "Er <b>{name}</b>-gaten en sykkelgate?",
-          "da": "Er gaden <b>{name}</b> en cykelgade?"
+          "da": "Er gaden <b>{name}</b> en cykelgade?",
+          "cs": "Je ulice <b>{name}</b> cyklo ulicí?"
         },
         "mappings": [
           {
@@ -397,7 +410,8 @@
               "hu": "Ez az utca kerékpárosutca (és 30 km/h a sebességkorlátozás)",
               "es": "Esta calle es una ciclocalle (y tiene un límite de velocidad de 30km/h)",
               "fr": "Cette rue est une rue cyclable (et est limitée à 30 km/h)",
-              "da": "Denne gade er en cykelgade (og har en hastighedsgrænse på 30 km/t)"
+              "da": "Denne gade er en cykelgade (og har en hastighedsgrænse på 30 km/t)",
+              "cs": "Tato ulice je cyklostezkou (s omezením rychlosti na 30 km/h)"
             },
             "hideInAnswer": "_country!=be"
           },
@@ -408,7 +422,8 @@
               "de": "Diese Straße ist eine Fahrradstraße",
               "nl": "Deze straat is een fietsstraat",
               "fr": "Cette rue est une piste cyclable",
-              "ca": "Aquest carrer és una pista ciclable"
+              "ca": "Aquest carrer és una pista ciclable",
+              "cs": "Tato ulice je cyklistickou silnicí"
             },
             "hideInAnswer": true
           },
@@ -428,7 +443,8 @@
               "de": "Diese Straße ist eine Fahrradstraße (hat eine Geschwindigkeitsbegrenzung von 30 km/h und Fahrzeuge sind nicht erlaubt) (Schild wird später abgefragt)",
               "nl": "Deze straat is een fietsstraat (snelheid van 30 km/h en voertuigen niet toegestaan) (bord wordt later gevraagd)",
               "fr": "Cette rue est une piste cyclable (avec une limitation de vitesse a 30 km/h et les véhicules ne sont pas autorisés) (un panneau sera demandé plus tard)",
-              "ca": "Aquest carrer és una carretera ciclista (té un límit de velocitat de 30km/h i els vehicles no estan permesos)(el senyal es preguntarà més tard)"
+              "ca": "Aquest carrer és una carretera ciclista (té un límit de velocitat de 30km/h i els vehicles no estan permesos)(el senyal es preguntarà més tard)",
+              "cs": "Tato ulice je cyklistická (rychlost je zde omezena na 30 km/h vozidla sem mají zákaz vjezdu) (na značku se zeptáme později)"
             },
             "hideInAnswer": "_country!=de"
           },
@@ -450,7 +466,8 @@
               "es": "Esta calle es una ciclocalle",
               "fr": "Cette rue est une rue cyclable",
               "ca": "Aquest carrer és una ciclocarrer",
-              "da": "Denne gade er en cykelgade"
+              "da": "Denne gade er en cykelgade",
+              "cs": "Tato ulice je cykloulicí"
             },
             "hideInAnswer": {
               "or": [
@@ -477,7 +494,8 @@
               "es": "Esta calle se convertirá en una ciclocalle próximamente",
               "fr": "Cette rue sera bientôt une rue cyclable",
               "ca": "Aquest carrer es convertirà en un ciclocarrer pròximament",
-              "da": "Denne gade bliver snart en cykelgade"
+              "da": "Denne gade bliver snart en cykelgade",
+              "cs": "Tato ulice se brzy stane cyklo ulicí"
             },
             "hideInAnswer": "_country=de"
           },
@@ -492,7 +510,8 @@
               "en": "This street will become a bicycle road soon",
               "de": "Diese Straße wird bald zu einer Fahrradstraße",
               "nl": "Deze straat wordt binnenkort een fietsstraat",
-              "fr": "Cette rue va bientôt devenir une piste cyclable"
+              "fr": "Cette rue va bientôt devenir une piste cyclable",
+              "cs": "Tato ulice se brzy stane cyklo ulicí"
             },
             "hideInAnswer": "_country!=de"
           },
@@ -516,7 +535,8 @@
               "hu": "Ez az utca nem kerékpárosutca",
               "es": "Esta calle no es una ciclocalle",
               "fr": "Cette rue n’est pas une rue cyclable",
-              "da": "Denne gade er ikke en cykelgade"
+              "da": "Denne gade er ikke en cykelgade",
+              "cs": "Tato ulice není cyklo ulicí"
             }
           }
         ]
@@ -533,7 +553,8 @@
           "en": "What sign does this bicycle road have?",
           "de": "Welches Schild hat diese Fahrradstraße?",
           "nl": "Welk bord heeft deze fietsstraat?",
-          "fr": "Quel panneau comporte cette piste cyclable ?"
+          "fr": "Quel panneau comporte cette piste cyclable ?",
+          "cs": "Jakou značku má tato cyklostezka?"
         },
         "mappings": [
           {
@@ -561,7 +582,8 @@
               "en": "Motor vehicles allowed",
               "de": "KFZ frei",
               "nl": "Motorvoertuigen toegestaan",
-              "fr": "Véhicules motorisés autorisés"
+              "fr": "Véhicules motorisés autorisés",
+              "cs": "Vjezd motorových vozidel povolen"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg",
@@ -581,7 +603,8 @@
               "de": "Motorräder frei",
               "pa_PK": "موٹرسائیکلاں دی اِجازت اے",
               "nl": "Motoren toegestaan",
-              "fr": "Motos autorisées"
+              "fr": "Motos autorisées",
+              "cs": "Vjezd motocyklů povolen"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg",
@@ -601,7 +624,9 @@
               "de": "Autos erlaubt",
               "pa_PK": "موٹرکاراں دی اِجازت اے",
               "nl": "Auto's toegestaan",
-              "fr": "Voitures autorisées"
+              "fr": "Voitures autorisées",
+              "cs": "Vjezd aut povolen",
+              "nb_NO": "Biler tillatt"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg",
@@ -620,7 +645,8 @@
               "en": "There are no supplementary signs at this bicycle road.",
               "de": "An dieser Fahrradstraße gibt es keine zusätzlichen Schilder.",
               "nl": "Er zijn geen onderborden bij deze fietsstraat.",
-              "fr": "Il n'y a pas de panneaux supplémentaires à cette piste cyclable."
+              "fr": "Il n'y a pas de panneaux supplémentaires à cette piste cyclable.",
+              "cs": "Na této cyklostezce nejsou žádná doplňková značení."
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244.svg",
@@ -647,7 +673,8 @@
           "es": "¿Cuándo se convertirá esta calle en una ciclocalle?",
           "fr": "Quand cette rue deviendra-t-elle cyclable ?",
           "nb_NO": "Når vil denne gaten bli en sykkelgate?",
-          "da": "Hvornår bliver denne gade en cykelgade?"
+          "da": "Hvornår bliver denne gade en cykelgade?",
+          "cs": "Kdy se tato ulice stane cyklostezkou?"
         },
         "render": {
           "nl": "Deze straat wordt fietsstraat op {cyclestreet:start_date}",
@@ -659,7 +686,8 @@
           "es": "Esta calle se convetirá en una ciclocalle el {cyclestreet:start_date}",
           "fr": "Cette rue deviendra une rue cyclable le {cyclestreet:start_date}",
           "nb_NO": "Denne gaten vil bli en sykkelgate {cyclestreet:start_date}",
-          "da": "Denne gade bliver en cykelgade ved {cyclestreet:start_date}"
+          "da": "Denne gade bliver en cykelgade ved {cyclestreet:start_date}",
+          "cs": "Tato ulice se stane cyklostezkou {cyclestreet:start_date}"
         },
         "condition": "proposed:cyclestreet=yes",
         "freeform": {

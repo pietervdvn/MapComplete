@@ -11,7 +11,8 @@
     "fr": "Ateliers numériques ouvertS",
     "da": "Hackerspaces",
     "ca": "Espai per a hackers",
-    "pa_PK": "ہیکر دے تھاں"
+    "pa_PK": "ہیکر دے تھاں",
+    "cs": "Hackerspaces"
   },
   "shortDescription": {
     "en": "A map of hackerspaces",
@@ -21,7 +22,8 @@
     "hu": "Hackerspace-ek térképe",
     "nl": "Een kaart van hackerspaces",
     "fr": "Une carte des ateliers numériques ouverts",
-    "da": "Et kort over hackerspaces"
+    "da": "Et kort over hackerspaces",
+    "cs": "Mapa označující Hackerspaces"
   },
   "description": {
     "en": "On this map you can see hackerspaces, add a new hackerspace or update data directly",

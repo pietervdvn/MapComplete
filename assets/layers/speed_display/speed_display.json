@@ -2,16 +2,19 @@
   "id": "speed_display",
   "name": {
     "en": "Speed Display",
-    "de": "Geschwindigkeitsanzeige"
+    "de": "Geschwindigkeitsanzeige",
+    "nl": "Snelheidsdisplay"
   },
   "description": {
     "en": "Layer showing speed displays that alert drivers of their speed.",
-    "de": "Ebene mit Geschwindigkeitsanzeigen, die Fahrer auf ihre Geschwindigkeit hinweisen."
+    "de": "Ebene mit Geschwindigkeitsanzeigen, die Fahrer auf ihre Geschwindigkeit hinweisen.",
+    "nl": "Laag met snelheidsdisplays om bestuurders op hun snelheid te wijzen."
   },
   "title": {
     "render": {
       "en": "Speed Display",
-      "de": "Geschwindigkeitsanzeige"
+      "de": "Geschwindigkeitsanzeige",
+      "nl": "Snelheidsdisplay"
     }
   },
   "minzoom": 12,
@@ -23,38 +26,46 @@
       "id": "maxspeed",
       "question": {
         "en": "What is the maximum speed allowed at this speed display?",
-        "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit bei dieser Geschwindigkeitsanzeige?"
+        "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit bei dieser Geschwindigkeitsanzeige?",
+        "nl": "Wat is de maximum toegestane snelheid bij dit snelheidsdisplay?"
       },
       "freeform": {
         "key": "maxspeed",
         "type": "pnat",
         "placeholder": {
           "en": "Speed allowed at speed display",
-          "de": "Zulässige Geschwindigkeit bei Geschwindigkeitsanzeige"
+          "de": "Zulässige Geschwindigkeit bei Geschwindigkeitsanzeige",
+          "nl": "Maximum toegestane snelheid bij snelheidsdisplay"
         }
       },
       "render": {
         "en": "The maximum speed allowed at this speed display is {canonical(maxspeed)}",
-        "de": "Die zulässige Höchstgeschwindigkeit bei dieser Geschwindigkeitsanzeige ist {canonical(maxspeed)}"
+        "de": "Die zulässige Höchstgeschwindigkeit bei dieser Geschwindigkeitsanzeige ist {canonical(maxspeed)}",
+        "ca": "La velocitat màxima permesa a aquest radar pedagògic és {canonical(maxspeed)}",
+        "nl": "De maximum toegestane snelheid bij dit snelheidsdisplay is {canonical(maxspeed)}"
       }
     },
     {
       "id": "inscription",
       "question": {
         "en": "What is the text on this speed display?",
-        "de": "Wie lautet der Text auf dieser Geschwindigkeitsanzeige?"
+        "de": "Wie lautet der Text auf dieser Geschwindigkeitsanzeige?",
+        "ca": "Quin text es mostra al radar pedagògic?",
+        "nl": "Wat is de tekst op dit snelheidsdisplay?"
       },
       "freeform": {
         "key": "inscription",
         "type": "string",
         "placeholder": {
           "en": "Text on speed display (e.g. 'Your speed')",
-          "de": "Text auf der Geschwindigkeitsanzeige (z. B. \"Ihre Geschwindigkeit\")"
+          "de": "Text auf der Geschwindigkeitsanzeige (z. B. \"Ihre Geschwindigkeit\")",
+          "nl": "Tekst op snelheidsdisplay (b.v. 'Uw snelheid')"
         }
       },
       "render": {
         "en": "The text on this speed display is {inscription}",
-        "de": "Der Text auf dieser Geschwindigkeitsanzeige ist {inscription}"
+        "de": "Der Text auf dieser Geschwindigkeitsanzeige ist {inscription}",
+        "nl": "De tekst op dit snelheidsdisplay is {inscription}"
       }
     }
   ],
@@ -62,7 +73,8 @@
     {
       "title": {
         "en": "a speed display",
-        "de": "eine Geschwindigkeitsanzeige"
+        "de": "eine Geschwindigkeitsanzeige",
+        "nl": "een snelheidsdisplay"
       },
       "tags": [
         "highway=speed_display"

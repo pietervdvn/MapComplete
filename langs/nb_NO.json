@@ -38,28 +38,28 @@
         "reload": "Last inn dataen igjen"
     },
     "flyer": {
+        "callToAction": "Test på mapcomplete.osm.be",
         "cyclofix": "Sykkelpumper, reperasjonsstasjoner, drikkevann og sykkelbutikker finner du på cyclofix.",
         "fakeui": {
             "add_images": "Legg til bilder med få klikk",
+            "edit": "Feilaktig eller utdatert info? Trykk på redigeringsknappen.",
             "see_images": "Viser bilder fra tidligere bidragsytere, Wikipedia, Mapillary, … ",
-            "wikipedia": "Lenkede Wikipedia-artikler vises",
-            "edit": "Feilaktig eller utdatert info? Trykk på redigeringsknappen."
+            "wikipedia": "Lenkede Wikipedia-artikler vises"
         },
         "mapcomplete": {
             "intro": "MapComplete er en nettside som har {mapCount} interaktive kart. Hvert enkelt kart tillater å legge til eller oppdatere info. Det har mange funksjoner:",
             "li0": "Vis hvor det finnes interessepunkter",
             "li1": "Legg til nye punkter og oppdater info om eksisterende",
-            "title": "Hva er MapComplete?",
             "li2": "Legg til kontaktinfo og åpningstider",
-            "li5": "Funksjonalitet for import av eksisterende datasett",
             "li3": "Kan plasseres på andre nettsider som en iFrame",
-            "li6": "Mange avanserte funksjoner, som f.eks. tre-oppdagelse og avanserte inndatametoder."
+            "li5": "Funksjonalitet for import av eksisterende datasett",
+            "li6": "Mange avanserte funksjoner, som f.eks. tre-oppdagelse og avanserte inndatametoder.",
+            "title": "Hva er MapComplete?"
         },
         "onwheels": "Innendørskart for rullestolsbrukere er også tilgjengelig.",
+        "tagline": "Samle inn geodata med OpenStreetMap",
         "title": "MapComplete.osm.be",
-        "whatIsOsm": "Hva er OpenStreetMap?",
-        "callToAction": "Test på mapcomplete.osm.be",
-        "tagline": "Samle inn geodata med OpenStreetMap"
+        "whatIsOsm": "Hva er OpenStreetMap?"
     },
     "general": {
         "about": "Rediger og legg til OpenStreetMap for et gitt tema",

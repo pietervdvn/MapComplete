@@ -14,7 +14,8 @@
     "hu": "Könyvespolctérkép",
     "ca": "Open Bookcase Map",
     "es": "Mapa de Librerías Abiertas",
-    "pa_PK": "آزاد کتاب نقشہ"
+    "pa_PK": "آزاد کتاب نقشہ",
+    "cs": "Otevřená mapa pouličních knihoven"
   },
   "description": {
     "en": "A public bookcase is a small streetside cabinet, box, old phone booth or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases. You can discover new bookcases nearby and, with a free OpenStreetMap account, quickly add your favourite bookcases.",
@@ -28,7 +29,8 @@
     "hu": "A nyilvános könyvespolc egy kis utcai szekrény, doboz, régi telefonfülke vagy más tárgy, ahol könyveket tárolnak. Bárki tehet rá vagy vihet el róla könyvet. Ez a térkép ezeket a könyvespolcokat kívánja összegyűjteni. Ha felfedezett egy új könyvespolcot a közelben, akkor egy ingyenes OpenStreetMap-fiókkal gyorsan fel is rajzolhatja a térképre.",
     "es": "Una librería pública es un pequeño armario en la calle, una caja, una vieja cabina telefónica o algún otro objeto donde se guardan libros. Todo el mundo puede colocar o coger un libro. Este mapa pretende recoger todas estas librerías. Puedes descubrir nuevas librerías cercanas y, con una cuenta gratuita de OpenStreetMap, añadir rápidamente tus librerías favoritas.",
     "da": "Et offentligt bogskab er et lille skab, en kasse, en gammel telefonboks eller andre steder, hvor bøger opbevares. Alle kan lægge eller tage en bog. Dette kort har til formål at samle alle disse bogskabe. Du kan opdage nye bogkasser i nærheden og med en gratis OpenStreetMap-konto hurtigt tilføje dine yndlingsbogkasser.",
-    "ca": "Una llibreria pública és un xicotet armari al carrer, una caixa, una vella cabina telefònica o algun altre objecte on es guarden llibres. Tothom pot col·locar o agafar un llibre. Aquest mapa pretén recollir totes aquestes llibreries. Pots descobrir noves llibreries pròximes i, amb un compte gratuït de OpenStreetMap, afegir ràpidament les teues llibreries favorites."
+    "ca": "Una llibreria pública és un xicotet armari al carrer, una caixa, una vella cabina telefònica o algun altre objecte on es guarden llibres. Tothom pot col·locar o agafar un llibre. Aquest mapa pretén recollir totes aquestes llibreries. Pots descobrir noves llibreries pròximes i, amb un compte gratuït de OpenStreetMap, afegir ràpidament les teues llibreries favorites.",
+    "cs": "Veřejná knihovna je malá pouliční skříňka, krabice, stará telefonní budka nebo jiný předmět, kde jsou uloženy knihy. Kdokoliv do ní může umístit, nebo si z ní vzít knihu. Cílem této mapy je shromáždit všechny tyto knihovny. Můžete objevovat nové pouliční knihovny v okolí a s bezplatným účtem OpenStreetMap rychle přidávat své oblíbené knihovny."
   },
   "icon": "./assets/themes/bookcases/bookcase.svg",
   "startLat": 0,

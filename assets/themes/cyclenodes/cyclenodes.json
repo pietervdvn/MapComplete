@@ -37,7 +37,8 @@
         "es": "enlaces nodo a nodo",
         "nl": "verbindingen van node naar node",
         "fr": "liens noeud à noeud",
-        "ca": "enllaços node a node"
+        "ca": "enllaços node a node",
+        "cs": "propojení mezi uzly"
       },
       "source": {
         "osmTags": {

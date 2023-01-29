@@ -199,7 +199,7 @@
       "question": {
         "en": "What kind of bicycles and accessories are rented here?",
         "nl": "Wat voor soort fietsen en fietstoebehoren worden hier verhuurd?",
-        "de": "Welche Art von Fahrrädern und Zubehör wird hier vermietet?",
+        "de": "Welche Fahrräder und welches Zubehör kann hier geliehen werden?",
         "es": "¿Qué tipo de bicicletas y accesorios se alquilan aquí?",
         "da": "Hvilken slags cykler og tilbehør udlejes her?",
         "fr": "Quels types de vélos et d’accessoires peuvent être loués ici ?",
@@ -225,7 +225,7 @@
           "then": {
             "en": "Normal city bikes can be rented here",
             "nl": "Gewone stadsfietsen kunnen hier gehuurd worden",
-            "de": "Normale Stadtfahrräder können hier gemietet werden",
+            "de": "Normale Stadtfahrräder können geliehen werden",
             "es": "Aquí se pueden alquilar bicis normales",
             "da": "Her kan man leje almindelige bycykler",
             "fr": "Des vélos de ville peuvent être loués ici",
@@ -237,7 +237,7 @@
           "then": {
             "en": "Electrical bikes can be rented here",
             "nl": "Elektrische fietsen kunnen hier gehuurd worden",
-            "de": "Elektrofahrräder können hier gemietet werden",
+            "de": "Elektrofahrräder können geliehen werden",
             "es": "Aquí se pueden alquilar bicis eléctricas",
             "da": "El-cykler kan lejes her",
             "fr": "Des vélos électriques peuvent être loués ici",
@@ -249,7 +249,7 @@
           "then": {
             "en": "BMX bikes can be rented here",
             "nl": "BMX-fietsen kunnen hier gehuurd worden",
-            "de": "BMX-Räder können hier gemietet werden",
+            "de": "BMX-Räder können geliehen werden",
             "es": "Aquí se pueden alquilar bicis BMX",
             "da": "BMX cykler kan lejes her",
             "fr": "Des BMX peuvent être loués ici",
@@ -261,7 +261,7 @@
           "then": {
             "en": "Mountainbikes can be rented here",
             "nl": "Mountainbikes kunnen hier gehuurd worden",
-            "de": "Mountainbikes können hier gemietet werden",
+            "de": "Mountainbikes können geliehen werden",
             "es": "Aquí se pueden alquilar bicis de montaña",
             "da": "Mountainbikes kan lejes her",
             "fr": "Des vélos de montagne peuvent être loués ici",
@@ -273,7 +273,7 @@
           "then": {
             "en": "Bikes for children can be rented here",
             "nl": "Kinderfietsen kunnen hier gehuurd worden",
-            "de": "Kinderfahrräder können hier gemietet werden",
+            "de": "Kinderfahrräder können geliehen werden",
             "es": "Aquí se pueden alquilar bicis infantiles",
             "da": "Børnecykler kan lejes her",
             "fr": "Des vélos d'enfants peuvent être loués ici",
@@ -286,7 +286,7 @@
           "then": {
             "en": "Tandem bicycles can be rented here",
             "nl": "Tandems kunnen hier gehuurd worden",
-            "de": "Tandems können hier gemietet werden",
+            "de": "Tandems können geliehen werden",
             "da": "Tandemcykler kan lejes her",
             "fr": "Des tandems peuvent être loués ici",
             "es": "Aquí se pueden alquilar tándems",
@@ -298,7 +298,7 @@
           "then": {
             "en": "Race bicycles can be rented here",
             "nl": "Wielerfietsen (sportfietsen) kunnen hier gehuurd worden",
-            "de": "Rennräder können hier gemietet werden",
+            "de": "Rennräder können geliehen werden",
             "es": "Aquí se pueden alquilar bicicletas de carreras",
             "da": "Racercykler kan lejes her",
             "fr": "Des vélos de course peuvent être loués ici",
@@ -311,7 +311,7 @@
             "en": "Bike helmets can be rented here",
             "nl": "Fietshelmpen kunnen hier gehuurd worden",
             "es": "Aquí se pueden alquilar cascos",
-            "de": "Fahrradhelme können hier gemietet werden",
+            "de": "Fahrradhelme können geliehen werden",
             "fr": "Des casques de vélos peuvent être loués ici",
             "da": "Cykelhjelme kan lejes her",
             "cs": "Zde si můžete půjčit cyklistické přilby"

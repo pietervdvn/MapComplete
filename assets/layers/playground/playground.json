@@ -66,7 +66,8 @@
         "en": "Which is the surface of this playground?<br/><i>If there are multiple, select the most occuring one</i>",
         "it": "Qual è la superficie di questo parco giochi?<br/><i>Se ve ne è più di una, seleziona quella predominante</i>",
         "de": "Welchen Bodenbelag hat dieser Spielplatz?<br/><i>Wenn es mehrere gibt, wähle den am häufigsten vorkommende aus</i>",
-        "fr": "De quelle matière est la surface de l’aire de jeu ?<br/><i>Pour plusieurs matières, sélectionner la principale</i>"
+        "fr": "De quelle matière est la surface de l’aire de jeu ?<br/><i>Pour plusieurs matières, sélectionner la principale</i>",
+        "ca": "Quina és la superfície d'aquest parc infantil?<br/><i>Si n'hi ha múltiples, selecciona la més predominant</i>"
       },
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",
@@ -190,7 +191,8 @@
         "it": "È illuminato di notte questo parco giochi?",
         "fr": "Ce terrain de jeux est-il éclairé la nuit ?",
         "de": "Wird der Spielplatz nachts beleuchtet?",
-        "ru": "Эта игровая площадка освещается ночью?"
+        "ru": "Эта игровая площадка освещается ночью?",
+        "ca": "Aquest parc infantil està il·luminat per la nit?"
       },
       "mappings": [
         {
@@ -201,7 +203,8 @@
             "it": "Questo parco giochi è illuminato di notte",
             "de": "Der Spielplatz wird nachts beleuchtet",
             "ru": "Эта детская площадка освещается ночью",
-            "fr": "L’aire de jeu est éclairée de nuit"
+            "fr": "L’aire de jeu est éclairée de nuit",
+            "ca": "Aquest parc infantil està il·luminat per la nit"
           }
         },
         {
@@ -212,7 +215,8 @@
             "it": "Questo parco giochi non è illuminato di notte",
             "de": "Der Spielplatz wird nachts nicht beleuchtet",
             "ru": "Эта детская площадка не освещается ночью",
-            "fr": "L’aire de jeu n’est pas éclairée de nuit"
+            "fr": "L’aire de jeu n’est pas éclairée de nuit",
+            "ca": "Aquest parc infantil no està il·luminat per la nit"
           }
         }
       ]
@@ -236,7 +240,8 @@
         "it": "Qual è l’età minima per accedere a questo parco giochi?",
         "fr": "Quel est l'âge minimal requis pour accéder à ce terrain de jeux ?",
         "ru": "С какого возраста доступна эта детская площадка?",
-        "de": "Ab welchem Alter dürfen Kinder auf dem Spielplatz spielen?"
+        "de": "Ab welchem Alter dürfen Kinder auf dem Spielplatz spielen?",
+        "ca": "Quina és l'edat mínima requerida per a accedir al parc infantil?"
       },
       "freeform": {
         "key": "min_age",
@@ -309,7 +314,8 @@
             "it": "Accessibile pubblicamente",
             "de": "Der Spielplatz ist öffentlich zugänglich",
             "fr": "Accessible au public",
-            "es": "Accesible al público general"
+            "es": "Accesible al público general",
+            "ca": "Accesible al públic general"
           },
           "addExtraTags": [
             "fee=no"

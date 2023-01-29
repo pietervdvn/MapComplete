@@ -7,7 +7,8 @@
     "ca": "A la natura",
     "fr": "Dans la nature",
     "da": "Ud i naturen",
-    "nb_NO": "Inn i naturen"
+    "nb_NO": "Inn i naturen",
+    "cs": "Do přírody"
   },
   "shortDescription": {
     "en": "A map for nature lovers, with interesting POI's",
@@ -15,7 +16,8 @@
     "de": "Eine Karte mit interessanten Orten für Naturliebhaber",
     "es": "Un mapa para amantes de la naturaleza, con PDIs interesantes",
     "fr": "Une carte pour les amoureux de la nature",
-    "da": "Et kort for naturelskere med interessante POI'er"
+    "da": "Et kort for naturelskere med interessante POI'er",
+    "cs": "Mapa pro milovníky přírody se zajímavými body zájmu"
   },
   "description": {
     "en": "On this map, one can find interesting infromation for tourists and nature lovers, such as ",
@@ -23,7 +25,8 @@
     "de": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber. ",
     "es": "En este mapa, uno puede encontrar información interesante para turistas y amantes de la naturaleza, como ",
     "fr": "Retrouvez sur cette carte des informations pour les touristes et les amoureux de la nature, telles que ",
-    "da": "På dette kort kan man finde interessant information for turister og naturelskere, som f.eks "
+    "da": "På dette kort kan man finde interessant information for turister og naturelskere, som f.eks ",
+    "cs": "Na této mapě najdete zajímavé informace pro turisty a milovníky přírody, jako např. "
   },
   "icon": "./assets/themes/nature/logo.svg",
   "startLat": 51.20875,

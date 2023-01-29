@@ -525,8 +525,8 @@
         "title": "Jardins verticals"
     },
     "food": {
-        "title": "Restaurants i menjar ràpid",
-        "description": "Restaurants i menjar ràpid"
+        "description": "Restaurants i menjar ràpid",
+        "title": "Restaurants i menjar ràpid"
     },
     "fritures": {
         "layers": {
@@ -721,13 +721,16 @@
         "title": "Open Toilet Map"
     },
     "transit": {
-        "title": "Rutes de bus",
-        "description": "Planifica el teu viatge amb l'ajuda del sistema públic de transport."
+        "description": "Planifica el teu viatge amb l'ajuda del sistema públic de transport.",
+        "title": "Rutes de bus"
     },
     "trees": {
         "description": "Mapeja tots els arbres!",
         "shortDescription": "Mapeja tots els arbres",
         "title": "Arbres"
+    },
+    "walls_and_buildings": {
+        "description": "Capa construïda especial que proporciona totes les parets i edificis. Aquesta capa és útil als predefinits per a objectes que es poden col·locar a les parets (p. ex. DEA, bústies de correus, entrades, adreces, càmeres de vigilància, ...). Aquesta capa és invisible per defecte i no es pot activar per l'usuari."
     },
     "waste": {
         "description": "Mapa que mostra papereres i infraestructures de reciclatge.",
@@ -736,8 +739,5 @@
     "waste_basket": {
         "shortDescription": "Un mapa amb papereres",
         "title": "Papepera"
-    },
-    "walls_and_buildings": {
-        "description": "Capa construïda especial que proporciona totes les parets i edificis. Aquesta capa és útil als predefinits per a objectes que es poden col·locar a les parets (p. ex. DEA, bústies de correus, entrades, adreces, càmeres de vigilància, ...). Aquesta capa és invisible per defecte i no es pot activar per l'usuari."
     }
 }

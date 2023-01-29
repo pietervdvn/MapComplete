@@ -16,7 +16,8 @@
     "id": "Perpustakaan sepeda",
     "ca": "Biblioteques de bicicletes",
     "da": "Cykelbiblioteker",
-    "pa_PK": "سائیکلاں دیاں لائیبریریاں"
+    "pa_PK": "سائیکلاں دیاں لائیبریریاں",
+    "cs": "Půjčovny kol"
   },
   "description": {
     "nl": "Een fietsbibliotheek is een plaats waar men een fiets kan lenen, vaak voor een klein bedrag per jaar. Een typisch voorbeeld zijn kinderfietsbibliotheken, waar men een fiets op maat van het kind kan lenen. Is het kind de fiets ontgroeid, dan kan het te kleine fietsje omgeruild worden voor een grotere.",
@@ -30,7 +31,8 @@
     "hu": "A kerékpárkönyvtárak olyan helyek, ahol kerékpárokat lehet kölcsönözni, gyakran egy kis éves díj ellenében. Figyelemre méltó felhasználásuk a gyerekeknek szánt kerékpárkönyvtárak, amelyek segítségével nagyobb kerékpárra válthatnak, amikor jelenlegi kerékpárjukat kinőtték",
     "nb_NO": "Et sykkelbibliotek er et sted der man kan låne sykler, ofte for en liten årlig sum. I særdeleshet finnes de for unger som lar dem bytte til en større sykkel når de har vokst fra den de har.",
     "ca": "Una biblioteca de bicicletes és un lloc on es poden prestar bicicletes, sovint per una petita quota anual. Un cas d'ús notable són les biblioteques de bicicletes per als nens, que els permet canviar per una bicicleta més gran quan han superat la seva bicicleta actual",
-    "da": "Et cykelbibliotek er et sted, hvor cykler kan udlånes, ofte mod et mindre årligt gebyr. Et bemærkelsesværdigt eksempel er cykelbiblioteker til børn, som giver dem mulighed for at skifte til en større cykel, når de er vokset fra deres nuværende cykel"
+    "da": "Et cykelbibliotek er et sted, hvor cykler kan udlånes, ofte mod et mindre årligt gebyr. Et bemærkelsesværdigt eksempel er cykelbiblioteker til børn, som giver dem mulighed for at skifte til en større cykel, når de er vokset fra deres nuværende cykel",
+    "cs": "\"Bicycle library\" je místo, kde si lze půjčit jízdní kola, často za malý roční poplatek. Významným případem použití jsou \"bicycle libraries\" pro děti, které jim umožňují vyměnit kolo za větší, když ze svého stávajícího kola vyrostou"
   },
   "icon": "./assets/themes/bicyclelib/logo.svg",
   "startLat": 0,

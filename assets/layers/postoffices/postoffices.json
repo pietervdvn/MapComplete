@@ -100,7 +100,8 @@
       "id": "post_partner",
       "question": {
         "en": "Is this a post partner?",
-        "de": "Ist dies ein Post-Partner?"
+        "de": "Ist dies ein Post-Partner?",
+        "ca": "Aquesta botiga és un col·laborador postal?"
       },
       "condition": "post_office=post_partner",
       "mappings": [
@@ -108,14 +109,16 @@
           "if": "post_office=post_partner",
           "then": {
             "en": "This shop is a post partner",
-            "de": "Dieses Geschäft ist ein Post-Partner"
+            "de": "Dieses Geschäft ist ein Post-Partner",
+            "ca": "Aquesta botiga és un col·laborador postal"
           }
         },
         {
           "if": "post_office=",
           "then": {
             "en": "This shop is not a post partner",
-            "de": "Dieses Geschäft ist kein Post-Partner"
+            "de": "Dieses Geschäft ist kein Post-Partner",
+            "ca": "Aquesta botiga no és un col·laborador postal"
           },
           "addExtraTags": [
             "was:post_office=post_partner"
@@ -131,7 +134,8 @@
       },
       "question": {
         "en": "For which brand does this location offer services?",
-        "de": "Für welche Marke bietet dieser Standort Dienstleistungen an?"
+        "de": "Für welche Marke bietet dieser Standort Dienstleistungen an?",
+        "ca": "Per a quina marca ofereix serveis aquesta localització?"
       },
       "condition": "post_office=post_partner",
       "freeform": {
@@ -145,7 +149,8 @@
           "then": {
             "en": "This location offers services for DHL",
             "de": "Dieser Standort bietet Dienstleistungen für DHL an",
-            "nl": "Deze locatie biedt diensten aan voor DHL"
+            "nl": "Deze locatie biedt diensten aan voor DHL",
+            "ca": "Aquesta localització ofereix serveis per a DHL"
           },
           "hideInAnswer": "_country=de"
         },
@@ -154,7 +159,8 @@
           "then": {
             "en": "This location offers services for DPD",
             "de": "Dieser Standort bietet Dienstleistungen für DPD an",
-            "nl": "Deze locatie biedt diensten aan voor DPD"
+            "nl": "Deze locatie biedt diensten aan voor DPD",
+            "ca": "Aquesta localització ofereix serveis per a DPD"
           }
         },
         {
@@ -162,7 +168,8 @@
           "then": {
             "en": "This location offers services for GLS",
             "de": "Dieser Standort bietet Dienstleistungen für GLS an",
-            "nl": "Deze locatie biedt diensten aan voor GLS"
+            "nl": "Deze locatie biedt diensten aan voor GLS",
+            "ca": "Aquesta localització ofereix serveis per a GLS"
           }
         },
         {
@@ -170,7 +177,8 @@
           "then": {
             "en": "This location offers services for UPS",
             "de": "Dieser Standort bietet Dienstleistungen für UPS an",
-            "nl": "Deze locatie biedt diensten aan voor UPS"
+            "nl": "Deze locatie biedt diensten aan voor UPS",
+            "ca": "Aquesta localització ofereix serveis per a UPS"
           }
         },
         {
@@ -224,7 +232,8 @@
       "question": {
         "en": "Can you post a letter here?",
         "de": "Können Sie hier einen Brief aufgeben?",
-        "nl": "Kan je hier een brief posten?"
+        "nl": "Kan je hier een brief posten?",
+        "ca": "Pots enviar cartes des d'aquí?"
       },
       "freeform": {
         "key": "post_office:letter_from",
@@ -236,7 +245,8 @@
           "then": {
             "en": "You can post letters here",
             "de": "Sie können Briefe hier aufgeben",
-            "nl": "Je kan hier brieven posten"
+            "nl": "Je kan hier brieven posten",
+            "ca": "Pots enviar cartes des d'aquí"
           }
         },
         {
@@ -244,7 +254,8 @@
           "then": {
             "en": "You can't post letters here",
             "de": "Sie können hier keine Briefe aufgeben",
-            "nl": "Je kan hier geen brieven posten"
+            "nl": "Je kan hier geen brieven posten",
+            "ca": "No pots enviar cartes des d'aquí"
           }
         }
       ]
@@ -259,7 +270,8 @@
       "question": {
         "en": "Can you send a parcel here?",
         "de": "Können Sie hier Pakete versenden?",
-        "nl": "Kan je hier pakketten versturen?"
+        "nl": "Kan je hier pakketten versturen?",
+        "ca": "Pots enviar un paquet des d'aquí?"
       },
       "freeform": {
         "key": "post_office:parcel_from",
@@ -271,7 +283,8 @@
           "then": {
             "en": "You can send parcels here",
             "de": "Hier können Sie Pakete versenden",
-            "nl": "Je kan hier pakketten versturen"
+            "nl": "Je kan hier pakketten versturen",
+            "ca": "Pots enviar paquets des d'aquí"
           }
         },
         {
@@ -279,7 +292,8 @@
           "then": {
             "en": "You can't send parcels here",
             "de": "Sie können hier keine Pakete versenden",
-            "nl": "Je kan hier geen pakketten versturen"
+            "nl": "Je kan hier geen pakketten versturen",
+            "ca": "No pots enviar paquets des d'aquí"
           }
         }
       ]
@@ -323,7 +337,8 @@
       },
       "question": {
         "en": "Can you send parcels to here for pickup?",
-        "de": "Können Sie Pakete zur Abholung hierher schicken?"
+        "de": "Können Sie Pakete zur Abholung hierher schicken?",
+        "ca": "Pots enviar paquets aquí per a arreplegar-los?"
       },
       "freeform": {
         "key": "post_office:parcel_to",
@@ -334,14 +349,16 @@
           "if": "post_office:parcel_to=yes",
           "then": {
             "en": "You can send parcels to here for pickup",
-            "de": "Sie können Pakete zur Abholung hierher schicken"
+            "de": "Sie können Pakete zur Abholung hierher schicken",
+            "ca": "Pots enviar paquets aquí per a arreplegar-los"
           }
         },
         {
           "if": "post_office:parcel_to=no",
           "then": {
             "en": "You can't send parcels to here for pickup",
-            "de": "Sie können keine Pakete zur Abholung hierher schicken"
+            "de": "Sie können keine Pakete zur Abholung hierher schicken",
+            "ca": "No pots enviar paquets ací per a arreplegar-los"
           }
         }
       ]
@@ -356,7 +373,8 @@
       "question": {
         "en": "Can you buy stamps here?",
         "de": "Kann man hier Briefmarken kaufen?",
-        "nl": "Kan je hier postzegels kopen?"
+        "nl": "Kan je hier postzegels kopen?",
+        "ca": "Pots comprar segells aquí?"
       },
       "freeform": {
         "key": "post_office:stamps",
@@ -368,7 +386,8 @@
           "then": {
             "en": "You can buy stamps here",
             "de": "Sie können hier Briefmarken kaufen",
-            "nl": "Je kan hier postzegels kopen"
+            "nl": "Je kan hier postzegels kopen",
+            "ca": "Pots comprar segells aquí"
           }
         },
         {
@@ -376,7 +395,8 @@
           "then": {
             "en": "You can't buy stamps here",
             "de": "Sie können hier keine Briefmarken kaufen",
-            "nl": "Je kan hier geen postzegels kopen"
+            "nl": "Je kan hier geen postzegels kopen",
+            "ca": "No pots comprar segells aquí"
           }
         }
       ]

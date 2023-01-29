@@ -3,7 +3,8 @@
   "title": {
     "en": "Train Stations",
     "de": "Bahnhöfe",
-    "nl": "Treinstations"
+    "nl": "Treinstations",
+    "nb_NO": "Togstasjoner"
   },
   "description": {
     "en": "View, edit and add details to a train station",
@@ -64,12 +65,14 @@
       "name": {
         "en": "Train Stations",
         "de": "Bahnhöfe",
-        "nl": "Treinstations"
+        "nl": "Treinstations",
+        "nb_NO": "Togstasjoner"
       },
       "description": {
         "en": "Layer showing train stations",
         "de": "Ebene mit Bahnhöfen",
-        "nl": "Laag met treinstations"
+        "nl": "Laag met treinstations",
+        "nb_NO": "Lag som viser togstasjoner"
       },
       "mapRendering": [
         {
@@ -289,7 +292,8 @@
               "then": {
                 "en": "This is a paper timetable",
                 "de": "Dies ist ein Papierfahrplan",
-                "nl": "Dit is een papieren vertrekstaat"
+                "nl": "Dit is een papieren vertrekstaat",
+                "nb_NO": "Dette er en papir-tidstabell"
               }
             },
             {

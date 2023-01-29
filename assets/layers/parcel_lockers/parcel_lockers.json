@@ -63,7 +63,8 @@
       "question": {
         "en": "What is the brand of the parcel locker?",
         "de": "Welche Marke hat das Paketschließfach?",
-        "nl": "Wat is het merk van deze pakketautomaat?"
+        "nl": "Wat is het merk van deze pakketautomaat?",
+        "ca": "Quina és la marca d'aquest armari intel·ligent?"
       },
       "freeform": {
         "key": "brand",
@@ -80,7 +81,8 @@
           "then": {
             "en": "This is an Amazon Locker",
             "de": "Dies ist ein Amazon Locker",
-            "nl": "Dit is een Amazon Locker"
+            "nl": "Dit is een Amazon Locker",
+            "ca": "Açò és un Amazon Locker"
           },
           "addExtraTags": [
             "brand:wikidata=Q16974764",
@@ -130,7 +132,8 @@
       "render": {
         "en": "This is a {brand} parcel locker",
         "de": "Dies ist ein Paketschließfach von {brand}",
-        "nl": "Dit is een {brand} pakketautomaat"
+        "nl": "Dit is een {brand} pakketautomaat",
+        "ca": "Açò és un armari intel·ligent {brand}"
       }
     },
     {
@@ -138,7 +141,8 @@
       "question": {
         "en": "What is the operator of the parcel locker?",
         "de": "Was ist der Betreiber des Paketschließfachs?",
-        "nl": "Wat is de beheerder van deze pakketautomaat?"
+        "nl": "Wat is de beheerder van deze pakketautomaat?",
+        "ca": "Qui és l'operador d'aquest armari intel·ligent?"
       },
       "freeform": {
         "key": "operator",
@@ -152,7 +156,8 @@
       "render": {
         "en": "This parcel locker is operated by {operator}",
         "de": "Dieses Paketschließfach wird von {operator} betrieben",
-        "nl": "Deze pakketautomaat wordt beheerd door {operator}"
+        "nl": "Deze pakketautomaat wordt beheerd door {operator}",
+        "ca": "Aquest armari intel·ligent l'opera {operator}"
       }
     },
     "opening_hours_24_7",
@@ -161,7 +166,8 @@
       "question": {
         "en": "What is the reference number/identifier of this parcel locker?",
         "de": "Wie lautet die Referenznummer/Kennung dieses Paketschließfachs?",
-        "nl": "Wat is het referentienummer/identificator van deze pakketautomaat?"
+        "nl": "Wat is het referentienummer/identificator van deze pakketautomaat?",
+        "ca": "Quin és el nombre de referència/identificador d'aquest armari intel·ligent?"
       },
       "freeform": {
         "key": "ref",
@@ -184,7 +190,8 @@
       "question": {
         "en": "Can you send packages from this parcel locker?",
         "de": "Können Sie von diesem Paketschließfach aus Pakete versenden?",
-        "nl": "Kan je pakketten versturen vanuit deze pakketautomaat?"
+        "nl": "Kan je pakketten versturen vanuit deze pakketautomaat?",
+        "ca": "Pots enviar paquets des d'aquest armari intel·ligent?"
       },
       "mappings": [
         {
@@ -192,7 +199,8 @@
           "then": {
             "en": "You can send packages from this parcel locker",
             "de": "Sie können Pakete von diesem Paketschließfach aus versenden",
-            "nl": "Je kan pakketten versturen vanuit deze pakketautomaat"
+            "nl": "Je kan pakketten versturen vanuit deze pakketautomaat",
+            "ca": "Pots enviar paquets des d'aquest armari intel·ligent"
           }
         },
         {
@@ -200,7 +208,8 @@
           "then": {
             "en": "You <b>can't</b> send packages from this parcel locker",
             "de": "Sie können <b>keine</b> Pakete von diesem Paketschließfach aus versenden",
-            "nl": "Je kan <b>geen</b> pakketten versturen vanuit deze pakketautomaat"
+            "nl": "Je kan <b>geen</b> pakketten versturen vanuit deze pakketautomaat",
+            "ca": "<b>No pots</b> enviar paquets des d'aquest armari intel·ligent"
           }
         }
       ],
@@ -211,7 +220,8 @@
       "question": {
         "en": "Can you pick up packages from this parcel locker?",
         "de": "Können Sie Pakete aus diesem Paketschließfach abholen?",
-        "nl": "Kan je pakketten ophalen bij deze pakketautomaat?"
+        "nl": "Kan je pakketten ophalen bij deze pakketautomaat?",
+        "ca": "Pots arreplegar paquets a aquest armari intel·ligent?"
       },
       "mappings": [
         {
@@ -219,7 +229,8 @@
           "then": {
             "en": "You can pick up packages from this parcel locker",
             "de": "Sie können Pakete von diesem Paketschließfach abholen",
-            "nl": "Je kan pakketten ophalen bij deze pakketautomaat"
+            "nl": "Je kan pakketten ophalen bij deze pakketautomaat",
+            "ca": "Pots arreplegar paquets a aquest armari intel·ligent"
           }
         },
         {
@@ -227,7 +238,8 @@
           "then": {
             "en": "You <b>can't</b> pick up packages from this parcel locker",
             "de": "Sie können <b>keine</b> Pakete von diesem Paketschließfach abholen",
-            "nl": "Je kan <b>geen</b> pakketten ophalen bij deze pakketautomaat"
+            "nl": "Je kan <b>geen</b> pakketten ophalen bij deze pakketautomaat",
+            "ca": "<b>No pots</b> arreplegar paquets a aquest armari intel·ligent"
           }
         }
       ],

@@ -21,6 +21,7 @@
         }
     },
     "ambulancestation": {
+        "name": "Kart over ambulansestasjoner",
         "presets": {
             "0": {
                 "description": "Legg til en ambulansestasjon på kartet",
@@ -33,12 +34,12 @@
                 "render": "Denne stasjonen heter {name}."
             }
         },
-        "name": "Kart over ambulansestasjoner",
         "title": {
             "render": "Ambulansestasjon"
         }
     },
     "artwork": {
+        "description": "Statuer, byster, graffiti, og andre kunstverk verden over",
         "name": "Kunstverk",
         "presets": {
             "0": {
@@ -46,6 +47,9 @@
             }
         },
         "tagRenderings": {
+            "artwork-artist-wikidata": {
+                "question": "Hvem laget dette kunstverket?"
+            },
             "artwork-artist_name": {
                 "question": "Hvilken artist lagde dette?",
                 "render": "Laget av {artist_name}"
@@ -99,22 +103,19 @@
                 "question": "Finnes det en nettside med mer info om dette kunstverket?",
                 "render": "Mer info er å finne på <a href='{website}' target='_blank'>denne nettsiden</a>"
             },
+            "artwork_subject": {
+                "render": "Dette kunstverket viser {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+            },
             "doubles_as_bench": {
                 "mappings": {
-                    "2": {
-                        "then": "Dette kunstverket tjener ikke den hensikten å være en benk"
-                    },
                     "1": {
                         "then": "Dette kunstverket tjener ikke funksjonen som benk"
+                    },
+                    "2": {
+                        "then": "Dette kunstverket tjener ikke den hensikten å være en benk"
                     }
                 },
                 "question": "Tjener dette kunstverket funksjonen som benk?"
-            },
-            "artwork-artist-wikidata": {
-                "question": "Hvem laget dette kunstverket?"
-            },
-            "artwork_subject": {
-                "render": "Dette kunstverket viser {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
             }
         },
         "title": {
@@ -124,8 +125,135 @@
                 }
             },
             "render": "Kunstverk"
+        }
+    },
+    "atm": {
+        "description": "Minibanker fo rå ta ut penger",
+        "name": "Minibanker",
+        "presets": {
+            "0": {
+                "title": "en minibank"
+            }
         },
-        "description": "Statuer, byster, graffiti, og andre kunstverk verden over"
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Merkenavn"
+                },
+                "question": "Hvilet merke har denne minibanken?",
+                "render": "Merkenavnet for denne minibanken er {brand}"
+            },
+            "cash_in": {
+                "mappings": {
+                    "0": {
+                        "then": "Du kan antagelig ikke gjøre innskudd i denne minibanken"
+                    },
+                    "1": {
+                        "then": "Du kan ikke gjøre innskudd i denne minibanken"
+                    },
+                    "2": {
+                        "then": "Du kan ikke gjøre innskudd i denne minibanken"
+                    }
+                }
+            },
+            "cash_out": {
+                "mappings": {
+                    "0": {
+                        "then": "Du kan gjøre uttak i denne minibanken"
+                    }
+                },
+                "question": "Kan man gjøre uttak fra denne minibanken?"
+            },
+            "name": {
+                "render": "Navnet på denne minibanken er {name}"
+            },
+            "operator": {
+                "question": "Hvilket selskap driver denne minibanken?",
+                "render": "Minibanken drives av {operator}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "{brand}-minibank"
+                }
+            },
+            "render": "Minibank"
+        }
+    },
+    "bank": {
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Med en minibank"
+                    }
+                }
+            }
+        },
+        "name": "Banker",
+        "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Denne banken har en minibank"
+                    },
+                    "1": {
+                        "then": "Denne banken har <b>ikke</b> en minibank"
+                    }
+                },
+                "question": "Har denne banken en minibank?"
+            }
+        }
+    },
+    "barrier": {
+        "description": "Hindringer for sykling, som f.eks. pullerter og sykkelbarrièrer",
+        "name": "Barrièrer",
+        "presets": {
+            "0": {
+                "description": "En pullert i veien"
+            },
+            "1": {
+                "description": "Sykkelbarrièrer, for å dempe farten",
+                "title": "en sykkelbarrière"
+            }
+        },
+        "tagRenderings": {
+            "Bollard type": {
+                "mappings": {
+                    "0": {
+                        "then": "Senk- eller fjernbar pullert"
+                    },
+                    "1": {
+                        "then": "Fast pullert"
+                    },
+                    "2": {
+                        "then": "Pullert som kan klappes ned"
+                    },
+                    "3": {
+                        "then": "Fleksibel pullert, vanligvis plastikk"
+                    },
+                    "4": {
+                        "then": "Oppstigende pullert"
+                    }
+                },
+                "question": "Hva slags pullert er dette?"
+            },
+            "Cycle barrier type": {
+                "mappings": {
+                    "1": {
+                        "then": "Dobbel, to barrièrer etter hverandre"
+                    },
+                    "2": {
+                        "then": "Trippel, tre barrièrer etter hverandre"
+                    }
+                },
+                "question": "Hva slags sykkelbarrière er dette?"
+            },
+            "MaxWidth": {
+                "render": "Maksimal bredde: {maxwidth:physical} m"
+            }
+        }
     },
     "bench": {
         "name": "Benker",
@@ -402,134 +530,6 @@
                         "human": " kilowatt"
                     }
                 }
-            }
-        }
-    },
-    "barrier": {
-        "presets": {
-            "1": {
-                "title": "en sykkelbarrière",
-                "description": "Sykkelbarrièrer, for å dempe farten"
-            },
-            "0": {
-                "description": "En pullert i veien"
-            }
-        },
-        "tagRenderings": {
-            "MaxWidth": {
-                "render": "Maksimal bredde: {maxwidth:physical} m"
-            },
-            "Bollard type": {
-                "mappings": {
-                    "0": {
-                        "then": "Senk- eller fjernbar pullert"
-                    },
-                    "1": {
-                        "then": "Fast pullert"
-                    },
-                    "3": {
-                        "then": "Fleksibel pullert, vanligvis plastikk"
-                    },
-                    "2": {
-                        "then": "Pullert som kan klappes ned"
-                    },
-                    "4": {
-                        "then": "Oppstigende pullert"
-                    }
-                },
-                "question": "Hva slags pullert er dette?"
-            },
-            "Cycle barrier type": {
-                "mappings": {
-                    "2": {
-                        "then": "Trippel, tre barrièrer etter hverandre"
-                    },
-                    "1": {
-                        "then": "Dobbel, to barrièrer etter hverandre"
-                    }
-                },
-                "question": "Hva slags sykkelbarrière er dette?"
-            }
-        },
-        "description": "Hindringer for sykling, som f.eks. pullerter og sykkelbarrièrer",
-        "name": "Barrièrer"
-    },
-    "atm": {
-        "name": "Minibanker",
-        "presets": {
-            "0": {
-                "title": "en minibank"
-            }
-        },
-        "tagRenderings": {
-            "operator": {
-                "question": "Hvilket selskap driver denne minibanken?",
-                "render": "Minibanken drives av {operator}"
-            },
-            "name": {
-                "render": "Navnet på denne minibanken er {name}"
-            },
-            "brand": {
-                "question": "Hvilet merke har denne minibanken?",
-                "render": "Merkenavnet for denne minibanken er {brand}",
-                "freeform": {
-                    "placeholder": "Merkenavn"
-                }
-            },
-            "cash_in": {
-                "mappings": {
-                    "2": {
-                        "then": "Du kan ikke gjøre innskudd i denne minibanken"
-                    },
-                    "1": {
-                        "then": "Du kan ikke gjøre innskudd i denne minibanken"
-                    },
-                    "0": {
-                        "then": "Du kan antagelig ikke gjøre innskudd i denne minibanken"
-                    }
-                }
-            },
-            "cash_out": {
-                "mappings": {
-                    "0": {
-                        "then": "Du kan gjøre uttak i denne minibanken"
-                    }
-                },
-                "question": "Kan man gjøre uttak fra denne minibanken?"
-            }
-        },
-        "description": "Minibanker fo rå ta ut penger",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "{brand}-minibank"
-                }
-            },
-            "render": "Minibank"
-        }
-    },
-    "bank": {
-        "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Med en minibank"
-                    }
-                }
-            }
-        },
-        "name": "Banker",
-        "tagRenderings": {
-            "has_atm": {
-                "mappings": {
-                    "0": {
-                        "then": "Denne banken har en minibank"
-                    },
-                    "1": {
-                        "then": "Denne banken har <b>ikke</b> en minibank"
-                    }
-                },
-                "question": "Har denne banken en minibank?"
             }
         }
     }

@@ -362,7 +362,8 @@
       "question": {
         "en": "Does this traffic light have sound signals to aid crossing?",
         "de": "Gibt die Ampel akustische Signale, um das Überqueren zu erleichtern?",
-        "fr": "Est-ce que le feu de signalisation a une signalisation sonore pour aider à traverser ?"
+        "fr": "Est-ce que le feu de signalisation a une signalisation sonore pour aider à traverser ?",
+        "nl": "Heeft dit verkeerslicht geluidssignalen om te helpen bij het oversteken?"
       },
       "condition": "crossing=traffic_signals",
       "mappings": [
@@ -371,7 +372,8 @@
           "then": {
             "en": "This traffic light has sound signals to help crossing, both for finding the crossing and for crossing.",
             "de": "Die Ampel gibt akustische Signale, um das Auffinden und Überqueren der Kreuzung zu erleichtern.",
-            "fr": "Ce feu de signalisation a une alarme sonore pour aider à traverser, à la fois pour trouver le passage piéton, et pour traverser."
+            "fr": "Ce feu de signalisation a une alarme sonore pour aider à traverser, à la fois pour trouver le passage piéton, et pour traverser.",
+            "nl": "Dit verkeerslicht heeft geluidssignalen om te helpen bij het oversteken, zowel voor het vinden van de oversteekplaats als voor het oversteken."
           }
         },
         {
@@ -379,21 +381,24 @@
           "then": {
             "en": "This traffic light does not have sound signals to help crossing.",
             "de": "Die Ampel gibt keine akustischen Signale, um das Überqueren zu erleichtern.",
-            "fr": "Ce feu de signalisation n'a pas de signal sonore pour aider à traverser."
+            "fr": "Ce feu de signalisation n'a pas de signal sonore pour aider à traverser.",
+            "nl": "Dit verkeerslicht heeft geen geluidssignalen om te helpen bij het oversteken."
           }
         },
         {
           "if": "traffic_signals:sound=locate",
           "then": {
             "en": "This traffic light has a sound signal to help locate the pole, but no signal to sign that it is safe to cross.",
-            "de": "Die Ampel gibt ein akustisches Signal, zum Auffinden des Mastes, aber kein Signal für die Grünphase."
+            "de": "Die Ampel gibt ein akustisches Signal, zum Auffinden des Mastes, aber kein Signal für die Grünphase.",
+            "nl": "Dit verkeerslicht heeft een geluidssignaal om de paal te vinden, maar niet om aan te geven dat oversteken veilig kan."
           }
         },
         {
           "if": "traffic_signals:sound=walk",
           "then": {
             "en": "This traffic light has a sound signal to sign that it is safe to cross, but no signal to help locate the pole.",
-            "de": "Die Ampel gibt ein akustisches Signal für die Grünphase, aber kein Signal zum Auffinden des Mastes."
+            "de": "Die Ampel gibt ein akustisches Signal für die Grünphase, aber kein Signal zum Auffinden des Mastes.",
+            "nl": "Dit verkeerslicht heeft een geluidssignaal om aan te geven dat oversteken veilig kan, maar geen signaal om de paal te vinden."
           }
         }
       ]

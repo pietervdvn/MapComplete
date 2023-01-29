@@ -2,16 +2,19 @@
   "id": "speed_camera",
   "name": {
     "en": "Speed Camera",
-    "de": "Blitzer"
+    "de": "Blitzer",
+    "nl": "Flitspaal"
   },
   "description": {
     "en": "Layer showing speed cameras",
-    "de": "Ebene mit Blitzern"
+    "de": "Ebene mit Blitzern",
+    "nl": "Laag met flitspalen"
   },
   "title": {
     "render": {
       "en": "Speed Camera",
-      "de": "Blitzer"
+      "de": "Blitzer",
+      "nl": "Flitspaal"
     }
   },
   "minzoom": 12,
@@ -23,26 +26,30 @@
       "id": "maxspeed",
       "question": {
         "en": "What is the maximum speed allowed at this speed camera?",
-        "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit an diesem Blitzer?"
+        "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit an diesem Blitzer?",
+        "nl": "Wat is de maximum toegestane snelheid bij deze flitspaal?"
       },
       "freeform": {
         "key": "maxspeed",
         "type": "pnat",
         "placeholder": {
           "en": "Maximum speed allowed",
-          "de": "Zulässige Höchstgeschwindigkeit"
+          "de": "Zulässige Höchstgeschwindigkeit",
+          "nl": "Maximum toegestane snelheid"
         }
       },
       "render": {
         "en": "The maximum speed allowed is {canonical(maxspeed)}",
-        "de": "Die zulässige Höchstgeschwindigkeit beträgt {canonical(maxspeed)}"
+        "de": "Die zulässige Höchstgeschwindigkeit beträgt {canonical(maxspeed)}",
+        "nl": "De maximum toegestane snelheid is {canonical(maxspeed)}"
       }
     },
     {
       "id": "ref",
       "render": {
         "en": "The reference number of this speed camera is {ref}",
-        "de": "Die Referenznummer dieses Blitzers ist {ref}"
+        "de": "Die Referenznummer dieses Blitzers ist {ref}",
+        "nl": "De referentie van deze flitspaal is {ref}"
       },
       "condition": "ref~*"
     }
@@ -54,7 +61,8 @@
       ],
       "title": {
         "en": "a speed camera",
-        "de": "einen Blitzer"
+        "de": "einen Blitzer",
+        "nl": "een flitspaal"
       },
       "preciseInput": {
         "preferredBackground": "photo",

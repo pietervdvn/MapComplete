@@ -8,7 +8,8 @@
     "ca": "Hotels",
     "nl": "Hotels",
     "pa_PK": "ہوٹیل",
-    "fr": "Hôtels"
+    "fr": "Hôtels",
+    "cs": "Hotely"
   },
   "description": {
     "en": "On this map, you'll find hotels in your area",
@@ -16,7 +17,8 @@
     "da": "På dette kort finder du hoteller i dit område",
     "nb_NO": "På dette kartet finner du hoteller der du er",
     "nl": "Op deze kaart vind je hotels in je omgeving",
-    "fr": "Sur cette carte, vous trouverez les hôtels dans votre zone"
+    "fr": "Sur cette carte, vous trouverez les hôtels dans votre zone",
+    "cs": "Na této mapě najdete hotely ve vašem okolí"
   },
   "icon": "./assets/layers/hotel/hotel.svg",
   "startLat": 50.8552,
