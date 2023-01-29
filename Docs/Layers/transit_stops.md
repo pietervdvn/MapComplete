@@ -115,7 +115,7 @@ The question is  *Does this stop have a shelter?*
 
 
   - *This stop has a shelter*  corresponds with  `shelter=yes`
-  - *This stop does not have a shelter*  corresponds with  `shelter=no`
+  - *This stop does <b>not</b> have a shelter*  corresponds with  `shelter=no`
   - *This stop has a shelter, that's separately mapped*  corresponds with  `shelter=separate`
   - This option cannot be chosen as answer
 
@@ -133,7 +133,7 @@ The question is  *Does this stop have a bench?*
 
 
   - *This stop has a bench*  corresponds with  `bench=yes`
-  - *This stop does not have a bench*  corresponds with  `bench=no`
+  - *This stop does <b>not</b> have a bench*  corresponds with  `bench=no`
   - *This stop has a bench, that's separately mapped*  corresponds with  `bench=separate`
   - This option cannot be chosen as answer
 
@@ -151,7 +151,7 @@ The question is  *Does this stop have a bin?*
 
 
   - *This stop has a bin*  corresponds with  `bin=yes`
-  - *This stop does not have a bin*  corresponds with  `bin=no`
+  - *This stop does <b>not</b> have a bin*  corresponds with  `bin=no`
   - *This stop has a bin, that's separately mapped*  corresponds with  `bin=separate`
   - This option cannot be chosen as answer
 
@@ -187,7 +187,7 @@ The question is  *Does this stop have tactile paving?*
 
 
   - *This stop has tactile paving*  corresponds with  `tactile_paving=yes`
-  - *This stop does not have tactile paving*  corresponds with  `tactile_paving=no`
+  - *This stop does <b>not</b> have tactile paving*  corresponds with  `tactile_paving=no`
 
 
 
@@ -203,7 +203,7 @@ The question is  *Is this stop lit?*
 
 
   - *This stop is lit*  corresponds with  `lit=yes`
-  - *This stop is not lit*  corresponds with  `lit=no`
+  - *This stop is <b>not</b> lit*  corresponds with  `lit=no`
 
 
 
@@ -225,7 +225,7 @@ This tagrendering has no question and is thus read-only
   - This option cannot be chosen as answer
   - *This stop has a timetable showing regular departures*  corresponds with  `departures_board=timetable`
   - *This stop has a timetable containing just the interval between departures*  corresponds with  `departures_board=interval`
-  - *This stop does not have a departures board*  corresponds with  `departures_board=no`
+  - *This stop does <b>not</b> have a departures board*  corresponds with  `departures_board=no`
 
 
 

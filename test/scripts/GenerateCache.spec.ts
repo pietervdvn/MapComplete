@@ -7609,7 +7609,9 @@ describe("GenerateCache", () => {
         ])
         await ScriptUtils.sleep(250)
         const birdhides = JSON.parse(
-            readFileSync(dir + "np-cache/natuurpunt_birdhide_12_2085_1368.geojson", { encoding: "utf8" })
+            readFileSync(dir + "np-cache/natuurpunt_birdhide_12_2085_1368.geojson", {
+                encoding: "utf8",
+            })
         )
         expect(birdhides.features.length).deep.equal(5)
         expect(

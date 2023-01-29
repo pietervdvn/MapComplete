@@ -1,24 +1,28 @@
 {
   "contributors": [
     {
-      "commits": 233,
+      "commits": 239,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 205,
+      "commits": 217,
       "contributor": "kjon"
     },
     {
-      "commits": 73,
+      "commits": 82,
       "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 61,
+      "commits": 63,
       "contributor": "Robin van der Linde"
     },
     {
       "commits": 61,
       "contributor": "danieldegroot2"
+    },
+    {
+      "commits": 46,
+      "contributor": "paunofu"
     },
     {
       "commits": 45,
@@ -31,10 +35,6 @@
     {
       "commits": 32,
       "contributor": "Babos Gábor"
-    },
-    {
-      "commits": 31,
-      "contributor": "paunofu"
     },
     {
       "commits": 29,
@@ -110,6 +110,10 @@
     },
     {
       "commits": 8,
+      "contributor": "Niels Madsen"
+    },
+    {
+      "commits": 8,
       "contributor": "Vinicius"
     },
     {
@@ -119,10 +123,6 @@
     {
       "commits": 7,
       "contributor": "快乐的老鼠宝宝"
-    },
-    {
-      "commits": 7,
-      "contributor": "Niels Madsen"
     },
     {
       "commits": 7,
@@ -222,6 +222,10 @@
     },
     {
       "commits": 3,
+      "contributor": "ⵣⵓⵀⵉⵔ ⴰⵎⴰⵣⵉⵖ زهير أمازيغ"
+    },
+    {
+      "commits": 3,
       "contributor": "Bibi56"
     },
     {
@@ -271,6 +275,22 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
+    },
+    {
+      "commits": 2,
+      "contributor": "ⵣⵓⵀⵉⵔ ⴰⵎⴰⵣⵉⵖ ZOUHIR DEHBI"
+    },
+    {
+      "commits": 2,
+      "contributor": "André Marcelo Alvarenga"
+    },
+    {
+      "commits": 2,
+      "contributor": "Ettore Atalan"
+    },
+    {
+      "commits": 2,
+      "contributor": "Klára Fleischhansová"
     },
     {
       "commits": 2,
@@ -346,7 +366,11 @@
     },
     {
       "commits": 1,
-      "contributor": "Ettore Atalan"
+      "contributor": "multiflexi"
+    },
+    {
+      "commits": 1,
+      "contributor": "gallegonovato"
     },
     {
       "commits": 1,

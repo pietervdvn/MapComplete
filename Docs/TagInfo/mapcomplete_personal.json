@@ -460,12 +460,12 @@
     },
     {
       "key": "bicycle",
-      "description": "Layer 'Barriers' shows bicycle=yes with a fixed text, namely 'A cyclist can go past this.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Barriers' shows bicycle=yes with a fixed text, namely 'A cyclist can go past this.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _referencing_ways~.+)",
       "value": "yes"
     },
     {
       "key": "bicycle",
-      "description": "Layer 'Barriers' shows bicycle=no with a fixed text, namely 'A cyclist can not go past this.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Barriers' shows bicycle=no with a fixed text, namely 'A cyclist can not go past this.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _referencing_ways~.+)",
       "value": "no"
     },
     {
@@ -525,7 +525,7 @@
     },
     {
       "key": "maxwidth:physical",
-      "description": "Layer 'Barriers' shows and asks freeform values for key 'maxwidth:physical' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if cycle_barrier!=double&cycle_barrier!=triple)"
+      "description": "Layer 'Barriers' shows and asks freeform values for key 'maxwidth:physical' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if cycle_barrier!=double&cycle_barrier!=triple&_referencing_ways~.+)"
     },
     {
       "key": "width:separation",
@@ -11580,7 +11580,7 @@
     },
     {
       "key": "shelter",
-      "description": "Layer 'Transit Stops' shows shelter=no with a fixed text, namely 'This stop does not have a shelter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Transit Stops' shows shelter=no with a fixed text, namely 'This stop does <b>not</b> have a shelter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
@@ -11595,7 +11595,7 @@
     },
     {
       "key": "bench",
-      "description": "Layer 'Transit Stops' shows bench=no with a fixed text, namely 'This stop does not have a bench' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Transit Stops' shows bench=no with a fixed text, namely 'This stop does <b>not</b> have a bench' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
@@ -11610,7 +11610,7 @@
     },
     {
       "key": "bin",
-      "description": "Layer 'Transit Stops' shows bin=no with a fixed text, namely 'This stop does not have a bin' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Transit Stops' shows bin=no with a fixed text, namely 'This stop does <b>not</b> have a bin' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
@@ -11645,7 +11645,7 @@
     },
     {
       "key": "tactile_paving",
-      "description": "Layer 'Transit Stops' shows tactile_paving=no with a fixed text, namely 'This stop does not have tactile paving' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Transit Stops' shows tactile_paving=no with a fixed text, namely 'This stop does <b>not</b> have tactile paving' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
@@ -11655,7 +11655,7 @@
     },
     {
       "key": "lit",
-      "description": "Layer 'Transit Stops' shows lit=no with a fixed text, namely 'This stop is not lit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Transit Stops' shows lit=no with a fixed text, namely 'This stop is <b>not</b> lit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
@@ -11685,7 +11685,7 @@
     },
     {
       "key": "departures_board",
-      "description": "Layer 'Transit Stops' shows departures_board=no with a fixed text, namely 'This stop does not have a departures board' (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Transit Stops' shows departures_board=no with a fixed text, namely 'This stop does <b>not</b> have a departures board' (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
