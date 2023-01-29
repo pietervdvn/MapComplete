@@ -137,7 +137,9 @@ function main() {
                 def["additionalProperties"] = false
             }
         }
-        writeFileSync(dir + "/" + name + ".schema.json", JSON.stringify(parsed, null, "  "), { encoding: "utf8" })
+        writeFileSync(dir + "/" + name + ".schema.json", JSON.stringify(parsed, null, "  "), {
+            encoding: "utf8",
+        })
     }
 
     extractMeta("LayoutConfigJson", "layoutconfigmeta")
