@@ -1,4 +1,5 @@
 import { Utils } from "../Utils"
+import { Readable, Subscriber, Unsubscriber } from "svelte/store"
 
 /**
  * Various static utils
@@ -88,7 +89,7 @@ export class Stores {
     }
 }
 
-export abstract class Store<T> {
+export abstract class Store<T> implements Readable<T> {
     abstract readonly data: T
 
     /**
@@ -112,6 +113,18 @@ export abstract class Store<T> {
 
     abstract map<J>(f: (t: T) => J): Store<J>
     abstract map<J>(f: (t: T) => J, extraStoresToWatch: Store<any>[]): Store<J>
+
+    public mapD<J>(f: (t: T) => J, extraStoresToWatch: Store<any>[]): Store<J> {
+        return this.map((t) => {
+            if (t === undefined) {
+                return undefined
+            }
+            if (t === null) {
+                return null
+            }
+            return f(t)
+        }, extraStoresToWatch)
+    }
 
     /**
      * Add a callback function which will run on future data changes
@@ -257,6 +270,17 @@ export abstract class Store<T> {
                 })
             }
         })
+    }
+
+    /**
+     * Same as 'addCallbackAndRun', added to be compatible with Svelte
+     * @param run
+     * @param invalidate
+     */
+    public subscribe(run: Subscriber<T> & ((value: T) => void), invalidate?): Unsubscriber {
+        // We don't need to do anything with 'invalidate', see
+        // https://github.com/sveltejs/svelte/issues/3859
+        return this.addCallbackAndRun(run)
     }
 }
 

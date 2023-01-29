@@ -209,7 +209,7 @@ export class GeoOperations {
      * GeoOperations.inside([1.42822265625, 48.61838518688487], multiPolygon) // => false
      * GeoOperations.inside([4.02099609375, 47.81315451752768], multiPolygon) // => false
      */
-    public static inside(pointCoordinate, feature): boolean {
+    public static inside(pointCoordinate: [number, number] | Feature<Point>, feature): boolean {
         // ray-casting algorithm based on
         // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
 
@@ -217,8 +217,8 @@ export class GeoOperations {
             return false
         }
 
-        if (pointCoordinate.geometry !== undefined) {
-            pointCoordinate = pointCoordinate.geometry.coordinates
+        if (pointCoordinate["geometry"] !== undefined) {
+            pointCoordinate = pointCoordinate["geometry"].coordinates
         }
 
         const x: number = pointCoordinate[0]
