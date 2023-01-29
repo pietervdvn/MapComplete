@@ -1053,6 +1053,44 @@
           "it": "Quali sono gli orari di apertura di questo impianto di raccolta e riciclo?"
         }
       }
+    },
+    {
+      "id": "access",
+      "question": {
+        "en": "Who can use this recycling facility?",
+        "nl": "Wie kan deze recyclingfaciliteit gebruiken?"
+      },
+      "mappings": [
+        {
+          "if": "access=yes",
+          "then": {
+            "en": "Everyone can use this recycling facility",
+            "nl": "Iedereen mag deze recyclingfaciliteit gebruiken"
+          }
+        },
+        {
+          "if": "access=residents",
+          "then": {
+            "en": "Only residents can use this recycling facility",
+            "nl": "Enkel bewoners kunnen deze recyclingfaciliteit gebruiken"
+          }
+        },
+        {
+          "if": "access=private",
+          "then": {
+            "en": "This recycling facility is only for private use",
+            "nl": "Deze recyclingfaciliteit is alleen voor privégebruik"
+          }
+        }
+      ],
+      "freeform": {
+        "key": "access",
+        "type": "string"
+      },
+      "render": {
+        "en": "This recycling facility can be used by {access}",
+        "nl": "Deze recyclingfaciliteit kan gebruikt worden door {access}"
+      }
     }
   ],
   "filter": [
@@ -1260,6 +1298,28 @@
             "it": "Riciclo di secco"
           },
           "osmTags": "recycling:waste=yes"
+        }
+      ]
+    },
+    {
+      "#": "ignore-possible-duplicate",
+      "id": "public-access",
+      "options": [
+        {
+          "question": {
+            "en": "Only public access",
+            "nl": "Enkel publiek toegankelijke afvalcontainers",
+            "de": "Nur öffentliche Mülltonnen",
+            "it": "Solo accesso pubblico",
+            "id": "Hanya akses publik",
+            "da": "Kun offentlig adgang"
+          },
+          "osmTags": {
+            "or": [
+              "access=yes",
+              "access="
+            ]
+          }
         }
       ]
     }

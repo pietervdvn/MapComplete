@@ -64,6 +64,31 @@
     }
   ],
   "tagRenderings": [
+    "images",
+    {
+      "id": "type",
+      "description": "Mapping allowing to change between waste_disposal and recycling",
+      "question": {
+        "en": "What kind of waste disposal bin is this?"
+      },
+      "mappings": [
+        {
+          "if": "amenity=waste_disposal",
+          "then": {
+            "en": "This is a medium to large bin for disposal of (household) waste"
+          }
+        },
+        {
+          "if": "amenity=recycling",
+          "then": {
+            "en": "This is actually a recycling container"
+          },
+          "addExtraTags": [
+            "recycling_type=container"
+          ]
+        }
+      ]
+    },
     {
       "id": "access",
       "render": {

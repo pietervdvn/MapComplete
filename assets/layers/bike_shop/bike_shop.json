@@ -22,13 +22,6 @@
       "or": [
         "shop=bicycle",
         {
-          "#": "A bicycle rental with a network is something such as villo, bluebike, ... We don't want them",
-          "and": [
-            "amenity=bicycle_rental",
-            "network="
-          ]
-        },
-        {
           "#": "if sport is defined and is not bicycle, it is not matched; if bicycle retail/repair is marked as 'no', it is not shown to too.",
           "##": "There will be a few false-positives with this. They will get filtered out by people marking both 'not selling bikes' and 'not repairing bikes'. Furthermore, the OSMers will add a sports-subcategory on it",
           "and": [
