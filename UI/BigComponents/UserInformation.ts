@@ -143,7 +143,7 @@ class UserInformationMainPanel extends VariableUiElement {
                     return replaced === simplifiedName
                 }
             )
-            if(isTranslator){
+            if (isTranslator) {
                 amendedPrefs.data["_translation_contributions"] = "" + isTranslator.commits
             }
             const isCodeContributor = codeContributors.contributors.find(
@@ -152,7 +152,7 @@ class UserInformationMainPanel extends VariableUiElement {
                     return replaced === simplifiedName
                 }
             )
-            if(isCodeContributor){
+            if (isCodeContributor) {
                 amendedPrefs.data["_code_contributions"] = "" + isCodeContributor.commits
             }
             amendedPrefs.ping()
