@@ -905,7 +905,7 @@
         "attribution": "Rezensionen werden bereitgestellt von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> und sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar.",
         "i_am_affiliated": "<span>Ich bin mit diem Objekt vertraut</span><br><span class=\"subtle\">Auswählen, wenn Sie Eigentümer, Ersteller, Angestellter … sind</span>",
         "name_required": "Der Name des Objekts ist erforderlich, um Bewertungen zu erstellen und anzuzeigen",
-        "no_rating": "Keine Bewertung vorhanden",
+        "no_rating": "Vor dem Absenden eine Bewertung abgeben…",
         "no_reviews_yet": "Es gibt noch keine Bewertungen. Hilf mit der ersten Bewertung dem Geschäft und der Open Data Bewegung!",
         "plz_login": "Anmelden, um eine Bewertung abzugeben",
         "posting_as": "Veröffentlichen als",
