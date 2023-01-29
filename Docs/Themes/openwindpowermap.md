@@ -1,7 +1,7 @@
 
 
- OpenWindPowerMap ( openwindpowermap) 
---------------------------------------
+ OpenWindPowerMap ( [openwindpowermap](https://mapcomplete.osm.be/openwindpowermap) ) 
+--------------------------------------------------------------------------------------
 
 
 

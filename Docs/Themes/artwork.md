@@ -1,7 +1,7 @@
 
 
- Open Artwork Map ( artwork) 
------------------------------
+ Open Artwork Map ( [artwork](https://mapcomplete.osm.be/artwork) ) 
+--------------------------------------------------------------------
 
 
 

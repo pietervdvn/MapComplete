@@ -1,7 +1,7 @@
 
 
- Postal codes ( postal_codes) 
-------------------------------
+ Postal codes ( [postal_codes](https://mapcomplete.osm.be/postal_codes) ) 
+--------------------------------------------------------------------------
 
 
 

@@ -1,7 +1,7 @@
 
 
- Ghost bikes ( ghostbikes) 
----------------------------
+ Ghost bikes ( [ghostbikes](https://mapcomplete.osm.be/ghostbikes) ) 
+---------------------------------------------------------------------
 
 
 

@@ -1,7 +1,7 @@
 
 
- Postbox and Post Office Map ( postboxes) 
-------------------------------------------
+ Postbox and Post Office Map ( [postboxes](https://mapcomplete.osm.be/postboxes) ) 
+-----------------------------------------------------------------------------------
 
 
 

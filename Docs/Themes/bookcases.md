@@ -1,7 +1,7 @@
 
 
- Open Bookcase Map ( bookcases) 
---------------------------------
+ Open Bookcase Map ( [bookcases](https://mapcomplete.osm.be/bookcases) ) 
+-------------------------------------------------------------------------
 
 
 

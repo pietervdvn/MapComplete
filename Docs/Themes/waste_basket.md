@@ -1,7 +1,7 @@
 
 
- Waste Basket ( waste_basket) 
-------------------------------
+ Waste Basket ( [waste_basket](https://mapcomplete.osm.be/waste_basket) ) 
+--------------------------------------------------------------------------
 
 
 

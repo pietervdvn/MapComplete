@@ -1,7 +1,7 @@
 
 
- Sports ( sports) 
-------------------
+ Sports ( [sports](https://mapcomplete.osm.be/sports) ) 
+--------------------------------------------------------
 
 
 

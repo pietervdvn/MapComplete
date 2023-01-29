@@ -1,7 +1,7 @@
 
 
- Binoculars ( binoculars) 
---------------------------
+ Binoculars ( [binoculars](https://mapcomplete.osm.be/binoculars) ) 
+--------------------------------------------------------------------
 
 
 

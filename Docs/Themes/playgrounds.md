@@ -1,7 +1,7 @@
 
 
- Playgrounds ( playgrounds) 
-----------------------------
+ Playgrounds ( [playgrounds](https://mapcomplete.osm.be/playgrounds) ) 
+-----------------------------------------------------------------------
 
 
 

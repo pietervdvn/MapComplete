@@ -1,7 +1,7 @@
 
 
- Hydrants, Extinguishers, Fire stations, and Ambulance stations ( hailhydrant) 
--------------------------------------------------------------------------------
+ Hydrants, Extinguishers, Fire stations, and Ambulance stations ( [hailhydrant](https://mapcomplete.osm.be/hailhydrant) ) 
+--------------------------------------------------------------------------------------------------------------------------
 
 
 

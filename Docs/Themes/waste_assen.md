@@ -1,7 +1,7 @@
 
 
- Afval - Assen ( waste_assen) 
-------------------------------
+ Afval - Assen ( [waste_assen](https://mapcomplete.osm.be/waste_assen) ) 
+-------------------------------------------------------------------------
 
 
 

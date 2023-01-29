@@ -1,7 +1,7 @@
 
 
- Personal theme ( personal) 
-----------------------------
+ Personal theme ( [personal](https://mapcomplete.osm.be/personal) ) 
+--------------------------------------------------------------------
 
 
 

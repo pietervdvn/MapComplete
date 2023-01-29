@@ -1,7 +1,7 @@
 
 
- OSM for the blind ( blind_osm) 
---------------------------------
+ OSM for the blind ( [blind_osm](https://mapcomplete.osm.be/blind_osm) ) 
+-------------------------------------------------------------------------
 
 
 

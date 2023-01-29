@@ -1,7 +1,7 @@
 
 
- Cyclofix - an open map for cyclists ( cyclofix) 
--------------------------------------------------
+ Cyclofix - an open map for cyclists ( [cyclofix](https://mapcomplete.osm.be/cyclofix) ) 
+-----------------------------------------------------------------------------------------
 
 
 

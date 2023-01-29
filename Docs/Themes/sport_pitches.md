@@ -1,7 +1,7 @@
 
 
- Sport pitches ( sport_pitches) 
---------------------------------
+ Sport pitches ( [sport_pitches](https://mapcomplete.osm.be/sport_pitches) ) 
+-----------------------------------------------------------------------------
 
 
 

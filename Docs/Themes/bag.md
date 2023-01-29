@@ -1,7 +1,7 @@
 
 
- BAG import helper ( bag) 
---------------------------
+ BAG import helper ( [bag](https://mapcomplete.osm.be/bag) ) 
+-------------------------------------------------------------
 
 
 

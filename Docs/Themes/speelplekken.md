@@ -1,7 +1,7 @@
 
 
- Welkom bij de groendoener! ( speelplekken) 
---------------------------------------------
+ Welkom bij de groendoener! ( [speelplekken](https://mapcomplete.osm.be/speelplekken) ) 
+----------------------------------------------------------------------------------------
 
 
 

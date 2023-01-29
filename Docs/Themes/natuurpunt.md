@@ -1,7 +1,7 @@
 
 
- The map of Natuurpunt ( natuurpunt) 
--------------------------------------
+ The map of Natuurpunt ( [natuurpunt](https://mapcomplete.osm.be/natuurpunt) ) 
+-------------------------------------------------------------------------------
 
 
 

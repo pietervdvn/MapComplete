@@ -1,7 +1,7 @@
 
 
- Open Shop Map ( shops) 
-------------------------
+ Open Shop Map ( [shops](https://mapcomplete.osm.be/shops) ) 
+-------------------------------------------------------------
 
 
 

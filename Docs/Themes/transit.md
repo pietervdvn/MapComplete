@@ -1,7 +1,7 @@
 
 
- Bus routes ( transit) 
------------------------
+ Bus routes ( [transit](https://mapcomplete.osm.be/transit) ) 
+--------------------------------------------------------------
 
 
 

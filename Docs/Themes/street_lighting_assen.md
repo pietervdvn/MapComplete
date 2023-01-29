@@ -1,7 +1,7 @@
 
 
- Straatverlichting - Assen ( street_lighting_assen) 
-----------------------------------------------------
+ Straatverlichting - Assen ( [street_lighting_assen](https://mapcomplete.osm.be/street_lighting_assen) ) 
+---------------------------------------------------------------------------------------------------------
 
 
 
