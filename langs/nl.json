@@ -141,6 +141,7 @@
             "translatedBy": "MapComplete werd vertaald door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} meer vertalers</a>"
         },
         "back": "Vorige",
+        "backToIndex": "Keer terug naar het overzicht met alle thematische kaarten",
         "backToMapcomplete": "Terug naar het themaoverzicht",
         "backgroundMap": "Achtergrondkaart",
         "cancel": "Annuleren",
@@ -188,6 +189,9 @@
         "loading": "Aan het laden…",
         "loadingTheme": "{theme} wordt geladen…",
         "loginFailed": "Het inloggen op OpenStreetMap is gefaald",
+        "loginFailedOfflineMode": "OpenStreetMap.org is op dit moment niet beschikbaar door onderhoud. Kaartwijzigingen maken zal binnenkort weer mogelijk zijn.",
+        "loginFailedReadonlyMode": "OpenStreetMap.org is op dit moment in alleen-lezen modus door onderhoud. Kaartwijzigingen maken zal binnenkort weer mogelijk zijn.",
+        "loginFailedUnreachableMode": "OpenStreetMap.org kan op dit moment niet bereikt worden. Ben je verbonden met het internet of blokkeer je toegang tot externe website? Probeer later opnieuw.",
         "loginOnlyNeededToEdit": "als je wijzigingen wilt maken",
         "loginToStart": "Meld je aan om deze vraag te beantwoorden",
         "loginWithOpenStreetMap": "Aanmelden met OpenStreetMap",
@@ -284,6 +288,7 @@
         "uploadGpx": {
             "choosePermission": "Kies hieronder of je traject gedeeld moet worden:",
             "confirm": "Bevestig upload",
+            "gpxServiceOffline": "De GPX-service is momenteel niet-operationeel. Probeer later opnieuw.",
             "intro0": "Door het uploaden van je traject, bewaart OpenStreetMap.org een volledige kopie van je traject.",
             "intro1": "Je kan je traject weer downloaden en laden in OpenStreetMap editor",
             "meta": {
@@ -305,8 +310,7 @@
             },
             "title": "Upload je traject naar OpenStreetMap.org",
             "uploadFinished": "Je traject is geupload!",
-            "uploading": "Traject uploaden…",
-            "gpxServiceOffline": "De GPX-service is momenteel niet-operationeel. Probeer later opnieuw."
+            "uploading": "Traject uploaden…"
         },
         "useSearch": "Gebruik de zoekfunctie hierboven om meer opties te zien",
         "useSearchForMore": "Gebruik de zoekfunctie om {total} meer waarden te vinden…",
@@ -348,26 +352,23 @@
             "searchToShort": "Je zoekopdracht is te kort, vul een langere tekst in",
             "searchWikidata": "Zoek op Wikidata",
             "wikipediaboxTitle": "Wikipedia"
-        },
-        "loginFailedReadonlyMode": "OpenStreetMap.org is op dit moment in alleen-lezen modus door onderhoud. Kaartwijzigingen maken zal binnenkort weer mogelijk zijn.",
-        "loginFailedOfflineMode": "OpenStreetMap.org is op dit moment niet beschikbaar door onderhoud. Kaartwijzigingen maken zal binnenkort weer mogelijk zijn.",
-        "loginFailedUnreachableMode": "OpenStreetMap.org kan op dit moment niet bereikt worden. Ben je verbonden met het internet of blokkeer je toegang tot externe website? Probeer later opnieuw.",
-        "backToIndex": "Keer terug naar het overzicht met alle thematische kaarten"
+        }
     },
     "hotkeyDocumentation": {
+        "action": "Actie",
         "closeSidebar": "Sluit de zijbalk",
         "geolocate": "Centreer de map op je huidige positie of zoom verder in naar de huidige positie. Vraagt geolocatie-toegang",
+        "intro": "MapComplete ondersteunt de volgende sneltoetsen:",
+        "key": "Toets-combinatie",
         "openLayersPanel": "Open het paneel met lagen, filters en achtergrondkaart",
         "selectBackground": "Selecteer een achtergrondlaag van category {category}",
         "selectMapnik": "Selecteer OpenStreetMap-carto als achtergrondlaag",
         "selectSearch": "Selecteer de zoekbalk om locaties te zoeken",
-        "title": "Sneltoetsen",
-        "key": "Toets-combinatie",
-        "action": "Actie",
-        "intro": "MapComplete ondersteunt de volgende sneltoetsen:"
+        "title": "Sneltoetsen"
     },
     "image": {
         "addPicture": "Voeg foto toe",
+        "currentLicense": "Je afbeelding wordt gepubliceerd met de {license}-licentie",
         "doDelete": "Verwijder afbeelding",
         "dontDelete": "Annuleren",
         "isDeleted": "Verwijderd",
@@ -392,8 +393,7 @@
         "uploadFailed": "Afbeelding uploaden mislukt. Heb je internet? Gebruik je Brave of UMatrix? Dan moet je derde partijen toelaten.",
         "uploadMultipleDone": "{count} afbeeldingen zijn toegevoegd. Bedankt voor je bijdrage!",
         "uploadingMultiple": "Bezig met {count} foto's te uploaden…",
-        "uploadingPicture": "Bezig met een foto te uploaden…",
-        "currentLicense": "Je afbeelding wordt gepubliceerd met de {license}-licentie"
+        "uploadingPicture": "Bezig met een foto te uploaden…"
     },
     "importHelper": {
         "askMetadata": {
@@ -942,8 +942,8 @@
         "newMessages": "je hebt nieuwe berichten",
         "noDescription": "Je hebt nog geen beschrijving op je profiel",
         "noDescriptionCallToAction": "Voeg een profielbeschrijving toe",
-        "welcome": "Welkom {name}",
-        "titleNotLoggedIn": "Welkom"
+        "titleNotLoggedIn": "Welkom",
+        "welcome": "Welkom {name}"
     },
     "validation": {
         "color": {

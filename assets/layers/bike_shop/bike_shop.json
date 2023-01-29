@@ -267,7 +267,8 @@
         "pt_BR": "Qual o nome desta loja de bicicletas?",
         "pt": "Qual o nome desta loja de bicicletas?",
         "es": "¿Cual es el nombre de esta tienda de bicicletas?",
-        "da": "Hvad hedder denne cykelbutik?"
+        "da": "Hvad hedder denne cykelbutik?",
+        "ca": "Quin és el nom d'aquesta botiga de bicicletes?"
       },
       "render": {
         "en": "This bicycle shop is called {name}",
@@ -337,7 +338,7 @@
             "pt": "Esta loja vende bicicletas",
             "es": "Esta tienda vende bicis",
             "da": "Denne butik sælger cykler",
-            "ca": "Aquesta tenda ven bicicletes"
+            "ca": "Aquesta botiga ven bicis"
           }
         },
         {
@@ -354,7 +355,7 @@
             "pt": "Esta loja não vende bicicletas",
             "es": "Esta tienda no vende bicis",
             "da": "Denne butik sælger ikke cykler",
-            "ca": "Aquesta tenda no ven bicicletes"
+            "ca": "Aquesta botiga no ven bicis"
           }
         }
       ]
@@ -390,7 +391,7 @@
             "pt": "Esta loja conserta bicicletas",
             "es": "Esta tienda repara bicis",
             "da": "Denne butik reparerer cykler",
-            "ca": "Aquesta botiga repara bicicletes"
+            "ca": "Aquesta botiga repara bicis"
           }
         },
         {
@@ -407,7 +408,7 @@
             "pt": "Esta loja não conserta bicicletas",
             "es": "Esta tienda no repara bicis",
             "da": "Denne butik reparerer ikke cykler",
-            "ca": "Aquesta botiga no repara bicicletes"
+            "ca": "Aquesta botiga no repara bicis"
           }
         },
         {
@@ -423,7 +424,8 @@
             "pt_BR": "Esta loja conserta bicicletas compradas aqui",
             "pt": "Esta loja conserta bicicletas compradas aqui",
             "es": "Esta tienda solo repara bicis compradas aquí",
-            "da": "Denne butik reparerer kun cykler købt her"
+            "da": "Denne butik reparerer kun cykler købt her",
+            "ca": "Aquesta botiga sols repara bicis comprades aquí"
           }
         },
         {
@@ -439,7 +441,8 @@
             "pt_BR": "Esta loja conserta bicicletas de uma certa marca",
             "pt": "Esta loja conserta bicicletas de uma certa marca",
             "es": "Esta tienda solo repara bicis de una cierta marca",
-            "da": "Dette værksted reparerer kun cykler af et bestemt mærke"
+            "da": "Dette værksted reparerer kun cykler af et bestemt mærke",
+            "ca": "Aquesta tenda sols repara bicis d’una marca concreta"
           }
         }
       ]
@@ -458,7 +461,8 @@
         "pt_BR": "Esta loja aluga bicicletas?",
         "pt": "Esta loja aluga bicicletas?",
         "es": "¿Alquila bicicis esta tienda?",
-        "da": "Udlejer denne butik cykler?"
+        "da": "Udlejer denne butik cykler?",
+        "ca": "Aquesta botiga alquila bicicletes?"
       },
       "mappings": [
         {
@@ -475,7 +479,7 @@
             "pt": "Esta loja aluga bicicletas",
             "es": "Esta tienda alquila bicis",
             "da": "Denne butik udlejer cykler",
-            "ca": "Aquesta botiga lloga bicicletes"
+            "ca": "Aquesta botiga lloga bicis"
           }
         },
         {
@@ -491,7 +495,8 @@
             "pt_BR": "Esta loja não aluga bicicletas",
             "pt": "Esta loja não aluga bicicletas",
             "es": "Esta tienda no alquila bicis",
-            "da": "Denne butik udlejer ikke cykler"
+            "da": "Denne butik udlejer ikke cykler",
+            "ca": "Aquesta botiga no lloga bicis"
           }
         }
       ]
@@ -517,7 +522,8 @@
         "it": "Questo negozio vende bici usate?",
         "ru": "В этом магазине продаются подержанные велосипеды?",
         "es": "¿Vende bicis de segunda mano esta tienda?",
-        "da": "Sælger denne butik brugte cykler?"
+        "da": "Sælger denne butik brugte cykler?",
+        "ca": "Aquesta botiga ven bicicletes de segona mà?"
       },
       "mappings": [
         {
@@ -531,7 +537,8 @@
             "it": "Questo negozio vende bici usate",
             "ru": "В этом магазине продаются подержанные велосипеды",
             "es": "Esta tienda vende bicis de segunda mano",
-            "da": "Denne butik sælger brugte cykler"
+            "da": "Denne butik sælger brugte cykler",
+            "ca": "Aquesta botiga ven bicis de segona mà"
           }
         },
         {
@@ -545,7 +552,8 @@
             "it": "Questo negozio non vende bici usate",
             "ru": "В этом магазине не продаются подержанные велосипеды",
             "es": "Esta tienda no vende bicis de segunda mano",
-            "da": "Denne butik sælger ikke brugte cykler"
+            "da": "Denne butik sælger ikke brugte cykler",
+            "ca": "Aquesta botiga no ven bicis de segona mà"
           }
         },
         {
@@ -559,7 +567,8 @@
             "it": "Questo negozio vende solamente bici usate",
             "ru": "В этом магазине продаются только подержанные велосипеды",
             "es": "Esta tienda solo vende bicis de segunda mano",
-            "da": "Denne butik sælger kun brugte cykler"
+            "da": "Denne butik sælger kun brugte cykler",
+            "ca": "Aquesta botiga sols ven bicis de segona mà"
           }
         }
       ]
@@ -575,7 +584,8 @@
         "it": "Questo negozio offre l’uso a chiunque di una pompa per bici?",
         "ru": "Предлагается ли в этом магазине велосипедный насос для всеобщего пользования?",
         "es": "¿Esta tienda ofrece una bomba para que la utilice cualquiera?",
-        "da": "Tilbyder denne butik en cykelpumpe til brug for alle?"
+        "da": "Tilbyder denne butik en cykelpumpe til brug for alle?",
+        "ca": "Aquesta botiga ofereix una manxa perquè la utilitzi qualsevol?"
       },
       "mappings": [
         {
@@ -589,7 +599,8 @@
             "it": "Questo negozio offre l’uso pubblico di una pompa per bici",
             "ru": "В этом магазине есть велосипедный насос для всеобщего пользования",
             "es": "Esta tienda ofrece una bomba para cualquiera",
-            "da": "Denne butik tilbyder en cykelpumpe til alle"
+            "da": "Denne butik tilbyder en cykelpumpe til alle",
+            "ca": "Aquesta botiga ofereix una manxa per a tothom"
           }
         },
         {
@@ -603,7 +614,8 @@
             "it": "Questo negozio non offre l’uso pubblico di una pompa per bici",
             "ru": "В этом магазине нет велосипедного насоса для всеобщего пользования",
             "es": "Esta tienda no ofrece una bomba para cualquiera",
-            "da": "Denne butik tilbyder ikke en cykelpumpe til nogen"
+            "da": "Denne butik tilbyder ikke en cykelpumpe til nogen",
+            "ca": "Aquesta botiga no ofereix una manxa per a tothom"
           }
         },
         {
@@ -616,7 +628,7 @@
             "de": "Es gibt eine Luftpumpe, sie ist als separater Punkt eingetragen",
             "es": "Hay una bomba para bicicletas, se muestra como un punto separado",
             "da": "Der er cykelpumpe, den er vist som et separat punkt",
-            "ca": "Hi ha una manxa per a bicicletes, es mostra com a un punt separat"
+            "ca": "Hi ha una manxa, es mostra com a un punt separat"
           }
         }
       ]
@@ -632,7 +644,8 @@
         "it": "Sono presenti degli attrezzi per riparare la propria bici?",
         "ru": "Есть ли здесь инструменты для починки собственного велосипеда?",
         "es": "¿Hay herramientas para reparar tu propia bici?",
-        "da": "Er der værktøj her til at reparere din egen cykel?"
+        "da": "Er der værktøj her til at reparere din egen cykel?",
+        "ca": "Hi ha ferramentes perquè reparis la teva bici?"
       },
       "mappings": [
         {
@@ -645,7 +658,8 @@
             "de": "Das Geschäft bietet Werkzeug an, um das eigene Fahrrad zu reparieren",
             "it": "Questo negozio offre degli attrezzi per la riparazione fai-da-te",
             "da": "Denne butik tilbyder værktøj til gør-det-selv-reparation",
-            "es": "Esta tienda ofrece herramientas para la reparación DIY"
+            "es": "Esta tienda ofrece herramientas para la reparación DIY",
+            "ca": "Aquesta botiga ofereix ferramentes per a la reparació DIY"
           }
         },
         {
@@ -658,7 +672,8 @@
             "de": "Das Geschäft bietet kein Werkzeug an, um das eigene Fahrrad zu reparieren",
             "it": "Questo negozio non offre degli attrezzi per la riparazione fai-da-te",
             "da": "Denne butik tilbyder ikke værktøj til gør-det-selv reparation",
-            "es": "Esta tienda no ofrece herramientas para la reparación DIY"
+            "es": "Esta tienda no ofrece herramientas para la reparación DIY",
+            "ca": "Aquesta botiga no ofereix ferramentes per a la reparació DIY"
           }
         },
         {
@@ -671,7 +686,8 @@
             "de": "Das Geschäft bietet nur Werkzeug an, um das eigene Fahrrad zu reparieren, wenn es dort gekauft/gemietet wurde",
             "ru": "Инструменты для починки доступны только при покупке/аренде велосипеда в магазине",
             "es": "Las herramientas para reparaciones DIT solo están disponibles si compraste/alquilaste la bicicleta en la tienda",
-            "da": "Værktøj til gør-det-selv-reparation er kun tilgængeligt, hvis du har købt/lejet cyklen i butikken"
+            "da": "Værktøj til gør-det-selv-reparation er kun tilgængeligt, hvis du har købt/lejet cyklen i butikken",
+            "ca": "Les ferramentes per a reparacions DIY sols estan disponibles si vas comprar/llogar la bici a la botiga"
           }
         }
       ]
@@ -686,7 +702,8 @@
         "ru": "Здесь моют велосипеды?",
         "de": "Bietet das Geschäft Fahrradreinigungen an?",
         "es": "¿Aquí se lavan bicicletas?",
-        "da": "Vaskes cykler her?"
+        "da": "Vaskes cykler her?",
+        "ca": "Aquí es renten bicicletes?"
       },
       "mappings": [
         {
@@ -699,7 +716,8 @@
             "de": "Das Geschäft bietet Fahrradreinigungen an",
             "ru": "В этом магазине оказываются услуги мойки/чистки велосипедов",
             "es": "Esta tienda limpia bicicletas",
-            "da": "Denne butik rengør cykler"
+            "da": "Denne butik rengør cykler",
+            "ca": "Aquesta botiga renta bicicletes"
           }
         },
         {
@@ -711,7 +729,8 @@
             "it": "Questo negozio ha una struttura dove è possibile pulire la propria bici",
             "de": "Im Geschäft können Fahrräder selbst gereinigt werden",
             "es": "Esta tienda tiene una instalación donde uno puede limpiar bicicletas por si mismo",
-            "da": "Denne butik har et anlæg, hvor man selv kan rengøre cykler"
+            "da": "Denne butik har et anlæg, hvor man selv kan rengøre cykler",
+            "ca": "Aquesta botiga té una instal·lació on un pot rentar les bicis per un mateix"
           }
         },
         {
@@ -724,7 +743,8 @@
             "de": "Das Geschäft bietet keine Fahrradreinigungen an",
             "ru": "В этом магазине нет услуг мойки/чистки велосипедов",
             "es": "Esta tienda no ofrece limpieza de bicicletas",
-            "da": "Denne butik tilbyder ikke rengøring af cykler"
+            "da": "Denne butik tilbyder ikke rengøring af cykler",
+            "ca": "Aquesta botiga no ofereix rentat de bicis"
           }
         }
       ]

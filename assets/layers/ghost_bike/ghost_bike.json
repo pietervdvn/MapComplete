@@ -139,7 +139,8 @@
         "nl": "Op welke website kan men meer informatie vinden over de Witte fiets of over het ongeval?",
         "de": "Auf welcher Webseite kann man mehr Informationen über das Geisterrad oder den Unfall finden?",
         "it": "In quale pagina web si possono trovare informazioni sulla bici fantasma o l’incidente?",
-        "fr": "Sur quelle page web peut-on trouver plus d'informations sur le Vélo fantôme ou l'accident ?"
+        "fr": "Sur quelle page web peut-on trouver plus d'informations sur le Vélo fantôme ou l'accident ?",
+        "ca": "En quina pàgina web es pot trobar més informació sobre la bicicleta blanca o l'accident?"
       },
       "render": {
         "en": "<a href='{source}' target='_blank'>More info available</a>",

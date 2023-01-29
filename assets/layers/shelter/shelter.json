@@ -3,7 +3,8 @@
   "name": {
     "en": "Shelter",
     "de": "Unterstände",
-    "nl": "Schuilplaats"
+    "nl": "Schuilplaats",
+    "ca": "Refugi"
   },
   "description": {
     "en": "Layer showing shelter structures",

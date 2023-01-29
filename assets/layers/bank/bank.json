@@ -7,7 +7,10 @@
   },
   "name": {
     "en": "Banks",
-    "de": "Banken"
+    "de": "Banken",
+    "ca": "Bancs",
+    "nb_NO": "Banker",
+    "nl": "Banken"
   },
   "title": {
     "render": "Bank",
@@ -35,28 +38,35 @@
       "id": "has_atm",
       "question": {
         "en": "Does this bank have an ATM?",
-        "de": "Hat diese Bank einen Geldautomaten?"
+        "de": "Hat diese Bank einen Geldautomaten?",
+        "nb_NO": "Har denne banken en minibank?",
+        "nl": "Heeft deze bank een bankautomaat?"
       },
       "mappings": [
         {
           "if": "atm=yes",
           "then": {
             "en": "This bank has an ATM",
-            "de": "Diese Bank hat einen Geldautomaten"
+            "de": "Diese Bank hat einen Geldautomaten",
+            "nb_NO": "Denne banken har en minibank",
+            "nl": "Deze bank heeft een bankautomaat"
           }
         },
         {
           "if": "atm=no",
           "then": {
             "en": "This bank does <b>not</b> have an ATM",
-            "de": "Diese Bank hat <b>keinen</b> Geldautomaten"
+            "de": "Diese Bank hat <b>keinen</b> Geldautomaten",
+            "nb_NO": "Denne banken har <b>ikke</b> en minibank",
+            "nl": "Deze bank heeft <b>geen</b> bankautomaaat"
           }
         },
         {
           "if": "atm=separate",
           "then": {
             "en": "This bank does have an ATM, but it is mapped as a different icon",
-            "de": "Diese Bank hat zwar einen Geldautomaten, aber dieser ist mit einem anderen Symbol dargestellt"
+            "de": "Diese Bank hat zwar einen Geldautomaten, aber dieser ist mit einem anderen Symbol dargestellt",
+            "nl": "Deze bank heeft een bankautomaat, maar deze staat apart op de kaart aangeduid"
           }
         }
       ]
@@ -70,7 +80,9 @@
         {
           "question": {
             "en": "With an ATM",
-            "de": "Mit einem Geldautomaten"
+            "de": "Mit einem Geldautomaten",
+            "nb_NO": "Med en minibank",
+            "nl": "Met een bankautomaat"
           },
           "osmTags": "atm=yes"
         }

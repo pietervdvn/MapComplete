@@ -156,16 +156,17 @@
       "question": {
         "nl": "Wat is de naam van deze eetgelegenheid?",
         "en": "What is the name of this business?",
-        "de": "Wie heißt dieses Restaurant?",
+        "de": "Was ist der Name dieses Unternehmens?",
         "es": "¿Cual es el nombre de este restaurante?",
         "fr": "Quel est le nom de ce restaurant ?"
       },
       "render": {
         "nl": "De naam van deze eetgelegeheid is {name}",
         "en": "The name of this business is {name}",
-        "de": "Das Restaurant heißt {name}",
+        "de": "Dieses Unternehmen heißt {name}",
         "es": "El nombre de este restaurante es {name}",
-        "fr": "Le nom de ce restaurant est {name}"
+        "fr": "Le nom de ce restaurant est {name}",
+        "ca": "El nom d'aquest negoci és {name}"
       },
       "freeform": {
         "key": "name"
@@ -390,35 +391,40 @@
       "condition": "amenity=restaurant",
       "question": {
         "en": "Is a reservation required for this place?",
-        "nl": "Is reserveren verplicht voor deze zaak?"
+        "nl": "Is reserveren verplicht voor deze zaak?",
+        "de": "Ist an diesem Ort eine Reservierung erforderlich?"
       },
       "mappings": [
         {
           "if": "reservation=required",
           "then": {
             "en": "A reservation is required at this place",
-            "nl": "Reserveren is verplicht voor deze zaak"
+            "nl": "Reserveren is verplicht voor deze zaak",
+            "de": "Hier ist eine Reservierung erforderlich"
           }
         },
         {
           "if": "reservation=recommended",
           "then": {
             "en": "A reservation is not required, but still recommended to make sure you get a table",
-            "nl": "Reserveren is niet verplicht, maar wordt wel aangeraden om zeker te zijn van een tafel"
+            "nl": "Reserveren is niet verplicht, maar wordt wel aangeraden om zeker te zijn van een tafel",
+            "de": "Eine Reservierung ist nicht erforderlich, wird aber empfohlen, damit Sie einen Tisch bekommen"
           }
         },
         {
           "if": "reservation=yes",
           "then": {
             "en": "Reservation is possible at this place",
-            "nl": "Reserveren is mogelijk voor deze zaak"
+            "nl": "Reserveren is mogelijk voor deze zaak",
+            "de": "Eine Reservierung ist an diesem Ort möglich"
           }
         },
         {
           "if": "reservation=no",
           "then": {
             "en": "Reservation is not possible at this place",
-            "nl": "Reserveren is niet mogelijk voor deze zaak"
+            "nl": "Reserveren is niet mogelijk voor deze zaak",
+            "de": "Eine Reservierung ist an diesem Ort nicht möglich"
           }
         }
       ]
@@ -895,7 +901,8 @@
         {
           "question": {
             "en": "Reservation not required",
-            "nl": "Reserveren niet vereist"
+            "nl": "Reserveren niet vereist",
+            "de": "Reservierung nicht erforderlich"
           },
           "osmTags": {
             "or": [

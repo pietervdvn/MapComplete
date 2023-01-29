@@ -11,7 +11,8 @@
     "ca": "Restaurants i menjar ràpid",
     "es": "Restaurantes y comida rápida",
     "fr": "Restaurants et restaurants rapides",
-    "da": "Restauranter og fastfood"
+    "da": "Restauranter og fastfood",
+    "cs": "Restaurace a podniky rychlého občerstvení"
   },
   "description": {
     "nl": "Restaurants en fast food",
@@ -20,7 +21,9 @@
     "es": "Restaurantes y comida rápida",
     "nb_NO": "Restauranter og søppelmat",
     "fr": "Restaurants et restaurants à service rapide",
-    "da": "Restauranter og fastfood"
+    "da": "Restauranter og fastfood",
+    "ca": "Restaurants i menjar ràpid",
+    "cs": "Restaurace a podniky rychlého občerstvení"
   },
   "icon": "./assets/layers/food/restaurant.svg",
   "startLat": 0,

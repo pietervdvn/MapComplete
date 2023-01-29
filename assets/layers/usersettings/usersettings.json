@@ -1,7 +1,9 @@
 {
   "id": "usersettings",
   "description": {
-    "en": "A special layer which is not meant to be shown on a map, but which is used to set user settings"
+    "en": "A special layer which is not meant to be shown on a map, but which is used to set user settings",
+    "de": "Eine spezielle Ebene, die nicht für die Darstellung auf einer Karte gedacht ist, sondern für die Festlegung von Benutzereinstellungen verwendet wird",
+    "nl": "Een speciale lag die niet getoond wordt op de kaart, maar die de instellingen van de gebruiker weergeeft"
   },
   "title": null,
   "source": {
@@ -19,32 +21,43 @@
       "id": "picture-license",
       "description": "This question is not meant to be placed on an OpenStreetMap-element; however it is used in the user information panel to ask which license the user wants",
       "question": {
-        "en": "Under what license do you want to publish your pictures?"
+        "en": "Under what license do you want to publish your pictures?",
+        "de": "Unter welcher Lizenz möchten Sie Ihre Bilder veröffentlichen?",
+        "nl": "Met welke licentie wil je je afbeeldingen toevoegen?"
       },
       "mappings": [
         {
           "if": "mapcomplete-pictures-license=",
           "then": {
-            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>"
+            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>",
+            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann. <span class='subtle'>Dies ist die Standardeinstellung.</span>",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik. <span class='subtle'>Dit is de standaard-instelling</span>"
           },
           "hideInAnswer": true
         },
         {
           "if": "mapcomplete-pictures-license=CC0",
           "then": {
-            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose."
+            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose.",
+            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann.",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik."
           }
         },
         {
           "if": "mapcomplete-pictures-license=CC-BY 4.0",
           "then": {
-            "en": "Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you"
+            "en": "Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you",
+            "ca": "Les fotografies que facis es publicaran sota <b>CC-BY 4.0</b> que requereix que qualsevol que utilitzi la vostra imatge us ha de donar crèdits",
+            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam"
           }
         },
         {
           "if": "mapcomplete-pictures-license=CC-BY-SA 4.0",
           "then": {
-            "en": "Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license."
+            "en": "Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license.",
+            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY-SA 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss und dass Ableitungen Ihres Bildes mit der gleichen Lizenz weitergegeben werden müssen.",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden."
           }
         }
       ]
@@ -55,14 +68,18 @@
         {
           "if": "_mastodon_link~*",
           "then": {
-            "en": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+            "en": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>",
+            "de": "Es wurde ein Link zu deinem Mastodon-Profil gefunden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>",
+            "nl": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
           },
           "icon": "mastodon"
         },
         {
           "if": "_mastodon_candidate~*",
           "then": {
-            "en": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+            "en": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
+            "de": "Wir haben einen Link gefunden, der aussieht wie ein Mastodon-Konto, aber nicht verifiziert ist. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Bearbeiten Sie Ihre Profilbeschreibung</a> und fügen Sie dort Folgendes ein: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
+            "nl": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
           },
           "icon": "invalid"
         }
@@ -74,7 +91,10 @@
         {
           "if": "_translation_contributions>0",
           "then": {
-            "en": "You have contributed to translating MapComplete! That's awesome!"
+            "en": "You have contributed to translating MapComplete! That's awesome!",
+            "ca": "Has contribuït a traduir MapComplete! Això és fantàstic!",
+            "de": "Sie haben dazu beigetragen, MapComplete zu übersetzen! Das ist großartig!",
+            "nl": "Je hebt MapComplete helpen vertalen! Dat is fantastisch! Bedankt hiervoor!"
           },
           "icon": "party"
         }
@@ -86,7 +106,9 @@
         {
           "if": "_code_contributions>0",
           "then": {
-            "en": "You have contributed code to MapComplete with {_code_contributions} commits! That's awesome!"
+            "en": "You have contributed code to MapComplete with {_code_contributions} commits! That's awesome!",
+            "de": "Sie haben Code zu MapComplete mit {_code_contributions} Commits beigetragen! Das ist großartig!",
+            "nl": "Je hebt mee geprogrammeerd aan MapComplete met {_code_contributions} commits! Das supercool van je! Bedankt hiervoor!"
           },
           "icon": "party"
         }

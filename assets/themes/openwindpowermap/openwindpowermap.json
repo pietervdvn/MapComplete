@@ -25,7 +25,8 @@
     "es": "Un para mostrar y editar turbinas de viento",
     "nl": "Een kaart om windturbines te tonen en te bewerken.",
     "da": "Et kort til visning og redigering af vindmøller.",
-    "nb_NO": "Et kart for visning og redigering av vindmøller."
+    "nb_NO": "Et kart for visning og redigering av vindmøller.",
+    "cs": "Mapa pro zobrazení a úpravy větrných turbín."
   },
   "startLat": 50.52,
   "startLon": 4.643,

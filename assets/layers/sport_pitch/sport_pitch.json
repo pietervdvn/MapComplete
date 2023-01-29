@@ -197,7 +197,8 @@
             "ru": "Поверхность - <b>трава</b>",
             "it": "La superficie è <b>erba</b>",
             "de": "Der Belag ist aus <b>Gras</b>",
-            "es": "La superficie es <b>hierba</b>"
+            "es": "La superficie es <b>hierba</b>",
+            "ca": "La superfície és <b>herba</b>"
           }
         },
         {
@@ -209,7 +210,8 @@
             "ru": "Поверхность - <b>песок</b>",
             "it": "La superficie è <b>sabbia</b>",
             "de": "Der Belag ist aus <b>Sand</b>",
-            "es": "La superficie es <b>arena</b>"
+            "es": "La superficie es <b>arena</b>",
+            "ca": "La superfície és <b>sorra</b>"
           }
         },
         {
@@ -221,7 +223,8 @@
             "ru": "Поверхность - <b>брусчатка</b>",
             "it": "La superficie è <b>pietre irregolari</b>",
             "de": "Der Belag ist aus <b>Pflastersteinen</b>",
-            "es": "La superficie es <b>adoquines</b>"
+            "es": "La superficie es <b>adoquines</b>",
+            "ca": "La superfície són <b>llambordes</b>"
           }
         },
         {
@@ -233,7 +236,8 @@
             "ru": "Поверхность - <b>асфальт</b>",
             "it": "La superficie è <b>asfalto</b>",
             "de": "Der Belag ist aus <b>Asphalt</b>",
-            "es": "La superficie es <b>asfalto</b>"
+            "es": "La superficie es <b>asfalto</b>",
+            "ca": "La superfície és <b>asfalt</b>"
           }
         },
         {
@@ -245,7 +249,8 @@
             "ru": "Поверхность - <b>бетон</b>",
             "it": "La superficie è <b>calcestruzzo</b>",
             "de": "Der Belag ist aus <b>Beton</b>",
-            "es": "La superficie es <b>hormigón</b>"
+            "es": "La superficie es <b>hormigón</b>",
+            "ca": "La superfície és <b>formigó</b>"
           }
         }
       ],
@@ -260,7 +265,8 @@
         "it": "Questo campo sportivo è aperto al pubblico?",
         "ru": "Есть ли свободный доступ к этой спортивной площадке?",
         "de": "Ist der Sportplatz öffentlich zugänglich?",
-        "es": "¿Esta pista de deportes es accesible públicamente?"
+        "es": "¿Esta pista de deportes es accesible públicamente?",
+        "ca": "Aquesta pista d'esports és accessible públicament?"
       },
       "mappings": [
         {
@@ -272,7 +278,8 @@
             "it": "Aperto al pubblico",
             "ru": "Свободный доступ",
             "de": "Der Sportplatz ist öffentlich zugänglich",
-            "es": "Acceso público"
+            "es": "Acceso público",
+            "ca": "Accés públic"
           }
         },
         {
@@ -297,7 +304,8 @@
             "it": "Accesso limitato ai membri dell'associazione",
             "ru": "Доступ только членам клуба",
             "de": "Der Sportplatz ist nur für Vereinsmitglieder zugänglich",
-            "es": "Solo accesible para miembros del club"
+            "es": "Solo accesible para miembros del club",
+            "ca": "Sols accessible per a membres del club"
           }
         },
         {
@@ -308,7 +316,8 @@
             "en": "Private - not accessible to the public",
             "it": "Privato - non aperto al pubblico",
             "de": "Der Sportplatz ist nicht öffentlich zugänglich (es ist ein privater Sportplatz)",
-            "es": "Privada - no accesible al público"
+            "es": "Privada - no accesible al público",
+            "ca": "Privat - no accessible al públic"
           }
         },
         {
@@ -335,7 +344,8 @@
         "it": "È necessario prenotarsi per usare questo campo sportivo?",
         "ru": "Нужна ли предварительная запись для доступа на эту спортивную площадку?",
         "de": "Muss man einen Termin vereinbaren, um den Sportplatz nutzen zu dürfen?",
-        "es": "¿Hay que pedir una cita para utilizar esta pista?"
+        "es": "¿Hay que pedir una cita para utilizar esta pista?",
+        "ca": "Hi ha que sol·licitar cita per a utilitzar la pista?"
       },
       "condition": {
         "and": [
@@ -353,7 +363,8 @@
             "en": "Making an appointment is obligatory to use this sport pitch",
             "it": "La prenotazione è obbligatoria per usare questo campo sportivo",
             "de": "Eine Voranmeldung zur Nutzung des Sportplatzes ist erforderlich",
-            "es": "Pedir una cita es obligatorio para utilizar esta pista"
+            "es": "Pedir una cita es obligatorio para utilizar esta pista",
+            "ca": "S'ha de demanar cita per a utilitzar la pista"
           }
         },
         {
@@ -365,7 +376,8 @@
             "it": "La prenotazione è consigliata per usare questo campo sportivo",
             "ru": "Желательна предварительная запись для доступа на эту спортивную площадку",
             "de": "Eine Voranmeldung zur Nutzung des Sportplatzes wird empfohlen",
-            "es": "Se recomienda pedir una cita al utilizar esta pista"
+            "es": "Se recomienda pedir una cita al utilizar esta pista",
+            "ca": "Es recomana demanar cita per a utilitzar la pista"
           }
         },
         {
@@ -377,7 +389,8 @@
             "it": "La prenotazione è consentita, ma non è obbligatoria per usare questo campo sportivo",
             "ru": "Предварительная запись для доступа на эту спортивную площадку возможна, но не обязательна",
             "de": "Eine Voranmeldung zur Nutzung des Sportplatzes ist möglich, aber nicht erforderlich",
-            "es": "Pedir cita es posible, pero no necesario para utilizar esta pista de deportes"
+            "es": "Pedir cita es posible, pero no necesario para utilizar esta pista de deportes",
+            "ca": "Es pot demanar cita, però no és necessari per a poder utilitzar la pista"
           }
         },
         {
@@ -389,7 +402,8 @@
             "it": "Non è possibile prenotare",
             "ru": "Невозможна предварительная запись",
             "de": "Eine Voranmeldung zur Nutzung des Sportplatzes ist nicht möglich",
-            "es": "No es posible pedir cita"
+            "es": "No es posible pedir cita",
+            "ca": "No és possible demanar cita"
           }
         }
       ]
@@ -401,7 +415,8 @@
         "en": "What is the phone number of the operator?",
         "it": "Qual è il numero di telefono del gestore?",
         "de": "Wie lautet die Telefonnummer des Betreibers?",
-        "es": "¿Cual es el número de teléfono de la operadora?"
+        "es": "¿Cual es el número de teléfono de la operadora?",
+        "ca": "Quin és el telèfon de l'operadora?"
       },
       "freeform": {
         "key": "phone",
@@ -417,7 +432,8 @@
         "en": "What is the email address of the operator?",
         "it": "Qual è l'indirizzo email del gestore?",
         "de": "Wie lautet die Email-Adresse des Betreibers?",
-        "es": "¿Cual es la dirección de correo electrónico de la operadora?"
+        "es": "¿Cual es la dirección de correo electrónico de la operadora?",
+        "ca": "Quina és l'adreça de correu electrònic de l'operador?"
       },
       "freeform": {
         "key": "email",

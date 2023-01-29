@@ -166,20 +166,22 @@
       "question": {
         "nl": "Wat is de naam van deze zaak?",
         "en": "What is the name of this business?",
-        "de": "Wie heißt diese Kneipe?",
+        "de": "Was ist der Name dieses Unternehmens?",
         "fr": "Quel est le nom de ce pub ?",
         "hu": "Mi a neve ennek a kocsmának?",
         "da": "Hvad hedder denne pub?",
-        "es": "¿Cual es el nombre de este pub?"
+        "es": "¿Cual es el nombre de este pub?",
+        "ca": "Quin és el nom d'aquest negoci?"
       },
       "render": {
         "nl": "De naam van deze zaak is {name}",
         "en": "This business is named {name}",
-        "de": "Diese Kneipe heißt {name}",
+        "de": "Das Unternehmen heißt {name}",
         "fr": "Ce pub se nomme {name}",
         "hu": "A kocsma neve: {name}",
         "da": "Denne pub hedder {name}",
-        "es": "Este pub se llama {name}"
+        "es": "Este pub se llama {name}",
+        "ca": "Aquest negoci es diu {name}"
       },
       "freeform": {
         "key": "name"
@@ -206,7 +208,8 @@
             "de": "Eine Kneipe, in der vor allem Bier in ruhiger, entspannter Atmosphäre getrunken wird",
             "es": "Un bar, principalmente para beber cervezas en un interior cálido y relajado",
             "fr": "Un pub, principalement pour boire un verre dans une atmosphère chaleureuse et décontractée",
-            "da": "En pub, mest et sted at drikke øl i hyggelige, afslappede omgivelser"
+            "da": "En pub, mest et sted at drikke øl i hyggelige, afslappede omgivelser",
+            "ca": "Un bar, principalment per a beure cerveses en un interior càlid i relaxat"
           }
         },
         {
@@ -216,7 +219,7 @@
             "nl": "Dit is een <b>bar</b> waar men ter plaatse alcoholische drank nuttigt. De inrichting is typisch modern en commercieel, soms met lichtinstallatie en feestmuziek",
             "de": "Eine modernere und kommerzielle <b>Bar</b>, möglicherweise mit einer Musik- und Lichtinstallation",
             "da": "En mere moderne og kommerciel <b>bar</b>, eventuelt med en musik- og lysinstallation",
-            "es": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz",
+            "es": "Un <b>bar de copas</b> más moderno y comercial, posiblemente con una instalación de música y luz",
             "fr": "Un <b>bar</b> plus moderne et commercial, avec éventuellement musique et jeux de lumière",
             "ca": "Un <b>bar de copes</b> més modern i comercial, possiblement amb equipació de música i llums"
           }
@@ -229,7 +232,8 @@
             "de": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken",
             "da": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser",
             "es": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo",
-            "fr": "Un <b>café</b> pour boire du thé, du café ou une boisson alcoolisée au calme"
+            "fr": "Un <b>café</b> pour boire du thé, du café ou une boisson alcoolisée au calme",
+            "ca": "Una <b>cafeteria</b> per a a beure té, café o una beguda alcohólica en un ambient tranquil"
           }
         },
         {
@@ -240,7 +244,8 @@
             "de": "Ein <b>Restaurant</b>, in dem man ordentlich essen kann",
             "da": "En <b>restaurant</b>, hvor man kan få et ordentligt måltid",
             "es": "Un <b>restaurante</b> donde puedes comer una comida de verdad",
-            "fr": "Un <b>restaurant</b> où l'on peut prendre un bon repas"
+            "fr": "Un <b>restaurant</b> où l'on peut prendre un bon repas",
+            "ca": "Un <b>restaurant</b> on pots menjar un menjar de veritat"
           }
         },
         {
@@ -263,7 +268,8 @@
             "de": "Dies ist ein <b>Club</b> oder eine Disco mit Fokus auf Tanzen, Musik von einem DJ mit begleitender Lichtshow und einer Bar, an der man (alkoholische) Getränke bekommt",
             "es": "Este es un <b>club nocturno</b> o discoteca centrado en bailar, música de un DJ con un espectáculo de luces que la acompaña y un bar donde conseguir bebidas (alcohólicas)",
             "fr": "Il s'agit d'une <b>boîte de nuit</b> ou discothèque avec un accent sur la danse, la musique d'un DJ avec un spectacle de lumière et un bar pour prendre des boissons (alcoolisées)",
-            "da": "Dette er en <b>natklub</b> eller diskotek med fokus på dans, musik af en DJ med tilhørende lysshow og en bar, hvor man kan købe (alkoholiske) drikkevarer"
+            "da": "Dette er en <b>natklub</b> eller diskotek med fokus på dans, musik af en DJ med tilhørende lysshow og en bar, hvor man kan købe (alkoholiske) drikkevarer",
+            "ca": "Açò és un <b>club nocturn</b> o discoteca centrat en ballar, música d'un DJ acompanyat d'un espectacle de llums i una barra on obtindre begudes (alcohòliques)"
           }
         }
       ],

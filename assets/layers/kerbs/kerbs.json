@@ -67,7 +67,8 @@
         "en": "What is the height of this kerb?",
         "nl": "Hoe hoog is deze stoeprand?",
         "de": "Wie hoch ist der Bordstein?",
-        "fr": "Quelle est la hauteur de ce trottoir ?"
+        "fr": "Quelle est la hauteur de ce trottoir ?",
+        "ca": "Quina és l'altura d'aquest gual?"
       },
       "mappings": [
         {
@@ -76,7 +77,8 @@
             "en": "This kerb is raised (>3 cm)",
             "nl": "Deze stoeprand is hoog (>3 cm)",
             "de": "Der Bordstein ist erhöht (>3 cm)",
-            "fr": "Cette bordure est surélevée (>3 cm)"
+            "fr": "Cette bordure est surélevée (>3 cm)",
+            "ca": "Aquest gual està elevat (>3cm)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/raised.svg",
@@ -89,7 +91,8 @@
             "en": "This kerb is lowered (~3 cm)",
             "nl": "Deze stoeprand is verlaagd (~3 cm)",
             "de": "Der Bordstein ist abgesenkt (~3 cm)",
-            "fr": "Cette bordure est abaissée (~3 cm)"
+            "fr": "Cette bordure est abaissée (~3 cm)",
+            "ca": "Aquest gual està rebaixat (~3 cm)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/lowered.svg",
@@ -102,7 +105,8 @@
             "en": "This kerb is flush (~0cm)",
             "nl": "Deze stoeprand is vlak (~0cm)",
             "de": "Der Bordstein ist bündig (~0cm)",
-            "fr": "Cette bordure est affleurante (~0cm)"
+            "fr": "Cette bordure est affleurante (~0cm)",
+            "ca": "Aquest gual està a ras (~0cm)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/flush.svg",
@@ -142,7 +146,8 @@
         "en": "Is there tactile paving at this kerb?",
         "de": "Gibt es am Bordstein ein taktiles Pflaster?",
         "fr": "Y a-t-il un revêtement tactile sur cette bordure ?",
-        "nl": "Is er voelbare bestrating bij deze stoeprand?"
+        "nl": "Is er voelbare bestrating bij deze stoeprand?",
+        "ca": "Hi ha una superfície podotàctil a aquest gual?"
       },
       "mappings": [
         {
@@ -151,7 +156,8 @@
             "en": "This kerb has tactile paving.",
             "de": "Der Bordstein hat ein taktiles Pflaster.",
             "fr": "Cette bordure a un revêtement podotactile.",
-            "nl": "Deze stoeprand heeft voelbare bestrating."
+            "nl": "Deze stoeprand heeft voelbare bestrating.",
+            "ca": "Aquest gual té superfície podotàctil."
           }
         },
         {
@@ -160,7 +166,8 @@
             "en": "This kerb does not have tactile paving.",
             "de": "Der Bordstein hat kein taktiles Pflaster.",
             "fr": "Cette bordure n'a pas de revêtement podotactile.",
-            "nl": "Deze stoeprand heeft geen voelbare bestrating."
+            "nl": "Deze stoeprand heeft geen voelbare bestrating.",
+            "ca": "Aquest gual no té superfície podotàctil."
           }
         },
         {
@@ -183,7 +190,8 @@
         "en": "What is the height of this kerb?",
         "nl": "Hoe hoog is deze stoeprand?",
         "de": "Wie hoch ist der Bordstein?",
-        "fr": "Quelle est la hauteur de ce trottoir ?"
+        "fr": "Quelle est la hauteur de ce trottoir ?",
+        "ca": "Quina és l'altura d'aquest gual?"
       },
       "render": {
         "en": "Kerb height: {kerb:height}",
@@ -206,7 +214,9 @@
           "if": "kerb:height=0",
           "then": {
             "en": "This kerb is flush and is lower than 1cm.",
-            "de": "Der Bordstein ist bündig und niedriger als 1 cm."
+            "de": "Der Bordstein ist bündig und niedriger als 1 cm.",
+            "ca": "Aquest gual està rebaixat i és més baix que 1cm.",
+            "nl": "Deze stoeprand is vlak en lager als 1 cm."
           }
         }
       ]

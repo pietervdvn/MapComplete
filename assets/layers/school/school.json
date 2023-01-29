@@ -4,7 +4,8 @@
     "en": "Primary and secondary schools",
     "nl": "Lagere en middelbare scholen",
     "de": "Grund- und weiterführende Schulen",
-    "fr": "Écoles primaires et secondaires"
+    "fr": "Écoles primaires et secondaires",
+    "ca": "Escoles de primària i secundària"
   },
   "description": "Schools giving primary and secondary education and post-secondary, non-tertiary education. Note that this level of education does not imply an age of the pupiles",
   "minzoom": 12,
@@ -110,7 +111,8 @@
             "en": "This is a secondary school which does <i>not</i> have all grades, but offers <b>first and second</b> grade",
             "nl": "Dit is een middelbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het eerste en tweede middelbaar</b>",
             "de": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>erste und zweite</b> Klasse anbietet",
-            "fr": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la première et la deuxième</b> années"
+            "fr": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la première et la deuxième</b> années",
+            "ca": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>primer i segon</b> grau"
           }
         },
         {
@@ -119,7 +121,8 @@
             "en": "This is a secondary school which does <i>not</i> have all grades, but offers <b>third and fourth</b> grade",
             "nl": "Dit is een middelbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het derde en vierde middelbaar</b>",
             "de": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>dritte und vierte</b> Klasse anbietet",
-            "fr": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la troisième et la quatrième</b> années"
+            "fr": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la troisième et la quatrième</b> années",
+            "ca": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>tercer i quart</b> grau"
           }
         },
         {
@@ -128,7 +131,8 @@
             "en": "This is a secondary school which does <i>not</i> have all grades, but offers <b>fifth and sixth</b> grade",
             "nl": "Dit is een middelbare school die <i>niet</i> alle schooljaren aanbiedt, maar wel <b>het vijfde en zesde middelbaar</b>",
             "de": "Dies ist eine weiterführende Schule, die <i>nicht</i> alle Klassenstufen hat, aber <b>fünfte und sechste</b> Klasse anbietet",
-            "fr": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la cinquième et la sixième</b> années"
+            "fr": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la cinquième et la sixième</b> années",
+            "ca": "Aquesta és una escola secundària que <i>no</i> ofereix tots els graus, però ofereix <b>cinqué i sisé</b> grau"
           }
         },
         {
@@ -137,7 +141,8 @@
             "en": "This school offers post-secondary education (e.g. a seventh or eight specialisation year)",
             "nl": "Deze school biedt post-secundair onderwijs (bijvoorbeeld <b>specialisatiejaren</b>)",
             "de": "Diese Schule bietet eine postsekundäre Ausbildung (z. B. ein siebtes oder achtes Spezialisierungsjahr)",
-            "fr": "Cette école propose un enseignement post-secondaire (par exemple une septième ou huitième année de spécialisation)"
+            "fr": "Cette école propose un enseignement post-secondaire (par exemple une septième ou huitième année de spécialisation)",
+            "ca": "Aquesta escola ofereix educació post secundària (p.e. un sèptim o vuité any d'especialitzció)"
           }
         }
       ],
@@ -202,7 +207,8 @@
         "en": "Does this school target students with a special need? Which structural facilities does this school have?<div class='subtle'>Ad-hoc ",
         "nl": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?<div class='subtle'>Ad-hoc maatregelen zijn niet voldoende</div> ",
         "de": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?<div class='subtle'>Ad-hoc ",
-        "fr": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?<div class='subtle'>Ad-hoc "
+        "fr": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?<div class='subtle'>Ad-hoc ",
+        "ca": "Aquesta escola es dirigeix a estudiants amb necessitats especials? Quines instal·lacions estructurals té aquesta escola?<div class='subtle'>Ad-hoc "
       },
       "multiAnswer": true,
       "render": {
@@ -273,7 +279,8 @@
             "en": "This is a school for blind students or students with sight impairments",
             "nl": "Deze school richt zich op blinde en slechtziende studenten",
             "de": "Dies ist eine Schule für blinde oder sehbehinderte Schüler",
-            "fr": "Ceci est un établissement scolaire pour les étudiants aveugles ou malvoyants"
+            "fr": "Ceci est un établissement scolaire pour les étudiants aveugles ou malvoyants",
+            "ca": "Aquesta és una escola per a estudiants cecs o estudiants amb deficiències visuals"
           }
         },
         {

@@ -117,7 +117,8 @@
             "es": "¿Qué tipo de edificio es este?",
             "nl": "Wat voor soort gebouw is dit?",
             "fr": "De quel type de bâtiment s’agit-il ?",
-            "da": "Hvad er det for en bygning?"
+            "da": "Hvad er det for en bygning?",
+            "cs": "Jaký druh budovy je toto?"
           },
           "mappings": [
             {
@@ -503,7 +504,8 @@
                 "de": "Metatags noch nicht berechnet... Dieses Fenster erneut öffnen",
                 "nl": "Metatags nog niet berekend... Heropen deze pop-up",
                 "fr": "Les balises meta ne sont pas encore calculées ... Rouvrir cette fenêtre pop-up",
-                "da": "Har endnu ikke beregnet metatags... Genåbn denne popup"
+                "da": "Har endnu ikke beregnet metatags... Genåbn denne popup",
+                "cs": "Metatags ještě nebyly vypočítány... Znovu otevřete toto vyskakovací okno"
               }
             },
             {

@@ -15,7 +15,8 @@
     "fr": "Points de recharge",
     "es": "Estaciones de carga",
     "da": "Ladestationer",
-    "pa_PK": "چارج سٹیشن"
+    "pa_PK": "چارج سٹیشن",
+    "cs": "Nabíjecí stanice"
   },
   "shortDescription": {
     "en": "A worldwide map of charging stations",
@@ -30,7 +31,8 @@
     "fr": "Une carte mondiale des points de recharge",
     "es": "Un mapa mundial de estaciones de carga",
     "da": "Et verdensomspændende kort over ladestationer",
-    "ca": "Un mapa mundial d'estacions de càrrega"
+    "ca": "Un mapa mundial d'estacions de càrrega",
+    "cs": "Celosvětová mapa nabíjecích stanic"
   },
   "description": {
     "en": "On this open map, one can find and mark information about charging stations",
@@ -45,7 +47,8 @@
     "es": "En este mapa, uno puede encontrar y marcar información sobre estaciones de carga",
     "nb_NO": "Finn og merk info om ladestasjoner",
     "da": "På dette åbne kort kan man finde og markere oplysninger om ladestandere",
-    "ca": "A aquest mapa, un pot trobar i marcar informació sobre punts de càrrega"
+    "ca": "A aquest mapa, un pot trobar i marcar informació sobre punts de càrrega",
+    "cs": "Na této otevřené mapě lze vyhledávat a označovat informace o nabíjecích stanicích"
   },
   "icon": "./assets/themes/charging_stations/logo.svg",
   "startLat": 0,

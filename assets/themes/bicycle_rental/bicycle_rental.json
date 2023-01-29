@@ -10,7 +10,8 @@
     "es": "Alquiler de bicicletas",
     "nb_NO": "Sykkelutleie",
     "da": "Cykeludlejning",
-    "pa_PK": "سائیکل کرایا"
+    "pa_PK": "سائیکل کرایا",
+    "cs": "Půjčovna kol"
   },
   "shortDescription": {
     "en": "A map with bicycle rental stations and bicycle rental shops",
@@ -21,7 +22,8 @@
     "es": "Un mapa con estaciones de alquiler de bicicletas y tiendas de alquiler de bicicletas",
     "nb_NO": "Sykkelutleiestasjoner og sykkelutleiebutikker",
     "ca": "Un mapa amb estacions de lloguer de bicicletes i botigues de lloguer de bicicletes",
-    "da": "Et kort med cykeludlejningsstationer og cykeludlejningsbutikker"
+    "da": "Et kort med cykeludlejningsstationer og cykeludlejningsbutikker",
+    "cs": "Mapa se stanicemi a obchody pro vypůjčení kol"
   },
   "description": {
     "en": "On this map, you'll find the many bicycle rental stations as they are known by OpenStreetMap",
@@ -31,7 +33,8 @@
     "es": "En este mapa, encontrarás numerosas estaciones de alquiler de bicicletas que son conocidas por OpenStreetMap",
     "da": "På dette kort finder du de mange cykeludlejningsstationer, som OpenStreetMap kender dem",
     "nb_NO": "Her finner du mange sykkelutleiestasjoner slik de er kjent for OpenStreetMap",
-    "ca": "En aquest mapa, trobaràs nombroses estacions de lloguer de bicicletes que són conegudes per OpenStreetMap"
+    "ca": "En aquest mapa, trobaràs nombroses estacions de lloguer de bicicletes que són conegudes per OpenStreetMap",
+    "cs": "Na této mapě najdete stanice pro vypůjčení jízdních kol, jak jsou uvedeny v OpenStreetMap"
   },
   "icon": "./assets/themes/bicycle_rental/logo.svg",
   "startLat": 0,

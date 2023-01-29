@@ -34,8 +34,8 @@
         },
         "tagRenderings": {
             "ambulance-agency": {
-                "render": "这个站点由 {operator}运营",
-                "question": "哪家机构运营这个站点？"
+                "question": "哪家机构运营这个站点？",
+                "render": "这个站点由 {operator}运营"
             },
             "ambulance-name": {
                 "question": "这个救护车站叫什么名字？",

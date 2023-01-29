@@ -77,7 +77,8 @@
       "render": {
         "en": "This hotel is called {name}",
         "nl": "Dit hotel heet {name}",
-        "de": "Der Name des Hotels lautet {name}"
+        "de": "Der Name des Hotels lautet {name}",
+        "ca": "Aquest hotel es diu {name}"
       }
     },
     "phone",

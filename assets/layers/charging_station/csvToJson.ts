@@ -412,6 +412,7 @@ function mergeTranslations(origPath, newConfig: LayerConfigJson) {
         if (applicable === undefined) {
             continue;
         }
+        // @ts-ignore
         Utils.Merge(oldRendering, applicable)
     }
 }

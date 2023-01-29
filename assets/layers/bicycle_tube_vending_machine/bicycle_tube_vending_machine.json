@@ -312,6 +312,7 @@
     "de": "Eine Ebene mit Automaten für Fahrradschläuche (entweder spezielle Fahrradschlauch-Automaten oder klassische Automaten mit Fahrradschläuchen und optional zusätzlichen fahrradbezogenen Gegenständen wie Lampen, Handschuhe, Schlösser, …)",
     "da": "Et lag med automater til cykelslanger (enten specialbyggede cykelslangeautomater eller klassiske automater med cykelslanger og eventuelt andre cykelrelaterede genstande som f.eks. lys, handsker, låse, o.s.v)",
     "fr": "Une couche affichant des distributeurs automatiques de chambre à air (que ce soit des distributeurs conçus spécifiquement pour les chambres à air ou des distributeurs classiques incluant des chambres à air ainsi des objets apparentés tels que de l'éclairage pour vélo, des gants, des cadenas, ...)",
-    "cs": "Vrstva zobrazující automaty na cyklistické duše (buď speciální automaty na cyklistické duše, nebo klasické automaty s cyklistickými dušemi a případně dalšími předměty souvisejícími s jízdními koly, jako jsou světla, rukavice, zámky, ...)"
+    "cs": "Vrstva zobrazující automaty na cyklistické duše (buď speciální automaty na cyklistické duše, nebo klasické automaty s cyklistickými dušemi a případně dalšími předměty souvisejícími s jízdními koly, jako jsou světla, rukavice, zámky, ...)",
+    "ca": "Una capa que mostra màquines expenedores per a tubs de bicicleta (ja siguin màquines expenedores de tubs de bicicleta o màquines expenedores clàssiques amb tubs de bicicleta i opcionalment objectes addicionals relacionats amb la bicicleta com ara llums, guants, panys, ...)"
   }
 }

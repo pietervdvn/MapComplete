@@ -6,7 +6,8 @@
     "de": "Auf dieser Karte können Sie Informationen über Bildungseinrichtungen finden und hinzufügen",
     "fr": "Sur cette carte, vous trouverez des informations concernant tous les types d'écoles et d'enseignement. Vous pouvez facilement ajouter plus d'informations",
     "ca": "En aquest mapa trobareu informació sobre tots els tipus d'escoles i educació i podreu afegir fàcilment més informació",
-    "da": "På dette kort finder du information om alle typer skoler og uddannelse og kan nemt tilføje flere oplysninger"
+    "da": "På dette kort finder du information om alle typer skoler og uddannelse og kan nemt tilføje flere oplysninger",
+    "cs": "Na této mapě najdete informace o všech typech škol a vzdělávání a můžete snadno přidat další informace"
   },
   "title": {
     "en": "Education",
@@ -16,7 +17,8 @@
     "nb_NO": "Utdanning",
     "ca": "Educació",
     "da": "Uddannelse",
-    "pa_PK": "سکھیا"
+    "pa_PK": "سکھیا",
+    "cs": "Vzdělání"
   },
   "defaultBackgroundId": "CartoDB.Voyager",
   "startLat": 0,

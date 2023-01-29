@@ -43,7 +43,8 @@
         "pt": "uma estacionamento de bicicletas",
         "es": "un aparcamiento de bicis",
         "da": "en cykelparkering",
-        "cs": "parkování kol"
+        "cs": "parkování kol",
+        "ca": "un aparcament per a bicis"
       },
       "tags": [
         "amenity=bicycle_parking"
@@ -286,7 +287,8 @@
         "pt": "Qual a localização relativa deste estacionamento de bicicletas?",
         "es": "¿Cual es la localización relativa de este aparcamiento de bicicletas?",
         "da": "Hvad er den relative placering af denne cykelparkering?",
-        "cs": "Jaké je relativní umístění tohoto parkoviště pro jízdní kola?"
+        "cs": "Jaké je relativní umístění tohoto parkoviště pro jízdní kola?",
+        "ca": "Quina és la ubicació relativa d'aquest aparcament per a bicicletes?"
       },
       "mappings": [
         {
@@ -322,7 +324,8 @@
             "hu": "Felszíni parkoló",
             "es": "Aparcamiento a nivel de calle",
             "da": "Parkering i gade niveau",
-            "cs": "Povrchové parkoviště"
+            "cs": "Povrchové parkoviště",
+            "ca": "Aparcament a nivell de carrer"
           }
         },
         {
@@ -358,7 +361,8 @@
             "pt": "Estacionamento ao nível da superfície",
             "es": "Aparcamiento a nivel de calle",
             "da": "Parkering i gade niveau",
-            "cs": "Povrchové parkoviště"
+            "cs": "Povrchové parkoviště",
+            "ca": "Aparcament a nivell de carrer"
           },
           "hideInAnswer": true
         }
@@ -404,7 +408,8 @@
             "pt": "Este estacionamento é coberto (tem um telhado)",
             "es": "Este aparcamiento está cubierto (tiene un tejado)",
             "da": "Denne parkeringsplads er overdækket (den har et tag)",
-            "cs": "Toto parkoviště je zastřešené (má střechu)"
+            "cs": "Toto parkoviště je zastřešené (má střechu)",
+            "ca": "Aquest aparcament està cobert (té un sostre)"
           }
         },
         {
@@ -423,7 +428,8 @@
             "pt": "Este estacionamento não é coberto",
             "es": "Este aparcamiento no está cubierto",
             "da": "Denne parkeringsplads er ikke overdækket",
-            "cs": "Toto parkoviště není zastřešené"
+            "cs": "Toto parkoviště není zastřešené",
+            "ca": "Aquest aparcament no està cobert"
           }
         }
       ],
@@ -440,7 +446,8 @@
         "zh_Hant": "這個單車停車場能放幾台單車 (包括裝箱單車)？",
         "es": "¿Cuántas bicicletas caben en este aparcamiento de bicicletas (incluyendo posibles bicicletas de carga)?",
         "da": "Hvor mange cykler er der plads til på denne cykelparkering (inklusive mulige ladcykler)?",
-        "cs": "Kolik jízdních kol se vejde na toto parkoviště (včetně případných nákladních kol)?"
+        "cs": "Kolik jízdních kol se vejde na toto parkoviště (včetně případných nákladních kol)?",
+        "ca": "Quantes bicicletes caben en aquest aparcament de bicicletes (incloent possibles bicicletes de càrrega)?"
       },
       "render": {
         "en": "Place for {capacity} bikes",
@@ -455,7 +462,8 @@
         "pt": "Lugar para {capacity} bicicletas",
         "es": "Espacio para {capacity} bicis",
         "da": "Plads til {capacity} cykler",
-        "cs": "Místo pro {capacity} kol"
+        "cs": "Místo pro {capacity} kol",
+        "ca": "Espai per a {capacity} bicis"
       },
       "freeform": {
         "key": "capacity",
@@ -476,7 +484,8 @@
         "pt": "Quem pode usar este estacionamento de bicicletas?",
         "es": "¿Quién puede utilizar este aparcamiento de bicicletas?",
         "da": "Hvem kan bruge denne cykelparkering?",
-        "cs": "Kdo může parkoviště pro jízdní kola využívat?"
+        "cs": "Kdo může parkoviště pro jízdní kola využívat?",
+        "ca": "Qui pot utilitzar aquest aparcament de bicicletes?"
       },
       "render": {
         "en": "{access}",
@@ -533,7 +542,8 @@
             "pt": "Acesso é principalmente para visitantes de uma empresa",
             "es": "El acceso es primariamente para visitantes a un negocio",
             "da": "Adgang hovedsageligt for besøgende til en virksomhed",
-            "cs": "Přístup je určen především pro návštěvníky podniku"
+            "cs": "Přístup je určen především pro návštěvníky podniku",
+            "ca": "L'accés és principalment per a visitants d'un negoci"
           }
         },
         {
@@ -549,7 +559,8 @@
             "pt": "Acesso é limitado aos membros de uma escola, companhia ou organização",
             "es": "El acceso se limita a miembros de una escuela, compañía u organización",
             "da": "Adgangen er begrænset til medlemmer af en skole, virksomhed eller organisation",
-            "cs": "Přístup je omezen na členy školy, společnosti nebo organizace"
+            "cs": "Přístup je omezen na členy školy, společnosti nebo organizace",
+            "ca": "L'accés està limitat a membres d'una escola, companyia o organització"
           }
         }
       ],
@@ -566,9 +577,10 @@
         "zh_Hant": "這個單車停車場有地方放裝箱的單車嗎？",
         "pt_BR": "O estacionamento de bicicletas tem vagas para bicicletas de carga?",
         "pt": "O estacionamento de bicicletas tem vagas para bicicletas de carga?",
-        "es": "¿Este aparcamiento de bicicletas tiene huevos para bicicletas de carga?",
+        "es": "¿Este aparcamiento de bicicletas tiene huecos para bicicletas de carga?",
         "da": "Har denne cykelparkering plads til ladcykler?",
-        "cs": "Má toto parkoviště místa pro nákladní kola?"
+        "cs": "Má toto parkoviště místa pro nákladní kola?",
+        "ca": "Aquest aparcament de bicicletes té punts per a bicicletes de càrrega?"
       },
       "mappings": [
         {
@@ -585,7 +597,8 @@
             "pt": "Este estacionamento tem vagas para bicicletas de carga",
             "es": "Este aparcamiento tiene espacio para bicicletas de carga",
             "da": "Denne parkeringsplads har plads til ladcykler",
-            "cs": "Na tomto parkovišti je místo pro nákladní kola"
+            "cs": "Na tomto parkovišti je místo pro nákladní kola",
+            "ca": "Aquest aparcament té espai per a bicicletes de càrrega"
           }
         },
         {
@@ -602,7 +615,8 @@
             "pt": "Este estacionamento tem vagas (oficiais) projetadas para bicicletas de carga.",
             "es": "Este aparcamiento tiene huecos designados (oficialmente) para bicicletas de carga.",
             "da": "Denne parkeringsplads har udpegede (officielle) pladser til ladcykler.",
-            "cs": "Toto parkoviště má vyhrazená (oficiální) místa pro nákladní kola."
+            "cs": "Toto parkoviště má vyhrazená (oficiální) místa pro nákladní kola.",
+            "ca": "Aquest aparcament hi han llocs designats (oficialment) per a bicicletes de càrrega."
           }
         },
         {
@@ -618,7 +632,8 @@
             "pt": "Não tem permissão para estacionar bicicletas de carga",
             "es": "No está permitido aparcar bicicletas de carga",
             "da": "Det er ikke tilladt at parkere ladcykler",
-            "cs": "Není povoleno parkovat nákladní kola"
+            "cs": "Není povoleno parkovat nákladní kola",
+            "ca": "No teniu permís per aparcar bicicletes de càrrega"
           }
         }
       ],

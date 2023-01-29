@@ -8,7 +8,8 @@
     "it": "pala eolica",
     "zh_Hant": "風機",
     "hu": "Szélerőmű",
-    "da": "vindmølle"
+    "da": "vindmølle",
+    "ca": "Turbina Eòlica"
   },
   "description": {
     "en": "Modern windmills generating electricity",
@@ -118,7 +119,8 @@
         "zh_Hant": "這風機的總高度 (包括風葉直徑) 是 {height} 公尺。",
         "hu": "A szélerőmű teljes (rotor sugarával együtt számított) magassága: {height} méter.",
         "de": "Die Gesamthöhe dieses Windrads beträgt (einschließlich Rotorradius) {height} Meter.",
-        "da": "Den samlede højde (inklusive rotorradius) for denne vindmølle er {height} meter."
+        "da": "Den samlede højde (inklusive rotorradius) for denne vindmølle er {height} meter.",
+        "nl": "De totale hoogte (inclusief rotor-radius) van deze windturbine is {height} meter"
       },
       "question": {
         "en": "What is the total height of this wind turbine (including rotor radius), in metres?",
@@ -127,7 +129,8 @@
         "zh_Hant": "這個風機的總高度是多少 (包括風葉大小) 公尺？",
         "hu": "Hány méter a szélerőmű teljes magassága (a rotor sugarával együtt)?",
         "de": "Wie hoch ist das Windrad (inklusive Rotorradius) in Metern?",
-        "da": "Hvad er den samlede højde af denne vindmølle (inklusive rotorradius), i meter?"
+        "da": "Hvad er den samlede højde af denne vindmølle (inklusive rotorradius), i meter?",
+        "nl": "Wat is de totale hoogte in meter van deze windturbine (inclusief rotor-radius)?"
       },
       "freeform": {
         "key": "height",
@@ -203,7 +206,8 @@
       },
       "question": {
         "en": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)",
-        "nl": "Is er iets mis met de informatie over deze windturbine dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)"
+        "nl": "Is er iets mis met de informatie over deze windturbine dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)",
+        "de": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlassen Sie eine Nachricht an OpenStreetMap-Experten)"
       },
       "freeform": {
         "key": "fixme",

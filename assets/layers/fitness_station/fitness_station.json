@@ -2,11 +2,13 @@
   "id": "fitness_station",
   "name": {
     "en": "Fitness Stations",
-    "de": "Fitness-Stationen"
+    "de": "Fitness-Stationen",
+    "nl": "Fitness-toestel"
   },
   "description": {
     "en": "Find a fitness station near you, and add missing ones.",
-    "de": "Finden Sie eine Fitness-Station in der Nähe und fügen Sie fehlende hinzu."
+    "de": "Finden Sie eine Fitness-Station in der Nähe und fügen Sie fehlende hinzu.",
+    "nl": "Vind een fitness-centrum in je buurt en voeg ontbrekende fitness-centra toe"
   },
   "source": {
     "osmTags": "leisure=fitness_station"
@@ -33,13 +35,15 @@
       "id": "name",
       "question": {
         "en": "What is the name of this fitness station?",
-        "de": "Wie lautet der Name der Fitness-Station?"
+        "de": "Wie lautet der Name der Fitness-Station?",
+        "nl": "Wat is de naam van dit fitness-toestel?"
       },
       "freeform": {
         "key": "name",
         "placeholder": {
           "en": "Name of the fitness station",
-          "de": "Name der Fitness-Station"
+          "de": "Name der Fitness-Station",
+          "nl": "Naam van het fitness-toestell"
         },
         "type": "string"
       },
@@ -48,13 +52,15 @@
           "if": "noname=yes",
           "then": {
             "en": "This fitness station doesn't have a name",
-            "de": "Die Fitness-Station hat keinen Namen"
+            "de": "Die Fitness-Station hat keinen Namen",
+            "nl": "Dit fitness-toestel heeft geen naam"
           }
         }
       ],
       "render": {
         "en": "This fitness station is called {name}",
-        "de": "Die Fitness-Station heißt {name}"
+        "de": "Die Fitness-Station heißt {name}",
+        "nl": "Dit fitness-toestel heet {name}"
       }
     },
     {
@@ -346,19 +352,22 @@
       "id": "operator",
       "question": {
         "en": "Who maintains this fitness station?",
-        "de": "Wer betreibt die Fitness-Station?"
+        "de": "Wer betreibt die Fitness-Station?",
+        "nl": "Wie beheert dit fitness-toestel?"
       },
       "freeform": {
         "key": "operator",
         "placeholder": {
           "en": "Operator of the fitness station",
-          "de": "Betreiber der Fitness-Station"
+          "de": "Betreiber der Fitness-Station",
+          "nl": "Beheerder van het fitness-toestel"
         },
         "type": "string"
       },
       "render": {
         "en": "The fitness station is maintained by {operator}.",
-        "de": "Die Fitness-Station wird betrieben von {operator}."
+        "de": "Die Fitness-Station wird betrieben von {operator}.",
+        "nl": "Dit fitness-toestel wordt beheerd door {operator}"
       }
     },
     "opening_hours"
@@ -371,7 +380,8 @@
       ],
       "title": {
         "en": "a fitness station",
-        "de": "eine Fitness-Station"
+        "de": "eine Fitness-Station",
+        "nl": "een fitness-toestel"
       },
       "icon": "./assets/layers/fitness_station/fitness.svg"
     }

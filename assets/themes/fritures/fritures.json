@@ -7,14 +7,16 @@
     "de": "Pommes-frites-Läden",
     "ca": "Botigues de patates",
     "da": "Pommes frites butik",
-    "pa_PK": "فرائیاں دیاں دکاناں"
+    "pa_PK": "فرائیاں دیاں دکاناں",
+    "cs": "Obchody s hranolky"
   },
   "description": {
     "en": "On this map, you'll find your favourite fries shop!",
     "nl": "Op deze kaart vind je je favoriete frituur!",
     "de": "Auf dieser Karte findest du deine Lieblings-Pommesbude!",
     "fr": "Retrouves vos friteries préférées sur cette carte !",
-    "da": "På dette kort finder du din foretrukne pomfrits-butik!"
+    "da": "På dette kort finder du din foretrukne pomfrits-butik!",
+    "cs": "Na této mapě najdete své oblíbené obchody s hranolky!"
   },
   "icon": "./assets/themes/fritures/logo.svg",
   "startLat": 0,
@@ -35,7 +37,8 @@
           "hu": "Sültkrumplievő-hely",
           "ca": "Botigues de patates",
           "da": "Pommes frites butik",
-          "pa_PK": "فرائیاں دی دکان"
+          "pa_PK": "فرائیاں دی دکان",
+          "cs": "Obchod s hranolky"
         },
         "=presets": [],
         "source": {

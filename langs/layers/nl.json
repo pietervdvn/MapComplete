@@ -2957,6 +2957,23 @@
                 },
                 "question": "Mag een fietser rechtsaf slaan als het licht rood is?"
             },
+            "crossing-sound": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit verkeerslicht heeft geluidssignalen om te helpen bij het oversteken, zowel voor het vinden van de oversteekplaats als voor het oversteken."
+                    },
+                    "1": {
+                        "then": "Dit verkeerslicht heeft geen geluidssignalen om te helpen bij het oversteken."
+                    },
+                    "2": {
+                        "then": "Dit verkeerslicht heeft een geluidssignaal om de paal te vinden, maar niet om aan te geven dat oversteken veilig kan."
+                    },
+                    "3": {
+                        "then": "Dit verkeerslicht heeft een geluidssignaal om aan te geven dat oversteken veilig kan, maar geen signaal om de paal te vinden."
+                    }
+                },
+                "question": "Heeft dit verkeerslicht geluidssignalen om te helpen bij het oversteken?"
+            },
             "crossing-tactile": {
                 "mappings": {
                     "0": {
@@ -2987,23 +3004,6 @@
                     }
                 },
                 "question": "Wat voor oversteekplaats is dit?"
-            },
-            "crossing-sound": {
-                "mappings": {
-                    "3": {
-                        "then": "Dit verkeerslicht heeft een geluidssignaal om aan te geven dat oversteken veilig kan, maar geen signaal om de paal te vinden."
-                    },
-                    "1": {
-                        "then": "Dit verkeerslicht heeft geen geluidssignalen om te helpen bij het oversteken."
-                    },
-                    "2": {
-                        "then": "Dit verkeerslicht heeft een geluidssignaal om de paal te vinden, maar niet om aan te geven dat oversteken veilig kan."
-                    },
-                    "0": {
-                        "then": "Dit verkeerslicht heeft geluidssignalen om te helpen bij het oversteken, zowel voor het vinden van de oversteekplaats als voor het oversteken."
-                    }
-                },
-                "question": "Heeft dit verkeerslicht geluidssignalen om te helpen bij het oversteken?"
             }
         },
         "title": {
@@ -4052,6 +4052,60 @@
             "render": "Brandweerstation"
         }
     },
+    "fitness_centre": {
+        "presets": {
+            "0": {
+                "title": "een fitness-centrum"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Naam van dit fitness-centrum"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Dit fitness-centrum heeft geen naam"
+                    }
+                },
+                "question": "Wat is de naam van dit fitness-centrum?",
+                "render": "Dit fitness-centrum heet {name}"
+            }
+        },
+        "title": {
+            "render": "Fitness-centrum"
+        }
+    },
+    "fitness_station": {
+        "description": "Vind een fitness-centrum in je buurt en voeg ontbrekende fitness-centra toe",
+        "name": "Fitness-toestel",
+        "presets": {
+            "0": {
+                "title": "een fitness-toestel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Naam van het fitness-toestell"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Dit fitness-toestel heeft geen naam"
+                    }
+                },
+                "question": "Wat is de naam van dit fitness-toestel?",
+                "render": "Dit fitness-toestel heet {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Beheerder van het fitness-toestel"
+                },
+                "question": "Wie beheert dit fitness-toestel?",
+                "render": "Dit fitness-toestel wordt beheerd door {operator}"
+            }
+        }
+    },
     "food": {
         "deletion": {
             "extraDeleteReasons": {
@@ -4781,13 +4835,13 @@
                 "freeform": {
                     "placeholder": "Hoogte van de stoeprand"
                 },
-                "question": "Hoe hoog is deze stoeprand?",
-                "render": "Stoeprandhoogte: {kerb:height}",
                 "mappings": {
                     "0": {
                         "then": "Deze stoeprand is vlak en lager als 1 cm."
                     }
-                }
+                },
+                "question": "Hoe hoog is deze stoeprand?",
+                "render": "Stoeprandhoogte: {kerb:height}"
             },
             "kerb-type": {
                 "mappings": {
@@ -6693,27 +6747,20 @@
         }
     },
     "speed_camera": {
-        "units": {
+        "description": "Laag met flitspalen",
+        "name": "Flitspaal",
+        "presets": {
             "0": {
-                "applicableUnits": {
-                    "0": {
-                        "human": "kilometers/uur",
-                        "humanShort": "km/u"
-                    },
-                    "1": {
-                        "human": "miles/uur",
-                        "humanShort": "mph"
-                    }
-                }
+                "title": "een flitspaal"
             }
         },
         "tagRenderings": {
             "maxspeed": {
-                "question": "Wat is de maximum toegestane snelheid bij deze flitspaal?",
-                "render": "De maximum toegestane snelheid is {canonical(maxspeed)}",
                 "freeform": {
                     "placeholder": "Maximum toegestane snelheid"
-                }
+                },
+                "question": "Wat is de maximum toegestane snelheid bij deze flitspaal?",
+                "render": "De maximum toegestane snelheid is {canonical(maxspeed)}"
             },
             "ref": {
                 "render": "De referentie van deze flitspaal is {ref}"
@@ -6722,15 +6769,6 @@
         "title": {
             "render": "Flitspaal"
         },
-        "description": "Laag met flitspalen",
-        "name": "Flitspaal",
-        "presets": {
-            "0": {
-                "title": "een flitspaal"
-            }
-        }
-    },
-    "speed_display": {
         "units": {
             "0": {
                 "applicableUnits": {
@@ -6744,16 +6782,23 @@
                     }
                 }
             }
-        },
+        }
+    },
+    "speed_display": {
         "description": "Laag met snelheidsdisplays om bestuurders op hun snelheid te wijzen.",
         "name": "Snelheidsdisplay",
+        "presets": {
+            "0": {
+                "title": "een snelheidsdisplay"
+            }
+        },
         "tagRenderings": {
             "inscription": {
-                "render": "De tekst op dit snelheidsdisplay is {inscription}",
                 "freeform": {
                     "placeholder": "Tekst op snelheidsdisplay (b.v. 'Uw snelheid')"
                 },
-                "question": "Wat is de tekst op dit snelheidsdisplay?"
+                "question": "Wat is de tekst op dit snelheidsdisplay?",
+                "render": "De tekst op dit snelheidsdisplay is {inscription}"
             },
             "maxspeed": {
                 "freeform": {
@@ -6766,9 +6811,18 @@
         "title": {
             "render": "Snelheidsdisplay"
         },
-        "presets": {
+        "units": {
             "0": {
-                "title": "een snelheidsdisplay"
+                "applicableUnits": {
+                    "0": {
+                        "human": "kilometers/uur",
+                        "humanShort": "km/u"
+                    },
+                    "1": {
+                        "human": "miles/uur",
+                        "humanShort": "mph"
+                    }
+                }
             }
         }
     },
@@ -7755,6 +7809,9 @@
                 },
                 "question": "Heeft deze halte een vuilnisbak?"
             },
+            "contained_routes": {
+                "render": "<h3>{_contained_routes_count} lijnen stoppen bij deze halte</h3> <ul>{_contained_routes}</ul>"
+            },
             "lit": {
                 "mappings": {
                     "0": {
@@ -7802,9 +7859,6 @@
                     }
                 },
                 "question": "Heeft deze halte een geleidelijn?"
-            },
-            "contained_routes": {
-                "render": "<h3>{_contained_routes_count} lijnen stoppen bij deze halte</h3> <ul>{_contained_routes}</ul>"
             }
         },
         "title": {
@@ -7834,6 +7888,14 @@
             }
         },
         "tagRenderings": {
+            "circumference": {
+                "question": "Wat is de omtrek van de boomstam? <p class='subtle'>Dit wordt 1.30m boven de grond gemeten</p>",
+                "render": "De boomstam heeft een omtrek van {circumference} meter"
+            },
+            "height": {
+                "question": "Wat is de hoogte van deze boom?",
+                "render": "Deze boom is {height} meter hoog"
+            },
             "tree-decidouous": {
                 "mappings": {
                     "0": {
@@ -7927,18 +7989,56 @@
             "tree_node-wikidata": {
                 "question": "Wat is het Wikidata-ID van deze boom?",
                 "render": "<img src=\"./assets/svg/wikidata.svg\" style=\"width:1em;height:0.56em;vertical-align:middle\" alt=\"\"/> Wikidata: <a href=\"http://www.wikidata.org/entity/{wikidata}\">{wikidata}</a>"
-            },
-            "height": {
-                "render": "Deze boom is {height} meter hoog",
-                "question": "Wat is de hoogte van deze boom?"
-            },
-            "circumference": {
-                "render": "De boomstam heeft een omtrek van {circumference} meter",
-                "question": "Wat is de omtrek van de boomstam? <p class='subtle'>Dit wordt 1.30m boven de grond gemeten</p>"
             }
         },
         "title": {
             "render": "Boom"
+        }
+    },
+    "usersettings": {
+        "description": "Een speciale lag die niet getoond wordt op de kaart, maar die de instellingen van de gebruiker weergeeft",
+        "tagRenderings": {
+            "contributor-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Je hebt mee geprogrammeerd aan MapComplete met {_code_contributions} commits! Das supercool van je! Bedankt hiervoor!"
+                    }
+                }
+            },
+            "picture-license": {
+                "mappings": {
+                    "0": {
+                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik. <span class='subtle'>Dit is de standaard-instelling</span>"
+                    },
+                    "1": {
+                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik."
+                    },
+                    "2": {
+                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam"
+                    },
+                    "3": {
+                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden."
+                    }
+                },
+                "question": "Met welke licentie wil je je afbeeldingen toevoegen?"
+            },
+            "translation-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Je hebt MapComplete helpen vertalen! Dat is fantastisch! Bedankt hiervoor!"
+                    }
+                }
+            },
+            "verified-mastodon": {
+                "mappings": {
+                    "0": {
+                        "then": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                    },
+                    "1": {
+                        "then": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+                    }
+                }
+            }
         }
     },
     "veterinary": {
@@ -8205,6 +8305,10 @@
                 "question": "Wat is de rotordiameter van deze windturbine?",
                 "render": "De rotordiameter van deze windturbine is {rotor:diameter} meter."
             },
+            "turbine-height": {
+                "question": "Wat is de totale hoogte in meter van deze windturbine (inclusief rotor-radius)?",
+                "render": "De totale hoogte (inclusief rotor-radius) van deze windturbine is {height} meter"
+            },
             "turbine-operator": {
                 "question": "Wie beheert deze windturbine?",
                 "render": "Deze windturbine wordt beheerd door {operator}."
@@ -8220,10 +8324,6 @@
             "windturbine-fixme": {
                 "question": "Is er iets mis met de informatie over deze windturbine dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)",
                 "render": "Extra informatie voor OpenStreetMap experts: {fixme}"
-            },
-            "turbine-height": {
-                "question": "Wat is de totale hoogte in meter van deze windturbine (inclusief rotor-radius)?",
-                "render": "De totale hoogte (inclusief rotor-radius) van deze windturbine is {height} meter"
             }
         },
         "title": {
@@ -8259,105 +8359,5 @@
                 }
             }
         }
-    },
-    "fitness_station": {
-        "tagRenderings": {
-            "operator": {
-                "render": "Dit fitness-toestel wordt beheerd door {operator}",
-                "question": "Wie beheert dit fitness-toestel?",
-                "freeform": {
-                    "placeholder": "Beheerder van het fitness-toestel"
-                }
-            },
-            "name": {
-                "mappings": {
-                    "0": {
-                        "then": "Dit fitness-toestel heeft geen naam"
-                    }
-                },
-                "render": "Dit fitness-toestel heet {name}",
-                "freeform": {
-                    "placeholder": "Naam van het fitness-toestell"
-                },
-                "question": "Wat is de naam van dit fitness-toestel?"
-            }
-        },
-        "description": "Vind een fitness-centrum in je buurt en voeg ontbrekende fitness-centra toe",
-        "name": "Fitness-toestel",
-        "presets": {
-            "0": {
-                "title": "een fitness-toestel"
-            }
-        }
-    },
-    "fitness_centre": {
-        "tagRenderings": {
-            "name": {
-                "freeform": {
-                    "placeholder": "Naam van dit fitness-centrum"
-                },
-                "mappings": {
-                    "0": {
-                        "then": "Dit fitness-centrum heeft geen naam"
-                    }
-                },
-                "render": "Dit fitness-centrum heet {name}",
-                "question": "Wat is de naam van dit fitness-centrum?"
-            }
-        },
-        "title": {
-            "render": "Fitness-centrum"
-        },
-        "presets": {
-            "0": {
-                "title": "een fitness-centrum"
-            }
-        }
-    },
-    "usersettings": {
-        "tagRenderings": {
-            "verified-mastodon": {
-                "mappings": {
-                    "1": {
-                        "then": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
-                    },
-                    "0": {
-                        "then": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
-                    }
-                }
-            },
-            "contributor-thanks": {
-                "mappings": {
-                    "0": {
-                        "then": "Je hebt mee geprogrammeerd aan MapComplete met {_code_contributions} commits! Das supercool van je! Bedankt hiervoor!"
-                    }
-                }
-            },
-            "picture-license": {
-                "mappings": {
-                    "0": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik. <span class='subtle'>Dit is de standaard-instelling</span>"
-                    },
-                    "1": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik."
-                    },
-                    "3": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden."
-                    },
-                    "2": {
-                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam"
-                    }
-                },
-                "question": "Met welke licentie wil je je afbeeldingen toevoegen?"
-            },
-            "translation-thanks": {
-                "mappings": {
-                    "0": {
-                        "then": "Je hebt MapComplete helpen vertalen! Dat is fantastisch! Bedankt hiervoor!"
-                    }
-                }
-            }
-        },
-        "description": "Een speciale lag die niet getoond wordt op de kaart, maar die de instellingen van de gebruiker weergeeft"
     }
 }
