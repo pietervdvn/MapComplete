@@ -1,16 +1,6 @@
 [
   {
-    "path": "Advertising_icon.svg",
-    "license": "CC BY-SA 4.0",
-    "authors": [
-      "PanierAvide"
-    ],
-    "sources": [
-      "https://commons.wikimedia.org/wiki/File:Advertising_icon.svg"
-    ]
-  },
-  {
-    "path": "Billboard_trunk.svg",
+    "path": "Billboard.svg",
     "license": "CC BY-SA 3.0",
     "authors": [
       "Barnes38"
@@ -40,6 +30,16 @@
     ]
   },
   {
+    "path": "Newspaper_kiosk.svg",
+    "license": "CC BY-SA 3.0",
+    "authors": [
+      "Barnes38"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Newspaper_kiosk_3.svg"
+    ]
+  },
+  {
     "path": "Poster_box.svg",
     "license": "CC BY-SA 3.0",
     "authors": [
@@ -58,5 +58,13 @@
     "sources": [
       "https://wiki.openstreetmap.org/wiki/File:Totem.svg"
     ]
+  },
+  {
+    "path": "icon.svg",
+    "license": "Unkown",
+    "authors": [
+      "Paunofu"
+    ],
+    "sources": []
   }
 ]
