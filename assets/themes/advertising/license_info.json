@@ -61,10 +61,10 @@
   },
   {
     "path": "icon.svg",
-    "license": "Unkown",
+    "license": "CC-BY-SA 4.0",
     "authors": [
-      "Paunofu"
+      "Panier Avide"
     ],
-    "sources": []
+    "sources": ["https://commons.wikimedia.org/wiki/File:Advertising_icon.svg"]
   }
 ]
