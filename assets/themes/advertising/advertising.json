@@ -2,23 +2,23 @@
   "id": "advertising",
   "credits": "Offsel",
   "title": {
-    "ca": "Publicitat",
-    "es": "Publicidad",
-    "en": "Advertising"
+  "ca": "Mapa obert de publicitat",
+  "es": "Mapa abierto de publicidad",
+  "en": "Open Advertising Map"
   },
   "shortDescription": {
-    "ca": "Completar dades sobre publicitat",
-    "es": "Completar datos sobre publicidad",
-    "en": "Complete data about advertising"
+  "ca": "On puc trobar elements publicitaris?",
+  "es": "Dónde puedo encontrar elementos publicitarios?",
+  "en": "Where I can find advertising features?"
   },
   "description": {
-    "ca": "Afegir dades de dispositius publicitaris",
-    "es": "Añadir datos de dispositivos publicitarios",
-    "en": "Add data of advertising devices"
+  "ca": "Alguna vegada t'has preguntat quanta publictat hi ha als nostres carrers i carreteres? Amb aquest mapa podràs trobar i afegir informació de tots els elements publictaris que t'hi trobes pel carrer",
+  "es": "¿Alguna vez te has preguntado cuanta publicidad hay en nuestras calles y carreteras? Con este mapa podrás encontrar y añadir información de todos los elementos publicitarios que te encuentres por la calle",
+  "en": "Have you ever wondered how many advertising there are in our streets and roads? With this map you could find and add information about all the advertising features that you can find on the street"
   },
   "maintainer": "Offsel",
   "icon": "./assets/themes/advertising/icon.svg",
-  "version": "2023_01_23",
+  "version": "2023_01_29",
   "startLat": 0,
   "startLon": 0,
   "startZoom": 1,
@@ -618,7 +618,9 @@
             "en": "a billboard"
           },
           "description": {
-            "en": "Small billboard for neighbourhood advertising, generally intended for pedestrians"
+            "en": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
+            "es": "Un pequeño tablón de anuncios para anuncios del vecindario, normalmente destinado a peatones",
+            "ca": "Un xicotet tauló d'anuncics per a anuncis del veïnat, normalment destitat a peatons"
           }
         },
         {
@@ -631,7 +633,9 @@
             "en": "a column"
           },
           "description": {
-            "en": "A cylindrical outdoor structure which shows advertisements"
+            "en": "A cylindrical outdoor structure which shows advertisements",
+            "es": "Una estructura cilíndrica exterior que muestra publicidad",
+            "ca": "Una extructura cilíndica exterior que mostra publicitat"
           }
         },
         {
