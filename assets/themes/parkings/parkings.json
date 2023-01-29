@@ -49,6 +49,7 @@
   "widenFactor": 1.2,
   "layers": [
     "parking",
-    "parking_spaces"
+    "parking_spaces",
+    "parking_ticket_machine"
   ]
 }

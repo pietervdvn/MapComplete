@@ -1,5 +1,16 @@
 [
   {
+    "path": "100euro.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/311346/worksheet-100-euro-coloured"
+    ]
+  },
+  {
     "path": "10cent.svg",
     "license": "CC0",
     "authors": [
@@ -8,6 +19,17 @@
     ],
     "sources": [
       "https://openclipart.org/detail/311337/worksheet-10-cent-coloured"
+    ]
+  },
+  {
+    "path": "10euro.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/311343/worksheet-10-euro-coloured"
     ]
   },
   {
@@ -33,6 +55,17 @@
     ]
   },
   {
+    "path": "200euro.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/311347/worksheet-200-euro-coloured"
+    ]
+  },
+  {
     "path": "20cent.svg",
     "license": "CC0",
     "authors": [
@@ -41,6 +74,17 @@
     ],
     "sources": [
       "https://openclipart.org/detail/311338/worksheet-20-cent-coloured"
+    ]
+  },
+  {
+    "path": "20euro.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/311344/worksheet-20-euro-coloured"
     ]
   },
   {
@@ -66,6 +110,17 @@
     ]
   },
   {
+    "path": "500euro.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/311348/worksheet-500-euro-coloured"
+    ]
+  },
+  {
     "path": "50cent.svg",
     "license": "CC0",
     "authors": [
@@ -77,6 +132,17 @@
     ]
   },
   {
+    "path": "50euro.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/311345/worksheet-50-euro-coloured"
+    ]
+  },
+  {
     "path": "5cent.svg",
     "license": "CC0",
     "authors": [
@@ -85,6 +151,17 @@
     ],
     "sources": [
       "https://openclipart.org/detail/311336/worksheet-5-cent-coloured"
+    ]
+  },
+  {
+    "path": "5euro.svg",
+    "license": "CC0",
+    "authors": [
+      "OpenClipart",
+      "frankes"
+    ],
+    "sources": [
+      "https://openclipart.org/detail/311342/worksheet-5-euro-coloured"
     ]
   },
   {
