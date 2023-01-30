@@ -780,6 +780,7 @@
         "enableImproveAccuracy": true,
         "enableRelocation": false
       },
+      "deletion": true,
       "presets": [
         {
           "tags": [
