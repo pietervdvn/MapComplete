@@ -15,7 +15,7 @@ import { SubtleButton } from "../Base/SubtleButton"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import { ElementStorage } from "../../Logic/ElementStorage"
 import Lazy from "../Base/Lazy"
-
+import P4C from "pic4carto"
 export interface P4CPicture {
     pictureUrl: string
     date?: number
@@ -175,7 +175,6 @@ export default class NearbyImages extends Lazy {
         options: NearbyImageOptions,
         state?: { allElements: ElementStorage }
     ) {
-        const P4C = require("../../vendor/P4C.min")
         const picManager = new P4C.PicturesManager({})
         const searchRadius = options.searchRadius ?? 500
 

@@ -87,27 +87,33 @@ export class NearbyImageVis implements SpecialVisualization {
         const nearby = new Lazy(() => {
             const towardsCenter = new CheckBox(t.onlyTowards, false)
 
-            const radiusValue =
-                state?.osmConnection?.GetPreference("nearby-images-radius", "300").sync(
+            const maxSearchRadius = 100
+            const stepSize = 10
+            const defaultValue = Math.floor(maxSearchRadius / (2 * stepSize)) * stepSize
+            const fromOsmPreferences = state?.osmConnection
+                ?.GetPreference("nearby-images-radius", "" + defaultValue)
+                .sync(
                     (s) => Number(s),
                     [],
                     (i) => "" + i
-                ) ?? new UIEventSource(300)
+                )
+            const radiusValue = new UIEventSource(fromOsmPreferences.data)
+            radiusValue.addCallbackAndRunD((v) => fromOsmPreferences.setData(v))
 
-            const radius = new Slider(25, 500, {
+            const radius = new Slider(stepSize, maxSearchRadius, {
                 value: radiusValue,
-                step: 25,
+                step: 10,
             })
             const alreadyInTheImage = AllImageProviders.LoadImagesFor(tagSource)
             const options: NearbyImageOptions & { value } = {
                 lon,
                 lat,
-                searchRadius: 500,
+                searchRadius: maxSearchRadius,
                 shownRadius: radius.GetValue(),
                 value: selectedImage,
                 blacklist: alreadyInTheImage,
                 towardscenter: towardsCenter.GetValue(),
-                maxDaysOld: 365 * 5,
+                maxDaysOld: 365 * 3,
             }
             const slideshow = canBeEdited
                 ? new SelectOneNearbyImage(options, state)
