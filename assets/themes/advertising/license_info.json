@@ -1,6 +1,6 @@
 [
   {
-    "path": "Billboard.svg",
+    "path": "billboard.svg",
     "license": "CC BY-SA 3.0",
     "authors": [
       "Barnes38"
@@ -10,7 +10,7 @@
     ]
   },
   {
-    "path": "Board.svg",
+    "path": "board.svg",
     "license": "CC BY-SA 3.0",
     "authors": [
       "Barnes38"
@@ -20,7 +20,7 @@
     ]
   },
   {
-    "path": "Column.svg",
+    "path": "column.svg",
     "license": "CC BY-SA 3.0",
     "authors": [
       "Barnes38"
@@ -30,7 +30,17 @@
     ]
   },
   {
-    "path": "Newspaper_kiosk.svg",
+    "path": "icon.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Panier Avide"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Advertising_icon.svg"
+    ]
+  },
+  {
+    "path": "newspaper_kiosk.svg",
     "license": "CC BY-SA 3.0",
     "authors": [
       "Barnes38"
@@ -40,7 +50,7 @@
     ]
   },
   {
-    "path": "Poster_box.svg",
+    "path": "poster_box.svg",
     "license": "CC BY-SA 3.0",
     "authors": [
       "Barnes38"
@@ -50,7 +60,7 @@
     ]
   },
   {
-    "path": "Totem.svg",
+    "path": "totem.svg",
     "license": "CC BY-SA 3.0",
     "authors": [
       "Barnes38"
@@ -58,13 +68,5 @@
     "sources": [
       "https://wiki.openstreetmap.org/wiki/File:Totem.svg"
     ]
-  },
-  {
-    "path": "icon.svg",
-    "license": "CC-BY-SA 4.0",
-    "authors": [
-      "Panier Avide"
-    ],
-    "sources": ["https://commons.wikimedia.org/wiki/File:Advertising_icon.svg"]
   }
 ]

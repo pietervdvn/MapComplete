@@ -210,7 +210,7 @@
                 "en": "This is a billboard"
               },
               "icon": {
-                "path": "./assets/themes/advertising/Billboard.svg",
+                "path": "./assets/themes/advertising/billboard.svg",
                 "class": "medium"
               }
             },
@@ -226,7 +226,7 @@
                 "en": "This is a board"
               },
               "icon": {
-                "path": "./assets/themes/advertising/Board.svg",
+                "path": "./assets/themes/advertising/board.svg",
                 "class": "medium"
               }
             },
@@ -566,6 +566,7 @@
           ]
         },
         {
+          "id": "message_type",
           "render": {
             "*": " {message}"
             },
@@ -689,6 +690,7 @@
             ]
         },
         {
+          "id": "Sides",
           "render": {
             "ca": "Pots veure publicitat per {sides} costats",
             "es": "Puedes ver publicidad por {sides} lados",
@@ -701,8 +703,7 @@
             },
             "freeform": {
             "key": "sides"
-            },
-            "mappings": []
+            }
         }
       ],
       "mapRendering": [
@@ -720,15 +721,15 @@
                     "advertising=billboard"
                   ]
                 },
-                "then": "./assets/themes/advertising/Billboard.svg"
+                "then": "./assets/themes/advertising/billboard.svg"
               },
               {
                 "if": "advertising=board",
-                "then": "./assets/themes/advertising/Board.svg"
+                "then": "./assets/themes/advertising/board.svg"
               },
               {
                 "if": "advertising=column",
-                "then": "./assets/themes/advertising/Column.svg"
+                "then": "./assets/themes/advertising/column.svg"
               },
               {
                 "if": "advertising=flag",
@@ -736,7 +737,7 @@
               },
               {
                 "if": "advertising=poster_box",
-                "then": "./assets/themes/advertising/Poster_box.svg"
+                "then": "./assets/themes/advertising/poster_box.svg"
               },
               {
                 "if": "advertising=screen",
@@ -756,7 +757,7 @@
               },
               {
                 "if": "advertising=totem",
-                "then": "./assets/themes/advertising/Totem.svg"
+                "then": "./assets/themes/advertising/totem.svg"
               },
               {
                 "if": "advertising=wall_painting",
