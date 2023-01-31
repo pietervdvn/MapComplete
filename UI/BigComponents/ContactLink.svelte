@@ -1,11 +1,14 @@
-<!-- A contact link indicates how a mapper can contact their local community -->
 <script lang="ts">
     import {Store} from "../../Logic/UIEventSource";
-
-    <!-- The _properties_ of a community feature -->
+    // A contact link indicates how a mapper can contact their local community  
+    // The _properties_ of a community feature
     export let country: Store<{ resources; nameEn: string }>
-    let resources = country.mapD(country => Object.values(country?.resources ?? {}))
-
+    let resources : Store<{ id: string, resolved: Record<string, string> }[]> = country.map(country => {
+        if(country === undefined){
+            return []
+        }
+        return Array.from(Object.values(country?.resources ?? {}))
+    })
 </script>
 
 <div>

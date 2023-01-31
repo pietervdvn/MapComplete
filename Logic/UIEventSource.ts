@@ -114,7 +114,7 @@ export abstract class Store<T> implements Readable<T> {
     abstract map<J>(f: (t: T) => J): Store<J>
     abstract map<J>(f: (t: T) => J, extraStoresToWatch: Store<any>[]): Store<J>
 
-    public mapD<J>(f: (t: T) => J, extraStoresToWatch: Store<any>[]): Store<J> {
+    public mapD<J>(f: (t: T) => J, extraStoresToWatch?: Store<any>[]): Store<J> {
         return this.map((t) => {
             if (t === undefined) {
                 return undefined
