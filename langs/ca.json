@@ -112,7 +112,7 @@
         "backgroundMap": "Mapa de fons",
         "cancel": "Cancel·lar",
         "confirm": "Confirmar",
-        "customThemeIntro": "<h3>Peticions personalitzades</h3>Aquestes són les peticions generades pels usuaris que ens han visitat abans.",
+        "customThemeIntro": "<h3>Peticions personalitzades</h3>Aquestes són les peticions generades pels usuaris que has visitat abans.",
         "download": {
             "downloadAsPdf": "Baixar un PDF del mapa actual",
             "downloadAsPdfHelper": "Ideal per imprimir el mapa actual",

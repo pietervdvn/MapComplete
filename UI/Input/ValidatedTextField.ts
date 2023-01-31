@@ -364,8 +364,12 @@ Another example is to search for species and trees:
 
             Locale.language
                 .map((lg) => {
-                    const prefixesUnrwapped: string[] = prefixes[lg] ?? prefixes
-                    const postfixesUnwrapped: string[] = postfixes[lg] ?? postfixes
+                    const prefixesUnrwapped: string[] = Array.isArray(prefixes)
+                        ? prefixes
+                        : prefixes[lg] ?? []
+                    const postfixesUnwrapped: string[] = Array.isArray(postfixes)
+                        ? postfixes
+                        : postfixes[lg] ?? []
                     let clipped = searchFor
 
                     for (const postfix of postfixesUnwrapped) {
@@ -375,6 +379,7 @@ Another example is to search for species and trees:
                         }
                     }
 
+                    console.log("Prefixes are: ", prefixesUnrwapped)
                     for (const prefix of prefixesUnrwapped) {
                         if (searchFor.startsWith(prefix)) {
                             clipped = searchFor.substring(prefix.length)
