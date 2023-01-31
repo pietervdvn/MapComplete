@@ -1199,7 +1199,7 @@
             "bicycle=designated",
             "mofa=designated",
             "moped=no",
-            "speed_pedelec=no",
+            "speed_pedelec=yes",
             "segregated=yes"
           ],
           "icon": {
