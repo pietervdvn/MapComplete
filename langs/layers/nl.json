@@ -3004,6 +3004,27 @@
                     }
                 },
                 "question": "Wat voor oversteekplaats is dit?"
+            },
+            "crossing-vibration": {
+                "mappings": {
+                    "1": {
+                        "then": "De knop bij dit verkeerslicht kan <b>niet</b> trillen om aan te geven dat men veilig kan oversteken."
+                    },
+                    "0": {
+                        "then": "De knop bij dit verkeerslicht trilt om aan te geven dat men veilig kan oversteken."
+                    }
+                },
+                "question": "Heeft dit verkeerslicht een element dat trilt om te helpen bij het oversteken? (meestal onderaan de oversteekknop geplaatst)"
+            },
+            "crossing-minimap": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit verkeerlicht heeft een voelkaart die de indeling van de oversteekplaats laat zien."
+                    },
+                    "1": {
+                        "then": "Dit verkeerlicht heeft <b>geen</b> voelkaart die de indeling van de oversteekplaats laat zien."
+                    }
+                }
             }
         },
         "title": {
