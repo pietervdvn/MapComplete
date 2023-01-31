@@ -499,7 +499,7 @@ export default class SimpleMetaTaggers {
                 return false
             }
             OsmObject.DownloadReferencingWays(id).then((referencingWays) => {
-                const currentTagsSource = state.allElements.getEventSourceById(id)
+                const currentTagsSource = state.allElements?.getEventSourceById(id) ?? []
                 const wayIds = referencingWays.map((w) => "way/" + w.id)
                 wayIds.sort()
                 const wayIdsStr = wayIds.join(";")
