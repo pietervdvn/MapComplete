@@ -814,6 +814,9 @@
                     "locale": {
                         "question": "En quelle langue est-ce que ce changement a été fait ?",
                         "render": "La langue de l'utilisateur est {locale}"
+                    },
+                    "theme-id": {
+                        "question": "Quel thème a été utilisé pour faire cette modification ?"
                     }
                 }
             }
