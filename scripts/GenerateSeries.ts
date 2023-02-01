@@ -1,4 +1,4 @@
-import fs, { existsSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "fs"
+import { existsSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "fs"
 import ScriptUtils from "./ScriptUtils"
 import { Utils } from "../Utils"
 import Script from "./Script"
@@ -56,9 +56,9 @@ class StatsDownloader {
                     }.day.json`
                     writtenFiles.push(path)
                     if (existsSync(path)) {
-                        let features = JSON.parse(readFileSync(path, { encoding: "utf-8" }))
-                        features = features?.features ?? features
-                        features.push(...features.features) // day-stats are generally a list already, but in some ad-hoc cases might be a geojson-collection too
+                        let loadedFeatures = JSON.parse(readFileSync(path, { encoding: "utf-8" }))
+                        loadedFeatures = loadedFeatures?.features ?? loadedFeatures
+                        features.push(...loadedFeatures) // day-stats are generally a list already, but in some ad-hoc cases might be a geojson-collection too
                         console.log(
                             "Loaded ",
                             path,
@@ -296,7 +296,7 @@ class GenerateSeries extends Script {
                 features.forEach((f) => {
                     delete f.bbox
                 })
-                fs.writeFileSync(
+                writeFileSync(
                     path,
                     JSON.stringify(
                         {
