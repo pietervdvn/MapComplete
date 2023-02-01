@@ -7,10 +7,22 @@ import * as wds from "wikidata-sdk"
 import { Utils } from "../Utils"
 import ScriptUtils from "./ScriptUtils"
 import { existsSync, readFileSync, writeFileSync } from "fs"
-import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
-import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 import WikidataUtils from "../Utils/WikidataUtils"
 import LanguageUtils from "../Utils/LanguageUtils"
+import Wikidata from "../Logic/Web/Wikidata"
+
+interface value<T> {
+    value: T
+    type: "uri" | "literal" | string
+    "xml:lang"?: string
+}
+
+interface LanguageSpecResult {
+    directionalityLabel: value<string | "right-to-left" | "left-to-right">
+    lang: value<string>
+    code: value<string>
+    label: value<string>
+}
 
 async function fetch(target: string) {
     const regular = await fetchRegularLanguages()
@@ -36,33 +48,52 @@ async function fetchRegularLanguages() {
 
     // request the generated URL with your favorite HTTP request library
     const result = await Utils.downloadJson(url, { "User-Agent": "MapComplete script" })
-    const bindings = result.results.bindings
+    const bindings = <LanguageSpecResult[]>result.results.bindings
 
     const zh_hant = await fetchSpecial(18130932, "zh_Hant")
     const zh_hans = await fetchSpecial(13414913, "zh_Hant")
     const pt_br = await fetchSpecial(750553, "pt_BR")
+    const punjabi = await fetchSpecial(58635, "pa_PK")
+    const Shahmukhi = await Wikidata.LoadWikidataEntryAsync(133800)
+    punjabi.forEach((item) => {
+        const neededLanguage = item.label["xml:lang"]
+        const native = Shahmukhi.labels.get(neededLanguage) ?? Shahmukhi.labels.get("en")
+        item.label.value = item.label.value + " (" + native + ")"
+    })
+
     const fil = await fetchSpecial(33298, "fil")
 
     bindings.push(...zh_hant)
     bindings.push(...zh_hans)
     bindings.push(...pt_br)
     bindings.push(...fil)
+    bindings.push(...punjabi)
 
     return result.results.bindings
 }
 
-async function fetchSpecial(id: number, code: string) {
+/**
+ * Fetches the object as is. Sets a 'code' binding as predifined value
+ * @param id
+ * @param code
+ */
+async function fetchSpecial(id: number, code: string): Promise<LanguageSpecResult[]> {
     ScriptUtils.fixUtils()
     console.log("Fetching languages")
 
+    const lang = "  wd:Q" + id
     const sparql =
-        "SELECT ?lang ?label ?code \n" +
+        "SELECT ?label ?directionalityLabel \n" +
         "WHERE \n" +
         "{ \n" +
-        "  wd:Q" +
-        id +
-        " rdfs:label ?label. \n" +
+        lang +
+        " rdfs:label ?label." +
+        lang +
+        " wdt:P282 ?writing_system. \n" +
+        "  ?writing_system wdt:P1406 ?directionality. \n" +
+        '  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } \n' +
         "} "
+    console.log("Special sparql:", sparql)
     const url = wds.sparqlQuery(sparql)
 
     const result = await Utils.downloadJson(url, { "User-Agent": "MapComplete script" })
