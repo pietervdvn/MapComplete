@@ -1,8 +1,6 @@
 import { UIEventSource } from "../UIEventSource"
 import UserDetails, { OsmConnection } from "./OsmConnection"
 import { Utils } from "../../Utils"
-import { DomEvent } from "leaflet"
-import preventDefault = DomEvent.preventDefault
 
 export class OsmPreferences {
     public preferences = new UIEventSource<Record<string, string>>({}, "all-osm-preferences")
