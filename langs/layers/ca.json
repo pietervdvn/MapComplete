@@ -1765,7 +1765,7 @@
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
             "Name tag": {
-                "render": "Aquesta àrea s'anomena"
+                "render": ""
             },
             "Surface area": {
                 "render": "Superfície: {_surface:ha}Ha"
