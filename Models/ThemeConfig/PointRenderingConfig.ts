@@ -12,7 +12,6 @@ import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Img from "../../UI/Base/Img"
 import Combine from "../../UI/Base/Combine"
 import { VariableUiElement } from "../../UI/Base/VariableUIElement"
-import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 
 export default class PointRenderingConfig extends WithContextLoader {
     private static readonly allowed_location_codes = new Set<string>([
@@ -36,6 +35,10 @@ export default class PointRenderingConfig extends WithContextLoader {
 
     constructor(json: PointRenderingConfigJson, context: string) {
         super(json, context)
+
+        if (json === undefined || json === null) {
+            throw "Invalid PointRenderingConfig: undefined or null"
+        }
 
         if (typeof json.location === "string") {
             json.location = [json.location]
