@@ -5,6 +5,12 @@
         "retrying": "Loading data failed. Trying again in {count} seconds…",
         "zoomIn": "Zoom in to view or edit the data"
     },
+    "communityIndex": {
+        "available": "This community speaks {native}",
+        "intro": "Get in touch with other people to get to know them, learn from them, ...",
+        "notAvailable": "This community does not speak {native}",
+        "title": "Community index"
+    },
     "delete": {
         "cancel": "Cancel",
         "cannotBeDeleted": "This feature can not be deleted",

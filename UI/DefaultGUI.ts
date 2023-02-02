@@ -34,6 +34,8 @@ import { GeoLocationState } from "../Logic/State/GeoLocationState"
 import Hotkeys from "./Base/Hotkeys"
 import AvailableBaseLayers from "../Logic/Actors/AvailableBaseLayers"
 import CopyrightPanel from "./BigComponents/CopyrightPanel"
+import SvelteUIElement from "./Base/SvelteUIElement"
+import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
 
 /**
  * The default MapComplete GUI initializer
@@ -237,6 +239,20 @@ export default class DefaultGUI {
         const welcomeMessageMapControl = Toggle.If(state.featureSwitchWelcomeMessage, () =>
             self.InitWelcomeMessage()
         )
+
+        const communityIndex = Toggle.If(state.featureSwitchCommunityIndex, () => {
+            const communityIndexControl = new MapControlButton(Svg.community_svg())
+            const communityIndex = new ScrollableFullScreen(
+                () => Translations.t.communityIndex.title,
+                () => new SvelteUIElement(CommunityIndexView, { ...state }),
+                "community_index"
+            )
+            communityIndexControl.onClick(() => {
+                communityIndex.Activate()
+            })
+            return communityIndexControl
+        })
+
         const testingBadge = Toggle.If(state.featureSwitchIsTesting, () =>
             new FixedUiElement("TESTING").SetClass("alert m-2 border-2 border-black")
         )
@@ -253,6 +269,7 @@ export default class DefaultGUI {
             welcomeMessageMapControl,
             userInfoMapControl,
             copyright,
+            communityIndex,
             extraLink,
             testingBadge,
         ])
