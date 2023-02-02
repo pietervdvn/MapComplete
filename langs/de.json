@@ -137,7 +137,7 @@
             "openIssueTracker": "Fehler melden",
             "openMapillary": "Mapillary öffnen",
             "openOsmcha": "Letzte Bearbeitungen zum Thema {theme} ansehen",
-            "themeBy": "Thema betreut von {author}",
+            "themeBy": "Dieses Thema wurde erstellt von {author}",
             "translatedBy": "MapComplete wurde übersetzt von {contributors} und <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} weiteren Personen</a>"
         },
         "back": "Zurück",

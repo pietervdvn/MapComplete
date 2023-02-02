@@ -325,7 +325,7 @@
         "title": "Points de recharge"
     },
     "climbing": {
-        "description": "Cette carte indique les sites d’escalade comme les salles d’escalade ou les sites naturels",
+        "description": "Cette carte indique les sites d’escalade comme les salles d’escalade ou les sites naturels.",
         "descriptionTail": "La carte des sites d'escalade a été créée par <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Merci de le <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>contacter</a> pour des avis ou des questions.</p><p>Ce projet utilise les données <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
         "layers": {
             "0": {
@@ -799,6 +799,13 @@
                                 "question": "Fait par le serveur {search}"
                             }
                         }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Le groupe de modifications a ajouté au moins une image"
+                            }
+                        }
                     }
                 },
                 "name": "Centres de modifications de paramètres",
@@ -816,11 +823,28 @@
                         "render": "La langue de l'utilisateur est {locale}"
                     },
                     "theme-id": {
-                        "question": "Quel thème a été utilisé pour faire cette modification ?"
+                        "question": "Quel thème a été utilisé pour faire cette modification ?",
+                        "render": "Modifié avec le thème <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    },
+                    "show_changeset_id": {
+                        "render": "Groupe de modifications <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Groupe de modifications pour {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "D’autres statistiques sont disponibles <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>ici</a>"
+                        }
                     }
                 }
             }
-        }
+        },
+        "title": "Changements faits avec MapComplete"
     },
     "maproulette": {
         "description": "Thème MapRoulette permettant d’afficher, rechercher, filtrer et résoudre les tâches.",
@@ -931,7 +955,9 @@
         "title": "OpenWindPowerMap"
     },
     "osm_community_index": {
-        "description": "Une liste de ressources pour les utilisateurs d'OpenStreetMap. Les \"ressources\" peuvent être des liens vers des forums, des rencontres, des groupes Slack, des canaux IRC, des listes de diffusion, etc. Tout ce que les cartographes, en particulier les débutants, peuvent trouver intéressant ou utile."
+        "description": "Une liste de ressources pour les utilisateurs d'OpenStreetMap. Les \"ressources\" peuvent être des liens vers des forums, des rencontres, des groupes Slack, des canaux IRC, des listes de diffusion, etc. Tout ce que les cartographes, en particulier les débutants, peuvent trouver intéressant ou utile.",
+        "title": "Index communautaire OSM",
+        "shortDescription": "Index des ressources communautaires pour OpenStreetMap."
     },
     "parkings": {
         "description": "Cette carte affiche différents lieux de stationnement",
@@ -1023,6 +1049,28 @@
                 "tagRenderings": {
                     "streetname": {
                         "render": "Cette rue s’appelle {name}"
+                    },
+                    "left-right-questions": {
+                        "renderings": {
+                            "2": {
+                                "question": "Quelle est la largeur du trottoir de ce côté de la route ?",
+                                "render": "Ce trottoir fait {sidewalk:left|right:width} m de large"
+                            },
+                            "1": {
+                                "question": "Y a-t-il un trottoir de ce côté de la route ?",
+                                "mappings": {
+                                    "2": {
+                                        "then": "Il y a un trottoir où marcher cartographié séparément"
+                                    },
+                                    "0": {
+                                        "then": "Oui, il y a un trottoir de ce côté de la route"
+                                    },
+                                    "1": {
+                                        "then": "Non, il n'y a pas de trottoir où marcher"
+                                    }
+                                }
+                            }
+                        }
                     }
                 },
                 "title": {
@@ -1039,8 +1087,19 @@
         "title": "Terrains de sport"
     },
     "sports": {
-        "shortDescription": "Carte des équipements sportifs",
-        "title": "Sports"
+        "shortDescription": "Carte des équipements sportifs.",
+        "title": "Sports",
+        "layers": {
+            "4": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "description": "Ajouter un nouveau commerce vendant des équipements sportifs."
+                        }
+                    }
+                }
+            }
+        }
     },
     "street_lighting": {
         "description": "Retrouvez tout ce qui touche à l’éclairage de rue sur cette carte",
@@ -1128,5 +1187,44 @@
         "description": "Retrouvez les poubelles près de vous. Si une poubelle est manquante, vous pouvez l’ajouter vous même",
         "shortDescription": "Une carte des poubelles",
         "title": "Poubelles"
+    },
+    "stations": {
+        "layers": {
+            "15": {
+                "title": {
+                    "render": "Tableau des départs"
+                },
+                "description": "Panneau affichant les trains au départ depuis cette gare",
+                "tagRenderings": {
+                    "type": {
+                        "mappings": {
+                            "1": {
+                                "then": "Panneau électronique, affichant les prochains départs en temps réel"
+                            },
+                            "0": {
+                                "then": "Panneau des départs de type inconnu"
+                            },
+                            "2": {
+                                "then": "Tableau des départs papier"
+                            }
+                        },
+                        "question": "De quel type de panneau de départs s'agit-il ?"
+                    }
+                },
+                "presets": {
+                    "0": {
+                        "description": "Ajouter un panneau indiquant les départs, qu'il soit électronique ou papier",
+                        "title": "un panneaux des départs"
+                    }
+                },
+                "name": "Panneaux des départs"
+            },
+            "3": {
+                "name": "Gares ferroviaires",
+                "description": "Couche montrant les gares"
+            }
+        },
+        "description": "Voir, modifier et ajouter des détails à une gare ferroviaire",
+        "title": "Gares ferroviaires"
     }
 }
