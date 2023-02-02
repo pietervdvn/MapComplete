@@ -593,7 +593,7 @@
             },
             "dream": {
                 "docs": "Sendet einen computergenerierten Text",
-                "generatedBy": "Dieser Text wurde von {bot} erstellt, einem auf maschinellem Lernen basierenden Bot, der auf Reddit aktiv ist."
+                "generatedBy": "Text generiert von {bot}, einem Machine-Learning-Bot, der auf Reddit aktiv ist."
             },
             "help": {
                 "argcmd": "Der Befehl, über den Sie mehr Informationen wünschen",
@@ -604,7 +604,7 @@
                 "p0": "Hallo! Ich bin MapComplete-bot {bot_version} (basierend auf MapComplete {mc_version}).",
                 "p1": "Senden Sie mir einen Befehl und ich antworte mit etwas Nützlichem: Geben Sie mir einen Befehl über eine private Nachricht oder setzen Sie <code>!</code> vor dem Befehl in einem öffentlichen Raum.",
                 "priviligedComand": "Privilegierter Befehl",
-                "supported": "Meine unterstützten Befehle sind:"
+                "supported": "Meine unterstützten Befehle:"
             },
             "info": {
                 "argsearch": "Die ID des OSM-Objekts oder eine Suchanfrage",
@@ -646,7 +646,7 @@
                 "verbadd": "Fügt eine Rolle für den angegebenen Benutzer hinzu",
                 "verbdefault": "Liste der Rollen des Benutzers",
                 "verblist": "Alle Benutzerrollen des angegebenen Benutzers auflisten",
-                "verbremove": "Entfernt eine Rolle von dem angegebenen Benutzer",
+                "verbremove": "Entfernt eine Rolle vom angegebenen Benutzer",
                 "verbrevoke": "Entzieht alle Rechte eines Benutzers"
             },
             "scheme": {
@@ -662,9 +662,9 @@
                 "argsearch": "Der Suchbegriff",
                 "argverb": "Entweder in einem geografischen Gebiet (z. B. einer Stadt) oder in der Nähe eines POI suchen",
                 "docs": "Sucht Interessante Orte in oder in der Nähe eines Standorts",
-                "noMatchingLayer": "Ich habe keine passende Ebene gefunden",
+                "noMatchingLayer": "Keine passende Ebene gefunden",
                 "noNearOrIn": "Entschuldigung, ich habe Ihren Befehl nicht verstanden, da ich kein <code>in der Nähe</code> oder <code>in</code> in Ihrer Suchanfrage gefunden habe.\n Versuchen Sie etwas wie <code>Suche Trinkwasser in London</code>, <code>Suche Friture in Brüssel</code>\n Alternativ versuchen Sie <code>info {cmd}</code>, um Informationen über ein einzelnes Objekt zu erhalten.",
-                "nothingFound": "Entschuldigung, ich konnte nichts für <code>{search}</code> finden, also kann ich nicht nach {layerTitle} suchen",
+                "nothingFound": "Es wurde nichts gefunden für <code>{search}</code>. Gesucht wurde nach {layerTitle} stattdessen.",
                 "overview": "Ich habe {length} passende Artikel gefunden.",
                 "searching": "Suche {layerTitle} {mode} <code>{search}</code>…"
             },
@@ -697,7 +697,7 @@
                 "gotResults": "Habe {count} Ergebnisse für Suchanfrage <code>{search}</code> erhalten:",
                 "loadingFailed": "Entschuldigung, die Seite <code>{pagename}</code> konnte nicht geladen werden",
                 "noWiki": "Bitte geben Sie eine Wikiseite an, nach der Sie suchen möchten",
-                "nothingFound": "Ich konnte auf {backend} für {search} nichts finden",
+                "nothingFound": "Auf {backend} konnte nichts gefunden werden für {search}",
                 "searching": "Suche auf {backend}…"
             }
         },
@@ -775,7 +775,7 @@
         },
         "loadingWikidata": "Informationen über {species} werden geladen…",
         "matchPercentage": "{match}% Übereinstimmung",
-        "overviewIntro": "Die KI auf <a href='https://plantnet.org/' target='_blank'>PlantNet.org</a> denkt, dass die Fotos die folgende Art zeigen.",
+        "overviewIntro": "Die KI auf <a href='https://plantnet.org/' target='_blank'>plantnet.org</a> denkt, dass die Fotos die folgende Art zeigen.",
         "overviewTitle": "Automatisch erkannte Art",
         "overviewVerify": "Bitte überprüfen Sie die richtige Art und verknüpfen Sie sie mit dem Baum",
         "poweredByPlantnet": "Bereitgestellt von <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
@@ -961,7 +961,7 @@
         "email": {
             "description": "E-Mail Adresse",
             "feedback": "Dies ist keine gültige E-Mail Adresse",
-            "noAt": "Eine E-Mail-Adresse sollte ein @ enthalten"
+            "noAt": "Eine E-Mail-Adresse muss ein @ enthalten"
         },
         "float": {
             "description": "eine Zahl",
