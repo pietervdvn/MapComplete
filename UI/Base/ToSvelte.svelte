@@ -11,7 +11,7 @@
     } else {
       html = construct.ConstructElement();
     }
-    elem.appendChild(html)
+    elem.replaceWith(html)
   });
 </script>
 <span bind:this={elem}></span>
