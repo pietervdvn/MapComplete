@@ -522,7 +522,8 @@
                 }
             }
         },
-        "title": "Jardins verticals"
+        "title": "Jardins verticals",
+        "shortDescription": "Aquest mapa mostra jardins a façanes amb fotografies i informació útil sobre l'orientació, llum del sol i els tipus de plantes."
     },
     "food": {
         "description": "Restaurants i menjar ràpid",

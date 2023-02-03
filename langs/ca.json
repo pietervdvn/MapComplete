@@ -44,21 +44,35 @@
         "cyclofix": "A CycloFix hi han mManxes, estacions de reparacions, fonts d'aigua i botigues per a ciclistes",
         "description": "Un full de mà A4-apaisat per a promocionar MapComplete",
         "fakeui": {
-            "add_images": "Afegeix imatges amb pocs clics"
-        }
+            "add_images": "Afegeix imatges amb pocs clics",
+            "see_images": "Mostra imatges de contribuïdors anteriors, Wikipedia, Mapillary, ... ",
+            "wikipedia": "Es mostren articles de Wikipedia enllaçats",
+            "attributes": "Mostra els atributs d'una manera amigable",
+            "edit": "Informació incorrecta o desactualitzada? El botó d'editar està just aquí",
+            "question": "Si encara no es coneix cap atribut, MapCpomplete mostrarà una pregunta"
+        },
+        "mapcomplete": {
+            "li0": "Mostra on estan els PDI",
+            "li1": "Afegeix nous punts i actualitza informació dels existents",
+            "li2": "Afegeix informació de contacte i hores d'apertura fàcilment",
+            "title": "Que és MapComplete?"
+        },
+        "title": "MapComplete.osm.be",
+        "whatIsOsm": "Que és OpenStreetMap?",
+        "examples": "Hi han molts mapes temàtics disponibles, el quals alguns estan disponibles aquí.\n\nHi han molts mapes temàtics en línea: sobre salut, navegació interior, accessibilitat per a cadires de rodes, instal·lacions per a residus, prestageries públiques, creuaments per vianants pitnats amb l'arc de Sant Martí, ... Descobreix-los tots a mapcomplete.osm.be"
     },
     "general": {
         "about": "Edita facilment i afegeix punts a OpenStreetMap d'una petició determinada",
-        "aboutMapcomplete": "<h3>Sobre MapComplete</h3><p>Usa-ho per afegir informació a OpenStreetMap amb una <b>petició.</b> Respon preguntes i en minuts les teves contribucions estaran disponibles arreu. La persona <b>gestionadora</b> defineix elements, preguntes i idiomes per a fer-ho possible.</p><h3>Troba més info</h3><p>MapComplete sempre <b>ofereix el següent pas</b> per aprendre'n més sobre OpenStreetMap.</p><ul><li>Inclòs en una pàgina web et porta a MapComplete a pantalla completa</li><li>Aquesta versió ofereix informació sobre OpenStreetMap</li><li>Veure funciona sense entrar però editar o contribuir requereix un compte d'OSM.</li><li>Si no has entrat et demanarà que ho facis.</li><li>Responent una simple pregunta, pots afegir nous punts al mapa</li><li> Després d'una estona es mostraran les etiquetes actuals , i després els enllaços a la wiki.</li></ul><p></p><br><p>Has trobat alguna <b>incidència</b>? Tens alguna <b> petició </b>? Vols <b>ajudar a traduir</b>? Vés a <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\"> per accedir al codi font</a> o al <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">registre d'incidències.</a> </p><p> Vols veure <b>els teus progressos </b>? Segueix el recompte d'edicions a <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
+        "aboutMapcomplete": "<h3>Sobre</h3><p>Utilitza MapCompelte per afegir informació a OpenStreetMap amb una <b>petició.</b> Respon preguntes i en minuts les teves contribucions estaran disponibles arreu. En molts temes pots afegir fotografies o fins i tot afegeix \"reviews\". La persona <b>gestionadora</b> defineix elements, preguntes i idiomes per a fer-ho possible.</p><h3>Troba més info</h3><p>MapComplete sempre <b>ofereix el següent pas</b> per aprendre'n més sobre OpenStreetMap.</p><ul><li>Inclòs en una pàgina web et porta a MapComplete a pantalla completa.</li><li>Aquesta versió ofereix informació sobre OpenStreetMap.</li><li>Veure funciona sense entrar però editar o contribuir requereix un compte d'OSM.</li><li>Si no has entrat et demanarà que ho facis.</li><li>Responent una simple pregunta, pots afegir nous elements al mapa</li><li> Després d'una estona es mostraran les etiquetes actuals , i després els enllaços a la wiki.</li></ul><p></p><br><p>Has trobat alguna <b>incidència</b>? Tens alguna <b> petició </b>? Vols <b>ajudar a traduir</b>? Vés a <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\"> per accedir al codi font</a> o al <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">registre d'incidències.</a> </p><p> Vols veure <b>els teus progressos </b>? Segueix el recompte d'edicions a <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
         "add": {
             "addNew": "Afegir {category} aquí",
             "addNewMapLabel": "Afegir nou element",
             "backToSelect": "Selecciona una categoria diferent",
             "confirmButton": "Afegir una {category}<br/><div class='alert'>La teva atribució és visible per a tots</div>",
-            "confirmIntro": "<h3>Afegir {title} aquí?</h3>El punt que estàs creant <b>el veurà tothom</b>. Només afegeix coses que realment existeixin. Moltes aplicacions fan servir aquestes dades.",
+            "confirmIntro": "<h3>Afegir {title} aquí?</h3>L'element que estàs creant <b>el veurà tothom</b>. Només afegeix coses que realment existeixen. Moltes aplicacions fan servir aquestes dades.",
             "disableFilters": "Deshabilitar tots els filtres",
             "disableFiltersExplanation": "Alguns elements s'amagaran en passar un filtre",
-            "hasBeenImported": "Aquest punt ja ha estat importat",
+            "hasBeenImported": "Aquest element ja ha estat importat",
             "import": {
                 "hasBeenImported": "Aquest objecte ha estat importat",
                 "howToTest": "Per provar, afegeix <b>test=true</b> o <b>backend=osm-test</b> a l'URL. El conjunt de canvis s'imprimirà a la consola. Obre un PR per oficialitzar aquesta petició per activar realment el botó d'importació.",
@@ -69,15 +83,15 @@
             },
             "importTags": "L'element rebrà {tags}",
             "intro": "Has marcat un lloc on no coneixem les dades.<br/>",
-            "layerNotEnabled": "La capa {layer} no està habilitada. Fes-ho per poder afegir un punt a aquesta capa",
+            "layerNotEnabled": "La capa {layer} no està habilitada. Fes-ho per poder afegir un element a aquesta capa",
             "openLayerControl": "Obrir el control de capes",
-            "pleaseLogin": "Entra per afegir un nou punt",
+            "pleaseLogin": "Entra per afegir un nou element",
             "presetInfo": "El nou PDI tindrà les etiquetes {tags}",
-            "stillLoading": "Les dades es segueixen carregant. Espera una mica abans d'afegir cap punt.",
-            "title": "Vols afegir un punt?",
+            "stillLoading": "Les dades es segueixen carregant. Espera una mica abans d'afegir cap element.",
+            "title": "Vols afegir un element?",
             "warnVisibleForEveryone": "La teva contribució serà vista per tothom",
             "wrongType": "Aquest element no és un punt o una via i no pot ser importat",
-            "zoomInFurther": "Apropa per afegir un punt.",
+            "zoomInFurther": "Apropa per afegir un element.",
             "zoomInMore": "Ampliar per importar aquest element"
         },
         "apply_button": {
@@ -136,7 +150,7 @@
         "example": "Exemple",
         "examples": "Exemples",
         "feelFreeToSkip": "Podeu afegir més informació a sota, però sentiu-vos lliures de <b>botar preguntes</b> que no conegueu la resposta.",
-        "fewChangesBefore": "Contesta unes quantes preguntes sobre punts existents abans d'afegir-ne un de nou.",
+        "fewChangesBefore": "Contesta unes quantes preguntes sobre elements existents abans d'afegir-ne un de nou.",
         "getStartedLogin": "Entra a OpenStreetMap per començar",
         "getStartedNewAccount": " o <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">crea un nou compte</a>",
         "goToInbox": "Obrir missatges",
@@ -150,7 +164,7 @@
         "loading": "Carregant…",
         "loadingTheme": "Carregant {theme}…",
         "loginFailed": "Ha fallat l'entrada a OpenStreetMap",
-        "loginOnlyNeededToEdit": "Si vols ajudar a editar el mapa",
+        "loginOnlyNeededToEdit": "Si voleu fer canvis",
         "loginToStart": "Entra per contestar aquesta pregunta",
         "loginWithOpenStreetMap": "Entrar a OpenStreetMap",
         "logout": "Sortir",
@@ -161,7 +175,9 @@
             "noMatchingThemes": "Cap tema coincideix amb els teus criteris de cerca",
             "previouslyHiddenTitle": "Peticions visitades i amagades",
             "requestATheme": "Si vols que et fem una petició pròpia , demana-la al registre d'incidències",
-            "streetcomplete": "Una altra aplicació similar és <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
+            "streetcomplete": "Una altra aplicació similar és <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
+            "noSearch": "Mostra tots els temes",
+            "searchForATheme": "Busca un tema"
         },
         "nameInlineQuestion": "{category}: El seu nom és $$$",
         "newlyCreated": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
@@ -204,7 +220,7 @@
             "websiteIs": "Pàgina web: <a href=\"{website}\" target=\"_blank\">{website}</a>",
             "websiteOf": "Quina és la pàgina web de {category}?"
         },
-        "readYourMessages": "Llegeix tots els teus missatges d'OpenStreetMap abans d'afegir nous punts.",
+        "readYourMessages": "Per favor, llegeix tots els teus missatges d'OpenStreetMap abans d'afegir nous punts.",
         "removeLocationHistory": "Esborrar l'historial d'ubicació",
         "returnToTheMap": "Tornar al mapa",
         "save": "Desar",
@@ -232,7 +248,9 @@
             "fsUserbadge": "Activar el botó d'entrada",
             "fsWelcomeMessage": "Mostra el missatge emergent de benvinguda i pestanyes associades",
             "intro": "<h3>Comparteix aquest mapa</h3> Comparteix aquest mapa copiant l'enllaç de sota i enviant-lo a amics i família:",
-            "thanksForSharing": "Gràcies per compartir!"
+            "thanksForSharing": "Gràcies per compartir!",
+            "downloadCustomThemeHelp": "Un contribuïdor amb experiència pot utilitzar un arxiu per a millorar el vostre tema",
+            "downloadCustomTheme": "Descarrega la configuració per a aquest tema"
         },
         "skip": "Saltar aquesta pregunta",
         "skippedQuestions": "Has ignorat algunes preguntes",
@@ -273,7 +291,20 @@
             },
             "searchWikidata": "Cercar a Wikidata",
             "wikipediaboxTitle": "Viquipèdia"
-        }
+        },
+        "levelSelection": {
+            "addNewOnLevel": "El nou punt està localitzat al nivell {level}?",
+            "confirmLevel": "Si, afegeix {preset} al nivell {level}"
+        },
+        "error": "Algo ha anat mal",
+        "loginFailedOfflineMode": "Actualment OpenStreetMap.org no està disponible a causa d'un manteniment. Prompte serà possible fer edicions",
+        "uploadGpx": {
+            "meta": {
+                "title": "Títol i descripció",
+                "intro": "Afegeix un títol per a la teua traça:"
+            }
+        },
+        "notValid": "Selecciona un valor vàlid per a continuar"
     },
     "hotkeyDocumentation": {
         "title": "Dreceres"

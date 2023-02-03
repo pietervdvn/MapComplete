@@ -10,7 +10,6 @@ import IndexText from "./BigComponents/IndexText"
 import FeaturedMessage from "./BigComponents/FeaturedMessage"
 import { ImportViewerLinks } from "./BigComponents/UserInformation"
 import { LoginToggle } from "./Popup/LoginButton"
-import UserSurveyPanel from "./UserSurveyPanel"
 
 export default class AllThemesGui {
     setup() {
@@ -26,7 +25,6 @@ export default class AllThemesGui {
             new Combine([
                 intro,
                 new FeaturedMessage().SetClass("mb-4 block"),
-                new Combine([new UserSurveyPanel()]).SetClass("flex justify-center"),
                 new MoreScreen(state, true),
                 new LoginToggle(undefined, Translations.t.index.logIn, state),
                 new ImportViewerLinks(state.osmConnection),
