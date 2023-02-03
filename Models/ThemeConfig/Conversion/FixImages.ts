@@ -5,9 +5,12 @@ import metapaths from "../../../assets/layoutconfigmeta.json"
 import tagrenderingmetapaths from "../../../assets/questionabletagrenderingconfigmeta.json"
 import Translations from "../../../UI/i18n/Translations"
 
-export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
+export class ExtractImages extends Conversion<
+    LayoutConfigJson,
+    { path: string; context: string }[]
+> {
     private _isOfficial: boolean
-    private _sharedTagRenderings: Map<string, any>
+    private _sharedTagRenderings: Set<string>
 
     private static readonly layoutMetaPaths = metapaths.filter(
         (mp) =>
@@ -16,7 +19,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
     )
     private static readonly tagRenderingMetaPaths = tagrenderingmetapaths
 
-    constructor(isOfficial: boolean, sharedTagRenderings: Map<string, any>) {
+    constructor(isOfficial: boolean, sharedTagRenderings: Set<string>) {
         super("Extract all images from a layoutConfig using the meta paths.", [], "ExctractImages")
         this._isOfficial = isOfficial
         this._sharedTagRenderings = sharedTagRenderings
@@ -79,8 +82,8 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
     convert(
         json: LayoutConfigJson,
         context: string
-    ): { result: string[]; errors: string[]; warnings: string[] } {
-        const allFoundImages: string[] = []
+    ): { result: { path: string; context: string }[]; errors: string[]; warnings: string[] } {
+        const allFoundImages: { path: string; context: string }[] = []
         const errors = []
         const warnings = []
         for (const metapath of ExtractImages.layoutMetaPaths) {
@@ -108,7 +111,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                             continue
                         }
 
-                        allFoundImages.push(foundImage)
+                        allFoundImages.push({ path: foundImage, context: context + "." + path })
                     } else {
                         // This is a tagRendering.
                         // Either every rendered value might be an icon
@@ -137,7 +140,10 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                                                 JSON.stringify(img.leaf)
                                         )
                                     } else {
-                                        allFoundImages.push(img.leaf)
+                                        allFoundImages.push({
+                                            path: img.leaf,
+                                            context: context + "." + path,
+                                        })
                                     }
                                 }
                                 if (!allRenderedValuesAreImages && isImage) {
@@ -146,7 +152,12 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                                         ...Translations.T(
                                             img.leaf,
                                             "extract_images from " + img.path.join(".")
-                                        ).ExtractImages(false)
+                                        )
+                                            .ExtractImages(false)
+                                            .map((path) => ({
+                                                path,
+                                                context: context + "." + path,
+                                            }))
                                     )
                                 }
                             }
@@ -166,15 +177,19 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
             }
         }
 
-        const splitParts = []
-            .concat(
-                ...Utils.NoNull(allFoundImages)
-                    .map((img) => img["path"] ?? img)
-                    .map((img) => img.split(";"))
+        const cleanedImages: { path: string; context: string }[] = []
+
+        for (const foundImage of allFoundImages) {
+            // Split "circle:white;./assets/layers/.../something.svg" into ["circle", "./assets/layers/.../something.svg"]
+            const allPaths = Utils.NoNull(
+                Utils.NoEmpty(foundImage.path?.split(";")?.map((part) => part.split(":")[0]))
             )
-            .map((img) => img.split(":")[0])
-            .filter((img) => img !== "")
-        return { result: Utils.Dedup(splitParts), errors, warnings }
+            for (const path of allPaths) {
+                cleanedImages.push({ path, context: foundImage.context })
+            }
+        }
+
+        return { result: cleanedImages, errors, warnings }
     }
 }
 

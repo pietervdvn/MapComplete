@@ -15,7 +15,6 @@ import {
 import { Translation } from "../UI/i18n/Translation"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import questions from "../assets/tagRenderings/questions.json"
-import icons from "../assets/tagRenderings/icons.json"
 import PointRenderingConfigJson from "../Models/ThemeConfig/Json/PointRenderingConfigJson"
 import { PrepareLayer } from "../Models/ThemeConfig/Conversion/PrepareLayer"
 import { PrepareTheme } from "../Models/ThemeConfig/Conversion/PrepareTheme"
@@ -167,21 +166,6 @@ class LayerOverviewUtils {
             )
             dict.set(key, config)
         }
-        for (const key in icons) {
-            if (key === "id") {
-                continue
-            }
-            if (typeof icons[key] !== "object") {
-                continue
-            }
-            icons[key].id = key
-            const config = <TagRenderingConfigJson>icons[key]
-            validator.convertStrict(
-                config,
-                "generate-layer-overview:tagRenderings/icons.json:" + key
-            )
-            dict.set(key, config)
-        }
 
         dict.forEach((value, key) => {
             if (key === "id") {
@@ -251,7 +235,7 @@ class LayerOverviewUtils {
         const sharedLayers = this.buildLayerIndex(doesImageExist, forceReload)
         const recompiledThemes: string[] = []
         const sharedThemes = this.buildThemeIndex(
-            doesImageExist,
+            licensePaths,
             sharedLayers,
             recompiledThemes,
             forceReload
@@ -381,7 +365,7 @@ class LayerOverviewUtils {
     }
 
     private buildThemeIndex(
-        doesImageExist: DoesImageExist,
+        licensePaths: Set<string>,
         sharedLayers: Map<string, LayerConfigJson>,
         recompiledThemes: string[],
         forceReload: boolean
@@ -396,9 +380,26 @@ class LayerOverviewUtils {
 
         const convertState: DesugaringContext = {
             sharedLayers,
-            tagRenderings: this.getSharedTagRenderings(doesImageExist),
+            tagRenderings: this.getSharedTagRenderings(
+                new DoesImageExist(licensePaths, existsSync)
+            ),
             publicLayers,
         }
+        const knownTagRenderings = new Set<string>()
+        convertState.tagRenderings.forEach((_, key) => knownTagRenderings.add(key))
+        sharedLayers.forEach((layer) => {
+            for (const tagRendering of layer.tagRenderings ?? []) {
+                if (tagRendering["id"]) {
+                    knownTagRenderings.add(layer.id + "." + tagRendering["id"])
+                }
+                if (tagRendering["labels"]) {
+                    for (const label of tagRendering["labels"]) {
+                        knownTagRenderings.add(layer.id + "." + label)
+                    }
+                }
+            }
+        })
+
         const skippedThemes: string[] = []
         for (const themeInfo of themeFiles) {
             const themePath = themeInfo.path
@@ -433,10 +434,10 @@ class LayerOverviewUtils {
                 themeFile = new PrepareTheme(convertState).convertStrict(themeFile, themePath)
 
                 new ValidateThemeAndLayers(
-                    doesImageExist,
+                    new DoesImageExist(licensePaths, existsSync, knownTagRenderings),
                     themePath,
                     true,
-                    convertState.tagRenderings
+                    knownTagRenderings
                 ).convertStrict(themeFile, themePath)
 
                 if (themeFile.icon.endsWith(".svg")) {

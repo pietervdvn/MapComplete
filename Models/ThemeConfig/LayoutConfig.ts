@@ -82,10 +82,12 @@ export default class LayoutConfig {
         this.credits = json.credits
         this.language = json.mustHaveLanguage ?? Object.keys(json.title)
         this.usedImages = Array.from(
-            new ExtractImages(official, undefined).convertStrict(
-                json,
-                "while extracting the images of " + json.id + " " + context ?? ""
-            )
+            new ExtractImages(official, undefined)
+                .convertStrict(
+                    json,
+                    "while extracting the images of " + json.id + " " + context ?? ""
+                )
+                .map((i) => i.path)
         ).sort()
         {
             if (typeof json.title === "string") {

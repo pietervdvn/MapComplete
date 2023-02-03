@@ -59,13 +59,16 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
 
 export class DoesImageExist extends DesugaringStep<string> {
     private readonly _knownImagePaths: Set<string>
+    private readonly _ignore?: Set<string>
     private readonly doesPathExist: (path: string) => boolean = undefined
 
     constructor(
         knownImagePaths: Set<string>,
-        checkExistsSync: (path: string) => boolean = undefined
+        checkExistsSync: (path: string) => boolean = undefined,
+        ignore?: Set<string>
     ) {
         super("Checks if an image exists", [], "DoesImageExist")
+        this._ignore = ignore
         this._knownImagePaths = knownImagePaths
         this.doesPathExist = checkExistsSync
     }
@@ -74,6 +77,10 @@ export class DoesImageExist extends DesugaringStep<string> {
         image: string,
         context: string
     ): { result: string; errors?: string[]; warnings?: string[]; information?: string[] } {
+        if (this._ignore?.has(image)) {
+            return { result: image }
+        }
+
         const errors = []
         const warnings = []
         const information = []
@@ -123,20 +130,23 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
      */
     private readonly _path?: string
     private readonly _isBuiltin: boolean
-    private _sharedTagRenderings: Map<string, any>
+    //private readonly _sharedTagRenderings: Map<string, any>
     private readonly _validateImage: DesugaringStep<string>
+    private readonly _extractImages: ExtractImages = undefined
 
     constructor(
         doesImageExist: DoesImageExist,
         path: string,
         isBuiltin: boolean,
-        sharedTagRenderings: Map<string, any>
+        sharedTagRenderings?: Set<string>
     ) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateTheme")
         this._validateImage = doesImageExist
         this._path = path
         this._isBuiltin = isBuiltin
-        this._sharedTagRenderings = sharedTagRenderings
+        if (sharedTagRenderings) {
+            this._extractImages = new ExtractImages(this._isBuiltin, sharedTagRenderings)
+        }
     }
 
     convert(
@@ -168,13 +178,10 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 }
             }
         }
-        if (this._isBuiltin) {
+        if (this._isBuiltin && this._extractImages !== undefined) {
             // Check images: are they local, are the licenses there, is the theme icon square, ...
-            const images = new ExtractImages(
-                this._isBuiltin,
-                this._sharedTagRenderings
-            ).convertStrict(json, "validation")
-            const remoteImages = images.filter((img) => img.indexOf("http") == 0)
+            const images = this._extractImages.convertStrict(json, "validation")
+            const remoteImages = images.filter((img) => img.path.indexOf("http") == 0)
             for (const remoteImage of remoteImages) {
                 errors.push(
                     "Found a remote image: " +
@@ -186,8 +193,8 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             }
             for (const image of images) {
                 this._validateImage.convertJoin(
-                    image,
-                    context === undefined ? "" : ` in a layer defined in the theme ${context}`,
+                    image.path,
+                    context === undefined ? "" : ` in the theme ${context} at ${image.context}`,
                     errors,
                     warnings,
                     information
@@ -267,7 +274,7 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
         doesImageExist: DoesImageExist,
         path: string,
         isBuiltin: boolean,
-        sharedTagRenderings: Map<string, any>
+        sharedTagRenderings?: Set<string>
     ) {
         super(
             "Validates a theme and the contained layers",
@@ -878,53 +885,6 @@ export class DetectDuplicateFilters extends DesugaringStep<{
         )
     }
 
-    /**
-     * Add all filter options into 'perOsmTag'
-     */
-    private addLayerFilters(
-        layer: LayerConfigJson,
-        perOsmTag: Map<
-            string,
-            {
-                layer: LayerConfigJson
-                layout: LayoutConfigJson | undefined
-                filter: FilterConfigJson
-            }[]
-        >,
-        layout?: LayoutConfigJson | undefined
-    ): void {
-        if (layer.filter === undefined || layer.filter === null) {
-            return
-        }
-        if (layer.filter["sameAs"] !== undefined) {
-            return
-        }
-        for (const filter of <(string | FilterConfigJson)[]>layer.filter) {
-            if (typeof filter === "string") {
-                continue
-            }
-
-            if (filter["#"]?.indexOf("ignore-possible-duplicate") >= 0) {
-                continue
-            }
-
-            for (const option of filter.options) {
-                if (option.osmTags === undefined) {
-                    continue
-                }
-                const key = JSON.stringify(option.osmTags)
-                if (!perOsmTag.has(key)) {
-                    perOsmTag.set(key, [])
-                }
-                perOsmTag.get(key).push({
-                    layer,
-                    filter,
-                    layout,
-                })
-            }
-        }
-    }
-
     convert(
         json: { layers: LayerConfigJson[]; themes: LayoutConfigJson[] },
         context: string
@@ -989,6 +949,53 @@ export class DetectDuplicateFilters extends DesugaringStep<{
             errors,
             warnings,
             information,
+        }
+    }
+
+    /**
+     * Add all filter options into 'perOsmTag'
+     */
+    private addLayerFilters(
+        layer: LayerConfigJson,
+        perOsmTag: Map<
+            string,
+            {
+                layer: LayerConfigJson
+                layout: LayoutConfigJson | undefined
+                filter: FilterConfigJson
+            }[]
+        >,
+        layout?: LayoutConfigJson | undefined
+    ): void {
+        if (layer.filter === undefined || layer.filter === null) {
+            return
+        }
+        if (layer.filter["sameAs"] !== undefined) {
+            return
+        }
+        for (const filter of <(string | FilterConfigJson)[]>layer.filter) {
+            if (typeof filter === "string") {
+                continue
+            }
+
+            if (filter["#"]?.indexOf("ignore-possible-duplicate") >= 0) {
+                continue
+            }
+
+            for (const option of filter.options) {
+                if (option.osmTags === undefined) {
+                    continue
+                }
+                const key = JSON.stringify(option.osmTags)
+                if (!perOsmTag.has(key)) {
+                    perOsmTag.set(key, [])
+                }
+                perOsmTag.get(key).push({
+                    layer,
+                    filter,
+                    layout,
+                })
+            }
         }
     }
 }

@@ -143,7 +143,7 @@ describe("PrepareTheme", () => {
 describe("ExtractImages", () => {
     it("should find all images in a themefile", () => {
         const images = new Set(
-            new ExtractImages(true, new Map<string, any>()).convertStrict(<any>cyclofix, "test")
+            new ExtractImages(true, new Set<string>()).convertStrict(<any>cyclofix, "test")
         )
         const expectedValues = [
             "./assets/layers/bike_repair_station/repair_station.svg",
