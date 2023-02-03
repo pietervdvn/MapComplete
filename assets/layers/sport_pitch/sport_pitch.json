@@ -553,7 +553,7 @@
               "opening_hours~*"
             ]
           },
-          "then": "isOpen"
+          "then": "icons.isOpen"
         },
         {
           "if": {

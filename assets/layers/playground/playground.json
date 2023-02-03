@@ -578,7 +578,7 @@
               "opening_hours~*"
             ]
           },
-          "then": "isOpen"
+          "then": "icons.isOpen"
         }
       ],
       "iconSize": {

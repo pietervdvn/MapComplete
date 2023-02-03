@@ -320,7 +320,7 @@
       "iconBadges": [
         {
           "if": "opening_hours~*",
-          "then": "isOpen"
+          "then": "icons.isOpen"
         },
         {
           "if": "service:bicycle:pump=yes",
