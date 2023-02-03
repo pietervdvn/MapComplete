@@ -1,8 +1,7 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import AllImageProviders from "../../../Logic/ImageProviders/AllImageProviders"
 import { UIEventSource } from "../../../Logic/UIEventSource"
 import { Utils } from "../../../Utils"
+import { describe, expect, it } from "vitest"
 
 describe("ImageProviders", () => {
     it("should work on a variaty of inputs", () => {
@@ -16,9 +15,9 @@ describe("ImageProviders", () => {
                 if (img === undefined) {
                     throw "No image found"
                 }
-                expect(img.url).deep.equal(url)
+                expect(img.url).toEqual(url)
                 if (providerName) {
-                    expect(providerName).deep.equal(img.provider.constructor.name)
+                    expect(providerName).toEqual(img.provider.constructor.name)
                 }
                 console.log("OK")
             })

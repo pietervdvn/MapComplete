@@ -1,5 +1,5 @@
-import { describe } from "mocha"
 import { exec } from "child_process"
+import { describe, it } from "vitest"
 
 /**
  *

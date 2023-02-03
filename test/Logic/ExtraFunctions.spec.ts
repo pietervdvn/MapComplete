@@ -1,7 +1,6 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import { ExtraFuncParams, ExtraFunctions } from "../../Logic/ExtraFunctions"
 import { OsmFeature } from "../../Models/OsmFeature"
+import { describe, expect, it } from "vitest"
 
 describe("OverlapFunc", () => {
     it("should give doors on the edge", () => {
@@ -122,6 +121,6 @@ describe("OverlapFunc", () => {
         ExtraFunctions.FullPatchFeature(params, hermanTeirlinck)
         const overlap = (<any>hermanTeirlinck).overlapWith("*")
         console.log(JSON.stringify(overlap))
-        expect(overlap[0].feat == door).true
+        expect(overlap[0].feat == door).toBe(true)
     })
 })

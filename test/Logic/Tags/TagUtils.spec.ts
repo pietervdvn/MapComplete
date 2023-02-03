@@ -1,12 +1,12 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import { TagUtils } from "../../../Logic/Tags/TagUtils"
 import { equal } from "assert"
+import { describe, expect, it } from "vitest"
+
 
 describe("TagUtils", () => {
     describe("ParseTag", () => {
         it("should refuse a key!=* tag", () => {
-            expect(() => TagUtils.Tag("key!=*")).to.throw()
+            expect(() => TagUtils.Tag("key!=*")).toThrowError()
         })
 
         it("should handle compare tag <=5", () => {
@@ -42,8 +42,8 @@ describe("TagUtils", () => {
 
         it("should handle date comparison tags", () => {
             const filter = TagUtils.Tag("date_created<2022-01-07")
-            expect(filter.matchesProperties({ date_created: "2022-01-08" })).false
-            expect(filter.matchesProperties({ date_created: "2022-01-01" })).true
+            expect(filter.matchesProperties({ date_created: "2022-01-08" })).toBe(false)
+            expect(filter.matchesProperties({ date_created: "2022-01-01" })).toBe(true)
         })
     })
 })

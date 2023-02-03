@@ -1,10 +1,9 @@
-import { describe } from "mocha"
 import { TagRenderingConfigJson } from "../../../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
 import TagRenderingQuestion from "../../../UI/Popup/TagRenderingQuestion"
 import { UIEventSource } from "../../../Logic/UIEventSource"
-import { expect } from "chai"
 import Locale from "../../../UI/i18n/Locale"
+import { describe, expect, it } from "vitest"
 
 describe("TagRenderingQuestion", () => {
     it("should have a freeform text field with the user defined placeholder", () => {
@@ -21,7 +20,7 @@ describe("TagRenderingQuestion", () => {
         const config = new TagRenderingConfig(configJson, "test")
         const ui = new TagRenderingQuestion(new UIEventSource<any>({}), config)
         const html = ui.ConstructElement()
-        expect(html.getElementsByTagName("input")[0]["placeholder"]).eq(
+        expect(html.getElementsByTagName("input")[0]["placeholder"]).toBe(
             "Some user defined placeholder"
         )
     })
@@ -40,7 +39,7 @@ describe("TagRenderingQuestion", () => {
         const config = new TagRenderingConfig(configJson, "test")
         const ui = new TagRenderingQuestion(new UIEventSource<any>({}), config)
         const html = ui.ConstructElement()
-        expect(html.getElementsByTagName("input")[0]["placeholder"]).eq(
+        expect(html.getElementsByTagName("input")[0]["placeholder"]).toBe(
             "capacity (a positive, whole number)"
         )
     })

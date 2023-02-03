@@ -1,5 +1,3 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import { LayoutConfigJson } from "../../../../Models/ThemeConfig/Json/LayoutConfigJson"
 import { LayerConfigJson } from "../../../../Models/ThemeConfig/Json/LayerConfigJson"
 import { PrepareTheme } from "../../../../Models/ThemeConfig/Conversion/PrepareTheme"
@@ -12,6 +10,7 @@ import * as cyclofix from "../../../../assets/generated/themes/cyclofix.json"
 import { Tag } from "../../../../Logic/Tags/Tag"
 import { DesugaringContext } from "../../../../Models/ThemeConfig/Conversion/Conversion"
 import { And } from "../../../../Logic/Tags/And"
+import { describe, expect, it } from "vitest"
 
 const themeConfigJson: LayoutConfigJson = {
     description: "Descr",
@@ -49,7 +48,7 @@ describe("PrepareTheme", () => {
         const layerUnderTest = <LayerConfig>(
             themeConfig.layers.find((l) => l.id === "public_bookcase")
         )
-        expect(layerUnderTest.source.osmTags).deep.eq(
+        expect(layerUnderTest.source.osmTags).toEqual(
             new And([new Tag("amenity", "public_bookcase")])
         )
     })
@@ -65,7 +64,7 @@ describe("PrepareTheme", () => {
         const layerUnderTest = <LayerConfig>(
             themeConfig.layers.find((l) => l.id === "public_bookcase")
         )
-        expect(layerUnderTest.source.geojsonSource).eq("xyz")
+        expect(layerUnderTest.source.geojsonSource).toBe("xyz")
     })
 
     it("should apply override", () => {
@@ -85,7 +84,7 @@ describe("PrepareTheme", () => {
         const layerUnderTest = <LayerConfig>(
             themeConfig.layers.find((l) => l.id === "public_bookcase")
         )
-        expect(layerUnderTest.source.geojsonSource).eq("https://example.com/data.geojson")
+        expect(layerUnderTest.source.geojsonSource).toBe("https://example.com/data.geojson")
     })
 
     it("should remove names which are overriden with null", () => {
@@ -126,8 +125,8 @@ describe("PrepareTheme", () => {
         const rewritten = new PrepareTheme(ctx, {
             skipDefaultLayers: true,
         }).convertStrict(layout, "test")
-        expect(rewritten.layers[0]).deep.eq(testLayer)
-        expect(rewritten.layers[1]).deep.eq({
+        expect(rewritten.layers[0]).toEqual(testLayer)
+        expect(rewritten.layers[1]).toEqual({
             source: {
                 osmTags: "x=y",
             },
@@ -158,7 +157,7 @@ describe("ExtractImages", () => {
             "close",
         ]
         for (const expected of expectedValues) {
-            expect(images).contains(expected)
+            expect(images).toEqual(expect.arrayContaining([expected]))
         }
     })
 })
