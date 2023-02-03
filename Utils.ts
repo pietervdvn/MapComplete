@@ -268,8 +268,19 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return hist
     }
 
+    /**
+     * Removes all empty strings from this list
+     * If undefined or null is given, an empty list is returned
+     *
+     * Utils.NoEmpty(undefined) // => []
+     * Utils.NoEmpty(["abc","","def", null]) // => ["abc","def", null]
+     *
+     */
     public static NoEmpty(array: string[]): string[] {
         const ls: string[] = []
+        if(!array){
+            return ls
+        }
         for (const t of array) {
             if (t === "") {
                 continue
