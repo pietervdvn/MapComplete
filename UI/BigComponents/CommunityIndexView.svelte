@@ -7,7 +7,7 @@
   import { GeoOperations } from "../../Logic/GeoOperations"
   import Translations from "../i18n/Translations"
   import ToSvelte from "../Base/ToSvelte.svelte"
-  import { Feature, Geometry, GeometryCollection } from "@turf/turf"
+  import type { Feature, Geometry, GeometryCollection } from "@turf/turf"
 
   export let locationControl: Store<{ lat: number; lon: number }>
   const tileToFetch: Store<string> = locationControl.mapD((l) => {
