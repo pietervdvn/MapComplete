@@ -102,6 +102,7 @@
     "tailwindcss": "^3.1.8",
     "togpx": "^0.5.4",
     "vite-node": "^0.28.3",
+    "vitest": "^0.28.3",
     "wikibase-sdk": "^7.14.0",
     "wikidata-sdk": "^7.14.0",
     "xml2js": "^0.4.23"
