@@ -5,14 +5,14 @@
   import Img from "./Img"
   import Translations from "../i18n/Translations"
 
-  export let imageUrl: string | BaseUIElement
-  export let message: string | BaseUIElement
+  export let imageUrl: string | BaseUIElement = undefined
+  export let message: string | BaseUIElement = undefined
   export let options: {
     url?: string | Store<string>
     newTab?: boolean
     imgSize?: string
     extraClasses?: string
-  }
+  } = {}
 
   let href = typeof options?.url == "string" ? options.url : ""
 
@@ -27,7 +27,7 @@
     }
 
     // Image
-    if (imgElem != undefined) {
+    if (imgElem && imageUrl) {
       let img: BaseUIElement
 
       const imgClasses = "block justify-center flex-none mr-4 " + (options?.imgSize ?? "h-11 w-11")
@@ -43,7 +43,7 @@
     }
 
     // Message
-    if (msgElem != undefined) {
+    if (msgElem && message) {
       let msg = Translations.W(message)?.SetClass("block text-ellipsis no-images flex-shrink")
       msgElem.replaceWith(msg.ConstructElement())
     }
@@ -73,6 +73,10 @@
 
     :global(img) {
       @apply block justify-center flex-none mr-4 h-11 w-11;
+    }
+
+    :global(span) {
+      @apply block text-ellipsis flex-shrink;
     }
   }
 </style>
