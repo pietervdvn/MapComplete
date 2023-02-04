@@ -118,6 +118,7 @@ export default class SimpleMetaTaggers {
             /*Note: also called by 'UpdateTagsFromOsmAPI'*/
 
             const tgs = feature.properties
+            let movedSomething = false;
 
             function move(src: string, target: string) {
                 if (tgs[src] === undefined) {
@@ -125,6 +126,7 @@ export default class SimpleMetaTaggers {
                 }
                 tgs[target] = tgs[src]
                 delete tgs[src]
+                movedSomething = true
             }
 
             move("user", "_last_edit:contributor")
@@ -132,7 +134,7 @@ export default class SimpleMetaTaggers {
             move("changeset", "_last_edit:changeset")
             move("timestamp", "_last_edit:timestamp")
             move("version", "_version_number")
-            return true
+            return movedSomething
         }
     )
     public static country = new CountryTagger()
