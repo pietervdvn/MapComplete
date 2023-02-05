@@ -463,7 +463,8 @@
           "then": {
             "en": "Always accessible",
             "nl": "24/7 toegankelijk",
-            "de": "Immer zugänglich"
+            "de": "Immer zugänglich",
+            "ca": "Sempre accesible"
           },
           "hideInAnswer": true
         },

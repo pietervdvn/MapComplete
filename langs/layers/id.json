@@ -404,6 +404,17 @@
             "render": "Kantor Pos"
         }
     },
+    "recycling": {
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Hanya akses publik"
+                    }
+                }
+            }
+        }
+    },
     "tree_node": {
         "presets": {
             "2": {

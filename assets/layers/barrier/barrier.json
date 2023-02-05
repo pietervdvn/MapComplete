@@ -343,7 +343,8 @@
             "fr": "Simple, deux barrières côte à côte",
             "es": "Simple, simplemente dos barreras con un espacio en el medio",
             "da": "Enkelt, kun to barrierer med et mellemrum",
-            "cs": "Jednoduchý, jen dvě překážky s mezerou mezi nimi"
+            "cs": "Jednoduchý, jen dvě překážky s mezerou mezi nimi",
+            "ca": "Simple, simplement dos barreres amb un espai al mig"
           },
           "icon": {
             "path": "./assets/themes/cycle_infra/Cycle_barrier_single.png",

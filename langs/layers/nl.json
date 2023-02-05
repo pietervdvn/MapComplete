@@ -2943,6 +2943,16 @@
                 },
                 "question": "Is dit een zebrapad?"
             },
+            "crossing-minimap": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit verkeerlicht heeft een voelkaart die de indeling van de oversteekplaats laat zien."
+                    },
+                    "1": {
+                        "then": "Dit verkeerlicht heeft <b>geen</b> voelkaart die de indeling van de oversteekplaats laat zien."
+                    }
+                }
+            },
             "crossing-right-turn-through-red": {
                 "mappings": {
                     "0": {
@@ -3007,24 +3017,14 @@
             },
             "crossing-vibration": {
                 "mappings": {
-                    "1": {
-                        "then": "De knop bij dit verkeerslicht kan <b>niet</b> trillen om aan te geven dat men veilig kan oversteken."
-                    },
                     "0": {
                         "then": "De knop bij dit verkeerslicht trilt om aan te geven dat men veilig kan oversteken."
+                    },
+                    "1": {
+                        "then": "De knop bij dit verkeerslicht kan <b>niet</b> trillen om aan te geven dat men veilig kan oversteken."
                     }
                 },
                 "question": "Heeft dit verkeerslicht een element dat trilt om te helpen bij het oversteken? (meestal onderaan de oversteekknop geplaatst)"
-            },
-            "crossing-minimap": {
-                "mappings": {
-                    "0": {
-                        "then": "Dit verkeerlicht heeft een voelkaart die de indeling van de oversteekplaats laat zien."
-                    },
-                    "1": {
-                        "then": "Dit verkeerlicht heeft <b>geen</b> voelkaart die de indeling van de oversteekplaats laat zien."
-                    }
-                }
             }
         },
         "title": {
@@ -5756,6 +5756,32 @@
             "render": "Parkeerplek"
         }
     },
+    "parking_ticket_machine": {
+        "description": "Laag met parkeerkaartautomaten om voor parkeren te betalen.",
+        "name": "Parkeerkaartautomaten",
+        "presets": {
+            "0": {
+                "title": "een parkeerkaartautomaat"
+            }
+        },
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Referentienummer"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze parkeerkaartautomaat heeft geen referentienummer"
+                    }
+                },
+                "question": "Wat is het referentienummer van deze parkeerkaartautomaat?",
+                "render": "Deze parkeerkaartautomaat heeft het referentienummer {ref}"
+            }
+        },
+        "title": {
+            "render": "Parkeerkaartautomaat"
+        }
+    },
     "pedestrian_path": {
         "description": "Pad voor voetgangers, in het bijzonder gebruikt voor navigatie binnen gebouwen en om aan toegangen vast te klikken in deze laag",
         "name": "Pad voor voetgangers"
@@ -6330,6 +6356,13 @@
                         "question": "Recycling van restafval"
                     }
                 }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Enkel publiek toegankelijke afvalcontainers"
+                    }
+                }
             }
         },
         "name": "Recycling",
@@ -6342,6 +6375,21 @@
             }
         },
         "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Iedereen mag deze recyclingfaciliteit gebruiken"
+                    },
+                    "1": {
+                        "then": "Enkel bewoners kunnen deze recyclingfaciliteit gebruiken"
+                    },
+                    "2": {
+                        "then": "Deze recyclingfaciliteit is alleen voor privégebruik"
+                    }
+                },
+                "question": "Wie kan deze recyclingfaciliteit gebruiken?",
+                "render": "Deze recyclingfaciliteit kan gebruikt worden door {access}"
+            },
             "container-location": {
                 "mappings": {
                     "0": {

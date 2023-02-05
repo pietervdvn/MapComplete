@@ -43,13 +43,14 @@
         "callToAction": "Prova'l a mapcomplete.osm.be",
         "cyclofix": "A CycloFix hi han mManxes, estacions de reparacions, fonts d'aigua i botigues per a ciclistes",
         "description": "Un full de mà A4-apaisat per a promocionar MapComplete",
+        "examples": "Hi han molts mapes temàtics disponibles, el quals alguns estan disponibles aquí.\n\nHi han molts mapes temàtics en línea: sobre salut, navegació interior, accessibilitat per a cadires de rodes, instal·lacions per a residus, prestageries públiques, creuaments per vianants pitnats amb l'arc de Sant Martí, ... Descobreix-los tots a mapcomplete.osm.be",
         "fakeui": {
             "add_images": "Afegeix imatges amb pocs clics",
-            "see_images": "Mostra imatges de contribuïdors anteriors, Wikipedia, Mapillary, ... ",
-            "wikipedia": "Es mostren articles de Wikipedia enllaçats",
             "attributes": "Mostra els atributs d'una manera amigable",
             "edit": "Informació incorrecta o desactualitzada? El botó d'editar està just aquí",
-            "question": "Si encara no es coneix cap atribut, MapCpomplete mostrarà una pregunta"
+            "question": "Si encara no es coneix cap atribut, MapCpomplete mostrarà una pregunta",
+            "see_images": "Mostra imatges de contribuïdors anteriors, Wikipedia, Mapillary, ... ",
+            "wikipedia": "Es mostren articles de Wikipedia enllaçats"
         },
         "mapcomplete": {
             "li0": "Mostra on estan els PDI",
@@ -58,8 +59,7 @@
             "title": "Que és MapComplete?"
         },
         "title": "MapComplete.osm.be",
-        "whatIsOsm": "Que és OpenStreetMap?",
-        "examples": "Hi han molts mapes temàtics disponibles, el quals alguns estan disponibles aquí.\n\nHi han molts mapes temàtics en línea: sobre salut, navegació interior, accessibilitat per a cadires de rodes, instal·lacions per a residus, prestageries públiques, creuaments per vianants pitnats amb l'arc de Sant Martí, ... Descobreix-los tots a mapcomplete.osm.be"
+        "whatIsOsm": "Que és OpenStreetMap?"
     },
     "general": {
         "about": "Edita facilment i afegeix punts a OpenStreetMap d'una petició determinada",
@@ -147,6 +147,7 @@
             "title": "Baixar dades visibles",
             "uploadGpx": "Pujar la teva traça a OpenStreetMap"
         },
+        "error": "Algo ha anat mal",
         "example": "Exemple",
         "examples": "Exemples",
         "feelFreeToSkip": "Podeu afegir més informació a sota, però sentiu-vos lliures de <b>botar preguntes</b> que no conegueu la resposta.",
@@ -161,9 +162,14 @@
             "title": "Seleccionar capes",
             "zoomInToSeeThisLayer": "Amplia per veure aquesta capa"
         },
+        "levelSelection": {
+            "addNewOnLevel": "El nou punt està localitzat al nivell {level}?",
+            "confirmLevel": "Si, afegeix {preset} al nivell {level}"
+        },
         "loading": "Carregant…",
         "loadingTheme": "Carregant {theme}…",
         "loginFailed": "Ha fallat l'entrada a OpenStreetMap",
+        "loginFailedOfflineMode": "Actualment OpenStreetMap.org no està disponible a causa d'un manteniment. Prompte serà possible fer edicions",
         "loginOnlyNeededToEdit": "Si voleu fer canvis",
         "loginToStart": "Entra per contestar aquesta pregunta",
         "loginWithOpenStreetMap": "Entrar a OpenStreetMap",
@@ -173,17 +179,18 @@
             "hiddenExplanation": "Aquestes peticions només funcionen amb l'enllaç. Has descobert {hidden_discovered} de {total_hidden} peticions amagades.",
             "intro": "<h3>Més mapes temàtics?</h3>T'agrada captar dades? <br/>Hi ha més temes disponibles.",
             "noMatchingThemes": "Cap tema coincideix amb els teus criteris de cerca",
+            "noSearch": "Mostra tots els temes",
             "previouslyHiddenTitle": "Peticions visitades i amagades",
             "requestATheme": "Si vols que et fem una petició pròpia , demana-la al registre d'incidències",
-            "streetcomplete": "Una altra aplicació similar és <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>.",
-            "noSearch": "Mostra tots els temes",
-            "searchForATheme": "Busca un tema"
+            "searchForATheme": "Busca un tema",
+            "streetcomplete": "Una altra aplicació similar és <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "{category}: El seu nom és $$$",
         "newlyCreated": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
         "next": "Següent",
         "noNameCategory": "{category} sense nom",
         "noTagsSelected": "No s'han seleccionat etiquetes",
+        "notValid": "Selecciona un valor vàlid per a continuar",
         "number": "nombre",
         "oneSkippedQuestion": "Has ignorat una pregunta",
         "openStreetMapIntro": "<h3>Un mapa obert</h3><p>Un que tothom pogués utilitzar i editar lliurement. Un sol lloc on emmagatzemar tota la informació geogràfica. Llavors tots aquests llocs web amb mapes diferents petits i incompatibles (que sempre estaran desactualitzats) ja no serien necessaris.<p></p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> no és el mapa de l'enemic. Les dades del mapa es poden utilitzar gratuïtament (amb <a href='https://osm.org/copyright' target='_blank'> atribució i publicació de canvis en aquestes dades</a>). A més a més, tothom pot agregar lliurement noves dades i corregir errors. Aquest lloc web també fa servir OpenStreetMap. Totes les dades provenen d'allà i les teves respostes i correccions també s'afegiran allà.</p><p>Moltes persones i aplicacions ja utilitzen OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, però també els mapes de Facebook, Instagram, Apple i Bing són (en part) impulsats per OpenStreetMap .</p>",
@@ -234,6 +241,8 @@
         "sharescreen": {
             "addToHomeScreen": "<h3>Afegir-lo a la pantalla d'inici</h3>Pots afegir aquesta web a la pantalla d'inici del teu smartphone per a que es vegi més nadiu. Apreta al botó 'Afegir a l'inici' a la barra d'adreces URL per fer-ho.",
             "copiedToClipboard": "Enllaç copiat al portapapers",
+            "downloadCustomTheme": "Descarrega la configuració per a aquest tema",
+            "downloadCustomThemeHelp": "Un contribuïdor amb experiència pot utilitzar un arxiu per a millorar el vostre tema",
             "editThemeDescription": "Afegir o canviar preguntes d'aquesta petició",
             "editThisTheme": "Editar aquest repte",
             "embedIntro": "<h3>Inclou-ho a la teva pàgina web</h3>Per favor, inclou aquest mapa dins de la teva pàgina web. <br/>T'animem a que ho facis, no cal que demanis permís. <br/> És gratuït, i sempre ho serà. A més gent que ho faci servir més valuós serà.",
@@ -248,13 +257,17 @@
             "fsUserbadge": "Activar el botó d'entrada",
             "fsWelcomeMessage": "Mostra el missatge emergent de benvinguda i pestanyes associades",
             "intro": "<h3>Comparteix aquest mapa</h3> Comparteix aquest mapa copiant l'enllaç de sota i enviant-lo a amics i família:",
-            "thanksForSharing": "Gràcies per compartir!",
-            "downloadCustomThemeHelp": "Un contribuïdor amb experiència pot utilitzar un arxiu per a millorar el vostre tema",
-            "downloadCustomTheme": "Descarrega la configuració per a aquest tema"
+            "thanksForSharing": "Gràcies per compartir!"
         },
         "skip": "Saltar aquesta pregunta",
         "skippedQuestions": "Has ignorat algunes preguntes",
         "testing": "Proves - Els canvis no es desaran",
+        "uploadGpx": {
+            "meta": {
+                "intro": "Afegeix un títol per a la teua traça:",
+                "title": "Títol i descripció"
+            }
+        },
         "weekdays": {
             "abbreviations": {
                 "friday": "Div",
@@ -291,20 +304,7 @@
             },
             "searchWikidata": "Cercar a Wikidata",
             "wikipediaboxTitle": "Viquipèdia"
-        },
-        "levelSelection": {
-            "addNewOnLevel": "El nou punt està localitzat al nivell {level}?",
-            "confirmLevel": "Si, afegeix {preset} al nivell {level}"
-        },
-        "error": "Algo ha anat mal",
-        "loginFailedOfflineMode": "Actualment OpenStreetMap.org no està disponible a causa d'un manteniment. Prompte serà possible fer edicions",
-        "uploadGpx": {
-            "meta": {
-                "title": "Títol i descripció",
-                "intro": "Afegeix un títol per a la teua traça:"
-            }
-        },
-        "notValid": "Selecciona un valor vàlid per a continuar"
+        }
     },
     "hotkeyDocumentation": {
         "title": "Dreceres"

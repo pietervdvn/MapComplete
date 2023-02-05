@@ -219,7 +219,8 @@
         "nl": "Dit gebied heet {name}",
         "en": "This area is named {name}",
         "de": "Dieses Gebiet heißt {name}",
-        "es": "Esta área se llama {name}"
+        "es": "Esta área se llama {name}",
+        "ca": ""
       },
       "question": {
         "nl": "Wat is de naam van dit gebied?",
@@ -408,7 +409,8 @@
         "it": "Area: {_surface:ha} ha",
         "fr": "Superficie : {_surface:ha}&nbsp;ha",
         "de": "Grundfläche: {_surface:ha}ha",
-        "es": "Superficie: {_surface:ha}Ha"
+        "es": "Superficie: {_surface:ha}Ha",
+        "ca": "Superfície: {_surface:ha}Ha"
       },
       "condition": "_surface:ha!=0",
       "id": "Surface area"

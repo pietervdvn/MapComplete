@@ -139,23 +139,23 @@
                 "question": "Hi ha un lloc web amb més informació sobre aquesta obra d'art?",
                 "render": "Més informació a <a href='{website}' target='_blank'>aquesta pàgina web</a>"
             },
+            "artwork_subject": {
+                "question": "Què representa aquesta obra d'art?",
+                "render": "Aquesta obra d'art representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+            },
             "doubles_as_bench": {
-                "question": "Aquesta obra d'art serveix com a un banc?",
                 "mappings": {
-                    "1": {
-                        "then": "Aquesta obra d'art no serveix com a banc"
-                    },
                     "0": {
                         "then": "Aquesta obra d'art també serveix com a banc"
+                    },
+                    "1": {
+                        "then": "Aquesta obra d'art no serveix com a banc"
                     },
                     "2": {
                         "then": "Aquesta obra d'art no serveix com a un banc"
                     }
-                }
-            },
-            "artwork_subject": {
-                "question": "Què representa aquesta obra d'art?",
-                "render": "Aquesta obra d'art representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+                },
+                "question": "Aquesta obra d'art serveix com a un banc?"
             }
         },
         "title": {
@@ -169,6 +169,15 @@
     },
     "atm": {
         "description": "Caixers automàtics per a retirar diners",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Amb sortida de veu"
+                    }
+                }
+            }
+        },
         "name": "Caixers Automàtics",
         "presets": {
             "0": {
@@ -177,10 +186,10 @@
         },
         "tagRenderings": {
             "brand": {
-                "question": "De quina marca és aquest caixer?",
                 "freeform": {
                     "placeholder": "Nom de la marca"
                 },
+                "question": "De quina marca és aquest caixer?",
                 "render": "La marca d'aquest caixer és {brand}"
             },
             "cash_in": {
@@ -214,6 +223,13 @@
             "name": {
                 "render": "El nom d'aquest caixer és {name}"
             },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Operador"
+                },
+                "question": "Quina companyia opera aquest caixer?",
+                "render": "{operator} opera aquest caixer"
+            },
             "speech_output": {
                 "mappings": {
                     "0": {
@@ -228,31 +244,15 @@
             "speech_output_language": {
                 "render": {
                     "special": {
-                        "render_single_language": "Aquest caixer té sortida de veu en {language():font-bold}",
                         "question": "En quins idiomes té sortida de veu aquest caixer?",
-                        "render_list_item": "Aquest caixer té sortida de veu en {language():font-bold}"
+                        "render_list_item": "Aquest caixer té sortida de veu en {language():font-bold}",
+                        "render_single_language": "Aquest caixer té sortida de veu en {language():font-bold}"
                     }
-                }
-            },
-            "operator": {
-                "render": "{operator} opera aquest caixer",
-                "question": "Quina companyia opera aquest caixer?",
-                "freeform": {
-                    "placeholder": "Operador"
                 }
             }
         },
         "title": {
             "render": "Caixer Automàtic"
-        },
-        "filter": {
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Amb sortida de veu"
-                    }
-                }
-            }
         }
     },
     "bank": {
@@ -294,6 +294,13 @@
                     }
                 }
             },
+            "Cycle barrier type": {
+                "mappings": {
+                    "0": {
+                        "then": "Simple, simplement dos barreres amb un espai al mig"
+                    }
+                }
+            },
             "MaxWidth": {
                 "question": "Com d'ample és el buit que queda als costats de la barrera?"
             },
@@ -311,13 +318,6 @@
                     },
                     "1": {
                         "then": "Un ciclista pot passar-hi."
-                    }
-                }
-            },
-            "Cycle barrier type": {
-                "mappings": {
-                    "0": {
-                        "then": "Simple, simplement dos barreres amb un espai al mig"
                     }
                 }
             }
@@ -1128,6 +1128,49 @@
     "cycleways_and_roads": {
         "description": "Totes les infraestructures per les quals algú pot ciclar, acompanyades de preguntes sobre aquesta infraestructura",
         "tagRenderings": {
+            "Maxspeed (for road)": {
+                "mappings": {
+                    "4": {
+                        "then": "La velocitat màxima és de 90km/h"
+                    }
+                },
+                "question": "Quina és la velocitat màxima a aquest carrer?",
+                "render": "La velocitat màxima a aquesta carretera és {maxspeed} km/h"
+            },
+            "Surface of the road": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquest carril bici està pavimentat"
+                    },
+                    "2": {
+                        "then": "Aquest carril bici està fet d'asfalt"
+                    },
+                    "4": {
+                        "then": "Aquest carril bici està fet de formigó"
+                    },
+                    "8": {
+                        "then": "Aquest carril bici està fet de fusta"
+                    }
+                },
+                "question": "De què està feta la superfície d'aquest carrer?",
+                "render": "Aquesta carretera està feta de {surface}"
+            },
+            "Surface of the street": {
+                "mappings": {
+                    "0": {
+                        "then": "Utilitzable per rodets: patins en línia, monopatí"
+                    },
+                    "1": {
+                        "then": "Utilitzable per rodes fines: bicicletes de carrera"
+                    },
+                    "2": {
+                        "then": "Utilitzable per rodes normals: Bicicletes de ciutat, cadires de rodes, scooter"
+                    },
+                    "3": {
+                        "then": "Utilitzable per rodes robustes; Bicicleta de treking, cotxes, bicitaxi"
+                    }
+                }
+            },
             "cycleway-lane-track-traffic-signs": {
                 "mappings": {
                     "0": {
@@ -1156,49 +1199,6 @@
                         "then": "Via ciclista obligatòria"
                     }
                 }
-            },
-            "Surface of the street": {
-                "mappings": {
-                    "0": {
-                        "then": "Utilitzable per rodets: patins en línia, monopatí"
-                    },
-                    "1": {
-                        "then": "Utilitzable per rodes fines: bicicletes de carrera"
-                    },
-                    "2": {
-                        "then": "Utilitzable per rodes normals: Bicicletes de ciutat, cadires de rodes, scooter"
-                    },
-                    "3": {
-                        "then": "Utilitzable per rodes robustes; Bicicleta de treking, cotxes, bicitaxi"
-                    }
-                }
-            },
-            "Surface of the road": {
-                "mappings": {
-                    "8": {
-                        "then": "Aquest carril bici està fet de fusta"
-                    },
-                    "2": {
-                        "then": "Aquest carril bici està fet d'asfalt"
-                    },
-                    "4": {
-                        "then": "Aquest carril bici està fet de formigó"
-                    },
-                    "1": {
-                        "then": "Aquest carril bici està pavimentat"
-                    }
-                },
-                "question": "De què està feta la superfície d'aquest carrer?",
-                "render": "Aquesta carretera està feta de {surface}"
-            },
-            "Maxspeed (for road)": {
-                "question": "Quina és la velocitat màxima a aquest carrer?",
-                "mappings": {
-                    "4": {
-                        "then": "La velocitat màxima és de 90km/h"
-                    }
-                },
-                "render": "La velocitat màxima a aquesta carretera és {maxspeed} km/h"
             }
         },
         "title": {
@@ -1411,6 +1411,7 @@
         }
     },
     "fire_station": {
+        "description": "Capa del mapa que mostra els parcs de bombers.",
         "name": "Mapa de parcs de bombers",
         "presets": {
             "0": {
@@ -1455,8 +1456,11 @@
         },
         "title": {
             "render": "Parc de bombers"
-        },
-        "description": "Capa del mapa que mostra els parcs de bombers."
+        }
+    },
+    "fitness_centre": {
+        "description": "Capa que mostra centres de fitnes o gimnasos",
+        "name": "Centre de fitnes o gimnàs"
     },
     "food": {
         "presets": {
@@ -1764,9 +1768,7 @@
             "Email": {
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
-            "Name tag": {
-                "render": ""
-            },
+            "Name tag": {},
             "Surface area": {
                 "render": "Superfície: {_surface:ha}Ha"
             }
@@ -2409,6 +2411,13 @@
             "sport_pitch-email": {
                 "question": "Quina és l'adreça de correu electrònic de l'operador?"
             },
+            "sport_pitch-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Sempre accesible"
+                    }
+                }
+            },
             "sport_pitch-phone": {
                 "question": "Quin és el telèfon de l'operadora?"
             },
@@ -2428,13 +2437,6 @@
                     },
                     "4": {
                         "then": "La superfície és <b>formigó</b>"
-                    }
-                }
-            },
-            "sport_pitch-opening_hours": {
-                "mappings": {
-                    "0": {
-                        "then": "Sempre accesible"
                     }
                 }
             }
@@ -2823,6 +2825,13 @@
                 },
                 "question": "Aquesta parada té una paperera?"
             },
+            "departures_board": {
+                "mappings": {
+                    "2": {
+                        "then": "Aquesta parada té un tauló amb els horaris en temps real"
+                    }
+                }
+            },
             "lit": {
                 "mappings": {
                     "0": {
@@ -2864,13 +2873,6 @@
                     }
                 },
                 "question": "Aquesta parada té una superfície podotàctil?"
-            },
-            "departures_board": {
-                "mappings": {
-                    "2": {
-                        "then": "Aquesta parada té un tauló amb els horaris en temps real"
-                    }
-                }
             }
         }
     },
@@ -3014,9 +3016,5 @@
                 }
             }
         }
-    },
-    "fitness_centre": {
-        "description": "Capa que mostra centres de fitnes o gimnasos",
-        "name": "Centre de fitnes o gimnàs"
     }
 }

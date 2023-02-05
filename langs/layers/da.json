@@ -2065,6 +2065,17 @@
     "gps_track": {
         "name": "Dit tilbagelagte spor"
     },
+    "recycling": {
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Kun offentlig adgang"
+                    }
+                }
+            }
+        }
+    },
     "surveillance_camera": {
         "tagRenderings": {
             "Surveillance type: public, outdoor, indoor": {

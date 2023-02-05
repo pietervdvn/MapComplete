@@ -5,7 +5,8 @@
     "cs": "Změny provedené pomocí MapComplete",
     "de": "Mit MapComplete vorgenommene Änderungen",
     "nb_NO": "Endringer laget med MapComplete",
-    "nl": "Wijzigingen gemaakt met MapComplete"
+    "nl": "Wijzigingen gemaakt met MapComplete",
+    "fr": "Changements faits avec MapComplete"
   },
   "shortDescription": {
     "en": "Shows changes made by MapComplete",
@@ -50,7 +51,8 @@
           "en": "Changeset for {theme}",
           "de": "Änderungssatz für {theme}",
           "nb_NO": "Endringssett for {theme}",
-          "nl": "Changeset voor {theme}"
+          "nl": "Changeset voor {theme}",
+          "fr": "Groupe de modifications pour {theme}"
         }
       },
       "description": {
@@ -68,7 +70,8 @@
             "en": "Changeset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
             "de": "Änderungssatz <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
             "nb_NO": "Endringssett <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
-            "nl": "Wijzigingenset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+            "nl": "Wijzigingenset <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>",
+            "fr": "Groupe de modifications <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
           }
         },
         {
@@ -98,7 +101,8 @@
             "en": "What theme was used to make this change?",
             "de": "Welches Thema wurde für diese Änderung verwendet?",
             "nb_NO": "Hvilket tema ble brukt for å utføre denne denne endringen?",
-            "nl": "Welk thema is gebruikt voor deze wijziging?"
+            "nl": "Welk thema is gebruikt voor deze wijziging?",
+            "fr": "Quel thème a été utilisé pour faire cette modification ?"
           },
           "freeform": {
             "key": "theme"
@@ -107,7 +111,8 @@
             "en": "Change with theme <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
             "de": "Geändert mit Thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
             "nb_NO": "Endre med temaet <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
-            "nl": "Wijziging met thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+            "nl": "Wijziging met thema <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>",
+            "fr": "Modifié avec le thème <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
           }
         },
         {
@@ -629,7 +634,8 @@
                 "en": "Changeset added at least one image",
                 "de": "Im Änderungssatz wurde mindestens ein Bild hinzugefügt",
                 "nb_NO": "Endringssett la til minst ett bilde",
-                "nl": "Changeset die een of meerdere afbeeldingen toevoegt"
+                "nl": "Changeset die een of meerdere afbeeldingen toevoegt",
+                "fr": "Le groupe de modifications a ajouté au moins une image"
               }
             }
           ]
@@ -648,7 +654,8 @@
               "cs": "Další statistiky najdete na <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>.</a>",
               "de": "Weitere Statistiken <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a>",
               "nb_NO": "Mer statistikk å finne <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>her</a>",
-              "nl": "Meer statistieken zijn <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a> te vinden"
+              "nl": "Meer statistieken zijn <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>hier</a> te vinden",
+              "fr": "D’autres statistiques sont disponibles <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>ici</a>"
             }
           },
           {

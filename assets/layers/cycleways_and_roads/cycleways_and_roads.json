@@ -398,7 +398,8 @@
         "de": "Die Höchstgeschwindigkeit auf dieser Straße beträgt {maxspeed} km/h",
         "id": "Kecepatan maksimum di jalan ini adalah {maxspeed} km/jam",
         "es": "La velocidad máxima en esta carretera es de {maxspeed} km/h",
-        "fr": "La vitesse maximum dans cette rue est de {maxspeed} km/h"
+        "fr": "La vitesse maximum dans cette rue est de {maxspeed} km/h",
+        "ca": "La velocitat màxima a aquesta carretera és {maxspeed} km/h"
       },
       "freeform": {
         "key": "maxspeed",
@@ -461,7 +462,8 @@
             "de": "Die Höchstgeschwindigkeit ist 90 km/h",
             "id": "Kecepatan maksimum 90 km/jam",
             "es": "La velocidad máxima es de 90km/h",
-            "fr": "La vitesse maximum est de 90 km/h"
+            "fr": "La vitesse maximum est de 90 km/h",
+            "ca": "La velocitat màxima és de 90km/h"
           }
         }
       ],
@@ -471,7 +473,8 @@
         "de": "Was ist die Höchstgeschwindigkeit auf dieser Straße?",
         "id": "Berapa kecepatan maksimum di jalan ini?",
         "es": "¿Cual es la velocidad máxima en esta calle?",
-        "fr": "Quelle est la vitesse maximum dans cette rue ?"
+        "fr": "Quelle est la vitesse maximum dans cette rue ?",
+        "ca": "Quina és la velocitat màxima a aquest carrer?"
       },
       "id": "Maxspeed (for road)"
     },
@@ -732,7 +735,8 @@
         "de": "Der Radweg ist aus {surface}",
         "id": "Jalan ini terbuat dari {surface}",
         "es": "Esta carretera está hecha de {surface}",
-        "fr": "Cette route est faite de {surface}"
+        "fr": "Cette route est faite de {surface}",
+        "ca": "Aquesta carretera està feta de {surface}"
       },
       "freeform": {
         "key": "surface"
@@ -756,7 +760,8 @@
             "de": "Dieser Radweg hat einen festen Belag",
             "id": "Jalur sepeda ini diaspal",
             "es": "Este carril bici está pavimentado",
-            "fr": "Cette piste cyclable est pavée"
+            "fr": "Cette piste cyclable est pavée",
+            "ca": "Aquest carril bici està pavimentat"
           },
           "hideInAnswer": true
         },
@@ -768,7 +773,8 @@
             "de": "Der Radweg ist aus Asphalt",
             "id": "Jalur sepeda ini terbuat dari aspal",
             "es": "Este carril bici está hecho de asfalto",
-            "fr": "Cette piste cyclable est asphaltée"
+            "fr": "Cette piste cyclable est asphaltée",
+            "ca": "Aquest carril bici està fet d'asfalt"
           }
         },
         {
@@ -789,7 +795,8 @@
             "de": "Der Radweg ist aus Beton",
             "id": "Jalur sepeda ini terbuat dari beton",
             "es": "Este carril bici está hecho de hormigón",
-            "fr": "Cette piste cyclable est betonée"
+            "fr": "Cette piste cyclable est betonée",
+            "ca": "Aquest carril bici està fet de formigó"
           }
         },
         {
@@ -830,7 +837,8 @@
             "de": "Der Radweg ist aus Holz",
             "id": "Jalur sepeda ini terbuat dari kayu",
             "es": "Este carril bici está hecho de madera",
-            "fr": "Cette piste cyclable est faite en bois"
+            "fr": "Cette piste cyclable est faite en bois",
+            "ca": "Aquest carril bici està fet de fusta"
           }
         },
         {
@@ -882,7 +890,8 @@
         "de": "Was ist der Belag dieser Straße?",
         "id": "Permukaan jalannya terbuat dari apa?",
         "es": "¿De qué esta hecha la superficie de esta calle?",
-        "fr": "De quel materiel est faite cette rue ?"
+        "fr": "De quel materiel est faite cette rue ?",
+        "ca": "De què està feta la superfície d'aquest carrer?"
       },
       "id": "Surface of the road"
     },
@@ -908,7 +917,8 @@
             "de": "Geeignet für dünne Rollen: Rollerblades, Skateboard",
             "id": "Dapat digunakan untuk roller tipis: rollerblade, skateboard",
             "nl": "Bruikbaar voor kleine, harde wielen: rollerblade, skateboard",
-            "fr": "Utilisable pour les patins : patins à roulettes, skateboard"
+            "fr": "Utilisable pour les patins : patins à roulettes, skateboard",
+            "ca": "Utilitzable per rodets: patins en línia, monopatí"
           }
         },
         {
@@ -918,7 +928,8 @@
             "de": "Geeignet für dünne Reifen: Rennrad",
             "id": "Dapat digunakan untuk roda tipis: sepeda balap",
             "nl": "Bruikbaar voor smalle wielen: racefiets",
-            "fr": "Utilisable pour les roues fines : vélo de course"
+            "fr": "Utilisable pour les roues fines : vélo de course",
+            "ca": "Utilitzable per rodes fines: bicicletes de carrera"
           }
         },
         {
@@ -928,7 +939,8 @@
             "de": "Geeignet für normale Reifen: Fahrrad, Rollstuhl, Scooter",
             "id": "Dapat digunakan untuk roda normal: sepeda kota, kursi roda, skuter",
             "nl": "Bruikbaar voor normale wielen: stadsfiets, rolwagen, step",
-            "fr": "Utilisable pour les roues traditionelles : vélo, chaise roulante, trotinettes"
+            "fr": "Utilisable pour les roues traditionelles : vélo, chaise roulante, trotinettes",
+            "ca": "Utilitzable per rodes normals: Bicicletes de ciutat, cadires de rodes, scooter"
           }
         },
         {
@@ -938,7 +950,8 @@
             "de": "Geeignet für breite Reifen: Trekkingfahrrad, Auto, Rikscha",
             "id": "Dapat digunakan untuk roda yang kuat: sepeda trekking, mobil, becak",
             "nl": "Bruikbaar voor robuuste wielen: trekking fiets, auto, rickshaw",
-            "fr": "Utilisable pour les roues robustes : VTT, voitures, pousse-pousse"
+            "fr": "Utilisable pour les roues robustes : VTT, voitures, pousse-pousse",
+            "ca": "Utilitzable per rodes robustes; Bicicleta de treking, cotxes, bicitaxi"
           }
         },
         {

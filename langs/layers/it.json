@@ -1800,6 +1800,13 @@
                         "question": "Riciclo di secco"
                     }
                 }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Solo accesso pubblico"
+                    }
+                }
             }
         },
         "name": "Riciclo",

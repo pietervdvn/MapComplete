@@ -2,11 +2,13 @@
   "id": "fitness_centre",
   "name": {
     "en": "Fitness Centres",
-    "de": "Fitnessstudios"
+    "de": "Fitnessstudios",
+    "ca": "Centre de fitnes o gimnàs"
   },
   "description": {
     "en": "Layer showing fitness centres",
-    "de": "Ebene mit Fitnessstudios"
+    "de": "Ebene mit Fitnessstudios",
+    "ca": "Capa que mostra centres de fitnes o gimnasos"
   },
   "source": {
     "osmTags": "leisure=fitness_centre"

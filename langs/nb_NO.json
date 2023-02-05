@@ -11,9 +11,9 @@
         "delete": "Slett",
         "explanations": {
             "hardDelete": "Dette punktet vil bli slettet i OpenStreetMap. Det kan gjenopprettes av en dreven bidragsyter.",
+            "retagNoOtherThemes": "Denne funksjonen vil bli reklassifisert og skjult fra dette programmet",
             "selectReason": "Velg hvorfor denne funksjonen skal slettes",
-            "softDelete": "Denne funksjonen vil bli oppdatert og skjult fra programmet. <span class=\"subtle\">{reason}</span>",
-            "retagNoOtherThemes": "Denne funksjonen vil bli reklassifisert og skjult fra dette programmet"
+            "softDelete": "Denne funksjonen vil bli oppdatert og skjult fra programmet. <span class=\"subtle\">{reason}</span>"
         },
         "isDeleted": "Denne funksjonen har blitt slettet",
         "isntAPoint": "Kun punkter kan slettes, valgt funksjon er en vei, et område, eller en relasjon.",
@@ -39,8 +39,15 @@
         "reload": "Last inn dataen igjen"
     },
     "flyer": {
+        "aerial": "Dette kartet bruker en annen bakgrunn, altså luftfoto av Agentschap Informatie Vlaanderen",
         "callToAction": "Test på mapcomplete.osm.be",
         "cyclofix": "Sykkelpumper, reperasjonsstasjoner, drikkevann og sykkelbutikker finner du på cyclofix.",
+        "description": "Et liggende A4-informasjonsblad som promoterer MapComplete",
+        "editing": {
+            "ex": "Et forenklet eksempel på hvordan dette vises for et naturreservat vises nedenfor.",
+            "intro": "Brukeren blir møtt av et kart med funksjoner. Når ett av dem er valgt, vil info om den funksjonen vises.",
+            "title": "Hvordan ser grensesnittet ut?"
+        },
         "fakeui": {
             "add_images": "Legg til bilder med få klikk",
             "edit": "Feilaktig eller utdatert info? Trykk på redigeringsknappen.",
@@ -60,14 +67,7 @@
         "onwheels": "Innendørskart for rullestolsbrukere er også tilgjengelig.",
         "tagline": "Samle inn geodata med OpenStreetMap",
         "title": "MapComplete.osm.be",
-        "whatIsOsm": "Hva er OpenStreetMap?",
-        "editing": {
-            "ex": "Et forenklet eksempel på hvordan dette vises for et naturreservat vises nedenfor.",
-            "intro": "Brukeren blir møtt av et kart med funksjoner. Når ett av dem er valgt, vil info om den funksjonen vises.",
-            "title": "Hvordan ser grensesnittet ut?"
-        },
-        "description": "Et liggende A4-informasjonsblad som promoterer MapComplete",
-        "aerial": "Dette kartet bruker en annen bakgrunn, altså luftfoto av Agentschap Informatie Vlaanderen"
+        "whatIsOsm": "Hva er OpenStreetMap?"
     },
     "general": {
         "about": "Rediger og legg til OpenStreetMap for et gitt tema",
@@ -290,6 +290,7 @@
             "createNewWikidata": "Opprett et nytt Wikipedia-element",
             "doSearch": "Søk ovenfor for å se resultater",
             "failed": "Innlasting av Wikipedia-artikkel mislyktes",
+            "fromWikipedia": "Fra Wikipedia, det frie leksikonet",
             "loading": "Laster inn Wikipedia …",
             "noResults": "Fant ikke noe for <i>{search}</i>",
             "noWikipediaPage": "Dette Wikipedia-elementet har ingen tilknyttet Wikipedia-side enda.",
@@ -298,25 +299,32 @@
                 "died": "Død: {value}"
             },
             "searchWikidata": "Søk på Wikipedia",
-            "wikipediaboxTitle": "Wikipedia",
-            "fromWikipedia": "Fra Wikipedia, det frie leksikonet"
+            "wikipediaboxTitle": "Wikipedia"
         }
+    },
+    "hotkeyDocumentation": {
+        "action": "Handling",
+        "closeSidebar": "Lukk sidefeltet",
+        "intro": "MapComplete støtter følgende taster:",
+        "key": "Tastekombinasjon",
+        "title": "Hurtigtaster"
     },
     "image": {
         "addPicture": "Legg til bilde",
+        "currentLicense": "Bildet ditt vil bli publisert med {license}-lisens",
         "doDelete": "Fjern bilde",
         "dontDelete": "Avbryt",
         "isDeleted": "Slettet",
         "nearbyPictures": {
+            "allFiltered": "Ingen bilder samsvarte",
+            "browseNearby": "Utforsk bilder i nærheten …",
+            "confirm": "Valgt bilde viser {title()}",
             "loadMore": "Last inn flere bilder",
             "loading": "Laster inn bilder i nærheten …",
             "noImageSelected": "Velg et bilde for å knytte det til objektet",
             "nothingFound": "Fant ingen bilder i nærheten …",
             "removeFilters": "Klikk her for å fjerne filterne",
-            "title": "Bilder i nærheten",
-            "browseNearby": "Utforsk bilder i nærheten …",
-            "confirm": "Valgt bilde viser {title()}",
-            "allFiltered": "Ingen bilder samsvarte"
+            "title": "Bilder i nærheten"
         },
         "pleaseLogin": "Logg inn for å legge til et bilde",
         "respectPrivacy": "Ikke ta bilder av folk eller bilskilt. Ikke last opp Google Maps, Google Streetview eller andre opphavsrettsbeskyttede kilder.",
@@ -325,8 +333,7 @@
         "uploadFailed": "Kunne ikke laste opp bildet ditt. Er du tilkoblet Internett og tillater tredjeparts-API-er? Brave-nettleseren eller uMatrix-programtillegget kan blokkere dem.",
         "uploadMultipleDone": "{count} bilder har blitt lagt til. Takk for at du hjelper til.",
         "uploadingMultiple": "Laster opp {count} bilder …",
-        "uploadingPicture": "Laster opp bildet ditt …",
-        "currentLicense": "Bildet ditt vil bli publisert med {license}-lisens"
+        "uploadingPicture": "Laster opp bildet ditt …"
     },
     "importHelper": {
         "askMetadata": {
@@ -357,6 +364,7 @@
             "nearbyWarn": "{count} røde elementer på følgende kart vil <b>ikke</b> bli importert!",
             "osmLoaded": "{count} elementer er innlastet fra OpenStreetMap, som samsvarer med laget <b>{name}</b>.",
             "reloadTheCache": "Tøm hurtiglageret og send spørring til overpass igjen",
+            "showOsmLayerInConflationMap": "Vis OSM-dataen",
             "states": {
                 "error": "Kunne ikke laste inn seneste data fra overpass fordi {error}",
                 "idle": "Sjekker lokallagring …",
@@ -366,8 +374,7 @@
             "title": "Sammenlign med eksisterende data",
             "titleLive": "Sanntidsdata på OSM",
             "titleNearby": "Funksjoner i nærheten",
-            "zoomIn": "Nåværende forstørrelsesnivå er {current}.",
-            "showOsmLayerInConflationMap": "Vis OSM-dataen"
+            "zoomIn": "Nåværende forstørrelsesnivå er {current}."
         },
         "createNotes": {
             "creating": "Opprettet <b>{count}</b> notater av {total}",
@@ -386,14 +393,14 @@
         },
         "mapPreview": {
             "autodetected": "Laget ble automatisk utledet basert på dets egenskaper",
+            "confirm": "Funksjonene finnes på rett sted i kartet",
             "selectLayer": "Hvilket lag samsvarer importen med?",
-            "title": "Kartforhåndsvisning",
-            "confirm": "Funksjonene finnes på rett sted i kartet"
+            "title": "Kartforhåndsvisning"
         },
         "noteParts": {
+            "datasource": "Originaldata fra {source}",
             "importEasily": "Legg til dette punktet enkelt med MapComplete:",
-            "wikilink": "Mer info om denne importen er å finne på {wikilink}",
-            "datasource": "Originaldata fra {source}"
+            "wikilink": "Mer info om denne importen er å finne på {wikilink}"
         },
         "previewAttributes": {
             "allAttributesSame": "Alle funksjonene å importere har denne etiketten",
@@ -407,22 +414,26 @@
             "errNoName": "Noen kolonner mangler navn",
             "errPointsOnly": "Innlastet JSON-fil skal kun inneholde punkter",
             "fileFormatDescription": "Velg en <b class=\"code\">.csv</b> eller en <b class=\"code\">.geojson</b>-fil",
-            "title": "Velg fil",
             "loadedFilesAre": "{file}-filen er brukes",
-            "noFilesLoaded": "Ingen fil i bruk"
+            "noFilesLoaded": "Ingen fil i bruk",
+            "title": "Velg fil"
         },
         "selectTheme": {
-            "title": "Velg et tema",
-            "unmatchedTitle": "Følgende elementer samsvarer ikke med noen av forhåndsinnstillingene",
+            "displayNonMatchingCount": "{length} objekter samsvarer ikke med noen forhåndsinnstillinger",
             "missing": "Forventet {k}={v}, men det mangler helt og holdent",
-            "noMatchingPresets": "Dette temaet har ingen forhåndsinnstillinger innlastet. Derfor virker ikke importering her.",
             "needsTags": "{title} trenger etikettene {tags}",
-            "displayNonMatchingCount": "{length} objekter samsvarer ikke med noen forhåndsinnstillinger"
+            "noMatchingPresets": "Dette temaet har ingen forhåndsinnstillinger innlastet. Derfor virker ikke importering her.",
+            "title": "Velg et tema",
+            "unmatchedTitle": "Følgende elementer samsvarer ikke med noen av forhåndsinnstillingene"
         },
         "title": "Importhjelper"
     },
     "importInspector": {
         "title": "Inspiser og håndter importnotater"
+    },
+    "importLayer": {
+        "importHandled": "<div class='thanks'>Denne funksjonen har blitt håndtert. Takk for din innsats.</div>",
+        "popupTitle": "Det kan være {title} her"
     },
     "index": {
         "featuredThemeTitle": "Framhevet denne uken",
@@ -432,12 +443,13 @@
         "title": "Velkommen til MapComplete"
     },
     "matrixbot": {
+        "commandFailed": "Noe gikk galt under kjøring av <code>{cmd}</code>",
         "commands": {
             "dm": {
-                "selectValidCommand": "Angi en gyldig kommando",
-                "selectValidUser": "Angi en gyldig målbruker",
                 "failed": "Kunne ikke kjøre <code>{cmd}</code> som følge av {message}",
-                "receipt": "Melding levert til {to}"
+                "receipt": "Melding levert til {to}",
+                "selectValidCommand": "Angi en gyldig kommando",
+                "selectValidUser": "Angi en gyldig målbruker"
             },
             "documentation": {
                 "didYouMean": "Mente du",
@@ -453,70 +465,62 @@
                     "plural": "lag",
                     "singular": "lag"
                 },
+                "theme": {
+                    "plural": "temaer",
+                    "singular": "tema"
+                },
                 "urlParam": "Nettadresse-parameter <code>{id}<code>",
+                "url_parameter": {
+                    "plural": "Nettadresse-parameter",
+                    "singular": "Nettadresse-parameter"
+                },
                 "visualisation": {
                     "plural": "visualiseringer",
                     "singular": "visualisering"
-                },
-                "theme": {
-                    "singular": "tema",
-                    "plural": "temaer"
-                },
-                "url_parameter": {
-                    "singular": "Nettadresse-parameter",
-                    "plural": "Nettadresse-parameter"
                 }
             },
             "dream": {
                 "docs": "Sender en datamaskinsgenerert tekst",
                 "generatedBy": "Tekst generert av {bot}, en maskinlæringsbasert bott som er aktiv på Reddit."
             },
+            "help": {
+                "argcmd": "Kommandoen du ønsker mer info om",
+                "askRights": "Spør {admins} om å gi deg tilgang",
+                "docs": "Skriver ut info om støttede kommandoer",
+                "supported": "Mine støttede kommandoer:"
+            },
             "info": {
+                "argsearch": "ID-en tilhørende OSM-objektet, eller en søkespørring",
                 "closed": "Stengt",
                 "closedTodayAndTomorrow": "Stengt i dag og i morgen",
                 "couldNotDownload": "Kunne ikke laste ned <code>{id}</code>",
                 "editWith": "Rediger dette elementet med {title}",
                 "fetchingInfoAbout": "Henter data om {id} …",
-                "noInfo": "Ingen relevant info enda",
-                "argsearch": "ID-en tilhørende OSM-objektet, eller en søkespørring",
-                "noEditPossible": "Ingen MapComplete-temaer støtter dette elementet"
+                "noEditPossible": "Ingen MapComplete-temaer støtter dette elementet",
+                "noInfo": "Ingen relevant info enda"
             },
             "language": {
                 "arglang": "Språket å bruke fra nå av",
+                "currentLanguage": "Nåværende romspråk er {language}",
                 "helpTranslating": "Bistå oversettelsen av svarene mine på Weblate.",
-                "knownLanguages": "Du kan velge ett av følgende språk:",
-                "currentLanguage": "Nåværende romspråk er {language}"
+                "knownLanguages": "Du kan velge ett av følgende språk:"
             },
             "role": {
+                "arguser": "Hvem roller skal endres for. Som forvalg den som spør om noen kommandoer.",
                 "docs": "Endre hva en bruker kan og ikke kan gjøre",
                 "noPreviousRoles": "<b>{user}</b> har ingen tidligere roller",
-                "verbdefault": "Liste over brukerens roller",
-                "verbremove": "Fjerner en rolle fra den angitte brukeren",
-                "userHasRoles": "<b>{user}</b> har følgende roller:",
                 "noRolesYet": "<b>{user}</b> har ingen roller nå.",
+                "userHasRoles": "<b>{user}</b> har følgende roller:",
                 "verbadd": "Legger til en rolle for angitt bruker",
+                "verbdefault": "Liste over brukerens roller",
                 "verblist": "Liste over alle brukerroller for angitt bruker",
-                "verbrevoke": "Tilbakekaller alle rettigheter for en bruker",
-                "arguser": "Hvem roller skal endres for. Som forvalg den som spør om noen kommandoer."
+                "verbremove": "Fjerner en rolle fra den angitte brukeren",
+                "verbrevoke": "Tilbakekaller alle rettigheter for en bruker"
             },
             "scheme": {
                 "argkey": "Navnet på nøkkelen",
                 "notype": "ingen type angitt",
                 "title": "{key} (brukes ved  <code>{path}</code>, {type})"
-            },
-            "tags": {
-                "argsearch": "ID-en tilhørende OSM-objektet, eller en søkespørring",
-                "nothingFound": "Fant ikke noe for {_}"
-            },
-            "wiki": {
-                "noWiki": "Angi en wiki-side å søke etter",
-                "searching": "Søker på {backend} …"
-            },
-            "help": {
-                "askRights": "Spør {admins} om å gi deg tilgang",
-                "docs": "Skriver ut info om støttede kommandoer",
-                "supported": "Mine støttede kommandoer:",
-                "argcmd": "Kommandoen du ønsker mer info om"
             },
             "search": {
                 "arglayerid": "Navnet på et lag, eller et enkelt søkebegrep",
@@ -527,9 +531,16 @@
                 "docs": "Skrur av botten",
                 "goodbye": "Slår av … På gjensyn.",
                 "verbshutdown": "Slår av botten"
+            },
+            "tags": {
+                "argsearch": "ID-en tilhørende OSM-objektet, eller en søkespørring",
+                "nothingFound": "Fant ikke noe for {_}"
+            },
+            "wiki": {
+                "noWiki": "Angi en wiki-side å søke etter",
+                "searching": "Søker på {backend} …"
             }
-        },
-        "commandFailed": "Noe gikk galt under kjøring av <code>{cmd}</code>"
+        }
     },
     "move": {
         "cancel": "Avbryt flytting",
@@ -560,6 +571,8 @@
         "autoApply": "Ved endring av attributteene {attr_names}, legges de automatisk til for {count} andre objekter også"
     },
     "notes": {
+        "addAComment": "Legg til en kommentar",
+        "addComment": "Legg til kommentar",
         "addCommentAndClose": "Legg til kommentar og lukk",
         "addCommentPlaceholder": "Legg til en kommentar …",
         "anonymous": "Anonym bruker",
@@ -574,35 +587,33 @@
         "reopenNote": "Gjenåpne notat",
         "reopenNoteAndComment": "Gjenåpne notat og kommenter",
         "textNeeded": "Skriv inn beskrivende tekst for å opprettet et notat",
-        "typeText": "Skriv inn tekst for å legge til en kommentar",
-        "addAComment": "Legg til en kommentar",
-        "addComment": "Legg til kommentar"
+        "typeText": "Skriv inn tekst for å legge til en kommentar"
     },
     "plantDetection": {
+        "back": "Tilbake til artsoversikt",
+        "confirm": "Velg arter",
         "howTo": {
-            "li3": "ta et bilde av blomstene",
             "intro": "For optimalt resultat,",
-            "li1": "ta et bilde som viser ett løvblad",
             "li0": "ta et bilde med treet i midten uten for mye bakgrunn",
-            "li2": "ta et bilde som viser barken"
+            "li1": "ta et bilde som viser ett løvblad",
+            "li2": "ta et bilde som viser barken",
+            "li3": "ta et bilde av blomstene"
         },
         "loadingWikidata": "Laster inn info om {species} …",
         "matchPercentage": "{match}% treff",
+        "overviewIntro": "KI-en på <a href='https://plantnet.org/' target='_blank'>PlantNet.org</a> tror bildene viser arten nedenfor.",
         "overviewTitle": "Automatisk oppdagede arter",
-        "poweredByPlantnet": "Drevet av <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
-        "seeInfo": "Finn mer info om artene",
-        "confirm": "Velg arter",
-        "back": "Tilbake til artsoversikt",
         "overviewVerify": "Bekreft korrekt art og lenke det til treet",
-        "takeImages": "Ta bilder av treet for å oppdage treslag automatisk",
+        "poweredByPlantnet": "Drevet av <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
         "querying": "Sjekker dine {length} bilder på plantnet.org",
-        "overviewIntro": "KI-en på <a href='https://plantnet.org/' target='_blank'>PlantNet.org</a> tror bildene viser arten nedenfor."
+        "seeInfo": "Finn mer info om artene",
+        "takeImages": "Ta bilder av treet for å oppdage treslag automatisk"
     },
     "privacy": {
+        "editingTitle": "Når man foretar endringer",
         "title": "Personvernspraksis",
         "trackingTitle": "Statistisk data",
-        "whileYoureHere": "Bryr du deg om personvern?",
-        "editingTitle": "Når man foretar endringer"
+        "whileYoureHere": "Bryr du deg om personvern?"
     },
     "professional": {
         "aboutMc": {
@@ -640,15 +651,15 @@
             "hook": "Trenger du profesjonell støtte?",
             "hookMore": "Oppsett av spørreundersøkelser, dataimport, og OpenStreetMap-konsulenttjenester"
         },
+        "osmTitle": "Hva kan OpenStreetMap og MapComplete gjøre for din organisasjon?",
         "services": {
             "intro": "Utvikleren av MapComplete kan hjelpe deg med følgende tjenestetilbud:",
-            "title": "MapComplete-tjenester",
-            "li3": "Avansert opplæring (f.eks. for GIS-laget) om hvordan man legger til avansert data på OpenStreetMap",
             "li0": "Setter opp et tema skreddersydd for dine behov",
-            "li2": "Opplæring i databidrag med MapComplete"
+            "li2": "Opplæring i databidrag med MapComplete",
+            "li3": "Avansert opplæring (f.eks. for GIS-laget) om hvordan man legger til avansert data på OpenStreetMap",
+            "title": "MapComplete-tjenester"
         },
-        "title": "Profesjonell støtte med MapComplete",
-        "osmTitle": "Hva kan OpenStreetMap og MapComplete gjøre for din organisasjon?"
+        "title": "Profesjonell støtte med MapComplete"
     },
     "reviews": {
         "affiliated_reviewer_warning": "(Tilknyttet vurdering)",
@@ -672,26 +683,26 @@
         "inviteToSplit": "Inndel denne veien i mindre segmenter. Dette lar deg gi den forskjellige egenskaper for forskjellige strekk.",
         "loginToSplit": "Du må være innlogget for å dele en vei",
         "split": "Del",
-        "splitTitle": "Velg hvor på kartet veien skal deles",
-        "splitAgain": "Del opp denne veien igjen"
+        "splitAgain": "Del opp denne veien igjen",
+        "splitTitle": "Velg hvor på kartet veien skal deles"
     },
     "translations": {
+        "activateButton": "Bistå oversettelsen av MapComplete",
         "allMissing": "Ingen oversettelser enda",
         "completeness": "Oversettelsen for {theme} i {language} har {percentage}% dekning: {translated} strenger av {total} har blitt oversatt",
         "deactivate": "Skru av oversettelsesknapper",
         "isTranslator": "Oversettelsesmodus er aktivt siden brukernavnet ditt samsvarer med navnet på forrige oversetter",
         "missing": "{count} uoversatte strenger",
-        "notImmediate": "Oversettelser oppdateres ikke direkte. Dette tar typisk et par dager.",
-        "activateButton": "Bistå oversettelsen av MapComplete"
+        "notImmediate": "Oversettelser oppdateres ikke direkte. Dette tar typisk et par dager."
     },
     "userinfo": {
-        "noDescriptionCallToAction": "Legg til profilbeskrivelse",
-        "welcome": "Velkommen {name}",
-        "titleNotLoggedIn": "Velkommen",
         "gotoInbox": "Åpne innboksen din",
         "gotoSettings": "Gå til innstillingene dine på OpenStreetMap.org",
         "newMessages": "du har nye meldinger",
-        "noDescription": "Du har ikke noen profilbeskrivelse enda"
+        "noDescription": "Du har ikke noen profilbeskrivelse enda",
+        "noDescriptionCallToAction": "Legg til profilbeskrivelse",
+        "titleNotLoggedIn": "Velkommen",
+        "welcome": "Velkommen {name}"
     },
     "validation": {
         "color": {
@@ -707,9 +718,9 @@
             "description": "En avstand i meter"
         },
         "email": {
+            "description": "e-postadresse",
             "feedback": "Dette er ikke en gyldig e-postadresse",
-            "noAt": "En e-postadresse må inneholde «@»",
-            "description": "e-postadresse"
+            "noAt": "En e-postadresse må inneholde «@»"
         },
         "float": {
             "description": "et tall",
@@ -719,10 +730,10 @@
             "description": "et heltall"
         },
         "nat": {
+            "description": "et positivt tall, heltall, eller null",
             "mustBePositive": "Dette tallet skal være positivt",
             "mustBeWhole": "Kun heltall tillates",
-            "notANumber": "Skriv inn et tall",
-            "description": "et positivt tall, heltall, eller null"
+            "notANumber": "Skriv inn et tall"
         },
         "opening_hours": {
             "description": "Åpningstider"
@@ -751,16 +762,5 @@
         "wikidata": {
             "description": "En Wikidata-identifikator"
         }
-    },
-    "importLayer": {
-        "popupTitle": "Det kan være {title} her",
-        "importHandled": "<div class='thanks'>Denne funksjonen har blitt håndtert. Takk for din innsats.</div>"
-    },
-    "hotkeyDocumentation": {
-        "title": "Hurtigtaster",
-        "closeSidebar": "Lukk sidefeltet",
-        "intro": "MapComplete støtter følgende taster:",
-        "action": "Handling",
-        "key": "Tastekombinasjon"
     }
 }

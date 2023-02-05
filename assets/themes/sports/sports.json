@@ -12,7 +12,7 @@
     "en": "Map showing sport facilities.",
     "nl": "Kaart met sportfaciliteiten.",
     "de": "Karte mit Sporteinrichtungen.",
-    "fr": "Carte des équipements sportifs"
+    "fr": "Carte des équipements sportifs."
   },
   "description": {
     "en": "All about sports, find sport pitches, fitness centres and more.",
@@ -52,7 +52,8 @@
             "description": {
               "en": "Add a new shop selling sports goods.",
               "nl": "Voeg een nieuwe winkel toe die sportartikelen verkoopt.",
-              "de": "Ein neues Geschäft für Sportartikel hinzufügen."
+              "de": "Ein neues Geschäft für Sportartikel hinzufügen.",
+              "fr": "Ajouter un nouveau commerce vendant des équipements sportifs."
             }
           }
         ],

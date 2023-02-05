@@ -5862,6 +5862,32 @@
             "render": "Parking Space"
         }
     },
+    "parking_ticket_machine": {
+        "description": "Layer with parking ticket machines to pay for parking.",
+        "name": "Parking Ticket Machines",
+        "presets": {
+            "0": {
+                "title": "a parking ticket machine"
+            }
+        },
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Reference number"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This parking ticket machine has no reference number"
+                    }
+                },
+                "question": "What is the reference number of this parking ticket machine?",
+                "render": "This parking ticket machine has the reference number {ref}"
+            }
+        },
+        "title": {
+            "render": "Parking Ticket Machine"
+        }
+    },
     "pedestrian_path": {
         "description": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
         "name": "Pedestrian paths"
@@ -6501,6 +6527,13 @@
                         "question": "Recycling of residual waste"
                     }
                 }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Only public access"
+                    }
+                }
             }
         },
         "name": "Recycling",
@@ -6513,6 +6546,21 @@
             }
         },
         "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Everyone can use this recycling facility"
+                    },
+                    "1": {
+                        "then": "Only residents can use this recycling facility"
+                    },
+                    "2": {
+                        "then": "This recycling facility is only for private use"
+                    }
+                },
+                "question": "Who can use this recycling facility?",
+                "render": "This recycling facility can be used by {access}"
+            },
             "container-location": {
                 "mappings": {
                     "0": {
@@ -8500,6 +8548,17 @@
                     }
                 },
                 "question": "Where is this container located?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a medium to large bin for disposal of (household) waste"
+                    },
+                    "1": {
+                        "then": "This is actually a recycling container"
+                    }
+                },
+                "question": "What kind of waste disposal bin is this?"
             }
         },
         "title": {

@@ -452,7 +452,8 @@
             "cs": "Dřevořezba",
             "pt": "Entalhe em madeira",
             "fr": "Sculpture sur bois",
-            "nb_NO": "Treskjæring"
+            "nb_NO": "Treskjæring",
+            "ca": "Tallat a la fusta"
           }
         }
       ],
@@ -580,7 +581,8 @@
         "pl": "Więcej informacji na <a href='{website}' target='_blank'>tej stronie</a>",
         "es": "Más información en <a href='{website}' target='_blank'>este sitio web</a>",
         "da": "Yderligere oplysninger på <a href='{website}' target='_blank'> dette websted</a>",
-        "cs": "Více informací na <a href='{website}' target='_blank'>této webové stránce</a>"
+        "cs": "Více informací na <a href='{website}' target='_blank'>této webové stránce</a>",
+        "ca": "Més informació a <a href='{website}' target='_blank'>aquesta pàgina web</a>"
       },
       "freeform": {
         "key": "website",
@@ -602,7 +604,8 @@
         "cs": "Co zobrazuje toto umělecké dílo?",
         "pt": "O que esta obra de arte representa?",
         "es": "¿Qué representa esta obra de arte?",
-        "fr": "Que représente cette oeuvre d'art ?"
+        "fr": "Que représente cette oeuvre d'art ?",
+        "ca": "Què representa aquesta obra d'art?"
       },
       "freeform": {
         "key": "subject:wikidata",
@@ -615,7 +618,8 @@
         "cs": "Toto dílo zobrazuje {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "pt": "A obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "es": "Esta obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
-        "nb_NO": "Dette kunstverket viser {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+        "nb_NO": "Dette kunstverket viser {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "ca": "Aquesta obra d'art representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
       },
       "labels": [
         "artwork-question"
@@ -628,7 +632,8 @@
         "de": "Dient dieses Kunstwerk auch als Sitzbank?",
         "fr": "Cette oeuvre d'art sert-elle de banc ?",
         "nl": "Is dit kunstwerk ook een zitbank?",
-        "nb_NO": "Tjener dette kunstverket funksjonen som benk?"
+        "nb_NO": "Tjener dette kunstverket funksjonen som benk?",
+        "ca": "Aquesta obra d'art serveix com a un banc?"
       },
       "mappings": [
         {
@@ -637,7 +642,8 @@
             "en": "This artwork also serves as a bench",
             "de": "Dieses Kunstwerk dient auch als Sitzbank",
             "fr": "Cette oeuvre d'art sert aussi de banc",
-            "nl": "Dit kunstwerk doet ook dienst als zitbank"
+            "nl": "Dit kunstwerk doet ook dienst als zitbank",
+            "ca": "Aquesta obra d'art també serveix com a banc"
           }
         },
         {
@@ -647,7 +653,8 @@
             "de": "Dieses Kunstwerk dient nicht als Sitzbank",
             "fr": "Cette oeuvre d'art ne sert pas de banc",
             "nl": "Dit kunstwerk doet geen dienst als zitbank",
-            "nb_NO": "Dette kunstverket tjener ikke funksjonen som benk"
+            "nb_NO": "Dette kunstverket tjener ikke funksjonen som benk",
+            "ca": "Aquesta obra d'art no serveix com a banc"
           }
         },
         {
@@ -657,7 +664,8 @@
             "de": "Dieses Kunstwerk dient nicht als Sitzbank",
             "fr": "Cette oeuvre d'art ne sert pas de banc",
             "nl": "Dit kunstwerk doet geen dienst als zitbank",
-            "nb_NO": "Dette kunstverket tjener ikke den hensikten å være en benk"
+            "nb_NO": "Dette kunstverket tjener ikke den hensikten å være en benk",
+            "ca": "Aquesta obra d'art no serveix com a un banc"
           },
           "hideInAnswer": true
         }

@@ -1077,7 +1077,8 @@
       "fr": "Quelles pièces peut-on utiliser pour payer ici ?",
       "pl": "Jakimi monetami można tutaj zapłacić?",
       "ca": "Quines monedes es poden utilitzar per a pagar aquí?",
-      "es": "¿Qué monedas se pueden usar aquí para pagar?"
+      "es": "¿Qué monedas se pueden usar aquí para pagar?",
+      "nb_NO": "Hvilke mynter kan brukes til betaling her?"
     },
     "multiAnswer": true,
     "mappings": [

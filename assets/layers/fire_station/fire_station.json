@@ -30,7 +30,8 @@
       "fr": "Station de pompiers",
       "de": "Feuerwache",
       "nl": "Brandweerstation",
-      "es": "Parque de bomberos"
+      "es": "Parque de bomberos",
+      "ca": "Parc de bombers"
     }
   },
   "description": {
@@ -41,7 +42,8 @@
     "fr": "Couche des stations de pompiers.",
     "de": "Kartenebene zur Darstellung von Feuerwachen.",
     "nl": "Kaartlaag die de brandweerstations toont.",
-    "es": "Capa del mapa que muestra parques de bomberos."
+    "es": "Capa del mapa que muestra parques de bomberos.",
+    "ca": "Capa del mapa que mostra els parcs de bombers."
   },
   "tagRenderings": [
     {
@@ -185,7 +187,8 @@
         "fr": "L’exploitant est de type {operator:type}.",
         "it": "Il gestore è un ente {operator:type}.",
         "nl": "De beheerder is een organisatie van type {operator:type} .",
-        "de": "Der Betreiber ist {operator:type}."
+        "de": "Der Betreiber ist {operator:type}.",
+        "ca": "Aquest operador és una entitat {operator:type}."
       },
       "freeform": {
         "key": "operator:type"
