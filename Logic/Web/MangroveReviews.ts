@@ -87,21 +87,23 @@ export default class FeatureReviews {
         if (feature.geometry.type === "Point") {
             this._uncertainty = options?.uncertaintyRadius ?? 10
         } else {
-            let coords: Position[][]
+            let coordss: Position[][]
             if (feature.geometry.type === "LineString") {
-                coords = [feature.geometry.coordinates]
+                coordss = [feature.geometry.coordinates]
             } else if (
                 feature.geometry.type === "MultiLineString" ||
                 feature.geometry.type === "Polygon"
             ) {
-                coords = feature.geometry.coordinates
+                coordss = feature.geometry.coordinates
             }
             let maxDistance = 0
-            for (const coord of coords) {
-                maxDistance = Math.max(
-                    maxDistance,
-                    GeoOperations.distanceBetween(centerLonLat, <any>coord)
-                )
+            for (const coords of coordss) {
+                for (const coord of coords) {
+                    maxDistance = Math.max(
+                        maxDistance,
+                        GeoOperations.distanceBetween(centerLonLat, coord)
+                    )
+                }
             }
 
             this._uncertainty = options?.uncertaintyRadius ?? maxDistance

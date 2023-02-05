@@ -225,13 +225,13 @@
             "loadingCountry": "Determining country…",
             "not_all_rules_parsed": "These opening hours are complicated. The following rules are ignored in the input element:",
             "openTill": "till",
-            "open_24_7": "Opened around the clock",
+            "open_24_7": "Open around the clock",
             "open_during_ph": "During a public holiday, this is",
             "opensAt": "from",
             "ph_closed": "closed",
             "ph_not_known": " ",
-            "ph_open": "opened",
-            "ph_open_as_usual": "opened as usual"
+            "ph_open": "open",
+            "ph_open_as_usual": "open, as usual"
         },
         "osmLinkTooltip": "Browse this object on OpenStreetMap for history and more editing options",
         "pdf": {

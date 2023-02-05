@@ -1,0 +1,79 @@
+{
+  "id": "parking_ticket_machine",
+  "name": {
+    "en": "Parking Ticket Machines",
+    "nl": "Parkeerkaartautomaten"
+  },
+  "description": {
+    "en": "Layer with parking ticket machines to pay for parking.",
+    "nl": "Laag met parkeerkaartautomaten om voor parkeren te betalen."
+  },
+  "title": {
+    "render": {
+      "en": "Parking Ticket Machine",
+      "nl": "Parkeerkaartautomaat"
+    }
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=vending_machine",
+        "vending=parking_tickets"
+      ]
+    }
+  },
+  "minzoom": 16,
+  "presets": [
+    {
+      "tags": [
+        "amenity=vending_machine",
+        "vending=parking_tickets"
+      ],
+      "title": {
+        "en": "a parking ticket machine",
+        "nl": "een parkeerkaartautomaat"
+      }
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "payment-options-split",
+    "denominations-coins",
+    "denominations-notes",
+    {
+      "id": "ref",
+      "question": {
+        "en": "What is the reference number of this parking ticket machine?",
+        "nl": "Wat is het referentienummer van deze parkeerkaartautomaat?"
+      },
+      "freeform": {
+        "key": "ref",
+        "type": "string",
+        "placeholder": {
+          "en": "Reference number",
+          "nl": "Referentienummer"
+        }
+      },
+      "render": {
+        "en": "This parking ticket machine has the reference number {ref}",
+        "nl": "Deze parkeerkaartautomaat heeft het referentienummer {ref}"
+      },
+      "mappings": [
+        {
+          "if": "noref=yes",
+          "then": {
+            "en": "This parking ticket machine has no reference number",
+            "nl": "Deze parkeerkaartautomaat heeft geen referentienummer"
+          }
+        }
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "location": ["point", "centroid"],
+      "icon": "square:white;./assets/layers/parking_ticket_machine/parking_tickets.svg",
+      "iconSize": "20,20,center"
+    }
+  ]
+}

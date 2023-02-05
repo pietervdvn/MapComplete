@@ -127,13 +127,35 @@
                     },
                     "11": {
                         "then": "Enrajolat"
+                    },
+                    "12": {
+                        "then": "Tallat a la fusta"
                     }
                 },
                 "question": "Quin tipus d'obra és aquesta peça?",
                 "render": "Aquesta és un {artwork_type}"
             },
             "artwork-website": {
-                "question": "Hi ha un lloc web amb més informació sobre aquesta obra d'art?"
+                "question": "Hi ha un lloc web amb més informació sobre aquesta obra d'art?",
+                "render": "Més informació a <a href='{website}' target='_blank'>aquesta pàgina web</a>"
+            },
+            "doubles_as_bench": {
+                "question": "Aquesta obra d'art serveix com a un banc?",
+                "mappings": {
+                    "1": {
+                        "then": "Aquesta obra d'art no serveix com a banc"
+                    },
+                    "0": {
+                        "then": "Aquesta obra d'art també serveix com a banc"
+                    },
+                    "2": {
+                        "then": "Aquesta obra d'art no serveix com a un banc"
+                    }
+                }
+            },
+            "artwork_subject": {
+                "question": "Què representa aquesta obra d'art?",
+                "render": "Aquesta obra d'art representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
             }
         },
         "title": {
@@ -155,24 +177,42 @@
         },
         "tagRenderings": {
             "brand": {
-                "question": "De quina marca és aquest caixer?"
+                "question": "De quina marca és aquest caixer?",
+                "freeform": {
+                    "placeholder": "Nom de la marca"
+                },
+                "render": "La marca d'aquest caixer és {brand}"
             },
             "cash_in": {
                 "mappings": {
                     "0": {
                         "then": "Probablement no pots ingressar diners a aquest caixer"
+                    },
+                    "1": {
+                        "then": "Pots dipositar diners a aquest caixer"
+                    },
+                    "2": {
+                        "then": "No pots dipositar diners a aquest caixer"
                     }
-                }
+                },
+                "question": "Pots dipositar diners a aquest caixer?"
             },
             "cash_out": {
                 "mappings": {
                     "0": {
                         "then": "Pots retirar diners a aquest caixer"
+                    },
+                    "1": {
+                        "then": "Pots retirar diners des d'aquest caixer"
+                    },
+                    "2": {
+                        "then": "No pots retirar diners des d'aquest caixer"
                     }
-                }
+                },
+                "question": "Pots retirar diners des d'aquest caixer?"
             },
             "name": {
-                "render": "El d’aquest caixer és {name}"
+                "render": "El nom d'aquest caixer és {name}"
             },
             "speech_output": {
                 "mappings": {
@@ -184,11 +224,48 @@
                     }
                 },
                 "question": "Aquest caixer té un lector de pantalla per a usuaris amb discapacitat visual?"
+            },
+            "speech_output_language": {
+                "render": {
+                    "special": {
+                        "render_single_language": "Aquest caixer té sortida de veu en {language():font-bold}",
+                        "question": "En quins idiomes té sortida de veu aquest caixer?",
+                        "render_list_item": "Aquest caixer té sortida de veu en {language():font-bold}"
+                    }
+                }
+            },
+            "operator": {
+                "render": "{operator} opera aquest caixer",
+                "question": "Quina companyia opera aquest caixer?",
+                "freeform": {
+                    "placeholder": "Operador"
+                }
+            }
+        },
+        "title": {
+            "render": "Caixer Automàtic"
+        },
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Amb sortida de veu"
+                    }
+                }
             }
         }
     },
     "bank": {
-        "name": "Bancs"
+        "name": "Bancs",
+        "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "2": {
+                        "then": "Aquest banc té un caixer, però està mapejat com a un element diferent"
+                    }
+                }
+            }
+        }
     },
     "barrier": {
         "name": "Barreres",
@@ -234,6 +311,13 @@
                     },
                     "1": {
                         "then": "Un ciclista pot passar-hi."
+                    }
+                }
+            },
+            "Cycle barrier type": {
+                "mappings": {
+                    "0": {
+                        "then": "Simple, simplement dos barreres amb un espai al mig"
                     }
                 }
             }
@@ -1072,6 +1156,49 @@
                         "then": "Via ciclista obligatòria"
                     }
                 }
+            },
+            "Surface of the street": {
+                "mappings": {
+                    "0": {
+                        "then": "Utilitzable per rodets: patins en línia, monopatí"
+                    },
+                    "1": {
+                        "then": "Utilitzable per rodes fines: bicicletes de carrera"
+                    },
+                    "2": {
+                        "then": "Utilitzable per rodes normals: Bicicletes de ciutat, cadires de rodes, scooter"
+                    },
+                    "3": {
+                        "then": "Utilitzable per rodes robustes; Bicicleta de treking, cotxes, bicitaxi"
+                    }
+                }
+            },
+            "Surface of the road": {
+                "mappings": {
+                    "8": {
+                        "then": "Aquest carril bici està fet de fusta"
+                    },
+                    "2": {
+                        "then": "Aquest carril bici està fet d'asfalt"
+                    },
+                    "4": {
+                        "then": "Aquest carril bici està fet de formigó"
+                    },
+                    "1": {
+                        "then": "Aquest carril bici està pavimentat"
+                    }
+                },
+                "question": "De què està feta la superfície d'aquest carrer?",
+                "render": "Aquesta carretera està feta de {surface}"
+            },
+            "Maxspeed (for road)": {
+                "question": "Quina és la velocitat màxima a aquest carrer?",
+                "mappings": {
+                    "4": {
+                        "then": "La velocitat màxima és de 90km/h"
+                    }
+                },
+                "render": "La velocitat màxima a aquesta carretera és {maxspeed} km/h"
             }
         },
         "title": {
@@ -1315,7 +1442,8 @@
                         "then": "Aquesta estació l'opera una entitat privada."
                     }
                 },
-                "question": "Com es classifica l'operador de l'estació?"
+                "question": "Com es classifica l'operador de l'estació?",
+                "render": "Aquest operador és una entitat {operator:type}."
             },
             "station-place": {
                 "question": "On es troba aquesta estació? (p.e. nom del barri, poble o ciutat)",
@@ -1324,7 +1452,11 @@
             "station-street": {
                 "question": " Quin és el nom del carrer on es troba aquesta estació?"
             }
-        }
+        },
+        "title": {
+            "render": "Parc de bombers"
+        },
+        "description": "Capa del mapa que mostra els parcs de bombers."
     },
     "food": {
         "presets": {
@@ -1631,6 +1763,12 @@
         "tagRenderings": {
             "Email": {
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            },
+            "Name tag": {
+                "render": ""
+            },
+            "Surface area": {
+                "render": "Superfície: {_surface:ha}Ha"
             }
         }
     },
@@ -2292,6 +2430,13 @@
                         "then": "La superfície és <b>formigó</b>"
                     }
                 }
+            },
+            "sport_pitch-opening_hours": {
+                "mappings": {
+                    "0": {
+                        "then": "Sempre accesible"
+                    }
+                }
             }
         },
         "title": {
@@ -2406,6 +2551,9 @@
                 "mappings": {
                     "4": {
                         "then": "Aquest fanal està muntat en un pal"
+                    },
+                    "6": {
+                        "then": "Aquest fanal està muntat a la paret utilitzat una barra metàl·lica"
                     }
                 }
             }
@@ -2716,6 +2864,13 @@
                     }
                 },
                 "question": "Aquesta parada té una superfície podotàctil?"
+            },
+            "departures_board": {
+                "mappings": {
+                    "2": {
+                        "then": "Aquesta parada té un tauló amb els horaris en temps real"
+                    }
+                }
             }
         }
     },
@@ -2859,5 +3014,9 @@
                 }
             }
         }
+    },
+    "fitness_centre": {
+        "description": "Capa que mostra centres de fitnes o gimnasos",
+        "name": "Centre de fitnes o gimnàs"
     }
 }
