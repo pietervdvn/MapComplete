@@ -10,7 +10,7 @@ import {
     MultiPolygon,
     Polygon,
 } from "@turf/turf"
-import { GeoJSON, LineString, Point } from "geojson"
+import { GeoJSON, LineString, Point, Position } from "geojson"
 import togpx from "togpx"
 import Constants from "../Models/Constants"
 
@@ -46,7 +46,7 @@ export class GeoOperations {
      * @param lonlat0
      * @param lonlat1
      */
-    static distanceBetween(lonlat0: [number, number], lonlat1: [number, number]) {
+    static distanceBetween(lonlat0: [number, number], lonlat1: [number, number] | Position) {
         return turf.distance(lonlat0, lonlat1, { units: "meters" })
     }
 
