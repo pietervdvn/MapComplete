@@ -5,7 +5,7 @@
 
 
 
-On this map, you'll find information about all types of schools and eduction and can easily add more information
+On this map, you'll find information about all types of schools and education and can easily add more information
 
 This theme contains the following layers:
 

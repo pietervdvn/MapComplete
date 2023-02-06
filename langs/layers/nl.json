@@ -1385,12 +1385,6 @@
                 "title": "een vogelkijkwand"
             }
         },
-        "size": {
-            "render": "40,40,center"
-        },
-        "stroke": {
-            "render": "3"
-        },
         "tagRenderings": {
             "bird-hide-shelter-or-wall": {
                 "mappings": {

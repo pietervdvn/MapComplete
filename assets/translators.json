@@ -1,28 +1,28 @@
 {
   "contributors": [
     {
-      "commits": 239,
+      "commits": 247,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 217,
+      "commits": 233,
       "contributor": "kjon"
     },
     {
-      "commits": 82,
+      "commits": 94,
       "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 63,
+      "commits": 65,
+      "contributor": "paunofu"
+    },
+    {
+      "commits": 65,
       "contributor": "Robin van der Linde"
     },
     {
       "commits": 61,
       "contributor": "danieldegroot2"
-    },
-    {
-      "commits": 46,
-      "contributor": "paunofu"
     },
     {
       "commits": 45,
@@ -74,6 +74,10 @@
     },
     {
       "commits": 13,
+      "contributor": "Olivier"
+    },
+    {
+      "commits": 13,
       "contributor": "Romain de Bossoreille"
     },
     {
@@ -83,10 +87,6 @@
     {
       "commits": 11,
       "contributor": "Jiří Podhorecký"
-    },
-    {
-      "commits": 11,
-      "contributor": "Olivier"
     },
     {
       "commits": 10,
@@ -106,19 +106,19 @@
     },
     {
       "commits": 9,
+      "contributor": "mcliquid"
+    },
+    {
+      "commits": 9,
+      "contributor": "Niels Madsen"
+    },
+    {
+      "commits": 9,
       "contributor": "Jacque Fresco"
     },
     {
       "commits": 8,
-      "contributor": "Niels Madsen"
-    },
-    {
-      "commits": 8,
       "contributor": "Vinicius"
-    },
-    {
-      "commits": 7,
-      "contributor": "mcliquid"
     },
     {
       "commits": 7,
@@ -131,6 +131,10 @@
     {
       "commits": 7,
       "contributor": "Niels Elgaard Larsen"
+    },
+    {
+      "commits": 6,
+      "contributor": "ⵣⵓⵀⵉⵔ ⴰⵎⴰⵣⵉⵖ زهير أمازيغ"
     },
     {
       "commits": 6,
@@ -202,6 +206,22 @@
     },
     {
       "commits": 4,
+      "contributor": "Lucas"
+    },
+    {
+      "commits": 4,
+      "contributor": "ⵣⵓⵀⵉⵔ ⴰⵎⴰⵣⵉⵖ ZOUHIR DEHBI"
+    },
+    {
+      "commits": 4,
+      "contributor": "André Marcelo Alvarenga"
+    },
+    {
+      "commits": 4,
+      "contributor": "Klára Fleischhansová"
+    },
+    {
+      "commits": 4,
       "contributor": "Hiroshi Miura"
     },
     {
@@ -222,7 +242,7 @@
     },
     {
       "commits": 3,
-      "contributor": "ⵣⵓⵀⵉⵔ ⴰⵎⴰⵣⵉⵖ زهير أمازيغ"
+      "contributor": "Ettore Atalan"
     },
     {
       "commits": 3,
@@ -278,19 +298,11 @@
     },
     {
       "commits": 2,
-      "contributor": "ⵣⵓⵀⵉⵔ ⴰⵎⴰⵣⵉⵖ ZOUHIR DEHBI"
+      "contributor": "multiflexi"
     },
     {
       "commits": 2,
-      "contributor": "André Marcelo Alvarenga"
-    },
-    {
-      "commits": 2,
-      "contributor": "Ettore Atalan"
-    },
-    {
-      "commits": 2,
-      "contributor": "Klára Fleischhansová"
+      "contributor": "gallegonovato"
     },
     {
       "commits": 2,
@@ -363,18 +375,6 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
-    },
-    {
-      "commits": 1,
-      "contributor": "multiflexi"
-    },
-    {
-      "commits": 1,
-      "contributor": "gallegonovato"
-    },
-    {
-      "commits": 1,
-      "contributor": "Lucas"
     },
     {
       "commits": 1,

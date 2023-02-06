@@ -1233,7 +1233,8 @@
     },
     "question": {
       "en": "what notes can you use to pay here?",
-      "nl": "Met welke bankbiljetten kan je hier betalen?"
+      "nl": "Met welke bankbiljetten kan je hier betalen?",
+      "de": "Mit welchen Banknoten kann man hier bezahlen?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -1242,7 +1243,8 @@
         "icon": "./assets/tagRenderings/5euro.svg",
         "then": {
           "en": "5 euro notes are accepted",
-          "nl": "Biljetten van 5 euro worden geaccepteerd"
+          "nl": "Biljetten van 5 euro worden geaccepteerd",
+          "de": "5-Euro-Scheine werden angenommen"
         }
       },
       {
@@ -1250,7 +1252,8 @@
         "icon": "./assets/tagRenderings/10euro.svg",
         "then": {
           "en": "10 euro notes are accepted",
-          "nl": "Biljetten van 10 euro worden geaccepteerd"
+          "nl": "Biljetten van 10 euro worden geaccepteerd",
+          "de": "10-Euro-Scheine werden angenommen"
         }
       },
       {
@@ -1258,7 +1261,8 @@
         "icon": "./assets/tagRenderings/20euro.svg",
         "then": {
           "en": "20 euro notes are accepted",
-          "nl": "Biljetten van 20 euro worden geaccepteerd"
+          "nl": "Biljetten van 20 euro worden geaccepteerd",
+          "de": "20-Euro-Scheine werden angenommen"
         }
       },
       {
@@ -1266,7 +1270,8 @@
         "icon": "./assets/tagRenderings/50euro.svg",
         "then": {
           "en": "50 euro notes are accepted",
-          "nl": "Biljetten van 50 euro worden geaccepteerd"
+          "nl": "Biljetten van 50 euro worden geaccepteerd",
+          "de": "50-Euro-Scheine werden angenommen"
         }
       },
       {
@@ -1274,7 +1279,8 @@
         "icon": "./assets/tagRenderings/100euro.svg",
         "then": {
           "en": "100 euro notes are accepted",
-          "nl": "Biljetten van 100 euro worden geaccepteerd"
+          "nl": "Biljetten van 100 euro worden geaccepteerd",
+          "de": "100-Euro-Scheine werden angenommen"
         }
       },
       {
@@ -1282,7 +1288,8 @@
         "icon": "./assets/tagRenderings/200euro.svg",
         "then": {
           "en": "200 euro notes are accepted",
-          "nl": "Biljetten van 200 euro worden geaccepteerd"
+          "nl": "Biljetten van 200 euro worden geaccepteerd",
+          "de": "200-Euro-Scheine werden angenommen"
         }
       },
       {
@@ -1290,7 +1297,8 @@
         "icon": "./assets/tagRenderings/500euro.svg",
         "then": {
           "en": "500 euro notes are accepted",
-          "nl": "Biljetten van 500 euro worden geaccepteerd"
+          "nl": "Biljetten van 500 euro worden geaccepteerd",
+          "de": "500-Euro-Scheine werden angenommen"
         }
       }
     ]

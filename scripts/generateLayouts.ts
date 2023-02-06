@@ -353,7 +353,7 @@ async function main(): Promise<void> {
         const { manifest, whiteIcons } = await createManifest(layout, alreadyWritten)
         const manif = JSON.stringify(manifest, undefined, 2)
         const manifestLocation = encodeURIComponent(layout.id.toLowerCase()) + ".webmanifest"
-        writeFile(manifestLocation, manif, err)
+        writeFile("public/" + manifestLocation, manif, err)
 
         // Create a landing page for the given theme
         const landing = await createLandingPage(layout, manifest, whiteIcons, alreadyWritten)
@@ -377,7 +377,7 @@ async function main(): Promise<void> {
     )
 
     const manif = JSON.stringify(manifest, undefined, 2)
-    writeFileSync("index.manifest", manif)
+    writeFileSync("public/index.webmanifest", manif)
 }
 
 main().then(() => {

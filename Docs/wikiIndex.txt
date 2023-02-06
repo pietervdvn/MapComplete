@@ -221,7 +221,7 @@
 |name= [https://mapcomplete.osm.be/education education]
 |region= Worldwide
 |lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}
-|descr= A MapComplete theme: On this map, you'll find information about all types of schools and eduction and can easily add more information
+|descr= A MapComplete theme: On this map, you'll find information about all types of schools and education and can easily add more information
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
 |genre= POI, editor, education
@@ -229,7 +229,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/facadegardens facadegardens]
 |region= Worldwide
-|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:it|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:it|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}
 |descr= A MapComplete theme: This map shows facade gardens with pictures and useful info about orientation, sunshine and plant types.
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -364,7 +364,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/osm_community_index osm_community_index]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:nl|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}
 |descr= A MapComplete theme: An index of community resources for OpenStreetMap.
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png

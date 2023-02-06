@@ -105,24 +105,7 @@ export default class LeftControls extends Combine {
             state.featureSwitchBackgroundSelection
         )
 
-        // If the welcomeMessage is disabled, the copyright is hidden (as that is where the copyright is located
-        const copyright = new Toggle(
-            undefined,
-            new Lazy(() => {
-                new ScrollableFullScreen(
-                    () => Translations.t.general.attribution.attributionTitle,
-                    () => new CopyrightPanel(state),
-                    "copyright",
-                    guiState.copyrightViewIsOpened
-                )
-                return new MapControlButton(Svg.copyright_svg()).onClick(() =>
-                    guiState.copyrightViewIsOpened.setData(true)
-                )
-            }),
-            state.featureSwitchWelcomeMessage
-        )
-
-        super([currentViewAction, filterButton, downloadButton, copyright, mapSwitch])
+        super([currentViewAction, filterButton, downloadButton, mapSwitch])
 
         this.SetClass("flex flex-col")
     }

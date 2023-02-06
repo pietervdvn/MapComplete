@@ -1768,7 +1768,6 @@
             "Email": {
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
-            "Name tag": {},
             "Surface area": {
                 "render": "Superfície: {_surface:ha}Ha"
             }
