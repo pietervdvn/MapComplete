@@ -13,6 +13,7 @@ This theme contains the following layers:
 
   - [parking](../Layers/parking.md)
   - [parking_spaces](../Layers/parking_spaces.md)
+  - [parking_ticket_machine](../Layers/parking_ticket_machine.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)

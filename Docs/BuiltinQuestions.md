@@ -34,6 +34,7 @@ The following items can be easily reused in your layers
     + [payment-options-split](#payment-options-split)
     + [payment-options-advanced](#payment-options-advanced)
     + [denominations-coins](#denominations-coins)
+    + [denominations-notes](#denominations-notes)
     + [last_edit](#last_edit)
     + [all_tags](#all_tags)
     + [multilevels](#multilevels)
@@ -378,6 +379,25 @@ What coins can you use to pay here?
   - 50 cent coins are accepted
   - 1 euro coins are accepted
   - 2 euro coins are accepted
+
+
+
+
+### denominations-notes 
+
+
+
+what notes can you use to pay here?
+
+
+
+  - 5 euro notes are accepted
+  - 10 euro notes are accepted
+  - 20 euro notes are accepted
+  - 50 euro notes are accepted
+  - 100 euro notes are accepted
+  - 200 euro notes are accepted
+  - 500 euro notes are accepted
 
 
 

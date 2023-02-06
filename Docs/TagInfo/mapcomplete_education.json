@@ -2,7 +2,7 @@
   "data_format": 1,
   "project": {
     "name": "MapComplete Education",
-    "description": "On this map, you'll find information about all types of schools and eduction and can easily add more information",
+    "description": "On this map, you'll find information about all types of schools and education and can easily add more information",
     "project_url": "https://mapcomplete.osm.be/education",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/layers/school/college.svg",

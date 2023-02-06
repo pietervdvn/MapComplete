@@ -50,11 +50,12 @@
     + [export_as_geojson](#export_as_geojson)
     + [{upload_to_osm()}](#{upload_to_osm()})
     + [minimap](#minimap)
+    + [payment-options-split](#payment-options-split)
+    + [denominations-coins](#denominations-coins)
+    + [denominations-notes](#denominations-notes)
     + [id_presets.shop_types](#id_presetsshop_types)
     + [school.capacity](#schoolcapacity)
     + [school.gender](#schoolgender)
-    + [payment-options-split](#payment-options-split)
-    + [denominations-coins](#denominations-coins)
     + [toilet.toilets-type](#toilettoilets-type)
     + [toilet.toilets-changing-table](#toilettoilets-changing-table)
     + [toilet.toilet-changing_table:location](#toilettoilet-changing_table:location)
@@ -129,6 +130,7 @@
   - parcel_lockers
   - parking
   - parking_spaces
+  - parking_ticket_machine
   - pharmacy
   - physiotherapist
   - picnic_table
@@ -157,6 +159,7 @@
   - viewpoint
   - village_green
   - waste_basket
+  - waste_disposal
   - windturbine
 
 
@@ -767,6 +770,43 @@
 
 
 
+### payment-options-split 
+
+
+
+
+
+  - parking_ticket_machine
+  - ticket_machine
+  - toilet
+
+
+
+
+### denominations-coins 
+
+
+
+
+
+  - parking_ticket_machine
+  - ticket_machine
+
+
+
+
+### denominations-notes 
+
+
+
+
+
+  - parking_ticket_machine
+  - ticket_machine
+
+
+
+
 ### id_presets.shop_types 
 
 
@@ -796,29 +836,6 @@
 
 
   - tertiary_education
-
-
-
-
-### payment-options-split 
-
-
-
-
-
-  - ticket_machine
-  - toilet
-
-
-
-
-### denominations-coins 
-
-
-
-
-
-  - ticket_machine
 
 
 

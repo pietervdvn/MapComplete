@@ -1,20 +1,32 @@
 
 
- ticket_machine 
-================
+ parking_ticket_machine 
+========================
 
 
 
-<img src='https://mapcomplete.osm.be/square:lightblue;./assets/themes/stations/public_transport_tickets.svg' height="100px"> 
+<img src='https://mapcomplete.osm.be/square:white;./assets/layers/parking_ticket_machine/parking_tickets.svg' height="100px"> 
 
-Find ticket machines for public transport tickets
-
-
+Layer with parking ticket machines to pay for parking.
 
 
 
 
-  - This layer is shown at zoomlevel **19** and higher
+
+
+  - This layer is shown at zoomlevel **16** and higher
+
+
+
+
+#### Themes using this layer 
+
+
+
+
+
+  - [parkings](https://mapcomplete.osm.be/parkings)
+  - [personal](https://mapcomplete.osm.be/personal)
 
 
 
@@ -29,10 +41,10 @@ Elements must have the all of following tags to be shown on this layer:
 
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dvending_machine' target='_blank'>vending_machine</a>
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dpublic_transport_tickets' target='_blank'>public_transport_tickets</a>
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:vending' target='_blank'>vending</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:vending%3Dparking_tickets' target='_blank'>parking_tickets</a>
 
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22vending_machine%22%5D%5B%22vending%22%3D%22public_transport_tickets%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22vending_machine%22%5D%5B%22vending%22%3D%22parking_tickets%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -49,10 +61,9 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | [Nederlandse Spoorwegen](https://wiki.openstreetmap.org/wiki/Tag:operator%3DNederlandse Spoorwegen)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/payment:coins:denominations#values) [payment:coins:denominations](https://wiki.openstreetmap.org/wiki/Key:payment:coins:denominations) | Multiple choice | [0.01 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.01 EUR) [0.02 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.02 EUR) [0.05 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.05 EUR) [0.10 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.10 EUR) [0.20 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.20 EUR) [0.50 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D0.50 EUR) [1 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D1 EUR) [2 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:coins:denominations%3D2 EUR)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/payment:notes:denominations#values) [payment:notes:denominations](https://wiki.openstreetmap.org/wiki/Key:payment:notes:denominations) | Multiple choice | [5 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D5 EUR) [10 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D10 EUR) [20 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D20 EUR) [50 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D50 EUR) [100 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D100 EUR) [200 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D200 EUR) [500 EUR](https://wiki.openstreetmap.org/wiki/Tag:payment:notes:denominations%3D500 EUR)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/ref#values) [ref](https://wiki.openstreetmap.org/wiki/Key:ref) | [string](../SpecialInputElements.md#string) | 
 
 
 
@@ -65,50 +76,6 @@ This block shows the known images which are linked with the `image`-keys, but al
 
 This tagrendering has no question and is thus read-only
 
-
-
-
-
-### level 
-
-
-
-The question is  *On what level is this feature located?*
-
-This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
-
-This is rendered with  `Located on the {level}th floor`
-
-
-
-
-
-  - *Located underground*  corresponds with  `location=underground`
-  - This option cannot be chosen as answer
-  - *Located on the ground floor*  corresponds with  `level=0`
-  - *Located on the ground floor*  corresponds with  ``
-  - This option cannot be chosen as answer
-  - *Located on the first floor*  corresponds with  `level=1`
-  - *Located on the first basement level*  corresponds with  `level=-1`
-
-
-
-
-### operator 
-
-
-
-The question is  *Who is the operator of this ticket machine?*
-
-This rendering asks information about the property  [operator](https://wiki.openstreetmap.org/wiki/Key:operator) 
-
-This is rendered with  `This ticket machine is operated by {operator}`
-
-
-
-
-
-  - *Dutch Railways (NS)*  corresponds with  `operator=Nederlandse Spoorwegen`
 
 
 
@@ -184,6 +151,25 @@ The question is  *what notes can you use to pay here?*
   - *500 euro notes are accepted*  corresponds with  `payment:notes:denominations=500 EUR`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk` 
+This tagrendering is only visible in the popup if the following condition is met: `payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk`
 
-This document is autogenerated from [assets/layers/ticket_machine/ticket_machine.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/ticket_machine/ticket_machine.json)
+
+
+### ref 
+
+
+
+The question is  *What is the reference number of this parking ticket machine?*
+
+This rendering asks information about the property  [ref](https://wiki.openstreetmap.org/wiki/Key:ref) 
+
+This is rendered with  `This parking ticket machine has the reference number {ref}`
+
+
+
+
+
+  - *This parking ticket machine has no reference number*  corresponds with  `noref=yes`
+ 
+
+This document is autogenerated from [assets/layers/parking_ticket_machine/parking_ticket_machine.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/parking_ticket_machine/parking_ticket_machine.json)

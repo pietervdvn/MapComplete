@@ -998,6 +998,7 @@ The following layers are included in MapComplete:
   - [parcel_lockers](./Layers/parcel_lockers.md)
   - [parking](./Layers/parking.md)
   - [parking_spaces](./Layers/parking_spaces.md)
+  - [parking_ticket_machine](./Layers/parking_ticket_machine.md)
   - [pedestrian_path](./Layers/pedestrian_path.md)
   - [pharmacy](./Layers/pharmacy.md)
   - [physiotherapist](./Layers/physiotherapist.md)
