@@ -1385,9 +1385,6 @@
                 "title": "een vogelkijkwand"
             }
         },
-        "size": {
-            "render": "40,40,center"
-        },
         "stroke": {
             "render": "3"
         },
@@ -1441,9 +1438,6 @@
         },
         "title": {
             "mappings": {
-                "0": {
-                    "then": "{name}"
-                },
                 "1": {
                     "then": "Vogelkijkhut {name}"
                 },
@@ -2862,13 +2856,6 @@
                 }
             },
             "render": "Klimroute"
-        }
-    },
-    "crab_address": {
-        "tagRenderings": {
-            "render_crab": {
-                "render": "Volgens het CRAB ligt hier <b>{STRAATNM}</b> {HUISNR} (label: {HNRLABEL})"
-            }
         }
     },
     "crossings": {
@@ -4517,14 +4504,12 @@
     },
     "grass_in_parks": {
         "description": "Dit zoekt naar alle toegankelijke grasvelden binnen publieke parken - dit zijn 'groenzones'",
-        "name": "Toegankelijke grasvelden in parken",
         "title": {
             "mappings": {
                 "0": {
                     "then": "{name}"
                 }
-            },
-            "render": "Speelweide in een park"
+            }
         }
     },
     "hackerspace": {
@@ -5317,11 +5302,6 @@
             }
         },
         "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                }
-            },
             "render": "Natuurgebied"
         }
     },
@@ -5890,18 +5870,13 @@
         }
     },
     "play_forest": {
-        "description": "Een speelbos is een vrij toegankelijke zone in een bos",
         "name": "Speelbossen",
         "title": {
             "mappings": {
-                "0": {
-                    "then": "{name}"
-                },
                 "1": {
                     "then": "Speelbos {name}"
                 }
-            },
-            "render": "Speelbos"
+            }
         }
     },
     "playground": {
@@ -6742,21 +6717,14 @@
     },
     "slow_roads": {
         "description": "Alle verkeersvrije wegen",
-        "name": "Paadjes, trage wegen en autoluwe straten",
         "tagRenderings": {
             "explanation": {
                 "mappings": {
                     "1": {
                         "then": "Dit is een brede, autovrije straat"
                     },
-                    "2": {
-                        "then": "Dit is een voetpaadje"
-                    },
                     "3": {
                         "then": "Dit is een wegeltje of bospad"
-                    },
-                    "4": {
-                        "then": "Dit is een ruiterswegel"
                     },
                     "5": {
                         "then": "Dit is een tractorspoor of weg om landbouwgrond te bereikken"
@@ -6790,26 +6758,16 @@
                         "then": "De ondergrond is <b>verhard</b>"
                     }
                 },
-                "question": "Wat is de wegverharding van dit pad?",
                 "render": "De ondergrond is <b>{surface}</b>"
             }
         },
         "title": {
             "mappings": {
-                "0": {
-                    "then": "{name}"
-                },
                 "1": {
                     "then": "Voetpad"
                 },
-                "2": {
-                    "then": "Fietspad"
-                },
                 "3": {
                     "then": "Voetgangersstraat"
-                },
-                "4": {
-                    "then": "Woonerf"
                 }
             },
             "render": "Trage weg"
@@ -7733,7 +7691,6 @@
         }
     },
     "trail": {
-        "description": "Aangeduide wandeltochten",
         "name": "Wandeltochten",
         "tagRenderings": {
             "Color": {
@@ -7751,43 +7708,30 @@
                         "then": "Gele wandeling"
                     }
                 },
-                "question": "Welke kleur heeft deze wandeling?",
                 "render": "Deze wandeling heeft kleur {colour}"
             },
             "Name": {
-                "question": "Wat is de naam van deze wandeling?",
                 "render": "Deze wandeling heet <b>{name}</b>"
             },
             "Operator tag": {
                 "mappings": {
-                    "0": {
-                        "then": "Dit gebied wordt beheerd door Natuurpunt"
-                    },
                     "1": {
                         "then": "Dit gebied wordt beheerd door {operator}"
                     }
                 },
-                "question": "Wie beheert deze wandeltocht?",
                 "render": "Beheer door {operator}"
             },
             "Wheelchair access": {
                 "mappings": {
-                    "0": {
-                        "then": "deze wandeltocht is toegankelijk met de rolstoel"
-                    },
                     "1": {
                         "then": "deze wandeltocht is niet toegankelijk met de rolstoel"
                     }
-                },
-                "question": "Is deze wandeling toegankelijk met de rolstoel?"
+                }
             },
             "pushchair access": {
                 "mappings": {
                     "0": {
                         "then": "deze wandeltocht is toegankelijk met de buggy"
-                    },
-                    "1": {
-                        "then": "deze wandeltocht is niet toegankelijk met de buggy"
                     }
                 },
                 "question": "Is deze wandeltocht toegankelijk met de buggy?"
@@ -8147,14 +8091,12 @@
     },
     "village_green": {
         "description": "Een laag die dorpsgroen toont (gemeenschapsgroen, maar niet echt een park)",
-        "name": "Speelweide",
         "title": {
             "mappings": {
                 "0": {
                     "then": "{name}"
                 }
-            },
-            "render": "Speelweide"
+            }
         }
     },
     "visitor_information_centre": {
@@ -8162,9 +8104,6 @@
         "name": "Bezoekerscentrum",
         "title": {
             "mappings": {
-                "0": {
-                    "then": "{name:nl}"
-                },
                 "1": {
                     "then": "{name}"
                 }
