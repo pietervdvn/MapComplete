@@ -33,6 +33,10 @@ export class SimpleMetaTagger {
         docs: {
             keys: string[]
             doc: string
+            /**
+             * Set this flag if the data is volatile or date-based.
+             * It'll _won't_ be cached in this case
+             */
             includesDates?: boolean
             isLazy?: boolean
             cleanupRetagger?: boolean
@@ -118,7 +122,7 @@ export default class SimpleMetaTaggers {
             /*Note: also called by 'UpdateTagsFromOsmAPI'*/
 
             const tgs = feature.properties
-            let movedSomething = false;
+            let movedSomething = false
 
             function move(src: string, target: string) {
                 if (tgs[src] === undefined) {
@@ -492,6 +496,7 @@ export default class SimpleMetaTaggers {
         {
             keys: ["_referencing_ways"],
             isLazy: true,
+            includesDates: true,
             doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry. ",
         },
         (feature, _, __, state) => {
