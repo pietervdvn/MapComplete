@@ -1846,8 +1846,8 @@
       "question": {
         "en": "What voltage do the plugs with <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> offer?",
         "nl": "Welke spanning levert de stekker van type <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>",
-        "de": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?",
-        "ca": "Quin voltatge ofereixen els endolls amb <div style='display: inline-block'><b><b>CHAdeMO</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?"
+        "ca": "Quin voltatge ofereixen els endolls amb <div style='display: inline-block'><b><b>CHAdeMO</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?",
+        "de": "Welche Spannung bieten die Stecker mit <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?"
       },
       "render": {
         "en": "<div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> outputs {socket:chademo:voltage} volt",
@@ -1864,8 +1864,8 @@
           "then": {
             "en": "<b>Chademo</b> outputs 500 volt",
             "nl": "<b>Chademo</b> heeft een spanning van 500 volt",
-            "de": "<b>Chademo</b> liefert 500 Volt",
-            "ca": "<b>CHAdeMO</b> proporciona 500 volts"
+            "ca": "<b>CHAdeMO</b> proporciona 500 volts",
+            "de": "<b>Chademo</b> liefert 500 Volt"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Chademo_type4.svg",
@@ -3252,8 +3252,8 @@
           "then": {
             "en": "<b>Tesla Supercharger (Destination)</b> outputs at most 125 A",
             "nl": "<b>Tesla Supercharger (destination)</b> levert een stroom van maximaal 125 A",
-            "de": "<b>Tesla Supercharger (Destination)</b> liefert maximal 125 A",
-            "ca": "<b>Tesla Supercharger (Destinació)</b> emet com a màxim 125 A"
+            "ca": "<b>Tesla Supercharger (Destinació)</b> emet com a màxim 125 A",
+            "de": "<b>Tesla Supercharger (Destination)</b> liefert maximal 125 A"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Tesla-hpwc-model-s.svg",
@@ -3265,8 +3265,8 @@
           "then": {
             "en": "<b>Tesla Supercharger (Destination)</b> outputs at most 350 A",
             "nl": "<b>Tesla Supercharger (destination)</b> levert een stroom van maximaal 350 A",
-            "de": "<b>Tesla Supercharger (Destination)</b> liefert maximal 350 A",
-            "ca": "<b>Tesla Supercharger (Destinació)</b> emet com a màxim 350 A"
+            "ca": "<b>Tesla Supercharger (Destinació)</b> emet com a màxim 350 A",
+            "de": "<b>Tesla Supercharger (Destination)</b> liefert maximal 350 A"
           },
           "icon": {
             "path": "./assets/layers/charging_station/Tesla-hpwc-model-s.svg",
@@ -3847,9 +3847,9 @@
           "then": {
             "nl": "Gratis te gebruiken, maar aanmelden met een applicatie is verplicht",
             "en": "Free to use, but one has to authenticate",
+            "ca": "Ús gratuït, però un s'ha d'autentificar",
             "da": "Gratis at bruge, men man skal godkende",
-            "de": "Die Nutzung ist kostenlos, Authentifizierung erforderlich",
-            "ca": "Ús gratuït, però un s'ha d'autentificar"
+            "de": "Die Nutzung ist kostenlos, Authentifizierung erforderlich"
           }
         },
         {

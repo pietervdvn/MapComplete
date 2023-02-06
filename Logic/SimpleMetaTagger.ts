@@ -118,7 +118,7 @@ export default class SimpleMetaTaggers {
             /*Note: also called by 'UpdateTagsFromOsmAPI'*/
 
             const tgs = feature.properties
-            let movedSomething = false;
+            let movedSomething = false
 
             function move(src: string, target: string) {
                 if (tgs[src] === undefined) {
