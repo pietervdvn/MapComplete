@@ -8,7 +8,7 @@
 */
 
 /*
-    ! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
+    ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -39,6 +39,7 @@
 2. Prevent adjustments of font size after orientation changes in iOS.
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
 */
 
 html {
@@ -51,6 +52,9 @@ html {
   /* 3 */
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
+  -webkit-font-feature-settings: normal;
+          font-feature-settings: normal;
+  /* 5 */
 }
 
 /*
@@ -417,6 +421,12 @@ video {
   height: auto;
 }
 
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -592,6 +602,18 @@ video {
   }
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .pointer-events-none {
   pointer-events: none;
 }
@@ -608,6 +630,10 @@ video {
   visibility: hidden;
 }
 
+.collapse {
+  visibility: collapse;
+}
+
 .static {
   position: static;
 }
@@ -622,10 +648,6 @@ video {
 
 .relative {
   position: relative;
-}
-
-.\!relative {
-  position: relative !important;
 }
 
 .sticky {
@@ -997,10 +1019,6 @@ video {
   height: 3rem;
 }
 
-.h-6 {
-  height: 1.5rem;
-}
-
 .h-4 {
   height: 1rem;
 }
@@ -1015,6 +1033,10 @@ video {
 
 .h-11 {
   height: 2.75rem;
+}
+
+.h-6 {
+  height: 1.5rem;
 }
 
 .h-96 {
@@ -1130,10 +1152,6 @@ video {
 
 .flex-none {
   flex: none;
-}
-
-.flex-auto {
-  flex: 1 1 auto;
 }
 
 .flex-shrink-0 {
@@ -1512,11 +1530,6 @@ video {
   padding: 0.125rem;
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
@@ -1721,13 +1734,11 @@ video {
 }
 
 .underline {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .line-through {
-  -webkit-text-decoration-line: line-through;
-          text-decoration-line: line-through;
+  text-decoration-line: line-through;
 }
 
 .opacity-50 {
@@ -1791,17 +1802,15 @@ video {
 }
 
 .transition {
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, -webkit-text-decoration-color, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
 .transition-colors {
-  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1834,14 +1843,6 @@ video {
 .bg-unsubtle {
   background-color: var(--unsubtle-detail-color);
   color: var(--unsubtle-detail-color-contrast);
-}
-
-.\[out\:json\] {
-  out: json;
-}
-
-.\[timeout\:90\] {
-  timeout: 90;
 }
 
 .\[key\:string\] {
@@ -1908,7 +1909,7 @@ body {
 }
 
 .leaflet-control-attribution {
-  display: block ruby;
+  display: flex;
 }
 
 .badge {

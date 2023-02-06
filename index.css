@@ -118,7 +118,7 @@ body {
 }
 
 .leaflet-control-attribution {
-  display: block ruby;
+  display: flex;
 }
 
 .badge {

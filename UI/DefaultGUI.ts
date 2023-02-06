@@ -33,6 +33,8 @@ import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
 import { GeoLocationState } from "../Logic/State/GeoLocationState"
 import Hotkeys from "./Base/Hotkeys"
 import AvailableBaseLayers from "../Logic/Actors/AvailableBaseLayers"
+import Lazy from "./Base/Lazy"
+import CopyrightPanel from "./BigComponents/CopyrightPanel"
 
 /**
  * The default MapComplete GUI initializer
@@ -239,7 +241,22 @@ export default class DefaultGUI {
         const testingBadge = Toggle.If(state.featureSwitchIsTesting, () =>
             new FixedUiElement("TESTING").SetClass("alert m-2 border-2 border-black")
         )
-        new Combine([welcomeMessageMapControl, userInfoMapControl, extraLink, testingBadge])
+        new ScrollableFullScreen(
+            () => Translations.t.general.attribution.attributionTitle,
+            () => new CopyrightPanel(state),
+            "copyright",
+            guiState.copyrightViewIsOpened
+        )
+        const copyright = new MapControlButton(Svg.copyright_svg()).onClick(() =>
+            guiState.copyrightViewIsOpened.setData(true)
+        )
+        new Combine([
+            welcomeMessageMapControl,
+            userInfoMapControl,
+            copyright,
+            extraLink,
+            testingBadge,
+        ])
             .SetClass("flex flex-col")
             .AttachTo("top-left")
 

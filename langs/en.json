@@ -133,6 +133,7 @@
             "josmOpened": "JOSM is opened",
             "mapContributionsBy": "The current visible data has edits made by {contributors}",
             "mapContributionsByAndHidden": "The current visible data has edits made by {contributors} and {hiddenCount} more contributors",
+            "mapDataByOsm": "Map data: OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> is an online service which gathers street-level pictures and offers them under a free license. Contributors are allowed to use these pictures to improve OpenStreetMap",
             "openIssueTracker": "File a bug",
             "openMapillary": "Open Mapillary here",
