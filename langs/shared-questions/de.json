@@ -29,6 +29,32 @@
             },
             "question": "Mit welchen Münzen kann man hier bezahlen?"
         },
+        "denominations-notes": {
+            "mappings": {
+                "0": {
+                    "then": "5-Euro-Scheine werden angenommen"
+                },
+                "1": {
+                    "then": "10-Euro-Scheine werden angenommen"
+                },
+                "2": {
+                    "then": "20-Euro-Scheine werden angenommen"
+                },
+                "3": {
+                    "then": "50-Euro-Scheine werden angenommen"
+                },
+                "4": {
+                    "then": "100-Euro-Scheine werden angenommen"
+                },
+                "5": {
+                    "then": "200-Euro-Scheine werden angenommen"
+                },
+                "6": {
+                    "then": "500-Euro-Scheine werden angenommen"
+                }
+            },
+            "question": "Mit welchen Banknoten kann man hier bezahlen?"
+        },
         "description": {
             "question": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.<br/><span style='font-size: small'>Bitte keine bereits erhobenen Informationen.</span>"
         },
