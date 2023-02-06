@@ -681,7 +681,6 @@
     "fruit_trees": {
         "layers": {
             "0": {
-                "name": "Boomgaarden",
                 "presets": {
                     "0": {
                         "title": "een boomgaard"
@@ -689,28 +688,18 @@
                 }
             },
             "1": {
-                "description": "Een boom",
                 "presets": {
                     "0": {
                         "description": "Voeg hier een boom toe"
                     }
                 },
                 "tagRenderings": {
-                    "fruitboom-description": {
-                        "question": "Welke beschrijving past bij deze boom?"
-                    },
                     "fruitboom-ref": {
                         "question": "Is er een refernetienummer?"
-                    },
-                    "fruitboom-species:nl": {
-                        "question": "Wat is de soort van deze boom (in het Nederlands)?"
                     },
                     "fruitboom-taxon": {
                         "question": "Wat is het taxon (ras) van deze boom?"
                     }
-                },
-                "title": {
-                    "render": "Boom"
                 }
             }
         },
@@ -728,22 +717,15 @@
                     "building type": {
                         "question": "Wat voor soort gebouw is dit?"
                     },
-                    "grb-fixme": {
-                        "question": "Wat zegt de fixme?"
-                    },
                     "grb-housenumber": {
                         "mappings": {
                             "0": {
                                 "then": "Geen huisnummer"
                             }
-                        },
-                        "render": "Het huisnummer is <b>{addr:housenumber}</b>"
+                        }
                     },
                     "grb-min-level": {
                         "render": "Dit gebouw begint maar op de {building:min_level} verdieping"
-                    },
-                    "grb-street": {
-                        "render": "De straat is <b>{addr:street}</b>"
                     }
                 }
             },
@@ -754,13 +736,6 @@
                             "mappings": {
                                 "0": {
                                     "then": "Geen omliggend OSM-gebouw gevonden"
-                                }
-                            }
-                        },
-                        "3": {
-                            "render": {
-                                "special": {
-                                    "text": "Voeg dit adres als een nieuw adrespunt toe"
                                 }
                             }
                         }
@@ -781,8 +756,7 @@
                     }
                 }
             }
-        },
-        "title": "GRB import helper"
+        }
     },
     "grb_fixme": {
         "layers": {
@@ -791,22 +765,15 @@
                     "building type": {
                         "question": "Wat voor soort gebouw is dit?"
                     },
-                    "grb-fixme": {
-                        "question": "Wat zegt de fixme?"
-                    },
                     "grb-housenumber": {
                         "mappings": {
                             "0": {
                                 "then": "Geen huisnummer"
                             }
-                        },
-                        "render": "Het huisnummer is <b>{addr:housenumber}</b>"
+                        }
                     },
                     "grb-min-level": {
                         "render": "Dit gebouw begint maar op de {building:min_level} verdieping"
-                    },
-                    "grb-street": {
-                        "render": "De straat is <b>{addr:street}</b>"
                     }
                 }
             }
@@ -972,6 +939,33 @@
     "onwheels": {
         "description": "Op deze kaart kan je informatie rond rolstoeltoegankelijkheid zien, zoals toegangsdeuren met hun breedte en drempelhoogte, toiletten met toegankelijkheidsinformatie, recepties maar ook winkels, cafés en restaurants.",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistieken"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importeren"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Voeg alle gesuggereerde tags toe"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -1013,33 +1007,6 @@
             "8": {
                 "override": {
                     "name": "Parkeerplaatsen voor personen met een beperking"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistieken"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importeren"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Voeg alle gesuggereerde tags toe"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1091,9 +1058,6 @@
             }
         },
         "title": "Dierenartsen, hondenloopzones en andere huisdiervriendelijke plaatsen"
-    },
-    "play_forests": {
-        "shortDescription": "Deze kaart toont speelbossen"
     },
     "playgrounds": {
         "description": "Op deze kaart vind je speeltuinen en kan je zelf meer informatie en foto's toevoegen",
@@ -1182,21 +1146,14 @@
     "speelplekken": {
         "layers": {
             "7": {
-                "name": "Wandelroutes van provincie Antwerpen",
                 "tagRenderings": {
                     "walk-length": {
                         "render": "Deze wandeling is <b>{_length:km}km</b> lang"
-                    },
-                    "walk-operator-email": {
-                        "question": "Naar wie kan men emailen bij problemen rond signalisatie?"
                     },
                     "walk-type": {
                         "mappings": {
                             "0": {
                                 "then": "Dit is een internationale wandelroute"
-                            },
-                            "2": {
-                                "then": "Dit is een regionale wandelroute"
                             }
                         }
                     }
@@ -1230,10 +1187,6 @@
     "stations": {
         "description": "Bekijk, bewerk en voeg details to aan een treinstation",
         "layers": {
-            "3": {
-                "description": "Laag met treinstations",
-                "name": "Treinstations"
-            },
             "15": {
                 "description": "Schermen die treinen tonen die van dit station vertrekken",
                 "name": "Vertrektijdenborden",
@@ -1265,6 +1218,10 @@
                 "title": {
                     "render": "Vertrektijdenbord"
                 }
+            },
+            "3": {
+                "description": "Laag met treinstations",
+                "name": "Treinstations"
             }
         },
         "title": "Treinstations"
@@ -1325,9 +1282,6 @@
         },
         "title": "Straatverlichting"
     },
-    "street_lighting_assen": {
-        "title": "Straatverlichting - Assen"
-    },
     "surveillance": {
         "description": "Op deze open kaart kan je bewakingscamera's vinden.",
         "shortDescription": "Bewakingscameras en dergelijke",
@@ -1353,9 +1307,6 @@
     "waste": {
         "description": "Kaart met afvalbakken en recyclingfaciliteiten.",
         "title": "Afval"
-    },
-    "waste_assen": {
-        "title": "Afval - Assen"
     },
     "waste_basket": {
         "description": "Op deze kaart vind je vuilnisbakken waar je afval in kan smijten. Ontbreekt er een vuilnisbak? Dan kan je die zelf toevoegen",
