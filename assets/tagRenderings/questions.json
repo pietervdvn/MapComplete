@@ -1234,7 +1234,8 @@
     "question": {
       "en": "what notes can you use to pay here?",
       "nl": "Met welke bankbiljetten kan je hier betalen?",
-      "de": "Mit welchen Banknoten kann man hier bezahlen?"
+      "de": "Mit welchen Banknoten kann man hier bezahlen?",
+      "es": "¿con qué billetes se puede pagar aquí?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -1244,7 +1245,8 @@
         "then": {
           "en": "5 euro notes are accepted",
           "nl": "Biljetten van 5 euro worden geaccepteerd",
-          "de": "5-Euro-Scheine werden angenommen"
+          "de": "5-Euro-Scheine werden angenommen",
+          "es": "Se aceptan billetes de 5 euros"
         }
       },
       {
@@ -1253,7 +1255,8 @@
         "then": {
           "en": "10 euro notes are accepted",
           "nl": "Biljetten van 10 euro worden geaccepteerd",
-          "de": "10-Euro-Scheine werden angenommen"
+          "de": "10-Euro-Scheine werden angenommen",
+          "es": "Se aceptan billetes de 10 euros"
         }
       },
       {
@@ -1262,7 +1265,8 @@
         "then": {
           "en": "20 euro notes are accepted",
           "nl": "Biljetten van 20 euro worden geaccepteerd",
-          "de": "20-Euro-Scheine werden angenommen"
+          "de": "20-Euro-Scheine werden angenommen",
+          "es": "Se aceptan billetes de 20 euros"
         }
       },
       {
@@ -1271,7 +1275,8 @@
         "then": {
           "en": "50 euro notes are accepted",
           "nl": "Biljetten van 50 euro worden geaccepteerd",
-          "de": "50-Euro-Scheine werden angenommen"
+          "de": "50-Euro-Scheine werden angenommen",
+          "es": "Se aceptan billetes de 50 euros"
         }
       },
       {
@@ -1280,7 +1285,8 @@
         "then": {
           "en": "100 euro notes are accepted",
           "nl": "Biljetten van 100 euro worden geaccepteerd",
-          "de": "100-Euro-Scheine werden angenommen"
+          "de": "100-Euro-Scheine werden angenommen",
+          "es": "Se aceptan billetes de 100 euros"
         }
       },
       {
@@ -1289,7 +1295,8 @@
         "then": {
           "en": "200 euro notes are accepted",
           "nl": "Biljetten van 200 euro worden geaccepteerd",
-          "de": "200-Euro-Scheine werden angenommen"
+          "de": "200-Euro-Scheine werden angenommen",
+          "es": "Se aceptan billetes de 200 euros"
         }
       },
       {
@@ -1298,7 +1305,8 @@
         "then": {
           "en": "500 euro notes are accepted",
           "nl": "Biljetten van 500 euro worden geaccepteerd",
-          "de": "500-Euro-Scheine werden angenommen"
+          "de": "500-Euro-Scheine werden angenommen",
+          "es": "Se aceptan billetes de 500 euros"
         }
       }
     ]
