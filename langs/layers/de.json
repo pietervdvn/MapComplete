@@ -3543,7 +3543,7 @@
     },
     "dentist": {
         "description": "Diese Ebene zeigt Zahnarztpraxen",
-        "name": "Zahnarzt",
+        "name": "Zahnärzte",
         "presets": {
             "0": {
                 "title": "eine Zahnarztpraxis"
@@ -4595,7 +4595,7 @@
         }
     },
     "gps_track": {
-        "name": "Zurückgelegte Strecke anzeigen",
+        "name": "Zurückgelegte Strecke",
         "tagRenderings": {
             "Privacy notice": {
                 "render": "Dies ist der Weg, den Sie seit dem Besuch dieser Webseite zurückgelegt haben. Keine Sorge - diese Daten sind nur für Sie sichtbar und für niemanden sonst. Ihre Standortdaten werden niemals an ein anderes Gerät gesendet."
@@ -5241,7 +5241,7 @@
     },
     "maxspeed": {
         "description": "Zeigt die zulässige Geschwindigkeit für jede Straße an",
-        "name": "Höchstgeschwindigkeit",
+        "name": "Höchstgeschwindigkeiten",
         "tagRenderings": {
             "maxspeed-maxspeed": {
                 "mappings": {
@@ -5950,7 +5950,7 @@
     },
     "physiotherapist": {
         "description": "Diese Ebene zeigt Physiotherapeuten",
-        "name": "Physiotherapeut",
+        "name": "Physiotherapeuten",
         "presets": {
             "0": {
                 "title": "Praxis eines Physiotherapeuten"
@@ -7004,7 +7004,7 @@
     },
     "speed_display": {
         "description": "Ebene mit Geschwindigkeitsanzeigen, die Fahrer auf ihre Geschwindigkeit hinweisen.",
-        "name": "Geschwindigkeitsanzeige",
+        "name": "Geschwindigkeitsanzeigen",
         "presets": {
             "0": {
                 "title": "eine Geschwindigkeitsanzeige"
@@ -7174,7 +7174,7 @@
     },
     "stairs": {
         "description": "Ebene mit Treppen und Rolltreppen",
-        "name": "Treppe",
+        "name": "Treppen",
         "tagRenderings": {
             "conveying": {
                 "mappings": {
