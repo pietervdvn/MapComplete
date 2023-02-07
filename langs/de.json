@@ -133,6 +133,7 @@
             "josmOpened": "JOSM ist geöffnet",
             "mapContributionsBy": "Die angezeigten Daten wurden bearbeitet durch {contributors}",
             "mapContributionsByAndHidden": "Die angezeigten Daten wurden bearbeitet von {contributors} und {hiddenCount} weiteren Beitragenden",
+            "mapDataByOsm": "Kartendaten: OpenStreetMap",
             "mapillaryHelp": "Mapillary ist ein Online-Dienst, der Straßenbilder sammelt und sie unter einer freien Lizenz anbietet. Mitwirkende dürfen diese Bilder verwenden, um OpenStreetMap zu verbessern",
             "openIssueTracker": "Fehler melden",
             "openMapillary": "Mapillary öffnen",
