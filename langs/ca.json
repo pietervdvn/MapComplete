@@ -113,6 +113,7 @@
             "josmOpened": "JOSM és obert",
             "mapContributionsBy": "Les dades mostrades tenen edicions fetes per {contributors}",
             "mapContributionsByAndHidden": "Les dades mostrades tenen edicions fetes per {contributors} i {hiddenCount} col·laboradors més",
+            "mapDataByOsm": "Dades del mapa: OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> és un servei en línea que arreplega imatges a peu de carrer i les ofereix sota una llicència lliure. Els contribuïdors poden utilizar aquestes imatges per a millorar OpenStreetMap",
             "openIssueTracker": "Registrar un error",
             "openMapillary": "Obrir Mapillary aquí",
