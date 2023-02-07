@@ -192,7 +192,7 @@
             "fr": "Pilier.",
             "de": "Überflurhydrant.",
             "it": "Soprasuolo.",
-            "nl": "Pillaar type.",
+            "nl": "Bovengrondse brandkraan.",
             "es": "De pilar.",
             "ca": "De pilar."
           },
@@ -257,7 +257,7 @@
             "fr": "Enterré.",
             "de": "Unterflurhydrant.",
             "it": "Sottosuolo.",
-            "nl": "Ondergronds type.",
+            "nl": "Ondergrondse brandkraan.",
             "ca": "Subterrani.",
             "es": "Bajo tierra."
           },
@@ -359,6 +359,29 @@
         "en": "Pipe diameter: {canonical(fire_hydrant:diameter)}",
         "de": "Rohrdurchmesser: {canonical(fire_hydrant:diameter)}",
         "nl": "Pijpdiameter:{canonical(fire_hydrant:diameter)}"
+      }
+    },
+    {
+      "id": "hydrant-number-of-couplings",
+      "question": {
+        "en": "How many couplings does this fire hydrant have?",
+        "de": "Wie viele Kupplungen hat dieser Hydrant?",
+        "nl": "Hoe veel koppelingen bezit deze brandkraan?",
+        "ca": "Quants acoblaments té aquest hidrant?"
+      },
+      "freeform": {
+        "key": "couplings",
+        "placeholder": {
+          "en": "Number of couplings",
+          "de": "Anzahl der Kupplungen",
+          "nl": "Aantal koppelingen"
+        },
+        "type": "int"
+      },
+      "render": {
+        "en": "Number of couplings: {couplings}",
+        "de": "Anzahl der Kupplungen: {couplings}",
+        "nl": "Aantal koppelingen: {couplings}"
       }
     },
     {
