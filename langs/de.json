@@ -928,7 +928,7 @@
     "translations": {
         "activateButton": "MapComplete übersetzen",
         "allMissing": "Noch keine Übersetzungen",
-        "completeness": "Die Übersetzung für {theme} in {language} ist zu {percentage}% vollständig: {translated} Zeichenfolgen von {total} sind übersetzt",
+        "completeness": "Die Übersetzung für {theme} in {language} ist zu {percentage}% komplett: {translated} von {total} Zeichenfolgen sind übersetzt",
         "deactivate": "Übersetzungssymbol ausblenden",
         "help": "Klicken Sie auf das Übersetzungssymbol neben einer Zeichenfolge, um den Übersetzungstext einzugeben oder zu aktualisieren. Dazu benötigen Sie ein Weblate-Konto. Erstellen Sie eines mit Ihrem OSM-Benutzernamen, um den Übersetzungsmodus automatisch freizuschalten.",
         "isTranslator": "Der Übersetzungsmodus ist aktiv, da Ihr Benutzername mit dem Namen eines früheren Übersetzers übereinstimmt",
