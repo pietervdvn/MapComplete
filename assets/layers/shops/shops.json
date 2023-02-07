@@ -140,7 +140,7 @@
       "condition": {
         "or": [
           "shop~.*copyshop.*",
-          "shop~.*stationary.*",
+          "shop~.*stationery.*",
           "service:print=yes"
         ]
       },
