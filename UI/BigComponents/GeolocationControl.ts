@@ -27,9 +27,9 @@ export class GeolocationControl extends VariableUiElement {
             const timeDiff = (new Date().getTime() - lastClick.getTime()) / 1000
             return timeDiff <= 3
         })
-        const geolocationState = geolocationHandler.geolocationState
+        const geolocationState = geolocationHandler?.geolocationState
         super(
-            geolocationState.permission.map(
+            geolocationState?.permission?.map(
                 (permission) => {
                     if (permission === "denied") {
                         return Svg.location_refused_svg()

@@ -13,12 +13,10 @@ export default class RightControls extends Combine {
         state: MapState & { featurePipeline: FeaturePipeline },
         geolocationHandler: GeoLocationHandler
     ) {
-        const geolocationButton = new Toggle(
+        const geolocationButton = Toggle.If(state.featureSwitchGeolocation, () =>
             new MapControlButton(new GeolocationControl(geolocationHandler, state), {
                 dontStyle: true,
-            }).SetClass("p-1"),
-            undefined,
-            state.featureSwitchGeolocation
+            }).SetClass("p-1")
         )
 
         const plus = new MapControlButton(Svg.plus_svg()).onClick(() => {
