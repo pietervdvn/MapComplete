@@ -7202,7 +7202,8 @@
             },
             "multilevels": {
                 "override": {
-                    "question": "Zwischen welchen Stockwerken befindet sich die Treppe?"
+                    "question": "Zwischen welchen Stockwerken befindet sich die Treppe?",
+                    "render": "Die Treppe befindet sich zwischen den Stockwerken {level}"
                 }
             },
             "ramp": {
@@ -7618,6 +7619,18 @@
                 },
                 "render": "Dieser Fahrkartenentwerter ist Teil einer Zugangsbarriere vom Typ {barrier}"
             },
+            "payment-options": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
+                        },
+                        "1": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
+                        }
+                    }
+                }
+            },
             "validator-operator": {
                 "freeform": {
                     "placeholder": "Name des Betreibers"
@@ -7837,6 +7850,11 @@
         },
         "name": "Toiletten in anderen Einrichtungen",
         "tagRenderings": {
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist die Einrichtung, in der sich diese Toiletten befinden, geöffnet?"
+                }
+            },
             "toilet-access": {
                 "mappings": {
                     "0": {
