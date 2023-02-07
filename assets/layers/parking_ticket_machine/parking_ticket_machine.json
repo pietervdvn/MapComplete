@@ -2,16 +2,19 @@
   "id": "parking_ticket_machine",
   "name": {
     "en": "Parking Ticket Machines",
-    "nl": "Parkeerkaartautomaten"
+    "nl": "Parkeerkaartautomaten",
+    "de": "Parkscheinautomaten"
   },
   "description": {
     "en": "Layer with parking ticket machines to pay for parking.",
-    "nl": "Laag met parkeerkaartautomaten om voor parkeren te betalen."
+    "nl": "Laag met parkeerkaartautomaten om voor parkeren te betalen.",
+    "de": "Ebene mit Parkscheinautomaten zum Bezahlen des Parkens."
   },
   "title": {
     "render": {
       "en": "Parking Ticket Machine",
-      "nl": "Parkeerkaartautomaat"
+      "nl": "Parkeerkaartautomaat",
+      "de": "Parkscheinautomat"
     }
   },
   "source": {
@@ -31,7 +34,8 @@
       ],
       "title": {
         "en": "a parking ticket machine",
-        "nl": "een parkeerkaartautomaat"
+        "nl": "een parkeerkaartautomaat",
+        "de": "Ein Parkscheinautomat"
       }
     }
   ],
@@ -44,26 +48,30 @@
       "id": "ref",
       "question": {
         "en": "What is the reference number of this parking ticket machine?",
-        "nl": "Wat is het referentienummer van deze parkeerkaartautomaat?"
+        "nl": "Wat is het referentienummer van deze parkeerkaartautomaat?",
+        "de": "Wie lautet die Referenznummer dieses Parkscheinautomaten?"
       },
       "freeform": {
         "key": "ref",
         "type": "string",
         "placeholder": {
           "en": "Reference number",
-          "nl": "Referentienummer"
+          "nl": "Referentienummer",
+          "de": "Referenznummer"
         }
       },
       "render": {
         "en": "This parking ticket machine has the reference number {ref}",
-        "nl": "Deze parkeerkaartautomaat heeft het referentienummer {ref}"
+        "nl": "Deze parkeerkaartautomaat heeft het referentienummer {ref}",
+        "de": "Dieser Parkscheinautomat hat die Referenznummer {ref}"
       },
       "mappings": [
         {
           "if": "noref=yes",
           "then": {
             "en": "This parking ticket machine has no reference number",
-            "nl": "Deze parkeerkaartautomaat heeft geen referentienummer"
+            "nl": "Deze parkeerkaartautomaat heeft geen referentienummer",
+            "de": "Dieser Parkscheinautomat hat keine Referenznummer"
           }
         }
       ]

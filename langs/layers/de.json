@@ -5862,6 +5862,32 @@
             "render": "Stellplatz"
         }
     },
+    "parking_ticket_machine": {
+        "description": "Ebene mit Parkscheinautomaten zum Bezahlen des Parkens.",
+        "name": "Parkscheinautomaten",
+        "presets": {
+            "0": {
+                "title": "Ein Parkscheinautomat"
+            }
+        },
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Referenznummer"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Dieser Parkscheinautomat hat keine Referenznummer"
+                    }
+                },
+                "question": "Wie lautet die Referenznummer dieses Parkscheinautomaten?",
+                "render": "Dieser Parkscheinautomat hat die Referenznummer {ref}"
+            }
+        },
+        "title": {
+            "render": "Parkscheinautomat"
+        }
+    },
     "pedestrian_path": {
         "description": "Fußgängerwege, insbesondere für die Navigation in Gebäuden und die Aufnahme von Eingängen in diese Ebene",
         "name": "Fußgängerwege"
@@ -6520,6 +6546,21 @@
             }
         },
         "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Alle können diese Recyclinganlage nutzen"
+                    },
+                    "1": {
+                        "then": "Nur Anwohnende können diese Recyclinganlage nutzen"
+                    },
+                    "2": {
+                        "then": "Diese Recyclinganlage ist nur für den privaten Gebrauch bestimmt"
+                    }
+                },
+                "question": "Wer kann diese Recyclinganlage nutzen?",
+                "render": "Diese Recyclinganlage kann von {access} genutzt werden"
+            },
             "container-location": {
                 "mappings": {
                     "0": {
@@ -8484,6 +8525,17 @@
                     }
                 },
                 "question": "Wo befindet sich die Mülltonne?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist ein mittelgroßer bis großer Behälter für die Entsorgung von (Haushalts-)Abfällen"
+                    },
+                    "1": {
+                        "then": "Dies ist eigentlich ein Recycling-Container"
+                    }
+                },
+                "question": "Was für ein Abfalleimer ist das?"
             }
         },
         "title": {

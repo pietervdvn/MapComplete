@@ -1058,28 +1058,32 @@
       "id": "access",
       "question": {
         "en": "Who can use this recycling facility?",
-        "nl": "Wie kan deze recyclingfaciliteit gebruiken?"
+        "nl": "Wie kan deze recyclingfaciliteit gebruiken?",
+        "de": "Wer kann diese Recyclinganlage nutzen?"
       },
       "mappings": [
         {
           "if": "access=yes",
           "then": {
             "en": "Everyone can use this recycling facility",
-            "nl": "Iedereen mag deze recyclingfaciliteit gebruiken"
+            "nl": "Iedereen mag deze recyclingfaciliteit gebruiken",
+            "de": "Alle können diese Recyclinganlage nutzen"
           }
         },
         {
           "if": "access=residents",
           "then": {
             "en": "Only residents can use this recycling facility",
-            "nl": "Enkel bewoners kunnen deze recyclingfaciliteit gebruiken"
+            "nl": "Enkel bewoners kunnen deze recyclingfaciliteit gebruiken",
+            "de": "Nur Anwohnende können diese Recyclinganlage nutzen"
           }
         },
         {
           "if": "access=private",
           "then": {
             "en": "This recycling facility is only for private use",
-            "nl": "Deze recyclingfaciliteit is alleen voor privégebruik"
+            "nl": "Deze recyclingfaciliteit is alleen voor privégebruik",
+            "de": "Diese Recyclinganlage ist nur für den privaten Gebrauch bestimmt"
           }
         }
       ],
@@ -1089,7 +1093,8 @@
       },
       "render": {
         "en": "This recycling facility can be used by {access}",
-        "nl": "Deze recyclingfaciliteit kan gebruikt worden door {access}"
+        "nl": "Deze recyclingfaciliteit kan gebruikt worden door {access}",
+        "de": "Diese Recyclinganlage kann von {access} genutzt werden"
       }
     }
   ],

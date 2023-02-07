@@ -69,19 +69,22 @@
       "id": "type",
       "description": "Mapping allowing to change between waste_disposal and recycling",
       "question": {
-        "en": "What kind of waste disposal bin is this?"
+        "en": "What kind of waste disposal bin is this?",
+        "de": "Was für ein Abfalleimer ist das?"
       },
       "mappings": [
         {
           "if": "amenity=waste_disposal",
           "then": {
-            "en": "This is a medium to large bin for disposal of (household) waste"
+            "en": "This is a medium to large bin for disposal of (household) waste",
+            "de": "Dies ist ein mittelgroßer bis großer Behälter für die Entsorgung von (Haushalts-)Abfällen"
           }
         },
         {
           "if": "amenity=recycling",
           "then": {
-            "en": "This is actually a recycling container"
+            "en": "This is actually a recycling container",
+            "de": "Dies ist eigentlich ein Recycling-Container"
           },
           "addExtraTags": [
             "recycling_type=container"

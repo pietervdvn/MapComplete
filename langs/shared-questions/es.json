@@ -29,6 +29,32 @@
             },
             "question": "¿Qué monedas se pueden usar aquí para pagar?"
         },
+        "denominations-notes": {
+            "mappings": {
+                "0": {
+                    "then": "Se aceptan billetes de 5 euros"
+                },
+                "1": {
+                    "then": "Se aceptan billetes de 10 euros"
+                },
+                "2": {
+                    "then": "Se aceptan billetes de 20 euros"
+                },
+                "3": {
+                    "then": "Se aceptan billetes de 50 euros"
+                },
+                "4": {
+                    "then": "Se aceptan billetes de 100 euros"
+                },
+                "5": {
+                    "then": "Se aceptan billetes de 200 euros"
+                },
+                "6": {
+                    "then": "Se aceptan billetes de 500 euros"
+                }
+            },
+            "question": "¿con qué billetes se puede pagar aquí?"
+        },
         "description": {
             "question": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.<br/><span style='font-size: small'>No repita datos ya expresados</span>"
         },
