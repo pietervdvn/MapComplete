@@ -42,7 +42,7 @@
     "prepare-deploy": "npm run generate:service-worker && ./scripts/build.sh",
     "format": "npx prettier --write '**/*.ts'",
     "clean:tests": "(find . -type f -name \"*.doctest.ts\" | xargs rm)",
-    "clean": "rm -rf .cache/ && (find *.html | grep -v \"^\\(404\\|index\\|land\\|test\\|preferences\\|customGenerator\\|professional\\|automaton\\|import_helper\\|import_viewer\\|theme\\).html\" | xargs rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs rm) && (ls | grep \".*.webmanifest$\" | grep -v \"manifest.webmanifest\" | xargs rm)",
+    "clean": "rm -rf .cache/ && (find *.html | grep -v \"^\\(404\\|index\\|land\\|test\\|preferences\\|customGenerator\\|professional\\|automaton\\|import_helper\\|import_viewer\\|theme\\).html\" | xargs rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs rm)",
     "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot Logic/State/MapState.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot",
     "weblate-add-upstream": "git remote add weblate-github git@github.com:weblate/MapComplete.git",
     "weblate-merge": "git remote update weblate-github; git merge weblate-github/weblate-mapcomplete-core weblate-github/weblate-mapcomplete-layers weblate-github/weblate-mapcomplete-layer-translations",
