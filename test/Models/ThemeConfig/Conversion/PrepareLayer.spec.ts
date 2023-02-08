@@ -102,7 +102,7 @@ describe("PrepareLayer", () => {
                     offset: 6,
                 },
             ],
-            titleIcons: [{ render: "defaults", id: "defaults" }],
+            titleIcons: [{ render: "iconsdefaults", id: "icons.defaults" }],
         }
 
         expect(result).toEqual(expected)
