@@ -58,6 +58,49 @@ export class SimpleMetaTagger {
     }
 }
 
+export class ReferencingWaysMetaTagger extends SimpleMetaTagger {
+    /**
+     * Disable this metatagger, e.g. for caching or tests
+     * This is a bit a work-around
+     */
+    public static enabled = true
+    constructor() {
+        super(
+            {
+                keys: ["_referencing_ways"],
+                isLazy: true,
+                doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry. ",
+            },
+            (feature, _, __, state) => {
+                if (!ReferencingWaysMetaTagger.enabled) {
+                    return false
+                }
+                //this function has some extra code to make it work in SimpleAddUI.ts to also work for newly added points
+                const id = feature.properties.id
+                if (!id.startsWith("node/")) {
+                    return false
+                }
+                console.trace("Downloading referencing ways for", feature.properties.id)
+                OsmObject.DownloadReferencingWays(id).then((referencingWays) => {
+                    const currentTagsSource = state.allElements?.getEventSourceById(id) ?? []
+                    const wayIds = referencingWays.map((w) => "way/" + w.id)
+                    wayIds.sort()
+                    const wayIdsStr = wayIds.join(";")
+                    if (
+                        wayIdsStr !== "" &&
+                        currentTagsSource.data["_referencing_ways"] !== wayIdsStr
+                    ) {
+                        currentTagsSource.data["_referencing_ways"] = wayIdsStr
+                        currentTagsSource.ping()
+                    }
+                })
+
+                return true
+            }
+        )
+    }
+}
+
 export class CountryTagger extends SimpleMetaTagger {
     private static readonly coder = new CountryCoder(
         Constants.countryCoderEndpoint,
@@ -492,33 +535,7 @@ export default class SimpleMetaTaggers {
         }
     )
 
-    public static referencingWays = new SimpleMetaTagger(
-        {
-            keys: ["_referencing_ways"],
-            isLazy: true,
-            includesDates: true,
-            doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry. ",
-        },
-        (feature, _, __, state) => {
-            //this function has some extra code to make it work in SimpleAddUI.ts to also work for newly added points
-            const id = feature.properties.id
-            if (!id.startsWith("node/")) {
-                return false
-            }
-            OsmObject.DownloadReferencingWays(id).then((referencingWays) => {
-                const currentTagsSource = state.allElements?.getEventSourceById(id) ?? []
-                const wayIds = referencingWays.map((w) => "way/" + w.id)
-                wayIds.sort()
-                const wayIdsStr = wayIds.join(";")
-                if (wayIdsStr !== "" && currentTagsSource.data["_referencing_ways"] !== wayIdsStr) {
-                    currentTagsSource.data["_referencing_ways"] = wayIdsStr
-                    currentTagsSource.ping()
-                }
-            })
-
-            return true
-        }
-    )
+    public static referencingWays = new ReferencingWaysMetaTagger()
 
     public static metatags: SimpleMetaTagger[] = [
         SimpleMetaTaggers.latlon,

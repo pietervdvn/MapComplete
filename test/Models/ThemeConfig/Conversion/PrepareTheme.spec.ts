@@ -3,10 +3,10 @@ import { LayerConfigJson } from "../../../../Models/ThemeConfig/Json/LayerConfig
 import { PrepareTheme } from "../../../../Models/ThemeConfig/Conversion/PrepareTheme"
 import { TagRenderingConfigJson } from "../../../../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import LayoutConfig from "../../../../Models/ThemeConfig/LayoutConfig"
-import * as bookcaseLayer from "../../../../assets/generated/layers/public_bookcase.json"
+import bookcaseLayer from "../../../../assets/generated/layers/public_bookcase.json"
 import LayerConfig from "../../../../Models/ThemeConfig/LayerConfig"
 import { ExtractImages } from "../../../../Models/ThemeConfig/Conversion/FixImages"
-import * as cyclofix from "../../../../assets/generated/themes/cyclofix.json"
+import cyclofix from "../../../../assets/generated/themes/cyclofix.json"
 import { Tag } from "../../../../Logic/Tags/Tag"
 import { DesugaringContext } from "../../../../Models/ThemeConfig/Conversion/Conversion"
 import { And } from "../../../../Logic/Tags/And"
@@ -37,7 +37,7 @@ const themeConfigJson: LayoutConfigJson = {
 describe("PrepareTheme", () => {
     it("should substitute layers", () => {
         const sharedLayers = new Map<string, LayerConfigJson>()
-        sharedLayers.set("public_bookcase", bookcaseLayer["default"])
+        sharedLayers.set("public_bookcase", bookcaseLayer)
         const theme = { ...themeConfigJson, layers: ["public_bookcase"] }
         const prepareStep = new PrepareTheme({
             tagRenderings: new Map<string, TagRenderingConfigJson>(),
@@ -55,7 +55,7 @@ describe("PrepareTheme", () => {
 
     it("should apply override", () => {
         const sharedLayers = new Map<string, LayerConfigJson>()
-        sharedLayers.set("public_bookcase", bookcaseLayer["default"])
+        sharedLayers.set("public_bookcase", bookcaseLayer)
         let themeConfigJsonPrepared = new PrepareTheme({
             tagRenderings: new Map<string, TagRenderingConfigJson>(),
             sharedLayers: sharedLayers,
@@ -69,7 +69,7 @@ describe("PrepareTheme", () => {
 
     it("should apply override", () => {
         const sharedLayers = new Map<string, LayerConfigJson>()
-        sharedLayers.set("public_bookcase", bookcaseLayer["default"])
+        sharedLayers.set("public_bookcase", bookcaseLayer)
         let themeConfigJsonPrepared = new PrepareTheme({
             tagRenderings: new Map<string, TagRenderingConfigJson>(),
             sharedLayers: sharedLayers,
@@ -141,8 +141,10 @@ describe("PrepareTheme", () => {
 
 describe("ExtractImages", () => {
     it("should find all images in a themefile", () => {
-        const images = new Set(
-            new ExtractImages(true, new Set<string>()).convertStrict(<any>cyclofix, "test")
+        const images = new Set<string>(
+            new ExtractImages(true, new Set<string>())
+                .convertStrict(<any>cyclofix, "test")
+                .map((x) => x.path)
         )
         const expectedValues = [
             "./assets/layers/bike_repair_station/repair_station.svg",
@@ -157,7 +159,11 @@ describe("ExtractImages", () => {
             "close",
         ]
         for (const expected of expectedValues) {
-            expect(images).toEqual(expect.arrayContaining([expected]))
+            if (!images.has(expected)) {
+                expect.fail(
+                    "Image " + expected + " not found (has:" + Array.from(images).join(",") + ")"
+                )
+            }
         }
     })
 })

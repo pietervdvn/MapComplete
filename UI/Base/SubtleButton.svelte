@@ -52,12 +52,14 @@
 
 <svelte:element
   this={options?.url == undefined ? "span" : "a"}
-  class={options.extraClasses}
+  class={(options.extraClasses??"") + ' hover:shadow-xl transition-[color,background-color,box-shadow] hover:bg-unsubtle'}
   target={options?.newTab ? "_blank" : ""}
   {href}
 >
   <slot name="image">
-    <template bind:this={imgElem} />
+    {#if imgElem}
+      <template bind:this={imgElem} />
+      {/if}
   </slot>
   <slot name="message">
     <template bind:this={msgElem} />
@@ -67,9 +69,9 @@
 <style lang="scss">
   span,
   a {
-    @apply flex p-3 my-2 rounded-lg hover:shadow-xl transition-[color,background-color,box-shadow];
+    @apply flex p-3 my-2 rounded-lg ;
     @apply items-center w-full no-underline;
-    @apply bg-subtle text-black hover:bg-unsubtle;
+    @apply bg-subtle text-black;
 
     :global(img) {
       @apply block justify-center flex-none mr-4 h-11 w-11;

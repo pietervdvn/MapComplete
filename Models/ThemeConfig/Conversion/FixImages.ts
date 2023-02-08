@@ -15,7 +15,11 @@ export class ExtractImages extends Conversion<
     private static readonly layoutMetaPaths = metapaths.filter(
         (mp) =>
             ExtractImages.mightBeTagRendering(<any>mp) ||
-            (mp.typeHint !== undefined && (mp.typeHint === "image" || mp.typeHint === "icon"))
+            (mp.typeHint !== undefined &&
+                (mp.typeHint === "image" ||
+                    mp.typeHint === "icon" ||
+                    mp.typeHint === "image[]" ||
+                    mp.typeHint === "icon[]"))
     )
     private static readonly tagRenderingMetaPaths = tagrenderingmetapaths
 
@@ -172,7 +176,13 @@ export class ExtractImages extends Conversion<
                         )
                         continue
                     }
-                    allFoundImages.push(foundElement.leaf)
+                    if (typeof foundElement.leaf !== "string") {
+                        continue
+                    }
+                    allFoundImages.push({
+                        context: context + "." + foundElement.path.join("."),
+                        path: foundElement.leaf,
+                    })
                 }
             }
         }

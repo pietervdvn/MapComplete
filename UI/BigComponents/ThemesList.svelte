@@ -54,18 +54,34 @@
 
 <section>
   <slot name="title" />
-  <div class:gridview={onMainScreen}>
-    {#if ($search === undefined || $search === "") && !isCustom}
-      <CustomGeneratorButton userDetails={state.osmConnection.userDetails} />
-      <ProfessionalServicesButton />
-    {/if}
-
-    {#each filteredThemes as theme}
-      {#if theme !== undefined && !(hideThemes && theme?.hideFromOverview)}
-        <ThemeButton {theme} {isCustom} userDetails={state.osmConnection.userDetails} {state} />
+  {#if onMainScreen}
+    <div class="md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {#if ($search === undefined || $search === "") && !isCustom}
+        <CustomGeneratorButton userDetails={state.osmConnection.userDetails} />
+        <ProfessionalServicesButton />
       {/if}
-    {/each}
-  </div>
+
+      {#each filteredThemes as theme}
+        {#if theme !== undefined && !(hideThemes && theme?.hideFromOverview)}
+          <ThemeButton {theme} {isCustom} userDetails={state.osmConnection.userDetails} {state} />
+        {/if}
+      {/each}
+    </div>
+    {:else }
+    <div>
+      {#if ($search === undefined || $search === "") && !isCustom}
+        <CustomGeneratorButton userDetails={state.osmConnection.userDetails} />
+        <ProfessionalServicesButton />
+      {/if}
+
+      {#each filteredThemes as theme}
+        {#if theme !== undefined && !(hideThemes && theme?.hideFromOverview)}
+          <ThemeButton {theme} {isCustom} userDetails={state.osmConnection.userDetails} {state} />
+        {/if}
+      {/each}
+    </div>
+    {/if}
+ 
 
   {#if filteredThemes.length == 0}
     <NoThemeResultButton {search} />
@@ -75,9 +91,5 @@
 <style lang="scss">
   section {
     @apply flex flex-col;
-
-    div.gridview {
-      @apply md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3 gap-4;
-    }
   }
 </style>
