@@ -3,7 +3,7 @@ import Loc from "../../Models/Loc"
 import Minimap from "../Base/Minimap"
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import * as left_right_style_json from "../../assets/layers/left_right_style/left_right_style.json"
+import left_right_style_json from "../../assets/layers/left_right_style/left_right_style.json"
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
 import { SpecialVisualization } from "../SpecialVisualization"
 

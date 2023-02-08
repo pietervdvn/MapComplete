@@ -7,7 +7,7 @@ import TilesourceConfig from "./TilesourceConfig"
 import { ExtractImages } from "./Conversion/FixImages"
 import ExtraLinkConfig from "./ExtraLinkConfig"
 import { Utils } from "../../Utils"
-import * as used_languages from "../../assets/generated/used_languages.json"
+import used_languages from "../../assets/generated/used_languages.json"
 export default class LayoutConfig {
     public static readonly defaultSocialImage = "assets/SocialImage.png"
     public readonly id: string

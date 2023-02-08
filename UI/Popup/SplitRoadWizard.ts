@@ -15,7 +15,7 @@ import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeature
 import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { BBox } from "../../Logic/BBox"
-import * as split_point from "../../assets/layers/split_point/split_point.json"
+import split_point from "../../assets/layers/split_point/split_point.json"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { Changes } from "../../Logic/Osm/Changes"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"

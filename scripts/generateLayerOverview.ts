@@ -1,6 +1,6 @@
 import ScriptUtils from "./ScriptUtils"
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "fs"
-import * as licenses from "../assets/generated/license_info.json"
+import licenses from "../assets/generated/license_info.json"
 import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
 import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 import Constants from "../Models/Constants"
@@ -14,8 +14,8 @@ import {
 } from "../Models/ThemeConfig/Conversion/Validation"
 import { Translation } from "../UI/i18n/Translation"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
-import * as questions from "../assets/tagRenderings/questions.json"
-import * as icons from "../assets/tagRenderings/icons.json"
+import questions from "../assets/tagRenderings/questions.json"
+import icons from "../assets/tagRenderings/icons.json"
 import PointRenderingConfigJson from "../Models/ThemeConfig/Json/PointRenderingConfigJson"
 import { PrepareLayer } from "../Models/ThemeConfig/Conversion/PrepareLayer"
 import { PrepareTheme } from "../Models/ThemeConfig/Conversion/PrepareTheme"
@@ -155,7 +155,7 @@ class LayerOverviewUtils {
         const dict = new Map<string, TagRenderingConfigJson>()
 
         const validator = new ValidateTagRenderings(undefined, doesImageExist)
-        for (const key in questions["default"]) {
+        for (const key in questions) {
             if (key === "id") {
                 continue
             }
@@ -168,7 +168,7 @@ class LayerOverviewUtils {
             )
             dict.set(key, config)
         }
-        for (const key in icons["default"]) {
+        for (const key in icons) {
             if (key === "id") {
                 continue
             }

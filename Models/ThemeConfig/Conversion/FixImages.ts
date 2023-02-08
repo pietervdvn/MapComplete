@@ -1,21 +1,20 @@
 import { Conversion, DesugaringStep } from "./Conversion"
 import { LayoutConfigJson } from "../Json/LayoutConfigJson"
 import { Utils } from "../../../Utils"
-import * as metapaths from "../../../assets/layoutconfigmeta.json"
-import * as tagrenderingmetapaths from "../../../assets/questionabletagrenderingconfigmeta.json"
+import metapaths from "../../../assets/layoutconfigmeta.json"
+import tagrenderingmetapaths from "../../../assets/questionabletagrenderingconfigmeta.json"
 import Translations from "../../../UI/i18n/Translations"
 
 export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
     private _isOfficial: boolean
     private _sharedTagRenderings: Map<string, any>
 
-    private static readonly layoutMetaPaths = (metapaths["default"] ?? metapaths).filter(
+    private static readonly layoutMetaPaths = metapaths.filter(
         (mp) =>
-            ExtractImages.mightBeTagRendering(mp) ||
+            ExtractImages.mightBeTagRendering(<any>mp) ||
             (mp.typeHint !== undefined && (mp.typeHint === "image" || mp.typeHint === "icon"))
     )
-    private static readonly tagRenderingMetaPaths =
-        tagrenderingmetapaths["default"] ?? tagrenderingmetapaths
+    private static readonly tagRenderingMetaPaths = tagrenderingmetapaths
 
     constructor(isOfficial: boolean, sharedTagRenderings: Map<string, any>) {
         super("Extract all images from a layoutConfig using the meta paths.", [], "ExctractImages")
@@ -23,14 +22,16 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
         this._sharedTagRenderings = sharedTagRenderings
     }
 
-    public static mightBeTagRendering(metapath: { type: string | string[] }): boolean {
+    public static mightBeTagRendering(metapath: { type?: string | string[] }): boolean {
         if (!Array.isArray(metapath.type)) {
             return false
         }
-        return metapath.type.some(
-            (t) =>
-                t["$ref"] == "#/definitions/TagRenderingConfigJson" ||
-                t["$ref"] == "#/definitions/QuestionableTagRenderingConfigJson"
+        return (
+            metapath.type?.some(
+                (t) =>
+                    t["$ref"] == "#/definitions/TagRenderingConfigJson" ||
+                    t["$ref"] == "#/definitions/QuestionableTagRenderingConfigJson"
+            ) ?? false
         )
     }
 
@@ -83,7 +84,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
         const errors = []
         const warnings = []
         for (const metapath of ExtractImages.layoutMetaPaths) {
-            const mightBeTr = ExtractImages.mightBeTagRendering(metapath)
+            const mightBeTr = ExtractImages.mightBeTagRendering(<any>metapath)
             const allRenderedValuesAreImages =
                 metapath.typeHint === "icon" || metapath.typeHint === "image"
             const found = Utils.CollectPath(metapath.path, json)
@@ -271,14 +272,11 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
 
         json = Utils.Clone(json)
 
-        let paths = metapaths["default"] ?? metapaths
-        let trpaths = tagrenderingmetapaths["default"] ?? tagrenderingmetapaths
-
-        for (const metapath of paths) {
+        for (const metapath of metapaths) {
             if (metapath.typeHint !== "image" && metapath.typeHint !== "icon") {
                 continue
             }
-            const mightBeTr = ExtractImages.mightBeTagRendering(metapath)
+            const mightBeTr = ExtractImages.mightBeTagRendering(<any>metapath)
             Utils.WalkPath(metapath.path, json, (leaf, path) => {
                 if (typeof leaf === "string") {
                     return replaceString(leaf)
@@ -287,7 +285,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
                 if (mightBeTr) {
                     // We might have reached a tagRenderingConfig containing icons
                     // lets walk every rendered value and fix the images in there
-                    for (const trpath of trpaths) {
+                    for (const trpath of tagrenderingmetapaths) {
                         if (trpath.typeHint !== "rendered") {
                             continue
                         }

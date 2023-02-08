@@ -14,7 +14,7 @@ import Title from "../Base/Title"
 import { Store } from "../../Logic/UIEventSource"
 import { SubtleButton } from "../Base/SubtleButton"
 import Svg from "../../Svg"
-import * as native_languages from "../../assets/language_native.json"
+import native_languages from "../../assets/language_native.json"
 import BaseUIElement from "../BaseUIElement"
 
 class TranslatorsPanelContent extends Combine {

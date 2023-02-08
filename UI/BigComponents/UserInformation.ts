@@ -19,11 +19,11 @@ import EditableTagRendering from "../Popup/EditableTagRendering"
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import { SaveButton } from "../Popup/SaveButton"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
-import * as usersettings from "../../assets/generated/layers/usersettings.json"
+import usersettings from "../../assets/generated/layers/usersettings.json"
 import { LoginToggle } from "../Popup/LoginButton"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import * as translators from "../../assets/translators.json"
-import * as codeContributors from "../../assets/contributors.json"
+import translators from "../../assets/translators.json"
+import codeContributors from "../../assets/contributors.json"
 
 export class ImportViewerLinks extends VariableUiElement {
     constructor(osmConnection: OsmConnection) {

@@ -1,4 +1,4 @@
-import * as used_languages from "../assets/generated/used_languages.json"
+import used_languages from "../assets/generated/used_languages.json"
 
 export default class LanguageUtils {
     /**

@@ -1,4 +1,4 @@
-import * as colors from "./assets/colors.json"
+import colors from "./assets/colors.json"
 
 export class Utils {
     /**

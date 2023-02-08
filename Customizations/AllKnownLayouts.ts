@@ -1,4 +1,4 @@
-import * as known_themes from "../assets/generated/known_layers_and_themes.json"
+import known_themes from "../assets/generated/known_layers_and_themes.json"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import BaseUIElement from "../UI/BaseUIElement"

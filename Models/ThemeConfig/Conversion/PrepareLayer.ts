@@ -16,10 +16,10 @@ import RewritableConfigJson from "../Json/RewritableConfigJson"
 import SpecialVisualizations from "../../../UI/SpecialVisualizations"
 import Translations from "../../../UI/i18n/Translations"
 import { Translation } from "../../../UI/i18n/Translation"
-import * as tagrenderingconfigmeta from "../../../assets/tagrenderingconfigmeta.json"
+import tagrenderingconfigmeta from "../../../assets/tagrenderingconfigmeta.json"
 import { AddContextToTranslations } from "./AddContextToTranslations"
 import FilterConfigJson from "../Json/FilterConfigJson"
-import * as predifined_filters from "../../../assets/layers/filters/filters.json"
+import predifined_filters from "../../../assets/layers/filters/filters.json"
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static load_filters(): Map<string, FilterConfigJson> {
@@ -730,8 +730,7 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
     } {
         const errors = []
         json = Utils.Clone(json)
-        const paths: { path: string[]; type?: any; typeHint?: string }[] =
-            tagrenderingconfigmeta["default"] ?? tagrenderingconfigmeta
+        const paths: { path: string[]; type?: any; typeHint?: string }[] = tagrenderingconfigmeta
         for (const path of paths) {
             if (path.typeHint !== "rendered") {
                 continue

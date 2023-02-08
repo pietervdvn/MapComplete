@@ -9,7 +9,7 @@ import SelectedElementTagsUpdater from "../Actors/SelectedElementTagsUpdater"
 import { Changes } from "../Osm/Changes"
 import ChangeToElementsActor from "../Actors/ChangeToElementsActor"
 import PendingChangesUploader from "../Actors/PendingChangesUploader"
-import * as translators from "../../assets/translators.json"
+import translators from "../../assets/translators.json"
 import Maproulette from "../Maproulette"
 
 /**

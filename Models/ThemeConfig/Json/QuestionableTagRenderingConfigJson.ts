@@ -26,7 +26,7 @@ export interface MappingConfigJson {
               /**
                * Size of the image
                */
-              class: "small" | "medium" | "large" | string
+              class?: "small" | "medium" | "large" | string
           }
 
     /**

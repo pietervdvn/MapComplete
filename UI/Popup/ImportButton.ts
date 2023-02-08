@@ -35,7 +35,7 @@ import CreateMultiPolygonWithPointReuseAction from "../../Logic/Osm/Actions/Crea
 import { Tag } from "../../Logic/Tags/Tag"
 import TagApplyButton from "./TagApplyButton"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import * as conflation_json from "../../assets/layers/conflation/conflation.json"
+import conflation_json from "../../assets/layers/conflation/conflation.json"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import { LoginToggle } from "./LoginButton"
 import { AutoAction } from "./AutoApplyButton"

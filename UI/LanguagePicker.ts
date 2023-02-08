@@ -1,10 +1,10 @@
 import { DropDown } from "./Input/DropDown"
 import Locale from "./i18n/Locale"
 import BaseUIElement from "./BaseUIElement"
-import * as native from "../assets/language_native.json"
-import * as language_translations from "../assets/language_translations.json"
+import native from "../assets/language_native.json"
+import language_translations from "../assets/language_translations.json"
 import { Translation } from "./i18n/Translation"
-import * as used_languages from "../assets/generated/used_languages.json"
+import used_languages from "../assets/generated/used_languages.json"
 import Lazy from "./Base/Lazy"
 import Toggle from "./Input/Toggle"
 
@@ -35,9 +35,8 @@ export default class LanguagePicker extends Toggle {
 
     private static hybrid(lang: string): Translation {
         const nativeText = native[lang] ?? lang
-        const allTranslations = language_translations["default"] ?? language_translations
         const translation = {}
-        const trans = allTranslations[lang]
+        const trans = language_translations[lang]
         if (trans === undefined) {
             return new Translation({ "*": nativeText })
         }
@@ -45,7 +44,7 @@ export default class LanguagePicker extends Toggle {
             if (key.startsWith("_")) {
                 continue
             }
-            const translationInKey = allTranslations[lang][key]
+            const translationInKey = language_translations[lang][key]
             if (nativeText.toLowerCase() === translationInKey.toLowerCase()) {
                 translation[key] = nativeText
             } else {
