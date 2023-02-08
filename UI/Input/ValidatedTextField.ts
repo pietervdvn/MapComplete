@@ -52,10 +52,6 @@ export class TextFieldDef {
         }
     }
 
-    protectedisValid(s: string, _: (() => string) | undefined): boolean {
-        return true
-    }
-
     public getFeedback(s: string): Translation {
         const tr = Translations.t.validation[this.name]
         if (tr !== undefined) {
@@ -82,6 +78,9 @@ export class TextFieldDef {
         }
 
         options["textArea"] = this.name === "text"
+        if (this.name === "text") {
+            options["htmlType"] = "area"
+        }
 
         const self = this
 
@@ -589,7 +588,7 @@ class StringTextField extends TextFieldDef {
 class TextTextField extends TextFieldDef {
     declare inputmode: "text"
     constructor() {
-        super("text", "A longer piece of text")
+        super("text", "A longer piece of text. Uses an textArea instead of a textField")
     }
 }
 

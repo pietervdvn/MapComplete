@@ -61,17 +61,6 @@ export class TextField extends InputElement<string> {
         return this._isValid(t)
     }
 
-    private static test() {
-        const placeholder = new UIEventSource<string>("placeholder")
-        const tf = new TextField({
-            placeholder,
-        })
-        const html = <HTMLInputElement>tf.InnerConstructElement().children[0]
-        html.placeholder // => 'placeholder'
-        placeholder.setData("another piece of text")
-        html.placeholder // => "another piece of text"
-    }
-
     /**
      *
      * // should update placeholders dynamically

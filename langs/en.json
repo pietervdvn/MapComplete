@@ -746,6 +746,7 @@
         "createNote": "Create a new note",
         "createNoteIntro": "Is something wrong or missing on the map? Create a note here. These will be checked by volunteers.",
         "createNoteTitle": "Create a new note here",
+        "creating": "Creating note...",
         "disableAllNoteFilters": "Disable all filters",
         "isClosed": "This note is resolved",
         "isCreated": "Your note has been created!",
