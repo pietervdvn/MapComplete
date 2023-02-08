@@ -32,9 +32,7 @@
     <div class="flex link-underline items-center my-4">
       <img
         class="w-8 h-8 m-2"
-        src={"https://raw.githubusercontent.com/osmlab/osm-community-index/main/dist/img/" +
-          resource.type +
-          ".svg"}
+        src={`https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/${resource.type}.svg`}
       />
       <div class="flex flex-col">
         <a href={resource.resolved.url} target="_blank" rel="noreferrer nofollow" class="font-bold">
