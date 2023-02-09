@@ -1,6 +1,5 @@
 import { defineConfig } from "vite"
 import { svelte } from "@sveltejs/vite-plugin-svelte"
-import autoPreprocess, { scss } from "svelte-preprocess";
 import fs from "fs"
 
 const allHtmlFiles = fs.readdirSync(".").filter((f) => f.endsWith(".html"))
@@ -19,7 +18,7 @@ export default defineConfig({
     },
   },
   base: `${ASSET_URL}`,
-  plugins: [svelte({preprocess: [scss() , autoPreprocess()]})],
+  plugins: [svelte()],
   server: {
     port: 1234,
   },
