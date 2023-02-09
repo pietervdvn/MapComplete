@@ -36,3 +36,5 @@ service-worker.js
 
 # Built Visual Studio Code Extensions
 *.vsix
+public/*.webmanifest
+public/assets/generated/
