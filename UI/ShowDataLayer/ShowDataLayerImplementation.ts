@@ -136,7 +136,7 @@ export default class ShowDataLayerImplementation {
         if (this._leafletMap.data === undefined) {
             return
         }
-        const v = this.leafletLayersPerId.get(selected.properties.id + selected.geometry.type)
+        const v = this.leafletLayersPerId.get(selected.properties.id)
         if (v === undefined) {
             return
         }
@@ -335,7 +335,20 @@ export default class ShowDataLayerImplementation {
             icon: L.divIcon(style),
         })
     }
+
+    /**
+     * Creates a function which, for the given feature, will open the featureInfoBox (and lazyly create it)
+     * This function is cached
+     * @param feature
+     * @param key
+     * @param layer
+     * @private
+     */
     private createActivateFunction(feature, key: string, layer: LayerConfig): (event) => void {
+        if (this.leafletLayersPerId.has(key)) {
+            return this.leafletLayersPerId.get(key).activateFunc
+        }
+
         let infobox: ScrollableFullScreen = undefined
         const self = this
 
@@ -373,12 +386,7 @@ export default class ShowDataLayerImplementation {
             return
         }
         const key = feature.properties.id
-        let activate: (event) => void
-        if (this.leafletLayersPerId.has(key)) {
-            activate = this.leafletLayersPerId.get(key).activateFunc
-        } else {
-            activate = this.createActivateFunction(feature, key, layer)
-        }
+        const activate = this.createActivateFunction(feature, key, layer)
 
         // We also have to open on rightclick, doubleclick, ... as users sometimes do this. See #1219
         leafletLayer.on({
