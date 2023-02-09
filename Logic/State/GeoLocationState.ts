@@ -11,8 +11,6 @@ export interface GeoLocationPointProperties extends GeolocationCoordinates {
 
 /**
  * An abstract representation of the current state of the geolocation.
- *
- *
  */
 export class GeoLocationState {
     /**
@@ -21,10 +19,12 @@ export class GeoLocationState {
      * 'requested' means the user tapped the 'locate me' button at least once
      * 'granted' means that it is granted
      * 'denied' means that we don't have access
-     *
      */
     public readonly permission: UIEventSource<GeolocationState> = new UIEventSource("prompt")
 
+    /**
+     * Important to determine e.g. if we move automatically on fix or not
+     */
     public readonly requestMoment: UIEventSource<Date | undefined> = new UIEventSource(undefined)
     /**
      * If true: the map will center (and re-center) to this location

@@ -106,7 +106,7 @@ export default class Constants {
      *
      * In seconds
      */
-    static zoomToLocationTimeout = 60
+    static zoomToLocationTimeout = 15
     static countryCoderEndpoint: string =
         "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country"
     public static readonly OsmPreferenceKeyPicturesLicense = "pictures-license"
