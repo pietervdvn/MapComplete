@@ -102,7 +102,7 @@
         },
         {
           "id": "uk_addresses_embedding_outline",
-          "render": "<b>Warning: </b>This point lies within a building or area for which we already have an address. You should only add this address if it is different. <br>The number and street name we have for the <a href='#{_embedding_object:id}' target='blank'>existing address</a> is <b>{_embedding_object:addr:housenumber} {_embedding_object:addr:street}</b>",
+          "render": "<b>Warning: </b>This point lies within a building or area for which we already have an address. You should only add this address if it is different. <br>The number and street name we have for the <a href='#{_embedding_object:id}'>existing address</a> is <b>{_embedding_object:addr:housenumber} {_embedding_object:addr:street}</b>",
           "mappings": [
             {
               "if": "_embedding_object:id=true",
