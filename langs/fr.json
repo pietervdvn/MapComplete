@@ -473,9 +473,6 @@
     },
     "translations": {
         "activateButton": "Aidez à traduire MapComplete",
-        "deactivate": "Désactiver les boutons de traduction",
-        "help": "Cliquez sur l'icône \"traduire\" à côté d'une chaîne de caractères pour saisir ou mettre à jour la chaine de texte. Vous aurez besoin d'un compte Weblate pour cela. Créez-en un avec votre nom d'utilisateur OSM pour déverrouiller automatiquement le mode traduction.",
-        "isTranslator": "Mode traduction activé, votre pseudo correspond à celui d’une personne de l’équipe de traduction",
         "missing": "{count} segments non traduits"
     },
     "userinfo": {

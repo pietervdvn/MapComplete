@@ -689,9 +689,6 @@
     "translations": {
         "activateButton": "Bistå oversettelsen av MapComplete",
         "allMissing": "Ingen oversettelser enda",
-        "completeness": "Oversettelsen for {theme} i {language} har {percentage}% dekning: {translated} strenger av {total} har blitt oversatt",
-        "deactivate": "Skru av oversettelsesknapper",
-        "isTranslator": "Oversettelsesmodus er aktivt siden brukernavnet ditt samsvarer med navnet på forrige oversetter",
         "missing": "{count} uoversatte strenger",
         "notImmediate": "Oversettelser oppdateres ikke direkte. Dette tar typisk et par dager."
     },

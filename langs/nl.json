@@ -928,10 +928,6 @@
     "translations": {
         "activateButton": "Help met het vertalen van MapComplete",
         "allMissing": "Nog geen vertalingen",
-        "completeness": "Vertalingen voor {theme} in {language} zijn momenteel op {percentage}%: van {total} teksten zijn er reeds {translated} vertaald",
-        "deactivate": "Verberg de vertaalknoppen",
-        "help": "Klik op het 'vertaal'-icoontje die naast een stukje tekst staat om deze tekst te vertalen of aan te passen. Hiervoor heb je een (gratis) Weblate-account nodig. Indien je jouw account maakt met dezelfde naam als je OSM-gebruikersnaam, dan zullen de vertaalknoppen automatisch verschijnen.",
-        "isTranslator": "Vertaalmode is actief: je gebruikersnaam is dezelfde als van een vertaler. We gaan er dus vanuit dat jij die vertaler bent",
         "missing": "{count} niet-vertaalde teksten",
         "notImmediate": "Vertalingen worden niet onmiddelijk geupdate. Dit duurt gemiddeld enkele dagen"
     },

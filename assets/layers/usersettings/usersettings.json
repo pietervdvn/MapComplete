@@ -63,6 +63,118 @@
       ]
     },
     {
+      "id": "translations-title",
+      "group": "translations",
+      "render": "<h3>Translating MapComplete</h3>"
+    },
+    {
+      "group": "translations",
+      "id": "translation-mode",
+      "question": {
+        "en": "Do you want to help translating MapComplete?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-translation-mode=false",
+          "then": {
+            "en": "Don't show a button to quickly change translations"
+          }
+        },
+        {
+          "if": "mapcomplete-translation-mode=true",
+          "then": {
+            "en": "Show a button to quickly open translations when using MapComplete on a big screen"
+          }
+        },
+        {
+          "if": "mapcomplete-translation-mode=mobile",
+          "then": {
+            "en": "Always show the translation buttons, including on mobile"
+          }
+        }
+      ]
+    },
+    {
+      "group": "translations",
+      "id": "translation-help",
+      "mappings": [
+        {
+          "if": {
+            "or": [
+              "mapcomplete-translation-mode=yes",
+              "mapcomplete-translation-mode=true",
+              "mapcomplete-translation-mode=mobile"
+            ]
+          },
+          "then": {
+            "ca": "Fes clic a la icona 'tradueix' al costat d'una cadena per introduir o actualitzar un fragment de text. Necessites un compte de Weblate per a això. Crea'n un amb el teu nom d'usuari OSM per desbloquejar automàticament el mode de traducció.",
+            "da": "Klik på 'oversæt'-ikonet ved siden af en streng for at indtaste eller opdatere et stykke tekst. Du skal have en Weblate-konto for at kunne gøre dette. Opret en med dit OSM-brugernavn for automatisk at låse oversættelsestilstanden op.",
+            "de": "Klicken Sie auf das Übersetzungssymbol neben einer Zeichenfolge, um den Übersetzungstext einzugeben oder zu aktualisieren. Dazu benötigen Sie ein Weblate-Konto. Erstellen Sie eines mit Ihrem OSM-Benutzernamen, um den Übersetzungsmodus automatisch freizuschalten.",
+            "en": "Click the 'translate'-icon next to a string to enter or update a piece of text. You need a Weblate-account for this. Create one with your OSM-username to automatically unlock translation mode.",
+            "es": "Haz clic en el icono 'traducir' al lado de una cadena para introducir o actualizar un texto. Necesitas una cuenta de Weblate para esto. Crea una con tu usuario de OSM para desbloquear el modo de traducción automáticamente.",
+            "fr": "Cliquez sur l'icône \"traduire\" à côté d'une chaîne de caractères pour saisir ou mettre à jour la chaine de texte. Vous aurez besoin d'un compte Weblate pour cela. Créez-en un avec votre nom d'utilisateur OSM pour déverrouiller automatiquement le mode traduction.",
+            "nl": "Klik op het 'vertaal'-icoontje die naast een stukje tekst staat om deze tekst te vertalen of aan te passen. Hiervoor heb je een (gratis) Weblate-account nodig. Indien je jouw account maakt met dezelfde naam als je OSM-gebruikersnaam, dan zullen de vertaalknoppen automatisch verschijnen.",
+            "zh_Hant": "點字串旁邊的 'translate'-icon 來輸入或是更新一段文字。你需要 Weblate 帳號。用你 OSM 帳號名稱來創建帳號，並且自動解鎖翻譯模式。"
+          },
+          "icon": "translate"
+        }
+      ]
+    },
+    {
+      "group": "translations",
+      "id": "translation-completeness",
+      "render": {
+        "ca": "Les traduccions de {_theme} en {_language} tenen un {_translation_percentage}%: {_translation_translated_count} cadenes de {_translation_total} estan traduïdes",
+        "da": "Oversættelser for {_theme} i {_language} er på {_translation_percentage}%: {_translation_translated_count} strenge ud af {_translation_total} er oversat",
+        "de": "Die Übersetzung für {_theme} in {_language} ist zu {_translation_percentage}% vollständig: {_translation_translated_count} Zeichenfolgen von {_translation_total} sind übersetzt",
+        "en": "Translations for {_theme} in {_language} are at {_translation_percentage}%: {_translation_translated_count} strings out of {_translation_total} are translated",
+        "es": "Las traducciones para {_theme} en {_language} están al {_translation_percentage}%: {_translation_translated_count} cadenas de {_translation_total} están traducidas",
+        "id": "Terjemahan untuk {_theme} dalam {_language} masih {_translation_percentage}%: {_translation_translated_count} string dari {_translation_total} diterjemahkan",
+        "nb_NO": "Oversettelsen for {_theme} i {_language} har {_translation_percentage}% dekning: {_translation_translated_count} strenger av {_translation_total} har blitt oversatt",
+        "nl": "Vertalingen voor {_theme} in {_language} zijn momenteel op {_translation_percentage}%: van {_translation_total} teksten zijn er reeds {_translation_translated_count} vertaald",
+        "zh_Hant": "{_theme} 的 {_language} 翻譯目前是 {_translation_percentage}%：{_translation_total} 中的 {_translation_translated_count} 已經翻譯了"
+      },
+      "condition": {
+        "or": [
+          "mapcomplete-translation-mode=yes",
+          "mapcomplete-translation-mode=true",
+          "mapcomplete-translation-mode=mobile"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "_translation_percentage=100",
+          "icon": "confirm",
+          "then": {
+            "en": "Completely translated",
+            "nl": "Volledig vertaald"
+          }
+        }
+      ]
+    },
+    {
+      "id": "translation-links",
+      "group": "translations",
+      "condition": {
+        "and": [
+          "_translation_links~*",
+          {
+            "or": [
+              "mapcomplete-translation-mode=true",
+              "mapcomplete-translation-mode=mobile"
+            ]
+          }
+        ]
+      },
+      "render": {
+        "special": {
+          "type": "multi",
+          "key": "_translation_links",
+          "tagrendering": "<a href='{link}' target='_blank'>Translate entries of {id}</a>"
+        }
+      }
+    },
+    {
       "id": "verified-mastodon",
       "mappings": [
         {
@@ -82,6 +194,18 @@
             "nl": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
           },
           "icon": "invalid"
+        }
+      ]
+    },
+    {
+      "id": "cscount-thanks",
+      "mappings": [
+        {
+          "if": "_csCount>0",
+          "then": {
+            "en": "You have made changes on {_csCount} different occasions! That is awesome!"
+          },
+          "icon": "party"
         }
       ]
     },
@@ -110,13 +234,41 @@
             "de": "Sie haben Code zu MapComplete mit {_code_contributions} Commits beigetragen! Das ist großartig!",
             "nl": "Je hebt mee geprogrammeerd aan MapComplete met {_code_contributions} commits! Das supercool van je! Bedankt hiervoor!"
           },
-          "icon": "party"
+          "icon": "party",
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "show_debug",
+      "question": {
+        "en": "Show user settings debug info?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-show_debug=yes",
+          "then": {
+            "en": "Show debug info"
+          }
+        },
+        {
+          "if": "mapcomplete-show_debug=no",
+          "then": {
+            "en": "Don't show debug info"
+          }
+        },
+        {
+          "if": "mapcomplete-show_debug=",
+          "then": {
+            "en": "Don't show debug info"
+          },
+          "hideInAnswer": true
         }
       ]
     },
     {
       "id": "debug",
-      "condition": "_name=Pieter Vander Vennet",
+      "condition": "mapcomplete-show_debug=yes",
       "render": "{all_tags()}"
     }
   ],

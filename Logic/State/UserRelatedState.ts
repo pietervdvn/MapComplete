@@ -1,7 +1,7 @@
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { OsmConnection } from "../Osm/OsmConnection"
 import { MangroveIdentity } from "../Web/MangroveReviews"
-import { Store } from "../UIEventSource"
+import { Store, UIEventSource } from "../UIEventSource"
 import { QueryParameters } from "../Web/QueryParameters"
 import Locale from "../../UI/i18n/Locale"
 import ElementsState from "./ElementsState"
@@ -9,7 +9,6 @@ import SelectedElementTagsUpdater from "../Actors/SelectedElementTagsUpdater"
 import { Changes } from "../Osm/Changes"
 import ChangeToElementsActor from "../Actors/ChangeToElementsActor"
 import PendingChangesUploader from "../Actors/PendingChangesUploader"
-import translators from "../../assets/translators.json"
 import Maproulette from "../Maproulette"
 
 /**
@@ -53,29 +52,25 @@ export default class UserRelatedState extends ElementsState {
             osmConfiguration: <"osm" | "osm-test">this.featureSwitchApiURL.data,
             attemptLogin: options?.attemptLogin,
         })
-        const translationMode = this.osmConnection.GetPreference("translation-mode").sync(
-            (str) => (str === undefined ? undefined : str === "true"),
-            [],
-            (b) => (b === undefined ? undefined : b + "")
-        )
-
-        translationMode.syncWith(Locale.showLinkToWeblate)
-
-        this.isTranslator = this.osmConnection.userDetails.map((ud) => {
-            if (!ud.loggedIn) {
-                return false
-            }
-            const name = ud.name.toLowerCase().replace(/\s+/g, "")
-            return translators.contributors.some(
-                (c) => c.contributor.toLowerCase().replace(/\s+/g, "") === name
-            )
-        })
-
-        this.isTranslator.addCallbackAndRunD((ud) => {
-            if (ud) {
-                Locale.showLinkToWeblate.setData(true)
-            }
-        })
+        {
+            const translationMode: UIEventSource<undefined | "true" | "false" | "mobile" | string> =
+                this.osmConnection.GetPreference("translation-mode")
+            translationMode.addCallbackAndRunD((mode) => {
+                mode = mode.toLowerCase()
+                if (mode === "true" || mode === "yes") {
+                    Locale.showLinkOnMobile.setData(false)
+                    Locale.showLinkToWeblate.setData(true)
+                } else if (mode === "false" || mode === "no") {
+                    Locale.showLinkToWeblate.setData(false)
+                } else if (mode === "mobile") {
+                    Locale.showLinkOnMobile.setData(true)
+                    Locale.showLinkToWeblate.setData(true)
+                } else {
+                    Locale.showLinkOnMobile.setData(false)
+                    Locale.showLinkToWeblate.setData(false)
+                }
+            })
+        }
 
         this.changes = new Changes(this, layoutToUse?.isLeftRightSensitive() ?? false)
 
@@ -115,41 +110,6 @@ export default class UserRelatedState extends ElementsState {
         this.InitializeLanguage()
         new SelectedElementTagsUpdater(this)
         this.installedUserThemes = this.InitInstalledUserThemes()
-    }
-
-    private InitializeLanguage() {
-        const layoutToUse = this.layoutToUse
-        Locale.language.syncWith(this.osmConnection.GetPreference("language"))
-        Locale.language.addCallback((currentLanguage) => {
-            if (layoutToUse === undefined) {
-                return
-            }
-            if (Locale.showLinkToWeblate.data) {
-                return true // Disable auto switching as we are in translators mode
-            }
-            if (this.layoutToUse.language.indexOf(currentLanguage) < 0) {
-                console.log(
-                    "Resetting language to",
-                    layoutToUse.language[0],
-                    "as",
-                    currentLanguage,
-                    " is unsupported"
-                )
-                // The current language is not supported -> switch to a supported one
-                Locale.language.setData(layoutToUse.language[0])
-            }
-        })
-        Locale.language.ping()
-    }
-
-    private InitInstalledUserThemes(): Store<string[]> {
-        const prefix = "mapcomplete-unofficial-theme-"
-        const postfix = "-combined-length"
-        return this.osmConnection.preferencesHandler.preferences.map((prefs) =>
-            Object.keys(prefs)
-                .filter((k) => k.startsWith(prefix) && k.endsWith(postfix))
-                .map((k) => k.substring(prefix.length, k.length - postfix.length))
-        )
     }
 
     public GetUnofficialTheme(id: string):
@@ -192,5 +152,40 @@ export default class UserRelatedState extends ElementsState {
             pref.setData(null)
             return undefined
         }
+    }
+
+    private InitializeLanguage() {
+        const layoutToUse = this.layoutToUse
+        Locale.language.syncWith(this.osmConnection.GetPreference("language"))
+        Locale.language.addCallback((currentLanguage) => {
+            if (layoutToUse === undefined) {
+                return
+            }
+            if (Locale.showLinkToWeblate.data) {
+                return true // Disable auto switching as we are in translators mode
+            }
+            if (this.layoutToUse.language.indexOf(currentLanguage) < 0) {
+                console.log(
+                    "Resetting language to",
+                    layoutToUse.language[0],
+                    "as",
+                    currentLanguage,
+                    " is unsupported"
+                )
+                // The current language is not supported -> switch to a supported one
+                Locale.language.setData(layoutToUse.language[0])
+            }
+        })
+        Locale.language.ping()
+    }
+
+    private InitInstalledUserThemes(): Store<string[]> {
+        const prefix = "mapcomplete-unofficial-theme-"
+        const postfix = "-combined-length"
+        return this.osmConnection.preferencesHandler.preferences.map((prefs) =>
+            Object.keys(prefs)
+                .filter((k) => k.startsWith(prefix) && k.endsWith(postfix))
+                .map((k) => k.substring(prefix.length, k.length - postfix.length))
+        )
     }
 }

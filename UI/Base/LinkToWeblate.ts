@@ -2,6 +2,7 @@ import { VariableUiElement } from "./VariableUIElement"
 import Locale from "../i18n/Locale"
 import Link from "./Link"
 import Svg from "../../Svg"
+import show = Mocha.reporters.Base.cursor.show
 
 /**
  * The little 'translate'-icon next to every icon + some static helper functions
@@ -31,7 +32,15 @@ export default class LinkToWeblate extends VariableUiElement {
                 [Locale.showLinkToWeblate]
             )
         )
-        this.SetClass("enable-links hidden-on-mobile")
+        this.SetClass("enable-links")
+        const self = this
+        Locale.showLinkOnMobile.addCallbackAndRunD((showOnMobile) => {
+            if (showOnMobile) {
+                self.RemoveClass("hidden-on-mobile")
+            } else {
+                self.SetClass("hidden-on-mobile")
+            }
+        })
     }
 
     /**

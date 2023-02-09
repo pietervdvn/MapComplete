@@ -720,10 +720,6 @@
     "translations": {
         "activateButton": "協助翻譯 MapComplete",
         "allMissing": "還沒有翻譯",
-        "completeness": "{theme} 的 {language} 翻譯目前是 {percentage}%：{total} 中的 {translated} 已經翻譯了",
-        "deactivate": "關閉翻譯按鈕",
-        "help": "點字串旁邊的 'translate'-icon 來輸入或是更新一段文字。你需要 Weblate 帳號。用你 OSM 帳號名稱來創建帳號，並且自動解鎖翻譯模式。",
-        "isTranslator": "翻譯模式已經啟用，你的名字符合前一位翻譯者的名字",
         "missing": "{count} 未翻譯字串",
         "notImmediate": "翻譯不會直接更新，通常會需要幾天時間"
     },

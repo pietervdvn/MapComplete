@@ -586,10 +586,6 @@
     },
     "translations": {
         "activateButton": "Ajudar a traduir MapComplete",
-        "completeness": "Les traduccions de {theme} en {language} tenen un {percentage}%: {translated} cadenes de {total} estan traduïdes",
-        "deactivate": "Deshabilitar els botons de traducció",
-        "help": "Fes clic a la icona 'tradueix' al costat d'una cadena per introduir o actualitzar un fragment de text. Necessites un compte de Weblate per a això. Crea'n un amb el teu nom d'usuari OSM per desbloquejar automàticament el mode de traducció.",
-        "isTranslator": "El mode de traducció està actiu, ja que el vostre nom d'usuari coincideix amb el nom d'un traductor anterior",
         "missing": "{count} cadenes sense traduir",
         "notImmediate": "Les traduccions no s'actualitzen directament. Això sol trigar uns quants dies"
     },
