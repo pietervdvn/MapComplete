@@ -15,7 +15,7 @@
     "generate:doctests": "doctest-ts-improved . --ignore .*.spec.ts --ignore .*ConfigJson.ts",
     "test:run-only": "mocha --require ts-node/register --require test/testhooks.ts \"./**/*.doctest.ts\" \"test/*\" \"test/**/*.ts\"",
     "test": "(npm run generate:doctests 2>&1 | grep -v \"No doctests found in\") && npm run test:run-only && npm run clean:tests",
-    "init": "npm ci && npm run generate && npm run generate:editor-layer-index && npm run generate:layouts && npm run clean",
+    "init": "npm ci && npm run generate && npm run generate:editor-layer-index && npm run generate:layouts && npm run clean && npm run weblate-add-upstream",
     "generate:editor-layer-index": "ts-node scripts/downloadFile.ts https://osmlab.github.io/editor-layer-index/imagery.geojson assets/editor-layer-index.json",
     "generate:polygon-features": "ts-node scripts/downloadFile.ts  https://raw.githubusercontent.com/tyrasd/osm-polygon-features/master/polygon-features.json assets/polygon-features.json",
     "generate:images": "ts-node scripts/generateIncludedImages.ts",
@@ -44,10 +44,10 @@
     "clean:tests": "(find . -type f -name \"*.doctest.ts\" | xargs rm)",
     "clean": "rm -rf .cache/ && (find *.html | grep -v \"^\\(404\\|index\\|land\\|test\\|preferences\\|customGenerator\\|professional\\|automaton\\|import_helper\\|import_viewer\\|theme\\).html\" | xargs rm) && (ls | grep \"^index_[a-zA-Z_-]\\+\\.ts$\" | xargs rm)",
     "generate:dependency-graph": "node_modules/.bin/depcruise --exclude \"^node_modules\" --output-type dot Logic/State/MapState.ts > dependencies.dot && dot dependencies.dot -T svg -o dependencies.svg && rm dependencies.dot",
-    "weblate-add-upstream": "git remote add weblate-github git@github.com:weblate/MapComplete.git",
+    "weblate-add-upstream": "git remote add weblate-github git@github.com:weblate/MapComplete.git && git remote add weblate-hosted-core https://hosted.weblate.org/git/mapcomplete/core/ && git remote add weblate-hosted-layers https://hosted.weblate.org/git/mapcomplete/layers/",
     "weblate-merge": "git remote update weblate-github; git merge weblate-github/weblate-mapcomplete-core weblate-github/weblate-mapcomplete-layers weblate-github/weblate-mapcomplete-layer-translations",
-    "weblate-fix-heavy": "git remote rm weblate-layers; git remote add weblate-layers https://hosted.weblate.org/git/mapcomplete/layers/; git remote update weblate-layers; git merge weblate-layers/master",
-    "housekeeping": "npm run generate && npm run generate:docs && npm run generate:contributor-list && ts-node scripts/fetchLanguages.ts && npm run format && git add assets/ langs/ Docs/ **/*.ts Docs/* && git commit -m 'Housekeeping...'",
+    "weblate-fix-heavy": "git fetch weblate-hosted-layers; git fetch weblate-hosted-core; git merge weblate-hosted-layers/master weblate-hosted-core/master ",
+    "housekeeping": "npm run weblate-fix-heavy && npm run generate && npm run generate:docs && npm run generate:contributor-list && ts-node scripts/fetchLanguages.ts && npm run format && git add assets/ langs/ Docs/ **/*.ts Docs/* && git commit -m 'Housekeeping...'",
     "parseSchools": "ts-node scripts/schools/amendSchoolData.ts"
   },
   "keywords": [
