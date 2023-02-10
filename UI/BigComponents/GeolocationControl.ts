@@ -91,6 +91,7 @@ export class GeolocationControl extends VariableUiElement {
                 geolocationState.currentGPSLocation.data === undefined
             ) {
                 lastClick.setData(new Date())
+                geolocationState.requestMoment.setData(new Date())
                 await geolocationState.requestPermission()
             }
 

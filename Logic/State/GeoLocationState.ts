@@ -1,5 +1,6 @@
 import { UIEventSource } from "../UIEventSource"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
+import { QueryParameters } from "../Web/QueryParameters"
 
 type GeolocationState = "prompt" | "requested" | "granted" | "denied"
 
@@ -79,6 +80,11 @@ export class GeoLocationState {
             // We set the flag to false again. If the user only wanted to share their location once, we are not gonna keep bothering them
             this._previousLocationGrant.setData("false")
             console.log("Requesting access to GPS as this was previously granted")
+            const latLonGivenViaUrl =
+                QueryParameters.wasInitialized("lat") || QueryParameters.wasInitialized("lon")
+            if (!latLonGivenViaUrl) {
+                this.requestMoment.setData(new Date())
+            }
             this.requestPermission()
         }
         window["geolocation_state"] = this
@@ -120,7 +126,7 @@ export class GeoLocationState {
             // Hence that we continue the flow if it is "requested"
             return
         }
-        this.requestMoment.setData(new Date())
+
         this.permission.setData("requested")
         try {
             navigator?.permissions
