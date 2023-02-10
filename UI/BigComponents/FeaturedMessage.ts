@@ -1,9 +1,9 @@
 import Combine from "../Base/Combine"
-import * as welcome_messages from "../../assets/welcome_message.json"
+import welcome_messages from "../../assets/welcome_message.json"
 import BaseUIElement from "../BaseUIElement"
 import { FixedUiElement } from "../Base/FixedUiElement"
 import MoreScreen from "./MoreScreen"
-import * as themeOverview from "../../assets/generated/theme_overview.json"
+import themeOverview from "../../assets/generated/theme_overview.json"
 import Translations from "../i18n/Translations"
 import Title from "../Base/Title"
 
@@ -43,7 +43,7 @@ export default class FeaturedMessage extends Combine {
         }[] = []
 
         const themesById = new Map<string, { id: string; title: any; shortDescription: any }>()
-        for (const theme of themeOverview["default"]) {
+        for (const theme of themeOverview) {
             themesById.set(theme.id, theme)
         }
 
@@ -88,9 +88,7 @@ export default class FeaturedMessage extends Combine {
         const msg = new FixedUiElement(welcome_message.message).SetClass("link-underline font-lg")
         els.push(new Combine([title, msg]).SetClass("m-4"))
         if (welcome_message.featured_theme !== undefined) {
-            const theme = themeOverview["default"].filter(
-                (th) => th.id === welcome_message.featured_theme
-            )[0]
+            const theme = themeOverview.filter((th) => th.id === welcome_message.featured_theme)[0]
 
             els.push(
                 MoreScreen.createLinkButton({}, theme)

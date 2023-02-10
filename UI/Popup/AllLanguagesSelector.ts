@@ -1,7 +1,7 @@
 import { SearchablePillsSelector } from "../Input/SearchableMappingsSelector"
 import { Store } from "../../Logic/UIEventSource"
 import BaseUIElement from "../BaseUIElement"
-import * as all_languages from "../../assets/language_translations.json"
+import all_languages from "../../assets/language_translations.json"
 import { Translation } from "../i18n/Translation"
 
 export class AllLanguagesSelector extends SearchablePillsSelector<string> {
@@ -18,7 +18,7 @@ export class AllLanguagesSelector extends SearchablePillsSelector<string> {
             hasPriority?: Store<boolean>
         }[] = []
 
-        const langs = options?.supportedLanguages ?? all_languages["default"] ?? all_languages
+        const langs = options?.supportedLanguages ?? all_languages
         for (const ln in langs) {
             let languageInfo: Record<string, string> & { _meta?: { countries: string[] } } =
                 all_languages[ln]

@@ -2,7 +2,7 @@ import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFile, writeFi
 import Locale from "../UI/i18n/Locale"
 import Translations from "../UI/i18n/Translations"
 import { Translation } from "../UI/i18n/Translation"
-import * as all_known_layouts from "../assets/generated/known_layers_and_themes.json"
+import all_known_layouts from "../assets/generated/known_layers_and_themes.json"
 import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
 import xml2js from "xml2js"
@@ -23,7 +23,7 @@ async function createIcon(iconPath: string, size: number, alreadyWritten: string
         name = name.substr(2)
     }
 
-    const newname = `assets/generated/images/${name.replace(/\//g, "_")}${size}.png`
+    const newname = `public/assets/generated/images/${name.replace(/\//g, "_")}${size}.png`
 
     if (alreadyWritten.indexOf(newname) >= 0) {
         return newname
@@ -60,7 +60,7 @@ async function createSocialImage(layout: LayoutConfig, template: "" | "Wide"): P
         )
         return undefined
     }
-    const path = `./assets/generated/images/social_image_${layout.id}_${template}.svg`
+    const path = `./public/assets/generated/images/social_image_${layout.id}_${template}.svg`
     if (existsSync(path)) {
         return path
     }
@@ -121,7 +121,7 @@ async function createManifest(
         // This is an svg. Lets create the needed pngs and do some checkes!
 
         const whiteBackgroundPath =
-            "./assets/generated/images/theme_" + layout.id + "_white_background.svg"
+            "./public/assets/generated/images/theme_" + layout.id + "_white_background.svg"
         {
             const svg = await ScriptUtils.ReadSvg(icon)
             const width: string = svg.$.width
@@ -136,7 +136,7 @@ async function createManifest(
         let path = layout.icon
         if (layout.icon.startsWith("<")) {
             // THis is already the svg
-            path = "./assets/generated/images/" + layout.id + "_logo.svg"
+            path = "./public/assets/generated/images/" + layout.id + "_logo.svg"
             writeFileSync(path, layout.icon)
         }
 
@@ -235,7 +235,7 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
     let icon = layout.icon
     if (icon.startsWith("<?xml") || icon.startsWith("<svg")) {
         // This already is an svg
-        icon = `./assets/generated/images/${layout.id}_icon.svg`
+        icon = `./public/assets/generated/images/${layout.id}_icon.svg`
         writeFileSync(icon, layout.icon)
     }
 
@@ -295,7 +295,7 @@ async function createIndexFor(theme: LayoutConfig) {
     const filename = "index_" + theme.id + ".ts"
     writeFileSync(
         filename,
-        `import * as themeConfig from "./assets/generated/themes/${theme.id}.json"\n`
+        `import themeConfig from "./assets/generated/themes/${theme.id}.json"\n`
     )
     appendFileSync(filename, codeTemplate)
 }
@@ -311,7 +311,9 @@ async function main(): Promise<void> {
     createDir("./assets/generated")
     createDir("./assets/generated/layers")
     createDir("./assets/generated/themes")
-    createDir("./assets/generated/images")
+    createDir("./public/assets/")
+    createDir("./public/assets/generated")
+    createDir("./public/assets/generated/images")
 
     const blacklist = [
         "",

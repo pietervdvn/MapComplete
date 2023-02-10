@@ -9,11 +9,9 @@ import LayoutConfig from "../LayoutConfig"
 import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
 import { TagUtils } from "../../../Logic/Tags/TagUtils"
 import { ExtractImages } from "./FixImages"
-import ScriptUtils from "../../../scripts/ScriptUtils"
 import { And } from "../../../Logic/Tags/And"
 import Translations from "../../../UI/i18n/Translations"
 import Svg from "../../../Svg"
-import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 import FilterConfigJson from "../Json/FilterConfigJson"
 import DeleteConfig from "../DeleteConfig"
 
@@ -365,7 +363,7 @@ export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
     }
 }
 
-export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRenderingConfigJson> {
+export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJson> {
     private readonly _calculatedTagNames: string[]
 
     constructor(layerConfig?: LayerConfigJson) {
@@ -425,9 +423,9 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
      * r.errors[0].indexOf("The mapping key=value&x=y is fully matched by a previous mapping (namely 0)") >= 0 // => true
      */
     convert(
-        json: QuestionableTagRenderingConfigJson,
+        json: TagRenderingConfigJson,
         context: string
-    ): { result: QuestionableTagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
+    ): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
         const errors = []
         const warnings = []
         if (json.mappings === undefined || json.mappings.length === 0) {
@@ -441,12 +439,9 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
         const parsedConditions = json.mappings.map((m, i) => {
             const ctx = `${context}.mappings[${i}]`
             const ifTags = TagUtils.Tag(m.if, ctx)
-            if (
-                m.hideInAnswer !== undefined &&
-                m.hideInAnswer !== false &&
-                m.hideInAnswer !== true
-            ) {
-                let conditionTags = TagUtils.Tag(m.hideInAnswer)
+            const hideInAnswer = m["hideInAnswer"]
+            if (hideInAnswer !== undefined && hideInAnswer !== false && hideInAnswer !== true) {
+                let conditionTags = TagUtils.Tag(hideInAnswer)
                 // Merge the condition too!
                 return new And([conditionTags, ifTags])
             }
@@ -467,8 +462,8 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
                 const doesMatch = parsedConditions[j].matchesProperties(properties)
                 if (
                     doesMatch &&
-                    json.mappings[j].hideInAnswer === true &&
-                    json.mappings[i].hideInAnswer !== true
+                    json.mappings[j]["hideInAnswer"] === true &&
+                    json.mappings[i]["hideInAnswer"] !== true
                 ) {
                     warnings.push(
                         `At ${context}: Mapping ${i} is shadowed by mapping ${j}. However, mapping ${j} has 'hideInAnswer' set, which will result in a different rendering in question-mode.`
@@ -623,7 +618,8 @@ export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
         super(
             "Various validation on tagRenderingConfigs",
             new DetectShadowedMappings(layerConfig),
-            new DetectMappingsWithImages(doesImageExist)
+            new DetectMappingsWithImages(doesImageExist),
+            new MiscTagRenderingChecks()
         )
     }
 }

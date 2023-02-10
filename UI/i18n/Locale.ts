@@ -5,6 +5,10 @@ import { QueryParameters } from "../../Logic/Web/QueryParameters"
 
 export default class Locale {
     public static showLinkToWeblate: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+    /**
+     * Indicates that -if showLinkToWeblate is true- a link on mobile mode is shown as well
+     */
+    public static showLinkOnMobile: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public static language: UIEventSource<string> = Locale.setup()
 
     private static setup() {

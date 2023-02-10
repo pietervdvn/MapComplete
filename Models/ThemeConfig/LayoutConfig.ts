@@ -7,7 +7,7 @@ import TilesourceConfig from "./TilesourceConfig"
 import { ExtractImages } from "./Conversion/FixImages"
 import ExtraLinkConfig from "./ExtraLinkConfig"
 import { Utils } from "../../Utils"
-import * as used_languages from "../../assets/generated/used_languages.json"
+import used_languages from "../../assets/generated/used_languages.json"
 export default class LayoutConfig {
     public static readonly defaultSocialImage = "assets/SocialImage.png"
     public readonly id: string
@@ -237,13 +237,11 @@ export default class LayoutConfig {
     }
 
     public missingTranslations(): {
-        completeness: Map<string, number>
         untranslated: Map<string, string[]>
         total: number
     } {
         const layout = this
         let total = 0
-        const completeness = new Map<string, number>()
         const untranslated = new Map<string, string[]>()
 
         Utils.WalkObject(
@@ -264,13 +262,21 @@ export default class LayoutConfig {
                     if (trans["*"] !== undefined) {
                         return
                     }
+                    if (translation.context.indexOf(":") < 0) {
+                        return
+                    }
                     if (trans[ln] === undefined) {
                         if (!untranslated.has(ln)) {
                             untranslated.set(ln, [])
                         }
-                        untranslated.get(ln).push(translation.context)
-                    } else {
-                        completeness.set(ln, 1 + (completeness.get(ln) ?? 0))
+                        untranslated
+                            .get(ln)
+                            .push(
+                                translation.context.replace(
+                                    /^note_import_[a-zA-Z0-9_]*/,
+                                    "note_import"
+                                )
+                            )
                     }
                 })
             },
@@ -282,7 +288,7 @@ export default class LayoutConfig {
             }
         )
 
-        return { completeness, untranslated, total }
+        return { untranslated, total }
     }
     public getMatchingLayer(tags: any): LayerConfig | undefined {
         if (tags === undefined) {

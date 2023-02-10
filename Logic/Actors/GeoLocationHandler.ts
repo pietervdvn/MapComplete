@@ -45,13 +45,10 @@ export default class GeoLocationHandler {
                 (new Date().getTime() - geolocationState.requestMoment.data?.getTime() ?? 0) / 1000
             if (!this.mapHasMoved.data) {
                 // The map hasn't moved yet; we received our first coordinates, so let's move there!
-                console.log(
-                    "Moving the map to an initial location; time since last request is",
-                    timeSinceLastRequest
-                )
-                if (timeSinceLastRequest < Constants.zoomToLocationTimeout) {
-                    self.MoveMapToCurrentLocation()
-                }
+                self.MoveMapToCurrentLocation()
+            }
+            if (timeSinceLastRequest < Constants.zoomToLocationTimeout) {
+                self.MoveMapToCurrentLocation()
             }
 
             if (this.geolocationState.isLocked.data) {
@@ -109,11 +106,12 @@ export default class GeoLocationHandler {
         }
 
         mapLocation.setData({
-            zoom: mapLocation.data.zoom,
+            zoom: Math.max(mapLocation.data.zoom, 16),
             lon: newLocation.longitude,
             lat: newLocation.latitude,
         })
         this.mapHasMoved.setData(true)
+        this.geolocationState.requestMoment.setData(undefined)
     }
 
     private CopyGeolocationIntoMapstate() {

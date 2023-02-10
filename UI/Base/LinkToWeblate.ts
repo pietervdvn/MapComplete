@@ -2,6 +2,7 @@ import { VariableUiElement } from "./VariableUIElement"
 import Locale from "../i18n/Locale"
 import Link from "./Link"
 import Svg from "../../Svg"
+import show = Mocha.reporters.Base.cursor.show
 
 /**
  * The little 'translate'-icon next to every icon + some static helper functions
@@ -21,7 +22,7 @@ export default class LinkToWeblate extends VariableUiElement {
                         return undefined
                     }
                     const icon = Svg.translate_svg().SetClass(
-                        "rounded-full border border-gray-400 inline-block w-4 h-4 m-1 weblate-link self-center"
+                        "rounded-full inline-block w-3 h-3 ml-1 weblate-link self-center"
                     )
                     if (availableTranslations[ln] === undefined) {
                         icon.SetClass("bg-red-400")
@@ -31,7 +32,15 @@ export default class LinkToWeblate extends VariableUiElement {
                 [Locale.showLinkToWeblate]
             )
         )
-        this.SetClass("enable-links hidden-on-mobile")
+        this.SetClass("enable-links")
+        const self = this
+        Locale.showLinkOnMobile.addCallbackAndRunD((showOnMobile) => {
+            if (showOnMobile) {
+                self.RemoveClass("hidden-on-mobile")
+            } else {
+                self.SetClass("hidden-on-mobile")
+            }
+        })
     }
 
     /**

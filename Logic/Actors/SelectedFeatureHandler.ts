@@ -90,12 +90,12 @@ export default class SelectedFeatureHandler {
             if (feature === undefined) {
                 return
             }
-            const currentlySeleced = state.selectedElement.data
-            if (currentlySeleced === undefined) {
+            const currentlySelected = state.selectedElement.data
+            if (currentlySelected === undefined) {
                 state.selectedElement.setData(feature)
                 return
             }
-            if (currentlySeleced.properties?.id === feature.properties.id) {
+            if (currentlySelected.properties?.id === feature.properties.id) {
                 // We already have the right feature
                 return
             }

@@ -1,7 +1,7 @@
 import { FixedUiElement } from "../Base/FixedUiElement"
 import { Translation, TypedTranslation } from "./Translation"
 import BaseUIElement from "../BaseUIElement"
-import * as known_languages from "../../assets/generated/used_languages.json"
+import known_languages from "../../assets/generated/used_languages.json"
 import CompiledTranslations from "../../assets/generated/CompiledTranslations"
 
 export default class Translations {

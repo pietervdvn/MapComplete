@@ -1,5 +1,6 @@
 import { UIEventSource } from "../UIEventSource"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
+import { QueryParameters } from "../Web/QueryParameters"
 
 type GeolocationState = "prompt" | "requested" | "granted" | "denied"
 
@@ -11,8 +12,6 @@ export interface GeoLocationPointProperties extends GeolocationCoordinates {
 
 /**
  * An abstract representation of the current state of the geolocation.
- *
- *
  */
 export class GeoLocationState {
     /**
@@ -21,10 +20,12 @@ export class GeoLocationState {
      * 'requested' means the user tapped the 'locate me' button at least once
      * 'granted' means that it is granted
      * 'denied' means that we don't have access
-     *
      */
     public readonly permission: UIEventSource<GeolocationState> = new UIEventSource("prompt")
 
+    /**
+     * Important to determine e.g. if we move automatically on fix or not
+     */
     public readonly requestMoment: UIEventSource<Date | undefined> = new UIEventSource(undefined)
     /**
      * If true: the map will center (and re-center) to this location
@@ -79,6 +80,11 @@ export class GeoLocationState {
             // We set the flag to false again. If the user only wanted to share their location once, we are not gonna keep bothering them
             this._previousLocationGrant.setData("false")
             console.log("Requesting access to GPS as this was previously granted")
+            const latLonGivenViaUrl =
+                QueryParameters.wasInitialized("lat") || QueryParameters.wasInitialized("lon")
+            if (!latLonGivenViaUrl) {
+                this.requestMoment.setData(new Date())
+            }
             this.requestPermission()
         }
         window["geolocation_state"] = this
@@ -120,7 +126,7 @@ export class GeoLocationState {
             // Hence that we continue the flow if it is "requested"
             return
         }
-        this.requestMoment.setData(new Date())
+
         this.permission.setData("requested")
         try {
             navigator?.permissions

@@ -78,13 +78,13 @@ function geoJsonName(targetDir: string, x: number, y: number, z: number): string
     return targetDir + "_" + z + "_" + x + "_" + y + ".geojson"
 }
 
-/// Downloads the given feature and saves them to disk
+/// Downloads the given tilerange from overpass and saves them to disk
 async function downloadRaw(
     targetdir: string,
     r: TileRange,
     theme: LayoutConfig,
     relationTracker: RelationsTracker
-) /* : {failed: number, skipped :number} */ {
+): Promise<{ failed: number; skipped: number }> {
     let downloaded = 0
     let failed = 0
     let skipped = 0

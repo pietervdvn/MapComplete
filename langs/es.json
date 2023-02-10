@@ -708,10 +708,6 @@
     "translations": {
         "activateButton": "Ayuda a traducir MapComplete",
         "allMissing": "Aún sin traducciónes",
-        "completeness": "Las traducciones para {theme} en {language} están al {percentage}%: {translated} cadenas de {total} están traducidas",
-        "deactivate": "Deshabilitar los botones de traducción",
-        "help": "Haz clic en el icono 'traducir' al lado de una cadena para introducir o actualizar un texto. Necesitas una cuenta de Weblate para esto. Crea una con tu usuario de OSM para desbloquear el modo de traducción automáticamente.",
-        "isTranslator": "El modo de traducción está activo si tu nombre de usuario coincide con el nombre de un traductor anterior",
         "missing": "{count} cadenas sin traducir",
         "notImmediate": "Las traducciones no se actualizan directamente. Habitualmente esto lleva unos días"
     },

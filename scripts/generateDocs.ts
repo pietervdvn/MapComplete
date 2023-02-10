@@ -15,14 +15,15 @@ import List from "../UI/Base/List"
 import SharedTagRenderings from "../Customizations/SharedTagRenderings"
 import { writeFile } from "fs"
 import Translations from "../UI/i18n/Translations"
-import * as themeOverview from "../assets/generated/theme_overview.json"
+import themeOverview from "../assets/generated/theme_overview.json"
 import DefaultGUI from "../UI/DefaultGUI"
 import FeaturePipelineState from "../Logic/State/FeaturePipelineState"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
-import * as bookcases from "../assets/generated/themes/bookcases.json"
+import bookcases from "../assets/generated/themes/bookcases.json"
 import { DefaultGuiState } from "../UI/DefaultGuiState"
-import * as fakedom from "fake-dom"
+import fakedom from "fake-dom"
 import Hotkeys from "../UI/Base/Hotkeys"
+import { QueryParameters } from "../Logic/Web/QueryParameters"
 function WriteFile(
     filename,
     html: BaseUIElement,
@@ -103,7 +104,7 @@ function generateWikipage() {
         "! Name, link !! Genre !! Covered region !! Language !! Description !! Free materials !! Image\n" +
         "|-"
 
-    for (const layout of themeOverview["default"] ?? themeOverview) {
+    for (const layout of themeOverview) {
         if (layout.hideFromOverview) {
             continue
         }
@@ -225,6 +226,12 @@ WriteFile("./Docs/URL_Parameters.md", QueryParameterDocumentation.GenerateQueryP
 if (fakedom === undefined || window === undefined) {
     throw "FakeDom not initialized"
 }
+QueryParameters.GetQueryParameter(
+    "mode",
+    "map",
+    "The mode the application starts in, e.g. 'map', 'dashboard' or 'statistics'"
+)
+
 new DefaultGUI(
     new FeaturePipelineState(new LayoutConfig(<any>bookcases)),
     new DefaultGuiState()

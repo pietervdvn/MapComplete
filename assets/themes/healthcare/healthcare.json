@@ -31,6 +31,65 @@
     "physiotherapist",
     "dentist",
     "hospital",
-    "pharmacy"
+    "pharmacy",
+    {
+      "builtin": "shops",
+      "override": {
+        "id": "medical-shops",
+        "minzoom": 13,
+        "=filter": [
+          "open_now",
+          "accepts_cash",
+          "accepts_cards"
+        ],
+        "=presets": [
+          {
+            "title": {
+              "en": "a medical supply shop"
+            },
+            "tags": [
+              "shop=medical_supply"
+            ]
+          },
+          {
+            "title": {
+              "en": "a hearing aids shop"
+            },
+            "tags": [
+              "shop=hearing_aids"
+            ]
+          },
+          {
+            "title": {
+              "en": "an optician"
+            },
+            "tags": [
+              "shop=optician"
+            ]
+          }
+        ],
+        "source": {
+          "osmTags": {
+            "and+": [
+              {
+                "or": [
+                  "shop=medical_supply",
+                  "shop=hearing_aids",
+                  "shop=optician"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "builtin": "shops",
+      "=presets": [],
+      "=name": null,
+      "override": {
+        "minzoom": 19
+      }
+    }
   ]
 }

@@ -9,9 +9,10 @@ import { SubtleButton } from "../Base/SubtleButton"
 import Svg from "../../Svg"
 import { Utils } from "../../Utils"
 import { MapillaryLink } from "./MapillaryLink"
-import TranslatorsPanel from "./TranslatorsPanel"
 import { OpenIdEditor, OpenJosm } from "./CopyrightPanel"
 import Toggle from "../Input/Toggle"
+import ScrollableFullScreen from "../Base/ScrollableFullScreen"
+import { DefaultGuiState } from "../DefaultGuiState"
 
 export class BackToThemeOverview extends Toggle {
     constructor(
@@ -77,7 +78,14 @@ export class ActionButtons extends Combine {
             new OpenIdEditor(state, iconStyle),
             new MapillaryLink(state, iconStyle),
             new OpenJosm(state, iconStyle).SetClass("hidden-on-mobile"),
-            new TranslatorsPanel(state, iconStyle),
+            new SubtleButton(
+                Svg.translate_ui().SetStyle(iconStyle),
+                Translations.t.translations.activateButton
+            ).onClick(() => {
+                ScrollableFullScreen.collapse()
+                DefaultGuiState.state.userInfoIsOpened.setData(true)
+                DefaultGuiState.state.userInfoFocusedQuestion.setData("translation-mode")
+            }),
         ])
         this.SetClass("block w-full link-no-underline")
     }

@@ -3,7 +3,7 @@ import Svg from "../../Svg"
 import Combine from "../Base/Combine"
 import { SubtleButton } from "../Base/SubtleButton"
 import Translations from "../i18n/Translations"
-import * as personal from "../../assets/themes/personal/personal.json"
+import personal from "../../assets/themes/personal/personal.json"
 import Constants from "../../Models/Constants"
 import BaseUIElement from "../BaseUIElement"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
@@ -14,7 +14,7 @@ import UserRelatedState from "../../Logic/State/UserRelatedState"
 import Toggle from "../Input/Toggle"
 import { Utils } from "../../Utils"
 import Title from "../Base/Title"
-import * as themeOverview from "../../assets/generated/theme_overview.json"
+import themeOverview from "../../assets/generated/theme_overview.json"
 import { Translation } from "../i18n/Translation"
 import { TextField } from "../Input/TextField"
 import FilteredCombine from "../Base/FilteredCombine"
@@ -30,7 +30,7 @@ export default class MoreScreen extends Combine {
         mustHaveLanguage?: boolean
         hideFromOverview: boolean
         keywors?: any[]
-    }[] = themeOverview["default"]
+    }[] = themeOverview
 
     constructor(
         state: UserRelatedState & {
@@ -287,7 +287,7 @@ export default class MoreScreen extends Combine {
     ): BaseUIElement {
         const t = Translations.t.general.morescreen
         const prefix = "mapcomplete-hidden-theme-"
-        const hiddenThemes = themeOverview["default"].filter((layout) => layout.hideFromOverview)
+        const hiddenThemes = themeOverview.filter((layout) => layout.hideFromOverview)
         const hiddenTotal = hiddenThemes.length
 
         return new Toggle(
