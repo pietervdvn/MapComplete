@@ -278,7 +278,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      */
     public static NoEmpty(array: string[]): string[] {
         const ls: string[] = []
-        if(!array){
+        if (!array) {
             return ls
         }
         for (const t of array) {

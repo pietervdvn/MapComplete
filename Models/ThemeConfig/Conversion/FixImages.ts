@@ -71,16 +71,16 @@ export class ExtractImages extends Conversion<
      *             ]
      *         }
      *     ]
-     * }, "test").result;
+     * }, "test").result.map(i => i.path);
      * images.length // => 2
-     * images.findIndex(img => img == "./assets/layers/bike_parking/staple.svg") // => 0
-     * images.findIndex(img => img == "./assets/layers/bike_parking/bollard.svg") // => 1
+     * images.findIndex(img => img == "./assets/layers/bike_parking/staple.svg") >= 0 // => true
+     * images.findIndex(img => img == "./assets/layers/bike_parking/bollard.svg") >= 0 // => true
      *
      * // should not pickup rotation, should drop color
-     * const images = new ExtractImages(true, new Map<string, any>()).convert(<any>{"layers": [{mapRendering: [{"location": ["point", "centroid"],"icon": "pin:black",rotation: 180,iconSize: "40,40,center"}]}]
+     * const images = new ExtractImages(true, new Set<string>()).convert(<any>{"layers": [{mapRendering: [{"location": ["point", "centroid"],"icon": "pin:black",rotation: 180,iconSize: "40,40,center"}]}]
      * }, "test").result
      * images.length // => 1
-     * images[0] // => "pin"
+     * images[0].path // => "pin"
      *
      */
     convert(
