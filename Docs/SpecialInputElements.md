@@ -43,7 +43,7 @@ A simple piece of text
 
 
 
-A longer piece of text
+A longer piece of text. Uses an textArea instead of a textField
 
 
 

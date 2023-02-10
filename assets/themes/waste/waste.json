@@ -9,7 +9,8 @@
     "fr": "Déchets",
     "it": "Rifiuti",
     "da": "Affald",
-    "es": "Basura y reciclaje"
+    "es": "Basura y reciclaje",
+    "ru": "Мусор"
   },
   "description": {
     "en": "Map showing waste baskets and recycling facilities.",

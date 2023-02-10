@@ -93,6 +93,10 @@
       "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'fire_hydrant:diameter' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')"
     },
     {
+      "key": "couplings",
+      "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'couplings' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')"
+    },
+    {
       "key": "couplings:type",
       "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'couplings:type' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')"
     },

@@ -589,6 +589,20 @@
             "render": "郵局"
         }
     },
+    "usersettings": {
+        "tagRenderings": {
+            "translation-completeness": {
+                "render": "{_theme} 的 {_language} 翻譯目前是 {_translation_percentage}%：{_translation_total} 中的 {_translation_translated_count} 已經翻譯了"
+            },
+            "translation-help": {
+                "mappings": {
+                    "0": {
+                        "then": "點字串旁邊的 'translate'-icon 來輸入或是更新一段文字。你需要 Weblate 帳號。用你 OSM 帳號名稱來創建帳號，並且自動解鎖翻譯模式。"
+                    }
+                }
+            }
+        }
+    },
     "windturbine": {
         "name": "風機",
         "presets": {

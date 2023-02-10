@@ -98,15 +98,6 @@
                     "1": {
                         "then": "Mural"
                     },
-                    "10": {
-                        "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
-                    },
-                    "11": {
-                        "then": "Enrajolat"
-                    },
-                    "12": {
-                        "then": "Tallat a la fusta"
-                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -130,6 +121,15 @@
                     },
                     "9": {
                         "then": "Relleu"
+                    },
+                    "10": {
+                        "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
+                    },
+                    "11": {
+                        "then": "Enrajolat"
+                    },
+                    "12": {
+                        "then": "Tallat a la fusta"
                     }
                 },
                 "question": "Quin tipus d'obra és aquesta peça?",
@@ -853,14 +853,14 @@
                     "0": {
                         "question": "Tots els connectors"
                     },
-                    "13": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
                     "5": {
                         "question": "Té un connecgtor de <div style='display: inline-block'><b>Tipus 1<i>sense</i>cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
                     "6": {
                         "question": "Té un connector <div style='display: inline-block'><b>Tipus 1 CSS (Combo Tipus 1)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
+                    },
+                    "13": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     }
                 }
             }
@@ -869,6 +869,21 @@
         "tagRenderings": {
             "Available_charging_stations (generated)": {
                 "mappings": {
+                    "2": {
+                        "then": "<b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)"
+                    },
+                    "4": {
+                        "then": "<b>CHAdeMo</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
+                    },
                     "10": {
                         "then": "<b>CSS 1Tipus 1</b> (també conegut com Tipus 1 combo)"
                     },
@@ -884,9 +899,6 @@
                     "18": {
                         "then": "<b>Tipus 2 amb cable</b> (mennekes)"
                     },
-                    "2": {
-                        "then": "<b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)"
-                    },
                     "20": {
                         "then": "<b>CSS Supercarregador Tesla</b> (tipus2_css de la marca)"
                     },
@@ -895,18 +907,6 @@
                     },
                     "26": {
                         "then": "<b>USB</b> per a carregar mòbils i dispositius petits"
-                    },
-                    "4": {
-                        "then": "<b>CHAdeMo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
                     }
                 },
                 "question": "Quins tipus de connexions de càrrega estan disponibles aquí?"
@@ -1625,6 +1625,9 @@
             "hydrant-diameter": {
                 "question": "Quin és el diàmetre d'aquest hidrant?"
             },
+            "hydrant-number-of-couplings": {
+                "question": "Quants acoblaments té aquest hidrant?"
+            },
             "hydrant-state": {
                 "mappings": {
                     "0": {
@@ -2134,6 +2137,30 @@
                     "1": {
                         "then": "Aquí es poden reciclar els cartons de begudes"
                     },
+                    "2": {
+                        "then": "Aquí es poden reciclar llaunes"
+                    },
+                    "3": {
+                        "then": "Aquí es pot reciclar roba"
+                    },
+                    "4": {
+                        "then": "Aquí es pot reciclar oli de cuina"
+                    },
+                    "5": {
+                        "then": "Aquí es pot reciclar oli de motor"
+                    },
+                    "6": {
+                        "then": "Aquí es poden reciclar tub fluroescents"
+                    },
+                    "7": {
+                        "then": "Aquí es poden reciclar residus verds"
+                    },
+                    "8": {
+                        "then": "Ací es poden reciclar residus orgànics"
+                    },
+                    "9": {
+                        "then": "Aquí es poden reciclar ampolles de vidre"
+                    },
                     "10": {
                         "then": "Aquí es pot reciclar vidre"
                     },
@@ -2161,35 +2188,11 @@
                     "19": {
                         "then": "Aquí es poden reciclar petits aparells electrònics"
                     },
-                    "2": {
-                        "then": "Aquí es poden reciclar llaunes"
-                    },
                     "20": {
                         "then": "Aquí es poden reciclar petits aparells elèctrics"
                     },
                     "22": {
                         "then": "Ací es pot reciclar el rebuig"
-                    },
-                    "3": {
-                        "then": "Aquí es pot reciclar roba"
-                    },
-                    "4": {
-                        "then": "Aquí es pot reciclar oli de cuina"
-                    },
-                    "5": {
-                        "then": "Aquí es pot reciclar oli de motor"
-                    },
-                    "6": {
-                        "then": "Aquí es poden reciclar tub fluroescents"
-                    },
-                    "7": {
-                        "then": "Aquí es poden reciclar residus verds"
-                    },
-                    "8": {
-                        "then": "Ací es poden reciclar residus orgànics"
-                    },
-                    "9": {
-                        "then": "Aquí es poden reciclar ampolles de vidre"
                     }
                 },
                 "question": "Què es pot reciclar aquí?"
@@ -2532,12 +2535,6 @@
                     "1": {
                         "then": "Aquest fanal utilitza LED"
                     },
-                    "10": {
-                        "then": "Aquest fanal utilitza làmpades de sodi d'alta pressió (taronja amb blanc)"
-                    },
-                    "11": {
-                        "then": "Aquest fanal s'il·lumina amb gas"
-                    },
                     "2": {
                         "then": "Aquest fanal utilitza il·luminació incandescent"
                     },
@@ -2561,6 +2558,12 @@
                     },
                     "9": {
                         "then": "Aquest fanal utilitza làmpades de sodi de baixa pressió (taronja monocroma)"
+                    },
+                    "10": {
+                        "then": "Aquest fanal utilitza làmpades de sodi d'alta pressió (taronja amb blanc)"
+                    },
+                    "11": {
+                        "then": "Aquest fanal s'il·lumina amb gas"
                     }
                 }
             },
@@ -2940,6 +2943,16 @@
                 "mappings": {
                     "2": {
                         "then": "Les fotografies que facis es publicaran sota <b>CC-BY 4.0</b> que requereix que qualsevol que utilitzi la vostra imatge us ha de donar crèdits"
+                    }
+                }
+            },
+            "translation-completeness": {
+                "render": "Les traduccions de {_theme} en {_language} tenen un {_translation_percentage}%: {_translation_translated_count} cadenes de {_translation_total} estan traduïdes"
+            },
+            "translation-help": {
+                "mappings": {
+                    "0": {
+                        "then": "Fes clic a la icona 'tradueix' al costat d'una cadena per introduir o actualitzar un fragment de text. Necessites un compte de Weblate per a això. Crea'n un amb el teu nom d'usuari OSM per desbloquejar automàticament el mode de traducció."
                     }
                 }
             },

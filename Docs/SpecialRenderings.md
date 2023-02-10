@@ -849,8 +849,8 @@ tagrendering | _undefined_ | An entire tagRenderingConfig
     "special": {
       "type": "multi",
       "key": "_doors_from_building_properties",
-      "tagRendering": {
-        "render": "The building containing this feature has a <a href='#{id}'>door</a> of width {entrance:width}"
+      "tagrendering": {
+        "en": "The building containing this feature has a <a href='#{id}'>door</a> of width {entrance:width}"
       }
     }
   }

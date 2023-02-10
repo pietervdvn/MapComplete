@@ -9,7 +9,8 @@
     "da": "Højeste hastighed",
     "nl": "Maximale snelheden",
     "pa_PK": "حد رفتار",
-    "cs": "Maximální rychlost"
+    "cs": "Maximální rychlost",
+    "ru": "Ограничения скорости"
   },
   "shortDescription": {
     "en": "This map shows the legally allowed maximum speed on every road.",

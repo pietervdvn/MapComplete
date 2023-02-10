@@ -5,13 +5,15 @@
     "nl": "Stoepranden",
     "de": "Bordsteine",
     "fr": "Bordures",
-    "pa_PK": "کرب"
+    "pa_PK": "کرب",
+    "ru": "Бордюры"
   },
   "description": {
     "en": "A layer showing kerbs.",
     "nl": "Een laag met stoepranden.",
     "de": "Eine Ebene, die Bordsteine zeigt.",
-    "fr": "Un calque montrant les bordures."
+    "fr": "Un calque montrant les bordures.",
+    "ru": "Слой, изображающий бордюры."
   },
   "source": {
     "osmTags": "barrier=kerb"
@@ -23,7 +25,8 @@
       "nl": "Stoeprand",
       "de": "Bordstein",
       "fr": "Bordure",
-      "pa_PK": "کرب"
+      "pa_PK": "کرب",
+      "ru": "Бордюр"
     }
   },
   "mapRendering": [
@@ -68,7 +71,8 @@
         "nl": "Hoe hoog is deze stoeprand?",
         "de": "Wie hoch ist der Bordstein?",
         "fr": "Quelle est la hauteur de ce trottoir ?",
-        "ca": "Quina és l'altura d'aquest gual?"
+        "ca": "Quina és l'altura d'aquest gual?",
+        "ru": "Какая высота у этого бордюра?"
       },
       "mappings": [
         {
@@ -92,7 +96,8 @@
             "nl": "Deze stoeprand is verlaagd (~3 cm)",
             "de": "Der Bordstein ist abgesenkt (~3 cm)",
             "fr": "Cette bordure est abaissée (~3 cm)",
-            "ca": "Aquest gual està rebaixat (~3 cm)"
+            "ca": "Aquest gual està rebaixat (~3 cm)",
+            "ru": "Это пониженный бордюр (~3 см)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/lowered.svg",
@@ -106,7 +111,8 @@
             "nl": "Deze stoeprand is vlak (~0cm)",
             "de": "Der Bordstein ist bündig (~0cm)",
             "fr": "Cette bordure est affleurante (~0cm)",
-            "ca": "Aquest gual està a ras (~0cm)"
+            "ca": "Aquest gual està a ras (~0cm)",
+            "ru": "Этот бордюр вровень с дорогой (~0 см)"
           },
           "icon": {
             "path": "./assets/layers/kerbs/flush.svg",
@@ -119,7 +125,8 @@
             "en": "There is no kerb here",
             "nl": "Er is hier geen stoeprand",
             "de": "Hier gibt es keinen Bordstein",
-            "fr": "Il n'y a pas de bordure ici"
+            "fr": "Il n'y a pas de bordure ici",
+            "ru": "Здесь нет бордюра"
           },
           "hideInAnswer": true,
           "icon": {
@@ -147,7 +154,8 @@
         "de": "Gibt es am Bordstein ein taktiles Pflaster?",
         "fr": "Y a-t-il un revêtement tactile sur cette bordure ?",
         "nl": "Is er voelbare bestrating bij deze stoeprand?",
-        "ca": "Hi ha una superfície podotàctil a aquest gual?"
+        "ca": "Hi ha una superfície podotàctil a aquest gual?",
+        "ru": "Есть ли тактильная плитка у этого бордюра?"
       },
       "mappings": [
         {
@@ -157,7 +165,8 @@
             "de": "Der Bordstein hat ein taktiles Pflaster.",
             "fr": "Cette bordure a un revêtement podotactile.",
             "nl": "Deze stoeprand heeft voelbare bestrating.",
-            "ca": "Aquest gual té superfície podotàctil."
+            "ca": "Aquest gual té superfície podotàctil.",
+            "ru": "У этого бордюра есть тактильная плитка."
           }
         },
         {
@@ -167,7 +176,8 @@
             "de": "Der Bordstein hat kein taktiles Pflaster.",
             "fr": "Cette bordure n'a pas de revêtement podotactile.",
             "nl": "Deze stoeprand heeft geen voelbare bestrating.",
-            "ca": "Aquest gual no té superfície podotàctil."
+            "ca": "Aquest gual no té superfície podotàctil.",
+            "ru": "У этого бордюра нет тактильной плитки."
           }
         },
         {
@@ -177,7 +187,8 @@
             "de": "Der Bordstein hat ein taktiles Pflaster, das aber falsch ist.",
             "fr": "Cette bordure a un pavage tactile, mais il est incorrect.",
             "nl": "Deze stoeprand heeft voelbare bestrating, maar deze is incorrect.",
-            "ca": "La vorera té superfície podotàctil, però és incorrecte."
+            "ca": "La vorera té superfície podotàctil, però és incorrecte.",
+            "ru": "У этого бордюра неверно выложенная тактильная плитка."
           },
           "hideInAnswer": true
         }
@@ -191,13 +202,15 @@
         "nl": "Hoe hoog is deze stoeprand?",
         "de": "Wie hoch ist der Bordstein?",
         "fr": "Quelle est la hauteur de ce trottoir ?",
-        "ca": "Quina és l'altura d'aquest gual?"
+        "ca": "Quina és l'altura d'aquest gual?",
+        "ru": "Какая высота у этого бордюра?"
       },
       "render": {
         "en": "Kerb height: {kerb:height}",
         "nl": "Stoeprandhoogte: {kerb:height}",
         "de": "Bordsteinhöhe: {kerb:height}",
-        "fr": "Hauteur du trottoir : {kerb:height}"
+        "fr": "Hauteur du trottoir : {kerb:height}",
+        "ru": "Высота бордюра: {kerb:height}"
       },
       "freeform": {
         "key": "kerb:height",
@@ -205,7 +218,8 @@
           "en": "Height of the kerb",
           "nl": "Hoogte van de stoeprand",
           "de": "Höhe des Bordsteins",
-          "fr": "Hauteur de la bordure"
+          "fr": "Hauteur de la bordure",
+          "ru": "Высота бордюра"
         },
         "type": "pnat"
       },
@@ -228,7 +242,8 @@
         "en": "a kerb",
         "nl": "een stoeprand",
         "de": "einen Bordstein",
-        "fr": "une bordure"
+        "fr": "une bordure",
+        "ru": "бордюр"
       },
       "tags": [
         "barrier=kerb"
@@ -258,7 +273,8 @@
             "en": "All types of kerbs",
             "nl": "Alle typen stoepranden",
             "de": "Alle Arten von Bordsteinen",
-            "fr": "Tous types de bordures"
+            "fr": "Tous types de bordures",
+            "ru": "Все виды бордюров"
           }
         },
         {
@@ -276,7 +292,8 @@
             "en": "Lowered kerb (~3 cm)",
             "nl": "Verlaagde stoeprand (~3 cm)",
             "de": "Abgesenkter Bordstein (~3 cm)",
-            "fr": "Bordure abaissée (~3 cm)"
+            "fr": "Bordure abaissée (~3 cm)",
+            "ru": "Пониженный бордюр (~3 см)"
           }
         },
         {
@@ -285,7 +302,8 @@
             "en": "Flush kerb (~0cm)",
             "nl": "Vlakke stoeprand (~0cm)",
             "de": "Bündiger Bordstein (~0 cm)",
-            "fr": "Bordure affleurante (~0cm)"
+            "fr": "Bordure affleurante (~0cm)",
+            "ru": "Вровень с дорогой (~0 см)"
           }
         },
         {
@@ -294,7 +312,8 @@
             "en": "No kerb",
             "nl": "Geen stoeprand",
             "de": "Kein Bordstein",
-            "fr": "Pas de trottoir"
+            "fr": "Pas de trottoir",
+            "ru": "Нет бордюра"
           }
         },
         {
@@ -324,14 +343,16 @@
             "nl": "centimeter",
             "de": "Zentimeter",
             "fr": "centimètres",
-            "pa_PK": "سینٹیمیٹر"
+            "pa_PK": "سینٹیمیٹر",
+            "ru": "сантиметры"
           },
           "humanSingular": {
             "en": "centimeter",
             "nl": "centimeter",
             "de": "Zentimeter",
             "fr": "centimètre",
-            "pa_PK": "سینٹیمیٹر"
+            "pa_PK": "سینٹیمیٹر",
+            "ru": "сантиметр"
           }
         },
         {
@@ -345,14 +366,16 @@
             "nl": "meter",
             "de": "Meter",
             "fr": "mètres",
-            "pa_PK": "میٹر"
+            "pa_PK": "میٹر",
+            "ru": "метры"
           },
           "humanSingular": {
             "en": "meter",
             "nl": "meter",
             "de": "Meter",
             "fr": "mètre",
-            "pa_PK": "میٹر"
+            "pa_PK": "میٹر",
+            "ru": "метр"
           }
         }
       ],

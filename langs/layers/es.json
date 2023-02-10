@@ -3985,6 +3985,20 @@
             "render": "Árbol"
         }
     },
+    "usersettings": {
+        "tagRenderings": {
+            "translation-completeness": {
+                "render": "Las traducciones para {_theme} en {_language} están al {_translation_percentage}%: {_translation_translated_count} cadenas de {_translation_total} están traducidas"
+            },
+            "translation-help": {
+                "mappings": {
+                    "0": {
+                        "then": "Haz clic en el icono 'traducir' al lado de una cadena para introducir o actualizar un texto. Necesitas una cuenta de Weblate para esto. Crea una con tu usuario de OSM para desbloquear el modo de traducción automáticamente."
+                    }
+                }
+            }
+        }
+    },
     "veterinary": {
         "name": "veterinario",
         "presets": {

@@ -4,7 +4,8 @@
     "en": "Hotels",
     "nl": "Hotels",
     "de": "Hotels",
-    "pa_PK": "ہوٹل"
+    "pa_PK": "ہوٹل",
+    "ru": "Гостиницы"
   },
   "description": {
     "en": "Layer showing all hotels",
@@ -39,7 +40,8 @@
         "en": "a hotel",
         "nl": "een hotel",
         "de": "ein Hotel",
-        "ca": "un hotel"
+        "ca": "un hotel",
+        "ru": "гостиница"
       },
       "tags": [
         "tourism=hotel"
@@ -66,13 +68,15 @@
         "placeholder": {
           "en": "Name of the hotel",
           "nl": "Naam van het hotel",
-          "de": "Name des Hotels"
+          "de": "Name des Hotels",
+          "ru": "Название гостиницы"
         }
       },
       "question": {
         "en": "What is the name of this hotel?",
         "nl": "Wat is de naam van dit hotel?",
-        "de": "Wie lautet der Name des Hotels?"
+        "de": "Wie lautet der Name des Hotels?",
+        "ru": "Как называется эта гостиница?"
       },
       "render": {
         "en": "This hotel is called {name}",

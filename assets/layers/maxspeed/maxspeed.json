@@ -4,7 +4,7 @@
     "en": "Maxspeed",
     "es": "Velocidad",
     "ca": "Velocitat",
-    "de": "Höchstgeschwindigkeit",
+    "de": "Höchstgeschwindigkeiten",
     "nl": "Maximumsnelheid",
     "pa_PK": "حد رفتار"
   },
@@ -174,7 +174,8 @@
             "es": "km/h",
             "nl": "km/u",
             "de": "km/h",
-            "pa_PK": "ہر گھنٹے وچ کیلومیٹر"
+            "pa_PK": "ہر گھنٹے وچ کیلومیٹر",
+            "ru": "км/ч"
           }
         },
         {

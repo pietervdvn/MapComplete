@@ -4707,6 +4707,13 @@
                 "question": "Wat is de pijpdiameter van deze hydrant?",
                 "render": "Pijpdiameter:{canonical(fire_hydrant:diameter)}"
             },
+            "hydrant-number-of-couplings": {
+                "freeform": {
+                    "placeholder": "Aantal koppelingen"
+                },
+                "question": "Hoe veel koppelingen bezit deze brandkraan?",
+                "render": "Aantal koppelingen: {couplings}"
+            },
             "hydrant-state": {
                 "mappings": {
                     "0": {
@@ -8084,6 +8091,21 @@
                     }
                 },
                 "question": "Met welke licentie wil je je afbeeldingen toevoegen?"
+            },
+            "translation-completeness": {
+                "mappings": {
+                    "0": {
+                        "then": "Volledig vertaald"
+                    }
+                },
+                "render": "Vertalingen voor {_theme} in {_language} zijn momenteel op {_translation_percentage}%: van {_translation_total} teksten zijn er reeds {_translation_translated_count} vertaald"
+            },
+            "translation-help": {
+                "mappings": {
+                    "0": {
+                        "then": "Klik op het 'vertaal'-icoontje die naast een stukje tekst staat om deze tekst te vertalen of aan te passen. Hiervoor heb je een (gratis) Weblate-account nodig. Indien je jouw account maakt met dezelfde naam als je OSM-gebruikersnaam, dan zullen de vertaalknoppen automatisch verschijnen."
+                    }
+                }
             },
             "translation-thanks": {
                 "mappings": {

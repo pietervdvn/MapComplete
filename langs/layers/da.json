@@ -2737,6 +2737,20 @@
             "render": "Træ"
         }
     },
+    "usersettings": {
+        "tagRenderings": {
+            "translation-completeness": {
+                "render": "Oversættelser for {_theme} i {_language} er på {_translation_percentage}%: {_translation_translated_count} strenge ud af {_translation_total} er oversat"
+            },
+            "translation-help": {
+                "mappings": {
+                    "0": {
+                        "then": "Klik på 'oversæt'-ikonet ved siden af en streng for at indtaste eller opdatere et stykke tekst. Du skal have en Weblate-konto for at kunne gøre dette. Opret en med dit OSM-brugernavn for automatisk at låse oversættelsestilstanden op."
+                    }
+                }
+            }
+        }
+    },
     "veterinary": {
         "name": "dyrlæge",
         "presets": {

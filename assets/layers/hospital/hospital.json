@@ -5,14 +5,16 @@
     "de": "Krankenhäuser",
     "nl": "Ziekenhuizen",
     "pa_PK": "ہسپتال",
-    "ca": "Hospitals"
+    "ca": "Hospitals",
+    "ru": "Больницы"
   },
   "title": {
     "render": {
       "en": "Hospital",
       "de": "Krankenhaus",
       "nl": "Ziekenhuis",
-      "pa_PK": "ہسپتال"
+      "pa_PK": "ہسپتال",
+      "ru": "Больница"
     }
   },
   "description": {
@@ -31,13 +33,15 @@
         "en": "This hospital is called {name}",
         "ca": "Aquest hospital s'anomena {name}",
         "de": "Der Name des Krankenhauses lautet {name}",
-        "nl": "Dit ziekenhuis heet {name}"
+        "nl": "Dit ziekenhuis heet {name}",
+        "ru": "Эта больница называется {name}"
       },
       "question": {
         "en": "What is the name of this hospital?",
         "de": "Wie lautet der Name des Krankenhauses?",
         "nl": "Wat is de naam van dit ziekenhuis?",
-        "ca": "Quin és el nom d'aquest hospital?"
+        "ca": "Quin és el nom d'aquest hospital?",
+        "ru": "Как называется эта больница?"
       },
       "freeform": {
         "key": "name"

@@ -141,7 +141,7 @@
         "en": "What type of hydrant is it?",
         "ja": "どんな消火栓なんですか?",
         "it": "Di che tipo è questo idrante?",
-        "ru": "К какому типу относится этот гидрант?",
+        "ru": "Какого вида этот гидрант?",
         "fr": "De quel type de borne s’agit-il ?",
         "de": "Welche Bauform hat der Hydrant?",
         "nl": "Wat voor soort brandkraan is dit?",
@@ -153,7 +153,7 @@
       },
       "render": {
         "en": " Hydrant type: {fire_hydrant:type}",
-        "ru": " Тип гидранта: {fire_hydrant:type}",
+        "ru": " Вид гидранта: {fire_hydrant:type}",
         "ja": " 消火栓のタイプ:{fire_hydrant:type}",
         "it": " Tipo di idrante: {fire_hydrant:type}",
         "fr": " Type de borne : {fire_hydrant:type}",
@@ -192,9 +192,10 @@
             "fr": "Pilier.",
             "de": "Überflurhydrant.",
             "it": "Soprasuolo.",
-            "nl": "Bovengrondse brandkraan.",
+            "nl": "Pillaar type.",
             "es": "De pilar.",
-            "ca": "De pilar."
+            "ca": "De pilar.",
+            "ru": "Наземный."
           },
           "icon": {
             "path": "./assets/themes/hailhydrant/hydrant_pillar.svg",
@@ -215,7 +216,8 @@
             "it": "Tubo.",
             "nl": "Buis type.",
             "es": "De tubería.",
-            "ca": "De tuberia."
+            "ca": "De tuberia.",
+            "ru": "Труба."
           },
           "icon": {
             "path": "./assets/themes/hailhydrant/hydrant_unknown.svg",
@@ -231,7 +233,7 @@
           "then": {
             "en": "Wall type.",
             "id": "Jenis dinding.",
-            "ru": "Тип стены.",
+            "ru": "Настенный.",
             "ja": "壁型。",
             "fr": "Mural.",
             "de": "Wandhydrant.",
@@ -257,9 +259,10 @@
             "fr": "Enterré.",
             "de": "Unterflurhydrant.",
             "it": "Sottosuolo.",
-            "nl": "Ondergrondse brandkraan.",
+            "nl": "Ondergronds type.",
             "ca": "Subterrani.",
-            "es": "Bajo tierra."
+            "es": "Bajo tierra.",
+            "ru": "Подземный."
           },
           "icon": {
             "path": "./assets/themes/hailhydrant/hydrant_underground.svg",
@@ -278,7 +281,8 @@
         "it": "Aggiorna lo stato di funzionamento dell’idrante.",
         "nl": "Werkt deze brandkraan nog?",
         "es": "¿Todavía funciona esta boca de incendios?",
-        "ca": "Encara funciona aquest hidrant?"
+        "ca": "Encara funciona aquest hidrant?",
+        "ru": "Этот гидрант в рабочем состоянии?"
       },
       "mappings": [
         {
@@ -314,7 +318,8 @@
             "it": "L’idrante è fuori servizio.",
             "nl": "De brandkraan is niet beschikbaar",
             "es": "La boca de incendios no está disponible",
-            "ca": "L'hidrant no està disponible"
+            "ca": "L'hidrant no està disponible",
+            "ru": "К гидранту нет доступа"
           }
         },
         {
@@ -344,21 +349,24 @@
         "en": "What is the pipe diameter of this hydrant?",
         "de": "Was ist der Rohrdurchmesser dieses Hydranten?",
         "nl": "Wat is de pijpdiameter van deze hydrant?",
-        "ca": "Quin és el diàmetre d'aquest hidrant?"
+        "ca": "Quin és el diàmetre d'aquest hidrant?",
+        "ru": "Какой диаметр трубы у этого гидранта?"
       },
       "freeform": {
         "key": "fire_hydrant:diameter",
         "placeholder": {
           "en": "Pipe diameter",
           "de": "Rohrdurchmesser",
-          "nl": "Pijpdiameter"
+          "nl": "Pijpdiameter",
+          "ru": "Диаметр трубы"
         },
         "type": "int"
       },
       "render": {
         "en": "Pipe diameter: {canonical(fire_hydrant:diameter)}",
         "de": "Rohrdurchmesser: {canonical(fire_hydrant:diameter)}",
-        "nl": "Pijpdiameter:{canonical(fire_hydrant:diameter)}"
+        "nl": "Pijpdiameter:{canonical(fire_hydrant:diameter)}",
+        "ru": "Диаметр трубы: {canonical(fire_hydrant:diameter)}"
       }
     },
     {
@@ -390,14 +398,16 @@
         "en": "What kind of couplings does this hydrant have?",
         "de": "Welche Art von Kupplungen hat dieser Hydrant?",
         "nl": "Welke soort koppeling heeft deze hydrant?",
-        "ca": "Quin tipus d‘acoblament té aquest hidrant?"
+        "ca": "Quin tipus d‘acoblament té aquest hidrant?",
+        "ru": "Какого вида соединительные головки у этого гидранта?"
       },
       "freeform": {
         "key": "couplings:type",
         "placeholder": {
           "en": "Coupling type",
           "de": "Art der Kupplung",
-          "nl": "Soort koppeling"
+          "nl": "Soort koppeling",
+          "ru": "Тип соединительной головки"
         },
         "type": "string"
       },
@@ -408,7 +418,8 @@
             "en": "Storz coupling",
             "de": "Storz-Kupplung",
             "nl": "Storz-koppeling",
-            "ca": "Acoblament Storz"
+            "ca": "Acoblament Storz",
+            "ru": "Головка типа Storz"
           },
           "icon": {
             "path": "./assets/layers/hydrant/storz.jpg",
@@ -421,7 +432,8 @@
             "en": "UNI coupling",
             "de": "UNI-Kupplung",
             "nl": "UNI-koppeling",
-            "ca": "Acoblament UNI"
+            "ca": "Acoblament UNI",
+            "ru": "Головка типа UNI"
           }
         },
         {
@@ -430,7 +442,8 @@
             "en": "Barcelona coupling",
             "de": "Barcelona-Kupplung",
             "nl": "Barcelona-koppeling",
-            "ca": "Acoblament Barcelona"
+            "ca": "Acoblament Barcelona",
+            "ru": "Головка типа Barcelona"
           },
           "icon": {
             "path": "./assets/layers/hydrant/barcelona.jpg",
@@ -442,7 +455,8 @@
       "render": {
         "en": "Couplings: {couplings:type}",
         "de": "Kupplungen: {couplings:type}",
-        "nl": "Koppelingen:{couplings:type}"
+        "nl": "Koppelingen:{couplings:type}",
+        "ru": "Соединительные головки: {couplings:type}"
       }
     },
     {
@@ -451,20 +465,23 @@
         "en": "What diameter are the couplings of this hydrant?",
         "de": "Welchen Durchmesser haben die Kupplungen dieses Hydranten?",
         "nl": "Welke diameter hebben de koppelingen van deze hydrant?",
-        "ca": "Quin és el diàmetre dels acoblaments d'aquest hidrant?"
+        "ca": "Quin és el diàmetre dels acoblaments d'aquest hidrant?",
+        "ru": "Какой диаметр соединительных головок у этого гидранта?"
       },
       "freeform": {
         "key": "couplings:diameters",
         "placeholder": {
           "en": "Coupling diameters",
           "de": "Kupplungsdurchmesser",
-          "nl": "Koppeldiameters"
+          "nl": "Koppeldiameters",
+          "ru": "Диаметры соединительных головок"
         }
       },
       "render": {
         "en": "Coupling diameters: {couplings:diameters}",
         "de": "Kupplungsdurchmesser: {couplings:diameters}",
-        "nl": "Koppelingdiameters:{couplings:diameters}"
+        "nl": "Koppelingdiameters:{couplings:diameters}",
+        "ru": "Диаметр соединительных головок: {couplings:diameters}"
       }
     },
     "images"
@@ -494,7 +511,8 @@
         "it": "Un idrante è un punto di collegamento dove i pompieri possono estrarre acqua. Potrebbe trovarsi sottoterra.",
         "nl": "Een brandkraan is een kraan waar brandweerlieden een brandslang kunnen aansluiten. Soms zit deze ondergronds.",
         "es": "Una boca de incendios es un punto de conexión en el que los bomberos pueden conseguir agua. Puede situarse bajo tierra.",
-        "ca": "Un hidrant és un punt de connexió on els bombers poden aconseguir aigua. Pot estar baix terra."
+        "ca": "Un hidrant és un punt de connexió on els bombers poden aconseguir aigua. Pot estar baix terra.",
+        "ru": "Гидрант – приспособление, с помощью которого пожарные могут подключаться к водопроводу. Гидранты могут быть под землёй."
       }
     }
   ],
@@ -534,13 +552,15 @@
             "en": "millimeters",
             "nl": "millimeter",
             "de": "Millimeter",
-            "pa_PK": "ملیمیٹر"
+            "pa_PK": "ملیمیٹر",
+            "ru": "миллиметры"
           },
           "humanSingular": {
             "en": "millimeter",
             "nl": "millimeter",
             "de": "Millimeter",
-            "pa_PK": "ملیمیٹر"
+            "pa_PK": "ملیمیٹر",
+            "ru": "миллиметр"
           }
         }
       ],

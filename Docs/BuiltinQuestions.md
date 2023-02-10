@@ -44,7 +44,6 @@ The following items can be easily reused in your layers
     + [internet](#internet)
     + [internet-fee](#internet-fee)
     + [internet-ssid](#internet-ssid)
-    + [default](#default)
     + [defaults](#defaults)
     + [isOpen](#isopen)
     + [phonelink](#phonelink)
@@ -533,14 +532,6 @@ What is the network name for the wireless internet access?
 
   - Telekom
 
-
-
-
-### default 
-
-
-
-*Read-only tagrendering*
 
 
 

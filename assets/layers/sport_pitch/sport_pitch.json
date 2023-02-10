@@ -79,7 +79,8 @@
             "it": "Qui si gioca a basket",
             "ru": "Здесь можно играть в баскетбол",
             "de": "Hier wird Basketball gespielt",
-            "es": "Aquí se juega al baloncesto"
+            "es": "Aquí se juega al baloncesto",
+            "ca": "Aquí es juga bàsquet"
           }
         },
         {
@@ -95,7 +96,8 @@
             "it": "Qui si gioca a calcio",
             "ru": "Здесь можно играть в футбол",
             "de": "Hier wird Fußball gespielt",
-            "es": "Aquí se juega al fútbol"
+            "es": "Aquí se juega al fútbol",
+            "ca": "Aquí es juga futbol"
           }
         },
         {
@@ -111,7 +113,8 @@
             "ru": "Это стол для пинг-понга",
             "it": "Questo è un tavolo da ping pong",
             "de": "Dies ist eine Tischtennisplatte",
-            "es": "Esto es una mesa de ping pong"
+            "es": "Esto es una mesa de ping pong",
+            "ca": "Aquí es juga ping pong"
           }
         },
         {
@@ -127,7 +130,8 @@
             "it": "Qui si gioca a tennis",
             "ru": "Здесь можно играть в теннис",
             "de": "Hier wird Tennis gespielt",
-            "es": "Aquí se juega al tenis"
+            "es": "Aquí se juega al tenis",
+            "ca": "Aquí es juga al tenis"
           }
         },
         {
@@ -142,7 +146,8 @@
             "en": "Korfball is played here",
             "it": "Qui si gioca a korfball",
             "ru": "Здесь можно играть в корфбол",
-            "de": "Hier wird Kopfball gespielt"
+            "de": "Hier wird Kopfball gespielt",
+            "ca": "Aquí es juga al corfbol"
           }
         },
         {

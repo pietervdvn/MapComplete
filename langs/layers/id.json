@@ -469,6 +469,13 @@
             }
         }
     },
+    "usersettings": {
+        "tagRenderings": {
+            "translation-completeness": {
+                "render": "Terjemahan untuk {_theme} dalam {_language} masih {_translation_percentage}%: {_translation_translated_count} string dari {_translation_total} diterjemahkan"
+            }
+        }
+    },
     "veterinary": {
         "title": {
             "render": "Dokter hewan"

@@ -417,7 +417,7 @@ The question is  *What paper formats does this shop offer?*
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:service:print:A0' target='_blank'>service:print:A0</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:service:print:A0%3Dno' target='_blank'>no</a>
 
 
-This tagrendering is only visible in the popup if the following condition is met: `shop~^(.*copyshop.*)$|shop~^(.*stationary.*)$|service:print=yes`
+This tagrendering is only visible in the popup if the following condition is met: `shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes`
 
 
 

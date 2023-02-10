@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 5008,
+      "commits": 5033,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -13,7 +13,7 @@
       "contributor": "Tobias"
     },
     {
-      "commits": 35,
+      "commits": 36,
       "contributor": "Win Olario"
     },
     {
@@ -37,7 +37,7 @@
       "contributor": "karelleketers"
     },
     {
-      "commits": 24,
+      "commits": 25,
       "contributor": "riQQ"
     },
     {
@@ -101,7 +101,7 @@
       "contributor": "Bavo Vanderghote"
     },
     {
-      "commits": 10,
+      "commits": 11,
       "contributor": "RobJN"
     },
     {
@@ -115,6 +115,10 @@
     {
       "commits": 8,
       "contributor": "Midgard"
+    },
+    {
+      "commits": 7,
+      "contributor": "OliNau"
     },
     {
       "commits": 7,
@@ -139,10 +143,6 @@
     {
       "commits": 6,
       "contributor": "pelderson"
-    },
-    {
-      "commits": 5,
-      "contributor": "OliNau"
     },
     {
       "commits": 4,

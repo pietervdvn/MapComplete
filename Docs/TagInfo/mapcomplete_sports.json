@@ -1398,27 +1398,27 @@
     },
     {
       "key": "service:print:A4",
-      "description": "Layer 'Shop' shows service:print:A4=yes with a fixed text, namely 'This shop can print on papers of size A4' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sports') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationary.*)$|service:print=yes)",
+      "description": "Layer 'Shop' shows service:print:A4=yes with a fixed text, namely 'This shop can print on papers of size A4' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sports') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
       "value": "yes"
     },
     {
       "key": "service:print:A3",
-      "description": "Layer 'Shop' shows service:print:A3=yes with a fixed text, namely 'This shop can print on papers of size A3' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sports') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationary.*)$|service:print=yes)",
+      "description": "Layer 'Shop' shows service:print:A3=yes with a fixed text, namely 'This shop can print on papers of size A3' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sports') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
       "value": "yes"
     },
     {
       "key": "service:print:A2",
-      "description": "Layer 'Shop' shows service:print:A2=yes with a fixed text, namely 'This shop can print on papers of size A2' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sports') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationary.*)$|service:print=yes)",
+      "description": "Layer 'Shop' shows service:print:A2=yes with a fixed text, namely 'This shop can print on papers of size A2' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sports') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
       "value": "yes"
     },
     {
       "key": "service:print:A1",
-      "description": "Layer 'Shop' shows service:print:A1=yes with a fixed text, namely 'This shop can print on papers of size A1' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sports') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationary.*)$|service:print=yes)",
+      "description": "Layer 'Shop' shows service:print:A1=yes with a fixed text, namely 'This shop can print on papers of size A1' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sports') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
       "value": "yes"
     },
     {
       "key": "service:print:A0",
-      "description": "Layer 'Shop' shows service:print:A0=yes with a fixed text, namely 'This shop can print on papers of size A0' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sports') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationary.*)$|service:print=yes)",
+      "description": "Layer 'Shop' shows service:print:A0=yes with a fixed text, namely 'This shop can print on papers of size A0' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sports') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
       "value": "yes"
     },
     {

@@ -128,7 +128,8 @@
       "title": {
         "en": "a kindergarten",
         "nl": "een kleuterschool",
-        "de": "einen Kindergarten"
+        "de": "einen Kindergarten",
+        "ru": "детский сад"
       },
       "description": "A kindergarten (also known as <i>preschool</i>) is a school where small kids receive early education.",
       "tags": [

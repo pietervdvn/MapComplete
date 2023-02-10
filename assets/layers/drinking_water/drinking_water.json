@@ -141,7 +141,8 @@
         "fr": "Est-il facile de remplir des bouteilles d'eau ?",
         "hu": "Mennyire könnyű itt vizespalackot tölteni?",
         "es": "¿Cómo de fácil es rellenar botellas de agua?",
-        "ca": "Com de fàcil és reomplir botelles d'aigua?"
+        "ca": "Com de fàcil és reomplir botelles d'aigua?",
+        "ru": "Поместится ли здесь бутылка для воды?"
       },
       "mappings": [
         {
@@ -154,7 +155,8 @@
             "fr": "Il est facile de remplir les bouteilles d'eau",
             "hu": "Könnyen lehet vizespalackot tölteni",
             "es": "Es fácil rellenar botellas de agua",
-            "ca": "És fàcil reomplir botelles d'aigua"
+            "ca": "És fàcil reomplir botelles d'aigua",
+            "ru": "Здесь легко поместится бутылка для воды"
           }
         },
         {
@@ -167,7 +169,8 @@
             "fr": "Les bouteilles d'eau peuvent ne pas passer",
             "hu": "Lehet, hogy nem fér alá egy vizespalack",
             "es": "Las botellas de agua pueden no caber",
-            "ca": "Les botelles d'aigua podrien no cabre"
+            "ca": "Les botelles d'aigua podrien no cabre",
+            "ru": "Бутылка для воды может не поместиться"
           }
         }
       ],

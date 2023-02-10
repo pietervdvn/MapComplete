@@ -64,6 +64,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fire_hydrant:type#values) [fire_hydrant:type](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:type) | [string](../SpecialInputElements.md#string) | [pillar](https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpillar) [pipe](https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dpipe) [wall](https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dwall) [underground](https://wiki.openstreetmap.org/wiki/Tag:fire_hydrant:type%3Dunderground)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/emergency#values) [emergency](https://wiki.openstreetmap.org/wiki/Key:emergency) | Multiple choice | [fire_hydrant](https://wiki.openstreetmap.org/wiki/Tag:emergency%3Dfire_hydrant) [](https://wiki.openstreetmap.org/wiki/Tag:emergency%3D) [](https://wiki.openstreetmap.org/wiki/Tag:emergency%3D)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fire_hydrant:diameter#values) [fire_hydrant:diameter](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:diameter) | [int](../SpecialInputElements.md#int) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/couplings#values) [couplings](https://wiki.openstreetmap.org/wiki/Key:couplings) | [int](../SpecialInputElements.md#int) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/couplings:type#values) [couplings:type](https://wiki.openstreetmap.org/wiki/Key:couplings:type) | [string](../SpecialInputElements.md#string) | [Storz](https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DStorz) [UNI](https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DUNI) [Barcelona](https://wiki.openstreetmap.org/wiki/Tag:couplings:type%3DBarcelona)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/couplings:diameters#values) [couplings:diameters](https://wiki.openstreetmap.org/wiki/Key:couplings:diameters) | [string](../SpecialInputElements.md#string) | 
 
@@ -142,6 +143,20 @@ The question is  *What is the pipe diameter of this hydrant?*
 This rendering asks information about the property  [fire_hydrant:diameter](https://wiki.openstreetmap.org/wiki/Key:fire_hydrant:diameter) 
 
 This is rendered with  `Pipe diameter: {canonical(fire_hydrant:diameter)}`
+
+
+
+
+
+### hydrant-number-of-couplings 
+
+
+
+The question is  *How many couplings does this fire hydrant have?*
+
+This rendering asks information about the property  [couplings](https://wiki.openstreetmap.org/wiki/Key:couplings) 
+
+This is rendered with  `Number of couplings: {couplings}`
 
 
 

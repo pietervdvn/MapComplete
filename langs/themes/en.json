@@ -731,6 +731,23 @@
     },
     "healthcare": {
         "description": "On this map, various healthcare related items are shown",
+        "layers": {
+            "5": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "a medical supply shop"
+                        },
+                        "1": {
+                            "title": "a hearing aids shop"
+                        },
+                        "2": {
+                            "title": "an optician"
+                        }
+                    }
+                }
+            }
+        },
         "title": "Healthcare"
     },
     "hotels": {

@@ -4791,6 +4791,13 @@
                 "question": "What is the pipe diameter of this hydrant?",
                 "render": "Pipe diameter: {canonical(fire_hydrant:diameter)}"
             },
+            "hydrant-number-of-couplings": {
+                "freeform": {
+                    "placeholder": "Number of couplings"
+                },
+                "question": "How many couplings does this fire hydrant have?",
+                "render": "Number of couplings: {couplings}"
+            },
             "hydrant-state": {
                 "mappings": {
                     "0": {
@@ -8279,6 +8286,13 @@
                     }
                 }
             },
+            "cscount-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "You have made changes on {_csCount} different occasions! That is awesome!"
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -8295,6 +8309,49 @@
                     }
                 },
                 "question": "Under what license do you want to publish your pictures?"
+            },
+            "show_debug": {
+                "mappings": {
+                    "0": {
+                        "then": "Show debug info"
+                    },
+                    "1": {
+                        "then": "Don't show debug info"
+                    },
+                    "2": {
+                        "then": "Don't show debug info"
+                    }
+                },
+                "question": "Show user settings debug info?"
+            },
+            "translation-completeness": {
+                "mappings": {
+                    "0": {
+                        "then": "Completely translated"
+                    }
+                },
+                "render": "Translations for {_theme} in {_language} are at {_translation_percentage}%: {_translation_translated_count} strings out of {_translation_total} are translated"
+            },
+            "translation-help": {
+                "mappings": {
+                    "0": {
+                        "then": "Click the 'translate'-icon next to a string to enter or update a piece of text. You need a Weblate-account for this. Create one with your OSM-username to automatically unlock translation mode."
+                    }
+                }
+            },
+            "translation-mode": {
+                "mappings": {
+                    "0": {
+                        "then": "Don't show a button to quickly change translations"
+                    },
+                    "1": {
+                        "then": "Show a button to quickly open translations when using MapComplete on a big screen"
+                    },
+                    "2": {
+                        "then": "Always show the translation buttons, including on mobile"
+                    }
+                },
+                "question": "Do you want to help translating MapComplete?"
             },
             "translation-thanks": {
                 "mappings": {
