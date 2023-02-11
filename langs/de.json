@@ -746,6 +746,7 @@
         "createNote": "Eine neue Notiz erstellen",
         "createNoteIntro": "Ist etwas falsch oder fehlt etwas auf der Karte? Erstellen Sie hier eine Notiz. Diese werden von Freiwilligen überprüft.",
         "createNoteTitle": "Hier eine neue Notiz erstellen",
+        "creating": "Notiz wird erstellt...",
         "disableAllNoteFilters": "Alle Filter ausschalten",
         "isClosed": "Diese Notiz wurde erledigt",
         "isCreated": "Die Notiz wurde erstellt!",

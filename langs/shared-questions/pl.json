@@ -29,6 +29,32 @@
             },
             "question": "Jakimi monetami można tutaj zapłacić?"
         },
+        "denominations-notes": {
+            "mappings": {
+                "0": {
+                    "then": "Banknoty 5 euro są akceptowane"
+                },
+                "1": {
+                    "then": "Banknoty 10 euro są akceptowane"
+                },
+                "2": {
+                    "then": "Banknoty 20 euro są akceptowane"
+                },
+                "3": {
+                    "then": "Banknoty 50 euro są akceptowane"
+                },
+                "4": {
+                    "then": "Banknoty 100 euro są akceptowane"
+                },
+                "5": {
+                    "then": "Banknoty 200 euro są akceptowane"
+                },
+                "6": {
+                    "then": "Banknoty 500 euro są akceptowane"
+                }
+            },
+            "question": "Jakimi banknotami można tu zapłacić?"
+        },
         "description": {
             "question": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.<br/><span style='font-size: small'>Nie powtarzaj już podanych faktów</span>"
         },
@@ -56,8 +82,53 @@
             "mappings": {
                 "0": {
                     "then": "To miejsce ma pętlę indukcyjną audio"
+                },
+                "1": {
+                    "then": "To miejsce <b>nie ma</b> pętli indukcyjnej dźwięku"
                 }
-            }
+            },
+            "question": "Czy to miejsce ma pętlę indukcyjną dźwięku dla osób niedosłyszących?"
+        },
+        "internet": {
+            "mappings": {
+                "0": {
+                    "then": "To miejsce oferuje bezprzewodowy dostęp do Internetu"
+                },
+                "1": {
+                    "then": "To miejsce <b>nie</b> oferuje dostępu do Internetu"
+                },
+                "2": {
+                    "then": "To miejsce oferuje dostęp do Internetu"
+                },
+                "3": {
+                    "then": "To miejsce oferuje dostęp do Internetu za pośrednictwem terminala lub komputera"
+                },
+                "4": {
+                    "then": "To miejsce oferuje przewodowy dostęp do Internetu"
+                }
+            },
+            "question": "Czy to miejsce oferuje dostęp do Internetu?"
+        },
+        "internet-fee": {
+            "mappings": {
+                "0": {
+                    "then": "W tym miejscu dostęp do Internetu jest płatny"
+                },
+                "1": {
+                    "then": "Dostęp do Internetu jest w tym miejscu bezpłatny"
+                },
+                "2": {
+                    "then": "Dostęp do Internetu jest w tym miejscu bezpłatny, tylko dla klientów"
+                }
+            },
+            "question": "Czy dostęp do Internetu jest płatny?"
+        },
+        "internet-ssid": {
+            "freeform": {
+                "placeholder": "Wprowadź nazwę sieci"
+            },
+            "question": "Jaka jest nazwa sieci dla bezprzewodowego dostępu do Internetu?",
+            "render": "Nazwa sieci to <b>{internet_access:ssid}</b>"
         },
         "level": {
             "mappings": {
@@ -72,14 +143,44 @@
                 },
                 "3": {
                     "then": "Znajduje się na pierwszym piętrze"
+                },
+                "4": {
+                    "then": "Położone na pierwszym poziomie piwnicy"
                 }
             },
             "question": "Na jakim poziomie znajduje się ta funkcja?",
             "render": "Znajduje się na {level} piętrze"
         },
+        "multilevels": {
+            "override": {
+                "question": "Na jakie poziomy jedzie ta winda?",
+                "render": "Ta winda jedzie na piętra {level}"
+            }
+        },
         "opening_hours": {
             "question": "Jakie są godziny otwarcia {title()}?",
             "render": "<h3> Godziny otwarcia</h3>{opening_hours_table(opening_hours)}"
+        },
+        "opening_hours_24_7": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Otwarte 24/7 (również w święta)"
+                    }
+                }
+            }
+        },
+        "opening_hours_by_appointment": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Tylko po wcześniejszym umówieniu się"
+                    },
+                    "1": {
+                        "then": "Tylko po wcześniejszym umówieniu się"
+                    }
+                }
+            }
         },
         "payment-options": {
             "mappings": {
@@ -91,6 +192,36 @@
                 }
             },
             "question": "Jakie metody płatności są tutaj dostępne?"
+        },
+        "payment-options-advanced": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Płatność odbywa się za pomocą dedykowanej aplikacji"
+                    },
+                    "1": {
+                        "then": "Płatność odbywa się za pomocą karty członkowskiej"
+                    }
+                }
+            }
+        },
+        "payment-options-split": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Monety są tutaj akceptowane"
+                    },
+                    "1": {
+                        "then": "Banknoty są tutaj akceptowane"
+                    },
+                    "2": {
+                        "then": "Akceptowane są tutaj karty debetowe"
+                    },
+                    "3": {
+                        "then": "Akceptowane są tutaj karty kredytowe"
+                    }
+                }
+            }
         },
         "phone": {
             "question": "Jaki jest numer telefonu do {title()}?"
@@ -111,6 +242,20 @@
                 }
             },
             "question": "Czy w tym przybytku znajdują się gniazdka elektryczne, gdzie klienci mogą naładować swoje urządzenia?"
+        },
+        "smoking": {
+            "mappings": {
+                "0": {
+                    "then": "Palenie jest <b>dozwolone</b>"
+                },
+                "1": {
+                    "then": "Palenie jest <b>zakazane</b>"
+                },
+                "2": {
+                    "then": "Palenie jest <b>dozwolone na zewnątrz</b>."
+                }
+            },
+            "question": "Czy w {title()} wolno palić?"
         },
         "website": {
             "question": "Jaka jest strona internetowa {title()}?"
