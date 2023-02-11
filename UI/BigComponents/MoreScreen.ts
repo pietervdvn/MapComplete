@@ -4,7 +4,7 @@ import { SubtleButton } from "../Base/SubtleButton"
 import Translations from "../i18n/Translations"
 import personal from "../../assets/themes/personal/personal.json"
 import BaseUIElement from "../BaseUIElement"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import LayoutConfig, { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
 import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
 import Loc from "../../Models/Loc"
 import UserRelatedState from "../../Logic/State/UserRelatedState"
@@ -20,16 +20,7 @@ import HiddenThemeList from "./HiddenThemeList.svelte"
 import UnofficialThemeList from "./UnofficialThemeList.svelte"
 
 export default class MoreScreen extends Combine {
-    private static readonly officialThemes: {
-        id: string
-        icon: string
-        title: any
-        shortDescription: any
-        definition?: any
-        mustHaveLanguage?: boolean
-        hideFromOverview: boolean
-        keywors?: any[]
-    }[] = themeOverview
+    private static readonly officialThemes: LayoutInformation[] = themeOverview
 
     constructor(
         state: UserRelatedState & {

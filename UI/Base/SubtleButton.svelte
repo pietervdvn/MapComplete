@@ -1,84 +1,82 @@
 <script lang="ts">
-  import { onMount } from "svelte"
-  import { Store } from "../../Logic/UIEventSource"
-  import BaseUIElement from "../BaseUIElement"
-  import Img from "./Img"
-  import Translations from "../i18n/Translations"
+  import { onMount } from "svelte";
+  import { Store } from "../../Logic/UIEventSource";
+  import BaseUIElement from "../BaseUIElement";
+  import Img from "./Img";
+  import Translations from "../i18n/Translations";
+  import { ImmutableStore } from "../../Logic/UIEventSource.js";
 
-  export let imageUrl: string | BaseUIElement = undefined
-  export let message: string | BaseUIElement = undefined
+  export let imageUrl: string | BaseUIElement = undefined;
+  export let message: string | BaseUIElement = undefined;
   export let options: {
     url?: string | Store<string>
     newTab?: boolean
     imgSize?: string
     extraClasses?: string
-  } = {}
+  } = {};
 
-  let href = typeof options?.url == "string" ? options.url : ""
+  // Website to open when clicked
+  let href : Store<string> = undefined
+  if(options?.url){
+     href = typeof options?.url == "string" ? new ImmutableStore(options.url) : options.url;
+  }
 
-  let imgElem: HTMLElement
-  let msgElem: HTMLElement
+  let imgElem: HTMLElement;
+  let msgElem: HTMLElement;
+  let imgClasses = "block justify-center shrink-0 mr-4 " + (options?.imgSize ?? "h-11 w-11");
 
   onMount(() => {
-    if (typeof options?.url != "string" && options?.url != undefined) {
-      options.url.addCallbackAndRun((data) => {
-        href = data
-      })
-    }
-
     // Image
     if (imgElem && imageUrl) {
-      let img: BaseUIElement
+      let img: BaseUIElement;
 
-      const imgClasses = "block justify-center flex-none mr-4 " + (options?.imgSize ?? "h-11 w-11")
       if ((imageUrl ?? "") === "") {
-        img = undefined
-      } else if (typeof imageUrl === "string") {
-        img = new Img(imageUrl)?.SetClass(imgClasses)
-      } else {
-        img = imageUrl?.SetClass(imgClasses)
+        img = undefined;
+      } else if (typeof imageUrl !== "string") {
+        img = imageUrl?.SetClass(imgClasses);
       }
-
-      if (img) imgElem.replaceWith(img.ConstructElement())
+      if (img) imgElem.replaceWith(img.ConstructElement());
     }
 
     // Message
     if (msgElem && message) {
-      let msg = Translations.W(message)?.SetClass("block text-ellipsis no-images flex-shrink")
-      msgElem.replaceWith(msg.ConstructElement())
+      let msg = Translations.W(message)?.SetClass("block text-ellipsis no-images flex-shrink");
+      msgElem.replaceWith(msg.ConstructElement());
     }
-  })
+  });
 </script>
 
 <svelte:element
-  this={options?.url == undefined ? "span" : "a"}
-  class={(options.extraClasses??"") + ' hover:shadow-xl transition-[color,background-color,box-shadow] hover:bg-unsubtle'}
+  class={(options.extraClasses??"") + 'flex hover:shadow-xl transition-[color,background-color,box-shadow] hover:bg-unsubtle'}
+  href={$href}
   target={options?.newTab ? "_blank" : ""}
-  {href}
+  this={href === undefined ? "span" : "a"}
 >
   <slot name="image">
-    {#if imgElem}
-      <template bind:this={imgElem} />
+    {#if imageUrl !== undefined}
+      {#if typeof imageUrl === "string"}
+        <Img src={imageUrl} class={imgClasses+ " bg-red border border-black"}></Img>
+      {:else }
+        <template bind:this={imgElem} />
       {/if}
+    {/if}
   </slot>
+
   <slot name="message">
     <template bind:this={msgElem} />
   </slot>
 </svelte:element>
 
 <style lang="scss">
+
   span,
   a {
-    @apply flex p-3 my-2 rounded-lg ;
+    @apply flex p-3 my-2 py-4 rounded-lg shrink-0;
     @apply items-center w-full no-underline;
     @apply bg-subtle text-black;
 
-    :global(img) {
-      @apply block justify-center flex-none mr-4 h-11 w-11;
-    }
-
     :global(span) {
-      @apply block text-ellipsis flex-shrink;
+      @apply block text-ellipsis;
     }
   }
 </style>

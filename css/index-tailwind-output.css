@@ -808,6 +808,11 @@ video {
   margin-bottom: 1rem;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
@@ -1567,6 +1572,11 @@ video {
 
 .p-0\.5 {
   padding: 0.125rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .px-2 {

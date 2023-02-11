@@ -1,14 +1,14 @@
 <script lang="ts">
   import SubtleButton from "../Base/SubtleButton.svelte"
   import { Translation } from "../i18n/Translation"
-  import type { Theme } from "./ThemesList.svelte"
   import * as personal from "../../assets/themes/personal/personal.json"
   import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
   import UserDetails, { OsmConnection } from "../../Logic/Osm/OsmConnection"
   import Constants from "../../Models/Constants"
   import type Loc from "../../Models/Loc"
+  import type { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig";
 
-  export let theme: Theme
+  export let theme: LayoutInformation
   export let isCustom: boolean = false
   export let userDetails: UIEventSource<UserDetails>
   export let state: { osmConnection: OsmConnection; locationControl?: UIEventSource<Loc> }
@@ -80,7 +80,7 @@
 {#if theme.id !== personal.id || $userDetails.csCount > Constants.userJourney.personalLayoutUnlock}
   <div>
     <SubtleButton options={{ url: createUrl(theme, isCustom, state) }}>
-      <img slot="image" src={theme.icon} alt="" />
+      <img slot="image" src={theme.icon} class="block h-11 w-11 bg-red mx-4" alt="" />
       <span slot="message" class="message">
         <span>
           <span>{title}</span>

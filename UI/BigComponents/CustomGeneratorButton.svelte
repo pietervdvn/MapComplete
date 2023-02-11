@@ -29,8 +29,8 @@
         url: "https://pietervdvn.github.io/mc/legacy/070/customGenerator.html",
       }}
     >
-      <span slot="image">
-        <ToSvelte construct={Svg.pencil_ui()} />
+      <span slot="image"  class="h-11 w-11 mx-4 bg-red" >
+        <ToSvelte construct={Svg.pencil_ui()}/>
       </span>
       <span slot="message">{t.createYourOwnTheme.toString()}</span>
     </SubtleButton>

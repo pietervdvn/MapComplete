@@ -8,7 +8,22 @@ import { ExtractImages } from "./Conversion/FixImages"
 import ExtraLinkConfig from "./ExtraLinkConfig"
 import { Utils } from "../../Utils"
 import used_languages from "../../assets/generated/used_languages.json"
-export default class LayoutConfig {
+
+/**
+ * Minimal information about a theme
+ **/
+export class LayoutInformation {
+    id: string
+    icon: string
+    title: any
+    shortDescription: any
+    definition?: any
+    mustHaveLanguage?: boolean
+    hideFromOverview?: boolean
+    keywords?: any[]
+}
+
+export default class LayoutConfig implements LayoutInformation {
     public static readonly defaultSocialImage = "assets/SocialImage.png"
     public readonly id: string
     public readonly credits?: string

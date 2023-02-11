@@ -1,16 +1,3 @@
-<script lang="ts" context="module">
-  export interface Theme {
-    id: string
-    icon: string
-    title: any
-    shortDescription: any
-    definition?: any
-    mustHaveLanguage?: boolean
-    hideFromOverview?: boolean
-    keywords?: any[]
-  }
-</script>
-
 <script lang="ts">
   import NoThemeResultButton from "./NoThemeResultButton.svelte"
 
@@ -21,9 +8,10 @@
   import CustomGeneratorButton from "./CustomGeneratorButton.svelte"
   import ProfessionalServicesButton from "./ProfessionalServicesButton.svelte"
   import ThemeButton from "./ThemeButton.svelte"
+  import { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig";
 
   export let search: UIEventSource<string>
-  export let themes: Theme[]
+  export let themes: LayoutInformation[]
   export let state: { osmConnection: OsmConnection; locationControl?: UIEventSource<Loc> }
   export let isCustom: boolean = false
   export let onMainScreen: boolean = true
