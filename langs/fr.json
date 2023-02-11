@@ -348,7 +348,8 @@
         "selectFile": {
             "errDuplicate": "Certaines colonnes portent le même nom",
             "errNoName": "Certains colonnes n'ont pas de nom"
-        }
+        },
+        "title": "Assistant d'importation"
     },
     "index": {
         "#": "Ces textes sont affichés au dessus des boutons de thème quand aucun thème n'est chargé",
