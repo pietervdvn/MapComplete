@@ -5,6 +5,11 @@
     "geoJsonZoomLevel": 16,
     "osmTags": "title~*"
   },
+  "description": {
+    "en": "Layer showing all tasks in MapRoulette",
+    "de": "Ebene, die alle MapRoulette-Aufgaben zeigt",
+    "nl": "Laag met alle taken uit MapRoulette"
+  },
   "mapRendering": [
     {
       "location": [
@@ -128,11 +133,6 @@
       "render": "{blurb}"
     }
   ],
-  "description": {
-    "en": "Layer showing all tasks in MapRoulette",
-    "de": "Ebene, die alle MapRoulette-Aufgaben zeigt",
-    "nl": "Laag met alle taken uit MapRoulette"
-  },
   "minzoom": 15,
   "name": {
     "en": "MapRoulette Tasks",
