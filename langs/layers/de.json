@@ -266,7 +266,7 @@
             "1": {
                 "options": {
                     "0": {
-                        "question": "Mit einem Geldautomaten"
+                        "question": "Mit Geldautomat"
                     }
                 }
             }
@@ -406,10 +406,10 @@
                         "question": "Mit und ohne Rückenlehne"
                     },
                     "1": {
-                        "question": "Hat eine Rückenlehne"
+                        "question": "Mit Rückenlehne"
                     },
                     "2": {
-                        "question": "Hat keine Rückenlehne"
+                        "question": "Ohne Rückenlehne"
                     }
                 }
             }
@@ -652,7 +652,7 @@
             }
         },
         "description": "Fahrradverleihstationen",
-        "name": "Fahrradverleih",
+        "name": "Fahrradverleihstationen",
         "presets": {
             "0": {
                 "description": "Ein Geschäft, das sich auf den Fahrradverleih konzentriert",
@@ -3892,7 +3892,7 @@
     },
     "etymology": {
         "description": "Alle Objekte, die eine bekannte Namensherkunft haben",
-        "name": "Objekte mit Informationen zur Namensherkunft",
+        "name": "Objekte mit Namensherkunft",
         "tagRenderings": {
             "etymology_multi_apply": {
                 "render": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Automatische Datenübernahme auf alle Segmente mit demselben Namen, true)}"
@@ -3974,7 +3974,7 @@
             "3": {
                 "options": {
                     "0": {
-                        "question": "Mit und ohne Bilder"
+                        "question": "Mit und ohne Bild"
                     },
                     "1": {
                         "question": "Hat mindestens ein Bild"
@@ -4010,7 +4010,7 @@
             "6": {
                 "options": {
                     "0": {
-                        "question": "Hat Bio-Produkte"
+                        "question": "Bio-Produkte im Angebot"
                     }
                 }
             }
@@ -4909,22 +4909,22 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Alle Arten von Bordsteinen"
+                        "question": "Alle Bordsteine"
                     },
                     "1": {
-                        "question": "Erhöhter Bordstein (>3 cm)"
+                        "question": "Erhöhte Bordsteine (>3 cm)"
                     },
                     "2": {
-                        "question": "Abgesenkter Bordstein (~3 cm)"
+                        "question": "Abgesenkte Bordsteine (~3 cm)"
                     },
                     "3": {
-                        "question": "Bündiger Bordstein (~0 cm)"
+                        "question": "Bündige Bordsteine (~0 cm)"
                     },
                     "4": {
                         "question": "Kein Bordstein"
                     },
                     "5": {
-                        "question": "Bordstein mit unbekannter Höhe"
+                        "question": "Bordsteine unbekannter Höhe"
                     }
                 }
             }
@@ -6538,7 +6538,7 @@
             "2": {
                 "options": {
                     "0": {
-                        "question": "Nur öffentliche Mülltonnen"
+                        "question": "Nur öffentliche Recyclingeinrichtungen"
                     }
                 }
             }
@@ -6589,7 +6589,7 @@
             },
             "operator": {
                 "question": "Welches Unternehmen betreibt diese Recyclinganlage?",
-                "render": "Diese Recyclinganlage wird betrieben von {operator}"
+                "render": "Die Recyclingeinrichtung wird betrieben von {operator}"
             },
             "recycling-accepts": {
                 "mappings": {
@@ -7818,7 +7818,7 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Rollstuhlgerecht"
+                        "question": "Barrierefrei"
                     }
                 }
             },
@@ -7996,21 +7996,21 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Mit einem Unterstand"
+                        "question": "Mit Unterstand"
                     }
                 }
             },
             "1": {
                 "options": {
                     "0": {
-                        "question": "Mit einer Bank"
+                        "question": "Mit Sitzbank"
                     }
                 }
             },
             "2": {
                 "options": {
                     "0": {
-                        "question": "Mit einem Mülleimer"
+                        "question": "Mit Mülleimer"
                     }
                 }
             }
@@ -8276,7 +8276,7 @@
                         "then": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann. <span class='subtle'>Dies ist die Standardeinstellung.</span>"
                     },
                     "1": {
-                        "then": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann."
+                        "then": "Ihre aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann."
                     },
                     "2": {
                         "then": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss"
@@ -8483,7 +8483,7 @@
                 }
             }
         },
-        "name": "Abfalleimer",
+        "name": "Mülleimer",
         "presets": {
             "0": {
                 "title": "einen Abfalleimer"
@@ -8546,7 +8546,7 @@
                 }
             }
         },
-        "name": "Mülltonnen",
+        "name": "Mülltonnen und Müllcontainer",
         "presets": {
             "0": {
                 "description": "Mittlere bis große Mülltonne für die Entsorgung von (Haushalts-)Abfällen",
@@ -8578,7 +8578,7 @@
                         "then": "Die Mülltonne befindet sich in einem Gebäude"
                     },
                     "2": {
-                        "then": "Die Mülltonne befindet sich im Freien"
+                        "then": "Die Mülltonne bzw. der Müllcontainer befindet sich im Freien"
                     }
                 },
                 "question": "Wo befindet sich die Mülltonne?"
@@ -8586,10 +8586,10 @@
             "type": {
                 "mappings": {
                     "0": {
-                        "then": "Dies ist ein mittelgroßer bis großer Behälter für die Entsorgung von (Haushalts-)Abfällen"
+                        "then": "Dies ist eine Mülltonne oder ein Müllcontainer für (Haushalts-)Abfälle"
                     },
                     "1": {
-                        "then": "Dies ist eigentlich ein Recycling-Container"
+                        "then": "Dies ist eigentlich ein Recyclingcontainer"
                     }
                 },
                 "question": "Was für ein Abfalleimer ist das?"
