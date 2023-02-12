@@ -72,25 +72,29 @@
       "group": "translations",
       "id": "translation-mode",
       "question": {
-        "en": "Do you want to help translating MapComplete?"
+        "en": "Do you want to help translating MapComplete?",
+        "de": "Möchten Sie bei der Übersetzung von MapComplete helfen?"
       },
       "mappings": [
         {
           "if": "mapcomplete-translation-mode=false",
           "then": {
-            "en": "Don't show a button to quickly change translations"
+            "en": "Don't show a button to quickly change translations",
+            "de": "Keine Schaltfläche zum schnellen Wechseln von Übersetzungen anzeigen"
           }
         },
         {
           "if": "mapcomplete-translation-mode=true",
           "then": {
-            "en": "Show a button to quickly open translations when using MapComplete on a big screen"
+            "en": "Show a button to quickly open translations when using MapComplete on a big screen",
+            "de": "Schaltfläche anzeigen zum schnellen Öffnen von Übersetzungen beim Verwenden von MapComplete auf einem großen Bildschirm"
           }
         },
         {
           "if": "mapcomplete-translation-mode=mobile",
           "then": {
-            "en": "Always show the translation buttons, including on mobile"
+            "en": "Always show the translation buttons, including on mobile",
+            "de": "Übersetzungsschaltflächen immer anzeigen, auch auf dem Handy"
           }
         }
       ]
@@ -148,7 +152,8 @@
           "icon": "confirm",
           "then": {
             "en": "Completely translated",
-            "nl": "Volledig vertaald"
+            "nl": "Volledig vertaald",
+            "de": "Vollständig übersetzt"
           }
         }
       ]
@@ -204,7 +209,8 @@
         {
           "if": "_csCount>0",
           "then": {
-            "en": "You have made changes on {_csCount} different occasions! That is awesome!"
+            "en": "You have made changes on {_csCount} different occasions! That is awesome!",
+            "de": "Sie haben bei {_csCount} verschiedenen Gelegenheiten Änderungen vorgenommen! Das ist großartig!"
           },
           "icon": "party"
         }
@@ -243,25 +249,29 @@
     {
       "id": "show_debug",
       "question": {
-        "en": "Show user settings debug info?"
+        "en": "Show user settings debug info?",
+        "de": "Debug-Informationen zu den Benutzereinstellungen anzeigen?"
       },
       "mappings": [
         {
           "if": "mapcomplete-show_debug=yes",
           "then": {
-            "en": "Show debug info"
+            "en": "Show debug info",
+            "de": "Debug-Informationen anzeigen"
           }
         },
         {
           "if": "mapcomplete-show_debug=no",
           "then": {
-            "en": "Don't show debug info"
+            "en": "Don't show debug info",
+            "de": "Keine Debug-Informationen anzeigen"
           }
         },
         {
           "if": "mapcomplete-show_debug=",
           "then": {
-            "en": "Don't show debug info"
+            "en": "Don't show debug info",
+            "de": "Keine Debug-Informationen anzeigen"
           },
           "hideInAnswer": true
         }

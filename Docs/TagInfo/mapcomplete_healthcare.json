@@ -217,8 +217,23 @@
       "value": "hospital"
     },
     {
+      "key": "amenity",
+      "description": "The MapComplete theme Healthcare has a layer Hospitals showing features with this tag",
+      "value": "clinic"
+    },
+    {
       "key": "name",
       "description": "Layer 'Hospitals' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Hospitals' shows amenity=clinic with a fixed text, namely 'This is a clinic - patients can not stay overnight' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Healthcare')",
+      "value": "clinic"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Hospitals' shows amenity=hospital with a fixed text, namely 'This is a hospital - patients can be admitted here for multiple days' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Healthcare')",
+      "value": "hospital"
     },
     {
       "key": "phone",

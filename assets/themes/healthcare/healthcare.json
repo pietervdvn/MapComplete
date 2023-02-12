@@ -46,7 +46,8 @@
         "=presets": [
           {
             "title": {
-              "en": "a medical supply shop"
+              "en": "a medical supply shop",
+              "de": "ein Sanitätshaus"
             },
             "tags": [
               "shop=medical_supply"
@@ -54,7 +55,8 @@
           },
           {
             "title": {
-              "en": "a hearing aids shop"
+              "en": "a hearing aids shop",
+              "de": "ein Hörgerätegeschäft"
             },
             "tags": [
               "shop=hearing_aids"
@@ -62,7 +64,8 @@
           },
           {
             "title": {
-              "en": "an optician"
+              "en": "an optician",
+              "de": "ein Optiker"
             },
             "tags": [
               "shop=optician"

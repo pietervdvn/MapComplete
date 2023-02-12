@@ -126,7 +126,7 @@
             "de": "Die Haltestelle hat <b>keinen</b> Unterstand",
             "da": "Dette stop har ikke et ly",
             "nl": "Deze halte heeft <b>geen</b> schuilplaats",
-            "ca": "Aquesta parada no té una coberta"
+            "ca": "Aquesta parada <b>no</b> té una coberta"
           }
         },
         {
@@ -167,7 +167,7 @@
             "de": "Die Haltestelle hat <b>keine</b> Sitzbank",
             "da": "Dette stoppested har ingen bænk",
             "nl": "Deze halte heeft <b>geen</b> zitbank",
-            "ca": "Aquesta parada no té un banc"
+            "ca": "Aquesta parada <b>no</b> té un banc"
           }
         },
         {
@@ -208,7 +208,7 @@
             "de": "Die Haltestelle hat <b>keinen</b> Mülleimer",
             "da": "Dette stoppested har ikke en skraldespand",
             "nl": "Deze halte heeft <b>geen</b> vuilnisbak",
-            "ca": "Aquesta parada no té una paperera"
+            "ca": "Aquesta parada <b>no</b> té paperera"
           }
         },
         {
@@ -247,7 +247,7 @@
           "then": {
             "en": "This stop does <b>not</b> have tactile paving",
             "de": "Die Haltestelle hat <b>kein</b> taktiles Pflaster",
-            "ca": "Aquesta parada no té una superfície podotàctil",
+            "ca": "Aquesta parada <b>no</b> té superfície podotàctil",
             "nl": "Deze halte heeft <b>geen</b> geleidelijn"
           }
         }
@@ -278,7 +278,7 @@
             "de": "Die Haltestelle hat <b>keine</b> Beleuchtung",
             "da": "Dette stop lyser ikke",
             "nl": "Deze halte is <b>niet</b> verlicht",
-            "ca": "Aquesta parada no té il·luminació"
+            "ca": "Aquesta parada <b>no</b> té il·luminació"
           }
         }
       ],

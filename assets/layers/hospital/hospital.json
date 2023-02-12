@@ -24,7 +24,12 @@
   },
   "minzoom": 12,
   "source": {
-    "osmTags": {"or": ["amenity=hospital","amenity=clinic"]}
+    "osmTags": {
+      "or": [
+        "amenity=hospital",
+        "amenity=clinic"
+      ]
+    }
   },
   "tagRenderings": [
     {
