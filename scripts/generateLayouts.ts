@@ -23,8 +23,8 @@ async function createIcon(iconPath: string, size: number, alreadyWritten: string
         name = name.substr(2)
     }
 
-    const newname = `public/assets/generated/images/${name.replace(/\//g, "_")}${size}.png`
-
+    const newname = `assets/generated/images/${name.replace(/\//g, "_")}${size}.png`
+    const targetpath = `public/${newname}`
     if (alreadyWritten.indexOf(newname) >= 0) {
         return newname
     }
@@ -41,7 +41,7 @@ async function createIcon(iconPath: string, size: number, alreadyWritten: string
         // We already read to file, in order to crash here if the file is not found
         let img = await sharp(iconPath)
         let resized = await img.resize(size)
-        await resized.toFile(newname)
+        await resized.toFile(targetpath)
         console.log("Created png version at ", newname)
     } catch (e) {
         console.error("Could not read icon", iconPath, " to create a PNG due to", e)
@@ -273,7 +273,7 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
             '<script type="module" src="./index.ts"></script>',
             `<script type="module"  src='./index_${layout.id}.ts'></script>`
         )
-    0
+
     try {
         output = output
             .replace(
