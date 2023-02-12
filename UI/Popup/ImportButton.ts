@@ -644,7 +644,7 @@ export class ImportPointButton extends AbstractImportButton {
                 },
                 {
                     name: "maproulette_id",
-                    doc: "If given, the maproulette challenge will be marked as fixed",
+                    doc: "The property name of the maproulette_id - this is probably `mr_taskId`. If given, the maproulette challenge will be marked as fixed. Only use this if part of a maproulette-layer.",
                 },
             ],
             { showRemovedTags: false }

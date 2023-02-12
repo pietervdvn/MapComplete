@@ -30,7 +30,6 @@ import WikipediaBox from "./Wikipedia/WikipediaBox"
 import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata"
 import { Translation } from "./i18n/Translation"
 import Translations from "./i18n/Translations"
-import MangroveReviews from "../Logic/Web/MangroveReviews"
 import ReviewForm from "./Reviews/ReviewForm"
 import ReviewElement from "./Reviews/ReviewElement"
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
@@ -480,6 +479,10 @@ export default class SpecialVisualizations {
                 args: [],
                 constr(state, tagSource, argument, guistate) {
                     let parentId = tagSource.data.mr_challengeId
+                    if (parentId === undefined) {
+                        console.warn("Element ", tagSource.data.id, " has no mr_challengeId")
+                        return undefined
+                    }
                     let challenge = Stores.FromPromise(
                         Utils.downloadJsonCached(
                             `https://maproulette.org/api/v2/challenge/${parentId}`,
@@ -512,7 +515,7 @@ export default class SpecialVisualizations {
                         })
                     )
                 },
-                docs: "Show details of a MapRoulette task",
+                docs: "Fetches the metadata of MapRoulette campaign that this task is part of and shows those details (namely `title`, `description` and `instruction`).\n\nThis reads the property `mr_challengeId` to detect the parent campaign.",
             },
             {
                 funcName: "statistics",
@@ -725,13 +728,6 @@ export default class SpecialVisualizations {
                             render: {
                                 special: {
                                     type: "some_special_visualisation",
-                                    before: {
-                                        en: "Some text to prefix before the special element (e.g. a title)",
-                                        nl: "Een tekst om voor het element te zetten (bv. een titel)",
-                                    },
-                                    after: {
-                                        en: "Some text to put after the element, e.g. a footer",
-                                    },
                                     argname: "some_arg",
                                     message: {
                                         en: "some other really long message",
@@ -739,12 +735,20 @@ export default class SpecialVisualizations {
                                     },
                                     other_arg_name: "more args",
                                 },
+                                before: {
+                                    en: "Some text to prefix before the special element (e.g. a title)",
+                                    nl: "Een tekst om voor het element te zetten (bv. een titel)",
+                                },
+                                after: {
+                                    en: "Some text to put after the element, e.g. a footer",
+                                },
                             },
                         },
                         null,
                         "  "
                     )
                 ).SetClass("code"),
+                'In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "argname": ...argvalue...}`. The args are in the `special` block; an argvalue can be a string, a translation or another value. (Refer to class `RewriteSpecial` in case of problems)',
             ]).SetClass("flex flex-col"),
             ...helpTexts,
         ]).SetClass("flex flex-col")
