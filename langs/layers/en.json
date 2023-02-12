@@ -5189,7 +5189,7 @@
         }
     },
     "maproulette_challenge": {
-        "description": "Layer showing tasks of a MapRoulette challenge",
+        "description": "Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to the documentation on how to do this.",
         "filter": {
             "0": {
                 "options": {
