@@ -22,7 +22,7 @@
   },
   "minzoom": 12,
   "source": {
-    "osmTags": "amenity=hospital"
+    "osmTags": {"or": ["amenity=hospital","amenity=clinic"]}
   },
   "tagRenderings": [
     {
@@ -42,6 +42,26 @@
       "freeform": {
         "key": "name"
       }
+    },
+    {
+      "id": "inpatient",
+      "question": {
+        "en": "Does this facility admit inpatients?<br><span class='subtle'>An <i>inpatient</i> is a patient which stays for multiple days in the facility</span>"
+      },
+      "mappings": [
+        {
+          "if": "amenity=clinic",
+          "then": {
+            "en": "This is a clinic - patients can not stay overnight"
+          }
+        },
+        {
+          "if": "amenity=hospital",
+          "then": {
+            "en": "This is a hospital - patients can be admitted here for multiple days"
+          }
+        }
+      ]
     },
     "phone",
     "email",
