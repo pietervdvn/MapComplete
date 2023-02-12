@@ -263,13 +263,13 @@
             "searching": "Suchen …"
         },
         "sharescreen": {
-            "addToHomeScreen": "<h3>Karte zum Startbildschirm hinzufügen</h3> Diese Webseite zum Startbildschirm Ihres Smartphones hinzufügen, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der Adressleiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
+            "addToHomeScreen": "<h3>Karte zum Startbildschirm hinzufügen</h3> Fügen Sie diese Webseite zum Startbildschirm Ihres Smartphones hinzu, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der Adressleiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
             "copiedToClipboard": "Verknüpfung in Zwischenablage kopiert",
             "downloadCustomTheme": "Konfiguration für diese Karte herunterladen",
             "downloadCustomThemeHelp": "Ein erfahrener Mitwirkender kann diese Datei verwenden, um Ihr Thema zu verbessern",
             "editThemeDescription": "Fragen zu diesem Thema hinzufügen oder ändern",
             "editThisTheme": "Dieses Thema bearbeiten",
-            "embedIntro": "<h3>Karte in Webseiten einbetten</h3>Wir ermutigen Sie dazu, diese Karte in Ihre Webseite einzubetten. Die Karte ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie.",
+            "embedIntro": "<h3>Karte in Webseiten einbetten</h3>Betten Sie diese Karte in Ihre Webseite ein. Die Karte ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie.",
             "fsAddNew": "Schaltfläche 'neuen POI hinzufügen' aktivieren",
             "fsGeolocation": "Schaltfläche 'Mich geolokalisieren' aktivieren (nur mobil)",
             "fsIncludeCurrentBackgroundMap": "Aktuellen Hintergrund übernehmen <b>({name})</b>",
@@ -280,7 +280,7 @@
             "fsSearch": "Suchleiste aktivieren",
             "fsUserbadge": "Anmeldefeld aktivieren",
             "fsWelcomeMessage": "Begrüßung und Registerkarten anzeigen",
-            "intro": "<h3>Karte teilen</h3> Senden Sie den folgenden Link an Freunde und Familie:",
+            "intro": "<h3>Karte teilen</h3> Mit dem folgenden Link können Sie diese Karte mit Freunden und Familie teilen:",
             "thanksForSharing": "Danke für das Teilen!"
         },
         "skip": "Frage überspringen",
@@ -336,7 +336,7 @@
         "welcomeBack": "Willkommen zurück!",
         "welcomeExplanation": {
             "addNew": "Tippen oden klicken Sie auf die Karte, um einen neuen Ort hinzuzufügen.",
-            "general": "Auf dieser Karte können Sie <i>themenspezifische Kartenobjekte</i> sehen, bearbeiten und hinzufügen. Verschieben Sie den Kartenausschnitt, um Objekte zu entdecken, tippen Sie auf eines, um Informationen zu sehen oder zu bearbeiten. Alle Daten stammen von OpenStreetMap und sind dort gespeichert, so dass sie frei weiterverwendet werden können."
+            "general": "Auf dieser Karte können Sie <i>themenspezifische Kartenobjekte</i> ansehen, bearbeiten und hinzufügen. Verschieben Sie den Kartenausschnitt, um Objekte zu entdecken, tippen Sie auf eines, um weitere Informationen zu sehen oder zu bearbeiten. Alle Daten stammen von OpenStreetMap und dürfen frei verwendet werden."
         },
         "wikipedia": {
             "createNewWikidata": "Einen neues Wikidata Element erstellen",
@@ -462,7 +462,7 @@
         },
         "gotoImportViewer": "Vorherige Importe überprüfen",
         "introduction": {
-            "description": "Der Import-Helfer konvertiert einen externen Datensatz in Hinweise. Der externe Datensatz muss mit einer vorhandenen MapComplete-Ebene übereinstimmen. Für jedes Element, das Sie in den Importer eingeben, wird eine einzelner Hinweis erstellt. Diese Hinweise werden zusammen mit den entsprechenden Objekten in diesen Karten angezeigt, um sie leicht hinzufügen zu können.",
+            "description": "Der Import-Helfer konvertiert einen externen Datensatz in Hinweise. Der externe Datensatz muss mit einer vorhandenen MapComplete-Ebene übereinstimmen. Für jedes Element, das Sie in den Import-Helfer eingeben, wird eine einzelner Hinweis erstellt. Diese Hinweise werden zusammen mit den entsprechenden Objekten in diesen Karten angezeigt, um sie leicht hinzufügen zu können.",
             "importFormat": "Der Text in der Notiz sollte folgendes Format haben, um verarbeitet zu werden",
             "title": "Einführung"
         },
@@ -494,7 +494,7 @@
             "title": "Attribute prüfen"
         },
         "selectFile": {
-            "description": "Wähle eine .csv oder .geojson Datei um anzufangen",
+            "description": "Eine .csv oder .geojson Datei auswählen um anzufangen",
             "errDuplicate": "Einige Spalten haben den selben Namen",
             "errNoLatOrLon": "Die Kopfzeile enthält weder `lat` noch `lon`",
             "errNoName": "Einige Spalten haben keinen Namen",
