@@ -1,6 +1,6 @@
 # Ad Hoc User test
 
-Subject: Lydia Vr
+Subject: Lydia
 Tech Skills: Low
 Demography: F, 60-70
 Language: Dutch
@@ -25,7 +25,9 @@ Upon being presented with the input location, she first scrolled in various dire
 
 WHen she however realised that she was looking to a roof, she correctly located the crosshair at the location of the toilets, after which she attempted to confirm by tapping the crosshair. The examinator stepped in to show the _actual_ confirm button. (1)
 
-Answering the various questions about the toilet went smoothly. The Opening Hours were a bit more challenging. Dragging the input element added a few opening hours into the table. The test subject muttered that she "wanted to scroll down", after which she spontanously used the hours on the side to grab and move everything up. Adding the correct hours was quickly done, but deleting a few 'spots' of accidentally placed hours was unclear, until pointed out that she could tap the 'trash'-icon. (2)
+Answering the various questions about the toilet went smoothly. The Opening Hours were a bit more challenging. Dragging the input element added a few opening hours into the table.
+The test subject muttered that she "wanted to scroll down", after which she spontanously used the hours on the side to grab and move everything up.
+Adding the correct hours was quickly done, but deleting a few 'spots' of accidentally placed hours was unclear, until pointed out that she could tap the 'trash'-icon. (2)
 
 She went through all the questions, but arriving at the end was a bit boring. The possiblity to get recuperate unanswered questions is unknown as well. (3,4)
 
