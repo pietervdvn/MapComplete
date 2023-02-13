@@ -7,3 +7,14 @@ In other words, these persona's are a part of the vision on what MapComplete sho
 As such, they mostly focus on a specific use case, not necessarily on fluffy background of the persona - unless that background is relevant.
 
 Note that the UserTests might also give a good idea on where usability might go wrong in small, individual steps.
+
+## The most important usecases are
+
+- Someone who needs a map with some type of POI (and which in turns becomes a contributor)
+- A casual OSM-contributor
+- Someone who needs to survey a lot of points in the field in a mapping campaign --> Xavier, paaltjestocht 
+- Someone who needs to _re_survey a lot of points --> Maarten O (for AED)
+- Someone who needs to manage data on an ongoing basis (and validate changes) --> Security prevention
+- Someone who needs to _communicate_ about POI (e.g. on their website) --> Fietsambassade
+- Someone who has a dataset and wants it imported into OSM --> Jos
+- Someone who needs to analyse the OSM-data --> Jos, city municipality, OnWheels
