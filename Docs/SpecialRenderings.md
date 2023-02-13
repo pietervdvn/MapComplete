@@ -118,6 +118,8 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of title](#example-usage-of-title)
     + [maproulette_task](#maproulette_task)
       * [Example usage of maproulette_task](#example-usage-of-maproulette_task)
+    + [maproulette_set_status](#maproulette_set_status)
+      * [Example usage of maproulette_set_status](#example-usage-of-maproulette_set_status)
     + [statistics](#statistics)
       * [Example usage of statistics](#example-usage-of-statistics)
     + [send_email](#send_email)
@@ -785,7 +787,23 @@ Id-key | id | The property name where the ID of the note to close can be found
 
 #### Example usage of add_image_to_note 
 
- `{add_image_to_note(id)}`
+ The following example sets the status to '2' (false positive)
+
+```json
+{
+   "id": "mark_duplicate",
+   "render": {
+      "special": {
+         "type": "maproulette_set_status",
+         "message": {
+            "en": "Mark as not found or false positive"
+         },
+         "status": "2",
+         "image": "close"
+      }
+   }
+}
+```
 
 
 
@@ -808,6 +826,25 @@ This reads the property `mr_challengeId` to detect the parent campaign.
 #### Example usage of maproulette_task 
 
  `{maproulette_task()}`
+
+
+
+### maproulette_set_status 
+
+ Change the status of the given MapRoulette task 
+
+name | default | description
+------ | --------- | -------------
+message | _undefined_ | A message to show to the user
+image | confirm | Image to show
+message_confirm | _undefined_ | What to show when the task is closed, either by the user or was already closed.
+status | 1 | A statuscode to apply when the button is clicked. 1 = `close`, 2 = `false_positive`, 3 = `skip`, 4 = `deleted`, 5 = `already fixed` (on the map, e.g. for duplicates), 6 = `too hard`
+maproulette_id | mr_taskId | The property name containing the maproulette id
+ 
+
+#### Example usage of maproulette_set_status 
+
+ `{maproulette_set_status(,confirm,,1,mr_taskId)}`
 
 
 

@@ -76,7 +76,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-### blurb 
+### mark_fixed 
 
 
 
@@ -84,7 +84,15 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `blurb~.+`
+
+
+### mark_duplicate 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
 
 
 

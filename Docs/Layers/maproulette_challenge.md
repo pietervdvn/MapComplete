@@ -99,18 +99,6 @@ This tagrendering has no question and is thus read-only
 
 
 
-### blurb 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering is only visible in the popup if the following condition is met: `blurb~.+`
-
-
-
 #### Filters 
 
 
