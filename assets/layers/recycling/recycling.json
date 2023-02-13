@@ -1333,7 +1333,7 @@
     "neededChangesets": 1
   },
   "allowMove": {
-    "enableRelocation": false,
+    "enableRelocation": true,
     "enableImproveAccuracy": true
   }
 }
