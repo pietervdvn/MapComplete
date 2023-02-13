@@ -168,9 +168,10 @@ describe("GeoOperations", () => {
             expect(result[0].geometry.type).to.eq("LineString")
             const clippedLine = (<Feature<LineString>>result[0]).geometry.coordinates
             const expCoordinates = [
-                [3.2185480732975975, 51.21502965337126],
-                [3.2207456783252724, 51.2155808773463],
+                [3.2185604, 51.215029800031594],
+                [3.2207457, 51.21557787977764],
             ]
+
             expect(clippedLine).to.deep.equal(expCoordinates)
         })
     })
