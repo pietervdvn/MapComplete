@@ -58,3 +58,5 @@ cp -r assets/templates/ dist/assets/templates/
 cp -r assets/tagRenderings/ dist/assets/tagRenderings/
 cp assets/*.png dist/assets/
 cp assets/*.svg dist/assets/
+
+export NODE_OPTIONS=""
