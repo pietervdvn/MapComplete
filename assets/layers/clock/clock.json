@@ -338,7 +338,24 @@
         "point",
         "centroid"
       ],
-      "icon": "./assets/layers/clock/clock.svg"
+      "icon": {
+        "render": "./assets/layers/clock/clock.svg",
+        "mappings": [
+          {
+            "if": "display=digital",
+            "then": "./assets/layers/clock/clock_digital.svg"
+          }
+        ]
+      },
+      "iconSize": {
+        "render": "40,40,center",
+        "mappings": [
+          {
+            "if": "display=digital",
+            "then": "50,20,center"
+          }
+        ]
+      }
     }
   ]
 }

@@ -12,7 +12,6 @@
   "startLat": 0,
   "startLon": 0,
   "startZoom": 0,
-  "hideFromOverview": true,
   "layers": [
     "clock"
   ]
