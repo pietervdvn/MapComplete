@@ -150,7 +150,8 @@
           "then": {
             "en": "This clock does probably not display the date",
             "nl": "Deze klok toont de datum waarschijnlijk niet"
-          }
+          },
+          "hideInAnswer": true
         }
       ]
     },
@@ -180,7 +181,8 @@
           "then": {
             "en": "This clock does probably not display the temperature",
             "nl": "Deze klok toont de temperatuur waarschijnlijk niet"
-          }
+          },
+          "hideInAnswer": true
         }
       ]
     },
@@ -210,7 +212,8 @@
           "then": {
             "en": "This clock does probably not display the air pressure",
             "nl": "Deze klok toont de luchtdruk waarschijnlijk niet"
-          }
+          },
+          "hideInAnswer": true
         }
       ]
     },
@@ -240,7 +243,8 @@
           "then": {
             "en": "This clock does probably not display the humidity",
             "nl": "Deze klok toont de luchtvochtigheid waarschijnlijk niet"
-          }
+          },
+          "hideInAnswer": true
         }
       ]
     },
