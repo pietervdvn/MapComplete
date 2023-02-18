@@ -1,0 +1,18 @@
+{
+  "id": "clock",
+  "title": {
+    "en": "Clocks",
+    "nl": "Klokken"
+  },
+  "description": {
+    "en": "Map showing all public clocks",
+    "nl": "Kaart met alle openbare klokken"
+  },
+  "icon": "./assets/layers/clock/clock.svg",
+  "startLat": 0,
+  "startLon": 0,
+  "startZoom": 0,
+  "layers": [
+    "clock"
+  ]
+}

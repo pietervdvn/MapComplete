@@ -1,0 +1,365 @@
+{
+  "id": "clock",
+  "name": {
+    "en": "Clocks",
+    "nl": "Klokken"
+  },
+  "description": {
+    "en": "Layer with public clocks",
+    "nl": "Laag met publieke klokken"
+  },
+  "title": {
+    "render": {
+      "en": "Clock",
+      "nl": "Klok"
+    }
+  },
+  "source": {
+    "osmTags": "amenity=clock"
+  },
+  "minzoom": 13,
+  "tagRenderings": [
+    "images",
+    {
+      "id": "support",
+      "question": {
+        "en": "In what way is the clock mounted?",
+        "nl": "Hoe is de klok bevestigd?"
+      },
+      "mappings": [
+        {
+          "if": "support=pole",
+          "then": {
+            "en": "This clock is mounted on a pole",
+            "nl": "Deze klok is bevestigd aan een paal"
+          }
+        },
+        {
+          "if": "support=wall_mounted",
+          "then": {
+            "en": "This clock is mounted on a wall",
+            "nl": "Deze klok is bevestigd aan een muur"
+          }
+        },
+        {
+          "if": "support=billboard",
+          "then": {
+            "en": "This clock is part of a billboard",
+            "nl": "Deze klok is onderdeel van een reclamebord"
+          }
+        },
+        {
+          "if": "support=ground",
+          "then": {
+            "en": "This clock is on the ground",
+            "nl": "Deze klok staat op de grond"
+          }
+        }
+      ]
+    },
+    {
+      "id": "display",
+      "question": {
+        "en": "How does this clock display the time?",
+        "nl": "Hoe toont deze klok de tijd?"
+      },
+      "mappings": [
+        {
+          "if": "display=analog",
+          "then": {
+            "en": "This clock displays the time with hands",
+            "nl": "Deze klok toont de tijd met wijzers"
+          }
+        },
+        {
+          "if": "display=digital",
+          "then": {
+            "en": "This clock displays the time with digits",
+            "nl": "Deze klok toont de tijd met cijfers"
+          }
+        },
+        {
+          "if": "display=sundial",
+          "then": {
+            "en": "This clock displays the time with a sundial",
+            "nl": "Deze klok toont de tijd met een zonnewijzer"
+          }
+        },
+        {
+          "if": "display=unorthodox",
+          "then": {
+            "en": "This clock displays the time in a non-standard way, e.g using binary, water or something else",
+            "nl": "Deze klok toont de tijd op een niet-standaard manier, bijvoorbeeld met binaire cijfers, water of iets anders"
+          }
+        }
+      ]
+    },
+    {
+      "id": "visibility",
+      "question": {
+        "en": "How visible is this clock?",
+        "nl": "Hoe zichtbaar is deze klok?"
+      },
+      "mappings": [
+        {
+          "if": "visibility=house",
+          "then": {
+            "en": "This clock is visible from about 5 meters away (small wall-mounted clock)",
+            "nl": "Deze klok is zichtbaar vanaf ongeveer 5 meter afstand (kleine klok aan een muur)"
+          }
+        },
+        {
+          "if": "visibility=street",
+          "then": {
+            "en": "This clock is visible from about 20 meters away (medium size billboard clock)",
+            "nl": "Deze klok is zichtbaar vanaf ongeveer 20 meter afstand (klok op gemiddeld reclamebord)"
+          }
+        },
+        {
+          "if": "visibility=area",
+          "then": {
+            "en": "This clock is visible from more than 20 meters away (church clock)",
+            "nl": "Deze klok is zichtbaar vanaf meer dan 20 meter afstand (kerkklok)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "date",
+      "question": {
+        "en": "Does this clock also display the date?",
+        "nl": "Toont deze klok ook de datum?"
+      },
+      "mappings": [
+        {
+          "if": "date=yes",
+          "then": {
+            "en": "This clock also displays the date",
+            "nl": "Deze klok toont ook de datum"
+          }
+        },
+        {
+          "if": "date=no",
+          "then": {
+            "en": "This clock does not display the date",
+            "nl": "Deze klok toont de datum niet"
+          }
+        },
+        {
+          "if": "date=",
+          "then": {
+            "en": "This clock does probably not display the date",
+            "nl": "Deze klok toont de datum waarschijnlijk niet"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "thermometer",
+      "question": {
+        "en": "Does this clock also display the temperature?",
+        "nl": "Toont deze klok ook de temperatuur?"
+      },
+      "mappings": [
+        {
+          "if": "thermometer=yes",
+          "then": {
+            "en": "This clock also displays the temperature",
+            "nl": "Deze klok toont ook de temperatuur"
+          }
+        },
+        {
+          "if": "thermometer=no",
+          "then": {
+            "en": "This clock does not display the temperature",
+            "nl": "Deze klok toont de temperatuur niet"
+          }
+        },
+        {
+          "if": "thermometer=",
+          "then": {
+            "en": "This clock does probably not display the temperature",
+            "nl": "Deze klok toont de temperatuur waarschijnlijk niet"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "barometer",
+      "question": {
+        "en": "Does this clock also display the air pressure?",
+        "nl": "Toont deze klok ook de luchtdruk?"
+      },
+      "mappings": [
+        {
+          "if": "barometer=yes",
+          "then": {
+            "en": "This clock also displays the air pressure",
+            "nl": "Deze klok toont ook de luchtdruk"
+          }
+        },
+        {
+          "if": "barometer=no",
+          "then": {
+            "en": "This clock does not display the air pressure",
+            "nl": "Deze klok toont de luchtdruk niet"
+          }
+        },
+        {
+          "if": "barometer=",
+          "then": {
+            "en": "This clock does probably not display the air pressure",
+            "nl": "Deze klok toont de luchtdruk waarschijnlijk niet"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "hygrometer",
+      "question": {
+        "en": "Does this clock also display the humidity?",
+        "nl": "Toont deze klok ook de luchtvochtigheid?"
+      },
+      "mappings": [
+        {
+          "if": "hygrometer=yes",
+          "then": {
+            "en": "This clock also displays the humidity",
+            "nl": "Deze klok toont ook de luchtvochtigheid"
+          }
+        },
+        {
+          "if": "hygrometer=no",
+          "then": {
+            "en": "This clock does not display the humidity",
+            "nl": "Deze klok toont de luchtvochtigheid niet"
+          }
+        },
+        {
+          "if": "hygrometer=",
+          "then": {
+            "en": "This clock does probably not display the humidity",
+            "nl": "Deze klok toont de luchtvochtigheid waarschijnlijk niet"
+          },
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "faces",
+      "question": {
+        "en": "How many faces does this clock have?",
+        "nl": "Hoeveel klokken heeft deze klok?"
+      },
+      "freeform": {
+        "key": "faces",
+        "type": "pnat",
+        "inline": true,
+        "placeholder": {
+          "en": "Number of faces",
+          "nl": "Aantal klokken"
+        }
+      },
+      "render": {
+        "en": "This clock has {faces} faces",
+        "nl": "Deze klok heeft {faces} klokken"
+      },
+      "mappings": [
+        {
+          "if": "faces=1",
+          "then": {
+            "en": "This clock has one face",
+            "nl": "Deze klok heeft één klok"
+          }
+        },
+        {
+          "if": "faces=2",
+          "then": {
+            "en": "This clock has two faces",
+            "nl": "Deze klok heeft twee klokken"
+          }
+        },
+        {
+          "if": "faces=4",
+          "then": {
+            "en": "This clock has four faces",
+            "nl": "Deze klok heeft vier klokken"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "tags": [
+        "amenity=clock"
+      ],
+      "title": {
+        "en": "a clock",
+        "nl": "een klok"
+      },
+      "description": {
+        "en": "A publicly visible clock",
+        "nl": "Een publiekelijk zichtbare klok"
+      },
+      "preciseInput": {
+        "preferredBackground": [
+          "photo",
+          "map"
+        ]
+      }
+    },
+    {
+      "tags": [
+        "amenity=clock",
+        "support=wall_mounted"
+      ],
+      "title": {
+        "en": "a wall-mounted clock",
+        "nl": "een klok aan een muur"
+      },
+      "description": {
+        "en": "A publicly visible clock mounted on a wall",
+        "nl": "Een publiekelijk zichtbare klok aan een muur"
+      },
+      "preciseInput": {
+        "preferredBackground": [
+          "photo",
+          "map"
+        ],
+        "snapToLayer": "walls_and_buildings"
+      }
+    }
+  ],
+  "allowMove": true,
+  "deletion": true,
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": {
+        "render": "./assets/layers/clock/clock.svg",
+        "mappings": [
+          {
+            "if": "display=digital",
+            "then": "./assets/layers/clock/clock_digital.svg"
+          }
+        ]
+      },
+      "iconSize": {
+        "render": "40,40,center",
+        "mappings": [
+          {
+            "if": "display=digital",
+            "then": "50,20,center"
+          }
+        ]
+      }
+    }
+  ]
+}
