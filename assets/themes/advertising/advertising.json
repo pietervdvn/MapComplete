@@ -546,9 +546,9 @@
                 ]
               },
               "then": {
-                "ca": "Si, però sense especificar",
-                "es": "Si, pero sin especificar",
-                "en": "Yes, but without specifying"
+                "ca": "Aquest element publicitari canvia de publicitat automàticament",
+                "es": "Este elemento publicitario cambia de publicidad automaticamente",
+                "en": "This advertisement feature cycles through different advertisements automatically"
               }
             }
           ]
