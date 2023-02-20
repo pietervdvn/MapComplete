@@ -874,6 +874,11 @@
             "ca": "una lona",
             "es": "una lona",
             "en": "a tarp"
+          },
+          "preciseInput": {
+            "preferredBackground": "map",
+            "snapToLayer": "walls_and_buildings",
+            "maxSnapDistance": 5
           }
         },
         {
@@ -894,6 +899,11 @@
             "ca": "una pintura a la paret",
             "es": "una pitura en la pared",
             "en": "a wall painted"
+          },
+          "preciseInput": {
+            "preferredBackground": "map",
+            "snapToLayer": "walls_and_buildings",
+            "maxSnapDistance": 5
           }
         }
       ]
