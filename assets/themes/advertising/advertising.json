@@ -459,9 +459,9 @@
             "en": "Animated with {animated}"
           },
           "question": {
-            "ca": "Quin tipus d'animació té aquest element?",
-            "es": "Que tipo de animació tiene este elemento?",
-            "en": "Wich type of animation has this feature?"
+            "ca": "Aquest element canvia automàticaent d'anuncis?",
+            "es": "¿Este elemento canvia automáticamente de anuncios?",
+            "en": "Does this feature cycle through multiple advertisements automatically?"
           },
           "freeform": {
             "key": "animated"
@@ -477,30 +477,6 @@
                 "ca": "<b>Estàtic</b>, sense animació",
                 "es": "<b>Estático</b>, sin animación",
                 "en": "<b>Static</b>, without animation"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "animated=yes"
-                ]
-              },
-              "then": {
-                "ca": "Si, però sense especificar",
-                "es": "Si, pero sin especificar",
-                "en": "Yes, but without specifying"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "animated=screen"
-                ]
-              },
-              "then": {
-                "ca": "una <b>Pantalla</b>",
-                "es": "una <b>Pantalla</b>",
-                "en": "a <b>screen</b>"
               }
             },
             {
@@ -561,6 +537,18 @@
                 "ca": "<b>Rota</b> sobre si mateix",
                 "es": "<b>Rota</b> sobre si mismo",
                 "en": "<b>Rotates</b> on itself"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "animated=yes"
+                ]
+              },
+              "then": {
+                "ca": "Si, però sense especificar",
+                "es": "Si, pero sin especificar",
+                "en": "Yes, but without specifying"
               }
             }
           ]
