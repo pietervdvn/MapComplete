@@ -1,5 +1,60 @@
 {
     "shared_questions": {
+        "denominations-coins": {
+            "mappings": {
+                "0": {
+                    "then": "Jsou přijímány mince v hodnotě 1 centu"
+                },
+                "1": {
+                    "then": "Jsou přijímány mince v hodnotě 2 centů"
+                },
+                "2": {
+                    "then": "Jsou přijímány mince v hodnotě 5 centů"
+                },
+                "3": {
+                    "then": "Jsou přijímány mince v hodnotě 10 centů"
+                },
+                "4": {
+                    "then": "Jsou přijímány mince v hodnotě 20 centů"
+                },
+                "5": {
+                    "then": "Jsou přijímány mince v hodnotě 50 centů"
+                },
+                "6": {
+                    "then": "Jsou přijímány mince v hodnotě 1 eura"
+                },
+                "7": {
+                    "then": "Jsou přijímány mince v hodnotě 2 euro"
+                }
+            },
+            "question": "Jakými mincemi zde lze platit?"
+        },
+        "denominations-notes": {
+            "mappings": {
+                "0": {
+                    "then": "Jsou přijímány bankovky v hodnotě 5 euro"
+                },
+                "1": {
+                    "then": "Jsou přijímány bankovky v hodnotě 10 euro"
+                },
+                "2": {
+                    "then": "Jsou přijímány bankovky v hodnotě 20 euro"
+                },
+                "3": {
+                    "then": "Jsou přijímány bankovky v hodnotě 50 euro"
+                },
+                "4": {
+                    "then": "Jsou přijímány bankovky v hodnotě 100 euro"
+                },
+                "5": {
+                    "then": "Jsou přijímány bankovky v hodnotě 200 euro"
+                },
+                "6": {
+                    "then": "Jsou přijímány bankovky v hodnotě 500 euro"
+                }
+            },
+            "question": "Jakými bankovkami zde lze platit?"
+        },
         "description": {
             "question": "Je ještě něco relevantního, co jste nemohli uvést v předchozích otázkách? Přidejte to sem.<br/><span style='font-size: small'>Neopakujte již uvedená fakta</span>"
         },
@@ -115,13 +170,25 @@
                 }
             }
         },
+        "opening_hours_by_appointment": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Pouze po domluvě"
+                    },
+                    "1": {
+                        "then": "Pouze po domluvě"
+                    }
+                }
+            }
+        },
         "payment-options": {
             "mappings": {
                 "0": {
                     "then": "Přijímá se zde hotovost"
                 },
                 "1": {
-                    "then": "Zde jsou přijímány platební karty"
+                    "then": "Jsou zde přijímány platební karty"
                 }
             },
             "question": "Jaké platební metody jsou zde přijímány?"
@@ -134,6 +201,24 @@
                     },
                     "1": {
                         "then": "Platba se provádí pomocí členské karty"
+                    }
+                }
+            }
+        },
+        "payment-options-split": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Jsou zde přijímány mince"
+                    },
+                    "1": {
+                        "then": "Jsou zde přijímány bankovky"
+                    },
+                    "2": {
+                        "then": "Jsou zde přijímány debetní karty"
+                    },
+                    "3": {
+                        "then": "Jsou zde přijímány kreditní karty"
                     }
                 }
             }
