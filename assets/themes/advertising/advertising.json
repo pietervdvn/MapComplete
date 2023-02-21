@@ -459,8 +459,8 @@
             "en": "Animated with {animated}"
           },
           "question": {
-            "ca": "Aquest element canvia automàticaent d'anuncis?",
-            "es": "¿Este elemento canvia automáticamente de anuncios?",
+            "ca": "Com canvia els anuncis aquest element?",
+            "es": "¿Como cambia los anuncios este elemento?",
             "en": "Does this feature cycle through multiple advertisements automatically?"
           },
           "freeform": {
@@ -477,6 +477,9 @@
                 "ca": "<b>Estàtic</b>, sense animació",
                 "es": "<b>Estático</b>, sin animación",
                 "en": "<b>Static</b>, without animation"
+              },
+              "hideInAnswer": { 
+                "and": ["advertising=screen"]
               }
             },
             {
@@ -489,6 +492,9 @@
                 "ca": "<b>Preus digitals</b>",
                 "es": "<b>Precios digitales</b>",
                 "en": "<b>Digital Prices</b>"
+              },
+              "hideInAnswer": { 
+                "and": ["advertising:=flag", "advertising:=sculpture", "advertising:=tarp", "advertising:=wall_painting", "advertising:=board"]
               }
             },
             {
@@ -501,6 +507,9 @@
                 "ca": "un <b>Missatge digital</b>",
                 "es": "un <b>Mensaje digital</b>",
                 "en": "a <b>Digital message</b>"
+              },
+              "hideInAnswer": { 
+                "and": ["advertising=flag"]
               }
             },
             {
@@ -513,7 +522,11 @@
                 "ca": "Trivision",
                 "es": "Trivision",
                 "en": "Trivision"
+              },
+              "hideInAnswer": { 
+                "or": ["advertising:=screen", "advertising:=column", "advertising:=tarp", "advertising:=wall_painting", "advertising:=column", "advertising:=sculpture", "advertising:=board"]
               }
+              
             },
             {
               "if": {
@@ -525,6 +538,9 @@
                 "ca": "Cartells <b>Rotatius</b>",
                 "es": "Cartells <b>Rotatius</b>",
                 "en": "<b>Scrolling</b> posters"
+              },
+              "hideInAnswer": { 
+                "or": ["advertising!=poster_box", "advertising!=billboard", "advertising!=board"]
               }
             },
             {
@@ -537,18 +553,9 @@
                 "ca": "<b>Rota</b> sobre si mateix",
                 "es": "<b>Rota</b> sobre si mismo",
                 "en": "<b>Rotates</b> on itself"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "animated=yes"
-                ]
               },
-              "then": {
-                "ca": "Aquest element publicitari canvia de publicitat automàticament",
-                "es": "Este elemento publicitario cambia de publicidad automaticamente",
-                "en": "This advertisement feature cycles through different advertisements automatically"
+              "hideInAnswer": { 
+                "or": ["advertising:=flag", "advertising:=board", "advertising:=tarp", "advertising:=wall_painting"]
               }
             }
           ]
@@ -601,7 +608,10 @@
                     "ca": "Informació de seguretat",
                     "es": "Información de seguridad",
                     "en": "Securty information"
-                  }
+                  },
+                  "hideInAnswer": { 
+                    "and": ["advertising=flag"]
+                  } 
                 },
                 {
                   "if": {
@@ -610,9 +620,9 @@
                     ]
                   },
                   "then": {
-                    "ca": "Cartell electoral",
-                    "es": "Cartel electoral",
-                    "en": "Electoral sign"
+                    "ca": "Publicitat electoral",
+                    "es": "Publicidad electoral",
+                    "en": "Electoral advertising"
                   }
                 },
                 {
@@ -625,6 +635,9 @@
                     "ca": "Informació sobre teatres, concerts, ...",
                     "es": "Información sobre teatros, conciertos, ...",
                     "en": "Inormation related to theatre, concerts, ..."
+                  },
+                  "hideInAnswer": { 
+                    "and": ["advertising=flag"]
                   }
                 },
                 {
@@ -634,9 +647,9 @@
                     ]
                   },
                   "then": {
-                    "ca": "Cartell d'organitzacions sense ànim de lucre",
-                    "es": "Cartel de organizaciones sin ánimo de lucro",
-                    "en": "Sign from non-profit organizations"
+                    "ca": "Missatge d'organitzacions sense ànim de lucre",
+                    "es": "Mensaje de organizaciones sin ánimo de lucro",
+                    "en": "Message from non-profit organizations"
                   }
                 },
                 {
@@ -649,6 +662,9 @@
                     "ca": "Per a expressar la teua opinió",
                     "es": "Para expresar tu opinión",
                     "en": "To expres your opinion"
+                  },
+                  "hideInAnswer": { 
+                    "or": ["advertising:=flag", "advertising:=screen"]
                   }
                 },
                 {
@@ -673,12 +689,20 @@
                     "ca": "Cartell de financiació",
                     "es": "Cartel de financiación",
                     "en": "Funding sign"
+                  },
+                  "hideInAnswer": { 
+                    "or": ["advertising:=flag", "advertising:=column"]
                   }
                 }
             ]
         },
         {
           "id": "Sides",
+          "condition": {
+            "and": [
+              "advertising!~flag", "advertising!~column"
+            ]
+          },
           "render": {
             "ca": "Pots veure publicitat per {sides} costats",
             "es": "Puedes ver publicidad por {sides} lados",
@@ -691,7 +715,56 @@
             },
             "freeform": {
             "key": "sides"
-            }
+            },
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "sides=1"
+                  ]
+                },
+                "then": {
+                  "ca": "1",
+                  "es": "1",
+                  "en": "1"
+                }
+              },
+              {
+                "if": {
+                  "and": [
+                    "sides=2"
+                  ]
+                },
+                "then": {
+                  "ca": "2",
+                  "es": "2",
+                  "en": "2"
+                }
+              },
+              {
+                "if": {
+                  "and": [
+                    "sides=3"
+                  ]
+                },
+                "then": {
+                  "ca": "3",
+                  "es": "3",
+                  "en": "3"
+                }
+              },{
+                "if": {
+                  "and": [
+                    "sides=4"
+                  ]
+                },
+                "then": {
+                  "ca": "4",
+                  "es": "4",
+                  "en": "4"
+                }
+              }
+            ]
         }
       ],
       "mapRendering": [
