@@ -26,13 +26,16 @@
         "reasons": {
             "disused": "Tato funkce je nepoužívaná nebo odstraněná"
         },
-        "useSomethingElse": "Místo toho použijte jiný editor OpenStreetMap a odstraňte jej"
+        "useSomethingElse": "Místo toho použijte jiný editor OpenStreetMap a odstraňte jej",
+        "whyDelete": "Proč by měla být tato funkce odstraněna?"
     },
     "favourite": {
         "loginNeeded": "<h3>Přihlášení</h3>Osobní rozvržení je k dispozici pouze pro uživatele OpenStreetMap",
+        "panelIntro": "<h3>Vaše osobní téma</h3>Aktivujte si své oblíbené vrstvy ze všech oficiálních témat",
         "reload": "Znovu načíst data"
     },
     "flyer": {
+        "callToAction": "Vyzkoušet na mapcomplete.osm.be",
         "description": "Leták formátu A4 na propagaci MapComplete",
         "editing": {
             "title": "Jak vypadá uživatelské rozhraní?"
@@ -40,12 +43,12 @@
         "examples": "K dispozici je mnoho tematických map, z nichž některé jsou zde otištěny.\n\nNa internetu je k dispozici mnoho dalších tematických map: o zdravotnictví, navigaci v interiéru, bezbariérovosti, odpadových zařízeních, veřejných knihovnách, přechodech pro chodce s duhovým nátěrem,... Objevte je všechny na mapcomplete.osm.be",
         "fakeui": {
             "add_images": "Přidání obrázků několika kliknutími",
-            "edit": "Špatné nebo zastaralé informace? Tlačítko pro úpravu je přímo zde"
+            "edit": "Špatné nebo zastaralé informace? Tlačítko pro úpravu je přímo zde."
         }
     },
     "general": {
         "about": "Snadné úpravy a přidávání OpenStreetMap pro určité téma",
-        "aboutMapcomplete": "<h3>O programu</h3><p>Pomocí MapComplete přidejte informace OpenStreetMap na <b>jedno téma.</b> Odpovězte na otázky a během několika minut budou vaše příspěvky všude dostupné. Ve většině témat můžete přidat obrázky nebo dokonce zanechat recenzi. <b>Správce motivu</b> pro něj definuje prvky, otázky a jazyky.</p><h3>Další informace</h3><p>MapComplete vždy <b>nabízí další krok</b> k zjištění více o OpenStreetMap.<ul><li>Pokud je prvek iframe vložen do webové stránky, odkazuje na celoobrazovkový MapComplete.</li><li>Verze na celou obrazovku nabízí informace o OpenStreetMap.</li><li>Prohlížení funguje bez přihlášení, ale úpravy vyžadují účet OSM.</li><li>Pokud nejste přihlášeni, budete o to požádáni</li><li>Jakmile odpovíte na jedinou otázku, můžete přidat nové funkce na mapu</li><li>Po chvíli se zobrazí skutečné značky OSM, později odkaz na wiki</li></ul></p><br/><p>Všimli jste si <b>problému</b>? Máte <b>požadavek na funkci</b>? Chcete <b>pomoci s překladem</b>? Přejděte na <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>zdrojový kód</a> nebo <a href='https://github.com/pietervdvn/MapComplete /issues' target='_blank'>sledovač problémů.</a> </p><p> Chcete vidět <b>svůj pokrok</b>? Sledujte počet úprav na <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
+        "aboutMapcomplete": "<h3>O službě</h3><p>Pomocí MapComplete můžete přidávat informace z OpenStreetMap na <b>samostatné téma</b>. Odpovězte na otázky a během několika minut jsou vaše příspěvky dostupné všude. Ve většině témat můžete přidávat obrázky nebo dokonce zanechat hodnocení. <b>Správce tématu</b> pro něj definuje prvky, otázky a jazyky.</p><h3>Další informace</h3><p>MapComplete vždy <b>nabízí další krok</b> k získání dalších informací o OpenStreetMap.<ul><li>Při vložení do webové stránky odkazuje iframe na MapComplete na celou obrazovku.</li><li>Verze na celou obrazovku nabízí informace o OpenStreetMap.</li><li>Prohlížení funguje bez přihlášení, ale editace vyžaduje účet OSM.</li><li>Pokud nejste přihlášeni, jste k tomu vyzváni</li><li>Po zodpovězení jedné otázky můžete do mapy přidávat nové funkce</li><li>Po chvíli se zobrazí aktuální značky OSM, později odkaz na wiki</li></ul></p><br/><p>Všimli jste si <b>problému</b>? Máte <b>požadavek na funkci</b>? Chcete <b>pomoci s překladem</b>? Přejděte na <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>zdrojový kód</a> nebo <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>sledovač problémů.</a> </p><p> Chcete se podívat na <b>svůj pokrok</b>? Sledujte počet úprav na <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
         "add": {
             "addNew": "Přidat {category}",
             "addNewMapLabel": "Klikněte zde pro přidání nové položky",
@@ -71,11 +74,11 @@
             "isApplied": "Změny jsou aplikovány"
         },
         "attribution": {
-            "attributionContent": "<p>Všechna data poskytuje <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, volně opakovaně použitelná pod <a href='https://osm.org/copyright' target='_blank'>licencí Open DataBase</a>.</p>",
-            "attributionTitle": "Oznámení o připsání autorství",
+            "attributionContent": "<p>Všechna data jsou poskytována službou <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, volně opakovaně použitelná pod <a href='https://osm.org/copyright' target='_blank'>licencí Open DataBase</a>.</p>",
+            "attributionTitle": "Oznámení o atribuci",
             "codeContributionsBy": "MapComplete vytvořili {contributors} a <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} dalších přispěvatelů</a>",
             "donate": "Podpořte MapComplete finančně",
-            "editId": "Zde otevřete online editor OpenStreetMap",
+            "editId": "Zde otevřít online editor OpenStreetMap",
             "editJosm": "Upravit zde pomocí JOSM",
             "followOnMastodon": "Sledujte MapComplete na Mastodonu",
             "iconAttribution": {
@@ -83,13 +86,185 @@
             },
             "josmNotOpened": "JOSM se nepodařilo propojit. Ujistěte se, že je otevřený a že je povoleno dálkové ovládání",
             "josmOpened": "JOSM je otevřen",
-            "mapContributionsBy": "Aktuální viditelná data obsahují úpravy provedené {contributors}",
+            "mapContributionsBy": "Aktuální viditelná data obsahují úpravy provedené uživateli {contributors}",
             "mapContributionsByAndHidden": "Aktuální viditelná data obsahují úpravy provedené {contributors} a {hiddenCount} dalšími přispěvateli",
             "mapillaryHelp": "<b>Mapillary</b> je online služba, která shromažďuje snímky na úrovni ulic a nabízí je pod bezplatnou licencí. Přispěvatelé mohou tyto obrázky používat ke zlepšení OpenStreetMap",
-            "openIssueTracker": "Podání chyby",
-            "openMapillary": "Zde otevřete Mapillary",
-            "openOsmcha": "Zobrazit poslední úpravy provedené pomocí {theme}",
-            "themeBy": "Téma spravuje {author}"
+            "openIssueTracker": "Nahlaste chybu",
+            "openMapillary": "Zde otevřít Mapillary",
+            "openOsmcha": "Podívejte se na nejnovější úpravy provedené v tématu {theme}",
+            "themeBy": "Téma spravuje {author}",
+            "translatedBy": "MapComplete přeložili {contributors} a <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} dalších přispěvatelů</a>"
+        },
+        "backToIndex": "Návrat na přehled všech tematických map",
+        "backgroundMap": "Mapa na pozadí",
+        "cancel": "Zrušit",
+        "layerSelection": {
+            "title": "Výběr vrstev"
+        },
+        "logout": "Odhlásit se",
+        "morescreen": {
+            "createYourOwnTheme": "Vytvořte si vlastní téma MapComplete",
+            "intro": "<h3>Více tematických map?</h3>Baví vás sbírat geodata? <br/>K dispozici jsou další tematické mapy.",
+            "searchForATheme": "Hledat téma"
+        },
+        "noTagsSelected": "Nejsou vybrány žádné štítky",
+        "opening_hours": {
+            "closed_permanently": "Uzavřeno na neznámou dobu",
+            "closed_until": "Uzavřeno do {date}",
+            "open_during_ph": "Během státního svátku je místo",
+            "ph_closed": "zavřené",
+            "ph_open": "otevřené",
+            "ph_open_as_usual": "otevřené, jako obvykle"
+        },
+        "pdf": {
+            "versionInfo": "v{version} - vygenerováno {date}"
+        },
+        "pickLanguage": "Vyberte si jazyk: ",
+        "save": "Uložit",
+        "search": {
+            "search": "Vyhledat místo"
+        },
+        "sharescreen": {
+            "addToHomeScreen": "<h3>Přidejte stránku na domovskou obrazovku</h3>Tuto webovou stránku můžete snadno přidat na domovskou obrazovku vašeho smartphonu, aby působila nativně. Klikněte na tlačítko „Přidat na domovskou obrazovku“ na panelu s adresou URL.",
+            "embedIntro": "<h3>Vložte mapu na své webové stránky</h3>Prosíme, vložte tuto mapu na své webové stránky. <br/>Doporučujeme vám to udělat - nemusíte ani žádat o povolení. <br/> Je a vždy to bude zdarma. Čím více lidí bude projekt používat, tím bude cennější.",
+            "fsAddNew": "Povolit tlačítko „přidat nový bod zájmu“",
+            "fsGeolocation": "Povolit tlačítko „geolokovat mě“ (pouze pro mobilní zařízení)",
+            "fsIncludeCurrentBackgroundMap": "Zahrnout aktuální volbu pozadí <b>{name}</b>",
+            "fsIncludeCurrentLayers": "Zahrnout aktuální volby vrstvy",
+            "fsIncludeCurrentLocation": "Zahrnout aktuální polohu",
+            "fsLayers": "Povolit ovládání vrstev",
+            "fsSearch": "Povolit vyhledávací pole",
+            "fsUserbadge": "Povolit tlačítko přihlášení",
+            "fsWelcomeMessage": "Zobrazit vyskakovací okno s uvítací zprávou a související karty",
+            "intro": "<h3>Sdílejte tuto mapu</h3> Sdílejte tuto mapu zkopírováním níže uvedeného odkazu a jeho zasláním přátelům a rodině:"
+        },
+        "skippedQuestions": "Některé otázky byly přeskočeny",
+        "testing": "Testování - změny se neuloží",
+        "weekdays": {
+            "abbreviations": {
+                "friday": "Pá",
+                "monday": "Po",
+                "saturday": "So",
+                "sunday": "Ne",
+                "thursday": "Čt",
+                "tuesday": "Út",
+                "wednesday": "St"
+            }
+        },
+        "welcomeBack": "Vítejte zpět!",
+        "welcomeExplanation": {
+            "addNew": "Klepněte na mapu pro přidání nového bodu zájmu.",
+            "general": "Na této mapě si můžete zobrazit, upravovat a přidávat <i>body zájmu</i>. Přibližováním si zobrazte body zájmu a klepnutím na jeden z nich si zobrazte nebo upravte informace. Všechna data pocházejí z OpenStreetMap a jsou v ní uložena, takže je lze volně používat."
         }
+    },
+    "hotkeyDocumentation": {
+        "action": "Akce",
+        "closeSidebar": "Zavře postranní panel",
+        "geolocate": "Posune mapu na aktuální polohu nebo ji přiblíží k aktuální poloze. Vyžaduje geooprávnění",
+        "intro": "MapComplete podporuje následující klávesy:",
+        "key": "Kombinace kláves",
+        "openLayersPanel": "Otevře panel Pozadí, vrstvy a filtry",
+        "selectBackground": "Vybrat vrstvu pozadí kategorie {kategorie}",
+        "selectMapnik": "Nastaví vrstvu pozadí na OpenStreetMap-carto",
+        "selectSearch": "Vybere vyhledávací řádek pro vyhledávání míst",
+        "title": "Klávesové zkratky"
+    },
+    "image": {
+        "addPicture": "Přidat fotku",
+        "dontDelete": "Zrušit",
+        "nearbyPictures": {
+            "browseNearby": "Procházet obrázky z okolí…",
+            "confirm": "Na vybraném obrázku je vidět {title()}",
+            "hasMatchingPicture": "Odpovídá obrázek objektu? Vyberte jej níže",
+            "loadMore": "Načíst další obrázky",
+            "loading": "Načítání obrázků z okolí…",
+            "noImageSelected": "Výběrem obrázku jej propojíte s objektem",
+            "onlyTowards": "Zobrazit pouze fotky pořízené směrem k tomuto objektu",
+            "withinRadius": "Zobrazit pouze fotky pořízené v okruhu {radius} metrů kolem tohoto objektu"
+        },
+        "pleaseLogin": "Pro přidání fotky se prosím přihlaste",
+        "uploadDone": "Vaše fotka byla přidána. Děkujeme za pomoc!",
+        "uploadMultipleDone": "Bylo přidáno {count} fotek. Děkujeme za pomoc!"
+    },
+    "index": {
+        "title": "Vítejte v MapComplete"
+    },
+    "matrixbot": {
+        "commands": {
+            "info": {
+                "closed": "Zavřeno",
+                "closedTodayAndTomorrow": "Zavřeno dnes a zítra"
+            },
+            "language": {
+                "helpTranslating": "Pomozte přeložit mé odpovědi na Weblate."
+            },
+            "search": {
+                "docs": "Vyhledá bod zájmu v nebo poblíž místa"
+            },
+            "welcome": {
+                "docs": "Zobrazí přátelskou uvítací zprávu"
+            }
+        }
+    },
+    "move": {
+        "cancel": "Zrušit přesun",
+        "inviteToMove": {
+            "generic": "Přesunout tento bod",
+            "reasonInaccurate": "Zlepšit přesnost tohoto bodu"
+        },
+        "inviteToMoveAgain": "Znovu přesunout tento bod",
+        "moveTitle": "Přesunout tento bod",
+        "reasons": {
+            "reasonInaccurate": "Umístění tohoto objektu je nepřesné a mělo by být posunuto o několik metrů",
+            "reasonRelocation": "Objekt byl přemístěn na úplně jiné místo"
+        },
+        "whyMove": "Proč chcete přesunout tento bod?"
+    },
+    "notes": {
+        "isClosed": "Tato poznámka je vyřešena"
+    },
+    "professional": {
+        "drawbacks": {
+            "unsuitedData": {
+                "li0": "Subjektivní data (například recenze) nejsou pro OpenStreetMap vhodná. MapComplete má však integraci se službou <a href='https://mangrove.reviews/'>Mangrove.reviews</a>, webem s otevřenou licencí pro recenze"
+            }
+        },
+        "indexPage": {
+            "button": "Objevte naše služby",
+            "hook": "Potřebujete profesionální podporu?",
+            "hookMore": "Můžeme vám pomoci s průzkumy, importem dat a poradenstvím v oblasti OpenStreetMap"
+        }
+    },
+    "reviews": {
+        "affiliated_reviewer_warning": "(Recenze od zaměstnance)",
+        "attribution": "Recenze jsou poskytovány službou <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> a jsou k dispozici pod licencí <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>.",
+        "i_am_affiliated": "<span>Jsem spojen/a s tímto objektem</span><br/><span class='subtle'>Zaškrtněte, pokud jste vlastníkem, tvůrcem, zaměstnancem, …</span>",
+        "name_required": "Pro zobrazení a vytváření recenzí je vyžadováno jméno",
+        "no_rating": "Před odesláním udělte hodnocení…",
+        "no_reviews_yet": "Zatím zde nejsou žádné recenze. Buďte první, kdo ji napíše, a pomozte otevřít data a podnikání!",
+        "plz_login": "Přihlaste se a zanechte recenzi",
+        "posting_as": "Přihlášeni jako",
+        "save": "Uložit",
+        "saved": "<span class='thanks'>Recenze uložena. Díky za sdílení!</span>",
+        "saving_review": "Ukládání…",
+        "title": "{count} recenzí",
+        "title_singular": "Jedna recenze",
+        "tos": "Zanecháním recenze souhlasíte s <a href='https://mangrove.reviews/terms' target='_blank'>podmínkami a zásadami ochrany osobních údajů služby Mangrove.reviews</a>",
+        "write_a_comment": "Zanechte recenzi…"
+    },
+    "split": {
+        "cancel": "Zrušit"
+    },
+    "translations": {
+        "activateButton": "Pomozte přeložit MapComplete"
+    },
+    "userinfo": {
+        "gotoInbox": "Otevřít poštu",
+        "gotoSettings": "Přejít do vašich nastavení na OpenStreetMap.org",
+        "moveToHome": "Přesunout mapu na vaší domovskou polohu",
+        "noDescription": "Na svém profilu zatím nemáte popis",
+        "noDescriptionCallToAction": "Přidat popis profilu",
+        "titleNotLoggedIn": "Vítejte",
+        "welcome": "Vítejte, {name}"
     }
 }
