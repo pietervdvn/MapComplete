@@ -15,17 +15,11 @@ Together, they want that more people take the bicycle and that cycling becomes s
 
 ## Motivations
 
-In order to create a safer cycling environment, Xavier wants to urge the local municipality to remove bollards from the cycleways if those bollards don't add a lot of value.
-But then, they first need to know _where_ all those bollards are.
+In order to create a safer cycling environment, Xavier wants to urge the local municipality to remove bollards from the cycleways if those bollards don't add value.
+But then, they first need to know _where_ all those bollards are - data that the municipality doesn't have as well.
 
-## Goals
+## Scenario
 
-Create a map of all bollards
+Xavier starts with adding all the bollards in his neighbourhood. He opens up the cycle-infra theme and adds all bollards that he sees while surveying all streets during an afternoon he is out on the streets.
 
-## Needs and expectations
-
-Easily add bollards to a map, easily show an overview map of where all the bollards are
-
-## Pain points & frustrations
-
-It is hard to create such a map and get an overview of this...
+He'll use the data afterwards to inform the municipality where bollards are. 

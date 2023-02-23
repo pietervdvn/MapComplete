@@ -18,11 +18,6 @@
 Tom works for the city council and is responsible for maintaining a lot of data and physical devices.
 His days are swamped with big and little tasks to keep everyone in the municipality safe.
 
-## Goals
-
-One of his tasks is to keep an up-to-date list of all the AEDs and to effectively communicate this to his citizens.
-Today, a citizen sent an email that they have installed an AED in their shop.
-
 ## Needs and expectations
 
 A map showing all nearby AED's, with their availability and if they are publicly accessible.
@@ -37,3 +32,16 @@ Ideally, all the AED's would show up in Google Maps as most people are familiar 
 It is hard to maintain a list of all AEDs and to keep this up to date.
 The map on the website is oudated and people don't know it exists.
 The list on the website is an excel-sheet; in case of an emergency it is nearly impossible to spot which AED is the closest.
+
+## User scenario
+
+All the AEDs have already been surveyed by [Maarten](./Maarten.md), so the data should be up to date.
+
+When a shop owner sends him an email that they installed an AED in their shop, he has some options:
+
+- he asks the shop owner to add the AED directly into MapComplete
+- he adds the AED himself - either remotely by the emailed information or by surveying locally
+
+Additionally, he gets an automatic message when someone made a change to an AED within the boundaries of the city, so that he can review it.
+
+Every while, he'll also download the data to make a report, e.g. on the total number of AEDs in the city or a heatmap of the distribution.
