@@ -29,6 +29,32 @@
             },
             "question": "Quines monedes es poden utilitzar per a pagar aquí?"
         },
+        "denominations-notes": {
+            "mappings": {
+                "0": {
+                    "then": "S'accepten billets de 5 euros"
+                },
+                "1": {
+                    "then": "S'accepten bitllets de 10 euros"
+                },
+                "2": {
+                    "then": "S'accepten bitllets de 20 euros"
+                },
+                "3": {
+                    "then": "S'accepten bitllets de 50 euros"
+                },
+                "4": {
+                    "then": "S'accepten bitllets de 100 euros"
+                },
+                "5": {
+                    "then": "S'accepten bitllets de 200 euros"
+                },
+                "6": {
+                    "then": "S'accepten bitllets de 500 euros"
+                }
+            },
+            "question": "Amb quins bitllets pot pagar aquí?"
+        },
         "description": {
             "question": "Hi ha quelcom rellevant que no t'hem preguntat? Afegeix-ho aquí. <br/><span style='font-size: small'>No repeteixis informació que ja hi és</span>"
         },

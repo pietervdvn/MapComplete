@@ -37,7 +37,7 @@
     },
     "bookcases": {
         "description": "Una librería pública es un pequeño armario en la calle, una caja, una vieja cabina telefónica o algún otro objeto donde se guardan libros. Todo el mundo puede colocar o coger un libro. Este mapa pretende recoger todas estas librerías. Puedes descubrir nuevas librerías cercanas y, con una cuenta gratuita de OpenStreetMap, añadir rápidamente tus librerías favoritas.",
-        "title": "Mapa de Librerías Abiertas"
+        "title": "Mapa abierto de estanterías"
     },
     "cafes_and_pubs": {
         "description": "Pubs y bares",
