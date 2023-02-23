@@ -24,7 +24,7 @@ Making an inventory of all AED's
 - See which items he's already checked and which he still has to visit
 - Add a picture and metadata about every AED
 
-## Scenario
+## User scenario
 
 ### Preparation
 

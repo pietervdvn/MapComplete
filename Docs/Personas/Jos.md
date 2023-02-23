@@ -14,3 +14,8 @@ As such, he'd like to facilitate crowdsourcing this data and importing them into
 For the POI that are missing - namely the charging stations for electrical bikes - he sets up a custom map with the custom theme generator and starts a media campaign by inviting all partners of the touristical agency to add information about charging stations that they know of. Additionally, a promo video is made to be circulated on social media.
 
 Additionally, a (guided) import is setup for the diverse datasets that are available so that the new points can be integrated as well.
+As these show up in the map to crowdsource as well, they can be imported and mapped along with the other points and are communicated as well.
+
+### Further use
+
+At last, to reuse this data, the OpenStreetMap-data is repacked into various formats (including a daily updated WFS). For this, already existing tools reused.
