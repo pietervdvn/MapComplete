@@ -6,6 +6,7 @@
 - Age: 20-30
 - Computer skills: Excellent
 
+## User scenario
 
 Pieter regularly contributes to OpenStreetMap and wants to keep the map up to date.
 
