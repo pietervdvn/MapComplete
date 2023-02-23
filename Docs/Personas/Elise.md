@@ -1,4 +1,4 @@
-# Persona: NAME (scenario summary)
+# Persona: Elise (communicating about POI)
 
 ## Background
 
@@ -34,8 +34,11 @@ And except for pumps, there are also a few poles where yools (such a screwdriver
 
 At last, these pumps and tools are broken sometimes, so how to communicate this to the public?
 
-## Needs and expectations
+## User scenario
 
+Elise want to have a read-only view with only pumps embedded on her website.
 
+As such, she creates an embed-link on the 'share'-screen where she disables some options to log in (and thus disables making edits), disables all layers she doesn't need and sets a home location.
 
-## Pain points & frustrations
+Furthermore, she makes a second version which only shows bicycle repair shops and embeds this on a different page.
+
