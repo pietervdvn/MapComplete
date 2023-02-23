@@ -471,7 +471,8 @@
         "cs": "Toto dílo vytvořil {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
         "pt": "Esta obra de arte foi feita por {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
         "es": "Esta obra de arte la creó {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
-        "ca": "Aquesta obra d'art la va crear {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+        "ca": "Aquesta obra d'art la va crear {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}",
+        "fr": "Cette oeuvre a été crée par {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
       },
       "question": {
         "en": "Who made this artwork?",

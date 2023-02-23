@@ -5,7 +5,7 @@
 
 
 
-This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters. With an OpenStreetMap account, you can map new benches or edit details of existing benches.
+This map shows all benches that are recorded in OpenStreetMap: Individual benches, and benches belonging to public transport stops or shelters.
 
 This theme contains the following layers:
 

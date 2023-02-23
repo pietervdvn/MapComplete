@@ -7,7 +7,7 @@
 
 <img src='https://mapcomplete.osm.be/./assets/layers/maproulette/logomark.svg' height="100px"> 
 
-Layer showing tasks of a MapRoulette challenge
+Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to the documentation on how to do this.
 
 
 

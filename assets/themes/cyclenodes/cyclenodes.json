@@ -56,7 +56,8 @@
           "de": "Knotenpunktverbindung",
           "es": "enlace nodo a nodo",
           "nl": "node-naar-node verbinding",
-          "fr": "lien noeud à noeud"
+          "fr": "lien noeud à noeud",
+          "ca": "Enllaç node a node"
         },
         "mappings": [
           {
@@ -66,7 +67,8 @@
               "de": "Knotenpunktverbindung <strong>{ref}</strong>",
               "es": "enlace nodo a nodo <strong>{ref}</strong>",
               "nl": "node-naar-node verbinding <strong>{ref}</strong>",
-              "fr": "lien noeud à noeud <strong>{ref}</strong>"
+              "fr": "lien noeud à noeud <strong>{ref}</strong>",
+              "ca": "Enllaç node a node <strong>{ref}</strong>"
             }
           }
         ]
@@ -96,7 +98,8 @@
             "de": "Diese Knotenpunktverbindung wurde zuletzt am {survey:date} überprüft",
             "es": "Este enlace nodo a nodo se sondeó por última vez el {survey:date}",
             "nl": "Deze node-naar-node verbinding werd het laast gesurveyed op {survey:date}",
-            "fr": "Cette lien de nœud à nœud a été vérifié sur le terrain le {survey:date}"
+            "fr": "Cette lien de nœud à nœud a été vérifié sur le terrain le {survey:date}",
+            "ca": "Aquest enllaç node a node es va sondejar per última vegada el {survey:date}"
           },
           "freeform": {
             "key": "survey:date",
@@ -171,14 +174,16 @@
             "de": "Wann wurde dieser Fahrradknotenpunkt zuletzt überprüft?",
             "es": "¿Cuándo fue sondeado este nodo ciclista por última vez?",
             "nl": "Wanneer is dit fietsknooppunt voor het laatst gecontroleerd?",
-            "fr": "Quand ce nœud cyclable a-t-il été vérifié sur le terrain pour la dernière fois ?"
+            "fr": "Quand ce nœud cyclable a-t-il été vérifié sur le terrain pour la dernière fois ?",
+            "ca": "Quan va ser sondejat aquest node ciclista per última vegada?"
           },
           "render": {
             "en": "This cycle node was last surveyed on {survey:date}",
             "de": "Dieser Fahrradknoten wurde zuletzt überprüft am {survey:date}",
             "es": "Este nodo ciclista se sondeó por última vez el {survey:date}",
             "nl": "Dit fietsknooppunt is voor het laatst gecontroleerd op {survey:date}",
-            "fr": "Ce nœud cycliste a été verifié pour la dernière fois le {survey:date}"
+            "fr": "Ce nœud cycliste a été verifié pour la dernière fois le {survey:date}",
+            "ca": "Aquest node ciclista es va sondejar per última vegada el {survey:date}"
           },
           "freeform": {
             "key": "survey:date",
@@ -198,14 +203,16 @@
             "de": "Mit wie vielen anderen Knoten des Fahrradknotenpunktnetzwerkes ist dieser Knoten verbunden?",
             "es": "¿A cuántos otros nodos ciclistas enlaza este nodo?",
             "nl": "Met hoeveel andere fietsknooppunten heeft dit knooppunt een verbinding?",
-            "fr": "A combien dautres nœuds vélo ce nœud est-il lié ?"
+            "fr": "A combien dautres nœuds vélo ce nœud est-il lié ?",
+            "ca": "A quants altes nodes ciclistes enllaça aquest node?"
           },
           "render": {
             "en": "This node links to {expected_rcn_route_relations} other cycle nodes.",
             "de": "Dieser Knoten ist mit {expected_rcn_route_relations} anderen Knoten des Fahrradknotenpunktnetzwerkes verbunden.",
             "nl": "Dit knooppunt verbindt met {expected_rcn_route_relations} andere fietsknooppunten.",
             "es": "Este nodo enlaza a {expected_rcn_route_relations} otros nodos ciclistas.",
-            "fr": "Ce noeud est lié à {expected_rcn_route_relations} d'autres noeuds cyclistes."
+            "fr": "Ce noeud est lié à {expected_rcn_route_relations} d'autres noeuds cyclistes.",
+            "ca": "Aquest node enllaça a {expected_rcn_route_relations} altres nodes ciclistes."
           },
           "freeform": {
             "key": "expected_rcn_route_relations",

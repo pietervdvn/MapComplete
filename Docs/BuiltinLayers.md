@@ -946,6 +946,7 @@ The following layers are included in MapComplete:
   - [climbing_gym](./Layers/climbing_gym.md)
   - [climbing_opportunity](./Layers/climbing_opportunity.md)
   - [climbing_route](./Layers/climbing_route.md)
+  - [clock](./Layers/clock.md)
   - [cluster_style](./Layers/cluster_style.md)
   - [conflation](./Layers/conflation.md)
   - [crab_address](./Layers/crab_address.md)

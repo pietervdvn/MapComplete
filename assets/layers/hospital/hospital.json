@@ -55,19 +55,22 @@
     {
       "id": "inpatient",
       "question": {
-        "en": "Does this facility admit inpatients?<br><span class='subtle'>An <i>inpatient</i> is a patient which stays for multiple days in the facility</span>"
+        "en": "Does this facility admit inpatients?<br><span class='subtle'>An <i>inpatient</i> is a patient which stays for multiple days in the facility</span>",
+        "de": "Nimmt die Einrichtung stationäre Patienten auf? <br><span class='subtil'>Ein <i>stationärer</i> Patient ist ein Patient, der mehrere Tage in der Einrichtung bleibt</span>"
       },
       "mappings": [
         {
           "if": "amenity=clinic",
           "then": {
-            "en": "This is a clinic - patients can not stay overnight"
+            "en": "This is a clinic - patients can not stay overnight",
+            "de": "Dies ist ein Medizinisches Versorgungszentrum - Patienten können nicht über Nacht bleiben"
           }
         },
         {
           "if": "amenity=hospital",
           "then": {
-            "en": "This is a hospital - patients can be admitted here for multiple days"
+            "en": "This is a hospital - patients can be admitted here for multiple days",
+            "de": "Dies ist ein Krankenhaus - Patienten können hier für mehrere Tage aufgenommen werden"
           }
         }
       ]

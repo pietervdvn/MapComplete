@@ -4,7 +4,7 @@
     "en": "Fries shops",
     "nl": "Friturenkaart",
     "fr": "Carte des friteries",
-    "de": "Pommes-frites-Läden",
+    "de": "Pommesbuden",
     "ca": "Botigues de patates",
     "da": "Pommes frites butik",
     "pa_PK": "فرائیاں دیاں دکاناں",
@@ -16,7 +16,8 @@
     "de": "Auf dieser Karte findest du deine Lieblings-Pommesbude!",
     "fr": "Retrouves vos friteries préférées sur cette carte !",
     "da": "På dette kort finder du din foretrukne pomfrits-butik!",
-    "cs": "Na této mapě najdete své oblíbené obchody s hranolky!"
+    "cs": "Na této mapě najdete své oblíbené obchody s hranolky!",
+    "ca": "A aquest mapa, trobaràs la teva botiga preferida de patates!"
   },
   "icon": "./assets/themes/fritures/logo.svg",
   "startLat": 0,

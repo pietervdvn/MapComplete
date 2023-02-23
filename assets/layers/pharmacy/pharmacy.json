@@ -60,7 +60,8 @@
         "en": "This pharmacy is called {name}",
         "de": "Der Name der Apotheke lautet {name}",
         "nl": "Deze apotheek heet {name}",
-        "ca": "Aquesta farmàcia es diu {name}"
+        "ca": "Aquesta farmàcia es diu {name}",
+        "fr": "Cette pharmacie s'appelle {name}"
       }
     },
     "opening_hours",

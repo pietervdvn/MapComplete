@@ -963,7 +963,7 @@
           "question": {
             "en": "Has a backrest",
             "nl": "Heeft een rugleuning",
-            "de": "Hat eine Rückenlehne",
+            "de": "Mit Rückenlehne",
             "fr": "A un dossier"
           }
         },
@@ -972,7 +972,7 @@
           "question": {
             "en": "Has no backrest",
             "nl": "Heeft geen rugleuning",
-            "de": "Hat keine Rückenlehne",
+            "de": "Ohne Rückenlehne",
             "fr": "N'a pas de dossier"
           }
         }

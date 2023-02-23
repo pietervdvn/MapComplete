@@ -2858,6 +2858,147 @@
             "render": "Klimroute"
         }
     },
+    "clock": {
+        "description": "Laag met publieke klokken",
+        "name": "Klokken",
+        "presets": {
+            "0": {
+                "description": "Een publiekelijk zichtbare klok",
+                "title": "een klok"
+            },
+            "1": {
+                "description": "Een publiekelijk zichtbare klok aan een muur",
+                "title": "een klok aan een muur"
+            }
+        },
+        "tagRenderings": {
+            "barometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok toont ook de luchtdruk"
+                    },
+                    "1": {
+                        "then": "Deze klok toont de luchtdruk niet"
+                    },
+                    "2": {
+                        "then": "Deze klok toont de luchtdruk waarschijnlijk niet"
+                    }
+                },
+                "question": "Toont deze klok ook de luchtdruk?"
+            },
+            "date": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok toont ook de datum"
+                    },
+                    "1": {
+                        "then": "Deze klok toont de datum niet"
+                    },
+                    "2": {
+                        "then": "Deze klok toont de datum waarschijnlijk niet"
+                    }
+                },
+                "question": "Toont deze klok ook de datum?"
+            },
+            "display": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok toont de tijd met wijzers"
+                    },
+                    "1": {
+                        "then": "Deze klok toont de tijd met cijfers"
+                    },
+                    "2": {
+                        "then": "Deze klok toont de tijd met een zonnewijzer"
+                    },
+                    "3": {
+                        "then": "Deze klok toont de tijd op een niet-standaard manier, bijvoorbeeld met binaire cijfers, water of iets anders"
+                    }
+                },
+                "question": "Hoe toont deze klok de tijd?"
+            },
+            "faces": {
+                "freeform": {
+                    "placeholder": "Aantal klokken"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok heeft één klok"
+                    },
+                    "1": {
+                        "then": "Deze klok heeft twee klokken"
+                    },
+                    "2": {
+                        "then": "Deze klok heeft vier klokken"
+                    }
+                },
+                "question": "Hoeveel klokken heeft deze klok?",
+                "render": "Deze klok heeft {faces} klokken"
+            },
+            "hygrometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok toont ook de luchtvochtigheid"
+                    },
+                    "1": {
+                        "then": "Deze klok toont de luchtvochtigheid niet"
+                    },
+                    "2": {
+                        "then": "Deze klok toont de luchtvochtigheid waarschijnlijk niet"
+                    }
+                },
+                "question": "Toont deze klok ook de luchtvochtigheid?"
+            },
+            "support": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok is bevestigd aan een paal"
+                    },
+                    "1": {
+                        "then": "Deze klok is bevestigd aan een muur"
+                    },
+                    "2": {
+                        "then": "Deze klok is onderdeel van een reclamebord"
+                    },
+                    "3": {
+                        "then": "Deze klok staat op de grond"
+                    }
+                },
+                "question": "Hoe is de klok bevestigd?"
+            },
+            "thermometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok toont ook de temperatuur"
+                    },
+                    "1": {
+                        "then": "Deze klok toont de temperatuur niet"
+                    },
+                    "2": {
+                        "then": "Deze klok toont de temperatuur waarschijnlijk niet"
+                    }
+                },
+                "question": "Toont deze klok ook de temperatuur?"
+            },
+            "visibility": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok is zichtbaar vanaf ongeveer 5 meter afstand (kleine klok aan een muur)"
+                    },
+                    "1": {
+                        "then": "Deze klok is zichtbaar vanaf ongeveer 20 meter afstand (klok op gemiddeld reclamebord)"
+                    },
+                    "2": {
+                        "then": "Deze klok is zichtbaar vanaf meer dan 20 meter afstand (kerkklok)"
+                    }
+                },
+                "question": "Hoe zichtbaar is deze klok?"
+            }
+        },
+        "title": {
+            "render": "Klok"
+        }
+    },
     "crab_address": {
         "tagRenderings": {
             "render_crab": {

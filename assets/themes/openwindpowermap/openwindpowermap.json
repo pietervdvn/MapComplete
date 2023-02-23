@@ -10,7 +10,7 @@
     "id": "OpenWindPowerMap",
     "hu": "OpenWindPowerMap",
     "nl": "Windmolens",
-    "ca": "OpenWindPowerMap",
+    "ca": "Mapa obert d'energia eòlica",
     "nb_NO": "ÅpentVindkraftKart",
     "pa_PK": "اوپن‌ونڈ‌پاور‌میپ"
   },
@@ -26,7 +26,8 @@
     "nl": "Een kaart om windturbines te tonen en te bewerken.",
     "da": "Et kort til visning og redigering af vindmøller.",
     "nb_NO": "Et kart for visning og redigering av vindmøller.",
-    "cs": "Mapa pro zobrazení a úpravy větrných turbín."
+    "cs": "Mapa pro zobrazení a úpravy větrných turbín.",
+    "ca": "Un mapa per a mostrar i editar turbines eòliques."
   },
   "startLat": 50.52,
   "startLon": 4.643,

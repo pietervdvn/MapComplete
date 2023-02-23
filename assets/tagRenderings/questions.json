@@ -697,7 +697,8 @@
             "ca": "Sols amb cita prèvia",
             "es": "Sólo con cita previa",
             "nb_NO": "Kun ved avtale",
-            "pl": "Tylko po wcześniejszym umówieniu się"
+            "pl": "Tylko po wcześniejszym umówieniu się",
+            "cs": "Pouze po domluvě"
           }
         },
         {
@@ -710,7 +711,8 @@
             "ca": "Sols amb cita prèvia",
             "es": "Sólo con cita previa",
             "nb_NO": "Kun ved avtale",
-            "pl": "Tylko po wcześniejszym umówieniu się"
+            "pl": "Tylko po wcześniejszym umówieniu się",
+            "cs": "Pouze po domluvě"
           },
           "hideInAnswer": true
         }
@@ -906,7 +908,7 @@
           "es": "Aquí se acepta el pago por tarjeta",
           "zh_Hans": "可用信用卡",
           "da": "Betalingskort accepteres her",
-          "cs": "Zde jsou přijímány platební karty"
+          "cs": "Jsou zde přijímány platební karty"
         }
       }
     ]
@@ -937,7 +939,8 @@
             "ca": "Aquí s'accepten monedes",
             "es": "Aquí se aceptan monedas",
             "nb_NO": "Mynter aksepteres her",
-            "pl": "Monety są tutaj akceptowane"
+            "pl": "Monety są tutaj akceptowane",
+            "cs": "Jsou zde přijímány mince"
           }
         },
         {
@@ -952,7 +955,8 @@
             "ca": "Aquí s'accepten bitllets",
             "es": "Aquí se aceptan billetes",
             "nb_NO": "Sedler aksepteres her",
-            "pl": "Banknoty są tutaj akceptowane"
+            "pl": "Banknoty są tutaj akceptowane",
+            "cs": "Jsou zde přijímány bankovky"
           }
         },
         {
@@ -967,7 +971,8 @@
             "ca": "Aquí s'accepten targetes de dèbit",
             "es": "Aquí se aceptan tarjetas de débito",
             "nb_NO": "Debetkort aksepteres her",
-            "pl": "Akceptowane są tutaj karty debetowe"
+            "pl": "Akceptowane są tutaj karty debetowe",
+            "cs": "Jsou zde přijímány debetní karty"
           }
         },
         {
@@ -982,7 +987,8 @@
             "ca": "Aquí s'accepten targetes de crèdit",
             "es": "Aquí se aceptan tarjetas de crédito",
             "nb_NO": "Kredittkort aksepteres her",
-            "pl": "Akceptowane są tutaj karty kredytowe"
+            "pl": "Akceptowane są tutaj karty kredytowe",
+            "cs": "Jsou zde přijímány kreditní karty"
           }
         }
       ]
@@ -1087,7 +1093,8 @@
       "pl": "Jakimi monetami można tutaj zapłacić?",
       "ca": "Quines monedes es poden utilitzar per a pagar aquí?",
       "es": "¿Qué monedas se pueden usar aquí para pagar?",
-      "nb_NO": "Hvilke mynter kan brukes til betaling her?"
+      "nb_NO": "Hvilke mynter kan brukes til betaling her?",
+      "cs": "Jakými mincemi zde lze platit?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -1102,7 +1109,8 @@
           "fr": "Les pièces d'1 cent sont acceptées",
           "pl": "Akceptowane są monety 1 centowe",
           "ca": "S'accepten monedes de 1 cèntim",
-          "es": "Se aceptan monedas de 1 céntimo"
+          "es": "Se aceptan monedas de 1 céntimo",
+          "cs": "Jsou přijímány mince v hodnotě 1 centu"
         }
       },
       {
@@ -1116,7 +1124,8 @@
           "fr": "Les pièces de 2 cents sont acceptées",
           "pl": "Akceptowane są monety 2 centowe",
           "ca": "S'accepten monedes de 2 cèntims",
-          "es": "Se aceptan monedas de 2 céntimos"
+          "es": "Se aceptan monedas de 2 céntimos",
+          "cs": "Jsou přijímány mince v hodnotě 2 centů"
         }
       },
       {
@@ -1130,7 +1139,8 @@
           "fr": "Les pièces de 5 cents sont acceptées",
           "pl": "Akceptowane są monety 5 centowe",
           "ca": "S'accepten monedes de 5 cèntims",
-          "es": "Se aceptan monedas de 5 céntimos"
+          "es": "Se aceptan monedas de 5 céntimos",
+          "cs": "Jsou přijímány mince v hodnotě 5 centů"
         }
       },
       {
@@ -1144,7 +1154,8 @@
           "fr": "Les pièces de 10 cents sont acceptées",
           "pl": "Akceptowane są monety 10-centowe",
           "ca": "S'accepten monedes de 10 cèntims",
-          "es": "Se aceptan monedas de 10 céntimos"
+          "es": "Se aceptan monedas de 10 céntimos",
+          "cs": "Jsou přijímány mince v hodnotě 10 centů"
         }
       },
       {
@@ -1158,7 +1169,8 @@
           "fr": "Les pièces de 20 cents sont acceptées",
           "pl": "Akceptowane są monety 20-centowe",
           "ca": "S'accepten monedes de 20 cèntims",
-          "es": "Se aceptan monedas de 20 céntimos"
+          "es": "Se aceptan monedas de 20 céntimos",
+          "cs": "Jsou přijímány mince v hodnotě 20 centů"
         }
       },
       {
@@ -1172,7 +1184,8 @@
           "fr": "Les pièces de 50 cents sont acceptées",
           "pl": "Akceptowane są monety 50-centowe",
           "ca": "S'accepten monedes de 50 cèntims",
-          "es": "Se aceptan monedas de 50 céntimos"
+          "es": "Se aceptan monedas de 50 céntimos",
+          "cs": "Jsou přijímány mince v hodnotě 50 centů"
         }
       },
       {
@@ -1186,7 +1199,8 @@
           "fr": "Les pièces de 1 euro sont acceptées",
           "pl": "Akceptowane są monety 1 euro",
           "ca": "S'accepten monedes de 1 euro",
-          "es": "Se aceptan monedas de 1 euro"
+          "es": "Se aceptan monedas de 1 euro",
+          "cs": "Jsou přijímány mince v hodnotě 1 eura"
         }
       },
       {
@@ -1200,7 +1214,8 @@
           "fr": "Les pièces de 2 euros sont acceptées",
           "pl": "Akceptowane są monety 2 euro",
           "ca": "S'accepten monedes de 2 euros",
-          "es": "Se aceptan monedas de 2 euros"
+          "es": "Se aceptan monedas de 2 euros",
+          "cs": "Jsou přijímány mince v hodnotě 2 euro"
         }
       }
     ]
@@ -1245,7 +1260,9 @@
       "nl": "Met welke bankbiljetten kan je hier betalen?",
       "de": "Mit welchen Banknoten kann man hier bezahlen?",
       "es": "¿con qué billetes se puede pagar aquí?",
-      "pl": "Jakimi banknotami można tu zapłacić?"
+      "pl": "Jakimi banknotami można tu zapłacić?",
+      "cs": "Jakými bankovkami zde lze platit?",
+      "ca": "Amb quins bitllets pot pagar aquí?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -1257,7 +1274,9 @@
           "nl": "Biljetten van 5 euro worden geaccepteerd",
           "de": "5-Euro-Scheine werden angenommen",
           "es": "Se aceptan billetes de 5 euros",
-          "pl": "Banknoty 5 euro są akceptowane"
+          "pl": "Banknoty 5 euro są akceptowane",
+          "cs": "Jsou přijímány bankovky v hodnotě 5 euro",
+          "ca": "S'accepten billets de 5 euros"
         }
       },
       {
@@ -1268,7 +1287,9 @@
           "nl": "Biljetten van 10 euro worden geaccepteerd",
           "de": "10-Euro-Scheine werden angenommen",
           "es": "Se aceptan billetes de 10 euros",
-          "pl": "Banknoty 10 euro są akceptowane"
+          "pl": "Banknoty 10 euro są akceptowane",
+          "cs": "Jsou přijímány bankovky v hodnotě 10 euro",
+          "ca": "S'accepten bitllets de 10 euros"
         }
       },
       {
@@ -1279,7 +1300,9 @@
           "nl": "Biljetten van 20 euro worden geaccepteerd",
           "de": "20-Euro-Scheine werden angenommen",
           "es": "Se aceptan billetes de 20 euros",
-          "pl": "Banknoty 20 euro są akceptowane"
+          "pl": "Banknoty 20 euro są akceptowane",
+          "cs": "Jsou přijímány bankovky v hodnotě 20 euro",
+          "ca": "S'accepten bitllets de 20 euros"
         }
       },
       {
@@ -1290,7 +1313,9 @@
           "nl": "Biljetten van 50 euro worden geaccepteerd",
           "de": "50-Euro-Scheine werden angenommen",
           "es": "Se aceptan billetes de 50 euros",
-          "pl": "Banknoty 50 euro są akceptowane"
+          "pl": "Banknoty 50 euro są akceptowane",
+          "cs": "Jsou přijímány bankovky v hodnotě 50 euro",
+          "ca": "S'accepten bitllets de 50 euros"
         }
       },
       {
@@ -1301,7 +1326,9 @@
           "nl": "Biljetten van 100 euro worden geaccepteerd",
           "de": "100-Euro-Scheine werden angenommen",
           "es": "Se aceptan billetes de 100 euros",
-          "pl": "Banknoty 100 euro są akceptowane"
+          "pl": "Banknoty 100 euro są akceptowane",
+          "cs": "Jsou přijímány bankovky v hodnotě 100 euro",
+          "ca": "S'accepten bitllets de 100 euros"
         }
       },
       {
@@ -1312,7 +1339,9 @@
           "nl": "Biljetten van 200 euro worden geaccepteerd",
           "de": "200-Euro-Scheine werden angenommen",
           "es": "Se aceptan billetes de 200 euros",
-          "pl": "Banknoty 200 euro są akceptowane"
+          "pl": "Banknoty 200 euro są akceptowane",
+          "cs": "Jsou přijímány bankovky v hodnotě 200 euro",
+          "ca": "S'accepten bitllets de 200 euros"
         }
       },
       {
@@ -1323,7 +1352,9 @@
           "nl": "Biljetten van 500 euro worden geaccepteerd",
           "de": "500-Euro-Scheine werden angenommen",
           "es": "Se aceptan billetes de 500 euros",
-          "pl": "Banknoty 500 euro są akceptowane"
+          "pl": "Banknoty 500 euro są akceptowane",
+          "cs": "Jsou přijímány bankovky v hodnotě 500 euro",
+          "ca": "S'accepten bitllets de 500 euros"
         }
       }
     ]

@@ -272,7 +272,7 @@
           "question": {
             "en": "All types of kerbs",
             "nl": "Alle typen stoepranden",
-            "de": "Alle Arten von Bordsteinen",
+            "de": "Alle Bordsteine",
             "fr": "Tous types de bordures",
             "ru": "Все виды бордюров"
           }
@@ -282,7 +282,7 @@
           "question": {
             "en": "Raised kerb (>3 cm)",
             "nl": "Hoge stoeprand (>3 cm)",
-            "de": "Erhöhter Bordstein (>3 cm)",
+            "de": "Erhöhte Bordsteine (>3 cm)",
             "fr": "Bordure surélevée (>3 cm)"
           }
         },
@@ -291,7 +291,7 @@
           "question": {
             "en": "Lowered kerb (~3 cm)",
             "nl": "Verlaagde stoeprand (~3 cm)",
-            "de": "Abgesenkter Bordstein (~3 cm)",
+            "de": "Abgesenkte Bordsteine (~3 cm)",
             "fr": "Bordure abaissée (~3 cm)",
             "ru": "Пониженный бордюр (~3 см)"
           }
@@ -301,7 +301,7 @@
           "question": {
             "en": "Flush kerb (~0cm)",
             "nl": "Vlakke stoeprand (~0cm)",
-            "de": "Bündiger Bordstein (~0 cm)",
+            "de": "Bündige Bordsteine (~0 cm)",
             "fr": "Bordure affleurante (~0cm)",
             "ru": "Вровень с дорогой (~0 см)"
           }
@@ -321,7 +321,7 @@
           "question": {
             "en": "Kerb with unknown height",
             "nl": "Stoeprand met onbekende hoogte",
-            "de": "Bordstein mit unbekannter Höhe",
+            "de": "Bordsteine unbekannter Höhe",
             "fr": "Bordure de hauteur inconnue"
           }
         }

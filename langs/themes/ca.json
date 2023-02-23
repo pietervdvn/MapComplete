@@ -725,6 +725,19 @@
     },
     "onwheels": {
         "layers": {
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "1": {
+                                    "question": "Sense informació de l'amplada"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "19": {
                 "override": {
                     "=title": {
@@ -739,19 +752,6 @@
                             "render": {
                                 "special": {
                                     "text": "Importar"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "4": {
-                "override": {
-                    "filter": {
-                        "0": {
-                            "options": {
-                                "1": {
-                                    "question": "Sense informació de l'amplada"
                                 }
                             }
                         }

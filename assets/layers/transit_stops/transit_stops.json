@@ -3,7 +3,8 @@
   "name": {
     "en": "Transit Stops",
     "de": "Haltestellen",
-    "da": "Transitstationer"
+    "da": "Transitstationer",
+    "fr": "Arrêts de transport en commun"
   },
   "description": {
     "en": "Layer showing different types of transit stops.",
@@ -65,7 +66,8 @@
         "de": "Der Name der Haltestelle lautet <b>{name}</b>",
         "da": "Dette stop hedder <b>{name}</b>",
         "nl": "Deze halte heet <b>{name}</b>",
-        "ca": "Aquesta parada es diu <b>{name}</b>"
+        "ca": "Aquesta parada es diu <b>{name}</b>",
+        "fr": "Cet arrêt est nommé <b>{name}</b>"
       },
       "freeform": {
         "key": "name",
@@ -116,7 +118,8 @@
             "de": "Die Haltestelle hat einen Unterstand",
             "da": "Dette stop har et ly",
             "nl": "Deze halte heeft een schuilplaats",
-            "ca": "Aquesta parada té una coberta"
+            "ca": "Aquesta parada té una coberta",
+            "fr": "Cet arrêt a un abri"
           }
         },
         {
@@ -126,7 +129,8 @@
             "de": "Die Haltestelle hat <b>keinen</b> Unterstand",
             "da": "Dette stop har ikke et ly",
             "nl": "Deze halte heeft <b>geen</b> schuilplaats",
-            "ca": "Aquesta parada <b>no</b> té una coberta"
+            "ca": "Aquesta parada <b>no</b> té una coberta",
+            "fr": "Cet arrêt <b>n'a pas</b> d'abri"
           }
         },
         {
@@ -144,7 +148,8 @@
         "de": "Hat die Haltestelle einen Unterstand?",
         "da": "Har dette stop et ly?",
         "nl": "Heeft deze halte een schuilplaats?",
-        "ca": "Aquesta parada té una coberta?"
+        "ca": "Aquesta parada té una coberta?",
+        "fr": "Cet arrêt a-t-il un abri ?"
       }
     },
     {
@@ -157,7 +162,8 @@
             "de": "Die Haltestelle hat eine Bank",
             "da": "Dette stop har en bænk",
             "nl": "Deze halte heeft een zitbank",
-            "ca": "Aquesta parada té un banc"
+            "ca": "Aquesta parada té un banc",
+            "fr": "Cet arrêt a un banc"
           }
         },
         {
@@ -167,7 +173,8 @@
             "de": "Die Haltestelle hat <b>keine</b> Sitzbank",
             "da": "Dette stoppested har ingen bænk",
             "nl": "Deze halte heeft <b>geen</b> zitbank",
-            "ca": "Aquesta parada <b>no</b> té un banc"
+            "ca": "Aquesta parada <b>no</b> té un banc",
+            "fr": "Cet arrêt <b>n'a pas</b> de banc"
           }
         },
         {
@@ -198,7 +205,8 @@
             "de": "Die Haltestelle hat einen Mülleimer",
             "da": "Dette stop har en skraldespand",
             "nl": "Deze halte heeft een vuilnisbak",
-            "ca": "Aquesta parada té una paperera"
+            "ca": "Aquesta parada té una paperera",
+            "fr": "Cet arrêt a un poubelle"
           }
         },
         {
@@ -208,7 +216,8 @@
             "de": "Die Haltestelle hat <b>keinen</b> Mülleimer",
             "da": "Dette stoppested har ikke en skraldespand",
             "nl": "Deze halte heeft <b>geen</b> vuilnisbak",
-            "ca": "Aquesta parada <b>no</b> té paperera"
+            "ca": "Aquesta parada <b>no</b> té paperera",
+            "fr": "Cet arrêt <b>n'a pas</b> de poubelle"
           }
         },
         {
@@ -239,7 +248,8 @@
             "en": "This stop has tactile paving",
             "de": "Die Haltestelle hat ein taktiles Pflaster",
             "ca": "Aquesta parada té una superfície podotàctil",
-            "nl": "Deze halte heeft een geleidelijn"
+            "nl": "Deze halte heeft een geleidelijn",
+            "fr": "Cet arrêt a une surface podotactile"
           }
         },
         {
@@ -248,7 +258,8 @@
             "en": "This stop does <b>not</b> have tactile paving",
             "de": "Die Haltestelle hat <b>kein</b> taktiles Pflaster",
             "ca": "Aquesta parada <b>no</b> té superfície podotàctil",
-            "nl": "Deze halte heeft <b>geen</b> geleidelijn"
+            "nl": "Deze halte heeft <b>geen</b> geleidelijn",
+            "fr": "Cet arrêt <b>n'a pas</b> de surface podotactile"
           }
         }
       ],
@@ -256,7 +267,8 @@
         "en": "Does this stop have tactile paving?",
         "de": "Hat die Haltestelle hat ein taktiles Pflaster?",
         "ca": "Aquesta parada té una superfície podotàctil?",
-        "nl": "Heeft deze halte een geleidelijn?"
+        "nl": "Heeft deze halte een geleidelijn?",
+        "fr": "Cet arrêt a-t-il une surface podotactile ?"
       }
     },
     {
@@ -268,7 +280,8 @@
             "en": "This stop is lit",
             "de": "Die Haltestelle ist beleuchtet",
             "nl": "Deze halte is verlicht",
-            "ca": "Aquesta parada té il·luminació"
+            "ca": "Aquesta parada té il·luminació",
+            "fr": "Cet arrêt est éclairé"
           }
         },
         {
@@ -278,7 +291,8 @@
             "de": "Die Haltestelle hat <b>keine</b> Beleuchtung",
             "da": "Dette stop lyser ikke",
             "nl": "Deze halte is <b>niet</b> verlicht",
-            "ca": "Aquesta parada <b>no</b> té il·luminació"
+            "ca": "Aquesta parada <b>no</b> té il·luminació",
+            "fr": "Cet arrêt <b>n'est pas</b> éclairé"
           }
         }
       ],
@@ -286,7 +300,8 @@
         "en": "Is this stop lit?",
         "de": "Ist die Haltestelle beleuchtet?",
         "nl": "Is deze halte verlicht?",
-        "ca": "Aquesta parada té il·luminació?"
+        "ca": "Aquesta parada té il·luminació?",
+        "fr": "Cet arrêt est-il éclairé ?"
       }
     },
     {
@@ -306,7 +321,8 @@
           "then": {
             "en": "This stop has a board showing realtime departure information",
             "de": "Die Haltestelle hat einen Fahrplan, der Abfahrtszeiten in Echtzeit anzeigt",
-            "da": "Dette stop har en tavle med oplysninger om afgang i realtid"
+            "da": "Dette stop har en tavle med oplysninger om afgang i realtid",
+            "fr": "Cet arrêt a un panneau indiquant les départs en temps réel"
           }
         },
         {
@@ -369,7 +385,8 @@
           },
           "question": {
             "en": "With a shelter",
-            "de": "Mit einem Unterstand"
+            "de": "Mit Unterstand",
+            "fr": "Avec un abri"
           }
         }
       ]
@@ -386,7 +403,8 @@
           },
           "question": {
             "en": "With a bench",
-            "de": "Mit einer Bank"
+            "de": "Mit Sitzbank",
+            "fr": "Avec un banc"
           }
         }
       ]
@@ -403,7 +421,8 @@
           },
           "question": {
             "en": "With a bin",
-            "de": "Mit einem Mülleimer"
+            "de": "Mit Mülleimer",
+            "fr": "Avec un poubelle"
           }
         }
       ]

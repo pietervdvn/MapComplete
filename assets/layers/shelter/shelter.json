@@ -4,7 +4,8 @@
     "en": "Shelter",
     "de": "Unterstände",
     "nl": "Schuilplaats",
-    "ca": "Refugi"
+    "ca": "Refugi",
+    "fr": "Abri"
   },
   "description": {
     "en": "Layer showing shelter structures",

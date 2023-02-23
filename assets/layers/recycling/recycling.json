@@ -1013,7 +1013,7 @@
       "render": {
         "en": "This recycling facility is operated by {operator}",
         "nl": "Deze recyclingfaciliteit wordt beheerd door {operator}",
-        "de": "Diese Recyclinganlage wird betrieben von {operator}",
+        "de": "Die Recyclingeinrichtung wird betrieben von {operator}",
         "es": "Esta infraestructura de reciclado la opera {operator}",
         "it": "Questa struttura di raccola e riciclo è gestita da {operator}",
         "ca": "Aquesta infraestuctura de reciclatge està operada per {operator}"
@@ -1314,7 +1314,7 @@
           "question": {
             "en": "Only public access",
             "nl": "Enkel publiek toegankelijke afvalcontainers",
-            "de": "Nur öffentliche Mülltonnen",
+            "de": "Nur öffentliche Recyclingeinrichtungen",
             "it": "Solo accesso pubblico",
             "id": "Hanya akses publik",
             "da": "Kun offentlig adgang"

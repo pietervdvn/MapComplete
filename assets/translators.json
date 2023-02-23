@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 247,
+      "commits": 249,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 238,
+      "commits": 245,
       "contributor": "kjon"
     },
     {
@@ -13,7 +13,7 @@
       "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 69,
+      "commits": 72,
       "contributor": "paunofu"
     },
     {
@@ -122,6 +122,10 @@
     },
     {
       "commits": 7,
+      "contributor": "Lucas"
+    },
+    {
+      "commits": 7,
       "contributor": "快乐的老鼠宝宝"
     },
     {
@@ -210,10 +214,6 @@
     },
     {
       "commits": 4,
-      "contributor": "Lucas"
-    },
-    {
-      "commits": 4,
       "contributor": "André Marcelo Alvarenga"
     },
     {
@@ -239,6 +239,10 @@
     {
       "commits": 4,
       "contributor": "Jan Zabel"
+    },
+    {
+      "commits": 3,
+      "contributor": "Fjuro"
     },
     {
       "commits": 3,

@@ -2,9 +2,9 @@
   "id": "etymology",
   "#": "A layer showing all objects having etymology info (either via `name:etymology:wikidata` or `name:etymology`. The intention is that this layer is reused for a certain category to also _ask_ for information",
   "name": {
-    "en": "Has etymolgy",
+    "en": "Has etymology",
     "nl": "Heeft etymology info",
-    "de": "Objekte mit Informationen zur Namensherkunft",
+    "de": "Objekte mit Namensherkunft",
     "fr": "A une étymologie"
   },
   "minzoom": 12,

@@ -3,18 +3,21 @@
   "name": {
     "en": "Railway Platforms",
     "de": "Bahnsteige",
-    "nl": "Treinperrons"
+    "nl": "Treinperrons",
+    "fr": "Quais de gare"
   },
   "description": {
     "en": "Find every platform in the station, and the train routes that use them.",
     "de": "Finden Sie alle Bahnsteige im Bahnhof und die Zugstrecken, die sie benutzen.",
-    "nl": "Vind elk perron in het station, en de routes die ze gebruiken."
+    "nl": "Vind elk perron in het station, en de routes die ze gebruiken.",
+    "fr": "Trouvez tous les quais dans la gare, et les lignes ferroviaires qui les utilisent."
   },
   "title": {
     "render": {
       "en": "Platform",
       "de": "Bahnsteig",
-      "nl": "Perron"
+      "nl": "Perron",
+      "fr": "Quai"
     },
     "mappings": [
       {
@@ -22,7 +25,8 @@
         "then": {
           "en": "Platform {ref}",
           "de": "Bahnsteig {ref}",
-          "nl": "Perron {ref}"
+          "nl": "Perron {ref}",
+          "fr": "Quai {ref}"
         }
       }
     ]
@@ -41,7 +45,8 @@
       "question": {
         "en": "What is the number for this platform?",
         "de": "Wie lautet die Nummer dieses Bahnsteigs?",
-        "nl": "Wat is het nummer van dit perron?"
+        "nl": "Wat is het nummer van dit perron?",
+        "fr": "Quel est le numéro de ce quai ?"
       },
       "freeform": {
         "key": "ref",
@@ -49,13 +54,15 @@
         "placeholder": {
           "en": "Platform number",
           "de": "Bahnsteignummer",
-          "nl": "Perronnummer"
+          "nl": "Perronnummer",
+          "fr": "Numéro de quai"
         }
       },
       "render": {
         "en": "Platform {ref}",
         "de": "Bahnsteig {ref}",
-        "nl": "Perron {ref}"
+        "nl": "Perron {ref}",
+        "fr": "Quai {ref}"
       }
     },
     "level"

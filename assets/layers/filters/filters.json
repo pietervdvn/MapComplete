@@ -64,7 +64,7 @@
           "question": {
             "en": "With and without images",
             "nl": "Met en zonder afbeelding",
-            "de": "Mit und ohne Bilder"
+            "de": "Mit und ohne Bild"
           }
         },
         {
@@ -169,7 +169,7 @@
           },
           "question": {
             "en": "Has organic options",
-            "de": "Hat Bio-Produkte",
+            "de": "Bio-Produkte im Angebot",
             "nl": "Heeft biologische opties"
           }
         }

@@ -3,7 +3,7 @@
   "name": {
     "en": "Waste Disposal Bins",
     "nl": "Afvalcontainers voor huishoudelijk afval",
-    "de": "Mülltonnen",
+    "de": "Mülltonnen und Müllcontainer",
     "it": "Contenitori per la raccolta differenziata",
     "id": "Tempat Pembuangan Limbah",
     "da": "Affaldsspande"
@@ -77,14 +77,14 @@
           "if": "amenity=waste_disposal",
           "then": {
             "en": "This is a medium to large bin for disposal of (household) waste",
-            "de": "Dies ist ein mittelgroßer bis großer Behälter für die Entsorgung von (Haushalts-)Abfällen"
+            "de": "Dies ist eine Mülltonne oder ein Müllcontainer für (Haushalts-)Abfälle"
           }
         },
         {
           "if": "amenity=recycling",
           "then": {
             "en": "This is actually a recycling container",
-            "de": "Dies ist eigentlich ein Recycling-Container"
+            "de": "Dies ist eigentlich ein Recyclingcontainer"
           },
           "addExtraTags": [
             "recycling_type=container"
@@ -188,7 +188,7 @@
           "then": {
             "en": "This container is located outdoors",
             "nl": "Deze container is buiten",
-            "de": "Die Mülltonne befindet sich im Freien",
+            "de": "Die Mülltonne bzw. der Müllcontainer befindet sich im Freien",
             "it": "Questo contenitore è all'aperto",
             "id": "Kontainer ini terletak di luar ruangan",
             "da": "Denne container er placeret udendørs"

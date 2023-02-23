@@ -13,7 +13,8 @@
     "da": "Hundsteder",
     "de": "Diese Karte zeigt interessante Orte für Haustierbesitzer: Tierärzte, Hundeparks, Tiergeschäfte, hundefreundliche Restaurants, ...",
     "nl": "Deze kaart helpt je op weg met je huisdier: dierenartsen, hondenloopzones, dierenwinkels, hondenvriendelijke restaurants, ...",
-    "fr": "Retrouvez sur cette carte des points d’intérêts pour votre animal : vétérinaires, parcs à chien, animaleries, restaurants acceptant les chiens, etc."
+    "fr": "Retrouvez sur cette carte des points d’intérêts pour votre animal : vétérinaires, parcs à chien, animaleries, restaurants acceptant les chiens, etc.",
+    "ca": "A aquest mapa, trobaràs diferents llocs interesants per a les teves mascotes: veterinaris, parcs per a gossos, botigues d'animals, restaurants amables amb gossos, ..."
   },
   "icon": "./assets/layers/dogpark/dog-park.svg",
   "startZoom": 10,
@@ -31,7 +32,8 @@
           "de": "Hundefreundliche Restaurants",
           "nb_NO": "Hundevennlige spisesteder",
           "nl": "Hondvriendelijke eetgelegenheden",
-          "fr": "Restaurants acceptant les chiens"
+          "fr": "Restaurants acceptant les chiens",
+          "ca": "Restaurants que accepten gossos"
         },
         "mapRendering": [
           {

@@ -61,14 +61,16 @@
         "en": "The maximum allowed speed on this road is {canonical(maxspeed)}",
         "de": "Die zulässige Höchstgeschwindigkeit auf dieser Straße beträgt {canonical(maxspeed)}",
         "nl": "De maximum toegestane snelheid op deze weg is {canonical(maxspeed)}",
-        "ca": "La velocitat màxima permesa a aquesta via és {canonical(maxspeed)}"
+        "ca": "La velocitat màxima permesa a aquesta via és {canonical(maxspeed)}",
+        "fr": "La vitesse maximum autorisée sur cette route est {canonical(maxspeed)}"
       },
       "question": {
         "es": "Qué velocidad tiene",
         "ca": "Quina és la velocitat màxima legal que es permet conduir en aquesta carretera?",
         "en": "What is the legal maximum speed one is allowed to drive on this road?",
         "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",
-        "nl": "Wat is de legale maximumsnelheid voor deze weg?"
+        "nl": "Wat is de legale maximumsnelheid voor deze weg?",
+        "fr": "Quelle est la vitesse maximum autorisée sur cette route ?"
       },
       "freeform": {
         "key": "maxspeed",

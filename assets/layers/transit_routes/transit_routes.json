@@ -85,7 +85,8 @@
         "en": "This bus line begins at {from}",
         "de": "Die Buslinie startet von {from}",
         "nl": "Deze buslijn begint bij {from}",
-        "da": "Denne buslinje starter kl. {from}"
+        "da": "Denne buslinje starter kl. {from}",
+        "fr": "Cette ligne de bus commence à {from}"
       },
       "question": {
         "en": "What is the starting point for this bus line?",
@@ -106,7 +107,8 @@
         "en": "This bus line goes via {via}",
         "de": "Die Buslinie fährt über {via}",
         "nl": "Deze buslijn gaat via {via}",
-        "da": "Denne buslinje går via {via}"
+        "da": "Denne buslinje går via {via}",
+        "fr": "Cette ligne de bus passe par {via}"
       },
       "question": {
         "en": "What is the via point for this bus line?",
@@ -125,7 +127,8 @@
         "en": "This bus line ends at {to}",
         "de": "Der Endpunkt der Buslinie ist {to}",
         "nl": "Deze buslijn eindigt bij {to}",
-        "da": "Denne buslinje slutter ved {to}"
+        "da": "Denne buslinje slutter ved {to}",
+        "fr": "Cette ligne de bus termine à {to}"
       },
       "question": {
         "en": "What is the ending point for this bus line?",
@@ -165,7 +168,8 @@
         "en": "This bus line is part of the {network} network",
         "de": "Die Buslinie gehört zum Verkehrsverbund {network}",
         "nl": "Deze buslijn is onderdeel van het {network} netwerk",
-        "ca": "Aquesta línea d'autobús és part de la xarxa {network}"
+        "ca": "Aquesta línea d'autobús és part de la xarxa {network}",
+        "fr": "Cette ligne de bus fait partie du réseau {network}"
       },
       "question": {
         "en": "What network does this bus line belong to?",
@@ -186,7 +190,8 @@
         "de": "Die Buslinie wird betrieben von {operator}",
         "nl": "Deze buslijn wordt geëxploiteerd door {operator}",
         "da": "Denne buslinje drives af {operator}",
-        "ca": "{operator} opera aquesta línea d'autobús"
+        "ca": "{operator} opera aquesta línea d'autobús",
+        "fr": "Cette ligne de bus est gérée par {operator}"
       },
       "question": {
         "en": "What company operates this bus line?",

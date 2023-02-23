@@ -5,7 +5,7 @@
 
 
 
-A public bookcase is a small streetside cabinet, box, old phone booth or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases. You can discover new bookcases nearby and, with a free OpenStreetMap account, quickly add your favourite bookcases.
+A public bookcase is a small streetside cabinet, box, old phone booth or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases.
 
 This theme contains the following layers:
 

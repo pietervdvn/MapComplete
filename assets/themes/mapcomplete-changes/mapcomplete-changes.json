@@ -175,6 +175,10 @@
                 "then": "./assets/themes/climbing/climbing_icon.svg"
               },
               {
+                "if": "theme=clock",
+                "then": "./assets/layers/clock/clock.svg"
+              },
+              {
                 "if": "theme=cycle_highways",
                 "then": "./assets/themes/cycle_highways/fietssnelwegen-logo.svg"
               },

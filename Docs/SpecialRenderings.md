@@ -787,7 +787,7 @@ Id-key | id | The property name where the ID of the note to close can be found
 
 #### Example usage of add_image_to_note 
 
- The following example sets the status to '2' (false positive)
+  The following example sets the status to '2' (false positive)
 
 ```json
 {

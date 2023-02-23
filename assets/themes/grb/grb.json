@@ -13,7 +13,8 @@
     "de": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen.",
     "fr": "Ce thème tente d’aider l’import automatique GRB.",
     "es": "Este tema es un intento de automatizar la importación GRB.",
-    "da": "Dette tema er et forsøg på at hjælpe med at automatisere GRB-importen."
+    "da": "Dette tema er et forsøg på at hjælpe med at automatisere GRB-importen.",
+    "ca": "Aquest tema és un intent d'automatitzar la importació GRB."
   },
   "icon": "./assets/themes/grb/logo.svg",
   "startLat": 51.0249,
@@ -118,7 +119,8 @@
             "nl": "Wat voor soort gebouw is dit?",
             "fr": "De quel type de bâtiment s’agit-il ?",
             "da": "Hvad er det for en bygning?",
-            "cs": "Jaký druh budovy je toto?"
+            "cs": "Jaký druh budovy je toto?",
+            "ca": "Quin tipus d'edifici és aquest?"
           },
           "mappings": [
             {

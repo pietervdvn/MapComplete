@@ -98,15 +98,6 @@
                     "1": {
                         "then": "Peinture murale"
                     },
-                    "10": {
-                        "then": "Azulejo (faïence latine)"
-                    },
-                    "11": {
-                        "then": "Carrelage"
-                    },
-                    "12": {
-                        "then": "Sculpture sur bois"
-                    },
                     "2": {
                         "then": "Peinture"
                     },
@@ -130,6 +121,15 @@
                     },
                     "9": {
                         "then": "Relief"
+                    },
+                    "10": {
+                        "then": "Azulejo (faïence latine)"
+                    },
+                    "11": {
+                        "then": "Carrelage"
+                    },
+                    "12": {
+                        "then": "Sculpture sur bois"
                     }
                 },
                 "question": "Quel est le type de cette œuvre d'art ?",
@@ -1991,15 +1991,6 @@
                     "1": {
                         "then": "Cette piste cyclable est goudronée"
                     },
-                    "10": {
-                        "then": "Cette piste cyclable est faite en graviers fins"
-                    },
-                    "11": {
-                        "then": "Cette piste cyclable est en cailloux"
-                    },
-                    "12": {
-                        "then": "Cette piste cyclable est faite en sol brut"
-                    },
                     "2": {
                         "then": "Cette piste cyclable est asphaltée"
                     },
@@ -2023,6 +2014,15 @@
                     },
                     "9": {
                         "then": "Cette piste cyclable est faite en graviers"
+                    },
+                    "10": {
+                        "then": "Cette piste cyclable est faite en graviers fins"
+                    },
+                    "11": {
+                        "then": "Cette piste cyclable est en cailloux"
+                    },
+                    "12": {
+                        "then": "Cette piste cyclable est faite en sol brut"
                     }
                 },
                 "question": "De quoi est faite la surface de la piste cyclable ?",
@@ -2071,15 +2071,6 @@
                     "1": {
                         "then": "Cette piste cyclable est pavée"
                     },
-                    "10": {
-                        "then": "Cette piste cyclable est faite en graviers fins"
-                    },
-                    "11": {
-                        "then": "Cette piste cyclable est en cailloux"
-                    },
-                    "12": {
-                        "then": "Cette piste cyclable est faite en sol brut"
-                    },
                     "2": {
                         "then": "Cette piste cyclable est asphaltée"
                     },
@@ -2103,6 +2094,15 @@
                     },
                     "9": {
                         "then": "Cette piste cyclable est faite en graviers"
+                    },
+                    "10": {
+                        "then": "Cette piste cyclable est faite en graviers fins"
+                    },
+                    "11": {
+                        "then": "Cette piste cyclable est en cailloux"
+                    },
+                    "12": {
+                        "then": "Cette piste cyclable est faite en sol brut"
                     }
                 },
                 "question": "De quel materiel est faite cette rue ?",
@@ -2922,21 +2922,6 @@
                     "1": {
                         "then": "C'est une friterie"
                     },
-                    "10": {
-                        "then": "Des plats chinois sont servis ici"
-                    },
-                    "11": {
-                        "then": "Des plats grecs sont servis ici"
-                    },
-                    "12": {
-                        "then": "Des plats indiens sont servis ici"
-                    },
-                    "13": {
-                        "then": "Des plats turcs sont servis ici"
-                    },
-                    "14": {
-                        "then": "Des plats thaïlandais sont servis ici"
-                    },
                     "2": {
                         "then": "Restaurant Italien"
                     },
@@ -2960,6 +2945,21 @@
                     },
                     "9": {
                         "then": "Des plats français sont servis ici"
+                    },
+                    "10": {
+                        "then": "Des plats chinois sont servis ici"
+                    },
+                    "11": {
+                        "then": "Des plats grecs sont servis ici"
+                    },
+                    "12": {
+                        "then": "Des plats indiens sont servis ici"
+                    },
+                    "13": {
+                        "then": "Des plats turcs sont servis ici"
+                    },
+                    "14": {
+                        "then": "Des plats thaïlandais sont servis ici"
                     }
                 },
                 "question": "Quelle type de nourriture est servie ici ?",

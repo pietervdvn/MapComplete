@@ -102,6 +102,7 @@
   - climbing_area
   - climbing_gym
   - climbing_route
+  - clock
   - crossings
   - defibrillator
   - dentist

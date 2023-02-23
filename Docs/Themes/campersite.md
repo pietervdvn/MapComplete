@@ -5,7 +5,7 @@
 
 
 
-This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews. This is a website and a webapp. The data is stored in OpenStreetMap, so it will be free forever and can be re-used by any app.
+This site collects all official camper stopover places and places where you can dump grey and black water. You can add details about the services provided and the cost. Add pictures and reviews.
 
 This theme contains the following layers:
 

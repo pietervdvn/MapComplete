@@ -184,11 +184,20 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/climbing climbing]
 |region= Worldwide
-|lang= {{#language:nl|en}}, {{#language:de|en}}, {{#language:en|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:nl|en}}, {{#language:de|en}}, {{#language:en|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}
 |descr= A MapComplete theme: On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
 |genre= POI, editor, climbing
+}}
+{{service_item
+|name= [https://mapcomplete.osm.be/clock clock]
+|region= Worldwide
+|lang= {{#language:en|en}}, {{#language:nl|en}}
+|descr= A MapComplete theme: Map showing all public clocks
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, clock
 }}
 {{service_item
 |name= [https://mapcomplete.osm.be/cycle_infra cycle_infra]
@@ -238,7 +247,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/fritures fritures]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}
 |descr= A MapComplete theme: On this map, you'll find your favourite fries shop!
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -337,7 +346,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/observation_towers observation_towers]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}
 |descr= A MapComplete theme: Publicly accessible towers to enjoy the view
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -355,7 +364,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/openwindpowermap openwindpowermap]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:cs|en}}, {{#language:ca|en}}
 |descr= A MapComplete theme: A map for showing and editing wind turbines
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -373,7 +382,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/parkings parkings]
 |region= Worldwide
-|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:nb_NO|en}}, {{#language:zh_Hant|en}}, {{#language:id|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}
+|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:nb_NO|en}}, {{#language:zh_Hant|en}}, {{#language:id|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:ca|en}}
 |descr= A MapComplete theme: This map shows different parking spots
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -382,7 +391,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/pets pets]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:da|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}
+|lang= {{#language:en|en}}, {{#language:da|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ca|en}}
 |descr= A MapComplete theme: On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, 
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png

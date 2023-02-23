@@ -5,7 +5,7 @@
 
 
 
-On this map, one can find interesting infromation for tourists and nature lovers, such as 
+On this map, one can find interesting information for tourists and nature lovers.
 
 This theme contains the following layers:
 

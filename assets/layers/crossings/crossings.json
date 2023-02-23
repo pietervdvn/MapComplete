@@ -263,7 +263,7 @@
             "nl": "Deze oversteekplaats heeft een verkeerseiland in het midden",
             "de": "Der Übergang hat eine Verkehrsinsel",
             "es": "Este cruce tiene una isla en el medio",
-            "fr": "Ce passage a une île au milieu"
+            "fr": "Ce passage a un îlot au milieu"
           }
         },
         {
@@ -273,7 +273,7 @@
             "nl": "Deze oversteekplaats heeft geen verkeerseiland in het midden",
             "de": "Diese Ampel hat eine Taste, um ein grünes Signal anzufordern",
             "es": "Este cruce no tiene una isla en el medio",
-            "fr": "Ce passage n'a pas d'île au milieu"
+            "fr": "Ce passage n'a pas d'îlot au milieu"
           }
         }
       ]

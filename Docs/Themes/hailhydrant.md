@@ -7,10 +7,6 @@
 
 On this map you can find and update hydrants, fire stations, ambulance stations, and extinguishers in your favorite neighborhoods.
 
-You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide additional details by answering available questions.
-
-All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.
-
 This theme contains the following layers:
 
 

@@ -94,7 +94,8 @@
         "es": "Una ciclocalle es una calle en la que el tráfico motorizado no puede sobrepasar a un ciclista",
         "fr": "Une rue cyclable est une rue où les véhicules motorisés ne sont pas autorisés à dépasser les cyclistes",
         "da": "En cykelgade er en gade, hvor motoriseret trafik ikke må overhale en cyklist",
-        "cs": "Cyklostezka je ulice, kde motorová doprava nesmí předjíždět cyklisty"
+        "cs": "Cyklostezka je ulice, kde motorová doprava nesmí předjíždět cyklisty",
+        "ca": "Un ciclocarrer és un carrer on el trànsit motoritzat no pot sobrepassar a un ciclista"
       },
       "title": "{name}",
       "tagRenderings": [
@@ -193,7 +194,8 @@
         "es": "Esta calle se convertirá en una ciclocalle próximamente",
         "fr": "Cette rue va bientôt devenir une rue cyclable",
         "da": "Denne gade bliver snart en cykelgade",
-        "cs": "Tato ulice se brzy stane cyklostezkou"
+        "cs": "Tato ulice se brzy stane cyklostezkou",
+        "ca": "Aquest carrer es convertirà en un ciclocarrer pròximament"
       },
       "minzoom": 9,
       "source": {
@@ -233,7 +235,8 @@
               "es": "{name} se convertirá en una ciclocalle próximamente",
               "fr": "{name} va bientôt devenir une rue cyclable",
               "da": "{name} bliver snart en cykelgade",
-              "cs": "{name} se brzy stane cyklostezkou"
+              "cs": "{name} se brzy stane cyklostezkou",
+              "ca": "{name} es convertirà en un ciclocarrer pròximament"
             },
             "if": "name~*"
           }
@@ -297,7 +300,8 @@
         "es": "Capa para marcar cualquier calle como ciclocalle",
         "fr": "Calque pour marquer une rue comme cyclable",
         "da": "Lag for at markere enhver gade som cykelgade",
-        "cs": "Vrstva pro označení jakékoli ulice jako cyklostezky"
+        "cs": "Vrstva pro označení jakékoli ulice jako cyklostezky",
+        "ca": "Capa per a marcar qualsevol carrer com a ciclocarrer"
       },
       "source": {
         "osmTags": {
@@ -388,7 +392,8 @@
           "fr": "La rue <b>{name}</b> est-elle une rue cyclable ?",
           "nb_NO": "Er <b>{name}</b>-gaten en sykkelgate?",
           "da": "Er gaden <b>{name}</b> en cykelgade?",
-          "cs": "Je ulice <b>{name}</b> cyklo ulicí?"
+          "cs": "Je ulice <b>{name}</b> cyklo ulicí?",
+          "ca": "El carrer <b>{name}</b> és un ciclocarrer?"
         },
         "mappings": [
           {
@@ -411,7 +416,8 @@
               "es": "Esta calle es una ciclocalle (y tiene un límite de velocidad de 30km/h)",
               "fr": "Cette rue est une rue cyclable (et est limitée à 30 km/h)",
               "da": "Denne gade er en cykelgade (og har en hastighedsgrænse på 30 km/t)",
-              "cs": "Tato ulice je cyklostezkou (s omezením rychlosti na 30 km/h)"
+              "cs": "Tato ulice je cyklostezkou (s omezením rychlosti na 30 km/h)",
+              "ca": "Aquest carrer és un ciclocarrer (i té un límit de velocitat de 30km/h)"
             },
             "hideInAnswer": "_country!=be"
           },
@@ -536,7 +542,8 @@
               "es": "Esta calle no es una ciclocalle",
               "fr": "Cette rue n’est pas une rue cyclable",
               "da": "Denne gade er ikke en cykelgade",
-              "cs": "Tato ulice není cyklo ulicí"
+              "cs": "Tato ulice není cyklo ulicí",
+              "ca": "Aquest carrer no és un ciclocarrer"
             }
           }
         ]
@@ -563,7 +570,8 @@
               "en": "Residents allowed",
               "de": "Anlieger frei",
               "nl": "Aanwonenden toegestaan",
-              "fr": "Riverains autorisés"
+              "fr": "Riverains autorisés",
+              "ca": "Residents permesos"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg",
@@ -583,7 +591,8 @@
               "de": "KFZ frei",
               "nl": "Motorvoertuigen toegestaan",
               "fr": "Véhicules motorisés autorisés",
-              "cs": "Vjezd motorových vozidel povolen"
+              "cs": "Vjezd motorových vozidel povolen",
+              "ca": "Vehicles a motor permesos"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_KFZ_frei.svg",
@@ -604,7 +613,8 @@
               "pa_PK": "موٹرسائیکلاں دی اِجازت اے",
               "nl": "Motoren toegestaan",
               "fr": "Motos autorisées",
-              "cs": "Vjezd motocyklů povolen"
+              "cs": "Vjezd motocyklů povolen",
+              "ca": "Motos permeses"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1022-12.svg",
@@ -626,7 +636,8 @@
               "nl": "Auto's toegestaan",
               "fr": "Voitures autorisées",
               "cs": "Vjezd aut povolen",
-              "nb_NO": "Biler tillatt"
+              "nb_NO": "Biler tillatt",
+              "ca": "Cotxes permesos"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1024-10.svg",
@@ -674,7 +685,8 @@
           "fr": "Quand cette rue deviendra-t-elle cyclable ?",
           "nb_NO": "Når vil denne gaten bli en sykkelgate?",
           "da": "Hvornår bliver denne gade en cykelgade?",
-          "cs": "Kdy se tato ulice stane cyklostezkou?"
+          "cs": "Kdy se tato ulice stane cyklostezkou?",
+          "ca": "Quan es convertirà aquest carrer en un ciclocarrer?"
         },
         "render": {
           "nl": "Deze straat wordt fietsstraat op {cyclestreet:start_date}",
@@ -687,7 +699,8 @@
           "fr": "Cette rue deviendra une rue cyclable le {cyclestreet:start_date}",
           "nb_NO": "Denne gaten vil bli en sykkelgate {cyclestreet:start_date}",
           "da": "Denne gade bliver en cykelgade ved {cyclestreet:start_date}",
-          "cs": "Tato ulice se stane cyklostezkou {cyclestreet:start_date}"
+          "cs": "Tato ulice se stane cyklostezkou {cyclestreet:start_date}",
+          "ca": "Aquest carrer es convertirà un ciclocarrer el {cyclestreet:start_date}"
         },
         "condition": "proposed:cyclestreet=yes",
         "freeform": {

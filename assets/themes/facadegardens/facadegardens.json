@@ -124,7 +124,8 @@
             "it": "Com’è orientato questo giardino?",
             "hu": "Milyen a kert tájolása?",
             "es": "¿Cual es la orientación del jardín?",
-            "da": "Hvad er havens orientering?"
+            "da": "Hvad er havens orientering?",
+            "ca": "Quina és l'orientació del jardí?"
           },
           "freeform": {
             "type": "direction",
@@ -152,7 +153,8 @@
                 "es": "El jardín está completamente al sol",
                 "nb_NO": "Hagen er ikke i skyggen",
                 "da": "Haven er i fuld sol",
-                "cs": "Zahrada je na přímém slunci"
+                "cs": "Zahrada je na přímém slunci",
+                "ca": "El jardí està completament al sol"
               }
             },
             {
@@ -172,7 +174,8 @@
                 "hu": "A kert részben árnyékban van",
                 "es": "El jardín está parcialmente a la sombra",
                 "da": "Haven er i delvis skygge",
-                "cs": "Zahrada je v polostínu"
+                "cs": "Zahrada je v polostínu",
+                "ca": "El jardí està parcialment a l'ombra"
               }
             },
             {
@@ -192,7 +195,8 @@
                 "es": "El jardín está a la sombra",
                 "nb_NO": "Hagen er i skyggen",
                 "da": "Haven ligger i skygge",
-                "cs": "Zahrada je ve stínu"
+                "cs": "Zahrada je ve stínu",
+                "ca": "El jardí està a l'ombra"
               }
             }
           ],
@@ -208,7 +212,8 @@
             "es": "¿El jardín está al sol o a la sombra?",
             "nb_NO": "Er hagen i skygge eller ei?",
             "da": "Er haven skyggefuld eller solrig?",
-            "cs": "Je zahrada zastíněná nebo slunná?"
+            "cs": "Je zahrada zastíněná nebo slunná?",
+            "ca": "El jardí està al sol o a l'ombra?"
           }
         },
         {
@@ -224,7 +229,8 @@
             "hu": "Van-e a kertben vizeshordó?",
             "nb_NO": "Er det en vanntønne installert i denne hagen?",
             "da": "Er der installeret en vandtønde til haven?",
-            "cs": "Je do zahrady instalován sud na vodu?"
+            "cs": "Je do zahrady instalován sud na vodu?",
+            "ca": "Hi ha un barril d'aigua instal·lat per al jardí?"
           },
           "mappings": [
             {
@@ -245,7 +251,8 @@
                 "hu": "Van benne esővízgyűjtő hordó",
                 "nb_NO": "Har regntønne",
                 "da": "Der er en regntønde",
-                "cs": "K dispozici je sud na dešťovou vodu"
+                "cs": "K dispozici je sud na dešťovou vodu",
+                "ca": "Hi ha un barril de pluja"
               }
             },
             {
@@ -266,7 +273,8 @@
                 "hu": "Nincs benne esővízgyűjtő hordó",
                 "nb_NO": "Har ikke regntønne",
                 "da": "Der er ingen regntønde",
-                "cs": "Sud na dešťovou vodu není k dispozici"
+                "cs": "Sud na dešťovou vodu není k dispozici",
+                "ca": "No hi ha un barril de pluja"
               }
             }
           ]
@@ -284,7 +292,8 @@
             "es": "Fecha de construcción del jardín: {start_date}",
             "nb_NO": "Konstruksjonsdato for hagen: {start_date}",
             "da": "Anlægsdato for haven: {start_date}",
-            "cs": "Datum výstavby zahrady: {start_date}"
+            "cs": "Datum výstavby zahrady: {start_date}",
+            "ca": "Data de construcció del jardí: {start_date}"
           },
           "question": {
             "nl": "Wanneer werd de tuin aangelegd? (vul gewoon een jaartal in)",
@@ -297,7 +306,8 @@
             "es": "¿Cuándo se construyó el jardín? (el año es suficiente)",
             "nb_NO": "Når ble hagen opprettet? (Årstall holder.)",
             "da": "Hvornår blev haven bygget? (et år er nok)",
-            "cs": "Kdy byla zahrada postavena? (rok je postačující)"
+            "cs": "Kdy byla zahrada postavena? (rok je postačující)",
+            "ca": "Quan es va construir el jardí? (l'any és suficient)"
           },
           "freeform": {
             "key": "start_date",
@@ -325,7 +335,8 @@
                 "es": "Hay plantas comestibles",
                 "nb_NO": "Det finnes spisbare planter",
                 "da": "Der er spiselige planter",
-                "cs": "Jsou zde jedlé rostliny"
+                "cs": "Jsou zde jedlé rostliny",
+                "ca": "Hi han plantes comestibles"
               }
             },
             {
@@ -345,7 +356,8 @@
                 "es": "No hay plantas comestibles",
                 "nb_NO": "Det finnes ingen spisbare planter",
                 "da": "Der er ikke spiselige planter",
-                "cs": "Nejsou zde jedlé rostliny"
+                "cs": "Nejsou zde jedlé rostliny",
+                "ca": "No hi han plantes comestibles"
               }
             }
           ],
@@ -360,7 +372,8 @@
             "es": "¿Hay alguna planta comestible?",
             "nb_NO": "Finnes det noen spisbare planter?",
             "da": "Er der nogle spiselige planter?",
-            "cs": "Jsou zde jedlé rostliny?"
+            "cs": "Jsou zde jedlé rostliny?",
+            "ca": "Hi ha alguna planta comestible?"
           }
         },
         {
@@ -377,7 +390,8 @@
             "es": "¿Qué tipo de plantas crecen aquí?",
             "nb_NO": "Hva slags planter vokser her?",
             "da": "Hvilke slags planter vokser her?",
-            "cs": "Jaké druhy rostlin zde rostou?"
+            "cs": "Jaké druhy rostlin zde rostou?",
+            "ca": "Quin tipus de plantes creixen aquí?"
           },
           "mappings": [
             {
@@ -470,7 +484,8 @@
             "es": "Información descriptiva complementaria sobre el jardín (si es necesaria pero no se describe arriba)",
             "nb_NO": "Ekstra beskrivende info om hagen (hvis det trengs og ikke er gjengitt ovenfor)",
             "da": "Ekstra beskrivende info om haven (hvis nødvendigt og endnu ikke beskrevet ovenfor)",
-            "cs": "Další popisné informace o zahradě (pokud jsou potřeba a nejsou popsány výše)"
+            "cs": "Další popisné informace o zahradě (pokud jsou potřeba a nejsou popsány výše)",
+            "ca": "Informació descriptiva complementària sobre el jardí (si és necesaria y no està encara descrit dalt)"
           },
           "freeform": {
             "key": "description",

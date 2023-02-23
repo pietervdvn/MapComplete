@@ -11,7 +11,7 @@
     "it": "Mappa aperta per le arrampicate",
     "fr": "Open Climbing Map",
     "hu": "Mászótérkép",
-    "ca": "Open Climbing Map",
+    "ca": "Mapa obert d'escalada",
     "da": "Åbn klatrekort",
     "cs": "Otevřená lezecká mapa"
   },
@@ -27,7 +27,8 @@
     "hu": "Ezen a térképen különböző mászási lehetőségeket talál, például falmászótermeket, bouldertermeket és sziklákat a természetben.",
     "nb_NO": "Forskjellige klatremuligheter, som f.eks. buldrehaller og steiner i naturen.",
     "da": "På dette kort finder du forskellige klatremuligheder såsom klatremotionsrum, boulderinghaller og sten i naturen.",
-    "cs": "Na této mapě najdete nejrůznější možnosti lezení, jako lezecké tělocvičny, boulderingové haly a skály v přírodě."
+    "cs": "Na této mapě najdete nejrůznější možnosti lezení, jako lezecké tělocvičny, boulderingové haly a skály v přírodě.",
+    "ca": "A aquest mapa trobaràs varies oportunitats d'escalada, como gimnasos d'escalada, sales d'escalada en bloc i roques a la natura."
   },
   "descriptionTail": {
     "nl": "De klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
@@ -244,7 +245,8 @@
                   "nb_NO": "Offentlig tilgjengelig for alle",
                   "es": "Accesible públicamente a cualquiera",
                   "da": "Offentligt tilgængelig for alle",
-                  "cs": "Veřejně přístupné komukoli"
+                  "cs": "Veřejně přístupné komukoli",
+                  "ca": "Accessible públicament a qualsevol"
                 }
               },
               {

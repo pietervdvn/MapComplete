@@ -36,6 +36,7 @@ This theme contains the following layers:
   - [climbing_gym](../Layers/climbing_gym.md)
   - [climbing_opportunity](../Layers/climbing_opportunity.md)
   - [climbing_route](../Layers/climbing_route.md)
+  - [clock](../Layers/clock.md)
   - [crossings](../Layers/crossings.md)
   - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
   - [defibrillator](../Layers/defibrillator.md)

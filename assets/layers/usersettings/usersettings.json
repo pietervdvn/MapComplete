@@ -31,7 +31,8 @@
           "then": {
             "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>",
             "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann. <span class='subtle'>Dies ist die Standardeinstellung.</span>",
-            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik. <span class='subtle'>Dit is de standaard-instelling</span>"
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik. <span class='subtle'>Dit is de standaard-instelling</span>",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu. <span class='subtle'>Toto je výchozí volba.</span>"
           },
           "hideInAnswer": true
         },
@@ -39,9 +40,10 @@
           "if": "mapcomplete-pictures-license=CC0",
           "then": {
             "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose.",
-            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann.",
+            "de": "Ihre aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann.",
             "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik.",
-            "ru": "Изображения будут опубликованы под лицензией <b>CC0</b> и перейдут в общественное достояние. Это значит, что кто угодно имеет право использовать их без ограничений."
+            "ru": "Изображения будут опубликованы под лицензией <b>CC0</b> и перейдут в общественное достояние. Это значит, что кто угодно имеет право использовать их без ограничений.",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu."
           }
         },
         {
@@ -50,7 +52,8 @@
             "en": "Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you",
             "ca": "Les fotografies que facis es publicaran sota <b>CC-BY 4.0</b> que requereix que qualsevol que utilitzi la vostra imatge us ha de donar crèdits",
             "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss",
-            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam"
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC-BY 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku"
           }
         },
         {
@@ -58,7 +61,8 @@
           "then": {
             "en": "Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license.",
             "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY-SA 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss und dass Ableitungen Ihres Bildes mit der gleichen Lizenz weitergegeben werden müssen.",
-            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden."
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden.",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC-BY-SA 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku a že odvozené fotky musí být dále sdíleny se stejnou licencí."
           }
         }
       ]
@@ -73,7 +77,8 @@
       "id": "translation-mode",
       "question": {
         "en": "Do you want to help translating MapComplete?",
-        "de": "Möchten Sie bei der Übersetzung von MapComplete helfen?"
+        "de": "Möchten Sie bei der Übersetzung von MapComplete helfen?",
+        "cs": "Chcete pomoci s překladem MapComplete?"
       },
       "mappings": [
         {
@@ -87,7 +92,8 @@
           "if": "mapcomplete-translation-mode=true",
           "then": {
             "en": "Show a button to quickly open translations when using MapComplete on a big screen",
-            "de": "Schaltfläche anzeigen zum schnellen Öffnen von Übersetzungen beim Verwenden von MapComplete auf einem großen Bildschirm"
+            "de": "Schaltfläche anzeigen zum schnellen Öffnen von Übersetzungen beim Verwenden von MapComplete auf einem großen Bildschirm",
+            "fr": "Afficher un bouton pour ouvrir rapidement les traductions lorsque vous utilisez MapComplete sur un grand écran"
           }
         },
         {
@@ -137,7 +143,8 @@
         "id": "Terjemahan untuk {_theme} dalam {_language} masih {_translation_percentage}%: {_translation_translated_count} string dari {_translation_total} diterjemahkan",
         "nb_NO": "Oversettelsen for {_theme} i {_language} har {_translation_percentage}% dekning: {_translation_translated_count} strenger av {_translation_total} har blitt oversatt",
         "nl": "Vertalingen voor {_theme} in {_language} zijn momenteel op {_translation_percentage}%: van {_translation_total} teksten zijn er reeds {_translation_translated_count} vertaald",
-        "zh_Hant": "{_theme} 的 {_language} 翻譯目前是 {_translation_percentage}%：{_translation_total} 中的 {_translation_translated_count} 已經翻譯了"
+        "zh_Hant": "{_theme} 的 {_language} 翻譯目前是 {_translation_percentage}%：{_translation_total} 中的 {_translation_translated_count} 已經翻譯了",
+        "fr": "Les traductions pour {_theme} en {_language} sont à {_translation_percentage} % : {_translation_translated_count} chaînes traduites sur {_translation_total}"
       },
       "condition": {
         "or": [
@@ -188,7 +195,8 @@
           "then": {
             "en": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>",
             "de": "Es wurde ein Link zu deinem Mastodon-Profil gefunden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>",
-            "nl": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+            "nl": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>",
+            "fr": "Un lien vers votre profil Mastodon a été trouvé : <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
           },
           "icon": "mastodon"
         },
@@ -225,7 +233,8 @@
             "en": "You have contributed to translating MapComplete! That's awesome!",
             "ca": "Has contribuït a traduir MapComplete! Això és fantàstic!",
             "de": "Sie haben dazu beigetragen, MapComplete zu übersetzen! Das ist großartig!",
-            "nl": "Je hebt MapComplete helpen vertalen! Dat is fantastisch! Bedankt hiervoor!"
+            "nl": "Je hebt MapComplete helpen vertalen! Dat is fantastisch! Bedankt hiervoor!",
+            "cs": "Přispěli jste k překladu MapComplete! To je úžasné!"
           },
           "icon": "party"
         }
@@ -250,28 +259,32 @@
       "id": "show_debug",
       "question": {
         "en": "Show user settings debug info?",
-        "de": "Debug-Informationen zu den Benutzereinstellungen anzeigen?"
+        "de": "Debug-Informationen zu den Benutzereinstellungen anzeigen?",
+        "cs": "Zobrazit informace o ladění v nastavení?"
       },
       "mappings": [
         {
           "if": "mapcomplete-show_debug=yes",
           "then": {
             "en": "Show debug info",
-            "de": "Debug-Informationen anzeigen"
+            "de": "Debug-Informationen anzeigen",
+            "cs": "Zobrazit informace o ladění"
           }
         },
         {
           "if": "mapcomplete-show_debug=no",
           "then": {
             "en": "Don't show debug info",
-            "de": "Keine Debug-Informationen anzeigen"
+            "de": "Keine Debug-Informationen anzeigen",
+            "cs": "Nezobrazovat informace o ladění"
           }
         },
         {
           "if": "mapcomplete-show_debug=",
           "then": {
             "en": "Don't show debug info",
-            "de": "Keine Debug-Informationen anzeigen"
+            "de": "Keine Debug-Informationen anzeigen",
+            "cs": "Nezobrazovat informace o ladění"
           },
           "hideInAnswer": true
         }
