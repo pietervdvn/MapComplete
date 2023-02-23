@@ -702,7 +702,7 @@ export class ImportPointButton extends AbstractImportButton {
             Hash.hash.setData(newElementAction.newElementId)
 
             if (note_id !== undefined) {
-                state.osmConnection.closeNote(note_id, "imported")
+                await state.osmConnection.closeNote(note_id, "imported")
                 originalFeatureTags.data["closed_at"] = new Date().toISOString()
                 originalFeatureTags.ping()
             }
@@ -720,7 +720,7 @@ export class ImportPointButton extends AbstractImportButton {
                     )
                 } else {
                     console.log("Marking maproulette task as fixed")
-                    state.maprouletteConnection.closeTask(Number(maproulette_id))
+                    await state.maprouletteConnection.closeTask(Number(maproulette_id))
                     originalFeatureTags.data["mr_taskStatus"] = "Fixed"
                     originalFeatureTags.ping()
                 }

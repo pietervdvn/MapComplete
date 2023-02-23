@@ -53,7 +53,7 @@
           }
         ]
       },
-      "iconSize": "40,40,center"
+      "iconSize": "40,40,bottom"
     }
   ],
   "tagRenderings": [
@@ -128,9 +128,41 @@
       ]
     },
     {
-      "id": "blurb",
-      "condition": "blurb~*",
-      "render": "{blurb}"
+      "id": "mark_fixed",
+      "render": {
+        "special": {
+          "type": "maproulette_set_status",
+          "message": {
+            "en": "Mark as fixed"
+          }
+        }
+      }
+    },
+    {
+      "id": "mark_duplicate",
+      "render": {
+        "special": {
+          "type": "maproulette_set_status",
+          "message": {
+            "en": "Mark as not found or false positive"
+          },
+          "status": "2",
+          "image": "close"
+        }
+      }
+    },
+    {
+      "id": "mark_too_hard",
+      "render": {
+        "special": {
+          "type": "maproulette_set_status",
+          "message": {
+            "en": "Mark as too hard"
+          },
+          "status": "6",
+          "image": "not_found"
+        }
+      }
     }
   ],
   "minzoom": 15,

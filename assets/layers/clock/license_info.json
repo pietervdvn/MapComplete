@@ -1,0 +1,20 @@
+[
+  {
+    "path": "clock.svg",
+    "license": "CC0",
+    "authors": [
+      "SJJB Management"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Amenity_clock_20x20.svg"
+    ]
+  },
+  {
+    "path": "clock_digital.svg",
+    "license": "CC0",
+    "authors": [
+      "Robin van der Linde"
+    ],
+    "sources": []
+  }
+]

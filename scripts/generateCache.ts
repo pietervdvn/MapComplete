@@ -24,6 +24,9 @@ import { GeoOperations } from "../Logic/GeoOperations"
 import SimpleMetaTaggers from "../Logic/SimpleMetaTagger"
 import FilteringFeatureSource from "../Logic/FeatureSource/Sources/FilteringFeatureSource"
 import Loc from "../Models/Loc"
+import { Feature } from "geojson"
+import { BBox } from "../Logic/BBox"
+import { bboxClip } from "@turf/turf"
 
 ScriptUtils.fixUtils()
 
@@ -232,7 +235,8 @@ function sliceToTiles(
     theme: LayoutConfig,
     relationsTracker: RelationsTracker,
     targetdir: string,
-    pointsOnlyLayers: string[]
+    pointsOnlyLayers: string[],
+    clip: boolean
 ) {
     const skippedLayers = new Set<string>()
 
@@ -310,6 +314,7 @@ function sliceToTiles(
             maxFeatureCount: undefined,
             registerTile: (tile) => {
                 const tileIndex = tile.tileIndex
+                const bbox = BBox.fromTileIndex(tileIndex).asGeoJson({})
                 console.log("Got tile:", tileIndex, tile.layer.layerDef.id)
                 if (tile.features.data.length === 0) {
                     return
@@ -343,9 +348,9 @@ function sliceToTiles(
                 }
                 let strictlyCalculated = 0
                 let featureCount = 0
-                for (const feature of filteredTile.features.data) {
+                let features: Feature[] = filteredTile.features.data.map((f) => f.feature)
+                for (const feature of features) {
                     // Some cleanup
-                    delete feature.feature["bbox"]
 
                     if (tile.layer.layerDef.calculatedTags !== undefined) {
                         // Evaluate all the calculated tags strictly
@@ -353,7 +358,7 @@ function sliceToTiles(
                             (ct) => ct[0]
                         )
                         featureCount++
-                        const props = feature.feature.properties
+                        const props = feature.properties
                         for (const calculatedTagKey of calculatedTagKeys) {
                             const strict = props[calculatedTagKey]
 
@@ -379,7 +384,16 @@ function sliceToTiles(
                             }
                         }
                     }
+                    delete feature["bbox"]
                 }
+
+                if (clip) {
+                    console.log("Clipping features")
+                    features = [].concat(
+                        ...features.map((f: Feature) => GeoOperations.clipWith(<any>f, bbox))
+                    )
+                }
+
                 // Lets save this tile!
                 const [z, x, y] = Tiles.tile_from_index(tileIndex)
                 // console.log("Writing tile ", z, x, y, layerId)
@@ -391,7 +405,7 @@ function sliceToTiles(
                     JSON.stringify(
                         {
                             type: "FeatureCollection",
-                            features: filteredTile.features.data.map((f) => f.feature),
+                            features,
                         },
                         null,
                         " "
@@ -476,8 +490,9 @@ export async function main(args: string[]) {
     console.log("Cache builder started with args ", args.join(", "))
     if (args.length < 6) {
         console.error(
-            "Expected arguments are: theme zoomlevel targetdirectory lat0 lon0 lat1 lon1 [--generate-point-overview layer-name,layer-name,...] [--force-zoom-level z] \n" +
-                "Note: a new directory named <theme> will be created in targetdirectory"
+            "Expected arguments are: theme zoomlevel targetdirectory lat0 lon0 lat1 lon1 [--generate-point-overview layer-name,layer-name,...] [--force-zoom-level z] [--clip]" +
+                "--force-zoom-level causes non-cached-layers to be donwnloaded\n" +
+                "--clip will erase parts of the feature falling outside of the bounding box"
         )
         return
     }
@@ -494,6 +509,7 @@ export async function main(args: string[]) {
     const lon0 = Number(args[4])
     const lat1 = Number(args[5])
     const lon1 = Number(args[6])
+    const clip = args.indexOf("--clip") >= 0
 
     if (isNaN(lat0)) {
         throw "The first number (a latitude) is not a valid number"
@@ -570,7 +586,7 @@ export async function main(args: string[]) {
 
     const extraFeatures = await downloadExtraData(theme)
     const allFeaturesSource = loadAllTiles(targetdir, tileRange, theme, extraFeatures)
-    sliceToTiles(allFeaturesSource, theme, relationTracker, targetdir, generatePointLayersFor)
+    sliceToTiles(allFeaturesSource, theme, relationTracker, targetdir, generatePointLayersFor, clip)
 }
 
 let args = [...process.argv]

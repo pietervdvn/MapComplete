@@ -4,11 +4,11 @@
 tasks which can be solved in a few minutes.
 
 A perfect example of this is to setup such a challenge to e.g. import new points. [Important: always follow the import guidelines if you want to import data.](https://wiki.openstreetmap.org/wiki/Import/Guidelines)
-(Another approach to set up a guided import is to create a map note for every point with the [import helper](https://mapcomplete.osm.be/import_helper). This however litters the map and will upset mappers if used with to much points.)
+(Another approach to set up a guided import is to create a map note for every point with the [import helper](https://mapcomplete.osm.be/import_helper). This however litters the map notes and will upset mappers if used with to much points. However, this flow is easier to setup as no changes to theme files are needed, nor is a maproulette-account needed)
 
 ## The API
 
-**Most of the heavy lifting is done in layer `maproulette`. Extend this layer with your needs**
+**Most of the heavy lifting is done in [layer `maproulette-challenge`](./Docs/Layers/maproulette_challenge.md). Extend this layer with your needs.**
 The API is shortly discussed here for future reference only.
 
 There is an API-endpoint at `https://maproulette.org/api/v2/tasks/box/{x_min}/{y_min}/{x_max}/{y_max}` which can be used
@@ -90,12 +90,18 @@ The following example uses the calculated tags `_has_closeby_feature` and `_clos
         "message": {
           "en": "Add all the suggested tags"
         },
-        "image": "./assets/svg/addSmall.svg",
+        "image": "./assets/svg/addSmall.svg"
       }
     }
   }
 
 ```
+
+### Changing the status of the task
+
+The easiest way is to reuse a tagrendering from the [Maproulette-layer](./Docs/Layers/maproulette.md) (_not_ the `maproulette-challenge`-layer!), such as [`maproulette.mark_fixed`](./Docs/Layers/maproulette.md#markfixed),[`maproulette.mark_duplicate`](./Docs/Layers/maproulette.md#markduplicate),[`maproulette.mark_too_hard`](./Docs/Layers/maproulette.md#marktoohard).
+
+In the background, these use the special visualisation [`maproulette_set_status`](./Docs/SpecialRenderings.md#maproulettesetstatus) - which allows to apply different status codes or different messages/icons.
 
 ## Creating a maproulette challenge
 
@@ -103,8 +109,9 @@ A challenge can be created on https://maproulette.org/admin/projects
 
 This can be done with a geojson-file (or by other means).
 
-To create an import dataset, make a geojson file where every feature has a `tags`-field with ';'-seperated tags to add.
-Furthermore, setting the property `blurb` can be useful.
+MapRoulette works as a geojson-store with status fields added. As such, you have a bit of freedom in creating the data, but an **id** field is mandatory. A **name** tag is recommended
+
+To setup a guided import, add a `tags`-field with tags formatted in such a way that they are compatible with the [import-button](./Docs/SpecialRenderings.md#specifying-which-tags-to-copy-or-add)
 
 
 (The following example is not tested and might be wrong.)
@@ -117,8 +124,8 @@ Furthermore, setting the property `blurb` can be useful.
             "type": "Feature",
             "geometry": {"type": "Point", "coordinates": [1.234, 5.678]},
             "properties": {
+                "id": ...
                 "tags": "foo=bar;name=xyz",
-                "blurb": "Please review this item and add it..."
             }
         
         }

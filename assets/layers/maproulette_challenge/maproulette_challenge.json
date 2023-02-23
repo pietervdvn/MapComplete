@@ -144,11 +144,6 @@
           }
         }
       ]
-    },
-    {
-      "id": "blurb",
-      "condition": "blurb~*",
-      "render": "{blurb}"
     }
   ],
   "filter": [

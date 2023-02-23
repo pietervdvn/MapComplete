@@ -52,9 +52,89 @@ import StatisticsPanel from "./BigComponents/StatisticsPanel"
 import AutoApplyButton from "./Popup/AutoApplyButton"
 import { LanguageElement } from "./Popup/LanguageElement"
 import FeatureReviews from "../Logic/Web/MangroveReviews"
+import Maproulette from "../Logic/Maproulette"
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
+
+    public static DocumentationFor(viz: string | SpecialVisualization): BaseUIElement | undefined {
+        if (typeof viz === "string") {
+            viz = SpecialVisualizations.specialVisualizations.find((sv) => sv.funcName === viz)
+        }
+        if (viz === undefined) {
+            return undefined
+        }
+        return new Combine([
+            new Title(viz.funcName, 3),
+            viz.docs,
+            viz.args.length > 0
+                ? new Table(
+                      ["name", "default", "description"],
+                      viz.args.map((arg) => {
+                          let defaultArg = arg.defaultValue ?? "_undefined_"
+                          if (defaultArg == "") {
+                              defaultArg = "_empty string_"
+                          }
+                          return [arg.name, defaultArg, arg.doc]
+                      })
+                  )
+                : undefined,
+            new Title("Example usage of " + viz.funcName, 4),
+            new FixedUiElement(
+                viz.example ??
+                    "`{" +
+                        viz.funcName +
+                        "(" +
+                        viz.args.map((arg) => arg.defaultValue).join(",") +
+                        ")}`"
+            ).SetClass("literal-code"),
+        ])
+    }
+
+    public static HelpMessage() {
+        const helpTexts = SpecialVisualizations.specialVisualizations.map((viz) =>
+            SpecialVisualizations.DocumentationFor(viz)
+        )
+
+        return new Combine([
+            new Combine([
+                new Title("Special tag renderings", 1),
+
+                "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
+                "General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args",
+                new Title("Using expanded syntax", 4),
+                `Instead of using \`{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}\`, one can also write`,
+                new FixedUiElement(
+                    JSON.stringify(
+                        {
+                            render: {
+                                special: {
+                                    type: "some_special_visualisation",
+                                    argname: "some_arg",
+                                    message: {
+                                        en: "some other really long message",
+                                        nl: "een boodschap in een andere taal",
+                                    },
+                                    other_arg_name: "more args",
+                                },
+                                before: {
+                                    en: "Some text to prefix before the special element (e.g. a title)",
+                                    nl: "Een tekst om voor het element te zetten (bv. een titel)",
+                                },
+                                after: {
+                                    en: "Some text to put after the element, e.g. a footer",
+                                },
+                            },
+                        },
+                        null,
+                        "  "
+                    )
+                ).SetClass("code"),
+                'In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "argname": ...argvalue...}`. The args are in the `special` block; an argvalue can be a string, a translation or another value. (Refer to class `RewriteSpecial` in case of problems)',
+            ]).SetClass("flex flex-col"),
+            ...helpTexts,
+        ]).SetClass("flex flex-col")
+    }
 
     private static initList(): SpecialVisualization[] {
         const specialVisualizations: SpecialVisualization[] = [
@@ -417,6 +497,24 @@ export default class SpecialVisualizations {
                         defaultValue: "id",
                     },
                 ],
+                example:
+                    " The following example sets the status to '2' (false positive)\n" +
+                    "\n" +
+                    "```json\n" +
+                    "{\n" +
+                    '   "id": "mark_duplicate",\n' +
+                    '   "render": {\n' +
+                    '      "special": {\n' +
+                    '         "type": "maproulette_set_status",\n' +
+                    '         "message": {\n' +
+                    '            "en": "Mark as not found or false positive"\n' +
+                    "         },\n" +
+                    '         "status": "2",\n' +
+                    '         "image": "close"\n' +
+                    "      }\n" +
+                    "   }\n" +
+                    "}\n" +
+                    "```",
                 constr: (state, tags, args) => {
                     const isUploading = new UIEventSource(false)
                     const t = Translations.t.notes
@@ -516,6 +614,101 @@ export default class SpecialVisualizations {
                     )
                 },
                 docs: "Fetches the metadata of MapRoulette campaign that this task is part of and shows those details (namely `title`, `description` and `instruction`).\n\nThis reads the property `mr_challengeId` to detect the parent campaign.",
+            },
+            {
+                funcName: "maproulette_set_status",
+                docs: "Change the status of the given MapRoulette task",
+                args: [
+                    {
+                        name: "message",
+                        doc: "A message to show to the user",
+                    },
+                    {
+                        name: "image",
+                        doc: "Image to show",
+                        defaultValue: "confirm",
+                    },
+                    {
+                        name: "message_confirm",
+                        doc: "What to show when the task is closed, either by the user or was already closed.",
+                    },
+                    {
+                        name: "status",
+                        doc: "A statuscode to apply when the button is clicked. 1 = `close`, 2 = `false_positive`, 3 = `skip`, 4 = `deleted`, 5 = `already fixed` (on the map, e.g. for duplicates), 6 = `too hard`",
+                        defaultValue: "1",
+                    },
+                    {
+                        name: "maproulette_id",
+                        doc: "The property name containing the maproulette id",
+                        defaultValue: "mr_taskId",
+                    },
+                ],
+                constr: (state, tagsSource, args, guistate) => {
+                    let [message, image, message_closed, status, maproulette_id_key] = args
+                    if (image === "") {
+                        image = "confirm"
+                    }
+                    if (Svg.All[image] !== undefined || Svg.All[image + ".svg"] !== undefined) {
+                        if (image.endsWith(".svg")) {
+                            image = image.substring(0, image.length - 4)
+                        }
+                        image = Svg[image + "_ui"]()
+                    }
+                    const failed = new UIEventSource(false)
+
+                    const closeButton = new SubtleButton(image, message).OnClickWithLoading(
+                        Translations.t.general.loading,
+                        async () => {
+                            const maproulette_id =
+                                tagsSource.data[maproulette_id_key] ?? tagsSource.data.id
+                            try {
+                                await state.maprouletteConnection.closeTask(
+                                    Number(maproulette_id),
+                                    Number(status),
+                                    {
+                                        tags: `MapComplete MapComplete:${state.layoutToUse.id}`,
+                                    }
+                                )
+                                tagsSource.data["mr_taskStatus"] =
+                                    Maproulette.STATUS_MEANING[Number(status)]
+                                tagsSource.data.status = status
+                                tagsSource.ping()
+                            } catch (e) {
+                                console.error(e)
+                                failed.setData(true)
+                            }
+                        }
+                    )
+
+                    let message_closed_element = undefined
+                    if (message_closed !== undefined && message_closed !== "") {
+                        message_closed_element = new FixedUiElement(message_closed)
+                    }
+
+                    return new VariableUiElement(
+                        tagsSource
+                            .map(
+                                (tgs) =>
+                                    tgs["status"] ??
+                                    Maproulette.STATUS_MEANING[tgs["mr_taskStatus"]]
+                            )
+                            .map(Number)
+                            .map(
+                                (status) => {
+                                    if (failed.data) {
+                                        return new FixedUiElement(
+                                            "ERROR - could not close the MapRoulette task"
+                                        ).SetClass("block alert")
+                                    }
+                                    if (status === Maproulette.STATUS_OPEN) {
+                                        return closeButton
+                                    }
+                                    return message_closed_element ?? "Closed!"
+                                },
+                                [failed]
+                            )
+                    )
+                },
             },
             {
                 funcName: "statistics",
@@ -673,84 +866,5 @@ export default class SpecialVisualizations {
         }
 
         return specialVisualizations
-    }
-
-    public static DocumentationFor(viz: string | SpecialVisualization): BaseUIElement | undefined {
-        if (typeof viz === "string") {
-            viz = SpecialVisualizations.specialVisualizations.find((sv) => sv.funcName === viz)
-        }
-        if (viz === undefined) {
-            return undefined
-        }
-        return new Combine([
-            new Title(viz.funcName, 3),
-            viz.docs,
-            viz.args.length > 0
-                ? new Table(
-                      ["name", "default", "description"],
-                      viz.args.map((arg) => {
-                          let defaultArg = arg.defaultValue ?? "_undefined_"
-                          if (defaultArg == "") {
-                              defaultArg = "_empty string_"
-                          }
-                          return [arg.name, defaultArg, arg.doc]
-                      })
-                  )
-                : undefined,
-            new Title("Example usage of " + viz.funcName, 4),
-            new FixedUiElement(
-                viz.example ??
-                    "`{" +
-                        viz.funcName +
-                        "(" +
-                        viz.args.map((arg) => arg.defaultValue).join(",") +
-                        ")}`"
-            ).SetClass("literal-code"),
-        ])
-    }
-
-    public static HelpMessage() {
-        const helpTexts = SpecialVisualizations.specialVisualizations.map((viz) =>
-            SpecialVisualizations.DocumentationFor(viz)
-        )
-
-        return new Combine([
-            new Combine([
-                new Title("Special tag renderings", 1),
-
-                "In a tagrendering, some special values are substituted by an advanced UI-element. This allows advanced features and visualizations to be reused by custom themes or even to query third-party API's.",
-                "General usage is `{func_name()}`, `{func_name(arg, someotherarg)}` or `{func_name(args):cssStyle}`. Note that you _do not_ need to use quotes around your arguments, the comma is enough to separate them. This also implies you cannot use a comma in your args",
-                new Title("Using expanded syntax", 4),
-                `Instead of using \`{"render": {"en": "{some_special_visualisation(some_arg, some other really long message, more args)} , "nl": "{some_special_visualisation(some_arg, een boodschap in een andere taal, more args)}}\`, one can also write`,
-                new FixedUiElement(
-                    JSON.stringify(
-                        {
-                            render: {
-                                special: {
-                                    type: "some_special_visualisation",
-                                    argname: "some_arg",
-                                    message: {
-                                        en: "some other really long message",
-                                        nl: "een boodschap in een andere taal",
-                                    },
-                                    other_arg_name: "more args",
-                                },
-                                before: {
-                                    en: "Some text to prefix before the special element (e.g. a title)",
-                                    nl: "Een tekst om voor het element te zetten (bv. een titel)",
-                                },
-                                after: {
-                                    en: "Some text to put after the element, e.g. a footer",
-                                },
-                            },
-                        },
-                        null,
-                        "  "
-                    )
-                ).SetClass("code"),
-                'In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "argname": ...argvalue...}`. The args are in the `special` block; an argvalue can be a string, a translation or another value. (Refer to class `RewriteSpecial` in case of problems)',
-            ]).SetClass("flex flex-col"),
-            ...helpTexts,
-        ]).SetClass("flex flex-col")
     }
 }
