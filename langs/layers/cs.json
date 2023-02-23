@@ -98,6 +98,15 @@
                     "1": {
                         "then": "Nástěnná malba"
                     },
+                    "10": {
+                        "then": "Azulejo (španělské dekorativní dlaždice)"
+                    },
+                    "11": {
+                        "then": "Obklady a dlažba"
+                    },
+                    "12": {
+                        "then": "Dřevořezba"
+                    },
                     "2": {
                         "then": "Malba"
                     },
@@ -121,15 +130,6 @@
                     },
                     "9": {
                         "then": "Reliéf"
-                    },
-                    "10": {
-                        "then": "Azulejo (španělské dekorativní dlaždice)"
-                    },
-                    "11": {
-                        "then": "Obklady a dlažba"
-                    },
-                    "12": {
-                        "then": "Dřevořezba"
                     }
                 },
                 "question": "Jaký je typ tohoto uměleckého díla?",
@@ -942,6 +942,50 @@
                 },
                 "4": {
                     "then": "Vzduchový kompresor"
+                }
+            }
+        }
+    },
+    "usersettings": {
+        "tagRenderings": {
+            "picture-license": {
+                "mappings": {
+                    "0": {
+                        "then": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu. <span class='subtle'>Toto je výchozí volba.</span>"
+                    },
+                    "1": {
+                        "then": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu."
+                    },
+                    "2": {
+                        "then": "Pořízené fotografie budou licencovány pod <b>CC-BY 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku"
+                    },
+                    "3": {
+                        "then": "Pořízené fotografie budou licencovány pod <b>CC-BY-SA 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku a že odvozené fotky musí být dále sdíleny se stejnou licencí."
+                    }
+                }
+            },
+            "show_debug": {
+                "mappings": {
+                    "0": {
+                        "then": "Zobrazit informace o ladění"
+                    },
+                    "1": {
+                        "then": "Nezobrazovat informace o ladění"
+                    },
+                    "2": {
+                        "then": "Nezobrazovat informace o ladění"
+                    }
+                },
+                "question": "Zobrazit informace o ladění v nastavení?"
+            },
+            "translation-mode": {
+                "question": "Chcete pomoci s překladem MapComplete?"
+            },
+            "translation-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Přispěli jste k překladu MapComplete! To je úžasné!"
+                    }
                 }
             }
         }
