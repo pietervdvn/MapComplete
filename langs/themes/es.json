@@ -1066,7 +1066,7 @@
         "description": "Tema experimental",
         "layers": {
             "0": {
-                "description": "Una capa que muestra aceras de autovías",
+                "description": "Una capa que muestra las aceras de las vías",
                 "name": "Aceras",
                 "tagRenderings": {
                     "left-right-questions": {
