@@ -43,7 +43,7 @@
                                 "then": "El tipo de edificio será un <b>{_bag_obj:construction}</b>"
                             }
                         },
-                        "render": "El edificio es de tipo <b>{_bag_obj:edificio}</b>"
+                        "render": "El edificio es de tipo <b>{_bag_obj:building}</b>"
                     },
                     "Import button": {
                         "mappings": {
@@ -53,7 +53,7 @@
                         }
                     },
                     "Reference": {
-                        "render": "La referencia en BAG es <b>{bag_obj:ref:bag}</b>"
+                        "render": "La referencia en BAG es <b>{_bag_obj:ref:bag}</b>"
                     }
                 }
             }
@@ -775,7 +775,7 @@
                     "0": {
                         "options": {
                             "0": {
-                                "question": "El nombre contiene {búsqueda}"
+                                "question": "El nombre contiene {search}"
                             }
                         }
                     },
