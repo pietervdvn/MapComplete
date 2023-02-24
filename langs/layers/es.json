@@ -74,7 +74,7 @@
         }
     },
     "artwork": {
-        "description": "Un mapa abierto de estatus, bustos, grafitis y otras obras de arte en todo el mundo",
+        "description": "Un mapa abierto de Estatuas, bustos, Graffitis y otras Obras de Arte en todo el mundo",
         "name": "Obras de arte",
         "presets": {
             "0": {
@@ -260,6 +260,13 @@
             }
         },
         "tagRenderings": {
+            "bench-artwork": {
+                "mappings": {
+                    "1": {
+                        "then": "Este banco no tiene una obra de arte integrada"
+                    }
+                }
+            },
             "bench-backrest": {
                 "mappings": {
                     "0": {
@@ -305,6 +312,13 @@
                 "question": "¿En qué dirección se mira al sentarse en el banco?",
                 "render": "¿Cuando está sentado en el banco, uno mira hacia {direction}º."
             },
+            "bench-inscription": {
+                "mappings": {
+                    "1": {
+                        "then": "Este banco <span class='subtle'>(probablemente)</span> no tiene inscripción"
+                    }
+                }
+            },
             "bench-material": {
                 "mappings": {
                     "0": {
@@ -330,6 +344,11 @@
                 "render": "Material: {material}"
             },
             "bench-seats": {
+                "mappings": {
+                    "0": {
+                        "then": "Este banco no tiene asientos separados"
+                    }
+                },
                 "question": "¿Cuántos asientos tiene este banco?",
                 "render": "{seats} asientos"
             },
@@ -2065,6 +2084,9 @@
             "render": "Desfibrilador"
         }
     },
+    "dentist": {
+        "name": "Dentista"
+    },
     "dogpark": {
         "name": "parques de perros",
         "presets": {
@@ -2725,6 +2747,7 @@
         }
     },
     "nature_reserve": {
+        "name": "Reserva Natural",
         "tagRenderings": {
             "Access tag": {
                 "mappings": {
@@ -3882,6 +3905,13 @@
             }
         },
         "tagRenderings": {
+            "circumference": {
+                "question": "¿Cuál es la circunferencia del tronco del árbol?<p class='subtle'>Se mide a una altura de 1,30 m</p>",
+                "render": "El tronco del árbol tiene una circunferencia de {circumference} metros"
+            },
+            "height": {
+                "render": "Este árbol tiene {height} metros de altura"
+            },
             "tree-decidouous": {
                 "mappings": {
                     "0": {
@@ -4033,6 +4063,7 @@
         }
     },
     "walls_and_buildings": {
+        "description": "Capa especial incorporada que proporciona todas las paredes y edificios. Esta capa es útil en los preajustes para objetos que pueden colocarse contra las paredes (por ejemplo: AEDs, buzones de correos, entradas, direcciones, cámaras de vigilancia, ...). Esta capa es invisible por defecto y no puede ser activada por el usuario.",
         "title": {
             "render": "Pared o edificio"
         }
