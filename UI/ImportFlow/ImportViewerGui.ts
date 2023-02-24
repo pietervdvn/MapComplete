@@ -22,6 +22,7 @@ import { LoginToggle } from "../Popup/LoginButton"
 import { QueryParameters } from "../../Logic/Web/QueryParameters"
 import Lazy from "../Base/Lazy"
 import { Button } from "../Base/Button"
+import ChartJs from "../Base/ChartJs"
 
 interface NoteProperties {
     id: number
@@ -207,6 +208,138 @@ class MassAction extends Combine {
     }
 }
 
+class Statistics extends Combine {
+    constructor(noteStates: NoteState[]) {
+        if (noteStates.length === 0) {
+            super([])
+            return
+        }
+        // We assume all notes are created at the same time
+        let dateOpened = new Date(noteStates[0].dateStr)
+        for (const noteState of noteStates) {
+            const openDate = new Date(noteState.dateStr)
+            if (openDate < dateOpened) {
+                dateOpened = openDate
+            }
+        }
+        const today = new Date()
+        const daysBetween = (today.getTime() - dateOpened.getTime()) / (1000 * 60 * 60 * 24)
+        const ranges = {
+            dates: [],
+            is_open: [],
+        }
+        const closed_by: Record<string, number[]> = {}
+
+        for (const noteState of noteStates) {
+            const closing_user = noteState.props.comments.at(-1).user
+            if (closed_by[closing_user] === undefined) {
+                closed_by[closing_user] = []
+            }
+        }
+
+        for (let i = -1; i < daysBetween; i++) {
+            const dt = new Date(dateOpened.getTime() + 24 * 60 * 60 * 1000 * i)
+            let open_count = 0
+
+            for (const closing_user in closed_by) {
+                closed_by[closing_user].push(0)
+            }
+
+            for (const noteState of noteStates) {
+                const openDate = new Date(noteState.dateStr)
+                if (openDate > dt) {
+                    // Not created at this point
+                    continue
+                }
+                if (noteState.props.closed_at === undefined) {
+                    open_count++
+                } else if (
+                    new Date(noteState.props.closed_at.substring(0, 10)).getTime() > dt.getTime()
+                ) {
+                    open_count++
+                } else {
+                    const closing_user = noteState.props.comments.at(-1).user
+                    const user_count = closed_by[closing_user]
+                    user_count[user_count.length - 1] += 1
+                }
+            }
+
+            ranges.dates.push(
+                new Date(dateOpened.getTime() + i * 1000 * 60 * 60 * 24)
+                    .toISOString()
+                    .substring(0, 10)
+            )
+            ranges.is_open.push(open_count)
+        }
+
+        const labels = ranges.dates.map((i) => "" + i)
+        const data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: "Total open",
+                    data: ranges.is_open,
+                    fill: false,
+                    borderColor: "rgb(75, 192, 192)",
+                    tension: 0.1,
+                },
+            ],
+        }
+
+        function r() {
+            return Math.floor(Math.random() * 256)
+        }
+
+        for (const closing_user in closed_by) {
+            if (closed_by[closing_user].at(-1) <= 10) {
+                continue
+            }
+            data.datasets.push({
+                label: "Closed by " + closing_user,
+                data: closed_by[closing_user],
+                fill: false,
+                borderColor: "rgba(" + r() + "," + r() + "," + r() + ")",
+                tension: 0.1,
+            })
+        }
+        const importers = Object.keys(closed_by)
+        importers.sort((a, b) => closed_by[b].at(-1) - closed_by[a].at(-1))
+        super([
+            new ChartJs({
+                type: "line",
+                data,
+                options: {
+                    scales: {
+                        yAxes: [
+                            {
+                                ticks: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        ],
+                    },
+                },
+            }),
+            new ChartJs({
+                type: "doughnut",
+                data: {
+                    labels: importers,
+                    datasets: [
+                        {
+                            label: "Closed by",
+                            data: importers.map((k) => closed_by[k].at(-1)),
+                            backgroundColor: importers.map(
+                                (_) => "rgba(" + r() + "," + r() + "," + r() + ")"
+                            ),
+                        },
+                    ],
+                },
+            }).SetClass("h-16"),
+        ])
+        this.SetClass("block w-full h-64 border border-red")
+    }
+}
+
 class NoteTable extends Combine {
     private static individualActions: [() => BaseUIElement, string][] = [
         [Svg.not_found_svg, "This feature does not exist"],
@@ -381,22 +514,24 @@ class BatchView extends Toggleable {
             badges.push(toggle)
         })
 
-        const fullTable = new NoteTable(noteStates, state)
+        const fullTable = new Combine([
+            new NoteTable(noteStates, state),
+            new Statistics(noteStates),
+        ])
 
         super(
             new Combine([
                 new Title(theme + ": " + intro, 2),
                 new Combine(badges).SetClass("flex flex-wrap"),
             ]),
+
             new VariableUiElement(
                 filterOn.map((filter) => {
                     if (filter === undefined) {
                         return fullTable
                     }
-                    return new NoteTable(
-                        noteStates.filter((ns) => ns.status === filter),
-                        state
-                    )
+                    const notes = noteStates.filter((ns) => ns.status === filter)
+                    return new Combine([new NoteTable(notes, state), new Statistics(notes)])
                 })
             ),
             {
@@ -422,10 +557,13 @@ class ImportInspector extends VariableUiElement {
             url =
                 "https://api.openstreetmap.org/api/0.6/notes/search.json?display_name=" +
                 encodeURIComponent(userDetails["display_name"]) +
-                "&limit=10000&closed=730&sort=created_at&q=" +
-                encodeURIComponent(userDetails["search"] ?? "#import")
+                "&limit=10000&closed=730&sort=created_at&q="
+            if (userDetails["search"] !== "") {
+                url += userDetails["search"]
+            } else {
+                url += "#import"
+            }
         }
-
         const notes: UIEventSource<
             { error: string } | { success: { features: { properties: NoteProperties }[] } }
         > = UIEventSource.FromPromiseWithErr(Utils.downloadJson(url))
@@ -444,6 +582,11 @@ class ImportInspector extends VariableUiElement {
                 if (userDetails["uid"]) {
                     props = props.filter((n) => n.comments[0].uid === userDetails["uid"])
                 }
+                if (userDetails["display_name"] !== undefined) {
+                    const display_name = <string>userDetails["display_name"]
+                    props = props.filter((n) => n.comments[0].user === display_name)
+                }
+
                 const perBatch: NoteState[][] = Array.from(
                     ImportInspector.SplitNotesIntoBatches(props).values()
                 )
@@ -462,6 +605,12 @@ class ImportInspector extends VariableUiElement {
                     ]
                 }
                 contents.push(accordeon)
+                contents.push(
+                    new Combine([
+                        new Title("Statistics for all notes"),
+                        new Statistics([].concat(...perBatch)),
+                    ])
+                )
                 const content = new Combine(contents)
                 return new LeftIndex(
                     [
@@ -516,9 +665,13 @@ class ImportInspector extends VariableUiElement {
                 ) {
                     status = "invalid"
                 } else if (
-                    ["imported", "erbij", "toegevoegd", "added"].some(
-                        (keyword) => lastComment.toLowerCase().indexOf(keyword) >= 0
-                    )
+                    [
+                        "imported",
+                        "erbij",
+                        "toegevoegd",
+                        "added",
+                        "openstreetmap.org/changeset",
+                    ].some((keyword) => lastComment.toLowerCase().indexOf(keyword) >= 0)
                 ) {
                     status = "imported"
                 } else {
@@ -559,7 +712,7 @@ class ImportViewerGui extends LoginToggle {
                     (ud) => {
                         const display_name = displayNameParam.data
                         const search = searchParam.data
-                        if (display_name !== "" && search !== "") {
+                        if (display_name !== "" || search !== "") {
                             return new ImportInspector({ display_name, search }, undefined)
                         }
                         return new ImportInspector(ud, state)
