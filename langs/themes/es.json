@@ -1080,7 +1080,7 @@
                                         "then": "No, no hay acera por la que caminar"
                                     },
                                     "2": {
-                                        "then": "Hay una acera señalizada por separado por la que se puede caminar"
+                                        "then": "Hay una acera mapeada por separado por la que caminar"
                                     }
                                 },
                                 "question": "¿Hay una acera en este lado de la calle?"
@@ -1104,7 +1104,7 @@
         "title": "Aceras"
     },
     "sport_pitches": {
-        "description": "Una pista de deportes es una área donde so practican deportes",
+        "description": "Una pista de deportes es una área donde se practican deportes",
         "shortDescription": "Un mapa que muestra pistas de deportes",
         "title": "Pistas de deportes"
     },
@@ -1116,7 +1116,7 @@
                     "presets": {
                         "0": {
                             "description": "Añade una nueva tienda de artículos deportivos.",
-                            "title": "una tienda deportiva"
+                            "title": "una tienda de deportes"
                         }
                     }
                 }
