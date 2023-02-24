@@ -725,19 +725,6 @@
     },
     "onwheels": {
         "layers": {
-            "4": {
-                "override": {
-                    "filter": {
-                        "0": {
-                            "options": {
-                                "1": {
-                                    "question": "Sense informació de l'amplada"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "19": {
                 "override": {
                     "=title": {
@@ -752,6 +739,19 @@
                             "render": {
                                 "special": {
                                     "text": "Importar"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "1": {
+                                    "question": "Sense informació de l'amplada"
                                 }
                             }
                         }
@@ -813,6 +813,11 @@
         "layers": {
             "0": {
                 "name": "codis postals",
+                "tagRenderings": {
+                    "postal_code": {
+                        "render": "El codi postal és {postal_code}"
+                    }
+                },
                 "title": {
                     "render": "Codi postal {postal_code}"
                 }
@@ -828,16 +833,44 @@
         "title": "Codis postals"
     },
     "postboxes": {
+        "description": "A aquest mapa pots afegir dades d'oficines de correus i bústies de correus. ¡Pots utilitzar aquest mapa per a trobar on pots enviar la teva pròxima postal! :)<br/>Has trobat una errada o algo que falta? Pots editar aquest mapa amb un compte gratuït d'OpenStreetMap. ",
+        "shortDescription": "Un mapa que mostra bústies i oficines de correus",
         "title": "Mapa de bústies i oficines de correus"
     },
+    "rainbow_crossings": {
+        "description": "A aquest mapa es mostren els pasos de vianants pintats amb l'arc de Sant Martí i poden afegit-se fàcilment",
+        "title": "Pasos de vianants amb l'arc de Sant Martí"
+    },
     "shops": {
+        "description": "A aquest mapa, es pot marcar informació bàsica sobre botigues, afegir horaris i números de telèfon",
+        "shortDescription": "Un mapa editable amb informació bàsica sobre botigues",
         "title": "Mapa obert de botigues"
     },
     "sidewalks": {
         "description": "Petició experimental",
         "layers": {
             "0": {
+                "description": "Una capa que mostra les voreres de les vies",
                 "name": "Voreres",
+                "tagRenderings": {
+                    "left-right-questions": {
+                        "renderings": {
+                            "1": {
+                                "mappings": {
+                                    "0": {
+                                        "then": "Sí, hi ha una vorera a aquest costat del carrer"
+                                    },
+                                    "1": {
+                                        "then": "No, no hi ha vorera per la que caminar"
+                                    },
+                                    "2": {
+                                        "then": "Hi ha una vorera mapejada separadament per on caminar"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "title": {
                     "render": "{name}"
                 }
