@@ -364,6 +364,9 @@
         },
         "title": "Mapa obert d'escalada"
     },
+    "clock": {
+        "description": "Mapa amb tots els rellotges públics"
+    },
     "cycle_highways": {
         "description": "Aquest mapa mostra carrils bici",
         "layers": {
@@ -866,9 +869,17 @@
                                     "2": {
                                         "then": "Hi ha una vorera mapejada separadament per on caminar"
                                     }
-                                }
+                                },
+                                "question": "Hi ha una vorera a aquest costat del carrer?"
+                            },
+                            "2": {
+                                "question": "Quina és l'amplada de la vorera a aquest costat de la calçada?",
+                                "render": "Aquesta vorera té {sidewalk:left|right:width} m d'ample"
                             }
                         }
+                    },
+                    "streetname": {
+                        "render": "El carrer s'anomena {name}"
                     }
                 },
                 "title": {
@@ -880,22 +891,118 @@
         "title": "Voreres"
     },
     "sport_pitches": {
+        "description": "Una pista d'esports és un àrea on es practiquen esports",
+        "shortDescription": "Un mapa que mostra pistes d'esports",
         "title": "Camps d'esports"
     },
     "sports": {
+        "description": "Tot sobre esports, troba camps d'esport, gimnasos i molt més.",
+        "layers": {
+            "4": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "description": "Afegeix una nova botiga d'articles esportius.",
+                            "title": "una tenda d'esports"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Mapa amb instal·lacions esportives.",
         "title": "Esports"
+    },
+    "stations": {
+        "description": "Veure, editar i afegir detalls a una estació de tren",
+        "layers": {
+            "15": {
+                "description": "Pantalles que mostren els trens que sortiran de l'estació",
+                "name": "Taulers de sortides",
+                "presets": {
+                    "0": {
+                        "description": "Afegeix un tauler que mostra les sortides, de forma electrònica o en paper",
+                        "title": "un tauler de sortides"
+                    }
+                },
+                "tagRenderings": {
+                    "type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Aquest tauler de sortides és de tipus desconegut"
+                            },
+                            "1": {
+                                "then": "Aquest és un tauler electrònic que mostra les pròximes sortides en temps real"
+                            },
+                            "2": {
+                                "then": "Aquest és un horari en paper"
+                            },
+                            "3": {
+                                "then": "Hi ha un cartell que mostra la freqüència dels trens"
+                            }
+                        },
+                        "question": "Quin tipus de tauler de sortides és aquest?"
+                    }
+                },
+                "title": {
+                    "render": "Tauler de sortides"
+                }
+            },
+            "3": {
+                "description": "Capa que mostra les estacions de tren",
+                "name": "Estació de tren"
+            }
+        },
+        "title": "Estacions de tren"
     },
     "street_lighting": {
         "description": "En aquest mapa pots trobar tot el relacionat amb l'enllumenat públic",
         "layers": {
             "1": {
                 "name": "Il·luminació de carrers",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Aquest carrer està il·luminat"
+                            },
+                            "1": {
+                                "then": "Aquest carrer no està il·luminant"
+                            },
+                            "2": {
+                                "then": "Aquest carrer està il·luminat per la nit"
+                            },
+                            "3": {
+                                "then": "Aquest carrer està il·luminat 24/7"
+                            }
+                        },
+                        "question": "Aquest carrer està il·luminat?"
+                    }
+                },
                 "title": {
                     "render": "Il·luminació del carrer"
                 }
             },
             "2": {
                 "name": "Tots els carrers",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Aquest carrer està il·luminat"
+                            },
+                            "1": {
+                                "then": "Aquest carrer no està il·luminat"
+                            },
+                            "2": {
+                                "then": "Aquest carrer està il·luminat per la nit"
+                            },
+                            "3": {
+                                "then": "Aquest carrer està il·luminat 24/7"
+                            }
+                        },
+                        "question": "Aquest carrer està il·luminat?"
+                    }
+                },
                 "title": {
                     "render": "Carrer"
                 }
@@ -904,10 +1011,12 @@
         "title": "Il·luminació als carrers"
     },
     "surveillance": {
+        "description": "A aquest mapa obert pots trobar càmeres de vigilància.",
         "shortDescription": "Càmeres de vigilància i altres tipus de vigilància",
         "title": "Vigilància sota vigilància"
     },
     "toilets": {
+        "description": "Mapa de lavabos públics",
         "title": "Mapa obert de lavabos"
     },
     "transit": {
@@ -920,13 +1029,15 @@
         "title": "Arbres"
     },
     "walls_and_buildings": {
-        "description": "Capa construïda especial que proporciona totes les parets i edificis. Aquesta capa és útil als predefinits per a objectes que es poden col·locar a les parets (p. ex. DEA, bústies de correus, entrades, adreces, càmeres de vigilància, ...). Aquesta capa és invisible per defecte i no es pot activar per l'usuari."
+        "description": "Capa construïda especial que proporciona totes les parets i edificis. Aquesta capa és útil als predefinits per a objectes que es poden col·locar a les parets (p. ex. DEA, bústies de correus, entrades, adreces, càmeres de vigilància, ...). Aquesta capa és invisible per defecte i no es pot activar per l'usuari.",
+        "title": "Murs i edificis"
     },
     "waste": {
         "description": "Mapa que mostra papereres i infraestructures de reciclatge.",
         "title": "Brossa"
     },
     "waste_basket": {
+        "description": "A aquest mapa trobaràs les papereres a prop teua. Si falta una paperera al mapa pots afegir-la tu mateix",
         "shortDescription": "Un mapa amb papereres",
         "title": "Papepera"
     }
