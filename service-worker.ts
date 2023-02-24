@@ -7,14 +7,6 @@ interface ServiceWorkerFetchEvent extends Event {
 
 async function install() {
     console.log("Installing service worker!")
-    // const cache = await caches.open(version);
-    //  console.log("Manifest file", manifest)
-    // await cache.addAll(manifest);
-    /* await cache.add({
-         cache: "force-cache",
-         url: "http://4.bp.blogspot.com/-_vTDmo_fSTw/T3YTV0AfGiI/AAAAAAAAAX4/Zjh2HaoU5Zo/s1600/beautiful%2Bkitten.jpg",
-         destination: "image",
-     })//*/
 }
 
 addEventListener("install", (e) => (<any>e).waitUntil(install()))
@@ -22,13 +14,6 @@ addEventListener("activate", (e) => (<any>e).waitUntil(activate()))
 
 async function activate() {
     console.log("Activating service worker")
-    /*self.registration.showNotification("SW started", {
-        actions: [{
-            action: "OK",
-            title: "Some action"
-        }]
-    })*/
-
     caches
         .keys()
         .then((keys) => {
@@ -38,8 +23,8 @@ async function activate() {
         .catch(console.error)
 }
 
-const cacheFirst = (event) => {
-    event.respondWith(
+const cacheFirst = async (event) => {
+    await event.respondWith(
         caches.match(event.request, { ignoreSearch: true }).then((cacheResponse) => {
             if (cacheResponse !== undefined) {
                 console.log("Loaded from cache: ", event.request)
@@ -56,7 +41,7 @@ const cacheFirst = (event) => {
     )
 }
 
-self.addEventListener("fetch", (e) => {
+self.addEventListener("fetch", async (e) => {
     // Important: this lambda must run synchronously, as the browser will otherwise handle the request
     const event = <ServiceWorkerFetchEvent>e
     try {
@@ -64,7 +49,9 @@ self.addEventListener("fetch", (e) => {
         const requestUrl = new URL(event.request.url)
         if (requestUrl.pathname.endsWith("service-worker-version")) {
             console.log("Sending version number...")
-            event.respondWith(new Response(JSON.stringify({ "service-worker-version": version })))
+            await event.respondWith(
+                new Response(JSON.stringify({ "service-worker-version": version }))
+            )
             return
         }
         const shouldBeCached =
@@ -77,9 +64,9 @@ self.addEventListener("fetch", (e) => {
             // We return _without_ calling event.respondWith, which signals the browser that it'll have to handle it himself
             return
         }
-        cacheFirst(event)
+        await cacheFirst(event)
     } catch (e) {
         console.error("CRASH IN SW:", e)
-        event.respondWith(fetch(event.request.url))
+        await event.respondWith(fetch(event.request.url))
     }
 })
