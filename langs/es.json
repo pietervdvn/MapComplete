@@ -267,6 +267,7 @@
     },
     "image": {
         "addPicture": "Añadir foto",
+        "currentLicense": "Tus imágenes se publicarán bajo {license}",
         "doDelete": "Borrar imagen",
         "dontDelete": "Cancelar",
         "isDeleted": "Borrada",
@@ -710,6 +711,9 @@
         "allMissing": "Aún sin traducciónes",
         "missing": "{count} cadenas sin traducir",
         "notImmediate": "Las traducciones no se actualizan directamente. Habitualmente esto lleva unos días"
+    },
+    "userinfo": {
+        "welcome": "Bienvenido {name}"
     },
     "validation": {
         "color": {
