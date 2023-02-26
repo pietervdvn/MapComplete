@@ -44,7 +44,8 @@
         "fakeui": {
             "add_images": "Přidání obrázků několika kliknutími",
             "edit": "Špatné nebo zastaralé informace? Tlačítko pro úpravu je přímo zde."
-        }
+        },
+        "frontParagraph": "MapComplete je snadno použitelná webová aplikace pro sběr geodat v OpenStreetMap, která umožňuje sběr a správu relevantních dat otevřeným, crowdsourcovaným a opakovaně použitelným způsobem.\n\nNa vyžádání lze přidávat nové kategorie a atributy."
     },
     "general": {
         "about": "Snadné úpravy a přidávání OpenStreetMap pro určité téma",
@@ -105,7 +106,9 @@
         "morescreen": {
             "createYourOwnTheme": "Vytvořte si vlastní téma MapComplete",
             "intro": "<h3>Více tematických map?</h3>Baví vás sbírat geodata? <br/>K dispozici jsou další tematické mapy.",
-            "searchForATheme": "Hledat téma"
+            "requestATheme": "Pokud chcete vlastní téma, požádejte o něj v nástroji pro sledování problémů",
+            "searchForATheme": "Hledat téma",
+            "streetcomplete": "Další podobnou aplikací je <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "noTagsSelected": "Nejsou vybrány žádné štítky",
         "opening_hours": {
@@ -187,6 +190,9 @@
         "uploadMultipleDone": "Bylo přidáno {count} fotek. Děkujeme za pomoc!"
     },
     "index": {
+        "intro": "MapComplete je prohlížeč a editor OpenStreetMap, který zobrazuje informace o prvcích konkrétního tématu a umožňuje je aktualizovat.",
+        "logIn": "Přihlaste se, abyste viděli další témata, která jste dříve navštívili",
+        "pickTheme": "Vyberte si téma níže a začněte.",
         "title": "Vítejte v MapComplete"
     },
     "matrixbot": {
