@@ -249,6 +249,10 @@
             "wednesday": "Miércoles"
         },
         "welcomeBack": "Has entrado, bienvenido.",
+        "welcomeExplanation": {
+            "addNew": "Toque el mapa para añadir un nuevo POI.",
+            "general": "En este mapa, puedes ver, editar y agregar <i>puntos de interés</i>. Haz zoom para ver los POI, toca uno para ver o editar la información. Todos los datos proceden y se guardan en OpenStreetMap, que puede reutilizarse libremente."
+        },
         "wikipedia": {
             "createNewWikidata": "Crear un nuevo ítem Wikidata",
             "doSearch": "Busca arriba para ver los resultados",
@@ -267,6 +271,7 @@
     },
     "image": {
         "addPicture": "Añadir foto",
+        "currentLicense": "Tus imágenes se publicarán bajo {license}",
         "doDelete": "Borrar imagen",
         "dontDelete": "Cancelar",
         "isDeleted": "Borrada",
@@ -710,6 +715,9 @@
         "allMissing": "Aún sin traducciónes",
         "missing": "{count} cadenas sin traducir",
         "notImmediate": "Las traducciones no se actualizan directamente. Habitualmente esto lleva unos días"
+    },
+    "userinfo": {
+        "welcome": "Bienvenido {name}"
     },
     "validation": {
         "color": {
