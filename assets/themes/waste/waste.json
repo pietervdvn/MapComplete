@@ -19,7 +19,8 @@
     "fr": "Carte des poubelles et infrastructures de recyclage.",
     "it": "Mappa dei cestini per i rifiuti e i centri di raccolta e riciclo rifiuti.",
     "ca": "Mapa que mostra papereres i infraestructures de reciclatge.",
-    "da": "Kort over affaldskurve og genbrugsanlæg."
+    "da": "Kort over affaldskurve og genbrugsanlæg.",
+    "es": "Mapa que muestra las papeleras y las instalaciones de reciclaje."
   },
   "icon": "./assets/layers/recycling/recycling-14.svg",
   "startZoom": 19,

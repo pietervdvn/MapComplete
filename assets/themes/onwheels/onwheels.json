@@ -7,7 +7,8 @@
     "nl": "OnWheels",
     "nb_NO": "På hjul",
     "ca": "Sobre rodes",
-    "pa_PK": "آن‌ویل"
+    "pa_PK": "آن‌ویل",
+    "es": "Sobre ruedas"
   },
   "description": {
     "en": "On this map, publicly weelchair accessible places are shown and can be easily added",
@@ -15,7 +16,8 @@
     "fr": "Sur cette carte nous pouvons voir et ajouter les différents endroits publiques accessibles aux chaises roulantes",
     "nl": "Op deze kaart kan je informatie rond rolstoeltoegankelijkheid zien, zoals toegangsdeuren met hun breedte en drempelhoogte, toiletten met toegankelijkheidsinformatie, recepties maar ook winkels, cafés en restaurants.",
     "da": "På dette kort vises steder, der er offentligt tilgængelige for kørestolsbrugere, og de kan nemt tilføjes",
-    "cs": "Na této mapě jsou zobrazena veřejně přístupná místa pro vozíčkáře, a lze je také snadno přidat"
+    "cs": "Na této mapě jsou zobrazena veřejně přístupná místa pro vozíčkáře, a lze je také snadno přidat",
+    "es": "En este mapa se muestran los lugares accesibles al público en silla de ruedas, que pueden añadirse fácilmente"
   },
   "icon": "./assets/themes/onwheels/crest.svg",
   "startLat": 50.86622,
@@ -85,7 +87,8 @@
                   "nl": "All kerbs",
                   "fr": "Toute/aucune information sur la largeur",
                   "da": "Eventuelle/ingen bredde info",
-                  "cs": "Jakékoliv/žádné informace o šířce"
+                  "cs": "Jakékoliv/žádné informace o šířce",
+                  "es": "Cualquiera/Sin información de anchura"
                 }
               },
               {
@@ -98,7 +101,8 @@
                   "da": "Uden bredde info",
                   "cs": "Bez informací o šířce",
                   "nb_NO": "Uten breddeinfo",
-                  "ca": "Sense informació de l'amplada"
+                  "ca": "Sense informació de l'amplada",
+                  "es": "Sin información de anchura"
                 }
               }
             ]
@@ -142,7 +146,8 @@
                   "de": "Alle Arten von Bordsteinen",
                   "fr": "Tous types de ressauts",
                   "da": "Alle typer kantsten",
-                  "cs": "Všechny typy obrubníků"
+                  "cs": "Všechny typy obrubníků",
+                  "es": "Todos los tipos de bordillos"
                 }
               },
               {
@@ -153,7 +158,8 @@
                   "de": "Erhöhter Bordstein (>3 cm)",
                   "fr": "Ressaut surélevé (> 3 cm)",
                   "da": "Hævet kantsten (>3 cm)",
-                  "cs": "Zvýšený obrubník (>3 cm)"
+                  "cs": "Zvýšený obrubník (>3 cm)",
+                  "es": "Bordillo elevado (>3 cm)"
                 }
               },
               {
@@ -164,7 +170,8 @@
                   "de": "Abgesenkter Bordstein (~3 cm)",
                   "fr": "Ressaut abaissé (~ 3 cm)",
                   "da": "Sænket kantsten (~3 cm)",
-                  "cs": "Snížený obrubník (~3 cm)"
+                  "cs": "Snížený obrubník (~3 cm)",
+                  "es": "Bordillo rebajado (~3 cm)"
                 }
               },
               {
@@ -175,7 +182,8 @@
                   "de": "Bündiger Bordstein (~0cm)",
                   "fr": "Ressaut à niveau (~ 0 cm)",
                   "da": "Skyl kantsten (~0 cm)",
-                  "cs": "Zapuštěný obrubník (~0 cm)"
+                  "cs": "Zapuštěný obrubník (~0 cm)",
+                  "es": "Bordillo enrasado (~0 cm)"
                 }
               }
             ]
@@ -236,7 +244,8 @@
           "de": "Barrierefreie Parkplätze",
           "nl": "Parkeerplaatsen voor personen met een beperking",
           "fr": "Places de stationnement pour personnes handicapées",
-          "cs": "Parkovací místa pro osoby se zdravotním postižením"
+          "cs": "Parkovací místa pro osoby se zdravotním postižením",
+          "es": "Plazas de aparcamiento para discapacitados"
         }
       },
       "hideTagRenderingsWithLabels": [
@@ -384,7 +393,8 @@
             "ca": "Estadístiques",
             "pa_PK": "انکڑے",
             "nl": "Statistieken",
-            "cs": "Statistiky"
+            "cs": "Statistiky",
+            "es": "Estadísticas"
           }
         },
         "tagRenderings": [
@@ -424,7 +434,8 @@
                   "ca": "Importar",
                   "pa_PK": "ایمپورٹ کرو",
                   "nl": "Importeren",
-                  "cs": "Dovoz"
+                  "cs": "Dovoz",
+                  "es": "Importar"
                 },
                 "icon": "./assets/svg/addSmall.svg",
                 "location_picker": "photo",
@@ -446,7 +457,8 @@
                   "da": "Tilføj alle de foreslåede tags",
                   "nb_NO": "Legg til alle foreslåtte",
                   "nl": "Voeg alle gesuggereerde tags toe",
-                  "cs": "Přidat všechny navrhované značky"
+                  "cs": "Přidat všechny navrhované značky",
+                  "es": "Añadir todas las etiquetas sugeridas"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "id_of_object_to_apply_this_one": "_closest_osm_hotel"

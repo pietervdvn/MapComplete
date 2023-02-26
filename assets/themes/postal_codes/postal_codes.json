@@ -91,7 +91,8 @@
             "nl": "Deze postcode is {postal_code}",
             "fr": "Le code postal est {postal_code}",
             "nb_NO": "Postnummeret er {postal_code}",
-            "da": "Postnummeret er {postal_code}"
+            "da": "Postnummeret er {postal_code}",
+            "ca": "El codi postal és {postal_code}"
           }
         }
       ],
@@ -158,7 +159,8 @@
         "nl": "stadhuizen",
         "fr": "mairies",
         "nb_NO": "rådhus",
-        "da": "rådhuse"
+        "da": "rådhuse",
+        "es": "Municipios"
       },
       "minzoom": 12,
       "title": {
@@ -171,7 +173,8 @@
           "fr": "Mairie {name}",
           "da": "Rådhus {name}",
           "nb_NO": "{name}-rådhuset",
-          "ca": "Ajuntament de {name}"
+          "ca": "Ajuntament de {name}",
+          "es": "Municipio {name}"
         }
       },
       "calculatedTags": [

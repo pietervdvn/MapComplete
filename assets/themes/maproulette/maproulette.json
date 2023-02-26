@@ -7,14 +7,16 @@
     "da": "KortRoulette-opgaver",
     "ca": "Tasques de MapRoulette",
     "pa_PK": "میپ‌رولیٹ دے کم",
-    "nl": "MapRoulette taken"
+    "nl": "MapRoulette taken",
+    "es": "Tareas de MapRoulette"
   },
   "description": {
     "en": "Theme showing MapRoulette tasks, allowing you to search, filter and fix them.",
     "de": "Thema mit MapRoulette-Aufgaben, die Sie suchen, filtern und beheben können.",
     "fr": "Thème MapRoulette permettant d’afficher, rechercher, filtrer et résoudre les tâches.",
     "da": "Tema, der viser MapRoulette-opgaver, så du kan søge, filtrere og rette dem.",
-    "nl": "Thema met MapRoulette taken, waar je ze kunt zoeken, filteren en ze oplossen."
+    "nl": "Thema met MapRoulette taken, waar je ze kunt zoeken, filteren en ze oplossen.",
+    "es": "Tema que muestra las tareas de MapRoulette, permitiendo buscarlas, filtrarlas y arreglarlas."
   },
   "hideFromOverview": true,
   "icon": "./assets/layers/maproulette/logomark.svg",

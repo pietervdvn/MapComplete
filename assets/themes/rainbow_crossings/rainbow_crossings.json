@@ -6,14 +6,18 @@
     "fr": "Passages piétons arc-en-ciel",
     "da": "Regnbue fodgængerfelter",
     "nl": "Regenboogzebrapaden",
-    "ru": "Радужные пешеходные переходы"
+    "ru": "Радужные пешеходные переходы",
+    "ca": "Pasos de vianants amb l'arc de Sant Martí",
+    "es": "Pasos de peatones arco iris"
   },
   "description": {
     "en": "On this map, rainbow-painted pedestrian crossings are shown and can be easily added",
     "de": "Auf dieser Karte sind Fußgängerüberwege mit Regenbogenfarben eingezeichnet und können leicht hinzugefügt werden",
     "fr": "Cette carte affiche et permet la modification des passages cloutés peints aux couleurs de l’arc-en-ciel",
     "da": "På dette kort er regnbuemalede fodgængerfelter vist og kan nemt tilføjes",
-    "nl": "Deze kaart toont zebrapaden die in regenboogkleuren of pridekleuren geschilderd zijn."
+    "nl": "Deze kaart toont zebrapaden die in regenboogkleuren of pridekleuren geschilderd zijn.",
+    "ca": "A aquest mapa es mostren els pasos de vianants pintats amb l'arc de Sant Martí i poden afegit-se fàcilment",
+    "es": "En este mapa se muestran los pasos de peatones pintados con el arco iris, que pueden añadirse fácilmente"
   },
   "icon": "./assets/themes/rainbow_crossings/logo.svg",
   "startLat": 50.8465573,

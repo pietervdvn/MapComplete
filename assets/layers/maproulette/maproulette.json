@@ -133,7 +133,8 @@
         "special": {
           "type": "maproulette_set_status",
           "message": {
-            "en": "Mark as fixed"
+            "en": "Mark as fixed",
+            "de": "Als behoben markieren"
           }
         }
       }
@@ -144,7 +145,8 @@
         "special": {
           "type": "maproulette_set_status",
           "message": {
-            "en": "Mark as not found or false positive"
+            "en": "Mark as not found or false positive",
+            "de": "Als nicht gefunden oder Falschmeldung markieren"
           },
           "status": "2",
           "image": "close"
@@ -157,7 +159,8 @@
         "special": {
           "type": "maproulette_set_status",
           "message": {
-            "en": "Mark as too hard"
+            "en": "Mark as too hard",
+            "de": "Als zu schwer markieren"
           },
           "status": "6",
           "image": "not_found"

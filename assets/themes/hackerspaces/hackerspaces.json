@@ -12,7 +12,8 @@
     "da": "Hackerspaces",
     "ca": "Espai per a hackers",
     "pa_PK": "ہیکر دے تھاں",
-    "cs": "Hackerspaces"
+    "cs": "Hackerspaces",
+    "es": "Hackerspaces"
   },
   "shortDescription": {
     "en": "A map of hackerspaces",
@@ -23,7 +24,8 @@
     "nl": "Een kaart van hackerspaces",
     "fr": "Une carte des ateliers numériques ouverts",
     "da": "Et kort over hackerspaces",
-    "cs": "Mapa označující Hackerspaces"
+    "cs": "Mapa označující Hackerspaces",
+    "es": "Un mapa de hackerspaces"
   },
   "description": {
     "en": "On this map you can see hackerspaces, add a new hackerspace or update data directly",
@@ -33,7 +35,8 @@
     "hu": "Ezen a térképen hackerspace-ek láthatók, új hackerspace-eket lehet fölrajzolni vagy meglévők adatait frissíteni",
     "nl": "Op deze kaart kan je hackerspaces zien, toevoegen en updaten",
     "fr": "Retrouvez, renseignez ou modifiez des ateliers numériques ouverts",
-    "da": "På dette kort kan du se hackerspaces, tilføje et nyt hackerspace eller opdatere data direkte"
+    "da": "På dette kort kan du se hackerspaces, tilføje et nyt hackerspace eller opdatere data direkte",
+    "es": "En este mapa puedes ver hackerspaces, añadir un nuevo hackerspace o actualizar datos directamente"
   },
   "icon": "./assets/themes/hackerspaces/glider.svg",
   "startLat": 0,

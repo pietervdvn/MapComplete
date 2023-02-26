@@ -22,7 +22,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/waste waste]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:ca|en}}, {{#language:da|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: Map showing waste baskets and recycling facilities
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -76,7 +76,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/toilets toilets]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:pl|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: A map of public toilets
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -112,7 +112,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/atm atm]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: This map shows ATMs to withdraw or deposit money
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -139,7 +139,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/bicyclelib bicyclelib]
 |region= Worldwide
-|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:fr|en}}, {{#language:zh_Hant|en}}, {{#language:de|en}}, {{#language:hu|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:nl|en}}, {{#language:en|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:fr|en}}, {{#language:zh_Hant|en}}, {{#language:de|en}}, {{#language:hu|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: A bicycle library is a place where bicycles can be lent, often for a small yearly fee
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -157,7 +157,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/blind_osm blind_osm]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: Help to map features relevant for the blind
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -184,7 +184,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/climbing climbing]
 |region= Worldwide
-|lang= {{#language:nl|en}}, {{#language:de|en}}, {{#language:en|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}
+|lang= {{#language:nl|en}}, {{#language:de|en}}, {{#language:en|en}}, {{#language:ru|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: On this map you will find various climbing opportunities such as climbing gyms, bouldering halls and rocks in nature
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -193,7 +193,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/clock clock]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:ca|en}}, {{#language:de|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: Map showing all public clocks
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -229,7 +229,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/education education]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: On this map, you'll find information about all types of schools and education and can easily add more information
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -247,7 +247,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/fritures fritures]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:ca|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: On this map, you'll find your favourite fries shop!
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -256,7 +256,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/ghostbikes ghostbikes]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:fr|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -265,7 +265,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/hackerspaces hackerspaces]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: A map of hackerspaces
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -274,7 +274,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/healthcare healthcare]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:ca|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:ca|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:cs|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: On this map, various healthcare related items are shown
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -283,7 +283,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/hotels hotels]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:cs|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: On this map, you'll find hotels in your area
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -292,7 +292,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/indoors indoors]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: On this map, publicly accessible indoor places are shown
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -301,7 +301,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/kerbs_and_crossings kerbs_and_crossings]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:nb_NO|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: A map showing kerbs and crossings
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -319,7 +319,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/maxspeed maxspeed]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: This map shows the legally allowed maximum speed on every road.
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -355,7 +355,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/onwheels onwheels]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: On this map, publicly weelchair accessible places are shown and can be easily added
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -373,7 +373,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/osm_community_index osm_community_index]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: An index of community resources for OpenStreetMap.
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -391,7 +391,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/pets pets]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:da|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ca|en}}
+|lang= {{#language:en|en}}, {{#language:da|en}}, {{#language:de|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, 
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -400,7 +400,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/postboxes postboxes]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:ca|en}}
 |descr= A MapComplete theme: A map showing postboxes and post offices
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -409,7 +409,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/rainbow_crossings rainbow_crossings]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:ca|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: On this map, rainbow-painted pedestrian crossings are shown and can be easily added
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -418,7 +418,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/shops shops]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:da|en}}
+|lang= {{#language:en|en}}, {{#language:fr|en}}, {{#language:ja|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:nl|en}}, {{#language:da|en}}, {{#language:ca|en}}
 |descr= A MapComplete theme: An editable map with basic shop information
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -427,7 +427,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/sport_pitches sport_pitches]
 |region= Worldwide
-|lang= {{#language:nl|en}}, {{#language:fr|en}}, {{#language:en|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:da|en}}
+|lang= {{#language:nl|en}}, {{#language:fr|en}}, {{#language:en|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:ru|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:es|en}}, {{#language:da|en}}, {{#language:ca|en}}
 |descr= A MapComplete theme: A map showing sport pitches
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -436,7 +436,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/sports sports]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:ca|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: Map showing sport facilities.
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -454,7 +454,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/surveillance surveillance]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:fr|en}}, {{#language:pl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:fr|en}}, {{#language:pl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:hu|en}}, {{#language:da|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: Surveillance cameras and other means of surveillance
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -463,7 +463,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/transit transit]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}
+|lang= {{#language:en|en}}, {{#language:de|en}}, {{#language:fr|en}}, {{#language:da|en}}, {{#language:nl|en}}, {{#language:nb_NO|en}}, {{#language:ca|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: Plan your trip with the help of the public transport system
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -481,7 +481,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/waste_basket waste_basket]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:ca|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:de|en}}, {{#language:it|en}}, {{#language:zh_Hant|en}}, {{#language:hu|en}}, {{#language:fr|en}}, {{#language:nb_NO|en}}, {{#language:da|en}}, {{#language:ca|en}}, {{#language:es|en}}
 |descr= A MapComplete theme: A map with waste baskets
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png

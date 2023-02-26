@@ -3,7 +3,8 @@
   "name": {
     "en": "Nature reserve",
     "nl": "Natuurgebied",
-    "de": "Naturschutzgebiete"
+    "de": "Naturschutzgebiete",
+    "es": "Reserva Natural"
   },
   "minzoom": 12,
   "source": {

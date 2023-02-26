@@ -10,7 +10,8 @@
     "pa_PK": "سیت سمبھال",
     "cs": "Zdravotní péče",
     "nb_NO": "Helsebehandling",
-    "ru": "Здравоохранение"
+    "ru": "Здравоохранение",
+    "es": "Atención sanitaria"
   },
   "description": {
     "en": "On this map, various healthcare related items are shown",
@@ -19,7 +20,8 @@
     "fr": "Cette carte affiche différents éléments liés à la santé",
     "da": "På dette kort er forskellige sundhedsrelaterede emner vist",
     "nl": "Op deze kaart vind je dokters, apothekers, kinesisten, ziekenhuizen en andere gezondheidsgerelateerde diensten",
-    "cs": "Na této mapě jsou zobrazeny různé položky související se zdravotní péčí"
+    "cs": "Na této mapě jsou zobrazeny různé položky související se zdravotní péčí",
+    "es": "En este mapa se muestran varios elementos relacionados con la salud"
   },
   "icon": "./assets/layers/doctors/doctors.svg",
   "startLat": 50.8465573,
@@ -47,7 +49,8 @@
           {
             "title": {
               "en": "a medical supply shop",
-              "de": "ein Sanitätshaus"
+              "de": "ein Sanitätshaus",
+              "es": "una tienda de suministros médicos"
             },
             "tags": [
               "shop=medical_supply"
@@ -56,7 +59,8 @@
           {
             "title": {
               "en": "a hearing aids shop",
-              "de": "ein Hörgerätegeschäft"
+              "de": "ein Hörgerätegeschäft",
+              "es": "una tienda de audífonos"
             },
             "tags": [
               "shop=hearing_aids"
@@ -65,7 +69,8 @@
           {
             "title": {
               "en": "an optician",
-              "de": "ein Optiker"
+              "de": "ein Optiker",
+              "es": "una óptica"
             },
             "tags": [
               "shop=optician"

@@ -6,18 +6,23 @@
     "de": "Sport",
     "pa_PK": "کھیڈاں",
     "fr": "Sports",
-    "ca": "Esports"
+    "ca": "Esports",
+    "es": "Deportes"
   },
   "shortDescription": {
     "en": "Map showing sport facilities.",
     "nl": "Kaart met sportfaciliteiten.",
     "de": "Karte mit Sporteinrichtungen.",
-    "fr": "Carte des équipements sportifs."
+    "fr": "Carte des équipements sportifs.",
+    "ca": "Mapa amb instal·lacions esportives.",
+    "es": "Mapa con instalaciones deportivas."
   },
   "description": {
     "en": "All about sports, find sport pitches, fitness centres and more.",
     "nl": "Alles over sport: vind sportvelden, fitnesscentra en meer.",
-    "de": "Alles über Sport. Finden Sie Sportplätze, Fitnesscenter und vieles mehr."
+    "de": "Alles über Sport. Finden Sie Sportplätze, Fitnesscenter und vieles mehr.",
+    "ca": "Tot sobre esports, troba camps d'esport, gimnasos i molt més.",
+    "es": "Todo sobre deportes, encuentra campos de deporte, gimnasios y mucho más."
   },
   "icon": "./assets/themes/sports/sport.svg",
   "startLat": 0,
@@ -47,13 +52,17 @@
             "title": {
               "en": "a sports shop",
               "nl": "een sportwinkel",
-              "de": "ein Sportgeschäft"
+              "de": "ein Sportgeschäft",
+              "ca": "una tenda d'esports",
+              "es": "una tienda de deportes"
             },
             "description": {
               "en": "Add a new shop selling sports goods.",
               "nl": "Voeg een nieuwe winkel toe die sportartikelen verkoopt.",
               "de": "Ein neues Geschäft für Sportartikel hinzufügen.",
-              "fr": "Ajouter un nouveau commerce vendant des équipements sportifs."
+              "fr": "Ajouter un nouveau commerce vendant des équipements sportifs.",
+              "ca": "Afegeix una nova botiga d'articles esportius.",
+              "es": "Añade una nueva tienda de artículos deportivos."
             }
           }
         ],

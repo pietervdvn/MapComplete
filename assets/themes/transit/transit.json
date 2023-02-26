@@ -8,7 +8,8 @@
     "nb_NO": "Bussruter",
     "ca": "Rutes de bus",
     "pa_PK": "بس روٹ",
-    "nl": "Busroutes"
+    "nl": "Busroutes",
+    "es": "Rutas de autobús"
   },
   "description": {
     "en": "Plan your trip with the help of the public transport system.",
@@ -17,7 +18,8 @@
     "da": "Planlæg din rejse ved hjælp af det offentlige transportsystem.",
     "nl": "Plan je trip met behulp van het openbaar vervoer.",
     "nb_NO": "Planlegg turen din med offentlig transport",
-    "ca": "Planifica el teu viatge amb l'ajuda del sistema públic de transport."
+    "ca": "Planifica el teu viatge amb l'ajuda del sistema públic de transport.",
+    "es": "Planifique su viaje con ayuda del sistema de transporte público."
   },
   "icon": "./assets/layers/transit_stops/bus_stop.svg",
   "startZoom": 20,

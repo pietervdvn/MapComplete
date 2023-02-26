@@ -8,7 +8,8 @@
     "da": "Kantsten og overgange",
     "cs": "Obrubníky a přechody",
     "nb_NO": "Fortauskanter og fotgjengerfelt.",
-    "ru": "Бордюры и пешеходные переходы"
+    "ru": "Бордюры и пешеходные переходы",
+    "es": "Bordillos y cruces"
   },
   "description": {
     "en": "A map showing kerbs and crossings.",
@@ -17,7 +18,8 @@
     "fr": "Une carte affichant les ressauts et traversées.",
     "da": "Et kort, der viser kantsten og overgange.",
     "cs": "Mapa zobrazující obrubníky a přechody.",
-    "nb_NO": "Fortauskanter og fotgjengerfelt."
+    "nb_NO": "Fortauskanter og fotgjengerfelt.",
+    "es": "Un mapa que muestra bordillos y cruces."
   },
   "icon": "./assets/layers/kerbs/KerbIcon.svg",
   "startZoom": 19,

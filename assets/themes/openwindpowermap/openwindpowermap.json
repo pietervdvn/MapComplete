@@ -12,7 +12,8 @@
     "nl": "Windmolens",
     "ca": "Mapa obert d'energia eòlica",
     "nb_NO": "ÅpentVindkraftKart",
-    "pa_PK": "اوپن‌ونڈ‌پاور‌میپ"
+    "pa_PK": "اوپن‌ونڈ‌پاور‌میپ",
+    "es": "Mapa Abierto de la Energía Eólica"
   },
   "icon": "./assets/themes/openwindpowermap/logo.svg",
   "description": {
@@ -22,7 +23,7 @@
     "it": "Una cartina per la visione e la modifica delle turbine eoliche.",
     "zh_Hant": "顯示與編輯風機的地圖。",
     "hu": "Szélerőművek megjelenítésére és szerkesztésére szolgáló térkép.",
-    "es": "Un para mostrar y editar turbinas de viento",
+    "es": "Mapa para mostrar y editar turbinas de viento.",
     "nl": "Een kaart om windturbines te tonen en te bewerken.",
     "da": "Et kort til visning og redigering af vindmøller.",
     "nb_NO": "Et kart for visning og redigering av vindmøller.",

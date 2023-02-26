@@ -191,7 +191,8 @@
             "en": "This bench does not have separated seats",
             "nl": "Deze bank is niet ingedeeld in aparte zitplaatsen",
             "de": "Diese Bank hat keine getrennten Sitze",
-            "fr": "Ce banc n'a pas de sièges séparés"
+            "fr": "Ce banc n'a pas de sièges séparés",
+            "es": "Este banco no tiene asientos separados"
           }
         }
       ]
@@ -772,7 +773,8 @@
             "en": "This bench does <span class='subtle'>(probably)</span> not have an inscription",
             "nl": "Deze bank heeft <span class='subtle'>(waarschijnlijk)</span> geen inscriptie",
             "de": "Diese Bank hat <span class='subtle'>(wahrscheinlich)</span> keine Inschrift",
-            "fr": "Ce banc n'a<span class='subtle'>(probablement)</span> pas d'inscription"
+            "fr": "Ce banc n'a<span class='subtle'>(probablement)</span> pas d'inscription",
+            "es": "Este banco <span class='subtle'>(probablemente)</span> no tiene inscripción"
           },
           "hideInAnswer": true
         }
@@ -801,7 +803,8 @@
             "en": "This bench does not have an integrated artwork",
             "nl": "Deze bank heeft geen geïntegreerd kunstwerk",
             "de": "Diese Bank hat kein integriertes Kunstwerk",
-            "fr": "Ce banc n'a pas d'oeuvre d'art intégrée"
+            "fr": "Ce banc n'a pas d'oeuvre d'art intégrée",
+            "es": "Este banco no tiene una obra de arte integrada"
           }
         }
       ]

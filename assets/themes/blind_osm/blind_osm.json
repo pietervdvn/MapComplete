@@ -8,7 +8,8 @@
     "nb_NO": "OSM for blinde",
     "ca": "OSM per als cecs",
     "cs": "Mapování systému objektů pro nevidomé",
-    "ru": "OSM для слепых и слабовидящих"
+    "ru": "OSM для слепых и слабовидящих",
+    "es": "OSM para ciegos"
   },
   "description": {
     "en": "Help to map features relevant for the blind",
@@ -17,7 +18,8 @@
     "fr": "Aidez à cartographier les caractéristiques importantes pour les malvoyants",
     "ca": "Ajuda a mapejar elements rellevants per a persones amb discapacitat visual",
     "cs": "Pomozte zmapovat objekty důležité pro nevidomé",
-    "nb_NO": "Relevante funksjoner for blinde"
+    "nb_NO": "Relevante funksjoner for blinde",
+    "es": "Ayuda para cartografiar elementos relevantes para invidentes"
   },
   "icon": "./assets/themes/blind_osm/Blindicon.svg",
   "startLat": 52.99238,

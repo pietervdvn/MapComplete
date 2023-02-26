@@ -18,7 +18,8 @@
     "nl": "Deze kaart toont geldautomaten waar je geld kunt afhalen of geld op de bank kan zetten",
     "ca": "Aquest mapa mostra caixers automàtics per a retirar o ingresar diners",
     "cs": "Tato mapa zobrazuje bankomaty pro výběr nebo vklad peněz",
-    "nb_NO": "Viser minibanker for å ta ut eller sette inn penger"
+    "nb_NO": "Viser minibanker for å ta ut eller sette inn penger",
+    "es": "Este mapa muestra los cajeros automáticos para retirar o depositar dinero"
   },
   "icon": "./assets/themes/atm/logo.svg",
   "startLat": 0,

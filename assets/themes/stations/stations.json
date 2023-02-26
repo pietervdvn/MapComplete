@@ -5,13 +5,17 @@
     "de": "Bahnhöfe",
     "nl": "Treinstations",
     "nb_NO": "Togstasjoner",
-    "fr": "Gares ferroviaires"
+    "fr": "Gares ferroviaires",
+    "ca": "Estacions de tren",
+    "es": "Estaciones de tren"
   },
   "description": {
     "en": "View, edit and add details to a train station",
     "de": "Bahnhofsdetails ansehen, bearbeiten und hinzufügen",
     "nl": "Bekijk, bewerk en voeg details to aan een treinstation",
-    "fr": "Voir, modifier et ajouter des détails à une gare ferroviaire"
+    "fr": "Voir, modifier et ajouter des détails à une gare ferroviaire",
+    "ca": "Veure, editar i afegir detalls a una estació de tren",
+    "es": "Ver, editar y añadir detalles a una estación de tren"
   },
   "icon": "./assets/themes/stations/rail-light.svg",
   "startLat": 0,
@@ -69,14 +73,18 @@
         "de": "Bahnhöfe",
         "nl": "Treinstations",
         "nb_NO": "Togstasjoner",
-        "fr": "Gares ferroviaires"
+        "fr": "Gares ferroviaires",
+        "ca": "Estació de tren",
+        "es": "Estación de Tren"
       },
       "description": {
         "en": "Layer showing train stations",
         "de": "Ebene mit Bahnhöfen",
         "nl": "Laag met treinstations",
         "nb_NO": "Lag som viser togstasjoner",
-        "fr": "Couche montrant les gares"
+        "fr": "Couche montrant les gares",
+        "ca": "Capa que mostra les estacions de tren",
+        "es": "Capa que muestra las estaciones de tren"
       },
       "mapRendering": [
         {
@@ -243,20 +251,26 @@
         "en": "Departures boards",
         "de": "Abfahrtstafeln",
         "nl": "Vertrektijdenborden",
-        "fr": "Panneaux des départs"
+        "fr": "Panneaux des départs",
+        "ca": "Taulers de sortides",
+        "es": "Tableros de salidas"
       },
       "description": {
         "en": "Displays showing the trains that will leave from this station",
         "de": "Anzeigen der Züge, die von diesem Bahnhof abfahren",
         "nl": "Schermen die treinen tonen die van dit station vertrekken",
-        "fr": "Panneau affichant les trains au départ depuis cette gare"
+        "fr": "Panneau affichant les trains au départ depuis cette gare",
+        "ca": "Pantalles que mostren els trens que sortiran de l'estació",
+        "es": "Pantallas que muestran los trenes que saldrán de esta estación"
       },
       "title": {
         "render": {
           "en": "Departures board",
           "de": "Abfahrtstafel",
           "nl": "Vertrektijdenbord",
-          "fr": "Tableau des départs"
+          "fr": "Tableau des départs",
+          "ca": "Tauler de sortides",
+          "es": "Tablero de salidas"
         }
       },
       "minzoom": 19,
@@ -276,7 +290,9 @@
             "en": "What kind of departures board is this?",
             "de": "Was ist das für eine Abfahrtstafel?",
             "nl": "Wat voor vertrektijdenbord is dit?",
-            "fr": "De quel type de panneau de départs s'agit-il ?"
+            "fr": "De quel type de panneau de départs s'agit-il ?",
+            "ca": "Quin tipus de tauler de sortides és aquest?",
+            "es": "¿Qué tipo de tablero de salidas es éste?"
           },
           "mappings": [
             {
@@ -285,7 +301,9 @@
                 "en": "This is a departures board of an unknown type",
                 "de": "Dies ist eine Abfahrtstafel eines unbekannten Typs",
                 "nl": "Dit is een vertrektijdenbord van een onbekend type",
-                "fr": "Panneau des départs de type inconnu"
+                "fr": "Panneau des départs de type inconnu",
+                "ca": "Aquest tauler de sortides és de tipus desconegut",
+                "es": "Este es un panel de salidas de tipo desconocido"
               }
             },
             {
@@ -294,7 +312,9 @@
                 "en": "This is an electronic board, showing the next departures in realtime",
                 "de": "Dies ist eine elektronische Tafel, die nächste Abfahrten in Echtzeit anzeigt",
                 "nl": "Dit is een elektronisch bord, met realtime vertrektijden",
-                "fr": "Panneau électronique, affichant les prochains départs en temps réel"
+                "fr": "Panneau électronique, affichant les prochains départs en temps réel",
+                "ca": "Aquest és un tauler electrònic que mostra les pròximes sortides en temps real",
+                "es": "Este es un tablero electrónico que muestra las próximas salidas en tiempo real"
               }
             },
             {
@@ -304,7 +324,9 @@
                 "de": "Dies ist ein Papierfahrplan",
                 "nl": "Dit is een papieren vertrekstaat",
                 "nb_NO": "Dette er en papir-tidstabell",
-                "fr": "Tableau des départs papier"
+                "fr": "Tableau des départs papier",
+                "ca": "Aquest és un horari en paper",
+                "es": "Este es un horario en papel"
               }
             },
             {
@@ -312,7 +334,9 @@
               "then": {
                 "en": "There is a sign showing the frequency of the trains",
                 "de": "Es gibt ein Schild, das den Takt der Züge anzeigt",
-                "nl": "Er is een bord met de tijden tussen treinen"
+                "nl": "Er is een bord met de tijden tussen treinen",
+                "ca": "Hi ha un cartell que mostra la freqüència dels trens",
+                "es": "Hay un cartel que muestra la frecuencia de los trenes"
               }
             }
           ]
@@ -328,13 +352,17 @@
             "en": "a departures board",
             "de": "eine Abfahrtstafel",
             "nl": "een vertrektijdenbord",
-            "fr": "un panneaux des départs"
+            "fr": "un panneaux des départs",
+            "ca": "un tauler de sortides",
+            "es": "un tablero de salidas"
           },
           "description": {
             "en": "Add a board showing departures, either electronic or paper",
             "de": "Fügen Sie eine Tafel hinzu, auf der Abfahrten angezeigt werden, entweder elektronisch oder in Papierform",
             "nl": "Voeg een bord met vertrektijden toe, elektronisch of op papier",
-            "fr": "Ajouter un panneau indiquant les départs, qu'il soit électronique ou papier"
+            "fr": "Ajouter un panneau indiquant les départs, qu'il soit électronique ou papier",
+            "ca": "Afegeix un tauler que mostra les sortides, de forma electrònica o en paper",
+            "es": "Añadir un panel de salidas, electrónico o en papel"
           }
         }
       ],

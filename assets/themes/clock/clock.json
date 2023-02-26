@@ -2,11 +2,16 @@
   "id": "clock",
   "title": {
     "en": "Clocks",
-    "nl": "Klokken"
+    "nl": "Klokken",
+    "de": "Uhren",
+    "es": "Relojes"
   },
   "description": {
     "en": "Map showing all public clocks",
-    "nl": "Kaart met alle openbare klokken"
+    "nl": "Kaart met alle openbare klokken",
+    "ca": "Mapa amb tots els rellotges públics",
+    "de": "Karte mit allen öffentlichen Uhren",
+    "es": "Mapa con todos los relojes públicos"
   },
   "icon": "./assets/layers/clock/clock.svg",
   "startLat": 0,

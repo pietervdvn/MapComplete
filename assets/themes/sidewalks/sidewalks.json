@@ -91,10 +91,11 @@
       "description": {
         "en": "Layer showing sidewalks of highways",
         "de": "Ebene mit Bürgersteigen",
-        "es": "Una capa que muestra aceras de autovías",
+        "es": "Una capa que muestra las aceras de las vías",
         "nl": "Laag die voetpaden naast wegen toont",
         "fr": "Calque montrant les trottoirs",
-        "da": "Lag, der viser fortove på motorveje"
+        "da": "Lag, der viser fortove på motorveje",
+        "ca": "Una capa que mostra les voreres de les vies"
       },
       "tagRenderings": [
         {
@@ -107,7 +108,8 @@
             "fr": "Cette rue s’appelle {name}",
             "nb_NO": "Denne gaten heter {name}",
             "it": "La strada si chiama {name}",
-            "da": "Denne gade hedder {name}"
+            "da": "Denne gade hedder {name}",
+            "ca": "El carrer s'anomena {name}"
           }
         },
         {
@@ -137,7 +139,9 @@
                 "de": "Gibt es auf dieser Straßenseite einen Bürgersteig?",
                 "da": "Er der et fortov på denne side af vejen?",
                 "nl": "Is er een stoep aan deze kant van de weg?",
-                "fr": "Y a-t-il un trottoir de ce côté de la route ?"
+                "fr": "Y a-t-il un trottoir de ce côté de la route ?",
+                "ca": "Hi ha una vorera a aquest costat del carrer?",
+                "es": "¿Hay una acera en este lado de la calle?"
               },
               "mappings": [
                 {
@@ -147,7 +151,9 @@
                     "de": "Ja, es gibt einen Bürgersteig auf dieser Straßenseite",
                     "da": "Ja, der er et fortov på denne side af vejen",
                     "nl": "Ja, er is een stoep aan deze kant van de weg",
-                    "fr": "Oui, il y a un trottoir de ce côté de la route"
+                    "fr": "Oui, il y a un trottoir de ce côté de la route",
+                    "ca": "Sí, hi ha una vorera a aquest costat del carrer",
+                    "es": "Sí, hay una acera en este lado de la calle"
                   }
                 },
                 {
@@ -157,7 +163,9 @@
                     "de": "Nein, es gibt keinen Bürgersteig für Fußgänger",
                     "da": "Nej, der er ikke noget fortov at gå på",
                     "nl": "Nee, er is geen stoep om op te lopen",
-                    "fr": "Non, il n'y a pas de trottoir où marcher"
+                    "fr": "Non, il n'y a pas de trottoir où marcher",
+                    "ca": "No, no hi ha vorera per la que caminar",
+                    "es": "No, no hay acera por la que caminar"
                   }
                 },
                 {
@@ -167,7 +175,9 @@
                     "de": "Es gibt einen separat kartierten Bürgersteig für Fußgänger",
                     "da": "Der er et særskilt kortlagt fortov at gå på",
                     "nl": "Er is een apart ingetekende stoep om op te lopen",
-                    "fr": "Il y a un trottoir où marcher cartographié séparément"
+                    "fr": "Il y a un trottoir où marcher cartographié séparément",
+                    "ca": "Hi ha una vorera mapejada separadament per on caminar",
+                    "es": "Hay una acera mapeada por separado por la que caminar"
                   }
                 }
               ]
@@ -179,14 +189,18 @@
                 "de": "Wie breit ist der Bürgersteig auf dieser Straßenseite?",
                 "da": "Hvad er bredden af fortovet på denne side af vejen?",
                 "nl": "Hoe breed is de stoep aan deze kant van de weg?",
-                "fr": "Quelle est la largeur du trottoir de ce côté de la route ?"
+                "fr": "Quelle est la largeur du trottoir de ce côté de la route ?",
+                "ca": "Quina és l'amplada de la vorera a aquest costat de la calçada?",
+                "es": "¿Cuál es la anchura de la acera en este lado de la calzada?"
               },
               "render": {
                 "en": "This sidewalk is {sidewalk:left|right:width}m wide",
                 "de": "Dieser Bürgersteig ist {sidewalk:left|right:width}m breit",
                 "da": "Dette fortov er {sidewalk:left|right:width}m bredt",
                 "nl": "Deze stoep is {sidewalk:left|right:width}m breed",
-                "fr": "Ce trottoir fait {sidewalk:left|right:width} m de large"
+                "fr": "Ce trottoir fait {sidewalk:left|right:width} m de large",
+                "ca": "Aquesta vorera té {sidewalk:left|right:width} m d'ample",
+                "es": "Esta acera tiene {sidewalk:left|right:width} m de ancho"
               },
               "condition": "sidewalk:left|right=yes",
               "freeform": {

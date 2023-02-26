@@ -11,7 +11,8 @@
     "fr": "Éclairage de Rue",
     "nb_NO": "Gatebelysning",
     "da": "Gadebelysning",
-    "pa_PK": "سڑک دیاں روشنیاں"
+    "pa_PK": "سڑک دیاں روشنیاں",
+    "es": "Alumbrado público"
   },
   "description": {
     "en": "On this map you can find everything about street lighting",
@@ -96,7 +97,8 @@
             "es": "¿Está iluminada esta calle?",
             "nb_NO": "Er denne gaten belyst?",
             "fr": "Cette est-elle éclairée ?",
-            "da": "Er denne gade oplyst?"
+            "da": "Er denne gade oplyst?",
+            "ca": "Aquest carrer està il·luminat?"
           },
           "mappings": [
             {
@@ -110,7 +112,8 @@
                 "es": "Esta calle está iluminada",
                 "nb_NO": "Denne gaten er belyst",
                 "fr": "Cette rue est éclairée",
-                "da": "Denne gade er oplyst"
+                "da": "Denne gade er oplyst",
+                "ca": "Aquest carrer està il·luminat"
               }
             },
             {
@@ -124,7 +127,8 @@
                 "es": "Esta calle no está iluminada",
                 "fr": "Cette rue n’est pas éclairée",
                 "da": "Denne gade er ikke oplyst",
-                "nb_NO": "Gate uten belysning"
+                "nb_NO": "Gate uten belysning",
+                "ca": "Aquest carrer no està il·luminant"
               }
             },
             {
@@ -138,7 +142,8 @@
                 "es": "Esta calle está iluminada por la noche",
                 "nb_NO": "Denne gaten er belyst nattestid",
                 "fr": "Cette rue est éclairée la nuit",
-                "da": "Denne gade er oplyst om natten"
+                "da": "Denne gade er oplyst om natten",
+                "ca": "Aquest carrer està il·luminat per la nit"
               },
               "hideInAnswer": true
             },
@@ -153,7 +158,8 @@
                 "es": "Esta calle está iluminada todo el día",
                 "nb_NO": "Denne gaten er belyst døgnet rundt",
                 "fr": "Cette rue est éclairée en permanence",
-                "da": "Denne gade er oplyst 24/7"
+                "da": "Denne gade er oplyst 24/7",
+                "ca": "Aquest carrer està il·luminat 24/7"
               }
             }
           ]
@@ -199,7 +205,8 @@
           "nb_NO": "Gate",
           "fr": "Rue",
           "da": "Gade",
-          "pa_PK": "سڑک"
+          "pa_PK": "سڑک",
+          "es": "Calle"
         },
         "mappings": [
           {
@@ -233,7 +240,9 @@
             "de": "Ist diese Straße beleuchtet?",
             "nb_NO": "Er denne gaten belyst?",
             "fr": "Cette rue est-elle éclairée ?",
-            "da": "Er denne gade oplyst?"
+            "da": "Er denne gade oplyst?",
+            "ca": "Aquest carrer està il·luminat?",
+            "es": "¿Esta calle está iluminada?"
           },
           "mappings": [
             {
@@ -247,7 +256,8 @@
                 "es": "Esta calle está iluminada",
                 "nb_NO": "Denne gaten er belyst",
                 "fr": "Cette rue est éclairée",
-                "da": "Denne gade er oplyst"
+                "da": "Denne gade er oplyst",
+                "ca": "Aquest carrer està il·luminat"
               }
             },
             {
@@ -261,7 +271,8 @@
                 "es": "Esta calle no está iluminada",
                 "nb_NO": "Denne gaten er ikke belyst",
                 "fr": "Cette rue n’est pas éclairée",
-                "da": "Denne gade er ikke oplyst"
+                "da": "Denne gade er ikke oplyst",
+                "ca": "Aquest carrer no està il·luminat"
               }
             },
             {
@@ -274,7 +285,9 @@
                 "de": "Diese Straße ist nachts beleuchtet",
                 "nb_NO": "Denne gaten er belyst nattestid",
                 "fr": "Cette rue est éclairée la nuit",
-                "da": "Denne gade er oplyst om natten"
+                "da": "Denne gade er oplyst om natten",
+                "ca": "Aquest carrer està il·luminat per la nit",
+                "es": "Esta calle está iluminada por la noche"
               },
               "hideInAnswer": true
             },
@@ -288,7 +301,9 @@
                 "de": "Diese Straße ist durchgehend beleuchtet",
                 "nb_NO": "Denne gaten er belyst døgnet rundt",
                 "fr": "Cette rue est éclairée en permanence",
-                "da": "Denne gade er oplyst 24/7"
+                "da": "Denne gade er oplyst 24/7",
+                "ca": "Aquest carrer està il·luminat 24/7",
+                "es": "Esta calle está iluminada 24/7"
               }
             }
           ]

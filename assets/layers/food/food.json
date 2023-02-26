@@ -6,7 +6,8 @@
     "de": "Restaurants und Imbisse",
     "da": "Restauranter og fastfood",
     "es": "Restaurantes y comida rápida",
-    "fr": "Restaurants et nourriture rapide"
+    "fr": "Restaurants et nourriture rapide",
+    "ca": "Restaurants i menjar ràpid"
   },
   "source": {
     "osmTags": {
@@ -1088,7 +1089,8 @@
     "en": "A layer showing restaurants and fast-food amenities (with a special rendering for friteries)",
     "nl": "Een laag die restaurants en fast food toont (met een speciale weergave van frituren)",
     "de": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
-    "es": "Una capa que muestra restaurantes y facilidades de comida rápida",
-    "fr": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)"
+    "es": "Una capa que muestra restaurantes y locales de comida rápida (con un renderizado especial para freidurías)",
+    "fr": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
+    "ca": "Una capa que mostra restaurants i locals de menjar ràpid (amb un renderitzat especial per a fregiduries)"
   }
 }

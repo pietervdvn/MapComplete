@@ -37,7 +37,8 @@
     "it": "I <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>giardini veritcali</a> e gli alberi in città non solo portano pace e tranquillità ma creano anche un ambiente più bello, aumentano la biodiversità, rendono il clima più fresco e migliorano la qualità dell’aria. <br/> Klimaan VZW e Mechelen Klimaatneutraal vogliono mappare sia i giardini verticali esistenti che quelli nuovi per mostrarli a quanti vogliono costruire un loro proprio giardino o per quelli che amano la natura e vogliono camminare per la città.<br/>Per ulteriori informazioni visita <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
     "hu": "A <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>homlokzatkertek</a>, zöld homlokzatok és fák a városban nemcsak békét és nyugalmat, hanem szebb várost, nagyobb biológiai sokféleséget, hűsítő hatást és jobb levegőminőséget is hoznak. <br/> A Klimaan VZW és a Mechelen Klimaatneutraal a meglévő és új homlokzati kerteket szeretné feltérképezni, hogy példaként szolgáljanak a saját kertet építeni vágyóknak vagy a természetet kedvelő városi sétálóknak.<br/>További információ a projektről a <a href='https://klimaan.be/' target=_blank>klimaan.be</a> oldalon.",
     "da": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Facadehaver</a>, grønne facader og træer i byen bringer ikke kun fred og ro, men også en smukkere by , større biodiversitet, en kølende effekt og bedre luftkvalitet. <br/> Klimaan VZW og Mechelen Klimaatneutraal ønsker at kortlægge eksisterende og nye facadehaver som et eksempel for folk, der vil bygge deres egen have eller for byvandrere, der elsker naturen.<br/>Mere info om projektet på <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
-    "cs": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fasádní zahrady</a>, zelené fasády a stromy ve městě přinášejí nejen klid a pohodu, ale také krásnější město, větší biodiverzitu, ochlazující efekt a lepší kvalitu ovzduší. <br/> Klimaan VZW a Mechelen Klimaatneutraal chtějí zmapovat stávající i nové fasádní zahrady jako příklad pro lidi, kteří si chtějí vybudovat vlastní zahradu, nebo pro městské chodce, kteří mají rádi přírodu.<br/>Více informací o projektu najdete na <a href='https://klimaan.be/' target=_blank>klimaan.be</a>."
+    "cs": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fasádní zahrady</a>, zelené fasády a stromy ve městě přinášejí nejen klid a pohodu, ale také krásnější město, větší biodiverzitu, ochlazující efekt a lepší kvalitu ovzduší. <br/> Klimaan VZW a Mechelen Klimaatneutraal chtějí zmapovat stávající i nové fasádní zahrady jako příklad pro lidi, kteří si chtějí vybudovat vlastní zahradu, nebo pro městské chodce, kteří mají rádi přírodu.<br/>Více informací o projektu najdete na <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "es": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Los jardines de fachada</a>, las fachadas verdes y los árboles en la ciudad no sólo aportan paz y tranquilidad, sino también una ciudad más bella, una mayor biodiversidad, un efecto refrescante y una mejor calidad del aire. <br/> Klimaan VZW y Mechelen Klimaatneutraal quieren trazar un mapa de los jardines de fachada existentes y nuevos como ejemplo para las personas que quieran construir su propio jardín o para los paseantes urbanos amantes de la naturaleza. <br/>Más información sobre el proyecto en <a href='https://klimaan.be/' target=_blank>klimaan.be</a>."
   },
   "icon": "./assets/themes/facadegardens/geveltuin.svg",
   "startLat": 51.02768,
@@ -230,7 +231,8 @@
             "nb_NO": "Er det en vanntønne installert i denne hagen?",
             "da": "Er der installeret en vandtønde til haven?",
             "cs": "Je do zahrady instalován sud na vodu?",
-            "ca": "Hi ha un barril d'aigua instal·lat per al jardí?"
+            "ca": "Hi ha un barril d'aigua instal·lat per al jardí?",
+            "es": "¿Hay un barril de agua instalado para el jardín?"
           },
           "mappings": [
             {
@@ -252,7 +254,8 @@
                 "nb_NO": "Har regntønne",
                 "da": "Der er en regntønde",
                 "cs": "K dispozici je sud na dešťovou vodu",
-                "ca": "Hi ha un barril de pluja"
+                "ca": "Hi ha un barril de pluja",
+                "es": "Hay un barril de lluvia"
               }
             },
             {
@@ -274,7 +277,8 @@
                 "nb_NO": "Har ikke regntønne",
                 "da": "Der er ingen regntønde",
                 "cs": "Sud na dešťovou vodu není k dispozici",
-                "ca": "No hi ha un barril de pluja"
+                "ca": "No hi ha un barril de pluja",
+                "es": "No hay barril de lluvia"
               }
             }
           ]
@@ -405,7 +409,8 @@
                 "de": "Es gibt Weinreben",
                 "hu": "Van benne szőlő",
                 "da": "Der er vinstokke",
-                "cs": "Zde jsou révy"
+                "cs": "Zde jsou révy",
+                "es": "Esto son viñedos"
               }
             },
             {
@@ -419,7 +424,8 @@
                 "de": "Es gibt blühende Pflanzen",
                 "hu": "Van benne virágos növény",
                 "da": "Der er blomstrende planter",
-                "cs": "Jsou zde kvetoucí rostliny"
+                "cs": "Jsou zde kvetoucí rostliny",
+                "es": "Hay plantas con flores"
               }
             },
             {
@@ -449,7 +455,8 @@
                 "de": "Es gibt Bodendecker",
                 "hu": "Van benne talajtakaró növény",
                 "da": "Der er bunddækkende planter",
-                "cs": "Jsou zde půdopokryvné rostliny"
+                "cs": "Jsou zde půdopokryvné rostliny",
+                "es": "Hay plantas cubresuelos"
               }
             }
           ],
