@@ -7380,6 +7380,12 @@
                 },
                 "question": "Hat die Treppe einen Handlauf?"
             },
+            "multilevels": {
+                "override": {
+                    "question": "Zwischen welchen Stockwerken befinden sich diese Stufen?",
+                    "render": "Diese Stufen befinden sich zwischen den Stockwerken {level}"
+                }
+            },
             "ramp": {
                 "mappings": {
                     "0": {
