@@ -98,6 +98,15 @@
                     "1": {
                         "then": "Mural"
                     },
+                    "10": {
+                        "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
+                    },
+                    "11": {
+                        "then": "Enrajolat"
+                    },
+                    "12": {
+                        "then": "Tallat a la fusta"
+                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -121,15 +130,6 @@
                     },
                     "9": {
                         "then": "Relleu"
-                    },
-                    "10": {
-                        "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
-                    },
-                    "11": {
-                        "then": "Enrajolat"
-                    },
-                    "12": {
-                        "then": "Tallat a la fusta"
                     }
                 },
                 "question": "Quin tipus d'obra és aquesta peça?",
@@ -256,22 +256,45 @@
         }
     },
     "bank": {
+        "description": "Una institució financera per a dipositar diners",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Amb un caixer automàtic"
+                    }
+                }
+            }
+        },
         "name": "Bancs",
         "tagRenderings": {
             "has_atm": {
                 "mappings": {
+                    "0": {
+                        "then": "Aquest banc té un caixer automàtic"
+                    },
+                    "1": {
+                        "then": "Aquest banc <b>no</b> té un caixer automàtic"
+                    },
                     "2": {
                         "then": "Aquest banc té un caixer, però està mapejat com a un element diferent"
                     }
-                }
+                },
+                "question": "Aquest banc té un caixer automàtic?"
             }
         }
     },
     "barrier": {
+        "description": "Obstacles a l'hora d'utilitzar la bicicleta com bol·lards i barreres per a bicicletes",
         "name": "Barreres",
         "presets": {
             "0": {
+                "description": "Un bol·lard a la carretera",
                 "title": "una pilona"
+            },
+            "1": {
+                "description": "Una barrera ciclista que relanteix als ciclistes",
+                "title": "una barrera ciclista"
             }
         },
         "tagRenderings": {
@@ -292,22 +315,49 @@
                     "4": {
                         "then": "Pilona retràctil"
                     }
-                }
+                },
+                "question": "Quin tipus de bol·lard és aquest?"
             },
             "Cycle barrier type": {
                 "mappings": {
                     "0": {
                         "then": "Simple, simplement dos barreres amb un espai al mig"
+                    },
+                    "1": {
+                        "then": "Doble, dues barreres una darrere l'altra"
+                    },
+                    "2": {
+                        "then": "Triple, tres barreres una darrere l'altra"
+                    },
+                    "3": {
+                        "then": "Barrera de seguretat, l'espai és menor a la part superior que a l'inferior"
                     }
-                }
+                },
+                "question": "Quin tipus de barrera ciclista és aquesta?"
             },
             "MaxWidth": {
-                "question": "Com d'ample és el buit que queda als costats de la barrera?"
+                "question": "Com d'ample és el buit que queda als costats de la barrera?",
+                "render": "Amplada màxima: {maxwidth:physical} m"
+            },
+            "Overlap (cyclebarrier)": {
+                "question": "Quant es solapen les barreres?",
+                "render": "Solapat: {overlap} m"
+            },
+            "Space between barrier (cyclebarrier)": {
+                "question": "Quant espai hi ha entre les barreres (al llarg de la longitud de la carretera)?",
+                "render": "Espai entre barreres (al llarg de la longitud de la carretera): {width:separation} m"
+            },
+            "Width of opening (cyclebarrier)": {
+                "question": "Quina amplitud té l'obertura més petita al costat de les barreres?",
+                "render": "Amplada de l'apertura: {width:opening} m"
             },
             "barrier_type": {
                 "mappings": {
                     "0": {
                         "then": "Aquest és un únic piló a la carretera"
+                    },
+                    "1": {
+                        "then": "Açò és una barrera ciclista que relantitza als ciclistes"
                     }
                 }
             },
@@ -319,7 +369,8 @@
                     "1": {
                         "then": "Un ciclista pot passar-hi."
                     }
-                }
+                },
+                "question": "Una bicicleta pot passar aquesta barrera?"
             }
         },
         "title": {
@@ -336,6 +387,28 @@
     },
     "bench": {
         "description": "Un banc és una superfície de madera, metall, pedra, … on un humà s’hi pot sentar. Aquesta capa els mostra i fa algunes preguntes sobre ells.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "és un memorial"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Amb i sense respatller"
+                    },
+                    "1": {
+                        "question": "Té un respatller"
+                    },
+                    "2": {
+                        "question": "No té respatller"
+                    }
+                }
+            }
+        },
         "name": "Bancs",
         "presets": {
             "0": {
@@ -343,6 +416,17 @@
             }
         },
         "tagRenderings": {
+            "bench-artwork": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest banc té integrada una obra d'art"
+                    },
+                    "1": {
+                        "then": "Aquest banc no té una obra d'art integrada"
+                    }
+                },
+                "question": "Aquest banc té algun element artístic?<div class='subtle text-lg'>P.e. té una pintura integrada, estatua o altres treballs no trivials i creatius</div>"
+            },
             "bench-backrest": {
                 "mappings": {
                     "0": {
@@ -351,7 +435,8 @@
                     "1": {
                         "then": "<b>No</b> té espatller"
                     }
-                }
+                },
+                "question": "Aquest banc té respatller?"
             },
             "bench-colour": {
                 "mappings": {
@@ -380,7 +465,22 @@
                         "then": "Color: groc"
                     }
                 },
+                "question": "De quin color és aquest banc?",
                 "render": "Color: {colour}"
+            },
+            "bench-direction": {
+                "question": "En quina direcció mires asseguts al banc?",
+                "render": "Quan s'està assegut al banc, es mira cap a {direction}º."
+            },
+            "bench-inscription": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest banc no té cap inscripció"
+                    },
+                    "1": {
+                        "then": "Aquest banc <span class='subtle'>(probablement)</span> no té cap inscripció"
+                    }
+                }
             },
             "bench-material": {
                 "mappings": {
@@ -405,8 +505,24 @@
                 },
                 "render": "Material: {material}"
             },
+            "bench-memorial": {
+                "question": "Aquest banc actua com a memorial per a algú o algo?"
+            },
             "bench-seats": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest banc no té els seients separats"
+                    }
+                },
+                "question": "Quants seients té aquest banc?",
                 "render": "{seats} seients"
+            },
+            "bench-survey:date": {
+                "mappings": {
+                    "0": {
+                        "then": "Inspeccionat avui!"
+                    }
+                }
             }
         },
         "title": {
@@ -853,14 +969,14 @@
                     "0": {
                         "question": "Tots els connectors"
                     },
+                    "13": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
                     "5": {
                         "question": "Té un connecgtor de <div style='display: inline-block'><b>Tipus 1<i>sense</i>cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
                     "6": {
                         "question": "Té un connector <div style='display: inline-block'><b>Tipus 1 CSS (Combo Tipus 1)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
-                    },
-                    "13": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     }
                 }
             }
@@ -869,21 +985,6 @@
         "tagRenderings": {
             "Available_charging_stations (generated)": {
                 "mappings": {
-                    "2": {
-                        "then": "<b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)"
-                    },
-                    "4": {
-                        "then": "<b>CHAdeMo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
-                    },
                     "10": {
                         "then": "<b>CSS 1Tipus 1</b> (també conegut com Tipus 1 combo)"
                     },
@@ -899,6 +1000,9 @@
                     "18": {
                         "then": "<b>Tipus 2 amb cable</b> (mennekes)"
                     },
+                    "2": {
+                        "then": "<b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)"
+                    },
                     "20": {
                         "then": "<b>CSS Supercarregador Tesla</b> (tipus2_css de la marca)"
                     },
@@ -907,6 +1011,18 @@
                     },
                     "26": {
                         "then": "<b>USB</b> per a carregar mòbils i dispositius petits"
+                    },
+                    "4": {
+                        "then": "<b>CHAdeMo</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
                     }
                 },
                 "question": "Quins tipus de connexions de càrrega estan disponibles aquí?"
@@ -1745,6 +1861,17 @@
             "render": "Mapa"
         }
     },
+    "maproulette": {
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "0": {
+                        "then": "Es crea la tasca"
+                    }
+                }
+            }
+        }
+    },
     "maxspeed": {
         "name": "Velocitat",
         "tagRenderings": {
@@ -2139,30 +2266,6 @@
                     "1": {
                         "then": "Aquí es poden reciclar els cartons de begudes"
                     },
-                    "2": {
-                        "then": "Aquí es poden reciclar llaunes"
-                    },
-                    "3": {
-                        "then": "Aquí es pot reciclar roba"
-                    },
-                    "4": {
-                        "then": "Aquí es pot reciclar oli de cuina"
-                    },
-                    "5": {
-                        "then": "Aquí es pot reciclar oli de motor"
-                    },
-                    "6": {
-                        "then": "Aquí es poden reciclar tub fluroescents"
-                    },
-                    "7": {
-                        "then": "Aquí es poden reciclar residus verds"
-                    },
-                    "8": {
-                        "then": "Ací es poden reciclar residus orgànics"
-                    },
-                    "9": {
-                        "then": "Aquí es poden reciclar ampolles de vidre"
-                    },
                     "10": {
                         "then": "Aquí es pot reciclar vidre"
                     },
@@ -2190,11 +2293,35 @@
                     "19": {
                         "then": "Aquí es poden reciclar petits aparells electrònics"
                     },
+                    "2": {
+                        "then": "Aquí es poden reciclar llaunes"
+                    },
                     "20": {
                         "then": "Aquí es poden reciclar petits aparells elèctrics"
                     },
                     "22": {
                         "then": "Ací es pot reciclar el rebuig"
+                    },
+                    "3": {
+                        "then": "Aquí es pot reciclar roba"
+                    },
+                    "4": {
+                        "then": "Aquí es pot reciclar oli de cuina"
+                    },
+                    "5": {
+                        "then": "Aquí es pot reciclar oli de motor"
+                    },
+                    "6": {
+                        "then": "Aquí es poden reciclar tub fluroescents"
+                    },
+                    "7": {
+                        "then": "Aquí es poden reciclar residus verds"
+                    },
+                    "8": {
+                        "then": "Ací es poden reciclar residus orgànics"
+                    },
+                    "9": {
+                        "then": "Aquí es poden reciclar ampolles de vidre"
                     }
                 },
                 "question": "Què es pot reciclar aquí?"
@@ -2537,6 +2664,12 @@
                     "1": {
                         "then": "Aquest fanal utilitza LED"
                     },
+                    "10": {
+                        "then": "Aquest fanal utilitza làmpades de sodi d'alta pressió (taronja amb blanc)"
+                    },
+                    "11": {
+                        "then": "Aquest fanal s'il·lumina amb gas"
+                    },
                     "2": {
                         "then": "Aquest fanal utilitza il·luminació incandescent"
                     },
@@ -2560,12 +2693,6 @@
                     },
                     "9": {
                         "then": "Aquest fanal utilitza làmpades de sodi de baixa pressió (taronja monocroma)"
-                    },
-                    "10": {
-                        "then": "Aquest fanal utilitza làmpades de sodi d'alta pressió (taronja amb blanc)"
-                    },
-                    "11": {
-                        "then": "Aquest fanal s'il·lumina amb gas"
                     }
                 }
             },
