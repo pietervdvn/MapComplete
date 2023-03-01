@@ -1,6 +1,6 @@
-)# 'Pin je Punt' - one year later
+# 'Pin je Punt' - one year later
 
-About a year ago, we launched a mapping campaign at the request from [_Visit Flanders_ (Toerisme Vlaanderen)](toerismevlaanderen.be/pin-je-punt). (The project is explained below)
+About a year ago, we launched a mapping campaign at the request from [_Visit Flanders_ (Toerisme Vlaanderen)](https://toerismevlaanderen.be/pin-je-punt). (The project is explained below)
 
 A part of the campaign involved a guided import. The agencies had many datasets lying around (e.g. about benches or picnic tables) which they wanted to have imported in OSM. As doing a data import is hard - and the data was sometimes outdated, we opted for another approach: for every possible feature, a map note was created containing a friendly explanation and instructions to open MapComplete - which would close the map note on behalf of the contributor, marking them "imported", "not found" or "not valid" depending on what the contributor chose.
 
