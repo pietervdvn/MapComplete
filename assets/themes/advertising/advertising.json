@@ -417,9 +417,9 @@
             "en": "Lit {lit}"
           },
           "question": {
-            "ca": "Aquest element està il·luminat?",
-            "es": "Este elemento está iluminado?",
-            "en": "This feature is lit?"
+            "ca": "Aquest element està il·luminat de forma externa? (p.e. un focus)",
+            "es": "Este elemento está iluminado de forma externa? (p.e un foco)",
+            "en": "This feature is lit? (e.g. a spotlight)"
           },
           "freeform": {
             "key": "lit"
@@ -452,6 +452,53 @@
           ]
         },
         {
+          "id": "luminous",
+          "condition": {
+            "and": [
+              "advertising~billboard", "advertising~column", "advertising~poster_box", "advertising~board", "advertising~sign", "advertising~totem"
+            ]
+          },
+          "render": {
+            "ca": "Lumiós {luminous}",
+            "es": "Luminoso {luminous}",
+            "en": "Lumious {luminous}"
+          },
+          "question": {
+            "ca": "Aquest element té il·luminació propia?",
+            "es": "Este elemento tiene iluminació propia?",
+            "en": "This feature has its own illumination?"
+          },
+          "freeform": {
+            "key": "luminous"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "luminous=yes"
+                ]
+              },
+              "then": {
+                "ca": "Aquest element té il·luminació propia",
+                "es": "Este elemento tiene iluminació propia",
+                "en": "This feature has its own illumination"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "luminous=no"
+                ]
+              },
+              "then": {
+                "ca": "Aqust element no té il·luminació propia",
+                "es": "Este elemento no tiene iluminació propia",
+                "en": "This feature has not its own illumination"
+              }
+            }
+          ]
+        },
+        {
           "id": "animated",
           "render": {
             "ca": " Animat amb {animated}",
@@ -459,9 +506,9 @@
             "en": "Animated with {animated}"
           },
           "question": {
-            "ca": "Com canvia els anuncis aquest element?",
-            "es": "¿Como cambia los anuncios este elemento?",
-            "en": "Does this feature cycle through multiple advertisements automatically?"
+            "ca": "Com canvien els anuncis d'aquest element?",
+            "es": "¿Como cambian los anuncios de este elemento?",
+            "en": "How this feature cycle through multiple advertisements automatically?"
           },
           "freeform": {
             "key": "animated"
@@ -706,7 +753,7 @@
           "render": {
             "ca": "Pots veure publicitat per {sides} costats",
             "es": "Puedes ver publicidad por {sides} lados",
-            "en": "You can see adverstismetns from {sides} sides"
+            "en": "You can see advertisments from {sides} sides"
             },
             "question": {
             "ca": "Per quants costats pots veure publicitat?",
@@ -724,9 +771,9 @@
                   ]
                 },
                 "then": {
-                  "ca": "Pots veure publicitat per {sides} costat",
-                  "es": "Puedes ver publicidad por {sides} lado",
-                  "en": "You can see adverstismetns from {sides} side"
+                  "ca": "Pots veure publicitat per 1 costat",
+                  "es": "Puedes ver publicidad por 1 lado",
+                  "en": "You can see advertisments from 1 side"
                 }
               },
               {
@@ -736,9 +783,9 @@
                   ]
                 },
                 "then": {
-                  "ca": "Pots veure publicitat per {sides} costats",
-                  "es": "Puedes ver publicidad por {sides} lados",
-                  "en": "You can see adverstismetns from {sides} sides"
+                  "ca": "Pots veure publicitat per 2 costats",
+                  "es": "Puedes ver publicidad por 2 lados",
+                  "en": "You can see advertisments from 2 sides"
                 }
               },
               {
@@ -748,9 +795,9 @@
                   ]
                 },
                 "then": {
-                  "ca": "Pots veure publicitat per {sides} costats",
-                  "es": "Puedes ver publicidad por {sides} lados",
-                  "en": "You can see adverstismetns from {sides} sides"
+                  "ca": "Pots veure publicitat per 3 costats",
+                  "es": "Puedes ver publicidad por 3 lados",
+                  "en": "You can see advertisments from 3 sides"
                 }
               },{
                 "if": {
@@ -759,9 +806,9 @@
                   ]
                 },
                 "then": {
-                  "ca": "Pots veure publicitat per {sides} costats",
-                  "es": "Puedes ver publicidad por {sides} lados",
-                  "en": "You can see adverstismetns from {sides} sides"
+                  "ca": "Pots veure publicitat per 4 costats",
+                  "es": "Puedes ver publicidad por 4 lados",
+                  "en": "You can see advertisments from 4 sides"
                 }
               }
             ]
@@ -917,6 +964,21 @@
             "ca": "una pantalla",
             "es": "una pantalla",
             "en": "a screen"
+          }
+        },
+        {
+          "tags": [
+            "advertising=screen"
+          ],
+          "title": {
+            "ca": "una patalla sobre una paret",
+            "es": "una pantalla sobre una pared",
+            "en": "a screen mounted on a wall"
+          },
+          "preciseInput": {
+            "preferredBackground": "map",
+            "snapToLayer": "walls_and_buildings",
+            "maxSnapDistance": 5
           }
         },
         {
