@@ -68,5 +68,65 @@
     "sources": [
       "https://wiki.openstreetmap.org/wiki/File:Totem.svg"
     ]
+  },
+  {
+    "path": "KFC_Billboard.jpg",
+    "license": "CC BY 4.0",
+    "authors": [
+      "Paunofu"
+    ],
+    "sources": [
+      "https://imgur.com/2xJaUXd"
+    ]
+  },
+  {
+    "path": "LIDL_Billboard.jpg",
+    "license": "CC BY-SA 4.0",
+    "authors": [
+      "Paul Williams"
+    ],
+    "sources": [
+      "https://archive.org/details/northfleet-2021-05-30/PXL_20210530_175057096.jpg"
+    ]
+  },
+  {
+    "path": "Repsol_Billboard.jpg",
+    "license": "CC BY 4.0",
+    "authors": [
+      "Paunofu"
+    ],
+    "sources": [
+      "https://imgur.com/MwvK0jc"
+    ]
+  },
+  {
+    "path": "local_Board.jpg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Segnargsed"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:ReservedAdvertisingUnit_008.jpg"
+    ]
+  },
+  {
+    "path": "FGV_Founding.jpg",
+    "license": "CC BY-SA 4.0",
+    "authors": [
+      "Paunofu"
+    ],
+    "sources": [
+      "https://imgur.com/epyuPXs"
+    ]
+  },
+  {
+    "path": "small_board.jpg",
+    "license": "CC BY-SA 4.0",
+    "authors": [
+      "Segnargsed"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:AdvertisingBoard_001.jpg#file"
+    ]
   }
 ]

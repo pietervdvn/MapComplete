@@ -903,7 +903,12 @@
             "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads",
             "ca": "Les tanques publicitàries normalment són de gran tamany i estan situades prop de les carreteres",
             "es": "Las vallas publicitarias normalment son de gran tamanó y están situadas cerca de las carreteras"
-          }
+          },
+          "exampleImages": [
+            "./assets/themes/advertising/KFC_Billboard.jpg",
+            "./assets/themes/advertising/LIDL_Billboard.jpg",
+            "./assets/themes/advertising/Repsol_Billboard.jpg"
+          ]
         },
         {
           "tags": [
@@ -918,7 +923,12 @@
             "en": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
             "es": "Un pequeño tablón de anuncios para anuncios del vecindario, normalmente destinado a peatones",
             "ca": "Un xicotet tauló d'anuncics per a anuncis del veïnat, normalment destitat a peatons"
-          }
+          },
+          "exampleImages": [
+            "./assets/themes/advertising/local_Board.jpg",
+            "./assets/themes/advertising/FGV_Founding.jpg",
+            "./assets/themes/advertising/Small_Board.jpg"
+          ]
         },
         {
           "tags": [
