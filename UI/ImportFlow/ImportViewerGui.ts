@@ -209,6 +209,64 @@ class MassAction extends Combine {
 }
 
 class Statistics extends Combine {
+    private static r() {
+        return Math.floor(Math.random() * 256)
+    }
+
+    private static randomColour(): string {
+        return "rgba(" + Statistics.r() + "," + Statistics.r() + "," + Statistics.r() + ")"
+    }
+    private static CreatePieByAuthor(closed_by: Record<string, number[]>): ChartJs {
+        const importers = Object.keys(closed_by)
+        importers.sort((a, b) => closed_by[b].at(-1) - closed_by[a].at(-1))
+        return new ChartJs(<any>{
+            type: "doughnut",
+            data: {
+                labels: importers,
+                datasets: [
+                    {
+                        label: "Closed by",
+                        data: importers.map((k) => closed_by[k].at(-1)),
+                        backgroundColor: importers.map((_) => Statistics.randomColour()),
+                    },
+                ],
+            },
+        })
+    }
+
+    private static CreateStatePie(noteStates: NoteState[]) {
+        const colors = {
+            imported: "#0aa323",
+            already_mapped: "#00bbff",
+            invalid: "#ff0000",
+            closed: "#000000",
+            not_found: "#ff6d00",
+            open: "#626262",
+            has_comments: "#a8a8a8",
+        }
+        const knownStates = Object.keys(colors)
+        const byState = knownStates.map(
+            (targetState) => noteStates.filter((ns) => ns.status === targetState).length
+        )
+
+        return new ChartJs(<any>{
+            type: "doughnut",
+            data: {
+                labels: knownStates.map(
+                    (state, i) =>
+                        state + " " + Math.floor((100 * byState[i]) / noteStates.length) + "%"
+                ),
+                datasets: [
+                    {
+                        label: "Status by",
+                        data: byState,
+                        backgroundColor: knownStates.map((state) => colors[state]),
+                    },
+                ],
+            },
+        })
+    }
+
     constructor(noteStates: NoteState[]) {
         if (noteStates.length === 0) {
             super([])
@@ -285,11 +343,6 @@ class Statistics extends Combine {
                 },
             ],
         }
-
-        function r() {
-            return Math.floor(Math.random() * 256)
-        }
-
         for (const closing_user in closed_by) {
             if (closed_by[closing_user].at(-1) <= 10) {
                 continue
@@ -298,18 +351,17 @@ class Statistics extends Combine {
                 label: "Closed by " + closing_user,
                 data: closed_by[closing_user],
                 fill: false,
-                borderColor: "rgba(" + r() + "," + r() + "," + r() + ")",
+                borderColor: Statistics.randomColour(),
                 tension: 0.1,
             })
         }
-        const importers = Object.keys(closed_by)
-        importers.sort((a, b) => closed_by[b].at(-1) - closed_by[a].at(-1))
+
         super([
             new ChartJs({
                 type: "line",
                 data,
                 options: {
-                    scales: {
+                    scales: <any>{
                         yAxes: [
                             {
                                 ticks: {
@@ -320,21 +372,12 @@ class Statistics extends Combine {
                     },
                 },
             }),
-            new ChartJs({
-                type: "doughnut",
-                data: {
-                    labels: importers,
-                    datasets: [
-                        {
-                            label: "Closed by",
-                            data: importers.map((k) => closed_by[k].at(-1)),
-                            backgroundColor: importers.map(
-                                (_) => "rgba(" + r() + "," + r() + "," + r() + ")"
-                            ),
-                        },
-                    ],
-                },
-            }).SetClass("h-16"),
+            new Combine([
+                Statistics.CreatePieByAuthor(closed_by),
+                Statistics.CreateStatePie(noteStates),
+            ])
+                .SetClass("flex w-full h-32")
+                .SetStyle("width: 40rem"),
         ])
         this.SetClass("block w-full h-64 border border-red")
     }
@@ -653,25 +696,54 @@ class ImportInspector extends VariableUiElement {
                 | "already_mapped"
                 | "not_found"
                 | "has_comments" = "open"
+
+            function has(keywords: string[], comment: string): boolean {
+                return keywords.some((keyword) => comment.toLowerCase().indexOf(keyword) >= 0)
+            }
+
             if (prop.closed_at !== undefined) {
                 const lastComment = prop.comments[prop.comments.length - 1].text.toLowerCase()
-                if (lastComment.indexOf("does not exist") >= 0) {
+                if (has(["does not exist", "bestaat niet", "geen"], lastComment)) {
                     status = "not_found"
-                } else if (lastComment.indexOf("already mapped") >= 0) {
+                } else if (
+                    has(
+                        [
+                            "already mapped",
+                            "reeds",
+                            "dubbele note",
+                            "stond er al",
+                            "stonden er al",
+                            "staat er al",
+                            "staan er al",
+                            "stond al",
+                            "stonden al",
+                            "staat al",
+                            "staan al",
+                        ],
+                        lastComment
+                    )
+                ) {
                     status = "already_mapped"
                 } else if (
                     lastComment.indexOf("invalid") >= 0 ||
-                    lastComment.indexOf("incorrecto") >= 0
+                    lastComment.indexOf("incorrect") >= 0
                 ) {
                     status = "invalid"
                 } else if (
-                    [
-                        "imported",
-                        "erbij",
-                        "toegevoegd",
-                        "added",
-                        "openstreetmap.org/changeset",
-                    ].some((keyword) => lastComment.toLowerCase().indexOf(keyword) >= 0)
+                    has(
+                        [
+                            "imported",
+                            "erbij",
+                            "toegevoegd",
+                            "added",
+                            "gemapped",
+                            "gemapt",
+                            "mapped",
+                            "done",
+                            "openstreetmap.org/changeset",
+                        ],
+                        lastComment
+                    )
                 ) {
                     status = "imported"
                 } else {
