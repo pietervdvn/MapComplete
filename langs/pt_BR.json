@@ -15,7 +15,10 @@
             "retagOtherThemes": "Este recurso será remarcado e ficará visível em {otherThemes}",
             "selectReason": "Por favor, selecione por que este recurso deve ser excluído"
         },
-        "isDeleted": "Este recurso foi excluído"
+        "isDeleted": "Este recurso foi excluído",
+        "reasons": {
+            "disused": "Este recurso foi removido ou está em desuso"
+        }
     },
     "favourite": {
         "loginNeeded": "<h3>Entrar</h3> Um layout pessoal está disponível apenas para usuários do OpenStreetMap",
