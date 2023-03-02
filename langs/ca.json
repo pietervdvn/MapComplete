@@ -40,9 +40,13 @@
         "reload": "Recarregar dades"
     },
     "flyer": {
+        "aerial": "Aquest mapa utilitza un fons diferent, és a dir, imatges aèries de Agentschap Informatie Vlaanderen",
         "callToAction": "Prova'l a mapcomplete.osm.be",
         "cyclofix": "A CycloFix hi han mManxes, estacions de reparacions, fonts d'aigua i botigues per a ciclistes",
         "description": "Un full de mà A4-apaisat per a promocionar MapComplete",
+        "editing": {
+            "title": "Com és la interfície?"
+        },
         "examples": "Hi han molts mapes temàtics disponibles, el quals alguns estan disponibles aquí.\n\nHi han molts mapes temàtics en línea: sobre salut, navegació interior, accessibilitat per a cadires de rodes, instal·lacions per a residus, prestageries públiques, creuaments per vianants pitnats amb l'arc de Sant Martí, ... Descobreix-los tots a mapcomplete.osm.be",
         "fakeui": {
             "add_images": "Afegeix imatges amb pocs clics",
@@ -53,6 +57,7 @@
             "wikipedia": "Es mostren articles de Wikipedia enllaçats"
         },
         "mapcomplete": {
+            "intro": "MapComplete és una pàgina web que té {mapCount} mapes interactius. Cada mapa individual et permet afegir o actualitzar informació. Té molts elements:",
             "li0": "Mostra on estan els PDI",
             "li1": "Afegeix nous punts i actualitza informació dels existents",
             "li2": "Afegeix informació de contacte i hores d'apertura fàcilment",
