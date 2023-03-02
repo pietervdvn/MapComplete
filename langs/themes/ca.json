@@ -329,6 +329,16 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>l'element que el conté</a>indica que és d'</span>accés públic<br/>{_embedding_feature:access:description}"
+                                },
+                                "1": {
+                                    "then": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>l'element que el conté</a> indica que es necessita </span> un permís per a accedir-hi<br/>{_embedding_feature:access:description}"
+                                }
+                            }
+                        },
                         "1": {
                             "mappings": {
                                 "0": {
