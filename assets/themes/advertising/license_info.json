@@ -1,5 +1,55 @@
 [
   {
+    "path": "FGV_Founding.jpg",
+    "license": "CC BY-SA 4.0",
+    "authors": [
+      "Paunofu"
+    ],
+    "sources": [
+      "https://imgur.com/epyuPXs"
+    ]
+  },
+  {
+    "path": "KFC_Billboard.jpg",
+    "license": "CC BY 4.0",
+    "authors": [
+      "Paunofu"
+    ],
+    "sources": [
+      "https://imgur.com/2xJaUXd"
+    ]
+  },
+  {
+    "path": "LIDL_Billboard.jpg",
+    "license": "CC BY-SA 4.0",
+    "authors": [
+      "Paul Williams"
+    ],
+    "sources": [
+      "https://archive.org/details/northfleet-2021-05-30/PXL_20210530_175057096.jpg"
+    ]
+  },
+  {
+    "path": "Repsol_Billboard.jpg",
+    "license": "CC BY 4.0",
+    "authors": [
+      "Paunofu"
+    ],
+    "sources": [
+      "https://imgur.com/MwvK0jc"
+    ]
+  },
+  {
+    "path": "Small_Board.jpg",
+    "license": "CC BY-SA 4.0",
+    "authors": [
+      "Segnargsed"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:AdvertisingBoard_001.jpg"
+    ]
+  },
+  {
     "path": "billboard.svg",
     "license": "CC BY-SA 3.0",
     "authors": [
@@ -30,16 +80,6 @@
     ]
   },
   {
-    "path": "FGV_Founding.jpg",
-    "license": "CC BY-SA 4.0",
-    "authors": [
-      "Paunofu"
-    ],
-    "sources": [
-      "https://imgur.com/epyuPXs"
-    ]
-  },
-  {
     "path": "icon.svg",
     "license": "CC-BY-SA 4.0",
     "authors": [
@@ -47,26 +87,6 @@
     ],
     "sources": [
       "https://commons.wikimedia.org/wiki/File:Advertising_icon.svg"
-    ]
-  },
-  {
-    "path": "KFC_Billboard.jpg",
-    "license": "CC BY 4.0",
-    "authors": [
-      "Paunofu"
-    ],
-    "sources": [
-      "https://imgur.com/2xJaUXd"
-    ]
-  },
-  {
-    "path": "LIDL_Billboard.jpg",
-    "license": "CC BY-SA 4.0",
-    "authors": [
-      "Paul Williams"
-    ],
-    "sources": [
-      "https://archive.org/details/northfleet-2021-05-30/PXL_20210530_175057096.jpg"
     ]
   },
   {
@@ -97,26 +117,6 @@
     ],
     "sources": [
       "https://wiki.openstreetmap.org/wiki/File:Poster_box.svg"
-    ]
-  },
-  {
-    "path": "Repsol_Billboard.jpg",
-    "license": "CC BY 4.0",
-    "authors": [
-      "Paunofu"
-    ],
-    "sources": [
-      "https://imgur.com/MwvK0jc"
-    ]
-  },
-  {
-    "path": "Small_Board.jpg",
-    "license": "CC BY-SA 4.0",
-    "authors": [
-      "Segnargsed"
-    ],
-    "sources": [
-      "https://wiki.openstreetmap.org/wiki/File:AdvertisingBoard_001.jpg"
     ]
   },
   {
