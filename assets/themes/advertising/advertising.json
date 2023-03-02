@@ -905,9 +905,9 @@
             "es": "Las vallas publicitarias normalment son de gran tamanó y están situadas cerca de las carreteras"
           },
           "exampleImages": [
-            "./assets/themes/advertising/KFC_Billboard.jpg",
-            "./assets/themes/advertising/LIDL_Billboard.jpg",
-            "./assets/themes/advertising/Repsol_Billboard.jpg"
+            "./assets/themes/advertising/kfc_billboard.jpg",
+            "./assets/themes/advertising/lidl_billboard.jpg",
+            "./assets/themes/advertising/repsol_billboard.jpg"
           ]
         },
         {
@@ -925,9 +925,9 @@
             "ca": "Un xicotet tauló d'anuncics per a anuncis del veïnat, normalment destitat a peatons"
           },
           "exampleImages": [
-            "./assets/themes/advertising/local_Board.jpg",
-            "./assets/themes/advertising/FGV_Founding.jpg",
-            "./assets/themes/advertising/Small_Board.jpg"
+            "./assets/themes/advertising/local_board.jpg",
+            "./assets/themes/advertising/fgv_founding.jpg",
+            "./assets/themes/advertising/small_board.jpg"
           ]
         },
         {
