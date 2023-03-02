@@ -539,10 +539,7 @@ export async function main(args: string[]) {
 
     const theme = AllKnownLayouts.allKnownLayouts.get(themeName)
     if (theme === undefined) {
-        const keys = []
-        AllKnownLayouts.allKnownLayouts.forEach((_, key) => {
-            keys.push(key)
-        })
+        const keys = Array.from(AllKnownLayouts.allKnownLayouts.keys())
         console.error("The theme " + theme + " was not found; try one of ", keys)
         return
     }

@@ -1,7 +1,7 @@
 import { Utils } from "../Utils"
 
 export default class Constants {
-    public static vNumber = "0.26.1"
+    public static vNumber = "0.26.2"
 
     public static ImgurApiKey = "7070e7167f0a25a"
     public static readonly mapillary_client_token_v4 =

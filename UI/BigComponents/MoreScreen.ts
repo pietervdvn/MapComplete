@@ -3,7 +3,6 @@ import Svg from "../../Svg"
 import Combine from "../Base/Combine"
 import { SubtleButton } from "../Base/SubtleButton"
 import Translations from "../i18n/Translations"
-import personal from "../../assets/themes/personal/personal.json"
 import Constants from "../../Models/Constants"
 import BaseUIElement from "../BaseUIElement"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
@@ -382,7 +381,7 @@ export default class MoreScreen extends Combine {
                     return undefined
                 }
                 const button = MoreScreen.createLinkButton(state, layout)?.SetClass(buttonClass)
-                if (layout.id === personal.id) {
+                if (layout.id === "personal") {
                     const element = new VariableUiElement(
                         state.osmConnection.userDetails
                             .map((userdetails) => userdetails.csCount)

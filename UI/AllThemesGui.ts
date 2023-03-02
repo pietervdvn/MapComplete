@@ -35,7 +35,7 @@ export default class AllThemesGui {
             ])
                 .SetClass("block m-5 lg:w-3/4 lg:ml-40")
                 .SetStyle("pointer-events: all;")
-                .AttachTo("topleft-tools")
+                .AttachTo("top-left")
         } catch (e) {
             console.error(">>>> CRITICAL", e)
             new FixedUiElement(

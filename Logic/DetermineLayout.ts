@@ -30,7 +30,7 @@ export default class DetermineLayout {
     /**
      * Gets the correct layout for this website
      */
-    public static async GetLayout(): Promise<LayoutConfig> {
+    public static async GetLayout(): Promise<LayoutConfig | undefined> {
         const loadCustomThemeParam = QueryParameters.GetQueryParameter(
             "userlayout",
             "false",

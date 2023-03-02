@@ -8,17 +8,17 @@ import { Utils } from "../Utils"
 import Combine from "./Base/Combine"
 import { StackedRenderingChart } from "./BigComponents/TagRenderingChart"
 import { LayerFilterPanel } from "./BigComponents/FilterView"
-import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
 import MapState from "../Logic/State/MapState"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import { FixedUiElement } from "./Base/FixedUiElement"
 import List from "./Base/List"
-
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import mcChanges from "../assets/generated/themes/mapcomplete-changes.json"
 class StatisticsForOverviewFile extends Combine {
     constructor(homeUrl: string, paths: string[]) {
         paths = paths.filter((p) => !p.endsWith("file-overview.json"))
-        const layer = AllKnownLayouts.allKnownLayouts.get("mapcomplete-changes").layers[0]
+        const layer = new LayoutConfig(<any>mcChanges, true).layers[0]
         const filteredLayer = MapState.InitializeFilteredLayers(
             { id: "statistics-view", layers: [layer] },
             undefined

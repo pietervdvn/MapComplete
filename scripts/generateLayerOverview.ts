@@ -21,8 +21,7 @@ import { PrepareLayer } from "../Models/ThemeConfig/Conversion/PrepareLayer"
 import { PrepareTheme } from "../Models/ThemeConfig/Conversion/PrepareTheme"
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
 import { Utils } from "../Utils"
-import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
-import { Script } from "vm"
+import { AllSharedLayers } from "../Customizations/AllSharedLayers"
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
@@ -259,9 +258,8 @@ class LayerOverviewUtils {
         )
 
         writeFileSync(
-            "./assets/generated/known_layers_and_themes.json",
+            "./assets/generated/known_themes.json",
             JSON.stringify({
-                layers: Array.from(sharedLayers.values()),
                 themes: Array.from(sharedThemes.values()),
             })
         )
@@ -306,7 +304,7 @@ class LayerOverviewUtils {
             "GenerateLayerOverview:"
         )
 
-        if (AllKnownLayouts.getSharedLayersConfigs().size == 0) {
+        if (AllSharedLayers.getSharedLayersConfigs().size == 0) {
             console.error("This was a bootstrapping-run. Run generate layeroverview again!")
         } else {
             const green = (s) => "\x1b[92m" + s + "\x1b[0m"
@@ -325,7 +323,7 @@ class LayerOverviewUtils {
         const sharedTagRenderings = this.getSharedTagRenderings(doesImageExist)
         const state: DesugaringContext = {
             tagRenderings: sharedTagRenderings,
-            sharedLayers: AllKnownLayouts.getSharedLayersConfigs(),
+            sharedLayers: AllSharedLayers.getSharedLayersConfigs(),
         }
         const sharedLayers = new Map<string, LayerConfigJson>()
         const prepLayer = new PrepareLayer(state)
