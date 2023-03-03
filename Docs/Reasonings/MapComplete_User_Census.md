@@ -34,6 +34,11 @@ But this might also be a statistical bias. 55% of _all_ respondents indicated th
 
 Now, this is a bit painful. MapComplete aims to be an easy-to-use tool for non-technical users. The survey clearly failed to reach these people.
 
+This is also mirrored in the question on how good they know OpenStreetMap. Close to 75% indicate to have at least hundreds of edits.
+
+![](CensusOsmFamiliarity.png)
+
+
 In practice, the communication about the survey should reach respondents which then, need to be motivated to fill out this survey.
 
 As the survey has been promoted via [Mastodon](https://en.osm.town/@mapcomplete), this probably had a major influence: Mastodon has a userbase which is both very developer-oriented but also quite queer and has (relatively) many transgender and genderqueer people. As the post about the survey gained a lot of traction there, I suspect many found the survey via that channel.
@@ -42,7 +47,9 @@ A second important effect is the language. The invitation for the survey and the
 
 At last, some people from minorities are less likely to fill out surveys ([source](https://files.eric.ed.gov/fulltext/ED501717.pdf)). I tried to counter this by explicitly inviting those groups to fill out the survey in the request, but this psychological effect is very hard to measure.
 
-As such, while I do think that the data is mostly representative, I think that less-technical people are underrepresented.
+As such, while I do think that the data is mostly representative, I think that less-technical people are a bit underrepresented.
+
+
 
 ### Identity
 
@@ -50,7 +57,9 @@ A last question in the 'demograpy'-set was "how would you describe yourself?" - 
 
 This question is intentionally open-ended, as people will state what _they_ find important in live.
 
-18 of them mentioned to be a map lover or OSM lover, 15 self-identified as being a 'techie', 'developer', 'engineer' or similar. 8 found Open Source-software important; 7 mentioned to be interested in environmentalism, urbanism, transportation and/or political issues. Other notable mentions were to be involved (professionally) with GIS. Other notable categories are teachers (2), cyclists (4) and climbers (2).
+18 of them mentioned to be a map lover or OSM lover, 15 self-identified as being a 'techie', 'developer', 'engineer' or similar. 8 found Open Source-software important; 7 mentioned to be interested in environmentalism, urbanism, transportation and/or political issues. Other notable mentions were to be involved (professionally) with GIS. Other notable categories are teachers (2), cyclists (4) and climbers (2). One person indicated that they were 'disabled'.
+
+
 
 ## Reach
 
