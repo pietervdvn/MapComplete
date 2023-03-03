@@ -252,6 +252,11 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Caixer automàtic {brand}"
+                }
+            },
             "render": "Caixer Automàtic"
         }
     },
@@ -1215,6 +1220,10 @@
                 "render": "<strong>{name}</strong>"
             }
         }
+    },
+    "clock": {
+        "description": "Capa amb rellotges públics",
+        "name": "Rellotges"
     },
     "crossings": {
         "name": "Encreuaments",
