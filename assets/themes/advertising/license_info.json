@@ -1,5 +1,25 @@
 [
   {
+    "path": "AdvertisingColumn_001.jpg",
+    "license": "CC BY-SA 4.0",
+    "authors": [
+      "Segnargs"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:AdvertisingColumn_001.jpg"
+    ]
+  },
+  {
+    "path": "AdvertisingColumn_003.jpg",
+    "license": "CC BY-SA 4.0",
+    "authors": [
+      "Segnargsed"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:AdvertisingColumn_003.jpg#file"
+    ]
+  },
+  {
     "path": "FGV_Founding.jpg",
     "license": "CC BY-SA 4.0",
     "authors": [

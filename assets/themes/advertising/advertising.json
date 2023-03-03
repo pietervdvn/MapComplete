@@ -943,7 +943,11 @@
             "en": "A cylindrical outdoor structure which shows advertisements",
             "es": "Una estructura cilíndrica exterior que muestra publicidad",
             "ca": "Una extructura cilíndica exterior que mostra publicitat"
-          }
+          },
+          "exampleImages":[
+            "./assets/themes/advertising/AdvertisingColumn_001.jpg",
+            "./assets/themes/advertising/AdvertisingComun_003.jpg"
+          ]
         },
         {
           "tags": [
@@ -954,7 +958,12 @@
             "ca": "una bandera",
             "es": "una bandera",
             "en": "a flag"
-          }
+          },
+          "exampleImages":[
+            "",
+            "",
+            ""
+          ]
         },
         {
           "tags": [
@@ -964,7 +973,12 @@
             "ca": "un mupi",
             "es": "un mupi",
             "en": "a poster box"
-          }
+          },
+          "exampleImages":[
+            "",
+            "",
+            ""
+          ]
         },
         {
           "tags": [
@@ -974,7 +988,12 @@
             "ca": "una pantalla",
             "es": "una pantalla",
             "en": "a screen"
-          }
+          },
+          "exampleImages":[
+            "",
+            "",
+            ""
+          ]
         },
         {
           "tags": [
@@ -989,7 +1008,12 @@
             "preferredBackground": "map",
             "snapToLayer": "walls_and_buildings",
             "maxSnapDistance": 5
-          }
+          },
+          "exampleImages":[
+            "",
+            "",
+            ""
+          ]
         },
         {
           "tags": [
@@ -999,7 +1023,12 @@
             "ca": "una escupltura",
             "es": "una escultura",
             "en": "an sculpture"
-          }
+          },
+          "exampleImages":[
+            "",
+            "",
+            ""
+          ]
         },
         {
           "tags": [
@@ -1009,7 +1038,12 @@
             "ca": "un lletrer",
             "es": "un lletrer",
             "en": "a sign"
-          }
+          },
+          "exampleImages":[
+            "",
+            "",
+            ""
+          ]
         },
         {
           "tags": [
@@ -1024,7 +1058,12 @@
             "preferredBackground": "map",
             "snapToLayer": "walls_and_buildings",
             "maxSnapDistance": 5
-          }
+          },
+          "exampleImages":[
+            "",
+            "",
+            ""
+          ]
         },
         {
           "tags": [
@@ -1034,7 +1073,12 @@
             "ca": "un tòtem",
             "es": "un tótem",
             "en": "a totem"
-          }
+          },
+          "exampleImages":[
+            "",
+            "",
+            ""
+          ]
         },
         {
           "tags": [
@@ -1049,7 +1093,12 @@
             "preferredBackground": "map",
             "snapToLayer": "walls_and_buildings",
             "maxSnapDistance": 5
-          }
+          },
+          "exampleImages":[
+            "",
+            "",
+            ""
+          ]
         }
       ]
     }
