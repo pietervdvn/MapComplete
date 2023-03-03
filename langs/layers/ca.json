@@ -1223,7 +1223,144 @@
     },
     "clock": {
         "description": "Capa amb rellotges públics",
-        "name": "Rellotges"
+        "name": "Rellotges",
+        "presets": {
+            "0": {
+                "description": "Un rellotge visible públicament",
+                "title": "un rellotge"
+            },
+            "1": {
+                "description": "Un rellotge visible públicament muntat en una paret",
+                "title": "un rellotge muntat en un paret"
+            }
+        },
+        "tagRenderings": {
+            "barometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge també mostra la pressió de l'aire"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge no mostra la pressió de l'aire"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge probablement no mostra la pressió de l'aire"
+                    }
+                },
+                "question": "Aquest rellotge també mostra la pressió de l'aire?"
+            },
+            "date": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge també mostra la data"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge no mostra la data"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge probablement no mostra la data"
+                    }
+                },
+                "question": "Aquest rellotge també mostra la data?"
+            },
+            "display": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge mostra l'hora amb mans"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge mostra l'hora amb dígits"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge mostra l'hora amb un rellotge de sol"
+                    },
+                    "3": {
+                        "then": "Aquest rellotge mostra l'hora d'una manera no estàndard, p.e. utilitzant binari, aigua o quelcom més"
+                    }
+                },
+                "question": "Com mostra aquest rellotge l'hora?"
+            },
+            "faces": {
+                "freeform": {
+                    "placeholder": "Nombre de cares"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge té una cara"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge té dues cares"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge té quatre cares"
+                    }
+                },
+                "question": "Quantes cares té aquest rellotge?",
+                "render": "Aquest rellotge té {faces} cares"
+            },
+            "hygrometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge també mostra la humitat"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge no mostra la humitat"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge probablement no mostra la humitat"
+                    }
+                },
+                "question": "Aquest rellotge també mostra la humitat?"
+            },
+            "support": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge està muntat en un pal"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge està muntat en una paret"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge està muntat en una tanca publicitària"
+                    },
+                    "3": {
+                        "then": "Aquest rellotge està al sòl"
+                    }
+                },
+                "question": "De quina forma està muntat aquest rellotge?"
+            },
+            "thermometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge també mostra la temperatura"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge no mostra la temperatura"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge probablement no mostra la temperatura"
+                    }
+                },
+                "question": "Aquest rellotge també mostra la temperatura?"
+            },
+            "visibility": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge és visible al voltant de 5 metres de distància (un petit rellotge muntat a la paret)"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge és visible al voltant dels 20 metres de distància (rellotge de tamany mig a una tanca publicitària)"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge és visible des de més de 20 metres de distància (rellotge d'una església)"
+                    }
+                },
+                "question": "Com de visible és aquest rellotge?"
+            }
+        },
+        "title": {
+            "render": "Rellotge"
+        }
     },
     "crossings": {
         "name": "Encreuaments",
