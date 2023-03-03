@@ -454,7 +454,7 @@
         {
           "id": "luminous",
           "condition": {
-            "and": [
+            "or": [
               "advertising~billboard", "advertising~column", "advertising~poster_box", "advertising~board", "advertising~sign", "advertising~totem"
             ]
           },
