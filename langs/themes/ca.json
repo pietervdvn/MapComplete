@@ -779,6 +779,11 @@
         "description": "Un mapa per a mostrar i editar turbines eòliques.",
         "title": "Mapa obert d'energia eòlica"
     },
+    "osm_community_index": {
+        "description": "Una llista de recursos per als usuaris d'OSM. Els recursos poden ser enllaços a fòrums, reunions, grups de treball, canals IRC, llistes de correus, etcètera. Quelcom que els mapejadors, especialment els principiants poden trobar interessant o útil.",
+        "shortDescription": "Un índex de recursos comunitaris per a OpenStreetMap.",
+        "title": "Índex de comunitats d'OSM"
+    },
     "parkings": {
         "description": "Aquest mapa mostra diferents punts d'aparcament",
         "shortDescription": "Aquest mapa mostra diferents punts d'aparcament",
