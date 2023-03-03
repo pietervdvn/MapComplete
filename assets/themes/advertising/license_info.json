@@ -50,6 +50,16 @@
     ]
   },
   {
+    "path": "Mupi_Alcoi.jpg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "Paunofu"
+    ],
+    "sources": [
+      "https://imgur.com/4Q3glWH"
+    ]
+  },
+  {
     "path": "Repsol_Billboard.jpg",
     "license": "CC BY 4.0",
     "authors": [
@@ -57,6 +67,16 @@
     ],
     "sources": [
       "https://imgur.com/MwvK0jc"
+    ]
+  },
+  {
+    "path": "Screen_poster_box.jpg",
+    "license": "CC BY-SA 4.0",
+    "authors": [
+      "T. Segonds"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Screen_poster_box.jpg"
     ]
   },
   {
