@@ -430,7 +430,7 @@
             "bicycle_rental"
           ],
           "question": {
-            "en": "How much type_plural can be rented here?",
+            "en": "How many type_plural can be rented here?",
             "nl": "Hoeveel type_plural kunnen hier uitgeleend worden?",
             "de": "Wie viele type_plural können hier gemietet werden?",
             "fr": "Combien de type_plural peuvent être loués ici ?",
