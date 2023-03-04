@@ -320,7 +320,7 @@
         {
           "if": "service:bicycle:retail=yes",
           "then": {
-            "en": "This shop sells bikes",
+            "en": "This shop sells new bikes",
             "nl": "Deze winkel verkoopt fietsen",
             "fr": "Ce magasin vend des vélos",
             "gl": "Esta tenda vende bicicletas",
@@ -337,7 +337,7 @@
         {
           "if": "service:bicycle:retail=no",
           "then": {
-            "en": "This shop doesn't sell bikes",
+            "en": "This shop doesn't sell new bikes",
             "nl": "Deze winkel verkoopt geen fietsen",
             "fr": "Ce magasin ne vend pas de vélo",
             "gl": "Esta tenda non vende bicicletas",
