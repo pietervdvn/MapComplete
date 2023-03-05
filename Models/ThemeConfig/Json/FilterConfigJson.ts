@@ -10,6 +10,28 @@ export default interface FilterConfigJson {
      * If there are multiple options these will be a list of radio buttons
      * If there is only one option this will be a checkbox
      * Filtering is done based on the given osmTags that are compared to the objects in that layer.
+     *
+     * An example which searches by name:
+     *
+     * ```
+     * {
+     *       "id": "shop-name",
+     *       "options": [
+     *         {
+     *           "fields": [
+     *             {
+     *               "name": "search",
+     *               "type": "string"
+     *             }
+     *           ],
+     *           "osmTags": "name~i~.*{search}.*",
+     *           "question": {
+     *             "en": "Only show shops with name {search}",
+     *           }
+     *         }
+     *       ]
+     *     }
+     *     ```
      */
     options: {
         question: string | any

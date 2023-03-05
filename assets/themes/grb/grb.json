@@ -262,6 +262,17 @@
               "question": "Heeft een FIXME"
             }
           ]
+        },{
+          "id": "last-edited-by",
+          "options": [
+            {
+              "fields": [{
+                "name": "username"
+              }],
+              "question": "Last change made by {username}",
+              "osmTags": "_last_edit:contributor~i~{username}"
+            }
+          ]
         }
       ]
     },

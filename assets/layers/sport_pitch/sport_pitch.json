@@ -605,6 +605,63 @@
     }
   ],
   "filter": [
+    {
+      "id": "accessibility",
+      "options": [
+        {
+          "question": {
+            "en": "Publicly accessible",
+            "nl": "Publiek toegankelijk"
+          },
+          "osmTags": {
+            "or": [
+              "access=yes",
+              "access=public",
+              "access="
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "available_sports",
+      "options": [
+        {
+          "question": {
+            "en": "All sports",
+            "nl": "Alle sporten"
+          }
+        },
+        {
+          "osmTags": "sport=basketball",
+          "question": {
+            "nl": "Basketbalvelden",
+            "en": "Basketball fields"
+          }
+        },
+        {
+          "osmTags": "sport=soccer",
+          "question": {
+            "nl": "Voetbalvelden",
+            "en": "Soccer fields"
+          }
+        },
+        {
+          "osmTags": "sport=table_tennis",
+          "question": {
+            "nl": "Pingpong-tafel",
+            "en": "Ping-pong table"
+          }
+        },
+        {
+          "osmTags": "sport=tennis",
+          "question": {
+            "nl": "Tennisveld",
+            "en": "Tennis field"
+          }
+        }
+      ]
+    },
     "open_now"
   ]
 }
