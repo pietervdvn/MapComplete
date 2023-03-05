@@ -979,7 +979,7 @@
     "osm_community_index": {
         "description": "Una lista de recursos para los usuarios de OpenStreetMap. Los \"recursos\" pueden ser enlaces a foros, reuniones, grupos de trabajo, canales IRC, listas de correo, etcétera. Cualquier cosa que los cartógrafos, especialmente los principiantes, puedan encontrar interesante o útil.",
         "shortDescription": "Un índice de recursos comunitarios para OpenStreetMap.",
-        "title": "Índice de la comunidad OSM"
+        "title": "Índice de comunidades de OSM"
     },
     "parkings": {
         "description": "Este mapa muestra diferentes puntos de aparcamiento",

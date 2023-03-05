@@ -16,8 +16,11 @@
             "selectReason": "Por favor, selecione por que este recurso deve ser excluído"
         },
         "isDeleted": "Este recurso foi excluído",
+        "loginToDelete": "Você deve estar autenticado para eliminar um recurso",
+        "notEnoughExperience": "Este recurso foi feito por outra pessoa.",
         "reasons": {
-            "disused": "Este recurso foi removido ou está em desuso"
+            "disused": "Este recurso foi removido ou está em desuso",
+            "duplicate": "Este recurso é uma cópia de outro recurso"
         }
     },
     "favourite": {
