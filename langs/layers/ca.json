@@ -1806,7 +1806,7 @@
         }
     },
     "gps_track": {
-        "name": "La teva pista recorreguda"
+        "name": "La teva traça recorreguda"
     },
     "grass_in_parks": {
         "description": "Cerques per a tots els camins d'herba accessibles dins dels parcs públics - aquests són «groenzones»"
@@ -2127,7 +2127,8 @@
         },
         "tagRenderings": {
             "capacity": {
-                "question": "Quantes places d'aparcament hi han a aquest aparcament?"
+                "question": "Quantes places d'aparcament hi han a aquest aparcament?",
+                "render": "Hi han {capacity} places d'aparcament"
             },
             "capacity-disabled": {
                 "mappings": {
