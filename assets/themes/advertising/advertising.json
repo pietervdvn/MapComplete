@@ -975,9 +975,8 @@
             "en": "a poster box"
           },
           "exampleImages":[
-            "./assets/themes/advertising/Screen_poster_box.jpg",
-            "./assets/themes/advertising/Mupi_Alcoi.jpg",
-            ""
+            "./assets/themes/advertising/Mupi_spain.jpg",
+            "./assets/themes/advertising/Mupi_Alcoi.jpg"
           ]
         },
         {
@@ -990,9 +989,8 @@
             "en": "a screen"
           },
           "exampleImages":[
-            "",
-            "",
-            ""
+            "./assets/themes/advertising/Screen_poster_box.jpg",
+            "./assets/themes/advertising/City-Light-Poster.jpg"
           ]
         },
         {
@@ -1010,9 +1008,9 @@
             "maxSnapDistance": 5
           },
           "exampleImages":[
-            "",
-            "",
-            ""
+            "./assets/themes/advertising/Subway_screen.jpg",
+            "./assets/themes/advertising/TV_media.jpg",
+            "./assets/themes/advertising/Times square.jpg"
           ]
         },
         {

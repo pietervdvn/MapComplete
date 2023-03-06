@@ -20,6 +20,16 @@
     ]
   },
   {
+    "path": "City-Light-Poster.jpg",
+    "license": "CC-BY SA 4.0",
+    "authors": [
+      "Bärwinkel, Klaus"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:City-Light-Poster_Mittelstra%C3%9Fe.jpg"
+    ]
+  },
+  {
     "path": "FGV_Founding.jpg",
     "license": "CC BY-SA 4.0",
     "authors": [
@@ -60,6 +70,16 @@
     ]
   },
   {
+    "path": "Mupi_spain.jpg",
+    "license": "CC0 1.0",
+    "authors": [
+      "Jusotil_1943"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Mupi_(42556631491).jpg"
+    ]
+  },
+  {
     "path": "Repsol_Billboard.jpg",
     "license": "CC BY 4.0",
     "authors": [
@@ -87,6 +107,36 @@
     ],
     "sources": [
       "https://wiki.openstreetmap.org/wiki/File:AdvertisingBoard_001.jpg"
+    ]
+  },
+  {
+    "path": "Subway_screen.jpg",
+    "license": "CC BY 2.0",
+    "authors": [
+      "Metropolitan Transportation Authority of the State of New York"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Subway_Station_Digital_Advertising_Screens_(13251000543).jpg"
+    ]
+  },
+  {
+    "path": "TV_media.jpg",
+    "license": "CC BY 3.0",
+    "authors": [
+      "Roger Carvell"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:TV_media_advertising_at_London_Victoria_station._-_panoramio.jpg"
+    ]
+  },
+  {
+    "path": "Times square.jpg",
+    "license": "CC BY-SA 4.0",
+    "authors": [
+      "chensiyuan"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:1_times_square_night_2013.jpg"
     ]
   },
   {
@@ -157,6 +207,16 @@
     ],
     "sources": [
       "https://wiki.openstreetmap.org/wiki/File:Poster_box.svg"
+    ]
+  },
+  {
+    "path": "screen alcoi.jpg",
+    "license": "CC-BY 4.0",
+    "authors": [
+      "paunofu"
+    ],
+    "sources": [
+      "https://imgur.com/HKsRycm"
     ]
   },
   {
