@@ -44,6 +44,7 @@
   "layers": [
     {
       "id": "raw_inspire_polygons",
+      "description": "External dataset: inspire polygon,
       "source": {
         "geoJson": "https://osm-uk-addresses.russss.dev/inspire/{z}/{x}/{y}.json",
         "osmTags": "inspireid~*",
@@ -297,7 +298,8 @@
         },
         {
           "id": "uk_addresses_housename",
-          "question": "What is the house or building name for this address?<div class='subtle'>As shown on a sign. Please do NOT add names of the people who live here!</div>",
+          "question": "What is the house or building name for this address?",
+          "questionHint": "As shown on a sign. Please do NOT add names of the people who live here!",
           "render": "<div class='subtle'>House or building name</div><div><b>{addr:housename}</b></div>",
           "freeform": {
             "key": "addr:housename",

@@ -20,6 +20,7 @@
     {
       "id": "waste_basket_assen",
       "name": "Dataset Afvalbakken Assen",
+      "description": "Laag op basis van externe data",
       "source": {
         "osmTags": "OBJECTID~*",
         "geoJson": "https://opendata.arcgis.com/datasets/5b6953ac5a9d4616a7dc75ab0beeac2f_0.geojson",
@@ -57,6 +58,7 @@
     {
       "id": "recycling_assen",
       "name": "Dataset Recyclingcontainers Assen",
+      "description": "Laag op basis van externe data",
       "source": {
         "osmTags": "OBJECTID~*",
         "geoJson": "https://opendata.arcgis.com/datasets/edb893998e27461b8ed82aad9854d27d_0.geojson",
