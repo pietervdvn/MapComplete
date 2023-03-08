@@ -20,7 +20,7 @@ import { CloseNoteButton } from "./Popup/CloseNoteButton"
 import { NearbyImageVis } from "./Popup/NearbyImageVis"
 import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
 import { Stores, UIEventSource } from "../Logic/UIEventSource"
-import { AllTagsPanel } from "./AllTagsPanel"
+import AllTagsPanel from "./AllTagsPanel.svelte"
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders"
 import { ImageCarousel } from "./Image/ImageCarousel"
 import { ImageUploadFlow } from "./Image/ImageUploadFlow"
@@ -53,6 +53,7 @@ import StatisticsPanel from "./BigComponents/StatisticsPanel"
 import AutoApplyButton from "./Popup/AutoApplyButton"
 import { LanguageElement } from "./Popup/LanguageElement"
 import FeatureReviews from "../Logic/Web/MangroveReviews"
+import SvelteUIElement from "./Base/SvelteUIElement"
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
@@ -81,7 +82,8 @@ export default class SpecialVisualizations {
                 funcName: "all_tags",
                 docs: "Prints all key-value pairs of the object - used for debugging",
                 args: [],
-                constr: (state, tags: UIEventSource<any>) => new AllTagsPanel(tags, state),
+                constr: (state, tags: UIEventSource<any>) =>
+                    new SvelteUIElement(AllTagsPanel, { tags, state }),
             },
             {
                 funcName: "image_carousel",

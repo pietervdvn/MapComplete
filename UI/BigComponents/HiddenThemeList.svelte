@@ -4,15 +4,18 @@
   import type Loc from "../../Models/Loc"
   import * as themeOverview from "../../assets/generated/theme_overview.json"
   import { Utils } from "../../Utils"
-  import ThemesList, { type Theme } from "./ThemesList.svelte"
+  import ThemesList from "./ThemesList.svelte"
   import Translations from "../i18n/Translations"
+  import { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
 
   export let search: UIEventSource<string>
   export let state: { osmConnection: OsmConnection; locationControl?: UIEventSource<Loc> }
   export let onMainScreen: boolean = true
 
   const prefix = "mapcomplete-hidden-theme-"
-  const hiddenThemes: Theme[] = themeOverview["default"].filter((layout) => layout.hideFromOverview)
+  const hiddenThemes: LayoutInformation[] = themeOverview["default"].filter(
+    (layout) => layout.hideFromOverview
+  )
   const userPreferences = state.osmConnection.preferencesHandler.preferences
   const t = Translations.t.general.morescreen
 
