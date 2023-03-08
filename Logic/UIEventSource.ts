@@ -754,4 +754,12 @@ export class UIEventSource<T> extends Store<T> {
         }
         return this
     }
+
+    static asBoolean(stringUIEventSource: UIEventSource<string>) {
+        return stringUIEventSource.sync(
+            (str) => str === "true",
+            [],
+            (b) => "" + b
+        )
+    }
 }

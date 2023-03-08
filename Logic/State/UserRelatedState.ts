@@ -34,9 +34,9 @@ export default class UserRelatedState extends ElementsState {
      */
     public maprouletteConnection: Maproulette
 
-    public readonly isTranslator: Store<boolean>
-
     public readonly installedUserThemes: Store<string[]>
+
+    public readonly showAllQuestionsAtOnce: UIEventSource<boolean>
 
     constructor(layoutToUse: LayoutConfig, options?: { attemptLogin: true | boolean }) {
         super(layoutToUse)
@@ -73,7 +73,12 @@ export default class UserRelatedState extends ElementsState {
         }
 
         this.changes = new Changes(this, layoutToUse?.isLeftRightSensitive() ?? false)
-
+        this.showAllQuestionsAtOnce = UIEventSource.asBoolean(
+            this.osmConnection.GetPreference("show-all-questions", "false", {
+                documentation:
+                    "Either 'true' or 'false'. If set, all questions will be shown all at once",
+            })
+        )
         new ChangeToElementsActor(this.changes, this.allElements)
         new PendingChangesUploader(this.changes, this.selectedElement)
 

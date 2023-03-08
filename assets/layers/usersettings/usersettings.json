@@ -68,6 +68,26 @@
       ]
     },
     {
+      "id": "all-questions-at-once",
+      "question": {
+        "en": "Should questions for unknown data fields appear one-by-one or together?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-show-all-questions=true",
+          "then": {
+            "en": "Show all questions in the infobox together"
+          }
+        },
+        {
+          "if": "mapcomplete-show-all-questions=false",
+          "then": {
+            "en": "Show questions one-by-one"
+          }
+        }
+      ]
+    },
+    {
       "id": "translations-title",
       "group": "translations",
       "render": "<h3>Translating MapComplete</h3>"
