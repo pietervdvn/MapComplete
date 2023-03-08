@@ -41,7 +41,6 @@ export class ActionButtons extends Combine {
         readonly currentBounds: Store<BBox>
         readonly locationControl: Store<Loc>
         readonly osmConnection: OsmConnection
-        readonly isTranslator: Store<boolean>
         readonly featureSwitchMoreQuests: Store<boolean>
     }) {
         const imgSize = "h-6 w-6"
