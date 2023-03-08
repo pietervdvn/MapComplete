@@ -1,8 +1,7 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import * as turf from "@turf/turf"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import { Feature, LineString, Polygon } from "geojson"
+import { describe, expect, it } from "vitest"
 
 describe("GeoOperations", () => {
     describe("calculateOverlap", () => {
@@ -124,9 +123,9 @@ describe("GeoOperations", () => {
             }
 
             const p0 = turf.polygon(polyGrb.geometry.coordinates)
-            expect(p0).not.null
+            expect(p0).not.toBeNull()
             const p1 = turf.polygon(polyHouse.geometry.coordinates)
-            expect(p1).not.null
+            expect(p1).not.toBeNull()
 
             const overlaps = GeoOperations.calculateOverlap(polyGrb, [polyHouse])
             expect(overlaps).empty

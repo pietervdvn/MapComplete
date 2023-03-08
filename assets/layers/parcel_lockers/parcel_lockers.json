@@ -259,7 +259,7 @@
       "iconBadges": [
         {
           "if": "opening_hours~*",
-          "then": "isOpen"
+          "then": "icons.isOpen"
         }
       ],
       "iconSize": "40,40,center",

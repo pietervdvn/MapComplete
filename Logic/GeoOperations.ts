@@ -185,16 +185,20 @@ export class GeoOperations {
      * GeoOperations.inside([1.42822265625, 48.61838518688487], multiPolygon) // => false
      * GeoOperations.inside([4.02099609375, 47.81315451752768], multiPolygon) // => false
      */
-    public static inside(pointCoordinate, feature): boolean {
+    public static inside(
+        pointCoordinate: [number, number] | Feature<Point>,
+        feature: Feature
+    ): boolean {
         // ray-casting algorithm based on
         // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
 
         if (feature.geometry.type === "Point") {
+            // The feature that should 'contain' pointCoordinate is a point itself, so it cannot contain anything
             return false
         }
 
-        if (pointCoordinate.geometry !== undefined) {
-            pointCoordinate = pointCoordinate.geometry.coordinates
+        if (pointCoordinate["geometry"] !== undefined) {
+            pointCoordinate = pointCoordinate["geometry"].coordinates
         }
 
         const x: number = pointCoordinate[0]
@@ -203,6 +207,7 @@ export class GeoOperations {
         if (feature.geometry.type === "MultiPolygon") {
             const coordinatess = feature.geometry.coordinates
             for (const coordinates of coordinatess) {
+                // @ts-ignore
                 const inThisPolygon = GeoOperations.pointInPolygonCoordinates(x, y, coordinates)
                 if (inThisPolygon) {
                     return true
@@ -212,6 +217,7 @@ export class GeoOperations {
         }
 
         if (feature.geometry.type === "Polygon") {
+            // @ts-ignore
             return GeoOperations.pointInPolygonCoordinates(x, y, feature.geometry.coordinates)
         }
 

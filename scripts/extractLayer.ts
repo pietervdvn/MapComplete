@@ -15,7 +15,7 @@ function main(args: string[]) {
     const layerId = args[1]
 
     const themePath = "./assets/themes/" + themeId + "/" + themeId + ".json"
-    const contents = <LayoutConfigJson>JSON.parse(readFileSync(themePath, "UTF-8"))
+    const contents = <LayoutConfigJson>JSON.parse(readFileSync(themePath, { encoding: "utf8" }))
     const layers = <LayerConfigJson[]>contents.layers.filter((l) => {
         if (typeof l === "string") {
             return false

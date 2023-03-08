@@ -9,6 +9,8 @@ rm -rf .cache
 mkdir dist 2> /dev/null
 mkdir dist/assets 2> /dev/null
 
+export NODE_OPTIONS="--max-old-space-size=8192"
+
 # This script ends every line with '&&' to chain everything. A failure will thus stop the build
 npm run generate:editor-layer-index &&
 npm run generate &&
@@ -56,3 +58,5 @@ cp -r assets/templates/ dist/assets/templates/
 cp -r assets/tagRenderings/ dist/assets/tagRenderings/
 cp assets/*.png dist/assets/
 cp assets/*.svg dist/assets/
+
+export NODE_OPTIONS=""

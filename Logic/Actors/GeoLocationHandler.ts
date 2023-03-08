@@ -2,8 +2,10 @@ import { QueryParameters } from "../Web/QueryParameters"
 import { BBox } from "../BBox"
 import Constants from "../../Models/Constants"
 import { GeoLocationPointProperties, GeoLocationState } from "../State/GeoLocationState"
-import State from "../../State"
 import { UIEventSource } from "../UIEventSource"
+import Loc from "../../Models/Loc"
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource"
 
 /**
  * The geolocation-handler takes a map-location and a geolocation state.
@@ -12,12 +14,24 @@ import { UIEventSource } from "../UIEventSource"
  */
 export default class GeoLocationHandler {
     public readonly geolocationState: GeoLocationState
-    private readonly _state: State
+    private readonly _state: {
+        currentUserLocation: SimpleFeatureSource
+        layoutToUse: LayoutConfig
+        locationControl: UIEventSource<Loc>
+        selectedElement: UIEventSource<any>
+        leafletMap?: UIEventSource<any>
+    }
     public readonly mapHasMoved: UIEventSource<boolean> = new UIEventSource<boolean>(false)
 
     constructor(
         geolocationState: GeoLocationState,
-        state: State // { locationControl: UIEventSource<Loc>, selectedElement: UIEventSource<any>, leafletMap?: UIEventSource<any> })
+        state: {
+            locationControl: UIEventSource<Loc>
+            currentUserLocation: SimpleFeatureSource
+            layoutToUse: LayoutConfig
+            selectedElement: UIEventSource<any>
+            leafletMap?: UIEventSource<any>
+        }
     ) {
         this.geolocationState = geolocationState
         this._state = state

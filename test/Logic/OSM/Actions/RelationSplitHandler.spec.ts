@@ -1,5 +1,3 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import { Utils } from "../../../../Utils"
 import { OsmObject, OsmRelation } from "../../../../Logic/Osm/OsmObject"
 import {
@@ -7,6 +5,7 @@ import {
     TurnRestrictionRSH,
 } from "../../../../Logic/Osm/Actions/RelationSplitHandler"
 import { Changes } from "../../../../Logic/Osm/Changes"
+import { describe, expect, it } from "vitest"
 
 describe("RelationSplitHandler", () => {
     Utils.injectJsonDownloadForTests("https://www.openstreetmap.org/api/0.6/node/1124134958/ways", {
@@ -651,10 +650,8 @@ describe("RelationSplitHandler", () => {
         const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
         const allIds = changeDescription[0].changes["members"].map((m) => m.ref).join(",")
         const expected = "687866206,295132739,-1,690497698"
-        expect(
-            allIds.indexOf(expected) >= 0,
-            "didn't find the expected order of ids in the relation to test"
-        ).true
+        // "didn't find the expected order of ids in the relation to test"
+        expect(allIds.indexOf(expected) >= 0).toBe(true)
     })
 
     it("should split turn restrictions (split of https://www.openstreetmap.org/way/143298912)", async () => {
@@ -705,7 +702,7 @@ describe("RelationSplitHandler", () => {
             .map((m) => m.type + "/" + m.ref + "-->" + m.role)
             .join(",")
         const expected = "way/318616190-->from,node/1407529979-->via,way/-1-->to"
-        expect(allIds).deep.equal(expected)
+        expect(allIds).toEqual(expected)
 
         // Reversing the ids has no effect
         const splitterReverse = new TurnRestrictionRSH(
@@ -719,6 +716,6 @@ describe("RelationSplitHandler", () => {
             "no-theme"
         )
         const changesReverse = await splitterReverse.CreateChangeDescriptions(new Changes())
-        expect(changesReverse.length).deep.equal(0)
+        expect(changesReverse.length).toEqual(0)
     })
 })

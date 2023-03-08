@@ -5,6 +5,12 @@
         "retrying": "Data inladen mislukt - wordt opnieuw geprobeerd over {count} seconden",
         "zoomIn": "Zoom in om de data te zien en te bewerken"
     },
+    "communityIndex": {
+        "available": "Op dit communicatiekanaal spreekt men {native}",
+        "intro": "Contacteer anderen die bezig zijn met OpenStreetMap om kennis te maken, tips uit te wisselen of van elkaar bij te leren.",
+        "notAvailable": "Op dit communicatiekanaal spreekt men geen {native}",
+        "title": "Community index"
+    },
     "delete": {
         "cancel": "Annuleren",
         "cannotBeDeleted": "Dit object kan niet van de kaart verwijderd worden",

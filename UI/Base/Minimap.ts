@@ -3,7 +3,6 @@ import Loc from "../../Models/Loc"
 import BaseLayer from "../../Models/BaseLayer"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import { BBox } from "../../Logic/BBox"
-import { deprecate } from "util"
 
 export interface MinimapOptions {
     background?: UIEventSource<BaseLayer>

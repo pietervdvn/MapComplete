@@ -18,6 +18,7 @@ export default class FeatureSwitchState {
     public readonly featureSwitchBackgroundSelection: UIEventSource<boolean>
     public readonly featureSwitchAddNew: UIEventSource<boolean>
     public readonly featureSwitchWelcomeMessage: UIEventSource<boolean>
+    public readonly featureSwitchCommunityIndex: UIEventSource<boolean>
     public readonly featureSwitchExtraLinkEnabled: UIEventSource<boolean>
     public readonly featureSwitchMoreQuests: UIEventSource<boolean>
     public readonly featureSwitchShareScreen: UIEventSource<boolean>
@@ -90,6 +91,11 @@ export default class FeatureSwitchState {
             "fs-welcome-message",
             () => true,
             "Disables/enables the help menu or welcome message"
+        )
+        this.featureSwitchCommunityIndex = featSw(
+            "fs-community-index",
+            () => true,
+            "Disables/enables the button to get in touch with the community"
         )
         this.featureSwitchExtraLinkEnabled = featSw(
             "fs-iframe-popout",

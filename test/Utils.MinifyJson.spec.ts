@@ -1,7 +1,6 @@
 import { Utils } from "../Utils"
 import LZString from "lz-string"
-import { describe } from "mocha"
-import { expect } from "chai"
+import { describe, expect, it } from "vitest"
 
 const example = {
     id: "bookcases",
@@ -36,25 +35,25 @@ describe("Utils", () => {
             const str = JSON.stringify({ title: "abc", and: "xyz", render: "somevalue" })
             const minified = Utils.MinifyJSON(str)
             const restored = Utils.UnMinify(minified)
-            expect(str).eq(restored)
+            expect(str).toBe(restored)
         })
         it("should minify and restore the bookcase example", () => {
             const str = JSON.stringify(example, null, 0)
             const minified = Utils.MinifyJSON(str)
             const restored = Utils.UnMinify(minified)
-            expect(str).eq(restored)
+            expect(str).toBe(restored)
         })
         it("should LZ-compress a theme", () => {
             const str = JSON.stringify(example, null, 0)
             const minified = LZString.compressToBase64(Utils.MinifyJSON(str))
             const restored = Utils.UnMinify(LZString.decompressFromBase64(minified))
-            expect(str).eq(restored)
+            expect(str).toBe(restored)
         })
         it("shoud be able to decode the LZ-compression of a theme", () => {
             const str = JSON.stringify(example, null, 0)
             const minified = LZString.compressToBase64(str)
             const restored = LZString.decompressFromBase64(minified)
-            expect(str).eq(restored)
+            expect(str).toBe(restored)
         })
     })
 })

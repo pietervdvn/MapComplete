@@ -16,11 +16,10 @@
     "skipLibCheck": true
   },
   "ts-node": {
+    "esm": true,
     "compilerOptions": {
       "isolatedModules": false,
-      "esModuleInterop": true,
-      "moduleResolution": "node",
-      "module": "CommonJS"
+      "esModuleInterop": true
     }
   },
   "exclude": ["node_modules", "test", "scripts"]

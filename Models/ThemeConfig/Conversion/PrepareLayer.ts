@@ -7,29 +7,24 @@ import {
     FirstOf,
     Fuse,
     On,
-    SetDefault,
-} from "./Conversion"
-import { LayerConfigJson } from "../Json/LayerConfigJson"
-import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
-import { Utils } from "../../../Utils"
-import RewritableConfigJson from "../Json/RewritableConfigJson"
-import SpecialVisualizations from "../../../UI/SpecialVisualizations"
-import Translations from "../../../UI/i18n/Translations"
-import { Translation } from "../../../UI/i18n/Translation"
-import tagrenderingconfigmeta from "../../../assets/tagrenderingconfigmeta.json"
-import { AddContextToTranslations } from "./AddContextToTranslations"
-import FilterConfigJson from "../Json/FilterConfigJson"
-import predifined_filters from "../../../assets/layers/filters/filters.json"
+    SetDefault
+} from "./Conversion";
+import { LayerConfigJson } from "../Json/LayerConfigJson";
+import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson";
+import { Utils } from "../../../Utils";
+import RewritableConfigJson from "../Json/RewritableConfigJson";
+import SpecialVisualizations from "../../../UI/SpecialVisualizations";
+import Translations from "../../../UI/i18n/Translations";
+import { Translation } from "../../../UI/i18n/Translation";
+import tagrenderingconfigmeta from "../../../assets/tagrenderingconfigmeta.json";
+import { AddContextToTranslations } from "./AddContextToTranslations";
+import FilterConfigJson from "../Json/FilterConfigJson";
+import predifined_filters from "../../../assets/layers/filters/filters.json";
+import { TagConfigJson } from "../Json/TagConfigJson";
+import PointRenderingConfigJson from "../Json/PointRenderingConfigJson";
+import LineRenderingConfigJson from "../Json/LineRenderingConfigJson";
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
-    private static load_filters(): Map<string, FilterConfigJson> {
-        let filters = new Map<string, FilterConfigJson>()
-        for (const filter of <FilterConfigJson[]>predifined_filters.filter) {
-            filters.set(filter.id, filter)
-        }
-        return filters
-    }
-
     private static readonly predefinedFilters = ExpandFilter.load_filters()
 
     constructor() {
@@ -38,6 +33,14 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
             ["filter"],
             "ExpandFilter"
         )
+    }
+
+    private static load_filters(): Map<string, FilterConfigJson> {
+        let filters = new Map<string, FilterConfigJson>()
+        for (const filter of <FilterConfigJson[]>predifined_filters.filter) {
+            filters.set(filter.id, filter)
+        }
+        return filters
     }
 
     convert(
@@ -128,6 +131,37 @@ class ExpandTagRendering extends Conversion<
     }
 
     private lookup(name: string): TagRenderingConfigJson[] {
+        const direct = this.directLookup(name)
+        if (direct === undefined) {
+            return undefined
+        }
+        const result: TagRenderingConfigJson[] = []
+        for (const tagRenderingConfigJson of direct) {
+            if (tagRenderingConfigJson["builtin"] !== undefined) {
+                let nm: string | string[] = tagRenderingConfigJson["builtin"]
+                let indirect: TagRenderingConfigJson[]
+                if (typeof nm === "string") {
+                    indirect = this.lookup(nm)
+                } else {
+                    indirect = [].concat(...nm.map((n) => this.lookup(n)))
+                }
+                for (let foundTr of indirect) {
+                    foundTr = Utils.Clone<any>(foundTr)
+                    Utils.Merge(tagRenderingConfigJson["override"] ?? {}, foundTr)
+                    foundTr.id = tagRenderingConfigJson.id ?? foundTr.id
+                    result.push(foundTr)
+                }
+            } else {
+                result.push(tagRenderingConfigJson)
+            }
+        }
+        return result
+    }
+
+    /**
+     * Looks up a tagRendering based on the name.
+     */
+    private directLookup(name: string): TagRenderingConfigJson[] {
         const state = this._state
         if (state.tagRenderings.has(name)) {
             return [state.tagRenderings.get(name)]
@@ -747,6 +781,79 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
     }
 }
 
+class ExpandIconBadges extends DesugaringStep<PointRenderingConfigJson | LineRenderingConfigJson> {
+    private _state: DesugaringContext
+    private _layer: LayerConfigJson
+    private _expand: ExpandTagRendering
+
+    constructor(state: DesugaringContext, layer: LayerConfigJson) {
+        super("Expands shorthand properties on iconBadges", ["iconBadges"], "ExpandIconBadges")
+        this._state = state
+        this._layer = layer
+        this._expand = new ExpandTagRendering(state, layer)
+    }
+
+    convert(
+        json: PointRenderingConfigJson | LineRenderingConfigJson,
+        context: string
+    ): {
+        result: PointRenderingConfigJson | LineRenderingConfigJson
+        errors?: string[]
+        warnings?: string[]
+        information?: string[]
+    } {
+        if (!json["iconBadges"]) {
+            return { result: json }
+        }
+        const badgesJson = (<PointRenderingConfigJson>json).iconBadges
+
+        const iconBadges: { if: TagConfigJson; then: string | TagRenderingConfigJson }[] = []
+
+        const errs: string[] = []
+        const warns: string[] = []
+        for (let i = 0; i < badgesJson.length; i++) {
+            const iconBadge: { if: TagConfigJson; then: string | TagRenderingConfigJson } =
+                badgesJson[i]
+            const { errors, result, warnings } = this._expand.convert(
+                iconBadge.then,
+                context + ".iconBadges[" + i + "]"
+            )
+            errs.push(...errors)
+            warns.push(...warnings)
+            if (result === undefined) {
+                iconBadges.push(iconBadge)
+                continue
+            }
+
+            iconBadges.push(
+                ...result.map((resolved) => ({
+                    if: iconBadge.if,
+                    then: resolved,
+                }))
+            )
+        }
+
+        return {
+            result: { ...json, iconBadges },
+            errors: errs,
+            warnings: warns,
+        }
+    }
+}
+
+class PreparePointRendering extends Fuse<PointRenderingConfigJson | LineRenderingConfigJson> {
+    constructor(state: DesugaringContext, layer: LayerConfigJson) {
+        super(
+            "Prepares point renderings by expanding 'icon' and 'iconBadges'",
+            new On(
+                "icon",
+                new FirstOf(new ExpandTagRendering(state, layer, { applyCondition: false }))
+            ),
+            new ExpandIconBadges(state, layer)
+        )
+    }
+}
+
 export class PrepareLayer extends Fuse<LayerConfigJson> {
     constructor(state: DesugaringContext) {
         super(
@@ -755,19 +862,11 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
             new On("tagRenderings", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
             new On("tagRenderings", (layer) => new Concat(new ExpandTagRendering(state, layer))),
             new On("mapRendering", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
-            new On(
+            new On<(PointRenderingConfigJson | LineRenderingConfigJson)[], LayerConfigJson>(
                 "mapRendering",
-                (layer) =>
-                    new Each(
-                        new On(
-                            "icon",
-                            new FirstOf(
-                                new ExpandTagRendering(state, layer, { applyCondition: false })
-                            )
-                        )
-                    )
+                (layer) => new Each(new PreparePointRendering(state, layer))
             ),
-            new SetDefault("titleIcons", ["defaults"]),
+            new SetDefault("titleIcons", ["icons.defaults"]),
             new On("titleIcons", (layer) => new Concat(new ExpandTagRendering(state, layer))),
             new ExpandFilter()
         )

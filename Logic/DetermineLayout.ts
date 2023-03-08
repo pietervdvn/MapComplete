@@ -194,8 +194,7 @@ export default class DetermineLayout {
             let { errors } = new ValidateThemeAndLayers(
                 new DoesImageExist(new Set<string>(), (_) => true),
                 "",
-                false,
-                SharedTagRenderings.SharedTagRendering
+                false
             ).convert(json, "validation")
             if (errors.length > 0) {
                 throw "Detected errors: " + errors.join("\n")

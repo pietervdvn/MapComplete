@@ -1,7 +1,6 @@
 import PointRenderingConfigJson from "./Json/PointRenderingConfigJson"
 import TagRenderingConfig from "./TagRenderingConfig"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
-import SharedTagRenderings from "../../Customizations/SharedTagRenderings"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
 import { Utils } from "../../Utils"
 import Svg from "../../Svg"
@@ -12,7 +11,6 @@ import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Img from "../../UI/Base/Img"
 import Combine from "../../UI/Base/Combine"
 import { VariableUiElement } from "../../UI/Base/VariableUIElement"
-import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 
 export default class PointRenderingConfig extends WithContextLoader {
     private static readonly allowed_location_codes = new Set<string>([
@@ -36,6 +34,10 @@ export default class PointRenderingConfig extends WithContextLoader {
 
     constructor(json: PointRenderingConfigJson, context: string) {
         super(json, context)
+
+        if (json === undefined || json === null) {
+            throw "Invalid PointRenderingConfig: undefined or null"
+        }
 
         if (typeof json.location === "string") {
             json.location = [json.location]
@@ -69,18 +71,9 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
         this.cssClasses = this.tr("cssClasses", undefined)
         this.iconBadges = (json.iconBadges ?? []).map((overlay, i) => {
-            let tr: TagRenderingConfig
-            if (
-                typeof overlay.then === "string" &&
-                SharedTagRenderings.SharedIcons.get(overlay.then) !== undefined
-            ) {
-                tr = SharedTagRenderings.SharedIcons.get(overlay.then)
-            } else {
-                tr = new TagRenderingConfig(overlay.then, `iconBadges.${i}`)
-            }
             return {
                 if: TagUtils.Tag(overlay.if),
-                then: tr,
+                then: new TagRenderingConfig(overlay.then, `iconBadges.${i}`),
             }
         })
 

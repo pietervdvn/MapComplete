@@ -1,7 +1,6 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
 import Locale from "../../../UI/i18n/Locale"
+import { describe, expect, it } from "vitest"
 
 describe("TagRenderingConfig", () => {
     describe("isKnown", () => {
@@ -26,11 +25,11 @@ describe("TagRenderingConfig", () => {
                 "Tests"
             )
 
-            expect(tr.GetRenderValue({ foo: "bar" })).undefined
+            expect(tr.GetRenderValue({ foo: "bar" })).toBeUndefined()
 
-            expect(tr.GetRenderValue({ noname: "yes" })?.textFor("nl")).eq("Has no name")
-            expect(tr.GetRenderValue({ name: "xyz" })?.textFor("nl")).eq("Ook een {name}")
-            expect(tr.GetRenderValue({ foo: "bar" })).undefined
+            expect(tr.GetRenderValue({ noname: "yes" })?.textFor("nl")).toBe("Has no name")
+            expect(tr.GetRenderValue({ name: "xyz" })?.textFor("nl")).toBe("Ook een {name}")
+            expect(tr.GetRenderValue({ foo: "bar" })).toBeUndefined()
         })
 
         it("should give a correct indication", () => {
@@ -63,8 +62,8 @@ describe("TagRenderingConfig", () => {
             }
 
             const tagRendering = new TagRenderingConfig(config, "test")
-            expect(tagRendering.IsKnown({ bottle: "yes" })).true
-            expect(tagRendering.IsKnown({})).false
+            expect(tagRendering.IsKnown({ bottle: "yes" })).toBe(true)
+            expect(tagRendering.IsKnown({})).toBe(false)
         })
     })
 })

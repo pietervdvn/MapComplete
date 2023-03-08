@@ -1,11 +1,10 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import { Utils } from "../../../Utils"
 import { ChangesetHandler, ChangesetTag } from "../../../Logic/Osm/ChangesetHandler"
 import { UIEventSource } from "../../../Logic/UIEventSource"
 import { OsmConnection } from "../../../Logic/Osm/OsmConnection"
 import { ElementStorage } from "../../../Logic/ElementStorage"
 import { Changes } from "../../../Logic/Osm/Changes"
+import { describe, expect, it } from "vitest"
 
 describe("ChangesetHanlder", () => {
     describe("RewriteTagsOf", () => {
@@ -56,18 +55,16 @@ describe("ChangesetHanlder", () => {
                 oldChangesetMeta
             )
             const d = Utils.asDict(rewritten)
-            expect(d.size).deep.equal(10)
-            expect(d.get("answer")).deep.equal("5")
-            expect(d.get("comment")).deep.equal(
-                "Adding data with #MapComplete for theme #toerisme_vlaanderen"
-            )
-            expect(d.get("created_by")).deep.equal("MapComplete 0.16.6")
-            expect(d.get("host")).deep.equal("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
-            expect(d.get("imagery")).deep.equal("osm")
-            expect(d.get("source")).deep.equal("survey")
-            expect(d.get("source:node/-1")).deep.equal("note/1234")
-            expect(d.get("theme")).deep.equal("toerisme_vlaanderen")
-            expect(d.get("newTag")).deep.equal("newValue")
+            expect(d.size).toEqual(10)
+            expect(d.get("answer")).toEqual("5")
+            expect(d.get("comment")).toEqual("Adding data with #MapComplete for theme #toerisme_vlaanderen")
+            expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
+            expect(d.get("host")).toEqual("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
+            expect(d.get("imagery")).toEqual("osm")
+            expect(d.get("source")).toEqual("survey")
+            expect(d.get("source:node/-1")).toEqual("note/1234")
+            expect(d.get("theme")).toEqual("toerisme_vlaanderen")
+            expect(d.get("newTag")).toEqual("newValue")
         })
         it("should aggregate numeric tags", () => {
             const changesetHandler = new ChangesetHandler(
@@ -116,17 +113,15 @@ describe("ChangesetHanlder", () => {
             )
             const d = Utils.asDict(rewritten)
 
-            expect(d.size).deep.equal(9)
-            expect(d.get("answer")).deep.equal("42")
-            expect(d.get("comment")).deep.equal(
-                "Adding data with #MapComplete for theme #toerisme_vlaanderen"
-            )
-            expect(d.get("created_by")).deep.equal("MapComplete 0.16.6")
-            expect(d.get("host")).deep.equal("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
-            expect(d.get("imagery")).deep.equal("osm")
-            expect(d.get("source")).deep.equal("survey")
-            expect(d.get("source:node/-1")).deep.equal("note/1234")
-            expect(d.get("theme")).deep.equal("toerisme_vlaanderen")
+            expect(d.size).toEqual(9)
+            expect(d.get("answer")).toEqual("42")
+            expect(d.get("comment")).toEqual("Adding data with #MapComplete for theme #toerisme_vlaanderen")
+            expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
+            expect(d.get("host")).toEqual("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
+            expect(d.get("imagery")).toEqual("osm")
+            expect(d.get("source")).toEqual("survey")
+            expect(d.get("source:node/-1")).toEqual("note/1234")
+            expect(d.get("theme")).toEqual("toerisme_vlaanderen")
         })
         it("should rewrite special reasons with the correct ID", () => {
             const changesetHandler = new ChangesetHandler(
@@ -169,17 +164,15 @@ describe("ChangesetHanlder", () => {
             )
             const d = Utils.asDict(rewritten)
 
-            expect(d.size).deep.equal(9)
-            expect(d.get("answer")).deep.equal("5")
-            expect(d.get("comment")).deep.equal(
-                "Adding data with #MapComplete for theme #toerisme_vlaanderen"
-            )
-            expect(d.get("created_by")).deep.equal("MapComplete 0.16.6")
-            expect(d.get("host")).deep.equal("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
-            expect(d.get("imagery")).deep.equal("osm")
-            expect(d.get("source")).deep.equal("survey")
-            expect(d.get("source:node/42")).deep.equal("note/1234")
-            expect(d.get("theme")).deep.equal("toerisme_vlaanderen")
+            expect(d.size).toEqual(9)
+            expect(d.get("answer")).toEqual("5")
+            expect(d.get("comment")).toEqual("Adding data with #MapComplete for theme #toerisme_vlaanderen")
+            expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
+            expect(d.get("host")).toEqual("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
+            expect(d.get("imagery")).toEqual("osm")
+            expect(d.get("source")).toEqual("survey")
+            expect(d.get("source:node/42")).toEqual("note/1234")
+            expect(d.get("theme")).toEqual("toerisme_vlaanderen")
         })
     })
 
@@ -200,12 +193,13 @@ describe("ChangesetHanlder", () => {
                 extraMetaTags,
                 changes
             )
-            expect(hasSpecialMotivationChanges, "Special rewrite did not trigger").true
+            // "Special rewrite did not trigger"
+            expect(hasSpecialMotivationChanges).toBe(true)
             // Rewritten inline by rewriteMetaTags
-            expect(extraMetaTags[1].key).deep.equal("source:node/42")
-            expect(extraMetaTags[1].value).deep.equal("note/1234")
-            expect(extraMetaTags[0].key).deep.equal("created_by")
-            expect(extraMetaTags[0].value).deep.equal("mapcomplete")
+            expect(extraMetaTags[1].key).toEqual("source:node/42")
+            expect(extraMetaTags[1].value).toEqual("note/1234")
+            expect(extraMetaTags[0].key).toEqual("created_by")
+            expect(extraMetaTags[0].value).toEqual("mapcomplete")
         })
     })
 })

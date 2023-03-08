@@ -1,17 +1,16 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import { LayoutConfigJson } from "../../../../Models/ThemeConfig/Json/LayoutConfigJson"
 import { LayerConfigJson } from "../../../../Models/ThemeConfig/Json/LayerConfigJson"
 import { PrepareTheme } from "../../../../Models/ThemeConfig/Conversion/PrepareTheme"
 import { TagRenderingConfigJson } from "../../../../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import LayoutConfig from "../../../../Models/ThemeConfig/LayoutConfig"
-import * as bookcaseLayer from "../../../../assets/generated/layers/public_bookcase.json"
+import bookcaseLayer from "../../../../assets/generated/layers/public_bookcase.json"
 import LayerConfig from "../../../../Models/ThemeConfig/LayerConfig"
 import { ExtractImages } from "../../../../Models/ThemeConfig/Conversion/FixImages"
-import * as cyclofix from "../../../../assets/generated/themes/cyclofix.json"
+import cyclofix from "../../../../assets/generated/themes/cyclofix.json"
 import { Tag } from "../../../../Logic/Tags/Tag"
 import { DesugaringContext } from "../../../../Models/ThemeConfig/Conversion/Conversion"
 import { And } from "../../../../Logic/Tags/And"
+import { describe, expect, it } from "vitest"
 
 const themeConfigJson: LayoutConfigJson = {
     description: "Descr",
@@ -38,7 +37,7 @@ const themeConfigJson: LayoutConfigJson = {
 describe("PrepareTheme", () => {
     it("should substitute layers", () => {
         const sharedLayers = new Map<string, LayerConfigJson>()
-        sharedLayers.set("public_bookcase", bookcaseLayer["default"])
+        sharedLayers.set("public_bookcase", bookcaseLayer)
         const theme = { ...themeConfigJson, layers: ["public_bookcase"] }
         const prepareStep = new PrepareTheme({
             tagRenderings: new Map<string, TagRenderingConfigJson>(),
@@ -49,14 +48,14 @@ describe("PrepareTheme", () => {
         const layerUnderTest = <LayerConfig>(
             themeConfig.layers.find((l) => l.id === "public_bookcase")
         )
-        expect(layerUnderTest.source.osmTags).deep.eq(
+        expect(layerUnderTest.source.osmTags).toEqual(
             new And([new Tag("amenity", "public_bookcase")])
         )
     })
 
     it("should apply override", () => {
         const sharedLayers = new Map<string, LayerConfigJson>()
-        sharedLayers.set("public_bookcase", bookcaseLayer["default"])
+        sharedLayers.set("public_bookcase", bookcaseLayer)
         let themeConfigJsonPrepared = new PrepareTheme({
             tagRenderings: new Map<string, TagRenderingConfigJson>(),
             sharedLayers: sharedLayers,
@@ -65,12 +64,12 @@ describe("PrepareTheme", () => {
         const layerUnderTest = <LayerConfig>(
             themeConfig.layers.find((l) => l.id === "public_bookcase")
         )
-        expect(layerUnderTest.source.geojsonSource).eq("xyz")
+        expect(layerUnderTest.source.geojsonSource).toBe("xyz")
     })
 
     it("should apply override", () => {
         const sharedLayers = new Map<string, LayerConfigJson>()
-        sharedLayers.set("public_bookcase", bookcaseLayer["default"])
+        sharedLayers.set("public_bookcase", bookcaseLayer)
         let themeConfigJsonPrepared = new PrepareTheme({
             tagRenderings: new Map<string, TagRenderingConfigJson>(),
             sharedLayers: sharedLayers,
@@ -85,7 +84,7 @@ describe("PrepareTheme", () => {
         const layerUnderTest = <LayerConfig>(
             themeConfig.layers.find((l) => l.id === "public_bookcase")
         )
-        expect(layerUnderTest.source.geojsonSource).eq("https://example.com/data.geojson")
+        expect(layerUnderTest.source.geojsonSource).toBe("https://example.com/data.geojson")
     })
 
     it("should remove names which are overriden with null", () => {
@@ -126,8 +125,8 @@ describe("PrepareTheme", () => {
         const rewritten = new PrepareTheme(ctx, {
             skipDefaultLayers: true,
         }).convertStrict(layout, "test")
-        expect(rewritten.layers[0]).deep.eq(testLayer)
-        expect(rewritten.layers[1]).deep.eq({
+        expect(rewritten.layers[0]).toEqual(testLayer)
+        expect(rewritten.layers[1]).toEqual({
             source: {
                 osmTags: "x=y",
             },
@@ -142,8 +141,10 @@ describe("PrepareTheme", () => {
 
 describe("ExtractImages", () => {
     it("should find all images in a themefile", () => {
-        const images = new Set(
-            new ExtractImages(true, new Map<string, any>()).convertStrict(<any>cyclofix, "test")
+        const images = new Set<string>(
+            new ExtractImages(true, new Set<string>())
+                .convertStrict(<any>cyclofix, "test")
+                .map((x) => x.path)
         )
         const expectedValues = [
             "./assets/layers/bike_repair_station/repair_station.svg",
@@ -158,7 +159,11 @@ describe("ExtractImages", () => {
             "close",
         ]
         for (const expected of expectedValues) {
-            expect(images).contains(expected)
+            if (!images.has(expected)) {
+                expect.fail(
+                    "Image " + expected + " not found (has:" + Array.from(images).join(",") + ")"
+                )
+            }
         }
     })
 })

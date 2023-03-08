@@ -1,6 +1,6 @@
-import { expect } from "chai"
 import { ChangeDescription } from "../../../Logic/Osm/Actions/ChangeDescription"
 import { Changes } from "../../../Logic/Osm/Changes"
+import { expect, it } from "vitest"
 
 it("Generate preXML from changeDescriptions", () => {
     const changeDescrs: ChangeDescription[] = [
@@ -29,11 +29,11 @@ it("Generate preXML from changeDescriptions", () => {
     ]
     const c = new Changes()
     const descr = c.CreateChangesetObjects(changeDescrs, [])
-    expect(descr.modifiedObjects).length(0)
-    expect(descr.deletedObjects).length(0)
-    expect(descr.newObjects).length(1)
+    expect(descr.modifiedObjects).toHaveLength(0)
+    expect(descr.deletedObjects).toHaveLength(0)
+    expect(descr.newObjects).toHaveLength(1)
 
     const ch = descr.newObjects[0]
-    expect(ch.tags["foo"]).eq("bar")
-    expect(ch.tags["someKey"]).eq("someValue")
+    expect(ch.tags["foo"]).toBe("bar")
+    expect(ch.tags["someKey"]).toBe("someValue")
 })

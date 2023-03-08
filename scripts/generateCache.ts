@@ -21,7 +21,7 @@ import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSou
 import TiledFeatureSource from "../Logic/FeatureSource/TiledFeatureSource/TiledFeatureSource"
 import Constants from "../Models/Constants"
 import { GeoOperations } from "../Logic/GeoOperations"
-import SimpleMetaTaggers from "../Logic/SimpleMetaTagger"
+import SimpleMetaTaggers, { ReferencingWaysMetaTagger } from "../Logic/SimpleMetaTagger"
 import FilteringFeatureSource from "../Logic/FeatureSource/Sources/FilteringFeatureSource"
 import Loc from "../Models/Loc"
 import { Feature } from "geojson"
@@ -488,6 +488,7 @@ function sliceToTiles(
 
 export async function main(args: string[]) {
     console.log("Cache builder started with args ", args.join(", "))
+    ReferencingWaysMetaTagger.enabled = false
     if (args.length < 6) {
         console.error(
             "Expected arguments are: theme zoomlevel targetdirectory lat0 lon0 lat1 lon1 [--generate-point-overview layer-name,layer-name,...] [--force-zoom-level z] [--clip]" +
