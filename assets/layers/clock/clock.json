@@ -3,18 +3,21 @@
   "name": {
     "en": "Clocks",
     "nl": "Klokken",
-    "de": "Uhren"
+    "de": "Uhren",
+    "ca": "Rellotges"
   },
   "description": {
     "en": "Layer with public clocks",
     "nl": "Laag met publieke klokken",
-    "de": "Ebene mit öffentlichen Uhren"
+    "de": "Ebene mit öffentlichen Uhren",
+    "ca": "Capa amb rellotges públics"
   },
   "title": {
     "render": {
       "en": "Clock",
       "nl": "Klok",
-      "de": "Uhr"
+      "de": "Uhr",
+      "ca": "Rellotge"
     }
   },
   "source": {
@@ -28,7 +31,8 @@
       "question": {
         "en": "In what way is the clock mounted?",
         "nl": "Hoe is de klok bevestigd?",
-        "de": "Wie ist die Uhr montiert?"
+        "de": "Wie ist die Uhr montiert?",
+        "ca": "De quina forma està muntat aquest rellotge?"
       },
       "mappings": [
         {
@@ -36,7 +40,8 @@
           "then": {
             "en": "This clock is mounted on a pole",
             "nl": "Deze klok is bevestigd aan een paal",
-            "de": "Diese Uhr ist auf einem Mast montiert"
+            "de": "Diese Uhr ist auf einem Mast montiert",
+            "ca": "Aquest rellotge està muntat en un pal"
           }
         },
         {
@@ -44,7 +49,8 @@
           "then": {
             "en": "This clock is mounted on a wall",
             "nl": "Deze klok is bevestigd aan een muur",
-            "de": "Diese Uhr ist an einer Wand montiert"
+            "de": "Diese Uhr ist an einer Wand montiert",
+            "ca": "Aquest rellotge està muntat en una paret"
           }
         },
         {
@@ -52,7 +58,8 @@
           "then": {
             "en": "This clock is part of a billboard",
             "nl": "Deze klok is onderdeel van een reclamebord",
-            "de": "Diese Uhr ist Teil einer Werbetafel"
+            "de": "Diese Uhr ist Teil einer Werbetafel",
+            "ca": "Aquest rellotge està muntat en una tanca publicitària"
           }
         },
         {
@@ -60,7 +67,8 @@
           "then": {
             "en": "This clock is on the ground",
             "nl": "Deze klok staat op de grond",
-            "de": "Diese Uhr befindet sich auf dem Boden"
+            "de": "Diese Uhr befindet sich auf dem Boden",
+            "ca": "Aquest rellotge està al sòl"
           }
         }
       ]
@@ -70,7 +78,8 @@
       "question": {
         "en": "How does this clock display the time?",
         "nl": "Hoe toont deze klok de tijd?",
-        "de": "Wie zeigt diese Uhr die Zeit an?"
+        "de": "Wie zeigt diese Uhr die Zeit an?",
+        "ca": "Com mostra aquest rellotge l'hora?"
       },
       "mappings": [
         {
@@ -78,7 +87,8 @@
           "then": {
             "en": "This clock displays the time with hands",
             "nl": "Deze klok toont de tijd met wijzers",
-            "de": "Diese Uhr zeigt die Zeit mit Zeigern an"
+            "de": "Diese Uhr zeigt die Zeit mit Zeigern an",
+            "ca": "Aquest rellotge mostra l'hora amb mans"
           }
         },
         {
@@ -86,7 +96,8 @@
           "then": {
             "en": "This clock displays the time with digits",
             "nl": "Deze klok toont de tijd met cijfers",
-            "de": "Diese Uhr zeigt die Zeit mit Ziffern an"
+            "de": "Diese Uhr zeigt die Zeit mit Ziffern an",
+            "ca": "Aquest rellotge mostra l'hora amb dígits"
           }
         },
         {
@@ -94,7 +105,8 @@
           "then": {
             "en": "This clock displays the time with a sundial",
             "nl": "Deze klok toont de tijd met een zonnewijzer",
-            "de": "Diese Uhr zeigt die Zeit mit einer Sonnenuhr an"
+            "de": "Diese Uhr zeigt die Zeit mit einer Sonnenuhr an",
+            "ca": "Aquest rellotge mostra l'hora amb un rellotge de sol"
           }
         },
         {
@@ -102,7 +114,8 @@
           "then": {
             "en": "This clock displays the time in a non-standard way, e.g using binary, water or something else",
             "nl": "Deze klok toont de tijd op een niet-standaard manier, bijvoorbeeld met binaire cijfers, water of iets anders",
-            "de": "Diese Uhr zeigt die Zeit auf eine nicht standardisierte Weise an, z. B. mit Binärzeichen, Wasser oder etwas anderem"
+            "de": "Diese Uhr zeigt die Zeit auf eine nicht standardisierte Weise an, z. B. mit Binärzeichen, Wasser oder etwas anderem",
+            "ca": "Aquest rellotge mostra l'hora d'una manera no estàndard, p.e. utilitzant binari, aigua o quelcom més"
           }
         }
       ]
@@ -112,7 +125,8 @@
       "question": {
         "en": "How visible is this clock?",
         "nl": "Hoe zichtbaar is deze klok?",
-        "de": "Wie sichtbar ist diese Uhr?"
+        "de": "Wie sichtbar ist diese Uhr?",
+        "ca": "Com de visible és aquest rellotge?"
       },
       "mappings": [
         {
@@ -120,7 +134,8 @@
           "then": {
             "en": "This clock is visible from about 5 meters away (small wall-mounted clock)",
             "nl": "Deze klok is zichtbaar vanaf ongeveer 5 meter afstand (kleine klok aan een muur)",
-            "de": "Diese Uhr ist aus etwa 5 Metern Entfernung sichtbar (kleine Wanduhr)"
+            "de": "Diese Uhr ist aus etwa 5 Metern Entfernung sichtbar (kleine Wanduhr)",
+            "ca": "Aquest rellotge és visible al voltant de 5 metres de distància (un petit rellotge muntat a la paret)"
           }
         },
         {
@@ -128,7 +143,8 @@
           "then": {
             "en": "This clock is visible from about 20 meters away (medium size billboard clock)",
             "nl": "Deze klok is zichtbaar vanaf ongeveer 20 meter afstand (klok op gemiddeld reclamebord)",
-            "de": "Diese Uhr ist aus etwa 20 Metern Entfernung sichtbar (mittelgroße Plakatuhr)"
+            "de": "Diese Uhr ist aus etwa 20 Metern Entfernung sichtbar (mittelgroße Plakatuhr)",
+            "ca": "Aquest rellotge és visible al voltant dels 20 metres de distància (rellotge de tamany mig a una tanca publicitària)"
           }
         },
         {
@@ -136,7 +152,8 @@
           "then": {
             "en": "This clock is visible from more than 20 meters away (church clock)",
             "nl": "Deze klok is zichtbaar vanaf meer dan 20 meter afstand (kerkklok)",
-            "de": "Diese Uhr ist aus mehr als 20 Metern Entfernung sichtbar (Kirchenuhr)"
+            "de": "Diese Uhr ist aus mehr als 20 Metern Entfernung sichtbar (Kirchenuhr)",
+            "ca": "Aquest rellotge és visible des de més de 20 metres de distància (rellotge d'una església)"
           }
         }
       ]
@@ -146,7 +163,8 @@
       "question": {
         "en": "Does this clock also display the date?",
         "nl": "Toont deze klok ook de datum?",
-        "de": "Zeigt diese Uhr auch das Datum an?"
+        "de": "Zeigt diese Uhr auch das Datum an?",
+        "ca": "Aquest rellotge també mostra la data?"
       },
       "mappings": [
         {
@@ -154,7 +172,8 @@
           "then": {
             "en": "This clock also displays the date",
             "nl": "Deze klok toont ook de datum",
-            "de": "Diese Uhr zeigt auch das Datum an"
+            "de": "Diese Uhr zeigt auch das Datum an",
+            "ca": "Aquest rellotge també mostra la data"
           }
         },
         {
@@ -162,7 +181,8 @@
           "then": {
             "en": "This clock does not display the date",
             "nl": "Deze klok toont de datum niet",
-            "de": "Diese Uhr zeigt kein Datum an"
+            "de": "Diese Uhr zeigt kein Datum an",
+            "ca": "Aquest rellotge no mostra la data"
           }
         },
         {
@@ -170,7 +190,8 @@
           "then": {
             "en": "This clock does probably not display the date",
             "nl": "Deze klok toont de datum waarschijnlijk niet",
-            "de": "Diese Uhr zeigt wahrscheinlich nicht das Datum an"
+            "de": "Diese Uhr zeigt wahrscheinlich nicht das Datum an",
+            "ca": "Aquest rellotge probablement no mostra la data"
           },
           "hideInAnswer": true
         }
@@ -181,7 +202,8 @@
       "question": {
         "en": "Does this clock also display the temperature?",
         "nl": "Toont deze klok ook de temperatuur?",
-        "de": "Zeigt diese Uhr auch die Temperatur an?"
+        "de": "Zeigt diese Uhr auch die Temperatur an?",
+        "ca": "Aquest rellotge també mostra la temperatura?"
       },
       "mappings": [
         {
@@ -189,7 +211,8 @@
           "then": {
             "en": "This clock also displays the temperature",
             "nl": "Deze klok toont ook de temperatuur",
-            "de": "Diese Uhr zeigt auch die Temperatur an"
+            "de": "Diese Uhr zeigt auch die Temperatur an",
+            "ca": "Aquest rellotge també mostra la temperatura"
           }
         },
         {
@@ -197,7 +220,8 @@
           "then": {
             "en": "This clock does not display the temperature",
             "nl": "Deze klok toont de temperatuur niet",
-            "de": "Diese Uhr zeigt nicht die Temperatur an"
+            "de": "Diese Uhr zeigt nicht die Temperatur an",
+            "ca": "Aquest rellotge no mostra la temperatura"
           }
         },
         {
@@ -205,7 +229,8 @@
           "then": {
             "en": "This clock does probably not display the temperature",
             "nl": "Deze klok toont de temperatuur waarschijnlijk niet",
-            "de": "Diese Uhr zeigt wahrscheinlich nicht die Temperatur an"
+            "de": "Diese Uhr zeigt wahrscheinlich nicht die Temperatur an",
+            "ca": "Aquest rellotge probablement no mostra la temperatura"
           },
           "hideInAnswer": true
         }
@@ -216,7 +241,8 @@
       "question": {
         "en": "Does this clock also display the air pressure?",
         "nl": "Toont deze klok ook de luchtdruk?",
-        "de": "Zeigt diese Uhr auch den Luftdruck an?"
+        "de": "Zeigt diese Uhr auch den Luftdruck an?",
+        "ca": "Aquest rellotge també mostra la pressió de l'aire?"
       },
       "mappings": [
         {
@@ -224,7 +250,8 @@
           "then": {
             "en": "This clock also displays the air pressure",
             "nl": "Deze klok toont ook de luchtdruk",
-            "de": "Diese Uhr zeigt auch den Luftdruck an"
+            "de": "Diese Uhr zeigt auch den Luftdruck an",
+            "ca": "Aquest rellotge també mostra la pressió de l'aire"
           }
         },
         {
@@ -232,7 +259,8 @@
           "then": {
             "en": "This clock does not display the air pressure",
             "nl": "Deze klok toont de luchtdruk niet",
-            "de": "Diese Uhr zeigt den Luftdruck nicht an"
+            "de": "Diese Uhr zeigt den Luftdruck nicht an",
+            "ca": "Aquest rellotge no mostra la pressió de l'aire"
           }
         },
         {
@@ -240,7 +268,8 @@
           "then": {
             "en": "This clock does probably not display the air pressure",
             "nl": "Deze klok toont de luchtdruk waarschijnlijk niet",
-            "de": "Diese Uhr zeigt wahrscheinlich nicht den Luftdruck an"
+            "de": "Diese Uhr zeigt wahrscheinlich nicht den Luftdruck an",
+            "ca": "Aquest rellotge probablement no mostra la pressió de l'aire"
           },
           "hideInAnswer": true
         }
@@ -251,7 +280,8 @@
       "question": {
         "en": "Does this clock also display the humidity?",
         "nl": "Toont deze klok ook de luchtvochtigheid?",
-        "de": "Zeigt diese Uhr auch die Luftfeuchtigkeit an?"
+        "de": "Zeigt diese Uhr auch die Luftfeuchtigkeit an?",
+        "ca": "Aquest rellotge també mostra la humitat?"
       },
       "mappings": [
         {
@@ -259,7 +289,8 @@
           "then": {
             "en": "This clock also displays the humidity",
             "nl": "Deze klok toont ook de luchtvochtigheid",
-            "de": "Diese Uhr zeigt auch die Luftfeuchtigkeit an"
+            "de": "Diese Uhr zeigt auch die Luftfeuchtigkeit an",
+            "ca": "Aquest rellotge també mostra la humitat"
           }
         },
         {
@@ -267,7 +298,8 @@
           "then": {
             "en": "This clock does not display the humidity",
             "nl": "Deze klok toont de luchtvochtigheid niet",
-            "de": "Diese Uhr zeigt nicht die Luftfeuchtigkeit an"
+            "de": "Diese Uhr zeigt nicht die Luftfeuchtigkeit an",
+            "ca": "Aquest rellotge no mostra la humitat"
           }
         },
         {
@@ -275,7 +307,8 @@
           "then": {
             "en": "This clock does probably not display the humidity",
             "nl": "Deze klok toont de luchtvochtigheid waarschijnlijk niet",
-            "de": "Diese Uhr zeigt wahrscheinlich nicht die Luftfeuchtigkeit an"
+            "de": "Diese Uhr zeigt wahrscheinlich nicht die Luftfeuchtigkeit an",
+            "ca": "Aquest rellotge probablement no mostra la humitat"
           },
           "hideInAnswer": true
         }
@@ -286,7 +319,8 @@
       "question": {
         "en": "How many faces does this clock have?",
         "nl": "Hoeveel klokken heeft deze klok?",
-        "de": "Wie viele Zifferblätter hat diese Uhr?"
+        "de": "Wie viele Zifferblätter hat diese Uhr?",
+        "ca": "Quantes cares té aquest rellotge?"
       },
       "freeform": {
         "key": "faces",
@@ -295,13 +329,15 @@
         "placeholder": {
           "en": "Number of faces",
           "nl": "Aantal klokken",
-          "de": "Anzahl der Zifferblätter"
+          "de": "Anzahl der Zifferblätter",
+          "ca": "Nombre de cares"
         }
       },
       "render": {
         "en": "This clock has {faces} faces",
         "nl": "Deze klok heeft {faces} klokken",
-        "de": "Diese Uhr hat {faces} Zifferblätter"
+        "de": "Diese Uhr hat {faces} Zifferblätter",
+        "ca": "Aquest rellotge té {faces} cares"
       },
       "mappings": [
         {
@@ -309,7 +345,8 @@
           "then": {
             "en": "This clock has one face",
             "nl": "Deze klok heeft één klok",
-            "de": "Diese Uhr hat ein Zifferblatt"
+            "de": "Diese Uhr hat ein Zifferblatt",
+            "ca": "Aquest rellotge té una cara"
           }
         },
         {
@@ -317,7 +354,8 @@
           "then": {
             "en": "This clock has two faces",
             "nl": "Deze klok heeft twee klokken",
-            "de": "Diese Uhr hat zwei Zifferblätter"
+            "de": "Diese Uhr hat zwei Zifferblätter",
+            "ca": "Aquest rellotge té dues cares"
           }
         },
         {
@@ -325,7 +363,8 @@
           "then": {
             "en": "This clock has four faces",
             "nl": "Deze klok heeft vier klokken",
-            "de": "Diese Uhr hat vier Zifferblätter"
+            "de": "Diese Uhr hat vier Zifferblätter",
+            "ca": "Aquest rellotge té quatre cares"
           }
         }
       ]
@@ -339,12 +378,14 @@
       "title": {
         "en": "a clock",
         "nl": "een klok",
-        "de": "eine Uhr"
+        "de": "eine Uhr",
+        "ca": "un rellotge"
       },
       "description": {
         "en": "A publicly visible clock",
         "nl": "Een publiekelijk zichtbare klok",
-        "de": "Eine öffentlich sichtbare Uhr"
+        "de": "Eine öffentlich sichtbare Uhr",
+        "ca": "Un rellotge visible públicament"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -361,12 +402,14 @@
       "title": {
         "en": "a wall-mounted clock",
         "nl": "een klok aan een muur",
-        "de": "eine an der Wand montierte Uhr"
+        "de": "eine an der Wand montierte Uhr",
+        "ca": "un rellotge muntat en un paret"
       },
       "description": {
         "en": "A publicly visible clock mounted on a wall",
         "nl": "Een publiekelijk zichtbare klok aan een muur",
-        "de": "Eine öffentlich sichtbare Uhr an einer Wand"
+        "de": "Eine öffentlich sichtbare Uhr an einer Wand",
+        "ca": "Un rellotge visible públicament muntat en una paret"
       },
       "preciseInput": {
         "preferredBackground": [

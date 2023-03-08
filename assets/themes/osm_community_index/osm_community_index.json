@@ -5,7 +5,8 @@
     "de": "OSM-Community-Index",
     "nl": "OSM Community Overzicht",
     "fr": "Index communautaire OSM",
-    "es": "Índice de la comunidad OSM"
+    "es": "Índice de comunidades de OSM",
+    "ca": "Índex de comunitats d'OSM"
   },
   "description": {
     "en": "A list of resources for users of OpenStreetMap. 'Resources' can be links to forums, meetups, Slack groups, IRC channels, mailing lists, and so on. Anything that mappers, especially beginners, might find interesting or helpful.",
@@ -13,14 +14,16 @@
     "nl": "Een lijst van hulpmiddelen van gebruikers van OpenStreetMap. 'Hulpmiddelen' kunnen fora, meetups, Slack groepen, IRC kanalen, mailinglijsten, en meer zijn. Alles dat mappers, vooral beginners, nuttig of behulpzaam kunnen vinden.",
     "fr": "Une liste de ressources pour les utilisateurs d'OpenStreetMap. Les \"ressources\" peuvent être des liens vers des forums, des rencontres, des groupes Slack, des canaux IRC, des listes de diffusion, etc. Tout ce que les cartographes, en particulier les débutants, peuvent trouver intéressant ou utile.",
     "cs": "Seznam zdrojů pro uživatele OpenStreetMap. \"Zdroje\" mohou být odkazy na fóra, setkání, Slack skupiny, kanály IRC, poštovní konference atd. Cokoli, co by mohlo být pro mappery, zejména začátečníky, zajímavé nebo užitečné.",
-    "es": "Una lista de recursos para los usuarios de OpenStreetMap. Los \"recursos\" pueden ser enlaces a foros, reuniones, grupos de trabajo, canales IRC, listas de correo, etcétera. Cualquier cosa que los cartógrafos, especialmente los principiantes, puedan encontrar interesante o útil."
+    "es": "Una lista de recursos para los usuarios de OpenStreetMap. Los \"recursos\" pueden ser enlaces a foros, reuniones, grupos de trabajo, canales IRC, listas de correo, etcétera. Cualquier cosa que los cartógrafos, especialmente los principiantes, puedan encontrar interesante o útil.",
+    "ca": "Una llista de recursos per als usuaris d'OSM. Els recursos poden ser enllaços a fòrums, reunions, grups de treball, canals IRC, llistes de correus, etcètera. Quelcom que els mapejadors, especialment els principiants poden trobar interessant o útil."
   },
   "shortDescription": {
     "en": "An index of community resources for OpenStreetMap.",
     "de": "Ein Index von Community-Ressourcen für OpenStreetMap.",
     "nl": "Een overzicht van hulpbronnen voor OpenStreetMap van de community.",
     "fr": "Index des ressources communautaires pour OpenStreetMap.",
-    "es": "Un índice de recursos comunitarios para OpenStreetMap."
+    "es": "Un índice de recursos comunitarios para OpenStreetMap.",
+    "ca": "Un índex de recursos comunitaris per a OpenStreetMap."
   },
   "icon": "./assets/themes/osm_community_index/osm.svg",
   "startLat": 50.8465573,

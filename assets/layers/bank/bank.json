@@ -3,7 +3,8 @@
   "description": {
     "en": "A financial institution to deposit money",
     "de": "Ein Finanzinstitut, um Geld einzuzahlen",
-    "nl": "Een financiële instelling waar je geld kunt"
+    "nl": "Een financiële instelling waar je geld kunt",
+    "ca": "Una institució financera per a dipositar diners"
   },
   "name": {
     "en": "Banks",
@@ -40,7 +41,8 @@
         "en": "Does this bank have an ATM?",
         "de": "Hat diese Bank einen Geldautomaten?",
         "nb_NO": "Har denne banken en minibank?",
-        "nl": "Heeft deze bank een bankautomaat?"
+        "nl": "Heeft deze bank een bankautomaat?",
+        "ca": "Aquest banc té un caixer automàtic?"
       },
       "mappings": [
         {
@@ -49,7 +51,8 @@
             "en": "This bank has an ATM",
             "de": "Diese Bank hat einen Geldautomaten",
             "nb_NO": "Denne banken har en minibank",
-            "nl": "Deze bank heeft een bankautomaat"
+            "nl": "Deze bank heeft een bankautomaat",
+            "ca": "Aquest banc té un caixer automàtic"
           }
         },
         {
@@ -58,7 +61,8 @@
             "en": "This bank does <b>not</b> have an ATM",
             "de": "Diese Bank hat <b>keinen</b> Geldautomaten",
             "nb_NO": "Denne banken har <b>ikke</b> en minibank",
-            "nl": "Deze bank heeft <b>geen</b> bankautomaaat"
+            "nl": "Deze bank heeft <b>geen</b> bankautomaaat",
+            "ca": "Aquest banc <b>no</b> té un caixer automàtic"
           }
         },
         {
@@ -83,7 +87,8 @@
             "en": "With an ATM",
             "de": "Mit Geldautomat",
             "nb_NO": "Med en minibank",
-            "nl": "Met een bankautomaat"
+            "nl": "Met een bankautomaat",
+            "ca": "Amb un caixer automàtic"
           },
           "osmTags": "atm=yes"
         }

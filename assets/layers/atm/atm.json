@@ -33,7 +33,8 @@
           "de": "{brand}-Geldautomat",
           "fr": "DAB {brand}",
           "nl": "{brand} Geldautomaat",
-          "nb_NO": "{brand}-minibank"
+          "nb_NO": "{brand}-minibank",
+          "ca": "Caixer automàtic {brand}"
         }
       }
     ]

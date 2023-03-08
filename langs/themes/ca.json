@@ -739,6 +739,19 @@
     },
     "onwheels": {
         "layers": {
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "1": {
+                                    "question": "Sense informació de l'amplada"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "19": {
                 "override": {
                     "=title": {
@@ -753,19 +766,6 @@
                             "render": {
                                 "special": {
                                     "text": "Importar"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "4": {
-                "override": {
-                    "filter": {
-                        "0": {
-                            "options": {
-                                "1": {
-                                    "question": "Sense informació de l'amplada"
                                 }
                             }
                         }
@@ -931,6 +931,10 @@
     "stations": {
         "description": "Veure, editar i afegir detalls a una estació de tren",
         "layers": {
+            "3": {
+                "description": "Capa que mostra les estacions de tren",
+                "name": "Estació de tren"
+            },
             "15": {
                 "description": "Pantalles que mostren els trens que sortiran de l'estació",
                 "name": "Taulers de sortides",
@@ -962,10 +966,6 @@
                 "title": {
                     "render": "Tauler de sortides"
                 }
-            },
-            "3": {
-                "description": "Capa que mostra les estacions de tren",
-                "name": "Estació de tren"
             }
         },
         "title": "Estacions de tren"
