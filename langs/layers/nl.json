@@ -7039,6 +7039,34 @@
     },
     "sport_pitch": {
         "description": "Een sportterrein",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Publiek toegankelijk"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Alle sporten"
+                    },
+                    "1": {
+                        "question": "Basketbalvelden"
+                    },
+                    "2": {
+                        "question": "Voetbalvelden"
+                    },
+                    "3": {
+                        "question": "Pingpong-tafel"
+                    },
+                    "4": {
+                        "question": "Tennisveld"
+                    }
+                }
+            }
+        },
         "name": "Sportterrein",
         "presets": {
             "0": {

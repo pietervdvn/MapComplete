@@ -309,7 +309,7 @@
           "if": "rental=bike_helmet",
           "then": {
             "en": "Bike helmets can be rented here",
-            "nl": "Fietshelmpen kunnen hier gehuurd worden",
+            "nl": "Fietshelmen kunnen hier gehuurd worden",
             "es": "Aquí se pueden alquilar cascos",
             "de": "Fahrradhelme können geliehen werden",
             "fr": "Des casques de vélos peuvent être loués ici",

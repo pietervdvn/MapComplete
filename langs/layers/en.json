@@ -7226,6 +7226,34 @@
     },
     "sport_pitch": {
         "description": "A sport pitch",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Publicly accessible"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "All sports"
+                    },
+                    "1": {
+                        "question": "Basketball fields"
+                    },
+                    "2": {
+                        "question": "Soccer fields"
+                    },
+                    "3": {
+                        "question": "Ping-pong table"
+                    },
+                    "4": {
+                        "question": "Tennis field"
+                    }
+                }
+            }
+        },
         "name": "Sport pitches",
         "presets": {
             "0": {
@@ -8452,6 +8480,17 @@
     "usersettings": {
         "description": "A special layer which is not meant to be shown on a map, but which is used to set user settings",
         "tagRenderings": {
+            "all-questions-at-once": {
+                "mappings": {
+                    "0": {
+                        "then": "Show all questions in the infobox together"
+                    },
+                    "1": {
+                        "then": "Show questions one-by-one"
+                    }
+                },
+                "question": "Should questions for unknown data fields appear one-by-one or together?"
+            },
             "contributor-thanks": {
                 "mappings": {
                     "0": {
