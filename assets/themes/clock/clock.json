@@ -4,7 +4,8 @@
     "en": "Clocks",
     "nl": "Klokken",
     "de": "Uhren",
-    "es": "Relojes"
+    "es": "Relojes",
+    "ca": "Rellotges"
   },
   "description": {
     "en": "Map showing all public clocks",

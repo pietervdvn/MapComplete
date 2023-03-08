@@ -5,7 +5,7 @@
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 247,
+      "commits": 248,
       "contributor": "kjon"
     },
     {
@@ -13,7 +13,7 @@
       "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 78,
+      "commits": 88,
       "contributor": "paunofu"
     },
     {
@@ -122,11 +122,11 @@
     },
     {
       "commits": 8,
-      "contributor": "Vinicius"
+      "contributor": "Lucas"
     },
     {
-      "commits": 7,
-      "contributor": "Lucas"
+      "commits": 8,
+      "contributor": "Vinicius"
     },
     {
       "commits": 7,
@@ -214,6 +214,18 @@
     },
     {
       "commits": 4,
+      "contributor": "Ettore Atalan"
+    },
+    {
+      "commits": 4,
+      "contributor": "gallegonovato"
+    },
+    {
+      "commits": 4,
+      "contributor": "Fjuro"
+    },
+    {
+      "commits": 4,
       "contributor": "André Marcelo Alvarenga"
     },
     {
@@ -242,23 +254,11 @@
     },
     {
       "commits": 3,
-      "contributor": "Fjuro"
-    },
-    {
-      "commits": 3,
       "contributor": "Piotr Strebski"
     },
     {
       "commits": 3,
       "contributor": "Alexey Lutskyi"
-    },
-    {
-      "commits": 3,
-      "contributor": "gallegonovato"
-    },
-    {
-      "commits": 3,
-      "contributor": "Ettore Atalan"
     },
     {
       "commits": 3,
@@ -311,6 +311,10 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
+    },
+    {
+      "commits": 2,
+      "contributor": "Felipe Nogueira"
     },
     {
       "commits": 2,

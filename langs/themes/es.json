@@ -8,7 +8,7 @@
         "title": "Mapa Abierto de Obras de Arte"
     },
     "atm": {
-        "description": "Este mapa muestra los cajeros automáticos para retirar o depositar dinero",
+        "description": "Este mapa muestra los cajeros automáticos para retirar o ingresar dinero",
         "title": "Cajeros automáticos"
     },
     "bag": {
@@ -67,7 +67,7 @@
         "title": "Bancos"
     },
     "bicycle_rental": {
-        "description": "En este mapa, encontrarás numerosas estaciones de alquiler de bicicletas que están registradas en OpenStreetMap",
+        "description": "En este mapa, encontrará las numerosas estaciones de alquiler de bicicletas tal y como las conoce OpenStreetMap",
         "shortDescription": "Un mapa con estaciones de alquiler de bicicletas y tiendas de alquiler de bicicletas",
         "title": "Alquiler de bicicletas"
     },
@@ -325,7 +325,7 @@
         "title": "Estaciones de carga"
     },
     "climbing": {
-        "description": "En este mapa encontrará varias posibilidades de escalada, como rocódromos, salas de búlder y rocas en la naturaleza.",
+        "description": "En este mapa encontrará diversas posibilidades de escalada, como rocódromos, salas de búlder y rocas en la naturaleza.",
         "descriptionTail": "El mapa de escalada fue realizado originalmente por <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Por favor, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>ponte en contacto</a> si tienes comentarios o preguntas.</p><p>El proyecto utiliza datos del proyecto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
         "layers": {
             "0": {
@@ -979,7 +979,7 @@
     "osm_community_index": {
         "description": "Una lista de recursos para los usuarios de OpenStreetMap. Los \"recursos\" pueden ser enlaces a foros, reuniones, grupos de trabajo, canales IRC, listas de correo, etcétera. Cualquier cosa que los cartógrafos, especialmente los principiantes, puedan encontrar interesante o útil.",
         "shortDescription": "Un índice de recursos comunitarios para OpenStreetMap.",
-        "title": "Índice de la comunidad OSM"
+        "title": "Índice de comunidades de OSM"
     },
     "parkings": {
         "description": "Este mapa muestra diferentes puntos de aparcamiento",

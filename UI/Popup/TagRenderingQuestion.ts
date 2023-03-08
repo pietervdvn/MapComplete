@@ -87,7 +87,11 @@ export default class TagRenderingQuestion extends Combine {
         )
         let questionHint = undefined
         if (configuration.questionhint !== undefined) {
-            questionHint = new SubstitutedTranslation(configuration.questionhint, tags, state)
+            questionHint = new SubstitutedTranslation(
+                configuration.questionhint,
+                tags,
+                state
+            ).SetClass("font-bold subtle")
         }
 
         const feedback = new UIEventSource<Translation>(undefined)

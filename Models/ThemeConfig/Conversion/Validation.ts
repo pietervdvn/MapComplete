@@ -622,7 +622,8 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                 warnings.push(
                     "At " +
                         context +
-                        ": the question contains a div, a span, a br or an element with class 'subtle'. Please, use a `questionHint` instead"
+                        ": the question contains a div, a span, a br or an element with class 'subtle'. Please, use a `questionHint` instead.\n    The question is: " +
+                        question.textFor("en")
                 )
             }
         }

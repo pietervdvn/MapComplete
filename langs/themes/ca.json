@@ -329,6 +329,16 @@
             "0": {
                 "override": {
                     "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>l'element que el conté</a>indica que és d'</span>accés públic<br/>{_embedding_feature:access:description}"
+                                },
+                                "1": {
+                                    "then": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>l'element que el conté</a> indica que es necessita </span> un permís per a accedir-hi<br/>{_embedding_feature:access:description}"
+                                }
+                            }
+                        },
                         "1": {
                             "mappings": {
                                 "0": {
@@ -365,7 +375,8 @@
         "title": "Mapa obert d'escalada"
     },
     "clock": {
-        "description": "Mapa amb tots els rellotges públics"
+        "description": "Mapa amb tots els rellotges públics",
+        "title": "Rellotges"
     },
     "cycle_highways": {
         "description": "Aquest mapa mostra carrils bici",
@@ -767,6 +778,11 @@
     "openwindpowermap": {
         "description": "Un mapa per a mostrar i editar turbines eòliques.",
         "title": "Mapa obert d'energia eòlica"
+    },
+    "osm_community_index": {
+        "description": "Una llista de recursos per als usuaris d'OSM. Els recursos poden ser enllaços a fòrums, reunions, grups de treball, canals IRC, llistes de correus, etcètera. Quelcom que els mapejadors, especialment els principiants poden trobar interessant o útil.",
+        "shortDescription": "Un índex de recursos comunitaris per a OpenStreetMap.",
+        "title": "Índex de comunitats d'OSM"
     },
     "parkings": {
         "description": "Aquest mapa mostra diferents punts d'aparcament",

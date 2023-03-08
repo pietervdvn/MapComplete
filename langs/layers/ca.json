@@ -252,26 +252,54 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Caixer automàtic {brand}"
+                }
+            },
             "render": "Caixer Automàtic"
         }
     },
     "bank": {
+        "description": "Una institució financera per a dipositar diners",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Amb un caixer automàtic"
+                    }
+                }
+            }
+        },
         "name": "Bancs",
         "tagRenderings": {
             "has_atm": {
                 "mappings": {
+                    "0": {
+                        "then": "Aquest banc té un caixer automàtic"
+                    },
+                    "1": {
+                        "then": "Aquest banc <b>no</b> té un caixer automàtic"
+                    },
                     "2": {
                         "then": "Aquest banc té un caixer, però està mapejat com a un element diferent"
                     }
-                }
+                },
+                "question": "Aquest banc té un caixer automàtic?"
             }
         }
     },
     "barrier": {
+        "description": "Obstacles a l'hora d'utilitzar la bicicleta com bol·lards i barreres per a bicicletes",
         "name": "Barreres",
         "presets": {
             "0": {
+                "description": "Un bol·lard a la carretera",
                 "title": "una pilona"
+            },
+            "1": {
+                "description": "Una barrera ciclista que relanteix als ciclistes",
+                "title": "una barrera ciclista"
             }
         },
         "tagRenderings": {
@@ -292,22 +320,49 @@
                     "4": {
                         "then": "Pilona retràctil"
                     }
-                }
+                },
+                "question": "Quin tipus de bol·lard és aquest?"
             },
             "Cycle barrier type": {
                 "mappings": {
                     "0": {
                         "then": "Simple, simplement dos barreres amb un espai al mig"
+                    },
+                    "1": {
+                        "then": "Doble, dues barreres una darrere l'altra"
+                    },
+                    "2": {
+                        "then": "Triple, tres barreres una darrere l'altra"
+                    },
+                    "3": {
+                        "then": "Barrera de seguretat, l'espai és menor a la part superior que a l'inferior"
                     }
-                }
+                },
+                "question": "Quin tipus de barrera ciclista és aquesta?"
             },
             "MaxWidth": {
-                "question": "Com d'ample és el buit que queda als costats de la barrera?"
+                "question": "Com d'ample és el buit que queda als costats de la barrera?",
+                "render": "Amplada màxima: {maxwidth:physical} m"
+            },
+            "Overlap (cyclebarrier)": {
+                "question": "Quant es solapen les barreres?",
+                "render": "Solapat: {overlap} m"
+            },
+            "Space between barrier (cyclebarrier)": {
+                "question": "Quant espai hi ha entre les barreres (al llarg de la longitud de la carretera)?",
+                "render": "Espai entre barreres (al llarg de la longitud de la carretera): {width:separation} m"
+            },
+            "Width of opening (cyclebarrier)": {
+                "question": "Quina amplitud té l'obertura més petita al costat de les barreres?",
+                "render": "Amplada de l'apertura: {width:opening} m"
             },
             "barrier_type": {
                 "mappings": {
                     "0": {
                         "then": "Aquest és un únic piló a la carretera"
+                    },
+                    "1": {
+                        "then": "Açò és una barrera ciclista que relantitza als ciclistes"
                     }
                 }
             },
@@ -319,7 +374,8 @@
                     "1": {
                         "then": "Un ciclista pot passar-hi."
                     }
-                }
+                },
+                "question": "Una bicicleta pot passar aquesta barrera?"
             }
         },
         "title": {
@@ -336,6 +392,28 @@
     },
     "bench": {
         "description": "Un banc és una superfície de madera, metall, pedra, … on un humà s’hi pot sentar. Aquesta capa els mostra i fa algunes preguntes sobre ells.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "és un memorial"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Amb i sense respatller"
+                    },
+                    "1": {
+                        "question": "Té un respatller"
+                    },
+                    "2": {
+                        "question": "No té respatller"
+                    }
+                }
+            }
+        },
         "name": "Bancs",
         "presets": {
             "0": {
@@ -343,6 +421,17 @@
             }
         },
         "tagRenderings": {
+            "bench-artwork": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest banc té integrada una obra d'art"
+                    },
+                    "1": {
+                        "then": "Aquest banc no té una obra d'art integrada"
+                    }
+                },
+                "question": "Aquest banc té algun element artístic?<div class='subtle text-lg'>P.e. té una pintura integrada, estatua o altres treballs no trivials i creatius</div>"
+            },
             "bench-backrest": {
                 "mappings": {
                     "0": {
@@ -351,7 +440,8 @@
                     "1": {
                         "then": "<b>No</b> té espatller"
                     }
-                }
+                },
+                "question": "Aquest banc té respatller?"
             },
             "bench-colour": {
                 "mappings": {
@@ -380,7 +470,22 @@
                         "then": "Color: groc"
                     }
                 },
+                "question": "De quin color és aquest banc?",
                 "render": "Color: {colour}"
+            },
+            "bench-direction": {
+                "question": "En quina direcció mires asseguts al banc?",
+                "render": "Quan s'està assegut al banc, es mira cap a {direction}º."
+            },
+            "bench-inscription": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest banc no té cap inscripció"
+                    },
+                    "1": {
+                        "then": "Aquest banc <span class='subtle'>(probablement)</span> no té cap inscripció"
+                    }
+                }
             },
             "bench-material": {
                 "mappings": {
@@ -405,8 +510,24 @@
                 },
                 "render": "Material: {material}"
             },
+            "bench-memorial": {
+                "question": "Aquest banc actua com a memorial per a algú o algo?"
+            },
             "bench-seats": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest banc no té els seients separats"
+                    }
+                },
+                "question": "Quants seients té aquest banc?",
                 "render": "{seats} seients"
+            },
+            "bench-survey:date": {
+                "mappings": {
+                    "0": {
+                        "then": "Inspeccionat avui!"
+                    }
+                }
             }
         },
         "title": {
@@ -1100,6 +1221,147 @@
             }
         }
     },
+    "clock": {
+        "description": "Capa amb rellotges públics",
+        "name": "Rellotges",
+        "presets": {
+            "0": {
+                "description": "Un rellotge visible públicament",
+                "title": "un rellotge"
+            },
+            "1": {
+                "description": "Un rellotge visible públicament muntat en una paret",
+                "title": "un rellotge muntat en un paret"
+            }
+        },
+        "tagRenderings": {
+            "barometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge també mostra la pressió de l'aire"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge no mostra la pressió de l'aire"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge probablement no mostra la pressió de l'aire"
+                    }
+                },
+                "question": "Aquest rellotge també mostra la pressió de l'aire?"
+            },
+            "date": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge també mostra la data"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge no mostra la data"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge probablement no mostra la data"
+                    }
+                },
+                "question": "Aquest rellotge també mostra la data?"
+            },
+            "display": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge mostra l'hora amb mans"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge mostra l'hora amb dígits"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge mostra l'hora amb un rellotge de sol"
+                    },
+                    "3": {
+                        "then": "Aquest rellotge mostra l'hora d'una manera no estàndard, p.e. utilitzant binari, aigua o quelcom més"
+                    }
+                },
+                "question": "Com mostra aquest rellotge l'hora?"
+            },
+            "faces": {
+                "freeform": {
+                    "placeholder": "Nombre de cares"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge té una cara"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge té dues cares"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge té quatre cares"
+                    }
+                },
+                "question": "Quantes cares té aquest rellotge?",
+                "render": "Aquest rellotge té {faces} cares"
+            },
+            "hygrometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge també mostra la humitat"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge no mostra la humitat"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge probablement no mostra la humitat"
+                    }
+                },
+                "question": "Aquest rellotge també mostra la humitat?"
+            },
+            "support": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge està muntat en un pal"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge està muntat en una paret"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge està muntat en una tanca publicitària"
+                    },
+                    "3": {
+                        "then": "Aquest rellotge està al sòl"
+                    }
+                },
+                "question": "De quina forma està muntat aquest rellotge?"
+            },
+            "thermometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge també mostra la temperatura"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge no mostra la temperatura"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge probablement no mostra la temperatura"
+                    }
+                },
+                "question": "Aquest rellotge també mostra la temperatura?"
+            },
+            "visibility": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest rellotge és visible al voltant de 5 metres de distància (un petit rellotge muntat a la paret)"
+                    },
+                    "1": {
+                        "then": "Aquest rellotge és visible al voltant dels 20 metres de distància (rellotge de tamany mig a una tanca publicitària)"
+                    },
+                    "2": {
+                        "then": "Aquest rellotge és visible des de més de 20 metres de distància (rellotge d'una església)"
+                    }
+                },
+                "question": "Com de visible és aquest rellotge?"
+            }
+        },
+        "title": {
+            "render": "Rellotge"
+        }
+    },
     "crossings": {
         "name": "Encreuaments",
         "presets": {
@@ -1544,7 +1806,7 @@
         }
     },
     "gps_track": {
-        "name": "La teva pista recorreguda"
+        "name": "La teva traça recorreguda"
     },
     "grass_in_parks": {
         "description": "Cerques per a tots els camins d'herba accessibles dins dels parcs públics - aquests són «groenzones»"
@@ -1745,6 +2007,17 @@
             "render": "Mapa"
         }
     },
+    "maproulette": {
+        "tagRenderings": {
+            "status": {
+                "mappings": {
+                    "0": {
+                        "then": "Es crea la tasca"
+                    }
+                }
+            }
+        }
+    },
     "maxspeed": {
         "name": "Velocitat",
         "tagRenderings": {
@@ -1854,7 +2127,8 @@
         },
         "tagRenderings": {
             "capacity": {
-                "question": "Quantes places d'aparcament hi han a aquest aparcament?"
+                "question": "Quantes places d'aparcament hi han a aquest aparcament?",
+                "render": "Hi han {capacity} places d'aparcament"
             },
             "capacity-disabled": {
                 "mappings": {

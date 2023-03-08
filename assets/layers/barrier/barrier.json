@@ -23,7 +23,8 @@
     "es": "Obstáculos durante el uso de la bicicleta, como bolardos y barreras para bicicletas",
     "da": "Forhindringer under cykling, f.eks. pæle og cykelbarrierer",
     "cs": "Překážky při jízdě na kole, jako jsou patníky a zábrany pro cyklisty",
-    "nb_NO": "Hindringer for sykling, som f.eks. pullerter og sykkelbarrièrer"
+    "nb_NO": "Hindringer for sykling, som f.eks. pullerter og sykkelbarrièrer",
+    "ca": "Obstacles a l'hora d'utilitzar la bicicleta com bol·lards i barreres per a bicicletes"
   },
   "source": {
     "osmTags": {
@@ -104,7 +105,8 @@
         "es": "Un bolardo en la carretera",
         "da": "En pullert på vejen",
         "cs": "Sloupek na silnici",
-        "nb_NO": "En pullert i veien"
+        "nb_NO": "En pullert i veien",
+        "ca": "Un bol·lard a la carretera"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -124,7 +126,8 @@
         "da": "en stibom",
         "es": "una barrera ciclista",
         "cs": "cyklistická bariéra",
-        "nb_NO": "en sykkelbarrière"
+        "nb_NO": "en sykkelbarrière",
+        "ca": "una barrera ciclista"
       },
       "tags": [
         "barrier=cycle_barrier"
@@ -138,7 +141,8 @@
         "da": "Stibomme, der fartdæmper cyklister",
         "es": "Una barrera ciclista, que ralentiza a los ciclistas",
         "cs": "Bariéra pro cyklisty, která zpomaluje cyklisty",
-        "nb_NO": "Sykkelbarrièrer, for å dempe farten"
+        "nb_NO": "Sykkelbarrièrer, for å dempe farten",
+        "ca": "Una barrera ciclista que relanteix als ciclistes"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -159,9 +163,10 @@
         "de": "Kann ein Radfahrer das Hindernis passieren?",
         "hu": "Át lehet-e menni rajta kerékpárral?",
         "fr": "Est-ce qu'un vélo peut franchir cette barrière ?",
-        "es": "¿Puede pasar una bicicleta esta barrera?",
+        "es": "¿Una bicicleta puede pasar esta barrera?",
         "da": "Kan en cykel køre forbi denne barriere?",
-        "cs": "Může tuto bariéru překonat jízdní kolo?"
+        "cs": "Může tuto bariéru překonat jízdní kolo?",
+        "ca": "Una bicicleta pot passar aquesta barrera?"
       },
       "mappings": [
         {
@@ -222,7 +227,8 @@
             "de": "Dies ist eine Fahrradbarriere, die Radfahrer abbremst",
             "es": "Esta es una barrera ciclista que ralentiza a los ciclistas",
             "da": "Dette er en cykelbarriere, der bremser cyklisterne",
-            "cs": "Jedná se o cyklistickou bariéru, která zpomaluje cyklisty"
+            "cs": "Jedná se o cyklistickou bariéru, která zpomaluje cyklisty",
+            "ca": "Açò és una barrera ciclista que relantitza als ciclistes"
           }
         }
       ]
@@ -237,7 +243,8 @@
         "es": "¿Qué tipo de bolardo es este?",
         "da": "Hvilken slags pullert er dette?",
         "cs": "Co je to za sloupek?",
-        "nb_NO": "Hva slags pullert er dette?"
+        "nb_NO": "Hva slags pullert er dette?",
+        "ca": "Quin tipus de bol·lard és aquest?"
       },
       "condition": "barrier=bollard",
       "mappings": [
@@ -329,7 +336,8 @@
         "es": "¿Qué tipo de barrera ciclista es esta?",
         "da": "Hvad er det for en cykelbarriere?",
         "cs": "O jakou cyklistickou bariéru se jedná?",
-        "nb_NO": "Hva slags sykkelbarrière er dette?"
+        "nb_NO": "Hva slags sykkelbarrière er dette?",
+        "ca": "Quin tipus de barrera ciclista és aquesta?"
       },
       "condition": "barrier=cycle_barrier",
       "mappings": [
@@ -362,7 +370,8 @@
             "es": "Doble, dos barreras una detrás de otra",
             "da": "Dobbelt, to barrierer bag hinanden",
             "cs": "Dvojitý, dvě bariéry za sebou",
-            "nb_NO": "Dobbel, to barrièrer etter hverandre"
+            "nb_NO": "Dobbel, to barrièrer etter hverandre",
+            "ca": "Doble, dues barreres una darrere l'altra"
           },
           "icon": {
             "path": "./assets/themes/cycle_infra/Cycle_barrier_double.svg",
@@ -380,7 +389,8 @@
             "es": "Triple, tres barreras una detrás de otra",
             "da": "Tredobbelt, tre barrierer bag hinanden",
             "cs": "Trojitá, tři bariéry za sebou",
-            "nb_NO": "Trippel, tre barrièrer etter hverandre"
+            "nb_NO": "Trippel, tre barrièrer etter hverandre",
+            "ca": "Triple, tres barreres una darrere l'altra"
           },
           "icon": {
             "path": "./assets/themes/cycle_infra/Cycle_barrier_triple.png",
@@ -396,7 +406,8 @@
             "hu": "Szűkítőkapu: a rés felül keskenyebb, mint alul",
             "fr": "Poire, l’espace en hauteur est plus faible qu’au sol",
             "es": "Barrera de seguridad, el espacio es menor en la parte superior que en la inferior",
-            "da": "Squeeze gate, mellemrummet er mindre i toppen end i bunden"
+            "da": "Squeeze gate, mellemrummet er mindre i toppen end i bunden",
+            "ca": "Barrera de seguretat, l'espai és menor a la part superior que a l'inferior"
           },
           "icon": {
             "path": "./assets/themes/cycle_infra/Cycle_barrier_squeeze.png",
@@ -417,7 +428,8 @@
         "da": "Maksimal bredde: {maxwidth:physical} m",
         "cs": "Maximální šířka: {maxwidth:physical} m",
         "pt": "Largura máxima: {maxwidth:physical} m",
-        "nb_NO": "Maksimal bredde: {maxwidth:physical} m"
+        "nb_NO": "Maksimal bredde: {maxwidth:physical} m",
+        "ca": "Amplada màxima: {maxwidth:physical} m"
       },
       "question": {
         "en": "How wide is the gap left over besides the barrier?",
@@ -456,7 +468,8 @@
         "fr": "Espace entre deux barrières successives : {width:separation} m",
         "es": "Espacio entre barreras (a lo largo de la longitud de la carretera): {width:separation} m",
         "da": "Plads mellem barrierer (langs vejens længde): {width:separation} m",
-        "cs": "Prostor mezi svodidly (po celé délce silnice): {width:separation} m"
+        "cs": "Prostor mezi svodidly (po celé délce silnice): {width:separation} m",
+        "ca": "Espai entre barreres (al llarg de la longitud de la carretera): {width:separation} m"
       },
       "question": {
         "en": "How much space is there between the barriers (along the length of the road)?",
@@ -466,7 +479,8 @@
         "fr": "Combien d’espace sépare deux barrières successives ?",
         "es": "¿Cuánto espacio hay entre las barreras (a lo largo de la longitud de la carretera)?",
         "da": "Hvor meget plads er der mellem bommene (på langs af vejen)?",
-        "cs": "Jak velký je prostor mezi svodidly (po celé délce silnice)?"
+        "cs": "Jak velký je prostor mezi svodidly (po celé délce silnice)?",
+        "ca": "Quant espai hi ha entre les barreres (al llarg de la longitud de la carretera)?"
       },
       "condition": {
         "or": [
@@ -493,7 +507,8 @@
         "hu": "Nyílás szélessége: {width:opening} m",
         "es": "Anchura de la apertura: {width:opening} m",
         "da": "Bredde af åbning: {width:opening} m",
-        "cs": "Šířka otvoru: {width:opening} m"
+        "cs": "Šířka otvoru: {width:opening} m",
+        "ca": "Amplada de l'apertura: {width:opening} m"
       },
       "question": {
         "en": "How wide is the smallest opening next to the barriers?",
@@ -501,9 +516,10 @@
         "de": "Wie breit ist die kleinste Öffnung neben den Barrieren?",
         "hu": "Milyen széles a korlátok melletti legkisebb nyílás?",
         "fr": "Quelle est la largeur d'ouverture après la plus petite près de la barrière ?",
-        "es": "¿Cómo de año es la apertura más pequeña al lado de las barreras?",
+        "es": "¿Que amplitud tiene la apertura más pequeña al lado de las barreras?",
         "da": "Hvor bred er den mindste åbning ved siden af barriererne?",
-        "cs": "Jak široký je nejmenší otvor vedle bariér?"
+        "cs": "Jak široký je nejmenší otvor vedle bariér?",
+        "ca": "Quina amplitud té l'obertura més petita al costat de les barreres?"
       },
       "condition": {
         "or": [
@@ -530,7 +546,8 @@
         "nl": "Overlap: {overlap} m",
         "es": "Solapado: {overlap} m",
         "da": "Overlapning: {overlap} m",
-        "cs": "Překrývání: {overlap} m"
+        "cs": "Překrývání: {overlap} m",
+        "ca": "Solapat: {overlap} m"
       },
       "question": {
         "en": "How much overlap do the barriers have?",
@@ -540,7 +557,8 @@
         "fr": "Quel est le chevauchement des barrières ?",
         "es": "¿Cuánto se solapan las barreras?",
         "da": "Hvor meget overlap har barriererne?",
-        "cs": "Jak moc se bariéry překrývají?"
+        "cs": "Jak moc se bariéry překrývají?",
+        "ca": "Quant es solapen les barreres?"
       },
       "condition": {
         "or": [

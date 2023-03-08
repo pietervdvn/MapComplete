@@ -217,7 +217,8 @@
         "en": "There are {capacity} parking spots",
         "nl": "Er zijn {capacity} parkeerplaatsen",
         "de": "Es gibt {capacity} Stellplätze",
-        "fr": "Il y a {capacity} places de stationnement"
+        "fr": "Il y a {capacity} places de stationnement",
+        "ca": "Hi han {capacity} places d'aparcament"
       }
     }
   ],

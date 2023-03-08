@@ -214,7 +214,7 @@
                 "render": "Espacio entre barreras (a lo largo de la longitud de la carretera): {width:separation} m"
             },
             "Width of opening (cyclebarrier)": {
-                "question": "¿Cómo de año es la apertura más pequeña al lado de las barreras?",
+                "question": "¿Que amplitud tiene la apertura más pequeña al lado de las barreras?",
                 "render": "Anchura de la apertura: {width:opening} m"
             },
             "barrier_type": {
@@ -236,7 +236,7 @@
                         "then": "Un ciclista no puede pasar esto."
                     }
                 },
-                "question": "¿Puede pasar una bicicleta esta barrera?"
+                "question": "¿Una bicicleta puede pasar esta barrera?"
             }
         },
         "title": {
@@ -309,8 +309,8 @@
                 "render": "Color: {colour}"
             },
             "bench-direction": {
-                "question": "¿En qué dirección se mira al sentarse en el banco?",
-                "render": "¿Cuando está sentado en el banco, uno mira hacia {direction}º."
+                "question": "¿En qué dirección miras sentado en el banco?",
+                "render": "Cuando se está sentado en el banco, se mira hacia a {direction}º."
             },
             "bench-inscription": {
                 "mappings": {
