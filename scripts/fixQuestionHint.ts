@@ -37,10 +37,20 @@ class ExtractQuestionHint extends DesugaringStep<QuestionableTagRenderingConfigJ
         const hint: Record<string, string> = {}
 
         for (const language in json.question) {
-            const parts = json.question[language].split(/<br ?\/>/i)
+            const q = json.question[language]
+            const parts = q.split(/<br ?\/>/i)
             if (parts.length == 2) {
                 json.question[language] = parts[0]
                 hint[language] = new FixedUiElement(parts[1]).ConstructElement().textContent
+                continue
+            }
+
+            const divStart = q.indexOf("<div")
+            if (divStart > 0) {
+                json.question[language] = q.substring(0, divStart)
+                hint[language] = new FixedUiElement(
+                    q.substring(divStart)
+                ).ConstructElement().textContent
             }
         }
         if (Object.keys(hint).length > 0) {
@@ -83,7 +93,7 @@ class FixQuestionHint extends Script {
         }
         const layers: LayerConfigJson[] = contents["layers"] ?? [contents]
         for (const layer of layers) {
-            for (let i = 0; i < layer.tagRenderings.length; i++) {
+            for (let i = 0; i < layer.tagRenderings?.length; i++) {
                 const tagRendering = layer.tagRenderings[i]
                 if (typeof tagRendering !== "object" || tagRendering["question"] === undefined) {
                     continue

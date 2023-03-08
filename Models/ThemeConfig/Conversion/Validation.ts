@@ -613,18 +613,19 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                 new TypedTranslation(json["question"]),
                 context + ".question"
             )
-            const html = question.ConstructElement()
-            const divs = Array.from(html.getElementsByTagName("div"))
-            const spans = Array.from(html.getElementsByTagName("span"))
-            const brs = Array.from(html.getElementsByTagName("br"))
-            const subtles = Array.from(html.getElementsByClassName("subtle"))
-            if (divs.length + spans.length + brs.length + subtles.length > 0) {
-                warnings.push(
-                    "At " +
-                        context +
-                        ": the question contains a div, a span, a br or an element with class 'subtle'. Please, use a `questionHint` instead.\n    The question is: " +
-                        question.textFor("en")
-                )
+            for (const lng of question.SupportedLanguages()) {
+                const html = document.createElement("p")
+                html.innerHTML = question.textFor(lng)
+                const divs = Array.from(html.getElementsByTagName("div"))
+                const spans = Array.from(html.getElementsByTagName("span"))
+                const brs = Array.from(html.getElementsByTagName("br"))
+                const subtles = Array.from(html.getElementsByClassName("subtle"))
+                if (divs.length + spans.length + brs.length + subtles.length > 0) {
+                    warnings.push(
+                        `At ${context}: the question for ${lng} contains a div, a span, a br or an element with class 'subtle'. Please, use a \`questionHint\` instead.
+    The question is: ${question.textFor(lng)}`
+                    )
+                }
             }
         }
         return {
