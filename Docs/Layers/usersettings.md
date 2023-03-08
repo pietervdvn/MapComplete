@@ -52,6 +52,7 @@ this quick overview is incomplete
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-pictures-license#values) [mapcomplete-pictures-license](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-pictures-license) | Multiple choice | [CC0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC0) [CC-BY 4.0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC-BY 4.0) [CC-BY-SA 4.0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC-BY-SA 4.0)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-show-all-questions#values) [mapcomplete-show-all-questions](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show-all-questions) | Multiple choice | [true](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show-all-questions%3Dtrue) [false](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show-all-questions%3Dfalse)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-translation-mode#values) [mapcomplete-translation-mode](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode) | Multiple choice | [false](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dfalse) [true](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dtrue) [mobile](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dmobile)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-translation-mode#values) [mapcomplete-translation-mode](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dyes)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/_translation_percentage#values) [_translation_percentage](https://wiki.openstreetmap.org/wiki/Key:_translation_percentage) | Multiple choice | [100](https://wiki.openstreetmap.org/wiki/Tag:_translation_percentage%3D100)
@@ -77,6 +78,22 @@ The question is  *Under what license do you want to publish your pictures?*
   - *Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose.*  corresponds with  `mapcomplete-pictures-license=CC0`
   - *Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you*  corresponds with  `mapcomplete-pictures-license=CC-BY 4.0`
   - *Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license.*  corresponds with  `mapcomplete-pictures-license=CC-BY-SA 4.0`
+
+
+
+
+### all-questions-at-once 
+
+
+
+The question is  *Should questions for unknown data fields appear one-by-one or together?*
+
+
+
+
+
+  - *Show all questions in the infobox together*  corresponds with  `mapcomplete-show-all-questions=true`
+  - *Show questions one-by-one*  corresponds with  `mapcomplete-show-all-questions=false`
 
 
 

@@ -979,6 +979,7 @@ The following layers are included in MapComplete:
   - [hospital](./Layers/hospital.md)
   - [hotel](./Layers/hotel.md)
   - [hydrant](./Layers/hydrant.md)
+  - [icons](./Layers/icons.md)
   - [id_presets](./Layers/id_presets.md)
   - [import_candidate](./Layers/import_candidate.md)
   - [indoors](./Layers/indoors.md)

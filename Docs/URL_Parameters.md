@@ -18,6 +18,7 @@
   - [fs-filter](#fs-filter)
   - [fs-add-new](#fs-add-new)
   - [fs-welcome-message](#fs-welcome-message)
+  - [fs-community-index](#fs-community-index)
   - [fs-iframe-popout](#fs-iframe-popout)
   - [fs-more-quests](#fs-more-quests)
   - [fs-share-screen](#fs-share-screen)
@@ -123,6 +124,13 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
 --------------------
 
  Disables/enables the help menu or welcome message The default value is _true_
+
+
+
+ fs-community-index 
+--------------------
+
+ Disables/enables the button to get in touch with the community The default value is _true_
 
 
 
