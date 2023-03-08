@@ -430,7 +430,8 @@
                         "then": "Deze bank heeft geen geïntegreerd kunstwerk"
                     }
                 },
-                "question": "Heeft deze bank een geïntegreerd kunstwerk?<div class='subtle text-lg'>Bijvoorbeeld een standbeeld, schildering of ander, niet-triviaal kunstwerk</div>"
+                "question": "Heeft deze bank een geïntegreerd kunstwerk?",
+                "questionHint": "Bijvoorbeeld een standbeeld, schildering of ander, niet-triviaal kunstwerk"
             },
             "bench-backrest": {
                 "mappings": {
@@ -486,7 +487,8 @@
                         "then": "Deze bank heeft <span class='subtle'>(waarschijnlijk)</span> geen inscriptie"
                     }
                 },
-                "question": "Heeft deze bank een inscriptie?<div class='subtle text-lg'>Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...</div>",
+                "question": "Heeft deze bank een inscriptie?",
+                "questionHint": "Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...",
                 "render": "Deze bank heeft een inscriptie: <br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {

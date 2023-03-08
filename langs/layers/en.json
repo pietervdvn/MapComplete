@@ -430,7 +430,8 @@
                         "then": "This bench does not have an integrated artwork"
                     }
                 },
-                "question": "Does this bench have an artistic element?<div class='subtle text-lg'>E.g. it has an integrated painting, statue or other non-trivial, creative work</div>"
+                "question": "Does this bench have an artistic element?",
+                "questionHint": "E.g. it has an integrated painting, statue or other non-trivial, creative work"
             },
             "bench-backrest": {
                 "mappings": {
@@ -486,7 +487,8 @@
                         "then": "This bench does <span class='subtle'>(probably)</span> not have an inscription"
                     }
                 },
-                "question": "Does this bench have an inscription?<div class='subtle text-lg'>E.g. on a mounted plaque, in the backrest, ...</div>",
+                "question": "Does this bench have an inscription?",
+                "questionHint": "E.g. on a mounted plaque, in the backrest, ...",
                 "render": "This bench does have the following inscription:<br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {

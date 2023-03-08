@@ -398,7 +398,8 @@
                         "then": "Ce banc n'a<span class='subtle'>(probablement)</span> pas d'inscription"
                     }
                 },
-                "question": "Est-ce que ce banc possède une inscription ?<div class='subtle text-lg'>Par exemple, sur une plaque accrochée, sur le dossier, ...</div>",
+                "question": "Est-ce que ce banc possède une inscription ?",
+                "questionHint": "Par exemple, sur une plaque accrochée, sur le dossier, ...",
                 "render": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {

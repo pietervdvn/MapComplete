@@ -749,10 +749,10 @@
         "fr": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>"
       },
       "question": {
-        "en": "Does this bench have an inscription?<div class='subtle text-lg'>E.g. on a mounted plaque, in the backrest, ...</div>",
-        "nl": "Heeft deze bank een inscriptie?<div class='subtle text-lg'>Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...</div>",
-        "de": "Hat diese Bank eine Inschrift? <div class='subtle text-lg'>Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ... </div>",
-        "fr": "Est-ce que ce banc possède une inscription ?<div class='subtle text-lg'>Par exemple, sur une plaque accrochée, sur le dossier, ...</div>"
+        "en": "Does this bench have an inscription?",
+        "nl": "Heeft deze bank een inscriptie?",
+        "de": "Hat diese Bank eine Inschrift? ",
+        "fr": "Est-ce que ce banc possède une inscription ?"
       },
       "freeform": {
         "key": "inscription",
@@ -787,15 +787,21 @@
           },
           "hideInAnswer": true
         }
-      ]
+      ],
+      "questionHint": {
+        "en": "E.g. on a mounted plaque, in the backrest, ...",
+        "nl": "Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...",
+        "de": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ... ",
+        "fr": "Par exemple, sur une plaque accrochée, sur le dossier, ..."
+      }
     },
     {
       "id": "bench-artwork",
       "question": {
-        "en": "Does this bench have an artistic element?<div class='subtle text-lg'>E.g. it has an integrated painting, statue or other non-trivial, creative work</div>",
-        "nl": "Heeft deze bank een geïntegreerd kunstwerk?<div class='subtle text-lg'>Bijvoorbeeld een standbeeld, schildering of ander, niet-triviaal kunstwerk</div>",
-        "de": "Hat diese Bank ein künstlerisches Element? <div class='subtle text-lg'>Z.B. hat es ein integriertes Gemälde, eine Statue oder eine andere nicht triviale, kreative Arbeit</div>",
-        "ca": "Aquest banc té algun element artístic?<div class='subtle text-lg'>P.e. té una pintura integrada, estatua o altres treballs no trivials i creatius</div>"
+        "en": "Does this bench have an artistic element?",
+        "nl": "Heeft deze bank een geïntegreerd kunstwerk?",
+        "de": "Hat diese Bank ein künstlerisches Element? ",
+        "ca": "Aquest banc té algun element artístic?"
       },
       "mappings": [
         {
@@ -819,7 +825,13 @@
             "ca": "Aquest banc no té una obra d'art integrada"
           }
         }
-      ]
+      ],
+      "questionHint": {
+        "en": "E.g. it has an integrated painting, statue or other non-trivial, creative work",
+        "nl": "Bijvoorbeeld een standbeeld, schildering of ander, niet-triviaal kunstwerk",
+        "de": "Z.B. hat es ein integriertes Gemälde, eine Statue oder eine andere nicht triviale, kreative Arbeit",
+        "ca": "P.e. té una pintura integrada, estatua o altres treballs no trivials i creatius"
+      }
     },
     {
       "id": "bench-memorial",

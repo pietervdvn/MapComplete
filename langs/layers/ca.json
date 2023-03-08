@@ -430,7 +430,8 @@
                         "then": "Aquest banc no té una obra d'art integrada"
                     }
                 },
-                "question": "Aquest banc té algun element artístic?<div class='subtle text-lg'>P.e. té una pintura integrada, estatua o altres treballs no trivials i creatius</div>"
+                "question": "Aquest banc té algun element artístic?",
+                "questionHint": "P.e. té una pintura integrada, estatua o altres treballs no trivials i creatius"
             },
             "bench-backrest": {
                 "mappings": {

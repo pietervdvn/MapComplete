@@ -430,7 +430,8 @@
                         "then": "Diese Bank hat kein integriertes Kunstwerk"
                     }
                 },
-                "question": "Hat diese Bank ein künstlerisches Element? <div class='subtle text-lg'>Z.B. hat es ein integriertes Gemälde, eine Statue oder eine andere nicht triviale, kreative Arbeit</div>"
+                "question": "Hat diese Bank ein künstlerisches Element? ",
+                "questionHint": "Z.B. hat es ein integriertes Gemälde, eine Statue oder eine andere nicht triviale, kreative Arbeit"
             },
             "bench-backrest": {
                 "mappings": {
@@ -486,7 +487,8 @@
                         "then": "Diese Bank hat <span class='subtle'>(wahrscheinlich)</span> keine Inschrift"
                     }
                 },
-                "question": "Hat diese Bank eine Inschrift? <div class='subtle text-lg'>Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ... </div>",
+                "question": "Hat diese Bank eine Inschrift? ",
+                "questionHint": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ... ",
                 "render": "Diese Bank hat folgende Inschrift:<br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {
