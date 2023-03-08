@@ -1,0 +1,102 @@
+import * as fs from "fs"
+import { DesugaringStep } from "../Models/ThemeConfig/Conversion/Conversion"
+import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
+import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
+import * as fakedom from "fake-dom"
+import Script from "./Script"
+import Translations from "../UI/i18n/Translations"
+import { FixedUiElement } from "../UI/Base/FixedUiElement"
+
+class ExtractQuestionHint extends DesugaringStep<QuestionableTagRenderingConfigJson> {
+    constructor() {
+        super(
+            "Tries to extract a 'questionHint' from the question",
+            ["question", "questionhint"],
+            "ExtractQuestionHint"
+        )
+    }
+
+    convert(
+        json: QuestionableTagRenderingConfigJson,
+        context: string
+    ): {
+        result: QuestionableTagRenderingConfigJson
+        errors?: string[]
+        warnings?: string[]
+        information?: string[]
+    } {
+        json = { ...json }
+        if (json.question === undefined || json.questionHint !== undefined) {
+            return { result: json }
+        }
+
+        if (typeof json.question === "string") {
+            return { result: json }
+        }
+
+        const hint: Record<string, string> = {}
+
+        for (const language in json.question) {
+            const parts = json.question[language].split(/<br ?\/>/i)
+            if (parts.length == 2) {
+                json.question[language] = parts[0]
+                hint[language] = new FixedUiElement(parts[1]).ConstructElement().textContent
+            }
+        }
+        if (Object.keys(hint).length > 0) {
+            json.questionHint = hint
+        }
+
+        console.log("Inspecting ", json.question)
+
+        return { result: json }
+    }
+}
+
+class FixQuestionHint extends Script {
+    private fs: any
+    constructor() {
+        super("Extracts a 'questionHint' from a question for a given 'layer.json' or 'theme.json'")
+        if (fakedom === undefined) {
+            throw "Fakedom not active"
+        }
+    }
+
+    async main(args: string[]): Promise<void> {
+        const filepath = args[0]
+        const contents = JSON.parse(fs.readFileSync(filepath, { encoding: "utf8" }))
+        const convertor = new ExtractQuestionHint()
+        if (filepath.endsWith("/questions.json")) {
+            for (const key in contents) {
+                const tr = contents[key]
+                if (typeof tr !== "object") {
+                    continue
+                }
+                contents[key] = convertor.convertStrict(
+                    tr,
+                    "While automatically extracting questiondHints of " + filepath
+                )
+            }
+            fs.writeFileSync(filepath, JSON.stringify(contents, null, "  "), { encoding: "utf-8" })
+
+            return
+        }
+        const layers: LayerConfigJson[] = contents["layers"] ?? [contents]
+        for (const layer of layers) {
+            for (let i = 0; i < layer.tagRenderings.length; i++) {
+                const tagRendering = layer.tagRenderings[i]
+                if (typeof tagRendering !== "object" || tagRendering["question"] === undefined) {
+                    continue
+                }
+                layer.tagRenderings[i] = convertor.convertStrict(
+                    <QuestionableTagRenderingConfigJson>tagRendering,
+                    "While automatically extracting questionHints of " + filepath
+                )
+            }
+        }
+        // The layer(s) are modified inPlace, so we can simply write to disk
+        fs.writeFileSync(filepath, JSON.stringify(contents, null, "  "), { encoding: "utf8" })
+    }
+}
+
+new FixQuestionHint().run()
