@@ -1,7 +1,8 @@
 {
     "shared_questions": {
         "description": {
-            "question": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.<br/><span style='font-size: small'> Não repita fatos já declarados</span>"
+            "question": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.",
+            "questionHint": " Não repita fatos já declarados"
         },
         "email": {
             "question": "Qual o endereço de e-mail de {title()}?"

@@ -1,7 +1,8 @@
 {
     "shared_questions": {
         "description": {
-            "question": "Mayroon pa bang mga bagay na nau-ugnay at hindi mo maibigay sa mga nakaraang tanong? Idagdag dito.<br/><span style='font-size: small'>Huwag ulitin ang mga nai-saad na</span>"
+            "question": "Mayroon pa bang mga bagay na nau-ugnay at hindi mo maibigay sa mga nakaraang tanong? Idagdag dito.",
+            "questionHint": "Huwag ulitin ang mga nai-saad na"
         },
         "dog-access": {
             "mappings": {

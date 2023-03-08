@@ -56,7 +56,8 @@
             "question": "Amb quins bitllets pot pagar aquí?"
         },
         "description": {
-            "question": "Hi ha quelcom rellevant que no t'hem preguntat? Afegeix-ho aquí. <br/><span style='font-size: small'>No repeteixis informació que ja hi és</span>"
+            "question": "Hi ha quelcom rellevant que no t'hem preguntat? Afegeix-ho aquí. ",
+            "questionHint": "No repeteixis informació que ja hi és"
         },
         "dog-access": {
             "mappings": {

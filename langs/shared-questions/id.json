@@ -1,7 +1,8 @@
 {
     "shared_questions": {
         "description": {
-            "question": "Apakah masih ada sesuatu yang relevan yang tidak dapat Anda berikan dalam pertanyaan sebelumnya? Tambahkan di sini. <br/> <span style='font-size: small'> Jangan ulangi fakta yang sudah dinyatakan </span>"
+            "question": "Apakah masih ada sesuatu yang relevan yang tidak dapat Anda berikan dalam pertanyaan sebelumnya? Tambahkan di sini. ",
+            "questionHint": "  Jangan ulangi fakta yang sudah dinyatakan "
         },
         "dog-access": {
             "mappings": {

@@ -2600,7 +2600,8 @@
                         "then": "Ceci est une entrée sans porte physique"
                     }
                 },
-                "question": "Quel est le type de cette porte ?<br/><span class='subtle'>Le fait que la porte soit automatisée ou non est demandé dans la question suivante</span>"
+                "question": "Quel est le type de cette porte ?",
+                "questionHint": "Le fait que la porte soit automatisée ou non est demandé dans la question suivante"
             },
             "Entrance type": {
                 "mappings": {

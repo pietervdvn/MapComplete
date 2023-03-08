@@ -56,7 +56,8 @@
             "question": "Met welke bankbiljetten kan je hier betalen?"
         },
         "description": {
-            "question": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.<br/><span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>"
+            "question": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.",
+            "questionHint": "Herhaal geen antwoorden die je reeds gaf"
         },
         "dog-access": {
             "mappings": {

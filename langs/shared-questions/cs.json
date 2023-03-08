@@ -56,7 +56,8 @@
             "question": "Jakými bankovkami zde lze platit?"
         },
         "description": {
-            "question": "Je ještě něco relevantního, co jste nemohli uvést v předchozích otázkách? Přidejte to sem.<br/><span style='font-size: small'>Neopakujte již uvedená fakta</span>"
+            "question": "Je ještě něco relevantního, co jste nemohli uvést v předchozích otázkách? Přidejte to sem.",
+            "questionHint": "Neopakujte již uvedená fakta"
         },
         "dog-access": {
             "mappings": {

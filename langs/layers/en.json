@@ -3933,7 +3933,8 @@
                         "then": "This is an entrance without a physical door"
                     }
                 },
-                "question": "What is the type of this door?<br/><span class='subtle'>Wether or not the door is automated is asked in the next question</span>"
+                "question": "What is the type of this door?",
+                "questionHint": "Wether or not the door is automated is asked in the next question"
             },
             "Entrance type": {
                 "mappings": {

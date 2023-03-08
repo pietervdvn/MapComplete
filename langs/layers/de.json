@@ -3933,7 +3933,8 @@
                         "then": "Der Eingang hat eine keine Tür"
                     }
                 },
-                "question": "Welche Tür gibt es an diesem Eingang?<br/><span class='subtle'>Ob die Tür automatisiert ist oder nicht, wird in der nächsten Frage gefragt</span>"
+                "question": "Welche Tür gibt es an diesem Eingang?",
+                "questionHint": "Ob die Tür automatisiert ist oder nicht, wird in der nächsten Frage gefragt"
             },
             "Entrance type": {
                 "mappings": {

@@ -56,7 +56,8 @@
             "question": "¿con qué billetes se puede pagar aquí?"
         },
         "description": {
-            "question": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.<br/><span style='font-size: small'>No repita datos ya expresados</span>"
+            "question": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.",
+            "questionHint": "No repita datos ya expresados"
         },
         "dog-access": {
             "mappings": {

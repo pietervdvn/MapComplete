@@ -56,7 +56,8 @@
             "question": "Mit welchen Banknoten kann man hier bezahlen?"
         },
         "description": {
-            "question": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.<br/><span style='font-size: small'>Bitte keine bereits erhobenen Informationen.</span>"
+            "question": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.",
+            "questionHint": "Bitte keine bereits erhobenen Informationen."
         },
         "dog-access": {
             "mappings": {

@@ -3930,7 +3930,8 @@
                         "then": "Er is een toegang zonder een deur"
                     }
                 },
-                "question": "Om wat voor deur gaat het?<br/><span class='subtle'>Of de deur al of niet automatisch werkt, vragen we hierna </span>"
+                "question": "Om wat voor deur gaat het?",
+                "questionHint": "Of de deur al of niet automatisch werkt, vragen we hierna "
             },
             "Entrance type": {
                 "mappings": {

@@ -1,7 +1,8 @@
 {
     "shared_questions": {
         "description": {
-            "question": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.<br/><span style='font-size: small'>Não repita factos já declarados</span>"
+            "question": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.",
+            "questionHint": "Não repita factos já declarados"
         },
         "dog-access": {
             "mappings": {

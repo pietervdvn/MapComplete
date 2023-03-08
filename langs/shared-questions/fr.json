@@ -30,7 +30,8 @@
             "question": "Quelles pièces peut-on utiliser pour payer ici ?"
         },
         "description": {
-            "question": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.<br/><span style='font-size: small'>Ne répétez pas des réponses déjà données</span>"
+            "question": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.",
+            "questionHint": "Ne répétez pas des réponses déjà données"
         },
         "dog-access": {
             "mappings": {
