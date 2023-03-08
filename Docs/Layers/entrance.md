@@ -140,7 +140,7 @@ The question is  *What type of entrance is this?*
 
 
 
-The question is  *What is the type of this door?<br/><span class='subtle'>Wether or not the door is automated is asked in the next question</span>*
+The question is  *What is the type of this door?*
 
 
 

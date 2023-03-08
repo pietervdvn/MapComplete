@@ -378,7 +378,7 @@ This tagrendering has labels  `bench-questions`
 
 
 
-The question is  *Does this bench have an inscription?<div class='subtle text-lg'>E.g. on a mounted plaque, in the backrest, ...</div>*
+The question is  *Does this bench have an inscription?*
 
 This rendering asks information about the property  [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) 
 

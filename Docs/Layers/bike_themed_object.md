@@ -85,7 +85,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  *Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>*
+The question is  *Is there still something relevant you couldn't give in the previous questions? Add it here.*
 
 This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
 

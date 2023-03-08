@@ -249,6 +249,24 @@ This tagrendering has no question and is thus read-only
 
 id | question | osmTags
 ---- | ---------- | ---------
+accessibility.0 | Publicly accessible | access=yes\|access=public|
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
+available_sports.0 | All sports (default) | 
+available_sports.1 | Basketball fields | sport=basketball
+available_sports.2 | Soccer fields | sport=soccer
+available_sports.3 | Ping-pong table | sport=table_tennis
+available_sports.4 | Tennis field | sport=tennis
+
+
+
+
+id | question | osmTags
+---- | ---------- | ---------
 open_now.0 | Opened now | _isOpen=yes
  
 

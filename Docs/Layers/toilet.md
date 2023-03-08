@@ -348,7 +348,7 @@ The question is  *Does one have to bring their own toilet paper to this toilet?*
 
 
 
-The question is  *Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>*
+The question is  *Is there still something relevant you couldn't give in the previous questions? Add it here.*
 
 This rendering asks information about the property  [description](https://wiki.openstreetmap.org/wiki/Key:description) 
 

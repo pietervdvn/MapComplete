@@ -253,7 +253,7 @@ Are dogs allowed in this business?
 
 {description}
 
-Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>
+Is there still something relevant you couldn't give in the previous questions? Add it here.
 
 
 
