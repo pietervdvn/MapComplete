@@ -3,7 +3,7 @@ import { LayerConfigJson } from "../Json/LayerConfigJson"
 import LayerConfig from "../LayerConfig"
 import { Utils } from "../../../Utils"
 import Constants from "../../Constants"
-import { Translation } from "../../../UI/i18n/Translation"
+import { Translation, TypedTranslation } from "../../../UI/i18n/Translation"
 import { LayoutConfigJson } from "../Json/LayoutConfigJson"
 import LayoutConfig from "../LayoutConfig"
 import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
@@ -14,6 +14,7 @@ import Translations from "../../../UI/i18n/Translations"
 import Svg from "../../../Svg"
 import FilterConfigJson from "../Json/FilterConfigJson"
 import DeleteConfig from "../DeleteConfig"
+import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
     private readonly _languages: string[]
@@ -586,11 +587,11 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
 
 class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
     constructor() {
-        super("Miscellanious checks on the tagrendering", ["special"], "MiscTagREnderingChecksRew")
+        super("Miscellanious checks on the tagrendering", ["special"], "MiscTagRenderingChecks")
     }
 
     convert(
-        json: TagRenderingConfigJson,
+        json: TagRenderingConfigJson | QuestionableTagRenderingConfigJson,
         context: string
     ): {
         result: TagRenderingConfigJson
@@ -598,6 +599,7 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
         warnings?: string[]
         information?: string[]
     } {
+        const warnings = []
         const errors = []
         if (json["special"] !== undefined) {
             errors.push(
@@ -606,9 +608,28 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     ': detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
             )
         }
+        if (json["question"]) {
+            const question = Translations.T(
+                new TypedTranslation(json["question"]),
+                context + ".question"
+            )
+            const html = question.ConstructElement()
+            const divs = Array.from(html.getElementsByTagName("div"))
+            const spans = Array.from(html.getElementsByTagName("span"))
+            const brs = Array.from(html.getElementsByTagName("br"))
+            const subtles = Array.from(html.getElementsByClassName("subtle"))
+            if (divs.length + spans.length + brs.length + subtles.length > 0) {
+                warnings.push(
+                    "At " +
+                        context +
+                        ": the question contains a div, a span, a br or an element with class 'subtle'. Please, use a `questionHint` instead"
+                )
+            }
+        }
         return {
             result: json,
             errors,
+            warnings,
         }
     }
 }

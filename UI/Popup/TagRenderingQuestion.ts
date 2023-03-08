@@ -85,6 +85,10 @@ export default class TagRenderingQuestion extends Combine {
             ),
             3
         )
+        let questionHint = undefined
+        if (configuration.questionhint !== undefined) {
+            questionHint = new SubstitutedTranslation(configuration.questionhint, tags, state)
+        }
 
         const feedback = new UIEventSource<Translation>(undefined)
         const inputElement: ReadonlyInputElement<UploadableTag> = new VariableInputElement(
@@ -139,6 +143,7 @@ export default class TagRenderingQuestion extends Combine {
         }
         super([
             question,
+            questionHint,
             inputElement,
             new VariableUiElement(
                 feedback.map(

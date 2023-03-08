@@ -139,7 +139,13 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
      * If it turns out that this tagRendering doesn't match _any_ value, then we show this question.
      * If undefined, the question is never asked and this tagrendering is read-only
      */
-    question?: string | any
+    question?: string | Record<string, string>
+
+    /**
+     * A hint which is shown in subtle text under the question.
+     * This can give some extra information on what the answer should ook like
+     */
+    questionHint?: string | Record<string, string>
 
     /**
      * Allow freeform text input from the user
