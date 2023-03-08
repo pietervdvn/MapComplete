@@ -256,7 +256,7 @@
           "id": "uk_addresses_unit",
           "render": "<div class='subtle'>Sub-unit (e.g. 1, Flat 2, Unit C)</div><div><b>{addr:unit}</b></div>",
           "question": {
-            "en": "What is the sub-unit for this address? <div class='subtle'>Some named building or large complexes are split into sub-units</div>"
+            "en": "What is the sub-unit for this address? "
           },
           "freeform": {
             "key": "addr:unit",
@@ -290,6 +290,9 @@
               "addr:housename~*",
               "addr:substreet~*"
             ]
+          },
+          "questionHint": {
+            "en": "Some named building or large complexes are split into sub-units"
           }
         },
         {
@@ -373,7 +376,7 @@
         {
           "id": "uk_addresses_placename",
           "question": {
-            "en": "What is the place or locality for this address?<div class='subtle'>This is additional information that appears before (or instead of) a street name in the address</div>"
+            "en": "What is the place or locality for this address?"
           },
           "render": {
             "en": "<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div><div><b>{addr:substreet}</b></div>"
@@ -413,12 +416,15 @@
               "hideInAnswer": true
             }
           ],
-          "condition": "addr:parentstreet="
+          "condition": "addr:parentstreet=",
+          "questionHint": {
+            "en": "This is additional information that appears before (or instead of) a street name in the address"
+          }
         },
         {
           "id": "uk_addresses_placename_with_parent",
           "question": {
-            "en": "What is the place or locality for this address?<div class='subtle'>This is additional information that appears before (or instead of) a street name in the address</div>"
+            "en": "What is the place or locality for this address?"
           },
           "render": {
             "en": "<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div><div><b>{addr:substreet}</b></div>"
@@ -472,6 +478,9 @@
                 ]
               }
             ]
+          },
+          "questionHint": {
+            "en": "This is additional information that appears before (or instead of) a street name in the address"
           }
         },
         {
@@ -527,7 +536,7 @@
           "id": "uk_addresses_parentstreet",
           "render": "<div class='subtle'>Parent street name</div><div><b>{addr:parentstreet}</b></div>",
           "question": {
-            "en": "What is the parent street name for this address?<div class='subtle'>This street name will appear after the place name or first street name in the address</div>"
+            "en": "What is the parent street name for this address?"
           },
           "freeform": {
             "key": "addr:parentstreet",
@@ -592,6 +601,9 @@
               "addr:parentstreet~*",
               "addr:substreet~*"
             ]
+          },
+          "questionHint": {
+            "en": "This street name will appear after the place name or first street name in the address"
           }
         },
         {
