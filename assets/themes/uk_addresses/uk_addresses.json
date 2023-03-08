@@ -44,7 +44,7 @@
   "layers": [
     {
       "id": "raw_inspire_polygons",
-      "description": "External dataset: inspire polygon,
+      "description": "External dataset: inspire polygon",
       "source": {
         "geoJson": "https://osm-uk-addresses.russss.dev/inspire/{z}/{x}/{y}.json",
         "osmTags": "inspireid~*",
