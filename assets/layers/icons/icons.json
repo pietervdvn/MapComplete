@@ -13,7 +13,7 @@
       "labels": [
         "defaults"
       ],
-      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' textmode='\uD83D\uDCD6' alt='Wikipedia'/></a>",
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
       "condition": {
         "or": [
           "wikipedia~*",
@@ -70,7 +70,7 @@
       "labels": [
         "defaults"
       ],
-      "render": "<a href='tel:{phone}'><img textmode='\uD83D\uDCDE' alt='phone' src='./assets/tagRenderings/phone.svg'/></a>",
+      "render": "<a href='tel:{phone}'><img textmode='📞' alt='phone' src='./assets/tagRenderings/phone.svg'/></a>",
       "condition": "phone~*"
     },
     {
@@ -90,16 +90,15 @@
         {
           "#": "ignore-image-in-then",
           "if": "smoking=no",
-          "then": "<img textmode='\uD83D\uDEAD️' alt='no-smoking' src='./assets/tagRenderings/no_smoking.svg'/>"
+          "then": "<img textmode='🚭️' alt='no-smoking' src='./assets/tagRenderings/no_smoking.svg'/>"
         },
         {
           "#": "ignore-image-in-then",
           "if": "smoking=yes",
-          "then": "<img textmode='\uD83D\uDEAC️' alt='smoking-allowed' src='./assets/tagRenderings/smoking.svg'/>"
+          "then": "<img textmode='🚬️' alt='smoking-allowed' src='./assets/tagRenderings/smoking.svg'/>"
         }
       ]
     },
-
     {
       "id": "sharelink",
       "labels": [
@@ -112,7 +111,7 @@
       "labels": [
         "defaults"
       ],
-      "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img alt='on osm' textmode='\uD83D\uDDFA️' src='./assets/svg/osm-logo-us.svg'/></a>",
+      "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/></a>",
       "mappings": [
         {
           "if": "id~.*/-.*",
