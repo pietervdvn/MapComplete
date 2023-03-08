@@ -118,7 +118,6 @@ export default class CopyrightPanel extends Combine {
         currentBounds: Store<BBox>
         locationControl: UIEventSource<Loc>
         osmConnection: OsmConnection
-        isTranslator: Store<boolean>
     }) {
         const t = Translations.t.general.attribution
         const layoutToUse = state.layoutToUse
