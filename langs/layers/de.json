@@ -8026,13 +8026,6 @@
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Mit Wickeltisch"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
@@ -8351,7 +8344,8 @@
         },
         "tagRenderings": {
             "circumference": {
-                "question": "Wie groß ist der Umfang des Baumstammes?<p class='subtle'>Dies wird in einer Höhe von 1,30 m gemessen</p>",
+                "question": "Wie groß ist der Umfang des Baumstammes?",
+                "questionHint": "Dies wird in einer Höhe von 1,30 m gemessen",
                 "render": "Der Baumstamm hat einen Umfang von {circumference} Meter"
             },
             "height": {

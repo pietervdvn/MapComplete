@@ -7812,13 +7812,6 @@
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Heeft een luiertafel"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
@@ -8131,7 +8124,8 @@
         },
         "tagRenderings": {
             "circumference": {
-                "question": "Wat is de omtrek van de boomstam? <p class='subtle'>Dit wordt 1.30m boven de grond gemeten</p>",
+                "question": "Wat is de omtrek van de boomstam? ",
+                "questionHint": "Dit wordt 1.30m boven de grond gemeten",
                 "render": "De boomstam heeft een omtrek van {circumference} meter"
             },
             "height": {

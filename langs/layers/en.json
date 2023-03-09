@@ -5003,6 +5003,9 @@
             }
         }
     },
+    "icons": {
+        "description": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI"
+    },
     "indoors": {
         "description": "Basic indoor mapping: shows room outlines",
         "name": "Indoors",
@@ -8044,13 +8047,6 @@
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Has a changing table"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
@@ -8374,7 +8370,8 @@
         },
         "tagRenderings": {
             "circumference": {
-                "question": "What is the circumference of the tree trunk?<p class='subtle'>This is measured at a height of 1.30m</p>",
+                "question": "What is the circumference of the tree trunk?",
+                "questionHint": "This is measured at a height of 1.30m",
                 "render": "The tree trunk has a circumference of {circumference} meter"
             },
             "height": {

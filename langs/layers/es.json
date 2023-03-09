@@ -3846,13 +3846,6 @@
                         "question": "Accesible con sillas de ruedas"
                     }
                 }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Tiene un cambiador"
-                    }
-                }
             }
         },
         "tagRenderings": {
@@ -3912,7 +3905,8 @@
         },
         "tagRenderings": {
             "circumference": {
-                "question": "¿Cuál es la circunferencia del tronco del árbol?<p class='subtle'>Se mide a una altura de 1,30 m</p>",
+                "question": "¿Cuál es la circunferencia del tronco del árbol?",
+                "questionHint": "Se mide a una altura de 1,30 m",
                 "render": "El tronco del árbol tiene una circunferencia de {circumference} metros"
             },
             "height": {

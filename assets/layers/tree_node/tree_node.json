@@ -119,11 +119,11 @@
     {
       "id": "circumference",
       "question": {
-        "en": "What is the circumference of the tree trunk?<p class='subtle'>This is measured at a height of 1.30m</p>",
-        "de": "Wie groß ist der Umfang des Baumstammes?<p class='subtle'>Dies wird in einer Höhe von 1,30 m gemessen</p>",
-        "fr": "Quelle est la circonférence du tronc ? <p class='subtle'>La mesure est effectuée à 1.30m de hauteur</p>",
-        "nl": "Wat is de omtrek van de boomstam? <p class='subtle'>Dit wordt 1.30m boven de grond gemeten</p>",
-        "es": "¿Cuál es la circunferencia del tronco del árbol?<p class='subtle'>Se mide a una altura de 1,30 m</p>"
+        "en": "What is the circumference of the tree trunk?",
+        "de": "Wie groß ist der Umfang des Baumstammes?",
+        "fr": "Quelle est la circonférence du tronc ? ",
+        "nl": "Wat is de omtrek van de boomstam? ",
+        "es": "¿Cuál es la circunferencia del tronco del árbol?"
       },
       "render": {
         "en": "The tree trunk has a circumference of {circumference} meter",
@@ -136,6 +136,13 @@
         "key": "circumference",
         "inline": true,
         "type": "pfloat"
+      },
+      "questionHint": {
+        "en": "This is measured at a height of 1.30m",
+        "de": "Dies wird in einer Höhe von 1,30 m gemessen",
+        "fr": "La mesure est effectuée à 1.30m de hauteur",
+        "nl": "Dit wordt 1.30m boven de grond gemeten",
+        "es": "Se mide a una altura de 1,30 m"
       }
     },
     {

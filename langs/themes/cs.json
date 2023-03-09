@@ -670,68 +670,6 @@
         "description": "Mapa zobrazující obrubníky a přechody.",
         "title": "Obrubníky a přechody"
     },
-    "mapcomplete-changes": {
-        "description": "Tato mapa zobrazuje všechny změny provedené pomocí MapComplete",
-        "layers": {
-            "0": {
-                "description": "Zobrazuje všechny změny MapComplete",
-                "filter": {
-                    "1": {
-                        "options": {
-                            "0": {
-                                "question": "Vytvořil přispěvatel {search}"
-                            }
-                        }
-                    },
-                    "2": {
-                        "options": {
-                            "0": {
-                                "question": "<b>Nevytvořil</b> přispěvatel {search}"
-                            }
-                        }
-                    },
-                    "3": {
-                        "options": {
-                            "0": {
-                                "question": "Vytvořeno před {search}"
-                            }
-                        }
-                    },
-                    "4": {
-                        "options": {
-                            "0": {
-                                "question": "Vytvořeno po {search}"
-                            }
-                        }
-                    }
-                },
-                "tagRenderings": {
-                    "contributor": {
-                        "question": "Jaký přispěvatel provedl tuto změnu?",
-                        "render": "Změna byla provedena uživatelem <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
-                    },
-                    "host": {
-                        "render": "Změnit s <a href='{host}'>{host}</a>"
-                    },
-                    "locale": {
-                        "question": "V jakém prostředí (jazyce) byla tato změna provedena?",
-                        "render": "Uživatelské prostředí je {locale}"
-                    }
-                }
-            },
-            "1": {
-                "override": {
-                    "tagRenderings": {
-                        "link_to_more": {
-                            "render": "Další statistiky najdete na <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>.</a>"
-                        }
-                    }
-                }
-            }
-        },
-        "shortDescription": "Zobrazuje změny provedené pomocí MapComplete",
-        "title": "Změny provedené pomocí MapComplete"
-    },
     "maps": {
         "description": "Na této mapě najdete všechny mapy, které OpenStreetMap zná - typicky je zde velká mapa na informační tabuli zobrazující oblast, město nebo region, (např. turistická mapa na zadní straně billboardu, mapa přírodní rezervace, mapa cyklistických sítí v regionu, ...). <br/><br/>Pokud mapa chybí, můžete ji snadno zmapovat na OpenStreetMap.",
         "title": "Mapa map"

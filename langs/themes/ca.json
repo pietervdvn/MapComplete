@@ -688,35 +688,6 @@
     "indoors": {
         "title": "Interiors"
     },
-    "mapcomplete-changes": {
-        "description": "Aquest mapa mostra tots els canvis fets amb MapComplete",
-        "layers": {
-            "0": {
-                "filter": {
-                    "0": {
-                        "options": {
-                            "0": {
-                                "question": "Nom del tema conté {search}"
-                            }
-                        }
-                    },
-                    "5": {
-                        "options": {
-                            "0": {
-                                "question": "Idioma de l'usuari (ISO-code) {search}"
-                            }
-                        }
-                    }
-                },
-                "name": "Centres del conjunt de canvis",
-                "tagRenderings": {
-                    "host": {
-                        "render": "Canvi amb <a href='{host}'>{host}</a>"
-                    }
-                }
-            }
-        }
-    },
     "maproulette": {
         "title": "Tasques de MapRoulette"
     },

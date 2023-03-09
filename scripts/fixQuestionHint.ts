@@ -4,7 +4,6 @@ import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 import { QuestionableTagRenderingConfigJson } from "../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import * as fakedom from "fake-dom"
 import Script from "./Script"
-import Translations from "../UI/i18n/Translations"
 import { FixedUiElement } from "../UI/Base/FixedUiElement"
 
 class ExtractQuestionHint extends DesugaringStep<QuestionableTagRenderingConfigJson> {
@@ -45,7 +44,9 @@ class ExtractQuestionHint extends DesugaringStep<QuestionableTagRenderingConfigJ
                 continue
             }
 
-            const divStart = q.indexOf("<div")
+            const divStart = [q.indexOf("<div "), q.indexOf("<span "), q.indexOf("<p ")].find(
+                (i) => i > 0
+            ) // note: > 0, not >= : we are not interested in a span starting right away!
             if (divStart > 0) {
                 json.question[language] = q.substring(0, divStart)
                 hint[language] = new FixedUiElement(
