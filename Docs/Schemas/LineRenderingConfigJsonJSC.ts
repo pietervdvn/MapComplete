@@ -293,7 +293,6 @@ export default {
                       }
                     },
                     "required": [
-                      "class",
                       "path"
                     ]
                   },
