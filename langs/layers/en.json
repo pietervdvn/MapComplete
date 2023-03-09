@@ -5525,7 +5525,8 @@
                 "render": "Accessin this nature reserve: {access:description}"
             },
             "Curator": {
-                "question": "Whom is the curator of this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a name if this is widely published",
+                "question": "Whom is the curator of this nature reserve?",
+                "questionHint": "Respect privacy - only fill out a name if this is widely published",
                 "render": "{curator} is the curator of this nature reserve"
             },
             "Dogs?": {
@@ -5547,7 +5548,8 @@
                 "render": "Extra info: <i>{description:0}</i>"
             },
             "Email": {
-                "question": "What email adress can one send to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal email address if this is widely published",
+                "question": "What email adress can one send to with questions and problems with this nature reserve?",
+                "questionHint": "Respect privacy - only fill out a personal email address if this is widely published",
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
             "Name tag": {
@@ -5581,7 +5583,8 @@
                 "render": "Surface area: {_surface:ha}Ha"
             },
             "phone": {
-                "question": "What phone number can one call to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal phone number address if this is widely published"
+                "question": "What phone number can one call to with questions and problems with this nature reserve?",
+                "questionHint": "Respect privacy - only fill out a personal phone number address if this is widely published"
             }
         },
         "title": {

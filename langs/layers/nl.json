@@ -5406,7 +5406,8 @@
                 "render": "De toegankelijkheid van dit gebied is: {access:description}"
             },
             "Curator": {
-                "question": "Wie is de conservator van dit gebied?<br/><span class='subtle'>Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",
+                "question": "Wie is de conservator van dit gebied?",
+                "questionHint": "Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",
                 "render": "{curator} is de beheerder van dit gebied"
             },
             "Dogs?": {
@@ -5428,7 +5429,8 @@
                 "render": "Extra info: <i>{description:0}</i>"
             },
             "Email": {
-                "question": "Waar kan men naartoe emailen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd",
+                "question": "Waar kan men naartoe emailen voor vragen en meldingen van dit natuurgebied?",
+                "questionHint": "Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd",
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
             "Name tag": {
@@ -5462,7 +5464,8 @@
                 "render": "Totale oppervlakte: {_surface:ha}Ha"
             },
             "phone": {
-                "question": "Waar kan men naartoe bellen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke telefoonnummers als deze elders zijn gepubliceerd"
+                "question": "Waar kan men naartoe bellen voor vragen en meldingen van dit natuurgebied?",
+                "questionHint": "Respecteer privacy - geef enkel persoonlijke telefoonnummers als deze elders zijn gepubliceerd"
             }
         },
         "title": {

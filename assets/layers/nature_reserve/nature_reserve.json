@@ -311,11 +311,11 @@
     "website",
     {
       "question": {
-        "nl": "Wie is de conservator van dit gebied?<br/><span class='subtle'>Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",
-        "en": "Whom is the curator of this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a name if this is widely published",
-        "it": "Chi è il curatore di questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)",
-        "fr": "Qui est en charge de la conservation de la réserve ?<br/><span class='subtle'>À ne remplir seulement que si le nom est diffusé au public",
-        "de": "Wer verwaltet dieses Gebiet?<br/><span class='subtle'>Respektieren Sie die Privatsphäre. Geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist"
+        "nl": "Wie is de conservator van dit gebied?",
+        "en": "Whom is the curator of this nature reserve?",
+        "it": "Chi è il curatore di questa riserva naturale?",
+        "fr": "Qui est en charge de la conservation de la réserve ?",
+        "de": "Wer verwaltet dieses Gebiet?"
       },
       "render": {
         "nl": "{curator} is de beheerder van dit gebied",
@@ -328,15 +328,22 @@
         "key": "curator",
         "type": "string"
       },
-      "id": "Curator"
+      "id": "Curator",
+      "questionHint": {
+        "nl": "Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",
+        "en": "Respect privacy - only fill out a name if this is widely published",
+        "it": "Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)",
+        "fr": "À ne remplir seulement que si le nom est diffusé au public",
+        "de": "Respektieren Sie die Privatsphäre. Geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist"
+      }
     },
     {
       "question": {
-        "nl": "Waar kan men naartoe emailen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd",
-        "en": "What email adress can one send to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal email address if this is widely published",
-        "it": "Qual è l’indirizzo email a cui scrivere per fare domande o segnalare problemi su questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (compila l’indirizzo email personale solo se è stato reso pubblico)",
-        "fr": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? <br/><span class='subtle'>Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée",
-        "de": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Gebiet wenden?<br/><span class='subtle'>Respektieren Sie die Privatsphäre. Geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist"
+        "nl": "Waar kan men naartoe emailen voor vragen en meldingen van dit natuurgebied?",
+        "en": "What email adress can one send to with questions and problems with this nature reserve?",
+        "it": "Qual è l’indirizzo email a cui scrivere per fare domande o segnalare problemi su questa riserva naturale?",
+        "fr": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? ",
+        "de": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Gebiet wenden?"
       },
       "render": {
         "nl": "<a href='mailto:{email}' target='_blank'>{email}</a>",
@@ -352,15 +359,22 @@
         "key": "email",
         "type": "email"
       },
-      "id": "Email"
+      "id": "Email",
+      "questionHint": {
+        "nl": "Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd",
+        "en": "Respect privacy - only fill out a personal email address if this is widely published",
+        "it": "Rispetta la privacy (compila l’indirizzo email personale solo se è stato reso pubblico)",
+        "fr": "Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée",
+        "de": "Respektieren Sie die Privatsphäre. Geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist"
+      }
     },
     {
       "question": {
-        "nl": "Waar kan men naartoe bellen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke telefoonnummers als deze elders zijn gepubliceerd",
-        "en": "What phone number can one call to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal phone number address if this is widely published",
-        "it": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/><span class='subtle'>Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)",
-        "fr": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? <br/><span class='subtil'>Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié",
-        "de": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Gebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre. Geben Sie nur dann eine Telefonnummer an, wenn diese allgemein bekannt ist"
+        "nl": "Waar kan men naartoe bellen voor vragen en meldingen van dit natuurgebied?",
+        "en": "What phone number can one call to with questions and problems with this nature reserve?",
+        "it": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/>",
+        "fr": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? ",
+        "de": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Gebiet anrufen?"
       },
       "render": {
         "*": "<a href='tel:{phone}' target='_blank'>{phone}</a>"
@@ -369,7 +383,14 @@
         "key": "phone",
         "type": "phone"
       },
-      "id": "phone"
+      "id": "phone",
+      "questionHint": {
+        "nl": "Respecteer privacy - geef enkel persoonlijke telefoonnummers als deze elders zijn gepubliceerd",
+        "en": "Respect privacy - only fill out a personal phone number address if this is widely published",
+        "it": "Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)",
+        "fr": "Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié",
+        "de": "Respektieren Sie die Privatsphäre. Geben Sie nur dann eine Telefonnummer an, wenn diese allgemein bekannt ist"
+      }
     },
     {
       "render": {

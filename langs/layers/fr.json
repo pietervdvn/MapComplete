@@ -3405,7 +3405,8 @@
     "nature_reserve": {
         "tagRenderings": {
             "Curator": {
-                "question": "Qui est en charge de la conservation de la réserve ?<br/><span class='subtle'>À ne remplir seulement que si le nom est diffusé au public",
+                "question": "Qui est en charge de la conservation de la réserve ?",
+                "questionHint": "À ne remplir seulement que si le nom est diffusé au public",
                 "render": "{curator} est en charge de la conservation de la réserve"
             },
             "Dogs?": {
@@ -3423,14 +3424,16 @@
                 "question": "Les chiens sont-ils autorisés dans cette réserve naturelle ?"
             },
             "Email": {
-                "question": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? <br/><span class='subtle'>Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée",
+                "question": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? ",
+                "questionHint": "Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée",
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
             "Surface area": {
                 "render": "Superficie : {_surface:ha}&nbsp;ha"
             },
             "phone": {
-                "question": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? <br/><span class='subtil'>Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié"
+                "question": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? ",
+                "questionHint": "Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié"
             }
         }
     },

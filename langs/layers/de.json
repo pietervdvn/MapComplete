@@ -5522,7 +5522,8 @@
                 "render": "Zugang zu diesem Naturschutzgebiet: {access:description}"
             },
             "Curator": {
-                "question": "Wer verwaltet dieses Gebiet?<br/><span class='subtle'>Respektieren Sie die Privatsphäre. Geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist",
+                "question": "Wer verwaltet dieses Gebiet?",
+                "questionHint": "Respektieren Sie die Privatsphäre. Geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist",
                 "render": "{curator} ist der Pfleger dieses Naturschutzgebietes"
             },
             "Dogs?": {
@@ -5544,7 +5545,8 @@
                 "render": "Zusätzliche Informationen: <i>{description:0}</i>"
             },
             "Email": {
-                "question": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Gebiet wenden?<br/><span class='subtle'>Respektieren Sie die Privatsphäre. Geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist",
+                "question": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Gebiet wenden?",
+                "questionHint": "Respektieren Sie die Privatsphäre. Geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist",
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
             "Name tag": {
@@ -5578,7 +5580,8 @@
                 "render": "Grundfläche: {_surface:ha}ha"
             },
             "phone": {
-                "question": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Gebiet anrufen?<br/><span class='subtle'>Respektieren Sie die Privatsphäre. Geben Sie nur dann eine Telefonnummer an, wenn diese allgemein bekannt ist"
+                "question": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Gebiet anrufen?",
+                "questionHint": "Respektieren Sie die Privatsphäre. Geben Sie nur dann eine Telefonnummer an, wenn diese allgemein bekannt ist"
             }
         },
         "title": {
