@@ -61,13 +61,13 @@ This question is intentionally open-ended, as people will normally state what _t
 
 56 people gave insight in their favourite maps, yielding a total of 86 mentions of specific map themes or groups of themes.
 
-The theme with the most mentions -namely 9- was the [**etymology**](https://mapcomplete.osm.be/etymolgoy) theme. This is not a big surprise, as there has been a tremendous amount of changes made with Open Etymology-map. Some people mention curiosity for their local environment, others are interested in the link between OpenStreetMap and Wikipedia. It should be noted that nearly everyone who mentioned etymology indicates that they have hundreds of edits.
+The theme with the most mentions -namely **9**- was the [**etymology**](https://mapcomplete.osm.be/etymolgoy) theme. This is not a big surprise, as there has been a tremendous amount of changes made with Open Etymology-map. Some people mention curiosity for their local environment, others are interested in the link between OpenStreetMap and Wikipedia. It should be noted that nearly everyone who mentioned etymology indicates that they have hundreds of edits.
 
-The second place goes to the [**waste**](https://mapcomplete.osm.be/waste) theme with 8 mentions. I have to be honest, this came as a total surprise to me! At first sight, it is a bit of a boring topic - especially when contrasted with something like etymology. Yet, everyone needs to get rid of some waste every now and then. By the way, this theme was created by [@Rlin](https://en.osm.town/@rlin) and I have to admit that it was (and still is) one of the most polished themes on MapComplete. Thanks you!
+The second place goes to the [**waste**](https://mapcomplete.osm.be/waste) theme with **8** mentions. I have to be honest, this came as a total surprise to me! At first sight, it is a bit of a boring topic - especially when contrasted with something like etymology. Yet, everyone needs to get rid of some waste every now and then. By the way, this theme was created by [@Rlin](https://en.osm.town/@rlin) and I have to admit that this is one of the most polished themes on MapComplete, using a lot of the available functionality. Thank you!
 
-The third places goes to all **cycling-related** themes (7 mentions of 'cycling'). [Cyclofix](https://mapcomplete.osm.be/cyclofix) had another 5 mentions, resulting in 12 total mentions. This is no surprise as well. Cyclofix has been historic driver of many changes with MapComplete. It is one of the [oldest maps on MapComplete](https://en.osm.town/@pietervdvn/109297539270300156), yet it is still popular and is embedded on a few websites.
+The third places goes to all **cycling-related** themes (**7** mentions of 'cycling'). [Cyclofix](https://mapcomplete.osm.be/cyclofix) had another **5** mentions, resulting in **12 total** mentions. This was no surprise either, as cyclofix has been historic driver of many changes made with MapComplete. It is one of the [oldest maps on MapComplete](https://en.osm.town/@pietervdvn/109297539270300156), yet it is still popular and is embedded on a few websites.
 
-The third place goes to [**benches**](https://mapcomplete.osm.be/benches) with 7 mentions - another very down-to-earth topic.
+The third place goes to [**benches**](https://mapcomplete.osm.be/benches) with **7** mentions - another very down-to-earth topic but with lots of value and lots of unmapped features.
 
 Out of the other answers, it is clear that there are various reasons to use MapComplete:
 
@@ -113,7 +113,12 @@ Anything cycling-related |	7
 
 ## What do people still want?
 
-> If you could wish for a map-based application, what would this application do?
+I did ask several open-ended question to gauge interests and for bugs, namely:
+
+- If you could wish for a map-based application, what would this application do?
+- What features would you like to see in MapComplete?
+
+### Question: If you could wish for a map-based application, what would this application do?
 
 This open-ended question came quite early in the survey - even before mentioning MapComplete. This is an intentionally broad question, in order to generate as much ideas as possible and to get a feel of what people's general grievances are.
 
@@ -126,7 +131,7 @@ However, there were a few recurrent themes:
 - Routing was mentioned often as well. Quite a few mappers want a routing engine, taking them to places that need to be updated in OSM or Mapillary; others have specific needs (such as car-free, indoor routing, with live data or offline)
 - At last, some people would love to see features from some app to appear in some other app as well.
 
-> What features would you like to see in MapComplete?
+### Question: What features would you like to see in MapComplete?
 
 Another open-ended question where people can report bugs and feature requests.
 
@@ -136,7 +141,7 @@ Furthermore, an **offline mode** was a popular request with **5** mentions. Simi
 
 There were 7 requests for various improvements to specific themes and a few requests for advanced features which might or might not fit the concept of an 'easy to use'-map editor.
 
-> Houston, we have problem...
+### Houston, we have problem...
 
 Another problem surfaced in the previous question. A big chunk of answers made it clear that there is still a lot of confusion with [the android app **StreetComplete**](https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete) - namely 11 answers (or 6% of _all_ respondents)...
 
