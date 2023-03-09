@@ -7229,6 +7229,34 @@
     },
     "sport_pitch": {
         "description": "Ein Sportplatz",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Öffentlich zugänglich"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Alle Sportarten"
+                    },
+                    "1": {
+                        "question": "Basketballplätze"
+                    },
+                    "2": {
+                        "question": "Fußballplätze"
+                    },
+                    "3": {
+                        "question": "Tischtennisplatten"
+                    },
+                    "4": {
+                        "question": "Tennisplätze"
+                    }
+                }
+            }
+        },
         "name": "Sportplätze",
         "presets": {
             "0": {
@@ -8432,6 +8460,17 @@
     "usersettings": {
         "description": "Eine spezielle Ebene, die nicht für die Darstellung auf einer Karte gedacht ist, sondern für die Festlegung von Benutzereinstellungen verwendet wird",
         "tagRenderings": {
+            "all-questions-at-once": {
+                "mappings": {
+                    "0": {
+                        "then": "Alle Fragen in der Infobox zusammen anzeigen"
+                    },
+                    "1": {
+                        "then": "Fragen der Reihe nach anzeigen"
+                    }
+                },
+                "question": "Sollen Fragen für unbekannte Datenfelder einzeln oder zusammen angezeigt werden?"
+            },
             "contributor-thanks": {
                 "mappings": {
                     "0": {

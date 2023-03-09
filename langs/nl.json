@@ -139,6 +139,7 @@
             "josmOpened": "JOSM is geopend",
             "mapContributionsBy": "De huidige data is bijgedragen door {contributors}",
             "mapContributionsByAndHidden": "De zichtbare data heeft bijdragen van {contributors} en {hiddenCount} andere bijdragers",
+            "mapDataByOsm": "Kaartgegevens: OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> is een online dienst waar straatbeelden onder een vrije licentie gedeeld worden. Deze beelden mogen gebruikt worden om OpenStreetMap te verbeteren.",
             "openIssueTracker": "Geef een fout in de software door",
             "openMapillary": "Open Mapillary op deze locatie",

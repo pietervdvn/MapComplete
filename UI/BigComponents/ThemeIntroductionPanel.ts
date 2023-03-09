@@ -24,7 +24,6 @@ export default class ThemeIntroductionPanel extends Combine {
             osmConnection: OsmConnection
             currentBounds: Store<BBox>
             locationControl: UIEventSource<Loc>
-            isTranslator: Store<boolean>
         },
         guistate?: { userInfoIsOpened: UIEventSource<boolean> }
     ) {

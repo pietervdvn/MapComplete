@@ -74,7 +74,7 @@ class SingleUserSettingsPanel extends EditableTagRendering {
                             if (kv.k.startsWith("_")) {
                                 continue
                             }
-                            osmConnection.GetPreference(kv.k, "", {prefix: ""}).setData(kv.v)
+                            osmConnection.GetPreference(kv.k, "", { prefix: "" }).setData(kv.v)
                         }
 
                         editMode.setData(false)

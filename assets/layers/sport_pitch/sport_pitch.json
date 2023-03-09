@@ -611,7 +611,8 @@
         {
           "question": {
             "en": "Publicly accessible",
-            "nl": "Publiek toegankelijk"
+            "nl": "Publiek toegankelijk",
+            "de": "Öffentlich zugänglich"
           },
           "osmTags": {
             "or": [
@@ -629,35 +630,40 @@
         {
           "question": {
             "en": "All sports",
-            "nl": "Alle sporten"
+            "nl": "Alle sporten",
+            "de": "Alle Sportarten"
           }
         },
         {
           "osmTags": "sport=basketball",
           "question": {
             "nl": "Basketbalvelden",
-            "en": "Basketball fields"
+            "en": "Basketball fields",
+            "de": "Basketballplätze"
           }
         },
         {
           "osmTags": "sport=soccer",
           "question": {
             "nl": "Voetbalvelden",
-            "en": "Soccer fields"
+            "en": "Soccer fields",
+            "de": "Fußballplätze"
           }
         },
         {
           "osmTags": "sport=table_tennis",
           "question": {
             "nl": "Pingpong-tafel",
-            "en": "Ping-pong table"
+            "en": "Ping-pong tables",
+            "de": "Tischtennisplatten"
           }
         },
         {
           "osmTags": "sport=tennis",
           "question": {
             "nl": "Tennisveld",
-            "en": "Tennis field"
+            "en": "Tennis fields",
+            "de": "Tennisplätze"
           }
         }
       ]
