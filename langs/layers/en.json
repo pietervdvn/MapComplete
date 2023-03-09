@@ -4702,7 +4702,8 @@
                         "then": "No name is marked on the bike"
                     }
                 },
-                "question": "Whom is remembered by this ghost bike?<span class='question-subtext'><br/>Please respect privacy - only fill out the name if it is widely published or marked on the cycle. Opt to leave out the family name.</span>",
+                "question": "Whom is remembered by this ghost bike?<span class='question-subtext'>",
+                "questionHint": "Please respect privacy - only fill out the name if it is widely published or marked on the cycle. Opt to leave out the family name.",
                 "render": "In remembrance of {name}"
             },
             "ghost_bike-source": {

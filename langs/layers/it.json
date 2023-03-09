@@ -1319,7 +1319,8 @@
                         "then": "Nessun nome scritto sulla bici"
                     }
                 },
-                "question": "A chi è dedicata questa bici fantasma?<span class='question-subtext'><br/>Rispetta la privacy (compila solo il nome se questo è stato ampiamente pubblicato o se è scritto sulla bici). Decidi se è il caso di non inserire il cognome.</span>",
+                "question": "A chi è dedicata questa bici fantasma?<span class='question-subtext'>",
+                "questionHint": "Rispetta la privacy (compila solo il nome se questo è stato ampiamente pubblicato o se è scritto sulla bici). Decidi se è il caso di non inserire il cognome.",
                 "render": "In ricordo di {name}"
             },
             "ghost_bike-source": {

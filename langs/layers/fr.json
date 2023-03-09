@@ -3150,7 +3150,8 @@
                         "then": "Aucun nom n'est marqué sur le vélo"
                     }
                 },
-                "question": "À qui est dédié ce vélo fantôme ?<span class='question-subtext'><br/>Veuillez respecter la vie privée – ajoutez le nom seulement s'il est largement publié ou marqué sur le vélo. Choisissez de ne pas indiquer le nom de famille </span>",
+                "question": "À qui est dédié ce vélo fantôme ?<span class='question-subtext'>",
+                "questionHint": "Veuillez respecter la vie privée – ajoutez le nom seulement s'il est largement publié ou marqué sur le vélo. Choisissez de ne pas indiquer le nom de famille ",
                 "render": "En souvenir de {name}"
             },
             "ghost_bike-source": {
