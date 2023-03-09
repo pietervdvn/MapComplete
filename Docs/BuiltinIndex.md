@@ -48,7 +48,6 @@
     + [questions](#questions)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
-    + [{upload_to_osm()}](#{upload_to_osm()})
     + [minimap](#minimap)
     + [payment-options-split](#payment-options-split)
     + [denominations-coins](#denominations-coins)
@@ -739,17 +738,6 @@
 
 
 ### export_as_geojson 
-
-
-
-
-
-  - gps_track
-
-
-
-
-### {upload_to_osm()} 
 
 
 

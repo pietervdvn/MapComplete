@@ -108,7 +108,7 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
-The question is  *What is the height of the reception desk? <div class='subtle'>This is measured from the floor to the lowest usable part of the desk</div>*
+The question is  *What is the height of the reception desk? *
 
 This rendering asks information about the property  [desk:height](https://wiki.openstreetmap.org/wiki/Key:desk:height) 
 

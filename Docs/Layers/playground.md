@@ -91,7 +91,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  *Which is the surface of this playground?<br/><i>If there are multiple, select the most occuring one</i>*
+The question is  *Which is the surface of this playground?*
 
 This rendering asks information about the property  [surface](https://wiki.openstreetmap.org/wiki/Key:surface) 
 

@@ -126,7 +126,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  *What is the circumference of the tree trunk?<p class='subtle'>This is measured at a height of 1.30m</p>*
+The question is  *What is the circumference of the tree trunk?*
 
 This rendering asks information about the property  [circumference](https://wiki.openstreetmap.org/wiki/Key:circumference) 
 

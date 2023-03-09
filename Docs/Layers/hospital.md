@@ -88,7 +88,7 @@ This is rendered with  `This hospital is called {name}`
 
 
 
-The question is  *Does this facility admit inpatients?<br><span class='subtle'>An <i>inpatient</i> is a patient which stays for multiple days in the facility</span>*
+The question is  *Does this facility admit inpatients?*
 
 
 

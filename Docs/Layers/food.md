@@ -506,7 +506,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  *If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>*
+The question is  *If you bring your own container (such as a cooking pot and small pots), is it used to package your order?*
 
 
 

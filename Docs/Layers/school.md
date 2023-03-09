@@ -147,7 +147,7 @@ The question is  *Which genders can enroll at this school?*
 
 
 
-The question is  *Does this school target students with a special need? Which structural facilities does this school have?<div class='subtle'>Ad-hoc *
+The question is  *Does this school target students with a special need? Which structural facilities does this school have?*
 
 This rendering asks information about the property  [school:for](https://wiki.openstreetmap.org/wiki/Key:school:for) 
 

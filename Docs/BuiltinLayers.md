@@ -27,7 +27,7 @@
     + [Privacy notice](#privacy-notice)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
-    + [uploadtoosm](#uploadtoosm)
+    + [upload_to_osm](#upload_to_osm)
     + [minimap](#minimap)
     + [delete](#delete)
 1. [type_node](#type_node)
@@ -349,7 +349,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-### uploadtoosm 
+### upload_to_osm 
 
 
 

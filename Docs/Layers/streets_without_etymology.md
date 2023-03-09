@@ -107,7 +107,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-The question is  *What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>*
+The question is  *What is this object named after?*
 
 This rendering asks information about the property  [name:etymology](https://wiki.openstreetmap.org/wiki/Key:name:etymology) 
 

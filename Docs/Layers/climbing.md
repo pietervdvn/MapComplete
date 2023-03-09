@@ -184,7 +184,7 @@ The question is  *Is sport climbing possible here on fixed anchors?*
 
 
 
-The question is  *Is traditional climbing possible here (using own gear e.g. chocks)?*
+The question is  *Is traditional climbing possible here?*
 
 
 

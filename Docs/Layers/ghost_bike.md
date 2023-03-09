@@ -94,7 +94,7 @@ This tagrendering has no question and is thus read-only
 
 
 
-The question is  *Whom is remembered by this ghost bike?<span class='question-subtext'><br/>Please respect privacy - only fill out the name if it is widely published or marked on the cycle. Opt to leave out the family name.</span>*
+The question is  *Whom is remembered by this ghost bike?*
 
 This rendering asks information about the property  [name](https://wiki.openstreetmap.org/wiki/Key:name) 
 
