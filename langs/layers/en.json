@@ -6636,7 +6636,8 @@
         },
         "tagRenderings": {
             "desk-height": {
-                "question": "What is the height of the reception desk? <div class='subtle'>This is measured from the floor to the lowest usable part of the desk</div>",
+                "question": "What is the height of the reception desk? ",
+                "questionHint": "This is measured from the floor to the lowest usable part of the desk",
                 "render": "The height of the desk is <b>{canonical(desk:height)}</b>"
             }
         },

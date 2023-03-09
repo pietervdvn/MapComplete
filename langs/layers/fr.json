@@ -3873,7 +3873,8 @@
         },
         "tagRenderings": {
             "desk-height": {
-                "question": "Quelle est la hauteur de la réception ? <div class='subtle'>Ceci est mesuré du sol à la partie utilisable la plus basse du bureau</div>",
+                "question": "Quelle est la hauteur de la réception ? ",
+                "questionHint": "Ceci est mesuré du sol à la partie utilisable la plus basse du bureau",
                 "render": "La hauteur du bureau est <b>{canonical(desk:height)}</b>"
             }
         },

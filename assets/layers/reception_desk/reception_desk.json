@@ -36,9 +36,9 @@
     {
       "id": "desk-height",
       "question": {
-        "en": "What is the height of the reception desk? <div class='subtle'>This is measured from the floor to the lowest usable part of the desk</div>",
-        "fr": "Quelle est la hauteur de la réception ? <div class='subtle'>Ceci est mesuré du sol à la partie utilisable la plus basse du bureau</div>",
-        "de": "Wie hoch ist der Empfangstresen? <div class='subtle'>Gemessen vom Boden bis zur untersten nutzbaren Stelle des Tisches</div>"
+        "en": "What is the height of the reception desk? ",
+        "fr": "Quelle est la hauteur de la réception ? ",
+        "de": "Wie hoch ist der Empfangstresen? "
       },
       "render": {
         "en": "The height of the desk is <b>{canonical(desk:height)}</b>",
@@ -48,6 +48,11 @@
       "freeform": {
         "key": "desk:height",
         "type": "pfloat"
+      },
+      "questionHint": {
+        "en": "This is measured from the floor to the lowest usable part of the desk",
+        "fr": "Ceci est mesuré du sol à la partie utilisable la plus basse du bureau",
+        "de": "Gemessen vom Boden bis zur untersten nutzbaren Stelle des Tisches"
       }
     },
     "induction-loop"

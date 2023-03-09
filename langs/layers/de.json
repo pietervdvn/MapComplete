@@ -6633,7 +6633,8 @@
         },
         "tagRenderings": {
             "desk-height": {
-                "question": "Wie hoch ist der Empfangstresen? <div class='subtle'>Gemessen vom Boden bis zur untersten nutzbaren Stelle des Tisches</div>",
+                "question": "Wie hoch ist der Empfangstresen? ",
+                "questionHint": "Gemessen vom Boden bis zur untersten nutzbaren Stelle des Tisches",
                 "render": "Die Höhe des Tresens beträgt <b>{canonical(desk:height)}</b>"
             }
         },
