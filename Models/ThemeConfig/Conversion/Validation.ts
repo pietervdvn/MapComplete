@@ -714,7 +714,6 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 `At ${context}: minzoom is ${json.minzoom}, this should be at most ${Constants.userJourney.minZoomLevelToAddNewPoints} as a preset is set. Why? Selecting the pin for a new item will zoom in to level before adding the point. Having a greater minzoom will hide the points, resulting in possible duplicates`
             )
         }
-
         {
             // duplicate ids in tagrenderings check
             const duplicates = Utils.Dedup(

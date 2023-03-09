@@ -7,22 +7,22 @@ import {
     FirstOf,
     Fuse,
     On,
-    SetDefault
-} from "./Conversion";
-import { LayerConfigJson } from "../Json/LayerConfigJson";
-import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson";
-import { Utils } from "../../../Utils";
-import RewritableConfigJson from "../Json/RewritableConfigJson";
-import SpecialVisualizations from "../../../UI/SpecialVisualizations";
-import Translations from "../../../UI/i18n/Translations";
-import { Translation } from "../../../UI/i18n/Translation";
-import tagrenderingconfigmeta from "../../../assets/tagrenderingconfigmeta.json";
-import { AddContextToTranslations } from "./AddContextToTranslations";
-import FilterConfigJson from "../Json/FilterConfigJson";
-import predifined_filters from "../../../assets/layers/filters/filters.json";
-import { TagConfigJson } from "../Json/TagConfigJson";
-import PointRenderingConfigJson from "../Json/PointRenderingConfigJson";
-import LineRenderingConfigJson from "../Json/LineRenderingConfigJson";
+    SetDefault,
+} from "./Conversion"
+import { LayerConfigJson } from "../Json/LayerConfigJson"
+import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
+import { Utils } from "../../../Utils"
+import RewritableConfigJson from "../Json/RewritableConfigJson"
+import SpecialVisualizations from "../../../UI/SpecialVisualizations"
+import Translations from "../../../UI/i18n/Translations"
+import { Translation } from "../../../UI/i18n/Translation"
+import tagrenderingconfigmeta from "../../../assets/tagrenderingconfigmeta.json"
+import { AddContextToTranslations } from "./AddContextToTranslations"
+import FilterConfigJson from "../Json/FilterConfigJson"
+import predifined_filters from "../../../assets/layers/filters/filters.json"
+import { TagConfigJson } from "../Json/TagConfigJson"
+import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
+import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static readonly predefinedFilters = ExpandFilter.load_filters()
@@ -99,12 +99,13 @@ class ExpandTagRendering extends Conversion<
     private readonly _options: {
         /* If true, will copy the 'osmSource'-tags into the condition */
         applyCondition?: true | boolean
+        noHardcodedStrings?: false | boolean
     }
 
     constructor(
         state: DesugaringContext,
         self: LayerConfigJson,
-        options?: { applyCondition?: true | boolean }
+        options?: { applyCondition?: true | boolean; noHardcodedStrings?: false | boolean }
     ) {
         super(
             "Converts a tagRenderingSpec into the full tagRendering, e.g. by substituting the tagRendering by the shared-question",
@@ -130,7 +131,7 @@ class ExpandTagRendering extends Conversion<
         }
     }
 
-    private lookup(name: string): TagRenderingConfigJson[] {
+    private lookup(name: string): TagRenderingConfigJson[] | undefined {
         const direct = this.directLookup(name)
         if (direct === undefined) {
             return undefined
@@ -159,9 +160,9 @@ class ExpandTagRendering extends Conversion<
     }
 
     /**
-     * Looks up a tagRendering based on the name.
+     * Looks up a tagRendering or group of tagRenderings based on the name.
      */
-    private directLookup(name: string): TagRenderingConfigJson[] {
+    private directLookup(name: string): TagRenderingConfigJson[] | undefined {
         const state = this._state
         if (state.tagRenderings.has(name)) {
             return [state.tagRenderings.get(name)]
@@ -192,7 +193,7 @@ class ExpandTagRendering extends Conversion<
             const id_ = id.substring(1)
             matchingTrs = layerTrs.filter((tr) => tr.group === id_ || tr.labels?.indexOf(id_) >= 0)
         } else {
-            matchingTrs = layerTrs.filter((tr) => tr.id === id)
+            matchingTrs = layerTrs.filter((tr) => tr.id === id || tr.labels?.indexOf(id) >= 0)
         }
 
         const contextWriter = new AddContextToTranslations<TagRenderingConfigJson>("layers:")
@@ -237,8 +238,24 @@ class ExpandTagRendering extends Conversion<
             if (lookup === undefined) {
                 const isTagRendering = ctx.indexOf("On(mapRendering") < 0
                 if (isTagRendering) {
-                    warnings.push(ctx + "A literal rendering was detected: " + tr)
+                    warnings.push(
+                        `${ctx}: A literal rendering was detected: ${tr}
+    Did you perhaps forgot to add a layer name as 'layername.${tr}'? ` +
+                            Array.from(state.sharedLayers.keys()).join(", ")
+                    )
                 }
+
+                if (this._options?.noHardcodedStrings && this._state.sharedLayers.size > 0) {
+                    errors.push(
+                        ctx +
+                            "Detected an invocation to a builtin tagRendering, but this tagrendering was not found: " +
+                            tr +
+                            " \n    Did you perhaps forget to add the layer as prefix, such as `icons." +
+                            tr +
+                            "`? "
+                    )
+                }
+
                 return [
                     {
                         render: tr,
@@ -867,7 +884,11 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
                 (layer) => new Each(new PreparePointRendering(state, layer))
             ),
             new SetDefault("titleIcons", ["icons.defaults"]),
-            new On("titleIcons", (layer) => new Concat(new ExpandTagRendering(state, layer))),
+            new On(
+                "titleIcons",
+                (layer) =>
+                    new Concat(new ExpandTagRendering(state, layer, { noHardcodedStrings: true }))
+            ),
             new ExpandFilter()
         )
     }
