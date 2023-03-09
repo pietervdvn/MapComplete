@@ -80,6 +80,7 @@
     "es": "Una estación de carga",
     "fr": "Une station de recharge"
   },
+  "#": "no-question-hint-check",
   "tagRenderings": [
     "images",
     {

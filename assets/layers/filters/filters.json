@@ -119,6 +119,7 @@
     },
     {
       "id": "tactile_paving_advanced",
+      "#": "ignore-possible-duplicate",
       "options": [
         {
           "question": {
