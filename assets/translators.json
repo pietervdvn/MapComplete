@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 250,
+      "commits": 253,
       "contributor": "kjon"
     },
     {
@@ -178,6 +178,10 @@
     },
     {
       "commits": 5,
+      "contributor": "Ettore Atalan"
+    },
+    {
+      "commits": 5,
       "contributor": "ⵣⵓⵀⵉⵔ ⴰⵎⴰⵣⵉⵖ ZOUHIR DEHBI"
     },
     {
@@ -211,10 +215,6 @@
     {
       "commits": 5,
       "contributor": "Alexey Shabanov"
-    },
-    {
-      "commits": 4,
-      "contributor": "Ettore Atalan"
     },
     {
       "commits": 4,
