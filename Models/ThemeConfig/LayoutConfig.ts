@@ -7,7 +7,7 @@ import TilesourceConfig from "./TilesourceConfig"
 import { ExtractImages } from "./Conversion/FixImages"
 import ExtraLinkConfig from "./ExtraLinkConfig"
 import { Utils } from "../../Utils"
-import used_languages from "../../assets/generated/used_languages.json"
+import LanguageUtils from "../../Utils/LanguageUtils"
 
 /**
  * Minimal information about a theme
@@ -274,7 +274,7 @@ export default class LayoutConfig implements LayoutInformation {
                 }
 
                 total++
-                used_languages.languages.forEach((ln) => {
+                LanguageUtils.usedLanguagesSorted.forEach((ln) => {
                     const trans = translation.translations
                     if (trans["*"] !== undefined) {
                         return

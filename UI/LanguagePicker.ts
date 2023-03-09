@@ -4,9 +4,9 @@ import BaseUIElement from "./BaseUIElement"
 import native from "../assets/language_native.json"
 import language_translations from "../assets/language_translations.json"
 import { Translation } from "./i18n/Translation"
-import used_languages from "../assets/generated/used_languages.json"
 import Lazy from "./Base/Lazy"
 import Toggle from "./Input/Toggle"
+import LanguageUtils from "../Utils/LanguageUtils"
 
 export default class LanguagePicker extends Toggle {
     constructor(languages: string[], label: string | BaseUIElement = "") {
@@ -17,7 +17,7 @@ export default class LanguagePicker extends Toggle {
             const normalPicker = LanguagePicker.dropdownFor(languages, label)
             const fullPicker = new Lazy(() => LanguagePicker.dropdownFor(allLanguages, label))
             super(fullPicker, normalPicker, Locale.showLinkToWeblate)
-            const allLanguages: string[] = used_languages.languages
+            const allLanguages: string[] = LanguageUtils.usedLanguagesSorted
         }
     }
 
