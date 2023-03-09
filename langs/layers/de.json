@@ -6308,7 +6308,8 @@
                         "then": "Die Oberfläche ist <b>befestigt</b>"
                     }
                 },
-                "question": "Welchen Bodenbelag hat dieser Spielplatz?<br/><i>Wenn es mehrere gibt, wähle den am häufigsten vorkommende aus</i>",
+                "question": "Welchen Bodenbelag hat dieser Spielplatz?",
+                "questionHint": "Wenn es mehrere gibt, wähle den am häufigsten vorkommende aus",
                 "render": "Die Oberfläche ist <b>{surface}</b>"
             }
         },

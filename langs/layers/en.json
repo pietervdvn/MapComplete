@@ -6311,7 +6311,8 @@
                         "then": "The surface is <b>paved</b>"
                     }
                 },
-                "question": "Which is the surface of this playground?<br/><i>If there are multiple, select the most occuring one</i>",
+                "question": "Which is the surface of this playground?",
+                "questionHint": "If there are multiple, select the most occuring one",
                 "render": "The surface is <b>{surface}</b>"
             }
         },

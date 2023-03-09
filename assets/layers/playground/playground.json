@@ -62,12 +62,12 @@
     "images",
     {
       "question": {
-        "nl": "Wat is de ondergrond van deze speeltuin?<br/><i>Indien er verschillende ondergronden zijn, neem de meest voorkomende</i>",
-        "en": "Which is the surface of this playground?<br/><i>If there are multiple, select the most occuring one</i>",
-        "it": "Qual è la superficie di questo parco giochi?<br/><i>Se ve ne è più di una, seleziona quella predominante</i>",
-        "de": "Welchen Bodenbelag hat dieser Spielplatz?<br/><i>Wenn es mehrere gibt, wähle den am häufigsten vorkommende aus</i>",
-        "fr": "De quelle matière est la surface de l’aire de jeu ?<br/><i>Pour plusieurs matières, sélectionner la principale</i>",
-        "ca": "Quina és la superfície d'aquest parc infantil?<br/><i>Si n'hi ha múltiples, selecciona la més predominant</i>"
+        "nl": "Wat is de ondergrond van deze speeltuin?",
+        "en": "Which is the surface of this playground?",
+        "it": "Qual è la superficie di questo parco giochi?",
+        "de": "Welchen Bodenbelag hat dieser Spielplatz?",
+        "fr": "De quelle matière est la surface de l’aire de jeu ?",
+        "ca": "Quina és la superfície d'aquest parc infantil?"
       },
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",
@@ -178,7 +178,15 @@
           "hideInAnswer": true
         }
       ],
-      "id": "playground-surface"
+      "id": "playground-surface",
+      "questionHint": {
+        "nl": "Indien er verschillende ondergronden zijn, neem de meest voorkomende",
+        "en": "If there are multiple, select the most occuring one",
+        "it": "Se ve ne è più di una, seleziona quella predominante",
+        "de": "Wenn es mehrere gibt, wähle den am häufigsten vorkommende aus",
+        "fr": "Pour plusieurs matières, sélectionner la principale",
+        "ca": "Si n'hi ha múltiples, selecciona la més predominant"
+      }
     },
     {
       "labels": [

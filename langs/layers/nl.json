@@ -6178,7 +6178,8 @@
                         "then": "De ondergrond is <b>verhard</b>"
                     }
                 },
-                "question": "Wat is de ondergrond van deze speeltuin?<br/><i>Indien er verschillende ondergronden zijn, neem de meest voorkomende</i>",
+                "question": "Wat is de ondergrond van deze speeltuin?",
+                "questionHint": "Indien er verschillende ondergronden zijn, neem de meest voorkomende",
                 "render": "De ondergrond is <b>{surface}</b>"
             }
         },

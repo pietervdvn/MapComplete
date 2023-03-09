@@ -1631,7 +1631,8 @@
                         "then": "La superficie è <b>pavimentato</b>"
                     }
                 },
-                "question": "Qual è la superficie di questo parco giochi?<br/><i>Se ve ne è più di una, seleziona quella predominante</i>",
+                "question": "Qual è la superficie di questo parco giochi?",
+                "questionHint": "Se ve ne è più di una, seleziona quella predominante",
                 "render": "La superficie è <b>{surface}</b>"
             }
         },

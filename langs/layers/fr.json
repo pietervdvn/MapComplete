@@ -3667,7 +3667,8 @@
                         "then": "La surface a <b>un revêtement</b>"
                     }
                 },
-                "question": "De quelle matière est la surface de l’aire de jeu ?<br/><i>Pour plusieurs matières, sélectionner la principale</i>",
+                "question": "De quelle matière est la surface de l’aire de jeu ?",
+                "questionHint": "Pour plusieurs matières, sélectionner la principale",
                 "render": "La surface est en <b>{surface}</b>"
             }
         },

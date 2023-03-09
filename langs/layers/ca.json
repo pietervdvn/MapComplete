@@ -2242,7 +2242,8 @@
                 "render": "<a href='tel:{phone}'>{phone}</a>"
             },
             "playground-surface": {
-                "question": "Quina és la superfície d'aquest parc infantil?<br/><i>Si n'hi ha múltiples, selecciona la més predominant</i>"
+                "question": "Quina és la superfície d'aquest parc infantil?",
+                "questionHint": "Si n'hi ha múltiples, selecciona la més predominant"
             }
         },
         "title": {
