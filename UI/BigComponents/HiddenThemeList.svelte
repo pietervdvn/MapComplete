@@ -27,7 +27,7 @@
   $: knownThemes = hiddenThemes.filter((theme) => knownThemesId.includes(theme.id))
 </script>
 
-<ThemesList {search} {state} {onMainScreen} themes={knownThemes} isCustom={true} hideThemes={false}>
+<ThemesList {search} {state} {onMainScreen} themes={knownThemes} isCustom={false} hideThemes={false}>
   <svelte:fragment slot="title">
     <h3>{t.previouslyHiddenTitle.toString()}</h3>
     <p>

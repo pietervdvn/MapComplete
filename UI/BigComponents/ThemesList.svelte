@@ -8,7 +8,7 @@
   import CustomGeneratorButton from "./CustomGeneratorButton.svelte"
   import ProfessionalServicesButton from "./ProfessionalServicesButton.svelte"
   import ThemeButton from "./ThemeButton.svelte"
-  import { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig";
+  import { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
 
   export let search: UIEventSource<string>
   export let themes: LayoutInformation[]
@@ -44,7 +44,7 @@
   <slot name="title" />
   {#if onMainScreen}
     <div class="md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {#if ($search === undefined || $search === "") && !isCustom}
+      {#if ($search === undefined || $search === "") && !isCustom && hideThemes}
         <CustomGeneratorButton userDetails={state.osmConnection.userDetails} />
         <ProfessionalServicesButton />
       {/if}
@@ -55,9 +55,9 @@
         {/if}
       {/each}
     </div>
-    {:else }
+  {:else}
     <div>
-      {#if ($search === undefined || $search === "") && !isCustom}
+      {#if ($search === undefined || $search === "") && !isCustom && hideThemes}
         <CustomGeneratorButton userDetails={state.osmConnection.userDetails} />
         <ProfessionalServicesButton />
       {/if}
@@ -68,8 +68,7 @@
         {/if}
       {/each}
     </div>
-    {/if}
- 
+  {/if}
 
   {#if filteredThemes.length == 0}
     <NoThemeResultButton {search} />
