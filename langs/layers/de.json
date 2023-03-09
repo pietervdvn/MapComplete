@@ -4856,7 +4856,7 @@
                         "then": "Dies ist ein Krankenhaus - Patienten können hier für mehrere Tage aufgenommen werden"
                     }
                 },
-                "question": "Nimmt die Einrichtung stationäre Patienten auf? <br>",
+                "question": "Nimmt die Einrichtung stationäre Patienten auf?",
                 "questionHint": "Ein stationärer Patient ist ein Patient, der mehrere Tage in der Einrichtung bleibt"
             },
             "name": {

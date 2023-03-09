@@ -55,8 +55,8 @@
     {
       "id": "inpatient",
       "question": {
-        "en": "Does this facility admit inpatients?<br>",
-        "de": "Nimmt die Einrichtung stationäre Patienten auf? <br>"
+        "en": "Does this facility admit inpatients?",
+        "de": "Nimmt die Einrichtung stationäre Patienten auf?"
       },
       "mappings": [
         {
