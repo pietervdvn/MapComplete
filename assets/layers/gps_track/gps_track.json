@@ -22,7 +22,10 @@
     },
     "export_as_gpx",
     "export_as_geojson",
-    "{upload_to_osm()}",
+    {
+      "id": "upload_to_osm",
+      "render": "{upload_to_osm()}"
+    },
     "minimap",
     {
       "id": "delete",
