@@ -593,8 +593,10 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
 }
 
 class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
-    constructor() {
-        super("Miscellanious checks on the tagrendering", ["special"], "MiscTagRenderingChecks")
+    private _options: { noQuestionHintCheck: boolean }
+    constructor(options: { noQuestionHintCheck: boolean }) {
+        super("Miscellaneous checks on the tagrendering", ["special"], "MiscTagRenderingChecks")
+        this._options = options
     }
 
     convert(
@@ -615,7 +617,7 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     ': detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
             )
         }
-        if (json["question"]) {
+        if (json["question"] && !this._options?.noQuestionHintCheck) {
             const question = Translations.T(
                 new TypedTranslation(json["question"]),
                 context + ".question"
@@ -644,12 +646,16 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
 }
 
 export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
-    constructor(layerConfig?: LayerConfigJson, doesImageExist?: DoesImageExist) {
+    constructor(
+        layerConfig?: LayerConfigJson,
+        doesImageExist?: DoesImageExist,
+        options?: { noQuestionHintCheck: boolean }
+    ) {
         super(
             "Various validation on tagRenderingConfigs",
             new DetectShadowedMappings(layerConfig),
             new DetectMappingsWithImages(doesImageExist),
-            new MiscTagRenderingChecks()
+            new MiscTagRenderingChecks(options)
         )
     }
 }
@@ -835,7 +841,11 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             if (json.tagRenderings !== undefined) {
                 const r = new On(
                     "tagRenderings",
-                    new Each(new ValidateTagRenderings(json, this._doesImageExist))
+                    new Each(
+                        new ValidateTagRenderings(json, this._doesImageExist, {
+                            noQuestionHintCheck: json["#"]?.indexOf("no-question-hint-check") >= 0,
+                        })
+                    )
                 ).convert(json, context)
                 warnings.push(...(r.warnings ?? []))
                 errors.push(...(r.errors ?? []))
