@@ -4609,7 +4609,7 @@
                         "then": "De naam is niet aangeduid op de fiets"
                     }
                 },
-                "question": "Aan wie is deze witte fiets een eerbetoon?<span class='question-subtext'>",
+                "question": "Aan wie is deze witte fiets een eerbetoon?",
                 "questionHint": "Respecteer privacy - voeg enkel een naam toe indien die op de fiets staat of gepubliceerd is. Eventueel voeg je enkel de voornaam toe.",
                 "render": "Ter nagedachtenis van {name}"
             },

@@ -4702,7 +4702,7 @@
                         "then": "Am Fahrrad ist kein Name angegeben"
                     }
                 },
-                "question": "An wen erinnert dieses Geisterrad?<span class='question-subtext'>",
+                "question": "An wen erinnert dieses Geisterrad?",
                 "questionHint": "Bitte respektieren Sie die Privatsphäre - geben Sie den Namen nur an, wenn er weit verbreitet oder auf dem Fahrrad markiert ist. Den Familiennamen können Sie weglassen.",
                 "render": "Im Gedenken an {name}"
             },

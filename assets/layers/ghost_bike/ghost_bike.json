@@ -102,11 +102,11 @@
     "images",
     {
       "question": {
-        "en": "Whom is remembered by this ghost bike?<span class='question-subtext'>",
-        "nl": "Aan wie is deze witte fiets een eerbetoon?<span class='question-subtext'>",
-        "de": "An wen erinnert dieses Geisterrad?<span class='question-subtext'>",
-        "it": "A chi è dedicata questa bici fantasma?<span class='question-subtext'>",
-        "fr": "À qui est dédié ce vélo fantôme ?<span class='question-subtext'>"
+        "en": "Whom is remembered by this ghost bike?",
+        "nl": "Aan wie is deze witte fiets een eerbetoon?",
+        "de": "An wen erinnert dieses Geisterrad?",
+        "it": "A chi è dedicata questa bici fantasma?",
+        "fr": "À qui est dédié ce vélo fantôme ?"
       },
       "render": {
         "en": "In remembrance of {name}",
