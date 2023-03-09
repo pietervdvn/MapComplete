@@ -3991,7 +3991,7 @@
                         "then": "Ceci est un établissement scolaire pour les étudiants ayant des besoins particuliers"
                     }
                 },
-                "question": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?<div class='subtle'>Ad-hoc ",
+                "question": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?",
                 "render": "Cet établissement scolaire a des installations pour étudiants ayant {school:for}"
             }
         },

@@ -2570,7 +2570,7 @@
                         "then": "Aquesta és una escola per a estudiants amb necessitats especials"
                     }
                 },
-                "question": "Aquesta escola es dirigeix a estudiants amb necessitats especials? Quines instal·lacions estructurals té aquesta escola?<div class='subtle'>Ad-hoc ",
+                "question": "Aquesta escola es dirigeix a estudiants amb necessitats especials? Quines instal·lacions estructurals té aquesta escola?",
                 "render": "Aquesta escola té instal·lacions per a estudiants amb {school:for}"
             }
         }

@@ -6992,7 +6992,8 @@
                         "then": "This is a school for students with special needs"
                     }
                 },
-                "question": "Does this school target students with a special need? Which structural facilities does this school have?<div class='subtle'>Ad-hoc ",
+                "question": "Does this school target students with a special need? Which structural facilities does this school have?",
+                "questionHint": "Ad-hoc measures are not enough to count as a special-needs school",
                 "render": "This school has facilities for students with {school:for}"
             }
         },

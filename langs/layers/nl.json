@@ -6776,7 +6776,8 @@
                         "then": "Deze school richt zich op studenten met extra zorgbehoeften"
                     }
                 },
-                "question": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?<div class='subtle'>Ad-hoc maatregelen zijn niet voldoende</div> ",
+                "question": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?",
+                "questionHint": "Ad-hoc maatregelen zijn niet voldoende ",
                 "render": "Deze school richt zich op studenten met {school:for}"
             }
         },

@@ -6989,7 +6989,7 @@
                         "then": "Dies ist eine Schule für Schüler mit besonderen Bedürfnissen"
                     }
                 },
-                "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?<div class='subtle'>Ad-hoc ",
+                "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?",
                 "render": "Diese Schule verfügt über Einrichtungen für Schüler mit {school:for}"
             }
         },

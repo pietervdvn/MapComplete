@@ -204,11 +204,11 @@
       "id": "target-audience",
       "condition": "school:for~*",
       "question": {
-        "en": "Does this school target students with a special need? Which structural facilities does this school have?<div class='subtle'>Ad-hoc ",
-        "nl": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?<div class='subtle'>Ad-hoc maatregelen zijn niet voldoende</div> ",
-        "de": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?<div class='subtle'>Ad-hoc ",
-        "fr": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?<div class='subtle'>Ad-hoc ",
-        "ca": "Aquesta escola es dirigeix a estudiants amb necessitats especials? Quines instal·lacions estructurals té aquesta escola?<div class='subtle'>Ad-hoc "
+        "en": "Does this school target students with a special need? Which structural facilities does this school have?",
+        "nl": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?",
+        "de": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?",
+        "fr": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?",
+        "ca": "Aquesta escola es dirigeix a estudiants amb necessitats especials? Quines instal·lacions estructurals té aquesta escola?"
       },
       "multiAnswer": true,
       "render": {
@@ -313,7 +313,11 @@
             "ca": "Aquesta és una escola per a estudiants amb necessitats especials"
           }
         }
-      ]
+      ],
+      "questionHint": {
+        "en": "Ad-hoc measures are not enough to count as a special-needs school",
+        "nl": "Ad-hoc maatregelen zijn niet voldoende "
+      }
     },
     "website",
     "phone",
