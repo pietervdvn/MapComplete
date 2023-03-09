@@ -266,7 +266,7 @@ class ExpandTagRendering extends Conversion<
             const lookup = this.lookup(tr)
             if (lookup === undefined) {
                 const isTagRendering = ctx.indexOf("On(mapRendering") < 0
-                if (isTagRendering) {
+                if (isTagRendering && this._state.sharedLayers.size > 0) {
                     warnings.push(
                         `${ctx}: A literal rendering was detected: ${tr}
     Did you perhaps forgot to add a layer name as 'layername.${tr}'? ` +
