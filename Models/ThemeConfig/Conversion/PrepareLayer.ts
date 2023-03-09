@@ -23,16 +23,20 @@ import predifined_filters from "../../../assets/layers/filters/filters.json"
 import { TagConfigJson } from "../Json/TagConfigJson"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
+import { type } from "os"
+import exp from "constants"
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static readonly predefinedFilters = ExpandFilter.load_filters()
+    private _state: DesugaringContext
 
-    constructor() {
+    constructor(state: DesugaringContext) {
         super(
-            "Expands filters: replaces a shorthand by the value found in 'filters.json'",
+            "Expands filters: replaces a shorthand by the value found in 'filters.json'. If the string is formatted 'layername.filtername, it will be looked up into that layer instead",
             ["filter"],
             "ExpandFilter"
         )
+        this._state = state
     }
 
     private static load_filters(): Map<string, FilterConfigJson> {
@@ -60,6 +64,31 @@ class ExpandFilter extends DesugaringStep<LayerConfigJson> {
         for (const filter of <(FilterConfigJson | string)[]>json.filter) {
             if (typeof filter !== "string") {
                 newFilters.push(filter)
+                continue
+            }
+            if (filter.indexOf(".") > 0) {
+                if (this._state.sharedLayers.size > 0) {
+                    const split = filter.split(".")
+                    if (split.length > 2) {
+                        errors.push(
+                            context +
+                                ": invalid filter name: " +
+                                filter +
+                                ", expected `layername.filterid`"
+                        )
+                    }
+                    const layer = this._state.sharedLayers.get(split[0])
+                    if (layer === undefined) {
+                        errors.push(context + ": layer '" + split[0] + "' not found")
+                    }
+                    const expectedId = split[1]
+                    const expandedFilter = (<(FilterConfigJson | string)[]>layer.filter).find(
+                        (f) => typeof f !== "string" && f.id === expectedId
+                    )
+                    newFilters.push(<FilterConfigJson>expandedFilter)
+                } else {
+                    // This is a bootstrapping-run, we can safely ignore this
+                }
                 continue
             }
             // Search for the filter:
@@ -889,7 +918,7 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
                 (layer) =>
                     new Concat(new ExpandTagRendering(state, layer, { noHardcodedStrings: true }))
             ),
-            new ExpandFilter()
+            new ExpandFilter(state)
         )
     }
 }

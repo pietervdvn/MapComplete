@@ -317,7 +317,7 @@ export interface LayerConfigJson {
 
     /**
      * All the extra questions for filtering.
-     * If a string is given, mapComplete will search in 'filters.json' for the appropriate filter
+     * If a string is given, mapComplete will search in 'filters.json' for the appropriate filter or will try to parse it as `layername.filterid` and us that one
      */
     filter?: (FilterConfigJson | string)[] | { sameAs: string }
 

@@ -299,22 +299,7 @@
         }
       ]
     },
-    {
-      "id": "changing_table",
-      "options": [
-        {
-          "question": {
-            "en": "Has a changing table",
-            "nl": "Heeft een luiertafel",
-            "de": "Mit Wickeltisch",
-            "es": "Tiene un cambiador",
-            "fr": "A une table à langer",
-            "da": "Har et puslebord"
-          },
-          "osmTags": "changing_table=yes"
-        }
-      ]
-    },
+    "toilet.changing_table",
     {
       "id": "free",
       "options": [
