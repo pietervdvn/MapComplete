@@ -128,6 +128,13 @@ export interface MappingConfigJson {
      * Use this sparingly
      */
     priorityIf?: TagConfigJson
+
+    /**
+     * Used for comments or to disable a validation
+     *
+     * ignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed
+     */
+    "#"?: string | "ignore-image-in-then"
 }
 
 /**

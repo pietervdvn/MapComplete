@@ -402,4 +402,11 @@ export interface LayerConfigJson {
      * global: all layers with this ID will be synced accross all themes
      */
     syncSelection?: "no" | "local" | "theme-only" | "global"
+
+    /**
+     * Used for comments and/or to disable some checks
+     *
+     * no-question-hint-check: disables a check in MiscTagRenderingChecks which complains about 'div', 'span' or 'class=subtle'-HTML elements in the tagRendering
+     */
+    "#"?: string | "no-question-hint-check"
 }
