@@ -7425,6 +7425,12 @@
                 },
                 "question": "Hat die Treppe einen Handlauf?"
             },
+            "multilevels": {
+                "override": {
+                    "question": "Zwischen welchen Stockwerken befinden sich diese Treppenstufen?",
+                    "render": "Diese Treppenstufen befinden sich zwischen den Stockwerken {level}"
+                }
+            },
             "ramp": {
                 "mappings": {
                     "0": {
@@ -8062,6 +8068,11 @@
         },
         "name": "Toiletten in anderen Einrichtungen",
         "tagRenderings": {
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist die Einrichtung, in der sich diese Toiletten befinden, geöffnet?"
+                }
+            },
             "toilet-access": {
                 "mappings": {
                     "0": {
