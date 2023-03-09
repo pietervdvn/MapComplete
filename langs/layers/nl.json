@@ -4046,7 +4046,8 @@
                         "then": "De oorsprong van deze naam is onbekend in de literatuur"
                     }
                 },
-                "question": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</span>",
+                "question": "Naar wat is dit object vernoemd?",
+                "questionHint": "Dit staat mogelijks vermeld op het straatnaambordje",
                 "render": "Vernoemd naar {name:etymology}"
             },
             "street-name-sign-image": {

@@ -2714,7 +2714,8 @@
                         "then": "L'origine de ce nom est inconnu"
                     }
                 },
-                "question": "En référence à quoi cet objet est-il nommé ?<br/><span class='subtle'>Cela peut être indiqué sur le panneau de la rue</span>",
+                "question": "En référence à quoi cet objet est-il nommé ?",
+                "questionHint": "Cela peut être indiqué sur le panneau de la rue",
                 "render": "Nommé en référence à {name:etymology}"
             },
             "street-name-sign-image": {

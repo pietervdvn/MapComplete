@@ -163,10 +163,10 @@
     {
       "id": "simple etymology",
       "question": {
-        "en": "What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>",
-        "nl": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</span>",
-        "de": "Wonach ist dieses Objekt benannt?<br/><span class='subtle'>Das könnte auf einem Straßenschild stehen</span>",
-        "fr": "En référence à quoi cet objet est-il nommé ?<br/><span class='subtle'>Cela peut être indiqué sur le panneau de la rue</span>"
+        "en": "What is this object named after?",
+        "nl": "Naar wat is dit object vernoemd?",
+        "de": "Wonach ist dieses Objekt benannt?",
+        "fr": "En référence à quoi cet objet est-il nommé ?"
       },
       "render": {
         "en": "Named after {name:etymology}",
@@ -195,6 +195,12 @@
           "name:etymology~*",
           "name:etymology:wikidata="
         ]
+      },
+      "questionHint": {
+        "en": "This might be written on the street name sign",
+        "nl": "Dit staat mogelijks vermeld op het straatnaambordje",
+        "de": "Das könnte auf einem Straßenschild stehen",
+        "fr": "Cela peut être indiqué sur le panneau de la rue"
       }
     },
     "questions",

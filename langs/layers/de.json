@@ -4049,7 +4049,8 @@
                         "then": "Der Ursprung dieses Namens ist in der gesamten Literatur unbekannt"
                     }
                 },
-                "question": "Wonach ist dieses Objekt benannt?<br/><span class='subtle'>Das könnte auf einem Straßenschild stehen</span>",
+                "question": "Wonach ist dieses Objekt benannt?",
+                "questionHint": "Das könnte auf einem Straßenschild stehen",
                 "render": "Benannt nach {name:etymology}"
             },
             "street-name-sign-image": {

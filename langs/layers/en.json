@@ -4049,7 +4049,8 @@
                         "then": "The origin of this name is unknown in all literature"
                     }
                 },
-                "question": "What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>",
+                "question": "What is this object named after?",
+                "questionHint": "This might be written on the street name sign",
                 "render": "Named after {name:etymology}"
             },
             "street-name-sign-image": {
