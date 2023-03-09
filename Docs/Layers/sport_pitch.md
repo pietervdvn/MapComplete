@@ -259,8 +259,8 @@ id | question | osmTags
 available_sports.0 | All sports (default) | 
 available_sports.1 | Basketball fields | sport=basketball
 available_sports.2 | Soccer fields | sport=soccer
-available_sports.3 | Ping-pong table | sport=table_tennis
-available_sports.4 | Tennis field | sport=tennis
+available_sports.3 | Ping-pong tables | sport=table_tennis
+available_sports.4 | Tennis fields | sport=tennis
 
 
 

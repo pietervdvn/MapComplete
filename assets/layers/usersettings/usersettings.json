@@ -70,19 +70,22 @@
     {
       "id": "all-questions-at-once",
       "question": {
-        "en": "Should questions for unknown data fields appear one-by-one or together?"
+        "en": "Should questions for unknown data fields appear one-by-one or together?",
+        "de": "Sollen Fragen für unbekannte Datenfelder einzeln oder zusammen angezeigt werden?"
       },
       "mappings": [
         {
           "if": "mapcomplete-show-all-questions=true",
           "then": {
-            "en": "Show all questions in the infobox together"
+            "en": "Show all questions in the infobox together",
+            "de": "Alle Fragen in der Infobox zusammen anzeigen"
           }
         },
         {
           "if": "mapcomplete-show-all-questions=false",
           "then": {
-            "en": "Show questions one-by-one"
+            "en": "Show questions one-by-one",
+            "de": "Fragen der Reihe nach anzeigen"
           }
         }
       ]
