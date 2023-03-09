@@ -2625,7 +2625,8 @@
                         "then": "Hier gibt es {climbing:traditional} Routen für traditionelles Klettern"
                     }
                 },
-                "question": "Ist hier traditionelles Klettern möglich (eigene Sicherung z.B. mit Klemmkleilen)?"
+                "question": "Ist hier traditionelles Klettern möglich?",
+                "questionHint": "eigene Sicherung z.B. mit Klemmkleilen"
             },
             "website": {
                 "question": "Gibt es eine (inoffizielle) Website mit mehr Informationen (z.B. Topos)?"

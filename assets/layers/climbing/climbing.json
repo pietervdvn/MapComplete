@@ -278,11 +278,18 @@
     {
       "id": "trad_climbing",
       "question": {
-        "de": "Ist hier traditionelles Klettern möglich (eigene Sicherung z.B. mit Klemmkleilen)?",
-        "en": "Is traditional climbing possible here (using own gear e.g. chocks)?",
-        "nl": "Is het mogelijk om hier traditioneel te klimmen? <br/><span class='subtle'>(Dit is klimmen met klemblokjes en friends)</span>",
-        "ja": "伝統的な登山はここで可能ですか(例えば、チョックのような独自のギアを使用して)？",
-        "it": "È possibile arrampicarsi in maniera tradizionale qua (usando attrezzi propri, ad es. dadi)?"
+        "de": "Ist hier traditionelles Klettern möglich?",
+        "en": "Is traditional climbing possible here?",
+        "nl": "Is het mogelijk om hier traditioneel te klimmen? ",
+        "ja": "伝統的な登山はここで可能ですか？",
+        "it": "È possibile arrampicarsi in maniera tradizionale qua?"
+      },
+      "questionHint": {
+        "en": "Using your own gear, e.g. chocks",
+        "de": "eigene Sicherung z.B. mit Klemmkleilen",
+        "nl": "Dit is klimmen met klemblokjes en friends",
+        "ja": "例えば、チョックのような独自のギアを使用して",
+        "it": "usando attrezzi propri, ad es. dadi"
       },
       "mappings": [
         {
@@ -317,6 +324,7 @@
           "hideInAnswer": true
         }
       ]
+    
     },
     {
       "id": "max_bolts",

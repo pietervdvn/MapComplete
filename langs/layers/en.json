@@ -2625,7 +2625,8 @@
                         "then": "There are {climbing:traditional} traditional climbing routes"
                     }
                 },
-                "question": "Is traditional climbing possible here (using own gear e.g. chocks)?"
+                "question": "Is traditional climbing possible here?",
+                "questionHint": "Using your own gear, e.g. chocks"
             },
             "website": {
                 "question": "Is there a (unofficial) website with more informations (e.g. topos)?"

@@ -839,7 +839,8 @@
                         "then": "Sono presenti {climbing:traditional} vie di arrampicata tradizionale"
                     }
                 },
-                "question": "È possibile arrampicarsi in maniera tradizionale qua (usando attrezzi propri, ad es. dadi)?"
+                "question": "È possibile arrampicarsi in maniera tradizionale qua?",
+                "questionHint": "usando attrezzi propri, ad es. dadi"
             },
             "website": {
                 "question": "C’è un sito web (anche non ufficiale) con qualche informazione in più (ad es. topografie)?"

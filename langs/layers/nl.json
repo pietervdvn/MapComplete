@@ -2628,7 +2628,8 @@
                         "then": "Er zijn hier {climbing:traditional} traditionele klimroutes"
                     }
                 },
-                "question": "Is het mogelijk om hier traditioneel te klimmen? <br/><span class='subtle'>(Dit is klimmen met klemblokjes en friends)</span>"
+                "question": "Is het mogelijk om hier traditioneel te klimmen? ",
+                "questionHint": "Dit is klimmen met klemblokjes en friends"
             },
             "website": {
                 "question": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?"
