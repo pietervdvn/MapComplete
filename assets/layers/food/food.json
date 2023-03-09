@@ -842,12 +842,12 @@
     {
       "id": "friture-take-your-container",
       "question": {
-        "nl": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?<br/>",
-        "fr": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>",
-        "en": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>",
-        "ja": "お客様が持参容器(調理用の鍋や小さな鍋など)をもってきた場合は、注文の梱包に使用されますか?<br/>",
-        "de": "Wenn Sie Ihr eigenes Behältnis mitbringen (z. B. einen Kochtopf und kleine Töpfe), wird es dann zum Verpacken Ihrer Bestellung verwendet?<br/>",
-        "es": "Si traes tu propio recipiente (como ollas de cocina y ollas pequeñas), ¿se utiliza para empaquetar tu pedido?<br/>"
+        "nl": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?",
+        "fr": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?",
+        "en": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?",
+        "ja": "お客様が持参容器(調理用の鍋や小さな鍋など)をもってきた場合は、注文の梱包に使用されますか?",
+        "de": "Wenn Sie Ihr eigenes Behältnis mitbringen (z. B. einen Kochtopf und kleine Töpfe), wird es dann zum Verpacken Ihrer Bestellung verwendet?",
+        "es": "Si traes tu propio recipiente (como ollas de cocina y ollas pequeñas), ¿se utiliza para empaquetar tu pedido?"
       },
       "mappings": [
         {

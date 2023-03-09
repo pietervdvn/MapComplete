@@ -3066,7 +3066,7 @@
                         "then": "Il est <b>obligatoire</b> d’apporter ses propres contenants."
                     }
                 },
-                "question": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>"
+                "question": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?"
             },
             "friture-vegan": {
                 "mappings": {

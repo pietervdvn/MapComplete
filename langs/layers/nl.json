@@ -4510,7 +4510,7 @@
                         "then": "Je <b>moet</b> je eigen containers meenemen om je bestelling in mee te nemen."
                     }
                 },
-                "question": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?<br/>"
+                "question": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?"
             },
             "friture-vegan": {
                 "mappings": {

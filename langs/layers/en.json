@@ -4603,7 +4603,7 @@
                         "then": "You <b>must</b> bring your own container to order here."
                     }
                 },
-                "question": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>"
+                "question": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?"
             },
             "friture-vegan": {
                 "mappings": {

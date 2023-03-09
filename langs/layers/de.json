@@ -4603,7 +4603,7 @@
                         "then": "Sie <b>müssen</b> Ihren eigenen Behälter mitbringen, um hier zu bestellen."
                     }
                 },
-                "question": "Wenn Sie Ihr eigenes Behältnis mitbringen (z. B. einen Kochtopf und kleine Töpfe), wird es dann zum Verpacken Ihrer Bestellung verwendet?<br/>"
+                "question": "Wenn Sie Ihr eigenes Behältnis mitbringen (z. B. einen Kochtopf und kleine Töpfe), wird es dann zum Verpacken Ihrer Bestellung verwendet?"
             },
             "friture-vegan": {
                 "mappings": {

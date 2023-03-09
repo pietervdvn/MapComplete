@@ -40,7 +40,10 @@ class ExtractQuestionHint extends DesugaringStep<QuestionableTagRenderingConfigJ
             const parts = q.split(/<br ?\/>/i)
             if (parts.length == 2) {
                 json.question[language] = parts[0]
-                hint[language] = new FixedUiElement(parts[1]).ConstructElement().textContent
+                const txt = new FixedUiElement(parts[1]).ConstructElement().textContent
+                if (txt.length > 0) {
+                    hint[language] = txt
+                }
                 continue
             }
 
@@ -49,9 +52,10 @@ class ExtractQuestionHint extends DesugaringStep<QuestionableTagRenderingConfigJ
             ) // note: > 0, not >= : we are not interested in a span starting right away!
             if (divStart > 0) {
                 json.question[language] = q.substring(0, divStart)
-                hint[language] = new FixedUiElement(
-                    q.substring(divStart)
-                ).ConstructElement().textContent
+                const txt = new FixedUiElement(q.substring(divStart)).ConstructElement().textContent
+                if (txt !== "") {
+                    hint[language] = txt
+                }
             }
         }
         if (Object.keys(hint).length > 0) {
