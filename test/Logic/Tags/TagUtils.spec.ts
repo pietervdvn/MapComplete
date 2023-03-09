@@ -2,7 +2,6 @@ import { TagUtils } from "../../../Logic/Tags/TagUtils"
 import { equal } from "assert"
 import { describe, expect, it } from "vitest"
 
-
 describe("TagUtils", () => {
     describe("ParseTag", () => {
         it("should refuse a key!=* tag", () => {

@@ -8,7 +8,7 @@
   import CustomGeneratorButton from "./CustomGeneratorButton.svelte"
   import ProfessionalServicesButton from "./ProfessionalServicesButton.svelte"
   import ThemeButton from "./ThemeButton.svelte"
-  import { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig";
+  import { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
 
   export let search: UIEventSource<string>
   export let themes: LayoutInformation[]
@@ -55,7 +55,7 @@
         {/if}
       {/each}
     </div>
-    {:else }
+  {:else}
     <div>
       {#if ($search === undefined || $search === "") && !isCustom}
         <CustomGeneratorButton userDetails={state.osmConnection.userDetails} />
@@ -68,8 +68,7 @@
         {/if}
       {/each}
     </div>
-    {/if}
- 
+  {/if}
 
   {#if filteredThemes.length == 0}
     <NoThemeResultButton {search} />
