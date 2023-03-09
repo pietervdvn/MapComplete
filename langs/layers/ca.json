@@ -1859,12 +1859,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "El color de l'hidrant és desconegut."
-                    },
-                    "1": {
                         "then": "L'hidrant és de color groc."
                     },
-                    "2": {
+                    "1": {
                         "then": "L'hidrant és de color roig."
                     }
                 },
@@ -1909,16 +1906,16 @@
             },
             "hydrant-type": {
                 "mappings": {
-                    "1": {
+                    "0": {
                         "then": "De pilar."
                     },
-                    "2": {
+                    "1": {
                         "then": "De tuberia."
                     },
-                    "3": {
+                    "2": {
                         "then": "De paret."
                     },
-                    "4": {
+                    "3": {
                         "then": "Subterrani."
                     }
                 },

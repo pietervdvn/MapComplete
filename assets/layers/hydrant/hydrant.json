@@ -81,25 +81,6 @@
         {
           "if": {
             "and": [
-              "colour="
-            ]
-          },
-          "then": {
-            "en": "The hydrant color is unknown.",
-            "ja": "消火栓の色は不明です。",
-            "ru": "Цвет гидранта не определён.",
-            "fr": "La borne est de couleur inconnue.",
-            "de": "Die Farbe des Hydranten ist unbekannt.",
-            "it": "Il colore dell’idrante è sconosciuto.",
-            "nl": "De kleur van de brandkraan is onbekend.",
-            "es": "Se desconoce el color de la boca de incendios.",
-            "ca": "El color de l'hidrant és desconegut."
-          },
-          "hideInAnswer": true
-        },
-        {
-          "if": {
-            "and": [
               "colour=yellow"
             ]
           },
@@ -162,24 +143,6 @@
         "es": " Tipo de boca de incendios: {fire_hydrant:type}"
       },
       "mappings": [
-        {
-          "if": {
-            "and": [
-              "fire_hydrant:type="
-            ]
-          },
-          "then": {
-            "en": "The hydrant type is unknown.",
-            "ja": "消火栓の種類は不明です。",
-            "it": "Il tipo di idrante è sconosciuto.",
-            "ru": "Тип гидранта не определён.",
-            "fr": "La borne est de type inconnu.",
-            "de": "Der Typ des Hydranten ist unbekannt.",
-            "nl": "Het type brandkraan is onbekend.",
-            "es": "Se desconoce el tipo de la boca de incendios"
-          },
-          "hideInAnswer": true
-        },
         {
           "if": {
             "and": [

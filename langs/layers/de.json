@@ -4907,12 +4907,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "Die Farbe des Hydranten ist unbekannt."
-                    },
-                    "1": {
                         "then": "Die Farbe des Hydranten ist gelb."
                     },
-                    "2": {
+                    "1": {
                         "then": "Die Farbe des Hydranten ist rot."
                     }
                 },
@@ -4975,18 +4972,15 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "Der Typ des Hydranten ist unbekannt."
-                    },
-                    "1": {
                         "then": "Überflurhydrant."
                     },
-                    "2": {
+                    "1": {
                         "then": "Druckloses Rohr."
                     },
-                    "3": {
+                    "2": {
                         "then": "Wandhydrant."
                     },
-                    "4": {
+                    "3": {
                         "then": "Unterflurhydrant."
                     }
                 },

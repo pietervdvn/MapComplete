@@ -4907,12 +4907,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "The hydrant color is unknown."
-                    },
-                    "1": {
                         "then": "The hydrant color is yellow."
                     },
-                    "2": {
+                    "1": {
                         "then": "The hydrant color is red."
                     }
                 },
@@ -4975,18 +4972,15 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "The hydrant type is unknown."
-                    },
-                    "1": {
                         "then": "Pillar type."
                     },
-                    "2": {
+                    "1": {
                         "then": "Pipe type."
                     },
-                    "3": {
+                    "2": {
                         "then": "Wall type."
                     },
-                    "4": {
+                    "3": {
                         "then": "Underground type."
                     }
                 },

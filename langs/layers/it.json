@@ -1354,12 +1354,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "Il colore dell’idrante è sconosciuto."
-                    },
-                    "1": {
                         "then": "Il colore dell’idrante è giallo."
                     },
-                    "2": {
+                    "1": {
                         "then": "L'idrante è rosso."
                     }
                 },
@@ -1383,18 +1380,15 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "Il tipo di idrante è sconosciuto."
-                    },
-                    "1": {
                         "then": "Soprasuolo."
                     },
-                    "2": {
+                    "1": {
                         "then": "Tubo."
                     },
-                    "3": {
+                    "2": {
                         "then": "A muro."
                     },
-                    "4": {
+                    "3": {
                         "then": "Sottosuolo."
                     }
                 },
