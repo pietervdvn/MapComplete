@@ -5,6 +5,12 @@
         "retrying": "Laden von Daten fehlgeschlagen. Erneuter Versuch in {count} Sekunden…",
         "zoomIn": "Ausschnitt vergrößern, um Daten anzuzeigen oder zu bearbeiten"
     },
+    "communityIndex": {
+        "available": "Diese Gemeinschaft spricht {native}",
+        "intro": "Treten Sie mit anderen Menschen in Kontakt, um sie kennen zu lernen, von ihnen zu lernen, ...",
+        "notAvailable": "Diese Gemeinschaft spricht nicht {native}",
+        "title": "Community index"
+    },
     "delete": {
         "cancel": "Abbrechen",
         "cannotBeDeleted": "Dieses Element kann nicht gelöscht werden",
