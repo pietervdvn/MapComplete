@@ -4856,7 +4856,8 @@
                         "then": "This is a hospital - patients can be admitted here for multiple days"
                     }
                 },
-                "question": "Does this facility admit inpatients?<br><span class='subtle'>An <i>inpatient</i> is a patient which stays for multiple days in the facility</span>"
+                "question": "Does this facility admit inpatients?<br>",
+                "questionHint": "An inpatient is a patient which stays for multiple days in the facility"
             },
             "name": {
                 "question": "What is the name of this hospital?",
