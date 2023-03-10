@@ -571,7 +571,7 @@
                 "en": "Trivision"
               },
               "hideInAnswer": { 
-                "or": ["advertising:=screen", "advertising:=column", "advertising:=tarp", "advertising:=wall_painting", "advertising:=column", "advertising:=sculpture", "advertising:=board"]
+                "or": ["advertising:=screen", "advertising:=column", "advertising:=tarp", "advertising:=wall_painting", "advertising:=column", "advertising:=sculpture", "advertising:=board", "advertising:=sign", "advertising:=flag"]
               }
               
             },
@@ -587,7 +587,7 @@
                 "en": "<b>Scrolling</b> posters"
               },
               "hideInAnswer": { 
-                "or": ["advertising!=poster_box", "advertising!=billboard", "advertising!=board"]
+                "or": ["advertising:=screen", "advertising:=column", "advertising:=tarp", "advertising:=wall_painting", "advertising:=column", "advertising:=sculpture", "advertising:=sign", "advertising:=flag"]
               }
             },
             {
@@ -960,9 +960,8 @@
             "en": "a flag"
           },
           "exampleImages":[
-            "",
-            "",
-            ""
+            "./assets/themes/advertising/Advertising_flag.jpg",
+            "./assets/themes/advertising/JR_Central.jpg"
           ]
         },
         {
@@ -1023,9 +1022,9 @@
             "en": "an sculpture"
           },
           "exampleImages":[
-            "",
-            "",
-            ""
+            "./assets/themes/advertising/Sculpture_Aircraft.jpg",
+            "./assets/themes/advertising/Mug.jpg",
+            "/assets/themes/advertising/BS.jpg"
           ]
         },
         {
@@ -1037,10 +1036,18 @@
             "es": "un lletrer",
             "en": "a sign"
           },
+          "preciseInput": {
+            "preferredBackground": "map",
+            "snapToLayer": "walls_and_buildings",
+            "maxSnapDistance": 5
+          },
+          "description": {
+            "en": "Used for advertising signs, neon signs, logos & institutional entrance signs",
+            "es": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
+            "ca": "S'utilitza per a cartells publicitaris, retols de neó, logotips i cartells en entrades institucionals"
+          },
           "exampleImages":[
-            "",
-            "",
-            ""
+            "./assets/themes/advertising/Waitrose_sign.jpg"
           ]
         },
         {
@@ -1058,9 +1065,8 @@
             "maxSnapDistance": 5
           },
           "exampleImages":[
-            "",
-            "",
-            ""
+            "./assets/themes/advertising/tarp_feder.jpg",
+            "./assets/themes/advertising/tarp_madrid.jpg"
           ]
         },
         {
@@ -1073,9 +1079,9 @@
             "en": "a totem"
           },
           "exampleImages":[
-            "",
-            "",
-            ""
+            "./assets/themes/advertising/AdvertisingTotem_004.jpg",
+            "./assets/themes/advertising/AdvertisingTotem_003.jpg",
+            "./assets/themes/advertising/Lidl_totem.jpg"
           ]
         },
         {
@@ -1093,9 +1099,8 @@
             "maxSnapDistance": 5
           },
           "exampleImages":[
-            "",
-            "",
-            ""
+            "./assets/themes/advertising/Capitol_wall.jpg",
+            "./assets/themes/advertising/clarke_wall.jpg"
           ]
         }
       ]
