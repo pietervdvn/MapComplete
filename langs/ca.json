@@ -591,7 +591,7 @@
         "splitTitle": "Tria al mapa on tallar aquesta carretera"
     },
     "translations": {
-        "activateButton": "Ajudar a traduir MapComplete",
+        "activateButton": "Ajuda a traduir MapComplete",
         "missing": "{count} cadenes sense traduir",
         "notImmediate": "Les traduccions no s'actualitzen directament. Això sol trigar uns quants dies"
     },
