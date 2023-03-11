@@ -2,9 +2,9 @@
   "id": "advertising",
   "credits": "Offsel",
   "title": {
+  "en": "Open Advertising Map",
   "ca": "Mapa obert de publicitat",
-  "es": "Mapa abierto de publicidad",
-  "en": "Open Advertising Map"
+  "es": "Mapa abierto de publicidad"
   },
   "shortDescription": {
   "ca": "On puc trobar elements publicitaris?",
@@ -946,7 +946,7 @@
           },
           "exampleImages":[
             "./assets/themes/advertising/AdvertisingColumn_001.jpg",
-            "./assets/themes/advertising/AdvertisingComun_003.jpg"
+            "./assets/themes/advertising/AdvertisingColumn_003.jpg"
           ]
         },
         {
@@ -1022,9 +1022,9 @@
             "en": "an sculpture"
           },
           "exampleImages":[
-            "./assets/themes/advertising/Sculpture_Aircraft.jpg",
+            "./assets/themes/advertising/Aircraft_Sculpture.jpg",
             "./assets/themes/advertising/Mug.jpg",
-            "/assets/themes/advertising/BS.jpg"
+            "./assets/themes/advertising/BS.JPG"
           ]
         },
         {
