@@ -17,7 +17,7 @@
     "test:run-only": "vitest --run test",
     "test": "(npm run generate:doctests 2>&1 | grep -v \"No doctests found in\") && npm run test:run-only && npm run clean:tests",
     "init": "npm ci && npm run generate && npm run generate:editor-layer-index && npm run generate:layouts && npm run clean && npm run weblate-add-upstream",
-    "generate:editor-layer-index": "vite-node scripts/downloadFile.ts -- https://osmlab.github.io/editor-layer-index/imagery.geojson assets/editor-layer-index.json",
+    "generate:editor-layer-index": "vite-node scripts/downloadEli.ts",
     "generate:polygon-features": "vite-node scripts/downloadFile.ts -- https://raw.githubusercontent.com/tyrasd/osm-polygon-features/master/polygon-features.json assets/polygon-features.json",
     "generate:images": "vite-node scripts/generateIncludedImages.ts",
     "generate:translations": "vite-node scripts/generateTranslations.ts",
