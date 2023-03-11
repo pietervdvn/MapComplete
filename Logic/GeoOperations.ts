@@ -234,10 +234,11 @@ export class GeoOperations {
         })
     }
 
-    static bbox(feature: any) {
+    static bbox(feature: any): Feature<LineString, {}> {
         const [lon, lat, lon0, lat0] = turf.bbox(feature)
         return {
             type: "Feature",
+            properties: {},
             geometry: {
                 type: "LineString",
                 coordinates: [
@@ -652,7 +653,7 @@ export class GeoOperations {
     public static clipWith(toSplit: Feature, boundary: Feature<Polygon>): Feature[] {
         if (toSplit.geometry.type === "Point") {
             const p = <Feature<Point>>toSplit
-            if (GeoOperations.inside(p.geometry.coordinates, boundary)) {
+            if (GeoOperations.inside(<[number, number]>p.geometry.coordinates, boundary)) {
                 return [p]
             } else {
                 return []
@@ -687,7 +688,7 @@ export class GeoOperations {
         x: number,
         y: number,
         coordinates: [number, number][][]
-    ) {
+    ): boolean {
         const inside = GeoOperations.pointWithinRing(
             x,
             y,
