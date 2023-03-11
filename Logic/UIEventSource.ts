@@ -1,5 +1,5 @@
 import { Utils } from "../Utils"
-import { Readable, Subscriber, Unsubscriber } from "svelte/store"
+import { Readable, Subscriber, Unsubscriber, Updater, Writable } from "svelte/store"
 
 /**
  * Various static utils
@@ -542,7 +542,7 @@ class MappedStore<TIn, T> extends Store<T> {
     }
 }
 
-export class UIEventSource<T> extends Store<T> {
+export class UIEventSource<T> extends Store<T> implements Writable<T> {
     public data: T
     _callbacks: ListenerTracker<T> = new ListenerTracker<T>()
 
@@ -785,5 +785,13 @@ export class UIEventSource<T> extends Store<T> {
             [],
             (b) => "" + b
         )
+    }
+
+    set(value: T): void {
+        this.setData(value)
+    }
+
+    update(f: Updater<T> & ((value: T) => T)): void {
+        this.setData(f(this.data))
     }
 }
