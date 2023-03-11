@@ -11,7 +11,6 @@ import { BBox } from "../../Logic/BBox"
 import "leaflet-polylineoffset"
 import { SimpleMapScreenshoter } from "leaflet-simple-map-screenshoter"
 import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch"
-import AvailableBaseLayersImplementation from "../../Logic/Actors/AvailableBaseLayersImplementation"
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer"
 import ShowDataLayerImplementation from "../ShowDataLayer/ShowDataLayerImplementation"
 import FilteredLayer from "../../Models/FilteredLayer"
@@ -127,7 +126,6 @@ export default class MinimapImplementation extends BaseUIElement implements Mini
     }
 
     public static initialize() {
-        AvailableBaseLayers.implement(new AvailableBaseLayersImplementation())
         Minimap.createMiniMap = (options) => new MinimapImplementation(options)
         ShowDataLayer.actualContstructor = (options) => new ShowDataLayerImplementation(options)
         StrayClickHandler.construct = (

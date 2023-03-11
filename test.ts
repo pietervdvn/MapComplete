@@ -1,25 +1,72 @@
-import ContactLink from "./UI/BigComponents/ContactLink.svelte"
 import SvelteUIElement from "./UI/Base/SvelteUIElement"
-import { Utils } from "./Utils"
-import List from "./UI/Base/List"
+import MaplibreMap from "./UI/Map/MaplibreMap.svelte"
+import { Store, Stores, UIEventSource } from "./Logic/UIEventSource"
+import { MapLibreAdaptor } from "./UI/Map/MapLibreAdaptor"
+import {
+    EditorLayerIndexProperties,
+    RasterLayerPolygon,
+    RasterLayerProperties,
+} from "./Models/RasterLayers"
+import type { Map as MlMap } from "maplibre-gl"
+import { AvailableRasterLayers } from "./Models/RasterLayers"
+import Loc from "./Models/Loc"
+import { BBox } from "./Logic/BBox"
 import { GeoOperations } from "./Logic/GeoOperations"
-import { Tiles } from "./Models/TileRange"
-import { Stores } from "./Logic/UIEventSource"
+import RasterLayerPicker from "./UI/Map/RasterLayerPicker.svelte"
+import BackgroundLayerResetter from "./Logic/Actors/BackgroundLayerResetter"
 
 async function main() {
-    const location: [number, number] = [3.21, 51.2]
-    const t = Tiles.embedded_tile(location[1], location[0], 6)
-    const url = `https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/tile_${t.z}_${t.x}_${t.y}.geojson`
-    const be = Stores.FromPromise(Utils.downloadJson(url)).mapD(
-        (data) => data.features.find((f) => GeoOperations.inside(location, f)).properties
+    const mlmap = new UIEventSource<MlMap>(undefined)
+    const locationControl = new UIEventSource<Loc>({
+        zoom: 14,
+        lat: 51.1,
+        lon: 3.1,
+    })
+    new SvelteUIElement(MaplibreMap, {
+        map: mlmap,
+    })
+        .SetClass("border border-black")
+        .SetStyle("height: 50vh; width: 90%; margin: 1%")
+        .AttachTo("maindiv")
+    const bg = new UIEventSource<RasterLayerPolygon>(undefined)
+    new MapLibreAdaptor(mlmap, {
+        backgroundLayer: bg,
+        locationControl,
+    })
+
+    const availableLayersBboxes = Stores.ListStabilized(
+        locationControl.mapD((loc) => {
+            const lonlat: [number, number] = [loc.lon, loc.lat]
+            return AvailableRasterLayers.EditorLayerIndex.filter((eliPolygon) =>
+                BBox.get(eliPolygon).contains(lonlat)
+            )
+        })
     )
-    new SvelteUIElement(ContactLink, { country: be }).AttachTo("maindiv")
-    /*
-    const links = data.features
-        .filter((f) => GeoOperations.inside(location, f))
-        .map((f) => new SvelteUIElement(ContactLink, { country: f.properties }))
-    new List(links).AttachTo("maindiv")
-    //*/
+    const availableLayers: Store<RasterLayerPolygon[]> = Stores.ListStabilized(
+        availableLayersBboxes.map((eliPolygons) => {
+            const loc = locationControl.data
+            const lonlat: [number, number] = [loc.lon, loc.lat]
+            const matching: RasterLayerPolygon[] = eliPolygons.filter((eliPolygon) => {
+                if (eliPolygon.geometry === null) {
+                    return true // global ELI-layer
+                }
+                return GeoOperations.inside(lonlat, eliPolygon)
+            })
+            matching.unshift(AvailableRasterLayers.osmCarto)
+            matching.push(...AvailableRasterLayers.globalLayers)
+            return matching
+        })
+    )
+
+    availableLayers.map((a) =>
+        console.log(
+            "Availabe layers at current location:",
+            a.map((al) => al.properties.id)
+        )
+    )
+
+    new BackgroundLayerResetter(bg, availableLayers)
+    new SvelteUIElement(RasterLayerPicker, { availableLayers, value: bg }).AttachTo("extradiv")
 }
 
 main().then((_) => {})

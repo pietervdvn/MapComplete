@@ -1,49 +1,42 @@
-import { UIEventSource } from "../UIEventSource"
-import BaseLayer from "../../Models/BaseLayer"
-import AvailableBaseLayers from "./AvailableBaseLayers"
-import Loc from "../../Models/Loc"
+import { Store, UIEventSource } from "../UIEventSource"
 import { Utils } from "../../Utils"
+import {
+    AvailableRasterLayers,
+    RasterLayerPolygon,
+    RasterLayerUtils,
+} from "../../Models/RasterLayers"
 
 /**
- * Sets the current background layer to a layer that is actually available
+ * When a user pans around on the map, they might pan out of the range of the current background raster layer.
+ * This actor will then quickly select a (best) raster layer of the same category which is available
  */
 export default class BackgroundLayerResetter {
     constructor(
-        currentBackgroundLayer: UIEventSource<BaseLayer>,
-        location: UIEventSource<Loc>,
-        availableLayers: UIEventSource<BaseLayer[]>,
-        defaultLayerId: string = undefined
+        currentBackgroundLayer: UIEventSource<RasterLayerPolygon>,
+        availableLayers: Store<RasterLayerPolygon[]>
     ) {
         if (Utils.runningFromConsole) {
             return
         }
 
-        defaultLayerId = defaultLayerId ?? AvailableBaseLayers.osmCarto.id
+        // Change the baseLayer back to OSM if we go out of the current range of the layer
+        availableLayers.addCallbackAndRunD((availableLayers) => {
+            // We only check on move/on change of the availableLayers
+            const currentBgPolygon: RasterLayerPolygon | undefined = currentBackgroundLayer.data
 
-        // Change the baselayer back to OSM if we go out of the current range of the layer
-        availableLayers.addCallbackAndRun((availableLayers) => {
-            let defaultLayer = undefined
-            const currentLayer = currentBackgroundLayer.data.id
-            for (const availableLayer of availableLayers) {
-                if (availableLayer.id === currentLayer) {
-                    if (availableLayer.max_zoom < location.data.zoom) {
-                        break
-                    }
-
-                    if (availableLayer.min_zoom > location.data.zoom) {
-                        break
-                    }
-                    if (availableLayer.id === defaultLayerId) {
-                        defaultLayer = availableLayer
-                    }
-                    return // All good - the current layer still works!
-                }
+            if (availableLayers.findIndex((available) => currentBgPolygon == available) >= 0) {
+                // Still available!
+                return
             }
+
             // Oops, we panned out of range for this layer!
-            console.log(
-                "AvailableBaseLayers-actor: detected that the current bounds aren't sufficient anymore - reverting to OSM standard"
+            // What is the 'best' map of the same category which is available?
+            const availableInSameCat = RasterLayerUtils.SelectBestLayerAccordingTo(
+                availableLayers,
+                currentBgPolygon?.properties?.category ?? "osmbasedmap"
             )
-            currentBackgroundLayer.setData(defaultLayer ?? AvailableBaseLayers.osmCarto)
+            console.log("Selecting a different layer:", availableInSameCat.properties.id)
+            currentBackgroundLayer.setData(availableInSameCat ?? AvailableRasterLayers.osmCarto)
         })
     }
 }

@@ -61,6 +61,7 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "@onsvisual/svelte-maps": "^1.1.6",
     "@rollup/plugin-typescript": "^11.0.0",
     "@turf/boolean-intersects": "^6.5.0",
     "@turf/buffer": "^6.5.0",
@@ -89,6 +90,7 @@
     "libphonenumber-js": "^1.10.8",
     "lz-string": "^1.4.4",
     "mangrove-reviews-typescript": "^1.1.0",
+    "maplibre-gl": "^2.4.0",
     "opening_hours": "^3.6.0",
     "osm-auth": "^1.0.2",
     "osmtogeojson": "^3.0.0-beta.5",
