@@ -197,6 +197,11 @@
       ]
     }
   ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": true
+  },
+  "deletion": true,
   "filter": [
     {
       "#": "ignore-possible-duplicate",
