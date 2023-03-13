@@ -386,7 +386,8 @@
         "pt": "De que é feito o banco (assento)?",
         "es": "¿De que está hecho el banco (asiento)?",
         "da": "Hvad er bænken (sædet) lavet af?",
-        "cs": "Z čeho je vyrobena lavice (sedadlo)?"
+        "cs": "Z čeho je vyrobena lavice (sedadlo)?",
+        "ca": "De què està fent el banc (seient)?"
       },
       "id": "bench-material",
       "labels": [
@@ -698,7 +699,8 @@
         "pt": "Quando esta bancada foi pesquisada pela última vez?",
         "es": "¿Cuándo fue la última vez que se inspeccionó este banco?",
         "da": "Hvornår blev denne bænk sidst kortlagt?",
-        "cs": "Kdy byla tato lavička naposledy kontrolována?"
+        "cs": "Kdy byla tato lavička naposledy kontrolována?",
+        "ca": "Quan va ser l'últim cop que s'ha inspeccionat aquest banc?"
       },
       "render": {
         "en": "This bench was last surveyed on {survey:date}",
@@ -714,7 +716,8 @@
         "pt": "Esta bancada foi pesquisada pela última vez em {survey:date}",
         "es": "Este banco se inspeccionó por última vez el {survey:date}",
         "da": "Denne bænk blev sidst kortlagt den {survey:date}",
-        "cs": "Tato lavička byla naposledy zkontrolována dne {survey:date}"
+        "cs": "Tato lavička byla naposledy zkontrolována dne {survey:date}",
+        "ca": "Aquest banc s'ha inspeccionat per últim com el {survey:date}"
       },
       "freeform": {
         "key": "survey:date",

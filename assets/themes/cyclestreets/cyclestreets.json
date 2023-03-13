@@ -576,7 +576,8 @@
               "nl": "Aanwonenden toegestaan",
               "fr": "Riverains autorisés",
               "ca": "Residents permesos",
-              "es": "Residentes autorizados"
+              "es": "Residentes autorizados",
+              "cs": "Přístup povolen obyvatelům"
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244_1020-30.svg",

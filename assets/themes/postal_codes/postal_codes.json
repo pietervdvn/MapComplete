@@ -11,7 +11,8 @@
     "nl": "Postcodes",
     "fr": "Codes postaux",
     "da": "Postnumre",
-    "pa_PK": "ڈاک کوڈ"
+    "pa_PK": "ڈاک کوڈ",
+    "cs": "Poštovní směrovací čísla"
   },
   "shortDescription": {
     "en": "Postal codes",
@@ -24,7 +25,8 @@
     "nl": "Postcodes",
     "fr": "Codes postaux",
     "da": "Postnumre",
-    "pa_PK": "ڈاک کوڈ"
+    "pa_PK": "ڈاک کوڈ",
+    "cs": "Poštovní směrovací čísla"
   },
   "description": {
     "en": "Postal codes",
@@ -37,7 +39,8 @@
     "fr": "Codes postaux",
     "da": "Postnumre",
     "nb_NO": "Postnummer",
-    "pa_PK": "ڈاک کوڈ"
+    "pa_PK": "ڈاک کوڈ",
+    "cs": "Poštovní směrovací čísla"
   },
   "icon": "./assets/themes/postal_codes/townhall.svg",
   "startLat": 0,
@@ -61,7 +64,8 @@
         "nl": "postcodes",
         "fr": "codes postaux",
         "da": "postnumre",
-        "pa_PK": "ڈاک کوڈ"
+        "pa_PK": "ڈاک کوڈ",
+        "cs": "poštovní směrovací čísla"
       },
       "minzoom": 8,
       "title": {
@@ -75,7 +79,8 @@
           "nl": "Postcode {postal_code}",
           "fr": "Code postal {postal_code}",
           "da": "Postnummer {postal_code}",
-          "ca": "Codi postal {postal_code}"
+          "ca": "Codi postal {postal_code}",
+          "cs": "Poštovní směrovací číslo {postal_code}"
         }
       },
       "description": {},
@@ -92,7 +97,8 @@
             "fr": "Le code postal est {postal_code}",
             "nb_NO": "Postnummeret er {postal_code}",
             "da": "Postnummeret er {postal_code}",
-            "ca": "El codi postal és {postal_code}"
+            "ca": "El codi postal és {postal_code}",
+            "cs": "Poštovní směrovací číslo je {postal_code}"
           }
         }
       ],
@@ -160,7 +166,8 @@
         "fr": "mairies",
         "nb_NO": "rådhus",
         "da": "rådhuse",
-        "es": "Municipios"
+        "es": "Municipios",
+        "cs": "radnice"
       },
       "minzoom": 12,
       "title": {
@@ -174,7 +181,8 @@
           "da": "Rådhus {name}",
           "nb_NO": "{name}-rådhuset",
           "ca": "Ajuntament de {name}",
-          "es": "Municipio {name}"
+          "es": "Municipio {name}",
+          "cs": "Radnice {name}"
         }
       },
       "calculatedTags": [

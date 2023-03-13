@@ -114,7 +114,8 @@
             "hu": "Tájolás: {direction} (0=észak, 90=kelet stb.)",
             "es": "Orientación: {direction} (donde 0=N y 90=O)",
             "da": "Orientering: {direction} (hvor 0=N og 90=O)",
-            "ca": "Orientació: {direction} (on 0=N y 90=O)"
+            "ca": "Orientació: {direction} (on 0=N y 90=O)",
+            "cs": "Orientace: {direction} (kde 0=N a 90=O)"
           },
           "question": {
             "nl": "Hoe is de tuin georiënteerd?",
@@ -126,7 +127,8 @@
             "hu": "Milyen a kert tájolása?",
             "es": "¿Cual es la orientación del jardín?",
             "da": "Hvad er havens orientering?",
-            "ca": "Quina és l'orientació del jardí?"
+            "ca": "Quina és l'orientació del jardí?",
+            "cs": "Jaká je orientace zahrady?"
           },
           "freeform": {
             "type": "direction",

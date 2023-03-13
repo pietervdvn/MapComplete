@@ -7,7 +7,8 @@
     "pa_PK": "کھیڈاں",
     "fr": "Sports",
     "ca": "Esports",
-    "es": "Deportes"
+    "es": "Deportes",
+    "cs": "Sport"
   },
   "shortDescription": {
     "en": "Map showing sport facilities.",
@@ -15,14 +16,16 @@
     "de": "Karte mit Sporteinrichtungen.",
     "fr": "Carte des équipements sportifs.",
     "ca": "Mapa amb instal·lacions esportives.",
-    "es": "Mapa con instalaciones deportivas."
+    "es": "Mapa con instalaciones deportivas.",
+    "cs": "Mapa se sportovními zařízeními."
   },
   "description": {
     "en": "All about sports, find sport pitches, fitness centres and more.",
     "nl": "Alles over sport: vind sportvelden, fitnesscentra en meer.",
     "de": "Alles über Sport. Finden Sie Sportplätze, Fitnesscenter und vieles mehr.",
     "ca": "Tot sobre esports, troba camps d'esport, gimnasos i molt més.",
-    "es": "Todo sobre deportes, encuentra campos de deporte, gimnasios y mucho más."
+    "es": "Todo sobre deportes, encuentra campos de deporte, gimnasios y mucho más.",
+    "cs": "Vše o sportu, sportovní hřiště, fitness centra a další."
   },
   "icon": "./assets/themes/sports/sport.svg",
   "startLat": 0,
@@ -54,7 +57,8 @@
               "nl": "een sportwinkel",
               "de": "ein Sportgeschäft",
               "ca": "una tenda d'esports",
-              "es": "una tienda de deportes"
+              "es": "una tienda de deportes",
+              "cs": "sportovní obchod"
             },
             "description": {
               "en": "Add a new shop selling sports goods.",
@@ -62,7 +66,8 @@
               "de": "Ein neues Geschäft für Sportartikel hinzufügen.",
               "fr": "Ajouter un nouveau commerce vendant des équipements sportifs.",
               "ca": "Afegeix una nova botiga d'articles esportius.",
-              "es": "Añade una nueva tienda de artículos deportivos."
+              "es": "Añade una nueva tienda de artículos deportivos.",
+              "cs": "Přidejte nový obchod se sportovním zbožím."
             }
           }
         ],

@@ -46,7 +46,7 @@
     "es": "Este sitio recoge todos los lugares oficiales de parada de caravanas y los lugares donde se pueden verter las aguas grises y negras. Puedes añadir detalles sobre los servicios prestados y el coste. Añade fotos y reseñas.",
     "ca": "Aquest lloc recull tots els llocs oficials de parada de caravanes i els llocs on es poden abocar les aigües grises i negres. Pots afegir detalls sobre els serveis prestats i el cost. Afig fotos i ressenyes.",
     "da": "Denne side samler alle officielle camper-stopsteder og steder, hvor du kan dumpe gråt og sort vand. Du kan tilføje detaljer om de leverede tjenester og omkostningerne. Tilføj billeder og anmeldelser. Dette er en hjemmeside og en webapp. Dataene gemmes i OpenStreetMap, så de vil være gratis for evigt og kan genbruges af enhver app.",
-    "cs": "Na této stránce jsou shromážděna všechna oficiální místa pro zastavení karavanů a místa, kde můžete vypouštět šedou a černou vodu. Můžete přidat podrobnosti o poskytovaných službách a cenách. Přidávejte fotografie a recenze. Jedná se o webové stránky a webovou aplikaci. Data jsou uložena v OpenStreetMap, takže budou navždy zdarma a mohou být znovu použita jakoukoli aplikací."
+    "cs": "Na této stránce jsou shromážděna všechna oficiální místa pro zastavení karavanů a místa, kde můžete vypouštět šedou a černou vodu. Můžete přidat podrobnosti o poskytovaných službách a cenách. Přidávejte fotografie a recenze."
   },
   "icon": "./assets/themes/campersite/caravan.svg",
   "startLat": 43.14,
@@ -929,7 +929,8 @@
           "zh_Hant": "{name} 垃圾站",
           "nl": "Loosplaats {name}",
           "ca": "Estació d'abocament {name}",
-          "es": "Vertedero {name}"
+          "es": "Vertedero {name}",
+          "cs": "Odpadní stanice {name}"
         },
         "mappings": [
           {
@@ -949,7 +950,8 @@
               "zh_Hant": "垃圾站",
               "nl": "Loosplaats",
               "ca": "Estació d'abocament",
-              "es": "Vertedero"
+              "es": "Vertedero",
+              "cs": "Odpadní stanice"
             }
           }
         ]

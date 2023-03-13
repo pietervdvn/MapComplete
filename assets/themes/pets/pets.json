@@ -7,7 +7,8 @@
     "nl": "Dierenartsen, hondenloopzones en andere huisdiervriendelijke plaatsen",
     "fr": "Vétérinaires, parcs à chiens et autres endroits pour chiens",
     "ca": "Veterinaris, parcs canins i altres instal·lacions per a mascotes",
-    "es": "Veterinarios, parques para perros y otros servicios para mascotas"
+    "es": "Veterinarios, parques para perros y otros servicios para mascotas",
+    "cs": "Veterináři, psí parky a další služby pro domácí zvířata"
   },
   "description": {
     "en": "On this map, you'll find various interesting places for you pets: veterinarians, dog parks, pet shops, dog-friendly restaurants, ...",
@@ -16,7 +17,8 @@
     "nl": "Deze kaart helpt je op weg met je huisdier: dierenartsen, hondenloopzones, dierenwinkels, hondenvriendelijke restaurants, ...",
     "fr": "Retrouvez sur cette carte des points d’intérêts pour votre animal : vétérinaires, parcs à chien, animaleries, restaurants acceptant les chiens, etc.",
     "ca": "A aquest mapa, trobaràs diferents llocs interesants per a les teves mascotes: veterinaris, parcs per a gossos, botigues d'animals, restaurants amables amb gossos, ...",
-    "es": "En este mapa, encontrarás varios lugares interesantes para tus mascotas: veterinarios, parques para perros, tiendas de mascotas, restaurantes aptos para perros, ..."
+    "es": "En este mapa, encontrarás varios lugares interesantes para tus mascotas: veterinarios, parques para perros, tiendas de mascotas, restaurantes aptos para perros, ...",
+    "cs": "Na této mapě najdete různá zajímavá místa pro vaše domácí mazlíčky: veterináře, psí parky, obchody pro zvířata, restaurace pro psy, ..."
   },
   "icon": "./assets/layers/dogpark/dog-park.svg",
   "startZoom": 10,
@@ -36,7 +38,8 @@
           "nl": "Hondvriendelijke eetgelegenheden",
           "fr": "Restaurants acceptant les chiens",
           "ca": "Restaurants que accepten gossos",
-          "es": "Restaurantes que admiten perros"
+          "es": "Restaurantes que admiten perros",
+          "cs": "Restaurace vhodné pro vstup se psy"
         },
         "mapRendering": [
           {
@@ -84,7 +87,8 @@
           "fr": "Magasins acceptant les chiens",
           "ca": "Botigues amigues dels gossos",
           "pa_PK": "کُتیاں دی اِجازت دیاں دکاناں",
-          "es": "Tiendas aptas para perros"
+          "es": "Tiendas aptas para perros",
+          "cs": "Obchody vhodné pro vstup se psy"
         },
         "title": {
           "render": {
@@ -96,7 +100,8 @@
             "fr": "Magasins acceptant les chiens",
             "ca": "Botigues amigues dels gossos",
             "pa_PK": "کُتیاں دی اِجازت دیاں دکاناں",
-            "es": "Tiendas aptas para perros"
+            "es": "Tiendas aptas para perros",
+            "cs": "Obchody vhodné pro vstup se psy"
           },
           "mappings": [
             {
@@ -191,7 +196,8 @@
               "fr": "magasin acceptant les chiens",
               "ca": "botiga amiga dels gossos",
               "pa_PK": "کُتیاں دی اِجازت دی دکان",
-              "es": "Tienda adaptada para perros"
+              "es": "Tienda adaptada para perros",
+              "cs": "obchod vhodný pro vstup se psem"
             },
             "tags": [
               "dog=yes",
@@ -204,7 +210,8 @@
               "nl": "Een winkel waar je je hond in bijna heel de winkel mag meenemen",
               "fr": "Un magasin où vous pouvez amener votre chien presque partout",
               "ca": "Una botiga on pots dur al gos gairebé a tot arreu",
-              "es": "Una tienda a la que se puede llevar un perro a casi todas partes"
+              "es": "Una tienda a la que se puede llevar un perro a casi todas partes",
+              "cs": "Obchod, ve kterém si můžete vzít psa téměř kamkoli"
             }
           }
         ],

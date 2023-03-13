@@ -24,7 +24,8 @@
     "de": "Dieses Thema zeigt alle (touristischen) Karten, die OpenStreetMap kennt",
     "it": "Questo tema mostra tutte le mappe (turistiche) di cui OpenStreetMap dispone",
     "es": "Este tema muestra todos los mapas (turísticos) que OpenStreetMap conoce",
-    "da": "Dette tema viser alle (turisme) kort, som OpenStreetMap kender til"
+    "da": "Dette tema viser alle (turisme) kort, som OpenStreetMap kender til",
+    "cs": "Toto téma zobrazuje všechny (turistické) mapy, které zná OpenStreetMap"
   },
   "description": {
     "en": "On this map you can find all maps OpenStreetMap knows - typically a big map on an information board showing the area, city or region, e.g. a tourist map on the back of a billboard, a map of a nature reserve, a map of cycling networks in the region, ...) <br/><br/>If a map is missing, you can easily map this map on OpenStreetMap.",

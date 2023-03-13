@@ -98,15 +98,6 @@
                     "1": {
                         "then": "Nástěnná malba"
                     },
-                    "10": {
-                        "then": "Azulejo (španělské dekorativní dlaždice)"
-                    },
-                    "11": {
-                        "then": "Obklady a dlažba"
-                    },
-                    "12": {
-                        "then": "Dřevořezba"
-                    },
                     "2": {
                         "then": "Malba"
                     },
@@ -130,6 +121,15 @@
                     },
                     "9": {
                         "then": "Reliéf"
+                    },
+                    "10": {
+                        "then": "Azulejo (španělské dekorativní dlaždice)"
+                    },
+                    "11": {
+                        "then": "Obklady a dlažba"
+                    },
+                    "12": {
+                        "then": "Dřevořezba"
                     }
                 },
                 "question": "Jaký je typ tohoto uměleckého díla?",

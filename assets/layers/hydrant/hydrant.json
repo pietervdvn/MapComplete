@@ -46,7 +46,8 @@
     "de": "Kartenebene zur Anzeige von Hydranten.",
     "it": "Livello della mappa che mostra gli idranti antincendio.",
     "nl": "Kaartlaag met brandkranen.",
-    "es": "Un mapa que muestra bocas de incendios."
+    "es": "Un mapa que muestra bocas de incendios.",
+    "ca": "Una capa que mostra hidrants."
   },
   "tagRenderings": [
     {
@@ -72,7 +73,8 @@
         "de": "Der Hydrant hat die Farbe {colour}",
         "it": "Il colore dell’idrante è {colour}",
         "nl": "De brandkraan is {colour}",
-        "es": "La boca de incendios es de color {colour}"
+        "es": "La boca de incendios es de color {colour}",
+        "ca": "L'hidrant és de color {colour}"
       },
       "freeform": {
         "key": "colour"
@@ -140,7 +142,8 @@
         "fr": " Type de borne : {fire_hydrant:type}",
         "de": " Hydranten-Typ: {fire_hydrant:type}",
         "nl": " Het type brandkraan is {fire_hydrant:type}",
-        "es": " Tipo de boca de incendios: {fire_hydrant:type}"
+        "es": " Tipo de boca de incendios: {fire_hydrant:type}",
+        "ca": " Tipus d'hidrants: {fire_hydrant:type}"
       },
       "mappings": [
         {
@@ -516,14 +519,16 @@
             "nl": "millimeter",
             "de": "Millimeter",
             "pa_PK": "ملیمیٹر",
-            "ru": "миллиметры"
+            "ru": "миллиметры",
+            "ca": "mil·límetres"
           },
           "humanSingular": {
             "en": "millimeter",
             "nl": "millimeter",
             "de": "Millimeter",
             "pa_PK": "ملیمیٹر",
-            "ru": "миллиметр"
+            "ru": "миллиметр",
+            "ca": "mil·límetre"
           }
         }
       ],

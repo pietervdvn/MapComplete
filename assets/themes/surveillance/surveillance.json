@@ -12,7 +12,8 @@
     "ca": "Vigilància sota vigilància",
     "nb_NO": "Overvåkning under overvåkning",
     "da": "Overvågning under Overvågning",
-    "es": "Vigilancia bajo vigilancia"
+    "es": "Vigilancia bajo vigilancia",
+    "cs": "Dohled pod dohledem"
   },
   "shortDescription": {
     "en": "Surveillance cameras and other means of surveillance",
@@ -27,7 +28,8 @@
     "da": "Overvågningskameraer og andre overvågningsmidler",
     "nb_NO": "Overvåkningskameraer og andre typer overvåkning",
     "ca": "Càmeres de vigilància i altres tipus de vigilància",
-    "es": "Cámaras de vigilancia y otros medios de vigilancia"
+    "es": "Cámaras de vigilancia y otros medios de vigilancia",
+    "cs": "Bezpečnostní kamery a další prostředky sledování"
   },
   "description": {
     "en": "On this open map, you can find surveillance cameras.",
@@ -43,7 +45,8 @@
     "da": "På dette åbne kort kan du finde overvågningskameraer.",
     "nb_NO": "Her finner du overvåkningskameraer.",
     "ca": "A aquest mapa obert pots trobar càmeres de vigilància.",
-    "es": "En este mapa abierto, puede encontrar cámaras de vigilancia."
+    "es": "En este mapa abierto, puede encontrar cámaras de vigilancia.",
+    "cs": "Na této otevřené mapě najdete bezpečnostní kamery."
   },
   "icon": "./assets/themes/surveillance/logo.svg",
   "startLat": 0,

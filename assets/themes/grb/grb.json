@@ -14,7 +14,8 @@
     "fr": "Ce thème tente d’aider l’import automatique GRB.",
     "es": "Este tema es un intento de automatizar la importación GRB.",
     "da": "Dette tema er et forsøg på at hjælpe med at automatisere GRB-importen.",
-    "ca": "Aquest tema és un intent d'automatitzar la importació GRB."
+    "ca": "Aquest tema és un intent d'automatitzar la importació GRB.",
+    "cs": "Toto téma je pokusem o automatizaci importu GRB."
   },
   "icon": "./assets/themes/grb/logo.svg",
   "startLat": 51.0249,
@@ -540,7 +541,8 @@
                 "es": "Este edificio tiene agujeros y está modelado como una relación. Por lo tanto, no se puede combinar. Combínalo manualmente a través <a href='https://buildings.osm.be/#/'>el sitio de exportación de edificios</a> {open_in_josm()}",
                 "fr": "Ce bâtiment a des ouvertures et est modélisé comme une relation. Il ne peut être fusionné. Fusionnez-le manuellement via <a href='https://buildings.osm.be/#/'>le site d’export de bâtiment</a> {open_in_josm()}",
                 "nl": "Dit gebouw heeft openingen en is gemodelleerd als een relatie. Bijgevolg kan het niet worden samengevoegd. Voeg het manueel samen via <a href='https://buildings.osm.be/#/'>de export-site voor gebouwen</a> {open_in_josm()}",
-                "da": "Denne bygning har huller og er modelleret som en relation. Som sådan kan det ikke sammenblandes. Sammensæt det manuelt via <a href='https://buildings.osm.be/#/'>bygningseksportwebstedet</a> {open_in_josm()}"
+                "da": "Denne bygning har huller og er modelleret som en relation. Som sådan kan det ikke sammenblandes. Sammensæt det manuelt via <a href='https://buildings.osm.be/#/'>bygningseksportwebstedet</a> {open_in_josm()}",
+                "cs": "Tato budova má otvory a je modelována jako vztah. Jako takovou ji nelze spojovat. Spojte ji ručně pomocí <a href='https://buildings.osm.be/#/'>exportní stránky budovy</a> {open_in_josm()}"
               }
             },
             {

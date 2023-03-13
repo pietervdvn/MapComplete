@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 253,
+      "commits": 254,
       "contributor": "kjon"
     },
     {
@@ -13,7 +13,7 @@
       "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 88,
+      "commits": 90,
       "contributor": "paunofu"
     },
     {
@@ -142,6 +142,10 @@
     },
     {
       "commits": 6,
+      "contributor": "Fjuro"
+    },
+    {
+      "commits": 6,
       "contributor": "eMerzh"
     },
     {
@@ -219,10 +223,6 @@
     {
       "commits": 4,
       "contributor": "gallegonovato"
-    },
-    {
-      "commits": 4,
-      "contributor": "Fjuro"
     },
     {
       "commits": 4,
