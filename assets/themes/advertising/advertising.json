@@ -812,6 +812,40 @@
                 }
               }
             ]
+        },
+        {
+          "id": "visibility",
+          "question": {
+            "en": "How visible is this advertising?",
+            "ca": "Com de visible és aquesta publicitat?",
+            "es": "Como de visible es esta publicidad?"
+          },
+          "mappings": [
+            {
+              "if": "visibility=house",
+              "then": {
+                "en": "This advertising is visible from about 5 meters away",
+                "ca": "Aquesta publicitat és visible al voltant dels 5 metres de distància",
+                "es": "Esta publicidad es visible alrededor de los 5 metros de dsitancia"
+              }
+            },
+            {
+              "if": "visibility=street",
+              "then": {
+                "en": "This advertising is visible from about 20 meters away",
+                "ca": "Aquesta publicitat és visible al voltant dels 20 metres de distància",
+                "es": "Esta publicidad es visible alrededor de los 20 metros de dsitancia"
+              }
+            },
+            {
+              "if": "visibility=area",
+              "then": {
+                "en": "This advertising is visible from more than 20 meters away",
+                "ca": "Aquesta publicitat és visible des de més de 20 metres de distància",
+                "es": "Esta publicidad es visible desde más de 20 metros de distancia"
+              }
+            }
+          ]
         }
       ],
       "mapRendering": [
