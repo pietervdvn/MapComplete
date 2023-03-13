@@ -486,7 +486,10 @@
                     "1": {
                         "then": "Aquest banc <span class='subtle'>(probablement)</span> no té cap inscripció"
                     }
-                }
+                },
+                "question": "Aquest banc té una inscripció?",
+                "questionHint": "P. ex. en una placa, al respatller, ...",
+                "render": "Aquest banc té la següent inscripció:<br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {
                 "mappings": {
@@ -513,6 +516,14 @@
                 "render": "Material: {material}"
             },
             "bench-memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest banc és un memorial per a algú o alguna cosa"
+                    },
+                    "1": {
+                        "then": "Aquest banc <b>no</b> és un memorial per a algú o alguna cosa"
+                    }
+                },
                 "question": "Aquest banc actua com a memorial per a algú o algo?"
             },
             "bench-seats": {
@@ -570,14 +581,53 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Banc en una parada de transport públic"
+                }
+            },
             "render": "Banc"
         }
     },
     "bicycle_library": {
+        "description": "Una instal·lació on es poden cedir bicicletes per llargs períodes de temps",
         "name": "Biblioteca per a bicicletes",
+        "presets": {
+            "0": {
+                "description": "Una biblioteca de bicicletes té una col·lecció de bicicletes que es poden cedir",
+                "title": "una biblioteca de bicicletes"
+            }
+        },
         "tagRenderings": {
             "bicycle-library-target-group": {
+                "mappings": {
+                    "0": {
+                        "then": "Bicicletes per a xiquets disponibles"
+                    },
+                    "1": {
+                        "then": "Bicicletes per a adults disponibles"
+                    },
+                    "2": {
+                        "then": "Bicicletes per a discapacitats disponibles"
+                    }
+                },
                 "question": "Qui pot llogar bicicletes aquí?"
+            },
+            "bicycle_library-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "El préstec d'una bicicleta és gratuït"
+                    },
+                    "1": {
+                        "then": "El préstec d'una bicicleta costa 20€/any i 20€ de garantia"
+                    }
+                },
+                "question": "Quant costa el préstec d'una bicicleta?",
+                "render": "El préstec d'una bicicleta costa {charge}"
+            },
+            "bicycle_library-name": {
+                "question": "Com es diu aquesta biblioteca de bicicletes?",
+                "render": "Aquesta biblioteca de bicicletes es diu {name}"
             }
         },
         "title": {
@@ -585,6 +635,18 @@
         }
     },
     "bicycle_rental": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} ha tancat permanentment"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Aquesta botiga de bicicletes solia llogar bicicletes, però ja no"
+                }
+            }
+        },
         "description": "Estacions de lloguer de bicicletes",
         "name": "Lloguer de bicicletes",
         "presets": {
@@ -599,10 +661,56 @@
         "tagRenderings": {
             "bicycle-types": {
                 "mappings": {
+                    "0": {
+                        "then": "Aquí es poden llogar bicicletes de ciutat normals"
+                    },
+                    "1": {
+                        "then": "Aquí es poden llogar bicicletes elèctriques"
+                    },
+                    "2": {
+                        "then": "Aquí es poden llogar BMX"
+                    },
+                    "3": {
+                        "then": "Aquí es poden llogar bicicletes de muntanya"
+                    },
                     "4": {
                         "then": "Aquí es poden llogar bicicletes infantils"
+                    },
+                    "5": {
+                        "then": "Aquí es poden llogar tàndems"
+                    },
+                    "6": {
+                        "then": "Aquí es poden llogar bicicletes de carreres"
+                    },
+                    "7": {
+                        "then": "Aquí es poden llogar cascos de bicicleta"
                     }
-                }
+                },
+                "question": "Quin tipus de bicicletes i accessoris es lloguen aquí?",
+                "render": "{rental} es lloga aquí"
+            },
+            "bicycle_rental_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Es tracta d'una botiga que té com a objectiu principal el lloguer de bicicletes"
+                    },
+                    "1": {
+                        "then": "Es tracta d'una empresa de lloguer que lloga diversos objectes i/o vehicles. També lloga bicicletes, però aquest no és l'objectiu principal"
+                    },
+                    "2": {
+                        "then": "Es tracta d'una botiga que ven o repara bicicletes, però també lloga bicicletes"
+                    },
+                    "3": {
+                        "then": "Es tracta d'una estació d'acoblament automatitzada, on una bicicleta es bloqueja mecànicament a una estructura"
+                    },
+                    "4": {
+                        "then": "Hi ha una màquina present que dispensa i accepta claus, eventualment després de l'autenticació i/o el pagament. Les bicicletes estan aparcades a prop"
+                    },
+                    "5": {
+                        "then": "Aquest és un punt de baixada, p. ex. un aparcament reservat per col·locar les bicicletes marcades clarament com a només per al servei de lloguer"
+                    }
+                },
+                "question": "Quin tipus de lloguer de bicicletes és aquest?"
             },
             "rental_types": {
                 "rewrite": {
@@ -626,17 +734,81 @@
         }
     },
     "bicycle_tube_vending_machine": {
-        "description": "Una capa que mostra màquines expenedores per a tubs de bicicleta (ja siguin màquines expenedores de tubs de bicicleta o màquines expenedores clàssiques amb tubs de bicicleta i opcionalment objectes addicionals relacionats amb la bicicleta com ara llums, guants, panys, ...)"
+        "description": "Una capa que mostra màquines expenedores per a tubs de bicicleta (ja siguin màquines expenedores de tubs de bicicleta o màquines expenedores clàssiques amb tubs de bicicleta i opcionalment objectes addicionals relacionats amb la bicicleta com ara llums, guants, panys, ...)",
+        "tagRenderings": {
+            "Still in use?": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquesta màquina expenedora està trencada"
+                    },
+                    "2": {
+                        "then": "Aquesta màquina expenedora està tancada"
+                    }
+                },
+                "question": "Aquesta màquina expenedora encara funciona?",
+                "render": "L'estat operatiu és <i>{operational_status}</i>"
+            }
+        },
+        "title": {
+            "render": "Màquina expenedora de tubs de bicicleta"
+        }
     },
     "bike_cafe": {
         "description": "Un cafè ciclista és un cafè enfocat a ciclistes, per exemple, amb serveis com una manxa, amb molta decoració relacionada amb el ciclisme, …",
         "name": "Cafeteria per a bicicletes",
+        "presets": {
+            "0": {
+                "title": "un cafè ciclista"
+            }
+        },
+        "tagRenderings": {
+            "bike_cafe-bike-pump": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest cafè ciclista ofereix una bomba de bicicletes per a qualsevol persona"
+                    },
+                    "1": {
+                        "then": "Aquest cafè ciclista no ofereix una bomba de bicicletes per a qualsevol persona"
+                    }
+                },
+                "question": "Aquest cafè ciclista ofereix una bomba de bicicletes per a qualsevol persona?"
+            },
+            "bike_cafe-name": {
+                "question": "Quin és el nom d'aquest cafè ciclista?",
+                "render": "Aquest cafè ciclista s'anomena {name}"
+            },
+            "bike_cafe-repair-service": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest cafè ciclista repara bicicletes"
+                    },
+                    "1": {
+                        "then": "Aquest cafè ciclista no repara bicicletes"
+                    }
+                },
+                "question": "Aquest cafè ciclista repara bicicletes?"
+            },
+            "bike_cafe-repair-tools": {
+                "question": "Hi ha eines aquí per reparar la teva pròpia bicicleta?"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Quan obri aquest cafè ciclista?"
+                }
+            }
+        },
         "title": {
             "render": "Cafeteria per a bicicletes"
         }
     },
     "bike_cleaning": {
+        "description": "Una capa que mostra les instal·lacions on pots netejar la teva bicicleta",
         "name": "Servei de neteja de bicicletes",
+        "presets": {
+            "0": {
+                "title": "un servei de neteja de bicicletes"
+            }
+        },
         "tagRenderings": {
             "bike_cleaning-charge": {
                 "mappings": {
@@ -647,20 +819,33 @@
                         "then": "Aquest servei de neteja és de pagament"
                     }
                 },
-                "question": "Molt costa utilitzar aquest servei de neteja?"
+                "question": "Molt costa utilitzar aquest servei de neteja?",
+                "render": "L'ús del servei de neteja costa {charge}"
             },
             "bike_cleaning-service:bicycle:cleaning:charge": {
                 "mappings": {
                     "0": {
                         "then": "El servei de rentat és gratuït"
+                    },
+                    "1": {
+                        "then": "Debades"
                     }
                 },
                 "question": "Molt costa utilitzar el servei de rentat?",
                 "render": "Utilitzar el servei de rentat costa {service:bicycle:cleaning:charge}"
             }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Servei de neteja de bicicletes <i>{name}</i>"
+                }
+            },
+            "render": "Servei de neteja de bicicletes"
         }
     },
     "bike_parking": {
+        "description": "Una capa que mostra on pots aparcar la teva bicicleta",
         "name": "Aparcament per a bicicletes",
         "presets": {
             "0": {
@@ -700,14 +885,26 @@
                     "4": {
                         "then": "De dos nivells"
                     },
+                    "5": {
+                        "then": "cobert"
+                    },
                     "6": {
                         "then": "Pilona"
+                    },
+                    "7": {
+                        "then": "Una zona al terra que està senyalitzada per a l'aparcament de bicicletes"
                     }
-                }
+                },
+                "question": "Quin és el tipus d'aquest aparcament de bicicletes?",
+                "render": "Aquest és un aparcament de bicicletes del tipus: {bicycle_parking}"
             },
             "Capacity": {
                 "question": "Quantes bicicletes caben en aquest aparcament de bicicletes (incloent possibles bicicletes de càrrega)?",
                 "render": "Espai per a {capacity} bicis"
+            },
+            "Cargo bike capacity?": {
+                "question": "Quantes bicicletes de càrrega caben en aquest aparcament de bicicletes?",
+                "render": "A aquest aparcament caben {capacity:cargo bike} bicicletes de càrrega"
             },
             "Cargo bike spaces?": {
                 "mappings": {
@@ -731,7 +928,8 @@
                     "1": {
                         "then": "Aquest aparcament no està cobert"
                     }
-                }
+                },
+                "question": "Aquest aparcament està cobert? També seleccioneu \"cobert\" per als aparcaments interiors."
             },
             "Underground?": {
                 "mappings": {
@@ -756,6 +954,7 @@
         }
     },
     "bike_repair_station": {
+        "description": "Una capa que mostra bombes de bicicletes i suports d'eines de reparació de bicicletes",
         "name": "Manxa i reparació de bicicletes",
         "presets": {
             "0": {
@@ -768,7 +967,8 @@
                     "1": {
                         "then": "Només hi ha present ferramentes (tornavísos, pinces, …)"
                     }
-                }
+                },
+                "question": "Quins serveis hi ha disponibles en aquesta ubicació?"
             },
             "bike_repair_station-electrical_pump": {
                 "mappings": {
@@ -787,6 +987,15 @@
                     },
                     "2": {
                         "then": "Schrader (cotxes i bicicletes de muntanya)"
+                    }
+                }
+            },
+            "send_email_about_broken_pump": {
+                "render": {
+                    "special": {
+                        "body": "Hola,\n\nAmb aquest correu electrònic, m'agradaria informar-vos que la bomba de bicicleta situada a https://mapcomplete.osm.be/cyclofix?lat={_lat}&lon={_lon}&z=18#{id} està trencada.\n\nSalutacions cordials",
+                        "button_text": "Informar aquesta bomba de bicicleta com a trencada",
+                        "subject": "Bomba de bicicleta trencada"
                     }
                 }
             }
@@ -934,6 +1143,20 @@
                 "title": "uns prismàtics"
             }
         },
+        "tagRenderings": {
+            "binocular-charge": {
+                "mappings": {
+                    "0": {
+                        "then": "Debades"
+                    }
+                },
+                "question": "Quant s'ha de pagar per utilitzar aquests prismàtics?",
+                "render": "L'ús d'aquests prismàtics costa {cargo}"
+            },
+            "binocular-direction": {
+                "question": "En mirar a través d'aquest binocular, en quina direcció es mira?"
+            }
+        },
         "title": {
             "render": "Prismàtics"
         }
@@ -944,6 +1167,15 @@
                 "options": {
                     "0": {
                         "question": "Accessible per a cadires de rodes"
+                    }
+                }
+            }
+        },
+        "tagRenderings": {
+            "bird-hide-wheelchair": {
+                "mappings": {
+                    "3": {
+                        "then": "No accessible per a persones amb cadira de rodes"
                     }
                 }
             }
@@ -994,6 +1226,29 @@
                 }
             },
             "render": "Bar"
+        }
+    },
+    "car_rental": {
+        "description": "Llocs on pots llogar un cotxe",
+        "name": "Lloguer de cotxes",
+        "presets": {
+            "0": {
+                "description": "Un lloc on pots llogar un cotxe",
+                "title": "un lloguer de cotxes"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Nom del lloguer de cotxes"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Aquest lloguer de cotxes no té nom"
+                    }
+                },
+                "question": "Com es diu aquest lloguer de cotxes?"
+            }
         }
     },
     "charging_station": {
@@ -1375,7 +1630,7 @@
             "visibility": {
                 "mappings": {
                     "0": {
-                        "then": "Aquest rellotge és visible al voltant de 5 metres de distància (un petit rellotge muntat a la paret)"
+                        "then": "Aquest rellotge és visible al voltant dels 5 metres de distància (un petit rellotge muntat a la paret)"
                     },
                     "1": {
                         "then": "Aquest rellotge és visible al voltant dels 20 metres de distància (rellotge de tamany mig a una tanca publicitària)"
