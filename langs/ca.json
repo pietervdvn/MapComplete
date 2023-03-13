@@ -5,6 +5,11 @@
         "retrying": "La càrrega de dades ha fallat. Tornant-ho a intentar en ({count}) segons…",
         "zoomIn": "Amplia per veure o editar les dades"
     },
+    "communityIndex": {
+        "available": "Aquesta comunitat parla {native}",
+        "intro": "Posa't en contacte amb altres persones per conèixer-los, aprendre d'ells,...",
+        "title": "Índex de la comunitat"
+    },
     "delete": {
         "cancel": "Cancel·lar",
         "cannotBeDeleted": "Aquest element no pot ser esborrat",
