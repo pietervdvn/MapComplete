@@ -923,7 +923,7 @@
             },
             "Cargo bike capacity?": {
                 "question": "Quantes bicicletes de càrrega caben en aquest aparcament de bicicletes?",
-                "render": "A aquest aparcament caben {capacity:cargo bike} bicicletes de càrrega"
+                "render": "A aquest aparcament caben {capacity:cargo_bike} bicicletes de càrrega"
             },
             "Cargo bike spaces?": {
                 "mappings": {
@@ -1270,7 +1270,7 @@
                     }
                 },
                 "question": "Quant s'ha de pagar per utilitzar aquests prismàtics?",
-                "render": "L'ús d'aquests prismàtics costa {cargo}"
+                "render": "L'ús d'aquests prismàtics costa {charge}"
             },
             "binocular-direction": {
                 "question": "En mirar a través d'aquest binocular, en quina direcció es mira?",
