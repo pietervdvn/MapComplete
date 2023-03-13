@@ -596,8 +596,14 @@
                     },
                     "facadegardens-plants": {
                         "mappings": {
+                            "1": {
+                                "then": "Hi ha plantes amb flors"
+                            },
                             "2": {
                                 "then": "Hi ha arbustos"
+                            },
+                            "3": {
+                                "then": "Hi ha plantes que cobreixen el sòl"
                             }
                         },
                         "question": "Quin tipus de plantes creixen aquí?"
@@ -667,10 +673,34 @@
                         "question": "Quin tipus d'edifici és aquest?"
                     }
                 }
+            },
+            "6": {
+                "tagRenderings": {
+                    "Import-button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Encara no s'han calculat les metaetiquetes... Torneu a obrir aquesta finestra emergent"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "grb_fixme": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Quin tipus d'edifici és aquest?"
+                    }
+                }
             }
         }
     },
     "hackerspaces": {
+        "description": "En aquest mapa podeu veure els hackerspaces, afegir un nou hackerspace o actualitzar les dades directament",
+        "shortDescription": "Un mapa dels hackerspaces",
         "title": "Espai per a hackers"
     },
     "hailhydrant": {
@@ -680,13 +710,44 @@
     },
     "healthcare": {
         "description": "En aquest mapa es mostren diversos elements relacionats amb la salut",
+        "layers": {
+            "5": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "una botiga de subministraments mèdics"
+                        },
+                        "1": {
+                            "title": "una botiga d'audiòfons"
+                        },
+                        "2": {
+                            "title": "una òptica"
+                        }
+                    }
+                }
+            }
+        },
         "title": "Assistència sanitària"
     },
     "hotels": {
+        "description": "En aquest mapa trobareu hotels a la vostra zona",
         "title": "Hotels"
     },
     "indoors": {
+        "description": "En aquest mapa es mostren els llocs interiors accessibles al públic",
         "title": "Interiors"
+    },
+    "kerbs_and_crossings": {
+        "description": "Un mapa amb voreres i encreuaments.",
+        "title": "Vorals i encreuaments"
+    },
+    "mapcomplete-changes": {
+        "description": "Aquest mapa mostra tots els canvis fets amb MapComplete",
+        "layers": {
+            "0": {
+                "description": "Mostra tots els canvis de MapComplete"
+            }
+        }
     },
     "maproulette": {
         "title": "Tasques de MapRoulette"
@@ -710,19 +771,6 @@
     },
     "onwheels": {
         "layers": {
-            "4": {
-                "override": {
-                    "filter": {
-                        "0": {
-                            "options": {
-                                "1": {
-                                    "question": "Sense informació de l'amplada"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "19": {
                 "override": {
                     "=title": {
@@ -737,6 +785,19 @@
                             "render": {
                                 "special": {
                                     "text": "Importar"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "1": {
+                                    "question": "Sense informació de l'amplada"
                                 }
                             }
                         }
@@ -902,10 +963,6 @@
     "stations": {
         "description": "Veure, editar i afegir detalls a una estació de tren",
         "layers": {
-            "3": {
-                "description": "Capa que mostra les estacions de tren",
-                "name": "Estació de tren"
-            },
             "15": {
                 "description": "Pantalles que mostren els trens que sortiran de l'estació",
                 "name": "Taulers de sortides",
@@ -937,6 +994,10 @@
                 "title": {
                     "render": "Tauler de sortides"
                 }
+            },
+            "3": {
+                "description": "Capa que mostra les estacions de tren",
+                "name": "Estació de tren"
             }
         },
         "title": "Estacions de tren"
