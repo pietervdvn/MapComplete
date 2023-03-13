@@ -280,6 +280,21 @@
     ]
   },
   {
+    "path": "flag.svg",
+    "license": "CC BY-SA 3.0",
+    "authors": [
+      "Barnes38",
+      "Ash Crow",
+      "Happy-melon",
+      "Aris Katsaris",
+      "Pietervdvn"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Column.svg",
+      "https://commons.wikimedia.org/wiki/File:Flag_icon_darkblue.svg"
+    ]
+  },
+  {
     "path": "icon.svg",
     "license": "CC-BY-SA 4.0",
     "authors": [
@@ -327,6 +342,29 @@
     ],
     "sources": [
       "https://imgur.com/HKsRycm"
+    ]
+  },
+  {
+    "path": "screen.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Barnes38",
+      "Pietervdvn"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Poster_box.svg"
+    ]
+  },
+  {
+    "path": "sculpture.svg",
+    "license": "CC BY 3.0",
+    "authors": [
+      "Nathaniel Smith",
+      "Pietervdvn"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Column.svg",
+      "https://commons.wikimedia.org/wiki/File:Sculpture_(NP100738).svg"
     ]
   },
   {

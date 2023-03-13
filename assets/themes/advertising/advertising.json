@@ -170,7 +170,7 @@
             "then": {
               "ca": "Paret Pintada",
               "es": "Pared Pintada",
-              "en": "Wall Painted"
+              "en": "Wall painting"
             }
           }
         ]
@@ -258,7 +258,7 @@
                 "en": "This is a flag"
               },
               "icon": {
-                "path": "./assets/themes/advertising/icon.svg",
+                "path": "./assets/themes/advertising/flag.svg",
                 "class": "medium"
               }
             },
@@ -306,7 +306,7 @@
                 "en": "This is a sculpture"
               },
               "icon": {
-                "path": "./assets/themes/advertising/icon.svg",
+                "path": "./assets/themes/advertising/sculpture.svg",
                 "class": "medium"
               }
             },
@@ -367,7 +367,7 @@
               "then": {
                 "ca": "Açò és una paret pintada",
                 "es": "Esto es una pared pintada",
-                "en": "This is a wall painted"
+                "en": "This is a wall painting"
               },
               "icon": {
                 "path": "./assets/themes/advertising/icon.svg",
@@ -541,7 +541,7 @@
                 "en": "<b>Digital Prices</b>"
               },
               "hideInAnswer": { 
-                "and": ["advertising:=flag", "advertising:=sculpture", "advertising:=tarp", "advertising:=wall_painting", "advertising:=board"]
+                "and": ["advertising=flag", "advertising=sculpture", "advertising=tarp", "advertising=wall_painting", "advertising=board"]
               }
             },
             {
@@ -571,7 +571,7 @@
                 "en": "Trivision"
               },
               "hideInAnswer": { 
-                "or": ["advertising:=screen", "advertising:=column", "advertising:=tarp", "advertising:=wall_painting", "advertising:=column", "advertising:=sculpture", "advertising:=board", "advertising:=sign", "advertising:=flag"]
+                "or": ["advertising=screen", "advertising=column", "advertising=tarp", "advertising=wall_painting", "advertising=column", "advertising=sculpture", "advertising=board", "advertising=sign", "advertising=flag"]
               }
               
             },
@@ -587,7 +587,7 @@
                 "en": "<b>Scrolling</b> posters"
               },
               "hideInAnswer": { 
-                "or": ["advertising:=screen", "advertising:=column", "advertising:=tarp", "advertising:=wall_painting", "advertising:=column", "advertising:=sculpture", "advertising:=sign", "advertising:=flag"]
+                "or": ["advertising=screen", "advertising=column", "advertising=tarp", "advertising=wall_painting", "advertising=column", "advertising=sculpture", "advertising=sign", "advertising=flag"]
               }
             },
             {
@@ -602,7 +602,7 @@
                 "en": "<b>Rotates</b> on itself"
               },
               "hideInAnswer": { 
-                "or": ["advertising:=flag", "advertising:=board", "advertising:=tarp", "advertising:=wall_painting"]
+                "or": ["advertising=flag", "advertising=board", "advertising=tarp", "advertising=wall_painting"]
               }
             }
           ]
@@ -711,7 +711,7 @@
                     "en": "To expres your opinion"
                   },
                   "hideInAnswer": { 
-                    "or": ["advertising:=flag", "advertising:=screen"]
+                    "or": ["advertising=flag", "advertising=screen"]
                   }
                 },
                 {
@@ -738,7 +738,7 @@
                     "en": "Funding sign"
                   },
                   "hideInAnswer": { 
-                    "or": ["advertising:=flag", "advertising:=column"]
+                    "or": ["advertising=flag", "advertising=column"]
                   }
                 }
             ]
@@ -875,7 +875,7 @@
               },
               {
                 "if": "advertising=flag",
-                "then": "./assets/themes/advertising/icon.svg"
+                "then": "./assets/themes/advertising/flag.svg"
               },
               {
                 "if": "advertising=poster_box",
@@ -883,11 +883,11 @@
               },
               {
                 "if": "advertising=screen",
-                "then": "./assets/themes/advertising/icon.svg"
+                "then": "./assets/themes/advertising/screen.svg"
               },
               {
                 "if": "advertising=sculpture",
-                "then": "./assets/themes/advertising/icon.svg"
+                "then": "./assets/themes/advertising/sculpture.svg"
               },
               {
                 "if": "advertising=sign",
@@ -907,7 +907,18 @@
               }
             ]
           },
-          "iconSize": "40,40,bottom"
+          "iconSize": {
+            "render": "40,40,bottom",
+            "mappings": [{
+              "if": "advertising=flag",
+              "then": "60,60,bottom"
+            },
+              {
+                "if": "advertising=sculpture",
+                "then":"50,50,bottom" 
+              }
+            ]
+          }
         },
         {
           "width": {
@@ -1053,7 +1064,7 @@
           "title": {
             "ca": "una escupltura",
             "es": "una escultura",
-            "en": "an sculpture"
+            "en": "a sculpture"
           },
           "exampleImages":[
             "./assets/themes/advertising/Aircraft_Sculpture.jpg",
@@ -1125,7 +1136,7 @@
           "title": {
             "ca": "una pintura a la paret",
             "es": "una pitura en la pared",
-            "en": "a wall painted"
+            "en": "a wall painting"
           },
           "preciseInput": {
             "preferredBackground": "map",

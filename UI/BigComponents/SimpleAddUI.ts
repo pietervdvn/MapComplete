@@ -285,7 +285,9 @@ export default class SimpleAddUI extends LoginToggle {
                 const tags = TagUtils.KVtoProperties(preset.tags ?? [])
                 let icon: () => BaseUIElement = () =>
                     layer.layerDef.mapRendering[0]
-                        .GenerateLeafletStyle(new UIEventSource<any>(tags), false)
+                        .GenerateLeafletStyle(new UIEventSource<any>(tags), false, {
+                            noSize: true,
+                        })
                         .html.SetClass("w-12 h-12 block relative")
                 const presetInfo: PresetInfo = {
                     layerToAddTo: layer,
