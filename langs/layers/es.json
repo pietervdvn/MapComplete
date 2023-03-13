@@ -2617,12 +2617,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "Se desconoce el color de la boca de incendios."
-                    },
-                    "1": {
                         "then": "La boca de incendios es amarilla."
                     },
-                    "2": {
+                    "1": {
                         "then": "La boca de incendios es roja."
                     }
                 },
@@ -2646,18 +2643,15 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "Se desconoce el tipo de la boca de incendios"
-                    },
-                    "1": {
                         "then": "De pilar."
                     },
-                    "2": {
+                    "1": {
                         "then": "De tubería."
                     },
-                    "3": {
+                    "2": {
                         "then": "De pared."
                     },
-                    "4": {
+                    "3": {
                         "then": "Bajo tierra."
                     }
                 },

@@ -4811,12 +4811,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "De kleur van de brandkraan is onbekend."
-                    },
-                    "1": {
                         "then": "De brandkraan is geel."
                     },
-                    "2": {
+                    "1": {
                         "then": "De brandkraan is rood."
                     }
                 },
@@ -4879,18 +4876,15 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "Het type brandkraan is onbekend."
-                    },
-                    "1": {
                         "then": "Pillaar type."
                     },
-                    "2": {
+                    "1": {
                         "then": "Buis type."
                     },
-                    "3": {
+                    "2": {
                         "then": "Muur type."
                     },
-                    "4": {
+                    "3": {
                         "then": "Ondergronds type."
                     }
                 },

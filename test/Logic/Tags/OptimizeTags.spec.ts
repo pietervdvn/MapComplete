@@ -258,31 +258,33 @@ describe("Tag optimalization", () => {
          )
          */
 
-        expect(opt).toEqual(TagUtils.Tag({
-            or: [
-                "club=climbing",
-                {
-                    and: ["sport=climbing", { or: ["club~*", "office~*"] }],
-                },
-                {
-                    and: [
-                        "sport=climbing",
-                        {
-                            or: [
-                                "leisure=sports_centre",
-                                {
-                                    and: [
-                                        "climbing!~route",
-                                        "climbing!=route_top",
-                                        "climbing!=route_bottom",
-                                        "leisure!~sports_centre",
-                                    ],
-                                },
-                            ],
-                        },
-                    ],
-                },
-            ],
-        }))
+        expect(opt).toEqual(
+            TagUtils.Tag({
+                or: [
+                    "club=climbing",
+                    {
+                        and: ["sport=climbing", { or: ["club~*", "office~*"] }],
+                    },
+                    {
+                        and: [
+                            "sport=climbing",
+                            {
+                                or: [
+                                    "leisure=sports_centre",
+                                    {
+                                        and: [
+                                            "climbing!~route",
+                                            "climbing!=route_top",
+                                            "climbing!=route_bottom",
+                                            "leisure!~sports_centre",
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            })
+        )
     })
 })

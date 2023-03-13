@@ -13,7 +13,7 @@ export class SubtleButton extends UIElement {
     private readonly options: {
         url?: string | Store<string>
         newTab?: boolean
-        imgSize?: string,
+        imgSize?: string
         extraClasses?: string
     }
 
@@ -23,7 +23,7 @@ export class SubtleButton extends UIElement {
         options: {
             url?: string | Store<string>
             newTab?: boolean
-            imgSize?: "h-11 w-11" | string,
+            imgSize?: "h-11 w-11" | string
             extraClasses?: string
         } = {}
     ) {
