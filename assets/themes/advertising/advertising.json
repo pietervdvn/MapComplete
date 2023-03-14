@@ -290,7 +290,7 @@
                 "en": "This is a screen"
               },
               "icon": {
-                "path": "./assets/themes/advertising/icon.svg",
+                "path": "./assets/themes/advertising/screen.svg",
                 "class": "medium"
               }
             },
