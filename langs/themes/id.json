@@ -7,6 +7,10 @@
         "description": "Peta terbuka patung, grafiti, dan karya seni lainnya di seluruh dunia",
         "title": "Buka Peta Karya Seni"
     },
+    "atm": {
+        "description": "Peta ini menunjukkan ATM untuk menarik atau menyetorkan uang",
+        "title": "Mesin ATM"
+    },
     "benches": {
         "shortDescription": "Peta bangku",
         "title": "Bangku"
