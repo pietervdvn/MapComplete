@@ -98,6 +98,15 @@
                     "1": {
                         "then": "Mural"
                     },
+                    "10": {
+                        "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
+                    },
+                    "11": {
+                        "then": "Enrajolat"
+                    },
+                    "12": {
+                        "then": "Tallat a la fusta"
+                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -121,15 +130,6 @@
                     },
                     "9": {
                         "then": "Relleu"
-                    },
-                    "10": {
-                        "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
-                    },
-                    "11": {
-                        "then": "Enrajolat"
-                    },
-                    "12": {
-                        "then": "Tallat a la fusta"
                     }
                 },
                 "question": "Quin tipus d'obra és aquesta peça?",
@@ -715,8 +715,17 @@
             "rental_types": {
                 "rewrite": {
                     "into": {
+                        "1": {
+                            "1": "bicicletes elèctriques"
+                        },
+                        "2": {
+                            "1": "bicicletes per a xiquets"
+                        },
                         "4": {
                             "1": "bicicleta de muntanya"
+                        },
+                        "5": {
+                            "1": "maletes de bicicletes"
                         },
                         "6": {
                             "1": "tàndem"
@@ -730,14 +739,24 @@
                 "0": {
                     "then": "{name}"
                 }
-            }
+            },
+            "render": "Lloguer de bicicletes"
         }
     },
     "bicycle_tube_vending_machine": {
         "description": "Una capa que mostra màquines expenedores per a tubs de bicicleta (ja siguin màquines expenedores de tubs de bicicleta o màquines expenedores clàssiques amb tubs de bicicleta i opcionalment objectes addicionals relacionats amb la bicicleta com ara llums, guants, panys, ...)",
+        "name": "Màquina expenedora de tubs de bicicleta",
+        "presets": {
+            "0": {
+                "title": "una màquina expenedora de tubs de bicicleta"
+            }
+        },
         "tagRenderings": {
             "Still in use?": {
                 "mappings": {
+                    "0": {
+                        "then": "Aquesta màquina expenedora funciona"
+                    },
                     "1": {
                         "then": "Aquesta màquina expenedora està trencada"
                     },
@@ -959,16 +978,79 @@
         "presets": {
             "0": {
                 "title": "una manxa per a bicicletes"
+            },
+            "2": {
+                "description": "Eines per reparar la teva bicicleta a l'espai públic (sense bomba). Les eines estan assegurades contra robatoris.",
+                "title": "una estació de reparació de bicicletes sense bomba"
             }
         },
         "tagRenderings": {
+            "Operational status": {
+                "mappings": {
+                    "0": {
+                        "then": "La bomba per a bicicletes està trencada"
+                    },
+                    "1": {
+                        "then": "La bomba per a la bicicleta està operativa"
+                    }
+                },
+                "question": "La bomba per a la bicicleta encara funciona?"
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Accessible al públic"
+                    },
+                    "1": {
+                        "then": "Accessible al públic"
+                    },
+                    "2": {
+                        "then": "Només per a clients"
+                    },
+                    "3": {
+                        "then": "No accessible per al públic general"
+                    },
+                    "4": {
+                        "then": "No accessible per al públic general"
+                    }
+                },
+                "question": "Qui pot utilitzar aquesta estació de reparació?"
+            },
             "bike_repair_station-available-services": {
                 "mappings": {
+                    "0": {
+                        "then": "Només hi ha una bomba present"
+                    },
                     "1": {
                         "then": "Només hi ha present ferramentes (tornavísos, pinces, …)"
+                    },
+                    "2": {
+                        "then": "Hi ha tant eines com una bomba"
                     }
                 },
                 "question": "Quins serveis hi ha disponibles en aquesta ubicació?"
+            },
+            "bike_repair_station-bike-chain-tool": {
+                "mappings": {
+                    "0": {
+                        "then": "Hi ha ferramentes per a la cadena"
+                    },
+                    "1": {
+                        "then": "No hi ha ferramentes per a la cadena"
+                    }
+                },
+                "question": "Aquesta estació de reparació de bicicletes té una eina especial per reparar la vostra cadena de la biciclete?"
+            },
+            "bike_repair_station-bike-stand": {
+                "mappings": {
+                    "0": {
+                        "then": "Hi ha un ganxo o suport"
+                    },
+                    "1": {
+                        "then": "No hi ha ganxo ni suport"
+                    }
+                },
+                "question": "Aquesta estació de bicicletes té un ganxo per penjar la bicicleta o un suport per aixecar-la?"
             },
             "bike_repair_station-electrical_pump": {
                 "mappings": {
@@ -978,7 +1060,32 @@
                     "1": {
                         "then": "Bomba elèctrica"
                     }
-                }
+                },
+                "question": "És una bomba per a bicicletes elèctrica?"
+            },
+            "bike_repair_station-email": {
+                "question": "Quina és l'adreça de correu electrònic del responsable del manteniment?"
+            },
+            "bike_repair_station-manometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Hi ha un manòmetre"
+                    },
+                    "1": {
+                        "then": "No hi ha manòmetre"
+                    },
+                    "2": {
+                        "then": "Hi ha manòmetre però està trencat"
+                    }
+                },
+                "question": "La bomba té un indicador de pressió o un manòmetre?"
+            },
+            "bike_repair_station-operator": {
+                "question": "Qui fa el manteniment d'aquesta bomba de cicle?",
+                "render": "Mantés per {operator}"
+            },
+            "bike_repair_station-phone": {
+                "question": "Quin és el número de telèfon del responsable?"
             },
             "bike_repair_station-valves": {
                 "mappings": {
@@ -988,6 +1095,12 @@
                     "2": {
                         "then": "Schrader (cotxes i bicicletes de muntanya)"
                     }
+                },
+                "question": "Quines vàlvules són compatibles?"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Quan està obert aquest punt de reparació de bicicletes?"
                 }
             },
             "send_email_about_broken_pump": {
@@ -1002,6 +1115,12 @@
         },
         "title": {
             "mappings": {
+                "0": {
+                    "then": "Estació de reparació de bicicletes"
+                },
+                "1": {
+                    "then": "Estació de reparació de bicicletes"
+                },
                 "2": {
                     "then": "Bomba trencada"
                 },
@@ -1154,7 +1273,8 @@
                 "render": "L'ús d'aquests prismàtics costa {cargo}"
             },
             "binocular-direction": {
-                "question": "En mirar a través d'aquest binocular, en quina direcció es mira?"
+                "question": "En mirar a través d'aquest binocular, en quina direcció es mira?",
+                "render": "Mira cap a {direcció}°"
             }
         },
         "title": {
@@ -1182,15 +1302,31 @@
         }
     },
     "cafe_pub": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "{title()} ha tancat permanentment"
+                }
+            }
+        },
+        "description": "Una capa que mostra cafeteries i bars on un es pot reunir amb una beguda. La capa demana algunes preguntes rellevants",
+        "name": "Cafés i bars",
         "presets": {
             "0": {
+                "description": "Un bar, principalment per a beure cerveses en un interior càlid i relaxat",
                 "title": "un bar"
             },
             "1": {
+                "description": "Un <b>bar de copes</b> més modern i comercial, possiblement amb equipació de música i llums",
                 "title": "un bar de copes"
             },
             "2": {
+                "description": "Una <b>cafeteria</b> per a a beure té, café o una beguda alcohólica en un ambient tranquil",
                 "title": "un cafè"
+            },
+            "3": {
+                "description": "Un <b>club nocturn</b> o discoteca centrat en ballar, música d'un DJ acompanyat d'un espectacle de llums i una barra on obtindre begudes (alcohòliques)",
+                "title": "un club nocturn o discoteca"
             }
         },
         "tagRenderings": {
@@ -1207,6 +1343,9 @@
                     },
                     "3": {
                         "then": "Un <b>restaurant</b> on pots menjar un menjar de veritat"
+                    },
+                    "4": {
+                        "then": "Un espai obert on se serveix cervesa, típicament d'Alemanya"
                     },
                     "5": {
                         "then": "Açò és un <b>club nocturn</b> o discoteca centrat en ballar, música d'un DJ acompanyat d'un espectacle de llums i una barra on obtindre begudes (alcohòliques)"
@@ -1247,25 +1386,53 @@
                         "then": "Aquest lloguer de cotxes no té nom"
                     }
                 },
-                "question": "Com es diu aquest lloguer de cotxes?"
+                "question": "Com es diu aquest lloguer de cotxes?",
+                "render": "Aquest lloguer de cotxes es diu {name}"
             }
+        },
+        "title": {
+            "render": "Lloguer de cotxes"
         }
     },
     "charging_station": {
+        "description": "Una estació de càrrega",
         "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Tots els tipus de vehicles"
+                    },
+                    "1": {
+                        "question": "Punt de recàrrega per a bicicletes"
+                    },
+                    "2": {
+                        "question": "Estació de càrrega per a cotxes"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Només estacions de recàrrega en funcionament"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
                         "question": "Tots els connectors"
+                    },
+                    "1": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> connector"
+                    },
+                    "13": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     },
                     "5": {
                         "question": "Té un connecgtor de <div style='display: inline-block'><b>Tipus 1<i>sense</i>cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
                     "6": {
                         "question": "Té un connector <div style='display: inline-block'><b>Tipus 1 CSS (Combo Tipus 1)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
-                    },
-                    "13": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     }
                 }
             }
@@ -1274,21 +1441,6 @@
         "tagRenderings": {
             "Available_charging_stations (generated)": {
                 "mappings": {
-                    "2": {
-                        "then": "<b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)"
-                    },
-                    "4": {
-                        "then": "<b>CHAdeMo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
-                    },
                     "10": {
                         "then": "<b>CSS 1Tipus 1</b> (també conegut com Tipus 1 combo)"
                     },
@@ -1304,6 +1456,9 @@
                     "18": {
                         "then": "<b>Tipus 2 amb cable</b> (mennekes)"
                     },
+                    "2": {
+                        "then": "<b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)"
+                    },
                     "20": {
                         "then": "<b>CSS Supercarregador Tesla</b> (tipus2_css de la marca)"
                     },
@@ -1312,6 +1467,18 @@
                     },
                     "26": {
                         "then": "<b>USB</b> per a carregar mòbils i dispositius petits"
+                    },
+                    "4": {
+                        "then": "<b>CHAdeMo</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
                     }
                 },
                 "question": "Quins tipus de connexions de càrrega estan disponibles aquí?"
@@ -2708,30 +2875,6 @@
                     "1": {
                         "then": "Aquí es poden reciclar els cartons de begudes"
                     },
-                    "2": {
-                        "then": "Aquí es poden reciclar llaunes"
-                    },
-                    "3": {
-                        "then": "Aquí es pot reciclar roba"
-                    },
-                    "4": {
-                        "then": "Aquí es pot reciclar oli de cuina"
-                    },
-                    "5": {
-                        "then": "Aquí es pot reciclar oli de motor"
-                    },
-                    "6": {
-                        "then": "Aquí es poden reciclar tub fluroescents"
-                    },
-                    "7": {
-                        "then": "Aquí es poden reciclar residus verds"
-                    },
-                    "8": {
-                        "then": "Ací es poden reciclar residus orgànics"
-                    },
-                    "9": {
-                        "then": "Aquí es poden reciclar ampolles de vidre"
-                    },
                     "10": {
                         "then": "Aquí es pot reciclar vidre"
                     },
@@ -2759,11 +2902,35 @@
                     "19": {
                         "then": "Aquí es poden reciclar petits aparells electrònics"
                     },
+                    "2": {
+                        "then": "Aquí es poden reciclar llaunes"
+                    },
                     "20": {
                         "then": "Aquí es poden reciclar petits aparells elèctrics"
                     },
                     "22": {
                         "then": "Ací es pot reciclar el rebuig"
+                    },
+                    "3": {
+                        "then": "Aquí es pot reciclar roba"
+                    },
+                    "4": {
+                        "then": "Aquí es pot reciclar oli de cuina"
+                    },
+                    "5": {
+                        "then": "Aquí es pot reciclar oli de motor"
+                    },
+                    "6": {
+                        "then": "Aquí es poden reciclar tub fluroescents"
+                    },
+                    "7": {
+                        "then": "Aquí es poden reciclar residus verds"
+                    },
+                    "8": {
+                        "then": "Ací es poden reciclar residus orgànics"
+                    },
+                    "9": {
+                        "then": "Aquí es poden reciclar ampolles de vidre"
                     }
                 },
                 "question": "Què es pot reciclar aquí?"
@@ -3106,6 +3273,12 @@
                     "1": {
                         "then": "Aquest fanal utilitza LED"
                     },
+                    "10": {
+                        "then": "Aquest fanal utilitza làmpades de sodi d'alta pressió (taronja amb blanc)"
+                    },
+                    "11": {
+                        "then": "Aquest fanal s'il·lumina amb gas"
+                    },
                     "2": {
                         "then": "Aquest fanal utilitza il·luminació incandescent"
                     },
@@ -3129,12 +3302,6 @@
                     },
                     "9": {
                         "then": "Aquest fanal utilitza làmpades de sodi de baixa pressió (taronja monocroma)"
-                    },
-                    "10": {
-                        "then": "Aquest fanal utilitza làmpades de sodi d'alta pressió (taronja amb blanc)"
-                    },
-                    "11": {
-                        "then": "Aquest fanal s'il·lumina amb gas"
                     }
                 }
             },
