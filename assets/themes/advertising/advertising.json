@@ -1092,7 +1092,9 @@
             "ca": "S'utilitza per a cartells publicitaris, retols de neó, logotips i cartells en entrades institucionals"
           },
           "exampleImages":[
-            "./assets/themes/advertising/Waitrose_sign.jpg"
+            "./assets/themes/advertising/Waitrose_sign.jpg",
+            "./assets/themes/advertising/sign_EOI.jpg",
+            "./assets/themes/advertising/farma_sign.jpg"
           ]
         },
         {

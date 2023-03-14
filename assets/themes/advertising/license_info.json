@@ -280,6 +280,16 @@
     ]
   },
   {
+    "path": "farma_sign.jpg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "paunofu"
+    ],
+    "sources": [
+      "https://imgur.com/bGF0kdd"
+    ]
+  },
+  {
     "path": "flag.svg",
     "license": "CC BY-SA 3.0",
     "authors": [
@@ -365,6 +375,16 @@
     "sources": [
       "https://wiki.openstreetmap.org/wiki/File:Column.svg",
       "https://commons.wikimedia.org/wiki/File:Sculpture_(NP100738).svg"
+    ]
+  },
+  {
+    "path": "sign_EOI.jpg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "paunofu"
+    ],
+    "sources": [
+      "https://imgur.com/8D0BKNq"
     ]
   },
   {
