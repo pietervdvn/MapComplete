@@ -13,6 +13,12 @@
                 },
                 "3": {
                     "then": "Koin 10 sen diterima"
+                },
+                "4": {
+                    "then": "Koin 20 sen diterima"
+                },
+                "5": {
+                    "then": "Koin 50 sen diterima"
                 }
             }
         },
