@@ -1134,8 +1134,8 @@
             "advertising=wall_painting"
           ],
           "title": {
-            "ca": "una pintura a la paret",
-            "es": "una pitura en la pared",
+            "ca": "una paret pintada",
+            "es": "una pared pintada",
             "en": "a wall painting"
           },
           "preciseInput": {
