@@ -548,22 +548,6 @@
           }
         },
         {
-          "id": "ref",
-          "render": {
-            "ca": "El número de referència és {ref}",
-            "es": "El número de referencia es {ref}",
-            "en": "Reference number is {ref}"
-          },
-          "question": {
-            "ca": "Quin és el número de refèrencia?",
-            "es": "¿Cual es el número de referencia?",
-            "en": "Wich is the reference number?"
-          },
-          "freeform": {
-            "key": "ref"
-          }
-        },
-        {
           "id": "message_type",
           "render": {
             "*": " {message}"
@@ -724,13 +708,6 @@
           },
           "mappings": [
             {
-              "if": "sides=",
-              "then": {
-                "en": "This poster box has advertisements on a single side"
-              },
-              "hideInAnswer": true
-            },
-            {
               "if": "sides=1",
               "then": {
                 "en": "This poster box has advertisements on a single side"
@@ -743,6 +720,22 @@
               }
             }
           ]
+        },
+        {
+          "id": "ref",
+          "render": {
+            "ca": "El número de referència és {ref}",
+            "es": "El número de referencia es {ref}",
+            "en": "Reference number is {ref}"
+          },
+          "question": {
+            "ca": "Quin és el número de refèrencia?",
+            "es": "¿Cual es el número de referencia?",
+            "en": "Wich is the reference number?"
+          },
+          "freeform": {
+            "key": "ref"
+          }
         }
       ],
       "mapRendering": [
