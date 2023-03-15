@@ -1,7 +1,9 @@
 {
   "id": "usersettings",
   "description": {
-    "en": "A special layer which is not meant to be shown on a map, but which is used to set user settings"
+    "en": "A special layer which is not meant to be shown on a map, but which is used to set user settings",
+    "de": "Eine spezielle Ebene, die nicht für die Darstellung auf einer Karte gedacht ist, sondern für die Festlegung von Benutzereinstellungen verwendet wird",
+    "nl": "Een speciale lag die niet getoond wordt op de kaart, maar die de instellingen van de gebruiker weergeeft"
   },
   "title": null,
   "source": {
@@ -19,35 +21,197 @@
       "id": "picture-license",
       "description": "This question is not meant to be placed on an OpenStreetMap-element; however it is used in the user information panel to ask which license the user wants",
       "question": {
-        "en": "Under what license do you want to publish your pictures?"
+        "en": "Under what license do you want to publish your pictures?",
+        "de": "Unter welcher Lizenz möchten Sie Ihre Bilder veröffentlichen?",
+        "nl": "Met welke licentie wil je je afbeeldingen toevoegen?"
       },
       "mappings": [
         {
           "if": "mapcomplete-pictures-license=",
           "then": {
-            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>"
+            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>",
+            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann. <span class='subtle'>Dies ist die Standardeinstellung.</span>",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik. <span class='subtle'>Dit is de standaard-instelling</span>",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu. <span class='subtle'>Toto je výchozí volba.</span>"
           },
           "hideInAnswer": true
         },
         {
           "if": "mapcomplete-pictures-license=CC0",
           "then": {
-            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose."
+            "en": "Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose.",
+            "de": "Ihre aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann.",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik.",
+            "ru": "Изображения будут опубликованы под лицензией <b>CC0</b> и перейдут в общественное достояние. Это значит, что кто угодно имеет право использовать их без ограничений.",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu."
           }
         },
         {
           "if": "mapcomplete-pictures-license=CC-BY 4.0",
           "then": {
-            "en": "Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you"
+            "en": "Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you",
+            "ca": "Les fotografies que facis es publicaran sota <b>CC-BY 4.0</b> que requereix que qualsevol que utilitzi la vostra imatge us ha de donar crèdits",
+            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC-BY 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku"
           }
         },
         {
           "if": "mapcomplete-pictures-license=CC-BY-SA 4.0",
           "then": {
-            "en": "Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license."
+            "en": "Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license.",
+            "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY-SA 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss und dass Ableitungen Ihres Bildes mit der gleichen Lizenz weitergegeben werden müssen.",
+            "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden.",
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC-BY-SA 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku a že odvozené fotky musí být dále sdíleny se stejnou licencí."
           }
         }
       ]
+    },
+    {
+      "id": "all-questions-at-once",
+      "question": {
+        "en": "Should questions for unknown data fields appear one-by-one or together?",
+        "de": "Sollen Fragen für unbekannte Datenfelder einzeln oder zusammen angezeigt werden?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-show-all-questions=true",
+          "then": {
+            "en": "Show all questions in the infobox together",
+            "de": "Alle Fragen in der Infobox zusammen anzeigen",
+            "ca": "Mostra totes les preguntes juntes a la caixa d'informació"
+          }
+        },
+        {
+          "if": "mapcomplete-show-all-questions=false",
+          "then": {
+            "en": "Show questions one-by-one",
+            "de": "Fragen der Reihe nach anzeigen",
+            "ca": "Mostra les preguntes una per una"
+          }
+        }
+      ]
+    },
+    {
+      "id": "translations-title",
+      "group": "translations",
+      "render": "<h3>Translating MapComplete</h3>"
+    },
+    {
+      "group": "translations",
+      "id": "translation-mode",
+      "question": {
+        "en": "Do you want to help translating MapComplete?",
+        "de": "Möchten Sie bei der Übersetzung von MapComplete helfen?",
+        "cs": "Chcete pomoci s překladem MapComplete?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-translation-mode=false",
+          "then": {
+            "en": "Don't show a button to quickly change translations",
+            "de": "Keine Schaltfläche zum schnellen Wechseln von Übersetzungen anzeigen"
+          }
+        },
+        {
+          "if": "mapcomplete-translation-mode=true",
+          "then": {
+            "en": "Show a button to quickly open translations when using MapComplete on a big screen",
+            "de": "Schaltfläche anzeigen zum schnellen Öffnen von Übersetzungen beim Verwenden von MapComplete auf einem großen Bildschirm",
+            "fr": "Afficher un bouton pour ouvrir rapidement les traductions lorsque vous utilisez MapComplete sur un grand écran",
+            "ca": "Mostra un botó per a obrir ràpidament les traduccions quan utilitzes MapComplet en una pantalla gran"
+          }
+        },
+        {
+          "if": "mapcomplete-translation-mode=mobile",
+          "then": {
+            "en": "Always show the translation buttons, including on mobile",
+            "de": "Übersetzungsschaltflächen immer anzeigen, auch auf dem Handy"
+          }
+        }
+      ]
+    },
+    {
+      "group": "translations",
+      "id": "translation-help",
+      "mappings": [
+        {
+          "if": {
+            "or": [
+              "mapcomplete-translation-mode=yes",
+              "mapcomplete-translation-mode=true",
+              "mapcomplete-translation-mode=mobile"
+            ]
+          },
+          "then": {
+            "ca": "Fes clic a la icona 'tradueix' al costat d'una cadena per introduir o actualitzar un fragment de text. Necessites un compte de Weblate per a això. Crea'n un amb el teu nom d'usuari OSM per desbloquejar automàticament el mode de traducció.",
+            "da": "Klik på 'oversæt'-ikonet ved siden af en streng for at indtaste eller opdatere et stykke tekst. Du skal have en Weblate-konto for at kunne gøre dette. Opret en med dit OSM-brugernavn for automatisk at låse oversættelsestilstanden op.",
+            "de": "Klicken Sie auf das Übersetzungssymbol neben einer Zeichenfolge, um den Übersetzungstext einzugeben oder zu aktualisieren. Dazu benötigen Sie ein Weblate-Konto. Erstellen Sie eines mit Ihrem OSM-Benutzernamen, um den Übersetzungsmodus automatisch freizuschalten.",
+            "en": "Click the 'translate'-icon next to a string to enter or update a piece of text. You need a Weblate-account for this. Create one with your OSM-username to automatically unlock translation mode.",
+            "es": "Haz clic en el icono 'traducir' al lado de una cadena para introducir o actualizar un texto. Necesitas una cuenta de Weblate para esto. Crea una con tu usuario de OSM para desbloquear el modo de traducción automáticamente.",
+            "fr": "Cliquez sur l'icône \"traduire\" à côté d'une chaîne de caractères pour saisir ou mettre à jour la chaine de texte. Vous aurez besoin d'un compte Weblate pour cela. Créez-en un avec votre nom d'utilisateur OSM pour déverrouiller automatiquement le mode traduction.",
+            "nl": "Klik op het 'vertaal'-icoontje die naast een stukje tekst staat om deze tekst te vertalen of aan te passen. Hiervoor heb je een (gratis) Weblate-account nodig. Indien je jouw account maakt met dezelfde naam als je OSM-gebruikersnaam, dan zullen de vertaalknoppen automatisch verschijnen.",
+            "zh_Hant": "點字串旁邊的 'translate'-icon 來輸入或是更新一段文字。你需要 Weblate 帳號。用你 OSM 帳號名稱來創建帳號，並且自動解鎖翻譯模式。"
+          },
+          "icon": "translate"
+        }
+      ]
+    },
+    {
+      "group": "translations",
+      "id": "translation-completeness",
+      "render": {
+        "ca": "Les traduccions de {_theme} en {_language} tenen un {_translation_percentage}%: {_translation_translated_count} cadenes de {_translation_total} estan traduïdes",
+        "da": "Oversættelser for {_theme} i {_language} er på {_translation_percentage}%: {_translation_translated_count} strenge ud af {_translation_total} er oversat",
+        "de": "Die Übersetzung für {_theme} in {_language} ist zu {_translation_percentage}% vollständig: {_translation_translated_count} Zeichenfolgen von {_translation_total} sind übersetzt",
+        "en": "Translations for {_theme} in {_language} are at {_translation_percentage}%: {_translation_translated_count} strings out of {_translation_total} are translated",
+        "es": "Las traducciones para {_theme} en {_language} están al {_translation_percentage}%: {_translation_translated_count} cadenas de {_translation_total} están traducidas",
+        "id": "Terjemahan untuk {_theme} dalam {_language} masih {_translation_percentage}%: {_translation_translated_count} string dari {_translation_total} diterjemahkan",
+        "nb_NO": "Oversettelsen for {_theme} i {_language} har {_translation_percentage}% dekning: {_translation_translated_count} strenger av {_translation_total} har blitt oversatt",
+        "nl": "Vertalingen voor {_theme} in {_language} zijn momenteel op {_translation_percentage}%: van {_translation_total} teksten zijn er reeds {_translation_translated_count} vertaald",
+        "zh_Hant": "{_theme} 的 {_language} 翻譯目前是 {_translation_percentage}%：{_translation_total} 中的 {_translation_translated_count} 已經翻譯了",
+        "fr": "Les traductions pour {_theme} en {_language} sont à {_translation_percentage} % : {_translation_translated_count} chaînes traduites sur {_translation_total}"
+      },
+      "condition": {
+        "or": [
+          "mapcomplete-translation-mode=yes",
+          "mapcomplete-translation-mode=true",
+          "mapcomplete-translation-mode=mobile"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "_translation_percentage=100",
+          "icon": "confirm",
+          "then": {
+            "en": "Completely translated",
+            "nl": "Volledig vertaald",
+            "de": "Vollständig übersetzt"
+          }
+        }
+      ]
+    },
+    {
+      "id": "translation-links",
+      "group": "translations",
+      "condition": {
+        "and": [
+          "_translation_links~*",
+          {
+            "or": [
+              "mapcomplete-translation-mode=true",
+              "mapcomplete-translation-mode=mobile"
+            ]
+          }
+        ]
+      },
+      "render": {
+        "special": {
+          "type": "multi",
+          "key": "_translation_links",
+          "tagrendering": "<a href='{link}' target='_blank'>Translate entries of {id}</a>"
+        }
+      }
     },
     {
       "id": "verified-mastodon",
@@ -55,16 +219,35 @@
         {
           "if": "_mastodon_link~*",
           "then": {
-            "en": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+            "en": "A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>",
+            "de": "Es wurde ein Link zu deinem Mastodon-Profil gefunden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>",
+            "nl": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>",
+            "fr": "Un lien vers votre profil Mastodon a été trouvé : <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
           },
           "icon": "mastodon"
         },
         {
           "if": "_mastodon_candidate~*",
           "then": {
-            "en": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+            "en": "We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Edit your profile description</a> and place the following there: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
+            "de": "Wir haben einen Link gefunden, der aussieht wie ein Mastodon-Konto, aber nicht verifiziert ist. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Bearbeiten Sie Ihre Profilbeschreibung</a> und fügen Sie dort Folgendes ein: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt",
+            "nl": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
           },
           "icon": "invalid"
+        }
+      ]
+    },
+    {
+      "id": "cscount-thanks",
+      "mappings": [
+        {
+          "if": "_csCount>0",
+          "then": {
+            "en": "You have made changes on {_csCount} different occasions! That is awesome!",
+            "de": "Sie haben bei {_csCount} verschiedenen Gelegenheiten Änderungen vorgenommen! Das ist großartig!",
+            "ca": "Has fet {_csCount} en diferents ocasions! Això és sorprenent!"
+          },
+          "icon": "party"
         }
       ]
     },
@@ -74,7 +257,11 @@
         {
           "if": "_translation_contributions>0",
           "then": {
-            "en": "You have contributed to translating MapComplete! That's awesome!"
+            "en": "You have contributed to translating MapComplete! That's awesome!",
+            "ca": "Has contribuït a traduir MapComplete! Això és fantàstic!",
+            "de": "Sie haben dazu beigetragen, MapComplete zu übersetzen! Das ist großartig!",
+            "nl": "Je hebt MapComplete helpen vertalen! Dat is fantastisch! Bedankt hiervoor!",
+            "cs": "Přispěli jste k překladu MapComplete! To je úžasné!"
           },
           "icon": "party"
         }
@@ -86,15 +273,53 @@
         {
           "if": "_code_contributions>0",
           "then": {
-            "en": "You have contributed code to MapComplete with {_code_contributions} commits! That's awesome!"
+            "en": "You have contributed code to MapComplete with {_code_contributions} commits! That's awesome!",
+            "de": "Sie haben Code zu MapComplete mit {_code_contributions} Commits beigetragen! Das ist großartig!",
+            "nl": "Je hebt mee geprogrammeerd aan MapComplete met {_code_contributions} commits! Das supercool van je! Bedankt hiervoor!"
           },
-          "icon": "party"
+          "icon": "party",
+          "hideInAnswer": true
+        }
+      ]
+    },
+    {
+      "id": "show_debug",
+      "question": {
+        "en": "Show user settings debug info?",
+        "de": "Debug-Informationen zu den Benutzereinstellungen anzeigen?",
+        "cs": "Zobrazit informace o ladění v nastavení?"
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-show_debug=yes",
+          "then": {
+            "en": "Show debug info",
+            "de": "Debug-Informationen anzeigen",
+            "cs": "Zobrazit informace o ladění"
+          }
+        },
+        {
+          "if": "mapcomplete-show_debug=no",
+          "then": {
+            "en": "Don't show debug info",
+            "de": "Keine Debug-Informationen anzeigen",
+            "cs": "Nezobrazovat informace o ladění"
+          }
+        },
+        {
+          "if": "mapcomplete-show_debug=",
+          "then": {
+            "en": "Don't show debug info",
+            "de": "Keine Debug-Informationen anzeigen",
+            "cs": "Nezobrazovat informace o ladění"
+          },
+          "hideInAnswer": true
         }
       ]
     },
     {
       "id": "debug",
-      "condition": "_name=Pieter Vander Vennet",
+      "condition": "mapcomplete-show_debug=yes",
       "render": "{all_tags()}"
     }
   ],

@@ -62,12 +62,12 @@
         "title": "BAG-Importhilfe"
     },
     "benches": {
-        "description": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Alleinstehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören. Mit einem OpenStreetMap-Konto können Sie neue Bänke eintragen oder Details existierender Bänke bearbeiten.",
+        "description": "Diese Karte zeigt alle Sitzbänke, die in OpenStreetMap eingetragen sind: Alleinstehende Bänke und Bänke, die zu Haltestellen oder Unterständen gehören.",
         "shortDescription": "Eine Karte aller Sitzbänke",
         "title": "Sitzbänke"
     },
     "bicycle_rental": {
-        "description": "Auf dieser Karte finden Sie die vielen Fahrradverleihstationen, wie sie auf OpenStreetMap eingetragen wurden",
+        "description": "Auf dieser Karte finden Sie alle Fahrradverleihstationen, die in OpenStreetMap eingetragen wurden",
         "shortDescription": "Eine Karte mit Fahrradverleihstationen und Fahrradverleihgeschäften",
         "title": "Fahrradverleih"
     },
@@ -85,15 +85,15 @@
         "title": "OSM für Blinde"
     },
     "bookcases": {
-        "description": "Bücherschränke sind alte Schaltschränke, Telefonzellen oder andere Einrichtungen zur Aufbewahrung von Büchern. Jeder kann Bücher abgeben oder mitnehmen. Die Karte soll helfen, alle Orte mit Bücherschränken zu sammeln. Sie können neue Bücherschränke in der Nähe entdecken und mit einem kostenlosen OpenStreetMap-Konto schnell Ihre Lieblingsbücherschränke hinzufügen.",
+        "description": "Bücherschränke sind alte Schaltschränke, Telefonzellen oder andere Einrichtungen zur Aufbewahrung von Büchern. Jeder kann Bücher abgeben oder mitnehmen. Die Karte soll helfen, alle Orte mit Bücherschränken zu sammeln.",
         "title": "Karte öffentlicher Bücherschränke"
     },
     "cafes_and_pubs": {
-        "description": "Kneipen und Bars",
+        "description": "Cafés, Kneipen und Bars",
         "title": "Cafés und Kneipen"
     },
     "campersite": {
-        "description": "Eine Karte für offizielle Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen, oder Bilder und Bewertungen ergänzen. Dies ist eine Webseite und eine Webapp. Die Daten werden in OpenStreetMap gespeichert, so dass sie für immer kostenlos sind und von jeder App weiterverwendet werden können.",
+        "description": "Eine Karte für offizielle Wohnmobilstellplätze und Orte zur Entsorgung von Schmutzwasser. Sie können Details über die angebotenen Dienstleistungen und die Kosten hinzufügen, oder Bilder und Bewertungen ergänzen.",
         "layers": {
             "0": {
                 "description": "Wohnmobilstellplätze",
@@ -382,6 +382,10 @@
         },
         "title": "Offene Kletterkarte"
     },
+    "clock": {
+        "description": "Karte mit allen öffentlichen Uhren",
+        "title": "Uhren"
+    },
     "cycle_highways": {
         "description": "Diese Karte zeigt Radschnellwege",
         "layers": {
@@ -523,7 +527,7 @@
         "title": "Fahrradstraßen"
     },
     "cyclofix": {
-        "description": "Mit dieser Karte wird Radfahrern eine einfache Lösung bereitgestellt, um die passende Fahrradinfrastruktur zu finden.<br><br>Sie können Ihren genauen Standort verfolgen (nur mobil) und in der linken unteren Ecke die für Sie relevanten Ebenen auswählen. Sie können auch interessante Orte zur Karte hinzuzufügen oder bearbeiten und weitere Daten durch Beantwortung von Fragen bereitstellen.<br><br>Ihre Änderungen, werden automatisch in OpenStreetMap gespeichert und können von anderen frei verwendet werden.<br><br>Weitere Informationen über Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "description": "Mit dieser Karte wird Radfahrern eine einfache Lösung bereitgestellt, um die passende Fahrradinfrastruktur zu finden.<br><br>Weitere Informationen über Cyclofix finden Sie unter <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
         "title": "Cyclofix - die freie Karte für Radler"
     },
     "drinking_water": {
@@ -532,48 +536,48 @@
     },
     "education": {
         "description": "Auf dieser Karte können Sie Informationen über Bildungseinrichtungen finden und hinzufügen",
-        "title": "Bildung"
+        "title": "Bildungseinrichtungen"
     },
     "etymology": {
         "description": "Auf dieser Karte können Sie sehen, wonach ein Objekt benannt ist. Die Straßen, Gebäude, ... stammen von OpenStreetMap, und wurden mit Wikidata verknüpft. Im Popup sehen Sie den Wikipedia-Artikel (falls vorhanden) oder ein Wikidata-Feld, nach dem das Objekt benannt ist. Wenn das Objekt selbst eine Wikipedia-Seite hat, wird auch diese angezeigt.<br/><br/><b>Sie können auch einen Beitrag leisten!</b> Wenn Sie weit genug hinein zoomen werden <i>alle</i> Straßen angezeigt. Wenn Sie auf eine Straße klicken, öffnet sich ein Wikidata-Suchfeld. Mit ein paar Klicks können Sie einen Etymologie-Link hinzufügen. Beachten Sie, dass Sie dazu ein kostenloses OpenStreetMap-Konto benötigen.",
         "layers": {
             "1": {
                 "override": {
-                    "=name": "Straßen ohne Informationen zur Namensherkunft"
+                    "=name": "Straßen ohne Namensherkunft"
                 }
             },
             "2": {
                 "override": {
-                    "=name": "Parks und Waldflächen ohne Informationen zur Namensherkunft"
+                    "=name": "Parks und Waldflächen ohne Namensherkunft"
                 }
             },
             "3": {
                 "override": {
-                    "=name": "Bildungseinrichtungen ohne Informationen zur Namensherkunft"
+                    "=name": "Bildungseinrichtungen ohne Namensherkunft"
                 }
             },
             "4": {
                 "override": {
-                    "=name": "Kultureinrichtungen ohne Informationen zur Namensherkunft"
+                    "=name": "Kultureinrichtungen ohne Namensherkunft"
                 }
             },
             "5": {
                 "override": {
-                    "=name": "Touristische Einrichtungen ohne Informationen zur Namensherkunft"
+                    "=name": "Touristische Einrichtungen ohne Namensherkunft"
                 }
             },
             "6": {
                 "override": {
-                    "=name": "Gesundheits- und Sozialeinrichtungen ohne Informationen zur Namensherkunft"
+                    "=name": "Gesundheits- und Sozialeinrichtungen ohne Namensherkunft"
                 }
             },
             "7": {
                 "override": {
-                    "=name": "Sporteinrichtungen ohne Informationen zur Namensherkunft"
+                    "=name": "Sporteinrichtungen ohne Namensherkunft"
                 }
             }
         },
-        "shortDescription": "Was ist der Ursprung eines Ortsnamens?",
+        "shortDescription": "Woher stammt der Name einer Straße oder eines Ortes?",
         "title": "Karte zur Herkunft der Namen"
     },
     "facadegardens": {
@@ -676,10 +680,10 @@
                 }
             }
         },
-        "title": "Pommes-frites-Läden"
+        "title": "Pommesbuden"
     },
     "ghostbikes": {
-        "description": "<b>Geisterräder</b> sind weiße Fahrräder, die zum Gedenken tödlich verunglückter Radfahrer vor Ort aufgestellt wurden.<br/><br/> Auf dieser Karte sehen Sie alle Geisterräder, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen nur ein (kostenloses) OpenStreetMap-Konto.",
+        "description": "<b>Geisterräder</b> sind weiße Fahrräder, die zum Gedenken tödlich verunglückter Radfahrer vor Ort aufgestellt wurden.<br/><br/> Auf dieser Karte sehen Sie alle Geisterräder, die in OpenStreetMap eingetragen sind. Fehlt ein Geisterrad? Jeder kann hier Informationen hinzufügen oder aktualisieren - Sie benötigen nur ein (kostenloses) OpenStreetMap-Konto.<p>Es gibt ein Konto <a href='https://masto.bike/@ghostbikebot' target='_blank'>auf Mastodon, das monatliche eine weltweite Übersicht von Geisterfahrrädern veröffentlicht</a></p>",
         "title": "Geisterräder"
     },
     "grb": {
@@ -725,13 +729,30 @@
         "title": "Hackerspaces"
     },
     "hailhydrant": {
-        "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.\n\nSie können Ihren genauen Standort verfolgen (nur mobil) und in der unteren linken Ecke die für Sie relevanten Ebenen auswählen. Sie können mit diesem Tool auch Pins (Points of Interest) zur Karte hinzufügen oder bearbeiten und durch die Beantwortung verfügbarer Fragen zusätzliche Angaben machen.\n\nAlle von Ihnen vorgenommenen Änderungen werden automatisch in der globalen Datenbank von OpenStreetMap gespeichert und können von anderen frei weiterverwendet werden.",
+        "description": "Auf dieser Karte können Sie Hydranten, Feuerwachen, Krankenwagen und Feuerlöscher in Ihren bevorzugten Stadtvierteln finden und aktualisieren.",
         "shortDescription": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen.",
         "title": "Hydranten, Feuerlöscher, Feuerwachen und Rettungswachen"
     },
     "healthcare": {
         "description": "Auf dieser Karte werden verschiedene Gesundheitseinrichtungen angezeigt",
-        "title": "Gesundheitswesen"
+        "layers": {
+            "5": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "ein Sanitätshaus"
+                        },
+                        "1": {
+                            "title": "ein Hörgerätegeschäft"
+                        },
+                        "2": {
+                            "title": "ein Optiker"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Gesundheitseinrichtungen"
     },
     "hotels": {
         "description": "Auf dieser Karte finden Sie Hotels in Ihrer Nähe",
@@ -761,14 +782,14 @@
                     "1": {
                         "options": {
                             "0": {
-                                "question": "Erstellt vom Mitwirkenden {search}"
+                                "question": "Erstellt von {search}"
                             }
                         }
                     },
                     "2": {
                         "options": {
                             "0": {
-                                "question": "<b>Nicht</b> von Mitwirkendem {search}"
+                                "question": "<b>Nicht</b> erstellt von {search}"
                             }
                         }
                     },
@@ -797,6 +818,13 @@
                         "options": {
                             "0": {
                                 "question": "Erstellt mit host {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Im Änderungssatz wurde mindestens ein Bild hinzugefügt"
                             }
                         }
                     }
@@ -855,12 +883,12 @@
         "title": "Höchstgeschwindigkeit"
     },
     "nature": {
-        "description": "Auf dieser Karte findet man interessante Informationen für Touristen und Naturliebhaber. ",
+        "description": "Eine Karte mit interessanten Informationen für Touristen und Naturliebhaber.",
         "shortDescription": "Eine Karte mit interessanten Orten für Naturliebhaber",
         "title": "In die Natur"
     },
     "notes": {
-        "description": "Eine Notiz enthält eine Fehlerbeschreibung und ist als Stecknadel auf der Karte sichtbar.<br/><br/>In der <a href='#filters'>Ebenenauswahl</a> kann nach Ersteller, Bearbeiter und Text gesucht werden.",
+        "description": "Eine Notiz enthält eine Fehlerbeschreibung und ist als Markierung auf der Karte sichtbar.<br/><br/>In der <a href='#filters'>Ebenenauswahl</a> kann nach Ersteller, Bearbeiter und Inhalt gesucht werden.",
         "title": "Notizen von OpenStreetMap"
     },
     "observation_towers": {

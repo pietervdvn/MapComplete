@@ -52,7 +52,7 @@
       },
       "render": "<img src='./assets/layers/bike_shop/pump.svg'/>"
     },
-    "defaults"
+    "icons.defaults"
   ],
   "description": {
     "en": "A facility where bicycles can be lent for longer period of times",
@@ -320,7 +320,7 @@
       "iconBadges": [
         {
           "if": "opening_hours~*",
-          "then": "isOpen"
+          "then": "icons.isOpen"
         },
         {
           "if": "service:bicycle:pump=yes",

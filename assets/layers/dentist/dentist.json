@@ -3,7 +3,8 @@
   "name": {
     "en": "Dentist",
     "nl": "Tandarts",
-    "de": "Zahnarzt"
+    "de": "Zahnärzte",
+    "es": "Dentista"
   },
   "description": {
     "en": "This layer shows dentist offices",

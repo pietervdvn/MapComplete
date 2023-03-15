@@ -6,14 +6,18 @@
     "de": "BAG-Importhilfe",
     "fr": "Facilitateur d'import BAG",
     "nb_NO": "BAG-importhjelper",
-    "ca": "Assistent d'importació del BAG"
+    "ca": "Assistent d'importació del BAG",
+    "es": "Ayudante de importación BAG",
+    "cs": "Pomocník pro import BAG"
   },
   "shortDescription": {
     "nl": "BAG import helper tool",
     "en": "BAG import helper tool",
     "de": "BAG-Import-Hilfswerkzeug",
     "fr": "Outil de facilitation d'import BAG",
-    "ca": "Ferramenta d'ajuda per a importar el BAG"
+    "ca": "Ferramenta d'ajuda per a importar el BAG",
+    "es": "Herramienta de ayuda a la importación BAG",
+    "cs": "Pomocný nástroj pro import BAG"
   },
   "description": {
     "nl": "Dit thema helpt het importeren van BAG data",
@@ -21,7 +25,9 @@
     "cs": "Toto téma pomáhá s importem dat ze systému BAG",
     "de": "Dieses Thema hilft beim Importieren von BAG-Daten",
     "fr": "Ce thème aide à l'importation de données depuis BAG",
-    "ca": "Aquest tema ajuda amb la importació de dades del BAG"
+    "ca": "Aquest tema ajuda amb la importació de dades del BAG",
+    "zgh": "ⵉⵜⵜⴰⵡⵙ ⵉⵎⵔⵙⵉ ⴰⴷ ⴳ ⵡⴰⵎⵎⴰⵥ ⵏ ⵜⵎⵓⵛⴰ ⵙⴳ BAG",
+    "es": "Este tema ayuda a importar datos de BAG"
   },
   "credits": "Wouter van der Wal",
   "icon": "./assets/themes/bag/logo.svg",
@@ -93,7 +99,10 @@
             "de": "Die Referenz in BAG ist <b>{ref:bag}</b>",
             "nl": "De referentie in BAG is <b>{ref:bag}</b>",
             "fr": "La référence dans le BAG est <b>{ref:bag}</b>",
-            "ca": "La referència al BAG és <b>{ref:bag}</b>"
+            "ca": "La referència al BAG és <b>{ref:bag}</b>",
+            "zgh": "ⵜⴳⴰ ⵜⵙⴰⵖⵓⵍⵜ ⴳ BAG <b>{ref:bag}</b>",
+            "es": "La referencia de BAG es <b>{ref:bag}</b>",
+            "cs": "Reference v BAG je <b>{ref:bag}</b>"
           },
           "mappings": [
             {
@@ -104,7 +113,9 @@
                 "de": "Dieses Gebäude hat keinen Verweis im BAG",
                 "nl": "Dit gebouw heeft geen referentie in de BAG",
                 "fr": "Ce bâtiment n'a pas de référence dans le BAG",
-                "ca": "Aquest edifici no té referència al BAG"
+                "ca": "Aquest edifici no té referència al BAG",
+                "zgh": "ⵜⵓⵚⴽⴰ ⴰⴷ ⵓⵔ ⵖⵓⵔⵙ ⵜⴰⵙⴰⵖⵓⵍⵜ ⴳ BAG",
+                "es": "Este edificio no tiene referencia en el BAG"
               }
             }
           ]
@@ -168,7 +179,10 @@
         "de": "Gebäude aus dem BAG-Register",
         "nl": "Gebouw uit de BAG",
         "fr": "Bâtiments du registre BAG",
-        "ca": "Edificis del registre BAG"
+        "ca": "Edificis del registre BAG",
+        "zgh": "ⵜⵓⵚⴽⴰⵡⵉⵏ ⵙⴳ ⵡⴰⵔⵔⴰ ⵏ BAG",
+        "es": "Edificios del registro BAG",
+        "cs": "Budovy z registru BAG"
       },
       "source": {
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
@@ -233,7 +247,10 @@
                 "de": "Richtige Werte noch nicht berechnet. Aktualisieren Sie diese Seite",
                 "nl": "Correcte waarden nog niet berekend. Herlaad deze pagina",
                 "fr": "Les valeurs correctes n'ont pas encore été calculées. Rafraichissez la page",
-                "ca": "El valors correctes encara no s'ha calculat. Refresca la pàgina"
+                "ca": "El valors correctes encara no s'ha calculat. Refresca la pàgina",
+                "cs": "Zatím nebyly vypočteny správné hodnoty. Aktualizujte stránku",
+                "nb_NO": "Har ikke regnet ut riktige verdier enda. Gjenoppfrisk siden.",
+                "es": "Aún no se han calculado los valores correctos. Actualice esta página"
               }
             },
             {
@@ -259,7 +276,9 @@
             "de": "Die Referenz in BAG ist <b>{_bag_obj:ref:bag}</b>",
             "nl": "De referentie in BAG is <b>{_bag_obj:ref:bag}</b>",
             "fr": "La référence dans BAG est <b>{_bag_obj:ref:bag}</b>",
-            "ca": "La referència a BAG és <b>{_bag_obj:ref:bag}</b>"
+            "ca": "La referència a BAG és <b>{_bag_obj:ref:bag}</b>",
+            "es": "La referencia en BAG es <b>{_bag_obj:ref:bag}</b>",
+            "cs": "Reference v BAG je <b>{_bag_obj:ref:bag}</b>"
           }
         },
         {
@@ -271,7 +290,9 @@
             "nl": "Dit gebouw is gebouwd in <b>{_bag_obj:start_date}</b>",
             "fr": "Le bâtiment a été construit en <b>{_bag_obj:start_date}</b>",
             "ca": "L’edifici va ser construït al <b> {_bag_obj:start_date}4</b>",
-            "es": "El edificio fue construido en <b>{_bag_obj:start_date}</b>"
+            "es": "El edificio fue construido en <b>{_bag_obj:start_date}</b>",
+            "cs": "Tato budova byla postavena v <b>{_bag_obj:start_date}</b>",
+            "nb_NO": "Bygning oppført <b>{_bag_obj:start_date}</b>"
           },
           "mappings": [
             {
@@ -281,7 +302,10 @@
                 "de": "Der Bau wurde in <b>{_bag_obj:start_date}</b> begonnen",
                 "nl": "De bouw van dit gebouw is gestart in <b>{_bag_obj:start_date}</b>",
                 "fr": "Le bâtiment a été commencé en <b>{_bag_obj:start_date}</b>",
-                "ca": "L’edifici es va començar al <b> {_bag_obj:start_date}</b>"
+                "ca": "L’edifici es va començar al <b> {_bag_obj:start_date}</b>",
+                "cs": "Stavba byla zahájena v <b>{_bag_obj:start_date}</b>",
+                "nb_NO": "Oppføring startet <b>{_bag_obj:start_date}</b>",
+                "es": "Este edificio se empezó a construir en <b>{_bag_obj:start_date}</b>"
               }
             }
           ]
@@ -293,7 +317,10 @@
             "de": "Der Gebäudetyp ist ein <b>{_bag_obj:building}</b>",
             "nl": "Het gebouwtype is <b>{_bag_obj:building}</b>",
             "fr": "Le type de bâtiment est <b>{_bag_obj:building}</b>",
-            "ca": "El tipus d'edifici és <b>{_bag_obj:building}</b>"
+            "ca": "El tipus d'edifici és <b>{_bag_obj:building}</b>",
+            "cs": "Typ budovy je <b>{_bag_obj:building}.</b>",
+            "nb_NO": "Dette er en bygning av typen <b>{_bag_obj:building}</b>",
+            "es": "El edificio es de tipo <b>{_bag_obj:building}</b>"
           },
           "mappings": [
             {
@@ -303,7 +330,9 @@
                 "de": "Der Gebäudetyp ist ein <b>{_bag_obj:construction}</b>",
                 "nl": "Het gebouwtype wordt <b>{_bag_obj:construction}</b>",
                 "fr": "Le type de bâtiment sera <b>{_bag_obj:construction}</b>",
-                "ca": "El tipus d'edifici serà <b>{_bag_obj:construction}</b>"
+                "ca": "El tipus d'edifici serà <b>{_bag_obj:construction}</b>",
+                "cs": "Typ budovy bude <b>{_bag_obj:construction}</b>",
+                "es": "El tipo de edificio será un <b>{_bag_obj:construction}</b>"
               }
             }
           ]

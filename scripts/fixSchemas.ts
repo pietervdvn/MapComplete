@@ -42,7 +42,7 @@ function WalkScheme<T>(
         }
         const definitionName = ref.substr(prefix.length)
         if (isHandlingReference.indexOf(definitionName) >= 0) {
-            return
+            return []
         }
         const loadedScheme = fullScheme.definitions[definitionName]
         return WalkScheme(onEach, loadedScheme, fullScheme, path, [
@@ -137,7 +137,9 @@ function main() {
                 def["additionalProperties"] = false
             }
         }
-        writeFileSync(dir + "/" + name + ".schema.json", JSON.stringify(parsed, null, "  "), { encoding: "utf8" })
+        writeFileSync(dir + "/" + name + ".schema.json", JSON.stringify(parsed, null, "  "), {
+            encoding: "utf8",
+        })
     }
 
     extractMeta("LayoutConfigJson", "layoutconfigmeta")

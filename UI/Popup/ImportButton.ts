@@ -35,7 +35,7 @@ import CreateMultiPolygonWithPointReuseAction from "../../Logic/Osm/Actions/Crea
 import { Tag } from "../../Logic/Tags/Tag"
 import TagApplyButton from "./TagApplyButton"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import * as conflation_json from "../../assets/layers/conflation/conflation.json"
+import conflation_json from "../../assets/layers/conflation/conflation.json"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import { LoginToggle } from "./LoginButton"
 import { AutoAction } from "./AutoApplyButton"
@@ -644,7 +644,7 @@ export class ImportPointButton extends AbstractImportButton {
                 },
                 {
                     name: "maproulette_id",
-                    doc: "If given, the maproulette challenge will be marked as fixed",
+                    doc: "The property name of the maproulette_id - this is probably `mr_taskId`. If given, the maproulette challenge will be marked as fixed. Only use this if part of a maproulette-layer.",
                 },
             ],
             { showRemovedTags: false }
@@ -702,7 +702,7 @@ export class ImportPointButton extends AbstractImportButton {
             Hash.hash.setData(newElementAction.newElementId)
 
             if (note_id !== undefined) {
-                state.osmConnection.closeNote(note_id, "imported")
+                await state.osmConnection.closeNote(note_id, "imported")
                 originalFeatureTags.data["closed_at"] = new Date().toISOString()
                 originalFeatureTags.ping()
             }
@@ -720,7 +720,7 @@ export class ImportPointButton extends AbstractImportButton {
                     )
                 } else {
                     console.log("Marking maproulette task as fixed")
-                    state.maprouletteConnection.closeTask(Number(maproulette_id))
+                    await state.maprouletteConnection.closeTask(Number(maproulette_id))
                     originalFeatureTags.data["mr_taskStatus"] = "Fixed"
                     originalFeatureTags.ping()
                 }

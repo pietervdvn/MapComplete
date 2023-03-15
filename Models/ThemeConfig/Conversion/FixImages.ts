@@ -1,36 +1,44 @@
 import { Conversion, DesugaringStep } from "./Conversion"
 import { LayoutConfigJson } from "../Json/LayoutConfigJson"
 import { Utils } from "../../../Utils"
-import * as metapaths from "../../../assets/layoutconfigmeta.json"
-import * as tagrenderingmetapaths from "../../../assets/questionabletagrenderingconfigmeta.json"
+import metapaths from "../../../assets/layoutconfigmeta.json"
+import tagrenderingmetapaths from "../../../assets/questionabletagrenderingconfigmeta.json"
 import Translations from "../../../UI/i18n/Translations"
 
-export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
+export class ExtractImages extends Conversion<
+    LayoutConfigJson,
+    { path: string; context: string }[]
+> {
     private _isOfficial: boolean
-    private _sharedTagRenderings: Map<string, any>
+    private _sharedTagRenderings: Set<string>
 
-    private static readonly layoutMetaPaths = (metapaths["default"] ?? metapaths).filter(
+    private static readonly layoutMetaPaths = metapaths.filter(
         (mp) =>
-            ExtractImages.mightBeTagRendering(mp) ||
-            (mp.typeHint !== undefined && (mp.typeHint === "image" || mp.typeHint === "icon"))
+            ExtractImages.mightBeTagRendering(<any>mp) ||
+            (mp.typeHint !== undefined &&
+                (mp.typeHint === "image" ||
+                    mp.typeHint === "icon" ||
+                    mp.typeHint === "image[]" ||
+                    mp.typeHint === "icon[]"))
     )
-    private static readonly tagRenderingMetaPaths =
-        tagrenderingmetapaths["default"] ?? tagrenderingmetapaths
+    private static readonly tagRenderingMetaPaths = tagrenderingmetapaths
 
-    constructor(isOfficial: boolean, sharedTagRenderings: Map<string, any>) {
+    constructor(isOfficial: boolean, sharedTagRenderings: Set<string>) {
         super("Extract all images from a layoutConfig using the meta paths.", [], "ExctractImages")
         this._isOfficial = isOfficial
         this._sharedTagRenderings = sharedTagRenderings
     }
 
-    public static mightBeTagRendering(metapath: { type: string | string[] }): boolean {
+    public static mightBeTagRendering(metapath: { type?: string | string[] }): boolean {
         if (!Array.isArray(metapath.type)) {
             return false
         }
-        return metapath.type.some(
-            (t) =>
-                t["$ref"] == "#/definitions/TagRenderingConfigJson" ||
-                t["$ref"] == "#/definitions/QuestionableTagRenderingConfigJson"
+        return (
+            metapath.type?.some(
+                (t) =>
+                    t["$ref"] == "#/definitions/TagRenderingConfigJson" ||
+                    t["$ref"] == "#/definitions/QuestionableTagRenderingConfigJson"
+            ) ?? false
         )
     }
 
@@ -63,27 +71,27 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
      *             ]
      *         }
      *     ]
-     * }, "test").result;
+     * }, "test").result.map(i => i.path);
      * images.length // => 2
-     * images.findIndex(img => img == "./assets/layers/bike_parking/staple.svg") // => 0
-     * images.findIndex(img => img == "./assets/layers/bike_parking/bollard.svg") // => 1
+     * images.findIndex(img => img == "./assets/layers/bike_parking/staple.svg") >= 0 // => true
+     * images.findIndex(img => img == "./assets/layers/bike_parking/bollard.svg") >= 0 // => true
      *
      * // should not pickup rotation, should drop color
-     * const images = new ExtractImages(true, new Map<string, any>()).convert(<any>{"layers": [{mapRendering: [{"location": ["point", "centroid"],"icon": "pin:black",rotation: 180,iconSize: "40,40,center"}]}]
+     * const images = new ExtractImages(true, new Set<string>()).convert(<any>{"layers": [{mapRendering: [{"location": ["point", "centroid"],"icon": "pin:black",rotation: 180,iconSize: "40,40,center"}]}]
      * }, "test").result
      * images.length // => 1
-     * images[0] // => "pin"
+     * images[0].path // => "pin"
      *
      */
     convert(
         json: LayoutConfigJson,
         context: string
-    ): { result: string[]; errors: string[]; warnings: string[] } {
-        const allFoundImages: string[] = []
+    ): { result: { path: string; context: string }[]; errors: string[]; warnings: string[] } {
+        const allFoundImages: { path: string; context: string }[] = []
         const errors = []
         const warnings = []
         for (const metapath of ExtractImages.layoutMetaPaths) {
-            const mightBeTr = ExtractImages.mightBeTagRendering(metapath)
+            const mightBeTr = ExtractImages.mightBeTagRendering(<any>metapath)
             const allRenderedValuesAreImages =
                 metapath.typeHint === "icon" || metapath.typeHint === "image"
             const found = Utils.CollectPath(metapath.path, json)
@@ -107,7 +115,7 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                             continue
                         }
 
-                        allFoundImages.push(foundImage)
+                        allFoundImages.push({ path: foundImage, context: context + "." + path })
                     } else {
                         // This is a tagRendering.
                         // Either every rendered value might be an icon
@@ -136,7 +144,10 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                                                 JSON.stringify(img.leaf)
                                         )
                                     } else {
-                                        allFoundImages.push(img.leaf)
+                                        allFoundImages.push({
+                                            path: img.leaf,
+                                            context: context + "." + path,
+                                        })
                                     }
                                 }
                                 if (!allRenderedValuesAreImages && isImage) {
@@ -145,7 +156,12 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                                         ...Translations.T(
                                             img.leaf,
                                             "extract_images from " + img.path.join(".")
-                                        ).ExtractImages(false)
+                                        )
+                                            .ExtractImages(false)
+                                            .map((path) => ({
+                                                path,
+                                                context: context + "." + path,
+                                            }))
                                     )
                                 }
                             }
@@ -160,20 +176,30 @@ export class ExtractImages extends Conversion<LayoutConfigJson, string[]> {
                         )
                         continue
                     }
-                    allFoundImages.push(foundElement.leaf)
+                    if (typeof foundElement.leaf !== "string") {
+                        continue
+                    }
+                    allFoundImages.push({
+                        context: context + "." + foundElement.path.join("."),
+                        path: foundElement.leaf,
+                    })
                 }
             }
         }
 
-        const splitParts = []
-            .concat(
-                ...Utils.NoNull(allFoundImages)
-                    .map((img) => img["path"] ?? img)
-                    .map((img) => img.split(";"))
+        const cleanedImages: { path: string; context: string }[] = []
+
+        for (const foundImage of allFoundImages) {
+            // Split "circle:white;./assets/layers/.../something.svg" into ["circle", "./assets/layers/.../something.svg"]
+            const allPaths = Utils.NoNull(
+                Utils.NoEmpty(foundImage.path?.split(";")?.map((part) => part.split(":")[0]))
             )
-            .map((img) => img.split(":")[0])
-            .filter((img) => img !== "")
-        return { result: Utils.Dedup(splitParts), errors, warnings }
+            for (const path of allPaths) {
+                cleanedImages.push({ path, context: foundImage.context })
+            }
+        }
+
+        return { result: cleanedImages, errors, warnings }
     }
 }
 
@@ -271,14 +297,11 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
 
         json = Utils.Clone(json)
 
-        let paths = metapaths["default"] ?? metapaths
-        let trpaths = tagrenderingmetapaths["default"] ?? tagrenderingmetapaths
-
-        for (const metapath of paths) {
+        for (const metapath of metapaths) {
             if (metapath.typeHint !== "image" && metapath.typeHint !== "icon") {
                 continue
             }
-            const mightBeTr = ExtractImages.mightBeTagRendering(metapath)
+            const mightBeTr = ExtractImages.mightBeTagRendering(<any>metapath)
             Utils.WalkPath(metapath.path, json, (leaf, path) => {
                 if (typeof leaf === "string") {
                     return replaceString(leaf)
@@ -287,7 +310,7 @@ export class FixImages extends DesugaringStep<LayoutConfigJson> {
                 if (mightBeTr) {
                     // We might have reached a tagRenderingConfig containing icons
                     // lets walk every rendered value and fix the images in there
-                    for (const trpath of trpaths) {
+                    for (const trpath of tagrenderingmetapaths) {
                         if (trpath.typeHint !== "rendered") {
                             continue
                         }

@@ -11,7 +11,8 @@
     }
   },
   "source": {
-    "geoJson": "https://raw.githubusercontent.com/osmlab/osm-community-index/main/dist/completeFeatureCollection.json",
+    "geoJson": "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/tile_{z}_{x}_{y}.geojson",
+    "geoJsonZoomLevel": 6,
     "osmTags": "resources~*",
     "isOsmCache": false
   },

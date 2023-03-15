@@ -23,17 +23,22 @@ import { FlowStep } from "./FlowStep"
 import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 import Title from "../Base/Title"
 import CheckBoxes from "../Input/Checkboxes"
-import { AllTagsPanel } from "../AllTagsPanel"
+import AllTagsPanel from "../AllTagsPanel.svelte"
 import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch"
 import { Feature, Point } from "geojson"
 import DivContainer from "../Base/DivContainer"
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer"
+import SvelteUIElement from "../Base/SvelteUIElement"
 
 class PreviewPanel extends ScrollableFullScreen {
     constructor(tags: UIEventSource<any>) {
         super(
             (_) => new FixedUiElement("Element to import"),
-            (_) => new Combine(["The tags are:", new AllTagsPanel(tags)]).SetClass("flex flex-col"),
+            (_) =>
+                new Combine([
+                    "The tags are:",
+                    new SvelteUIElement(AllTagsPanel, { tags }),
+                ]).SetClass("flex flex-col"),
             "element"
         )
     }

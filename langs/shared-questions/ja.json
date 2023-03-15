@@ -1,7 +1,8 @@
 {
     "shared_questions": {
         "description": {
-            "question": "前の質問で伝えきれなかった関連事項がまだありますか？ここに追加してください。<br/><span style='font-size: small'>今後表示しない</span>"
+            "question": "前の質問で伝えきれなかった関連事項がまだありますか？ここに追加してください。",
+            "questionHint": "今後表示しない"
         },
         "dog-access": {
             "mappings": {

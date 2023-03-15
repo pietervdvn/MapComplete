@@ -85,15 +85,6 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
             tabs.push({ header: Svg.share_img, content: new ShareScreen(state) })
         }
 
-        const copyright = {
-            header: Svg.copyright_svg(),
-            content: new Combine([
-                Translations.t.general.openStreetMapIntro.SetClass("link-underline"),
-                new CopyrightPanel(state),
-            ]),
-        }
-        tabs.push(copyright)
-
         const privacy = {
             header: Svg.eye_svg(),
             content: new PrivacyPolicy(),

@@ -17,7 +17,8 @@
     "eo": "Konataj adresoj en OSM",
     "cs": "Známé adresy v OSM",
     "pa_PK": "او‌ایس‌ایم وچ جاݨ پچھاݨے پتے",
-    "ca": "Adreces conegudes a OSM"
+    "ca": "Adreces conegudes a OSM",
+    "zgh": "ⴰⵏⵙⵉⵡⵏ ⵉⵜⵜⵡⴰⵙⵙⵏⵏ ⴳ OSM"
   },
   "minzoom": 18,
   "source": {
@@ -70,7 +71,8 @@
     "pt": "Endereços",
     "eo": "Adresoj",
     "cs": "Adresy",
-    "pa_PK": "پتے"
+    "pa_PK": "پتے",
+    "zgh": "ⴰⵏⵙⵉⵡⵏ"
   },
   "tagRenderings": [
     {

@@ -279,12 +279,17 @@ export class LayerFilterPanel extends Combine {
 
         const icon = Svg.checkbox_filled_svg().SetClass("block mr-2 w-6")
         const iconUnselected = Svg.checkbox_empty_svg().SetClass("block mr-2 w-6")
-
+        const qp = QueryParameters.GetBooleanQueryParameter(
+            "filter-" + filterConfig.id,
+            false,
+            "Is filter '" + filterConfig.options[0].question.textFor("en") + " enabled?"
+        )
         const toggle = new ClickableToggle(
             new Combine([icon, option.question.Clone().SetClass("block")]).SetClass("flex"),
             new Combine([iconUnselected, option.question.Clone().SetClass("block")]).SetClass(
                 "flex"
-            )
+            ),
+            qp
         )
             .ToggleOnClick()
             .SetClass("block m-1")
@@ -315,6 +320,15 @@ export class LayerFilterPanel extends Combine {
             state: i,
         }))
         let filterPicker: InputElement<number>
+        const value = QueryParameters.GetQueryParameter(
+            "filter-" + filterConfig.id,
+            "0",
+            "Value for filter " + filterConfig.id
+        ).sync(
+            (str) => Number(str),
+            [],
+            (n) => "" + n
+        )
 
         if (options.length <= 6) {
             filterPicker = new RadioButton(
@@ -323,6 +337,7 @@ export class LayerFilterPanel extends Combine {
                         new FixedInputElement(option.question.Clone().SetClass("block"), i)
                 ),
                 {
+                    value,
                     dontStyle: true,
                 }
             )
@@ -332,7 +347,8 @@ export class LayerFilterPanel extends Combine {
                 options.map((option, i) => ({
                     value: i,
                     shown: option.question.Clone(),
-                }))
+                })),
+                value
             )
         }
 

@@ -2,8 +2,10 @@ import { QueryParameters } from "../Web/QueryParameters"
 import { BBox } from "../BBox"
 import Constants from "../../Models/Constants"
 import { GeoLocationPointProperties, GeoLocationState } from "../State/GeoLocationState"
-import State from "../../State"
 import { UIEventSource } from "../UIEventSource"
+import Loc from "../../Models/Loc"
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource"
 
 /**
  * The geolocation-handler takes a map-location and a geolocation state.
@@ -12,12 +14,24 @@ import { UIEventSource } from "../UIEventSource"
  */
 export default class GeoLocationHandler {
     public readonly geolocationState: GeoLocationState
-    private readonly _state: State
+    private readonly _state: {
+        currentUserLocation: SimpleFeatureSource
+        layoutToUse: LayoutConfig
+        locationControl: UIEventSource<Loc>
+        selectedElement: UIEventSource<any>
+        leafletMap?: UIEventSource<any>
+    }
     public readonly mapHasMoved: UIEventSource<boolean> = new UIEventSource<boolean>(false)
 
     constructor(
         geolocationState: GeoLocationState,
-        state: State // { locationControl: UIEventSource<Loc>, selectedElement: UIEventSource<any>, leafletMap?: UIEventSource<any> })
+        state: {
+            locationControl: UIEventSource<Loc>
+            currentUserLocation: SimpleFeatureSource
+            layoutToUse: LayoutConfig
+            selectedElement: UIEventSource<any>
+            leafletMap?: UIEventSource<any>
+        }
     ) {
         this.geolocationState = geolocationState
         this._state = state
@@ -45,13 +59,10 @@ export default class GeoLocationHandler {
                 (new Date().getTime() - geolocationState.requestMoment.data?.getTime() ?? 0) / 1000
             if (!this.mapHasMoved.data) {
                 // The map hasn't moved yet; we received our first coordinates, so let's move there!
-                console.log(
-                    "Moving the map to an initial location; time since last request is",
-                    timeSinceLastRequest
-                )
-                if (timeSinceLastRequest < Constants.zoomToLocationTimeout) {
-                    self.MoveMapToCurrentLocation()
-                }
+                self.MoveMapToCurrentLocation()
+            }
+            if (timeSinceLastRequest < Constants.zoomToLocationTimeout) {
+                self.MoveMapToCurrentLocation()
             }
 
             if (this.geolocationState.isLocked.data) {
@@ -109,11 +120,12 @@ export default class GeoLocationHandler {
         }
 
         mapLocation.setData({
-            zoom: mapLocation.data.zoom,
+            zoom: Math.max(mapLocation.data.zoom, 16),
             lon: newLocation.longitude,
             lat: newLocation.latitude,
         })
         this.mapHasMoved.setData(true)
+        this.geolocationState.requestMoment.setData(undefined)
     }
 
     private CopyGeolocationIntoMapstate() {

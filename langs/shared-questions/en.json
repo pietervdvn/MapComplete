@@ -29,8 +29,35 @@
             },
             "question": "What coins can you use to pay here?"
         },
+        "denominations-notes": {
+            "mappings": {
+                "0": {
+                    "then": "5 euro notes are accepted"
+                },
+                "1": {
+                    "then": "10 euro notes are accepted"
+                },
+                "2": {
+                    "then": "20 euro notes are accepted"
+                },
+                "3": {
+                    "then": "50 euro notes are accepted"
+                },
+                "4": {
+                    "then": "100 euro notes are accepted"
+                },
+                "5": {
+                    "then": "200 euro notes are accepted"
+                },
+                "6": {
+                    "then": "500 euro notes are accepted"
+                }
+            },
+            "question": "what notes can you use to pay here?"
+        },
         "description": {
-            "question": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>"
+            "question": "Is there still something relevant you couldn't give in the previous questions? Add it here.",
+            "questionHint": "Don't repeat already stated facts"
         },
         "dog-access": {
             "mappings": {

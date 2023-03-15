@@ -13,7 +13,7 @@ async function main(args: string[]) {
     console.log("Removing translation string ", path, "from the general translations")
     const files = ScriptUtils.readDirRecSync("./langs", 1).filter((f) => f.endsWith(".json"))
     for (const file of files) {
-        const json = JSON.parse(fs.readFileSync(file, "UTF-8"))
+        const json = JSON.parse(fs.readFileSync(file, { encoding: "utf-8" }))
         Utils.WalkPath(path, json, (_) => undefined)
         fs.writeFileSync(file, JSON.stringify(json, null, "    ") + "\n")
     }

@@ -1,10 +1,23 @@
 import { exec } from "child_process"
 import { writeFile, writeFileSync } from "fs"
 
-function asList(hist: Map<string, number>): {
-    contributors: { contributor: string; commits: number }[]
-} {
-    const ls = []
+interface Contributor {
+    /**
+     * The name of the contributor
+     */
+    contributor: string
+    /**
+     * The number of commits
+     */
+    commits: number
+}
+
+interface ContributorList {
+    contributors: Contributor[]
+}
+
+function asList(hist: Map<string, number>): ContributorList {
+    const ls: Contributor[] = []
     hist.forEach((commits, contributor) => {
         ls.push({ commits, contributor })
     })

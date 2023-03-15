@@ -119,19 +119,30 @@
     {
       "id": "circumference",
       "question": {
-        "en": "What is the circumference of the tree trunk?<p class='subtle'>This is measured at a height of 1.30m</p>",
-        "de": "Wie groß ist der Umfang des Baumstammes?<p class='subtle'>Dies wird in einer Höhe von 1,30 m gemessen</p>",
-        "fr": "Quelle est la circonférence du tronc ? <p class='subtle'>La mesure est effectuée à 1.30m de hauteur</p>"
+        "en": "What is the circumference of the tree trunk?",
+        "de": "Wie groß ist der Umfang des Baumstammes?",
+        "fr": "Quelle est la circonférence du tronc ? ",
+        "nl": "Wat is de omtrek van de boomstam? ",
+        "es": "¿Cuál es la circunferencia del tronco del árbol?"
       },
       "render": {
         "en": "The tree trunk has a circumference of {circumference} meter",
         "de": "Der Baumstamm hat einen Umfang von {circumference} Meter",
-        "fr": "Le tronc a une circonférence de {circumference} mètre(s)"
+        "fr": "Le tronc a une circonférence de {circumference} mètre(s)",
+        "nl": "De boomstam heeft een omtrek van {circumference} meter",
+        "es": "El tronco del árbol tiene una circunferencia de {circumference} metros"
       },
       "freeform": {
         "key": "circumference",
         "inline": true,
         "type": "pfloat"
+      },
+      "questionHint": {
+        "en": "This is measured at a height of 1.30m",
+        "de": "Dies wird in einer Höhe von 1,30 m gemessen",
+        "fr": "La mesure est effectuée à 1.30m de hauteur",
+        "nl": "Dit wordt 1.30m boven de grond gemeten",
+        "es": "Se mide a una altura de 1,30 m"
       }
     },
     {
@@ -139,7 +150,8 @@
       "question": {
         "en": "What is the height of this tree?",
         "de": "Wie hoch ist dieser Baum?",
-        "fr": "Quelle est la hauteur de cette arbre ?"
+        "fr": "Quelle est la hauteur de cette arbre ?",
+        "nl": "Wat is de hoogte van deze boom?"
       },
       "freeform": {
         "key": "height",
@@ -149,7 +161,9 @@
       "render": {
         "en": "This tree is {height} meter high",
         "de": "Dieser Baum ist {height} Meter hoch",
-        "fr": "Cet arbre a une hauteur de {height} mètre(s)"
+        "fr": "Cet arbre a une hauteur de {height} mètre(s)",
+        "nl": "Deze boom is {height} meter hoog",
+        "es": "Este árbol tiene {height} metros de altura"
       }
     },
     {

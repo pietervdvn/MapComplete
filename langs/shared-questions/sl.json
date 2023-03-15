@@ -1,7 +1,8 @@
 {
     "shared_questions": {
         "description": {
-            "question": "Ali je še kaj pomembnega, česar niste mogli povedati v prejšnjih vprašanjih? Dopišite tukaj.<br/><span style='font-size: small'>Ne ponavljajte že navedenih dejstev</span>"
+            "question": "Ali je še kaj pomembnega, česar niste mogli povedati v prejšnjih vprašanjih? Dopišite tukaj.",
+            "questionHint": "Ne ponavljajte že navedenih dejstev"
         },
         "dog-access": {
             "mappings": {

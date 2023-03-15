@@ -58,7 +58,7 @@
                     }
                 },
                 "question": "¿Como está clasificada la operadora de la estación?",
-                "render": "La operador a no es una entidad de tipo {operator:type}."
+                "render": "La operadora es una entidad de tipo {operator:type}."
             },
             "ambulance-place": {
                 "question": "¿Dónde se encuentra la estación? (ej. nombre del barrio, pueblo o ciudad)",
@@ -66,7 +66,7 @@
             },
             "ambulance-street": {
                 "question": "¿Cual es el nombre de la calle en la que se encuentra la estación?",
-                "render": "Esta estación se encuentra al lado de una autovía llamada {addr:street}."
+                "render": "Esta estación se encuentra al lado de una via llamada {addr:street}."
             }
         },
         "title": {
@@ -74,7 +74,7 @@
         }
     },
     "artwork": {
-        "description": "Un mapa abierto de estatus, bustos, grafitis y otras obras de arte en todo el mundo",
+        "description": "Un mapa abierto de Estatuas, bustos, Graffitis y otras Obras de Arte en todo el mundo",
         "name": "Obras de arte",
         "presets": {
             "0": {
@@ -84,7 +84,7 @@
         "tagRenderings": {
             "artwork-artist-wikidata": {
                 "question": "¿Quién creó esta obra de arte?",
-                "render": "Esta obra de la creó {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+                "render": "Esta obra de arte la creó {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
             },
             "artwork-artist_name": {
                 "question": "¿Que artista creó esto?",
@@ -173,7 +173,7 @@
                         "then": "Bolardo fijo"
                     },
                     "2": {
-                        "then": "Bolardo que se puede doblar"
+                        "then": "Bolardo retráctil"
                     },
                     "3": {
                         "then": "Bolardo flexible, normalmente plástico"
@@ -214,7 +214,7 @@
                 "render": "Espacio entre barreras (a lo largo de la longitud de la carretera): {width:separation} m"
             },
             "Width of opening (cyclebarrier)": {
-                "question": "¿Cómo de año es la apertura más pequeña al lado de las barreras?",
+                "question": "¿Que amplitud tiene la apertura más pequeña al lado de las barreras?",
                 "render": "Anchura de la apertura: {width:opening} m"
             },
             "barrier_type": {
@@ -236,7 +236,7 @@
                         "then": "Un ciclista no puede pasar esto."
                     }
                 },
-                "question": "¿Puede pasar una bicicleta esta barrera?"
+                "question": "¿Una bicicleta puede pasar esta barrera?"
             }
         },
         "title": {
@@ -260,6 +260,13 @@
             }
         },
         "tagRenderings": {
+            "bench-artwork": {
+                "mappings": {
+                    "1": {
+                        "then": "Este banco no tiene una obra de arte integrada"
+                    }
+                }
+            },
             "bench-backrest": {
                 "mappings": {
                     "0": {
@@ -302,8 +309,15 @@
                 "render": "Color: {colour}"
             },
             "bench-direction": {
-                "question": "¿En qué dirección se mira al sentarse en el banco?",
-                "render": "¿Cuando está sentado en el banco, uno mira hacia {direction}º."
+                "question": "¿En qué dirección miras sentado en el banco?",
+                "render": "Cuando se está sentado en el banco, se mira hacia a {direction}º."
+            },
+            "bench-inscription": {
+                "mappings": {
+                    "1": {
+                        "then": "Este banco <span class='subtle'>(probablemente)</span> no tiene inscripción"
+                    }
+                }
             },
             "bench-material": {
                 "mappings": {
@@ -330,6 +344,11 @@
                 "render": "Material: {material}"
             },
             "bench-seats": {
+                "mappings": {
+                    "0": {
+                        "then": "Este banco no tiene asientos separados"
+                    }
+                },
                 "question": "¿Cuántos asientos tiene este banco?",
                 "render": "{seats} asientos"
             },
@@ -670,7 +689,7 @@
                         "then": "No está permitido aparcar bicicletas de carga"
                     }
                 },
-                "question": "¿Este aparcamiento de bicicletas tiene huevos para bicicletas de carga?"
+                "question": "¿Este aparcamiento de bicicletas tiene huecos para bicicletas de carga?"
             },
             "Is covered?": {
                 "mappings": {
@@ -1135,7 +1154,7 @@
                         "then": "Un bar, principalmente para beber cervezas en un interior cálido y relajado"
                     },
                     "1": {
-                        "then": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz"
+                        "then": "Un <b>bar de copas</b> más moderno y comercial, posiblemente con una instalación de música y luz"
                     },
                     "2": {
                         "then": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo"
@@ -2065,6 +2084,9 @@
             "render": "Desfibrilador"
         }
     },
+    "dentist": {
+        "name": "Dentista"
+    },
     "dogpark": {
         "name": "parques de perros",
         "presets": {
@@ -2178,7 +2200,8 @@
                         "then": "Esta es una entrada sin una puerta física"
                     }
                 },
-                "question": "¿Cual es el tipo de esta puerta?<br/><span class='subtle'>Si la puerta está automatizada o no se pregunta en la siguiente pregunta</span>"
+                "question": "¿Cual es el tipo de esta puerta?",
+                "questionHint": "Si la puerta está automatizada o no se pregunta en la siguiente pregunta"
             },
             "Entrance type": {
                 "mappings": {
@@ -2342,7 +2365,7 @@
                 }
             }
         },
-        "description": "Una capa que muestra restaurantes y facilidades de comida rápida",
+        "description": "Una capa que muestra restaurantes y locales de comida rápida (con un renderizado especial para freidurías)",
         "filter": {
             "2": {
                 "options": {
@@ -2504,7 +2527,7 @@
                         "then": "<b>Debes</b> de traer tu propio recipiente para pedir aquí."
                     }
                 },
-                "question": "Si traes tu propio recipiente (como ollas de cocina y ollas pequeñas), ¿se utiliza para empaquetar tu pedido?<br/>"
+                "question": "Si traes tu propio recipiente (como ollas de cocina y ollas pequeñas), ¿se utiliza para empaquetar tu pedido?"
             }
         },
         "title": {
@@ -2594,12 +2617,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "Se desconoce el color de la boca de incendios."
-                    },
-                    "1": {
                         "then": "La boca de incendios es amarilla."
                     },
-                    "2": {
+                    "1": {
                         "then": "La boca de incendios es roja."
                     }
                 },
@@ -2623,18 +2643,15 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "Se desconoce el tipo de la boca de incendios"
-                    },
-                    "1": {
                         "then": "De pilar."
                     },
-                    "2": {
+                    "1": {
                         "then": "De tubería."
                     },
-                    "3": {
+                    "2": {
                         "then": "De pared."
                     },
-                    "4": {
+                    "3": {
                         "then": "Bajo tierra."
                     }
                 },
@@ -2725,6 +2742,7 @@
         }
     },
     "nature_reserve": {
+        "name": "Reserva Natural",
         "tagRenderings": {
             "Access tag": {
                 "mappings": {
@@ -3758,7 +3776,7 @@
                         "then": "Estos baños <b>no</b> tienen una pileta para lavarse las manos"
                     }
                 },
-                "question": "¿Esto baños tienen una pileta para lavarte los baños?"
+                "question": "¿Esto baños tienen una pileta para lavarte las manos?"
             },
             "toilet-has-paper": {
                 "mappings": {
@@ -3822,13 +3840,6 @@
                         "question": "Accesible con sillas de ruedas"
                     }
                 }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Tiene un cambiador"
-                    }
-                }
             }
         },
         "tagRenderings": {
@@ -3887,6 +3898,14 @@
             }
         },
         "tagRenderings": {
+            "circumference": {
+                "question": "¿Cuál es la circunferencia del tronco del árbol?",
+                "questionHint": "Se mide a una altura de 1,30 m",
+                "render": "El tronco del árbol tiene una circunferencia de {circumference} metros"
+            },
+            "height": {
+                "render": "Este árbol tiene {height} metros de altura"
+            },
             "tree-decidouous": {
                 "mappings": {
                     "0": {
@@ -3985,6 +4004,20 @@
             "render": "Árbol"
         }
     },
+    "usersettings": {
+        "tagRenderings": {
+            "translation-completeness": {
+                "render": "Las traducciones para {_theme} en {_language} están al {_translation_percentage}%: {_translation_translated_count} cadenas de {_translation_total} están traducidas"
+            },
+            "translation-help": {
+                "mappings": {
+                    "0": {
+                        "then": "Haz clic en el icono 'traducir' al lado de una cadena para introducir o actualizar un texto. Necesitas una cuenta de Weblate para esto. Crea una con tu usuario de OSM para desbloquear el modo de traducción automáticamente."
+                    }
+                }
+            }
+        }
+    },
     "veterinary": {
         "name": "veterinario",
         "presets": {
@@ -4024,6 +4057,7 @@
         }
     },
     "walls_and_buildings": {
+        "description": "Capa especial incorporada que proporciona todas las paredes y edificios. Esta capa es útil en los preajustes para objetos que pueden colocarse contra las paredes (por ejemplo: AEDs, buzones de correos, entradas, direcciones, cámaras de vigilancia, ...). Esta capa es invisible por defecto y no puede ser activada por el usuario.",
         "title": {
             "render": "Pared o edificio"
         }

@@ -6,7 +6,7 @@ scratch
 assets/editor-layer-index.json
 assets/generated/*
 assets/generated/images/*
-/*.webmanifest
+public/*.webmanifest
 /*.html
 !/index.html
 !/customGenerator.html
@@ -36,3 +36,5 @@ service-worker.js
 
 # Built Visual Studio Code Extensions
 *.vsix
+public/*.webmanifest
+public/assets/generated/

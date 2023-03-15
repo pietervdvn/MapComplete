@@ -5,6 +5,7 @@ Tech Skills: basic computer skills
 Demography: F, 50-60 yo
 Language: Dutch
 Medium: Android phone(s), DuckDuckGo browser + Fennec Browser
+User interface language: Dutch
 
 ## Task
 

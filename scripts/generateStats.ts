@@ -1,4 +1,4 @@
-import * as known_layers from "../assets/generated/known_layers.json"
+import known_layers from "../assets/generated/known_layers.json"
 import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 import { TagUtils } from "../Logic/Tags/TagUtils"
 import { Utils } from "../Utils"
@@ -10,7 +10,7 @@ import Constants from "../Models/Constants"
 
 async function main(includeTags = true) {
     ScriptUtils.fixUtils()
-    const layers: LayerConfigJson[] = (known_layers["default"] ?? known_layers).layers
+    const layers = <LayerConfigJson[]>known_layers.layers
 
     const keysAndTags = new Map<string, Set<string>>()
 

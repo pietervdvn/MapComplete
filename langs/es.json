@@ -1,7 +1,7 @@
 {
     "centerMessage": {
         "loadingData": "Cargando datos…",
-        "ready": "Hecho.",
+        "ready": "Hecho!",
         "retrying": "La carga de datos ha fallado. Volviéndolo a probar en {count} segundos…",
         "zoomIn": "Amplía para ver o editar los datos"
     },
@@ -59,7 +59,7 @@
                 "zoomInMore": "Ampliar más para importar este elemento"
             },
             "importTags": "El elemento recibirá {tags}",
-            "intro": "Has marcado un lugar del que no conocemos los datos.<br>",
+            "intro": "Has marcado un lugar del que no conocemos los datos.<br/>",
             "layerNotEnabled": "La capa {layer} no está habilitada. Hazlo para poder añadir un punto en esta capa",
             "openLayerControl": "Abrir el control de capas",
             "pleaseLogin": "Por favor inicia sesión para añadir un nuevo punto",
@@ -225,7 +225,7 @@
             "fsUserbadge": "Activar el botón de entrada",
             "fsWelcomeMessage": "Muestra el mensaje emergente de bienvenida y pestañas asociadas",
             "intro": "<h3>Comparte este mapa</h3> Comparte este mapa copiando el enlace de debajo y enviándolo a amigos y familia:",
-            "thanksForSharing": "Gracias por compartir"
+            "thanksForSharing": "Gracias por compartir!"
         },
         "skip": "Saltar esta pregunta",
         "skippedQuestions": "Has ignorado algunas preguntas",
@@ -249,6 +249,10 @@
             "wednesday": "Miércoles"
         },
         "welcomeBack": "Has entrado, bienvenido.",
+        "welcomeExplanation": {
+            "addNew": "Toque el mapa para añadir un nuevo POI.",
+            "general": "En este mapa, puedes ver, editar y agregar <i>puntos de interés</i>. Haz zoom para ver los POI, toca uno para ver o editar la información. Todos los datos proceden y se guardan en OpenStreetMap, que puede reutilizarse libremente."
+        },
         "wikipedia": {
             "createNewWikidata": "Crear un nuevo ítem Wikidata",
             "doSearch": "Busca arriba para ver los resultados",
@@ -267,6 +271,7 @@
     },
     "image": {
         "addPicture": "Añadir foto",
+        "currentLicense": "Tus imágenes se publicarán bajo {license}",
         "doDelete": "Borrar imagen",
         "dontDelete": "Cancelar",
         "isDeleted": "Borrada",
@@ -287,9 +292,9 @@
         "pleaseLogin": "Acceda para cargar una imagen",
         "respectPrivacy": "No fotografíe personas ni matrículas. No cargue datos de Google Maps, Google StreetView u otras fuentes protegidas por derechos de autor.",
         "toBig": "Tu imagen es demasiado grande, ya que pesa {actual_size}. Por favor utiliza imágenes de como máximo {max_size}",
-        "uploadDone": "Se ha añadido la imagen. Gracias por ayudar.",
+        "uploadDone": "Se ha añadido la imagen. Gracias por ayudar!",
         "uploadFailed": "No se pudo cargar la imagen. ¿Tiene Internet y se permiten las API de terceros? El navegador Brave o uMatrix podría bloquearlas.",
-        "uploadMultipleDone": "Se han añadido {count} imágenes. Gracias por ayudar.",
+        "uploadMultipleDone": "Se han añadido {count} imágenes. Gracias por ayudar!",
         "uploadingMultiple": "Cargando {count} imágenes…",
         "uploadingPicture": "Cargando la imagen…"
     },
@@ -708,12 +713,11 @@
     "translations": {
         "activateButton": "Ayuda a traducir MapComplete",
         "allMissing": "Aún sin traducciónes",
-        "completeness": "Las traducciones para {theme} en {language} están al {percentage}%: {translated} cadenas de {total} están traducidas",
-        "deactivate": "Deshabilitar los botones de traducción",
-        "help": "Haz clic en el icono 'traducir' al lado de una cadena para introducir o actualizar un texto. Necesitas una cuenta de Weblate para esto. Crea una con tu usuario de OSM para desbloquear el modo de traducción automáticamente.",
-        "isTranslator": "El modo de traducción está activo si tu nombre de usuario coincide con el nombre de un traductor anterior",
         "missing": "{count} cadenas sin traducir",
         "notImmediate": "Las traducciones no se actualizan directamente. Habitualmente esto lleva unos días"
+    },
+    "userinfo": {
+        "welcome": "Bienvenido {name}"
     },
     "validation": {
         "color": {

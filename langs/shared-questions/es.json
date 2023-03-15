@@ -29,8 +29,35 @@
             },
             "question": "¿Qué monedas se pueden usar aquí para pagar?"
         },
+        "denominations-notes": {
+            "mappings": {
+                "0": {
+                    "then": "Se aceptan billetes de 5 euros"
+                },
+                "1": {
+                    "then": "Se aceptan billetes de 10 euros"
+                },
+                "2": {
+                    "then": "Se aceptan billetes de 20 euros"
+                },
+                "3": {
+                    "then": "Se aceptan billetes de 50 euros"
+                },
+                "4": {
+                    "then": "Se aceptan billetes de 100 euros"
+                },
+                "5": {
+                    "then": "Se aceptan billetes de 200 euros"
+                },
+                "6": {
+                    "then": "Se aceptan billetes de 500 euros"
+                }
+            },
+            "question": "¿con qué billetes se puede pagar aquí?"
+        },
         "description": {
-            "question": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.<br/><span style='font-size: small'>No repita datos ya expresados</span>"
+            "question": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.",
+            "questionHint": "No repita datos ya expresados"
         },
         "dog-access": {
             "mappings": {
@@ -51,6 +78,17 @@
         },
         "email": {
             "question": "¿Cual es la direccióm de correo electrónico de {title()}?"
+        },
+        "induction-loop": {
+            "mappings": {
+                "0": {
+                    "then": "Este lugar tiene un bucle auditivo"
+                },
+                "1": {
+                    "then": "Este lugar <b>no</b> tiene bucle auditivo"
+                }
+            },
+            "question": "¿Este lugar tiene un bucle auditivo para personas con discapacidad auditiva?"
         },
         "internet": {
             "mappings": {

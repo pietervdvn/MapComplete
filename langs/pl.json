@@ -189,8 +189,6 @@
     "translations": {
         "activateButton": "Pomóż przetłumaczyć MapComplete",
         "allMissing": "Brak tłumaczeń",
-        "deactivate": "Wyłącz przyciski tłumaczenia",
-        "isTranslator": "Tryb tłumaczenia jest aktywny, ponieważ Twoja nazwa użytkownika odpowiada nazwisku poprzedniego tłumacza",
         "notImmediate": "Tłumaczenia nie są aktualizowane bezpośrednio. Zwykle trwa to kilka dni"
     },
     "userinfo": {

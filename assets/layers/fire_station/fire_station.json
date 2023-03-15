@@ -9,7 +9,8 @@
     "fr": "Couche des stations de pompiers",
     "de": "Feuerwachen",
     "nl": "Kaart van de brandweerstations",
-    "es": "Mapa de parques de bomberos"
+    "es": "Mapa de parques de bomberos",
+    "ca": "Mapa de parcs de bombers"
   },
   "minzoom": 12,
   "source": {
@@ -29,7 +30,8 @@
       "fr": "Station de pompiers",
       "de": "Feuerwache",
       "nl": "Brandweerstation",
-      "es": "Parque de bomberos"
+      "es": "Parque de bomberos",
+      "ca": "Parc de bombers"
     }
   },
   "description": {
@@ -40,7 +42,8 @@
     "fr": "Couche des stations de pompiers.",
     "de": "Kartenebene zur Darstellung von Feuerwachen.",
     "nl": "Kaartlaag die de brandweerstations toont.",
-    "es": "Capa del mapa que muestra parques de bomberos."
+    "es": "Capa del mapa que muestra parques de bomberos.",
+    "ca": "Capa del mapa que mostra els parcs de bombers."
   },
   "tagRenderings": [
     {
@@ -56,7 +59,8 @@
         "fr": "Quel est le nom de la station ?",
         "de": "Wie ist der Name der Feuerwache?",
         "nl": "Wat is de naam van dit brandweerstation?",
-        "es": "¿Cual es el nombre de este parque de bomberos?"
+        "es": "¿Cual es el nombre de este parque de bomberos?",
+        "ca": "Quin és el nom d'aquest parc de bombers?"
       },
       "render": {
         "en": "This station is called {name}.",
@@ -67,7 +71,8 @@
         "nb_NO": "Denne stasjonen heter {name}.",
         "nl": "Dit station heet {name}.",
         "de": "Der Name der Feuerwache ist {name}.",
-        "es": "Este parque de bomberos se llama {name}."
+        "es": "Este parque de bomberos se llama {name}.",
+        "ca": "Aquest parc de bombers es diu {name}."
       }
     },
     {
@@ -82,7 +87,8 @@
         "ru": " По какому адресу расположена эта часть?",
         "fr": " Quel est le nom de la rue dans lequel elle se situe ?",
         "nl": " Aan welke straat ligt dit station?",
-        "de": " In welcher Straße ist die Feuerwache?"
+        "de": " In welcher Straße ist die Feuerwache?",
+        "ca": " Quin és el nom del carrer on es troba aquesta estació?"
       },
       "render": {
         "en": "This station is along a highway called {addr:street}.",
@@ -103,7 +109,8 @@
         "fr": "Dans quelle localité la station est-elle située (p.ex. nom du quartier, village ou ville) ?",
         "it": "In che località si trova la stazione? (ad es. quartiere, paese o città)",
         "nl": "Waar is dit station gelegen? (v.b. naam van de buurt, dorp of stad)",
-        "de": "Wo befindet sich die Station? (z. B. Name des Viertels, des Dorfes oder der Stadt)"
+        "de": "Wo befindet sich die Station? (z. B. Name des Viertels, des Dorfes oder der Stadt)",
+        "ca": "On es troba aquesta estació? (p.e. nom del barri, poble o ciutat)"
       },
       "freeform": {
         "key": "addr:place"
@@ -115,7 +122,8 @@
         "fr": "La station fait partie de {addr:place}.",
         "it": "La stazione si trova a {addr:place}.",
         "nl": "Dit station ligt in {addr:place}.",
-        "de": "Diese Station befindet sich innerhalb von {addr:place}."
+        "de": "Diese Station befindet sich innerhalb von {addr:place}.",
+        "ca": "Aquesta estació es troba dins de {addr:place}."
       }
     },
     {
@@ -127,7 +135,8 @@
         "it": "Quale agenzia gestisce questa stazione?",
         "nl": "Welk agentschap beheert dit station?",
         "de": "Welche Organisation betreibt diese Station?",
-        "es": "¿Que agencia opera este parque?"
+        "es": "¿Que agencia opera este parque?",
+        "ca": "Quina agència opera aquesta estació?"
       },
       "render": {
         "en": "This station is operated by {operator}.",
@@ -136,7 +145,8 @@
         "it": "Questa stazione è gestita da {operator}.",
         "nl": "Dit station wordt beheerd door {operator}.",
         "de": "Diese Station wird betrieben von {operator}.",
-        "es": "Este parque lo opera {operator}."
+        "es": "Este parque lo opera {operator}.",
+        "ca": "{operator} opera aquest parc."
       },
       "freeform": {
         "key": "operator"
@@ -168,7 +178,8 @@
         "fr": "Quel est le type d’exploitant ?",
         "it": "Com’è classificato il gestore di questa stazione?",
         "nl": "Wat voor soort beheerder beheert dit station?",
-        "de": "Wie kann der Betreiber der Feuerwache eingestuft werden?"
+        "de": "Wie kann der Betreiber der Feuerwache eingestuft werden?",
+        "ca": "Com es classifica l'operador de l'estació?"
       },
       "render": {
         "en": "The operator is a(n) {operator:type} entity.",
@@ -176,7 +187,8 @@
         "fr": "L’exploitant est de type {operator:type}.",
         "it": "Il gestore è un ente {operator:type}.",
         "nl": "De beheerder is een organisatie van type {operator:type} .",
-        "de": "Der Betreiber ist {operator:type}."
+        "de": "Der Betreiber ist {operator:type}.",
+        "ca": "Aquest operador és una entitat {operator:type}."
       },
       "freeform": {
         "key": "operator:type"
@@ -196,7 +208,8 @@
             "nb_NO": "Stasjonen drives av myndighetene.",
             "nl": "Dit station wordt beheerd door de overheid.",
             "de": "Die Station wird von einer Behörde betrieben.",
-            "es": "Este parque de bomberos lo opera el gobierno."
+            "es": "Este parque de bomberos lo opera el gobierno.",
+            "ca": "Aquest parc l'opera el govern."
           }
         },
         {
@@ -211,7 +224,8 @@
             "fr": "La station est opérée par une organisation informelle.",
             "it": "Questa stazione è gestita dalla comunità oppure un’associazione informale.",
             "nl": "Dit station wordt beheerd door een informele of gemeenschapsorganisatie.",
-            "de": "Die Feuerwache wird von einer gemeinnützigen Organisation betrieben."
+            "de": "Die Feuerwache wird von einer gemeinnützigen Organisation betrieben.",
+            "ca": "Aquesta estació l'opera una comunitat o organització informal."
           }
         },
         {
@@ -226,7 +240,8 @@
             "fr": "La station est opérée par un groupe officiel de bénévoles.",
             "it": "Questa stazione è gestita da un gruppo di volontari ufficiale.",
             "nl": "Dit station wordt beheerd door een formele groep vrijwilligers.",
-            "de": "Die Feuerwache wird von einer Freiwilligenorganisation betrieben."
+            "de": "Die Feuerwache wird von einer Freiwilligenorganisation betrieben.",
+            "ca": "Aquest operació l'opera un grup formal de voluntaris."
           }
         },
         {
@@ -241,7 +256,8 @@
             "fr": "La station est opérée par un groupe privé.",
             "it": "Questa stazione è gestita da privati.",
             "nl": "Dit station wordt door private organisatie beheerd.",
-            "de": "Die Feuerwache wird von einer privaten Organisation betrieben."
+            "de": "Die Feuerwache wird von einer privaten Organisation betrieben.",
+            "ca": "Aquesta estació l'opera una entitat privada."
           }
         }
       ]
@@ -256,22 +272,24 @@
       "title": {
         "en": "a fire station",
         "ja": "消防署",
-        "ru": "Пожарная часть",
+        "ru": "пожарная часть",
         "fr": "une caserne de pompiers",
         "de": "eine Feuerwache",
         "it": "una caserma dei vigili del fuoco",
         "nb_NO": "en brannstasjon",
         "nl": "een brandweerstation",
-        "es": "un parque de bomberos"
+        "es": "un parque de bomberos",
+        "ca": "un parc de bombers"
       },
       "description": {
         "en": "A fire station is a place where the fire trucks and firefighters are located when not in operation.",
         "ja": "消防署は、運転していないときに消防車や消防士がいる場所です。",
         "fr": "Une caserne de pompiers est un lieu où les pompiers et leur équipements sont situés en dehors des missions.",
-        "de": "Eine Feuerwache ist ein Ort, an dem die Feuerwehrfahrzeuge und die Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
+        "de": "Eine Feuerwache ist ein Ort, an dem Feuerwehrfahrzeuge und Feuerwehrleute untergebracht sind, wenn sie nicht im Einsatz sind.",
         "it": "Una caserma dei pompieri è un luogo dove si trovano i mezzi antincendio e i pompieri tra una missione e l’altra.",
         "nl": "Een brandweerstation is een plaats waar brandweerwagens en brandweerlieden gebaseerd zijn.",
-        "es": "Un parque de bomberos es donde los bomberos y los camiones de incendios se encuentran cuando no están en uso."
+        "es": "Un parque de bomberos es donde los bomberos y los camiones de incendios se encuentran cuando no están en uso.",
+        "ca": "Un parc de bombers és on els bombers i els camions es troben quan no estan en ús."
       }
     }
   ],

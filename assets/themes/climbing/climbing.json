@@ -11,8 +11,10 @@
     "it": "Mappa aperta per le arrampicate",
     "fr": "Open Climbing Map",
     "hu": "Mászótérkép",
-    "ca": "Open Climbing Map",
-    "da": "Åbn klatrekort"
+    "ca": "Mapa obert d'escalada",
+    "da": "Åbn klatrekort",
+    "cs": "Otevřená lezecká mapa",
+    "es": "Mapa Abierto de Escalada"
   },
   "description": {
     "nl": "Op deze kaart vind je verschillende klimgelegenheden, zoals klimzalen, bolderzalen en klimmen in de natuur",
@@ -21,11 +23,14 @@
     "ru": "На этой карте вы найдете различные возможности для скалолазания, такие как скалодромы, залы для боулдеринга и скалы на природе.",
     "ja": "この地図には、自然の中のクライミングジム、ボルダリングホール、岩など、さまざまなクライミングの機会があります。",
     "zh_Hant": "在這份地圖上你會發現能夠攀爬機會，像是攀岩體育館、抱石大廳以及大自然當中的巨石。",
-    "fr": "Cette carte indique les sites d’escalade comme les salles d’escalade ou les sites naturels",
+    "fr": "Cette carte indique les sites d’escalade comme les salles d’escalade ou les sites naturels.",
     "it": "In questa cartina puoi trovare vari luoghi per arrampicata come ad esempio palestre di arrampicata, sale di pratica e rocce naturali.",
     "hu": "Ezen a térképen különböző mászási lehetőségeket talál, például falmászótermeket, bouldertermeket és sziklákat a természetben.",
     "nb_NO": "Forskjellige klatremuligheter, som f.eks. buldrehaller og steiner i naturen.",
-    "da": "På dette kort finder du forskellige klatremuligheder såsom klatremotionsrum, boulderinghaller og sten i naturen."
+    "da": "På dette kort finder du forskellige klatremuligheder såsom klatremotionsrum, boulderinghaller og sten i naturen.",
+    "cs": "Na této mapě najdete nejrůznější možnosti lezení, jako lezecké tělocvičny, boulderingové haly a skály v přírodě.",
+    "ca": "A aquest mapa trobaràs varies oportunitats d'escalada, como gimnasos d'escalada, sales d'escalada en bloc i roques a la natura.",
+    "es": "En este mapa encontrará diversas posibilidades de escalada, como rocódromos, salas de búlder y rocas en la naturaleza."
   },
   "descriptionTail": {
     "nl": "De klimkaart is oorspronkelijk gemaakt door <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> op <a href='https://kletterspots.de' target='_blank'>kletterspots.de</a>.",
@@ -36,7 +41,9 @@
     "zh_Hant": "攀爬地圖最初由 <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> 製作。如果你有回饋意見或問題請到Please <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>這邊反應</a>。</p><p>這專案使用來自<a href='https://www.openstreetmap.org/' target='_blank'>開放街圖</a>專案的資料。</p>",
     "fr": "La carte des sites d'escalade a été créée par <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Merci de le <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>contacter</a> pour des avis ou des questions.</p><p>Ce projet utilise les données <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
     "it": "La cartina di arrampicata è stata originariamente creata da <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Si prega di <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>scrivere qua</a> se si hanno commenti o domande da fare.</p><p>Il progetto usa i dati del progetto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
-    "hu": "A mászótérképet eredetileg <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> készítette. Ha észrevétele vagy kérdése van, kérjük, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>vele lépjen kapcsolatba</a>.</p> <p>A projekt az <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> adatait használja</p>"
+    "hu": "A mászótérképet eredetileg <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> készítette. Ha észrevétele vagy kérdése van, kérjük, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>vele lépjen kapcsolatba</a>.</p> <p>A projekt az <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> adatait használja</p>",
+    "cs": "Horolezeckou mapu původně vytvořil <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. V případě připomínek nebo dotazů ho prosím <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>kontaktujte</a>.</p><p>Projekt využívá data projektu <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
+    "es": "El mapa de escalada fue realizado originalmente por <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Por favor, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>ponte en contacto</a> si tienes comentarios o preguntas.</p><p>El proyecto utiliza datos del proyecto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>"
   },
   "icon": "./assets/themes/climbing/climbing_icon.svg",
   "startLat": 0,
@@ -133,7 +140,8 @@
                   "nb_NO": " meter",
                   "es": " metro",
                   "da": " meter",
-                  "pa_PK": " ؜ میٹر"
+                  "pa_PK": " ؜ میٹر",
+                  "cs": " metr"
                 }
               },
               {
@@ -153,7 +161,8 @@
                   "nb_NO": " fot",
                   "es": " pies",
                   "da": " fod",
-                  "pa_PK": " ؜ فوٹ"
+                  "pa_PK": " ؜ فوٹ",
+                  "cs": " stopa"
                 }
               }
             ]
@@ -171,7 +180,10 @@
                   "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique un </span> accès libre<br/>{_embedding_feature:access:description}",
                   "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento in cui è contenuto</a> indica che è</span> pubblicamente accessibile<br/>{_embedding_feature:access:description}",
                   "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> gibt an, dass es </span>öffentlich zugänglich ist<br/>{_embedding_feature:access:description}",
-                  "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne er</span> offentligt tilgængelig<br/>{_embedding_feature:access:description}"
+                  "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne er</span> offentligt tilgængelig<br/>{_embedding_feature:access:description}",
+                  "es": "<span class='subtle'>La <a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que es de</span> acceso público<br/>{_embedding_feature:access:description}",
+                  "ca": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>l'element que el conté</a>indica que és d'</span>accés públic<br/>{_embedding_feature:access:description}",
+                  "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> veřejně dostupné<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -182,7 +194,10 @@
                   "fr": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>élément englobant</a> indique qu’</span> une autorisation d’accès est nécessaire<br/>{_embedding_feature:access:description}",
                   "it": "<span class='subtle'>L’<a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che </span> è richiesto un’autorizzazione per accedervi<br/>{_embedding_feature:access:description}",
                   "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass </span> eine Genehmigung erforderlich ist für den Zugang zu<br/>{_embedding_feature:access:description}",
-                  "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at </span> en tilladelse er nødvendig for at få adgang til<br/>{_embedding_feature:access:description}"
+                  "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at </span> en tilladelse er nødvendig for at få adgang til<br/>{_embedding_feature:access:description}",
+                  "es": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que se necesita</span> un permiso para acceder a él<br/>{_embedding_feature:access:description}",
+                  "ca": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>l'element que el conté</a> indica que es necessita </span> un permís per a accedir-hi<br/>{_embedding_feature:access:description}",
+                  "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že </span> je k přístupu potřeba povolení<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -193,7 +208,9 @@
                   "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è</span> accessibile solo ai clienti<br/>{_embedding_feature:access:description}",
                   "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es nur für Kunden</span> zugänglich ist<br/>{_embedding_feature:access:description}",
                   "nl": "<span class='subtle'>Het <a href='#{_embedding_feature:id}'>omsluitende kaart-object</a> zegt dat </span> het enkel toegankelijk is voor klanten<br/>{_embedding_feature:access:description}",
-                  "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for kunder<br/>{_embedding_feature:access:description}"
+                  "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for kunder<br/>{_embedding_feature:access:description}",
+                  "es": "<span class='subtle'>La <a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que</span> sólo pueden acceder a él los clientes<br/>{_embedding_feature:access:description}",
+                  "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> dostupné pouze zákazníkům<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -204,7 +221,9 @@
                   "it": "<span class='subtle'>L’ <a href='#{_embedding_feature:id}'>elemento che lo contiene</a> indica che è </span> accessibile solamente ai membri del club<br/>{_embedding_feature:access:description}",
                   "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es </span>nur für Mitglieder zugänglich ist<br/>{_embedding_feature:access:description}",
                   "nl": "<span class='subtle'>Het <a href='#{_embedding_feature:id}'>omsluitende kaart-object</a> zegt dat </span> het enkel toegankelijk is voor club leden<br/>{_embedding_feature:access:description}",
-                  "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for klubmedlemmer<br/>{_embedding_feature:access:description}"
+                  "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for klubmedlemmer<br/>{_embedding_feature:access:description}",
+                  "es": "<span class='subtle'>La <a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que </span> sólo es accesible para los socios del club<br/>{_embedding_feature:access:description}",
+                  "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> dostupné pouze členům klubu<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -224,7 +243,8 @@
               "nl": "Wie heeft hier toegang toe?",
               "es": "¿Quién puede acceder aquí?",
               "ca": "Qui pot accedir aquí?",
-              "da": "Hvem kan få adgang her?"
+              "da": "Hvem kan få adgang her?",
+              "cs": "Kdo sem má přístup?"
             },
             "mappings": [
               {
@@ -237,7 +257,9 @@
                   "nl": "Voor iedereen publiek toegankelijk",
                   "nb_NO": "Offentlig tilgjengelig for alle",
                   "es": "Accesible públicamente a cualquiera",
-                  "da": "Offentligt tilgængelig for alle"
+                  "da": "Offentligt tilgængelig for alle",
+                  "cs": "Veřejně přístupné komukoli",
+                  "ca": "Accessible públicament a qualsevol"
                 }
               },
               {
@@ -250,7 +272,8 @@
                   "nl": "Je hebt een vergunning nodig om hier toegang te kregen",
                   "es": "Necesitas un permiso para acceder aquí",
                   "da": "Du skal have en tilladelse for at få adgang her",
-                  "ca": "Necesites un permís per a accedir ací"
+                  "ca": "Necesites un permís per a accedir ací",
+                  "cs": "K přístupu je potřeba povolení"
                 }
               },
               {
@@ -265,7 +288,8 @@
                   "nb_NO": "Kun for kunder",
                   "es": "Solo clientes",
                   "da": "Kun for kunder",
-                  "pa_PK": "صرف گاہک"
+                  "pa_PK": "صرف گاہک",
+                  "cs": "Pouze zákazníci"
                 }
               },
               {
@@ -281,7 +305,8 @@
                   "nb_NO": "Kun klubbmedlemmer",
                   "es": "Solo miembros del club",
                   "da": "Kun klubmedlemmer",
-                  "pa_PK": "صرف کلب دے میمبر"
+                  "pa_PK": "صرف کلب دے میمبر",
+                  "cs": "Pouze členové klubu"
                 }
               },
               {

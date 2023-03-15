@@ -5,6 +5,12 @@
         "retrying": "Laden von Daten fehlgeschlagen. Erneuter Versuch in {count} Sekunden…",
         "zoomIn": "Ausschnitt vergrößern, um Daten anzuzeigen oder zu bearbeiten"
     },
+    "communityIndex": {
+        "available": "Diese Gemeinschaft spricht {native}",
+        "intro": "Treten Sie mit anderen Menschen in Kontakt, um sie kennen zu lernen, von ihnen zu lernen, ...",
+        "notAvailable": "Diese Gemeinschaft spricht nicht {native}",
+        "title": "Community index"
+    },
     "delete": {
         "cancel": "Abbrechen",
         "cannotBeDeleted": "Dieses Element kann nicht gelöscht werden",
@@ -53,7 +59,7 @@
         "fakeui": {
             "add_images": "Bilder mit ein paar Klicks hinzufügen",
             "attributes": "Zeigt Attribute in einer freundlichen Art und Weise",
-            "edit": "Falsche oder überholte Informationen? Die Schaltfläche \"Bearbeiten\" ist direkt zugänglich",
+            "edit": "Falsche oder überholte Informationen? Die Schaltfläche \"Bearbeiten\" ist direkt zugänglich.",
             "question": "Ist ein Attribut noch nicht bekannt, zeigt MapComplete eine Frage an",
             "see_images": "Zeigt Bilder von früheren Mitwirkenden, Wikipedia, Mapillary, ... ",
             "wikipedia": "Verlinkte Wikipedia-Artikel werden angezeigt"
@@ -75,14 +81,14 @@
         },
         "onwheels": "Indoor-Karten für Rollstuhlfahrer sind ebenfalls erhältlich.",
         "osm": "OpenStreetMap ist eine Online-Karte, die von jedermann für jeden Zweck bearbeitet und weiterverwendet werden kann, solange die Daten offengelegt werden und die Namensnennung erfolgt.\n\nEs ist die größte Geodatenbank der Welt und wird von Tausenden von Anwendungen und Websites weiterverwendet.",
-        "tagline": "Erfassen Sie Geodaten einfach mit OpenStreetMap",
+        "tagline": "Erfassen Sie Geodaten mit OpenStreetMap",
         "title": "MapComplete.osm.be",
         "toerisme_vlaanderen": "Für ein gemeinsames Projekt mit Visit Flanders wurde 'Pin your point' geschaffen. Über 160 Mitwirkende fügten einige tausend Bänke und Picknicktische hinzu und entdeckten 100 Ladestationen für Fahrräder.",
         "whatIsOsm": "Was ist OpenStreetMap?"
     },
     "general": {
         "about": "OpenStreetMap für ein bestimmtes Thema einfach bearbeiten und hinzufügen",
-        "aboutMapcomplete": "<h3>Über</h3><p>Verwenden Sie MapComplete, um OpenStreetMap Informationen zu einem <b>bestimmten Thema</b> hinzuzufügen. Beantworten Sie Fragen, und in wenigen Minuten sind Ihre Beiträge überall verfügbar. Bei den meisten Themen können Sie Bilder hinzufügen oder eine Bewertung hinterlassen. Der <b>Theme-Maintainer</b> definiert dafür Elemente, Fragen und Sprachen.</p><h3>Mehr erfahren</h3><p>MapComplete bietet immer <b>den nächsten Schritt</b>, um mehr über OpenStreetMap zu erfahren.</p><ul><li>In einer Website eingebettet, verlinkt der iframe zu einer Vollbildversion von MapComplete</li><li>Die Vollbildversion bietet Informationen über OpenStreetMap</li><li>Das Betrachten funktioniert ohne Anmeldung, das Bearbeiten erfordert ein OSM-Konto.</li><li>Wenn Sie nicht angemeldet sind, werden Sie dazu aufgefordert</li><li>Sobald Sie eine Frage beantwortet haben, können Sie der Karte neue Objekte hinzufügen</li><li>Nach einer Weile werden aktuelle OSM-Tags angezeigt, die später mit dem Wiki verlinkt werden</li></ul><p></p><br><p>Haben Sie ein <b>Problem</b> bemerkt? Haben Sie einen <b>Funktionswunsch</b>? Möchten Sie bei der <b>Übersetzung</b> helfen? Hier geht es zum <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">Quellcode</a> und <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">Issue Tracker</a> </p><p>Möchten Sie Ihren <b>Fortschritt</b> sehen? Verfolgen Sie Ihre Änderungen auf <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
+        "aboutMapcomplete": "<h3>Über</h3><p>Verwenden Sie MapComplete, um <b>themenbezogene Informationen</b> zu OpenStreetMap hinzuzufügen. Beantworten Sie Fragen, und in wenigen Minuten sind Ihre Beiträge überall verfügbar. Zu den meisten Themen können Sie Bilder hinzufügen oder eine Bewertung hinterlassen. Der <b>Theme-Maintainer</b> definiert dafür Elemente, Fragen und Sprachen.</p><h3>Mehr erfahren</h3><p>MapComplete bietet immer <b>den nächsten Schritt</b>, um mehr über OpenStreetMap zu erfahren.</p><ul><li>In einer Website eingebettet, verlinkt der iframe zu einer Vollbildversion von MapComplete</li><li>Die Vollbildversion bietet Informationen über OpenStreetMap</li><li>Das Betrachten funktioniert ohne Anmeldung, das Bearbeiten erfordert ein OSM-Konto.</li><li>Wenn Sie nicht angemeldet sind, werden Sie dazu aufgefordert</li><li>Sobald Sie eine Frage beantwortet haben, können Sie der Karte neue Objekte hinzufügen</li><li>Nach einer Weile werden aktuelle OSM-Tags angezeigt, die später mit dem Wiki verlinkt werden</li></ul><p></p><br/><p>Haben Sie ein <b>Problem</b> bemerkt? Haben Sie einen <b>Funktionswunsch</b>? Möchten Sie bei der <b>Übersetzung</b> helfen? Hier geht es zum <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>Quellcode</a> und <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>Issue Tracker</a> </p><p>Möchten Sie Ihre <b>Bearbeitungen</b> sehen? Verfolgen Sie Ihre Änderungen auf <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
         "add": {
             "addNew": "{category} hinzufügen",
             "addNewMapLabel": "Hier klicken, um ein neues Element hinzuzufügen",
@@ -119,9 +125,9 @@
             "isApplied": "Änderungen werden übernommen"
         },
         "attribution": {
-            "attributionContent": "<p>Alle Daten werden bereitgestellt von <a href=\"https://osm.org\" target=\"_blank\">OpenStreetMap</a>, frei verwendbar unter der <a href=\"https://osm.org/copyright\" target=\"_blank\">Open Database License</a>.</p>",
-            "attributionTitle": "Danksagung",
-            "codeContributionsBy": "MapComplete wurde erstellt von {contributors} und <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} weiteren Beitragenden</a>",
+            "attributionContent": "<p>Alle Daten werden bereitgestellt von <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, frei verwendbar unter der <a href='https://osm.org/copyright' target='_blank'>Open Database License</a>.</p>",
+            "attributionTitle": "Danke",
+            "codeContributionsBy": "MapComplete wurde erstellt von {contributors} und <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} weiteren Personen</a>",
             "donate": "MapComplete finanziell unterstützen",
             "editId": "Den OpenStreetMap Editor öffnen",
             "editJosm": "Mit JOSM bearbeiten",
@@ -133,14 +139,16 @@
             "josmOpened": "JOSM ist geöffnet",
             "mapContributionsBy": "Die angezeigten Daten wurden bearbeitet durch {contributors}",
             "mapContributionsByAndHidden": "Die angezeigten Daten wurden bearbeitet von {contributors} und {hiddenCount} weiteren Beitragenden",
-            "mapillaryHelp": "<b>Mapillary</b> ist ein Online-Dienst, der Straßenbilder sammelt und sie unter einer freien Lizenz anbietet. Mitwirkende dürfen diese Bilder verwenden, um OpenStreetMap zu verbessern",
+            "mapDataByOsm": "Kartendaten: OpenStreetMap",
+            "mapillaryHelp": "Mapillary ist ein Online-Dienst, der Straßenbilder sammelt und sie unter einer freien Lizenz anbietet. Mitwirkende dürfen diese Bilder verwenden, um OpenStreetMap zu verbessern",
             "openIssueTracker": "Fehler melden",
             "openMapillary": "Mapillary öffnen",
-            "openOsmcha": "Letzte Bearbeitungen für das Thema {theme} ansehen",
-            "themeBy": "Thema betreut von {author}",
-            "translatedBy": "MapComplete wurde übersetzt von {contributors}, <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} und weiteren Mitwirkenden</a>"
+            "openOsmcha": "Letzte Bearbeitungen zum Thema {theme} ansehen",
+            "themeBy": "Dieses Thema wurde erstellt von {author}",
+            "translatedBy": "MapComplete wurde übersetzt von {contributors} und <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} weiteren Personen</a>"
         },
         "back": "Zurück",
+        "backToIndex": "Zurück zur Übersicht aller thematischen Karten",
         "backToMapcomplete": "Zurück zur Themenübersicht",
         "backgroundMap": "Hintergrundkarte",
         "cancel": "Abbrechen",
@@ -188,6 +196,9 @@
         "loading": "Laden…",
         "loadingTheme": "Lade {theme}…",
         "loginFailed": "Anmeldung bei OpenStreetMap fehlgeschlagen",
+        "loginFailedOfflineMode": "OpenStreetMap.org ist derzeit wegen Wartungsarbeiten nicht verfügbar. Bearbeitungen werden bald wieder möglich sein",
+        "loginFailedReadonlyMode": "OpenStreetMap.org ist derzeit wegen Wartungsarbeiten im Lesemodus. Bearbeitungen werden bald wieder möglich sein",
+        "loginFailedUnreachableMode": "OpenStreetMap.org ist zurzeit nicht erreichbar. Sind Sie mit dem Internet verbunden oder blockieren Sie Drittanbieter? Versuchen Sie es später noch einmal",
         "loginOnlyNeededToEdit": "wenn Sie Änderungen vornehmen möchten",
         "loginToStart": "Anmelden, um diese Frage zu beantworten",
         "loginWithOpenStreetMap": "Bei OpenStreetMap anmelden",
@@ -212,7 +223,7 @@
         "notValid": "Gültigen Wert auswählen, um fortzufahren",
         "number": "Zahl",
         "oneSkippedQuestion": "Eine Frage wurde übersprungen",
-        "openStreetMapIntro": "<h3>Eine offene Karte</h3><p>Eine Karte, die jeder frei nutzen und bearbeiten kann. Ein einziger Ort, um alle Geoinformationen zu speichern. Unterschiedliche, kleine, inkompatible und veraltete Karten werden nirgendwo gebraucht.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> ist nicht die feindliche Karte. Die Kartendaten können frei verwendet werden (mit <a href=\"https://osm.org/copyright\" target=\"_blank\">Benennung und Veröffentlichung von Änderungen an diesen Daten</a>). Jeder kann neue Daten hinzufügen und Fehler korrigieren. Diese Webseite nutzt OpenStreetMap. Alle Daten stammen von dort, und Ihre Antworten und Korrekturen werden überall verwendet.</p><p>Viele Menschen und Anwendungen nutzen bereits OpenStreetMap: <a href=\"https://organicmaps.app/\" target=\"_blank\">Organic Maps</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>; auch die Kartendaten von Facebook, Instagram, Apple-maps und Bing-maps stammen (teilweise) von OpenStreetMap.</p>",
+        "openStreetMapIntro": "<h3>Eine offene Karte</h3><p>Eine Karte, die jeder frei nutzen und bearbeiten kann. Ein einziger Ort, um alle Geoinformationen zu speichern. Unterschiedliche, kleine, inkompatible und veraltete Karten werden nirgendwo gebraucht.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> ist nicht die feindliche Karte. Die Kartendaten können frei verwendet werden (mit <a href='https://osm.org/copyright' target='_blank'>Benennung und Veröffentlichung von Änderungen an diesen Daten</a>). Jeder kann neue Daten hinzufügen und Fehler korrigieren. Diese Webseite nutzt OpenStreetMap. Alle Daten stammen von dort, und Ihre Antworten und Korrekturen werden überall verwendet.</p><p>Viele Menschen und Anwendungen nutzen bereits OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>; auch die Kartendaten von Facebook, Instagram, Apple-maps und Bing-maps stammen (teilweise) von OpenStreetMap.</p>",
         "openTheMap": "Karte öffnen",
         "opening_hours": {
             "closed_permanently": "Geschlossen auf unbestimmte Zeit",
@@ -258,13 +269,13 @@
             "searching": "Suchen …"
         },
         "sharescreen": {
-            "addToHomeScreen": "<h3>Karte zum Startbildschirm hinzufügen</h3> Diese Webseite zum Startbildschirm Ihres Smartphones hinzufügen, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der Adressleiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
+            "addToHomeScreen": "<h3>Karte zum Startbildschirm hinzufügen</h3> Fügen Sie diese Webseite zum Startbildschirm Ihres Smartphones hinzu, um ein natives Gefühl zu erhalten. Klicken Sie dazu in der Adressleiste auf die Schaltfläche 'Zum Startbildschirm hinzufügen'.",
             "copiedToClipboard": "Verknüpfung in Zwischenablage kopiert",
             "downloadCustomTheme": "Konfiguration für diese Karte herunterladen",
             "downloadCustomThemeHelp": "Ein erfahrener Mitwirkender kann diese Datei verwenden, um Ihr Thema zu verbessern",
             "editThemeDescription": "Fragen zu diesem Thema hinzufügen oder ändern",
             "editThisTheme": "Dieses Thema bearbeiten",
-            "embedIntro": "<h3>Karte in Webseiten einbetten</h3>Betten Sie diese Karte in Ihre Webseite ein. <br>Wir ermutigen Sie dazu - Sie müssen nicht einmal um Erlaubnis fragen. <br> Die Karte ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie.",
+            "embedIntro": "<h3>Karte in Webseiten einbetten</h3>Betten Sie diese Karte in Ihre Webseite ein. Die Karte ist kostenlos und wird es immer sein. Je mehr Leute sie benutzen, desto wertvoller wird sie.",
             "fsAddNew": "Schaltfläche 'neuen POI hinzufügen' aktivieren",
             "fsGeolocation": "Schaltfläche 'Mich geolokalisieren' aktivieren (nur mobil)",
             "fsIncludeCurrentBackgroundMap": "Aktuellen Hintergrund übernehmen <b>({name})</b>",
@@ -273,9 +284,9 @@
             "fsLayerControlToggle": "Ausgeklappte Ebenenauswahl anzeigen",
             "fsLayers": "Ebenensteuerung aktivieren",
             "fsSearch": "Suchleiste aktivieren",
-            "fsUserbadge": "Anmeldeschaltfläche aktivieren",
-            "fsWelcomeMessage": "Begrüßungsfenster und zugehörige Registerkarten anzeigen",
-            "intro": "<h3>Karte teilen</h3> Der folgenden Link kann kopiert und an Freunde und Familie gesendet werden:",
+            "fsUserbadge": "Anmeldefeld aktivieren",
+            "fsWelcomeMessage": "Begrüßung und Registerkarten anzeigen",
+            "intro": "<h3>Karte teilen</h3> Mit dem folgenden Link können Sie diese Karte mit Freunden und Familie teilen:",
             "thanksForSharing": "Danke für das Teilen!"
         },
         "skip": "Frage überspringen",
@@ -284,6 +295,7 @@
         "uploadGpx": {
             "choosePermission": "Wählen Sie unten, ob Ihre Strecke geteilt werden soll:",
             "confirm": "Hochladen bestätigen",
+            "gpxServiceOffline": "Der GPX-Dienst ist derzeit offline - ein Hochladen ist derzeit nicht möglich. Versuchen Sie es später noch einmal.",
             "intro0": "Wenn Sie Ihre Strecke hochladen, behält OpenStreetMap.org eine vollständige Kopie der Strecke.",
             "intro1": "Sie können Ihre Strecke erneut herunterladen und in OpenStreetMap-Bearbeitungsprogramme laden",
             "meta": {
@@ -330,7 +342,7 @@
         "welcomeBack": "Willkommen zurück!",
         "welcomeExplanation": {
             "addNew": "Tippen oden klicken Sie auf die Karte, um einen neuen Ort hinzuzufügen.",
-            "general": "Auf dieser Karte können Sie <i>Interessante Orte</i> sehen, bearbeiten und hinzufügen. Verschieben Sie den Kartenausschnitt, um die Orte zu entdecken, tippen Sie auf einen, um weitere Informationen zu sehen oder zu bearbeiten. Alle Daten stammen von OpenStreetMap und sind dort gespeichert, so dass sie frei weiterverwendet werden können."
+            "general": "Auf dieser Karte können Sie <i>themenspezifische Kartenobjekte</i> ansehen, bearbeiten und hinzufügen. Verschieben Sie den Kartenausschnitt, um Objekte zu entdecken, tippen Sie auf eines, um weitere Informationen zu sehen oder zu bearbeiten. Alle Daten stammen von OpenStreetMap und dürfen frei verwendet werden."
         },
         "wikipedia": {
             "createNewWikidata": "Einen neues Wikidata Element erstellen",
@@ -350,15 +362,20 @@
         }
     },
     "hotkeyDocumentation": {
+        "action": "Aktion",
         "closeSidebar": "Seitenleiste schließen",
         "geolocate": "Verschieben Sie die Karte auf den aktuellen Standort oder zoomen Sie die Karte auf den aktuellen Standort. Beantragt Standortberechtigung",
+        "intro": "MapComplete unterstützt folgende Tastaturbefehle:",
+        "key": "Tastenkombination",
         "openLayersPanel": "Öffnet das Bedienfeld Hintergrund, Ebenen und Filter",
         "selectBackground": "Wählen Sie eine Hintergrundebene der Kategorie {category} aus",
         "selectMapnik": "Setzt die Hintergrundebene auf OpenStreetMap-carto",
-        "selectSearch": "Suchleiste auswählen, um nach Orten zu suchen"
+        "selectSearch": "Suchleiste auswählen, um nach Orten zu suchen",
+        "title": "Tastaturbefehle"
     },
     "image": {
         "addPicture": "Bild hinzufügen",
+        "currentLicense": "Ihre Bilder werden unter {license} veröffentlicht",
         "doDelete": "Bild entfernen",
         "dontDelete": "Abbrechen",
         "isDeleted": "Gelöscht",
@@ -451,7 +468,7 @@
         },
         "gotoImportViewer": "Vorherige Importe überprüfen",
         "introduction": {
-            "description": "Der Import-Helfer konvertiert einen externen Datensatz in Hinweise. Der externe Datensatz muss mit einer vorhandenen MapComplete-Ebene übereinstimmen. Für jedes Element, das Sie in den Importer eingeben, wird eine einzelner Hinweis erstellt. Diese Hinweise werden zusammen mit den entsprechenden Objekten in diesen Karten angezeigt, um sie leicht hinzufügen zu können.",
+            "description": "Der Import-Helfer konvertiert einen externen Datensatz in Hinweise. Der externe Datensatz muss mit einer vorhandenen MapComplete-Ebene übereinstimmen. Für jedes Element, das Sie in den Import-Helfer eingeben, wird eine einzelner Hinweis erstellt. Diese Hinweise werden zusammen mit den entsprechenden Objekten in diesen Karten angezeigt, um sie leicht hinzufügen zu können.",
             "importFormat": "Der Text in der Notiz sollte folgendes Format haben, um verarbeitet zu werden",
             "title": "Einführung"
         },
@@ -483,7 +500,7 @@
             "title": "Attribute prüfen"
         },
         "selectFile": {
-            "description": "Wähle eine .csv oder .geojson Datei um anzufangen",
+            "description": "Eine .csv oder .geojson Datei auswählen um anzufangen",
             "errDuplicate": "Einige Spalten haben den selben Namen",
             "errNoLatOrLon": "Die Kopfzeile enthält weder `lat` noch `lon`",
             "errNoName": "Einige Spalten haben keinen Namen",
@@ -583,7 +600,7 @@
             },
             "dream": {
                 "docs": "Sendet einen computergenerierten Text",
-                "generatedBy": "Dieser Text wurde von {bot} erstellt, einem auf maschinellem Lernen basierenden Bot, der auf Reddit aktiv ist."
+                "generatedBy": "Text generiert von {bot}, einem Machine-Learning-Bot, der auf Reddit aktiv ist."
             },
             "help": {
                 "argcmd": "Der Befehl, über den Sie mehr Informationen wünschen",
@@ -594,7 +611,7 @@
                 "p0": "Hallo! Ich bin MapComplete-bot {bot_version} (basierend auf MapComplete {mc_version}).",
                 "p1": "Senden Sie mir einen Befehl und ich antworte mit etwas Nützlichem: Geben Sie mir einen Befehl über eine private Nachricht oder setzen Sie <code>!</code> vor dem Befehl in einem öffentlichen Raum.",
                 "priviligedComand": "Privilegierter Befehl",
-                "supported": "Meine unterstützten Befehle sind:"
+                "supported": "Meine unterstützten Befehle:"
             },
             "info": {
                 "argsearch": "Die ID des OSM-Objekts oder eine Suchanfrage",
@@ -636,7 +653,7 @@
                 "verbadd": "Fügt eine Rolle für den angegebenen Benutzer hinzu",
                 "verbdefault": "Liste der Rollen des Benutzers",
                 "verblist": "Alle Benutzerrollen des angegebenen Benutzers auflisten",
-                "verbremove": "Entfernt eine Rolle von dem angegebenen Benutzer",
+                "verbremove": "Entfernt eine Rolle vom angegebenen Benutzer",
                 "verbrevoke": "Entzieht alle Rechte eines Benutzers"
             },
             "scheme": {
@@ -652,9 +669,9 @@
                 "argsearch": "Der Suchbegriff",
                 "argverb": "Entweder in einem geografischen Gebiet (z. B. einer Stadt) oder in der Nähe eines POI suchen",
                 "docs": "Sucht Interessante Orte in oder in der Nähe eines Standorts",
-                "noMatchingLayer": "Ich habe keine passende Ebene gefunden",
+                "noMatchingLayer": "Keine passende Ebene gefunden",
                 "noNearOrIn": "Entschuldigung, ich habe Ihren Befehl nicht verstanden, da ich kein <code>in der Nähe</code> oder <code>in</code> in Ihrer Suchanfrage gefunden habe.\n Versuchen Sie etwas wie <code>Suche Trinkwasser in London</code>, <code>Suche Friture in Brüssel</code>\n Alternativ versuchen Sie <code>info {cmd}</code>, um Informationen über ein einzelnes Objekt zu erhalten.",
-                "nothingFound": "Entschuldigung, ich konnte nichts für <code>{search}</code> finden, also kann ich nicht nach {layerTitle} suchen",
+                "nothingFound": "Es wurde nichts gefunden für <code>{search}</code>. Gesucht wurde nach {layerTitle} stattdessen.",
                 "overview": "Ich habe {length} passende Artikel gefunden.",
                 "searching": "Suche {layerTitle} {mode} <code>{search}</code>…"
             },
@@ -687,7 +704,7 @@
                 "gotResults": "Habe {count} Ergebnisse für Suchanfrage <code>{search}</code> erhalten:",
                 "loadingFailed": "Entschuldigung, die Seite <code>{pagename}</code> konnte nicht geladen werden",
                 "noWiki": "Bitte geben Sie eine Wikiseite an, nach der Sie suchen möchten",
-                "nothingFound": "Ich konnte auf {backend} für {search} nichts finden",
+                "nothingFound": "Auf {backend} konnte nichts gefunden werden für {search}",
                 "searching": "Suche auf {backend}…"
             }
         },
@@ -735,6 +752,7 @@
         "createNote": "Eine neue Notiz erstellen",
         "createNoteIntro": "Ist etwas falsch oder fehlt etwas auf der Karte? Erstellen Sie hier eine Notiz. Diese werden von Freiwilligen überprüft.",
         "createNoteTitle": "Hier eine neue Notiz erstellen",
+        "creating": "Notiz wird erstellt...",
         "disableAllNoteFilters": "Alle Filter ausschalten",
         "isClosed": "Diese Notiz wurde erledigt",
         "isCreated": "Die Notiz wurde erstellt!",
@@ -765,7 +783,7 @@
         },
         "loadingWikidata": "Informationen über {species} werden geladen…",
         "matchPercentage": "{match}% Übereinstimmung",
-        "overviewIntro": "Die KI auf <a href='https://plantnet.org/' target='_blank'>PlantNet.org</a> denkt, dass die Fotos die folgende Art zeigen.",
+        "overviewIntro": "Die KI auf <a href='https://plantnet.org/' target='_blank'>plantnet.org</a> denkt, dass die Fotos die folgende Art zeigen.",
         "overviewTitle": "Automatisch erkannte Art",
         "overviewVerify": "Bitte überprüfen Sie die richtige Art und verknüpfen Sie sie mit dem Baum",
         "poweredByPlantnet": "Bereitgestellt von <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
@@ -895,10 +913,11 @@
         "attribution": "Rezensionen werden bereitgestellt von <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> und sind unter <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a> verfügbar.",
         "i_am_affiliated": "<span>Ich bin mit diem Objekt vertraut</span><br><span class=\"subtle\">Auswählen, wenn Sie Eigentümer, Ersteller, Angestellter … sind</span>",
         "name_required": "Der Name des Objekts ist erforderlich, um Bewertungen zu erstellen und anzuzeigen",
-        "no_rating": "Keine Bewertung vorhanden",
+        "no_rating": "Vor dem Absenden eine Bewertung abgeben…",
         "no_reviews_yet": "Es gibt noch keine Bewertungen. Hilf mit der ersten Bewertung dem Geschäft und der Open Data Bewegung!",
         "plz_login": "Anmelden, um eine Bewertung abzugeben",
         "posting_as": "Veröffentlichen als",
+        "save": "Speichern",
         "saved": "<span class=\"thanks\">Bewertung gespeichert. Danke fürs Teilen!</span>",
         "saving_review": "Speichern…",
         "title": "{count} Rezensionen",
@@ -918,20 +937,17 @@
     "translations": {
         "activateButton": "MapComplete übersetzen",
         "allMissing": "Noch keine Übersetzungen",
-        "completeness": "Die Übersetzung für {theme} in {language} ist zu {percentage}% vollständig: {translated} Zeichenfolgen von {total} sind übersetzt",
-        "deactivate": "Übersetzungssymbol ausblenden",
-        "help": "Klicken Sie auf das Übersetzungssymbol neben einer Zeichenfolge, um einen Text einzugeben oder zu aktualisieren. Dazu benötigen Sie einen Weblate-Konto. Erstellen Sie eines mit Ihrem OSM-Benutzernamen, um den Übersetzungsmodus automatisch freizuschalten.",
-        "isTranslator": "Der Übersetzungsmodus ist aktiv, da Ihr Benutzername mit dem Namen eines früheren Übersetzers übereinstimmt",
         "missing": "{count} nicht übersetzte Zeichenfolgen",
         "notImmediate": "Die Übersetzung wird nicht direkt aktualisiert. Dies dauert in der Regel ein paar Tage"
     },
     "userinfo": {
-        "gotoInbox": "Öffnen Sie Ihren Posteingang",
-        "gotoSettings": "Öffnen Sie Ihre Einstellungen auf OpenStreetMap.org",
+        "gotoInbox": "Posteingang öffnen",
+        "gotoSettings": "Einstellungen auf OpenStreetMap.org öffnen",
         "moveToHome": "Verschieben Sie die Karte an Ihren Heimatstandort",
         "newMessages": "Sie haben neue Nachrichten",
-        "noDescription": "Sie haben noch keine Beschreibung in Ihrem Profil",
+        "noDescription": "Sie haben noch keine Profilbeschreibung",
         "noDescriptionCallToAction": "Profilbeschreibung hinzufügen",
+        "titleNotLoggedIn": "Willkommen",
         "welcome": "Willkommen {name}"
     },
     "validation": {
@@ -950,7 +966,7 @@
         "email": {
             "description": "E-Mail Adresse",
             "feedback": "Dies ist keine gültige E-Mail Adresse",
-            "noAt": "Eine E-Mail-Adresse sollte ein @ enthalten"
+            "noAt": "Eine E-Mail-Adresse muss ein @ enthalten"
         },
         "float": {
             "description": "eine Zahl",

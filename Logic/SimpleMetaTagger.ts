@@ -33,6 +33,10 @@ export class SimpleMetaTagger {
         docs: {
             keys: string[]
             doc: string
+            /**
+             * Set this flag if the data is volatile or date-based.
+             * It'll _won't_ be cached in this case
+             */
             includesDates?: boolean
             isLazy?: boolean
             cleanupRetagger?: boolean
@@ -51,6 +55,49 @@ export class SimpleMetaTagger {
                 }
             }
         }
+    }
+}
+
+export class ReferencingWaysMetaTagger extends SimpleMetaTagger {
+    /**
+     * Disable this metatagger, e.g. for caching or tests
+     * This is a bit a work-around
+     */
+    public static enabled = true
+    constructor() {
+        super(
+            {
+                keys: ["_referencing_ways"],
+                isLazy: true,
+                doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry. If the preset has 'snapToLayer' defined, the icon will be calculated based on the preset tags with `_referencing_ways=[way/-1]` added.",
+            },
+            (feature, _, __, state) => {
+                if (!ReferencingWaysMetaTagger.enabled) {
+                    return false
+                }
+                //this function has some extra code to make it work in SimpleAddUI.ts to also work for newly added points
+                const id = feature.properties.id
+                if (!id.startsWith("node/")) {
+                    return false
+                }
+                console.trace("Downloading referencing ways for", feature.properties.id)
+                OsmObject.DownloadReferencingWays(id).then((referencingWays) => {
+                    const currentTagsSource = state.allElements?.getEventSourceById(id) ?? []
+                    const wayIds = referencingWays.map((w) => "way/" + w.id)
+                    wayIds.sort()
+                    const wayIdsStr = wayIds.join(";")
+                    if (
+                        wayIdsStr !== "" &&
+                        currentTagsSource.data["_referencing_ways"] !== wayIdsStr
+                    ) {
+                        currentTagsSource.data["_referencing_ways"] = wayIdsStr
+                        currentTagsSource.ping()
+                    }
+                })
+
+                return true
+            }
+        )
     }
 }
 
@@ -118,6 +165,7 @@ export default class SimpleMetaTaggers {
             /*Note: also called by 'UpdateTagsFromOsmAPI'*/
 
             const tgs = feature.properties
+            let movedSomething = false
 
             function move(src: string, target: string) {
                 if (tgs[src] === undefined) {
@@ -125,6 +173,7 @@ export default class SimpleMetaTaggers {
                 }
                 tgs[target] = tgs[src]
                 delete tgs[src]
+                movedSomething = true
             }
 
             move("user", "_last_edit:contributor")
@@ -132,7 +181,7 @@ export default class SimpleMetaTaggers {
             move("changeset", "_last_edit:changeset")
             move("timestamp", "_last_edit:timestamp")
             move("version", "_version_number")
-            return true
+            return movedSomething
         }
     )
     public static country = new CountryTagger()
@@ -486,31 +535,7 @@ export default class SimpleMetaTaggers {
         }
     )
 
-    public static referencingWays = new SimpleMetaTagger(
-        {
-            keys: ["_referencing_ways"],
-            isLazy: true,
-            doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry.",
-        },
-        (feature, _, __, state) => {
-            const id = feature.properties.id
-            if (!id.startsWith("node/")) {
-                return false
-            }
-            OsmObject.DownloadReferencingWays(id).then((referencingWays) => {
-                const currentTagsSource = state.allElements.getEventSourceById(id)
-                const wayIds = referencingWays.map((w) => "way/" + w.id)
-                wayIds.sort()
-                const wayIdsStr = wayIds.join(";")
-                if (wayIdsStr !== "" && currentTagsSource.data["_referencing_ways"] !== wayIdsStr) {
-                    currentTagsSource.data["_referencing_ways"] = wayIdsStr
-                    currentTagsSource.ping()
-                }
-            })
-
-            return true
-        }
-    )
+    public static referencingWays = new ReferencingWaysMetaTagger()
 
     public static metatags: SimpleMetaTagger[] = [
         SimpleMetaTaggers.latlon,

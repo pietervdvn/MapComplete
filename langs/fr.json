@@ -58,6 +58,7 @@
         "add": {
             "addNew": "Ajouter {category}",
             "addNewMapLabel": "Cliquez ici pour ajouter un élément",
+            "backToSelect": "Sélectionner une catégorie différente",
             "confirmButton": "Ajouter un/une {category} ici.<br><div class=\"alert\">Votre ajout sera visible par tout le monde</div>",
             "confirmIntro": "<h3>Ajouter un/une {title} ici ?</h3>L’élément que vous ajouterez sera <b>visible par tout le monde</b>. Merci de vous assurer que celui-ci existe réellement. Beaucoup d'autres applications utilisent ces données.",
             "disableFilters": "Désactiver tous les filtres",
@@ -104,6 +105,7 @@
             "josmOpened": "JOSM est ouvert",
             "mapContributionsBy": "La partie actuellement visible des données comporte des modifications par {contributors}",
             "mapContributionsByAndHidden": "La partie actuellement visible des données comporte des modifications par {contributors} et {hiddenCount} contributeurs de plus",
+            "mapDataByOsm": "Données de la carte : OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> est un service en ligne qui rassemble des photos au niveau des rues et les propose sous une licence libre. Les contributeurs sont autorisés à utiliser ces photos pour améliorer OpenStreetMap.",
             "openIssueTracker": "Signaler un problème",
             "openMapillary": "Ouvrez Mapillary ici",
@@ -112,6 +114,7 @@
             "translatedBy": "MapComplete est traduite par {contributors} et <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} autres personnes</a>"
         },
         "back": "Retour",
+        "backToIndex": "Revenir vers l'aperçu de toutes les cartes thématiques",
         "backToMapcomplete": "Retour à l'aperçu du thème",
         "backgroundMap": "Carte de fonds",
         "cancel": "Annuler",
@@ -140,6 +143,7 @@
         "error": "Quelque chose ne s'est pas passé correctement",
         "example": "Exemple",
         "examples": "Exemples",
+        "feelFreeToSkip": "Vous pouvez ajouter ou mettre à jour d'autres informations ci-dessous, mais n'hésitez pas à <b>passer les questions</b> auxquels vous ne savez pas répondre.",
         "fewChangesBefore": "Merci de répondre à quelques questions à propos de points déjà existants avant d'ajouter de nouveaux points.",
         "getStartedLogin": "Connectez-vous avec OpenStreetMap pour commencer",
         "getStartedNewAccount": " ou <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">créez un compte</a>",
@@ -170,6 +174,7 @@
             "streetcomplete": "Une autre application similaire est <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "nameInlineQuestion": "Le nom de cet/cette {category} est $$$",
+        "newlyCreated": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
         "next": "Suivant",
         "noMatchingMapping": "Aucun résultat ne correspond à votre recherche…",
         "noNameCategory": "{category} sans nom",
@@ -293,20 +298,28 @@
             "loading": "Chargement de Wikipédia…",
             "noResults": "Pas de résultats pour <i>{search}</i>",
             "noWikipediaPage": "Cet élément Wikidata n’a pas encore de page Wikipédia correspondante.",
+            "previewbox": {
+                "born": "Né·e le : {value}",
+                "died": "Décédé·e le : {value}"
+            },
             "searchToShort": "Votre requête est trop courte, entrez un texte plus long.",
             "searchWikidata": "Rechercher sur Wikidata",
             "wikipediaboxTitle": "Wikipédia"
         }
     },
     "hotkeyDocumentation": {
+        "action": "Action",
         "closeSidebar": "Fermer la barre latérale",
+        "key": "Combinaison de touches",
         "openLayersPanel": "Ouvre le panneau fond-de-plan, couches et filtres",
         "selectBackground": "Sélectionnez un fond de carte de type {category}",
         "selectMapnik": "Appliquer le fond de carte OpenStreetMap-carto",
-        "selectSearch": "Sélectionner la barre de recherche de lieux"
+        "selectSearch": "Sélectionner la barre de recherche de lieux",
+        "title": "Raccourcis clavier"
     },
     "image": {
         "addPicture": "Ajoutez une photo",
+        "currentLicense": "Vos images seront publiées sous {license}",
         "doDelete": "Supprimer l'image",
         "dontDelete": "Annuler",
         "isDeleted": "Supprimé",
@@ -345,7 +358,8 @@
         "selectFile": {
             "errDuplicate": "Certaines colonnes portent le même nom",
             "errNoName": "Certains colonnes n'ont pas de nom"
-        }
+        },
+        "title": "Assistant d'importation"
     },
     "index": {
         "#": "Ces textes sont affichés au dessus des boutons de thème quand aucun thème n'est chargé",
@@ -430,6 +444,9 @@
         "seeInfo": "Voir plus d'informations sur les espèces"
     },
     "privacy": {
+        "editing": "Lorsque vous faites une modification sur la carte, cette modification est enregistrée dans OpenStreetMap et est displnible publiquement pour tout le monde. Un groupe de modification fait avec MapComplete inclus les données suivantes : <ul><li>Les modifications que vous avez faites</li><li>Votre nom d'utilisateur</li><li>Quand la modification a été faite</li><li>Le thème utilisé lorsque vous faites la modification</li><li>La langue de l'interface utilisateur</li><li>Une indication sur votre proximité avec l'objet modifié. D'autres utilisateurs peuvent utiliser cette information pour déterminer si la modification a été faite par un relevé de terrain ou par une recherche à distance</li></ul> Merci de vous référer à <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>la politique de confidentialité d'OpenStreetMap.org</a> pour plus de détails. Nous vous rappelons que vous pouvez utiliser un pseudonyme lors de votre inscription.",
+        "editingTitle": "Lorsque vous faites une modification",
+        "geodata": "Quand MapComplete obtient votre géolocalisation, votre géolocalisation et les lieux visités précédemment restent sur votre appareil. Vos données de localisation ne sont jamais envoyées automatiquement ailleurs - sauf si une fonctionnalité vous indique que c'est le cas.",
         "geodataTitle": "Votre géolocalisation",
         "intro": "La vie privée est importante - tant pour l'individu que pour la société. MapComplete s'efforce de respecter votre vie privée autant que possible - jusqu'au point où aucune bannière de cookie gênante n'est nécessaire. Toutefois, nous tenons à vous informer des informations qui sont recueillies et partagées, des circonstances dans lesquelles elles le sont et des raisons pour lesquelles ces compromis sont faits.",
         "miscCookiesTitle": "Autres cookies",
@@ -470,15 +487,13 @@
     },
     "translations": {
         "activateButton": "Aidez à traduire MapComplete",
-        "deactivate": "Désactiver les boutons de traduction",
-        "help": "Cliquez sur l'icône \"traduire\" à côté d'une chaîne de caractères pour saisir ou mettre à jour la chaine de texte. Vous aurez besoin d'un compte Weblate pour cela. Créez-en un avec votre nom d'utilisateur OSM pour déverrouiller automatiquement le mode traduction.",
-        "isTranslator": "Mode traduction activé, votre pseudo correspond à celui d’une personne de l’équipe de traduction",
         "missing": "{count} segments non traduits"
     },
     "userinfo": {
         "gotoInbox": "Ouvrir sa boite de réception",
         "gotoSettings": "Paramètres sur OpenStreetMap.org",
-        "moveToHome": "Déplacez la carte vers votre emplacement"
+        "moveToHome": "Déplacez la carte vers votre emplacement",
+        "welcome": "Bienvenue {name}"
     },
     "validation": {
         "email": {

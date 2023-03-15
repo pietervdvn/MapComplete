@@ -153,6 +153,9 @@
             "render": "Umělecké dílo"
         }
     },
+    "atm": {
+        "description": "Bankomaty pro výběr peněz"
+    },
     "barrier": {
         "description": "Překážky při jízdě na kole, jako jsou patníky a zábrany pro cyklisty",
         "name": "Překážky",
@@ -639,7 +642,7 @@
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
-                        "then": "Bezplatné využívání mycích služeb"
+                        "then": "Tato mycí služba je bezplatná"
                     }
                 },
                 "question": "Kolik stojí využívání služby mytí?",
@@ -831,7 +834,7 @@
                         "then": "K dispozici je pouze vzduchový kompresor"
                     },
                     "1": {
-                        "then": "K dispozici je pouze nářadí (šroubováky, kleště, ...)."
+                        "then": "K dispozici je pouze nářadí (šroubováky, kleště, …)"
                     },
                     "2": {
                         "then": "K dispozici jsou nástroje i vzduchový kompresor"
@@ -945,5 +948,64 @@
                 }
             }
         }
+    },
+    "climbing": {
+        "description": "Falešná vrstva, která obsahuje tagrenderingy sdílené mezi lezeckými vrstvami"
+    },
+    "food": {
+        "description": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)"
+    },
+    "indoors": {
+        "description": "Základní mapování interiérů: zobrazuje obrysy místností"
+    },
+    "maxspeed": {
+        "description": "Zobrazuje povolenou rychlost pro každou silnici"
+    },
+    "usersettings": {
+        "tagRenderings": {
+            "picture-license": {
+                "mappings": {
+                    "0": {
+                        "then": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu. <span class='subtle'>Toto je výchozí volba.</span>"
+                    },
+                    "1": {
+                        "then": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu."
+                    },
+                    "2": {
+                        "then": "Pořízené fotografie budou licencovány pod <b>CC-BY 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku"
+                    },
+                    "3": {
+                        "then": "Pořízené fotografie budou licencovány pod <b>CC-BY-SA 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku a že odvozené fotky musí být dále sdíleny se stejnou licencí."
+                    }
+                }
+            },
+            "show_debug": {
+                "mappings": {
+                    "0": {
+                        "then": "Zobrazit informace o ladění"
+                    },
+                    "1": {
+                        "then": "Nezobrazovat informace o ladění"
+                    },
+                    "2": {
+                        "then": "Nezobrazovat informace o ladění"
+                    }
+                },
+                "question": "Zobrazit informace o ladění v nastavení?"
+            },
+            "translation-mode": {
+                "question": "Chcete pomoci s překladem MapComplete?"
+            },
+            "translation-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Přispěli jste k překladu MapComplete! To je úžasné!"
+                    }
+                }
+            }
+        }
+    },
+    "walls_and_buildings": {
+        "description": "Speciální zabudovaná vrstva poskytující všechny stěny a budovy. Tato vrstva je užitečná v předvolbách pro objekty, které lze umístit ke stěnám (např. AED, poštovní schránky, vchody, adresy, bezpečnostní kamery, …). Tato vrstva je ve výchozím nastavení neviditelná a uživatel ji nemůže přepínat."
     }
 }

@@ -44,6 +44,7 @@
   "layers": [
     {
       "id": "raw_inspire_polygons",
+      "description": "External dataset: inspire polygon",
       "source": {
         "geoJson": "https://osm-uk-addresses.russss.dev/inspire/{z}/{x}/{y}.json",
         "osmTags": "inspireid~*",
@@ -102,7 +103,7 @@
         },
         {
           "id": "uk_addresses_embedding_outline",
-          "render": "<b>Warning: </b>This point lies within a building or area for which we already have an address. You should only add this address if it is different. <br>The number and street name we have for the <a href='#{_embedding_object:id}' target='blank'>existing address</a> is <b>{_embedding_object:addr:housenumber} {_embedding_object:addr:street}</b>",
+          "render": "<b>Warning: </b>This point lies within a building or area for which we already have an address. You should only add this address if it is different. <br>The number and street name we have for the <a href='#{_embedding_object:id}'>existing address</a> is <b>{_embedding_object:addr:housenumber} {_embedding_object:addr:street}</b>",
           "mappings": [
             {
               "if": "_embedding_object:id=true",
@@ -256,7 +257,7 @@
           "id": "uk_addresses_unit",
           "render": "<div class='subtle'>Sub-unit (e.g. 1, Flat 2, Unit C)</div><div><b>{addr:unit}</b></div>",
           "question": {
-            "en": "What is the sub-unit for this address? <div class='subtle'>Some named building or large complexes are split into sub-units</div>"
+            "en": "What is the sub-unit for this address? "
           },
           "freeform": {
             "key": "addr:unit",
@@ -290,11 +291,15 @@
               "addr:housename~*",
               "addr:substreet~*"
             ]
+          },
+          "questionHint": {
+            "en": "Some named building or large complexes are split into sub-units"
           }
         },
         {
           "id": "uk_addresses_housename",
-          "question": "What is the house or building name for this address?<div class='subtle'>As shown on a sign. Please do NOT add names of the people who live here!</div>",
+          "question": "What is the house or building name for this address?",
+          "questionHint": "As shown on a sign. Please do NOT add names of the people who live here!",
           "render": "<div class='subtle'>House or building name</div><div><b>{addr:housename}</b></div>",
           "freeform": {
             "key": "addr:housename",
@@ -373,7 +378,7 @@
         {
           "id": "uk_addresses_placename",
           "question": {
-            "en": "What is the place or locality for this address?<div class='subtle'>This is additional information that appears before (or instead of) a street name in the address</div>"
+            "en": "What is the place or locality for this address?"
           },
           "render": {
             "en": "<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div><div><b>{addr:substreet}</b></div>"
@@ -413,12 +418,15 @@
               "hideInAnswer": true
             }
           ],
-          "condition": "addr:parentstreet="
+          "condition": "addr:parentstreet=",
+          "questionHint": {
+            "en": "This is additional information that appears before (or instead of) a street name in the address"
+          }
         },
         {
           "id": "uk_addresses_placename_with_parent",
           "question": {
-            "en": "What is the place or locality for this address?<div class='subtle'>This is additional information that appears before (or instead of) a street name in the address</div>"
+            "en": "What is the place or locality for this address?"
           },
           "render": {
             "en": "<div class='subtle'>Place (e.g. Castle Mews, West Business Park)</div><div><b>{addr:substreet}</b></div>"
@@ -472,6 +480,9 @@
                 ]
               }
             ]
+          },
+          "questionHint": {
+            "en": "This is additional information that appears before (or instead of) a street name in the address"
           }
         },
         {
@@ -527,7 +538,7 @@
           "id": "uk_addresses_parentstreet",
           "render": "<div class='subtle'>Parent street name</div><div><b>{addr:parentstreet}</b></div>",
           "question": {
-            "en": "What is the parent street name for this address?<div class='subtle'>This street name will appear after the place name or first street name in the address</div>"
+            "en": "What is the parent street name for this address?"
           },
           "freeform": {
             "key": "addr:parentstreet",
@@ -592,6 +603,9 @@
               "addr:parentstreet~*",
               "addr:substreet~*"
             ]
+          },
+          "questionHint": {
+            "en": "This street name will appear after the place name or first street name in the address"
           }
         },
         {

@@ -10,12 +10,10 @@ import IndexText from "./BigComponents/IndexText"
 import FeaturedMessage from "./BigComponents/FeaturedMessage"
 import { ImportViewerLinks } from "./BigComponents/UserInformation"
 import { LoginToggle } from "./Popup/LoginButton"
-import UserSurveyPanel from "./UserSurveyPanel"
 
 export default class AllThemesGui {
     setup() {
         try {
-            new FixedUiElement("").AttachTo("centermessage")
             const state = new UserRelatedState(undefined)
             const intro = new Combine([
                 new LanguagePicker1(Translations.t.index.title.SupportedLanguages(), "").SetClass(
@@ -26,7 +24,6 @@ export default class AllThemesGui {
             new Combine([
                 intro,
                 new FeaturedMessage().SetClass("mb-4 block"),
-                new Combine([new UserSurveyPanel()]).SetClass("flex justify-center"),
                 new MoreScreen(state, true),
                 new LoginToggle(undefined, Translations.t.index.logIn, state),
                 new ImportViewerLinks(state.osmConnection),
@@ -37,14 +34,14 @@ export default class AllThemesGui {
             ])
                 .SetClass("block m-5 lg:w-3/4 lg:ml-40")
                 .SetStyle("pointer-events: all;")
-                .AttachTo("topleft-tools")
+                .AttachTo("top-left")
         } catch (e) {
             console.error(">>>> CRITICAL", e)
             new FixedUiElement(
                 "Seems like no layers are compiled - check the output of `npm run generate:layeroverview`. Is this visible online? Contact pietervdvn immediately!"
             )
                 .SetClass("alert")
-                .AttachTo("centermessage")
+                .AttachTo("top-left")
         }
     }
 }

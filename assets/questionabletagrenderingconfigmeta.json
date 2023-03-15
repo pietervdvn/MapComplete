@@ -8,7 +8,29 @@
     "path": [
       "question"
     ],
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
+  },
+  {
+    "path": [
+      "questionHint"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like"
   },
   {
     "path": [
@@ -152,7 +174,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -566,6 +587,14 @@
     ],
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+  },
+  {
+    "path": [
+      "mappings",
+      "#"
+    ],
+    "type": "string",
+    "description": "Used for comments or to disable a validation\n\nignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed"
   },
   {
     "path": [

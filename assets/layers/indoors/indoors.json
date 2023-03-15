@@ -10,7 +10,8 @@
   "description": {
     "en": "Basic indoor mapping: shows room outlines",
     "de": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
-    "nl": "Een basis voor indoor-navigatie: toont binnenruimtes"
+    "nl": "Een basis voor indoor-navigatie: toont binnenruimtes",
+    "cs": "Základní mapování interiérů: zobrazuje obrysy místností"
   },
   "source": {
     "osmTags": {
@@ -117,12 +118,14 @@
       "question": {
         "en": "What is the name of this room?",
         "de": "Wie lautet der Name dieses Raums?",
-        "nl": "Wat is de naam van deze ruimte?"
+        "nl": "Wat is de naam van deze ruimte?",
+        "ru": "Как называется эта комната?"
       },
       "render": {
         "en": "This room is named {name}",
         "de": "Der Name des Raums lautet {name}",
-        "nl": "Deze ruimte heet {name}"
+        "nl": "Deze ruimte heet {name}",
+        "ru": "Эта комната называется {name}"
       },
       "freeform": {
         "key": "name",
@@ -130,7 +133,8 @@
         "placeholder": {
           "en": "Name of the room",
           "de": "Name des Raums",
-          "nl": "Naam van de ruimte"
+          "nl": "Naam van de ruimte",
+          "ru": "Название комнаты"
         }
       },
       "condition": {

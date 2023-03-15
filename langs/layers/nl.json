@@ -261,7 +261,33 @@
         }
     },
     "bank": {
-        "description": "Een financiële instelling waar je geld kunt"
+        "description": "Een financiële instelling waar je geld kunt",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Met een bankautomaat"
+                    }
+                }
+            }
+        },
+        "name": "Banken",
+        "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze bank heeft een bankautomaat"
+                    },
+                    "1": {
+                        "then": "Deze bank heeft <b>geen</b> bankautomaaat"
+                    },
+                    "2": {
+                        "then": "Deze bank heeft een bankautomaat, maar deze staat apart op de kaart aangeduid"
+                    }
+                },
+                "question": "Heeft deze bank een bankautomaat?"
+            }
+        }
     },
     "barrier": {
         "description": "Hindernissen tijdens het fietsen, zoals paaltjes en fietshekjes",
@@ -404,7 +430,8 @@
                         "then": "Deze bank heeft geen geïntegreerd kunstwerk"
                     }
                 },
-                "question": "Heeft deze bank een geïntegreerd kunstwerk?<div class='subtle text-lg'>Bijvoorbeeld een standbeeld, schildering of ander, niet-triviaal kunstwerk</div>"
+                "question": "Heeft deze bank een geïntegreerd kunstwerk?",
+                "questionHint": "Bijvoorbeeld een standbeeld, schildering of ander, niet-triviaal kunstwerk"
             },
             "bench-backrest": {
                 "mappings": {
@@ -460,7 +487,8 @@
                         "then": "Deze bank heeft <span class='subtle'>(waarschijnlijk)</span> geen inscriptie"
                     }
                 },
-                "question": "Heeft deze bank een inscriptie?<div class='subtle text-lg'>Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...</div>",
+                "question": "Heeft deze bank een inscriptie?",
+                "questionHint": "Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...",
                 "render": "Deze bank heeft een inscriptie: <br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {
@@ -661,7 +689,7 @@
                         "then": "Wielerfietsen (sportfietsen) kunnen hier gehuurd worden"
                     },
                     "7": {
-                        "then": "Fietshelmpen kunnen hier gehuurd worden"
+                        "then": "Fietshelmen kunnen hier gehuurd worden"
                     }
                 },
                 "question": "Wat voor soort fietsen en fietstoebehoren worden hier verhuurd?",
@@ -1358,12 +1386,6 @@
                 "description": "Een vogelkijkwand waarachter men kan staan om vogels te kijken",
                 "title": "een vogelkijkwand"
             }
-        },
-        "size": {
-            "render": "40,40,center"
-        },
-        "stroke": {
-            "render": "3"
         },
         "tagRenderings": {
             "bird-hide-shelter-or-wall": {
@@ -2606,7 +2628,8 @@
                         "then": "Er zijn hier {climbing:traditional} traditionele klimroutes"
                     }
                 },
-                "question": "Is het mogelijk om hier traditioneel te klimmen? <br/><span class='subtle'>(Dit is klimmen met klemblokjes en friends)</span>"
+                "question": "Is het mogelijk om hier traditioneel te klimmen? ",
+                "questionHint": "Dit is klimmen met klemblokjes en friends"
             },
             "website": {
                 "question": "Is er een (onofficiële) website met meer informatie (b.v. met topos)?"
@@ -2838,6 +2861,147 @@
             "render": "Klimroute"
         }
     },
+    "clock": {
+        "description": "Laag met publieke klokken",
+        "name": "Klokken",
+        "presets": {
+            "0": {
+                "description": "Een publiekelijk zichtbare klok",
+                "title": "een klok"
+            },
+            "1": {
+                "description": "Een publiekelijk zichtbare klok aan een muur",
+                "title": "een klok aan een muur"
+            }
+        },
+        "tagRenderings": {
+            "barometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok toont ook de luchtdruk"
+                    },
+                    "1": {
+                        "then": "Deze klok toont de luchtdruk niet"
+                    },
+                    "2": {
+                        "then": "Deze klok toont de luchtdruk waarschijnlijk niet"
+                    }
+                },
+                "question": "Toont deze klok ook de luchtdruk?"
+            },
+            "date": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok toont ook de datum"
+                    },
+                    "1": {
+                        "then": "Deze klok toont de datum niet"
+                    },
+                    "2": {
+                        "then": "Deze klok toont de datum waarschijnlijk niet"
+                    }
+                },
+                "question": "Toont deze klok ook de datum?"
+            },
+            "display": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok toont de tijd met wijzers"
+                    },
+                    "1": {
+                        "then": "Deze klok toont de tijd met cijfers"
+                    },
+                    "2": {
+                        "then": "Deze klok toont de tijd met een zonnewijzer"
+                    },
+                    "3": {
+                        "then": "Deze klok toont de tijd op een niet-standaard manier, bijvoorbeeld met binaire cijfers, water of iets anders"
+                    }
+                },
+                "question": "Hoe toont deze klok de tijd?"
+            },
+            "faces": {
+                "freeform": {
+                    "placeholder": "Aantal klokken"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok heeft één klok"
+                    },
+                    "1": {
+                        "then": "Deze klok heeft twee klokken"
+                    },
+                    "2": {
+                        "then": "Deze klok heeft vier klokken"
+                    }
+                },
+                "question": "Hoeveel klokken heeft deze klok?",
+                "render": "Deze klok heeft {faces} klokken"
+            },
+            "hygrometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok toont ook de luchtvochtigheid"
+                    },
+                    "1": {
+                        "then": "Deze klok toont de luchtvochtigheid niet"
+                    },
+                    "2": {
+                        "then": "Deze klok toont de luchtvochtigheid waarschijnlijk niet"
+                    }
+                },
+                "question": "Toont deze klok ook de luchtvochtigheid?"
+            },
+            "support": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok is bevestigd aan een paal"
+                    },
+                    "1": {
+                        "then": "Deze klok is bevestigd aan een muur"
+                    },
+                    "2": {
+                        "then": "Deze klok is onderdeel van een reclamebord"
+                    },
+                    "3": {
+                        "then": "Deze klok staat op de grond"
+                    }
+                },
+                "question": "Hoe is de klok bevestigd?"
+            },
+            "thermometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok toont ook de temperatuur"
+                    },
+                    "1": {
+                        "then": "Deze klok toont de temperatuur niet"
+                    },
+                    "2": {
+                        "then": "Deze klok toont de temperatuur waarschijnlijk niet"
+                    }
+                },
+                "question": "Toont deze klok ook de temperatuur?"
+            },
+            "visibility": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze klok is zichtbaar vanaf ongeveer 5 meter afstand (kleine klok aan een muur)"
+                    },
+                    "1": {
+                        "then": "Deze klok is zichtbaar vanaf ongeveer 20 meter afstand (klok op gemiddeld reclamebord)"
+                    },
+                    "2": {
+                        "then": "Deze klok is zichtbaar vanaf meer dan 20 meter afstand (kerkklok)"
+                    }
+                },
+                "question": "Hoe zichtbaar is deze klok?"
+            }
+        },
+        "title": {
+            "render": "Klok"
+        }
+    },
     "crab_address": {
         "tagRenderings": {
             "render_crab": {
@@ -2917,6 +3081,16 @@
                 },
                 "question": "Is dit een zebrapad?"
             },
+            "crossing-minimap": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit verkeerlicht heeft een voelkaart die de indeling van de oversteekplaats laat zien."
+                    },
+                    "1": {
+                        "then": "Dit verkeerlicht heeft <b>geen</b> voelkaart die de indeling van de oversteekplaats laat zien."
+                    }
+                }
+            },
             "crossing-right-turn-through-red": {
                 "mappings": {
                     "0": {
@@ -2930,6 +3104,23 @@
                     }
                 },
                 "question": "Mag een fietser rechtsaf slaan als het licht rood is?"
+            },
+            "crossing-sound": {
+                "mappings": {
+                    "0": {
+                        "then": "Dit verkeerslicht heeft geluidssignalen om te helpen bij het oversteken, zowel voor het vinden van de oversteekplaats als voor het oversteken."
+                    },
+                    "1": {
+                        "then": "Dit verkeerslicht heeft geen geluidssignalen om te helpen bij het oversteken."
+                    },
+                    "2": {
+                        "then": "Dit verkeerslicht heeft een geluidssignaal om de paal te vinden, maar niet om aan te geven dat oversteken veilig kan."
+                    },
+                    "3": {
+                        "then": "Dit verkeerslicht heeft een geluidssignaal om aan te geven dat oversteken veilig kan, maar geen signaal om de paal te vinden."
+                    }
+                },
+                "question": "Heeft dit verkeerslicht geluidssignalen om te helpen bij het oversteken?"
             },
             "crossing-tactile": {
                 "mappings": {
@@ -2961,6 +3152,17 @@
                     }
                 },
                 "question": "Wat voor oversteekplaats is dit?"
+            },
+            "crossing-vibration": {
+                "mappings": {
+                    "0": {
+                        "then": "De knop bij dit verkeerslicht trilt om aan te geven dat men veilig kan oversteken."
+                    },
+                    "1": {
+                        "then": "De knop bij dit verkeerslicht kan <b>niet</b> trillen om aan te geven dat men veilig kan oversteken."
+                    }
+                },
+                "question": "Heeft dit verkeerslicht een element dat trilt om te helpen bij het oversteken? (meestal onderaan de oversteekknop geplaatst)"
             }
         },
         "title": {
@@ -3316,7 +3518,8 @@
                 "question": "Is deze weg verlicht?"
             },
             "width:carriageway": {
-                "question": "Hoe breed is de rijbaan in deze straat (in meters)?<br/><span class='subtle'>Dit is gemeten van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook</span>",
+                "question": "Hoe breed is de rijbaan in deze straat (in meters)?",
+                "questionHint": "Dit is gemeten van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook",
                 "render": "De breedte van deze rijbaan in deze straat is <strong>{width:carriageway}m</strong>"
             }
         },
@@ -3731,7 +3934,8 @@
                         "then": "Er is een toegang zonder een deur"
                     }
                 },
-                "question": "Om wat voor deur gaat het?<br/><span class='subtle'>Of de deur al of niet automatisch werkt, vragen we hierna </span>"
+                "question": "Om wat voor deur gaat het?",
+                "questionHint": "Of de deur al of niet automatisch werkt, vragen we hierna "
             },
             "Entrance type": {
                 "mappings": {
@@ -3842,7 +4046,8 @@
                         "then": "De oorsprong van deze naam is onbekend in de literatuur"
                     }
                 },
-                "question": "Naar wat is dit object vernoemd?<br/><span class='subtle'>Dit staat mogelijks vermeld op het straatnaambordje</span>",
+                "question": "Naar wat is dit object vernoemd?",
+                "questionHint": "Dit staat mogelijks vermeld op het straatnaambordje",
                 "render": "Vernoemd naar {name:etymology}"
             },
             "street-name-sign-image": {
@@ -4007,6 +4212,60 @@
         },
         "title": {
             "render": "Brandweerstation"
+        }
+    },
+    "fitness_centre": {
+        "presets": {
+            "0": {
+                "title": "een fitness-centrum"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Naam van dit fitness-centrum"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Dit fitness-centrum heeft geen naam"
+                    }
+                },
+                "question": "Wat is de naam van dit fitness-centrum?",
+                "render": "Dit fitness-centrum heet {name}"
+            }
+        },
+        "title": {
+            "render": "Fitness-centrum"
+        }
+    },
+    "fitness_station": {
+        "description": "Vind een fitness-centrum in je buurt en voeg ontbrekende fitness-centra toe",
+        "name": "Fitness-toestel",
+        "presets": {
+            "0": {
+                "title": "een fitness-toestel"
+            }
+        },
+        "tagRenderings": {
+            "name": {
+                "freeform": {
+                    "placeholder": "Naam van het fitness-toestell"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Dit fitness-toestel heeft geen naam"
+                    }
+                },
+                "question": "Wat is de naam van dit fitness-toestel?",
+                "render": "Dit fitness-toestel heet {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Beheerder van het fitness-toestel"
+                },
+                "question": "Wie beheert dit fitness-toestel?",
+                "render": "Dit fitness-toestel wordt beheerd door {operator}"
+            }
         }
     },
     "food": {
@@ -4251,7 +4510,7 @@
                         "then": "Je <b>moet</b> je eigen containers meenemen om je bestelling in mee te nemen."
                     }
                 },
-                "question": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?<br/>"
+                "question": "Als je je eigen container (bv. kookpot of kleine potjes voor saus) meeneemt, gebruikt de frituur deze dan om je bestelling in te doen?"
             },
             "friture-vegan": {
                 "mappings": {
@@ -4350,7 +4609,8 @@
                         "then": "De naam is niet aangeduid op de fiets"
                     }
                 },
-                "question": "Aan wie is deze witte fiets een eerbetoon?<span class='question-subtext'><br/>Respecteer privacy - voeg enkel een naam toe indien die op de fiets staat of gepubliceerd is. Eventueel voeg je enkel de voornaam toe.</span>",
+                "question": "Aan wie is deze witte fiets een eerbetoon?",
+                "questionHint": "Respecteer privacy - voeg enkel een naam toe indien die op de fiets staat of gepubliceerd is. Eventueel voeg je enkel de voornaam toe.",
                 "render": "Ter nagedachtenis van {name}"
             },
             "ghost_bike-source": {
@@ -4551,12 +4811,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "De kleur van de brandkraan is onbekend."
-                    },
-                    "1": {
                         "then": "De brandkraan is geel."
                     },
-                    "2": {
+                    "1": {
                         "then": "De brandkraan is rood."
                     }
                 },
@@ -4595,6 +4852,13 @@
                 "question": "Wat is de pijpdiameter van deze hydrant?",
                 "render": "Pijpdiameter:{canonical(fire_hydrant:diameter)}"
             },
+            "hydrant-number-of-couplings": {
+                "freeform": {
+                    "placeholder": "Aantal koppelingen"
+                },
+                "question": "Hoe veel koppelingen bezit deze brandkraan?",
+                "render": "Aantal koppelingen: {couplings}"
+            },
             "hydrant-state": {
                 "mappings": {
                     "0": {
@@ -4612,18 +4876,15 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "Het type brandkraan is onbekend."
-                    },
-                    "1": {
                         "then": "Pillaar type."
                     },
-                    "2": {
+                    "1": {
                         "then": "Buis type."
                     },
-                    "3": {
+                    "2": {
                         "then": "Muur type."
                     },
-                    "4": {
+                    "3": {
                         "then": "Ondergronds type."
                     }
                 },
@@ -4737,6 +4998,11 @@
             "kerb-height": {
                 "freeform": {
                     "placeholder": "Hoogte van de stoeprand"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze stoeprand is vlak en lager als 1 cm."
+                    }
                 },
                 "question": "Hoe hoog is deze stoeprand?",
                 "render": "Stoeprandhoogte: {kerb:height}"
@@ -5134,7 +5400,8 @@
                 "render": "De toegankelijkheid van dit gebied is: {access:description}"
             },
             "Curator": {
-                "question": "Wie is de conservator van dit gebied?<br/><span class='subtle'>Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",
+                "question": "Wie is de conservator van dit gebied?",
+                "questionHint": "Respecteer privacy - geef deze naam enkel als die duidelijk is gepubliceerd",
                 "render": "{curator} is de beheerder van dit gebied"
             },
             "Dogs?": {
@@ -5156,7 +5423,8 @@
                 "render": "Extra info: <i>{description:0}</i>"
             },
             "Email": {
-                "question": "Waar kan men naartoe emailen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd",
+                "question": "Waar kan men naartoe emailen voor vragen en meldingen van dit natuurgebied?",
+                "questionHint": "Respecteer privacy - geef enkel persoonlijke emailadressen als deze elders zijn gepubliceerd",
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
             "Name tag": {
@@ -5190,7 +5458,8 @@
                 "render": "Totale oppervlakte: {_surface:ha}Ha"
             },
             "phone": {
-                "question": "Waar kan men naartoe bellen voor vragen en meldingen van dit natuurgebied?<br/><span class='subtle'>Respecteer privacy - geef enkel persoonlijke telefoonnummers als deze elders zijn gepubliceerd"
+                "question": "Waar kan men naartoe bellen voor vragen en meldingen van dit natuurgebied?",
+                "questionHint": "Respecteer privacy - geef enkel persoonlijke telefoonnummers als deze elders zijn gepubliceerd"
             }
         },
         "title": {
@@ -5633,6 +5902,32 @@
             "render": "Parkeerplek"
         }
     },
+    "parking_ticket_machine": {
+        "description": "Laag met parkeerkaartautomaten om voor parkeren te betalen.",
+        "name": "Parkeerkaartautomaten",
+        "presets": {
+            "0": {
+                "title": "een parkeerkaartautomaat"
+            }
+        },
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Referentienummer"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Deze parkeerkaartautomaat heeft geen referentienummer"
+                    }
+                },
+                "question": "Wat is het referentienummer van deze parkeerkaartautomaat?",
+                "render": "Deze parkeerkaartautomaat heeft het referentienummer {ref}"
+            }
+        },
+        "title": {
+            "render": "Parkeerkaartautomaat"
+        }
+    },
     "pedestrian_path": {
         "description": "Pad voor voetgangers, in het bijzonder gebruikt voor navigatie binnen gebouwen en om aan toegangen vast te klikken in deze laag",
         "name": "Pad voor voetgangers"
@@ -5877,7 +6172,8 @@
                         "then": "De ondergrond is <b>verhard</b>"
                     }
                 },
-                "question": "Wat is de ondergrond van deze speeltuin?<br/><i>Indien er verschillende ondergronden zijn, neem de meest voorkomende</i>",
+                "question": "Wat is de ondergrond van deze speeltuin?",
+                "questionHint": "Indien er verschillende ondergronden zijn, neem de meest voorkomende",
                 "render": "De ondergrond is <b>{surface}</b>"
             }
         },
@@ -6207,6 +6503,13 @@
                         "question": "Recycling van restafval"
                     }
                 }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Enkel publiek toegankelijke afvalcontainers"
+                    }
+                }
             }
         },
         "name": "Recycling",
@@ -6219,6 +6522,21 @@
             }
         },
         "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Iedereen mag deze recyclingfaciliteit gebruiken"
+                    },
+                    "1": {
+                        "then": "Enkel bewoners kunnen deze recyclingfaciliteit gebruiken"
+                    },
+                    "2": {
+                        "then": "Deze recyclingfaciliteit is alleen voor privégebruik"
+                    }
+                },
+                "question": "Wie kan deze recyclingfaciliteit gebruiken?",
+                "render": "Deze recyclingfaciliteit kan gebruikt worden door {access}"
+            },
             "container-location": {
                 "mappings": {
                     "0": {
@@ -6452,7 +6770,8 @@
                         "then": "Deze school richt zich op studenten met extra zorgbehoeften"
                     }
                 },
-                "question": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?<div class='subtle'>Ad-hoc maatregelen zijn niet voldoende</div> ",
+                "question": "Richt deze school zich op leerlingen met een speciale zorgbehoefte? Welke structurele faciliteiten heeft deze school voor leerlingen met een extra zorgbehoefte?",
+                "questionHint": "Ad-hoc maatregelen zijn niet voldoende ",
                 "render": "Deze school richt zich op studenten met {school:for}"
             }
         },
@@ -6645,6 +6964,28 @@
         }
     },
     "speed_camera": {
+        "description": "Laag met flitspalen",
+        "name": "Flitspaal",
+        "presets": {
+            "0": {
+                "title": "een flitspaal"
+            }
+        },
+        "tagRenderings": {
+            "maxspeed": {
+                "freeform": {
+                    "placeholder": "Maximum toegestane snelheid"
+                },
+                "question": "Wat is de maximum toegestane snelheid bij deze flitspaal?",
+                "render": "De maximum toegestane snelheid is {canonical(maxspeed)}"
+            },
+            "ref": {
+                "render": "De referentie van deze flitspaal is {ref}"
+            }
+        },
+        "title": {
+            "render": "Flitspaal"
+        },
         "units": {
             "0": {
                 "applicableUnits": {
@@ -6661,6 +7002,32 @@
         }
     },
     "speed_display": {
+        "description": "Laag met snelheidsdisplays om bestuurders op hun snelheid te wijzen.",
+        "name": "Snelheidsdisplay",
+        "presets": {
+            "0": {
+                "title": "een snelheidsdisplay"
+            }
+        },
+        "tagRenderings": {
+            "inscription": {
+                "freeform": {
+                    "placeholder": "Tekst op snelheidsdisplay (b.v. 'Uw snelheid')"
+                },
+                "question": "Wat is de tekst op dit snelheidsdisplay?",
+                "render": "De tekst op dit snelheidsdisplay is {inscription}"
+            },
+            "maxspeed": {
+                "freeform": {
+                    "placeholder": "Maximum toegestane snelheid bij snelheidsdisplay"
+                },
+                "question": "Wat is de maximum toegestane snelheid bij dit snelheidsdisplay?",
+                "render": "De maximum toegestane snelheid bij dit snelheidsdisplay is {canonical(maxspeed)}"
+            }
+        },
+        "title": {
+            "render": "Snelheidsdisplay"
+        },
         "units": {
             "0": {
                 "applicableUnits": {
@@ -6678,6 +7045,34 @@
     },
     "sport_pitch": {
         "description": "Een sportterrein",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Publiek toegankelijk"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Alle sporten"
+                    },
+                    "1": {
+                        "question": "Basketbalvelden"
+                    },
+                    "2": {
+                        "question": "Voetbalvelden"
+                    },
+                    "3": {
+                        "question": "Pingpong-tafel"
+                    },
+                    "4": {
+                        "question": "Tennisveld"
+                    }
+                }
+            }
+        },
         "name": "Sportterrein",
         "presets": {
             "0": {
@@ -7420,13 +7815,6 @@
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Heeft een luiertafel"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
@@ -7637,7 +8025,7 @@
                         "then": "Deze halte heeft een zitbank"
                     },
                     "1": {
-                        "then": "Deze halte heeft geen zitbank"
+                        "then": "Deze halte heeft <b>geen</b> zitbank"
                     },
                     "2": {
                         "then": "Deze halte heeft een zitbank, die los aangegeven is op de kaart"
@@ -7651,7 +8039,7 @@
                         "then": "Deze halte heeft een vuilnisbak"
                     },
                     "1": {
-                        "then": "Deze halte heeft geen vuilnisbak"
+                        "then": "Deze halte heeft <b>geen</b> vuilnisbak"
                     },
                     "2": {
                         "then": "Deze heeft een vuilnisbak, die los op de kaart staat"
@@ -7659,13 +8047,16 @@
                 },
                 "question": "Heeft deze halte een vuilnisbak?"
             },
+            "contained_routes": {
+                "render": "<h3>{_contained_routes_count} lijnen stoppen bij deze halte</h3> <ul>{_contained_routes}</ul>"
+            },
             "lit": {
                 "mappings": {
                     "0": {
-                        "then": "Deze halte is niet verlicht"
+                        "then": "Deze halte is verlicht"
                     },
                     "1": {
-                        "then": "Deze halte is niet verlicht"
+                        "then": "Deze halte is <b>niet</b> verlicht"
                     }
                 },
                 "question": "Is deze halte verlicht?"
@@ -7676,7 +8067,7 @@
                         "then": "Deze halte heeft een schuilplaats"
                     },
                     "1": {
-                        "then": "Deze halte heeft geen schuilplaats"
+                        "then": "Deze halte heeft <b>geen</b> schuilplaats"
                     },
                     "2": {
                         "then": "Deze halte heeft een schuilplaats, die apart op de kaart staat"
@@ -7695,6 +8086,17 @@
                 },
                 "question": "Wat is de naam van deze halte?",
                 "render": "Deze halte heet <b>{name}</b>"
+            },
+            "tactile_paving": {
+                "mappings": {
+                    "0": {
+                        "then": "Deze halte heeft een geleidelijn"
+                    },
+                    "1": {
+                        "then": "Deze halte heeft <b>geen</b> geleidelijn"
+                    }
+                },
+                "question": "Heeft deze halte een geleidelijn?"
             }
         },
         "title": {
@@ -7702,7 +8104,8 @@
                 "0": {
                     "then": "Halte {name}"
                 }
-            }
+            },
+            "render": "Bushalte"
         }
     },
     "tree_node": {
@@ -7723,6 +8126,15 @@
             }
         },
         "tagRenderings": {
+            "circumference": {
+                "question": "Wat is de omtrek van de boomstam? ",
+                "questionHint": "Dit wordt 1.30m boven de grond gemeten",
+                "render": "De boomstam heeft een omtrek van {circumference} meter"
+            },
+            "height": {
+                "question": "Wat is de hoogte van deze boom?",
+                "render": "Deze boom is {height} meter hoog"
+            },
             "tree-decidouous": {
                 "mappings": {
                     "0": {
@@ -7820,6 +8232,67 @@
         },
         "title": {
             "render": "Boom"
+        }
+    },
+    "usersettings": {
+        "description": "Een speciale lag die niet getoond wordt op de kaart, maar die de instellingen van de gebruiker weergeeft",
+        "tagRenderings": {
+            "contributor-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Je hebt mee geprogrammeerd aan MapComplete met {_code_contributions} commits! Das supercool van je! Bedankt hiervoor!"
+                    }
+                }
+            },
+            "picture-license": {
+                "mappings": {
+                    "0": {
+                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik. <span class='subtle'>Dit is de standaard-instelling</span>"
+                    },
+                    "1": {
+                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik."
+                    },
+                    "2": {
+                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam"
+                    },
+                    "3": {
+                        "then": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden."
+                    }
+                },
+                "question": "Met welke licentie wil je je afbeeldingen toevoegen?"
+            },
+            "translation-completeness": {
+                "mappings": {
+                    "0": {
+                        "then": "Volledig vertaald"
+                    }
+                },
+                "render": "Vertalingen voor {_theme} in {_language} zijn momenteel op {_translation_percentage}%: van {_translation_total} teksten zijn er reeds {_translation_translated_count} vertaald"
+            },
+            "translation-help": {
+                "mappings": {
+                    "0": {
+                        "then": "Klik op het 'vertaal'-icoontje die naast een stukje tekst staat om deze tekst te vertalen of aan te passen. Hiervoor heb je een (gratis) Weblate-account nodig. Indien je jouw account maakt met dezelfde naam als je OSM-gebruikersnaam, dan zullen de vertaalknoppen automatisch verschijnen."
+                    }
+                }
+            },
+            "translation-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Je hebt MapComplete helpen vertalen! Dat is fantastisch! Bedankt hiervoor!"
+                    }
+                }
+            },
+            "verified-mastodon": {
+                "mappings": {
+                    "0": {
+                        "then": "Een link naar je Mastodon-profiel werd gevonden: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                    },
+                    "1": {
+                        "then": "Je profielbeschrijving bevat een link die vermoedelijk naar je Mastodon gaat, maar deze link is niet verifieerdbaar voor Mastodon.<a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Pas je profielbeschrijving aan</a> en plaats er de volgende code: <span class='code'>&lta href=\"{_mastodon_candidate}\" rel=\"me\"&gtMastodon&lt/a&gt"
+                    }
+                }
+            }
         }
     },
     "veterinary": {
@@ -8085,6 +8558,10 @@
             "turbine-diameter": {
                 "question": "Wat is de rotordiameter van deze windturbine?",
                 "render": "De rotordiameter van deze windturbine is {rotor:diameter} meter."
+            },
+            "turbine-height": {
+                "question": "Wat is de totale hoogte in meter van deze windturbine (inclusief rotor-radius)?",
+                "render": "De totale hoogte (inclusief rotor-radius) van deze windturbine is {height} meter"
             },
             "turbine-operator": {
                 "question": "Wie beheert deze windturbine?",

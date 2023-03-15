@@ -10,11 +10,16 @@ import {
     MultiPolygon,
     Polygon,
 } from "@turf/turf"
-import { GeoJSON, LineString, Point } from "geojson"
+import { GeoJSON, LineString, Point, Position } from "geojson"
 import togpx from "togpx"
 import Constants from "../Models/Constants"
 
 export class GeoOperations {
+    /**
+     * Create a union between two features
+     */
+    static union = turf.union
+    static intersect = turf.intersect
     private static readonly _earthRadius = 6378137
     private static readonly _originShift = (2 * Math.PI * GeoOperations._earthRadius) / 2
 
@@ -46,7 +51,7 @@ export class GeoOperations {
      * @param lonlat0
      * @param lonlat1
      */
-    static distanceBetween(lonlat0: [number, number], lonlat1: [number, number]) {
+    static distanceBetween(lonlat0: [number, number], lonlat1: [number, number] | Position) {
         return turf.distance(lonlat0, lonlat1, { units: "meters" })
     }
 
@@ -159,35 +164,6 @@ export class GeoOperations {
     }
 
     /**
-     * Helper function which does the heavy lifting for 'inside'
-     */
-    private static pointInPolygonCoordinates(
-        x: number,
-        y: number,
-        coordinates: [number, number][][]
-    ) {
-        const inside = GeoOperations.pointWithinRing(
-            x,
-            y,
-            /*This is the outer ring of the polygon */ coordinates[0]
-        )
-        if (!inside) {
-            return false
-        }
-        for (let i = 1; i < coordinates.length; i++) {
-            const inHole = GeoOperations.pointWithinRing(
-                x,
-                y,
-                coordinates[i] /* These are inner rings, aka holes*/
-            )
-            if (inHole) {
-                return false
-            }
-        }
-        return true
-    }
-
-    /**
      * Detect wether or not the given point is located in the feature
      *
      * // Should work with a normal polygon
@@ -209,16 +185,20 @@ export class GeoOperations {
      * GeoOperations.inside([1.42822265625, 48.61838518688487], multiPolygon) // => false
      * GeoOperations.inside([4.02099609375, 47.81315451752768], multiPolygon) // => false
      */
-    public static inside(pointCoordinate, feature): boolean {
+    public static inside(
+        pointCoordinate: [number, number] | Feature<Point>,
+        feature: Feature
+    ): boolean {
         // ray-casting algorithm based on
         // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
 
         if (feature.geometry.type === "Point") {
+            // The feature that should 'contain' pointCoordinate is a point itself, so it cannot contain anything
             return false
         }
 
-        if (pointCoordinate.geometry !== undefined) {
-            pointCoordinate = pointCoordinate.geometry.coordinates
+        if (pointCoordinate["geometry"] !== undefined) {
+            pointCoordinate = pointCoordinate["geometry"].coordinates
         }
 
         const x: number = pointCoordinate[0]
@@ -227,6 +207,7 @@ export class GeoOperations {
         if (feature.geometry.type === "MultiPolygon") {
             const coordinatess = feature.geometry.coordinates
             for (const coordinates of coordinatess) {
+                // @ts-ignore
                 const inThisPolygon = GeoOperations.pointInPolygonCoordinates(x, y, coordinates)
                 if (inThisPolygon) {
                     return true
@@ -236,6 +217,7 @@ export class GeoOperations {
         }
 
         if (feature.geometry.type === "Polygon") {
+            // @ts-ignore
             return GeoOperations.pointInPolygonCoordinates(x, y, feature.geometry.coordinates)
         }
 
@@ -252,10 +234,11 @@ export class GeoOperations {
         })
     }
 
-    static bbox(feature: any) {
+    static bbox(feature: any): Feature<LineString, {}> {
         const [lon, lat, lon0, lat0] = turf.bbox(feature)
         return {
             type: "Feature",
+            properties: {},
             geometry: {
                 type: "LineString",
                 coordinates: [
@@ -620,6 +603,113 @@ export class GeoOperations {
         return copy
     }
 
+    /**
+     * Takes two points and finds the geographic bearing between them, i.e. the angle measured in degrees from the north line (0 degrees)
+     */
+    public static bearing(a: Coord, b: Coord): number {
+        return turf.bearing(a, b)
+    }
+
+    /**
+     * Returns 'true' if one feature contains the other feature
+     *
+     * const pond: Feature<Polygon, any> = {
+     *       "type": "Feature",
+     *       "properties": {"natural":"water","water":"pond"},
+     *       "geometry": {
+     *         "type": "Polygon",
+     *         "coordinates": [[
+     *             [4.362924098968506,50.8435422298544 ],
+     *             [4.363272786140442,50.8435219059949 ],
+     *             [4.363213777542114,50.8437420806679 ],
+     *             [4.362924098968506,50.8435422298544 ]
+     *           ]]}}
+     * const park: Feature<Polygon, any> =   {
+     *       "type": "Feature",
+     *       "properties": {"leisure":"park"},
+     *       "geometry": {
+     *         "type": "Polygon",
+     *         "coordinates": [[
+     *            [ 4.36073541641235,50.84323737103244 ],
+     *            [ 4.36469435691833, 50.8423905305197 ],
+     *            [ 4.36659336090087, 50.8458997374786 ],
+     *            [ 4.36254858970642, 50.8468007074916 ],
+     *            [ 4.36073541641235, 50.8432373710324 ]
+     *           ]]}}
+     * GeoOperations.completelyWithin(pond, park) // => true
+     * GeoOperations.completelyWithin(park, pond) // => false
+     */
+    static completelyWithin(
+        feature: Feature<Geometry, any>,
+        possiblyEncloingFeature: Feature<Polygon | MultiPolygon, any>
+    ): boolean {
+        return booleanWithin(feature, possiblyEncloingFeature)
+    }
+
+    /**
+     * Create an intersection between two features.
+     * A new feature is returned based on 'toSplit', which'll have a geometry that is completely withing boundary
+     */
+    public static clipWith(toSplit: Feature, boundary: Feature<Polygon>): Feature[] {
+        if (toSplit.geometry.type === "Point") {
+            const p = <Feature<Point>>toSplit
+            if (GeoOperations.inside(<[number, number]>p.geometry.coordinates, boundary)) {
+                return [p]
+            } else {
+                return []
+            }
+        }
+
+        if (toSplit.geometry.type === "LineString") {
+            const splitup = turf.lineSplit(<Feature<LineString>>toSplit, boundary)
+            const kept = []
+            for (const f of splitup.features) {
+                const ls = <Feature<LineString>>f
+                if (!GeoOperations.inside(GeoOperations.centerpointCoordinates(f), boundary)) {
+                    continue
+                }
+                f.properties = { ...toSplit.properties }
+                kept.push(f)
+            }
+            return kept
+        }
+        if (toSplit.geometry.type === "Polygon" || toSplit.geometry.type == "MultiPolygon") {
+            const splitup = turf.intersect(<Feature<Polygon>>toSplit, boundary)
+            splitup.properties = { ...toSplit.properties }
+            return [splitup]
+        }
+        throw "Invalid geometry type with GeoOperations.clipWith: " + toSplit.geometry.type
+    }
+
+    /**
+     * Helper function which does the heavy lifting for 'inside'
+     */
+    private static pointInPolygonCoordinates(
+        x: number,
+        y: number,
+        coordinates: [number, number][][]
+    ): boolean {
+        const inside = GeoOperations.pointWithinRing(
+            x,
+            y,
+            /*This is the outer ring of the polygon */ coordinates[0]
+        )
+        if (!inside) {
+            return false
+        }
+        for (let i = 1; i < coordinates.length; i++) {
+            const inHole = GeoOperations.pointWithinRing(
+                x,
+                y,
+                coordinates[i] /* These are inner rings, aka holes*/
+            )
+            if (inHole) {
+                return false
+            }
+        }
+        return true
+    }
+
     private static pointWithinRing(x: number, y: number, ring: [number, number][]) {
         let inside = false
         for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
@@ -740,57 +830,4 @@ export class GeoOperations {
         }
         throw "CalculateIntersection fallthrough: can not calculate an intersection between features"
     }
-
-    /**
-     * Takes two points and finds the geographic bearing between them, i.e. the angle measured in degrees from the north line (0 degrees)
-     */
-    public static bearing(a: Coord, b: Coord): number {
-        return turf.bearing(a, b)
-    }
-
-    /**
-     * Returns 'true' if one feature contains the other feature
-     *
-     * const pond: Feature<Polygon, any> = {
-     *       "type": "Feature",
-     *       "properties": {"natural":"water","water":"pond"},
-     *       "geometry": {
-     *         "type": "Polygon",
-     *         "coordinates": [[
-     *             [4.362924098968506,50.8435422298544 ],
-     *             [4.363272786140442,50.8435219059949 ],
-     *             [4.363213777542114,50.8437420806679 ],
-     *             [4.362924098968506,50.8435422298544 ]
-     *           ]]}}
-     * const park: Feature<Polygon, any> =   {
-     *       "type": "Feature",
-     *       "properties": {"leisure":"park"},
-     *       "geometry": {
-     *         "type": "Polygon",
-     *         "coordinates": [[
-     *            [ 4.36073541641235,50.84323737103244 ],
-     *            [ 4.36469435691833, 50.8423905305197 ],
-     *            [ 4.36659336090087, 50.8458997374786 ],
-     *            [ 4.36254858970642, 50.8468007074916 ],
-     *            [ 4.36073541641235, 50.8432373710324 ]
-     *           ]]}}
-     * GeoOperations.completelyWithin(pond, park) // => true
-     * GeoOperations.completelyWithin(park, pond) // => false
-     */
-    static completelyWithin(
-        feature: Feature<Geometry, any>,
-        possiblyEncloingFeature: Feature<Polygon | MultiPolygon, any>
-    ): boolean {
-        return booleanWithin(feature, possiblyEncloingFeature)
-    }
-
-    /**
-     * Create a union between two features
-     */
-    static union = turf.union
-
-    /**
-     * Create an intersection between two features
-     */
-    static intersect = turf.intersect
 }

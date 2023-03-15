@@ -1,13 +1,11 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import Minimap from "../../../../UI/Base/Minimap"
 import { Utils } from "../../../../Utils"
 import LayoutConfig from "../../../../Models/ThemeConfig/LayoutConfig"
 import State from "../../../../State"
 import { BBox } from "../../../../Logic/BBox"
 import ReplaceGeometryAction from "../../../../Logic/Osm/Actions/ReplaceGeometryAction"
-import ShowDataLayerImplementation from "../../../../UI/ShowDataLayer/ShowDataLayerImplementation"
 import ShowDataLayer from "../../../../UI/ShowDataLayer/ShowDataLayer"
+import { describe, expect, it } from "vitest"
 
 describe("ReplaceGeometryAction", () => {
     const grbStripped = {
@@ -896,7 +894,7 @@ describe("ReplaceGeometryAction", () => {
         })
 
         const closestIds = await action.GetClosestIds()
-        expect(closestIds.closestIds).deep.equal([
+        expect(closestIds.closestIds).toEqual([
             9219979643,
             1728823481,
             4978289383,
@@ -910,14 +908,14 @@ describe("ReplaceGeometryAction", () => {
             undefined,
         ])
 
-        expect(closestIds.reprojectedNodes.size).deep.equal(1)
+        expect(closestIds.reprojectedNodes.size).toEqual(1)
         const reproj = closestIds.reprojectedNodes.get(1728823549)
-        expect(reproj.projectAfterIndex).deep.equal(1)
-        expect(reproj.newLon).deep.equal(3.2168880864669203)
-        expect(reproj.newLat).deep.equal(51.214739524104694)
-        expect(closestIds.detachedNodes.size).deep.equal(0)
+        expect(reproj.projectAfterIndex).toEqual(1)
+        expect(reproj.newLon).toEqual(3.2168880864669203)
+        expect(reproj.newLat).toEqual(51.214739524104694)
+        expect(closestIds.detachedNodes.size).toEqual(0)
         const changes = await action.Perform(state.changes)
-        expect(changes[11].changes["coordinates"]).deep.equal([
+        expect(changes[11].changes["coordinates"]).toEqual([
             [3.216690793633461, 51.21474084112525],
             [3.2167256623506546, 51.214696737309964],
             [3.2168880864669203, 51.214739524104694],

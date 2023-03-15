@@ -349,7 +349,7 @@
         "tagRenderings": {
             "hydrant-type": {
                 "mappings": {
-                    "3": {
+                    "2": {
                         "then": "Jenis dinding."
                     }
                 }
@@ -404,6 +404,17 @@
             "render": "Kantor Pos"
         }
     },
+    "recycling": {
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Hanya akses publik"
+                    }
+                }
+            }
+        }
+    },
     "tree_node": {
         "presets": {
             "2": {
@@ -455,6 +466,13 @@
                 },
                 "question": "Apakah pohon ini memiliki nama?",
                 "render": "Nama: {name}"
+            }
+        }
+    },
+    "usersettings": {
+        "tagRenderings": {
+            "translation-completeness": {
+                "render": "Terjemahan untuk {_theme} dalam {_language} masih {_translation_percentage}%: {_translation_translated_count} string dari {_translation_total} diterjemahkan"
             }
         }
     },

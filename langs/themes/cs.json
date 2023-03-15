@@ -5,7 +5,11 @@
     },
     "artwork": {
         "description": "Otevřená mapa soch, bust, graffiti a dalších uměleckých děl po celém světě",
-        "title": "Open Artwork Map"
+        "title": "Otevřená mapa uměleckých děl"
+    },
+    "atm": {
+        "description": "Tato mapa zobrazuje bankomaty pro výběr nebo vklad peněz",
+        "title": "Bankomaty"
     },
     "bag": {
         "description": "Toto téma pomáhá s importem dat ze systému BAG",
@@ -17,10 +21,1237 @@
                             "0": {
                                 "then": "Tato budova nemá v BAG žádný odkaz"
                             }
+                        },
+                        "render": "Reference v BAG je <b>{ref:bag}</b>"
+                    }
+                }
+            },
+            "2": {
+                "description": "Budovy z registru BAG",
+                "tagRenderings": {
+                    "Build year": {
+                        "mappings": {
+                            "0": {
+                                "then": "Stavba byla zahájena v <b>{_bag_obj:start_date}</b>"
+                            }
+                        },
+                        "render": "Tato budova byla postavena v <b>{_bag_obj:start_date}</b>"
+                    },
+                    "Building type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Typ budovy bude <b>{_bag_obj:construction}</b>"
+                            }
+                        },
+                        "render": "Typ budovy je <b>{_bag_obj:building}.</b>"
+                    },
+                    "Import button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Zatím nebyly vypočteny správné hodnoty. Aktualizujte stránku"
+                            }
+                        }
+                    },
+                    "Reference": {
+                        "render": "Reference v BAG je <b>{_bag_obj:ref:bag}</b>"
+                    }
+                }
+            }
+        },
+        "shortDescription": "Pomocný nástroj pro import BAG",
+        "title": "Pomocník pro import BAG"
+    },
+    "benches": {
+        "description": "Tato mapa zobrazuje všechny lavičky, které jsou zaznamenány v OpenStreetMap: samostatné lavičky a lavičky patřící k zastávkám veřejné dopravy nebo přístřeškům.",
+        "shortDescription": "Mapa laviček",
+        "title": "Lavičky"
+    },
+    "bicycle_rental": {
+        "description": "Na této mapě najdete stanice pro vypůjčení jízdních kol, jak jsou uvedeny v OpenStreetMap",
+        "shortDescription": "Mapa se stanicemi a obchody pro vypůjčení kol",
+        "title": "Půjčovna kol"
+    },
+    "bicyclelib": {
+        "description": "\"Bicycle library\" je místo, kde si lze půjčit jízdní kola, často za malý roční poplatek. Významným případem použití jsou \"bicycle libraries\" pro děti, které jim umožňují vyměnit kolo za větší, když ze svého stávajícího kola vyrostou",
+        "title": "Půjčovny kol"
+    },
+    "binoculars": {
+        "description": "Mapa s dalekohledem upevněným na místě pomocí tyče. Obvykle se nachází na turistických místech, rozhlednách, vrcholech panoramatických věží nebo příležitostně v přírodních rezervacích.",
+        "shortDescription": "Mapa s pevnými dalekohledy",
+        "title": "Dalekohledy"
+    },
+    "blind_osm": {
+        "description": "Pomozte zmapovat objekty důležité pro nevidomé",
+        "title": "Mapování systému objektů pro nevidomé"
+    },
+    "bookcases": {
+        "description": "Veřejná knihovna je malá pouliční skříňka, krabice, stará telefonní budka nebo jiný předmět, ve kterém jsou uloženy knihy. Kdokoliv do ní může umístit, nebo si z ní vzít knihu. Cílem této mapy je shromáždit všechny tyto knihovny.",
+        "title": "Otevřená mapa pouličních knihoven"
+    },
+    "cafes_and_pubs": {
+        "description": "Kavárny, hospody a bary",
+        "title": "Kavárny a hospody"
+    },
+    "campersite": {
+        "description": "Na této stránce jsou shromážděna všechna oficiální místa pro zastavení karavanů a místa, kde můžete vypouštět šedou a černou vodu. Můžete přidat podrobnosti o poskytovaných službách a cenách. Přidávejte fotografie a recenze.",
+        "layers": {
+            "0": {
+                "description": "kempovací místa",
+                "name": "Kempovací místa",
+                "presets": {
+                    "0": {
+                        "description": "Přidejte nové oficiální kempovací místo. Jedná se o místa, určená pro přenocování s karavanem. Mohou vypadat jako skutečný kemp nebo jen jako parkoviště. Takováto místa nemusí být označena, ale stačí, pokud jsou pouze definována v rozhodnutí obce. Běžné parkoviště určené pro táborníky, kde se nepovažuje za kempovací místo. ",
+                        "title": "kempovací místa"
+                    }
+                },
+                "tagRenderings": {
+                    "caravansites-capacity": {
+                        "question": "Kolik táborníků zde může zůstat? (přeskočte, pokud není zjevný počet míst nebo povolených vozidel)",
+                        "render": "{capacity} táborníků může toto místo využívat současně"
+                    },
+                    "caravansites-charge": {
+                        "question": "Kolik si toto místo účtuje?",
+                        "render": "Toto místo si účtuje {charge}"
+                    },
+                    "caravansites-description": {
+                        "question": "Chcete přidat obecný popis tohoto místa? (Neopakujte informace, na které jsme se ptali dříve, nebo které byly uvedeny výše. Zachovejte prosím objektivitu - názory patří do hodnocení)",
+                        "render": "Další podrobnosti o tomto místě: {description}"
+                    },
+                    "caravansites-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Použití je zpoplatněno"
+                            },
+                            "1": {
+                                "then": "Lze použít zdarma"
+                            }
+                        },
+                        "question": "Účtuje si toto místo poplatek?"
+                    },
+                    "caravansites-internet": {
+                        "mappings": {
+                            "0": {
+                                "then": "Připojení k internetu je k dispozici"
+                            },
+                            "1": {
+                                "then": "Připojení k internetu je k dispozici"
+                            },
+                            "2": {
+                                "then": "Připojení k internetu není k dispozici"
+                            }
+                        },
+                        "question": "Poskytuje toto místo připojení k internetu?"
+                    },
+                    "caravansites-internet-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Přístup k internetu je možný za poplatek"
+                            },
+                            "1": {
+                                "then": "Přístup k internetu je možný bez poplatku"
+                            }
+                        },
+                        "question": "Musíte platit za přístup k internetu?"
+                    },
+                    "caravansites-long-term": {
+                        "mappings": {
+                            "0": {
+                                "then": "K dispozici jsou místa k dlouhodobému pronájmu, ale je také možné zde zůstat na denní bázi"
+                            },
+                            "1": {
+                                "then": "Nejsou zde žádní trvalí hosté"
+                            },
+                            "2": {
+                                "then": "Pobyt zde je možný pouze v případě, že máte dlouhodobou smlouvu (pokud se pro tuto možnost rozhodnete, toto místo z mapy zmizí)"
+                            }
+                        },
+                        "question": "Nabízí zde místa k dlouhodobému pronájmu?"
+                    },
+                    "caravansites-name": {
+                        "question": "Jak se toto místo jmenuje?",
+                        "render": "Toto místo se jmenuje {name}"
+                    },
+                    "caravansites-sanitary-dump": {
+                        "mappings": {
+                            "0": {
+                                "then": "Toto místo má sanitární skládku"
+                            },
+                            "1": {
+                                "then": "Toto místo nemá sanitární skládku"
+                            }
+                        },
+                        "question": "Má toto místo sanitární skládku?"
+                    },
+                    "caravansites-toilets": {
+                        "mappings": {
+                            "0": {
+                                "then": "Toto místo má toalety"
+                            },
+                            "1": {
+                                "then": "Toto místo nemá toalety"
+                            }
+                        },
+                        "question": "Má toto místo toalety?"
+                    },
+                    "caravansites-website": {
+                        "question": "Má toto místo webové stránky?",
+                        "render": "Oficiální webové stránky: <a href='{website}'>{website}</a>"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Nepojmenované kempovací místo"
+                        }
+                    },
+                    "render": "Kempovací místo {name}"
+                }
+            },
+            "1": {
+                "description": "Sanitární skládky",
+                "name": "Sanitární skládky",
+                "presets": {
+                    "0": {
+                        "description": "Přidejte novou sanitární skládku. Toto je místo, kam mohou řidiči obytných vozů vypouštět odpadní vodu nebo odpad z chemických toalet. Často je zde také dostupná pitná voda a elektřina.",
+                        "title": "sanitární skládka"
+                    }
+                },
+                "tagRenderings": {
+                    "dumpstations-access": {
+                        "mappings": {
+                            "0": {
+                                "then": "K použití potřebujete síťový klíč/kód"
+                            },
+                            "1": {
+                                "then": "Abyste mohli toto místo používat, musíte být zákazníkem kempu/kempovacího místa"
+                            },
+                            "2": {
+                                "then": "Tuto skládku může použít kdokoli"
+                            },
+                            "3": {
+                                "then": "Tuto skládku může použít kdokoli"
+                            }
+                        },
+                        "question": "Kdo může použít tuto skládku?"
+                    },
+                    "dumpstations-charge": {
+                        "question": "Kolik si toto místo účtuje?",
+                        "render": "Toto místo si účtuje {charge}"
+                    },
+                    "dumpstations-chemical-waste": {
+                        "mappings": {
+                            "0": {
+                                "then": "Zde můžete likvidovat chemický toaletní odpad"
+                            },
+                            "1": {
+                                "then": "Zde nemůžete likvidovat chemický toaletní odpad"
+                            }
+                        },
+                        "question": "Lze na tomto místě likvidovat chemický toaletní odpad?"
+                    },
+                    "dumpstations-fee": {
+                        "mappings": {
+                            "0": {
+                                "then": "Použití je zpoplatněno"
+                            },
+                            "1": {
+                                "then": "Lze použít zdarma"
+                            }
+                        },
+                        "question": "Účtuje si toto místo poplatek?"
+                    },
+                    "dumpstations-grey-water": {
+                        "mappings": {
+                            "0": {
+                                "then": "Zde můžete likvidovat šedou vodu"
+                            },
+                            "1": {
+                                "then": "Zde nelze likvidovat šedou vodu"
+                            }
+                        },
+                        "question": "Lze na tomto místě likvidovat šedou vodu?"
+                    },
+                    "dumpstations-network": {
+                        "question": "Jaké sítě je toto místo součástí? (přeskočte, pokud žádné)",
+                        "render": "Tato stanice je součástí sítě {network}"
+                    },
+                    "dumpstations-waterpoint": {
+                        "mappings": {
+                            "0": {
+                                "then": "Na tomto místě se nachází vodní zdroj"
+                            },
+                            "1": {
+                                "then": "Toto místo nemá vodní zdroj"
+                            }
+                        },
+                        "question": "Má toto místo vodní zdroj?"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Odpadní stanice"
+                        }
+                    },
+                    "render": "Odpadní stanice {name}"
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "question": "Kdo toto místo provozuje?",
+                    "render": "Toto místo je provozováno {operator}"
+                },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "Toto místo má napájecí zdroj"
+                        },
+                        "1": {
+                            "then": "Toto místo nemá napájecí zdroj"
+                        }
+                    },
+                    "question": "Má toto místo napájecí zdroj?"
+                }
+            }
+        },
+        "shortDescription": "Najděte místa, kde můžete strávit noc se svým karavanem",
+        "title": "Kempovací místa"
+    },
+    "charging_stations": {
+        "description": "Na této otevřené mapě lze vyhledávat a označovat informace o nabíjecích stanicích",
+        "shortDescription": "Celosvětová mapa nabíjecích stanic",
+        "title": "Nabíjecí stanice"
+    },
+    "climbing": {
+        "description": "Na této mapě najdete nejrůznější možnosti lezení, jako lezecké tělocvičny, boulderingové haly a skály v přírodě.",
+        "descriptionTail": "Horolezeckou mapu původně vytvořil <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. V případě připomínek nebo dotazů ho prosím <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>kontaktujte</a>.</p><p>Projekt využívá data projektu <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
+        "layers": {
+            "0": {
+                "override": {
+                    "tagRenderings+": {
+                        "0": {
+                            "mappings": {
+                                "0": {
+                                    "then": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> veřejně dostupné<br/>{_embedding_feature:access:description}"
+                                },
+                                "1": {
+                                    "then": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že </span> je k přístupu potřeba povolení<br/>{_embedding_feature:access:description}"
+                                },
+                                "2": {
+                                    "then": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> dostupné pouze zákazníkům<br/>{_embedding_feature:access:description}"
+                                },
+                                "3": {
+                                    "then": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> dostupné pouze členům klubu<br/>{_embedding_feature:access:description}"
+                                }
+                            }
+                        },
+                        "1": {
+                            "mappings": {
+                                "0": {
+                                    "then": "Veřejně přístupné komukoli"
+                                },
+                                "1": {
+                                    "then": "K přístupu je potřeba povolení"
+                                },
+                                "2": {
+                                    "then": "Pouze zákazníci"
+                                },
+                                "3": {
+                                    "then": "Pouze členové klubu"
+                                }
+                            },
+                            "question": "Kdo sem má přístup?"
+                        }
+                    },
+                    "units+": {
+                        "0": {
+                            "applicableUnits": {
+                                "0": {
+                                    "human": " metr"
+                                },
+                                "1": {
+                                    "human": " stopa"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Otevřená lezecká mapa"
+    },
+    "clock": {
+        "description": "Mapa zobrazující všechny veřejné hodiny",
+        "title": "Hodiny"
+    },
+    "cycle_highways": {
+        "description": "Tato mapa zobrazuje cyklostezky",
+        "layers": {
+            "0": {
+                "name": "cyklodálnice",
+                "title": {
+                    "render": "cyklodálnice"
+                }
+            }
+        },
+        "title": "Cyklodálnice"
+    },
+    "cycle_infra": {
+        "description": "Mapa, kde můžete prohlížet a upravovat věci související s cyklistickou infrastrukturou. Vytvořeno během #osoc21.",
+        "shortDescription": "Mapa, kde můžete prohlížet a upravovat věci související s cyklistickou infrastrukturou.",
+        "title": "Cyklistická infrastruktura"
+    },
+    "cyclenodes": {
+        "description": "Tato mapa zobrazuje sítě uzlů cyklu a umožňuje snadno přidávat nové uzly",
+        "layers": {
+            "0": {
+                "name": "propojení mezi uzly",
+                "tagRenderings": {
+                    "node2node-survey:date": {
+                        "question": "Kdy bylo toto propojení mezi uzly naposledy zkontrolováno?",
+                        "render": "Toto propojení mezi uzly bylo naposledy zkontrolováno dne {survey:date}"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "propojení mezi uzly <strong>{ref}</strong>"
+                        }
+                    },
+                    "render": "propojení mezi uzly"
+                }
+            },
+            "1": {
+                "name": "uzly",
+                "tagRenderings": {
+                    "node-expected_rcn_route_relations": {
+                        "question": "S kolika dalšími uzly cyklu je tento uzel propojen?",
+                        "render": "Tento uzel je propojen s {expected_rcn_route_relations} dalšími uzly cyklu."
+                    },
+                    "node-survey:date": {
+                        "question": "Kdy byl tento uzel cyklu naposledy zkontrolován?",
+                        "render": "Tento uzel cyklu byl naposledy zkontrolován dne {survey:date}"
+                    }
+                },
+                "title": {
+                    "render": "uzel cyklu <strong>{rcn_ref}</strong>"
+                }
+            }
+        },
+        "title": "Sítě uzlů cyklu"
+    },
+    "cyclestreets": {
+        "description": "Cyklostezka je ulice, kde <b>motorizovaná doprava nesmí předjíždět cyklisty</b>. Jsou označeny speciální dopravní značkou. Cyklostezky najdete v Nizozemsku a Belgii, ale také v Německu a Francii. ",
+        "layers": {
+            "0": {
+                "description": "Cyklostezka je ulice, kde motorová doprava nesmí předjíždět cyklisty",
+                "name": "Cyklostezky"
+            },
+            "1": {
+                "description": "Tato ulice se brzy stane cyklostezkou",
+                "name": "Budoucí cyklostezka",
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "{name} se brzy stane cyklostezkou"
+                        }
+                    },
+                    "render": "Budoucí cyklostezka"
+                }
+            },
+            "2": {
+                "description": "Vrstva pro označení jakékoli ulice jako cyklostezky",
+                "name": "Všechny ulice",
+                "title": {
+                    "render": "Ulice"
+                }
+            }
+        },
+        "overrideAll": {
+            "tagRenderings+": {
+                "0": {
+                    "mappings": {
+                        "0": {
+                            "then": "Tato ulice je cyklostezkou (s omezením rychlosti na 30 km/h)"
+                        },
+                        "1": {
+                            "then": "Tato ulice je cyklistickou silnicí"
+                        },
+                        "2": {
+                            "then": "Tato ulice je cyklistická (rychlost je zde omezena na 30 km/h vozidla sem mají zákaz vjezdu) (na značku se zeptáme později)"
+                        },
+                        "3": {
+                            "then": "Tato ulice je cykloulicí"
+                        },
+                        "4": {
+                            "then": "Tato ulice se brzy stane cyklo ulicí"
+                        },
+                        "5": {
+                            "then": "Tato ulice se brzy stane cyklo ulicí"
+                        },
+                        "6": {
+                            "then": "Tato ulice není cyklo ulicí"
+                        }
+                    },
+                    "question": "Je ulice <b>{name}</b> cyklo ulicí?"
+                },
+                "1": {
+                    "mappings": {
+                        "0": {
+                            "then": "Přístup povolen obyvatelům"
+                        },
+                        "1": {
+                            "then": "Vjezd motorových vozidel povolen"
+                        },
+                        "2": {
+                            "then": "Vjezd motocyklů povolen"
+                        },
+                        "3": {
+                            "then": "Vjezd aut povolen"
+                        },
+                        "4": {
+                            "then": "Na této cyklostezce nejsou žádná doplňková značení."
+                        }
+                    },
+                    "question": "Jakou značku má tato cyklostezka?"
+                },
+                "2": {
+                    "question": "Kdy se tato ulice stane cyklostezkou?",
+                    "render": "Tato ulice se stane cyklostezkou {cyclestreet:start_date}"
+                }
+            }
+        },
+        "shortDescription": "Mapa cyklostezek",
+        "title": "Cyklostezky"
+    },
+    "cyclofix": {
+        "description": "Cílem této mapy je představit cyklistům snadno použitelné řešení pro vyhledání vhodné infrastruktury pro jejich potřeby.<br><br>Můžete sledovat svou přesnou polohu (pouze pro mobilní zařízení) a v levém dolním rohu vybrat vrstvy, které jsou pro vás relevantní. Pomocí tohoto nástroje můžete také přidávat nebo upravovat špendlíky (body zájmu) do mapy a poskytovat další údaje pomocí odpovědí na otázky.<br><br>Všechny vámi provedené změny se automaticky uloží do globální databáze OpenStreetMap a mohou být volně znovu použity ostatními.<br><br>Další informace o projektu cyklofix najdete na <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
+        "title": "Cyklofix - otevřená mapa pro cyklisty"
+    },
+    "drinking_water": {
+        "description": "Na této mapě jsou zobrazena veřejně přístupná místa s pitnou vodou, která lze snadno přidat",
+        "title": "Pitná voda"
+    },
+    "education": {
+        "description": "Na této mapě najdete informace o všech typech škol a vzdělávání a můžete snadno přidat další informace",
+        "title": "Vzdělání"
+    },
+    "etymology": {
+        "description": "Na této mapě se můžete podívat, podle čeho je objekt pojmenován. Ulice, budovy, ... pocházejí z OpenStreetMap, které byly propojeny s Wikidaty. Ve vyskakovacím okně se zobrazí článek na Wikipedii (pokud existuje) nebo wikidatové pole toho, po čem je objekt pojmenován. Pokud má samotný objekt stránku na Wikipedii, zobrazí se i ta.<br/><br/><b> Přispět můžete i vy!</b>Dostatečně si objekt přiblížíte a zobrazí se <i>všechny</i>ulice. Na některou z nich můžete kliknout a objeví se okno pro vyhledávání na Wikidatech. Několika kliknutími můžete přidat etymologický odkaz. K provádění těchto úprav potřebujete bezplatný účet na OpenStreetMap.",
+        "layers": {
+            "1": {
+                "override": {
+                    "=name": "Ulice bez etymologických informací"
+                }
+            },
+            "2": {
+                "override": {
+                    "=name": "Parky a lesy bez etymologických informací"
+                }
+            },
+            "3": {
+                "override": {
+                    "=name": "Vzdělávací instituce bez etymologických informací"
+                }
+            },
+            "4": {
+                "override": {
+                    "=name": "Kulturní místa bez etymologických informací"
+                }
+            },
+            "5": {
+                "override": {
+                    "=name": "Toursistická místa bez etymologických informací"
+                }
+            },
+            "6": {
+                "override": {
+                    "=name": "Zdravotní a sociální místa bez etymologických informací"
+                }
+            },
+            "7": {
+                "override": {
+                    "=name": "Sportovní místa bez etymologických informací"
+                }
+            }
+        },
+        "shortDescription": "Jaký je původ toponyma?",
+        "title": "Otevřít etymologickou mapu"
+    },
+    "facadegardens": {
+        "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fasádní zahrady</a>, zelené fasády a stromy ve městě přinášejí nejen klid a pohodu, ale také krásnější město, větší biodiverzitu, ochlazující efekt a lepší kvalitu ovzduší. <br/> Klimaan VZW a Mechelen Klimaatneutraal chtějí zmapovat stávající i nové fasádní zahrady jako příklad pro lidi, kteří si chtějí vybudovat vlastní zahradu, nebo pro městské chodce, kteří mají rádi přírodu.<br/>Více informací o projektu najdete na <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+        "layers": {
+            "0": {
+                "description": "Fasádní zahrady",
+                "name": "Fasádní zahrady",
+                "presets": {
+                    "0": {
+                        "description": "Přidat fasádní zahradu",
+                        "title": "fasádní zahrada"
+                    }
+                },
+                "tagRenderings": {
+                    "facadegardens-description": {
+                        "question": "Další popisné informace o zahradě (pokud jsou potřeba a nejsou popsány výše)",
+                        "render": "Další podrobnosti: {description}"
+                    },
+                    "facadegardens-direction": {
+                        "question": "Jaká je orientace zahrady?",
+                        "render": "Orientace: {direction} (kde 0=N a 90=O)"
+                    },
+                    "facadegardens-edible": {
+                        "mappings": {
+                            "0": {
+                                "then": "Jsou zde jedlé rostliny"
+                            },
+                            "1": {
+                                "then": "Nejsou zde jedlé rostliny"
+                            }
+                        },
+                        "question": "Jsou zde jedlé rostliny?"
+                    },
+                    "facadegardens-plants": {
+                        "mappings": {
+                            "0": {
+                                "then": "Zde jsou révy"
+                            },
+                            "1": {
+                                "then": "Jsou zde kvetoucí rostliny"
+                            },
+                            "2": {
+                                "then": "Jsou zde keře"
+                            },
+                            "3": {
+                                "then": "Jsou zde půdopokryvné rostliny"
+                            }
+                        },
+                        "question": "Jaké druhy rostlin zde rostou?"
+                    },
+                    "facadegardens-rainbarrel": {
+                        "mappings": {
+                            "0": {
+                                "then": "K dispozici je sud na dešťovou vodu"
+                            },
+                            "1": {
+                                "then": "Sud na dešťovou vodu není k dispozici"
+                            }
+                        },
+                        "question": "Je do zahrady instalován sud na vodu?"
+                    },
+                    "facadegardens-start_date": {
+                        "question": "Kdy byla zahrada postavena? (rok je postačující)",
+                        "render": "Datum výstavby zahrady: {start_date}"
+                    },
+                    "facadegardens-sunshine": {
+                        "mappings": {
+                            "0": {
+                                "then": "Zahrada je na přímém slunci"
+                            },
+                            "1": {
+                                "then": "Zahrada je v polostínu"
+                            },
+                            "2": {
+                                "then": "Zahrada je ve stínu"
+                            }
+                        },
+                        "question": "Je zahrada zastíněná nebo slunná?"
+                    }
+                },
+                "title": {
+                    "render": "Fasádní zahrada"
+                }
+            }
+        },
+        "shortDescription": "Tato mapa zobrazuje fasádní zahrady s obrázky a užitečnými informacemi o orientaci, oslunění a druzích rostlin.",
+        "title": "Fasádní zahrady"
+    },
+    "food": {
+        "description": "Restaurace a podniky rychlého občerstvení",
+        "title": "Restaurace a podniky rychlého občerstvení"
+    },
+    "fritures": {
+        "description": "Na této mapě najdete své oblíbené obchody s hranolky!",
+        "layers": {
+            "0": {
+                "override": {
+                    "name": "Obchod s hranolky"
+                }
+            }
+        },
+        "title": "Obchody s hranolky"
+    },
+    "ghostbikes": {
+        "description": "<b>Kolo duchů</b> je památník pro cyklisty, kteří zemřeli při dopravní nehodě, ve formě bílého kola trvale umístěného poblíž místa nehody.<br/><br/>Na této mapě je možné vidět všechna kola duchů, která jsou známa OpenStreetMap. Chybí na mapě nějaké? Každý může přidat nebo aktualizovat informace zde - stačí mít pouze (bezplatný) účet OpenStreetMap. <p>Na Mastodonu existuje <a href='https://masto.bike/@ghostbikebot' target='_blank'>automatizovaný účet, který posílá měsíční přehled kol duchů po celém světě</a></p>",
+        "title": "Kola duchů"
+    },
+    "grb": {
+        "description": "Toto téma je pokusem o automatizaci importu GRB.",
+        "layers": {
+            "1": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Jaký druh budovy je toto?"
+                    }
+                }
+            },
+            "6": {
+                "tagRenderings": {
+                    "Import-button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Metatags ještě nebyly vypočítány... Znovu otevřete toto vyskakovací okno"
+                            },
+                            "1": {
+                                "then": "Tato budova má otvory a je modelována jako vztah. Jako takovou ji nelze spojovat. Spojte ji ručně pomocí <a href='https://buildings.osm.be/#/'>exportní stránky budovy</a> {open_in_josm()}"
+                            }
                         }
                     }
                 }
             }
         }
+    },
+    "grb_fixme": {
+        "layers": {
+            "0": {
+                "tagRenderings": {
+                    "building type": {
+                        "question": "Jaký druh budovy je toto?"
+                    }
+                }
+            }
+        }
+    },
+    "hackerspaces": {
+        "description": "Na této mapě si můžete prohlédnout hackerspaces, přidat nový hackerspace nebo přímo aktualizovat data",
+        "shortDescription": "Mapa označující Hackerspaces",
+        "title": "Hackerspaces"
+    },
+    "hailhydrant": {
+        "description": "Na této mapě můžete najít a aktualizovat informace o hydrantech, stanicích záchranné služby, hasičských stanicích a hasicích přístrojích ve vašich oblíbených čtvrtích.",
+        "shortDescription": "Mapa zobrazující hydranty, hasicí přístroje, požární stanice a stanice záchranné služby.",
+        "title": "Hydranty, hasicí přístroje, požární stanice a stanice záchranné služby"
+    },
+    "healthcare": {
+        "description": "Na této mapě jsou zobrazeny různé položky související se zdravotní péčí",
+        "layers": {
+            "5": {
+                "override": {
+                    "=presets": {
+                        "0": {
+                            "title": "obchod se zdravotnickými potřebami"
+                        },
+                        "1": {
+                            "title": "obchod se sluchadly"
+                        },
+                        "2": {
+                            "title": "optik"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Zdravotní péče"
+    },
+    "hotels": {
+        "description": "Na této mapě najdete hotely ve vašem okolí",
+        "title": "Hotely"
+    },
+    "indoors": {
+        "description": "Na této mapě jsou zobrazeny veřejně přístupné vnitřní prostory",
+        "title": "Vnitřní prostory"
+    },
+    "kerbs_and_crossings": {
+        "description": "Mapa zobrazující obrubníky a přechody.",
+        "title": "Obrubníky a přechody"
+    },
+    "mapcomplete-changes": {
+        "description": "Tato mapa zobrazuje všechny změny provedené pomocí MapComplete",
+        "layers": {
+            "0": {
+                "description": "Zobrazuje všechny změny MapComplete",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Název tématu obsahuje {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořeno přispěvatelem {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Ne</b>vytvořeno přispěvatelem {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořeno před {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořeno po {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Jazyk uživatele (kód iso) {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořeno s hostitelem {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Sada změn přidala alespoň jeden obrázek"
+                            }
+                        }
+                    }
+                },
+                "name": "Centra sady změn",
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "Jaký přispěvatel provedl tuto změnu?",
+                        "render": "Změna byla provedena uživatelem <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "S jakým hostitelem (webem) byla tato změna provedena?",
+                        "render": "Změnit s <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "V jakém národním prostředí (jazyce) byla tato změna provedena?",
+                        "render": "Národní prostředí uživatele je {locale}"
+                    },
+                    "show_changeset_id": {
+                        "render": "Sada změn <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "Jaké téma bylo použito k provedení této změny?",
+                        "render": "Změna pomocí tématu <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Sada změn pro {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "Další statistiky najdete <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>zde</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Zobrazuje změny provedené pomocí MapComplete",
+        "title": "Změny provedené pomocí MapComplete"
+    },
+    "maproulette": {
+        "description": "Téma zobrazující úkoly MapRoulette, které umožňuje vyhledávat, filtrovat a opravovat je.",
+        "title": "Úkoly MapRoulette"
+    },
+    "maps": {
+        "description": "Na této mapě najdete všechny mapy, které OpenStreetMap zná - typicky je zde velká mapa na informační tabuli zobrazující oblast, město nebo region, (např. turistická mapa na zadní straně billboardu, mapa přírodní rezervace, mapa cyklistických sítí v regionu, ...). <br/><br/>Pokud mapa chybí, můžete ji snadno zmapovat na OpenStreetMap.",
+        "shortDescription": "Toto téma zobrazuje všechny (turistické) mapy, které zná OpenStreetMap",
+        "title": "Mapa map"
+    },
+    "maxspeed": {
+        "description": "Tato mapa zobrazuje zákonem povolenou maximální rychlost na každé silnici. Pokud maximální rychlost chybí nebo je nesprávná, můžete ji zde opravit.",
+        "shortDescription": "Tato mapa zobrazuje zákonem povolenou maximální rychlost na každé silnici.",
+        "title": "Maximální rychlost"
+    },
+    "nature": {
+        "description": "Na této mapě najdete zajímavé informace pro turisty a milovníky přírody.",
+        "shortDescription": "Mapa pro milovníky přírody se zajímavými body zájmu",
+        "title": "Do přírody"
+    },
+    "notes": {
+        "description": "Poznámka je špendlík na mapě s textem, jež označuje, že něco není v pořádku.<br/><br/>Nezapomeňte si prohlédnout zobrazení filtru <a href='#filters'></a> pro vyhledávání uživatelů a textu.",
+        "title": "Poznámky k OpenStreetMap"
+    },
+    "observation_towers": {
+        "description": "Veřejně přístupné věže s výhledem",
+        "shortDescription": "Veřejně přístupné věže s výhledem",
+        "title": "Rozhledny"
+    },
+    "onwheels": {
+        "description": "Na této mapě jsou zobrazena veřejně přístupná místa pro vozíčkáře, a lze je také snadno přidat",
+        "layers": {
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Jakékoliv/žádné informace o šířce"
+                                },
+                                "1": {
+                                    "question": "Bez informací o šířce"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "=filter": {
+                        "0": {
+                            "options": {
+                                "0": {
+                                    "question": "Všechny typy obrubníků"
+                                },
+                                "1": {
+                                    "question": "Zvýšený obrubník (>3 cm)"
+                                },
+                                "2": {
+                                    "question": "Snížený obrubník (~3 cm)"
+                                },
+                                "3": {
+                                    "question": "Zapuštěný obrubník (~0 cm)"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "8": {
+                "override": {
+                    "name": "Parkovací místa pro osoby se zdravotním postižením"
+                }
+            },
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistiky"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Dovoz"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Přidat všechny navrhované značky"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "OnWheels"
+    },
+    "openwindpowermap": {
+        "description": "Mapa pro zobrazení a úpravy větrných turbín.",
+        "title": "OpenWindPowerMap"
+    },
+    "osm_community_index": {
+        "description": "Seznam zdrojů pro uživatele OpenStreetMap. \"Zdroje\" mohou být odkazy na fóra, setkání, Slack skupiny, kanály IRC, poštovní konference atd. Cokoli, co by mohlo být pro mappery, zejména začátečníky, zajímavé nebo užitečné.",
+        "shortDescription": "Rejstřík komunitních zdrojů pro OpenStreetMap.",
+        "title": "Komunitní rejstřík OSM"
+    },
+    "parkings": {
+        "description": "Na této mapě jsou vyznačena různá parkovací místa",
+        "shortDescription": "Na této mapě jsou vyznačena různá parkovací místa",
+        "title": "Parkoviště"
+    },
+    "personal": {
+        "description": "Vytvořte si osobní téma na základě všech dostupných vrstev všech témat. Chcete-li vidět nějaká data, otevřete si <a href='#filter'>výběr vrstev</a>",
+        "title": "Osobní téma"
+    },
+    "pets": {
+        "description": "Na této mapě najdete různá zajímavá místa pro vaše domácí mazlíčky: veterináře, psí parky, obchody pro zvířata, restaurace pro psy, ...",
+        "layers": {
+            "1": {
+                "override": {
+                    "name": "Restaurace vhodné pro vstup se psy"
+                }
+            },
+            "2": {
+                "override": {
+                    "name": "Obchody vhodné pro vstup se psy",
+                    "title": {
+                        "render": "Obchody vhodné pro vstup se psy"
+                    }
+                }
+            },
+            "6": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "description": "Obchod, ve kterém si můžete vzít psa téměř kamkoli",
+                            "title": "obchod vhodný pro vstup se psem"
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Veterináři, psí parky a další služby pro domácí zvířata"
+    },
+    "playgrounds": {
+        "description": "Na této mapě najdete dětská hřiště a můžete k nim přidat další informace",
+        "shortDescription": "Mapa dětských hřišť",
+        "title": "Dětská hřiště"
+    },
+    "postal_codes": {
+        "description": "Poštovní směrovací čísla",
+        "layers": {
+            "0": {
+                "name": "poštovní směrovací čísla",
+                "tagRenderings": {
+                    "postal_code": {
+                        "render": "Poštovní směrovací číslo je {postal_code}"
+                    }
+                },
+                "title": {
+                    "render": "Poštovní směrovací číslo {postal_code}"
+                }
+            },
+            "2": {
+                "name": "radnice",
+                "title": {
+                    "render": "Radnice {name}"
+                }
+            }
+        },
+        "shortDescription": "Poštovní směrovací čísla",
+        "title": "Poštovní směrovací čísla"
+    },
+    "postboxes": {
+        "description": "Na této mapě můžete najít a přidat údaje o poštách a poštovních schránkách. Pomocí této mapy můžete zjistit, kam můžete poslat svou příští pohlednici! :)<br/>Všimli jste si chyby nebo vám chybí poštovní schránka? Tuto mapu můžete upravovat pomocí bezplatného účtu OpenStreetMap. ",
+        "shortDescription": "Mapa s poštovními schránkami a poštami",
+        "title": "Mapa poštovních schránek a pošt"
+    },
+    "rainbow_crossings": {
+        "description": "Na této mapě si můžete zobrazit a snadno přidat přechody pro chodce s duhovými barvami",
+        "title": "Přechody s duhovými barvami"
+    },
+    "shops": {
+        "description": "Na této mapě můžete označit základní informace o obchodech, přidat otevírací dobu a telefonní čísla",
+        "shortDescription": "Upravitelná mapa se základními informacemi o obchodech",
+        "title": "Open Shop Map"
+    },
+    "sidewalks": {
+        "description": "Experimentální téma",
+        "layers": {
+            "0": {
+                "description": "Vrstva zobrazující chodníky silnic",
+                "name": "Chodníky",
+                "tagRenderings": {
+                    "left-right-questions": {
+                        "renderings": {
+                            "1": {
+                                "mappings": {
+                                    "0": {
+                                        "then": "Ano, na této straně silnice je chodník"
+                                    },
+                                    "1": {
+                                        "then": "Ne, není tu žádný chodník"
+                                    },
+                                    "2": {
+                                        "then": "Na mapě je vyznačen samostatný chodník"
+                                    }
+                                },
+                                "question": "Je na této straně silnice chodník?"
+                            },
+                            "2": {
+                                "question": "Jaká je šířka chodníku na této straně silnice?",
+                                "render": "Tento chodník je široký {sidewalk:left|right:width}m"
+                            }
+                        }
+                    },
+                    "streetname": {
+                        "render": "Tato ulice se jmenuje {name}"
+                    }
+                },
+                "title": {
+                    "render": "{name}"
+                }
+            }
+        },
+        "shortDescription": "Mapování chodníků",
+        "title": "Chodníky"
+    },
+    "sport_pitches": {
+        "description": "Sportovní hřiště je plocha, na které se provozují sporty",
+        "shortDescription": "Mapa sportovních hřišť",
+        "title": "Sportovní hřiště"
+    },
+    "sports": {
+        "description": "Vše o sportu, sportovní hřiště, fitness centra a další.",
+        "layers": {
+            "4": {
+                "override": {
+                    "presets": {
+                        "0": {
+                            "description": "Přidejte nový obchod se sportovním zbožím.",
+                            "title": "sportovní obchod"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Mapa se sportovními zařízeními.",
+        "title": "Sport"
+    },
+    "stations": {
+        "description": "Zobrazení, úprava a přidání podrobností o vlakovém nádraží",
+        "layers": {
+            "3": {
+                "description": "Vrstva zobrazující vlaková nádraží",
+                "name": "Vlaková nádraží"
+            },
+            "15": {
+                "description": "Zobrazuje vlaky odjíždějící z této stanice",
+                "name": "Odjezdové tabule",
+                "presets": {
+                    "0": {
+                        "description": "Přidejte tabuli s odjezdy, ať už v elektronické nebo papírové podobě",
+                        "title": "odjezdová tabule"
+                    }
+                },
+                "tagRenderings": {
+                    "type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Toto je odjezdová tabule neznámého typu"
+                            },
+                            "1": {
+                                "then": "Jedná se o elektronickou tabuli, která v reálném čase zobrazuje příští odjezdy"
+                            },
+                            "2": {
+                                "then": "Jedná se o papírový rozvrh"
+                            },
+                            "3": {
+                                "then": "Nachází se zde cedule zobrazující frekvenci odjezdů vlaků"
+                            }
+                        },
+                        "question": "Co je to za odjezdovou tabuli?"
+                    }
+                },
+                "title": {
+                    "render": "Odjezdová tabule"
+                }
+            }
+        },
+        "title": "Vlaková nádraží"
+    },
+    "street_lighting": {
+        "description": "Na této mapě najdete vše o pouličním osvětlení",
+        "layers": {
+            "1": {
+                "name": "Osvětlené ulice",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Tato ulice je osvětlená"
+                            },
+                            "1": {
+                                "then": "Tato ulice není osvětlená"
+                            },
+                            "2": {
+                                "then": "Tato ulice je v noci osvětlená"
+                            },
+                            "3": {
+                                "then": "Tato ulice je osvětlena 24/7"
+                            }
+                        },
+                        "question": "Je tato ulice osvětlená?"
+                    }
+                },
+                "title": {
+                    "render": "Osvětlená ulice"
+                }
+            },
+            "2": {
+                "name": "Všechny ulice",
+                "tagRenderings": {
+                    "lit": {
+                        "mappings": {
+                            "0": {
+                                "then": "Tato ulice je osvětlená"
+                            },
+                            "1": {
+                                "then": "Tato ulice není osvětlená"
+                            },
+                            "2": {
+                                "then": "Tato ulice je v noci osvětlená"
+                            },
+                            "3": {
+                                "then": "Tato ulice je osvětlena 24/7"
+                            }
+                        },
+                        "question": "Je tato ulice osvětlená?"
+                    }
+                },
+                "title": {
+                    "render": "Ulice"
+                }
+            }
+        },
+        "title": "Pouliční osvětlení"
+    },
+    "surveillance": {
+        "description": "Na této otevřené mapě najdete bezpečnostní kamery.",
+        "shortDescription": "Bezpečnostní kamery a další prostředky sledování",
+        "title": "Dohled pod dohledem"
+    },
+    "toilets": {
+        "description": "Mapa veřejných toalet",
+        "title": "Open Toilet Map"
+    },
+    "transit": {
+        "description": "Naplánujte si cestu pomocí systému veřejné dopravy.",
+        "title": "Autobusové linky"
+    },
+    "trees": {
+        "description": "Zmapujte všechny stromy!",
+        "shortDescription": "Zmapujte všechny stromy",
+        "title": "Stromy"
+    },
+    "walls_and_buildings": {
+        "description": "Speciální zabudovaná vrstva poskytující všechny stěny a budovy. Tato vrstva je užitečná v předvolbách pro objekty, které lze umístit ke stěnám (např. AED, poštovní schránky, vchody, adresy, bezpečnostní kamery, …). Tato vrstva je ve výchozím nastavení neviditelná a uživatel ji nemůže přepínat.",
+        "title": "Stěny a budovy"
+    },
+    "waste": {
+        "description": "Mapa zobrazující koše na odpadky a recyklační zařízení.",
+        "title": "Odpad"
+    },
+    "waste_basket": {
+        "description": "Na této mapě najdete koše na odpadky ve vašem okolí. Pokud na této mapě odpadkový koš chybí, můžete jej přidat sami",
+        "shortDescription": "Mapa odpadkových košů",
+        "title": "Odpadkový koš"
     }
 }

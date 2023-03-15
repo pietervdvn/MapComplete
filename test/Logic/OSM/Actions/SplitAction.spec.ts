@@ -1,8 +1,7 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import { Utils } from "../../../../Utils"
 import SplitAction from "../../../../Logic/Osm/Actions/SplitAction"
 import { Changes } from "../../../../Logic/Osm/Changes"
+import { describe, expect, it } from "vitest"
 
 describe("SplitAction", () => {
     {
@@ -2690,20 +2689,20 @@ describe("SplitAction", () => {
         })
         const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
 
-        expect(changeDescription[0].type).eq("node")
-        expect(changeDescription[0].id).eq(-1)
-        expect(changeDescription[0].changes["lat"]).eq(51.181710380278176)
-        expect(changeDescription[0].changes["lon"]).eq(3.246733546257019)
-        expect(changeDescription[1].type).eq("way")
-        expect(changeDescription[1].id).eq(-2)
-        expect(changeDescription[1].changes["coordinates"].length).eq(6)
-        expect(changeDescription[1].changes["coordinates"][5][0]).eq(splitPoint[0])
-        expect(changeDescription[1].changes["coordinates"][5][1]).eq(splitPoint[1])
-        expect(changeDescription[2].type).eq("way")
-        expect(changeDescription[2].id).eq(295132739)
-        expect(changeDescription[2].changes["coordinates"].length).eq(10)
-        expect(changeDescription[2].changes["coordinates"][0][0]).eq(splitPoint[0])
-        expect(changeDescription[2].changes["coordinates"][0][1]).eq(splitPoint[1])
+        expect(changeDescription[0].type).toBe("node")
+        expect(changeDescription[0].id).toBe(-1)
+        expect(changeDescription[0].changes["lat"]).toBe(51.181710380278176)
+        expect(changeDescription[0].changes["lon"]).toBe(3.246733546257019)
+        expect(changeDescription[1].type).toBe("way")
+        expect(changeDescription[1].id).toBe(-2)
+        expect(changeDescription[1].changes["coordinates"].length).toBe(6)
+        expect(changeDescription[1].changes["coordinates"][5][0]).toBe(splitPoint[0])
+        expect(changeDescription[1].changes["coordinates"][5][1]).toBe(splitPoint[1])
+        expect(changeDescription[2].type).toBe("way")
+        expect(changeDescription[2].id).toBe(295132739)
+        expect(changeDescription[2].changes["coordinates"].length).toBe(10)
+        expect(changeDescription[2].changes["coordinates"][0][0]).toBe(splitPoint[0])
+        expect(changeDescription[2].changes["coordinates"][0][1]).toBe(splitPoint[1])
     })
 
     it("split 295132739 on already existing node", async () => {
@@ -2715,13 +2714,13 @@ describe("SplitAction", () => {
         })
         const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
 
-        expect(changeDescription.length).eq(2)
-        expect(changeDescription[0].type).eq("way")
-        expect(changeDescription[1].type).eq("way")
+        expect(changeDescription.length).toBe(2)
+        expect(changeDescription[0].type).toBe("way")
+        expect(changeDescription[1].type).toBe("way")
         expect(
             changeDescription[0].changes["nodes"][changeDescription[0].changes["nodes"].length - 1]
-        ).eq(changeDescription[1].changes["nodes"][0])
-        expect(changeDescription[1].changes["nodes"][0]).eq(1507524610)
+        ).toBe(changeDescription[1].changes["nodes"][0])
+        expect(changeDescription[1].changes["nodes"][0]).toBe(1507524610)
     })
 
     it("split 61435323 on already existing node", async () => {
@@ -2733,8 +2732,8 @@ describe("SplitAction", () => {
         const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
 
         // Should be a new node
-        expect(changeDescription[0].type).eq("node")
-        expect(changeDescription[3].type).eq("relation")
+        expect(changeDescription[0].type).toBe("node")
+        expect(changeDescription[3].type).toBe("relation")
     })
 
     it("Split test line", async () => {
@@ -2764,11 +2763,11 @@ describe("SplitAction", () => {
                 8715440363
              */
 
-        expect(changes[0].changes["nodes"]).deep.equal([
+        expect(changes[0].changes["nodes"]).toEqual([
             6490126559, 8715440375, 8715440374, 8715440373, 8715440372, 8715440371, 8715440370,
             8715440369, 8715440368,
         ])
-        expect(changes[1].changes["nodes"]).deep.equal([
+        expect(changes[1].changes["nodes"]).toEqual([
             8715440368, 8715440367, 8715440366, 8715440365, 8715440364, 8715440363,
         ])
     })
@@ -2784,14 +2783,14 @@ describe("SplitAction", () => {
         const changes = await splitAction.Perform(new Changes())
 
         // THe first change is the creation of the new node
-        expect(changes[0].type).deep.equal("node")
-        expect(changes[0].id).deep.equal(-1)
+        expect(changes[0].type).toEqual("node")
+        expect(changes[0].id).toEqual(-1)
 
-        expect(changes[1].changes["nodes"]).deep.equal([
+        expect(changes[1].changes["nodes"]).toEqual([
             6490126559, 8715440375, 8715440374, 8715440373, 8715440372, 8715440371, 8715440370,
             8715440369, -1,
         ])
-        expect(changes[2].changes["nodes"]).deep.equal([
+        expect(changes[2].changes["nodes"]).toEqual([
             -1, 8715440368, 8715440367, 8715440366, 8715440365, 8715440364, 8715440363,
         ])
     })

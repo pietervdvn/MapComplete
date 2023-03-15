@@ -1,4 +1,3 @@
-import * as languages from "../assets/generated/used_languages.json"
 import { readFileSync, writeFileSync } from "fs"
 
 /**

@@ -8,14 +8,19 @@
     "nb_NO": "Innendørs",
     "nl": "Binnenruimtes",
     "ca": "Interiors",
-    "pa_PK": "اندروں"
+    "pa_PK": "اندروں",
+    "cs": "Vnitřní prostory",
+    "es": "En interiores"
   },
   "description": {
     "en": "On this map, publicly accessible indoor places are shown",
     "de": "Diese Karte zeigt öffentlich zugängliche Innenräume",
     "fr": "Sur cette carte, les lieux intérieurs accessibles au public sont montrés",
     "da": "På dette kort er offentligt tilgængelige indendørs steder vist",
-    "nl": "Op deze kaart worden publiek toegankelijke binnenruimtes getoond"
+    "nl": "Op deze kaart worden publiek toegankelijke binnenruimtes getoond",
+    "cs": "Na této mapě jsou zobrazeny veřejně přístupné vnitřní prostory",
+    "nb_NO": "Viser offentlig tilgjenglige innendørssteder",
+    "es": "En este mapa se muestran los lugares cubiertos de acceso público"
   },
   "icon": "./assets/layers/entrance/entrance.svg",
   "startLat": 51.17181,

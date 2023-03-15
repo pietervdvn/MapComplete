@@ -3,11 +3,15 @@
   "title": {
     "en": "Healthcare",
     "ca": "Assistència sanitària",
-    "de": "Gesundheitswesen",
+    "de": "Gesundheitseinrichtungen",
     "fr": "Services de santé",
     "da": "Sundhedspleje",
     "nl": "Gezondheidszorg",
-    "pa_PK": "سیت سمبھال"
+    "pa_PK": "سیت سمبھال",
+    "cs": "Zdravotní péče",
+    "nb_NO": "Helsebehandling",
+    "ru": "Здравоохранение",
+    "es": "Atención sanitaria"
   },
   "description": {
     "en": "On this map, various healthcare related items are shown",
@@ -15,7 +19,9 @@
     "de": "Auf dieser Karte werden verschiedene Gesundheitseinrichtungen angezeigt",
     "fr": "Cette carte affiche différents éléments liés à la santé",
     "da": "På dette kort er forskellige sundhedsrelaterede emner vist",
-    "nl": "Op deze kaart vind je dokters, apothekers, kinesisten, ziekenhuizen en andere gezondheidsgerelateerde diensten"
+    "nl": "Op deze kaart vind je dokters, apothekers, kinesisten, ziekenhuizen en andere gezondheidsgerelateerde diensten",
+    "cs": "Na této mapě jsou zobrazeny různé položky související se zdravotní péčí",
+    "es": "En este mapa se muestran varios elementos relacionados con la salud"
   },
   "icon": "./assets/layers/doctors/doctors.svg",
   "startLat": 50.8465573,
@@ -28,6 +34,74 @@
     "physiotherapist",
     "dentist",
     "hospital",
-    "pharmacy"
+    "pharmacy",
+    {
+      "builtin": "shops",
+      "override": {
+        "id": "medical-shops",
+        "minzoom": 13,
+        "=filter": [
+          "open_now",
+          "accepts_cash",
+          "accepts_cards"
+        ],
+        "=presets": [
+          {
+            "title": {
+              "en": "a medical supply shop",
+              "de": "ein Sanitätshaus",
+              "es": "una tienda de suministros médicos",
+              "cs": "obchod se zdravotnickými potřebami"
+            },
+            "tags": [
+              "shop=medical_supply"
+            ]
+          },
+          {
+            "title": {
+              "en": "a hearing aids shop",
+              "de": "ein Hörgerätegeschäft",
+              "es": "una tienda de audífonos",
+              "cs": "obchod se sluchadly"
+            },
+            "tags": [
+              "shop=hearing_aids"
+            ]
+          },
+          {
+            "title": {
+              "en": "an optician",
+              "de": "ein Optiker",
+              "es": "una óptica",
+              "cs": "optik"
+            },
+            "tags": [
+              "shop=optician"
+            ]
+          }
+        ],
+        "source": {
+          "osmTags": {
+            "and+": [
+              {
+                "or": [
+                  "shop=medical_supply",
+                  "shop=hearing_aids",
+                  "shop=optician"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "builtin": "shops",
+      "=presets": [],
+      "=name": null,
+      "override": {
+        "minzoom": 19
+      }
+    }
   ]
 }

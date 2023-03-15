@@ -1,9 +1,10 @@
 import ScriptUtils from "./ScriptUtils"
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "fs"
-import * as licenses from "../assets/generated/license_info.json"
+import licenses from "../assets/generated/license_info.json"
 import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
 import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 import Constants from "../Models/Constants"
+import * as fakedom from "fake-dom"
 import {
     DetectDuplicateFilters,
     DoesImageExist,
@@ -14,16 +15,14 @@ import {
 } from "../Models/ThemeConfig/Conversion/Validation"
 import { Translation } from "../UI/i18n/Translation"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
-import * as questions from "../assets/tagRenderings/questions.json"
-import * as icons from "../assets/tagRenderings/icons.json"
+import questions from "../assets/tagRenderings/questions.json"
 import PointRenderingConfigJson from "../Models/ThemeConfig/Json/PointRenderingConfigJson"
 import { PrepareLayer } from "../Models/ThemeConfig/Conversion/PrepareLayer"
 import { PrepareTheme } from "../Models/ThemeConfig/Conversion/PrepareTheme"
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
 import { Utils } from "../Utils"
-import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
 import Script from "./Script"
-import { GenerateLicenseInfo } from "./generateLicenseInfo"
+import { AllSharedLayers } from "../Customizations/AllSharedLayers"
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
@@ -159,7 +158,7 @@ class LayerOverviewUtils extends Script {
         const dict = new Map<string, TagRenderingConfigJson>()
 
         const validator = new ValidateTagRenderings(undefined, doesImageExist)
-        for (const key in questions["default"]) {
+        for (const key in questions) {
             if (key === "id") {
                 continue
             }
@@ -169,21 +168,6 @@ class LayerOverviewUtils extends Script {
             validator.convertStrict(
                 config,
                 "generate-layer-overview:tagRenderings/questions.json:" + key
-            )
-            dict.set(key, config)
-        }
-        for (const key in icons["default"]) {
-            if (key === "id") {
-                continue
-            }
-            if (typeof icons[key] !== "object") {
-                continue
-            }
-            icons[key].id = key
-            const config = <TagRenderingConfigJson>icons[key]
-            validator.convertStrict(
-                config,
-                "generate-layer-overview:tagRenderings/icons.json:" + key
             )
             dict.set(key, config)
         }
@@ -246,6 +230,9 @@ class LayerOverviewUtils extends Script {
     }
 
     async main(args: string[]) {
+        if (fakedom === undefined) {
+            throw "Fakedom not initialized"
+        }
         const forceReload = args.some((a) => a == "--force")
 
         const licensePaths = new Set<string>()
@@ -256,16 +243,15 @@ class LayerOverviewUtils extends Script {
         const sharedLayers = this.buildLayerIndex(doesImageExist, forceReload)
         const recompiledThemes: string[] = []
         const sharedThemes = this.buildThemeIndex(
-            doesImageExist,
+            licensePaths,
             sharedLayers,
             recompiledThemes,
             forceReload
         )
 
         writeFileSync(
-            "./assets/generated/known_layers_and_themes.json",
+            "./assets/generated/known_themes.json",
             JSON.stringify({
-                layers: Array.from(sharedLayers.values()),
                 themes: Array.from(sharedThemes.values()),
             })
         )
@@ -310,7 +296,7 @@ class LayerOverviewUtils extends Script {
             "GenerateLayerOverview:"
         )
 
-        if (AllKnownLayouts.getSharedLayersConfigs().size == 0) {
+        if (AllSharedLayers.getSharedLayersConfigs().size == 0) {
             console.error("This was a bootstrapping-run. Run generate layeroverview again!")
         } else {
             const green = (s) => "\x1b[92m" + s + "\x1b[0m"
@@ -329,7 +315,7 @@ class LayerOverviewUtils extends Script {
         const sharedTagRenderings = this.getSharedTagRenderings(doesImageExist)
         const state: DesugaringContext = {
             tagRenderings: sharedTagRenderings,
-            sharedLayers: AllKnownLayouts.getSharedLayersConfigs(),
+            sharedLayers: AllSharedLayers.getSharedLayersConfigs(),
         }
         const sharedLayers = new Map<string, LayerConfigJson>()
         const prepLayer = new PrepareLayer(state)
@@ -386,7 +372,7 @@ class LayerOverviewUtils extends Script {
     }
 
     private buildThemeIndex(
-        doesImageExist: DoesImageExist,
+        licensePaths: Set<string>,
         sharedLayers: Map<string, LayerConfigJson>,
         recompiledThemes: string[],
         forceReload: boolean
@@ -401,9 +387,26 @@ class LayerOverviewUtils extends Script {
 
         const convertState: DesugaringContext = {
             sharedLayers,
-            tagRenderings: this.getSharedTagRenderings(doesImageExist),
+            tagRenderings: this.getSharedTagRenderings(
+                new DoesImageExist(licensePaths, existsSync)
+            ),
             publicLayers,
         }
+        const knownTagRenderings = new Set<string>()
+        convertState.tagRenderings.forEach((_, key) => knownTagRenderings.add(key))
+        sharedLayers.forEach((layer) => {
+            for (const tagRendering of layer.tagRenderings ?? []) {
+                if (tagRendering["id"]) {
+                    knownTagRenderings.add(layer.id + "." + tagRendering["id"])
+                }
+                if (tagRendering["labels"]) {
+                    for (const label of tagRendering["labels"]) {
+                        knownTagRenderings.add(layer.id + "." + label)
+                    }
+                }
+            }
+        })
+
         const skippedThemes: string[] = []
         for (const themeInfo of themeFiles) {
             const themePath = themeInfo.path
@@ -438,10 +441,10 @@ class LayerOverviewUtils extends Script {
                 themeFile = new PrepareTheme(convertState).convertStrict(themeFile, themePath)
 
                 new ValidateThemeAndLayers(
-                    doesImageExist,
+                    new DoesImageExist(licensePaths, existsSync, knownTagRenderings),
                     themePath,
                     true,
-                    convertState.tagRenderings
+                    knownTagRenderings
                 ).convertStrict(themeFile, themePath)
 
                 if (themeFile.icon.endsWith(".svg")) {

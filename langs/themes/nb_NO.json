@@ -4,10 +4,38 @@
         "title": "Åpne AED-kart"
     },
     "artwork": {
-        "description": "Velkommen til det åpne kunstverkskartet, et kart over statuer, byster, grafitti, og andre kunstverk i verden",
+        "description": "Statuer, byster, graffiti, og andre kunstverk verden over",
         "title": "Kunstkort"
     },
+    "atm": {
+        "description": "Viser minibanker for å ta ut eller sette inn penger",
+        "title": "Minibanker"
+    },
     "bag": {
+        "layers": {
+            "2": {
+                "tagRenderings": {
+                    "Build year": {
+                        "mappings": {
+                            "0": {
+                                "then": "Oppføring startet <b>{_bag_obj:start_date}</b>"
+                            }
+                        },
+                        "render": "Bygning oppført <b>{_bag_obj:start_date}</b>"
+                    },
+                    "Building type": {
+                        "render": "Dette er en bygning av typen <b>{_bag_obj:building}</b>"
+                    },
+                    "Import button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Har ikke regnet ut riktige verdier enda. Gjenoppfrisk siden."
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "title": "BAG-importhjelper"
     },
     "benches": {
@@ -30,6 +58,7 @@
         "title": "Kikkerter"
     },
     "blind_osm": {
+        "description": "Relevante funksjoner for blinde",
         "title": "OSM for blinde"
     },
     "bookcases": {
@@ -132,6 +161,7 @@
                         }
                     },
                     "dumpstations-charge": {
+                        "question": "Hvor mye koster det å bruke dette stedet?",
                         "render": "Dette stedet tar {charge}"
                     },
                     "dumpstations-fee": {
@@ -142,9 +172,29 @@
                             "1": {
                                 "then": "Kan brukes gratis"
                             }
-                        }
+                        },
+                        "question": "Krever dette stedet et gebyr?"
+                    },
+                    "dumpstations-grey-water": {
+                        "mappings": {
+                            "0": {
+                                "then": "Du kan kvitte deg med gråvann her"
+                            },
+                            "1": {
+                                "then": "Du kan ikke kvitte deg med gråvann her"
+                            }
+                        },
+                        "question": "Kan du kvitte deg med gråvann her?"
                     },
                     "dumpstations-waterpoint": {
+                        "mappings": {
+                            "0": {
+                                "then": "Dette stedet har en vannpost"
+                            },
+                            "1": {
+                                "then": "Dette stedet har ikke en vannpost"
+                            }
+                        },
                         "question": "Har dette stedet et vannkranssted?"
                     }
                 }
@@ -282,6 +332,13 @@
                         }
                     },
                     "question": "Er <b>{name}</b>-gaten en sykkelgate?"
+                },
+                "1": {
+                    "mappings": {
+                        "3": {
+                            "then": "Biler tillatt"
+                        }
+                    }
                 },
                 "2": {
                     "question": "Når vil denne gaten bli en sykkelgate?",
@@ -424,12 +481,20 @@
     "hailhydrant": {
         "title": "Hydranter, brannslukkere, brannstasjoner, og ambulansestasjoner."
     },
+    "healthcare": {
+        "title": "Helsebehandling"
+    },
     "hotels": {
         "description": "På dette kartet finner du hoteller der du er",
         "title": "Hoteller"
     },
     "indoors": {
+        "description": "Viser offentlig tilgjenglige innendørssteder",
         "title": "Innendørs"
+    },
+    "kerbs_and_crossings": {
+        "description": "Fortauskanter og fotgjengerfelt.",
+        "title": "Fortauskanter og fotgjengerfelt."
     },
     "maps": {
         "title": "Et kart over kart"
@@ -447,6 +512,19 @@
     },
     "onwheels": {
         "layers": {
+            "4": {
+                "override": {
+                    "filter": {
+                        "0": {
+                            "options": {
+                                "1": {
+                                    "question": "Uten breddeinfo"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "19": {
                 "override": {
                     "=title": {
@@ -564,7 +642,28 @@
         },
         "title": "Fortau"
     },
+    "stations": {
+        "layers": {
+            "3": {
+                "description": "Lag som viser togstasjoner",
+                "name": "Togstasjoner"
+            },
+            "15": {
+                "tagRenderings": {
+                    "type": {
+                        "mappings": {
+                            "2": {
+                                "then": "Dette er en papir-tidstabell"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "title": "Togstasjoner"
+    },
     "street_lighting": {
+        "description": "Alt om gatebelysning",
         "layers": {
             "1": {
                 "name": "Belyste gater",
@@ -620,6 +719,7 @@
         "title": "Gatebelysning"
     },
     "surveillance": {
+        "description": "Her finner du overvåkningskameraer.",
         "shortDescription": "Overvåkningskameraer og andre typer overvåkning",
         "title": "Overvåkning under overvåkning"
     },

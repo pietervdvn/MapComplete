@@ -803,10 +803,6 @@
     "translations": {
         "activateButton": "Hjælp med at oversætte MapComplete",
         "allMissing": "Ingen oversættelser endnu",
-        "completeness": "Oversættelser for {theme} i {language} er på {percentage}%: {translated} strenge ud af {total} er oversat",
-        "deactivate": "Slå oversættelsesknapper fra",
-        "help": "Klik på 'oversæt'-ikonet ved siden af en streng for at indtaste eller opdatere et stykke tekst. Du skal have en Weblate-konto for at kunne gøre dette. Opret en med dit OSM-brugernavn for automatisk at låse oversættelsestilstanden op.",
-        "isTranslator": "Oversættelsestilstanden er slået til, da dit brugernavn svarer til navnet på en tidligere oversætter",
         "missing": "{count} uoversatte strenge",
         "notImmediate": "Oversættelser opdateres ikke direkte. Det tager typisk et par dage"
     },

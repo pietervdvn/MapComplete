@@ -2,11 +2,13 @@
   "id": "rainbow_crossings",
   "name": {
     "en": "Crossings with rainbow paintings",
-    "de": "Fußgängerüberwege in Regenbogenfarben"
+    "de": "Fußgängerüberwege in Regenbogenfarben",
+    "fr": "Passages avec peinture arc-en-ciel"
   },
   "description": {
     "en": "A layer showing pedestrian crossings with rainbow paintings",
-    "de": "Eine Ebene mit Fußgängerüberwegen in Regenbogenfarben"
+    "de": "Eine Ebene mit Fußgängerüberwegen in Regenbogenfarben",
+    "fr": "Une couche affichant les passages piétons avec des peintures arc-en-ciel"
   },
   "source": {
     "osmTags": "highway=crossing"
@@ -17,7 +19,8 @@
       "en": "Crossing",
       "de": "Überweg",
       "nl": "Oversteekplaats",
-      "pa_PK": "کراسنگ"
+      "pa_PK": "کراسنگ",
+      "fr": "Passage"
     }
   },
   "presets": [
@@ -25,7 +28,8 @@
       "title": {
         "en": "a crossing",
         "de": "einen Überweg",
-        "nl": "een oversteekplaats"
+        "nl": "een oversteekplaats",
+        "fr": "un passage"
       },
       "tags": [
         "highway=crossing"
@@ -33,7 +37,8 @@
       "description": {
         "en": "Pedestrian crossing",
         "de": "Fußgängerüberweg",
-        "nl": "Voetgangersoversteekplaats"
+        "nl": "Voetgangersoversteekplaats",
+        "fr": "Passage piéton"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -50,7 +55,8 @@
       "id": "crossing-with-rainbow",
       "question": {
         "en": "Does this crossing has rainbow paintings?",
-        "de": "Hat der Überweg eine Markierung in Regenbogenfarben?"
+        "de": "Hat der Überweg eine Markierung in Regenbogenfarben?",
+        "fr": "Ce passage a-t-il une peinture arc-en-ciel ?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -58,7 +64,8 @@
           "if": "crossing:marking=rainbow",
           "then": {
             "en": "This crossing has rainbow paintings",
-            "de": "Der Überweg hat eine Markierung in Regenbogenfarben"
+            "de": "Der Überweg hat eine Markierung in Regenbogenfarben",
+            "fr": "Ce passage a une peinture arc-en-ciel"
           },
           "icon": {
             "path": "./assets/themes/rainbow_crossings/logo.svg",
@@ -69,7 +76,8 @@
           "if": "not:crossing:marking=rainbow",
           "then": {
             "en": "No rainbow paintings here",
-            "de": "Hier gibt es kein Markierung in Regenbogenfarben"
+            "de": "Hier gibt es kein Markierung in Regenbogenfarben",
+            "fr": "Pas de peinture arc-en-ciel ici"
           },
           "icon": "./assets/themes/rainbow_crossings/crossing.svg"
         },
@@ -77,7 +85,8 @@
           "if": "crossing:marking!=rainbow",
           "then": {
             "en": "No rainbow paintings here",
-            "de": "Hier gibt es kein Markierung in Regenbogenfarben"
+            "de": "Hier gibt es kein Markierung in Regenbogenfarben",
+            "fr": "Pas de peinture arc-en-ciel ici"
           },
           "icon": "./assets/themes/rainbow_crossings/crossing.svg",
           "hideInAnswer": true

@@ -17,7 +17,7 @@
     <!-- THEME-SPECIFIC -->
     <!-- Every theme gets their own html page, this is created by a script; this part will be removed except for the index -->
     <title>MapComplete</title>
-    <link href="./manifest.webmanifest" rel="manifest">
+    <link href="./index.webmanifest" rel="manifest">
     
     <!-- Mastodon link verification: https://docs.joinmastodon.org/user/profile/#Link%20verification -->
     <a rel="me" href="https://en.osm.town/@MapComplete" style="display: none">Mastodon</a>
@@ -58,12 +58,7 @@
     <!-- DECORATION 0 END -->
 </div>
 
-<div class="z-index-above-map pointer-events-none" id="topleft-tools">
-    <div class="p-3 flex flex-col items-end sm:items-start sm:flex-row sm:flex-wrap w-full sm:justify-between">
-        <div class="shadow rounded-full h-min w-full overflow-hidden sm:max-w-sm pointer-events-auto"
-             id="searchbox"></div>
-        <div class="m-1 pointer-events-auto" id="userbadge"></div>
-    </div>
+<div id="top-left">
 </div>
 
 <div class="clutter absolute h-24 left-24 right-24 top-56 text-xl text-center"

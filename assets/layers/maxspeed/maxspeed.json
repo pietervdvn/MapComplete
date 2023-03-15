@@ -4,7 +4,7 @@
     "en": "Maxspeed",
     "es": "Velocidad",
     "ca": "Velocitat",
-    "de": "Höchstgeschwindigkeit",
+    "de": "Höchstgeschwindigkeiten",
     "nl": "Maximumsnelheid",
     "pa_PK": "حد رفتار"
   },
@@ -53,7 +53,8 @@
   "description": {
     "en": "Shows the allowed speed for every road",
     "de": "Zeigt die zulässige Geschwindigkeit für jede Straße an",
-    "nl": "Toont de toegestane snelheid voor elke weg"
+    "nl": "Toont de toegestane snelheid voor elke weg",
+    "cs": "Zobrazuje povolenou rychlost pro každou silnici"
   },
   "tagRenderings": [
     {
@@ -61,14 +62,16 @@
         "en": "The maximum allowed speed on this road is {canonical(maxspeed)}",
         "de": "Die zulässige Höchstgeschwindigkeit auf dieser Straße beträgt {canonical(maxspeed)}",
         "nl": "De maximum toegestane snelheid op deze weg is {canonical(maxspeed)}",
-        "ca": "La velocitat màxima permesa a aquesta via és {canonical(maxspeed)}"
+        "ca": "La velocitat màxima permesa a aquesta via és {canonical(maxspeed)}",
+        "fr": "La vitesse maximum autorisée sur cette route est {canonical(maxspeed)}"
       },
       "question": {
         "es": "Qué velocidad tiene",
         "ca": "Quina és la velocitat màxima legal que es permet conduir en aquesta carretera?",
         "en": "What is the legal maximum speed one is allowed to drive on this road?",
         "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit, die man auf dieser Straße fahren darf?",
-        "nl": "Wat is de legale maximumsnelheid voor deze weg?"
+        "nl": "Wat is de legale maximumsnelheid voor deze weg?",
+        "fr": "Quelle est la vitesse maximum autorisée sur cette route ?"
       },
       "freeform": {
         "key": "maxspeed",
@@ -174,7 +177,8 @@
             "es": "km/h",
             "nl": "km/u",
             "de": "km/h",
-            "pa_PK": "ہر گھنٹے وچ کیلومیٹر"
+            "pa_PK": "ہر گھنٹے وچ کیلومیٹر",
+            "ru": "км/ч"
           }
         },
         {

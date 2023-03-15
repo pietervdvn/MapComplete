@@ -5,6 +5,12 @@
         "retrying": "Data inladen mislukt - wordt opnieuw geprobeerd over {count} seconden",
         "zoomIn": "Zoom in om de data te zien en te bewerken"
     },
+    "communityIndex": {
+        "available": "Op dit communicatiekanaal spreekt men {native}",
+        "intro": "Contacteer anderen die bezig zijn met OpenStreetMap om kennis te maken, tips uit te wisselen of van elkaar bij te leren.",
+        "notAvailable": "Op dit communicatiekanaal spreekt men geen {native}",
+        "title": "Community index"
+    },
     "delete": {
         "cancel": "Annuleren",
         "cannotBeDeleted": "Dit object kan niet van de kaart verwijderd worden",
@@ -53,7 +59,7 @@
         "fakeui": {
             "add_images": "Voeg foto's toe met een paar klikken",
             "attributes": "Attributen worden getoond op begrijpbare wijze",
-            "edit": "Foute of verouderde gegevens? Aanpassen kan hier",
+            "edit": "Foute of verouderde gegevens? Aanpassen kan hier.",
             "question": "Is een attribuut nog niet gekend?\nMapComplete toont een vraag",
             "see_images": "Toont afbeeldingen van eerdere bijdragers, Wikipedia, Mapillary, ... ",
             "wikipedia": "Gelinkte Wikipedia-artikelen worden getoond"
@@ -133,6 +139,7 @@
             "josmOpened": "JOSM is geopend",
             "mapContributionsBy": "De huidige data is bijgedragen door {contributors}",
             "mapContributionsByAndHidden": "De zichtbare data heeft bijdragen van {contributors} en {hiddenCount} andere bijdragers",
+            "mapDataByOsm": "Kaartgegevens: OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> is een online dienst waar straatbeelden onder een vrije licentie gedeeld worden. Deze beelden mogen gebruikt worden om OpenStreetMap te verbeteren.",
             "openIssueTracker": "Geef een fout in de software door",
             "openMapillary": "Open Mapillary op deze locatie",
@@ -141,6 +148,7 @@
             "translatedBy": "MapComplete werd vertaald door {contributors} en <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} meer vertalers</a>"
         },
         "back": "Vorige",
+        "backToIndex": "Keer terug naar het overzicht met alle thematische kaarten",
         "backToMapcomplete": "Terug naar het themaoverzicht",
         "backgroundMap": "Achtergrondkaart",
         "cancel": "Annuleren",
@@ -188,6 +196,9 @@
         "loading": "Aan het laden…",
         "loadingTheme": "{theme} wordt geladen…",
         "loginFailed": "Het inloggen op OpenStreetMap is gefaald",
+        "loginFailedOfflineMode": "OpenStreetMap.org is op dit moment niet beschikbaar door onderhoud. Kaartwijzigingen maken zal binnenkort weer mogelijk zijn.",
+        "loginFailedReadonlyMode": "OpenStreetMap.org is op dit moment in alleen-lezen modus door onderhoud. Kaartwijzigingen maken zal binnenkort weer mogelijk zijn.",
+        "loginFailedUnreachableMode": "OpenStreetMap.org kan op dit moment niet bereikt worden. Ben je verbonden met het internet of blokkeer je toegang tot externe website? Probeer later opnieuw.",
         "loginOnlyNeededToEdit": "als je wijzigingen wilt maken",
         "loginToStart": "Meld je aan om deze vraag te beantwoorden",
         "loginWithOpenStreetMap": "Aanmelden met OpenStreetMap",
@@ -284,6 +295,7 @@
         "uploadGpx": {
             "choosePermission": "Kies hieronder of je traject gedeeld moet worden:",
             "confirm": "Bevestig upload",
+            "gpxServiceOffline": "De GPX-service is momenteel niet-operationeel. Probeer later opnieuw.",
             "intro0": "Door het uploaden van je traject, bewaart OpenStreetMap.org een volledige kopie van je traject.",
             "intro1": "Je kan je traject weer downloaden en laden in OpenStreetMap editor",
             "meta": {
@@ -350,15 +362,20 @@
         }
     },
     "hotkeyDocumentation": {
+        "action": "Actie",
         "closeSidebar": "Sluit de zijbalk",
         "geolocate": "Centreer de map op je huidige positie of zoom verder in naar de huidige positie. Vraagt geolocatie-toegang",
+        "intro": "MapComplete ondersteunt de volgende sneltoetsen:",
+        "key": "Toets-combinatie",
         "openLayersPanel": "Open het paneel met lagen, filters en achtergrondkaart",
         "selectBackground": "Selecteer een achtergrondlaag van category {category}",
         "selectMapnik": "Selecteer OpenStreetMap-carto als achtergrondlaag",
-        "selectSearch": "Selecteer de zoekbalk om locaties te zoeken"
+        "selectSearch": "Selecteer de zoekbalk om locaties te zoeken",
+        "title": "Sneltoetsen"
     },
     "image": {
         "addPicture": "Voeg foto toe",
+        "currentLicense": "Je afbeelding wordt gepubliceerd met de {license}-licentie",
         "doDelete": "Verwijder afbeelding",
         "dontDelete": "Annuleren",
         "isDeleted": "Verwijderd",
@@ -895,7 +912,7 @@
         "attribution": "De beoordelingen worden voorzien door <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> en zijn beschikbaar onder de<a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0-licentie</a>. ",
         "i_am_affiliated": "<span>Ik ben persoonlijk betrokken</span><br/><span class='subtle'>Vink aan indien je de oprichter, maker, werknemer, ... of dergelijke bent</span>",
         "name_required": "De naam van dit object moet gekend zijn om een review te kunnen maken",
-        "no_rating": "Geen score bekend",
+        "no_rating": "Geef een beoordeling voordat je verzendt…",
         "no_reviews_yet": "Er zijn nog geen beoordelingen. Wees de eerste om een beoordeling te schrijven en help open data en het bedrijf!",
         "plz_login": "Meld je aan om een beoordeling te geven",
         "posting_as": "Ingelogd als",
@@ -918,10 +935,6 @@
     "translations": {
         "activateButton": "Help met het vertalen van MapComplete",
         "allMissing": "Nog geen vertalingen",
-        "completeness": "Vertalingen voor {theme} in {language} zijn momenteel op {percentage}%: van {total} teksten zijn er reeds {translated} vertaald",
-        "deactivate": "Verberg de vertaalknoppen",
-        "help": "Klik op het 'vertaal'-icoontje die naast een stukje tekst staat om deze tekst te vertalen of aan te passen. Hiervoor heb je een (gratis) Weblate-account nodig. Indien je jouw account maakt met dezelfde naam als je OSM-gebruikersnaam, dan zullen de vertaalknoppen automatisch verschijnen.",
-        "isTranslator": "Vertaalmode is actief: je gebruikersnaam is dezelfde als van een vertaler. We gaan er dus vanuit dat jij die vertaler bent",
         "missing": "{count} niet-vertaalde teksten",
         "notImmediate": "Vertalingen worden niet onmiddelijk geupdate. Dit duurt gemiddeld enkele dagen"
     },
@@ -932,6 +945,7 @@
         "newMessages": "je hebt nieuwe berichten",
         "noDescription": "Je hebt nog geen beschrijving op je profiel",
         "noDescriptionCallToAction": "Voeg een profielbeschrijving toe",
+        "titleNotLoggedIn": "Welkom",
         "welcome": "Welkom {name}"
     },
     "validation": {

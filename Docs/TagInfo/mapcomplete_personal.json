@@ -460,12 +460,12 @@
     },
     {
       "key": "bicycle",
-      "description": "Layer 'Barriers' shows bicycle=yes with a fixed text, namely 'A cyclist can go past this.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Barriers' shows bicycle=yes with a fixed text, namely 'A cyclist can go past this.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _referencing_ways~.+)",
       "value": "yes"
     },
     {
       "key": "bicycle",
-      "description": "Layer 'Barriers' shows bicycle=no with a fixed text, namely 'A cyclist can not go past this.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Barriers' shows bicycle=no with a fixed text, namely 'A cyclist can not go past this.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _referencing_ways~.+)",
       "value": "no"
     },
     {
@@ -525,7 +525,7 @@
     },
     {
       "key": "maxwidth:physical",
-      "description": "Layer 'Barriers' shows and asks freeform values for key 'maxwidth:physical' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if cycle_barrier!=double&cycle_barrier!=triple)"
+      "description": "Layer 'Barriers' shows and asks freeform values for key 'maxwidth:physical' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if cycle_barrier!=double&cycle_barrier!=triple&_referencing_ways~.+)"
     },
     {
       "key": "width:separation",
@@ -1788,16 +1788,6 @@
       "key": "shop",
       "description": "The MapComplete theme Personal theme has a layer Bike repair/shop showing features with this tag",
       "value": "bicycle"
-    },
-    {
-      "key": "amenity",
-      "description": "The MapComplete theme Personal theme has a layer Bike repair/shop showing features with this tag",
-      "value": "bicycle_rental"
-    },
-    {
-      "key": "network",
-      "description": "The MapComplete theme Personal theme has a layer Bike repair/shop showing features with this tag",
-      "value": ""
     },
     {
       "key": "shop",
@@ -4264,6 +4254,161 @@
       "description": "Layer 'Climbing routes' shows and asks freeform values for key 'description' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Clocks showing features with this tag",
+      "value": "clock"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Clocks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Clocks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Clocks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Clocks allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Clocks' shows support=pole with a fixed text, namely 'This clock is mounted on a pole' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "pole"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Clocks' shows support=wall_mounted with a fixed text, namely 'This clock is mounted on a wall' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "wall_mounted"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Clocks' shows support=billboard with a fixed text, namely 'This clock is part of a billboard' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "billboard"
+    },
+    {
+      "key": "support",
+      "description": "Layer 'Clocks' shows support=ground with a fixed text, namely 'This clock is on the ground' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "ground"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Clocks' shows display=analog with a fixed text, namely 'This clock displays the time with hands' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "analog"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Clocks' shows display=digital with a fixed text, namely 'This clock displays the time with digits' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "digital"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Clocks' shows display=sundial with a fixed text, namely 'This clock displays the time with a sundial' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "sundial"
+    },
+    {
+      "key": "display",
+      "description": "Layer 'Clocks' shows display=unorthodox with a fixed text, namely 'This clock displays the time in a non-standard way, e.g using binary, water or something else' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "unorthodox"
+    },
+    {
+      "key": "visibility",
+      "description": "Layer 'Clocks' shows visibility=house with a fixed text, namely 'This clock is visible from about 5 meters away (small wall-mounted clock)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "house"
+    },
+    {
+      "key": "visibility",
+      "description": "Layer 'Clocks' shows visibility=street with a fixed text, namely 'This clock is visible from about 20 meters away (medium size billboard clock)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "street"
+    },
+    {
+      "key": "visibility",
+      "description": "Layer 'Clocks' shows visibility=area with a fixed text, namely 'This clock is visible from more than 20 meters away (church clock)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "area"
+    },
+    {
+      "key": "date",
+      "description": "Layer 'Clocks' shows date=yes with a fixed text, namely 'This clock also displays the date' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "date",
+      "description": "Layer 'Clocks' shows date=no with a fixed text, namely 'This clock does not display the date' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "date",
+      "description": "Layer 'Clocks' shows  with a fixed text, namely 'This clock does probably not display the date' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key date.",
+      "value": ""
+    },
+    {
+      "key": "thermometer",
+      "description": "Layer 'Clocks' shows thermometer=yes with a fixed text, namely 'This clock also displays the temperature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "thermometer",
+      "description": "Layer 'Clocks' shows thermometer=no with a fixed text, namely 'This clock does not display the temperature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "thermometer",
+      "description": "Layer 'Clocks' shows  with a fixed text, namely 'This clock does probably not display the temperature' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key thermometer.",
+      "value": ""
+    },
+    {
+      "key": "barometer",
+      "description": "Layer 'Clocks' shows barometer=yes with a fixed text, namely 'This clock also displays the air pressure' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "barometer",
+      "description": "Layer 'Clocks' shows barometer=no with a fixed text, namely 'This clock does not display the air pressure' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "barometer",
+      "description": "Layer 'Clocks' shows  with a fixed text, namely 'This clock does probably not display the air pressure' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key barometer.",
+      "value": ""
+    },
+    {
+      "key": "hygrometer",
+      "description": "Layer 'Clocks' shows hygrometer=yes with a fixed text, namely 'This clock also displays the humidity' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "hygrometer",
+      "description": "Layer 'Clocks' shows hygrometer=no with a fixed text, namely 'This clock does not display the humidity' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "no"
+    },
+    {
+      "key": "hygrometer",
+      "description": "Layer 'Clocks' shows  with a fixed text, namely 'This clock does probably not display the humidity' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key hygrometer.",
+      "value": ""
+    },
+    {
+      "key": "faces",
+      "description": "Layer 'Clocks' shows and asks freeform values for key 'faces' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "faces",
+      "description": "Layer 'Clocks' shows faces=1 with a fixed text, namely 'This clock has one face' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "1"
+    },
+    {
+      "key": "faces",
+      "description": "Layer 'Clocks' shows faces=2 with a fixed text, namely 'This clock has two faces' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "2"
+    },
+    {
+      "key": "faces",
+      "description": "Layer 'Clocks' shows faces=4 with a fixed text, namely 'This clock has four faces' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "4"
+    },
+    {
       "key": "highway",
       "description": "The MapComplete theme Personal theme has a layer Crossings showing features with this tag",
       "value": "traffic_signals"
@@ -5734,56 +5879,56 @@
     },
     {
       "key": "name:etymology:wikidata",
-      "description": "The MapComplete theme Personal theme has a layer Has etymolgy showing features with this tag"
+      "description": "The MapComplete theme Personal theme has a layer Has etymology showing features with this tag"
     },
     {
       "key": "name:etymology",
-      "description": "The MapComplete theme Personal theme has a layer Has etymolgy showing features with this tag"
+      "description": "The MapComplete theme Personal theme has a layer Has etymology showing features with this tag"
     },
     {
       "key": "image",
-      "description": "The layer 'Has etymolgy shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Has etymology shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Has etymolgy shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Has etymology shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Has etymolgy shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Has etymology shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Has etymolgy shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Has etymology shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name:etymology:wikidata",
-      "description": "Layer 'Has etymolgy' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if name:etymology!=unknown)"
+      "description": "Layer 'Has etymology' shows and asks freeform values for key 'name:etymology:wikidata' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if name:etymology!=unknown)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Has etymolgy' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if name:etymology~.+|)"
+      "description": "Layer 'Has etymology' shows and asks freeform values for key 'name:etymology' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if name:etymology~.+|)"
     },
     {
       "key": "name:etymology",
-      "description": "Layer 'Has etymolgy' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if name:etymology~.+|)",
+      "description": "Layer 'Has etymology' shows name:etymology=unknown with a fixed text, namely 'The origin of this name is unknown in all literature' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if name:etymology~.+|)",
       "value": "unknown"
     },
     {
       "key": "image",
-      "description": "The layer 'Has etymolgy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Has etymology allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "mapillary",
-      "description": "The layer 'Has etymolgy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Has etymology allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikidata",
-      "description": "The layer 'Has etymolgy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Has etymology allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "wikipedia",
-      "description": "The layer 'Has etymolgy allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+      "description": "The layer 'Has etymology allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "emergency",
@@ -6002,6 +6147,22 @@
       "key": "leisure",
       "description": "The MapComplete theme Personal theme has a layer Fitness Stations showing features with this tag",
       "value": "fitness_station"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Fitness Stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Fitness Stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Fitness Stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Fitness Stations allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
       "key": "name",
@@ -6859,8 +7020,23 @@
       "value": "hospital"
     },
     {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Hospitals showing features with this tag",
+      "value": "clinic"
+    },
+    {
       "key": "name",
       "description": "Layer 'Hospitals' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Hospitals' shows amenity=clinic with a fixed text, namely 'This is a clinic - patients can not stay overnight' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "clinic"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Hospitals' shows amenity=hospital with a fixed text, namely 'This is a hospital - patients can be admitted here for multiple days' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "hospital"
     },
     {
       "key": "phone",
@@ -7015,11 +7191,6 @@
     },
     {
       "key": "colour",
-      "description": "Layer 'Map of hydrants' shows  with a fixed text, namely 'The hydrant color is unknown.' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key colour.",
-      "value": ""
-    },
-    {
-      "key": "colour",
       "description": "Layer 'Map of hydrants' shows colour=yellow with a fixed text, namely 'The hydrant color is yellow.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yellow"
     },
@@ -7031,11 +7202,6 @@
     {
       "key": "fire_hydrant:type",
       "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'fire_hydrant:type' (in the MapComplete.osm.be theme 'Personal theme')"
-    },
-    {
-      "key": "fire_hydrant:type",
-      "description": "Layer 'Map of hydrants' shows  with a fixed text, namely 'The hydrant type is unknown.' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key fire_hydrant:type.",
-      "value": ""
     },
     {
       "key": "fire_hydrant:type",
@@ -7085,6 +7251,10 @@
     {
       "key": "fire_hydrant:diameter",
       "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'fire_hydrant:diameter' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "couplings",
+      "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'couplings' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
       "key": "couplings:type",
@@ -8097,6 +8267,146 @@
       "value": "1"
     },
     {
+      "key": "amenity",
+      "description": "The MapComplete theme Personal theme has a layer Parking Ticket Machines showing features with this tag",
+      "value": "vending_machine"
+    },
+    {
+      "key": "vending",
+      "description": "The MapComplete theme Personal theme has a layer Parking Ticket Machines showing features with this tag",
+      "value": "parking_tickets"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Parking Ticket Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Parking Ticket Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Parking Ticket Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Parking Ticket Machines allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "payment:cash",
+      "description": "Layer 'Parking Ticket Machines' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:cards",
+      "description": "Layer 'Parking Ticket Machines' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:notes",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes=yes with a fixed text, namely 'Bank notes are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:debit_cards",
+      "description": "Layer 'Parking Ticket Machines' shows payment:debit_cards=yes with a fixed text, namely 'Debit cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:credit_cards",
+      "description": "Layer 'Parking Ticket Machines' shows payment:credit_cards=yes with a fixed text, namely 'Credit cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.01 EUR with a fixed text, namely '1 cent coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "value": "0.01 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.02 EUR with a fixed text, namely '2 cent coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "value": "0.02 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.05 EUR with a fixed text, namely '5 cent coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "value": "0.05 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.10 EUR with a fixed text, namely '10 cent coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "value": "0.10 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.20 EUR with a fixed text, namely '20 cent coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "value": "0.20 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=0.50 EUR with a fixed text, namely '50 cent coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "value": "0.50 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=1 EUR with a fixed text, namely '1 euro coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "value": "1 EUR"
+    },
+    {
+      "key": "payment:coins:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:coins:denominations=2 EUR with a fixed text, namely '2 euro coins are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if payment:coins=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "value": "2 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=5 EUR with a fixed text, namely '5 euro notes are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "value": "5 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=10 EUR with a fixed text, namely '10 euro notes are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "value": "10 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=20 EUR with a fixed text, namely '20 euro notes are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "value": "20 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=50 EUR with a fixed text, namely '50 euro notes are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "value": "50 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=100 EUR with a fixed text, namely '100 euro notes are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "value": "100 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=200 EUR with a fixed text, namely '200 euro notes are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "value": "200 EUR"
+    },
+    {
+      "key": "payment:notes:denominations",
+      "description": "Layer 'Parking Ticket Machines' shows payment:notes:denominations=500 EUR with a fixed text, namely '500 euro notes are accepted' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if payment:notes=yes|payment:cash=yes&_country=at|_country=be|_country=cy|_country=de|_country=ee|_country=es|_country=fi|_country=fr|_country=gr|_country=hr|_country=ie|_country=it|_country=lt|_country=lu|_country=lv|_country=mt|_country=nl|_country=pt|_country=si|_country=sk)",
+      "value": "500 EUR"
+    },
+    {
+      "key": "ref",
+      "description": "Layer 'Parking Ticket Machines' shows and asks freeform values for key 'ref' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "noref",
+      "description": "Layer 'Parking Ticket Machines' shows noref=yes with a fixed text, namely 'This parking ticket machine has no reference number' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
       "key": "highway",
       "description": "The MapComplete theme Personal theme has a layer Pedestrian paths showing features with this tag",
       "value": "footway"
@@ -9091,6 +9401,25 @@
       "key": "opening_hours",
       "description": "Layer 'Recycling' shows opening_hours=24/7 with a fixed text, namely '24/7 opened (including holidays)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "24/7"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'access' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Recycling' shows access=yes with a fixed text, namely 'Everyone can use this recycling facility' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Recycling' shows access=residents with a fixed text, namely 'Only residents can use this recycling facility' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "residents"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Recycling' shows access=private with a fixed text, namely 'This recycling facility is only for private use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "private"
     },
     {
       "key": "amenity",
@@ -10174,27 +10503,27 @@
     },
     {
       "key": "service:print:A4",
-      "description": "Layer 'Shop' shows service:print:A4=yes with a fixed text, namely 'This shop can print on papers of size A4' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationary.*)$|service:print=yes)",
+      "description": "Layer 'Shop' shows service:print:A4=yes with a fixed text, namely 'This shop can print on papers of size A4' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
       "value": "yes"
     },
     {
       "key": "service:print:A3",
-      "description": "Layer 'Shop' shows service:print:A3=yes with a fixed text, namely 'This shop can print on papers of size A3' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationary.*)$|service:print=yes)",
+      "description": "Layer 'Shop' shows service:print:A3=yes with a fixed text, namely 'This shop can print on papers of size A3' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
       "value": "yes"
     },
     {
       "key": "service:print:A2",
-      "description": "Layer 'Shop' shows service:print:A2=yes with a fixed text, namely 'This shop can print on papers of size A2' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationary.*)$|service:print=yes)",
+      "description": "Layer 'Shop' shows service:print:A2=yes with a fixed text, namely 'This shop can print on papers of size A2' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
       "value": "yes"
     },
     {
       "key": "service:print:A1",
-      "description": "Layer 'Shop' shows service:print:A1=yes with a fixed text, namely 'This shop can print on papers of size A1' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationary.*)$|service:print=yes)",
+      "description": "Layer 'Shop' shows service:print:A1=yes with a fixed text, namely 'This shop can print on papers of size A1' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
       "value": "yes"
     },
     {
       "key": "service:print:A0",
-      "description": "Layer 'Shop' shows service:print:A0=yes with a fixed text, namely 'This shop can print on papers of size A0' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationary.*)$|service:print=yes)",
+      "description": "Layer 'Shop' shows service:print:A0=yes with a fixed text, namely 'This shop can print on papers of size A0' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if shop~^(.*copyshop.*)$|shop~^(.*stationery.*)$|service:print=yes)",
       "value": "yes"
     },
     {
@@ -11564,7 +11893,7 @@
     },
     {
       "key": "shelter",
-      "description": "Layer 'Transit Stops' shows shelter=no with a fixed text, namely 'This stop does not have a shelter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Transit Stops' shows shelter=no with a fixed text, namely 'This stop does <b>not</b> have a shelter' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
@@ -11579,7 +11908,7 @@
     },
     {
       "key": "bench",
-      "description": "Layer 'Transit Stops' shows bench=no with a fixed text, namely 'This stop does not have a bench' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Transit Stops' shows bench=no with a fixed text, namely 'This stop does <b>not</b> have a bench' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
@@ -11594,7 +11923,7 @@
     },
     {
       "key": "bin",
-      "description": "Layer 'Transit Stops' shows bin=no with a fixed text, namely 'This stop does not have a bin' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Transit Stops' shows bin=no with a fixed text, namely 'This stop does <b>not</b> have a bin' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
@@ -11629,7 +11958,7 @@
     },
     {
       "key": "tactile_paving",
-      "description": "Layer 'Transit Stops' shows tactile_paving=no with a fixed text, namely 'This stop does not have tactile paving' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Transit Stops' shows tactile_paving=no with a fixed text, namely 'This stop does <b>not</b> have tactile paving' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
@@ -11639,7 +11968,7 @@
     },
     {
       "key": "lit",
-      "description": "Layer 'Transit Stops' shows lit=no with a fixed text, namely 'This stop is not lit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Transit Stops' shows lit=no with a fixed text, namely 'This stop is <b>not</b> lit' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
@@ -11669,7 +11998,7 @@
     },
     {
       "key": "departures_board",
-      "description": "Layer 'Transit Stops' shows departures_board=no with a fixed text, namely 'This stop does not have a departures board' (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Transit Stops' shows departures_board=no with a fixed text, namely 'This stop does <b>not</b> have a departures board' (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "no"
     },
     {
@@ -11950,6 +12279,32 @@
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Waste Disposal Bins showing features with this tag",
       "value": "waste_disposal"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Waste Disposal Bins allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Waste Disposal Bins allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Waste Disposal Bins allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Waste Disposal Bins allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Waste Disposal Bins' shows amenity=waste_disposal with a fixed text, namely 'This is a medium to large bin for disposal of (household) waste' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "waste_disposal"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Waste Disposal Bins' shows amenity=recycling with a fixed text, namely 'This is actually a recycling container' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "recycling"
     },
     {
       "key": "access",

@@ -32,7 +32,8 @@
         "en": "What is the name of this doctors place?",
         "de": "Wie heißt diese Arztpraxis?",
         "nl": "Wat is de naam van deze dokterspraktijk?",
-        "fr": "Comment s'appelle ce cabinet médical ?"
+        "fr": "Comment s'appelle ce cabinet médical ?",
+        "ca": "Com es diu aquesta consulta mèdica?"
       },
       "render": {
         "en": "This doctors place is called {name}",

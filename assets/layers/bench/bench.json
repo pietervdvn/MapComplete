@@ -130,7 +130,8 @@
         "pt_BR": "Este assento tem um escosto?",
         "pt": "Este assento tem um escosto?",
         "da": "Har denne bænk et ryglæn?",
-        "cs": "Má tato lavička opěradlo?"
+        "cs": "Má tato lavička opěradlo?",
+        "ca": "Aquest banc té respatller?"
       },
       "id": "bench-backrest",
       "labels": [
@@ -178,7 +179,8 @@
         "pt_BR": "Quantos assentos este banco tem?",
         "pt": "Quantos assentos este banco tem?",
         "da": "Hvor mange pladser har denne bænk?",
-        "cs": "Kolik má tato lavice míst k sezení?"
+        "cs": "Kolik má tato lavice míst k sezení?",
+        "ca": "Quants seients té aquest banc?"
       },
       "id": "bench-seats",
       "labels": [
@@ -191,7 +193,9 @@
             "en": "This bench does not have separated seats",
             "nl": "Deze bank is niet ingedeeld in aparte zitplaatsen",
             "de": "Diese Bank hat keine getrennten Sitze",
-            "fr": "Ce banc n'a pas de sièges séparés"
+            "fr": "Ce banc n'a pas de sièges séparés",
+            "es": "Este banco no tiene asientos separados",
+            "ca": "Aquest banc no té els seients separats"
           }
         }
       ]
@@ -382,7 +386,8 @@
         "pt": "De que é feito o banco (assento)?",
         "es": "¿De que está hecho el banco (asiento)?",
         "da": "Hvad er bænken (sædet) lavet af?",
-        "cs": "Z čeho je vyrobena lavice (sedadlo)?"
+        "cs": "Z čeho je vyrobena lavice (sedadlo)?",
+        "ca": "De què està fent el banc (seient)?"
       },
       "id": "bench-material",
       "labels": [
@@ -403,9 +408,10 @@
         "pt_BR": "Em que direção você olha quando está sentado no banco?",
         "pl": "W jakim kierunku patrzysz siedząc na ławce?",
         "pt": "Em que direção olha quando está sentado no banco?",
-        "es": "¿En qué dirección se mira al sentarse en el banco?",
+        "es": "¿En qué dirección miras sentado en el banco?",
         "da": "I hvilken retning kigger du, når du sidder på bænken?",
-        "cs": "Kterým směrem se díváte, když sedíte na lavičce?"
+        "cs": "Kterým směrem se díváte, když sedíte na lavičce?",
+        "ca": "En quina direcció mires asseguts al banc?"
       },
       "render": {
         "en": "When sitting on the bench, one looks towards {direction}°.",
@@ -420,9 +426,10 @@
         "pl": "Siedząc na ławce, patrzy się w kierunku {direction}°.",
         "pt_BR": "Ao sentar-se no banco, olha-se para {direction} °.",
         "pt": "Ao sentar-se no banco, olha-se para {direction} °.",
-        "es": "¿Cuando está sentado en el banco, uno mira hacia {direction}º.",
+        "es": "Cuando se está sentado en el banco, se mira hacia a {direction}º.",
         "da": "Når man sidder på bænken, kigger man i retningen {direction}°.",
-        "cs": "Když sedíte na lavičce, díváte se směrem v úhlu {direction}°."
+        "cs": "Když sedíte na lavičce, díváte se směrem v úhlu {direction}°.",
+        "ca": "Quan s'està assegut al banc, es mira cap a {direction}º."
       },
       "freeform": {
         "key": "direction",
@@ -471,7 +478,8 @@
         "pt": "Qual a cor dessa bancada?",
         "es": "¿De qué color es este banco?",
         "da": "Hvilken farve har denne bænk?",
-        "cs": "Jakou barvu má tato lavička?"
+        "cs": "Jakou barvu má tato lavička?",
+        "ca": "De quin color és aquest banc?"
       },
       "freeform": {
         "key": "colour",
@@ -691,7 +699,8 @@
         "pt": "Quando esta bancada foi pesquisada pela última vez?",
         "es": "¿Cuándo fue la última vez que se inspeccionó este banco?",
         "da": "Hvornår blev denne bænk sidst kortlagt?",
-        "cs": "Kdy byla tato lavička naposledy kontrolována?"
+        "cs": "Kdy byla tato lavička naposledy kontrolována?",
+        "ca": "Quan va ser l'últim cop que s'ha inspeccionat aquest banc?"
       },
       "render": {
         "en": "This bench was last surveyed on {survey:date}",
@@ -707,7 +716,8 @@
         "pt": "Esta bancada foi pesquisada pela última vez em {survey:date}",
         "es": "Este banco se inspeccionó por última vez el {survey:date}",
         "da": "Denne bænk blev sidst kortlagt den {survey:date}",
-        "cs": "Tato lavička byla naposledy zkontrolována dne {survey:date}"
+        "cs": "Tato lavička byla naposledy zkontrolována dne {survey:date}",
+        "ca": "Aquest banc s'ha inspeccionat per últim com el {survey:date}"
       },
       "freeform": {
         "key": "survey:date",
@@ -720,7 +730,8 @@
             "en": "Surveyed today!",
             "nl": "Vandaag nagekeken!",
             "de": "Heute geprüft!",
-            "fr": "Vérifié sur le terrain aujourd'hui !"
+            "fr": "Vérifié sur le terrain aujourd'hui !",
+            "ca": "Inspeccionat avui!"
           }
         }
       ],
@@ -741,10 +752,10 @@
         "fr": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>"
       },
       "question": {
-        "en": "Does this bench have an inscription?<div class='subtle text-lg'>E.g. on a mounted plaque, in the backrest, ...</div>",
-        "nl": "Heeft deze bank een inscriptie?<div class='subtle text-lg'>Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...</div>",
-        "de": "Hat diese Bank eine Inschrift? <div class='subtle text-lg'>Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ... </div>",
-        "fr": "Est-ce que ce banc possède une inscription ?<div class='subtle text-lg'>Par exemple, sur une plaque accrochée, sur le dossier, ...</div>"
+        "en": "Does this bench have an inscription?",
+        "nl": "Heeft deze bank een inscriptie?",
+        "de": "Hat diese Bank eine Inschrift? ",
+        "fr": "Est-ce que ce banc possède une inscription ?"
       },
       "freeform": {
         "key": "inscription",
@@ -760,7 +771,8 @@
             "en": "This bench does not have an inscription",
             "nl": "Deze bank heeft geen inscriptie",
             "de": "Diese Bank hat keine Inschrift",
-            "fr": "Ce banc n'a pas d'inscription"
+            "fr": "Ce banc n'a pas d'inscription",
+            "ca": "Aquest banc no té cap inscripció"
           },
           "addExtraTags": [
             "inscription="
@@ -772,18 +784,27 @@
             "en": "This bench does <span class='subtle'>(probably)</span> not have an inscription",
             "nl": "Deze bank heeft <span class='subtle'>(waarschijnlijk)</span> geen inscriptie",
             "de": "Diese Bank hat <span class='subtle'>(wahrscheinlich)</span> keine Inschrift",
-            "fr": "Ce banc n'a<span class='subtle'>(probablement)</span> pas d'inscription"
+            "fr": "Ce banc n'a<span class='subtle'>(probablement)</span> pas d'inscription",
+            "es": "Este banco <span class='subtle'>(probablemente)</span> no tiene inscripción",
+            "ca": "Aquest banc <span class='subtle'>(probablement)</span> no té cap inscripció"
           },
           "hideInAnswer": true
         }
-      ]
+      ],
+      "questionHint": {
+        "en": "E.g. on a mounted plaque, in the backrest, ...",
+        "nl": "Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...",
+        "de": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ... ",
+        "fr": "Par exemple, sur une plaque accrochée, sur le dossier, ..."
+      }
     },
     {
       "id": "bench-artwork",
       "question": {
-        "en": "Does this bench have an artistic element?<div class='subtle text-lg'>E.g. it has an integrated painting, statue or other non-trivial, creative work</div>",
-        "nl": "Heeft deze bank een geïntegreerd kunstwerk?<div class='subtle text-lg'>Bijvoorbeeld een standbeeld, schildering of ander, niet-triviaal kunstwerk</div>",
-        "de": "Hat diese Bank ein künstlerisches Element? <div class='subtle text-lg'>Z.B. hat es ein integriertes Gemälde, eine Statue oder eine andere nicht triviale, kreative Arbeit</div>"
+        "en": "Does this bench have an artistic element?",
+        "nl": "Heeft deze bank een geïntegreerd kunstwerk?",
+        "de": "Hat diese Bank ein künstlerisches Element? ",
+        "ca": "Aquest banc té algun element artístic?"
       },
       "mappings": [
         {
@@ -792,7 +813,8 @@
             "en": "This bench has an integrated artwork",
             "nl": "Deze bank heeft een geïntegreerd kunstwerk",
             "de": "Diese Bank hat ein integriertes Kunstwerk",
-            "fr": "Une oeuvre d'art est intégrée à ce banc"
+            "fr": "Une oeuvre d'art est intégrée à ce banc",
+            "ca": "Aquest banc té integrada una obra d'art"
           }
         },
         {
@@ -801,10 +823,18 @@
             "en": "This bench does not have an integrated artwork",
             "nl": "Deze bank heeft geen geïntegreerd kunstwerk",
             "de": "Diese Bank hat kein integriertes Kunstwerk",
-            "fr": "Ce banc n'a pas d'oeuvre d'art intégrée"
+            "fr": "Ce banc n'a pas d'oeuvre d'art intégrée",
+            "es": "Este banco no tiene una obra de arte integrada",
+            "ca": "Aquest banc no té una obra d'art integrada"
           }
         }
-      ]
+      ],
+      "questionHint": {
+        "en": "E.g. it has an integrated painting, statue or other non-trivial, creative work",
+        "nl": "Bijvoorbeeld een standbeeld, schildering of ander, niet-triviaal kunstwerk",
+        "de": "Z.B. hat es ein integriertes Gemälde, eine Statue oder eine andere nicht triviale, kreative Arbeit",
+        "ca": "P.e. té una pintura integrada, estatua o altres treballs no trivials i creatius"
+      }
     },
     {
       "id": "bench-memorial",
@@ -823,7 +853,8 @@
         "en": "Does this bench act as memorial for someone or something?",
         "nl": "Is deze bank een gedenkteken voor iemand of iets?",
         "de": "Dient diese Bank als Denkmal für jemanden oder etwas?",
-        "fr": "Ce banc sert-il de mémorial pour quelqu'un ou quelque chose ?"
+        "fr": "Ce banc sert-il de mémorial pour quelqu'un ou quelque chose ?",
+        "ca": "Aquest banc actua com a memorial per a algú o algo?"
       },
       "mappings": [
         {
@@ -942,7 +973,8 @@
             "en": "is a memorial",
             "nl": "is een gedenkteken",
             "de": "ist ein Denkmal",
-            "fr": "est un mémorial"
+            "fr": "est un mémorial",
+            "ca": "és un memorial"
           }
         }
       ]
@@ -955,7 +987,8 @@
             "en": "With and without backrest",
             "nl": "Met en zonder rugleuning",
             "de": "Mit und ohne Rückenlehne",
-            "fr": "Avec et sans dossier"
+            "fr": "Avec et sans dossier",
+            "ca": "Amb i sense respatller"
           }
         },
         {
@@ -963,8 +996,9 @@
           "question": {
             "en": "Has a backrest",
             "nl": "Heeft een rugleuning",
-            "de": "Hat eine Rückenlehne",
-            "fr": "A un dossier"
+            "de": "Mit Rückenlehne",
+            "fr": "A un dossier",
+            "ca": "Té un respatller"
           }
         },
         {
@@ -972,8 +1006,9 @@
           "question": {
             "en": "Has no backrest",
             "nl": "Heeft geen rugleuning",
-            "de": "Hat keine Rückenlehne",
-            "fr": "N'a pas de dossier"
+            "de": "Ohne Rückenlehne",
+            "fr": "N'a pas de dossier",
+            "ca": "No té respatller"
           }
         }
       ]

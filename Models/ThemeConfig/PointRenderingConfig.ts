@@ -1,18 +1,16 @@
 import PointRenderingConfigJson from "./Json/PointRenderingConfigJson"
 import TagRenderingConfig from "./TagRenderingConfig"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
-import SharedTagRenderings from "../../Customizations/SharedTagRenderings"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
 import { Utils } from "../../Utils"
 import Svg from "../../Svg"
 import WithContextLoader from "./WithContextLoader"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import BaseUIElement from "../../UI/BaseUIElement"
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Img from "../../UI/Base/Img"
 import Combine from "../../UI/Base/Combine"
 import { VariableUiElement } from "../../UI/Base/VariableUIElement"
-import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 
 export default class PointRenderingConfig extends WithContextLoader {
     private static readonly allowed_location_codes = new Set<string>([
@@ -36,6 +34,10 @@ export default class PointRenderingConfig extends WithContextLoader {
 
     constructor(json: PointRenderingConfigJson, context: string) {
         super(json, context)
+
+        if (json === undefined || json === null) {
+            throw "Invalid PointRenderingConfig: undefined or null"
+        }
 
         if (typeof json.location === "string") {
             json.location = [json.location]
@@ -69,18 +71,9 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
         this.cssClasses = this.tr("cssClasses", undefined)
         this.iconBadges = (json.iconBadges ?? []).map((overlay, i) => {
-            let tr: TagRenderingConfig
-            if (
-                typeof overlay.then === "string" &&
-                SharedTagRenderings.SharedIcons.get(overlay.then) !== undefined
-            ) {
-                tr = SharedTagRenderings.SharedIcons.get(overlay.then)
-            } else {
-                tr = new TagRenderingConfig(overlay.then, `iconBadges.${i}`)
-            }
             return {
                 if: TagUtils.Tag(overlay.if),
-                then: tr,
+                then: new TagRenderingConfig(overlay.then, `iconBadges.${i}`),
             }
         })
 
@@ -171,7 +164,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation, false, defaultPin)
     }
 
-    public GetSimpleIcon(tags: UIEventSource<any>): BaseUIElement {
+    public GetSimpleIcon(tags: Store<any>): BaseUIElement {
         const self = this
         if (this.icon === undefined) {
             return undefined
@@ -182,7 +175,7 @@ export default class PointRenderingConfig extends WithContextLoader {
     }
 
     public GenerateLeafletStyle(
-        tags: UIEventSource<any>,
+        tags: Store<any>,
         clickable: boolean,
         options?: {
             noSize?: false | boolean
@@ -279,7 +272,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
     }
 
-    private GetBadges(tags: UIEventSource<any>): BaseUIElement {
+    private GetBadges(tags: Store<any>): BaseUIElement {
         if (this.iconBadges.length === 0) {
             return undefined
         }
@@ -311,7 +304,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         ).SetClass("absolute bottom-0 right-1/3 h-1/2 w-0")
     }
 
-    private GetLabel(tags: UIEventSource<any>): BaseUIElement {
+    private GetLabel(tags: Store<any>): BaseUIElement {
         if (this.label === undefined) {
             return undefined
         }

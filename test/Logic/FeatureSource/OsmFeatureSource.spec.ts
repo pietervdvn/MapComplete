@@ -1,4 +1,3 @@
-import { describe } from "mocha"
 import OsmFeatureSource from "../../../Logic/FeatureSource/TiledFeatureSource/OsmFeatureSource"
 import { UIEventSource } from "../../../Logic/UIEventSource"
 import ScriptUtils from "../../../scripts/ScriptUtils"
@@ -8,7 +7,7 @@ import { readFileSync } from "fs"
 import { Utils } from "../../../Utils"
 import { Tag } from "../../../Logic/Tags/Tag"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
-import { expect } from "chai"
+import { describe, expect, it } from "vitest"
 
 const expected = {
     type: "Feature",
@@ -92,7 +91,7 @@ function test(done: () => void) {
         handleTile: (tile) => {
             fetchedTile = tile
             const data = tile.features.data[0].feature
-            expect(data.properties).deep.eq({
+            expect(data.properties).toEqual({
                 id: "relation/5759328",
                 timestamp: "2022-06-10T00:46:55Z",
                 version: 6,
@@ -107,8 +106,8 @@ function test(done: () => void) {
                 website: "http://ktahalle.be/",
                 _backend: "https://osm.org",
             })
-            expect(data.geometry.type).eq("MultiPolygon")
-            expect(data).deep.eq(expected)
+            expect(data.geometry.type).toBe("MultiPolygon")
+            expect(data).toEqual(expected)
             done()
         },
         isActive: new UIEventSource<boolean>(true),

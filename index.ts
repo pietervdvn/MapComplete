@@ -60,7 +60,7 @@ new Combine([
         .SetClass("link-underline small")
         .onClick(() => {
             localStorage.clear()
-            window.location.reload(true)
+            window.location.reload()
         }),
 ]).AttachTo("centermessage") // Add an initialization and reset button if something goes wrong
 

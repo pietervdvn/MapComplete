@@ -1,6 +1,6 @@
 # Analysis a reviews on Mangrove.reviews
 
-MapComplete has - for some thematic maps - the ability to leave a review on a entity.
+MapComplete has - for some thematic maps - the ability to leave a review on an entity with Mangrove.Reviews..
 Up till now, I had no idea how much this feature was used. However, due to technical reasons I had another look to the reviews module and discovered the ['download all'-option](https://api.mangrove.reviews/reviews) on [mangrove.reviews](https://mangrove.reviews)
 
 ## Mangrove Clients

@@ -1,9 +1,8 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import { Utils } from "../../Utils"
 import { existsSync, mkdirSync, readFileSync, rmdirSync, unlinkSync } from "fs"
 import ScriptUtils from "../../scripts/ScriptUtils"
 import { main } from "../../scripts/generateCache"
+import { describe, expect, it } from "vitest"
 
 function initDownloads(query: string) {
     const d = {
@@ -7609,12 +7608,12 @@ describe("GenerateCache", () => {
         ])
         await ScriptUtils.sleep(250)
         const birdhides = JSON.parse(
-            readFileSync(dir + "np-cache/natuurpunt_birdhide_12_2085_1368.geojson", { encoding: "utf8" })
+            readFileSync(dir + "np-cache/natuurpunt_birdhide_12_2085_1368.geojson", {
+                encoding: "utf8",
+            })
         )
-        expect(birdhides.features.length).deep.equal(5)
-        expect(
-            birdhides.features.some((f) => f.properties.id === "node/5158056232"),
-            "Didn't find birdhide node/5158056232 "
-        ).true
+        expect(birdhides.features.length).toEqual(5)
+        // "Didn't find birdhide node/5158056232 "
+        expect(birdhides.features.some((f) => f.properties.id === "node/5158056232")).toBe(true)
     })
 })

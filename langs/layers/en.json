@@ -430,7 +430,8 @@
                         "then": "This bench does not have an integrated artwork"
                     }
                 },
-                "question": "Does this bench have an artistic element?<div class='subtle text-lg'>E.g. it has an integrated painting, statue or other non-trivial, creative work</div>"
+                "question": "Does this bench have an artistic element?",
+                "questionHint": "E.g. it has an integrated painting, statue or other non-trivial, creative work"
             },
             "bench-backrest": {
                 "mappings": {
@@ -486,7 +487,8 @@
                         "then": "This bench does <span class='subtle'>(probably)</span> not have an inscription"
                     }
                 },
-                "question": "Does this bench have an inscription?<div class='subtle text-lg'>E.g. on a mounted plaque, in the backrest, ...</div>",
+                "question": "Does this bench have an inscription?",
+                "questionHint": "E.g. on a mounted plaque, in the backrest, ...",
                 "render": "This bench does have the following inscription:<br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {
@@ -2623,7 +2625,8 @@
                         "then": "There are {climbing:traditional} traditional climbing routes"
                     }
                 },
-                "question": "Is traditional climbing possible here (using own gear e.g. chocks)?"
+                "question": "Is traditional climbing possible here?",
+                "questionHint": "Using your own gear, e.g. chocks"
             },
             "website": {
                 "question": "Is there a (unofficial) website with more informations (e.g. topos)?"
@@ -2854,6 +2857,147 @@
                 }
             },
             "render": "Climbing route"
+        }
+    },
+    "clock": {
+        "description": "Layer with public clocks",
+        "name": "Clocks",
+        "presets": {
+            "0": {
+                "description": "A publicly visible clock",
+                "title": "a clock"
+            },
+            "1": {
+                "description": "A publicly visible clock mounted on a wall",
+                "title": "a wall-mounted clock"
+            }
+        },
+        "tagRenderings": {
+            "barometer": {
+                "mappings": {
+                    "0": {
+                        "then": "This clock also displays the air pressure"
+                    },
+                    "1": {
+                        "then": "This clock does not display the air pressure"
+                    },
+                    "2": {
+                        "then": "This clock does probably not display the air pressure"
+                    }
+                },
+                "question": "Does this clock also display the air pressure?"
+            },
+            "date": {
+                "mappings": {
+                    "0": {
+                        "then": "This clock also displays the date"
+                    },
+                    "1": {
+                        "then": "This clock does not display the date"
+                    },
+                    "2": {
+                        "then": "This clock does probably not display the date"
+                    }
+                },
+                "question": "Does this clock also display the date?"
+            },
+            "display": {
+                "mappings": {
+                    "0": {
+                        "then": "This clock displays the time with hands"
+                    },
+                    "1": {
+                        "then": "This clock displays the time with digits"
+                    },
+                    "2": {
+                        "then": "This clock displays the time with a sundial"
+                    },
+                    "3": {
+                        "then": "This clock displays the time in a non-standard way, e.g using binary, water or something else"
+                    }
+                },
+                "question": "How does this clock display the time?"
+            },
+            "faces": {
+                "freeform": {
+                    "placeholder": "Number of faces"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This clock has one face"
+                    },
+                    "1": {
+                        "then": "This clock has two faces"
+                    },
+                    "2": {
+                        "then": "This clock has four faces"
+                    }
+                },
+                "question": "How many faces does this clock have?",
+                "render": "This clock has {faces} faces"
+            },
+            "hygrometer": {
+                "mappings": {
+                    "0": {
+                        "then": "This clock also displays the humidity"
+                    },
+                    "1": {
+                        "then": "This clock does not display the humidity"
+                    },
+                    "2": {
+                        "then": "This clock does probably not display the humidity"
+                    }
+                },
+                "question": "Does this clock also display the humidity?"
+            },
+            "support": {
+                "mappings": {
+                    "0": {
+                        "then": "This clock is mounted on a pole"
+                    },
+                    "1": {
+                        "then": "This clock is mounted on a wall"
+                    },
+                    "2": {
+                        "then": "This clock is part of a billboard"
+                    },
+                    "3": {
+                        "then": "This clock is on the ground"
+                    }
+                },
+                "question": "In what way is the clock mounted?"
+            },
+            "thermometer": {
+                "mappings": {
+                    "0": {
+                        "then": "This clock also displays the temperature"
+                    },
+                    "1": {
+                        "then": "This clock does not display the temperature"
+                    },
+                    "2": {
+                        "then": "This clock does probably not display the temperature"
+                    }
+                },
+                "question": "Does this clock also display the temperature?"
+            },
+            "visibility": {
+                "mappings": {
+                    "0": {
+                        "then": "This clock is visible from about 5 meters away (small wall-mounted clock)"
+                    },
+                    "1": {
+                        "then": "This clock is visible from about 20 meters away (medium size billboard clock)"
+                    },
+                    "2": {
+                        "then": "This clock is visible from more than 20 meters away (church clock)"
+                    }
+                },
+                "question": "How visible is this clock?"
+            }
+        },
+        "title": {
+            "render": "Clock"
         }
     },
     "crossings": {
@@ -3377,7 +3521,8 @@
                 "question": "Is this street lit?"
             },
             "width:carriageway": {
-                "question": "What is the carriage width of this road (in meters)?<br/><span class='subtle'>This is measured curb to curb and thus includes the width of parallell parking lanes</span>",
+                "question": "What is the carriage width of this road (in meters)?",
+                "questionHint": "This is measured curb to curb and thus includes the width of parallell parking lanes",
                 "render": "The carriage width of this road is <strong>{width:carriageway}m</strong>"
             }
         },
@@ -3792,7 +3937,8 @@
                         "then": "This is an entrance without a physical door"
                     }
                 },
-                "question": "What is the type of this door?<br/><span class='subtle'>Wether or not the door is automated is asked in the next question</span>"
+                "question": "What is the type of this door?",
+                "questionHint": "Wether or not the door is automated is asked in the next question"
             },
             "Entrance type": {
                 "mappings": {
@@ -3892,7 +4038,7 @@
     },
     "etymology": {
         "description": "All objects which have an etymology known",
-        "name": "Has etymolgy",
+        "name": "Has etymology",
         "tagRenderings": {
             "etymology_multi_apply": {
                 "render": "{multi_apply(_same_name_ids, name:etymology:wikidata;name:etymology, Auto-applying data on all segments with the same name, true)}"
@@ -3903,7 +4049,8 @@
                         "then": "The origin of this name is unknown in all literature"
                     }
                 },
-                "question": "What is this object named after?<br/><span class='subtle'>This might be written on the street name sign</span>",
+                "question": "What is this object named after?",
+                "questionHint": "This might be written on the street name sign",
                 "render": "Named after {name:etymology}"
             },
             "street-name-sign-image": {
@@ -4456,7 +4603,7 @@
                         "then": "You <b>must</b> bring your own container to order here."
                     }
                 },
-                "question": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?<br/>"
+                "question": "If you bring your own container (such as a cooking pot and small pots), is it used to package your order?"
             },
             "friture-vegan": {
                 "mappings": {
@@ -4555,7 +4702,8 @@
                         "then": "No name is marked on the bike"
                     }
                 },
-                "question": "Whom is remembered by this ghost bike?<span class='question-subtext'><br/>Please respect privacy - only fill out the name if it is widely published or marked on the cycle. Opt to leave out the family name.</span>",
+                "question": "Whom is remembered by this ghost bike?",
+                "questionHint": "Please respect privacy - only fill out the name if it is widely published or marked on the cycle. Opt to leave out the family name.",
                 "render": "In remembrance of {name}"
             },
             "ghost_bike-source": {
@@ -4699,6 +4847,18 @@
         "description": "A layer showing hospital grounds",
         "name": "Hospitals",
         "tagRenderings": {
+            "inpatient": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a clinic - patients can not stay overnight"
+                    },
+                    "1": {
+                        "then": "This is a hospital - patients can be admitted here for multiple days"
+                    }
+                },
+                "question": "Does this facility admit inpatients?",
+                "questionHint": "An inpatient is a patient which stays for multiple days in the facility"
+            },
             "name": {
                 "question": "What is the name of this hospital?",
                 "render": "This hospital is called {name}"
@@ -4747,12 +4907,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "The hydrant color is unknown."
-                    },
-                    "1": {
                         "then": "The hydrant color is yellow."
                     },
-                    "2": {
+                    "1": {
                         "then": "The hydrant color is red."
                     }
                 },
@@ -4791,6 +4948,13 @@
                 "question": "What is the pipe diameter of this hydrant?",
                 "render": "Pipe diameter: {canonical(fire_hydrant:diameter)}"
             },
+            "hydrant-number-of-couplings": {
+                "freeform": {
+                    "placeholder": "Number of couplings"
+                },
+                "question": "How many couplings does this fire hydrant have?",
+                "render": "Number of couplings: {couplings}"
+            },
             "hydrant-state": {
                 "mappings": {
                     "0": {
@@ -4808,18 +4972,15 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "The hydrant type is unknown."
-                    },
-                    "1": {
                         "then": "Pillar type."
                     },
-                    "2": {
+                    "1": {
                         "then": "Pipe type."
                     },
-                    "3": {
+                    "2": {
                         "then": "Wall type."
                     },
-                    "4": {
+                    "3": {
                         "then": "Underground type."
                     }
                 },
@@ -4840,6 +5001,9 @@
                 }
             }
         }
+    },
+    "icons": {
+        "description": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI"
     },
     "indoors": {
         "description": "Basic indoor mapping: shows room outlines",
@@ -5137,6 +5301,27 @@
         },
         "name": "MapRoulette Tasks",
         "tagRenderings": {
+            "mark_duplicate": {
+                "render": {
+                    "special": {
+                        "message": "Mark as not found or false positive"
+                    }
+                }
+            },
+            "mark_fixed": {
+                "render": {
+                    "special": {
+                        "message": "Mark as fixed"
+                    }
+                }
+            },
+            "mark_too_hard": {
+                "render": {
+                    "special": {
+                        "message": "Mark as too hard"
+                    }
+                }
+            },
             "status": {
                 "mappings": {
                     "0": {
@@ -5171,7 +5356,7 @@
         }
     },
     "maproulette_challenge": {
-        "description": "Layer showing tasks of a MapRoulette challenge",
+        "description": "Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to the documentation on how to do this.",
         "filter": {
             "0": {
                 "options": {
@@ -5335,7 +5520,8 @@
                 "render": "Accessin this nature reserve: {access:description}"
             },
             "Curator": {
-                "question": "Whom is the curator of this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a name if this is widely published",
+                "question": "Whom is the curator of this nature reserve?",
+                "questionHint": "Respect privacy - only fill out a name if this is widely published",
                 "render": "{curator} is the curator of this nature reserve"
             },
             "Dogs?": {
@@ -5357,7 +5543,8 @@
                 "render": "Extra info: <i>{description:0}</i>"
             },
             "Email": {
-                "question": "What email adress can one send to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal email address if this is widely published",
+                "question": "What email adress can one send to with questions and problems with this nature reserve?",
+                "questionHint": "Respect privacy - only fill out a personal email address if this is widely published",
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
             "Name tag": {
@@ -5391,7 +5578,8 @@
                 "render": "Surface area: {_surface:ha}Ha"
             },
             "phone": {
-                "question": "What phone number can one call to with questions and problems with this nature reserve?<br/><span class='subtle'>Respect privacy - only fill out a personal phone number address if this is widely published"
+                "question": "What phone number can one call to with questions and problems with this nature reserve?",
+                "questionHint": "Respect privacy - only fill out a personal phone number address if this is widely published"
             }
         },
         "title": {
@@ -5862,6 +6050,32 @@
             "render": "Parking Space"
         }
     },
+    "parking_ticket_machine": {
+        "description": "Layer with parking ticket machines to pay for parking.",
+        "name": "Parking Ticket Machines",
+        "presets": {
+            "0": {
+                "title": "a parking ticket machine"
+            }
+        },
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Reference number"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "This parking ticket machine has no reference number"
+                    }
+                },
+                "question": "What is the reference number of this parking ticket machine?",
+                "render": "This parking ticket machine has the reference number {ref}"
+            }
+        },
+        "title": {
+            "render": "Parking Ticket Machine"
+        }
+    },
     "pedestrian_path": {
         "description": "Pedestrian footpaths, especially used for indoor navigation and snapping entrances to this layer",
         "name": "Pedestrian paths"
@@ -6091,7 +6305,8 @@
                         "then": "The surface is <b>paved</b>"
                     }
                 },
-                "question": "Which is the surface of this playground?<br/><i>If there are multiple, select the most occuring one</i>",
+                "question": "Which is the surface of this playground?",
+                "questionHint": "If there are multiple, select the most occuring one",
                 "render": "The surface is <b>{surface}</b>"
             }
         },
@@ -6415,7 +6630,8 @@
         },
         "tagRenderings": {
             "desk-height": {
-                "question": "What is the height of the reception desk? <div class='subtle'>This is measured from the floor to the lowest usable part of the desk</div>",
+                "question": "What is the height of the reception desk? ",
+                "questionHint": "This is measured from the floor to the lowest usable part of the desk",
                 "render": "The height of the desk is <b>{canonical(desk:height)}</b>"
             }
         },
@@ -6501,6 +6717,13 @@
                         "question": "Recycling of residual waste"
                     }
                 }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Only public access"
+                    }
+                }
             }
         },
         "name": "Recycling",
@@ -6513,6 +6736,21 @@
             }
         },
         "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Everyone can use this recycling facility"
+                    },
+                    "1": {
+                        "then": "Only residents can use this recycling facility"
+                    },
+                    "2": {
+                        "then": "This recycling facility is only for private use"
+                    }
+                },
+                "question": "Who can use this recycling facility?",
+                "render": "This recycling facility can be used by {access}"
+            },
             "container-location": {
                 "mappings": {
                     "0": {
@@ -6748,7 +6986,8 @@
                         "then": "This is a school for students with special needs"
                     }
                 },
-                "question": "Does this school target students with a special need? Which structural facilities does this school have?<div class='subtle'>Ad-hoc ",
+                "question": "Does this school target students with a special need? Which structural facilities does this school have?",
+                "questionHint": "Ad-hoc measures are not enough to count as a special-needs school",
                 "render": "This school has facilities for students with {school:for}"
             }
         },
@@ -6998,6 +7237,34 @@
     },
     "sport_pitch": {
         "description": "A sport pitch",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Publicly accessible"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "All sports"
+                    },
+                    "1": {
+                        "question": "Basketball fields"
+                    },
+                    "2": {
+                        "question": "Soccer fields"
+                    },
+                    "3": {
+                        "question": "Ping-pong tables"
+                    },
+                    "4": {
+                        "question": "Tennis fields"
+                    }
+                }
+            }
+        },
         "name": "Sport pitches",
         "presets": {
             "0": {
@@ -7785,13 +8052,6 @@
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Has a changing table"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
@@ -7991,7 +8251,7 @@
                         "then": "This stop has a bench"
                     },
                     "1": {
-                        "then": "This stop does not have a bench"
+                        "then": "This stop does <b>not</b> have a bench"
                     },
                     "2": {
                         "then": "This stop has a bench, that's separately mapped"
@@ -8005,7 +8265,7 @@
                         "then": "This stop has a bin"
                     },
                     "1": {
-                        "then": "This stop does not have a bin"
+                        "then": "This stop does <b>not</b> have a bin"
                     },
                     "2": {
                         "then": "This stop has a bin, that's separately mapped"
@@ -8034,7 +8294,7 @@
                         "then": "This stop has a timetable containing just the interval between departures"
                     },
                     "5": {
-                        "then": "This stop does not have a departures board"
+                        "then": "This stop does <b>not</b> have a departures board"
                     }
                 }
             },
@@ -8044,7 +8304,7 @@
                         "then": "This stop is lit"
                     },
                     "1": {
-                        "then": "This stop is not lit"
+                        "then": "This stop is <b>not</b> lit"
                     }
                 },
                 "question": "Is this stop lit?"
@@ -8055,7 +8315,7 @@
                         "then": "This stop has a shelter"
                     },
                     "1": {
-                        "then": "This stop does not have a shelter"
+                        "then": "This stop does <b>not</b> have a shelter"
                     },
                     "2": {
                         "then": "This stop has a shelter, that's separately mapped"
@@ -8081,7 +8341,7 @@
                         "then": "This stop has tactile paving"
                     },
                     "1": {
-                        "then": "This stop does not have tactile paving"
+                        "then": "This stop does <b>not</b> have tactile paving"
                     }
                 },
                 "question": "Does this stop have tactile paving?"
@@ -8115,7 +8375,8 @@
         },
         "tagRenderings": {
             "circumference": {
-                "question": "What is the circumference of the tree trunk?<p class='subtle'>This is measured at a height of 1.30m</p>",
+                "question": "What is the circumference of the tree trunk?",
+                "questionHint": "This is measured at a height of 1.30m",
                 "render": "The tree trunk has a circumference of {circumference} meter"
             },
             "height": {
@@ -8224,10 +8485,28 @@
     "usersettings": {
         "description": "A special layer which is not meant to be shown on a map, but which is used to set user settings",
         "tagRenderings": {
+            "all-questions-at-once": {
+                "mappings": {
+                    "0": {
+                        "then": "Show all questions in the infobox together"
+                    },
+                    "1": {
+                        "then": "Show questions one-by-one"
+                    }
+                },
+                "question": "Should questions for unknown data fields appear one-by-one or together?"
+            },
             "contributor-thanks": {
                 "mappings": {
                     "0": {
                         "then": "You have contributed code to MapComplete with {_code_contributions} commits! That's awesome!"
+                    }
+                }
+            },
+            "cscount-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "You have made changes on {_csCount} different occasions! That is awesome!"
                     }
                 }
             },
@@ -8247,6 +8526,49 @@
                     }
                 },
                 "question": "Under what license do you want to publish your pictures?"
+            },
+            "show_debug": {
+                "mappings": {
+                    "0": {
+                        "then": "Show debug info"
+                    },
+                    "1": {
+                        "then": "Don't show debug info"
+                    },
+                    "2": {
+                        "then": "Don't show debug info"
+                    }
+                },
+                "question": "Show user settings debug info?"
+            },
+            "translation-completeness": {
+                "mappings": {
+                    "0": {
+                        "then": "Completely translated"
+                    }
+                },
+                "render": "Translations for {_theme} in {_language} are at {_translation_percentage}%: {_translation_translated_count} strings out of {_translation_total} are translated"
+            },
+            "translation-help": {
+                "mappings": {
+                    "0": {
+                        "then": "Click the 'translate'-icon next to a string to enter or update a piece of text. You need a Weblate-account for this. Create one with your OSM-username to automatically unlock translation mode."
+                    }
+                }
+            },
+            "translation-mode": {
+                "mappings": {
+                    "0": {
+                        "then": "Don't show a button to quickly change translations"
+                    },
+                    "1": {
+                        "then": "Show a button to quickly open translations when using MapComplete on a big screen"
+                    },
+                    "2": {
+                        "then": "Always show the translation buttons, including on mobile"
+                    }
+                },
+                "question": "Do you want to help translating MapComplete?"
             },
             "translation-thanks": {
                 "mappings": {
@@ -8500,6 +8822,17 @@
                     }
                 },
                 "question": "Where is this container located?"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a medium to large bin for disposal of (household) waste"
+                    },
+                    "1": {
+                        "then": "This is actually a recycling container"
+                    }
+                },
+                "question": "What kind of waste disposal bin is this?"
             }
         },
         "title": {

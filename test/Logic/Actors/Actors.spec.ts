@@ -1,4 +1,3 @@
-import { expect } from "chai"
 import { Utils } from "../../../Utils"
 import UserRelatedState from "../../../Logic/State/UserRelatedState"
 import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
@@ -11,6 +10,7 @@ import SelectedFeatureHandler from "../../../Logic/Actors/SelectedFeatureHandler
 import { ElementStorage } from "../../../Logic/ElementStorage"
 import { OsmTags } from "../../../Models/OsmFeature"
 import { Feature, Geometry } from "geojson"
+import { describe, expect, it } from "vitest"
 
 const latestTags = {
     amenity: "public_bookcase",
@@ -83,9 +83,9 @@ it("should download the latest version", () => {
     SelectedElementTagsUpdater.applyUpdate(state, latestTags, feature.properties.id)
 
     // The name should be updated
-    expect(feature.properties.name).deep.equal("Stubbekwartier-buurtbibliotheek")
+    expect(feature.properties.name).toEqual("Stubbekwartier-buurtbibliotheek")
     // The fixme should be removed
-    expect(feature.properties.fixme).deep.equal(undefined)
+    expect(feature.properties.fixme).toBeUndefined()
 })
 it("Hash without selected element should download geojson from OSM-API", async () => {
     const hash = new UIEventSource("node/5568693115")
@@ -97,9 +97,9 @@ it("Hash without selected element should download geojson from OSM-API", async (
     })
 
     loc.addCallback((_) => {
-        expect(selected.data.properties.id).deep.equal("node/5568693115")
-        expect(loc.data.zoom).deep.equal(14)
-        expect(loc.data.lat).deep.equal(51.2179199)
+        expect(selected.data.properties.id).toEqual("node/5568693115")
+        expect(loc.data.zoom).toEqual(14)
+        expect(loc.data.lat).toEqual(51.2179199)
     })
 
     new SelectedFeatureHandler(hash, {

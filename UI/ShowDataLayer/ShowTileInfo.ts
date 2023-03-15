@@ -5,7 +5,7 @@ import ShowDataLayer from "./ShowDataLayer"
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import { Tiles } from "../../Models/TileRange"
-import * as clusterstyle from "../../assets/layers/cluster_style/cluster_style.json"
+import clusterstyle from "../../assets/layers/cluster_style/cluster_style.json"
 
 export default class ShowTileInfo {
     public static readonly styling = new LayerConfig(clusterstyle, "ShowTileInfo", true)

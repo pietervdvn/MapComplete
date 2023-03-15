@@ -14,6 +14,9 @@ export class FixedUiElement extends BaseUIElement {
 
     AsMarkdown(): string {
         if (this.HasClass("code")) {
+            if (this.content.indexOf("\n") > 0 || this.HasClass("block")) {
+                return "\n```\n" + this.content + "\n```\n"
+            }
             return "`" + this.content + "`"
         }
         if (this.HasClass("font-bold")) {

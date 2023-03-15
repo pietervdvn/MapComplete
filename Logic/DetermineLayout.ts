@@ -12,9 +12,9 @@ import LZString from "lz-string"
 import { FixLegacyTheme } from "../Models/ThemeConfig/Conversion/LegacyJsonConvert"
 import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 import SharedTagRenderings from "../Customizations/SharedTagRenderings"
-import * as known_layers from "../assets/generated/known_layers.json"
+import known_layers from "../assets/generated/known_layers.json"
 import { PrepareTheme } from "../Models/ThemeConfig/Conversion/PrepareTheme"
-import * as licenses from "../assets/generated/license_info.json"
+import licenses from "../assets/generated/license_info.json"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
 import { FixImages } from "../Models/ThemeConfig/Conversion/FixImages"
 import Svg from "../Svg"
@@ -30,7 +30,7 @@ export default class DetermineLayout {
     /**
      * Gets the correct layout for this website
      */
-    public static async GetLayout(): Promise<LayoutConfig> {
+    public static async GetLayout(): Promise<LayoutConfig | undefined> {
         const loadCustomThemeParam = QueryParameters.GetQueryParameter(
             "userlayout",
             "false",
@@ -194,8 +194,7 @@ export default class DetermineLayout {
             let { errors } = new ValidateThemeAndLayers(
                 new DoesImageExist(new Set<string>(), (_) => true),
                 "",
-                false,
-                SharedTagRenderings.SharedTagRendering
+                false
             ).convert(json, "validation")
             if (errors.length > 0) {
                 throw "Detected errors: " + errors.join("\n")

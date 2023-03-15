@@ -272,20 +272,6 @@
       "id": "birdhide-operator"
     }
   ],
-  "size": {
-    "freeform": {
-      "addExtraTags": []
-    },
-    "render": {
-      "nl": "40,40,center"
-    },
-    "mappings": []
-  },
-  "stroke": {
-    "render": {
-      "nl": "3"
-    }
-  },
   "presets": [
     {
       "tags": [
@@ -393,7 +379,7 @@
   },
   "allowMove": {
     "enableRelocation": false,
-    "enableImproveAccuraccy": true
+    "enableImproveAccuracy": true
   },
   "mapRendering": [
     {

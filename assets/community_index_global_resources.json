@@ -1,0 +1,355 @@
+{
+  "OSM-Discord": {
+    "id": "OSM-Discord",
+    "type": "discord",
+    "account": "openstreetmap",
+    "locationSet": {
+      "include": [
+        "001"
+      ]
+    },
+    "languageCodes": [
+      "de",
+      "en",
+      "es",
+      "fr",
+      "it",
+      "pt-BR",
+      "ro",
+      "tr"
+    ],
+    "order": 6,
+    "strings": {
+      "name": "OpenStreetMap World Discord"
+    },
+    "contacts": [
+      {
+        "name": "Austin Harrison",
+        "email": "jaustinharrison@gmail.com"
+      }
+    ],
+    "resolved": {
+      "name": "OpenStreetMap World Discord",
+      "url": "https://discord.gg/openstreetmap",
+      "description": "Get in touch with other mappers on Discord",
+      "nameHTML": "<a target=\"_blank\" href=\"https://discord.gg/openstreetmap\">OpenStreetMap World Discord</a>",
+      "urlHTML": "<a target=\"_blank\" href=\"https://discord.gg/openstreetmap\">https://discord.gg/openstreetmap</a>",
+      "descriptionHTML": "Get in touch with other mappers on Discord"
+    }
+  },
+  "OSM-Discourse": {
+    "id": "OSM-Discourse",
+    "type": "discourse",
+    "locationSet": {
+      "include": [
+        "001"
+      ]
+    },
+    "languageCodes": [
+      "de",
+      "en",
+      "es",
+      "nl",
+      "pl",
+      "pt-BR"
+    ],
+    "order": 7,
+    "strings": {
+      "name": "OpenStreetMap Discourse",
+      "description": "A shared place for conversations about OpenStreetMap",
+      "url": "https://community.openstreetmap.org/"
+    },
+    "contacts": [
+      {
+        "name": "Grant Slater",
+        "email": "osmfuture@firefishy.com"
+      },
+      {
+        "name": "Rubén Martín",
+        "email": "nukeador@protonmail.com"
+      }
+    ],
+    "resolved": {
+      "name": "OpenStreetMap Discourse",
+      "url": "https://community.openstreetmap.org/",
+      "description": "A shared place for conversations about OpenStreetMap",
+      "nameHTML": "<a target=\"_blank\" href=\"https://community.openstreetmap.org/\">OpenStreetMap Discourse</a>",
+      "urlHTML": "<a target=\"_blank\" href=\"https://community.openstreetmap.org/\">https://community.openstreetmap.org/</a>",
+      "descriptionHTML": "A shared place for conversations about OpenStreetMap"
+    }
+  },
+  "OSM-Facebook": {
+    "id": "OSM-Facebook",
+    "type": "facebook",
+    "account": "OpenStreetMap",
+    "locationSet": {
+      "include": [
+        "001"
+      ]
+    },
+    "languageCodes": [
+      "en"
+    ],
+    "order": 3,
+    "strings": {
+      "community": "OpenStreetMap",
+      "communityID": "openstreetmap",
+      "description": "Like us on Facebook for news and updates about OpenStreetMap."
+    },
+    "contacts": [
+      {
+        "name": "Harry Wood",
+        "email": "mail@harrywood.co.uk"
+      }
+    ],
+    "resolved": {
+      "name": "OpenStreetMap on Facebook",
+      "url": "https://www.facebook.com/OpenStreetMap",
+      "description": "Like us on Facebook for news and updates about OpenStreetMap.",
+      "nameHTML": "<a target=\"_blank\" href=\"https://www.facebook.com/OpenStreetMap\">OpenStreetMap on Facebook</a>",
+      "urlHTML": "<a target=\"_blank\" href=\"https://www.facebook.com/OpenStreetMap\">https://www.facebook.com/OpenStreetMap</a>",
+      "descriptionHTML": "Like us on Facebook for news and updates about OpenStreetMap."
+    }
+  },
+  "OSM-help": {
+    "id": "OSM-help",
+    "type": "forum",
+    "locationSet": {
+      "include": [
+        "001"
+      ]
+    },
+    "languageCodes": [
+      "en"
+    ],
+    "order": -2,
+    "strings": {
+      "name": "OpenStreetMap Help",
+      "description": "Ask a question and get answers on OSM's community-driven question and answer site.",
+      "extendedDescription": "{url} is for everyone who needs help with OpenStreetMap.  Whether you are a beginner mapper or have a technical question, we're here to help!",
+      "url": "https://help.openstreetmap.org/"
+    },
+    "contacts": [
+      {
+        "name": "OSMF Operations",
+        "email": "operations@osmfoundation.org"
+      }
+    ],
+    "resolved": {
+      "name": "OpenStreetMap Help",
+      "url": "https://help.openstreetmap.org/",
+      "description": "Ask a question and get answers on OSM's community-driven question and answer site.",
+      "extendedDescription": "https://help.openstreetmap.org/ is for everyone who needs help with OpenStreetMap.  Whether you are a beginner mapper or have a technical question, we're here to help!",
+      "nameHTML": "<a target=\"_blank\" href=\"https://help.openstreetmap.org/\">OpenStreetMap Help</a>",
+      "urlHTML": "<a target=\"_blank\" href=\"https://help.openstreetmap.org/\">https://help.openstreetmap.org/</a>",
+      "descriptionHTML": "Ask a question and get answers on OSM's community-driven question and answer site.",
+      "extendedDescriptionHTML": "<a target=\"_blank\" href=\"https://help.openstreetmap.org/\">https://help.openstreetmap.org/</a> is for everyone who needs help with OpenStreetMap.  Whether you are a beginner mapper or have a technical question, we're here to help!"
+    }
+  },
+  "OSM-IRC": {
+    "id": "OSM-IRC",
+    "type": "irc",
+    "account": "osm",
+    "locationSet": {
+      "include": [
+        "001"
+      ]
+    },
+    "languageCodes": [
+      "en"
+    ],
+    "order": -4,
+    "strings": {
+      "community": "OpenStreetMap",
+      "communityID": "openstreetmap"
+    },
+    "contacts": [
+      {
+        "name": "Harry Wood",
+        "email": "mail@harrywood.co.uk"
+      }
+    ],
+    "resolved": {
+      "name": "OpenStreetMap on IRC",
+      "url": "https://webchat.oftc.net/?channels=osm",
+      "description": "Join #osm on irc.oftc.net (port 6667)",
+      "nameHTML": "<a target=\"_blank\" href=\"https://webchat.oftc.net/?channels=osm\">OpenStreetMap on IRC</a>",
+      "urlHTML": "<a target=\"_blank\" href=\"https://webchat.oftc.net/?channels=osm\">https://webchat.oftc.net/?channels=osm</a>",
+      "descriptionHTML": "Join #osm on irc.oftc.net (port 6667)"
+    }
+  },
+  "OSM-Mastodon": {
+    "id": "OSM-Mastodon",
+    "type": "mastodon",
+    "account": "openstreetmap",
+    "locationSet": {
+      "include": [
+        "001"
+      ]
+    },
+    "languageCodes": [
+      "en"
+    ],
+    "order": 3,
+    "strings": {
+      "community": "OpenStreetMap",
+      "communityID": "openstreetmap",
+      "url": "https://en.osm.town/@openstreetmap"
+    },
+    "contacts": [
+      {
+        "name": "Harry Wood",
+        "email": "mail@harrywood.co.uk"
+      }
+    ],
+    "resolved": {
+      "name": "OpenStreetMap Mastodon Account",
+      "url": "https://en.osm.town/@openstreetmap",
+      "description": "The official Mastodon account for OpenStreetMap",
+      "nameHTML": "<a target=\"_blank\" href=\"https://en.osm.town/@openstreetmap\">OpenStreetMap Mastodon Account</a>",
+      "urlHTML": "<a target=\"_blank\" href=\"https://en.osm.town/@openstreetmap\">https://en.osm.town/@openstreetmap</a>",
+      "descriptionHTML": "The official Mastodon account for OpenStreetMap"
+    }
+  },
+  "OSM-Reddit": {
+    "id": "OSM-Reddit",
+    "type": "reddit",
+    "account": "openstreetmap",
+    "locationSet": {
+      "include": [
+        "001"
+      ]
+    },
+    "languageCodes": [
+      "en"
+    ],
+    "order": 2,
+    "strings": {
+      "community": "OpenStreetMap",
+      "communityID": "openstreetmap",
+      "description": "/r/{account} is a great place to learn more about OpenStreetMap.  Ask us anything!"
+    },
+    "contacts": [
+      {
+        "name": "Serge Wroclawski",
+        "email": "emacsen@gmail.com"
+      }
+    ],
+    "resolved": {
+      "name": "OpenStreetMap on Reddit",
+      "url": "https://www.reddit.com/r/openstreetmap",
+      "description": "/r/openstreetmap is a great place to learn more about OpenStreetMap.  Ask us anything!",
+      "nameHTML": "<a target=\"_blank\" href=\"https://www.reddit.com/r/openstreetmap\">OpenStreetMap on Reddit</a>",
+      "urlHTML": "<a target=\"_blank\" href=\"https://www.reddit.com/r/openstreetmap\">https://www.reddit.com/r/openstreetmap</a>",
+      "descriptionHTML": "<a target=\"_blank\" href=\"https://www.reddit.com/r/openstreetmap\">/r/openstreetmap</a> is a great place to learn more about OpenStreetMap.  Ask us anything!"
+    }
+  },
+  "OSM-Telegram": {
+    "id": "OSM-Telegram",
+    "type": "telegram",
+    "account": "OpenStreetMapOrg",
+    "locationSet": {
+      "include": [
+        "001"
+      ]
+    },
+    "languageCodes": [
+      "en"
+    ],
+    "order": 5,
+    "strings": {
+      "community": "OpenStreetMap",
+      "communityID": "openstreetmap",
+      "description": "Join the OpenStreetMap Telegram global supergroup at {url}"
+    },
+    "contacts": [
+      {
+        "name": "Max N",
+        "email": "abonnements@revolwear.com"
+      }
+    ],
+    "resolved": {
+      "name": "OpenStreetMap Telegram",
+      "url": "https://t.me/OpenStreetMapOrg",
+      "description": "Join the OpenStreetMap Telegram global supergroup at https://t.me/OpenStreetMapOrg",
+      "nameHTML": "<a target=\"_blank\" href=\"https://t.me/OpenStreetMapOrg\">OpenStreetMap Telegram</a>",
+      "urlHTML": "<a target=\"_blank\" href=\"https://t.me/OpenStreetMapOrg\">https://t.me/OpenStreetMapOrg</a>",
+      "descriptionHTML": "Join the OpenStreetMap Telegram global supergroup at <a target=\"_blank\" href=\"https://t.me/OpenStreetMapOrg\">https://t.me/OpenStreetMapOrg</a>"
+    }
+  },
+  "OSM-Twitter": {
+    "id": "OSM-Twitter",
+    "type": "twitter",
+    "account": "openstreetmap",
+    "locationSet": {
+      "include": [
+        "001"
+      ]
+    },
+    "languageCodes": [
+      "en"
+    ],
+    "order": 4,
+    "strings": {
+      "community": "OpenStreetMap",
+      "communityID": "openstreetmap"
+    },
+    "contacts": [
+      {
+        "name": "Harry Wood",
+        "email": "mail@harrywood.co.uk"
+      }
+    ],
+    "resolved": {
+      "name": "OpenStreetMap on Twitter",
+      "url": "https://twitter.com/openstreetmap",
+      "description": "Follow us on Twitter",
+      "nameHTML": "<a target=\"_blank\" href=\"https://twitter.com/openstreetmap\">OpenStreetMap on Twitter</a>",
+      "urlHTML": "<a target=\"_blank\" href=\"https://twitter.com/openstreetmap\">https://twitter.com/openstreetmap</a>",
+      "descriptionHTML": "Follow us on Twitter"
+    }
+  },
+  "OSMF": {
+    "id": "OSMF",
+    "type": "osm-lc",
+    "locationSet": {
+      "include": [
+        "001"
+      ]
+    },
+    "languageCodes": [
+      "en",
+      "fr",
+      "it",
+      "ja",
+      "nl",
+      "ru"
+    ],
+    "order": 10,
+    "strings": {
+      "name": "OpenStreetMap Foundation",
+      "description": "OSMF is a UK-based not-for-profit that supports the OpenStreetMap Project",
+      "extendedDescription": "OSMF supports the OpenStreetMap project by fundraising, maintaining the servers which power OSM, organizing the annual State of the Map conference, and coordinating the volunteers who keep OSM running. You can show your support and have a voice in the direction of OpenStreetMap by joining as an OSMF member here: {signupUrl}",
+      "signupUrl": "https://join.osmfoundation.org/",
+      "url": "https://wiki.osmfoundation.org/wiki/Main_Page"
+    },
+    "contacts": [
+      {
+        "name": "OSMF Board",
+        "email": "board@osmfoundation.org"
+      }
+    ],
+    "resolved": {
+      "name": "OpenStreetMap Foundation",
+      "url": "https://wiki.osmfoundation.org/wiki/Main_Page",
+      "signupUrl": "https://join.osmfoundation.org/",
+      "description": "OSMF is a UK-based not-for-profit that supports the OpenStreetMap Project",
+      "extendedDescription": "OSMF supports the OpenStreetMap project by fundraising, maintaining the servers which power OSM, organizing the annual State of the Map conference, and coordinating the volunteers who keep OSM running. You can show your support and have a voice in the direction of OpenStreetMap by joining as an OSMF member here: https://join.osmfoundation.org/",
+      "nameHTML": "<a target=\"_blank\" href=\"https://wiki.osmfoundation.org/wiki/Main_Page\">OpenStreetMap Foundation</a>",
+      "urlHTML": "<a target=\"_blank\" href=\"https://wiki.osmfoundation.org/wiki/Main_Page\">https://wiki.osmfoundation.org/wiki/Main_Page</a>",
+      "signupUrlHTML": "<a target=\"_blank\" href=\"https://join.osmfoundation.org/\">https://join.osmfoundation.org/</a>",
+      "descriptionHTML": "OSMF is a UK-based not-for-profit that supports the OpenStreetMap Project",
+      "extendedDescriptionHTML": "OSMF supports the OpenStreetMap project by fundraising, maintaining the servers which power OSM, organizing the annual State of the Map conference, and coordinating the volunteers who keep OSM running. You can show your support and have a voice in the direction of OpenStreetMap by joining as an OSMF member here: <a target=\"_blank\" href=\"https://join.osmfoundation.org/\">https://join.osmfoundation.org/</a>"
+    }
+  }
+}

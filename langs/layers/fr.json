@@ -83,7 +83,8 @@
         },
         "tagRenderings": {
             "artwork-artist-wikidata": {
-                "question": "Qui a fait cette oeuvre d'art ?"
+                "question": "Qui a fait cette oeuvre d'art ?",
+                "render": "Cette oeuvre a été crée par {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
             },
             "artwork-artist_name": {
                 "question": "Quel artiste a créé cette œuvre ?",
@@ -397,7 +398,8 @@
                         "then": "Ce banc n'a<span class='subtle'>(probablement)</span> pas d'inscription"
                     }
                 },
-                "question": "Est-ce que ce banc possède une inscription ?<div class='subtle text-lg'>Par exemple, sur une plaque accrochée, sur le dossier, ...</div>",
+                "question": "Est-ce que ce banc possède une inscription ?",
+                "questionHint": "Par exemple, sur une plaque accrochée, sur le dossier, ...",
                 "render": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {
@@ -1838,10 +1840,10 @@
             "crossing-has-island": {
                 "mappings": {
                     "0": {
-                        "then": "Ce passage a une île au milieu"
+                        "then": "Ce passage a un îlot au milieu"
                     },
                     "1": {
-                        "then": "Ce passage n'a pas d'île au milieu"
+                        "then": "Ce passage n'a pas d'îlot au milieu"
                     }
                 },
                 "question": "Est-ce que ce passage a un refuge au milieu ?"
@@ -2266,7 +2268,8 @@
                 "question": "Cette rue est-elle éclairée ?"
             },
             "width:carriageway": {
-                "question": "Quelle est la largeur de cette chaussée (en mètres) ?<br/><span class='subtle'>Elle est mesurée d'une bordure à l'autre et inclut donc la largeur des voies de stationnement parallèles</span>",
+                "question": "Quelle est la largeur de cette chaussée (en mètres) ?",
+                "questionHint": "Elle est mesurée d'une bordure à l'autre et inclut donc la largeur des voies de stationnement parallèles",
                 "render": "La largeur de cette chaussée est de <strong>{width:carriageway}m</strong>"
             }
         },
@@ -2599,7 +2602,8 @@
                         "then": "Ceci est une entrée sans porte physique"
                     }
                 },
-                "question": "Quel est le type de cette porte ?<br/><span class='subtle'>Le fait que la porte soit automatisée ou non est demandé dans la question suivante</span>"
+                "question": "Quel est le type de cette porte ?",
+                "questionHint": "Le fait que la porte soit automatisée ou non est demandé dans la question suivante"
             },
             "Entrance type": {
                 "mappings": {
@@ -2710,7 +2714,8 @@
                         "then": "L'origine de ce nom est inconnu"
                     }
                 },
-                "question": "En référence à quoi cet objet est-il nommé ?<br/><span class='subtle'>Cela peut être indiqué sur le panneau de la rue</span>",
+                "question": "En référence à quoi cet objet est-il nommé ?",
+                "questionHint": "Cela peut être indiqué sur le panneau de la rue",
                 "render": "Nommé en référence à {name:etymology}"
             },
             "street-name-sign-image": {
@@ -3061,7 +3066,7 @@
                         "then": "Il est <b>obligatoire</b> d’apporter ses propres contenants."
                     }
                 },
-                "question": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?<br/>"
+                "question": "Est-il proposé d’utiliser ses propres contenants pour sa commande ?"
             },
             "friture-vegan": {
                 "mappings": {
@@ -3145,7 +3150,8 @@
                         "then": "Aucun nom n'est marqué sur le vélo"
                     }
                 },
-                "question": "À qui est dédié ce vélo fantôme ?<span class='question-subtext'><br/>Veuillez respecter la vie privée – ajoutez le nom seulement s'il est largement publié ou marqué sur le vélo. Choisissez de ne pas indiquer le nom de famille </span>",
+                "question": "À qui est dédié ce vélo fantôme ?",
+                "questionHint": "Veuillez respecter la vie privée – ajoutez le nom seulement s'il est largement publié ou marqué sur le vélo. Choisissez de ne pas indiquer le nom de famille ",
                 "render": "En souvenir de {name}"
             },
             "ghost_bike-source": {
@@ -3187,12 +3193,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "La borne est de couleur inconnue."
-                    },
-                    "1": {
                         "then": "La borne est jaune."
                     },
-                    "2": {
+                    "1": {
                         "then": "La borne est rouge."
                     }
                 },
@@ -3216,18 +3219,15 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "La borne est de type inconnu."
-                    },
-                    "1": {
                         "then": "Pilier."
                     },
-                    "2": {
+                    "1": {
                         "then": "Tuyau."
                     },
-                    "3": {
+                    "2": {
                         "then": "Mural."
                     },
-                    "4": {
+                    "3": {
                         "then": "Enterré."
                     }
                 },
@@ -3388,10 +3388,19 @@
             "render": "Carte"
         }
     },
+    "maxspeed": {
+        "tagRenderings": {
+            "maxspeed-maxspeed": {
+                "question": "Quelle est la vitesse maximum autorisée sur cette route ?",
+                "render": "La vitesse maximum autorisée sur cette route est {canonical(maxspeed)}"
+            }
+        }
+    },
     "nature_reserve": {
         "tagRenderings": {
             "Curator": {
-                "question": "Qui est en charge de la conservation de la réserve ?<br/><span class='subtle'>À ne remplir seulement que si le nom est diffusé au public",
+                "question": "Qui est en charge de la conservation de la réserve ?",
+                "questionHint": "À ne remplir seulement que si le nom est diffusé au public",
                 "render": "{curator} est en charge de la conservation de la réserve"
             },
             "Dogs?": {
@@ -3409,14 +3418,16 @@
                 "question": "Les chiens sont-ils autorisés dans cette réserve naturelle ?"
             },
             "Email": {
-                "question": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? <br/><span class='subtle'>Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée",
+                "question": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? ",
+                "questionHint": "Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée",
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
             "Surface area": {
                 "render": "Superficie : {_surface:ha}&nbsp;ha"
             },
             "phone": {
-                "question": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? <br/><span class='subtil'>Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié"
+                "question": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? ",
+                "questionHint": "Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié"
             }
         }
     },
@@ -3497,6 +3508,13 @@
     "pedestrian_path": {
         "description": "Sentiers piétonniers, particulièrement utilisés pour la navigation intérieure et les entrées d'accrochage à cette couche",
         "name": "Sentiers piétons"
+    },
+    "pharmacy": {
+        "tagRenderings": {
+            "name": {
+                "render": "Cette pharmacie s'appelle {name}"
+            }
+        }
     },
     "physiotherapist": {
         "presets": {
@@ -3643,7 +3661,8 @@
                         "then": "La surface a <b>un revêtement</b>"
                     }
                 },
-                "question": "De quelle matière est la surface de l’aire de jeu ?<br/><i>Pour plusieurs matières, sélectionner la principale</i>",
+                "question": "De quelle matière est la surface de l’aire de jeu ?",
+                "questionHint": "Pour plusieurs matières, sélectionner la principale",
                 "render": "La surface est en <b>{surface}</b>"
             }
         },
@@ -3788,8 +3807,58 @@
             "render": "Microbibliothèque"
         }
     },
+    "railway_platforms": {
+        "description": "Trouvez tous les quais dans la gare, et les lignes ferroviaires qui les utilisent.",
+        "name": "Quais de gare",
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Numéro de quai"
+                },
+                "question": "Quel est le numéro de ce quai ?",
+                "render": "Quai {ref}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Quai {ref}"
+                }
+            },
+            "render": "Quai"
+        }
+    },
+    "rainbow_crossings": {
+        "description": "Une couche affichant les passages piétons avec des peintures arc-en-ciel",
+        "name": "Passages avec peinture arc-en-ciel",
+        "presets": {
+            "0": {
+                "description": "Passage piéton",
+                "title": "un passage"
+            }
+        },
+        "tagRenderings": {
+            "crossing-with-rainbow": {
+                "mappings": {
+                    "0": {
+                        "then": "Ce passage a une peinture arc-en-ciel"
+                    },
+                    "1": {
+                        "then": "Pas de peinture arc-en-ciel ici"
+                    },
+                    "2": {
+                        "then": "Pas de peinture arc-en-ciel ici"
+                    }
+                },
+                "question": "Ce passage a-t-il une peinture arc-en-ciel ?"
+            }
+        },
+        "title": {
+            "render": "Passage"
+        }
+    },
     "reception_desk": {
-        "description": "Un calque montrant où se trouvent les bureaux d'accueil et qui demande des informations d'accessibilité",
+        "description": "Une couche montrant où se trouvent les bureaux d'accueil et qui demande des informations d'accessibilité",
         "name": "Bureaux d'accueil",
         "presets": {
             "0": {
@@ -3798,7 +3867,8 @@
         },
         "tagRenderings": {
             "desk-height": {
-                "question": "Quelle est la hauteur de la réception ? <div class='subtle'>Ceci est mesuré du sol à la partie utilisable la plus basse du bureau</div>",
+                "question": "Quelle est la hauteur de la réception ? ",
+                "questionHint": "Ceci est mesuré du sol à la partie utilisable la plus basse du bureau",
                 "render": "La hauteur du bureau est <b>{canonical(desk:height)}</b>"
             }
         },
@@ -3915,7 +3985,7 @@
                         "then": "Ceci est un établissement scolaire pour les étudiants ayant des besoins particuliers"
                     }
                 },
-                "question": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?<div class='subtle'>Ad-hoc ",
+                "question": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?",
                 "render": "Cet établissement scolaire a des installations pour étudiants ayant {school:for}"
             }
         },
@@ -3925,6 +3995,9 @@
     },
     "selected_element": {
         "description": "Met en surbrillance l'élément actuellement sélectioné. Surcharger cette couche pour avoir d'autres couleurs."
+    },
+    "shelter": {
+        "name": "Abri"
     },
     "shops": {
         "deletion": {
@@ -4494,13 +4567,6 @@
                     }
                 }
             },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "A une table à langer"
-                    }
-                }
-            },
             "2": {
                 "options": {
                     "0": {
@@ -4515,13 +4581,20 @@
                     "0": {
                         "then": "Accès publique"
                     },
+                    "1": {
+                        "then": "Accessibles uniquement au clients du lieu"
+                    },
+                    "2": {
+                        "then": "Non accessibles, même pour les clients du lieu"
+                    },
                     "3": {
-                        "then": "Accessible, mais vous devez demander la clé"
+                        "then": "Accessibles, mais vous devez demander la clé"
                     },
                     "4": {
                         "then": "Accès publique"
                     }
                 },
+                "question": "Ces toilettes sont-elles librement accessibles ?",
                 "render": "L'accès est {toilets:access}"
             },
             "toilet-charge": {
@@ -4595,6 +4668,116 @@
             "render": "Sentier"
         }
     },
+    "transit_routes": {
+        "tagRenderings": {
+            "from": {
+                "render": "Cette ligne de bus commence à {from}"
+            },
+            "network": {
+                "render": "Cette ligne de bus fait partie du réseau {network}"
+            },
+            "operator": {
+                "render": "Cette ligne de bus est gérée par {operator}"
+            },
+            "to": {
+                "render": "Cette ligne de bus termine à {to}"
+            },
+            "via": {
+                "render": "Cette ligne de bus passe par {via}"
+            }
+        }
+    },
+    "transit_stops": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Avec un abri"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Avec un banc"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Avec un poubelle"
+                    }
+                }
+            }
+        },
+        "name": "Arrêts de transport en commun",
+        "tagRenderings": {
+            "bench": {
+                "mappings": {
+                    "0": {
+                        "then": "Cet arrêt a un banc"
+                    },
+                    "1": {
+                        "then": "Cet arrêt <b>n'a pas</b> de banc"
+                    }
+                }
+            },
+            "bin": {
+                "mappings": {
+                    "0": {
+                        "then": "Cet arrêt a un poubelle"
+                    },
+                    "1": {
+                        "then": "Cet arrêt <b>n'a pas</b> de poubelle"
+                    }
+                }
+            },
+            "departures_board": {
+                "mappings": {
+                    "1": {
+                        "then": "Cet arrêt a un panneau indiquant les départs en temps réel"
+                    }
+                }
+            },
+            "lit": {
+                "mappings": {
+                    "0": {
+                        "then": "Cet arrêt est éclairé"
+                    },
+                    "1": {
+                        "then": "Cet arrêt <b>n'est pas</b> éclairé"
+                    }
+                },
+                "question": "Cet arrêt est-il éclairé ?"
+            },
+            "shelter": {
+                "mappings": {
+                    "0": {
+                        "then": "Cet arrêt a un abri"
+                    },
+                    "1": {
+                        "then": "Cet arrêt <b>n'a pas</b> d'abri"
+                    }
+                },
+                "question": "Cet arrêt a-t-il un abri ?"
+            },
+            "stop_name": {
+                "render": "Cet arrêt est nommé <b>{name}</b>"
+            },
+            "tactile_paving": {
+                "mappings": {
+                    "0": {
+                        "then": "Cet arrêt a une surface podotactile"
+                    },
+                    "1": {
+                        "then": "Cet arrêt <b>n'a pas</b> de surface podotactile"
+                    }
+                },
+                "question": "Cet arrêt a-t-il une surface podotactile ?"
+            }
+        }
+    },
     "tree_node": {
         "description": "Une couche montrant les arbres",
         "name": "Arbre",
@@ -4614,7 +4797,8 @@
         },
         "tagRenderings": {
             "circumference": {
-                "question": "Quelle est la circonférence du tronc ? <p class='subtle'>La mesure est effectuée à 1.30m de hauteur</p>",
+                "question": "Quelle est la circonférence du tronc ? ",
+                "questionHint": "La mesure est effectuée à 1.30m de hauteur",
                 "render": "Le tronc a une circonférence de {circumference} mètre(s)"
             },
             "height": {
@@ -4718,6 +4902,34 @@
         },
         "title": {
             "render": "Arbre"
+        }
+    },
+    "usersettings": {
+        "tagRenderings": {
+            "translation-completeness": {
+                "render": "Les traductions pour {_theme} en {_language} sont à {_translation_percentage} % : {_translation_translated_count} chaînes traduites sur {_translation_total}"
+            },
+            "translation-help": {
+                "mappings": {
+                    "0": {
+                        "then": "Cliquez sur l'icône \"traduire\" à côté d'une chaîne de caractères pour saisir ou mettre à jour la chaine de texte. Vous aurez besoin d'un compte Weblate pour cela. Créez-en un avec votre nom d'utilisateur OSM pour déverrouiller automatiquement le mode traduction."
+                    }
+                }
+            },
+            "translation-mode": {
+                "mappings": {
+                    "1": {
+                        "then": "Afficher un bouton pour ouvrir rapidement les traductions lorsque vous utilisez MapComplete sur un grand écran"
+                    }
+                }
+            },
+            "verified-mastodon": {
+                "mappings": {
+                    "0": {
+                        "then": "Un lien vers votre profil Mastodon a été trouvé : <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
+                    }
+                }
+            }
         }
     },
     "veterinary": {

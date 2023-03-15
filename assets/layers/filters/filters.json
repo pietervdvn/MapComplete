@@ -64,7 +64,7 @@
           "question": {
             "en": "With and without images",
             "nl": "Met en zonder afbeelding",
-            "de": "Mit und ohne Bilder"
+            "de": "Mit und ohne Bild"
           }
         },
         {
@@ -119,6 +119,7 @@
     },
     {
       "id": "tactile_paving_advanced",
+      "#": "ignore-possible-duplicate",
       "options": [
         {
           "question": {
@@ -169,7 +170,7 @@
           },
           "question": {
             "en": "Has organic options",
-            "de": "Hat Bio-Produkte",
+            "de": "Bio-Produkte im Angebot",
             "nl": "Heeft biologische opties"
           }
         }

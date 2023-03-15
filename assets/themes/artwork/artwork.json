@@ -18,8 +18,10 @@
     "zh_Hans": "Open Artwork Map",
     "fil": "Open Artwork Map",
     "da": "Åbn illustrationskort",
-    "cs": "Open Artwork Map",
-    "pa_PK": "آزاد کلاکاری نقشہ"
+    "cs": "Otevřená mapa uměleckých děl",
+    "pa_PK": "آزاد کلاکاری نقشہ",
+    "zgh": "ⵕⵥⵎ ⵜⴰⴽⴰⵕⴹⴰ ⵏ ⵜⵡⵓⵔⵉ ⵜⴰⵏⴰⵥⵓⵕⵜ",
+    "es": "Mapa Abierto de Obras de Arte"
   },
   "description": {
     "en": "An open map of statues, busts, graffitis and other artwork all over the world",
@@ -29,17 +31,18 @@
     "id": "Selamat datang di Open Artwork Map, peta untuk patung, grafiti, dan karya seni lain di seluruh dunia",
     "it": "Benvenuto/a sulla mappa libera dell’arte, una mappa delle statue, i busti, i graffiti e le altre realizzazioni artistiche di tutto il mondo",
     "ru": "Добро пожаловать на открытую карта произведений искусства - карту статуй, бюстов, граффити и других произведений искусства по всему миру",
-    "es": "Un mapa abierto de estatus, bustos, grafitis y otras obras de arte en todo el mundo",
+    "es": "Un mapa abierto de Estatuas, bustos, Graffitis y otras Obras de Arte en todo el mundo",
     "ja": "オープン アートワーク マップへようこそ。世界中の銅像や胸像、壁の落書きなどのアートワークの地図です",
     "zh_Hant": "歡迎來到開放藝術品地圖，這份地圖會顯示全世界的雕像、半身像、塗鴉以及其他類型的藝術品",
-    "nb_NO": "Velkommen til det åpne kunstverkskartet, et kart over statuer, byster, grafitti, og andre kunstverk i verden",
+    "nb_NO": "Statuer, byster, graffiti, og andre kunstverk verden over",
     "hu": "Szobrok, mellszobrok, graffitik és egyéb műalkotások nyílt világtérképe",
     "pl": "Witaj w Open Artwork Map, mapie pomników, popierś, graffitti i innych dzieł sztuki z całego świata",
     "ca": "Un mapa obert d'estàtues, busts, grafitis i altres obres d'art del tot el món",
     "zh_Hans": "一个雕塑、半身像、涂鸦和其他全球艺术品的地图",
     "fil": "Malugod na pag-dating sa Open Artwork Map, ang mapa ng mga bantayog, graffiti, at iba pang likhang sining sa buong mundo",
     "da": "Et åbent kort over statuer, buster, graffitis og andre kunstværker over hele verden",
-    "cs": "Otevřená mapa soch, bust, graffiti a dalších uměleckých děl po celém světě"
+    "cs": "Otevřená mapa soch, bust, graffiti a dalších uměleckých děl po celém světě",
+    "zgh": "ⵢⴰⵜ ⵜⴽⴰⵕⴹⴰ ⵉⵕⵥⵎⵏ ⵅⴼ ⵉⵙⴼⵔⵉⵙⵏ, ⵉⵖⵔⴰⵙⵏ ⴷ ⵜⵡⵓⵔⵉⵡⵉⵏ ⵜⵉⵏⴰⵥⵓⵕⵉⵏ ⵢⴰⴹⵏⵉⵏ ⴳ ⵓⵎⴰⴹⴰⵍ"
   },
   "icon": "./assets/themes/artwork/artwork.svg",
   "startZoom": 12,

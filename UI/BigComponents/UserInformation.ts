@@ -19,11 +19,14 @@ import EditableTagRendering from "../Popup/EditableTagRendering"
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import { SaveButton } from "../Popup/SaveButton"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
-import * as usersettings from "../../assets/generated/layers/usersettings.json"
+import usersettings from "../../assets/generated/layers/usersettings.json"
 import { LoginToggle } from "../Popup/LoginButton"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import * as translators from "../../assets/translators.json"
-import * as codeContributors from "../../assets/contributors.json"
+import translators from "../../assets/translators.json"
+import codeContributors from "../../assets/contributors.json"
+import Locale from "../i18n/Locale"
+import { Utils } from "../../Utils"
+import LinkToWeblate from "../Base/LinkToWeblate"
 
 export class ImportViewerLinks extends VariableUiElement {
     constructor(osmConnection: OsmConnection) {
@@ -53,7 +56,7 @@ class SingleUserSettingsPanel extends EditableTagRendering {
         userInfoFocusedQuestion?: UIEventSource<string>
     ) {
         const editMode = new UIEventSource(false)
-        // Isolate the preferences. THey'll be updated explicitely later on anyway
+        // Isolate the preferences. They'll be updated explicitely later on anyway
         super(
             amendedPrefs,
             config,
@@ -68,7 +71,10 @@ class SingleUserSettingsPanel extends EditableTagRendering {
                             TagUtils.FlattenAnd(store.data, amendedPrefs.data)
                         ).asChange(amendedPrefs.data)
                         for (const kv of selection) {
-                            osmConnection.GetPreference(kv.k, "", "").setData(kv.v)
+                            if (kv.k.startsWith("_")) {
+                                continue
+                            }
+                            osmConnection.GetPreference(kv.k, "", { prefix: "" }).setData(kv.v)
                         }
 
                         editMode.setData(false)
@@ -104,13 +110,59 @@ class UserInformationMainPanel extends VariableUiElement {
         const settings = new UIEventSource<Record<string, BaseUIElement>>({})
         const usersettingsConfig = new LayerConfig(usersettings, "userinformationpanel")
 
-        const amendedPrefs = new UIEventSource<any>({})
+        const amendedPrefs = new UIEventSource<any>({ _theme: layout?.id })
         osmConnection.preferencesHandler.preferences.addCallback((newPrefs) => {
             for (const k in newPrefs) {
                 amendedPrefs.data[k] = newPrefs[k]
             }
             amendedPrefs.ping()
         })
+        const translationMode = osmConnection.GetPreference("translation-mode")
+        Locale.language.mapD(
+            (language) => {
+                amendedPrefs.data["_language"] = language
+                const trmode = translationMode.data
+                if (trmode === "true" || trmode === "mobile") {
+                    const missing = layout.missingTranslations()
+                    const total = missing.total
+
+                    const untranslated = missing.untranslated.get(language) ?? []
+                    const hasMissingTheme = untranslated.some((k) => k.startsWith("themes:"))
+                    const missingLayers = Utils.Dedup(
+                        untranslated
+                            .filter((k) => k.startsWith("layers:"))
+                            .map((k) => k.slice("layers:".length).split(".")[0])
+                    )
+
+                    const zenLinks: { link: string; id: string }[] = Utils.NoNull([
+                        hasMissingTheme
+                            ? {
+                                  id: "theme:" + layout.id,
+                                  link: LinkToWeblate.hrefToWeblateZen(
+                                      language,
+                                      "themes",
+                                      layout.id
+                                  ),
+                              }
+                            : undefined,
+                        ...missingLayers.map((id) => ({
+                            id: "layer:" + id,
+                            link: LinkToWeblate.hrefToWeblateZen(language, "layers", id),
+                        })),
+                    ])
+                    const untranslated_count = untranslated.length
+                    amendedPrefs.data["_translation_total"] = "" + total
+                    amendedPrefs.data["_translation_translated_count"] =
+                        "" + (total - untranslated_count)
+                    amendedPrefs.data["_translation_percentage"] =
+                        "" + Math.floor((100 * (total - untranslated_count)) / total)
+                    console.log("Setting zenLinks", zenLinks)
+                    amendedPrefs.data["_translation_links"] = JSON.stringify(zenLinks)
+                }
+                amendedPrefs.ping()
+            },
+            [translationMode]
+        )
         osmConnection.userDetails.addCallback((userDetails) => {
             for (const k in userDetails) {
                 amendedPrefs.data["_" + k] = "" + userDetails[k]
@@ -143,7 +195,7 @@ class UserInformationMainPanel extends VariableUiElement {
                     return replaced === simplifiedName
                 }
             )
-            if(isTranslator){
+            if (isTranslator) {
                 amendedPrefs.data["_translation_contributions"] = "" + isTranslator.commits
             }
             const isCodeContributor = codeContributors.contributors.find(
@@ -152,7 +204,7 @@ class UserInformationMainPanel extends VariableUiElement {
                     return replaced === simplifiedName
                 }
             )
-            if(isCodeContributor){
+            if (isCodeContributor) {
                 amendedPrefs.data["_code_contributions"] = "" + isCodeContributor.commits
             }
             amendedPrefs.ping()

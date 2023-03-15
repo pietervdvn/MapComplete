@@ -33,9 +33,9 @@ ShowOverlayLayerImplementation.Implement();
 // Miscelleanous
 Utils.DisableLongPresses()
 if(new URLSearchParams(window.location.search).get("test") === "true"){
-    console.log(themeConfig["default"])
+    console.log(themeConfig)
 }
-const layoutToUse = new LayoutConfig(themeConfig["default"])
+const layoutToUse = new LayoutConfig(themeConfig)
 
 
 // Workaround/legacy to keep the old paramters working as I renamed some of them

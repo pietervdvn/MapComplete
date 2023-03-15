@@ -5,15 +5,12 @@ import Toggle from "../Input/Toggle"
 import { SubtleButton } from "../Base/SubtleButton"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { LoginToggle } from "../Popup/LoginButton"
-import Svg from "../../Svg"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
-import FullWelcomePaneWithTabs from "./FullWelcomePaneWithTabs"
 import LoggedInUserIndicator from "../LoggedInUserIndicator"
 import { ActionButtons } from "./ActionButtons"
 import { BBox } from "../../Logic/BBox"
 import Loc from "../../Models/Loc"
-import UserSurveyPanel from "../UserSurveyPanel"
 
 export default class ThemeIntroductionPanel extends Combine {
     constructor(
@@ -27,7 +24,6 @@ export default class ThemeIntroductionPanel extends Combine {
             osmConnection: OsmConnection
             currentBounds: Store<BBox>
             locationControl: UIEventSource<Loc>
-            isTranslator: Store<boolean>
         },
         guistate?: { userInfoIsOpened: UIEventSource<boolean> }
     ) {
@@ -70,7 +66,6 @@ export default class ThemeIntroductionPanel extends Combine {
         const hasPresets = layout.layers.some((l) => l.presets?.length > 0)
         super([
             layout.description.Clone().SetClass("block mb-4"),
-            new UserSurveyPanel(),
             new Combine([
                 t.welcomeExplanation.general,
                 hasPresets

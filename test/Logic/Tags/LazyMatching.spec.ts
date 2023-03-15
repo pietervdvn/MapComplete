@@ -1,7 +1,6 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import { TagUtils } from "../../../Logic/Tags/TagUtils"
 import { Tag } from "../../../Logic/Tags/Tag"
+import { describe, expect, it } from "vitest"
 
 describe("Lazy object properties", () => {
     it("should be matche by a normal tag", () => {
@@ -16,7 +15,7 @@ describe("Lazy object properties", () => {
             },
         })
         const filter = new Tag("_key", "yes")
-        expect(filter.matchesProperties(properties)).true
+        expect(filter.matchesProperties(properties)).toBe(true)
     })
 
     it("should be matched by a RegexTag", () => {
@@ -31,6 +30,6 @@ describe("Lazy object properties", () => {
             },
         })
         const filter = TagUtils.Tag("_key~*")
-        expect(filter.matchesProperties(properties)).true
+        expect(filter.matchesProperties(properties)).toBe(true)
     })
 })

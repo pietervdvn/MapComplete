@@ -1,22 +1,26 @@
 {
   "id": "education",
   "description": {
-    "en": "On this map, you'll find information about all types of schools and eduction and can easily add more information",
+    "en": "On this map, you'll find information about all types of schools and education and can easily add more information",
     "nl": "Deze kaart toont info over verschillende onderwijsinstellingen zoals kleuterscholen, middelbare scholen en tertiair onderwijs.",
     "de": "Auf dieser Karte können Sie Informationen über Bildungseinrichtungen finden und hinzufügen",
     "fr": "Sur cette carte, vous trouverez des informations concernant tous les types d'écoles et d'enseignement. Vous pouvez facilement ajouter plus d'informations",
     "ca": "En aquest mapa trobareu informació sobre tots els tipus d'escoles i educació i podreu afegir fàcilment més informació",
-    "da": "På dette kort finder du information om alle typer skoler og uddannelse og kan nemt tilføje flere oplysninger"
+    "da": "På dette kort finder du information om alle typer skoler og uddannelse og kan nemt tilføje flere oplysninger",
+    "cs": "Na této mapě najdete informace o všech typech škol a vzdělávání a můžete snadno přidat další informace",
+    "es": "En este mapa, encontrará información sobre todos los tipos de escuelas y centros de educación y puede añadir fácilmente más información"
   },
   "title": {
     "en": "Education",
     "nl": "Onderwijs",
-    "de": "Bildung",
+    "de": "Bildungseinrichtungen",
     "fr": "Enseignement",
     "nb_NO": "Utdanning",
     "ca": "Educació",
     "da": "Uddannelse",
-    "pa_PK": "سکھیا"
+    "pa_PK": "سکھیا",
+    "cs": "Vzdělání",
+    "es": "Educación"
   },
   "defaultBackgroundId": "CartoDB.Voyager",
   "startLat": 0,

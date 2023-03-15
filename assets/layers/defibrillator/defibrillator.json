@@ -216,7 +216,8 @@
             "it": "Non accessibile, potrebbe essere solo per uso professionale",
             "de": "Der Defibrillator ist nicht zugänglich, möglicherweise nur für betriebliche Nutzung",
             "sl": "Ni dostopen, morda samo za profesionalno rabo",
-            "es": "No accesible, posiblemente solo para el uso profesional"
+            "es": "No accesible, posiblemente solo para el uso profesional",
+            "ca": "No accessible, posiblemente només d'ús profesional"
           }
         }
       ],
@@ -296,7 +297,7 @@
     {
       "question": {
         "en": "On which floor is this defibrillator located?",
-        "ca": "A quina planta està el desfibril·lador localitzat?",
+        "ca": "A quina planta està el ubicat el desfibril·lador?",
         "es": "¿En qué planta se encuentra el defibrilador localizado?",
         "fr": "À quel étage est situé ce défibrillateur ?",
         "nl": "Op welke verdieping bevindt deze defibrillator zich?",
@@ -333,7 +334,8 @@
             "it": "Questo defibrillatore è al <b>pian terreno</b>",
             "de": "Der Defibrillator befindet sich im <b>Erdgeschoss</b>",
             "sl": "Ta defibrilator je v <b>pritličju</b>",
-            "es": "Este desfibrilador se encuentra en la <b>planta baja</b>"
+            "es": "Este desfibrilador se encuentra en la <b>planta baja</b>",
+            "ca": "Aquest desfribil·lador està a la <b>planta baixa</b>"
           }
         },
         {
@@ -345,7 +347,8 @@
             "it": "Questo defibrillatore è al <b>primo piano</b>",
             "de": "Der Defibrillator befindet sich in der <b>ersten Etage</b>",
             "sl": "Ta defibrilator je v <b>prvem nadstropju</b>",
-            "es": "Este desfibrilador se encuentra en la <b>primera planta</b>"
+            "es": "Este desfibrilador se encuentra en la <b>primera planta</b>",
+            "ca": "Aquest desfribil·lador està a la <b>primera planta</b>"
           }
         }
       ],

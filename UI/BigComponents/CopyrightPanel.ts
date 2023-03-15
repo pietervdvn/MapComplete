@@ -2,13 +2,13 @@ import Combine from "../Base/Combine"
 import Translations from "../i18n/Translations"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { FixedUiElement } from "../Base/FixedUiElement"
-import * as licenses from "../../assets/generated/license_info.json"
+import licenses from "../../assets/generated/license_info.json"
 import SmallLicense from "../../Models/smallLicense"
 import { Utils } from "../../Utils"
 import Link from "../Base/Link"
 import { VariableUiElement } from "../Base/VariableUIElement"
-import * as contributors from "../../assets/contributors.json"
-import * as translators from "../../assets/translators.json"
+import contributors from "../../assets/contributors.json"
+import translators from "../../assets/translators.json"
 import BaseUIElement from "../BaseUIElement"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import Title from "../Base/Title"
@@ -118,12 +118,13 @@ export default class CopyrightPanel extends Combine {
         currentBounds: Store<BBox>
         locationControl: UIEventSource<Loc>
         osmConnection: OsmConnection
-        isTranslator: Store<boolean>
     }) {
         const t = Translations.t.general.attribution
         const layoutToUse = state.layoutToUse
 
-        const iconAttributions = layoutToUse.usedImages.map(CopyrightPanel.IconAttribution)
+        const iconAttributions: BaseUIElement[] = layoutToUse.usedImages.map(
+            CopyrightPanel.IconAttribution
+        )
 
         let maintainer: BaseUIElement = undefined
         if (layoutToUse.credits !== undefined && layoutToUse.credits !== "") {

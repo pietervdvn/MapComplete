@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 4908,
+      "commits": 5192,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 319,
+      "commits": 342,
       "contributor": "Robin van der Linde"
     },
     {
@@ -13,7 +13,7 @@
       "contributor": "Tobias"
     },
     {
-      "commits": 34,
+      "commits": 38,
       "contributor": "Win Olario"
     },
     {
@@ -37,7 +37,7 @@
       "contributor": "karelleketers"
     },
     {
-      "commits": 24,
+      "commits": 25,
       "contributor": "riQQ"
     },
     {
@@ -46,10 +46,14 @@
     },
     {
       "commits": 21,
+      "contributor": "wjtje"
+    },
+    {
+      "commits": 21,
       "contributor": "AlexanderRebai"
     },
     {
-      "commits": 19,
+      "commits": 20,
       "contributor": "Hosted Weblate"
     },
     {
@@ -97,16 +101,16 @@
       "contributor": "Bavo Vanderghote"
     },
     {
+      "commits": 11,
+      "contributor": "RobJN"
+    },
+    {
       "commits": 10,
       "contributor": "LiamSimons"
     },
     {
-      "commits": 9,
-      "contributor": "wjtje"
-    },
-    {
-      "commits": 9,
-      "contributor": "RobJN"
+      "commits": 8,
+      "contributor": "Thibault Molleman"
     },
     {
       "commits": 8,
@@ -114,7 +118,7 @@
     },
     {
       "commits": 7,
-      "contributor": "Thibault Molleman"
+      "contributor": "OliNau"
     },
     {
       "commits": 7,
@@ -141,16 +145,12 @@
       "contributor": "pelderson"
     },
     {
+      "commits": 5,
+      "contributor": "Codain"
+    },
+    {
       "commits": 4,
       "contributor": "Nadhem"
-    },
-    {
-      "commits": 4,
-      "contributor": "OliNau"
-    },
-    {
-      "commits": 4,
-      "contributor": "Codain"
     },
     {
       "commits": 4,
@@ -167,6 +167,10 @@
     {
       "commits": 3,
       "contributor": "Léo Villeveygoux"
+    },
+    {
+      "commits": 2,
+      "contributor": "ⵣⵓⵀⵉⵔ ⴰⵎⴰⵣⵉⵖ زهير أمازيغ"
     },
     {
       "commits": 2,

@@ -31,7 +31,7 @@ export class Denomination {
 
         this.alternativeDenominations = json.alternativeDenomination?.map((v) => v.trim()) ?? []
 
-        if (json["default"] !== undefined) {
+        if (json["default" /* @code-quality: ignore*/] !== undefined) {
             throw `${context} uses the old 'default'-key. Use "useIfNoUnitGiven" or "useAsDefaultInput" instead`
         }
         this.useIfNoUnitGiven = json.useIfNoUnitGiven

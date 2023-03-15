@@ -24,7 +24,6 @@ export default {
             }
           },
           "required": [
-            "class",
             "path"
           ]
         },
@@ -94,6 +93,10 @@ export default {
           "type": "string"
         }
       ]
+    },
+    "#": {
+      "description": "Used for comments or to disable a validation\n\nignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed",
+      "type": "string"
     }
   },
   "required": [
@@ -306,7 +309,6 @@ export default {
                       }
                     },
                     "required": [
-                      "class",
                       "path"
                     ]
                   },

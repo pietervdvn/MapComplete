@@ -1,5 +1,3 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import { LayerConfigJson } from "../../../../Models/ThemeConfig/Json/LayerConfigJson"
 import { TagRenderingConfigJson } from "../../../../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import LineRenderingConfigJson from "../../../../Models/ThemeConfig/Json/LineRenderingConfigJson"
@@ -10,6 +8,7 @@ import {
 } from "../../../../Models/ThemeConfig/Conversion/PrepareLayer"
 import { QuestionableTagRenderingConfigJson } from "../../../../Models/ThemeConfig/Json/QuestionableTagRenderingConfigJson"
 import RewritableConfigJson from "../../../../Models/ThemeConfig/Json/RewritableConfigJson"
+import { describe, expect, it } from "vitest"
 
 describe("ExpandRewrite", () => {
     it("should not allow overlapping keys", () => {
@@ -103,10 +102,10 @@ describe("PrepareLayer", () => {
                     offset: 6,
                 },
             ],
-            titleIcons: [{ render: "defaults", id: "defaults" }],
+            titleIcons: [{ render: "icons.defaults", id: "iconsdefaults" }],
         }
 
-        expect(result).deep.eq(expected)
+        expect(result).toEqual(expected)
     })
 })
 
@@ -126,7 +125,7 @@ describe("RewriteSpecial", function () {
             },
         }
         const r = new RewriteSpecial().convert(tr, "test").result
-        expect(r).to.deep.eq({
+        expect(r).toEqual({
             id: "uk_addresses_import_button",
             render: {
                 "*": "{import_button(address,urpn_count=$urpn_count;ref:GB:uprn=$ref:GB:uprn$,Add this address,./assets/themes/uk_addresses/housenumber_add.svg,,,,none,)}",

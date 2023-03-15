@@ -27,7 +27,7 @@ import { QueryParameters } from "../Logic/Web/QueryParameters"
 import { SubstitutedTranslation } from "./SubstitutedTranslation"
 import { AutoAction } from "./Popup/AutoApplyButton"
 import DynamicGeoJsonTileSource from "../Logic/FeatureSource/TiledFeatureSource/DynamicGeoJsonTileSource"
-import * as themeOverview from "../assets/generated/theme_overview.json"
+import themeOverview from "../assets/generated/theme_overview.json"
 
 class AutomationPanel extends Combine {
     private static readonly openChangeset = new UIEventSource<number>(undefined)

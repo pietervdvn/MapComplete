@@ -710,10 +710,7 @@ const l3 = generateTranslationsObjectFrom(
 
 const usedLanguages: string[] = Utils.Dedup(l1.concat(l2).concat(l3)).filter((v) => v !== "*")
 usedLanguages.sort()
-fs.writeFileSync(
-    "./assets/generated/used_languages.json",
-    JSON.stringify({ languages: usedLanguages })
-)
+fs.writeFileSync("./assets/used_languages.json", JSON.stringify({ languages: usedLanguages }))
 
 if (!themeOverwritesWeblate) {
     // Generates the core translations

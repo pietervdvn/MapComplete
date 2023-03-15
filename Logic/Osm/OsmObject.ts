@@ -1,5 +1,5 @@
 import { Utils } from "../../Utils"
-import * as polygon_features from "../../assets/polygon-features.json"
+import polygon_features from "../../assets/polygon-features.json"
 import { Store, UIEventSource } from "../UIEventSource"
 import { BBox } from "../BBox"
 import OsmToGeoJson from "osmtogeojson"
@@ -290,7 +290,7 @@ export abstract class OsmObject {
         { values: Set<string>; blacklist: boolean }
     > {
         const result = new Map<string, { values: Set<string>; blacklist: boolean }>()
-        for (const polygonFeature of polygon_features["default"] ?? polygon_features) {
+        for (const polygonFeature of polygon_features) {
             const key = polygonFeature.key
 
             if (polygonFeature.polygon === "all") {

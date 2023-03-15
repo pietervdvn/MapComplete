@@ -3,11 +3,15 @@
   "description": {
     "en": "A financial institution to deposit money",
     "de": "Ein Finanzinstitut, um Geld einzuzahlen",
-    "nl": "Een financiële instelling waar je geld kunt"
+    "nl": "Een financiële instelling waar je geld kunt",
+    "ca": "Una institució financera per a dipositar diners"
   },
   "name": {
     "en": "Banks",
-    "de": "Banken"
+    "de": "Banken",
+    "ca": "Bancs",
+    "nb_NO": "Banker",
+    "nl": "Banken"
   },
   "title": {
     "render": "Bank",
@@ -35,28 +39,39 @@
       "id": "has_atm",
       "question": {
         "en": "Does this bank have an ATM?",
-        "de": "Hat diese Bank einen Geldautomaten?"
+        "de": "Hat diese Bank einen Geldautomaten?",
+        "nb_NO": "Har denne banken en minibank?",
+        "nl": "Heeft deze bank een bankautomaat?",
+        "ca": "Aquest banc té un caixer automàtic?"
       },
       "mappings": [
         {
           "if": "atm=yes",
           "then": {
             "en": "This bank has an ATM",
-            "de": "Diese Bank hat einen Geldautomaten"
+            "de": "Diese Bank hat einen Geldautomaten",
+            "nb_NO": "Denne banken har en minibank",
+            "nl": "Deze bank heeft een bankautomaat",
+            "ca": "Aquest banc té un caixer automàtic"
           }
         },
         {
           "if": "atm=no",
           "then": {
             "en": "This bank does <b>not</b> have an ATM",
-            "de": "Diese Bank hat <b>keinen</b> Geldautomaten"
+            "de": "Diese Bank hat <b>keinen</b> Geldautomaten",
+            "nb_NO": "Denne banken har <b>ikke</b> en minibank",
+            "nl": "Deze bank heeft <b>geen</b> bankautomaaat",
+            "ca": "Aquest banc <b>no</b> té un caixer automàtic"
           }
         },
         {
           "if": "atm=separate",
           "then": {
             "en": "This bank does have an ATM, but it is mapped as a different icon",
-            "de": "Diese Bank hat zwar einen Geldautomaten, aber dieser ist mit einem anderen Symbol dargestellt"
+            "de": "Diese Bank hat zwar einen Geldautomaten, aber dieser ist mit einem anderen Symbol dargestellt",
+            "nl": "Deze bank heeft een bankautomaat, maar deze staat apart op de kaart aangeduid",
+            "ca": "Aquest banc té un caixer, però està mapejat com a un element diferent"
           }
         }
       ]
@@ -70,7 +85,10 @@
         {
           "question": {
             "en": "With an ATM",
-            "de": "Mit einem Geldautomaten"
+            "de": "Mit Geldautomat",
+            "nb_NO": "Med en minibank",
+            "nl": "Met een bankautomaat",
+            "ca": "Amb un caixer automàtic"
           },
           "osmTags": "atm=yes"
         }

@@ -1,7 +1,6 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import SourceConfig from "../../../Models/ThemeConfig/SourceConfig"
 import { TagUtils } from "../../../Logic/Tags/TagUtils"
+import { describe, expect, it } from "vitest"
 
 describe("SourceConfig", () => {
     it("should throw an error on conflicting tags", () => {
@@ -14,6 +13,6 @@ describe("SourceConfig", () => {
                 },
                 false
             )
-        }).to.throw(/tags are conflicting/)
+        }).toThrowError(/tags are conflicting/)
     })
 })

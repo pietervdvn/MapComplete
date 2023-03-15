@@ -16,7 +16,8 @@
     "pl": "Ławki na przystankach komunikacji miejskiej",
     "pt": "Bancos em pontos de transporte público",
     "da": "Bænke ved stoppesteder for offentlig transport",
-    "cs": "Lavičky na zastávkách veřejné dopravy"
+    "cs": "Lavičky na zastávkách veřejné dopravy",
+    "ca": "Bancs en una parada de transport públic"
   },
   "minzoom": 14,
   "source": {
@@ -146,7 +147,8 @@
         "fr": "Quel type de banc est-ce ?",
         "da": "Hvilken slags bænk er dette?",
         "cs": "Co je to za lavičku?",
-        "pt": "Que tipo de banco é este?"
+        "pt": "Que tipo de banco é este?",
+        "ca": "Quin tipus de banc és aquest?"
       },
       "mappings": [
         {
@@ -158,7 +160,8 @@
             "nl": "Er is hier een normale zitbank",
             "da": "Der er en normal siddebænk her",
             "es": "Hay un banco normal aquí",
-            "cs": "Zde je normální lavička k sezení"
+            "cs": "Zde je normální lavička k sezení",
+            "ca": "Aquí hi ha un banc normal"
           }
         },
         {
@@ -187,7 +190,8 @@
             "es": "No hay ningún banco aquí",
             "da": "Der er ingen bænk her",
             "cs": "Zde není žádná lavička",
-            "pt": "Não há nenhum banco aqui"
+            "pt": "Não há nenhum banco aqui",
+            "ca": "Aquí no hi ha cap banc"
           }
         }
       ]
@@ -223,7 +227,8 @@
           "en": "This bus stop does not have a bench (there never was one or it has been removed)",
           "de": "Diese Bushaltestelle hat keine Bank (es gab nie eine oder sie wurde entfernt)",
           "fr": "Cette station de bus n'a pas de banc (il n'y en a jamais eu ou il a été retiré)",
-          "nl": "Deze bushalte heeft geen zitbank (er is er nooit een geweest of deze is verwijderd)"
+          "nl": "Deze bushalte heeft geen zitbank (er is er nooit een geweest of deze is verwijderd)",
+          "ca": "Aquesta para de bus no té un banc (mai n'ha tingut un o ha estat eliminat)"
         }
       }
     ],
@@ -234,7 +239,8 @@
           "en": "This bus stop is not used anymore",
           "de": "Diese Bushaltestelle wird nicht mehr genutzt",
           "fr": "Cette station de bus n'est plus utilisée",
-          "nl": "Deze bushalte wordt niet meer gebruikt"
+          "nl": "Deze bushalte wordt niet meer gebruikt",
+          "ca": "Aquesta parada de bus no s'utilitza més"
         }
       }
     ],
@@ -252,6 +258,7 @@
     "fr": "Une couche montrant tous les arrêts de transports publics qui ont un banc",
     "de": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen",
     "da": "Et lag, der viser alle offentlige stoppesteder, som har en bænk",
-    "cs": "Vrstva zobrazující všechny zastávky veřejné dopravy, které mají lavičku"
+    "cs": "Vrstva zobrazující všechny zastávky veřejné dopravy, které mají lavičku",
+    "ca": "Una capa que mostra totes les parades de transport públic que tenen bancs"
   }
 }

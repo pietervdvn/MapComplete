@@ -265,8 +265,6 @@
     },
     "translations": {
         "allMissing": "Belum ada terjemahan",
-        "completeness": "Terjemahan untuk {theme} dalam {language} masih {percentage}%: {translated} string dari {total} diterjemahkan",
-        "isTranslator": "Mode terjemahan aktif karena nama pengguna Anda cocok dengan nama penerjemah sebelumnya",
         "notImmediate": "Terjemahan tidak diperbarui secara langsung. Biasanya memakan waktu beberapa hari"
     },
     "validation": {

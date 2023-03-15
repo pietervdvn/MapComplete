@@ -297,7 +297,6 @@
                       }
                     },
                     "required": [
-                      "class",
                       "path"
                     ]
                   },

@@ -1,4 +1,4 @@
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import EditableTagRendering from "./EditableTagRendering"
 import QuestionBox from "./QuestionBox"
 import Combine from "../Base/Combine"
@@ -35,9 +35,13 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         if (state === undefined) {
             throw "State is undefined!"
         }
+        const showAllQuestions = state.featureSwitchShowAllQuestions.map(
+            (fsShow) => fsShow || state.showAllQuestionsAtOnce.data,
+            [state.showAllQuestionsAtOnce]
+        )
         super(
             () => FeatureInfoBox.GenerateTitleBar(tags, layerConfig, state),
-            () => FeatureInfoBox.GenerateContent(tags, layerConfig, state),
+            () => FeatureInfoBox.GenerateContent(tags, layerConfig, state, showAllQuestions),
             options?.hashToShow ?? tags.data.id ?? "item",
             options?.isShown,
             options
@@ -79,21 +83,23 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     public static GenerateContent(
         tags: UIEventSource<any>,
         layerConfig: LayerConfig,
-        state: FeaturePipelineState
+        state: FeaturePipelineState,
+        showAllQuestions?: Store<boolean>
     ): BaseUIElement {
         return new Toggle(
             new Combine([
                 Svg.delete_icon_svg().SetClass("w-8 h-8"),
                 Translations.t.delete.isDeleted,
             ]).SetClass("flex justify-center font-bold items-center"),
-            FeatureInfoBox.GenerateMainContent(tags, layerConfig, state),
+            FeatureInfoBox.GenerateMainContent(tags, layerConfig, state, showAllQuestions),
             tags.map((t) => t["_deleted"] == "yes")
         )
     }
     private static GenerateMainContent(
         tags: UIEventSource<any>,
         layerConfig: LayerConfig,
-        state: FeaturePipelineState
+        state: FeaturePipelineState,
+        showAllQuestions?: Store<boolean>
     ): BaseUIElement {
         let questionBoxes: Map<string, QuestionBox> = new Map<string, QuestionBox>()
         const t = Translations.t.general
@@ -108,8 +114,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                     tagRenderings: questions,
                     units: layerConfig.units,
                     showAllQuestionsAtOnce:
-                        questionSpec?.freeform?.helperArgs["showAllQuestions"] ??
-                        state.featureSwitchShowAllQuestions,
+                        questionSpec?.freeform?.helperArgs["showAllQuestions"] ?? showAllQuestions,
                 })
                 questionBoxes.set(groupName, questionBox)
             }

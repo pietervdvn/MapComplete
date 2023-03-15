@@ -1,7 +1,7 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import * as turf from "@turf/turf"
 import { GeoOperations } from "../../Logic/GeoOperations"
+import { Feature, LineString, Polygon } from "geojson"
+import { describe, expect, it } from "vitest"
 
 describe("GeoOperations", () => {
     describe("calculateOverlap", () => {
@@ -123,14 +123,55 @@ describe("GeoOperations", () => {
             }
 
             const p0 = turf.polygon(polyGrb.geometry.coordinates)
-            expect(p0).not.null
+            expect(p0).not.toBeNull()
             const p1 = turf.polygon(polyHouse.geometry.coordinates)
-            expect(p1).not.null
+            expect(p1).not.toBeNull()
 
             const overlaps = GeoOperations.calculateOverlap(polyGrb, [polyHouse])
             expect(overlaps).empty
             const overlapsRev = GeoOperations.calculateOverlap(polyHouse, [polyGrb])
             expect(overlapsRev).empty
+        })
+    })
+    describe("clipWith", () => {
+        it("clipWith should clip linestrings", () => {
+            const bbox: Feature<Polygon> = {
+                type: "Feature",
+                properties: {},
+                geometry: {
+                    coordinates: [
+                        [
+                            [3.218560377159008, 51.21600586532159],
+                            [3.218560377159008, 51.21499687768525],
+                            [3.2207456783268356, 51.21499687768525],
+                            [3.2207456783268356, 51.21600586532159],
+                            [3.218560377159008, 51.21600586532159],
+                        ],
+                    ],
+                    type: "Polygon",
+                },
+            }
+            const line: Feature<LineString> = {
+                type: "Feature",
+                properties: {},
+                geometry: {
+                    coordinates: [
+                        [3.218405371672816, 51.21499091846559],
+                        [3.2208408127450525, 51.21560173433727],
+                    ],
+                    type: "LineString",
+                },
+            }
+            const result = GeoOperations.clipWith(line, bbox)
+            expect(result.length).to.equal(1)
+            expect(result[0].geometry.type).to.eq("LineString")
+            const clippedLine = (<Feature<LineString>>result[0]).geometry.coordinates
+            const expCoordinates = [
+                [3.2185604, 51.215029800031594],
+                [3.2207457, 51.21557787977764],
+            ]
+
+            expect(clippedLine).to.deep.equal(expCoordinates)
         })
     })
 })

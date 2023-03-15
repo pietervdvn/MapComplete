@@ -88,6 +88,30 @@
     "sources": []
   },
   {
+    "path": "bick_wal_raw.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "bick_wal_round.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
+    "path": "bick_wal_square.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "blocked.svg",
     "license": "CC0",
     "authors": [
@@ -215,6 +239,14 @@
     "path": "close.svg",
     "license": "CC0; trivial",
     "authors": [],
+    "sources": []
+  },
+  {
+    "path": "community.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
     "sources": []
   },
   {

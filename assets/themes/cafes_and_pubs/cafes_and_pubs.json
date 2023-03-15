@@ -14,18 +14,21 @@
     "es": "Cafeterías y pubs",
     "fr": "Cafés et pubs",
     "da": "Caféer og pubber",
-    "pa_PK": "کیفے یا پب"
+    "pa_PK": "کیفے یا پب",
+    "cs": "Kavárny a hospody"
   },
   "description": {
-    "en": "Pubs and bars",
+    "en": "Coffeehouses, pubs and bars",
     "nl": "Cafés, kroegen en drinkgelegenheden",
-    "de": "Kneipen und Bars",
-    "ca": "Bars i pubs",
-    "es": "Pubs y bares",
+    "de": "Cafés, Kneipen und Bars",
+    "ca": "Cafeteries, bars i pubs",
+    "es": "Cafés, pubs y bares",
     "fr": "Bars et pubs",
     "da": "Pubber og barer",
     "nb_NO": "Kneiper og barer",
-    "pa_PK": "پب (بار)"
+    "pa_PK": "پب (بار)",
+    "cs": "Kavárny, hospody a bary",
+    "it": "Pub e bar"
   },
   "icon": "./assets/layers/cafe_pub/pub.svg",
   "startLat": 0,
