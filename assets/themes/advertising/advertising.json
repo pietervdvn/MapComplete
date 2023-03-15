@@ -882,6 +882,20 @@
                 "then": "./assets/themes/advertising/poster_box.svg"
               },
               {
+                "if": {
+                  "and": [  "advertising=screen", "_refencing_ways=[way/-1]"]
+                
+                },
+                "then": "brick_wall_square;./assets/themes/advertising/screen_no_support.svg"
+              },
+              {
+                "if": {
+                  "and": [  "advertising=screen", "_refencing_ways~*"]
+
+                },
+                "then": "./assets/themes/advertising/screen_no_support.svg"
+              },
+              {
                 "if": "advertising=screen",
                 "then": "./assets/themes/advertising/screen.svg"
               },

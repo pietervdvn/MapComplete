@@ -366,6 +366,17 @@
     ]
   },
   {
+    "path": "screen_no_support.svg",
+    "license": "CC-BY-SA 4.0",
+    "authors": [
+      "Barnes38",
+      "Pietervdvn"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Poster_box.svg"
+    ]
+  },
+  {
     "path": "sculpture.svg",
     "license": "CC BY 3.0",
     "authors": [
