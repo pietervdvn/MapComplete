@@ -2,19 +2,19 @@
   "id": "advertising",
   "credits": "Offsel",
   "title": {
-  "en": "Open Advertising Map",
-  "ca": "Mapa obert de publicitat",
-  "es": "Mapa abierto de publicidad"
+    "en": "Open Advertising Map",
+    "ca": "Mapa obert de publicitat",
+    "es": "Mapa abierto de publicidad"
   },
   "shortDescription": {
-  "ca": "On puc trobar elements publicitaris?",
-  "es": "Dónde puedo encontrar elementos publicitarios?",
-  "en": "Where I can find advertising features?"
+    "ca": "On puc trobar elements publicitaris?",
+    "es": "Dónde puedo encontrar elementos publicitarios?",
+    "en": "Where I can find advertising features?"
   },
   "description": {
-  "ca": "Alguna vegada t'has preguntat quanta publictat hi ha als nostres carrers i carreteres? Amb aquest mapa podràs trobar i afegir informació de tots els elements publictaris que t'hi trobes pel carrer",
-  "es": "¿Alguna vez te has preguntado cuanta publicidad hay en nuestras calles y carreteras? Con este mapa podrás encontrar y añadir información de todos los elementos publicitarios que te encuentres por la calle",
-  "en": "Have you ever wondered how many advertising there are in our streets and roads? With this map you could find and add information about all the advertising features that you can find on the street"
+    "ca": "Alguna vegada t'has preguntat quanta publictat hi ha als nostres carrers i carreteres? Amb aquest mapa podràs trobar i afegir informació de tots els elements publictaris que t'hi trobes pel carrer",
+    "es": "¿Alguna vez te has preguntado cuanta publicidad hay en nuestras calles y carreteras? Con este mapa podrás encontrar y añadir información de todos los elementos publicitarios que te encuentres por la calle",
+    "en": "Have you ever wondered how many advertising there are in our streets and roads? With this map you could find and add information about all the advertising features that you can find on the street"
   },
   "maintainer": "Offsel",
   "icon": "./assets/themes/advertising/icon.svg",
@@ -455,7 +455,12 @@
           "id": "luminous",
           "condition": {
             "or": [
-              "advertising~billboard", "advertising~column", "advertising~poster_box", "advertising~board", "advertising~sign", "advertising~totem"
+              "advertising~billboard",
+              "advertising~column",
+              "advertising~poster_box",
+              "advertising~board",
+              "advertising~sign",
+              "advertising~totem"
             ]
           },
           "render": {
@@ -525,8 +530,10 @@
                 "es": "<b>Estático</b>, sin animación",
                 "en": "<b>Static</b>, without animation"
               },
-              "hideInAnswer": { 
-                "and": ["advertising=screen"]
+              "hideInAnswer": {
+                "and": [
+                  "advertising=screen"
+                ]
               }
             },
             {
@@ -540,8 +547,14 @@
                 "es": "<b>Precios digitales</b>",
                 "en": "<b>Digital Prices</b>"
               },
-              "hideInAnswer": { 
-                "and": ["advertising=flag", "advertising=sculpture", "advertising=tarp", "advertising=wall_painting", "advertising=board"]
+              "hideInAnswer": {
+                "and": [
+                  "advertising=flag",
+                  "advertising=sculpture",
+                  "advertising=tarp",
+                  "advertising=wall_painting",
+                  "advertising=board"
+                ]
               }
             },
             {
@@ -555,8 +568,10 @@
                 "es": "un <b>Mensaje digital</b>",
                 "en": "a <b>Digital message</b>"
               },
-              "hideInAnswer": { 
-                "and": ["advertising=flag"]
+              "hideInAnswer": {
+                "and": [
+                  "advertising=flag"
+                ]
               }
             },
             {
@@ -570,10 +585,19 @@
                 "es": "Trivision",
                 "en": "Trivision"
               },
-              "hideInAnswer": { 
-                "or": ["advertising=screen", "advertising=column", "advertising=tarp", "advertising=wall_painting", "advertising=column", "advertising=sculpture", "advertising=board", "advertising=sign", "advertising=flag"]
+              "hideInAnswer": {
+                "or": [
+                  "advertising=screen",
+                  "advertising=column",
+                  "advertising=tarp",
+                  "advertising=wall_painting",
+                  "advertising=column",
+                  "advertising=sculpture",
+                  "advertising=board",
+                  "advertising=sign",
+                  "advertising=flag"
+                ]
               }
-              
             },
             {
               "if": {
@@ -586,8 +610,17 @@
                 "es": "Cartells <b>Rotatius</b>",
                 "en": "<b>Scrolling</b> posters"
               },
-              "hideInAnswer": { 
-                "or": ["advertising=screen", "advertising=column", "advertising=tarp", "advertising=wall_painting", "advertising=column", "advertising=sculpture", "advertising=sign", "advertising=flag"]
+              "hideInAnswer": {
+                "or": [
+                  "advertising=screen",
+                  "advertising=column",
+                  "advertising=tarp",
+                  "advertising=wall_painting",
+                  "advertising=column",
+                  "advertising=sculpture",
+                  "advertising=sign",
+                  "advertising=flag"
+                ]
               }
             },
             {
@@ -601,8 +634,13 @@
                 "es": "<b>Rota</b> sobre si mismo",
                 "en": "<b>Rotates</b> on itself"
               },
-              "hideInAnswer": { 
-                "or": ["advertising=flag", "advertising=board", "advertising=tarp", "advertising=wall_painting"]
+              "hideInAnswer": {
+                "or": [
+                  "advertising=flag",
+                  "advertising=board",
+                  "advertising=tarp",
+                  "advertising=wall_painting"
+                ]
               }
             }
           ]
@@ -611,207 +649,219 @@
           "id": "message_type",
           "render": {
             "*": " {message}"
-            },
-            "question": {
+          },
+          "question": {
             "ca": "Quin tipus de missatge es mostra?",
             "es": "Que tipo de mensaje se muestra?",
             "en": "What kind of message is shown?"
-            },
-            "freeform": {
-                "key": "message"
+          },
+          "freeform": {
+            "key": "message"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "message=commercial"
+                ]
               },
-              "mappings": [
-                {
-                  "if": {
-                    "and": [
-                      "message=commercial"
-                    ]
-                  },
-                  "then": {
-                    "ca": "Missatge comercial",
-                    "es": "Mensaje comercial",
-                    "en": "Commercial message"
-                  }
-                },
-                {
-                  "if": {
-                    "and": [
-                        "message=local"
-                    ]
-                  },
-                  "then": {
-                    "ca": "Informació municipal",
-                    "es": "Información municipal",
-                    "en": "Local information"
-                  }
-                },
-                {
-                  "if": {
-                    "and": [
-                      "message=safety"
-                    ]
-                  },
-                  "then": {
-                    "ca": "Informació de seguretat",
-                    "es": "Información de seguridad",
-                    "en": "Securty information"
-                  },
-                  "hideInAnswer": { 
-                    "and": ["advertising=flag"]
-                  } 
-                },
-                {
-                  "if": {
-                    "and": [
-                      "message=political"
-                    ]
-                  },
-                  "then": {
-                    "ca": "Publicitat electoral",
-                    "es": "Publicidad electoral",
-                    "en": "Electoral advertising"
-                  }
-                },
-                {
-                  "if": {
-                    "and": [
-                      "message=showbiz"
-                    ]
-                  },
-                  "then": {
-                    "ca": "Informació sobre teatres, concerts, ...",
-                    "es": "Información sobre teatros, conciertos, ...",
-                    "en": "Inormation related to theatre, concerts, ..."
-                  },
-                  "hideInAnswer": { 
-                    "and": ["advertising=flag"]
-                  }
-                },
-                {
-                  "if": {
-                    "and": [
-                      "message=non_profit"
-                    ]
-                  },
-                  "then": {
-                    "ca": "Missatge d'organitzacions sense ànim de lucre",
-                    "es": "Mensaje de organizaciones sin ánimo de lucro",
-                    "en": "Message from non-profit organizations"
-                  }
-                },
-                {
-                  "if": {
-                    "and": [
-                      "message=opinion"
-                    ]
-                  },
-                  "then": {
-                    "ca": "Per a expressar la teua opinió",
-                    "es": "Para expresar tu opinión",
-                    "en": "To expres your opinion"
-                  },
-                  "hideInAnswer": { 
-                    "or": ["advertising=flag", "advertising=screen"]
-                  }
-                },
-                {
-                  "if": {
-                    "and": [
-                      "message=religion"
-                    ]
-                  },
-                  "then": {
-                    "ca": "Missatge religiós",
-                    "es": "Mensaje religioso",
-                    "en": "Religious message"
-                  }
-                },
-                {
-                  "if": {
-                    "and": [
-                      "message=funding"
-                    ]
-                  },
-                  "then": {
-                    "ca": "Cartell de financiació",
-                    "es": "Cartel de financiación",
-                    "en": "Funding sign"
-                  },
-                  "hideInAnswer": { 
-                    "or": ["advertising=flag", "advertising=column"]
-                  }
-                }
-            ]
+              "then": {
+                "ca": "Missatge comercial",
+                "es": "Mensaje comercial",
+                "en": "Commercial message"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "message=local"
+                ]
+              },
+              "then": {
+                "ca": "Informació municipal",
+                "es": "Información municipal",
+                "en": "Local information"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "message=safety"
+                ]
+              },
+              "then": {
+                "ca": "Informació de seguretat",
+                "es": "Información de seguridad",
+                "en": "Securty information"
+              },
+              "hideInAnswer": {
+                "and": [
+                  "advertising=flag"
+                ]
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "message=political"
+                ]
+              },
+              "then": {
+                "ca": "Publicitat electoral",
+                "es": "Publicidad electoral",
+                "en": "Electoral advertising"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "message=showbiz"
+                ]
+              },
+              "then": {
+                "ca": "Informació sobre teatres, concerts, ...",
+                "es": "Información sobre teatros, conciertos, ...",
+                "en": "Inormation related to theatre, concerts, ..."
+              },
+              "hideInAnswer": {
+                "and": [
+                  "advertising=flag"
+                ]
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "message=non_profit"
+                ]
+              },
+              "then": {
+                "ca": "Missatge d'organitzacions sense ànim de lucre",
+                "es": "Mensaje de organizaciones sin ánimo de lucro",
+                "en": "Message from non-profit organizations"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "message=opinion"
+                ]
+              },
+              "then": {
+                "ca": "Per a expressar la teua opinió",
+                "es": "Para expresar tu opinión",
+                "en": "To expres your opinion"
+              },
+              "hideInAnswer": {
+                "or": [
+                  "advertising=flag",
+                  "advertising=screen"
+                ]
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "message=religion"
+                ]
+              },
+              "then": {
+                "ca": "Missatge religiós",
+                "es": "Mensaje religioso",
+                "en": "Religious message"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "message=funding"
+                ]
+              },
+              "then": {
+                "ca": "Cartell de financiació",
+                "es": "Cartel de financiación",
+                "en": "Funding sign"
+              },
+              "hideInAnswer": {
+                "or": [
+                  "advertising=flag",
+                  "advertising=column"
+                ]
+              }
+            }
+          ]
         },
         {
           "id": "Sides",
           "condition": {
             "and": [
-              "advertising!~flag", "advertising!~column"
+              "advertising!~flag",
+              "advertising!~column"
             ]
           },
           "render": {
             "ca": "Pots veure publicitat per {sides} costats",
             "es": "Puedes ver publicidad por {sides} lados",
             "en": "You can see advertisments from {sides} sides"
-            },
-            "question": {
+          },
+          "question": {
             "ca": "Per quants costats pots veure publicitat?",
             "es": "¿Por cuantos lados puedes ver publicidad?",
             "en": "From how many sides you can watch advertisments?"
-            },
-            "freeform": {
+          },
+          "freeform": {
             "key": "sides"
-            },
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "sides=1"
-                  ]
-                },
-                "then": {
-                  "ca": "Pots veure publicitat per 1 costat",
-                  "es": "Puedes ver publicidad por 1 lado",
-                  "en": "You can see advertisments from 1 side"
-                }
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "sides=1"
+                ]
               },
-              {
-                "if": {
-                  "and": [
-                    "sides=2"
-                  ]
-                },
-                "then": {
-                  "ca": "Pots veure publicitat per 2 costats",
-                  "es": "Puedes ver publicidad por 2 lados",
-                  "en": "You can see advertisments from 2 sides"
-                }
-              },
-              {
-                "if": {
-                  "and": [
-                    "sides=3"
-                  ]
-                },
-                "then": {
-                  "ca": "Pots veure publicitat per 3 costats",
-                  "es": "Puedes ver publicidad por 3 lados",
-                  "en": "You can see advertisments from 3 sides"
-                }
-              },{
-                "if": {
-                  "and": [
-                    "sides=4"
-                  ]
-                },
-                "then": {
-                  "ca": "Pots veure publicitat per 4 costats",
-                  "es": "Puedes ver publicidad por 4 lados",
-                  "en": "You can see advertisments from 4 sides"
-                }
+              "then": {
+                "ca": "Pots veure publicitat per 1 costat",
+                "es": "Puedes ver publicidad por 1 lado",
+                "en": "You can see advertisments from 1 side"
               }
-            ]
+            },
+            {
+              "if": {
+                "and": [
+                  "sides=2"
+                ]
+              },
+              "then": {
+                "ca": "Pots veure publicitat per 2 costats",
+                "es": "Puedes ver publicidad por 2 lados",
+                "en": "You can see advertisments from 2 sides"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "sides=3"
+                ]
+              },
+              "then": {
+                "ca": "Pots veure publicitat per 3 costats",
+                "es": "Puedes ver publicidad por 3 lados",
+                "en": "You can see advertisments from 3 sides"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "sides=4"
+                ]
+              },
+              "then": {
+                "ca": "Pots veure publicitat per 4 costats",
+                "es": "Puedes ver publicidad por 4 lados",
+                "en": "You can see advertisments from 4 sides"
+              }
+            }
+          ]
         },
         {
           "id": "visibility",
@@ -883,15 +933,19 @@
               },
               {
                 "if": {
-                  "and": [  "advertising=screen", "_refencing_ways=[way/-1]"]
-                
+                  "and": [
+                    "advertising=screen",
+                    "_referencing_ways=[way/-1]"
+                  ]
                 },
                 "then": "brick_wall_square;./assets/themes/advertising/screen_no_support.svg"
               },
               {
                 "if": {
-                  "and": [  "advertising=screen", "_refencing_ways~*"]
-
+                  "and": [
+                    "advertising=screen",
+                    "_referencing_ways~*"
+                  ]
                 },
                 "then": "./assets/themes/advertising/screen_no_support.svg"
               },
@@ -923,13 +977,14 @@
           },
           "iconSize": {
             "render": "40,40,bottom",
-            "mappings": [{
-              "if": "advertising=flag",
-              "then": "60,60,bottom"
-            },
+            "mappings": [
+              {
+                "if": "advertising=flag",
+                "then": "60,60,bottom"
+              },
               {
                 "if": "advertising=sculpture",
-                "then":"50,50,bottom" 
+                "then": "50,50,bottom"
               }
             ]
           }
@@ -1003,7 +1058,7 @@
             "es": "Una estructura cilíndrica exterior que muestra publicidad",
             "ca": "Una extructura cilíndica exterior que mostra publicitat"
           },
-          "exampleImages":[
+          "exampleImages": [
             "./assets/themes/advertising/AdvertisingColumn_001.jpg",
             "./assets/themes/advertising/AdvertisingColumn_003.jpg"
           ]
@@ -1018,7 +1073,7 @@
             "es": "una bandera",
             "en": "a flag"
           },
-          "exampleImages":[
+          "exampleImages": [
             "./assets/themes/advertising/Advertising_flag.jpg",
             "./assets/themes/advertising/JR_Central.jpg"
           ]
@@ -1032,7 +1087,7 @@
             "es": "un mupi",
             "en": "a poster box"
           },
-          "exampleImages":[
+          "exampleImages": [
             "./assets/themes/advertising/Mupi_spain.jpg",
             "./assets/themes/advertising/Mupi_Alcoi.jpg"
           ]
@@ -1046,7 +1101,7 @@
             "es": "una pantalla",
             "en": "a screen"
           },
-          "exampleImages":[
+          "exampleImages": [
             "./assets/themes/advertising/Screen_poster_box.jpg",
             "./assets/themes/advertising/City-Light-Poster.jpg"
           ]
@@ -1065,7 +1120,7 @@
             "snapToLayer": "walls_and_buildings",
             "maxSnapDistance": 5
           },
-          "exampleImages":[
+          "exampleImages": [
             "./assets/themes/advertising/Subway_screen.jpg",
             "./assets/themes/advertising/TV_media.jpg",
             "./assets/themes/advertising/Times square.jpg"
@@ -1080,7 +1135,7 @@
             "es": "una escultura",
             "en": "a sculpture"
           },
-          "exampleImages":[
+          "exampleImages": [
             "./assets/themes/advertising/Aircraft_Sculpture.jpg",
             "./assets/themes/advertising/Mug.jpg",
             "./assets/themes/advertising/BS.JPG"
@@ -1105,7 +1160,7 @@
             "es": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
             "ca": "S'utilitza per a cartells publicitaris, retols de neó, logotips i cartells en entrades institucionals"
           },
-          "exampleImages":[
+          "exampleImages": [
             "./assets/themes/advertising/Waitrose_sign.jpg",
             "./assets/themes/advertising/sign_EOI.jpg",
             "./assets/themes/advertising/farma_sign.jpg"
@@ -1125,7 +1180,7 @@
             "snapToLayer": "walls_and_buildings",
             "maxSnapDistance": 5
           },
-          "exampleImages":[
+          "exampleImages": [
             "./assets/themes/advertising/tarp_feder.jpg",
             "./assets/themes/advertising/tarp_madrid.jpg"
           ]
@@ -1139,7 +1194,7 @@
             "es": "un tótem",
             "en": "a totem"
           },
-          "exampleImages":[
+          "exampleImages": [
             "./assets/themes/advertising/AdvertisingTotem_004.jpg",
             "./assets/themes/advertising/AdvertisingTotem_003.jpg",
             "./assets/themes/advertising/Lidl_totem.jpg"
@@ -1159,7 +1214,7 @@
             "snapToLayer": "walls_and_buildings",
             "maxSnapDistance": 5
           },
-          "exampleImages":[
+          "exampleImages": [
             "./assets/themes/advertising/Capitol_wall.jpg",
             "./assets/themes/advertising/clarke_wall.jpg"
           ]
