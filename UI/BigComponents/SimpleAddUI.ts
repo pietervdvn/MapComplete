@@ -1,7 +1,7 @@
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
  */
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
 import Svg from "../../Svg"
 import { SubtleButton } from "../Base/SubtleButton"
 import Combine from "../Base/Combine"
@@ -286,9 +286,16 @@ export default class SimpleAddUI extends LoginToggle {
             const presets = layer.layerDef.presets
             for (const preset of presets) {
                 const tags = TagUtils.KVtoProperties(preset.tags ?? [])
+                const isSnapping = preset.preciseInput.snapToLayers?.length > 0
                 let icon: () => BaseUIElement = () =>
                     layer.layerDef.mapRendering[0]
-                        .GenerateLeafletStyle(new UIEventSource<any>(tags), false)
+                        .GenerateLeafletStyle(
+                            new ImmutableStore<any>(
+                                isSnapping ? tags : { _referencing_ways: ["way/-1"], ...tags }
+                            ),
+                            false,
+                            { noSize: true }
+                        )
                         .html.SetClass("w-12 h-12 block relative")
                 const presetInfo: PresetInfo = {
                     layerToAddTo: layer,
