@@ -22,15 +22,19 @@ import { PrepareTheme } from "../Models/ThemeConfig/Conversion/PrepareTheme"
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
 import { Utils } from "../Utils"
 import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
-import { Script } from "vm"
+import Script from "./Script"
+import { GenerateLicenseInfo } from "./generateLicenseInfo"
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
 
-class LayerOverviewUtils {
+class LayerOverviewUtils extends Script {
     public static readonly layerPath = "./assets/generated/layers/"
     public static readonly themePath = "./assets/generated/themes/"
 
+    constructor() {
+        super("Reviews and generates the compiled themes")
+    }
     private static publicLayerIdsFrom(themefiles: LayoutConfigJson[]): Set<string> {
         const publicThemes = [].concat(...themefiles.filter((th) => !th.hideFromOverview))
 
@@ -241,7 +245,7 @@ class LayerOverviewUtils {
         }
     }
 
-    main(args: string[]) {
+    async main(args: string[]) {
         const forceReload = args.some((a) => a == "--force")
 
         const licensePaths = new Set<string>()
@@ -502,4 +506,4 @@ class LayerOverviewUtils {
     }
 }
 
-new LayerOverviewUtils().main(process.argv)
+new LayerOverviewUtils().run()
