@@ -26,7 +26,7 @@ import BaseLayer from "../../Models/BaseLayer"
 import Loading from "../Base/Loading"
 import Hash from "../../Logic/Web/Hash"
 import { GlobalFilter } from "../../Logic/State/MapState"
-import { WayId } from "../../Models/OsmFeature"
+import { OsmTags, WayId } from "../../Models/OsmFeature"
 import { Tag } from "../../Logic/Tags/Tag"
 import { LoginToggle } from "../Popup/LoginButton"
 
@@ -290,8 +290,8 @@ export default class SimpleAddUI extends LoginToggle {
                 let icon: () => BaseUIElement = () =>
                     layer.layerDef.mapRendering[0]
                         .GenerateLeafletStyle(
-                            new ImmutableStore<any>(
-                                isSnapping ? tags : { _referencing_ways: ["way/-1"], ...tags }
+                            new ImmutableStore<OsmTags>(
+                                isSnapping ? tags : { _referencing_ways: '["way/-1"]', ...tags }
                             ),
                             false,
                             { noSize: true }
