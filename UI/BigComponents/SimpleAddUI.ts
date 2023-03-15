@@ -291,7 +291,7 @@ export default class SimpleAddUI extends LoginToggle {
                     layer.layerDef.mapRendering[0]
                         .GenerateLeafletStyle(
                             new ImmutableStore<OsmTags>(
-                                isSnapping ? tags : { _referencing_ways: '["way/-1"]', ...tags }
+                                isSnapping ? { _referencing_ways: '["way/-1"]', ...tags } : tags
                             ),
                             false,
                             { noSize: true }
