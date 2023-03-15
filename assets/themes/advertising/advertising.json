@@ -935,7 +935,7 @@
                 "if": {
                   "and": [
                     "advertising=screen",
-                    "_referencing_ways=[way/-1]"
+                    "_referencing_ways=[\"way/-1\"]"
                   ]
                 },
                 "then": "brick_wall_square;./assets/themes/advertising/screen_no_support.svg"
