@@ -345,6 +345,16 @@
     ]
   },
   {
+    "path": "poster_box_no_support.svg",
+    "license": "CC BY-SA 3.0",
+    "authors": [
+      "Barnes38"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Poster_box.svg"
+    ]
+  },
+  {
     "path": "screen alcoi.jpg",
     "license": "CC-BY 4.0",
     "authors": [
@@ -426,6 +436,17 @@
     ],
     "sources": [
       "https://wiki.openstreetmap.org/wiki/File:Totem.svg"
+    ]
+  },
+  {
+    "path": "trivision.svg",
+    "license": "CC BY-SA 3.0",
+    "authors": [
+      "pietervdvn",
+      "Louis Dawson (via the Noun Project)"
+    ],
+    "sources": [
+      "https://thenounproject.com/icon/rotating-arrow-184486/"
     ]
   }
 ]

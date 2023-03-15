@@ -23,7 +23,6 @@
   "startLon": 0,
   "startZoom": 1,
   "widenFactor": 0.01,
-  "socialImage": "",
   "layers": [
     {
       "id": "advertising",
@@ -377,20 +376,159 @@
           ]
         },
         {
-          "id": "ref",
-          "render": {
-            "ca": "El número de referència és {ref}",
-            "es": "El número de referencia es {ref}",
-            "en": "Reference number is {ref}"
-          },
+          "id": "luminous_or_lit",
           "question": {
-            "ca": "Quin és el número de refèrencia?",
-            "es": "¿Cual es el número de referencia?",
-            "en": "Wich is the reference number?"
+            "en": "Is this object lit or does it emit light?"
           },
-          "freeform": {
-            "key": "ref"
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "lit=yes",
+                  "luminous=yes"
+                ]
+              },
+              "then": "This object emits light from both an internal and external light source"
+            },
+            {
+              "if": {
+                "and": [
+                  "luminous=yes"
+                ]
+              },
+              "then": "This object emits light",
+              "addExtraTags": [
+                "lit=no"
+              ]
+            },
+            {
+              "if": {
+                "and": [
+                  "lit=yes"
+                ]
+              },
+              "then": "This object is lit externally, e.g. by a spotlight or other lights",
+              "addExtraTags": [
+                "luminous=no"
+              ]
+            },
+            {
+              "if": {
+                "and": [
+                  "lit=no",
+                  "luminous=no"
+                ]
+              },
+              "then": "This object does not emit light and is not lighted by externally"
+            }
+          ],
+          "condition": {
+            "#": "A screen is always luminous",
+            "and": [
+              "advertising!=screen"
+            ]
           }
+        },
+        {
+          "id": "animated",
+          "question": {
+            "ca": "Com canvien els anuncis d'aquest element?",
+            "es": "¿Como cambian los anuncios de este elemento?",
+            "en": "Does this advertisement cycle through multiple messages?"
+          },
+          "condition": {
+            "#": "Screens are _always_ animated; flags, tarps, and wall_paintings cannot be animated",
+            "and": [
+              "advertising!=screen",
+              "advertising!=flag",
+              "advertising!=tarp",
+              "advertising!=wall_painting"
+            ]
+          },
+          "mappings": [
+            {
+              "if": "animated=no",
+              "then": {
+                "ca": "<b>Estàtic</b>, sense animació",
+                "es": "<b>Estático</b>, sin animación",
+                "en": "<b>Static</b>, always shows the same message"
+              }
+            },
+            {
+              "if": "animated=digital_display",
+              "then": {
+                "en": "This object has a built-in <b>digital display</b> to show prices or some other message"
+              },
+              "hideInAnswer": {
+                "and": [
+                  "advertising!=billboard",
+                  "advertising!=poster_box",
+                  "advertising!=totem",
+                  "advertising!=column"
+                ]
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "animated=digital_message"
+                ]
+              },
+              "then": {
+                "ca": "un <b>Missatge digital</b>",
+                "es": "un <b>Mensaje digital</b>",
+                "en": "a <b>Digital message</b>"
+              }
+            },
+            {
+              "if": "animated=travision_blades",
+              "then": {
+                "ca": "Trivision",
+                "es": "Trivision",
+                "en": "<b>Trivision</b> - the billboard consists of many triangular prisms which regularly rotate"
+              },
+              "icon": {
+                "class": "large",
+                "path": "./assets/themes/advertising/trivision.svg"
+              },
+              "#": "Only applicable to billboards",
+              "hideInAnswer": {
+                "and": [
+                  "advertising!=billboard",
+                  "advertising!=poster_box"
+                ]
+              }
+            },
+            {
+              "if": "animated=winding_posters",
+              "then": {
+                "ca": "Cartells <b>Rotatius</b>",
+                "es": "Cartells <b>Rotatius</b>",
+                "en": "<b>Scrolling</b> posters"
+              },
+              "hideInAnswer": {
+                "or": [
+                  "advertising!=poster_box",
+                  "advertising!=totem"
+                ]
+              }
+            },
+            {
+              "if": "animated=revolving",
+              "then": {
+                "ca": "<b>Rota</b> sobre si mateix",
+                "es": "<b>Rota</b> sobre si mismo",
+                "en": "<b>Rotates</b> on itself"
+              },
+              "hideInAnswer": {
+                "and": [
+                  "advertising!=totem",
+                  "advertising!=column",
+                  "advertising!=poster_box"
+                ]
+              }
+            }
+          ]
         },
         {
           "id": "operator",
@@ -410,240 +548,20 @@
           }
         },
         {
-          "id": "lit",
+          "id": "ref",
           "render": {
-            "ca": "Iluminat {lit}",
-            "es": "Iluminado {lit}",
-            "en": "Lit {lit}"
+            "ca": "El número de referència és {ref}",
+            "es": "El número de referencia es {ref}",
+            "en": "Reference number is {ref}"
           },
           "question": {
-            "ca": "Aquest element està il·luminat de forma externa? (p.e. un focus)",
-            "es": "Este elemento está iluminado de forma externa? (p.e un foco)",
-            "en": "This feature is lit? (e.g. a spotlight)"
+            "ca": "Quin és el número de refèrencia?",
+            "es": "¿Cual es el número de referencia?",
+            "en": "Wich is the reference number?"
           },
           "freeform": {
-            "key": "lit"
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "lit=yes"
-                ]
-              },
-              "then": {
-                "ca": "Aquest element està il·luminat",
-                "es": "Este elemento está iluminado",
-                "en": "This feature is lit"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "lit=no"
-                ]
-              },
-              "then": {
-                "ca": "Aqust element no està il·luminat",
-                "es": "Este elemento no está iluminado",
-                "en": "This feature is not lit"
-              }
-            }
-          ]
-        },
-        {
-          "id": "luminous",
-          "condition": {
-            "or": [
-              "advertising~billboard",
-              "advertising~column",
-              "advertising~poster_box",
-              "advertising~board",
-              "advertising~sign",
-              "advertising~totem"
-            ]
-          },
-          "render": {
-            "ca": "Lumiós {luminous}",
-            "es": "Luminoso {luminous}",
-            "en": "Lumious {luminous}"
-          },
-          "question": {
-            "ca": "Aquest element té il·luminació propia?",
-            "es": "Este elemento tiene iluminació propia?",
-            "en": "This feature has its own illumination?"
-          },
-          "freeform": {
-            "key": "luminous"
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "luminous=yes"
-                ]
-              },
-              "then": {
-                "ca": "Aquest element té il·luminació propia",
-                "es": "Este elemento tiene iluminació propia",
-                "en": "This feature has its own illumination"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "luminous=no"
-                ]
-              },
-              "then": {
-                "ca": "Aqust element no té il·luminació propia",
-                "es": "Este elemento no tiene iluminació propia",
-                "en": "This feature has not its own illumination"
-              }
-            }
-          ]
-        },
-        {
-          "id": "animated",
-          "render": {
-            "ca": " Animat amb {animated}",
-            "es": "Animado con {animated}",
-            "en": "Animated with {animated}"
-          },
-          "question": {
-            "ca": "Com canvien els anuncis d'aquest element?",
-            "es": "¿Como cambian los anuncios de este elemento?",
-            "en": "How this feature cycle through multiple advertisements automatically?"
-          },
-          "freeform": {
-            "key": "animated"
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "animated=no"
-                ]
-              },
-              "then": {
-                "ca": "<b>Estàtic</b>, sense animació",
-                "es": "<b>Estático</b>, sin animación",
-                "en": "<b>Static</b>, without animation"
-              },
-              "hideInAnswer": {
-                "and": [
-                  "advertising=screen"
-                ]
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "animated=digital_prices"
-                ]
-              },
-              "then": {
-                "ca": "<b>Preus digitals</b>",
-                "es": "<b>Precios digitales</b>",
-                "en": "<b>Digital Prices</b>"
-              },
-              "hideInAnswer": {
-                "and": [
-                  "advertising=flag",
-                  "advertising=sculpture",
-                  "advertising=tarp",
-                  "advertising=wall_painting",
-                  "advertising=board"
-                ]
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "animated=digital_message"
-                ]
-              },
-              "then": {
-                "ca": "un <b>Missatge digital</b>",
-                "es": "un <b>Mensaje digital</b>",
-                "en": "a <b>Digital message</b>"
-              },
-              "hideInAnswer": {
-                "and": [
-                  "advertising=flag"
-                ]
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "animated=travision_blades"
-                ]
-              },
-              "then": {
-                "ca": "Trivision",
-                "es": "Trivision",
-                "en": "Trivision"
-              },
-              "hideInAnswer": {
-                "or": [
-                  "advertising=screen",
-                  "advertising=column",
-                  "advertising=tarp",
-                  "advertising=wall_painting",
-                  "advertising=column",
-                  "advertising=sculpture",
-                  "advertising=board",
-                  "advertising=sign",
-                  "advertising=flag"
-                ]
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "animated=winding_posters"
-                ]
-              },
-              "then": {
-                "ca": "Cartells <b>Rotatius</b>",
-                "es": "Cartells <b>Rotatius</b>",
-                "en": "<b>Scrolling</b> posters"
-              },
-              "hideInAnswer": {
-                "or": [
-                  "advertising=screen",
-                  "advertising=column",
-                  "advertising=tarp",
-                  "advertising=wall_painting",
-                  "advertising=column",
-                  "advertising=sculpture",
-                  "advertising=sign",
-                  "advertising=flag"
-                ]
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "animated=revolving"
-                ]
-              },
-              "then": {
-                "ca": "<b>Rota</b> sobre si mateix",
-                "es": "<b>Rota</b> sobre si mismo",
-                "en": "<b>Rotates</b> on itself"
-              },
-              "hideInAnswer": {
-                "or": [
-                  "advertising=flag",
-                  "advertising=board",
-                  "advertising=tarp",
-                  "advertising=wall_painting"
-                ]
-              }
-            }
-          ]
+            "key": "ref"
+          }
         },
         {
           "id": "message_type",
@@ -795,104 +713,33 @@
           "id": "Sides",
           "condition": {
             "and": [
-              "advertising!~flag",
-              "advertising!~column"
+              "_referencing_ways=",
+              "advertising=poster_box"
             ]
-          },
-          "render": {
-            "ca": "Pots veure publicitat per {sides} costats",
-            "es": "Puedes ver publicidad por {sides} lados",
-            "en": "You can see advertisments from {sides} sides"
           },
           "question": {
             "ca": "Per quants costats pots veure publicitat?",
             "es": "¿Por cuantos lados puedes ver publicidad?",
             "en": "From how many sides you can watch advertisments?"
           },
-          "freeform": {
-            "key": "sides"
-          },
           "mappings": [
             {
-              "if": {
-                "and": [
-                  "sides=1"
-                ]
+              "if": "sides=",
+              "then": {
+                "en": "This poster box has advertisements on a single side"
               },
+              "hideInAnswer": true
+            },
+            {
+              "if": "sides=1",
               "then": {
-                "ca": "Pots veure publicitat per 1 costat",
-                "es": "Puedes ver publicidad por 1 lado",
-                "en": "You can see advertisments from 1 side"
+                "en": "This poster box has advertisements on a single side"
               }
             },
             {
-              "if": {
-                "and": [
-                  "sides=2"
-                ]
-              },
+              "if": "sides=2",
               "then": {
-                "ca": "Pots veure publicitat per 2 costats",
-                "es": "Puedes ver publicidad por 2 lados",
-                "en": "You can see advertisments from 2 sides"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "sides=3"
-                ]
-              },
-              "then": {
-                "ca": "Pots veure publicitat per 3 costats",
-                "es": "Puedes ver publicidad por 3 lados",
-                "en": "You can see advertisments from 3 sides"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "sides=4"
-                ]
-              },
-              "then": {
-                "ca": "Pots veure publicitat per 4 costats",
-                "es": "Puedes ver publicidad por 4 lados",
-                "en": "You can see advertisments from 4 sides"
-              }
-            }
-          ]
-        },
-        {
-          "id": "visibility",
-          "question": {
-            "en": "How visible is this advertising?",
-            "ca": "Com de visible és aquesta publicitat?",
-            "es": "Como de visible es esta publicidad?"
-          },
-          "mappings": [
-            {
-              "if": "visibility=house",
-              "then": {
-                "en": "This advertising is visible from about 5 meters away",
-                "ca": "Aquesta publicitat és visible al voltant dels 5 metres de distància",
-                "es": "Esta publicidad es visible alrededor de los 5 metros de dsitancia"
-              }
-            },
-            {
-              "if": "visibility=street",
-              "then": {
-                "en": "This advertising is visible from about 20 meters away",
-                "ca": "Aquesta publicitat és visible al voltant dels 20 metres de distància",
-                "es": "Esta publicidad es visible alrededor de los 20 metros de dsitancia"
-              }
-            },
-            {
-              "if": "visibility=area",
-              "then": {
-                "en": "This advertising is visible from more than 20 meters away",
-                "ca": "Aquesta publicitat és visible des de més de 20 metres de distància",
-                "es": "Esta publicidad es visible desde más de 20 metros de distancia"
+                "en": "This poster box has advertisements on both sides"
               }
             }
           ]
@@ -926,6 +773,24 @@
               {
                 "if": "advertising=flag",
                 "then": "./assets/themes/advertising/flag.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "advertising=poster_box",
+                    "_referencing_ways=[\"way/-1\"]"
+                  ]
+                },
+                "then": "brick_wall_square;./assets/themes/advertising/poster_box_no_support.svg"
+              },
+              {
+                "if": {
+                  "and": [
+                    "advertising=poster_box",
+                    "_referencing_ways~*"
+                  ]
+                },
+                "then": "./assets/themes/advertising/poster_box_no_support.svg"
               },
               {
                 "if": "advertising=poster_box",
@@ -978,6 +843,10 @@
           "iconSize": {
             "render": "40,40,bottom",
             "mappings": [
+              {
+                "if": "_referencing_ways~*",
+                "then": "40,40,center"
+              },
               {
                 "if": "advertising=flag",
                 "then": "60,60,bottom"
@@ -1083,14 +952,23 @@
             "advertising=poster_box"
           ],
           "title": {
-            "ca": "un mupi",
-            "es": "un mupi",
-            "en": "a poster box"
+            "en": "a freestanding poster box"
           },
           "exampleImages": [
             "./assets/themes/advertising/Mupi_spain.jpg",
             "./assets/themes/advertising/Mupi_Alcoi.jpg"
           ]
+        },
+        {
+          "tags": [
+            "advertising=poster_box"
+          ],
+          "title": {
+            "en": "a poster box mounted on a wall"
+          },
+          "preciseInput": {
+            "snapToLayer": "walls_and_buildings"
+          }
         },
         {
           "tags": [
