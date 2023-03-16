@@ -335,6 +335,10 @@ export default class TagRenderingConfig {
             if (allKeys.length > 1 && !allHaveIfNot) {
                 throw `${context}: A multi-answer is defined, which generates values over multiple keys. Please define ifnot-tags too on every mapping`
             }
+
+            if (allKeys.length > 1 && this.freeform?.key !== undefined) {
+                throw `${context}: A multi-answer is defined, which generates values over multiple keys. This is incompatible with having a freeform key`
+            }
         }
     }
 
