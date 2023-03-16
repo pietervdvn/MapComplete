@@ -17,7 +17,7 @@
     "en": "Have you ever wondered how many advertising there are in our streets and roads? With this map you could find and add information about all the advertising features that you can find on the street"
   },
   "maintainer": "Offsel",
-  "icon": "./assets/themes/advertising/poster_box.svg",
+  "icon": "./assets/themes/advertising/icon.svg",
   "version": "2023_01_29",
   "startLat": 0,
   "startLon": 0,
