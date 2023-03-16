@@ -799,6 +799,20 @@
                                 "question": "Fet després {search}"
                             }
                         }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Idioma de l'usuari (codi iso) {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Fet amb l'amfitrió {cerca}"
+                            }
+                        }
                     }
                 }
             }
