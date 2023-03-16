@@ -332,8 +332,8 @@
                 ]
               },
               "then": {
-                "ca": "Açò és una lona",
-                "es": "Esto es una lona",
+                "ca": "Açò és una lona (una peça de tèxtil impermeable amb un missatge publicitari)",
+                "es": "Esto es una lona (una pieza de tela resistente a la intemperie con un mensaje publicitario)",
                 "en": "This is a tarp (a weatherproof piece of textile with an advertising message)"
               },
               "icon": {
@@ -396,15 +396,17 @@
             {
               "if": "animated=no",
               "then": {
-                "ca": "<b>Estàtic</b>, sense animació",
-                "es": "<b>Estático</b>, sin animación",
+                "ca": "<b>Estàtic</b>, sempre mostra el mateix missatge",
+                "es": "<b>Estático</b>, siempre muestra el mismo mensaje",
                 "en": "<b>Static</b>, always shows the same message"
               }
             },
             {
               "if": "animated=digital_display",
               "then": {
-                "en": "This object has a built-in <b>digital display</b> to show prices or some other message"
+                "en": "This object has a built-in <b>digital display</b> to show prices or some other message",
+                "ca": "Aquest objecte té una <b>pantalla digital</b> integrada per a mostrar els preus o algun altre missatge",
+                "es": "Este objeto tiene una <b>pantalla digital</b> incorporada para mostrar precios o algún otro mensaje"
               },
               "hideInAnswer": {
                 "and": [
@@ -418,8 +420,8 @@
             {
               "if": "animated=travision_blades",
               "then": {
-                "ca": "Trivision",
-                "es": "Trivision",
+                "ca": "<b>Trivision</b> - la tanca publicitària consta de molts prismes triangulars que giren regularment",
+                "es": "<b>Trivision</b> - la valla publicitaria consta de muchos prismas triangulares que giran regularmente",
                 "en": "<b>Trivision</b> - the billboard consists of many triangular prisms which regularly rotate"
               },
               "icon": {
@@ -468,7 +470,9 @@
               {
                 "if": "luminous=neon",
                 "then": {
-                  "en": "This is a neon-tube light"
+                  "en": "This is a neon-tube light",
+                  "ca": "Aquesta és una llum de tub de neó",
+                  "es": "Esta es una luz de tubo de neón."
                 },
                 "hideInAnswer": "advertising!=sign"
               }
@@ -613,7 +617,9 @@
               "if": "information=map",
               "ifnot": "information=",
               "then": {
-                "en": "A map"
+                "en": "A map",
+                "ca": "un mapa",
+                "es": "un mapa"
               }
             }
           ],
@@ -636,13 +642,17 @@
             {
               "if": "sides=1",
               "then": {
-                "en": "This poster box has advertisements on a single side"
+                "en": "This poster box has advertisements on a single side",
+                "ca": "Aquest mupi té publicitat a un únic costat",
+                "es": "Este mupi tiene publicidad en un único lado"
               }
             },
             {
               "if": "sides=2",
               "then": {
-                "en": "This poster box has advertisements on both sides"
+                "en": "This poster box has advertisements on both sides",
+                "ca": "Aquest mupi té publicitat pels dos costas",
+                "es": "Este mupi tiene publicidad por los dos lados"
               }
             }
           ]
@@ -817,8 +827,8 @@
           },
           "description": {
             "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads",
-            "ca": "Les tanques publicitàries normalment són de gran tamany i estan situades prop de les carreteres",
-            "es": "Las vallas publicitarias normalment son de gran tamanó y están situadas cerca de las carreteras"
+            "ca": "Una estructura publicitària gran a l'exterior, que normalment es troba a zones transitades com ara al costat de carreteres amb molta intensitat",
+            "es": "Una estructura publicitaria grande al aire libre, que normalmente se encuentra en áreas transitadas como carreteras con mucha intensidad"
           },
           "exampleImages": [
             "./assets/themes/advertising/KFC_Billboard.jpg",
@@ -831,7 +841,9 @@
             "advertising=poster_box"
           ],
           "title": {
-            "en": "a freestanding poster box"
+            "en": "a freestanding poster box",
+            "ca": "un mupi",
+            "es": "un mupi"
           },
           "exampleImages": [
             "./assets/themes/advertising/Mupi_spain.jpg",
@@ -843,7 +855,9 @@
             "advertising=poster_box"
           ],
           "title": {
-            "en": "a poster box mounted on a wall"
+            "en": "a poster box mounted on a wall",
+            "ca": "un mupi sobre la paret",
+            "es": "un mupi sobre la pared"
           },
           "preciseInput": {
             "snapToLayer": "walls_and_buildings"
@@ -947,7 +961,9 @@
             "en": "a tarp"
           },
           "description": {
-            "en": "A piece of waterproof textile with a printed message, permanently anchored on a wall"
+            "en": "A piece of waterproof textile with a printed message, permanently anchored on a wall",
+            "ca": "Una peça de tèxtil impermeable amb un missatge imprès, fixada permanentment a una paret",
+            "es": "Una pieza de tela impermeable con un mensaje impreso, anclada permanentemente en una pared"
           },
           "preciseInput": {
             "preferredBackground": "map",
