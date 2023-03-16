@@ -334,10 +334,10 @@
               "then": {
                 "ca": "Açò és una lona",
                 "es": "Esto es una lona",
-                "en": "This is a tarp"
+                "en": "This is a tarp (a weatherproof piece of textile with an advertising message)"
               },
               "icon": {
-                "path": "./assets/themes/advertising/icon.svg",
+                "path": "./assets/themes/advertising/tarp.svg",
                 "class": "medium"
               }
             },
@@ -369,65 +369,11 @@
                 "en": "This is a wall painting"
               },
               "icon": {
-                "path": "./assets/themes/advertising/icon.svg",
+                "path": "./assets/themes/advertising/wall_painting.svg",
                 "class": "medium"
               }
             }
           ]
-        },
-        {
-          "id": "luminous_or_lit",
-          "question": {
-            "en": "Is this object lit or does it emit light?"
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "lit=yes",
-                  "luminous=yes"
-                ]
-              },
-              "then": "This object emits light from both an internal and external light source"
-            },
-            {
-              "if": {
-                "and": [
-                  "luminous=yes"
-                ]
-              },
-              "then": "This object emits light",
-              "addExtraTags": [
-                "lit=no"
-              ]
-            },
-            {
-              "if": {
-                "and": [
-                  "lit=yes"
-                ]
-              },
-              "then": "This object is lit externally, e.g. by a spotlight or other lights",
-              "addExtraTags": [
-                "luminous=no"
-              ]
-            },
-            {
-              "if": {
-                "and": [
-                  "lit=no",
-                  "luminous=no"
-                ]
-              },
-              "then": "This object does not emit light and is not lighted by externally"
-            }
-          ],
-          "condition": {
-            "#": "A screen is always luminous",
-            "and": [
-              "advertising!=screen"
-            ]
-          }
         },
         {
           "id": "animated",
@@ -469,18 +415,6 @@
               }
             },
             {
-              "if": {
-                "and": [
-                  "animated=digital_message"
-                ]
-              },
-              "then": {
-                "ca": "un <b>Missatge digital</b>",
-                "es": "un <b>Mensaje digital</b>",
-                "en": "a <b>Digital message</b>"
-              }
-            },
-            {
               "if": "animated=travision_blades",
               "then": {
                 "ca": "Trivision",
@@ -492,12 +426,8 @@
                 "path": "./assets/themes/advertising/trivision.svg"
               },
               "#": "Only applicable to billboards",
-              "hideInAnswer": {
-                "and": [
-                  "advertising!=billboard",
-                  "advertising!=poster_box"
-                ]
-              }
+              "hideInAnswer":                   "advertising!=billboard"
+              
             },
             {
               "if": "animated=winding_posters",
@@ -531,6 +461,26 @@
           ]
         },
         {
+          "builtin":  "luminous_or_lit",
+          "override": {
+            "+mappings": [
+              {
+                "if": "luminous=neon",
+                "then": {
+                  "en": "This is a neon-tube light"
+                },
+                "hideInAnswer": "advertising!=sign"
+              }
+            ],
+            "condition": {
+              "#": "A screen is always luminous",
+              "and": [
+                "advertising!=screen"
+              ]
+            }
+          }
+        },
+        {
           "id": "operator",
           "render": {
             "ca": "L'operador és {operator}",
@@ -549,24 +499,15 @@
         },
         {
           "id": "message_type",
-          "render": {
-            "*": " {message}"
-          },
           "question": {
             "ca": "Quin tipus de missatge es mostra?",
             "es": "Que tipo de mensaje se muestra?",
             "en": "What kind of message is shown?"
           },
-          "freeform": {
-            "key": "message"
-          },
           "mappings": [
             {
-              "if": {
-                "and": [
-                  "message=commercial"
-                ]
-              },
+              "if": "message=commercial",
+              "ifnot": "message=",
               "then": {
                 "ca": "Missatge comercial",
                 "es": "Mensaje comercial",
@@ -574,11 +515,8 @@
               }
             },
             {
-              "if": {
-                "and": [
-                  "message=local"
-                ]
-              },
+              "if": "message=local",
+              "ifnot": "message=",
               "then": {
                 "ca": "Informació municipal",
                 "es": "Información municipal",
@@ -586,11 +524,8 @@
               }
             },
             {
-              "if": {
-                "and": [
-                  "message=safety"
-                ]
-              },
+              "if": "message=safety",
+              "ifnot": "message=",
               "then": {
                 "ca": "Informació de seguretat",
                 "es": "Información de seguridad",
@@ -603,11 +538,8 @@
               }
             },
             {
-              "if": {
-                "and": [
-                  "message=political"
-                ]
-              },
+              "if": "message=political",
+              "ifnot": "message=",
               "then": {
                 "ca": "Publicitat electoral",
                 "es": "Publicidad electoral",
@@ -615,11 +547,8 @@
               }
             },
             {
-              "if": {
-                "and": [
-                  "message=showbiz"
-                ]
-              },
+              "if": "message=showbiz",
+              "ifnot": "message=",
               "then": {
                 "ca": "Informació sobre teatres, concerts, ...",
                 "es": "Información sobre teatros, conciertos, ...",
@@ -632,11 +561,8 @@
               }
             },
             {
-              "if": {
-                "and": [
-                  "message=non_profit"
-                ]
-              },
+              "if": "message=non_profit",
+              "ifnot": "message=",
               "then": {
                 "ca": "Missatge d'organitzacions sense ànim de lucre",
                 "es": "Mensaje de organizaciones sin ánimo de lucro",
@@ -644,11 +570,8 @@
               }
             },
             {
-              "if": {
-                "and": [
-                  "message=opinion"
-                ]
-              },
+              "if": "message=opinion",
+              "ifnot": "message=",
               "then": {
                 "ca": "Per a expressar la teua opinió",
                 "es": "Para expresar tu opinión",
@@ -662,11 +585,8 @@
               }
             },
             {
-              "if": {
-                "and": [
-                  "message=religion"
-                ]
-              },
+              "if": "message=religion",
+              "ifnot": "message=",
               "then": {
                 "ca": "Missatge religiós",
                 "es": "Mensaje religioso",
@@ -674,11 +594,8 @@
               }
             },
             {
-              "if": {
-                "and": [
-                  "message=funding"
-                ]
-              },
+              "if": "message=funding",
+              "ifnot": "message=",
               "then": {
                 "ca": "Cartell de financiació",
                 "es": "Cartel de financiación",
@@ -690,9 +607,18 @@
                   "advertising=column"
                 ]
               }
+            },
+            {
+              "if": "information=map",
+              "ifnot": "information=",
+              "then": {
+                "en": "A map"
+              }
             }
-          ]
+          ],
+          "multiAnswer": true
         },
+        "map.map",
         {
           "id": "Sides",
           "condition": {
@@ -821,7 +747,7 @@
               },
               {
                 "if": "advertising=tarp",
-                "then": "./assets/themes/advertising/icon.svg"
+                "then": "./assets/themes/advertising/tarp.svg"
               },
               {
                 "if": "advertising=totem",
@@ -829,7 +755,7 @@
               },
               {
                 "if": "advertising=wall_painting",
-                "then": "./assets/themes/advertising/icon.svg"
+                "then": "./assets/themes/advertising/wall_painting.svg"
               }
             ]
           },
@@ -888,6 +814,29 @@
         },
         {
           "tags": [
+            "advertising=poster_box"
+          ],
+          "title": {
+            "en": "a freestanding poster box"
+          },
+          "exampleImages": [
+            "./assets/themes/advertising/Mupi_spain.jpg",
+            "./assets/themes/advertising/Mupi_Alcoi.jpg"
+          ]
+        },
+        {
+          "tags": [
+            "advertising=poster_box"
+          ],
+          "title": {
+            "en": "a poster box mounted on a wall"
+          },
+          "preciseInput": {
+            "snapToLayer": "walls_and_buildings"
+          }
+        },
+        {
+          "tags": [
             "advertising=board"
           ],
           "title": {
@@ -942,29 +891,6 @@
         },
         {
           "tags": [
-            "advertising=poster_box"
-          ],
-          "title": {
-            "en": "a freestanding poster box"
-          },
-          "exampleImages": [
-            "./assets/themes/advertising/Mupi_spain.jpg",
-            "./assets/themes/advertising/Mupi_Alcoi.jpg"
-          ]
-        },
-        {
-          "tags": [
-            "advertising=poster_box"
-          ],
-          "title": {
-            "en": "a poster box mounted on a wall"
-          },
-          "preciseInput": {
-            "snapToLayer": "walls_and_buildings"
-          }
-        },
-        {
-          "tags": [
             "advertising=screen"
           ],
           "title": {
@@ -997,19 +923,42 @@
             "./assets/themes/advertising/Times square.jpg"
           ]
         },
+
         {
           "tags": [
-            "advertising=sculpture"
+            "advertising=tarp"
           ],
           "title": {
-            "ca": "una escupltura",
-            "es": "una escultura",
-            "en": "a sculpture"
+            "ca": "una lona",
+            "es": "una lona",
+            "en": "a tarp"
+          },
+          "description": {
+            "en": "A piece of waterproof textile with a printed message, permanently anchored on a wall"
+          },
+          "preciseInput": {
+            "preferredBackground": "map",
+            "snapToLayer": "walls_and_buildings",
+            "maxSnapDistance": 5
           },
           "exampleImages": [
-            "./assets/themes/advertising/Aircraft_Sculpture.jpg",
-            "./assets/themes/advertising/Mug.jpg",
-            "./assets/themes/advertising/BS.JPG"
+            "./assets/themes/advertising/tarp_feder.jpg",
+            "./assets/themes/advertising/tarp_madrid.jpg"
+          ]
+        },
+        {
+          "tags": [
+            "advertising=totem"
+          ],
+          "title": {
+            "ca": "un tòtem",
+            "es": "un tótem",
+            "en": "a totem"
+          },
+          "exampleImages": [
+            "./assets/themes/advertising/AdvertisingTotem_004.jpg",
+            "./assets/themes/advertising/AdvertisingTotem_003.jpg",
+            "./assets/themes/advertising/Lidl_totem.jpg"
           ]
         },
         {
@@ -1039,36 +988,17 @@
         },
         {
           "tags": [
-            "advertising=tarp"
+            "advertising=sculpture"
           ],
           "title": {
-            "ca": "una lona",
-            "es": "una lona",
-            "en": "a tarp"
-          },
-          "preciseInput": {
-            "preferredBackground": "map",
-            "snapToLayer": "walls_and_buildings",
-            "maxSnapDistance": 5
+            "ca": "una escupltura",
+            "es": "una escultura",
+            "en": "a sculpture"
           },
           "exampleImages": [
-            "./assets/themes/advertising/tarp_feder.jpg",
-            "./assets/themes/advertising/tarp_madrid.jpg"
-          ]
-        },
-        {
-          "tags": [
-            "advertising=totem"
-          ],
-          "title": {
-            "ca": "un tòtem",
-            "es": "un tótem",
-            "en": "a totem"
-          },
-          "exampleImages": [
-            "./assets/themes/advertising/AdvertisingTotem_004.jpg",
-            "./assets/themes/advertising/AdvertisingTotem_003.jpg",
-            "./assets/themes/advertising/Lidl_totem.jpg"
+            "./assets/themes/advertising/Aircraft_Sculpture.jpg",
+            "./assets/themes/advertising/Mug.jpg",
+            "./assets/themes/advertising/BS.JPG"
           ]
         },
         {

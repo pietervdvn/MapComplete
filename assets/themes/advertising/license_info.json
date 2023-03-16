@@ -409,6 +409,17 @@
     ]
   },
   {
+    "path": "tarp.svg",
+    "license": "CC BY-SA 3.0",
+    "authors": [
+      "Barnes38",
+      "Pietervdvn"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Billboard_trunk.svg"
+    ]
+  },
+  {
     "path": "tarp_feder.jpg",
     "license": "CC-BY SA 4.0",
     "authors": [
@@ -447,6 +458,17 @@
     ],
     "sources": [
       "https://thenounproject.com/icon/rotating-arrow-184486/"
+    ]
+  },
+  {
+    "path": "wall_painting.svg",
+    "license": "CC BY-SA 3.0",
+    "authors": [
+      "Barnes38",
+      "Pietervdvn"
+    ],
+    "sources": [
+      "https://wiki.openstreetmap.org/wiki/File:Billboard_trunk.svg"
     ]
   }
 ]
