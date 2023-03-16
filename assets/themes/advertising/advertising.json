@@ -427,8 +427,7 @@
                 "path": "./assets/themes/advertising/trivision.svg"
               },
               "#": "Only applicable to billboards",
-              "hideInAnswer":                   "advertising!=billboard"
-              
+              "hideInAnswer": "advertising!=billboard"
             },
             {
               "if": "animated=winding_posters",
@@ -462,7 +461,8 @@
           ]
         },
         {
-          "builtin":  "luminous_or_lit",
+          "id": "luminous_or_lit_advertising",
+          "builtin": "luminous_or_lit",
           "override": {
             "+mappings": [
               {
@@ -663,7 +663,9 @@
             "key": "ref"
           },
           "condition": {
-            "and": ["advertising!=sign"]
+            "and": [
+              "advertising!=sign"
+            ]
           }
         }
       ],
@@ -935,7 +937,6 @@
             "./assets/themes/advertising/Times square.jpg"
           ]
         },
-
         {
           "tags": [
             "advertising=tarp"

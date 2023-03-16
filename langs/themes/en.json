@@ -83,7 +83,7 @@
                         },
                         "question": "Does this advertisement cycle through multiple messages?"
                     },
-                    "luminous_or_lit": {
+                    "luminous_or_lit_advertising": {
                         "override": {
                             "+mappings": {
                                 "0": {

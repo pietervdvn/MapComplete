@@ -88,6 +88,14 @@
     "sources": []
   },
   {
+    "path": "blocked.svg",
+    "license": "CC0",
+    "authors": [
+      "Pieter Vander Vennet"
+    ],
+    "sources": []
+  },
+  {
     "path": "brick_wall_raw.svg",
     "license": "CC0",
     "authors": [
@@ -105,14 +113,6 @@
   },
   {
     "path": "brick_wall_square.svg",
-    "license": "CC0",
-    "authors": [
-      "Pieter Vander Vennet"
-    ],
-    "sources": []
-  },
-  {
-    "path": "blocked.svg",
     "license": "CC0",
     "authors": [
       "Pieter Vander Vennet"

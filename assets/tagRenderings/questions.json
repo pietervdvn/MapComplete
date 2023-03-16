@@ -1937,7 +1937,7 @@
       "pl": "Nazwa sieci to <b>{internet_access:ssid}</b>"
     }
   },
-  "luminous_or_lit":   {
+  "luminous_or_lit": {
     "question": {
       "en": "Is this object lit or does it emit light?"
     },
@@ -1950,13 +1950,11 @@
           ]
         },
         "then": {
-          "en":"This object both emits light and is lighted by an external light source"
+          "en": "This object both emits light and is lighted by an external light source"
         }
       },
       {
-        "if":
-        "luminous=yes"
-      ,
+        "if": "luminous=yes",
         "then": {
           "en": "This object emits light"
         },
@@ -1965,10 +1963,10 @@
         ]
       },
       {
-        "if":
-        "lit=yes"
-      ,
-        "then":{"en": "This object is lit externally, e.g. by a spotlight or other lights"},
+        "if": "lit=yes",
+        "then": {
+          "en": "This object is lit externally, e.g. by a spotlight or other lights"
+        },
         "addExtraTags": [
           "luminous=no"
         ]
