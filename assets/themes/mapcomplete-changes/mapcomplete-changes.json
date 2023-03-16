@@ -115,6 +115,10 @@
             "render": "teardrop:#00cc00",
             "mappings": [
               {
+                "if": "theme=advertising",
+                "then": "./assets/themes/advertising/icon.svg"
+              },
+              {
                 "if": "theme=aed",
                 "then": "./assets/themes/aed/aed.svg"
               },
