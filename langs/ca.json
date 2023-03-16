@@ -5,6 +5,12 @@
         "retrying": "La càrrega de dades ha fallat. Tornant-ho a intentar en ({count}) segons…",
         "zoomIn": "Amplia per veure o editar les dades"
     },
+    "communityIndex": {
+        "available": "Aquesta comunitat parla {native}",
+        "intro": "Posa't en contacte amb altres persones per conèixer-los, aprendre d'ells,...",
+        "notAvailable": "Aquesta comunitat no parla {native}",
+        "title": "Índex de la comunitat"
+    },
     "delete": {
         "cancel": "Cancel·lar",
         "cannotBeDeleted": "Aquest element no pot ser esborrat",
@@ -45,6 +51,7 @@
         "cyclofix": "A CycloFix hi han mManxes, estacions de reparacions, fonts d'aigua i botigues per a ciclistes",
         "description": "Un full de mà A4-apaisat per a promocionar MapComplete",
         "editing": {
+            "ex": "A continuació es mostra un exemple simplificat de com és això per a una reserva natural.",
             "title": "Com és la interfície?"
         },
         "examples": "Hi han molts mapes temàtics disponibles, el quals alguns estan disponibles aquí.\n\nHi han molts mapes temàtics en línea: sobre salut, navegació interior, accessibilitat per a cadires de rodes, instal·lacions per a residus, prestageries públiques, creuaments per vianants pitnats amb l'arc de Sant Martí, ... Descobreix-los tots a mapcomplete.osm.be",
@@ -61,8 +68,10 @@
             "li0": "Mostra on estan els PDI",
             "li1": "Afegeix nous punts i actualitza informació dels existents",
             "li2": "Afegeix informació de contacte i hores d'apertura fàcilment",
+            "li7": "Programari lliure amb copyleft (llicència GPL) i d'ús gratuït",
             "title": "Que és MapComplete?"
         },
+        "onwheels": "També hi ha disponibles mapes d'interior per a usuaris de cadira de rodes.",
         "title": "MapComplete.osm.be",
         "whatIsOsm": "Que és OpenStreetMap?"
     },
@@ -208,7 +217,7 @@
             "loadingCountry": "Determinant país…",
             "not_all_rules_parsed": "L'horari és complex. Les normes següents seran ignorades en l'entrada:",
             "openTill": "fins",
-            "open_24_7": "Obert sobre les",
+            "open_24_7": "Obert tot el dia",
             "open_during_ph": "Durant festes està",
             "opensAt": "des de",
             "ph_closed": "tancat",
@@ -269,9 +278,18 @@
         "skippedQuestions": "Has ignorat algunes preguntes",
         "testing": "Proves - Els canvis no es desaran",
         "uploadGpx": {
+            "confirm": "Confirmeu la càrrega",
             "meta": {
                 "intro": "Afegeix un títol per a la teua traça:",
                 "title": "Títol i descripció"
+            },
+            "modes": {
+                "private": {
+                    "name": "Anònim"
+                },
+                "public": {
+                    "name": "Públic"
+                }
             }
         },
         "weekdays": {
@@ -313,6 +331,9 @@
         }
     },
     "hotkeyDocumentation": {
+        "intro": "MapComplete admet les tecles següents:",
+        "key": "Combinació de tecles",
+        "openLayersPanel": "Obre el panell de fons, capes i filtres",
         "title": "Dreceres"
     },
     "image": {
@@ -322,7 +343,10 @@
         "dontDelete": "Cancel·lar",
         "isDeleted": "Esborrada",
         "nearbyPictures": {
-            "browseNearby": "Cerca imatges properes…"
+            "browseNearby": "Cerca imatges properes…",
+            "removeFilters": "Feu clic aquí per eliminar els filtres",
+            "title": "Imatges properes",
+            "withinRadius": "Mostra només les imatges que s'han fet a {radius} metres d'aquest objecte"
         },
         "pleaseLogin": "Entrar per pujar una foto",
         "respectPrivacy": "Respecta la privacitat. No fotografiïs gent o matrícules. No facis servir imatges de Google Maps, Google Streetview o altres fonts amb copyright.",
@@ -334,6 +358,10 @@
         "uploadingPicture": "Pujant la teva imatge…"
     },
     "importHelper": {
+        "askMetadata": {
+            "downloadGeojson": "Descarrega GeoJSON",
+            "giveSource": "Quina és la font d'aquestes dades? Si s'estableix \"font\" a l'element aquest valor s'ignorarà"
+        },
         "introduction": {
             "description": "L'ajudant d'importació converteix un conjunt de dades extern en notes. El conjunt de dades extern ha de coincidir amb una de les capes MapComplete existents. Per a cada article que introdueixes a l'importador, es crearà una nota única. Aquestes notes es mostraran juntament amb les característiques rellevants en aquests mapes per afegir-les fàcilment.",
             "importFormat": "Un text d'una nota ha de tenir el format següent per poder ser recollit: <br><div class=\"literal-code\">[Una petita introducció]<br>https://mapcomplete.osm.be /[themename].html?[paràmetres com ara lat i lon]#import<br>[totes les etiquetes de la funció] </div>"
@@ -391,7 +419,7 @@
         "featuredThemeTitle": "Destacades aquesta setmana",
         "intro": "MapComplete és un visor i editor d'OpenStreetMap, que et mostra informació sobre elements d'una petició específica i et permet actualitzar-los.",
         "logIn": "Entra per veure altres temes que has visitat anteriorment",
-        "pickTheme": "Tria una petició de sota per començar.",
+        "pickTheme": "Tria una petició a sota per començar.",
         "title": "Benvingut/da a MapComplete"
     },
     "move": {

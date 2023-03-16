@@ -1,5 +1,27 @@
 {
     "shared_questions": {
+        "denominations-coins": {
+            "mappings": {
+                "0": {
+                    "then": "1 koin sen diterima"
+                },
+                "1": {
+                    "then": "Koin 2 sen diterima"
+                },
+                "2": {
+                    "then": "Koin 5 sen diterima"
+                },
+                "3": {
+                    "then": "Koin 10 sen diterima"
+                },
+                "4": {
+                    "then": "Koin 20 sen diterima"
+                },
+                "5": {
+                    "then": "Koin 50 sen diterima"
+                }
+            }
+        },
         "description": {
             "question": "Apakah masih ada sesuatu yang relevan yang tidak dapat Anda berikan dalam pertanyaan sebelumnya? Tambahkan di sini. ",
             "questionHint": "  Jangan ulangi fakta yang sudah dinyatakan "
