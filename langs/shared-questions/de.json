@@ -288,14 +288,6 @@
                 }
             },
             "question": "Wie lautet das zugehörige Wikidata Element?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Nicht mit Wikipedia verknüpft"
-                }
-            },
-            "question": "Wie lautet der zugehörige Wikipedia Artikel?"
         }
     }
 }

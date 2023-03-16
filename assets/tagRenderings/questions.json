@@ -163,59 +163,6 @@
       }
     ]
   },
-  "wikipedialink": {
-    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
-    "question": {
-      "en": "What is the corresponding item on Wikipedia?",
-      "nl": "Welk Wikipedia-artikel beschrijft dit object?",
-      "de": "Wie lautet der zugehörige Wikipedia Artikel?",
-      "pt": "Qual é o item correspondente na Wikipédia?",
-      "hu": "Mi a megfelelő szócikk a Wikipédián?",
-      "it": "Qual è il corrispondente elemento su Wikipedia?",
-      "nb_NO": "Hva er respektivt element på Wikipedia?",
-      "ca": "Quin és l'ítem a Viquipèdia?",
-      "sv": "Vad är det motsvarande objektet på Wikipedia?",
-      "zh_Hant": "維基百科上對應的項目是什麼？",
-      "fr": "Quel est l’élément Wikipédia correspondant ?",
-      "pl": "Jaki jest link do strony Wikipedii?",
-      "ja": "Wikipediaの該当項目は何ですか？",
-      "fil": "Ano ang nau-ukol na partida sa Wikipedia?",
-      "es": "¿Cual es el ítem correspondiente en Wikipedia?",
-      "zh_Hans": "在维基百科上对应的条目是什么？",
-      "da": "Hvad er det tilsvarende emne på Wikipedia?",
-      "cs": "Jaká je odpovídající položka ve Wikipedii?"
-    },
-    "mappings": [
-      {
-        "if": "wikidata=",
-        "then": {
-          "en": "Not linked with Wikipedia",
-          "nl": "Nog geen Wikipedia-artikel bekend",
-          "de": "Nicht mit Wikipedia verknüpft",
-          "pt": "Não vinculado à Wikipédia",
-          "hu": "Nincs belinkelve a Wikipédiához",
-          "it": "Non collegato a Wikipedia",
-          "nb_NO": "Ikke lenket med Wikipedia",
-          "fr": "Non lié avec Wikipedia",
-          "ca": "No enllaçat amb Viquipèdia",
-          "sv": "Inte länkad med Wikipedia",
-          "zh_Hant": "沒有連結到維基百科",
-          "pl": "Brak linku do strony Wikipedii",
-          "ja": "ウィキペディアと連動していない",
-          "fil": "Hindi naka-ugnay sa Wikipedia",
-          "es": "No enlazado con Wikipedia",
-          "zh_Hans": "不要连接到维基百科",
-          "da": "Ikke linket til Wikipedia",
-          "id": "Tidak ditautkan dengan Wikipedia",
-          "cs": "Není propojeno s Wikipedií"
-        }
-      }
-    ],
-    "freeform": {
-      "key": "wikidata",
-      "type": "wikidata"
-    }
-  },
   "email": {
     "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
     "question": {

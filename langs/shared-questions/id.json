@@ -197,13 +197,6 @@
                 }
             },
             "question": "Apa entitas Wikidata yang sesuai?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Tidak ditautkan dengan Wikipedia"
-                }
-            }
         }
     }
 }

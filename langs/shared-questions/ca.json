@@ -288,14 +288,6 @@
                 }
             },
             "question": "Quina és la correspondent entitat a Wikidata?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "No enllaçat amb Viquipèdia"
-                }
-            },
-            "question": "Quin és l'ítem a Viquipèdia?"
         }
     }
 }

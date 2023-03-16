@@ -288,14 +288,6 @@
                 }
             },
             "question": "Jaki jest powiązany obiekt Wikidata?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Brak linku do strony Wikipedii"
-                }
-            },
-            "question": "Jaki jest link do strony Wikipedii?"
         }
     }
 }
