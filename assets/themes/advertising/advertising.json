@@ -17,7 +17,7 @@
     "en": "Have you ever wondered how many advertising there are in our streets and roads? With this map you could find and add information about all the advertising features that you can find on the street"
   },
   "maintainer": "Offsel",
-  "icon": "./assets/themes/advertising/icon.svg",
+  "icon": "./assets/themes/advertising/poster_box.svg",
   "version": "2023_01_29",
   "startLat": 0,
   "startLon": 0,
@@ -321,7 +321,7 @@
                 "en": "This is a sign"
               },
               "icon": {
-                "path": "./assets/themes/advertising/icon.svg",
+                "path": "./assets/themes/advertising/sign.svg",
                 "class": "medium"
               }
             },
@@ -383,12 +383,13 @@
             "en": "Does this advertisement cycle through multiple messages?"
           },
           "condition": {
-            "#": "Screens are _always_ animated; flags, tarps, and wall_paintings cannot be animated",
+            "#": "Screens are _always_ animated; flags, tarps, and wall_paintings cannot be animated; signs can be anything so we don't make guesses",
             "and": [
               "advertising!=screen",
               "advertising!=flag",
               "advertising!=tarp",
-              "advertising!=wall_painting"
+              "advertising!=wall_painting",
+              "advertising!=sign"
             ]
           },
           "mappings": [
@@ -437,9 +438,9 @@
                 "en": "<b>Scrolling</b> posters"
               },
               "hideInAnswer": {
-                "or": [
+                "and": [
                   "advertising!=poster_box",
-                  "advertising!=totem"
+                  "advertising!=column"
                 ]
               }
             },
@@ -618,7 +619,6 @@
           ],
           "multiAnswer": true
         },
-        "map.map",
         {
           "id": "Sides",
           "condition": {
@@ -661,6 +661,9 @@
           },
           "freeform": {
             "key": "ref"
+          },
+          "condition": {
+            "and": ["advertising!=sign"]
           }
         }
       ],
@@ -671,7 +674,7 @@
             "centroid"
           ],
           "icon": {
-            "render": "./assets/themes/advertising/icon.svg",
+            "render": "./assets/themes/advertising/sign.svg",
             "mappings": [
               {
                 "if": {
@@ -742,8 +745,17 @@
                 "then": "./assets/themes/advertising/sculpture.svg"
               },
               {
+                "if": {
+                  "and": [
+                    "advertising=sign",
+                    "_referencing_ways=[\"way/-1\"]"
+                  ]
+                },
+                "then": "brick_wall_square;./assets/themes/advertising/sign.svg"
+              },
+              {
                 "if": "advertising=sign",
-                "then": "./assets/themes/advertising/icon.svg"
+                "then": "./assets/themes/advertising/sign.svg"
               },
               {
                 "if": "advertising=tarp",
