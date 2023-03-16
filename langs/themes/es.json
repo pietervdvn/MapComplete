@@ -340,7 +340,7 @@
                                     "then": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que se necesita</span> un permiso para acceder a él<br/>{_embedding_feature:access:description}"
                                 },
                                 "2": {
-                                    "then": "<span class='subtle'>La <a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que</span> sólo pueden acceder a él los clientes<br/>{_embedding_feature:access:description}"
+                                    "then": "<span class='subtle'>La <a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que</span> sólo es accesible para los clientes<br/>{_embedding_feature:access:description}"
                                 },
                                 "3": {
                                     "then": "<span class='subtle'>La <a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que </span> sólo es accesible para los socios del club<br/>{_embedding_feature:access:description}"

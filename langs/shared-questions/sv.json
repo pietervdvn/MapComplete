@@ -107,14 +107,6 @@
                 }
             },
             "question": "Vad är den motsvarande Wikidata-enheten?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Inte länkad med Wikipedia"
-                }
-            },
-            "question": "Vad är det motsvarande objektet på Wikipedia?"
         }
     }
 }

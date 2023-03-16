@@ -183,14 +183,6 @@
                 }
             },
             "question": "Qual é a entidade Wikidata correspondente?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Não vinculado à Wikipédia"
-                }
-            },
-            "question": "Qual é o item correspondente na Wikipédia?"
         }
     }
 }

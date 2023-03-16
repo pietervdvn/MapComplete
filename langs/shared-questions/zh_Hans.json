@@ -63,14 +63,6 @@
                 }
             },
             "question": "在Wikidata上对应的实体是什么？"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "不要连接到维基百科"
-                }
-            },
-            "question": "在维基百科上对应的条目是什么？"
         }
     }
 }

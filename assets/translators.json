@@ -1,20 +1,20 @@
 {
   "contributors": [
     {
-      "commits": 254,
+      "commits": 255,
       "contributor": "kjon"
     },
     {
-      "commits": 249,
+      "commits": 252,
       "contributor": "Pieter Vander Vennet"
+    },
+    {
+      "commits": 100,
+      "contributor": "paunofu"
     },
     {
       "commits": 94,
       "contributor": "Allan Nordhøy"
-    },
-    {
-      "commits": 90,
-      "contributor": "paunofu"
     },
     {
       "commits": 67,
@@ -45,16 +45,16 @@
       "contributor": "Supaplex"
     },
     {
+      "commits": 25,
+      "contributor": "Reza Almanda"
+    },
+    {
       "commits": 22,
       "contributor": "Marco"
     },
     {
       "commits": 21,
       "contributor": "SC"
-    },
-    {
-      "commits": 19,
-      "contributor": "Reza Almanda"
     },
     {
       "commits": 18,
@@ -142,6 +142,10 @@
     },
     {
       "commits": 6,
+      "contributor": "Ettore Atalan"
+    },
+    {
+      "commits": 6,
       "contributor": "Fjuro"
     },
     {
@@ -179,10 +183,6 @@
     {
       "commits": 6,
       "contributor": "lvgx"
-    },
-    {
-      "commits": 5,
-      "contributor": "Ettore Atalan"
     },
     {
       "commits": 5,

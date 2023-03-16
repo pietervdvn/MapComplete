@@ -288,14 +288,6 @@
                 }
             },
             "question": "What is the corresponding Wikidata entity?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Not linked with Wikipedia"
-                }
-            },
-            "question": "What is the corresponding item on Wikipedia?"
         }
     }
 }

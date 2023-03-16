@@ -107,14 +107,6 @@
                 }
             },
             "question": "対応するウィキデータのエンティティは何ですか？"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "ウィキペディアと連動していない"
-                }
-            },
-            "question": "Wikipediaの該当項目は何ですか？"
         }
     }
 }

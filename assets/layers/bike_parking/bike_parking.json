@@ -89,7 +89,8 @@
         "pt": "Qual o tipo deste estacionamento de bicicletas?",
         "es": "¿Cual es el tipo de este aparcamiento de bicicletas?",
         "da": "Hvilken type cykelparkering er det?",
-        "cs": "Jaký je typ tohoto parkoviště pro jízdní kola?"
+        "cs": "Jaký je typ tohoto parkoviště pro jízdní kola?",
+        "ca": "Quin és el tipus d'aquest aparcament de bicicletes?"
       },
       "render": {
         "en": "This is a bicycle parking of the type: {bicycle_parking}",
@@ -106,7 +107,8 @@
         "pt": "Este é um estacionamento de bicicletas do tipo: {bicycle_parking}",
         "es": "Este es un aparcamiento de bicicletas del tipo: {bicycle_parking}",
         "da": "Dette er en cykelparkering af typen: {bicycle_parking}",
-        "cs": "Jde o typ parkoviště pro jízdní kola: {bicycle_parking}"
+        "cs": "Jde o typ parkoviště pro jízdní kola: {bicycle_parking}",
+        "ca": "Aquest és un aparcament de bicicletes del tipus: {bicycle_parking}"
       },
       "freeform": {
         "key": "bicycle_parking",
@@ -230,7 +232,8 @@
             "es": "Caseta",
             "da": "Skur",
             "cs": "Přístřešek",
-            "pa_PK": "شیڈ"
+            "pa_PK": "شیڈ",
+            "ca": "cobert"
           },
           "icon": {
             "path": "./assets/layers/bike_parking/shed.svg",
@@ -268,7 +271,8 @@
             "zh_Hant": "樓層當中標示為單車停車場的區域",
             "es": "Una área en el suelo que está marcada  para el aparcamiento de bicicletas",
             "da": "Et område på gulvet, der er markeret til cykelparkering",
-            "cs": "Plocha na zemi označená pro parkování jízdních kol"
+            "cs": "Plocha na zemi označená pro parkování jízdních kol",
+            "ca": "Una zona al terra que està senyalitzada per a l'aparcament de bicicletes"
           }
         }
       ],
@@ -383,7 +387,8 @@
         "pt": "Este estacionamento é coberto? Também selecione \"coberto\" para estacionamentos internos.",
         "es": "¿Está cubierto este aparcamiento? Selecciona \"cubierto\" también para aparcamientos interiores.",
         "da": "Er denne parkering overdækket? Vælg også \"overdækket\" for indendørs parkeringspladser.",
-        "cs": "Je toto parkoviště zastřešené? U vnitřních parkovišť vyberte také možnost \"kryté\"."
+        "cs": "Je toto parkoviště zastřešené? U vnitřních parkovišť vyberte také možnost \"kryté\".",
+        "ca": "Aquest aparcament està cobert? També seleccioneu \"cobert\" per als aparcaments interiors."
       },
       "condition": {
         "and": [
@@ -651,7 +656,8 @@
         "pt": "Quantas bicicletas de carga cabem neste estacionamento de bicicletas?",
         "es": "¿Cuántas bicicletas de carga caben en este aparcamiento de bicicletas?",
         "da": "Hvor mange ladcykler er der plads til i denne cykelparkering?",
-        "cs": "Kolik nákladních jízdních kol se vejde do tohoto parkoviště pro jízdní kola?"
+        "cs": "Kolik nákladních jízdních kol se vejde do tohoto parkoviště pro jízdní kola?",
+        "ca": "Quantes bicicletes de càrrega caben en aquest aparcament de bicicletes?"
       },
       "render": {
         "en": "This parking fits {capacity:cargo_bike} cargo bikes",
@@ -664,7 +670,8 @@
         "pt": "Neste estacionamento cabem {capacity:cargo_bike} bicicletas de carga",
         "es": "En este aparcamiento caben {capacity:cargo_bike} bicicletas de carga",
         "da": "Der er plads til {capacity:cargo_bike} på denne cykelparkering",
-        "cs": "Toto parkoviště je vhodné pro {capacity:cargo_bike} nákladních kol"
+        "cs": "Toto parkoviště je vhodné pro {capacity:cargo_bike} nákladních kol",
+        "ca": "A aquest aparcament caben {capacity:cargo_bike} bicicletes de càrrega"
       },
       "condition": "cargo_bike~designated|yes",
       "freeform": {
@@ -710,6 +717,7 @@
     "es": "Una capa que muestra donde puedes aparcar tu bici",
     "da": "Et lag, der viser, hvor man kan parkere sin cykel",
     "fr": "Une couche montrant où stationner son vélo",
-    "cs": "Vrstva ukazující, kde můžete zaparkovat kolo"
+    "cs": "Vrstva ukazující, kde můžete zaparkovat kolo",
+    "ca": "Una capa que mostra on pots aparcar la teva bicicleta"
   }
 }

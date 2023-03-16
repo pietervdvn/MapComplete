@@ -66,9 +66,10 @@
     "pt_BR": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
     "pl": "Obiekt, w którym rowery można wypożyczyć na dłuższy okres",
     "pt": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
-    "es": "Una facilidad donde se pueden alquilar bicicletas durante largos periodos de tiempo",
+    "es": "Una instalación donde se pueden alquilar bicicletas durante largos periodos de tiempo",
     "da": "En facilitet, hvor cykler kan lånes i længere perioder",
-    "cs": "Zařízení, kde si lze půjčit jízdní kola na delší dobu"
+    "cs": "Zařízení, kde si lze půjčit jízdní kola na delší dobu",
+    "ca": "Una instal·lació on es poden cedir bicicletes per llargs períodes de temps"
   },
   "tagRenderings": [
     "images",
@@ -86,7 +87,8 @@
         "pt": "Qual o nome desta biblioteca de bicicleta?",
         "da": "Hvad hedder dette cykelbibliotek?",
         "es": "¿Cuál es el nombre de esta biblioteca de bicicletas?",
-        "cs": "Jak se jmenuje tato půjčovna kol?"
+        "cs": "Jak se jmenuje tato půjčovna kol?",
+        "ca": "Com es diu aquesta biblioteca de bicicletes?"
       },
       "render": {
         "en": "This bicycle library is called {name}",
@@ -100,8 +102,9 @@
         "de": "Diese Fahrradbibliothek heißt {name}",
         "pt": "Esta biblioteca de bicicleta é chamada de {name}",
         "da": "Dette cykelbibliotek hedder {name}",
-        "es": "Esta biblioteca de bicicletas se llama  {name}",
-        "cs": "Tato půjčovna jízdních kol se jmenuje {name}"
+        "es": "Esta biblioteca de bicicletas se llama {name}",
+        "cs": "Tato půjčovna jízdních kol se jmenuje {name}",
+        "ca": "Aquesta biblioteca de bicicletes es diu {name}"
       },
       "freeform": {
         "key": "name"
@@ -127,7 +130,8 @@
         "pt": "Quanto custa um empréstimo de bicicleta?",
         "da": "Hvor meget koster det at leje en cykel?",
         "es": "¿Cuánto cuesta alquilar una bicicleta?",
-        "cs": "Kolik stojí půjčení kola?"
+        "cs": "Kolik stojí půjčení kola?",
+        "ca": "Quant costa el préstec d'una bicicleta?"
       },
       "render": {
         "en": "Lending a bicycle costs {charge}",
@@ -143,7 +147,8 @@
         "pt": "Custos de empréstimo de bicicleta {charge}",
         "es": "Alquilar una bicicleta cuesta {charge}",
         "da": "Cykelleje koster {charge}",
-        "cs": "Půjčení kola stojí {charge}"
+        "cs": "Půjčení kola stojí {charge}",
+        "ca": "El préstec d'una bicicleta costa {charge}"
       },
       "freeform": {
         "key": "charge",
@@ -173,7 +178,8 @@
             "pt": "Emprestar uma bicicleta é grátis",
             "da": "Det er gratis at låne en cykel",
             "es": "Alquilar una bicicleta es gratis",
-            "cs": "Půjčení jízdního kola je zdarma"
+            "cs": "Půjčení jízdního kola je zdarma",
+            "ca": "El préstec d'una bicicleta és gratuït"
           }
         },
         {
@@ -195,7 +201,8 @@
             "pt": "Emprestar uma bicicleta custa €20/ano e €20 de garantia",
             "es": "Alquilar una bicicleta cuesta 20€/año y 20€ de garantía",
             "da": "Udlån af en cykel koster 20 €/år og 20 € garanti",
-            "cs": "Půjčení kola stojí 20 €/rok a 20 € záloha"
+            "cs": "Půjčení kola stojí 20 €/rok a 20 € záloha",
+            "ca": "El préstec d'una bicicleta costa 20€/any i 20€ de garantia"
           }
         }
       ],
@@ -237,7 +244,8 @@
             "pt": "Bicicletas para crianças disponíveis",
             "es": "Bicicletas para niños disponibles",
             "da": "Cykler til børn til rådighed",
-            "cs": "Dětská kola k dispozici"
+            "cs": "Dětská kola k dispozici",
+            "ca": "Bicicletes per a xiquets disponibles"
           }
         },
         {
@@ -254,7 +262,8 @@
             "pt": "Bicicletas para adulto disponíveis",
             "es": "Bicicletas para adultos disponibles",
             "da": "Cykler til voksne til rådighed",
-            "cs": "K dispozici kola pro dospělé"
+            "cs": "K dispozici kola pro dospělé",
+            "ca": "Bicicletes per a adults disponibles"
           }
         },
         {
@@ -271,7 +280,8 @@
             "pt": "Bicicletas para deficientes físicos disponíveis",
             "es": "Bicicletas para discapacitados disponibles",
             "da": "Cykler til handicappede til rådighed",
-            "cs": "K dispozici jsou kola pro osoby se zdravotním postižením"
+            "cs": "K dispozici jsou kola pro osoby se zdravotním postižením",
+            "ca": "Bicicletes per a discapacitats disponibles"
           }
         }
       ]
@@ -293,7 +303,8 @@
         "eo": "Fietsbibliotheek",
         "da": "et cykelbibliotek",
         "es": "una biblioteca de bicicletas",
-        "cs": "půjčovna kol"
+        "cs": "půjčovna kol",
+        "ca": "una biblioteca de bicicletes"
       },
       "tags": [
         "amenity=bicycle_library"
@@ -308,7 +319,8 @@
         "de": "Eine Fahrradbibliothek verfügt über eine Sammlung von Fahrrädern, die ausgeliehen werden können",
         "es": "Una biblioteca de bicicletas tiene una colección de bicicletas que se pueden prestar",
         "da": "Et cykelbibliotek har en samling cykler, som kan lånes",
-        "cs": "Cyklistická půjčovna má k dispozici sbírku kol, která lze zapůjčit"
+        "cs": "Cyklistická půjčovna má k dispozici sbírku kol, která lze zapůjčit",
+        "ca": "Una biblioteca de bicicletes té una col·lecció de bicicletes que es poden cedir"
       }
     }
   ],

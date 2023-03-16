@@ -25,7 +25,8 @@
     "fr": "Une carte des ateliers numériques ouverts",
     "da": "Et kort over hackerspaces",
     "cs": "Mapa označující Hackerspaces",
-    "es": "Un mapa de hackerspaces"
+    "es": "Un mapa de hackerspaces",
+    "ca": "Un mapa dels hackerspaces"
   },
   "description": {
     "en": "On this map you can see hackerspaces, add a new hackerspace or update data directly",
@@ -37,7 +38,8 @@
     "fr": "Retrouvez, renseignez ou modifiez des ateliers numériques ouverts",
     "da": "På dette kort kan du se hackerspaces, tilføje et nyt hackerspace eller opdatere data direkte",
     "es": "En este mapa puedes ver hackerspaces, añadir un nuevo hackerspace o actualizar datos directamente",
-    "cs": "Na této mapě si můžete prohlédnout hackerspaces, přidat nový hackerspace nebo přímo aktualizovat data"
+    "cs": "Na této mapě si můžete prohlédnout hackerspaces, přidat nový hackerspace nebo přímo aktualizovat data",
+    "ca": "En aquest mapa podeu veure els hackerspaces, afegir un nou hackerspace o actualitzar les dades directament"
   },
   "icon": "./assets/themes/hackerspaces/glider.svg",
   "startLat": 0,

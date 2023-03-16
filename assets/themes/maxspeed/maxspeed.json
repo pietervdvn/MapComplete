@@ -19,7 +19,8 @@
     "nl": "Deze kaart toont de maximumsnelheid voor elke straat.",
     "da": "Dette kort viser den lovligt tilladte maksimale hastighed på hver vej.",
     "cs": "Tato mapa zobrazuje zákonem povolenou maximální rychlost na každé silnici.",
-    "es": "Este mapa muestra la velocidad máxima permitida legalmente en cada carretera."
+    "es": "Este mapa muestra la velocidad máxima permitida legalmente en cada carretera.",
+    "ca": "Aquest mapa mostra la velocitat màxima permesa legalment a cada carretera."
   },
   "description": {
     "en": "This map shows the legally allowed maximum speed on every road. If a maxspeed is missing or wrong, you can correct it here.",
@@ -28,7 +29,8 @@
     "da": "Dette kort viser den lovligt tilladte maksimale hastighed på hver vej. Hvis en maxspeed mangler eller er forkert, kan du rette den her.",
     "nl": "Deze kaart toont de maximum toegestane snelheid voor elke weg. Als er een maximumsnelheid mist of niet klopt, kan je hem hier aanpassen.",
     "cs": "Tato mapa zobrazuje zákonem povolenou maximální rychlost na každé silnici. Pokud maximální rychlost chybí nebo je nesprávná, můžete ji zde opravit.",
-    "es": "Este mapa muestra la velocidad máxima legalmente permitida en cada carretera. Si falta una velocidad máxima o es incorrecta, puedes corregirla aquí."
+    "es": "Este mapa muestra la velocidad máxima legalmente permitida en cada carretera. Si falta una velocidad máxima o es incorrecta, puedes corregirla aquí.",
+    "ca": "Aquest mapa mostra la velocitat màxima permesa legalment a cada carretera. Si falta una velocitat màxima o és incorrecta, podeu corregir-la aquí."
   },
   "icon": "./assets/themes/maxspeed/maxspeed_logo.svg",
   "startLat": 0,

@@ -194,14 +194,6 @@
                 }
             },
             "question": "Hvad er den tilsvarende Wikidata-enhed?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Ikke linket til Wikipedia"
-                }
-            },
-            "question": "Hvad er det tilsvarende emne på Wikipedia?"
         }
     }
 }

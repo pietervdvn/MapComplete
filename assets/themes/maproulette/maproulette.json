@@ -18,7 +18,8 @@
     "da": "Tema, der viser MapRoulette-opgaver, så du kan søge, filtrere og rette dem.",
     "nl": "Thema met MapRoulette taken, waar je ze kunt zoeken, filteren en ze oplossen.",
     "es": "Tema que muestra las tareas de MapRoulette, permitiendo buscarlas, filtrarlas y arreglarlas.",
-    "cs": "Téma zobrazující úkoly MapRoulette, které umožňuje vyhledávat, filtrovat a opravovat je."
+    "cs": "Téma zobrazující úkoly MapRoulette, které umožňuje vyhledávat, filtrovat a opravovat je.",
+    "ca": "Tema que mostra les tasques de MapRoulette, que us permet cercar-les, filtrar-les i solucionar-les."
   },
   "hideFromOverview": true,
   "icon": "./assets/layers/maproulette/logomark.svg",

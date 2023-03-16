@@ -520,7 +520,8 @@
               "nl": "Deze straat wordt binnenkort een fietsstraat",
               "fr": "Cette rue va bientôt devenir une piste cyclable",
               "cs": "Tato ulice se brzy stane cyklo ulicí",
-              "es": "Esta calle se convertirá pronto en una vía ciclista"
+              "es": "Esta calle se convertirá pronto en una vía ciclista",
+              "ca": "Aquest carrer es convertirà aviat en una senda ciclable"
             },
             "hideInAnswer": "_country!=de"
           },
@@ -565,7 +566,8 @@
           "nl": "Welk bord heeft deze fietsstraat?",
           "fr": "Quel panneau comporte cette piste cyclable ?",
           "cs": "Jakou značku má tato cyklostezka?",
-          "es": "¿Qué señal tiene esta vía ciclista?"
+          "es": "¿Qué señal tiene esta vía ciclista?",
+          "ca": "Quin senyal té aquesta senda ciclable?"
         },
         "mappings": [
           {
@@ -667,7 +669,8 @@
               "nl": "Er zijn geen onderborden bij deze fietsstraat.",
               "fr": "Il n'y a pas de panneaux supplémentaires à cette piste cyclable.",
               "cs": "Na této cyklostezce nejsou žádná doplňková značení.",
-              "es": "No hay señales suplementarias en esta vía ciclista."
+              "es": "No hay señales suplementarias en esta vía ciclista.",
+              "ca": "No hi ha senyals addicionals en aquesta senda ciclable."
             },
             "icon": {
               "path": "./assets/themes/cyclestreets/Zeichen_244.svg",

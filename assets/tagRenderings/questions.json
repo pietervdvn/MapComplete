@@ -163,59 +163,6 @@
       }
     ]
   },
-  "wikipedialink": {
-    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
-    "question": {
-      "en": "What is the corresponding item on Wikipedia?",
-      "nl": "Welk Wikipedia-artikel beschrijft dit object?",
-      "de": "Wie lautet der zugehörige Wikipedia Artikel?",
-      "pt": "Qual é o item correspondente na Wikipédia?",
-      "hu": "Mi a megfelelő szócikk a Wikipédián?",
-      "it": "Qual è il corrispondente elemento su Wikipedia?",
-      "nb_NO": "Hva er respektivt element på Wikipedia?",
-      "ca": "Quin és l'ítem a Viquipèdia?",
-      "sv": "Vad är det motsvarande objektet på Wikipedia?",
-      "zh_Hant": "維基百科上對應的項目是什麼？",
-      "fr": "Quel est l’élément Wikipédia correspondant ?",
-      "pl": "Jaki jest link do strony Wikipedii?",
-      "ja": "Wikipediaの該当項目は何ですか？",
-      "fil": "Ano ang nau-ukol na partida sa Wikipedia?",
-      "es": "¿Cual es el ítem correspondiente en Wikipedia?",
-      "zh_Hans": "在维基百科上对应的条目是什么？",
-      "da": "Hvad er det tilsvarende emne på Wikipedia?",
-      "cs": "Jaká je odpovídající položka ve Wikipedii?"
-    },
-    "mappings": [
-      {
-        "if": "wikidata=",
-        "then": {
-          "en": "Not linked with Wikipedia",
-          "nl": "Nog geen Wikipedia-artikel bekend",
-          "de": "Nicht mit Wikipedia verknüpft",
-          "pt": "Não vinculado à Wikipédia",
-          "hu": "Nincs belinkelve a Wikipédiához",
-          "it": "Non collegato a Wikipedia",
-          "nb_NO": "Ikke lenket med Wikipedia",
-          "fr": "Non lié avec Wikipedia",
-          "ca": "No enllaçat amb Viquipèdia",
-          "sv": "Inte länkad med Wikipedia",
-          "zh_Hant": "沒有連結到維基百科",
-          "pl": "Brak linku do strony Wikipedii",
-          "ja": "ウィキペディアと連動していない",
-          "fil": "Hindi naka-ugnay sa Wikipedia",
-          "es": "No enlazado con Wikipedia",
-          "zh_Hans": "不要连接到维基百科",
-          "da": "Ikke linket til Wikipedia",
-          "id": "Tidak ditautkan dengan Wikipedia",
-          "cs": "Není propojeno s Wikipedií"
-        }
-      }
-    ],
-    "freeform": {
-      "key": "wikidata",
-      "type": "wikidata"
-    }
-  },
   "email": {
     "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
     "question": {
@@ -588,7 +535,7 @@
       "pt_BR": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.",
       "pt": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.",
       "hu": "Van-e még valami lényeges, amit nem tudott megadni az előző kérdésekben? Itt megteheti.",
-      "ca": "Hi ha quelcom rellevant que no t'hem preguntat? Afegeix-ho aquí. ",
+      "ca": "Hi ha quelcom rellevant que no t'hem preguntat? Afegeix-ho aquí.",
       "sv": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.",
       "id": "Apakah masih ada sesuatu yang relevan yang tidak dapat Anda berikan dalam pertanyaan sebelumnya? Tambahkan di sini. ",
       "ja": "前の質問で伝えきれなかった関連事項がまだありますか？ここに追加してください。",
@@ -1133,7 +1080,8 @@
           "pl": "Akceptowane są monety 1 centowe",
           "ca": "S'accepten monedes de 1 cèntim",
           "es": "Se aceptan monedas de 1 céntimo",
-          "cs": "Jsou přijímány mince v hodnotě 1 centu"
+          "cs": "Jsou přijímány mince v hodnotě 1 centu",
+          "id": "1 koin sen diterima"
         }
       },
       {
@@ -1148,7 +1096,8 @@
           "pl": "Akceptowane są monety 2 centowe",
           "ca": "S'accepten monedes de 2 cèntims",
           "es": "Se aceptan monedas de 2 céntimos",
-          "cs": "Jsou přijímány mince v hodnotě 2 centů"
+          "cs": "Jsou přijímány mince v hodnotě 2 centů",
+          "id": "Koin 2 sen diterima"
         }
       },
       {
@@ -1163,7 +1112,8 @@
           "pl": "Akceptowane są monety 5 centowe",
           "ca": "S'accepten monedes de 5 cèntims",
           "es": "Se aceptan monedas de 5 céntimos",
-          "cs": "Jsou přijímány mince v hodnotě 5 centů"
+          "cs": "Jsou přijímány mince v hodnotě 5 centů",
+          "id": "Koin 5 sen diterima"
         }
       },
       {
@@ -1178,7 +1128,8 @@
           "pl": "Akceptowane są monety 10-centowe",
           "ca": "S'accepten monedes de 10 cèntims",
           "es": "Se aceptan monedas de 10 céntimos",
-          "cs": "Jsou přijímány mince v hodnotě 10 centů"
+          "cs": "Jsou přijímány mince v hodnotě 10 centů",
+          "id": "Koin 10 sen diterima"
         }
       },
       {
@@ -1193,7 +1144,8 @@
           "pl": "Akceptowane są monety 20-centowe",
           "ca": "S'accepten monedes de 20 cèntims",
           "es": "Se aceptan monedas de 20 céntimos",
-          "cs": "Jsou přijímány mince v hodnotě 20 centů"
+          "cs": "Jsou přijímány mince v hodnotě 20 centů",
+          "id": "Koin 20 sen diterima"
         }
       },
       {
@@ -1208,7 +1160,8 @@
           "pl": "Akceptowane są monety 50-centowe",
           "ca": "S'accepten monedes de 50 cèntims",
           "es": "Se aceptan monedas de 50 céntimos",
-          "cs": "Jsou přijímány mince v hodnotě 50 centů"
+          "cs": "Jsou přijímány mince v hodnotě 50 centů",
+          "id": "Koin 50 sen diterima"
         }
       },
       {

@@ -99,14 +99,6 @@
                 }
             },
             "question": "Qual è l’elemento Wikidata corrispondente?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Non collegato a Wikipedia"
-                }
-            },
-            "question": "Qual è il corrispondente elemento su Wikipedia?"
         }
     }
 }

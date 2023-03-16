@@ -28,7 +28,8 @@
       "ru": "Услуги по чистке велосипедов",
       "es": "Servicio de limpieza de bicis",
       "da": "Cykel rengøringsservice",
-      "cs": "Služba mytí jízdních kol"
+      "cs": "Služba mytí jízdních kol",
+      "ca": "Servei de neteja de bicicletes"
     },
     "mappings": [
       {
@@ -44,7 +45,8 @@
           "pt": "Serviço de limpeza de bicicletas <i>{name}</i>",
           "es": "Servicio de limpieza de bicis <i>{name}</i>",
           "da": "Cykelrengøringstjeneste <i>{name}</i>",
-          "cs": "Služba mytí kol <i>{name}</i>"
+          "cs": "Služba mytí kol <i>{name}</i>",
+          "ca": "Servei de neteja de bicicletes <i>{name}</i>"
         }
       }
     ]
@@ -74,7 +76,8 @@
         "ru": "Услуги по чистке велосипедов",
         "es": "un servicio de limpieza de bicis",
         "da": "en cykelrengøring",
-        "cs": "služba mytí jízdních kol"
+        "cs": "služba mytí jízdních kol",
+        "ca": "un servei de neteja de bicicletes"
       },
       "tags": [
         "amenity=bicycle_wash"
@@ -148,7 +151,8 @@
             "es": "Gratis",
             "fr": "Utilisation gratuite",
             "da": "Gratis at bruge",
-            "cs": "Bezplatné používání"
+            "cs": "Bezplatné používání",
+            "ca": "Debades"
           },
           "hideInAnswer": true
         }
@@ -173,7 +177,8 @@
         "es": "Utilizar el servicio de limpieza cuesta {charge}",
         "fr": "L’utilisation du service de nettoyage coûte {charge}",
         "da": "Brug af rengøringsservice koster {charge}",
-        "cs": "Využití služby mytí stojí {charge}"
+        "cs": "Využití služby mytí stojí {charge}",
+        "ca": "L'ús del servei de neteja costa {charge}"
       },
       "condition": {
         "or": [
@@ -262,9 +267,10 @@
     "en": "A layer showing facilities where one can clean their bike",
     "nl": "Een laag die plaatsen toont waar je je fiets kunt wassen",
     "de": "Eine Ebene mit Einrichtungen, in denen man sein Fahrrad reinigen kann",
-    "es": "Una capa que muestra facilidades en las que uno puede limpiar su bici",
+    "es": "Una capa que muestra instalaciones en las que uno puede limpiar su bici",
     "da": "Et lag med faciliteter, hvor man kan rengøre sin cykel",
     "fr": "Une couche affichant les lieux où l'on peut nettoyer son vélo",
-    "cs": "Vrstva zobrazující zařízení, kde si můžete umýt kolo"
+    "cs": "Vrstva zobrazující zařízení, kde si můžete umýt kolo",
+    "ca": "Una capa que mostra les instal·lacions on pots netejar la teva bicicleta"
   }
 }
