@@ -523,7 +523,8 @@
                 "fr": "Les balises meta ne sont pas encore calculées ... Rouvrir cette fenêtre pop-up",
                 "da": "Har endnu ikke beregnet metatags... Genåbn denne popup",
                 "cs": "Metatags ještě nebyly vypočítány... Znovu otevřete toto vyskakovací okno",
-                "es": "Aún no se han calculado los metatags... Reabrir esta ventana emergente"
+                "es": "Aún no se han calculado los metatags... Reabrir esta ventana emergente",
+                "ca": "Encara no s'han calculat les metaetiquetes... Torneu a obrir aquesta finestra emergent"
               }
             },
             {
@@ -542,7 +543,8 @@
                 "fr": "Ce bâtiment a des ouvertures et est modélisé comme une relation. Il ne peut être fusionné. Fusionnez-le manuellement via <a href='https://buildings.osm.be/#/'>le site d’export de bâtiment</a> {open_in_josm()}",
                 "nl": "Dit gebouw heeft openingen en is gemodelleerd als een relatie. Bijgevolg kan het niet worden samengevoegd. Voeg het manueel samen via <a href='https://buildings.osm.be/#/'>de export-site voor gebouwen</a> {open_in_josm()}",
                 "da": "Denne bygning har huller og er modelleret som en relation. Som sådan kan det ikke sammenblandes. Sammensæt det manuelt via <a href='https://buildings.osm.be/#/'>bygningseksportwebstedet</a> {open_in_josm()}",
-                "cs": "Tato budova má otvory a je modelována jako vztah. Jako takovou ji nelze spojovat. Spojte ji ručně pomocí <a href='https://buildings.osm.be/#/'>exportní stránky budovy</a> {open_in_josm()}"
+                "cs": "Tato budova má otvory a je modelována jako vztah. Jako takovou ji nelze spojovat. Spojte ji ručně pomocí <a href='https://buildings.osm.be/#/'>exportní stránky budovy</a> {open_in_josm()}",
+                "ca": "Aquest edifici té forats i està modelat com una relació. Com a tal, no es pot combinar. Combineu-lo manualment mitjançant <a href='https://buildings.osm.be/#/'>el lloc d'exportació de l'edifici</a> {open_in_josm()}"
               }
             },
             {

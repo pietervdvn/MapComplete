@@ -749,13 +749,15 @@
         "en": "This bench does have the following inscription:<br/><p><i>{inscription}</i></p>",
         "nl": "Deze bank heeft een inscriptie: <br/><p><i>{inscription}</i></p>",
         "de": "Diese Bank hat folgende Inschrift:<br/><p><i>{inscription}</i></p>",
-        "fr": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>"
+        "fr": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>",
+        "ca": "Aquest banc té la següent inscripció:<br/><p><i>{inscription}</i></p>"
       },
       "question": {
         "en": "Does this bench have an inscription?",
         "nl": "Heeft deze bank een inscriptie?",
         "de": "Hat diese Bank eine Inschrift? ",
-        "fr": "Est-ce que ce banc possède une inscription ?"
+        "fr": "Est-ce que ce banc possède une inscription ?",
+        "ca": "Aquest banc té una inscripció?"
       },
       "freeform": {
         "key": "inscription",
@@ -795,7 +797,8 @@
         "en": "E.g. on a mounted plaque, in the backrest, ...",
         "nl": "Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...",
         "de": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ... ",
-        "fr": "Par exemple, sur une plaque accrochée, sur le dossier, ..."
+        "fr": "Par exemple, sur une plaque accrochée, sur le dossier, ...",
+        "ca": "P. ex. en una placa, al respatller, ..."
       }
     },
     {
@@ -863,7 +866,8 @@
             "en": "This bench is a memorial for someone or something",
             "nl": "Deze bank is een gedenkteken aan iemand of iets",
             "de": "Diese Bank ist ein Denkmal für jemanden oder etwas",
-            "fr": "Ce banc est un mémorial pour quelqu'un ou quelque chose"
+            "fr": "Ce banc est un mémorial pour quelqu'un ou quelque chose",
+            "ca": "Aquest banc és un memorial per a algú o alguna cosa"
           },
           "addExtraTags": [
             "memorial=bench"
@@ -880,7 +884,8 @@
             "en": "This bench is a <b>not</b> a memorial for someone or something",
             "nl": "Deze bank is <b>geen</b> gedenkteken aan iemand of iets",
             "de": "Diese Bank ist <b>kein</b> Denkmal für jemanden oder etwas",
-            "fr": "Ce banc n'est <b>pas</b> un mémorial pour quelqu'un ou quelque chose"
+            "fr": "Ce banc n'est <b>pas</b> un mémorial pour quelqu'un ou quelque chose",
+            "ca": "Aquest banc <b>no</b> és un memorial per a algú o alguna cosa"
           },
           "addExtraTags": [
             "memorial="

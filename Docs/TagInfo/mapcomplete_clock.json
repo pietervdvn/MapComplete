@@ -83,7 +83,7 @@
     },
     {
       "key": "visibility",
-      "description": "Layer 'Clocks' shows visibility=area with a fixed text, namely 'This clock is visible from more than 20 meters away (church clock)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Clocks')",
+      "description": "Layer 'Clocks' shows visibility=area with a fixed text, namely 'This clock is visible from more than 20 meters away (e.g. a church clock or station clock)' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Clocks')",
       "value": "area"
     },
     {

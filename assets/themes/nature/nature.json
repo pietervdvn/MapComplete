@@ -18,7 +18,8 @@
     "es": "Un mapa para amantes de la naturaleza, con PDIs interesantes",
     "fr": "Une carte pour les amoureux de la nature",
     "da": "Et kort for naturelskere med interessante POI'er",
-    "cs": "Mapa pro milovníky přírody se zajímavými body zájmu"
+    "cs": "Mapa pro milovníky přírody se zajímavými body zájmu",
+    "ca": "Un mapa per als amants de la natura, amb PDI interessants"
   },
   "description": {
     "en": "On this map, one can find interesting information for tourists and nature lovers.",
@@ -27,7 +28,8 @@
     "es": "En este mapa, uno puede encontrar información interesante para turistas y amantes de la naturaleza.",
     "fr": "Retrouvez sur cette carte des informations pour les touristes et les amoureux de la nature, telles que ",
     "da": "På dette kort kan man finde interessant information for turister og naturelskere, som f.eks ",
-    "cs": "Na této mapě najdete zajímavé informace pro turisty a milovníky přírody."
+    "cs": "Na této mapě najdete zajímavé informace pro turisty a milovníky přírody.",
+    "ca": "En aquest mapa es pot trobar informació interessant per a turistes i amants de la natura."
   },
   "icon": "./assets/themes/nature/logo.svg",
   "startLat": 51.20875,

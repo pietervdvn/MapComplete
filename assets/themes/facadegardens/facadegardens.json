@@ -38,7 +38,8 @@
     "hu": "A <a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>homlokzatkertek</a>, zöld homlokzatok és fák a városban nemcsak békét és nyugalmat, hanem szebb várost, nagyobb biológiai sokféleséget, hűsítő hatást és jobb levegőminőséget is hoznak. <br/> A Klimaan VZW és a Mechelen Klimaatneutraal a meglévő és új homlokzati kerteket szeretné feltérképezni, hogy példaként szolgáljanak a saját kertet építeni vágyóknak vagy a természetet kedvelő városi sétálóknak.<br/>További információ a projektről a <a href='https://klimaan.be/' target=_blank>klimaan.be</a> oldalon.",
     "da": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Facadehaver</a>, grønne facader og træer i byen bringer ikke kun fred og ro, men også en smukkere by , større biodiversitet, en kølende effekt og bedre luftkvalitet. <br/> Klimaan VZW og Mechelen Klimaatneutraal ønsker at kortlægge eksisterende og nye facadehaver som et eksempel for folk, der vil bygge deres egen have eller for byvandrere, der elsker naturen.<br/>Mere info om projektet på <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>.",
     "cs": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Fasádní zahrady</a>, zelené fasády a stromy ve městě přinášejí nejen klid a pohodu, ale také krásnější město, větší biodiverzitu, ochlazující efekt a lepší kvalitu ovzduší. <br/> Klimaan VZW a Mechelen Klimaatneutraal chtějí zmapovat stávající i nové fasádní zahrady jako příklad pro lidi, kteří si chtějí vybudovat vlastní zahradu, nebo pro městské chodce, kteří mají rádi přírodu.<br/>Více informací o projektu najdete na <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
-    "es": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Los jardines de fachada</a>, las fachadas verdes y los árboles en la ciudad no sólo aportan paz y tranquilidad, sino también una ciudad más bella, una mayor biodiversidad, un efecto refrescante y una mejor calidad del aire. <br/> Klimaan VZW y Mechelen Klimaatneutraal quieren trazar un mapa de los jardines de fachada existentes y nuevos como ejemplo para las personas que quieran construir su propio jardín o para los paseantes urbanos amantes de la naturaleza. <br/>Más información sobre el proyecto en <a href='https://klimaan.be/' target=_blank>klimaan.be</a>."
+    "es": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Los jardines de fachada</a>, las fachadas verdes y los árboles en la ciudad no sólo aportan paz y tranquilidad, sino también una ciudad más bella, una mayor biodiversidad, un efecto refrescante y una mejor calidad del aire. <br/> Klimaan VZW y Mechelen Klimaatneutraal quieren trazar un mapa de los jardines de fachada existentes y nuevos como ejemplo para las personas que quieran construir su propio jardín o para los paseantes urbanos amantes de la naturaleza. <br/>Más información sobre el proyecto en <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
+    "ca": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Els Jardins de façana</a>, façanes verdes i arbres de la ciutat no només aporten pau i tranquil·litat, sinó també una ciutat més bella , una major biodiversitat, un efecte de refredament i una millor qualitat de l'aire. <br/> Klimaan VZW i Mechelen Klimaatneutraal volen cartografiar els jardins de façana existents i nous com a exemple per a les persones que volen construir el seu propi jardí o per als excursionistes de la ciutat que estimen la natura.<br/>Més informació sobre el projecte a <a href ='https://klimaan.be/' target=_blank>klimaan.be</a>."
   },
   "icon": "./assets/themes/facadegardens/geveltuin.svg",
   "startLat": 51.02768,
@@ -412,7 +413,8 @@
                 "hu": "Van benne szőlő",
                 "da": "Der er vinstokke",
                 "cs": "Zde jsou révy",
-                "es": "Esto son viñedos"
+                "es": "Esto son viñedos",
+                "ca": "Hi ha vinyes"
               }
             },
             {
@@ -427,7 +429,8 @@
                 "hu": "Van benne virágos növény",
                 "da": "Der er blomstrende planter",
                 "cs": "Jsou zde kvetoucí rostliny",
-                "es": "Hay plantas con flores"
+                "es": "Hay plantas con flores",
+                "ca": "Hi ha plantes amb flors"
               }
             },
             {
@@ -458,7 +461,8 @@
                 "hu": "Van benne talajtakaró növény",
                 "da": "Der er bunddækkende planter",
                 "cs": "Jsou zde půdopokryvné rostliny",
-                "es": "Hay plantas cubresuelos"
+                "es": "Hay plantas cubresuelos",
+                "ca": "Hi ha plantes que cobreixen el sòl"
               }
             }
           ],

@@ -53,7 +53,8 @@
             "de": "Kostenlose Nutzung",
             "da": "Gratis at bruge",
             "es": "De uso gratuito",
-            "fr": "En libre service"
+            "fr": "En libre service",
+            "ca": "Debades"
           }
         }
       ],
@@ -69,7 +70,8 @@
         "de": "Die Benutzung dieses Fernglases kostet {charge}",
         "es": "Utilizar estos prismáticos cuesta {charge}",
         "da": "Brug af denne kikkert koster {charge}",
-        "fr": "L’utilisation des ces jumelles coûte {charge}"
+        "fr": "L’utilisation des ces jumelles coûte {charge}",
+        "ca": "L'ús d'aquests prismàtics costa {charge}"
       },
       "question": {
         "en": "How much does one have to pay to use these binoculars?",
@@ -77,7 +79,8 @@
         "de": "Wie viel muss man für die Nutzung dieser Ferngläser bezahlen?",
         "es": "¿Cuánto hay que pagar para utilizar estos prismáticos?",
         "da": "Hvor meget koster det at bruge denne kikkert?",
-        "fr": "Combien l’utilisation des ces jumelles coûte-t-elle ?"
+        "fr": "Combien l’utilisation des ces jumelles coûte-t-elle ?",
+        "ca": "Quant s'ha de pagar per utilitzar aquests prismàtics?"
       },
       "id": "binocular-charge"
     },
@@ -88,7 +91,8 @@
         "de": "In welche Richtung blickt man, wenn man durch dieses Fernglas schaut?",
         "es": "¿Cuándo uno mira a través de estos prismáticos, en qué dirección lo hace?",
         "da": "I hvilken retning kigger man, når man ser gennem denne kikkert?",
-        "fr": "Dans quelle direction regarde-t-on en utilisant ces jumelles ?"
+        "fr": "Dans quelle direction regarde-t-on en utilisant ces jumelles ?",
+        "ca": "En mirar a través d'aquest binocular, en quina direcció es mira?"
       },
       "render": {
         "en": "Looks towards {direction}°",
@@ -96,7 +100,8 @@
         "de": "Blick in Richtung {direction}°",
         "es": "Mira hacia {direction}º",
         "da": "Kigger mod {direction}°",
-        "fr": "Orienté à {direction}°"
+        "fr": "Orienté à {direction}°",
+        "ca": "Mira cap a {direction}°"
       },
       "freeform": {
         "key": "direction",

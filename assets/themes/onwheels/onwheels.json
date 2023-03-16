@@ -18,7 +18,8 @@
     "nl": "Op deze kaart kan je informatie rond rolstoeltoegankelijkheid zien, zoals toegangsdeuren met hun breedte en drempelhoogte, toiletten met toegankelijkheidsinformatie, recepties maar ook winkels, cafés en restaurants.",
     "da": "På dette kort vises steder, der er offentligt tilgængelige for kørestolsbrugere, og de kan nemt tilføjes",
     "cs": "Na této mapě jsou zobrazena veřejně přístupná místa pro vozíčkáře, a lze je také snadno přidat",
-    "es": "En este mapa se muestran los lugares accesibles al público en silla de ruedas, que pueden añadirse fácilmente"
+    "es": "En este mapa se muestran los lugares accesibles al público en silla de ruedas, que pueden añadirse fácilmente",
+    "ca": "En aquest mapa, es mostren llocs públics accessibles per a cadira de rodes i es poden afegir fàcilment"
   },
   "icon": "./assets/themes/onwheels/crest.svg",
   "startLat": 50.86622,
@@ -89,7 +90,8 @@
                   "fr": "Toute/aucune information sur la largeur",
                   "da": "Eventuelle/ingen bredde info",
                   "cs": "Jakékoliv/žádné informace o šířce",
-                  "es": "Cualquiera/Sin información de anchura"
+                  "es": "Cualquiera/Sin información de anchura",
+                  "ca": "Qualsevol/Sense informació d'amplada"
                 }
               },
               {
@@ -148,7 +150,8 @@
                   "fr": "Tous types de ressauts",
                   "da": "Alle typer kantsten",
                   "cs": "Všechny typy obrubníků",
-                  "es": "Todos los tipos de bordillos"
+                  "es": "Todos los tipos de bordillos",
+                  "ca": "Tot tipus de vorals"
                 }
               },
               {
@@ -160,7 +163,8 @@
                   "fr": "Ressaut surélevé (> 3 cm)",
                   "da": "Hævet kantsten (>3 cm)",
                   "cs": "Zvýšený obrubník (>3 cm)",
-                  "es": "Bordillo elevado (>3 cm)"
+                  "es": "Bordillo elevado (>3 cm)",
+                  "ca": "Voral elevat (>3 cm)"
                 }
               },
               {
@@ -172,7 +176,8 @@
                   "fr": "Ressaut abaissé (~ 3 cm)",
                   "da": "Sænket kantsten (~3 cm)",
                   "cs": "Snížený obrubník (~3 cm)",
-                  "es": "Bordillo rebajado (~3 cm)"
+                  "es": "Bordillo rebajado (~3 cm)",
+                  "ca": "Voral baix (~3 cm)"
                 }
               },
               {
@@ -184,7 +189,8 @@
                   "fr": "Ressaut à niveau (~ 0 cm)",
                   "da": "Skyl kantsten (~0 cm)",
                   "cs": "Zapuštěný obrubník (~0 cm)",
-                  "es": "Bordillo enrasado (~0 cm)"
+                  "es": "Bordillo enrasado (~0 cm)",
+                  "ca": "Voral ras (~0 cm)"
                 }
               }
             ]
@@ -246,7 +252,8 @@
           "nl": "Parkeerplaatsen voor personen met een beperking",
           "fr": "Places de stationnement pour personnes handicapées",
           "cs": "Parkovací místa pro osoby se zdravotním postižením",
-          "es": "Plazas de aparcamiento para discapacitados"
+          "es": "Plazas de aparcamiento para discapacitados",
+          "ca": "Places d'aparcament per a minusvàlids"
         }
       },
       "hideTagRenderingsWithLabels": [
@@ -459,7 +466,8 @@
                   "nb_NO": "Legg til alle foreslåtte",
                   "nl": "Voeg alle gesuggereerde tags toe",
                   "cs": "Přidat všechny navrhované značky",
-                  "es": "Añadir todas las etiquetas sugeridas"
+                  "es": "Añadir todas las etiquetas sugeridas",
+                  "ca": "Afegiu totes les etiquetes suggerides"
                 },
                 "image": "./assets/svg/addSmall.svg",
                 "id_of_object_to_apply_this_one": "_closest_osm_hotel"

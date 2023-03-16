@@ -43,7 +43,8 @@
     "it": "La cartina di arrampicata è stata originariamente creata da <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Si prega di <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>scrivere qua</a> se si hanno commenti o domande da fare.</p><p>Il progetto usa i dati del progetto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
     "hu": "A mászótérképet eredetileg <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a> készítette. Ha észrevétele vagy kérdése van, kérjük, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>vele lépjen kapcsolatba</a>.</p> <p>A projekt az <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a> adatait használja</p>",
     "cs": "Horolezeckou mapu původně vytvořil <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. V případě připomínek nebo dotazů ho prosím <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>kontaktujte</a>.</p><p>Projekt využívá data projektu <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
-    "es": "El mapa de escalada fue realizado originalmente por <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Por favor, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>ponte en contacto</a> si tienes comentarios o preguntas.</p><p>El proyecto utiliza datos del proyecto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>"
+    "es": "El mapa de escalada fue realizado originalmente por <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. Por favor, <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>ponte en contacto</a> si tienes comentarios o preguntas.</p><p>El proyecto utiliza datos del proyecto <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>",
+    "ca": "El mapa d'escalada va ser creat originalment per <a href='https://utopicode.de/en/?ref=kletterspots' target='_blank'>Christian Neumann</a>. <a href='https://utopicode.de/en/contact/?project=kletterspots&ref=kletterspots' target='blank'>Contacteu-vos</a> si teniu comentaris o preguntes.</p>< p>El projecte utilitza dades del projecte <a href='https://www.openstreetmap.org/' target='_blank'>OpenStreetMap</a>.</p>"
   },
   "icon": "./assets/themes/climbing/climbing_icon.svg",
   "startLat": 0,
@@ -209,8 +210,9 @@
                   "de": "<span class='subtle'>Das <a href='#{_embedding_feature:id}'>enthaltende Objekt</a> besagt, dass es nur für Kunden</span> zugänglich ist<br/>{_embedding_feature:access:description}",
                   "nl": "<span class='subtle'>Het <a href='#{_embedding_feature:id}'>omsluitende kaart-object</a> zegt dat </span> het enkel toegankelijk is voor klanten<br/>{_embedding_feature:access:description}",
                   "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for kunder<br/>{_embedding_feature:access:description}",
-                  "es": "<span class='subtle'>La <a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que</span> sólo pueden acceder a él los clientes<br/>{_embedding_feature:access:description}",
-                  "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> dostupné pouze zákazníkům<br/>{_embedding_feature:access:description}"
+                  "es": "<span class='subtle'>La <a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que</span> sólo es accesible para los clientes<br/>{_embedding_feature:access:description}",
+                  "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> dostupné pouze zákazníkům<br/>{_embedding_feature:access:description}",
+                  "ca": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>característica que ho conté</a> indica que</span> sols és accessible per als clients<br/>{_embedding_feature:access:description}"
                 }
               },
               {
@@ -223,7 +225,8 @@
                   "nl": "<span class='subtle'>Het <a href='#{_embedding_feature:id}'>omsluitende kaart-object</a> zegt dat </span> het enkel toegankelijk is voor club leden<br/>{_embedding_feature:access:description}",
                   "da": "<span class='subtle'>Den <a href='#{_embedding_feature:id}'>indeholdende funktion</a> angiver, at denne</span> kun er tilgængelig for klubmedlemmer<br/>{_embedding_feature:access:description}",
                   "es": "<span class='subtle'>La <a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que </span> sólo es accesible para los socios del club<br/>{_embedding_feature:access:description}",
-                  "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> dostupné pouze členům klubu<br/>{_embedding_feature:access:description}"
+                  "cs": "<span class='subtle'>V <a href='#{_embedding_feature:id}'>obsahující funkci</a> je uvedeno, že toto je</span> dostupné pouze členům klubu<br/>{_embedding_feature:access:description}",
+                  "ca": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>característica que ho conté</a> indica que</span> sols és accessible per als socis del club<br/>{_embedding_feature:access:description}"
                 }
               },
               {

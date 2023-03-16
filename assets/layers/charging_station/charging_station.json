@@ -78,7 +78,8 @@
     "da": "En ladestation",
     "de": "Eine Ladestation",
     "es": "Una estación de carga",
-    "fr": "Une station de recharge"
+    "fr": "Une station de recharge",
+    "ca": "Una estació de càrrega"
   },
   "#": "no-question-hint-check",
   "tagRenderings": [
@@ -4595,7 +4596,8 @@
             "da": "Alle køretøjstyper",
             "de": "Ladestationen für alle Fahrzeugtypen",
             "es": "Todo tipo de vehículos",
-            "fr": "Tout type de véhicule"
+            "fr": "Tout type de véhicule",
+            "ca": "Tots els tipus de vehicles"
           }
         },
         {
@@ -4605,7 +4607,8 @@
             "da": "Ladestation til cykler",
             "de": "Ladestationen für Fahrräder",
             "es": "Estación de carga para bicicletas",
-            "fr": "Station de charge pour vélos"
+            "fr": "Station de charge pour vélos",
+            "ca": "Punt de recàrrega per a bicicletes"
           },
           "osmTags": "bicycle=yes"
         },
@@ -4616,7 +4619,8 @@
             "da": "Ladestation til biler",
             "de": "Ladestationen für Autos",
             "es": "Estación de carga para coches",
-            "fr": "Station de charge pour automobiles"
+            "fr": "Station de charge pour automobiles",
+            "ca": "Estació de càrrega per a cotxes"
           },
           "osmTags": {
             "or": [
@@ -4637,7 +4641,8 @@
             "da": "Kun fungerende ladestationer",
             "de": "Nur Ladestationen in Betrieb",
             "es": "Solo estaciones de carga funcionales",
-            "fr": "Stations de recharge en service uniquement"
+            "fr": "Stations de recharge en service uniquement",
+            "ca": "Només estacions de recàrrega en funcionament"
           },
           "osmTags": {
             "and": [
@@ -4668,7 +4673,8 @@
             "nl": "Heeft een <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>",
             "da": "Har et <div style='display: inline-block'><b><b> Schuko-vægstik</b> uden jordstik (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> stik",
             "de": "Verfügt über einen <div style='display: inline-block'><b><b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>",
-            "fr": "Dispose d’une <div style='display: inline-block'><b><b>prise murale Schuko</b> sans terre (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
+            "fr": "Dispose d’une <div style='display: inline-block'><b><b>prise murale Schuko</b> sans terre (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>",
+            "ca": "Té un connector <div style='display: inline-block'><b><b>Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> connector"
           },
           "osmTags": "socket:schuko~*"
         },

@@ -23,7 +23,8 @@
     "es": "Una nota es un pin en el mapa con algún texto para indicar algo erróneo.<br/><br/>Asegúrate de comprobar la <a href='#filters'> vista de filtros</a> para buscar usuarios y texto.",
     "fr": "Une note est une épingle sur la carte avec du text pour indiquer une erreur.<br/><br/>Assurez-vous d’utiliser le <a href='#filters'>filtre</a> pour chercher des utilisateurs and du texte.",
     "da": "En note er en nål på kortet med noget tekst, der indikerer, at noget er forkert.<br/><br/>Sørg for at tjekke <a href='#filters'>filtervisningen</a> for at søge efter brugere og tekst .",
-    "cs": "Poznámka je špendlík na mapě s textem, jež označuje, že něco není v pořádku.<br/><br/>Nezapomeňte si prohlédnout zobrazení filtru <a href='#filters'></a> pro vyhledávání uživatelů a textu."
+    "cs": "Poznámka je špendlík na mapě s textem, jež označuje, že něco není v pořádku.<br/><br/>Nezapomeňte si prohlédnout zobrazení filtru <a href='#filters'></a> pro vyhledávání uživatelů a textu.",
+    "ca": "Una nota és un marcador al mapa amb un text per indicar alguna cosa incorrecta.<br/><br/>Assegureu-vos de revisar la <a href='#filters'>visualització de filtres</a> per cercar usuaris i text."
   },
   "icon": "./assets/themes/notes/logo.svg",
   "clustering": false,
