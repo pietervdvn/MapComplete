@@ -1274,7 +1274,7 @@
             },
             "binocular-direction": {
                 "question": "En mirar a través d'aquest binocular, en quina direcció es mira?",
-                "render": "Mira cap a {direcció}°"
+                "render": "Mira cap a {direction}°"
             }
         },
         "title": {
