@@ -630,7 +630,13 @@
           "condition": {
             "and": [
               "_referencing_ways=",
-              "advertising=poster_box"
+              {
+                "or": [
+                  "advertising=poster_box",
+                  "advertising=screen",
+                  "advertising=billboard"
+                ]
+              }
             ]
           },
           "question": {
@@ -642,7 +648,7 @@
             {
               "if": "sides=1",
               "then": {
-                "en": "This poster box has advertisements on a single side",
+                "en": "This object has advertisements on a single side",
                 "ca": "Aquest mupi té publicitat a un únic costat",
                 "es": "Este mupi tiene publicidad en un único lado"
               }
@@ -650,7 +656,7 @@
             {
               "if": "sides=2",
               "then": {
-                "en": "This poster box has advertisements on both sides",
+                "en": "This object has advertisements on both sides",
                 "ca": "Aquest mupi té publicitat pels dos costas",
                 "es": "Este mupi tiene publicidad por los dos lados"
               }
