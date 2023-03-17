@@ -7,8 +7,14 @@
                 "name": "Publicidad",
                 "presets": {
                     "0": {
-                        "description": "Las vallas publicitarias normalment son de gran tamanó y están situadas cerca de las carreteras",
+                        "description": "Una estructura publicitaria grande al aire libre, que normalmente se encuentra en áreas transitadas como carreteras con mucha intensidad",
                         "title": "una valla publicitària"
+                    },
+                    "1": {
+                        "title": "un mupi"
+                    },
+                    "2": {
+                        "title": "un mupi sobre la pared"
                     },
                     "3": {
                         "description": "Un pequeño tablón de anuncios para anuncios del vecindario, normalmente destinado a peatones",
@@ -28,6 +34,7 @@
                         "title": "una pantalla sobre una pared"
                     },
                     "8": {
+                        "description": "Una pieza de tela impermeable con un mensaje impreso, anclada permanentemente en una pared",
                         "title": "una lona"
                     },
                     "9": {
@@ -46,15 +53,26 @@
                 },
                 "tagRenderings": {
                     "Sides": {
+                        "mappings": {
+                            "0": {
+                                "then": "Este mupi tiene publicidad en un único lado"
+                            },
+                            "1": {
+                                "then": "Este mupi tiene publicidad por los dos lados"
+                            }
+                        },
                         "question": "¿Por cuantos lados puedes ver publicidad?"
                     },
                     "animated": {
                         "mappings": {
                             "0": {
-                                "then": "<b>Estático</b>, sin animación"
+                                "then": "<b>Estático</b>, siempre muestra el mismo mensaje"
+                            },
+                            "1": {
+                                "then": "Este objeto tiene una <b>pantalla digital</b> incorporada para mostrar precios o algún otro mensaje"
                             },
                             "2": {
-                                "then": "Trivision"
+                                "then": "<b>Trivision</b> - la valla publicitaria consta de muchos prismas triangulares que giran regularmente"
                             },
                             "3": {
                                 "then": "Cartells <b>Rotatius</b>"
@@ -64,6 +82,15 @@
                             }
                         },
                         "question": "¿Como cambian los anuncios de este elemento?"
+                    },
+                    "luminous_or_lit_advertising": {
+                        "override": {
+                            "+mappings": {
+                                "0": {
+                                    "then": "Esta es una luz de tubo de neón."
+                                }
+                            }
+                        }
                     },
                     "message_type": {
                         "mappings": {
@@ -93,6 +120,9 @@
                             },
                             "8": {
                                 "then": "Cartel de financiación"
+                            },
+                            "9": {
+                                "then": "un mapa"
                             }
                         },
                         "question": "Que tipo de mensaje se muestra?"
@@ -132,7 +162,7 @@
                                 "then": "Esto es un cartel"
                             },
                             "8": {
-                                "then": "Esto es una lona"
+                                "then": "Esto es una lona (una pieza de tela resistente a la intemperie con un mensaje publicitario)"
                             },
                             "9": {
                                 "then": "Esto es un tótem"

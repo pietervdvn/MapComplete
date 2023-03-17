@@ -55,10 +55,10 @@
                     "Sides": {
                         "mappings": {
                             "0": {
-                                "then": "This poster box has advertisements on a single side"
+                                "then": "This object has advertisements on a single side"
                             },
                             "1": {
-                                "then": "This poster box has advertisements on both sides"
+                                "then": "This object has advertisements on both sides"
                             }
                         },
                         "question": "From how many sides you can watch advertisments?"

@@ -7,8 +7,14 @@
                 "name": "Publicitat",
                 "presets": {
                     "0": {
-                        "description": "Les tanques publicitàries normalment són de gran tamany i estan situades prop de les carreteres",
+                        "description": "Una estructura publicitària gran a l'exterior, que normalment es troba a zones transitades com ara al costat de carreteres amb molta intensitat",
                         "title": "una tanca publicitària"
+                    },
+                    "1": {
+                        "title": "un mupi"
+                    },
+                    "2": {
+                        "title": "un mupi sobre la paret"
                     },
                     "3": {
                         "description": "Un xicotet tauló d'anuncics per a anuncis del veïnat, normalment destitat a peatons",
@@ -28,6 +34,7 @@
                         "title": "una patalla sobre una paret"
                     },
                     "8": {
+                        "description": "Una peça de tèxtil impermeable amb un missatge imprès, fixada permanentment a una paret",
                         "title": "una lona"
                     },
                     "9": {
@@ -46,15 +53,26 @@
                 },
                 "tagRenderings": {
                     "Sides": {
+                        "mappings": {
+                            "0": {
+                                "then": "Aquest mupi té publicitat a un únic costat"
+                            },
+                            "1": {
+                                "then": "Aquest mupi té publicitat pels dos costas"
+                            }
+                        },
                         "question": "Per quants costats pots veure publicitat?"
                     },
                     "animated": {
                         "mappings": {
                             "0": {
-                                "then": "<b>Estàtic</b>, sense animació"
+                                "then": "<b>Estàtic</b>, sempre mostra el mateix missatge"
+                            },
+                            "1": {
+                                "then": "Aquest objecte té una <b>pantalla digital</b> integrada per a mostrar els preus o algun altre missatge"
                             },
                             "2": {
-                                "then": "Trivision"
+                                "then": "<b>Trivision</b> - la tanca publicitària consta de molts prismes triangulars que giren regularment"
                             },
                             "3": {
                                 "then": "Cartells <b>Rotatius</b>"
@@ -64,6 +82,15 @@
                             }
                         },
                         "question": "Com canvien els anuncis d'aquest element?"
+                    },
+                    "luminous_or_lit_advertising": {
+                        "override": {
+                            "+mappings": {
+                                "0": {
+                                    "then": "Aquesta és una llum de tub de neó"
+                                }
+                            }
+                        }
                     },
                     "message_type": {
                         "mappings": {
@@ -93,6 +120,9 @@
                             },
                             "8": {
                                 "then": "Cartell de financiació"
+                            },
+                            "9": {
+                                "then": "un mapa"
                             }
                         },
                         "question": "Quin tipus de missatge es mostra?"
@@ -132,7 +162,7 @@
                                 "then": "Açò és un cartell"
                             },
                             "8": {
-                                "then": "Açò és una lona"
+                                "then": "Açò és una lona (una peça de tèxtil impermeable amb un missatge publicitari)"
                             },
                             "9": {
                                 "then": "Açò és un tòtem"
