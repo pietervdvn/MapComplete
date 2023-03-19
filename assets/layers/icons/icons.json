@@ -1,7 +1,8 @@
 {
   "id": "icons",
   "description": {
-    "en": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI"
+    "en": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI",
+    "de": "Eine Ebene, die als Bibliothek für Symbol-Tag-Renderings dient, insbesondere um als Abzeichen neben einem POI angezeigt zu werden"
   },
   "source": {
     "osmTags": "id~*"

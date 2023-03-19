@@ -11,7 +11,8 @@
     "fr": "Carte des Bureaux de Poste et Boîtes à Lettres",
     "da": "Postkasse- og Posthus-Kort",
     "ca": "Mapa de bústies i oficines de correus",
-    "es": "Mapa de Buzones y Oficinas de Correos"
+    "es": "Mapa de Buzones y Oficinas de Correos",
+    "cs": "Mapa poštovních schránek a pošt"
   },
   "shortDescription": {
     "en": "A map showing postboxes and post offices",
@@ -24,7 +25,8 @@
     "fr": "Une carte des bureaux de poste et des boîtes à lettres",
     "nb_NO": "Postbokser og postkontor",
     "da": "Et kort med postkasser og posthuse",
-    "ca": "Un mapa que mostra bústies i oficines de correus"
+    "ca": "Un mapa que mostra bústies i oficines de correus",
+    "cs": "Mapa s poštovními schránkami a poštami"
   },
   "description": {
     "en": "On this map you can find and add data of post offices and post boxes. You can use this map to find where you can mail your next postcard! :)<br/>Spotted an error or is a post box missing? You can edit this map with a free OpenStreetMap account. ",
@@ -36,7 +38,8 @@
     "nl": "Op deze kaart kan je informatie over brievenbussen en postkantoren vinden en toevoegen. Je kan deze kaart gebruiken om te achterhalen waar je je volgende postkaart naar kan sturen! :)<br/>Zie je een fout of ontbreekt een brievenbus? Dan kan je deze kaart aanpassen met een gratis OpenStreetMap account. ",
     "fr": "Trouvez et ajoutez des bureaux de poste et boîtes à lettres sur cette carte. Utilisez cette carte où vous pouvez envoyer vos cartes postales ! :)<br/>Vous avez trouvez une erreur ou une boîte à lettres est manquante ? Vous pouvez modifier cette carte avec un compte OpenStreetMap gratuit. ",
     "da": "På dette kort kan du finde og tilføje data for posthuse og postkasser. Du kan bruge dette kort til at finde, hvor du kan sende dit næste postkort! :)<br/>Har du fundet en fejl, eller mangler der en postboks? Du kan redigere dette kort med en gratis OpenStreetMap-konto. ",
-    "ca": "A aquest mapa pots afegir dades d'oficines de correus i bústies de correus. ¡Pots utilitzar aquest mapa per a trobar on pots enviar la teva pròxima postal! :)<br/>Has trobat una errada o algo que falta? Pots editar aquest mapa amb un compte gratuït d'OpenStreetMap. "
+    "ca": "A aquest mapa pots afegir dades d'oficines de correus i bústies de correus. ¡Pots utilitzar aquest mapa per a trobar on pots enviar la teva pròxima postal! :)<br/>Has trobat una errada o algo que falta? Pots editar aquest mapa amb un compte gratuït d'OpenStreetMap. ",
+    "cs": "Na této mapě můžete najít a přidat údaje o poštách a poštovních schránkách. Pomocí této mapy můžete zjistit, kam můžete poslat svou příští pohlednici! :)<br/>Všimli jste si chyby nebo vám chybí poštovní schránka? Tuto mapu můžete upravovat pomocí bezplatného účtu OpenStreetMap. "
   },
   "icon": "./assets/layers/postboxes/postbox.svg",
   "startLat": 53.5511,

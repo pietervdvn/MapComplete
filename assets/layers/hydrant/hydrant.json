@@ -46,7 +46,8 @@
     "de": "Kartenebene zur Anzeige von Hydranten.",
     "it": "Livello della mappa che mostra gli idranti antincendio.",
     "nl": "Kaartlaag met brandkranen.",
-    "es": "Un mapa que muestra bocas de incendios."
+    "es": "Un mapa que muestra bocas de incendios.",
+    "ca": "Una capa que mostra hidrants."
   },
   "tagRenderings": [
     {
@@ -72,31 +73,13 @@
         "de": "Der Hydrant hat die Farbe {colour}",
         "it": "Il colore dell’idrante è {colour}",
         "nl": "De brandkraan is {colour}",
-        "es": "La boca de incendios es de color {colour}"
+        "es": "La boca de incendios es de color {colour}",
+        "ca": "L'hidrant és de color {colour}"
       },
       "freeform": {
         "key": "colour"
       },
       "mappings": [
-        {
-          "if": {
-            "and": [
-              "colour="
-            ]
-          },
-          "then": {
-            "en": "The hydrant color is unknown.",
-            "ja": "消火栓の色は不明です。",
-            "ru": "Цвет гидранта не определён.",
-            "fr": "La borne est de couleur inconnue.",
-            "de": "Die Farbe des Hydranten ist unbekannt.",
-            "it": "Il colore dell’idrante è sconosciuto.",
-            "nl": "De kleur van de brandkraan is onbekend.",
-            "es": "Se desconoce el color de la boca de incendios.",
-            "ca": "El color de l'hidrant és desconegut."
-          },
-          "hideInAnswer": true
-        },
         {
           "if": {
             "and": [
@@ -159,27 +142,10 @@
         "fr": " Type de borne : {fire_hydrant:type}",
         "de": " Hydranten-Typ: {fire_hydrant:type}",
         "nl": " Het type brandkraan is {fire_hydrant:type}",
-        "es": " Tipo de boca de incendios: {fire_hydrant:type}"
+        "es": " Tipo de boca de incendios: {fire_hydrant:type}",
+        "ca": " Tipus d'hidrants: {fire_hydrant:type}"
       },
       "mappings": [
-        {
-          "if": {
-            "and": [
-              "fire_hydrant:type="
-            ]
-          },
-          "then": {
-            "en": "The hydrant type is unknown.",
-            "ja": "消火栓の種類は不明です。",
-            "it": "Il tipo di idrante è sconosciuto.",
-            "ru": "Тип гидранта не определён.",
-            "fr": "La borne est de type inconnu.",
-            "de": "Der Typ des Hydranten ist unbekannt.",
-            "nl": "Het type brandkraan is onbekend.",
-            "es": "Se desconoce el tipo de la boca de incendios"
-          },
-          "hideInAnswer": true
-        },
         {
           "if": {
             "and": [
@@ -553,14 +519,16 @@
             "nl": "millimeter",
             "de": "Millimeter",
             "pa_PK": "ملیمیٹر",
-            "ru": "миллиметры"
+            "ru": "миллиметры",
+            "ca": "mil·límetres"
           },
           "humanSingular": {
             "en": "millimeter",
             "nl": "millimeter",
             "de": "Millimeter",
             "pa_PK": "ملیمیٹر",
-            "ru": "миллиметр"
+            "ru": "миллиметр",
+            "ca": "mil·límetre"
           }
         }
       ],

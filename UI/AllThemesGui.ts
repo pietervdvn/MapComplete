@@ -14,7 +14,6 @@ import { LoginToggle } from "./Popup/LoginButton"
 export default class AllThemesGui {
     setup() {
         try {
-            new FixedUiElement("").AttachTo("centermessage")
             const state = new UserRelatedState(undefined)
             const intro = new Combine([
                 new LanguagePicker1(Translations.t.index.title.SupportedLanguages(), "").SetClass(
@@ -42,7 +41,7 @@ export default class AllThemesGui {
                 "Seems like no layers are compiled - check the output of `npm run generate:layeroverview`. Is this visible online? Contact pietervdvn immediately!"
             )
                 .SetClass("alert")
-                .AttachTo("centermessage")
+                .AttachTo("top-left")
         }
     }
 }

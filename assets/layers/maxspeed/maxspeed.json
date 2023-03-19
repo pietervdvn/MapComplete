@@ -53,7 +53,8 @@
   "description": {
     "en": "Shows the allowed speed for every road",
     "de": "Zeigt die zulässige Geschwindigkeit für jede Straße an",
-    "nl": "Toont de toegestane snelheid voor elke weg"
+    "nl": "Toont de toegestane snelheid voor elke weg",
+    "cs": "Zobrazuje povolenou rychlost pro každou silnici"
   },
   "tagRenderings": [
     {

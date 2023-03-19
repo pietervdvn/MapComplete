@@ -34,7 +34,7 @@
         }
     },
     "artwork": {
-        "description": "Beragam karya seni",
+        "description": "Peta terbuka patung, grafiti, dan karya seni lainnya di seluruh dunia",
         "name": "Karya seni",
         "presets": {
             "0": {
@@ -349,7 +349,7 @@
         "tagRenderings": {
             "hydrant-type": {
                 "mappings": {
-                    "3": {
+                    "2": {
                         "then": "Jenis dinding."
                     }
                 }

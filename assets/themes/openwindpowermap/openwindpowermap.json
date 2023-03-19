@@ -13,7 +13,8 @@
     "ca": "Mapa obert d'energia eòlica",
     "nb_NO": "ÅpentVindkraftKart",
     "pa_PK": "اوپن‌ونڈ‌پاور‌میپ",
-    "es": "Mapa Abierto de la Energía Eólica"
+    "es": "Mapa Abierto de la Energía Eólica",
+    "cs": "OpenWindPowerMap"
   },
   "icon": "./assets/themes/openwindpowermap/logo.svg",
   "description": {

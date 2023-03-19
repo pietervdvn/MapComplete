@@ -262,14 +262,6 @@
                 }
             },
             "question": "Hva er respektivt Wikipedia-element?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Ikke lenket med Wikipedia"
-                }
-            },
-            "question": "Hva er respektivt element på Wikipedia?"
         }
     }
 }

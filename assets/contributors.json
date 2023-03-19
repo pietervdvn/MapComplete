@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 5097,
+      "commits": 5197,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 339,
+      "commits": 342,
       "contributor": "Robin van der Linde"
     },
     {
@@ -43,6 +43,10 @@
     {
       "commits": 24,
       "contributor": "Ward"
+    },
+    {
+      "commits": 21,
+      "contributor": "wjtje"
     },
     {
       "commits": 21,
@@ -87,10 +91,6 @@
     {
       "commits": 13,
       "contributor": "Nicole"
-    },
-    {
-      "commits": 12,
-      "contributor": "wjtje"
     },
     {
       "commits": 12,

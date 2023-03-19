@@ -49,7 +49,7 @@
         <ProfessionalServicesButton />
       {/if}
 
-      {#each filteredThemes as theme}
+      {#each filteredThemes as theme (theme.id)}
         {#if theme !== undefined && !(hideThemes && theme?.hideFromOverview)}
           <ThemeButton {theme} {isCustom} userDetails={state.osmConnection.userDetails} {state} />
         {/if}
@@ -62,7 +62,7 @@
         <ProfessionalServicesButton />
       {/if}
 
-      {#each filteredThemes as theme}
+      {#each filteredThemes as theme (theme.id)}
         {#if theme !== undefined && !(hideThemes && theme?.hideFromOverview)}
           <ThemeButton {theme} {isCustom} userDetails={state.osmConnection.userDetails} {state} />
         {/if}

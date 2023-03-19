@@ -50,7 +50,9 @@
             "title": {
               "en": "a medical supply shop",
               "de": "ein Sanitätshaus",
-              "es": "una tienda de suministros médicos"
+              "es": "una tienda de suministros médicos",
+              "cs": "obchod se zdravotnickými potřebami",
+              "ca": "una botiga de subministraments mèdics"
             },
             "tags": [
               "shop=medical_supply"
@@ -60,7 +62,9 @@
             "title": {
               "en": "a hearing aids shop",
               "de": "ein Hörgerätegeschäft",
-              "es": "una tienda de audífonos"
+              "es": "una tienda de audífonos",
+              "cs": "obchod se sluchadly",
+              "ca": "una botiga d'audiòfons"
             },
             "tags": [
               "shop=hearing_aids"
@@ -70,7 +74,9 @@
             "title": {
               "en": "an optician",
               "de": "ein Optiker",
-              "es": "una óptica"
+              "es": "una óptica",
+              "cs": "optik",
+              "ca": "una òptica"
             },
             "tags": [
               "shop=optician"

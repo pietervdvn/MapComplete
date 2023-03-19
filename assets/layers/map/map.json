@@ -44,6 +44,9 @@
   "tagRenderings": [
     "images",
     {
+      "labels": [
+        "map"
+      ],
       "question": {
         "en": "On which data is this map based?",
         "nl": "Op welke data is deze kaart gebaseerd?",
@@ -87,6 +90,9 @@
     },
     {
       "id": "map-attribution",
+      "labels": [
+        "map"
+      ],
       "question": {
         "en": "Is the OpenStreetMap-attribution given?",
         "nl": "Is de attributie voor OpenStreetMap aanwezig?",

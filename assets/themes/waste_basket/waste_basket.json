@@ -13,7 +13,8 @@
     "nb_NO": "Søppelkurv",
     "da": "Affaldskurv",
     "pa_PK": "کوڑے دی ٹوکری",
-    "es": "Papeleras"
+    "es": "Papeleras",
+    "cs": "Odpadkový koš"
   },
   "shortDescription": {
     "en": "A map with waste baskets",
@@ -26,7 +27,8 @@
     "nb_NO": "Oversikt over søppelkurver",
     "da": "Et kort med affaldskurve",
     "ca": "Un mapa amb papereres",
-    "es": "Un mapa con papeleras"
+    "es": "Un mapa con papeleras",
+    "cs": "Mapa odpadkových košů"
   },
   "description": {
     "en": "On this map, you'll find waste baskets near you. If a waste basket is missing on this map, you can add it yourself",
@@ -38,7 +40,8 @@
     "fr": "Retrouvez les poubelles près de vous. Si une poubelle est manquante, vous pouvez l’ajouter vous même",
     "da": "På dette kort finder du affaldskurve i nærheden af dig. Hvis der mangler en affaldskurv på dette kort, kan du selv tilføje den",
     "ca": "A aquest mapa trobaràs les papereres a prop teua. Si falta una paperera al mapa pots afegir-la tu mateix",
-    "es": "En este mapa, encontrará las papeleras cercanas a usted. Si falta una papelera en el mapa, puede añadirla usted mismo"
+    "es": "En este mapa, encontrará las papeleras cercanas a usted. Si falta una papelera en el mapa, puede añadirla usted mismo",
+    "cs": "Na této mapě najdete koše na odpadky ve vašem okolí. Pokud na této mapě odpadkový koš chybí, můžete jej přidat sami"
   },
   "icon": "./assets/themes/waste_basket/waste_basket.svg",
   "startLat": 0,

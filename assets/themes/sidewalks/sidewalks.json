@@ -11,7 +11,8 @@
     "nb_NO": "Fortau",
     "it": "Marciapiede",
     "da": "Fortove",
-    "pa_PK": "فُٹ‌پاتھ"
+    "pa_PK": "فُٹ‌پاتھ",
+    "cs": "Chodníky"
   },
   "shortDescription": {
     "en": "Sidewalk mapping",
@@ -22,7 +23,8 @@
     "fr": "Cartographier des trottoirs",
     "it": "Mappatura del marciapiede",
     "da": "Kortlægning af fortov",
-    "pa_PK": "فُت‌پیتھ دا نقشہ بݨاؤݨ"
+    "pa_PK": "فُت‌پیتھ دا نقشہ بݨاؤݨ",
+    "cs": "Mapování chodníků"
   },
   "description": {
     "en": "Experimental theme",
@@ -34,7 +36,8 @@
     "fr": "Thème expérimental",
     "nb_NO": "Eksperimentelt tema",
     "da": "Eksperimentelt tema",
-    "pa_PK": "آزمائش تھیم"
+    "pa_PK": "آزمائش تھیم",
+    "cs": "Experimentální téma"
   },
   "icon": "./assets/svg/bug.svg",
   "startLat": 0,
@@ -56,7 +59,8 @@
         "fr": "Trottoirs",
         "it": "Marciapiedi",
         "da": "Fortove",
-        "pa_PK": "فُٹ‌پاتھ"
+        "pa_PK": "فُٹ‌پاتھ",
+        "cs": "Chodníky"
       },
       "minzoom": 12,
       "source": {
@@ -79,7 +83,8 @@
           "nl": "{name}",
           "fr": "{name}",
           "it": "{name}",
-          "da": "{name}"
+          "da": "{name}",
+          "cs": "{name}"
         },
         "mappings": [
           {
@@ -95,7 +100,8 @@
         "nl": "Laag die voetpaden naast wegen toont",
         "fr": "Calque montrant les trottoirs",
         "da": "Lag, der viser fortove på motorveje",
-        "ca": "Una capa que mostra les voreres de les vies"
+        "ca": "Una capa que mostra les voreres de les vies",
+        "cs": "Vrstva zobrazující chodníky silnic"
       },
       "tagRenderings": [
         {
@@ -109,7 +115,8 @@
             "nb_NO": "Denne gaten heter {name}",
             "it": "La strada si chiama {name}",
             "da": "Denne gade hedder {name}",
-            "ca": "El carrer s'anomena {name}"
+            "ca": "El carrer s'anomena {name}",
+            "cs": "Tato ulice se jmenuje {name}"
           }
         },
         {
@@ -141,7 +148,8 @@
                 "nl": "Is er een stoep aan deze kant van de weg?",
                 "fr": "Y a-t-il un trottoir de ce côté de la route ?",
                 "ca": "Hi ha una vorera a aquest costat del carrer?",
-                "es": "¿Hay una acera en este lado de la calle?"
+                "es": "¿Hay una acera en este lado de la calle?",
+                "cs": "Je na této straně silnice chodník?"
               },
               "mappings": [
                 {
@@ -153,7 +161,8 @@
                     "nl": "Ja, er is een stoep aan deze kant van de weg",
                     "fr": "Oui, il y a un trottoir de ce côté de la route",
                     "ca": "Sí, hi ha una vorera a aquest costat del carrer",
-                    "es": "Sí, hay una acera en este lado de la calle"
+                    "es": "Sí, hay una acera en este lado de la calle",
+                    "cs": "Ano, na této straně silnice je chodník"
                   }
                 },
                 {
@@ -165,7 +174,8 @@
                     "nl": "Nee, er is geen stoep om op te lopen",
                     "fr": "Non, il n'y a pas de trottoir où marcher",
                     "ca": "No, no hi ha vorera per la que caminar",
-                    "es": "No, no hay acera por la que caminar"
+                    "es": "No, no hay acera por la que caminar",
+                    "cs": "Ne, není tu žádný chodník"
                   }
                 },
                 {
@@ -177,7 +187,8 @@
                     "nl": "Er is een apart ingetekende stoep om op te lopen",
                     "fr": "Il y a un trottoir où marcher cartographié séparément",
                     "ca": "Hi ha una vorera mapejada separadament per on caminar",
-                    "es": "Hay una acera mapeada por separado por la que caminar"
+                    "es": "Hay una acera mapeada por separado por la que caminar",
+                    "cs": "Na mapě je vyznačen samostatný chodník"
                   }
                 }
               ]
@@ -191,7 +202,8 @@
                 "nl": "Hoe breed is de stoep aan deze kant van de weg?",
                 "fr": "Quelle est la largeur du trottoir de ce côté de la route ?",
                 "ca": "Quina és l'amplada de la vorera a aquest costat de la calçada?",
-                "es": "¿Cuál es la anchura de la acera en este lado de la calzada?"
+                "es": "¿Cuál es la anchura de la acera en este lado de la calzada?",
+                "cs": "Jaká je šířka chodníku na této straně silnice?"
               },
               "render": {
                 "en": "This sidewalk is {sidewalk:left|right:width}m wide",
@@ -200,7 +212,8 @@
                 "nl": "Deze stoep is {sidewalk:left|right:width}m breed",
                 "fr": "Ce trottoir fait {sidewalk:left|right:width} m de large",
                 "ca": "Aquesta vorera té {sidewalk:left|right:width} m d'ample",
-                "es": "Esta acera tiene {sidewalk:left|right:width} m de ancho"
+                "es": "Esta acera tiene {sidewalk:left|right:width} m de ancho",
+                "cs": "Tento chodník je široký {sidewalk:left|right:width}m"
               },
               "condition": "sidewalk:left|right=yes",
               "freeform": {

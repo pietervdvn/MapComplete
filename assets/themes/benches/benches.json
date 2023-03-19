@@ -53,7 +53,7 @@
     "es": "Este mapa muestra todos los bancos que están registrados en OpenStreetMap: Bancos individuales, bancos que pertenecen a paradas o marquesinas del transporte público.",
     "nb_NO": "Viser alle benker som er registrert i OpenStreetMap: Individuelle benker, og benker som tilhører offentlig transport eller -skur. Med en OpenStreetMap-konto kan du kartlegge nye benker eller redigere eksisterende.",
     "da": "Dette kort viser alle bænke, der er registreret i OpenStreetMap: Individuelle bænke og bænke, der hører til offentlige transportpladser eller shelters. Med en OpenStreetMap-konto kan du kortlægge nye bænke eller redigere detaljer om eksisterende bænke.",
-    "cs": "Tato mapa zobrazuje všechny lavičky, které jsou zaznamenány v OpenStreetMap: samostatné lavičky a lavičky patřící k zastávkám veřejné dopravy nebo přístřeškům. S účtem v OpenStreetMap můžete mapovat nové lavičky nebo upravovat detaily stávajících laviček."
+    "cs": "Tato mapa zobrazuje všechny lavičky, které jsou zaznamenány v OpenStreetMap: samostatné lavičky a lavičky patřící k zastávkám veřejné dopravy nebo přístřeškům."
   },
   "icon": "./assets/themes/benches/bench_poi.svg",
   "startLat": 0,

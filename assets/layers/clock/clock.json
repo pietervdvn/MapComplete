@@ -135,7 +135,7 @@
             "en": "This clock is visible from about 5 meters away (small wall-mounted clock)",
             "nl": "Deze klok is zichtbaar vanaf ongeveer 5 meter afstand (kleine klok aan een muur)",
             "de": "Diese Uhr ist aus etwa 5 Metern Entfernung sichtbar (kleine Wanduhr)",
-            "ca": "Aquest rellotge és visible al voltant de 5 metres de distància (un petit rellotge muntat a la paret)"
+            "ca": "Aquest rellotge és visible al voltant dels 5 metres de distància (un petit rellotge muntat a la paret)"
           }
         },
         {
@@ -150,7 +150,7 @@
         {
           "if": "visibility=area",
           "then": {
-            "en": "This clock is visible from more than 20 meters away (church clock)",
+            "en": "This clock is visible from more than 20 meters away (e.g. a church clock or station clock)",
             "nl": "Deze klok is zichtbaar vanaf meer dan 20 meter afstand (kerkklok)",
             "de": "Diese Uhr ist aus mehr als 20 Metern Entfernung sichtbar (Kirchenuhr)",
             "ca": "Aquest rellotge és visible des de més de 20 metres de distància (rellotge d'una església)"

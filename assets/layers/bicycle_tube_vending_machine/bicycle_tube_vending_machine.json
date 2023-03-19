@@ -11,7 +11,8 @@
     "pt_BR": "Máquina de venda automática de tubos de bicicleta",
     "pt": "Máquina de venda automática de tubos de bicicleta",
     "da": "Automat til salg af cykelslanger",
-    "cs": "Automat na cyklistické duše"
+    "cs": "Automat na cyklistické duše",
+    "ca": "Màquina expenedora de tubs de bicicleta"
   },
   "title": {
     "render": {
@@ -25,7 +26,8 @@
       "pt_BR": "Máquina de venda automática de tubos de bicicleta",
       "pt": "Máquina de venda automática de tubos de bicicleta",
       "da": "Automat til salg af cykelslanger",
-      "cs": "Automat na cyklistické duše"
+      "cs": "Automat na cyklistické duše",
+      "ca": "Màquina expenedora de tubs de bicicleta"
     },
     "mappings": [
       {
@@ -63,7 +65,8 @@
         "pt_BR": "uma máquina de venda automática de tubos de bicicleta",
         "pt": "uma máquina de venda automática de tubos de bicicleta",
         "da": "en automat til salg af cykelslanger",
-        "cs": "automat na cyklistické duše"
+        "cs": "automat na cyklistické duše",
+        "ca": "una màquina expenedora de tubs de bicicleta"
       },
       "tags": [
         "amenity=vending_machine",
@@ -85,9 +88,10 @@
         "zh_Hant": "這個自動販賣機仍有運作嗎？",
         "pt_BR": "Esta máquina de venda automática ainda está operacional?",
         "pt": "Esta máquina de venda automática ainda está operacional?",
-        "es": "¿Todavía es operacional esta máquina exprendedora?",
+        "es": "¿Todavía funciona esta máquina expendedora?",
         "da": "Er denne salgsautomat stadig i drift?",
-        "cs": "Je tento automat stále v provozu?"
+        "cs": "Je tento automat stále v provozu?",
+        "ca": "Aquesta màquina expenedora encara funciona?"
       },
       "render": {
         "en": "The operational status is <i>{operational_status}</i>",
@@ -101,7 +105,8 @@
         "pt": "O estado operacional é: <i>{operational_status}</i>",
         "es": "El estado operacional es <i>{operational_status}</i></i>",
         "da": "Driftsstatus er <i>{operational_status}</i>",
-        "cs": "Provozní stav je <i>{operational_status}</i>"
+        "cs": "Provozní stav je <i>{operational_status}</i>",
+        "ca": "L'estat operatiu és <i>{operational_status}</i>"
       },
       "freeform": {
         "key": "operational_status"
@@ -123,7 +128,8 @@
             "pt": "Esta máquina de venda automática funciona",
             "da": "Denne salgsautomat virker",
             "es": "Esta máquina expendedora funciona",
-            "cs": "Tento prodejní automat funguje"
+            "cs": "Tento prodejní automat funguje",
+            "ca": "Aquesta màquina expenedora funciona"
           }
         },
         {
@@ -142,7 +148,8 @@
             "pt": "Esta máquina de venda automática está quebrada",
             "es": "Esta máquina exprendedora está rota",
             "da": "Denne salgsautomat er i stykker",
-            "cs": "Tento prodejní automat je rozbitý"
+            "cs": "Tento prodejní automat je rozbitý",
+            "ca": "Aquesta màquina expenedora està trencada"
           }
         },
         {
@@ -161,7 +168,8 @@
             "pt": "Esta máquina de venda automática está fechada",
             "es": "Esta máquina exprendedora está cerrada",
             "da": "Denne salgsautomat er lukket",
-            "cs": "Tento prodejní automat je uzavřen"
+            "cs": "Tento prodejní automat je uzavřen",
+            "ca": "Aquesta màquina expenedora està tancada"
           }
         }
       ],

@@ -57,7 +57,9 @@ describe("ChangesetHanlder", () => {
             const d = Utils.asDict(rewritten)
             expect(d.size).toEqual(10)
             expect(d.get("answer")).toEqual("5")
-            expect(d.get("comment")).toEqual("Adding data with #MapComplete for theme #toerisme_vlaanderen")
+            expect(d.get("comment")).toEqual(
+                "Adding data with #MapComplete for theme #toerisme_vlaanderen"
+            )
             expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
             expect(d.get("host")).toEqual("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
             expect(d.get("imagery")).toEqual("osm")
@@ -115,7 +117,9 @@ describe("ChangesetHanlder", () => {
 
             expect(d.size).toEqual(9)
             expect(d.get("answer")).toEqual("42")
-            expect(d.get("comment")).toEqual("Adding data with #MapComplete for theme #toerisme_vlaanderen")
+            expect(d.get("comment")).toEqual(
+                "Adding data with #MapComplete for theme #toerisme_vlaanderen"
+            )
             expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
             expect(d.get("host")).toEqual("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
             expect(d.get("imagery")).toEqual("osm")
@@ -166,7 +170,9 @@ describe("ChangesetHanlder", () => {
 
             expect(d.size).toEqual(9)
             expect(d.get("answer")).toEqual("5")
-            expect(d.get("comment")).toEqual("Adding data with #MapComplete for theme #toerisme_vlaanderen")
+            expect(d.get("comment")).toEqual(
+                "Adding data with #MapComplete for theme #toerisme_vlaanderen"
+            )
             expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
             expect(d.get("host")).toEqual("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
             expect(d.get("imagery")).toEqual("osm")

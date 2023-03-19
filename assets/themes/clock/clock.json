@@ -5,14 +5,16 @@
     "nl": "Klokken",
     "de": "Uhren",
     "es": "Relojes",
-    "ca": "Rellotges"
+    "ca": "Rellotges",
+    "cs": "Hodiny"
   },
   "description": {
     "en": "Map showing all public clocks",
     "nl": "Kaart met alle openbare klokken",
     "ca": "Mapa amb tots els rellotges públics",
     "de": "Karte mit allen öffentlichen Uhren",
-    "es": "Mapa con todos los relojes públicos"
+    "es": "Mapa con todos los relojes públicos",
+    "cs": "Mapa zobrazující všechny veřejné hodiny"
   },
   "icon": "./assets/layers/clock/clock.svg",
   "startLat": 0,

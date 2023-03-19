@@ -78,14 +78,16 @@
           "if": "mapcomplete-show-all-questions=true",
           "then": {
             "en": "Show all questions in the infobox together",
-            "de": "Alle Fragen in der Infobox zusammen anzeigen"
+            "de": "Alle Fragen in der Infobox zusammen anzeigen",
+            "ca": "Mostra totes les preguntes juntes a la caixa d'informació"
           }
         },
         {
           "if": "mapcomplete-show-all-questions=false",
           "then": {
             "en": "Show questions one-by-one",
-            "de": "Fragen der Reihe nach anzeigen"
+            "de": "Fragen der Reihe nach anzeigen",
+            "ca": "Mostra les preguntes una per una"
           }
         }
       ]
@@ -116,7 +118,8 @@
           "then": {
             "en": "Show a button to quickly open translations when using MapComplete on a big screen",
             "de": "Schaltfläche anzeigen zum schnellen Öffnen von Übersetzungen beim Verwenden von MapComplete auf einem großen Bildschirm",
-            "fr": "Afficher un bouton pour ouvrir rapidement les traductions lorsque vous utilisez MapComplete sur un grand écran"
+            "fr": "Afficher un bouton pour ouvrir rapidement les traductions lorsque vous utilisez MapComplete sur un grand écran",
+            "ca": "Mostra un botó per a obrir ràpidament les traduccions quan utilitzes MapComplet en una pantalla gran"
           }
         },
         {
@@ -241,7 +244,8 @@
           "if": "_csCount>0",
           "then": {
             "en": "You have made changes on {_csCount} different occasions! That is awesome!",
-            "de": "Sie haben bei {_csCount} verschiedenen Gelegenheiten Änderungen vorgenommen! Das ist großartig!"
+            "de": "Sie haben bei {_csCount} verschiedenen Gelegenheiten Änderungen vorgenommen! Das ist großartig!",
+            "ca": "Has fet {_csCount} en diferents ocasions! Això és sorprenent!"
           },
           "icon": "party"
         }

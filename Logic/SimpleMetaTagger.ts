@@ -69,7 +69,7 @@ export class ReferencingWaysMetaTagger extends SimpleMetaTagger {
             {
                 keys: ["_referencing_ways"],
                 isLazy: true,
-                doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry. ",
+                doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry. If the preset has 'snapToLayer' defined, the icon will be calculated based on the preset tags with `_referencing_ways=[\"way/-1\"]` added.",
             },
             (feature, _, __, state) => {
                 if (!ReferencingWaysMetaTagger.enabled) {

@@ -1091,6 +1091,7 @@
     "de": "Eine Ebene mit Restaurants und Fast-Food-Einrichtungen (mit speziellem Rendering für Pommesbuden)",
     "es": "Una capa que muestra restaurantes y locales de comida rápida (con un renderizado especial para freidurías)",
     "fr": "Un claque montrant les restaurants et les endroits de nourriture rapide (avec un rendu spécial pour les friteries)",
-    "ca": "Una capa que mostra restaurants i locals de menjar ràpid (amb un renderitzat especial per a fregiduries)"
+    "ca": "Una capa que mostra restaurants i locals de menjar ràpid (amb un renderitzat especial per a fregiduries)",
+    "cs": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)"
   }
 }
