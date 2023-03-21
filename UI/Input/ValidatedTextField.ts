@@ -481,7 +481,7 @@ class OpeningHoursTextField extends TextFieldDef {
     }
 }
 
-class UrlTextfieldDef extends TextFieldDef {
+export class UrlTextfieldDef extends TextFieldDef {
     declare inputmode: "url"
 
     constructor() {
@@ -852,7 +852,7 @@ class EmailTextField extends TextFieldDef {
     }
 }
 
-class PhoneTextField extends TextFieldDef {
+export class PhoneTextField extends TextFieldDef {
     inputmode = "tel"
 
     constructor() {
