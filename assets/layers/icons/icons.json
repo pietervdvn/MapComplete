@@ -31,9 +31,6 @@
     },
     {
       "id": "isOpen",
-      "labels": [
-        "defaults"
-      ],
       "#": "Shows a coloured clock if opening hours are parsed. Uses the metatagging, suitable to use as a (badged) overlay",
       "mappings": [
         {
