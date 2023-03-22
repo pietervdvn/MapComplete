@@ -203,6 +203,7 @@
         "nameInlineQuestion": "{category}: El seu nom és $$$",
         "newlyCreated": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
         "next": "Següent",
+        "noMatchingMapping": "No hi ha cap entrada que coincideixi amb la teva cerca…",
         "noNameCategory": "{category} sense nom",
         "noTagsSelected": "No s'han seleccionat etiquetes",
         "notValid": "Selecciona un valor vàlid per a continuar",
