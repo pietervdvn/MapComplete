@@ -418,7 +418,7 @@
               }
             },
             {
-              "if": "animated=travision_blades",
+              "if": "animated=trivision_blades",
               "then": {
                 "ca": "<b>Trivision</b> - la tanca publicitària consta de molts prismes triangulars que giren regularment",
                 "es": "<b>Trivision</b> - la valla publicitaria consta de muchos prismas triangulares que giran regularmente",
