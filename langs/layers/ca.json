@@ -809,6 +809,11 @@
             },
             "bike_cafe-repair-tools": {
                 "question": "Hi ha eines aquí per reparar la teva pròpia bicicleta?"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Quan obri aquest cafè ciclista?"
+                }
             }
         },
         "title": {
@@ -1092,6 +1097,11 @@
                     }
                 },
                 "question": "Quines vàlvules són compatibles?"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Quan està obert aquest punt de reparació de bicicletes?"
+                }
             },
             "send_email_about_broken_pump": {
                 "render": {
@@ -1434,13 +1444,25 @@
                     "10": {
                         "then": "<b>CSS 1Tipus 1</b> (també conegut com Tipus 1 combo)"
                     },
+                    "11": {
+                        "then": "<b>CSS Tipus 1</b> (també conegut com a Tipus 1 Combo)"
+                    },
                     "12": {
+                        "then": "<b>Supercarregador de Tesla</b>"
+                    },
+                    "13": {
                         "then": "<b>Supercarregador de Tesla</b>"
                     },
                     "14": {
                         "then": "<b>Tipus 2</b> (mennekes)"
                     },
+                    "15": {
+                        "then": "<b>Tipus 2</b> (mennekes)"
+                    },
                     "16": {
+                        "then": "<b>CSS Tipus 2</b> (mennekes)"
+                    },
+                    "17": {
                         "then": "<b>CSS Tipus 2</b> (mennekes)"
                     },
                     "18": {
@@ -1458,6 +1480,9 @@
                     "26": {
                         "then": "<b>USB</b> per a carregar mòbils i dispositius petits"
                     },
+                    "3": {
+                        "then": "<b>Endoll de paret Europeu</b> amb pin a terra (CEE7/4 tipus E)"
+                    },
                     "4": {
                         "then": "<b>CHAdeMo</b>"
                     },
@@ -1467,7 +1492,13 @@
                     "6": {
                         "then": "<b>Tipus 1 amb cable</b> (J1772)"
                     },
+                    "7": {
+                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
+                    },
                     "8": {
+                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
+                    },
+                    "9": {
                         "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
                     }
                 },
@@ -1477,16 +1508,46 @@
                 "mappings": {
                     "0": {
                         "then": "No forma part d'una xarxa més gran, p.e. perqué l'estació de càrrega la manté un negoci local"
+                    },
+                    "1": {
+                        "then": "No forma part d'una xarxa major"
                     }
                 },
-                "question": "Aquesta estació de càrrega forma part d'una xarxa?"
+                "question": "Aquesta estació de càrrega forma part d'una xarxa?",
+                "render": "Part de la xarxa <b>{network}</b>"
             },
             "Operational status": {
                 "mappings": {
                     "0": {
                         "then": "Aquesta estació de càrrega funciona"
+                    },
+                    "1": {
+                        "then": "Aquesta estació de carrega està trencada"
+                    },
+                    "2": {
+                        "then": "Aquí està prevista una estació de recàrrega"
                     }
                 }
+            },
+            "Operator": {
+                "mappings": {
+                    "0": {
+                        "then": "De fet, {operator} és la xarxa"
+                    }
+                },
+                "question": "Qui és l'operadora d'aquesta estació de càrrega?",
+                "render": "Aquesta estació de càrrega l'opera {operator}"
+            },
+            "Parking:fee": {
+                "mappings": {
+                    "0": {
+                        "then": "No hi ha costos d'aparcament addicionals mentre es carrega"
+                    },
+                    "1": {
+                        "then": "Cal pagar una taxa addicional d'aparcament mentres es carrega"
+                    }
+                },
+                "question": "Cal pagar una taxa d'aparcament mentre es carrega?"
             },
             "Type": {
                 "mappings": {
@@ -1513,6 +1574,9 @@
                     "0": {
                         "then": "Qualsevol pot utilitzar aquest punt de càrrega (pot requerir un pagament)"
                     },
+                    "1": {
+                        "then": "Qualsevol persona pot utilitzar aquesta estació de recàrrega (pot ser calgui un pagament)"
+                    },
                     "2": {
                         "then": "Sols clientes del lloc al que pertany aquest punt de càrrega poden utilitzar-lo <br/><span class='subtle'>p.e. un punt de càrrega per un hotel que sols poden utilizar-los els hostes</span>"
                     },
@@ -1523,10 +1587,16 @@
                         "then": "No accessible per al públic general (p.e. només accessible pels propietaris, empleats, …)"
                     }
                 },
-                "question": "Qui pot utilitzar aquest punt de càrrega?"
+                "question": "Qui pot utilitzar aquest punt de càrrega?",
+                "render": "L'accés està {access}"
             },
             "capacity": {
+                "question": "Quants vehicles es poden carregar a la vegada?",
                 "render": "Aquí es poden carregar {capacity} vehicles a l'hora"
+            },
+            "charge": {
+                "question": "Quant cal pagar per utilitzar aquesta estació de càrrega?",
+                "render": "Utilitzar aquesta estació de càrrega costa <b>{charge}</b>"
             },
             "current-11": {
                 "mappings": {
@@ -1626,6 +1696,9 @@
             }
         }
     },
+    "climbing": {
+        "description": "Una capa fictícia que conté renderització d'etiquetes compartides entre les capes d'escalada"
+    },
     "climbing_area": {
         "description": "Una àrea on l'escalada és possible, p.e. una penya, lloc, bloc, … Conté l'agregació de rutes",
         "tagRenderings": {
@@ -1646,7 +1719,14 @@
             "climbing_club-name": {
                 "render": "<strong>{name}</strong>"
             }
+        },
+        "title": {
+            "render": "Club d'escalada"
         }
+    },
+    "climbing_gym": {
+        "description": "Un gimnàs d'escalada",
+        "name": "Gimnasos d'escalada"
     },
     "climbing_opportunity": {
         "tagRenderings": {
@@ -1793,7 +1873,7 @@
                         "then": "Aquest rellotge és visible al voltant dels 20 metres de distància (rellotge de tamany mig a una tanca publicitària)"
                     },
                     "2": {
-                        "then": "Aquest rellotge és visible des de més de 20 metres de distància (rellotge d'una església)"
+                        "then": "Aquest rellotge és visible des de més de 20 metres de distància (p. ex. el d'una església o estació de tren)"
                     }
                 },
                 "question": "Com de visible és aquest rellotge?"
@@ -2380,6 +2460,7 @@
         }
     },
     "indoors": {
+        "description": "Mapeig interior bàsic: mostra els contorns de les habitacions",
         "name": "Interiors"
     },
     "information_board": {
@@ -2459,6 +2540,7 @@
         }
     },
     "maproulette": {
+        "description": "Capa que mostra totes les tasques de MapRoulette",
         "tagRenderings": {
             "status": {
                 "mappings": {
@@ -2470,6 +2552,7 @@
         }
     },
     "maxspeed": {
+        "description": "Mostra la velocitat permesa per a cada carretera",
         "name": "Velocitat",
         "tagRenderings": {
             "maxspeed-maxspeed": {
@@ -2496,6 +2579,9 @@
         "tagRenderings": {
             "Email": {
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+            },
+            "Name tag": {
+                "render": "Aquesta àrea s'anomena {name}"
             },
             "Surface area": {
                 "render": "Superfície: {_surface:ha}Ha"
@@ -2706,6 +2792,7 @@
         }
     },
     "postboxes": {
+        "description": "La capa que mostra bústies de correus.",
         "name": "Bústies",
         "presets": {
             "0": {
@@ -2828,6 +2915,9 @@
             "render": "Bústia per llibres"
         }
     },
+    "rainbow_crossings": {
+        "description": "Una capa que mostra els passos de vianants pintats amb de l'arc de Sant Martí"
+    },
     "recycling": {
         "name": "Residus",
         "presets": {
@@ -2840,6 +2930,17 @@
         },
         "tagRenderings": {
             "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Tothom pot utilitzar aquesta instal·lació de reciclatge"
+                    },
+                    "1": {
+                        "then": "Només els residents poden utilitzar aquesta instal·lació de reciclatge"
+                    },
+                    "2": {
+                        "then": "Aquesta instal·lació de reciclatge és només per a ús privat"
+                    }
+                },
                 "question": "Qui pot utilitzar aquesta instal·lació de reciclatge?"
             },
             "container-location": {
@@ -2889,6 +2990,9 @@
                     "16": {
                         "then": "Aquí es pot reciclar plàstic"
                     },
+                    "17": {
+                        "then": "Aquí es pot reciclar ferralla"
+                    },
                     "18": {
                         "then": "Aquí es poden reciclar sabates"
                     },
@@ -2900,6 +3004,9 @@
                     },
                     "20": {
                         "then": "Aquí es poden reciclar petits aparells elèctrics"
+                    },
+                    "21": {
+                        "then": "Aquí es poden reciclar agulles"
                     },
                     "22": {
                         "then": "Ací es pot reciclar el rebuig"
@@ -2938,6 +3045,9 @@
                     },
                     "1": {
                         "then": "Açò és un centre de reciclatge"
+                    },
+                    "2": {
+                        "then": "Contenidor per a residus no reciclables (fracció resta)"
                     }
                 }
             }
@@ -3032,6 +3142,7 @@
         "name": "Refugi"
     },
     "shops": {
+        "description": "Una botiga",
         "name": "Botiga",
         "tagRenderings": {
             "organic": {
