@@ -5,12 +5,13 @@ import { TagUtils } from "../../Logic/Tags/TagUtils"
 import { Utils } from "../../Utils"
 import Svg from "../../Svg"
 import WithContextLoader from "./WithContextLoader"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store } from "../../Logic/UIEventSource"
 import BaseUIElement from "../../UI/BaseUIElement"
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Img from "../../UI/Base/Img"
 import Combine from "../../UI/Base/Combine"
 import { VariableUiElement } from "../../UI/Base/VariableUIElement"
+import { OsmTags } from "../OsmFeature"
 
 export default class PointRenderingConfig extends WithContextLoader {
     private static readonly allowed_location_codes = new Set<string>([
@@ -164,7 +165,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation, false, defaultPin)
     }
 
-    public GetSimpleIcon(tags: UIEventSource<any>): BaseUIElement {
+    public GetSimpleIcon(tags: Store<OsmTags>): BaseUIElement {
         const self = this
         if (this.icon === undefined) {
             return undefined
@@ -175,7 +176,7 @@ export default class PointRenderingConfig extends WithContextLoader {
     }
 
     public GenerateLeafletStyle(
-        tags: UIEventSource<any>,
+        tags: Store<OsmTags>,
         clickable: boolean,
         options?: {
             noSize?: false | boolean
@@ -183,11 +184,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
     ): {
         html: BaseUIElement
-        iconSize: [number, number]
         iconAnchor: [number, number]
-        popupAnchor: [number, number]
-        iconUrl: string
-        className: string
     } {
         function num(str, deflt = 40) {
             const n = Number(str)
@@ -211,20 +208,21 @@ export default class PointRenderingConfig extends WithContextLoader {
         let iconH = num(iconSize[1])
         const mode = iconSize[2]?.trim()?.toLowerCase() ?? "center"
 
-        let anchorW = iconW / 2
+        // in MapLibre, the offset is relative to the _center_ of the object, with left = [-x, 0] and up = [0,-y]
+        let anchorW = 0
         let anchorH = iconH / 2
         if (mode === "left") {
-            anchorW = 0
+            anchorW = -iconW / 2
         }
         if (mode === "right") {
-            anchorW = iconW
+            anchorW = iconW / 2
         }
 
         if (mode === "top") {
-            anchorH = 0
+            anchorH = -iconH / 2
         }
         if (mode === "bottom") {
-            anchorH = iconH
+            anchorH = iconH / 2
         }
 
         const icon = this.GetSimpleIcon(tags)
@@ -264,15 +262,11 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
         return {
             html: htmlEl,
-            iconSize: [iconW, iconH],
             iconAnchor: [anchorW, anchorH],
-            popupAnchor: [0, 3 - anchorH],
-            iconUrl: undefined,
-            className: clickable ? "leaflet-div-icon" : "leaflet-div-icon unclickable",
         }
     }
 
-    private GetBadges(tags: UIEventSource<any>): BaseUIElement {
+    private GetBadges(tags: Store<OsmTags>): BaseUIElement {
         if (this.iconBadges.length === 0) {
             return undefined
         }
@@ -304,7 +298,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         ).SetClass("absolute bottom-0 right-1/3 h-1/2 w-0")
     }
 
-    private GetLabel(tags: UIEventSource<any>): BaseUIElement {
+    private GetLabel(tags: Store<OsmTags>): BaseUIElement {
         if (this.label === undefined) {
             return undefined
         }

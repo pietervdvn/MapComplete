@@ -186,6 +186,14 @@ export class BBox {
         ]
     }
 
+    toLngLat(): [[number, number], [number, number]] {
+        return [
+            [this.minLon, this.minLat],
+            [this.maxLon, this.maxLat],
+        ]
+    }
+
+
     public asGeoJson<T>(properties: T): Feature<Polygon, T> {
         return {
             type: "Feature",

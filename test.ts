@@ -1,24 +1,23 @@
 import SvelteUIElement from "./UI/Base/SvelteUIElement"
 import MaplibreMap from "./UI/Map/MaplibreMap.svelte"
-import { Store, Stores, UIEventSource } from "./Logic/UIEventSource"
+import { ImmutableStore, UIEventSource } from "./Logic/UIEventSource"
 import { MapLibreAdaptor } from "./UI/Map/MapLibreAdaptor"
-import {
-    EditorLayerIndexProperties,
-    RasterLayerPolygon,
-    RasterLayerProperties,
-} from "./Models/RasterLayers"
+import { AvailableRasterLayers, RasterLayerPolygon } from "./Models/RasterLayers"
 import type { Map as MlMap } from "maplibre-gl"
-import { AvailableRasterLayers } from "./Models/RasterLayers"
-import Loc from "./Models/Loc"
-import { BBox } from "./Logic/BBox"
-import { GeoOperations } from "./Logic/GeoOperations"
 import RasterLayerPicker from "./UI/Map/RasterLayerPicker.svelte"
 import BackgroundLayerResetter from "./Logic/Actors/BackgroundLayerResetter"
-
+import { ShowDataLayer } from "./UI/Map/ShowDataLayer"
+import StaticFeatureSource from "./Logic/FeatureSource/Sources/StaticFeatureSource"
+import { Layer } from "leaflet"
+import LayerConfig from "./Models/ThemeConfig/LayerConfig"
+import * as bench from "./assets/generated/layers/bench.json"
+import { Utils } from "./Utils"
+import SimpleFeatureSource from "./Logic/FeatureSource/Sources/SimpleFeatureSource"
+import { FilterState } from "./Models/FilteredLayer"
+import { FixedUiElement } from "./UI/Base/FixedUiElement"
 async function main() {
     const mlmap = new UIEventSource<MlMap>(undefined)
-    const locationControl = new UIEventSource<Loc>({
-        zoom: 14,
+    const location = new UIEventSource<{ lon: number; lat: number }>({
         lat: 51.1,
         lon: 3.1,
     })
@@ -29,44 +28,70 @@ async function main() {
         .SetStyle("height: 50vh; width: 90%; margin: 1%")
         .AttachTo("maindiv")
     const bg = new UIEventSource<RasterLayerPolygon>(undefined)
-    new MapLibreAdaptor(mlmap, {
-        backgroundLayer: bg,
-        locationControl,
+    const mla = new MapLibreAdaptor(mlmap, {
+        rasterLayer: bg,
+        location,
     })
 
-    const availableLayersBboxes = Stores.ListStabilized(
-        locationControl.mapD((loc) => {
-            const lonlat: [number, number] = [loc.lon, loc.lat]
-            return AvailableRasterLayers.EditorLayerIndex.filter((eliPolygon) =>
-                BBox.get(eliPolygon).contains(lonlat)
-            )
-        })
-    )
-    const availableLayers: Store<RasterLayerPolygon[]> = Stores.ListStabilized(
-        availableLayersBboxes.map((eliPolygons) => {
-            const loc = locationControl.data
-            const lonlat: [number, number] = [loc.lon, loc.lat]
-            const matching: RasterLayerPolygon[] = eliPolygons.filter((eliPolygon) => {
-                if (eliPolygon.geometry === null) {
-                    return true // global ELI-layer
-                }
-                return GeoOperations.inside(lonlat, eliPolygon)
-            })
-            matching.unshift(AvailableRasterLayers.osmCarto)
-            matching.push(...AvailableRasterLayers.globalLayers)
-            return matching
-        })
-    )
-
-    availableLayers.map((a) =>
-        console.log(
-            "Availabe layers at current location:",
-            a.map((al) => al.properties.id)
-        )
-    )
-
-    new BackgroundLayerResetter(bg, availableLayers)
-    new SvelteUIElement(RasterLayerPicker, { availableLayers, value: bg }).AttachTo("extradiv")
+    const features = new UIEventSource([
+        {
+            feature: {
+                type: "Feature",
+                properties: {
+                    hello: "world",
+                    id: "" + 1,
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [3.1, 51.2],
+                },
+            },
+            freshness: new Date(),
+        },
+    ])
+    const layer = new LayerConfig(bench)
+    const options = {
+        zoomToFeatures: false,
+        features: new SimpleFeatureSource(
+            {
+                layerDef: layer,
+                isDisplayed: new UIEventSource<boolean>(true),
+                appliedFilters: new UIEventSource<Map<string, FilterState>>(undefined),
+            },
+            0,
+            features
+        ),
+        layer,
+    }
+    new ShowDataLayer(mlmap, options)
+    mla.zoom.set(9)
+    mla.location.set({ lon: 3.1, lat: 51.1 })
+    const availableLayers = AvailableRasterLayers.layersAvailableAt(location)
+    // new BackgroundLayerResetter(bg, availableLayers)
+    // new SvelteUIElement(RasterLayerPicker, { availableLayers, value: bg }).AttachTo("extradiv")
+    for (let i = 0; i <= 10; i++) {
+        await Utils.waitFor(1000)
+        features.ping()
+        new FixedUiElement("> " + (5 - i)).AttachTo("extradiv")
+    }
+    options.zoomToFeatures = false
+    features.setData([
+        {
+            feature: {
+                type: "Feature",
+                properties: {
+                    hello: "world",
+                    id: "" + 1,
+                },
+                geometry: {
+                    type: "Point",
+                    coordinates: [3.103, 51.10003],
+                },
+            },
+            freshness: new Date(),
+        },
+    ])
+    new FixedUiElement("> OK").AttachTo("extradiv")
 }
 
 main().then((_) => {})

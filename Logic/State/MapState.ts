@@ -1,8 +1,6 @@
 import UserRelatedState from "./UserRelatedState"
 import { Store, Stores, UIEventSource } from "../UIEventSource"
-import BaseLayer from "../../Models/BaseLayer"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import AvailableBaseLayers from "../Actors/AvailableBaseLayers"
 import Attribution from "../../UI/BigComponents/Attribution"
 import Minimap, { MinimapObj } from "../../UI/Base/Minimap"
 import { Tiles } from "../../Models/TileRange"
@@ -43,10 +41,6 @@ export default class MapState extends UserRelatedState {
      The leaflet instance of the big basemap
      */
     public leafletMap = new UIEventSource<any /*L.Map*/>(undefined, "leafletmap")
-    /**
-     * A list of currently available background layers
-     */
-    public availableBackgroundLayers: Store<BaseLayer[]>
 
     /**
      * The current background layer

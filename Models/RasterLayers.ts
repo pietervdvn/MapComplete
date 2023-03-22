@@ -2,6 +2,8 @@ import { Feature, Polygon } from "geojson"
 import * as editorlayerindex from "../assets/editor-layer-index.json"
 import * as globallayers from "../assets/global-raster-layers.json"
 import { BBox } from "../Logic/BBox"
+import { Store, Stores } from "../Logic/UIEventSource"
+import { GeoOperations } from "../Logic/GeoOperations"
 
 export class AvailableRasterLayers {
     public static EditorLayerIndex: (Feature<Polygon, EditorLayerIndexProperties> &
@@ -32,6 +34,35 @@ export class AvailableRasterLayers {
         type: "Feature",
         properties: AvailableRasterLayers.osmCartoProperties,
         geometry: BBox.global.asGeometry(),
+    }
+
+    public static layersAvailableAt(
+        location: Store<{ lon: number; lat: number }>
+    ): Store<RasterLayerPolygon[]> {
+        const availableLayersBboxes = Stores.ListStabilized(
+            location.mapD((loc) => {
+                const lonlat: [number, number] = [loc.lon, loc.lat]
+                return AvailableRasterLayers.EditorLayerIndex.filter((eliPolygon) =>
+                    BBox.get(eliPolygon).contains(lonlat)
+                )
+            })
+        )
+        const available = Stores.ListStabilized(
+            availableLayersBboxes.map((eliPolygons) => {
+                const loc = location.data
+                const lonlat: [number, number] = [loc.lon, loc.lat]
+                const matching: RasterLayerPolygon[] = eliPolygons.filter((eliPolygon) => {
+                    if (eliPolygon.geometry === null) {
+                        return true // global ELI-layer
+                    }
+                    return GeoOperations.inside(lonlat, eliPolygon)
+                })
+                matching.unshift(AvailableRasterLayers.osmCarto)
+                matching.push(...AvailableRasterLayers.globalLayers)
+                return matching
+            })
+        )
+        return available
     }
 }
 

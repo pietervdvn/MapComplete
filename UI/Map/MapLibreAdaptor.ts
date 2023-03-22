@@ -1,65 +1,81 @@
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import type { Map as MLMap } from "maplibre-gl"
-import {
-    EditorLayerIndexProperties,
-    RasterLayerPolygon,
-    RasterLayerProperties,
-} from "../../Models/RasterLayers"
+import { RasterLayerPolygon, RasterLayerProperties } from "../../Models/RasterLayers"
 import { Utils } from "../../Utils"
-import Loc from "../../Models/Loc"
+import { BBox } from "../../Logic/BBox"
 
-export class MapLibreAdaptor {
+export interface MapState {
+    readonly location: UIEventSource<{ lon: number; lat: number }>
+    readonly zoom: UIEventSource<number>
+    readonly bounds: Store<BBox>
+    readonly rasterLayer: UIEventSource<RasterLayerPolygon | undefined>
+}
+export class MapLibreAdaptor implements MapState {
     private readonly _maplibreMap: Store<MLMap>
-    private readonly _backgroundLayer?: Store<RasterLayerPolygon>
 
-    private _currentRasterLayer: string = undefined
+    readonly location: UIEventSource<{ lon: number; lat: number }>
+    readonly zoom: UIEventSource<number>
+    readonly bounds: Store<BBox>
+    readonly rasterLayer: UIEventSource<RasterLayerPolygon | undefined>
+    private readonly _bounds: UIEventSource<BBox>
 
-    constructor(
-        maplibreMap: Store<MLMap>,
-        state?: {
-            // availableBackgroundLayers: Store<BaseLayer[]>
-            /**
-             * The current background layer
-             */
-            readonly backgroundLayer?: Store<RasterLayerPolygon>
-            readonly locationControl?: UIEventSource<Loc>
-        }
-    ) {
+    /**
+     * Used for internal bookkeeping (to remove a rasterLayer when done loading)
+     * @private
+     */
+    private _currentRasterLayer: string
+    constructor(maplibreMap: Store<MLMap>, state?: Partial<Omit<MapState, "bounds">>) {
         this._maplibreMap = maplibreMap
-        this._backgroundLayer = state.backgroundLayer
+
+        this.location = state?.location ?? new UIEventSource({ lon: 0, lat: 0 })
+        this.zoom = state?.zoom ?? new UIEventSource(1)
+        this._bounds = new UIEventSource(BBox.global)
+        this.bounds = this._bounds
+        this.rasterLayer =
+            state?.rasterLayer ?? new UIEventSource<RasterLayerPolygon | undefined>(undefined)
 
         const self = this
-        this._backgroundLayer?.addCallback((_) => self.setBackground())
-
         maplibreMap.addCallbackAndRunD((map) => {
             map.on("load", () => {
                 self.setBackground()
             })
-            if (state.locationControl) {
-                self.MoveMapToCurrentLoc(state.locationControl.data)
-                map.on("moveend", () => {
-                    const dt = state.locationControl.data
-                    dt.lon = map.getCenter().lng
-                    dt.lat = map.getCenter().lat
-                    dt.zoom = map.getZoom()
-                    state.locationControl.ping()
-                })
-            }
+            self.MoveMapToCurrentLoc(this.location.data)
+            self.SetZoom(this.zoom.data)
+            map.on("moveend", () => {
+                const dt = this.location.data
+                dt.lon = map.getCenter().lng
+                dt.lat = map.getCenter().lat
+                this.location.ping()
+                this.zoom.setData(map.getZoom())
+            })
         })
 
-        state.locationControl.addCallbackAndRunD((loc) => {
+        this.rasterLayer.addCallback((_) =>
+            self.setBackground().catch((e) => {
+                console.error("Could not set background")
+            })
+        )
+
+        this.location.addCallbackAndRunD((loc) => {
             self.MoveMapToCurrentLoc(loc)
         })
+        this.zoom.addCallbackAndRunD((z) => self.SetZoom(z))
     }
-
-    private MoveMapToCurrentLoc(loc: Loc) {
+    private SetZoom(z: number) {
+        const map = this._maplibreMap.data
+        if (map === undefined || z === undefined) {
+            return
+        }
+        if (map.getZoom() !== z) {
+            map.setZoom(z)
+        }
+    }
+    private MoveMapToCurrentLoc(loc: { lat: number; lon: number }) {
         const map = this._maplibreMap.data
         if (map === undefined || loc === undefined) {
             return
         }
-        if (map.getZoom() !== loc.zoom) {
-            map.setZoom(loc.zoom)
-        }
+
         const center = map.getCenter()
         if (center.lng !== loc.lon || center.lat !== loc.lat) {
             map.setCenter({ lng: loc.lon, lat: loc.lat })
@@ -120,14 +136,14 @@ export class MapLibreAdaptor {
         if (map === undefined) {
             return
         }
-        const background: RasterLayerProperties = this._backgroundLayer?.data?.properties
+        const background: RasterLayerProperties = this.rasterLayer?.data?.properties
         if (background !== undefined && this._currentRasterLayer === background.id) {
             // already the correct background layer, nothing to do
             return
         }
         await this.awaitStyleIsLoaded()
 
-        if (background !== this._backgroundLayer?.data?.properties) {
+        if (background !== this.rasterLayer?.data?.properties) {
             // User selected another background in the meantime... abort
             return
         }
