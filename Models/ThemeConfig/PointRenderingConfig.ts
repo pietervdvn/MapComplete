@@ -5,7 +5,7 @@ import { TagUtils } from "../../Logic/Tags/TagUtils"
 import { Utils } from "../../Utils"
 import Svg from "../../Svg"
 import WithContextLoader from "./WithContextLoader"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import BaseUIElement from "../../UI/BaseUIElement"
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Img from "../../UI/Base/Img"
@@ -164,7 +164,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation, false, defaultPin)
     }
 
-    public GetSimpleIcon(tags: UIEventSource<any>): BaseUIElement {
+    public GetSimpleIcon(tags: Store<any>): BaseUIElement {
         const self = this
         if (this.icon === undefined) {
             return undefined
@@ -175,7 +175,7 @@ export default class PointRenderingConfig extends WithContextLoader {
     }
 
     public GenerateLeafletStyle(
-        tags: UIEventSource<any>,
+        tags: Store<any>,
         clickable: boolean,
         options?: {
             noSize?: false | boolean
@@ -272,7 +272,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
     }
 
-    private GetBadges(tags: UIEventSource<any>): BaseUIElement {
+    private GetBadges(tags: Store<any>): BaseUIElement {
         if (this.iconBadges.length === 0) {
             return undefined
         }
@@ -304,7 +304,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         ).SetClass("absolute bottom-0 right-1/3 h-1/2 w-0")
     }
 
-    private GetLabel(tags: UIEventSource<any>): BaseUIElement {
+    private GetLabel(tags: Store<any>): BaseUIElement {
         if (this.label === undefined) {
             return undefined
         }

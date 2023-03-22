@@ -69,7 +69,7 @@ export class ReferencingWaysMetaTagger extends SimpleMetaTagger {
             {
                 keys: ["_referencing_ways"],
                 isLazy: true,
-                doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry. ",
+                doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry. If the preset has 'snapToLayer' defined, the icon will be calculated based on the preset tags with `_referencing_ways=[\"way/-1\"]` added.",
             },
             (feature, _, __, state) => {
                 if (!ReferencingWaysMetaTagger.enabled) {
@@ -80,20 +80,25 @@ export class ReferencingWaysMetaTagger extends SimpleMetaTagger {
                 if (!id.startsWith("node/")) {
                     return false
                 }
-                console.trace("Downloading referencing ways for", feature.properties.id)
-                OsmObject.DownloadReferencingWays(id).then((referencingWays) => {
-                    const currentTagsSource = state.allElements?.getEventSourceById(id) ?? []
-                    const wayIds = referencingWays.map((w) => "way/" + w.id)
-                    wayIds.sort()
-                    const wayIdsStr = wayIds.join(";")
-                    if (
-                        wayIdsStr !== "" &&
-                        currentTagsSource.data["_referencing_ways"] !== wayIdsStr
-                    ) {
-                        currentTagsSource.data["_referencing_ways"] = wayIdsStr
-                        currentTagsSource.ping()
+
+                const currentTagsSource = state.allElements?.getEventSourceById(id)
+                if (currentTagsSource === undefined) {
+                    return
+                }
+                Utils.AddLazyPropertyAsync(
+                    currentTagsSource.data,
+                    "_referencing_ways",
+                    async () => {
+                        const referencingWays = await OsmObject.DownloadReferencingWays(id)
+                        const wayIds = referencingWays.map((w) => "way/" + w.id)
+                        wayIds.sort()
+                        const wayIdsStr = wayIds.join(";")
+                        if (wayIdsStr !== "" && currentTagsSource.data[""] !== wayIdsStr) {
+                            currentTagsSource.data["_referencing_ways"] = wayIdsStr
+                            currentTagsSource.ping()
+                        }
                     }
-                })
+                )
 
                 return true
             }
@@ -282,16 +287,9 @@ export default class SimpleMetaTaggers {
                 },
             })
 
-            Object.defineProperty(feature.properties, "_surface:ha", {
-                enumerable: false,
-                configurable: true,
-                get: () => {
-                    const sqMeters = GeoOperations.surfaceAreaInSqMeters(feature)
-                    const sqMetersHa = "" + Math.floor(sqMeters / 1000) / 10
-                    delete feature.properties["_surface:ha"]
-                    feature.properties["_surface:ha"] = sqMetersHa
-                    return sqMetersHa
-                },
+            Utils.AddLazyProperty(feature.properties, "_surface:ha", () => {
+                const sqMeters = GeoOperations.surfaceAreaInSqMeters(feature)
+                return "" + Math.floor(sqMeters / 1000) / 10
             })
 
             return true
@@ -443,8 +441,6 @@ export default class SimpleMetaTaggers {
                     }
                 },
             })
-
-            const tagsSource = state.allElements.getEventSourceById(feature.properties.id)
         }
     )
     private static directionSimplified = new SimpleMetaTagger(

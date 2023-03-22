@@ -1936,5 +1936,52 @@
       "ca": "El nom de la xarxa és <b>{internet_access:ssid}</b>",
       "pl": "Nazwa sieci to <b>{internet_access:ssid}</b>"
     }
+  },
+  "luminous_or_lit": {
+    "question": {
+      "en": "Is this object lit or does it emit light?"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "lit=yes",
+            "luminous=yes"
+          ]
+        },
+        "then": {
+          "en": "This object both emits light and is lighted by an external light source"
+        }
+      },
+      {
+        "if": "luminous=yes",
+        "then": {
+          "en": "This object emits light"
+        },
+        "addExtraTags": [
+          "lit=no"
+        ]
+      },
+      {
+        "if": "lit=yes",
+        "then": {
+          "en": "This object is lit externally, e.g. by a spotlight or other lights"
+        },
+        "addExtraTags": [
+          "luminous=no"
+        ]
+      },
+      {
+        "if": {
+          "and": [
+            "lit=no",
+            "luminous=no"
+          ]
+        },
+        "then": {
+          "en": "This object does not emit light and is not lighted by externally"
+        }
+      }
+    ]
   }
 }

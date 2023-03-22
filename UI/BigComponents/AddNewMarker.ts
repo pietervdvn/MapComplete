@@ -24,13 +24,17 @@ export default class AddNewMarker extends Combine {
                     for (const preset of filteredLayer.layerDef.presets) {
                         const tags = TagUtils.KVtoProperties(preset.tags)
                         const icon = layer.mapRendering[0]
-                            .GenerateLeafletStyle(new UIEventSource<any>(tags), false)
+                            .GenerateLeafletStyle(new UIEventSource<any>(tags), false, {
+                                noSize: true,
+                            })
                             .html.SetClass("block relative")
                             .SetStyle("width: 42px; height: 42px;")
                         icons.push(icon)
                         if (last === undefined) {
                             last = layer.mapRendering[0]
-                                .GenerateLeafletStyle(new UIEventSource<any>(tags), false)
+                                .GenerateLeafletStyle(new UIEventSource<any>(tags), false, {
+                                    noSize: true,
+                                })
                                 .html.SetClass("block relative")
                                 .SetStyle("width: 42px; height: 42px;")
                         }

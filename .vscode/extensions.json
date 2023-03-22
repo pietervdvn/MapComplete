@@ -2,8 +2,9 @@
     "recommendations": [
         "esbenp.prettier-vscode",
         "eamodio.gitlens",
-        "GitHub.vscode-pull-request-github",
+        "github.vscode-pull-request-github",
         "svelte.svelte-vscode",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "editorconfig.editorconfig"
     ]
 }
