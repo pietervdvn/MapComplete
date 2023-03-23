@@ -17,12 +17,7 @@ export class SimpleMetaTagger {
     public readonly doc: string
     public readonly isLazy: boolean
     public readonly includesDates: boolean
-    public readonly applyMetaTagsOnFeature: (
-        feature: any,
-        freshness: Date,
-        layer: LayerConfig,
-        state
-    ) => boolean
+    public readonly applyMetaTagsOnFeature: (feature: any, layer: LayerConfig, state) => boolean
 
     /***
      * A function that adds some extra data to a feature
@@ -41,7 +36,7 @@ export class SimpleMetaTagger {
             isLazy?: boolean
             cleanupRetagger?: boolean
         },
-        f: (feature: any, freshness: Date, layer: LayerConfig, state) => boolean
+        f: (feature: any, layer: LayerConfig, state) => boolean
     ) {
         this.keys = docs.keys
         this.doc = docs.doc
@@ -71,7 +66,7 @@ export class ReferencingWaysMetaTagger extends SimpleMetaTagger {
                 isLazy: true,
                 doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry. ",
             },
-            (feature, _, __, state) => {
+            (feature, _, state) => {
                 if (!ReferencingWaysMetaTagger.enabled) {
                     return false
                 }
@@ -116,7 +111,7 @@ export class CountryTagger extends SimpleMetaTagger {
                 doc: "The country code of the property (with latlon2country)",
                 includesDates: false,
             },
-            (feature, _, __, state) => {
+            (feature, _, state) => {
                 let centerPoint: any = GeoOperations.centerpoint(feature)
                 const lat = centerPoint.geometry.coordinates[1]
                 const lon = centerPoint.geometry.coordinates[0]
@@ -236,7 +231,7 @@ export default class SimpleMetaTaggers {
             keys: ["_layer"],
             includesDates: false,
         },
-        (feature, freshness, layer) => {
+        (feature, _, layer) => {
             if (feature.properties._layer === layer.id) {
                 return false
             }
@@ -322,7 +317,7 @@ export default class SimpleMetaTaggers {
             doc: "If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`; `1` will be rewritten to `1m` as well)",
             keys: ["Theme-defined keys"],
         },
-        (feature, _, __, state) => {
+        (feature, _, state) => {
             const units = Utils.NoNull(
                 [].concat(...(state?.layoutToUse?.layers?.map((layer) => layer.units) ?? []))
             )
@@ -395,7 +390,7 @@ export default class SimpleMetaTaggers {
             includesDates: true,
             isLazy: true,
         },
-        (feature, _, __, state) => {
+        (feature, _, state) => {
             if (Utils.runningFromConsole) {
                 // We are running from console, thus probably creating a cache
                 // isOpen is irrelevant
@@ -508,16 +503,12 @@ export default class SimpleMetaTaggers {
 
     private static currentTime = new SimpleMetaTagger(
         {
-            keys: ["_now:date", "_now:datetime", "_loaded:date", "_loaded:_datetime"],
+            keys: ["_now:date", "_now:datetime"],
             doc: "Adds the time that the data got loaded - pretty much the time of downloading from overpass. The format is YYYY-MM-DD hh:mm, aka 'sortable' aka ISO-8601-but-not-entirely",
             includesDates: true,
         },
-        (feature, freshness) => {
+        (feature) => {
             const now = new Date()
-
-            if (typeof freshness === "string") {
-                freshness = new Date(freshness)
-            }
 
             function date(d: Date) {
                 return d.toISOString().slice(0, 10)
@@ -529,8 +520,6 @@ export default class SimpleMetaTaggers {
 
             feature.properties["_now:date"] = date(now)
             feature.properties["_now:datetime"] = datetime(now)
-            feature.properties["_loaded:date"] = date(freshness)
-            feature.properties["_loaded:datetime"] = datetime(freshness)
             return true
         }
     )

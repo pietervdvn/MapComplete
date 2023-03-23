@@ -1,16 +1,13 @@
 import { UIEventSource } from "../../UIEventSource"
 import FeatureSource, { FeatureSourceForLayer, IndexedFeatureSource, Tiled } from "../FeatureSource"
 import FilteredLayer from "../../../Models/FilteredLayer"
-import { Tiles } from "../../../Models/TileRange"
 import { BBox } from "../../BBox"
+import { Feature } from "geojson"
 
 export default class FeatureSourceMerger
     implements FeatureSourceForLayer, Tiled, IndexedFeatureSource
 {
-    public features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<
-        { feature: any; freshness: Date }[]
-    >([])
-    public readonly name
+    public features: UIEventSource<Feature[]> = new UIEventSource([])
     public readonly layer: FilteredLayer
     public readonly tileIndex: number
     public readonly bbox: BBox
@@ -32,12 +29,6 @@ export default class FeatureSourceMerger
         this.bbox = bbox
         this._sources = sources
         this.layer = layer
-        this.name =
-            "FeatureSourceMerger(" +
-            layer.layerDef.id +
-            ", " +
-            Tiles.tile_from_index(tileIndex).join(",") +
-            ")"
         const self = this
 
         const handledSources = new Set<FeatureSource>()
@@ -63,14 +54,11 @@ export default class FeatureSourceMerger
 
     private Update() {
         let somethingChanged = false
-        const all: Map<string, { feature: any; freshness: Date }> = new Map<
-            string,
-            { feature: any; freshness: Date }
-        >()
+        const all: Map<string, Feature> = new Map()
         // We seed the dictionary with the previously loaded features
         const oldValues = this.features.data ?? []
         for (const oldValue of oldValues) {
-            all.set(oldValue.feature.id, oldValue)
+            all.set(oldValue.properties.id, oldValue)
         }
 
         for (const source of this._sources.data) {
@@ -78,7 +66,7 @@ export default class FeatureSourceMerger
                 continue
             }
             for (const f of source.features.data) {
-                const id = f.feature.properties.id
+                const id = f.properties.id
                 if (!all.has(id)) {
                     // This is a new feature
                     somethingChanged = true
@@ -89,11 +77,11 @@ export default class FeatureSourceMerger
                 // This value has been seen already, either in a previous run or by a previous datasource
                 // Let's figure out if something changed
                 const oldV = all.get(id)
-                if (oldV.freshness < f.freshness) {
-                    // Jup, this feature is fresher
-                    all.set(id, f)
-                    somethingChanged = true
+                if (oldV === f) {
+                    continue
                 }
+                all.set(id, f)
+                somethingChanged = true
             }
         }
 

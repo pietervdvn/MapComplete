@@ -1,20 +1,17 @@
 import SvelteUIElement from "./UI/Base/SvelteUIElement"
 import MaplibreMap from "./UI/Map/MaplibreMap.svelte"
-import { ImmutableStore, UIEventSource } from "./Logic/UIEventSource"
+import { UIEventSource } from "./Logic/UIEventSource"
 import { MapLibreAdaptor } from "./UI/Map/MapLibreAdaptor"
 import { AvailableRasterLayers, RasterLayerPolygon } from "./Models/RasterLayers"
 import type { Map as MlMap } from "maplibre-gl"
-import RasterLayerPicker from "./UI/Map/RasterLayerPicker.svelte"
-import BackgroundLayerResetter from "./Logic/Actors/BackgroundLayerResetter"
 import { ShowDataLayer } from "./UI/Map/ShowDataLayer"
-import StaticFeatureSource from "./Logic/FeatureSource/Sources/StaticFeatureSource"
-import { Layer } from "leaflet"
 import LayerConfig from "./Models/ThemeConfig/LayerConfig"
 import * as bench from "./assets/generated/layers/bench.json"
 import { Utils } from "./Utils"
 import SimpleFeatureSource from "./Logic/FeatureSource/Sources/SimpleFeatureSource"
 import { FilterState } from "./Models/FilteredLayer"
 import { FixedUiElement } from "./UI/Base/FixedUiElement"
+
 async function main() {
     const mlmap = new UIEventSource<MlMap>(undefined)
     const location = new UIEventSource<{ lon: number; lat: number }>({

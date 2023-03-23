@@ -175,7 +175,7 @@ export default class OsmFeatureSource {
                 new PerLayerFeatureSourceSplitter(
                     this.filteredLayers,
                     this.handleTile,
-                    StaticFeatureSource.fromGeojson(geojson.features),
+                    new StaticFeatureSource(geojson.features),
                     {
                         tileIndex: index,
                     }

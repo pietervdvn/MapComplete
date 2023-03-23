@@ -7,6 +7,7 @@ import { BBox } from "../../BBox"
 import SimpleFeatureSource from "../Sources/SimpleFeatureSource"
 import FilteredLayer from "../../../Models/FilteredLayer"
 import Loc from "../../../Models/Loc"
+import { Feature } from "geojson"
 
 /***
  * Saves all the features that are passed in to localstorage, so they can be retrieved on the next run
@@ -82,7 +83,7 @@ export default class SaveTileToLocalStorageActor {
                         continue
                     }
                     loadedTiles.add(key)
-                    this.GetIdb(key).then((features: { feature: any; freshness: Date }[]) => {
+                    this.GetIdb(key).then((features: Feature[]) => {
                         if (features === undefined) {
                             return
                         }
@@ -90,7 +91,7 @@ export default class SaveTileToLocalStorageActor {
                         const src = new SimpleFeatureSource(
                             self._flayer,
                             key,
-                            new UIEventSource<{ feature: any; freshness: Date }[]>(features)
+                            new UIEventSource<Feature[]>(features)
                         )
                         registerTile(src)
                     })

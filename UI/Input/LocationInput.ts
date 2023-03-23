@@ -53,7 +53,7 @@ export default class LocationInput
      * Used for rendering
      * @private
      */
-    private readonly _snapToRaw: Store<{ feature: Feature }[]>
+    private readonly _snapToRaw: Store<Feature[]>
     private readonly _value: Store<Loc>
     private readonly _snappedPoint: Store<any>
     private readonly _maxSnapDistance: number
@@ -112,7 +112,7 @@ export default class LocationInput
     constructor(options?: {
         minZoom?: number
         mapBackground?: UIEventSource<BaseLayer>
-        snapTo?: UIEventSource<{ feature: Feature }[]>
+        snapTo?: UIEventSource<Feature[]>
         renderLayerForSnappedPoint?: LayerConfig
         maxSnapDistance?: number
         snappedPointTags?: any
@@ -276,7 +276,7 @@ export default class LocationInput
             if (this._snapToRaw !== undefined) {
                 // Show the lines to snap to
                 new ShowDataMultiLayer({
-                    features: StaticFeatureSource.fromDateless(this._snapToRaw),
+                    features: new StaticFeatureSource(this._snapToRaw),
                     zoomToFeatures: false,
                     leafletMap: this.map.leafletMap,
                     layers: this._state.filteredLayers,
@@ -286,12 +286,12 @@ export default class LocationInput
                     if (loc === undefined) {
                         return []
                     }
-                    return [{ feature: loc }]
+                    return [loc]
                 })
 
                 // The 'matchlayer' is the layer which shows the target location
                 new ShowDataLayer({
-                    features: StaticFeatureSource.fromDateless(matchPoint),
+                    features: new StaticFeatureSource(matchPoint),
                     zoomToFeatures: false,
                     leafletMap: this.map.leafletMap,
                     layerToShow: this._matching_layer,

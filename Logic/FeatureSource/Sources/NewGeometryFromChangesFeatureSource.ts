@@ -5,6 +5,7 @@ import { UIEventSource } from "../../UIEventSource"
 import { ChangeDescription } from "../../Osm/Actions/ChangeDescription"
 import { ElementStorage } from "../../ElementStorage"
 import { OsmId, OsmTags } from "../../../Models/OsmFeature"
+import { Feature } from "geojson"
 
 export class NewGeometryFromChangesFeatureSource implements FeatureSource {
     // This class name truly puts the 'Java' into 'Javascript'
@@ -15,9 +16,7 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
      * These elements are probably created by the 'SimpleAddUi' which generates a new point, but the import functionality might create a line or polygon too.
      * Other sources of new points are e.g. imports from nodes
      */
-    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> =
-        new UIEventSource<{ feature: any; freshness: Date }[]>([])
-    public readonly name: string = "newFeatures"
+    public readonly features: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
 
     constructor(changes: Changes, allElementStorage: ElementStorage, backendUrl: string) {
         const seenChanges = new Set<ChangeDescription>()
@@ -29,15 +28,11 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                 return
             }
 
-            const now = new Date()
             let somethingChanged = false
 
             function add(feature) {
                 feature.id = feature.properties.id
-                features.push({
-                    feature: feature,
-                    freshness: now,
-                })
+                features.push(feature)
                 somethingChanged = true
             }
 
@@ -71,7 +66,7 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                         }
                         const geojson = feat.asGeoJson()
                         allElementStorage.addOrGetElement(geojson)
-                        self.features.data.push({ feature: geojson, freshness: new Date() })
+                        self.features.data.push(geojson)
                         self.features.ping()
                     })
                     continue

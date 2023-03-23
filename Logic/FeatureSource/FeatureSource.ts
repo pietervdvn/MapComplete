@@ -1,15 +1,10 @@
-import { Store, UIEventSource } from "../UIEventSource"
+import { Store } from "../UIEventSource"
 import FilteredLayer from "../../Models/FilteredLayer"
 import { BBox } from "../BBox"
-import { Feature, Geometry } from "@turf/turf"
-import { OsmFeature } from "../../Models/OsmFeature"
+import { Feature } from "geojson"
 
 export default interface FeatureSource {
-    features: Store<{ feature: OsmFeature; freshness: Date }[]>
-    /**
-     * Mainly used for debuging
-     */
-    name: string
+    features: Store<Feature[]>
 }
 
 export interface Tiled {

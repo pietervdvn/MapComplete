@@ -2,6 +2,7 @@ import FeatureSource, { FeatureSourceForLayer, Tiled } from "./FeatureSource"
 import { Store } from "../UIEventSource"
 import FilteredLayer from "../../Models/FilteredLayer"
 import SimpleFeatureSource from "./Sources/SimpleFeatureSource"
+import { Feature } from "geojson"
 
 /**
  * In some rare cases, some elements are shown on multiple layers (when 'passthrough' is enabled)
@@ -32,7 +33,7 @@ export default class PerLayerFeatureSourceSplitter {
             // We try to figure out (for each feature) in which feature store it should be saved.
             // Note that this splitter is only run when it is invoked by the overpass feature source, so we can't be sure in which layer it should go
 
-            const featuresPerLayer = new Map<string, { feature; freshness }[]>()
+            const featuresPerLayer = new Map<string, Feature[]>()
             const noLayerFound = []
 
             for (const layer of layers.data) {
@@ -42,7 +43,7 @@ export default class PerLayerFeatureSourceSplitter {
             for (const f of features) {
                 let foundALayer = false
                 for (const layer of layers.data) {
-                    if (layer.layerDef.source.osmTags.matchesProperties(f.feature.properties)) {
+                    if (layer.layerDef.source.osmTags.matchesProperties(f.properties)) {
                         // We have found our matching layer!
                         featuresPerLayer.get(layer.layerDef.id).push(f)
                         foundALayer = true

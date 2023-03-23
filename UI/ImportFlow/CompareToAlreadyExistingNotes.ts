@@ -106,7 +106,7 @@ export class CompareToAlreadyExistingNotes
             state,
             zoomToFeatures: true,
             leafletMap: comparisonMap.leafletMap,
-            features: StaticFeatureSource.fromGeojsonStore(
+            features: new StaticFeatureSource(
                 partitionedImportPoints.map((p) => <Feature[]>p.hasNearby)
             ),
             popup: (tags, layer) => new FeatureInfoBox(tags, layer, state),

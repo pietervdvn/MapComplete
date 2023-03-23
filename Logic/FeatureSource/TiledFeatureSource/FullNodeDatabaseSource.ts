@@ -53,11 +53,9 @@ export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSour
                 src.ping()
             }
         }
-        const now = new Date()
-        const asGeojsonFeatures = Array.from(nodesById.values()).map((osmNode) => ({
-            feature: osmNode.asGeoJson(),
-            freshness: now,
-        }))
+        const asGeojsonFeatures = Array.from(nodesById.values()).map((osmNode) =>
+            osmNode.asGeoJson()
+        )
 
         const featureSource = new SimpleFeatureSource(this.layer, tileId)
         featureSource.features.setData(asGeojsonFeatures)

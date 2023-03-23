@@ -1,13 +1,12 @@
-/**
- * This feature source helps the ShowDataLayer class: it introduces the necessary extra features and indicates with what renderConfig it should be rendered.
- */
 import { Store } from "../../UIEventSource"
 import { GeoOperations } from "../../GeoOperations"
 import FeatureSource from "../FeatureSource"
 import PointRenderingConfig from "../../../Models/ThemeConfig/PointRenderingConfig"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
 import LineRenderingConfig from "../../../Models/ThemeConfig/LineRenderingConfig"
-
+/**
+ * This feature source helps the ShowDataLayer class: it introduces the necessary extra features and indicates with what renderConfig it should be rendered.
+ */
 export default class RenderingMultiPlexerFeatureSource {
     public readonly features: Store<
         (any & {
@@ -64,8 +63,7 @@ export default class RenderingMultiPlexerFeatureSource {
                 withIndex.push(patched)
             }
 
-            for (const f of features) {
-                const feat = f.feature
+            for (const feat of features) {
                 if (feat === undefined) {
                     continue
                 }

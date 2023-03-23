@@ -101,7 +101,7 @@ export default class MetaTagRecalculator {
         }
     }
 
-    public registerSource(source: FeatureSourceForLayer & Tiled, recalculateOnEveryChange = false) {
+    public registerSource(source: FeatureSourceForLayer & Tiled) {
         if (source === undefined) {
             return
         }

@@ -2,6 +2,7 @@ import SimpleMetaTaggers, { SimpleMetaTagger } from "./SimpleMetaTagger"
 import { ExtraFuncParams, ExtraFunctions } from "./ExtraFunctions"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import { ElementStorage } from "./ElementStorage"
+import { Feature } from "geojson"
 
 /**
  * Metatagging adds various tags to the elements, e.g. lat, lon, surface area, ...
@@ -20,7 +21,7 @@ export default class MetaTagging {
      * Returns true if at least one feature has changed properties
      */
     public static addMetatags(
-        features: { feature: any; freshness: Date }[],
+        features: Feature[],
         params: ExtraFuncParams,
         layer: LayerConfig,
         state?: { allElements?: ElementStorage },
@@ -55,8 +56,7 @@ export default class MetaTagging {
 
         for (let i = 0; i < features.length; i++) {
             const ff = features[i]
-            const feature = ff.feature
-            const freshness = ff.freshness
+            const feature = ff
             let somethingChanged = false
             let definedTags = new Set(Object.getOwnPropertyNames(feature.properties))
             for (const metatag of metatagsToApply) {
@@ -72,19 +72,14 @@ export default class MetaTagging {
                             continue
                         }
                         somethingChanged = true
-                        metatag.applyMetaTagsOnFeature(feature, freshness, layer, state)
+                        metatag.applyMetaTagsOnFeature(feature, layer, state)
                         if (options?.evaluateStrict) {
                             for (const key of metatag.keys) {
                                 feature.properties[key]
                             }
                         }
                     } else {
-                        const newValueAdded = metatag.applyMetaTagsOnFeature(
-                            feature,
-                            freshness,
-                            layer,
-                            state
-                        )
+                        const newValueAdded = metatag.applyMetaTagsOnFeature(feature, layer, state)
                         /* Note that the expression:
                          * `somethingChanged = newValueAdded || metatag.applyMetaTagsOnFeature(feature, freshness)`
                          * Is WRONG

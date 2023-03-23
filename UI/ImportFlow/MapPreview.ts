@@ -8,8 +8,6 @@ import Constants from "../../Models/Constants"
 import { DropDown } from "../Input/DropDown"
 import { Utils } from "../../Utils"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import BaseLayer from "../../Models/BaseLayer"
-import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
 import Loc from "../../Models/Loc"
 import Minimap from "../Base/Minimap"
 import Attribution from "../BigComponents/Attribution"
@@ -140,9 +138,7 @@ export class MapPreview
             new ShowDataLayer({
                 layerToShow,
                 zoomToFeatures: true,
-                features: StaticFeatureSource.fromDateless(
-                    matching.map((features) => features.map((feature) => ({ feature })))
-                ),
+                features: new StaticFeatureSource(matching),
                 leafletMap: map.leafletMap,
                 popup: (tag) => new PreviewPanel(tag),
             })

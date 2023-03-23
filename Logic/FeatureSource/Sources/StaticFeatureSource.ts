@@ -8,63 +8,34 @@ import { Feature } from "geojson"
  * A simple, read only feature store.
  */
 export default class StaticFeatureSource implements FeatureSource {
-    public readonly features: Store<{ feature: any; freshness: Date }[]>
-    public readonly name: string
+    public readonly features: Store<Feature[]>
 
     constructor(
-        features: Store<{ feature: Feature; freshness: Date }[]>,
-        name = "StaticFeatureSource"
+        features:
+            | Store<Feature[]>
+            | Feature[]
+            | { features: Feature[] }
+            | { features: Store<Feature[]> }
     ) {
         if (features === undefined) {
             throw "Static feature source received undefined as source"
         }
-        this.name = name
-        this.features = features
+        let feats: Feature[] | Store<Feature[]>
+        if (features["features"]) {
+            feats = features["features"]
+        } else {
+            feats = <Feature[] | Store<Feature[]>>features
+        }
+
+        if (Array.isArray(feats)) {
+            this.features = new ImmutableStore(feats)
+        } else {
+            this.features = feats
+        }
     }
 
-    public static fromGeojsonAndDate(
-        features: { feature: Feature; freshness: Date }[],
-        name = "StaticFeatureSourceFromGeojsonAndDate"
-    ): StaticFeatureSource {
-        return new StaticFeatureSource(new ImmutableStore(features), name)
-    }
-
-    public static fromGeojson(
-        geojson: Feature[],
-        name = "StaticFeatureSourceFromGeojson"
-    ): StaticFeatureSource {
-        const now = new Date()
-        return StaticFeatureSource.fromGeojsonAndDate(
-            geojson.map((feature) => ({ feature, freshness: now })),
-            name
-        )
-    }
-
-    public static fromGeojsonStore(
-        geojson: Store<Feature[]>,
-        name = "StaticFeatureSourceFromGeojson"
-    ): StaticFeatureSource {
-        const now = new Date()
-        const mapped: Store<{ feature: Feature; freshness: Date }[]> = geojson.map((features) =>
-            features.map((feature) => ({ feature, freshness: now }))
-        )
-        return new StaticFeatureSource(mapped, name)
-    }
-
-    static fromDateless(
-        featureSource: Store<{ feature: Feature }[]>,
-        name = "StaticFeatureSourceFromDateless"
-    ) {
-        const now = new Date()
-        return new StaticFeatureSource(
-            featureSource.map((features) =>
-                features.map((feature) => ({
-                    feature: feature.feature,
-                    freshness: now,
-                }))
-            ),
-            name
-        )
+    public static fromGeojson(geojson: Feature[]): StaticFeatureSource {
+        return new StaticFeatureSource(geojson)
     }
 }
 
@@ -76,11 +47,7 @@ export class TiledStaticFeatureSource
     public readonly tileIndex: number
     public readonly layer: FilteredLayer
 
-    constructor(
-        features: Store<{ feature: any; freshness: Date }[]>,
-        layer: FilteredLayer,
-        tileIndex: number = 0
-    ) {
+    constructor(features: Store<Feature[]>, layer: FilteredLayer, tileIndex: number = 0) {
         super(features)
         this.tileIndex = tileIndex
         this.layer = layer

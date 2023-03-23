@@ -166,7 +166,7 @@ export default class ConflationChecker
             [osmLiveData.bounds, zoomLevel.GetValue()]
         )
 
-        const preview = StaticFeatureSource.fromGeojsonStore(geojsonFeatures)
+        const preview = new StaticFeatureSource(geojsonFeatures)
 
         new ShowDataLayer({
             layerToShow: new LayerConfig(currentview),
@@ -225,7 +225,7 @@ export default class ConflationChecker
             },
             [nearbyCutoff.GetValue().stabilized(500)]
         )
-        const nearbyFeatures = StaticFeatureSource.fromGeojsonStore(geojsonMapped)
+        const nearbyFeatures = new StaticFeatureSource(geojsonMapped)
         const paritionedImport = ImportUtils.partitionFeaturesIfNearby(
             toImport,
             geojson,
@@ -233,7 +233,7 @@ export default class ConflationChecker
         )
 
         // Featuresource showing OSM-features which are nearby a toImport-feature
-        const toImportWithNearby = StaticFeatureSource.fromGeojsonStore(
+        const toImportWithNearby = new StaticFeatureSource(
             paritionedImport.map((els) => <Feature[]>els?.hasNearby ?? [])
         )
         toImportWithNearby.features.addCallback((nearby) =>

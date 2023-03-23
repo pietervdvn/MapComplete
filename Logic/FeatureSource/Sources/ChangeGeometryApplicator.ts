@@ -6,11 +6,11 @@ import { UIEventSource } from "../../UIEventSource"
 import { FeatureSourceForLayer, IndexedFeatureSource } from "../FeatureSource"
 import FilteredLayer from "../../../Models/FilteredLayer"
 import { ChangeDescription, ChangeDescriptionTools } from "../../Osm/Actions/ChangeDescription"
+import { Feature } from "geojson"
 
 export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
-    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> =
-        new UIEventSource<{ feature: any; freshness: Date }[]>([])
-    public readonly name: string
+    public readonly features: UIEventSource<Feature[]> =
+        new UIEventSource<Feature[]>([])
     public readonly layer: FilteredLayer
     private readonly source: IndexedFeatureSource
     private readonly changes: Changes
@@ -20,8 +20,7 @@ export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
         this.changes = changes
         this.layer = source.layer
 
-        this.name = "ChangesApplied(" + source.name + ")"
-        this.features = new UIEventSource<{ feature: any; freshness: Date }[]>(undefined)
+        this.features = new UIEventSource<Feature[]>(undefined)
 
         const self = this
         source.features.addCallbackAndRunD((_) => self.update())
@@ -58,9 +57,9 @@ export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
                 changesPerId.set(key, [ch])
             }
         }
-        const newFeatures: { feature: any; freshness: Date }[] = []
+        const newFeatures: Feature[] = []
         for (const feature of upstreamFeatures) {
-            const changesForFeature = changesPerId.get(feature.feature.properties.id)
+            const changesForFeature = changesPerId.get(feature.properties.id)
             if (changesForFeature === undefined) {
                 // No changes for this element
                 newFeatures.push(feature)
@@ -73,7 +72,7 @@ export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
             }
             // We only apply the last change as that one'll have the latest geometry
             const change = changesForFeature[changesForFeature.length - 1]
-            copy.feature.geometry = ChangeDescriptionTools.getGeojsonGeometry(change)
+            copy.geometry = ChangeDescriptionTools.getGeojsonGeometry(change)
             console.log(
                 "Applying a geometry change onto:",
                 feature,

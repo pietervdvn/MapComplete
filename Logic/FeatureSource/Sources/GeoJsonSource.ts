@@ -8,9 +8,10 @@ import { FeatureSourceForLayer, Tiled } from "../FeatureSource"
 import { Tiles } from "../../../Models/TileRange"
 import { BBox } from "../../BBox"
 import { GeoOperations } from "../../GeoOperations"
+import { Feature } from "geojson"
 
 export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
-    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>
+    public readonly features: UIEventSource<Feature[]>
     public readonly state = new UIEventSource<undefined | { error: string } | "loaded">(undefined)
     public readonly name
     public readonly isOsmCache: boolean
@@ -69,7 +70,7 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
         this.name = "GeoJsonSource of " + url
 
         this.isOsmCache = flayer.layerDef.source.isOsmCacheLayer
-        this.features = new UIEventSource<{ feature: any; freshness: Date }[]>([])
+        this.features = new UIEventSource<Feature[]>([])
         this.LoadJSONFrom(url)
     }
 
@@ -110,7 +111,7 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
                 }
 
                 const time = new Date()
-                const newFeatures: { feature: any; freshness: Date }[] = []
+                const newFeatures: Feature[] = []
                 let i = 0
                 let skipped = 0
                 for (const feature of json.features) {
@@ -146,7 +147,7 @@ export default class GeoJsonSource implements FeatureSourceForLayer, Tiled {
                         freshness = new Date(props["_last_edit:timestamp"])
                     }
 
-                    newFeatures.push({ feature: feature, freshness: freshness })
+                    newFeatures.push(feature)
                 }
 
                 if (newFeatures.length == 0) {

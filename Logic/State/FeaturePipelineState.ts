@@ -57,7 +57,7 @@ export default class FeaturePipelineState extends MapState {
         function registerSource(source: FeatureSourceForLayer & Tiled) {
             clusterCounter.addTile(source)
             const sourceBBox = source.features.map((allFeatures) =>
-                BBox.bboxAroundAll(allFeatures.map((f) => BBox.get(f.feature)))
+                BBox.bboxAroundAll(allFeatures.map(BBox.get))
             )
 
             // Do show features indicates if the respective 'showDataLayer' should be shown. It can be hidden by e.g. clustering
@@ -131,7 +131,7 @@ export default class FeaturePipelineState extends MapState {
             handleRawFeatureSource: registerRaw,
         })
         this.metatagRecalculator = new MetaTagRecalculator(this, this.featurePipeline)
-        this.metatagRecalculator.registerSource(this.currentView, true)
+        this.metatagRecalculator.registerSource(this.currentView)
 
         sourcesToRegister.forEach((source) => self.metatagRecalculator.registerSource(source))
 

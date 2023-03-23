@@ -4,13 +4,10 @@ import { FeatureSourceForLayer, Tiled } from "../FeatureSource"
 import { BBox } from "../../BBox"
 import { ElementStorage } from "../../ElementStorage"
 import { TagsFilter } from "../../Tags/TagsFilter"
-import { OsmFeature } from "../../../Models/OsmFeature"
+import { Feature } from "geojson"
 
 export default class FilteringFeatureSource implements FeatureSourceForLayer, Tiled {
-    public features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<
-        { feature: any; freshness: Date }[]
-    >([])
-    public readonly name
+    public features: UIEventSource<Feature[]> = new UIEventSource([])
     public readonly layer: FilteredLayer
     public readonly tileIndex: number
     public readonly bbox: BBox
@@ -36,7 +33,6 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
         upstream: FeatureSourceForLayer,
         metataggingUpdated?: UIEventSource<any>
     ) {
-        this.name = "FilteringFeatureSource(" + upstream.name + ")"
         this.tileIndex = tileIndex
         this.bbox = tileIndex === undefined ? undefined : BBox.fromTileIndex(tileIndex)
         this.upstream = upstream
@@ -73,15 +69,14 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
     private update() {
         const self = this
         const layer = this.upstream.layer
-        const features: { feature: OsmFeature; freshness: Date }[] =
-            this.upstream.features.data ?? []
+        const features: Feature[] = this.upstream.features.data ?? []
         const includedFeatureIds = new Set<string>()
         const globalFilters = self.state.globalFilters?.data?.map((f) => f.filter)
         const newFeatures = (features ?? []).filter((f) => {
-            self.registerCallback(f.feature)
+            self.registerCallback(f)
 
             const isShown: TagsFilter = layer.layerDef.isShown
-            const tags = f.feature.properties
+            const tags = f.properties
             if (isShown !== undefined && !isShown.matchesProperties(tags)) {
                 return false
             }
@@ -92,10 +87,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
             const tagsFilter = Array.from(layer.appliedFilters?.data?.values() ?? [])
             for (const filter of tagsFilter) {
                 const neededTags: TagsFilter = filter?.currentFilter
-                if (
-                    neededTags !== undefined &&
-                    !neededTags.matchesProperties(f.feature.properties)
-                ) {
+                if (neededTags !== undefined && !neededTags.matchesProperties(f.properties)) {
                     // Hidden by the filter on the layer itself - we want to hide it no matter what
                     return false
                 }
@@ -103,16 +95,13 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
 
             for (const filter of globalFilters ?? []) {
                 const neededTags: TagsFilter = filter?.currentFilter
-                if (
-                    neededTags !== undefined &&
-                    !neededTags.matchesProperties(f.feature.properties)
-                ) {
+                if (neededTags !== undefined && !neededTags.matchesProperties(f.properties)) {
                     // Hidden by the filter on the layer itself - we want to hide it no matter what
                     return false
                 }
             }
 
-            includedFeatureIds.add(f.feature.properties.id)
+            includedFeatureIds.add(f.properties.id)
             return true
         })
 

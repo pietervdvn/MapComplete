@@ -213,38 +213,33 @@ export default class MapState extends UserRelatedState {
 
         let i = 0
         const self = this
-        const features: Store<{ feature: any; freshness: Date }[]> = this.currentBounds.map(
-            (bounds) => {
-                if (bounds === undefined) {
-                    return []
-                }
-                i++
-                const feature = {
-                    freshness: new Date(),
-                    feature: {
-                        type: "Feature",
-                        properties: {
-                            id: "current_view-" + i,
-                            current_view: "yes",
-                            zoom: "" + self.locationControl.data.zoom,
-                        },
-                        geometry: {
-                            type: "Polygon",
-                            coordinates: [
-                                [
-                                    [bounds.maxLon, bounds.maxLat],
-                                    [bounds.minLon, bounds.maxLat],
-                                    [bounds.minLon, bounds.minLat],
-                                    [bounds.maxLon, bounds.minLat],
-                                    [bounds.maxLon, bounds.maxLat],
-                                ],
-                            ],
-                        },
-                    },
-                }
-                return [feature]
+        const features: Store<Feature[]> = this.currentBounds.map((bounds) => {
+            if (bounds === undefined) {
+                return []
             }
-        )
+            i++
+            const feature = {
+                type: "Feature",
+                properties: {
+                    id: "current_view-" + i,
+                    current_view: "yes",
+                    zoom: "" + self.locationControl.data.zoom,
+                },
+                geometry: {
+                    type: "Polygon",
+                    coordinates: [
+                        [
+                            [bounds.maxLon, bounds.maxLat],
+                            [bounds.minLon, bounds.maxLat],
+                            [bounds.minLon, bounds.minLat],
+                            [bounds.maxLon, bounds.minLat],
+                            [bounds.maxLon, bounds.maxLat],
+                        ],
+                    ],
+                },
+            }
+            return [feature]
+        })
 
         this.currentView = new TiledStaticFeatureSource(features, currentViewLayer)
     }

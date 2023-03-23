@@ -4,6 +4,7 @@ import FilteredLayer from "../../../Models/FilteredLayer"
 import TileHierarchy from "./TileHierarchy"
 import { Tiles } from "../../../Models/TileRange"
 import { BBox } from "../../BBox"
+import { Feature } from "geojson";
 
 /**
  * Contains all features in a tiled fashion.
@@ -29,7 +30,7 @@ export default class TiledFeatureSource
 
     public readonly maxFeatureCount: number
     public readonly name
-    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]>
+    public readonly features: UIEventSource<Feature[]>
     public readonly containedIds: Store<Set<string>>
 
     public readonly bbox: BBox
@@ -80,7 +81,7 @@ export default class TiledFeatureSource
             if (features === undefined) {
                 return undefined
             }
-            return new Set(features.map((f) => f.feature.properties.id))
+            return new Set(features.map((f) => f.properties.id))
         })
 
         // We register this tile, but only when there is some data in it
@@ -132,7 +133,7 @@ export default class TiledFeatureSource
      * @param features
      * @private
      */
-    private addFeatures(features: { feature: any; freshness: Date }[]) {
+    private addFeatures(features: Feature[]) {
         if (features === undefined || features.length === 0) {
             return
         }
@@ -180,7 +181,7 @@ export default class TiledFeatureSource
         const overlapsboundary = []
 
         for (const feature of features) {
-            const bbox = BBox.get(feature.feature)
+            const bbox = BBox.get(feature)
 
             // There are a few strategies to deal with features that cross tile boundaries
 

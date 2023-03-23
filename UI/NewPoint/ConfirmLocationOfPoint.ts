@@ -3,7 +3,6 @@ import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline"
 import BaseUIElement from "../BaseUIElement"
 import LocationInput from "../Input/LocationInput"
-import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
 import { BBox } from "../../Logic/BBox"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
 import { SubtleButton } from "../Base/SubtleButton"
@@ -12,7 +11,6 @@ import Translations from "../i18n/Translations"
 import Svg from "../../Svg"
 import Toggle from "../Input/Toggle"
 import SimpleAddUI, { PresetInfo } from "../BigComponents/SimpleAddUI"
-import BaseLayer from "../../Models/BaseLayer"
 import Img from "../Base/Img"
 import Title from "../Base/Title"
 import { GlobalFilter } from "../../Logic/State/MapState"
@@ -20,6 +18,8 @@ import { VariableUiElement } from "../Base/VariableUIElement"
 import { Tag } from "../../Logic/Tags/Tag"
 import { WayId } from "../../Models/OsmFeature"
 import { Translation } from "../i18n/Translation"
+import { Feature } from "geojson";
+import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers";
 
 export default class ConfirmLocationOfPoint extends Combine {
     constructor(
@@ -28,7 +28,7 @@ export default class ConfirmLocationOfPoint extends Combine {
             featureSwitchIsTesting: UIEventSource<boolean>
             osmConnection: OsmConnection
             featurePipeline: FeaturePipeline
-            backgroundLayer?: UIEventSource<BaseLayer>
+            backgroundLayer?: UIEventSource<RasterLayerPolygon | undefined>
         },
         filterViewIsOpened: UIEventSource<boolean>,
         preset: PresetInfo,
@@ -55,10 +55,10 @@ export default class ConfirmLocationOfPoint extends Combine {
             const locationSrc = new UIEventSource(zloc)
 
             let backgroundLayer = new UIEventSource(
-                state?.backgroundLayer?.data ?? AvailableBaseLayers.osmCarto
+                state?.backgroundLayer?.data ?? AvailableRasterLayers.osmCarto
             )
             if (preset.preciseInput.preferredBackground) {
-                const defaultBackground = AvailableBaseLayers.SelectBestLayerAccordingTo(
+                const defaultBackground = AvailableRasterLayers.SelectBestLayerAccordingTo(
                     locationSrc,
                     new UIEventSource<string | string[]>(preset.preciseInput.preferredBackground)
                 )
@@ -66,10 +66,10 @@ export default class ConfirmLocationOfPoint extends Combine {
                 backgroundLayer.setData(defaultBackground.data)
             }
 
-            let snapToFeatures: UIEventSource<{ feature: any }[]> = undefined
+            let snapToFeatures: UIEventSource<Feature[]> = undefined
             let mapBounds: UIEventSource<BBox> = undefined
             if (preset.preciseInput.snapToLayers && preset.preciseInput.snapToLayers.length > 0) {
-                snapToFeatures = new UIEventSource<{ feature: any }[]>([])
+                snapToFeatures = new UIEventSource< Feature[]>([])
                 mapBounds = new UIEventSource<BBox>(undefined)
             }
 
@@ -105,13 +105,13 @@ export default class ConfirmLocationOfPoint extends Combine {
                         Math.max(preset.boundsFactor ?? 0.25, 2)
                     )
                     loadedBbox = bbox
-                    const allFeatures: { feature: any }[] = []
+                    const allFeatures: Feature[] = []
                     preset.preciseInput.snapToLayers.forEach((layerId) => {
                         console.log("Snapping to", layerId)
                         state.featurePipeline
                             .GetFeaturesWithin(layerId, bbox)
                             ?.forEach((feats) =>
-                                allFeatures.push(...feats.map((f) => ({ feature: f })))
+                                allFeatures.push(...<any[]>feats)
                             )
                     })
                     console.log("Snapping to", allFeatures)

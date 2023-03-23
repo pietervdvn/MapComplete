@@ -13,15 +13,15 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import Constants from "../../Models/Constants"
 import TileFreshnessCalculator from "../FeatureSource/TileFreshnessCalculator"
 import { Tiles } from "../../Models/TileRange"
+import { Feature } from "geojson"
 
 export default class OverpassFeatureSource implements FeatureSource {
     public readonly name = "OverpassFeatureSource"
 
     /**
-     * The last loaded features of the geojson
+     * The last loaded features, as geojson
      */
-    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> =
-        new UIEventSource<any[]>(undefined)
+    public readonly features: UIEventSource<Feature[]> = new UIEventSource(undefined)
 
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly timeout: UIEventSource<number> = new UIEventSource<number>(0)
@@ -243,7 +243,6 @@ export default class OverpassFeatureSource implements FeatureSource {
             data.features.forEach((feature) =>
                 SimpleMetaTagger.objectMetaInfo.applyMetaTagsOnFeature(
                     feature,
-                    date,
                     undefined,
                     this.state
                 )

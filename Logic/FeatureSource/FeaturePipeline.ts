@@ -136,7 +136,7 @@ export default class FeaturePipeline {
             // Passthrough to passed function, except that it registers as well
             handleFeatureSource(src)
             src.features.addCallbackAndRunD((fs) => {
-                fs.forEach((ff) => state.allElements.addOrGetElement(<any>ff.feature))
+                fs.forEach((ff) => state.allElements.addOrGetElement(<any>ff))
             })
         }
 
@@ -422,7 +422,7 @@ export default class FeaturePipeline {
         }
         return TileHierarchyTools.getTiles(requestedHierarchy, bbox)
             .filter((featureSource) => featureSource.features?.data !== undefined)
-            .map((featureSource) => featureSource.features.data.map((fs) => fs.feature))
+            .map((featureSource) => <OsmFeature[]>featureSource.features.data)
     }
 
     public GetTilesPerLayerWithin(
@@ -639,10 +639,7 @@ export default class FeaturePipeline {
      * Inject a new point
      */
     InjectNewPoint(geojson) {
-        this.newGeometryHandler.features.data.push({
-            feature: geojson,
-            freshness: new Date(),
-        })
+        this.newGeometryHandler.features.data.push(geojson)
         this.newGeometryHandler.features.ping()
     }
 }
