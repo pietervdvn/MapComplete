@@ -65,7 +65,7 @@
     "en": "A charging station",
     "nl": "Oplaadpunten"
   },
-  "#":"no-question-hint-check"
+  "#":"no-question-hint-check",
   "tagRenderings": [
     "images",
     {
