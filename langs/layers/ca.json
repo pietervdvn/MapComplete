@@ -435,10 +435,10 @@
             },
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Té espatller"
                     },
-                    "1": {
+                    "2": {
                         "then": "<b>No</b> té espatller"
                     }
                 },

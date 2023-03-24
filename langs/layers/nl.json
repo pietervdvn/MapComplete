@@ -436,9 +436,12 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Heeft een rugleuning"
+                        "then": "Dit is een dubbele bank waarbij de rugleuning gedeeld wordt"
                     },
                     "1": {
+                        "then": "Heeft een rugleuning"
+                    },
+                    "2": {
                         "then": "Heeft <b>geen</b> rugleuning"
                     }
                 },

@@ -127,10 +127,10 @@
         "tagRenderings": {
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Schienale: Sì"
                     },
-                    "1": {
+                    "2": {
                         "then": "Schienale: No"
                     }
                 },

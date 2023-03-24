@@ -436,9 +436,12 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Does have a backrest"
+                        "then": "This bench is two-sided and shares the backrest"
                     },
                     "1": {
+                        "then": "Does have a backrest"
+                    },
+                    "2": {
                         "then": "Does <b>not</b> have a backrest"
                     }
                 },

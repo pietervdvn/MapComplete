@@ -114,10 +114,10 @@
         "tagRenderings": {
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Encosto: Sim"
                     },
-                    "1": {
+                    "2": {
                         "then": "Encosto: Não"
                     }
                 },

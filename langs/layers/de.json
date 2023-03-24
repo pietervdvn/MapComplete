@@ -435,10 +435,10 @@
             },
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Die Sitzbank hat eine Rückenlehne"
                     },
-                    "1": {
+                    "2": {
                         "then": "Die Sitzbank hat <b>keine</b> Rückenlehne"
                     }
                 },

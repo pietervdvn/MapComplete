@@ -155,10 +155,10 @@
         "tagRenderings": {
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Со спинкой"
                     },
-                    "1": {
+                    "2": {
                         "then": "Без спинки"
                     }
                 },
