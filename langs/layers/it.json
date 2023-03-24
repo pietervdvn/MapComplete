@@ -1798,6 +1798,9 @@
                     },
                     "19": {
                         "question": "Riciclo di secco"
+                    },
+                    "20": {
+                        "question": "Riciclo di secco"
                     }
                 }
             },
@@ -1905,6 +1908,9 @@
                         "then": "Aghi e oggetti appuntiti"
                     },
                     "22": {
+                        "then": "Secco"
+                    },
+                    "23": {
                         "then": "Secco"
                     }
                 },

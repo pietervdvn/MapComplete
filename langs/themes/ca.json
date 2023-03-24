@@ -13,16 +13,6 @@
                     "1": {
                         "title": "un mupi"
                     },
-                    "10": {
-                        "description": "S'utilitza per a cartells publicitaris, retols de neó, logotips i cartells en entrades institucionals",
-                        "title": "un lletrer"
-                    },
-                    "11": {
-                        "title": "una escupltura"
-                    },
-                    "12": {
-                        "title": "una paret pintada"
-                    },
                     "2": {
                         "title": "un mupi sobre la paret"
                     },
@@ -49,6 +39,16 @@
                     },
                     "9": {
                         "title": "un tòtem"
+                    },
+                    "10": {
+                        "description": "S'utilitza per a cartells publicitaris, retols de neó, logotips i cartells en entrades institucionals",
+                        "title": "un lletrer"
+                    },
+                    "11": {
+                        "title": "una escupltura"
+                    },
+                    "12": {
+                        "title": "una paret pintada"
                     }
                 },
                 "tagRenderings": {
@@ -143,9 +143,6 @@
                             "1": {
                                 "then": "Açò és un tauló d'anunis"
                             },
-                            "10": {
-                                "then": "Açò és una paret pintada"
-                            },
                             "2": {
                                 "then": "Açò és una columna"
                             },
@@ -169,6 +166,9 @@
                             },
                             "9": {
                                 "then": "Açò és un tòtem"
+                            },
+                            "10": {
+                                "then": "Açò és una paret pintada"
                             }
                         },
                         "question": "Quin tipus d'element publicitari és aquest?",
@@ -182,9 +182,6 @@
                         },
                         "1": {
                             "then": "Tauló d'anuncis"
-                        },
-                        "10": {
-                            "then": "Paret Pintada"
                         },
                         "2": {
                             "then": "Mupi"
@@ -209,6 +206,9 @@
                         },
                         "9": {
                             "then": "Tòtem"
+                        },
+                        "10": {
+                            "then": "Paret Pintada"
                         }
                     }
                 }
@@ -1117,33 +1117,6 @@
     "onwheels": {
         "description": "En aquest mapa, es mostren llocs públics accessibles per a cadira de rodes i es poden afegir fàcilment",
         "layers": {
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Estadístiques"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importar"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Afegiu totes les etiquetes suggerides"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "4": {
                 "override": {
                     "filter": {
@@ -1185,6 +1158,33 @@
             "8": {
                 "override": {
                     "name": "Places d'aparcament per a minusvàlids"
+                }
+            },
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Estadístiques"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importar"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Afegiu totes les etiquetes suggerides"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -1346,6 +1346,10 @@
     "stations": {
         "description": "Veure, editar i afegir detalls a una estació de tren",
         "layers": {
+            "3": {
+                "description": "Capa que mostra les estacions de tren",
+                "name": "Estació de tren"
+            },
             "15": {
                 "description": "Pantalles que mostren els trens que sortiran de l'estació",
                 "name": "Taulers de sortides",
@@ -1377,10 +1381,6 @@
                 "title": {
                     "render": "Tauler de sortides"
                 }
-            },
-            "3": {
-                "description": "Capa que mostra les estacions de tren",
-                "name": "Estació de tren"
             }
         },
         "title": "Estacions de tren"

@@ -101,6 +101,15 @@
 |genre= POI, editor, bookcases
 }}
 {{service_item
+|name= [https://mapcomplete.osm.be/advertising advertising]
+|region= Worldwide
+|lang= {{#language:ca|en}}, {{#language:es|en}}, {{#language:en|en}}, {{#language:de|en}}
+|descr= A MapComplete theme: Where I can find advertising features?
+|material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
+|image= MapComplete_Screenshot.png
+|genre= POI, editor, advertising
+}}
+{{service_item
 |name= [https://mapcomplete.osm.be/artwork artwork]
 |region= Worldwide
 |lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:fr|en}}, {{#language:de|en}}, {{#language:id|en}}, {{#language:it|en}}, {{#language:ru|en}}, {{#language:es|en}}, {{#language:ja|en}}, {{#language:zh_Hant|en}}, {{#language:nb_NO|en}}, {{#language:hu|en}}, {{#language:pl|en}}, {{#language:ca|en}}, {{#language:zh_Hans|en}}, {{#language:fil|en}}, {{#language:da|en}}, {{#language:cs|en}}, {{#language:zgh|en}}

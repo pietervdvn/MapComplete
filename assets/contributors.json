@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 5197,
+      "commits": 5244,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 342,
+      "commits": 348,
       "contributor": "Robin van der Linde"
     },
     {
@@ -27,6 +27,10 @@
     {
       "commits": 31,
       "contributor": "Pieter Fiers"
+    },
+    {
+      "commits": 30,
+      "contributor": "paunofu"
     },
     {
       "commits": 26,

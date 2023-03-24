@@ -24,6 +24,7 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - This layer is needed as dependency for layer [defibrillator](#defibrillator)
   - This layer is needed as dependency for layer [entrance](#entrance)
   - This layer is needed as dependency for layer [surveillance_camera](#surveillance_camera)
+  - This layer is needed as dependency for layer [advertising](#advertising)
 
 
 
@@ -34,6 +35,7 @@ Special builtin layer providing all walls and buildings. This layer is useful in
 
 
 
+  - [advertising](https://mapcomplete.osm.be/advertising)
   - [aed](https://mapcomplete.osm.be/aed)
   - [clock](https://mapcomplete.osm.be/clock)
   - [indoors](https://mapcomplete.osm.be/indoors)

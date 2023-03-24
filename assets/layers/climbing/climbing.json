@@ -5,7 +5,8 @@
     "en": "A dummy layer which contains tagrenderings, shared among the climbing layers",
     "nl": "Een dummy-laag die tagrenderings bevat, gedeeld over de verschillende klimsport lagen",
     "de": "Eine Dummy-Ebene, die Tagrenderings enthält, die von den Kletterebenen gemeinsam genutzt werden",
-    "cs": "Falešná vrstva, která obsahuje tagrenderingy sdílené mezi lezeckými vrstvami"
+    "cs": "Falešná vrstva, která obsahuje tagrenderingy sdílené mezi lezeckými vrstvami",
+    "ca": "Una capa fictícia que conté renderització d'etiquetes compartides entre les capes d'escalada"
   },
   "minzoom": 19,
   "source": {

@@ -1939,7 +1939,10 @@
   },
   "luminous_or_lit": {
     "question": {
-      "en": "Is this object lit or does it emit light?"
+      "en": "Is this object lit or does it emit light?",
+      "ca": "Aquest objecte està il·luminat o emet llum?",
+      "cs": "Je tento objekt osvětlený nebo vyzařuje světlo?",
+      "de": "Ist dieses Objekt beleuchtet oder strahlt es Licht aus?"
     },
     "mappings": [
       {
@@ -1950,13 +1953,19 @@
           ]
         },
         "then": {
-          "en": "This object both emits light and is lighted by an external light source"
+          "en": "This object both emits light and is lighted by an external light source",
+          "ca": "Aquest objecte emet llum i també està il·luminat externament",
+          "cs": "Tento objekt vyzařuje světlo a je osvětlen vnějším zdrojem světla",
+          "de": "Dieses Objekt strahlt Licht aus und wird von einer externen Lichtquelle beleuchtet"
         }
       },
       {
         "if": "luminous=yes",
         "then": {
-          "en": "This object emits light"
+          "en": "This object emits light",
+          "ca": "Aquest objecte emet llum",
+          "cs": "Tento objekt vyzařuje světlo",
+          "de": "Dieses Objekt strahlt Licht aus"
         },
         "addExtraTags": [
           "lit=no"
@@ -1965,7 +1974,10 @@
       {
         "if": "lit=yes",
         "then": {
-          "en": "This object is lit externally, e.g. by a spotlight or other lights"
+          "en": "This object is lit externally, e.g. by a spotlight or other lights",
+          "ca": "Aquest objecte està il·luminat externament, p.e. amb un focus o altres llums",
+          "cs": "Tento objekt je osvětlen zvenčí, např. pomocí reflektoru nebo jiných světel",
+          "de": "Dieses Objekt wird von außen beleuchtet, z. B. durch einen Scheinwerfer oder andere Lichter"
         },
         "addExtraTags": [
           "luminous=no"
@@ -1979,7 +1991,10 @@
           ]
         },
         "then": {
-          "en": "This object does not emit light and is not lighted by externally"
+          "en": "This object does not emit light and is not lighted by externally",
+          "ca": "Aquest objecte no emet llum i no està il·luminat externament",
+          "cs": "Tento objekt nevyzařuje světlo a není osvětlen zvenčí",
+          "de": "Dieses Objekt strahlt kein Licht aus und wird nicht von außen beleuchtet"
         }
       }
     ]

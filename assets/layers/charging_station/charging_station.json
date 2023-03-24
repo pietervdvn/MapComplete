@@ -173,7 +173,8 @@
         "nl": "Toegang voor {access}",
         "da": "Adgang er {access}",
         "de": "Zugang ist {access}",
-        "es": "El acceso está {access}"
+        "es": "El acceso está {access}",
+        "ca": "L'accés està {access}"
       },
       "freeform": {
         "key": "access",
@@ -205,7 +206,8 @@
             "nl": "Toegankelijk voor iedereen (mogelijks met aanmelden en/of te betalen)",
             "da": "Alle kan bruge denne ladestation (betaling kan være nødvendig)",
             "de": "Jeder kann diese Ladestation nutzen (eventuell gegen Bezahlung)",
-            "es": "Cualquiera puede utilizar esta estación de carga (puede requerirse un pago)"
+            "es": "Cualquiera puede utilizar esta estación de carga (puede requerirse un pago)",
+            "ca": "Qualsevol persona pot utilitzar aquesta estació de recàrrega (pot ser calgui un pagament)"
           },
           "hideInAnswer": true
         },
@@ -259,7 +261,8 @@
         "nl": "Hoeveel voertuigen kunnen hier opgeladen worden?",
         "da": "Hvor mange køretøjer kan oplades her på samme tid?",
         "de": "Wie viele Fahrzeuge können hier gleichzeitig laden?",
-        "es": "¿Cuántos vehículos se pueden cargar a la vez aquí?"
+        "es": "¿Cuántos vehículos se pueden cargar a la vez aquí?",
+        "ca": "Quants vehicles es poden carregar a la vegada?"
       },
       "freeform": {
         "key": "capacity",
@@ -353,7 +356,8 @@
             "nl": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E)",
             "da": "<b>Europæisk vægstik</b> med jordstik (CEE7/4 type E)",
             "de": "<b>Europäischer Netzstecker</b> mit Erdungsstift (CEE7/4 Typ E)",
-            "es": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)"
+            "es": "<b>Enchufe de pared Europeo</b> con pin de tierra (CEE7/4 tipo E)",
+            "ca": "<b>Endoll de paret Europeu</b> amb pin a terra (CEE7/4 tipus E)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -478,7 +482,8 @@
             "nl": "<b>Type 1 met kabel</b> (J1772)",
             "da": "<b>Type 1 med kabel</b> (J1772)",
             "de": "<b>Typ 1 mit Kabel</b> (J1772)",
-            "es": "<b>Tipo 1 con cable</b> (J1772)"
+            "es": "<b>Tipo 1 con cable</b> (J1772)",
+            "ca": "<b>Tipus 1 amb cable</b> (J1772)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -540,7 +545,8 @@
             "nl": "<b>Type 1 <i>zonder</i> kabel</b> (J1772)",
             "da": "<b>Type 1 <i>uden</i> kabel</b> (J1772)",
             "de": "<b> Typ 1 <i>ohne </i> Kabel</b> (J1772)",
-            "es": "<b>Tipo 1<i>sin</i> cable</b> (J1772)"
+            "es": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)",
+            "ca": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -602,7 +608,8 @@
             "nl": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo)",
             "da": "<b>Type 1 CCS</b> (også kendt som Type 1 Combo)",
             "de": "<b> Typ 1 CCS </b> (auch bekannt als Typ 1 Combo)",
-            "es": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
+            "es": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)",
+            "ca": "<b>CSS Tipus 1</b> (també conegut com a Tipus 1 Combo)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -664,7 +671,8 @@
             "nl": "<b>Tesla Supercharger</b>",
             "da": "<b>Tesla Supercharger</b>",
             "de": "<b>Tesla Supercharger</b>",
-            "es": "<b>Supercargador de Tesla</b>"
+            "es": "<b>Supercargador de Tesla</b>",
+            "ca": "<b>Supercarregador de Tesla</b>"
           },
           "hideInAnswer": true,
           "icon": {
@@ -726,7 +734,8 @@
             "nl": "<b>Type 2</b> (mennekes)",
             "da": "<b> Type 2</b> (mennekes)",
             "de": "<b>Typ 2</b> (Mennekes)",
-            "es": "<b>Tipo 2</b> (mennekes)"
+            "es": "<b>Tipo 2</b> (mennekes)",
+            "ca": "<b>Tipus 2</b> (mennekes)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -788,7 +797,8 @@
             "nl": "<b>Type 2 CCS</b> (mennekes)",
             "da": "<b>Type 2 CCS</b> (mennekes)",
             "de": "<b>Typ 2 CCS</b> (mennekes)",
-            "es": "<b>CSS Tipo 2</b> (mennekes)"
+            "es": "<b>CSS Tipo 2</b> (mennekes)",
+            "ca": "<b>CSS Tipus 2</b> (mennekes)"
           },
           "hideInAnswer": true,
           "icon": {
@@ -3909,14 +3919,16 @@
         "nl": "Hoeveel moet men betalen om dit oplaadpunt te gebruiken?",
         "da": "Hvor meget skal man betale for at bruge denne ladestation?",
         "de": "Wie viel muss man für die Nutzung dieser Ladestation bezahlen?",
-        "es": "¿Cuánto hay que pagar para utilizar esta estación de carga?"
+        "es": "¿Cuánto hay que pagar para utilizar esta estación de carga?",
+        "ca": "Quant cal pagar per utilitzar aquesta estació de càrrega?"
       },
       "render": {
         "en": "Using this charging station costs <b>{charge}</b>",
         "nl": "Dit oplaadpunt gebruiken kost <b>{charge}</b>",
         "da": "Brug af denne ladestation koster <b>{charge}</b>",
         "de": "Die Nutzung dieser Ladestation kostet <b>{charge}</b>",
-        "es": "Utilizar esta estación de carga cuesta <b>{charge}</b>"
+        "es": "Utilizar esta estación de carga cuesta <b>{charge}</b>",
+        "ca": "Utilitzar aquesta estació de càrrega costa <b>{charge}</b>"
       },
       "freeform": {
         "key": "charge"
@@ -4126,7 +4138,8 @@
         "nl": "Maakt deel uit van het <b>{network}</b>-netwerk",
         "da": "En del af netværket <b>{network}</b>",
         "de": "Teil des Netzwerks <b>{network}</b>",
-        "es": "Parte de la red <b>{network}</b>"
+        "es": "Parte de la red <b>{network}</b>",
+        "ca": "Part de la xarxa <b>{network}</b>"
       },
       "question": {
         "en": "Is this charging station part of a network?",
@@ -4158,7 +4171,8 @@
             "nl": "Maakt geen deel uit van een groter netwerk",
             "da": "Ikke en del af et større netværk",
             "de": "Nicht Teil eines größeren Netzwerks",
-            "es": "No forma parte de una red mayor"
+            "es": "No forma parte de una red mayor",
+            "ca": "No forma part d'una xarxa major"
           },
           "hideInAnswer": true
         },
@@ -4207,14 +4221,16 @@
         "nl": "Wie beheert dit oplaadpunt?",
         "da": "Hvem er operatøren af denne ladestation?",
         "de": "Wer ist der Betreiber dieser Ladestation?",
-        "es": "¿Quien es la operadora de esta estación de carga?"
+        "es": "¿Quien es la operadora de esta estación de carga?",
+        "ca": "Qui és l'operadora d'aquesta estació de càrrega?"
       },
       "render": {
         "en": "This charging station is operated by {operator}",
         "nl": "Wordt beheerd door {operator}",
         "da": "Denne ladestation drives af {operator}",
         "de": "Die Station wird betrieben von {operator}",
-        "es": "Esta estación de carga la opera {operator}"
+        "es": "Esta estación de carga la opera {operator}",
+        "ca": "Aquesta estació de càrrega l'opera {operator}"
       },
       "freeform": {
         "key": "operator"
@@ -4231,7 +4247,8 @@
             "nl": "Eigenlijk is {operator} het netwerk waarvan het deel uitmaakt",
             "da": "Faktisk er {operator} netværket",
             "de": "Eigentlich ist {operator} das Netzwerk",
-            "es": "De hecho, {operator} es la red"
+            "es": "De hecho, {operator} es la red",
+            "ca": "De fet, {operator} és la xarxa"
           },
           "addExtraTags": [
             "operator="
@@ -4369,7 +4386,8 @@
             "nl": "Dit oplaadpunt is kapot",
             "da": "Denne ladestation er i stykker",
             "de": "Die Station ist defekt",
-            "es": "Esta estación de carga está rota"
+            "es": "Esta estación de carga está rota",
+            "ca": "Aquesta estació de carrega està trencada"
           }
         },
         {
@@ -4387,7 +4405,8 @@
             "nl": "Hier zal binnenkort een oplaadpunt gebouwd worden",
             "da": "Her er der planlagt en ladestation",
             "de": "Die Station ist erst in Planung",
-            "es": "Una estación de carga está planeada aquí"
+            "es": "Aquí está planeada una estación de carga",
+            "ca": "Aquí està prevista una estació de recàrrega"
           }
         },
         {
@@ -4405,7 +4424,7 @@
             "nl": "Hier wordt op dit moment een oplaadpunt gebouwd",
             "da": "Her er opført en ladestation",
             "de": "Die Station ist aktuell im Bau",
-            "es": "Una estación de carga está construida aquí"
+            "es": "Aquí está construida una estación de carga"
           }
         },
         {
@@ -4436,7 +4455,8 @@
         "da": "Skal man betale parkeringsafgift, mens man oplader?",
         "de": "Muss man während des Ladens eine Parkgebühr bezahlen?",
         "es": "¿Hay que pagar una tasa de aparcamiento mientras se carga?",
-        "fr": "Doit-on payer des frais de stationnement pendant la recharge ?"
+        "fr": "Doit-on payer des frais de stationnement pendant la recharge ?",
+        "ca": "Cal pagar una taxa d'aparcament mentre es carrega?"
       },
       "mappings": [
         {
@@ -4447,7 +4467,8 @@
             "da": "Ingen ekstra parkeringsomkostninger under opladning",
             "de": "Keine zusätzlichen Parkkosten während des Ladens",
             "es": "No hay costes de aparcamiento adicionales mientras se carga",
-            "fr": "Pas de frais de stationnement supplémentaires pendant la recharge"
+            "fr": "Pas de frais de stationnement supplémentaires pendant la recharge",
+            "ca": "No hi ha costos d'aparcament addicionals mentre es carrega"
           }
         },
         {
@@ -4458,7 +4479,8 @@
             "da": "Der skal betales et ekstra parkeringsgebyr under opladning",
             "de": "Während des Ladens ist eine zusätzliche Parkgebühr zu entrichten",
             "es": "Se deberá de pagar una tasa adicional de aparcamiento mientras se carga",
-            "fr": "Des frais de stationnement supplémentaires doivent être payés lors de la recharge"
+            "fr": "Des frais de stationnement supplémentaires doivent être payés lors de la recharge",
+            "ca": "Cal pagar una taxa addicional d'aparcament mentres es carrega"
           }
         }
       ],

@@ -6501,6 +6501,9 @@
                     },
                     "19": {
                         "question": "Recycling van restafval"
+                    },
+                    "20": {
+                        "question": "Recycling van restafval"
                     }
                 }
             },
@@ -6629,6 +6632,9 @@
                         "then": "Injectienaalden kunnen hier gerecycled worden"
                     },
                     "22": {
+                        "then": "Restafval kan hier gerecycled worden"
+                    },
+                    "23": {
                         "then": "Restafval kan hier gerecycled worden"
                     }
                 },

@@ -8,7 +8,8 @@
   "description": {
     "en": "Layer showing all tasks in MapRoulette",
     "de": "Ebene, die alle MapRoulette-Aufgaben zeigt",
-    "nl": "Laag met alle taken uit MapRoulette"
+    "nl": "Laag met alle taken uit MapRoulette",
+    "ca": "Capa que mostra totes les tasques de MapRoulette"
   },
   "mapRendering": [
     {

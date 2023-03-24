@@ -32,11 +32,12 @@ class DownloadEli extends Script {
                 continue
             }
 
-            if(props.id === "Mapbox"){
+            if (props.id === "Mapbox") {
                 /**
                  * This token is managed by Martin Reifer on the 'OpenStreetMap'-account on MapBox
                  */
-                const token = "pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJjbGZkempiNDkyandvM3lwY3M4MndpdWdzIn0.QnvRv52n3qffVEKmQa9vJA"
+                const token =
+                    "pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJjbGZkempiNDkyandvM3lwY3M4MndpdWdzIn0.QnvRv52n3qffVEKmQa9vJA"
                 props.url = props.url.replace("{apikey}", token)
             }
 

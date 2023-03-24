@@ -6715,6 +6715,9 @@
                     },
                     "19": {
                         "question": "Recycling of residual waste"
+                    },
+                    "20": {
+                        "question": "Recycling of residual waste"
                     }
                 }
             },
@@ -6843,6 +6846,9 @@
                         "then": "Needles can be recycled here"
                     },
                     "22": {
+                        "then": "Residual waste can be recycled here"
+                    },
+                    "23": {
                         "then": "Residual waste can be recycled here"
                     }
                 },

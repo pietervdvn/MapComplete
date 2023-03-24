@@ -219,7 +219,8 @@
         "nl": "Dit gebied heet {name}",
         "en": "This area is named {name}",
         "de": "Dieses Gebiet heißt {name}",
-        "es": "Esta área se llama {name}"
+        "es": "Esta área se llama {name}",
+        "ca": "Aquesta àrea s'anomena {name}"
       },
       "question": {
         "nl": "Wat is de naam van dit gebied?",

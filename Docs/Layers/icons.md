@@ -93,8 +93,6 @@ This tagrendering has no question and is thus read-only
   - *circle:#f0f;clock:#fff*  corresponds with  `_isOpen=parse_error&opening_hours~.+`
 
 
-This tagrendering has labels  `defaults`
-
 
 
 ### phonelink 

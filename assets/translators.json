@@ -1,15 +1,15 @@
 {
   "contributors": [
     {
-      "commits": 255,
+      "commits": 259,
       "contributor": "kjon"
     },
     {
-      "commits": 252,
+      "commits": 253,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 100,
+      "commits": 109,
       "contributor": "paunofu"
     },
     {
@@ -122,6 +122,10 @@
     },
     {
       "commits": 8,
+      "contributor": "Fjuro"
+    },
+    {
+      "commits": 8,
       "contributor": "Lucas"
     },
     {
@@ -143,10 +147,6 @@
     {
       "commits": 6,
       "contributor": "Ettore Atalan"
-    },
-    {
-      "commits": 6,
-      "contributor": "Fjuro"
     },
     {
       "commits": 6,
