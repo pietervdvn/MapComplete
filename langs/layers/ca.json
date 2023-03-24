@@ -570,6 +570,9 @@
                     "0": {
                         "then": "Aquí hi ha un banc normal"
                     },
+                    "1": {
+                        "then": "Banc dempeus"
+                    },
                     "2": {
                         "then": "Aquí no hi ha cap banc"
                     }
@@ -715,11 +718,17 @@
             "rental_types": {
                 "rewrite": {
                     "into": {
+                        "0": {
+                            "1": "Bicicletes de ciutat"
+                        },
                         "1": {
                             "1": "bicicletes elèctriques"
                         },
                         "2": {
                             "1": "bicicletes per a xiquets"
+                        },
+                        "3": {
+                            "1": "Bicicletes BMX"
                         },
                         "4": {
                             "1": "bicicleta de muntanya"
@@ -979,6 +988,10 @@
             "0": {
                 "title": "una manxa per a bicicletes"
             },
+            "1": {
+                "description": "Una bomba per a bicicletes i eines per a reparar la teva bicicleta a l'espai públic. Les eines sovint estan assegurades amb cadenes contra robatoris.",
+                "title": "una estació de reparació de bicicletes i una bomba"
+            },
             "2": {
                 "description": "Eines per reparar la teva bicicleta a l'espai públic (sense bomba). Les eines estan assegurades contra robatoris.",
                 "title": "una estació de reparació de bicicletes sense bomba"
@@ -1092,11 +1105,15 @@
                     "0": {
                         "then": "Sclaverand/Presta (pneumàtics per a bicis estrets)"
                     },
+                    "1": {
+                        "then": "Dunlop"
+                    },
                     "2": {
                         "then": "Schrader (cotxes i bicicletes de muntanya)"
                     }
                 },
-                "question": "Quines vàlvules són compatibles?"
+                "question": "Quines vàlvules són compatibles?",
+                "render": "Aquesta bomba admet les vàlvules següents: {valves}"
             },
             "opening_hours_24_7": {
                 "override": {
@@ -1124,14 +1141,24 @@
                 "2": {
                     "then": "Bomba trencada"
                 },
+                "3": {
+                    "then": "Bomba per a bicicletes <i>{name}</i>"
+                },
                 "4": {
                     "then": "Bomba de bicicleta"
                 }
-            }
+            },
+            "render": "Estació de bicicletes (bomba i reparació)"
         }
     },
     "bike_shop": {
+        "description": "Una botiga que ven específicament bicicletes o articles relacionats",
         "name": "Botiga/reparació de bicicletes",
+        "presets": {
+            "0": {
+                "title": "una botiga/reparació de bicicletes"
+            }
+        },
         "tagRenderings": {
             "bike_repair_bike-pump-service": {
                 "mappings": {
@@ -1228,12 +1255,16 @@
                 },
                 "question": "Hi ha ferramentes perquè reparis la teva bici?"
             },
+            "bike_shop-access": {
+                "render": "Només accessible per a {access}"
+            },
             "bike_shop-is-bicycle_shop": {
                 "mappings": {
                     "0": {
                         "then": "Aquest negoci es centra en el lloguer"
                     }
-                }
+                },
+                "render": "Aquesta botiga està especialitzada en vendre {shop} i fa activitats relacionades amb la bicicleta"
             },
             "bike_shop-name": {
                 "question": "Quin és el nom d'aquesta botiga de bicicletes?",
@@ -1241,6 +1272,17 @@
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Botiga d'equipament esportiu <i>{name}</i>"
+                },
+                "1": {
+                    "then": "Winkel"
+                },
+                "2": {
+                    "then": "Lloguer de bicicletes <i>{name}</i>"
+                }
+            },
             "render": "Botiga/reparació de bicicletes"
         }
     },
@@ -3308,6 +3350,9 @@
             "render": "Camp d'esports"
         }
     },
+    "stairs": {
+        "name": "Escales"
+    },
     "street_lamps": {
         "name": "Fanals",
         "presets": {
@@ -3862,6 +3907,15 @@
         "description": "Capa construïda especial que proporciona totes les parets i edificis. Aquesta capa és útil als predefinits per a objectes que es poden col·locar a les parets (p. ex. DEA, bústies de correus, entrades, adreces, càmeres de vigilància, ...). Aquesta capa és invisible per defecte i no es pot activar per l'usuari."
     },
     "waste_basket": {
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Papereres amb dispensador de bosses d'excrements (per a gossos)"
+                    }
+                }
+            }
+        },
         "name": "Paperera",
         "presets": {
             "0": {
