@@ -152,6 +152,23 @@
             "question": "V jaké úrovni se tento prvek nachází?",
             "render": "Nachází se v {level}. patře"
         },
+        "luminous_or_lit": {
+            "mappings": {
+                "0": {
+                    "then": "Tento objekt vyzařuje světlo a je osvětlen vnějším zdrojem světla"
+                },
+                "1": {
+                    "then": "Tento objekt vyzařuje světlo"
+                },
+                "2": {
+                    "then": "Tento objekt je osvětlen zvenčí, např. pomocí reflektoru nebo jiných světel"
+                },
+                "3": {
+                    "then": "Tento objekt nevyzařuje světlo a není osvětlen zvenčí"
+                }
+            },
+            "question": "Je tento objekt osvětlený nebo vyzařuje světlo?"
+        },
         "multilevels": {
             "override": {
                 "question": "Do jakých podlaží tento výtah jezdí?",

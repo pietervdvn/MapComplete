@@ -152,6 +152,23 @@
             "question": "A quina planta està situat aquest element?",
             "render": "Situat a la planta {level}"
         },
+        "luminous_or_lit": {
+            "mappings": {
+                "0": {
+                    "then": "Aquest objecte emet llum i també està il·luminat externament"
+                },
+                "1": {
+                    "then": "Aquest objecte emet llum"
+                },
+                "2": {
+                    "then": "Aquest objecte està il·luminat externament, p.e. amb un focus o altres llums"
+                },
+                "3": {
+                    "then": "Aquest objecte no emet llum i no està il·luminat externament"
+                }
+            },
+            "question": "Aquest objecte està il·luminat o emet llum?"
+        },
         "multilevels": {
             "override": {
                 "question": "A quins pisos va aquest ascensor?",
