@@ -40,8 +40,9 @@ export interface LayerConfigJson {
      *
      * Every source _must_ define which tags _must_ be present in order to be picked up.
      *
+     * Note: a source must always be defined. 'special' is only allowed if this is a builtin-layer
      */
-    source: {
+    source: "special" | "special:library" | ({
         /**
          * Every source must set which tags have to be present in order to load the given layer.
          */
@@ -102,7 +103,7 @@ export interface LayerConfigJson {
                * Setting this key will rename this field into 'id'
                */
               idKey?: string
-          }
+          })
     )
 
     /**

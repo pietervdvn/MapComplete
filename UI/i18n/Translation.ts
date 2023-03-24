@@ -2,7 +2,6 @@ import Locale from "./Locale"
 import { Utils } from "../../Utils"
 import BaseUIElement from "../BaseUIElement"
 import LinkToWeblate from "../Base/LinkToWeblate"
-import { SvelteComponent } from "svelte"
 
 export class Translation extends BaseUIElement {
     public static forcedLanguage = undefined
@@ -299,7 +298,7 @@ export class Translation extends BaseUIElement {
     }
 }
 
-export class TypedTranslation<T> extends Translation {
+export class TypedTranslation<T extends Record<string, any>> extends Translation {
     constructor(translations: Record<string, string>, context?: string) {
         super(translations, context)
     }

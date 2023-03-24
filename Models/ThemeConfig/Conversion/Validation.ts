@@ -15,6 +15,7 @@ import Svg from "../../../Svg"
 import FilterConfigJson from "../Json/FilterConfigJson"
 import DeleteConfig from "../DeleteConfig"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
+import ValidatedTextField from "../../../UI/Input/ValidatedTextField"
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
     private readonly _languages: string[]
@@ -594,6 +595,7 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
 
 class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
     private _options: { noQuestionHintCheck: boolean }
+
     constructor(options: { noQuestionHintCheck: boolean }) {
         super("Miscellaneous checks on the tagrendering", ["special"], "MiscTagRenderingChecks")
         this._options = options
@@ -635,6 +637,19 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
     The question is: ${question.textFor(lng)}`
                     )
                 }
+            }
+        }
+        const freeformType = json["freeform"]?.["type"]
+        if (freeformType) {
+            if (ValidatedTextField.AvailableTypes().indexOf(freeformType) < 0) {
+                throw (
+                    "At " +
+                    context +
+                    ".freeform.type is an unknown type: " +
+                    freeformType +
+                    "; try one of " +
+                    ValidatedTextField.AvailableTypes().join(", ")
+                )
             }
         }
         return {
@@ -902,6 +917,38 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             warnings,
             information,
         }
+    }
+}
+
+export class ValidateFilter extends DesugaringStep<FilterConfigJson> {
+    constructor() {
+        super("Detect common errors in the filters", [], "ValidateFilter")
+    }
+
+    convert(
+        filter: FilterConfigJson,
+        context: string
+    ): {
+        result: FilterConfigJson
+        errors?: string[]
+        warnings?: string[]
+        information?: string[]
+    } {
+        const errors = []
+        for (const option of filter.options) {
+            for (let i = 0; i < option.fields.length; i++) {
+                const field = option.fields[i]
+                const type = field.type ?? "string"
+                if (!ValidatedTextField.ForType(type) !== undefined) {
+                    continue
+                }
+                const err = `Invalid filter: ${type} is not a valid validated textfield type (at ${context}.fields[${i}])\n\tTry one of ${Array.from(
+                    ValidatedTextField.AvailableTypes()
+                ).join(",")}`
+                errors.push(err)
+            }
+        }
+        return { result: filter, errors }
     }
 }
 

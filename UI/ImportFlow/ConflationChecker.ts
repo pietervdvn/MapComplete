@@ -138,12 +138,6 @@ export default class ConflationChecker
             location,
             background,
             bounds: currentBounds,
-            attribution: new Attribution(
-                location,
-                state.osmConnection.userDetails,
-                undefined,
-                currentBounds
-            ),
         })
         osmLiveData.SetClass("w-full").SetStyle("height: 500px")
 

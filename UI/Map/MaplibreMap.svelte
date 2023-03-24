@@ -8,8 +8,6 @@
   import { Map } from "@onsvisual/svelte-maps";
   import type { Map as MaplibreMap } from "maplibre-gl";
   import type { Writable } from "svelte/store";
-  import type Loc from "../../Models/Loc";
-  import { UIEventSource } from "../../Logic/UIEventSource";
 
 
   /**
@@ -30,7 +28,6 @@
 <main>
   <Map bind:center={center}
        bind:map={$map}
-       controls="true"
        id="map" location={{lng: 0, lat: 0, zoom: 0}} maxzoom=24 style={styleUrl} />
 </main>
 

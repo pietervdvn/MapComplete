@@ -45,6 +45,7 @@ import { ElementStorage } from "../../Logic/ElementStorage"
 import Hash from "../../Logic/Web/Hash"
 import { PreciseInput } from "../../Models/ThemeConfig/PresetConfig"
 import { SpecialVisualization } from "../SpecialVisualization"
+import Maproulette from "../../Logic/Maproulette";
 
 /**
  * A helper class for the various import-flows.
@@ -720,7 +721,7 @@ export class ImportPointButton extends AbstractImportButton {
                     )
                 } else {
                     console.log("Marking maproulette task as fixed")
-                    await state.maprouletteConnection.closeTask(Number(maproulette_id))
+                    await Maproulette.singleton.closeTask(Number(maproulette_id))
                     originalFeatureTags.data["mr_taskStatus"] = "Fixed"
                     originalFeatureTags.ping()
                 }

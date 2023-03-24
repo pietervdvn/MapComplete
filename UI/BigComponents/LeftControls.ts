@@ -11,7 +11,6 @@ import BackgroundMapSwitch from "./BackgroundMapSwitch"
 import Lazy from "../Base/Lazy"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import FeatureInfoBox from "../Popup/FeatureInfoBox"
-import CopyrightPanel from "./CopyrightPanel"
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
 import Hotkeys from "../Base/Hotkeys"
 import { DefaultGuiState } from "../DefaultGuiState"
@@ -21,7 +20,7 @@ export default class LeftControls extends Combine {
         const currentViewFL = state.currentView?.layer
         const currentViewAction = new Toggle(
             new Lazy(() => {
-                const feature: Store<any> = state.currentView.features.map((ffs) => ffs[0]?.feature)
+                const feature: Store<any> = state.currentView.features.map((ffs) => ffs[0])
                 const icon = new VariableUiElement(
                     feature.map((feature) => {
                         const defaultIcon = Svg.checkbox_empty_svg()

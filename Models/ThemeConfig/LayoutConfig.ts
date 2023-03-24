@@ -8,7 +8,6 @@ import { ExtractImages } from "./Conversion/FixImages"
 import ExtraLinkConfig from "./ExtraLinkConfig"
 import { Utils } from "../../Utils"
 import LanguageUtils from "../../Utils/LanguageUtils"
-
 /**
  * Minimal information about a theme
  **/

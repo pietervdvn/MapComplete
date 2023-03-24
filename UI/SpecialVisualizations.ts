@@ -7,7 +7,6 @@ import { SpecialVisualization } from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
 import { StealViz } from "./Popup/StealViz"
 import { MinimapViz } from "./Popup/MinimapViz"
-import { SidedMinimap } from "./Popup/SidedMinimap"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
 import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
 import { MultiApplyViz } from "./Popup/MultiApplyViz"
@@ -20,7 +19,7 @@ import { CloseNoteButton } from "./Popup/CloseNoteButton"
 import { NearbyImageVis } from "./Popup/NearbyImageVis"
 import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
 import { Stores, UIEventSource } from "../Logic/UIEventSource"
-import AllTagsPanel from "./AllTagsPanel.svelte"
+import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders"
 import { ImageCarousel } from "./Image/ImageCarousel"
 import { ImageUploadFlow } from "./Image/ImageUploadFlow"
@@ -142,7 +141,6 @@ export default class SpecialVisualizations {
             new HistogramViz(),
             new StealViz(),
             new MinimapViz(),
-            new SidedMinimap(),
             new ShareLinkViz(),
             new UploadToOsmViz(),
             new MultiApplyViz(),
@@ -664,7 +662,7 @@ export default class SpecialVisualizations {
                             const maproulette_id =
                                 tagsSource.data[maproulette_id_key] ?? tagsSource.data.id
                             try {
-                                await state.maprouletteConnection.closeTask(
+                                await Maproulette.singleton.closeTask(
                                     Number(maproulette_id),
                                     Number(status),
                                     {

@@ -6,9 +6,7 @@
     "nl": "Een speciale lag die niet getoond wordt op de kaart, maar die de instellingen van de gebruiker weergeeft"
   },
   "title": null,
-  "source": {
-    "osmTags": "id~*"
-  },
+  "source": "special",
   "calculatedTags": [
     "_mastodon_candidate_md=feat.properties._description.match(/\\[[^\\]]*\\]\\((.*(mastodon|en.osm.town).*)\\).*/)?.at(1)",
     "_d=feat.properties._description?.replace(/&lt;/g,'<')?.replace(/&gt;/g,'>') ?? ''",

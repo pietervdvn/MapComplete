@@ -4,6 +4,7 @@ import { SvelteComponentTyped } from "svelte"
 
 /**
  * The SvelteUIComponent serves as a translating class which which wraps a SvelteElement into the BaseUIElement framework.
+ * Also see ToSvelte.svelte for the opposite conversion
  */
 export default class SvelteUIElement<
     Props extends Record<string, any> = any,

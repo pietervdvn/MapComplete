@@ -6,18 +6,21 @@ import ShowDataLayer from "./ShowDataLayer"
 import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
 import FilteredLayer from "../../Models/FilteredLayer"
 import { ShowDataLayerOptions } from "./ShowDataLayerOptions"
-
+import { Map as MlMap } from "maplibre-gl"
 export default class ShowDataMultiLayer {
-    constructor(options: ShowDataLayerOptions & { layers: Store<FilteredLayer[]> }) {
+    constructor(
+        map: Store<MlMap>,
+        options: ShowDataLayerOptions & { layers: Store<FilteredLayer[]> }
+    ) {
         new PerLayerFeatureSourceSplitter(
             options.layers,
             (perLayer) => {
                 const newOptions = {
                     ...options,
-                    layerToShow: perLayer.layer.layerDef,
+                    layer: perLayer.layer.layerDef,
                     features: perLayer,
                 }
-                new ShowDataLayer(newOptions)
+                new ShowDataLayer(map, newOptions)
             },
             options.features
         )

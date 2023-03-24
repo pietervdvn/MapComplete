@@ -1,7 +1,7 @@
 <script lang="ts">
-  import ToSvelte from "./Base/ToSvelte.svelte"
-  import Table from "./Base/Table"
-  import { UIEventSource } from "../Logic/UIEventSource"
+  import ToSvelte from "../Base/ToSvelte.svelte"
+  import Table from "../Base/Table"
+  import { UIEventSource } from "../../Logic/UIEventSource"
 
   //Svelte props
   export let tags: UIEventSource<any>

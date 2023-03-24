@@ -3,7 +3,6 @@ import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import FilterConfigJson from "./Json/FilterConfigJson"
 import Translations from "../../UI/i18n/Translations"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
-import ValidatedTextField from "../../UI/Input/ValidatedTextField"
 import { TagConfigJson } from "./Json/TagConfigJson"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import { FilterState } from "../FilteredLayer"
@@ -54,11 +53,7 @@ export default class FilterConfig {
 
             const fields: { name: string; type: string }[] = (option.fields ?? []).map((f, i) => {
                 const type = f.type ?? "string"
-                if (!ValidatedTextField.ForType(type) === undefined) {
-                    throw `Invalid filter: ${type} is not a valid validated textfield type (at ${ctx}.fields[${i}])\n\tTry one of ${Array.from(
-                        ValidatedTextField.AvailableTypes()
-                    ).join(",")}`
-                }
+                // Type is validated against 'ValidatedTextField' in Validation.ts, in ValidateFilterConfig
                 if (f.name === undefined || f.name === "" || f.name.match(/[a-z0-9_-]+/) == null) {
                     throw `Invalid filter: a variable name should match [a-z0-9_-]+ at ${ctx}.fields[${i}]`
                 }

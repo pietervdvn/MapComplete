@@ -30,7 +30,7 @@ export class GeoLocationState {
     /**
      * If true: the map will center (and re-center) to this location
      */
-    public readonly isLocked: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+    public readonly allowMoving: UIEventSource<boolean> = new UIEventSource<boolean>(true)
 
     public readonly currentGPSLocation: UIEventSource<GeolocationCoordinates | undefined> =
         new UIEventSource<GeolocationCoordinates | undefined>(undefined)
@@ -72,7 +72,6 @@ export class GeoLocationState {
                 self._previousLocationGrant.setData("false")
             }
         })
-
         console.log("Previous location grant:", this._previousLocationGrant.data)
         if (this._previousLocationGrant.data === "true") {
             // A previous visit successfully granted permission. Chance is high that we are allowed to use it again!
@@ -87,7 +86,6 @@ export class GeoLocationState {
             }
             this.requestPermission()
         }
-        window["geolocation_state"] = this
     }
 
     /**

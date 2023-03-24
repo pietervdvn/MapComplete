@@ -59,15 +59,6 @@ export default class CreateMultiPolygonWithPointReuseAction extends OsmCreateAct
         }
     }
 
-    public async getPreview(): Promise<FeatureSource> {
-        const outerPreview = await this.createOuterWay.getPreview()
-        outerPreview.features.data.push({
-            freshness: new Date(),
-            feature: this.geojsonPreview,
-        })
-        return outerPreview
-    }
-
     protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
         console.log("Running CMPWPRA")
         const descriptions: ChangeDescription[] = []

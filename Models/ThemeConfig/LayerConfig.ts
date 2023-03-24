@@ -29,7 +29,7 @@ import { Overpass } from "../../Logic/Osm/Overpass"
 import Constants from "../Constants"
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Svg from "../../Svg"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { ImmutableStore } from "../../Logic/UIEventSource"
 import { OsmTags } from "../OsmFeature"
 
 export default class LayerConfig extends WithContextLoader {
@@ -37,7 +37,10 @@ export default class LayerConfig extends WithContextLoader {
     public readonly id: string
     public readonly name: Translation
     public readonly description: Translation
-    public readonly source: SourceConfig
+    /**
+     * Only 'null' for special, privileged layers
+     */
+    public readonly source: SourceConfig | null
     public readonly calculatedTags: [string, string, boolean][]
     public readonly doNotDownload: boolean
     public readonly passAllFeatures: boolean
@@ -83,7 +86,9 @@ export default class LayerConfig extends WithContextLoader {
             throw "Layer " + this.id + " does not define a source section (" + context + ")"
         }
 
-        if (json.source.osmTags === undefined) {
+        if(json.source === "special" || json.source === "special:library"){
+            this.source = null
+        }else if (json.source.osmTags === undefined) {
             throw (
                 "Layer " +
                 this.id +
@@ -584,11 +589,9 @@ export default class LayerConfig extends WithContextLoader {
                 .filter((mr) => mr.location.has("point"))
                 .map(
                     (mr) =>
-                        mr.GenerateLeafletStyle(
-                            new UIEventSource<OsmTags>({ id: "node/-1" }),
-                            false,
-                            { includeBadges: false }
-                        ).html
+                        mr.RenderIcon(new ImmutableStore<OsmTags>({ id: "node/-1" }), false, {
+                            includeBadges: false,
+                        }).html
                 )
                 .find((i) => i !== undefined)
         }

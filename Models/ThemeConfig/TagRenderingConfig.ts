@@ -3,7 +3,6 @@ import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import Translations from "../../UI/i18n/Translations"
 import { TagUtils, UploadableTag } from "../../Logic/Tags/TagUtils"
 import { And } from "../../Logic/Tags/And"
-import ValidatedTextField from "../../UI/Input/ValidatedTextField"
 import { Utils } from "../../Utils"
 import { Tag } from "../../Logic/Tags/Tag"
 import BaseUIElement from "../../UI/BaseUIElement"
@@ -132,17 +131,6 @@ export default class TagRenderingConfig {
             }
             const type = json.freeform.type ?? "string"
 
-            if (ValidatedTextField.AvailableTypes().indexOf(type) < 0) {
-                throw (
-                    "At " +
-                    context +
-                    ".freeform.type is an unknown type: " +
-                    type +
-                    "; try one of " +
-                    ValidatedTextField.AvailableTypes().join(", ")
-                )
-            }
-
             let placeholder: Translation = Translations.T(json.freeform.placeholder)
             if (placeholder === undefined) {
                 const typeDescription = <Translation>Translations.t.validation[type]?.description
@@ -182,13 +170,7 @@ export default class TagRenderingConfig {
                 }
             }
 
-            if (
-                this.freeform.type !== undefined &&
-                ValidatedTextField.AvailableTypes().indexOf(this.freeform.type) < 0
-            ) {
-                const knownKeys = ValidatedTextField.AvailableTypes().join(", ")
-                throw `Freeform.key ${this.freeform.key} is an invalid type. Known keys are ${knownKeys}`
-            }
+            // freeform.type is validated in Validation.ts so that we don't need ValidatedTextFields here
             if (this.freeform.addExtraTags) {
                 const usedKeys = new And(this.freeform.addExtraTags).usedKeys()
                 if (usedKeys.indexOf(this.freeform.key) >= 0) {

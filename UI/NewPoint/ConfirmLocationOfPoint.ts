@@ -13,13 +13,13 @@ import Toggle from "../Input/Toggle"
 import SimpleAddUI, { PresetInfo } from "../BigComponents/SimpleAddUI"
 import Img from "../Base/Img"
 import Title from "../Base/Title"
-import { GlobalFilter } from "../../Logic/State/MapState"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import { Tag } from "../../Logic/Tags/Tag"
 import { WayId } from "../../Models/OsmFeature"
 import { Translation } from "../i18n/Translation"
-import { Feature } from "geojson";
-import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers";
+import { Feature } from "geojson"
+import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers"
+import { GlobalFilter } from "../../Logic/State/GlobalFilter"
 
 export default class ConfirmLocationOfPoint extends Combine {
     constructor(
@@ -69,7 +69,7 @@ export default class ConfirmLocationOfPoint extends Combine {
             let snapToFeatures: UIEventSource<Feature[]> = undefined
             let mapBounds: UIEventSource<BBox> = undefined
             if (preset.preciseInput.snapToLayers && preset.preciseInput.snapToLayers.length > 0) {
-                snapToFeatures = new UIEventSource< Feature[]>([])
+                snapToFeatures = new UIEventSource<Feature[]>([])
                 mapBounds = new UIEventSource<BBox>(undefined)
             }
 
@@ -110,9 +110,7 @@ export default class ConfirmLocationOfPoint extends Combine {
                         console.log("Snapping to", layerId)
                         state.featurePipeline
                             .GetFeaturesWithin(layerId, bbox)
-                            ?.forEach((feats) =>
-                                allFeatures.push(...<any[]>feats)
-                            )
+                            ?.forEach((feats) => allFeatures.push(...(<any[]>feats)))
                     })
                     console.log("Snapping to", allFeatures)
                     snapToFeatures.setData(allFeatures)

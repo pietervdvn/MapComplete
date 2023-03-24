@@ -1,15 +1,8 @@
 import { BBox } from "./BBox"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import * as turf from "@turf/turf"
-import {
-    AllGeoJSON,
-    booleanWithin,
-    Coord,
-    Feature,
-    Geometry,
-    MultiPolygon,
-    Polygon,
-} from "@turf/turf"
+import { AllGeoJSON, booleanWithin, Coord } from "@turf/turf"
+import { Feature, Geometry, MultiPolygon, Polygon } from "geojson"
 import { GeoJSON, LineString, Point, Position } from "geojson"
 import togpx from "togpx"
 import Constants from "../Models/Constants"
@@ -263,7 +256,10 @@ export class GeoOperations {
      * @param way The road on which you want to find a point
      * @param point Point defined as [lon, lat]
      */
-    public static nearestPoint(way: Feature<LineString | Polygon>, point: [number, number]) {
+    public static nearestPoint(
+        way: Feature<LineString | Polygon>,
+        point: [number, number]
+    ): Feature<Point> {
         if (way.geometry.type === "Polygon") {
             way = { ...way }
             way.geometry = { ...way.geometry }
@@ -710,6 +706,63 @@ export class GeoOperations {
         return true
     }
 
+    /**
+     *
+     *
+     * const f = (type, feature: Feature) => GeoOperations.featureToCoordinateWithRenderingType(feature, type)
+     * const g = geometry => (<Feature> {type: "Feature", properties: {}, geometry})
+     * f("point", g({type:"Point", coordinates:[1,2]})) // => [1,2]
+     * f("centroid", g({type:"Point", coordinates:[1,2]})) // => undefined
+     * f("start", g({type:"Point", coordinates:[1,2]})) // => undefined
+     * f("centroid", g({type:"LineString", coordinates:[[1,2], [3,4]]})) // => [2,3]
+     * f("centroid", g({type:"Polygon", coordinates:[[[1,2], [3,4], [1,2]]]})) // => [2,3]
+     * f("projected_centerpoint", g({type:"LineString", coordinates:[[1,2], [3,4]]})) // => [1.9993137596003214,2.999313759600321]
+     * f("start", g({type:"LineString", coordinates:[[1,2], [3,4]]})) // => [1,2]
+     * f("end", g({type:"LineString", coordinates:[[1,2], [3,4]]})) // => [3,4]
+     *
+     */
+    public static featureToCoordinateWithRenderingType(
+        feature: Feature,
+        location: "point" | "centroid" | "start" | "end" | "projected_centerpoint" | string
+    ): [number, number] | undefined {
+        switch (location) {
+            case "point":
+                if (feature.geometry.type === "Point") {
+                    return <[number, number]>feature.geometry.coordinates
+                }
+                return undefined
+            case "centroid":
+                if (feature.geometry.type === "Point") {
+                    return undefined
+                }
+                return GeoOperations.centerpointCoordinates(feature)
+            case "projected_centerpoint":
+                if (
+                    feature.geometry.type === "LineString" ||
+                    feature.geometry.type === "MultiLineString"
+                ) {
+                    const centerpoint = GeoOperations.centerpointCoordinates(feature)
+                    const projected = GeoOperations.nearestPoint(
+                        <Feature<LineString>>feature,
+                        centerpoint
+                    )
+                    return <[number, number]>projected.geometry.coordinates
+                }
+                return undefined
+            case "start":
+                if (feature.geometry.type === "LineString") {
+                    return <[number, number]>feature.geometry.coordinates[0]
+                }
+                return undefined
+            case "end":
+                if (feature.geometry.type === "LineString") {
+                    return <[number, number]>feature.geometry.coordinates.at(-1)
+                }
+                return undefined
+            default:
+                throw "Unkown location type: " + location
+        }
+    }
     private static pointWithinRing(x: number, y: number, ring: [number, number][]) {
         let inside = false
         for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {

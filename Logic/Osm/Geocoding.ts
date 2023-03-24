@@ -1,4 +1,3 @@
-import State from "../../State"
 import { Utils } from "../../Utils"
 import { BBox } from "../BBox"
 
@@ -14,8 +13,8 @@ export interface GeoCodeResult {
 export class Geocoding {
     private static readonly host = "https://nominatim.openstreetmap.org/search?"
 
-    static async Search(query: string): Promise<GeoCodeResult[]> {
-        const b = State?.state?.currentBounds?.data ?? BBox.global
+    static async Search(query: string, bbox: BBox): Promise<GeoCodeResult[]> {
+        const b = bbox ?? BBox.global
         const url =
             Geocoding.host +
             "format=json&limit=1&viewbox=" +

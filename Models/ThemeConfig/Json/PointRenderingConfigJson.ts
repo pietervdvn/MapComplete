@@ -12,8 +12,11 @@ import { TagConfigJson } from "./TagConfigJson"
 export default interface PointRenderingConfigJson {
     /**
      * All the locations that this point should be rendered at.
-     * Using `location: ["point", "centroid"] will always render centerpoint.
-     * 'projected_centerpoint' will show an item on the line itself, near the middle of the line. (LineStrings only)
+     * Possible values are:
+     * - `point`: only renders points at their location
+     * - `centroid`: show a symbol at the centerpoint of a (multi)Linestring and (multi)polygon. Points will _not_ be rendered with this
+     * - `projected_centerpoint`: Only on (multi)linestrings: calculate the centerpoint and snap it to the way
+     * - `start` and `end`: only on linestrings: add a point to the first/last coordinate of the LineString
      */
     location: ("point" | "centroid" | "start" | "end" | "projected_centerpoint" | string)[]
 

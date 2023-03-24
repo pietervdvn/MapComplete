@@ -1,11 +1,7 @@
 {
   "id": "import_candidate",
   "description": "Layer used in the importHelper",
-  "source": {
-    "osmTags": {
-      "and": []
-    }
-  },
+  "source":"special",
   "mapRendering": [
     {
       "location": [

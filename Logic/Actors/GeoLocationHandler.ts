@@ -3,9 +3,13 @@ import { BBox } from "../BBox"
 import Constants from "../../Models/Constants"
 import { GeoLocationPointProperties, GeoLocationState } from "../State/GeoLocationState"
 import { UIEventSource } from "../UIEventSource"
-import Loc from "../../Models/Loc"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource"
+import { Feature, LineString, Point } from "geojson"
+import FeatureSource from "../FeatureSource/FeatureSource"
+import { LocalStorageSource } from "../Web/LocalStorageSource"
+import { GeoOperations } from "../GeoOperations"
+import { OsmTags } from "../../Models/OsmFeature"
+import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource"
+import { MapProperties } from "../../Models/MapProperties"
 
 /**
  * The geolocation-handler takes a map-location and a geolocation state.
@@ -14,28 +18,39 @@ import SimpleFeatureSource from "../FeatureSource/Sources/SimpleFeatureSource"
  */
 export default class GeoLocationHandler {
     public readonly geolocationState: GeoLocationState
-    private readonly _state: {
-        currentUserLocation: SimpleFeatureSource
-        layoutToUse: LayoutConfig
-        locationControl: UIEventSource<Loc>
-        selectedElement: UIEventSource<any>
-        leafletMap?: UIEventSource<any>
-    }
+
+    /**
+     * The location as delivered by the GPS, wrapped as FeatureSource
+     */
+    public currentUserLocation: FeatureSource
+
+    /**
+     * All previously visited points (as 'Point'-objects), with their metadata
+     */
+    public historicalUserLocations: FeatureSource
+
+    /**
+     * A featureSource containing a single linestring which has the GPS-history of the user.
+     * However, metadata (such as when every single point was visited) is lost here (but is kept in `historicalUserLocations`.
+     * Note that this featureSource is _derived_ from 'historicalUserLocations'
+     */
+    public historicalUserLocationsTrack: FeatureSource
     public readonly mapHasMoved: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+    private readonly selectedElement: UIEventSource<any>
+    private readonly mapProperties?: MapProperties
+    private readonly gpsLocationHistoryRetentionTime?: UIEventSource<number>
 
     constructor(
         geolocationState: GeoLocationState,
-        state: {
-            locationControl: UIEventSource<Loc>
-            currentUserLocation: SimpleFeatureSource
-            layoutToUse: LayoutConfig
-            selectedElement: UIEventSource<any>
-            leafletMap?: UIEventSource<any>
-        }
+        selectedElement: UIEventSource<any>,
+        mapProperties?: MapProperties,
+        gpsLocationHistoryRetentionTime?: UIEventSource<number>
     ) {
         this.geolocationState = geolocationState
-        this._state = state
-        const mapLocation = state.locationControl
+        const mapLocation = mapProperties.location
+        this.selectedElement = selectedElement
+        this.mapProperties = mapProperties
+        this.gpsLocationHistoryRetentionTime = gpsLocationHistoryRetentionTime
         // Did an interaction move the map?
         let self = this
         let initTime = new Date()
@@ -54,7 +69,7 @@ export default class GeoLocationHandler {
             this.mapHasMoved.setData(true)
         }
 
-        this.geolocationState.currentGPSLocation.addCallbackAndRunD((newLocation) => {
+        this.geolocationState.currentGPSLocation.addCallbackAndRunD((_) => {
             const timeSinceLastRequest =
                 (new Date().getTime() - geolocationState.requestMoment.data?.getTime() ?? 0) / 1000
             if (!this.mapHasMoved.data) {
@@ -65,25 +80,17 @@ export default class GeoLocationHandler {
                 self.MoveMapToCurrentLocation()
             }
 
-            if (this.geolocationState.isLocked.data) {
+            if (!this.geolocationState.allowMoving.data) {
                 // Jup, the map is locked to the bound location: move automatically
                 self.MoveMapToCurrentLocation()
                 return
             }
         })
 
-        geolocationState.isLocked.map(
-            (isLocked) => {
-                if (isLocked) {
-                    state.leafletMap?.data?.dragging?.disable()
-                } else {
-                    state.leafletMap?.data?.dragging?.enable()
-                }
-            },
-            [state.leafletMap]
-        )
+        geolocationState.allowMoving.syncWith(mapProperties.allowMoving, true)
 
         this.CopyGeolocationIntoMapstate()
+        this.initUserLocationTrail()
     }
 
     /**
@@ -95,12 +102,11 @@ export default class GeoLocationHandler {
      */
     public MoveMapToCurrentLocation() {
         const newLocation = this.geolocationState.currentGPSLocation.data
-        const mapLocation = this._state.locationControl
-        const state = this._state
+        const mapLocation = this.mapProperties.location
         // We got a new location.
         // Do we move the map to it?
 
-        if (state.selectedElement.data !== undefined) {
+        if (this.selectedElement.data !== undefined) {
             // Nope, there is something selected, so we don't move to the current GPS-location
             return
         }
@@ -110,8 +116,8 @@ export default class GeoLocationHandler {
         }
 
         // We check that the GPS location is not out of bounds
-        const bounds = state.layoutToUse.lockLocation
-        if (bounds && bounds !== true) {
+        const bounds = this.mapProperties.maxbounds.data
+        if (bounds !== undefined) {
             // B is an array with our lock-location
             const inRange = new BBox(bounds).contains([newLocation.longitude, newLocation.latitude])
             if (!inRange) {
@@ -119,22 +125,25 @@ export default class GeoLocationHandler {
             }
         }
 
+        console.trace("Moving the map to the GPS-location")
         mapLocation.setData({
-            zoom: Math.max(mapLocation.data.zoom, 16),
             lon: newLocation.longitude,
             lat: newLocation.latitude,
         })
+        const zoom = this.mapProperties.zoom
+        zoom.setData(Math.max(zoom.data, 16))
         this.mapHasMoved.setData(true)
         this.geolocationState.requestMoment.setData(undefined)
     }
 
     private CopyGeolocationIntoMapstate() {
-        const state = this._state
+        const features: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
+        this.currentUserLocation = new StaticFeatureSource(features)
         this.geolocationState.currentGPSLocation.addCallbackAndRun((location) => {
             if (location === undefined) {
                 return
             }
-            const feature = {
+            const feature = <Feature>{
                 type: "Feature",
                 properties: <GeoLocationPointProperties>{
                     id: "gps",
@@ -148,7 +157,82 @@ export default class GeoLocationHandler {
                 },
             }
 
-            state.currentUserLocation?.features?.setData([{ feature, freshness: new Date() }])
+            features.setData([feature])
         })
+    }
+
+    private initUserLocationTrail() {
+        const features = LocalStorageSource.GetParsed<Feature[]>("gps_location_history", [])
+        const now = new Date().getTime()
+        features.data = features.data.filter((ff) => {
+            if (ff.properties === undefined) {
+                return false
+            }
+            const point_time = new Date(ff.properties["date"])
+            return (
+                now - point_time.getTime() <
+                1000 * (this.gpsLocationHistoryRetentionTime?.data ?? 24 * 60 * 60 * 1000)
+            )
+        })
+        features.ping()
+        let i = 0
+        this.currentUserLocation?.features?.addCallbackAndRunD(([location]: [Feature<Point>]) => {
+            if (location === undefined) {
+                return
+            }
+
+            const previousLocation = <Feature<Point>>features.data[features.data.length - 1]
+            if (previousLocation !== undefined) {
+                const previousLocationFreshness = new Date(previousLocation.properties.date)
+                const d = GeoOperations.distanceBetween(
+                    <[number, number]>previousLocation.geometry.coordinates,
+                    <[number, number]>location.geometry.coordinates
+                )
+                let timeDiff = Number.MAX_VALUE // in seconds
+                const olderLocation = features.data[features.data.length - 2]
+
+                if (olderLocation !== undefined) {
+                    const olderLocationFreshness = new Date(olderLocation.properties.date)
+                    timeDiff =
+                        (new Date(previousLocationFreshness).getTime() -
+                            new Date(olderLocationFreshness).getTime()) /
+                        1000
+                }
+                if (d < 20 && timeDiff < 60) {
+                    // Do not append changes less then 20m - it's probably noise anyway
+                    return
+                }
+            }
+
+            const feature = JSON.parse(JSON.stringify(location))
+            feature.properties.id = "gps/" + features.data.length
+            i++
+            features.data.push(feature)
+            features.ping()
+        })
+
+        this.historicalUserLocations = new StaticFeatureSource(features)
+
+        const asLine = features.map((allPoints) => {
+            if (allPoints === undefined || allPoints.length < 2) {
+                return []
+            }
+
+            const feature: Feature<LineString, OsmTags> = {
+                type: "Feature",
+                properties: {
+                    id: "location_track",
+                    "_date:now": new Date().toISOString(),
+                },
+                geometry: {
+                    type: "LineString",
+                    coordinates: allPoints.map(
+                        (ff: Feature<Point>) => <[number, number]>ff.geometry.coordinates
+                    ),
+                },
+            }
+            return [feature]
+        })
+        this.historicalUserLocationsTrack = new StaticFeatureSource(asLine)
     }
 }

@@ -1,0 +1,14 @@
+{
+  "id": "range",
+  "description": "Meta-layer, simply showing a bbox in red",
+  "title": null,
+  "source": "special",
+  "name": null,
+  "mapRendering": [
+    {
+      "width": 4,
+      "fill": "no",
+      "color": "#ff000088"
+    }
+  ]
+}

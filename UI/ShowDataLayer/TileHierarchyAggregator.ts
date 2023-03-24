@@ -5,9 +5,9 @@ import FeatureSource, {
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import { Tiles } from "../../Models/TileRange"
-import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
 import { BBox } from "../../Logic/BBox"
 import FilteredLayer from "../../Models/FilteredLayer"
+import { Feature } from "geojson"
 
 /**
  * A feature source containing but a single feature, which keeps stats about a tile
@@ -17,16 +17,14 @@ export class TileHierarchyAggregator implements FeatureSource {
     public totalValue: number = 0
     public showCount: number = 0
     public hiddenCount: number = 0
-    public readonly features = new UIEventSource<{ feature: any; freshness: Date }[]>(
-        TileHierarchyAggregator.empty
-    )
+    public readonly features = new UIEventSource<Feature[]>(TileHierarchyAggregator.empty)
     public readonly name
     private _parent: TileHierarchyAggregator
     private _root: TileHierarchyAggregator
-    private _z: number
-    private _x: number
-    private _y: number
-    private _tileIndex: number
+    private readonly _z: number
+    private readonly _x: number
+    private readonly _y: number
+    private readonly _tileIndex: number
     private _counter: SingleTileCounter
     private _subtiles: [
         TileHierarchyAggregator,
@@ -158,42 +156,6 @@ export class TileHierarchyAggregator implements FeatureSource {
         }
         this.updateSignal.setData(source)
     }
-
-    getCountsForZoom(
-        clusteringConfig: { maxZoom: number },
-        locationControl: UIEventSource<{ zoom: number }>,
-        cutoff: number = 0
-    ): FeatureSource {
-        const self = this
-        const empty = []
-        const features = locationControl
-            .map((loc) => loc.zoom)
-            .map(
-                (targetZoom) => {
-                    if (targetZoom - 1 > clusteringConfig.maxZoom) {
-                        return empty
-                    }
-
-                    const features: { feature: any; freshness: Date }[] = []
-                    self.visitSubTiles((aggr) => {
-                        if (aggr.showCount < cutoff) {
-                            return false
-                        }
-                        if (aggr._z === targetZoom) {
-                            features.push(...aggr.features.data)
-                            return false
-                        }
-                        return aggr._z <= targetZoom
-                    })
-
-                    return features
-                },
-                [this.updateSignal.stabilized(500)]
-            )
-
-        return new StaticFeatureSource(features)
-    }
-
     private update() {
         const newMap = new Map<string, number>()
         let total = 0
@@ -252,13 +214,6 @@ export class TileHierarchyAggregator implements FeatureSource {
 
             this.features.data = this.featuresStatic
             this.features.ping()
-        }
-    }
-
-    private visitSubTiles(f: (aggr: TileHierarchyAggregator) => boolean) {
-        const visitFurther = f(this)
-        if (visitFurther) {
-            this._subtiles.forEach((tile) => tile?.visitSubTiles(f))
         }
     }
 }

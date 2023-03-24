@@ -1,7 +1,7 @@
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
  */
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
 import Svg from "../../Svg"
 import { SubtleButton } from "../Base/SubtleButton"
 import Combine from "../Base/Combine"
@@ -22,13 +22,12 @@ import { Changes } from "../../Logic/Osm/Changes"
 import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline"
 import { ElementStorage } from "../../Logic/ElementStorage"
 import ConfirmLocationOfPoint from "../NewPoint/ConfirmLocationOfPoint"
-import BaseLayer from "../../Models/BaseLayer"
 import Loading from "../Base/Loading"
 import Hash from "../../Logic/Web/Hash"
-import { GlobalFilter } from "../../Logic/State/MapState"
 import { WayId } from "../../Models/OsmFeature"
 import { Tag } from "../../Logic/Tags/Tag"
 import { LoginToggle } from "../Popup/LoginButton"
+import { GlobalFilter } from "../../Models/GlobalFilter"
 
 /*
  * The SimpleAddUI is a single panel, which can have multiple states:
@@ -288,7 +287,7 @@ export default class SimpleAddUI extends LoginToggle {
                 const tags = TagUtils.KVtoProperties(preset.tags ?? [])
                 let icon: () => BaseUIElement = () =>
                     layer.layerDef.mapRendering[0]
-                        .GenerateLeafletStyle(new UIEventSource<any>(tags), false)
+                        .RenderIcon(new ImmutableStore<any>(tags), false)
                         .html.SetClass("w-12 h-12 block relative")
                 const presetInfo: PresetInfo = {
                     layerToAddTo: layer,

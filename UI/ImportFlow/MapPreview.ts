@@ -9,10 +9,6 @@ import { DropDown } from "../Input/DropDown"
 import { Utils } from "../../Utils"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import Loc from "../../Models/Loc"
-import Minimap from "../Base/Minimap"
-import Attribution from "../BigComponents/Attribution"
-import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer"
-import FilteredLayer, { FilterState } from "../../Models/FilteredLayer"
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
 import Toggle from "../Input/Toggle"
 import { VariableUiElement } from "../Base/VariableUIElement"
@@ -21,12 +17,14 @@ import { FlowStep } from "./FlowStep"
 import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 import Title from "../Base/Title"
 import CheckBoxes from "../Input/Checkboxes"
-import AllTagsPanel from "../AllTagsPanel.svelte"
+import AllTagsPanel from "../Popup/AllTagsPanel.svelte"
 import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch"
 import { Feature, Point } from "geojson"
 import DivContainer from "../Base/DivContainer"
-import ShowDataLayer from "../ShowDataLayer/ShowDataLayer"
 import SvelteUIElement from "../Base/SvelteUIElement"
+import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers"
+import { MapLibreAdaptor } from "../Map/MapLibreAdaptor"
+import ShowDataLayer from "../Map/ShowDataLayer"
 
 class PreviewPanel extends ScrollableFullScreen {
     constructor(tags: UIEventSource<any>) {
@@ -110,21 +108,11 @@ export class MapPreview
 
             return matching
         })
-        const background = new UIEventSource<BaseLayer>(AvailableBaseLayers.osmCarto)
+        const background = new UIEventSource<RasterLayerPolygon>(AvailableRasterLayers.osmCarto)
         const location = new UIEventSource<Loc>({ lat: 0, lon: 0, zoom: 1 })
         const currentBounds = new UIEventSource<BBox>(undefined)
-        const map = Minimap.createMiniMap({
-            allowMoving: true,
-            location,
-            background,
-            bounds: currentBounds,
-            attribution: new Attribution(
-                location,
-                state.osmConnection.userDetails,
-                undefined,
-                currentBounds
-            ),
-        })
+        const { ui, mapproperties, map } = MapLibreAdaptor.construct()
+
         const layerControl = new BackgroundMapSwitch(
             {
                 backgroundLayer: background,
@@ -132,15 +120,14 @@ export class MapPreview
             },
             background
         )
-        map.SetClass("w-full").SetStyle("height: 500px")
+        ui.SetClass("w-full").SetStyle("height: 500px")
 
         layerPicker.GetValue().addCallbackAndRunD((layerToShow) => {
-            new ShowDataLayer({
-                layerToShow,
+            new ShowDataLayer(map, {
+                layer: layerToShow,
                 zoomToFeatures: true,
                 features: new StaticFeatureSource(matching),
-                leafletMap: map.leafletMap,
-                popup: (tag) => new PreviewPanel(tag),
+                buildPopup: (tag) => new PreviewPanel(tag),
             })
         })
 
@@ -171,9 +158,8 @@ export class MapPreview
             new Title(t.title, 1),
             layerPicker,
             new Toggle(t.autodetected.SetClass("thanks"), undefined, autodetected),
-
             mismatchIndicator,
-            map,
+            ui,
             new DivContainer("fullscreen"),
             layerControl,
             confirm,

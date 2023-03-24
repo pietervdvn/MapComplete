@@ -22,24 +22,25 @@ export class Changes {
     /**
      * All the newly created features as featureSource + all the modified features
      */
-    public features = new UIEventSource<{ feature: any; freshness: Date }[]>([])
+    public readonly features = new UIEventSource<{ feature: any; freshness: Date }[]>([])
     public readonly pendingChanges: UIEventSource<ChangeDescription[]> =
         LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
     public readonly allChanges = new UIEventSource<ChangeDescription[]>(undefined)
     public readonly state: { allElements: ElementStorage; osmConnection: OsmConnection }
     public readonly extraComment: UIEventSource<string> = new UIEventSource(undefined)
 
-    private historicalUserLocations: FeatureSource
+    private readonly historicalUserLocations: FeatureSource
     private _nextId: number = -1 // Newly assigned ID's are negative
     private readonly isUploading = new UIEventSource(false)
     private readonly previouslyCreated: OsmObject[] = []
     private readonly _leftRightSensitive: boolean
-    private _changesetHandler: ChangesetHandler
+    private readonly _changesetHandler: ChangesetHandler
 
     constructor(
         state?: {
             allElements: ElementStorage
             osmConnection: OsmConnection
+            historicalUserLocations: FeatureSource
         },
         leftRightSensitive: boolean = false
     ) {
@@ -53,6 +54,7 @@ export class Changes {
             state.allElements,
             this
         )
+        this.historicalUserLocations = state.historicalUserLocations
 
         // Note: a changeset might be reused which was opened just before and might have already used some ids
         // This doesn't matter however, as the '-1' is per piecewise upload, not global per changeset
@@ -164,7 +166,6 @@ export class Changes {
 
         const now = new Date()
         const recentLocationPoints = locations
-            .map((ff) => ff.feature)
             .filter((feat) => feat.geometry.type === "Point")
             .filter((feat) => {
                 const visitTime = new Date(
@@ -581,9 +582,5 @@ export class Changes {
             "deleted"
         )
         return result
-    }
-
-    public setHistoricalUserLocations(locations: FeatureSource) {
-        this.historicalUserLocations = locations
     }
 }

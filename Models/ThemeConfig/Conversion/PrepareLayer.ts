@@ -23,8 +23,6 @@ import predifined_filters from "../../../assets/layers/filters/filters.json"
 import { TagConfigJson } from "../Json/TagConfigJson"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
-import { type } from "os"
-import exp from "constants"
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static readonly predefinedFilters = ExpandFilter.load_filters()

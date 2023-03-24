@@ -171,9 +171,6 @@ export default class DefaultGUI {
         const state = this.state
         const guiState = this.guiState
 
-        // Attach the map
-        state.mainMapObject.SetClass("w-full h-full").AttachTo("leafletDiv")
-
         this.setupClickDialogOnMap(guiState.filterViewIsOpened, state)
 
         new ShowDataLayer({

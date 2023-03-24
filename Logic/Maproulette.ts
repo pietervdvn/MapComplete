@@ -29,8 +29,9 @@ export default class Maproulette {
     /**
      * The API key to use for all requests
      */
-    private apiKey: string
+    private readonly apiKey: string
 
+    public static singleton = new Maproulette()
     /**
      * Creates a new Maproulette instance
      * @param endpoint The API endpoint to use

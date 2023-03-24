@@ -1,4 +1,4 @@
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { Translation } from "../i18n/Translation"
 import Svg from "../../Svg"
 import { TextField } from "../Input/TextField"
@@ -7,10 +7,15 @@ import Translations from "../i18n/Translations"
 import Hash from "../../Logic/Web/Hash"
 import Combine from "../Base/Combine"
 import Locale from "../i18n/Locale"
+import { BBox } from "../../Logic/BBox"
 
 export default class SearchAndGo extends Combine {
     private readonly _searchField: TextField
-    constructor(state: { leafletMap: UIEventSource<any>; selectedElement?: UIEventSource<any> }) {
+    constructor(state: {
+        leafletMap: UIEventSource<any>
+        selectedElement?: UIEventSource<any>
+        bounds?: Store<BBox>
+    }) {
         const goButton = Svg.search_ui().SetClass("w-8 h-8 full-rounded border-black float-right")
 
         const placeholder = new UIEventSource<Translation>(Translations.t.general.search.search)
@@ -49,7 +54,7 @@ export default class SearchAndGo extends Combine {
             searchField.GetValue().setData("")
             placeholder.setData(Translations.t.general.search.searching)
             try {
-                const result = await Geocoding.Search(searchString)
+                const result = await Geocoding.Search(searchString, state.bounds.data)
 
                 console.log("Search result", result)
                 if (result.length == 0) {

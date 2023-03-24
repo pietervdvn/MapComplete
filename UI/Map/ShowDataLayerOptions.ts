@@ -33,5 +33,5 @@ export interface ShowDataLayerOptions {
     /**
      * Function which fetches the relevant store
      */
-    fetchStore?: (id: string) => Store<OsmTags>
+    fetchStore?: (id: string) => UIEventSource<OsmTags>
 }

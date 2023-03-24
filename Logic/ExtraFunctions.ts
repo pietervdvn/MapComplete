@@ -5,7 +5,7 @@ import BaseUIElement from "../UI/BaseUIElement"
 import List from "../UI/Base/List"
 import Title from "../UI/Base/Title"
 import { BBox } from "./BBox"
-import { Feature, Geometry, MultiPolygon, Polygon } from "@turf/turf"
+import { Feature, Geometry, MultiPolygon, Polygon } from "geojson"
 
 export interface ExtraFuncParams {
     /**
@@ -68,7 +68,7 @@ class EnclosingFunc implements ExtraFunction {
                         }
                         if (
                             GeoOperations.completelyWithin(
-                                feat,
+                                <Feature>feat,
                                 <Feature<Polygon | MultiPolygon, any>>otherFeature
                             )
                         ) {

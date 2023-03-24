@@ -175,7 +175,7 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
 }
 
 class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
-    private _state: DesugaringContext
+    private readonly _state: DesugaringContext
 
     constructor(state: DesugaringContext) {
         super(
@@ -430,7 +430,7 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
     constructor(state: DesugaringContext) {
         super(
             `If a layer has a dependency on another layer, these layers are added automatically on the theme. (For example: defibrillator depends on 'walls_and_buildings' to snap onto. This layer is added automatically)
-            
+
             Note that these layers are added _at the start_ of the layer list, meaning that they will see _every_ feature.
             Furthermore, \`passAllFeatures\` will be set, so that they won't steal away features from further layers.
             Some layers (e.g. \`all_buildings_and_walls\' or \'streets_with_a_name\') are invisible, so by default, \'force_load\' is set too.

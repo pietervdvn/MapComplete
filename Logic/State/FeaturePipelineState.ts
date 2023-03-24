@@ -1,9 +1,7 @@
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import FeaturePipeline from "../FeatureSource/FeaturePipeline"
 import { Tiles } from "../../Models/TileRange"
-import ShowDataLayer from "../../UI/ShowDataLayer/ShowDataLayer"
 import { TileHierarchyAggregator } from "../../UI/ShowDataLayer/TileHierarchyAggregator"
-import ShowTileInfo from "../../UI/ShowDataLayer/ShowTileInfo"
 import { UIEventSource } from "../UIEventSource"
 import MapState from "./MapState"
 import SelectedFeatureHandler from "../Actors/SelectedFeatureHandler"
@@ -14,6 +12,7 @@ import { FeatureSourceForLayer, Tiled } from "../FeatureSource/FeatureSource"
 import MetaTagRecalculator from "../FeatureSource/Actors/MetaTagRecalculator"
 import ScrollableFullScreen from "../../UI/Base/ScrollableFullScreen"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import ShowDataLayer from "../../UI/Map/ShowDataLayer"
 
 export default class FeaturePipelineState extends MapState {
     /**
@@ -116,14 +115,12 @@ export default class FeaturePipelineState extends MapState {
                 [self.currentBounds, source.layer.isDisplayed, sourceBBox]
             )
 
-            new ShowDataLayer({
+            new ShowDataLayer(self.maplibreMap, {
                 features: source,
-                leafletMap: self.leafletMap,
-                layerToShow: source.layer.layerDef,
+                layer: source.layer.layerDef,
                 doShowLayer: doShowFeatures,
                 selectedElement: self.selectedElement,
-                state: self,
-                popup: (tags, layer) => self.CreatePopup(tags, layer),
+                buildPopup: (tags, layer) => self.CreatePopup(tags, layer),
             })
         }
 
@@ -136,8 +133,6 @@ export default class FeaturePipelineState extends MapState {
         sourcesToRegister.forEach((source) => self.metatagRecalculator.registerSource(source))
 
         new SelectedFeatureHandler(Hash.hash, this)
-
-        this.AddClusteringToMap(this.leafletMap)
     }
 
     public CreatePopup(tags: UIEventSource<any>, layer: LayerConfig): ScrollableFullScreen {
@@ -147,28 +142,5 @@ export default class FeaturePipelineState extends MapState {
         const popup = new FeatureInfoBox(tags, layer, this)
         this.popups.set(tags.data.id, popup)
         return popup
-    }
-
-    /**
-     * Adds the cluster-tiles to the given map
-     * @param leafletMap: a UIEventSource possible having a leaflet map
-     * @constructor
-     */
-    public AddClusteringToMap(leafletMap: UIEventSource<any>) {
-        const clustering = this.layoutToUse.clustering
-        const self = this
-        new ShowDataLayer({
-            features: this.featureAggregator.getCountsForZoom(
-                clustering,
-                this.locationControl,
-                clustering.minNeededElements
-            ),
-            leafletMap: leafletMap,
-            layerToShow: ShowTileInfo.styling,
-            popup: this.featureSwitchIsDebugging.data
-                ? (tags, layer) => new FeatureInfoBox(tags, layer, self)
-                : undefined,
-            state: this,
-        })
     }
 }

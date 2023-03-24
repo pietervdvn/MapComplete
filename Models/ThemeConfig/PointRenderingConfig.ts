@@ -175,7 +175,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         )
     }
 
-    public GenerateLeafletStyle(
+    public RenderIcon(
         tags: Store<OsmTags>,
         clickable: boolean,
         options?: {
@@ -210,7 +210,7 @@ export default class PointRenderingConfig extends WithContextLoader {
 
         // in MapLibre, the offset is relative to the _center_ of the object, with left = [-x, 0] and up = [0,-y]
         let anchorW = 0
-        let anchorH = iconH / 2
+        let anchorH = 0
         if (mode === "left") {
             anchorW = -iconW / 2
         }

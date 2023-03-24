@@ -1,5 +1,5 @@
 import FloorLevelInputElement from "../Input/FloorLevelInputElement"
-import MapState, { GlobalFilter } from "../../Logic/State/MapState"
+import MapState from "../../Logic/State/MapState"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import { RegexTag } from "../../Logic/Tags/RegexTag"
 import { Or } from "../../Logic/Tags/Or"
@@ -11,6 +11,7 @@ import { BBox } from "../../Logic/BBox"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
 import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline"
 import { Store } from "../../Logic/UIEventSource"
+import { GlobalFilter } from "../../Logic/State/GlobalFilter"
 
 /***
  * The element responsible for the level input element and picking the right level, showing and hiding at the right time, ...

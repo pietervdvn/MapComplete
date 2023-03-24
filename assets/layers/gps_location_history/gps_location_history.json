@@ -3,11 +3,7 @@
   "description": "Meta layer which contains the previous locations of the user as single points. This is mainly for technical reasons, e.g. to keep match the distance to the modified object",
   "minzoom": 1,
   "name": null,
-  "source": {
-    "osmTags": "user:location=yes",
-    "#": "Cache is disabled here as these points are kept seperately",
-    "maxCacheAge": 0
-  },
+  "source": "special",
   "shownByDefault": false,
   "mapRendering": [
     {
