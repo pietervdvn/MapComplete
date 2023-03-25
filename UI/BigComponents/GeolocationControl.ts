@@ -31,7 +31,6 @@ export class GeolocationControl extends VariableUiElement {
                     return false
                 }
                 const timeDiff = (new Date().getTime() - date.getTime()) / 1000
-                console.log("Timediff", timeDiff)
                 return timeDiff <= Constants.zoomToLocationTimeout
             }
         )

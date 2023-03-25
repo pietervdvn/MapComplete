@@ -18,7 +18,7 @@ async function main(includeTags = true) {
         if (layer.source["geoJson"] !== undefined && !layer.source["isOsmCache"]) {
             continue
         }
-        if (Constants.priviliged_layers.indexOf(layer.id) >= 0) {
+        if (layer.source == null || typeof layer.source === "string") {
             continue
         }
 

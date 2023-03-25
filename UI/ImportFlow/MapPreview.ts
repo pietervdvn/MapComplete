@@ -59,7 +59,7 @@ export class MapPreview
         }
 
         const availableLayers = AllKnownLayouts.AllPublicLayers().filter(
-            (l) => l.name !== undefined && Constants.priviliged_layers.indexOf(l.id) < 0
+            (l) => l.name !== undefined && l.source !== undefined
         )
         const layerPicker = new DropDown(
             t.selectLayer,

@@ -8,12 +8,13 @@ import PointRenderingConfig from "../../Models/ThemeConfig/PointRenderingConfig"
 import { OsmTags } from "../../Models/OsmFeature"
 import FeatureSource from "../../Logic/FeatureSource/FeatureSource"
 import { BBox } from "../../Logic/BBox"
-import { Feature, LineString } from "geojson"
+import { Feature } from "geojson"
 import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 import LineRenderingConfig from "../../Models/ThemeConfig/LineRenderingConfig"
 import { Utils } from "../../Utils"
 import * as range_layer from "../../assets/layers/range/range.json"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
+
 class PointRenderingLayer {
     private readonly _config: PointRenderingConfig
     private readonly _fetchStore?: (id: string) => Store<OsmTags>
@@ -44,6 +45,16 @@ class PointRenderingLayer {
         const unseenKeys = new Set(cache.keys())
         for (const location of this._config.location) {
             for (const feature of features) {
+                if (feature?.geometry === undefined) {
+                    console.warn(
+                        "Got an invalid feature:",
+                        features,
+                        " while rendering",
+                        location,
+                        "of",
+                        this._config
+                    )
+                }
                 const loc = GeoOperations.featureToCoordinateWithRenderingType(
                     <any>feature,
                     location
@@ -102,7 +113,14 @@ class PointRenderingLayer {
             })
         }
 
-        return new Marker(el).setLngLat(loc).setOffset(iconAnchor).addTo(this._map)
+        const marker = new Marker(el).setLngLat(loc).setOffset(iconAnchor).addTo(this._map)
+        store
+            .map((tags) => this._config.pitchAlignment.GetRenderValue(tags).Subs(tags).txt)
+            .addCallbackAndRun((pitchAligment) => marker.setPitchAlignment(pitchAligment))
+        store
+            .map((tags) => this._config.rotationAlignment.GetRenderValue(tags).Subs(tags).txt)
+            .addCallbackAndRun((pitchAligment) => marker.setRotationAlignment(pitchAligment))
+        return marker
     }
 }
 
@@ -118,13 +136,17 @@ class LineRenderingLayer {
         "offset",
         "fill",
         "fillColor",
-    ]
+    ] as const
+
+    private static readonly lineConfigKeysColor = ["color", "fillColor"] as const
+    private static readonly lineConfigKeysNumber = ["width", "offset"] as const
     private readonly _map: MlMap
     private readonly _config: LineRenderingConfig
     private readonly _visibility?: Store<boolean>
     private readonly _fetchStore?: (id: string) => Store<OsmTags>
     private readonly _onClick?: (id: string) => void
     private readonly _layername: string
+    private readonly _listenerInstalledOn: Set<string> = new Set<string>()
 
     constructor(
         map: MlMap,
@@ -145,6 +167,39 @@ class LineRenderingLayer {
         features.features.addCallbackAndRunD((features) => self.update(features))
     }
 
+    private calculatePropsFor(
+        properties: Record<string, string>
+    ): Partial<Record<typeof LineRenderingLayer.lineConfigKeys[number], string>> {
+        const calculatedProps = {}
+        const config = this._config
+
+        for (const key of LineRenderingLayer.lineConfigKeys) {
+            const v = config[key]?.GetRenderValue(properties)?.Subs(properties).txt
+            calculatedProps[key] = v
+        }
+        for (const key of LineRenderingLayer.lineConfigKeysColor) {
+            let v = config[key]?.GetRenderValue(properties)?.Subs(properties).txt
+            if (v === undefined) {
+                continue
+            }
+            console.log("Color", v)
+            if (v.length == 9 && v.startsWith("#")) {
+                // This includes opacity
+                calculatedProps[key + "-opacity"] = parseInt(v.substring(7), 16) / 256
+                v = v.substring(0, 7)
+                console.log("Color >", v, calculatedProps[key + "-opacity"])
+            }
+            calculatedProps[key] = v
+        }
+        for (const key of LineRenderingLayer.lineConfigKeysNumber) {
+            const v = config[key]?.GetRenderValue(properties)?.Subs(properties).txt
+            calculatedProps[key] = Number(v)
+        }
+
+        console.log("Calculated props:", calculatedProps, "for", properties.id)
+        return calculatedProps
+    }
+
     private async update(features: Feature[]) {
         const map = this._map
         while (!map.isStyleLoaded()) {
@@ -158,31 +213,14 @@ class LineRenderingLayer {
             },
             promoteId: "id",
         })
-        for (let i = 0; i < features.length; i++) {
-            const feature = features[i]
-            const id = feature.properties.id ?? "" + i
-            const tags = this._fetchStore(id)
-            tags.addCallbackAndRunD((properties) => {
-                const config = this._config
-
-                const calculatedProps = {}
-                for (const key of LineRenderingLayer.lineConfigKeys) {
-                    const v = config[key]?.GetRenderValue(properties)?.Subs(properties).txt
-                    calculatedProps[key] = v
-                }
-
-                map.setFeatureState({ source: this._layername, id }, calculatedProps)
-            })
-        }
 
         map.addLayer({
             source: this._layername,
             id: this._layername + "_line",
             type: "line",
-            filter: ["in", ["geometry-type"], ["literal", ["LineString", "MultiLineString"]]],
-            layout: {},
             paint: {
                 "line-color": ["feature-state", "color"],
+                "line-opacity": ["feature-state", "color-opacity"],
                 "line-width": ["feature-state", "width"],
                 "line-offset": ["feature-state", "offset"],
             },
@@ -205,12 +243,49 @@ class LineRenderingLayer {
             layout: {},
             paint: {
                 "fill-color": ["feature-state", "fillColor"],
+                "fill-opacity": 0.1,
             },
         })
+
+        for (let i = 0; i < features.length; i++) {
+            const feature = features[i]
+            const id = feature.properties.id ?? feature.id
+            console.log("ID is", id)
+            if (id === undefined) {
+                console.trace(
+                    "Got a feature without ID; this causes rendering bugs:",
+                    feature,
+                    "from"
+                )
+                continue
+            }
+            if (this._listenerInstalledOn.has(id)) {
+                continue
+            }
+            if (this._fetchStore === undefined) {
+                map.setFeatureState(
+                    { source: this._layername, id },
+                    this.calculatePropsFor(feature.properties)
+                )
+            } else {
+                const tags = this._fetchStore(id)
+                this._listenerInstalledOn.add(id)
+                tags.addCallbackAndRunD((properties) => {
+                    map.setFeatureState(
+                        { source: this._layername, id },
+                        this.calculatePropsFor(properties)
+                    )
+                })
+            }
+        }
     }
 }
 
 export default class ShowDataLayer {
+    private static rangeLayer = new LayerConfig(
+        <LayerConfigJson>range_layer,
+        "ShowDataLayer.ts:range.json"
+    )
     private readonly _map: Store<MlMap>
     private readonly _options: ShowDataLayerOptions & { layer: LayerConfig }
     private readonly _popupCache: Map<string, ScrollableFullScreen>
@@ -222,11 +297,6 @@ export default class ShowDataLayer {
         const self = this
         map.addCallbackAndRunD((map) => self.initDrawFeatures(map))
     }
-
-    private static rangeLayer = new LayerConfig(
-        <LayerConfigJson>range_layer,
-        "ShowDataLayer.ts:range.json"
-    )
 
     public static showRange(
         map: Store<MlMap>,
@@ -241,6 +311,9 @@ export default class ShowDataLayer {
     }
 
     private openOrReusePopup(id: string): void {
+        if (!this._popupCache || !this._options.fetchStore) {
+            return
+        }
         if (this._popupCache.has(id)) {
             this._popupCache.get(id).Activate()
             return
@@ -267,11 +340,12 @@ export default class ShowDataLayer {
     private initDrawFeatures(map: MlMap) {
         const { features, doShowLayer, fetchStore, buildPopup } = this._options
         const onClick = buildPopup === undefined ? undefined : (id) => this.openOrReusePopup(id)
-        for (const lineRenderingConfig of this._options.layer.lineRendering) {
+        for (let i = 0; i < this._options.layer.lineRendering.length; i++) {
+            const lineRenderingConfig = this._options.layer.lineRendering[i]
             new LineRenderingLayer(
                 map,
                 features,
-                "test",
+                this._options.layer.id + "_linerendering_" + i,
                 lineRenderingConfig,
                 doShowLayer,
                 fetchStore,

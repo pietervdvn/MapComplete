@@ -26,31 +26,30 @@ export default class Constants {
         // Doesn't support nwr: "https://overpass.openstreetmap.fr/api/interpreter"
     ]
 
-    public static readonly added_by_default: string[] = [
+    public static readonly added_by_default = [
         "selected_element",
         "gps_location",
         "gps_location_history",
         "home_location",
         "gps_track",
-    ]
-    public static readonly no_include: string[] = [
+        "range",
+    ] as const
+    /**
+     * Special layers which are not included in a theme by default
+     */
+    public static readonly no_include = [
         "conflation",
-        "left_right_style",
         "split_point",
         "current_view",
         "matchpoint",
-    ]
+    ] as const
     /**
      * Layer IDs of layers which have special properties through built-in hooks
      */
-    public static readonly priviliged_layers: string[] = [
+    public static readonly priviliged_layers = [
         ...Constants.added_by_default,
-        "type_node",
-        "note",
-        "import_candidate",
-        "direction",
         ...Constants.no_include,
-    ]
+    ] as const
 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {

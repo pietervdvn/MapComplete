@@ -845,7 +845,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 }
 
                 if (json.description === undefined) {
-                    if (Constants.priviliged_layers.indexOf(json.id) >= 0) {
+                    if (typeof json.source === null) {
                         errors.push(context + ": A priviliged layer must have a description")
                     } else {
                         warnings.push(context + ": A builtin layer should have a description")
@@ -882,6 +882,9 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
 
             if (json.presets !== undefined) {
+                if (typeof json.source === "string") {
+                    throw "A special layer cannot have presets"
+                }
                 // Check that a preset will be picked up by the layer itself
                 const baseTags = TagUtils.Tag(json.source.osmTags)
                 for (let i = 0; i < json.presets.length; i++) {

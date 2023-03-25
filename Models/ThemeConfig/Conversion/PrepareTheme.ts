@@ -255,7 +255,7 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
         const creator = new CreateNoteImportLayer()
         for (let i1 = 0; i1 < allLayers.length; i1++) {
             const layer = allLayers[i1]
-            if (Constants.priviliged_layers.indexOf(layer.id) >= 0) {
+            if (layer.source === undefined) {
                 // Priviliged layers are skipped
                 continue
             }
@@ -600,7 +600,7 @@ class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
         // All other preparations are done by the 'override-all'-block in personal.json
 
         json.layers = Array.from(this._state.sharedLayers.keys())
-            .filter((l) => Constants.priviliged_layers.indexOf(l) < 0)
+            .filter((l) => this._state.sharedLayers.get(l).source !== null)
             .filter((l) => this._state.publicLayers.has(l))
         return {
             result: json,

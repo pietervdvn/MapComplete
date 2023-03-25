@@ -77,4 +77,15 @@ export default interface PointRenderingConfigJson {
      * A snippet of css-classes. They can be space-separated
      */
     cssClasses?: string | TagRenderingConfigJson
+
+    /**
+     * If the map is pitched, the marker will stay parallel to the screen.
+     * Set to 'map' if you want to put it flattened on the map
+     */
+    pitchAlignment?: "canvas" | "map" | TagRenderingConfigJson
+
+    /**
+     * If the map is rotated, the icon will still point to the north if no rotation was applied
+     */
+    rotationAlignment?: "map" | "canvas" | TagRenderingConfigJson
 }

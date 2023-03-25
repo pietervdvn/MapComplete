@@ -12,6 +12,7 @@ import Img from "../../UI/Base/Img"
 import Combine from "../../UI/Base/Combine"
 import { VariableUiElement } from "../../UI/Base/VariableUIElement"
 import { OsmTags } from "../OsmFeature"
+import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 
 export default class PointRenderingConfig extends WithContextLoader {
     private static readonly allowed_location_codes = new Set<string>([
@@ -32,6 +33,8 @@ export default class PointRenderingConfig extends WithContextLoader {
     public readonly rotation: TagRenderingConfig
     public readonly cssDef: TagRenderingConfig
     public readonly cssClasses?: TagRenderingConfig
+    public readonly pitchAlignment?: TagRenderingConfig
+    public readonly rotationAlignment?: TagRenderingConfig
 
     constructor(json: PointRenderingConfigJson, context: string) {
         super(json, context)
@@ -88,6 +91,14 @@ export default class PointRenderingConfig extends WithContextLoader {
         this.iconSize = this.tr("iconSize", "40,40,center")
         this.label = this.tr("label", undefined)
         this.rotation = this.tr("rotation", "0")
+        if (json.pitchAlignment) {
+            console.log("Got a pitch alignment!", json.pitchAlignment)
+        }
+        this.pitchAlignment = this.tr("pitchAlignment", "canvas")
+        this.rotationAlignment = this.tr(
+            "rotationAlignment",
+            json.pitchAlignment === "map" ? "map" : "canvas"
+        )
     }
 
     /**

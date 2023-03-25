@@ -132,7 +132,7 @@ function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any[] {
 function generateTagInfoEntry(layout: LayoutConfig): any {
     const usedTags = []
     for (const layer of layout.layers) {
-        if (Constants.priviliged_layers.indexOf(layer.id) >= 0) {
+        if (layer.source === null) {
             continue
         }
         if (layer.source.geojsonSource !== undefined && layer.source.isOsmCacheLayer !== true) {

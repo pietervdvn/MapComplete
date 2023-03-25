@@ -6,9 +6,9 @@
   "name": null,
   "mapRendering": [
     {
-      "width": 4,
+      "width": 3,
       "fill": "no",
-      "color": "#ff000088"
+      "color": "#cc00cc"
     }
   ]
 }

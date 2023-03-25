@@ -15,6 +15,7 @@
         ]
       },
       "iconSize": "40,40,center",
+      "pitchAlignment": "map",
       "rotation": {
         "render": "0deg",
         "mappings": [

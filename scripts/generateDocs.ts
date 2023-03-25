@@ -114,7 +114,7 @@ function GenLayerOverviewText(): BaseUIElement {
     }
 
     const allLayers: LayerConfig[] = Array.from(AllSharedLayers.sharedLayers.values()).filter(
-        (layer) => Constants.priviliged_layers.indexOf(layer.id) < 0
+        (layer) => layer.source === null
     )
 
     const builtinLayerIds: Set<string> = new Set<string>()
@@ -183,7 +183,7 @@ function GenOverviewsForSingleLayer(
     callback: (layer: LayerConfig, element: BaseUIElement, inlineSource: string) => void
 ): void {
     const allLayers: LayerConfig[] = Array.from(AllSharedLayers.sharedLayers.values()).filter(
-        (layer) => Constants.priviliged_layers.indexOf(layer.id) < 0
+        (layer) => layer.source !== null
     )
     const builtinLayerIds: Set<string> = new Set<string>()
     allLayers.forEach((l) => builtinLayerIds.add(l.id))
@@ -195,7 +195,7 @@ function GenOverviewsForSingleLayer(
         }
 
         for (const layer of layout.layers) {
-            if (Constants.priviliged_layers.indexOf(layer.id) >= 0) {
+            if (layer.source === null) {
                 continue
             }
             if (builtinLayerIds.has(layer.id)) {

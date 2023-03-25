@@ -1,6 +1,6 @@
 {
   "id": "import_candidate",
-  "description": "Layer used in the importHelper",
+  "description": "Layer used as template in the importHelper",
   "source":"special",
   "mapRendering": [
     {

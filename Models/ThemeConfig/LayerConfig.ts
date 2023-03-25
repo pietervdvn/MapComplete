@@ -86,9 +86,9 @@ export default class LayerConfig extends WithContextLoader {
             throw "Layer " + this.id + " does not define a source section (" + context + ")"
         }
 
-        if(json.source === "special" || json.source === "special:library"){
+        if (json.source === "special" || json.source === "special:library") {
             this.source = null
-        }else if (json.source.osmTags === undefined) {
+        } else if (json.source.osmTags === undefined) {
             throw (
                 "Layer " +
                 this.id +
@@ -105,7 +105,6 @@ export default class LayerConfig extends WithContextLoader {
             throw `${context}: The id of a layer should match [a-z0-9-_]*: ${json.id}`
         }
 
-        this.maxAgeOfCache = json.source.maxCacheAge ?? 24 * 60 * 60 * 30
         if (
             json.syncSelection !== undefined &&
             LayerConfig.syncSelectionAllowed.indexOf(json.syncSelection) < 0
@@ -120,13 +119,28 @@ export default class LayerConfig extends WithContextLoader {
             )
         }
         this.syncSelection = json.syncSelection ?? "no"
-        const osmTags = TagUtils.Tag(json.source.osmTags, context + "source.osmTags")
+        if (typeof json.source !== "string") {
+            this.maxAgeOfCache = json.source.maxCacheAge ?? 24 * 60 * 60 * 30
+            const osmTags = TagUtils.Tag(json.source.osmTags, context + "source.osmTags")
+            if (osmTags.isNegative()) {
+                throw (
+                    context +
+                    "The source states tags which give a very wide selection: it only uses negative expressions, which will result in too much and unexpected data. Add at least one required tag. The tags are:\n\t" +
+                    osmTags.asHumanString(false, false, {})
+                )
+            }
 
-        if (Constants.priviliged_layers.indexOf(this.id) < 0 && osmTags.isNegative()) {
-            throw (
-                context +
-                "The source states tags which give a very wide selection: it only uses negative expressions, which will result in too much and unexpected data. Add at least one required tag. The tags are:\n\t" +
-                osmTags.asHumanString(false, false, {})
+            this.source = new SourceConfig(
+                {
+                    osmTags: osmTags,
+                    geojsonSource: json.source["geoJson"],
+                    geojsonSourceLevel: json.source["geoJsonZoomLevel"],
+                    overpassScript: json.source["overpassScript"],
+                    isOsmCache: json.source["isOsmCache"],
+                    mercatorCrs: json.source["mercatorCrs"],
+                    idKey: json.source["idKey"],
+                },
+                json.id
             )
         }
 
@@ -137,20 +151,6 @@ export default class LayerConfig extends WithContextLoader {
         if (json.source["geojson"] !== undefined) {
             throw context + "Use 'geoJson' instead of 'geojson' (the J is a capital letter)"
         }
-
-        this.source = new SourceConfig(
-            {
-                osmTags: osmTags,
-                geojsonSource: json.source["geoJson"],
-                geojsonSourceLevel: json.source["geoJsonZoomLevel"],
-                overpassScript: json.source["overpassScript"],
-                isOsmCache: json.source["isOsmCache"],
-                mercatorCrs: json.source["mercatorCrs"],
-                idKey: json.source["idKey"],
-            },
-            Constants.priviliged_layers.indexOf(this.id) > 0,
-            json.id
-        )
 
         this.allowSplit = json.allowSplit ?? false
         this.name = Translations.T(json.name, translationContext + ".name")
@@ -250,7 +250,7 @@ export default class LayerConfig extends WithContextLoader {
                     | "osmbasedmap"
                     | "historicphoto"
                     | string
-                )[]
+                    )[]
                 if (typeof pr.preciseInput.preferredBackground === "string") {
                     preferredBackground = [pr.preciseInput.preferredBackground]
                 } else {
@@ -597,7 +597,7 @@ export default class LayerConfig extends WithContextLoader {
         }
 
         let overpassLink: BaseUIElement = undefined
-        if (Constants.priviliged_layers.indexOf(this.id) < 0) {
+        if (this.source !== undefined) {
             try {
                 overpassLink = new Link(
                     "Execute on overpass",

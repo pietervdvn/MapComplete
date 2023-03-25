@@ -7,14 +7,9 @@ import { ElementStorage } from "../ElementStorage"
 import { Utils } from "../../Utils"
 
 export default class TitleHandler {
-    constructor(state: {
-        selectedElement: Store<any>
-        layoutToUse: LayoutConfig
-        allElements: ElementStorage
-    }) {
-        const currentTitle: Store<string> = state.selectedElement.map(
+    constructor(selectedElement: Store<any>, layout: LayoutConfig, allElements: ElementStorage) {
+        const currentTitle: Store<string> = selectedElement.map(
             (selected) => {
-                const layout = state.layoutToUse
                 const defaultTitle = layout?.title?.txt ?? "MapComplete"
 
                 if (selected === undefined) {
@@ -28,8 +23,7 @@ export default class TitleHandler {
                     }
                     if (layer.source.osmTags.matchesProperties(tags)) {
                         const tagsSource =
-                            state.allElements.getEventSourceById(tags.id) ??
-                            new UIEventSource<any>(tags)
+                            allElements.getEventSourceById(tags.id) ?? new UIEventSource<any>(tags)
                         const title = new TagRenderingAnswer(tagsSource, layer.title, {})
                         return (
                             new Combine([defaultTitle, " | ", title]).ConstructElement()

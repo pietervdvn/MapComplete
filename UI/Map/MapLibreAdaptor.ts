@@ -14,12 +14,12 @@ import Constants from "../../Models/Constants"
  */
 export class MapLibreAdaptor implements MapProperties {
     private static maplibre_control_handlers = [
-        "scrollZoom",
-        "boxZoom",
+        // "scrollZoom",
+        // "boxZoom",
+        // "doubleClickZoom",
         "dragRotate",
         "dragPan",
         "keyboard",
-        "doubleClickZoom",
         "touchZoomRotate",
     ]
     readonly location: UIEventSource<{ lon: number; lat: number }>

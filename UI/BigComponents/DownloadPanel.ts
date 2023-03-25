@@ -228,7 +228,7 @@ export class DownloadPanel extends Toggle {
             new Set(neededLayers)
         )
         for (const tile of featureList) {
-            if (Constants.priviliged_layers.indexOf(tile.layer) >= 0) {
+            if (tile.layer !== undefined) {
                 continue
             }
 

@@ -21,11 +21,13 @@
   import Svg from "../Svg";
   import If from "./Base/If.svelte";
   import { GeolocationControl } from "./BigComponents/GeolocationControl.js";
-  import FeaturePipeline from "../Logic/FeatureSource/FeaturePipeline";
   import { BBox } from "../Logic/BBox";
   import ShowDataLayer from "./Map/ShowDataLayer";
   import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
-
+  import type FeatureSource from "../Logic/FeatureSource/FeatureSource";
+  import LayerState from "../Logic/State/LayerState";
+  import Constants from "../Models/Constants";
+  import type { Feature } from "geojson";
   export let layout: LayoutConfig;
 
   const maplibremap: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined);
@@ -46,7 +48,7 @@
     osmConfiguration: <"osm" | "osm-test">featureSwitches.featureSwitchApiURL.data
   });
   const userRelatedState = new UserRelatedState(osmConnection, layout?.language);
-  const selectedElement = new UIEventSource<any>(undefined, "Selected element");
+  const selectedElement = new UIEventSource<Feature | undefined>(undefined, "Selected element");
   const geolocation = new GeoLocationHandler(geolocationState, selectedElement, mapproperties, userRelatedState.gpsLocationHistoryRetentionTime);
 
   const allElements = new ElementStorage();
@@ -55,16 +57,19 @@
     osmConnection,
     historicalUserLocations: geolocation.historicalUserLocations
   }, layout?.isLeftRightSensitive() ?? false);
-  
-  Map
-  
+  console.log("Setting up layerstate...")
+  const layerState = new LayerState(osmConnection, layout.layers, layout.id)
   {
     // Various actors that we don't need to reference 
+    // TODO enable new TitleHandler(selectedElement,layout,allElements)
     new ChangeToElementsActor(changes, allElements);
     new PendingChangesUploader(changes, selectedElement);
     new SelectedElementTagsUpdater({
       allElements, changes, selectedElement, layoutToUse: layout, osmConnection
     });
+    
+    
+    
     // Various initial setup
     userRelatedState.markLayoutAsVisited(layout);
     if(layout?.lockLocation){
@@ -76,7 +81,37 @@
         featureSwitches.featureSwitchIsTesting
       )
     }
-    
+
+
+    type AddedByDefaultTypes = typeof Constants.added_by_default[number]
+    /**
+     * A listing which maps the layerId onto the featureSource
+     */
+    const empty = []
+    const specialLayers : Record<AddedByDefaultTypes | "current_view", FeatureSource> = {
+      "home_location": userRelatedState.homeLocation,
+      gps_location: geolocation.currentUserLocation,
+      gps_location_history: geolocation.historicalUserLocations,
+      gps_track: geolocation.historicalUserLocationsTrack,
+      selected_element: new StaticFeatureSource(selectedElement.map(f => f === undefined ? empty : [f])),
+      range: new StaticFeatureSource(mapproperties.maxbounds.map(bbox => bbox === undefined ? empty : <Feature[]> [bbox.asGeoJson({id:"range"})])) ,
+      current_view: new StaticFeatureSource(mapproperties.bounds.map(bbox => bbox === undefined ? empty : <Feature[]> [bbox.asGeoJson({id:"current_view"})])),
+    }
+    layerState.filteredLayers.get("range")?.isDisplayed?.syncWith(featureSwitches.featureSwitchIsTesting, true)
+console.log("RAnge fs", specialLayers.range)
+    specialLayers.range.features.addCallbackAndRun(fs => console.log("Range.features:", JSON.stringify(fs)))
+    layerState.filteredLayers.forEach((flayer) => {
+      const features = specialLayers[flayer.layerDef.id]
+      if(features === undefined){
+        return
+      }
+      new ShowDataLayer(maplibremap, {
+        features,
+        doShowLayer: flayer.isDisplayed,
+        layer: flayer.layerDef,
+        selectedElement
+      })
+    })
   }
 </script>
 
@@ -93,15 +128,12 @@
 </div>
 
 <div class="absolute bottom-0 right-0 mb-4 mr-4">
-
-  <If condition={mapproperties.allowMoving}>
-    <MapControlButton on:click={() => mapproperties.zoom.update(z => z+1)}>
-      <ToSvelte class="w-7 h-7 block" construct={Svg.plus_ui}></ToSvelte>
-    </MapControlButton>
-    <MapControlButton on:click={() => mapproperties.zoom.update(z => z-1)}>
-      <ToSvelte class="w-7 h-7 block" construct={Svg.min_ui}></ToSvelte>
-    </MapControlButton>
-  </If>
+  <MapControlButton on:click={() => mapproperties.zoom.update(z => z+1)}>
+    <ToSvelte class="w-7 h-7 block" construct={Svg.plus_ui}></ToSvelte>
+  </MapControlButton>
+  <MapControlButton on:click={() => mapproperties.zoom.update(z => z-1)}>
+    <ToSvelte class="w-7 h-7 block" construct={Svg.min_ui}></ToSvelte>
+  </MapControlButton>
   <If condition={featureSwitches.featureSwitchGeolocation}>
     <MapControlButton>
       <ToSvelte construct={() => new GeolocationControl(geolocation, mapproperties).SetClass("block w-8 h-8")}></ToSvelte>

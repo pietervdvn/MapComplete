@@ -50,7 +50,7 @@ export default class FeaturePipeline {
     public readonly relationTracker: RelationsTracker
     /**
      * Keeps track of all raw OSM-nodes.
-     * Only initialized if 'type_node' is defined as layer
+     * Only initialized if `ReplaceGeometryAction` is needed somewhere
      */
     public readonly fullNodeDatabase?: FullNodeDatabaseSource
     private readonly overpassUpdater: OverpassFeatureSource
@@ -132,14 +132,6 @@ export default class FeaturePipeline {
             // We do not mark as visited here, this is the responsability of the code near the actual loader (e.g. overpassLoader and OSMApiFeatureLoader)
         }
 
-        function handlePriviligedFeatureSource(src: FeatureSourceForLayer & Tiled) {
-            // Passthrough to passed function, except that it registers as well
-            handleFeatureSource(src)
-            src.features.addCallbackAndRunD((fs) => {
-                fs.forEach((ff) => state.allElements.addOrGetElement(<any>ff))
-            })
-        }
-
         for (const filteredLayer of state.filteredLayers.data) {
             const id = filteredLayer.layerDef.id
             const source = filteredLayer.layerDef.source
@@ -157,36 +149,6 @@ export default class FeaturePipeline {
                     perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
                     tile.features.addCallbackAndRunD((_) => self.onNewDataLoaded(tile))
                 })
-                continue
-            }
-
-            if (id === "selected_element") {
-                handlePriviligedFeatureSource(state.selectedElementsLayer)
-                continue
-            }
-
-            if (id === "gps_location") {
-                handlePriviligedFeatureSource(state.currentUserLocation)
-                continue
-            }
-
-            if (id === "gps_location_history") {
-                handlePriviligedFeatureSource(state.historicalUserLocations)
-                continue
-            }
-
-            if (id === "gps_track") {
-                handlePriviligedFeatureSource(state.historicalUserLocationsTrack)
-                continue
-            }
-
-            if (id === "home_location") {
-                handlePriviligedFeatureSource(state.homeLocation)
-                continue
-            }
-
-            if (id === "current_view") {
-                handlePriviligedFeatureSource(state.currentView)
                 continue
             }
 

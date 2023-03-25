@@ -14,7 +14,7 @@ import ScrollableFullScreen from "../../UI/Base/ScrollableFullScreen"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import ShowDataLayer from "../../UI/Map/ShowDataLayer"
 
-export default class FeaturePipelineState extends MapState {
+export default class FeaturePipelineState {
     /**
      * The piece of code which fetches data from various sources and shows it on the background map
      */
@@ -27,8 +27,6 @@ export default class FeaturePipelineState extends MapState {
     >()
 
     constructor(layoutToUse: LayoutConfig) {
-        super(layoutToUse)
-
         const clustering = layoutToUse?.clustering
         this.featureAggregator = TileHierarchyAggregator.createHierarchy(this)
         const clusterCounter = this.featureAggregator

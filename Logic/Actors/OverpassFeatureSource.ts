@@ -148,7 +148,7 @@ export default class OverpassFeatureSource implements FeatureSource {
             if (typeof layer === "string") {
                 throw "A layer was not expanded!"
             }
-            if (Constants.priviliged_layers.indexOf(layer.id) >= 0) {
+            if (layer.source === undefined) {
                 continue
             }
             if (this.state.locationControl.data.zoom < layer.minzoom) {

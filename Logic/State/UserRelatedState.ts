@@ -6,6 +6,7 @@ import Locale from "../../UI/i18n/Locale"
 import { Changes } from "../Osm/Changes"
 import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource"
 import FeatureSource from "../FeatureSource/FeatureSource"
+import { Feature } from "geojson"
 
 /**
  * The part of the state which keeps track of user-related stuff, e.g. the OSM-connection,
@@ -182,7 +183,7 @@ export default class UserRelatedState {
 
     private initHomeLocation(): FeatureSource {
         const empty = []
-        const feature = Stores.ListStabilized(
+        const feature: Store<Feature[]> = Stores.ListStabilized(
             this.osmConnection.userDetails.map((userDetails) => {
                 if (userDetails === undefined) {
                     return undefined
@@ -198,21 +199,18 @@ export default class UserRelatedState {
                 return empty
             }
             return [
-                {
-                    feature: {
-                        type: "Feature",
-                        properties: {
-                            id: "home",
-                            "user:home": "yes",
-                            _lon: homeLonLat[0],
-                            _lat: homeLonLat[1],
-                        },
-                        geometry: {
-                            type: "Point",
-                            coordinates: homeLonLat,
-                        },
+                <Feature>{
+                    type: "Feature",
+                    properties: {
+                        id: "home",
+                        "user:home": "yes",
+                        _lon: homeLonLat[0],
+                        _lat: homeLonLat[1],
                     },
-                    freshness: new Date(),
+                    geometry: {
+                        type: "Point",
+                        coordinates: homeLonLat,
+                    },
                 },
             ]
         })

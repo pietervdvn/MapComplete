@@ -29,29 +29,6 @@
   },
   "layers": [
     {
-      "builtin": "type_node",
-      "override": {
-        "calculatedTags": [
-          "_is_part_of_building=feat.get('parent_ways')?.some(p => p.building !== undefined && p.building !== '') ?? false",
-          "_is_part_of_grb_building=feat.get('parent_ways')?.some(p => p['source:geometry:ref'] !== undefined) ?? false",
-          "_is_part_of_building_passage=feat.get('parent_ways')?.some(p => p.tunnel === 'building_passage') ?? false",
-          "_is_part_of_highway=!feat.get('is_part_of_building_passage') && (feat.get('parent_ways')?.some(p => p.highway !== undefined && p.highway !== '') ?? false)",
-          "_is_part_of_landuse=feat.get('parent_ways')?.some(p => (p.landuse !== undefined && p.landuse !== '') || (p.natural !== undefined && p.natural !== '')) ?? false",
-          "_moveable=feat.get('_is_part_of_building') && !feat.get('_is_part_of_grb_building')"
-        ],
-        "mapRendering": [
-          {
-            "icon": "square:#cc0",
-            "iconSize": "5,5,center",
-            "location": [
-              "point"
-            ]
-          }
-        ],
-        "passAllFeatures": true
-      }
-    },
-    {
       "id": "osm-buildings",
       "name": "All OSM-buildings",
       "source": {
