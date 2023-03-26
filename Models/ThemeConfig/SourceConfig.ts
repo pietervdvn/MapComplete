@@ -3,7 +3,6 @@ import { RegexTag } from "../../Logic/Tags/RegexTag"
 
 export default class SourceConfig {
     public osmTags?: TagsFilter
-    public readonly overpassScript?: string
     public geojsonSource?: string
     public geojsonZoomLevel?: number
     public isOsmCacheLayer: boolean
@@ -68,7 +67,6 @@ export default class SourceConfig {
             }
         }
         this.osmTags = params.osmTags ?? new RegexTag("id", /.*/)
-        this.overpassScript = params.overpassScript
         this.geojsonSource = params.geojsonSource
         this.geojsonZoomLevel = params.geojsonSourceLevel
         this.isOsmCacheLayer = params.isOsmCache ?? false

@@ -1,6 +1,6 @@
 import { ImmutableStore, Store } from "../../Logic/UIEventSource"
 import type { Map as MlMap } from "maplibre-gl"
-import { Marker } from "maplibre-gl"
+import { GeoJSONSource, Marker } from "maplibre-gl"
 import { ShowDataLayerOptions } from "./ShowDataLayerOptions"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
@@ -19,7 +19,7 @@ class PointRenderingLayer {
     private readonly _config: PointRenderingConfig
     private readonly _fetchStore?: (id: string) => Store<OsmTags>
     private readonly _map: MlMap
-    private readonly _onClick: (id: string) => void
+    private readonly _onClick: (feature: Feature) => void
     private readonly _allMarkers: Map<string, Marker> = new Map<string, Marker>()
 
     constructor(
@@ -28,7 +28,7 @@ class PointRenderingLayer {
         config: PointRenderingConfig,
         visibility?: Store<boolean>,
         fetchStore?: (id: string) => Store<OsmTags>,
-        onClick?: (id: string) => void
+        onClick?: (feature: Feature) => void
     ) {
         this._config = config
         this._map = map
@@ -109,7 +109,7 @@ class PointRenderingLayer {
         if (this._onClick) {
             const self = this
             el.addEventListener("click", function () {
-                self._onClick(feature.properties.id)
+                self._onClick(feature)
             })
         }
 
@@ -144,7 +144,7 @@ class LineRenderingLayer {
     private readonly _config: LineRenderingConfig
     private readonly _visibility?: Store<boolean>
     private readonly _fetchStore?: (id: string) => Store<OsmTags>
-    private readonly _onClick?: (id: string) => void
+    private readonly _onClick?: (feature: Feature) => void
     private readonly _layername: string
     private readonly _listenerInstalledOn: Set<string> = new Set<string>()
 
@@ -155,7 +155,7 @@ class LineRenderingLayer {
         config: LineRenderingConfig,
         visibility?: Store<boolean>,
         fetchStore?: (id: string) => Store<OsmTags>,
-        onClick?: (id: string) => void
+        onClick?: (feature: Feature) => void
     ) {
         this._layername = layername
         this._map = map
@@ -174,20 +174,17 @@ class LineRenderingLayer {
         const config = this._config
 
         for (const key of LineRenderingLayer.lineConfigKeys) {
-            const v = config[key]?.GetRenderValue(properties)?.Subs(properties).txt
-            calculatedProps[key] = v
+            calculatedProps[key] = config[key]?.GetRenderValue(properties)?.Subs(properties).txt
         }
         for (const key of LineRenderingLayer.lineConfigKeysColor) {
             let v = config[key]?.GetRenderValue(properties)?.Subs(properties).txt
             if (v === undefined) {
                 continue
             }
-            console.log("Color", v)
             if (v.length == 9 && v.startsWith("#")) {
                 // This includes opacity
                 calculatedProps[key + "-opacity"] = parseInt(v.substring(7), 16) / 256
                 v = v.substring(0, 7)
-                console.log("Color >", v, calculatedProps[key + "-opacity"])
             }
             calculatedProps[key] = v
         }
@@ -196,7 +193,6 @@ class LineRenderingLayer {
             calculatedProps[key] = Number(v)
         }
 
-        console.log("Calculated props:", calculatedProps, "for", properties.id)
         return calculatedProps
     }
 
@@ -205,52 +201,53 @@ class LineRenderingLayer {
         while (!map.isStyleLoaded()) {
             await Utils.waitFor(100)
         }
-        map.addSource(this._layername, {
-            type: "geojson",
-            data: {
+        const src = <GeoJSONSource>map.getSource(this._layername)
+        if (src === undefined) {
+            map.addSource(this._layername, {
+                type: "geojson",
+                data: {
+                    type: "FeatureCollection",
+                    features,
+                },
+                promoteId: "id",
+            })
+            // @ts-ignore
+            map.addLayer({
+                source: this._layername,
+                id: this._layername + "_line",
+                type: "line",
+                paint: {
+                    "line-color": ["feature-state", "color"],
+                    "line-opacity": ["feature-state", "color-opacity"],
+                    "line-width": ["feature-state", "width"],
+                    "line-offset": ["feature-state", "offset"],
+                },
+                layout: {
+                    "line-cap": "round",
+                },
+            })
+
+            map.addLayer({
+                source: this._layername,
+                id: this._layername + "_polygon",
+                type: "fill",
+                filter: ["in", ["geometry-type"], ["literal", ["Polygon", "MultiPolygon"]]],
+                layout: {},
+                paint: {
+                    "fill-color": ["feature-state", "fillColor"],
+                    "fill-opacity": 0.1,
+                },
+            })
+        } else {
+            src.setData({
                 type: "FeatureCollection",
                 features,
-            },
-            promoteId: "id",
-        })
-
-        map.addLayer({
-            source: this._layername,
-            id: this._layername + "_line",
-            type: "line",
-            paint: {
-                "line-color": ["feature-state", "color"],
-                "line-opacity": ["feature-state", "color-opacity"],
-                "line-width": ["feature-state", "width"],
-                "line-offset": ["feature-state", "offset"],
-            },
-        })
-
-        /*[
-            "color",
-            "width",
-            "dashArray",
-            "lineCap",
-            "offset",
-            "fill",
-            "fillColor",
-        ]*/
-        map.addLayer({
-            source: this._layername,
-            id: this._layername + "_polygon",
-            type: "fill",
-            filter: ["in", ["geometry-type"], ["literal", ["Polygon", "MultiPolygon"]]],
-            layout: {},
-            paint: {
-                "fill-color": ["feature-state", "fillColor"],
-                "fill-opacity": 0.1,
-            },
-        })
+            })
+        }
 
         for (let i = 0; i < features.length; i++) {
             const feature = features[i]
             const id = feature.properties.id ?? feature.id
-            console.log("ID is", id)
             if (id === undefined) {
                 console.trace(
                     "Got a feature without ID; this causes rendering bugs:",
@@ -310,23 +307,6 @@ export default class ShowDataLayer {
         })
     }
 
-    private openOrReusePopup(id: string): void {
-        if (!this._popupCache || !this._options.fetchStore) {
-            return
-        }
-        if (this._popupCache.has(id)) {
-            this._popupCache.get(id).Activate()
-            return
-        }
-        const tags = this._options.fetchStore(id)
-        if (!tags) {
-            return
-        }
-        const popup = this._options.buildPopup(tags, this._options.layer)
-        this._popupCache.set(id, popup)
-        popup.Activate()
-    }
-
     private zoomToCurrentFeatures(map: MlMap) {
         if (this._options.zoomToFeatures) {
             const features = this._options.features.features.data
@@ -338,8 +318,8 @@ export default class ShowDataLayer {
     }
 
     private initDrawFeatures(map: MlMap) {
-        const { features, doShowLayer, fetchStore, buildPopup } = this._options
-        const onClick = buildPopup === undefined ? undefined : (id) => this.openOrReusePopup(id)
+        const { features, doShowLayer, fetchStore, selectedElement } = this._options
+        const onClick = (feature: Feature) => selectedElement?.setData(feature)
         for (let i = 0; i < this._options.layer.lineRendering.length; i++) {
             const lineRenderingConfig = this._options.layer.lineRendering[i]
             new LineRenderingLayer(

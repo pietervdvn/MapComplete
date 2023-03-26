@@ -1,5 +1,4 @@
 import { TagsFilter } from "../Tags/TagsFilter"
-import RelationsTracker from "./RelationsTracker"
 import { Utils } from "../../Utils"
 import { ImmutableStore, Store } from "../UIEventSource"
 import { BBox } from "../BBox"
@@ -15,14 +14,12 @@ export class Overpass {
     private readonly _timeout: Store<number>
     private readonly _extraScripts: string[]
     private readonly _includeMeta: boolean
-    private _relationTracker: RelationsTracker
 
     constructor(
         filter: TagsFilter,
         extraScripts: string[],
         interpreterUrl: string,
         timeout?: Store<number>,
-        relationTracker?: RelationsTracker,
         includeMeta = true
     ) {
         this._timeout = timeout ?? new ImmutableStore<number>(90)
@@ -34,7 +31,6 @@ export class Overpass {
         this._filter = optimized
         this._extraScripts = extraScripts
         this._includeMeta = includeMeta
-        this._relationTracker = relationTracker
     }
 
     public async queryGeoJson(bounds: BBox): Promise<[FeatureCollection, Date]> {
@@ -57,7 +53,6 @@ export class Overpass {
     }
 
     public async ExecuteQuery(query: string): Promise<[FeatureCollection, Date]> {
-        const self = this
         const json = await Utils.downloadJson(this.buildUrl(query))
 
         if (json.elements.length === 0 && json.remark !== undefined) {
@@ -68,7 +63,6 @@ export class Overpass {
             console.warn("No features for", json)
         }
 
-        self._relationTracker?.RegisterRelations(json)
         const geojson = osmtogeojson(json)
         const osmTime = new Date(json.osm3s.timestamp_osm_base)
         return [<any>geojson, osmTime]
@@ -104,7 +98,6 @@ export class Overpass {
     /**
      * Constructs the actual script to execute on Overpass with geocoding
      * 'PostCall' can be used to set an extra range, see 'AsOverpassTurboLink'
-     *
      */
     public buildScriptInArea(
         area: { osm_type: "way" | "relation"; osm_id: number },
@@ -142,7 +135,7 @@ export class Overpass {
      * Little helper method to quickly open overpass-turbo in the browser
      */
     public static AsOverpassTurboLink(tags: TagsFilter) {
-        const overpass = new Overpass(tags, [], "", undefined, undefined, false)
+        const overpass = new Overpass(tags, [], "", undefined, false)
         const script = overpass.buildScript("", "({{bbox}})", true)
         const url = "http://overpass-turbo.eu/?Q="
         return url + encodeURIComponent(script)

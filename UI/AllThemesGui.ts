@@ -5,28 +5,32 @@ import MoreScreen from "./BigComponents/MoreScreen"
 import Translations from "./i18n/Translations"
 import Constants from "../Models/Constants"
 import { Utils } from "../Utils"
-import LanguagePicker1 from "./LanguagePicker"
+import LanguagePicker from "./LanguagePicker"
 import IndexText from "./BigComponents/IndexText"
-import FeaturedMessage from "./BigComponents/FeaturedMessage"
 import { ImportViewerLinks } from "./BigComponents/UserInformation"
 import { LoginToggle } from "./Popup/LoginButton"
+import { ImmutableStore } from "../Logic/UIEventSource"
+import { OsmConnection } from "../Logic/Osm/OsmConnection"
 
 export default class AllThemesGui {
     setup() {
         try {
             new FixedUiElement("").AttachTo("centermessage")
-            const state = new UserRelatedState(undefined)
+            const osmConnection = new OsmConnection()
+            const state = new UserRelatedState(osmConnection)
             const intro = new Combine([
-                new LanguagePicker1(Translations.t.index.title.SupportedLanguages(), "").SetClass(
+                new LanguagePicker(Translations.t.index.title.SupportedLanguages(), "").SetClass(
                     "flex absolute top-2 right-3"
                 ),
                 new IndexText(),
             ])
             new Combine([
                 intro,
-                new FeaturedMessage().SetClass("mb-4 block"),
                 new MoreScreen(state, true),
-                new LoginToggle(undefined, Translations.t.index.logIn, state),
+                new LoginToggle(undefined, Translations.t.index.logIn, {
+                    osmConnection,
+                    featureSwitchUserbadge: new ImmutableStore(true),
+                }),
                 new ImportViewerLinks(state.osmConnection),
                 Translations.t.general.aboutMapcomplete
                     .Subs({ osmcha_link: Utils.OsmChaLinkFor(7) })

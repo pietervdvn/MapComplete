@@ -214,6 +214,9 @@ export class BBox {
      * @param zoomlevel
      */
     expandToTileBounds(zoomlevel: number): BBox {
+        if(zoomlevel === undefined){
+            return this
+        }
         const ul = Tiles.embedded_tile(this.minLat, this.minLon, zoomlevel)
         const lr = Tiles.embedded_tile(this.maxLat, this.maxLon, zoomlevel)
         const boundsul = Tiles.tile_bounds_lon_lat(ul.z, ul.x, ul.y)

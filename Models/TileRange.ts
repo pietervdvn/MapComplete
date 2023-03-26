@@ -1,3 +1,5 @@
+import { BBox } from "../Logic/BBox"
+
 export interface TileRange {
     xstart: number
     ystart: number
@@ -83,6 +85,16 @@ export class Tiles {
      */
     static embedded_tile(lat: number, lon: number, z: number): { x: number; y: number; z: number } {
         return { x: Tiles.lon2tile(lon, z), y: Tiles.lat2tile(lat, z), z: z }
+    }
+
+    static tileRangeFrom(bbox: BBox, zoomlevel: number) {
+        return Tiles.TileRangeBetween(
+            zoomlevel,
+            bbox.getNorth(),
+            bbox.getWest(),
+            bbox.getSouth(),
+            bbox.getEast()
+        )
     }
 
     static TileRangeBetween(

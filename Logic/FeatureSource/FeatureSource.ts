@@ -23,5 +23,5 @@ export interface FeatureSourceForLayer extends FeatureSource {
  * A feature source which is aware of the indexes it contains
  */
 export interface IndexedFeatureSource extends FeatureSource {
-    readonly containedIds: Store<Set<string>>
+    readonly featuresById: Store<Map<string, Feature>>
 }

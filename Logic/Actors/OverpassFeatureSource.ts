@@ -1,23 +1,19 @@
-import { Store, UIEventSource } from "../UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../UIEventSource"
 import { Or } from "../Tags/Or"
 import { Overpass } from "../Osm/Overpass"
 import FeatureSource from "../FeatureSource/FeatureSource"
 import { Utils } from "../../Utils"
 import { TagsFilter } from "../Tags/TagsFilter"
-import SimpleMetaTagger from "../SimpleMetaTagger"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import RelationsTracker from "../Osm/RelationsTracker"
 import { BBox } from "../BBox"
-import Loc from "../../Models/Loc"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import Constants from "../../Models/Constants"
-import TileFreshnessCalculator from "../FeatureSource/TileFreshnessCalculator"
-import { Tiles } from "../../Models/TileRange"
 import { Feature } from "geojson"
 
+/**
+ * A wrapper around the 'Overpass'-object.
+ * It has more logic and will automatically fetch the data for the right bbox and the active layers
+ */
 export default class OverpassFeatureSource implements FeatureSource {
-    public readonly name = "OverpassFeatureSource"
-
     /**
      * The last loaded features, as geojson
      */
@@ -26,106 +22,67 @@ export default class OverpassFeatureSource implements FeatureSource {
     public readonly runningQuery: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly timeout: UIEventSource<number> = new UIEventSource<number>(0)
 
-    public readonly relationsTracker: RelationsTracker
-
     private readonly retries: UIEventSource<number> = new UIEventSource<number>(0)
 
     private readonly state: {
-        readonly locationControl: Store<Loc>
+        readonly zoom: Store<number>
         readonly layoutToUse: LayoutConfig
         readonly overpassUrl: Store<string[]>
         readonly overpassTimeout: Store<number>
-        readonly currentBounds: Store<BBox>
+        readonly bounds: Store<BBox>
     }
     private readonly _isActive: Store<boolean>
-    /**
-     * Callback to handle all the data
-     */
-    private readonly onBboxLoaded: (
-        bbox: BBox,
-        date: Date,
-        layers: LayerConfig[],
-        zoomlevel: number
-    ) => void
-
-    /**
-     * Keeps track of how fresh the data is
-     * @private
-     */
-    private readonly freshnesses: Map<string, TileFreshnessCalculator>
+    private readonly padToZoomLevel?: Store<number>
+    private _lastQueryBBox: BBox
 
     constructor(
         state: {
-            readonly locationControl: Store<Loc>
             readonly layoutToUse: LayoutConfig
+            readonly zoom: Store<number>
             readonly overpassUrl: Store<string[]>
             readonly overpassTimeout: Store<number>
             readonly overpassMaxZoom: Store<number>
-            readonly currentBounds: Store<BBox>
+            readonly bounds: Store<BBox>
         },
-        options: {
-            padToTiles: Store<number>
+        options?: {
+            padToTiles?: Store<number>
             isActive?: Store<boolean>
-            relationTracker: RelationsTracker
-            onBboxLoaded?: (
-                bbox: BBox,
-                date: Date,
-                layers: LayerConfig[],
-                zoomlevel: number
-            ) => void
-            freshnesses?: Map<string, TileFreshnessCalculator>
         }
     ) {
         this.state = state
-        this._isActive = options.isActive
-        this.onBboxLoaded = options.onBboxLoaded
-        this.relationsTracker = options.relationTracker
-        this.freshnesses = options.freshnesses
+        this._isActive = options?.isActive ?? new ImmutableStore(true)
+        this.padToZoomLevel = options?.padToTiles
         const self = this
-        state.currentBounds.addCallback((_) => {
-            self.update(options.padToTiles.data)
+        state.bounds.addCallbackD((_) => {
+            self.updateAsyncIfNeeded()
         })
     }
 
+    /**
+     * Creates the 'Overpass'-object for the given layers
+     * @param interpreterUrl
+     * @param layersToDownload
+     * @constructor
+     * @private
+     */
     private GetFilter(interpreterUrl: string, layersToDownload: LayerConfig[]): Overpass {
-        let filters: TagsFilter[] = []
-        let extraScripts: string[] = []
-        for (const layer of layersToDownload) {
-            if (layer.source.overpassScript !== undefined) {
-                extraScripts.push(layer.source.overpassScript)
-            } else {
-                filters.push(layer.source.osmTags)
-            }
-        }
+        let filters: TagsFilter[] = layersToDownload.map((layer) => layer.source.osmTags)
         filters = Utils.NoNull(filters)
-        extraScripts = Utils.NoNull(extraScripts)
-        if (filters.length + extraScripts.length === 0) {
+        if (filters.length === 0) {
             return undefined
         }
-        return new Overpass(
-            new Or(filters),
-            extraScripts,
-            interpreterUrl,
-            this.state.overpassTimeout,
-            this.relationsTracker
-        )
+        return new Overpass(new Or(filters), [], interpreterUrl, this.state.overpassTimeout)
     }
 
-    private update(paddedZoomLevel: number) {
-        if (!this._isActive.data) {
+    /**
+     *
+     * @private
+     */
+    private async updateAsyncIfNeeded(): Promise<void> {
+        if (!this._isActive?.data) {
+            console.log("OverpassFeatureSource: not triggering as not active")
             return
         }
-        const self = this
-        this.updateAsync(paddedZoomLevel).then((bboxDate) => {
-            if (bboxDate === undefined || self.onBboxLoaded === undefined) {
-                return
-            }
-            const [bbox, date, layers] = bboxDate
-            self.onBboxLoaded(bbox, date, layers, paddedZoomLevel)
-        })
-    }
-
-    private async updateAsync(padToZoomLevel: number): Promise<[BBox, Date, LayerConfig[]]> {
         if (this.runningQuery.data) {
             console.log("Still running a query, not updating")
             return undefined
@@ -135,15 +92,27 @@ export default class OverpassFeatureSource implements FeatureSource {
             console.log("Still in timeout - not updating")
             return undefined
         }
+        const requestedBounds = this.state.bounds.data
+        if (
+            this._lastQueryBBox !== undefined &&
+            requestedBounds.isContainedIn(this._lastQueryBBox)
+        ) {
+            return undefined
+        }
+        const [bounds, date, updatedLayers] = await this.updateAsync()
+        this._lastQueryBBox = bounds
+    }
 
+    /**
+     * Download the relevant data from overpass. Attempt to use a different server; only downloads the relevant layers
+     * @private
+     */
+    private async updateAsync(): Promise<[BBox, Date, LayerConfig[]]> {
         let data: any = undefined
         let date: Date = undefined
         let lastUsed = 0
 
         const layersToDownload = []
-        const neededTiles = this.state.currentBounds.data
-            .expandToTileBounds(padToZoomLevel)
-            .containingTileRange(padToZoomLevel)
         for (const layer of this.state.layoutToUse.layers) {
             if (typeof layer === "string") {
                 throw "A layer was not expanded!"
@@ -151,7 +120,7 @@ export default class OverpassFeatureSource implements FeatureSource {
             if (layer.source === undefined) {
                 continue
             }
-            if (this.state.locationControl.data.zoom < layer.minzoom) {
+            if (this.state.zoom.data < layer.minzoom) {
                 continue
             }
             if (layer.doNotDownload) {
@@ -161,31 +130,10 @@ export default class OverpassFeatureSource implements FeatureSource {
                 // Not our responsibility to download this layer!
                 continue
             }
-            const freshness = this.freshnesses?.get(layer.id)
-            if (freshness !== undefined) {
-                const oldestDataDate =
-                    Math.min(
-                        ...Tiles.MapRange(neededTiles, (x, y) => {
-                            const date = freshness.freshnessFor(padToZoomLevel, x, y)
-                            if (date === undefined) {
-                                return 0
-                            }
-                            return date.getTime()
-                        })
-                    ) / 1000
-                const now = new Date().getTime()
-                const minRequiredAge = now / 1000 - layer.maxAgeOfCache
-                if (oldestDataDate >= minRequiredAge) {
-                    // still fresh enough - not updating
-                    continue
-                }
-            }
-
             layersToDownload.push(layer)
         }
 
         if (layersToDownload.length == 0) {
-            console.debug("Not updating - no layers needed")
             return
         }
 
@@ -194,12 +142,13 @@ export default class OverpassFeatureSource implements FeatureSource {
         if (overpassUrls === undefined || overpassUrls.length === 0) {
             throw "Panic: overpassFeatureSource didn't receive any overpassUrls"
         }
+        // Note: the bounds are updated between attempts, in case that the user zoomed around
         let bounds: BBox
         do {
             try {
-                bounds = this.state.currentBounds.data
+                bounds = this.state.bounds.data
                     ?.pad(this.state.layoutToUse.widenFactor)
-                    ?.expandToTileBounds(padToZoomLevel)
+                    ?.expandToTileBounds(this.padToZoomLevel?.data)
 
                 if (bounds === undefined) {
                     return undefined
@@ -228,7 +177,6 @@ export default class OverpassFeatureSource implements FeatureSource {
 
                     while (self.timeout.data > 0) {
                         await Utils.waitFor(1000)
-                        console.log(self.timeout.data)
                         self.timeout.data--
                         self.timeout.ping()
                     }
@@ -240,14 +188,7 @@ export default class OverpassFeatureSource implements FeatureSource {
             if (data === undefined) {
                 return undefined
             }
-            data.features.forEach((feature) =>
-                SimpleMetaTagger.objectMetaInfo.applyMetaTagsOnFeature(
-                    feature,
-                    undefined,
-                    this.state
-                )
-            )
-            self.features.setData(data.features.map((f) => ({ feature: f, freshness: date })))
+            self.features.setData(data.features)
             return [bounds, date, layersToDownload]
         } catch (e) {
             console.error("Got the overpass response, but could not process it: ", e, e.stack)

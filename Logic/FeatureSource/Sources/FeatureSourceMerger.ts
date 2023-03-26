@@ -1,58 +1,40 @@
-import { UIEventSource } from "../../UIEventSource"
-import FeatureSource, { FeatureSourceForLayer, IndexedFeatureSource, Tiled } from "../FeatureSource"
-import FilteredLayer from "../../../Models/FilteredLayer"
-import { BBox } from "../../BBox"
+import { Store, UIEventSource } from "../../UIEventSource"
+import FeatureSource, { IndexedFeatureSource } from "../FeatureSource"
 import { Feature } from "geojson"
 
-export default class FeatureSourceMerger
-    implements FeatureSourceForLayer, Tiled, IndexedFeatureSource
-{
+/**
+ *
+ */
+export default class FeatureSourceMerger implements IndexedFeatureSource {
     public features: UIEventSource<Feature[]> = new UIEventSource([])
-    public readonly layer: FilteredLayer
-    public readonly tileIndex: number
-    public readonly bbox: BBox
-    public readonly containedIds: UIEventSource<Set<string>> = new UIEventSource<Set<string>>(
-        new Set()
-    )
-    private readonly _sources: UIEventSource<FeatureSource[]>
+    public readonly featuresById: Store<Map<string, Feature>>
+    private readonly _featuresById: UIEventSource<Map<string, Feature>>
+    private readonly _sources: FeatureSource[] = []
     /**
-     * Merges features from different featureSources for a single layer
-     * Uses the freshest feature available in the case multiple sources offer data with the same identifier
+     * Merges features from different featureSources.
+     * In case that multiple features have the same id, the latest `_version_number` will be used. Otherwise, we will take the last one
      */
-    constructor(
-        layer: FilteredLayer,
-        tileIndex: number,
-        bbox: BBox,
-        sources: UIEventSource<FeatureSource[]>
-    ) {
-        this.tileIndex = tileIndex
-        this.bbox = bbox
-        this._sources = sources
-        this.layer = layer
+    constructor(...sources: FeatureSource[]) {
+        this._featuresById = new UIEventSource<Map<string, Feature>>(undefined)
+        this.featuresById = this._featuresById
         const self = this
+        for (let source of sources) {
+            source.features.addCallback(() => {
+                self.addData(sources.map((s) => s.features.data))
+            })
+        }
+        this.addData(sources.map((s) => s.features.data))
+        this._sources = sources
+    }
 
-        const handledSources = new Set<FeatureSource>()
-
-        sources.addCallbackAndRunD((sources) => {
-            let newSourceRegistered = false
-            for (let i = 0; i < sources.length; i++) {
-                let source = sources[i]
-                if (handledSources.has(source)) {
-                    continue
-                }
-                handledSources.add(source)
-                newSourceRegistered = true
-                source.features.addCallback(() => {
-                    self.Update()
-                })
-                if (newSourceRegistered) {
-                    self.Update()
-                }
-            }
+    protected addSource(source: FeatureSource) {
+        this._sources.push(source)
+        source.features.addCallbackAndRun(() => {
+            this.addData(this._sources.map((s) => s.features.data))
         })
     }
 
-    private Update() {
+    protected addData(featuress: Feature[][]) {
         let somethingChanged = false
         const all: Map<string, Feature> = new Map()
         // We seed the dictionary with the previously loaded features
@@ -61,11 +43,11 @@ export default class FeatureSourceMerger
             all.set(oldValue.properties.id, oldValue)
         }
 
-        for (const source of this._sources.data) {
-            if (source?.features?.data === undefined) {
+        for (const features of featuress) {
+            if (features === undefined) {
                 continue
             }
-            for (const f of source.features.data) {
+            for (const f of features) {
                 const id = f.properties.id
                 if (!all.has(id)) {
                     // This is a new feature
@@ -77,7 +59,7 @@ export default class FeatureSourceMerger
                 // This value has been seen already, either in a previous run or by a previous datasource
                 // Let's figure out if something changed
                 const oldV = all.get(id)
-                if (oldV === f) {
+                if (oldV == f) {
                     continue
                 }
                 all.set(id, f)
@@ -91,10 +73,10 @@ export default class FeatureSourceMerger
         }
 
         const newList = []
-        all.forEach((value, _) => {
+        all.forEach((value, key) => {
             newList.push(value)
         })
-        this.containedIds.setData(new Set(all.keys()))
         this.features.setData(newList)
+        this._featuresById.setData(all)
     }
 }

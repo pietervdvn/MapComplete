@@ -1,7 +1,7 @@
 import FeatureSource, { Tiled } from "../FeatureSource"
 import { BBox } from "../../BBox"
 
-export default interface TileHierarchy<T extends FeatureSource & Tiled> {
+export default interface TileHierarchy<T extends FeatureSource> {
     /**
      * A mapping from 'tile_index' to the actual tile featrues
      */

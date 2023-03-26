@@ -1,8 +1,9 @@
 import SimpleMetaTaggers, { SimpleMetaTagger } from "./SimpleMetaTagger"
 import { ExtraFuncParams, ExtraFunctions } from "./ExtraFunctions"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
-import { ElementStorage } from "./ElementStorage"
 import { Feature } from "geojson"
+import FeaturePropertiesStore from "./FeatureSource/Actors/FeaturePropertiesStore"
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
 
 /**
  * Metatagging adds various tags to the elements, e.g. lat, lon, surface area, ...
@@ -12,7 +13,7 @@ import { Feature } from "geojson"
 export default class MetaTagging {
     private static errorPrintCount = 0
     private static readonly stopErrorOutputAt = 10
-    private static retaggingFuncCache = new Map<string, ((feature: any) => void)[]>()
+    private static retaggingFuncCache = new Map<string, ((feature: Feature) => void)[]>()
 
     /**
      * This method (re)calculates all metatags and calculated tags on every given object.
@@ -24,7 +25,8 @@ export default class MetaTagging {
         features: Feature[],
         params: ExtraFuncParams,
         layer: LayerConfig,
-        state?: { allElements?: ElementStorage },
+        layout: LayoutConfig,
+        featurePropertiesStores?: FeaturePropertiesStore,
         options?: {
             includeDates?: true | boolean
             includeNonDates?: true | boolean
@@ -50,13 +52,14 @@ export default class MetaTagging {
         }
 
         // The calculated functions - per layer - which add the new keys
-        const layerFuncs = this.createRetaggingFunc(layer, state)
+        const layerFuncs = this.createRetaggingFunc(layer)
+        const state = { layout }
 
         let atLeastOneFeatureChanged = false
 
         for (let i = 0; i < features.length; i++) {
-            const ff = features[i]
-            const feature = ff
+            const feature = features[i]
+            const tags = featurePropertiesStores?.getStore(feature.properties.id)
             let somethingChanged = false
             let definedTags = new Set(Object.getOwnPropertyNames(feature.properties))
             for (const metatag of metatagsToApply) {
@@ -72,14 +75,19 @@ export default class MetaTagging {
                             continue
                         }
                         somethingChanged = true
-                        metatag.applyMetaTagsOnFeature(feature, layer, state)
+                        metatag.applyMetaTagsOnFeature(feature, layer, tags, state)
                         if (options?.evaluateStrict) {
                             for (const key of metatag.keys) {
                                 feature.properties[key]
                             }
                         }
                     } else {
-                        const newValueAdded = metatag.applyMetaTagsOnFeature(feature, layer, state)
+                        const newValueAdded = metatag.applyMetaTagsOnFeature(
+                            feature,
+                            layer,
+                            tags,
+                            state
+                        )
                         /* Note that the expression:
                          * `somethingChanged = newValueAdded || metatag.applyMetaTagsOnFeature(feature, freshness)`
                          * Is WRONG
@@ -111,7 +119,7 @@ export default class MetaTagging {
             }
 
             if (somethingChanged) {
-                state?.allElements?.getEventSourceById(feature.properties.id)?.ping()
+                featurePropertiesStores?.getStore(feature.properties.id)?.ping()
                 atLeastOneFeatureChanged = true
             }
         }
@@ -199,20 +207,16 @@ export default class MetaTagging {
 
     /**
      * Creates the function which adds all the calculated tags to a feature. Called once per layer
-     * @param layer
-     * @param state
-     * @private
      */
     private static createRetaggingFunc(
-        layer: LayerConfig,
-        state
+        layer: LayerConfig
     ): (params: ExtraFuncParams, feature: any) => boolean {
         const calculatedTags: [string, string, boolean][] = layer.calculatedTags
         if (calculatedTags === undefined || calculatedTags.length === 0) {
             return undefined
         }
 
-        let functions: ((feature: any) => void)[] = MetaTagging.retaggingFuncCache.get(layer.id)
+        let functions: ((feature: Feature) => void)[] = MetaTagging.retaggingFuncCache.get(layer.id)
         if (functions === undefined) {
             functions = MetaTagging.createFunctionsForFeature(layer.id, calculatedTags)
             MetaTagging.retaggingFuncCache.set(layer.id, functions)

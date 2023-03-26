@@ -42,35 +42,19 @@ export interface LayerConfigJson {
      *
      * Note: a source must always be defined. 'special' is only allowed if this is a builtin-layer
      */
-    source: "special" | "special:library" | ({
-        /**
-         * Every source must set which tags have to be present in order to load the given layer.
-         */
-        osmTags: TagConfigJson
-        /**
-         * The maximum amount of seconds that a tile is allowed to linger in the cache
-         */
-        maxCacheAge?: number
-    } & (
-        | {
+    source:
+        | "special"
+        | "special:library"
+        | ({
               /**
-               * If set, this custom overpass-script will be used instead of building one by using the OSM-tags.
-               * Specifying OSM-tags is still obligatory and will still hide non-matching items and they will be used for the rest of the pipeline.
-               * _This should be really rare_.
-               *
-               * For example, when you want to fetch all grass-areas in parks and which are marked as publicly accessible:
-               * ```
-               * "source": {
-               *   "overpassScript":
-               *      "way[\"leisure\"=\"park\"];node(w);is_in;area._[\"leisure\"=\"park\"];(way(area)[\"landuse\"=\"grass\"]; node(w); );",
-               *      "osmTags": "access=yes"
-               * }
-               * ```
-               *
+               * Every source must set which tags have to be present in order to load the given layer.
                */
-              overpassScript?: string
-          }
-        | {
+              osmTags: TagConfigJson
+              /**
+               * The maximum amount of seconds that a tile is allowed to linger in the cache
+               */
+              maxCacheAge?: number
+          } & {
               /**
                * The actual source of the data to load, if loaded via geojson.
                *
@@ -104,7 +88,6 @@ export interface LayerConfigJson {
                */
               idKey?: string
           })
-    )
 
     /**
      *

@@ -7,8 +7,6 @@ export interface MapProperties {
     readonly zoom: UIEventSource<number>
     readonly bounds: Store<BBox>
     readonly rasterLayer: UIEventSource<RasterLayerPolygon | undefined>
-
     readonly maxbounds: UIEventSource<undefined | BBox>
-
     readonly allowMoving: UIEventSource<true | boolean>
 }

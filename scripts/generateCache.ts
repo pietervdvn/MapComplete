@@ -7,7 +7,6 @@ import { existsSync, readFileSync, writeFileSync } from "fs"
 import { TagsFilter } from "../Logic/Tags/TagsFilter"
 import { Or } from "../Logic/Tags/Or"
 import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
-import RelationsTracker from "../Logic/Osm/RelationsTracker"
 import * as OsmToGeoJson from "osmtogeojson"
 import MetaTagging from "../Logic/MetaTagging"
 import { ImmutableStore, UIEventSource } from "../Logic/UIEventSource"
@@ -26,13 +25,11 @@ import FilteringFeatureSource from "../Logic/FeatureSource/Sources/FilteringFeat
 import Loc from "../Models/Loc"
 import { Feature } from "geojson"
 import { BBox } from "../Logic/BBox"
-import { bboxClip } from "@turf/turf"
 
 ScriptUtils.fixUtils()
 
 function createOverpassObject(
     theme: LayoutConfig,
-    relationTracker: RelationsTracker,
     backend: string
 ) {
     let filters: TagsFilter[] = []
@@ -52,12 +49,7 @@ function createOverpassObject(
             }
         }
 
-        // Check if data for this layer has already been loaded
-        if (layer.source.overpassScript !== undefined) {
-            extraScripts.push(layer.source.overpassScript)
-        } else {
-            filters.push(layer.source.osmTags)
-        }
+        filters.push(layer.source.osmTags)
     }
     filters = Utils.NoNull(filters)
     extraScripts = Utils.NoNull(extraScripts)
@@ -69,7 +61,6 @@ function createOverpassObject(
         extraScripts,
         backend,
         new UIEventSource<number>(60),
-        relationTracker
     )
 }
 
@@ -86,7 +77,6 @@ async function downloadRaw(
     targetdir: string,
     r: TileRange,
     theme: LayoutConfig,
-    relationTracker: RelationsTracker
 ): Promise<{ failed: number; skipped: number }> {
     let downloaded = 0
     let failed = 0
@@ -130,7 +120,6 @@ async function downloadRaw(
             }
             const overpass = createOverpassObject(
                 theme,
-                relationTracker,
                 Constants.defaultOverpassUrls[failed % Constants.defaultOverpassUrls.length]
             )
             const url = overpass.buildQuery(
@@ -233,7 +222,6 @@ function loadAllTiles(
 function sliceToTiles(
     allFeatures: FeatureSource,
     theme: LayoutConfig,
-    relationsTracker: RelationsTracker,
     targetdir: string,
     pointsOnlyLayers: string[],
     clip: boolean
@@ -244,8 +232,7 @@ function sliceToTiles(
     let indexisBuilt = false
 
     function buildIndex() {
-        for (const ff of allFeatures.features.data) {
-            const f = ff.feature
+        for (const f of allFeatures.features.data) {
             indexedFeatures.set(f.properties.id, f)
         }
         indexisBuilt = true
@@ -281,9 +268,8 @@ function sliceToTiles(
         MetaTagging.addMetatags(
             source.features.data,
             {
-                memberships: relationsTracker,
                 getFeaturesWithin: (_) => {
-                    return [allFeatures.features.data.map((f) => f.feature)]
+                    return <any> [allFeatures.features.data]
                 },
                 getFeatureById: getFeatureById,
             },
@@ -348,7 +334,7 @@ function sliceToTiles(
                 }
                 let strictlyCalculated = 0
                 let featureCount = 0
-                let features: Feature[] = filteredTile.features.data.map((f) => f.feature)
+                let features: Feature[] = filteredTile.features.data
                 for (const feature of features) {
                     // Some cleanup
 
@@ -444,7 +430,7 @@ function sliceToTiles(
                 source,
                 new UIEventSource<any>(undefined)
             )
-            const features = filtered.features.data.map((f) => f.feature)
+            const features = filtered.features.data
 
             const points = features.map((feature) => GeoOperations.centerpoint(feature))
             console.log("Writing points overview for ", layerId)
@@ -571,11 +557,9 @@ export async function main(args: string[]) {
         }
     }
 
-    const relationTracker = new RelationsTracker()
-
     let failed = 0
     do {
-        const cachingResult = await downloadRaw(targetdir, tileRange, theme, relationTracker)
+        const cachingResult = await downloadRaw(targetdir, tileRange, theme)
         failed = cachingResult.failed
         if (failed > 0) {
             await ScriptUtils.sleep(30000)
@@ -584,7 +568,7 @@ export async function main(args: string[]) {
 
     const extraFeatures = await downloadExtraData(theme)
     const allFeaturesSource = loadAllTiles(targetdir, tileRange, theme, extraFeatures)
-    sliceToTiles(allFeaturesSource, theme, relationTracker, targetdir, generatePointLayersFor, clip)
+    sliceToTiles(allFeaturesSource, theme, targetdir, generatePointLayersFor, clip)
 }
 
 let args = [...process.argv]

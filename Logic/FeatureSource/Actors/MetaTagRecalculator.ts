@@ -1,6 +1,5 @@
 import { FeatureSourceForLayer, Tiled } from "../FeatureSource"
 import MetaTagging from "../../MetaTagging"
-import { ElementStorage } from "../../ElementStorage"
 import { ExtraFuncParams } from "../../ExtraFunctions"
 import FeaturePipeline from "../FeaturePipeline"
 import { BBox } from "../../BBox"
@@ -39,7 +38,6 @@ class MetatagUpdater {
                 }
                 return featurePipeline.GetFeaturesWithin(layerId, bbox)
             },
-            memberships: featurePipeline.relationTracker,
         }
         this.isDirty.stabilized(100).addCallback((dirty) => {
             if (dirty) {

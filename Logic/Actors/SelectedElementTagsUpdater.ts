@@ -2,12 +2,13 @@
  * This actor will download the latest version of the selected element from OSM and update the tags if necessary.
  */
 import { UIEventSource } from "../UIEventSource"
-import { ElementStorage } from "../ElementStorage"
 import { Changes } from "../Osm/Changes"
 import { OsmObject } from "../Osm/OsmObject"
 import { OsmConnection } from "../Osm/OsmConnection"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import SimpleMetaTagger from "../SimpleMetaTagger"
+import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
+import { Feature } from "geojson"
 
 export default class SelectedElementTagsUpdater {
     private static readonly metatags = new Set([
@@ -19,28 +20,34 @@ export default class SelectedElementTagsUpdater {
         "id",
     ])
 
+    private readonly state: {
+        selectedElement: UIEventSource<Feature>
+        allElements: FeaturePropertiesStore
+        changes: Changes
+        osmConnection: OsmConnection
+        layoutToUse: LayoutConfig
+    }
+
     constructor(state: {
-        selectedElement: UIEventSource<any>
-        allElements: ElementStorage
+        selectedElement: UIEventSource<Feature>
+        allElements: FeaturePropertiesStore
         changes: Changes
         osmConnection: OsmConnection
         layoutToUse: LayoutConfig
     }) {
+        this.state = state
         state.osmConnection.isLoggedIn.addCallbackAndRun((isLoggedIn) => {
-            if (isLoggedIn) {
-                SelectedElementTagsUpdater.installCallback(state)
-                return true
+            if (!isLoggedIn) {
+                return
             }
+            this.installCallback()
+            // We only have to do this once...
+            return true
         })
     }
 
-    public static installCallback(state: {
-        selectedElement: UIEventSource<any>
-        allElements: ElementStorage
-        changes: Changes
-        osmConnection: OsmConnection
-        layoutToUse: LayoutConfig
-    }) {
+    private installCallback() {
+        const state = this.state
         state.selectedElement.addCallbackAndRunD(async (s) => {
             let id = s.properties?.id
 
@@ -62,7 +69,7 @@ export default class SelectedElementTagsUpdater {
                 const latestTags = await OsmObject.DownloadPropertiesOf(id)
                 if (latestTags === "deleted") {
                     console.warn("The current selected element has been deleted upstream!")
-                    const currentTagsSource = state.allElements.getEventSourceById(id)
+                    const currentTagsSource = state.allElements.getStore(id)
                     if (currentTagsSource.data["_deleted"] === "yes") {
                         return
                     }
@@ -70,25 +77,15 @@ export default class SelectedElementTagsUpdater {
                     currentTagsSource.ping()
                     return
                 }
-                SelectedElementTagsUpdater.applyUpdate(state, latestTags, id)
+                this.applyUpdate(latestTags, id)
                 console.log("Updated", id)
             } catch (e) {
                 console.warn("Could not update", id, " due to", e)
             }
         })
     }
-
-    public static applyUpdate(
-        state: {
-            selectedElement: UIEventSource<any>
-            allElements: ElementStorage
-            changes: Changes
-            osmConnection: OsmConnection
-            layoutToUse: LayoutConfig
-        },
-        latestTags: any,
-        id: string
-    ) {
+    private applyUpdate(latestTags: any, id: string) {
+        const state = this.state
         try {
             const leftRightSensitive = state.layoutToUse.isLeftRightSensitive()
 
@@ -115,7 +112,7 @@ export default class SelectedElementTagsUpdater {
 
             // With the changes applied, we merge them onto the upstream object
             let somethingChanged = false
-            const currentTagsSource = state.allElements.getEventSourceById(id)
+            const currentTagsSource = state.allElements.getStore(id)
             const currentTags = currentTagsSource.data
             for (const key in latestTags) {
                 let osmValue = latestTags[key]
@@ -135,7 +132,7 @@ export default class SelectedElementTagsUpdater {
                 if (currentKey.startsWith("_")) {
                     continue
                 }
-                if (this.metatags.has(currentKey)) {
+                if (SelectedElementTagsUpdater.metatags.has(currentKey)) {
                     continue
                 }
                 if (currentKey in latestTags) {

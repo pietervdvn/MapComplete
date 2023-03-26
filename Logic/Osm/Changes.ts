@@ -6,19 +6,18 @@ import { ChangeDescription, ChangeDescriptionTools } from "./Actions/ChangeDescr
 import { Utils } from "../../Utils"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import SimpleMetaTagger from "../SimpleMetaTagger"
-import FeatureSource from "../FeatureSource/FeatureSource"
-import { ElementStorage } from "../ElementStorage"
+import FeatureSource, { IndexedFeatureSource } from "../FeatureSource/FeatureSource"
 import { GeoLocationPointProperties } from "../State/GeoLocationState"
 import { GeoOperations } from "../GeoOperations"
 import { ChangesetHandler, ChangesetTag } from "./ChangesetHandler"
 import { OsmConnection } from "./OsmConnection"
+import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 
 /**
  * Handles all changes made to OSM.
  * Needs an authenticator via OsmConnection
  */
 export class Changes {
-    public readonly name = "Newly added features"
     /**
      * All the newly created features as featureSource + all the modified features
      */
@@ -26,7 +25,7 @@ export class Changes {
     public readonly pendingChanges: UIEventSource<ChangeDescription[]> =
         LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
     public readonly allChanges = new UIEventSource<ChangeDescription[]>(undefined)
-    public readonly state: { allElements: ElementStorage; osmConnection: OsmConnection }
+    public readonly state: { allElements: IndexedFeatureSource; osmConnection: OsmConnection }
     public readonly extraComment: UIEventSource<string> = new UIEventSource(undefined)
 
     private readonly historicalUserLocations: FeatureSource
@@ -38,7 +37,9 @@ export class Changes {
 
     constructor(
         state?: {
-            allElements: ElementStorage
+            dryRun: UIEventSource<boolean>
+            allElements: IndexedFeatureSource
+            featurePropertiesStore: FeaturePropertiesStore
             osmConnection: OsmConnection
             historicalUserLocations: FeatureSource
         },
@@ -50,8 +51,10 @@ export class Changes {
         // If a pending change contains a negative ID, we save that
         this._nextId = Math.min(-1, ...(this.pendingChanges.data?.map((pch) => pch.id) ?? []))
         this.state = state
-        this._changesetHandler = state?.osmConnection?.CreateChangesetHandler(
-            state.allElements,
+        this._changesetHandler = new ChangesetHandler(
+            state.dryRun,
+            state.osmConnection,
+            state.featurePropertiesStore,
             this
         )
         this.historicalUserLocations = state.historicalUserLocations
@@ -187,7 +190,7 @@ export class Changes {
 
         const changedObjectCoordinates: [number, number][] = []
 
-        const feature = this.state.allElements.ContainingFeatures.get(change.mainObjectId)
+        const feature = this.state.allElements.featuresById.data.get(change.mainObjectId)
         if (feature !== undefined) {
             changedObjectCoordinates.push(GeoOperations.centerpointCoordinates(feature))
         }

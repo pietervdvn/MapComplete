@@ -1,8 +1,5 @@
 import FeatureSource from "../../Logic/FeatureSource/FeatureSource"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import { ElementStorage } from "../../Logic/ElementStorage"
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 import { OsmTags } from "../../Models/OsmFeature"
 
 export interface ShowDataLayerOptions {
@@ -11,15 +8,10 @@ export interface ShowDataLayerOptions {
      */
     features: FeatureSource
     /**
-     * Indication of the current selected element; overrides some filters
+     * Indication of the current selected element; overrides some filters.
+     * When a feature is tapped, the feature will be put in there
      */
     selectedElement?: UIEventSource<any>
-    /**
-     * What popup to build when a feature is selected
-     */
-    buildPopup?:
-        | undefined
-        | ((tags: UIEventSource<any>, layer: LayerConfig) => ScrollableFullScreen)
 
     /**
      * If set, zoom to the features when initially loaded and when they are changed
@@ -31,7 +23,8 @@ export interface ShowDataLayerOptions {
     doShowLayer?: Store<true | boolean>
 
     /**
-     * Function which fetches the relevant store
+     * Function which fetches the relevant store.
+     * If given, the map will update when a property is changed
      */
     fetchStore?: (id: string) => UIEventSource<OsmTags>
 }

@@ -1,45 +1,32 @@
 import { Store, UIEventSource } from "../../UIEventSource"
 import FilteredLayer, { FilterState } from "../../../Models/FilteredLayer"
-import { FeatureSourceForLayer, Tiled } from "../FeatureSource"
-import { BBox } from "../../BBox"
-import { ElementStorage } from "../../ElementStorage"
+import FeatureSource from "../FeatureSource"
 import { TagsFilter } from "../../Tags/TagsFilter"
 import { Feature } from "geojson"
+import { OsmTags } from "../../../Models/OsmFeature"
 
-export default class FilteringFeatureSource implements FeatureSourceForLayer, Tiled {
+export default class FilteringFeatureSource implements FeatureSource {
     public features: UIEventSource<Feature[]> = new UIEventSource([])
-    public readonly layer: FilteredLayer
-    public readonly tileIndex: number
-    public readonly bbox: BBox
-    private readonly upstream: FeatureSourceForLayer
-    private readonly state: {
-        locationControl: Store<{ zoom: number }>
-        selectedElement: Store<any>
-        globalFilters?: Store<{ filter: FilterState }[]>
-        allElements: ElementStorage
-    }
-    private readonly _alreadyRegistered = new Set<UIEventSource<any>>()
+    private readonly upstream: FeatureSource
+    private readonly _fetchStore?: (id: String) => Store<OsmTags>
+    private readonly _globalFilters?: Store<{ filter: FilterState }[]>
+    private readonly _alreadyRegistered = new Set<Store<any>>()
     private readonly _is_dirty = new UIEventSource(false)
+    private readonly _layer: FilteredLayer
     private previousFeatureSet: Set<any> = undefined
 
     constructor(
-        state: {
-            locationControl: Store<{ zoom: number }>
-            selectedElement: Store<any>
-            allElements: ElementStorage
-            globalFilters?: Store<{ filter: FilterState }[]>
-        },
-        tileIndex,
-        upstream: FeatureSourceForLayer,
-        metataggingUpdated?: UIEventSource<any>
+        layer: FilteredLayer,
+        upstream: FeatureSource,
+        fetchStore?: (id: String) => Store<OsmTags>,
+        globalFilters?: Store<{ filter: FilterState }[]>,
+        metataggingUpdated?: Store<any>
     ) {
-        this.tileIndex = tileIndex
-        this.bbox = tileIndex === undefined ? undefined : BBox.fromTileIndex(tileIndex)
         this.upstream = upstream
-        this.state = state
+        this._fetchStore = fetchStore
+        this._layer = layer
+        this._globalFilters = globalFilters
 
-        this.layer = upstream.layer
-        const layer = upstream.layer
         const self = this
         upstream.features.addCallback(() => {
             self.update()
@@ -59,7 +46,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
             self._is_dirty.setData(true)
         })
 
-        state.globalFilters?.addCallback((_) => {
+        globalFilters?.addCallback((_) => {
             self.update()
         })
 
@@ -68,10 +55,10 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
 
     private update() {
         const self = this
-        const layer = this.upstream.layer
+        const layer = this._layer
         const features: Feature[] = this.upstream.features.data ?? []
         const includedFeatureIds = new Set<string>()
-        const globalFilters = self.state.globalFilters?.data?.map((f) => f.filter)
+        const globalFilters = self._globalFilters?.data?.map((f) => f.filter)
         const newFeatures = (features ?? []).filter((f) => {
             self.registerCallback(f)
 
@@ -126,7 +113,10 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
     }
 
     private registerCallback(feature: any) {
-        const src = this.state?.allElements?.addOrGetElement(feature)
+        if (this._fetchStore === undefined) {
+            return
+        }
+        const src = this._fetchStore(feature)
         if (src == undefined) {
             return
         }
@@ -136,7 +126,7 @@ export default class FilteringFeatureSource implements FeatureSourceForLayer, Ti
         this._alreadyRegistered.add(src)
 
         const self = this
-        // Add a callback as a changed tag migh change the filter
+        // Add a callback as a changed tag might change the filter
         src.addCallbackAndRunD((_) => {
             self._is_dirty.setData(true)
         })

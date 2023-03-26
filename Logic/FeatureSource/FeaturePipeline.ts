@@ -13,16 +13,18 @@ import RegisteringAllFromFeatureSourceActor from "./Actors/RegisteringAllFromFea
 import SaveTileToLocalStorageActor from "./Actors/SaveTileToLocalStorageActor"
 import DynamicGeoJsonTileSource from "./TiledFeatureSource/DynamicGeoJsonTileSource"
 import { TileHierarchyMerger } from "./TiledFeatureSource/TileHierarchyMerger"
-import RelationsTracker from "../Osm/RelationsTracker"
 import { NewGeometryFromChangesFeatureSource } from "./Sources/NewGeometryFromChangesFeatureSource"
 import ChangeGeometryApplicator from "./Sources/ChangeGeometryApplicator"
+/**
+ * Keeps track of the age of the loaded data.
+ * Has one freshness-Calculator for every layer
+ * @private
+ */
 import { BBox } from "../BBox"
 import OsmFeatureSource from "./TiledFeatureSource/OsmFeatureSource"
 import { Tiles } from "../../Models/TileRange"
-import TileFreshnessCalculator from "./TileFreshnessCalculator"
 import FullNodeDatabaseSource from "./TiledFeatureSource/FullNodeDatabaseSource"
 import MapState from "../State/MapState"
-import { ElementStorage } from "../ElementStorage"
 import { OsmFeature } from "../../Models/OsmFeature"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { FilterState } from "../../Models/FilteredLayer"
@@ -47,7 +49,6 @@ export default class FeaturePipeline {
     public readonly somethingLoaded: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     public readonly newDataLoadedSignal: UIEventSource<FeatureSource> =
         new UIEventSource<FeatureSource>(undefined)
-    public readonly relationTracker: RelationsTracker
     /**
      * Keeps track of all raw OSM-nodes.
      * Only initialized if `ReplaceGeometryAction` is needed somewhere
@@ -56,12 +57,6 @@ export default class FeaturePipeline {
     private readonly overpassUpdater: OverpassFeatureSource
     private state: MapState
     private readonly perLayerHierarchy: Map<string, TileHierarchyMerger>
-    /**
-     * Keeps track of the age of the loaded data.
-     * Has one freshness-Calculator for every layer
-     * @private
-     */
-    private readonly freshnesses = new Map<string, TileFreshnessCalculator>()
     private readonly oldestAllowedDate: Date
     private readonly osmSourceZoomLevel
     private readonly localStorageSavers = new Map<string, SaveTileToLocalStorageActor>()
@@ -87,7 +82,6 @@ export default class FeaturePipeline {
         const useOsmApi = state.locationControl.map(
             (l) => l.zoom > (state.overpassMaxZoom.data ?? 12)
         )
-        this.relationTracker = new RelationsTracker()
 
         state.changes.allChanges.addCallbackAndRun((allChanges) => {
             allChanges
@@ -141,11 +135,8 @@ export default class FeaturePipeline {
             )
             perLayerHierarchy.set(id, hierarchy)
 
-            this.freshnesses.set(id, new TileFreshnessCalculator())
-
             if (id === "type_node") {
                 this.fullNodeDatabase = new FullNodeDatabaseSource(filteredLayer, (tile) => {
-                    new RegisteringAllFromFeatureSourceActor(tile, state.allElements)
                     perLayerHierarchy.get(tile.layer.layerDef.id).registerTile(tile)
                     tile.features.addCallbackAndRunD((_) => self.onNewDataLoaded(tile))
                 })
@@ -473,7 +464,6 @@ export default class FeaturePipeline {
 
     private initOverpassUpdater(
         state: {
-            allElements: ElementStorage
             layoutToUse: LayoutConfig
             currentBounds: Store<BBox>
             locationControl: Store<Loc>
@@ -513,26 +503,10 @@ export default class FeaturePipeline {
             [state.locationControl]
         )
 
-        const self = this
-        const updater = new OverpassFeatureSource(state, {
+        return new OverpassFeatureSource(state, {
             padToTiles: state.locationControl.map((l) => Math.min(15, l.zoom + 1)),
-            relationTracker: this.relationTracker,
             isActive: useOsmApi.map((b) => !b && overpassIsActive.data, [overpassIsActive]),
-            freshnesses: this.freshnesses,
-            onBboxLoaded: (bbox, date, downloadedLayers, paddedToZoomLevel) => {
-                Tiles.MapRange(bbox.containingTileRange(paddedToZoomLevel), (x, y) => {
-                    const tileIndex = Tiles.tile_index(paddedToZoomLevel, x, y)
-                    downloadedLayers.forEach((layer) => {
-                        self.freshnesses.get(layer.id).addTileLoad(tileIndex, date)
-                        self.localStorageSavers.get(layer.id)?.MarkVisited(tileIndex, date)
-                    })
-                })
-            },
         })
-
-        // Register everything in the state' 'AllElements'
-        new RegisteringAllFromFeatureSourceActor(updater, state.allElements)
-        return updater
     }
 
     /**

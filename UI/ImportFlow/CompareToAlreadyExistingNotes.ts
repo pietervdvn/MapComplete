@@ -7,7 +7,6 @@ import CreateNoteImportLayer from "../../Models/ThemeConfig/Conversion/CreateNot
 import FilteredLayer, { FilterState } from "../../Models/FilteredLayer"
 import GeoJsonSource from "../../Logic/FeatureSource/Sources/GeoJsonSource"
 import MetaTagging from "../../Logic/MetaTagging"
-import RelationsTracker from "../../Logic/Osm/RelationsTracker"
 import FilteringFeatureSource from "../../Logic/FeatureSource/Sources/FilteringFeatureSource"
 import Minimap from "../Base/Minimap"
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer"
@@ -58,7 +57,6 @@ export class CompareToAlreadyExistingNotes
             MetaTagging.addMetatags(
                 f,
                 {
-                    memberships: new RelationsTracker(),
                     getFeaturesWithin: () => [],
                     getFeatureById: () => undefined,
                 },

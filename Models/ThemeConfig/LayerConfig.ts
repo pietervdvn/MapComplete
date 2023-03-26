@@ -68,6 +68,8 @@ export default class LayerConfig extends WithContextLoader {
     public readonly forceLoad: boolean
     public readonly syncSelection: typeof LayerConfig.syncSelectionAllowed[number] // this is a trick to conver a constant array of strings into a type union of these values
 
+    public readonly _needsFullNodeDatabase = false
+
     constructor(json: LayerConfigJson, context?: string, official: boolean = true) {
         context = context + "." + json.id
         const translationContext = "layers:" + json.id
@@ -250,7 +252,7 @@ export default class LayerConfig extends WithContextLoader {
                     | "osmbasedmap"
                     | "historicphoto"
                     | string
-                    )[]
+                )[]
                 if (typeof pr.preciseInput.preferredBackground === "string") {
                     preferredBackground = [pr.preciseInput.preferredBackground]
                 } else {

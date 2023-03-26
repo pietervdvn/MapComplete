@@ -115,7 +115,6 @@ describe("OverlapFunc", () => {
         const params: ExtraFuncParams = {
             getFeatureById: (id) => undefined,
             getFeaturesWithin: () => [[door]],
-            memberships: undefined,
         }
 
         ExtraFunctions.FullPatchFeature(params, hermanTeirlinck)

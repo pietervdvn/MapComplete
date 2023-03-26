@@ -14,7 +14,6 @@ export interface ExtraFuncParams {
      * Format: [ [ geojson, geojson, geojson, ... ], [geojson, ...], ...]
      */
     getFeaturesWithin: (layerId: string, bbox: BBox) => Feature<Geometry, { id: string }>[][]
-    memberships: RelationsTracker
     getFeatureById: (id: string) => Feature<Geometry, { id: string }>
 }
 
@@ -401,19 +400,6 @@ class ClosestNObjectFunc implements ExtraFunction {
     }
 }
 
-class Memberships implements ExtraFunction {
-    _name = "memberships"
-    _doc =
-        "Gives a list of `{role: string, relation: Relation}`-objects, containing all the relations that this feature is part of. " +
-        "\n\n" +
-        "For example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')`"
-    _args = []
-
-    _f(params, feat) {
-        return () => params.memberships.knownRelations.data.get(feat.properties.id) ?? []
-    }
-}
-
 class GetParsed implements ExtraFunction {
     _name = "get"
     _doc =
@@ -481,7 +467,6 @@ export class ExtraFunctions {
         new IntersectionFunc(),
         new ClosestObjectFunc(),
         new ClosestNObjectFunc(),
-        new Memberships(),
         new GetParsed(),
     ]
 

@@ -1,34 +1,21 @@
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import FeaturePipeline from "../FeatureSource/FeaturePipeline"
 import { Tiles } from "../../Models/TileRange"
-import { TileHierarchyAggregator } from "../../UI/ShowDataLayer/TileHierarchyAggregator"
-import { UIEventSource } from "../UIEventSource"
-import MapState from "./MapState"
 import SelectedFeatureHandler from "../Actors/SelectedFeatureHandler"
 import Hash from "../Web/Hash"
 import { BBox } from "../BBox"
-import FeatureInfoBox from "../../UI/Popup/FeatureInfoBox"
 import { FeatureSourceForLayer, Tiled } from "../FeatureSource/FeatureSource"
 import MetaTagRecalculator from "../FeatureSource/Actors/MetaTagRecalculator"
-import ScrollableFullScreen from "../../UI/Base/ScrollableFullScreen"
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import ShowDataLayer from "../../UI/Map/ShowDataLayer"
 
 export default class FeaturePipelineState {
     /**
      * The piece of code which fetches data from various sources and shows it on the background map
      */
     public readonly featurePipeline: FeaturePipeline
-    private readonly featureAggregator: TileHierarchyAggregator
     private readonly metatagRecalculator: MetaTagRecalculator
-    private readonly popups: Map<string, ScrollableFullScreen> = new Map<
-        string,
-        ScrollableFullScreen
-    >()
 
     constructor(layoutToUse: LayoutConfig) {
         const clustering = layoutToUse?.clustering
-        this.featureAggregator = TileHierarchyAggregator.createHierarchy(this)
         const clusterCounter = this.featureAggregator
         const self = this
 
@@ -58,7 +45,7 @@ export default class FeaturePipelineState {
             )
 
             // Do show features indicates if the respective 'showDataLayer' should be shown. It can be hidden by e.g. clustering
-            const doShowFeatures = source.features.map(
+            source.features.map(
                 (f) => {
                     const z = self.locationControl.data.zoom
 
@@ -112,14 +99,6 @@ export default class FeaturePipelineState {
                 },
                 [self.currentBounds, source.layer.isDisplayed, sourceBBox]
             )
-
-            new ShowDataLayer(self.maplibreMap, {
-                features: source,
-                layer: source.layer.layerDef,
-                doShowLayer: doShowFeatures,
-                selectedElement: self.selectedElement,
-                buildPopup: (tags, layer) => self.CreatePopup(tags, layer),
-            })
         }
 
         this.featurePipeline = new FeaturePipeline(registerSource, this, {
@@ -131,14 +110,5 @@ export default class FeaturePipelineState {
         sourcesToRegister.forEach((source) => self.metatagRecalculator.registerSource(source))
 
         new SelectedFeatureHandler(Hash.hash, this)
-    }
-
-    public CreatePopup(tags: UIEventSource<any>, layer: LayerConfig): ScrollableFullScreen {
-        if (this.popups.has(tags.data.id)) {
-            return this.popups.get(tags.data.id)
-        }
-        const popup = new FeatureInfoBox(tags, layer, this)
-        this.popups.set(tags.data.id, popup)
-        return popup
     }
 }

@@ -94,7 +94,6 @@ export default class DependencyCalculator {
 
                     return []
                 },
-                memberships: undefined,
             }
             // Init the extra patched functions...
             ExtraFunctions.FullPatchFeature(params, obj)

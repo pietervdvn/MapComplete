@@ -7,7 +7,6 @@ import { BBox } from "../../Logic/BBox"
 import { MapProperties } from "../../Models/MapProperties"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "./MaplibreMap.svelte"
-import Constants from "../../Models/Constants"
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
@@ -51,7 +50,7 @@ export class MapLibreAdaptor implements MapProperties {
         })
         this.maxbounds = state?.maxbounds ?? new UIEventSource(undefined)
         this.allowMoving = state?.allowMoving ?? new UIEventSource(true)
-        this._bounds = new UIEventSource(BBox.global)
+        this._bounds = new UIEventSource(undefined)
         this.bounds = this._bounds
         this.rasterLayer =
             state?.rasterLayer ?? new UIEventSource<RasterLayerPolygon | undefined>(undefined)
@@ -75,6 +74,12 @@ export class MapLibreAdaptor implements MapProperties {
                 dt.lat = map.getCenter().lat
                 this.location.ping()
                 this.zoom.setData(Math.round(map.getZoom() * 10) / 10)
+                const bounds = map.getBounds()
+                const bbox = new BBox([
+                    [bounds.getEast(), bounds.getNorth()],
+                    [bounds.getWest(), bounds.getSouth()],
+                ])
+                self._bounds.setData(bbox)
             })
         })
 

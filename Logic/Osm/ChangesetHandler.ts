@@ -1,7 +1,6 @@
 import escapeHtml from "escape-html"
 import UserDetails, { OsmConnection } from "./OsmConnection"
 import { UIEventSource } from "../UIEventSource"
-import { ElementStorage } from "../ElementStorage"
 import Locale from "../../UI/i18n/Locale"
 import Constants from "../../Models/Constants"
 import { Changes } from "./Changes"
@@ -14,12 +13,11 @@ export interface ChangesetTag {
 }
 
 export class ChangesetHandler {
-    private readonly allElements: ElementStorage
+    private readonly allElements: { addAlias: (id0: String, id1: string) => void }
     private osmConnection: OsmConnection
     private readonly changes: Changes
     private readonly _dryRun: UIEventSource<boolean>
     private readonly userDetails: UIEventSource<UserDetails>
-    private readonly auth: any
     private readonly backend: string
 
     /**
@@ -28,20 +26,11 @@ export class ChangesetHandler {
      */
     private readonly _remappings = new Map<string, string>()
 
-    /**
-     * Use 'osmConnection.CreateChangesetHandler' instead
-     * @param dryRun
-     * @param osmConnection
-     * @param allElements
-     * @param changes
-     * @param auth
-     */
     constructor(
         dryRun: UIEventSource<boolean>,
         osmConnection: OsmConnection,
-        allElements: ElementStorage,
-        changes: Changes,
-        auth
+        allElements: { addAlias: (id0: String, id1: string) => void },
+        changes: Changes
     ) {
         this.osmConnection = osmConnection
         this.allElements = allElements
@@ -49,7 +38,6 @@ export class ChangesetHandler {
         this._dryRun = dryRun
         this.userDetails = osmConnection.userDetails
         this.backend = osmConnection._oauth_config.url
-        this.auth = auth
 
         if (dryRun) {
             console.log("DRYRUN ENABLED")
@@ -61,7 +49,7 @@ export class ChangesetHandler {
      *
      * ChangesetHandler.removeDuplicateMetaTags([{key: "k", value: "v"}, {key: "k0", value: "v0"}, {key: "k", value:"v"}] // => [{key: "k", value: "v"}, {key: "k0", value: "v0"}]
      */
-    public static removeDuplicateMetaTags(extraMetaTags: ChangesetTag[]): ChangesetTag[] {
+    private static removeDuplicateMetaTags(extraMetaTags: ChangesetTag[]): ChangesetTag[] {
         const r: ChangesetTag[] = []
         const seen = new Set<string>()
         for (const extraMetaTag of extraMetaTags) {
@@ -82,7 +70,7 @@ export class ChangesetHandler {
      * @param rewriteIds
      * @private
      */
-    static rewriteMetaTags(extraMetaTags: ChangesetTag[], rewriteIds: Map<string, string>) {
+    private static rewriteMetaTags(extraMetaTags: ChangesetTag[], rewriteIds: Map<string, string>) {
         let hasChange = false
         for (const tag of extraMetaTags) {
             const match = tag.key.match(/^([a-zA-Z0-9_]+):(node\/-[0-9])$/)
@@ -198,7 +186,7 @@ export class ChangesetHandler {
      * @param rewriteIds: the mapping of ids
      * @param oldChangesetMeta: the metadata-object of the already existing changeset
      */
-    public RewriteTagsOf(
+    private RewriteTagsOf(
         extraMetaTags: ChangesetTag[],
         rewriteIds: Map<string, string>,
         oldChangesetMeta: {
@@ -318,28 +306,14 @@ export class ChangesetHandler {
     }
 
     private async CloseChangeset(changesetId: number = undefined): Promise<void> {
-        const self = this
-        return new Promise<void>(function (resolve, reject) {
-            if (changesetId === undefined) {
-                return
-            }
-            self.auth.xhr(
-                {
-                    method: "PUT",
-                    path: "/api/0.6/changeset/" + changesetId + "/close",
-                },
-                function (err, response) {
-                    if (response == null) {
-                        console.log("err", err)
-                    }
-                    console.log("Closed changeset ", changesetId)
-                    resolve()
-                }
-            )
-        })
+        if (changesetId === undefined) {
+            return
+        }
+        await this.osmConnection.put("changeset/" + changesetId + "/close")
+        console.log("Closed changeset ", changesetId)
     }
 
-    async GetChangesetMeta(csId: number): Promise<{
+    private async GetChangesetMeta(csId: number): Promise<{
         id: number
         open: boolean
         uid: number
@@ -358,34 +332,16 @@ export class ChangesetHandler {
     private async UpdateTags(csId: number, tags: ChangesetTag[]) {
         tags = ChangesetHandler.removeDuplicateMetaTags(tags)
 
-        const self = this
-        return new Promise<string>(function (resolve, reject) {
-            tags = Utils.NoNull(tags).filter(
-                (tag) =>
-                    tag.key !== undefined &&
-                    tag.value !== undefined &&
-                    tag.key !== "" &&
-                    tag.value !== ""
-            )
-            const metadata = tags.map((kv) => `<tag k="${kv.key}" v="${escapeHtml(kv.value)}"/>`)
-
-            self.auth.xhr(
-                {
-                    method: "PUT",
-                    path: "/api/0.6/changeset/" + csId,
-                    options: { header: { "Content-Type": "text/xml" } },
-                    content: [`<osm><changeset>`, metadata, `</changeset></osm>`].join(""),
-                },
-                function (err, response) {
-                    if (response === undefined) {
-                        console.error("Updating the tags of changeset " + csId + " failed:", err)
-                        reject(err)
-                    } else {
-                        resolve(response)
-                    }
-                }
-            )
-        })
+        tags = Utils.NoNull(tags).filter(
+            (tag) =>
+                tag.key !== undefined &&
+                tag.value !== undefined &&
+                tag.key !== "" &&
+                tag.value !== ""
+        )
+        const metadata = tags.map((kv) => `<tag k="${kv.key}" v="${escapeHtml(kv.value)}"/>`)
+        const content = [`<osm><changeset>`, metadata, `</changeset></osm>`].join("")
+        return this.osmConnection.put("changeset/" + csId, content, { "Content-Type": "text/xml" })
     }
 
     private defaultChangesetTags(): ChangesetTag[] {
@@ -413,57 +369,35 @@ export class ChangesetHandler {
      * @constructor
      * @private
      */
-    private OpenChangeset(changesetTags: ChangesetTag[]): Promise<number> {
-        const self = this
-        return new Promise<number>(function (resolve, reject) {
-            const metadata = changesetTags
-                .map((cstag) => [cstag.key, cstag.value])
-                .filter((kv) => (kv[1] ?? "") !== "")
-                .map((kv) => `<tag k="${kv[0]}" v="${escapeHtml(kv[1])}"/>`)
-                .join("\n")
+    private async OpenChangeset(changesetTags: ChangesetTag[]): Promise<number> {
+        const metadata = changesetTags
+            .map((cstag) => [cstag.key, cstag.value])
+            .filter((kv) => (kv[1] ?? "") !== "")
+            .map((kv) => `<tag k="${kv[0]}" v="${escapeHtml(kv[1])}"/>`)
+            .join("\n")
 
-            self.auth.xhr(
-                {
-                    method: "PUT",
-                    path: "/api/0.6/changeset/create",
-                    options: { header: { "Content-Type": "text/xml" } },
-                    content: [`<osm><changeset>`, metadata, `</changeset></osm>`].join(""),
-                },
-                function (err, response) {
-                    if (response === undefined) {
-                        console.error("Opening a changeset failed:", err)
-                        reject(err)
-                    } else {
-                        resolve(Number(response))
-                    }
-                }
-            )
-        })
+        const csId = await this.osmConnection.put(
+            "changeset/create",
+            [`<osm><changeset>`, metadata, `</changeset></osm>`].join(""),
+            { "Content-Type": "text/xml" }
+        )
+        return Number(csId)
     }
 
     /**
      * Upload a changesetXML
      */
-    private UploadChange(changesetId: number, changesetXML: string): Promise<Map<string, string>> {
-        const self = this
-        return new Promise(function (resolve, reject) {
-            self.auth.xhr(
-                {
-                    method: "POST",
-                    options: { header: { "Content-Type": "text/xml" } },
-                    path: "/api/0.6/changeset/" + changesetId + "/upload",
-                    content: changesetXML,
-                },
-                function (err, response) {
-                    if (response == null) {
-                        console.error("Uploading an actual change failed", err)
-                        reject(err)
-                    }
-                    const changes = self.parseUploadChangesetResponse(response)
-                    console.log("Uploaded changeset ", changesetId)
-                    resolve(changes)
-                }
-            )
-        })
+    private async UploadChange(
+        changesetId: number,
+        changesetXML: string
+    ): Promise<Map<string, string>> {
+        const response = await this.osmConnection.post(
+            "changeset/" + changesetId + "/upload",
+            changesetXML,
+            { "Content-Type": "text/xml" }
+        )
+        const changes = this.parseUploadChangesetResponse(response)
+        console.log("Uploaded changeset ", changesetId)
+        return changes
     }
 }

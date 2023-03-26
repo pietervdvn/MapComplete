@@ -1,4 +1,4 @@
-import FeatureSource, { FeatureSourceForLayer, Tiled } from "./FeatureSource"
+import FeatureSource from "./FeatureSource"
 import { Store } from "../UIEventSource"
 import FilteredLayer from "../../Models/FilteredLayer"
 import SimpleFeatureSource from "./Sources/SimpleFeatureSource"
@@ -12,7 +12,7 @@ import { Feature } from "geojson"
 export default class PerLayerFeatureSourceSplitter {
     constructor(
         layers: Store<FilteredLayer[]>,
-        handleLayerData: (source: FeatureSourceForLayer & Tiled) => void,
+        handleLayerData: (source: FeatureSource, layer: FilteredLayer) => void,
         upstream: FeatureSource,
         options?: {
             tileIndex?: number
@@ -71,10 +71,10 @@ export default class PerLayerFeatureSourceSplitter {
                 let featureSource = knownLayers.get(id)
                 if (featureSource === undefined) {
                     // Not yet initialized - now is a good time
-                    featureSource = new SimpleFeatureSource(layer, options?.tileIndex)
+                    featureSource = new SimpleFeatureSource(layer)
                     featureSource.features.setData(features)
                     knownLayers.set(id, featureSource)
-                    handleLayerData(featureSource)
+                    handleLayerData(featureSource, layer)
                 } else {
                     featureSource.features.setData(features)
                 }
