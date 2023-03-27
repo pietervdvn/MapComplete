@@ -33,7 +33,7 @@
         "ca": "Publicitat",
         "es": "Publicidad",
         "en": "Advertise",
-        "de": "Werben"
+        "de": "Werbeeinrichtungen"
       },
       "minzoom": 15,
       "source": {
@@ -921,7 +921,7 @@
             "en": "a poster box mounted on a wall",
             "ca": "un mupi sobre la paret",
             "es": "un mupi sobre la pared",
-            "de": "eine an einer Wand befestigte Posterbox"
+            "de": "eine wandmontierte Posterbox"
           },
           "preciseInput": {
             "snapToLayer": "walls_and_buildings"
@@ -935,13 +935,13 @@
             "ca": "un tauló d'anunis",
             "es": "un tablón de anuncios",
             "en": "a billboard",
-            "de": "eine Werbetafel"
+            "de": "ein Anschlagbrett"
           },
           "description": {
             "en": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
             "es": "Un pequeño tablón de anuncios para anuncios del vecindario, normalmente destinado a peatones",
             "ca": "Un xicotet tauló d'anuncics per a anuncis del veïnat, normalment destitat a peatons",
-            "de": "Kleine Werbetafel für die Nachbarschaftswerbung, im Allgemeinen für Fußgänger bestimmt"
+            "de": "Kleines Anschlagbrett für Nachbarschaftswerbung, normalerweise an Fußgänger gerichtet"
           },
           "exampleImages": [
             "./assets/themes/advertising/local_Board.jpg",
@@ -1009,7 +1009,7 @@
             "ca": "una patalla sobre una paret",
             "es": "una pantalla sobre una pared",
             "en": "a screen mounted on a wall",
-            "de": "ein an der Wand montierter Bildschirm"
+            "de": "ein wandmontierter Bildschirm"
           },
           "preciseInput": {
             "preferredBackground": "map",

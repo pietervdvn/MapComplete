@@ -102,6 +102,16 @@
     },
     {
       "key": "backrest",
+      "description": "Layer 'Benches' shows backrest=yes&two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "yes"
+    },
+    {
+      "key": "two_sided",
+      "description": "Layer 'Benches' shows backrest=yes&two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
+      "value": "yes"
+    },
+    {
+      "key": "backrest",
       "description": "Layer 'Benches' shows backrest=yes with a fixed text, namely 'Does have a backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Benches')",
       "value": "yes"
     },
@@ -155,7 +165,7 @@
     },
     {
       "key": "direction",
-      "description": "Layer 'Benches' shows and asks freeform values for key 'direction' (in the MapComplete.osm.be theme 'Benches')"
+      "description": "Layer 'Benches' shows and asks freeform values for key 'direction' (in the MapComplete.osm.be theme 'Benches') (This is only shown if two_sided!=yes)"
     },
     {
       "key": "colour",

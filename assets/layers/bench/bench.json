@@ -66,11 +66,15 @@
       "mappings": [
         {
           "if": {
-            "and":["backrest=yes","two_sided=yes"]
+            "and": [
+              "backrest=yes",
+              "two_sided=yes"
+            ]
           },
           "then": {
             "en": "This bench is two-sided and shares the backrest",
-            "nl": "Dit is een dubbele bank waarbij de rugleuning gedeeld wordt"
+            "nl": "Dit is een dubbele bank waarbij de rugleuning gedeeld wordt",
+            "de": "Diese Bank ist zweiseitig und teilt sich die Rückenlehne"
           },
           "icon": {
             "path": "./assets/layers/bench/two_sided.svg",
@@ -100,7 +104,9 @@
             "da": "Har et ryglæn",
             "cs": "Má opěradlo"
           },
-          "addExtraTags": ["two_sided=no"]
+          "addExtraTags": [
+            "two_sided=no"
+          ]
         },
         {
           "if": "backrest=no",
@@ -454,7 +460,9 @@
       ],
       "id": "bench-direction",
       "condition": {
-        "and": ["two_sided!=yes"]
+        "and": [
+          "two_sided!=yes"
+        ]
       }
     },
     {

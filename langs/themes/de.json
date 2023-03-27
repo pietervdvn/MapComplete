@@ -13,16 +13,6 @@
                     "1": {
                         "title": "eine freistehende Posterbox"
                     },
-                    "10": {
-                        "description": "Verwendet für Werbeschilder, Leuchtreklamen, Logos und institutionelle Eingangsschilder",
-                        "title": "ein Schild"
-                    },
-                    "11": {
-                        "title": "eine Skulptur"
-                    },
-                    "12": {
-                        "title": "eine Wandmalerei"
-                    },
                     "2": {
                         "title": "eine wandmontierte Posterbox"
                     },
@@ -49,6 +39,16 @@
                     },
                     "9": {
                         "title": "ein Totem"
+                    },
+                    "10": {
+                        "description": "Verwendet für Werbeschilder, Leuchtreklamen, Logos und institutionelle Eingangsschilder",
+                        "title": "ein Schild"
+                    },
+                    "11": {
+                        "title": "eine Skulptur"
+                    },
+                    "12": {
+                        "title": "eine Wandmalerei"
                     }
                 },
                 "tagRenderings": {
@@ -143,9 +143,6 @@
                             "1": {
                                 "then": "Dies ist ein Brett"
                             },
-                            "10": {
-                                "then": "Dies ist eine Wandmalerei"
-                            },
                             "2": {
                                 "then": "Dies ist eine Litfaßsäule"
                             },
@@ -169,6 +166,9 @@
                             },
                             "9": {
                                 "then": "Dies ist ein Totem"
+                            },
+                            "10": {
+                                "then": "Dies ist eine Wandmalerei"
                             }
                         },
                         "question": "Welche Art von Werbung ist das?",
@@ -182,9 +182,6 @@
                         },
                         "1": {
                             "then": "Brett"
-                        },
-                        "10": {
-                            "then": "Wandmalerei"
                         },
                         "2": {
                             "then": "Posterbox"
@@ -209,6 +206,9 @@
                         },
                         "9": {
                             "then": "Totem"
+                        },
+                        "10": {
+                            "then": "Wandmalerei"
                         }
                     }
                 }
@@ -1117,33 +1117,6 @@
     "onwheels": {
         "description": "Auf dieser Karte können Sie öffentlich zugängliche Orte für Rollstuhlfahrer ansehen, bearbeiten oder hinzufügen",
         "layers": {
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistik"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Import"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "4": {
                 "override": {
                     "filter": {
@@ -1185,6 +1158,33 @@
             "8": {
                 "override": {
                     "name": "Barrierefreie Parkplätze"
+                }
+            },
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistik"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Alle vorgeschlagenen Tags hinzufügen"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -1346,6 +1346,10 @@
     "stations": {
         "description": "Bahnhofsdetails ansehen, bearbeiten und hinzufügen",
         "layers": {
+            "3": {
+                "description": "Ebene mit Bahnhöfen",
+                "name": "Bahnhöfe"
+            },
             "15": {
                 "description": "Anzeigen der Züge, die von diesem Bahnhof abfahren",
                 "name": "Abfahrtstafeln",
@@ -1377,10 +1381,6 @@
                 "title": {
                     "render": "Abfahrtstafel"
                 }
-            },
-            "3": {
-                "description": "Ebene mit Bahnhöfen",
-                "name": "Bahnhöfe"
             }
         },
         "title": "Bahnhöfe"

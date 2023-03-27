@@ -141,6 +141,16 @@
     },
     {
       "key": "backrest",
+      "description": "Layer 'Artworks' shows backrest=yes&two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map') (This is only shown if amenity=bench)",
+      "value": "yes"
+    },
+    {
+      "key": "two_sided",
+      "description": "Layer 'Artworks' shows backrest=yes&two_sided=yes with a fixed text, namely 'This bench is two-sided and shares the backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map') (This is only shown if amenity=bench)",
+      "value": "yes"
+    },
+    {
+      "key": "backrest",
       "description": "Layer 'Artworks' shows backrest=yes with a fixed text, namely 'Does have a backrest' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Open Artwork Map') (This is only shown if amenity=bench)",
       "value": "yes"
     },
