@@ -152,6 +152,23 @@
             "question": "¿En qué nivel se encuentra esta característica?",
             "render": "Localizada en la {level}° planta"
         },
+        "luminous_or_lit": {
+            "mappings": {
+                "0": {
+                    "then": "Este objeto emite luz y es también iluminado por una fuente de luz externa"
+                },
+                "1": {
+                    "then": "Este objeto emite luz"
+                },
+                "2": {
+                    "then": "Este objeto recibe iluminación, por ejemplo por un foco u otras luces"
+                },
+                "3": {
+                    "then": "Este objeto ni emite luz ni es iluminado"
+                }
+            },
+            "question": "¿Está este objeto iluminado o emite luz?"
+        },
         "multilevels": {
             "override": {
                 "question": "¿A qué pisos va este ascensor?",
