@@ -98,6 +98,15 @@
                     "1": {
                         "then": "Mural"
                     },
+                    "10": {
+                        "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
+                    },
+                    "11": {
+                        "then": "Enrajolat"
+                    },
+                    "12": {
+                        "then": "Tallat a la fusta"
+                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -121,15 +130,6 @@
                     },
                     "9": {
                         "then": "Relleu"
-                    },
-                    "10": {
-                        "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
-                    },
-                    "11": {
-                        "then": "Enrajolat"
-                    },
-                    "12": {
-                        "then": "Tallat a la fusta"
                     }
                 },
                 "question": "Quin tipus d'obra és aquesta peça?",
@@ -435,6 +435,9 @@
             },
             "bench-backrest": {
                 "mappings": {
+                    "0": {
+                        "then": "Aquest banc té dues cares i comparteix el respatller"
+                    },
                     "1": {
                         "then": "Té espatller"
                     },
@@ -1457,14 +1460,14 @@
                     "1": {
                         "question": "Té un connector <div style='display: inline-block'><b><b>Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> connector"
                     },
+                    "13": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
                     "5": {
                         "question": "Té un connecgtor de <div style='display: inline-block'><b>Tipus 1<i>sense</i>cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
                     "6": {
                         "question": "Té un connector <div style='display: inline-block'><b>Tipus 1 CSS (Combo Tipus 1)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
-                    },
-                    "13": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     }
                 }
             }
@@ -1473,30 +1476,6 @@
         "tagRenderings": {
             "Available_charging_stations (generated)": {
                 "mappings": {
-                    "2": {
-                        "then": "<b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)"
-                    },
-                    "3": {
-                        "then": "<b>Endoll de paret Europeu</b> amb pin a terra (CEE7/4 tipus E)"
-                    },
-                    "4": {
-                        "then": "<b>CHAdeMo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
-                    },
                     "10": {
                         "then": "<b>CSS 1Tipus 1</b> (també conegut com Tipus 1 combo)"
                     },
@@ -1524,6 +1503,9 @@
                     "18": {
                         "then": "<b>Tipus 2 amb cable</b> (mennekes)"
                     },
+                    "2": {
+                        "then": "<b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)"
+                    },
                     "20": {
                         "then": "<b>CSS Supercarregador Tesla</b> (tipus2_css de la marca)"
                     },
@@ -1532,6 +1514,27 @@
                     },
                     "26": {
                         "then": "<b>USB</b> per a carregar mòbils i dispositius petits"
+                    },
+                    "3": {
+                        "then": "<b>Endoll de paret Europeu</b> amb pin a terra (CEE7/4 tipus E)"
+                    },
+                    "4": {
+                        "then": "<b>CHAdeMo</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
                     }
                 },
                 "question": "Quins tipus de connexions de càrrega estan disponibles aquí?"
@@ -2014,6 +2017,9 @@
                         "then": "Via ciclista obligatòria"
                     }
                 }
+            },
+            "width:carriageway": {
+                "questionHint": "Això es mesura de vorera a vorera i, per tant, inclou l'amplada dels aparcaments en línia"
             }
         },
         "title": {
@@ -2165,10 +2171,16 @@
             "render": "Aigua potable"
         }
     },
+    "elevator": {
+        "name": "Ascensor"
+    },
     "entrance": {
         "description": "Una capa que mostra entrades i ofereix la possibilitat de sondejar algunes dades avançades que són importants per a, per exemple, usuaris de cadires de rodes (però també ciclistes, repartidors, …)",
         "name": "Entrada",
         "tagRenderings": {
+            "Door_type": {
+                "questionHint": "A la pregunta següent es pregunta si la porta està automatitzada o no"
+            },
             "Entrance type": {
                 "mappings": {
                     "4": {
@@ -2178,8 +2190,11 @@
             },
             "automatic_door": {
                 "mappings": {
+                    "1": {
+                        "then": "Aquesta porta <b>no </b> està automatitzada"
+                    },
                     "7": {
-                        "then": "Aquesta porta l'obri el personal quan es sol·licita<b>polsant un botó</b>"
+                        "then": "Aquesta porta l'obri el personal quan es sol·licita <b>polsant un botó</b>"
                     }
                 }
             },
@@ -2193,6 +2208,9 @@
     },
     "etymology": {
         "tagRenderings": {
+            "simple etymology": {
+                "questionHint": "Això podria estar escrit al cartell del nom del carrer"
+            },
             "street-name-sign-image": {
                 "render": "{image_carousel(image:streetsign)}<br/>{image_upload(image:streetsign, Afegeix una imatge de la placa amb el nom del carrer)}"
             },
@@ -2342,6 +2360,9 @@
             "ghost_bike-inscription": {
                 "render": "<i>{inscription}</i>"
             },
+            "ghost_bike-name": {
+                "questionHint": "Si us plau, respecteu la privadesa: només ompliu el nom si està àmpliament publicat o marcat a la bicicleta. Opta per deixar de banda el cognom."
+            },
             "ghost_bike-source": {
                 "question": "En quina pàgina web es pot trobar més informació sobre la bicicleta blanca o l'accident?",
                 "render": "<a href='{source}' target='_blank'>Més informació disponible</a>"
@@ -2381,6 +2402,18 @@
     "hospital": {
         "name": "Hospitals",
         "tagRenderings": {
+            "inpatient": {
+                "mappings": {
+                    "0": {
+                        "then": "Açò és una clínica: els pacients no poden passar la nit"
+                    },
+                    "1": {
+                        "then": "Es tracta d'un hospital: els pacients poden estar ingressats aquí durant diversos dies"
+                    }
+                },
+                "question": "Aquesta instal·lació admet hospitalitzacions?",
+                "questionHint": "Un pacient hospitalitzat és un pacient que roman diversos dies a la instal·lació"
+            },
             "name": {
                 "question": "Quin és el nom d'aquest hospital?",
                 "render": "Aquest hospital s'anomena {name}"
@@ -2442,7 +2475,11 @@
                 "question": "Quin és el diàmetre d'aquest hidrant?"
             },
             "hydrant-number-of-couplings": {
-                "question": "Quants acoblaments té aquest hidrant?"
+                "freeform": {
+                    "placeholder": "Nombre d'acoblaments"
+                },
+                "question": "Quants acoblaments té aquest hidrant?",
+                "render": "Nombre d'acoblaments: {couplings}"
             },
             "hydrant-state": {
                 "mappings": {
@@ -2574,6 +2611,27 @@
     "maproulette": {
         "description": "Capa que mostra totes les tasques de MapRoulette",
         "tagRenderings": {
+            "mark_duplicate": {
+                "render": {
+                    "special": {
+                        "message": "Marca com a no trobat o com a fals positiu"
+                    }
+                }
+            },
+            "mark_fixed": {
+                "render": {
+                    "special": {
+                        "message": "Marca com a solucionat"
+                    }
+                }
+            },
+            "mark_too_hard": {
+                "render": {
+                    "special": {
+                        "message": "Marca com a massa complicat"
+                    }
+                }
+            },
             "status": {
                 "mappings": {
                     "0": {
@@ -2609,7 +2667,11 @@
     },
     "nature_reserve": {
         "tagRenderings": {
+            "Curator": {
+                "questionHint": "Respecteu la privadesa: només empleneu un nom si es publica àmpliament"
+            },
             "Email": {
+                "questionHint": "Respecteu la privadesa: només ompliu una adreça de correu electrònic personal si es publica àmpliament",
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
             "Name tag": {
@@ -2617,6 +2679,9 @@
             },
             "Surface area": {
                 "render": "Superfície: {_surface:ha}Ha"
+            },
+            "phone": {
+                "questionHint": "Respecteu la privadesa: només empleneu una adreça de número de telèfon personal si es publica àmpliament"
             }
         }
     },
@@ -2728,6 +2793,26 @@
                         "then": "És un lloc normal d'aparcament."
                     }
                 }
+            }
+        }
+    },
+    "parking_ticket_machine": {
+        "presets": {
+            "0": {
+                "title": "una màquina de tiquets d'aparcament"
+            }
+        },
+        "tagRenderings": {
+            "ref": {
+                "freeform": {
+                    "placeholder": "Número de referència"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta màquina de tiquets d'aparcament no té número de referència"
+                    }
+                },
+                "render": "Aquesta màquina de tiquets d'aparcament té el número de referència {ref}"
             }
         }
     },
@@ -2950,7 +3035,23 @@
     "rainbow_crossings": {
         "description": "Una capa que mostra els passos de vianants pintats amb de l'arc de Sant Martí"
     },
+    "reception_desk": {
+        "tagRenderings": {
+            "desk-height": {
+                "questionHint": "Es mesura des del terra fins a la part més baixa utilitzable de l'escriptori"
+            }
+        }
+    },
     "recycling": {
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Només accés públic"
+                    }
+                }
+            }
+        },
         "name": "Residus",
         "presets": {
             "0": {
@@ -2973,7 +3074,8 @@
                         "then": "Aquesta instal·lació de reciclatge és només per a ús privat"
                     }
                 },
-                "question": "Qui pot utilitzar aquesta instal·lació de reciclatge?"
+                "question": "Qui pot utilitzar aquesta instal·lació de reciclatge?",
+                "render": "Aquesta instal·lació de reciclatge la pot utilitzar {access}"
             },
             "container-location": {
                 "mappings": {
@@ -3000,30 +3102,6 @@
                     },
                     "1": {
                         "then": "Aquí es poden reciclar els cartons de begudes"
-                    },
-                    "2": {
-                        "then": "Aquí es poden reciclar llaunes"
-                    },
-                    "3": {
-                        "then": "Aquí es pot reciclar roba"
-                    },
-                    "4": {
-                        "then": "Aquí es pot reciclar oli de cuina"
-                    },
-                    "5": {
-                        "then": "Aquí es pot reciclar oli de motor"
-                    },
-                    "6": {
-                        "then": "Aquí es poden reciclar tub fluroescents"
-                    },
-                    "7": {
-                        "then": "Aquí es poden reciclar residus verds"
-                    },
-                    "8": {
-                        "then": "Ací es poden reciclar residus orgànics"
-                    },
-                    "9": {
-                        "then": "Aquí es poden reciclar ampolles de vidre"
                     },
                     "10": {
                         "then": "Aquí es pot reciclar vidre"
@@ -3055,6 +3133,9 @@
                     "19": {
                         "then": "Aquí es poden reciclar petits aparells electrònics"
                     },
+                    "2": {
+                        "then": "Aquí es poden reciclar llaunes"
+                    },
                     "20": {
                         "then": "Aquí es poden reciclar petits aparells elèctrics"
                     },
@@ -3066,6 +3147,27 @@
                     },
                     "23": {
                         "then": "Ací es pot reciclar el rebuig"
+                    },
+                    "3": {
+                        "then": "Aquí es pot reciclar roba"
+                    },
+                    "4": {
+                        "then": "Aquí es pot reciclar oli de cuina"
+                    },
+                    "5": {
+                        "then": "Aquí es pot reciclar oli de motor"
+                    },
+                    "6": {
+                        "then": "Aquí es poden reciclar tub fluroescents"
+                    },
+                    "7": {
+                        "then": "Aquí es poden reciclar residus verds"
+                    },
+                    "8": {
+                        "then": "Ací es poden reciclar residus orgànics"
+                    },
+                    "9": {
+                        "then": "Aquí es poden reciclar ampolles de vidre"
                     }
                 },
                 "question": "Què es pot reciclar aquí?"
@@ -3251,6 +3353,34 @@
         }
     },
     "sport_pitch": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Accés lliure"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Tots els esports"
+                    },
+                    "1": {
+                        "question": "Camps de bàsquet"
+                    },
+                    "2": {
+                        "question": "Camps de futbol"
+                    },
+                    "3": {
+                        "question": "Taules de ping-pong"
+                    },
+                    "4": {
+                        "question": "Camps de tennis"
+                    }
+                }
+            }
+        },
         "name": "Camps d'esports",
         "tagRenderings": {
             "sport-pitch-access": {
@@ -3415,6 +3545,12 @@
                     "1": {
                         "then": "Aquest fanal utilitza LED"
                     },
+                    "10": {
+                        "then": "Aquest fanal utilitza làmpades de sodi d'alta pressió (taronja amb blanc)"
+                    },
+                    "11": {
+                        "then": "Aquest fanal s'il·lumina amb gas"
+                    },
                     "2": {
                         "then": "Aquest fanal utilitza il·luminació incandescent"
                     },
@@ -3438,12 +3574,6 @@
                     },
                     "9": {
                         "then": "Aquest fanal utilitza làmpades de sodi de baixa pressió (taronja monocroma)"
-                    },
-                    "10": {
-                        "then": "Aquest fanal utilitza làmpades de sodi d'alta pressió (taronja amb blanc)"
-                    },
-                    "11": {
-                        "then": "Aquest fanal s'il·lumina amb gas"
                     }
                 }
             },
@@ -3785,6 +3915,9 @@
             }
         },
         "tagRenderings": {
+            "circumference": {
+                "questionHint": "Es mesura a una alçada d'1,30 m"
+            },
             "tree-decidouous": {
                 "mappings": {
                     "1": {
@@ -3829,6 +3962,13 @@
                     }
                 }
             },
+            "contributor-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Heu aportat codi a MapComplete amb {_code_contributions} commits! Això és increïble!"
+                    }
+                }
+            },
             "cscount-thanks": {
                 "mappings": {
                     "0": {
@@ -3838,12 +3978,27 @@
             },
             "picture-license": {
                 "mappings": {
+                    "0": {
+                        "then": "Les imatges que feu tindran llicència <b>CC0</b> i s'afegiran al domini públic. Això vol dir que tothom pot utilitzar les vostres imatges per a qualsevol propòsit. <span class='subtle'>Aquesta és l'opció predeterminada. </span>"
+                    },
+                    "1": {
+                        "then": "Les imatges que feu tindran llicència <b>CC0</b> i s'afegiran al domini públic. Això vol dir que tothom pot utilitzar les vostres imatges per a qualsevol propòsit."
+                    },
                     "2": {
                         "then": "Les fotografies que facis es publicaran sota <b>CC-BY 4.0</b> que requereix que qualsevol que utilitzi la vostra imatge us ha de donar crèdits"
+                    },
+                    "3": {
+                        "then": "Les imatges que feu tindran una llicència amb <b>CC-BY-SA 4.0</b> el que significa que tothom que utilitzi la vostra imatge us ha d'atribuir i que els derivats de la vostra imatge s'han de tornar a compartir amb la mateixa llicència."
                     }
-                }
+                },
+                "question": "Sota quina llicència vols publicar les teves fotos?"
             },
             "translation-completeness": {
+                "mappings": {
+                    "0": {
+                        "then": "Completament traduït"
+                    }
+                },
                 "render": "Les traduccions de {_theme} en {_language} tenen un {_translation_percentage}%: {_translation_translated_count} cadenes de {_translation_total} estan traduïdes"
             },
             "translation-help": {
@@ -3855,15 +4010,29 @@
             },
             "translation-mode": {
                 "mappings": {
+                    "0": {
+                        "then": "No mostris cap botó per a canviar ràpidament les traduccions"
+                    },
                     "1": {
                         "then": "Mostra un botó per a obrir ràpidament les traduccions quan utilitzes MapComplet en una pantalla gran"
+                    },
+                    "2": {
+                        "then": "Mostra sempre els botons de traducció, fins i tot al mòbil"
                     }
-                }
+                },
+                "question": "Vols ajudar a traduir MapComplete?"
             },
             "translation-thanks": {
                 "mappings": {
                     "0": {
                         "then": "Has contribuït a traduir MapComplete! Això és fantàstic!"
+                    }
+                }
+            },
+            "verified-mastodon": {
+                "mappings": {
+                    "0": {
+                        "then": "S'ha trobat un enllaç al vostre perfil de Mastodon: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>"
                     }
                 }
             }
@@ -3924,10 +4093,34 @@
             "0": {
                 "title": "un contenidor de basura"
             }
+        },
+        "tagRenderings": {
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Es tracta d'un contenidor mitjà o gran per a dipositar residus (domèstics)"
+                    }
+                }
+            }
         }
     },
     "windturbine": {
+        "description": "Molins de vent moderns que generen electricitat",
         "name": "Turbina Eòlica",
+        "presets": {
+            "0": {
+                "title": "una turbina eòlica"
+            }
+        },
+        "tagRenderings": {
+            "turbine-diameter": {
+                "question": "Quin és el diàmetre del rotor d'aquest aerogenerador en metres?",
+                "render": "El diàmetre del rotor d'aquest aerogenerador és de {rotor:diameter} metres."
+            },
+            "windturbine-fixme": {
+                "render": "Informació addicional per als experts en OpenStreetMap: {fixme}"
+            }
+        },
         "title": {
             "mappings": {
                 "0": {
