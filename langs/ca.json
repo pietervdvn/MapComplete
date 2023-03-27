@@ -63,16 +63,26 @@
             "see_images": "Mostra imatges de contribuïdors anteriors, Wikipedia, Mapillary, ... ",
             "wikipedia": "Es mostren articles de Wikipedia enllaçats"
         },
+        "frontParagraph": "MapComplete és una aplicació web fàcil d'utilitzar per recopilar geodades a OpenStreetMap, que permet recollir i gestionar dades rellevants d'una manera oberta, col·lectiva i reutilitzable.\n\nEs poden afegir noves categories i atributs a petició.",
+        "lines_too": "També es mostren línies i polígons. Els atributs i les imatges també es poden afegir i actualitzar en aquests objectes.",
         "mapcomplete": {
+            "customize": "MapComplete es pot adaptar a les vostres necessitats amb noves capes, noves funcionalitats o dissenyar-se amb els colors i el tipus de lletra de la vostra organització.\nTambé tenim experiència amb l'inici de campanyes per col·laborar amb geodades.\nPoseu-vos en contacte amb pietervdvn@posteo.net per obtenir un pressupost.",
             "intro": "MapComplete és una pàgina web que té {mapCount} mapes interactius. Cada mapa individual et permet afegir o actualitzar informació. Té molts elements:",
             "li0": "Mostra on estan els PDI",
             "li1": "Afegeix nous punts i actualitza informació dels existents",
             "li2": "Afegeix informació de contacte i hores d'apertura fàcilment",
+            "li3": "Es pot col·locar en altres llocs web com iFrame",
+            "li4": "Incrustat dins de l'ecosistema OpenStreetMap, que té moltes eines disponibles",
+            "li5": "Funcionalitat per importar conjunts de dades existents",
+            "li6": "Moltes funcions avançades, com ara detecció d'arbres i mètodes avançats d'entrada",
             "li7": "Programari lliure amb copyleft (llicència GPL) i d'ús gratuït",
             "title": "Que és MapComplete?"
         },
         "onwheels": "També hi ha disponibles mapes d'interior per a usuaris de cadira de rodes.",
+        "osm": "OpenStreetMap és un mapa en línia que pot ser editat i reutilitzat per qualsevol persona amb qualsevol propòsit, sempre que s'atribueixi i les dades es mantinguin obertes.\n\nÉs la base de dades geoespacial més gran del món i és reutilitzada per milers d'aplicacions i llocs web.",
+        "tagline": "Recolliu geodades amb OpenStreetMap",
         "title": "MapComplete.osm.be",
+        "toerisme_vlaanderen": "Per a un projecte conjunt amb Visit Flanders, es va crear \"Pin your point\". Més de 160 col·laboradors van afegir uns quants milers de bancs i pícnics i van trobar 100 punts de recàrrega per a bicicletes.",
         "whatIsOsm": "Que és OpenStreetMap?"
     },
     "general": {
@@ -93,6 +103,7 @@
                 "importTags": "L'element rebrà {tags}",
                 "officialThemesOnly": "El botó d'importació està desactivat per a temes no oficials per evitar accidents",
                 "wrongType": "Aquest element no és un punt o una via i no pot ser importat",
+                "wrongTypeToConflate": "Aquesta característica no és un node ni una via i no es poden combinar",
                 "zoomInMore": "Ampliar més per importar aquest element"
             },
             "importTags": "L'element rebrà {tags}",
@@ -185,6 +196,8 @@
         "loadingTheme": "Carregant {theme}…",
         "loginFailed": "Ha fallat l'entrada a OpenStreetMap",
         "loginFailedOfflineMode": "Actualment OpenStreetMap.org no està disponible a causa d'un manteniment. Prompte serà possible fer edicions",
+        "loginFailedReadonlyMode": "OpenStreetMap.org es troba actualment en mode de només lectura a causa del manteniment. Prompte serà possible fer modificacions",
+        "loginFailedUnreachableMode": "Actualment no es pot accedir a OpenStreetMap.org. Estàs connectat a Internet o bloqueges tercers? Torna-ho a provar més tard",
         "loginOnlyNeededToEdit": "Si voleu fer canvis",
         "loginToStart": "Entra per contestar aquesta pregunta",
         "loginWithOpenStreetMap": "Entrar a OpenStreetMap",
@@ -279,20 +292,33 @@
         "skippedQuestions": "Has ignorat algunes preguntes",
         "testing": "Proves - Els canvis no es desaran",
         "uploadGpx": {
+            "choosePermission": "Tria a continuació si la teva traça s'ha de compartir:",
             "confirm": "Confirmeu la càrrega",
+            "gpxServiceOffline": "Actualment, el servei GPX està fora de línia; actualment no es pot carregar. Torna-ho a provar més tard.",
+            "intro0": "En carregar la vostra traça, OpenStreetMap.org conservarà una còpia completa de la traça.",
+            "intro1": "Podreu tornar a descarregar la vostra traça i carregar-la als programes d'edició d'OpenStreetMap",
             "meta": {
+                "descriptionIntro": "Opcionalment, podeu introduir una descripció de la vostra traça:",
+                "descriptionPlaceHolder": "Introduïu una descripció de la traça",
                 "intro": "Afegeix un títol per a la teua traça:",
-                "title": "Títol i descripció"
+                "title": "Títol i descripció",
+                "titlePlaceholder": "Introduïu el títol de la traça"
             },
             "modes": {
                 "private": {
+                    "docs": "Els punts de la teva traça es compartiran i s'agregaran entre altres traces. La traça completa serà visible per a vosaltres i la podreu carregar a altres programes d'edició. OpenStreetMap.org conserva una còpia de la vostra traça",
                     "name": "Anònim"
                 },
                 "public": {
+                    "docs": "La vostra traça serà visible per a tothom, tant al vostre perfil d'usuari com a la llista de traces GPS a openstreetmap.org",
                     "name": "Públic"
                 }
-            }
+            },
+            "title": "Puja la teva traça a OpenStreetMap",
+            "uploadFinished": "La teva traça s'ha penjat!",
+            "uploading": "S'està penjant la teva traça…"
         },
+        "useSearch": "Utilitzeu la cerca de dalt per veure els valors predefinits",
         "weekdays": {
             "abbreviations": {
                 "friday": "Div",
@@ -320,6 +346,7 @@
             "createNewWikidata": "Crear un ítem de Wikidata",
             "doSearch": "Cerca adalt per veure els resultats",
             "failed": "Ha fallat la càrrega d'entrada de la Viquipèdia",
+            "fromWikipedia": "De Viquipèdia, l'enciclopèdia lliure",
             "loading": "Carregant Viquipèdia…",
             "noResults": "Res trobat per <i>{search}</i>",
             "noWikipediaPage": "Aquest ítem de Wikidata no té cap pàgina de Viquipèdia corresponent.",
@@ -332,9 +359,14 @@
         }
     },
     "hotkeyDocumentation": {
+        "action": "Acció",
+        "closeSidebar": "Tanca la barra lateral",
+        "geolocate": "Desplaça el mapa a la ubicació actual o apropa el mapa a la ubicació actual. Demana geopermís",
         "intro": "MapComplete admet les tecles següents:",
         "key": "Combinació de tecles",
         "openLayersPanel": "Obre el panell de fons, capes i filtres",
+        "selectBackground": "Seleccioneu una capa de fons de la categoria {category}",
+        "selectMapnik": "Estableix la capa de fons OpenStreetMap-carto",
         "title": "Dreceres"
     },
     "image": {
