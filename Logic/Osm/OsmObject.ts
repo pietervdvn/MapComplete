@@ -163,6 +163,11 @@ export abstract class OsmObject {
         })
     }
 
+    public static DownloadHistory(id: NodeId): UIEventSource<OsmNode[]>
+    public static DownloadHistory(id: WayId): UIEventSource<OsmWay[]>
+    public static DownloadHistory(id: RelationId): UIEventSource<OsmRelation[]>
+
+    public static DownloadHistory(id: OsmId): UIEventSource<OsmObject[]>
     public static DownloadHistory(id: string): UIEventSource<OsmObject[]> {
         if (OsmObject.historyCache.has(id)) {
             return OsmObject.historyCache.get(id)
@@ -180,6 +185,7 @@ export abstract class OsmObject {
             const osmObjects: OsmObject[] = []
             for (const element of elements) {
                 let osmObject: OsmObject = null
+                element.nodes = []
                 switch (type) {
                     case "node":
                         osmObject = new OsmNode(idN)
