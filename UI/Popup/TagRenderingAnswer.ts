@@ -6,6 +6,7 @@ import { SubstitutedTranslation } from "../SubstitutedTranslation"
 import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import Combine from "../Base/Combine"
 import Img from "../Base/Img"
+import { SpecialVisualisationState } from "../SpecialVisualization"
 
 /***
  * Displays the correct value for a known tagrendering
@@ -14,7 +15,7 @@ export default class TagRenderingAnswer extends VariableUiElement {
     constructor(
         tagsSource: UIEventSource<any>,
         configuration: TagRenderingConfig,
-        state: any,
+        state: SpecialVisualisationState,
         contentClasses: string = "",
         contentStyle: string = "",
         options?: {
@@ -24,6 +25,7 @@ export default class TagRenderingAnswer extends VariableUiElement {
         if (configuration === undefined) {
             throw "Trying to generate a tagRenderingAnswer without configuration..."
         }
+        UIEventSource
         if (tagsSource === undefined) {
             throw "Trying to generate a tagRenderingAnswer without tagSource..."
         }

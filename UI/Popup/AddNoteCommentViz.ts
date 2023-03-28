@@ -8,7 +8,8 @@ import Toggle from "../Input/Toggle"
 import { LoginToggle } from "./LoginButton"
 import Combine from "../Base/Combine"
 import Title from "../Base/Title"
-import { SpecialVisualization } from "../SpecialVisualization"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import { UIEventSource } from "../../Logic/UIEventSource"
 
 export class AddNoteCommentViz implements SpecialVisualization {
     funcName = "add_note_comment"
@@ -21,7 +22,11 @@ export class AddNoteCommentViz implements SpecialVisualization {
         },
     ]
 
-    public constr(state, tags, args) {
+    public constr(
+        state: SpecialVisualizationState,
+        tags: UIEventSource<Record<string, string>>,
+        args: string[]
+    ) {
         const t = Translations.t.notes
         const textField = new TextField({
             placeholder: t.addCommentPlaceholder,
@@ -62,12 +67,11 @@ export class AddNoteCommentViz implements SpecialVisualization {
                     return t.addCommentAndClose
                 })
             )
-        ).onClick(() => {
+        ).onClick(async () => {
             const id = tags.data[args[1] ?? "id"]
-            state.osmConnection.closeNote(id, txt.data).then((_) => {
-                tags.data["closed_at"] = new Date().toISOString()
-                tags.ping()
-            })
+           await  state.osmConnection.closeNote(id, txt.data)
+            tags.data["closed_at"] = new Date().toISOString()
+            tags.ping()
         })
 
         const reopen = new SubtleButton(
@@ -80,12 +84,11 @@ export class AddNoteCommentViz implements SpecialVisualization {
                     return t.reopenNoteAndComment
                 })
             )
-        ).onClick(() => {
+        ).onClick(async () => {
             const id = tags.data[args[1] ?? "id"]
-            state.osmConnection.reopenNote(id, txt.data).then((_) => {
-                tags.data["closed_at"] = undefined
-                tags.ping()
-            })
+            await state.osmConnection.reopenNote(id, txt.data)
+            tags.data["closed_at"] = undefined
+            tags.ping()
         })
 
         const isClosed = tags.map((tags) => (tags["closed_at"] ?? "") !== "")

@@ -542,25 +542,6 @@ li::marker {
   }
 }
 
-/**************************************/
-
-#topleft-tools {
-  display: block;
-  position: absolute;
-  z-index: 5000;
-  transition: all 500ms linear;
-  left: 0;
-  right: 0;
-}
-
-.welcomeMessage {
-  display: block;
-  max-width: calc(100vw - 5em);
-  width: 40em;
-  max-height: calc(100vh - 15em);
-  background-color: var(--background-color);
-  color: var(--foreground-color);
-}
 
 /***************** Info box (box containing features and questions ******************/
 

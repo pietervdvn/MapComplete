@@ -1,10 +1,8 @@
 import { UIEventSource } from "../UIEventSource"
 import { GlobalFilter } from "../../Models/GlobalFilter"
-import FilteredLayer, { FilterState } from "../../Models/FilteredLayer"
+import FilteredLayer from "../../Models/FilteredLayer"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { OsmConnection } from "../Osm/OsmConnection"
-import { LocalStorageSource } from "../Web/LocalStorageSource"
-import { QueryParameters } from "../Web/QueryParameters"
 
 /**
  * The layer state keeps track of:
@@ -36,81 +34,12 @@ export default class LayerState {
         this.osmConnection = osmConnection
         this.filteredLayers = new Map()
         for (const layer of layers) {
-            this.filteredLayers.set(layer.id, this.initFilteredLayer(layer, context))
+            this.filteredLayers.set(
+                layer.id,
+                FilteredLayer.initLinkedState(layer, context, this.osmConnection)
+            )
         }
         layers.forEach((l) => this.linkFilterStates(l))
-    }
-
-    private static getPref(
-        osmConnection: OsmConnection,
-        key: string,
-        layer: LayerConfig
-    ): UIEventSource<boolean> {
-        return osmConnection.GetPreference(key, layer.shownByDefault + "").sync(
-            (v) => {
-                if (v === undefined) {
-                    return undefined
-                }
-                return v === "true"
-            },
-            [],
-            (b) => {
-                if (b === undefined) {
-                    return undefined
-                }
-                return "" + b
-            }
-        )
-    }
-    /**
-     * INitializes a filtered layer for the given layer.
-     * @param layer
-     * @param context: probably the theme-name. This is used to disambiguate the user settings; e.g. when using the same layer in different contexts
-     * @private
-     */
-    private initFilteredLayer(layer: LayerConfig, context: string): FilteredLayer | undefined {
-        let isDisplayed: UIEventSource<boolean>
-        const osmConnection = this.osmConnection
-        if (layer.syncSelection === "local") {
-            isDisplayed = LocalStorageSource.GetParsed(
-                context + "-layer-" + layer.id + "-enabled",
-                layer.shownByDefault
-            )
-        } else if (layer.syncSelection === "theme-only") {
-            isDisplayed = LayerState.getPref(
-                osmConnection,
-                context + "-layer-" + layer.id + "-enabled",
-                layer
-            )
-        } else if (layer.syncSelection === "global") {
-            isDisplayed = LayerState.getPref(osmConnection, "layer-" + layer.id + "-enabled", layer)
-        } else {
-            isDisplayed = QueryParameters.GetBooleanQueryParameter(
-                "layer-" + layer.id,
-                layer.shownByDefault,
-                "Wether or not layer " + layer.id + " is shown"
-            )
-        }
-
-        const flayer: FilteredLayer = {
-            isDisplayed,
-            layerDef: layer,
-            appliedFilters: new UIEventSource<Map<string, FilterState>>(
-                new Map<string, FilterState>()
-            ),
-        }
-        layer.filters?.forEach((filterConfig) => {
-            const stateSrc = filterConfig.initState()
-
-            stateSrc.addCallbackAndRun((state) =>
-                flayer.appliedFilters.data.set(filterConfig.id, state)
-            )
-            flayer.appliedFilters
-                .map((dict) => dict.get(filterConfig.id))
-                .addCallback((state) => stateSrc.setData(state))
-        })
-
-        return flayer
     }
 
     /**
@@ -136,10 +65,6 @@ export default class LayerState {
         console.warn(
             "Linking filter and isDisplayed-states of " + layer.id + " and " + layer.filterIsSameAs
         )
-        this.filteredLayers.set(layer.id, {
-            isDisplayed: toReuse.isDisplayed,
-            layerDef: layer,
-            appliedFilters: toReuse.appliedFilters,
-        })
+        this.filteredLayers.set(layer.id, toReuse)
     }
 }

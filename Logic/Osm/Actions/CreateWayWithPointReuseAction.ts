@@ -2,7 +2,6 @@ import { OsmCreateAction } from "./OsmChangeAction"
 import { Tag } from "../../Tags/Tag"
 import { Changes } from "../Changes"
 import { ChangeDescription } from "./ChangeDescription"
-import FeaturePipelineState from "../../State/FeaturePipelineState"
 import { BBox } from "../../BBox"
 import { TagsFilter } from "../../Tags/TagsFilter"
 import { GeoOperations } from "../../GeoOperations"
@@ -10,6 +9,7 @@ import FeatureSource from "../../FeatureSource/FeatureSource"
 import StaticFeatureSource from "../../FeatureSource/Sources/StaticFeatureSource"
 import CreateNewNodeAction from "./CreateNewNodeAction"
 import CreateNewWayAction from "./CreateNewWayAction"
+import { SpecialVisualizationState } from "../../../UI/SpecialVisualization"
 
 export interface MergePointConfig {
     withinRangeOfM: number
@@ -62,14 +62,14 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
      * lngLat-coordinates
      * @private
      */
-    private _coordinateInfo: CoordinateInfo[]
-    private _state: FeaturePipelineState
-    private _config: MergePointConfig[]
+    private readonly _coordinateInfo: CoordinateInfo[]
+    private readonly _state: SpecialVisualizationState
+    private readonly _config: MergePointConfig[]
 
     constructor(
         tags: Tag[],
         coordinates: [number, number][],
-        state: FeaturePipelineState,
+        state: SpecialVisualizationState,
         config: MergePointConfig[]
     ) {
         super(null, true)
@@ -188,7 +188,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
     }
 
     public async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
-        const theme = this._state?.layoutToUse?.id
+        const theme = this._state?.layout?.id
         const allChanges: ChangeDescription[] = []
         const nodeIdsToUse: { lat: number; lon: number; nodeId?: number }[] = []
         for (let i = 0; i < this._coordinateInfo.length; i++) {
@@ -252,9 +252,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
     private CalculateClosebyNodes(coordinates: [number, number][]): CoordinateInfo[] {
         const bbox = new BBox(coordinates)
         const state = this._state
-        const allNodes = [].concat(
-            ...(state?.featurePipeline?.GetFeaturesWithin("type_node", bbox.pad(1.2)) ?? [])
-        )
+        const allNodes =state.fullNodeDatabase?.getNodesWithin(bbox.pad(1.2))
         const maxDistance = Math.max(...this._config.map((c) => c.withinRangeOfM))
 
         // Init coordianteinfo with undefined but the same length as coordinates

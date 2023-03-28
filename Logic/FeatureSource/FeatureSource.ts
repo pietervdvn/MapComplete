@@ -1,10 +1,13 @@
-import { Store } from "../UIEventSource"
+import { Store, UIEventSource } from "../UIEventSource"
 import FilteredLayer from "../../Models/FilteredLayer"
 import { BBox } from "../BBox"
 import { Feature } from "geojson"
 
 export default interface FeatureSource {
     features: Store<Feature[]>
+}
+export interface WritableFeatureSource extends FeatureSource {
+    features: UIEventSource<Feature[]>
 }
 
 export interface Tiled {

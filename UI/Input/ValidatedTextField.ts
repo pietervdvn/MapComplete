@@ -3,7 +3,7 @@ import * as EmailValidator from "email-validator"
 import { parsePhoneNumberFromString } from "libphonenumber-js"
 import { InputElement } from "./InputElement"
 import { TextField } from "./TextField"
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
 import CombinedInputElement from "./CombinedInputElement"
 import SimpleDatePicker from "./SimpleDatePicker"
 import OpeningHoursInput from "../OpeningHours/OpeningHoursInput"
@@ -25,6 +25,7 @@ import InputElementMap from "./InputElementMap"
 import Translations from "../i18n/Translations"
 import { Translation } from "../i18n/Translation"
 import Locale from "../i18n/Locale"
+import { RasterLayerPolygon } from "../../Models/RasterLayers"
 
 export class TextFieldDef {
     public readonly name: string
@@ -638,7 +639,7 @@ class LengthTextField extends TextFieldDef {
             location?: [number, number]
             args?: string[]
             feature?: any
-            mapBackgroundLayer?: Store<BaseLayer>
+            mapBackgroundLayer?: Store<RasterLayerPolygon>
         }
     ) => {
         options = options ?? {}
@@ -674,14 +675,18 @@ class LengthTextField extends TextFieldDef {
             zoom: zoom,
         })
         if (args[1]) {
-            // We have a prefered map!
+            // The arguments indicate the preferred background type
             options.mapBackgroundLayer = AvailableBaseLayers.SelectBestLayerAccordingTo(
                 location,
-                new UIEventSource<string[]>(args[1].split(","))
+                new ImmutableStore<string[]>(args[1].split(","))
             )
         }
         const background = options?.mapBackgroundLayer
-        const li = new LengthInput(new UIEventSource<BaseLayer>(background.data), location, value)
+        const li = new LengthInput(
+            new UIEventSource<RasterLayerPolygon>(background.data),
+            location,
+            value
+        )
         li.SetStyle("height: 20rem;")
         return li
     }

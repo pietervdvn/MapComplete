@@ -21,12 +21,20 @@ export class MapLibreAdaptor implements MapProperties {
         "keyboard",
         "touchZoomRotate",
     ]
+    private static maplibre_zoom_handlers = [
+        "scrollZoom",
+        "boxZoom",
+        "doubleClickZoom",
+        "touchZoomRotate",
+    ]
     readonly location: UIEventSource<{ lon: number; lat: number }>
     readonly zoom: UIEventSource<number>
-    readonly bounds: Store<BBox>
+    readonly bounds: UIEventSource<BBox>
     readonly rasterLayer: UIEventSource<RasterLayerPolygon | undefined>
     readonly maxbounds: UIEventSource<BBox | undefined>
     readonly allowMoving: UIEventSource<true | boolean | undefined>
+    readonly allowZooming: UIEventSource<true | boolean | undefined>
+    readonly lastClickLocation: Store<undefined | { lon: number; lat: number }>
     private readonly _maplibreMap: Store<MLMap>
     private readonly _bounds: UIEventSource<BBox>
     /**
@@ -50,11 +58,14 @@ export class MapLibreAdaptor implements MapProperties {
         })
         this.maxbounds = state?.maxbounds ?? new UIEventSource(undefined)
         this.allowMoving = state?.allowMoving ?? new UIEventSource(true)
+        this.allowZooming = state?.allowZooming ?? new UIEventSource(true)
         this._bounds = new UIEventSource(undefined)
         this.bounds = this._bounds
         this.rasterLayer =
             state?.rasterLayer ?? new UIEventSource<RasterLayerPolygon | undefined>(undefined)
 
+        const lastClickLocation = new UIEventSource<{ lon: number; lat: number }>(undefined)
+        this.lastClickLocation = lastClickLocation
         const self = this
         maplibreMap.addCallbackAndRunD((map) => {
             map.on("load", () => {
@@ -63,11 +74,13 @@ export class MapLibreAdaptor implements MapProperties {
                 self.SetZoom(self.zoom.data)
                 self.setMaxBounds(self.maxbounds.data)
                 self.setAllowMoving(self.allowMoving.data)
+                self.setAllowZooming(self.allowZooming.data)
             })
             self.MoveMapToCurrentLoc(self.location.data)
             self.SetZoom(self.zoom.data)
             self.setMaxBounds(self.maxbounds.data)
             self.setAllowMoving(self.allowMoving.data)
+            self.setAllowZooming(self.allowZooming.data)
             map.on("moveend", () => {
                 const dt = this.location.data
                 dt.lon = map.getCenter().lng
@@ -80,6 +93,11 @@ export class MapLibreAdaptor implements MapProperties {
                     [bounds.getWest(), bounds.getSouth()],
                 ])
                 self._bounds.setData(bbox)
+            })
+            map.on("click", (e) => {
+                const lon = e.lngLat.lng
+                const lat = e.lngLat.lat
+                lastClickLocation.setData({ lon, lat })
             })
         })
 
@@ -95,6 +113,8 @@ export class MapLibreAdaptor implements MapProperties {
         this.zoom.addCallbackAndRunD((z) => self.SetZoom(z))
         this.maxbounds.addCallbackAndRun((bbox) => self.setMaxBounds(bbox))
         this.allowMoving.addCallbackAndRun((allowMoving) => self.setAllowMoving(allowMoving))
+        this.allowZooming.addCallbackAndRun((allowZooming) => self.setAllowZooming(allowZooming))
+        this.bounds.addCallbackAndRunD((bounds) => self.setBounds(bounds))
     }
 
     /**
@@ -205,7 +225,7 @@ export class MapLibreAdaptor implements MapProperties {
             // already the correct background layer, nothing to do
             return
         }
-        if (background === undefined) {
+        if (!background?.url) {
             // no background to set
             this.removeCurrentLayer(map)
             this._currentRasterLayer = undefined
@@ -265,5 +285,39 @@ export class MapLibreAdaptor implements MapProperties {
                 map[id].enable()
             }
         }
+    }
+
+    private setAllowZooming(allow: true | boolean | undefined) {
+        const map = this._maplibreMap.data
+        if (map === undefined) {
+            return
+        }
+        if (allow === false) {
+            for (const id of MapLibreAdaptor.maplibre_zoom_handlers) {
+                map[id].disable()
+            }
+        } else {
+            for (const id of MapLibreAdaptor.maplibre_zoom_handlers) {
+                map[id].enable()
+            }
+        }
+    }
+
+    private setBounds(bounds: BBox) {
+        const map = this._maplibreMap.data
+        if (map === undefined) {
+            return
+        }
+        const oldBounds = map.getBounds()
+        const e = 0.0000001
+        const hasDiff =
+            Math.abs(oldBounds.getWest() - bounds.getWest()) > e &&
+            Math.abs(oldBounds.getEast() - bounds.getEast()) > e &&
+            Math.abs(oldBounds.getNorth() - bounds.getNorth()) > e &&
+            Math.abs(oldBounds.getSouth() - bounds.getSouth()) > e
+        if (!hasDiff) {
+            return
+        }
+        map.fitBounds(bounds.toLngLat())
     }
 }

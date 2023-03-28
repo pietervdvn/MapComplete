@@ -1,16 +1,13 @@
 import { Utils } from "../../Utils"
-import { FixedInputElement } from "../Input/FixedInputElement"
-import { RadioButton } from "../Input/RadioButton"
 import { VariableUiElement } from "../Base/VariableUIElement"
-import Toggle, { ClickableToggle } from "../Input/Toggle"
+import Toggle from "../Input/Toggle"
 import Combine from "../Base/Combine"
 import Translations from "../i18n/Translations"
 import { Translation } from "../i18n/Translation"
 import Svg from "../../Svg"
 import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
 import BaseUIElement from "../BaseUIElement"
-import FilteredLayer, { FilterState } from "../../Models/FilteredLayer"
-import BackgroundSelector from "./BackgroundSelector"
+import FilteredLayer from "../../Models/FilteredLayer"
 import FilterConfig from "../../Models/ThemeConfig/FilterConfig"
 import TilesourceConfig from "../../Models/ThemeConfig/TilesourceConfig"
 import { SubstitutedTranslation } from "../SubstitutedTranslation"
@@ -18,9 +15,7 @@ import ValidatedTextField from "../Input/ValidatedTextField"
 import { QueryParameters } from "../../Logic/Web/QueryParameters"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
 import { InputElement } from "../Input/InputElement"
-import { DropDown } from "../Input/DropDown"
 import { FixedUiElement } from "../Base/FixedUiElement"
-import BaseLayer from "../../Models/BaseLayer"
 import Loc from "../../Models/Loc"
 import { BackToThemeOverview } from "./ActionButtons"
 
@@ -272,102 +267,6 @@ export class LayerFilterPanel extends Combine {
         return [tr, settableFilter]
     }
 
-    private static createCheckboxFilter(
-        filterConfig: FilterConfig
-    ): [BaseUIElement, UIEventSource<FilterState>] {
-        let option = filterConfig.options[0]
-
-        const icon = Svg.checkbox_filled_svg().SetClass("block mr-2 w-6")
-        const iconUnselected = Svg.checkbox_empty_svg().SetClass("block mr-2 w-6")
-        const qp = QueryParameters.GetBooleanQueryParameter(
-            "filter-" + filterConfig.id,
-            false,
-            "Is filter '" + filterConfig.options[0].question.textFor("en") + " enabled?"
-        )
-        const toggle = new ClickableToggle(
-            new Combine([icon, option.question.Clone().SetClass("block")]).SetClass("flex"),
-            new Combine([iconUnselected, option.question.Clone().SetClass("block")]).SetClass(
-                "flex"
-            ),
-            qp
-        )
-            .ToggleOnClick()
-            .SetClass("block m-1")
-
-        return [
-            toggle,
-            toggle.isEnabled.sync(
-                (enabled) =>
-                    enabled
-                        ? {
-                              currentFilter: option.osmTags,
-                              state: "true",
-                          }
-                        : undefined,
-                [],
-                (f) => f !== undefined
-            ),
-        ]
-    }
-
-    private static createMultiFilter(
-        filterConfig: FilterConfig
-    ): [BaseUIElement, UIEventSource<FilterState>] {
-        let options = filterConfig.options
-
-        const values: FilterState[] = options.map((f, i) => ({
-            currentFilter: f.osmTags,
-            state: i,
-        }))
-        let filterPicker: InputElement<number>
-        const value = QueryParameters.GetQueryParameter(
-            "filter-" + filterConfig.id,
-            "0",
-            "Value for filter " + filterConfig.id
-        ).sync(
-            (str) => Number(str),
-            [],
-            (n) => "" + n
-        )
-
-        if (options.length <= 6) {
-            filterPicker = new RadioButton(
-                options.map(
-                    (option, i) =>
-                        new FixedInputElement(option.question.Clone().SetClass("block"), i)
-                ),
-                {
-                    value,
-                    dontStyle: true,
-                }
-            )
-        } else {
-            filterPicker = new DropDown(
-                "",
-                options.map((option, i) => ({
-                    value: i,
-                    shown: option.question.Clone(),
-                })),
-                value
-            )
-        }
-
-        return [
-            filterPicker,
-            filterPicker.GetValue().sync(
-                (i) => values[i],
-                [],
-                (selected) => {
-                    const v = selected?.state
-                    if (v === undefined || typeof v === "string") {
-                        return undefined
-                    }
-                    return v
-                }
-            ),
-        ]
-    }
-
     private static createFilter(
         state: {},
         filterConfig: FilterConfig
@@ -376,12 +275,6 @@ export class LayerFilterPanel extends Combine {
             return LayerFilterPanel.createFilterWithFields(state, filterConfig)
         }
 
-        if (filterConfig.options.length === 1) {
-            return LayerFilterPanel.createCheckboxFilter(filterConfig)
-        }
-
-        const filter = LayerFilterPanel.createMultiFilter(filterConfig)
-        filter[0].SetClass("pl-2")
-        return filter
+        return undefined
     }
 }

@@ -1,6 +1,5 @@
 import { GeoOperations } from "./GeoOperations"
 import Combine from "../UI/Base/Combine"
-import RelationsTracker from "./Osm/RelationsTracker"
 import BaseUIElement from "../UI/BaseUIElement"
 import List from "../UI/Base/List"
 import Title from "../UI/Base/Title"

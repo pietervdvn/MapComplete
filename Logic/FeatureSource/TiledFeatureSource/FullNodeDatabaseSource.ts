@@ -1,11 +1,13 @@
-import TileHierarchy from "./TileHierarchy"
 import FeatureSource, { FeatureSourceForLayer, Tiled } from "../FeatureSource"
 import { OsmNode, OsmObject, OsmWay } from "../../Osm/OsmObject"
 import SimpleFeatureSource from "../Sources/SimpleFeatureSource"
 import FilteredLayer from "../../../Models/FilteredLayer"
 import { UIEventSource } from "../../UIEventSource"
+import { OsmTags } from "../../../Models/OsmFeature";
+import { BBox } from "../../BBox";
+import { Feature, Point } from "geojson";
 
-export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSource & Tiled> {
+export default class FullNodeDatabaseSource {
     public readonly loadedTiles = new Map<number, FeatureSource & Tiled>()
     private readonly onTileLoaded: (tile: Tiled & FeatureSourceForLayer) => void
     private readonly layer: FilteredLayer
@@ -80,5 +82,10 @@ export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSour
      */
     public GetParentWays(nodeId: number): UIEventSource<OsmWay[]> {
         return this.parentWays.get(nodeId)
+    }
+
+    getNodesWithin(bBox: BBox) : Feature<Point, OsmTags>[]{
+        // TODO
+        throw "TODO"
     }
 }

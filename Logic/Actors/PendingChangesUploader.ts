@@ -2,11 +2,12 @@ import { Changes } from "../Osm/Changes"
 import Constants from "../../Models/Constants"
 import { UIEventSource } from "../UIEventSource"
 import { Utils } from "../../Utils"
+import { Feature } from "geojson"
 
 export default class PendingChangesUploader {
     private lastChange: Date
 
-    constructor(changes: Changes, selectedFeature: UIEventSource<any>) {
+    constructor(changes: Changes, selectedFeature: UIEventSource<Feature>) {
         const self = this
         this.lastChange = new Date()
         changes.pendingChanges.addCallback(() => {

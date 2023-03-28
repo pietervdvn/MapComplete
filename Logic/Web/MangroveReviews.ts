@@ -1,10 +1,8 @@
 import { ImmutableStore, Store, UIEventSource } from "../UIEventSource"
 import { MangroveReviews, Review } from "mangrove-reviews-typescript"
 import { Utils } from "../../Utils"
-import { Feature, Geometry, Position } from "geojson"
+import { Feature, Position } from "geojson"
 import { GeoOperations } from "../GeoOperations"
-import { OsmTags } from "../../Models/OsmFeature"
-import { ElementStorage } from "../ElementStorage"
 
 export class MangroveIdentity {
     public readonly keypair: Store<CryptoKeyPair>
@@ -67,11 +65,9 @@ export default class FeatureReviews {
     private readonly _identity: MangroveIdentity
 
     private constructor(
-        feature: Feature<Geometry, OsmTags>,
-        state: {
-            allElements: ElementStorage
-            mangroveIdentity?: MangroveIdentity
-        },
+        feature: Feature,
+        tagsSource: UIEventSource<Record<string, string>>,
+        mangroveIdentity?: MangroveIdentity,
         options?: {
             nameKey?: "name" | string
             fallbackName?: string
@@ -80,8 +76,7 @@ export default class FeatureReviews {
     ) {
         const centerLonLat = GeoOperations.centerpointCoordinates(feature)
         ;[this._lon, this._lat] = centerLonLat
-        this._identity =
-            state?.mangroveIdentity ?? new MangroveIdentity(new UIEventSource<string>(undefined))
+        this._identity = mangroveIdentity ?? new MangroveIdentity(new UIEventSource<string>(undefined))
         const nameKey = options?.nameKey ?? "name"
 
         if (feature.geometry.type === "Point") {
@@ -108,9 +103,7 @@ export default class FeatureReviews {
 
             this._uncertainty = options?.uncertaintyRadius ?? maxDistance
         }
-        this._name = state.allElements
-            .getEventSourceById(feature.properties.id)
-            .map((tags) => tags[nameKey] ?? options?.fallbackName)
+        this._name = tagsSource            .map((tags) => tags[nameKey] ?? options?.fallbackName)
 
         this.subjectUri = this.ConstructSubjectUri()
 
@@ -136,11 +129,9 @@ export default class FeatureReviews {
      * Construct a featureReviewsFor or fetches it from the cache
      */
     public static construct(
-        feature: Feature<Geometry, OsmTags>,
-        state: {
-            allElements: ElementStorage
-            mangroveIdentity?: MangroveIdentity
-        },
+        feature: Feature,
+        tagsSource: UIEventSource<Record<string, string>>,
+        mangroveIdentity?: MangroveIdentity,
         options?: {
             nameKey?: "name" | string
             fallbackName?: string
@@ -152,7 +143,7 @@ export default class FeatureReviews {
         if (cached !== undefined) {
             return cached
         }
-        const featureReviews = new FeatureReviews(feature, state, options)
+        const featureReviews = new FeatureReviews(feature, tagsSource, mangroveIdentity, options)
         FeatureReviews._featureReviewsCache[key] = featureReviews
         return featureReviews
     }

@@ -1,154 +1,66 @@
 <script lang="ts">
-  import { UIEventSource } from "../Logic/UIEventSource";
+  import { Store, UIEventSource } from "../Logic/UIEventSource";
   import { Map as MlMap } from "maplibre-gl";
   import MaplibreMap from "./Map/MaplibreMap.svelte";
-  import { MapLibreAdaptor } from "./Map/MapLibreAdaptor";
   import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
-  import InitialMapPositioning from "../Logic/Actors/InitialMapPositioning";
-  import { GeoLocationState } from "../Logic/State/GeoLocationState";
   import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
-  import { OsmConnection } from "../Logic/Osm/OsmConnection";
-  import { QueryParameters } from "../Logic/Web/QueryParameters";
-  import UserRelatedState from "../Logic/State/UserRelatedState";
-  import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler";
-  import { Changes } from "../Logic/Osm/Changes";
-  import ChangeToElementsActor from "../Logic/Actors/ChangeToElementsActor";
-  import PendingChangesUploader from "../Logic/Actors/PendingChangesUploader";
-  import SelectedElementTagsUpdater from "../Logic/Actors/SelectedElementTagsUpdater";
   import MapControlButton from "./Base/MapControlButton.svelte";
   import ToSvelte from "./Base/ToSvelte.svelte";
   import Svg from "../Svg";
   import If from "./Base/If.svelte";
   import { GeolocationControl } from "./BigComponents/GeolocationControl.js";
-  import { BBox } from "../Logic/BBox";
-  import ShowDataLayer from "./Map/ShowDataLayer";
-  import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource";
-  import type FeatureSource from "../Logic/FeatureSource/FeatureSource";
-  import LayerState from "../Logic/State/LayerState";
-  import Constants from "../Models/Constants";
   import type { Feature } from "geojson";
-  import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropertiesStore";
-  import ShowDataMultiLayer from "./Map/ShowDataMultiLayer";
-  import { Or } from "../Logic/Tags/Or";
-  import LayoutSource from "../Logic/FeatureSource/LayoutSource";
-  import { type OsmTags } from "../Models/OsmFeature";
+  import SelectedElementView from "./BigComponents/SelectedElementView.svelte";
+  import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+  import Filterview from "./BigComponents/Filterview.svelte";
+  import RasterLayerPicker from "./Map/RasterLayerPicker.svelte";
+  import ThemeViewState from "../Models/ThemeViewState";
+  import type { MapProperties } from "../Models/MapProperties";
+  import Geosearch from "./BigComponents/Geosearch.svelte";
+  import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@rgossiaux/svelte-headlessui";
+  import Translations from "./i18n/Translations";
+  import { MenuIcon } from "@rgossiaux/svelte-heroicons/solid";
 
   export let layout: LayoutConfig;
+  const state = new ThemeViewState(layout);
 
-  const maplibremap: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined);
-  const initial = new InitialMapPositioning(layout);
-  const mapproperties = new MapLibreAdaptor(maplibremap, initial);
-  const geolocationState = new GeoLocationState();
-
-  const featureSwitches = new FeatureSwitchState(layout);
-
-  const osmConnection = new OsmConnection({
-    dryRun: featureSwitches.featureSwitchIsTesting,
-    fakeUser: featureSwitches.featureSwitchFakeUser.data,
-    oauth_token: QueryParameters.GetQueryParameter(
-      "oauth_token",
-      undefined,
-      "Used to complete the login"
-    ),
-    osmConfiguration: <"osm" | "osm-test">featureSwitches.featureSwitchApiURL.data
-  });
-  const userRelatedState = new UserRelatedState(osmConnection, layout?.language);
-  const selectedElement = new UIEventSource<Feature | undefined>(undefined, "Selected element");
-  selectedElement.addCallbackAndRunD(s => console.log("Selected element:", s))
-  const geolocation = new GeoLocationHandler(geolocationState, selectedElement, mapproperties, userRelatedState.gpsLocationHistoryRetentionTime);
-
-  const tags = new Or(layout.layers.filter(l => l.source !== null&& Constants.priviliged_layers.indexOf(l.id) < 0 && l.source.geojsonSource === undefined).map(l => l.source.osmTags ))
-  const layerState = new LayerState(osmConnection, layout.layers, layout.id)
-  
-  const indexedElements = new LayoutSource(layout.layers, featureSwitches, new StaticFeatureSource([]), mapproperties, osmConnection.Backend(),
-    (id) => layerState.filteredLayers.get(id).isDisplayed
-  )
-
-  const allElements = new FeaturePropertiesStore(indexedElements)
-  const changes = new Changes({
-    dryRun: featureSwitches.featureSwitchIsTesting,
-    allElements: indexedElements,
-    featurePropertiesStore: allElements,
-    osmConnection,
-    historicalUserLocations: geolocation.historicalUserLocations
-  }, layout?.isLeftRightSensitive() ?? false);
-
-  new ShowDataMultiLayer(maplibremap, {
-    layers: Array.from(layerState.filteredLayers.values()),
-    features: indexedElements,
-    fetchStore: id => <UIEventSource<OsmTags>> allElements.getStore(id),
-    selectedElement,
-    globalFilters: layerState.globalFilters
-  })
-
-  
-  {
-    // Various actors that we don't need to reference 
-    // TODO enable new TitleHandler(selectedElement,layout,allElements)
-    new ChangeToElementsActor(changes, allElements);
-    new PendingChangesUploader(changes, selectedElement);
-    new SelectedElementTagsUpdater({
-      allElements, changes, selectedElement, layoutToUse: layout, osmConnection
-    });
-    
-    
-    
-    // Various initial setup
-    userRelatedState.markLayoutAsVisited(layout);
-    if(layout?.lockLocation){
-      const bbox = new BBox(layout.lockLocation)
-      mapproperties.maxbounds.setData(bbox)
-      ShowDataLayer.showRange(
-        maplibremap,
-        new StaticFeatureSource([bbox.asGeoJson({})]),
-        featureSwitches.featureSwitchIsTesting
-      )
-    }
-
-
-    type AddedByDefaultTypes = typeof Constants.added_by_default[number]
-    /**
-     * A listing which maps the layerId onto the featureSource
-     */
-    const empty = []
-    const specialLayers : Record<AddedByDefaultTypes | "current_view", FeatureSource> = {
-      "home_location": userRelatedState.homeLocation,
-      gps_location: geolocation.currentUserLocation,
-      gps_location_history: geolocation.historicalUserLocations,
-      gps_track: geolocation.historicalUserLocationsTrack,
-      selected_element: new StaticFeatureSource(selectedElement.map(f => f === undefined ? empty : [f])),
-      range: new StaticFeatureSource(mapproperties.maxbounds.map(bbox => bbox === undefined ? empty : <Feature[]> [bbox.asGeoJson({id:"range"})])) ,
-      current_view: new StaticFeatureSource(mapproperties.bounds.map(bbox => bbox === undefined ? empty : <Feature[]> [bbox.asGeoJson({id:"current_view"})])),
-    }
-    layerState.filteredLayers.get("range")?.isDisplayed?.syncWith(featureSwitches.featureSwitchIsTesting, true)
-    
-    specialLayers.range.features.addCallbackAndRun(fs => console.log("Range.features:", JSON.stringify(fs)))
-    layerState.filteredLayers.forEach((flayer) => {
-      const features = specialLayers[flayer.layerDef.id]
-      if(features === undefined){
-        return
+  let selectedElementTags: Store<UIEventSource<Record<string, string>>> =
+    state.selectedElement.mapD((f) => {
+        return state.featureProperties.getStore(f.properties.id);
       }
-      new ShowDataLayer(maplibremap, {
-        features,
-        doShowLayer: flayer.isDisplayed,
-        layer: flayer.layerDef,
-        selectedElement
-      })
-    })
-  }
+    );
+
+  let maplibremap: UIEventSource<MlMap> = state.map;
+  let selectedElement: UIEventSource<Feature> = state.selectedElement;
+  let selectedLayer: UIEventSource<LayerConfig> = state.selectedLayer;
+  let mapproperties: MapProperties = state.mapProperties;
+  let featureSwitches: FeatureSwitchState = state.featureSwitches;
+  let availableLayers = state.availableLayers;
 </script>
 
 
 <div class="h-screen w-screen absolute top-0 left-0 flex">
-  <div id="fullscreen" class="transition-all transition-duration-500" style="border: 2px solid red">Hello world</div>
   <MaplibreMap class="w-full h-full border border-black" map={maplibremap}></MaplibreMap>
 </div>
 
-<div class="absolute top-0 left-0">
-  <!-- Top-left elements -->
+<div class="absolute top-0 left-0 mt-2 ml-2">
+  <MapControlButton on:click={() => state.guistate.welcomeMessageIsOpened.setData(true)}>
+    <div class="flex mr-2 items-center">
+      <img class="w-8 h-8 block mr-2" src={layout.icon}>
+      <b>
+        {layout.title}
+      </b>
+    </div>
+  </MapControlButton>
+  <MapControlButton on:click={() =>state.guistate.menuIsOpened.setData(true)}>
+    <MenuIcon class="w-8 h-8"></MenuIcon>
+  </MapControlButton>
 </div>
 
-<div class="absolute bottom-0 left-0">
+<div class="absolute bottom-0 left-0 mb-4 ml-4">
+  <MapControlButton on:click={() => state.guistate.filterViewIsOpened.setData(true)}>
+    <ToSvelte class="w-7 h-7 block" construct={Svg.layers_ui}></ToSvelte>
+  </MapControlButton>
 </div>
 
 <div class="absolute bottom-0 right-0 mb-4 mr-4">
@@ -160,11 +72,116 @@
   </MapControlButton>
   <If condition={featureSwitches.featureSwitchGeolocation}>
     <MapControlButton>
-      <ToSvelte construct={() => new GeolocationControl(geolocation, mapproperties).SetClass("block w-8 h-8")}></ToSvelte>
+      <ToSvelte
+        construct={new GeolocationControl(state.geolocation, mapproperties).SetClass("block w-8 h-8")}></ToSvelte>
     </MapControlButton>
   </If>
 </div>
 
-<div class="absolute top-0 right-0">
+<div class="absolute top-0 right-0 mt-4 mr-4">
+  <If condition={state.featureSwitches.featureSwitchSearch}>
+    <Geosearch bounds={state.mapProperties.bounds} layout={state.layout} location={state.mapProperties.location}
+               {selectedElement} {selectedLayer}
+               zoom={state.mapProperties.zoom}></Geosearch>
+  </If>
 </div>
 
+<If condition={state.guistate.filterViewIsOpened}>
+  <div class="normal-background absolute bottom-0 left-0 flex flex-col">
+    <div on:click={() => state.guistate.filterViewIsOpened.setData(false)}>Close</div>
+    <!-- Filter panel -- TODO move to actual location-->
+    {#each layout.layers as layer}
+      <Filterview filteredLayer={state.layerState.filteredLayers.get(layer.id)}></Filterview>
+    {/each}
+
+    <RasterLayerPicker {availableLayers} value={mapproperties.rasterLayer}></RasterLayerPicker>
+  </div>
+</If>
+
+<If condition={state.guistate.welcomeMessageIsOpened}>
+  <!-- Theme page -->
+  <div class="absolute top-0 left-0 w-screen h-screen" style="background-color: #00000088">
+    <div class="flex flex-col m-4 sm:m-6 md:m-8 p-4 sm:p-6 md:m-8 normal-background rounded">
+      <div on:click={() => state.guistate.welcomeMessageIsOpened.setData(false)}>Close</div>
+      <TabGroup>
+        <TabList>
+          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>About</Tab>
+          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>Tab 2</Tab>
+          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>Tab 3</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel class="flex flex-col">
+            <ToSvelte construct={() => layout.description}></ToSvelte>
+            {Translations.t.general.welcomeExplanation.general}
+            {#if layout.layers.some((l) => l.presets?.length > 0)}
+              <If condition={state.featureSwitches.featureSwitchAddNew}>
+                {Translations.t.general.welcomeExplanation.addNew}
+              </If>
+            {/if}
+
+            <!--toTheMap,
+            loginStatus.SetClass("block mt-6 pt-2 md:border-t-2 border-dotted border-gray-400"),
+            -->
+            <ToSvelte construct= {() =>  layout.descriptionTail}></ToSvelte>
+            <div class="m-x-8">
+            <button class="subtle-background rounded w-full p-4">Explore the map</button>
+            </div>
+            
+
+          </TabPanel>
+          <TabPanel>Content 2</TabPanel>
+          <TabPanel>Content 3</TabPanel>
+        </TabPanels>
+      </TabGroup>
+    </div>
+  </div>
+</If>
+
+
+<If condition={state.guistate.menuIsOpened}>
+  <!-- Menu page -->
+  <div class="absolute top-0 left-0 w-screen h-screen" style="background-color: #00000088">
+    <div class="flex flex-col m-4 sm:m-6 md:m-8 p-4 sm:p-6 md:m-8 normal-background rounded">
+      <div on:click={() => state.guistate.menuIsOpened.setData(false)}>Close</div>
+      <TabGroup>
+        <TabList>
+          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>About MapComplete</Tab>
+          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>Settings</Tab>
+          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>Privacy</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel class="flex flex-col">
+            About MC
+
+
+          </TabPanel>
+          <TabPanel>User settings</TabPanel>
+          <TabPanel>Privacy</TabPanel>
+        </TabPanels>
+      </TabGroup>
+    </div>
+  </div>
+</If>
+
+<If condition={selectedElement}>
+  <div class="absolute top-0 right-0 normal-background">
+
+    <SelectedElementView layer={selectedLayer} {selectedElement}
+                         tags={selectedElementTags}></SelectedElementView>
+
+  </div>
+</If>
+
+<style>
+    /* WARNING: This is just for demonstration.
+        Using :global() in this way can be risky. */
+    :global(.tab-selected) {
+        background-color: rgb(59 130 246);
+        color: rgb(255 255 255);
+    }
+
+    :global(.tab-unselected) {
+        background-color: rgb(255 255 255);
+        color: rgb(0 0 0);
+    }
+</style>

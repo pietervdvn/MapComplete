@@ -1,15 +1,15 @@
 import { Store, UIEventSource } from "../../UIEventSource"
-import FilteredLayer, { FilterState } from "../../../Models/FilteredLayer"
+import FilteredLayer from "../../../Models/FilteredLayer"
 import FeatureSource from "../FeatureSource"
 import { TagsFilter } from "../../Tags/TagsFilter"
 import { Feature } from "geojson"
-import { OsmTags } from "../../../Models/OsmFeature"
+import { GlobalFilter } from "../../../Models/GlobalFilter"
 
 export default class FilteringFeatureSource implements FeatureSource {
     public features: UIEventSource<Feature[]> = new UIEventSource([])
     private readonly upstream: FeatureSource
-    private readonly _fetchStore?: (id: String) => Store<OsmTags>
-    private readonly _globalFilters?: Store<{ filter: FilterState }[]>
+    private readonly _fetchStore?: (id: string) => Store<Record<string, string>>
+    private readonly _globalFilters?: Store<GlobalFilter[]>
     private readonly _alreadyRegistered = new Set<Store<any>>()
     private readonly _is_dirty = new UIEventSource(false)
     private readonly _layer: FilteredLayer
@@ -18,8 +18,8 @@ export default class FilteringFeatureSource implements FeatureSource {
     constructor(
         layer: FilteredLayer,
         upstream: FeatureSource,
-        fetchStore?: (id: String) => Store<OsmTags>,
-        globalFilters?: Store<{ filter: FilterState }[]>,
+        fetchStore?: (id: string) => Store<Record<string, string>>,
+        globalFilters?: Store<GlobalFilter[]>,
         metataggingUpdated?: Store<any>
     ) {
         this.upstream = upstream
@@ -32,9 +32,11 @@ export default class FilteringFeatureSource implements FeatureSource {
             self.update()
         })
 
-        layer.appliedFilters.addCallback((_) => {
-            self.update()
-        })
+        layer.appliedFilters.forEach((value) =>
+            value.addCallback((_) => {
+                self.update()
+            })
+        )
 
         this._is_dirty.stabilized(1000).addCallbackAndRunD((dirty) => {
             if (dirty) {
@@ -58,7 +60,7 @@ export default class FilteringFeatureSource implements FeatureSource {
         const layer = this._layer
         const features: Feature[] = this.upstream.features.data ?? []
         const includedFeatureIds = new Set<string>()
-        const globalFilters = self._globalFilters?.data?.map((f) => f.filter)
+        const globalFilters = self._globalFilters?.data?.map((f) => f)
         const newFeatures = (features ?? []).filter((f) => {
             self.registerCallback(f)
 
@@ -71,19 +73,26 @@ export default class FilteringFeatureSource implements FeatureSource {
                 return false
             }
 
-            const tagsFilter = Array.from(layer.appliedFilters?.data?.values() ?? [])
-            for (const filter of tagsFilter) {
-                const neededTags: TagsFilter = filter?.currentFilter
+            for (const filter of layer.layerDef.filters) {
+                const state = layer.appliedFilters.get(filter.id).data
+                if (state === undefined) {
+                    continue
+                }
+                let neededTags: TagsFilter
+                if (typeof state === "string") {
+                    // This filter uses fields
+                } else {
+                    neededTags = filter.options[state].osmTags
+                }
                 if (neededTags !== undefined && !neededTags.matchesProperties(f.properties)) {
                     // Hidden by the filter on the layer itself - we want to hide it no matter what
                     return false
                 }
             }
 
-            for (const filter of globalFilters ?? []) {
-                const neededTags: TagsFilter = filter?.currentFilter
+            for (const globalFilter of globalFilters ?? []) {
+                const neededTags = globalFilter.osmTags
                 if (neededTags !== undefined && !neededTags.matchesProperties(f.properties)) {
-                    // Hidden by the filter on the layer itself - we want to hide it no matter what
                     return false
                 }
             }

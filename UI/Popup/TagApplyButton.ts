@@ -11,10 +11,9 @@ import { And } from "../../Logic/Tags/And"
 import Toggle from "../Input/Toggle"
 import { Utils } from "../../Utils"
 import { Tag } from "../../Logic/Tags/Tag"
-import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { Changes } from "../../Logic/Osm/Changes"
-import { SpecialVisualization } from "../SpecialVisualization"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
 
 export default class TagApplyButton implements AutoAction, SpecialVisualization {
     public readonly funcName = "tag_apply"
@@ -76,7 +75,10 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
         return tgsSpec
     }
 
-    public static generateTagsToApply(spec: string, tagSource: Store<any>): Store<Tag[]> {
+    public static generateTagsToApply(
+        spec: string,
+        tagSource: Store<Record<string, string>>
+    ): Store<Tag[]> {
         // Check whether we need to look up a single value
 
         if (!spec.includes(";") && !spec.includes("=") && spec.includes("$")) {
@@ -110,7 +112,7 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
 
     async applyActionOn(
         state: {
-            layoutToUse: LayoutConfig
+            layout: LayoutConfig
             changes: Changes
         },
         tags: UIEventSource<any>,
@@ -125,7 +127,7 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
             new And(tagsToApply.data),
             tags.data, // We pass in the tags of the selected element, not the tags of the target element!
             {
-                theme: state.layoutToUse.id,
+                theme: state.layout.id,
                 changeType: "answer",
             }
         )
@@ -133,8 +135,8 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
     }
 
     public constr(
-        state: FeaturePipelineState,
-        tags: UIEventSource<any>,
+        state: SpecialVisualizationState,
+        tags: UIEventSource<Record<string, string>>,
         args: string[]
     ): BaseUIElement {
         const tagsToApply = TagApplyButton.generateTagsToApply(args[0], tags)
@@ -162,9 +164,9 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
         const applyButton = new SubtleButton(
             image,
             new Combine([msg, tagsExplanation]).SetClass("flex flex-col")
-        ).onClick(() => {
-            self.applyActionOn(state, tags, args)
+        ).onClick(async () => {
             applied.setData(true)
+            await self.applyActionOn(state, tags, args)
         })
 
         return new Toggle(

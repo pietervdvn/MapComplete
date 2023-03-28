@@ -5,7 +5,6 @@ import AllThemesGui from "./UI/AllThemesGui"
 import DetermineLayout from "./Logic/DetermineLayout"
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig"
 import DefaultGUI from "./UI/DefaultGUI"
-import State from "./State"
 import ShowOverlayLayerImplementation from "./UI/ShowDataLayer/ShowOverlayLayerImplementation"
 import { DefaultGuiState } from "./UI/DefaultGuiState"
 
@@ -27,13 +26,7 @@ class Init {
         }
 
         const guiState = new DefaultGuiState()
-        State.state = new State(layoutToUse)
         DefaultGuiState.state = guiState
-        // This 'leaks' the global state via the window object, useful for debugging
-        // @ts-ignore
-        window.mapcomplete_state = State.state
-
-        new DefaultGUI(State.state, guiState).setup()
     }
 }
 

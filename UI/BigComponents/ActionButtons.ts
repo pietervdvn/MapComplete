@@ -13,6 +13,7 @@ import { OpenIdEditor, OpenJosm } from "./CopyrightPanel"
 import Toggle from "../Input/Toggle"
 import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 import { DefaultGuiState } from "../DefaultGuiState"
+import DefaultGUI from "../DefaultGUI"
 
 export class BackToThemeOverview extends Toggle {
     constructor(
@@ -42,6 +43,7 @@ export class ActionButtons extends Combine {
         readonly locationControl: Store<Loc>
         readonly osmConnection: OsmConnection
         readonly featureSwitchMoreQuests: Store<boolean>
+        readonly defaultGuiState: DefaultGuiState
     }) {
         const imgSize = "h-6 w-6"
         const iconStyle = "height: 1.5rem; width: 1.5rem"
@@ -82,8 +84,8 @@ export class ActionButtons extends Combine {
                 Translations.t.translations.activateButton
             ).onClick(() => {
                 ScrollableFullScreen.collapse()
-                DefaultGuiState.state.userInfoIsOpened.setData(true)
-                DefaultGuiState.state.userInfoFocusedQuestion.setData("translation-mode")
+                state.defaultGuiState.userInfoIsOpened.setData(true)
+                state.defaultGuiState.userInfoFocusedQuestion.setData("translation-mode")
             }),
         ])
         this.SetClass("block w-full link-no-underline")

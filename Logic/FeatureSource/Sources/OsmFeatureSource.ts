@@ -108,6 +108,7 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
     }
 
     private async LoadTile(z, x, y): Promise<void> {
+        console.log("OsmFeatureSource: loading ", z, x, y)
         if (z >= 22) {
             throw "This is an absurd high zoom level"
         }
@@ -126,7 +127,7 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
 
         let error = undefined
         try {
-            const osmJson = await Utils.downloadJson(url)
+            const osmJson = await Utils.downloadJsonCached(url, 2000)
             try {
                 this.rawDataHandlers.forEach((handler) =>
                     handler(osmJson, Tiles.tile_index(z, x, y))

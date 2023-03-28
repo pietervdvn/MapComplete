@@ -84,7 +84,9 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
                 })
             },
             mapProperties,
-            { isActive: options.isActive }
+            {
+                isActive: options?.isActive,
+            }
         )
     }
 }

@@ -2,7 +2,9 @@ import { GeoOperations } from "../../Logic/GeoOperations"
 import { MapillaryLink } from "../BigComponents/MapillaryLink"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import Loc from "../../Models/Loc"
-import { SpecialVisualization } from "../SpecialVisualization"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import { Feature } from "geojson"
+import BaseUIElement from "../BaseUIElement"
 
 export class MapillaryLinkVis implements SpecialVisualization {
     funcName = "mapillary_link"
@@ -15,9 +17,13 @@ export class MapillaryLinkVis implements SpecialVisualization {
         },
     ]
 
-    public constr(state, tagsSource, args) {
-        const feat = state.allElements.ContainingFeatures.get(tagsSource.data.id)
-        const [lon, lat] = GeoOperations.centerpointCoordinates(feat)
+    public constr(
+        state: SpecialVisualizationState,
+        tagsSource: UIEventSource<Record<string, string>>,
+        args: string[],
+        feature: Feature
+    ): BaseUIElement {
+        const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
         let zoom = Number(args[0])
         if (isNaN(zoom)) {
             zoom = 18

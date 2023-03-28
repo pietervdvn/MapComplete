@@ -2,12 +2,12 @@ import { OsmCreateAction } from "./OsmChangeAction"
 import { Tag } from "../../Tags/Tag"
 import { Changes } from "../Changes"
 import { ChangeDescription } from "./ChangeDescription"
-import FeaturePipelineState from "../../State/FeaturePipelineState"
-import FeatureSource from "../../FeatureSource/FeatureSource"
 import CreateNewWayAction from "./CreateNewWayAction"
 import CreateWayWithPointReuseAction, { MergePointConfig } from "./CreateWayWithPointReuseAction"
 import { And } from "../../Tags/And"
 import { TagUtils } from "../../Tags/TagUtils"
+import { SpecialVisualizationState } from "../../../UI/SpecialVisualization"
+import FeatureSource from "../../FeatureSource/FeatureSource"
 
 /**
  * More or less the same as 'CreateNewWay', except that it'll try to reuse already existing points
@@ -26,14 +26,14 @@ export default class CreateMultiPolygonWithPointReuseAction extends OsmCreateAct
         tags: Tag[],
         outerRingCoordinates: [number, number][],
         innerRingsCoordinates: [number, number][][],
-        state: FeaturePipelineState,
+        state: SpecialVisualizationState,
         config: MergePointConfig[],
         changeType: "import" | "create" | string
     ) {
         super(null, true)
         this._tags = [...tags, new Tag("type", "multipolygon")]
         this.changeType = changeType
-        this.theme = state?.layoutToUse?.id ?? ""
+        this.theme = state?.layout?.id ?? ""
         this.createOuterWay = new CreateWayWithPointReuseAction(
             [],
             outerRingCoordinates,
@@ -45,7 +45,7 @@ export default class CreateMultiPolygonWithPointReuseAction extends OsmCreateAct
                 new CreateNewWayAction(
                     [],
                     ringCoordinates.map(([lon, lat]) => ({ lat, lon })),
-                    { theme: state?.layoutToUse?.id }
+                    { theme: state?.layout?.id }
                 )
         )
 
@@ -57,6 +57,10 @@ export default class CreateMultiPolygonWithPointReuseAction extends OsmCreateAct
                 coordinates: [outerRingCoordinates, ...innerRingsCoordinates],
             },
         }
+    }
+
+    public async getPreview(): Promise<FeatureSource> {
+        return undefined
     }
 
     protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {

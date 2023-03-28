@@ -1,13 +1,13 @@
-import { ImmutableStore, Store, UIEventSource } from "../UIEventSource"
-import { Or } from "../Tags/Or"
-import { Overpass } from "../Osm/Overpass"
-import FeatureSource from "../FeatureSource/FeatureSource"
-import { Utils } from "../../Utils"
-import { TagsFilter } from "../Tags/TagsFilter"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import { BBox } from "../BBox"
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { Feature } from "geojson"
+import FeatureSource from "../FeatureSource"
+import { ImmutableStore, Store, UIEventSource } from "../../UIEventSource"
+import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
+import { Or } from "../../Tags/Or"
+import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
+import { Overpass } from "../../Osm/Overpass"
+import { Utils } from "../../../Utils"
+import { TagsFilter } from "../../Tags/TagsFilter"
+import { BBox } from "../../BBox"
 
 /**
  * A wrapper around the 'Overpass'-object.
@@ -99,7 +99,11 @@ export default class OverpassFeatureSource implements FeatureSource {
         ) {
             return undefined
         }
-        const [bounds, date, updatedLayers] = await this.updateAsync()
+        const result = await this.updateAsync()
+        if (!result) {
+            return
+        }
+        const [bounds, date, updatedLayers] = result
         this._lastQueryBBox = bounds
     }
 
@@ -188,6 +192,9 @@ export default class OverpassFeatureSource implements FeatureSource {
             if (data === undefined) {
                 return undefined
             }
+            // Some metatags are delivered by overpass _without_ underscore-prefix; we fix them below
+            // TODO FIXME re-enable this data.features.forEach((f) => SimpleMetaTaggers.objectMetaInfo.applyMetaTagsOnFeature(f))
+
             self.features.setData(data.features)
             return [bounds, date, layersToDownload]
         } catch (e) {

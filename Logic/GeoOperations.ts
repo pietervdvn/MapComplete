@@ -2,19 +2,34 @@ import { BBox } from "./BBox"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import * as turf from "@turf/turf"
 import { AllGeoJSON, booleanWithin, Coord } from "@turf/turf"
-import { Feature, Geometry, MultiPolygon, Polygon } from "geojson"
-import { GeoJSON, LineString, Point, Position } from "geojson"
+import {
+    Feature,
+    GeoJSON,
+    Geometry,
+    LineString,
+    MultiPolygon,
+    Point,
+    Polygon,
+    Position,
+} from "geojson"
 import togpx from "togpx"
 import Constants from "../Models/Constants"
+import { Tiles } from "../Models/TileRange"
 
 export class GeoOperations {
+    private static readonly _earthRadius = 6378137
+    private static readonly _originShift = (2 * Math.PI * GeoOperations._earthRadius) / 2
+
     /**
      * Create a union between two features
      */
-    static union = turf.union
-    static intersect = turf.intersect
-    private static readonly _earthRadius = 6378137
-    private static readonly _originShift = (2 * Math.PI * GeoOperations._earthRadius) / 2
+    public static union(f0: Feature, f1: Feature): Feature<Polygon | MultiPolygon> | null {
+        return turf.union(<any>f0, <any>f1)
+    }
+
+    public static intersect(f0: Feature, f1: Feature): Feature<Polygon | MultiPolygon> | null {
+        return turf.intersect(<any>f0, <any>f1)
+    }
 
     static surfaceAreaInSqMeters(feature: any) {
         return turf.area(feature)
@@ -637,14 +652,14 @@ export class GeoOperations {
      */
     static completelyWithin(
         feature: Feature<Geometry, any>,
-        possiblyEncloingFeature: Feature<Polygon | MultiPolygon, any>
+        possiblyEnclosingFeature: Feature<Polygon | MultiPolygon, any>
     ): boolean {
-        return booleanWithin(feature, possiblyEncloingFeature)
+        return booleanWithin(feature, possiblyEnclosingFeature)
     }
 
     /**
      * Create an intersection between two features.
-     * A new feature is returned based on 'toSplit', which'll have a geometry that is completely withing boundary
+     * One or multiple new feature is returned based on 'toSplit', which'll have a geometry that is completely withing boundary
      */
     public static clipWith(toSplit: Feature, boundary: Feature<Polygon>): Feature[] {
         if (toSplit.geometry.type === "Point") {
@@ -675,35 +690,6 @@ export class GeoOperations {
             return [splitup]
         }
         throw "Invalid geometry type with GeoOperations.clipWith: " + toSplit.geometry.type
-    }
-
-    /**
-     * Helper function which does the heavy lifting for 'inside'
-     */
-    private static pointInPolygonCoordinates(
-        x: number,
-        y: number,
-        coordinates: [number, number][][]
-    ): boolean {
-        const inside = GeoOperations.pointWithinRing(
-            x,
-            y,
-            /*This is the outer ring of the polygon */ coordinates[0]
-        )
-        if (!inside) {
-            return false
-        }
-        for (let i = 1; i < coordinates.length; i++) {
-            const inHole = GeoOperations.pointWithinRing(
-                x,
-                y,
-                coordinates[i] /* These are inner rings, aka holes*/
-            )
-            if (inHole) {
-                return false
-            }
-        }
-        return true
     }
 
     /**
@@ -763,6 +749,62 @@ export class GeoOperations {
                 throw "Unkown location type: " + location
         }
     }
+
+    /**
+     * Constructs all tiles where features overlap with and puts those features in them.
+     * Long features (e.g. lines or polygons) which overlap with multiple tiles are referenced in each tile they overlap with
+     * @param zoomlevel
+     * @param features
+     */
+    public static slice(zoomlevel: number, features: Feature[]): Map<number, Feature[]> {
+        const tiles = new Map<number, Feature[]>()
+
+        for (const feature of features) {
+            const bbox = BBox.get(feature)
+            Tiles.MapRange(Tiles.tileRangeFrom(bbox, zoomlevel), (x, y) => {
+                const i = Tiles.tile_index(zoomlevel, x, y)
+
+                let tiledata = tiles.get(i)
+                if (tiledata === undefined) {
+                    tiledata = []
+                    tiles.set(i, tiledata)
+                }
+                tiledata.push(feature)
+            })
+        }
+
+        return tiles
+    }
+
+    /**
+     * Helper function which does the heavy lifting for 'inside'
+     */
+    private static pointInPolygonCoordinates(
+        x: number,
+        y: number,
+        coordinates: [number, number][][]
+    ): boolean {
+        const inside = GeoOperations.pointWithinRing(
+            x,
+            y,
+            /*This is the outer ring of the polygon */ coordinates[0]
+        )
+        if (!inside) {
+            return false
+        }
+        for (let i = 1; i < coordinates.length; i++) {
+            const inHole = GeoOperations.pointWithinRing(
+                x,
+                y,
+                coordinates[i] /* These are inner rings, aka holes*/
+            )
+            if (inHole) {
+                return false
+            }
+        }
+        return true
+    }
+
     private static pointWithinRing(x: number, y: number, ring: [number, number][]) {
         let inside = false
         for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {

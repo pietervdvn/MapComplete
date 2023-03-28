@@ -1,7 +1,6 @@
 import { SubtleButton } from "../Base/SubtleButton"
 import Svg from "../../Svg"
 import Translations from "../i18n/Translations"
-import State from "../../State"
 import { Utils } from "../../Utils"
 import Combine from "../Base/Combine"
 import CheckBoxes from "../Input/Checkboxes"

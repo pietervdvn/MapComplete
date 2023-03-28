@@ -11,8 +11,6 @@ import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Img from "../../UI/Base/Img"
 import Combine from "../../UI/Base/Combine"
 import { VariableUiElement } from "../../UI/Base/VariableUIElement"
-import { OsmTags } from "../OsmFeature"
-import { TagRenderingConfigJson } from "./Json/TagRenderingConfigJson"
 
 export default class PointRenderingConfig extends WithContextLoader {
     private static readonly allowed_location_codes = new Set<string>([
@@ -176,7 +174,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation, false, defaultPin)
     }
 
-    public GetSimpleIcon(tags: Store<OsmTags>): BaseUIElement {
+    public GetSimpleIcon(tags: Store<Record<string, string>>): BaseUIElement {
         const self = this
         if (this.icon === undefined) {
             return undefined
@@ -187,7 +185,7 @@ export default class PointRenderingConfig extends WithContextLoader {
     }
 
     public RenderIcon(
-        tags: Store<OsmTags>,
+        tags: Store<Record<string, string>>,
         clickable: boolean,
         options?: {
             noSize?: false | boolean
@@ -277,7 +275,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
     }
 
-    private GetBadges(tags: Store<OsmTags>): BaseUIElement {
+    private GetBadges(tags: Store<Record<string, string>>): BaseUIElement {
         if (this.iconBadges.length === 0) {
             return undefined
         }
@@ -309,7 +307,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         ).SetClass("absolute bottom-0 right-1/3 h-1/2 w-0")
     }
 
-    private GetLabel(tags: Store<OsmTags>): BaseUIElement {
+    private GetLabel(tags: Store<Record<string, string>>): BaseUIElement {
         if (this.label === undefined) {
             return undefined
         }

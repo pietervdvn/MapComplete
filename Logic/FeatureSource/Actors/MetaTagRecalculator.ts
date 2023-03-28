@@ -1,11 +1,10 @@
 import { FeatureSourceForLayer, Tiled } from "../FeatureSource"
 import MetaTagging from "../../MetaTagging"
 import { ExtraFuncParams } from "../../ExtraFunctions"
-import FeaturePipeline from "../FeaturePipeline"
 import { BBox } from "../../BBox"
 import { UIEventSource } from "../../UIEventSource"
 
-/****
+/**
  * Concerned with the logic of updating the right layer at the right time
  */
 class MetatagUpdater {

@@ -12,8 +12,8 @@ import { And } from "../../Tags/And"
 import { Utils } from "../../../Utils"
 import { OsmConnection } from "../OsmConnection"
 import { Feature } from "@turf/turf"
-import FeaturePipeline from "../../FeatureSource/FeaturePipeline"
-import { Geometry, LineString, Point, Polygon } from "geojson"
+import { Geometry, LineString, Point } from "geojson"
+import FullNodeDatabaseSource from "../../FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
 
 export default class ReplaceGeometryAction extends OsmChangeAction {
     /**
@@ -22,7 +22,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
     private readonly feature: any
     private readonly state: {
         osmConnection: OsmConnection
-        featurePipeline: FeaturePipeline
+        fullNodeDatabase?: FullNodeDatabaseSource
     }
     private readonly wayToReplaceId: string
     private readonly theme: string
@@ -41,7 +41,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
     constructor(
         state: {
             osmConnection: OsmConnection
-            featurePipeline: FeaturePipeline
+            fullNodeDatabase?: FullNodeDatabaseSource
         },
         feature: any,
         wayToReplaceId: string,
@@ -195,7 +195,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
     }> {
         // TODO FIXME: if a new point has to be created, snap to already existing ways
 
-        const nodeDb = this.state.featurePipeline.fullNodeDatabase
+        const nodeDb = this.state.fullNodeDatabase
         if (nodeDb === undefined) {
             throw "PANIC: replaceGeometryAction needs the FullNodeDatabase, which is undefined. This should be initialized by having the 'type_node'-layer enabled in your theme. (NB: the replacebutton has type_node as dependency)"
         }
@@ -415,7 +415,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
     }
 
     protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
-        const nodeDb = this.state.featurePipeline.fullNodeDatabase
+        const nodeDb = this.state.fullNodeDatabase
         if (nodeDb === undefined) {
             throw "PANIC: replaceGeometryAction needs the FullNodeDatabase, which is undefined. This should be initialized by having the 'type_node'-layer enabled in your theme. (NB: the replacebutton has type_node as dependency)"
         }

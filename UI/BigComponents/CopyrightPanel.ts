@@ -14,54 +14,53 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import Title from "../Base/Title"
 import { SubtleButton } from "../Base/SubtleButton"
 import Svg from "../../Svg"
-import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline"
 import { BBox } from "../../Logic/BBox"
-import Loc from "../../Models/Loc"
 import Toggle from "../Input/Toggle"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import Constants from "../../Models/Constants"
 import ContributorCount from "../../Logic/ContributorCount"
 import Img from "../Base/Img"
 import { TypedTranslation } from "../i18n/Translation"
+import GeoIndexedStore from "../../Logic/FeatureSource/Actors/GeoIndexedStore"
 
 export class OpenIdEditor extends VariableUiElement {
     constructor(
-        state: { readonly locationControl: Store<Loc> },
+        mapProperties: { location: Store<{ lon: number; lat: number }>; zoom: Store<number> },
         iconStyle?: string,
         objectId?: string
     ) {
         const t = Translations.t.general.attribution
         super(
-            state.locationControl.map((location) => {
-                let elementSelect = ""
-                if (objectId !== undefined) {
-                    const parts = objectId.split("/")
-                    const tp = parts[0]
-                    if (
-                        parts.length === 2 &&
-                        !isNaN(Number(parts[1])) &&
-                        (tp === "node" || tp === "way" || tp === "relation")
-                    ) {
-                        elementSelect = "&" + tp + "=" + parts[1]
+            mapProperties.location.map(
+                (location) => {
+                    let elementSelect = ""
+                    if (objectId !== undefined) {
+                        const parts = objectId.split("/")
+                        const tp = parts[0]
+                        if (
+                            parts.length === 2 &&
+                            !isNaN(Number(parts[1])) &&
+                            (tp === "node" || tp === "way" || tp === "relation")
+                        ) {
+                            elementSelect = "&" + tp + "=" + parts[1]
+                        }
                     }
-                }
-                const idLink = `https://www.openstreetmap.org/edit?editor=id${elementSelect}#map=${
-                    location?.zoom ?? 0
-                }/${location?.lat ?? 0}/${location?.lon ?? 0}`
-                return new SubtleButton(Svg.pencil_ui().SetStyle(iconStyle), t.editId, {
-                    url: idLink,
-                    newTab: true,
-                })
-            })
+                    const idLink = `https://www.openstreetmap.org/edit?editor=id${elementSelect}#map=${
+                        mapProperties.zoom?.data ?? 0
+                    }/${location?.lat ?? 0}/${location?.lon ?? 0}`
+                    return new SubtleButton(Svg.pencil_ui().SetStyle(iconStyle), t.editId, {
+                        url: idLink,
+                        newTab: true,
+                    })
+                },
+                [mapProperties.zoom]
+            )
         )
     }
 }
 
 export class OpenJosm extends Combine {
-    constructor(
-        state: { osmConnection: OsmConnection; currentBounds: Store<BBox> },
-        iconStyle?: string
-    ) {
+    constructor(osmConnection: OsmConnection, bounds: Store<BBox>, iconStyle?: string) {
         const t = Translations.t.general.attribution
 
         const josmState = new UIEventSource<string>(undefined)
@@ -83,21 +82,21 @@ export class OpenJosm extends Combine {
 
         const toggle = new Toggle(
             new SubtleButton(Svg.josm_logo_ui().SetStyle(iconStyle), t.editJosm).onClick(() => {
-                const bounds: any = state.currentBounds.data
-                if (bounds === undefined) {
-                    return undefined
+                const bbox = bounds.data
+                if (bbox === undefined) {
+                    return
                 }
-                const top = bounds.getNorth()
-                const bottom = bounds.getSouth()
-                const right = bounds.getEast()
-                const left = bounds.getWest()
+                const top = bbox.getNorth()
+                const bottom = bbox.getSouth()
+                const right = bbox.getEast()
+                const left = bbox.getWest()
                 const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}&top=${top}&bottom=${bottom}`
                 Utils.download(josmLink)
                     .then((answer) => josmState.setData(answer.replace(/\n/g, "").trim()))
                     .catch((_) => josmState.setData("ERROR"))
             }),
             undefined,
-            state.osmConnection.userDetails.map(
+            osmConnection.userDetails.map(
                 (ud) => ud.loggedIn && ud.csCount >= Constants.userJourney.historyLinkVisible
             )
         )
@@ -113,14 +112,14 @@ export default class CopyrightPanel extends Combine {
     private static LicenseObject = CopyrightPanel.GenerateLicenses()
 
     constructor(state: {
-        layoutToUse: LayoutConfig
-        featurePipeline: FeaturePipeline
-        currentBounds: Store<BBox>
-        locationControl: UIEventSource<Loc>
+        layout: LayoutConfig
+        bounds: Store<BBox>
         osmConnection: OsmConnection
+        dataIsLoading: Store<boolean>
+        perLayer: ReadonlyMap<string, GeoIndexedStore>
     }) {
         const t = Translations.t.general.attribution
-        const layoutToUse = state.layoutToUse
+        const layoutToUse = state.layout
 
         const iconAttributions: BaseUIElement[] = layoutToUse.usedImages.map(
             CopyrightPanel.IconAttribution

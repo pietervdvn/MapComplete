@@ -1,5 +1,4 @@
 import * as fs from "fs"
-import TiledFeatureSource from "../Logic/FeatureSource/TiledFeatureSource/TiledFeatureSource"
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource"
 import * as readline from "readline"
 import ScriptUtils from "./ScriptUtils"
@@ -7,6 +6,8 @@ import { Utils } from "../Utils"
 import Script from "./Script"
 import { BBox } from "../Logic/BBox"
 import { GeoOperations } from "../Logic/GeoOperations"
+import { Tiles } from "../Models/TileRange"
+import { Feature } from "geojson"
 
 /**
  * This script slices a big newline-delimeted geojson file into tiled geojson
@@ -91,6 +92,71 @@ class Slice extends Script {
         }
     }
 
+    private handleTileData(
+        features: Feature[],
+        tileIndex: number,
+        outputDirectory: string,
+        doSlice: boolean,
+        handled: number,
+        maxNumberOfTiles: number
+    ) {
+        const [z, x, y] = Tiles.tile_from_index(tileIndex)
+        const path = `${outputDirectory}/tile_${z}_${x}_${y}.geojson`
+        const box = BBox.fromTileIndex(tileIndex)
+        if (doSlice) {
+            features = Utils.NoNull(
+                features.map((f) => {
+                    const bbox = box.asGeoJson({})
+                    const properties = {
+                        ...f.properties,
+                        id: (f.properties?.id ?? "") + "_" + z + "_" + x + "_" + y,
+                    }
+
+                    if (GeoOperations.completelyWithin(bbox, <any>f)) {
+                        bbox.properties = properties
+                        return bbox
+                    }
+                    const intersection = GeoOperations.intersect(f, box.asGeoJson({}))
+                    if (intersection) {
+                        intersection.properties = properties
+                    }
+                    return intersection
+                })
+            )
+        }
+        features.forEach((f) => {
+            delete f.bbox
+        })
+        if (features.length === 0) {
+            ScriptUtils.erasableLog(
+                handled + "/" + maxNumberOfTiles,
+                "Not writing ",
+                path,
+                ": no features"
+            )
+            return
+        }
+        fs.writeFileSync(
+            path,
+            JSON.stringify(
+                {
+                    type: "FeatureCollection",
+                    features: features,
+                },
+                null,
+                "  "
+            )
+        )
+        ScriptUtils.erasableLog(
+            handled + "/" + maxNumberOfTiles,
+            "Written ",
+            path,
+            "which has ",
+            features.length,
+            "features"
+        )
+    }
+
     async main(args: string[]) {
         console.log("GeoJSON slicer")
         if (args.length < 3) {
@@ -136,75 +202,18 @@ class Slice extends Script {
         }
         const maxNumberOfTiles = Math.pow(2, zoomlevel) * Math.pow(2, zoomlevel)
         let handled = 0
-        TiledFeatureSource.createHierarchy(StaticFeatureSource.fromGeojson(allFeatures), {
-            minZoomLevel: zoomlevel,
-            maxZoomLevel: zoomlevel,
-            maxFeatureCount: Number.MAX_VALUE,
-            registerTile: (tile) => {
+        StaticFeatureSource.fromGeojson(allFeatures).features.addCallbackAndRun((feats) => {
+            GeoOperations.slice(zoomlevel, feats).forEach((tileData, tileIndex) => {
                 handled = handled + 1
-                const path = `${outputDirectory}/tile_${tile.z}_${tile.x}_${tile.y}.geojson`
-                const box = BBox.fromTile(tile.z, tile.x, tile.y)
-                let features = tile.features.data.map((ff) => ff.feature)
-                if (doSlice) {
-                    features = Utils.NoNull(
-                        features.map((f) => {
-                            const bbox = box.asGeoJson({})
-                            const properties = {
-                                ...f.properties,
-                                id:
-                                    (f.properties?.id ?? "") +
-                                    "_" +
-                                    tile.z +
-                                    "_" +
-                                    tile.x +
-                                    "_" +
-                                    tile.y,
-                            }
-
-                            if (GeoOperations.completelyWithin(bbox, f)) {
-                                bbox.properties = properties
-                                return bbox
-                            }
-                            const intersection = GeoOperations.intersect(f, box.asGeoJson({}))
-                            if (intersection) {
-                                intersection.properties = properties
-                            }
-                            return intersection
-                        })
-                    )
-                }
-                features.forEach((f) => {
-                    delete f.bbox
-                })
-                if (features.length === 0) {
-                    ScriptUtils.erasableLog(
-                        handled + "/" + maxNumberOfTiles,
-                        "Not writing ",
-                        path,
-                        ": no features"
-                    )
-                    return
-                }
-                fs.writeFileSync(
-                    path,
-                    JSON.stringify(
-                        {
-                            type: "FeatureCollection",
-                            features: features,
-                        },
-                        null,
-                        "  "
-                    )
+                this.handleTileData(
+                    tileData,
+                    tileIndex,
+                    outputDirectory,
+                    doSlice,
+                    handled,
+                    maxNumberOfTiles
                 )
-                ScriptUtils.erasableLog(
-                    handled + "/" + maxNumberOfTiles,
-                    "Written ",
-                    path,
-                    "which has ",
-                    tile.features.data.length,
-                    "features"
-                )
-            },
+            })
         })
     }
 }

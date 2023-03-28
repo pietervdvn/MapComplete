@@ -1317,4 +1317,34 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         // If the element has a parent, repeat the process for the parent element
         return Utils.findParentWithScrolling(element.parentElement)
     }
+
+    /**
+     * Returns true if the contents of `a` are the same (and in the same order) as `b`.
+     * Might have false negatives in some cases
+     * @param a
+     * @param b
+     */
+    public static sameList<T>(a: ReadonlyArray<T>, b: ReadonlyArray<T>) {
+        if (a == b) {
+            return true
+        }
+        if (a === undefined || a === null || b === undefined || b === null) {
+            return false
+        }
+        if (a.length !== b.length) {
+            return false
+        }
+        for (let i = 0; i < a.length; i++) {
+            let ai = a[i]
+            let bi = b[i]
+            if (ai == bi) {
+                continue
+            }
+            if (ai === bi) {
+                continue
+            }
+            return false
+        }
+        return true
+    }
 }

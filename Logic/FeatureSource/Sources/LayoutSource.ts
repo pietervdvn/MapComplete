@@ -1,14 +1,15 @@
-import FeatureSource from "./FeatureSource"
-import { Store } from "../UIEventSource"
-import FeatureSwitchState from "../State/FeatureSwitchState"
-import OverpassFeatureSource from "../Actors/OverpassFeatureSource"
-import { BBox } from "../BBox"
-import OsmFeatureSource from "./TiledFeatureSource/OsmFeatureSource"
-import { Or } from "../Tags/Or"
-import FeatureSourceMerger from "./Sources/FeatureSourceMerger"
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import GeoJsonSource from "./Sources/GeoJsonSource"
-import DynamicGeoJsonTileSource from "./TiledFeatureSource/DynamicGeoJsonTileSource"
+import GeoJsonSource from "./GeoJsonSource"
+import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
+import FeatureSource from "../FeatureSource"
+import { Or } from "../../Tags/Or"
+import FeatureSwitchState from "../../State/FeatureSwitchState"
+import OverpassFeatureSource from "./OverpassFeatureSource"
+import { Store } from "../../UIEventSource"
+import OsmFeatureSource from "./OsmFeatureSource"
+import FeatureSourceMerger from "./FeatureSourceMerger"
+import DynamicGeoJsonTileSource from "../TiledFeatureSource/DynamicGeoJsonTileSource"
+import { BBox } from "../../BBox"
+import LocalStorageFeatureSource from "../TiledFeatureSource/LocalStorageFeatureSource"
 
 /**
  * This source will fetch the needed data from various sources for the given layout.
@@ -17,22 +18,24 @@ import DynamicGeoJsonTileSource from "./TiledFeatureSource/DynamicGeoJsonTileSou
  */
 export default class LayoutSource extends FeatureSourceMerger {
     constructor(
-        filteredLayers: LayerConfig[],
+        layers: LayerConfig[],
         featureSwitches: FeatureSwitchState,
         newAndChangedElements: FeatureSource,
         mapProperties: { bounds: Store<BBox>; zoom: Store<number> },
         backend: string,
-        isLayerActive: (id: string) => Store<boolean>
+        isDisplayed: (id: string) => Store<boolean>
     ) {
         const { bounds, zoom } = mapProperties
         // remove all 'special' layers
-        filteredLayers = filteredLayers.filter((flayer) => flayer.source !== null)
+        layers = layers.filter((flayer) => flayer.source !== null)
 
-        const geojsonlayers = filteredLayers.filter(
-            (flayer) => flayer.source.geojsonSource !== undefined
-        )
-        const osmLayers = filteredLayers.filter(
-            (flayer) => flayer.source.geojsonSource === undefined
+        const geojsonlayers = layers.filter((layer) => layer.source.geojsonSource !== undefined)
+        const osmLayers = layers.filter((layer) => layer.source.geojsonSource === undefined)
+        const fromCache = osmLayers.map(
+            (l) =>
+                new LocalStorageFeatureSource(l.id, 15, mapProperties, {
+                    isActive: isDisplayed(l.id),
+                })
         )
         const overpassSource = LayoutSource.setupOverpass(osmLayers, bounds, zoom, featureSwitches)
         const osmApiSource = LayoutSource.setupOsmApiSource(
@@ -43,11 +46,11 @@ export default class LayoutSource extends FeatureSourceMerger {
             featureSwitches
         )
         const geojsonSources: FeatureSource[] = geojsonlayers.map((l) =>
-            LayoutSource.setupGeojsonSource(l, mapProperties)
+            LayoutSource.setupGeojsonSource(l, mapProperties, isDisplayed(l.id))
         )
 
-        const expiryInSeconds = Math.min(...(filteredLayers?.map((l) => l.maxAgeOfCache) ?? []))
-        super(overpassSource, osmApiSource, newAndChangedElements, ...geojsonSources)
+        const expiryInSeconds = Math.min(...(layers?.map((l) => l.maxAgeOfCache) ?? []))
+        super(overpassSource, osmApiSource, newAndChangedElements, ...geojsonSources, ...fromCache)
     }
 
     private static setupGeojsonSource(
@@ -56,6 +59,10 @@ export default class LayoutSource extends FeatureSourceMerger {
         isActive?: Store<boolean>
     ): FeatureSource {
         const source = layer.source
+        isActive = mapProperties.zoom.map(
+            (z) => (isActive?.data ?? true) && z >= layer.maxzoom,
+            [isActive]
+        )
         if (source.geojsonZoomLevel === undefined) {
             // This is a 'load everything at once' geojson layer
             return new GeoJsonSource(layer, { isActive })

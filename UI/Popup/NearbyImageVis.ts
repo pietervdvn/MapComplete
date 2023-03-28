@@ -1,6 +1,4 @@
-import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
 import { UIEventSource } from "../../Logic/UIEventSource"
-import { DefaultGuiState } from "../DefaultGuiState"
 import BaseUIElement from "../BaseUIElement"
 import Translations from "../i18n/Translations"
 import { GeoOperations } from "../../Logic/GeoOperations"
@@ -19,7 +17,7 @@ import { VariableUiElement } from "../Base/VariableUIElement"
 import Toggle from "../Input/Toggle"
 import Title from "../Base/Title"
 import { MapillaryLinkVis } from "./MapillaryLinkVis"
-import { SpecialVisualization } from "../SpecialVisualization"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
 
 export class NearbyImageVis implements SpecialVisualization {
     args: { name: string; defaultValue?: string; doc: string; required?: boolean }[] = [
@@ -39,14 +37,13 @@ export class NearbyImageVis implements SpecialVisualization {
     funcName = "nearby_images"
 
     constr(
-        state: FeaturePipelineState,
-        tagSource: UIEventSource<any>,
-        args: string[],
-        guistate: DefaultGuiState
+        state: SpecialVisualizationState,
+        tagSource: UIEventSource<Record<string, string>>,
+        args: string[]
     ): BaseUIElement {
         const t = Translations.t.image.nearbyPictures
         const mode: "open" | "expandable" | "collapsable" = <any>args[0]
-        const feature = state.allElements.ContainingFeatures.get(tagSource.data.id)
+        const feature = state.indexedFeatures.featuresById.data.get(tagSource.data.id)
         const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
         const id: string = tagSource.data["id"]
         const canBeEdited: boolean = !!id?.match("(node|way|relation)/-?[0-9]+")
@@ -69,7 +66,7 @@ export class NearbyImageVis implements SpecialVisualization {
                 }
                 await state?.changes?.applyAction(
                     new ChangeTagAction(id, new And(tags), tagSource.data, {
-                        theme: state?.layoutToUse.id,
+                        theme: state?.layout.id,
                         changeType: "link-image",
                     })
                 )
@@ -116,8 +113,8 @@ export class NearbyImageVis implements SpecialVisualization {
                 maxDaysOld: 365 * 3,
             }
             const slideshow = canBeEdited
-                ? new SelectOneNearbyImage(options, state)
-                : new NearbyImages(options, state)
+                ? new SelectOneNearbyImage(options, state.indexedFeatures)
+                : new NearbyImages(options, state.indexedFeatures)
             const controls = new Combine([
                 towardsCenter,
                 new Combine([

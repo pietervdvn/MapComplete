@@ -5,6 +5,10 @@ export interface GeoCodeResult {
     display_name: string
     lat: number
     lon: number
+    /**
+     * Format:
+     * [lat, lat, lon, lon]
+     */
     boundingbox: number[]
     osm_type: "node" | "way" | "relation"
     osm_id: string

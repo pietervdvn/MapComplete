@@ -1,4 +1,4 @@
-import { ImmutableStore, Store } from "../../Logic/UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
 import type { Map as MlMap } from "maplibre-gl"
 import { GeoJSONSource, Marker } from "maplibre-gl"
 import { ShowDataLayerOptions } from "./ShowDataLayerOptions"
@@ -14,10 +14,13 @@ import LineRenderingConfig from "../../Models/ThemeConfig/LineRenderingConfig"
 import { Utils } from "../../Utils"
 import * as range_layer from "../../assets/layers/range/range.json"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
+import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
+import FilteredLayer from "../../Models/FilteredLayer"
+import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
 
 class PointRenderingLayer {
     private readonly _config: PointRenderingConfig
-    private readonly _fetchStore?: (id: string) => Store<OsmTags>
+    private readonly _fetchStore?: (id: string) => Store<Record<string, string>>
     private readonly _map: MlMap
     private readonly _onClick: (feature: Feature) => void
     private readonly _allMarkers: Map<string, Marker> = new Map<string, Marker>()
@@ -27,7 +30,7 @@ class PointRenderingLayer {
         features: FeatureSource,
         config: PointRenderingConfig,
         visibility?: Store<boolean>,
-        fetchStore?: (id: string) => Store<OsmTags>,
+        fetchStore?: (id: string) => Store<Record<string, string>>,
         onClick?: (feature: Feature) => void
     ) {
         this._config = config
@@ -96,7 +99,7 @@ class PointRenderingLayer {
     }
 
     private addPoint(feature: Feature, loc: [number, number]): Marker {
-        let store: Store<OsmTags>
+        let store: Store<Record<string, string>>
         if (this._fetchStore) {
             store = this._fetchStore(feature.properties.id)
         } else {
@@ -143,7 +146,7 @@ class LineRenderingLayer {
     private readonly _map: MlMap
     private readonly _config: LineRenderingConfig
     private readonly _visibility?: Store<boolean>
-    private readonly _fetchStore?: (id: string) => Store<OsmTags>
+    private readonly _fetchStore?: (id: string) => Store<Record<string, string>>
     private readonly _onClick?: (feature: Feature) => void
     private readonly _layername: string
     private readonly _listenerInstalledOn: Set<string> = new Set<string>()
@@ -154,7 +157,7 @@ class LineRenderingLayer {
         layername: string,
         config: LineRenderingConfig,
         visibility?: Store<boolean>,
-        fetchStore?: (id: string) => Store<OsmTags>,
+        fetchStore?: (id: string) => Store<Record<string, string>>,
         onClick?: (feature: Feature) => void
     ) {
         this._layername = layername
@@ -212,9 +215,10 @@ class LineRenderingLayer {
                 promoteId: "id",
             })
             // @ts-ignore
+            const linelayer = this._layername + "_line"
             map.addLayer({
                 source: this._layername,
-                id: this._layername + "_line",
+                id: linelayer,
                 type: "line",
                 paint: {
                     "line-color": ["feature-state", "color"],
@@ -227,9 +231,10 @@ class LineRenderingLayer {
                 },
             })
 
+            const polylayer = this._layername + "_polygon"
             map.addLayer({
                 source: this._layername,
-                id: this._layername + "_polygon",
+                id: polylayer,
                 type: "fill",
                 filter: ["in", ["geometry-type"], ["literal", ["Polygon", "MultiPolygon"]]],
                 layout: {},
@@ -237,6 +242,11 @@ class LineRenderingLayer {
                     "fill-color": ["feature-state", "fillColor"],
                     "fill-opacity": 0.1,
                 },
+            })
+
+            this._visibility.addCallbackAndRunD((visible) => {
+                map.setLayoutProperty(linelayer, "visibility", visible ? "visible" : "none")
+                map.setLayoutProperty(polylayer, "visibility", visible ? "visible" : "none")
             })
         } else {
             src.setData({
@@ -295,6 +305,24 @@ export default class ShowDataLayer {
         map.addCallbackAndRunD((map) => self.initDrawFeatures(map))
     }
 
+    public static showMultipleLayers(
+        mlmap: UIEventSource<MlMap>,
+        features: FeatureSource,
+        layers: LayerConfig[],
+        options?: Partial<ShowDataLayerOptions>
+    ) {
+        const perLayer = new PerLayerFeatureSourceSplitter(
+            layers.map((l) => new FilteredLayer(l)),
+            new StaticFeatureSource(features)
+        )
+        perLayer.forEach((fs) => {
+            new ShowDataLayer(mlmap, {
+                layer: fs.layer.layerDef,
+                features: fs,
+                ...(options ?? {}),
+            })
+        })
+    }
     public static showRange(
         map: Store<MlMap>,
         features: FeatureSource,
@@ -318,8 +346,11 @@ export default class ShowDataLayer {
     }
 
     private initDrawFeatures(map: MlMap) {
-        const { features, doShowLayer, fetchStore, selectedElement } = this._options
-        const onClick = (feature: Feature) => selectedElement?.setData(feature)
+        let { features, doShowLayer, fetchStore, selectedElement, selectedLayer } = this._options
+        const onClick = (feature: Feature) => {
+            selectedElement?.setData(feature)
+            selectedLayer?.setData(this._options.layer)
+        }
         for (let i = 0; i < this._options.layer.lineRendering.length; i++) {
             const lineRenderingConfig = this._options.layer.lineRendering[i]
             new LineRenderingLayer(

@@ -4,7 +4,7 @@ import { VariableUiElement } from "../Base/VariableUIElement"
 import BaseUIElement from "../BaseUIElement"
 import EditableTagRendering from "./EditableTagRendering"
 import Combine from "../Base/Combine"
-import { SpecialVisualization } from "../SpecialVisualization"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
 
 export class StealViz implements SpecialVisualization {
     funcName = "steal"
@@ -21,12 +21,12 @@ export class StealViz implements SpecialVisualization {
             required: true,
         },
     ]
-    constr(state, featureTags, args) {
+    constr(state: SpecialVisualizationState, featureTags, args) {
         const [featureIdKey, layerAndtagRenderingIds] = args
         const tagRenderings: [LayerConfig, TagRenderingConfig][] = []
         for (const layerAndTagRenderingId of layerAndtagRenderingIds.split(";")) {
             const [layerId, tagRenderingId] = layerAndTagRenderingId.trim().split(".")
-            const layer = state.layoutToUse.layers.find((l) => l.id === layerId)
+            const layer = state.layout.layers.find((l) => l.id === layerId)
             const tagRendering = layer.tagRenderings.find((tr) => tr.id === tagRenderingId)
             tagRenderings.push([layer, tagRendering])
         }
@@ -39,7 +39,7 @@ export class StealViz implements SpecialVisualization {
                 if (featureId === undefined) {
                     return undefined
                 }
-                const otherTags = state.allElements.getEventSourceById(featureId)
+                const otherTags = state.featureProperties.getStore(featureId)
                 const elements: BaseUIElement[] = []
                 for (const [layer, tagRendering] of tagRenderings) {
                     const el = new EditableTagRendering(

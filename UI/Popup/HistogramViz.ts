@@ -1,9 +1,8 @@
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import { FixedUiElement } from "../Base/FixedUiElement"
-// import Histogram from "../BigComponents/Histogram";
-// import {SpecialVisualization} from "../SpecialVisualization";
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import Histogram from "../BigComponents/Histogram"
 
-export class HistogramViz {
+export class HistogramViz implements SpecialVisualization {
     funcName = "histogram"
     docs = "Create a histogram for a list of given values, read from the properties."
     example =
@@ -30,7 +29,11 @@ export class HistogramViz {
         },
     ]
 
-    constr(state, tagSource: UIEventSource<any>, args: string[]) {
+    constr(
+        state: SpecialVisualizationState,
+        tagSource: UIEventSource<Record<string, string>>,
+        args: string[]
+    ) {
         let assignColors = undefined
         if (args.length >= 3) {
             const colors = [...args]
@@ -63,10 +66,8 @@ export class HistogramViz {
                 return undefined
             }
         })
-        return new FixedUiElement("HISTORGRAM")
-        /*
         return new Histogram(listSource, args[1], args[2], {
             assignColor: assignColors,
-        })*/
+        })
     }
 }

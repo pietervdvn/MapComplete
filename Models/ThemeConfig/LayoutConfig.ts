@@ -40,10 +40,6 @@ export default class LayoutConfig implements LayoutInformation {
     public defaultBackgroundId?: string
     public layers: LayerConfig[]
     public tileLayerSources: TilesourceConfig[]
-    public readonly clustering?: {
-        maxZoom: number
-        minNeededElements: number
-    }
     public readonly hideFromOverview: boolean
     public lockLocation: boolean | [[number, number], [number, number]]
     public readonly enableUserBadge: boolean
@@ -187,22 +183,6 @@ export default class LayoutConfig implements LayoutInformation {
             },
             context + ".extraLink"
         )
-
-        this.clustering = {
-            maxZoom: 16,
-            minNeededElements: 250,
-        }
-        if (json.clustering === false) {
-            this.clustering = {
-                maxZoom: 0,
-                minNeededElements: 100000,
-            }
-        } else if (json.clustering) {
-            this.clustering = {
-                maxZoom: json.clustering.maxZoom ?? 18,
-                minNeededElements: json.clustering.minNeededElements ?? 250,
-            }
-        }
 
         this.hideFromOverview = json.hideFromOverview ?? false
         this.lockLocation = <[[number, number], [number, number]]>json.lockLocation ?? undefined

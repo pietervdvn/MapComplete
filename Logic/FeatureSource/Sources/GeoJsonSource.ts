@@ -58,7 +58,7 @@ export default class GeoJsonSource implements FeatureSource {
                 .replace("{x_max}", "" + bounds.maxLon)
         }
 
-        const eventsource = new UIEventSource<Feature[]>(undefined)
+        const eventsource = new UIEventSource<Feature[]>([])
         if (options?.isActive !== undefined) {
             options.isActive.addCallbackAndRunD(async (active) => {
                 if (!active) {

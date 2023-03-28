@@ -18,13 +18,9 @@ export default class UserRelatedState {
      */
     public osmConnection: OsmConnection
     /**
-     THe change handler
-     */
-    public changes: Changes
-    /**
      * The key for mangrove
      */
-    public mangroveIdentity: MangroveIdentity
+    public readonly mangroveIdentity: MangroveIdentity
 
     public readonly installedUserThemes: Store<string[]>
 

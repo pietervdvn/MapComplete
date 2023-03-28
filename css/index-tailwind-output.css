@@ -572,9 +572,17 @@ video {
   width: 100%;
 }
 
+.\!container {
+  width: 100% !important;
+}
+
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
+  }
+
+  .\!container {
+    max-width: 640px !important;
   }
 }
 
@@ -582,11 +590,19 @@ video {
   .container {
     max-width: 768px;
   }
+
+  .\!container {
+    max-width: 768px !important;
+  }
 }
 
 @media (min-width: 1024px) {
   .container {
     max-width: 1024px;
+  }
+
+  .\!container {
+    max-width: 1024px !important;
   }
 }
 
@@ -594,11 +610,19 @@ video {
   .container {
     max-width: 1280px;
   }
+
+  .\!container {
+    max-width: 1280px !important;
+  }
 }
 
 @media (min-width: 1536px) {
   .container {
     max-width: 1536px;
+  }
+
+  .\!container {
+    max-width: 1536px !important;
   }
 }
 
@@ -624,6 +648,10 @@ video {
 
 .visible {
   visibility: visible;
+}
+
+.\!visible {
+  visibility: visible !important;
 }
 
 .invisible {
@@ -823,10 +851,6 @@ video {
   margin-bottom: 0.75rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -847,8 +871,24 @@ video {
   margin-top: 1rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .ml-4 {
   margin-left: 1rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .mb-24 {
@@ -859,20 +899,12 @@ video {
   margin-left: 0.25rem;
 }
 
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
 }
 
 .mt-12 {
   margin-top: 3rem;
-}
-
-.ml-2 {
-  margin-left: 0.5rem;
 }
 
 .ml-3 {
@@ -901,10 +933,6 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
 }
 
 .mb-8 {
@@ -987,11 +1015,6 @@ video {
   height: 100%;
 }
 
-.h-min {
-  height: -webkit-min-content;
-  height: min-content;
-}
-
 .h-8 {
   height: 2rem;
 }
@@ -1032,12 +1055,12 @@ video {
   height: 0.75rem;
 }
 
-.h-11 {
-  height: 2.75rem;
-}
-
 .h-6 {
   height: 1.5rem;
+}
+
+.h-11 {
+  height: 2.75rem;
 }
 
 .h-96 {
@@ -1060,16 +1083,16 @@ video {
   max-height: 20vh;
 }
 
+.max-h-8 {
+  max-height: 2rem;
+}
+
 .max-h-32 {
   max-height: 8rem;
 }
 
 .max-h-7 {
   max-height: 1.75rem;
-}
-
-.max-h-8 {
-  max-height: 2rem;
 }
 
 .min-h-\[8rem\] {
@@ -1124,14 +1147,14 @@ video {
   width: 0.75rem;
 }
 
-.w-11 {
-  width: 2.75rem;
-}
-
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.w-11 {
+  width: 2.75rem;
 }
 
 .w-1\/2 {
@@ -1303,8 +1326,16 @@ video {
   justify-content: space-between;
 }
 
+.gap-1 {
+  gap: 0.25rem;
+}
+
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-y-1 {
+  row-gap: 0.25rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -1443,6 +1474,11 @@ video {
   border-color: rgb(219 234 254 / var(--tw-border-opacity));
 }
 
+.border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -1456,11 +1492,6 @@ video {
 .border-lime-500 {
   --tw-border-opacity: 1;
   border-color: rgb(132 204 22 / var(--tw-border-opacity));
-}
-
-.border-gray-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 
 .border-blue-500 {
@@ -1549,6 +1580,10 @@ video {
   padding: 0.5rem;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
 .p-3 {
   padding: 0.75rem;
 }
@@ -1593,6 +1628,10 @@ video {
   padding-left: 1rem;
 }
 
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
 .pl-2 {
   padding-left: 0.5rem;
 }
@@ -1617,10 +1656,6 @@ video {
   padding-right: 0.25rem;
 }
 
-.pt-2 {
-  padding-top: 0.5rem;
-}
-
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -1631,6 +1666,10 @@ video {
 
 .pr-2 {
   padding-right: 0.5rem;
+}
+
+.pt-0\.5 {
+  padding-top: 0.125rem;
 }
 
 .pb-8 {
@@ -1651,10 +1690,6 @@ video {
 
 .pr-0 {
   padding-right: 0px;
-}
-
-.pt-0\.5 {
-  padding-top: 0.125rem;
 }
 
 .pb-4 {
@@ -1864,12 +1899,6 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition-all {
-  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2478,26 +2507,6 @@ li::marker {
   }
 }
 
-/**************************************/
-
-#topleft-tools {
-  display: block;
-  position: absolute;
-  z-index: 5000;
-  transition: all 500ms linear;
-  left: 0;
-  right: 0;
-}
-
-.welcomeMessage {
-  display: block;
-  max-width: calc(100vw - 5em);
-  width: 40em;
-  max-height: calc(100vh - 15em);
-  background-color: var(--background-color);
-  color: var(--foreground-color);
-}
-
 /***************** Info box (box containing features and questions ******************/
 
 input {
@@ -2670,6 +2679,10 @@ input {
     top: 0.75rem;
   }
 
+  .sm\:m-6 {
+    margin: 1.5rem;
+  }
+
   .sm\:mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -2701,10 +2714,6 @@ input {
     width: 6rem;
   }
 
-  .sm\:max-w-sm {
-    max-width: 24rem;
-  }
-
   .sm\:max-w-xl {
     max-width: 36rem;
   }
@@ -2723,6 +2732,10 @@ input {
 
   .sm\:border-4 {
     border-width: 4px;
+  }
+
+  .sm\:p-6 {
+    padding: 1.5rem;
   }
 
   .sm\:p-0\.5 {
@@ -2782,6 +2795,10 @@ input {
     margin: 0.25rem;
   }
 
+  .md\:m-8 {
+    margin: 2rem;
+  }
+
   .md\:m-2 {
     margin: 0.5rem;
   }
@@ -2834,10 +2851,6 @@ input {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .md\:flex-row {
-    flex-direction: row;
-  }
-
   .md\:rounded-xl {
     border-radius: 0.75rem;
   }
@@ -2887,10 +2900,6 @@ input {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .md\:w-160 {
-    width: 40rem;
   }
 }
 

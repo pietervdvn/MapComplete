@@ -1,51 +1,47 @@
-import BaseUIElement from "../BaseUIElement"
-import { SubtleButton } from "../Base/SubtleButton"
-import { UIEventSource } from "../../Logic/UIEventSource"
-import Combine from "../Base/Combine"
-import { VariableUiElement } from "../Base/VariableUIElement"
-import Translations from "../i18n/Translations"
-import Toggle from "../Input/Toggle"
-import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction"
-import Loading from "../Base/Loading"
-import { OsmConnection } from "../../Logic/Osm/OsmConnection"
-import Lazy from "../Base/Lazy"
-import ConfirmLocationOfPoint from "../NewPoint/ConfirmLocationOfPoint"
-import Img from "../Base/Img"
-import FilteredLayer from "../../Models/FilteredLayer"
-import { FixedUiElement } from "../Base/FixedUiElement"
-import Svg from "../../Svg"
-import { Utils } from "../../Utils"
-import Minimap from "../Base/Minimap"
-import ShowDataLayer from "../ShowDataLayer/ShowDataLayer"
-import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
-import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer"
-import CreateWayWithPointReuseAction, {
-    MergePointConfig,
-} from "../../Logic/Osm/Actions/CreateWayWithPointReuseAction"
-import OsmChangeAction from "../../Logic/Osm/Actions/OsmChangeAction"
-import FeatureSource from "../../Logic/FeatureSource/FeatureSource"
-import { OsmObject, OsmWay } from "../../Logic/Osm/OsmObject"
-import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
-import { DefaultGuiState } from "../DefaultGuiState"
-import { PresetInfo } from "../BigComponents/SimpleAddUI"
-import { TagUtils } from "../../Logic/Tags/TagUtils"
-import { And } from "../../Logic/Tags/And"
-import ReplaceGeometryAction from "../../Logic/Osm/Actions/ReplaceGeometryAction"
-import CreateMultiPolygonWithPointReuseAction from "../../Logic/Osm/Actions/CreateMultiPolygonWithPointReuseAction"
-import { Tag } from "../../Logic/Tags/Tag"
-import TagApplyButton from "./TagApplyButton"
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import conflation_json from "../../assets/layers/conflation/conflation.json"
-import { GeoOperations } from "../../Logic/GeoOperations"
-import { LoginToggle } from "./LoginButton"
-import { AutoAction } from "./AutoApplyButton"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import { Changes } from "../../Logic/Osm/Changes"
-import { ElementStorage } from "../../Logic/ElementStorage"
-import Hash from "../../Logic/Web/Hash"
-import { PreciseInput } from "../../Models/ThemeConfig/PresetConfig"
-import { SpecialVisualization } from "../SpecialVisualization"
+import BaseUIElement from "../BaseUIElement";
+import { SubtleButton } from "../Base/SubtleButton";
+import { UIEventSource } from "../../Logic/UIEventSource";
+import Combine from "../Base/Combine";
+import { VariableUiElement } from "../Base/VariableUIElement";
+import Translations from "../i18n/Translations";
+import Toggle from "../Input/Toggle";
+import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
+import Loading from "../Base/Loading";
+import { OsmConnection } from "../../Logic/Osm/OsmConnection";
+import Lazy from "../Base/Lazy";
+import ConfirmLocationOfPoint from "../NewPoint/ConfirmLocationOfPoint";
+import Img from "../Base/Img";
+import FilteredLayer from "../../Models/FilteredLayer";
+import { FixedUiElement } from "../Base/FixedUiElement";
+import Svg from "../../Svg";
+import { Utils } from "../../Utils";
+import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
+import CreateWayWithPointReuseAction, { MergePointConfig } from "../../Logic/Osm/Actions/CreateWayWithPointReuseAction";
+import OsmChangeAction, { OsmCreateAction } from "../../Logic/Osm/Actions/OsmChangeAction";
+import FeatureSource from "../../Logic/FeatureSource/FeatureSource";
+import { OsmObject, OsmWay } from "../../Logic/Osm/OsmObject";
+import { PresetInfo } from "../BigComponents/SimpleAddUI";
+import { TagUtils } from "../../Logic/Tags/TagUtils";
+import { And } from "../../Logic/Tags/And";
+import ReplaceGeometryAction from "../../Logic/Osm/Actions/ReplaceGeometryAction";
+import CreateMultiPolygonWithPointReuseAction from "../../Logic/Osm/Actions/CreateMultiPolygonWithPointReuseAction";
+import { Tag } from "../../Logic/Tags/Tag";
+import TagApplyButton from "./TagApplyButton";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import conflation_json from "../../assets/layers/conflation/conflation.json";
+import { GeoOperations } from "../../Logic/GeoOperations";
+import { LoginToggle } from "./LoginButton";
+import { AutoAction } from "./AutoApplyButton";
+import Hash from "../../Logic/Web/Hash";
+import { PreciseInput } from "../../Models/ThemeConfig/PresetConfig";
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization";
 import Maproulette from "../../Logic/Maproulette";
+import { Feature, Point } from "geojson";
+import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson";
+import ShowDataLayer from "../Map/ShowDataLayer";
+import { MapLibreAdaptor } from "../Map/MapLibreAdaptor";
+import SvelteUIElement from "../Base/SvelteUIElement";
+import MaplibreMap from "../Map/MaplibreMap.svelte";
 
 /**
  * A helper class for the various import-flows.
@@ -106,7 +102,7 @@ ${Utils.special_visualizations_importRequirementDocs}
     }
 
     abstract constructElement(
-        state: FeaturePipelineState,
+        state: SpecialVisualizationState,
         args: {
             max_snap_distance: string
             snap_onto_layers: string
@@ -116,13 +112,16 @@ ${Utils.special_visualizations_importRequirementDocs}
             newTags: UIEventSource<any>
             targetLayer: string
         },
-        tagSource: UIEventSource<any>,
-        guiState: DefaultGuiState,
-        feature: any,
+        tagSource: UIEventSource<Record<string, string>>,
+        feature: Feature,
         onCancelClicked: () => void
     ): BaseUIElement
 
-    constr(state, tagSource: UIEventSource<any>, argsRaw, guiState) {
+    constr(
+        state: SpecialVisualizationState,
+        tagSource: UIEventSource<Record<string, string>>,
+        argsRaw: string[]
+    ) {
         /**
          * Some generic import button pre-validation is implemented here:
          * - Are we logged in?
@@ -139,7 +138,7 @@ ${Utils.special_visualizations_importRequirementDocs}
         {
             // Some initial validation
             if (
-                !state.layoutToUse.official &&
+                !state.layout.official &&
                 !(
                     state.featureSwitchIsTesting.data ||
                     state.osmConnection._oauth_config.url ===
@@ -148,11 +147,9 @@ ${Utils.special_visualizations_importRequirementDocs}
             ) {
                 return new Combine([t.officialThemesOnly.SetClass("alert"), t.howToTest])
             }
-            const targetLayer: FilteredLayer = state.filteredLayers.data.filter(
-                (fl) => fl.layerDef.id === args.targetLayer
-            )[0]
+            const targetLayer: FilteredLayer = state.layerState.filteredLayers.get(args.targetLayer)
             if (targetLayer === undefined) {
-                const e = `Target layer not defined: error in import button for theme: ${state.layoutToUse.id}: layer ${args.targetLayer} not found`
+                const e = `Target layer not defined: error in import button for theme: ${state.layout.id}: layer ${args.targetLayer} not found`
                 console.error(e)
                 return new FixedUiElement(e).SetClass("alert")
             }
@@ -167,7 +164,7 @@ ${Utils.special_visualizations_importRequirementDocs}
         const inviteToImportButton = new SubtleButton(img, args.text)
 
         const id = tagSource.data.id
-        const feature = state.allElements.ContainingFeatures.get(id)
+        const feature = state.indexedFeatures.featuresById.data.get(id)
 
         // Explanation of the tags that will be applied onto the imported/conflated object
 
@@ -205,22 +202,13 @@ ${Utils.special_visualizations_importRequirementDocs}
             return tags._imported === "yes"
         })
 
-        /**** THe actual panel showing the import guiding map ****/
-        const importGuidingPanel = this.constructElement(
-            state,
-            args,
-            tagSource,
-            guiState,
-            feature,
-            () => importClicked.setData(false)
+        /**** The actual panel showing the import guiding map ****/
+        const importGuidingPanel = this.constructElement(state, args, tagSource, feature, () =>
+            importClicked.setData(false)
         )
 
         const importFlow = new Toggle(
-            new Toggle(
-                new Loading(t0.stillLoading),
-                importGuidingPanel,
-                state.featurePipeline.runningQuery
-            ),
+            new Toggle(new Loading(t0.stillLoading), importGuidingPanel, state.dataIsLoading),
             inviteToImportButton,
             importClicked
         )
@@ -230,7 +218,7 @@ ${Utils.special_visualizations_importRequirementDocs}
                 new Toggle(
                     new Toggle(t.hasBeenImported, importFlow, isImported),
                     t.zoomInMore.SetClass("alert block"),
-                    state.locationControl.map((l) => l.zoom >= 18)
+                    state.mapProperties.zoom.map((zoom) => zoom >= 18)
                 ),
                 pleaseLoginButton,
                 state
@@ -258,8 +246,13 @@ ${Utils.special_visualizations_importRequirementDocs}
 
     protected abstract canBeImported(feature: any)
 
+    private static readonly conflationLayer = new LayerConfig(
+        <LayerConfigJson>conflation_json,
+        "all_known_layers",
+        true
+    )
     protected createConfirmPanelForWay(
-        state: FeaturePipelineState,
+        state: SpecialVisualizationState,
         args: {
             max_snap_distance: string
             snap_onto_layers: string
@@ -270,32 +263,32 @@ ${Utils.special_visualizations_importRequirementDocs}
         },
         feature: any,
         originalFeatureTags: UIEventSource<any>,
-        action: OsmChangeAction & { getPreview(): Promise<FeatureSource>; newElementId?: string },
+        action: OsmChangeAction & { getPreview?(): Promise<FeatureSource>; newElementId?: string },
         onCancel: () => void
     ): BaseUIElement {
         const self = this
-        const confirmationMap = Minimap.createMiniMap({
-            allowMoving: state.featureSwitchIsDebugging.data ?? false,
-            background: state.backgroundLayer,
+        const map = new UIEventSource(undefined)
+        new MapLibreAdaptor(map, {
+            allowMoving: UIEventSource.feedFrom(state.featureSwitchIsTesting),
+            allowZooming: UIEventSource.feedFrom(state.featureSwitchIsTesting),
+            rasterLayer: state.mapProperties.rasterLayer,
         })
+        const confirmationMap = new SvelteUIElement(MaplibreMap, { map })
         confirmationMap.SetStyle("height: 20rem; overflow: hidden").SetClass("rounded-xl")
 
-        // SHow all relevant data - including (eventually) the way of which the geometry will be replaced
-        new ShowDataMultiLayer({
-            leafletMap: confirmationMap.leafletMap,
-            zoomToFeatures: true,
-            features: StaticFeatureSource.fromGeojson([feature]),
-            state: state,
-            layers: state.filteredLayers,
-        })
+        ShowDataLayer.showMultipleLayers(
+            map,
+            new StaticFeatureSource([feature]),
+            state.layout.layers,
+            { zoomToFeatures: true }
+        )
+        // Show all relevant data - including (eventually) the way of which the geometry will be replaced
 
         action.getPreview().then((changePreview) => {
-            new ShowDataLayer({
-                leafletMap: confirmationMap.leafletMap,
+            new ShowDataLayer(map, {
                 zoomToFeatures: false,
                 features: changePreview,
-                state,
-                layerToShow: new LayerConfig(conflation_json, "all_known_layers", true),
+                layer: AbstractImportButton.conflationLayer,
             })
         })
 
@@ -317,9 +310,9 @@ ${Utils.special_visualizations_importRequirementDocs}
             {
                 originalFeatureTags.data["_imported"] = "yes"
                 originalFeatureTags.ping() // will set isImported as per its definition
-                state.changes.applyAction(action)
+                await state.changes.applyAction(action)
                 const newId = action.newElementId ?? action.mainObjectId
-                state.selectedElement.setData(state.allElements.ContainingFeatures.get(newId))
+                state.selectedElement.setData(state.indexedFeatures.featuresById.data.get(newId))
             }
         })
 
@@ -392,7 +385,7 @@ export class ConflateButton extends AbstractImportButton {
     }
 
     constructElement(
-        state: FeaturePipelineState,
+        state: SpecialVisualizationState,
         args: {
             max_snap_distance: string
             snap_onto_layers: string
@@ -403,8 +396,7 @@ export class ConflateButton extends AbstractImportButton {
             targetLayer: string
         },
         tagSource: UIEventSource<any>,
-        guiState: DefaultGuiState,
-        feature: any,
+        feature: Feature,
         onCancelClicked: () => void
     ): BaseUIElement {
         const nodesMustMatch = args.snap_onto_layers
@@ -424,10 +416,15 @@ export class ConflateButton extends AbstractImportButton {
         const key = args["way_to_conflate"]
         const wayToConflate = tagSource.data[key]
         feature = GeoOperations.removeOvernoding(feature)
-        const action = new ReplaceGeometryAction(state, feature, wayToConflate, {
-            theme: state.layoutToUse.id,
-            newTags: args.newTags.data,
-        })
+        const action: OsmChangeAction & { getPreview(): Promise<any> } = new ReplaceGeometryAction(
+            state,
+            feature,
+            wayToConflate,
+            {
+                theme: state.layout.id,
+                newTags: args.newTags.data,
+            }
+        )
 
         return this.createConfirmPanelForWay(
             state,
@@ -498,9 +495,9 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
             newTags: UIEventSource<any>
             targetLayer: string
         },
-        state: FeaturePipelineState,
+        state: SpecialVisualizationState,
         mergeConfigs: any[]
-    ) {
+    ): OsmCreateAction & { getPreview(): Promise<FeatureSource>; newElementId?: string } {
         const coors = feature.geometry.coordinates
         if (feature.geometry.type === "Polygon" && coors.length > 1) {
             const outer = coors[0]
@@ -525,8 +522,8 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
     }
 
     async applyActionOn(
-        state: { layoutToUse: LayoutConfig; changes: Changes; allElements: ElementStorage },
-        originalFeatureTags: UIEventSource<any>,
+        state: SpecialVisualizationState,
+        originalFeatureTags: UIEventSource<Record<string, string>>,
         argument: string[]
     ): Promise<void> {
         const id = originalFeatureTags.data.id
@@ -535,14 +532,9 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
         }
         AbstractImportButton.importedIds.add(originalFeatureTags.data.id)
         const args = this.parseArgs(argument, originalFeatureTags)
-        const feature = state.allElements.ContainingFeatures.get(id)
+        const feature = state.indexedFeatures.featuresById.data.get(id)
         const mergeConfigs = this.GetMergeConfig(args)
-        const action = ImportWayButton.CreateAction(
-            feature,
-            args,
-            <FeaturePipelineState>state,
-            mergeConfigs
-        )
+        const action = ImportWayButton.CreateAction(feature, args, state, mergeConfigs)
         await state.changes.applyAction(action)
     }
 
@@ -557,7 +549,13 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
         return deps
     }
 
-    constructElement(state, args, originalFeatureTags, guiState, feature, onCancel): BaseUIElement {
+    constructElement(
+        state: SpecialVisualizationState,
+        args,
+        originalFeatureTags: UIEventSource<Record<string, string>>,
+        feature,
+        onCancel
+    ): BaseUIElement {
         const geometry = feature.geometry
 
         if (!(geometry.type == "LineString" || geometry.type === "Polygon")) {
@@ -567,7 +565,12 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
 
         // Upload the way to OSM
         const mergeConfigs = this.GetMergeConfig(args)
-        let action = ImportWayButton.CreateAction(feature, args, state, mergeConfigs)
+        let action: OsmCreateAction & {getPreview?: any} = ImportWayButton.CreateAction(
+            feature,
+            args,
+            state,
+            mergeConfigs
+        )
         return this.createConfirmPanelForWay(
             state,
             args,
@@ -663,10 +666,9 @@ export class ImportPointButton extends AbstractImportButton {
             note_id: string
             maproulette_id: string
         },
-        state: FeaturePipelineState,
-        guiState: DefaultGuiState,
+        state: SpecialVisualizationState,
         originalFeatureTags: UIEventSource<any>,
-        feature: any,
+        feature: Feature<Point>,
         onCancel: () => void,
         close: () => void
     ): BaseUIElement {
@@ -690,7 +692,7 @@ export class ImportPointButton extends AbstractImportButton {
             }
 
             const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {
-                theme: state.layoutToUse.id,
+                theme: state.layout.id,
                 changeType: "import",
                 snapOnto: <OsmWay>snapOnto,
                 specialMotivation: specialMotivation,
@@ -698,7 +700,7 @@ export class ImportPointButton extends AbstractImportButton {
 
             await state.changes.applyAction(newElementAction)
             state.selectedElement.setData(
-                state.allElements.ContainingFeatures.get(newElementAction.newElementId)
+                state.indexedFeatures.featuresById.data.get(newElementAction.newElementId)
             )
             Hash.hash.setData(newElementAction.newElementId)
 
@@ -742,19 +744,17 @@ export class ImportPointButton extends AbstractImportButton {
         const presetInfo = <PresetInfo>{
             tags: args.newTags.data,
             icon: () => new Img(args.icon),
-            layerToAddTo: state.filteredLayers.data.filter(
-                (l) => l.layerDef.id === args.targetLayer
-            )[0],
+            layerToAddTo: state.layerState.filteredLayers.get(args.targetLayer),
             name: args.text,
             title: Translations.T(args.text),
             preciseInput: preciseInputSpec, // must be explicitely assigned, if 'undefined' won't work otherwise
             boundsFactor: 3,
         }
 
-        const [lon, lat] = feature.geometry.coordinates
+        const [lon, lat] = <[number,number]> feature.geometry.coordinates
         return new ConfirmLocationOfPoint(
             state,
-            guiState.filterViewIsOpened,
+            state.guistate.filterViewIsOpened,
             presetInfo,
             Translations.W(args.text),
             {
@@ -783,10 +783,9 @@ export class ImportPointButton extends AbstractImportButton {
     }
 
     constructElement(
-        state,
+        state: SpecialVisualizationState,
         args,
         originalFeatureTags,
-        guiState,
         feature,
         onCancel: () => void
     ): BaseUIElement {
@@ -797,7 +796,6 @@ export class ImportPointButton extends AbstractImportButton {
                 ImportPointButton.createConfirmPanelForPoint(
                     args,
                     state,
-                    guiState,
                     originalFeatureTags,
                     feature,
                     onCancel,

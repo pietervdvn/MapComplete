@@ -1,6 +1,4 @@
 import { UIEventSource } from "../../Logic/UIEventSource"
-import { OsmConnection } from "../../Logic/Osm/OsmConnection"
-import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline"
 import BaseUIElement from "../BaseUIElement"
 import LocationInput from "../Input/LocationInput"
 import { BBox } from "../../Logic/BBox"
@@ -18,18 +16,13 @@ import { Tag } from "../../Logic/Tags/Tag"
 import { WayId } from "../../Models/OsmFeature"
 import { Translation } from "../i18n/Translation"
 import { Feature } from "geojson"
-import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers"
-import { GlobalFilter } from "../../Logic/State/GlobalFilter"
+import { AvailableRasterLayers } from "../../Models/RasterLayers"
+import { SpecialVisualizationState } from "../SpecialVisualization"
+import ClippedFeatureSource from "../../Logic/FeatureSource/Sources/ClippedFeatureSource"
 
 export default class ConfirmLocationOfPoint extends Combine {
     constructor(
-        state: {
-            globalFilters: UIEventSource<GlobalFilter[]>
-            featureSwitchIsTesting: UIEventSource<boolean>
-            osmConnection: OsmConnection
-            featurePipeline: FeaturePipeline
-            backgroundLayer?: UIEventSource<RasterLayerPolygon | undefined>
-        },
+        state: SpecialVisualizationState,
         filterViewIsOpened: UIEventSource<boolean>,
         preset: PresetInfo,
         confirmText: BaseUIElement,
@@ -55,7 +48,7 @@ export default class ConfirmLocationOfPoint extends Combine {
             const locationSrc = new UIEventSource(zloc)
 
             let backgroundLayer = new UIEventSource(
-                state?.backgroundLayer?.data ?? AvailableRasterLayers.osmCarto
+                state?.mapProperties.rasterLayer?.data ?? AvailableRasterLayers.osmCarto
             )
             if (preset.preciseInput.preferredBackground) {
                 const defaultBackground = AvailableRasterLayers.SelectBestLayerAccordingTo(
@@ -105,15 +98,13 @@ export default class ConfirmLocationOfPoint extends Combine {
                         Math.max(preset.boundsFactor ?? 0.25, 2)
                     )
                     loadedBbox = bbox
-                    const allFeatures: Feature[] = []
-                    preset.preciseInput.snapToLayers.forEach((layerId) => {
-                        console.log("Snapping to", layerId)
-                        state.featurePipeline
-                            .GetFeaturesWithin(layerId, bbox)
-                            ?.forEach((feats) => allFeatures.push(...(<any[]>feats)))
-                    })
-                    console.log("Snapping to", allFeatures)
-                    snapToFeatures.setData(allFeatures)
+                    const sources = preset.preciseInput.snapToLayers.map(
+                        (layerId) =>
+                            new ClippedFeatureSource(
+                                state.perLayer.get(layerId),
+                                bbox.asGeoJson({})
+                            )
+                    )
                 })
             }
         }

@@ -11,26 +11,19 @@ import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { FixedUiElement } from "../Base/FixedUiElement"
 import { VariableUiElement } from "../Base/VariableUIElement"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import { OsmConnection } from "../../Logic/Osm/OsmConnection"
-import { Changes } from "../../Logic/Osm/Changes"
 import Loading from "../Base/Loading"
 import { LoginToggle } from "../Popup/LoginButton"
 import Constants from "../../Models/Constants"
 import { DefaultGuiState } from "../DefaultGuiState"
 import ScrollableFullScreen from "../Base/ScrollableFullScreen"
+import { SpecialVisualizationState } from "../SpecialVisualization"
 
 export class ImageUploadFlow extends Toggle {
     private static readonly uploadCountsPerId = new Map<string, UIEventSource<number>>()
 
     constructor(
         tagsSource: Store<any>,
-        state: {
-            osmConnection: OsmConnection
-            layoutToUse: LayoutConfig
-            changes: Changes
-            featureSwitchUserbadge: Store<boolean>
-        },
+        state: SpecialVisualizationState,
         imagePrefix: string = "image",
         text: string = undefined
     ) {
@@ -56,7 +49,7 @@ export class ImageUploadFlow extends Toggle {
             await state.changes.applyAction(
                 new ChangeTagAction(tags.id, new Tag(key, url), tagsSource.data, {
                     changeType: "add-image",
-                    theme: state.layoutToUse.id,
+                    theme: state.layout.id,
                 })
             )
             console.log("Adding image:" + key, url)
@@ -111,7 +104,7 @@ export class ImageUploadFlow extends Toggle {
 
             const tags = tagsSource.data
 
-            const layout = state?.layoutToUse
+            const layout = state?.layout
             let matchingLayer: LayerConfig = undefined
             for (const layer of layout?.layers ?? []) {
                 if (layer.source.osmTags.matchesProperties(tags)) {

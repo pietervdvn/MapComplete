@@ -1,31 +1,30 @@
 import { InputElement } from "./InputElement"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
 import Combine from "../Base/Combine"
 import Svg from "../../Svg"
-import { Utils } from "../../Utils"
 import Loc from "../../Models/Loc"
 import { GeoOperations } from "../../Logic/GeoOperations"
-import Minimap, { MinimapObj } from "../Base/Minimap"
 import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch"
 import BaseUIElement from "../BaseUIElement"
+import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers"
 
 /**
  * Selects a length after clicking on the minimap, in meters
  */
 export default class LengthInput extends InputElement<string> {
-    private readonly _location: UIEventSource<Loc>
+    private readonly _location: Store<Loc>
     private readonly value: UIEventSource<string>
-    private readonly background: UIEventSource<any>
+    private readonly background: Store<RasterLayerPolygon>
 
     constructor(
-        mapBackground: UIEventSource<any>,
         location: UIEventSource<Loc>,
+        mapBackground?: UIEventSource<RasterLayerPolygon>,
         value?: UIEventSource<string>
     ) {
         super()
         this._location = location
         this.value = value ?? new UIEventSource<string>(undefined)
-        this.background = mapBackground
+        this.background = mapBackground ?? new ImmutableStore(AvailableRasterLayers.osmCarto)
         this.SetClass("block")
     }
 
@@ -41,28 +40,26 @@ export default class LengthInput extends InputElement<string> {
     protected InnerConstructElement(): HTMLElement {
         let map: BaseUIElement & MinimapObj = undefined
         let layerControl: BaseUIElement = undefined
-        if (!Utils.runningFromConsole) {
-            map = Minimap.createMiniMap({
-                background: this.background,
-                allowMoving: false,
-                location: this._location,
-                attribution: true,
-                leafletOptions: {
-                    tap: true,
-                },
-            })
+        map = Minimap.createMiniMap({
+            background: this.background,
+            allowMoving: false,
+            location: this._location,
+            attribution: true,
+            leafletOptions: {
+                tap: true,
+            },
+        })
 
-            layerControl = new BackgroundMapSwitch(
-                {
-                    locationControl: this._location,
-                    backgroundLayer: this.background,
-                },
-                this.background,
-                {
-                    allowedCategories: ["map", "photo"],
-                }
-            )
-        }
+        layerControl = new BackgroundMapSwitch(
+            {
+                locationControl: this._location,
+                backgroundLayer: this.background,
+            },
+            this.background,
+            {
+                allowedCategories: ["map", "photo"],
+            }
+        )
         const crosshair = new Combine([
             Svg.length_crosshair_svg().SetStyle(
                 `position: absolute;top: 0;left: 0;transform:rotate(${this.value.data ?? 0}deg);`

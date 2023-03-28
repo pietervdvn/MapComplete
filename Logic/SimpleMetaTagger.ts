@@ -15,6 +15,13 @@ import { OsmTags } from "../Models/OsmFeature"
 import { UIEventSource } from "./UIEventSource"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
 
+/**
+ * All elements that are needed to perform metatagging
+ */
+export interface MetataggingState {
+    layout: LayoutConfig
+}
+
 export abstract class SimpleMetaTagger {
     public readonly keys: string[]
     public readonly doc: string
@@ -60,7 +67,7 @@ export abstract class SimpleMetaTagger {
         feature: any,
         layer: LayerConfig,
         tagsStore: UIEventSource<Record<string, string>>,
-        state: { layout: LayoutConfig }
+        state: MetataggingState
     ): boolean
 }
 
@@ -119,7 +126,7 @@ export class CountryTagger extends SimpleMetaTagger {
         })
     }
 
-    applyMetaTagsOnFeature(feature, _, state) {
+    applyMetaTagsOnFeature(feature, _, tagsSource) {
         let centerPoint: any = GeoOperations.centerpoint(feature)
         const runningTasks = this.runningTasks
         const lat = centerPoint.geometry.coordinates[1]
@@ -128,28 +135,29 @@ export class CountryTagger extends SimpleMetaTagger {
         CountryTagger.coder
             .GetCountryCodeAsync(lon, lat)
             .then((countries) => {
-                runningTasks.delete(feature)
-                try {
-                    const oldCountry = feature.properties["_country"]
-                    feature.properties["_country"] = countries[0].trim().toLowerCase()
-                    if (oldCountry !== feature.properties["_country"]) {
-                        const tagsSource = state?.allElements?.getEventSourceById(
-                            feature.properties.id
-                        )
-                        tagsSource?.ping()
-                    }
-                } catch (e) {
-                    console.warn(e)
+                const oldCountry = feature.properties["_country"]
+                const newCountry = countries[0].trim().toLowerCase()
+                if (oldCountry !== newCountry) {
+                    tagsSource.data["_country"] = newCountry
+                    tagsSource?.ping()
                 }
             })
-            .catch((_) => {
-                runningTasks.delete(feature)
+            .catch((e) => {
+                console.warn(e)
             })
+            .finally(() => runningTasks.delete(feature))
         return false
     }
 }
 
 class InlineMetaTagger extends SimpleMetaTagger {
+    public readonly applyMetaTagsOnFeature: (
+        feature: any,
+        layer: LayerConfig,
+        tagsStore: UIEventSource<OsmTags>,
+        state: MetataggingState
+    ) => boolean
+
     constructor(
         docs: {
             keys: string[]
@@ -166,23 +174,17 @@ class InlineMetaTagger extends SimpleMetaTagger {
             feature: any,
             layer: LayerConfig,
             tagsStore: UIEventSource<OsmTags>,
-            state: { layout: LayoutConfig }
+            state: MetataggingState
         ) => boolean
     ) {
         super(docs)
         this.applyMetaTagsOnFeature = f
     }
-
-    public readonly applyMetaTagsOnFeature: (
-        feature: any,
-        layer: LayerConfig,
-        tagsStore: UIEventSource<OsmTags>,
-        state: { layout: LayoutConfig }
-    ) => boolean
 }
-export default class SimpleMetaTaggers {
-    public static readonly objectMetaInfo = new InlineMetaTagger(
-        {
+
+export class RewriteMetaInfoTags extends SimpleMetaTagger {
+    constructor() {
+        super({
             keys: [
                 "_last_edit:contributor",
                 "_last_edit:contributor:uid",
@@ -192,30 +194,37 @@ export default class SimpleMetaTaggers {
                 "_backend",
             ],
             doc: "Information about the last edit of this object.",
-        },
-        (feature) => {
-            /*Note: also called by 'UpdateTagsFromOsmAPI'*/
+        })
+    }
 
-            const tgs = feature.properties
-            let movedSomething = false
+    applyMetaTagsOnFeature(feature: Feature): boolean {
+        /*Note: also called by 'UpdateTagsFromOsmAPI'*/
 
-            function move(src: string, target: string) {
-                if (tgs[src] === undefined) {
-                    return
-                }
-                tgs[target] = tgs[src]
-                delete tgs[src]
-                movedSomething = true
+        const tgs = feature.properties
+        let movedSomething = false
+
+        function move(src: string, target: string) {
+            if (tgs[src] === undefined) {
+                return
             }
-
-            move("user", "_last_edit:contributor")
-            move("uid", "_last_edit:contributor:uid")
-            move("changeset", "_last_edit:changeset")
-            move("timestamp", "_last_edit:timestamp")
-            move("version", "_version_number")
-            return movedSomething
+            tgs[target] = tgs[src]
+            delete tgs[src]
+            movedSomething = true
         }
-    )
+
+        move("user", "_last_edit:contributor")
+        move("uid", "_last_edit:contributor:uid")
+        move("changeset", "_last_edit:changeset")
+        move("timestamp", "_last_edit:timestamp")
+        move("version", "_version_number")
+        return movedSomething
+    }
+}
+export default class SimpleMetaTaggers {
+    /**
+     * A simple metatagger which rewrites various metatags as needed
+     */
+    public static readonly objectMetaInfo = new RewriteMetaInfoTags()
     public static country = new CountryTagger()
     public static geometryType = new InlineMetaTagger(
         {

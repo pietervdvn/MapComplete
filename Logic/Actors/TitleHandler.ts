@@ -2,12 +2,19 @@ import { Store, UIEventSource } from "../UIEventSource"
 import Locale from "../../UI/i18n/Locale"
 import TagRenderingAnswer from "../../UI/Popup/TagRenderingAnswer"
 import Combine from "../../UI/Base/Combine"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import { ElementStorage } from "../ElementStorage"
 import { Utils } from "../../Utils"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import { Feature } from "geojson"
+import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
+import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 
 export default class TitleHandler {
-    constructor(selectedElement: Store<any>, layout: LayoutConfig, allElements: ElementStorage) {
+    constructor(
+        selectedElement: Store<Feature>,
+        selectedLayer: Store<LayerConfig>,
+        allElements: FeaturePropertiesStore,
+        layout: LayoutConfig
+    ) {
         const currentTitle: Store<string> = selectedElement.map(
             (selected) => {
                 const defaultTitle = layout?.title?.txt ?? "MapComplete"
@@ -17,13 +24,14 @@ export default class TitleHandler {
                 }
 
                 const tags = selected.properties
-                for (const layer of layout.layers) {
+                for (const layer of layout?.layers ?? []) {
                     if (layer.title === undefined) {
                         continue
                     }
                     if (layer.source.osmTags.matchesProperties(tags)) {
                         const tagsSource =
-                            allElements.getEventSourceById(tags.id) ?? new UIEventSource<any>(tags)
+                            allElements.getStore(tags.id) ??
+                            new UIEventSource<Record<string, string>>(tags)
                         const title = new TagRenderingAnswer(tagsSource, layer.title, {})
                         return (
                             new Combine([defaultTitle, " | ", title]).ConstructElement()
@@ -33,7 +41,7 @@ export default class TitleHandler {
                 }
                 return defaultTitle
             },
-            [Locale.language]
+            [Locale.language, selectedLayer]
         )
 
         currentTitle.addCallbackAndRunD((title) => {

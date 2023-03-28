@@ -206,25 +206,6 @@ export interface LayoutConfigJson {
     )[]
 
     /**
-     * If defined, data will be clustered.
-     * Defaults to {maxZoom: 16, minNeeded: 500}
-     */
-    clustering?:
-        | {
-              /**
-               * All zoom levels above 'maxzoom' are not clustered anymore.
-               * Defaults to 18
-               */
-              maxZoom?: number
-              /**
-               * The number of elements per tile needed to start clustering
-               * If clustering is defined, defaults to 250
-               */
-              minNeededElements?: number
-          }
-        | false
-
-    /**
      * The URL of a custom CSS stylesheet to modify the layout
      */
     customCss?: string

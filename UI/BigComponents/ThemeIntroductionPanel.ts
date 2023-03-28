@@ -11,6 +11,7 @@ import LoggedInUserIndicator from "../LoggedInUserIndicator"
 import { ActionButtons } from "./ActionButtons"
 import { BBox } from "../../Logic/BBox"
 import Loc from "../../Models/Loc"
+import { DefaultGuiState } from "../DefaultGuiState"
 
 export default class ThemeIntroductionPanel extends Combine {
     constructor(
@@ -24,6 +25,7 @@ export default class ThemeIntroductionPanel extends Combine {
             osmConnection: OsmConnection
             currentBounds: Store<BBox>
             locationControl: UIEventSource<Loc>
+            defaultGuiState: DefaultGuiState
         },
         guistate?: { userInfoIsOpened: UIEventSource<boolean> }
     ) {

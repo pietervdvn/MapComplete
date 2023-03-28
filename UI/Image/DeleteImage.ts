@@ -13,7 +13,7 @@ export default class DeleteImage extends Toggle {
     constructor(
         key: string,
         tags: Store<any>,
-        state: { layoutToUse: LayoutConfig; changes?: Changes; osmConnection?: OsmConnection }
+        state: { layout: LayoutConfig; changes?: Changes; osmConnection?: OsmConnection }
     ) {
         const oldValue = tags.data[key]
         const isDeletedBadge = Translations.t.image.isDeleted
@@ -24,7 +24,7 @@ export default class DeleteImage extends Toggle {
                 await state?.changes?.applyAction(
                     new ChangeTagAction(tags.data.id, new Tag(key, oldValue), tags.data, {
                         changeType: "delete-image",
-                        theme: state.layoutToUse.id,
+                        theme: state.layout.id,
                     })
                 )
             })
@@ -39,7 +39,7 @@ export default class DeleteImage extends Toggle {
                 await state?.changes?.applyAction(
                     new ChangeTagAction(tags.data.id, new Tag(key, ""), tags.data, {
                         changeType: "answer",
-                        theme: state.layoutToUse.id,
+                        theme: state.layout.id,
                     })
                 )
             })

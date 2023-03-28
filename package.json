@@ -62,6 +62,8 @@
   ],
   "dependencies": {
     "@onsvisual/svelte-maps": "^1.1.6",
+    "@rgossiaux/svelte-headlessui": "^1.0.2",
+    "@rgossiaux/svelte-heroicons": "^0.1.2",
     "@rollup/plugin-typescript": "^11.0.0",
     "@turf/boolean-intersects": "^6.5.0",
     "@turf/buffer": "^6.5.0",

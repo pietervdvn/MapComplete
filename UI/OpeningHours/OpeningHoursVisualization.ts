@@ -23,7 +23,7 @@ export default class OpeningHoursVisualization extends Toggle {
     ]
 
     constructor(
-        tags: UIEventSource<any>,
+        tags: UIEventSource<Record<string, string>>,
         state: { osmConnection?: OsmConnection },
         key: string,
         prefix = "",
@@ -49,7 +49,7 @@ export default class OpeningHoursVisualization extends Toggle {
                     }
                     try {
                         return OpeningHoursVisualization.CreateFullVisualisation(
-                            OH.CreateOhObject(tags.data, ohtext)
+                            OH.CreateOhObject(<any>tags.data, ohtext)
                         )
                     } catch (e) {
                         console.warn(e, e.stack)

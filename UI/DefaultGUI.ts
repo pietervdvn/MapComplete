@@ -1,5 +1,4 @@
 import FeaturePipelineState from "../Logic/State/FeaturePipelineState"
-import State from "../State"
 import { Utils } from "../Utils"
 import { UIEventSource } from "../Logic/UIEventSource"
 import FullWelcomePaneWithTabs from "./BigComponents/FullWelcomePaneWithTabs"
@@ -11,14 +10,11 @@ import BaseUIElement from "./BaseUIElement"
 import LeftControls from "./BigComponents/LeftControls"
 import RightControls from "./BigComponents/RightControls"
 import CenterMessageBox from "./CenterMessageBox"
-import ShowDataLayer from "./ShowDataLayer/ShowDataLayer"
 import ScrollableFullScreen from "./Base/ScrollableFullScreen"
 import Translations from "./i18n/Translations"
 import SimpleAddUI from "./BigComponents/SimpleAddUI"
 import StrayClickHandler from "../Logic/Actors/StrayClickHandler"
 import { DefaultGuiState } from "./DefaultGuiState"
-import LayerConfig from "../Models/ThemeConfig/LayerConfig"
-import home_location_json from "../assets/layers/home_location/home_location.json"
 import NewNoteUi from "./Popup/NewNoteUi"
 import Combine from "./Base/Combine"
 import AddNewMarker from "./BigComponents/AddNewMarker"
@@ -32,7 +28,6 @@ import { FixedUiElement } from "./Base/FixedUiElement"
 import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
 import { GeoLocationState } from "../Logic/State/GeoLocationState"
 import Hotkeys from "./Base/Hotkeys"
-import AvailableBaseLayers from "../Logic/Actors/AvailableBaseLayers"
 import CopyrightPanel from "./BigComponents/CopyrightPanel"
 import SvelteUIElement from "./Base/SvelteUIElement"
 import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte"
@@ -50,9 +45,6 @@ export default class DefaultGUI {
     constructor(state: FeaturePipelineState, guiState: DefaultGuiState) {
         this.state = state
         this.guiState = guiState
-        if (this.state.featureSwitchGeolocation.data) {
-            this.geolocationHandler = new GeoLocationHandler(new GeoLocationState(), state)
-        }
     }
 
     public setup() {
@@ -74,10 +66,6 @@ export default class DefaultGUI {
                 this.state.backgroundLayer.setData(AvailableBaseLayers.osmCarto)
             }
         )
-
-        Utils.downloadJson("./service-worker-version")
-            .then((data) => console.log("Service worker", data))
-            .catch((_) => console.log("Service worker not active"))
     }
 
     public setupClickDialogOnMap(
@@ -172,13 +160,6 @@ export default class DefaultGUI {
         const guiState = this.guiState
 
         this.setupClickDialogOnMap(guiState.filterViewIsOpened, state)
-
-        new ShowDataLayer({
-            leafletMap: state.leafletMap,
-            layerToShow: new LayerConfig(home_location_json, "home_location", true),
-            features: state.homeLocation,
-            state,
-        })
 
         const selectedElement: FilteredLayer = state.filteredLayers.data.filter(
             (l) => l.layerDef.id === "selected_element"
@@ -284,23 +265,6 @@ export default class DefaultGUI {
         ])
             .SetClass("flex items-center justify-center normal-background h-full")
             .AttachTo("on-small-screen")
-
-        new Combine([
-            Toggle.If(state.featureSwitchSearch, () => {
-                const search = new SearchAndGo(state).SetClass(
-                    "shadow rounded-full h-min w-full overflow-hidden sm:max-w-sm pointer-events-auto"
-                )
-                Hotkeys.RegisterHotkey(
-                    { ctrl: "F" },
-                    Translations.t.hotkeyDocumentation.selectSearch,
-                    () => {
-                        search.focus()
-                    }
-                )
-
-                return search
-            }),
-        ]).AttachTo("top-right")
 
         new LeftControls(state, guiState).AttachTo("bottom-left")
         new RightControls(state, this.geolocationHandler).AttachTo("bottom-right")

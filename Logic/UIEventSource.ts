@@ -63,27 +63,10 @@ export class Stores {
                 stable.setData(undefined)
                 return
             }
-            const oldList = stable.data
-            if (oldList === list) {
+            if (Utils.sameList(stable.data, list)) {
                 return
             }
-            if (oldList == list) {
-                return
-            }
-            if (oldList === undefined || oldList.length !== list.length) {
-                stable.setData(list)
-                return
-            }
-
-            for (let i = 0; i < list.length; i++) {
-                if (oldList[i] !== list[i]) {
-                    stable.setData(list)
-                    return
-                }
-            }
-
-            // No actual changes, so we don't do anything
-            return
+            stable.setData(list)
         })
         return stable
     }
@@ -93,7 +76,7 @@ export abstract class Store<T> implements Readable<T> {
     abstract readonly data: T
 
     /**
-     * OPtional value giving a title to the UIEventSource, mainly used for debugging
+     * Optional value giving a title to the UIEventSource, mainly used for debugging
      */
     public readonly tag: string | undefined
 
@@ -793,5 +776,15 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
 
     update(f: Updater<T> & ((value: T) => T)): void {
         this.setData(f(this.data))
+    }
+
+    /**
+     * Create a new UIEVentSource. Whenever 'source' changes, the returned UIEventSource will get this value as well.
+     * However, this value can be overriden without affecting source
+     */
+    static feedFrom<T>(store: Store<T>): UIEventSource<T> {
+        const src = new UIEventSource(store.data)
+        store.addCallback((t) => src.setData(t))
+        return src
     }
 }

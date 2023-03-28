@@ -44,15 +44,13 @@ import { LoginToggle } from "./Popup/LoginButton"
 import Toggle from "./Input/Toggle"
 import { SubstitutedTranslation } from "./SubstitutedTranslation"
 import List from "./Base/List"
-import { OsmFeature } from "../Models/OsmFeature"
-import LayerConfig from "../Models/ThemeConfig/LayerConfig"
-import { GeoOperations } from "../Logic/GeoOperations"
 import StatisticsPanel from "./BigComponents/StatisticsPanel"
 import AutoApplyButton from "./Popup/AutoApplyButton"
 import { LanguageElement } from "./Popup/LanguageElement"
 import FeatureReviews from "../Logic/Web/MangroveReviews"
 import Maproulette from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
+import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
@@ -146,63 +144,17 @@ export default class SpecialVisualizations {
             new MultiApplyViz(),
             new ExportAsGpxViz(),
             new AddNoteCommentViz(),
+            new CloseNoteButton(),
             new PlantNetDetectionViz(),
+
+            new TagApplyButton(),
+
             new ImportPointButton(),
             new ImportWayButton(),
             new ConflateButton(),
-            new TagApplyButton(),
-            new CloseNoteButton(),
+
             new NearbyImageVis(),
-            new MapillaryLinkVis(),
-            new LanguageElement(),
-            {
-                funcName: "all_tags",
-                docs: "Prints all key-value pairs of the object - used for debugging",
-                args: [],
-                constr: (state, tags: UIEventSource<any>) =>
-                    new SvelteUIElement(AllTagsPanel, { tags, state }),
-            },
-            {
-                funcName: "image_carousel",
-                docs: "Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links)",
-                args: [
-                    {
-                        name: "image_key",
-                        defaultValue: AllImageProviders.defaultKeys.join(","),
-                        doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated ",
-                    },
-                ],
-                constr: (state, tags, args) => {
-                    let imagePrefixes: string[] = undefined
-                    if (args.length > 0) {
-                        imagePrefixes = [].concat(...args.map((a) => a.split(",")))
-                    }
-                    return new ImageCarousel(
-                        AllImageProviders.LoadImagesFor(tags, imagePrefixes),
-                        tags,
-                        state
-                    )
-                },
-            },
-            {
-                funcName: "image_upload",
-                docs: "Creates a button where a user can upload an image to IMGUR",
-                args: [
-                    {
-                        name: "image-key",
-                        doc: "Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)",
-                        defaultValue: "image",
-                    },
-                    {
-                        name: "label",
-                        doc: "The text to show on the button",
-                        defaultValue: "Add image",
-                    },
-                ],
-                constr: (state, tags, args) => {
-                    return new ImageUploadFlow(tags, state, args[0], args[1])
-                },
-            },
+
             {
                 funcName: "wikipedia",
                 docs: "A box showing the corresponding wikipedia article - based on the wikidata tag",
@@ -267,6 +219,56 @@ export default class SpecialVisualizations {
                             })
                     ),
             },
+            new MapillaryLinkVis(),
+            new LanguageElement(),
+            {
+                funcName: "all_tags",
+                docs: "Prints all key-value pairs of the object - used for debugging",
+                args: [],
+                constr: (state, tags: UIEventSource<any>) =>
+                    new SvelteUIElement(AllTagsPanel, { tags, state }),
+            },
+            {
+                funcName: "image_carousel",
+                docs: "Creates an image carousel for the given sources. An attempt will be made to guess what source is used. Supported: Wikidata identifiers, Wikipedia pages, Wikimedia categories, IMGUR (with attribution, direct links)",
+                args: [
+                    {
+                        name: "image_key",
+                        defaultValue: AllImageProviders.defaultKeys.join(","),
+                        doc: "The keys given to the images, e.g. if <span class='literal-code'>image</span> is given, the first picture URL will be added as <span class='literal-code'>image</span>, the second as <span class='literal-code'>image:0</span>, the third as <span class='literal-code'>image:1</span>, etc... Multiple values are allowed if ';'-separated ",
+                    },
+                ],
+                constr: (state, tags, args) => {
+                    let imagePrefixes: string[] = undefined
+                    if (args.length > 0) {
+                        imagePrefixes = [].concat(...args.map((a) => a.split(",")))
+                    }
+                    return new ImageCarousel(
+                        AllImageProviders.LoadImagesFor(tags, imagePrefixes),
+                        tags,
+                        state
+                    )
+                },
+            },
+            {
+                funcName: "image_upload",
+                docs: "Creates a button where a user can upload an image to IMGUR",
+                args: [
+                    {
+                        name: "image-key",
+                        doc: "Image tag to add the URL to (or image-tag:0, image-tag:1 when multiple images are added)",
+                        defaultValue: "image",
+                    },
+                    {
+                        name: "label",
+                        doc: "The text to show on the button",
+                        defaultValue: "Add image",
+                    },
+                ],
+                constr: (state, tags, args) => {
+                    return new ImageUploadFlow(tags, state, args[0], args[1])
+                },
+            },
             {
                 funcName: "reviews",
                 docs: "Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten",
@@ -283,14 +285,18 @@ export default class SpecialVisualizations {
                         doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
                     },
                 ],
-                constr: (state, tags, args) => {
+                constr: (state, tags, args, feature) => {
                     const nameKey = args[0] ?? "name"
                     let fallbackName = args[1]
-                    const feature = state.allElements.ContainingFeatures.get(tags.data.id)
-                    const mangrove = FeatureReviews.construct(feature, state, {
-                        nameKey: nameKey,
-                        fallbackName,
-                    })
+                    const mangrove = FeatureReviews.construct(
+                        feature,
+                        tags,
+                        state.userRelatedState.mangroveIdentity,
+                        {
+                            nameKey: nameKey,
+                            fallbackName,
+                        }
+                    )
 
                     const form = new ReviewForm((r) => mangrove.createReview(r), state)
                     return new ReviewElement(mangrove, form)
@@ -348,7 +354,7 @@ export default class SpecialVisualizations {
                         doc: "The path (or shorthand) that should be returned",
                     },
                 ],
-                constr: (state, tagSource: UIEventSource<any>, args) => {
+                constr: (_, tagSource: UIEventSource<any>, args) => {
                     const url = args[0]
                     const shorthands = args[1]
                     const neededValue = args[2]
@@ -380,7 +386,7 @@ export default class SpecialVisualizations {
                                     return undefined
                                 }
                                 const allUnits = [].concat(
-                                    ...(state?.layoutToUse?.layers?.map((lyr) => lyr.units) ?? [])
+                                    ...(state?.layout?.layers?.map((lyr) => lyr.units) ?? [])
                                 )
                                 const unit = allUnits.filter((unit) =>
                                     unit.isApplicableToKey(key)
@@ -409,8 +415,8 @@ export default class SpecialVisualizations {
                     ).onClick(() => {
                         console.log("Exporting as Geojson")
                         const tags = tagSource.data
-                        const feature = state.allElements.ContainingFeatures.get(tags.id)
-                        const matchingLayer = state?.layoutToUse?.getMatchingLayer(tags)
+                        const feature = state.indexedFeatures.featuresById.data.get(tags.id)
+                        const matchingLayer = state?.layout?.getMatchingLayer(tags)
                         const title =
                             matchingLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "geojson"
                         const data = JSON.stringify(feature, null, "  ")
@@ -429,15 +435,15 @@ export default class SpecialVisualizations {
                 docs: "Opens the current view in the iD-editor",
                 args: [],
                 constr: (state, feature) => {
-                    return new OpenIdEditor(state, undefined, feature.data.id)
+                    return new OpenIdEditor(state.mapProperties, undefined, feature.data.id)
                 },
             },
             {
                 funcName: "open_in_josm",
                 docs: "Opens the current view in the JOSM-editor",
                 args: [],
-                constr: (state, feature) => {
-                    return new OpenJosm(state)
+                constr: (state) => {
+                    return new OpenJosm(state.osmConnection, state.mapProperties.bounds)
                 },
             },
             {
@@ -560,10 +566,10 @@ export default class SpecialVisualizations {
                 docs: "Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?'",
                 example:
                     "`What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.",
-                constr: (state, tagsSource) =>
+                constr: (state, tagsSource, args, feature) =>
                     new VariableUiElement(
                         tagsSource.map((tags) => {
-                            const layer = state.layoutToUse.getMatchingLayer(tags)
+                            const layer = state.layout.getMatchingLayer(tags)
                             const title = layer?.title?.GetRenderValue(tags)
                             if (title === undefined) {
                                 return undefined
@@ -575,7 +581,7 @@ export default class SpecialVisualizations {
             {
                 funcName: "maproulette_task",
                 args: [],
-                constr(state, tagSource, argument, guistate) {
+                constr(state, tagSource) {
                     let parentId = tagSource.data.mr_challengeId
                     if (parentId === undefined) {
                         console.warn("Element ", tagSource.data.id, " has no mr_challengeId")
@@ -666,7 +672,7 @@ export default class SpecialVisualizations {
                                     Number(maproulette_id),
                                     Number(status),
                                     {
-                                        tags: `MapComplete MapComplete:${state.layoutToUse.id}`,
+                                        tags: `MapComplete MapComplete:${state.layout.id}`,
                                     }
                                 )
                                 tagsSource.data["mr_taskStatus"] =
@@ -715,40 +721,19 @@ export default class SpecialVisualizations {
                 docs: "Show general statistics about the elements currently in view. Intended to use on the `current_view`-layer",
                 args: [],
                 constr: (state, tagsSource, args, guiState) => {
-                    const elementsInview = new UIEventSource<
-                        {
-                            distance: number
-                            center: [number, number]
-                            element: OsmFeature
-                            layer: LayerConfig
-                        }[]
-                    >([])
-
-                    function update() {
-                        const mapCenter = <[number, number]>[
-                            state.locationControl.data.lon,
-                            state.locationControl.data.lon,
-                        ]
-                        const bbox = state.currentBounds.data
-                        const elements = state.featurePipeline
-                            .getAllVisibleElementsWithmeta(bbox)
-                            .map((el) => {
-                                const distance = GeoOperations.distanceBetween(el.center, mapCenter)
-                                return { ...el, distance }
-                            })
-                        elements.sort((e0, e1) => e0.distance - e1.distance)
-                        elementsInview.setData(elements)
-                    }
-
-                    state.currentBounds.addCallbackAndRun(update)
-                    state.featurePipeline.newDataLoadedSignal.addCallback(update)
-                    state.filteredLayers.addCallbackAndRun((fls) => {
-                        for (const fl of fls) {
-                            fl.isDisplayed.addCallback(update)
-                            fl.appliedFilters.addCallback(update)
-                        }
-                    })
-                    return new StatisticsPanel(elementsInview, state)
+                    return new Combine(
+                        state.layout.layers
+                            .filter((l) => l.name !== null)
+                            .map(
+                                (l) => {
+                                    const fs = state.perLayer.get(l.id)
+                                    const bbox = state.mapProperties.bounds.data
+                                    const fsBboxed = new BBoxFeatureSourceForLayer(fs, bbox)
+                                    return new StatisticsPanel(fsBboxed)
+                                },
+                                [state.mapProperties.bounds]
+                            )
+                    )
                 },
             },
             {
@@ -777,7 +762,7 @@ export default class SpecialVisualizations {
                         required: true,
                     },
                 ],
-                constr(state, tags, args) {
+                constr(__, tags, args) {
                     return new VariableUiElement(
                         tags.map((tags) => {
                             const [to, subject, body, button_text] = args.map((str) =>

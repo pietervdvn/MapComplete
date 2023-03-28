@@ -3,7 +3,7 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import ShareButton from "../BigComponents/ShareButton"
 import Svg from "../../Svg"
 import { FixedUiElement } from "../Base/FixedUiElement"
-import { SpecialVisualization } from "../SpecialVisualization"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization";
 
 export class ShareLinkViz implements SpecialVisualization {
     funcName = "share_link"
@@ -17,12 +17,12 @@ export class ShareLinkViz implements SpecialVisualization {
         },
     ]
 
-    public constr(state, tagSource: UIEventSource<any>, args) {
+    public constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, args: string[]) {
         if (window.navigator.share) {
             const generateShareData = () => {
-                const title = state?.layoutToUse?.title?.txt ?? "MapComplete"
+                const title = state?.layout?.title?.txt ?? "MapComplete"
 
-                let matchingLayer: LayerConfig = state?.layoutToUse?.getMatchingLayer(
+                let matchingLayer: LayerConfig = state?.layout?.getMatchingLayer(
                     tagSource?.data
                 )
                 let name =
@@ -41,7 +41,7 @@ export class ShareLinkViz implements SpecialVisualization {
                 return {
                     title: name,
                     url: url,
-                    text: state?.layoutToUse?.shortDescription?.txt ?? "MapComplete",
+                    text: state?.layout?.shortDescription?.txt ?? "MapComplete",
                 }
             }
 

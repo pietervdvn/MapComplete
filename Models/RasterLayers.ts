@@ -36,6 +36,14 @@ export class AvailableRasterLayers {
         geometry: BBox.global.asGeometry(),
     }
 
+    public static readonly maplibre: RasterLayerPolygon = {
+        type: "Feature",
+        properties: <any>{
+            name: "MapLibre",
+            url: null,
+        },
+        geometry: BBox.global.asGeometry(),
+    }
     public static layersAvailableAt(
         location: Store<{ lon: number; lat: number }>
     ): Store<RasterLayerPolygon[]> {
@@ -58,6 +66,7 @@ export class AvailableRasterLayers {
                     return GeoOperations.inside(lonlat, eliPolygon)
                 })
                 matching.unshift(AvailableRasterLayers.osmCarto)
+                matching.unshift(AvailableRasterLayers.maplibre)
                 matching.push(...AvailableRasterLayers.globalLayers)
                 return matching
             })

@@ -3,7 +3,8 @@ import { Feature } from "geojson"
 import { Point } from "@turf/turf"
 import { GeoLocationPointProperties } from "../../Logic/State/GeoLocationState"
 import UploadTraceToOsmUI from "../BigComponents/UploadTraceToOsmUI"
-import { SpecialVisualization } from "../SpecialVisualization"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import { UIEventSource } from "../../Logic/UIEventSource"
 
 /**
  * Wrapper  around 'UploadTraceToOsmUI'
@@ -14,15 +15,20 @@ export class UploadToOsmViz implements SpecialVisualization {
         "Uploads the GPS-history as GPX to OpenStreetMap.org; clears the history afterwards. The actual feature is ignored."
     args = []
 
-    constr(state, featureTags, args) {
+    constr(
+        state: SpecialVisualizationState,
+        featureTags: UIEventSource<Record<string, string>>,
+        args: string[]
+    ) {
         function getTrace(title: string) {
             title = title?.trim()
             if (title === undefined || title === "") {
                 title = "Uploaded with MapComplete"
             }
             title = Utils.EncodeXmlValue(title)
-            const userLocations: Feature<Point, GeoLocationPointProperties>[] =
-                state.historicalUserLocations.features.data.map((f) => f.feature)
+            const userLocations = <Feature<Point, GeoLocationPointProperties>[]>(
+                state.historicalUserLocations.features.data
+            )
             const trackPoints: string[] = []
             for (const l of userLocations) {
                 let trkpt = `    <trkpt lat="${l.geometry.coordinates[1]}" lon="${l.geometry.coordinates[0]}">`

@@ -8,6 +8,6 @@
 </script>
 
 
-<div on:click={e => dispatch("click", e)} class="subtle-background block rounded-full min-w-10 h-10 pointer-events-auto m-0.5 md:m-1 p-1">
+<div on:click={e => dispatch("click", e)} class="subtle-background rounded-full min-w-10 w-fit h-10 m-0.5 md:m-1 p-1">
   <slot class="m-4"></slot>
 </div>

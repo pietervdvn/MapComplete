@@ -2,7 +2,7 @@ import { UIEventSource } from "../Logic/UIEventSource"
 import { Translation } from "./i18n/Translation"
 import Locale from "./i18n/Locale"
 import { FixedUiElement } from "./Base/FixedUiElement"
-import SpecialVisualizations from "./SpecialVisualizations"
+// import SpecialVisualizations from "./SpecialVisualizations"
 import { Utils } from "../Utils"
 import { VariableUiElement } from "./Base/VariableUIElement"
 import Combine from "./Base/Combine"
@@ -10,13 +10,13 @@ import BaseUIElement from "./BaseUIElement"
 import { DefaultGuiState } from "./DefaultGuiState"
 import FeaturePipelineState from "../Logic/State/FeaturePipelineState"
 import LinkToWeblate from "./Base/LinkToWeblate"
-import { SpecialVisualization } from "./SpecialVisualization"
+import { SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
 
 export class SubstitutedTranslation extends VariableUiElement {
     public constructor(
         translation: Translation,
         tagsSource: UIEventSource<Record<string, string>>,
-        state: FeaturePipelineState,
+        state: SpecialVisualizationState,
         mapping: Map<
             string,
             | BaseUIElement
@@ -78,7 +78,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                     }
                     try {
                         return viz.func
-                            .constr(state, tagsSource, proto.special.args, DefaultGuiState.state)
+                            .constr(state, tagsSource, proto.special.args)
                             ?.SetStyle(proto.special.style)
                     } catch (e) {
                         console.error("SPECIALRENDERING FAILED for", tagsSource.data?.id, e)
@@ -125,7 +125,7 @@ export class SubstitutedTranslation extends VariableUiElement {
         }
 
         for (const knownSpecial of extraMappings.concat(
-            SpecialVisualizations.specialVisualizations
+            [] // TODO enable   SpecialVisualizations.specialVisualizations
         )) {
             // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'
             const matched = template.match(
@@ -181,10 +181,10 @@ export class SubstitutedTranslation extends VariableUiElement {
             console.warn(
                 "Found a suspicious special rendering value in: ",
                 template,
-                " did you mean one of: ",
-                SpecialVisualizations.specialVisualizations
+                " did you mean one of: "
+                /*SpecialVisualizations.specialVisualizations
                     .map((sp) => sp.funcName + "()")
-                    .join(", ")
+                    .join(", ")*/
             )
         }
 

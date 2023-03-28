@@ -1,9 +1,10 @@
 import { Translation, TypedTranslation } from "../UI/i18n/Translation"
-import { FilterState } from "./FilteredLayer"
 import { Tag } from "../Logic/Tags/Tag"
+import { TagsFilter } from "../Logic/Tags/TagsFilter"
 
 export interface GlobalFilter {
-    filter: FilterState
+    osmTags: TagsFilter
+    state: number | string | undefined
     id: string
     onNewPoint: {
         safetyCheck: Translation

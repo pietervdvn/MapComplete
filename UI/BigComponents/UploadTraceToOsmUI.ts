@@ -17,7 +17,7 @@ export default class UploadTraceToOsmUI extends LoginToggle {
     constructor(
         trace: (title: string) => string,
         state: {
-            layoutToUse: LayoutConfig
+            layout: LayoutConfig
             osmConnection: OsmConnection
             readonly featureSwitchUserbadge: Store<boolean>
         },
