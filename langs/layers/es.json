@@ -3228,7 +3228,7 @@
                     "16": {
                         "question": "Reciclaje de plástico"
                     },
-                    "17": {
+                    "18": {
                         "question": "Reciclaje de chatarra"
                     }
                 }
@@ -3308,10 +3308,10 @@
                     "16": {
                         "then": "Aquí se puede reciclar plástico"
                     },
-                    "17": {
+                    "18": {
                         "then": "Aquí se puede reciclar chatarra"
                     },
-                    "18": {
+                    "19": {
                         "then": "Aquí se pueden reciclar zapatos"
                     }
                 },
