@@ -2211,13 +2211,6 @@
             },
             "dogarea": {
                 "render": "Aquest parc per a gossos té {_surface:ha} ha"
-            },
-            "dogpark-fenced": {
-                "mappings": {
-                    "0": {
-                        "then": ""
-                    }
-                }
             }
         }
     },
