@@ -417,7 +417,8 @@
           "advertising!=flag",
           "advertising!=tarp",
           "advertising!=wall_painting",
-          "advertising!=sign"
+          "advertising!=sign",
+          "advertising!=board"
         ]
       },
       "mappings": [
