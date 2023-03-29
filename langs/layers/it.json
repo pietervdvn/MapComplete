@@ -1790,13 +1790,13 @@
                     "16": {
                         "question": "Riciclo di plastica"
                     },
-                    "17": {
+                    "18": {
                         "question": "Riciclo di rottami metallici"
                     },
-                    "18": {
+                    "19": {
                         "question": "Riciclo di piccoli elettrodomestici"
                     },
-                    "19": {
+                    "20": {
                         "question": "Riciclo di secco"
                     }
                 }
@@ -1889,22 +1889,22 @@
                     "16": {
                         "then": "Plastica"
                     },
-                    "17": {
+                    "18": {
                         "then": "Rottami metallici"
                     },
-                    "18": {
-                        "then": "Scarpe"
-                    },
                     "19": {
-                        "then": "Piccoli elettrodomestici"
+                        "then": "Scarpe"
                     },
                     "20": {
                         "then": "Piccoli elettrodomestici"
                     },
                     "21": {
-                        "then": "Aghi e oggetti appuntiti"
+                        "then": "Piccoli elettrodomestici"
                     },
                     "22": {
+                        "then": "Aghi e oggetti appuntiti"
+                    },
+                    "23": {
                         "then": "Secco"
                     }
                 },
