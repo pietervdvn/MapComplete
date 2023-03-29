@@ -127,10 +127,10 @@
         "tagRenderings": {
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Schienale: Sì"
                     },
-                    "1": {
+                    "2": {
                         "then": "Schienale: No"
                     }
                 },
@@ -1798,6 +1798,9 @@
                     },
                     "20": {
                         "question": "Riciclo di secco"
+                    },
+                    "20": {
+                        "question": "Riciclo di secco"
                     }
                 }
             },
@@ -1903,6 +1906,9 @@
                     },
                     "22": {
                         "then": "Aghi e oggetti appuntiti"
+                    },
+                    "23": {
+                        "then": "Secco"
                     },
                     "23": {
                         "then": "Secco"

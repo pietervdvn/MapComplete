@@ -269,10 +269,10 @@
             },
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Tiene respaldo"
                     },
-                    "1": {
+                    "2": {
                         "then": "<b>No</b> tiene respaldo"
                     }
                 },
@@ -1333,7 +1333,7 @@
                         "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
                     },
                     "9": {
-                        "then": "<b>Tipo 1<i>sin</i> cable</b> (J1772)"
+                        "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
                     },
                     "10": {
                         "then": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
@@ -1425,10 +1425,10 @@
                         "then": "Esta estación de carga está rota"
                     },
                     "2": {
-                        "then": "Una estación de carga está planeada aquí"
+                        "then": "Aquí está planeada una estación de carga"
                     },
                     "3": {
-                        "then": "Una estación de carga está construida aquí"
+                        "then": "Aquí está construida una estación de carga"
                     },
                     "4": {
                         "then": "Esta estación de carga se ha deshabilitado de forma permanente y ya no está en uso pero todavía es visible"
@@ -2201,7 +2201,7 @@
                     }
                 },
                 "question": "¿Cual es el tipo de esta puerta?",
-                "questionHint": "Si la puerta está automatizada o no se pregunta en la siguiente pregunta"
+                "questionHint": "En la siguiente pregunta se pregunta si la puerta está automatizada o no"
             },
             "Entrance type": {
                 "mappings": {
@@ -3230,6 +3230,9 @@
                     },
                     "18": {
                         "question": "Reciclaje de chatarra"
+                    },
+                    "18": {
+                        "question": "Reciclaje de chatarra"
                     }
                 }
             }
@@ -3310,6 +3313,9 @@
                     },
                     "18": {
                         "then": "Aquí se puede reciclar chatarra"
+                    },
+                    "19": {
+                        "then": "Aquí se pueden reciclar zapatos"
                     },
                     "19": {
                         "then": "Aquí se pueden reciclar zapatos"

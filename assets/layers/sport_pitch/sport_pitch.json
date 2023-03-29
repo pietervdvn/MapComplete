@@ -612,7 +612,8 @@
           "question": {
             "en": "Publicly accessible",
             "nl": "Publiek toegankelijk",
-            "de": "Öffentlich zugänglich"
+            "de": "Öffentlich zugänglich",
+            "ca": "Accés lliure"
           },
           "osmTags": {
             "or": [
@@ -631,7 +632,8 @@
           "question": {
             "en": "All sports",
             "nl": "Alle sporten",
-            "de": "Alle Sportarten"
+            "de": "Alle Sportarten",
+            "ca": "Tots els esports"
           }
         },
         {
@@ -639,7 +641,8 @@
           "question": {
             "nl": "Basketbalvelden",
             "en": "Basketball fields",
-            "de": "Basketballplätze"
+            "de": "Basketballplätze",
+            "ca": "Camps de bàsquet"
           }
         },
         {
@@ -647,7 +650,8 @@
           "question": {
             "nl": "Voetbalvelden",
             "en": "Soccer fields",
-            "de": "Fußballplätze"
+            "de": "Fußballplätze",
+            "ca": "Camps de futbol"
           }
         },
         {
@@ -655,7 +659,8 @@
           "question": {
             "nl": "Pingpong-tafel",
             "en": "Ping-pong tables",
-            "de": "Tischtennisplatten"
+            "de": "Tischtennisplatten",
+            "ca": "Taules de ping-pong"
           }
         },
         {
@@ -663,7 +668,8 @@
           "question": {
             "nl": "Tennisveld",
             "en": "Tennis fields",
-            "de": "Tennisplätze"
+            "de": "Tennisplätze",
+            "ca": "Camps de tennis"
           }
         }
       ]

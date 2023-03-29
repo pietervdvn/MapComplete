@@ -200,7 +200,8 @@
         "en": "This might be written on the street name sign",
         "nl": "Dit staat mogelijks vermeld op het straatnaambordje",
         "de": "Das könnte auf einem Straßenschild stehen",
-        "fr": "Cela peut être indiqué sur le panneau de la rue"
+        "fr": "Cela peut être indiqué sur le panneau de la rue",
+        "ca": "Això podria estar escrit al cartell del nom del carrer"
       }
     },
     "questions",

@@ -265,10 +265,10 @@
         "tagRenderings": {
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Má opěradlo"
                     },
-                    "1": {
+                    "2": {
                         "then": "<b>nemá</b> opěradlo"
                     }
                 },

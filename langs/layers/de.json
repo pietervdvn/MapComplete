@@ -436,9 +436,12 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Die Sitzbank hat eine Rückenlehne"
+                        "then": "Diese Bank ist zweiseitig und teilt sich die Rückenlehne"
                     },
                     "1": {
+                        "then": "Die Sitzbank hat eine Rückenlehne"
+                    },
+                    "2": {
                         "then": "Die Sitzbank hat <b>keine</b> Rückenlehne"
                     }
                 },
@@ -2990,7 +2993,7 @@
                         "then": "Diese Uhr ist aus etwa 20 Metern Entfernung sichtbar (mittelgroße Plakatuhr)"
                     },
                     "2": {
-                        "then": "Diese Uhr ist aus mehr als 20 Metern Entfernung sichtbar (Kirchenuhr)"
+                        "then": "Diese Uhr ist aus mehr als 20 Metern Entfernung sichtbar (Kirchuhr, Bahnhofsuhr)"
                     }
                 },
                 "question": "Wie sichtbar ist diese Uhr?"
@@ -6715,6 +6718,9 @@
                     },
                     "20": {
                         "question": "Recycling von Restabfällen"
+                    },
+                    "20": {
+                        "question": "Recycling von Restabfällen"
                     }
                 }
             },
@@ -6841,6 +6847,9 @@
                     },
                     "22": {
                         "then": "Nadeln können hier recycelt werden"
+                    },
+                    "23": {
+                        "then": "Restmüll kann hier recycelt werden"
                     },
                     "23": {
                         "then": "Restmüll kann hier recycelt werden"

@@ -348,14 +348,16 @@
         "placeholder": {
           "en": "Number of couplings",
           "de": "Anzahl der Kupplungen",
-          "nl": "Aantal koppelingen"
+          "nl": "Aantal koppelingen",
+          "ca": "Nombre d'acoblaments"
         },
         "type": "int"
       },
       "render": {
         "en": "Number of couplings: {couplings}",
         "de": "Anzahl der Kupplungen: {couplings}",
-        "nl": "Aantal koppelingen: {couplings}"
+        "nl": "Aantal koppelingen: {couplings}",
+        "ca": "Nombre d'acoblaments: {couplings}"
       }
     },
     {

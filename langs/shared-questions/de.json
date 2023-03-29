@@ -152,6 +152,23 @@
             "question": "Auf welcher Ebene befindet sich das Objekt?",
             "render": "Das Objekt befindet sich im {level}. Geschoss"
         },
+        "luminous_or_lit": {
+            "mappings": {
+                "0": {
+                    "then": "Das Objekt leuchtet selbst und wird von außen beleuchtet"
+                },
+                "1": {
+                    "then": "Das Objekt leuchtet selbst"
+                },
+                "2": {
+                    "then": "Das Objekt wird von außen beleuchtet, z. B. durch Scheinwerfer oder andere Lichter"
+                },
+                "3": {
+                    "then": "Das Objekt wird weder von außen beleuchtet, noch leuchtet es selbst"
+                }
+            },
+            "question": "Wird das Objekt beleuchtet oder leuchtet es selbst?"
+        },
         "multilevels": {
             "override": {
                 "question": "Auf welchen Geschossen hält dieser Aufzug?",

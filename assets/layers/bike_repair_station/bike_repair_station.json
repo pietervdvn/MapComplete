@@ -33,7 +33,8 @@
       "pt_BR": "Estação de bicicletas (bomba e reparo)",
       "ru": "Велостанция (накачка шин и ремонт)",
       "es": "Estación de bicis (bomba y reparación)",
-      "da": "Cykelstation (pumpe og reparation)"
+      "da": "Cykelstation (pumpe og reparation)",
+      "ca": "Estació de bicicletes (bomba i reparació)"
     },
     "mappings": [
       {
@@ -128,7 +129,8 @@
           "pt_BR": "Bomba de bicicleta <i>{name}</i>",
           "es": "Bomba de bicicletas <i>{name}</i>",
           "da": "Cykelpumpe <i>{name}</i>",
-          "cs": "Vzduchový kompresor <i>{name}</i>"
+          "cs": "Vzduchový kompresor <i>{name}</i>",
+          "ca": "Bomba per a bicicletes <i>{name}</i>"
         }
       },
       {
@@ -654,7 +656,8 @@
         "pl": "Ta pompka obsługuje następujące zawory: {valves}",
         "es": "Esta bomba soporta las siguiente válvulas: {valves}",
         "da": "Denne pumpe understøtter følgende ventiler: {valves}",
-        "cs": "Tento vzduchový kompresor podporuje následující ventily: {valves}"
+        "cs": "Tento vzduchový kompresor podporuje následující ventily: {valves}",
+        "ca": "Aquesta bomba admet les vàlvules següents: {valves}"
       },
       "freeform": {
         "#addExtraTags": [
@@ -692,7 +695,8 @@
             "ru": "Клапан Dunlop",
             "da": "Dunlop",
             "es": "Dunlop",
-            "cs": "Dunlop"
+            "cs": "Dunlop",
+            "ca": "Dunlop"
           }
         },
         {
@@ -902,7 +906,8 @@
         "pl": "stacja naprawy rowerów i pompka",
         "es": "En estación de reparación de bicicletas y bomba",
         "da": "en cykelreparationsstation og pumpe",
-        "cs": "opravna kol a vzduchový kompresor"
+        "cs": "opravna kol a vzduchový kompresor",
+        "ca": "una estació de reparació de bicicletes i una bomba"
       },
       "tags": [
         "amenity=bicycle_repair_station",
@@ -917,7 +922,8 @@
         "de": "Ein Gerät mit Werkzeugen zur Reparatur von Fahrrädern kombiniert mit einer Pumpe an einem festen Standort. Die Werkzeuge sind oft mit Ketten gegen Diebstahl gesichert.",
         "es": "Una bomba de bicicletas y herramientas para reparar tu bicicleta en el espacio público. Las herramientas habitualmente están aseguradas con cadenas contra el robo.",
         "da": "En cykelpumpe og værktøj til at reparere din cykel i det offentlige rum. Værktøjet er ofte sikret med kæder mod tyveri.",
-        "cs": "Vzduchový kompresor na kolo a nářadí na opravu kola na veřejném místě. Nářadí je často zajištěno řetězy proti krádeži."
+        "cs": "Vzduchový kompresor na kolo a nářadí na opravu kola na veřejném místě. Nářadí je často zajištěno řetězy proti krádeži.",
+        "ca": "Una bomba per a bicicletes i eines per a reparar la teva bicicleta a l'espai públic. Les eines sovint estan assegurades amb cadenes contra robatoris."
       },
       "exampleImages": [
         "./assets/layers/bike_repair_station/repair_station_example_2.jpg",

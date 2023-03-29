@@ -196,7 +196,7 @@ Extract the 'level'-tag into a normalized, ';'-separated value
 
 
 
-_referencing_ways contains - for a node - which ways use this this node as point in their geometry. 
+_referencing_ways contains - for a node - which ways use this this node as point in their geometry. If the preset has 'snapToLayer' defined, the icon will be calculated based on the preset tags with `_referencing_ways=["way/-1"]` added.
 
 This is a lazy metatag and is only calculated when needed
 

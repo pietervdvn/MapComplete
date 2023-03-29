@@ -22,7 +22,8 @@
         "da": "en hundeskov",
         "de": "Ein Hundepark",
         "es": "un parque para perros",
-        "nl": "een hondenweide"
+        "nl": "een hondenweide",
+        "ca": "un parc per a gossos"
       },
       "tags": [
         "leisure=dog_park"
@@ -153,13 +154,15 @@
         "da": "Hvad hedder denne hundeskov?",
         "de": "Wie lautet der Name dieses Hundeparks?",
         "es": "¿Cual es el nombre de este parque para perros?",
-        "nl": "Wat is de naam van deze hondenweide?"
+        "nl": "Wat is de naam van deze hondenweide?",
+        "ca": "Com s'anomena aquest parc per a gossos?"
       },
       "render": {
         "en": "The name of this dog park is {name}",
         "de": "Denne hundeskov hedder {name}",
         "es": "El nombre de este parque para perros es {name}",
-        "nl": "Deze hondenweide heet {name}"
+        "nl": "Deze hondenweide heet {name}",
+        "ca": "Aquest parc per a gossos s'anomena {name}"
       },
       "freeform": {
         "key": "name"
@@ -173,7 +176,8 @@
         "da": "Denne hundeskov er på {_surface:ha} hektar",
         "de": "Der Hundepark ist {_surface:ha} ha groß",
         "es": "Este parque para perros tiene {_surface:ha} ha",
-        "nl": "Deze hondenweide is {_surface:ha} hectaren groot"
+        "nl": "Deze hondenweide is {_surface:ha} hectaren groot",
+        "ca": "Aquest parc per a gossos té {_surface:ha} ha"
       },
       "condition": "_surface:ha!=0"
     },

@@ -262,8 +262,9 @@
         "en": "Wether or not the door is automated is asked in the next question",
         "nl": "Of de deur al of niet automatisch werkt, vragen we hierna ",
         "de": "Ob die Tür automatisiert ist oder nicht, wird in der nächsten Frage gefragt",
-        "es": "Si la puerta está automatizada o no se pregunta en la siguiente pregunta",
-        "fr": "Le fait que la porte soit automatisée ou non est demandé dans la question suivante"
+        "es": "En la siguiente pregunta se pregunta si la puerta está automatizada o no",
+        "fr": "Le fait que la porte soit automatisée ou non est demandé dans la question suivante",
+        "ca": "A la pregunta següent es pregunta si la porta està automatitzada o no"
       }
     },
     {
@@ -289,7 +290,8 @@
             "nl": "Deze deur is <b>niet</b> automatisch",
             "de": "Diese Tür ist <b>nicht</b> automatisiert",
             "es": "Esta puerta <b>no</b> está automatizada",
-            "fr": "Cette porte n'est <b>pas</b> automatisée"
+            "fr": "Cette porte n'est <b>pas</b> automatisée",
+            "ca": "Aquesta porta <b>no </b> està automatitzada"
           }
         },
         {
@@ -352,7 +354,7 @@
             "de": "Diese Tür wird von Mitarbeitern geöffnet auf Anfrage <b>per Rufknopf</b>",
             "es": "Esta puerta la abre el personal cuando se pide <b>pulsando un botón</b>",
             "fr": "Cette porte sera ouverte par le personnel à la demande en <b>appuyant sur un bouton</b>",
-            "ca": "Aquesta porta l'obri el personal quan es sol·licita<b>polsant un botó</b>"
+            "ca": "Aquesta porta l'obri el personal quan es sol·licita <b>polsant un botó</b>"
           }
         },
         {

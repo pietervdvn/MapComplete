@@ -35,7 +35,8 @@
       "title": {
         "en": "a parking ticket machine",
         "nl": "een parkeerkaartautomaat",
-        "de": "Ein Parkscheinautomat"
+        "de": "Ein Parkscheinautomat",
+        "ca": "una màquina de tiquets d'aparcament"
       }
     }
   ],
@@ -57,13 +58,15 @@
         "placeholder": {
           "en": "Reference number",
           "nl": "Referentienummer",
-          "de": "Referenznummer"
+          "de": "Referenznummer",
+          "ca": "Número de referència"
         }
       },
       "render": {
         "en": "This parking ticket machine has the reference number {ref}",
         "nl": "Deze parkeerkaartautomaat heeft het referentienummer {ref}",
-        "de": "Dieser Parkscheinautomat hat die Referenznummer {ref}"
+        "de": "Dieser Parkscheinautomat hat die Referenznummer {ref}",
+        "ca": "Aquesta màquina de tiquets d'aparcament té el número de referència {ref}"
       },
       "mappings": [
         {
@@ -71,7 +74,8 @@
           "then": {
             "en": "This parking ticket machine has no reference number",
             "nl": "Deze parkeerkaartautomaat heeft geen referentienummer",
-            "de": "Dieser Parkscheinautomat hat keine Referenznummer"
+            "de": "Dieser Parkscheinautomat hat keine Referenznummer",
+            "ca": "Aquesta màquina de tiquets d'aparcament no té número de referència"
           }
         }
       ]

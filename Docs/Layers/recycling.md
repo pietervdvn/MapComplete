@@ -186,16 +186,18 @@ The question is  *What can be recycled here?*
   - Unselecting this answer will add 
   - *Plastic can be recycled here*  corresponds with  `recycling:plastic=yes`
   - Unselecting this answer will add 
-  - *Scrap metal can be recycled here*  corresponds with  `recycling:scrap_metal=yes`
+  - *Scrap metal can be recycled here*  corresponds with  `recycling:printer_cartridges=yes`
   - Unselecting this answer will add 
-  - *Shoes can be recycled here*  corresponds with  `recycling:shoes=yes`
+  - *Shoes can be recycled here*  corresponds with  `recycling:scrap_metal=yes`
+  - Unselecting this answer will add 
+  - *Small electrical appliances can be recycled here*  corresponds with  `recycling:shoes=yes`
   - Unselecting this answer will add 
   - *Small electrical appliances can be recycled here*  corresponds with  `recycling:small_appliances=yes`
   - Unselecting this answer will add 
-  - *Small electrical appliances can be recycled here*  corresponds with  `recycling:small_electrical_appliances=yes`
+  - *Needles can be recycled here*  corresponds with  `recycling:small_electrical_appliances=yes`
   - This option cannot be chosen as answer
   - Unselecting this answer will add 
-  - *Needles can be recycled here*  corresponds with  `recycling:needles=yes`
+  - *Residual waste can be recycled here*  corresponds with  `recycling:needles=yes`
   - Unselecting this answer will add 
   - *Residual waste can be recycled here*  corresponds with  `recycling:waste=yes`
   - Unselecting this answer will add 
@@ -355,9 +357,10 @@ recyclingType.13 | Recycling of paper | recycling:paper=yes
 recyclingType.14 | Recycling of plastic bottles | recycling:plastic_bottles=yes
 recyclingType.15 | Recycling of plastic packaging | recycling:plastic_packaging=yes
 recyclingType.16 | Recycling of plastic | recycling:plastic=yes
-recyclingType.17 | Recycling of scrap metal | recycling:scrap_metal=yes
-recyclingType.18 | Recycling of small electrical appliances | recycling:small_appliances=yes\|recycling:small_electrical_appliances=yes
-recyclingType.19 | Recycling of residual waste | recycling:waste=yes
+recyclingType.17 | Recycling of scrap metal | recycling:printer_cartridges=yes
+recyclingType.18 | Recycling of small electrical appliances | recycling:scrap_metal=yes
+recyclingType.19 | Recycling of residual waste | recycling:small_appliances=yes\|recycling:small_electrical_appliances=yes
+recyclingType.20 | Recycling of residual waste | recycling:waste=yes
 
 
 

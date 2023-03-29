@@ -436,9 +436,12 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Heeft een rugleuning"
+                        "then": "Dit is een dubbele bank waarbij de rugleuning gedeeld wordt"
                     },
                     "1": {
+                        "then": "Heeft een rugleuning"
+                    },
+                    "2": {
                         "then": "Heeft <b>geen</b> rugleuning"
                     }
                 },
@@ -6504,6 +6507,9 @@
                     },
                     "20": {
                         "question": "Recycling van restafval"
+                    },
+                    "20": {
+                        "question": "Recycling van restafval"
                     }
                 }
             },
@@ -6633,6 +6639,9 @@
                     },
                     "22": {
                         "then": "Injectienaalden kunnen hier gerecycled worden"
+                    },
+                    "23": {
+                        "then": "Restafval kan hier gerecycled worden"
                     },
                     "23": {
                         "then": "Restafval kan hier gerecycled worden"

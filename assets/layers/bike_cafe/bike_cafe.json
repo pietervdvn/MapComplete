@@ -150,7 +150,7 @@
             "ru": "В этом велосипедном кафе есть велосипедный насос для всеобщего использования",
             "da": "Denne cykelcafé tilbyder en cykelpumpe til enhver",
             "cs": "Tato cyklistická kavárna nabízí vzduchový kompresor na kolo pro každého",
-            "ca": "Aquest cafè ciclista ofereix una bomba de bicicletes per a qualsevol persona"
+            "ca": "Aquest cafè ciclista ofereix una bomba per a bicicletes per a qualsevol persona"
           }
         },
         {
@@ -167,7 +167,7 @@
             "ru": "В этом велосипедном кафе нет велосипедного насоса для всеобщего использования",
             "da": "Denne cykelcafé tilbyder ikke en cykelpumpe til nogen",
             "cs": "Tato cyklistická kavárna nenabízí vzduchový kompresor na kolo",
-            "ca": "Aquest cafè ciclista no ofereix una bomba de bicicletes per a qualsevol persona"
+            "ca": "Aquest cafè ciclista no ofereix una bomba per a bicicletes per a qualsevol persona"
           }
         }
       ]

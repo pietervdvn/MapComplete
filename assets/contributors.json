@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 5197,
+      "commits": 5252,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 342,
+      "commits": 348,
       "contributor": "Robin van der Linde"
     },
     {
@@ -29,6 +29,10 @@
       "contributor": "Pieter Fiers"
     },
     {
+      "commits": 30,
+      "contributor": "paunofu"
+    },
+    {
       "commits": 26,
       "contributor": "Joost"
     },
@@ -46,15 +50,15 @@
     },
     {
       "commits": 21,
+      "contributor": "Hosted Weblate"
+    },
+    {
+      "commits": 21,
       "contributor": "wjtje"
     },
     {
       "commits": 21,
       "contributor": "AlexanderRebai"
-    },
-    {
-      "commits": 20,
-      "contributor": "Hosted Weblate"
     },
     {
       "commits": 19,

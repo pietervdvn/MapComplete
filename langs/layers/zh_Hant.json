@@ -94,10 +94,10 @@
         "tagRenderings": {
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "靠背：有"
                     },
-                    "1": {
+                    "2": {
                         "then": "靠背：無"
                     }
                 },

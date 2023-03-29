@@ -436,9 +436,12 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Does have a backrest"
+                        "then": "This bench is two-sided and shares the backrest"
                     },
                     "1": {
+                        "then": "Does have a backrest"
+                    },
+                    "2": {
                         "then": "Does <b>not</b> have a backrest"
                     }
                 },
@@ -6718,6 +6721,9 @@
                     },
                     "20": {
                         "question": "Recycling of residual waste"
+                    },
+                    "20": {
+                        "question": "Recycling of residual waste"
                     }
                 }
             },
@@ -6847,6 +6853,9 @@
                     },
                     "22": {
                         "then": "Needles can be recycled here"
+                    },
+                    "23": {
+                        "then": "Residual waste can be recycled here"
                     },
                     "23": {
                         "then": "Residual waste can be recycled here"

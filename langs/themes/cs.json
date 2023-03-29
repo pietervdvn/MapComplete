@@ -1,4 +1,222 @@
 {
+    "advertising": {
+        "description": "Přemýšleli jste někdy o tom, kolik je v našich ulicích a na silnicích reklam? Pomocí této mapy můžete najít a doplnit informace o všech reklamních prvcích, které můžete na ulici najít",
+        "layers": {
+            "0": {
+                "description": "Doplníme údaje z reklamních prvků s referencemi, provozovatelem a osvětlením",
+                "name": "Reklama",
+                "presets": {
+                    "0": {
+                        "description": "Velká venkovní reklamní konstrukce, která se obvykle nachází na místech s velkým provozem, například podél frekventovaných silnic",
+                        "title": "billboard"
+                    },
+                    "1": {
+                        "title": "volně stojící plakátovací skříň"
+                    },
+                    "2": {
+                        "title": "plakátovací skříň připevněná na stěnu"
+                    },
+                    "3": {
+                        "description": "Malý billboard pro sousedskou reklamu, zpravidla určený pro chodce",
+                        "title": "billboard"
+                    },
+                    "4": {
+                        "description": "Válcová venkovní konstrukce, která zobrazuje reklamy",
+                        "title": "sloup"
+                    },
+                    "5": {
+                        "title": "vlajka"
+                    },
+                    "6": {
+                        "title": "obrazovka"
+                    },
+                    "7": {
+                        "title": "obrazovka připevněná na stěnu"
+                    },
+                    "8": {
+                        "description": "Kus nepromokavého textilu s natištěným vzkazem, trvale připevněný na stěnu",
+                        "title": "plachta"
+                    },
+                    "9": {
+                        "title": "totem"
+                    },
+                    "10": {
+                        "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
+                        "title": "cedule"
+                    },
+                    "11": {
+                        "title": "socha"
+                    },
+                    "12": {
+                        "title": "nástěnná malba"
+                    }
+                },
+                "tagRenderings": {
+                    "Sides": {
+                        "mappings": {
+                            "0": {
+                                "then": "Tento objekt má reklamy na jedné straně"
+                            },
+                            "1": {
+                                "then": "Tento objekt má reklamy na obou stranách"
+                            }
+                        },
+                        "question": "Z kolika stran můžete vidět reklamy?"
+                    },
+                    "animated": {
+                        "mappings": {
+                            "0": {
+                                "then": "<b>Statická reklama</b>, která stále zobrazuje stejnou zprávu"
+                            },
+                            "1": {
+                                "then": "Tento objekt má vestavěný <b>digitální displej</b> pro zobrazení cen nebo jiné zprávy"
+                            },
+                            "2": {
+                                "then": "<b>Trivision</b> - billboard se skládá z několika trojúhelníkových hranolů, které se pravidelně otáčejí"
+                            },
+                            "3": {
+                                "then": "<b>Rolující</b> plakáty"
+                            },
+                            "4": {
+                                "then": "Sám se <b>otáčí</b>"
+                            }
+                        },
+                        "question": "Zobrazuje tato reklama cyklicky několik zpráv?"
+                    },
+                    "luminous_or_lit_advertising": {
+                        "override": {
+                            "+mappings": {
+                                "0": {
+                                    "then": "Jedná se o neonové světlo"
+                                }
+                            }
+                        }
+                    },
+                    "message_type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Komerční sdělení"
+                            },
+                            "1": {
+                                "then": "Místní informace"
+                            },
+                            "2": {
+                                "then": "Bezpečnostní informace"
+                            },
+                            "3": {
+                                "then": "Volební reklama"
+                            },
+                            "4": {
+                                "then": "Informace týkající se divadla, koncertů, ..."
+                            },
+                            "5": {
+                                "then": "Zpráva od neziskových organizací"
+                            },
+                            "6": {
+                                "then": "Pro vyjádření vašeho názoru"
+                            },
+                            "7": {
+                                "then": "Náboženská zpráva"
+                            },
+                            "8": {
+                                "then": "Cedule pro financování"
+                            },
+                            "9": {
+                                "then": "Mapa"
+                            }
+                        },
+                        "question": "Jaký typ zprávy je zobrazen?"
+                    },
+                    "operator": {
+                        "question": "Kdo tento objekt provozuje?",
+                        "render": "Provozuje {operator}"
+                    },
+                    "ref": {
+                        "question": "Jaké je referenční číslo?",
+                        "render": "Referenční číslo je {ref}"
+                    },
+                    "type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Toto je billboard"
+                            },
+                            "1": {
+                                "then": "Toto je deska"
+                            },
+                            "2": {
+                                "then": "Toto je sloup"
+                            },
+                            "3": {
+                                "then": "Toto je vlajka"
+                            },
+                            "4": {
+                                "then": "Toto je skříň na plakáty"
+                            },
+                            "5": {
+                                "then": "Toto je obrazovka"
+                            },
+                            "6": {
+                                "then": "Toto je socha"
+                            },
+                            "7": {
+                                "then": "Toto je cedule"
+                            },
+                            "8": {
+                                "then": "Toto je plachta (kus textilu s reklamním sdělením odolný proti povětrnostním vlivům)"
+                            },
+                            "9": {
+                                "then": "Toto je totem"
+                            },
+                            "10": {
+                                "then": "Toto je nástěnná malba"
+                            }
+                        },
+                        "question": "O jaký typ reklamního prvku se jedná?",
+                        "render": "Toto je {advertising}"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Billboard"
+                        },
+                        "1": {
+                            "then": "Deska"
+                        },
+                        "2": {
+                            "then": "Skříň na plakáty"
+                        },
+                        "3": {
+                            "then": "Sloup"
+                        },
+                        "4": {
+                            "then": "Vlajka"
+                        },
+                        "5": {
+                            "then": "Obrazovka"
+                        },
+                        "6": {
+                            "then": "Socha"
+                        },
+                        "7": {
+                            "then": "Cedule"
+                        },
+                        "8": {
+                            "then": "Plachta"
+                        },
+                        "9": {
+                            "then": "Totem"
+                        },
+                        "10": {
+                            "then": "Nástěnná malba"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Kde najdu reklamní objekty?",
+        "title": "Otevřít reklamní mapu"
+    },
     "aed": {
         "description": "Na této mapě lze najít a označit defibrilátory v okolí",
         "title": "Open AED Mapa"
@@ -765,6 +983,108 @@
     "kerbs_and_crossings": {
         "description": "Mapa zobrazující obrubníky a přechody.",
         "title": "Obrubníky a přechody"
+    },
+    "mapcomplete-changes": {
+        "description": "Tato mapa zobrazuje všechny změny provedené pomocí MapComplete",
+        "layers": {
+            "0": {
+                "description": "Zobrazuje všechny změny MapComplete",
+                "filter": {
+                    "0": {
+                        "options": {
+                            "0": {
+                                "question": "Název tématu obsahuje {search}"
+                            }
+                        }
+                    },
+                    "1": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořeno přispěvatelem {search}"
+                            }
+                        }
+                    },
+                    "2": {
+                        "options": {
+                            "0": {
+                                "question": "<b>Ne</b>vytvořeno přispěvatelem {search}"
+                            }
+                        }
+                    },
+                    "3": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořeno před {search}"
+                            }
+                        }
+                    },
+                    "4": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořeno po {search}"
+                            }
+                        }
+                    },
+                    "5": {
+                        "options": {
+                            "0": {
+                                "question": "Jazyk uživatele (kód iso) {search}"
+                            }
+                        }
+                    },
+                    "6": {
+                        "options": {
+                            "0": {
+                                "question": "Vytvořeno s hostitelem {search}"
+                            }
+                        }
+                    },
+                    "7": {
+                        "options": {
+                            "0": {
+                                "question": "Sada změn přidala alespoň jeden obrázek"
+                            }
+                        }
+                    }
+                },
+                "name": "Centra sady změn",
+                "tagRenderings": {
+                    "contributor": {
+                        "question": "Jaký přispěvatel provedl tuto změnu?",
+                        "render": "Změna byla provedena uživatelem <a href='https://openstreetmap.org/user/{user}' target='_blank'>{user}</a>"
+                    },
+                    "host": {
+                        "question": "S jakým hostitelem (webem) byla tato změna provedena?",
+                        "render": "Změnit s <a href='{host}'>{host}</a>"
+                    },
+                    "locale": {
+                        "question": "V jakém národním prostředí (jazyce) byla tato změna provedena?",
+                        "render": "Národní prostředí uživatele je {locale}"
+                    },
+                    "show_changeset_id": {
+                        "render": "Sada změn <a href='https://openstreetmap.org/changeset/{id}' target='_blank'>{id}</a>"
+                    },
+                    "theme-id": {
+                        "question": "Jaké téma bylo použito k provedení této změny?",
+                        "render": "Změna pomocí tématu <a href='https://mapcomplete.osm.be/{theme}'>{theme}</a>"
+                    }
+                },
+                "title": {
+                    "render": "Sada změn pro {theme}"
+                }
+            },
+            "1": {
+                "override": {
+                    "tagRenderings": {
+                        "link_to_more": {
+                            "render": "Další statistiky najdete <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>zde</a>"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Zobrazuje změny provedené pomocí MapComplete",
+        "title": "Změny provedené pomocí MapComplete"
     },
     "maproulette": {
         "description": "Téma zobrazující úkoly MapRoulette, které umožňuje vyhledávat, filtrovat a opravovat je.",

@@ -312,7 +312,8 @@
             "de": "Abfalleimer mit Spender für (Hunde-)Kotbeutel",
             "es": "Papelera con dispensador de bolsas de excrementos (para perros)",
             "it": "Cestino per rifiuti con dispenser per sacchetti per escrementi dei cani",
-            "da": "Affaldskurv med dispenser til poser til (hunde)ekskrementer"
+            "da": "Affaldskurv med dispenser til poser til (hunde)ekskrementer",
+            "ca": "Papereres amb dispensador de bosses d'excrements (per a gossos)"
           },
           "osmTags": "vending=dog_excrement_bag"
         }

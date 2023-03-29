@@ -72,7 +72,8 @@
           "pt_BR": "Loja de equipamentos esportivos <i>{name}</i>",
           "pt": "Loja de equipamentos desportivos <i>{name}</i>",
           "es": "Tienda de artículos deportivos <i>{name}</i>",
-          "da": "Butik med sportsudstyr <i>{name}</i>"
+          "da": "Butik med sportsudstyr <i>{name}</i>",
+          "ca": "Botiga d'equipament esportiu <i>{name}</i>"
         }
       },
       {
@@ -88,7 +89,8 @@
           "nl": "Shop",
           "es": "Winkel",
           "fr": "Magasin",
-          "da": "Winkel"
+          "da": "Winkel",
+          "ca": "Winkel"
         }
       },
       {
@@ -114,7 +116,8 @@
           "pt_BR": "Aluguel de bicicletas <i>{name}</i>",
           "pt": "Aluguel de bicicletas <i>{name}</i>",
           "es": "Alquiler de bicicletas <i>{name}</i>",
-          "da": "Cykeludlejning <i>{name}</i>"
+          "da": "Cykeludlejning <i>{name}</i>",
+          "ca": "Lloguer de bicicletes <i>{name}</i>"
         }
       },
       {
@@ -209,7 +212,8 @@
     "de": "Ein Geschäft, das speziell Fahrräder oder verwandte Artikel verkauft",
     "pt": "Uma loja que vende especificamente bicicletas ou itens relacionados",
     "es": "Una tiene que vende específicamente bicis u objetos relacionados",
-    "da": "En butik, der specifikt sælger cykler eller relaterede varer"
+    "da": "En butik, der specifikt sælger cykler eller relaterede varer",
+    "ca": "Una botiga que ven específicament bicicletes o articles relacionats"
   },
   "tagRenderings": [
     "images",
@@ -231,7 +235,8 @@
         "de": "Dieses Geschäft ist auf den Verkauf von {shop} spezialisiert und im Bereich Fahrrad tätig",
         "pt": "Esta loja é especializada em vender {shop} e faz atividades relacionadas à bicicletas",
         "es": "Esta tienda está especializada en vender {shop} y hace actividades relacionadas con bicicletas",
-        "da": "Denne butik er specialiseret i at sælge {shop} og udfører aktiviteter i forbindelse med cykler"
+        "da": "Denne butik er specialiseret i at sælge {shop} og udfører aktiviteter i forbindelse med cykler",
+        "ca": "Aquesta botiga està especialitzada en vendre {shop} i fa activitats relacionades amb la bicicleta"
       },
       "mappings": [
         {
@@ -293,7 +298,8 @@
         "de": "Nur zugänglich für {access}",
         "es": "Solo accesible a {access}",
         "fr": "Seulement accessible à {access}",
-        "da": "Kun tilgængelig for {access}"
+        "da": "Kun tilgængelig for {access}",
+        "ca": "Només accessible per a {access}"
       },
       "freeform": {
         "key": "access"
@@ -756,7 +762,8 @@
         "it": "una negozio/riparatore di bici",
         "ru": "Обслуживание велосипедов/магазин",
         "es": "un taller/tienda de bicis",
-        "da": "en cykelværksted/butik"
+        "da": "en cykelværksted/butik",
+        "ca": "una botiga/reparació de bicicletes"
       },
       "tags": [
         "shop=bicycle"

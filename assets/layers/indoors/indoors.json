@@ -11,7 +11,8 @@
     "en": "Basic indoor mapping: shows room outlines",
     "de": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
     "nl": "Een basis voor indoor-navigatie: toont binnenruimtes",
-    "cs": "Základní mapování interiérů: zobrazuje obrysy místností"
+    "cs": "Základní mapování interiérů: zobrazuje obrysy místností",
+    "ca": "Mapeig interior bàsic: mostra els contorns de les habitacions"
   },
   "source": {
     "osmTags": {

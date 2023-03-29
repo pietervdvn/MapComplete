@@ -152,8 +152,8 @@
           "then": {
             "en": "This clock is visible from more than 20 meters away (e.g. a church clock or station clock)",
             "nl": "Deze klok is zichtbaar vanaf meer dan 20 meter afstand (kerkklok)",
-            "de": "Diese Uhr ist aus mehr als 20 Metern Entfernung sichtbar (Kirchenuhr)",
-            "ca": "Aquest rellotge és visible des de més de 20 metres de distància (rellotge d'una església)"
+            "de": "Diese Uhr ist aus mehr als 20 Metern Entfernung sichtbar (Kirchuhr, Bahnhofsuhr)",
+            "ca": "Aquest rellotge és visible des de més de 20 metres de distància (p. ex. el d'una església o estació de tren)"
           }
         }
       ]
