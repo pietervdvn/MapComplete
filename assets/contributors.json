@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 5250,
+      "commits": 5252,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -50,15 +50,15 @@
     },
     {
       "commits": 21,
+      "contributor": "Hosted Weblate"
+    },
+    {
+      "commits": 21,
       "contributor": "wjtje"
     },
     {
       "commits": 21,
       "contributor": "AlexanderRebai"
-    },
-    {
-      "commits": 20,
-      "contributor": "Hosted Weblate"
     },
     {
       "commits": 19,

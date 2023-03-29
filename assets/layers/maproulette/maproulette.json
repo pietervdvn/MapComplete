@@ -136,7 +136,8 @@
           "type": "maproulette_set_status",
           "message": {
             "en": "Mark as fixed",
-            "de": "Als behoben markieren"
+            "de": "Als behoben markieren",
+            "ca": "Marca com a solucionat"
           }
         }
       }
@@ -148,7 +149,8 @@
           "type": "maproulette_set_status",
           "message": {
             "en": "Mark as not found or false positive",
-            "de": "Als nicht gefunden oder Falschmeldung markieren"
+            "de": "Als nicht gefunden oder Falschmeldung markieren",
+            "ca": "Marca com a no trobat o com a fals positiu"
           },
           "status": "2",
           "image": "close"
@@ -162,7 +164,8 @@
           "type": "maproulette_set_status",
           "message": {
             "en": "Mark as too hard",
-            "de": "Als zu schwer markieren"
+            "de": "Als zu schwer markieren",
+            "ca": "Marca com a massa complicat"
           },
           "status": "6",
           "image": "not_found"

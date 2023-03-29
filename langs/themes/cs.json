@@ -13,16 +13,6 @@
                     "1": {
                         "title": "volně stojící plakátovací skříň"
                     },
-                    "10": {
-                        "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
-                        "title": "cedule"
-                    },
-                    "11": {
-                        "title": "socha"
-                    },
-                    "12": {
-                        "title": "nástěnná malba"
-                    },
                     "2": {
                         "title": "plakátovací skříň připevněná na stěnu"
                     },
@@ -49,6 +39,16 @@
                     },
                     "9": {
                         "title": "totem"
+                    },
+                    "10": {
+                        "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
+                        "title": "cedule"
+                    },
+                    "11": {
+                        "title": "socha"
+                    },
+                    "12": {
+                        "title": "nástěnná malba"
                     }
                 },
                 "tagRenderings": {
@@ -143,9 +143,6 @@
                             "1": {
                                 "then": "Toto je deska"
                             },
-                            "10": {
-                                "then": "Toto je nástěnná malba"
-                            },
                             "2": {
                                 "then": "Toto je sloup"
                             },
@@ -169,6 +166,9 @@
                             },
                             "9": {
                                 "then": "Toto je totem"
+                            },
+                            "10": {
+                                "then": "Toto je nástěnná malba"
                             }
                         },
                         "question": "O jaký typ reklamního prvku se jedná?",
@@ -182,9 +182,6 @@
                         },
                         "1": {
                             "then": "Deska"
-                        },
-                        "10": {
-                            "then": "Nástěnná malba"
                         },
                         "2": {
                             "then": "Skříň na plakáty"
@@ -209,6 +206,9 @@
                         },
                         "9": {
                             "then": "Totem"
+                        },
+                        "10": {
+                            "then": "Nástěnná malba"
                         }
                     }
                 }
@@ -1117,33 +1117,6 @@
     "onwheels": {
         "description": "Na této mapě jsou zobrazena veřejně přístupná místa pro vozíčkáře, a lze je také snadno přidat",
         "layers": {
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistiky"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Dovoz"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Přidat všechny navrhované značky"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "4": {
                 "override": {
                     "filter": {
@@ -1185,6 +1158,33 @@
             "8": {
                 "override": {
                     "name": "Parkovací místa pro osoby se zdravotním postižením"
+                }
+            },
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistiky"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Dovoz"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Přidat všechny navrhované značky"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -1346,6 +1346,10 @@
     "stations": {
         "description": "Zobrazení, úprava a přidání podrobností o vlakovém nádraží",
         "layers": {
+            "3": {
+                "description": "Vrstva zobrazující vlaková nádraží",
+                "name": "Vlaková nádraží"
+            },
             "15": {
                 "description": "Zobrazuje vlaky odjíždějící z této stanice",
                 "name": "Odjezdové tabule",
@@ -1377,10 +1381,6 @@
                 "title": {
                     "render": "Odjezdová tabule"
                 }
-            },
-            "3": {
-                "description": "Vrstva zobrazující vlaková nádraží",
-                "name": "Vlaková nádraží"
             }
         },
         "title": "Vlaková nádraží"

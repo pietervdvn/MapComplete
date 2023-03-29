@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 261,
+      "commits": 264,
       "contributor": "kjon"
     },
     {
@@ -9,7 +9,7 @@
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 109,
+      "commits": 114,
       "contributor": "paunofu"
     },
     {
@@ -114,6 +114,10 @@
     },
     {
       "commits": 9,
+      "contributor": "Fjuro"
+    },
+    {
+      "commits": 9,
       "contributor": "Niels Madsen"
     },
     {
@@ -122,15 +126,15 @@
     },
     {
       "commits": 8,
-      "contributor": "Fjuro"
-    },
-    {
-      "commits": 8,
       "contributor": "Lucas"
     },
     {
       "commits": 8,
       "contributor": "Vinicius"
+    },
+    {
+      "commits": 7,
+      "contributor": "Jaime Marquínez Ferrándiz"
     },
     {
       "commits": 7,
@@ -155,10 +159,6 @@
     {
       "commits": 6,
       "contributor": "ⵣⵓⵀⵉⵔ ⴰⵎⴰⵣⵉⵖ زهير أمازيغ"
-    },
-    {
-      "commits": 6,
-      "contributor": "Jaime Marquínez Ferrándiz"
     },
     {
       "commits": 6,

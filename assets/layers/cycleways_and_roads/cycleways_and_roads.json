@@ -283,7 +283,8 @@
         "de": "Ist diese Straße beleuchtet?",
         "da": "Er denne gade belyst?",
         "es": "¿Esta calle está iluminada?",
-        "fr": "Cette rue est-elle éclairée ?"
+        "fr": "Cette rue est-elle éclairée ?",
+        "ca": "Aquesta carretera està il·luminada?"
       },
       "mappings": [
         {
@@ -304,7 +305,8 @@
             "de": "Diese Straße ist nicht beleuchtet",
             "da": "Denne vej er ikke belyst",
             "es": "Esta carretera no está iluminada",
-            "fr": "Cette rue n'est pas éclairée"
+            "fr": "Cette rue n'est pas éclairée",
+            "ca": "Aquesta carretera no està il·luminada"
           }
         },
         {
@@ -315,7 +317,8 @@
             "de": "Diese Straße ist nachts beleuchtet",
             "da": "Denne vej er belyst om natten",
             "es": "Esta carretera está iluminada por la noche",
-            "fr": "Cette route est éclairée la nuit"
+            "fr": "Cette route est éclairée la nuit",
+            "ca": "Aquesta carretera està il·luminada per la nit"
           },
           "hideInAnswer": true
         },
@@ -327,7 +330,8 @@
             "de": "Diese Straße ist durchgehend beleuchtet",
             "da": "Denne vej er belyst døgnet rundt",
             "es": "Esta carretera está iluminada 24/7",
-            "fr": "Cette route est éclairée 24h/24 et 7j/7"
+            "fr": "Cette route est éclairée 24h/24 et 7j/7",
+            "ca": "Aquesta carretera està il·luminada 24/7"
           }
         }
       ],
@@ -1028,7 +1032,8 @@
         "en": "This is measured curb to curb and thus includes the width of parallell parking lanes",
         "nl": "Dit is gemeten van stoepsteen tot stoepsteen, dus inclusief een parallelle parkeerstrook",
         "de": "Diese wird von Bordstein zu Bordstein gemessen und schließt daher die Breite von parallelen Parkspuren ein",
-        "fr": "Elle est mesurée d'une bordure à l'autre et inclut donc la largeur des voies de stationnement parallèles"
+        "fr": "Elle est mesurée d'une bordure à l'autre et inclut donc la largeur des voies de stationnement parallèles",
+        "ca": "Això es mesura de vorera a vorera i, per tant, inclou l'amplada dels aparcaments en línia"
       }
     },
     {
@@ -1388,7 +1393,8 @@
             "en": "Mopeds are not allowed",
             "nl": "Bromfiets klasse B <b>verboden</b>",
             "de": "Mopeds sind nicht zulässig",
-            "fr": "Les cyclomoteurs ne sont pas autorisés"
+            "fr": "Les cyclomoteurs ne sont pas autorisés",
+            "ca": "Els ciclomotors no estan permesos"
           },
           "hideInAnswer": "_country!=be",
           "addExtraTags": [
@@ -1456,7 +1462,8 @@
         "nl": "Hoe breed is de ruimte tussen het fietspad en de weg?",
         "de": "Wie breit ist der Abstand zwischen Radweg und Straße?",
         "es": "¿Cómo de ancho es el hueco entre el carril bici y la carretera?",
-        "fr": "Quelle est la distance entre la piste cyclable et la route ?"
+        "fr": "Quelle est la distance entre la piste cyclable et la route ?",
+        "ca": "Quina és la distància entre el carril bici i la carretera?"
       },
       "condition": {
         "or": [

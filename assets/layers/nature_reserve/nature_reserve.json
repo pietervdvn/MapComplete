@@ -335,7 +335,8 @@
         "en": "Respect privacy - only fill out a name if this is widely published",
         "it": "Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)",
         "fr": "À ne remplir seulement que si le nom est diffusé au public",
-        "de": "Respektieren Sie die Privatsphäre. Geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist"
+        "de": "Respektieren Sie die Privatsphäre. Geben Sie nur dann einen Namen an, wenn dieser allgemein bekannt ist",
+        "ca": "Respecteu la privadesa: només empleneu un nom si es publica àmpliament"
       }
     },
     {
@@ -366,7 +367,8 @@
         "en": "Respect privacy - only fill out a personal email address if this is widely published",
         "it": "Rispetta la privacy (compila l’indirizzo email personale solo se è stato reso pubblico)",
         "fr": "Respecter la vie privée – renseignez une adresse électronique personnelle seulement si celle-ci est largement publiée",
-        "de": "Respektieren Sie die Privatsphäre. Geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist"
+        "de": "Respektieren Sie die Privatsphäre. Geben Sie nur dann eine persönliche Email-Adresse an, wenn diese allgemein bekannt ist",
+        "ca": "Respecteu la privadesa: només ompliu una adreça de correu electrònic personal si es publica àmpliament"
       }
     },
     {
@@ -390,7 +392,8 @@
         "en": "Respect privacy - only fill out a personal phone number address if this is widely published",
         "it": "Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)",
         "fr": "Respecter la vie privée – renseignez un numéro de téléphone personnel seulement si celui-ci est largement publié",
-        "de": "Respektieren Sie die Privatsphäre. Geben Sie nur dann eine Telefonnummer an, wenn diese allgemein bekannt ist"
+        "de": "Respektieren Sie die Privatsphäre. Geben Sie nur dann eine Telefonnummer an, wenn diese allgemein bekannt ist",
+        "ca": "Respecteu la privadesa: només empleneu una adreça de número de telèfon personal si es publica àmpliament"
       }
     },
     {

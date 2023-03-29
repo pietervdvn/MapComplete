@@ -4,7 +4,8 @@
     "en": "Dentist",
     "nl": "Tandarts",
     "de": "Zahnärzte",
-    "es": "Dentista"
+    "es": "Dentista",
+    "ca": "Dentista"
   },
   "description": {
     "en": "This layer shows dentist offices",
@@ -33,7 +34,8 @@
       "question": {
         "en": "What is the name of this dentist?",
         "de": "Wie lautet der Name dieses Zahnarztes?",
-        "nl": "Hoe heet deze tandarts?"
+        "nl": "Hoe heet deze tandarts?",
+        "ca": "Com s'anomena aquest dentista?"
       },
       "render": {
         "en": "This dentist is called {name}",

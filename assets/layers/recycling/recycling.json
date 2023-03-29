@@ -1136,7 +1136,8 @@
       "render": {
         "en": "This recycling facility can be used by {access}",
         "nl": "Deze recyclingfaciliteit kan gebruikt worden door {access}",
-        "de": "Diese Recyclinganlage kann von {access} genutzt werden"
+        "de": "Diese Recyclinganlage kann von {access} genutzt werden",
+        "ca": "Aquesta instal·lació de reciclatge la pot utilitzar {access}"
       }
     }
   ],
@@ -1369,7 +1370,8 @@
             "de": "Nur öffentliche Recyclingeinrichtungen",
             "it": "Solo accesso pubblico",
             "id": "Hanya akses publik",
-            "da": "Kun offentlig adgang"
+            "da": "Kun offentlig adgang",
+            "ca": "Només amb accés públic"
           },
           "osmTags": {
             "or": [

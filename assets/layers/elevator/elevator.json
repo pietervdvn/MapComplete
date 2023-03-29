@@ -5,7 +5,8 @@
     "fr": "Ascenseur",
     "de": "Aufzüge",
     "nl": "Lift",
-    "pa_PK": "ایلیویٹر"
+    "pa_PK": "ایلیویٹر",
+    "ca": "Ascensor"
   },
   "source": {
     "osmTags": "highway=elevator"
@@ -191,7 +192,8 @@
         "en": "an elevator",
         "nl": "een lift",
         "fr": "un ascenseur",
-        "de": "einen Aufzug"
+        "de": "einen Aufzug",
+        "ca": "un ascensor"
       },
       "tags": [
         "highway=elevator"

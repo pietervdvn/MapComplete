@@ -15,7 +15,8 @@
     "en": "Modern windmills generating electricity",
     "de": "Moderne Windmühlen zur Stromerzeugung",
     "nl": "Windturbines (moderne windmolens die elektriciteit genereren)",
-    "da": "Moderne vindmøller til produktion af elektricitet"
+    "da": "Moderne vindmøller til produktion af elektricitet",
+    "ca": "Molins de vent moderns que generen electricitat"
   },
   "source": {
     "osmTags": "generator:source=wind"
@@ -147,7 +148,8 @@
         "hu": "A szélturbina rotorátmérője: {rotor:diameter} méter.",
         "de": "Der Rotordurchmesser der Windturbine ist {rotor:diameter} Meter.",
         "nl": "De rotordiameter van deze windturbine is {rotor:diameter} meter.",
-        "da": "Rotordiameteren på denne vindmølle er {rotor:diameter} meter."
+        "da": "Rotordiameteren på denne vindmølle er {rotor:diameter} meter.",
+        "ca": "El diàmetre del rotor d'aquest aerogenerador és de {rotor:diameter} metres."
       },
       "question": {
         "en": "What is the rotor diameter of this wind turbine, in metres?",
@@ -157,7 +159,8 @@
         "hu": "Hány méter a rotorátmérője ennek a szélturbinának?",
         "de": "Wie groß ist der Rotordurchmesser der Windturbine in Meter?",
         "nl": "Wat is de rotordiameter van deze windturbine?",
-        "da": "Hvad er rotordiameteren på denne vindmølle i meter?"
+        "da": "Hvad er rotordiameteren på denne vindmølle i meter?",
+        "ca": "Quin és el diàmetre del rotor d'aquest aerogenerador en metres?"
       },
       "freeform": {
         "key": "rotor:diameter",
@@ -202,7 +205,8 @@
         "de": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}",
         "ru": "Дополнительная информация для экспертов OpenStreetMap: {fixme}",
         "sl": "Dodatne informacije za OpenStreetMap strokovnjake: {fixme}",
-        "es": "Información extra para expertos en OpenStreetMap: {fixme}"
+        "es": "Información extra para expertos en OpenStreetMap: {fixme}",
+        "ca": "Informació addicional per als experts en OpenStreetMap: {fixme}"
       },
       "question": {
         "en": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)",
@@ -231,7 +235,8 @@
         "it": "una pala eolica",
         "zh_Hant": "風機",
         "hu": "Szélerőmű",
-        "da": "en vindmølle"
+        "da": "en vindmølle",
+        "ca": "una turbina eòlica"
       }
     }
   ],
