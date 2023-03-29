@@ -6711,15 +6711,12 @@
                         "question": "Recycling of plastic"
                     },
                     "17": {
-                        "question": "Recycling of printer cartridges"
-                    },
-                    "18": {
                         "question": "Recycling of scrap metal"
                     },
-                    "19": {
+                    "18": {
                         "question": "Recycling of small electrical appliances"
                     },
-                    "20": {
+                    "19": {
                         "question": "Recycling of residual waste"
                     },
                     "20": {
@@ -6837,7 +6834,7 @@
                         "then": "Plastic can be recycled here"
                     },
                     "17": {
-                        "then": "Printer cartridges (inkjet/toner) can be recycled here"
+                        "then": "Printer cartridges can be recycled here"
                     },
                     "18": {
                         "then": "Scrap metal can be recycled here"
@@ -6853,9 +6850,6 @@
                     },
                     "22": {
                         "then": "Needles can be recycled here"
-                    },
-                    "23": {
-                        "then": "Residual waste can be recycled here"
                     },
                     "23": {
                         "then": "Residual waste can be recycled here"

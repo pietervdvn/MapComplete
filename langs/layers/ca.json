@@ -3337,14 +3337,20 @@
                     "16": {
                         "then": "Aquí es pot reciclar plàstic"
                     },
+                    "18": {
+                        "then": "Aquí es pot reciclar ferralla"
+                    },
                     "19": {
                         "then": "Aquí es poden reciclar sabates"
                     },
                     "20": {
-                        "then": "Aquí es poden reciclar petits aparells electrònics"
+                        "then": "Aquí es poden reciclar petits aparells elèctrics"
                     },
                     "21": {
                         "then": "Aquí es poden reciclar petits aparells elèctrics"
+                    },
+                    "22": {
+                        "then": "Aquí es poden reciclar agulles"
                     },
                     "23": {
                         "then": "Ací es pot reciclar el rebuig"

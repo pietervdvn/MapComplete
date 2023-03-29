@@ -6497,15 +6497,12 @@
                         "question": "Recycling van plastic"
                     },
                     "17": {
-                        "question": "Recycling van printer cartridges"
-                    },
-                    "18": {
                         "question": "Recycling van oud metaal"
                     },
-                    "19": {
+                    "18": {
                         "question": "Recycling van kleine elektrische apparaten"
                     },
-                    "20": {
+                    "19": {
                         "question": "Recycling van restafval"
                     },
                     "20": {
@@ -6623,7 +6620,7 @@
                         "then": "Plastic kan hier gerecycled worden"
                     },
                     "17": {
-                        "then": "Printer cartridges (inkjet/toner) kunnen hier gerecycled worden"
+                        "then": "Inktpatronen kunnen hier gerecycleerd worden"
                     },
                     "18": {
                         "then": "Oud metaal kan hier gerecycled worden"
@@ -6639,9 +6636,6 @@
                     },
                     "22": {
                         "then": "Injectienaalden kunnen hier gerecycled worden"
-                    },
-                    "23": {
-                        "then": "Restafval kan hier gerecycled worden"
                     },
                     "23": {
                         "then": "Restafval kan hier gerecycled worden"

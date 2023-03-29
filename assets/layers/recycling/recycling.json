@@ -942,12 +942,8 @@
           "if": "recycling:printer_cartridges=yes",
           "ifnot": "recycling:printer_cartridges=",
           "then": {
-            "en": "Scrap metal can be recycled here",
-            "nl": "Oud metaal kan hier gerecycled worden",
-            "ca": "Aquí es pot reciclar ferralla",
-            "de": "Metallschrott kann hier recycelt werden",
-            "es": "Aquí se puede reciclar chatarra",
-            "it": "Rottami metallici"
+            "en": "Printer cartridges can be recycled here",
+            "nl": "Inktpatronen kunnen hier gerecycleerd worden"
           },
           "icon": {
             "path": "./assets/layers/recycling/printer_cartridges.svg",
@@ -958,12 +954,12 @@
           "if": "recycling:scrap_metal=yes",
           "ifnot": "recycling:scrap_metal=",
           "then": {
-            "en": "Shoes can be recycled here",
-            "nl": "Schoenen kunnen hier gerecycled worden",
-            "de": "Schuhe können hier recycelt werden",
-            "es": "Aquí se pueden reciclar zapatos",
-            "it": "Scarpe",
-            "ca": "Aquí es poden reciclar sabates"
+            "en": "Scrap metal can be recycled here",
+            "nl": "Oud metaal kan hier gerecycled worden",
+            "ca": "Aquí es pot reciclar ferralla",
+            "de": "Metallschrott kann hier recycelt werden",
+            "es": "Aquí se puede reciclar chatarra",
+            "it": "Rottami metallici"
           },
           "icon": {
             "path": "./assets/layers/recycling/scrap_metal.svg",
@@ -974,12 +970,12 @@
           "if": "recycling:shoes=yes",
           "ifnot": "recycling:shoes=",
           "then": {
-            "en": "Small electrical appliances can be recycled here",
-            "nl": "Kleine elektrische apparaten kunnen hier gerecycled worden",
-            "de": "Elektrokleingeräte können hier recycelt werden",
+            "en": "Shoes can be recycled here",
+            "nl": "Schoenen kunnen hier gerecycled worden",
+            "de": "Schuhe können hier recycelt werden",
             "es": "Aquí se pueden reciclar zapatos",
-            "it": "Piccoli elettrodomestici",
-            "ca": "Aquí es poden reciclar petits aparells electrònics"
+            "it": "Scarpe",
+            "ca": "Aquí es poden reciclar sabates"
           },
           "icon": {
             "path": "./assets/layers/recycling/shoes.svg",
@@ -1005,11 +1001,11 @@
           "if": "recycling:small_electrical_appliances=yes",
           "ifnot": "recycling:small_electrical_appliances=",
           "then": {
-            "en": "Needles can be recycled here",
-            "nl": "Injectienaalden kunnen hier gerecycled worden",
-            "de": "Nadeln können hier recycelt werden",
-            "it": "Aghi e oggetti appuntiti",
-            "ca": "Aquí es poden reciclar agulles"
+            "en": "Small electrical appliances can be recycled here",
+            "nl": "Kleine elektrische apparaten kunnen hier gerecycled worden",
+            "de": "Elektrokleingeräte können hier recycelt werden",
+            "it": "Piccoli elettrodomestici",
+            "ca": "Aquí es poden reciclar petits aparells elèctrics"
           },
           "hideInAnswer": true,
           "icon": {
@@ -1021,11 +1017,11 @@
           "if": "recycling:needles=yes",
           "ifnot": "recycling:needles=",
           "then": {
-            "en": "Residual waste can be recycled here",
-            "nl": "Restafval kan hier gerecycled worden",
-            "de": "Restmüll kann hier recycelt werden",
-            "it": "Secco",
-            "ca": "Ací es pot reciclar el rebuig"
+            "en": "Needles can be recycled here",
+            "nl": "Injectienaalden kunnen hier gerecycled worden",
+            "de": "Nadeln können hier recycelt werden",
+            "it": "Aghi e oggetti appuntiti",
+            "ca": "Aquí es poden reciclar agulles"
           }
         },
         {
