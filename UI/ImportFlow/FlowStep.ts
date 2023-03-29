@@ -7,7 +7,6 @@ import Translations from "../i18n/Translations"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import Toggle from "../Input/Toggle"
 import { UIElement } from "../UIElement"
-import { FixedUiElement } from "../Base/FixedUiElement"
 
 export interface FlowStep<T> extends BaseUIElement {
     readonly IsValid: Store<boolean>

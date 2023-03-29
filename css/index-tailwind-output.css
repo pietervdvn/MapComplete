@@ -1183,6 +1183,10 @@ video {
   width: auto;
 }
 
+.w-48 {
+  width: 12rem;
+}
+
 .min-w-min {
   min-width: -webkit-min-content;
   min-width: min-content;
@@ -1509,6 +1513,11 @@ video {
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 
+.border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
 .border-opacity-50 {
   --tw-border-opacity: 0.5;
 }
@@ -1580,10 +1589,6 @@ video {
   padding: 0.5rem;
 }
 
-.p-8 {
-  padding: 2rem;
-}
-
 .p-3 {
   padding: 0.75rem;
 }
@@ -1594,6 +1599,10 @@ video {
 
 .p-0\.5 {
   padding: 0.125rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .py-4 {
@@ -1921,6 +1930,10 @@ video {
   transition-duration: 150ms;
 }
 
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .z-above-map {
   z-index: 10000;
 }
@@ -1971,8 +1984,6 @@ video {
   --shadow-color: #00000066;
   --return-to-the-map-height: 2em;
   --image-carousel-height: 350px;
-  /* The border colour of the leaflet popup */
-  --popup-border: white;
   /* Technical variable to make some dynamic behaviour possible; set by javascript. */
   --variable-title-height: 0px;
 }
@@ -1987,31 +1998,6 @@ body {
   background-color: var(--background-color);
   color: var(--foreground-color);
   font-family: "Helvetica Neue", Arial, sans-serif;
-}
-
-.leaflet-overlay-pane .leaflet-zoom-animated {
-  /* Another workaround to keep leaflet working */
-  width: initial !important;
-  height: initial !important;
-  box-sizing: initial !important;
-}
-
-.leaflet-marker-icon img {
-  -webkit-touch-callout: none;
-  /* prevent callout to copy image, etc when tap to hold */
-}
-
-.leaflet-control-attribution {
-  display: flex;
-}
-
-.badge {
-}
-
-.badge svg {
-  /*Workaround for leaflet*/
-  width: unset !important;
-  height: 100% !important;
 }
 
 svg,
@@ -2255,28 +2241,6 @@ li::marker {
   fill: var(--catch-detail-color) !important;
 }
 
-#leafletDiv {
-  height: 100%;
-}
-
-.leaflet-popup-content-wrapper {
-  background-color: var(--background-color);
-  color: var(--foreground-color);
-  border: 2px solid var(--popup-border);
-  box-shadow: 0 3px 14px var(--shadow-color) !important;
-}
-
-.leaflet-container {
-  font: unset !important;
-  background-color: var(--background-color) !important;
-}
-
-.leaflet-popup-tip {
-  background-color: var(--popup-border) !important;
-  color: var(--popup-border) !important;
-  box-shadow: 0 3px 14px var(--shadow-color) !important;
-}
-
 .single-layer-selection-toggle {
   position: relative;
   width: 2em;
@@ -2408,129 +2372,15 @@ li::marker {
   }
 }
 
-.hand-drag-animation {
-  -webkit-animation: hand-drag-animation 6s ease-in-out infinite;
-          animation: hand-drag-animation 6s ease-in-out infinite;
-  -webkit-transform-origin: 50% 125%;
-          transform-origin: 50% 125%;
-}
-
-@-webkit-keyframes hand-drag-animation {
-  /* This is the animation on the little extra hand on the location input. If fades in, invites the user to interact/drag the map */
-
-  0% {
-    opacity: 0;
-    -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
-  }
-
-  6% {
-    opacity: 1;
-    -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
-  }
-
-  12% {
-    opacity: 1;
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-  }
-
-  24% {
-    opacity: 1;
-    -webkit-transform: rotate(-00deg);
-            transform: rotate(-00deg);
-  }
-
-  30% {
-    opacity: 1;
-    -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
-  }
-
-  36% {
-    opacity: 0;
-    -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
-  }
-
-  100% {
-    opacity: 0;
-    -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
-  }
-}
-
-@keyframes hand-drag-animation {
-  /* This is the animation on the little extra hand on the location input. If fades in, invites the user to interact/drag the map */
-
-  0% {
-    opacity: 0;
-    -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
-  }
-
-  6% {
-    opacity: 1;
-    -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
-  }
-
-  12% {
-    opacity: 1;
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-  }
-
-  24% {
-    opacity: 1;
-    -webkit-transform: rotate(-00deg);
-            transform: rotate(-00deg);
-  }
-
-  30% {
-    opacity: 1;
-    -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
-  }
-
-  36% {
-    opacity: 0;
-    -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
-  }
-
-  100% {
-    opacity: 0;
-    -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
-  }
-}
-
 /***************** Info box (box containing features and questions ******************/
 
 input {
   color: var(--foreground-color);
 }
 
-.leaflet-popup-content {
-  width: 45em !important;
-  margin: 0.25rem !important;
-}
-
-.leaflet-div-icon {
-  background-color: unset !important;
-  border: unset !important;
-}
-
 .floating-element-width {
   max-width: calc(100vw - 5em);
   width: 40em;
-}
-
-.leaflet-div-icon svg {
-  width: calc(100%);
-  height: calc(100%);
 }
 
 /****** ShareScreen *****/

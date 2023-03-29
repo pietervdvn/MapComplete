@@ -2,7 +2,6 @@ import { TagRenderingConfigJson } from "../../../Models/ThemeConfig/Json/TagRend
 import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig"
 import TagRenderingQuestion from "../../../UI/Popup/TagRenderingQuestion"
 import { UIEventSource } from "../../../Logic/UIEventSource"
-import Locale from "../../../UI/i18n/Locale"
 import { describe, expect, it } from "vitest"
 
 describe("TagRenderingQuestion", () => {

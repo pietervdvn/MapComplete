@@ -1,7 +1,6 @@
 import { Store, Stores, UIEventSource } from "../../Logic/UIEventSource"
 import Combine from "../Base/Combine"
 import { InputElement, ReadonlyInputElement } from "../Input/InputElement"
-import ValidatedTextField from "../Input/ValidatedTextField"
 import { FixedInputElement } from "../Input/FixedInputElement"
 import { RadioButton } from "../Input/RadioButton"
 import { Utils } from "../../Utils"

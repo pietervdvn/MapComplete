@@ -50,10 +50,6 @@ export class TextField extends InputElement<string> {
         return this.value
     }
 
-    GetRawValue(): UIEventSource<string> {
-        return this._rawValue
-    }
-
     IsValid(t: string): boolean {
         if (t === undefined || t === null) {
             return false

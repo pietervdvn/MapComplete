@@ -51,10 +51,6 @@ export class Translation extends BaseUIElement {
         return this.textFor(Translation.forcedLanguage ?? Locale.language.data)
     }
 
-    public toString() {
-        return this.txt
-    }
-
     static ExtractAllTranslationsFrom(
         object: any,
         context = ""
@@ -89,6 +85,10 @@ export class Translation extends BaseUIElement {
             return undefined
         }
         return new Translation(translations)
+    }
+
+    public toString() {
+        return this.txt
     }
 
     Destroy() {

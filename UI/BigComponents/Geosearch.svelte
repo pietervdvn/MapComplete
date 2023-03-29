@@ -15,8 +15,6 @@
 
   Translations.t;
   export let bounds: UIEventSource<BBox>
-  export let layout: LayoutConfig;
-  export let perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
   export let selectedElement: UIEventSource<Feature>;
   export let selectedLayer: UIEventSource<LayerConfig>;
 

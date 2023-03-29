@@ -1,5 +1,5 @@
 import { VariableUiElement } from "../Base/VariableUIElement"
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import { Store } from "../../Logic/UIEventSource"
 import Wikidata, { WikidataResponse } from "../../Logic/Web/Wikidata"
 import { Translation, TypedTranslation } from "../i18n/Translation"
 import { FixedUiElement } from "../Base/FixedUiElement"

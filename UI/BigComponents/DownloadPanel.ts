@@ -14,7 +14,6 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { BBox } from "../../Logic/BBox"
 import FilteredLayer, { FilterState } from "../../Models/FilteredLayer"
 import geojson2svg from "geojson2svg"
-import Constants from "../../Models/Constants"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 
 export class DownloadPanel extends Toggle {

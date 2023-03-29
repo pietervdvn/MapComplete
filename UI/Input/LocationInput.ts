@@ -1,24 +1,17 @@
 import { ReadonlyInputElement } from "./InputElement"
 import Loc from "../../Models/Loc"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import Minimap, { MinimapObj } from "../Base/Minimap"
-import BaseLayer from "../../Models/BaseLayer"
 import Combine from "../Base/Combine"
 import Svg from "../../Svg"
 import { GeoOperations } from "../../Logic/GeoOperations"
-import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer"
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { BBox } from "../../Logic/BBox"
 import { FixedUiElement } from "../Base/FixedUiElement"
-import ShowDataLayer from "../ShowDataLayer/ShowDataLayer"
 import BaseUIElement from "../BaseUIElement"
-import Toggle from "./Toggle"
 import matchpoint from "../../assets/layers/matchpoint/matchpoint.json"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import FilteredLayer from "../../Models/FilteredLayer"
-import { ElementStorage } from "../../Logic/ElementStorage"
-import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
 import { RelationId, WayId } from "../../Models/OsmFeature"
 import { Feature, LineString, Polygon } from "geojson"
 import { OsmObject, OsmWay } from "../../Logic/Osm/OsmObject"
@@ -313,10 +306,6 @@ export default class LocationInput
                 [this.map.leafletMap]
             )
 
-            const animatedHand = Svg.hand_ui()
-                .SetStyle("width: 2rem; height: unset;")
-                .SetClass("hand-drag-animation block pointer-events-none")
-
             return new Combine([
                 new Combine([
                     Svg.move_arrows_ui()
@@ -328,10 +317,6 @@ export default class LocationInput
                         "background: rgba(255, 128, 128, 0.21); left: 50%; top: 50%; opacity: 0.5"
                     ),
 
-                new Toggle(undefined, animatedHand, hasMoved)
-                    .SetClass("block w-0 h-0 z-10 relative")
-                    .SetStyle("left: calc(50% + 3rem); top: calc(50% + 2rem); opacity: 0.7"),
-
                 this.map.SetClass("z-0 relative block w-full h-full bg-gray-100"),
             ]).ConstructElement()
         } catch (e) {
@@ -340,12 +325,5 @@ export default class LocationInput
                 .SetClass("alert")
                 .ConstructElement()
         }
-    }
-
-    TakeScreenshot(format: "image"): Promise<string>
-    TakeScreenshot(format: "blob"): Promise<Blob>
-    TakeScreenshot(format: "image" | "blob"): Promise<string | Blob>
-    TakeScreenshot(format: "image" | "blob"): Promise<string | Blob> {
-        return this.map.TakeScreenshot(format)
     }
 }

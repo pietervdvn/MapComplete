@@ -1,4 +1,4 @@
-import { Store, UIEventSource } from "../Logic/UIEventSource"
+import { UIEventSource } from "../Logic/UIEventSource"
 import { BBox } from "../Logic/BBox"
 import { RasterLayerPolygon } from "./RasterLayers"
 

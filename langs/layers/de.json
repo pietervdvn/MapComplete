@@ -4750,9 +4750,6 @@
             }
         }
     },
-    "grass_in_parks": {
-        "description": "Sucht nach allen zugänglichen Grasflächen in öffentlichen Parks - dies sind 'Grünzonen'"
-    },
     "hackerspace": {
         "description": "Hackerspace",
         "name": "Hackerspaces",

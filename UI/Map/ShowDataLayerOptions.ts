@@ -1,6 +1,5 @@
 import FeatureSource from "../../Logic/FeatureSource/FeatureSource"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import { OsmTags } from "../../Models/OsmFeature"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { Feature } from "geojson"
 

@@ -54,11 +54,6 @@ export default class MoveWizard extends Toggle {
         options: MoveConfig
     ) {
         const t = Translations.t.move
-        const loginButton = new Toggle(
-            t.loginToMove.SetClass("btn").onClick(() => state.osmConnection.AttemptLogin()),
-            undefined,
-            state.featureSwitchUserbadge
-        )
 
         const reasons: MoveReason[] = []
         if (options.enableRelocation) {

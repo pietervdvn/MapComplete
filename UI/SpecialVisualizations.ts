@@ -3,7 +3,11 @@ import { FixedUiElement } from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import Table from "./Base/Table"
-import { SpecialVisualization } from "./SpecialVisualization"
+import {
+    RenderingSpecification,
+    SpecialVisualization,
+    SpecialVisualizationState,
+} from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
 import { StealViz } from "./Popup/StealViz"
 import { MinimapViz } from "./Popup/MinimapViz"
@@ -51,9 +55,96 @@ import FeatureReviews from "../Logic/Web/MangroveReviews"
 import Maproulette from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
 import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
+import { Feature } from "geojson"
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
+
+    /**
+     *
+     * For a given string, returns a specification what parts are fixed and what parts are special renderings.
+     * Note that _normal_ substitutions are ignored.
+     *
+     * // Return empty list on empty input
+     * SubstitutedTranslation.ExtractSpecialComponents("") // => []
+     *
+     * // Advanced cases with commas, braces and newlines should be handled without problem
+     * const templates = SubstitutedTranslation.ExtractSpecialComponents("{send_email(&LBRACEemail&RBRACE,Broken bicycle pump,Hello&COMMA\n\nWith this email&COMMA I'd like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE is broken.\n\n Kind regards,Report this bicycle pump as broken)}")
+     * const templ = templates[0]
+     * templ.special.func.funcName // => "send_email"
+     * templ.special.args[0] = "{email}"
+     */
+    public static constructSpecification(
+        template: string,
+        extraMappings: SpecialVisualization[] = []
+    ): RenderingSpecification[] {
+        if (template === "") {
+            return []
+        }
+
+        const allKnownSpecials = extraMappings.concat(SpecialVisualizations.specialVisualizations)
+        for (const knownSpecial of allKnownSpecials) {
+            // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'
+            const matched = template.match(
+                new RegExp(`(.*){${knownSpecial.funcName}\\((.*?)\\)(:.*)?}(.*)`, "s")
+            )
+            if (matched != null) {
+                // We found a special component that should be brought to live
+                const partBefore = SpecialVisualizations.constructSpecification(
+                    matched[1],
+                    extraMappings
+                )
+                const argument = matched[2].trim()
+                const style = matched[3]?.substring(1) ?? ""
+                const partAfter = SpecialVisualizations.constructSpecification(
+                    matched[4],
+                    extraMappings
+                )
+                const args = knownSpecial.args.map((arg) => arg.defaultValue ?? "")
+                if (argument.length > 0) {
+                    const realArgs = argument.split(",").map((str) =>
+                        str
+                            .trim()
+                            .replace(/&LPARENS/g, "(")
+                            .replace(/&RPARENS/g, ")")
+                            .replace(/&LBRACE/g, "{")
+                            .replace(/&RBRACE/g, "}")
+                            .replace(/&COMMA/g, ",")
+                    )
+                    for (let i = 0; i < realArgs.length; i++) {
+                        if (args.length <= i) {
+                            args.push(realArgs[i])
+                        } else {
+                            args[i] = realArgs[i]
+                        }
+                    }
+                }
+
+                const element: RenderingSpecification = {
+                    args: args,
+                    style: style,
+                    func: knownSpecial,
+                }
+                return [...partBefore, element, ...partAfter]
+            }
+        }
+
+        // Let's to a small sanity check to help the theme designers:
+        if (template.search(/{[^}]+\([^}]*\)}/) >= 0) {
+            // Hmm, we might have found an invalid rendering name
+            console.warn(
+                "Found a suspicious special rendering value in: ",
+                template,
+                " did you mean one of: "
+                /*SpecialVisualizations.specialVisualizations
+                        .map((sp) => sp.funcName + "()")
+                        .join(", ")*/
+            )
+        }
+
+        // IF we end up here, no changes have to be made - except to remove any resting {}
+        return [template]
+    }
 
     public static DocumentationFor(viz: string | SpecialVisualization): BaseUIElement | undefined {
         if (typeof viz === "string") {
@@ -649,7 +740,7 @@ export default class SpecialVisualizations {
                         defaultValue: "mr_taskId",
                     },
                 ],
-                constr: (state, tagsSource, args, guistate) => {
+                constr: (state, tagsSource, args) => {
                     let [message, image, message_closed, status, maproulette_id_key] = args
                     if (image === "") {
                         image = "confirm"
@@ -720,7 +811,7 @@ export default class SpecialVisualizations {
                 funcName: "statistics",
                 docs: "Show general statistics about the elements currently in view. Intended to use on the `current_view`-layer",
                 args: [],
-                constr: (state, tagsSource, args, guiState) => {
+                constr: (state) => {
                     return new Combine(
                         state.layout.layers
                             .filter((l) => l.name !== null)
@@ -851,5 +942,24 @@ export default class SpecialVisualizations {
         }
 
         return specialVisualizations
+    }
+
+    // noinspection JSUnusedGlobalSymbols
+    public static renderExampleOfSpecial(
+        state: SpecialVisualizationState,
+        s: SpecialVisualization
+    ): BaseUIElement {
+        const examples =
+            s.structuredExamples === undefined
+                ? []
+                : s.structuredExamples().map((e) => {
+                      return s.constr(
+                          state,
+                          new UIEventSource<Record<string, string>>(e.feature.properties),
+                          e.args,
+                          e.feature
+                      )
+                  })
+        return new Combine([new Title(s.funcName), s.docs, ...examples])
     }
 }

@@ -5,10 +5,7 @@ import { Feature } from "geojson"
 import { MapLibreAdaptor } from "../Map/MapLibreAdaptor"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "../Map/MaplibreMap.svelte"
-import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
-import FilteredLayer from "../../Models/FilteredLayer"
 import ShowDataLayer from "../Map/ShowDataLayer"
-import { stat } from "fs"
 
 export class MinimapViz implements SpecialVisualization {
     funcName = "minimap"

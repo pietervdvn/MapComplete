@@ -1809,9 +1809,6 @@
     "gps_track": {
         "name": "La teva traça recorreguda"
     },
-    "grass_in_parks": {
-        "description": "Cerques per a tots els camins d'herba accessibles dins dels parcs públics - aquests són «groenzones»"
-    },
     "hackerspace": {
         "presets": {
             "1": {

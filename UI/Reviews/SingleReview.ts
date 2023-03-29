@@ -6,7 +6,6 @@ import BaseUIElement from "../BaseUIElement"
 import Img from "../Base/Img"
 import { Review } from "mangrove-reviews-typescript"
 import { Store } from "../../Logic/UIEventSource"
-import WikidataPreviewBox from "../Wikipedia/WikidataPreviewBox"
 
 export default class SingleReview extends Combine {
     constructor(review: Review & { madeByLoggedInUser: Store<boolean> }) {

@@ -661,7 +661,7 @@
     "grb": {
         "description": "Aquest tema és un intent d'automatitzar la importació GRB.",
         "layers": {
-            "1": {
+            "0": {
                 "tagRenderings": {
                     "building type": {
                         "question": "Quin tipus d'edifici és aquest?"

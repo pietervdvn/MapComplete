@@ -24,7 +24,7 @@ export default class ChangeLocationAction extends OsmChangeAction {
         this._meta = meta
     }
 
-    protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
+    protected async CreateChangeDescriptions(): Promise<ChangeDescription[]> {
         const d: ChangeDescription = {
             changes: {
                 lat: this._newLonLat[1],

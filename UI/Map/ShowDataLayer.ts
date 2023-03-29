@@ -106,7 +106,7 @@ class PointRenderingLayer {
             store = new ImmutableStore(<OsmTags>feature.properties)
         }
         const { html, iconAnchor } = this._config.RenderIcon(store, true)
-        html.SetClass("marker")
+        html.SetClass("marker cursor-pointer")
         const el = html.ConstructElement()
 
         if (this._onClick) {
@@ -244,7 +244,7 @@ class LineRenderingLayer {
                 },
             })
 
-            this._visibility.addCallbackAndRunD((visible) => {
+            this._visibility?.addCallbackAndRunD((visible) => {
                 map.setLayoutProperty(linelayer, "visibility", visible ? "visible" : "none")
                 map.setLayoutProperty(polylayer, "visibility", visible ? "visible" : "none")
             })

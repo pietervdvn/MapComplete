@@ -13,7 +13,6 @@ import { OpenIdEditor, OpenJosm } from "./CopyrightPanel"
 import Toggle from "../Input/Toggle"
 import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 import { DefaultGuiState } from "../DefaultGuiState"
-import DefaultGUI from "../DefaultGUI"
 
 export class BackToThemeOverview extends Toggle {
     constructor(

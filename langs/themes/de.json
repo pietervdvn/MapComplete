@@ -689,14 +689,14 @@
     "grb": {
         "description": "Dieses Thema ist ein Versuch, die Automatisierung des GRB-Imports zu unterstützen.",
         "layers": {
-            "1": {
+            "0": {
                 "tagRenderings": {
                     "building type": {
                         "question": "Was ist das für ein Gebäude?"
                     }
                 }
             },
-            "6": {
+            "5": {
                 "tagRenderings": {
                     "Import-button": {
                         "mappings": {

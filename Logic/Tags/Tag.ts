@@ -122,7 +122,7 @@ export class Tag extends TagsFilter {
         return [this]
     }
 
-    asChange(properties: any): { k: string; v: string }[] {
+    asChange(): { k: string; v: string }[] {
         return [{ k: this.key, v: this.value }]
     }
 

@@ -1,12 +1,13 @@
 import { Store, UIEventSource } from "../UIEventSource"
 import Locale from "../../UI/i18n/Locale"
-import TagRenderingAnswer from "../../UI/Popup/TagRenderingAnswer"
 import Combine from "../../UI/Base/Combine"
 import { Utils } from "../../Utils"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { Feature } from "geojson"
 import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import SvelteUIElement from "../../UI/Base/SvelteUIElement"
+import TagRenderingAnswer from "../../UI/Popup/TagRenderingAnswer.svelte"
 
 export default class TitleHandler {
     constructor(
@@ -32,7 +33,7 @@ export default class TitleHandler {
                         const tagsSource =
                             allElements.getStore(tags.id) ??
                             new UIEventSource<Record<string, string>>(tags)
-                        const title = new TagRenderingAnswer(tagsSource, layer.title, {})
+                        const title = new SvelteUIElement(TagRenderingAnswer, { tags: tagsSource })
                         return (
                             new Combine([defaultTitle, " | ", title]).ConstructElement()
                                 ?.textContent ?? defaultTitle

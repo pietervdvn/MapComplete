@@ -7,6 +7,7 @@ import {
     GeoJSON,
     Geometry,
     LineString,
+    MultiLineString,
     MultiPolygon,
     Point,
     Polygon,
@@ -272,17 +273,42 @@ export class GeoOperations {
      * @param point Point defined as [lon, lat]
      */
     public static nearestPoint(
-        way: Feature<LineString | Polygon>,
+        way: Feature<LineString | MultiLineString | Polygon | MultiPolygon>,
         point: [number, number]
-    ): Feature<Point> {
+    ): Feature<
+        Point,
+        {
+            index: number
+            dist: number
+            location: number
+        }
+    > {
+        return <any>(
+            turf.nearestPointOnLine(<Feature<LineString>>way, point, { units: "kilometers" })
+        )
+    }
+
+    /**
+     * Helper method to reuse the coordinates of the way as LineString.
+     * Mostly used as helper for 'nearestPoint'
+     * @param way
+     */
+    public static forceLineString(
+        way: Feature<LineString | MultiLineString | Polygon | MultiPolygon>
+    ): Feature<LineString | MultiLineString> {
         if (way.geometry.type === "Polygon") {
             way = { ...way }
             way.geometry = { ...way.geometry }
             way.geometry.type = "LineString"
             way.geometry.coordinates = (<Polygon>way.geometry).coordinates[0]
+        } else if (way.geometry.type === "MultiPolygon") {
+            way = { ...way }
+            way.geometry = { ...way.geometry }
+            way.geometry.type = "MultiLineString"
+            way.geometry.coordinates = (<MultiPolygon>way.geometry).coordinates[0]
         }
 
-        return turf.nearestPointOnLine(<Feature<LineString>>way, point, { units: "kilometers" })
+        return <any>way
     }
 
     public static toCSV(features: any[]): string {

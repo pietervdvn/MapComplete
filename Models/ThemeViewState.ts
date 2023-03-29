@@ -108,7 +108,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.availableLayers = AvailableRasterLayers.layersAvailableAt(this.mapProperties.location)
 
         this.layerState = new LayerState(this.osmConnection, layout.layers, layout.id)
-        const indexedElements = new LayoutSource(
+        this.indexedFeatures = new LayoutSource(
             layout.layers,
             this.featureSwitches,
             new StaticFeatureSource([]),
@@ -116,6 +116,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.osmConnection.Backend(),
             (id) => this.layerState.filteredLayers.get(id).isDisplayed
         )
+        const indexedElements = this.indexedFeatures
         this.featureProperties = new FeaturePropertiesStore(indexedElements)
         const perLayer = new PerLayerFeatureSourceSplitter(
             Array.from(this.layerState.filteredLayers.values()),

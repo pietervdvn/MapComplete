@@ -2,7 +2,6 @@ import FeatureSource, { FeatureSourceForLayer } from "../FeatureSource"
 import StaticFeatureSource from "./StaticFeatureSource"
 import { GeoOperations } from "../../GeoOperations"
 import { BBox } from "../../BBox"
-import exp from "constants"
 import FilteredLayer from "../../../Models/FilteredLayer"
 
 /**

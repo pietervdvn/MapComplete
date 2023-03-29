@@ -1,7 +1,7 @@
 {
   "id": "matchpoint",
   "description": "The default rendering for a locationInput which snaps onto another object",
-  "source":"special",
+  "source": "special",
   "mapRendering": [
     {
       "location": [

@@ -1,6 +1,6 @@
 import Translations from "../i18n/Translations"
 import BaseUIElement from "../BaseUIElement"
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import { Store } from "../../Logic/UIEventSource"
 
 export default class Link extends BaseUIElement {
     private readonly _href: string | Store<string>

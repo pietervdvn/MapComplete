@@ -15,7 +15,6 @@ import { OsmConnection } from "../Logic/Osm/OsmConnection"
 export default class AllThemesGui {
     setup() {
         try {
-            new FixedUiElement("").AttachTo("centermessage")
             const osmConnection = new OsmConnection()
             const state = new UserRelatedState(osmConnection)
             const intro = new Combine([
@@ -38,15 +37,14 @@ export default class AllThemesGui {
                 new FixedUiElement("v" + Constants.vNumber),
             ])
                 .SetClass("block m-5 lg:w-3/4 lg:ml-40")
-                .SetStyle("pointer-events: all;")
-                .AttachTo("top-left")
+                .AttachTo("main")
         } catch (e) {
             console.error(">>>> CRITICAL", e)
             new FixedUiElement(
                 "Seems like no layers are compiled - check the output of `npm run generate:layeroverview`. Is this visible online? Contact pietervdvn immediately!"
             )
                 .SetClass("alert")
-                .AttachTo("centermessage")
+                .AttachTo("main")
         }
     }
 }

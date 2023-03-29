@@ -7,6 +7,7 @@
   import Constants from "../../Models/Constants"
   import type Loc from "../../Models/Loc"
   import type { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig";
+  import Tr from "../Base/Tr.svelte";
 
   export let theme: LayoutInformation
   export let isCustom: boolean = false
@@ -16,8 +17,8 @@
   $: title = new Translation(
     theme.title,
     !isCustom && !theme.mustHaveLanguage ? "themes:" + theme.id + ".title" : undefined
-  ).toString()
-  $: description = new Translation(theme.shortDescription).toString()
+  )
+  $: description = new Translation(theme.shortDescription)
 
   // TODO: Improve this function
   function createUrl(
@@ -83,8 +84,10 @@
       <img slot="image" src={theme.icon} class="block h-11 w-11 bg-red mx-4" alt="" />
       <span slot="message" class="message">
         <span>
-          <span>{title}</span>
-          <span>{description}</span>
+          <Tr t={title}></Tr>
+          <span class="subtle">
+            <Tr t={description}></Tr>
+          </span>
         </span>
       </span>
     </SubtleButton>

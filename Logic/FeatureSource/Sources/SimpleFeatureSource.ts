@@ -1,7 +1,6 @@
 import { UIEventSource } from "../../UIEventSource"
 import FilteredLayer from "../../../Models/FilteredLayer"
-import { FeatureSourceForLayer, Tiled } from "../FeatureSource"
-import { BBox } from "../../BBox"
+import { FeatureSourceForLayer } from "../FeatureSource"
 import { Feature } from "geojson"
 
 export default class SimpleFeatureSource implements FeatureSourceForLayer {

@@ -614,14 +614,14 @@
     },
     "grb": {
         "layers": {
-            "1": {
+            "0": {
                 "tagRenderings": {
                     "building type": {
                         "question": "Jaký druh budovy je toto?"
                     }
                 }
             },
-            "6": {
+            "5": {
                 "tagRenderings": {
                     "Import-button": {
                         "mappings": {

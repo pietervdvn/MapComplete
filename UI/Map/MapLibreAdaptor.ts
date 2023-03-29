@@ -43,7 +43,7 @@ export class MapLibreAdaptor implements MapProperties {
      */
     private _currentRasterLayer: string
 
-    constructor(maplibreMap: Store<MLMap>, state?: Partial<Omit<MapProperties, "bounds">>) {
+    constructor(maplibreMap: Store<MLMap>, state?: Partial<MapProperties>) {
         this._maplibreMap = maplibreMap
 
         this.location = state?.location ?? new UIEventSource({ lon: 0, lat: 0 })

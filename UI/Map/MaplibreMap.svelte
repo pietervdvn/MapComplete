@@ -16,6 +16,7 @@
    */
   export let map:  Writable<MaplibreMap>
 
+  export let attribution = true
   let center = {};
 
   onMount(() => {
@@ -28,6 +29,9 @@
 <main>
   <Map bind:center={center}
        bind:map={$map}
+       {attribution}
+       css="./maplibre-gl.css"
+       
        id="map" location={{lng: 0, lat: 0, zoom: 0}} maxzoom=24 style={styleUrl} />
 </main>
 

@@ -4,7 +4,6 @@ import { Utils } from "./Utils"
 import AllThemesGui from "./UI/AllThemesGui"
 import DetermineLayout from "./Logic/DetermineLayout"
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig"
-import DefaultGUI from "./UI/DefaultGUI"
 import ShowOverlayLayerImplementation from "./UI/ShowDataLayer/ShowOverlayLayerImplementation"
 import { DefaultGuiState } from "./UI/DefaultGuiState"
 

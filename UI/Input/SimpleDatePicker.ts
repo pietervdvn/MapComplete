@@ -2,7 +2,6 @@ import { InputElement } from "./InputElement"
 import { UIEventSource } from "../../Logic/UIEventSource"
 
 export default class SimpleDatePicker extends InputElement<string> {
-    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     private readonly value: UIEventSource<string>
     private readonly _element: HTMLElement
 

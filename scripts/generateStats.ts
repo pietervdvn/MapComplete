@@ -4,7 +4,6 @@ import { TagUtils } from "../Logic/Tags/TagUtils"
 import { Utils } from "../Utils"
 import { writeFileSync } from "fs"
 import ScriptUtils from "./ScriptUtils"
-import Constants from "../Models/Constants"
 
 /* Downloads stats on osmSource-tags and keys from tagInfo */
 

@@ -1,23 +1,15 @@
 <script lang="ts">
   import type { Feature } from "geojson";
-  import { Store, UIEventSource } from "../../Logic/UIEventSource";
-  import TagRenderingAnswer from "../Popup/TagRenderingAnswer";
+  import { UIEventSource } from "../../Logic/UIEventSource";
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-  import ToSvelte from "../Base/ToSvelte.svelte";
-  import { VariableUiElement } from "../Base/VariableUIElement.js";
   import type { SpecialVisualizationState } from "../SpecialVisualization";
-  import { onDestroy } from "svelte";
+  import TagRenderingAnswer from "../Popup/TagRenderingAnswer.svelte";
 
-  export let selectedElement: UIEventSource<Feature>;
-  export let layer: UIEventSource<LayerConfig>;
-  export let tags: Store<UIEventSource<Record<string, string>>>;
-  let _tags: UIEventSource<Record<string, string>>;
-  onDestroy(tags.subscribe(tags => {
-    _tags = tags;
-    return false
-  }));
+  export let selectedElement: Feature;
+  export let layer: LayerConfig;
+  export let tags: UIEventSource<Record<string, string>>;
 
-  export let specialVisState: SpecialVisualizationState;
+  export let state: SpecialVisualizationState;
 
   /**
    *        const title = new TagRenderingAnswer(
@@ -46,30 +38,27 @@
 </script>
 
 <div>
-  <div on:click={() =>selectedElement.setData(undefined)}>close</div>
   <div class="flex flex-col sm:flex-row flex-grow justify-between">
     <!-- Title element-->
-    <ToSvelte
-      construct={() => new VariableUiElement(tags.mapD(tags =>   new TagRenderingAnswer(tags, layer.data.title, specialVisState), [layer]))}></ToSvelte>
+    <h3>
+      <TagRenderingAnswer config={layer.title} {tags} {selectedElement}></TagRenderingAnswer>
+    </h3>
 
     <div class="flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2">
-
-      {#each $layer.titleIcons as titleIconConfig (titleIconConfig.id)}
+      {#each layer.titleIcons as titleIconConfig (titleIconConfig.id)}
         <div class="w-8 h-8">
-          <ToSvelte
-            construct={() => new VariableUiElement(tags.mapD(tags =>   new TagRenderingAnswer(tags, titleIconConfig, specialVisState)))}></ToSvelte>
+          <TagRenderingAnswer config={titleIconConfig} {tags} {selectedElement}></TagRenderingAnswer>
         </div>
-
       {/each}
     </div>
 
 
   </div>
 
-  <ul>
-
-    {#each Object.keys($_tags) as key}
-      <li><b>{key}</b>=<b>{$_tags[key]}</b></li>
+  <div class="flex flex-col">
+    {#each layer.tagRenderings as config (config.id)}
+      <TagRenderingAnswer {tags} {config} {state}></TagRenderingAnswer>
     {/each}
-  </ul>
+  </div>
+
 </div>

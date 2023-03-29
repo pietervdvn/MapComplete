@@ -10,7 +10,7 @@ import SelectedFeatureHandler from "../../../Logic/Actors/SelectedFeatureHandler
 import { ElementStorage } from "../../../Logic/ElementStorage"
 import { OsmTags } from "../../../Models/OsmFeature"
 import { Feature, Geometry } from "geojson"
-import { describe, expect, it } from "vitest"
+import { expect, it } from "vitest"
 
 const latestTags = {
     amenity: "public_bookcase",

@@ -1,5 +1,5 @@
 import { exec } from "child_process"
-import { writeFile, writeFileSync } from "fs"
+import { writeFileSync } from "fs"
 
 interface Contributor {
     /**

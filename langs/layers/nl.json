@@ -4657,18 +4657,6 @@
             }
         }
     },
-    "grass_in_parks": {
-        "description": "Dit zoekt naar alle toegankelijke grasvelden binnen publieke parken - dit zijn 'groenzones'",
-        "name": "Toegankelijke grasvelden in parken",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                }
-            },
-            "render": "Speelweide in een park"
-        }
-    },
     "hackerspace": {
         "description": "Hackerspace",
         "name": "Hackerspace",

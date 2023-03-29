@@ -3,7 +3,7 @@
   "description": {
     "en": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI"
   },
-  "source":"special:library",
+  "source": "special:library",
   "title": null,
   "tagRenderings": [
     {

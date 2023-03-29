@@ -1,5 +1,5 @@
 import { InputElement } from "./InputElement"
-import { Store, Stores, UIEventSource } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import Combine from "../Base/Combine"
 import Slider from "./Slider"
 import { ClickableToggle } from "./Toggle"

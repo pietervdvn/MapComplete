@@ -4750,9 +4750,6 @@
             }
         }
     },
-    "grass_in_parks": {
-        "description": "Searches for all accessible grass patches within public parks - these are 'groenzones'"
-    },
     "hackerspace": {
         "description": "Hackerspace",
         "name": "Hackerspace",

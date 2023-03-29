@@ -20,6 +20,7 @@
   import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@rgossiaux/svelte-headlessui";
   import Translations from "./i18n/Translations";
   import { MenuIcon } from "@rgossiaux/svelte-heroicons/solid";
+  import Tr from "./Base/Tr.svelte";
 
   export let layout: LayoutConfig;
   const state = new ThemeViewState(layout);
@@ -48,7 +49,7 @@
     <div class="flex mr-2 items-center">
       <img class="w-8 h-8 block mr-2" src={layout.icon}>
       <b>
-        {layout.title}
+        <Tr t={layout.title}></Tr>
       </b>
     </div>
   </MapControlButton>
@@ -58,9 +59,7 @@
 </div>
 
 <div class="absolute bottom-0 left-0 mb-4 ml-4">
-  <MapControlButton on:click={() => state.guistate.filterViewIsOpened.setData(true)}>
-    <ToSvelte class="w-7 h-7 block" construct={Svg.layers_ui}></ToSvelte>
-  </MapControlButton>
+
 </div>
 
 <div class="absolute bottom-0 right-0 mb-4 mr-4">
@@ -86,17 +85,6 @@
   </If>
 </div>
 
-<If condition={state.guistate.filterViewIsOpened}>
-  <div class="normal-background absolute bottom-0 left-0 flex flex-col">
-    <div on:click={() => state.guistate.filterViewIsOpened.setData(false)}>Close</div>
-    <!-- Filter panel -- TODO move to actual location-->
-    {#each layout.layers as layer}
-      <Filterview filteredLayer={state.layerState.filteredLayers.get(layer.id)}></Filterview>
-    {/each}
-
-    <RasterLayerPicker {availableLayers} value={mapproperties.rasterLayer}></RasterLayerPicker>
-  </div>
-</If>
 
 <If condition={state.guistate.welcomeMessageIsOpened}>
   <!-- Theme page -->
@@ -105,31 +93,47 @@
       <div on:click={() => state.guistate.welcomeMessageIsOpened.setData(false)}>Close</div>
       <TabGroup>
         <TabList>
-          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>About</Tab>
-          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>Tab 2</Tab>
+          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
+            <Tr t={layout.title}/>
+          </Tab>
+          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
+            <Tr t={Translations.t.general.menu.filter}/>
+          </Tab>
           <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>Tab 3</Tab>
         </TabList>
         <TabPanels>
           <TabPanel class="flex flex-col">
-            <ToSvelte construct={() => layout.description}></ToSvelte>
-            {Translations.t.general.welcomeExplanation.general}
+            <Tr t={layout.description}></Tr>
+            <Tr t={Translations.t.general.welcomeExplanation.general}/>
             {#if layout.layers.some((l) => l.presets?.length > 0)}
               <If condition={state.featureSwitches.featureSwitchAddNew}>
-                {Translations.t.general.welcomeExplanation.addNew}
+             <Tr t={Translations.t.general.welcomeExplanation.addNew}/>
               </If>
             {/if}
 
             <!--toTheMap,
             loginStatus.SetClass("block mt-6 pt-2 md:border-t-2 border-dotted border-gray-400"),
             -->
-            <ToSvelte construct= {() =>  layout.descriptionTail}></ToSvelte>
+            <Tr t={layout.descriptionTail}></Tr>
             <div class="m-x-8">
-            <button class="subtle-background rounded w-full p-4">Explore the map</button>
+              <button class="subtle-background rounded w-full p-4"
+                      on:click={() => state.guistate.welcomeMessageIsOpened.setData(false)}>
+                <Tr t={Translations.t.general.openTheMap} />
+              </button>
             </div>
-            
+
 
           </TabPanel>
-          <TabPanel>Content 2</TabPanel>
+          <TabPanel>
+            <div class="flex flex-col">
+              <!-- Filter panel -- TODO move to actual location-->
+              {#each layout.layers as layer}
+                <Filterview filteredLayer={state.layerState.filteredLayers.get(layer.id)}></Filterview>
+              {/each}
+
+              <RasterLayerPicker {availableLayers} value={mapproperties.rasterLayer}></RasterLayerPicker>
+            </div>
+          </TabPanel>
           <TabPanel>Content 3</TabPanel>
         </TabPanels>
       </TabGroup>
@@ -163,15 +167,14 @@
   </div>
 </If>
 
-<If condition={selectedElement}>
+{#if $selectedElement !== undefined && $selectedLayer !== undefined}
   <div class="absolute top-0 right-0 normal-background">
 
-    <SelectedElementView layer={selectedLayer} {selectedElement}
-                         tags={selectedElementTags}></SelectedElementView>
+    <SelectedElementView layer={$selectedLayer} selectedElement={$selectedElement}
+                         tags={$selectedElementTags} state={state}></SelectedElementView>
 
   </div>
-</If>
-
+{/if}
 <style>
     /* WARNING: This is just for demonstration.
         Using :global() in this way can be risky. */
