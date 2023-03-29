@@ -155,19 +155,19 @@
         "luminous_or_lit": {
             "mappings": {
                 "0": {
-                    "then": "Dieses Objekt strahlt Licht aus und wird von einer externen Lichtquelle beleuchtet"
+                    "then": "Das Objekt leuchtet selbst und wird von außen beleuchtet"
                 },
                 "1": {
-                    "then": "Dieses Objekt strahlt Licht aus"
+                    "then": "Das Objekt leuchtet selbst"
                 },
                 "2": {
-                    "then": "Dieses Objekt wird von außen beleuchtet, z. B. durch einen Scheinwerfer oder andere Lichter"
+                    "then": "Das Objekt wird von außen beleuchtet, z. B. durch Scheinwerfer oder andere Lichter"
                 },
                 "3": {
-                    "then": "Dieses Objekt strahlt kein Licht aus und wird nicht von außen beleuchtet"
+                    "then": "Das Objekt wird weder von außen beleuchtet, noch leuchtet es selbst"
                 }
             },
-            "question": "Ist dieses Objekt beleuchtet oder strahlt es Licht aus?"
+            "question": "Wird das Objekt beleuchtet oder leuchtet es selbst?"
         },
         "multilevels": {
             "override": {

@@ -1,6 +1,6 @@
 {
     "advertising": {
-        "description": "Haben Sie sich schon einmal gefragt, wie viele Werbeanlagen es in unseren Straßen und Wegen gibt? Mit dieser Karte können Sie Informationen über alle Werbeträger finden und hinzufügen, die Sie auf der Straße finden können",
+        "description": "Haben Sie sich schon einmal gefragt, wie viele Werbeanlagen es in unseren Straßen und Wegen gibt? Hier können Sie Informationen über alle Werbeeinrichtungen finden und hinzufügen, die Sie auf der Straße begegnen",
         "layers": {
             "0": {
                 "description": "Wir vervollständigen Daten von Werbeanlagen mit Referenz-, Betreiber- und Beleuchtungsdaten",
@@ -55,33 +55,33 @@
                     "Sides": {
                         "mappings": {
                             "0": {
-                                "then": "Dieses Objekt zeigt Werbung auf einer einzigen Seite"
+                                "then": "Werbung wird nur auf einer Seite angezeigt"
                             },
                             "1": {
-                                "then": "Dieses Objekt zeigt Werbung auf beiden Seiten"
+                                "then": "Werbung wird auf beiden Seiten angezeigt"
                             }
                         },
-                        "question": "Von wie vielen Seiten können Sie Werbung sehen?"
+                        "question": "Auf wie vielen Seiten wird Werbung angezeigt?"
                     },
                     "animated": {
                         "mappings": {
                             "0": {
-                                "then": "<b>Statisch</b>, zeigt immer die gleiche Werbung"
+                                "then": "<b>Statische Anzeige</b>, zeigt immer die gleiche Werbung"
                             },
                             "1": {
-                                "then": "Dieses Objekt hat eine eingebaute <b>Digitalanzeige</b> zur Anzeige von Preisen oder anderen Mitteilungen"
+                                "then": "<b>Digitale Anzeige</b>, zeigt Preise oder anderen Mitteilungen"
                             },
                             "2": {
-                                "then": "<b>Trivision</b> - die Werbetafel besteht aus vielen dreieckigen Prismen, die sich regelmäßig drehen"
+                                "then": "<b>Trivision Anzeige</b>, zeigt Werbung auf dreieckigen Prismen, die sich regelmäßig drehen"
                             },
                             "3": {
-                                "then": "<b>Rollierende</b> Poster"
+                                "then": "<b>Rollierende Anzeige</b>, zeigt abwechselnd durchlaufende Werbeplakate"
                             },
                             "4": {
-                                "then": "<b>Dreht sich</b> um sich selbst"
+                                "then": "<b>Drehende Anzeige</b>, die um die eigene Achse rotiert"
                             }
                         },
-                        "question": "Zeigt der Werbeträger abwechselnd mehrere Anzeigen?"
+                        "question": "Werden mehrere Werbungen abwechselnd angezeigt?"
                     },
                     "luminous_or_lit_advertising": {
                         "override": {
