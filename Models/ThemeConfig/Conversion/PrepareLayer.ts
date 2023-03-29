@@ -228,10 +228,13 @@ class ExpandTagRendering extends Conversion<
             let found: TagRenderingConfigJson = Utils.Clone(matchingTrs[i])
             if (this._options?.applyCondition) {
                 // The matched tagRenderings are 'stolen' from another layer. This means that they must match the layer condition before being shown
-                if (found.condition === undefined) {
-                    found.condition = layer.source.osmTags
-                } else {
-                    found.condition = { and: [found.condition, layer.source.osmTags] }
+
+                if (typeof layer.source !== "string") {
+                    if (found.condition === undefined) {
+                        found.condition = layer.source.osmTags
+                    } else {
+                        found.condition = { and: [found.condition, layer.source.osmTags] }
+                    }
                 }
             }
 

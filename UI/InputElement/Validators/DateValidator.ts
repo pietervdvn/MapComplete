@@ -1,4 +1,4 @@
-import { Validator } from "../ValidatedTextField"
+import { Validator } from "../Validator"
 
 export default class DateValidator extends Validator {
     constructor() {

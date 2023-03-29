@@ -1,5 +1,5 @@
-import { Validator } from "../ValidatedTextField"
 import { parsePhoneNumberFromString } from "libphonenumber-js"
+import { Validator } from "../Validator"
 
 export default class PhoneValidator extends Validator {
     constructor() {

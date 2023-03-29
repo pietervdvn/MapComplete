@@ -1,5 +1,5 @@
-import { Validator } from "../ValidatedTextField"
-import IntValidator from "./IntValidator";
+import IntValidator from "./IntValidator"
+import { Validator } from "../Validator"
 
 export default class DirectionValidator extends IntValidator {
     constructor() {
@@ -13,5 +13,4 @@ export default class DirectionValidator extends IntValidator {
         const n = Number(str) % 360
         return "" + n
     }
-
 }

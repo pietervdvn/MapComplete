@@ -17,9 +17,9 @@ import Constants from "../../Constants"
 import CreateNoteImportLayer from "./CreateNoteImportLayer"
 import LayerConfig from "../LayerConfig"
 import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
-import { SubstitutedTranslation } from "../../../UI/SubstitutedTranslation"
 import DependencyCalculator from "../DependencyCalculator"
 import { AddContextToTranslations } from "./AddContextToTranslations"
+import ValidationUtils from "./ValidationUtils"
 
 class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJson[]> {
     private readonly _state: DesugaringContext
@@ -322,31 +322,7 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
      * AddMiniMap.hasMinimap({render: "Some random value {minimap}"}) // => false
      */
     static hasMinimap(renderingConfig: TagRenderingConfigJson): boolean {
-        const translations: any[] = Utils.NoNull([
-            renderingConfig.render,
-            ...(renderingConfig.mappings ?? []).map((m) => m.then),
-        ])
-        for (let translation of translations) {
-            if (typeof translation == "string") {
-                translation = { "*": translation }
-            }
-
-            for (const key in translation) {
-                if (!translation.hasOwnProperty(key)) {
-                    continue
-                }
-
-                const template = translation[key]
-                const parts = SubstitutedTranslation.ExtractSpecialComponents(template)
-                const hasMiniMap = parts
-                    .filter((part) => part.special !== undefined)
-                    .some((special) => special.special.func.funcName === "minimap")
-                if (hasMiniMap) {
-                    return true
-                }
-            }
-        }
-        return false
+        return ValidationUtils.getSpecialVisualisations(renderingConfig).indexOf("minimap") >= 0
     }
 
     convert(layerConfig: LayerConfigJson, context: string): { result: LayerConfigJson } {

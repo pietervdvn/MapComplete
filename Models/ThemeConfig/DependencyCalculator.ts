@@ -1,8 +1,8 @@
-import { SubstitutedTranslation } from "../../UI/SubstitutedTranslation"
 import TagRenderingConfig from "./TagRenderingConfig"
 import { ExtraFuncParams, ExtraFunctions } from "../../Logic/ExtraFunctions"
 import LayerConfig from "./LayerConfig"
 import { SpecialVisualization } from "../../UI/SpecialVisualization"
+import SpecialVisualizations from "../../UI/SpecialVisualizations"
 
 export default class DependencyCalculator {
     public static GetTagRenderingDependencies(tr: TagRenderingConfig): string[] {
@@ -16,8 +16,9 @@ export default class DependencyCalculator {
 
         for (const part of parts) {
             const specialVizs: { func: SpecialVisualization; args: string[] }[] =
-                SubstitutedTranslation.ExtractSpecialComponents(part)
-                    .map((o) => o.special)
+                SpecialVisualizations.constructSpecification(part)
+                    .filter((p) => typeof p !== "string")
+                    .map((p) => <{ func: SpecialVisualization; args: string[] }>p)
                     .filter((o) => o?.func?.getLayerDependencies !== undefined)
             for (const specialViz of specialVizs) {
                 deps.push(...specialViz.func.getLayerDependencies(specialViz.args))

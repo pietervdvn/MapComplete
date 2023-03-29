@@ -1,6 +1,6 @@
 import { Translation } from "../../i18n/Translation"
 import Translations from "../../i18n/Translations"
-import { Validator } from "../ValidatedTextField"
+import { Validator } from "../Validator"
 
 export default class IntValidator extends Validator {
     constructor(name?: string, explanation?: string) {

@@ -1,47 +1,49 @@
-import BaseUIElement from "../BaseUIElement";
-import { SubtleButton } from "../Base/SubtleButton";
-import { UIEventSource } from "../../Logic/UIEventSource";
-import Combine from "../Base/Combine";
-import { VariableUiElement } from "../Base/VariableUIElement";
-import Translations from "../i18n/Translations";
-import Toggle from "../Input/Toggle";
-import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction";
-import Loading from "../Base/Loading";
-import { OsmConnection } from "../../Logic/Osm/OsmConnection";
-import Lazy from "../Base/Lazy";
-import ConfirmLocationOfPoint from "../NewPoint/ConfirmLocationOfPoint";
-import Img from "../Base/Img";
-import FilteredLayer from "../../Models/FilteredLayer";
-import { FixedUiElement } from "../Base/FixedUiElement";
-import Svg from "../../Svg";
-import { Utils } from "../../Utils";
-import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
-import CreateWayWithPointReuseAction, { MergePointConfig } from "../../Logic/Osm/Actions/CreateWayWithPointReuseAction";
-import OsmChangeAction, { OsmCreateAction } from "../../Logic/Osm/Actions/OsmChangeAction";
-import FeatureSource from "../../Logic/FeatureSource/FeatureSource";
-import { OsmObject, OsmWay } from "../../Logic/Osm/OsmObject";
-import { PresetInfo } from "../BigComponents/SimpleAddUI";
-import { TagUtils } from "../../Logic/Tags/TagUtils";
-import { And } from "../../Logic/Tags/And";
-import ReplaceGeometryAction from "../../Logic/Osm/Actions/ReplaceGeometryAction";
-import CreateMultiPolygonWithPointReuseAction from "../../Logic/Osm/Actions/CreateMultiPolygonWithPointReuseAction";
-import { Tag } from "../../Logic/Tags/Tag";
-import TagApplyButton from "./TagApplyButton";
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
-import conflation_json from "../../assets/layers/conflation/conflation.json";
-import { GeoOperations } from "../../Logic/GeoOperations";
-import { LoginToggle } from "./LoginButton";
-import { AutoAction } from "./AutoApplyButton";
-import Hash from "../../Logic/Web/Hash";
-import { PreciseInput } from "../../Models/ThemeConfig/PresetConfig";
-import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization";
-import Maproulette from "../../Logic/Maproulette";
-import { Feature, Point } from "geojson";
-import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson";
-import ShowDataLayer from "../Map/ShowDataLayer";
-import { MapLibreAdaptor } from "../Map/MapLibreAdaptor";
-import SvelteUIElement from "../Base/SvelteUIElement";
-import MaplibreMap from "../Map/MaplibreMap.svelte";
+import BaseUIElement from "../BaseUIElement"
+import { SubtleButton } from "../Base/SubtleButton"
+import { UIEventSource } from "../../Logic/UIEventSource"
+import Combine from "../Base/Combine"
+import { VariableUiElement } from "../Base/VariableUIElement"
+import Translations from "../i18n/Translations"
+import Toggle from "../Input/Toggle"
+import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction"
+import Loading from "../Base/Loading"
+import { OsmConnection } from "../../Logic/Osm/OsmConnection"
+import Lazy from "../Base/Lazy"
+import ConfirmLocationOfPoint from "../NewPoint/ConfirmLocationOfPoint"
+import Img from "../Base/Img"
+import FilteredLayer from "../../Models/FilteredLayer"
+import { FixedUiElement } from "../Base/FixedUiElement"
+import Svg from "../../Svg"
+import { Utils } from "../../Utils"
+import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
+import CreateWayWithPointReuseAction, {
+    MergePointConfig,
+} from "../../Logic/Osm/Actions/CreateWayWithPointReuseAction"
+import OsmChangeAction, { OsmCreateAction } from "../../Logic/Osm/Actions/OsmChangeAction"
+import FeatureSource from "../../Logic/FeatureSource/FeatureSource"
+import { OsmObject, OsmWay } from "../../Logic/Osm/OsmObject"
+import { PresetInfo } from "../BigComponents/SimpleAddUI"
+import { TagUtils } from "../../Logic/Tags/TagUtils"
+import { And } from "../../Logic/Tags/And"
+import ReplaceGeometryAction from "../../Logic/Osm/Actions/ReplaceGeometryAction"
+import CreateMultiPolygonWithPointReuseAction from "../../Logic/Osm/Actions/CreateMultiPolygonWithPointReuseAction"
+import { Tag } from "../../Logic/Tags/Tag"
+import TagApplyButton from "./TagApplyButton"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import conflation_json from "../../assets/layers/conflation/conflation.json"
+import { GeoOperations } from "../../Logic/GeoOperations"
+import { LoginToggle } from "./LoginButton"
+import { AutoAction } from "./AutoApplyButton"
+import Hash from "../../Logic/Web/Hash"
+import { PreciseInput } from "../../Models/ThemeConfig/PresetConfig"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import Maproulette from "../../Logic/Maproulette"
+import { Feature, Point } from "geojson"
+import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
+import ShowDataLayer from "../Map/ShowDataLayer"
+import { MapLibreAdaptor } from "../Map/MapLibreAdaptor"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import MaplibreMap from "../Map/MaplibreMap.svelte"
 
 /**
  * A helper class for the various import-flows.
@@ -377,13 +379,6 @@ export class ConflateButton extends AbstractImportButton {
         )
     }
 
-    getLayerDependencies(argsRaw: string[]): string[] {
-        const deps = super.getLayerDependencies(argsRaw)
-        // Force 'type_node' as dependency
-        deps.push("type_node")
-        return deps
-    }
-
     constructElement(
         state: SpecialVisualizationState,
         args: {
@@ -543,12 +538,6 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
         return type === "LineString" || type === "Polygon"
     }
 
-    getLayerDependencies(argsRaw: string[]): string[] {
-        const deps = super.getLayerDependencies(argsRaw)
-        deps.push("type_node")
-        return deps
-    }
-
     constructElement(
         state: SpecialVisualizationState,
         args,
@@ -565,7 +554,7 @@ export class ImportWayButton extends AbstractImportButton implements AutoAction 
 
         // Upload the way to OSM
         const mergeConfigs = this.GetMergeConfig(args)
-        let action: OsmCreateAction & {getPreview?: any} = ImportWayButton.CreateAction(
+        let action: OsmCreateAction & { getPreview?: any } = ImportWayButton.CreateAction(
             feature,
             args,
             state,
@@ -751,7 +740,7 @@ export class ImportPointButton extends AbstractImportButton {
             boundsFactor: 3,
         }
 
-        const [lon, lat] = <[number,number]> feature.geometry.coordinates
+        const [lon, lat] = <[number, number]>feature.geometry.coordinates
         return new ConfirmLocationOfPoint(
             state,
             state.guistate.filterViewIsOpened,

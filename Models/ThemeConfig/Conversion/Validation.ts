@@ -15,7 +15,8 @@ import Svg from "../../../Svg"
 import FilterConfigJson from "../Json/FilterConfigJson"
 import DeleteConfig from "../DeleteConfig"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
-import ValidatedTextField from "../../../UI/Input/ValidatedTextField"
+import Validators from "../../../UI/InputElement/Validators"
+import xml2js from "xml2js"
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
     private readonly _languages: string[]
@@ -619,36 +620,16 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     ': detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
             )
         }
-        if (json["question"] && !this._options?.noQuestionHintCheck) {
-            const question = Translations.T(
-                new TypedTranslation(json["question"]),
-                context + ".question"
-            )
-            for (const lng of question.SupportedLanguages()) {
-                const html = document.createElement("p")
-                html.innerHTML = question.textFor(lng)
-                const divs = Array.from(html.getElementsByTagName("div"))
-                const spans = Array.from(html.getElementsByTagName("span"))
-                const brs = Array.from(html.getElementsByTagName("br"))
-                const subtles = Array.from(html.getElementsByClassName("subtle"))
-                if (divs.length + spans.length + brs.length + subtles.length > 0) {
-                    warnings.push(
-                        `At ${context}: the question for ${lng} contains a div, a span, a br or an element with class 'subtle'. Please, use a \`questionHint\` instead.
-    The question is: ${question.textFor(lng)}`
-                    )
-                }
-            }
-        }
         const freeformType = json["freeform"]?.["type"]
         if (freeformType) {
-            if (ValidatedTextField.AvailableTypes().indexOf(freeformType) < 0) {
+            if (Validators.AvailableTypes().indexOf(freeformType) < 0) {
                 throw (
                     "At " +
                     context +
                     ".freeform.type is an unknown type: " +
                     freeformType +
                     "; try one of " +
-                    ValidatedTextField.AvailableTypes().join(", ")
+                    Validators.AvailableTypes().join(", ")
                 )
             }
         }
@@ -942,13 +923,12 @@ export class ValidateFilter extends DesugaringStep<FilterConfigJson> {
             for (let i = 0; i < option.fields.length; i++) {
                 const field = option.fields[i]
                 const type = field.type ?? "string"
-                if (!ValidatedTextField.ForType(type) !== undefined) {
-                    continue
+                if (Validators.AvailableTypes().find((t) => t === type) === undefined) {
+                    const err = `Invalid filter: ${type} is not a valid textfield type (at ${context}.fields[${i}])\n\tTry one of ${Array.from(
+                        Validators.AvailableTypes()
+                    ).join(",")}`
+                    errors.push(err)
                 }
-                const err = `Invalid filter: ${type} is not a valid validated textfield type (at ${context}.fields[${i}])\n\tTry one of ${Array.from(
-                    ValidatedTextField.AvailableTypes()
-                ).join(",")}`
-                errors.push(err)
             }
         }
         return { result: filter, errors }

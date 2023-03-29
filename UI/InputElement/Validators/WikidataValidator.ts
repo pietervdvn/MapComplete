@@ -6,7 +6,7 @@ import { UIEventSource } from "../../../Logic/UIEventSource"
 import Locale from "../../i18n/Locale"
 import { Utils } from "../../../Utils"
 import WikidataSearchBox from "../../Wikipedia/WikidataSearchBox"
-import { Validator } from "../ValidatedTextField"
+import { Validator } from "../Validator"
 
 export default class WikidataValidator extends Validator {
     constructor() {

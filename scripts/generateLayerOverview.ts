@@ -4,7 +4,6 @@ import licenses from "../assets/generated/license_info.json"
 import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
 import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 import Constants from "../Models/Constants"
-import * as fakedom from "fake-dom"
 import {
     DetectDuplicateFilters,
     DoesImageExist,
@@ -226,9 +225,6 @@ class LayerOverviewUtils {
     }
 
     main(args: string[]) {
-        if (fakedom === undefined) {
-            throw "Fakedom not initialized"
-        }
         const forceReload = args.some((a) => a == "--force")
 
         const licensePaths = new Set<string>()
@@ -339,7 +335,7 @@ class LayerOverviewUtils {
             const context = "While building builtin layer " + sharedLayerPath
             const fixed = prepLayer.convertStrict(parsed, context)
 
-            if (fixed.source.osmTags["and"] === undefined) {
+            if (typeof fixed.source !== "string" && fixed.source.osmTags["and"] === undefined) {
                 fixed.source.osmTags = { and: [fixed.source.osmTags] }
             }
 

@@ -1,7 +1,7 @@
-import { Validator } from "../ValidatedTextField"
 import Combine from "../../Base/Combine"
 import Title from "../../Base/Title"
 import Table from "../../Base/Table"
+import { Validator } from "../Validator"
 
 export default class OpeningHoursValidator extends Validator {
     constructor() {

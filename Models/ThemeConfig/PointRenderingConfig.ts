@@ -89,9 +89,6 @@ export default class PointRenderingConfig extends WithContextLoader {
         this.iconSize = this.tr("iconSize", "40,40,center")
         this.label = this.tr("label", undefined)
         this.rotation = this.tr("rotation", "0")
-        if (json.pitchAlignment) {
-            console.log("Got a pitch alignment!", json.pitchAlignment)
-        }
         this.pitchAlignment = this.tr("pitchAlignment", "canvas")
         this.rotationAlignment = this.tr(
             "rotationAlignment",
