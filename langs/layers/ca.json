@@ -796,10 +796,10 @@
             "bike_cafe-bike-pump": {
                 "mappings": {
                     "0": {
-                        "then": "Aquest cafè ciclista ofereix una bomba de bicicletes per a qualsevol persona"
+                        "then": "Aquest cafè ciclista ofereix una bomba per a bicicletes per a qualsevol persona"
                     },
                     "1": {
-                        "then": "Aquest cafè ciclista no ofereix una bomba de bicicletes per a qualsevol persona"
+                        "then": "Aquest cafè ciclista no ofereix una bomba per a bicicletes per a qualsevol persona"
                     }
                 },
                 "question": "Aquest cafè ciclista ofereix una bomba de bicicletes per a qualsevol persona?"
@@ -2018,6 +2018,30 @@
                     }
                 }
             },
+            "cycleway-traffic-signs-supplementary": {
+                "mappings": {
+                    "3": {
+                        "then": "Els ciclomotors no estan permesos"
+                    }
+                }
+            },
+            "cycleways_and_roads-cycleway:buffer": {
+                "question": "Quina és la distància entre el carril bici i la carretera?"
+            },
+            "is lit?": {
+                "mappings": {
+                    "1": {
+                        "then": "Aquesta carretera no està il·luminada"
+                    },
+                    "2": {
+                        "then": "Aquesta carretera està il·luminada per la nit"
+                    },
+                    "3": {
+                        "then": "Aquesta carretera està il·luminada 24/7"
+                    }
+                },
+                "question": "Aquesta carretera està il·luminada?"
+            },
             "width:carriageway": {
                 "questionHint": "Això es mesura de vorera a vorera i, per tant, inclou l'amplada dels aparcaments en línia"
             }
@@ -2050,10 +2074,14 @@
         }
     },
     "defibrillator": {
+        "description": "Una capa que mostra desfibril·ladors que es poden utilitzar en cas d'emergència. Conté desfibril·ladors públics, però també desfibril·ladors que poden necessitar de personal per agafar el dispositiu",
         "name": "Desfibril·ladors",
         "presets": {
             "0": {
                 "title": "un desfibril·lador"
+            },
+            "1": {
+                "title": "un desfibril·lador muntat en la paret"
             }
         },
         "tagRenderings": {
@@ -2078,15 +2106,41 @@
                 "question": "Està el desfibril·lador accessible lliurement?",
                 "render": "L'accés és {access}"
             },
+            "defibrillator-defibrillator": {
+                "mappings": {
+                    "0": {
+                        "then": "No hi ha informació sobre el tipus de dispositiu"
+                    },
+                    "1": {
+                        "then": "Aquest és un desfibril·lador manual per a professionals"
+                    },
+                    "2": {
+                        "then": "Aquest és un desfibril·lador automàtic normal"
+                    },
+                    "3": {
+                        "then": "Aquest és un tipus especial de desfibril·lador: {defibrillator}"
+                    }
+                },
+                "question": "És un desfibril·lador automàtic normal o un desfibril·lador manual només per a professionals?"
+            },
             "defibrillator-defibrillator:location": {
                 "question": "Dóna detalls d'on es pot trobar el desfibril·lador",
                 "render": "<i>Informació extra sobre la localització (en la llengua local):</i><br/> {defibrillator:location}"
             },
             "defibrillator-defibrillator:location:en": {
-                "question": "Dóna detalls d'on es pot trobar el desfibril·lador"
+                "question": "Dóna detalls d'on es pot trobar el desfibril·lador",
+                "render": "<i>Informació addicional sobre la ubicació (en anglès):</i><br/>{defibrillator:location:en}"
             },
             "defibrillator-defibrillator:location:fr": {
-                "question": "Dóna detalls d'on es pot trobar el desfibril·lador (en francés)"
+                "question": "Dóna detalls d'on es pot trobar el desfibril·lador (en francés)",
+                "render": "<i>Informació addicional sobre la ubicació (en francès):</i><br/>{defibrillator:location:fr}"
+            },
+            "defibrillator-description": {
+                "question": "Hi ha informació útil per als usuaris que no hagis pogut descriure més amunt? (deixeu en blanc si no)",
+                "render": "Informació addicional: {description}"
+            },
+            "defibrillator-email": {
+                "question": "Quin és el correu electrònic on preguntar sobre aquest desfibril·lador?"
             },
             "defibrillator-indoors": {
                 "mappings": {
@@ -2125,8 +2179,10 @@
         }
     },
     "dentist": {
+        "name": "Dentista",
         "tagRenderings": {
             "name": {
+                "question": "Com s'anomena aquest dentista?",
                 "render": "El dentista s'anomena {name}"
             }
         }
@@ -2139,6 +2195,29 @@
         "tagRenderings": {
             "name": {
                 "question": "Com es diu aquesta consulta mèdica?"
+            }
+        }
+    },
+    "dogpark": {
+        "presets": {
+            "0": {
+                "title": "un parc per a gossos"
+            }
+        },
+        "tagRenderings": {
+            "Name": {
+                "question": "Com s'anomena aquest parc per a gossos?",
+                "render": "Aquest parc per a gossos s'anomena {name}"
+            },
+            "dogarea": {
+                "render": "Aquest parc per a gossos té {_surface:ha} ha"
+            },
+            "dogpark-fenced": {
+                "mappings": {
+                    "0": {
+                        "then": ""
+                    }
+                }
             }
         }
     },
@@ -2172,7 +2251,12 @@
         }
     },
     "elevator": {
-        "name": "Ascensor"
+        "name": "Ascensor",
+        "presets": {
+            "0": {
+                "title": "un ascensor"
+            }
+        }
     },
     "entrance": {
         "description": "Una capa que mostra entrades i ofereix la possibilitat de sondejar algunes dades avançades que són importants per a, per exemple, usuaris de cadires de rodes (però també ciclistes, repartidors, …)",
@@ -2311,6 +2395,54 @@
             }
         },
         "tagRenderings": {
+            "Cuisine": {
+                "mappings": {
+                    "0": {
+                        "then": "Això és una pizzeria"
+                    },
+                    "1": {
+                        "then": "Això és una fregiduria"
+                    },
+                    "10": {
+                        "then": "Aquí es serveixen plats xinesos"
+                    },
+                    "11": {
+                        "then": "Aquí es serveixen plats grecs"
+                    },
+                    "12": {
+                        "then": "Aquí es serveixen plats indis"
+                    },
+                    "13": {
+                        "then": "Aquí es serveixen plats turcs"
+                    },
+                    "14": {
+                        "then": "Aquí es serveixen plats tailandesos"
+                    },
+                    "2": {
+                        "then": "Principalment serveix pasta"
+                    },
+                    "4": {
+                        "then": "Això és un sandvitxeria"
+                    },
+                    "5": {
+                        "then": "Aquí es serveixen hamburgueses"
+                    },
+                    "6": {
+                        "then": "Aquí es serveix sushi"
+                    },
+                    "7": {
+                        "then": "Aquí es serveix cafè"
+                    },
+                    "8": {
+                        "then": "Això és un restaurant italià (que serveix més que pasta i pizza)"
+                    },
+                    "9": {
+                        "then": "Aquí es serveixen plats francesos"
+                    }
+                },
+                "question": "Quin menjar es serveix aquí?",
+                "render": "Aquest lloc serveix principalment {cuisine}"
+            },
             "Fastfood vs restaurant": {
                 "mappings": {
                     "0": {
@@ -2324,8 +2456,33 @@
             "Name": {
                 "render": "El nom d'aquest negoci és {name}"
             },
+            "Reservation": {
+                "mappings": {
+                    "0": {
+                        "then": "En aquest lloc cal reservar"
+                    },
+                    "1": {
+                        "then": "No cal fer reserva, però tot i així es recomana per assegurar-vos que teniu taula"
+                    },
+                    "2": {
+                        "then": "És possible reservar en aquest lloc"
+                    },
+                    "3": {
+                        "then": "En aquest lloc no es pot reservar"
+                    }
+                },
+                "question": "És necessari reservar en aquest lloc?"
+            },
             "Takeaway": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest és un negoci només per emportar"
+                    }
+                },
                 "question": "Aquest lloc ofereix per a emportar?"
+            },
+            "delivery": {
+                "question": "{title()} lliura el seu menjar a casa?"
             },
             "friture-oil": {
                 "mappings": {
@@ -2601,7 +2758,18 @@
         "name": "Mapes",
         "presets": {
             "0": {
+                "description": "Afegeix un mapa que falta",
                 "title": "un mapa"
+            }
+        },
+        "tagRenderings": {
+            "map-map_source": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest mapa està basat en OpenStreetMap"
+                    }
+                },
+                "question": "En quines dades es basa aquest mapa?"
             }
         },
         "title": {
@@ -2692,6 +2860,34 @@
     },
     "observation_tower": {
         "name": "Torres d'observació",
+        "tagRenderings": {
+            "Height": {
+                "question": "Quina és l'alçada d'aquesta torre?"
+            },
+            "Operator": {
+                "question": "Qui manté aquesta torre?"
+            },
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta torre és d'accés públic"
+                    },
+                    "1": {
+                        "then": "Aquesta torre només es pot visitar amb un guia"
+                    }
+                },
+                "question": "Es pot visitar aquesta torre?"
+            },
+            "name": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta torre no té un nom concret"
+                    }
+                },
+                "question": "Com s'anomena aquesta torre?",
+                "render": "Aquesta torre s'anomena <b>{name}</b>"
+            }
+        },
         "title": {
             "mappings": {
                 "0": {
@@ -3047,7 +3243,7 @@
             "2": {
                 "options": {
                     "0": {
-                        "question": "Només accés públic"
+                        "question": "Només amb accés públic"
                     }
                 }
             }
