@@ -363,6 +363,7 @@ ${Utils.special_visualizations_importRequirementDocs}
 }
 
 export class ConflateButton extends AbstractImportButton {
+    needsNodeDatabase = true
     constructor() {
         super(
             "conflate_button",
@@ -441,6 +442,8 @@ export class ConflateButton extends AbstractImportButton {
 
 export class ImportWayButton extends AbstractImportButton implements AutoAction {
     public readonly supportsAutoAction = true
+
+    needsNodeDatabase = true
 
     constructor() {
         super(

@@ -43,7 +43,6 @@ export interface Mapping {
  */
 export default class TagRenderingConfig {
     public readonly id: string
-    public readonly group: string
     public readonly render?: TypedTranslation<object>
     public readonly question?: TypedTranslation<object>
     public readonly questionhint?: TypedTranslation<object>
@@ -77,7 +76,6 @@ export default class TagRenderingConfig {
             this.question = null
             this.condition = null
             this.id = "questions"
-            this.group = ""
             return
         }
 
@@ -115,7 +113,6 @@ export default class TagRenderingConfig {
             )
         }
 
-        this.group = json.group ?? ""
         this.labels = json.labels ?? []
         this.render = Translations.T(json.render, translationKey + ".render")
         this.question = Translations.T(json.question, translationKey + ".question")
@@ -684,13 +681,6 @@ export default class TagRenderingConfig {
             ])
         }
 
-        let group: BaseUIElement = undefined
-        if (this.group !== undefined && this.group !== "") {
-            group = new Combine([
-                "This tagrendering is part of group ",
-                new FixedUiElement(this.group).SetClass("code"),
-            ])
-        }
         let labels: BaseUIElement = undefined
         if (this.labels?.length > 0) {
             labels = new Combine([
@@ -713,7 +703,6 @@ export default class TagRenderingConfig {
             new Combine(withRender),
             mappings,
             condition,
-            group,
             labels,
         ]).SetClass("flex flex-col")
     }

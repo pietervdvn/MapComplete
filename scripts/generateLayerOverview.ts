@@ -233,6 +233,18 @@ class LayerOverviewUtils {
         }
         const doesImageExist = new DoesImageExist(licensePaths, existsSync)
         const sharedLayers = this.buildLayerIndex(doesImageExist, forceReload)
+
+        const priviliged = new Set<string>(Constants.priviliged_layers)
+        sharedLayers.forEach((_, key) => {
+            priviliged.delete(key)
+        })
+        if (priviliged.size > 0) {
+            throw (
+                "Priviliged layer " +
+                Array.from(priviliged).join(", ") +
+                " has no definition file, create it at `assets/layers/<layername>/<layername.json>"
+            )
+        }
         const recompiledThemes: string[] = []
         const sharedThemes = this.buildThemeIndex(
             licensePaths,

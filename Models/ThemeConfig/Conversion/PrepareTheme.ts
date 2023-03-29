@@ -322,7 +322,9 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
      * AddMiniMap.hasMinimap({render: "Some random value {minimap}"}) // => false
      */
     static hasMinimap(renderingConfig: TagRenderingConfigJson): boolean {
-        return ValidationUtils.getSpecialVisualisations(renderingConfig).indexOf("minimap") >= 0
+        return ValidationUtils.getSpecialVisualisations(renderingConfig).some(
+            (vis) => vis.funcName === "minimap"
+        )
     }
 
     convert(layerConfig: LayerConfigJson, context: string): { result: LayerConfigJson } {
@@ -344,7 +346,7 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
     }
 }
 
-class AddContextToTransltionsInLayout extends DesugaringStep<LayoutConfigJson> {
+class AddContextToTranslationsInLayout extends DesugaringStep<LayoutConfigJson> {
     constructor() {
         super(
             "Adds context to translations, including the prefix 'themes:json.id'; this is to make sure terms in an 'overrides' or inline layer are linkable too",
@@ -644,7 +646,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
         super(
             "Fully prepares and expands a theme",
 
-            new AddContextToTransltionsInLayout(),
+            new AddContextToTranslationsInLayout(),
             new PreparePersonalTheme(state),
             new WarnForUnsubstitutedLayersInTheme(),
             new On("layers", new Concat(new SubstituteLayer(state))),
@@ -662,5 +664,29 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
             new AddImportLayers(),
             new On("layers", new Each(new AddMiniMap(state)))
         )
+    }
+
+    convert(
+        json: LayoutConfigJson,
+        context: string
+    ): { result: LayoutConfigJson; errors: string[]; warnings: string[]; information: string[] } {
+        const result = super.convert(json, context)
+
+        const needsNodeDatabase = result.result.layers?.some((l: LayerConfigJson) =>
+            l.tagRenderings?.some((tr: TagRenderingConfigJson) =>
+                ValidationUtils.getSpecialVisualisations(tr)?.some(
+                    (special) => special.needsNodeDatabase
+                )
+            )
+        )
+        if (needsNodeDatabase) {
+            result.information.push(
+                context +
+                    ": setting 'enableNodeDatabase' as this theme uses a special visualisation which needs to keep track of _all_ nodes"
+            )
+            result.result.enableNodeDatabase = true
+        }
+
+        return result
     }
 }

@@ -297,4 +297,12 @@ export interface LayoutConfigJson {
      * Set a different timeout for overpass queries - in seconds. Default: 30s
      */
     overpassTimeout?: number
+
+    /**
+     * Enables tracking of all nodes when data is loaded.
+     * This is useful for the 'ImportWay' and 'ConflateWay'-buttons who need this database.
+     *
+     * Note: this flag will be automatically set.
+     */
+    enableNodeDatabase?: boolean
 }

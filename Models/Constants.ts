@@ -42,6 +42,8 @@ export default class Constants {
         "split_point",
         "current_view",
         "matchpoint",
+        "import_candidate",
+        "usersettings",
     ] as const
     /**
      * Layer IDs of layers which have special properties through built-in hooks

@@ -51,13 +51,23 @@ export interface SpecialVisualizationState {
 }
 
 export interface SpecialVisualization {
-    funcName: string
-    docs: string | BaseUIElement
-    example?: string
+    readonly funcName: string
+    readonly docs: string | BaseUIElement
+    readonly example?: string
+
+    /**
+     * Indicates that this special visualsiation will make requests to the 'alLNodesDatabase' and that it thus should be included
+     */
+    readonly needsNodeDatabase?: boolean
+    readonly args: {
+        name: string
+        defaultValue?: string
+        doc: string
+        required?: false | boolean
+    }[]
+    readonly getLayerDependencies?: (argument: string[]) => string[]
 
     structuredExamples?(): { feature: Feature<Geometry, Record<string, string>>; args: string[] }[]
-    args: { name: string; defaultValue?: string; doc: string; required?: false | boolean }[]
-    getLayerDependencies?: (argument: string[]) => string[]
 
     constr(
         state: SpecialVisualizationState,

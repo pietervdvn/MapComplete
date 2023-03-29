@@ -620,6 +620,15 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     ': detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
             )
         }
+        if (json.group) {
+            errors.push(
+                "At " +
+                    context +
+                    ': groups are deprecated, use `"label": ["' +
+                    json.group +
+                    '"]` instead'
+            )
+        }
         const freeformType = json["freeform"]?.["type"]
         if (freeformType) {
             if (Validators.AvailableTypes().indexOf(freeformType) < 0) {
@@ -685,6 +694,17 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             return {
                 result: null,
                 errors,
+            }
+        }
+
+        if (json.source === "special") {
+            if (!Constants.priviliged_layers.find((x) => x == json.id)) {
+                errors.push(
+                    context +
+                        ": layer " +
+                        json.id +
+                        " uses 'special' as source.osmTags. However, this layer is not a priviliged layer"
+                )
             }
         }
 

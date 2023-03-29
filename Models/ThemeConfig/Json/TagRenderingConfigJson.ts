@@ -14,12 +14,6 @@ export interface TagRenderingConfigJson {
     id?: string
 
     /**
-     * If 'group' is defined on many tagRenderings, these are grouped together when shown. The questions are grouped together as well.
-     * The first tagRendering of a group will always be a sticky element.
-     */
-    group?: string
-
-    /**
      * A list of labels. These are strings that are used for various purposes, e.g. to filter them away
      */
     labels?: string[]
