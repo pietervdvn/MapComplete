@@ -263,7 +263,11 @@ export abstract class Store<T> implements Readable<T> {
     public subscribe(run: Subscriber<T> & ((value: T) => void), invalidate?): Unsubscriber {
         // We don't need to do anything with 'invalidate', see
         // https://github.com/sveltejs/svelte/issues/3859
-        return this.addCallbackAndRun(run)
+
+        // Note: run is wrapped in an anonymous function. 'Run' returns the value. If this value happens to be true, it would unsubscribe
+        return this.addCallbackAndRun((v) => {
+            run(v)
+        })
     }
 }
 

@@ -1,6 +1,7 @@
 import { Store, UIEventSource } from "../../UIEventSource"
 import FeatureSource, { IndexedFeatureSource } from "../FeatureSource"
 import { Feature } from "geojson"
+import { Utils } from "../../../Utils"
 
 /**
  *
@@ -35,20 +36,21 @@ export default class FeatureSourceMerger implements IndexedFeatureSource {
     }
 
     protected addData(featuress: Feature[][]) {
+        featuress = Utils.NoNull(featuress)
         let somethingChanged = false
         const all: Map<string, Feature> = new Map()
+        const unseen = new Set<string>()
         // We seed the dictionary with the previously loaded features
         const oldValues = this.features.data ?? []
         for (const oldValue of oldValues) {
             all.set(oldValue.properties.id, oldValue)
+            unseen.add(oldValue.properties.id)
         }
 
         for (const features of featuress) {
-            if (features === undefined) {
-                continue
-            }
             for (const f of features) {
                 const id = f.properties.id
+                unseen.delete(id)
                 if (!all.has(id)) {
                     // This is a new feature
                     somethingChanged = true
@@ -66,6 +68,9 @@ export default class FeatureSourceMerger implements IndexedFeatureSource {
                 somethingChanged = true
             }
         }
+
+        somethingChanged ||= unseen.size > 0
+        unseen.forEach((id) => all.delete(id))
 
         if (!somethingChanged) {
             // We don't bother triggering an update

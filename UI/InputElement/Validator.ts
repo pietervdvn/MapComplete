@@ -17,10 +17,17 @@ export abstract class Validator {
      * What HTML-inputmode to use
      */
     public readonly inputmode?: string
+    public readonly textArea: boolean
 
-    constructor(name: string, explanation: string | BaseUIElement, inputmode?: string) {
+    constructor(
+        name: string,
+        explanation: string | BaseUIElement,
+        inputmode?: string,
+        textArea?: false | boolean
+    ) {
         this.name = name
         this.inputmode = inputmode
+        this.textArea = textArea ?? false
         if (this.name.endsWith("textfield")) {
             this.name = this.name.substr(0, this.name.length - "TextField".length)
         }
@@ -46,7 +53,7 @@ export abstract class Validator {
         }
     }
 
-    public isValid(string: string, requestCountry: () => string): boolean {
+    public isValid(string: string, requestCountry?: () => string): boolean {
         return true
     }
 

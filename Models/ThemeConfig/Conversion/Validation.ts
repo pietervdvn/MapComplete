@@ -3,7 +3,7 @@ import { LayerConfigJson } from "../Json/LayerConfigJson"
 import LayerConfig from "../LayerConfig"
 import { Utils } from "../../../Utils"
 import Constants from "../../Constants"
-import { Translation, TypedTranslation } from "../../../UI/i18n/Translation"
+import { Translation } from "../../../UI/i18n/Translation"
 import { LayoutConfigJson } from "../Json/LayoutConfigJson"
 import LayoutConfig from "../LayoutConfig"
 import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
@@ -16,7 +16,6 @@ import FilterConfigJson from "../Json/FilterConfigJson"
 import DeleteConfig from "../DeleteConfig"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 import Validators from "../../../UI/InputElement/Validators"
-import xml2js from "xml2js"
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
     private readonly _languages: string[]
@@ -631,14 +630,14 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
         }
         const freeformType = json["freeform"]?.["type"]
         if (freeformType) {
-            if (Validators.AvailableTypes().indexOf(freeformType) < 0) {
+            if (Validators.availableTypes.indexOf(freeformType) < 0) {
                 throw (
                     "At " +
                     context +
                     ".freeform.type is an unknown type: " +
                     freeformType +
                     "; try one of " +
-                    Validators.AvailableTypes().join(", ")
+                    Validators.availableTypes.join(", ")
                 )
             }
         }
@@ -943,9 +942,9 @@ export class ValidateFilter extends DesugaringStep<FilterConfigJson> {
             for (let i = 0; i < option.fields.length; i++) {
                 const field = option.fields[i]
                 const type = field.type ?? "string"
-                if (Validators.AvailableTypes().find((t) => t === type) === undefined) {
+                if (Validators.availableTypes.find((t) => t === type) === undefined) {
                     const err = `Invalid filter: ${type} is not a valid textfield type (at ${context}.fields[${i}])\n\tTry one of ${Array.from(
-                        Validators.AvailableTypes()
+                        Validators.availableTypes
                     ).join(",")}`
                     errors.push(err)
                 }

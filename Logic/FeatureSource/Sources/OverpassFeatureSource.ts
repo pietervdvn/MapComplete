@@ -3,7 +3,6 @@ import FeatureSource from "../FeatureSource"
 import { ImmutableStore, Store, UIEventSource } from "../../UIEventSource"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
 import { Or } from "../../Tags/Or"
-import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
 import { Overpass } from "../../Osm/Overpass"
 import { Utils } from "../../../Utils"
 import { TagsFilter } from "../../Tags/TagsFilter"
@@ -26,7 +25,8 @@ export default class OverpassFeatureSource implements FeatureSource {
 
     private readonly state: {
         readonly zoom: Store<number>
-        readonly layoutToUse: LayoutConfig
+        readonly layers: LayerConfig[]
+        readonly widenFactor: number
         readonly overpassUrl: Store<string[]>
         readonly overpassTimeout: Store<number>
         readonly bounds: Store<BBox>
@@ -37,7 +37,8 @@ export default class OverpassFeatureSource implements FeatureSource {
 
     constructor(
         state: {
-            readonly layoutToUse: LayoutConfig
+            readonly layers: LayerConfig[]
+            readonly widenFactor: number
             readonly zoom: Store<number>
             readonly overpassUrl: Store<string[]>
             readonly overpassTimeout: Store<number>
@@ -117,7 +118,7 @@ export default class OverpassFeatureSource implements FeatureSource {
         let lastUsed = 0
 
         const layersToDownload = []
-        for (const layer of this.state.layoutToUse.layers) {
+        for (const layer of this.state.layers) {
             if (typeof layer === "string") {
                 throw "A layer was not expanded!"
             }
@@ -128,6 +129,14 @@ export default class OverpassFeatureSource implements FeatureSource {
                 continue
             }
             if (layer.doNotDownload) {
+                continue
+            }
+            if (layer.source === null) {
+                // This is a special layer. Should not have been here
+                console.warn(
+                    "OverpassFeatureSource received a layer for which the source is null:",
+                    layer.id
+                )
                 continue
             }
             if (layer.source.geojsonSource !== undefined) {
@@ -151,7 +160,7 @@ export default class OverpassFeatureSource implements FeatureSource {
         do {
             try {
                 bounds = this.state.bounds.data
-                    ?.pad(this.state.layoutToUse.widenFactor)
+                    ?.pad(this.state.widenFactor)
                     ?.expandToTileBounds(this.padToZoomLevel?.data)
 
                 if (bounds === undefined) {
@@ -195,6 +204,7 @@ export default class OverpassFeatureSource implements FeatureSource {
             // Some metatags are delivered by overpass _without_ underscore-prefix; we fix them below
             // TODO FIXME re-enable this data.features.forEach((f) => SimpleMetaTaggers.objectMetaInfo.applyMetaTagsOnFeature(f))
 
+            console.log("Overpass returned", data.features.length, "features")
             self.features.setData(data.features)
             return [bounds, date, layersToDownload]
         } catch (e) {

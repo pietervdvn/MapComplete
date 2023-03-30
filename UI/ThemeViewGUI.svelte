@@ -41,7 +41,7 @@
 
 
 <div class="h-screen w-screen absolute top-0 left-0 flex">
-  <MaplibreMap class="w-full h-full border border-black" map={maplibremap}></MaplibreMap>
+  <MaplibreMap map={maplibremap}></MaplibreMap>
 </div>
 
 <div class="absolute top-0 left-0 mt-2 ml-2">
@@ -64,7 +64,7 @@
 
 <div class="absolute bottom-0 right-0 mb-4 mr-4">
   <MapControlButton on:click={() => mapproperties.zoom.update(z => z+1)}>
-    <ToSvelte class="w-7 h-7 block" construct={Svg.plus_ui}></ToSvelte>
+    <ToSvelte construct={Svg.plus_ui}></ToSvelte>
   </MapControlButton>
   <MapControlButton on:click={() => mapproperties.zoom.update(z => z-1)}>
     <ToSvelte class="w-7 h-7 block" construct={Svg.min_ui}></ToSvelte>
@@ -81,7 +81,7 @@
   <If condition={state.featureSwitches.featureSwitchSearch}>
     <Geosearch bounds={state.mapProperties.bounds} layout={state.layout} location={state.mapProperties.location}
                {selectedElement} {selectedLayer}
-               zoom={state.mapProperties.zoom}></Geosearch>
+              ></Geosearch>
   </If>
 </div>
 
@@ -168,11 +168,14 @@
 </If>
 
 {#if $selectedElement !== undefined && $selectedLayer !== undefined}
-  <div class="absolute top-0 right-0 normal-background">
+  <div class="absolute top-0 right-0 w-screen h-screen" style="background-color: #00000088">
 
+    <div class="w-full m-8 normal-background rounded overflow-auto">
+      
     <SelectedElementView layer={$selectedLayer} selectedElement={$selectedElement}
                          tags={$selectedElementTags} state={state}></SelectedElementView>
 
+    </div>
   </div>
 {/if}
 <style>

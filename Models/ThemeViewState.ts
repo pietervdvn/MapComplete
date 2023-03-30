@@ -119,10 +119,20 @@ export default class ThemeViewState implements SpecialVisualizationState {
         const indexedElements = this.indexedFeatures
         this.featureProperties = new FeaturePropertiesStore(indexedElements)
         const perLayer = new PerLayerFeatureSourceSplitter(
-            Array.from(this.layerState.filteredLayers.values()),
+            Array.from(this.layerState.filteredLayers.values()).filter(
+                (l) => l.layerDef.source !== null
+            ),
             indexedElements,
             {
                 constructStore: (features, layer) => new GeoIndexedStoreForLayer(features, layer),
+                handleLeftovers: (features) => {
+                    console.warn(
+                        "Got ",
+                        features.length,
+                        "leftover features, such as",
+                        features[0].properties
+                    )
+                },
             }
         )
         this.perLayer = perLayer.perLayer
@@ -141,16 +151,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     (fs.layer.isDisplayed?.data ?? true) && z >= (fs.layer.layerDef?.minzoom ?? 0),
                 [fs.layer.isDisplayed]
             )
-            doShowLayer.addCallbackAndRunD((doShow) =>
-                console.log(
-                    "Layer",
-                    fs.layer.layerDef.id,
-                    "is",
-                    doShow,
-                    this.mapProperties.zoom.data,
-                    fs.layer.layerDef.minzoom
-                )
-            )
+
             new ShowDataLayer(this.map, {
                 layer: fs.layer.layerDef,
                 features: filtered,

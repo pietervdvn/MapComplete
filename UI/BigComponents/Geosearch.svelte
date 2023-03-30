@@ -78,6 +78,7 @@
       </div>
     {:else }
       <input
+        type="search"
         bind:this={inputElement}
         on:keypress={keypr => keypr.key === "Enter" ? performSearch() : undefined}
 

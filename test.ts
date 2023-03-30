@@ -5,11 +5,11 @@ import LayoutConfig from "./Models/ThemeConfig/LayoutConfig"
 import * as benches from "./assets/generated/themes/cyclofix.json"
 import { UIEventSource } from "./Logic/UIEventSource"
 import ThemeViewState from "./Models/ThemeViewState"
-import { SpecialVisualization, SpecialVisualizationState } from "./UI/SpecialVisualization"
-import { Feature } from "geojson"
 import Combine from "./UI/Base/Combine"
 import SpecialVisualizations from "./UI/SpecialVisualizations"
-import BaseUIElement from "./UI/BaseUIElement"
+import ValidatedInput from "./UI/InputElement/ValidatedInput.svelte"
+import { VariableUiElement } from "./UI/Base/VariableUIElement"
+import { Translation } from "./UI/i18n/Translation"
 
 async function main() {
     new FixedUiElement("").AttachTo("extradiv")
@@ -18,7 +18,7 @@ async function main() {
     main.AttachTo("maindiv")
 }
 
-async function test() {
+async function testspecial() {
     const layout = new LayoutConfig(<any>benches, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
     const state = new ThemeViewState(layout)
 
@@ -27,5 +27,12 @@ async function test() {
     )
     new Combine(all).AttachTo("maindiv")
 }
-// test().then((_) => {}) /*/
+async function test() {
+    const value = new UIEventSource("Hello world!")
+    const feedback = new UIEventSource<Translation>(undefined)
+    new SvelteUIElement(ValidatedInput, { type: "direction", value, feedback }).AttachTo("maindiv")
+    new VariableUiElement(feedback).AttachTo("extradiv")
+}
+/*
+test().then((_) => {}) /*/
 main().then((_) => {}) //*/

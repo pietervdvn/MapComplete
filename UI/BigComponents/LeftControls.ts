@@ -83,9 +83,6 @@ export default class LeftControls extends Combine {
             "filters",
             guiState.filterViewIsOpened
         )
-        const toggledFilter = new MapControlButton(Svg.layers_svg()).onClick(() =>
-            guiState.filterViewIsOpened.setData(true)
-        )
         state.featureSwitchFilter.addCallbackAndRun((f) => {
             Hotkeys.RegisterHotkey(
                 { nomod: "B" },
@@ -95,8 +92,6 @@ export default class LeftControls extends Combine {
                 }
             )
         })
-
-        const filterButton = new Toggle(toggledFilter, undefined, state.featureSwitchFilter)
 
         const mapSwitch = new Toggle(
             new BackgroundMapSwitch(state, state.backgroundLayer, { enableHotkeys: true }),

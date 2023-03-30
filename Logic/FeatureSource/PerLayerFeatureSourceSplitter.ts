@@ -4,6 +4,7 @@ import SimpleFeatureSource from "./Sources/SimpleFeatureSource"
 import { Feature } from "geojson"
 import { Utils } from "../../Utils"
 import { UIEventSource } from "../UIEventSource"
+import { feature } from "@turf/turf"
 
 /**
  * In some rare cases, some elements are shown on multiple layers (when 'passthrough' is enabled)
@@ -19,7 +20,7 @@ export default class PerLayerFeatureSourceSplitter<
         upstream: FeatureSource,
         options?: {
             constructStore?: (features: UIEventSource<Feature[]>, layer: FilteredLayer) => T
-            handleLeftovers?: (featuresWithoutLayer: any[]) => void
+            handleLeftovers?: (featuresWithoutLayer: Feature[]) => void
         }
     ) {
         const knownLayers = new Map<string, T>()
@@ -35,9 +36,6 @@ export default class PerLayerFeatureSourceSplitter<
         }
 
         upstream.features.addCallbackAndRunD((features) => {
-            if (features === undefined) {
-                return
-            }
             if (layers === undefined) {
                 return
             }
@@ -82,7 +80,7 @@ export default class PerLayerFeatureSourceSplitter<
                 const src = layerSources.get(id)
 
                 if (Utils.sameList(src.data, features)) {
-                    return
+                    continue
                 }
                 src.setData(features)
             }

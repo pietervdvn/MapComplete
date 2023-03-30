@@ -245,8 +245,17 @@ class LineRenderingLayer {
             })
 
             this._visibility?.addCallbackAndRunD((visible) => {
-                map.setLayoutProperty(linelayer, "visibility", visible ? "visible" : "none")
-                map.setLayoutProperty(polylayer, "visibility", visible ? "visible" : "none")
+                try {
+                    map.setLayoutProperty(linelayer, "visibility", visible ? "visible" : "none")
+                    map.setLayoutProperty(polylayer, "visibility", visible ? "visible" : "none")
+                } catch (e) {
+                    console.warn(
+                        "Error while setting visiblity of layers ",
+                        linelayer,
+                        polylayer,
+                        e
+                    )
+                }
             })
         } else {
             src.setData({
@@ -323,6 +332,7 @@ export default class ShowDataLayer {
             })
         })
     }
+
     public static showRange(
         map: Store<MlMap>,
         features: FeatureSource,

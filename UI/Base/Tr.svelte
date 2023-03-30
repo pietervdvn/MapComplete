@@ -9,7 +9,7 @@
   import FromHtml from "./FromHtml.svelte";
 
   export let t: Translation;
-  export let tags: Record<string, string> | undefined;
+  export let tags: Record<string, string> | undefined = undefined;
   // Text for the current language
   let txt: string | undefined;
 

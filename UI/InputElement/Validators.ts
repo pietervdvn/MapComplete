@@ -19,8 +19,29 @@ import BaseUIElement from "../BaseUIElement"
 import Combine from "../Base/Combine"
 import Title from "../Base/Title"
 
+export type ValidatorType = typeof Validators.availableTypes[number]
+
 export default class Validators {
-    private static readonly AllValidators: ReadonlyArray<Validator> = [
+    public static readonly availableTypes = [
+        "string",
+        "text",
+        "date",
+        "nat",
+        "int",
+        "distance",
+        "direction",
+        "wikidata",
+        "pnat",
+        "float",
+        "pfloat",
+        "email",
+        "url",
+        "phone",
+        "opening_hours",
+        "color",
+    ] as const
+
+    public static readonly AllValidators: ReadonlyArray<Validator> = [
         new StringValidator(),
         new TextValidator(),
         new DateValidator(),
@@ -38,8 +59,16 @@ export default class Validators {
         new OpeningHoursValidator(),
         new ColorValidator(),
     ]
-    public static allTypes: Map<string, Validator> = Validators.allTypesDict()
 
+    private static _byType = Validators._byTypeConstructor()
+
+    private static _byTypeConstructor(): Map<ValidatorType, Validator> {
+        const map = new Map<ValidatorType, Validator>()
+        for (const validator of Validators.AllValidators) {
+            map.set(<ValidatorType>validator.name, validator)
+        }
+        return map
+    }
     public static HelpText(): BaseUIElement {
         const explanations: BaseUIElement[] = Validators.AllValidators.map((type) =>
             new Combine([new Title(type.name, 3), type.explanation]).SetClass("flex flex-col")
@@ -51,15 +80,7 @@ export default class Validators {
         ]).SetClass("flex flex-col")
     }
 
-    public static AvailableTypes(): string[] {
-        return Validators.AllValidators.map((tp) => tp.name)
-    }
-
-    private static allTypesDict(): Map<string, Validator> {
-        const types = new Map<string, Validator>()
-        for (const tp of Validators.AllValidators) {
-            types.set(tp.name, tp)
-        }
-        return types
+    static get(type: ValidatorType): Validator {
+        return Validators._byType.get(type)
     }
 }

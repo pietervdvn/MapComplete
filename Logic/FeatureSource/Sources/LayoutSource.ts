@@ -27,7 +27,7 @@ export default class LayoutSource extends FeatureSourceMerger {
     ) {
         const { bounds, zoom } = mapProperties
         // remove all 'special' layers
-        layers = layers.filter((flayer) => flayer.source !== null)
+        layers = layers.filter((layer) => layer.source !== null && layer.source !== undefined)
 
         const geojsonlayers = layers.filter((layer) => layer.source.geojsonSource !== undefined)
         const osmLayers = layers.filter((layer) => layer.source.geojsonSource === undefined)
@@ -122,7 +122,8 @@ export default class LayoutSource extends FeatureSourceMerger {
             {
                 zoom,
                 bounds,
-                layoutToUse: featureSwitches.layoutToUse,
+                layers: osmLayers,
+                widenFactor: featureSwitches.layoutToUse.widenFactor,
                 overpassUrl: featureSwitches.overpassUrl,
                 overpassTimeout: featureSwitches.overpassTimeout,
                 overpassMaxZoom: featureSwitches.overpassMaxZoom,

@@ -4,6 +4,7 @@
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
   import type { SpecialVisualizationState } from "../SpecialVisualization";
   import TagRenderingAnswer from "../Popup/TagRenderingAnswer.svelte";
+  import TagRenderingQuestion from "../Popup/TagRenderingQuestion.svelte";
 
   export let selectedElement: Feature;
   export let layer: LayerConfig;
@@ -41,7 +42,7 @@
   <div class="flex flex-col sm:flex-row flex-grow justify-between">
     <!-- Title element-->
     <h3>
-      <TagRenderingAnswer config={layer.title} {tags} {selectedElement}></TagRenderingAnswer>
+      <TagRenderingAnswer config={layer.title} {selectedElement} {tags}></TagRenderingAnswer>
     </h3>
 
     <div class="flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2">
@@ -57,7 +58,11 @@
 
   <div class="flex flex-col">
     {#each layer.tagRenderings as config (config.id)}
-      <TagRenderingAnswer {tags} {config} {state}></TagRenderingAnswer>
+      {#if config.IsKnown($tags)}
+        <TagRenderingAnswer {tags} {config} {state}></TagRenderingAnswer>
+      {:else}
+        <TagRenderingQuestion {config} {tags} {state}></TagRenderingQuestion>
+      {/if}
     {/each}
   </div>
 
