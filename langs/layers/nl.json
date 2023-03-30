@@ -24,6 +24,104 @@
             "render": "Bekend adres"
         }
     },
+    "advertising": {
+        "name": "Reclame",
+        "presets": {
+            "3": {
+                "description": "Een klein uithangbord voor buurtadvertenties, meestal gericht op voetgangers",
+                "title": "een uithangbord"
+            },
+            "4": {
+                "description": "Een cylindervormige structuur die buiten staat waarop advertenties staan",
+                "title": "een aanplakzuil"
+            },
+            "5": {
+                "title": "een vlag"
+            },
+            "6": {
+                "title": "een scherm"
+            },
+            "7": {
+                "title": "een scherm op een muur"
+            },
+            "8": {
+                "description": "Een stuk groot, weerbestendig textiel met opgedrukte reclameboodschap die permanent aan de muur hangt",
+                "title": "een spandoek"
+            }
+        },
+        "tagRenderings": {
+            "luminous_or_lit_advertising": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "Dit is een neonlamp"
+                        }
+                    }
+                }
+            },
+            "message_type": {
+                "mappings": {
+                    "4": {
+                        "then": "Informatie over cultuurevenementen zoals theaters, optredens, …"
+                    },
+                    "5": {
+                        "then": "Boodschap van NGO-organisaties"
+                    },
+                    "7": {
+                        "then": "Religieuze boodschap"
+                    },
+                    "9": {
+                        "then": "Een kaart"
+                    }
+                },
+                "question": "Wat voor boodschap wordt hier getoond?"
+            },
+            "operator": {
+                "question": "Wie baat dit object uit?",
+                "render": "Uitgebaat door {operator}"
+            },
+            "ref": {
+                "question": "Wat is het referentienummer?",
+                "render": "Het referentienummer is {ref}"
+            },
+            "type": {
+                "mappings": {
+                    "2": {
+                        "then": "Dit is een aanplakzuil"
+                    },
+                    "3": {
+                        "then": "Dit is een vlag"
+                    }
+                },
+                "render": "Dit is een {advertising}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "10": {
+                    "then": "Muurschildering"
+                },
+                "3": {
+                    "then": "Aanplakzuil"
+                },
+                "4": {
+                    "then": "Vlag"
+                },
+                "5": {
+                    "then": "Scherm"
+                },
+                "6": {
+                    "then": "Sculptuur"
+                },
+                "8": {
+                    "then": "Spandoek"
+                },
+                "9": {
+                    "then": "Aanplakzuil"
+                }
+            }
+        }
+    },
     "ambulancestation": {
         "description": "Een ambulancestation is een plaats waar ambulances, medisch materiaal, persoonlijk beschermingsmateriaal en aanverwanten worden bewaard.",
         "name": "Kaart van ambulancestations",
@@ -98,6 +196,15 @@
                     "1": {
                         "then": "Muurschildering"
                     },
+                    "10": {
+                        "then": "Azulejo (Spaanse siertegels)"
+                    },
+                    "11": {
+                        "then": "Tegelwerk"
+                    },
+                    "12": {
+                        "then": "Houtsculptuur"
+                    },
                     "2": {
                         "then": "Schilderij"
                     },
@@ -121,15 +228,6 @@
                     },
                     "9": {
                         "then": "Reliëf"
-                    },
-                    "10": {
-                        "then": "Azulejo (Spaanse siertegels)"
-                    },
-                    "11": {
-                        "then": "Tegelwerk"
-                    },
-                    "12": {
-                        "then": "Houtsculptuur"
                     }
                 },
                 "question": "Wat voor soort kunstwerk is dit?",
@@ -1577,6 +1675,27 @@
                     "1": {
                         "question": "Heeft een <div style='display: inline-block'><b><b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div>"
                     },
+                    "10": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
+                    "11": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+                    },
+                    "12": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
+                    },
+                    "13": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
+                    "14": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
+                    },
+                    "15": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
+                    },
+                    "16": {
+                        "question": "Heeft een <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
+                    },
                     "2": {
                         "question": "Heeft een <div style='display: inline-block'><b><b>Europese stekker</b> met aardingspin (CEE7/4 type E)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/TypeE.svg'/></div>"
                     },
@@ -1600,27 +1719,6 @@
                     },
                     "9": {
                         "question": "Heeft een <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-                    },
-                    "10": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
-                    "11": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
-                    },
-                    "12": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger (destination)</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
-                    },
-                    "13": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Tesla supercharger (destination)</b> (Een Type 2 met kabel en Tesla-logo)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
-                    },
-                    "14": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>"
-                    },
-                    "15": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Bosch Active Connect met 3 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-3pin.svg'/></div>"
-                    },
-                    "16": {
-                        "question": "Heeft een <div style='display: inline-block'><b><b>Bosch Active Connect met 5 pinnen</b> aan een kabel</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/bosch-5pin.svg'/></div>"
                     }
                 }
             }
@@ -1676,30 +1774,6 @@
                     "1": {
                         "then": "<b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)"
                     },
-                    "2": {
-                        "then": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
-                    },
-                    "3": {
-                        "then": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
-                    },
-                    "4": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Type 1 met kabel</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Type 1 met kabel</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Type 1 <i>zonder</i> kabel</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Type 1 <i>zonder</i> kabel</b> (J1772)"
-                    },
                     "10": {
                         "then": "<b>Type 1 CCS</b> (ook gekend als Type 1 Combo)"
                     },
@@ -1729,6 +1803,9 @@
                     },
                     "19": {
                         "then": "<b>Type 2 met kabel</b> (J1772)"
+                    },
+                    "2": {
+                        "then": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
                     },
                     "20": {
                         "then": "<b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)"
@@ -1760,11 +1837,32 @@
                     "29": {
                         "then": "<b>Bosch Active Connect met 3 pinnen</b> aan een kabel"
                     },
+                    "3": {
+                        "then": "<b>Europese stekker</b> met aardingspin (CEE7/4 type E)"
+                    },
                     "30": {
                         "then": "<b>Bosch Active Connect met 5 pinnen</b> aan een kabel"
                     },
                     "31": {
                         "then": "<b>Bosch Active Connect met 5 pinnen</b> aan een kabel"
+                    },
+                    "4": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Type 1 met kabel</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Type 1 met kabel</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Type 1 <i>zonder</i> kabel</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b>Type 1 <i>zonder</i> kabel</b> (J1772)"
                     }
                 },
                 "question": "Welke laadaansluitingen zijn hier beschikbaar?"
@@ -3244,6 +3342,15 @@
                     "1": {
                         "then": "Dit fietspad is geplaveid"
                     },
+                    "10": {
+                        "then": "Dit fietspad is gemaakt van fijn grind"
+                    },
+                    "11": {
+                        "then": "Dit fietspad is gemaakt van kiezelsteentjes"
+                    },
+                    "12": {
+                        "then": "Dit fietspad is gemaakt van aarde"
+                    },
                     "2": {
                         "then": "Dit fietspad is gemaakt van asfalt"
                     },
@@ -3267,15 +3374,6 @@
                     },
                     "9": {
                         "then": "Dit fietspad is gemaakt van grind"
-                    },
-                    "10": {
-                        "then": "Dit fietspad is gemaakt van fijn grind"
-                    },
-                    "11": {
-                        "then": "Dit fietspad is gemaakt van kiezelsteentjes"
-                    },
-                    "12": {
-                        "then": "Dit fietspad is gemaakt van aarde"
                     }
                 },
                 "question": "Waaruit is het oppervlak van het fietspad van gemaakt?",
@@ -3324,6 +3422,15 @@
                     "1": {
                         "then": "Dit fietspad is geplaveid"
                     },
+                    "10": {
+                        "then": "Dit fietspad is gemaakt van fijn grind"
+                    },
+                    "11": {
+                        "then": "Dit fietspad is gemaakt van kiezelsteentjes"
+                    },
+                    "12": {
+                        "then": "Dit fietspad is gemaakt van aarde"
+                    },
                     "2": {
                         "then": "Dit fietspad is gemaakt van asfalt"
                     },
@@ -3347,15 +3454,6 @@
                     },
                     "9": {
                         "then": "Dit fietspad is gemaakt van grind"
-                    },
-                    "10": {
-                        "then": "Dit fietspad is gemaakt van fijn grind"
-                    },
-                    "11": {
-                        "then": "Dit fietspad is gemaakt van kiezelsteentjes"
-                    },
-                    "12": {
-                        "then": "Dit fietspad is gemaakt van aarde"
                     }
                 },
                 "question": "Waaruit is het oppervlak van de straat gemaakt?",
@@ -4342,6 +4440,21 @@
                     "1": {
                         "then": "Dit is een frituur"
                     },
+                    "10": {
+                        "then": "Dit is een Chinees restaurant"
+                    },
+                    "11": {
+                        "then": "Dit is een Grieks restaurant"
+                    },
+                    "12": {
+                        "then": "Dit is een Indisch restaurant"
+                    },
+                    "13": {
+                        "then": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)"
+                    },
+                    "14": {
+                        "then": "Dit is een Thaïs restaurant"
+                    },
                     "2": {
                         "then": "Dit is een pastazaak"
                     },
@@ -4365,21 +4478,6 @@
                     },
                     "9": {
                         "then": "Dit is een Frans restaurant"
-                    },
-                    "10": {
-                        "then": "Dit is een Chinees restaurant"
-                    },
-                    "11": {
-                        "then": "Dit is een Grieks restaurant"
-                    },
-                    "12": {
-                        "then": "Dit is een Indisch restaurant"
-                    },
-                    "13": {
-                        "then": "Dit is een Turks restaurant (dat meer dan enkel kebab verkoopt)"
-                    },
-                    "14": {
-                        "then": "Dit is een Thaïs restaurant"
                     }
                 },
                 "question": "Welk soort gerechten worden hier geserveerd?",
@@ -5490,6 +5588,19 @@
                     }
                 }
             },
+            "10": {
+                "options": {
+                    "0": {
+                        "question": "Alle Notes"
+                    },
+                    "1": {
+                        "question": "Verberg import Notes"
+                    },
+                    "2": {
+                        "question": "Toon enkel import Notes"
+                    }
+                }
+            },
             "2": {
                 "options": {
                     "0": {
@@ -5543,19 +5654,6 @@
                 "options": {
                     "0": {
                         "question": "Toon enkel open Notes"
-                    }
-                }
-            },
-            "10": {
-                "options": {
-                    "0": {
-                        "question": "Alle Notes"
-                    },
-                    "1": {
-                        "question": "Verberg import Notes"
-                    },
-                    "2": {
-                        "question": "Toon enkel import Notes"
                     }
                 }
             }
@@ -5853,6 +5951,21 @@
                     "1": {
                         "then": "Dit is een normale parkeerplek."
                     },
+                    "10": {
+                        "then": "Deze parkeerplek is gereserveerd voor ouders met kinderen."
+                    },
+                    "11": {
+                        "then": "Deze parkeerplek is gereserveerd voor personeel."
+                    },
+                    "12": {
+                        "then": "Deze parkeerplek is gereserveerd voor taxis."
+                    },
+                    "13": {
+                        "then": "Deze parkeerplek is gereserveerd voor voertuigen met een aanhanger."
+                    },
+                    "14": {
+                        "then": "Deze parkeerplek is gereserveerd voor autodelen."
+                    },
                     "2": {
                         "then": "Dit is een gehandicaptenparkeerplaats."
                     },
@@ -5876,21 +5989,6 @@
                     },
                     "9": {
                         "then": "Deze parkeerplek is gereserveerd voor motoren."
-                    },
-                    "10": {
-                        "then": "Deze parkeerplek is gereserveerd voor ouders met kinderen."
-                    },
-                    "11": {
-                        "then": "Deze parkeerplek is gereserveerd voor personeel."
-                    },
-                    "12": {
-                        "then": "Deze parkeerplek is gereserveerd voor taxis."
-                    },
-                    "13": {
-                        "then": "Deze parkeerplek is gereserveerd voor voertuigen met een aanhanger."
-                    },
-                    "14": {
-                        "then": "Deze parkeerplek is gereserveerd voor autodelen."
                     }
                 },
                 "question": "Wat voor parkeerplek is dit?"
@@ -6451,30 +6549,6 @@
                     "1": {
                         "question": "Recycling van batterijen"
                     },
-                    "2": {
-                        "question": "Recycling van drankpakken"
-                    },
-                    "3": {
-                        "question": "Recycling van blikken"
-                    },
-                    "4": {
-                        "question": "Recycling van kleding"
-                    },
-                    "5": {
-                        "question": "Recycling van frituurvet"
-                    },
-                    "6": {
-                        "question": "Recycling van motorolie"
-                    },
-                    "7": {
-                        "question": "Recycling van tl-buizen"
-                    },
-                    "8": {
-                        "question": "Recycling van groen afval"
-                    },
-                    "9": {
-                        "question": "Recycling van glazen flessen"
-                    },
                     "10": {
                         "question": "Recycling van glas"
                     },
@@ -6505,8 +6579,32 @@
                     "19": {
                         "question": "Recycling van restafval"
                     },
+                    "2": {
+                        "question": "Recycling van drankpakken"
+                    },
                     "20": {
                         "question": "Recycling van restafval"
+                    },
+                    "3": {
+                        "question": "Recycling van blikken"
+                    },
+                    "4": {
+                        "question": "Recycling van kleding"
+                    },
+                    "5": {
+                        "question": "Recycling van frituurvet"
+                    },
+                    "6": {
+                        "question": "Recycling van motorolie"
+                    },
+                    "7": {
+                        "question": "Recycling van tl-buizen"
+                    },
+                    "8": {
+                        "question": "Recycling van groen afval"
+                    },
+                    "9": {
+                        "question": "Recycling van glazen flessen"
                     }
                 }
             },
@@ -6574,30 +6672,6 @@
                     "1": {
                         "then": "Drankpakken kunnen hier gerecycled worden"
                     },
-                    "2": {
-                        "then": "Blikken kunnen hier gerecycled worden"
-                    },
-                    "3": {
-                        "then": "Kleren kunnen hier gerecycled worden"
-                    },
-                    "4": {
-                        "then": "Frituurvet kan hier gerecycled worden"
-                    },
-                    "5": {
-                        "then": "Motorolie kan hier gerecycled worden"
-                    },
-                    "6": {
-                        "then": "TL-buizen kunnen hier gerecycled worden"
-                    },
-                    "7": {
-                        "then": "Groen afval kan hier gerecycled worden"
-                    },
-                    "8": {
-                        "then": "Organisch afval kan hier gerecycled worden"
-                    },
-                    "9": {
-                        "then": "Glazen flessen kunnen hier gerecycled worden"
-                    },
                     "10": {
                         "then": "Glas kan hier gerecycled worden"
                     },
@@ -6628,6 +6702,9 @@
                     "19": {
                         "then": "Schoenen kunnen hier gerecycled worden"
                     },
+                    "2": {
+                        "then": "Blikken kunnen hier gerecycled worden"
+                    },
                     "20": {
                         "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
                     },
@@ -6639,6 +6716,27 @@
                     },
                     "23": {
                         "then": "Restafval kan hier gerecycled worden"
+                    },
+                    "3": {
+                        "then": "Kleren kunnen hier gerecycled worden"
+                    },
+                    "4": {
+                        "then": "Frituurvet kan hier gerecycled worden"
+                    },
+                    "5": {
+                        "then": "Motorolie kan hier gerecycled worden"
+                    },
+                    "6": {
+                        "then": "TL-buizen kunnen hier gerecycled worden"
+                    },
+                    "7": {
+                        "then": "Groen afval kan hier gerecycled worden"
+                    },
+                    "8": {
+                        "then": "Organisch afval kan hier gerecycled worden"
+                    },
+                    "9": {
+                        "then": "Glazen flessen kunnen hier gerecycled worden"
                     }
                 },
                 "question": "Wat kan hier gerecycled worden?"
@@ -7356,6 +7454,12 @@
                     "1": {
                         "then": "Deze lantaarn gebruikt LEDs"
                     },
+                    "10": {
+                        "then": "Deze lantaarn gebruikt hogedruknatriumlampen (oranje met wit)"
+                    },
+                    "11": {
+                        "then": "Deze lantaarn wordt verlicht met gas"
+                    },
                     "2": {
                         "then": "Deze lantaarn gebruikt gloeilampen"
                     },
@@ -7379,12 +7483,6 @@
                     },
                     "9": {
                         "then": "Deze lantaarn gebruikt lagedruknatriumlampen (monochroom oranje)"
-                    },
-                    "10": {
-                        "then": "Deze lantaarn gebruikt hogedruknatriumlampen (oranje met wit)"
-                    },
-                    "11": {
-                        "then": "Deze lantaarn wordt verlicht met gas"
                     }
                 },
                 "question": "Wat voor verlichting gebruikt deze lantaarn?"
