@@ -29,6 +29,16 @@
             },
             "question": "Quelles pièces peut-on utiliser pour payer ici ?"
         },
+        "denominations-notes": {
+            "mappings": {
+                "0": {
+                    "then": "Les billets de 5 euros ne sont pas acceptés"
+                },
+                "1": {
+                    "then": "Les billets de 10 euros sont acceptés"
+                }
+            }
+        },
         "description": {
             "question": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.",
             "questionHint": "Ne répétez pas des réponses déjà données"
@@ -125,6 +135,13 @@
             },
             "question": "À quel étage se situe l’élément ?",
             "render": "Étage {level}"
+        },
+        "luminous_or_lit": {
+            "mappings": {
+                "3": {
+                    "then": "Cet objet n'émet pas de lumière et n'est pas éclairé par l'extérieur"
+                }
+            }
         },
         "multilevels": {
             "override": {
