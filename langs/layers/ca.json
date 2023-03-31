@@ -35,6 +35,16 @@
             "1": {
                 "title": "un mupi"
             },
+            "10": {
+                "description": "S'utilitza per a cartells publicitaris, retols de neó, logotips i cartells en entrades institucionals",
+                "title": "un lletrer"
+            },
+            "11": {
+                "title": "una escupltura"
+            },
+            "12": {
+                "title": "una paret pintada"
+            },
             "2": {
                 "title": "un mupi sobre la paret"
             },
@@ -61,16 +71,6 @@
             },
             "9": {
                 "title": "un tòtem"
-            },
-            "10": {
-                "description": "S'utilitza per a cartells publicitaris, retols de neó, logotips i cartells en entrades institucionals",
-                "title": "un lletrer"
-            },
-            "11": {
-                "title": "una escupltura"
-            },
-            "12": {
-                "title": "una paret pintada"
             }
         },
         "tagRenderings": {
@@ -165,6 +165,9 @@
                     "1": {
                         "then": "Açò és un tauló d'anunis"
                     },
+                    "10": {
+                        "then": "Açò és una paret pintada"
+                    },
                     "2": {
                         "then": "Açò és una columna"
                     },
@@ -188,9 +191,6 @@
                     },
                     "9": {
                         "then": "Açò és un tòtem"
-                    },
-                    "10": {
-                        "then": "Açò és una paret pintada"
                     }
                 },
                 "question": "Quin tipus d'element publicitari és aquest?",
@@ -204,6 +204,9 @@
                 },
                 "1": {
                     "then": "Tauló d'anuncis"
+                },
+                "10": {
+                    "then": "Paret Pintada"
                 },
                 "2": {
                     "then": "Mupi"
@@ -228,9 +231,6 @@
                 },
                 "9": {
                     "then": "Tòtem"
-                },
-                "10": {
-                    "then": "Paret Pintada"
                 }
             }
         }
@@ -2460,6 +2460,15 @@
             "0": {
                 "title": "un ascensor"
             }
+        },
+        "tagRenderings": {
+            "operational_status": {
+                "mappings": {
+                    "3": {
+                        "then": "Aquest ascensor funciona"
+                    }
+                }
+            }
         }
     },
     "entrance": {
@@ -2471,6 +2480,9 @@
             },
             "Entrance type": {
                 "mappings": {
+                    "0": {
+                        "then": "No es coneix cap tipus d'entrada específica"
+                    },
                     "4": {
                         "then": "Aquesta és una entrada de servei - normalment utilitzada per empleats, repartidors, …"
                     }
@@ -3548,16 +3560,16 @@
             "container-location": {
                 "mappings": {
                     "0": {
-                        "then": "Açò és un contenidor soterrat"
+                        "then": "Aquest contenidor està soterrat"
                     },
                     "1": {
-                        "then": "Aquest contenidor està situa a l'interior"
+                        "then": "Aquest contenidor està situat a l'interior"
                     },
                     "2": {
                         "then": "Aquest contenidor està situat a l'aire lliure"
                     }
                 },
-                "question": "On es situa el contenidor?"
+                "question": "On es troba aquest contenidor?"
             },
             "operator": {
                 "question": "Quina empresa opera aquesta infraestructura de reciclatge?",
@@ -3939,7 +3951,51 @@
         }
     },
     "stairs": {
-        "name": "Escales"
+        "name": "Escales",
+        "tagRenderings": {
+            "conveying": {
+                "mappings": {
+                    "2": {
+                        "then": "Això no és una escala mecànica"
+                    }
+                }
+            },
+            "handrail": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquestes escales tenen barana"
+                    }
+                }
+            },
+            "ramp": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí hi ha una rampa per a bicicletes"
+                    },
+                    "1": {
+                        "then": "Aquí hi ha una rampa per a cadires de rodes"
+                    },
+                    "3": {
+                        "then": "Aquí hi ha una rampa per als cotxets"
+                    },
+                    "4": {
+                        "then": "No hi ha cap rampa en aquestes escales"
+                    }
+                },
+                "question": "Hi ha una rampa en aquestes escales?"
+            },
+            "tactile_writing": {
+                "mappings": {
+                    "0": {
+                        "then": "Hi ha escriptura braille a la barana"
+                    },
+                    "1": {
+                        "then": "No hi ha escriptura braille a la barana"
+                    }
+                },
+                "question": "Aquestes escales tenen escriptura braille a la barana?"
+            }
+        }
     },
     "street_lamps": {
         "name": "Fanals",
@@ -4167,6 +4223,13 @@
                     }
                 },
                 "question": "Quin nivell d'educació és dona aquí?"
+            }
+        }
+    },
+    "ticket_machine": {
+        "tagRenderings": {
+            "operator": {
+                "question": "Qui és l'operador d'aquesta màquina de venda de bitllets?"
             }
         }
     },
@@ -4554,18 +4617,60 @@
         }
     },
     "waste_disposal": {
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Només amb accés públic"
+                    }
+                }
+            }
+        },
+        "name": "Contenidor de brossa",
         "presets": {
             "0": {
                 "title": "un contenidor de basura"
             }
         },
         "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest contenidor es pot utilitzat per qualsevol"
+                    },
+                    "1": {
+                        "then": "Aquest contenidor és privat"
+                    },
+                    "2": {
+                        "then": "Aquest contenidor és només per als residents"
+                    }
+                },
+                "question": "Qui pot utilitzar aquest contenidor de brossa?"
+            },
+            "disposal-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest contenidor està soterrat"
+                    },
+                    "1": {
+                        "then": "Aquest contenidor està situat a l'interior"
+                    },
+                    "2": {
+                        "then": "Aquest contenidor està situat a l'aire lliure"
+                    }
+                },
+                "question": "On es troba aquest contenidor?"
+            },
             "type": {
                 "mappings": {
                     "0": {
                         "then": "Es tracta d'un contenidor mitjà o gran per a dipositar residus (domèstics)"
+                    },
+                    "1": {
+                        "then": "En realitat es tracta d'un contenidor de reciclatge"
                     }
-                }
+                },
+                "question": "Quin tipus de contenidor de brossa és aquest?"
             }
         }
     },
