@@ -67,7 +67,7 @@
     <ToSvelte construct={Svg.plus_ui}></ToSvelte>
   </MapControlButton>
   <MapControlButton on:click={() => mapproperties.zoom.update(z => z-1)}>
-    <ToSvelte class="w-7 h-7 block" construct={Svg.min_ui}></ToSvelte>
+    <ToSvelte construct={Svg.min_ui}></ToSvelte>
   </MapControlButton>
   <If condition={featureSwitches.featureSwitchGeolocation}>
     <MapControlButton>
@@ -79,9 +79,7 @@
 
 <div class="absolute top-0 right-0 mt-4 mr-4">
   <If condition={state.featureSwitches.featureSwitchSearch}>
-    <Geosearch bounds={state.mapProperties.bounds} layout={state.layout} location={state.mapProperties.location}
-               {selectedElement} {selectedLayer}
-              ></Geosearch>
+    <Geosearch bounds={state.mapProperties.bounds} {selectedElement} {selectedLayer}></Geosearch>
   </If>
 </div>
 
@@ -94,20 +92,20 @@
       <TabGroup>
         <TabList>
           <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
-            <Tr t={layout.title}/>
+            <Tr t={layout.title} />
           </Tab>
           <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
-            <Tr t={Translations.t.general.menu.filter}/>
+            <Tr t={Translations.t.general.menu.filter} />
           </Tab>
           <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>Tab 3</Tab>
         </TabList>
         <TabPanels>
           <TabPanel class="flex flex-col">
             <Tr t={layout.description}></Tr>
-            <Tr t={Translations.t.general.welcomeExplanation.general}/>
+            <Tr t={Translations.t.general.welcomeExplanation.general} />
             {#if layout.layers.some((l) => l.presets?.length > 0)}
               <If condition={state.featureSwitches.featureSwitchAddNew}>
-             <Tr t={Translations.t.general.welcomeExplanation.addNew}/>
+                <Tr t={Translations.t.general.welcomeExplanation.addNew} />
               </If>
             {/if}
 
@@ -168,12 +166,12 @@
 </If>
 
 {#if $selectedElement !== undefined && $selectedLayer !== undefined}
-  <div class="absolute top-0 right-0 w-screen h-screen" style="background-color: #00000088">
+  <div class="absolute top-0 right-0 w-screen h-screen overflow-auto" style="background-color: #00000088">
 
-    <div class="w-full m-8 normal-background rounded overflow-auto">
-      
-    <SelectedElementView layer={$selectedLayer} selectedElement={$selectedElement}
-                         tags={$selectedElementTags} state={state}></SelectedElementView>
+    <div class="flex flex-col m-4 sm:m-6 md:m-8 p-4 sm:p-6 md:m-8 normal-background rounded normal-background">
+
+      <SelectedElementView layer={$selectedLayer} selectedElement={$selectedElement}
+                           tags={$selectedElementTags} state={state}></SelectedElementView>
 
     </div>
   </div>

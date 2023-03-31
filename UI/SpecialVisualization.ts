@@ -11,6 +11,7 @@ import { Feature, Geometry } from "geojson"
 import FullNodeDatabaseSource from "../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
 import { MangroveIdentity } from "../Logic/Web/MangroveReviews"
 import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexedStore"
+import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 
 /**
  * The state needed to render a special Visualisation.
@@ -47,7 +48,10 @@ export interface SpecialVisualizationState {
     readonly fullNodeDatabase?: FullNodeDatabaseSource
 
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
-    readonly userRelatedState: { readonly mangroveIdentity: MangroveIdentity }
+    readonly userRelatedState: {
+        readonly mangroveIdentity: MangroveIdentity
+        readonly showAllQuestionsAtOnce: UIEventSource<boolean>
+    }
 }
 
 export interface SpecialVisualization {
@@ -73,7 +77,8 @@ export interface SpecialVisualization {
         state: SpecialVisualizationState,
         tagSource: UIEventSource<Record<string, string>>,
         argument: string[],
-        feature: Feature
+        feature: Feature,
+        layer: LayerConfig
     ): BaseUIElement
 }
 

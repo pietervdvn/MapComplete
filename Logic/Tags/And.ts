@@ -39,7 +39,7 @@ export class And extends TagsFilter {
         return new And(ands)
     }
 
-    matchesProperties(tags: any): boolean {
+    matchesProperties(tags: Record<string, string>): boolean {
         for (const tagsFilter of this.and) {
             if (!tagsFilter.matchesProperties(tags)) {
                 return false
@@ -147,7 +147,7 @@ export class And extends TagsFilter {
         return [].concat(...this.and.map((subkeys) => subkeys.usedTags()))
     }
 
-    asChange(properties: any): { k: string; v: string }[] {
+    asChange(properties: Record<string, string>): { k: string; v: string }[] {
         const result = []
         for (const tagsFilter of this.and) {
             result.push(...tagsFilter.asChange(properties))
@@ -375,7 +375,7 @@ export class And extends TagsFilter {
         return !this.and.some((t) => !t.isNegative())
     }
 
-    visit(f: (TagsFilter: any) => void) {
+    visit(f: (tagsFilter: TagsFilter) => void) {
         f(this)
         this.and.forEach((sub) => sub.visit(f))
     }

@@ -5,27 +5,27 @@ import { Utils } from "../../Utils"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { Feature } from "geojson"
 import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import SvelteUIElement from "../../UI/Base/SvelteUIElement"
-import TagRenderingAnswer from "../../UI/Popup/TagRenderingAnswer.svelte"
+import TagRenderingAnswer from "../../UI/Popup/TagRendering/TagRenderingAnswer.svelte"
+import { SpecialVisualizationState } from "../../UI/SpecialVisualization"
 
 export default class TitleHandler {
     constructor(
         selectedElement: Store<Feature>,
         selectedLayer: Store<LayerConfig>,
         allElements: FeaturePropertiesStore,
-        layout: LayoutConfig
+        state: SpecialVisualizationState
     ) {
         const currentTitle: Store<string> = selectedElement.map(
             (selected) => {
-                const defaultTitle = layout?.title?.txt ?? "MapComplete"
+                const defaultTitle = state.layout?.title?.txt ?? "MapComplete"
 
                 if (selected === undefined) {
                     return defaultTitle
                 }
 
                 const tags = selected.properties
-                for (const layer of layout?.layers ?? []) {
+                for (const layer of state.layout?.layers ?? []) {
                     if (layer.title === undefined) {
                         continue
                     }
@@ -33,7 +33,12 @@ export default class TitleHandler {
                         const tagsSource =
                             allElements.getStore(tags.id) ??
                             new UIEventSource<Record<string, string>>(tags)
-                        const title = new SvelteUIElement(TagRenderingAnswer, { tags: tagsSource })
+                        const title = new SvelteUIElement(TagRenderingAnswer, {
+                            tags: tagsSource,
+                            state,
+                            selectedElement: selectedElement.data,
+                            layer: selectedLayer.data,
+                        })
                         return (
                             new Combine([defaultTitle, " | ", title]).ConstructElement()
                                 ?.textContent ?? defaultTitle

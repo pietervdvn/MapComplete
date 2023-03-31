@@ -35,6 +35,14 @@ export class QueryParameters {
         return source
     }
 
+    public static SetDefaultFor(key: string, value: string) {
+        if (QueryParameters.defaults[key] === value) {
+            return
+        }
+        QueryParameters.defaults[key] = value
+        QueryParameters.Serialize()
+    }
+
     public static GetBooleanQueryParameter(
         key: string,
         deflt: boolean,
@@ -80,6 +88,11 @@ export class QueryParameters {
         }
     }
 
+    /**
+     * Set the query parameters of the page location
+     * @constructor
+     * @private
+     */
     private static Serialize() {
         const parts = []
         for (const key of QueryParameters.order) {

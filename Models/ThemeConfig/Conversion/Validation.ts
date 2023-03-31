@@ -619,12 +619,12 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     ': detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
             )
         }
-        if (json.group) {
+        if (json["group"]) {
             errors.push(
                 "At " +
                     context +
                     ': groups are deprecated, use `"label": ["' +
-                    json.group +
+                    json["group"] +
                     '"]` instead'
             )
         }

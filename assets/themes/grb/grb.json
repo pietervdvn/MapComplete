@@ -699,7 +699,7 @@
           "_applicable=feat.get('_overlapping')?.filter(p => (p._imported_osm_object_found === 'true' || p._intersects_with_other_features === ''))?.map(p => p.id)",
           "_applicable_count=feat.get('_applicable')?.length"
         ],
-        "tagRenderings": [
+        "tagRenderings+": [
           {
             "id": "hw",
             "render": "There are {_applicable_count} applicable elements in view",

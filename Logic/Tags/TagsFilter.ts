@@ -9,9 +9,13 @@ export abstract class TagsFilter {
      */
     abstract shadows(other: TagsFilter): boolean
 
-    abstract matchesProperties(properties: any): boolean
+    abstract matchesProperties(properties: Record<string, string>): boolean
 
-    abstract asHumanString(linkToWiki: boolean, shorten: boolean, properties: any): string
+    abstract asHumanString(
+        linkToWiki: boolean,
+        shorten: boolean,
+        properties: Record<string, string>
+    ): string
 
     abstract usedKeys(): string[]
 
@@ -27,7 +31,7 @@ export abstract class TagsFilter {
      *
      * Note: properties are the already existing tags-object. It is only used in the substituting tag
      */
-    abstract asChange(properties: any): { k: string; v: string }[]
+    abstract asChange(properties: Record<string, string>): { k: string; v: string }[]
 
     /**
      * Returns an optimized version (or self) of this tagsFilter
@@ -54,5 +58,5 @@ export abstract class TagsFilter {
     /**
      * Walks the entire tree, every tagsFilter will be passed into the function once
      */
-    abstract visit(f: (TagsFilter) => void)
+    abstract visit(f: (tagsFilter: TagsFilter) => void)
 }

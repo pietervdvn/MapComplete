@@ -551,7 +551,7 @@
       "builtin": "current_view",
       "override": {
         "title": "Statistics on changesets in the current view",
-        "tagRenderings": [
+        "tagRenderings+": [
           {
             "id": "link_to_more",
             "render": {

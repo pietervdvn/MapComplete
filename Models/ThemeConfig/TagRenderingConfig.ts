@@ -203,19 +203,6 @@ export default class TagRenderingConfig {
             throw `${context}: A question is defined, but no mappings nor freeform (key) are. The question is ${this.question.txt} at ${context}`
         }
 
-        if (this.id === "questions" && this.render !== undefined) {
-            for (const ln in this.render.translations) {
-                const txt: string = this.render.translations[ln]
-                if (txt.indexOf("{questions}") >= 0) {
-                    continue
-                }
-                throw `${context}: The rendering for language ${ln} does not contain {questions}. This is a bug, as this rendering should include exactly this to trigger those questions to be shown!`
-            }
-            if (this.freeform?.key !== undefined && this.freeform?.key !== "questions") {
-                throw `${context}: If the ID is questions to trigger a question box, the only valid freeform value is 'questions' as well. Set freeform to questions or remove the freeform all together`
-            }
-        }
-
         if (this.freeform) {
             if (this.render === undefined) {
                 throw `${context}: Detected a freeform key without rendering... Key: ${this.freeform.key} in ${context}`
@@ -509,15 +496,11 @@ export default class TagRenderingConfig {
                 })
             }
         }
-
         return applicableMappings
     }
 
-    public GetRenderValue(
-        tags: any,
-        defltValue: any = undefined
-    ): TypedTranslation<any> | undefined {
-        return this.GetRenderValueWithImage(tags, defltValue)?.then
+    public GetRenderValue(tags: Record<string, string>): TypedTranslation<any> | undefined {
+        return this.GetRenderValueWithImage(tags)?.then
     }
 
     /**
@@ -526,8 +509,7 @@ export default class TagRenderingConfig {
      * @constructor
      */
     public GetRenderValueWithImage(
-        tags: any,
-        defltValue: any = undefined
+        tags: Record<string, string>
     ): { then: TypedTranslation<any>; icon?: string } | undefined {
         if (this.condition !== undefined) {
             if (!this.condition.matchesProperties(tags)) {
@@ -554,7 +536,7 @@ export default class TagRenderingConfig {
             return { then: this.render }
         }
 
-        return { then: defltValue }
+        return undefined
     }
 
     /**
@@ -622,6 +604,76 @@ export default class TagRenderingConfig {
         } catch (e) {
             console.error("Could not create FreeformValues for tagrendering", this.id)
             return undefined
+        }
+    }
+
+    /**
+     * Given a value for the freeform key and an overview of the selected mappings, construct the correct tagsFilter to apply
+     *
+     * @param freeformValue The freeform value which will be applied as 'freeform.key'. Ignored if 'freeform.key' is not set
+     *
+     * @param singleSelectedMapping (Only used if multiAnswer == false): the single mapping to apply. Use (mappings.length) for the freeform
+     * @param multiSelectedMapping (Only used if multiAnswer == true): all the mappings that must be applied. Set multiSelectedMapping[mappings.length] to use the freeform as well
+     */
+    public constructChangeSpecification(
+        freeformValue: string | undefined,
+        singleSelectedMapping: number,
+        multiSelectedMapping: boolean[] | undefined
+    ): UploadableTag {
+        if (
+            freeformValue === undefined &&
+            singleSelectedMapping === undefined &&
+            multiSelectedMapping === undefined
+        ) {
+            return undefined
+        }
+        if (this.mappings === undefined && freeformValue === undefined) {
+            return undefined
+        }
+        if (
+            this.freeform !== undefined &&
+            (this.mappings === undefined ||
+                this.mappings.length == 0 ||
+                (singleSelectedMapping === this.mappings.length && !this.multiAnswer))
+        ) {
+            // Either no mappings, or this is a radio-button selected freeform value
+            return new And([
+                new Tag(this.freeform.key, freeformValue),
+                ...(this.freeform.addExtraTags ?? []),
+            ])
+        }
+
+        if (this.multiAnswer) {
+            let selectedMappings: UploadableTag[] = this.mappings
+                .filter((_, i) => multiSelectedMapping[i])
+                .map((m) => new And([m.if, ...(m.addExtraTags ?? [])]))
+
+            let unselectedMappings: UploadableTag[] = this.mappings
+                .filter((_, i) => !multiSelectedMapping[i])
+                .map((m) => m.ifnot)
+
+            if (multiSelectedMapping.at(-1)) {
+                // The freeform value was selected as well
+                selectedMappings.push(
+                    new And([
+                        new Tag(this.freeform.key, freeformValue),
+                        ...(this.freeform.addExtraTags ?? []),
+                    ])
+                )
+            }
+            return TagUtils.FlattenMultiAnswer([...selectedMappings, ...unselectedMappings])
+        } else {
+            if (singleSelectedMapping === this.mappings.length) {
+                return new And([
+                    new Tag(this.freeform.key, freeformValue),
+                    ...(this.freeform.addExtraTags ?? []),
+                ])
+            } else {
+                return new And([
+                    this.mappings[singleSelectedMapping].if,
+                    ...(this.mappings[singleSelectedMapping].addExtraTags ?? []),
+                ])
+            }
         }
     }
 

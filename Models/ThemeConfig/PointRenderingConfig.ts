@@ -244,8 +244,8 @@ export default class PointRenderingConfig extends WithContextLoader {
             iconAndBadges.SetClass("w-full h-full")
         }
 
-        const css = this.cssDef?.GetRenderValue(tags, undefined)?.txt
-        const cssClasses = this.cssClasses?.GetRenderValue(tags, undefined)?.txt
+        const css = this.cssDef?.GetRenderValue(tags)?.txt
+        const cssClasses = this.cssClasses?.GetRenderValue(tags)?.txt
 
         let label = this.GetLabel(tags)
         let htmlEl: BaseUIElement

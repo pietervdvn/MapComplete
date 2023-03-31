@@ -10,7 +10,7 @@ import {
     SetDefault,
 } from "./Conversion"
 import { LayoutConfigJson } from "../Json/LayoutConfigJson"
-import { PrepareLayer } from "./PrepareLayer"
+import { AddQuestionBox, PrepareLayer } from "./PrepareLayer"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import { Utils } from "../../../Utils"
 import Constants from "../../Constants"
@@ -336,7 +336,6 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
         if (!hasMinimap) {
             layerConfig = { ...layerConfig }
             layerConfig.tagRenderings = [...layerConfig.tagRenderings]
-            layerConfig.tagRenderings.push(state.tagRenderings.get("questions"))
             layerConfig.tagRenderings.push(state.tagRenderings.get("minimap"))
         }
 
@@ -662,6 +661,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
                 : new AddDefaultLayers(state),
             new AddDependencyLayersToTheme(state),
             new AddImportLayers(),
+            new On("layers", new Each(new AddQuestionBox())),
             new On("layers", new Each(new AddMiniMap(state)))
         )
     }

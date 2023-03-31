@@ -397,7 +397,7 @@
             "es": "Estadísticas"
           }
         },
-        "tagRenderings": [
+        "tagRenderings+": [
           {
             "id": "stats",
             "render": "{statistics()}"

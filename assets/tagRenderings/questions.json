@@ -2,7 +2,7 @@
   "id": "shared_questions",
   "questions": {
     "description": "Show the images block at this location",
-    "id": "questions"
+    "render": "{questions()}"
   },
   "images": {
     "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`",

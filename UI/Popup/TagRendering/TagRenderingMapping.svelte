@@ -1,13 +1,15 @@
 <script lang="ts">
-  import { Translation } from "../i18n/Translation";
+  import { Translation } from "../../i18n/Translation";
   import SpecialTranslation from "./SpecialTranslation.svelte";
-  import type { SpecialVisualizationState } from "../SpecialVisualization";
+  import type { SpecialVisualizationState } from "../../SpecialVisualization";
   import type { Feature } from "geojson";
-  import { UIEventSource } from "../../Logic/UIEventSource";
+  import { UIEventSource } from "../../../Logic/UIEventSource";
+  import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
 
   export let selectedElement: Feature
   export let tags: UIEventSource<Record<string, string>>;
   export let state: SpecialVisualizationState
+  export let layer: LayerConfig
   export let mapping: {
     then: Translation; icon?: string; iconClass?: | "small"
       | "medium"
@@ -22,11 +24,11 @@
 </script>
 
 {#if mapping.icon !== undefined}
-  <div class="flex">
+  <div class="inline-flex">
     <img class={iconclass+" mr-1"} src={mapping.icon}>
-    <SpecialTranslation t={mapping.then} {tags} {state} feature={selectedElement}></SpecialTranslation>
+    <SpecialTranslation t={mapping.then} {tags} {state} {layer} feature={selectedElement}></SpecialTranslation>
   </div>
 {:else if mapping.then !== undefined}
-  <SpecialTranslation t={mapping.then} {tags} {state} feature={selectedElement}></SpecialTranslation>
+  <SpecialTranslation t={mapping.then} {tags} {state} {layer} feature={selectedElement}></SpecialTranslation>
 {/if}
 

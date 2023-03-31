@@ -90,11 +90,15 @@
     },
     {
       "id": "translations-title",
-      "label": ["translations"],
+      "label": [
+        "translations"
+      ],
       "render": "<h3>Translating MapComplete</h3>"
     },
     {
-      "label": ["translations"],
+      "label": [
+        "translations"
+      ],
       "id": "translation-mode",
       "question": {
         "en": "Do you want to help translating MapComplete?",
@@ -127,7 +131,9 @@
       ]
     },
     {
-      "label": ["translations"],
+      "label": [
+        "translations"
+      ],
       "id": "translation-help",
       "mappings": [
         {
@@ -153,7 +159,9 @@
       ]
     },
     {
-      "label": ["translations"],
+      "label": [
+        "translations"
+      ],
       "id": "translation-completeness",
       "render": {
         "ca": "Les traduccions de {_theme} en {_language} tenen un {_translation_percentage}%: {_translation_translated_count} cadenes de {_translation_total} estan traduïdes",
@@ -188,7 +196,9 @@
     },
     {
       "id": "translation-links",
-      "label": ["translations"],
+      "label": [
+        "translations"
+      ],
       "condition": {
         "and": [
           "_translation_links~*",

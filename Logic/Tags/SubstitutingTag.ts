@@ -22,7 +22,7 @@ export default class SubstitutingTag implements TagsFilter {
         this._invert = invert
     }
 
-    private static substituteString(template: string, dict: any): string {
+    private static substituteString(template: string, dict: Record<string, string>): string {
         for (const k in dict) {
             template = template.replace(new RegExp("\\{" + k + "\\}", "g"), dict[k])
         }
@@ -72,7 +72,7 @@ export default class SubstitutingTag implements TagsFilter {
      * assign.matchesProperties({"_date:now": "2021-03-29"}) // => false
      * assign.matchesProperties({"some_key": "2021-03-29"}) // => false
      */
-    matchesProperties(properties: any): boolean {
+    matchesProperties(properties: Record<string, string>): boolean {
         const value = properties[this._key]
         if (value === undefined || value === "") {
             return false
@@ -89,7 +89,7 @@ export default class SubstitutingTag implements TagsFilter {
         return []
     }
 
-    asChange(properties: any): { k: string; v: string }[] {
+    asChange(properties: Record<string, string>): { k: string; v: string }[] {
         if (this._invert) {
             throw "An inverted substituting tag can not be used to create a change"
         }
@@ -108,7 +108,7 @@ export default class SubstitutingTag implements TagsFilter {
         return false
     }
 
-    visit(f: (TagsFilter: any) => void) {
+    visit(f: (tagsFilter: TagsFilter) => void) {
         f(this)
     }
 }

@@ -122,7 +122,7 @@ export class RegexTag extends TagsFilter {
      * new RegexTag("key","value").matchesProperties({"otherkey":"value"}) // => false
      * new RegexTag("key","value",true).matchesProperties({"otherkey":"something"}) // => true
      */
-    matchesProperties(tags: any): boolean {
+    matchesProperties(tags: Record<string, string>): boolean {
         if (typeof this.key === "string") {
             const value = tags[this.key] ?? ""
             return RegexTag.doesMatch(value, this.value) != this.invert
@@ -244,7 +244,7 @@ export class RegexTag extends TagsFilter {
         return []
     }
 
-    asChange(properties: any): { k: string; v: string }[] {
+    asChange(properties: Record<string, string>): { k: string; v: string }[] {
         if (this.invert) {
             return []
         }

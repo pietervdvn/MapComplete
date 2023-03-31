@@ -55,6 +55,7 @@ import FeatureReviews from "../Logic/Web/MangroveReviews"
 import Maproulette from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
 import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
+import QuestionViz from "./Popup/QuestionViz"
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
@@ -81,6 +82,10 @@ export default class SpecialVisualizations {
             return []
         }
 
+        if (template["type"] !== undefined) {
+            console.trace("Got a non-expanded template while constructing the specification")
+            throw "Got a non-expanded template while constructing the specification"
+        }
         const allKnownSpecials = extraMappings.concat(SpecialVisualizations.specialVisualizations)
         for (const knownSpecial of allKnownSpecials) {
             // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'
@@ -226,6 +231,7 @@ export default class SpecialVisualizations {
 
     private static initList(): SpecialVisualization[] {
         const specialVisualizations: SpecialVisualization[] = [
+            new QuestionViz(),
             new HistogramViz(),
             new StealViz(),
             new MinimapViz(),
@@ -956,7 +962,8 @@ export default class SpecialVisualizations {
                           state,
                           new UIEventSource<Record<string, string>>(e.feature.properties),
                           e.args,
-                          e.feature
+                          e.feature,
+                          undefined
                       )
                   })
         return new Combine([new Title(s.funcName), s.docs, ...examples])

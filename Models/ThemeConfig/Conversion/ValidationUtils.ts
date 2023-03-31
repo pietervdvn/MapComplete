@@ -1,7 +1,7 @@
 import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
 import { Utils } from "../../../Utils"
 import SpecialVisualizations from "../../../UI/SpecialVisualizations"
-import { SpecialVisualization } from "../../../UI/SpecialVisualization"
+import { RenderingSpecification, SpecialVisualization } from "../../../UI/SpecialVisualization"
 
 export default class ValidationUtils {
     /**
@@ -11,11 +11,18 @@ export default class ValidationUtils {
     public static getSpecialVisualisations(
         renderingConfig: TagRenderingConfigJson
     ): SpecialVisualization[] {
+        return ValidationUtils.getSpecialVisualsationsWithArgs(renderingConfig).map(
+            (spec) => spec["func"]
+        )
+    }
+    public static getSpecialVisualsationsWithArgs(
+        renderingConfig: TagRenderingConfigJson
+    ): RenderingSpecification[] {
         const translations: any[] = Utils.NoNull([
             renderingConfig.render,
             ...(renderingConfig.mappings ?? []).map((m) => m.then),
         ])
-        const all: SpecialVisualization[] = []
+        const all: RenderingSpecification[] = []
         for (let translation of translations) {
             if (typeof translation == "string") {
                 translation = { "*": translation }
@@ -28,9 +35,7 @@ export default class ValidationUtils {
 
                 const template = translation[key]
                 const parts = SpecialVisualizations.constructSpecification(template)
-                const specials = parts
-                    .filter((p) => typeof p !== "string")
-                    .map((special) => special["func"])
+                const specials = parts.filter((p) => typeof p !== "string")
                 all.push(...specials)
             }
         }

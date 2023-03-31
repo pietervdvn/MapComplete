@@ -13,7 +13,7 @@
   // Text for the current language
   let txt: string | undefined;
 
-  onDestroy(Locale.language.addCallbackAndRunD(l => {
+  $: onDestroy(Locale.language.addCallbackAndRunD(l => {
     const translation = t?.textFor(l)
     if(translation === undefined){
       return

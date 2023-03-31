@@ -37,7 +37,7 @@ export class Tag extends TagsFilter {
      * isEmpty.matchesProperties({"key": undefined}) // => true
      *
      */
-    matchesProperties(properties: any): boolean {
+    matchesProperties(properties: Record<string, string>): boolean {
         const foundValue = properties[this.key]
         if (foundValue === undefined && (this.value === "" || this.value === undefined)) {
             // The tag was not found
@@ -62,7 +62,11 @@ export class Tag extends TagsFilter {
      t.asHumanString() // => "key=value"
      t.asHumanString(true) // => "<a href='https://wiki.openstreetmap.org/wiki/Key:key' target='_blank'>key</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:key%3Dvalue' target='_blank'>value</a>"
      */
-    asHumanString(linkToWiki?: boolean, shorten?: boolean, currentProperties?: any) {
+    asHumanString(
+        linkToWiki?: boolean,
+        shorten?: boolean,
+        currentProperties?: Record<string, string>
+    ) {
         let v = this.value
         if (shorten) {
             v = Utils.EllipsesAfter(v, 25)
@@ -134,7 +138,7 @@ export class Tag extends TagsFilter {
         return false
     }
 
-    visit(f: (TagsFilter) => void) {
+    visit(f: (tagsFilter: TagsFilter) => void) {
         f(this)
     }
 }

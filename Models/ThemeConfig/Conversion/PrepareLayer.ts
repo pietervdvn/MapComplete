@@ -23,6 +23,8 @@ import predifined_filters from "../../../assets/layers/filters/filters.json"
 import { TagConfigJson } from "../Json/TagConfigJson"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
+import ValidationUtils from "./ValidationUtils"
+import { RenderingSpecification } from "../../../UI/SpecialVisualization"
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static readonly predefinedFilters = ExpandFilter.load_filters()
@@ -218,7 +220,7 @@ class ExpandTagRendering extends Conversion<
             matchingTrs = layerTrs
         } else if (id.startsWith("*")) {
             const id_ = id.substring(1)
-            matchingTrs = layerTrs.filter((tr) => tr.group === id_ || tr.labels?.indexOf(id_) >= 0)
+            matchingTrs = layerTrs.filter((tr) => tr.labels?.indexOf(id_) >= 0)
         } else {
             matchingTrs = layerTrs.filter((tr) => tr.id === id || tr.labels?.indexOf(id) >= 0)
         }
@@ -255,13 +257,6 @@ class ExpandTagRendering extends Conversion<
         ctx: string
     ): TagRenderingConfigJson[] {
         const state = this._state
-        if (tr === "questions") {
-            return [
-                {
-                    id: "questions",
-                },
-            ]
-        }
 
         if (typeof tr === "string") {
             const lookup = this.lookup(tr)
@@ -412,6 +407,111 @@ class ExpandTagRendering extends Conversion<
         }
 
         return result
+    }
+}
+
+export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
+    constructor() {
+        super(
+            "Adds a 'questions'-object if no question element is added yet",
+            ["tagRenderings"],
+            "AddQuestionBox"
+        )
+    }
+
+    convert(
+        json: LayerConfigJson,
+        context: string
+    ): { result: LayerConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
+        if (json.tagRenderings === undefined) {
+            return { result: json }
+        }
+        json = JSON.parse(JSON.stringify(json))
+        const allSpecials: Exclude<RenderingSpecification, string>[] = []
+            .concat(
+                ...json.tagRenderings.map((tr) =>
+                    ValidationUtils.getSpecialVisualsationsWithArgs(<TagRenderingConfigJson>tr)
+                )
+            )
+            .filter((spec) => typeof spec !== "string")
+
+        const questionSpecials = allSpecials.filter((sp) => sp.func.funcName === "questions")
+        const noLabels = questionSpecials.filter(
+            (sp) => sp.args.length === 0 || sp.args[0].trim() === ""
+        )
+
+        const errors: string[] = []
+        const warnings: string[] = []
+        if (noLabels.length > 1) {
+            console.log(json.tagRenderings)
+            errors.push(
+                "At " +
+                    context +
+                    ": multiple 'questions'-visualisations found which would show _all_ questions. Don't do this"
+            )
+        }
+
+        // ALl labels that are used in this layer
+        const allLabels = new Set(
+            [].concat(...json.tagRenderings.map((tr) => (<TagRenderingConfigJson>tr).labels ?? []))
+        )
+        const seen = new Set()
+        for (const questionSpecial of questionSpecials) {
+            if (typeof questionSpecial === "string") {
+                continue
+            }
+            const used = questionSpecial.args[0]
+                ?.split(";")
+                ?.map((a) => a.trim())
+                ?.filter((s) => s != "")
+            const blacklisted = questionSpecial.args[1]
+                ?.split(";")
+                ?.map((a) => a.trim())
+                ?.filter((s) => s != "")
+            if (blacklisted?.length > 0 && used?.length > 0) {
+                errors.push(
+                    "At " +
+                        context +
+                        ": the {questions()}-special rendering only supports either a blacklist OR a whitelist, but not both." +
+                        "\n    Whitelisted: " +
+                        used.join(", ") +
+                        "\n    Blacklisted: " +
+                        blacklisted.join(", ")
+                )
+            }
+            for (const usedLabel of used) {
+                if (!allLabels.has(usedLabel)) {
+                    errors.push(
+                        "At " +
+                            context +
+                            ": this layers specifies a special question element for label `" +
+                            usedLabel +
+                            "`, but this label doesn't exist.\n" +
+                            "    Available labels are " +
+                            Array.from(allLabels).join(", ")
+                    )
+                }
+                seen.add(usedLabel)
+            }
+        }
+
+        if (noLabels.length == 0) {
+            /* At this point, we know which question labels are not yet handled and which already are handled, and we
+             * know there is no previous catch-all questions
+             */
+            const question: TagRenderingConfigJson = {
+                id: "leftover-questions",
+                render: {
+                    "*": `{questions( ,${Array.from(seen).join(";")})}`,
+                },
+            }
+            json.tagRenderings.push(question)
+        }
+        return {
+            result: json,
+            errors,
+            warnings,
+        }
     }
 }
 
