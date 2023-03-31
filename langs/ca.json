@@ -198,7 +198,6 @@
         "noTagsSelected": "No s'han seleccionat etiquetes",
         "notValid": "Selecciona un valor vàlid per a continuar",
         "number": "nombre",
-        "oneSkippedQuestion": "Has ignorat una pregunta",
         "openStreetMapIntro": "<h3>Un mapa obert</h3><p>Un que tothom pogués utilitzar i editar lliurement. Un sol lloc on emmagatzemar tota la informació geogràfica. Llavors tots aquests llocs web amb mapes diferents petits i incompatibles (que sempre estaran desactualitzats) ja no serien necessaris.<p></p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> no és el mapa de l'enemic. Les dades del mapa es poden utilitzar gratuïtament (amb <a href='https://osm.org/copyright' target='_blank'> atribució i publicació de canvis en aquestes dades</a>). A més a més, tothom pot agregar lliurement noves dades i corregir errors. Aquest lloc web també fa servir OpenStreetMap. Totes les dades provenen d'allà i les teves respostes i correccions també s'afegiran allà.</p><p>Moltes persones i aplicacions ja utilitzen OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, però també els mapes de Facebook, Instagram, Apple i Bing són (en part) impulsats per OpenStreetMap .</p>",
         "openTheMap": "Obrir el mapa",
         "opening_hours": {
@@ -266,7 +265,6 @@
             "thanksForSharing": "Gràcies per compartir!"
         },
         "skip": "Saltar aquesta pregunta",
-        "skippedQuestions": "Has ignorat algunes preguntes",
         "testing": "Proves - Els canvis no es desaran",
         "uploadGpx": {
             "meta": {

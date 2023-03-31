@@ -226,7 +226,6 @@
         "noTagsSelected": "No tags selected",
         "notValid": "Select a valid value to continue",
         "number": "number",
-        "oneSkippedQuestion": "One question is skipped",
         "openStreetMapIntro": "<h3>An Open Map</h3><p>One that everyone can use and edit freely. A single place to store all geo-info. Different, small, incompatible and outdated maps are not needed anywhere.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is not the enemy map. The map data can be used freely (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>). Everyone can add new data and fix errors. This website uses OpenStreetMap. All the data is from there, and your answers and corrections are used all over.</p><p>Many people and apps already use OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Instagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap.</p>",
         "openTheMap": "Open the map",
         "opening_hours": {
@@ -261,6 +260,15 @@
             "websiteIs": "Website: <a href='{website}' target='_blank'>{website}</a>",
             "websiteOf": "What is the website of {category}?"
         },
+        "questionBox": {
+            "skippedOne": "You skipped one question",
+            "reactivate": "Reactive skipped questions",
+            "answeredOne": "You answered one question",
+            "answeredOneSkippedOne": "You answered one and skipped one question",
+            "answeredOneSkippedMultiple": "You answered one question and skipped {skipped} questions",
+            "answeredMultipleSkippedMultiple": "You answered {answered} questions and skipped {skipped} questions",
+            "answeredMultipleSkippedOne": "You answered {answered} questions and skipped one question"
+        },
         "readYourMessages": "Please, read all your OpenStreetMap-messages before adding a new feature.",
         "removeLocationHistory": "Delete the location history",
         "returnToTheMap": "Return to the map",
@@ -294,7 +302,6 @@
             "thanksForSharing": "Thanks for sharing!"
         },
         "skip": "Skip this question",
-        "skippedQuestions": "Some questions are skipped",
         "testing": "Testing - changes won't be saved",
         "uploadGpx": {
             "choosePermission": "Choose below if your track should be shared:",

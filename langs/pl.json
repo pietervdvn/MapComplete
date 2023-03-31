@@ -57,7 +57,6 @@
         "noNameCategory": "{category} bez nazwy",
         "noTagsSelected": "Nie wybrano tagów",
         "number": "numer",
-        "oneSkippedQuestion": "Jedno pytanie zostało pominięte",
         "opening_hours": {
             "closed_permanently": "Zamknięte na nieokreślony czas",
             "closed_until": "Zamknięte do {date}",
@@ -111,7 +110,6 @@
             "thanksForSharing": "Dzięki za udostępnienie!"
         },
         "skip": "Pomiń to pytanie",
-        "skippedQuestions": "Niektóre pytania są pominięte",
         "uploadGpx": {
             "intro0": "Przesyłając swój ślad, OpenStreetMap.org zachowa pełną kopię śladu.",
             "uploading": "Przesyłanie śladu…"

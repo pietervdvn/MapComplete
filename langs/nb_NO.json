@@ -189,7 +189,6 @@
         "noTagsSelected": "Ingen etiketter valgt",
         "notValid": "Velg en gyldig verdi for å fortsette",
         "number": "tall",
-        "oneSkippedQuestion": "Et spørsmål ble hoppet over",
         "openTheMap": "Åpne kartet",
         "opening_hours": {
             "closed_permanently": "Stengt på ubestemt tid",
@@ -255,7 +254,6 @@
             "thanksForSharing": "Takk for at du bidrar."
         },
         "skip": "Hopp over dette spørsmålet",
-        "skippedQuestions": "Noen spørsmål ble hoppet over",
         "testing": "Testing. ingen endringer vil bli lagret.",
         "uploadGpx": {
             "modes": {

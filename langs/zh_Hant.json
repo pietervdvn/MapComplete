@@ -168,7 +168,6 @@
         "noTagsSelected": "沒有選取標籤",
         "notValid": "選擇有效的值來繼續",
         "number": "號碼",
-        "oneSkippedQuestion": "跳過一個問題",
         "openStreetMapIntro": "<h3>開放的地圖</h3><p>如果有一份地圖，任何人都能使用與自由編輯，單一的地圖能夠儲存所有地理相關資訊。不同的、範圍小的，不相容甚至過時不再被需要的地圖。</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">開放街圖</a></b>不是敵人的地圖，人人都能自由使用這些圖資， (只要<a href=\"https://osm.org/copyright\" target=\"_blank\">署名與公開變動這資料</a>)。任何人都能新增新資料與修正錯誤，這些網站也用開放街圖，資料也都來自開放街圖，你的答案與修正也會加被用到/p&gt;</p><p>許多人與應用程式已經採用開放街圖了：<a href=\"https://organicmaps.app//\" target=\"_blank\">Organic Maps</a>、<a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>，還有 Facebook、Instagram，蘋果地圖、Bing 地圖(部分)採用開放街圖。</p>",
         "openTheMap": "開啟地圖",
         "opening_hours": {
@@ -236,7 +235,6 @@
             "thanksForSharing": "感謝分享！"
         },
         "skip": "跳過這問題",
-        "skippedQuestions": "有些問題已經跳過了",
         "testing": "測試 - 改變還沒有儲存",
         "weekdays": {
             "abbreviations": {

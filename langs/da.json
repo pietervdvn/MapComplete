@@ -161,7 +161,6 @@
         "noTagsSelected": "Ingen tags valgt",
         "notValid": "Vælg en gyldig værdi for at gå videre",
         "number": "tal",
-        "oneSkippedQuestion": "Et spørgsmål er ignoreret",
         "openStreetMapIntro": "<h3>At Åbent kort</h3><p>Et som alle kan bruge og redigere frit. Eet sted at gemme al geo-information. Forskellige, små, inkompatible og forældede kort er der ikke brug for nogen steder.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> er ikke fjendens kort. Kortet kan bruges frit (med <a href=\"https://osm.org/copyright\" target=\"_blank\">kreditering og publicering af ændringer af data</a>). Alle kan tilføje mere data og rette fejl. Denne website bruger OpenStreetMap. Al data kommer derfra, og dine svar og rettelser vil blive bruge alle vegne.</p><p>Mange folk og apps bruger allerede OpenStreetMap: <a href=\"https://organicmaps.app/\" target=\"_blank\">Organic Maps</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, men også kortene på Facebook, Instagram, Apple-maps and Bing-maps er (delvist) drevet af OpenStreetMap.</p>",
         "openTheMap": "Åbn kortet",
         "opening_hours": {
@@ -229,7 +228,6 @@
             "thanksForSharing": "Tak for at dele!"
         },
         "skip": "Spring over dette spørgsmål",
-        "skippedQuestions": "Nogle spørgsmål er sprunget over",
         "testing": "Testing - ingen ændringer vil blive gemt",
         "weekdays": {
             "abbreviations": {

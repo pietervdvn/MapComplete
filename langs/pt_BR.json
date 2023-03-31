@@ -60,7 +60,6 @@
         "noNameCategory": "{category} sem nome",
         "noTagsSelected": "Nenhuma tag selecionada",
         "number": "número",
-        "oneSkippedQuestion": "Uma pergunta foi pulada",
         "opening_hours": {
             "closed_permanently": "Fechado por tempo desconhecido",
             "closed_until": "Fechado até {date}",
@@ -113,7 +112,6 @@
             "thanksForSharing": "Obrigado por compartilhar!"
         },
         "skip": "Pule esta pergunta",
-        "skippedQuestions": "Algumas perguntas foram puladas",
         "weekdays": {
             "abbreviations": {
                 "friday": "Sex",

@@ -162,7 +162,6 @@
         "noTagsSelected": "Nenhuma etiqueta selecionada",
         "notValid": "Selecione um valor válido para continuar",
         "number": "número",
-        "oneSkippedQuestion": "Uma pergunta é ignorada",
         "openStreetMapIntro": "<h3>Um mapa aberto</h3><p>Um que todos podem usar e editar livremente. Um único lugar para armazenar todas as informações geográficas. Mapas diferentes, pequenos, incompatíveis e desatualizados não são necessários em nenhum lugar.</p> <p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> não é o mapa inimigo. Os dados do mapa podem ser usados livremente (com <a href=\"https://osm.org/copyright\" target=\"_blank\">atribuição e publicação das alterações a esses dados</a>). Todos podem adicionar novos dados e corrigir erros. Este site usa o OpenStreetMap. Todos os dados são de lá e suas respostas e correções são usadas em todos os lugares.</p> <p> Muitas pessoas e aplicações já usam o OpenStreetMap: <a href=\"https://organicmaps.app/\" target=\"_blank\">O Organic Maps</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, mas também os mapas no Facebook, Instagram, Apple-maps e Bing-maps são (em parte) enriquecidos com dados do OpenStreetMap.</p>",
         "openTheMap": "Abrir o mapa",
         "opening_hours": {
@@ -230,7 +229,6 @@
             "thanksForSharing": "Obrigado por partilhar!"
         },
         "skip": "Ignorar esta pergunta",
-        "skippedQuestions": "Algumas perguntas são ignoradas",
         "testing": "Teste - as alterações não serão guardadas",
         "weekdays": {
             "abbreviations": {

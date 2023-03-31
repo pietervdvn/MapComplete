@@ -181,7 +181,6 @@
         "noTagsSelected": "Aucune balise sélectionnée",
         "notValid": "Sélectionnez une valeur valide pour continuer",
         "number": "nombre",
-        "oneSkippedQuestion": "Une question a été passée",
         "openStreetMapIntro": "<h3>Une carte ouverte</h3><p>Utilisable et éditable librement. Une seule et unique plateforme regroupant toutes les informations géographiques ? Toutes ces différentes cartes isolées, incompatibles et obsolètes ne sont plus utiles.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> n’est pas un énième concurrent. Toutes les données de cette carte peuvent être utilisé librement (avec <a href=\"https://osm.org/copyright\" target=\"_blank\"> attribution et publication des changements de données</a>). De plus tout le monde est libre d'ajouter de nouvelles données et corriger les erreurs. Ce site utilise également OpenStreetMap. Toutes les données en proviennent et tous les ajouts et modifications y seront également ajoutés.</p><p>De nombreux individus et applications utilisent déjà OpenStreetMap : <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, mais aussi les cartes de Facebook, Instagram, Apple Maps et Bing Maps sont (en partie) alimentées par OpenStreetMap</p>",
         "openTheMap": "Ouvrir la carte",
         "opening_hours": {
@@ -249,7 +248,6 @@
             "thanksForSharing": "Merci d'avoir partagé !"
         },
         "skip": "Passer la question",
-        "skippedQuestions": "Questions passées",
         "testing": "Test - les changements ne seront pas sauvegardés",
         "uploadGpx": {
             "meta": {

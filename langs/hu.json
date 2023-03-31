@@ -155,7 +155,6 @@
         "noNameCategory": "Név nélküli {category}",
         "noTagsSelected": "Nincs kijelölt címke",
         "number": "szám",
-        "oneSkippedQuestion": "Egy kérdés ki lett hagyva",
         "openStreetMapIntro": "<h3>Nyílt térkép</h3><p>Ezt a térképet mindenki szabadon használhatja és szerkesztheti. Ez egy olyan egységes hely, ahol &lt;i&gt;minden&lt;/i&gt; térinformatikai adatot tárolni lehet. Semmi szükség különböző, kicsi, nem kompatibilis és elavult térképekre.</p><p>Az <b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a> (OSM)</b> nem az ellenség térképe. A térképadatok szabadon felhasználhatók (<a href=\"https://osm.org/copyright\" target=\"_blank\">a tulajdonlással és az adatokban bekövetkezett változások feltüntetésével</a>). Mindenki adhat hozzá új térképadatokat és javíthat hibákat. Ez a weboldal is az OpenStreetMapet használja. Minden adat onnan származik, és a Te válaszaid és javításaid is meg fognak jelenni mindenütt.</p><p>Sok ember és alkalmazás már használja az OpenStreetMapet: például az <a href=\"https://organicmaps.app/\" target=\"_blank\">Organic Maps</a> vagy az <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, de a Facebook, az Instagram, az Apple és a Bing (Microsoft) térképei is (részben) az OpenStreetMap adataira támaszkodnak.</p>",
         "openTheMap": "Nyisd meg a térképet,",
         "opening_hours": {
@@ -220,7 +219,6 @@
             "thanksForSharing": "Köszönjük a megosztást!"
         },
         "skip": "Kérdés kihagyása",
-        "skippedQuestions": "Néhány kérdés ki lett hagyva",
         "testing": "Kipróbálás – a módosítások nem lesznek elmentve",
         "weekdays": {
             "abbreviations": {
