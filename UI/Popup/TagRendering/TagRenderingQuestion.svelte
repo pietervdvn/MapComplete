@@ -14,6 +14,7 @@
   import ChangeTagAction from "../../../Logic/Osm/Actions/ChangeTagAction";
   import { createEventDispatcher } from "svelte";
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
+  import { ExclamationIcon } from "@rgossiaux/svelte-heroicons/solid";
 
   export let config: TagRenderingConfig;
   export let tags: UIEventSource<Record<string, string>>;
@@ -23,13 +24,24 @@
 
   // Will be bound if a freeform is available
   let freeformInput = new UIEventSource<string>(undefined);
-  let selectedMapping: number = 0;
+  let selectedMapping: number = undefined;
   let checkedMappings: boolean[];
-  if (config.mappings?.length > 0) {
-    checkedMappings = [...config.mappings.map(_ => false), false /*One element extra in case a freeform value is added*/];
+  $: {
+
+    if (config.mappings?.length > 0) {
+      checkedMappings = [...config.mappings.map(_ => false), false /*One element extra in case a freeform value is added*/];
+    }
   }
   let selectedTags: TagsFilter = undefined;
-  $:selectedTags = config?.constructChangeSpecification($freeformInput, selectedMapping, checkedMappings);
+  $: {
+    try {
+
+      selectedTags = config?.constructChangeSpecification($freeformInput, selectedMapping, checkedMappings);
+    } catch (e) {
+      console.debug("Could not calculate changeSpecification:", e);
+      selectedTags = undefined;
+    }
+  }
 
   function mappingIsHidden(mapping: Mapping): boolean {
     if (mapping.hideInAnswer === undefined || mapping.hideInAnswer === false) {
@@ -59,6 +71,9 @@
         changeType: "answer"
       }
     );
+    freeformInput.setData(undefined);
+    selectedMapping = 0;
+    selectedTags = undefined;
     change.CreateChangeDescriptions().then(changes =>
       state.changes.applyChanges(changes)
     ).catch(console.error);
@@ -138,9 +153,16 @@
     <div>
       <!-- TagRenderingQuestion-buttons -->
       <slot name="cancel"></slot>
-      <button on:click={onSave}>
-        <Tr t={Translations.t.general.save}></Tr>
-      </button>
+      {#if selectedTags !== undefined}
+        <button on:click={onSave}>
+          <Tr t={Translations.t.general.save}></Tr>
+        </button>
+      {:else }
+        <div class="w-6 h-6">
+          <!-- Invalid value; show an inactive button or something like that-->
+        <ExclamationIcon></ExclamationIcon>
+        </div>
+      {/if}
     </div>
 
   </div>

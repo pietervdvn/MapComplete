@@ -46,7 +46,7 @@
   const baseQuestions = (layer.tagRenderings ?? [])?.filter(tr => allowed(tr.labels) && tr.question !== undefined);
   console.log("BaseQuestions are", baseQuestions);
   let skippedQuestions = new UIEventSource<Set<string>>(new Set<string>());
-  let answered : number = 0
+
   let questionsToAsk = tags.map(tags => {
     const questionsToAsk: TagRenderingConfig[] = [];
     for (const baseQuestion of baseQuestions) {
@@ -56,32 +56,75 @@
       if (baseQuestion.condition !== undefined && !baseQuestion.condition.matchesProperties(tags)) {
         continue;
       }
+      if (baseQuestion.IsKnown(tags)) {
+        continue;
+      }
       questionsToAsk.push(baseQuestion);
     }
     return questionsToAsk;
 
   }, [skippedQuestions]);
   let _questionsToAsk: TagRenderingConfig[];
-  let _firstQuestion: TagRenderingConfig
+  let _firstQuestion: TagRenderingConfig;
   onDestroy(questionsToAsk.subscribe(qta => {
     _questionsToAsk = qta;
-    _firstQuestion = qta[0]
+    _firstQuestion = qta[0];
   }));
+
+  let answered: number = 0;
+  let skipped: number = 0;
 
   function skip(question: TagRenderingConfig, didAnswer: boolean = false) {
     skippedQuestions.data.add(question.id);
     skippedQuestions.ping();
-    if(didAnswer ){
-      answered ++
+    if (didAnswer) {
+      answered++;
+    } else {
+      skipped++;
     }
   }
 </script>
 
 {#if _questionsToAsk.length === 0}
-  All done! You answered {answered} questions and skipped {$skippedQuestions.size} questions.
-  {#if $skippedQuestions.size > 0 }
-    <button on:click={() => skippedQuestions.setData(new Set())}>Re-activate skipped questions</button>
+
+  {#if skipped + answered > 0 }
+    <div class="thanks">
+      <Tr t={Translations.t.general.questionBox.done} />
+    </div>
+    {#if answered === 0}
+      {#if skipped === 1}
+        <Tr t={Translations.t.general.questionBox.skippedOne} />
+      {:else}
+        <Tr t={Translations.t.general.questionBox.skippedMultiple.Subs({skipped})} />
+
+      {/if}
+    {:else if answered === 1}
+      {#if skipped === 0}
+        <Tr t={Translations.t.general.questionBox.answeredOne} />
+      {:else if skipped === 1}
+        <Tr t={Translations.t.general.questionBox.answeredOneSkippedOne} />
+      {:else}
+        <Tr t={Translations.t.general.questionBox.answeredOneSkippedMultiple.Subs({skipped})} />
+
+      {/if}
+    {:else}
+      {#if skipped === 0}
+        <Tr t={Translations.t.general.questionBox.answeredMultiple.Subs({answered})} />
+      {:else if skipped === 1}
+        <Tr t={Translations.t.general.questionBox.answeredMultipleSkippedOne.Subs({answered})} />
+      {:else}
+        <Tr
+          t={Translations.t.general.questionBox.answeredMultipleSkippedMultiple.Subs({answered, skipped})} />
+
+      {/if}
     {/if}
+
+    {#if skipped > 0 }
+      <button on:click={() => {skippedQuestions.setData(new Set()); skipped=0}}>
+        Re-activate skipped questions
+      </button>
+    {/if}
+  {/if}
 {:else }
   <div>
     <If condition={state.userRelatedState.showAllQuestionsAtOnce}>

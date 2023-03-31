@@ -620,6 +620,10 @@ export default class TagRenderingConfig {
         singleSelectedMapping: number,
         multiSelectedMapping: boolean[] | undefined
     ): UploadableTag {
+        freeformValue = freeformValue?.trim()
+        if (freeformValue === "") {
+            freeformValue = undefined
+        }
         if (
             freeformValue === undefined &&
             singleSelectedMapping === undefined &&
@@ -627,6 +631,7 @@ export default class TagRenderingConfig {
         ) {
             return undefined
         }
+
         if (this.mappings === undefined && freeformValue === undefined) {
             return undefined
         }
@@ -663,7 +668,13 @@ export default class TagRenderingConfig {
             }
             return TagUtils.FlattenMultiAnswer([...selectedMappings, ...unselectedMappings])
         } else {
+            if (singleSelectedMapping === undefined) {
+                return undefined
+            }
             if (singleSelectedMapping === this.mappings.length) {
+                if (freeformValue === undefined) {
+                    return undefined
+                }
                 return new And([
                     new Tag(this.freeform.key, freeformValue),
                     ...(this.freeform.addExtraTags ?? []),

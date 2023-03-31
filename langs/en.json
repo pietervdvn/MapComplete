@@ -253,12 +253,15 @@
         "pickLanguage": "Choose a language: ",
         "poweredByOsm": "Powered by OpenStreetMap",
         "questionBox": {
+            "answeredMultiple": "You answered {answered} questions",
             "answeredMultipleSkippedMultiple": "You answered {answered} questions and skipped {skipped} questions",
             "answeredMultipleSkippedOne": "You answered {answered} questions and skipped one question",
             "answeredOne": "You answered one question",
             "answeredOneSkippedMultiple": "You answered one question and skipped {skipped} questions",
             "answeredOneSkippedOne": "You answered one and skipped one question",
+            "done": "No more questions! Thank you!",
             "reactivate": "Reactive skipped questions",
+            "skippedMultiple": "You skipped {skipped} questions",
             "skippedOne": "You skipped one question"
         },
         "questions": {

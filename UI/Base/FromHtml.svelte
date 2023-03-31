@@ -6,7 +6,7 @@
   export let src: string;
   let htmlElem: HTMLElement;
   $: {
-    if(htmlElem !== undefined){
+    if(htmlElem){
     htmlElem.innerHTML = src
     }
   }
