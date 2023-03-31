@@ -252,6 +252,15 @@
         },
         "pickLanguage": "Choose a language: ",
         "poweredByOsm": "Powered by OpenStreetMap",
+        "questionBox": {
+            "answeredMultipleSkippedMultiple": "You answered {answered} questions and skipped {skipped} questions",
+            "answeredMultipleSkippedOne": "You answered {answered} questions and skipped one question",
+            "answeredOne": "You answered one question",
+            "answeredOneSkippedMultiple": "You answered one question and skipped {skipped} questions",
+            "answeredOneSkippedOne": "You answered one and skipped one question",
+            "reactivate": "Reactive skipped questions",
+            "skippedOne": "You skipped one question"
+        },
         "questions": {
             "emailIs": "The email address of this {category} is <a href='mailto:{email}' target='_blank'>{email}</a>",
             "emailOf": "What is the email address of {category}?",
@@ -259,15 +268,6 @@
             "phoneNumberOf": "What is the phone number of {category}?",
             "websiteIs": "Website: <a href='{website}' target='_blank'>{website}</a>",
             "websiteOf": "What is the website of {category}?"
-        },
-        "questionBox": {
-            "skippedOne": "You skipped one question",
-            "reactivate": "Reactive skipped questions",
-            "answeredOne": "You answered one question",
-            "answeredOneSkippedOne": "You answered one and skipped one question",
-            "answeredOneSkippedMultiple": "You answered one question and skipped {skipped} questions",
-            "answeredMultipleSkippedMultiple": "You answered {answered} questions and skipped {skipped} questions",
-            "answeredMultipleSkippedOne": "You answered {answered} questions and skipped one question"
         },
         "readYourMessages": "Please, read all your OpenStreetMap-messages before adding a new feature.",
         "removeLocationHistory": "Delete the location history",

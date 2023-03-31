@@ -857,8 +857,8 @@
             },
             "1": {
                 "override": {
-                    "tagRenderings": {
-                        "link_to_more": {
+                    "tagRenderings+": {
+                        "0": {
                             "render": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>"
                         }
                     }
