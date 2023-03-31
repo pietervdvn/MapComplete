@@ -9,8 +9,8 @@
   import ToSvelte from "../Base/ToSvelte.svelte"
   import type { Feature, Geometry, GeometryCollection } from "@turf/turf"
 
-  export let locationControl: Store<{ lat: number; lon: number }>
-  const tileToFetch: Store<string> = locationControl.mapD((l) => {
+  export let location: Store<{ lat: number; lon: number }>
+  const tileToFetch: Store<string> = location.mapD((l) => {
     const t = Tiles.embedded_tile(l.lat, l.lon, 6)
     return `https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/tile_${t.z}_${t.x}_${t.y}.geojson`
   })
@@ -30,9 +30,9 @@
   const filteredResources = resources.map(
     (features) =>
       features.filter((f) => {
-        return GeoOperations.inside([locationControl.data.lon, locationControl.data.lat], f)
+        return GeoOperations.inside([location.data.lon, location.data.lat], f)
       }),
-    [locationControl]
+    [location]
   )
 </script>
 

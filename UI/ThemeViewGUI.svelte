@@ -21,6 +21,7 @@
   import Translations from "./i18n/Translations";
   import { MenuIcon } from "@rgossiaux/svelte-heroicons/solid";
   import Tr from "./Base/Tr.svelte";
+  import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte";
 
   export let layout: LayoutConfig;
   const state = new ThemeViewState(layout);
@@ -142,13 +143,21 @@
 
 <If condition={state.guistate.menuIsOpened}>
   <!-- Menu page -->
-  <div class="absolute top-0 left-0 w-screen h-screen" style="background-color: #00000088">
+  <div class="absolute top-0 left-0 w-screen h-screen overflow-auto" style="background-color: #00000088">
     <div class="flex flex-col m-4 sm:m-6 md:m-8 p-4 sm:p-6 md:m-8 normal-background rounded">
       <div on:click={() => state.guistate.menuIsOpened.setData(false)}>Close</div>
       <TabGroup>
         <TabList>
           <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>About MapComplete</Tab>
           <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>Settings</Tab>
+          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
+            <div class="flex">
+              <div class="w-6">
+                <ToSvelte construct={Svg.community_ui}></ToSvelte>
+              </div>
+              Get in touch with others
+            </div>
+          </Tab>
           <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>Privacy</Tab>
         </TabList>
         <TabPanels>
@@ -158,6 +167,10 @@
 
           </TabPanel>
           <TabPanel>User settings</TabPanel>
+          <TabPanel>
+            <CommunityIndexView location={state.mapProperties.location}></CommunityIndexView>
+
+          </TabPanel>
           <TabPanel>Privacy</TabPanel>
         </TabPanels>
       </TabGroup>
