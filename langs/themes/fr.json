@@ -1,4 +1,9 @@
 {
+    "advertising": {
+        "description": "Vous êtes-vous déjà demandé combien de publicité il y a dans nos rue ou sur nos routes ? Avec cette carte vous pouvez trouver et ajouter des informations sur tous les dispositifs publicitaires que vous pouvez trouver dans la rue",
+        "shortDescription": "Où puis-je trouver des dispositifs publicitaires ?",
+        "title": "Open Advertising Map"
+    },
     "aed": {
         "description": "Sur cette carte, vous pouvez trouver et améliorer les informations sur les défibrillateurs",
         "title": "Carte des défibrillateurs (DAE)"
@@ -382,6 +387,10 @@
         },
         "title": "Open Climbing Map"
     },
+    "clock": {
+        "description": "Carte affichant toutes les horloges publiques",
+        "title": "Horloges"
+    },
     "cycle_highways": {
         "description": "Cette carte affiche les aménagements cyclables",
         "layers": {
@@ -679,7 +688,7 @@
         "title": "Carte des friteries"
     },
     "ghostbikes": {
-        "description": "Les <b>vélos fantômes</b> sont des mémoriaux pour les cyclistes tuées sur la route, prenant la forme de vélos blancs placés à proximité des faits.<br/><br/>Cette carte indique leur emplacement à partir d’OpenStreetMap. Il est possible de contribuer aux informations ici, sous réserve d’avoir un compte OpenStreetMap (gratuit).",
+        "description": "Les <b>vélos fantômes</b> sont des mémoriaux pour les cyclistes tuées sur la route, prenant la forme de vélos blancs placés à proximité des faits.<br/><br/>Cette carte indique leur emplacement à partir d’OpenStreetMap. Il est possible de contribuer aux informations ici, sous réserve d’avoir un compte OpenStreetMap (gratuit). <p>Il existe un <a href='https://masto.bike/@ghostbikebot' target='_blank'>compte automatisé Mastodon qui publie un aperçu mensuel des vélos fantômes à travers le monde</a></p>",
         "title": "Vélo fantôme"
     },
     "grb": {
@@ -731,6 +740,17 @@
     },
     "healthcare": {
         "description": "Cette carte affiche différents éléments liés à la santé",
+        "layers": {
+            "5": {
+                "override": {
+                    "=presets": {
+                        "2": {
+                            "title": "un opticien"
+                        }
+                    }
+                }
+            }
+        },
         "title": "Services de santé"
     },
     "hotels": {
@@ -776,6 +796,33 @@
     "onwheels": {
         "description": "Sur cette carte nous pouvons voir et ajouter les différents endroits publiques accessibles aux chaises roulantes",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistiques"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importation"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Ajouter tous les attributs suggérés"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -817,33 +864,6 @@
             "8": {
                 "override": {
                     "name": "Places de stationnement pour personnes handicapées"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistiques"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importation"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Ajouter tous les attributs suggérés"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1003,10 +1023,6 @@
     "stations": {
         "description": "Voir, modifier et ajouter des détails à une gare ferroviaire",
         "layers": {
-            "3": {
-                "description": "Couche montrant les gares",
-                "name": "Gares ferroviaires"
-            },
             "15": {
                 "description": "Panneau affichant les trains au départ depuis cette gare",
                 "name": "Panneaux des départs",
@@ -1035,6 +1051,10 @@
                 "title": {
                     "render": "Tableau des départs"
                 }
+            },
+            "3": {
+                "description": "Couche montrant les gares",
+                "name": "Gares ferroviaires"
             }
         },
         "title": "Gares ferroviaires"

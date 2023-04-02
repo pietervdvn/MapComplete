@@ -58,7 +58,7 @@
         "fakeui": {
             "add_images": "Afegeix imatges amb pocs clics",
             "attributes": "Mostra els atributs d'una manera amigable",
-            "edit": "Informació incorrecta o desactualitzada? El botó d'editar està just aquí",
+            "edit": "Informació incorrecta o desactualizada? El botó d'editar està just aquí.",
             "question": "Si encara no es coneix cap atribut, MapCpomplete mostrarà una pregunta",
             "see_images": "Mostra imatges de contribuïdors anteriors, Wikipedia, Mapillary, ... ",
             "wikipedia": "Es mostren articles de Wikipedia enllaçats"
@@ -395,23 +395,49 @@
             "downloadGeojson": "Descarrega GeoJSON",
             "giveSource": "Quina és la font d'aquestes dades? Si s'estableix \"font\" a l'element aquest valor s'ignorarà"
         },
+        "conflationChecker": {
+            "states": {
+                "running": "Consultant Overpass…",
+                "unexpected": "Estat inesperat {state}"
+            },
+            "title": "Comparar amb dades existents",
+            "titleLive": "Dades en directe a OSM",
+            "titleNearby": "Característiques properes",
+            "zoomIn": "El nivell de zoom actual és {current}",
+            "zoomLevelSelection": "Les dades en directe es mostren si el nivell de zoom és com a mínim: "
+        },
+        "createNotes": {
+            "creating": "Creades <b>{count}</b> notes de {total}",
+            "done": "S'han creat totes les {count} notes!",
+            "loading": "Espera mentre estem carregant…",
+            "openImportViewer": "Inspeccioneu el progrés de les vostres notes al \"import_viewer\"",
+            "title": "Creació de notes"
+        },
+        "gotoImportViewer": "Inspeccioneu les vostres importacions anteriors",
         "introduction": {
             "description": "L'ajudant d'importació converteix un conjunt de dades extern en notes. El conjunt de dades extern ha de coincidir amb una de les capes MapComplete existents. Per a cada article que introdueixes a l'importador, es crearà una nota única. Aquestes notes es mostraran juntament amb les característiques rellevants en aquests mapes per afegir-les fàcilment.",
-            "importFormat": "Un text d'una nota ha de tenir el format següent per poder ser recollit: <br><div class=\"literal-code\">[Una petita introducció]<br>https://mapcomplete.osm.be /[themename].html?[paràmetres com ara lat i lon]#import<br>[totes les etiquetes de la funció] </div>"
+            "importFormat": "Un text d'una nota ha de tenir el format següent per poder ser recollit: <br><div class=\"literal-code\">[Una petita introducció]<br>https://mapcomplete.osm.be /[themename].html?[paràmetres com ara lat i lon]#import<br>[totes les etiquetes de la funció] </div>",
+            "title": "Introducció"
         },
         "login": {
             "lockNotice": "Aquesta pàgina està bloquejada. Necessites {importHelperUnlock} conjunts de canvis per poder accedir aquí.",
             "loggedInWith": "Actualment has entrat com a <b>{name}</b> i has fet {csCount} conjunts de canvis",
             "loginIsCorrect": "<b>{name}</b> és el compte correcte per crear les notes d'importació.",
             "loginRequired": "Has d'entrar per continuar",
+            "title": "Iniciar Sessió",
             "userAccountTitle": "Seleccionar compte d'usuari"
         },
         "mapPreview": {
-            "autodetected": "La capa es va deduir automàticament en funció de les propietats",
+            "autodetected": "La capa es va deduir automàticament en funció de les seves propietats",
             "confirm": "Les característiques es troben a la ubicació correcta del mapa",
             "mismatch": "{count} característiques no coincideixen amb la capa seleccionada. Assegura't que hi hagi les etiquetes per indicar el tipus, és a dir, {tags}",
             "selectLayer": "Amb quina capa coincideix aquesta importació?",
             "title": "Vista prèvia del mapa"
+        },
+        "noteParts": {
+            "datasource": "Dades originals de {source}",
+            "importEasily": "Afegiu aquest punt fàcilment amb MapComplete:",
+            "wikilink": "Podeu trobar més informació sobre aquesta importació a {wikilink}"
         },
         "previewAttributes": {
             "allAttributesSame": "Totes les funcions a importar tenen aquesta etiqueta",
@@ -439,13 +465,13 @@
         "title": "Inspeccionar i controlar notes d'importació"
     },
     "importLayer": {
-        "alreadyMapped": "Ja hi ha un altre {title} al mapa; aquest punt és un duplicat",
+        "alreadyMapped": "Ja hi ha un {title} al mapa - aquest punt és un duplicat",
         "description": "Una capa que importa entrades per a {title}",
         "importButton": "import_button({layerId}, _tags, he trobat un {title} aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)",
         "importHandled": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
         "layerName": "Possible {title}",
         "notFound": "No he pogut trobar {title}: esborra-ho",
-        "popupTitle": "Possible {title}"
+        "popupTitle": "Pot ser que hi hagi {title} aquí"
     },
     "index": {
         "#": "Aquests textos es mostren sobre els botons de les peticions quan no hi ha petició carregada",

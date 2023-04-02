@@ -36,8 +36,24 @@
                 },
                 "1": {
                     "then": "Les billets de 10 euros sont acceptés"
+                },
+                "2": {
+                    "then": "Les billets de 20 euros sont acceptés"
+                },
+                "3": {
+                    "then": "Les billets de 50 euros sont acceptés"
+                },
+                "4": {
+                    "then": "Les billets de 100 euros sont acceptés"
+                },
+                "5": {
+                    "then": "Les billets de 200 euros sont acceptés"
+                },
+                "6": {
+                    "then": "Les billets de 500 euros sont acceptés"
                 }
-            }
+            },
+            "question": "quels billets pouvez vous utiliser pour payer ici ?"
         },
         "description": {
             "question": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.",
@@ -138,10 +154,20 @@
         },
         "luminous_or_lit": {
             "mappings": {
+                "0": {
+                    "then": "Cet objet émet de la lumière et est éclairé par l'extérieur"
+                },
+                "1": {
+                    "then": "Cet objet émet de la lumière"
+                },
+                "2": {
+                    "then": "Cet objet est éclairé par l'extérieur, par ex. par un projecteur ou d'autres lumières"
+                },
                 "3": {
                     "then": "Cet objet n'émet pas de lumière et n'est pas éclairé par l'extérieur"
                 }
-            }
+            },
+            "question": "Cet objet est-il éclairé ou émet-il de la lumière ?"
         },
         "multilevels": {
             "override": {

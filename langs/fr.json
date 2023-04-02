@@ -5,6 +5,11 @@
         "retrying": "Le chargement a échoué. Nouvel essai dans {count} secondes…",
         "zoomIn": "Rapprochez-vous sur la carte pour voir ou éditer les données"
     },
+    "communityIndex": {
+        "available": "Cette communauté parle {native}",
+        "intro": "Prenez contact avec d'autres personnes pour les connaître, apprendre d'elles, …",
+        "title": "Index communautaire"
+    },
     "delete": {
         "cancel": "Annuler",
         "cannotBeDeleted": "Cet objet ne peut être supprimé",

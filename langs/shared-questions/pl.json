@@ -152,6 +152,23 @@
             "question": "Na jakim poziomie znajduje się ta funkcja?",
             "render": "Znajduje się na {level} piętrze"
         },
+        "luminous_or_lit": {
+            "mappings": {
+                "0": {
+                    "then": "Ten obiekt zarówno emituje światło, jak i jest oświetlany przez zewnętrzne źródło światła"
+                },
+                "1": {
+                    "then": "Ten obiekt emituje światło"
+                },
+                "2": {
+                    "then": "Ten obiekt jest oświetlony zewnętrznie, np. przez reflektor lub inne światła"
+                },
+                "3": {
+                    "then": "Obiekt ten nie emituje światła i nie jest oświetlany z zewnątrz"
+                }
+            },
+            "question": "Czy ten obiekt jest oświetlony lub emituje światło?"
+        },
         "multilevels": {
             "override": {
                 "question": "Na jakie poziomy jedzie ta winda?",
