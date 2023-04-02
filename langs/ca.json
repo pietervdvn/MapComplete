@@ -393,7 +393,8 @@
     "importHelper": {
         "askMetadata": {
             "downloadGeojson": "Descarrega GeoJSON",
-            "giveSource": "Quina és la font d'aquestes dades? Si s'estableix \"font\" a l'element aquest valor s'ignorarà"
+            "giveSource": "Quina és la font d'aquestes dades? Si s'estableix \"font\" a l'element aquest valor s'ignorarà",
+            "shouldNotBeHomepage": "No, la pàgina d'inici tampoc està permesa. Introduïu l'URL d'una pàgina wiki adequada que documenti la vostra importació"
         },
         "conflationChecker": {
             "states": {
@@ -470,6 +471,7 @@
         "importButton": "import_button({layerId}, _tags, he trobat un {title} aquí; afegeix-lo al mapa,./assets/svg/addSmall.svg,,,id)",
         "importHandled": "<div class=\"thanks\">Aquesta funció s'ha gestionat. Gràcies pel teu esforç.</div>",
         "layerName": "Possible {title}",
+        "nearbyImagesIntro": "<h3>Imatges properes</h3>Les imatges següents són imatges geoetiquetades properes de diversos serveis en línia. Us poden ajudar a resoldre aquesta nota.{nearby_images(open)}",
         "notFound": "No he pogut trobar {title}: esborra-ho",
         "popupTitle": "Pot ser que hi hagi {title} aquí"
     },
@@ -482,6 +484,7 @@
         "title": "Benvingut/da a MapComplete"
     },
     "matrixbot": {
+        "commandFailed": "Ho sentim, hi ha hagut un error en executar <code>{cmd}</code>",
         "commands": {
             "wiki": {
                 "noWiki": "Si us plau, especifiqueu una pàgina de la wiki per a cercar",
