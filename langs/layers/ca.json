@@ -1685,6 +1685,9 @@
         },
         "name": "Estacions de càrrega",
         "tagRenderings": {
+            "Authentication": {
+                "question": "Quin tipus d'autenticació hi ha disponible a l'estació de càrrega?"
+            },
             "Available_charging_stations (generated)": {
                 "mappings": {
                     "2": {
@@ -1882,10 +1885,15 @@
                         "then": "No hi ha límit de temps per a deixar el teu vehicle aquí"
                     }
                 },
-                "question": "Quina és la quantitat màxima de temps que es permet permaneixer aquí?"
+                "question": "Quina és la quantitat màxima de temps que es permet permaneixer aquí?",
+                "render": "Un pot quedar-se com a màxim <b>{canonical(maxstay)}</b>"
             },
             "phone": {
                 "question": "A quin número es pot cridar si hi ha algun problema amb aquest punt de càrrega?"
+            },
+            "plugs-7": {
+                "question": "Quants endolls del tipus <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> hi ha disponibles aquí?",
+                "render": "Hi ha <b class='text-xl'>{socket:type2}</b> endolls del tipus <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> disponibles aquí"
             },
             "voltage-2": {
                 "mappings": {
@@ -1894,6 +1902,9 @@
                     }
                 },
                 "question": "Quin voltatge ofereixen els endolls amb <div style='display: inline-block'><b><b>CHAdeMO</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div>?"
+            },
+            "website": {
+                "question": "Quina és la pàgina web on es pot trobar més informació sobre aquest punt de recàrrega?"
             }
         },
         "title": {
@@ -2353,6 +2364,9 @@
             "defibrillator-email": {
                 "question": "Quin és el correu electrònic on preguntar sobre aquest desfibril·lador?"
             },
+            "defibrillator-fixme": {
+                "question": "Hi ha alguna cosa malament en la manera de com està mapejat això, que no heu pogut solucionar aquí? (deixeu una nota als experts d'OpenStreetMap)"
+            },
             "defibrillator-indoors": {
                 "mappings": {
                     "0": {
@@ -2697,7 +2711,46 @@
                 },
                 "question": "Aquest lloc ofereix per a emportar?"
             },
+            "Vegan (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "No hi ha opcions veganes disponibles"
+                    },
+                    "1": {
+                        "then": "Hi ha algunes opcions veganes disponibles"
+                    },
+                    "2": {
+                        "then": "Hi ha opcions veganes disponibles"
+                    },
+                    "3": {
+                        "then": "Tots els plats són vegans"
+                    }
+                },
+                "question": "Aquest negoci serveix menjars vegans?"
+            },
+            "Vegetarian (no friture)": {
+                "mappings": {
+                    "1": {
+                        "then": "Algunes opcions vegetarianes"
+                    },
+                    "2": {
+                        "then": "Hi ha opcions vegetarianes disponibles"
+                    },
+                    "3": {
+                        "then": "Tots els plats són vegetarians"
+                    }
+                },
+                "question": "Aquest restaurant té opció vegetariana?"
+            },
             "delivery": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest negoci fa lliuraments a domicili (eventualment a través d'un tercer)"
+                    },
+                    "1": {
+                        "then": "Aquest negoci no fa lliurament a casa"
+                    }
+                },
                 "question": "{title()} lliura el seu menjar a casa?"
             },
             "friture-oil": {
@@ -2710,6 +2763,37 @@
                     }
                 },
                 "question": "Aquesta botiga de patates fregides utilitza oli vegetal o animal per a cuinar?"
+            },
+            "halal (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "No hi ha opcions halal disponibles"
+                    },
+                    "1": {
+                        "then": "Hi ha un petit menú halal"
+                    },
+                    "2": {
+                        "then": "Hi ha un menú halal"
+                    },
+                    "3": {
+                        "then": "Només hi ha opcions halal disponibles"
+                    }
+                },
+                "question": "Aquest restaurant ofereix un menú halal?"
+            },
+            "organic (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "No hi ha opcions ecològiques disponibles"
+                    },
+                    "1": {
+                        "then": "Hi ha un menú ecològic"
+                    },
+                    "2": {
+                        "then": "Només hi ha opcions ecològiques disponibles"
+                    }
+                },
+                "question": "Aquest restaurant ofereix menjar ecològic?"
             }
         },
         "title": {
@@ -3182,7 +3266,8 @@
                         "then": "No hi han places d'aparcament per a persones amb mobilitat reduïda"
                     }
                 },
-                "question": "Quantes places d'aparcament per a persones amb mobilitat reduïda hi ha al parking?"
+                "question": "Quantes places d'aparcament per a persones amb mobilitat reduïda hi ha al parking?",
+                "render": "Hi ha {capacity:disabled} places d'aparcament per a discapacitats"
             },
             "parking-type": {
                 "mappings": {
@@ -3361,6 +3446,13 @@
                     }
                 },
                 "question": "Pots enviar un paquet des d'aquí?"
+            },
+            "parcel-pickup": {
+                "mappings": {
+                    "0": {
+                        "then": "Podeu recollir els paquets perduts aquí"
+                    }
+                }
             },
             "parcel-to": {
                 "mappings": {
