@@ -2,7 +2,7 @@ import SvelteUIElement from "./UI/Base/SvelteUIElement"
 import ThemeViewGUI from "./UI/ThemeViewGUI.svelte"
 import { FixedUiElement } from "./UI/Base/FixedUiElement"
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig"
-import * as benches from "./assets/generated/themes/cyclofix.json"
+import * as theme from "./assets/generated/themes/shops.json"
 import { UIEventSource } from "./Logic/UIEventSource"
 import ThemeViewState from "./Models/ThemeViewState"
 import Combine from "./UI/Base/Combine"
@@ -13,13 +13,13 @@ import { Translation } from "./UI/i18n/Translation"
 
 async function main() {
     new FixedUiElement("").AttachTo("extradiv")
-    const layout = new LayoutConfig(<any>benches, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
+    const layout = new LayoutConfig(<any>theme, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
     const main = new SvelteUIElement(ThemeViewGUI, { layout })
     main.AttachTo("maindiv")
 }
 
 async function testspecial() {
-    const layout = new LayoutConfig(<any>benches, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
+    const layout = new LayoutConfig(<any>theme, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
     const state = new ThemeViewState(layout)
 
     const all = SpecialVisualizations.specialVisualizations.map((s) =>

@@ -1,0 +1,116 @@
+{
+  "id": "last_click",
+  "description": "This layer defines how to render the 'last click'-location. By default, it will show a marker with the possibility to add a new point (if there are some presets) and/or to add a new note (if the 'note' layer attribute is set). If none are possible, this layer won't show up",
+  "source": "special",
+  "name": null,
+  "titleIcons": [],
+  "title": {
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "has_note_layer=yes",
+            "has_presets=yes"
+          ]
+        },
+        "then": {
+          "en": "Add a new point or add a note",
+          "nl": "Voeg een nieuw punt of een nieuwe kaartnota toe"
+        }
+      },
+      {
+        "if": "has_note_layer=yes",
+        "then": {
+          "en": "Add a new note",
+          "nl": "Voeg een nieuwe kaartnota toe"
+        }
+      },
+      {
+        "if": "has_presets=yes",
+        "then": {
+          "en": "Add a new point",
+          "nl": "Voeg een nieuw punt toe"
+        }
+      }
+    ]
+  },
+  "tagRenderings": [
+    {
+      "id": "add_new",
+      "mappings": [
+        {
+          "if": "has_presets=yes",
+          "then": {
+            "*": "{add_new_point()}"
+          }
+        }
+      ]
+    },
+    "all_tags"
+  ],
+  "mapRendering": [
+    {
+      "icon": {
+        "mappings": [
+          {
+            "if": "number_of_presets=1",
+            "then": "{first_preset}"
+          }
+        ],
+        "render": "<div class='relative'> <img src='./assets/svg/add_pin.svg' class='absolute' style='height: 50px'> <div class='absolute top-0 left-0 rounded-full overflow-hidden' style='width: 40px; height: 40px'><div class='flex slide min-w-min' style='animation: slide linear {number_of_presets}s infinite; width: calc( (1 + {number_of_presets}) * 40px ); height: 40px'>{renderings}{first_preset}</div></div></div>"
+      },
+      "labelCssClasses": "text-sm min-w-min pl-1 pr-1 bg-gray-400 rounded-3xl text-white opacity-65 whitespace-nowrap",
+      "label": {
+        "render": {
+          "ca": "Afegir nou element",
+          "cs": "Klikněte zde pro přidání nové položky",
+          "da": "Klik her for at tilføje et nyt punkt",
+          "de": "Hier klicken, um ein neues Element hinzuzufügen",
+          "en": "Click here to add a new item",
+          "es": "Haga clic aquí para añadir un nuevo ítem",
+          "fil": "I-click ito para mag-dagdag ng bagong bagay",
+          "fr": "Cliquez ici pour ajouter un élément",
+          "hu": "Új elem hozzáadásához kattints ide",
+          "id": "Klik di sini untuk menambahkan item baru",
+          "it": "Aggiungi nuovo elemento",
+          "nb_NO": "Legg til nytt element",
+          "nl": "Klik hier om een item toe te voegen",
+          "pt": "Adicionar novo item",
+          "zh_Hant": "點這邊新增新項目"
+        }
+      },
+      "iconBadges": [
+        {
+          "if": {
+            "or": [
+              "has_note_layer=yes",
+              "has_presets=yes"
+            ]
+          },
+          "then": "<img class='animate-pulse' src='./assets/svg/addSmall.svg'>"
+        }
+      ],
+      "location": [
+        "point"
+      ],
+      "iconSize": "40,50,bottom"
+    }
+  ],
+  "filter": [
+    {
+      "id": "action",
+      "options": [
+        {
+          "default": true,
+          "question": "only_if_action_is_possible",
+          "osmTags": {
+            "or": [
+              "has_note_layer=yes",
+              "has_presets=yes"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

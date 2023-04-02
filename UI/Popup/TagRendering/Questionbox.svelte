@@ -41,10 +41,7 @@
     return true;
   }
 
-  console.log("Got layer", layer, onlyForLabels, notForLabels);
-
   const baseQuestions = (layer.tagRenderings ?? [])?.filter(tr => allowed(tr.labels) && tr.question !== undefined);
-  console.log("BaseQuestions are", baseQuestions);
   let skippedQuestions = new UIEventSource<Set<string>>(new Set<string>());
 
   let questionsToAsk = tags.map(tags => {

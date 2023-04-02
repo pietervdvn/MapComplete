@@ -20,11 +20,12 @@ import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeature
 
 class PointRenderingLayer {
     private readonly _config: PointRenderingConfig
+    private readonly _visibility?: Store<boolean>
     private readonly _fetchStore?: (id: string) => Store<Record<string, string>>
     private readonly _map: MlMap
     private readonly _onClick: (feature: Feature) => void
     private readonly _allMarkers: Map<string, Marker> = new Map<string, Marker>()
-
+    private _dirty = false
     constructor(
         map: MlMap,
         features: FeatureSource,
@@ -33,6 +34,7 @@ class PointRenderingLayer {
         fetchStore?: (id: string) => Store<Record<string, string>>,
         onClick?: (feature: Feature) => void
     ) {
+        this._visibility = visibility
         this._config = config
         this._map = map
         this._fetchStore = fetchStore
@@ -40,10 +42,20 @@ class PointRenderingLayer {
         const self = this
 
         features.features.addCallbackAndRunD((features) => self.updateFeatures(features))
-        visibility?.addCallbackAndRunD((visible) => self.setVisibility(visible))
+        visibility?.addCallbackAndRunD((visible) => {
+            if (visible === true && self._dirty) {
+                self.updateFeatures(features.features.data)
+            }
+            self.setVisibility(visible)
+        })
     }
 
     private updateFeatures(features: Feature[]) {
+        if (this._visibility?.data === false) {
+            this._dirty = true
+            return
+        }
+        this._dirty = false
         const cache = this._allMarkers
         const unseenKeys = new Set(cache.keys())
         for (const location of this._config.location) {
@@ -58,6 +70,9 @@ class PointRenderingLayer {
                         this._config
                     )
                 }
+                const id = feature.properties.id + "-" + location
+                unseenKeys.delete(id)
+
                 const loc = GeoOperations.featureToCoordinateWithRenderingType(
                     <any>feature,
                     location
@@ -65,8 +80,6 @@ class PointRenderingLayer {
                 if (loc === undefined) {
                     continue
                 }
-                const id = feature.properties.id + "-" + location
-                unseenKeys.delete(id)
 
                 if (cache.has(id)) {
                     const cached = cache.get(id)
@@ -357,10 +370,12 @@ export default class ShowDataLayer {
 
     private initDrawFeatures(map: MlMap) {
         let { features, doShowLayer, fetchStore, selectedElement, selectedLayer } = this._options
-        const onClick = (feature: Feature) => {
-            selectedElement?.setData(feature)
-            selectedLayer?.setData(this._options.layer)
-        }
+        const onClick =
+            this._options.onClick ??
+            ((feature: Feature) => {
+                selectedElement?.setData(feature)
+                selectedLayer?.setData(this._options.layer)
+            })
         for (let i = 0; i < this._options.layer.lineRendering.length; i++) {
             const lineRenderingConfig = this._options.layer.lineRendering[i]
             new LineRenderingLayer(

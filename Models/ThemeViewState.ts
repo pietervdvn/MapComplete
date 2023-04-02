@@ -1,7 +1,7 @@
 import LayoutConfig from "./ThemeConfig/LayoutConfig"
 import { SpecialVisualizationState } from "../UI/SpecialVisualization"
 import { Changes } from "../Logic/Osm/Changes"
-import { Store, UIEventSource } from "../Logic/UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../Logic/UIEventSource"
 import FeatureSource, {
     IndexedFeatureSource,
     WritableFeatureSource,
@@ -38,6 +38,7 @@ import Constants from "./Constants"
 import Hotkeys from "../UI/Base/Hotkeys"
 import Translations from "../UI/i18n/Translations"
 import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexedStore"
+import { LastClickFeatureSource } from "../Logic/FeatureSource/Sources/LastClickFeatureSource"
 
 /**
  *
@@ -105,6 +106,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.mapProperties,
             this.userRelatedState.gpsLocationHistoryRetentionTime
         )
+
         this.availableLayers = AvailableRasterLayers.layersAvailableAt(this.mapProperties.location)
 
         this.layerState = new LayerState(this.osmConnection, layout.layers, layout.id)
@@ -203,11 +205,45 @@ export default class ThemeViewState implements SpecialVisualizationState {
      */
     private drawSpecialLayers() {
         type AddedByDefaultTypes = typeof Constants.added_by_default[number]
+        const empty = []
+        {
+            // The last_click gets a _very_ special treatment
+            const last_click = new LastClickFeatureSource(
+                this.mapProperties.lastClickLocation,
+                this.layout
+            )
+            const last_click_layer = this.layerState.filteredLayers.get("last_click")
+            this.featureProperties.addSpecial(
+                "last_click",
+                new UIEventSource<Record<string, string>>(last_click.properties)
+            )
+            new ShowDataLayer(this.map, {
+                features: last_click,
+                doShowLayer: new ImmutableStore(true),
+                layer: last_click_layer.layerDef,
+                selectedElement: this.selectedElement,
+                selectedLayer: this.selectedLayer,
+                onClick: (feature: Feature) => {
+                    if (this.mapProperties.zoom.data < Constants.minZoomLevelToAddNewPoint) {
+                        this.map.data.flyTo({
+                            zoom: Constants.minZoomLevelToAddNewPoint,
+                            center: this.mapProperties.lastClickLocation.data,
+                        })
+                        return
+                    }
+                    this.selectedElement.setData(feature)
+                    this.selectedLayer.setData(last_click_layer.layerDef)
+                },
+            })
+        }
+
         /**
          * A listing which maps the layerId onto the featureSource
          */
-        const empty = []
-        const specialLayers: Record<AddedByDefaultTypes | "current_view", FeatureSource> = {
+        const specialLayers: Record<
+            Exclude<AddedByDefaultTypes, "last_click"> | "current_view",
+            FeatureSource
+        > = {
             home_location: this.userRelatedState.homeLocation,
             gps_location: this.geolocation.currentUserLocation,
             gps_location_history: this.geolocation.historicalUserLocations,
@@ -261,12 +297,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
      */
     private initActors() {
         // Various actors that we don't need to reference
-        new TitleHandler(
-            this.selectedElement,
-            this.selectedLayer,
-            this.featureProperties,
-            this.layout
-        )
+        new TitleHandler(this.selectedElement, this.selectedLayer, this.featureProperties, this)
         new ChangeToElementsActor(this.changes, this.featureProperties)
         new PendingChangesUploader(this.changes, this.selectedElement)
         new SelectedElementTagsUpdater({

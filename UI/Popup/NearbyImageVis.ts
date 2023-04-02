@@ -18,6 +18,8 @@ import Toggle from "../Input/Toggle"
 import Title from "../Base/Title"
 import { MapillaryLinkVis } from "./MapillaryLinkVis"
 import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import { Feature } from "geojson"
 
 export class NearbyImageVis implements SpecialVisualization {
     args: { name: string; defaultValue?: string; doc: string; required?: boolean }[] = [
@@ -39,11 +41,12 @@ export class NearbyImageVis implements SpecialVisualization {
     constr(
         state: SpecialVisualizationState,
         tagSource: UIEventSource<Record<string, string>>,
-        args: string[]
+        args: string[],
+        feature: Feature,
+        layer: LayerConfig
     ): BaseUIElement {
         const t = Translations.t.image.nearbyPictures
         const mode: "open" | "expandable" | "collapsable" = <any>args[0]
-        const feature = state.indexedFeatures.featuresById.data.get(tagSource.data.id)
         const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
         const id: string = tagSource.data["id"]
         const canBeEdited: boolean = !!id?.match("(node|way|relation)/-?[0-9]+")
@@ -128,7 +131,7 @@ export class NearbyImageVis implements SpecialVisualization {
                 slideshow,
                 controls,
                 saveButton,
-                new MapillaryLinkVis().constr(state, tagSource, []).SetClass("mt-6"),
+                new MapillaryLinkVis().constr(state, tagSource, [], feature).SetClass("mt-6"),
             ])
         })
 

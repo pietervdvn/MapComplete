@@ -1,4 +1,4 @@
-import { UIEventSource } from "../Logic/UIEventSource"
+import { Store, UIEventSource } from "../Logic/UIEventSource"
 import { BBox } from "../Logic/BBox"
 import { RasterLayerPolygon } from "./RasterLayers"
 
@@ -9,6 +9,8 @@ export interface MapProperties {
     readonly rasterLayer: UIEventSource<RasterLayerPolygon | undefined>
     readonly maxbounds: UIEventSource<undefined | BBox>
     readonly allowMoving: UIEventSource<true | boolean>
+
+    readonly lastClickLocation: Store<{ lon: number; lat: number }>
 
     readonly allowZooming: UIEventSource<true | boolean>
 }

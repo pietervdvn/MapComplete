@@ -12,6 +12,7 @@ import FullNodeDatabaseSource from "../Logic/FeatureSource/TiledFeatureSource/Fu
 import { MangroveIdentity } from "../Logic/Web/MangroveReviews"
 import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexedStore"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
+import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
 
 /**
  * The state needed to render a special Visualisation.
@@ -19,6 +20,7 @@ import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 export interface SpecialVisualizationState {
     readonly guistate: DefaultGuiState
     readonly layout: LayoutConfig
+    readonly featureSwitches: FeatureSwitchState
 
     readonly layerState: LayerState
     readonly featureProperties: { getStore(id: string): UIEventSource<Record<string, string>> }

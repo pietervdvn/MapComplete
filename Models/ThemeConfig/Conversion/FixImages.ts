@@ -5,6 +5,7 @@ import metapaths from "../../../assets/layoutconfigmeta.json"
 import tagrenderingmetapaths from "../../../assets/questionabletagrenderingconfigmeta.json"
 import Translations from "../../../UI/i18n/Translations"
 
+import { parse as parse_html } from "node-html-parser"
 export class ExtractImages extends Conversion<
     LayoutConfigJson,
     { path: string; context: string }[]
@@ -190,6 +191,17 @@ export class ExtractImages extends Conversion<
         const cleanedImages: { path: string; context: string }[] = []
 
         for (const foundImage of allFoundImages) {
+            if (foundImage.path.startsWith("<") && foundImage.path.endsWith(">")) {
+                // These is probably html - we ignore
+                const doc = parse_html(foundImage.path)
+                const images = Array.from(doc.getElementsByTagName("img"))
+                const paths = images.map((i) => i.getAttribute("src"))
+                cleanedImages.push(
+                    ...paths.map((path) => ({ path, context: foundImage.context + " (in html)" }))
+                )
+                continue
+            }
+
             // Split "circle:white;./assets/layers/.../something.svg" into ["circle", "./assets/layers/.../something.svg"]
             const allPaths = Utils.NoNull(
                 Utils.NoEmpty(foundImage.path?.split(";")?.map((part) => part.split(":")[0]))

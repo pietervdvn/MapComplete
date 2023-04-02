@@ -50,6 +50,9 @@ export default class SelectedElementTagsUpdater {
         const state = this.state
         state.selectedElement.addCallbackAndRunD(async (s) => {
             let id = s.properties?.id
+            if (!id) {
+                return
+            }
 
             const backendUrl = state.osmConnection._oauth_config.url
             if (id.startsWith(backendUrl)) {

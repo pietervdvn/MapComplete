@@ -4,6 +4,7 @@
   import { onDestroy } from "svelte";
   import { Translation } from "../../i18n/Translation";
   import Locale from "../../i18n/Locale";
+  import FromHtml from "../../Base/FromHtml.svelte";
 
   export let template: Translation;
   let _template: string
@@ -20,7 +21,7 @@
 </script>
 
 <span>
-  {Utils.SubstituteKeys(before, _tags)}
+  <FromHtml src={Utils.SubstituteKeys(before, _tags)}/>
   <slot />
-  {Utils.SubstituteKeys(after, _tags)}
+  <FromHtml src={Utils.SubstituteKeys(after, _tags)}/>
 </span>

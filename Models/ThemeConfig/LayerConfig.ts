@@ -30,6 +30,7 @@ import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Svg from "../../Svg"
 import { ImmutableStore } from "../../Logic/UIEventSource"
 import { OsmTags } from "../OsmFeature"
+import Constants from "../Constants"
 
 export default class LayerConfig extends WithContextLoader {
     public static readonly syncSelectionAllowed = ["no", "local", "theme-only", "global"] as const
@@ -322,7 +323,8 @@ export default class LayerConfig extends WithContextLoader {
             } else if (
                 !hasCenterRendering &&
                 this.lineRendering.length === 0 &&
-                !this.source.geojsonSource?.startsWith(
+                Constants.priviliged_layers.indexOf(<any>this.id) < 0 &&
+                !this.source?.geojsonSource?.startsWith(
                     "https://api.openstreetmap.org/api/0.6/notes.json"
                 )
             ) {
@@ -425,8 +427,10 @@ export default class LayerConfig extends WithContextLoader {
         return mapRendering.GetBaseIcon(this.GetBaseTags())
     }
 
-    public GetBaseTags(): any {
-        return TagUtils.changeAsProperties(this.source.osmTags.asChange({ id: "node/-1" }))
+    public GetBaseTags(): Record<string, string> {
+        return TagUtils.changeAsProperties(
+            this.source?.osmTags?.asChange({ id: "node/-1" }) ?? [{ k: "id", v: "node/-1" }]
+        )
     }
 
     public GenerateDocumentation(

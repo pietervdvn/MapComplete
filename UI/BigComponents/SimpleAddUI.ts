@@ -1,7 +1,7 @@
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
  */
-import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
+import { ImmutableStore, UIEventSource } from "../../Logic/UIEventSource"
 import Svg from "../../Svg"
 import { SubtleButton } from "../Base/SubtleButton"
 import Combine from "../Base/Combine"
@@ -16,18 +16,14 @@ import CreateNewNodeAction from "../../Logic/Osm/Actions/CreateNewNodeAction"
 import { OsmObject, OsmWay } from "../../Logic/Osm/OsmObject"
 import PresetConfig from "../../Models/ThemeConfig/PresetConfig"
 import FilteredLayer from "../../Models/FilteredLayer"
-import Loc from "../../Models/Loc"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import { Changes } from "../../Logic/Osm/Changes"
-import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline"
-import { ElementStorage } from "../../Logic/ElementStorage"
 import ConfirmLocationOfPoint from "../NewPoint/ConfirmLocationOfPoint"
 import Loading from "../Base/Loading"
 import Hash from "../../Logic/Web/Hash"
 import { WayId } from "../../Models/OsmFeature"
 import { Tag } from "../../Logic/Tags/Tag"
 import { LoginToggle } from "../Popup/LoginButton"
-import { GlobalFilter } from "../../Models/GlobalFilter"
+import { SpecialVisualizationState } from "../SpecialVisualization"
+import { Feature } from "geojson"
 
 /*
  * The SimpleAddUI is a single panel, which can have multiple states:
@@ -47,34 +43,8 @@ export interface PresetInfo extends PresetConfig {
 export default class SimpleAddUI extends LoginToggle {
     /**
      *
-     * @param isShown
-     * @param resetScrollSignal
-     * @param filterViewIsOpened
-     * @param state
-     * @param takeLocationFrom: defaults to state.lastClickLocation. Take this location to add the new point around
      */
-    constructor(
-        isShown: UIEventSource<boolean>,
-        resetScrollSignal: UIEventSource<void>,
-        filterViewIsOpened: UIEventSource<boolean>,
-        state: {
-            featureSwitchIsTesting: UIEventSource<boolean>
-            featureSwitchUserbadge: Store<boolean>
-            layoutToUse: LayoutConfig
-            osmConnection: OsmConnection
-            changes: Changes
-            allElements: ElementStorage
-            LastClickLocation: UIEventSource<{ lat: number; lon: number }>
-            featurePipeline: FeaturePipeline
-            selectedElement: UIEventSource<any>
-            locationControl: UIEventSource<Loc>
-            filteredLayers: UIEventSource<FilteredLayer[]>
-            featureSwitchFilter: UIEventSource<boolean>
-            backgroundLayer: UIEventSource<BaseLayer>
-            globalFilters: UIEventSource<GlobalFilter[]>
-        },
-        takeLocationFrom?: UIEventSource<{ lat: number; lon: number }>
-    ) {
+    constructor(state: SpecialVisualizationState) {
         const readYourMessages = new Combine([
             Translations.t.general.readYourMessages.Clone().SetClass("alert"),
             new SubtleButton(Svg.envelope_ui(), Translations.t.general.goToInbox, {
@@ -83,13 +53,10 @@ export default class SimpleAddUI extends LoginToggle {
             }),
         ])
 
-        takeLocationFrom = takeLocationFrom ?? state.LastClickLocation
+        const filterViewIsOpened = state.guistate.filterViewIsOpened
+        const takeLocationFrom = state.mapProperties.lastClickLocation
         const selectedPreset = new UIEventSource<PresetInfo>(undefined)
-        selectedPreset.addCallback((_) => {
-            resetScrollSignal.ping()
-        })
 
-        isShown.addCallback((_) => selectedPreset.setData(undefined)) // Clear preset selection when the UI is closed/opened
         takeLocationFrom.addCallback((_) => selectedPreset.setData(undefined))
 
         const presetsOverview = SimpleAddUI.CreateAllPresetsPanel(selectedPreset, state)
@@ -104,14 +71,13 @@ export default class SimpleAddUI extends LoginToggle {
                 tags.push(new Tag("_referencing_ways", "way/" + snapOntoWay.id))
             }
             const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {
-                theme: state.layoutToUse?.id ?? "unkown",
+                theme: state.layout?.id ?? "unkown",
                 changeType: "create",
                 snapOnto: snapOntoWay,
             })
             await state.changes.applyAction(newElementAction)
             selectedPreset.setData(undefined)
-            isShown.setData(false)
-            const selectedFeature = state.allElements.ContainingFeatures.get(
+            const selectedFeature: Feature = state.indexedFeatures.featuresById.data.get(
                 newElementAction.newElementId
             )
             state.selectedElement.setData(selectedFeature)
@@ -156,7 +122,7 @@ export default class SimpleAddUI extends LoginToggle {
                     confirm,
                     cancel,
                     () => {
-                        isShown.setData(false)
+                        selectedPreset.setData(undefined)
                     },
                     {
                         cancelIcon: Svg.back_svg(),
@@ -172,11 +138,11 @@ export default class SimpleAddUI extends LoginToggle {
                     new Toggle(
                         new Loading(Translations.t.general.add.stillLoading).SetClass("alert"),
                         addUi,
-                        state.featurePipeline.runningQuery
+                        state.dataIsLoading
                     ),
                     Translations.t.general.add.zoomInFurther.Clone().SetClass("alert"),
-                    state.locationControl.map(
-                        (loc) => loc.zoom >= Constants.userJourney.minZoomLevelToAddNewPoints
+                    state.mapProperties.zoom.map(
+                        (zoom) => zoom >= Constants.minZoomLevelToAddNewPoint
                     )
                 ),
                 readYourMessages,
@@ -222,12 +188,7 @@ export default class SimpleAddUI extends LoginToggle {
 
     private static CreateAllPresetsPanel(
         selectedPreset: UIEventSource<PresetInfo>,
-        state: {
-            featureSwitchIsTesting: UIEventSource<boolean>
-            filteredLayers: UIEventSource<FilteredLayer[]>
-            featureSwitchFilter: UIEventSource<boolean>
-            osmConnection: OsmConnection
-        }
+        state: SpecialVisualizationState
     ): BaseUIElement {
         const presetButtons = SimpleAddUI.CreatePresetButtons(state, selectedPreset)
         let intro: BaseUIElement = Translations.t.general.add.intro
@@ -260,18 +221,14 @@ export default class SimpleAddUI extends LoginToggle {
     /*
      * Generates the list with all the buttons.*/
     private static CreatePresetButtons(
-        state: {
-            filteredLayers: UIEventSource<FilteredLayer[]>
-            featureSwitchFilter: UIEventSource<boolean>
-            osmConnection: OsmConnection
-        },
+        state: SpecialVisualizationState,
         selectedPreset: UIEventSource<PresetInfo>
     ): BaseUIElement {
         const allButtons = []
-        for (const layer of state.filteredLayers.data) {
+        for (const layer of Array.from(state.layerState.filteredLayers.values())) {
             if (layer.isDisplayed.data === false) {
                 // The layer is not displayed...
-                if (!state.featureSwitchFilter.data) {
+                if (!state.featureSwitches.featureSwitchFilter.data) {
                     // ...and we cannot enable the layer control -> we skip, as these presets can never be shown anyway
                     continue
                 }

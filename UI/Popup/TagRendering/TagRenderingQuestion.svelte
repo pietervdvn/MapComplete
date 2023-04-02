@@ -15,6 +15,7 @@
   import { createEventDispatcher } from "svelte";
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
   import { ExclamationIcon } from "@rgossiaux/svelte-heroicons/solid";
+  import SpecialTranslation from "./SpecialTranslation.svelte";
 
   export let config: TagRenderingConfig;
   export let tags: UIEventSource<Record<string, string>>;
@@ -86,15 +87,15 @@
   <div class="border border-black subtle-background flex flex-col">
     <If condition={state.featureSwitchIsTesting}>
       <div class="flex justify-between">
-        <Tr t={config.question}></Tr>
+        <SpecialTranslation t={config.question} {tags} {state} {layer} feature={selectedElement}></SpecialTranslation>
         <span class="alert">{config.id}</span>
       </div>
-      <Tr slot="else" t={config.question}></Tr>
+      <SpecialTranslation slot="else" t={config.question} {tags} {state} {layer} feature={selectedElement}></SpecialTranslation>
     </If>
 
     {#if config.questionhint}
       <div class="subtle">
-        <Tr t={config.questionHint}></Tr>
+        <SpecialTranslation t={config.questionhint} {tags} {state} {layer} feature={selectedElement}></SpecialTranslation>
       </div>
     {/if}
 

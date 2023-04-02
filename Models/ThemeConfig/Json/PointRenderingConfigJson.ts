@@ -69,14 +69,24 @@ export default interface PointRenderingConfigJson {
     label?: string | TagRenderingConfigJson
 
     /**
-     * A snippet of css code
+     * A snippet of css code which is applied onto the container of the entire marker
      */
     css?: string | TagRenderingConfigJson
 
     /**
-     * A snippet of css-classes. They can be space-separated
+     * A snippet of css-classes which are applied onto the container of the entire marker. They can be space-separated
      */
     cssClasses?: string | TagRenderingConfigJson
+
+    /**
+     * Css that is applied onto the label
+     */
+    labelCss?: string | TagRenderingConfigJson
+
+    /**
+     * Css classes that are applied onto the label; can be space-separated
+     */
+    labelCssClasses?: string | TagRenderingConfigJson
 
     /**
      * If the map is pitched, the marker will stay parallel to the screen.

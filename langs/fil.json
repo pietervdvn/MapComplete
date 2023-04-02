@@ -41,7 +41,6 @@
         "about": "Madaling i-edit at mag-dagdag sa OpenStreetMap gamit ang mga partikular na tikha",
         "add": {
             "addNew": "Dagdagan ng {category}",
-            "addNewMapLabel": "I-click ito para mag-dagdag ng bagong bagay",
             "confirmButton": "Magdagdag ng {category}<br><div class=\"alert\">Makikita ng lahat ang idinagdag mo</div>",
             "confirmIntro": "<h3>Mag-dagdag ng {title}?</h3>Ang tampók na ida-dagdag mo ay <b>makikita ng lahat</b>. Paki-usap, mag-dagdag lamang ng mga bagay na tutuong umiiral. Marami pang mga aplikasyon ang gumagamit ng datos na ito.",
             "disableFilters": "Huwag paganahin ang lahat ng filter",

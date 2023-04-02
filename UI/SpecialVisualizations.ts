@@ -56,6 +56,7 @@ import Maproulette from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
 import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import QuestionViz from "./Popup/QuestionViz"
+import SimpleAddUI from "./BigComponents/SimpleAddUI"
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
@@ -232,6 +233,15 @@ export default class SpecialVisualizations {
     private static initList(): SpecialVisualization[] {
         const specialVisualizations: SpecialVisualization[] = [
             new QuestionViz(),
+            {
+                funcName: "add_new_point",
+                docs: "An element which allows to add a new point on the 'last_click'-location. Only makes sense in the layer `last_click`",
+                args: [],
+                constr(state: SpecialVisualizationState): BaseUIElement {
+                    return new SimpleAddUI(state)
+                },
+            },
+
             new HistogramViz(),
             new StealViz(),
             new MinimapViz(),
@@ -670,7 +680,9 @@ export default class SpecialVisualizations {
                             if (title === undefined) {
                                 return undefined
                             }
-                            return new SubstitutedTranslation(title, tagsSource, state)
+                            return new SubstitutedTranslation(title, tagsSource, state).RemoveClass(
+                                "w-full"
+                            )
                         })
                     ),
             },

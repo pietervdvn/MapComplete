@@ -33,4 +33,6 @@ export interface ShowDataLayerOptions {
      * If given, the map will update when a property is changed
      */
     fetchStore?: (id: string) => Store<Record<string, string>>
+
+    onClick?: (feature: Feature) => void
 }

@@ -43,6 +43,10 @@ export default class FeaturePropertiesStore {
         return this._elements.get(id)
     }
 
+    public addSpecial(id: string, store: UIEventSource<Record<string, string>>) {
+        this._elements.set(id, store)
+    }
+
     /**
      * Overwrites the tags of the old properties object, returns true if a change was made.
      * Metatags are overriden if they are in the new properties, but not removed

@@ -48,7 +48,6 @@ export default class DefaultGUI {
     public setup() {
         this.SetupUIElements()
         this.SetupMap()
-        ScrollableFullScreen.ActivateCurrent()
 
         if (
             this.state.layoutToUse.customCss !== undefined &&
@@ -167,13 +166,6 @@ export default class DefaultGUI {
             layerToShow: selectedElement.layerDef,
             features: state.selectedElementsLayer,
             state,
-        })
-
-        state.leafletMap.addCallbackAndRunD((_) => {
-            // Lets assume that all showDataLayers are initialized at this point
-            state.selectedElement.ping()
-            State.state.locationControl.ping()
-            return true
         })
     }
 

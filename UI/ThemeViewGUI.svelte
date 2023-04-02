@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Store, UIEventSource } from "../Logic/UIEventSource";
+  import { ImmutableStore, Store, UIEventSource } from "../Logic/UIEventSource";
   import { Map as MlMap } from "maplibre-gl";
   import MaplibreMap from "./Map/MaplibreMap.svelte";
   import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
@@ -22,6 +22,7 @@
   import { MenuIcon } from "@rgossiaux/svelte-heroicons/solid";
   import Tr from "./Base/Tr.svelte";
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte";
+  import FloatOver from "./Base/FloatOver.svelte";
 
   export let layout: LayoutConfig;
   const state = new ThemeViewState(layout);
@@ -57,6 +58,11 @@
   <MapControlButton on:click={() =>state.guistate.menuIsOpened.setData(true)}>
     <MenuIcon class="w-8 h-8"></MenuIcon>
   </MapControlButton>
+  <If condition={state.featureSwitchIsTesting}>
+    <span class="alert">
+      Testmode
+    </span>
+  </If>
 </div>
 
 <div class="absolute bottom-0 left-0 mb-4 ml-4">
@@ -87,8 +93,7 @@
 
 <If condition={state.guistate.welcomeMessageIsOpened}>
   <!-- Theme page -->
-  <div class="absolute top-0 left-0 w-screen h-screen" style="background-color: #00000088">
-    <div class="flex flex-col m-4 sm:m-6 md:m-8 p-4 sm:p-6 md:m-8 normal-background rounded">
+  <FloatOver>
       <div on:click={() => state.guistate.welcomeMessageIsOpened.setData(false)}>Close</div>
       <TabGroup>
         <TabList>
@@ -136,15 +141,13 @@
           <TabPanel>Content 3</TabPanel>
         </TabPanels>
       </TabGroup>
-    </div>
-  </div>
+   </FloatOver>
 </If>
 
 
 <If condition={state.guistate.menuIsOpened}>
   <!-- Menu page -->
-  <div class="absolute top-0 left-0 w-screen h-screen overflow-auto" style="background-color: #00000088">
-    <div class="flex flex-col m-4 sm:m-6 md:m-8 p-4 sm:p-6 md:m-8 normal-background rounded">
+  <FloatOver>
       <div on:click={() => state.guistate.menuIsOpened.setData(false)}>Close</div>
       <TabGroup>
         <TabList>
@@ -174,20 +177,15 @@
           <TabPanel>Privacy</TabPanel>
         </TabPanels>
       </TabGroup>
-    </div>
-  </div>
+  </FloatOver>
 </If>
 
 {#if $selectedElement !== undefined && $selectedLayer !== undefined}
-  <div class="absolute top-0 right-0 w-screen h-screen overflow-auto" style="background-color: #00000088">
+  <FloatOver>
+    <SelectedElementView layer={$selectedLayer} selectedElement={$selectedElement}
+                         tags={$selectedElementTags} state={state}></SelectedElementView>
+  </FloatOver>
 
-    <div class="flex flex-col m-4 sm:m-6 md:m-8 p-4 sm:p-6 md:m-8 normal-background rounded normal-background">
-
-      <SelectedElementView layer={$selectedLayer} selectedElement={$selectedElement}
-                           tags={$selectedElementTags} state={state}></SelectedElementView>
-
-    </div>
-  </div>
 {/if}
 <style>
     /* WARNING: This is just for demonstration.

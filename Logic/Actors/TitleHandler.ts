@@ -20,32 +20,24 @@ export default class TitleHandler {
             (selected) => {
                 const defaultTitle = state.layout?.title?.txt ?? "MapComplete"
 
-                if (selected === undefined) {
+                if (selected === undefined || selectedLayer.data === undefined) {
                     return defaultTitle
                 }
 
                 const tags = selected.properties
-                for (const layer of state.layout?.layers ?? []) {
-                    if (layer.title === undefined) {
-                        continue
-                    }
-                    if (layer.source.osmTags.matchesProperties(tags)) {
-                        const tagsSource =
-                            allElements.getStore(tags.id) ??
-                            new UIEventSource<Record<string, string>>(tags)
-                        const title = new SvelteUIElement(TagRenderingAnswer, {
-                            tags: tagsSource,
-                            state,
-                            selectedElement: selectedElement.data,
-                            layer: selectedLayer.data,
-                        })
-                        return (
-                            new Combine([defaultTitle, " | ", title]).ConstructElement()
-                                ?.textContent ?? defaultTitle
-                        )
-                    }
-                }
-                return defaultTitle
+                const layer = selectedLayer.data
+                const tagsSource =
+                    allElements.getStore(tags.id) ?? new UIEventSource<Record<string, string>>(tags)
+                const title = new SvelteUIElement(TagRenderingAnswer, {
+                    tags: tagsSource,
+                    state,
+                    selectedElement: selectedElement.data,
+                    layer,
+                })
+                return (
+                    new Combine([defaultTitle, " | ", title]).ConstructElement()?.textContent ??
+                    defaultTitle
+                )
             },
             [Locale.language, selectedLayer]
         )

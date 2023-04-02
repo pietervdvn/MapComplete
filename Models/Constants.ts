@@ -33,6 +33,7 @@ export default class Constants {
         "home_location",
         "gps_track",
         "range",
+        "last_click",
     ] as const
     /**
      * Special layers which are not included in a theme by default
@@ -66,10 +67,10 @@ export default class Constants {
         themeGeneratorReadOnlyUnlock: 50,
         themeGeneratorFullUnlock: 500,
         addNewPointWithUnreadMessagesUnlock: 500,
-        minZoomLevelToAddNewPoints: Constants.isRetina() ? 18 : 19,
 
         importHelperUnlock: 5000,
     }
+    static readonly minZoomLevelToAddNewPoint = Constants.isRetina() ? 18 : 19
     /**
      * Used by 'PendingChangesUploader', which waits this amount of seconds to upload changes.
      * (Note that pendingChanges might upload sooner if the popup is closed or similar)

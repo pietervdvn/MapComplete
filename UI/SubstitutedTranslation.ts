@@ -11,6 +11,7 @@ import LinkToWeblate from "./Base/LinkToWeblate"
 import { SpecialVisualization, SpecialVisualizationState } from "./SpecialVisualization"
 import SpecialVisualizations from "./SpecialVisualizations"
 import { Feature } from "geojson"
+import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 
 export class SubstitutedTranslation extends VariableUiElement {
     public constructor(
@@ -24,7 +25,8 @@ export class SubstitutedTranslation extends VariableUiElement {
                   state: SpecialVisualizationState,
                   tagSource: UIEventSource<Record<string, string>>,
                   argument: string[],
-                  feature: Feature
+                  feature: Feature,
+                  layer: LayerConfig
               ) => BaseUIElement)
         > = undefined
     ) {
@@ -85,7 +87,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                             tagsSource.data.id
                         )
                         return viz.func
-                            .constr(state, tagsSource, proto.args, feature)
+                            .constr(state, tagsSource, proto.args, feature, undefined)
                             ?.SetStyle(proto.style)
                     } catch (e) {
                         console.error("SPECIALRENDERING FAILED for", tagsSource.data?.id, e)

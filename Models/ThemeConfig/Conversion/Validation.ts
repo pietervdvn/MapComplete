@@ -101,6 +101,11 @@ export class DoesImageExist extends DesugaringStep<string> {
             }
         }
 
+        if (image.startsWith("<") && image.endsWith(">")) {
+            // This is probably HTML, you're on your own here
+            return { result: image }
+        }
+
         if (!this._knownImagePaths.has(image)) {
             if (this.doesPathExist === undefined) {
                 errors.push(
@@ -730,9 +735,9 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
         }
 
-        if (json.minzoom > Constants.userJourney.minZoomLevelToAddNewPoints) {
+        if (json.minzoom > Constants.minZoomLevelToAddNewPoint) {
             ;(json.presets?.length > 0 ? errors : warnings).push(
-                `At ${context}: minzoom is ${json.minzoom}, this should be at most ${Constants.userJourney.minZoomLevelToAddNewPoints} as a preset is set. Why? Selecting the pin for a new item will zoom in to level before adding the point. Having a greater minzoom will hide the points, resulting in possible duplicates`
+                `At ${context}: minzoom is ${json.minzoom}, this should be at most ${Constants.minZoomLevelToAddNewPoint} as a preset is set. Why? Selecting the pin for a new item will zoom in to level before adding the point. Having a greater minzoom will hide the points, resulting in possible duplicates`
             )
         }
         {
