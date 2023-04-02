@@ -74,7 +74,8 @@
             "en": "This elevator works",
             "fr": "Cet ascenseur fonctionne",
             "de": "Dieser Aufzug ist in Betrieb",
-            "nl": "Deze lift werkt"
+            "nl": "Deze lift werkt",
+            "ca": "Aquest ascensor funciona"
           },
           "hideInAnswer": true
         }

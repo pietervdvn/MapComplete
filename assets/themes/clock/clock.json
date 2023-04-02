@@ -6,7 +6,8 @@
     "de": "Uhren",
     "es": "Relojes",
     "ca": "Rellotges",
-    "cs": "Hodiny"
+    "cs": "Hodiny",
+    "fr": "Horloges"
   },
   "description": {
     "en": "Map showing all public clocks",
@@ -14,7 +15,8 @@
     "ca": "Mapa amb tots els rellotges públics",
     "de": "Karte mit allen öffentlichen Uhren",
     "es": "Mapa con todos los relojes públicos",
-    "cs": "Mapa zobrazující všechny veřejné hodiny"
+    "cs": "Mapa zobrazující všechny veřejné hodiny",
+    "fr": "Carte affichant toutes les horloges publiques"
   },
   "icon": "./assets/layers/clock/clock.svg",
   "startLat": 0,

@@ -1,15 +1,15 @@
 {
   "contributors": [
     {
-      "commits": 264,
+      "commits": 266,
       "contributor": "kjon"
     },
     {
-      "commits": 253,
+      "commits": 256,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 114,
+      "commits": 120,
       "contributor": "paunofu"
     },
     {
@@ -78,6 +78,10 @@
     },
     {
       "commits": 13,
+      "contributor": "Lucas"
+    },
+    {
+      "commits": 13,
       "contributor": "Olivier"
     },
     {
@@ -123,10 +127,6 @@
     {
       "commits": 9,
       "contributor": "Jacque Fresco"
-    },
-    {
-      "commits": 8,
-      "contributor": "Lucas"
     },
     {
       "commits": 8,
@@ -314,6 +314,10 @@
     },
     {
       "commits": 2,
+      "contributor": "HO Gin Wang"
+    },
+    {
+      "commits": 2,
       "contributor": "Felipe Nogueira"
     },
     {
@@ -390,6 +394,10 @@
     },
     {
       "commits": 1,
+      "contributor": "gnu-ewm"
+    },
+    {
+      "commits": 1,
       "contributor": "Magnitudee"
     },
     {
@@ -407,10 +415,6 @@
     {
       "commits": 1,
       "contributor": "deep map"
-    },
-    {
-      "commits": 1,
-      "contributor": "HO Gin Wang"
     },
     {
       "commits": 1,

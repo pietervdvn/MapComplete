@@ -82,7 +82,6 @@
             "class": "large"
           }
         },
-        
         {
           "if": "backrest=yes",
           "then": {

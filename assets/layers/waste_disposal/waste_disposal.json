@@ -6,7 +6,8 @@
     "de": "Mülltonnen und Müllcontainer",
     "it": "Contenitori per la raccolta differenziata",
     "id": "Tempat Pembuangan Limbah",
-    "da": "Affaldsspande"
+    "da": "Affaldsspande",
+    "ca": "Contenidor de brossa"
   },
   "description": {
     "en": "Waste Disposal Bin, medium to large bin for disposal of (household) waste",
@@ -70,7 +71,8 @@
       "description": "Mapping allowing to change between waste_disposal and recycling",
       "question": {
         "en": "What kind of waste disposal bin is this?",
-        "de": "Was für ein Abfalleimer ist das?"
+        "de": "Was für ein Abfalleimer ist das?",
+        "ca": "Quin tipus de contenidor de brossa és aquest?"
       },
       "mappings": [
         {
@@ -85,7 +87,8 @@
           "if": "amenity=recycling",
           "then": {
             "en": "This is actually a recycling container",
-            "de": "Dies ist eigentlich ein Recyclingcontainer"
+            "de": "Dies ist eigentlich ein Recyclingcontainer",
+            "ca": "En realitat es tracta d'un contenidor de reciclatge"
           },
           "addExtraTags": [
             "recycling_type=container"
@@ -109,7 +112,8 @@
         "de": "Wer darf die Mülltonne nutzen?",
         "it": "Chi può utilizzare questo cestino per lo smaltimento dei rifiuti?",
         "id": "Siapa yang bisa menggunakan tempat sampah ini?",
-        "da": "Hvem kan bruge denne affaldsbeholder?"
+        "da": "Hvem kan bruge denne affaldsbeholder?",
+        "ca": "Qui pot utilitzar aquest contenidor de brossa?"
       },
       "freeform": {
         "key": "access",
@@ -124,7 +128,8 @@
             "de": "Jeder darf die Mülltonne nutzen",
             "it": "Questo cestino può essere usato da chiunque",
             "id": "Tempat sampah ini bisa digunakan oleh siapa saja",
-            "da": "Denne skraldespand kan bruges af alle"
+            "da": "Denne skraldespand kan bruges af alle",
+            "ca": "Aquest contenidor es pot utilitzat per qualsevol"
           }
         },
         {
@@ -135,7 +140,8 @@
             "de": "Niemand darf die Mülltonne nutzen (privat)",
             "it": "Questo cestino è privato",
             "id": "Tempat sampah ini bersifat pribadi",
-            "da": "Denne skraldespand er privat"
+            "da": "Denne skraldespand er privat",
+            "ca": "Aquest contenidor és privat"
           }
         },
         {
@@ -146,7 +152,8 @@
             "de": "Nur Anwohner dürfen die Mülltonne nutzen",
             "it": "Questo cestino è solo per residenti",
             "id": "Tempat sampah ini hanya untuk penghuni",
-            "da": "Denne skraldespand er kun for beboere"
+            "da": "Denne skraldespand er kun for beboere",
+            "ca": "Aquest contenidor és només per als residents"
           }
         }
       ]
@@ -159,7 +166,8 @@
         "de": "Wo befindet sich die Mülltonne?",
         "it": "Dove si trova questo contenitore?",
         "id": "Di manakah lokasi kontainer ini?",
-        "da": "Hvor er denne container placeret?"
+        "da": "Hvor er denne container placeret?",
+        "ca": "On es troba aquest contenidor?"
       },
       "mappings": [
         {
@@ -170,7 +178,8 @@
             "de": "Die Mülltonne befindet sich unter der Erde",
             "it": "Questo è un contenitore sotterraneo",
             "id": "Ini adalah kontainer bawah tanah",
-            "da": "Dette er en underjordisk container"
+            "da": "Dette er en underjordisk container",
+            "ca": "Aquest contenidor està soterrat"
           }
         },
         {
@@ -181,7 +190,8 @@
             "de": "Die Mülltonne befindet sich in einem Gebäude",
             "it": "Questo contenitore è al chiuso",
             "id": "Kontainer ini terletak di dalam ruangan",
-            "da": "Denne container er placeret indendørs"
+            "da": "Denne container er placeret indendørs",
+            "ca": "Aquest contenidor està situat a l'interior"
           }
         },
         {
@@ -192,7 +202,8 @@
             "de": "Die Mülltonne bzw. der Müllcontainer befindet sich im Freien",
             "it": "Questo contenitore è all'aperto",
             "id": "Kontainer ini terletak di luar ruangan",
-            "da": "Denne container er placeret udendørs"
+            "da": "Denne container er placeret udendørs",
+            "ca": "Aquest contenidor està situat a l'aire lliure"
           }
         }
       ]
@@ -215,7 +226,8 @@
             "de": "Nur öffentliche Mülltonnen",
             "it": "Solo accesso pubblico",
             "id": "Hanya akses publik",
-            "da": "Kun offentlig adgang"
+            "da": "Kun offentlig adgang",
+            "ca": "Només amb accés públic"
           },
           "osmTags": "access=yes"
         }

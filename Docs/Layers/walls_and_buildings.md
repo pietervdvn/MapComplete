@@ -20,11 +20,11 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
   - This layer will automatically load  [entrance](./entrance.md)  into the layout as it depends on it:  a calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _entrance_properties)
+  - This layer is needed as dependency for layer [advertising](#advertising)
   - This layer is needed as dependency for layer [clock](#clock)
   - This layer is needed as dependency for layer [defibrillator](#defibrillator)
   - This layer is needed as dependency for layer [entrance](#entrance)
   - This layer is needed as dependency for layer [surveillance_camera](#surveillance_camera)
-  - This layer is needed as dependency for layer [advertising](#advertising)
 
 
 

@@ -186,18 +186,18 @@ The question is  *What can be recycled here?*
   - Unselecting this answer will add 
   - *Plastic can be recycled here*  corresponds with  `recycling:plastic=yes`
   - Unselecting this answer will add 
-  - *Scrap metal can be recycled here*  corresponds with  `recycling:printer_cartridges=yes`
+  - *Printer cartridges can be recycled here*  corresponds with  `recycling:printer_cartridges=yes`
   - Unselecting this answer will add 
-  - *Shoes can be recycled here*  corresponds with  `recycling:scrap_metal=yes`
+  - *Scrap metal can be recycled here*  corresponds with  `recycling:scrap_metal=yes`
   - Unselecting this answer will add 
-  - *Small electrical appliances can be recycled here*  corresponds with  `recycling:shoes=yes`
+  - *Shoes can be recycled here*  corresponds with  `recycling:shoes=yes`
   - Unselecting this answer will add 
   - *Small electrical appliances can be recycled here*  corresponds with  `recycling:small_appliances=yes`
   - Unselecting this answer will add 
-  - *Needles can be recycled here*  corresponds with  `recycling:small_electrical_appliances=yes`
+  - *Small electrical appliances can be recycled here*  corresponds with  `recycling:small_electrical_appliances=yes`
   - This option cannot be chosen as answer
   - Unselecting this answer will add 
-  - *Residual waste can be recycled here*  corresponds with  `recycling:needles=yes`
+  - *Needles can be recycled here*  corresponds with  `recycling:needles=yes`
   - Unselecting this answer will add 
   - *Residual waste can be recycled here*  corresponds with  `recycling:waste=yes`
   - Unselecting this answer will add 

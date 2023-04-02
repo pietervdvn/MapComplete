@@ -74,7 +74,8 @@
         "en": "Is this pharmacy easy to access on a wheelchair?",
         "de": "Ist die Apotheke für Rollstuhlfahrer leicht zugänglich?",
         "nl": "Is het mogelijk om deze apotheek te bereiken met een rolstoel?",
-        "ca": "És fàcil accedir a aquesta farmàcia amb una cadira de rodes?"
+        "ca": "És fàcil accedir a aquesta farmàcia amb una cadira de rodes?",
+        "fr": "Cette pharmacie est-elle facilement accessible en chaise roulante ?"
       },
       "mappings": [
         {
@@ -83,7 +84,8 @@
             "en": "This pharmacy is easy to access on a wheelchair",
             "ca": "Aquesta farmàcia és fàcil d'accedir en una cadira de rodes",
             "de": "Die Apotheke ist für Rollstuhlfahrer leicht zugänglich",
-            "nl": "Deze apotheek is makkelijk te bereiken met een rolstoel"
+            "nl": "Deze apotheek is makkelijk te bereiken met een rolstoel",
+            "fr": "Cette pharmacie est facile d'accès en chaise roulante"
           }
         },
         {
@@ -92,7 +94,8 @@
             "en": "This pharmacy is hard to access on a wheelchair",
             "de": "Die Apotheke ist für Rollstuhlfahrer nur schwer zugänglich",
             "nl": "Deze apotheek is moeilijk te bereiken met een rolstoel",
-            "ca": "Aquesta farmàcia es difícil d'accedir amb una cadira de rodes"
+            "ca": "Aquesta farmàcia es difícil d'accedir amb una cadira de rodes",
+            "fr": "Cette pharmacie est difficilement accessible en chaise roulante"
           }
         },
         {
@@ -101,7 +104,8 @@
             "en": "This pharmacy has limited access for wheelchair users",
             "de": "Die Apotheke ist für Rollstuhlfahrer nur eingeschränkt zugänglich",
             "nl": "Deze apotheek is bereikbaar met een rolstoel, maar het is niet makkelijk",
-            "ca": "Aquesta farmàcia té un accés limitat per a usuaris amb cadira de rodes"
+            "ca": "Aquesta farmàcia té un accés limitat per a usuaris amb cadira de rodes",
+            "fr": "L'accès à cette pharmacie est limité en chaise roulante"
           }
         }
       ]
