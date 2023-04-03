@@ -126,6 +126,18 @@
         "cs": "umělecké dílo",
         "ca": "una obra d'art"
       }
+    },
+    {
+      "tags": [
+        "tourism=artwork"
+      ],
+      "title": {
+        "en": "an artwork on a wall",
+        "nl": "een kunstwerk op een muur"
+      },
+      "preciseInput": {
+        "snapToLayer": "walls_and_buildings"
+      }
     }
   ],
   "tagRenderings": [

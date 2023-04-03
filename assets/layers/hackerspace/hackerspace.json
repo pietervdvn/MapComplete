@@ -108,6 +108,7 @@
       },
       "id": "hackerspaces-name"
     },
+    "level",
     "website",
     "email",
     "phone",
@@ -202,7 +203,6 @@
         }
       ]
     },
-    "reviews",
     "wheelchair-access",
     {
       "id": "hs-club-mate",
@@ -261,7 +261,9 @@
         "type": "date"
       },
       "id": "hackerspaces-start_date"
-    }
+    },
+    "questions",
+    "reviews"
   ],
   "presets": [
     {
@@ -348,5 +350,7 @@
         "render": "8"
       }
     }
-  ]
+  ],
+  "allowMove": true,
+  "deletion": true
 }
