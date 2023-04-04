@@ -5,6 +5,10 @@
         "retrying": "Načítání dat se nezdařilo. Zkusíme to znovu za {count} sekund…",
         "zoomIn": "Přiblížení pro zobrazení nebo úpravu dat"
     },
+    "communityIndex": {
+        "available": "Tato komunita mluví {native}",
+        "intro": "Navažte kontakt s ostatními lidmi, abyste je poznali, učili se od nich, ..."
+    },
     "delete": {
         "cancel": "Zrušit",
         "cannotBeDeleted": "Tuto funkci nelze odstranit",
