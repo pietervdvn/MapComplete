@@ -801,6 +801,9 @@
             "mappings": {
                 "0": {
                     "then": "Banc en una parada de transport públic"
+                },
+                "1": {
+                    "then": "Banc en marquesina"
                 }
             },
             "render": "Banc"
@@ -932,6 +935,7 @@
             "rental_types": {
                 "renderings": {
                     "0": {
+                        "question": "Quantes type_plural poden llogar-se aquí?",
                         "render": "{capacity:bicycle_type} type_plural es poden llogar aquí"
                     }
                 },
@@ -1036,10 +1040,28 @@
                 "question": "Aquest cafè ciclista repara bicicletes?"
             },
             "bike_cafe-repair-tools": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest cafè ciclista ofereix ferramentes per a la reparació DIY"
+                    },
+                    "1": {
+                        "then": "Aquest cafè ciclista no ofereix ferramentes per a la reparació DIY"
+                    }
+                },
                 "question": "Hi ha eines aquí per reparar la teva pròpia bicicleta?"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Quan obri aquest cafè ciclista?"
+                }
             }
         },
         "title": {
+            "mappings": {
+                "0": {
+                    "then": "Cafè ciclista <i>{name}</i>"
+                }
+            },
             "render": "Cafeteria per a bicicletes"
         }
     },
@@ -1200,6 +1222,7 @@
         "name": "Manxa i reparació de bicicletes",
         "presets": {
             "0": {
+                "description": "Un dispositiu per a unflar les teues rodes en una posició fixa a l'espai públic.",
                 "title": "una manxa per a bicicletes"
             },
             "1": {
@@ -1328,6 +1351,11 @@
                 },
                 "question": "Quines vàlvules són compatibles?",
                 "render": "Aquesta bomba admet les vàlvules següents: {valves}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "Quan està obert aquest punt de reparació de bicicletes?"
+                }
             },
             "send_email_about_broken_pump": {
                 "render": {
@@ -1490,19 +1518,30 @@
                 },
                 "2": {
                     "then": "Lloguer de bicicletes <i>{name}</i>"
+                },
+                "3": {
+                    "then": "Reparació de bicis <i>{name}</i>"
+                },
+                "4": {
+                    "then": "Botiga de bicis <i>{name}</i>"
+                },
+                "5": {
+                    "then": "Taller/botiga de bicis <i>{name}</i>"
                 }
             },
             "render": "Botiga/reparació de bicicletes"
         }
     },
     "bike_themed_object": {
+        "description": "Una capa amb els objectes relacionats amb bicis però que no coinxideixen amb cap altra capa",
         "name": "Objectes relacionats amb bicicletes",
         "title": {
             "mappings": {
                 "1": {
                     "then": "Pista ciclable"
                 }
-            }
+            },
+            "render": "Objecte relacionat amb bicis"
         }
     },
     "binocular": {
@@ -1534,6 +1573,7 @@
         }
     },
     "birdhide": {
+        "description": "Un observatori d'ocells",
         "filter": {
             "0": {
                 "options": {
@@ -1541,9 +1581,33 @@
                         "question": "Accessible per a cadires de rodes"
                     }
                 }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Només observatoris d'ocells coberts"
+                    }
+                }
+            }
+        },
+        "name": "Llocs per a vore ocells",
+        "presets": {
+            "0": {
+                "description": "Un refugi cobert on es poden veure ocells confortablement",
+                "title": "un observatori d'ocells"
+            },
+            "1": {
+                "description": "Una pantalla o paret amb obertures per a observar ocells"
             }
         },
         "tagRenderings": {
+            "bird-hide-shelter-or-wall": {
+                "mappings": {
+                    "1": {
+                        "then": "Observatori d'ocells"
+                    }
+                }
+            },
             "bird-hide-wheelchair": {
                 "mappings": {
                     "3": {
@@ -2174,6 +2238,13 @@
     "cycleways_and_roads": {
         "description": "Totes les infraestructures per les quals algú pot ciclar, acompanyades de preguntes sobre aquesta infraestructura",
         "tagRenderings": {
+            "Cycleway type for a road": {
+                "mappings": {
+                    "1": {
+                        "then": "Hi ha un carril al costat de la carretera (separat amb pintura)"
+                    }
+                }
+            },
             "Maxspeed (for road)": {
                 "mappings": {
                     "4": {
@@ -2316,10 +2387,10 @@
             "defibrillator-access": {
                 "mappings": {
                     "0": {
-                        "then": "Accés lliure"
+                        "then": "Accessible al públic"
                     },
                     "1": {
-                        "then": "Publicament accessible"
+                        "then": "Accessible al públic"
                     },
                     "2": {
                         "then": "Només accessible a clients"
@@ -2448,11 +2519,34 @@
             },
             "dogarea": {
                 "render": "Aquest parc per a gossos té {_surface:ha} ha"
+            },
+            "dogpark-fenced": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquest parc per a gossos està tancat per tot arreu"
+                    }
+                }
             }
         }
     },
     "drinking_water": {
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Es tracta d'una font decorativa amb aigua no potable"
+                },
+                "1": {
+                    "then": "Es tracta d'una aixeta d'aigua o bomba d'aigua amb aigua no potable. <div class='subtle'> Per exemple les aixetes d'aigua amb aigua de pluja per aprofitar i regar les plantes properes</div>"
+                }
+            }
+        },
+        "description": "Una capa que mostra fonts d'aigua potable",
         "name": "Aigua potable",
+        "presets": {
+            "0": {
+                "title": "una font d'aigua potable"
+            }
+        },
         "tagRenderings": {
             "Bottle refill": {
                 "mappings": {
@@ -2469,8 +2563,16 @@
                 "mappings": {
                     "0": {
                         "then": "La font d'aigua funciona"
+                    },
+                    "1": {
+                        "then": "Aquesta font d'aigua potable està trencada"
+                    },
+                    "2": {
+                        "then": "Aquesta font d'aigua potable està tancada"
                     }
-                }
+                },
+                "question": "Aquest punt d'aigua potable continua operatiu?",
+                "render": "L'estat operatiu és <i>{operational_status}</i>"
             },
             "render-closest-drinking-water": {
                 "render": "<a href='#{_closest_other_drinking_water_id}'>Hi ha una altra font d'aigua potable a {_closest_other_drinking_water_distance} metres</a>"
@@ -3015,9 +3117,14 @@
     },
     "information_board": {
         "description": "Una capa que mostra panells informatius turístics (p.e. informen sobre el paissatge, una construcció, una característica, un mapa, …)",
-        "name": "Panells d'informació",
+        "name": "Taulers informatius",
+        "presets": {
+            "0": {
+                "title": "un tauler informatiu"
+            }
+        },
         "title": {
-            "render": "Panell d'informació"
+            "render": "Tauler informatiu"
         }
     },
     "kerbs": {
@@ -3158,21 +3265,79 @@
         }
     },
     "nature_reserve": {
+        "filter": {
+            "1": {
+                "options": {
+                    "1": {
+                        "question": "Els gossos poden anar lliurement"
+                    },
+                    "2": {
+                        "question": "S'admeten gossos si van lligats"
+                    }
+                }
+            }
+        },
+        "presets": {
+            "0": {
+                "description": "Afegeix una reserva natural que falta",
+                "title": "una reserva natural"
+            }
+        },
         "tagRenderings": {
+            "Access tag": {
+                "mappings": {
+                    "0": {
+                        "then": "Accessible al públic"
+                    },
+                    "1": {
+                        "then": "No accessible"
+                    },
+                    "2": {
+                        "then": "No accessible perquè es tracta d'una zona privada"
+                    },
+                    "3": {
+                        "then": "Accessible tot i ser una propietat privada"
+                    },
+                    "4": {
+                        "then": "Només accessible amb guia o durant les activitats organitzades"
+                    },
+                    "5": {
+                        "then": "Accessible amb una taxa"
+                    }
+                },
+                "question": "Aquesta reserva natural és accessible al públic?"
+            },
             "Curator": {
+                "question": "Qui és el conservador d'aquesta reserva natural?",
                 "questionHint": "Respecteu la privadesa: només empleneu un nom si es publica àmpliament"
             },
+            "Editable description": {
+                "question": "Hi ha alguna informació addicional?"
+            },
             "Email": {
+                "question": "A quina adreça de correu electrònic es pot enviar amb preguntes i problemes amb aquest parc natural?",
                 "questionHint": "Respecteu la privadesa: només ompliu una adreça de correu electrònic personal si es publica àmpliament",
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
             "Name tag": {
                 "render": "Aquesta àrea s'anomena {name}"
             },
+            "Operator tag": {
+                "mappings": {
+                    "0": {
+                        "then": "Gestionat per NatuurPunt"
+                    },
+                    "2": {
+                        "then": "Gestionat per <i>Agentschap Natuur en Bos</i>"
+                    }
+                },
+                "question": "Qui gestiona aquesta àrea?"
+            },
             "Surface area": {
                 "render": "Superfície: {_surface:ha}Ha"
             },
             "phone": {
+                "question": "A quin número de telèfon es pot trucar amb preguntes i problemes amb aquest parc natural?",
                 "questionHint": "Respecteu la privadesa: només empleneu una adreça de número de telèfon personal si es publica àmpliament"
             }
         }
@@ -3194,7 +3359,7 @@
             "access": {
                 "mappings": {
                     "0": {
-                        "then": "Aquesta torre és d'accés públic"
+                        "then": "Aquesta torre és accessible al públic"
                     },
                     "1": {
                         "then": "Aquesta torre només es pot visitar amb un guia"
@@ -3364,11 +3529,23 @@
     },
     "picnic_table": {
         "name": "Taules de pícnic",
+        "presets": {
+            "0": {
+                "title": "una taula de pícnic"
+            }
+        },
         "title": {
             "render": "Taula de pícnic"
         }
     },
     "playground": {
+        "deletion": {
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Es tracta d'un pati d'escola: una zona (a l'aire lliure) on els alumnes d'una escola poden jugar durant l'esbarjo i que no és accessible al públic"
+                }
+            }
+        },
         "description": "Parcs infantils",
         "name": "Parcs infantils",
         "presets": {
@@ -3610,6 +3787,13 @@
             }
         },
         "tagRenderings": {
+            "bookcase-is-accessible": {
+                "mappings": {
+                    "0": {
+                        "then": "Accessible al públic"
+                    }
+                }
+            },
             "bookcase-is-indoors": {
                 "mappings": {
                     "2": {
@@ -3788,6 +3972,9 @@
                     },
                     "16": {
                         "then": "Aquí es pot reciclar plàstic"
+                    },
+                    "17": {
+                        "then": "Els cartutxos d'impressora es poden reciclar aquí"
                     },
                     "18": {
                         "then": "Aquí es pot reciclar ferralla"
@@ -4019,7 +4206,7 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Accés lliure"
+                        "question": "Accessible al públic"
                     }
                 }
             },
@@ -4060,7 +4247,7 @@
                         "then": "Privat - no accessible al públic"
                     }
                 },
-                "question": "Aquesta pista d'esports és accessible públicament?"
+                "question": "Aquesta pista d'esports és accessible al públic?"
             },
             "sport-pitch-reservation": {
                 "mappings": {
@@ -4421,6 +4608,14 @@
     },
     "toilet": {
         "name": "Lavabos",
+        "presets": {
+            "0": {
+                "title": "un lavabo públic"
+            },
+            "1": {
+                "title": "un lavabo amb lavabo accessible per a cadires de rodes"
+            }
+        },
         "tagRenderings": {
             "toilet-access": {
                 "mappings": {
@@ -4534,7 +4729,8 @@
                     "1": {
                         "then": "Només accessible a clients de l'instal·lació"
                     }
-                }
+                },
+                "question": "Aquests serveis són d'accés públic?"
             },
             "toilets-fee": {
                 "mappings": {
@@ -4638,6 +4834,9 @@
             },
             "departures_board": {
                 "mappings": {
+                    "1": {
+                        "then": "Aquesta parada té un tauló amb els horaris en temps real"
+                    },
                     "2": {
                         "then": "Aquesta parada té un tauló amb els horaris en temps real"
                     }
