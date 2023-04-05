@@ -320,7 +320,7 @@
             "uploading": "S'està penjant la teva traça…"
         },
         "useSearch": "Utilitzeu la cerca de dalt per veure els valors predefinits",
-        "useSearchForMore": "Utilitzeu la funció de cerca per cercar dins de {total } valors més…",
+        "useSearchForMore": "Utilitzeu la funció de cerca per cercar dins de {total} valors més…",
         "weekdays": {
             "abbreviations": {
                 "friday": "Div",
