@@ -36,6 +36,9 @@ export class MinimapViz implements SpecialVisualization {
         keys.splice(0, 1)
         const featuresToShow: Store<Feature[]> = state.indexedFeatures.featuresById.map(
             (featuresById) => {
+                if (featuresById === undefined) {
+                    return []
+                }
                 const properties = tagSource.data
                 const features: Feature[] = []
                 for (const key of keys) {

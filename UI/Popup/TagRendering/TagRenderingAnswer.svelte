@@ -17,6 +17,9 @@
   export let state: SpecialVisualizationState;
   export let selectedElement: Feature;
   export let config: TagRenderingConfig;
+  if(config === undefined){
+    throw "Config is undefined in tagRenderingAnswer"
+  }
   export let layer: LayerConfig
   let trs: { then: Translation; icon?: string; iconClass?: string }[];
   $: trs = Utils.NoNull(config?.GetRenderValues(_tags));

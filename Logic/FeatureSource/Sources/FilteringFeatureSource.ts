@@ -1,6 +1,6 @@
 import { Store, UIEventSource } from "../../UIEventSource"
 import FilteredLayer from "../../../Models/FilteredLayer"
-import FeatureSource from "../FeatureSource"
+import { FeatureSource } from "../FeatureSource"
 import { TagsFilter } from "../../Tags/TagsFilter"
 import { Feature } from "geojson"
 import { GlobalFilter } from "../../../Models/GlobalFilter"
@@ -73,21 +73,9 @@ export default class FilteringFeatureSource implements FeatureSource {
                 return false
             }
 
-            for (const filter of layer.layerDef.filters) {
-                const state = layer.appliedFilters.get(filter.id).data
-                if (state === undefined) {
-                    continue
-                }
-                let neededTags: TagsFilter
-                if (typeof state === "string") {
-                    // This filter uses fields
-                } else {
-                    neededTags = filter.options[state].osmTags
-                }
-                if (neededTags !== undefined && !neededTags.matchesProperties(f.properties)) {
-                    // Hidden by the filter on the layer itself - we want to hide it no matter what
-                    return false
-                }
+            let neededTags: TagsFilter = layer.currentFilter.data
+            if (neededTags !== undefined && !neededTags.matchesProperties(f.properties)) {
+                return false
             }
 
             for (const globalFilter of globalFilters ?? []) {

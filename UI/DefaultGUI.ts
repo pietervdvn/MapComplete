@@ -16,7 +16,6 @@ import StrayClickHandler from "../Logic/Actors/StrayClickHandler"
 import { DefaultGuiState } from "./DefaultGuiState"
 import NewNoteUi from "./Popup/NewNoteUi"
 import Combine from "./Base/Combine"
-import AddNewMarker from "./BigComponents/AddNewMarker"
 import FilteredLayer from "../Models/FilteredLayer"
 import ExtraLinkButton from "./BigComponents/ExtraLinkButton"
 import { VariableUiElement } from "./Base/VariableUIElement"
@@ -108,13 +107,6 @@ export default class DefaultGUI {
                 newPointDialogIsShown
             )
 
-            addNewPoint.isShown.addCallback((isShown) => {
-                if (!isShown) {
-                    // Clear the 'last-click'-location when the dialog is closed - this causes the popup and the marker to be removed
-                    state.LastClickLocation.setData(undefined)
-                }
-            })
-
             let noteMarker = undefined
             if (!hasPresets && addNewNoteDialog !== undefined) {
                 noteMarker = new Combine([
@@ -126,15 +118,6 @@ export default class DefaultGUI {
                     .SetClass("block relative h-full")
                     .SetStyle("left: calc( 50% - 15px )") // This is a bit hacky, yes I know!
             }
-
-            StrayClickHandler.construct(
-                state,
-                addNewPoint,
-                hasPresets ? new AddNewMarker(state.filteredLayers) : noteMarker
-            )
-            state.LastClickLocation.addCallbackAndRunD((_) => {
-                ScrollableFullScreen.collapse()
-            })
         }
 
         if (noteLayer !== undefined) {
@@ -208,22 +191,6 @@ export default class DefaultGUI {
             self.InitWelcomeMessage()
         )
 
-        const communityIndex = Toggle.If(state.featureSwitchCommunityIndex, () => {
-            const communityIndexControl = new MapControlButton(Svg.community_svg())
-            const communityIndex = new ScrollableFullScreen(
-                () => Translations.t.communityIndex.title,
-                () => new SvelteUIElement(CommunityIndexView, { ...state }),
-                "community_index"
-            )
-            communityIndexControl.onClick(() => {
-                communityIndex.Activate()
-            })
-            return communityIndexControl
-        })
-
-        const testingBadge = Toggle.If(state.featureSwitchIsTesting, () =>
-            new FixedUiElement("TESTING").SetClass("alert m-2 border-2 border-black")
-        )
         new ScrollableFullScreen(
             () => Translations.t.general.attribution.attributionTitle,
             () => new CopyrightPanel(state),
@@ -233,14 +200,7 @@ export default class DefaultGUI {
         const copyright = new MapControlButton(Svg.copyright_svg()).onClick(() =>
             guiState.copyrightViewIsOpened.setData(true)
         )
-        new Combine([
-            welcomeMessageMapControl,
-            userInfoMapControl,
-            copyright,
-            communityIndex,
-            extraLink,
-            testingBadge,
-        ])
+        new Combine([welcomeMessageMapControl, userInfoMapControl, copyright, extraLink])
             .SetClass("flex flex-col")
             .AttachTo("top-left")
 
@@ -264,32 +224,11 @@ export default class DefaultGUI {
     }
 
     private InitWelcomeMessage(): BaseUIElement {
-        const isOpened = this.guiState.welcomeMessageIsOpened
-        new FullWelcomePaneWithTabs(
-            isOpened,
+        return new FullWelcomePaneWithTabs(
+            new UIEventSource<boolean>(false),
             this.guiState.welcomeMessageOpenedTab,
             this.state,
             this.guiState
         )
-
-        // ?-Button on Desktop, opens panel with close-X.
-        const help = new MapControlButton(Svg.help_svg())
-        help.onClick(() => isOpened.setData(true))
-
-        const openedTime = new Date().getTime()
-        this.state.locationControl.addCallback(() => {
-            if (new Date().getTime() - openedTime < 15 * 1000) {
-                // Don't autoclose the first 15 secs when the map is moving
-                return
-            }
-            isOpened.setData(false)
-            return true // Unregister this caller - we only autoclose once
-        })
-
-        this.state.selectedElement.addCallbackAndRunD((_) => {
-            isOpened.setData(false)
-        })
-
-        return help.SetClass("pointer-events-auto")
     }
 }

@@ -18,17 +18,23 @@
   export let state: SpecialVisualizationState;
   export let tags: UIEventSource<Record<string, string>>;
   export let feature: Feature;
-  export let layer: LayerConfig
+  export let layer: LayerConfig;
+
   let txt: string;
-  onDestroy(Locale.language.addCallbackAndRunD(l => {
+  $: onDestroy(Locale.language.addCallbackAndRunD(l => {
     txt = t.textFor(l);
   }));
-  let specs: RenderingSpecification[] = SpecialVisualizations.constructSpecification(txt);
+  let specs: RenderingSpecification[] = [];
+  $: {
+    if (txt !== undefined) {
+      specs = SpecialVisualizations.constructSpecification(txt);
+    }
+  }
 </script>
 
 {#each specs as specpart}
   {#if typeof specpart === "string"}
-   <FromHtml src= {Utils.SubstituteKeys(specpart, $tags)}></FromHtml>
+    <FromHtml src={Utils.SubstituteKeys(specpart, $tags)}></FromHtml>
   {:else if $tags !== undefined }
     <ToSvelte construct={specpart.func.constr(state, tags, specpart.args, feature, layer)}></ToSvelte>
   {/if}

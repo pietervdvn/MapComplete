@@ -2065,6 +2065,15 @@
     "gps_track": {
         "name": "Dit tilbagelagte spor"
     },
+    "last_click": {
+        "mapRendering": {
+            "0": {
+                "label": {
+                    "render": "Klik her for at tilføje et nyt punkt"
+                }
+            }
+        }
+    },
     "recycling": {
         "filter": {
             "2": {

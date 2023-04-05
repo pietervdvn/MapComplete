@@ -1,10 +1,9 @@
-import FeatureSource, { FeatureSourceForLayer } from "./FeatureSource"
+import { FeatureSource, FeatureSourceForLayer } from "./FeatureSource"
 import FilteredLayer from "../../Models/FilteredLayer"
 import SimpleFeatureSource from "./Sources/SimpleFeatureSource"
 import { Feature } from "geojson"
 import { Utils } from "../../Utils"
 import { UIEventSource } from "../UIEventSource"
-import { feature } from "@turf/turf"
 
 /**
  * In some rare cases, some elements are shown on multiple layers (when 'passthrough' is enabled)
@@ -26,7 +25,7 @@ export default class PerLayerFeatureSourceSplitter<
         const knownLayers = new Map<string, T>()
         this.perLayer = knownLayers
         const layerSources = new Map<string, UIEventSource<Feature[]>>()
-
+        console.log("PerLayerFeatureSourceSplitter got layers", layers)
         const constructStore =
             options?.constructStore ?? ((store, layer) => new SimpleFeatureSource(layer, store))
         for (const layer of layers) {

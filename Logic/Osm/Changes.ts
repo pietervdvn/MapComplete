@@ -6,7 +6,7 @@ import { ChangeDescription, ChangeDescriptionTools } from "./Actions/ChangeDescr
 import { Utils } from "../../Utils"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import SimpleMetaTagger from "../SimpleMetaTagger"
-import FeatureSource, { IndexedFeatureSource } from "../FeatureSource/FeatureSource"
+import {FeatureSource, IndexedFeatureSource } from "../FeatureSource/FeatureSource"
 import { GeoLocationPointProperties } from "../State/GeoLocationState"
 import { GeoOperations } from "../GeoOperations"
 import { ChangesetHandler, ChangesetTag } from "./ChangesetHandler"

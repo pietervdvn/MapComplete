@@ -1,21 +1,23 @@
 import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
-import FeatureSource from "../FeatureSource"
-import { ImmutableStore, Store } from "../../UIEventSource"
+import { WritableFeatureSource } from "../FeatureSource"
+import { ImmutableStore, Store, UIEventSource } from "../../UIEventSource"
 import { Feature, Point } from "geojson"
 import { TagUtils } from "../../Tags/TagUtils"
 import BaseUIElement from "../../../UI/BaseUIElement"
 import { Utils } from "../../../Utils"
-import { regex_not_newline_characters } from "svelte/types/compiler/utils/patterns"
-import { render } from "sass"
 
 /**
  * Highly specialized feature source.
  * Based on a lon/lat UIEVentSource, will generate the corresponding feature with the correct properties
  */
-export class LastClickFeatureSource implements FeatureSource {
-    features: Store<Feature[]>
+export class LastClickFeatureSource implements WritableFeatureSource {
+    public readonly features: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
 
+    /**
+     * Must be public: passed as tags into the selected view
+     */
     public properties: Record<string, string>
+
     constructor(location: Store<{ lon: number; lat: number }>, layout: LayoutConfig) {
         const allPresets: BaseUIElement[] = []
         for (const layer of layout.layers)
@@ -43,15 +45,16 @@ export class LastClickFeatureSource implements FeatureSource {
             first_preset: renderings[0],
         }
         this.properties = properties
-        this.features = location.mapD(({ lon, lat }) => [
-            <Feature<Point>>{
+        location.addCallbackAndRunD(({ lon, lat }) => {
+            const point = <Feature<Point>>{
                 type: "Feature",
                 properties,
                 geometry: {
                     type: "Point",
                     coordinates: [lon, lat],
                 },
-            },
-        ])
+            }
+            this.features.setData([point])
+        })
     }
 }

@@ -1,4 +1,4 @@
-import FeatureSource from "../FeatureSource"
+import { FeatureSource } from "../FeatureSource"
 import { Feature } from "geojson"
 import TileLocalStorage from "./TileLocalStorage"
 import { GeoOperations } from "../../GeoOperations"

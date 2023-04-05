@@ -9,6 +9,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import SimpleMetaTagger from "../SimpleMetaTagger"
 import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 import { Feature } from "geojson"
+import { OsmTags } from "../../Models/OsmFeature"
 
 export default class SelectedElementTagsUpdater {
     private static readonly metatags = new Set([
@@ -87,7 +88,7 @@ export default class SelectedElementTagsUpdater {
             }
         })
     }
-    private applyUpdate(latestTags: any, id: string) {
+    private applyUpdate(latestTags: OsmTags, id: string) {
         const state = this.state
         try {
             const leftRightSensitive = state.layoutToUse.isLeftRightSensitive()

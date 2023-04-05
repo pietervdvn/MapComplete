@@ -601,5 +601,14 @@
         "title": {
             "render": "Bicicleta fantasma"
         }
+    },
+    "last_click": {
+        "mapRendering": {
+            "0": {
+                "label": {
+                    "render": "Adicionar novo item"
+                }
+            }
+        }
     }
 }

@@ -1,15 +1,16 @@
 import GeoJsonSource from "./GeoJsonSource"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
-import FeatureSource from "../FeatureSource"
+import { FeatureSource } from "../FeatureSource"
 import { Or } from "../../Tags/Or"
 import FeatureSwitchState from "../../State/FeatureSwitchState"
 import OverpassFeatureSource from "./OverpassFeatureSource"
-import { Store } from "../../UIEventSource"
+import { ImmutableStore, Store } from "../../UIEventSource"
 import OsmFeatureSource from "./OsmFeatureSource"
 import FeatureSourceMerger from "./FeatureSourceMerger"
 import DynamicGeoJsonTileSource from "../TiledFeatureSource/DynamicGeoJsonTileSource"
 import { BBox } from "../../BBox"
 import LocalStorageFeatureSource from "../TiledFeatureSource/LocalStorageFeatureSource"
+import StaticFeatureSource from "./StaticFeatureSource"
 
 /**
  * This source will fetch the needed data from various sources for the given layout.
@@ -78,6 +79,9 @@ export default class LayoutSource extends FeatureSourceMerger {
         backend: string,
         featureSwitches: FeatureSwitchState
     ): FeatureSource {
+        if (osmLayers.length == 0) {
+            return new StaticFeatureSource(new ImmutableStore([]))
+        }
         const minzoom = Math.min(...osmLayers.map((layer) => layer.minzoom))
         const isActive = zoom.mapD((z) => {
             if (z < minzoom) {
@@ -107,6 +111,9 @@ export default class LayoutSource extends FeatureSourceMerger {
         zoom: Store<number>,
         featureSwitches: FeatureSwitchState
     ): FeatureSource {
+        if (osmLayers.length == 0) {
+            return new StaticFeatureSource(new ImmutableStore([]))
+        }
         const minzoom = Math.min(...osmLayers.map((layer) => layer.minzoom))
         const isActive = zoom.mapD((z) => {
             if (z < minzoom) {

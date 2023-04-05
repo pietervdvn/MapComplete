@@ -3350,6 +3350,15 @@
             }
         }
     },
+    "last_click": {
+        "mapRendering": {
+            "0": {
+                "label": {
+                    "render": "Cliquez ici pour ajouter un élément"
+                }
+            }
+        }
+    },
     "map": {
         "description": "Une carte, destinée aux touristes, installée en permanence dans l'espace public",
         "name": "Cartes",

@@ -1,4 +1,4 @@
-import FeatureSource, { FeatureSourceForLayer } from "../FeatureSource"
+import { FeatureSource , FeatureSourceForLayer } from "../FeatureSource"
 import { Feature } from "geojson"
 import { BBox } from "../../BBox"
 import { GeoOperations } from "../../GeoOperations"

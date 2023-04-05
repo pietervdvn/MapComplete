@@ -1,6 +1,6 @@
 import { Changes } from "../../Osm/Changes"
 import { OsmNode, OsmObject, OsmRelation, OsmWay } from "../../Osm/OsmObject"
-import FeatureSource from "../FeatureSource"
+import { FeatureSource } from "../FeatureSource"
 import { UIEventSource } from "../../UIEventSource"
 import { ChangeDescription } from "../../Osm/Actions/ChangeDescription"
 import { ElementStorage } from "../../ElementStorage"

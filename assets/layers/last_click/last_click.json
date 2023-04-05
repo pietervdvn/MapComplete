@@ -37,14 +37,17 @@
   "tagRenderings": [
     {
       "id": "add_new",
-      "mappings": [
-        {
-          "if": "has_presets=yes",
-          "then": {
-            "*": "{add_new_point()}"
-          }
-        }
-      ]
+      "condition": "has_presets=yes",
+      "render": {
+        "*": "{add_new_point()}"
+      }
+    },
+    {
+      "id": "add_note",
+      "condition": "has_note_layer=yes",
+      "render": {
+        "*": "{open_note()}"
+      }
     },
     "all_tags"
   ],
@@ -53,13 +56,23 @@
       "icon": {
         "mappings": [
           {
+            "if": {
+              "and": [
+                "has_note_layer=yes",
+                "has_presets=no"
+              ]
+            },
+            "then": "./assets/svg/note.svg"
+          },
+          {
             "if": "number_of_presets=1",
             "then": "{first_preset}"
           }
         ],
         "render": "<div class='relative'> <img src='./assets/svg/add_pin.svg' class='absolute' style='height: 50px'> <div class='absolute top-0 left-0 rounded-full overflow-hidden' style='width: 40px; height: 40px'><div class='flex slide min-w-min' style='animation: slide linear {number_of_presets}s infinite; width: calc( (1 + {number_of_presets}) * 40px ); height: 40px'>{renderings}{first_preset}</div></div></div>"
       },
-      "labelCssClasses": "text-sm min-w-min pl-1 pr-1 bg-gray-400 rounded-3xl text-white opacity-65 whitespace-nowrap",
+      "labelCssClasses": "text-sm min-w-min pl-1 pr-1 rounded-3xl text-white opacity-65 whitespace-nowrap block-ruby",
+      "labelCss": "background: #00000088",
       "label": {
         "render": {
           "ca": "Afegir nou element",
@@ -77,7 +90,21 @@
           "nl": "Klik hier om een item toe te voegen",
           "pt": "Adicionar novo item",
           "zh_Hant": "點這邊新增新項目"
-        }
+        },
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "has_note_layer=yes",
+                "has_presets=yesno"
+              ]
+            },
+            "then": {
+              "en": "Create a new map note",
+              "nl": "Maak een nieuwe kaartnotitie"
+            }
+          }
+        ]
       },
       "iconBadges": [
         {
@@ -93,7 +120,20 @@
       "location": [
         "point"
       ],
-      "iconSize": "40,50,bottom"
+      "iconSize": {
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "has_note_layer=yes",
+                "has_presets=no"
+              ]
+            },
+            "then": "40,40,bottom"
+          }
+        ],
+        "render": "40,50,bottom"
+      }
     }
   ],
   "filter": [

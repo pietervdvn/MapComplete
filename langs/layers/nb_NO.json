@@ -504,6 +504,15 @@
             "render": "Brannhydrant"
         }
     },
+    "last_click": {
+        "mapRendering": {
+            "0": {
+                "label": {
+                    "render": "Legg til nytt element"
+                }
+            }
+        }
+    },
     "postboxes": {
         "name": "Postbokser",
         "title": {

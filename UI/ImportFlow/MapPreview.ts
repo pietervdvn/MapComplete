@@ -17,7 +17,6 @@ import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 import Title from "../Base/Title"
 import CheckBoxes from "../Input/Checkboxes"
 import AllTagsPanel from "../Popup/AllTagsPanel.svelte"
-import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch"
 import { Feature, Point } from "geojson"
 import DivContainer from "../Base/DivContainer"
 import SvelteUIElement from "../Base/SvelteUIElement"
@@ -112,13 +111,7 @@ export class MapPreview
         const currentBounds = new UIEventSource<BBox>(undefined)
         const { ui, mapproperties, map } = MapLibreAdaptor.construct()
 
-        const layerControl = new BackgroundMapSwitch(
-            {
-                backgroundLayer: background,
-                locationControl: location,
-            },
-            background
-        )
+
         ui.SetClass("w-full").SetStyle("height: 500px")
 
         layerPicker.GetValue().addCallbackAndRunD((layerToShow) => {
@@ -160,7 +153,6 @@ export class MapPreview
             mismatchIndicator,
             ui,
             new DivContainer("fullscreen"),
-            layerControl,
             confirm,
         ])
 

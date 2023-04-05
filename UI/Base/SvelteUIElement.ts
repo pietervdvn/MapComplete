@@ -20,11 +20,15 @@ export default class SvelteUIElement<
         }): SvelteComponentTyped<Props, Events, Slots>
     }
     private readonly _props: Props
+    private readonly _events: Events
+    private readonly _slots: Slots
 
-    constructor(svelteElement, props: Props) {
+    constructor(svelteElement, props: Props, events?: Events, slots?: Slots) {
         super()
         this._svelteComponent = svelteElement
         this._props = props
+        this._events = events
+        this._slots = slots
     }
 
     protected InnerConstructElement(): HTMLElement {
@@ -32,6 +36,8 @@ export default class SvelteUIElement<
         new this._svelteComponent({
             target: el,
             props: this._props,
+            events: this._events,
+            slots: this._slots,
         })
         return el
     }

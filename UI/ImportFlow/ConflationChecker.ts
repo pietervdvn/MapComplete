@@ -1,36 +1,35 @@
-import { BBox } from "../../Logic/BBox"
-import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import Combine from "../Base/Combine"
-import Title from "../Base/Title"
-import { Overpass } from "../../Logic/Osm/Overpass"
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import Constants from "../../Models/Constants"
-import RelationsTracker from "../../Logic/Osm/RelationsTracker"
-import { VariableUiElement } from "../Base/VariableUIElement"
-import { FlowStep } from "./FlowStep"
-import Loading from "../Base/Loading"
-import { SubtleButton } from "../Base/SubtleButton"
-import Svg from "../../Svg"
-import { Utils } from "../../Utils"
-import { IdbLocalStorage } from "../../Logic/Web/IdbLocalStorage"
-import Minimap from "../Base/Minimap"
-import BaseLayer from "../../Models/BaseLayer"
-import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
-import Loc from "../../Models/Loc"
-import ShowDataLayer from "../ShowDataLayer/ShowDataLayer"
-import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
-import ValidatedTextField from "../Input/ValidatedTextField"
-import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource"
-import import_candidate from "../../assets/layers/import_candidate/import_candidate.json"
-import { GeoOperations } from "../../Logic/GeoOperations"
-import FeatureInfoBox from "../Popup/FeatureInfoBox"
-import { ImportUtils } from "./ImportUtils"
-import Translations from "../i18n/Translations"
-import currentview from "../../assets/layers/current_view/current_view.json"
-import { CheckBox } from "../Input/Checkboxes"
-import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch"
-import { Feature, FeatureCollection, Point } from "geojson"
-import DivContainer from "../Base/DivContainer"
+import { BBox } from "../../Logic/BBox";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import Combine from "../Base/Combine";
+import Title from "../Base/Title";
+import { Overpass } from "../../Logic/Osm/Overpass";
+import { Store, UIEventSource } from "../../Logic/UIEventSource";
+import Constants from "../../Models/Constants";
+import RelationsTracker from "../../Logic/Osm/RelationsTracker";
+import { VariableUiElement } from "../Base/VariableUIElement";
+import { FlowStep } from "./FlowStep";
+import Loading from "../Base/Loading";
+import { SubtleButton } from "../Base/SubtleButton";
+import Svg from "../../Svg";
+import { Utils } from "../../Utils";
+import { IdbLocalStorage } from "../../Logic/Web/IdbLocalStorage";
+import Minimap from "../Base/Minimap";
+import BaseLayer from "../../Models/BaseLayer";
+import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers";
+import Loc from "../../Models/Loc";
+import ShowDataLayer from "../ShowDataLayer/ShowDataLayer";
+import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
+import ValidatedTextField from "../Input/ValidatedTextField";
+import { LocalStorageSource } from "../../Logic/Web/LocalStorageSource";
+import import_candidate from "../../assets/layers/import_candidate/import_candidate.json";
+import { GeoOperations } from "../../Logic/GeoOperations";
+import FeatureInfoBox from "../Popup/FeatureInfoBox";
+import { ImportUtils } from "./ImportUtils";
+import Translations from "../i18n/Translations";
+import currentview from "../../assets/layers/current_view/current_view.json";
+import { CheckBox } from "../Input/Checkboxes";
+import { Feature, FeatureCollection, Point } from "geojson";
+import DivContainer from "../Base/DivContainer";
 
 /**
  * Given the data to import, the bbox and the layer, will query overpass for similar items
@@ -323,13 +322,7 @@ export default class ConflationChecker
             ),
             t.setRangeToZero,
             matchedFeaturesMap,
-            new Combine([
-                new BackgroundMapSwitch(
-                    { backgroundLayer: background, locationControl: matchedFeaturesMap.location },
-                    background
-                ),
-                showOsmLayer,
-            ]).SetClass("flex"),
+            showOsmLayer,
         ]).SetClass("flex flex-col")
         super([
             new Title(t.title),

@@ -1,8 +1,13 @@
-import { UIEventSource } from "../Logic/UIEventSource"
+import { Store, UIEventSource } from "../Logic/UIEventSource"
 import LayerConfig from "./ThemeConfig/LayerConfig"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { LocalStorageSource } from "../Logic/Web/LocalStorageSource"
 import { QueryParameters } from "../Logic/Web/QueryParameters"
+import { FilterConfigOption } from "./ThemeConfig/FilterConfig"
+import { TagsFilter } from "../Logic/Tags/TagsFilter"
+import { Utils } from "../Utils"
+import { TagUtils } from "../Logic/Tags/TagUtils"
+import { And } from "../Logic/Tags/And"
 
 export default class FilteredLayer {
     /**
@@ -10,11 +15,22 @@ export default class FilteredLayer {
      */
     readonly isDisplayed: UIEventSource<boolean>
     /**
-     * Maps the filter.option.id onto the actual used state
+     * Maps the filter.option.id onto the actual used state.
+     * This state is either the chosen option (as number) or a representation of the fields
      */
-    readonly appliedFilters: Map<string, UIEventSource<undefined | number | string>>
+    readonly appliedFilters: ReadonlyMap<string, UIEventSource<undefined | number | string>>
     readonly layerDef: LayerConfig
 
+    /**
+     * Indicates if some filter is set.
+     * If this is the case, adding a new element of this type might be a bad idea
+     */
+    readonly hasFilter: Store<boolean>
+
+    /**
+     * Contains the current properties a feature should fulfill in order to match the filter
+     */
+    readonly currentFilter: Store<TagsFilter | undefined>
     constructor(
         layer: LayerConfig,
         appliedFilters?: Map<string, UIEventSource<undefined | number | string>>,
@@ -24,6 +40,105 @@ export default class FilteredLayer {
         this.isDisplayed = isDisplayed ?? new UIEventSource(true)
         this.appliedFilters =
             appliedFilters ?? new Map<string, UIEventSource<number | string | undefined>>()
+
+        const hasFilter = new UIEventSource<boolean>(false)
+        const self = this
+        const currentTags = new UIEventSource<TagsFilter>(undefined)
+
+        this.appliedFilters.forEach((filterSrc) => {
+            filterSrc.addCallbackAndRun((filter) => {
+                if ((filter ?? 0) !== 0) {
+                    hasFilter.setData(true)
+                    currentTags.setData(self.calculateCurrentTags())
+                    return
+                }
+
+                const hf = Array.from(self.appliedFilters.values()).some((f) => (f.data ?? 0) !== 0)
+                if (hf) {
+                    currentTags.setData(self.calculateCurrentTags())
+                } else {
+                    currentTags.setData(undefined)
+                }
+                hasFilter.setData(hf)
+            })
+        })
+
+        currentTags.addCallbackAndRunD((t) => console.log("Current filter is", t))
+
+        this.currentFilter = currentTags
+    }
+
+    private calculateCurrentTags(): TagsFilter {
+        let needed: TagsFilter[] = []
+        for (const filter of this.layerDef.filters) {
+            const state = this.appliedFilters.get(filter.id)
+            if (state.data === undefined) {
+                continue
+            }
+            if (filter.options[0].fields.length > 0) {
+                const fieldProperties = FilteredLayer.stringToFieldProperties(<string>state.data)
+                const asTags = FilteredLayer.fieldsToTags(filter.options[0], fieldProperties)
+                needed.push(asTags)
+                continue
+            }
+            needed.push(filter.options[state.data].osmTags)
+        }
+        needed = Utils.NoNull(needed)
+        if (needed.length == 0) {
+            return undefined
+        }
+        let tags: TagsFilter
+
+        if (needed.length == 1) {
+            tags = needed[1]
+        } else {
+            tags = new And(needed)
+        }
+        let optimized = tags.optimize()
+        if (optimized === true) {
+            return undefined
+        }
+        if (optimized === false) {
+            return tags
+        }
+        return optimized
+    }
+
+    public static fieldsToString(values: Record<string, string>): string {
+        return JSON.stringify(values)
+    }
+
+    public static stringToFieldProperties(value: string): Record<string, string> {
+        return JSON.parse(value)
+    }
+
+    private static fieldsToTags(
+        option: FilterConfigOption,
+        fieldstate: string | Record<string, string>
+    ): TagsFilter {
+        let properties: Record<string, string>
+        if (typeof fieldstate === "string") {
+            properties = FilteredLayer.stringToFieldProperties(fieldstate)
+        } else {
+            properties = fieldstate
+        }
+        console.log("Building tagsspec with properties", properties)
+        const tagsSpec = Utils.WalkJson(option.originalTagsSpec, (v) => {
+            if (typeof v !== "string") {
+                return v
+            }
+
+            for (const key in properties) {
+                v = (<string>v).replace("{" + key + "}", properties[key])
+            }
+
+            return v
+        })
+        return TagUtils.Tag(tagsSpec)
+    }
+
+    public disableAllFilters(): void {
+        this.appliedFilters.forEach((value) => value.setData(undefined))
     }
 
     /**

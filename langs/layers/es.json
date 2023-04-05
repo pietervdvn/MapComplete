@@ -2681,6 +2681,15 @@
             "render": "Panel informativo"
         }
     },
+    "last_click": {
+        "mapRendering": {
+            "0": {
+                "label": {
+                    "render": "Haga clic aquí para añadir un nuevo ítem"
+                }
+            }
+        }
+    },
     "map": {
         "description": "Un mapa, pensado para turistas y que está instalado de manera permanente en un espacio público",
         "name": "Mapas",

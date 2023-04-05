@@ -21,7 +21,7 @@ export default class LayerState {
     /**
      * Which layers are enabled in the current theme and what filters are applied onto them
      */
-    public readonly filteredLayers: Map<string, FilteredLayer>
+    public readonly filteredLayers: ReadonlyMap<string, FilteredLayer>
     private readonly osmConnection: OsmConnection
 
     /**
@@ -32,14 +32,15 @@ export default class LayerState {
      */
     constructor(osmConnection: OsmConnection, layers: LayerConfig[], context: string) {
         this.osmConnection = osmConnection
-        this.filteredLayers = new Map()
+        const filteredLayers = new Map()
         for (const layer of layers) {
-            this.filteredLayers.set(
+            filteredLayers.set(
                 layer.id,
                 FilteredLayer.initLinkedState(layer, context, this.osmConnection)
             )
         }
-        layers.forEach((l) => this.linkFilterStates(l))
+        this.filteredLayers = filteredLayers
+        layers.forEach((l) => LayerState.linkFilterStates(l, filteredLayers))
     }
 
     /**
@@ -48,11 +49,14 @@ export default class LayerState {
      *
      * This methods links those states for the given layer
      */
-    private linkFilterStates(layer: LayerConfig) {
+    private static linkFilterStates(
+        layer: LayerConfig,
+        filteredLayers: Map<string, FilteredLayer>
+    ) {
         if (layer.filterIsSameAs === undefined) {
             return
         }
-        const toReuse = this.filteredLayers.get(layer.filterIsSameAs)
+        const toReuse = filteredLayers.get(layer.filterIsSameAs)
         if (toReuse === undefined) {
             throw (
                 "Error in layer " +
@@ -65,6 +69,6 @@ export default class LayerState {
         console.warn(
             "Linking filter and isDisplayed-states of " + layer.id + " and " + layer.filterIsSameAs
         )
-        this.filteredLayers.set(layer.id, toReuse)
+        filteredLayers.set(layer.id, toReuse)
     }
 }

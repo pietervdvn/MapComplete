@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ImmutableStore, Store, UIEventSource } from "../Logic/UIEventSource";
+  import { Store, UIEventSource } from "../Logic/UIEventSource";
   import { Map as MlMap } from "maplibre-gl";
   import MaplibreMap from "./Map/MaplibreMap.svelte";
   import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
@@ -19,10 +19,14 @@
   import Geosearch from "./BigComponents/Geosearch.svelte";
   import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@rgossiaux/svelte-headlessui";
   import Translations from "./i18n/Translations";
-  import { MenuIcon } from "@rgossiaux/svelte-heroicons/solid";
+  import { CogIcon, MenuIcon, EyeIcon } from "@rgossiaux/svelte-heroicons/solid";
   import Tr from "./Base/Tr.svelte";
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte";
   import FloatOver from "./Base/FloatOver.svelte";
+  import PrivacyPolicy from "./BigComponents/PrivacyPolicy.js";
+  import { Utils } from "../Utils.js";
+  import Constants from "../Models/Constants";
+  import TabbedGroup from "./Base/TabbedGroup.svelte";
 
   export let layout: LayoutConfig;
   const state = new ThemeViewState(layout);
@@ -47,8 +51,8 @@
 </div>
 
 <div class="absolute top-0 left-0 mt-2 ml-2">
-  <MapControlButton on:click={() => state.guistate.welcomeMessageIsOpened.setData(true)}>
-    <div class="flex mr-2 items-center">
+  <MapControlButton on:click={() => state.guistate.themeIsOpened.setData(true)}>
+    <div class="flex mr-2 items-center cursor-pointer">
       <img class="w-8 h-8 block mr-2" src={layout.icon}>
       <b>
         <Tr t={layout.title}></Tr>
@@ -56,7 +60,7 @@
     </div>
   </MapControlButton>
   <MapControlButton on:click={() =>state.guistate.menuIsOpened.setData(true)}>
-    <MenuIcon class="w-8 h-8"></MenuIcon>
+    <MenuIcon class="w-8 h-8 cursor-pointer"></MenuIcon>
   </MapControlButton>
   <If condition={state.featureSwitchIsTesting}>
     <span class="alert">
@@ -86,107 +90,118 @@
 
 <div class="absolute top-0 right-0 mt-4 mr-4">
   <If condition={state.featureSwitches.featureSwitchSearch}>
-    <Geosearch bounds={state.mapProperties.bounds} {selectedElement} {selectedLayer}></Geosearch>
+    <Geosearch bounds={state.mapProperties.bounds} {selectedElement} {selectedLayer} {state}></Geosearch>
   </If>
 </div>
 
-
-<If condition={state.guistate.welcomeMessageIsOpened}>
-  <!-- Theme page -->
-  <FloatOver>
-      <div on:click={() => state.guistate.welcomeMessageIsOpened.setData(false)}>Close</div>
-      <TabGroup>
-        <TabList>
-          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
-            <Tr t={layout.title} />
-          </Tab>
-          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
-            <Tr t={Translations.t.general.menu.filter} />
-          </Tab>
-          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>Tab 3</Tab>
-        </TabList>
-        <TabPanels>
-          <TabPanel class="flex flex-col">
-            <Tr t={layout.description}></Tr>
-            <Tr t={Translations.t.general.welcomeExplanation.general} />
-            {#if layout.layers.some((l) => l.presets?.length > 0)}
-              <If condition={state.featureSwitches.featureSwitchAddNew}>
-                <Tr t={Translations.t.general.welcomeExplanation.addNew} />
-              </If>
-            {/if}
-
-            <!--toTheMap,
-            loginStatus.SetClass("block mt-6 pt-2 md:border-t-2 border-dotted border-gray-400"),
-            -->
-            <Tr t={layout.descriptionTail}></Tr>
-            <div class="m-x-8">
-              <button class="subtle-background rounded w-full p-4"
-                      on:click={() => state.guistate.welcomeMessageIsOpened.setData(false)}>
-                <Tr t={Translations.t.general.openTheMap} />
-              </button>
-            </div>
-
-
-          </TabPanel>
-          <TabPanel>
-            <div class="flex flex-col">
-              <!-- Filter panel -- TODO move to actual location-->
-              {#each layout.layers as layer}
-                <Filterview filteredLayer={state.layerState.filteredLayers.get(layer.id)}></Filterview>
-              {/each}
-
-              <RasterLayerPicker {availableLayers} value={mapproperties.rasterLayer}></RasterLayerPicker>
-            </div>
-          </TabPanel>
-          <TabPanel>Content 3</TabPanel>
-        </TabPanels>
-      </TabGroup>
-   </FloatOver>
-</If>
-
-
-<If condition={state.guistate.menuIsOpened}>
-  <!-- Menu page -->
-  <FloatOver>
-      <div on:click={() => state.guistate.menuIsOpened.setData(false)}>Close</div>
-      <TabGroup>
-        <TabList>
-          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>About MapComplete</Tab>
-          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>Settings</Tab>
-          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
-            <div class="flex">
-              <div class="w-6">
-                <ToSvelte construct={Svg.community_ui}></ToSvelte>
-              </div>
-              Get in touch with others
-            </div>
-          </Tab>
-          <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>Privacy</Tab>
-        </TabList>
-        <TabPanels>
-          <TabPanel class="flex flex-col">
-            About MC
-
-
-          </TabPanel>
-          <TabPanel>User settings</TabPanel>
-          <TabPanel>
-            <CommunityIndexView location={state.mapProperties.location}></CommunityIndexView>
-
-          </TabPanel>
-          <TabPanel>Privacy</TabPanel>
-        </TabPanels>
-      </TabGroup>
-  </FloatOver>
-</If>
-
 {#if $selectedElement !== undefined && $selectedLayer !== undefined}
-  <FloatOver>
+  <FloatOver on:close={() => {selectedElement.setData(undefined)}}>
     <SelectedElementView layer={$selectedLayer} selectedElement={$selectedElement}
                          tags={$selectedElementTags} state={state}></SelectedElementView>
   </FloatOver>
 
 {/if}
+
+<If condition={state.guistate.themeIsOpened}>
+  <!-- Theme page -->
+  <FloatOver on:close={() => state.guistate.themeIsOpened.setData(false)}>
+    <TabbedGroup tab={state.guistate.themeViewTabIndex}>
+          <Tr slot="title0" t={layout.title} />
+
+      <div slot="content0">
+
+        <Tr t={layout.description}></Tr>
+        <Tr t={Translations.t.general.welcomeExplanation.general} />
+        {#if layout.layers.some((l) => l.presets?.length > 0)}
+          <If condition={state.featureSwitches.featureSwitchAddNew}>
+            <Tr t={Translations.t.general.welcomeExplanation.addNew} />
+          </If>
+        {/if}
+
+        <!--toTheMap,
+        loginStatus.SetClass("block mt-6 pt-2 md:border-t-2 border-dotted border-gray-400"),
+        -->
+        <Tr t={layout.descriptionTail}></Tr>
+        <div class="m-x-8">
+          <button class="subtle-background rounded w-full p-4"
+                  on:click={() => state.guistate.themeIsOpened.setData(false)}>
+            <Tr t={Translations.t.general.openTheMap} />
+          </button>
+        </div>
+
+      </div>
+      
+      <div slot="title1" class="flex">
+        <If condition={state.featureSwitches.featureSwitchFilter}>
+        <img class="w-4 h-4" src="./assets/svg/filter.svg">
+        <Tr t={Translations.t.general.menu.filter} />
+        </If>
+      </div>
+
+      <div slot="content1" class="flex flex-col">
+        {#each layout.layers as layer}
+          <Filterview zoomlevel={state.mapProperties.zoom} filteredLayer={state.layerState.filteredLayers.get(layer.id)} highlightedLayer={state.guistate.highlightedLayerInFilters}></Filterview>
+        {/each}
+        <If condition={state.featureSwitches.featureSwitchBackgroundSelection}>
+          <RasterLayerPicker {availableLayers} value={mapproperties.rasterLayer}></RasterLayerPicker>
+        </If>
+      </div>
+    </TabbedGroup>
+  </FloatOver>
+</If>
+
+
+<If condition={state.guistate.menuIsOpened}>
+  <!-- Menu page -->
+  <FloatOver on:close={() => state.guistate.menuIsOpened.setData(false)}>
+    <TabGroup on:change={(e) => {state.guistate.menuViewTabIndex.setData(e.detail)} }>
+      <TabList>
+        <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
+          <div class="flex">
+            <Tr t={Translations.t.general.aboutMapcompleteTitle}></Tr>
+          </div>
+        </Tab>
+        <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
+          <div class="flex">
+            <CogIcon class="w-6 h-6"/>
+            Settings
+          </div>
+        </Tab>
+        <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
+          <div class="flex">
+            <img class="w-6" src="./assets/svg/community.svg">
+            Get in touch with others
+          </div>
+        </Tab>
+        <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
+          <div class="flex">
+            <EyeIcon class="w-6"/>
+            <Tr t={Translations.t.privacy.title}></Tr>
+          </div>
+        </Tab>
+      </TabList>
+      <TabPanels >
+        <TabPanel class="flex flex-col">
+          <Tr t={Translations.t.general.aboutMapcomplete.Subs({
+                    osmcha_link: Utils.OsmChaLinkFor(7),
+                })}></Tr>
+
+          {Constants.vNumber}
+        </TabPanel>
+        <TabPanel>User settings</TabPanel>
+        <TabPanel>
+          <CommunityIndexView location={state.mapProperties.location}></CommunityIndexView>
+
+        </TabPanel>
+        <TabPanel>
+          <ToSvelte construct={() => new PrivacyPolicy()}></ToSvelte>
+        </TabPanel>
+      </TabPanels>
+    </TabGroup>
+  </FloatOver>
+</If>
+
+
 <style>
     /* WARNING: This is just for demonstration.
         Using :global() in this way can be risky. */

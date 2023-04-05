@@ -35,8 +35,8 @@ export class MapLibreAdaptor implements MapProperties {
     readonly allowMoving: UIEventSource<true | boolean | undefined>
     readonly allowZooming: UIEventSource<true | boolean | undefined>
     readonly lastClickLocation: Store<undefined | { lon: number; lat: number }>
+    readonly minzoom: UIEventSource<number>
     private readonly _maplibreMap: Store<MLMap>
-    private readonly _bounds: UIEventSource<BBox>
     /**
      * Used for internal bookkeeping (to remove a rasterLayer when done loading)
      * @private
@@ -48,9 +48,10 @@ export class MapLibreAdaptor implements MapProperties {
 
         this.location = state?.location ?? new UIEventSource({ lon: 0, lat: 0 })
         this.zoom = state?.zoom ?? new UIEventSource(1)
+        this.minzoom = state?.minzoom ?? new UIEventSource(0)
         this.zoom.addCallbackAndRunD((z) => {
-            if (z < 0) {
-                this.zoom.setData(0)
+            if (z < this.minzoom.data) {
+                this.zoom.setData(this.minzoom.data)
             }
             if (z > 24) {
                 this.zoom.setData(24)
@@ -59,8 +60,7 @@ export class MapLibreAdaptor implements MapProperties {
         this.maxbounds = state?.maxbounds ?? new UIEventSource(undefined)
         this.allowMoving = state?.allowMoving ?? new UIEventSource(true)
         this.allowZooming = state?.allowZooming ?? new UIEventSource(true)
-        this._bounds = new UIEventSource(undefined)
-        this.bounds = this._bounds
+        this.bounds = state?.bounds ?? new UIEventSource(undefined)
         this.rasterLayer =
             state?.rasterLayer ?? new UIEventSource<RasterLayerPolygon | undefined>(undefined)
 
@@ -69,32 +69,28 @@ export class MapLibreAdaptor implements MapProperties {
         const self = this
         maplibreMap.addCallbackAndRunD((map) => {
             map.on("load", () => {
+                this.updateStores()
                 self.setBackground()
                 self.MoveMapToCurrentLoc(self.location.data)
                 self.SetZoom(self.zoom.data)
                 self.setMaxBounds(self.maxbounds.data)
                 self.setAllowMoving(self.allowMoving.data)
                 self.setAllowZooming(self.allowZooming.data)
+                self.setMinzoom(self.minzoom.data)
             })
             self.MoveMapToCurrentLoc(self.location.data)
             self.SetZoom(self.zoom.data)
             self.setMaxBounds(self.maxbounds.data)
             self.setAllowMoving(self.allowMoving.data)
             self.setAllowZooming(self.allowZooming.data)
-            map.on("moveend", () => {
-                const dt = this.location.data
-                dt.lon = map.getCenter().lng
-                dt.lat = map.getCenter().lat
-                this.location.ping()
-                this.zoom.setData(Math.round(map.getZoom() * 10) / 10)
-                const bounds = map.getBounds()
-                const bbox = new BBox([
-                    [bounds.getEast(), bounds.getNorth()],
-                    [bounds.getWest(), bounds.getSouth()],
-                ])
-                self._bounds.setData(bbox)
-            })
+            self.setMinzoom(self.minzoom.data)
+            this.updateStores()
+            map.on("moveend", () => this.updateStores())
             map.on("click", (e) => {
+                if (e.originalEvent["consumed"]) {
+                    // Workaround, 'ShowPointLayer' sets this flag
+                    return
+                }
                 const lon = e.lngLat.lng
                 const lat = e.lngLat.lat
                 lastClickLocation.setData({ lon, lat })
@@ -117,6 +113,23 @@ export class MapLibreAdaptor implements MapProperties {
         this.bounds.addCallbackAndRunD((bounds) => self.setBounds(bounds))
     }
 
+    private updateStores() {
+        const map = this._maplibreMap.data
+        if (map === undefined) {
+            return
+        }
+        const dt = this.location.data
+        dt.lon = map.getCenter().lng
+        dt.lat = map.getCenter().lat
+        this.location.ping()
+        this.zoom.setData(Math.round(map.getZoom() * 10) / 10)
+        const bounds = map.getBounds()
+        const bbox = new BBox([
+            [bounds.getEast(), bounds.getNorth()],
+            [bounds.getWest(), bounds.getSouth()],
+        ])
+        this.bounds.setData(bbox)
+    }
     /**
      * Convenience constructor
      */
@@ -191,7 +204,7 @@ export class MapLibreAdaptor implements MapProperties {
         if (map === undefined) {
             return
         }
-        while (!map.isStyleLoaded()) {
+        while (!map?.isStyleLoaded()) {
             await Utils.waitFor(250)
         }
     }
@@ -265,9 +278,9 @@ export class MapLibreAdaptor implements MapProperties {
             return
         }
         if (bbox) {
-            map.setMaxBounds(bbox.toLngLat())
+            map?.setMaxBounds(bbox.toLngLat())
         } else {
-            map.setMaxBounds(null)
+            map?.setMaxBounds(null)
         }
     }
 
@@ -285,6 +298,14 @@ export class MapLibreAdaptor implements MapProperties {
                 map[id].enable()
             }
         }
+    }
+
+    private setMinzoom(minzoom: number) {
+        const map = this._maplibreMap.data
+        if (map === undefined) {
+            return
+        }
+        map.setMinZoom(minzoom)
     }
 
     private setAllowZooming(allow: true | boolean | undefined) {

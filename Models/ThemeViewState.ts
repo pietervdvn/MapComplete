@@ -2,12 +2,12 @@ import LayoutConfig from "./ThemeConfig/LayoutConfig"
 import { SpecialVisualizationState } from "../UI/SpecialVisualization"
 import { Changes } from "../Logic/Osm/Changes"
 import { ImmutableStore, Store, UIEventSource } from "../Logic/UIEventSource"
-import FeatureSource, {
+import {
+    FeatureSource,
     IndexedFeatureSource,
     WritableFeatureSource,
 } from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
-import { DefaultGuiState } from "../UI/DefaultGuiState"
 import { MapProperties } from "./MapProperties"
 import LayerState from "../Logic/State/LayerState"
 import { Feature } from "geojson"
@@ -39,6 +39,8 @@ import Hotkeys from "../UI/Base/Hotkeys"
 import Translations from "../UI/i18n/Translations"
 import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexedStore"
 import { LastClickFeatureSource } from "../Logic/FeatureSource/Sources/LastClickFeatureSource"
+import SimpleFeatureSource from "../Logic/FeatureSource/Sources/SimpleFeatureSource"
+import { MenuState } from "./MenuState"
 
 /**
  *
@@ -63,11 +65,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly mapProperties: MapProperties
 
     readonly dataIsLoading: Store<boolean> // TODO
-    readonly guistate: DefaultGuiState
+    readonly guistate: MenuState
     readonly fullNodeDatabase?: FullNodeDatabaseSource // TODO
 
     readonly historicalUserLocations: WritableFeatureSource
     readonly indexedFeatures: IndexedFeatureSource
+    readonly newFeatures: WritableFeatureSource
     readonly layerState: LayerState
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
     readonly availableLayers: Store<RasterLayerPolygon[]>
@@ -75,9 +78,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly userRelatedState: UserRelatedState
     readonly geolocation: GeoLocationHandler
 
+    readonly lastClickObject: WritableFeatureSource
     constructor(layout: LayoutConfig) {
         this.layout = layout
-        this.guistate = new DefaultGuiState()
+        this.guistate = new MenuState()
         this.map = new UIEventSource<MlMap>(undefined)
         const initial = new InitialMapPositioning(layout)
         this.mapProperties = new MapLibreAdaptor(this.map, initial)
@@ -109,20 +113,26 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         this.availableLayers = AvailableRasterLayers.layersAvailableAt(this.mapProperties.location)
 
+        const self = this
         this.layerState = new LayerState(this.osmConnection, layout.layers, layout.id)
+        this.newFeatures = new SimpleFeatureSource(undefined)
         this.indexedFeatures = new LayoutSource(
             layout.layers,
             this.featureSwitches,
-            new StaticFeatureSource([]),
+            this.newFeatures,
             this.mapProperties,
             this.osmConnection.Backend(),
-            (id) => this.layerState.filteredLayers.get(id).isDisplayed
+            (id) => self.layerState.filteredLayers.get(id).isDisplayed
         )
+        const lastClick = (this.lastClickObject = new LastClickFeatureSource(
+            this.mapProperties.lastClickLocation,
+            this.layout
+        ))
         const indexedElements = this.indexedFeatures
         this.featureProperties = new FeaturePropertiesStore(indexedElements)
         const perLayer = new PerLayerFeatureSourceSplitter(
             Array.from(this.layerState.filteredLayers.values()).filter(
-                (l) => l.layerDef.source !== null
+                (l) => l.layerDef?.source !== null
             ),
             indexedElements,
             {
@@ -176,9 +186,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
 
         this.initActors()
-        this.drawSpecialLayers()
+        this.drawSpecialLayers(lastClick)
         this.initHotkeys()
         this.miscSetup()
+        console.log("State setup completed", this)
     }
 
     /**
@@ -197,21 +208,30 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.guistate.closeAll()
             }
         )
+
+        Hotkeys.RegisterHotkey(
+            {
+                nomod: "b",
+            },
+            Translations.t.hotkeyDocumentation.openLayersPanel,
+            () => {
+                if (this.featureSwitches.featureSwitchFilter.data) {
+                    this.guistate.openFilterView()
+                }
+            }
+        )
     }
 
     /**
      * Add the special layers to the map
      * @private
      */
-    private drawSpecialLayers() {
+    private drawSpecialLayers(last_click: LastClickFeatureSource) {
         type AddedByDefaultTypes = typeof Constants.added_by_default[number]
         const empty = []
         {
             // The last_click gets a _very_ special treatment
-            const last_click = new LastClickFeatureSource(
-                this.mapProperties.lastClickLocation,
-                this.layout
-            )
+
             const last_click_layer = this.layerState.filteredLayers.get("last_click")
             this.featureProperties.addSpecial(
                 "last_click",

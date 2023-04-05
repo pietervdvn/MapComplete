@@ -6,10 +6,7 @@
     "de": "Hebt das aktuell ausgewählte Element hervor. Überschreiben Sie diese Ebene, um unterschiedliche Farben zu erhalten",
     "fr": "Met en surbrillance l'élément actuellement sélectioné. Surcharger cette couche pour avoir d'autres couleurs."
   },
-  "source": {
-    "osmTags": "selected=yes",
-    "maxCacheAge": 0
-  },
+  "source": "special",
   "mapRendering": [
     {
       "icon": "circle:red",

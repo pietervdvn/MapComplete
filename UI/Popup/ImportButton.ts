@@ -20,7 +20,7 @@ import CreateWayWithPointReuseAction, {
     MergePointConfig,
 } from "../../Logic/Osm/Actions/CreateWayWithPointReuseAction"
 import OsmChangeAction, { OsmCreateAction } from "../../Logic/Osm/Actions/OsmChangeAction"
-import FeatureSource from "../../Logic/FeatureSource/FeatureSource"
+import { FeatureSource } from "../../Logic/FeatureSource/FeatureSource"
 import { OsmObject, OsmWay } from "../../Logic/Osm/OsmObject"
 import { PresetInfo } from "../BigComponents/SimpleAddUI"
 import { TagUtils } from "../../Logic/Tags/TagUtils"

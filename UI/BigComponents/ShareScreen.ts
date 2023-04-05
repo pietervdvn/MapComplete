@@ -9,21 +9,16 @@ import BaseUIElement from "../BaseUIElement"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import Loc from "../../Models/Loc"
-import BaseLayer from "../../Models/BaseLayer"
 import FilteredLayer from "../../Models/FilteredLayer"
 import { InputElement } from "../Input/InputElement"
 import { CheckBox } from "../Input/Checkboxes"
 import { SubtleButton } from "../Base/SubtleButton"
 import LZString from "lz-string"
+import { SpecialVisualizationState } from "../SpecialVisualization"
 
 export default class ShareScreen extends Combine {
-    constructor(state: {
-        layoutToUse: LayoutConfig
-        locationControl: UIEventSource<Loc>
-        backgroundLayer: UIEventSource<BaseLayer>
-        filteredLayers: UIEventSource<FilteredLayer[]>
-    }) {
-        const layout = state?.layoutToUse
+    constructor(state: SpecialVisualizationState) {
+        const layout = state?.layout
         const tr = Translations.t.general.sharescreen
 
         const optionCheckboxes: InputElement<boolean>[] = []
@@ -32,7 +27,8 @@ export default class ShareScreen extends Combine {
         const includeLocation = new CheckBox(tr.fsIncludeCurrentLocation, true)
         optionCheckboxes.push(includeLocation)
 
-        const currentLocation = state.locationControl
+        const currentLocation = state.mapProperties.location
+        const zoom = state.mapProperties.zoom
 
         optionParts.push(
             includeLocation.GetValue().map(
@@ -42,7 +38,7 @@ export default class ShareScreen extends Combine {
                     }
                     if (includeL) {
                         return [
-                            ["z", currentLocation.data?.zoom],
+                            ["z", zoom.data],
                             ["lat", currentLocation.data?.lat],
                             ["lon", currentLocation.data?.lon],
                         ]
@@ -53,7 +49,7 @@ export default class ShareScreen extends Combine {
                         return null
                     }
                 },
-                [currentLocation]
+                [currentLocation, zoom]
             )
         )
 
@@ -67,8 +63,8 @@ export default class ShareScreen extends Combine {
             return "layer-" + flayer.layerDef.id + "=" + flayer.isDisplayed.data
         }
 
-        const currentLayer: UIEventSource<{ id: string; name: string; layer: any }> =
-            state.backgroundLayer
+        const currentLayer: Store<{ id: string; name: string } | undefined> =
+            state.mapProperties.rasterLayer.map((l) => l?.properties)
         const currentBackground = new VariableUiElement(
             currentLayer.map((layer) => {
                 return tr.fsIncludeCurrentBackgroundMap.Subs({ name: layer?.name ?? "" })
@@ -96,7 +92,9 @@ export default class ShareScreen extends Combine {
             includeLayerChoices.GetValue().map(
                 (includeLayerSelection) => {
                     if (includeLayerSelection) {
-                        return Utils.NoNull(state.filteredLayers.data.map(fLayerToParam)).join("&")
+                        return Utils.NoNull(
+                            state.layerState.filteredLayers.map(fLayerToParam)
+                        ).join("&")
                     } else {
                         return null
                     }

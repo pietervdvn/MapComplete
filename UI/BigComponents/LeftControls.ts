@@ -1,18 +1,13 @@
 import Combine from "../Base/Combine"
-import ScrollableFullScreen from "../Base/ScrollableFullScreen"
-import Translations from "../i18n/Translations"
 import Toggle from "../Input/Toggle"
 import MapControlButton from "../MapControlButton"
 import Svg from "../../Svg"
 import AllDownloads from "./AllDownloads"
-import FilterView from "./FilterView"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import BackgroundMapSwitch from "./BackgroundMapSwitch"
 import Lazy from "../Base/Lazy"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import FeatureInfoBox from "../Popup/FeatureInfoBox"
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
-import Hotkeys from "../Base/Hotkeys"
 import { DefaultGuiState } from "../DefaultGuiState"
 
 export default class LeftControls extends Combine {
@@ -74,32 +69,7 @@ export default class LeftControls extends Combine {
             )
         )
 
-        new ScrollableFullScreen(
-            () => Translations.t.general.layerSelection.title.Clone(),
-            () =>
-                new FilterView(state.filteredLayers, state.overlayToggles, state).SetClass(
-                    "block p-1"
-                ),
-            "filters",
-            guiState.filterViewIsOpened
-        )
-        state.featureSwitchFilter.addCallbackAndRun((f) => {
-            Hotkeys.RegisterHotkey(
-                { nomod: "B" },
-                Translations.t.hotkeyDocumentation.openLayersPanel,
-                () => {
-                    guiState.filterViewIsOpened.setData(!guiState.filterViewIsOpened.data)
-                }
-            )
-        })
-
-        const mapSwitch = new Toggle(
-            new BackgroundMapSwitch(state, state.backgroundLayer, { enableHotkeys: true }),
-            undefined,
-            state.featureSwitchBackgroundSelection
-        )
-
-        super([currentViewAction, filterButton, downloadButton, mapSwitch])
+        super([currentViewAction, downloadButton])
 
         this.SetClass("flex flex-col")
     }

@@ -7,7 +7,7 @@ import CreateWayWithPointReuseAction, { MergePointConfig } from "./CreateWayWith
 import { And } from "../../Tags/And"
 import { TagUtils } from "../../Tags/TagUtils"
 import { SpecialVisualizationState } from "../../../UI/SpecialVisualization"
-import FeatureSource from "../../FeatureSource/FeatureSource"
+import { FeatureSource } from "../../FeatureSource/FeatureSource"
 
 /**
  * More or less the same as 'CreateNewWay', except that it'll try to reuse already existing points

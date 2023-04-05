@@ -946,6 +946,15 @@
             }
         }
     },
+    "last_click": {
+        "mapRendering": {
+            "0": {
+                "label": {
+                    "render": "Klikněte zde pro přidání nové položky"
+                }
+            }
+        }
+    },
     "usersettings": {
         "tagRenderings": {
             "picture-license": {

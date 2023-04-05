@@ -5209,6 +5209,33 @@
             }
         }
     },
+    "last_click": {
+        "mapRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "Create a new map note"
+                        }
+                    },
+                    "render": "Click here to add a new item"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Add a new point or add a note"
+                },
+                "1": {
+                    "then": "Add a new note"
+                },
+                "2": {
+                    "then": "Add a new point"
+                }
+            }
+        }
+    },
     "map": {
         "description": "A map, meant for tourists which is permanently installed in the public space",
         "name": "Maps",

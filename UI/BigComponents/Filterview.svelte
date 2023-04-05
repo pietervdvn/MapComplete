@@ -1,5 +1,5 @@
 <script lang="ts">/**
- * The FilterView shows the various options to enable/disable a single layer.
+ * The FilterView shows the various options to enable/disable a single layer or to only show a subset of the data.
  */
 import type FilteredLayer from "../../Models/FilteredLayer";
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
@@ -10,14 +10,19 @@ import type { Writable } from "svelte/store";
 import If from "../Base/If.svelte";
 import Dropdown from "../Base/Dropdown.svelte";
 import { onDestroy } from "svelte";
+import { UIEventSource } from "../../Logic/UIEventSource";
+import FilterviewWithFields from "./FilterviewWithFields.svelte";
+import Tr from "../Base/Tr.svelte";
+import Translations from "../i18n/Translations";
 
 export let filteredLayer: FilteredLayer;
-export let zoomlevel: number;
+export let highlightedLayer: UIEventSource<string> | undefined;
+export let zoomlevel: UIEventSource<number>;
 let layer: LayerConfig = filteredLayer.layerDef;
 let isDisplayed: boolean = filteredLayer.isDisplayed.data;
 onDestroy(filteredLayer.isDisplayed.addCallbackAndRunD(d => {
   isDisplayed = d;
-  return false
+  return false;
 }));
 
 /**
@@ -34,9 +39,20 @@ function getBooleanStateFor(option: FilterConfig): Writable<boolean> {
 function getStateFor(option: FilterConfig): Writable<number> {
   return filteredLayer.appliedFilters.get(option.id);
 }
+
+let mainElem: HTMLElement;
+$:  onDestroy(
+  highlightedLayer.addCallbackAndRun(highlightedLayer => {
+    if (highlightedLayer === filteredLayer.layerDef.id) {
+      mainElem?.classList?.add("glowing-shadow");
+    } else {
+      mainElem?.classList?.remove("glowing-shadow");
+    }
+  })
+);
 </script>
 {#if filteredLayer.layerDef.name}
-  <div>
+  <div bind:this={mainElem}>
     <label class="flex gap-1">
       <Checkbox selected={filteredLayer.isDisplayed} />
       <If condition={filteredLayer.isDisplayed}>
@@ -45,6 +61,13 @@ function getStateFor(option: FilterConfig): Writable<number> {
       </If>
 
       {filteredLayer.layerDef.name}
+
+      {#if $zoomlevel < layer.minzoom}
+        <span class="alert">
+          <Tr t={Translations.t.general.layerSelection.zoomInToSeeThisLayer} />
+        </span>
+      {/if}
+
     </label>
     <If condition={filteredLayer.isDisplayed}>
       <div id="subfilters" class="flex flex-col gap-y-1 mb-4 ml-4">
@@ -57,6 +80,12 @@ function getStateFor(option: FilterConfig): Writable<number> {
                 <Checkbox selected={getBooleanStateFor(filter)} />
                 {filter.options[0].question}
               </label>
+            {/if}
+
+            {#if filter.options.length === 1 && filter.options[0].fields.length > 0}
+              <FilterviewWithFields id={filter.id} filteredLayer={filteredLayer}
+                                    option={filter.options[0]}></FilterviewWithFields>
+
             {/if}
 
             {#if filter.options.length > 1}

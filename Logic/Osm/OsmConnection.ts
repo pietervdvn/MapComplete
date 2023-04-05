@@ -368,7 +368,7 @@ export class OsmConnection {
             "Content-Type": "application/json",
         })
         const parsed = JSON.parse(response)
-        const id = parsed.properties.id
+        const id = parsed.properties
         console.log("OPENED NOTE", id)
         return id
     }

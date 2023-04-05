@@ -3,7 +3,7 @@ import FilteredLayer from "../../Models/FilteredLayer"
 import { BBox } from "../BBox"
 import { Feature } from "geojson"
 
-export default interface FeatureSource {
+export interface FeatureSource {
     features: Store<Feature[]>
 }
 export interface WritableFeatureSource extends FeatureSource {

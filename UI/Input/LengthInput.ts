@@ -1,12 +1,11 @@
-import { InputElement } from "./InputElement"
-import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import Combine from "../Base/Combine"
-import Svg from "../../Svg"
-import Loc from "../../Models/Loc"
-import { GeoOperations } from "../../Logic/GeoOperations"
-import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch"
-import BaseUIElement from "../BaseUIElement"
-import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers"
+import { InputElement } from "./InputElement";
+import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource";
+import Combine from "../Base/Combine";
+import Svg from "../../Svg";
+import Loc from "../../Models/Loc";
+import { GeoOperations } from "../../Logic/GeoOperations";
+import BaseUIElement from "../BaseUIElement";
+import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers";
 
 /**
  * Selects a length after clicking on the minimap, in meters
@@ -38,7 +37,7 @@ export default class LengthInput extends InputElement<string> {
     }
 
     protected InnerConstructElement(): HTMLElement {
-        let map: BaseUIElement & MinimapObj = undefined
+        let map: BaseUIElement = undefined
         let layerControl: BaseUIElement = undefined
         map = Minimap.createMiniMap({
             background: this.background,
@@ -50,16 +49,6 @@ export default class LengthInput extends InputElement<string> {
             },
         })
 
-        layerControl = new BackgroundMapSwitch(
-            {
-                locationControl: this._location,
-                backgroundLayer: this.background,
-            },
-            this.background,
-            {
-                allowedCategories: ["map", "photo"],
-            }
-        )
         const crosshair = new Combine([
             Svg.length_crosshair_svg().SetStyle(
                 `position: absolute;top: 0;left: 0;transform:rotate(${this.value.data ?? 0}deg);`
@@ -70,9 +59,6 @@ export default class LengthInput extends InputElement<string> {
 
         const element = new Combine([
             crosshair,
-            layerControl?.SetStyle(
-                "position: absolute; bottom: 0.25rem; left: 0.25rem; z-index: 1000"
-            ),
             map?.SetClass("w-full h-full block absolute top-0 left-O overflow-hidden"),
         ])
             .SetClass("relative block bg-white border border-black rounded-xl overflow-hidden")

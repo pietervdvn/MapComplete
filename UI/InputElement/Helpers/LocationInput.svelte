@@ -12,31 +12,29 @@
    * A visualisation to pick a direction on a map background
    */
   export let value: UIEventSource<{lon: number, lat: number}>;
-  export let mapProperties: Partial<MapProperties> & { readonly location: UIEventSource<{ lon: number; lat: number }> };
+  export let mapProperties: Partial<MapProperties> & { readonly location: UIEventSource<{ lon: number; lat: number }> } = undefined;
   /**
    * Called when setup is done, cna be used to add layrs to the map
    */
   export let onCreated : (value: Store<{lon: number, lat: number}> , map: Store<MlMap>, mapProperties: MapProperties ) => void
   
-  let map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined);
+  export let map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined);
   let mla = new MapLibreAdaptor(map, mapProperties);
-  mla.allowMoving.setData(true)
-  mla.allowZooming.setData(true)
-
+  
   if(onCreated){
     onCreated(value, map, mla)
   }
 </script>
 
-<div class="relative h-32 cursor-pointer overflow-hidden">
+<div class="relative h-full min-h-32 cursor-pointer overflow-hidden">
   <div class="w-full h-full absolute top-0 left-0 cursor-pointer">
     <MaplibreMap {map} attribution={false}></MaplibreMap>
   </div>
 
-  <div class="w-full h-full absolute top-0 left-0 p-8 pointer-events-none opacity-50">
-      <ToSvelte construct={() => Svg.move_arrows_svg().SetClass("h-full")}></ToSvelte>
+  <div class="w-full h-full absolute top-0 left-0 p-8 pointer-events-none opacity-50 flex items-center">
+    <img src="./assets/svg/move-arrows.svg" class="h-full max-h-24"/>
   </div>
   
-  <DragInvitation></DragInvitation>
+  <DragInvitation hideSignal={mla.location.stabilized(3000)}></DragInvitation>
 
 </div>

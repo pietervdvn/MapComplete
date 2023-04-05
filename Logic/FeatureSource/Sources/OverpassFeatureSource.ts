@@ -1,5 +1,5 @@
 import { Feature } from "geojson"
-import FeatureSource from "../FeatureSource"
+import { FeatureSource } from "../FeatureSource"
 import { ImmutableStore, Store, UIEventSource } from "../../UIEventSource"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
 import { Or } from "../../Tags/Or"

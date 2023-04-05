@@ -8,8 +8,7 @@ import Combine from "../Base/Combine"
 import Translations from "../i18n/Translations"
 import Svg from "../../Svg"
 import Toggle from "../Input/Toggle"
-import SimpleAddUI, { PresetInfo } from "../BigComponents/SimpleAddUI"
-import Img from "../Base/Img"
+import { PresetInfo } from "../BigComponents/SimpleAddUI"
 import Title from "../Base/Title"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import { Tag } from "../../Logic/Tags/Tag"
@@ -115,10 +114,6 @@ export default class ConfirmLocationOfPoint extends Combine {
         )
             .SetClass("font-bold break-words")
             .onClick(() => {
-                console.log(
-                    "The confirmLocationPanel - precise input yielded ",
-                    preciseInput?.GetValue()?.data
-                )
                 const globalFilterTagsToAdd: Tag[][] = state.globalFilters.data
                     .filter((gf) => gf.onNewPoint !== undefined)
                     .map((gf) => gf.onNewPoint.tags)
@@ -131,30 +126,13 @@ export default class ConfirmLocationOfPoint extends Combine {
                 )
             })
 
-        const warn = Translations.t.general.add.warnVisibleForEveryone
-            .Clone()
-            .SetClass("alert w-full block")
         if (preciseInput !== undefined) {
-            confirmButton = new Combine([preciseInput, warn, confirmButton])
+            confirmButton = new Combine([preciseInput, confirmButton])
         } else {
-            confirmButton = new Combine([warn, confirmButton])
+            confirmButton = new Combine([confirmButton])
         }
 
-        const openLayerControl = new SubtleButton(
-            Svg.layers_ui(),
-            new Combine([
-                Translations.t.general.add.layerNotEnabled
-                    .Subs({ layer: preset.layerToAddTo.layerDef.name })
-                    .SetClass("alert"),
-                Translations.t.general.add.openLayerControl,
-            ])
-        ).onClick(() => filterViewIsOpened.setData(true))
-
-        let openLayerOrConfirm = new Toggle(
-            confirmButton,
-            openLayerControl,
-            preset.layerToAddTo.isDisplayed
-        )
+        let openLayerOrConfirm = confirmButton
 
         const disableFilter = new SubtleButton(
             new Combine([
@@ -200,21 +178,8 @@ export default class ConfirmLocationOfPoint extends Combine {
             )
         }
 
-        const hasActiveFilter = preset.layerToAddTo.appliedFilters.map((appliedFilters) => {
-            const activeFilters = Array.from(appliedFilters.values()).filter(
-                (f) => f?.currentFilter !== undefined
-            )
-            return activeFilters.length === 0
-        })
-
         // If at least one filter is active which _might_ hide a newly added item, this blocks the preset and requests the filter to be disabled
-        const disableFiltersOrConfirm = new Toggle(
-            openLayerOrConfirm,
-            disableFilter,
-            hasActiveFilter
-        )
-
-        const tagInfo = SimpleAddUI.CreateTagInfoFor(preset, state.osmConnection)
+        const disableFiltersOrConfirm = new Toggle(openLayerOrConfirm, disableFilter)
 
         const cancelButton = new SubtleButton(
             options?.cancelIcon ?? Svg.close_ui(),
@@ -223,18 +188,7 @@ export default class ConfirmLocationOfPoint extends Combine {
 
         let examples: BaseUIElement = undefined
         if (preset.exampleImages !== undefined && preset.exampleImages.length > 0) {
-            examples = new Combine([
-                new Title(
-                    preset.exampleImages.length == 1
-                        ? Translations.t.general.example
-                        : Translations.t.general.examples
-                ),
-                new Combine(
-                    preset.exampleImages.map((img) =>
-                        new Img(img).SetClass("h-64 m-1 w-auto rounded-lg")
-                    )
-                ).SetClass("flex flex-wrap items-stretch"),
-            ])
+            examples = new Combine([new Title()])
         }
 
         super([
@@ -247,7 +201,6 @@ export default class ConfirmLocationOfPoint extends Combine {
             cancelButton,
             preset.description,
             examples,
-            tagInfo,
         ])
 
         this.SetClass("flex flex-col")

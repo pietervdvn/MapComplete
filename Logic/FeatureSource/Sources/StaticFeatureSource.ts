@@ -1,4 +1,4 @@
-import FeatureSource, { FeatureSourceForLayer, Tiled } from "../FeatureSource"
+import { FeatureSource , FeatureSourceForLayer, Tiled } from "../FeatureSource"
 import { ImmutableStore, Store } from "../../UIEventSource"
 import FilteredLayer from "../../../Models/FilteredLayer"
 import { BBox } from "../../BBox"

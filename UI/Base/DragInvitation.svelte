@@ -11,18 +11,17 @@
   let mainElem: HTMLElement;
   export let hideSignal: Store<any>;
   function hide(){
-    console.trace("Hiding...")
       mainElem.style.visibility = "hidden";
   }
   if (hideSignal) {
     onDestroy(hideSignal.addCallbackD(() => {
-      console.trace("Hiding invitation")
+      console.log("Received hide signal")
+      hide()
       return true;
     }));
   }
   
 $: {
-    console.log("Binding listeners on", mainElem)
   mainElem?.addEventListener("click",_ => hide())
   mainElem?.addEventListener("touchstart",_ => hide())
 }
@@ -30,8 +29,8 @@ $: {
 
 
 <div bind:this={mainElem} class="absolute bottom-0 right-0 w-full h-full">
-  <div id="hand-container">
-    <ToSvelte construct={Svg.hand_ui}></ToSvelte>
+  <div id="hand-container" class="pointer-events-none">
+    <img src="./assets/svg/hand.svg"/>
   </div>
 </div>
 

@@ -89,6 +89,7 @@
     "general": {
         "about": "Easily edit and add OpenStreetMap for a certain theme",
         "aboutMapcomplete": "<p>Use MapComplete to add OpenStreetMap info on a <b>single theme.</b> Answer questions, and within minutes your contributions are available everywhere. In most themes you can add pictures or even leave a review. The <b>theme maintainer</b> defines elements, questions and languages for it.</p><h3>Find out more</h3><p>MapComplete always <b>offers the next step</b> to learn more about OpenStreetMap.<ul><li>When embedded in a website, the iframe links to a full-screen MapComplete.</li><li>The fullscreen version offers info about OpenStreetMap.</li><li>Viewing works without login, but editing requires an OSM account.</li><li>If you are not logged in, you are asked to do so</li><li>Once you answered a single question, you can add new features to the map</li><li>After a while, actual OSM-tags are shown, later linking to the wiki</li></ul></p><br/><p>Did you notice <b>an issue</b>? Do you have a <b>feature request</b>? Want to <b>help translate</b>? Head over to <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>the source code</a> or <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>issue tracker.</a> </p><p> Want to see <b>your progress</b>? Follow the edit count on <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
+        "aboutMapcompleteTitle": "About MapComplete",
         "add": {
             "addNew": "Add {category}",
             "backToSelect": "Select a different category",
@@ -96,6 +97,7 @@
             "confirmIntro": "<h3>Add a {title}?</h3>The feature you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
             "disableFilters": "Disable all filters",
             "disableFiltersExplanation": "Some features might be hidden by a filter",
+            "enableLayer": "Enable layer {name}",
             "hasBeenImported": "This feature has already been imported",
             "import": {
                 "hasBeenImported": "This object has been imported",

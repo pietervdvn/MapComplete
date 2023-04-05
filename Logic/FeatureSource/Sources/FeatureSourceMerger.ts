@@ -1,5 +1,5 @@
 import { Store, UIEventSource } from "../../UIEventSource"
-import FeatureSource, { IndexedFeatureSource } from "../FeatureSource"
+import { FeatureSource ,  IndexedFeatureSource } from "../FeatureSource"
 import { Feature } from "geojson"
 import { Utils } from "../../../Utils"
 

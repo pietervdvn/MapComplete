@@ -11,15 +11,16 @@ import { RegexTag } from "../../Logic/Tags/RegexTag"
 import BaseUIElement from "../../UI/BaseUIElement"
 import Table from "../../UI/Base/Table"
 import Combine from "../../UI/Base/Combine"
-
+export type FilterConfigOption = {
+    question: Translation
+    osmTags: TagsFilter | undefined
+    /* Only set if fields are present. Used to create `osmTags` (which are used to _actually_ filter) when the field is written*/
+    readonly originalTagsSpec: TagConfigJson
+    fields: { name: string; type: string }[]
+}
 export default class FilterConfig {
     public readonly id: string
-    public readonly options: {
-        question: Translation
-        osmTags: TagsFilter | undefined
-        originalTagsSpec: TagConfigJson
-        fields: { name: string; type: string }[]
-    }[]
+    public readonly options: FilterConfigOption[]
     public readonly defaultSelection?: number
 
     constructor(json: FilterConfigJson, context: string) {

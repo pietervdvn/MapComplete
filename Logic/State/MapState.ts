@@ -3,7 +3,7 @@ import FilteredLayer from "../../Models/FilteredLayer"
 import TilesourceConfig from "../../Models/ThemeConfig/TilesourceConfig"
 import { QueryParameters } from "../Web/QueryParameters"
 import ShowOverlayLayer from "../../UI/ShowDataLayer/ShowOverlayLayer"
-import FeatureSource, { FeatureSourceForLayer, Tiled } from "../FeatureSource/FeatureSource"
+import { FeatureSource, FeatureSourceForLayer, Tiled } from "../FeatureSource/FeatureSource"
 import StaticFeatureSource, {
     TiledStaticFeatureSource,
 } from "../FeatureSource/Sources/StaticFeatureSource"

@@ -1417,6 +1417,15 @@
             "render": "Pannello informativo"
         }
     },
+    "last_click": {
+        "mapRendering": {
+            "0": {
+                "label": {
+                    "render": "Aggiungi nuovo elemento"
+                }
+            }
+        }
+    },
     "map": {
         "description": "Una mappa, destinata ai turisti e che è sistemata in maniera permanente in uno spazio pubblico",
         "name": "Mappe",

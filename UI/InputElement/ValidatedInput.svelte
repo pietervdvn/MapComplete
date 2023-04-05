@@ -33,10 +33,10 @@
 
   let dispatch = createEventDispatcher<{ selected }>();
   $: {
-    console.log(htmlElem)
+    console.log(htmlElem);
     if (htmlElem !== undefined) {
       htmlElem.onfocus = () => {
-        console.log("Dispatching selected event")
+        console.log("Dispatching selected event");
         return dispatch("selected");
       };
     }
@@ -44,12 +44,12 @@
 </script>
 
 {#if validator.textArea}
-  <textarea bind:value={$_value} inputmode={validator.inputmode ?? "text"}></textarea>
+  <textarea class="w-full" bind:value={$_value} inputmode={validator.inputmode ?? "text"}></textarea>
 {:else }
-  <div class="flex">
+  <span class="flex">
     <input bind:this={htmlElem} bind:value={$_value} inputmode={validator.inputmode ?? "text"}>
     {#if !$isValid}
       <ExclamationIcon class="h-6 w-6 -ml-6"></ExclamationIcon>
     {/if}
-  </div>
+  </span>
 {/if}

@@ -1,7 +1,7 @@
 import { Store, Stores } from "../../UIEventSource"
 import { Tiles } from "../../../Models/TileRange"
 import { BBox } from "../../BBox"
-import FeatureSource from "../FeatureSource"
+import { FeatureSource } from "../FeatureSource"
 import FeatureSourceMerger from "../Sources/FeatureSourceMerger"
 
 /***
@@ -26,10 +26,6 @@ export default class DynamicTileSource extends FeatureSourceMerger {
             mapProperties.bounds
                 .mapD(
                     (bounds) => {
-                        if (options?.isActive?.data === false) {
-                            // No need to download! - the layer is disabled
-                            return undefined
-                        }
                         const tileRange = Tiles.TileRangeBetween(
                             zoomlevel,
                             bounds.getNorth(),

@@ -84,7 +84,7 @@ export class Tiles {
      * Return x, y of the tile containing (lat, lon) on the given zoom level
      */
     static embedded_tile(lat: number, lon: number, z: number): { x: number; y: number; z: number } {
-        return { x: Tiles.lon2tile(lon, z), y: Tiles.lat2tile(lat, z), z: z }
+        return { x: Tiles.lon2tile(lon, z), y: Tiles.lat2tile(lat, z), z }
     }
 
     static tileRangeFrom(bbox: BBox, zoomlevel: number) {

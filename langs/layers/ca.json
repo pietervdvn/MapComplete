@@ -1994,6 +1994,15 @@
             }
         }
     },
+    "last_click": {
+        "mapRendering": {
+            "0": {
+                "label": {
+                    "render": "Afegir nou element"
+                }
+            }
+        }
+    },
     "map": {
         "name": "Mapes",
         "presets": {

@@ -26,11 +26,15 @@ export default class TitleHandler {
 
                 const tags = selected.properties
                 const layer = selectedLayer.data
+                if (layer.title === undefined) {
+                    return defaultTitle
+                }
                 const tagsSource =
                     allElements.getStore(tags.id) ?? new UIEventSource<Record<string, string>>(tags)
                 const title = new SvelteUIElement(TagRenderingAnswer, {
                     tags: tagsSource,
                     state,
+                    config: layer.title,
                     selectedElement: selectedElement.data,
                     layer,
                 })

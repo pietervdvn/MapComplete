@@ -4,7 +4,7 @@ import { MangroveIdentity } from "../Web/MangroveReviews"
 import { Store, Stores, UIEventSource } from "../UIEventSource"
 import Locale from "../../UI/i18n/Locale"
 import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource"
-import FeatureSource from "../FeatureSource/FeatureSource"
+import { FeatureSource } from "../FeatureSource/FeatureSource"
 import { Feature } from "geojson"
 
 /**

@@ -1,4 +1,4 @@
-import FeatureSource, { IndexedFeatureSource } from "../FeatureSource"
+import { FeatureSource, IndexedFeatureSource } from "../FeatureSource"
 import { UIEventSource } from "../../UIEventSource"
 
 /**

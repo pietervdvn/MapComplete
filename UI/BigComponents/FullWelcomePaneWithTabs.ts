@@ -15,10 +15,7 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { Utils } from "../../Utils"
 import UserRelatedState from "../../Logic/State/UserRelatedState"
 import Loc from "../../Models/Loc"
-import BaseLayer from "../../Models/BaseLayer"
 import FilteredLayer from "../../Models/FilteredLayer"
-import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline"
-import PrivacyPolicy from "./PrivacyPolicy"
 import Hotkeys from "../Base/Hotkeys"
 
 export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
@@ -83,12 +80,6 @@ export default class FullWelcomePaneWithTabs extends ScrollableFullScreen {
         if (state.featureSwitchShareScreen.data) {
             tabs.push({ header: Svg.share_img, content: new ShareScreen(state) })
         }
-
-        const privacy = {
-            header: Svg.eye_svg(),
-            content: new PrivacyPolicy(),
-        }
-        tabs.push(privacy)
 
         return tabs
     }

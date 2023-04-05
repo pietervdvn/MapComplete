@@ -1,4 +1,4 @@
-import FeatureSource, { FeatureSourceForLayer, Tiled } from "../FeatureSource"
+import {FeatureSource, FeatureSourceForLayer, Tiled } from "../FeatureSource"
 import { OsmNode, OsmObject, OsmWay } from "../../Osm/OsmObject"
 import SimpleFeatureSource from "../Sources/SimpleFeatureSource"
 import FilteredLayer from "../../../Models/FilteredLayer"

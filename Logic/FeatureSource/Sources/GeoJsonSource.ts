@@ -3,7 +3,7 @@
  */
 import { Store, UIEventSource } from "../../UIEventSource"
 import { Utils } from "../../../Utils"
-import FeatureSource from "../FeatureSource"
+import { FeatureSource } from "../FeatureSource"
 import { BBox } from "../../BBox"
 import { GeoOperations } from "../../GeoOperations"
 import { Feature } from "geojson"

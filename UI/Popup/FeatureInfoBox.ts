@@ -127,7 +127,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         const allRenderings: BaseUIElement[] = [
             new VariableUiElement(
                 tags
-                    .map((data) => data[Tag.newlyCreated.key])
+                    .map((data) => data["_newly_created"])
                     .map((isCreated) => {
                         if (isCreated === undefined) {
                             return undefined

@@ -57,6 +57,11 @@ import SvelteUIElement from "./Base/SvelteUIElement"
 import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import QuestionViz from "./Popup/QuestionViz"
 import SimpleAddUI from "./BigComponents/SimpleAddUI"
+import { Feature } from "geojson"
+import { GeoOperations } from "../Logic/GeoOperations"
+import CreateNewNote from "./Popup/CreateNewNote.svelte"
+import { svelte } from "@sveltejs/vite-plugin-svelte"
+import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
@@ -84,7 +89,10 @@ export default class SpecialVisualizations {
         }
 
         if (template["type"] !== undefined) {
-            console.trace("Got a non-expanded template while constructing the specification")
+            console.trace(
+                "Got a non-expanded template while constructing the specification:",
+                template
+            )
             throw "Got a non-expanded template while constructing the specification"
         }
         const allKnownSpecials = extraMappings.concat(SpecialVisualizations.specialVisualizations)
@@ -230,6 +238,26 @@ export default class SpecialVisualizations {
         ]).SetClass("flex flex-col")
     }
 
+    // noinspection JSUnusedGlobalSymbols
+    public static renderExampleOfSpecial(
+        state: SpecialVisualizationState,
+        s: SpecialVisualization
+    ): BaseUIElement {
+        const examples =
+            s.structuredExamples === undefined
+                ? []
+                : s.structuredExamples().map((e) => {
+                      return s.constr(
+                          state,
+                          new UIEventSource<Record<string, string>>(e.feature.properties),
+                          e.args,
+                          e.feature,
+                          undefined
+                      )
+                  })
+        return new Combine([new Title(s.funcName), s.docs, ...examples])
+    }
+
     private static initList(): SpecialVisualization[] {
         const specialVisualizations: SpecialVisualization[] = [
             new QuestionViz(),
@@ -237,11 +265,14 @@ export default class SpecialVisualizations {
                 funcName: "add_new_point",
                 docs: "An element which allows to add a new point on the 'last_click'-location. Only makes sense in the layer `last_click`",
                 args: [],
-                constr(state: SpecialVisualizationState): BaseUIElement {
-                    return new SimpleAddUI(state)
+                constr(state: SpecialVisualizationState, _, __, feature): BaseUIElement {
+                    let [lon, lat] = GeoOperations.centerpointCoordinates(feature)
+                    return new SvelteUIElement(AddNewPoint, {
+                        state,
+                        coordinate: { lon, lat },
+                    })
                 },
             },
-
             new HistogramViz(),
             new StealViz(),
             new MinimapViz(),
@@ -250,6 +281,20 @@ export default class SpecialVisualizations {
             new MultiApplyViz(),
             new ExportAsGpxViz(),
             new AddNoteCommentViz(),
+            {
+                funcName: "open_note",
+                args: [],
+                docs: "Creates a new map note on the given location. This options is placed in the 'last_click'-popup automatically if the 'notes'-layer is enabled",
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature
+                ): BaseUIElement {
+                    const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
+                    return new SvelteUIElement(CreateNewNote, { state, coordinate: { lon, lat } })
+                },
+            },
             new CloseNoteButton(),
             new PlantNetDetectionViz(),
 
@@ -680,9 +725,7 @@ export default class SpecialVisualizations {
                             if (title === undefined) {
                                 return undefined
                             }
-                            return new SubstitutedTranslation(title, tagsSource, state).RemoveClass(
-                                "w-full"
-                            )
+                            return new SubstitutedTranslation(title, tagsSource, state)
                         })
                     ),
             },
@@ -959,25 +1002,5 @@ export default class SpecialVisualizations {
         }
 
         return specialVisualizations
-    }
-
-    // noinspection JSUnusedGlobalSymbols
-    public static renderExampleOfSpecial(
-        state: SpecialVisualizationState,
-        s: SpecialVisualization
-    ): BaseUIElement {
-        const examples =
-            s.structuredExamples === undefined
-                ? []
-                : s.structuredExamples().map((e) => {
-                      return s.constr(
-                          state,
-                          new UIEventSource<Record<string, string>>(e.feature.properties),
-                          e.args,
-                          e.feature,
-                          undefined
-                      )
-                  })
-        return new Combine([new Title(s.funcName), s.docs, ...examples])
     }
 }

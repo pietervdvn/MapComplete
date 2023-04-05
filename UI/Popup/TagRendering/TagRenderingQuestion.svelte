@@ -16,6 +16,7 @@
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
   import { ExclamationIcon } from "@rgossiaux/svelte-heroicons/solid";
   import SpecialTranslation from "./SpecialTranslation.svelte";
+  import TagHint from "../TagHint.svelte";
 
   export let config: TagRenderingConfig;
   export let tags: UIEventSource<Record<string, string>>;
@@ -87,7 +88,9 @@
   <div class="border border-black subtle-background flex flex-col">
     <If condition={state.featureSwitchIsTesting}>
       <div class="flex justify-between">
-        <SpecialTranslation t={config.question} {tags} {state} {layer} feature={selectedElement}></SpecialTranslation>
+        <span>
+          <SpecialTranslation t={config.question} {tags} {state} {layer} feature={selectedElement}></SpecialTranslation>
+        </span>
         <span class="alert">{config.id}</span>
       </div>
       <SpecialTranslation slot="else" t={config.question} {tags} {state} {layer} feature={selectedElement}></SpecialTranslation>
@@ -149,8 +152,7 @@
       </div>
     {/if}
 
-    <FromHtml src={selectedTags?.asHumanString(true, true, {})} />
-
+  <TagHint osmConnection={state.osmConnection} tags={selectedTags}></TagHint>
     <div>
       <!-- TagRenderingQuestion-buttons -->
       <slot name="cancel"></slot>

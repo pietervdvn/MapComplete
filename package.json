@@ -9,7 +9,7 @@
   "type": "module",
   "scripts": {
     "start": "npm run generate:layeroverview && npm run strt",
-    "strt": "vite",
+    "strt": "vite --host",
     "strttest": "export NODE_OPTIONS=--max_old_space_size=8364 && parcel serve test.html assets/templates/*.svg assets/templates/fonts/*.ttf",
     "watch:css": "tailwindcss -i index.css -o css/index-tailwind-output.css --watch",
     "generate:css": "tailwindcss -i index.css -o css/index-tailwind-output.css",

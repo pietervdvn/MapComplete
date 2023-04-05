@@ -5206,6 +5206,15 @@
             }
         }
     },
+    "last_click": {
+        "mapRendering": {
+            "0": {
+                "label": {
+                    "render": "Hier klicken, um ein neues Element hinzuzufügen"
+                }
+            }
+        }
+    },
     "map": {
         "description": "Eine Karte, die für Touristen gedacht ist und dauerhaft im öffentlichen Raum aufgestellt ist",
         "name": "Karten",

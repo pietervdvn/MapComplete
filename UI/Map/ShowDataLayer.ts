@@ -6,7 +6,7 @@ import { GeoOperations } from "../../Logic/GeoOperations"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import PointRenderingConfig from "../../Models/ThemeConfig/PointRenderingConfig"
 import { OsmTags } from "../../Models/OsmFeature"
-import FeatureSource from "../../Logic/FeatureSource/FeatureSource"
+import { FeatureSource } from "../../Logic/FeatureSource/FeatureSource"
 import { BBox } from "../../Logic/BBox"
 import { Feature } from "geojson"
 import ScrollableFullScreen from "../Base/ScrollableFullScreen"
@@ -124,8 +124,11 @@ class PointRenderingLayer {
 
         if (this._onClick) {
             const self = this
-            el.addEventListener("click", function () {
+            el.addEventListener("click", function (ev) {
                 self._onClick(feature)
+                ev.preventDefault()
+                // Workaround to signal the MapLibreAdaptor to ignore this click
+                ev["consumed"] = true
             })
         }
 
@@ -164,6 +167,7 @@ class LineRenderingLayer {
     private readonly _layername: string
     private readonly _listenerInstalledOn: Set<string> = new Set<string>()
 
+    private static missingIdTriggered = false
     constructor(
         map: MlMap,
         features: FeatureSource,
@@ -281,11 +285,14 @@ class LineRenderingLayer {
             const feature = features[i]
             const id = feature.properties.id ?? feature.id
             if (id === undefined) {
-                console.trace(
-                    "Got a feature without ID; this causes rendering bugs:",
-                    feature,
-                    "from"
-                )
+                if (!LineRenderingLayer.missingIdTriggered) {
+                    console.trace(
+                        "Got a feature without ID; this causes rendering bugs:",
+                        feature,
+                        "from"
+                    )
+                    LineRenderingLayer.missingIdTriggered = true
+                }
                 continue
             }
             if (this._listenerInstalledOn.has(id)) {
@@ -334,7 +341,7 @@ export default class ShowDataLayer {
         options?: Partial<ShowDataLayerOptions>
     ) {
         const perLayer = new PerLayerFeatureSourceSplitter(
-            layers.map((l) => new FilteredLayer(l)),
+            layers.filter((l) => l.source !== null).map((l) => new FilteredLayer(l)),
             new StaticFeatureSource(features)
         )
         perLayer.forEach((fs) => {

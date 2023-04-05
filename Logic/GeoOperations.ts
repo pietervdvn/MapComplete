@@ -1,7 +1,7 @@
 import { BBox } from "./BBox"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import * as turf from "@turf/turf"
-import { AllGeoJSON, booleanWithin, Coord } from "@turf/turf"
+import { AllGeoJSON, booleanWithin, Coord, Lines } from "@turf/turf"
 import {
     Feature,
     GeoJSON,
@@ -273,7 +273,7 @@ export class GeoOperations {
      * @param point Point defined as [lon, lat]
      */
     public static nearestPoint(
-        way: Feature<LineString | MultiLineString | Polygon | MultiPolygon>,
+        way: Feature<LineString>,
         point: [number, number]
     ): Feature<
         Point,
@@ -950,5 +950,25 @@ export class GeoOperations {
             }
         }
         throw "CalculateIntersection fallthrough: can not calculate an intersection between features"
+    }
+
+    /**
+     * Creates a linestring object based on the outer ring of the given polygon
+     *
+     * Returns the argument if not a polygon
+     * @param p
+     */
+    public static outerRing<P>(p: Feature<Polygon | LineString, P>): Feature<LineString, P> {
+        if (p.geometry.type !== "Polygon") {
+            return <Feature<LineString, P>>p
+        }
+        return {
+            type: "Feature",
+            properties: p.properties,
+            geometry: {
+                type: "LineString",
+                coordinates: p.geometry.coordinates[0],
+            },
+        }
     }
 }

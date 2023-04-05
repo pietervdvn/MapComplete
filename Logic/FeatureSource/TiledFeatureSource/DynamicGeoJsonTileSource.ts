@@ -81,6 +81,7 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
                 return new GeoJsonSource(layer, {
                     zxy,
                     featureIdBlacklist: blackList,
+                    isActive: options?.isActive,
                 })
             },
             mapProperties,

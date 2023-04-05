@@ -1,7 +1,6 @@
 <script lang="ts">
 
   import { UIEventSource } from "../../Logic/UIEventSource";
-  import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig";
   import type { Feature } from "geojson";
   import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
   import ToSvelte from "../Base/ToSvelte.svelte";
@@ -11,9 +10,9 @@
   import Hotkeys from "../Base/Hotkeys";
   import { Geocoding } from "../../Logic/Osm/Geocoding";
   import { BBox } from "../../Logic/BBox";
-  import { GeoIndexedStoreForLayer } from "../../Logic/FeatureSource/Actors/GeoIndexedStore";
+  import type { SpecialVisualizationState } from "../SpecialVisualization";
 
-  Translations.t;
+  export let state: SpecialVisualizationState
   export let bounds: UIEventSource<BBox>
   export let selectedElement: UIEventSource<Feature>;
   export let selectedLayer: UIEventSource<LayerConfig>;
@@ -50,6 +49,7 @@
       const [lat0, lat1, lon0, lon1] = poi.boundingbox
       bounds.set(new BBox([[lon0, lat0], [lon1, lat1]]).pad(0.01))
       const id = poi.osm_type + "/" + poi.osm_id
+      const perLayer = state.perLayer
       const layers = Array.from(perLayer.values())
       for (const layer of layers) {
         const found = layer.features.data.find(f => f.properties.id === id)

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { createEventDispatcher, onMount } from "svelte";
   import { Store } from "../../Logic/UIEventSource";
   import BaseUIElement from "../BaseUIElement";
   import Img from "./Img";
@@ -24,7 +24,7 @@
   let imgElem: HTMLElement;
   let msgElem: HTMLElement;
   let imgClasses = "block justify-center shrink-0 mr-4 " + (options?.imgSize ?? "h-11 w-11");
-
+  const dispatch = createEventDispatcher<{click}>()
   onMount(() => {
     // Image
     if (imgElem && imageUrl) {
@@ -47,15 +47,16 @@
 </script>
 
 <svelte:element
-  class={(options.extraClasses??"") + 'flex hover:shadow-xl transition-[color,background-color,box-shadow] hover:bg-unsubtle'}
+  class={(options.extraClasses??"") + 'flex hover:shadow-xl transition-[color,background-color,box-shadow] hover:bg-unsubtle cursor-pointer'}
   href={$href}
   target={options?.newTab ? "_blank" : ""}
   this={href === undefined ? "span" : "a"}
+  on:click={(e) => dispatch("click", e)}
 >
   <slot name="image">
     {#if imageUrl !== undefined}
       {#if typeof imageUrl === "string"}
-        <Img src={imageUrl} class={imgClasses+ " bg-red border border-black"}></Img>
+        <Img src={imageUrl} class={imgClasses}></Img>
       {:else }
         <template bind:this={imgElem} />
       {/if}

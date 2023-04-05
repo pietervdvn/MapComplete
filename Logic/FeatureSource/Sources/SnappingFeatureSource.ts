@@ -1,37 +1,69 @@
-import FeatureSource from "../FeatureSource"
-import { Store } from "../../UIEventSource"
+import { FeatureSource } from "../FeatureSource"
+import { Store, UIEventSource } from "../../UIEventSource"
 import { Feature, Point } from "geojson"
 import { GeoOperations } from "../../GeoOperations"
+import { BBox } from "../../BBox"
 
 export interface SnappingOptions {
     /**
      * If the distance is bigger then this amount, don't snap.
      * In meter
      */
-    maxDistance?: number
+    maxDistance: number
+
+    allowUnsnapped?: false | boolean
+
+    /**
+     * The snapped-to way will be written into this
+     */
+    snappedTo?: UIEventSource<string>
+
+    /**
+     * The resulting snap coordinates will be written into this UIEventSource
+     */
+    snapLocation?: UIEventSource<{ lon: number; lat: number }>
 }
 
 export default class SnappingFeatureSource implements FeatureSource {
     public readonly features: Store<Feature<Point>[]>
 
+    private readonly _snappedTo: UIEventSource<string>
+    public readonly snappedTo: Store<string>
+
     constructor(
         snapTo: FeatureSource,
         location: Store<{ lon: number; lat: number }>,
-        options?: SnappingOptions
+        options: SnappingOptions
     ) {
-        const simplifiedFeatures = snapTo.features.mapD((features) =>
-            features
-                .filter((feature) => feature.geometry.type !== "Point")
-                .map((f) => GeoOperations.forceLineString(<any>f))
-        )
+        const maxDistance = options?.maxDistance
+        this._snappedTo = options.snappedTo ?? new UIEventSource<string>(undefined)
+        this.snappedTo = this._snappedTo
+        const simplifiedFeatures = snapTo.features
+            .mapD((features) =>
+                features
+                    .filter((feature) => feature.geometry.type !== "Point")
+                    .map((f) => GeoOperations.forceLineString(<any>f))
+            )
+            .map(
+                (features) => {
+                    const { lon, lat } = location.data
+                    const loc: [number, number] = [lon, lat]
+                    return features.filter((f) => BBox.get(f).isNearby(loc, maxDistance))
+                },
+                [location]
+            )
 
-        location.mapD(
+        this.features = location.mapD(
             ({ lon, lat }) => {
-                const features = snapTo.features.data
+                const features = simplifiedFeatures.data
                 const loc: [number, number] = [lon, lat]
-                const maxDistance = (options?.maxDistance ?? 1000) * 1000
+                const maxDistance = (options?.maxDistance ?? 1000) / 1000
                 let bestSnap: Feature<Point, { "snapped-to": string; dist: number }> = undefined
                 for (const feature of features) {
+                    if (feature.geometry.type !== "LineString") {
+                        // TODO handle Polygons with holes
+                        continue
+                    }
                     const snapped = GeoOperations.nearestPoint(<any>feature, loc)
                     if (snapped.properties.dist > maxDistance) {
                         continue
@@ -44,7 +76,23 @@ export default class SnappingFeatureSource implements FeatureSource {
                         bestSnap = <any>snapped
                     }
                 }
-                return bestSnap
+                this._snappedTo.setData(bestSnap?.properties?.["snapped-to"])
+                if (bestSnap === undefined && options?.allowUnsnapped) {
+                    bestSnap = {
+                        type: "Feature",
+                        geometry: {
+                            type: "Point",
+                            coordinates: [lon, lat],
+                        },
+                        properties: {
+                            "snapped-to": undefined,
+                            dist: -1,
+                        },
+                    }
+                }
+                const c = bestSnap.geometry.coordinates
+                options?.snapLocation?.setData({ lon: c[0], lat: c[1] })
+                return [bestSnap]
             },
             [snapTo.features]
         )

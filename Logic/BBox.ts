@@ -138,6 +138,45 @@ export class BBox {
         return true
     }
 
+    squarify(): BBox {
+        const w = this.maxLon - this.minLon
+        const h = this.maxLat - this.minLat
+        const s = Math.sqrt(w * h)
+        const lon = (this.maxLon + this.minLon) / 2
+        const lat = (this.maxLat + this.minLat) / 2
+        // we want to have a more-or-less equal surface, so the new side 's' should be
+        // w * h = s * s
+        // The ratio for w is:
+
+        return new BBox([
+            [lon - s / 2, lat - s / 2],
+            [lon + s / 2, lat + s / 2],
+        ])
+    }
+
+    isNearby(location: [number, number], maxRange: number): boolean {
+        if (this.contains(location)) {
+            return true
+        }
+        const [lon, lat] = location
+        // We 'project' the point onto the near edges. If they are close to a horizontal _and_ vertical edge, it is nearby
+        // Vertically nearby: either wihtin minLat range or at most maxRange away
+        const nearbyVertical =
+            (this.minLat <= lat &&
+                this.maxLat >= lat &&
+                GeoOperations.distanceBetween(location, [lon, this.minLat]) <= maxRange) ||
+            GeoOperations.distanceBetween(location, [lon, this.maxLat]) <= maxRange
+        if (!nearbyVertical) {
+            return false
+        }
+        const nearbyHorizontal =
+            (this.minLon <= lon &&
+                this.maxLon >= lon &&
+                GeoOperations.distanceBetween(location, [this.minLon, lat]) <= maxRange) ||
+            GeoOperations.distanceBetween(location, [this.maxLon, lat]) <= maxRange
+        return nearbyHorizontal
+    }
+
     getEast() {
         return this.maxLon
     }
@@ -214,7 +253,7 @@ export class BBox {
      * @param zoomlevel
      */
     expandToTileBounds(zoomlevel: number): BBox {
-        if(zoomlevel === undefined){
+        if (zoomlevel === undefined) {
             return this
         }
         const ul = Tiles.embedded_tile(this.minLat, this.minLon, zoomlevel)

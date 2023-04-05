@@ -1,4 +1,4 @@
-import FeatureSource from "../FeatureSource"
+import { FeatureSource } from "../FeatureSource"
 import { Feature, Polygon } from "geojson"
 import StaticFeatureSource from "./StaticFeatureSource"
 import { GeoOperations } from "../../GeoOperations"

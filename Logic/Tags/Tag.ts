@@ -4,7 +4,6 @@ import { TagsFilter } from "./TagsFilter"
 export class Tag extends TagsFilter {
     public key: string
     public value: string
-    public static newlyCreated = new Tag("_newly_created", "yes")
     constructor(key: string, value: string) {
         super()
         this.key = key
