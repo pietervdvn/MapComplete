@@ -116,7 +116,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         const self = this
         this.layerState = new LayerState(this.osmConnection, layout.layers, layout.id)
         this.newFeatures = new SimpleFeatureSource(undefined)
-        this.indexedFeatures = new LayoutSource(
+        const layoutSource = new LayoutSource(
             layout.layers,
             this.featureSwitches,
             this.newFeatures,
@@ -124,6 +124,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.osmConnection.Backend(),
             (id) => self.layerState.filteredLayers.get(id).isDisplayed
         )
+        this.indexedFeatures = layoutSource
+        this.dataIsLoading = layoutSource.isLoading
         const lastClick = (this.lastClickObject = new LastClickFeatureSource(
             this.mapProperties.lastClickLocation,
             this.layout

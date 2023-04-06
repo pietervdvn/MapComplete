@@ -144,10 +144,12 @@ export default class FilterConfig {
         })
     }
 
-    public initState(): UIEventSource<undefined | number | string> {
+    public initState(layerId: string): UIEventSource<undefined | number | string> {
         let defaultValue = ""
         if (this.options.length > 1) {
             defaultValue = "" + (this.defaultSelection ?? 0)
+        } else if (this.options[0].fields?.length > 0) {
+            defaultValue = "{}"
         } else {
             // Only a single option
             if (this.defaultSelection === 0) {
@@ -157,7 +159,7 @@ export default class FilterConfig {
             }
         }
         const qp = QueryParameters.GetQueryParameter(
-            "filter-" + this.id,
+            `filter-${layerId}-${this.id}`,
             defaultValue,
             "State of filter " + this.id
         )

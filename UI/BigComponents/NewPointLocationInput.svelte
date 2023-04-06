@@ -45,7 +45,7 @@
     /*If no snapping needed: the value is simply the map location;
     * If snapping is needed: the value will be set later on by the snapping feature source
     * */
-    location: snapToLayers.length === 0 ? value : new UIEventSource<{ lon: number; lat: number }>(coordinate),
+    location: snapToLayers?.length > 0 ? new UIEventSource<{ lon: number; lat: number }>(coordinate) :value,
     bounds: new UIEventSource<BBox>(undefined),
     allowMoving: new UIEventSource<boolean>(true),
     allowZooming: new UIEventSource<boolean>(true),

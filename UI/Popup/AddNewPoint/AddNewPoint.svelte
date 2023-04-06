@@ -35,7 +35,7 @@
   let confirmedCategory = false;
   $: if (selectedPreset === undefined) {
     confirmedCategory = false;
-    creating = false
+    creating = false;
   }
 
   let flayer: FilteredLayer = undefined;
@@ -51,6 +51,7 @@
 
   const zoom = state.mapProperties.zoom;
 
+  const isLoading = state.dataIsLoading;
   let preciseCoordinate: UIEventSource<{ lon: number, lat: number }> = new UIEventSource(undefined);
   let snappedToObject: UIEventSource<string> = new UIEventSource<string>(undefined);
 
@@ -95,7 +96,6 @@
       }
     });
     state.newFeatures.features.ping();
-  console.log("New features:", state.newFeatures.features.data )
     {
       // Set some metainfo
       const tagsStore = state.featureProperties.getStore(newId);
@@ -114,7 +114,7 @@
     abort();
     state.selectedElement.setData(feature);
     state.selectedLayer.setData(selectedPreset.layer);
-  
+
   }
 
 </script>
@@ -123,8 +123,13 @@
   <LoginButton osmConnection={state.osmConnection} slot="not-logged-in">
     <Tr slot="message" t={Translations.t.general.add.pleaseLogin} />
   </LoginButton>
-
-  {#if $zoom < Constants.minZoomLevelToAddNewPoint}
+  {#if $isLoading}
+    <div class="alert">
+      <Loading>
+        <Tr t={Translations.t.general.add.stillLoading} />
+      </Loading>
+    </div>
+  {:else if $zoom < Constants.minZoomLevelToAddNewPoint}
     <div class="alert">
       <Tr t={Translations.t.general.add.zoomInFurther}></Tr>
     </div>

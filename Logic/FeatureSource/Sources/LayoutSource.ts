@@ -18,6 +18,11 @@ import StaticFeatureSource from "./StaticFeatureSource"
  * Note that special layers (with `source=null` will be ignored)
  */
 export default class LayoutSource extends FeatureSourceMerger {
+    /**
+     * Indicates if a data source is loading something
+     * TODO fixme
+     */
+    public readonly isLoading: Store<boolean> = new ImmutableStore(false)
     constructor(
         layers: LayerConfig[],
         featureSwitches: FeatureSwitchState,
