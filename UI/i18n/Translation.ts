@@ -7,7 +7,7 @@ export class Translation extends BaseUIElement {
     public static forcedLanguage = undefined
 
     public readonly translations: Record<string, string>
-    context?: string
+    public readonly context?: string
 
     constructor(translations: Record<string, string>, context?: string) {
         super()

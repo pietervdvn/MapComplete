@@ -8,8 +8,9 @@
   import type { Feature } from "geojson";
   import { UIEventSource } from "../../../Logic/UIEventSource.js";
   import ToSvelte from "../../Base/ToSvelte.svelte";
-  import FromHtml from "../../Base/FromHtml.svelte";
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
+  import WeblateLink from "../../Base/WeblateLink.svelte";
+  import FromHtml from "../../Base/FromHtml.svelte";
 
   /**
    * The 'specialTranslation' renders a `Translation`-object, but interprets the special values as well
@@ -33,8 +34,11 @@
 </script>
 
 {#each specs as specpart}
-  {#if typeof specpart === "string"}
-    <FromHtml src={Utils.SubstituteKeys(specpart, $tags)}></FromHtml>
+  {#if typeof specpart === "string"} 
+    <span class="inline-flex items-center">
+    <FromHtml src={Utils.SubstituteKeys(specpart, $tags)} />
+    <WeblateLink context={t.context} />
+    </span>
   {:else if $tags !== undefined }
     <ToSvelte construct={specpart.func.constr(state, tags, specpart.args, feature, layer)}></ToSvelte>
   {/if}

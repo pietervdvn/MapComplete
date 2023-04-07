@@ -7,6 +7,7 @@
   import Locale from "../i18n/Locale";
   import { Utils } from "../../Utils";
   import FromHtml from "./FromHtml.svelte";
+  import WeblateLink from "./WeblateLink.svelte";
 
   export let t: Translation;
   export let tags: Record<string, string> | undefined = undefined;
@@ -14,17 +15,22 @@
   let txt: string | undefined;
 
   $: onDestroy(Locale.language.addCallbackAndRunD(l => {
-    const translation = t?.textFor(l)
-    if(translation === undefined){
-      return
+    const translation = t?.textFor(l);
+    if (translation === undefined) {
+      return;
     }
-    if(tags){
-      txt = Utils.SubstituteKeys(txt, tags)
-    }else{
-      txt = translation
+    if (tags) {
+      txt = Utils.SubstituteKeys(txt, tags);
+    } else {
+      txt = translation;
     }
   }));
 
 </script>
 
-<FromHtml src={txt}></FromHtml>
+{#if t}
+  <span class="inline-flex items-center">
+  <FromHtml src={txt}></FromHtml>
+  <WeblateLink context={t.context}></WeblateLink>
+  </span>
+{/if}
