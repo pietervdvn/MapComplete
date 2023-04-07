@@ -1,5 +1,7 @@
 import LayerConfig from "./ThemeConfig/LayerConfig"
 import { UIEventSource } from "../Logic/UIEventSource"
+import UserRelatedState from "../Logic/State/UserRelatedState"
+import { Utils } from "../Utils"
 
 /**
  * Indicates if a menu is open, and if so, which tab is selected;
@@ -61,6 +63,19 @@ export class MenuState {
     public openUsersettings(highlightTagRendering?: string) {
         this.menuIsOpened.setData(true)
         this.menuViewTab.setData("settings")
+        if (
+            highlightTagRendering !== undefined &&
+            !UserRelatedState.availableUserSettingsIds.some((tr) => tr === highlightTagRendering)
+        ) {
+            console.error(
+                "No tagRendering with id '" + highlightTagRendering + "'; maybe you meant:",
+                Utils.sortedByLevenshteinDistance(
+                    highlightTagRendering,
+                    UserRelatedState.availableUserSettingsIds,
+                    (x) => x
+                )
+            )
+        }
         this.highlightedUserSetting.setData(highlightTagRendering)
     }
 

@@ -8575,6 +8575,13 @@
                 },
                 "question": "Under what license do you want to publish your pictures?"
             },
+            "settings-link": {
+                "render": {
+                    "special": {
+                        "text": "Open your settings on OpenStreetMap.org"
+                    }
+                }
+            },
             "show_debug": {
                 "mappings": {
                     "0": {

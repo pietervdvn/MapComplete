@@ -15,10 +15,19 @@
 
   let dispatch = createEventDispatcher<{ "selected" }>();
 </script>
-<Inline key={config.freeform.key} {tags} template={config.render}>
-  <ValidatedInput {feedback} type={config.freeform.type}
-                  {value} on:selected={() => dispatch("selected")}></ValidatedInput>
-</Inline>
+
+{#if config.freeform.inline}
+  <Inline key={config.freeform.key} {tags} template={config.render}>
+    <ValidatedInput {feedback} on:selected={() => dispatch("selected")}
+                    type={config.freeform.type} {value}></ValidatedInput>
+  </Inline>
+{:else}
+  <ValidatedInput {feedback} on:selected={() => dispatch("selected")}
+                  type={config.freeform.type} {value}></ValidatedInput>
+
+{/if}
+
+
 {#if $feedback !== undefined}
   <div class="alert">
     <Tr t={$feedback} />

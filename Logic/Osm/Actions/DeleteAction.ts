@@ -82,7 +82,7 @@ export default class DeleteAction extends OsmChangeAction {
             return await new ChangeTagAction(this._id, this._softDeletionTags, osmObject.tags, {
                 ...this.meta,
                 changeType: "soft-delete",
-            }).CreateChangeDescriptions(changes)
+            }).CreateChangeDescriptions()
         }
     }
 }

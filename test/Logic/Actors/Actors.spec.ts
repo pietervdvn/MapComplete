@@ -7,10 +7,10 @@ import * as bookcaseJson from "../../../assets/generated/themes/bookcases.json"
 import { UIEventSource } from "../../../Logic/UIEventSource"
 import Loc from "../../../Models/Loc"
 import SelectedFeatureHandler from "../../../Logic/Actors/SelectedFeatureHandler"
-import { ElementStorage } from "../../../Logic/ElementStorage"
 import { OsmTags } from "../../../Models/OsmFeature"
 import { Feature, Geometry } from "geojson"
 import { expect, it } from "vitest"
+import ThemeViewState from "../../../Models/ThemeViewState";
 
 const latestTags = {
     amenity: "public_bookcase",
@@ -48,7 +48,7 @@ Utils.injectJsonDownloadForTests("https://www.openstreetmap.org/api/0.6/node/556
 })
 
 it("should download the latest version", () => {
-    const state = new UserRelatedState(new LayoutConfig(<any>bookcaseJson, true))
+    const state = new ThemeViewState(new LayoutConfig(<any>bookcaseJson, true))
     const feature: Feature<Geometry, OsmTags> = {
         type: "Feature",
         id: "node/5568693115",
@@ -73,14 +73,13 @@ it("should download the latest version", () => {
             coordinates: [3.2154662, 51.2179199],
         },
     }
-    state.allElements.addOrGetElement(feature)
-    SelectedElementTagsUpdater.installCallback(state)
+    state.newFeatures.features.data.push(feature)
+    state.newFeatures.features.ping()
+    new SelectedElementTagsUpdater(state)
 
     // THis should trigger a download of the latest feaures and update the tags
     // However, this doesn't work with ts-node for some reason
     state.selectedElement.setData(feature)
-
-    SelectedElementTagsUpdater.applyUpdate(state, latestTags, feature.properties.id)
 
     // The name should be updated
     expect(feature.properties.name).toEqual("Stubbekwartier-buurtbibliotheek")
@@ -100,11 +99,12 @@ it("Hash without selected element should download geojson from OSM-API", async (
         expect(selected.data.properties.id).toEqual("node/5568693115")
         expect(loc.data.zoom).toEqual(14)
         expect(loc.data.lat).toEqual(51.2179199)
-    })
+    }
+
 
     new SelectedFeatureHandler(hash, {
         selectedElement: selected,
-        allElements: new ElementStorage(),
+        allElements: new(),
         featurePipeline: undefined,
         locationControl: loc,
         layoutToUse: undefined,

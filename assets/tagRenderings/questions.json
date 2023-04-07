@@ -129,6 +129,7 @@
     }
   },
   "phone": {
+    "label": "contact-info",
     "question": {
       "en": "What is the phone number of {title()}?",
       "nl": "Wat is het telefoonnummer van {title()}?",
@@ -239,6 +240,7 @@
     }
   },
   "email": {
+    "label": "contact-info",
     "render": {
       "*": "<a href='mailto:{email}' target='_blank'>{email}</a>"
     },
@@ -283,6 +285,7 @@
     }
   },
   "website": {
+    "label": "contact-info",
     "question": {
       "en": "What is the website of {title()}?",
       "nl": "Wat is de website van {title()}?",

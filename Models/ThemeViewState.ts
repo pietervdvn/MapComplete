@@ -322,12 +322,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
         new TitleHandler(this.selectedElement, this.selectedLayer, this.featureProperties, this)
         new ChangeToElementsActor(this.changes, this.featureProperties)
         new PendingChangesUploader(this.changes, this.selectedElement)
-        new SelectedElementTagsUpdater({
-            allElements: this.featureProperties,
-            changes: this.changes,
-            selectedElement: this.selectedElement,
-            layoutToUse: this.layout,
-            osmConnection: this.osmConnection,
-        })
+        new SelectedElementTagsUpdater(this)
     }
 }

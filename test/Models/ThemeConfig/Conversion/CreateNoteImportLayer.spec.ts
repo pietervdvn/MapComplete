@@ -23,7 +23,9 @@ describe("CreateNoteImportLayer", () => {
             layer,
             "ImportLayerGeneratorTest: convert"
         )
-        expect(generatedLayer.isShown["and"][1].or[0].and[0]).toEqual("_tags~(^|.*;)amenity=public_bookcase($|;.*)")
+        expect(generatedLayer.isShown["and"][1].or[0].and[0]).toEqual(
+            "_tags~(^|.*;)amenity=public_bookcase($|;.*)"
+        )
         // "Zoomlevel is to high"
         expect(generatedLayer.minzoom <= layer.minzoom).toBe(true)
         let renderings = Utils.NoNull(

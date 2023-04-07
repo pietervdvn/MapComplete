@@ -28,21 +28,12 @@
   let selectedMapping: number = undefined;
   let checkedMappings: boolean[];
   $: {
-
-    if (config.mappings?.length > 0) {
+    if (config.mappings?.length > 0 && (checkedMappings === undefined || checkedMappings?.length < config.mappings.length)) {
       checkedMappings = [...config.mappings.map(_ => false), false /*One element extra in case a freeform value is added*/];
     }
   }
+  $: console.log("Checked mappings:", checkedMappings)
   let selectedTags: TagsFilter = undefined;
-  $: {
-    try {
-
-      selectedTags = config?.constructChangeSpecification($freeformInput, selectedMapping, checkedMappings);
-    } catch (e) {
-      console.debug("Could not calculate changeSpecification:", e);
-      selectedTags = undefined;
-    }
-  }
 
   function mappingIsHidden(mapping: Mapping): boolean {
     if (mapping.hideInAnswer === undefined || mapping.hideInAnswer === false) {
@@ -53,6 +44,18 @@
     }
     return (<TagsFilter>mapping.hideInAnswer).matchesProperties(tags.data);
   }
+
+  let mappings: Mapping[];
+  $: {
+    mappings = config.mappings?.filter(m => !mappingIsHidden(m));
+    try {
+      selectedTags = config?.constructChangeSpecification($freeformInput, selectedMapping, checkedMappings);
+    } catch (e) {
+      console.debug("Could not calculate changeSpecification:", e);
+      selectedTags = undefined;
+    }
+  }
+
 
   let dispatch = createEventDispatcher<{
     "saved": {
@@ -122,15 +125,14 @@
       </div>
     {/if}
 
-    {#if config.freeform?.key && !(config.mappings?.length > 0)}
+    {#if config.freeform?.key && !(mappings?.length > 0)}
       <!-- There are no options to choose from, simply show the input element: fill out the text field -->
       <FreeformInput {config} {tags} value={freeformInput} />
-    {/if}
-
-    {#if config.mappings !== undefined && !config.multiAnswer}
+    {:else if mappings !== undefined && !config.multiAnswer}
       <!-- Simple radiobuttons as mapping -->
       <div class="flex flex-col">
         {#each config.mappings as mapping, i (mapping.then)}
+          <!-- Even though we have a list of 'mappings' already, we still iterate over the list as to keep the original indices-->
           {#if !mappingIsHidden(mapping)  }
             <label>
               <input type="radio" bind:group={selectedMapping} name={"mappings-radio-"+config.id} value={i}>
@@ -147,19 +149,15 @@
           </label>
         {/if}
       </div>
-    {/if}
-
-
-    {#if config.mappings !== undefined && config.multiAnswer}
+    {:else if mappings !== undefined && config.multiAnswer}
       <!-- Multiple answers can be chosen: checkboxes -->
       <div class="flex flex-col">
         {#each config.mappings as mapping, i (mapping.then)}
-          {#if !mappingIsHidden(mapping)  }
+          {#if !mappingIsHidden(mapping)}
             <label>
               <input type="checkbox" name={"mappings-checkbox-"+config.id+"-"+i} bind:checked={checkedMappings[i]}>
               <TagRenderingMapping {mapping} {tags} {state} {selectedElement}></TagRenderingMapping>
-            </label>
-          {/if}
+            </label>{/if}
         {/each}
         {#if config.freeform?.key}
           <label>

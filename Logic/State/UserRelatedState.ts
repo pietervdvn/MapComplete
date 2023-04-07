@@ -51,6 +51,8 @@ export default class UserRelatedState {
         <LayerConfigJson>usersettings,
         "userinformationpanel"
     )
+    public static readonly availableUserSettingsIds: string[] =
+        UserRelatedState.usersettingsConfig.tagRenderings.map((tr) => tr.id)
 
     constructor(
         osmConnection: OsmConnection,

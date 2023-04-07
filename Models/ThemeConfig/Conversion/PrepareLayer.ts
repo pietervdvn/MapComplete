@@ -25,6 +25,7 @@ import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
 import ValidationUtils from "./ValidationUtils"
 import { RenderingSpecification } from "../../../UI/SpecialVisualization"
+import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static readonly predefinedFilters = ExpandFilter.load_filters()
@@ -407,6 +408,62 @@ class ExpandTagRendering extends Conversion<
         }
 
         return result
+    }
+}
+
+class DetectInline extends DesugaringStep<QuestionableTagRenderingConfigJson> {
+    constructor() {
+        super(
+            "If no 'inline' is set on the freeform key, it will be automatically added. If no special renderings are used, it'll be set to true",
+            ["freeform.inline"],
+            "DetectInline"
+        )
+    }
+
+    convert(
+        json: QuestionableTagRenderingConfigJson,
+        context: string
+    ): {
+        result: QuestionableTagRenderingConfigJson
+        errors?: string[]
+        warnings?: string[]
+        information?: string[]
+    } {
+        if (json.freeform === undefined) {
+            return { result: json }
+        }
+        let spec: Record<string, string>
+        if (typeof json.render === "string") {
+            spec = { "*": json.render }
+        } else {
+            spec = json.render
+        }
+        const errors: string[] = []
+        for (const key in spec) {
+            if (spec[key].indexOf("<a ") >= 0) {
+                // We have a link element, it probably contains something that needs to be substituted...
+                // Let's play this safe and not inline it
+                return { result: json }
+            }
+            const fullSpecification = SpecialVisualizations.constructSpecification(spec[key])
+            if (fullSpecification.length > 1) {
+                // We found a special rendering!
+                if (json.freeform.inline === true) {
+                    errors.push(
+                        "At " +
+                            context +
+                            ": 'inline' is set, but the rendering contains a special visualisation...\n    " +
+                            spec[key]
+                    )
+                }
+                json = JSON.parse(JSON.stringify(json))
+                json.freeform.inline = false
+                return { result: json, errors }
+            }
+        }
+        json = JSON.parse(JSON.stringify(json))
+        json.freeform.inline ??= true
+        return { result: json, errors }
     }
 }
 
@@ -1014,6 +1071,7 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
             new On("tagRenderings", new Each(new RewriteSpecial())),
             new On("tagRenderings", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
             new On("tagRenderings", (layer) => new Concat(new ExpandTagRendering(state, layer))),
+            new On("tagRenderings", new Each(new DetectInline())),
             new On("mapRendering", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
             new On<(PointRenderingConfigJson | LineRenderingConfigJson)[], LayerConfigJson>(
                 "mapRendering",

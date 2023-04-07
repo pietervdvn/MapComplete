@@ -2,9 +2,12 @@ import { Utils } from "../../../Utils"
 import { ChangesetHandler, ChangesetTag } from "../../../Logic/Osm/ChangesetHandler"
 import { UIEventSource } from "../../../Logic/UIEventSource"
 import { OsmConnection } from "../../../Logic/Osm/OsmConnection"
-import { ElementStorage } from "../../../Logic/ElementStorage"
 import { Changes } from "../../../Logic/Osm/Changes"
 import { describe, expect, it } from "vitest"
+
+function elstorage() {
+    return { addAlias: (a, b) => {} }
+}
 
 describe("ChangesetHanlder", () => {
     describe("RewriteTagsOf", () => {
@@ -12,9 +15,8 @@ describe("ChangesetHanlder", () => {
             const changesetHandler = new ChangesetHandler(
                 new UIEventSource<boolean>(true),
                 new OsmConnection({}),
-                new ElementStorage(),
-                new Changes(),
-                new UIEventSource(undefined)
+                elstorage(),
+                new Changes()
             )
 
             const oldChangesetMeta = {
@@ -57,7 +59,9 @@ describe("ChangesetHanlder", () => {
             const d = Utils.asDict(rewritten)
             expect(d.size).toEqual(10)
             expect(d.get("answer")).toEqual("5")
-            expect(d.get("comment")).toEqual("Adding data with #MapComplete for theme #toerisme_vlaanderen")
+            expect(d.get("comment")).toEqual(
+                "Adding data with #MapComplete for theme #toerisme_vlaanderen"
+            )
             expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
             expect(d.get("host")).toEqual("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
             expect(d.get("imagery")).toEqual("osm")
@@ -70,9 +74,8 @@ describe("ChangesetHanlder", () => {
             const changesetHandler = new ChangesetHandler(
                 new UIEventSource<boolean>(true),
                 new OsmConnection({}),
-                new ElementStorage(),
-                new Changes(),
-                new UIEventSource(undefined)
+                elstorage(),
+                new Changes()
             )
             const oldChangesetMeta = {
                 type: "changeset",
@@ -115,7 +118,9 @@ describe("ChangesetHanlder", () => {
 
             expect(d.size).toEqual(9)
             expect(d.get("answer")).toEqual("42")
-            expect(d.get("comment")).toEqual("Adding data with #MapComplete for theme #toerisme_vlaanderen")
+            expect(d.get("comment")).toEqual(
+                "Adding data with #MapComplete for theme #toerisme_vlaanderen"
+            )
             expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
             expect(d.get("host")).toEqual("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
             expect(d.get("imagery")).toEqual("osm")
@@ -127,9 +132,8 @@ describe("ChangesetHanlder", () => {
             const changesetHandler = new ChangesetHandler(
                 new UIEventSource<boolean>(true),
                 new OsmConnection({}),
-                new ElementStorage(),
-                new Changes(),
-                new UIEventSource(undefined)
+                elstorage(),
+                new Changes()
             )
             const oldChangesetMeta = {
                 type: "changeset",
@@ -166,7 +170,9 @@ describe("ChangesetHanlder", () => {
 
             expect(d.size).toEqual(9)
             expect(d.get("answer")).toEqual("5")
-            expect(d.get("comment")).toEqual("Adding data with #MapComplete for theme #toerisme_vlaanderen")
+            expect(d.get("comment")).toEqual(
+                "Adding data with #MapComplete for theme #toerisme_vlaanderen"
+            )
             expect(d.get("created_by")).toEqual("MapComplete 0.16.6")
             expect(d.get("host")).toEqual("https://mapcomplete.osm.be/toerisme_vlaanderen.html")
             expect(d.get("imagery")).toEqual("osm")

@@ -29,7 +29,7 @@ export class ChangesetHandler {
     constructor(
         dryRun: UIEventSource<boolean>,
         osmConnection: OsmConnection,
-        allElements: { addAlias: (id0: String, id1: string) => void },
+        allElements: { addAlias: (id0: string, id1: string) => void },
         changes: Changes
     ) {
         this.osmConnection = osmConnection
@@ -68,9 +68,9 @@ export class ChangesetHandler {
      * The key is changed _in place_; true will be returned if a change has been applied
      * @param extraMetaTags
      * @param rewriteIds
-     * @private
+     * @public for testing purposes
      */
-    private static rewriteMetaTags(extraMetaTags: ChangesetTag[], rewriteIds: Map<string, string>) {
+    public static rewriteMetaTags(extraMetaTags: ChangesetTag[], rewriteIds: Map<string, string>) {
         let hasChange = false
         for (const tag of extraMetaTags) {
             const match = tag.key.match(/^([a-zA-Z0-9_]+):(node\/-[0-9])$/)
@@ -185,8 +185,10 @@ export class ChangesetHandler {
      * @param extraMetaTags: new changeset tags to add/fuse with this changeset
      * @param rewriteIds: the mapping of ids
      * @param oldChangesetMeta: the metadata-object of the already existing changeset
+     *
+     * @public for testing purposes
      */
-    private RewriteTagsOf(
+    public RewriteTagsOf(
         extraMetaTags: ChangesetTag[],
         rewriteIds: Map<string, string>,
         oldChangesetMeta: {
@@ -305,6 +307,7 @@ export class ChangesetHandler {
         return new Map<string, string>(mappings)
     }
 
+    // noinspection JSUnusedLocalSymbols
     private async CloseChangeset(changesetId: number = undefined): Promise<void> {
         if (changesetId === undefined) {
             return

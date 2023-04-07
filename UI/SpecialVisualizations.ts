@@ -83,10 +83,10 @@ export default class SpecialVisualizations {
      * Note that _normal_ substitutions are ignored.
      *
      * // Return empty list on empty input
-     * SubstitutedTranslation.ExtractSpecialComponents("") // => []
+     * SubstitutedTranslation.constructSpecification("") // => []
      *
      * // Advanced cases with commas, braces and newlines should be handled without problem
-     * const templates = SubstitutedTranslation.ExtractSpecialComponents("{send_email(&LBRACEemail&RBRACE,Broken bicycle pump,Hello&COMMA\n\nWith this email&COMMA I'd like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE is broken.\n\n Kind regards,Report this bicycle pump as broken)}")
+     * const templates = SubstitutedTranslation.constructSpecification("{send_email(&LBRACEemail&RBRACE,Broken bicycle pump,Hello&COMMA\n\nWith this email&COMMA I'd like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE is broken.\n\n Kind regards,Report this bicycle pump as broken)}")
      * const templ = templates[0]
      * templ.special.func.funcName // => "send_email"
      * templ.special.args[0] = "{email}"

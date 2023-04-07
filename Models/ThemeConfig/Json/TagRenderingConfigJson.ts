@@ -21,7 +21,7 @@ export interface TagRenderingConfigJson {
     /**
      * A human-readable text explaining what this tagRendering does
      */
-    description?: string | any
+    description?: string | Record<string, string>
 
     /**
      * Renders this value. Note that "{key}"-parts are substituted by the corresponding values of the element.
@@ -30,7 +30,10 @@ export interface TagRenderingConfigJson {
      * Note that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`
      * type: rendered
      */
-    render?: string | any
+    render?:
+        | string
+        | Record<string, string>
+        | { special: Record<string, string | Record<string, string>> & { type: string } }
 
     /**
      * Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.
@@ -102,7 +105,7 @@ export interface TagRenderingConfigJson {
          * If not known yet, the user will be presented with `then` as an option
          * Type: rendered
          */
-        then: string | any
+        then: string | Record<string, string>
         /**
          * An icon supporting this mapping; typically shown pretty small
          * Type: icon

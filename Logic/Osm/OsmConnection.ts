@@ -59,7 +59,7 @@ export class OsmConnection {
         oauth_secret: string
         url: string
     }
-    private readonly _dryRun: UIEventSource<boolean>
+    private readonly _dryRun: Store<boolean>
     private fakeUser: boolean
     private _onLoggedIn: ((userDetails: UserDetails) => void)[] = []
     private readonly _iframeMode: Boolean | boolean
@@ -67,7 +67,7 @@ export class OsmConnection {
     private isChecking = false
 
     constructor(options?: {
-        dryRun?: UIEventSource<boolean>
+        dryRun?: Store<boolean>
         fakeUser?: false | boolean
         oauth_token?: UIEventSource<string>
         // Used to keep multiple changesets open and to write to the correct changeset

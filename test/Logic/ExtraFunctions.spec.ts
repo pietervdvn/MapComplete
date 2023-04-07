@@ -113,7 +113,7 @@ describe("OverlapFunc", () => {
         }
 
         const params: ExtraFuncParams = {
-            getFeatureById: (id) => undefined,
+            getFeatureById: () => undefined,
             getFeaturesWithin: () => [[door]],
         }
 

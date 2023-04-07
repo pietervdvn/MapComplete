@@ -25,13 +25,13 @@ export interface LayerConfigJson {
      *
      * If not given, will be hidden (and thus not toggable) in the layer control
      */
-    name?: string | any
+    name?: string | Record<string, string>
 
     /**
      * A description for this layer.
      * Shown in the layer selections and in the personel theme
      */
-    description?: string | any
+    description?: string | Record<string, string>
 
     /**
      * This determines where the data for the layer is fetched: from OSM or from an external geojson dataset.
@@ -45,49 +45,52 @@ export interface LayerConfigJson {
     source:
         | "special"
         | "special:library"
-        | ({
-              /**
-               * Every source must set which tags have to be present in order to load the given layer.
-               */
-              osmTags: TagConfigJson
-              /**
-               * The maximum amount of seconds that a tile is allowed to linger in the cache
-               */
-              maxCacheAge?: number
-          } & {
-              /**
-               * The actual source of the data to load, if loaded via geojson.
-               *
-               * # A single geojson-file
-               * source: {geoJson: "https://my.source.net/some-geo-data.geojson"}
-               *  fetches a geojson from a third party source
-               *
-               * # A tiled geojson source
-               * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14}
-               *  to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
-               *
-               * Some API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}
-               */
-              geoJson: string
-              /**
-               * To load a tiled geojson layer, set the zoomlevel of the tiles
-               */
-              geoJsonZoomLevel?: number
-              /**
-               * Indicates that the upstream geojson data is OSM-derived.
-               * Useful for e.g. merging or for scripts generating this cache
-               */
-              isOsmCache?: boolean
-              /**
-               * Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this
-               */
-              mercatorCrs?: boolean
-              /**
-               * Some API's have an id-field, but give it a different name.
-               * Setting this key will rename this field into 'id'
-               */
-              idKey?: string
-          })
+        | (
+              | {
+                    /**
+                     * Every source must set which tags have to be present in order to load the given layer.
+                     */
+                    osmTags: TagConfigJson
+                    /**
+                     * The maximum amount of seconds that a tile is allowed to linger in the cache
+                     */
+                    maxCacheAge?: number
+                }
+              | {
+                    /**
+                     * The actual source of the data to load, if loaded via geojson.
+                     *
+                     * # A single geojson-file
+                     * source: {geoJson: "https://my.source.net/some-geo-data.geojson"}
+                     *  fetches a geojson from a third party source
+                     *
+                     * # A tiled geojson source
+                     * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14}
+                     *  to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
+                     *
+                     * Some API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}
+                     */
+                    geoJson: string
+                    /**
+                     * To load a tiled geojson layer, set the zoomlevel of the tiles
+                     */
+                    geoJsonZoomLevel?: number
+                    /**
+                     * Indicates that the upstream geojson data is OSM-derived.
+                     * Useful for e.g. merging or for scripts generating this cache
+                     */
+                    isOsmCache?: boolean
+                    /**
+                     * Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this
+                     */
+                    mercatorCrs?: boolean
+                    /**
+                     * Some API's have an id-field, but give it a different name.
+                     * Setting this key will rename this field into 'id'
+                     */
+                    idKey?: string
+                }
+          )
 
     /**
      *
@@ -212,7 +215,7 @@ export interface LayerConfigJson {
          *
          * Do _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!
          */
-        title: string | any
+        title: string | Record<string, string>
         /**
          * The tags to add. It determines the icon too
          */
@@ -223,7 +226,7 @@ export interface LayerConfigJson {
          *
          * (The first sentence is until the first '.'-character in the description)
          */
-        description?: string | any
+        description?: string | Record<string, string>
 
         /**
          * Example images, which show real-life pictures of what such a feature might look like

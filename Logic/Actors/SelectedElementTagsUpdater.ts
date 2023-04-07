@@ -23,18 +23,18 @@ export default class SelectedElementTagsUpdater {
 
     private readonly state: {
         selectedElement: UIEventSource<Feature>
-        allElements: FeaturePropertiesStore
+        featureProperties: FeaturePropertiesStore
         changes: Changes
         osmConnection: OsmConnection
-        layoutToUse: LayoutConfig
+        layout: LayoutConfig
     }
 
     constructor(state: {
         selectedElement: UIEventSource<Feature>
-        allElements: FeaturePropertiesStore
+        featureProperties: FeaturePropertiesStore
         changes: Changes
         osmConnection: OsmConnection
-        layoutToUse: LayoutConfig
+        layout: LayoutConfig
     }) {
         this.state = state
         state.osmConnection.isLoggedIn.addCallbackAndRun((isLoggedIn) => {
@@ -73,7 +73,7 @@ export default class SelectedElementTagsUpdater {
                 const latestTags = await OsmObject.DownloadPropertiesOf(id)
                 if (latestTags === "deleted") {
                     console.warn("The current selected element has been deleted upstream!")
-                    const currentTagsSource = state.allElements.getStore(id)
+                    const currentTagsSource = state.featureProperties.getStore(id)
                     if (currentTagsSource.data["_deleted"] === "yes") {
                         return
                     }
@@ -91,7 +91,7 @@ export default class SelectedElementTagsUpdater {
     private applyUpdate(latestTags: OsmTags, id: string) {
         const state = this.state
         try {
-            const leftRightSensitive = state.layoutToUse.isLeftRightSensitive()
+            const leftRightSensitive = state.layout.isLeftRightSensitive()
 
             if (leftRightSensitive) {
                 SimpleMetaTagger.removeBothTagging(latestTags)
@@ -116,7 +116,7 @@ export default class SelectedElementTagsUpdater {
 
             // With the changes applied, we merge them onto the upstream object
             let somethingChanged = false
-            const currentTagsSource = state.allElements.getStore(id)
+            const currentTagsSource = state.featureProperties.getStore(id)
             const currentTags = currentTagsSource.data
             for (const key in latestTags) {
                 let osmValue = latestTags[key]

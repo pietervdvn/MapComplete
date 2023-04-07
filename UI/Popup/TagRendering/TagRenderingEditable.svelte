@@ -27,7 +27,7 @@
 
   let htmlElem: HTMLElement;
   if (highlightedRendering) {
-    onDestroy(highlightedRendering.addCallbackAndRun(highlighted => {
+    $: onDestroy(highlightedRendering.addCallbackAndRun(highlighted => {
       console.log("Highlighted rendering is", highlighted)
       if(htmlElem === undefined){
         return

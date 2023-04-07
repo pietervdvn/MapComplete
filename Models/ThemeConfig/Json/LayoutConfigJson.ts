@@ -41,23 +41,23 @@ export interface LayoutConfigJson {
     /**
      * The title, as shown in the welcome message and the more-screen.
      */
-    title: string | any
+    title: string | Record<string, string>
 
     /**
      * A short description, showed as social description and in the 'more theme'-buttons.
      * Note that if this one is not defined, the first sentence of 'description' is used
      */
-    shortDescription?: string | any
+    shortDescription?: string | Record<string, string>
 
     /**
      * The description, as shown in the welcome message and the more-screen
      */
-    description: string | any
+    description: string | Record<string, string>
 
     /**
      * A part of the description, shown under the login-button.
      */
-    descriptionTail?: string | any
+    descriptionTail?: string | Record<string, string>
 
     /**
      * The icon representing this theme.
@@ -196,7 +196,7 @@ export interface LayoutConfigJson {
         | string
         | {
               builtin: string | string[]
-              override: any
+              override: Partial<LayerConfigJson>
               /**
                * TagRenderings with any of these labels will be removed from the layer.
                * Note that the 'id' and 'group' are considered labels too

@@ -1,11 +1,11 @@
-import Minimap from "../../../../UI/Base/Minimap"
 import { Utils } from "../../../../Utils"
 import LayoutConfig from "../../../../Models/ThemeConfig/LayoutConfig"
-import State from "../../../../State"
 import { BBox } from "../../../../Logic/BBox"
 import ReplaceGeometryAction from "../../../../Logic/Osm/Actions/ReplaceGeometryAction"
-import ShowDataLayer from "../../../../UI/ShowDataLayer/ShowDataLayer"
 import { describe, expect, it } from "vitest"
+import { OsmConnection } from "../../../../Logic/Osm/OsmConnection"
+import { ImmutableStore } from "../../../../Logic/UIEventSource"
+import { Changes } from "../../../../Logic/Osm/Changes"
 
 describe("ReplaceGeometryAction", () => {
     const grbStripped = {
@@ -299,8 +299,6 @@ describe("ReplaceGeometryAction", () => {
             },
         ],
     }
-
-    Minimap.createMiniMap = () => undefined
 
     const coordinates = <[number, number][]>[
         [3.216690793633461, 51.21474084112525],
@@ -876,22 +874,27 @@ describe("ReplaceGeometryAction", () => {
 
     it("should move nodes accordingly", async () => {
         const layout = new LayoutConfig(<any>grbStripped)
-        ShowDataLayer.actualContstructor = (_) => undefined
 
-        const state = new State(layout)
-        State.state = state
         const bbox = new BBox([
             [3.2166673243045807, 51.21467321525788],
             [3.217007964849472, 51.21482442824023],
         ])
         const url = `https://www.openstreetmap.org/api/0.6/map.json?bbox=${bbox.minLon},${bbox.minLat},${bbox.maxLon},${bbox.maxLat}`
         const data = await Utils.downloadJson(url)
-
-        state.featurePipeline.fullNodeDatabase.handleOsmJson(data, 0)
-
-        const action = new ReplaceGeometryAction(state, targetFeature, wayId, {
-            theme: "test",
+        const fullNodeDatabase = undefined // TODO new FullNodeDatabaseSource(undefined)
+        // TODO fullNodeDatabase.handleOsmJson(data, 0)
+        const changes = new Changes()
+        const osmConnection = new OsmConnection({
+            dryRun: new ImmutableStore(true),
         })
+        const action = new ReplaceGeometryAction(
+            { osmConnection, fullNodeDatabase },
+            targetFeature,
+            wayId,
+            {
+                theme: "test",
+            }
+        )
 
         const closestIds = await action.GetClosestIds()
         expect(closestIds.closestIds).toEqual([
@@ -914,8 +917,8 @@ describe("ReplaceGeometryAction", () => {
         expect(reproj.newLon).toEqual(3.2168880864669203)
         expect(reproj.newLat).toEqual(51.214739524104694)
         expect(closestIds.detachedNodes.size).toEqual(0)
-        const changes = await action.Perform(state.changes)
-        expect(changes[11].changes["coordinates"]).toEqual([
+        const changed = await action.Perform(changes)
+        expect(changed[11].changes["coordinates"]).toEqual([
             [3.216690793633461, 51.21474084112525],
             [3.2167256623506546, 51.214696737309964],
             [3.2168880864669203, 51.214739524104694],
