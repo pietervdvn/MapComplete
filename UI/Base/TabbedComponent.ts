@@ -5,6 +5,9 @@ import BaseUIElement from "../BaseUIElement"
 import { VariableUiElement } from "./VariableUIElement"
 
 export class TabbedComponent extends Combine {
+    /**
+     * @deprecated
+     */
     constructor(
         elements: { header: BaseUIElement | string; content: BaseUIElement | string }[],
         openedTab: UIEventSource<number> | number = 0,

@@ -113,7 +113,7 @@ export default class CopyrightPanel extends Combine {
 
     constructor(state: {
         layout: LayoutConfig
-        bounds: Store<BBox>
+        mapProperties: { bounds: Store<BBox> }
         osmConnection: OsmConnection
         dataIsLoading: Store<boolean>
         perLayer: ReadonlyMap<string, GeoIndexedStore>
@@ -121,7 +121,7 @@ export default class CopyrightPanel extends Combine {
         const t = Translations.t.general.attribution
         const layoutToUse = state.layout
 
-        const iconAttributions: BaseUIElement[] = layoutToUse.usedImages.map(
+        const iconAttributions: BaseUIElement[] = Utils.Dedup(layoutToUse.usedImages).map(
             CopyrightPanel.IconAttribution
         )
 

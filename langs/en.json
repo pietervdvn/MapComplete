@@ -146,6 +146,7 @@
             "openMapillary": "Open Mapillary here",
             "openOsmcha": "See latest edits made with {theme}",
             "themeBy": "Theme maintained by {author}",
+            "title": "Copyright and attribution",
             "translatedBy": "MapComplete has been translated by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>"
         },
         "back": "Back",

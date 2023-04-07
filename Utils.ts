@@ -308,6 +308,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return str
     }
 
+    /**
+     * Creates a new array with all elements from 'arr' in such a way that every element will be kept only once
+     * Elements are returned in the same order as they appear in the lists
+     * @param arr
+     * @constructor
+     */
     public static Dedup(arr: string[]): string[] {
         if (arr === undefined) {
             return undefined

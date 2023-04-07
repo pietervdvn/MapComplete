@@ -38,7 +38,7 @@
     fieldTypes[field.name + "}"] = field.type;
     const src = new UIEventSource<string>(initialState[field.name] ?? "");
     fieldValues[field.name + "}"] = src;
-    onDestroy(src.addCallback(v => {
+    onDestroy(src.addCallback(() => {
       setFields();
     }));
   }

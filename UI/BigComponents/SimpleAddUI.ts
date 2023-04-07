@@ -33,9 +33,3 @@ export interface PresetInfo extends PresetConfig {
     layerToAddTo: FilteredLayer
     boundsFactor?: 0.25 | number
 }
-
-export default class SimpleAddUI extends Combine {
-    constructor(state: SpecialVisualizationState) {
-        super([])
-    }
-}

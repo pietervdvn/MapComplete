@@ -11,13 +11,13 @@ export default class ContributorCount {
     private lastUpdate: Date = undefined
 
     constructor(state: {
-        bounds: Store<BBox>
+        mapProperties: { bounds: Store<BBox> }
         dataIsLoading: Store<boolean>
         perLayer: ReadonlyMap<string, GeoIndexedStore>
     }) {
         this.perLayer = state.perLayer
         const self = this
-        state.bounds.mapD(
+        state.mapProperties.bounds.mapD(
             (bbox) => {
                 self.update(bbox)
             },

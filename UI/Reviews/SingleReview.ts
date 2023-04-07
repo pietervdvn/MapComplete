@@ -9,7 +9,6 @@ import { Store } from "../../Logic/UIEventSource"
 
 export default class SingleReview extends Combine {
     constructor(review: Review & { madeByLoggedInUser: Store<boolean> }) {
-        const d = review
         const date = new Date(review.iat * 1000)
         const reviewAuthor =
             review.metadata.nickname ??

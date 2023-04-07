@@ -15,8 +15,6 @@ async function main() {
     const state = new ThemeViewState(layout)
 
     const main = new SvelteUIElement(ThemeViewGUI, { state })
-    state.guistate.menuIsOpened.setData(true)
-    state.guistate.menuViewTab.setData("settings")
     main.AttachTo("maindiv")
 }
 
@@ -24,7 +22,6 @@ async function testspecial() {
     const layout = new LayoutConfig(<any>theme, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
     const state = new ThemeViewState(layout)
 
-    state.guistate.openUsersettings("picture-license")
     const all = SpecialVisualizations.specialVisualizations.map((s) =>
         SpecialVisualizations.renderExampleOfSpecial(state, s)
     )

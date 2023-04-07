@@ -107,9 +107,6 @@ export default class ScrollableFullScreen {
         }
     }
 
-    Destroy() {
-        this._fullscreencomponent.Destroy()
-    }
 
     /**
      * Actually show this in the 'fullscreen'-div
@@ -163,7 +160,4 @@ export default class ScrollableFullScreen {
         )
     }
 
-    static ActivateCurrent() {
-        ScrollableFullScreen._currentlyOpen?.Activate()
-    }
 }

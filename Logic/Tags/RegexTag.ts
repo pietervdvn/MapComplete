@@ -244,7 +244,7 @@ export class RegexTag extends TagsFilter {
         return []
     }
 
-    asChange(properties: Record<string, string>): { k: string; v: string }[] {
+    asChange(): { k: string; v: string }[] {
         if (this.invert) {
             return []
         }

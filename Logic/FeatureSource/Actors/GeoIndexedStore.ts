@@ -1,4 +1,4 @@
-import { FeatureSource , FeatureSourceForLayer } from "../FeatureSource"
+import { FeatureSource, FeatureSourceForLayer } from "../FeatureSource"
 import { Feature } from "geojson"
 import { BBox } from "../../BBox"
 import { GeoOperations } from "../../GeoOperations"
@@ -26,9 +26,12 @@ export default class GeoIndexedStore implements FeatureSource {
     public GetFeaturesWithin(bbox: BBox): Feature[] {
         // TODO optimize
         const bboxFeature = bbox.asGeoJson({})
-        return this.features.data.filter(
-            (f) => GeoOperations.intersect(f, bboxFeature) !== undefined
-        )
+        return this.features.data.filter((f) => {
+            if (f.geometry.type === "Point") {
+                return bbox.contains(<[number, number]>f.geometry.coordinates)
+            }
+            return GeoOperations.intersect(f, bboxFeature) !== undefined
+        })
     }
 }
 

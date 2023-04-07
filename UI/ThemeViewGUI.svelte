@@ -28,6 +28,7 @@
   import UserRelatedState from "../Logic/State/UserRelatedState";
   import LoginToggle from "./Base/LoginToggle.svelte";
   import LoginButton from "./Base/LoginButton.svelte";
+  import CopyrightPanel from "./BigComponents/CopyrightPanel.js";
 
   export let state: ThemeViewState;
   let layout = state.layout;
@@ -149,6 +150,12 @@
           <RasterLayerPicker {availableLayers} value={mapproperties.rasterLayer}></RasterLayerPicker>
         </If>
       </div>
+      
+      <div slot="title2">
+        <Tr t={Translations.t.general.attribution.title}/>
+      </div>
+      
+      <ToSvelte slot="content2" construct={() => new CopyrightPanel(state)}></ToSvelte>
     </TabbedGroup>
   </FloatOver>
 </If>

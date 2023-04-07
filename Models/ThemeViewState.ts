@@ -222,6 +222,14 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 }
             }
         )
+        /*
+        Hotkeys.RegisterHotkey(
+            { shift: "O" },
+            Translations.t.hotkeyDocumentation.selectMapnik,
+            () => {
+                this.state.backgroundLayer.setData(AvailableBaseLayers.osmCarto)
+            }
+        )//*/
     }
 
     /**
