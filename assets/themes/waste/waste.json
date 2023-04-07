@@ -10,7 +10,8 @@
     "it": "Rifiuti",
     "da": "Affald",
     "es": "Basura y reciclaje",
-    "ru": "Мусор"
+    "ru": "Мусор",
+    "cs": "Odpad"
   },
   "description": {
     "en": "Map showing waste baskets and recycling facilities.",
@@ -20,7 +21,8 @@
     "it": "Mappa dei cestini per i rifiuti e i centri di raccolta e riciclo rifiuti.",
     "ca": "Mapa que mostra papereres i infraestructures de reciclatge.",
     "da": "Kort over affaldskurve og genbrugsanlæg.",
-    "es": "Mapa que muestra las papeleras y las instalaciones de reciclaje."
+    "es": "Mapa que muestra las papeleras y las instalaciones de reciclaje.",
+    "cs": "Mapa zobrazující koše na odpadky a recyklační zařízení."
   },
   "icon": "./assets/layers/recycling/recycling-14.svg",
   "startZoom": 19,

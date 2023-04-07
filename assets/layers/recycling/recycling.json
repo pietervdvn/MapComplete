@@ -227,6 +227,15 @@
             "if": {
               "and": [
                 "_waste_amount=1",
+                "recycling:printer_cartridges=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/printer_cartridges.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
                 "recycling:scrap_metal=yes"
               ]
             },
@@ -420,6 +429,15 @@
           "if": {
             "and": [
               "_waste_amount>1",
+              "recycling:printer_cartridges=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/printer_cartridges.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
               "recycling:scrap_metal=yes"
             ]
           },
@@ -549,6 +567,7 @@
             "recycling:plastic_bottles=",
             "recycling:plastic_packaging=",
             "recycling:plastic=",
+            "recycling:printer_cartridges=",
             "recycling:scrap_metal=",
             "recycling:shoes=",
             "recycling:small_appliances=",
@@ -919,6 +938,18 @@
           }
         },
         {
+          "if": "recycling:printer_cartridges=yes",
+          "ifnot": "recycling:printer_cartridges=",
+          "then": {
+            "en": "Printer cartridges (inkjet/toner) can be recycled here",
+            "nl": "Printer cartridges (inkjet/toner) kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/printer_cartridges.svg",
+            "class": "medium"
+          }
+        },
+        {
           "if": "recycling:scrap_metal=yes",
           "ifnot": "recycling:scrap_metal=",
           "then": {
@@ -1270,6 +1301,13 @@
             "it": "Riciclo di plastica"
           },
           "osmTags": "recycling:plastic=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of printer cartridges",
+            "nl": "Recycling van printer cartridges"
+          },
+          "osmTags": "recycling:printer_cartridges=yes"
         },
         {
           "question": {

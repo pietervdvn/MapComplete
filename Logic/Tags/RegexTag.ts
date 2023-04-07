@@ -25,6 +25,10 @@ export class RegexTag extends TagsFilter {
         if (typeof possibleRegex === "string") {
             return fromTag === possibleRegex
         }
+        if (typeof fromTag.match !== "function") {
+            console.error("Error: fromTag is not a regex: ", fromTag, possibleRegex)
+            throw "Error: fromTag is not a regex: " + fromTag + possibleRegex
+        }
         return fromTag.match(possibleRegex) !== null
     }
 

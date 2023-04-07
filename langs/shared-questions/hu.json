@@ -131,14 +131,6 @@
                 }
             },
             "question": "Mi a megfelelő Wikidata-elem?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Nincs belinkelve a Wikipédiához"
-                }
-            },
-            "question": "Mi a megfelelő szócikk a Wikipédián?"
         }
     }
 }

@@ -396,7 +396,7 @@
         }
     },
     "bicycle_library": {
-        "description": "Una facilidad donde se pueden alquilar bicicletas durante largos periodos de tiempo",
+        "description": "Una instalación donde se pueden alquilar bicicletas durante largos periodos de tiempo",
         "name": "Biblioteca de bicicletas",
         "presets": {
             "0": {
@@ -433,7 +433,7 @@
             },
             "bicycle_library-name": {
                 "question": "¿Cuál es el nombre de esta biblioteca de bicicletas?",
-                "render": "Esta biblioteca de bicicletas se llama  {name}"
+                "render": "Esta biblioteca de bicicletas se llama {name}"
             }
         },
         "title": {
@@ -575,7 +575,7 @@
                         "then": "Esta máquina exprendedora está cerrada"
                     }
                 },
-                "question": "¿Todavía es operacional esta máquina exprendedora?",
+                "question": "¿Todavía funciona esta máquina expendedora?",
                 "render": "El estado operacional es <i>{operational_status}</i></i>"
             }
         }
@@ -588,7 +588,7 @@
         }
     },
     "bike_cleaning": {
-        "description": "Una capa que muestra facilidades en las que uno puede limpiar su bici",
+        "description": "Una capa que muestra instalaciones en las que uno puede limpiar su bici",
         "name": "Servicio de limpieza de bicis",
         "presets": {
             "0": {
@@ -745,13 +745,13 @@
             "Operational status": {
                 "mappings": {
                     "0": {
-                        "then": "La bomba de bicicletas está rota"
+                        "then": "La bomba para bicicletas está rota"
                     },
                     "1": {
-                        "then": "La bomba de bicicletas está operativa"
+                        "then": "La bomba para bicicletas está operativa"
                     }
                 },
-                "question": "¿Todavía está operativa la bomba de bicicletas?"
+                "question": "¿Todavía está operativa la bomba para bicicletas?"
             },
             "access": {
                 "mappings": {
@@ -790,7 +790,7 @@
             "bike_repair_station-bike-chain-tool": {
                 "mappings": {
                     "0": {
-                        "then": "Hay una herramienta de cadenas"
+                        "then": "Hay una herramienta para cadenas"
                     },
                     "1": {
                         "then": "No hay herramienta de cadenas"
@@ -818,7 +818,7 @@
                         "then": "Bomba eléctrica"
                     }
                 },
-                "question": "¿Hay una bomba eléctrica para bicis?"
+                "question": "¿Es una bomba eléctrica para bicis?"
             },
             "bike_repair_station-email": {
                 "question": "¿Es esta la dirección de correo electrónico del mantenedor?"
@@ -1135,7 +1135,7 @@
                 "title": "un bar"
             },
             "1": {
-                "description": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz",
+                "description": "Un <b>bar de copas</b> más moderno y comercial, posiblemente con una instalación de música y luz",
                 "title": "un bar de copas"
             },
             "2": {
@@ -2617,12 +2617,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "Se desconoce el color de la boca de incendios."
-                    },
-                    "1": {
                         "then": "La boca de incendios es amarilla."
                     },
-                    "2": {
+                    "1": {
                         "then": "La boca de incendios es roja."
                     }
                 },
@@ -2646,18 +2643,15 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "Se desconoce el tipo de la boca de incendios"
-                    },
-                    "1": {
                         "then": "De pilar."
                     },
-                    "2": {
+                    "1": {
                         "then": "De tubería."
                     },
-                    "3": {
+                    "2": {
                         "then": "De pared."
                     },
-                    "4": {
+                    "3": {
                         "then": "Bajo tierra."
                     }
                 },

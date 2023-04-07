@@ -139,10 +139,14 @@ export default class GeoLocationHandler {
     private CopyGeolocationIntoMapstate() {
         const features: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
         this.currentUserLocation = new StaticFeatureSource(features)
+        // For some weird reason, the 'Object.keys' method doesn't work for the 'location: GeolocationCoordinates'-object and will thus not copy all the properties when using {...location}
+        // As such, they are copied here
+        const keysToCopy = ["speed", "accuracy", "altitude", "altitudeAccuracy", "heading"]
         this.geolocationState.currentGPSLocation.addCallbackAndRun((location) => {
             if (location === undefined) {
                 return
             }
+
             const feature = <Feature>{
                 type: "Feature",
                 properties: <GeoLocationPointProperties>{
@@ -155,6 +159,11 @@ export default class GeoLocationHandler {
                     type: "Point",
                     coordinates: [location.longitude, location.latitude],
                 },
+            }
+            for (const key of keysToCopy) {
+                if (location[key] !== null) {
+                    feature.properties[key] = location[key]
+                }
             }
 
             features.setData([feature])

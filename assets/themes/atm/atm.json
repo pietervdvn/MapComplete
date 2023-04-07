@@ -9,7 +9,8 @@
     "es": "Cajeros automáticos",
     "cs": "Bankomaty",
     "nb_NO": "Minibanker",
-    "zgh": "ⴰⵍⵍⴰⵍⵏ ⵏ ⵓⵙⴽⵙⵍ ⴰⵡⵓⵔⵎⴰⵏ"
+    "zgh": "ⴰⵍⵍⴰⵍⵏ ⵏ ⵓⵙⴽⵙⵍ ⴰⵡⵓⵔⵎⴰⵏ",
+    "id": "Mesin ATM"
   },
   "description": {
     "en": "This map shows ATMs to withdraw or deposit money",
@@ -19,7 +20,8 @@
     "ca": "Aquest mapa mostra caixers automàtics per a retirar o ingresar diners",
     "cs": "Tato mapa zobrazuje bankomaty pro výběr nebo vklad peněz",
     "nb_NO": "Viser minibanker for å ta ut eller sette inn penger",
-    "es": "Este mapa muestra los cajeros automáticos para retirar o ingresar dinero"
+    "es": "Este mapa muestra los cajeros automáticos para retirar o ingresar dinero",
+    "id": "Peta ini menunjukkan ATM untuk menarik atau menyetorkan uang"
   },
   "icon": "./assets/themes/atm/logo.svg",
   "startLat": 0,

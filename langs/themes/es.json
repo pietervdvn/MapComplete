@@ -1,4 +1,222 @@
 {
+    "advertising": {
+        "description": "¿Alguna vez te has preguntado cuanta publicidad hay en nuestras calles y carreteras? Con este mapa podrás encontrar y añadir información de todos los elementos publicitarios que te encuentres por la calle",
+        "layers": {
+            "0": {
+                "description": "Completaremos los datos de los elementos publicitarios con referencia, operador y iluminación",
+                "name": "Publicidad",
+                "presets": {
+                    "0": {
+                        "description": "Una estructura publicitaria grande al aire libre, que normalmente se encuentra en áreas transitadas como carreteras con mucha intensidad",
+                        "title": "una valla publicitària"
+                    },
+                    "1": {
+                        "title": "un mupi"
+                    },
+                    "2": {
+                        "title": "un mupi sobre la pared"
+                    },
+                    "3": {
+                        "description": "Un pequeño tablón de anuncios para anuncios del vecindario, normalmente destinado a peatones",
+                        "title": "un tablón de anuncios"
+                    },
+                    "4": {
+                        "description": "Una estructura cilíndrica exterior que muestra publicidad",
+                        "title": "una columna"
+                    },
+                    "5": {
+                        "title": "una bandera"
+                    },
+                    "6": {
+                        "title": "una pantalla"
+                    },
+                    "7": {
+                        "title": "una pantalla sobre una pared"
+                    },
+                    "8": {
+                        "description": "Una pieza de tela impermeable con un mensaje impreso, anclada permanentemente en una pared",
+                        "title": "una lona"
+                    },
+                    "9": {
+                        "title": "un tótem"
+                    },
+                    "10": {
+                        "description": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
+                        "title": "un lletrer"
+                    },
+                    "11": {
+                        "title": "una escultura"
+                    },
+                    "12": {
+                        "title": "una pared pintada"
+                    }
+                },
+                "tagRenderings": {
+                    "Sides": {
+                        "mappings": {
+                            "0": {
+                                "then": "Este mupi tiene publicidad en un único lado"
+                            },
+                            "1": {
+                                "then": "Este mupi tiene publicidad por los dos lados"
+                            }
+                        },
+                        "question": "¿Por cuantos lados puedes ver publicidad?"
+                    },
+                    "animated": {
+                        "mappings": {
+                            "0": {
+                                "then": "<b>Estático</b>, siempre muestra el mismo mensaje"
+                            },
+                            "1": {
+                                "then": "Este objeto tiene una <b>pantalla digital</b> incorporada para mostrar precios o algún otro mensaje"
+                            },
+                            "2": {
+                                "then": "<b>Trivision</b> - la valla publicitaria consta de muchos prismas triangulares que giran regularmente"
+                            },
+                            "3": {
+                                "then": "Cartells <b>Rotatius</b>"
+                            },
+                            "4": {
+                                "then": "<b>Rota</b> sobre si mismo"
+                            }
+                        },
+                        "question": "¿Como cambian los anuncios de este elemento?"
+                    },
+                    "luminous_or_lit_advertising": {
+                        "override": {
+                            "+mappings": {
+                                "0": {
+                                    "then": "Esta es una luz de tubo de neón."
+                                }
+                            }
+                        }
+                    },
+                    "message_type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Mensaje comercial"
+                            },
+                            "1": {
+                                "then": "Información municipal"
+                            },
+                            "2": {
+                                "then": "Información de seguridad"
+                            },
+                            "3": {
+                                "then": "Publicidad electoral"
+                            },
+                            "4": {
+                                "then": "Información sobre teatros, conciertos, ..."
+                            },
+                            "5": {
+                                "then": "Mensaje de organizaciones sin ánimo de lucro"
+                            },
+                            "6": {
+                                "then": "Para expresar tu opinión"
+                            },
+                            "7": {
+                                "then": "Mensaje religioso"
+                            },
+                            "8": {
+                                "then": "Cartel de financiación"
+                            },
+                            "9": {
+                                "then": "un mapa"
+                            }
+                        },
+                        "question": "Que tipo de mensaje se muestra?"
+                    },
+                    "operator": {
+                        "question": "¿Quien opera este elemento?",
+                        "render": "El operador es {operator}"
+                    },
+                    "ref": {
+                        "question": "¿Cual es el número de referencia?",
+                        "render": "El número de referencia es {ref}"
+                    },
+                    "type": {
+                        "mappings": {
+                            "0": {
+                                "then": "Esto es una valla publicitaria"
+                            },
+                            "1": {
+                                "then": "Esto es un tablón de anuncios"
+                            },
+                            "2": {
+                                "then": "Esto es una columna"
+                            },
+                            "3": {
+                                "then": "Esto es una bndera"
+                            },
+                            "4": {
+                                "then": "Esto es un mupi"
+                            },
+                            "5": {
+                                "then": "Esto es una pantalla"
+                            },
+                            "6": {
+                                "then": "Esto es una escultura"
+                            },
+                            "7": {
+                                "then": "Esto es un cartel"
+                            },
+                            "8": {
+                                "then": "Esto es una lona (una pieza de tela resistente a la intemperie con un mensaje publicitario)"
+                            },
+                            "9": {
+                                "then": "Esto es un tótem"
+                            },
+                            "10": {
+                                "then": "Esto es una pared pintada"
+                            }
+                        },
+                        "question": "¿Qué tipo de elemento publicitario es?",
+                        "render": "Esto es un {advertising}"
+                    }
+                },
+                "title": {
+                    "mappings": {
+                        "0": {
+                            "then": "Valla publicitaria"
+                        },
+                        "1": {
+                            "then": "Tablon de anuncios"
+                        },
+                        "2": {
+                            "then": "Mupi"
+                        },
+                        "3": {
+                            "then": "Columna"
+                        },
+                        "4": {
+                            "then": "Bandera"
+                        },
+                        "5": {
+                            "then": "Pantalla"
+                        },
+                        "6": {
+                            "then": "Escultura"
+                        },
+                        "7": {
+                            "then": "Cartel"
+                        },
+                        "8": {
+                            "then": "Lona"
+                        },
+                        "9": {
+                            "then": "Tótem"
+                        },
+                        "10": {
+                            "then": "Pared Pintada"
+                        }
+                    }
+                }
+            }
+        },
+        "shortDescription": "Dónde puedo encontrar elementos publicitarios?",
+        "title": "Mapa abierto de publicidad"
+    },
     "aed": {
         "description": "En este mapa , cualquiera puede encontrar y marcar los desfibriladores externos automáticos más cercanos",
         "title": "Mapa Abierto de Desfibriladores (DEA)"
@@ -340,7 +558,7 @@
                                     "then": "<span class='subtle'>La<a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que se necesita</span> un permiso para acceder a él<br/>{_embedding_feature:access:description}"
                                 },
                                 "2": {
-                                    "then": "<span class='subtle'>La <a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que</span> sólo pueden acceder a él los clientes<br/>{_embedding_feature:access:description}"
+                                    "then": "<span class='subtle'>La <a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que</span> sólo es accesible para los clientes<br/>{_embedding_feature:access:description}"
                                 },
                                 "3": {
                                     "then": "<span class='subtle'>La <a href='#{_embedding_feature:id}'>característica que lo contiene</a> indica que </span> sólo es accesible para los socios del club<br/>{_embedding_feature:access:description}"

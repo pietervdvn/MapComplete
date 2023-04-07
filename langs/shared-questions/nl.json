@@ -288,14 +288,6 @@
                 }
             },
             "question": "Welk Wikidata-item komt overeen met dit object?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Nog geen Wikipedia-artikel bekend"
-                }
-            },
-            "question": "Welk Wikipedia-artikel beschrijft dit object?"
         }
     }
 }

@@ -11,7 +11,6 @@ import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Img from "../../UI/Base/Img"
 import Combine from "../../UI/Base/Combine"
 import { VariableUiElement } from "../../UI/Base/VariableUIElement"
-import { html } from "svelte/types/compiler/utils/namespaces"
 
 export default class PointRenderingConfig extends WithContextLoader {
     private static readonly allowed_location_codes = new Set<string>([

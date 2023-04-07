@@ -288,14 +288,6 @@
                 }
             },
             "question": "Jaká je odpovídající entita Wikidata?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Není propojeno s Wikipedií"
-                }
-            },
-            "question": "Jaká je odpovídající položka ve Wikipedii?"
         }
     }
 }

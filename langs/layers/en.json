@@ -2990,7 +2990,7 @@
                         "then": "This clock is visible from about 20 meters away (medium size billboard clock)"
                     },
                     "2": {
-                        "then": "This clock is visible from more than 20 meters away (church clock)"
+                        "then": "This clock is visible from more than 20 meters away (e.g. a church clock or station clock)"
                     }
                 },
                 "question": "How visible is this clock?"
@@ -4904,12 +4904,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "The hydrant color is unknown."
-                    },
-                    "1": {
                         "then": "The hydrant color is yellow."
                     },
-                    "2": {
+                    "1": {
                         "then": "The hydrant color is red."
                     }
                 },
@@ -4972,18 +4969,15 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "The hydrant type is unknown."
-                    },
-                    "1": {
                         "then": "Pillar type."
                     },
-                    "2": {
+                    "1": {
                         "then": "Pipe type."
                     },
-                    "3": {
+                    "2": {
                         "then": "Wall type."
                     },
-                    "4": {
+                    "3": {
                         "then": "Underground type."
                     }
                 },

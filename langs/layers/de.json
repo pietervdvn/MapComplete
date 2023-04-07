@@ -4904,12 +4904,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "Die Farbe des Hydranten ist unbekannt."
-                    },
-                    "1": {
                         "then": "Die Farbe des Hydranten ist gelb."
                     },
-                    "2": {
+                    "1": {
                         "then": "Die Farbe des Hydranten ist rot."
                     }
                 },
@@ -4972,18 +4969,15 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "Der Typ des Hydranten ist unbekannt."
-                    },
-                    "1": {
                         "then": "Überflurhydrant."
                     },
-                    "2": {
+                    "1": {
                         "then": "Druckloses Rohr."
                     },
-                    "3": {
+                    "2": {
                         "then": "Wandhydrant."
                     },
-                    "4": {
+                    "3": {
                         "then": "Unterflurhydrant."
                     }
                 },
@@ -5004,6 +4998,9 @@
                 }
             }
         }
+    },
+    "icons": {
+        "description": "Eine Ebene, die als Bibliothek für Symbol-Tag-Renderings dient, insbesondere um als Abzeichen neben einem POI angezeigt zu werden"
     },
     "indoors": {
         "description": "Grundlegende Innenraumkartierung: zeigt Umrisse von Räumen",
@@ -6996,6 +6993,7 @@
                     }
                 },
                 "question": "Richtet sich diese Schule an Schüler mit besonderem Förderbedarf? Über welche strukturellen Einrichtungen verfügt diese Schule?",
+                "questionHint": "Ad-hoc-Maßnahmen reichen nicht aus, um als Förderschule zu gelten",
                 "render": "Diese Schule verfügt über Einrichtungen für Schüler mit {school:for}"
             }
         },

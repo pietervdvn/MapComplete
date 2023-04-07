@@ -3,7 +3,8 @@ on:
   push:
     branches:
       - develop
-      - feature/svelte
+      - feature/*
+      - theme/*
 jobs:
   build:
     runs-on: ubuntu-latest

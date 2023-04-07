@@ -20,7 +20,8 @@
     "nl": "Op deze kaart vind je hotels in je omgeving",
     "fr": "Sur cette carte, vous trouverez les hôtels dans votre zone",
     "cs": "Na této mapě najdete hotely ve vašem okolí",
-    "es": "En este mapa encontrarás hoteles en tu zona"
+    "es": "En este mapa encontrarás hoteles en tu zona",
+    "ca": "En aquest mapa trobareu hotels a la vostra zona"
   },
   "icon": "./assets/layers/hotel/hotel.svg",
   "startLat": 50.8552,

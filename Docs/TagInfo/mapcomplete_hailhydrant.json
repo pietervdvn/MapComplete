@@ -21,11 +21,6 @@
     },
     {
       "key": "colour",
-      "description": "Layer 'Map of hydrants' shows  with a fixed text, namely 'The hydrant color is unknown.' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations') Picking this answer will delete the key colour.",
-      "value": ""
-    },
-    {
-      "key": "colour",
       "description": "Layer 'Map of hydrants' shows colour=yellow with a fixed text, namely 'The hydrant color is yellow.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')",
       "value": "yellow"
     },
@@ -37,11 +32,6 @@
     {
       "key": "fire_hydrant:type",
       "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'fire_hydrant:type' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')"
-    },
-    {
-      "key": "fire_hydrant:type",
-      "description": "Layer 'Map of hydrants' shows  with a fixed text, namely 'The hydrant type is unknown.' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations') Picking this answer will delete the key fire_hydrant:type.",
-      "value": ""
     },
     {
       "key": "fire_hydrant:type",

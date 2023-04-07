@@ -300,6 +300,49 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return str.substr(0, l - 3) + "..."
     }
 
+    /**
+     * Adds a property to the given object, but the value will _only_ be calculated when it is actually requested
+     * @param object
+     * @param name
+     * @param init
+     * @constructor
+     */
+    public static AddLazyProperty(object: any, name: string, init: () => any) {
+        Object.defineProperty(object, name, {
+            enumerable: false,
+            configurable: true,
+            get: () => {
+                delete object[name]
+                object[name] = init()
+                return object[name]
+            },
+        })
+    }
+
+    /**
+     * Adds a property to the given object, but the value will _only_ be calculated when it is actually requested
+     */
+    public static AddLazyPropertyAsync(
+        object: any,
+        name: string,
+        init: () => Promise<any>,
+        whenDone?: () => void
+    ) {
+        Object.defineProperty(object, name, {
+            enumerable: false,
+            configurable: true,
+            get: () => {
+                init().then((r) => {
+                    delete object[name]
+                    object[name] = r
+                    if (whenDone) {
+                        whenDone()
+                    }
+                })
+            },
+        })
+    }
+
     public static FixedLength(str: string, l: number) {
         str = Utils.EllipsesAfter(str, l)
         while (str.length < l) {
@@ -1287,13 +1330,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return d
     }
 
-    private static colorDiff(
-        c0: { r: number; g: number; b: number },
-        c1: { r: number; g: number; b: number }
-    ) {
-        return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b)
-    }
-
     static toIdRecord<T extends { id: string }>(ts: T[]): Record<string, T> {
         const result: Record<string, T> = {}
         for (const t of ts) {
@@ -1352,5 +1388,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return false
         }
         return true
+    }
+    private static colorDiff(
+        c0: { r: number; g: number; b: number },
+        c1: { r: number; g: number; b: number }
+    ) {
+        return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b)
     }
 }

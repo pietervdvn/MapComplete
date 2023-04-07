@@ -9,7 +9,7 @@ export class Translation extends BaseUIElement {
     public readonly translations: Record<string, string>
     public readonly context?: string
 
-    constructor(translations: Record<string, string>, context?: string) {
+    constructor(translations: string | Record<string, string>, context?: string) {
         super()
         if (translations === undefined) {
             console.error("Translation without content at " + context)

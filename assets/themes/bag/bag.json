@@ -7,7 +7,8 @@
     "fr": "Facilitateur d'import BAG",
     "nb_NO": "BAG-importhjelper",
     "ca": "Assistent d'importació del BAG",
-    "es": "Ayudante de importación BAG"
+    "es": "Ayudante de importación BAG",
+    "cs": "Pomocník pro import BAG"
   },
   "shortDescription": {
     "nl": "BAG import helper tool",
@@ -15,7 +16,8 @@
     "de": "BAG-Import-Hilfswerkzeug",
     "fr": "Outil de facilitation d'import BAG",
     "ca": "Ferramenta d'ajuda per a importar el BAG",
-    "es": "Herramienta de ayuda a la importación BAG"
+    "es": "Herramienta de ayuda a la importación BAG",
+    "cs": "Pomocný nástroj pro import BAG"
   },
   "description": {
     "nl": "Dit thema helpt het importeren van BAG data",
@@ -99,7 +101,8 @@
             "fr": "La référence dans le BAG est <b>{ref:bag}</b>",
             "ca": "La referència al BAG és <b>{ref:bag}</b>",
             "zgh": "ⵜⴳⴰ ⵜⵙⴰⵖⵓⵍⵜ ⴳ BAG <b>{ref:bag}</b>",
-            "es": "La referencia de BAG es <b>{ref:bag}</b>"
+            "es": "La referencia de BAG es <b>{ref:bag}</b>",
+            "cs": "Reference v BAG je <b>{ref:bag}</b>"
           },
           "mappings": [
             {
@@ -178,7 +181,8 @@
         "fr": "Bâtiments du registre BAG",
         "ca": "Edificis del registre BAG",
         "zgh": "ⵜⵓⵚⴽⴰⵡⵉⵏ ⵙⴳ ⵡⴰⵔⵔⴰ ⵏ BAG",
-        "es": "Edificios del registro BAG"
+        "es": "Edificios del registro BAG",
+        "cs": "Budovy z registru BAG"
       },
       "source": {
         "geoJson": "https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature&service=WFS&version=2.0.0&outputFormat=application%2Fjson%3B%20subtype%3Dgeojson&typeName=bag%3Apand&bbox={x_min}%2C{y_min}%2C{x_max}%2C{y_max}%2CCRS84&srsName=EPSG%3A4326",
@@ -273,7 +277,8 @@
             "nl": "De referentie in BAG is <b>{_bag_obj:ref:bag}</b>",
             "fr": "La référence dans BAG est <b>{_bag_obj:ref:bag}</b>",
             "ca": "La referència a BAG és <b>{_bag_obj:ref:bag}</b>",
-            "es": "La referencia en BAG es <b>{_bag_obj:ref:bag}</b>"
+            "es": "La referencia en BAG es <b>{_bag_obj:ref:bag}</b>",
+            "cs": "Reference v BAG je <b>{_bag_obj:ref:bag}</b>"
           }
         },
         {

@@ -3193,12 +3193,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "La borne est de couleur inconnue."
-                    },
-                    "1": {
                         "then": "La borne est jaune."
                     },
-                    "2": {
+                    "1": {
                         "then": "La borne est rouge."
                     }
                 },
@@ -3222,18 +3219,15 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "La borne est de type inconnu."
-                    },
-                    "1": {
                         "then": "Pilier."
                     },
-                    "2": {
+                    "1": {
                         "then": "Tuyau."
                     },
-                    "3": {
+                    "2": {
                         "then": "Mural."
                     },
-                    "4": {
+                    "3": {
                         "then": "Enterré."
                     }
                 },

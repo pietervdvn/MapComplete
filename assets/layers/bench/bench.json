@@ -386,7 +386,8 @@
         "pt": "De que é feito o banco (assento)?",
         "es": "¿De que está hecho el banco (asiento)?",
         "da": "Hvad er bænken (sædet) lavet af?",
-        "cs": "Z čeho je vyrobena lavice (sedadlo)?"
+        "cs": "Z čeho je vyrobena lavice (sedadlo)?",
+        "ca": "De què està fent el banc (seient)?"
       },
       "id": "bench-material",
       "labels": [
@@ -698,7 +699,8 @@
         "pt": "Quando esta bancada foi pesquisada pela última vez?",
         "es": "¿Cuándo fue la última vez que se inspeccionó este banco?",
         "da": "Hvornår blev denne bænk sidst kortlagt?",
-        "cs": "Kdy byla tato lavička naposledy kontrolována?"
+        "cs": "Kdy byla tato lavička naposledy kontrolována?",
+        "ca": "Quan va ser l'últim cop que s'ha inspeccionat aquest banc?"
       },
       "render": {
         "en": "This bench was last surveyed on {survey:date}",
@@ -714,7 +716,8 @@
         "pt": "Esta bancada foi pesquisada pela última vez em {survey:date}",
         "es": "Este banco se inspeccionó por última vez el {survey:date}",
         "da": "Denne bænk blev sidst kortlagt den {survey:date}",
-        "cs": "Tato lavička byla naposledy zkontrolována dne {survey:date}"
+        "cs": "Tato lavička byla naposledy zkontrolována dne {survey:date}",
+        "ca": "Aquest banc s'ha inspeccionat per últim com el {survey:date}"
       },
       "freeform": {
         "key": "survey:date",
@@ -746,13 +749,15 @@
         "en": "This bench does have the following inscription:<br/><p><i>{inscription}</i></p>",
         "nl": "Deze bank heeft een inscriptie: <br/><p><i>{inscription}</i></p>",
         "de": "Diese Bank hat folgende Inschrift:<br/><p><i>{inscription}</i></p>",
-        "fr": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>"
+        "fr": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>",
+        "ca": "Aquest banc té la següent inscripció:<br/><p><i>{inscription}</i></p>"
       },
       "question": {
         "en": "Does this bench have an inscription?",
         "nl": "Heeft deze bank een inscriptie?",
         "de": "Hat diese Bank eine Inschrift? ",
-        "fr": "Est-ce que ce banc possède une inscription ?"
+        "fr": "Est-ce que ce banc possède une inscription ?",
+        "ca": "Aquest banc té una inscripció?"
       },
       "freeform": {
         "key": "inscription",
@@ -792,7 +797,8 @@
         "en": "E.g. on a mounted plaque, in the backrest, ...",
         "nl": "Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...",
         "de": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ... ",
-        "fr": "Par exemple, sur une plaque accrochée, sur le dossier, ..."
+        "fr": "Par exemple, sur une plaque accrochée, sur le dossier, ...",
+        "ca": "P. ex. en una placa, al respatller, ..."
       }
     },
     {
@@ -860,7 +866,8 @@
             "en": "This bench is a memorial for someone or something",
             "nl": "Deze bank is een gedenkteken aan iemand of iets",
             "de": "Diese Bank ist ein Denkmal für jemanden oder etwas",
-            "fr": "Ce banc est un mémorial pour quelqu'un ou quelque chose"
+            "fr": "Ce banc est un mémorial pour quelqu'un ou quelque chose",
+            "ca": "Aquest banc és un memorial per a algú o alguna cosa"
           },
           "addExtraTags": [
             "memorial=bench"
@@ -877,7 +884,8 @@
             "en": "This bench is a <b>not</b> a memorial for someone or something",
             "nl": "Deze bank is <b>geen</b> gedenkteken aan iemand of iets",
             "de": "Diese Bank ist <b>kein</b> Denkmal für jemanden oder etwas",
-            "fr": "Ce banc n'est <b>pas</b> un mémorial pour quelqu'un ou quelque chose"
+            "fr": "Ce banc n'est <b>pas</b> un mémorial pour quelqu'un ou quelque chose",
+            "ca": "Aquest banc <b>no</b> és un memorial per a algú o alguna cosa"
           },
           "addExtraTags": [
             "memorial="

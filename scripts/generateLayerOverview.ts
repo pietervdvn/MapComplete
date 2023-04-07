@@ -20,15 +20,19 @@ import { PrepareLayer } from "../Models/ThemeConfig/Conversion/PrepareLayer"
 import { PrepareTheme } from "../Models/ThemeConfig/Conversion/PrepareTheme"
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
 import { Utils } from "../Utils"
+import Script from "./Script"
 import { AllSharedLayers } from "../Customizations/AllSharedLayers"
 
 // This scripts scans 'assets/layers/*.json' for layer definition files and 'assets/themes/*.json' for theme definition files.
 // It spits out an overview of those to be used to load them
 
-class LayerOverviewUtils {
+class LayerOverviewUtils extends Script {
     public static readonly layerPath = "./assets/generated/layers/"
     public static readonly themePath = "./assets/generated/themes/"
 
+    constructor() {
+        super("Reviews and generates the compiled themes")
+    }
     private static publicLayerIdsFrom(themefiles: LayoutConfigJson[]): Set<string> {
         const publicThemes = [].concat(...themefiles.filter((th) => !th.hideFromOverview))
 
@@ -224,7 +228,7 @@ class LayerOverviewUtils {
         }
     }
 
-    main(args: string[]) {
+    async main(args: string[]) {
         const forceReload = args.some((a) => a == "--force")
 
         const licensePaths = new Set<string>()
@@ -347,8 +351,8 @@ class LayerOverviewUtils {
             const context = "While building builtin layer " + sharedLayerPath
             const fixed = prepLayer.convertStrict(parsed, context)
 
-            if (typeof fixed.source !== "string" && fixed.source.osmTags["and"] === undefined) {
-                fixed.source.osmTags = { and: [fixed.source.osmTags] }
+            if (typeof fixed.source !== "string" && fixed.source["osmTags"]["and"] === undefined) {
+                fixed.source["osmTags"] = { and: [fixed.source["osmTags"]] }
             }
 
             const validator = new ValidateLayer(sharedLayerPath, true, doesImageExist)
@@ -513,4 +517,4 @@ class LayerOverviewUtils {
     }
 }
 
-new LayerOverviewUtils().main(process.argv)
+new LayerOverviewUtils().run()

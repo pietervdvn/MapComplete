@@ -152,6 +152,23 @@
             "question": "On what level is this feature located?",
             "render": "Located on the {level}th floor"
         },
+        "luminous_or_lit": {
+            "mappings": {
+                "0": {
+                    "then": "This object both emits light and is lighted by an external light source"
+                },
+                "1": {
+                    "then": "This object emits light"
+                },
+                "2": {
+                    "then": "This object is lit externally, e.g. by a spotlight or other lights"
+                },
+                "3": {
+                    "then": "This object does not emit light and is not lighted by externally"
+                }
+            },
+            "question": "Is this object lit or does it emit light?"
+        },
         "multilevels": {
             "override": {
                 "question": "What levels does this elevator go to?",
@@ -288,14 +305,6 @@
                 }
             },
             "question": "What is the corresponding Wikidata entity?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Not linked with Wikipedia"
-                }
-            },
-            "question": "What is the corresponding item on Wikipedia?"
         }
     }
 }

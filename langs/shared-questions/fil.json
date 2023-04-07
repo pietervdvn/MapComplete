@@ -122,14 +122,6 @@
                 }
             },
             "question": "Ano ang nau-ukol na entidad sa Wikidata?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Hindi naka-ugnay sa Wikipedia"
-                }
-            },
-            "question": "Ano ang nau-ukol na partida sa Wikipedia?"
         }
     }
 }

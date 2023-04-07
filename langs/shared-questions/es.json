@@ -288,14 +288,6 @@
                 }
             },
             "question": "¿Cual es la entidad de Wikidata que se corresponde?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "No enlazado con Wikipedia"
-                }
-            },
-            "question": "¿Cual es el ítem correspondiente en Wikipedia?"
         }
     }
 }

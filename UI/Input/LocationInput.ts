@@ -169,13 +169,13 @@ export default class LocationInput
                                 loc.lat,
                             ])
                             if (min === undefined) {
-                                min = nearestPointOnLine
+                                min = { ...nearestPointOnLine }
                                 matchedWay = feature
                                 continue
                             }
 
                             if (min.properties.dist > nearestPointOnLine.properties.dist) {
-                                min = nearestPointOnLine
+                                min = { ...nearestPointOnLine }
                                 matchedWay = feature
                             }
                         } catch (e) {
@@ -201,6 +201,10 @@ export default class LocationInput
                         }
                     }
                     min.properties = options?.snappedPointTags ?? min.properties
+                    min.properties = {
+                        ...min.properties,
+                        _referencing_ways: JSON.stringify([matchedWay.properties.id]),
+                    }
                     self.snappedOnto.setData(<any>matchedWay)
                     return min
                 },

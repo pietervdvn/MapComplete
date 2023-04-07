@@ -85,8 +85,6 @@ This is rendered with  `The hydrant color is {colour}`
 
 
 
-  - *The hydrant color is unknown.*  corresponds with  ``
-  - This option cannot be chosen as answer
   - *The hydrant color is yellow.*  corresponds with  `colour=yellow`
   - *The hydrant color is red.*  corresponds with  `colour=red`
 
@@ -107,8 +105,6 @@ This is rendered with  ` Hydrant type: {fire_hydrant:type}`
 
 
 
-  - *The hydrant type is unknown.*  corresponds with  ``
-  - This option cannot be chosen as answer
   - *Pillar type.*  corresponds with  `fire_hydrant:type=pillar`
   - *Pipe type.*  corresponds with  `fire_hydrant:type=pipe`
   - *Wall type.*  corresponds with  `fire_hydrant:type=wall`

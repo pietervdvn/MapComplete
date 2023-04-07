@@ -14,7 +14,8 @@
     "hu": "WC-térkép",
     "ca": "Mapa obert de lavabos",
     "da": "Åbn toiletkort",
-    "es": "Mapa Abierto de Baños Públicos"
+    "es": "Mapa Abierto de Baños Públicos",
+    "cs": "Open Toilet Map"
   },
   "description": {
     "en": "A map of public toilets",
@@ -30,7 +31,8 @@
     "nb_NO": "Et kart over offentlige toaletter",
     "da": "Et kort over offentlige toiletter",
     "ca": "Mapa de lavabos públics",
-    "es": "Mapa de aseos públicos"
+    "es": "Mapa de aseos públicos",
+    "cs": "Mapa veřejných toalet"
   },
   "startZoom": 12,
   "startLat": 51.2095,

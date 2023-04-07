@@ -324,16 +324,9 @@ export default class SimpleMetaTaggers {
                 },
             })
 
-            Object.defineProperty(feature.properties, "_surface:ha", {
-                enumerable: false,
-                configurable: true,
-                get: () => {
-                    const sqMeters = GeoOperations.surfaceAreaInSqMeters(feature)
-                    const sqMetersHa = "" + Math.floor(sqMeters / 1000) / 10
-                    delete feature.properties["_surface:ha"]
-                    feature.properties["_surface:ha"] = sqMetersHa
-                    return sqMetersHa
-                },
+            Utils.AddLazyProperty(feature.properties, "_surface:ha", () => {
+                const sqMeters = GeoOperations.surfaceAreaInSqMeters(feature)
+                return "" + Math.floor(sqMeters / 1000) / 10
             })
 
             return true

@@ -6,8 +6,8 @@
   import UserDetails, { OsmConnection } from "../../Logic/Osm/OsmConnection"
   import Constants from "../../Models/Constants"
   import type Loc from "../../Models/Loc"
-  import type { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig";
-  import Tr from "../Base/Tr.svelte";
+  import type { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+  import Tr from "../Base/Tr.svelte"
 
   export let theme: LayoutInformation
   export let isCustom: boolean = false

@@ -153,6 +153,9 @@
             "render": "Umělecké dílo"
         }
     },
+    "atm": {
+        "description": "Bankomaty pro výběr peněz"
+    },
     "barrier": {
         "description": "Překážky při jízdě na kole, jako jsou patníky a zábrany pro cyklisty",
         "name": "Překážky",
@@ -639,7 +642,7 @@
             "bike_cleaning-charge": {
                 "mappings": {
                     "0": {
-                        "then": "Bezplatné využívání mycích služeb"
+                        "then": "Tato mycí služba je bezplatná"
                     }
                 },
                 "question": "Kolik stojí využívání služby mytí?",
@@ -831,7 +834,7 @@
                         "then": "K dispozici je pouze vzduchový kompresor"
                     },
                     "1": {
-                        "then": "K dispozici je pouze nářadí (šroubováky, kleště, ...)."
+                        "then": "K dispozici je pouze nářadí (šroubováky, kleště, …)"
                     },
                     "2": {
                         "then": "K dispozici jsou nástroje i vzduchový kompresor"
@@ -955,6 +958,18 @@
             }
         }
     },
+    "climbing": {
+        "description": "Falešná vrstva, která obsahuje tagrenderingy sdílené mezi lezeckými vrstvami"
+    },
+    "food": {
+        "description": "Vrstva zobrazující restaurace a zařízení rychlého občerstvení (se speciálním vykreslením pro fritézy)"
+    },
+    "indoors": {
+        "description": "Základní mapování interiérů: zobrazuje obrysy místností"
+    },
+    "maxspeed": {
+        "description": "Zobrazuje povolenou rychlost pro každou silnici"
+    },
     "usersettings": {
         "tagRenderings": {
             "picture-license": {
@@ -998,5 +1013,8 @@
                 }
             }
         }
+    },
+    "walls_and_buildings": {
+        "description": "Speciální zabudovaná vrstva poskytující všechny stěny a budovy. Tato vrstva je užitečná v předvolbách pro objekty, které lze umístit ke stěnám (např. AED, poštovní schránky, vchody, adresy, bezpečnostní kamery, …). Tato vrstva je ve výchozím nastavení neviditelná a uživatel ji nemůže přepínat."
     }
 }

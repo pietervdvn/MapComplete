@@ -6,44 +6,45 @@
   import Translations from "../i18n/Translations";
   import { ImmutableStore } from "../../Logic/UIEventSource.js";
 
-  export let imageUrl: string | BaseUIElement = undefined;
-  export let message: string | BaseUIElement = undefined;
+  export let imageUrl: string | BaseUIElement = undefined
+  export let message: string | BaseUIElement = undefined
   export let options: {
     url?: string | Store<string>
     newTab?: boolean
     imgSize?: string
     extraClasses?: string
-  } = {};
+  } = {}
 
   // Website to open when clicked
-  let href : Store<string> = undefined
-  if(options?.url){
-     href = typeof options?.url == "string" ? new ImmutableStore(options.url) : options.url;
+  let href: Store<string> = undefined
+  if (options?.url) {
+    href = typeof options?.url == "string" ? new ImmutableStore(options.url) : options.url
   }
 
   let imgElem: HTMLElement;
   let msgElem: HTMLElement;
   let imgClasses = "block justify-center shrink-0 mr-4 " + (options?.imgSize ?? "h-11 w-11");
   const dispatch = createEventDispatcher<{click}>()
+
   onMount(() => {
     // Image
     if (imgElem && imageUrl) {
-      let img: BaseUIElement;
+      let img: BaseUIElement
 
       if ((imageUrl ?? "") === "") {
-        img = undefined;
+        img = undefined
       } else if (typeof imageUrl !== "string") {
-        img = imageUrl?.SetClass(imgClasses);
+        img = imageUrl?.SetClass(imgClasses)
       }
-      if (img) imgElem.replaceWith(img.ConstructElement());
+      if (img) imgElem.replaceWith(img.ConstructElement())
     }
 
     // Message
     if (msgElem && message) {
-      let msg = Translations.W(message)?.SetClass("block text-ellipsis no-images flex-shrink");
-      msgElem.replaceWith(msg.ConstructElement());
+      let msg = Translations.W(message)?.SetClass("block text-ellipsis no-images flex-shrink")
+      msgElem.replaceWith(msg.ConstructElement())
     }
-  });
+  })
 </script>
 
 <svelte:element
@@ -69,7 +70,6 @@
 </svelte:element>
 
 <style lang="scss">
-
   span,
   a {
     @apply flex p-3 my-2 py-4 rounded-lg shrink-0;

@@ -133,7 +133,7 @@ The question is  *How visible is this clock?*
 
   - *This clock is visible from about 5 meters away (small wall-mounted clock)*  corresponds with  `visibility=house`
   - *This clock is visible from about 20 meters away (medium size billboard clock)*  corresponds with  `visibility=street`
-  - *This clock is visible from more than 20 meters away (church clock)*  corresponds with  `visibility=area`
+  - *This clock is visible from more than 20 meters away (e.g. a church clock or station clock)*  corresponds with  `visibility=area`
 
 
 
