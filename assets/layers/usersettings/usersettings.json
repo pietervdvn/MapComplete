@@ -5,7 +5,12 @@
     "de": "Eine spezielle Ebene, die nicht für die Darstellung auf einer Karte gedacht ist, sondern für die Festlegung von Benutzereinstellungen verwendet wird",
     "nl": "Een speciale lag die niet getoond wordt op de kaart, maar die de instellingen van de gebruiker weergeeft"
   },
-  "title": null,
+  "title": {
+    "render": {
+      "en": "Settings",
+      "nl": "Instellingen"
+    }
+  },
   "source": "special",
   "calculatedTags": [
     "_mastodon_candidate_md=feat.properties._description.match(/\\[[^\\]]*\\]\\((.*(mastodon|en.osm.town).*)\\).*/)?.at(1)",
@@ -15,6 +20,66 @@
     "_mastodon_candidate=feat.properties._mastodon_candidate_md ?? feat.properties._mastodon_candidate_a"
   ],
   "tagRenderings": [
+    {
+      "id": "profile",
+      "render": {
+        "*": "{user_profile()}"
+      }
+    },
+    {
+      "id": "language_picker",
+      "render": {
+        "*": "{language_picker()}"
+      }
+    },
+    {
+      "id": "inbox",
+      "mappings": [
+        {
+          "if": "_unreadMessages=0",
+          "then": {
+            "special": {
+              "type": "link",
+              "href":  "{_backend}/messages/inbox",
+              "text": {
+                "en": "Open your inbox",
+                "nl": "Ga naar je inbox"
+              }
+            }
+          }
+        },
+        {
+          "if": "_unreadMessages>0",
+          "then": {
+            "special": {
+              "type": "link",
+              "text": {
+                "en": "<b class='alert'>You have {_unreadMessages}</b><br/>Open your inbox"
+              },
+              "href": "{_backend}/messages/inbox"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "settings-link",
+      "render": {
+        "special": {
+          "type": "link",
+          "text": {
+            "en": "Open your settings on OpenStreetMap.org"
+          },
+          "href": "{_backend}/account/edit"
+        }
+      }
+    },
+    {
+      "id": "logout",
+      "render": {
+        "*": "{logout()}"
+      }
+    },
     {
       "id": "picture-license",
       "description": "This question is not meant to be placed on an OpenStreetMap-element; however it is used in the user information panel to ask which license the user wants",

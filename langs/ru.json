@@ -216,10 +216,7 @@
     "translations": {
         "activateButton": "Помогите перевести MapComplete"
     },
-    "userinfo": {
-        "titleNotLoggedIn": "Добро пожаловать",
-        "welcome": "Добро пожаловать, {name}"
-    },
+    "userinfo": {},
     "validation": {
         "nat": {
             "notANumber": "Введите число"

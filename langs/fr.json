@@ -488,9 +488,7 @@
     },
     "userinfo": {
         "gotoInbox": "Ouvrir sa boite de réception",
-        "gotoSettings": "Paramètres sur OpenStreetMap.org",
-        "moveToHome": "Déplacez la carte vers votre emplacement",
-        "welcome": "Bienvenue {name}"
+        "gotoSettings": "Paramètres sur OpenStreetMap.org"
     },
     "validation": {
         "email": {

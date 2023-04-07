@@ -713,9 +713,7 @@
         "missing": "{count} cadenas sin traducir",
         "notImmediate": "Las traducciones no se actualizan directamente. Habitualmente esto lleva unos días"
     },
-    "userinfo": {
-        "welcome": "Bienvenido {name}"
-    },
+    "userinfo": {},
     "validation": {
         "color": {
             "description": "Un color o código hexadecimal"

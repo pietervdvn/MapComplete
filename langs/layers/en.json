@@ -8540,6 +8540,24 @@
                     }
                 }
             },
+            "inbox": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Open your inbox"
+                            }
+                        }
+                    },
+                    "1": {
+                        "then": {
+                            "special": {
+                                "text": "<b class='alert'>You have {_unreadMessages}</b><br/>Open your inbox"
+                            }
+                        }
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -8617,6 +8635,9 @@
                     }
                 }
             }
+        },
+        "title": {
+            "render": "Settings"
         }
     },
     "veterinary": {

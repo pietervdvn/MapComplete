@@ -265,10 +265,7 @@
     "userinfo": {
         "gotoInbox": "Otevřít poštu",
         "gotoSettings": "Přejít do vašich nastavení na OpenStreetMap.org",
-        "moveToHome": "Přesunout mapu na vaší domovskou polohu",
         "noDescription": "Na svém profilu zatím nemáte popis",
-        "noDescriptionCallToAction": "Přidat popis profilu",
-        "titleNotLoggedIn": "Vítejte",
-        "welcome": "Vítejte, {name}"
+        "noDescriptionCallToAction": "Přidat popis profilu"
     }
 }

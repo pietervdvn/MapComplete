@@ -158,30 +158,6 @@ export default class DefaultGUI {
 
         const self = this
 
-        const userInfoMapControl = Toggle.If(state.featureSwitchUserbadge, () => {
-            new UserInformationPanel(state, {
-                isOpened: guiState.userInfoIsOpened,
-                userInfoFocusedQuestion: guiState.userInfoFocusedQuestion,
-            })
-
-            const mapControl = new MapControlButton(
-                new VariableUiElement(
-                    state.osmConnection.userDetails.map((ud) => {
-                        if (ud?.img === undefined) {
-                            return Svg.person_ui().SetClass("mt-1 block")
-                        }
-                        return new Img(ud?.img)
-                    })
-                ).SetClass("block rounded-full overflow-hidden"),
-                {
-                    dontStyle: true,
-                }
-            ).onClick(() => {
-                self.guiState.userInfoIsOpened.setData(true)
-            })
-
-            return new LoginToggle(mapControl, Translations.t.general.loginWithOpenStreetMap, state)
-        })
         const extraLink = Toggle.If(
             state.featureSwitchExtraLinkEnabled,
             () => new ExtraLinkButton(state, state.layoutToUse.extraLink)
@@ -200,7 +176,7 @@ export default class DefaultGUI {
         const copyright = new MapControlButton(Svg.copyright_svg()).onClick(() =>
             guiState.copyrightViewIsOpened.setData(true)
         )
-        new Combine([welcomeMessageMapControl, userInfoMapControl, copyright, extraLink])
+        new Combine([welcomeMessageMapControl, copyright, extraLink])
             .SetClass("flex flex-col")
             .AttachTo("top-left")
 

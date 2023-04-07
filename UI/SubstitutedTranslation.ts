@@ -87,7 +87,7 @@ export class SubstitutedTranslation extends VariableUiElement {
                             tagsSource.data.id
                         )
                         return viz.func
-                            .constr(state, tagsSource, proto.args, feature, undefined)
+                            .constr(state, tagsSource, proto.args.map(t => SpecialVisualizations.undoEncoding(t)), feature, undefined)
                             ?.SetStyle(proto.style)
                     } catch (e) {
                         console.error("SPECIALRENDERING FAILED for", tagsSource.data?.id, e)

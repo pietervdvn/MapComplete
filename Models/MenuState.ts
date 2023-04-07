@@ -21,6 +21,7 @@ export class MenuState {
     public readonly highlightedLayerInFilters: UIEventSource<string> = new UIEventSource<string>(
         undefined
     )
+    public highlightedUserSetting: UIEventSource<string> = new UIEventSource<string>(undefined)
     constructor() {
         this.themeViewTabIndex = new UIEventSource(0)
         this.themeViewTab = this.themeViewTabIndex.sync(
@@ -55,6 +56,12 @@ export class MenuState {
             }
             this.highlightedLayerInFilters.setData(highlightLayer)
         }
+    }
+
+    public openUsersettings(highlightTagRendering?: string) {
+        this.menuIsOpened.setData(true)
+        this.menuViewTab.setData("settings")
+        this.highlightedUserSetting.setData(highlightTagRendering)
     }
 
     public closeAll() {

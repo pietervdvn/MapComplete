@@ -7,15 +7,17 @@
   import TagRenderingEditable from "../Popup/TagRendering/TagRenderingEditable.svelte";
   import { onDestroy } from "svelte";
 
-  export let selectedElement: Feature;
+  export let state: SpecialVisualizationState;
   export let layer: LayerConfig;
+  export let selectedElement: Feature;
   export let tags: UIEventSource<Record<string, string>>;
+  export let highlightedRendering: UIEventSource<string> = undefined;
+
 
   let _tags: Record<string, string>;
   onDestroy(tags.addCallbackAndRun(tags => {
     _tags = tags;
   }));
-  export let state: SpecialVisualizationState;
 </script>
 
 <div>
@@ -40,7 +42,7 @@
     {#each layer.tagRenderings as config (config.id)}
       {#if config.condition === undefined || config.condition.matchesProperties(_tags)}
         {#if config.IsKnown(_tags)}
-          <TagRenderingEditable {tags} {config} {state} {selectedElement} {layer}></TagRenderingEditable>
+          <TagRenderingEditable {tags} {config} {state} {selectedElement} {layer} {highlightedRendering}></TagRenderingEditable>
         {/if}
       {/if}
     {/each}

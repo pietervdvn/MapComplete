@@ -2,13 +2,12 @@
   import { Store, UIEventSource } from "../Logic/UIEventSource";
   import { Map as MlMap } from "maplibre-gl";
   import MaplibreMap from "./Map/MaplibreMap.svelte";
-  import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
   import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
   import MapControlButton from "./Base/MapControlButton.svelte";
   import ToSvelte from "./Base/ToSvelte.svelte";
   import Svg from "../Svg";
   import If from "./Base/If.svelte";
-  import { GeolocationControl } from "./BigComponents/GeolocationControl.js";
+  import { GeolocationControl } from "./BigComponents/GeolocationControl";
   import type { Feature } from "geojson";
   import SelectedElementView from "./BigComponents/SelectedElementView.svelte";
   import LayerConfig from "../Models/ThemeConfig/LayerConfig";
@@ -17,19 +16,21 @@
   import ThemeViewState from "../Models/ThemeViewState";
   import type { MapProperties } from "../Models/MapProperties";
   import Geosearch from "./BigComponents/Geosearch.svelte";
-  import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@rgossiaux/svelte-headlessui";
   import Translations from "./i18n/Translations";
-  import { CogIcon, MenuIcon, EyeIcon } from "@rgossiaux/svelte-heroicons/solid";
+  import { CogIcon, EyeIcon, MenuIcon } from "@rgossiaux/svelte-heroicons/solid";
   import Tr from "./Base/Tr.svelte";
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte";
   import FloatOver from "./Base/FloatOver.svelte";
-  import PrivacyPolicy from "./BigComponents/PrivacyPolicy.js";
-  import { Utils } from "../Utils.js";
+  import PrivacyPolicy from "./BigComponents/PrivacyPolicy";
+  import { Utils } from "../Utils";
   import Constants from "../Models/Constants";
   import TabbedGroup from "./Base/TabbedGroup.svelte";
+  import UserRelatedState from "../Logic/State/UserRelatedState";
+  import LoginToggle from "./Base/LoginToggle.svelte";
+  import LoginButton from "./Base/LoginButton.svelte";
 
-  export let layout: LayoutConfig;
-  const state = new ThemeViewState(layout);
+  export let state: ThemeViewState;
+  let layout = state.layout;
 
   let selectedElementTags: Store<UIEventSource<Record<string, string>>> =
     state.selectedElement.mapD((f) => {
@@ -43,6 +44,7 @@
   let mapproperties: MapProperties = state.mapProperties;
   let featureSwitches: FeatureSwitchState = state.featureSwitches;
   let availableLayers = state.availableLayers;
+  let userdetails = state.osmConnection.userDetails;
 </script>
 
 
@@ -97,7 +99,7 @@
 {#if $selectedElement !== undefined && $selectedLayer !== undefined}
   <FloatOver on:close={() => {selectedElement.setData(undefined)}}>
     <SelectedElementView layer={$selectedLayer} selectedElement={$selectedElement}
-                         tags={$selectedElementTags} state={state}></SelectedElementView>
+                         tags={$selectedElementTags} state={state} />
   </FloatOver>
 
 {/if}
@@ -106,7 +108,7 @@
   <!-- Theme page -->
   <FloatOver on:close={() => state.guistate.themeIsOpened.setData(false)}>
     <TabbedGroup tab={state.guistate.themeViewTabIndex}>
-          <Tr slot="title0" t={layout.title} />
+      <Tr slot="title0" t={layout.title} />
 
       <div slot="content0">
 
@@ -130,17 +132,18 @@
         </div>
 
       </div>
-      
-      <div slot="title1" class="flex">
+
+      <div class="flex" slot="title1">
         <If condition={state.featureSwitches.featureSwitchFilter}>
-        <img class="w-4 h-4" src="./assets/svg/filter.svg">
-        <Tr t={Translations.t.general.menu.filter} />
+          <img class="w-4 h-4" src="./assets/svg/filter.svg">
+          <Tr t={Translations.t.general.menu.filter} />
         </If>
       </div>
 
-      <div slot="content1" class="flex flex-col">
+      <div class="flex flex-col" slot="content1">
         {#each layout.layers as layer}
-          <Filterview zoomlevel={state.mapProperties.zoom} filteredLayer={state.layerState.filteredLayers.get(layer.id)} highlightedLayer={state.guistate.highlightedLayerInFilters}></Filterview>
+          <Filterview zoomlevel={state.mapProperties.zoom} filteredLayer={state.layerState.filteredLayers.get(layer.id)}
+                      highlightedLayer={state.guistate.highlightedLayerInFilters}></Filterview>
         {/each}
         <If condition={state.featureSwitches.featureSwitchBackgroundSelection}>
           <RasterLayerPicker {availableLayers} value={mapproperties.rasterLayer}></RasterLayerPicker>
@@ -154,50 +157,56 @@
 <If condition={state.guistate.menuIsOpened}>
   <!-- Menu page -->
   <FloatOver on:close={() => state.guistate.menuIsOpened.setData(false)}>
-    <TabGroup on:change={(e) => {state.guistate.menuViewTabIndex.setData(e.detail)} }>
-      <TabList>
-        <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
-          <div class="flex">
-            <Tr t={Translations.t.general.aboutMapcompleteTitle}></Tr>
-          </div>
-        </Tab>
-        <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
-          <div class="flex">
-            <CogIcon class="w-6 h-6"/>
-            Settings
-          </div>
-        </Tab>
-        <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
-          <div class="flex">
-            <img class="w-6" src="./assets/svg/community.svg">
-            Get in touch with others
-          </div>
-        </Tab>
-        <Tab class={({selected}) => selected ? "tab-selected" : "tab-unselected"}>
-          <div class="flex">
-            <EyeIcon class="w-6"/>
-            <Tr t={Translations.t.privacy.title}></Tr>
-          </div>
-        </Tab>
-      </TabList>
-      <TabPanels >
-        <TabPanel class="flex flex-col">
-          <Tr t={Translations.t.general.aboutMapcomplete.Subs({
+    <TabbedGroup tab={state.guistate.menuViewTabIndex}>
+      <div class="flex" slot="title0">
+        <Tr t={Translations.t.general.aboutMapcompleteTitle}></Tr>
+      </div>
+
+      <div class="flex flex-col" slot="content0">
+        <Tr t={Translations.t.general.aboutMapcomplete.Subs({
                     osmcha_link: Utils.OsmChaLinkFor(7),
                 })}></Tr>
 
-          {Constants.vNumber}
-        </TabPanel>
-        <TabPanel>User settings</TabPanel>
-        <TabPanel>
-          <CommunityIndexView location={state.mapProperties.location}></CommunityIndexView>
+        {Constants.vNumber}
+      </div>
 
-        </TabPanel>
-        <TabPanel>
-          <ToSvelte construct={() => new PrivacyPolicy()}></ToSvelte>
-        </TabPanel>
-      </TabPanels>
-    </TabGroup>
+      <If condition={state.osmConnection.isLoggedIn} slot="title1">
+        <div class="flex">
+          <CogIcon class="w-6 h-6" />
+          <Tr t={UserRelatedState.usersettingsConfig.title.GetRenderValue({})} />
+        </div>
+      </If>
+
+      <div slot="content1">
+        <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
+        <LoginToggle {state}>
+          <div slot="not-logged-in">
+            <Tr class="alert" t={Translations.t.userinfo.notLoggedIn}/>
+            <LoginButton osmConnection={state.osmConnection}></LoginButton>
+          </div>
+          <SelectedElementView
+            layer={UserRelatedState.usersettingsConfig}
+            selectedElement={({
+        type:"Feature",properties: {}, geometry: {type:"Point", coordinates: [0,0]}
+        })} {state}
+            tags={state.userRelatedState.preferencesAsTags} 
+          highlightedRendering={state.guistate.highlightedUserSetting}
+          />
+        </LoginToggle>
+      </div>
+
+      <div class="flex" slot="title2">
+        <img class="w-6" src="./assets/svg/community.svg">
+        Get in touch with others
+      </div>
+      <CommunityIndexView location={state.mapProperties.location} slot="content2"></CommunityIndexView>
+
+      <div class="flex" slot="title3">
+        <EyeIcon class="w-6" />
+        <Tr t={Translations.t.privacy.title}></Tr>
+      </div>
+      <ToSvelte construct={() => new PrivacyPolicy()} slot="content3"></ToSvelte>
+    </TabbedGroup>
   </FloatOver>
 </If>
 

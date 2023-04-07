@@ -123,7 +123,6 @@ export default class FilteredLayer {
         } else {
             properties = fieldstate
         }
-        console.log("Building tagsspec with properties", properties)
         const missingKeys = option.fields
             .map((f) => f.name)
             .filter((key) => properties[key] === undefined)
@@ -182,7 +181,6 @@ export default class FilteredLayer {
                 // We calculate the fields
                 const fieldProperties = FilteredLayer.stringToFieldProperties(<string>state.data)
                 const asTags = FilteredLayer.fieldsToTags(filter.options[0], fieldProperties)
-                console.log("Current field properties:", state.data, fieldProperties, asTags)
                 if (asTags) {
                     needed.push(asTags)
                 }

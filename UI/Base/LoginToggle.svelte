@@ -17,6 +17,7 @@
   const offlineModes: Partial<Record<OsmServiceState, Translation>> = {
     offline: t.loginFailedOfflineMode,
     unreachable: t.loginFailedUnreachableMode,
+    unknown: t.loginFailedUnreachableMode,
     readonly: t.loginFailedReadonlyMode
   };
   const apiState = state.osmConnection.apiIsOnline;

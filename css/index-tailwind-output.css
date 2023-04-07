@@ -859,10 +859,6 @@ video {
   margin-bottom: 0.75rem;
 }
 
-.mt-1 {
-  margin-top: 0.25rem;
-}
-
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -929,6 +925,10 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
 }
 
 .ml-3 {
@@ -1063,12 +1063,12 @@ video {
   height: 2.75rem;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
 .h-64 {
   height: 16rem;
+}
+
+.h-96 {
+  height: 24rem;
 }
 
 .h-0 {

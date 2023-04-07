@@ -56,15 +56,26 @@ import Maproulette from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
 import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import QuestionViz from "./Popup/QuestionViz"
-import SimpleAddUI from "./BigComponents/SimpleAddUI"
 import { Feature } from "geojson"
 import { GeoOperations } from "../Logic/GeoOperations"
 import CreateNewNote from "./Popup/CreateNewNote.svelte"
-import { svelte } from "@sveltejs/vite-plugin-svelte"
 import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
+import UserProfile from "./BigComponents/UserProfile.svelte"
+import LanguagePicker from "./LanguagePicker"
+import Link from "./Base/Link"
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
+
+    static undoEncoding(str: string) {
+        return str
+            .trim()
+            .replace(/&LPARENS/g, "(")
+            .replace(/&RPARENS/g, ")")
+            .replace(/&LBRACE/g, "{")
+            .replace(/&RBRACE/g, "}")
+            .replace(/&COMMA/g, ",")
+    }
 
     /**
      *
@@ -115,15 +126,7 @@ export default class SpecialVisualizations {
                 )
                 const args = knownSpecial.args.map((arg) => arg.defaultValue ?? "")
                 if (argument.length > 0) {
-                    const realArgs = argument.split(",").map((str) =>
-                        str
-                            .trim()
-                            .replace(/&LPARENS/g, "(")
-                            .replace(/&RPARENS/g, ")")
-                            .replace(/&LBRACE/g, "{")
-                            .replace(/&RBRACE/g, "}")
-                            .replace(/&COMMA/g, ",")
-                    )
+                    const realArgs = argument.split(",").map((str) => this.undoEncoding(str))
                     for (let i = 0; i < realArgs.length; i++) {
                         if (args.length <= i) {
                             args.push(realArgs[i])
@@ -270,6 +273,39 @@ export default class SpecialVisualizations {
                     return new SvelteUIElement(AddNewPoint, {
                         state,
                         coordinate: { lon, lat },
+                    })
+                },
+            },
+            {
+                funcName: "user_profile",
+                args: [],
+                docs: "A component showing information about the currently logged in user (username, profile description, profile picture + link to edit them). Mostly meant to be used in the 'user-settings'",
+                constr(state: SpecialVisualizationState): BaseUIElement {
+                    return new SvelteUIElement(UserProfile, {
+                        osmConnection: state.osmConnection,
+                    })
+                },
+            },
+            {
+                funcName: "language_picker",
+                args: [],
+                docs: "A component to set the language of the user interface",
+                constr(state: SpecialVisualizationState): BaseUIElement {
+                    return new LanguagePicker(
+                        state.layout.language,
+                        Translations.t.general.pickLanguage.Clone()
+                    )
+                },
+            },
+            {
+                funcName: "logout",
+                args: [],
+                docs: "Shows a button where the user can log out",
+                constr(state: SpecialVisualizationState): BaseUIElement {
+                    return new SubtleButton(Svg.logout_ui(), Translations.t.general.logout, {
+                        imgSize: "w-6 h-6",
+                    }).onClick(() => {
+                        state.osmConnection.LogOut()
                     })
                 },
             },
@@ -717,7 +753,7 @@ export default class SpecialVisualizations {
                 docs: "Shows the title of the popup. Useful for some cases, e.g. 'What is phone number of {title()}?'",
                 example:
                     "`What is the phone number of {title()}`, which might automatically become `What is the phone number of XYZ`.",
-                constr: (state, tagsSource, args, feature) =>
+                constr: (state, tagsSource) =>
                     new VariableUiElement(
                         tagsSource.map((tags) => {
                             const layer = state.layout.getMatchingLayer(tags)
@@ -930,6 +966,40 @@ export default class SpecialVisualizations {
                                 url,
                             })
                         })
+                    )
+                },
+            },
+            {
+                funcName: "link",
+                docs: "Construct a link. By using the 'special' visualisation notation, translation should be easier",
+                args: [
+                    {
+                        name: "text",
+                        doc: "Text to be shown",
+                        required: true,
+                    },
+                    {
+                        name: "href",
+                        doc: "The URL to link to",
+                        required: true,
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    args: string[],
+                    feature: Feature
+                ): BaseUIElement {
+                    const [text, href] = args
+                    return new VariableUiElement(
+                        tagSource.map(
+                            (tags) =>
+                                new Link(
+                                    Utils.SubstituteKeys(text, tags),
+                                    Utils.SubstituteKeys(href, tags),
+                                    true
+                                )
+                        )
                     )
                 },
             },

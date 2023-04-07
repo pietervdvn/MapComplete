@@ -2,10 +2,17 @@ import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { OsmConnection } from "../Osm/OsmConnection"
 import { MangroveIdentity } from "../Web/MangroveReviews"
 import { Store, Stores, UIEventSource } from "../UIEventSource"
-import Locale from "../../UI/i18n/Locale"
 import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource"
 import { FeatureSource } from "../FeatureSource/FeatureSource"
 import { Feature } from "geojson"
+import { Utils } from "../../Utils"
+import translators from "../../assets/translators.json"
+import codeContributors from "../../assets/contributors.json"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
+import usersettings from "../../assets/generated/layers/usersettings.json"
+import Locale from "../../UI/i18n/Locale"
+import LinkToWeblate from "../../UI/Base/LinkToWeblate"
 
 /**
  * The part of the state which keeps track of user-related stuff, e.g. the OSM-connection,
@@ -30,16 +37,30 @@ export default class UserRelatedState {
      * The number of seconds that the GPS-locations are stored in memory.
      * Time in seconds
      */
-    public gpsLocationHistoryRetentionTime = new UIEventSource(
+    public readonly gpsLocationHistoryRetentionTime = new UIEventSource(
         7 * 24 * 60 * 60,
         "gps_location_retention"
     )
 
-    constructor(osmConnection: OsmConnection, availableLanguages?: string[]) {
+    /**
+     * Preferences as tags exposes many preferences and state properties as record.
+     * This is used to bridge the internal state with the usersettings.json layerconfig file
+     */
+    public readonly preferencesAsTags: UIEventSource<Record<string, string>>
+    public static readonly usersettingsConfig = new LayerConfig(
+        <LayerConfigJson>usersettings,
+        "userinformationpanel"
+    )
+
+    constructor(
+        osmConnection: OsmConnection,
+        availableLanguages?: string[],
+        layout?: LayoutConfig
+    ) {
         this.osmConnection = osmConnection
         {
             const translationMode: UIEventSource<undefined | "true" | "false" | "mobile" | string> =
-                this.osmConnection.GetPreference("translation-mode")
+                this.osmConnection.GetPreference("translation-mode", "false")
             translationMode.addCallbackAndRunD((mode) => {
                 mode = mode.toLowerCase()
                 if (mode === "true" || mode === "yes") {
@@ -73,6 +94,8 @@ export default class UserRelatedState {
         this.installedUserThemes = this.InitInstalledUserThemes()
 
         this.homeLocation = this.initHomeLocation()
+
+        this.preferencesAsTags = this.initAmendedPrefs(layout)
     }
 
     public GetUnofficialTheme(id: string):
@@ -210,5 +233,128 @@ export default class UserRelatedState {
             ]
         })
         return new StaticFeatureSource(feature)
+    }
+
+    /**
+     * Initialize the 'amended preferences'.
+     * This is inherently a dirty and chaotic method, as it shoves many properties into this EventSourcd
+     * */
+    private initAmendedPrefs(layout?: LayoutConfig): UIEventSource<Record<string, string>> {
+        const amendedPrefs = new UIEventSource<Record<string, string>>({
+            _theme: layout?.id,
+            _backend: this.osmConnection.Backend(),
+        })
+
+        const osmConnection = this.osmConnection
+        osmConnection.preferencesHandler.preferences.addCallback((newPrefs) => {
+            for (const k in newPrefs) {
+                amendedPrefs.data[k] = newPrefs[k]
+            }
+            amendedPrefs.ping()
+        })
+        const usersettingsConfig = UserRelatedState.usersettingsConfig
+        const translationMode = osmConnection.GetPreference("translation-mode")
+        Locale.language.mapD(
+            (language) => {
+                amendedPrefs.data["_language"] = language
+                const trmode = translationMode.data
+                if ((trmode === "true" || trmode === "mobile") && layout !== undefined) {
+                    const missing = layout.missingTranslations()
+                    const total = missing.total
+
+                    const untranslated = missing.untranslated.get(language) ?? []
+                    const hasMissingTheme = untranslated.some((k) => k.startsWith("themes:"))
+                    const missingLayers = Utils.Dedup(
+                        untranslated
+                            .filter((k) => k.startsWith("layers:"))
+                            .map((k) => k.slice("layers:".length).split(".")[0])
+                    )
+
+                    const zenLinks: { link: string; id: string }[] = Utils.NoNull([
+                        hasMissingTheme
+                            ? {
+                                  id: "theme:" + layout.id,
+                                  link: LinkToWeblate.hrefToWeblateZen(
+                                      language,
+                                      "themes",
+                                      layout.id
+                                  ),
+                              }
+                            : undefined,
+                        ...missingLayers.map((id) => ({
+                            id: "layer:" + id,
+                            link: LinkToWeblate.hrefToWeblateZen(language, "layers", id),
+                        })),
+                    ])
+                    const untranslated_count = untranslated.length
+                    amendedPrefs.data["_translation_total"] = "" + total
+                    amendedPrefs.data["_translation_translated_count"] =
+                        "" + (total - untranslated_count)
+                    amendedPrefs.data["_translation_percentage"] =
+                        "" + Math.floor((100 * (total - untranslated_count)) / total)
+                    console.log("Setting zenLinks", zenLinks)
+                    amendedPrefs.data["_translation_links"] = JSON.stringify(zenLinks)
+                }
+                amendedPrefs.ping()
+            },
+            [translationMode]
+        )
+        osmConnection.userDetails.addCallback((userDetails) => {
+            for (const k in userDetails) {
+                amendedPrefs.data["_" + k] = "" + userDetails[k]
+            }
+
+            for (const [name, code, _] of usersettingsConfig.calculatedTags) {
+                try {
+                    let result = new Function("feat", "return " + code + ";")({
+                        properties: amendedPrefs.data,
+                    })
+                    if (result !== undefined && result !== "" && result !== null) {
+                        if (typeof result !== "string") {
+                            result = JSON.stringify(result)
+                        }
+                        amendedPrefs.data[name] = result
+                    }
+                } catch (e) {
+                    console.error(
+                        "Calculating a tag for userprofile-settings failed for variable",
+                        name,
+                        e
+                    )
+                }
+            }
+
+            const simplifiedName = userDetails.name.toLowerCase().replace(/\s+/g, "")
+            const isTranslator = translators.contributors.find(
+                (c: { contributor: string; commits: number }) => {
+                    const replaced = c.contributor.toLowerCase().replace(/\s+/g, "")
+                    return replaced === simplifiedName
+                }
+            )
+            if (isTranslator) {
+                amendedPrefs.data["_translation_contributions"] = "" + isTranslator.commits
+            }
+            const isCodeContributor = codeContributors.contributors.find(
+                (c: { contributor: string; commits: number }) => {
+                    const replaced = c.contributor.toLowerCase().replace(/\s+/g, "")
+                    return replaced === simplifiedName
+                }
+            )
+            if (isCodeContributor) {
+                amendedPrefs.data["_code_contributions"] = "" + isCodeContributor.commits
+            }
+            amendedPrefs.ping()
+        })
+
+        amendedPrefs.addCallbackD((tags) => {
+            for (const key in tags) {
+                if (key.startsWith("_")) {
+                    continue
+                }
+                this.osmConnection.GetPreference(key, undefined, { prefix: "" }).setData(tags[key])
+            }
+        })
+
+        return amendedPrefs
     }
 }

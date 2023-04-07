@@ -805,7 +805,13 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
             const param = special[arg.name]
             if (param === undefined) {
                 errors.push(
-                    `At ${context}: Obligated parameter '${arg.name}' in special rendering of type ${vis.funcName} not found.\n${arg.doc}`
+                    `At ${context}: Obligated parameter '${
+                        arg.name
+                    }' in special rendering of type ${
+                        vis.funcName
+                    } not found.\n    The full special rendering specification is: '${JSON.stringify(
+                        input
+                    )}'\n    ${arg.name}: ${arg.doc}`
                 )
             }
         }

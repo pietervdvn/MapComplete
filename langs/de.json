@@ -934,12 +934,8 @@
     "userinfo": {
         "gotoInbox": "Posteingang öffnen",
         "gotoSettings": "Einstellungen auf OpenStreetMap.org öffnen",
-        "moveToHome": "Verschieben Sie die Karte an Ihren Heimatstandort",
-        "newMessages": "Sie haben neue Nachrichten",
         "noDescription": "Sie haben noch keine Profilbeschreibung",
-        "noDescriptionCallToAction": "Profilbeschreibung hinzufügen",
-        "titleNotLoggedIn": "Willkommen",
-        "welcome": "Willkommen {name}"
+        "noDescriptionCallToAction": "Profilbeschreibung hinzufügen"
     },
     "validation": {
         "color": {

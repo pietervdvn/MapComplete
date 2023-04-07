@@ -958,12 +958,9 @@
     "userinfo": {
         "gotoInbox": "Open your inbox",
         "gotoSettings": "Go to your settings on OpenStreetMap.org",
-        "moveToHome": "Move the map to your home location",
-        "newMessages": "you have new messages",
         "noDescription": "You don't have a description on your profile yet",
         "noDescriptionCallToAction": "Add a profile description",
-        "titleNotLoggedIn": "Welcome",
-        "welcome": "Welcome {name}"
+        "notLoggedIn": "You have logged out"
     },
     "validation": {
         "color": {

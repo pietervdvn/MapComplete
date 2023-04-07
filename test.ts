@@ -7,17 +7,24 @@ import ThemeViewState from "./Models/ThemeViewState"
 import Combine from "./UI/Base/Combine"
 import SpecialVisualizations from "./UI/SpecialVisualizations"
 import AddNewPoint from "./UI/Popup/AddNewPoint/AddNewPoint.svelte"
+import UserProfile from "./UI/BigComponents/UserProfile.svelte"
 
 async function main() {
     new FixedUiElement("").AttachTo("extradiv")
     const layout = new LayoutConfig(<any>theme, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
-    const main = new SvelteUIElement(ThemeViewGUI, { layout })
+    const state = new ThemeViewState(layout)
+
+    const main = new SvelteUIElement(ThemeViewGUI, { state })
+    state.guistate.menuIsOpened.setData(true)
+    state.guistate.menuViewTab.setData("settings")
     main.AttachTo("maindiv")
 }
 
 async function testspecial() {
     const layout = new LayoutConfig(<any>theme, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
     const state = new ThemeViewState(layout)
+
+    state.guistate.openUsersettings("picture-license")
     const all = SpecialVisualizations.specialVisualizations.map((s) =>
         SpecialVisualizations.renderExampleOfSpecial(state, s)
     )
@@ -27,12 +34,7 @@ async function testspecial() {
 async function test() {
     const layout = new LayoutConfig(<any>theme, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
     const state = new ThemeViewState(layout)
-    state.featureSwitches.featureSwitchIsTesting.setData(true)
-    new SvelteUIElement(AddNewPoint, {
-        state,
-        coordinate: { lon: 3.22001, lat: 51.21576 },
-    }).AttachTo("maindiv")
-    //*/
+    new SvelteUIElement(UserProfile, { osmConnection: state.osmConnection }).AttachTo("maindiv")
 }
 
 /*

@@ -10,7 +10,6 @@
   import { TagsFilter } from "../../../Logic/Tags/TagsFilter";
   import FreeformInput from "./FreeformInput.svelte";
   import Translations from "../../i18n/Translations.js";
-  import FromHtml from "../../Base/FromHtml.svelte";
   import ChangeTagAction from "../../../Logic/Osm/Actions/ChangeTagAction";
   import { createEventDispatcher } from "svelte";
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
@@ -63,6 +62,24 @@
   }>();
 
   function onSave() {
+
+    if (layer.source === null) {
+      /**
+       * This is a special, priviliged layer.
+       * We simply apply the tags onto the records
+       */
+      const kv = selectedTags.asChange(tags.data);
+      for (const { k, v } of kv) {
+        if (v === undefined) {
+          delete tags.data[k];
+        } else {
+          tags.data[k] = v;
+        }
+      }
+      tags.ping();
+      return;
+    }
+
     dispatch("saved", { config, applied: selectedTags });
     const change = new ChangeTagAction(
       tags.data.id,
@@ -76,6 +93,7 @@
     freeformInput.setData(undefined);
     selectedMapping = 0;
     selectedTags = undefined;
+
     change.CreateChangeDescriptions().then(changes =>
       state.changes.applyChanges(changes)
     ).catch(console.error);
@@ -93,12 +111,14 @@
         </span>
         <span class="alert">{config.id}</span>
       </div>
-      <SpecialTranslation slot="else" t={config.question} {tags} {state} {layer} feature={selectedElement}></SpecialTranslation>
+      <SpecialTranslation slot="else" t={config.question} {tags} {state} {layer}
+                          feature={selectedElement}></SpecialTranslation>
     </If>
 
     {#if config.questionhint}
       <div class="subtle">
-        <SpecialTranslation t={config.questionhint} {tags} {state} {layer} feature={selectedElement}></SpecialTranslation>
+        <SpecialTranslation t={config.questionhint} {tags} {state} {layer}
+                            feature={selectedElement}></SpecialTranslation>
       </div>
     {/if}
 
@@ -152,7 +172,7 @@
       </div>
     {/if}
 
-  <TagHint osmConnection={state.osmConnection} tags={selectedTags}></TagHint>
+    <TagHint osmConnection={state.osmConnection} tags={selectedTags}></TagHint>
     <div>
       <!-- TagRenderingQuestion-buttons -->
       <slot name="cancel"></slot>
@@ -163,7 +183,7 @@
       {:else }
         <div class="w-6 h-6">
           <!-- Invalid value; show an inactive button or something like that-->
-        <ExclamationIcon></ExclamationIcon>
+          <ExclamationIcon></ExclamationIcon>
         </div>
       {/if}
     </div>

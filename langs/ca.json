@@ -594,9 +594,7 @@
     },
     "userinfo": {
         "gotoInbox": "Obre la teva safata d'entrada",
-        "gotoSettings": "Aneu a la vostra configuració a OpenStreetMap.org",
-        "moveToHome": "Mou el mapa a la vostra ubicació de casa",
-        "welcome": "Benvingut/da {name}"
+        "gotoSettings": "Aneu a la vostra configuració a OpenStreetMap.org"
     },
     "validation": {
         "color": {

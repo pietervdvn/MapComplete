@@ -192,11 +192,8 @@
     "userinfo": {
         "gotoInbox": "Otwórz swoją skrzynkę odbiorczą",
         "gotoSettings": "Przejdź do swoich ustawień na OpenStreetMap.org",
-        "moveToHome": "Przesuń mapę do Twojej lokalizacji domowej",
-        "newMessages": "masz nowe wiadomości",
         "noDescription": "Nie masz jeszcze opisu w swoim profilu",
-        "noDescriptionCallToAction": "Dodaj opis profilu",
-        "welcome": "Witaj {name}"
+        "noDescriptionCallToAction": "Dodaj opis profilu"
     },
     "validation": {
         "color": {

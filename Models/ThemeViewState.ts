@@ -101,7 +101,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             ),
             osmConfiguration: <"osm" | "osm-test">this.featureSwitches.featureSwitchApiURL.data,
         })
-        this.userRelatedState = new UserRelatedState(this.osmConnection, layout?.language)
+        this.userRelatedState = new UserRelatedState(this.osmConnection, layout?.language, layout)
         this.selectedElement = new UIEventSource<Feature | undefined>(undefined, "Selected element")
         this.selectedLayer = new UIEventSource<LayerConfig>(undefined, "Selected layer")
         this.geolocation = new GeoLocationHandler(

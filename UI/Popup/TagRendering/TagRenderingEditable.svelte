@@ -15,32 +15,51 @@
   export let tags: UIEventSource<Record<string, string>>;
   export let selectedElement: Feature;
   export let state: SpecialVisualizationState;
-  export let layer: LayerConfig
+  export let layer: LayerConfig;
 
-  export let showQuestionIfUnknown : boolean= false
-  let editMode = false
+  export let highlightedRendering: UIEventSource<string> = undefined;
+  export let showQuestionIfUnknown: boolean = false;
+  let editMode = false;
   onDestroy(tags.addCallbackAndRunD(tags => {
-    editMode = showQuestionIfUnknown && !config.IsKnown(tags)
-    
-  }))
+    editMode = showQuestionIfUnknown && !config.IsKnown(tags);
+
+  }));
+
+  let htmlElem: HTMLElement;
+  if (highlightedRendering) {
+    onDestroy(highlightedRendering.addCallbackAndRun(highlighted => {
+      console.log("Highlighted rendering is", highlighted)
+      if(htmlElem === undefined){
+        return
+      }
+      if (config.id === highlighted) {
+        htmlElem.classList.add("glowing-shadow");
+      } else {
+        htmlElem.classList.remove("glowing-shadow");
+      }
+    }));
+  }
+
 
 </script>
 
-{#if config.question}
-  {#if editMode}
-    <TagRenderingQuestion {config} {tags} {selectedElement} {state} {layer} >
-      <button slot="cancel" on:click={() => {editMode = false}}>
-        <Tr t={Translations.t.general.cancel}/>
-      </button>
-    </TagRenderingQuestion>
-  {:else}
-    <div class="flex justify-between">
-      <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer} />
-      <button on:click={() => {editMode = true}} class="w-6 h-6 rounded-full subtle-background p-1">
-        <PencilAltIcon></PencilAltIcon>
-      </button>
-    </div>
+<div bind:this={htmlElem}>
+  {#if config.question}
+    {#if editMode}
+      <TagRenderingQuestion {config} {tags} {selectedElement} {state} {layer}>
+        <button slot="cancel" on:click={() => {editMode = false}}>
+          <Tr t={Translations.t.general.cancel} />
+        </button>
+      </TagRenderingQuestion>
+    {:else}
+      <div class="flex justify-between">
+        <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer} />
+        <button on:click={() => {editMode = true}} class="shrink-0 w-6 h-6 rounded-full subtle-background p-1">
+          <PencilAltIcon></PencilAltIcon>
+        </button>
+      </div>
+    {/if}
+  {:else }
+    <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer} />
   {/if}
-{:else }
-  <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer} />
-{/if}
+</div>

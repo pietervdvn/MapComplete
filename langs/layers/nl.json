@@ -8265,6 +8265,17 @@
                     }
                 }
             },
+            "inbox": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Ga naar je inbox"
+                            }
+                        }
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -8314,6 +8325,9 @@
                     }
                 }
             }
+        },
+        "title": {
+            "render": "Instellingen"
         }
     },
     "veterinary": {

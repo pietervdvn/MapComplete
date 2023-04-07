@@ -692,11 +692,8 @@
     "userinfo": {
         "gotoInbox": "Åpne innboksen din",
         "gotoSettings": "Gå til innstillingene dine på OpenStreetMap.org",
-        "newMessages": "du har nye meldinger",
         "noDescription": "Du har ikke noen profilbeskrivelse enda",
-        "noDescriptionCallToAction": "Legg til profilbeskrivelse",
-        "titleNotLoggedIn": "Velkommen",
-        "welcome": "Velkommen {name}"
+        "noDescriptionCallToAction": "Legg til profilbeskrivelse"
     },
     "validation": {
         "color": {
