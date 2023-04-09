@@ -71,7 +71,7 @@
                     "then": "S'accepten gossos però lligats"
                 },
                 "3": {
-                    "then": "S'accepten gossos lliures"
+                    "then": "S'accepten gossos i poden estar solts"
                 }
             },
             "question": "S'accepten gossos en aquest negoci?"
