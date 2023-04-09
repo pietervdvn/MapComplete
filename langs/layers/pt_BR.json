@@ -1,4 +1,17 @@
 {
+    "address": {
+        "description": "Endereços",
+        "tagRenderings": {
+            "housenumber": {
+                "mappings": {
+                    "0": {
+                        "then": "Este prédio não tem número"
+                    }
+                },
+                "question": "Qual é o número desta casa?"
+            }
+        }
+    },
     "artwork": {
         "presets": {
             "0": {
