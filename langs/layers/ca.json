@@ -77,10 +77,10 @@
             "Sides": {
                 "mappings": {
                     "0": {
-                        "then": "Aquest mupi té publicitat a un únic costat"
+                        "then": "Aquest objecte té publicitat a un únic costat"
                     },
                     "1": {
-                        "then": "Aquest mupi té publicitat pels dos costas"
+                        "then": "Aquest objecte té publicitat pels dos costas"
                     }
                 },
                 "question": "Per quants costats pots veure publicitat?"
@@ -1845,8 +1845,15 @@
                     },
                     "2": {
                         "then": "Aquí està prevista una estació de recàrrega"
+                    },
+                    "3": {
+                        "then": "Aquí està construint-se una estació de càrrega"
+                    },
+                    "4": {
+                        "then": "Aquesta estació de recàrrega s'ha desactivat permanentment i ja no s'utilitza, però encara és visible"
                     }
-                }
+                },
+                "question": "Està en ús aquest punt de recàrrega?"
             },
             "Operator": {
                 "mappings": {
@@ -2692,16 +2699,16 @@
             "station-operator": {
                 "mappings": {
                     "0": {
-                        "then": "Aquest parc l'opera el govern."
+                        "then": "Aquest parc el gestiona el govern."
                     },
                     "1": {
-                        "then": "Aquesta estació l'opera una comunitat o organització informal."
+                        "then": "Aquesta estació la gestiona una comunitat o organització informal."
                     },
                     "2": {
-                        "then": "Aquest operació l'opera un grup formal de voluntaris."
+                        "then": "Aquesta estació la gestiona un grup formal de voluntaris."
                     },
                     "3": {
-                        "then": "Aquesta estació l'opera una entitat privada."
+                        "then": "Aquesta estació la gestiona una entitat privada."
                     }
                 },
                 "question": "Com es classifica l'operador de l'estació?",
@@ -2855,6 +2862,9 @@
             },
             "Vegetarian (no friture)": {
                 "mappings": {
+                    "0": {
+                        "then": "No hi ha opcions vegetarianes disponibles"
+                    },
                     "1": {
                         "then": "Algunes opcions vegetarianes"
                     },
@@ -4400,7 +4410,8 @@
                     "1": {
                         "then": "Aquest fanal té 2 aparells"
                     }
-                }
+                },
+                "question": "Quants accessoris té aquest fanal?"
             },
             "direction": {
                 "question": "Cap a on apunta aquest fanal?",
@@ -4469,7 +4480,8 @@
                     "9": {
                         "then": "Aquest fanal utilitza làmpades de sodi de baixa pressió (taronja monocroma)"
                     }
-                }
+                },
+                "question": "Quin tipus d'il·luminació utilitza aquest fanal?"
             },
             "ref": {
                 "question": "Quin és el número de referència d'aquest fanal?"
