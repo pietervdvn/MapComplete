@@ -77,10 +77,10 @@
             "Sides": {
                 "mappings": {
                     "0": {
-                        "then": "Este mupi tiene publicidad en un único lado"
+                        "then": "Este objeto tiene publicidad en un único lado"
                     },
                     "1": {
-                        "then": "Este mupi tiene publicidad por los dos lados"
+                        "then": "Este objeto tiene publicidad por los dos lados"
                     }
                 },
                 "question": "¿Por cuantos lados puedes ver publicidad?"
@@ -1639,7 +1639,7 @@
                         "then": "Aquí está planeada una estación de carga"
                     },
                     "3": {
-                        "then": "Aquí está construida una estación de carga"
+                        "then": "Aquí se está construyendo una estación de carga"
                     },
                     "4": {
                         "then": "Esta estación de carga se ha deshabilitado de forma permanente y ya no está en uso pero todavía es visible"
