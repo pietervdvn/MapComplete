@@ -1,14 +1,67 @@
 {
     "address": {
         "description": "Endereços",
+        "name": "Endereços conhecidos no OSM",
         "tagRenderings": {
+            "fixme": {
+                "question": "O que deve ser corrigido aqui? Explique"
+            },
             "housenumber": {
                 "mappings": {
                     "0": {
                         "then": "Este prédio não tem número"
                     }
                 },
-                "question": "Qual é o número desta casa?"
+                "question": "Qual é o número desta casa?",
+                "render": "O número da casa é <b>{addr:housenumber}</b>"
+            }
+        },
+        "title": {
+            "render": "Endereço conhecido"
+        }
+    },
+    "advertising": {
+        "presets": {
+            "10": {
+                "title": "uma placa"
+            }
+        },
+        "tagRenderings": {
+            "message_type": {
+                "mappings": {
+                    "7": {
+                        "then": "Mensagem religiosa"
+                    },
+                    "9": {
+                        "then": "Um mapa"
+                    }
+                }
+            },
+            "operator": {
+                "render": "Operado por {operator}"
+            },
+            "ref": {
+                "render": "O número de referência é {ref}"
+            },
+            "type": {
+                "mappings": {
+                    "2": {
+                        "then": "Isto é uma coluna"
+                    },
+                    "3": {
+                        "then": "Isto é uma bandeira"
+                    },
+                    "7": {
+                        "then": "Isto é uma placa"
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "7": {
+                    "then": "Placa"
+                }
             }
         }
     },
