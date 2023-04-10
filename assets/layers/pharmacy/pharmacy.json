@@ -173,5 +173,7 @@
         "de": "eine Apotheke"
       }
     }
-  ]
+  ],
+"deletion": true,
+"allowMove": true
 }
