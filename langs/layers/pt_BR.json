@@ -29,6 +29,9 @@
         "tagRenderings": {
             "message_type": {
                 "mappings": {
+                    "0": {
+                        "then": "Mensagem comercial"
+                    },
                     "7": {
                         "then": "Mensagem religiosa"
                     },
