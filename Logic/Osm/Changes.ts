@@ -1,12 +1,12 @@
 import { OsmNode, OsmObject, OsmRelation, OsmWay } from "./OsmObject"
-import { UIEventSource } from "../UIEventSource"
+import { Store, UIEventSource } from "../UIEventSource"
 import Constants from "../../Models/Constants"
 import OsmChangeAction from "./Actions/OsmChangeAction"
 import { ChangeDescription, ChangeDescriptionTools } from "./Actions/ChangeDescription"
 import { Utils } from "../../Utils"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import SimpleMetaTagger from "../SimpleMetaTagger"
-import {FeatureSource, IndexedFeatureSource } from "../FeatureSource/FeatureSource"
+import { FeatureSource, IndexedFeatureSource } from "../FeatureSource/FeatureSource"
 import { GeoLocationPointProperties } from "../State/GeoLocationState"
 import { GeoOperations } from "../GeoOperations"
 import { ChangesetHandler, ChangesetTag } from "./ChangesetHandler"
@@ -25,10 +25,10 @@ export class Changes {
     public readonly pendingChanges: UIEventSource<ChangeDescription[]> =
         LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
     public readonly allChanges = new UIEventSource<ChangeDescription[]>(undefined)
-    public readonly state: { allElements: IndexedFeatureSource; osmConnection: OsmConnection }
+    public readonly state: { allElements?: IndexedFeatureSource; osmConnection: OsmConnection }
     public readonly extraComment: UIEventSource<string> = new UIEventSource(undefined)
 
-    private readonly historicalUserLocations: FeatureSource
+    private readonly historicalUserLocations?: FeatureSource
     private _nextId: number = -1 // Newly assigned ID's are negative
     private readonly isUploading = new UIEventSource(false)
     private readonly previouslyCreated: OsmObject[] = []
@@ -36,12 +36,12 @@ export class Changes {
     private readonly _changesetHandler: ChangesetHandler
 
     constructor(
-        state?: {
-            dryRun: UIEventSource<boolean>
-            allElements: IndexedFeatureSource
-            featurePropertiesStore: FeaturePropertiesStore
+        state: {
+            dryRun: Store<boolean>
+            allElements?: IndexedFeatureSource
+            featurePropertiesStore?: FeaturePropertiesStore
             osmConnection: OsmConnection
-            historicalUserLocations: FeatureSource
+            historicalUserLocations?: FeatureSource
         },
         leftRightSensitive: boolean = false
     ) {
@@ -190,9 +190,11 @@ export class Changes {
 
         const changedObjectCoordinates: [number, number][] = []
 
-        const feature = this.state.allElements.featuresById.data.get(change.mainObjectId)
-        if (feature !== undefined) {
-            changedObjectCoordinates.push(GeoOperations.centerpointCoordinates(feature))
+        {
+            const feature = this.state.allElements?.featuresById?.data.get(change.mainObjectId)
+            if (feature !== undefined) {
+                changedObjectCoordinates.push(GeoOperations.centerpointCoordinates(feature))
+            }
         }
 
         for (const changeDescription of changeDescriptions) {

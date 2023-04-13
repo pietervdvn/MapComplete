@@ -1,6 +1,6 @@
 import escapeHtml from "escape-html"
 import UserDetails, { OsmConnection } from "./OsmConnection"
-import { UIEventSource } from "../UIEventSource"
+import { Store, UIEventSource } from "../UIEventSource"
 import Locale from "../../UI/i18n/Locale"
 import Constants from "../../Models/Constants"
 import { Changes } from "./Changes"
@@ -16,7 +16,7 @@ export class ChangesetHandler {
     private readonly allElements: { addAlias: (id0: String, id1: string) => void }
     private osmConnection: OsmConnection
     private readonly changes: Changes
-    private readonly _dryRun: UIEventSource<boolean>
+    private readonly _dryRun: Store<boolean>
     private readonly userDetails: UIEventSource<UserDetails>
     private readonly backend: string
 
@@ -27,9 +27,9 @@ export class ChangesetHandler {
     private readonly _remappings = new Map<string, string>()
 
     constructor(
-        dryRun: UIEventSource<boolean>,
+        dryRun: Store<boolean>,
         osmConnection: OsmConnection,
-        allElements: { addAlias: (id0: string, id1: string) => void },
+        allElements: { addAlias: (id0: string, id1: string) => void } | undefined,
         changes: Changes
     ) {
         this.osmConnection = osmConnection
@@ -299,7 +299,7 @@ export class ChangesetHandler {
         }
         for (const mapping of mappings) {
             const [oldId, newId] = mapping
-            this.allElements.addAlias(oldId, newId)
+            this.allElements?.addAlias(oldId, newId)
             if (newId !== undefined) {
                 this._remappings.set(mapping[0], mapping[1])
             }
