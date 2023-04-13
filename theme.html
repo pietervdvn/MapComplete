@@ -39,43 +39,46 @@
 </head>
 <body>
 
-<div id="decoration-desktop" style="position: fixed; left: 1em; bottom: 1em; width:35vh; height:35vh;">
-    <!-- A nice decoration while loading or on errors -->
-    <!-- DECORATION 0 START -->
-    <img src="./assets/svg/add.svg"/>
-    <!-- DECORATION 0 END -->
-</div>
 
-<div class="very-small-screen fixed inset-0 block z-above-controls" id="on-small-screen"></div>
-<div class="fixed inset-0 block z-above-controls hidden hidden-on-very-small-screen md:w-1/3" style="min-width: 28rem" id="fullscreen"></div>
-
-<div class="absolute top-12 sm:top-3 left-3 rounded-3xl z-above-map" id="top-left"></div>
-<div class="absolute top-3 right-2 rounded-3xl z-above-map pl-3 sm:pl-0 w-full sm:w-fit" id="top-right"></div>
-
-<div class="absolute bottom-3 left-3 rounded-3xl z-above-map" id="bottom-left"></div>
-<div class="absolute bottom-3 right-2 rounded-3xl z-above-map" id="bottom-right"></div>
-
-<div class="clutter absolute h-24 left-24 right-24 top-56 text-xl text-center"
-     id="centermessage" style="z-index: 4000">
-    <div style="height: max-content">
-    <div style="margin-top: -3rem">
-        <div class="flex" style="justify-content: center">
-            <img src="./assets/svg/loading.svg" class="animate-spin" style="width: 1.5rem; height: 1.5rem; min-width: 1.5rem;"/>
-            <h1 style="font-weight: bold; font-size: xx-large; margin-bottom: 1rem; padding-left: 1rem">Loading MapComplete, hang on...</h1>
-        </div>
-    <p class="subtle" style="padding-bottom: 1rem">Powered by OpenStreetMap</p>
-    <div style="background: #ffffffaa; padding-bottom: 1rem; border-radius: 0.25rem">
-    <!-- DESCRIPTION START -->
-    MapComplete is an easy to use map viewer and map editor
-    <!-- DESCRIPTION END -->
-    </div>
-    </div>
+<span class="absolute" id="belowmap" style="z-index: -1; visibility: hidden">Below</span>
+<div id="maindiv">
+    <div id="default-main">
+        
+        <span id="default-title">Loading MapComplete, hang on...</span>
+        
+        <!-- DESCRIPTION START -->
+        MapComplete is an easy to use map viewer and map editor
+        <!-- DESCRIPTION END -->
     </div>
 </div>
 
+<script>
 
-<span class="absolute" id="belowmap" style="z-index: -1">Below</span>
-<div id="leafletDiv"></div>
+    let lang  = ((navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || 'en').substr(0, 2);
+    function filterLangs(maindiv){
+        let foundLangs = 0
+        for(const child of Array.from(maindiv.children)){
+            if(child.attributes.lang?.value === lang){
+                foundLangs ++
+            }
+        }
+        if(foundLangs === 0){
+            lang = "en"
+        }
+        for(const child of Array.from(maindiv.children)){
+            const childLang = child.attributes.lang
+            if(childLang === undefined){
+                continue
+            }
+            if(childLang.value === lang){
+                continue
+            }
+            child.parentElement.removeChild(child)
+        }   
+    }
+    filterLangs( document.getElementById("default-main"))
+    filterLangs( document.getElementById("default-title"))
+</script>
 
 
 <script type="module" src="./index.ts"></script>

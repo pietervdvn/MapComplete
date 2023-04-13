@@ -217,7 +217,7 @@ export class Translation extends BaseUIElement {
                 continue
             }
             let txt = this.translations[lng]
-            txt = txt.replace(/\..*/, "")
+            txt = txt.replace(/[.<].*/, "")
             txt = Utils.EllipsesAfter(txt, 255)
             tr[lng] = txt
         }

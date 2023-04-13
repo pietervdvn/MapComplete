@@ -29,7 +29,7 @@ async function createIcon(iconPath: string, size: number, alreadyWritten: string
         return newname
     }
     alreadyWritten.push(newname)
-    if (existsSync(newname)) {
+    if (existsSync(targetpath)) {
         return newname
     }
 
@@ -187,6 +187,17 @@ async function createManifest(
     }
 }
 
+function asLangSpan(t: Translation, tag = "span"): string {
+    const values: string[] = []
+    for (const lang in t.translations) {
+        if (lang === "_context") {
+            continue
+        }
+        values.push(`<${tag} lang='${lang}'>${t.translations[lang]}</${tag}>`)
+    }
+    return values.join("\n")
+}
+
 async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alreadyWritten) {
     Locale.language.setData(layout.language[0])
     const targetLanguage = layout.language[0]
@@ -258,8 +269,9 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
     ].join("\n")
 
     const loadingText = Translations.t.general.loadingTheme.Subs({ theme: ogTitle })
+
     let output = template
-        .replace("Loading MapComplete, hang on...", loadingText.textFor(targetLanguage))
+        .replace("Loading MapComplete, hang on...", asLangSpan(loadingText, "h1"))
         .replace(
             "Powered by OpenStreetMap",
             Translations.t.general.poweredByOsm.textFor(targetLanguage)
@@ -267,36 +279,19 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
         .replace(/<!-- THEME-SPECIFIC -->.*<!-- THEME-SPECIFIC-END-->/s, themeSpecific)
         .replace(
             /<!-- DESCRIPTION START -->.*<!-- DESCRIPTION END -->/s,
-            layout.shortDescription.textFor(targetLanguage)
+            asLangSpan(layout.shortDescription)
         )
         .replace(
             '<script type="module" src="./index.ts"></script>',
             `<script type="module"  src='./index_${layout.id}.ts'></script>`
         )
 
-    try {
-        output = output
-            .replace(
-                /<!-- DECORATION 0 START -->.*<!-- DECORATION 0 END -->/s,
-                `<img src='${icon}' width="100%" height="100%">`
-            )
-            .replace(
-                /<!-- DECORATION 1 START -->.*<!-- DECORATION 1 END -->/s,
-                `<img src='${icon}' width="100%" height="100%">`
-            )
-    } catch (e) {
-        console.warn("Error while applying logo: ", e)
-    }
-
     return output
 }
 
 async function createIndexFor(theme: LayoutConfig) {
     const filename = "index_" + theme.id + ".ts"
-    writeFileSync(
-        filename,
-        `import themeConfig from "./assets/generated/themes/${theme.id}.json"\n`
-    )
+    writeFileSync(filename, `import layout from "./assets/generated/themes/${theme.id}.json"\n`)
     appendFileSync(filename, codeTemplate)
 }
 
