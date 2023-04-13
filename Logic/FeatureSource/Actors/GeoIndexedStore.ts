@@ -25,11 +25,22 @@ export default class GeoIndexedStore implements FeatureSource {
      */
     public GetFeaturesWithin(bbox: BBox): Feature[] {
         // TODO optimize
-        const bboxFeature = bbox.asGeoJson({})
+        const bboxFeature = bbox.asGeojsonCached()
         return this.features.data.filter((f) => {
             if (f.geometry.type === "Point") {
                 return bbox.contains(<[number, number]>f.geometry.coordinates)
             }
+            if (f.geometry.type === "LineString") {
+                const intersection = GeoOperations.intersect(
+                    BBox.get(f).asGeojsonCached(),
+                    bboxFeature
+                )
+                return intersection !== undefined
+            }
+            if (f.geometry.type === "Polygon" || f.geometry.type === "MultiPolygon") {
+                return GeoOperations.intersect(f, bboxFeature) !== undefined
+            }
+            console.log("Calculating intersection between", bboxFeature, "and", f)
             return GeoOperations.intersect(f, bboxFeature) !== undefined
         })
     }

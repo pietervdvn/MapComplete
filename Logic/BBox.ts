@@ -225,10 +225,17 @@ export class BBox {
         ]
     }
 
-    public asGeoJson<T>(properties: T): Feature<Polygon, T> {
+    public asGeojsonCached() {
+        if (this["geojsonCache"] === undefined) {
+            this["geojsonCache"] = this.asGeoJson({})
+        }
+        return this["geojsonCache"]
+    }
+
+    public asGeoJson<T = {}>(properties?: T): Feature<Polygon, T> {
         return {
             type: "Feature",
-            properties,
+            properties: properties,
             geometry: this.asGeometry(),
         }
     }
