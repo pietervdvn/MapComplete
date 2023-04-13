@@ -1,12 +1,7 @@
 import { Store, UIEventSource } from "../Logic/UIEventSource"
 import BaseUIElement from "./BaseUIElement"
-import { DefaultGuiState } from "./DefaultGuiState"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
-import {
-    FeatureSource,
-    IndexedFeatureSource,
-    WritableFeatureSource,
-} from "../Logic/FeatureSource/FeatureSource"
+import { IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { Changes } from "../Logic/Osm/Changes"
 import { MapProperties } from "../Models/MapProperties"
@@ -17,7 +12,6 @@ import { MangroveIdentity } from "../Logic/Web/MangroveReviews"
 import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexedStore"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
-import SimpleFeatureSource from "../Logic/FeatureSource/Sources/SimpleFeatureSource"
 import { MenuState } from "../Models/MenuState"
 
 /**

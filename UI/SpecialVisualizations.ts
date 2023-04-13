@@ -9,7 +9,6 @@ import {
     SpecialVisualizationState,
 } from "./SpecialVisualization"
 import { HistogramViz } from "./Popup/HistogramViz"
-import { StealViz } from "./Popup/StealViz"
 import { MinimapViz } from "./Popup/MinimapViz"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
 import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
@@ -20,7 +19,6 @@ import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz"
 import { ConflateButton, ImportPointButton, ImportWayButton } from "./Popup/ImportButton"
 import TagApplyButton from "./Popup/TagApplyButton"
 import { CloseNoteButton } from "./Popup/CloseNoteButton"
-import { NearbyImageVis } from "./Popup/NearbyImageVis"
 import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
 import { Stores, UIEventSource } from "../Logic/UIEventSource"
 import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
@@ -63,7 +61,218 @@ import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
 import UserProfile from "./BigComponents/UserProfile.svelte"
 import LanguagePicker from "./LanguagePicker"
 import Link from "./Base/Link"
+import LayerConfig from "../Models/ThemeConfig/LayerConfig"
+import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
+import EditableTagRendering from "./Popup/EditableTagRendering"
+import NearbyImages, {
+    NearbyImageOptions,
+    P4CPicture,
+    SelectOneNearbyImage,
+} from "./Popup/NearbyImages"
+import { Tag } from "../Logic/Tags/Tag"
+import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction"
+import { And } from "../Logic/Tags/And"
+import { SaveButton } from "./Popup/SaveButton"
+import Lazy from "./Base/Lazy"
+import { CheckBox } from "./Input/Checkboxes"
+import Slider from "./Input/Slider"
 
+class NearbyImageVis implements SpecialVisualization {
+    // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
+    args: { name: string; defaultValue?: string; doc: string; required?: boolean }[] = [
+        {
+            name: "mode",
+            defaultValue: "expandable",
+            doc: "Indicates how this component is initialized. Options are: \n\n- `open`: always show and load the pictures\n- `collapsable`: show the pictures, but a user can collapse them\n- `expandable`: shown by default; but a user can collapse them.",
+        },
+        {
+            name: "mapillary",
+            defaultValue: "true",
+            doc: "If 'true', includes a link to mapillary on this location.",
+        },
+    ]
+    docs =
+        "A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature"
+    funcName = "nearby_images"
+
+    constr(
+        state: SpecialVisualizationState,
+        tagSource: UIEventSource<Record<string, string>>,
+        args: string[],
+        feature: Feature,
+        layer: LayerConfig
+    ): BaseUIElement {
+        const t = Translations.t.image.nearbyPictures
+        const mode: "open" | "expandable" | "collapsable" = <any>args[0]
+        const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
+        const id: string = tagSource.data["id"]
+        const canBeEdited: boolean = !!id?.match("(node|way|relation)/-?[0-9]+")
+        const selectedImage = new UIEventSource<P4CPicture>(undefined)
+
+        let saveButton: BaseUIElement = undefined
+        if (canBeEdited) {
+            const confirmText: BaseUIElement = new SubstitutedTranslation(
+                t.confirm,
+                tagSource,
+                state
+            )
+
+            const onSave = async () => {
+                console.log("Selected a picture...", selectedImage.data)
+                const osmTags = selectedImage.data.osmTags
+                const tags: Tag[] = []
+                for (const key in osmTags) {
+                    tags.push(new Tag(key, osmTags[key]))
+                }
+                await state?.changes?.applyAction(
+                    new ChangeTagAction(id, new And(tags), tagSource.data, {
+                        theme: state?.layout.id,
+                        changeType: "link-image",
+                    })
+                )
+            }
+            saveButton = new SaveButton(
+                selectedImage,
+                state.osmConnection,
+                confirmText,
+                t.noImageSelected
+            )
+                .onClick(onSave)
+                .SetClass("flex justify-end")
+        }
+
+        const nearby = new Lazy(() => {
+            const towardsCenter = new CheckBox(t.onlyTowards, false)
+
+            const maxSearchRadius = 100
+            const stepSize = 10
+            const defaultValue = Math.floor(maxSearchRadius / (2 * stepSize)) * stepSize
+            const fromOsmPreferences = state?.osmConnection
+                ?.GetPreference("nearby-images-radius", "" + defaultValue)
+                .sync(
+                    (s) => Number(s),
+                    [],
+                    (i) => "" + i
+                )
+            const radiusValue = new UIEventSource(fromOsmPreferences.data)
+            radiusValue.addCallbackAndRunD((v) => fromOsmPreferences.setData(v))
+
+            const radius = new Slider(stepSize, maxSearchRadius, {
+                value: radiusValue,
+                step: 10,
+            })
+            const alreadyInTheImage = AllImageProviders.LoadImagesFor(tagSource)
+            const options: NearbyImageOptions & { value } = {
+                lon,
+                lat,
+                searchRadius: maxSearchRadius,
+                shownRadius: radius.GetValue(),
+                value: selectedImage,
+                blacklist: alreadyInTheImage,
+                towardscenter: towardsCenter.GetValue(),
+                maxDaysOld: 365 * 3,
+            }
+            const slideshow = canBeEdited
+                ? new SelectOneNearbyImage(options, state.indexedFeatures)
+                : new NearbyImages(options, state.indexedFeatures)
+            const controls = new Combine([
+                towardsCenter,
+                new Combine([
+                    new VariableUiElement(
+                        radius.GetValue().map((radius) => t.withinRadius.Subs({ radius }))
+                    ),
+                    radius,
+                ]).SetClass("flex justify-between"),
+            ]).SetClass("flex flex-col")
+            return new Combine([
+                slideshow,
+                controls,
+                saveButton,
+                new MapillaryLinkVis().constr(state, tagSource, [], feature).SetClass("mt-6"),
+            ])
+        })
+
+        let withEdit: BaseUIElement = nearby
+        if (canBeEdited) {
+            withEdit = new Combine([t.hasMatchingPicture, nearby]).SetClass("flex flex-col")
+        }
+
+        if (mode === "open") {
+            return withEdit
+        }
+        const toggleState = new UIEventSource<boolean>(mode === "collapsable")
+        return new Toggle(
+            new Combine([new Title(t.title), withEdit]),
+            new Title(t.browseNearby).onClick(() => toggleState.setData(true)),
+            toggleState
+        )
+    }
+}
+
+class StealViz implements SpecialVisualization {
+    // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
+
+    funcName = "steal"
+    docs = "Shows a tagRendering from a different object as if this was the object itself"
+    args = [
+        {
+            name: "featureId",
+            doc: "The key of the attribute which contains the id of the feature from which to use the tags",
+            required: true,
+        },
+        {
+            name: "tagRenderingId",
+            doc: "The layer-id and tagRenderingId to render. Can be multiple value if ';'-separated (in which case every value must also contain the layerId, e.g. `layerId.tagRendering0; layerId.tagRendering1`). Note: this can cause layer injection",
+            required: true,
+        },
+    ]
+    constr(state: SpecialVisualizationState, featureTags, args) {
+        const [featureIdKey, layerAndtagRenderingIds] = args
+        const tagRenderings: [LayerConfig, TagRenderingConfig][] = []
+        for (const layerAndTagRenderingId of layerAndtagRenderingIds.split(";")) {
+            const [layerId, tagRenderingId] = layerAndTagRenderingId.trim().split(".")
+            const layer = state.layout.layers.find((l) => l.id === layerId)
+            const tagRendering = layer.tagRenderings.find((tr) => tr.id === tagRenderingId)
+            tagRenderings.push([layer, tagRendering])
+        }
+        if (tagRenderings.length === 0) {
+            throw "Could not create stolen tagrenddering: tagRenderings not found"
+        }
+        return new VariableUiElement(
+            featureTags.map((tags) => {
+                const featureId = tags[featureIdKey]
+                if (featureId === undefined) {
+                    return undefined
+                }
+                const otherTags = state.featureProperties.getStore(featureId)
+                const elements: BaseUIElement[] = []
+                for (const [layer, tagRendering] of tagRenderings) {
+                    const el = new EditableTagRendering(
+                        otherTags,
+                        tagRendering,
+                        layer.units,
+                        state,
+                        {}
+                    )
+                    elements.push(el)
+                }
+                if (elements.length === 1) {
+                    return elements[0]
+                }
+                return new Combine(elements).SetClass("flex flex-col")
+            })
+        )
+    }
+
+    getLayerDependencies(args): string[] {
+        const [_, tagRenderingId] = args
+        if (tagRenderingId.indexOf(".") < 0) {
+            throw "Error: argument 'layerId.tagRenderingId' of special visualisation 'steal' should contain a dot"
+        }
+        const [layerId, __] = tagRenderingId.split(".")
+        return [layerId]
+    }
+}
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
 
@@ -987,8 +1196,7 @@ export default class SpecialVisualizations {
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
-                    args: string[],
-                    feature: Feature
+                    args: string[]
                 ): BaseUIElement {
                     const [text, href] = args
                     return new VariableUiElement(
