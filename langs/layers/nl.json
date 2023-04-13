@@ -6509,12 +6509,15 @@
                         "question": "Recycling van plastic"
                     },
                     "17": {
-                        "question": "Recycling van oud metaal"
+                        "question": "Recycling van printer cartridges"
                     },
                     "18": {
-                        "question": "Recycling van kleine elektrische apparaten"
+                        "question": "Recycling van oud metaal"
                     },
                     "19": {
+                        "question": "Recycling van kleine elektrische apparaten"
+                    },
+                    "20": {
                         "question": "Recycling van restafval"
                     }
                 }
@@ -6629,21 +6632,24 @@
                         "then": "Plastic kan hier gerecycled worden"
                     },
                     "17": {
-                        "then": "Oud metaal kan hier gerecycled worden"
+                        "then": "Printer cartridges (inkjet/toner) kunnen hier gerecycled worden"
                     },
                     "18": {
-                        "then": "Schoenen kunnen hier gerecycled worden"
+                        "then": "Oud metaal kan hier gerecycled worden"
                     },
                     "19": {
-                        "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
+                        "then": "Schoenen kunnen hier gerecycled worden"
                     },
                     "20": {
                         "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
                     },
                     "21": {
-                        "then": "Injectienaalden kunnen hier gerecycled worden"
+                        "then": "Kleine elektrische apparaten kunnen hier gerecycled worden"
                     },
                     "22": {
+                        "then": "Injectienaalden kunnen hier gerecycled worden"
+                    },
+                    "23": {
                         "then": "Restafval kan hier gerecycled worden"
                     }
                 },

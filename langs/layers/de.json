@@ -6713,13 +6713,13 @@
                     "16": {
                         "question": "Recycling von Kunststoffen"
                     },
-                    "17": {
+                    "18": {
                         "question": "Recycling von Metallschrott"
                     },
-                    "18": {
+                    "19": {
                         "question": "Recycling von Elektrokleingeräten"
                     },
-                    "19": {
+                    "20": {
                         "question": "Recycling von Restabfällen"
                     }
                 }
@@ -6833,22 +6833,22 @@
                     "16": {
                         "then": "Kunststoff kann hier recycelt werden"
                     },
-                    "17": {
+                    "18": {
                         "then": "Metallschrott kann hier recycelt werden"
                     },
-                    "18": {
-                        "then": "Schuhe können hier recycelt werden"
-                    },
                     "19": {
-                        "then": "Elektrokleingeräte können hier recycelt werden"
+                        "then": "Schuhe können hier recycelt werden"
                     },
                     "20": {
                         "then": "Elektrokleingeräte können hier recycelt werden"
                     },
                     "21": {
-                        "then": "Nadeln können hier recycelt werden"
+                        "then": "Elektrokleingeräte können hier recycelt werden"
                     },
                     "22": {
+                        "then": "Nadeln können hier recycelt werden"
+                    },
+                    "23": {
                         "then": "Restmüll kann hier recycelt werden"
                     }
                 },

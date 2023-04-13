@@ -6732,12 +6732,15 @@
                         "question": "Recycling of plastic"
                     },
                     "17": {
-                        "question": "Recycling of scrap metal"
+                        "question": "Recycling of printer cartridges"
                     },
                     "18": {
-                        "question": "Recycling of small electrical appliances"
+                        "question": "Recycling of scrap metal"
                     },
                     "19": {
+                        "question": "Recycling of small electrical appliances"
+                    },
+                    "20": {
                         "question": "Recycling of residual waste"
                     }
                 }
@@ -6852,21 +6855,24 @@
                         "then": "Plastic can be recycled here"
                     },
                     "17": {
-                        "then": "Scrap metal can be recycled here"
+                        "then": "Printer cartridges (inkjet/toner) can be recycled here"
                     },
                     "18": {
-                        "then": "Shoes can be recycled here"
+                        "then": "Scrap metal can be recycled here"
                     },
                     "19": {
-                        "then": "Small electrical appliances can be recycled here"
+                        "then": "Shoes can be recycled here"
                     },
                     "20": {
                         "then": "Small electrical appliances can be recycled here"
                     },
                     "21": {
-                        "then": "Needles can be recycled here"
+                        "then": "Small electrical appliances can be recycled here"
                     },
                     "22": {
+                        "then": "Needles can be recycled here"
+                    },
+                    "23": {
                         "then": "Residual waste can be recycled here"
                     }
                 },
