@@ -118,23 +118,6 @@ export class Translation extends BaseUIElement {
         return ""
     }
 
-    /**
-     *
-     * // Should actually change the content based on the current language
-     * const tr = new Translation({"en":"English", nl: "Nederlands"})
-     * Locale.language.setData("en")
-     * const html = tr.InnerConstructElement()
-     * html.innerHTML // => "English"
-     * Locale.language.setData("nl")
-     * html.innerHTML // => "Nederlands"
-     *
-     * // Should include a link to weblate if context is set
-     * const tr = new Translation({"en":"English"}, "core:test.xyz")
-     * Locale.language.setData("nl")
-     * Locale.showLinkToWeblate.setData(true)
-     * const html = tr.InnerConstructElement()
-     * html.getElementsByTagName("a")[0].href // => "https://hosted.weblate.org/translate/mapcomplete/core/nl/?offset=1&q=context%3A%3D%22test.xyz%22"
-     */
     InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
         const self = this

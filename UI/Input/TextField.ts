@@ -57,29 +57,6 @@ export class TextField extends InputElement<string> {
         return this._isValid(t)
     }
 
-    /**
-     *
-     * // should update placeholders dynamically
-     * const placeholder = new UIEventSource<string>("placeholder")
-     * const tf = new TextField({
-     *     placeholder
-     * })
-     * const html = <HTMLInputElement> tf.InnerConstructElement().children[0];
-     * html.placeholder // => 'placeholder'
-     * placeholder.setData("another piece of text")
-     * html.placeholder// => "another piece of text"
-     *
-     * // should update translated placeholders dynamically
-     * const placeholder = new Translation({nl: "Nederlands", en: "English"})
-     * Locale.language.setData("nl");
-     * const tf = new TextField({
-     *     placeholder
-     * })
-     * const html = <HTMLInputElement> tf.InnerConstructElement().children[0];
-     * html.placeholder// => "Nederlands"
-     * Locale.language.setData("en");
-     * html.placeholder // => 'English'
-     */
     protected InnerConstructElement(): HTMLElement {
         const options = this._options
         const self = this
