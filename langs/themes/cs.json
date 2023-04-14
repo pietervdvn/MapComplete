@@ -1,4 +1,9 @@
 {
+    "advertising": {
+        "description": "Přemýšleli jste někdy o tom, kolik je v našich ulicích a na silnicích reklam? Pomocí této mapy můžete najít a doplnit informace o všech reklamních prvcích, které můžete na ulici najít",
+        "shortDescription": "Kde najdu reklamní objekty?",
+        "title": "Otevřít reklamní mapu"
+    },
     "aed": {
         "description": "Na této mapě lze najít a označit defibrilátory v okolí",
         "title": "Open AED Mapa"

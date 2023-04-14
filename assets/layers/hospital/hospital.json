@@ -56,27 +56,31 @@
       "id": "inpatient",
       "question": {
         "en": "Does this facility admit inpatients?",
-        "de": "Nimmt die Einrichtung stationäre Patienten auf?"
+        "de": "Nimmt die Einrichtung stationäre Patienten auf?",
+        "ca": "Aquesta instal·lació admet hospitalitzacions?"
       },
       "mappings": [
         {
           "if": "amenity=clinic",
           "then": {
             "en": "This is a clinic - patients can not stay overnight",
-            "de": "Dies ist ein Medizinisches Versorgungszentrum - Patienten können nicht über Nacht bleiben"
+            "de": "Dies ist ein Medizinisches Versorgungszentrum - Patienten können nicht über Nacht bleiben",
+            "ca": "Açò és una clínica: els pacients no poden passar la nit"
           }
         },
         {
           "if": "amenity=hospital",
           "then": {
             "en": "This is a hospital - patients can be admitted here for multiple days",
-            "de": "Dies ist ein Krankenhaus - Patienten können hier für mehrere Tage aufgenommen werden"
+            "de": "Dies ist ein Krankenhaus - Patienten können hier für mehrere Tage aufgenommen werden",
+            "ca": "Es tracta d'un hospital: els pacients poden estar ingressats aquí durant diversos dies"
           }
         }
       ],
       "questionHint": {
         "en": "An inpatient is a patient which stays for multiple days in the facility",
-        "de": "Ein stationärer Patient ist ein Patient, der mehrere Tage in der Einrichtung bleibt"
+        "de": "Ein stationärer Patient ist ein Patient, der mehrere Tage in der Einrichtung bleibt",
+        "ca": "Un pacient hospitalitzat és un pacient que roman diversos dies a la instal·lació"
       }
     },
     "phone",

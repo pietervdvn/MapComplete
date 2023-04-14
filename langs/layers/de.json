@@ -24,6 +24,217 @@
             "render": "Bekannte Adresse"
         }
     },
+    "advertising": {
+        "description": "Wir vervollständigen Daten von Werbeanlagen mit Referenz-, Betreiber- und Beleuchtungsdaten",
+        "name": "Werbeeinrichtungen",
+        "presets": {
+            "0": {
+                "description": "Eine große Außenwerbung, die typischerweise in stark befahrenen Gebieten, z. B. entlang stark befahrener Straßen, zu finden ist",
+                "title": "eine Werbetafel"
+            },
+            "1": {
+                "title": "eine freistehende Posterbox"
+            },
+            "2": {
+                "title": "eine wandmontierte Posterbox"
+            },
+            "3": {
+                "description": "Kleines Anschlagbrett für Nachbarschaftswerbung, normalerweise an Fußgänger gerichtet",
+                "title": "ein Anschlagbrett"
+            },
+            "4": {
+                "description": "Eine zylindrische Struktur im Freien, die Werbung zeigt",
+                "title": "eine Litfaßsäule"
+            },
+            "5": {
+                "title": "eine Flagge"
+            },
+            "6": {
+                "title": "einen Bildschirm"
+            },
+            "7": {
+                "title": "ein wandmontierter Bildschirm"
+            },
+            "8": {
+                "description": "Ein wasserfestes Textil mit einer aufgedruckten Botschaft, das dauerhaft an einer Wand verankert ist",
+                "title": "eine Plane"
+            },
+            "9": {
+                "title": "ein Totem"
+            },
+            "10": {
+                "description": "Verwendet für Werbeschilder, Leuchtreklamen, Logos und institutionelle Eingangsschilder",
+                "title": "ein Schild"
+            },
+            "11": {
+                "title": "eine Skulptur"
+            },
+            "12": {
+                "title": "eine Wandmalerei"
+            }
+        },
+        "tagRenderings": {
+            "Sides": {
+                "mappings": {
+                    "0": {
+                        "then": "Werbung wird nur auf einer Seite angezeigt"
+                    },
+                    "1": {
+                        "then": "Werbung wird auf beiden Seiten angezeigt"
+                    }
+                },
+                "question": "Auf wie vielen Seiten wird Werbung angezeigt?"
+            },
+            "animated": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Statische Anzeige</b>, zeigt immer die gleiche Werbung"
+                    },
+                    "1": {
+                        "then": "<b>Digitale Anzeige</b>, zeigt Preise oder anderen Mitteilungen"
+                    },
+                    "2": {
+                        "then": "<b>Trivision Anzeige</b>, zeigt Werbung auf dreieckigen Prismen, die sich regelmäßig drehen"
+                    },
+                    "3": {
+                        "then": "<b>Rollierende Anzeige</b>, zeigt abwechselnd durchlaufende Werbeplakate"
+                    },
+                    "4": {
+                        "then": "<b>Drehende Anzeige</b>, die um die eigene Achse rotiert"
+                    }
+                },
+                "question": "Werden mehrere Werbungen abwechselnd angezeigt?"
+            },
+            "luminous_or_lit_advertising": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "Dies ist eine Neonröhrenleuchte"
+                        }
+                    }
+                }
+            },
+            "message_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Werbebotschaft"
+                    },
+                    "1": {
+                        "then": "Lokale Informationen"
+                    },
+                    "2": {
+                        "then": "Sicherheitsinformationen"
+                    },
+                    "3": {
+                        "then": "Wahlwerbung"
+                    },
+                    "4": {
+                        "then": "Informationen über Theater, Konzerte, ..."
+                    },
+                    "5": {
+                        "then": "Nachricht von gemeinnützigen Organisationen"
+                    },
+                    "6": {
+                        "then": "Um Ihre Meinung zu äußern"
+                    },
+                    "7": {
+                        "then": "Religiöse Botschaft"
+                    },
+                    "8": {
+                        "then": "Finanzierungsschild"
+                    },
+                    "9": {
+                        "then": "eine Karte"
+                    }
+                },
+                "question": "Welche Art von Nachricht wird angezeigt?"
+            },
+            "operator": {
+                "question": "Wer betreibt dieses Objekt?",
+                "render": "Betrieben von {operator}"
+            },
+            "ref": {
+                "question": "Wie lautet die Referenznummer?",
+                "render": "Die Referenznummer lautet {ref}"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Dies ist eine Werbetafel"
+                    },
+                    "1": {
+                        "then": "Dies ist ein Brett"
+                    },
+                    "2": {
+                        "then": "Dies ist eine Litfaßsäule"
+                    },
+                    "3": {
+                        "then": "Dies ist eine Flagge"
+                    },
+                    "4": {
+                        "then": "Dies ist eine Posterbox"
+                    },
+                    "5": {
+                        "then": "Dies ist ein Bildschirm"
+                    },
+                    "6": {
+                        "then": "Dies ist eine Skulptur"
+                    },
+                    "7": {
+                        "then": "Dies ist ein Schild"
+                    },
+                    "8": {
+                        "then": "Dies ist eine Plane (ein wetterfestes Textilstück mit einer Werbebotschaft)"
+                    },
+                    "9": {
+                        "then": "Dies ist ein Totem"
+                    },
+                    "10": {
+                        "then": "Dies ist eine Wandmalerei"
+                    }
+                },
+                "question": "Welche Art von Werbung ist das?",
+                "render": "Das ist ein/e {advertising}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Werbetafel"
+                },
+                "1": {
+                    "then": "Brett"
+                },
+                "2": {
+                    "then": "Posterbox"
+                },
+                "3": {
+                    "then": "Litfaßsäule"
+                },
+                "4": {
+                    "then": "Flagge"
+                },
+                "5": {
+                    "then": "Bildschirm"
+                },
+                "6": {
+                    "then": "Skulptur"
+                },
+                "7": {
+                    "then": "Schild"
+                },
+                "8": {
+                    "then": "Plane"
+                },
+                "9": {
+                    "then": "Totem"
+                },
+                "10": {
+                    "then": "Wandmalerei"
+                }
+            }
+        }
+    },
     "ambulancestation": {
         "description": "Eine Rettungswache ist ein Ort, an dem Rettungsfahrzeuge, medizinische Ausrüstung, persönliche Schutzausrüstung und anderes medizinisches Material untergebracht sind.",
         "name": "Rettungswachen",
@@ -436,9 +647,12 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Die Sitzbank hat eine Rückenlehne"
+                        "then": "Diese Bank ist zweiseitig und teilt sich die Rückenlehne"
                     },
                     "1": {
+                        "then": "Die Sitzbank hat eine Rückenlehne"
+                    },
+                    "2": {
                         "then": "Die Sitzbank hat <b>keine</b> Rückenlehne"
                     }
                 },
@@ -2990,7 +3204,7 @@
                         "then": "Diese Uhr ist aus etwa 20 Metern Entfernung sichtbar (mittelgroße Plakatuhr)"
                     },
                     "2": {
-                        "then": "Diese Uhr ist aus mehr als 20 Metern Entfernung sichtbar (Kirchenuhr)"
+                        "then": "Diese Uhr ist aus mehr als 20 Metern Entfernung sichtbar (Kirchuhr, Bahnhofsuhr)"
                     }
                 },
                 "question": "Wie sichtbar ist diese Uhr?"
@@ -6718,6 +6932,9 @@
                     },
                     "19": {
                         "question": "Recycling von Elektrokleingeräten"
+                    },
+                    "20": {
+                        "question": "Recycling von Restabfällen"
                     },
                     "20": {
                         "question": "Recycling von Restabfällen"

@@ -346,10 +346,10 @@
             },
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Dossier : Oui"
                     },
-                    "1": {
+                    "2": {
                         "then": "Dossier : Non"
                     }
                 },

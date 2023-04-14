@@ -1,0 +1,1172 @@
+{
+  "id": "advertising",
+  "name": {
+    "ca": "Publicitat",
+    "es": "Publicidad",
+    "en": "Advertise",
+    "de": "Werbeeinrichtungen",
+    "cs": "Reklama"
+  },
+  "minzoom": 15,
+  "source": {
+    "osmTags": "advertising~*"
+  },
+  "title": {
+    "render": {
+      "*": "{advertising}"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "advertising=billboard"
+          ]
+        },
+        "then": {
+          "ca": "Tanca publicitària",
+          "es": "Valla publicitaria",
+          "en": "Billboard",
+          "de": "Werbetafel",
+          "cs": "Billboard"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "advertising=board"
+          ]
+        },
+        "then": {
+          "ca": "Tauló d'anuncis",
+          "es": "Tablon de anuncios",
+          "en": "Board",
+          "de": "Brett",
+          "cs": "Deska"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "advertising=poster_box"
+          ]
+        },
+        "then": {
+          "ca": "Mupi",
+          "es": "Mupi",
+          "en": "Poster Box",
+          "de": "Posterbox",
+          "cs": "Skříň na plakáty"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "advertising=column"
+          ]
+        },
+        "then": {
+          "ca": "Columna",
+          "es": "Columna",
+          "en": "Column",
+          "de": "Litfaßsäule",
+          "cs": "Sloup"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "advertising=flag"
+          ]
+        },
+        "then": {
+          "ca": "Bandera",
+          "es": "Bandera",
+          "en": "Flag",
+          "de": "Flagge",
+          "cs": "Vlajka"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "advertising=screen"
+          ]
+        },
+        "then": {
+          "ca": "Pantalla",
+          "es": "Pantalla",
+          "en": "Screen",
+          "de": "Bildschirm",
+          "cs": "Obrazovka"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "advertising=sculpture"
+          ]
+        },
+        "then": {
+          "ca": "Esculptura",
+          "es": "Escultura",
+          "en": "Sculpture",
+          "de": "Skulptur",
+          "cs": "Socha"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "advertising=sign"
+          ]
+        },
+        "then": {
+          "ca": "Cartell",
+          "es": "Cartel",
+          "en": "Sign",
+          "de": "Schild",
+          "cs": "Cedule"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "advertising=tarp"
+          ]
+        },
+        "then": {
+          "ca": "Lona",
+          "es": "Lona",
+          "en": "Tarp",
+          "de": "Plane",
+          "cs": "Plachta"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "advertising=totem"
+          ]
+        },
+        "then": {
+          "ca": "Tòtem",
+          "es": "Tótem",
+          "en": "Totem",
+          "de": "Totem",
+          "cs": "Totem"
+        }
+      },
+      {
+        "if": {
+          "and": [
+            "advertising=wall_painting"
+          ]
+        },
+        "then": {
+          "ca": "Paret Pintada",
+          "es": "Pared Pintada",
+          "en": "Wall painting",
+          "de": "Wandmalerei",
+          "cs": "Nástěnná malba"
+        }
+      }
+    ]
+  },
+  "description": {
+    "ca": "Completarem les dades dels elements publicitaris amb referència, operador i il·luminació",
+    "es": "Completaremos los datos de los elementos publicitarios con referencia, operador y iluminación",
+    "en": "We will complete data from advertising features with reference, operator and lit",
+    "de": "Wir vervollständigen Daten von Werbeanlagen mit Referenz-, Betreiber- und Beleuchtungsdaten",
+    "cs": "Doplníme údaje z reklamních prvků s referencemi, provozovatelem a osvětlením"
+  },
+  "tagRenderings": [
+    "images",
+    {
+      "id": "type",
+      "render": {
+        "ca": "Açò és un {advertising}",
+        "es": "Esto es un {advertising}",
+        "en": "This is a {advertising}",
+        "de": "Das ist ein/e {advertising}",
+        "cs": "Toto je {advertising}"
+      },
+      "question": {
+        "ca": "Quin tipus d'element publicitari és aquest?",
+        "es": "¿Qué tipo de elemento publicitario es?",
+        "en": "Which type of advertising feature is this?",
+        "de": "Welche Art von Werbung ist das?",
+        "cs": "O jaký typ reklamního prvku se jedná?"
+      },
+      "freeform": {
+        "key": "advertising"
+      },
+      "mappings": [
+        {
+          "if": {
+            "and": [
+              "advertising=billboard"
+            ]
+          },
+          "then": {
+            "ca": "Açò és una tanca publicitària",
+            "es": "Esto es una valla publicitaria",
+            "en": "This is a billboard",
+            "de": "Dies ist eine Werbetafel",
+            "cs": "Toto je billboard"
+          },
+          "icon": {
+            "path": "./assets/themes/advertising/billboard.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "advertising=board"
+            ]
+          },
+          "then": {
+            "ca": "Açò és un tauló d'anunis",
+            "es": "Esto es un tablón de anuncios",
+            "en": "This is a board",
+            "de": "Dies ist ein Brett",
+            "cs": "Toto je deska"
+          },
+          "icon": {
+            "path": "./assets/themes/advertising/board.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "advertising=column"
+            ]
+          },
+          "then": {
+            "ca": "Açò és una columna",
+            "es": "Esto es una columna",
+            "en": "This is a column",
+            "de": "Dies ist eine Litfaßsäule",
+            "cs": "Toto je sloup"
+          },
+          "icon": {
+            "path": "./assets/themes/advertising/column.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "advertising=flag"
+            ]
+          },
+          "then": {
+            "ca": "Açò és una bandera",
+            "es": "Esto es una bndera",
+            "en": "This is a flag",
+            "de": "Dies ist eine Flagge",
+            "cs": "Toto je vlajka"
+          },
+          "icon": {
+            "path": "./assets/themes/advertising/flag.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "advertising=poster_box"
+            ]
+          },
+          "then": {
+            "ca": "Açò és un mupi",
+            "es": "Esto es un mupi",
+            "en": "This is a poster Box",
+            "de": "Dies ist eine Posterbox",
+            "cs": "Toto je skříň na plakáty"
+          },
+          "icon": {
+            "path": "./assets/themes/advertising/poster_box.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "advertising=screen"
+            ]
+          },
+          "then": {
+            "ca": "Açò és una pantalla",
+            "es": "Esto es una pantalla",
+            "en": "This is a screen",
+            "de": "Dies ist ein Bildschirm",
+            "cs": "Toto je obrazovka"
+          },
+          "icon": {
+            "path": "./assets/themes/advertising/screen.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "advertising=sculpture"
+            ]
+          },
+          "then": {
+            "ca": "Açò és una esculptura",
+            "es": "Esto es una escultura",
+            "en": "This is a sculpture",
+            "de": "Dies ist eine Skulptur",
+            "cs": "Toto je socha"
+          },
+          "icon": {
+            "path": "./assets/themes/advertising/sculpture.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "advertising=sign"
+            ]
+          },
+          "then": {
+            "ca": "Açò és un cartell",
+            "es": "Esto es un cartel",
+            "en": "This is a sign",
+            "de": "Dies ist ein Schild",
+            "cs": "Toto je cedule"
+          },
+          "icon": {
+            "path": "./assets/themes/advertising/sign.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "advertising=tarp"
+            ]
+          },
+          "then": {
+            "ca": "Açò és una lona (una peça de tèxtil impermeable amb un missatge publicitari)",
+            "es": "Esto es una lona (una pieza de tela resistente a la intemperie con un mensaje publicitario)",
+            "en": "This is a tarp (a weatherproof piece of textile with an advertising message)",
+            "de": "Dies ist eine Plane (ein wetterfestes Textilstück mit einer Werbebotschaft)",
+            "cs": "Toto je plachta (kus textilu s reklamním sdělením odolný proti povětrnostním vlivům)"
+          },
+          "icon": {
+            "path": "./assets/themes/advertising/tarp.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "advertising=totem"
+            ]
+          },
+          "then": {
+            "ca": "Açò és un tòtem",
+            "es": "Esto es un tótem",
+            "en": "This is a totem",
+            "de": "Dies ist ein Totem",
+            "cs": "Toto je totem"
+          },
+          "icon": {
+            "path": "./assets/themes/advertising/totem.svg",
+            "class": "medium"
+          }
+        },
+        {
+          "if": {
+            "and": [
+              "advertising=wall_painting"
+            ]
+          },
+          "then": {
+            "ca": "Açò és una paret pintada",
+            "es": "Esto es una pared pintada",
+            "en": "This is a wall painting",
+            "de": "Dies ist eine Wandmalerei",
+            "cs": "Toto je nástěnná malba"
+          },
+          "icon": {
+            "path": "./assets/themes/advertising/wall_painting.svg",
+            "class": "medium"
+          }
+        }
+      ]
+    },
+    {
+      "id": "animated",
+      "question": {
+        "ca": "Com canvien els anuncis d'aquest element?",
+        "es": "¿Como cambian los anuncios de este elemento?",
+        "en": "Does this advertisement cycle through multiple messages?",
+        "de": "Werden mehrere Werbungen abwechselnd angezeigt?",
+        "cs": "Zobrazuje tato reklama cyklicky několik zpráv?"
+      },
+      "condition": {
+        "#": "Screens are _always_ animated; flags, tarps, and wall_paintings cannot be animated; signs can be anything so we don't make guesses",
+        "and": [
+          "advertising!=screen",
+          "advertising!=flag",
+          "advertising!=tarp",
+          "advertising!=wall_painting",
+          "advertising!=sign",
+          "advertising!=board"
+        ]
+      },
+      "mappings": [
+        {
+          "if": "animated=no",
+          "then": {
+            "ca": "<b>Estàtic</b>, sempre mostra el mateix missatge",
+            "es": "<b>Estático</b>, siempre muestra el mismo mensaje",
+            "en": "<b>Static</b>, always shows the same message",
+            "de": "<b>Statische Anzeige</b>, zeigt immer die gleiche Werbung",
+            "cs": "<b>Statická reklama</b>, která stále zobrazuje stejnou zprávu"
+          }
+        },
+        {
+          "if": "animated=digital_display",
+          "then": {
+            "en": "This object has a built-in <b>digital display</b> to show prices or some other message",
+            "ca": "Aquest objecte té una <b>pantalla digital</b> integrada per a mostrar els preus o algun altre missatge",
+            "es": "Este objeto tiene una <b>pantalla digital</b> incorporada para mostrar precios o algún otro mensaje",
+            "de": "<b>Digitale Anzeige</b>, zeigt Preise oder anderen Mitteilungen",
+            "cs": "Tento objekt má vestavěný <b>digitální displej</b> pro zobrazení cen nebo jiné zprávy"
+          },
+          "hideInAnswer": {
+            "and": [
+              "advertising!=billboard",
+              "advertising!=poster_box",
+              "advertising!=totem",
+              "advertising!=column"
+            ]
+          }
+        },
+        {
+          "if": "animated=trivision_blades",
+          "then": {
+            "ca": "<b>Trivision</b> - la tanca publicitària consta de molts prismes triangulars que giren regularment",
+            "es": "<b>Trivision</b> - la valla publicitaria consta de muchos prismas triangulares que giran regularmente",
+            "en": "<b>Trivision</b> - the billboard consists of many triangular prisms which regularly rotate",
+            "de": "<b>Trivision Anzeige</b>, zeigt Werbung auf dreieckigen Prismen, die sich regelmäßig drehen",
+            "cs": "<b>Trivision</b> - billboard se skládá z několika trojúhelníkových hranolů, které se pravidelně otáčejí"
+          },
+          "icon": {
+            "class": "large",
+            "path": "./assets/themes/advertising/trivision.svg"
+          },
+          "#": "Only applicable to billboards",
+          "hideInAnswer": "advertising!=billboard"
+        },
+        {
+          "if": "animated=winding_posters",
+          "then": {
+            "ca": "Cartells <b>Rotatius</b>",
+            "es": "Cartells <b>Rotatius</b>",
+            "en": "<b>Scrolling</b> posters",
+            "de": "<b>Rollierende Anzeige</b>, zeigt abwechselnd durchlaufende Werbeplakate",
+            "cs": "<b>Rolující</b> plakáty"
+          },
+          "hideInAnswer": {
+            "and": [
+              "advertising!=poster_box",
+              "advertising!=column"
+            ]
+          }
+        },
+        {
+          "if": "animated=revolving",
+          "then": {
+            "ca": "<b>Rota</b> sobre si mateix",
+            "es": "<b>Rota</b> sobre si mismo",
+            "en": "<b>Rotates</b> on itself",
+            "de": "<b>Drehende Anzeige</b>, die um die eigene Achse rotiert",
+            "cs": "Sám se <b>otáčí</b>"
+          },
+          "hideInAnswer": {
+            "and": [
+              "advertising!=totem",
+              "advertising!=column",
+              "advertising!=poster_box"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "luminous_or_lit_advertising",
+      "builtin": "luminous_or_lit",
+      "override": {
+        "+mappings": [
+          {
+            "if": "luminous=neon",
+            "then": {
+              "en": "This is a neon-tube light",
+              "ca": "Aquesta és una llum de tub de neó",
+              "es": "Esta es una luz de tubo de neón.",
+              "de": "Dies ist eine Neonröhrenleuchte",
+              "cs": "Jedná se o neonové světlo"
+            },
+            "hideInAnswer": "advertising!=sign"
+          }
+        ],
+        "condition": {
+          "#": "A screen is always luminous",
+          "and": [
+            "advertising!=screen"
+          ]
+        }
+      }
+    },
+    {
+      "id": "operator",
+      "render": {
+        "ca": "L'operador és {operator}",
+        "es": "El operador es {operator}",
+        "en": "Operated by {operator}",
+        "de": "Betrieben von {operator}",
+        "cs": "Provozuje {operator}"
+      },
+      "question": {
+        "ca": "Qui opera aquest element?",
+        "es": "¿Quien opera este elemento?",
+        "en": "Who operates this feature?",
+        "de": "Wer betreibt dieses Objekt?",
+        "cs": "Kdo tento objekt provozuje?"
+      },
+      "freeform": {
+        "addExtraTags": [],
+        "key": "operator"
+      }
+    },
+    {
+      "id": "message_type",
+      "question": {
+        "ca": "Quin tipus de missatge es mostra?",
+        "es": "Que tipo de mensaje se muestra?",
+        "en": "What kind of message is shown?",
+        "de": "Welche Art von Nachricht wird angezeigt?",
+        "cs": "Jaký typ zprávy je zobrazen?"
+      },
+      "mappings": [
+        {
+          "if": "message=commercial",
+          "ifnot": "message=",
+          "then": {
+            "ca": "Missatge comercial",
+            "es": "Mensaje comercial",
+            "en": "Commercial message",
+            "de": "Werbebotschaft",
+            "cs": "Komerční sdělení"
+          }
+        },
+        {
+          "if": "message=local",
+          "ifnot": "message=",
+          "then": {
+            "ca": "Informació municipal",
+            "es": "Información municipal",
+            "en": "Local information",
+            "de": "Lokale Informationen",
+            "cs": "Místní informace"
+          }
+        },
+        {
+          "if": "message=safety",
+          "ifnot": "message=",
+          "then": {
+            "ca": "Informació de seguretat",
+            "es": "Información de seguridad",
+            "en": "Securty information",
+            "de": "Sicherheitsinformationen",
+            "cs": "Bezpečnostní informace"
+          },
+          "hideInAnswer": {
+            "and": [
+              "advertising=flag"
+            ]
+          }
+        },
+        {
+          "if": "message=political",
+          "ifnot": "message=",
+          "then": {
+            "ca": "Publicitat electoral",
+            "es": "Publicidad electoral",
+            "en": "Electoral advertising",
+            "de": "Wahlwerbung",
+            "cs": "Volební reklama"
+          }
+        },
+        {
+          "if": "message=showbiz",
+          "ifnot": "message=",
+          "then": {
+            "ca": "Informació sobre teatres, concerts, ...",
+            "es": "Información sobre teatros, conciertos, ...",
+            "en": "Inormation related to theatre, concerts, ...",
+            "de": "Informationen über Theater, Konzerte, ...",
+            "cs": "Informace týkající se divadla, koncertů, ..."
+          },
+          "hideInAnswer": {
+            "and": [
+              "advertising=flag"
+            ]
+          }
+        },
+        {
+          "if": "message=non_profit",
+          "ifnot": "message=",
+          "then": {
+            "ca": "Missatge d'organitzacions sense ànim de lucre",
+            "es": "Mensaje de organizaciones sin ánimo de lucro",
+            "en": "Message from non-profit organizations",
+            "de": "Nachricht von gemeinnützigen Organisationen",
+            "cs": "Zpráva od neziskových organizací"
+          }
+        },
+        {
+          "if": "message=opinion",
+          "ifnot": "message=",
+          "then": {
+            "ca": "Per a expressar la teua opinió",
+            "es": "Para expresar tu opinión",
+            "en": "To expres your opinion",
+            "de": "Um Ihre Meinung zu äußern",
+            "cs": "Pro vyjádření vašeho názoru"
+          },
+          "hideInAnswer": {
+            "or": [
+              "advertising=flag",
+              "advertising=screen"
+            ]
+          }
+        },
+        {
+          "if": "message=religion",
+          "ifnot": "message=",
+          "then": {
+            "ca": "Missatge religiós",
+            "es": "Mensaje religioso",
+            "en": "Religious message",
+            "de": "Religiöse Botschaft",
+            "cs": "Náboženská zpráva"
+          }
+        },
+        {
+          "if": "message=funding",
+          "ifnot": "message=",
+          "then": {
+            "ca": "Cartell de financiació",
+            "es": "Cartel de financiación",
+            "en": "Funding sign",
+            "de": "Finanzierungsschild",
+            "cs": "Cedule pro financování"
+          },
+          "hideInAnswer": {
+            "or": [
+              "advertising=flag",
+              "advertising=column"
+            ]
+          }
+        },
+        {
+          "if": "information=map",
+          "ifnot": "information=",
+          "then": {
+            "en": "A map",
+            "ca": "un mapa",
+            "es": "un mapa",
+            "de": "eine Karte",
+            "cs": "Mapa"
+          }
+        }
+      ],
+      "multiAnswer": true
+    },
+    {
+      "id": "Sides",
+      "condition": {
+        "and": [
+          "_referencing_ways=",
+          {
+            "or": [
+              "advertising=poster_box",
+              "advertising=screen",
+              "advertising=billboard"
+            ]
+          }
+        ]
+      },
+      "question": {
+        "ca": "Per quants costats pots veure publicitat?",
+        "es": "¿Por cuantos lados puedes ver publicidad?",
+        "en": "From how many sides you can watch advertisments?",
+        "de": "Auf wie vielen Seiten wird Werbung angezeigt?",
+        "cs": "Z kolika stran můžete vidět reklamy?"
+      },
+      "mappings": [
+        {
+          "if": "sides=1",
+          "then": {
+            "en": "This object has advertisements on a single side",
+            "ca": "Aquest mupi té publicitat a un únic costat",
+            "es": "Este mupi tiene publicidad en un único lado",
+            "de": "Werbung wird nur auf einer Seite angezeigt",
+            "cs": "Tento objekt má reklamy na jedné straně"
+          }
+        },
+        {
+          "if": "sides=2",
+          "then": {
+            "en": "This object has advertisements on both sides",
+            "ca": "Aquest mupi té publicitat pels dos costas",
+            "es": "Este mupi tiene publicidad por los dos lados",
+            "de": "Werbung wird auf beiden Seiten angezeigt",
+            "cs": "Tento objekt má reklamy na obou stranách"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ref",
+      "render": {
+        "ca": "El número de referència és {ref}",
+        "es": "El número de referencia es {ref}",
+        "en": "Reference number is {ref}",
+        "de": "Die Referenznummer lautet {ref}",
+        "cs": "Referenční číslo je {ref}"
+      },
+      "question": {
+        "ca": "Quin és el número de refèrencia?",
+        "es": "¿Cual es el número de referencia?",
+        "en": "Wich is the reference number?",
+        "de": "Wie lautet die Referenznummer?",
+        "cs": "Jaké je referenční číslo?"
+      },
+      "freeform": {
+        "key": "ref"
+      },
+      "condition": {
+        "and": [
+          "advertising!=sign"
+        ]
+      }
+    }
+  ],
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": {
+        "render": "./assets/themes/advertising/sign.svg",
+        "mappings": [
+          {
+            "if": {
+              "or": [
+                "advertising=billboard"
+              ]
+            },
+            "then": "./assets/themes/advertising/billboard.svg"
+          },
+          {
+            "if": "advertising=board",
+            "then": "./assets/themes/advertising/board.svg"
+          },
+          {
+            "if": "advertising=column",
+            "then": "./assets/themes/advertising/column.svg"
+          },
+          {
+            "if": "advertising=flag",
+            "then": "./assets/themes/advertising/flag.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "advertising=poster_box",
+                "_referencing_ways=[\"way/-1\"]"
+              ]
+            },
+            "then": "brick_wall_square;./assets/themes/advertising/poster_box_no_support.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "advertising=poster_box",
+                "_referencing_ways~*"
+              ]
+            },
+            "then": "./assets/themes/advertising/poster_box_no_support.svg"
+          },
+          {
+            "if": "advertising=poster_box",
+            "then": "./assets/themes/advertising/poster_box.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "advertising=screen",
+                "_referencing_ways=[\"way/-1\"]"
+              ]
+            },
+            "then": "brick_wall_square;./assets/themes/advertising/screen_no_support.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "advertising=screen",
+                "_referencing_ways~*"
+              ]
+            },
+            "then": "./assets/themes/advertising/screen_no_support.svg"
+          },
+          {
+            "if": "advertising=screen",
+            "then": "./assets/themes/advertising/screen.svg"
+          },
+          {
+            "if": "advertising=sculpture",
+            "then": "./assets/themes/advertising/sculpture.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "advertising=sign",
+                "_referencing_ways=[\"way/-1\"]"
+              ]
+            },
+            "then": "brick_wall_square;./assets/themes/advertising/sign.svg"
+          },
+          {
+            "if": "advertising=sign",
+            "then": "./assets/themes/advertising/sign.svg"
+          },
+          {
+            "if": "advertising=tarp",
+            "then": "./assets/themes/advertising/tarp.svg"
+          },
+          {
+            "if": "advertising=totem",
+            "then": "./assets/themes/advertising/totem.svg"
+          },
+          {
+            "if": "advertising=wall_painting",
+            "then": "./assets/themes/advertising/wall_painting.svg"
+          }
+        ]
+      },
+      "iconSize": {
+        "render": "40,40,bottom",
+        "mappings": [
+          {
+            "if": "_referencing_ways~*",
+            "then": "40,40,center"
+          },
+          {
+            "if": "advertising=flag",
+            "then": "60,60,bottom"
+          },
+          {
+            "if": "advertising=sculpture",
+            "then": "50,50,bottom"
+          }
+        ]
+      }
+    },
+    {
+      "width": {
+        "render": "8"
+      },
+      "color": {
+        "render": "#00f"
+      }
+    }
+  ],
+  "allowMove": {
+    "enableImproveAccuracy": true,
+    "enableRelocation": false
+  },
+  "deletion": true,
+  "presets": [
+    {
+      "tags": [
+        "advertising=billboard"
+      ],
+      "title": {
+        "en": "a billboard",
+        "ca": "una tanca publicitària",
+        "es": "una valla publicitària",
+        "de": "eine Werbetafel",
+        "cs": "billboard"
+      },
+      "description": {
+        "en": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads",
+        "ca": "Una estructura publicitària gran a l'exterior, que normalment es troba a zones transitades com ara al costat de carreteres amb molta intensitat",
+        "es": "Una estructura publicitaria grande al aire libre, que normalmente se encuentra en áreas transitadas como carreteras con mucha intensidad",
+        "de": "Eine große Außenwerbung, die typischerweise in stark befahrenen Gebieten, z. B. entlang stark befahrener Straßen, zu finden ist",
+        "cs": "Velká venkovní reklamní konstrukce, která se obvykle nachází na místech s velkým provozem, například podél frekventovaných silnic"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/KFC_Billboard.jpg",
+        "./assets/themes/advertising/LIDL_Billboard.jpg",
+        "./assets/themes/advertising/Repsol_Billboard.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=poster_box"
+      ],
+      "title": {
+        "en": "a freestanding poster box",
+        "ca": "un mupi",
+        "es": "un mupi",
+        "de": "eine freistehende Posterbox",
+        "cs": "volně stojící plakátovací skříň"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/Mupi_spain.jpg",
+        "./assets/themes/advertising/Mupi_Alcoi.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=poster_box"
+      ],
+      "title": {
+        "en": "a poster box mounted on a wall",
+        "ca": "un mupi sobre la paret",
+        "es": "un mupi sobre la pared",
+        "de": "eine wandmontierte Posterbox",
+        "cs": "plakátovací skříň připevněná na stěnu"
+      },
+      "preciseInput": {
+        "snapToLayer": "walls_and_buildings"
+      }
+    },
+    {
+      "tags": [
+        "advertising=board"
+      ],
+      "title": {
+        "ca": "un tauló d'anunis",
+        "es": "un tablón de anuncios",
+        "en": "a billboard",
+        "de": "ein Anschlagbrett",
+        "cs": "billboard"
+      },
+      "description": {
+        "en": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
+        "es": "Un pequeño tablón de anuncios para anuncios del vecindario, normalmente destinado a peatones",
+        "ca": "Un xicotet tauló d'anuncics per a anuncis del veïnat, normalment destitat a peatons",
+        "de": "Kleines Anschlagbrett für Nachbarschaftswerbung, normalerweise an Fußgänger gerichtet",
+        "cs": "Malý billboard pro sousedskou reklamu, zpravidla určený pro chodce"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/local_Board.jpg",
+        "./assets/themes/advertising/FGV_Founding.jpg",
+        "./assets/themes/advertising/Small_Board.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=column"
+      ],
+      "title": {
+        "ca": "una columna",
+        "es": "una columna",
+        "en": "a column",
+        "de": "eine Litfaßsäule",
+        "cs": "sloup"
+      },
+      "description": {
+        "en": "A cylindrical outdoor structure which shows advertisements",
+        "es": "Una estructura cilíndrica exterior que muestra publicidad",
+        "ca": "Una extructura cilíndica exterior que mostra publicitat",
+        "de": "Eine zylindrische Struktur im Freien, die Werbung zeigt",
+        "cs": "Válcová venkovní konstrukce, která zobrazuje reklamy"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/AdvertisingColumn_001.jpg",
+        "./assets/themes/advertising/AdvertisingColumn_003.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=flag",
+        "man_made=pole"
+      ],
+      "title": {
+        "ca": "una bandera",
+        "es": "una bandera",
+        "en": "a flag",
+        "de": "eine Flagge",
+        "cs": "vlajka"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/Advertising_flag.jpg",
+        "./assets/themes/advertising/JR_Central.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=screen"
+      ],
+      "title": {
+        "ca": "una pantalla",
+        "es": "una pantalla",
+        "en": "a screen",
+        "de": "einen Bildschirm",
+        "cs": "obrazovka"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/Screen_poster_box.jpg",
+        "./assets/themes/advertising/City-Light-Poster.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=screen"
+      ],
+      "title": {
+        "ca": "una patalla sobre una paret",
+        "es": "una pantalla sobre una pared",
+        "en": "a screen mounted on a wall",
+        "de": "ein wandmontierter Bildschirm",
+        "cs": "obrazovka připevněná na stěnu"
+      },
+      "preciseInput": {
+        "preferredBackground": "map",
+        "snapToLayer": "walls_and_buildings",
+        "maxSnapDistance": 5
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/Subway_screen.jpg",
+        "./assets/themes/advertising/TV_media.jpg",
+        "./assets/themes/advertising/Times square.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=tarp"
+      ],
+      "title": {
+        "ca": "una lona",
+        "es": "una lona",
+        "en": "a tarp",
+        "de": "eine Plane",
+        "cs": "plachta"
+      },
+      "description": {
+        "en": "A piece of waterproof textile with a printed message, permanently anchored on a wall",
+        "ca": "Una peça de tèxtil impermeable amb un missatge imprès, fixada permanentment a una paret",
+        "es": "Una pieza de tela impermeable con un mensaje impreso, anclada permanentemente en una pared",
+        "de": "Ein wasserfestes Textil mit einer aufgedruckten Botschaft, das dauerhaft an einer Wand verankert ist",
+        "cs": "Kus nepromokavého textilu s natištěným vzkazem, trvale připevněný na stěnu"
+      },
+      "preciseInput": {
+        "preferredBackground": "map",
+        "snapToLayer": "walls_and_buildings",
+        "maxSnapDistance": 5
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/tarp_feder.jpg",
+        "./assets/themes/advertising/tarp_madrid.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=totem"
+      ],
+      "title": {
+        "ca": "un tòtem",
+        "es": "un tótem",
+        "en": "a totem",
+        "de": "ein Totem",
+        "cs": "totem"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/AdvertisingTotem_004.jpg",
+        "./assets/themes/advertising/AdvertisingTotem_003.jpg",
+        "./assets/themes/advertising/Lidl_totem.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=sign"
+      ],
+      "title": {
+        "ca": "un lletrer",
+        "es": "un lletrer",
+        "en": "a sign",
+        "de": "ein Schild",
+        "cs": "cedule"
+      },
+      "preciseInput": {
+        "preferredBackground": "map",
+        "snapToLayer": "walls_and_buildings",
+        "maxSnapDistance": 5
+      },
+      "description": {
+        "en": "Used for advertising signs, neon signs, logos & institutional entrance signs",
+        "es": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
+        "ca": "S'utilitza per a cartells publicitaris, retols de neó, logotips i cartells en entrades institucionals",
+        "de": "Verwendet für Werbeschilder, Leuchtreklamen, Logos und institutionelle Eingangsschilder",
+        "cs": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/Waitrose_sign.jpg",
+        "./assets/themes/advertising/sign_EOI.jpg",
+        "./assets/themes/advertising/farma_sign.jpg"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=sculpture"
+      ],
+      "title": {
+        "ca": "una escupltura",
+        "es": "una escultura",
+        "en": "a sculpture",
+        "de": "eine Skulptur",
+        "cs": "socha"
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/Aircraft_Sculpture.jpg",
+        "./assets/themes/advertising/Mug.jpg",
+        "./assets/themes/advertising/BS.JPG"
+      ]
+    },
+    {
+      "tags": [
+        "advertising=wall_painting"
+      ],
+      "title": {
+        "ca": "una paret pintada",
+        "es": "una pared pintada",
+        "en": "a wall painting",
+        "de": "eine Wandmalerei",
+        "cs": "nástěnná malba"
+      },
+      "preciseInput": {
+        "preferredBackground": "map",
+        "snapToLayer": "walls_and_buildings",
+        "maxSnapDistance": 5
+      },
+      "exampleImages": [
+        "./assets/themes/advertising/Capitol_wall.jpg",
+        "./assets/themes/advertising/clarke_wall.jpg"
+      ]
+    }
+  ]
+}

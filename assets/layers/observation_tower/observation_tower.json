@@ -45,13 +45,15 @@
         "en": "What is the name of this tower?",
         "nl": "Heeft deze toren een naam?",
         "de": "Wie ist der Name des Turms?",
-        "es": "¿Cual es el nombre de esta torre?"
+        "es": "¿Cual es el nombre de esta torre?",
+        "ca": "Com s'anomena aquesta torre?"
       },
       "render": {
         "en": "This tower is called <b>{name}</b>",
         "nl": "Deze toren heet <b>{name}</b>",
         "de": "Der Name des Turms ist <b>{name}</b>",
-        "es": "Esta torre se llama <b>{name}</b>"
+        "es": "Esta torre se llama <b>{name}</b>",
+        "ca": "Aquesta torre s'anomena <b>{name}</b>"
       },
       "freeform": {
         "key": "name"
@@ -63,7 +65,8 @@
             "en": "This tower doesn't have a specific name",
             "nl": "Deze toren heeft geen specifieke naam",
             "de": "Der Turm hat keinen eigenen Namen",
-            "es": "Esta torre no tiene un nombre específico"
+            "es": "Esta torre no tiene un nombre específico",
+            "ca": "Aquesta torre no té un nom concret"
           }
         }
       ],
@@ -74,7 +77,8 @@
         "en": "What is the height of this tower?",
         "nl": "Hoe hoog is deze toren?",
         "de": "Wie hoch ist dieser Turm?",
-        "es": "¿Cual es la altura de esta torre?"
+        "es": "¿Cual es la altura de esta torre?",
+        "ca": "Quina és l'alçada d'aquesta torre?"
       },
       "render": {
         "en": "This tower is {height} high",
@@ -94,7 +98,8 @@
         "en": "Can this tower be visited?",
         "nl": "Is deze toren publiek toegankelijk?",
         "es": "¿Se puede visitar esta torre?",
-        "de": "Darf der Turm betreten werden?"
+        "de": "Darf der Turm betreten werden?",
+        "ca": "Es pot visitar aquesta torre?"
       },
       "mappings": [
         {
@@ -103,7 +108,8 @@
             "en": "This tower is publicly accessible",
             "nl": "Deze toren is publiek toegankelijk",
             "de": "Der Turm ist öffentlich zugänglich",
-            "es": "Esta torre es accesible públicamente"
+            "es": "Esta torre es accesible públicamente",
+            "ca": "Aquesta torre és d'accés públic"
           }
         },
         {
@@ -112,7 +118,8 @@
             "en": "This tower can only be visited with a guide",
             "nl": "Deze toren can enkel bezocht worden met een gids",
             "de": "Der Turm darf nur in Begleitung eines Führers betreten werden",
-            "es": "A esta torre solo se puede acceder con un guía"
+            "es": "A esta torre solo se puede acceder con un guía",
+            "ca": "Aquesta torre només es pot visitar amb un guia"
           }
         }
       ]
@@ -237,7 +244,8 @@
         "en": "Who maintains this tower?",
         "nl": "Wie onderhoudt deze toren?",
         "de": "Wer betreibt den Turm?",
-        "es": "¿Quién mantiene esta torre?"
+        "es": "¿Quién mantiene esta torre?",
+        "ca": "Qui manté aquesta torre?"
       },
       "render": {
         "nl": "Wordt onderhouden door <b>{operator}</b>",

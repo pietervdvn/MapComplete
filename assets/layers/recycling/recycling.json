@@ -547,7 +547,8 @@
             "en": "Waste disposal container for residual waste",
             "nl": "Afvalcontainer voor restafval",
             "de": "Dies ist ein Abfallbehälter für Restmüll",
-            "it": "Contenitore per lo smaltimento del secco"
+            "it": "Contenitore per lo smaltimento del secco",
+            "ca": "Contenidor per a residus no reciclables (fracció resta)"
           },
           "addExtraTags": [
             "recycling:batteries=",
@@ -941,8 +942,8 @@
           "if": "recycling:printer_cartridges=yes",
           "ifnot": "recycling:printer_cartridges=",
           "then": {
-            "en": "Printer cartridges (inkjet/toner) can be recycled here",
-            "nl": "Printer cartridges (inkjet/toner) kunnen hier gerecycled worden"
+            "en": "Printer cartridges can be recycled here",
+            "nl": "Inktpatronen kunnen hier gerecycleerd worden"
           },
           "icon": {
             "path": "./assets/layers/recycling/printer_cartridges.svg",
@@ -955,6 +956,7 @@
           "then": {
             "en": "Scrap metal can be recycled here",
             "nl": "Oud metaal kan hier gerecycled worden",
+            "ca": "Aquí es pot reciclar ferralla",
             "de": "Metallschrott kann hier recycelt werden",
             "es": "Aquí se puede reciclar chatarra",
             "it": "Rottami metallici"
@@ -988,7 +990,7 @@
             "nl": "Kleine elektrische apparaten kunnen hier gerecycled worden",
             "de": "Elektrokleingeräte können hier recycelt werden",
             "it": "Piccoli elettrodomestici",
-            "ca": "Aquí es poden reciclar petits aparells electrònics"
+            "ca": "Aquí es poden reciclar petits aparells elèctrics"
           },
           "icon": {
             "path": "./assets/layers/recycling/small_electrical_appliances.svg",
@@ -1018,7 +1020,8 @@
             "en": "Needles can be recycled here",
             "nl": "Injectienaalden kunnen hier gerecycled worden",
             "de": "Nadeln können hier recycelt werden",
-            "it": "Aghi e oggetti appuntiti"
+            "it": "Aghi e oggetti appuntiti",
+            "ca": "Aquí es poden reciclar agulles"
           }
         },
         {
@@ -1090,7 +1093,8 @@
       "question": {
         "en": "Who can use this recycling facility?",
         "nl": "Wie kan deze recyclingfaciliteit gebruiken?",
-        "de": "Wer kann diese Recyclinganlage nutzen?"
+        "de": "Wer kann diese Recyclinganlage nutzen?",
+        "ca": "Qui pot utilitzar aquesta instal·lació de reciclatge?"
       },
       "mappings": [
         {
@@ -1098,7 +1102,8 @@
           "then": {
             "en": "Everyone can use this recycling facility",
             "nl": "Iedereen mag deze recyclingfaciliteit gebruiken",
-            "de": "Alle können diese Recyclinganlage nutzen"
+            "de": "Alle können diese Recyclinganlage nutzen",
+            "ca": "Tothom pot utilitzar aquesta instal·lació de reciclatge"
           }
         },
         {
@@ -1106,7 +1111,8 @@
           "then": {
             "en": "Only residents can use this recycling facility",
             "nl": "Enkel bewoners kunnen deze recyclingfaciliteit gebruiken",
-            "de": "Nur Anwohnende können diese Recyclinganlage nutzen"
+            "de": "Nur Anwohnende können diese Recyclinganlage nutzen",
+            "ca": "Només els residents poden utilitzar aquesta instal·lació de reciclatge"
           }
         },
         {
@@ -1114,7 +1120,8 @@
           "then": {
             "en": "This recycling facility is only for private use",
             "nl": "Deze recyclingfaciliteit is alleen voor privégebruik",
-            "de": "Diese Recyclinganlage ist nur für den privaten Gebrauch bestimmt"
+            "de": "Diese Recyclinganlage ist nur für den privaten Gebrauch bestimmt",
+            "ca": "Aquesta instal·lació de reciclatge és només per a ús privat"
           }
         }
       ],
@@ -1125,7 +1132,8 @@
       "render": {
         "en": "This recycling facility can be used by {access}",
         "nl": "Deze recyclingfaciliteit kan gebruikt worden door {access}",
-        "de": "Diese Recyclinganlage kann von {access} genutzt werden"
+        "de": "Diese Recyclinganlage kann von {access} genutzt werden",
+        "ca": "Aquesta instal·lació de reciclatge la pot utilitzar {access}"
       }
     }
   ],
@@ -1304,27 +1312,30 @@
         },
         {
           "question": {
-            "en": "Recycling of printer cartridges",
-            "nl": "Recycling van printer cartridges"
-          },
-          "osmTags": "recycling:printer_cartridges=yes"
-        },
-        {
-          "question": {
             "en": "Recycling of scrap metal",
             "nl": "Recycling van oud metaal",
             "de": "Recycling von Metallschrott",
             "es": "Reciclaje de chatarra",
             "it": "Riciclo di rottami metallici"
           },
-          "osmTags": "recycling:scrap_metal=yes"
+          "osmTags": "recycling:printer_cartridges=yes"
         },
         {
           "question": {
             "en": "Recycling of small electrical appliances",
             "nl": "Recycling van kleine elektrische apparaten",
             "de": "Recycling von Elektrokleingeräten",
+            "es": "Reciclaje de chatarra",
             "it": "Riciclo di piccoli elettrodomestici"
+          },
+          "osmTags": "recycling:scrap_metal=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of residual waste",
+            "nl": "Recycling van restafval",
+            "de": "Recycling von Restabfällen",
+            "it": "Riciclo di secco"
           },
           "osmTags": {
             "or": [
@@ -1355,7 +1366,8 @@
             "de": "Nur öffentliche Recyclingeinrichtungen",
             "it": "Solo accesso pubblico",
             "id": "Hanya akses publik",
-            "da": "Kun offentlig adgang"
+            "da": "Kun offentlig adgang",
+            "ca": "Només amb accés públic"
           },
           "osmTags": {
             "or": [

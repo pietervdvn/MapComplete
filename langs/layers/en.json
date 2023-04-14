@@ -24,6 +24,217 @@
             "render": "Known address"
         }
     },
+    "advertising": {
+        "description": "We will complete data from advertising features with reference, operator and lit",
+        "name": "Advertise",
+        "presets": {
+            "0": {
+                "description": "A large outdoor advertising structure, typically found in high-traffic areas such as alongside busy roads",
+                "title": "a billboard"
+            },
+            "1": {
+                "title": "a freestanding poster box"
+            },
+            "2": {
+                "title": "a poster box mounted on a wall"
+            },
+            "3": {
+                "description": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
+                "title": "a billboard"
+            },
+            "4": {
+                "description": "A cylindrical outdoor structure which shows advertisements",
+                "title": "a column"
+            },
+            "5": {
+                "title": "a flag"
+            },
+            "6": {
+                "title": "a screen"
+            },
+            "7": {
+                "title": "a screen mounted on a wall"
+            },
+            "8": {
+                "description": "A piece of waterproof textile with a printed message, permanently anchored on a wall",
+                "title": "a tarp"
+            },
+            "9": {
+                "title": "a totem"
+            },
+            "10": {
+                "description": "Used for advertising signs, neon signs, logos & institutional entrance signs",
+                "title": "a sign"
+            },
+            "11": {
+                "title": "a sculpture"
+            },
+            "12": {
+                "title": "a wall painting"
+            }
+        },
+        "tagRenderings": {
+            "Sides": {
+                "mappings": {
+                    "0": {
+                        "then": "This object has advertisements on a single side"
+                    },
+                    "1": {
+                        "then": "This object has advertisements on both sides"
+                    }
+                },
+                "question": "From how many sides you can watch advertisments?"
+            },
+            "animated": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Static</b>, always shows the same message"
+                    },
+                    "1": {
+                        "then": "This object has a built-in <b>digital display</b> to show prices or some other message"
+                    },
+                    "2": {
+                        "then": "<b>Trivision</b> - the billboard consists of many triangular prisms which regularly rotate"
+                    },
+                    "3": {
+                        "then": "<b>Scrolling</b> posters"
+                    },
+                    "4": {
+                        "then": "<b>Rotates</b> on itself"
+                    }
+                },
+                "question": "Does this advertisement cycle through multiple messages?"
+            },
+            "luminous_or_lit_advertising": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "This is a neon-tube light"
+                        }
+                    }
+                }
+            },
+            "message_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Commercial message"
+                    },
+                    "1": {
+                        "then": "Local information"
+                    },
+                    "2": {
+                        "then": "Securty information"
+                    },
+                    "3": {
+                        "then": "Electoral advertising"
+                    },
+                    "4": {
+                        "then": "Inormation related to theatre, concerts, ..."
+                    },
+                    "5": {
+                        "then": "Message from non-profit organizations"
+                    },
+                    "6": {
+                        "then": "To expres your opinion"
+                    },
+                    "7": {
+                        "then": "Religious message"
+                    },
+                    "8": {
+                        "then": "Funding sign"
+                    },
+                    "9": {
+                        "then": "A map"
+                    }
+                },
+                "question": "What kind of message is shown?"
+            },
+            "operator": {
+                "question": "Who operates this feature?",
+                "render": "Operated by {operator}"
+            },
+            "ref": {
+                "question": "Wich is the reference number?",
+                "render": "Reference number is {ref}"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "This is a billboard"
+                    },
+                    "1": {
+                        "then": "This is a board"
+                    },
+                    "2": {
+                        "then": "This is a column"
+                    },
+                    "3": {
+                        "then": "This is a flag"
+                    },
+                    "4": {
+                        "then": "This is a poster Box"
+                    },
+                    "5": {
+                        "then": "This is a screen"
+                    },
+                    "6": {
+                        "then": "This is a sculpture"
+                    },
+                    "7": {
+                        "then": "This is a sign"
+                    },
+                    "8": {
+                        "then": "This is a tarp (a weatherproof piece of textile with an advertising message)"
+                    },
+                    "9": {
+                        "then": "This is a totem"
+                    },
+                    "10": {
+                        "then": "This is a wall painting"
+                    }
+                },
+                "question": "Which type of advertising feature is this?",
+                "render": "This is a {advertising}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Billboard"
+                },
+                "1": {
+                    "then": "Board"
+                },
+                "2": {
+                    "then": "Poster Box"
+                },
+                "3": {
+                    "then": "Column"
+                },
+                "4": {
+                    "then": "Flag"
+                },
+                "5": {
+                    "then": "Screen"
+                },
+                "6": {
+                    "then": "Sculpture"
+                },
+                "7": {
+                    "then": "Sign"
+                },
+                "8": {
+                    "then": "Tarp"
+                },
+                "9": {
+                    "then": "Totem"
+                },
+                "10": {
+                    "then": "Wall painting"
+                }
+            }
+        }
+    },
     "ambulancestation": {
         "description": "An ambulance station is an area for storage of ambulance vehicles, medical equipment, personal protective equipment, and other medical supplies.",
         "name": "Map of ambulance stations",
@@ -436,9 +647,12 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Does have a backrest"
+                        "then": "This bench is two-sided and shares the backrest"
                     },
                     "1": {
+                        "then": "Does have a backrest"
+                    },
+                    "2": {
                         "then": "Does <b>not</b> have a backrest"
                     }
                 },
@@ -6742,6 +6956,9 @@
                     },
                     "20": {
                         "question": "Recycling of residual waste"
+                    },
+                    "20": {
+                        "question": "Recycling of residual waste"
                     }
                 }
             },
@@ -6855,7 +7072,7 @@
                         "then": "Plastic can be recycled here"
                     },
                     "17": {
-                        "then": "Printer cartridges (inkjet/toner) can be recycled here"
+                        "then": "Printer cartridges can be recycled here"
                     },
                     "18": {
                         "then": "Scrap metal can be recycled here"

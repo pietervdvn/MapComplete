@@ -77,7 +77,8 @@
           "if": "amenity=waste_disposal",
           "then": {
             "en": "This is a medium to large bin for disposal of (household) waste",
-            "de": "Dies ist eine Mülltonne oder ein Müllcontainer für (Haushalts-)Abfälle"
+            "de": "Dies ist eine Mülltonne oder ein Müllcontainer für (Haushalts-)Abfälle",
+            "ca": "Es tracta d'un contenidor mitjà o gran per a dipositar residus (domèstics)"
           }
         },
         {

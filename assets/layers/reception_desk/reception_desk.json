@@ -52,7 +52,8 @@
       "questionHint": {
         "en": "This is measured from the floor to the lowest usable part of the desk",
         "fr": "Ceci est mesuré du sol à la partie utilisable la plus basse du bureau",
-        "de": "Gemessen vom Boden bis zur untersten nutzbaren Stelle des Tisches"
+        "de": "Gemessen vom Boden bis zur untersten nutzbaren Stelle des Tisches",
+        "ca": "Es mesura des del terra fins a la part més baixa utilitzable de l'escriptori"
       }
     },
     "induction-loop"

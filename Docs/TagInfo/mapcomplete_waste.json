@@ -237,13 +237,18 @@
       "value": "yes"
     },
     {
+      "key": "recycling:printer_cartridges",
+      "description": "Layer 'Recycling' shows recycling:printer_cartridges=yes with a fixed text, namely 'Scrap metal can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
       "key": "recycling:scrap_metal",
-      "description": "Layer 'Recycling' shows recycling:scrap_metal=yes with a fixed text, namely 'Scrap metal can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "description": "Layer 'Recycling' shows recycling:scrap_metal=yes with a fixed text, namely 'Shoes can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
       "value": "yes"
     },
     {
       "key": "recycling:shoes",
-      "description": "Layer 'Recycling' shows recycling:shoes=yes with a fixed text, namely 'Shoes can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "description": "Layer 'Recycling' shows recycling:shoes=yes with a fixed text, namely 'Small electrical appliances can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
       "value": "yes"
     },
     {
@@ -253,12 +258,12 @@
     },
     {
       "key": "recycling:small_electrical_appliances",
-      "description": "Layer 'Recycling' shows recycling:small_electrical_appliances=yes with a fixed text, namely 'Small electrical appliances can be recycled here' (in the MapComplete.osm.be theme 'Waste')",
+      "description": "Layer 'Recycling' shows recycling:small_electrical_appliances=yes with a fixed text, namely 'Needles can be recycled here' (in the MapComplete.osm.be theme 'Waste')",
       "value": "yes"
     },
     {
       "key": "recycling:needles",
-      "description": "Layer 'Recycling' shows recycling:needles=yes with a fixed text, namely 'Needles can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "description": "Layer 'Recycling' shows recycling:needles=yes with a fixed text, namely 'Residual waste can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
       "value": "yes"
     },
     {

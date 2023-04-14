@@ -1,4 +1,9 @@
 {
+    "advertising": {
+        "description": "Haben Sie sich schon einmal gefragt, wie viele Werbeanlagen es in unseren Straßen und Wegen gibt? Hier können Sie Informationen über alle Werbeeinrichtungen finden und hinzufügen, die Sie auf der Straße begegnen",
+        "shortDescription": "Wo finde ich Werbeträger?",
+        "title": "Offene Werbekarte"
+    },
     "aed": {
         "description": "Auf dieser Karte kann man nahe gelegene Defibrillatoren finden und markieren",
         "title": "AED-Karte"

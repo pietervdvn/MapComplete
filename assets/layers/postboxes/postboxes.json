@@ -40,7 +40,8 @@
     "hu": "Postaládákat megjelenítő réteg.",
     "nl": "Deze laag toont brievenbussen.",
     "es": "La capa que muestra buzones de correo.",
-    "fr": "Le calque montrant les boîtes à lettres."
+    "fr": "Le calque montrant les boîtes à lettres.",
+    "ca": "La capa que mostra bústies de correus."
   },
   "tagRenderings": [
     "images",

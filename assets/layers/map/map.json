@@ -53,7 +53,8 @@
         "it": "Su quali dati si basa questa mappa?",
         "fr": "Sur quelles données cette carte est-elle basée ?",
         "de": "Auf welchen Daten basiert diese Karte?",
-        "es": "¿En qué datos se basa este mapa?"
+        "es": "¿En qué datos se basa este mapa?",
+        "ca": "En quines dades es basa aquest mapa?"
       },
       "mappings": [
         {
@@ -70,7 +71,8 @@
             "ru": "Эта карта основана на OpenStreetMap",
             "fr": "Cette carte est basée sur OpenStreetMap",
             "de": "Diese Karte basiert auf OpenStreetMap",
-            "es": "Este mapa se basa en OpenStreetMap"
+            "es": "Este mapa se basa en OpenStreetMap",
+            "ca": "Aquest mapa està basat en OpenStreetMap"
           }
         }
       ],
@@ -211,7 +213,8 @@
         "fr": "Ajouter une carte manquante",
         "de": "Fehlende Karte hinzufügen",
         "ru": "Добавить отсутствующую карту",
-        "es": "Añadir un mapa que falta"
+        "es": "Añadir un mapa que falta",
+        "ca": "Afegeix un mapa que falta"
       }
     }
   ],
