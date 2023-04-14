@@ -248,7 +248,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 new UIEventSource<Record<string, string>>(last_click.properties)
             )
             new ShowDataLayer(this.map, {
-                features: last_click,
+                features: new FilteringFeatureSource(last_click_layer, last_click),
                 doShowLayer: new ImmutableStore(true),
                 layer: last_click_layer.layerDef,
                 selectedElement: this.selectedElement,

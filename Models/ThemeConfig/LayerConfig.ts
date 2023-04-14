@@ -90,7 +90,7 @@ export default class LayerConfig extends WithContextLoader {
 
         if (json.source === "special" || json.source === "special:library") {
             this.source = null
-        } else if (json.source.osmTags === undefined) {
+        } else if (json.source["osmTags"] === undefined) {
             throw (
                 "Layer " +
                 this.id +
@@ -122,8 +122,8 @@ export default class LayerConfig extends WithContextLoader {
         }
         this.syncSelection = json.syncSelection ?? "no"
         if (typeof json.source !== "string") {
-            this.maxAgeOfCache = json.source.maxCacheAge ?? 24 * 60 * 60 * 30
-            const osmTags = TagUtils.Tag(json.source.osmTags, context + "source.osmTags")
+            this.maxAgeOfCache = json.source["maxCacheAge"] ?? 24 * 60 * 60 * 30
+            const osmTags = TagUtils.Tag(json.source["osmTags"], context + "source.osmTags")
             if (osmTags.isNegative()) {
                 throw (
                     context +

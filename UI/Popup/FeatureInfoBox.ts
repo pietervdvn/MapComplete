@@ -17,7 +17,6 @@ import MoveWizard from "./MoveWizard"
 import Toggle from "../Input/Toggle"
 import Lazy from "../Base/Lazy"
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
-import { Tag } from "../../Logic/Tags/Tag"
 import Svg from "../../Svg"
 import Translations from "../i18n/Translations"
 
@@ -32,9 +31,6 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             setHash?: true | boolean
         }
     ) {
-        if (state === undefined) {
-            throw "State is undefined!"
-        }
         const showAllQuestions = state.featureSwitchShowAllQuestions.map(
             (fsShow) => fsShow || state.showAllQuestionsAtOnce.data,
             [state.showAllQuestionsAtOnce]
@@ -98,27 +94,11 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     private static GenerateMainContent(
         tags: UIEventSource<any>,
         layerConfig: LayerConfig,
-        state: FeaturePipelineState,
-        showAllQuestions?: Store<boolean>
+        state: FeaturePipelineState
     ): BaseUIElement {
         let questionBoxes: Map<string, QuestionBox> = new Map<string, QuestionBox>()
         const t = Translations.t.general
         const allGroupNames = Utils.Dedup(layerConfig.tagRenderings.map((tr) => tr.group))
-        if (state?.featureSwitchUserbadge?.data ?? true) {
-            const questionSpecs = layerConfig.tagRenderings.filter((tr) => tr.id === "questions")
-            for (const groupName of allGroupNames) {
-                const questions = layerConfig.tagRenderings.filter((tr) => tr.group === groupName)
-                const questionSpec = questionSpecs.filter((tr) => tr.group === groupName)[0]
-                const questionBox = new QuestionBox(state, {
-                    tagsSource: tags,
-                    tagRenderings: questions,
-                    units: layerConfig.units,
-                    showAllQuestionsAtOnce:
-                        questionSpec?.freeform?.helperArgs["showAllQuestions"] ?? showAllQuestions,
-                })
-                questionBoxes.set(groupName, questionBox)
-            }
-        }
 
         const withQuestion = layerConfig.tagRenderings.filter(
             (tr) => tr.question !== undefined
@@ -243,40 +223,6 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             editElements.push(questionBox)
         })
 
-        if (layerConfig.allowMove) {
-            editElements.push(
-                new VariableUiElement(
-                    tags
-                        .map((tags) => tags.id)
-                        .map((id) => {
-                            const feature = state.allElements.ContainingFeatures.get(id)
-                            if (feature === undefined) {
-                                return "This feature is not register in the state.allElements and cannot be moved"
-                            }
-                            return new MoveWizard(feature, state, layerConfig.allowMove)
-                        })
-                ).SetClass("text-base")
-            )
-        }
-
-        if (layerConfig.deletion) {
-            editElements.push(
-                new VariableUiElement(
-                    tags
-                        .map((tags) => tags.id)
-                        .map((id) => new DeleteWizard(id, state, layerConfig.deletion))
-                ).SetClass("text-base")
-            )
-        }
-
-        if (layerConfig.allowSplit) {
-            editElements.push(
-                new VariableUiElement(
-                    tags.map((tags) => tags.id).map((id) => new SplitRoadWizard(id, state))
-                ).SetClass("text-base")
-            )
-        }
-
         editElements.push(
             new VariableUiElement(
                 state.osmConnection.userDetails
@@ -300,30 +246,6 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                         [state.featureSwitchIsDebugging, state.featureSwitchIsTesting]
                     )
             )
-        )
-
-        editElements.push(
-            Toggle.If(state.featureSwitchIsDebugging, () => {
-                const config_all_tags: TagRenderingConfig = new TagRenderingConfig(
-                    { render: "{all_tags()}" },
-                    ""
-                )
-                const config_download: TagRenderingConfig = new TagRenderingConfig(
-                    { render: "{export_as_geojson()}" },
-                    ""
-                )
-                const config_id: TagRenderingConfig = new TagRenderingConfig(
-                    { render: "{open_in_iD()}" },
-                    ""
-                )
-
-                return new Combine([
-                    new TagRenderingAnswer(tags, config_all_tags, state),
-                    new TagRenderingAnswer(tags, config_download, state),
-                    new TagRenderingAnswer(tags, config_id, state),
-                    "This is layer " + layerConfig.id,
-                ])
-            })
         )
 
         return new Combine(editElements).SetClass("flex flex-col")

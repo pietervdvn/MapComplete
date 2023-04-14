@@ -116,7 +116,7 @@
             "mappings": [
               {
                 "if": "theme=advertising",
-                "then": "./assets/themes/advertising/poster_box.svg"
+                "then": "./assets/themes/advertising/icon.svg"
               },
               {
                 "if": "theme=aed",

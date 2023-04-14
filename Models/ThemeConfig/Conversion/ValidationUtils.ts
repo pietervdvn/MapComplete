@@ -2,8 +2,22 @@ import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
 import { Utils } from "../../../Utils"
 import SpecialVisualizations from "../../../UI/SpecialVisualizations"
 import { RenderingSpecification, SpecialVisualization } from "../../../UI/SpecialVisualization"
+import { LayerConfigJson } from "../Json/LayerConfigJson"
 
 export default class ValidationUtils {
+    public static hasSpecialVisualisation(
+        layer: LayerConfigJson,
+        specialVisualisation: string
+    ): boolean {
+        return (
+            layer.tagRenderings?.some((tagRendering) =>
+                ValidationUtils.getSpecialVisualisations(<TagRenderingConfigJson>tagRendering).some(
+                    (vis) => vis.funcName === specialVisualisation
+                )
+            ) ?? false
+        )
+    }
+
     /**
      * Gives all the (function names of) used special visualisations
      * @param renderingConfig
@@ -15,6 +29,7 @@ export default class ValidationUtils {
             (spec) => spec["func"]
         )
     }
+
     public static getSpecialVisualsationsWithArgs(
         renderingConfig: TagRenderingConfigJson
     ): RenderingSpecification[] {

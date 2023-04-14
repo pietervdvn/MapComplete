@@ -1,29 +1,28 @@
 import { SubtleButton } from "../Base/SubtleButton"
 import Combine from "../Base/Combine"
 import Svg from "../../Svg"
-import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import Toggle from "../Input/Toggle"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import Translations from "../i18n/Translations"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import { Translation } from "../i18n/Translation"
 import BaseUIElement from "../BaseUIElement"
-import LocationInput from "../Input/LocationInput"
-import Loc from "../../Models/Loc"
 import { GeoOperations } from "../../Logic/GeoOperations"
 import { OsmObject } from "../../Logic/Osm/OsmObject"
-import { Changes } from "../../Logic/Osm/Changes"
 import ChangeLocationAction from "../../Logic/Osm/Actions/ChangeLocationAction"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import MoveConfig from "../../Models/ThemeConfig/MoveConfig"
-import { ElementStorage } from "../../Logic/ElementStorage"
-import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
-import BaseLayer from "../../Models/BaseLayer"
-import SearchAndGo from "../BigComponents/SearchAndGo"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
 import { And } from "../../Logic/Tags/And"
 import { Tag } from "../../Logic/Tags/Tag"
 import { LoginToggle } from "./LoginButton"
+import { SpecialVisualizationState } from "../SpecialVisualization"
+import { Feature, Point } from "geojson"
+import { OsmTags } from "../../Models/OsmFeature"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import { MapProperties } from "../../Models/MapProperties"
+import LocationInput from "../InputElement/Helpers/LocationInput.svelte"
+import Geosearch from "../BigComponents/Geosearch.svelte"
+import Constants from "../../Models/Constants"
 
 interface MoveReason {
     text: Translation | string
@@ -43,14 +42,9 @@ export default class MoveWizard extends Toggle {
      * The UI-element which helps moving a point
      */
     constructor(
-        featureToMove: any,
-        state: {
-            osmConnection: OsmConnection
-            featureSwitchUserbadge: UIEventSource<boolean>
-            changes: Changes
-            layoutToUse: LayoutConfig
-            allElements: ElementStorage
-        },
+        featureToMove: Feature<Point>,
+        tags: UIEventSource<OsmTags>,
+        state: SpecialVisualizationState,
         options: MoveConfig
     ) {
         const t = Translations.t.move
@@ -130,56 +124,38 @@ export default class MoveWizard extends Toggle {
             if (reason === undefined) {
                 return undefined
             }
-            const loc = new UIEventSource<Loc>({
-                lon: lon,
-                lat: lat,
-                zoom: reason?.startZoom ?? 16,
-            })
 
-            let background: string[]
-            if (typeof reason.background == "string") {
-                background = [reason.background]
-            } else {
-                background = reason.background
+            const mapProperties: Partial<MapProperties> = {
+                minzoom: new UIEventSource(reason.minZoom),
+                zoom: new UIEventSource(reason?.startZoom ?? 16),
+                location: new UIEventSource({ lon, lat }),
+                bounds: new UIEventSource(undefined),
             }
-
-            const preferredBackground = AvailableBaseLayers.SelectBestLayerAccordingTo(
-                loc,
-                new UIEventSource(background)
-            ).data
-
-            const locationInput = new LocationInput({
-                minZoom: reason.minZoom,
-                centerLocation: loc,
-                mapBackground: new UIEventSource<BaseLayer>(preferredBackground), // We detach the layer
-                state: <any>state,
+            const value = new UIEventSource<{ lon: number; lat: number }>(undefined)
+            const locationInput = new SvelteUIElement(LocationInput, {
+                mapProperties,
+                value,
             })
-
-            if (reason.lockBounds) {
-                locationInput.installBounds(0.05, true)
-            }
 
             let searchPanel: BaseUIElement = undefined
             if (reason.includeSearch) {
-                searchPanel = new SearchAndGo({
-                    leafletMap: locationInput.leafletMap,
-                })
+                searchPanel = new SvelteUIElement(Geosearch, { bounds: mapProperties.bounds })
             }
 
             locationInput.SetStyle("height: 17.5rem")
 
             const confirmMove = new SubtleButton(Svg.move_confirm_svg(), t.confirmMove)
             confirmMove.onClick(async () => {
-                const loc = locationInput.GetValue().data
+                const loc = value.data
                 await state.changes.applyAction(
                     new ChangeLocationAction(featureToMove.properties.id, [loc.lon, loc.lat], {
                         reason: reason.changesetCommentValue,
-                        theme: state.layoutToUse.id,
+                        theme: state.layout.id,
                     })
                 )
                 featureToMove.properties._lat = loc.lat
                 featureToMove.properties._lon = loc.lon
-
+                featureToMove.geometry.coordinates = [loc.lon, loc.lat]
                 if (reason.eraseAddressFields) {
                     await state.changes.applyAction(
                         new ChangeTagAction(
@@ -193,13 +169,13 @@ export default class MoveWizard extends Toggle {
                             featureToMove.properties,
                             {
                                 changeType: "relocated",
-                                theme: state.layoutToUse.id,
+                                theme: state.layout.id,
                             }
                         )
                     )
                 }
 
-                state.allElements.getEventSourceById(id).ping()
+                state.featureProperties.getStore(id).ping()
                 currentStep.setData("moved")
             })
             const zoomInFurhter = t.zoomInFurther.SetClass("alert block m-6")
@@ -209,7 +185,7 @@ export default class MoveWizard extends Toggle {
                 new Toggle(
                     confirmMove,
                     zoomInFurhter,
-                    locationInput.GetValue().map((l) => l.zoom >= 19)
+                    mapProperties.zoom.map((zoom) => zoom >= Constants.minZoomLevelToAddNewPoint)
                 ),
             ]).SetClass("flex flex-col")
         })

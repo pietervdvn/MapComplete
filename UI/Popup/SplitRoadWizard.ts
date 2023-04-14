@@ -2,33 +2,27 @@ import Toggle from "../Input/Toggle"
 import Svg from "../../Svg"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import { SubtleButton } from "../Base/SubtleButton"
-import Minimap from "../Base/Minimap"
-import ShowDataLayer from "../ShowDataLayer/ShowDataLayer"
 import { GeoOperations } from "../../Logic/GeoOperations"
-import { LeafletMouseEvent } from "leaflet"
 import Combine from "../Base/Combine"
 import { Button } from "../Base/Button"
 import Translations from "../i18n/Translations"
 import SplitAction from "../../Logic/Osm/Actions/SplitAction"
 import Title from "../Base/Title"
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
-import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { BBox } from "../../Logic/BBox"
 import split_point from "../../assets/layers/split_point/split_point.json"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { Changes } from "../../Logic/Osm/Changes"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import { ElementStorage } from "../../Logic/ElementStorage"
-import BaseLayer from "../../Models/BaseLayer"
 import FilteredLayer from "../../Models/FilteredLayer"
 import BaseUIElement from "../BaseUIElement"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 import { LoginToggle } from "./LoginButton"
+import { SpecialVisualizationState } from "../SpecialVisualization"
 
 export default class SplitRoadWizard extends Combine {
-    // @ts-ignore
     private static splitLayerStyling = new LayerConfig(
         split_point,
         "(BUILTIN) SplitRoadWizard.ts",
@@ -43,22 +37,7 @@ export default class SplitRoadWizard extends Combine {
      * @param id: The id of the road to remove
      * @param state: the state of the application
      */
-    constructor(
-        id: string,
-        state: {
-            filteredLayers: UIEventSource<FilteredLayer[]>
-            backgroundLayer: UIEventSource<BaseLayer>
-            featureSwitchIsTesting: UIEventSource<boolean>
-            featureSwitchIsDebugging: UIEventSource<boolean>
-            featureSwitchShowAllQuestions: UIEventSource<boolean>
-            osmConnection: OsmConnection
-            featureSwitchUserbadge: UIEventSource<boolean>
-            changes: Changes
-            layoutToUse: LayoutConfig
-            allElements: ElementStorage
-            selectedElement: UIEventSource<any>
-        }
-    ) {
+    constructor(id: string, state: SpecialVisualizationState) {
         const t = Translations.t.split
 
         // Contains the points on the road that are selected to split on - contains geojson points with extra properties such as 'location' with the distance along the linestring

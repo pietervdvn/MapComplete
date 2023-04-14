@@ -20,10 +20,10 @@ import { RadioButton } from "../Input/RadioButton"
 import { FixedInputElement } from "../Input/FixedInputElement"
 import Title from "../Base/Title"
 import { SubstitutedTranslation } from "../SubstitutedTranslation"
-import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
 import TagRenderingQuestion from "./TagRenderingQuestion"
-import { OsmId } from "../../Models/OsmFeature"
+import { OsmId, OsmTags } from "../../Models/OsmFeature"
 import { LoginToggle } from "./LoginButton"
+import { SpecialVisualizationState } from "../SpecialVisualization"
 
 export default class DeleteWizard extends Toggle {
     /**
@@ -41,13 +41,18 @@ export default class DeleteWizard extends Toggle {
      * Ideal for the case of "THIS PATH IS ON MY GROUND AND SHOULD BE DELETED IMMEDIATELY OR I WILL GET MY LAWYER" but to mark it as private instead.
      * (Note that _delete_reason is used as trigger to do actual deletion - setting such a tag WILL delete from the database with that as changeset comment)
      *
-     * @param id: The id of the element to remove
-     * @param state: the state of the application
-     * @param options softDeletionTags: the tags to apply if the user doesn't have permission to delete, e.g. 'disused:amenity=public_bookcase', 'amenity='. After applying, the element should not be picked up on the map anymore. If undefined, the wizard will only show up if the point can be (hard) deleted
      */
-    constructor(id: OsmId, state: FeaturePipelineState, options: DeleteConfig) {
-        const deleteAbility = new DeleteabilityChecker(id, state, options.neededChangesets)
-        const tagsSource = state.allElements.getEventSourceById(id)
+    constructor(
+        id: OsmId,
+        tagsSource: UIEventSource<OsmTags>,
+        state: SpecialVisualizationState,
+        options: DeleteConfig
+    ) {
+        const deleteAbility = new DeleteabilityChecker(
+            id,
+            state.osmConnection,
+            options.neededChangesets
+        )
 
         const isDeleted = new UIEventSource(false)
         const allowSoftDeletion = !!options.softDeletionTags
@@ -62,7 +67,7 @@ export default class DeleteWizard extends Toggle {
             if (selected["retagTo"] !== undefined) {
                 // no _delete_reason is given, which implies that this is _not_ a deletion but merely a retagging via a nonDeleteMapping
                 actionToTake = new ChangeTagAction(id, selected["retagTo"], tagsSource.data, {
-                    theme: state?.layoutToUse?.id ?? "unkown",
+                    theme: state?.layout?.id ?? "unkown",
                     changeType: "special-delete",
                 })
             } else {
@@ -70,7 +75,7 @@ export default class DeleteWizard extends Toggle {
                     id,
                     options.softDeletionTags,
                     {
-                        theme: state?.layoutToUse?.id ?? "unkown",
+                        theme: state?.layout?.id ?? "unkown",
                         specialMotivation: selected["deleteReason"],
                     },
                     deleteAbility.canBeDeleted.data.canBeDeleted
@@ -250,7 +255,7 @@ export default class DeleteWizard extends Toggle {
     private static constructMultipleChoice(
         config: DeleteConfig,
         tagsSource: UIEventSource<Record<string, string>>,
-        state: FeaturePipelineState
+        state: SpecialVisualizationState
     ): InputElement<{ deleteReason: string } | { retagTo: TagsFilter }> {
         const elements: InputElement<{ deleteReason: string } | { retagTo: TagsFilter }>[] = []
 
@@ -282,19 +287,13 @@ export default class DeleteWizard extends Toggle {
 
 class DeleteabilityChecker {
     public readonly canBeDeleted: UIEventSource<{ canBeDeleted?: boolean; reason: Translation }>
-    private readonly _id: string
+    private readonly _id: OsmId
     private readonly _allowDeletionAtChangesetCount: number
-    private readonly _state: {
-        osmConnection: OsmConnection
-    }
+    private readonly _osmConnection: OsmConnection
 
-    constructor(
-        id: string,
-        state: { osmConnection: OsmConnection },
-        allowDeletionAtChangesetCount?: number
-    ) {
+    constructor(id: OsmId, osmConnection: OsmConnection, allowDeletionAtChangesetCount?: number) {
         this._id = id
-        this._state = state
+        this._osmConnection = osmConnection
         this._allowDeletionAtChangesetCount = allowDeletionAtChangesetCount ?? Number.MAX_VALUE
 
         this.canBeDeleted = new UIEventSource<{ canBeDeleted?: boolean; reason: Translation }>({
@@ -324,7 +323,7 @@ class DeleteabilityChecker {
         }
 
         // Does the currently logged in user have enough experience to delete this point?
-        const deletingPointsOfOtherAllowed = this._state.osmConnection.userDetails.map((ud) => {
+        const deletingPointsOfOtherAllowed = this._osmConnection.userDetails.map((ud) => {
             if (ud === undefined) {
                 return undefined
             }
@@ -347,10 +346,10 @@ class DeleteabilityChecker {
                     // Not yet downloaded
                     return null
                 }
-                const userId = self._state.osmConnection.userDetails.data.uid
+                const userId = self._osmConnection.userDetails.data.uid
                 return !previous.some((editor) => editor !== userId)
             },
-            [self._state.osmConnection.userDetails]
+            [self._osmConnection.userDetails]
         )
 
         // User allowed OR only edited by self?

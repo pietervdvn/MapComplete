@@ -38,9 +38,9 @@ export class MenuState {
             [],
             (str) => MenuState._menuviewTabs.indexOf(<any>str)
         )
-        this.themeIsOpened.addCallbackAndRun((isOpen) => {
+        this.menuIsOpened.addCallbackAndRun((isOpen) => {
             if (!isOpen) {
-                this.highlightedLayerInFilters.setData(undefined)
+                this.highlightedUserSetting.setData(undefined)
             }
         })
         this.themeViewTab.addCallbackAndRun((tab) => {

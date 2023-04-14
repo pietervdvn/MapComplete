@@ -26,18 +26,27 @@
   }));
 
   let htmlElem: HTMLElement;
+  const _htmlElement = new UIEventSource<HTMLElement>(undefined);
+  $: _htmlElement.setData(htmlElem);
+
+  function setHighlighting() {
+    if (highlightedRendering === undefined) {
+      return;
+    }
+    if (htmlElem === undefined) {
+      return;
+    }
+    const highlighted = highlightedRendering.data;
+    if (config.id === highlighted) {
+      htmlElem.classList.add("glowing-shadow");
+    } else {
+      htmlElem.classList.remove("glowing-shadow");
+    }
+  }
+
   if (highlightedRendering) {
-    $: onDestroy(highlightedRendering.addCallbackAndRun(highlighted => {
-      console.log("Highlighted rendering is", highlighted)
-      if(htmlElem === undefined){
-        return
-      }
-      if (config.id === highlighted) {
-        htmlElem.classList.add("glowing-shadow");
-      } else {
-        htmlElem.classList.remove("glowing-shadow");
-      }
-    }));
+    onDestroy(highlightedRendering?.addCallbackAndRun(() => setHighlighting()))
+    onDestroy(_htmlElement.addCallbackAndRun(() => setHighlighting()))
   }
 
 

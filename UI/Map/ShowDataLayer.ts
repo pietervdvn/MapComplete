@@ -8,7 +8,7 @@ import PointRenderingConfig from "../../Models/ThemeConfig/PointRenderingConfig"
 import { OsmTags } from "../../Models/OsmFeature"
 import { FeatureSource } from "../../Logic/FeatureSource/FeatureSource"
 import { BBox } from "../../Logic/BBox"
-import { Feature } from "geojson"
+import { Feature, Point } from "geojson"
 import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 import LineRenderingConfig from "../../Models/ThemeConfig/LineRenderingConfig"
 import { Utils } from "../../Utils"
@@ -26,6 +26,7 @@ class PointRenderingLayer {
     private readonly _onClick: (feature: Feature) => void
     private readonly _allMarkers: Map<string, Marker> = new Map<string, Marker>()
     private _dirty = false
+
     constructor(
         map: MlMap,
         features: FeatureSource,
@@ -139,6 +140,18 @@ class PointRenderingLayer {
         store
             .map((tags) => this._config.rotationAlignment.GetRenderValue(tags).Subs(tags).txt)
             .addCallbackAndRun((pitchAligment) => marker.setRotationAlignment(pitchAligment))
+        if (feature.geometry.type === "Point") {
+            // When the tags get 'pinged', check that the location didn't change
+            store.addCallbackAndRunD(() => {
+                // Check if the location is still the same
+                const oldLoc = marker.getLngLat()
+                const newloc = (<Point>feature.geometry).coordinates
+                if (newloc[0] === oldLoc.lng && newloc[1] === oldLoc.lat) {
+                    return
+                }
+                marker.setLngLat({ lon: newloc[0], lat: newloc[1] })
+            })
+        }
         return marker
     }
 }
@@ -159,6 +172,7 @@ class LineRenderingLayer {
 
     private static readonly lineConfigKeysColor = ["color", "fillColor"] as const
     private static readonly lineConfigKeysNumber = ["width", "offset"] as const
+    private static missingIdTriggered = false
     private readonly _map: MlMap
     private readonly _config: LineRenderingConfig
     private readonly _visibility?: Store<boolean>
@@ -167,7 +181,6 @@ class LineRenderingLayer {
     private readonly _layername: string
     private readonly _listenerInstalledOn: Set<string> = new Set<string>()
 
-    private static missingIdTriggered = false
     constructor(
         map: MlMap,
         features: FeatureSource,
@@ -248,6 +261,11 @@ class LineRenderingLayer {
                 },
             })
 
+            map.on("click", linelayer, (e) => {
+                console.log("Click", e)
+                e.originalEvent["consumed"] = true
+                this._onClick(e.features[0])
+            })
             const polylayer = this._layername + "_polygon"
             map.addLayer({
                 source: this._layername,
@@ -259,6 +277,10 @@ class LineRenderingLayer {
                     "fill-color": ["feature-state", "fillColor"],
                     "fill-opacity": 0.1,
                 },
+            })
+            map.on("click", polylayer, (e) => {
+                e.originalEvent["consumed"] = true
+                this._onClick(e.features[0])
             })
 
             this._visibility?.addCallbackAndRunD((visible) => {

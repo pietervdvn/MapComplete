@@ -10,7 +10,7 @@ import {
     SetDefault,
 } from "./Conversion"
 import { LayoutConfigJson } from "../Json/LayoutConfigJson"
-import { AddQuestionBox, PrepareLayer } from "./PrepareLayer"
+import { PrepareLayer } from "./PrepareLayer"
 import { LayerConfigJson } from "../Json/LayerConfigJson"
 import { Utils } from "../../../Utils"
 import Constants from "../../Constants"
@@ -291,56 +291,6 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
         return {
             errors,
             result: json,
-        }
-    }
-}
-
-export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
-    private readonly _state: DesugaringContext
-
-    constructor(state: DesugaringContext) {
-        super(
-            "Adds a default 'minimap'-element to the tagrenderings if none of the elements define such a minimap",
-            ["tagRenderings"],
-            "AddMiniMap"
-        )
-        this._state = state
-    }
-
-    /**
-     * Returns true if this tag rendering has a minimap in some language.
-     * Note: this minimap can be hidden by conditions
-     *
-     * AddMiniMap.hasMinimap({render: "{minimap()}"}) // => true
-     * AddMiniMap.hasMinimap({render: {en: "{minimap()}"}}) // => true
-     * AddMiniMap.hasMinimap({render: {en: "{minimap()}", nl: "{minimap()}"}}) // => true
-     * AddMiniMap.hasMinimap({render: {en: "{minimap()}", nl: "No map for the dutch!"}}) // => true
-     * AddMiniMap.hasMinimap({render: "{minimap()}"}) // => true
-     * AddMiniMap.hasMinimap({render: "{minimap(18,featurelist)}"}) // => true
-     * AddMiniMap.hasMinimap({mappings: [{if: "xyz=abc",then: "{minimap(18,featurelist)}"}]}) // => true
-     * AddMiniMap.hasMinimap({render: "Some random value {key}"}) // => false
-     * AddMiniMap.hasMinimap({render: "Some random value {minimap}"}) // => false
-     */
-    static hasMinimap(renderingConfig: TagRenderingConfigJson): boolean {
-        return ValidationUtils.getSpecialVisualisations(renderingConfig).some(
-            (vis) => vis.funcName === "minimap"
-        )
-    }
-
-    convert(layerConfig: LayerConfigJson, context: string): { result: LayerConfigJson } {
-        const state = this._state
-        const hasMinimap =
-            layerConfig.tagRenderings?.some((tr) =>
-                AddMiniMap.hasMinimap(<TagRenderingConfigJson>tr)
-            ) ?? true
-        if (!hasMinimap) {
-            layerConfig = { ...layerConfig }
-            layerConfig.tagRenderings = [...layerConfig.tagRenderings]
-            layerConfig.tagRenderings.push(state.tagRenderings.get("minimap"))
-        }
-
-        return {
-            result: layerConfig,
         }
     }
 }
@@ -660,9 +610,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
                 ? new Pass("AddDefaultLayers is disabled due to the set flag")
                 : new AddDefaultLayers(state),
             new AddDependencyLayersToTheme(state),
-            new AddImportLayers(),
-            new On("layers", new Each(new AddQuestionBox())),
-            new On("layers", new Each(new AddMiniMap(state)))
+            new AddImportLayers()
         )
     }
 

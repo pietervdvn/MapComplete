@@ -93,7 +93,7 @@
 
 <div class="absolute top-0 right-0 mt-4 mr-4">
   <If condition={state.featureSwitches.featureSwitchSearch}>
-    <Geosearch bounds={state.mapProperties.bounds} {selectedElement} {selectedLayer} {state}></Geosearch>
+    <Geosearch bounds={state.mapProperties.bounds} {selectedElement} {selectedLayer} perLayer={state.perLayer}></Geosearch>
   </If>
 </div>
 

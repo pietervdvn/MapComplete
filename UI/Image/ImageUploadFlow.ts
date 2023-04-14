@@ -177,9 +177,7 @@ export class ImageUploadFlow extends Toggle {
                 )
                     .onClick(() => {
                         console.log("Opening the license settings... ")
-                        ScrollableFullScreen.collapse()
-                        DefaultGuiState.state.userInfoIsOpened.setData(true)
-                        DefaultGuiState.state.userInfoFocusedQuestion.setData("picture-license")
+                        state.guistate.openUsersettings("picture-license")
                     })
                     .SetClass("underline"),
             ]).SetStyle("font-size:small;"),

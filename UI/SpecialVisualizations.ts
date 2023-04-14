@@ -54,7 +54,7 @@ import Maproulette from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
 import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import QuestionViz from "./Popup/QuestionViz"
-import { Feature } from "geojson"
+import { Feature, Point } from "geojson"
 import { GeoOperations } from "../Logic/GeoOperations"
 import CreateNewNote from "./Popup/CreateNewNote.svelte"
 import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
@@ -76,6 +76,9 @@ import { SaveButton } from "./Popup/SaveButton"
 import Lazy from "./Base/Lazy"
 import { CheckBox } from "./Input/Checkboxes"
 import Slider from "./Input/Slider"
+import DeleteWizard from "./Popup/DeleteWizard"
+import { OsmId, OsmTags } from "../Models/OsmFeature"
+import MoveWizard from "./Popup/MoveWizard"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -226,6 +229,7 @@ class StealViz implements SpecialVisualization {
             required: true,
         },
     ]
+
     constr(state: SpecialVisualizationState, featureTags, args) {
         const [featureIdKey, layerAndtagRenderingIds] = args
         const tagRenderings: [LayerConfig, TagRenderingConfig][] = []
@@ -273,6 +277,7 @@ class StealViz implements SpecialVisualization {
         return [layerId]
     }
 }
+
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
 
@@ -521,6 +526,74 @@ export default class SpecialVisualizations {
             new HistogramViz(),
             new StealViz(),
             new MinimapViz(),
+            {
+                funcName: "split_button",
+                docs: "Adds a button which allows to split a way",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new VariableUiElement(
+                        // TODO
+                        tagSource
+                            .map((tags) => tags.id)
+                            .map((id) => new FixedUiElement("TODO: enable splitting")) // new SplitRoadWizard(id, state))
+                    )
+                },
+            },
+            {
+                funcName: "move_button",
+                docs: "Adds a button which allows to move the object to another location. The config will be read from the layer config",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    if (feature.geometry.type !== "Point") {
+                        return undefined
+                    }
+
+                    return new MoveWizard(
+                        <Feature<Point>>feature,
+                        <UIEventSource<OsmTags>>tagSource,
+                        state,
+                        layer.allowMove
+                    )
+                },
+            },
+            {
+                funcName: "delete_button",
+                docs: "Adds a button which allows to delete the object at this location. The config will be read from the layer config",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new VariableUiElement(
+                        tagSource
+                            .map((tags) => tags.id)
+                            .map(
+                                (id) =>
+                                    new DeleteWizard(
+                                        <OsmId>id,
+                                        <UIEventSource<OsmTags>>tagSource,
+                                        state,
+                                        layer.deletion // Reading the configuration from the layerconfig is a bit cheating and should be factored out
+                                    )
+                            )
+                    )
+                },
+            },
             new ShareLinkViz(),
             new UploadToOsmViz(),
             new MultiApplyViz(),
