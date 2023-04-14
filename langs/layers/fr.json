@@ -5139,8 +5139,8 @@
         },
         "tagRenderings": {
             "circumference": {
-                "question": "Quelle est la circonférence du tronc ? ",
-                "questionHint": "La mesure est effectuée à 1.30m de hauteur",
+                "question": "Quelle est la circonférence du tronc ?",
+                "questionHint": "La mesure est effectuée à 1,30 m de hauteur",
                 "render": "Le tronc a une circonférence de {circumference} mètre(s)"
             },
             "height": {
