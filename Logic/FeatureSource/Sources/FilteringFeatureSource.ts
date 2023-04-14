@@ -54,7 +54,6 @@ export default class FilteringFeatureSource implements FeatureSource {
 
         this.update()
     }
-
     private update() {
         const self = this
         const layer = this._layer
@@ -64,25 +63,8 @@ export default class FilteringFeatureSource implements FeatureSource {
         const newFeatures = (features ?? []).filter((f) => {
             self.registerCallback(f)
 
-            const isShown: TagsFilter = layer.layerDef.isShown
-            const tags = f.properties
-            if (isShown !== undefined && !isShown.matchesProperties(tags)) {
+            if (!layer.isShown(f.properties, globalFilters)) {
                 return false
-            }
-            if (tags._deleted === "yes") {
-                return false
-            }
-
-            let neededTags: TagsFilter = layer.currentFilter.data
-            if (neededTags !== undefined && !neededTags.matchesProperties(f.properties)) {
-                return false
-            }
-
-            for (const globalFilter of globalFilters ?? []) {
-                const neededTags = globalFilter.osmTags
-                if (neededTags !== undefined && !neededTags.matchesProperties(f.properties)) {
-                    return false
-                }
             }
 
             includedFeatureIds.add(f.properties.id)

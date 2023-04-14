@@ -10,7 +10,7 @@ import { Utils } from "../Utils"
  * Some convenience methods are provided for this as well
  */
 export class MenuState {
-    private static readonly _themeviewTabs = ["intro", "filters"] as const
+    private static readonly _themeviewTabs = ["intro", "filters", "download", "copyright"] as const
     public readonly themeIsOpened = new UIEventSource(true)
     public readonly themeViewTabIndex: UIEventSource<number>
     public readonly themeViewTab: UIEventSource<typeof MenuState._themeviewTabs[number]>

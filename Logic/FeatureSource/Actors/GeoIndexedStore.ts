@@ -23,7 +23,7 @@ export default class GeoIndexedStore implements FeatureSource {
      * @param bbox
      * @constructor
      */
-    public GetFeaturesWithin(bbox: BBox): Feature[] {
+    public GetFeaturesWithin(bbox: BBox, strict: boolean = false): Feature[] {
         // TODO optimize
         const bboxFeature = bbox.asGeojsonCached()
         return this.features.data.filter((f) => {

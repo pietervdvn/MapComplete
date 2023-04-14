@@ -8,6 +8,7 @@ import { TagsFilter } from "../Logic/Tags/TagsFilter"
 import { Utils } from "../Utils"
 import { TagUtils } from "../Logic/Tags/TagUtils"
 import { And } from "../Logic/Tags/And"
+import { GlobalFilter } from "./GlobalFilter"
 
 export default class FilteredLayer {
     /**
@@ -62,7 +63,7 @@ export default class FilteredLayer {
         return JSON.stringify(values)
     }
 
-    public static stringToFieldProperties(value: string): Record<string, string> {
+    private static stringToFieldProperties(value: string): Record<string, string> {
         const values = JSON.parse(value)
         for (const key in values) {
             if (values[key] === "") {
@@ -207,5 +208,35 @@ export default class FilteredLayer {
             return tags
         }
         return optimized
+    }
+
+    /**
+     * Returns true if the given tags match the current filters (and the specified 'global filters')
+     */
+    public isShown(properties: Record<string, string>, globalFilters?: GlobalFilter[]): boolean {
+        if (properties._deleted === "yes") {
+            return false
+        }
+        {
+            const isShown: TagsFilter = this.layerDef.isShown
+            if (isShown !== undefined && !isShown.matchesProperties(properties)) {
+                return false
+            }
+        }
+
+        {
+            let neededTags: TagsFilter = this.currentFilter.data
+            if (neededTags !== undefined && !neededTags.matchesProperties(properties)) {
+                return false
+            }
+        }
+
+        for (const globalFilter of globalFilters ?? []) {
+            const neededTags = globalFilter.osmTags
+            if (neededTags !== undefined && !neededTags.matchesProperties(properties)) {
+                return false
+            }
+        }
+        return true
     }
 }
