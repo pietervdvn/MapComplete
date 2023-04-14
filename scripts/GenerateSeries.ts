@@ -199,7 +199,7 @@ class GenerateSeries extends Script {
     }
 
     async main(args: string[]): Promise<void> {
-        const targetDir = args[0] ?? "../MapComplete-data"
+        const targetDir = args[0] ?? "../../git/MapComplete-data"
 
         await this.downloadStatistics(targetDir + "/changeset-metadata")
         await this.generateCenterPoints(
