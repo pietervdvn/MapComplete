@@ -13,6 +13,7 @@ import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import usersettings from "../../assets/generated/layers/usersettings.json"
 import Locale from "../../UI/i18n/Locale"
 import LinkToWeblate from "../../UI/Base/LinkToWeblate"
+import FeatureSwitchState from "./FeatureSwitchState"
 
 /**
  * The part of the state which keeps track of user-related stuff, e.g. the OSM-connection,
@@ -57,7 +58,8 @@ export default class UserRelatedState {
     constructor(
         osmConnection: OsmConnection,
         availableLanguages?: string[],
-        layout?: LayoutConfig
+        layout?: LayoutConfig,
+        featureSwitches?: FeatureSwitchState
     ) {
         this.osmConnection = osmConnection
         {
@@ -97,7 +99,7 @@ export default class UserRelatedState {
 
         this.homeLocation = this.initHomeLocation()
 
-        this.preferencesAsTags = this.initAmendedPrefs(layout)
+        this.preferencesAsTags = this.initAmendedPrefs(layout, featureSwitches)
     }
 
     public GetUnofficialTheme(id: string):
@@ -241,7 +243,10 @@ export default class UserRelatedState {
      * Initialize the 'amended preferences'.
      * This is inherently a dirty and chaotic method, as it shoves many properties into this EventSourcd
      * */
-    private initAmendedPrefs(layout?: LayoutConfig): UIEventSource<Record<string, string>> {
+    private initAmendedPrefs(
+        layout?: LayoutConfig,
+        featureSwitches?: FeatureSwitchState
+    ): UIEventSource<Record<string, string>> {
         const amendedPrefs = new UIEventSource<Record<string, string>>({
             _theme: layout?.id,
             _backend: this.osmConnection.Backend(),
@@ -356,6 +361,19 @@ export default class UserRelatedState {
                 this.osmConnection.GetPreference(key, undefined, { prefix: "" }).setData(tags[key])
             }
         })
+
+        for (const key in featureSwitches) {
+            if (featureSwitches[key].addCallbackAndRun) {
+                featureSwitches[key].addCallbackAndRun((v) => {
+                    const oldV = amendedPrefs.data["__" + key]
+                    if (oldV === v) {
+                        return
+                    }
+                    amendedPrefs.data["__" + key] = "" + v
+                    amendedPrefs.ping()
+                })
+            }
+        }
 
         return amendedPrefs
     }

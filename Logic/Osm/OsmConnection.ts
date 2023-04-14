@@ -237,7 +237,7 @@ export class OsmConnection {
                     userInfo.getElementsByTagName("changesets")[0].getAttribute("count") ?? 0
                 )
                 data.tracesCount = Number.parseInt(
-                    userInfo.getElementsByTagName("changesets")[0].getAttribute("count") ?? 0
+                    userInfo.getElementsByTagName("traces")[0].getAttribute("count") ?? 0
                 )
 
                 data.img = undefined

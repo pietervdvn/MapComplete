@@ -4,6 +4,8 @@ import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import { Feature } from "geojson"
 import FeaturePropertiesStore from "./FeatureSource/Actors/FeaturePropertiesStore"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import { GeoIndexedStoreForLayer } from "./FeatureSource/Actors/GeoIndexedStore"
+import { IndexedFeatureSource } from "./FeatureSource/FeatureSource"
 
 /**
  * Metatagging adds various tags to the elements, e.g. lat, lon, surface area, ...
@@ -14,6 +16,34 @@ export default class MetaTagging {
     private static errorPrintCount = 0
     private static readonly stopErrorOutputAt = 10
     private static retaggingFuncCache = new Map<string, ((feature: Feature) => void)[]>()
+
+    constructor(state: {
+        layout: LayoutConfig
+        perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
+        indexedFeatures: IndexedFeatureSource
+        featureProperties: FeaturePropertiesStore
+    }) {
+        const params: ExtraFuncParams = {
+            getFeatureById: (id) => state.indexedFeatures.featuresById.data.get(id),
+            getFeaturesWithin: (layerId, bbox) =>
+                state.perLayer.get(layerId).GetFeaturesWithin(bbox),
+        }
+        for (const layer of state.layout.layers) {
+            if (layer.source === null) {
+                continue
+            }
+            const featureSource = state.perLayer.get(layer.id)
+            featureSource.features?.addCallbackAndRunD((features) => {
+                MetaTagging.addMetatags(
+                    features,
+                    params,
+                    layer,
+                    state.layout,
+                    state.featureProperties
+                )
+            })
+        }
+    }
 
     /**
      * This method (re)calculates all metatags and calculated tags on every given object.

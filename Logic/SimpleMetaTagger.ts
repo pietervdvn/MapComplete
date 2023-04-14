@@ -95,6 +95,7 @@ export class ReferencingWaysMetaTagger extends SimpleMetaTagger {
         if (!id.startsWith("node/")) {
             return false
         }
+
         console.trace("Downloading referencing ways for", feature.properties.id)
         OsmObject.DownloadReferencingWays(id).then((referencingWays) => {
             const currentTagsSource = state.allElements?.getEventSourceById(id) ?? []
@@ -111,7 +112,7 @@ export class ReferencingWaysMetaTagger extends SimpleMetaTagger {
     }
 }
 
-export class CountryTagger extends SimpleMetaTagger {
+class CountryTagger extends SimpleMetaTagger {
     private static readonly coder = new CountryCoder(
         Constants.countryCoderEndpoint,
         Utils.downloadJson
@@ -182,7 +183,7 @@ class InlineMetaTagger extends SimpleMetaTagger {
     }
 }
 
-export class RewriteMetaInfoTags extends SimpleMetaTagger {
+class RewriteMetaInfoTags extends SimpleMetaTagger {
     constructor() {
         super({
             keys: [
@@ -267,8 +268,6 @@ export default class SimpleMetaTaggers {
             const lon = centerPoint.geometry.coordinates[0]
             feature.properties["_lat"] = "" + lat
             feature.properties["_lon"] = "" + lon
-            feature._lon = lon // This is dirty, I know
-            feature._lat = lat
             return true
         }
     )

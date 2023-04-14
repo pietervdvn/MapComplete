@@ -12,8 +12,8 @@ export interface ExtraFuncParams {
      * Note that more features then requested can be given back.
      * Format: [ [ geojson, geojson, geojson, ... ], [geojson, ...], ...]
      */
-    getFeaturesWithin: (layerId: string, bbox: BBox) => Feature<Geometry, { id: string }>[][]
-    getFeatureById: (id: string) => Feature<Geometry, { id: string }>
+    getFeaturesWithin: (layerId: string, bbox: BBox) => Feature<Geometry, Record<string, string>>[]
+    getFeatureById: (id: string) => Feature<Geometry, Record<string, string>>
 }
 
 /**
@@ -52,26 +52,24 @@ class EnclosingFunc implements ExtraFunction {
                 if (otherFeaturess.length === 0) {
                     continue
                 }
-                for (const otherFeatures of otherFeaturess) {
-                    for (const otherFeature of otherFeatures) {
-                        if (seenIds.has(otherFeature.properties.id)) {
-                            continue
-                        }
-                        seenIds.add(otherFeature.properties.id)
-                        if (
-                            otherFeature.geometry.type !== "Polygon" &&
-                            otherFeature.geometry.type !== "MultiPolygon"
-                        ) {
-                            continue
-                        }
-                        if (
-                            GeoOperations.completelyWithin(
-                                <Feature>feat,
-                                <Feature<Polygon | MultiPolygon, any>>otherFeature
-                            )
-                        ) {
-                            result.push({ feat: otherFeature })
-                        }
+                for (const otherFeature of otherFeaturess) {
+                    if (seenIds.has(otherFeature.properties.id)) {
+                        continue
+                    }
+                    seenIds.add(otherFeature.properties.id)
+                    if (
+                        otherFeature.geometry.type !== "Polygon" &&
+                        otherFeature.geometry.type !== "MultiPolygon"
+                    ) {
+                        continue
+                    }
+                    if (
+                        GeoOperations.completelyWithin(
+                            <Feature>feat,
+                            <Feature<Polygon | MultiPolygon, any>>otherFeature
+                        )
+                    ) {
+                        result.push({ feat: otherFeature })
                     }
                 }
             }
@@ -154,14 +152,12 @@ class IntersectionFunc implements ExtraFunction {
                 if (otherLayers.length === 0) {
                     continue
                 }
-                for (const tile of otherLayers) {
-                    for (const otherFeature of tile) {
-                        const intersections = GeoOperations.LineIntersections(feat, otherFeature)
-                        if (intersections.length === 0) {
-                            continue
-                        }
-                        result.push({ feat: otherFeature, intersections })
+                for (const otherFeature of otherLayers) {
+                    const intersections = GeoOperations.LineIntersections(feat, otherFeature)
+                    if (intersections.length === 0) {
+                        continue
                     }
+                    result.push({ feat: otherFeature, intersections })
                 }
             }
 
@@ -329,7 +325,7 @@ class ClosestNObjectFunc implements ExtraFunction {
                         const uniqueTagsMatch =
                             otherFeature.properties[uniqueTag] !== undefined &&
                             closestFeature.feat.properties[uniqueTag] ===
-                                otherFeature.properties[uniqueTag]
+                            otherFeature.properties[uniqueTag]
                         if (uniqueTagsMatch) {
                             targetIndex = -1
                             if (closestFeature.distance > distance) {

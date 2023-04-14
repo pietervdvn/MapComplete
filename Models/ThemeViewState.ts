@@ -41,6 +41,7 @@ import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexe
 import { LastClickFeatureSource } from "../Logic/FeatureSource/Sources/LastClickFeatureSource"
 import SimpleFeatureSource from "../Logic/FeatureSource/Sources/SimpleFeatureSource"
 import { MenuState } from "./MenuState"
+import MetaTagging from "../Logic/MetaTagging"
 
 /**
  *
@@ -101,7 +102,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
             ),
             osmConfiguration: <"osm" | "osm-test">this.featureSwitches.featureSwitchApiURL.data,
         })
-        this.userRelatedState = new UserRelatedState(this.osmConnection, layout?.language, layout)
+        this.userRelatedState = new UserRelatedState(
+            this.osmConnection,
+            layout?.language,
+            layout,
+            this.featureSwitches
+        )
         this.selectedElement = new UIEventSource<Feature | undefined>(undefined, "Selected element")
         this.selectedLayer = new UIEventSource<LayerConfig>(undefined, "Selected layer")
         this.geolocation = new GeoLocationHandler(
@@ -323,10 +329,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
     /**
      * Setup various services for which no reference are needed
-     * @private
      */
     private initActors() {
-        // Various actors that we don't need to reference
+        new MetaTagging(this)
         new TitleHandler(this.selectedElement, this.selectedLayer, this.featureProperties, this)
         new ChangeToElementsActor(this.changes, this.featureProperties)
         new PendingChangesUploader(this.changes, this.selectedElement)

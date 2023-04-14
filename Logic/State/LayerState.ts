@@ -69,6 +69,7 @@ export default class LayerState {
         console.warn(
             "Linking filter and isDisplayed-states of " + layer.id + " and " + layer.filterIsSameAs
         )
-        filteredLayers.set(layer.id, toReuse)
+        const copy = new FilteredLayer(layer, toReuse.appliedFilters, toReuse.isDisplayed)
+        filteredLayers.set(layer.id, copy)
     }
 }

@@ -35,7 +35,7 @@ export default class FilteredLayer {
 
     constructor(
         layer: LayerConfig,
-        appliedFilters?: Map<string, UIEventSource<undefined | number | string>>,
+        appliedFilters?: ReadonlyMap<string, UIEventSource<undefined | number | string>>,
         isDisplayed?: UIEventSource<boolean>
     ) {
         this.layerDef = layer

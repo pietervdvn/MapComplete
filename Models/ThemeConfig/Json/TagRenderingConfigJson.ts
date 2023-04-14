@@ -77,6 +77,13 @@ export interface TagRenderingConfigJson {
     condition?: TagConfigJson
 
     /**
+     * If set, this tag will be evaluated agains the _usersettings/application state_ table.
+     * Enable 'show debug info' in user settings to see available options.
+     * Note that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_
+     */
+    metacondition?: TagConfigJson
+
+    /**
      * Allow freeform text input from the user
      */
     freeform?: {
