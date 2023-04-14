@@ -93,7 +93,7 @@ export class DownloadPanel extends Toggle {
             buttonSvg,
             includeMetaToggle,
             t.licenseInfo.SetClass("link-underline"),
-        ]).SetClass("w-full flex flex-col border-4 border-gray-300 rounded-3xl p-4")
+        ]).SetClass("w-full flex flex-col")
 
         super(
             downloadButtons,

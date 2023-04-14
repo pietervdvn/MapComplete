@@ -1,5 +1,4 @@
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import EditableTagRendering from "./EditableTagRendering"
 import QuestionBox from "./QuestionBox"
 import Combine from "../Base/Combine"
 import TagRenderingAnswer from "./TagRenderingAnswer"
@@ -8,12 +7,7 @@ import Constants from "../../Models/Constants"
 import SharedTagRenderings from "../../Customizations/SharedTagRenderings"
 import BaseUIElement from "../BaseUIElement"
 import { VariableUiElement } from "../Base/VariableUIElement"
-import DeleteWizard from "./DeleteWizard"
-import SplitRoadWizard from "./SplitRoadWizard"
-import TagRenderingConfig from "../../Models/ThemeConfig/TagRenderingConfig"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import { Utils } from "../../Utils"
-import MoveWizard from "./MoveWizard"
 import Toggle from "../Input/Toggle"
 import Lazy from "../Base/Lazy"
 import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
@@ -36,7 +30,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
             [state.showAllQuestionsAtOnce]
         )
         super(
-            () => FeatureInfoBox.GenerateTitleBar(tags, layerConfig, state),
+            () => undefined,
             () => FeatureInfoBox.GenerateContent(tags, layerConfig, state, showAllQuestions),
             options?.hashToShow ?? tags.data.id ?? "item",
             options?.isShown,
@@ -46,34 +40,6 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
         if (layerConfig === undefined) {
             throw "Undefined layerconfig"
         }
-    }
-
-    public static GenerateTitleBar(
-        tags: UIEventSource<any>,
-        layerConfig: LayerConfig,
-        state: {}
-    ): BaseUIElement {
-        const title = new TagRenderingAnswer(
-            tags,
-            layerConfig.title ?? new TagRenderingConfig("POI"),
-            state
-        ).SetClass("break-words font-bold sm:p-0.5 md:p-1 sm:p-1.5 md:p-2 text-2xl")
-        const titleIcons = new Combine(
-            layerConfig.titleIcons.map((icon) => {
-                return new TagRenderingAnswer(
-                    tags,
-                    icon,
-                    state,
-                    "block h-8 max-h-8 align-baseline box-content sm:p-0.5 titleicon"
-                )
-            })
-        ).SetClass("flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2")
-
-        return new Combine([
-            new Combine([title, titleIcons]).SetClass(
-                "flex flex-col sm:flex-row flex-grow justify-between"
-            ),
-        ])
     }
 
     public static GenerateContent(
@@ -98,7 +64,6 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
     ): BaseUIElement {
         let questionBoxes: Map<string, QuestionBox> = new Map<string, QuestionBox>()
         const t = Translations.t.general
-        const allGroupNames = Utils.Dedup(layerConfig.tagRenderings.map((tr) => tr.group))
 
         const withQuestion = layerConfig.tagRenderings.filter(
             (tr) => tr.question !== undefined
@@ -134,63 +99,6 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                     })
             ),
         ]
-        for (let i = 0; i < allGroupNames.length; i++) {
-            const groupName = allGroupNames[i]
-
-            const trs = layerConfig.tagRenderings.filter((tr) => tr.group === groupName)
-            const renderingsForGroup: (EditableTagRendering | BaseUIElement)[] = []
-            const innerClasses =
-                "block w-full break-word text-default m-1 p-1 border-b border-gray-200 mb-2 pb-2"
-            for (const tr of trs) {
-                if (tr.question === null || tr.id === "questions") {
-                    // This is a question box!
-                    const questionBox = questionBoxes.get(tr.group)
-                    questionBoxes.delete(tr.group)
-
-                    if (tr.render !== undefined) {
-                        questionBox.SetClass("text-sm")
-                        const renderedQuestion = new TagRenderingAnswer(
-                            tags,
-                            tr,
-                            state,
-                            tr.group + " questions",
-                            "",
-                            {
-                                specialViz: new Map<string, BaseUIElement>([
-                                    ["questions", questionBox],
-                                ]),
-                            }
-                        )
-                        const possiblyHidden = new Toggle(
-                            renderedQuestion,
-                            undefined,
-                            questionBox.restingQuestions.map((ls) => ls?.length > 0)
-                        )
-                        renderingsForGroup.push(possiblyHidden)
-                    } else {
-                        renderingsForGroup.push(questionBox)
-                    }
-                } else {
-                    let classes = innerClasses
-                    let isHeader = renderingsForGroup.length === 0 && i > 0
-                    if (isHeader) {
-                        // This is the first element of a group!
-                        // It should act as header and be sticky
-                        classes = ""
-                    }
-
-                    const etr = new EditableTagRendering(tags, tr, layerConfig.units, state, {
-                        innerElementClasses: innerClasses,
-                    })
-                    if (isHeader) {
-                        etr.SetClass("sticky top-0")
-                    }
-                    renderingsForGroup.push(etr)
-                }
-            }
-
-            allRenderings.push(...renderingsForGroup)
-        }
         allRenderings.push(
             new Toggle(
                 new Lazy(() =>
