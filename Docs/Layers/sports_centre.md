@@ -73,8 +73,6 @@ attribute | type | values which are supported by this layer
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
-
 This tagrendering has no question and is thus read-only
 
 
@@ -170,6 +168,48 @@ The question is  *Is this place accessible with a wheelchair?*
   - *It is possible to reach this place in a wheelchair, but it is not easy*  corresponds with  `wheelchair=limited`
   - *This place is not reachable with a wheelchair*  corresponds with  `wheelchair=no`
 
+
+
+
+### leftover-questions 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### minimap 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### move-button 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### last_edit 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
 
 
 

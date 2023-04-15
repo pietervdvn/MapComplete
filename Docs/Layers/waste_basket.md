@@ -72,8 +72,6 @@ attribute | type | values which are supported by this layer
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
-
 This tagrendering has no question and is thus read-only
 
 
@@ -117,6 +115,68 @@ The question is  *Does this waste basket have a dispenser for dog excrement bags
   - *This waste basket <b>does not</b> have a dispenser for (dog) excrement bags*  corresponds with  ``
   - This option cannot be chosen as answer
 
+
+
+
+### leftover-questions 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### minimap 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### move-button 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### delete-button 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### all-tags 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### last_edit 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
 
 
 

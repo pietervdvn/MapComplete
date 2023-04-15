@@ -11,7 +11,6 @@ This theme contains the following layers:
 
 
 
-  - [type_node](../Layers/type_node.md)
   - [osm:buildings](../Layers/osm:buildings.md)
   - [osm:adresses](../Layers/osm:adresses.md)
   - [bag:pand](../Layers/bag:pand.md)
@@ -21,6 +20,8 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
+  - [range](../Layers/range.md)
+  - [last_click](../Layers/last_click.md)
 
 
 Available languages:

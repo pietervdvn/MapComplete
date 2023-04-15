@@ -11,6 +11,7 @@ This theme contains the following layers:
 
 
 
+  - [advertising](../Layers/advertising.md)
   - [ambulancestation](../Layers/ambulancestation.md)
   - [artwork](../Layers/artwork.md)
   - [atm](../Layers/atm.md)
@@ -38,9 +39,11 @@ This theme contains the following layers:
   - [climbing_route](../Layers/climbing_route.md)
   - [clock](../Layers/clock.md)
   - [crossings](../Layers/crossings.md)
+  - [current_view](../Layers/current_view.md)
   - [cycleways_and_roads](../Layers/cycleways_and_roads.md)
   - [defibrillator](../Layers/defibrillator.md)
   - [dentist](../Layers/dentist.md)
+  - [direction](../Layers/direction.md)
   - [doctors](../Layers/doctors.md)
   - [dogpark](../Layers/dogpark.md)
   - [drinking_water](../Layers/drinking_water.md)
@@ -66,6 +69,7 @@ This theme contains the following layers:
   - [maproulette_challenge](../Layers/maproulette_challenge.md)
   - [maxspeed](../Layers/maxspeed.md)
   - [nature_reserve](../Layers/nature_reserve.md)
+  - [note](../Layers/note.md)
   - [observation_tower](../Layers/observation_tower.md)
   - [osm_community_index](../Layers/osm_community_index.md)
   - [parcel_lockers](../Layers/parcel_lockers.md)
@@ -109,6 +113,8 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
+  - [range](../Layers/range.md)
+  - [last_click](../Layers/last_click.md)
 
 
 Available languages:

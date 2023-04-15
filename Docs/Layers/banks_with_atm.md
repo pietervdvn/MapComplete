@@ -83,11 +83,9 @@ The question is  *Does this bank have an ATM?*
 
 
 
-### questions 
+### leftover-questions 
 
 
-
-Show the images block at this location
 
 This tagrendering has no question and is thus read-only
 
@@ -99,11 +97,21 @@ This tagrendering has no question and is thus read-only
 
 
 
-Shows a small map with the feature. Added by default to every popup
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### last_edit 
+
+
 
 This tagrendering has no question and is thus read-only
 
 
+
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
 
 
 

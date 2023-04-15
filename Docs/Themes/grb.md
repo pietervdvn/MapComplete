@@ -12,7 +12,6 @@ This theme contains the following layers:
 
 
   - [named_streets](../Layers/named_streets.md)
-  - [type_node](../Layers/type_node.md)
   - [osm-buildings](../Layers/osm-buildings.md)
   - [service_ways](../Layers/service_ways.md)
   - [generic_osm_object](../Layers/generic_osm_object.md)
@@ -25,6 +24,8 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
+  - [range](../Layers/range.md)
+  - [last_click](../Layers/last_click.md)
 
 
 Available languages:

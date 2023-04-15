@@ -148,8 +148,6 @@ attribute | type | values which are supported by this layer
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
-
 This tagrendering has no question and is thus read-only
 
 
@@ -571,7 +569,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Schuko wall plu
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:schuko~.+&socket:schuko!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -594,7 +592,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Schuko wall plu
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:schuko~.+&socket:schuko!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -617,7 +615,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Schuko wall plu
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:schuko~.+&socket:schuko!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -640,7 +638,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>European wall p
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:typee~.+&socket:typee!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -663,7 +661,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>European wall p
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:typee~.+&socket:typee!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -687,7 +685,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>European wall p
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:typee~.+&socket:typee!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -710,7 +708,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Chademo</b></b>
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:chademo~.+&socket:chademo!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -733,7 +731,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Chademo</b></b>
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:chademo~.+&socket:chademo!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -756,7 +754,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Chademo</b></b>
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:chademo~.+&socket:chademo!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -780,7 +778,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 with cab
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type1_cable~.+&socket:type1_cable!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -803,7 +801,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 with cab
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type1_cable~.+&socket:type1_cable!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -827,7 +825,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 with cab
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type1_cable~.+&socket:type1_cable!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -851,7 +849,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 <i>witho
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type1~.+&socket:type1!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -874,7 +872,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 <i>witho
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type1~.+&socket:type1!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -900,7 +898,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 <i>witho
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type1~.+&socket:type1!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -924,7 +922,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 CCS</b> 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type1_combo~.+&socket:type1_combo!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -948,7 +946,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 CCS</b> 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type1_combo~.+&socket:type1_combo!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -974,7 +972,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 1 CCS</b> 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type1_combo~.+&socket:type1_combo!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -997,7 +995,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger~.+&socket:tesla_supercharger!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1021,7 +1019,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger~.+&socket:tesla_supercharger!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1046,7 +1044,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger~.+&socket:tesla_supercharger!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1070,7 +1068,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2</b> (men
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type2~.+&socket:type2!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1094,7 +1092,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2</b> (men
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type2~.+&socket:type2!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1118,7 +1116,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2</b> (men
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type2~.+&socket:type2!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1142,7 +1140,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2 CCS</b> 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type2_combo~.+&socket:type2_combo!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1166,7 +1164,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2 CCS</b> 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type2_combo~.+&socket:type2_combo!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1189,7 +1187,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2 CCS</b> 
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type2_combo~.+&socket:type2_combo!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1213,7 +1211,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2 with cab
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type2_cable~.+&socket:type2_cable!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1237,7 +1235,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2 with cab
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type2_cable~.+&socket:type2_cable!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1261,7 +1259,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Type 2 with cab
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:type2_cable~.+&socket:type2_cable!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1285,7 +1283,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1309,7 +1307,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1332,7 +1330,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_supercharger_ccs~.+&socket:tesla_supercharger_ccs!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1355,7 +1353,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+&socket:tesla_destination!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1379,7 +1377,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+&socket:tesla_destination!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1404,7 +1402,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+&socket:tesla_destination!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1428,7 +1426,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla superchar
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+&socket:tesla_destination!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1452,7 +1450,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+&socket:tesla_destination!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1476,7 +1474,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Tesla Superchar
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:tesla_destination~.+&socket:tesla_destination!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1499,7 +1497,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>USB</b> to char
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:USB-A~.+&socket:USB-A!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1523,7 +1521,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>USB</b> to char
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:USB-A~.+&socket:USB-A!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1547,7 +1545,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>USB</b> to char
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:USB-A~.+&socket:USB-A!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1570,7 +1568,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Bosch Active Co
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_3pin~.+&socket:bosch_3pin!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1593,7 +1591,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Bosch Active Co
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_3pin~.+&socket:bosch_3pin!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1616,7 +1614,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Bosch Active Co
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_3pin~.+&socket:bosch_3pin!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1639,7 +1637,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Bosch Active Co
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_5pin~.+&socket:bosch_5pin!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1662,7 +1660,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Bosch Active Co
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_5pin~.+&socket:bosch_5pin!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -1685,7 +1683,7 @@ This is rendered with  `<div style='display: inline-block'><b><b>Bosch Active Co
 
 This tagrendering is only visible in the popup if the following condition is met: `socket:bosch_5pin~.+&socket:bosch_5pin!=0`
 
-This tagrendering is part of group  `technical`
+This tagrendering has labels  `technical`
 
 
 
@@ -2017,15 +2015,11 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is part of group  `technical`
 
 
-
-### questions 
-
+### leftover-questions 
 
 
-Show the images block at this location
 
 This tagrendering has no question and is thus read-only
 
@@ -2037,10 +2031,50 @@ This tagrendering has no question and is thus read-only
 
 
 
-Shows a small map with the feature. Added by default to every popup
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### move-button 
+
+
 
 This tagrendering has no question and is thus read-only
 
- 
+
+
+
+
+### delete-button 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### all-tags 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### last_edit 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+` 
 
 This document is autogenerated from [assets/themes/cyclofix/cyclofix.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/themes/cyclofix/cyclofix.json)

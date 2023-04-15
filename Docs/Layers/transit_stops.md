@@ -96,8 +96,6 @@ This is rendered with  `This stop is called <b>{name}</b>`
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
-
 This tagrendering has no question and is thus read-only
 
 
@@ -239,6 +237,38 @@ This tagrendering has no question and is thus read-only
 
 
 This tagrendering is only visible in the popup if the following condition is met: `_contained_routes~.+`
+
+
+
+### leftover-questions 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### minimap 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### last_edit 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
 
 
 

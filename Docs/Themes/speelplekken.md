@@ -15,7 +15,6 @@ This theme contains the following layers:
   - [play_forest](../Layers/play_forest.md)
   - [playground](../Layers/playground.md)
   - [village_green](../Layers/village_green.md)
-  - [grass_in_parks](../Layers/grass_in_parks.md)
   - [sport_pitch](../Layers/sport_pitch.md)
   - [slow_roads](../Layers/slow_roads.md)
   - [walking_routes](../Layers/walking_routes.md)
@@ -24,6 +23,8 @@ This theme contains the following layers:
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
+  - [range](../Layers/range.md)
+  - [last_click](../Layers/last_click.md)
 
 
 Available languages:

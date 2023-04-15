@@ -94,8 +94,6 @@ This is rendered with  `This fitness centre is called {name}`
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
-
 This tagrendering has no question and is thus read-only
 
 
@@ -223,11 +221,41 @@ This is rendered with  `Located on the {level}th floor`
 
 
 
-Shows the reviews module (including the possibility to leave a review)
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### leftover-questions 
+
+
 
 This tagrendering has no question and is thus read-only
 
 
+
+
+
+### minimap 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### last_edit 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
 
 
 

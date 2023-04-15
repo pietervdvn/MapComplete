@@ -76,8 +76,6 @@ attribute | type | values which are supported by this layer
 
 
 
-This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
-
 This tagrendering has no question and is thus read-only
 
 
@@ -186,18 +184,18 @@ The question is  *What can be recycled here?*
   - Unselecting this answer will add 
   - *Plastic can be recycled here*  corresponds with  `recycling:plastic=yes`
   - Unselecting this answer will add 
-  - *Scrap metal can be recycled here*  corresponds with  `recycling:printer_cartridges=yes`
+  - *Printer cartridges can be recycled here*  corresponds with  `recycling:printer_cartridges=yes`
   - Unselecting this answer will add 
-  - *Shoes can be recycled here*  corresponds with  `recycling:scrap_metal=yes`
+  - *Scrap metal can be recycled here*  corresponds with  `recycling:scrap_metal=yes`
   - Unselecting this answer will add 
-  - *Small electrical appliances can be recycled here*  corresponds with  `recycling:shoes=yes`
+  - *Shoes can be recycled here*  corresponds with  `recycling:shoes=yes`
   - Unselecting this answer will add 
   - *Small electrical appliances can be recycled here*  corresponds with  `recycling:small_appliances=yes`
   - Unselecting this answer will add 
-  - *Needles can be recycled here*  corresponds with  `recycling:small_electrical_appliances=yes`
+  - *Small electrical appliances can be recycled here*  corresponds with  `recycling:small_electrical_appliances=yes`
   - This option cannot be chosen as answer
   - Unselecting this answer will add 
-  - *Residual waste can be recycled here*  corresponds with  `recycling:needles=yes`
+  - *Needles can be recycled here*  corresponds with  `recycling:needles=yes`
   - Unselecting this answer will add 
   - *Residual waste can be recycled here*  corresponds with  `recycling:waste=yes`
   - Unselecting this answer will add 
@@ -322,6 +320,68 @@ This is rendered with  `This recycling facility can be used by {access}`
   - *Only residents can use this recycling facility*  corresponds with  `access=residents`
   - *This recycling facility is only for private use*  corresponds with  `access=private`
 
+
+
+
+### leftover-questions 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### minimap 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### move-button 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### delete-button 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### all-tags 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### last_edit 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
 
 
 

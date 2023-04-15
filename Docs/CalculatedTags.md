@@ -18,7 +18,7 @@
     + [_isOpen](#_isopen)
     + [_direction:numerical, _direction:leftright](#_directionnumerical,-_direction:leftright)
     + [_direction:centerpoint](#_directioncenterpoint)
-    + [_now:date, _now:datetime, _loaded:date, _loaded:_datetime](#_nowdate,-_now:datetime,-_loaded:date,-_loaded:_datetime)
+    + [_now:date, _now:datetime](#_nowdate,-_now:datetime)
     + [_last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number, _backend](#_last_editcontributor,-_last_edit:contributor:uid,-_last_edit:changeset,-_last_edit:timestamp,-_version_number,-_backend)
     + [sidewalk:left, sidewalk:right, generic_key:left:property, generic_key:right:property](#sidewalkleft,-sidewalk:right,-generic_key:left:property,-generic_key:right:property)
     + [_geometry:type](#_geometrytype)
@@ -30,7 +30,6 @@
     + [intersectionsWith](#intersectionswith)
     + [closest](#closest)
     + [closestn](#closestn)
-    + [memberships](#memberships)
     + [get](#get)
 
 
@@ -142,7 +141,7 @@ This is a lazy metatag and is only calculated when needed
 
 
 
-### _now:date, _now:datetime, _loaded:date, _loaded:_datetime 
+### _now:date, _now:datetime 
 
 
 
@@ -156,7 +155,7 @@ Adds the time that the data got loaded - pretty much the time of downloading fro
 
 
 
-Information about the last edit of this object.
+Information about the last edit of this object. This object will actually _rewrite_ some tags for features coming from overpass
 
 
 
@@ -196,7 +195,7 @@ Extract the 'level'-tag into a normalized, ';'-separated value
 
 
 
-_referencing_ways contains - for a node - which ways use this this node as point in their geometry. If the preset has 'snapToLayer' defined, the icon will be calculated based on the preset tags with `_referencing_ways=["way/-1"]` added.
+_referencing_ways contains - for a node - which ways use this this node as point in their geometry. 
 
 This is a lazy metatag and is only calculated when needed
 
@@ -256,7 +255,6 @@ Some advanced functions are available on **feat** as well:
   - [intersectionsWith](#intersectionsWith)
   - [closest](#closest)
   - [closestn](#closestn)
-  - [memberships](#memberships)
   - [get](#get)
  
 
@@ -322,15 +320,6 @@ If a 'unique tag key' is given, the tag with this key will only appear once (e.g
   1. amount of features
   2. unique tag key (optional)
   3. maxDistanceInMeters (optional)
- 
-
-### memberships 
-
- Gives a list of `{role: string, relation: Relation}`-objects, containing all the relations that this feature is part of. 
-
-For example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')` 
-
-
  
 
 ### get 
