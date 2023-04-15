@@ -189,7 +189,7 @@ class RewriteMetaInfoTags extends SimpleMetaTagger {
                 "_version_number",
                 "_backend",
             ],
-            doc: "Information about the last edit of this object.",
+            doc: "Information about the last edit of this object. This object will actually _rewrite_ some tags for features coming from overpass",
         })
     }
 
@@ -213,6 +213,7 @@ class RewriteMetaInfoTags extends SimpleMetaTagger {
         move("changeset", "_last_edit:changeset")
         move("timestamp", "_last_edit:timestamp")
         move("version", "_version_number")
+        feature.properties._backend = "https://openstreetmap.org"
         return movedSomething
     }
 }
