@@ -2,7 +2,7 @@
   "data_format": 1,
   "project": {
     "name": "MapComplete Ghost bikes",
-    "description": "A <b>ghost bike</b> is a memorial for a cyclist who died in a traffic accident, in the form of a white bicycle placed permanently near the accident location",
+    "description": "A ",
     "project_url": "https://mapcomplete.osm.be/ghostbikes",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/themes/ghostbikes/logo.svg",

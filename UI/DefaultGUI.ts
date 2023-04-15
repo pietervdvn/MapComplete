@@ -36,18 +36,9 @@ export default class DefaultGUI {
     }
 
     private SetupUIElements() {
-        const guiState = this.guiState
-
         const extraLink = Toggle.If(
             state.featureSwitchExtraLinkEnabled,
             () => new ExtraLinkButton(state, state.layoutToUse.extraLink)
-        )
-
-        new ScrollableFullScreen(
-            () => Translations.t.general.attribution.attributionTitle,
-            () => new CopyrightPanel(state),
-            "copyright",
-            guiState.copyrightViewIsOpened
         )
 
         new Combine([extraLink]).SetClass("flex flex-col").AttachTo("top-left")
@@ -64,6 +55,7 @@ export default class DefaultGUI {
             .SetClass("flex items-center justify-center normal-background h-full")
             .AttachTo("on-small-screen")
 
+        const guiState = this.guiState
         new LeftControls(state, guiState).AttachTo("bottom-left")
         new RightControls(state, this.geolocationHandler).AttachTo("bottom-right")
 

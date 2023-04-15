@@ -11,7 +11,6 @@
   - [What is a URL parameter?](#what-is-a-url-parameter)
   - [language](#language)
   - [fs-translation-mode](#fs-translation-mode)
-  - [tab](#tab)
   - [fs-userbadge](#fs-userbadge)
   - [fs-search](#fs-search)
   - [fs-background](#fs-background)
@@ -75,13 +74,6 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
 ---------------------
 
  If set, will show a translation button next to every string. The default value is _false_
-
-
-
- tab 
------
-
- The tab that is shown in the welcome-message. The default value is _0_
 
 
 

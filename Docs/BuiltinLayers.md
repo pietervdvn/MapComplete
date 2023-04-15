@@ -30,41 +30,62 @@
     + [upload_to_osm](#upload_to_osm)
     + [minimap](#minimap)
     + [delete](#delete)
-1. [type_node](#type_node)
+    + [leftover-questions](#leftover-questions)
+1. [range](#range)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
-1. [note](#note)
+1. [last_click](#last_click)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
-    + [conversation](#conversation)
-    + [add_image](#add_image)
-    + [comment](#comment)
-    + [nearby-images](#nearby-images)
-    + [report-contributor](#report-contributor)
-    + [report-note](#report-note)
+    + [add_new](#add_new)
+    + [add_note](#add_note)
+    + [leftover-questions](#leftover-questions)
+    + [minimap](#minimap)
       * [Filters](#filters)
-1. [import_candidate](#import_candidate)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-    + [all_tags](#all_tags)
-1. [direction](#direction)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
 1. [conflation](#conflation)
-  - [Basic tags for this layer](#basic-tags-for-this-layer)
-  - [Supported attributes](#supported-attributes)
-1. [left_right_style](#left_right_style)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
 1. [split_point](#split_point)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
 1. [current_view](#current_view)
+      * [Themes using this layer](#themes-using-this-layer)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
+    + [leftover-questions](#leftover-questions)
+    + [minimap](#minimap)
 1. [matchpoint](#matchpoint)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
+1. [import_candidate](#import_candidate)
+  - [Basic tags for this layer](#basic-tags-for-this-layer)
+  - [Supported attributes](#supported-attributes)
+    + [all_tags](#all_tags)
+    + [leftover-questions](#leftover-questions)
+    + [minimap](#minimap)
+1. [usersettings](#usersettings)
+  - [Basic tags for this layer](#basic-tags-for-this-layer)
+  - [Supported attributes](#supported-attributes)
+    + [profile](#profile)
+    + [language_picker](#language_picker)
+    + [inbox](#inbox)
+    + [settings-link](#settings-link)
+    + [logout](#logout)
+    + [picture-license](#picture-license)
+    + [all-questions-at-once](#all-questions-at-once)
+    + [translations-title](#translations-title)
+    + [translation-mode](#translation-mode)
+    + [translation-help](#translation-help)
+    + [translation-completeness](#translation-completeness)
+    + [translation-links](#translation-links)
+    + [verified-mastodon](#verified-mastodon)
+    + [cscount-thanks](#cscount-thanks)
+    + [translation-thanks](#translation-thanks)
+    + [contributor-thanks](#contributor-thanks)
+    + [show_debug](#show_debug)
+    + [debug](#debug)
+    + [leftover-questions](#leftover-questions)
+    + [minimap](#minimap)
 1. [Normal layers](#normal-layers)
 
 
@@ -85,15 +106,14 @@ MapComplete has a few data layers available in the theme which have special prop
   - [gps_location_history](#gps_location_history)
   - [home_location](#home_location)
   - [gps_track](#gps_track)
-  - [type_node](#type_node)
-  - [note](#note)
-  - [import_candidate](#import_candidate)
-  - [direction](#direction)
+  - [range](#range)
+  - [last_click](#last_click)
   - [conflation](#conflation)
-  - [left_right_style](#left_right_style)
   - [split_point](#split_point)
   - [current_view](#current_view)
   - [matchpoint](#matchpoint)
+  - [import_candidate](#import_candidate)
+  - [usersettings](#usersettings)
 
 
 
@@ -129,7 +149,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:selected' target='_blank'>selected</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:selected%3Dyes' target='_blank'>yes</a>
+
 
 
 
@@ -148,7 +168,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 <img src='https://mapcomplete.osm.be/crosshair:var(--catch-detail-color)' height="100px"> 
 
-Meta layer showing the current location of the user. Add this to your theme and override the icon to change the appearance of the current location. The object will always have `id=gps` and will have _all_ the properties included in the [`Coordinates`-object](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates) returned by the browser.
+Meta layer showing the current location of the user. Add this to your theme and override the icon to change the appearance of the current location. The object will always have `id=gps` and will have _all_ the properties included in the [`Coordinates`-object](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates) (except latitude and longitude) returned by the browser, such as `speed`, `altitude`, `heading`, ....
 
 
 
@@ -172,7 +192,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:id' target='_blank'>id</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:id%3Dgps' target='_blank'>gps</a>
+
 
 
 
@@ -217,7 +237,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:user:location' target='_blank'>user:location</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:user:location%3Dyes' target='_blank'>yes</a>
+
 
 
 
@@ -260,7 +280,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:user:home' target='_blank'>user:home</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:user:home%3Dyes' target='_blank'>yes</a>
+
 
 
 
@@ -303,7 +323,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:id' target='_blank'>id</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:id%3Dlocation_track' target='_blank'>location_track</a>
+
 
 
 
@@ -329,8 +349,6 @@ This tagrendering has no question and is thus read-only
 
 
 
-Shows a button to export this feature as GPX. Especially useful for route relations
-
 This tagrendering has no question and is thus read-only
 
 
@@ -340,8 +358,6 @@ This tagrendering has no question and is thus read-only
 ### export_as_geojson 
 
 
-
-Shows a button to export this feature as geojson. Especially useful for debugging or using this in other programs
 
 This tagrendering has no question and is thus read-only
 
@@ -363,8 +379,6 @@ This tagrendering has no question and is thus read-only
 
 
 
-Shows a small map with the feature. Added by default to every popup
-
 This tagrendering has no question and is thus read-only
 
 
@@ -381,21 +395,34 @@ This tagrendering has no question and is thus read-only
 
 
 
- type_node 
-===========
+### leftover-questions 
+
+
+
+This tagrendering has no question and is thus read-only
 
 
 
 
 
-This is a priviliged meta_layer which exports _every_ point in OSM. This only works if zoomed below the point that the full tile is loaded (and not loaded via Overpass). Note that this point will also contain a property `parent_ways` which contains all the ways this node is part of as a list. This is mainly used for extremely specialized themes, which do advanced conflations. Expert use only.
+ range 
+=======
+
+
+
+
+
+Meta-layer, simply showing a bbox in red
 
 
 
 
 
 
-  - This layer is shown at zoomlevel **18** and higher
+  - This layer is shown at zoomlevel **0** and higher
+  - **This layer is included automatically in every theme. This layer might contain no points**
+  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
+  - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
 
 
@@ -410,7 +437,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - id~^(node\/.*)$
+
 
 
 
@@ -422,202 +449,14 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
- note 
-======
+ last_click 
+============
 
 
 
-<img src='https://mapcomplete.osm.be/./assets/svg/note.svg' height="100px"> 
+<img src='https://mapcomplete.osm.be/<div class='relative'> <img src='./assets/svg/add_pin.svg' class='absolute' style='height: 50px'> <div class='absolute top-0 left-0 rounded-full overflow-hidden' style='width: 40px; height: 40px'><div class='flex slide min-w-min' style='animation: slide linear {number_of_presets}s infinite; width: calc( (1 + {number_of_presets}) * 40px ); height: 40px'>{renderings}{first_preset}</div></div></div>' height="100px"> 
 
-This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)
-
-
-
-
-
-
-  - This layer is shown at zoomlevel **10** and higher
-  - <img src='../warning.svg' height='1rem'/> This layer is loaded from an external source, namely  `https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=7&bbox={x_min},{y_min},{x_max},{y_max}`
-
-
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - id~.+
-
-
-
-
- Supported attributes 
-----------------------
-
-
-
-
-
-### conversation 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### add_image 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### comment 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### nearby-images 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### report-contributor 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-This tagrendering is only visible in the popup if the following condition is met: `_opened_by_anonymous_user=false`
-
-
-
-### report-note 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-#### Filters 
-
-
-
-
-
-id | question | osmTags | fields
----- | ---------- | --------- | --------
-search.0 | Should mention {search} in the first comment |  | search (string)
-
-
-
-
-id | question | osmTags | fields
----- | ---------- | --------- | --------
-not.0 | Should <b>not</b> mention {search} in the first comment |  | search (string)
-
-
-
-
-id | question | osmTags | fields
----- | ---------- | --------- | --------
-opened_by.0 | Opened by contributor {search} |  | search (string)
-
-
-
-
-id | question | osmTags | fields
----- | ---------- | --------- | --------
-not_opened_by.0 | <b>Not</b> opened by contributor {search} |  | search (string)
-
-
-
-
-id | question | osmTags | fields
----- | ---------- | --------- | --------
-edited_by.0 | Last edited by contributor {search} |  | search (string)
-
-
-
-
-id | question | osmTags | fields
----- | ---------- | --------- | --------
-not_edited_by.0 | Opened after {search} |  | search (string)
-
-
-
-
-id | question | osmTags | fields
----- | ---------- | --------- | --------
-opened_before.0 | Created before {search} |  | search (date)
-
-
-
-
-id | question | osmTags | fields
----- | ---------- | --------- | --------
-opened_after.0 | Created after {search} |  | search (date)
-
-
-
-
-id | question | osmTags
----- | ---------- | ---------
-anonymous.0 | Only show notes opened by an anonymous contributor | _opened_by_anonymous_user=true
-
-
-
-
-id | question | osmTags
----- | ---------- | ---------
-is_open.0 | Only show open notes | 
-
-
-
-
-id | question | osmTags
----- | ---------- | ---------
-no_imports.0 | All Notes (default) | 
-no_imports.1 | Hide import notes | 
-no_imports.2 | Show only import Notes | _is_import_note~.+
-
-
-
-
- import_candidate 
-==================
-
-
-
-<img src='https://mapcomplete.osm.be/square:red;' height="100px"> 
-
-Layer used in the importHelper
+This layer defines how to render the 'last click'-location. By default, it will show a marker with the possibility to add a new point (if there are some presets) and/or to add a new note (if the 'note' layer attribute is set). If none are possible, this layer won't show up
 
 
 
@@ -625,6 +464,7 @@ Layer used in the importHelper
 
 
   - This layer is shown at zoomlevel **0** and higher
+  - **This layer is included automatically in every theme. This layer might contain no points**
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
@@ -651,7 +491,31 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-### all_tags 
+### add_new 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `has_presets=yes`
+
+
+
+### add_note 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `has_note_layer=yes`
+
+
+
+### leftover-questions 
 
 
 
@@ -661,43 +525,25 @@ This tagrendering has no question and is thus read-only
 
 
 
- direction 
-===========
+### minimap 
 
 
 
-<img src='https://mapcomplete.osm.be/direction_gradient:var(--catch-detail-color)' height="100px"> 
-
-This layer visualizes directions
-
+This tagrendering has no question and is thus read-only
 
 
 
 
 
-  - This layer is shown at zoomlevel **16** and higher
-  - Elements don't have a title set and cannot be toggled nor will they show up in the dashboard. If you import this layer in your theme, override `title` to make this toggleable.
+#### Filters 
 
 
 
 
- Basic tags for this layer 
----------------------------
 
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - camera:direction~.+|direction~.+
-
-
-
-
- Supported attributes 
-----------------------
-
+id | question | osmTags
+---- | ---------- | ---------
+action.0 | only_if_action_is_possible | has_note_layer=yes\|has_presets=yes
 
 
 
@@ -731,48 +577,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:move' target='_blank'>move</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:move%3Dyes' target='_blank'>yes</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:newpoint' target='_blank'>newpoint</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:newpoint%3Dyes' target='_blank'>yes</a>
 
-
-
-
- Supported attributes 
-----------------------
-
-
-
-
-
- left_right_style 
-==================
-
-
-
-
-
-Special meta-style which will show one single line, either on the left or on the right depending on the id. This is used in the small popups with left_right roads. Cannot be included in a theme
-
-
-
-
-
-
-  - This layer is shown at zoomlevel **0** and higher
-  - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
-
-
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:id' target='_blank'>id</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:id%3Dleft' target='_blank'>left</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:id' target='_blank'>id</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:id%3Dright' target='_blank'>right</a>
 
 
 
@@ -813,7 +618,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:_split_point' target='_blank'>_split_point</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:_split_point%3Dyes' target='_blank'>yes</a>
+
 
 
 
@@ -847,6 +652,20 @@ The icon on the button is the default icon of the layer, but can be customized b
 
 
 
+#### Themes using this layer 
+
+
+
+
+
+  - [grb](https://mapcomplete.osm.be/grb)
+  - [mapcomplete-changes](https://mapcomplete.osm.be/mapcomplete-changes)
+  - [onwheels](https://mapcomplete.osm.be/onwheels)
+  - [personal](https://mapcomplete.osm.be/personal)
+
+
+
+
  Basic tags for this layer 
 ---------------------------
 
@@ -856,13 +675,33 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:current_view' target='_blank'>current_view</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:current_view%3Dyes' target='_blank'>yes</a>
+
 
 
 
 
  Supported attributes 
 ----------------------
+
+
+
+
+
+### leftover-questions 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### minimap 
+
+
+
+This tagrendering has no question and is thus read-only
 
 
 
@@ -909,6 +748,410 @@ Elements must have the all of following tags to be shown on this layer:
 
 
 
+ import_candidate 
+==================
+
+
+
+<img src='https://mapcomplete.osm.be/square:red;' height="100px"> 
+
+Layer used as template in the importHelper
+
+
+
+
+
+
+  - This layer is shown at zoomlevel **0** and higher
+  - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
+
+
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+
+
+
+
+
+ Supported attributes 
+----------------------
+
+
+
+
+
+### all_tags 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### leftover-questions 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### minimap 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+ usersettings 
+==============
+
+
+
+
+
+A special layer which is not meant to be shown on a map, but which is used to set user settings
+
+
+
+
+
+
+  - This layer is shown at zoomlevel **0** and higher
+  - This layer can **not** be included in a theme. It is solely used by [special renderings](SpecialRenderings.md) showing a minimap with custom data.
+
+
+
+
+ Basic tags for this layer 
+---------------------------
+
+
+
+Elements must have the all of following tags to be shown on this layer:
+
+
+
+
+
+
+
+
+ Supported attributes 
+----------------------
+
+
+
+Warning: 
+
+this quick overview is incomplete
+
+
+
+attribute | type | values which are supported by this layer
+----------- | ------ | ------------------------------------------
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-pictures-license#values) [mapcomplete-pictures-license](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-pictures-license) | Multiple choice | [CC0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC0) [CC-BY 4.0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC-BY 4.0) [CC-BY-SA 4.0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC-BY-SA 4.0)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-show-all-questions#values) [mapcomplete-show-all-questions](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show-all-questions) | Multiple choice | [true](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show-all-questions%3Dtrue) [false](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show-all-questions%3Dfalse)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-translation-mode#values) [mapcomplete-translation-mode](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode) | Multiple choice | [false](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dfalse) [true](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dtrue) [mobile](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dmobile)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-translation-mode#values) [mapcomplete-translation-mode](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dyes)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/_translation_percentage#values) [_translation_percentage](https://wiki.openstreetmap.org/wiki/Key:_translation_percentage) | Multiple choice | [100](https://wiki.openstreetmap.org/wiki/Tag:_translation_percentage%3D100)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-show_debug#values) [mapcomplete-show_debug](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show_debug) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_debug%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_debug%3Dno)
+
+
+
+
+### profile 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### language_picker 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### inbox 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *{link(Open your inbox,&LBRACE_backend&RBRACE/messages/inbox,)}*  corresponds with  `_unreadMessages=0`
+  - *{link(<b class='alert'>You have &LBRACE_unreadMessages&RBRACE</b><br/>Open your inbox,&LBRACE_backend&RBRACE/messages/inbox,)}*  corresponds with  `_unreadMessages>0`
+
+
+
+
+### settings-link 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### logout 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### picture-license 
+
+
+
+This question is not meant to be placed on an OpenStreetMap-element; however it is used in the user information panel to ask which license the user wants
+
+The question is  *Under what license do you want to publish your pictures?*
+
+
+
+
+
+  - *Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose. <span class='subtle'>This is the default choice.</span>*  corresponds with  ``
+  - This option cannot be chosen as answer
+  - *Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose.*  corresponds with  `mapcomplete-pictures-license=CC0`
+  - *Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you*  corresponds with  `mapcomplete-pictures-license=CC-BY 4.0`
+  - *Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license.*  corresponds with  `mapcomplete-pictures-license=CC-BY-SA 4.0`
+
+
+
+
+### all-questions-at-once 
+
+
+
+The question is  *Should questions for unknown data fields appear one-by-one or together?*
+
+
+
+
+
+  - *Show all questions in the infobox together*  corresponds with  `mapcomplete-show-all-questions=true`
+  - *Show questions one-by-one*  corresponds with  `mapcomplete-show-all-questions=false`
+
+
+
+
+### translations-title 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### translation-mode 
+
+
+
+The question is  *Do you want to help translating MapComplete?*
+
+
+
+
+
+  - *Don't show a button to quickly change translations*  corresponds with  `mapcomplete-translation-mode=false`
+  - *Show a button to quickly open translations when using MapComplete on a big screen*  corresponds with  `mapcomplete-translation-mode=true`
+  - *Always show the translation buttons, including on mobile*  corresponds with  `mapcomplete-translation-mode=mobile`
+
+
+
+
+### translation-help 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *Click the 'translate'-icon next to a string to enter or update a piece of text. You need a Weblate-account for this. Create one with your OSM-username to automatically unlock translation mode.*  corresponds with  `mapcomplete-translation-mode=yes|mapcomplete-translation-mode=true|mapcomplete-translation-mode=mobile`
+
+
+
+
+### translation-completeness 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *Completely translated*  corresponds with  `_translation_percentage=100`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `mapcomplete-translation-mode=yes|mapcomplete-translation-mode=true|mapcomplete-translation-mode=mobile`
+
+
+
+### translation-links 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_translation_links~.+&mapcomplete-translation-mode=true|mapcomplete-translation-mode=mobile`
+
+
+
+### verified-mastodon 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *A link to your Mastodon-profile has been been found: <a href='{_mastodon_link}' target='_blank'>{_mastodon_link}</a>*  corresponds with  `_mastodon_link~.+`
+  - *We found a link to what looks to be a mastodon account, but it is unverified. <a href='https://www.openstreetmap.org/profile/edit' target='_blank'>Edit your profile description</a> and place the following there: <span class='code'>&lta href="{_mastodon_candidate}" rel="me"&gtMastodon&lt/a&gt*  corresponds with  `_mastodon_candidate~.+`
+
+
+
+
+### cscount-thanks 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *You have made changes on {_csCount} different occasions! That is awesome!*  corresponds with  `_csCount>0`
+
+
+
+
+### translation-thanks 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *You have contributed to translating MapComplete! That's awesome!*  corresponds with  `_translation_contributions>0`
+
+
+
+
+### contributor-thanks 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *You have contributed code to MapComplete with {_code_contributions} commits! That's awesome!*  corresponds with  `_code_contributions>0`
+  - This option cannot be chosen as answer
+
+
+
+
+### show_debug 
+
+
+
+The question is  *Show user settings debug info?*
+
+
+
+
+
+  - *Show debug info*  corresponds with  `mapcomplete-show_debug=yes`
+  - *Don't show debug info*  corresponds with  `mapcomplete-show_debug=no`
+  - *Don't show debug info*  corresponds with  ``
+  - This option cannot be chosen as answer
+
+
+
+
+### debug 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `mapcomplete-show_debug=yes`
+
+
+
+### leftover-questions 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### minimap 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
  Normal layers 
 ===============
 
@@ -919,6 +1162,7 @@ The following layers are included in MapComplete:
 
 
   - [address](./Layers/address.md)
+  - [advertising](./Layers/advertising.md)
   - [ambulancestation](./Layers/ambulancestation.md)
   - [artwork](./Layers/artwork.md)
   - [atm](./Layers/atm.md)
@@ -947,7 +1191,6 @@ The following layers are included in MapComplete:
   - [climbing_opportunity](./Layers/climbing_opportunity.md)
   - [climbing_route](./Layers/climbing_route.md)
   - [clock](./Layers/clock.md)
-  - [cluster_style](./Layers/cluster_style.md)
   - [conflation](./Layers/conflation.md)
   - [crab_address](./Layers/crab_address.md)
   - [crossings](./Layers/crossings.md)
@@ -973,7 +1216,6 @@ The following layers are included in MapComplete:
   - [gps_location](./Layers/gps_location.md)
   - [gps_location_history](./Layers/gps_location_history.md)
   - [gps_track](./Layers/gps_track.md)
-  - [grass_in_parks](./Layers/grass_in_parks.md)
   - [hackerspace](./Layers/hackerspace.md)
   - [home_location](./Layers/home_location.md)
   - [hospital](./Layers/hospital.md)
@@ -986,7 +1228,7 @@ The following layers are included in MapComplete:
   - [information_board](./Layers/information_board.md)
   - [kerbs](./Layers/kerbs.md)
   - [kindergarten_childcare](./Layers/kindergarten_childcare.md)
-  - [left_right_style](./Layers/left_right_style.md)
+  - [last_click](./Layers/last_click.md)
   - [map](./Layers/map.md)
   - [maproulette](./Layers/maproulette.md)
   - [maproulette_challenge](./Layers/maproulette_challenge.md)
@@ -1012,6 +1254,7 @@ The following layers are included in MapComplete:
   - [public_bookcase](./Layers/public_bookcase.md)
   - [railway_platforms](./Layers/railway_platforms.md)
   - [rainbow_crossings](./Layers/rainbow_crossings.md)
+  - [range](./Layers/range.md)
   - [reception_desk](./Layers/reception_desk.md)
   - [recycling](./Layers/recycling.md)
   - [school](./Layers/school.md)
@@ -1036,7 +1279,6 @@ The following layers are included in MapComplete:
   - [transit_routes](./Layers/transit_routes.md)
   - [transit_stops](./Layers/transit_stops.md)
   - [tree_node](./Layers/tree_node.md)
-  - [type_node](./Layers/type_node.md)
   - [usersettings](./Layers/usersettings.md)
   - [veterinary](./Layers/veterinary.md)
   - [viewpoint](./Layers/viewpoint.md)

@@ -10,6 +10,7 @@
 1. [Index of builtin TagRendering](#index-of-builtin-tagrendering)
   - [Existing builtin tagrenderings](#existing-builtin-tagrenderings)
     + [images](#images)
+    + [luminous_or_lit](#luminous_or_lit)
     + [wikipedia](#wikipedia)
     + [bench.*bench-questions](#bench*bench-questions)
     + [opening_hours](#opening_hours)
@@ -41,7 +42,6 @@
     + [climbing.max_difficulty](#climbingmax_difficulty)
     + [climbing.sportclimbing](#climbingsportclimbing)
     + [climbing.max_bolts](#climbingmax_bolts)
-    + [all_tags](#all_tags)
     + [opening_hours_by_appointment](#opening_hours_by_appointment)
     + [multilevels](#multilevels)
     + [induction-loop](#induction-loop)
@@ -78,6 +78,7 @@
 
 
 
+  - advertising
   - ambulancestation
   - artwork
   - atm
@@ -117,7 +118,6 @@
   - food
   - ghost_bike
   - governments
-  - grass_in_parks
   - hackerspace
   - hotel
   - hydrant
@@ -161,6 +161,17 @@
   - waste_basket
   - waste_disposal
   - windturbine
+
+
+
+
+### luminous_or_lit 
+
+
+
+
+
+  - advertising
 
 
 
@@ -660,17 +671,6 @@
 
 
   - climbing_gym
-
-
-
-
-### all_tags 
-
-
-
-
-
-  - cluster_style
 
 
 

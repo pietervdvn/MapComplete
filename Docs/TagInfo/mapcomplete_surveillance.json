@@ -11,6 +11,14 @@
   },
   "tags": [
     {
+      "key": "camera:direction",
+      "description": "The MapComplete theme Surveillance under Surveillance has a layer Direction visualization showing features with this tag"
+    },
+    {
+      "key": "direction",
+      "description": "The MapComplete theme Surveillance under Surveillance has a layer Direction visualization showing features with this tag"
+    },
+    {
       "key": "man_made",
       "description": "The MapComplete theme Surveillance under Surveillance has a layer Surveillance camera's showing features with this tag",
       "value": "surveillance"

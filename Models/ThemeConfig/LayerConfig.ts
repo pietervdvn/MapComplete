@@ -480,7 +480,7 @@ export default class LayerConfig extends WithContextLoader {
                 )
             }
 
-            if (this.source.geojsonSource !== undefined) {
+            if (this.source?.geojsonSource !== undefined) {
                 extraProps.push(
                     new Combine([
                         Utils.runningFromConsole
@@ -530,8 +530,8 @@ export default class LayerConfig extends WithContextLoader {
             )
         }
 
-        let neededTags: TagsFilter[] = [this.source.osmTags]
-        if (this.source.osmTags["and"] !== undefined) {
+        let neededTags: TagsFilter[] = Utils.NoNull([this.source?.osmTags])
+        if (this.source?.osmTags["and"] !== undefined) {
             neededTags = this.source.osmTags["and"]
         }
 

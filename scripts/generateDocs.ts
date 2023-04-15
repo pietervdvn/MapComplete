@@ -1,26 +1,20 @@
 import Combine from "../UI/Base/Combine"
 import BaseUIElement from "../UI/BaseUIElement"
-import { existsSync, mkdirSync, writeFileSync } from "fs"
+import { existsSync, mkdirSync, writeFile, writeFileSync } from "fs"
 import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
 import TableOfContents from "../UI/Base/TableOfContents"
 import SimpleMetaTaggers from "../Logic/SimpleMetaTagger"
-import ValidatedTextField from "../UI/Input/ValidatedTextField"
 import SpecialVisualizations from "../UI/SpecialVisualizations"
 import { ExtraFunctions } from "../Logic/ExtraFunctions"
 import Title from "../UI/Base/Title"
-import Minimap from "../UI/Base/Minimap"
 import QueryParameterDocumentation from "../UI/QueryParameterDocumentation"
 import ScriptUtils from "./ScriptUtils"
 import List from "../UI/Base/List"
 import SharedTagRenderings from "../Customizations/SharedTagRenderings"
-import { writeFile } from "fs"
 import Translations from "../UI/i18n/Translations"
 import themeOverview from "../assets/generated/theme_overview.json"
-import DefaultGUI from "../UI/DefaultGUI"
-import FeaturePipelineState from "../Logic/State/FeaturePipelineState"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
 import bookcases from "../assets/generated/themes/bookcases.json"
-import { DefaultGuiState } from "../UI/DefaultGuiState"
 import fakedom from "fake-dom"
 import Hotkeys from "../UI/Base/Hotkeys"
 import { QueryParameters } from "../Logic/Web/QueryParameters"
@@ -29,6 +23,9 @@ import Constants from "../Models/Constants"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import DependencyCalculator from "../Models/ThemeConfig/DependencyCalculator"
 import { AllSharedLayers } from "../Customizations/AllSharedLayers"
+import ThemeViewState from "../Models/ThemeViewState"
+import Validators from "../UI/InputElement/Validators"
+
 function WriteFile(
     filename,
     html: BaseUIElement,
@@ -159,8 +156,8 @@ function GenLayerOverviewText(): BaseUIElement {
                     themesPerLayer.get(l.id),
                     layerIsNeededBy,
                     DependencyCalculator.getLayerDependencies(l),
-                    Constants.added_by_default.indexOf(l.id) >= 0,
-                    Constants.no_include.indexOf(l.id) < 0
+                    Constants.added_by_default.indexOf(<any>l.id) >= 0,
+                    Constants.no_include.indexOf(<any>l.id) < 0
                 )
             ),
         new Title("Normal layers", 1),
@@ -310,7 +307,7 @@ ScriptUtils.fixUtils()
 generateWikipage()
 
 GenOverviewsForSingleLayer((layer, element, inlineSource) => {
-    console.log("Exporting ", layer.id)
+    ScriptUtils.erasableLog("Exporting layer documentation for", layer.id)
     if (!existsSync("./Docs/Layers")) {
         mkdirSync("./Docs/Layers")
     }
@@ -322,6 +319,9 @@ GenOverviewsForSingleLayer((layer, element, inlineSource) => {
 })
 
 Array.from(AllKnownLayouts.allKnownLayouts.values()).map((theme) => {
+    if (!existsSync("./Docs/Themes")) {
+        mkdirSync("./Docs/Themes")
+    }
     const docs = GenerateDocumentationForTheme(theme)
     WriteFile(
         "./Docs/Themes/" + theme.id + ".md",
@@ -342,8 +342,8 @@ WriteFile(
     ]).SetClass("flex-col"),
     ["Logic/SimpleMetaTagger.ts", "Logic/ExtraFunctions.ts"]
 )
-WriteFile("./Docs/SpecialInputElements.md", ValidatedTextField.HelpText(), [
-    "UI/Input/ValidatedTextField.ts",
+WriteFile("./Docs/SpecialInputElements.md", Validators.HelpText(), [
+    "UI/InputElement/Validators.ts",
 ])
 WriteFile("./Docs/BuiltinLayers.md", GenLayerOverviewText(), ["Customizations/AllKnownLayouts.ts"])
 WriteFile("./Docs/BuiltinQuestions.md", SharedTagRenderings.HelpText(), [
@@ -397,11 +397,6 @@ WriteFile("./Docs/BuiltinQuestions.md", SharedTagRenderings.HelpText(), [
     WriteFile("./Docs/BuiltinIndex.md", docs, ["assets/layers/*.json"])
 }
 
-Minimap.createMiniMap = (_) => {
-    console.log("Not creating a minimap, it is disabled")
-    return undefined
-}
-
 WriteFile("./Docs/URL_Parameters.md", QueryParameterDocumentation.GenerateQueryParameterDocs(), [
     "Logic/Web/QueryParameters.ts",
     "UI/QueryParameterDocumentation.ts",
@@ -415,10 +410,8 @@ QueryParameters.GetQueryParameter(
     "The mode the application starts in, e.g. 'map', 'dashboard' or 'statistics'"
 )
 
-new DefaultGUI(
-    new FeaturePipelineState(new LayoutConfig(<any>bookcases)),
-    new DefaultGuiState()
-).setup()
-
-WriteFile("./Docs/Hotkeys.md", Hotkeys.generateDocumentation(), [])
+{
+    new ThemeViewState(new LayoutConfig(<any>bookcases))
+    WriteFile("./Docs/Hotkeys.md", Hotkeys.generateDocumentation(), [])
+}
 console.log("Generated docs")
