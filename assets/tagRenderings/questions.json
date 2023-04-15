@@ -1366,7 +1366,12 @@
   },
   "last_edit": {
     "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
-    "condition": "_last_edit:contributor~*",
+    "condition": {
+      "and": [
+        "_last_edit:contributor~*",
+        "_last_edit:changeset"
+      ]
+    },
     "metacondition": {
       "or": [
         "__featureSwitchIsTesting=true",
@@ -1381,7 +1386,7 @@
         "href": "{_backend}/changeset/{_last_edit:changeset}",
         "text": {
           "en": "Last edited on {_last_edit:timestamp} by {_last_edit:contributor}",
-          "nl": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor}"
+          "nl": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor} "
         },
         "class": "subtle font-small"
       }

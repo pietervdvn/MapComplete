@@ -4590,13 +4590,14 @@
         ]
       }
     },
-    "questions",
     {
-      "id": "questions_technical",
+      "id": "questions"
+    },
+    {
+      "id": "questions",
       "render": {
         "en": "<h3>Technical questions</h3>The questions below are very technical. Feel free to ignore them<br/>{questions(technical)}",
-        "nl": "<h3>Technische vragen</h3>De vragen hieronder zijn erg technisch - sla deze over indien je hier geen tijd voor hebt<br/>{questions(technical)}",
-        "de": "<h3>Technische Fragen</h3>Die folgenden Fragen sind sehr technisch. Sie können sie gerne ignorieren<br/>{questions(technical)}"
+        "nl": "<h3>Technische vragen</h3>De vragen hieronder zijn erg technisch - sla deze over indien je hier geen tijd voor hebt<br/>{questions(technical)}"
       }
     }
   ],

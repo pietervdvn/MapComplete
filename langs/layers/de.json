@@ -2527,9 +2527,6 @@
                 "question": "Welche Leistung bietet ein einzelner Stecker vom Typ <div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
                 "render": "<div style='display: inline-block'><b><b>Typ 2 mit Kabel</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> liefert maximal {socket:type2_cable:output}"
             },
-            "questions_technical": {
-                "render": "<h3>Technische Fragen</h3>Die folgenden Fragen sind sehr technisch. Sie können sie gerne ignorieren<br/>{questions(technical)}"
-            },
             "ref": {
                 "question": "Welche Kennnummer hat die Ladestation?",
                 "render": "Die Kennziffer ist <b>{ref}</b>"

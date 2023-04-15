@@ -695,12 +695,8 @@
     "userinfo": {
         "gotoInbox": "Obre la teva safata d'entrada",
         "gotoSettings": "Aneu a la vostra configuració a OpenStreetMap.org",
-        "moveToHome": "Mou el mapa a la vostra ubicació de casa",
-        "newMessages": "tens missatges nous",
         "noDescription": "Encara no tens una descripció al teu perfil",
-        "noDescriptionCallToAction": "Afegeix una descripció del perfil",
-        "titleNotLoggedIn": "Benvingut",
-        "welcome": "Benvingut/da {name}"
+        "noDescriptionCallToAction": "Afegeix una descripció del perfil"
     },
     "validation": {
         "color": {

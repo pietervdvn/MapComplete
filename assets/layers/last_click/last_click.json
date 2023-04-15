@@ -54,16 +54,6 @@
       "render": {
         "*": "{open_note()}"
       }
-    },
-    {
-      "metacondition": {
-        "or": [
-          "__featureSwitchDebugging=true"
-        ]
-      },
-      "render": {
-        "*": "{all_tags()}"
-      }
     }
   ],
   "mapRendering": [
