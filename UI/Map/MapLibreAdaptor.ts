@@ -91,6 +91,7 @@ export class MapLibreAdaptor implements MapProperties {
                     // Workaround, 'ShowPointLayer' sets this flag
                     return
                 }
+                console.log(e)
                 const lon = e.lngLat.lng
                 const lat = e.lngLat.lat
                 lastClickLocation.setData({ lon, lat })

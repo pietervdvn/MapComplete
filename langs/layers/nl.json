@@ -6512,13 +6512,13 @@
                         "question": "Recycling van plastic"
                     },
                     "17": {
-                        "question": "Recycling van printer cartridges"
-                    },
-                    "18": {
                         "question": "Recycling van oud metaal"
                     },
-                    "19": {
+                    "18": {
                         "question": "Recycling van kleine elektrische apparaten"
+                    },
+                    "19": {
+                        "question": "Recycling van restafval"
                     },
                     "20": {
                         "question": "Recycling van restafval"

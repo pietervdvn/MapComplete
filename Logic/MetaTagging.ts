@@ -94,8 +94,9 @@ export default class MetaTagging {
             let definedTags = new Set(Object.getOwnPropertyNames(feature.properties))
             for (const metatag of metatagsToApply) {
                 try {
-                    if (!metatag.keys.some((key) => feature.properties[key] === undefined)) {
+                    if (!metatag.keys.some((key) => !(key in feature.properties))) {
                         // All keys are already defined, we probably already ran this one
+                        // Note that we use 'key in properties', not 'properties[key] === undefined'. The latter will cause evaluation of lazy properties
                         continue
                     }
 

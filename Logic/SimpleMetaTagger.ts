@@ -96,16 +96,11 @@ export class ReferencingWaysMetaTagger extends SimpleMetaTagger {
             return false
         }
 
-        console.trace("Downloading referencing ways for", feature.properties.id)
-        OsmObject.DownloadReferencingWays(id).then((referencingWays) => {
-            const currentTagsSource = state.allElements?.getEventSourceById(id) ?? []
+        Utils.AddLazyPropertyAsync(feature.properties, "_referencing_ways", async () => {
+            const referencingWays = await OsmObject.DownloadReferencingWays(id)
             const wayIds = referencingWays.map((w) => "way/" + w.id)
             wayIds.sort()
-            const wayIdsStr = wayIds.join(";")
-            if (wayIdsStr !== "" && currentTagsSource.data["_referencing_ways"] !== wayIdsStr) {
-                currentTagsSource.data["_referencing_ways"] = wayIdsStr
-                currentTagsSource.ping()
-            }
+            return wayIds.join(";")
         })
 
         return true
@@ -221,6 +216,7 @@ class RewriteMetaInfoTags extends SimpleMetaTagger {
         return movedSomething
     }
 }
+
 export default class SimpleMetaTaggers {
     /**
      * A simple metatagger which rewrites various metatags as needed

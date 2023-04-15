@@ -883,7 +883,10 @@ describe("ReplaceGeometryAction", () => {
         const data = await Utils.downloadJson(url)
         const fullNodeDatabase = undefined // TODO new FullNodeDatabaseSource(undefined)
         // TODO fullNodeDatabase.handleOsmJson(data, 0)
-        const changes = new Changes()
+        const changes = new Changes({
+            dryRun: new ImmutableStore(true),
+            osmConnection: new OsmConnection()
+        })
         const osmConnection = new OsmConnection({
             dryRun: new ImmutableStore(true),
         })

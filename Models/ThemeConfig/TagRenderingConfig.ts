@@ -47,6 +47,10 @@ export default class TagRenderingConfig {
     public readonly question?: TypedTranslation<object>
     public readonly questionhint?: TypedTranslation<object>
     public readonly condition?: TagsFilter
+    /**
+     * Evaluated against the current 'usersettings'-state
+     */
+    public readonly metacondition?: TagsFilter
     public readonly description?: Translation
 
     public readonly configuration_warnings: string[] = []
@@ -69,14 +73,6 @@ export default class TagRenderingConfig {
     constructor(json: string | QuestionableTagRenderingConfigJson, context?: string) {
         if (json === undefined) {
             throw "Initing a TagRenderingConfig with undefined in " + context
-        }
-        if (json === "questions") {
-            // Very special value
-            this.render = null
-            this.question = null
-            this.condition = null
-            this.id = "questions"
-            return
         }
 
         if (typeof json === "number") {
@@ -114,11 +110,15 @@ export default class TagRenderingConfig {
         }
 
         this.labels = json.labels ?? []
-        this.render = Translations.T(json.render, translationKey + ".render")
+        this.render = Translations.T(<any>json.render, translationKey + ".render")
         this.question = Translations.T(json.question, translationKey + ".question")
         this.questionhint = Translations.T(json.questionHint, translationKey + ".questionHint")
         this.description = Translations.T(json.description, translationKey + ".description")
         this.condition = TagUtils.Tag(json.condition ?? { and: [] }, `${context}.condition`)
+        this.metacondition = TagUtils.Tag(
+            json.metacondition ?? { and: [] },
+            `${context}.metacondition`
+        )
         if (json.freeform) {
             if (
                 json.freeform.addExtraTags !== undefined &&

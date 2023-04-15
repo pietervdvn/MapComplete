@@ -1365,10 +1365,26 @@
     ]
   },
   "last_edit": {
-    "#": "Gives some metainfo about the last edit and who did edit it - rendering only",
+    "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
     "condition": "_last_edit:contributor~*",
+    "metacondition": {
+      "or": [
+        "__featureSwitchIsTesting=true",
+        "__featureSwitchIsDebugging=true",
+        "mapcomplete-show_debug=yes",
+        "_csCount>=10"
+      ]
+    },
     "render": {
-      "*": "<div class='subtle' style='font-size: small; margin-top: 2em; margin-bottom: 0.5em;'><a href='https://www.openStreetMap.org/changeset/{_last_edit:changeset}' target='_blank'>Last edited on {_last_edit:timestamp}</a> by <a href='https://www.openStreetMap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a></div>"
+      "special": {
+        "type": "link",
+        "href": "{_backend}/changeset/{_last_edit:changeset}",
+        "text": {
+          "en": "Last edited on {_last_edit:timestamp} by {_last_edit:contributor}",
+          "nl": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor}"
+        },
+        "class": "subtle font-small"
+      }
     }
   },
   "all_tags": {

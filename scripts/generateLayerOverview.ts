@@ -16,7 +16,7 @@ import { Translation } from "../UI/i18n/Translation"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import questions from "../assets/tagRenderings/questions.json"
 import PointRenderingConfigJson from "../Models/ThemeConfig/Json/PointRenderingConfigJson"
-import { PrepareLayer } from "../Models/ThemeConfig/Conversion/PrepareLayer"
+import { PrepareLayer, RewriteSpecial } from "../Models/ThemeConfig/Conversion/PrepareLayer"
 import { PrepareTheme } from "../Models/ThemeConfig/Conversion/PrepareTheme"
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
 import { Utils } from "../Utils"
@@ -156,6 +156,7 @@ class LayerOverviewUtils extends Script {
     getSharedTagRenderings(doesImageExist: DoesImageExist): Map<string, TagRenderingConfigJson> {
         const dict = new Map<string, TagRenderingConfigJson>()
 
+        const prep = new RewriteSpecial()
         const validator = new ValidateTagRenderings(undefined, doesImageExist)
         for (const key in questions) {
             if (key === "id") {
@@ -163,7 +164,12 @@ class LayerOverviewUtils extends Script {
             }
             questions[key].id = key
             questions[key]["source"] = "shared-questions"
-            const config = <TagRenderingConfigJson>questions[key]
+            const config = prep.convertStrict(
+                <TagRenderingConfigJson>questions[key],
+                "questions.json:" + key
+            )
+            delete config.description
+            delete config["#"]
             validator.convertStrict(
                 config,
                 "generate-layer-overview:tagRenderings/questions.json:" + key

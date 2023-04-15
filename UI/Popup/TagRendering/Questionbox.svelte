@@ -41,7 +41,10 @@
     return true;
   }
 
-  const baseQuestions = (layer.tagRenderings ?? [])?.filter(tr => allowed(tr.labels) && tr.question !== undefined);
+  let baseQuestions =  []
+  $: {
+    baseQuestions = (layer.tagRenderings ?? [])?.filter(tr => allowed(tr.labels) && tr.question !== undefined);
+  } 
   let skippedQuestions = new UIEventSource<Set<string>>(new Set<string>());
 
   let questionsToAsk = tags.map(tags => {
@@ -80,6 +83,7 @@
       skipped++;
     }
   }
+  $: console.log("Current questionbox state:", {answered, skipped, questionsToAsk, layer, selectedElement, tags})
 </script>
 
 {#if _questionsToAsk.length === 0}

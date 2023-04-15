@@ -205,6 +205,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
      */
     private miscSetup() {
         this.userRelatedState.markLayoutAsVisited(this.layout)
+
+        this.selectedElement.addCallbackAndRunD(() => {
+            // As soon as we have a selected element, we clear it
+            // This is to work around maplibre, which'll _first_ register the click on the map and only _then_ on the feature
+            this.lastClickObject.features.setData([])
+        })
     }
 
     private initHotkeys() {

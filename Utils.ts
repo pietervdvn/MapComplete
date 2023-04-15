@@ -307,13 +307,21 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * @param init
      * @constructor
      */
-    public static AddLazyProperty(object: any, name: string, init: () => any) {
+    public static AddLazyProperty(
+        object: any,
+        name: string,
+        init: () => any,
+        whenDone?: () => void
+    ) {
         Object.defineProperty(object, name, {
             enumerable: false,
             configurable: true,
             get: () => {
                 delete object[name]
                 object[name] = init()
+                if (whenDone) {
+                    whenDone()
+                }
                 return object[name]
             },
         })
@@ -332,6 +340,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             enumerable: false,
             configurable: true,
             get: () => {
+                console.trace("Property", name, "got requested")
                 init().then((r) => {
                     delete object[name]
                     object[name] = r

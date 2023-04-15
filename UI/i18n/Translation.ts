@@ -29,7 +29,14 @@ export class Translation extends BaseUIElement {
             }
             count++
             if (typeof translations[translationsKey] != "string") {
-                console.error("Non-string object in translation: ", translations[translationsKey])
+                console.error(
+                    "Non-string object at",
+                    context,
+                    "in translation: ",
+                    translations[translationsKey],
+                    "\n    current translations are: ",
+                    translations
+                )
                 throw (
                     "Error in an object depicting a translation: a non-string object was found. (" +
                     context +

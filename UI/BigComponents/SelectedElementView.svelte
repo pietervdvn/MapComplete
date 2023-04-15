@@ -18,6 +18,11 @@
   onDestroy(tags.addCallbackAndRun(tags => {
     _tags = tags;
   }));
+  
+  let _metatags: Record<string, string>
+  onDestroy(state.userRelatedState.preferencesAsTags .addCallbackAndRun(tags => {
+    _metatags = tags;
+  }));
 </script>
 
 <div>
@@ -40,7 +45,7 @@
 
   <div class="flex flex-col">
     {#each layer.tagRenderings as config (config.id)}
-      {#if config.condition === undefined || config.condition.matchesProperties(_tags)}
+      {#if (config.condition === undefined || config.condition.matchesProperties(_tags)) && (config.metacondition === undefined || config.metacondition.matchesProperties(_metatags))}
         {#if config.IsKnown(_tags)}
           <TagRenderingEditable {tags} {config} {state} {selectedElement} {layer} {highlightedRendering}></TagRenderingEditable>
         {/if}

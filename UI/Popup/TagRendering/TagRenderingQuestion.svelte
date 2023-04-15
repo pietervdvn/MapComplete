@@ -32,7 +32,6 @@
       checkedMappings = [...config.mappings.map(_ => false), false /*One element extra in case a freeform value is added*/];
     }
   }
-  $: console.log("Checked mappings:", checkedMappings)
   let selectedTags: TagsFilter = undefined;
 
   function mappingIsHidden(mapping: Mapping): boolean {

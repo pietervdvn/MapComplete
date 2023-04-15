@@ -6,7 +6,7 @@ import { UIEventSource } from "../../UIEventSource"
  */
 export default class FeaturePropertiesStore {
     private readonly _source: FeatureSource & IndexedFeatureSource
-    private readonly _elements = new Map<string, UIEventSource<any>>()
+    private readonly _elements = new Map<string, UIEventSource<Record<string, string>>>()
 
     constructor(source: FeatureSource & IndexedFeatureSource) {
         this._source = source
@@ -83,7 +83,9 @@ export default class FeaturePropertiesStore {
         return changeMade
     }
 
-    addAlias(oldId: string, newId: string): void {
+    // noinspection JSUnusedGlobalSymbols
+    public addAlias(oldId: string, newId: string): void {
+        console.log("FeaturePropertiesStore: adding alias for", oldId, newId)
         if (newId === undefined) {
             // We removed the node/way/relation with type 'type' and id 'oldId' on openstreetmap!
             const element = this._elements.get(oldId)

@@ -62,7 +62,11 @@ export default class DetermineLayout {
             layoutId,
             "The layout to load into MapComplete"
         ).data
-        return AllKnownLayouts.allKnownLayouts.get(layoutId?.toLowerCase())
+        const layout = AllKnownLayouts.allKnownLayouts.get(layoutId?.toLowerCase())
+        if (layout === undefined) {
+            throw "No layout with name " + layoutId + " exists"
+        }
+        return layout
     }
 
     public static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>): LayoutConfig | null {

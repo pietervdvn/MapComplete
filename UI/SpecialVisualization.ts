@@ -63,6 +63,7 @@ export interface SpecialVisualizationState {
     readonly userRelatedState: {
         readonly mangroveIdentity: MangroveIdentity
         readonly showAllQuestionsAtOnce: UIEventSource<boolean>
+        readonly preferencesAsTags: Store<Record<string, string>>
     }
     readonly lastClickObject: WritableFeatureSource
 }

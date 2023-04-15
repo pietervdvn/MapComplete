@@ -99,63 +99,7 @@ export default class FeatureInfoBox extends ScrollableFullScreen {
                     })
             ),
         ]
-        allRenderings.push(
-            new Toggle(
-                new Lazy(() =>
-                    FeatureInfoBox.createEditElements(questionBoxes, layerConfig, tags, state)
-                ),
-                undefined,
-                state.featureSwitchUserbadge
-            )
-        )
 
         return new Combine(allRenderings).SetClass("block")
-    }
-
-    /**
-     * All the edit elements, together (note that the question boxes are passed though)
-     * @param questionBoxes
-     * @param layerConfig
-     * @param tags
-     * @param state
-     * @private
-     */
-    private static createEditElements(
-        questionBoxes: Map<string, QuestionBox>,
-        layerConfig: LayerConfig,
-        tags: UIEventSource<any>,
-        state: FeaturePipelineState
-    ): BaseUIElement {
-        let editElements: BaseUIElement[] = []
-        questionBoxes.forEach((questionBox) => {
-            editElements.push(questionBox)
-        })
-
-        editElements.push(
-            new VariableUiElement(
-                state.osmConnection.userDetails
-                    .map((ud) => ud.csCount)
-                    .map(
-                        (csCount) => {
-                            if (
-                                csCount <= Constants.userJourney.historyLinkVisible &&
-                                state.featureSwitchIsDebugging.data == false &&
-                                state.featureSwitchIsTesting.data === false
-                            ) {
-                                return undefined
-                            }
-
-                            return new TagRenderingAnswer(
-                                tags,
-                                SharedTagRenderings.SharedTagRendering.get("last_edit"),
-                                state
-                            )
-                        },
-                        [state.featureSwitchIsDebugging, state.featureSwitchIsTesting]
-                    )
-            )
-        )
-
-        return new Combine(editElements).SetClass("flex flex-col")
     }
 }

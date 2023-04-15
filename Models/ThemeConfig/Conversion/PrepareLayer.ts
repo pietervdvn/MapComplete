@@ -575,12 +575,14 @@ export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
 }
 
 export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
-    constructor() {
+    private readonly _desugaring: DesugaringContext
+    constructor(desugaring: DesugaringContext) {
         super(
             "Add some editing elements, such as the delete button or the move button if they are configured. These used to be handled by the feature info box, but this has been replaced by special visualisation elements",
             [],
             "AddEditingElements"
         )
+        this._desugaring = desugaring
     }
 
     convert(
@@ -607,6 +609,30 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
                 id: "delete-button",
                 render: { "*": "{delete_button()}" },
             })
+        }
+
+        if (json.deletion && !ValidationUtils.hasSpecialVisualisation(json, "all_tags")) {
+            const trc: TagRenderingConfigJson = {
+                id: "all-tags",
+                render: { "*": "{all_tags()}" },
+                metacondition: {
+                    or: [
+                        "__featureSwitchIsTesting=true",
+                        "__featureSwitchIsDebugging=true",
+                        "mapcomplete-show_debug=yes",
+                    ],
+                },
+            }
+            json.tagRenderings.push(trc)
+        }
+
+        if (
+            json.source !== "special" &&
+            json.source !== "special:library" &&
+            json.tagRenderings &&
+            !json.tagRenderings.some((tr) => tr["id"] === "last_edit")
+        ) {
+            json.tagRenderings.push(this._desugaring.tagRenderings.get("last_edit"))
         }
 
         return { result: json }
@@ -1145,7 +1171,7 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
             new On("tagRenderings", new Each(new DetectInline())),
             new AddQuestionBox(),
             new AddMiniMap(state),
-            new AddEditingElements(),
+            new AddEditingElements(state),
             new On("mapRendering", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
             new On<(PointRenderingConfigJson | LineRenderingConfigJson)[], LayerConfigJson>(
                 "mapRendering",

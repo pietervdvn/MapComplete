@@ -1265,21 +1265,24 @@ export default class SpecialVisualizations {
                         doc: "The URL to link to",
                         required: true,
                     },
+                    {
+                        name: "class",
+                        doc: "CSS-classes to add to the element",
+                    },
                 ],
                 constr(
                     state: SpecialVisualizationState,
                     tagSource: UIEventSource<Record<string, string>>,
                     args: string[]
                 ): BaseUIElement {
-                    const [text, href] = args
+                    const [text, href, classnames] = args
                     return new VariableUiElement(
-                        tagSource.map(
-                            (tags) =>
-                                new Link(
-                                    Utils.SubstituteKeys(text, tags),
-                                    Utils.SubstituteKeys(href, tags),
-                                    true
-                                )
+                        tagSource.map((tags) =>
+                            new Link(
+                                Utils.SubstituteKeys(text, tags),
+                                Utils.SubstituteKeys(href, tags),
+                                true
+                            ).SetClass(classnames)
                         )
                     )
                 },

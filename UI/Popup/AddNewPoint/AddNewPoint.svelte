@@ -96,14 +96,15 @@
       }
     });
     state.newFeatures.features.ping();
+    const tagsStore = state.featureProperties.getStore(newId);
     {
       // Set some metainfo
-      const tagsStore = state.featureProperties.getStore(newId);
       const properties = tagsStore.data;
       if (snapTo) {
         // metatags (starting with underscore) are not uploaded, so we can safely mark this
         properties["_referencing_ways"] = `["${snapTo}"]`;
       }
+      properties["_backend"] = state.osmConnection.Backend()
       properties["_last_edit:timestamp"] = new Date().toISOString();
       const userdetails = state.osmConnection.userDetails.data;
       properties["_last_edit:contributor"] = userdetails.name;
@@ -112,8 +113,9 @@
     }
     const feature = state.indexedFeatures.featuresById.data.get(newId);
     abort();
-    state.selectedElement.setData(feature);
     state.selectedLayer.setData(selectedPreset.layer);
+    state.selectedElement.setData(feature);
+    tagsStore.ping()
 
   }
 

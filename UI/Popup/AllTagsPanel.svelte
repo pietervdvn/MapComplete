@@ -1,46 +1,63 @@
 <script lang="ts">
-  import ToSvelte from "../Base/ToSvelte.svelte"
-  import Table from "../Base/Table"
-  import { UIEventSource } from "../../Logic/UIEventSource"
+  import ToSvelte from "../Base/ToSvelte.svelte";
+  import Table from "../Base/Table";
+  import { UIEventSource } from "../../Logic/UIEventSource";
+  import SimpleMetaTaggers from "../../Logic/SimpleMetaTagger";
+  import { FixedUiElement } from "../Base/FixedUiElement";
+  import { onDestroy } from "svelte";
+  import Toggle, { ClickableToggle } from "../Input/Toggle";
+  import Lazy from "../Base/Lazy";
+  import BaseUIElement from "../BaseUIElement";
 
   //Svelte props
-  export let tags: UIEventSource<any>
-  export let state: any
+  export let tags: UIEventSource<any>;
+  export let state: any;
 
   const calculatedTags = [].concat(
-    // SimpleMetaTagger.lazyTags,
     ...(state?.layoutToUse?.layers?.map((l) => l.calculatedTags?.map((c) => c[0]) ?? []) ?? [])
-  )
+  );
 
   const allTags = tags.map((tags) => {
-    const parts = []
+    const parts: (string | BaseUIElement)[][] = [];
     for (const key in tags) {
-      if (!tags.hasOwnProperty(key)) {
-        continue
-      }
-      let v = tags[key]
+      let v = tags[key];
       if (v === "") {
-        v = "<b>empty string</b>"
+        v = "<b>empty string</b>";
       }
-      parts.push([key, v ?? "<b>undefined</b>"])
+      parts.push([key, v ?? "<b>undefined</b>"]);
     }
 
     for (const key of calculatedTags) {
-      const value = tags[key]
+      const value = tags[key];
       if (value === undefined) {
-        continue
+        continue;
       }
-      let type = ""
+      let type = "";
       if (typeof value !== "string") {
-        type = " <i>" + typeof value + "</i>"
+        type = " <i>" + typeof value + "</i>";
       }
-      parts.push(["<i>" + key + "</i>", value])
+      parts.push(["<i>" + key + "</i>", value]);
     }
 
-    return parts
-  })
+    for (const metatag of SimpleMetaTaggers.metatags.filter(mt => mt.isLazy)) {
+      const title = "<i>" + metatag.keys.join(";") + "</i> (lazy)";
+      const toggleState = new UIEventSource(false)
+      const toggle: BaseUIElement = new Toggle(
+        new Lazy(() => new FixedUiElement(metatag.keys.map(key => tags[key]).join(";"))),
+        new FixedUiElement("Evaluate").onClick(() => toggleState.setData(true)) ,
+        toggleState
+      );
+      parts.push([title, toggle]);
+    }
 
-  const tagsTable = new Table(["Key", "Value"], $allTags).SetClass("zebra-table")
+    return parts;
+  });
+
+  let _allTags = [];
+  onDestroy(allTags.addCallbackAndRunD(allTags => {
+    _allTags = allTags;
+  }));
+  const tagsTable = new Table(["Key", "Value"], _allTags).SetClass("zebra-table");
 </script>
 
 <section>
