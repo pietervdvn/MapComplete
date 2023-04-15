@@ -1369,7 +1369,7 @@
     "condition": {
       "and": [
         "_last_edit:contributor~*",
-        "_last_edit:changeset"
+        "_last_edit:changeset~*"
       ]
     },
     "metacondition": {
