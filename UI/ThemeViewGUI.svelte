@@ -30,6 +30,7 @@
   import LoginButton from "./Base/LoginButton.svelte";
   import CopyrightPanel from "./BigComponents/CopyrightPanel";
   import { DownloadPanel } from "./BigComponents/DownloadPanel";
+  import ModalRight from "./Base/ModalRight.svelte";
 
   export let state: ThemeViewState;
   let layout = state.layout;
@@ -99,10 +100,10 @@
 </div>
 
 {#if $selectedElement !== undefined && $selectedLayer !== undefined}
-  <FloatOver on:close={() => {selectedElement.setData(undefined)}}>
+  <ModalRight on:close={() => {selectedElement.setData(undefined)}}>
     <SelectedElementView layer={$selectedLayer} selectedElement={$selectedElement}
                          tags={$selectedElementTags} state={state} />
-  </FloatOver>
+  </ModalRight>
 
 {/if}
 

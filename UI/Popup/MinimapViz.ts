@@ -6,6 +6,9 @@ import { MapLibreAdaptor } from "../Map/MapLibreAdaptor"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "../Map/MaplibreMap.svelte"
 import ShowDataLayer from "../Map/ShowDataLayer"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import { GeoOperations } from "../../Logic/GeoOperations"
+import { BBox } from "../../Logic/BBox"
 
 export class MinimapViz implements SpecialVisualization {
     funcName = "minimap"
@@ -27,7 +30,9 @@ export class MinimapViz implements SpecialVisualization {
     constr(
         state: SpecialVisualizationState,
         tagSource: UIEventSource<Record<string, string>>,
-        args: string[]
+        args: string[],
+        feature: Feature,
+        layer: LayerConfig
     ) {
         if (state === undefined) {
             return undefined
@@ -77,6 +82,12 @@ export class MinimapViz implements SpecialVisualization {
                 zoom = parsed
             }
         }
+        featuresToShow.addCallbackAndRunD((features) => {
+            const bboxGeojson = GeoOperations.bbox({ features, type: "FeatureCollection" })
+            const [lon, lat] = GeoOperations.centerpointCoordinates(bboxGeojson)
+            mla.bounds.setData(BBox.get(bboxGeojson))
+            mla.location.setData({ lon, lat })
+        })
         mla.zoom.setData(zoom)
         mla.allowMoving.setData(false)
         mla.allowZooming.setData(false)
@@ -87,8 +98,8 @@ export class MinimapViz implements SpecialVisualization {
             state.layout.layers
         )
 
-        return new SvelteUIElement(MaplibreMap, { map: mlmap }).SetStyle(
-            "overflow: hidden; pointer-events: none;"
-        )
+        return new SvelteUIElement(MaplibreMap, { map: mlmap })
+            .SetClass("h-40 rounded")
+            .SetStyle("overflow: hidden; pointer-events: none;")
     }
 }

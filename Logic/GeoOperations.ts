@@ -4,6 +4,7 @@ import * as turf from "@turf/turf"
 import { AllGeoJSON, booleanWithin, Coord, Lines } from "@turf/turf"
 import {
     Feature,
+    FeatureCollection,
     GeoJSON,
     Geometry,
     LineString,
@@ -243,7 +244,7 @@ export class GeoOperations {
         })
     }
 
-    static bbox(feature: any): Feature<LineString, {}> {
+    static bbox(feature: Feature | FeatureCollection): Feature<LineString, {}> {
         const [lon, lat, lon0, lat0] = turf.bbox(feature)
         return {
             type: "Feature",
