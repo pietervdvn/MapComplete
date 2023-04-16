@@ -11,13 +11,13 @@
    * A 'TagHint' will show the given tags in a human readable form.
    * Depending on the options, it'll link through to the wiki or might be completely hidden
    */
+  export let tags: TagsFilter;
   export let osmConnection: OsmConnection;
   /**
    * If given, this function will be called to embed the given tags hint into this translation
    */
   export let embedIn: (() => Translation) | undefined = undefined;
   const userDetails = osmConnection.userDetails;
-  export let tags: TagsFilter;
   let linkToWiki = false;
   onDestroy(osmConnection.userDetails.addCallbackAndRunD(userdetails => {
     linkToWiki = userdetails.csCount > Constants.userJourney.tagsVisibleAndWikiLinked;

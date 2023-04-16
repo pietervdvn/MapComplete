@@ -1,6 +1,4 @@
 import Combine from "../../Base/Combine"
-import Title from "../../Base/Title"
-import Table from "../../Base/Table"
 import Wikidata from "../../../Logic/Web/Wikidata"
 import { UIEventSource } from "../../../Logic/UIEventSource"
 import Locale from "../../i18n/Locale"
@@ -10,89 +8,7 @@ import { Validator } from "../Validator"
 
 export default class WikidataValidator extends Validator {
     constructor() {
-        super(
-            "wikidata",
-            new Combine([
-                "A wikidata identifier, e.g. Q42.",
-                new Title("Helper arguments"),
-                new Table(
-                    ["name", "doc"],
-                    [
-                        ["key", "the value of this tag will initialize search (default: name)"],
-                        [
-                            "options",
-                            new Combine([
-                                "A JSON-object of type `{ removePrefixes: string[], removePostfixes: string[] }`.",
-                                new Table(
-                                    ["subarg", "doc"],
-                                    [
-                                        [
-                                            "removePrefixes",
-                                            "remove these snippets of text from the start of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes",
-                                        ],
-                                        [
-                                            "removePostfixes",
-                                            "remove these snippets of text from the end of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes.",
-                                        ],
-                                        [
-                                            "instanceOf",
-                                            "A list of Q-identifier which indicates that the search results _must_ be an entity of this type, e.g. [`Q5`](https://www.wikidata.org/wiki/Q5) for humans",
-                                        ],
-                                        [
-                                            "notInstanceof",
-                                            "A list of Q-identifiers which indicates that the search results _must not_ be an entity of this type, e.g. [`Q79007`](https://www.wikidata.org/wiki/Q79007) to filter away all streets from the search results",
-                                        ],
-                                    ]
-                                ),
-                            ]),
-                        ],
-                    ]
-                ),
-                new Title("Example usage"),
-                `The following is the 'freeform'-part of a layer config which will trigger a search for the wikidata item corresponding with the name of the selected feature. It will also remove '-street', '-square', ... if found at the end of the name
-
-\`\`\`json
-"freeform": {
-    "key": "name:etymology:wikidata",
-    "type": "wikidata",
-    "helperArgs": [
-        "name",
-        {
-            "removePostfixes": {"en": [
-                "street",
-                "boulevard",
-                "path",
-                "square",
-                "plaza",
-            ],
-             "nl": ["straat","plein","pad","weg",laan"],
-             "fr":["route (de|de la|de l'| de le)"]
-             },
-
-            "#": "Remove streets and parks from the search results:"
-             "notInstanceOf": ["Q79007","Q22698"]
-        }
-
-    ]
-}
-\`\`\`
-
-Another example is to search for species and trees:
-
-\`\`\`json
- "freeform": {
-        "key": "species:wikidata",
-        "type": "wikidata",
-        "helperArgs": [
-          "species",
-          {
-          "instanceOf": [10884, 16521]
-        }]
-      }
-\`\`\`
-`,
-            ])
-        )
+        super("wikidata", new Combine(["A wikidata identifier, e.g. Q42.", WikidataSearchBox.docs]))
     }
 
     public isValid(str): boolean {

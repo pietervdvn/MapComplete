@@ -5,15 +5,16 @@
   import Validators from "./Validators";
   import { ExclamationIcon } from "@rgossiaux/svelte-heroicons/solid";
   import { Translation } from "../i18n/Translation";
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher, onDestroy } from "svelte";
 
   export let value: UIEventSource<string>;
   // Internal state, only copied to 'value' so that no invalid values leak outside
   let _value = new UIEventSource(value.data ?? "");
+  onDestroy(value.addCallbackAndRun(v => _value.setData(v ?? "")));
   export let type: ValidatorType;
   let validator = Validators.get(type);
   export let feedback: UIEventSource<Translation> | undefined = undefined;
-  _value.addCallbackAndRun(v => {
+  onDestroy(_value.addCallbackAndRun(v => {
     if (validator.isValid(v)) {
       feedback?.setData(undefined);
       value.setData(v);
@@ -21,7 +22,7 @@
     }
     value.setData(undefined);
     feedback?.setData(validator.getFeedback(v));
-  });
+  }))
 
   if (validator === undefined) {
     throw "Not a valid type for a validator:" + type;
@@ -46,7 +47,7 @@
 {#if validator.textArea}
   <textarea class="w-full" bind:value={$_value} inputmode={validator.inputmode ?? "text"}></textarea>
 {:else }
-  <span class="flex">
+  <span class="inline-flex">
     <input bind:this={htmlElem} bind:value={$_value} inputmode={validator.inputmode ?? "text"}>
     {#if !$isValid}
       <ExclamationIcon class="h-6 w-6 -ml-6"></ExclamationIcon>

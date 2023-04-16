@@ -41,13 +41,11 @@
     return true;
   }
 
-  let baseQuestions =  []
-  $: {
-    baseQuestions = (layer.tagRenderings ?? [])?.filter(tr => allowed(tr.labels) && tr.question !== undefined);
-  } 
   let skippedQuestions = new UIEventSource<Set<string>>(new Set<string>());
 
   let questionsToAsk = tags.map(tags => {
+    const baseQuestions = (layer.tagRenderings ?? [])?.filter(tr => allowed(tr.labels) && tr.question !== undefined);
+    console.log("Determining questions for", baseQuestions)
     const questionsToAsk: TagRenderingConfig[] = [];
     for (const baseQuestion of baseQuestions) {
       if (skippedQuestions.data.has(baseQuestion.id) > 0) {
@@ -64,6 +62,7 @@
     return questionsToAsk;
 
   }, [skippedQuestions]);
+  
   let _questionsToAsk: TagRenderingConfig[];
   let _firstQuestion: TagRenderingConfig;
   onDestroy(questionsToAsk.subscribe(qta => {

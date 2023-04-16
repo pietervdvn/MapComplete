@@ -24,6 +24,8 @@ import TagRenderingQuestion from "./TagRenderingQuestion"
 import { OsmId, OsmTags } from "../../Models/OsmFeature"
 import { LoginToggle } from "./LoginButton"
 import { SpecialVisualizationState } from "../SpecialVisualization"
+import SvelteUIElement from "../Base/SvelteUIElement";
+import TagHint from "./TagHint.svelte";
 
 export default class DeleteWizard extends Toggle {
     /**
@@ -225,11 +227,7 @@ export default class DeleteWizard extends Toggle {
                         // This is a retagging, not a deletion of any kind
                         return new Combine([
                             t.explanations.retagNoOtherThemes,
-                            TagRenderingQuestion.CreateTagExplanation(
-                                new UIEventSource<TagsFilter>(retag),
-                                currentTags,
-                                state
-                            ).SetClass("subtle"),
+                            new SvelteUIElement(TagHint, {osmConnection: state.osmConnection, tags: retag})
                         ])
                     }
 

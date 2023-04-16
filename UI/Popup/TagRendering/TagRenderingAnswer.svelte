@@ -17,25 +17,27 @@
   export let state: SpecialVisualizationState;
   export let selectedElement: Feature;
   export let config: TagRenderingConfig;
-  if(config === undefined){
-    throw "Config is undefined in tagRenderingAnswer"
+  if (config === undefined) {
+    throw "Config is undefined in tagRenderingAnswer";
   }
-  export let layer: LayerConfig
+  export let layer: LayerConfig;
   let trs: { then: Translation; icon?: string; iconClass?: string }[];
   $: trs = Utils.NoNull(config?.GetRenderValues(_tags));
 </script>
 
 {#if config !== undefined && (config?.condition === undefined || config.condition.matchesProperties(_tags))}
-  {#if trs.length === 1}
-    <TagRenderingMapping mapping={trs[0]} {tags} {state} {selectedElement} {layer}></TagRenderingMapping>
-  {/if}
-  {#if trs.length > 1}
-    <ul>
-      {#each trs as mapping}
-        <li>
-          <TagRenderingMapping {mapping} {tags} {state} {selectedElement} {layer}></TagRenderingMapping>
-        </li>
-      {/each}
-    </ul>
-  {/if}
+  <div class="flex flex-col w-full">
+    {#if trs.length === 1}
+      <TagRenderingMapping mapping={trs[0]} {tags} {state} {selectedElement} {layer}></TagRenderingMapping>
+    {/if}
+    {#if trs.length > 1}
+      <ul>
+        {#each trs as mapping}
+          <li>
+            <TagRenderingMapping {mapping} {tags} {state} {selectedElement} {layer}></TagRenderingMapping>
+          </li>
+        {/each}
+      </ul>
+    {/if}
+  </div>
 {/if}

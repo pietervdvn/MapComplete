@@ -67,6 +67,18 @@ export class MapLibreAdaptor implements MapProperties {
         const lastClickLocation = new UIEventSource<{ lon: number; lat: number }>(undefined)
         this.lastClickLocation = lastClickLocation
         const self = this
+
+        function handleClick(e) {
+            if (e.originalEvent["consumed"]) {
+                // Workaround, 'ShowPointLayer' sets this flag
+                return
+            }
+            console.log(e)
+            const lon = e.lngLat.lng
+            const lat = e.lngLat.lat
+            lastClickLocation.setData({ lon, lat })
+        }
+
         maplibreMap.addCallbackAndRunD((map) => {
             map.on("load", () => {
                 this.updateStores()
@@ -87,14 +99,13 @@ export class MapLibreAdaptor implements MapProperties {
             this.updateStores()
             map.on("moveend", () => this.updateStores())
             map.on("click", (e) => {
-                if (e.originalEvent["consumed"]) {
-                    // Workaround, 'ShowPointLayer' sets this flag
-                    return
-                }
-                console.log(e)
-                const lon = e.lngLat.lng
-                const lat = e.lngLat.lat
-                lastClickLocation.setData({ lon, lat })
+                handleClick(e)
+            })
+            map.on("contextmenu", (e) => {
+                handleClick(e)
+            })
+            map.on("dblclick", (e) => {
+                handleClick(e)
             })
         })
 

@@ -8,9 +8,9 @@
   import Svg from "../../../Svg.js";
 
   /**
-   * A visualisation to pick a direction on a map background
+   * A visualisation to pick a direction on a map background.
    */
-  export let value: UIEventSource<undefined | number>;
+  export let value: UIEventSource<undefined | string>;
   export let mapProperties: Partial<MapProperties> & { readonly location: UIEventSource<{ lon: number; lat: number }> };
   let map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined);
   let mla = new MapLibreAdaptor(map, mapProperties);
@@ -18,7 +18,6 @@
   mla.allowZooming.setData(false)
   let directionElem: HTMLElement | undefined;
   $: value.addCallbackAndRunD(degrees => {
-    console.log("Degrees are", degrees, directionElem);
     if (directionElem === undefined) {
       return;
     }
@@ -32,7 +31,7 @@
     const dy = (rect.top + rect.bottom) / 2 - y;
     const angle = (180 * Math.atan2(dy, dx)) / Math.PI;
     const angleGeo = Math.floor((450 - angle) % 360);
-    value.setData(angleGeo);
+    value.setData(""+angleGeo);
   }
 
   let isDown = false;
@@ -61,7 +60,7 @@
     <MaplibreMap {map} attribution={false}></MaplibreMap>
   </div>
 
-  <div bind:this={directionElem} class="absolute w-full h-full top-0 left-0 border border-red-500">
+  <div bind:this={directionElem} class="absolute w-full h-full top-0 left-0">
 
     <ToSvelte construct={ Svg.direction_stroke_svg}>
 

@@ -1,7 +1,7 @@
 /**
  * The full opening hours element, including the table, opening hours picker.
  * Keeps track of unparsed rules
- * Exports everything conventiently as a string, for direct use
+ * Exports everything conveniently as a string, for direct use
  */
 import OpeningHoursPicker from "./OpeningHoursPicker"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
@@ -15,7 +15,6 @@ import Translations from "../i18n/Translations"
 import BaseUIElement from "../BaseUIElement"
 
 export default class OpeningHoursInput extends InputElement<string> {
-    public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     private readonly _value: UIEventSource<string>
     private readonly _element: BaseUIElement
 

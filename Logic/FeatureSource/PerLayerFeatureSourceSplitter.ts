@@ -25,7 +25,6 @@ export default class PerLayerFeatureSourceSplitter<
         const knownLayers = new Map<string, T>()
         this.perLayer = knownLayers
         const layerSources = new Map<string, UIEventSource<Feature[]>>()
-        console.log("PerLayerFeatureSourceSplitter got layers", layers)
         const constructStore =
             options?.constructStore ?? ((store, layer) => new SimpleFeatureSource(layer, store))
         for (const layer of layers) {

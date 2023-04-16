@@ -4,7 +4,6 @@ import { UIEventSource } from "../../Logic/UIEventSource"
 
 export default class FileSelectorButton extends InputElement<FileList> {
     private static _nextid
-    IsSelected: UIEventSource<boolean>
     private readonly _value = new UIEventSource<FileList>(undefined)
     private readonly _label: BaseUIElement
     private readonly _acceptType: string

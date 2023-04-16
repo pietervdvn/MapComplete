@@ -11,7 +11,7 @@
   import FreeformInput from "./FreeformInput.svelte";
   import Translations from "../../i18n/Translations.js";
   import ChangeTagAction from "../../../Logic/Osm/Actions/ChangeTagAction";
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher, onDestroy } from "svelte";
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
   import { ExclamationIcon } from "@rgossiaux/svelte-heroicons/solid";
   import SpecialTranslation from "./SpecialTranslation.svelte";
@@ -25,6 +25,12 @@
 
   // Will be bound if a freeform is available
   let freeformInput = new UIEventSource<string>(undefined);
+  onDestroy(tags.addCallbackAndRunD(tags => {
+    // initialize with the previous value
+    if (config.freeform?.key) {
+      freeformInput.setData(tags[config.freeform.key]);
+    }
+  }));
   let selectedMapping: number = undefined;
   let checkedMappings: boolean[];
   $: {
@@ -126,7 +132,7 @@
 
     {#if config.freeform?.key && !(mappings?.length > 0)}
       <!-- There are no options to choose from, simply show the input element: fill out the text field -->
-      <FreeformInput {config} {tags} value={freeformInput} />
+      <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput} />
     {:else if mappings !== undefined && !config.multiAnswer}
       <!-- Simple radiobuttons as mapping -->
       <div class="flex flex-col">
@@ -143,7 +149,7 @@
           <label>
             <input type="radio" bind:group={selectedMapping} name={"mappings-radio-"+config.id}
                    value={config.mappings.length}>
-            <FreeformInput {config} {tags} value={freeformInput}
+            <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput}
                            on:selected={() => selectedMapping = config.mappings.length } />
           </label>
         {/if}
@@ -162,7 +168,7 @@
           <label>
             <input type="checkbox" name={"mappings-checkbox-"+config.id+"-"+config.mappings.length}
                    bind:checked={checkedMappings[config.mappings.length]}>
-            <FreeformInput {config} {tags} value={freeformInput}
+            <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput}
                            on:selected={() => checkedMappings[config.mappings.length] = true} />
           </label>
         {/if}
@@ -180,7 +186,7 @@
       {:else }
         <div class="w-6 h-6">
           <!-- Invalid value; show an inactive button or something like that-->
-          <ExclamationIcon></ExclamationIcon>
+          <ExclamationIcon/>
         </div>
       {/if}
     </div>
