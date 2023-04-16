@@ -317,69 +317,6 @@ export default class TagRenderingQuestion extends Combine {
         return values
     }
 
-    /**
-     *
-     * // Should return the search as freeform value
-     * const source = new UIEventSource({id: "1234"})
-     * const tr =  new TagRenderingConfig({
-     *      id:"test",
-     *      render:"The value is {key}",
-     *      freeform: {
-     *          key:"key"
-     *      },
-     *      mappings: [
-     *          {
-     *            if:"x=y",
-     *            then:"z",
-     *            searchTerms: {
-     *              "en" : ["z"]
-     *            }
-     *          }
-     *      ]
-     * }, "test");
-     * const selector = TagRenderingQuestion.GenerateSearchableSelector(
-     *          undefined,
-     *          tr,
-     *          tr.mappings,
-     *          source,
-     *          {
-     *              search: new UIEventSource<string>("value")
-     *          }
-     *      );
-     * selector.GetValue().data // => new And([new Tag("key","value")])
-     *
-     * // Should return the search as freeform value, even if a previous search matched
-     * const source = new UIEventSource({id: "1234"})
-     * const search = new UIEventSource<string>("")
-     * const tr =  new TagRenderingConfig({
-     *      id:"test",
-     *      render:"The value is {key}",
-     *      freeform: {
-     *          key:"key"
-     *      },
-     *      mappings: [
-     *          {
-     *            if:"x=y",
-     *            then:"z",
-     *            searchTerms: {
-     *              "en" : ["z"]
-     *            }
-     *          }
-     *      ]
-     * }, "test");
-     * const selector = TagRenderingQuestion.GenerateSearchableSelector(
-     *          undefined,
-     *          tr,
-     *          tr.mappings,
-     *          source,
-     *          {
-     *              search
-     *          }
-     *      );
-     * search.setData("z")
-     * search.setData("zx")
-     * selector.GetValue().data // => new And([new Tag("key","zx")])
-     */
     private static GenerateSearchableSelector(
         state: FeaturePipelineState,
         configuration: TagRenderingConfig,
