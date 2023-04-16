@@ -1144,7 +1144,7 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
     }
 
     convert(layerConfig: LayerConfigJson, context: string): { result: LayerConfigJson } {
-        if (!layerConfig.tagRenderings) {
+        if (!layerConfig.tagRenderings || layerConfig.source === "special") {
             return { result: layerConfig }
         }
         const state = this._state

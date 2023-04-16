@@ -34,7 +34,7 @@ export class MinimapViz implements SpecialVisualization {
         feature: Feature,
         layer: LayerConfig
     ) {
-        if (state === undefined) {
+        if (state === undefined || feature === undefined || layer.source === undefined) {
             return undefined
         }
         const keys = [...args]
@@ -83,6 +83,9 @@ export class MinimapViz implements SpecialVisualization {
             }
         }
         featuresToShow.addCallbackAndRunD((features) => {
+            if (features.length === 0) {
+                return
+            }
             const bboxGeojson = GeoOperations.bbox({ features, type: "FeatureCollection" })
             const [lon, lat] = GeoOperations.centerpointCoordinates(bboxGeojson)
             mla.bounds.setData(BBox.get(bboxGeojson))
