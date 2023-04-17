@@ -1754,18 +1754,59 @@
                         "question": "Té un connector <div style='display: inline-block'><b>Tipus 1 CSS (Combo Tipus 1)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
                     },
                     "7": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>"
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>"
+                    },
+                    "8": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
                     }
                 }
             }
         },
         "name": "Estacions de càrrega",
+        "presets": {
+            "0": {
+                "title": "una estació de càrrega per a bicicletes elèctriques amb un endoll de paret europeu normal<img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (destinat a carregar bicicletes elèctriques)"
+            },
+            "1": {
+                "title": "una estació de càrrega per a cotxes"
+            }
+        },
         "tagRenderings": {
+            "Auth phone": {
+                "question": "Quin és el número de telèfon per a la trucada d'autenticació o SMS?",
+                "render": "Autentiqueu-vos trucant o enviant SMS a <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
+            },
             "Authentication": {
+                "mappings": {
+                    "0": {
+                        "then": "Autenticació mitjançant una targeta de soci"
+                    },
+                    "1": {
+                        "then": "Autenticació mitjançant una aplicació"
+                    },
+                    "2": {
+                        "then": "L'autenticació per trucada telefònica està disponible"
+                    },
+                    "3": {
+                        "then": "L'autenticació per SMS està disponible"
+                    },
+                    "4": {
+                        "then": "L'autenticació via NFC està disponible"
+                    },
+                    "7": {
+                        "then": "Carregar aquí (també) és possible sense autenticació"
+                    }
+                },
                 "question": "Quin tipus d'autenticació hi ha disponible a l'estació de càrrega?"
             },
             "Available_charging_stations (generated)": {
                 "mappings": {
+                    "0": {
+                        "then": "<b>Endoll de paret Schuko</b> sense pin a terra (CEE7/4 tipus F)"
+                    },
+                    "1": {
+                        "then": "<b>Endoll de paret Schuko</b> sense pin a terra (CEE7/4 tipus F)"
+                    },
                     "10": {
                         "then": "<b>CSS 1Tipus 1</b> (també conegut com Tipus 1 combo)"
                     },
@@ -1793,11 +1834,23 @@
                     "18": {
                         "then": "<b>Tipus 2 amb cable</b> (mennekes)"
                     },
+                    "19": {
+                        "then": "<b>Tipus 2 amb cable</b> (mennekes)"
+                    },
                     "2": {
                         "then": "<b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)"
                     },
                     "20": {
                         "then": "<b>CSS Supercarregador Tesla</b> (tipus2_css de la marca)"
+                    },
+                    "21": {
+                        "then": "<b>CSS Supercarregador Tesla</b> (un tipus2_css de la marca)"
+                    },
+                    "22": {
+                        "then": "<b>Supercarregador Tesla (destí)</b>"
+                    },
+                    "23": {
+                        "then": "<b>Supercarregador Tesla (destí)</b>"
                     },
                     "24": {
                         "then": "<b>Supercarregador Tesla (destí)</b> (Un tipus 2 amb un cable marca tesla)"
@@ -1942,6 +1995,18 @@
                 "question": "Quin corrent fan els endolls amb <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> offer?",
                 "render": "<div style='display: inline-block'><b><b>Tesla Supercharger (Destinació)</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> sortida com a màxim {socket:tesla_destination:current}A"
             },
+            "current-13": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>USB</b> per a carregar telèfons i dispositius petits fins a 1 A"
+                    },
+                    "1": {
+                        "then": "<b>USB</b> per a carregar telèfons i dispositius petits fins a 2 A"
+                    }
+                },
+                "question": "Quina corrent ofereixen els connectors amb <div style='display: inline-block'><b><b>USB</b>per a carrega telèfons i dispositius electrònics petits</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
+                "render": "<div style='display: inline-block'><b><b>USB</b>per a carregar telèfons i petits dispositius electrònics</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/>\ncom a màxim a {socket:USB-A:current}A"
+            },
             "email": {
                 "question": "Quin és el correu electrònic de l'operadora?"
             },
@@ -2037,7 +2102,42 @@
         }
     },
     "climbing": {
-        "description": "Una capa fictícia que conté renderització d'etiquetes compartides entre les capes d'escalada"
+        "description": "Una capa fictícia que conté renderització d'etiquetes compartides entre les capes d'escalada",
+        "tagRenderings": {
+            "average_length": {
+                "question": "Quina és la longitud (mitjana) de les rutes en metres?",
+                "render": "Les rutes mesuren <b>{canonical(climbing:length)}</b> de mitja"
+            },
+            "bouldering": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquí és possible l'escalada en bloc"
+                    },
+                    "1": {
+                        "then": "Aquí no és possible l'escalada en bloc"
+                    },
+                    "2": {
+                        "then": "L'escalada en bloc és possible, tot i que només hi ha unes poques rutes"
+                    },
+                    "3": {
+                        "then": "Hi han {climbing:boulder} rutes d'escalada en bloc"
+                    }
+                },
+                "question": "És possible fer escalda en bloc aquí?"
+            },
+            "fee": {
+                "mappings": {
+                    "0": {
+                        "then": "L'escalada en bloc aquí és gratuïta"
+                    },
+                    "1": {
+                        "then": "Cal pagar una quota per a escalar aquí"
+                    }
+                },
+                "question": "Es requereix una tarifa per a pujar aquí?",
+                "render": "S'ha de pagar una tarifa de {càrrec} per a escalar aquí"
+            }
+        }
     },
     "climbing_area": {
         "description": "Una àrea on l'escalada és possible, p.e. una penya, lloc, bloc, … Conté l'agregació de rutes",
