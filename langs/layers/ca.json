@@ -1744,11 +1744,17 @@
                     "13": {
                         "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     },
+                    "4": {
+                        "question": "Té un connector de <div style='display: inline-block'>Tipus 1 amb cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                    },
                     "5": {
                         "question": "Té un connecgtor de <div style='display: inline-block'><b>Tipus 1<i>sense</i>cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
                     "6": {
                         "question": "Té un connector <div style='display: inline-block'><b>Tipus 1 CSS (Combo Tipus 1)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1-ccs.svg'/></div>"
+                    },
+                    "7": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>"
                     }
                 }
             }
