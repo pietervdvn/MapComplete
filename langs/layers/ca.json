@@ -2135,7 +2135,7 @@
                     }
                 },
                 "question": "Es requereix una tarifa per a pujar aquí?",
-                "render": "S'ha de pagar una tarifa de {càrrec} per a escalar aquí"
+                "render": "S'ha de pagar una tarifa de {charge} per a escalar aquí"
             }
         }
     },
