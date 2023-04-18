@@ -702,7 +702,8 @@
                     }
                 },
                 "question": "Má tato lavička nápis?",
-                "questionHint": "Např. na připevněné desce, v opěradle, ..."
+                "questionHint": "Např. na připevněné desce, v opěradle, ...",
+                "render": "Tato lavice má následující nápis:<br/><p><i>{inscription}</i></p>"
             },
             "bench-material": {
                 "mappings": {
@@ -732,6 +733,9 @@
                 "mappings": {
                     "0": {
                         "then": "Tato lavička je pomníkem pro někoho nebo něco"
+                    },
+                    "1": {
+                        "then": "Tato lavička <b>není</b> pro někoho nebo něco památníkem"
                     }
                 },
                 "question": "Slouží tato lavička jako památník někoho nebo něčeho?"
@@ -1414,6 +1418,17 @@
                     },
                     "1": {
                         "then": "Tento obchod má zařízení, kde si můžete sami vyčistit jízdní kola"
+                    },
+                    "2": {
+                        "then": "Tento obchod nenabízí čištění jízdních kol"
+                    }
+                },
+                "question": "Myjí se zde jízdní kola?"
+            },
+            "bike_repair_rents-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod pronajímá jízdní kola"
                     }
                 }
             }
