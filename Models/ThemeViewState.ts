@@ -158,7 +158,12 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.perLayer = perLayer.perLayer
 
         this.perLayer.forEach((fs) => {
-            new SaveFeatureSourceToLocalStorage(fs.layer.layerDef.id, 15, fs)
+            new SaveFeatureSourceToLocalStorage(
+                fs.layer.layerDef.id,
+                15,
+                fs,
+                this.featureProperties
+            )
 
             const filtered = new FilteringFeatureSource(
                 fs.layer,

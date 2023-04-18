@@ -20,7 +20,14 @@ export default class LocalStorageFeatureSource extends DynamicTileSource {
         const storage = TileLocalStorage.construct<Feature[]>(layername)
         super(
             zoomlevel,
-            (tileIndex) => new StaticFeatureSource(storage.getTileSource(tileIndex)),
+            (tileIndex) =>
+                new StaticFeatureSource(
+                    storage
+                        .getTileSource(tileIndex)
+                        .map((features) =>
+                            features?.filter((f) => !f.properties.id.match(/(node|way)\/-[0-9]+/))
+                        )
+                ),
             mapProperties,
             options
         )
