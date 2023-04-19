@@ -59,7 +59,8 @@
             "nl": "Het specifieke type ingang is onbekend",
             "de": "Der Eingangstyp ist nicht bekannt",
             "es": "No se conoce un tipo de entrada específico",
-            "fr": "Aucun type d'entrée spécifique n'est connu"
+            "fr": "Aucun type d'entrée spécifique n'est connu",
+            "ca": "No es coneix cap tipus d'entrada específica"
           },
           "hideInAnswer": true
         },

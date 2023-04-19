@@ -24,6 +24,188 @@
             "render": "Adresse connue"
         }
     },
+    "advertising": {
+        "presets": {
+            "0": {
+                "description": "Un grand équipement extérieur, principalement disposé dans les zones à fort trafic comme une route"
+            },
+            "10": {
+                "description": "Désigne une enseigne publicitaire, une enseigne néon, les logos ou des indications d'entrées",
+                "title": "une enseigne"
+            },
+            "11": {
+                "title": "une sculpture"
+            },
+            "12": {
+                "title": "une peinture murale"
+            },
+            "3": {
+                "description": "Petit panneau pour l’affichage de proximité, généralement à destination des piétons",
+                "title": "un petit panneau"
+            },
+            "4": {
+                "description": "Une structure extérieure cylindrique qui affiche de la publicité",
+                "title": "une colonne"
+            },
+            "5": {
+                "title": "un drapeau"
+            },
+            "6": {
+                "title": "un écran"
+            },
+            "7": {
+                "title": "un écran fixé au mur"
+            },
+            "8": {
+                "title": "une bâche"
+            },
+            "9": {
+                "title": "un totem"
+            }
+        },
+        "tagRenderings": {
+            "Sides": {
+                "mappings": {
+                    "0": {
+                        "then": "Cet objet a de la publicité sur un seul côté"
+                    },
+                    "1": {
+                        "then": "Cet objet a de la publicité des deux côtés"
+                    }
+                },
+                "question": "Sur combien de côtés peut-on voir de la publicité ?"
+            },
+            "animated": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Statique</b>, affiche toujours le même message"
+                    },
+                    "1": {
+                        "then": "Cet objet inclut un <b>affichage digital</b> pour indiquer des prix ou d'autres messages"
+                    },
+                    "2": {
+                        "then": "<b>Trivision</b> - le panneau est constitué de lames triangulaires qui tournent régulièrement"
+                    },
+                    "3": {
+                        "then": "Affiches <b>défilantes</b>"
+                    },
+                    "4": {
+                        "then": "<b>Tourne</b> sur elle-même"
+                    }
+                },
+                "question": "Est-ce que cette publicité fait défiler différent messages ?"
+            },
+            "message_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Message commercial"
+                    },
+                    "1": {
+                        "then": "Informations locales"
+                    },
+                    "2": {
+                        "then": "Information de sécurité"
+                    },
+                    "3": {
+                        "then": "Propagande électorale"
+                    },
+                    "4": {
+                        "then": "Informations liées au théâtre, à des concerts, …"
+                    },
+                    "5": {
+                        "then": "Message d'organisations sans but lucratif"
+                    },
+                    "6": {
+                        "then": "Expression d'opinion"
+                    },
+                    "7": {
+                        "then": "Message religieux"
+                    },
+                    "9": {
+                        "then": "Une carte"
+                    }
+                },
+                "question": "Quel est le type de message affiché ?"
+            },
+            "operator": {
+                "question": "Qui exploite ce dispositif ?",
+                "render": "Exploité par {operator}"
+            },
+            "ref": {
+                "question": "Quel est le numéro de référence ?",
+                "render": "Le numéro de référence est {ref}"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "C'est un grand panneau"
+                    },
+                    "1": {
+                        "then": "C'est un petit panneau"
+                    },
+                    "10": {
+                        "then": "C'est une peinture murale"
+                    },
+                    "2": {
+                        "then": "C'est une colonne"
+                    },
+                    "3": {
+                        "then": "C'est un drapeau"
+                    },
+                    "4": {
+                        "then": "C'est une sucette (panneau avec affiches)"
+                    },
+                    "5": {
+                        "then": "C'est un écran"
+                    },
+                    "6": {
+                        "then": "C'est une sculpture"
+                    },
+                    "7": {
+                        "then": "C'est une enseigne (indique le nom du lieu/magasin)"
+                    },
+                    "8": {
+                        "then": "C'est une bâche (un morceau de textile résistant aux intempéries avec un message publicitaire)"
+                    },
+                    "9": {
+                        "then": "C'est un totem"
+                    }
+                },
+                "question": "De quel type de dispositif publicitaire s'agit-il ?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "1": {
+                    "then": "Petit panneau"
+                },
+                "10": {
+                    "then": "Peinture murale"
+                },
+                "3": {
+                    "then": "Colonne"
+                },
+                "4": {
+                    "then": "Drapeau"
+                },
+                "5": {
+                    "then": "Écran"
+                },
+                "6": {
+                    "then": "Sculpture"
+                },
+                "7": {
+                    "then": "Enseigne"
+                },
+                "8": {
+                    "then": "Bâche"
+                },
+                "9": {
+                    "then": "Totem"
+                }
+            }
+        }
+    },
     "ambulancestation": {
         "description": "Une station d’ambulance est un lieu où sont stockés les véhicules d’urgence ainsi que de l’équipement médical.",
         "name": "Couche des ambulances",
@@ -98,6 +280,15 @@
                     "1": {
                         "then": "Peinture murale"
                     },
+                    "10": {
+                        "then": "Azulejo (faïence latine)"
+                    },
+                    "11": {
+                        "then": "Carrelage"
+                    },
+                    "12": {
+                        "then": "Sculpture sur bois"
+                    },
                     "2": {
                         "then": "Peinture"
                     },
@@ -121,15 +312,6 @@
                     },
                     "9": {
                         "then": "Relief"
-                    },
-                    "10": {
-                        "then": "Azulejo (faïence latine)"
-                    },
-                    "11": {
-                        "then": "Carrelage"
-                    },
-                    "12": {
-                        "then": "Sculpture sur bois"
                     }
                 },
                 "question": "Quel est le type de cette œuvre d'art ?",
@@ -137,10 +319,11 @@
             },
             "artwork-website": {
                 "question": "Existe-t-il un site web où trouver plus d'informations sur cette œuvre d'art ?",
-                "render": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>"
+                "render": "Plus d'infos <a href='{website}' target='_blank'>sur ce site web</a>"
             },
             "artwork_subject": {
-                "question": "Que représente cette oeuvre d'art ?"
+                "question": "Que représente cette oeuvre d'art ?",
+                "render": "Cette œuvre dépeint {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
             },
             "doubles_as_bench": {
                 "mappings": {
@@ -181,6 +364,20 @@
                 },
                 "question": "De quelle marque est ce DAB ?",
                 "render": "La marque de ce DAB est {brand}"
+            },
+            "cash_in": {
+                "mappings": {
+                    "0": {
+                        "then": "Vous ne pouvez probablement pas déposer d'argent liquide dans ce DAB"
+                    },
+                    "1": {
+                        "then": "Vous pouvez déposer de l'argent liquide dans ce DAB"
+                    },
+                    "2": {
+                        "then": "Vous ne pouvez pas déposer d'agent liquide dans ce DAB"
+                    }
+                },
+                "question": "Pouvez-vous déposer de l'argent liquide dans ce DAB ?"
             },
             "name": {
                 "render": "Le nom de ce DAB est {name}"
@@ -1820,6 +2017,96 @@
             "render": "Voie d’escalade"
         }
     },
+    "clock": {
+        "presets": {
+            "1": {
+                "description": "Une horloge publique fixée sur un mur"
+            }
+        },
+        "tagRenderings": {
+            "date": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette horloge indique également la date"
+                    },
+                    "1": {
+                        "then": "Cette horloge n'indique pas la date"
+                    }
+                },
+                "question": "Cette horloge indique-t-elle également la date ?"
+            },
+            "display": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette horloge indique l'heure avec des aiguilles"
+                    },
+                    "1": {
+                        "then": "Cette horloges indique l'heure avec des chiffres numériques"
+                    },
+                    "2": {
+                        "then": "Cette horloge indique l'heure grâce au soleil"
+                    },
+                    "3": {
+                        "then": "Cette horloge indique l'heure d'une manière inhabituelle, par ex. en binaire, avec de l'eau, ou autre"
+                    }
+                },
+                "question": "Comment cette horloge indique-t-elle l'heure ?"
+            },
+            "faces": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette horloge a une face"
+                    },
+                    "1": {
+                        "then": "Cette horloge a deux faces"
+                    },
+                    "2": {
+                        "then": "Cette horloge a quatre faces"
+                    }
+                },
+                "question": "Combien de faces a cette horloge ?",
+                "render": "Cette horloge a {faces} faces"
+            },
+            "hygrometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette horloge indique également l'humidité"
+                    },
+                    "1": {
+                        "then": "Cette horloge n'indique pas l'humidité"
+                    },
+                    "2": {
+                        "then": "Cette horloge n'indique probablement pas l'humidité"
+                    }
+                },
+                "question": "Cette horloge indique-t-elle également l'humidité ?"
+            },
+            "support": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette horloge est montée sur un poteau"
+                    },
+                    "1": {
+                        "then": "Cette horloge est fixée sur un mur"
+                    },
+                    "2": {
+                        "then": "Cette horloge fait partie d'un panneau publicitaire"
+                    },
+                    "3": {
+                        "then": "Cette horloge est posée au sol"
+                    }
+                },
+                "question": "De quelle manière est fixée cette horloge ?"
+            },
+            "thermometer": {
+                "mappings": {
+                    "2": {
+                        "then": "Cette horloge n'indique probablement pas la date"
+                    }
+                }
+            }
+        }
+    },
     "crossings": {
         "description": "Traversée pour piétons et cyclistes",
         "name": "Traversée",
@@ -1992,6 +2279,15 @@
                     "1": {
                         "then": "Cette piste cyclable est goudronée"
                     },
+                    "10": {
+                        "then": "Cette piste cyclable est faite en graviers fins"
+                    },
+                    "11": {
+                        "then": "Cette piste cyclable est en cailloux"
+                    },
+                    "12": {
+                        "then": "Cette piste cyclable est faite en sol brut"
+                    },
                     "2": {
                         "then": "Cette piste cyclable est asphaltée"
                     },
@@ -2015,15 +2311,6 @@
                     },
                     "9": {
                         "then": "Cette piste cyclable est faite en graviers"
-                    },
-                    "10": {
-                        "then": "Cette piste cyclable est faite en graviers fins"
-                    },
-                    "11": {
-                        "then": "Cette piste cyclable est en cailloux"
-                    },
-                    "12": {
-                        "then": "Cette piste cyclable est faite en sol brut"
                     }
                 },
                 "question": "De quoi est faite la surface de la piste cyclable ?",
@@ -2072,6 +2359,15 @@
                     "1": {
                         "then": "Cette piste cyclable est pavée"
                     },
+                    "10": {
+                        "then": "Cette piste cyclable est faite en graviers fins"
+                    },
+                    "11": {
+                        "then": "Cette piste cyclable est en cailloux"
+                    },
+                    "12": {
+                        "then": "Cette piste cyclable est faite en sol brut"
+                    },
                     "2": {
                         "then": "Cette piste cyclable est asphaltée"
                     },
@@ -2095,15 +2391,6 @@
                     },
                     "9": {
                         "then": "Cette piste cyclable est faite en graviers"
-                    },
-                    "10": {
-                        "then": "Cette piste cyclable est faite en graviers fins"
-                    },
-                    "11": {
-                        "then": "Cette piste cyclable est en cailloux"
-                    },
-                    "12": {
-                        "then": "Cette piste cyclable est faite en sol brut"
                     }
                 },
                 "question": "De quel materiel est faite cette rue ?",
@@ -2926,6 +3213,21 @@
                     "1": {
                         "then": "C'est une friterie"
                     },
+                    "10": {
+                        "then": "Des plats chinois sont servis ici"
+                    },
+                    "11": {
+                        "then": "Des plats grecs sont servis ici"
+                    },
+                    "12": {
+                        "then": "Des plats indiens sont servis ici"
+                    },
+                    "13": {
+                        "then": "Des plats turcs sont servis ici"
+                    },
+                    "14": {
+                        "then": "Des plats thaïlandais sont servis ici"
+                    },
                     "2": {
                         "then": "Restaurant Italien"
                     },
@@ -2949,21 +3251,6 @@
                     },
                     "9": {
                         "then": "Des plats français sont servis ici"
-                    },
-                    "10": {
-                        "then": "Des plats chinois sont servis ici"
-                    },
-                    "11": {
-                        "then": "Des plats grecs sont servis ici"
-                    },
-                    "12": {
-                        "then": "Des plats indiens sont servis ici"
-                    },
-                    "13": {
-                        "then": "Des plats turcs sont servis ici"
-                    },
-                    "14": {
-                        "then": "Des plats thaïlandais sont servis ici"
                     }
                 },
                 "question": "Quelle type de nourriture est servie ici ?",
@@ -2983,6 +3270,23 @@
             "Name": {
                 "question": "Quel est le nom de ce restaurant ?",
                 "render": "Le nom de ce restaurant est {name}"
+            },
+            "Reservation": {
+                "mappings": {
+                    "0": {
+                        "then": "Il est nécessaire de réserver à cet endroit"
+                    },
+                    "1": {
+                        "then": "Une réservation n'est pas obligatoire, mais est recommandée pour être sûr d'avoir une table"
+                    },
+                    "2": {
+                        "then": "La réservation est possible à cet endroit"
+                    },
+                    "3": {
+                        "then": "Il n'est pas possible de réserver à cet endroit"
+                    }
+                },
+                "question": "Est-il nécessaire de réserver à cet endroit ?"
             },
             "Takeaway": {
                 "mappings": {
@@ -3112,6 +3416,20 @@
                     }
                 },
                 "question": "Ce restaurant propose-t-il un menu halal ?"
+            },
+            "organic (no friture)": {
+                "mappings": {
+                    "0": {
+                        "then": "Il n'y a pas d'option bio disponible"
+                    },
+                    "1": {
+                        "then": "Il y a un menu bio"
+                    },
+                    "2": {
+                        "then": "Bio uniquement"
+                    }
+                },
+                "question": "Ce restaurant propose-t-il de la nourriture bio ?"
             }
         },
         "title": {
@@ -3237,6 +3555,16 @@
         },
         "title": {
             "render": "Bornes incendie"
+        }
+    },
+    "indoors": {
+        "tagRenderings": {
+            "name": {
+                "render": "Cette pièce s'appelle {name}"
+            },
+            "ref": {
+                "question": "Quel est le numéro de référence de cette pièce ?"
+            }
         }
     },
     "information_board": {
@@ -3513,6 +3841,20 @@
         "tagRenderings": {
             "name": {
                 "render": "Cette pharmacie s'appelle {name}"
+            },
+            "wheelchair": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette pharmacie est facile d'accès en chaise roulante"
+                    },
+                    "1": {
+                        "then": "Cette pharmacie est difficilement accessible en chaise roulante"
+                    },
+                    "2": {
+                        "then": "L'accès à cette pharmacie est limité en chaise roulante"
+                    }
+                },
+                "question": "Cette pharmacie est-elle facilement accessible en chaise roulante ?"
             }
         }
     },
@@ -4797,8 +5139,8 @@
         },
         "tagRenderings": {
             "circumference": {
-                "question": "Quelle est la circonférence du tronc ? ",
-                "questionHint": "La mesure est effectuée à 1.30m de hauteur",
+                "question": "Quelle est la circonférence du tronc ?",
+                "questionHint": "La mesure est effectuée à 1,30 m de hauteur",
                 "render": "Le tronc a une circonférence de {circumference} mètre(s)"
             },
             "height": {
@@ -4906,6 +5248,31 @@
     },
     "usersettings": {
         "tagRenderings": {
+            "all-questions-at-once": {
+                "mappings": {
+                    "0": {
+                        "then": "Afficher toutes les question en même temps dans l'infobox"
+                    },
+                    "1": {
+                        "then": "Afficher les questions une à une"
+                    }
+                },
+                "question": "Est-ce que les questions pour les champs sans donnée doivent apparaître une à une ou toutes ensembles ?"
+            },
+            "cscount-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Vous avez fait {_csCount} modifications ! C'est génial !"
+                    }
+                }
+            },
+            "picture-license": {
+                "mappings": {
+                    "3": {
+                        "then": "Les photos que vous prenez seront sous la licence <b>CC-BY-SA 4.0</b> ce qui signifie que quiconque utilisant votre photo doit vous créditer et que les modifications apportées à votre photo doivent être repartagées avec la même licence."
+                    }
+                }
+            },
             "translation-completeness": {
                 "render": "Les traductions pour {_theme} en {_language} sont à {_translation_percentage} % : {_translation_translated_count} chaînes traduites sur {_translation_total}"
             },
@@ -4918,10 +5285,17 @@
             },
             "translation-mode": {
                 "mappings": {
+                    "0": {
+                        "then": "Ne pas afficher de bouton pour modifier les traductions rapidement"
+                    },
                     "1": {
                         "then": "Afficher un bouton pour ouvrir rapidement les traductions lorsque vous utilisez MapComplete sur un grand écran"
+                    },
+                    "2": {
+                        "then": "Toujours afficher les boutons de traduction, même sur mobile"
                     }
-                }
+                },
+                "question": "Voulez-vous aider à traduire MapComplete ?"
             },
             "verified-mastodon": {
                 "mappings": {
@@ -4997,6 +5371,39 @@
         "presets": {
             "0": {
                 "title": "un poubelle"
+            }
+        },
+        "tagRenderings": {
+            "dispensing_dog_bags": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette poubelle a un distributeur de sacs pour ramasser les déjections canines"
+                    },
+                    "2": {
+                        "then": "Cette poubelle <b>n'a pas</b> de distributeur de sac pour ramasser les déjections canines"
+                    }
+                },
+                "question": "Est-ce que cette poubelle a un distributeur de sacs pour ramasser les déjections canines ?"
+            },
+            "waste-basket-waste-types": {
+                "mappings": {
+                    "1": {
+                        "then": "Un poubelle pour tout type d'ordures"
+                    },
+                    "2": {
+                        "then": "Un poubelle pour les déjections canines"
+                    },
+                    "3": {
+                        "then": "Un cendrier"
+                    },
+                    "5": {
+                        "then": "Un poubelle pour les aiguilles et autres objets pointus"
+                    },
+                    "6": {
+                        "then": "Un poubelle pour le plastique"
+                    }
+                },
+                "question": "De quel type de poubelle s'agit-il ?"
             }
         }
     },

@@ -90,7 +90,8 @@
       "question": {
         "en": "What is the reference number of this room?",
         "de": "Wie lautet die Nummer dieses Raums?",
-        "nl": "Wat is het referentienummer van deze ruimte?"
+        "nl": "Wat is het referentienummer van deze ruimte?",
+        "fr": "Quel est le numéro de référence de cette pièce ?"
       },
       "render": {
         "en": "This room has the reference number {ref}",
@@ -126,7 +127,8 @@
         "en": "This room is named {name}",
         "de": "Der Name des Raums lautet {name}",
         "nl": "Deze ruimte heet {name}",
-        "ru": "Эта комната называется {name}"
+        "ru": "Эта комната называется {name}",
+        "fr": "Cette pièce s'appelle {name}"
       },
       "freeform": {
         "key": "name",

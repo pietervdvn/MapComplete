@@ -14,7 +14,8 @@
     "nl": "Een laag met recyclagingcontainers en -centrums",
     "de": "Eine Ebene mit Recyclingcontainern und -zentren",
     "es": "Una capa con contenedores y centros de reciclaje",
-    "it": "Un livello con i contenitori e centri per la raccolta rifiuti riciclabili"
+    "it": "Un livello con i contenitori e centri per la raccolta rifiuti riciclabili",
+    "ca": "Una capa amb contenidors i centres de reciclatge"
   },
   "source": {
     "osmTags": "amenity=recycling"
@@ -620,7 +621,7 @@
         "de": "Wo befindet sich dieser Container?",
         "es": "¿Dónde se sitúa este contenedor?",
         "it": "Dove si trova questo contenitore?",
-        "ca": "On es situa el contenidor?"
+        "ca": "On es troba aquest contenidor?"
       },
       "condition": "recycling_type=container",
       "mappings": [
@@ -632,7 +633,7 @@
             "de": "Dies ist ein Unterflurcontainer",
             "es": "Este es un contenedor bajo tierra",
             "it": "E' un contenitore sotterraneo",
-            "ca": "Açò és un contenidor soterrat"
+            "ca": "Aquest contenidor està soterrat"
           }
         },
         {
@@ -643,7 +644,7 @@
             "de": "Dieser Container befindet sich in einem Gebäude",
             "es": "Este contenedor se sitúa en el interior",
             "it": "Questo contenitore è al chiuso",
-            "ca": "Aquest contenidor està situa a l'interior"
+            "ca": "Aquest contenidor està situat a l'interior"
           }
         },
         {
@@ -680,7 +681,7 @@
             "de": "Batterien können hier recycelt werden",
             "es": "Aquí se pueden reciclar baterías",
             "it": "Batterie",
-            "ca": "Aquí es poden reciclar bateries"
+            "ca": "Aquí es poden reciclar piles"
           },
           "icon": {
             "path": "./assets/layers/recycling/batteries.svg",
@@ -943,7 +944,8 @@
           "ifnot": "recycling:printer_cartridges=",
           "then": {
             "en": "Printer cartridges can be recycled here",
-            "nl": "Inktpatronen kunnen hier gerecycleerd worden"
+            "nl": "Inktpatronen kunnen hier gerecycleerd worden",
+            "de": "Druckerpatronen können hier recycelt werden"
           },
           "icon": {
             "path": "./assets/layers/recycling/printer_cartridges.svg",
@@ -990,7 +992,7 @@
             "nl": "Kleine elektrische apparaten kunnen hier gerecycled worden",
             "de": "Elektrokleingeräte können hier recycelt werden",
             "it": "Piccoli elettrodomestici",
-            "ca": "Aquí es poden reciclar petits aparells elèctrics"
+            "ca": "Aquí es poden reciclar petits electrodomèstics"
           },
           "icon": {
             "path": "./assets/layers/recycling/small_electrical_appliances.svg",
@@ -1005,7 +1007,7 @@
             "nl": "Kleine elektrische apparaten kunnen hier gerecycled worden",
             "de": "Elektrokleingeräte können hier recycelt werden",
             "it": "Piccoli elettrodomestici",
-            "ca": "Aquí es poden reciclar petits aparells elèctrics"
+            "ca": "Aquí es poden reciclar petits electrodomèstics"
           },
           "hideInAnswer": true,
           "icon": {
@@ -1148,7 +1150,8 @@
             "nl": "Alle recyclingtypes",
             "de": "Alle Recyclingarten",
             "es": "Todos los tipos de reciclado",
-            "it": "Tutti i tipi di rifiuti"
+            "it": "Tutti i tipi di rifiuti",
+            "ca": "Tots els tipus de reciclatge"
           }
         },
         {
@@ -1157,7 +1160,8 @@
             "nl": "Recycling van batterijen",
             "de": "Recycling von Batterien",
             "es": "Reciclaje de baterías",
-            "it": "Riciclo di batterie"
+            "it": "Riciclo di batterie",
+            "ca": "Reciclatge de piles"
           },
           "osmTags": "recycling:batteries=yes"
         },
@@ -1166,7 +1170,8 @@
             "en": "Recycling of beverage cartons",
             "nl": "Recycling van drankpakken",
             "de": "Recycling von Getränkekartons",
-            "it": "Riciclo di confezioni per bevande"
+            "it": "Riciclo di confezioni per bevande",
+            "ca": "Reciclatge de cartrons de begudes"
           },
           "osmTags": "recycling:beverage_cartons=yes"
         },
@@ -1176,7 +1181,8 @@
             "nl": "Recycling van blikken",
             "de": "Recycling von Dosen",
             "es": "Reciclaje de latas",
-            "it": "Riciclo di lattine"
+            "it": "Riciclo di lattine",
+            "ca": "Reciclatge de llaunes"
           },
           "osmTags": "recycling:cans=yes"
         },
@@ -1186,7 +1192,8 @@
             "nl": "Recycling van kleding",
             "de": "Recycling von Kleidung",
             "es": "Reciclaje de ropa",
-            "it": "Riciclo di abiti"
+            "it": "Riciclo di abiti",
+            "ca": "Reciclatge de roba"
           },
           "osmTags": "recycling:clothes=yes"
         },
@@ -1196,7 +1203,8 @@
             "nl": "Recycling van frituurvet",
             "de": "Recycling von Speiseöl",
             "es": "Reciclaje de aceite de cocina",
-            "it": "Riciclo di olio da cucina"
+            "it": "Riciclo di olio da cucina",
+            "ca": "Reciclatge d'oli de cuina"
           },
           "osmTags": "recycling:cooking_oil=yes"
         },
@@ -1206,7 +1214,8 @@
             "nl": "Recycling van motorolie",
             "de": "Recycling von Motoröl",
             "es": "Reciclaje de aceite de motor",
-            "it": "Riciclo di olio da motore"
+            "it": "Riciclo di olio da motore",
+            "ca": "Reciclatge d'oli de motor"
           },
           "osmTags": "recycling:engine_oil=yes"
         },
@@ -1214,7 +1223,8 @@
           "question": {
             "en": "Recycling of fluorescent tubes",
             "nl": "Recycling van tl-buizen",
-            "de": "Recycling von Leuchtstoffröhren"
+            "de": "Recycling von Leuchtstoffröhren",
+            "ca": "Reciclatge de tubs fluorescents"
           },
           "osmTags": "recycling:fluorescent_tubes=yes"
         },
@@ -1223,7 +1233,8 @@
             "en": "Recycling of green waste",
             "nl": "Recycling van groen afval",
             "de": "Recycling von Grünabfällen",
-            "it": "Riciclo di umido"
+            "it": "Riciclo di umido",
+            "ca": "Reciclatge de residus verds"
           },
           "osmTags": {
             "or": [
@@ -1238,7 +1249,8 @@
             "nl": "Recycling van glazen flessen",
             "de": "Recycling von Glasflaschen",
             "es": "Reciclaje de botellas de cristal",
-            "it": "Riciclo di bottiglie di vetro"
+            "it": "Riciclo di bottiglie di vetro",
+            "ca": "Reciclatge d'ampolles de vidre"
           },
           "osmTags": "recycling:glass_bottles=yes"
         },
@@ -1248,7 +1260,8 @@
             "nl": "Recycling van glas",
             "de": "Recycling von Glas",
             "es": "Reciclaje de cristal",
-            "it": "Riciclo di vetro"
+            "it": "Riciclo di vetro",
+            "ca": "Reciclatge de vidre"
           },
           "osmTags": "recycling:glass=yes"
         },
@@ -1256,7 +1269,8 @@
           "question": {
             "en": "Recycling of light bulbs",
             "nl": "Recycling van lampen",
-            "de": "Recycling von Glühbirnen"
+            "de": "Recycling von Glühbirnen",
+            "ca": "Reciclatge de bombetes"
           },
           "osmTags": "recycling:light_bulbs=yes"
         },
@@ -1266,7 +1280,8 @@
             "nl": "Recycling van kranten",
             "de": "Recycling von Zeitungen",
             "es": "Reciclaje de periódicos",
-            "it": "Riciclo di giornali"
+            "it": "Riciclo di giornali",
+            "ca": "Reciclatge de diaris"
           },
           "osmTags": "recycling:newspaper=yes"
         },
@@ -1276,7 +1291,8 @@
             "nl": "Recycling van papier",
             "de": "Recycling von Papier",
             "es": "Reciclaje de papel",
-            "it": "Riciclo di carta"
+            "it": "Riciclo di carta",
+            "ca": "Reciclatge de paper"
           },
           "osmTags": "recycling:paper=yes"
         },
@@ -1286,7 +1302,8 @@
             "nl": "Recycling van plastic flessen",
             "de": "Recycling von Plastikflaschen",
             "es": "Reciclaje de botellas de papel",
-            "it": "Riciclo di bottiglie di plastica"
+            "it": "Riciclo di bottiglie di plastica",
+            "ca": "Reciclatge d'ampolles de plàstic"
           },
           "osmTags": "recycling:plastic_bottles=yes"
         },
@@ -1296,7 +1313,8 @@
             "nl": "Recycling van plastic verpakking",
             "de": "Recycling von Kunststoffverpackungen",
             "es": "Reciclaje de embalajes plásticos",
-            "it": "Riciclo di confezioni di plastica"
+            "it": "Riciclo di confezioni di plastica",
+            "ca": "Reciclatge d'envasos de plàstic"
           },
           "osmTags": "recycling:plastic_packaging=yes"
         },
@@ -1306,7 +1324,8 @@
             "nl": "Recycling van plastic",
             "de": "Recycling von Kunststoffen",
             "es": "Reciclaje de plástico",
-            "it": "Riciclo di plastica"
+            "it": "Riciclo di plastica",
+            "ca": "Reciclatge de plàstic"
           },
           "osmTags": "recycling:plastic=yes"
         },
@@ -1316,7 +1335,8 @@
             "nl": "Recycling van oud metaal",
             "de": "Recycling von Metallschrott",
             "es": "Reciclaje de chatarra",
-            "it": "Riciclo di rottami metallici"
+            "it": "Riciclo di rottami metallici",
+            "ca": "Reciclatge de ferralla"
           },
           "osmTags": "recycling:printer_cartridges=yes"
         },
@@ -1325,8 +1345,9 @@
             "en": "Recycling of small electrical appliances",
             "nl": "Recycling van kleine elektrische apparaten",
             "de": "Recycling von Elektrokleingeräten",
-            "es": "Reciclaje de chatarra",
-            "it": "Riciclo di piccoli elettrodomestici"
+            "es": "Reciclaje de pequeños electrodomésticos",
+            "it": "Riciclo di piccoli elettrodomestici",
+            "ca": "Reciclatge de petits electrodomèstics"
           },
           "osmTags": "recycling:scrap_metal=yes"
         },
@@ -1335,7 +1356,8 @@
             "en": "Recycling of residual waste",
             "nl": "Recycling van restafval",
             "de": "Recycling von Restabfällen",
-            "it": "Riciclo di secco"
+            "it": "Riciclo di secco",
+            "ca": "Reciclatge del rebuig"
           },
           "osmTags": {
             "or": [
@@ -1349,7 +1371,8 @@
             "en": "Recycling of residual waste",
             "nl": "Recycling van restafval",
             "de": "Recycling von Restabfällen",
-            "it": "Riciclo di secco"
+            "it": "Riciclo di secco",
+            "ca": "Reciclatge del rebuig"
           },
           "osmTags": "recycling:waste=yes"
         }

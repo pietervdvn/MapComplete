@@ -66,7 +66,8 @@
             "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY-SA 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss und dass Ableitungen Ihres Bildes mit der gleichen Lizenz weitergegeben werden müssen.",
             "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden.",
             "cs": "Pořízené fotografie budou licencovány pod <b>CC-BY-SA 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku a že odvozené fotky musí být dále sdíleny se stejnou licencí.",
-            "ca": "Les imatges que feu tindran una llicència amb <b>CC-BY-SA 4.0</b> el que significa que tothom que utilitzi la vostra imatge us ha d'atribuir i que els derivats de la vostra imatge s'han de tornar a compartir amb la mateixa llicència."
+            "ca": "Les imatges que feu tindran una llicència amb <b>CC-BY-SA 4.0</b> el que significa que tothom que utilitzi la vostra imatge us ha d'atribuir i que els derivats de la vostra imatge s'han de tornar a compartir amb la mateixa llicència.",
+            "fr": "Les photos que vous prenez seront sous la licence <b>CC-BY-SA 4.0</b> ce qui signifie que quiconque utilisant votre photo doit vous créditer et que les modifications apportées à votre photo doivent être repartagées avec la même licence."
           }
         }
       ]
@@ -75,7 +76,8 @@
       "id": "all-questions-at-once",
       "question": {
         "en": "Should questions for unknown data fields appear one-by-one or together?",
-        "de": "Sollen Fragen für unbekannte Datenfelder einzeln oder zusammen angezeigt werden?"
+        "de": "Sollen Fragen für unbekannte Datenfelder einzeln oder zusammen angezeigt werden?",
+        "fr": "Est-ce que les questions pour les champs sans donnée doivent apparaître une à une ou toutes ensembles ?"
       },
       "mappings": [
         {
@@ -83,7 +85,8 @@
           "then": {
             "en": "Show all questions in the infobox together",
             "de": "Alle Fragen in der Infobox zusammen anzeigen",
-            "ca": "Mostra totes les preguntes juntes a la caixa d'informació"
+            "ca": "Mostra totes les preguntes juntes a la caixa d'informació",
+            "fr": "Afficher toutes les question en même temps dans l'infobox"
           }
         },
         {
@@ -91,7 +94,8 @@
           "then": {
             "en": "Show questions one-by-one",
             "de": "Fragen der Reihe nach anzeigen",
-            "ca": "Mostra les preguntes una per una"
+            "ca": "Mostra les preguntes una per una",
+            "fr": "Afficher les questions une à une"
           }
         }
       ]
@@ -108,7 +112,8 @@
         "en": "Do you want to help translating MapComplete?",
         "de": "Möchten Sie bei der Übersetzung von MapComplete helfen?",
         "cs": "Chcete pomoci s překladem MapComplete?",
-        "ca": "Vols ajudar a traduir MapComplete?"
+        "ca": "Vols ajudar a traduir MapComplete?",
+        "fr": "Voulez-vous aider à traduire MapComplete ?"
       },
       "mappings": [
         {
@@ -116,7 +121,8 @@
           "then": {
             "en": "Don't show a button to quickly change translations",
             "de": "Keine Schaltfläche zum schnellen Wechseln von Übersetzungen anzeigen",
-            "ca": "No mostris cap botó per a canviar ràpidament les traduccions"
+            "ca": "No mostris cap botó per a canviar ràpidament les traduccions",
+            "fr": "Ne pas afficher de bouton pour modifier les traductions rapidement"
           }
         },
         {
@@ -133,7 +139,8 @@
           "then": {
             "en": "Always show the translation buttons, including on mobile",
             "de": "Übersetzungsschaltflächen immer anzeigen, auch auf dem Handy",
-            "ca": "Mostra sempre els botons de traducció, fins i tot al mòbil"
+            "ca": "Mostra sempre els botons de traducció, fins i tot al mòbil",
+            "fr": "Toujours afficher les boutons de traduction, même sur mobile"
           }
         }
       ]
@@ -254,7 +261,8 @@
           "then": {
             "en": "You have made changes on {_csCount} different occasions! That is awesome!",
             "de": "Sie haben bei {_csCount} verschiedenen Gelegenheiten Änderungen vorgenommen! Das ist großartig!",
-            "ca": "Has fet {_csCount} en diferents ocasions! Això és sorprenent!"
+            "ca": "Has fet {_csCount} en diferents ocasions! Això és sorprenent!",
+            "fr": "Vous avez fait {_csCount} modifications ! C'est génial !"
           },
           "icon": "party"
         }

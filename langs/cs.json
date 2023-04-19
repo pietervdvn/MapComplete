@@ -5,6 +5,12 @@
         "retrying": "Načítání dat se nezdařilo. Zkusíme to znovu za {count} sekund…",
         "zoomIn": "Přiblížení pro zobrazení nebo úpravu dat"
     },
+    "communityIndex": {
+        "available": "Tato komunita mluví {native}",
+        "intro": "Navažte kontakt s ostatními lidmi, abyste je poznali, učili se od nich, ...",
+        "notAvailable": "Tato komunita nemluví {native}",
+        "title": "Seznam komunit"
+    },
     "delete": {
         "cancel": "Zrušit",
         "cannotBeDeleted": "Tuto funkci nelze odstranit",
@@ -13,7 +19,8 @@
             "hardDelete": "Tato funkce bude v OpenStreetMap odstraněna. Zkušený přispěvatel ji může obnovit",
             "retagNoOtherThemes": "Tato funkce bude překlasifikována a skryta z této aplikace",
             "retagOtherThemes": "Tato funkce bude nově označena a viditelná v {otherThemes}",
-            "selectReason": "Vyberte, proč by tato funkce měla být odstraněna"
+            "selectReason": "Vyberte, proč by tato funkce měla být odstraněna",
+            "softDelete": "Tato funkce bude v této aplikaci aktualizována a skryta. <span class='subtle'>{reason}</span>"
         },
         "isDeleted": "Tato funkce je smazána",
         "isntAPoint": "Odstranit lze pouze uzly, vybraným prvkem je cesta, oblast nebo relace.",
@@ -24,8 +31,12 @@
         "partOfOthers": "Tento uzel je součástí nějaké cesty nebo relace a nelze jej přímo smazat.",
         "readMessages": "Máte nepřečtené zprávy. Před odstraněním funkce si je přečtěte - někdo by mohl mít zpětnou vazbu",
         "reasons": {
-            "disused": "Tato funkce je nepoužívaná nebo odstraněná"
+            "disused": "Tato funkce je nepoužívaná nebo odstraněná",
+            "duplicate": "Tato funkce je duplikátem jiné funkce",
+            "notFound": "Tato funkce nebyla nalezena",
+            "test": "Jednalo se o testovací funkci – tato funkce zde ve skutečnosti nikdy nebyla"
         },
+        "safeDelete": "Tuto funkci lze bezpečně odstranit.",
         "useSomethingElse": "Místo toho použijte jiný editor OpenStreetMap a odstraňte jej",
         "whyDelete": "Proč by měla být tato funkce odstraněna?"
     },
@@ -35,17 +46,45 @@
         "reload": "Znovu načíst data"
     },
     "flyer": {
+        "aerial": "Tato mapa používá jiné pozadí, konkrétně letecké snímky od Agency Information Flanders",
         "callToAction": "Vyzkoušet na mapcomplete.osm.be",
+        "cyclofix": "Cyklistické pumpy, opravárenské stanice, prodejny pitné vody a cykloprodejny jsou na CycloFix",
         "description": "Leták formátu A4 na propagaci MapComplete",
         "editing": {
+            "ex": "Zjednodušený příklad, jak to vypadá v případě přírodní rezervace, je uveden níže.",
+            "intro": "Uživatele přivítá mapa s prvky. Po výběru jednoho z nich se zobrazí informace o daném prvku.",
             "title": "Jak vypadá uživatelské rozhraní?"
         },
         "examples": "K dispozici je mnoho tematických map, z nichž některé jsou zde otištěny.\n\nNa internetu je k dispozici mnoho dalších tematických map: o zdravotnictví, navigaci v interiéru, bezbariérovosti, odpadových zařízeních, veřejných knihovnách, přechodech pro chodce s duhovým nátěrem,... Objevte je všechny na mapcomplete.osm.be",
         "fakeui": {
             "add_images": "Přidání obrázků několika kliknutími",
-            "edit": "Špatné nebo zastaralé informace? Tlačítko pro úpravu je přímo zde."
+            "attributes": "Zobrazuje atributy přátelským způsobem",
+            "edit": "Špatné nebo zastaralé informace? Tlačítko pro úpravu je přímo zde.",
+            "question": "Pokud atribut ještě není znám, zobrazí MapComplete otázku",
+            "see_images": "Zobrazuje obrázky od předchozích přispěvatelů, Wikipedie, Mapillary, ... ",
+            "wikipedia": "Zobrazují se propojené články Wikipedie"
         },
-        "frontParagraph": "MapComplete je snadno použitelná webová aplikace pro sběr geodat v OpenStreetMap, která umožňuje sběr a správu relevantních dat otevřeným, crowdsourcovaným a opakovaně použitelným způsobem.\n\nNa vyžádání lze přidávat nové kategorie a atributy."
+        "frontParagraph": "MapComplete je snadno použitelná webová aplikace pro sběr geodat v OpenStreetMap, která umožňuje sběr a správu relevantních dat otevřeným, crowdsourcovaným a opakovaně použitelným způsobem.\n\nNa vyžádání lze přidávat nové kategorie a atributy.",
+        "lines_too": "Zobrazují se také čáry a mnohoúhelníky. K těmto objektům lze také přidávat a aktualizovat atributy a obrázky.",
+        "mapcomplete": {
+            "customize": "MapComplete lze přizpůsobit vašim potřebám, přidat nové mapové vrstvy, nové funkce nebo jej stylizovat pomocí barev a písma vaší organizace.\nMáme také zkušenosti se spouštěním kampaní na crowdsourcing geodat.\nPro nabídku se obraťte na pietervdvn@posteo.net.",
+            "intro": "MapComplete je webová stránka s interaktivními mapami {mapCount}. Každá mapa umožňuje přidávat nebo aktualizovat informace. Má mnoho funkcí:",
+            "li0": "Zobrazuje, kde se nacházejí body zájmu",
+            "li1": "Přidává nové body a aktualizuje informace o stávajících bodech",
+            "li2": "Snadno přidejte kontaktní informace a otevírací dobu",
+            "li3": "Lze umístit na jiné webové stránky jako iFrame",
+            "li4": "Zahrnuto do ekosystému OpenStreetMap, který má k dispozici mnoho nástrojů",
+            "li5": "Funkce pro import stávajících datových sad",
+            "li6": "Mnoho pokročilých funkcí, jako je detekce stromů a pokročilé vstupní metody",
+            "li7": "Kopírovatelný svobodný software (s licencí GPL) a bezplatné používání",
+            "title": "Co je MapComplete?"
+        },
+        "onwheels": "K dispozici jsou také vnitřní mapy pro vozíčkáře.",
+        "osm": "OpenStreetMap je online mapa, kterou může kdokoli upravovat a znovu používat k jakémukoli účelu, pokud uvede autora a data zůstanou otevřená.\n\nJedná se o největší geoprostorovou databázi na světě, kterou opakovaně využívají tisíce aplikací a webových stránek.",
+        "tagline": "Shromažďování geodat pomocí OpenStreetMap",
+        "title": "MapComplete.osm.be",
+        "toerisme_vlaanderen": "Pro společný projekt s Visit Flanders byl vytvořen projekt \"Pin your point\". Více než 160 přispěvatelů přidalo několik tisíc laviček a piknikových stolů a objevilo 100 nabíjecích stanic pro kola.",
+        "whatIsOsm": "Co je OpenStreetMap?"
     },
     "general": {
         "about": "Snadné úpravy a přidávání OpenStreetMap pro určité téma",
@@ -53,8 +92,12 @@
         "add": {
             "addNew": "Přidat {category}",
             "addNewMapLabel": "Klikněte zde pro přidání nové položky",
+            "backToSelect": "Vyberte jinou kategorii",
             "confirmButton": "Přidat kategorii {category}<br/><div class='alert'>Váš příspěvek je viditelný pro všechny</div>",
+            "confirmIntro": "<h3>Přidat {title}?</h3>Funkce, kterou zde vytvoříte, bude <b>viditelná pro všechny</b>. Prosíme, přidávejte věci na mapu pouze tehdy, pokud skutečně existují. Tato data využívá mnoho aplikací.",
             "disableFilters": "Vypnout všechny filtry",
+            "disableFiltersExplanation": "Některé funkce mohou být filtrem skryty",
+            "hasBeenImported": "Tato funkce již byla importována",
             "import": {
                 "hasBeenImported": "Tento objekt byl importován",
                 "importTags": "Prvek dostane {tags}",

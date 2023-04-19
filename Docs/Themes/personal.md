@@ -11,6 +11,7 @@ This theme contains the following layers:
 
 
 
+  - [advertising](../Layers/advertising.md)
   - [ambulancestation](../Layers/ambulancestation.md)
   - [artwork](../Layers/artwork.md)
   - [atm](../Layers/atm.md)

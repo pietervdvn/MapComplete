@@ -60,7 +60,8 @@
           "then": {
             "en": "These stairs have a handrail",
             "nl": "Deze trap heeft een leuning",
-            "de": "Die Treppe hat einen Handlauf"
+            "de": "Die Treppe hat einen Handlauf",
+            "ca": "Aquestes escales tenen barana"
           }
         },
         {
@@ -79,7 +80,8 @@
       "question": {
         "en": "Do these stairs have tactile writing on the handrail?",
         "de": "Hat die Treppe eine taktile Schrift am Handlauf?",
-        "nl": "Heeft deze trap voelbaar schrift op de leuning?"
+        "nl": "Heeft deze trap voelbaar schrift op de leuning?",
+        "ca": "Aquestes escales tenen escriptura braille a la barana?"
       },
       "mappings": [
         {
@@ -87,7 +89,8 @@
           "then": {
             "en": "There is tactile writing on the handrail",
             "de": "Am Handlauf gibt es taktile Schrift",
-            "nl": "Er is voelbaar schrift op de leuning"
+            "nl": "Er is voelbaar schrift op de leuning",
+            "ca": "Hi ha escriptura braille a la barana"
           }
         },
         {
@@ -95,7 +98,8 @@
           "then": {
             "en": "There is no tactile writing on the handrail",
             "de": "Am Handlauf gibt es keine taktile Schrift",
-            "nl": "Er is geen voelbaar schrift op de leuning"
+            "nl": "Er is geen voelbaar schrift op de leuning",
+            "ca": "No hi ha escriptura braille a la barana"
           }
         }
       ]
@@ -149,7 +153,8 @@
           "then": {
             "en": "This is not an escalator",
             "nl": "Dit is geen roltrap",
-            "de": "Das ist keine Rolltreppe"
+            "de": "Das ist keine Rolltreppe",
+            "ca": "Això no és una escala mecànica"
           },
           "hideInAnswer": true
         }
@@ -160,7 +165,8 @@
       "question": {
         "en": "Is there a ramp at these stairs?",
         "de": "Gibt es eine Rampe an dieser Treppe?",
-        "nl": "Is er een helling bij deze trap?"
+        "nl": "Is er een helling bij deze trap?",
+        "ca": "Hi ha una rampa en aquestes escales?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -170,7 +176,8 @@
           "then": {
             "en": "There is a ramp for bicycles here",
             "de": "Hier gibt es eine Rampe für Fahrräder",
-            "nl": "Er is hier een helling voor fietsen"
+            "nl": "Er is hier een helling voor fietsen",
+            "ca": "Aquí hi ha una rampa per a bicicletes"
           }
         },
         {
@@ -179,7 +186,8 @@
           "then": {
             "en": "There is a ramp for wheelchairs here",
             "de": "Hier gibt es eine Rampe für Rollstühle",
-            "nl": "Er is hier een helling voor rolstoelen"
+            "nl": "Er is hier een helling voor rolstoelen",
+            "ca": "Aquí hi ha una rampa per a cadires de rodes"
           }
         },
         {
@@ -197,7 +205,8 @@
           "then": {
             "en": "There is a ramp for strollers here",
             "de": "Hier gibt es eine Rampe für Kinderwagen",
-            "nl": "Er is hier een helling voor kinderwagens"
+            "nl": "Er is hier een helling voor kinderwagens",
+            "ca": "Aquí hi ha una rampa per als cotxets"
           }
         },
         {
@@ -206,7 +215,8 @@
           "then": {
             "en": "There is no ramp at these stairs",
             "de": "An dieser Treppe gibt es keine Rampe",
-            "nl": "Er is hier geen helling"
+            "nl": "Er is hier geen helling",
+            "ca": "No hi ha cap rampa en aquestes escales"
           }
         }
       ]

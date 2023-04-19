@@ -1,4 +1,9 @@
 {
+    "advertising": {
+        "description": "Heb je je ooit afgevraagd hoeveel reclameborden er zijn in onze straten? Met deze kaart kan je deze vinden en informatie toevoegen",
+        "shortDescription": "Waar zijn er reclameborden?",
+        "title": "Reclamekaart"
+    },
     "aed": {
         "description": "Op deze kaart kan je informatie over AEDs vinden en verbeteren",
         "title": "Open AED-kaart"

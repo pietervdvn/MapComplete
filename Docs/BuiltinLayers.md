@@ -148,7 +148,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 <img src='https://mapcomplete.osm.be/crosshair:var(--catch-detail-color)' height="100px"> 
 
-Meta layer showing the current location of the user. Add this to your theme and override the icon to change the appearance of the current location. The object will always have `id=gps` and will have _all_ the properties included in the [`Coordinates`-object](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates) returned by the browser.
+Meta layer showing the current location of the user. Add this to your theme and override the icon to change the appearance of the current location. The object will always have `id=gps` and will have _all_ the properties included in the [`Coordinates`-object](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationCoordinates) (except latitude and longitude) returned by the browser, such as `speed`, `altitude`, `heading`, ....
 
 
 
@@ -919,6 +919,7 @@ The following layers are included in MapComplete:
 
 
   - [address](./Layers/address.md)
+  - [advertising](./Layers/advertising.md)
   - [ambulancestation](./Layers/ambulancestation.md)
   - [artwork](./Layers/artwork.md)
   - [atm](./Layers/atm.md)

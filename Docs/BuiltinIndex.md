@@ -10,6 +10,7 @@
 1. [Index of builtin TagRendering](#index-of-builtin-tagrendering)
   - [Existing builtin tagrenderings](#existing-builtin-tagrenderings)
     + [images](#images)
+    + [luminous_or_lit](#luminous_or_lit)
     + [wikipedia](#wikipedia)
     + [bench.*bench-questions](#bench*bench-questions)
     + [opening_hours](#opening_hours)
@@ -78,6 +79,7 @@
 
 
 
+  - advertising
   - ambulancestation
   - artwork
   - atm
@@ -161,6 +163,17 @@
   - waste_basket
   - waste_disposal
   - windturbine
+
+
+
+
+### luminous_or_lit 
+
+
+
+
+
+  - advertising
 
 
 

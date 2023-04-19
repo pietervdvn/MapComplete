@@ -42,8 +42,13 @@
     "flyer": {
         "aerial": "這份地圖使用不同的背景，是 Agentschap Informatie Vlaanderen 釋出的空照圖",
         "callToAction": "在 mapcomplete.osm.be 測試",
-        "cyclofix": "單車設施修正上的單車甬筒、修理站、飲水機與單車店",
-        "description": "宣傳 MapComplete 的 A4 大小傳單"
+        "cyclofix": "單車設施修正主題地圖上的單車甬筒、修理站、飲水機與單車店",
+        "description": "宣傳 MapComplete 的 A4 大小傳單",
+        "editing": {
+            "ex": "下面顯示經過簡化過的自然保留區的樣貌。",
+            "intro": "使用者取得滿滿圖徽的地圖，只要選擇一個，就會出現圖徽的相關資訊。",
+            "title": "介面長得怎麼樣子？"
+        }
     },
     "general": {
         "about": "相當容易編輯，而且能為開放街圖新增特定主題",
