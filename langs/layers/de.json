@@ -7047,6 +7047,9 @@
                     "16": {
                         "then": "Kunststoff kann hier recycelt werden"
                     },
+                    "17": {
+                        "then": "Druckerpatronen können hier recycelt werden"
+                    },
                     "18": {
                         "then": "Metallschrott kann hier recycelt werden"
                     },

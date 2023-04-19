@@ -103,7 +103,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/advertising advertising]
 |region= Worldwide
-|lang= {{#language:ca|en}}, {{#language:es|en}}, {{#language:en|en}}, {{#language:de|en}}, {{#language:cs|en}}
+|lang= {{#language:ca|en}}, {{#language:es|en}}, {{#language:en|en}}, {{#language:de|en}}, {{#language:cs|en}}, {{#language:fr|en}}, {{#language:nl|en}}
 |descr= A MapComplete theme: Where I can find advertising features?
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png
@@ -202,7 +202,7 @@
 {{service_item
 |name= [https://mapcomplete.osm.be/clock clock]
 |region= Worldwide
-|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:ca|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:cs|en}}
+|lang= {{#language:en|en}}, {{#language:nl|en}}, {{#language:ca|en}}, {{#language:de|en}}, {{#language:es|en}}, {{#language:cs|en}}, {{#language:fr|en}}
 |descr= A MapComplete theme: Map showing all public clocks
 |material= {{yes|[https://mapcomplete.osm.be/ Yes]}}
 |image= MapComplete_Screenshot.png

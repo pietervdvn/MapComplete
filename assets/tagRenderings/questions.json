@@ -1267,7 +1267,8 @@
       "es": "¿con qué billetes se puede pagar aquí?",
       "pl": "Jakimi banknotami można tu zapłacić?",
       "cs": "Jakými bankovkami zde lze platit?",
-      "ca": "Amb quins bitllets pot pagar aquí?"
+      "ca": "Amb quins bitllets pot pagar aquí?",
+      "fr": "quels billets pouvez vous utiliser pour payer ici ?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -1281,7 +1282,8 @@
           "es": "Se aceptan billetes de 5 euros",
           "pl": "Banknoty 5 euro są akceptowane",
           "cs": "Jsou přijímány bankovky v hodnotě 5 euro",
-          "ca": "S'accepten billets de 5 euros"
+          "ca": "S'accepten billets de 5 euros",
+          "fr": "Les billets de 5 euros ne sont pas acceptés"
         }
       },
       {
@@ -1294,7 +1296,8 @@
           "es": "Se aceptan billetes de 10 euros",
           "pl": "Banknoty 10 euro są akceptowane",
           "cs": "Jsou přijímány bankovky v hodnotě 10 euro",
-          "ca": "S'accepten bitllets de 10 euros"
+          "ca": "S'accepten bitllets de 10 euros",
+          "fr": "Les billets de 10 euros sont acceptés"
         }
       },
       {
@@ -1307,7 +1310,8 @@
           "es": "Se aceptan billetes de 20 euros",
           "pl": "Banknoty 20 euro są akceptowane",
           "cs": "Jsou přijímány bankovky v hodnotě 20 euro",
-          "ca": "S'accepten bitllets de 20 euros"
+          "ca": "S'accepten bitllets de 20 euros",
+          "fr": "Les billets de 20 euros sont acceptés"
         }
       },
       {
@@ -1320,7 +1324,8 @@
           "es": "Se aceptan billetes de 50 euros",
           "pl": "Banknoty 50 euro są akceptowane",
           "cs": "Jsou přijímány bankovky v hodnotě 50 euro",
-          "ca": "S'accepten bitllets de 50 euros"
+          "ca": "S'accepten bitllets de 50 euros",
+          "fr": "Les billets de 50 euros sont acceptés"
         }
       },
       {
@@ -1333,7 +1338,8 @@
           "es": "Se aceptan billetes de 100 euros",
           "pl": "Banknoty 100 euro są akceptowane",
           "cs": "Jsou přijímány bankovky v hodnotě 100 euro",
-          "ca": "S'accepten bitllets de 100 euros"
+          "ca": "S'accepten bitllets de 100 euros",
+          "fr": "Les billets de 100 euros sont acceptés"
         }
       },
       {
@@ -1346,7 +1352,8 @@
           "es": "Se aceptan billetes de 200 euros",
           "pl": "Banknoty 200 euro są akceptowane",
           "cs": "Jsou přijímány bankovky v hodnotě 200 euro",
-          "ca": "S'accepten bitllets de 200 euros"
+          "ca": "S'accepten bitllets de 200 euros",
+          "fr": "Les billets de 200 euros sont acceptés"
         }
       },
       {
@@ -1359,7 +1366,8 @@
           "es": "Se aceptan billetes de 500 euros",
           "pl": "Banknoty 500 euro są akceptowane",
           "cs": "Jsou přijímány bankovky v hodnotě 500 euro",
-          "ca": "S'accepten bitllets de 500 euros"
+          "ca": "S'accepten bitllets de 500 euros",
+          "fr": "Les billets de 500 euros sont acceptés"
         }
       }
     ]
@@ -1997,7 +2005,9 @@
       "ca": "Aquest objecte està il·luminat o emet llum?",
       "cs": "Je tento objekt osvětlený nebo vyzařuje světlo?",
       "de": "Wird das Objekt beleuchtet oder leuchtet es selbst?",
-      "es": "¿Está este objeto iluminado o emite luz?"
+      "es": "¿Está este objeto iluminado o emite luz?",
+      "fr": "Cet objet est-il éclairé ou émet-il de la lumière ?",
+      "pl": "Czy ten obiekt jest oświetlony lub emituje światło?"
     },
     "mappings": [
       {
@@ -2012,7 +2022,9 @@
           "ca": "Aquest objecte emet llum i també està il·luminat externament",
           "cs": "Tento objekt vyzařuje světlo a je osvětlen vnějším zdrojem světla",
           "de": "Das Objekt leuchtet selbst und wird von außen beleuchtet",
-          "es": "Este objeto emite luz y es también iluminado por una fuente de luz externa"
+          "es": "Este objeto emite luz y es también iluminado por una fuente de luz externa",
+          "fr": "Cet objet émet de la lumière et est éclairé par l'extérieur",
+          "pl": "Ten obiekt zarówno emituje światło, jak i jest oświetlany przez zewnętrzne źródło światła"
         }
       },
       {
@@ -2022,7 +2034,9 @@
           "ca": "Aquest objecte emet llum",
           "cs": "Tento objekt vyzařuje světlo",
           "de": "Das Objekt leuchtet selbst",
-          "es": "Este objeto emite luz"
+          "es": "Este objeto emite luz",
+          "fr": "Cet objet émet de la lumière",
+          "pl": "Ten obiekt emituje światło"
         },
         "addExtraTags": [
           "lit=no"
@@ -2035,7 +2049,9 @@
           "ca": "Aquest objecte està il·luminat externament, p.e. amb un focus o altres llums",
           "cs": "Tento objekt je osvětlen zvenčí, např. pomocí reflektoru nebo jiných světel",
           "de": "Das Objekt wird von außen beleuchtet, z. B. durch Scheinwerfer oder andere Lichter",
-          "es": "Este objeto recibe iluminación, por ejemplo por un foco u otras luces"
+          "es": "Este objeto recibe iluminación, por ejemplo por un foco u otras luces",
+          "fr": "Cet objet est éclairé par l'extérieur, par ex. par un projecteur ou d'autres lumières",
+          "pl": "Ten obiekt jest oświetlony zewnętrznie, np. przez reflektor lub inne światła"
         },
         "addExtraTags": [
           "luminous=no"
@@ -2053,7 +2069,9 @@
           "ca": "Aquest objecte no emet llum i no està il·luminat externament",
           "cs": "Tento objekt nevyzařuje světlo a není osvětlen zvenčí",
           "de": "Das Objekt wird weder von außen beleuchtet, noch leuchtet es selbst",
-          "es": "Este objeto ni emite luz ni es iluminado"
+          "es": "Este objeto ni emite luz ni es iluminado",
+          "fr": "Cet objet n'émet pas de lumière et n'est pas éclairé par l'extérieur",
+          "pl": "Obiekt ten nie emituje światła i nie jest oświetlany z zewnątrz"
         }
       }
     ]

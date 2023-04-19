@@ -76,7 +76,8 @@
               "de": "ein Optiker",
               "es": "una óptica",
               "cs": "optik",
-              "ca": "una òptica"
+              "ca": "una òptica",
+              "fr": "un opticien"
             },
             "tags": [
               "shop=optician"

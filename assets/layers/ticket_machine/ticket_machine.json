@@ -34,7 +34,8 @@
       "question": {
         "en": "Who is the operator of this ticket machine?",
         "de": "Wer ist der Betreiber dieses Fahrkartenautomaten?",
-        "nl": "Wie is de beheerder van deze kaartautomaat?"
+        "nl": "Wie is de beheerder van deze kaartautomaat?",
+        "ca": "Qui és l'operador d'aquesta màquina de venda de bitllets?"
       },
       "render": {
         "en": "This ticket machine is operated by {operator}",

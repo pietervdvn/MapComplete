@@ -24,6 +24,104 @@
             "render": "Bekend adres"
         }
     },
+    "advertising": {
+        "name": "Reclame",
+        "presets": {
+            "3": {
+                "description": "Een klein uithangbord voor buurtadvertenties, meestal gericht op voetgangers",
+                "title": "een uithangbord"
+            },
+            "4": {
+                "description": "Een cylindervormige structuur die buiten staat waarop advertenties staan",
+                "title": "een aanplakzuil"
+            },
+            "5": {
+                "title": "een vlag"
+            },
+            "6": {
+                "title": "een scherm"
+            },
+            "7": {
+                "title": "een scherm op een muur"
+            },
+            "8": {
+                "description": "Een stuk groot, weerbestendig textiel met opgedrukte reclameboodschap die permanent aan de muur hangt",
+                "title": "een spandoek"
+            }
+        },
+        "tagRenderings": {
+            "luminous_or_lit_advertising": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "Dit is een neonlamp"
+                        }
+                    }
+                }
+            },
+            "message_type": {
+                "mappings": {
+                    "4": {
+                        "then": "Informatie over cultuurevenementen zoals theaters, optredens, …"
+                    },
+                    "5": {
+                        "then": "Boodschap van NGO-organisaties"
+                    },
+                    "7": {
+                        "then": "Religieuze boodschap"
+                    },
+                    "9": {
+                        "then": "Een kaart"
+                    }
+                },
+                "question": "Wat voor boodschap wordt hier getoond?"
+            },
+            "operator": {
+                "question": "Wie baat dit object uit?",
+                "render": "Uitgebaat door {operator}"
+            },
+            "ref": {
+                "question": "Wat is het referentienummer?",
+                "render": "Het referentienummer is {ref}"
+            },
+            "type": {
+                "mappings": {
+                    "2": {
+                        "then": "Dit is een aanplakzuil"
+                    },
+                    "3": {
+                        "then": "Dit is een vlag"
+                    }
+                },
+                "render": "Dit is een {advertising}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "3": {
+                    "then": "Aanplakzuil"
+                },
+                "4": {
+                    "then": "Vlag"
+                },
+                "5": {
+                    "then": "Scherm"
+                },
+                "6": {
+                    "then": "Sculptuur"
+                },
+                "8": {
+                    "then": "Spandoek"
+                },
+                "9": {
+                    "then": "Aanplakzuil"
+                },
+                "10": {
+                    "then": "Muurschildering"
+                }
+            }
+        }
+    },
     "ambulancestation": {
         "description": "Een ambulancestation is een plaats waar ambulances, medisch materiaal, persoonlijk beschermingsmateriaal en aanverwanten worden bewaard.",
         "name": "Kaart van ambulancestations",

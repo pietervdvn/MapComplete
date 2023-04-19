@@ -161,10 +161,10 @@
                     "then": "Este objeto emite luz"
                 },
                 "2": {
-                    "then": "Este objeto recibe iluminación, por ejemplo por un foco u otras luces"
+                    "then": "Este objeto está iluminado desde el exterior, por ejemplo, por un foco u otras luces"
                 },
                 "3": {
-                    "then": "Este objeto ni emite luz ni es iluminado"
+                    "then": "Este objeto no emite luz y no está iluminado por fuentes externas"
                 }
             },
             "question": "¿Está este objeto iluminado o emite luz?"

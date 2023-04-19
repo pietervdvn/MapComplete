@@ -51,7 +51,8 @@
         "de": "Um was für einen Abfalleimer handelt es sich?",
         "it": "Che tipo di cestino dei rifiuti è questo?",
         "id": "Keranjang sampah macam apa ini?",
-        "da": "Hvad er det for en affaldskurv?"
+        "da": "Hvad er det for en affaldskurv?",
+        "fr": "De quel type de poubelle s'agit-il ?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -75,7 +76,8 @@
             "de": "Der Abfalleimer ist für allgemeinen Restmüll",
             "it": "Un cestino rifiuti per uso generico",
             "id": "Keranjang sampah untuk sampah umum",
-            "da": "En affaldskurv til almindeligt affald"
+            "da": "En affaldskurv til almindeligt affald",
+            "fr": "Un poubelle pour tout type d'ordures"
           }
         },
         {
@@ -86,7 +88,8 @@
             "de": "Der Abfalleimer ist für Hundekot",
             "it": "Un cestino rifiuti per escrementi di cani",
             "id": "Keranjang sampah untuk kotoran anjing",
-            "da": "En affaldskurv til hundeekskrementer"
+            "da": "En affaldskurv til hundeekskrementer",
+            "fr": "Un poubelle pour les déjections canines"
           }
         },
         {
@@ -97,7 +100,8 @@
             "de": "Der Abfalleimer ist für Zigaretten",
             "it": "Un cestino rifiuti per sigarette",
             "id": "Keranjang sampah untuk rokok",
-            "da": "En affaldskurv til cigaretter"
+            "da": "En affaldskurv til cigaretter",
+            "fr": "Un cendrier"
           }
         },
         {
@@ -119,7 +123,8 @@
             "de": "Der Abfalleimer ist für Nadeln und andere scharfe Gegenstände",
             "it": "Un cestino rifiuti per aghi e altri oggetti appuntiti",
             "id": "Keranjang sampah untuk jarum dan benda tajam lainnya",
-            "da": "En affaldskurv til nåle og andre skarpe genstande"
+            "da": "En affaldskurv til nåle og andre skarpe genstande",
+            "fr": "Un poubelle pour les aiguilles et autres objets pointus"
           }
         },
         {
@@ -130,7 +135,8 @@
             "de": "Der Abfalleimer ist für Plastik",
             "it": "Un cestino rifiuti per la plastica",
             "id": "Keranjang sampah untuk plastik",
-            "da": "En affaldskurv til plast"
+            "da": "En affaldskurv til plast",
+            "fr": "Un poubelle pour le plastique"
           }
         }
       ]
@@ -143,7 +149,8 @@
         "de": "Hat der Abfalleimer einen Spender für (Hunde-)Kotbeutel?",
         "it": "Questo cestino ha un distributore di sacchetti per escrementi dei cani?",
         "id": "Apakah keranjang sampah ini memiliki dispenser untuk kantong kotoran anjing?",
-        "da": "Har denne affaldskurv en dispenser til poser med ekskrementer til hunde?"
+        "da": "Har denne affaldskurv en dispenser til poser med ekskrementer til hunde?",
+        "fr": "Est-ce que cette poubelle a un distributeur de sacs pour ramasser les déjections canines ?"
       },
       "condition": {
         "or": [
@@ -166,7 +173,8 @@
             "de": "Der Abfalleimer hat einen Spender für (Hunde-)Kotbeutel",
             "it": "Questo cestino ha un distributore di sacchetti per escrementi dei cani",
             "id": "Keranjang sampah ini memiliki dispenser untuk kantong kotoran (anjing)",
-            "da": "Denne affaldskurv har en dispenser til poser til (hunde)ekskrementer"
+            "da": "Denne affaldskurv har en dispenser til poser til (hunde)ekskrementer",
+            "fr": "Cette poubelle a un distributeur de sacs pour ramasser les déjections canines"
           }
         },
         {
@@ -193,7 +201,8 @@
             "de": "Dieser Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel",
             "it": "Questo cestino <b>non</b> ha un distributore di sacchetti per escrementi dei cani",
             "id": "Keranjang sampah ini <b> tidak</b> memiliki dispenser untuk kantong kotoran (anjing)",
-            "da": "Denne affaldskurv <b>har ikke</b> en dispenser til poser til (hunde)ekskrementer"
+            "da": "Denne affaldskurv <b>har ikke</b> en dispenser til poser til (hunde)ekskrementer",
+            "fr": "Cette poubelle <b>n'a pas</b> de distributeur de sac pour ramasser les déjections canines"
           },
           "hideInAnswer": true
         }

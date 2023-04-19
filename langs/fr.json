@@ -5,6 +5,11 @@
         "retrying": "Le chargement a échoué. Nouvel essai dans {count} secondes…",
         "zoomIn": "Rapprochez-vous sur la carte pour voir ou éditer les données"
     },
+    "communityIndex": {
+        "available": "Cette communauté parle {native}",
+        "intro": "Prenez contact avec d'autres personnes pour les connaître, apprendre d'elles, …",
+        "title": "Index communautaire"
+    },
     "delete": {
         "cancel": "Annuler",
         "cannotBeDeleted": "Cet objet ne peut être supprimé",
@@ -438,7 +443,8 @@
         "overviewIntro": "L'IA de <a href='https://plantnet.org/' target='_blank'>PlantNet.org</a> pense que les images représentes les espèces ci-dessous.",
         "overviewTitle": "Espèces détectées automatiquement",
         "poweredByPlantnet": "Propulsé par <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
-        "seeInfo": "Voir plus d'informations sur les espèces"
+        "seeInfo": "Voir plus d'informations sur les espèces",
+        "takeImages": "Prenez des photos de l'arbre pour détecter automatiquement de quel type il s'agit"
     },
     "privacy": {
         "editing": "Lorsque vous faites une modification sur la carte, cette modification est enregistrée dans OpenStreetMap et est displnible publiquement pour tout le monde. Un groupe de modification fait avec MapComplete inclus les données suivantes : <ul><li>Les modifications que vous avez faites</li><li>Votre nom d'utilisateur</li><li>Quand la modification a été faite</li><li>Le thème utilisé lorsque vous faites la modification</li><li>La langue de l'interface utilisateur</li><li>Une indication sur votre proximité avec l'objet modifié. D'autres utilisateurs peuvent utiliser cette information pour déterminer si la modification a été faite par un relevé de terrain ou par une recherche à distance</li></ul> Merci de vous référer à <a href='https://wiki.osmfoundation.org/wiki/Privacy_Policy' target='_blank'>la politique de confidentialité d'OpenStreetMap.org</a> pour plus de détails. Nous vous rappelons que vous pouvez utiliser un pseudonyme lors de votre inscription.",
