@@ -74,6 +74,36 @@
                 "title": "uma obra de arte"
             }
         },
+        "tagRenderings": {
+            "artwork-artist_name": {
+                "question": "Que artista criou isto?"
+            },
+            "artwork-artwork_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Arquitetura"
+                    },
+                    "1": {
+                        "then": "Mural"
+                    },
+                    "3": {
+                        "then": "Escultura"
+                    },
+                    "4": {
+                        "then": "Estátua"
+                    },
+                    "5": {
+                        "then": "Busto"
+                    },
+                    "6": {
+                        "then": "Pedra"
+                    },
+                    "7": {
+                        "then": "Instalação"
+                    }
+                }
+            }
+        },
         "title": {
             "mappings": {
                 "0": {
