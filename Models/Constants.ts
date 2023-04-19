@@ -1,5 +1,7 @@
 import { Utils } from "../Utils"
 
+export type PriviligedLayerType = typeof Constants.priviliged_layers[number]
+
 export default class Constants {
     public static vNumber = "0.30.0"
 

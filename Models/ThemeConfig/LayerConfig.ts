@@ -424,7 +424,7 @@ export default class LayerConfig extends WithContextLoader {
         if (mapRendering === undefined) {
             return undefined
         }
-        return mapRendering.GetBaseIcon(this.GetBaseTags())
+        return mapRendering.GetBaseIcon(this.GetBaseTags(), { noFullWidth: true })
     }
 
     public GetBaseTags(): Record<string, string> {

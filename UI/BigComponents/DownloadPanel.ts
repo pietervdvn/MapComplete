@@ -17,6 +17,7 @@ import { SpecialVisualizationState } from "../SpecialVisualization"
 import { Feature, FeatureCollection } from "geojson"
 import { GeoIndexedStoreForLayer } from "../../Logic/FeatureSource/Actors/GeoIndexedStore"
 import LayerState from "../../Logic/State/LayerState"
+import { PriviligedLayerType } from "../../Models/Constants"
 
 export class DownloadPanel extends Toggle {
     constructor(state: SpecialVisualizationState) {
@@ -86,11 +87,37 @@ export class DownloadPanel extends Toggle {
             )
         })
 
+        const buttonPng = new SubtleButton(
+            Svg.floppy_ui(),
+            new Combine([t.downloadAsPng.SetClass("font-bold"), t.downloadAsPngHelper])
+        ).OnClickWithLoading(t.exporting, async () => {
+            const gpsLayer = state.layerState.filteredLayers.get(
+                <PriviligedLayerType>"gps_location"
+            )
+            const gpsIsDisplayed = gpsLayer.isDisplayed.data
+            try {
+                gpsLayer.isDisplayed.setData(false)
+                const png = await state.mapProperties.exportAsPng()
+                Utils.offerContentsAsDownloadableFile(
+                    png,
+                    `MapComplete_${name}_export_${new Date().toISOString().substr(0, 19)}.png`,
+                    {
+                        mimetype: "image/png",
+                    }
+                )
+            } catch (e) {
+                console.error(e)
+            } finally {
+                gpsLayer.isDisplayed.setData(gpsIsDisplayed)
+            }
+        })
+
         const downloadButtons = new Combine([
             new Title(t.title),
             buttonGeoJson,
             buttonCSV,
             buttonSvg,
+            buttonPng,
             includeMetaToggle,
             t.licenseInfo.SetClass("link-underline"),
         ]).SetClass("w-full flex flex-col")

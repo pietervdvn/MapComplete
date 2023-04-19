@@ -86,12 +86,6 @@ export default class AllDownloads extends ScrollableFullScreen {
             state.featureSwitchExportAsPdf
         )
 
-        const exportPanel = new Toggle(
-            new DownloadPanel(state),
-            undefined,
-            state.featureSwitchEnableExport
-        )
 
-        return new Combine([pdf, exportPanel]).SetClass("flex flex-col")
-    }
+        return pdf
 }

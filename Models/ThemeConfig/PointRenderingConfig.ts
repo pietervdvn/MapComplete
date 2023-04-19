@@ -136,7 +136,10 @@ export default class PointRenderingConfig extends WithContextLoader {
         multiSpec: string,
         rotation: string,
         isBadge: boolean,
-        defaultElement: BaseUIElement = undefined
+        defaultElement: BaseUIElement = undefined,
+        options?: {
+            noFullWidth?: boolean
+        }
     ) {
         if (multiSpec === undefined) {
             return defaultElement
@@ -150,11 +153,21 @@ export default class PointRenderingConfig extends WithContextLoader {
         if (elements.length === 0) {
             return defaultElement
         } else {
-            return new Combine(elements).SetClass("relative block w-full h-full")
+            const combine = new Combine(elements).SetClass("relative block")
+            if (options?.noFullWidth) {
+                return combine
+            }
+            combine.SetClass("w-full h-full")
+            return combine
         }
     }
 
-    public GetBaseIcon(tags?: Record<string, string>): BaseUIElement {
+    public GetBaseIcon(
+        tags?: Record<string, string>,
+        options?: {
+            noFullWidth?: boolean
+        }
+    ): BaseUIElement {
         tags = tags ?? { id: "node/-1" }
         let defaultPin: BaseUIElement = undefined
         if (this.label === undefined) {
@@ -176,7 +189,7 @@ export default class PointRenderingConfig extends WithContextLoader {
             // This is probably already prepared HTML
             return new FixedUiElement(Utils.SubstituteKeys(htmlDefs, tags))
         }
-        return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation, false, defaultPin)
+        return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation, false, defaultPin, options)
     }
 
     public GetSimpleIcon(tags: Store<Record<string, string>>): BaseUIElement {

@@ -1045,6 +1045,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 | "application/vnd.geo+json"
                 | "{gpx=application/gpx+xml}"
                 | "application/json"
+                | "image/png"
         }
     ) {
         const element = document.createElement("a")

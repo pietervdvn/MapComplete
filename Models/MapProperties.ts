@@ -15,3 +15,7 @@ export interface MapProperties {
 
     readonly allowZooming: UIEventSource<true | boolean>
 }
+
+export interface ExportableMap {
+    exportAsPng(): Promise<Blob>
+}

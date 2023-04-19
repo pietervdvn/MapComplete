@@ -2,6 +2,7 @@ import LayerConfig from "./ThemeConfig/LayerConfig"
 import { UIEventSource } from "../Logic/UIEventSource"
 import UserRelatedState from "../Logic/State/UserRelatedState"
 import { Utils } from "../Utils"
+import { LocalStorageSource } from "../Logic/Web/LocalStorageSource"
 
 /**
  * Indicates if a menu is open, and if so, which tab is selected;
@@ -11,12 +12,12 @@ import { Utils } from "../Utils"
  */
 export class MenuState {
     private static readonly _themeviewTabs = ["intro", "filters", "download", "copyright"] as const
-    public readonly themeIsOpened = new UIEventSource(true)
+    public readonly themeIsOpened: UIEventSource<boolean>
     public readonly themeViewTabIndex: UIEventSource<number>
     public readonly themeViewTab: UIEventSource<typeof MenuState._themeviewTabs[number]>
 
     private static readonly _menuviewTabs = ["about", "settings", "community", "privacy"] as const
-    public readonly menuIsOpened = new UIEventSource(false)
+    public readonly menuIsOpened: UIEventSource<boolean>
     public readonly menuViewTabIndex: UIEventSource<number>
     public readonly menuViewTab: UIEventSource<typeof MenuState._menuviewTabs[number]>
 
@@ -24,15 +25,20 @@ export class MenuState {
         undefined
     )
     public highlightedUserSetting: UIEventSource<string> = new UIEventSource<string>(undefined)
-    constructor() {
-        this.themeViewTabIndex = new UIEventSource(0)
+    constructor(themeid: string = "") {
+        if (themeid) {
+            themeid += "-"
+        }
+        this.themeIsOpened = LocalStorageSource.GetParsed(themeid + "thememenuisopened", true)
+        this.themeViewTabIndex = LocalStorageSource.GetParsed(themeid + "themeviewtabindex", 0)
         this.themeViewTab = this.themeViewTabIndex.sync(
             (i) => MenuState._themeviewTabs[i],
             [],
             (str) => MenuState._themeviewTabs.indexOf(<any>str)
         )
 
-        this.menuViewTabIndex = new UIEventSource(1)
+        this.menuIsOpened = LocalStorageSource.GetParsed(themeid + "menuisopened", false)
+        this.menuViewTabIndex = LocalStorageSource.GetParsed(themeid + "menuviewtabindex", 0)
         this.menuViewTab = this.menuViewTabIndex.sync(
             (i) => MenuState._menuviewTabs[i],
             [],

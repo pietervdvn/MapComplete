@@ -56,20 +56,10 @@ export default class LeftControls extends Combine {
         )
 
         new AllDownloads(guiState.downloadControlIsOpened, state)
-        const toggledDownload = new MapControlButton(Svg.download_svg()).onClick(() =>
-            guiState.downloadControlIsOpened.setData(true)
-        )
 
-        const downloadButton = new Toggle(
-            toggledDownload,
-            undefined,
-            state.featureSwitchEnableExport.map(
-                (downloadEnabled) => downloadEnabled || state.featureSwitchExportAsPdf.data,
-                [state.featureSwitchExportAsPdf]
-            )
-        )
 
-        super([currentViewAction, downloadButton])
+
+        super([currentViewAction])
 
         this.SetClass("flex flex-col")
     }

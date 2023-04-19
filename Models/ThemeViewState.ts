@@ -8,7 +8,7 @@ import {
     WritableFeatureSource,
 } from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
-import { MapProperties } from "./MapProperties"
+import { ExportableMap, MapProperties } from "./MapProperties"
 import LayerState from "../Logic/State/LayerState"
 import { Feature } from "geojson"
 import FullNodeDatabaseSource from "../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
@@ -63,7 +63,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
     readonly osmConnection: OsmConnection
     readonly selectedElement: UIEventSource<Feature>
-    readonly mapProperties: MapProperties
+    readonly mapProperties: MapProperties & ExportableMap
 
     readonly dataIsLoading: Store<boolean> // TODO
     readonly guistate: MenuState
@@ -82,7 +82,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly lastClickObject: WritableFeatureSource
     constructor(layout: LayoutConfig) {
         this.layout = layout
-        this.guistate = new MenuState()
+        this.guistate = new MenuState(layout.id)
         this.map = new UIEventSource<MlMap>(undefined)
         const initial = new InitialMapPositioning(layout)
         this.mapProperties = new MapLibreAdaptor(this.map, initial)

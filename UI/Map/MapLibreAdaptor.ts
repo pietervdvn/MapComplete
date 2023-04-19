@@ -4,14 +4,15 @@ import { Map as MlMap } from "maplibre-gl"
 import { RasterLayerPolygon, RasterLayerProperties } from "../../Models/RasterLayers"
 import { Utils } from "../../Utils"
 import { BBox } from "../../Logic/BBox"
-import { MapProperties } from "../../Models/MapProperties"
+import { ExportableMap, MapProperties } from "../../Models/MapProperties"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "./MaplibreMap.svelte"
+import html2canvas from "html2canvas"
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
  */
-export class MapLibreAdaptor implements MapProperties {
+export class MapLibreAdaptor implements MapProperties, ExportableMap {
     private static maplibre_control_handlers = [
         // "scrollZoom",
         // "boxZoom",
@@ -125,23 +126,6 @@ export class MapLibreAdaptor implements MapProperties {
         this.bounds.addCallbackAndRunD((bounds) => self.setBounds(bounds))
     }
 
-    private updateStores() {
-        const map = this._maplibreMap.data
-        if (map === undefined) {
-            return
-        }
-        const dt = this.location.data
-        dt.lon = map.getCenter().lng
-        dt.lat = map.getCenter().lat
-        this.location.ping()
-        this.zoom.setData(Math.round(map.getZoom() * 10) / 10)
-        const bounds = map.getBounds()
-        const bbox = new BBox([
-            [bounds.getEast(), bounds.getNorth()],
-            [bounds.getWest(), bounds.getSouth()],
-        ])
-        this.bounds.setData(bbox)
-    }
     /**
      * Convenience constructor
      */
@@ -187,6 +171,113 @@ export class MapLibreAdaptor implements MapProperties {
         }
 
         return url
+    }
+
+    async exportAsPng(): Promise<Blob> {
+        const map = this._maplibreMap.data
+        if (map === undefined) {
+            return undefined
+        }
+
+        function setDPI(canvas, dpi) {
+            // Set up CSS size.
+            canvas.style.width = canvas.style.width || canvas.width + "px"
+            canvas.style.height = canvas.style.height || canvas.height + "px"
+
+            // Resize canvas and scale future draws.
+            const scaleFactor = dpi / 96
+            canvas.width = Math.ceil(canvas.width * scaleFactor)
+            canvas.height = Math.ceil(canvas.height * scaleFactor)
+            const ctx = canvas.getContext("2d")
+            ctx?.scale(scaleFactor, scaleFactor)
+        }
+
+        // Total hack - see https://stackoverflow.com/questions/42483449/mapbox-gl-js-export-map-to-png-or-pdf
+
+        const drawOn = document.createElement("canvas")
+        drawOn.width = document.documentElement.clientWidth
+        drawOn.height = document.documentElement.clientHeight
+
+        setDPI(drawOn, 4 * 96)
+
+        const destinationCtx = drawOn.getContext("2d")
+        {
+            // First, we draw the maplibre-map onto the canvas. This does not export markers
+            // Inspiration by https://github.com/mapbox/mapbox-gl-js/issues/2766
+
+            const promise = new Promise<void>((resolve) => {
+                map.once("render", () => {
+                    destinationCtx.drawImage(map.getCanvas(), 0, 0)
+                    resolve()
+                })
+            })
+
+            while (!map.isStyleLoaded()) {
+                console.log("Waiting to fully load the style...")
+                await Utils.waitFor(100)
+            }
+            map.triggerRepaint()
+            await promise
+            // Reset the canvas width and height
+            map.resize()
+        }
+        {
+            // now, we draw the markers on top of the map
+
+            /* We use html2canvas for this, but disable the map canvas object itself:
+             * it cannot deal with this canvas object.
+             *
+             * We also have to patch up a few more objects
+             * */
+            const container = map.getCanvasContainer()
+            const origHeight = container.style.height
+            const origStyle = map.getCanvas().style.display
+            try {
+                map.getCanvas().style.display = "none"
+                if (!container.style.height) {
+                    container.style.height = document.documentElement.clientHeight + "px"
+                }
+
+                const markerCanvas: HTMLCanvasElement = await html2canvas(
+                    map.getCanvasContainer(),
+                    {
+                        backgroundColor: "#00000000",
+                        canvas: drawOn,
+                    }
+                )
+                const markers = await new Promise<Blob>((resolve) =>
+                    markerCanvas.toBlob((data) => resolve(data))
+                )
+                console.log("Markers:", markers, markerCanvas)
+                // destinationCtx.drawImage(markerCanvas, 0, 0)
+            } catch (e) {
+                console.error(e)
+            } finally {
+                map.getCanvas().style.display = origStyle
+                container.style.height = origHeight
+            }
+        }
+
+        // At last, we return the actual blob
+        return new Promise<Blob>((resolve) => drawOn.toBlob((data) => resolve(data)))
+    }
+
+    private updateStores() {
+        const map = this._maplibreMap.data
+        if (map === undefined) {
+            return
+        }
+        const dt = this.location.data
+        dt.lon = map.getCenter().lng
+        dt.lat = map.getCenter().lat
+        this.location.ping()
+        this.zoom.setData(Math.round(map.getZoom() * 10) / 10)
+        const bounds = map.getBounds()
+        const bbox = new BBox([
+            [bounds.getEast(), bounds.getNorth()],
+            [bounds.getWest(), bounds.getSouth()],
+        ])
+        this.bounds.setData(bbox)
     }
 
     private SetZoom(z: number) {

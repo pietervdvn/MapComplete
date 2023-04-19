@@ -4,7 +4,7 @@ import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
 import { IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { Changes } from "../Logic/Osm/Changes"
-import { MapProperties } from "../Models/MapProperties"
+import { ExportableMap, MapProperties } from "../Models/MapProperties"
 import LayerState from "../Logic/State/LayerState"
 import { Feature, Geometry } from "geojson"
 import FullNodeDatabaseSource from "../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
@@ -42,7 +42,7 @@ export interface SpecialVisualizationState {
     /**
      * State of the main map
      */
-    readonly mapProperties: MapProperties
+    readonly mapProperties: MapProperties & ExportableMap
 
     readonly selectedElement: UIEventSource<Feature>
     /**
