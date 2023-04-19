@@ -77,8 +77,9 @@ import Lazy from "./Base/Lazy"
 import { CheckBox } from "./Input/Checkboxes"
 import Slider from "./Input/Slider"
 import DeleteWizard from "./Popup/DeleteWizard"
-import { OsmId, OsmTags } from "../Models/OsmFeature"
+import { OsmId, OsmTags, WayId } from "../Models/OsmFeature"
 import MoveWizard from "./Popup/MoveWizard"
+import SplitRoadWizard from "./Popup/SplitRoadWizard"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -532,16 +533,17 @@ export default class SpecialVisualizations {
                 args: [],
                 constr(
                     state: SpecialVisualizationState,
-                    tagSource: UIEventSource<Record<string, string>>,
-                    argument: string[],
-                    feature: Feature,
-                    layer: LayerConfig
+                    tagSource: UIEventSource<Record<string, string>>
                 ): BaseUIElement {
                     return new VariableUiElement(
-                        // TODO
                         tagSource
                             .map((tags) => tags.id)
-                            .map((id) => new FixedUiElement("TODO: enable splitting")) // new SplitRoadWizard(id, state))
+                            .map((id) => {
+                                if (id.startsWith("way/")) {
+                                    return new SplitRoadWizard(<WayId>id, state)
+                                }
+                                return undefined
+                            })
                     )
                 },
             },

@@ -18,10 +18,6 @@ import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesSto
  * Needs an authenticator via OsmConnection
  */
 export class Changes {
-    /**
-     * All the newly created features as featureSource + all the modified features
-     */
-    public readonly features = new UIEventSource<{ feature: any; freshness: Date }[]>([])
     public readonly pendingChanges: UIEventSource<ChangeDescription[]> =
         LocalStorageSource.GetParsed<ChangeDescription[]>("pending-changes", [])
     public readonly allChanges = new UIEventSource<ChangeDescription[]>(undefined)

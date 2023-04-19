@@ -43,6 +43,7 @@ export default class Constants {
     public static readonly no_include = [
         "conflation",
         "split_point",
+        "split_road",
         "current_view",
         "matchpoint",
         "import_candidate",

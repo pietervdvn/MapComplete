@@ -26,7 +26,6 @@ import LayoutSource from "../Logic/FeatureSource/Sources/LayoutSource"
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource"
 import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropertiesStore"
 import PerLayerFeatureSourceSplitter from "../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
-import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
 import FilteringFeatureSource from "../Logic/FeatureSource/Sources/FilteringFeatureSource"
 import ShowDataLayer from "../UI/Map/ShowDataLayer"
 import TitleHandler from "../Logic/Actors/TitleHandler"
@@ -39,9 +38,10 @@ import Hotkeys from "../UI/Base/Hotkeys"
 import Translations from "../UI/i18n/Translations"
 import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexedStore"
 import { LastClickFeatureSource } from "../Logic/FeatureSource/Sources/LastClickFeatureSource"
-import SimpleFeatureSource from "../Logic/FeatureSource/Sources/SimpleFeatureSource"
 import { MenuState } from "./MenuState"
 import MetaTagging from "../Logic/MetaTagging"
+import ChangeGeometryApplicator from "../Logic/FeatureSource/Sources/ChangeGeometryApplicator"
+import { NewGeometryFromChangesFeatureSource } from "../Logic/FeatureSource/Sources/NewGeometryFromChangesFeatureSource"
 
 /**
  *
@@ -65,7 +65,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly selectedElement: UIEventSource<Feature>
     readonly mapProperties: MapProperties & ExportableMap
 
-    readonly dataIsLoading: Store<boolean> // TODO
+    readonly dataIsLoading: Store<boolean>
     readonly guistate: MenuState
     readonly fullNodeDatabase?: FullNodeDatabaseSource // TODO
 
@@ -80,6 +80,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly geolocation: GeoLocationHandler
 
     readonly lastClickObject: WritableFeatureSource
+
     constructor(layout: LayoutConfig) {
         this.layout = layout
         this.guistate = new MenuState(layout.id)
@@ -121,49 +122,69 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         const self = this
         this.layerState = new LayerState(this.osmConnection, layout.layers, layout.id)
-        this.newFeatures = new SimpleFeatureSource(undefined)
-        const layoutSource = new LayoutSource(
-            layout.layers,
-            this.featureSwitches,
-            this.newFeatures,
-            this.mapProperties,
-            this.osmConnection.Backend(),
-            (id) => self.layerState.filteredLayers.get(id).isDisplayed
-        )
-        this.indexedFeatures = layoutSource
-        this.dataIsLoading = layoutSource.isLoading
-        const lastClick = (this.lastClickObject = new LastClickFeatureSource(
-            this.mapProperties.lastClickLocation,
-            this.layout
-        ))
-        const indexedElements = this.indexedFeatures
-        this.featureProperties = new FeaturePropertiesStore(indexedElements)
-        const perLayer = new PerLayerFeatureSourceSplitter(
-            Array.from(this.layerState.filteredLayers.values()).filter(
-                (l) => l.layerDef?.source !== null
-            ),
-            indexedElements,
-            {
-                constructStore: (features, layer) => new GeoIndexedStoreForLayer(features, layer),
-                handleLeftovers: (features) => {
-                    console.warn(
-                        "Got ",
-                        features.length,
-                        "leftover features, such as",
-                        features[0].properties
-                    )
-                },
-            }
-        )
-        this.perLayer = perLayer.perLayer
 
+        {
+            /* Setup the layout source
+             * A bit tricky, as this is heavily intertwined with the 'changes'-element, which generate a stream of new and changed features too
+             */
+
+            const layoutSource = new LayoutSource(
+                layout.layers,
+                this.featureSwitches,
+                this.mapProperties,
+                this.osmConnection.Backend(),
+                (id) => self.layerState.filteredLayers.get(id).isDisplayed
+            )
+            this.indexedFeatures = layoutSource
+            this.dataIsLoading = layoutSource.isLoading
+
+            const indexedElements = this.indexedFeatures
+            this.featureProperties = new FeaturePropertiesStore(indexedElements)
+            this.changes = new Changes(
+                {
+                    dryRun: this.featureSwitches.featureSwitchIsTesting,
+                    allElements: indexedElements,
+                    featurePropertiesStore: this.featureProperties,
+                    osmConnection: this.osmConnection,
+                    historicalUserLocations: this.geolocation.historicalUserLocations,
+                },
+                layout?.isLeftRightSensitive() ?? false
+            )
+            this.newFeatures = new NewGeometryFromChangesFeatureSource(
+                this.changes,
+                indexedElements,
+                this.osmConnection.Backend()
+            )
+            layoutSource.addSource(this.newFeatures)
+
+            const perLayer = new PerLayerFeatureSourceSplitter(
+                Array.from(this.layerState.filteredLayers.values()).filter(
+                    (l) => l.layerDef?.source !== null
+                ),
+                new ChangeGeometryApplicator(this.indexedFeatures, this.changes),
+                {
+                    constructStore: (features, layer) =>
+                        new GeoIndexedStoreForLayer(features, layer),
+                    handleLeftovers: (features) => {
+                        console.warn(
+                            "Got ",
+                            features.length,
+                            "leftover features, such as",
+                            features[0].properties
+                        )
+                    },
+                }
+            )
+            this.perLayer = perLayer.perLayer
+        }
         this.perLayer.forEach((fs) => {
-            new SaveFeatureSourceToLocalStorage(
+            /* TODO enable   new SaveFeatureSourceToLocalStorage(
+                this.osmConnection.Backend(),
                 fs.layer.layerDef.id,
                 15,
                 fs,
                 this.featureProperties
-            )
+            )//*/
 
             const filtered = new FilteringFeatureSource(
                 fs.layer,
@@ -187,16 +208,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
             })
         })
 
-        this.changes = new Changes(
-            {
-                dryRun: this.featureSwitches.featureSwitchIsTesting,
-                allElements: indexedElements,
-                featurePropertiesStore: this.featureProperties,
-                osmConnection: this.osmConnection,
-                historicalUserLocations: this.geolocation.historicalUserLocations,
-            },
-            layout?.isLeftRightSensitive() ?? false
-        )
+        const lastClick = (this.lastClickObject = new LastClickFeatureSource(
+            this.mapProperties.lastClickLocation,
+            this.layout
+        ))
 
         this.initActors()
         this.drawSpecialLayers(lastClick)
@@ -211,9 +226,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
     private miscSetup() {
         this.userRelatedState.markLayoutAsVisited(this.layout)
 
-        this.selectedElement.addCallbackAndRunD(() => {
-            // As soon as we have a selected element, we clear it
+        this.selectedElement.addCallbackAndRunD((feature) => {
+            // As soon as we have a selected element, we clear the selected element
             // This is to work around maplibre, which'll _first_ register the click on the map and only _then_ on the feature
+            // The only exception is if the last element is the 'add_new'-button, as we don't want it to disappear
+            if (feature.properties.id === "last_click") {
+                return
+            }
             this.lastClickObject.features.setData([])
         })
     }

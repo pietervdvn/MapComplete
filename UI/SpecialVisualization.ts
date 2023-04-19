@@ -1,18 +1,18 @@
-import { Store, UIEventSource } from "../Logic/UIEventSource"
-import BaseUIElement from "./BaseUIElement"
-import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
-import { IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource"
-import { OsmConnection } from "../Logic/Osm/OsmConnection"
-import { Changes } from "../Logic/Osm/Changes"
-import { ExportableMap, MapProperties } from "../Models/MapProperties"
-import LayerState from "../Logic/State/LayerState"
-import { Feature, Geometry } from "geojson"
-import FullNodeDatabaseSource from "../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
-import { MangroveIdentity } from "../Logic/Web/MangroveReviews"
-import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexedStore"
-import LayerConfig from "../Models/ThemeConfig/LayerConfig"
-import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
-import { MenuState } from "../Models/MenuState"
+import { Store, UIEventSource } from "../Logic/UIEventSource";
+import BaseUIElement from "./BaseUIElement";
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig";
+import { IndexedFeatureSource, WritableFeatureSource } from "../Logic/FeatureSource/FeatureSource";
+import { OsmConnection } from "../Logic/Osm/OsmConnection";
+import { Changes } from "../Logic/Osm/Changes";
+import { ExportableMap, MapProperties } from "../Models/MapProperties";
+import LayerState from "../Logic/State/LayerState";
+import { Feature, Geometry } from "geojson";
+import FullNodeDatabaseSource from "../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource";
+import { MangroveIdentity } from "../Logic/Web/MangroveReviews";
+import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexedStore";
+import LayerConfig from "../Models/ThemeConfig/LayerConfig";
+import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
+import { MenuState } from "../Models/MenuState";
 
 /**
  * The state needed to render a special Visualisation.

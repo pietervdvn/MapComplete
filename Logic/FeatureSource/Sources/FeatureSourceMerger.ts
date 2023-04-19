@@ -1,5 +1,5 @@
 import { Store, UIEventSource } from "../../UIEventSource"
-import { FeatureSource ,  IndexedFeatureSource } from "../FeatureSource"
+import { FeatureSource, IndexedFeatureSource } from "../FeatureSource"
 import { Feature } from "geojson"
 import { Utils } from "../../../Utils"
 
@@ -19,6 +19,7 @@ export default class FeatureSourceMerger implements IndexedFeatureSource {
         this._featuresById = new UIEventSource<Map<string, Feature>>(undefined)
         this.featuresById = this._featuresById
         const self = this
+        sources = Utils.NoNull(sources)
         for (let source of sources) {
             source.features.addCallback(() => {
                 self.addData(sources.map((s) => s.features.data))
@@ -28,7 +29,7 @@ export default class FeatureSourceMerger implements IndexedFeatureSource {
         this._sources = sources
     }
 
-    protected addSource(source: FeatureSource) {
+    public addSource(source: FeatureSource) {
         this._sources.push(source)
         source.features.addCallbackAndRun(() => {
             this.addData(this._sources.map((s) => s.features.data))

@@ -17,14 +17,15 @@ export default class TileLocalStorage<T> {
         this._layername = layername
     }
 
-    public static construct<T>(layername: string): TileLocalStorage<T> {
-        const cached = TileLocalStorage.perLayer[layername]
+    public static construct<T>(backend: string, layername: string): TileLocalStorage<T> {
+        const key = backend + "_" + layername
+        const cached = TileLocalStorage.perLayer[key]
         if (cached) {
             return cached
         }
 
-        const tls = new TileLocalStorage<T>(layername)
-        TileLocalStorage.perLayer[layername] = tls
+        const tls = new TileLocalStorage<T>(key)
+        TileLocalStorage.perLayer[key] = tls
         return tls
     }
 
@@ -46,7 +47,7 @@ export default class TileLocalStorage<T> {
         return src
     }
 
-    private async SetIdb(tileIndex: number, data): Promise<void> {
+    private async SetIdb(tileIndex: number, data: any): Promise<void> {
         try {
             await IdbLocalStorage.SetDirectly(this._layername + "_" + tileIndex, data)
         } catch (e) {

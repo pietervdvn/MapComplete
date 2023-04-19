@@ -22,13 +22,18 @@ export interface SnappingOptions {
      * The resulting snap coordinates will be written into this UIEventSource
      */
     snapLocation?: UIEventSource<{ lon: number; lat: number }>
+
+    /**
+     * If the projected point is within `reusePointWithin`-meter of an already existing point
+     */
+    reusePointWithin?: number
 }
 
 export default class SnappingFeatureSource implements FeatureSource {
     public readonly features: Store<Feature<Point>[]>
-
-    private readonly _snappedTo: UIEventSource<string>
+    /*Contains the id of the way it snapped to*/
     public readonly snappedTo: Store<string>
+    private readonly _snappedTo: UIEventSource<string>
 
     constructor(
         snapTo: FeatureSource,

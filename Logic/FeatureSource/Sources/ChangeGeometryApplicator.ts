@@ -3,22 +3,18 @@
  */
 import { Changes } from "../../Osm/Changes"
 import { UIEventSource } from "../../UIEventSource"
-import { FeatureSourceForLayer, IndexedFeatureSource } from "../FeatureSource"
-import FilteredLayer from "../../../Models/FilteredLayer"
+import { FeatureSource, IndexedFeatureSource } from "../FeatureSource"
 import { ChangeDescription, ChangeDescriptionTools } from "../../Osm/Actions/ChangeDescription"
 import { Feature } from "geojson"
 
-export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
-    public readonly features: UIEventSource<Feature[]> =
-        new UIEventSource<Feature[]>([])
-    public readonly layer: FilteredLayer
+export default class ChangeGeometryApplicator implements FeatureSource {
+    public readonly features: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
     private readonly source: IndexedFeatureSource
     private readonly changes: Changes
 
-    constructor(source: IndexedFeatureSource & FeatureSourceForLayer, changes: Changes) {
+    constructor(source: IndexedFeatureSource, changes: Changes) {
         this.source = source
         this.changes = changes
-        this.layer = source.layer
 
         this.features = new UIEventSource<Feature[]>(undefined)
 
@@ -30,10 +26,10 @@ export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
 
     private update() {
         const upstreamFeatures = this.source.features.data
-        const upstreamIds = this.source.containedIds.data
+        const upstreamIds = this.source.featuresById.data
         const changesToApply = this.changes.allChanges.data?.filter(
             (ch) =>
-                // Does upsteram have this element? If not, we skip
+                // Does upstream have this element? If not, we skip
                 upstreamIds.has(ch.type + "/" + ch.id) &&
                 // Are any (geometry) changes defined?
                 ch.changes !== undefined &&
@@ -61,7 +57,7 @@ export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
         for (const feature of upstreamFeatures) {
             const changesForFeature = changesPerId.get(feature.properties.id)
             if (changesForFeature === undefined) {
-                // No changes for this element
+                // No changes for this element - simply pass it along to downstream
                 newFeatures.push(feature)
                 continue
             }

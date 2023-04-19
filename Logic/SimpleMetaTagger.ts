@@ -213,7 +213,7 @@ class RewriteMetaInfoTags extends SimpleMetaTagger {
         move("changeset", "_last_edit:changeset")
         move("timestamp", "_last_edit:timestamp")
         move("version", "_version_number")
-        feature.properties._backend = "https://openstreetmap.org"
+        feature.properties._backend = feature.properties._backend ?? "https://openstreetmap.org"
         return movedSomething
     }
 }

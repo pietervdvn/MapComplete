@@ -197,7 +197,7 @@ class LineRenderingLayer {
         this._fetchStore = fetchStore
         this._onClick = onClick
         const self = this
-        features.features.addCallbackAndRunD((features) => self.update(features))
+        features.features.addCallbackAndRunD(() => self.update(features.features))
     }
 
     private calculatePropsFor(
@@ -229,13 +229,23 @@ class LineRenderingLayer {
         return calculatedProps
     }
 
-    private async update(features: Feature[]) {
+    private currentSourceData
+    private async update(featureSource: Store<Feature[]>) {
         const map = this._map
         while (!map.isStyleLoaded()) {
             await Utils.waitFor(100)
         }
+
+        // After waiting 'till the map has loaded, the data might have changed already
+        // As such, we only now read the features from the featureSource and compare with the previously set data
+        const features = featureSource.data
         const src = <GeoJSONSource>map.getSource(this._layername)
+        if (this.currentSourceData === features) {
+            // Already up to date
+            return
+        }
         if (src === undefined) {
+            this.currentSourceData = features
             map.addSource(this._layername, {
                 type: "geojson",
                 data: {
@@ -262,7 +272,6 @@ class LineRenderingLayer {
             })
 
             map.on("click", linelayer, (e) => {
-                console.log("Click", e)
                 e.originalEvent["consumed"] = true
                 this._onClick(e.features[0])
             })
@@ -297,9 +306,10 @@ class LineRenderingLayer {
                 }
             })
         } else {
+            this.currentSourceData = features
             src.setData({
                 type: "FeatureCollection",
-                features,
+                features: this.currentSourceData,
             })
         }
 
@@ -345,10 +355,21 @@ export default class ShowDataLayer {
         "ShowDataLayer.ts:range.json"
     )
     private readonly _map: Store<MlMap>
-    private readonly _options: ShowDataLayerOptions & { layer: LayerConfig }
+    private readonly _options: ShowDataLayerOptions & {
+        layer: LayerConfig
+        drawMarkers?: true | boolean
+        drawLines?: true | boolean
+    }
     private readonly _popupCache: Map<string, ScrollableFullScreen>
 
-    constructor(map: Store<MlMap>, options: ShowDataLayerOptions & { layer: LayerConfig }) {
+    constructor(
+        map: Store<MlMap>,
+        options: ShowDataLayerOptions & {
+            layer: LayerConfig
+            drawMarkers?: true | boolean
+            drawLines?: true | boolean
+        }
+    ) {
         this._map = map
         this._options = options
         this._popupCache = new Map()
@@ -405,28 +426,31 @@ export default class ShowDataLayer {
                 selectedElement?.setData(feature)
                 selectedLayer?.setData(this._options.layer)
             })
-        for (let i = 0; i < this._options.layer.lineRendering.length; i++) {
-            const lineRenderingConfig = this._options.layer.lineRendering[i]
-            new LineRenderingLayer(
-                map,
-                features,
-                this._options.layer.id + "_linerendering_" + i,
-                lineRenderingConfig,
-                doShowLayer,
-                fetchStore,
-                onClick
-            )
+        if (this._options.drawLines !== false) {
+            for (let i = 0; i < this._options.layer.lineRendering.length; i++) {
+                const lineRenderingConfig = this._options.layer.lineRendering[i]
+                new LineRenderingLayer(
+                    map,
+                    features,
+                    this._options.layer.id + "_linerendering_" + i,
+                    lineRenderingConfig,
+                    doShowLayer,
+                    fetchStore,
+                    onClick
+                )
+            }
         }
-
-        for (const pointRenderingConfig of this._options.layer.mapRendering) {
-            new PointRenderingLayer(
-                map,
-                features,
-                pointRenderingConfig,
-                doShowLayer,
-                fetchStore,
-                onClick
-            )
+        if (this._options.drawMarkers !== false) {
+            for (const pointRenderingConfig of this._options.layer.mapRendering) {
+                new PointRenderingLayer(
+                    map,
+                    features,
+                    pointRenderingConfig,
+                    doShowLayer,
+                    fetchStore,
+                    onClick
+                )
+            }
         }
         features.features.addCallbackAndRunD((_) => this.zoomToCurrentFeatures(map))
     }

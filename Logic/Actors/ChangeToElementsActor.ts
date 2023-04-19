@@ -1,6 +1,9 @@
 import { Changes } from "../Osm/Changes"
-import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore";
+import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 
+/**
+ * Applies tag changes onto the featureStore
+ */
 export default class ChangeToElementsActor {
     constructor(changes: Changes, allElements: FeaturePropertiesStore) {
         changes.pendingChanges.addCallbackAndRun((changes) => {

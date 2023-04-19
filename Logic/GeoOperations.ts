@@ -294,6 +294,10 @@ export class GeoOperations {
      * Mostly used as helper for 'nearestPoint'
      * @param way
      */
+    public static forceLineString(way: Feature<LineString | Polygon>): Feature<LineString>
+    public static forceLineString(
+        way: Feature<MultiLineString | MultiPolygon>
+    ): Feature<MultiLineString>
     public static forceLineString(
         way: Feature<LineString | MultiLineString | Polygon | MultiPolygon>
     ): Feature<LineString | MultiLineString> {
@@ -971,5 +975,10 @@ export class GeoOperations {
                 coordinates: p.geometry.coordinates[0],
             },
         }
+    }
+
+    static centerpointCoordinatesObj(geojson: Feature) {
+        const [lon, lat] = GeoOperations.centerpointCoordinates(geojson)
+        return { lon, lat }
     }
 }

@@ -596,6 +596,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
                 id: "split-button",
                 render: { "*": "{split_button()}" },
             })
+            delete json.allowSplit
         }
 
         if (json.allowMove && !ValidationUtils.hasSpecialVisualisation(json, "move_button")) {
@@ -611,7 +612,16 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
             })
         }
 
-        if (json.deletion && !ValidationUtils.hasSpecialVisualisation(json, "all_tags")) {
+        if (
+            json.source !== "special" &&
+            json.source !== "special:library" &&
+            json.tagRenderings &&
+            !json.tagRenderings.some((tr) => tr["id"] === "last_edit")
+        ) {
+            json.tagRenderings.push(this._desugaring.tagRenderings.get("last_edit"))
+        }
+
+        if (!ValidationUtils.hasSpecialVisualisation(json, "all_tags")) {
             const trc: TagRenderingConfigJson = {
                 id: "all-tags",
                 render: { "*": "{all_tags()}" },
@@ -623,16 +633,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
                     ],
                 },
             }
-            json.tagRenderings.push(trc)
-        }
-
-        if (
-            json.source !== "special" &&
-            json.source !== "special:library" &&
-            json.tagRenderings &&
-            !json.tagRenderings.some((tr) => tr["id"] === "last_edit")
-        ) {
-            json.tagRenderings.push(this._desugaring.tagRenderings.get("last_edit"))
+            json.tagRenderings?.push(trc)
         }
 
         return { result: json }

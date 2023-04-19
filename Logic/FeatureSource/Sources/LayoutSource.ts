@@ -4,13 +4,14 @@ import { FeatureSource } from "../FeatureSource"
 import { Or } from "../../Tags/Or"
 import FeatureSwitchState from "../../State/FeatureSwitchState"
 import OverpassFeatureSource from "./OverpassFeatureSource"
-import { ImmutableStore, Store } from "../../UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../../UIEventSource"
 import OsmFeatureSource from "./OsmFeatureSource"
 import FeatureSourceMerger from "./FeatureSourceMerger"
 import DynamicGeoJsonTileSource from "../TiledFeatureSource/DynamicGeoJsonTileSource"
 import { BBox } from "../../BBox"
 import LocalStorageFeatureSource from "../TiledFeatureSource/LocalStorageFeatureSource"
 import StaticFeatureSource from "./StaticFeatureSource"
+import { OsmPreferences } from "../../Osm/OsmPreferences"
 
 /**
  * This source will fetch the needed data from various sources for the given layout.
@@ -18,15 +19,14 @@ import StaticFeatureSource from "./StaticFeatureSource"
  * Note that special layers (with `source=null` will be ignored)
  */
 export default class LayoutSource extends FeatureSourceMerger {
+    private readonly _isLoading: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     /**
      * Indicates if a data source is loading something
-     * TODO fixme
      */
-    public readonly isLoading: Store<boolean> = new ImmutableStore(false)
+    public readonly isLoading: Store<boolean> = this._isLoading
     constructor(
         layers: LayerConfig[],
         featureSwitches: FeatureSwitchState,
-        newAndChangedElements: FeatureSource,
         mapProperties: { bounds: Store<BBox>; zoom: Store<number> },
         backend: string,
         isDisplayed: (id: string) => Store<boolean>
@@ -39,7 +39,7 @@ export default class LayoutSource extends FeatureSourceMerger {
         const osmLayers = layers.filter((layer) => layer.source.geojsonSource === undefined)
         const fromCache = osmLayers.map(
             (l) =>
-                new LocalStorageFeatureSource(l.id, 15, mapProperties, {
+                new LocalStorageFeatureSource(backend, l.id, 15, mapProperties, {
                     isActive: isDisplayed(l.id),
                 })
         )
@@ -56,7 +56,17 @@ export default class LayoutSource extends FeatureSourceMerger {
         )
 
         const expiryInSeconds = Math.min(...(layers?.map((l) => l.maxAgeOfCache) ?? []))
-        super(overpassSource, osmApiSource, newAndChangedElements, ...geojsonSources, ...fromCache)
+
+        super(overpassSource, osmApiSource, ...geojsonSources, ...fromCache)
+
+        const self = this
+        function setIsLoading() {
+            const loading = overpassSource?.runningQuery?.data && osmApiSource?.isRunning?.data
+            self._isLoading.setData(loading)
+        }
+
+        overpassSource?.runningQuery?.addCallbackAndRun((_) => setIsLoading())
+        osmApiSource?.isRunning?.addCallbackAndRun((_) => setIsLoading())
     }
 
     private static setupGeojsonSource(
@@ -83,9 +93,9 @@ export default class LayoutSource extends FeatureSourceMerger {
         zoom: Store<number>,
         backend: string,
         featureSwitches: FeatureSwitchState
-    ): FeatureSource {
+    ): OsmFeatureSource | undefined {
         if (osmLayers.length == 0) {
-            return new StaticFeatureSource(new ImmutableStore([]))
+            return undefined
         }
         const minzoom = Math.min(...osmLayers.map((layer) => layer.minzoom))
         const isActive = zoom.mapD((z) => {
@@ -115,9 +125,9 @@ export default class LayoutSource extends FeatureSourceMerger {
         bounds: Store<BBox>,
         zoom: Store<number>,
         featureSwitches: FeatureSwitchState
-    ): FeatureSource {
+    ): OverpassFeatureSource | undefined {
         if (osmLayers.length == 0) {
-            return new StaticFeatureSource(new ImmutableStore([]))
+            return undefined
         }
         const minzoom = Math.min(...osmLayers.map((layer) => layer.minzoom))
         const isActive = zoom.mapD((z) => {

@@ -24,7 +24,7 @@
      $map.resize();
     });
   });
-  const styleUrl = "https://api.maptiler.com/maps/streets/style.json?key=GvoVAJgu46I5rZapJuAy";
+  const styleUrl = "https://api.maptiler.com/maps/15cc8f61-0353-4be6-b8da-13daea5f7432/style.json?key=GvoVAJgu46I5rZapJuAy";
 </script>
 <main>
   <Map bind:center={center}

@@ -5,7 +5,7 @@ import { OsmConnection, OsmServiceState } from "../../Logic/Osm/OsmConnection"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import Loading from "../Base/Loading"
 import Translations from "../i18n/Translations"
-import { Store } from "../../Logic/UIEventSource"
+import { ImmutableStore, Store } from "../../Logic/UIEventSource"
 import Combine from "../Base/Combine"
 import { Translation } from "../i18n/Translation"
 
@@ -13,13 +13,13 @@ class LoginButton extends SubtleButton {
     constructor(
         text: BaseUIElement | string,
         state: {
-            osmConnection: OsmConnection
+            osmConnection?: OsmConnection
         },
         icon?: BaseUIElement | string
     ) {
         super(icon ?? Svg.login_ui(), text)
         this.onClick(() => {
-            state.osmConnection.AttemptLogin()
+            state.osmConnection?.AttemptLogin()
         })
     }
 }
@@ -32,13 +32,16 @@ export class LoginToggle extends VariableUiElement {
      * If logging in is not possible for some reason, an appropriate error message is shown
      *
      * State contains the 'osmConnection' to work with
+     * @param el: Element to show when logged in
+     * @param text: To show on the login button. Default: nothing
+     * @param state: if no osmConnection is given, assumes test situation and will show 'el' as if logged in
      */
     constructor(
         el: BaseUIElement,
         text: BaseUIElement | string,
         state: {
-            readonly osmConnection: OsmConnection
-            readonly featureSwitchUserbadge: Store<boolean>
+            readonly osmConnection?: OsmConnection
+            readonly featureSwitchUserbadge?: Store<boolean>
         }
     ) {
         const loading = new Loading("Trying to log in...")
@@ -51,14 +54,14 @@ export class LoginToggle extends VariableUiElement {
         }
 
         super(
-            state.osmConnection.loadingStatus.map(
+            state.osmConnection?.loadingStatus?.map(
                 (osmConnectionState) => {
-                    if (state.featureSwitchUserbadge.data == false) {
+                    if (state.featureSwitchUserbadge?.data == false) {
                         // All features to login with are disabled
                         return undefined
                     }
 
-                    const apiState = state.osmConnection.apiIsOnline.data
+                    const apiState = state.osmConnection?.apiIsOnline?.data ?? "online"
                     const apiTranslation = offlineModes[apiState]
                     if (apiTranslation !== undefined) {
                         return new Combine([
@@ -77,15 +80,15 @@ export class LoginToggle extends VariableUiElement {
                         return el
                     }
 
-                    // Error!
+                    // Fallback
                     return new LoginButton(
                         Translations.t.general.loginFailed,
                         state,
                         Svg.invalid_svg()
                     )
                 },
-                [state.featureSwitchUserbadge, state.osmConnection.apiIsOnline]
-            )
+                [state.featureSwitchUserbadge, state.osmConnection?.apiIsOnline]
+            ) ?? new ImmutableStore(el) //
         )
     }
 }

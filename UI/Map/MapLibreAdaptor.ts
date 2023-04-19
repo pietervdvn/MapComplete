@@ -90,6 +90,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 self.setAllowMoving(self.allowMoving.data)
                 self.setAllowZooming(self.allowZooming.data)
                 self.setMinzoom(self.minzoom.data)
+                self.setBounds(self.bounds.data)
             })
             self.MoveMapToCurrentLoc(self.location.data)
             self.SetZoom(self.zoom.data)
@@ -97,6 +98,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             self.setAllowMoving(self.allowMoving.data)
             self.setAllowZooming(self.allowZooming.data)
             self.setMinzoom(self.minzoom.data)
+            self.setBounds(self.bounds.data)
             this.updateStores()
             map.on("moveend", () => this.updateStores())
             map.on("click", (e) => {
@@ -238,18 +240,13 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                     container.style.height = document.documentElement.clientHeight + "px"
                 }
 
-                const markerCanvas: HTMLCanvasElement = await html2canvas(
+                await html2canvas(
                     map.getCanvasContainer(),
                     {
                         backgroundColor: "#00000000",
                         canvas: drawOn,
                     }
                 )
-                const markers = await new Promise<Blob>((resolve) =>
-                    markerCanvas.toBlob((data) => resolve(data))
-                )
-                console.log("Markers:", markers, markerCanvas)
-                // destinationCtx.drawImage(markerCanvas, 0, 0)
             } catch (e) {
                 console.error(e)
             } finally {
@@ -429,7 +426,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
     private setBounds(bounds: BBox) {
         const map = this._maplibreMap.data
-        if (map === undefined) {
+        if (map === undefined || bounds === undefined) {
             return
         }
         const oldBounds = map.getBounds()

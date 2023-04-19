@@ -41,7 +41,6 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
         this.isActive = options.isActive ?? new ImmutableStore(true)
         this._backend = options.backend ?? "https://www.openstreetmap.org"
         this._bounds.addCallbackAndRunD((bbox) => this.loadData(bbox))
-        console.log("Allowed tags are:", this.allowedTags)
     }
 
     private async loadData(bbox: BBox) {
@@ -108,7 +107,7 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
     }
 
     private async LoadTile(z, x, y): Promise<void> {
-        console.log("OsmFeatureSource: loading ", z, x, y)
+        console.log("OsmFeatureSource: loading ", z, x, y, "from", this._backend)
         if (z >= 22) {
             throw "This is an absurd high zoom level"
         }

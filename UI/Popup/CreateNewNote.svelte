@@ -58,6 +58,7 @@
         ])
       }
     };
+    // Normally, the 'Changes' will generate the new element. The 'notes' are an exception to this
     state.newFeatures.features.data.push(feature);
     state.newFeatures.features.ping();
     state.selectedElement?.setData(feature);

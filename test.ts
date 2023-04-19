@@ -9,6 +9,10 @@ import { UIEventSource } from "./Logic/UIEventSource"
 import { VariableUiElement } from "./UI/Base/VariableUIElement"
 import { FixedUiElement } from "./UI/Base/FixedUiElement"
 import Title from "./UI/Base/Title"
+import WaySplitMap from "./UI/BigComponents/WaySplitMap.svelte"
+import SvelteUIElement from "./UI/Base/SvelteUIElement"
+import { OsmObject } from "./Logic/Osm/OsmObject"
+import SplitRoadWizard from "./UI/Popup/SplitRoadWizard"
 
 function testspecial() {
     const layout = new LayoutConfig(<any>theme, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
@@ -41,5 +45,10 @@ function testinput() {
     }
     new Combine(els).SetClass("flex flex-col").AttachTo("maindiv")
 }
-testinput()
+
+async function testWaySplit() {
+    new SplitRoadWizard("way/28717919", {}).SetClass("w-full h-full").AttachTo("maindiv")
+}
+testWaySplit().then((_) => console.log("inited"))
+//testinput()
 // testspecial()

@@ -11,7 +11,6 @@ import { Utils } from "../../Utils"
 import { MapillaryLink } from "./MapillaryLink"
 import { OpenIdEditor, OpenJosm } from "./CopyrightPanel"
 import Toggle from "../Input/Toggle"
-import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 import { DefaultGuiState } from "../DefaultGuiState"
 
 export class BackToThemeOverview extends Toggle {
@@ -78,14 +77,6 @@ export class ActionButtons extends Combine {
             new OpenIdEditor(state, iconStyle),
             new MapillaryLink(state, iconStyle),
             new OpenJosm(state, iconStyle).SetClass("hidden-on-mobile"),
-            new SubtleButton(
-                Svg.translate_ui().SetStyle(iconStyle),
-                Translations.t.translations.activateButton
-            ).onClick(() => {
-                ScrollableFullScreen.collapse()
-                state.defaultGuiState.userInfoIsOpened.setData(true)
-                state.defaultGuiState.userInfoFocusedQuestion.setData("translation-mode")
-            }),
         ])
         this.SetClass("block w-full link-no-underline")
     }

@@ -4,6 +4,7 @@ import { GeoOperations } from "../../GeoOperations"
 import OsmChangeAction from "./OsmChangeAction"
 import { ChangeDescription } from "./ChangeDescription"
 import RelationSplitHandler from "./RelationSplitHandler"
+import { Feature, LineString } from "geojson"
 
 interface SplitInfo {
     originalIndex?: number // or negative for new elements
@@ -14,9 +15,9 @@ interface SplitInfo {
 export default class SplitAction extends OsmChangeAction {
     private readonly wayId: string
     private readonly _splitPointsCoordinates: [number, number][] // lon, lat
-    private _meta: { theme: string; changeType: "split" }
-    private _toleranceInMeters: number
-    private _withNewCoordinates: (coordinates: [number, number][]) => void
+    private readonly _meta: { theme: string; changeType: "split" }
+    private readonly _toleranceInMeters: number
+    private readonly _withNewCoordinates: (coordinates: [number, number][]) => void
 
     /**
      * Create a changedescription for splitting a point.
@@ -197,7 +198,7 @@ export default class SplitAction extends OsmChangeAction {
      * If another point is closer then ~5m, we reuse that point
      */
     private CalculateSplitCoordinates(osmWay: OsmWay, toleranceInM = 5): SplitInfo[] {
-        const wayGeoJson = osmWay.asGeoJson()
+        const wayGeoJson = <Feature<LineString>>osmWay.asGeoJson()
         // Should be [lon, lat][]
         const originalPoints: [number, number][] = osmWay.coordinates.map((c) => [c[1], c[0]])
         const allPoints: {

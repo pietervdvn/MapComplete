@@ -83,19 +83,9 @@
       snapOnto: snapToWay
     });
     await state.changes.applyAction(newElementAction);
+    // The 'changes' should have created a new point, which added this into the 'featureProperties'
     const newId = newElementAction.newElementId;
-    state.newFeatures.features.data.push({
-      type: "Feature",
-      properties: {
-        id: newId,
-        ...TagUtils.KVtoProperties(tags)
-      },
-      geometry: {
-        type: "Point",
-        coordinates: [location.lon, location.lat]
-      }
-    });
-    state.newFeatures.features.ping();
+    
     const tagsStore = state.featureProperties.getStore(newId);
     {
       // Set some metainfo

@@ -1,13 +1,12 @@
 import { Changes } from "../../Osm/Changes"
 import { OsmNode, OsmObject, OsmRelation, OsmWay } from "../../Osm/OsmObject"
-import { FeatureSource } from "../FeatureSource"
+import { IndexedFeatureSource, WritableFeatureSource } from "../FeatureSource"
 import { UIEventSource } from "../../UIEventSource"
 import { ChangeDescription } from "../../Osm/Actions/ChangeDescription"
-import { ElementStorage } from "../../ElementStorage"
 import { OsmId, OsmTags } from "../../../Models/OsmFeature"
 import { Feature } from "geojson"
 
-export class NewGeometryFromChangesFeatureSource implements FeatureSource {
+export class NewGeometryFromChangesFeatureSource implements WritableFeatureSource {
     // This class name truly puts the 'Java' into 'Javascript'
 
     /**
@@ -18,7 +17,7 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
      */
     public readonly features: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
 
-    constructor(changes: Changes, allElementStorage: ElementStorage, backendUrl: string) {
+    constructor(changes: Changes, allElementStorage: IndexedFeatureSource, backendUrl: string) {
         const seenChanges = new Set<ChangeDescription>()
         const features = this.features.data
         const self = this
@@ -53,7 +52,7 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                     // In _most_ of the cases, this means that this _isn't_ a new object
                     // However, when a point is snapped to an already existing point, we have to create a representation for this point!
                     // For this, we introspect the change
-                    if (allElementStorage.has(change.type + "/" + change.id)) {
+                    if (allElementStorage.featuresById.data.has(change.type + "/" + change.id)) {
                         // The current point already exists, we don't have to do anything here
                         continue
                     }
@@ -65,7 +64,6 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                             feat.tags[kv.k] = kv.v
                         }
                         const geojson = feat.asGeoJson()
-                        allElementStorage.addOrGetElement(geojson)
                         self.features.data.push(geojson)
                         self.features.ping()
                     })

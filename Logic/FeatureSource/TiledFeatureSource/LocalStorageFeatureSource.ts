@@ -7,6 +7,7 @@ import StaticFeatureSource from "../Sources/StaticFeatureSource"
 
 export default class LocalStorageFeatureSource extends DynamicTileSource {
     constructor(
+        backend: string,
         layername: string,
         zoomlevel: number,
         mapProperties: {
@@ -17,7 +18,7 @@ export default class LocalStorageFeatureSource extends DynamicTileSource {
             isActive?: Store<boolean>
         }
     ) {
-        const storage = TileLocalStorage.construct<Feature[]>(layername)
+        const storage = TileLocalStorage.construct<Feature[]>(backend, layername)
         super(
             zoomlevel,
             (tileIndex) =>
