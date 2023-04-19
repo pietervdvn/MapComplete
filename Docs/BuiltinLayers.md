@@ -40,7 +40,6 @@
     + [add_new](#add_new)
     + [add_note](#add_note)
     + [leftover-questions](#leftover-questions)
-    + [minimap](#minimap)
       * [Filters](#filters)
 1. [conflation](#conflation)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
@@ -53,7 +52,6 @@
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
     + [leftover-questions](#leftover-questions)
-    + [minimap](#minimap)
 1. [matchpoint](#matchpoint)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -62,7 +60,6 @@
   - [Supported attributes](#supported-attributes)
     + [all_tags](#all_tags)
     + [leftover-questions](#leftover-questions)
-    + [minimap](#minimap)
 1. [usersettings](#usersettings)
   - [Basic tags for this layer](#basic-tags-for-this-layer)
   - [Supported attributes](#supported-attributes)
@@ -85,7 +82,6 @@
     + [show_debug](#show_debug)
     + [debug](#debug)
     + [leftover-questions](#leftover-questions)
-    + [minimap](#minimap)
 1. [Normal layers](#normal-layers)
 
 
@@ -349,6 +345,8 @@ This tagrendering has no question and is thus read-only
 
 
 
+Shows a button to export this feature as GPX. Especially useful for route relations
+
 This tagrendering has no question and is thus read-only
 
 
@@ -358,6 +356,8 @@ This tagrendering has no question and is thus read-only
 ### export_as_geojson 
 
 
+
+Shows a button to export this feature as geojson. Especially useful for debugging or using this in other programs
 
 This tagrendering has no question and is thus read-only
 
@@ -378,6 +378,8 @@ This tagrendering has no question and is thus read-only
 ### minimap 
 
 
+
+Shows a small map with the feature. Added by default to every popup
 
 This tagrendering has no question and is thus read-only
 
@@ -516,16 +518,6 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 ### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### minimap 
 
 
 
@@ -697,16 +689,6 @@ This tagrendering has no question and is thus read-only
 
 
 
-### minimap 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
  matchpoint 
 ============
 
@@ -800,16 +782,6 @@ This tagrendering has no question and is thus read-only
 
 
 ### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### minimap 
 
 
 
@@ -1133,16 +1105,6 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 ### leftover-questions 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
-### minimap 
 
 
 

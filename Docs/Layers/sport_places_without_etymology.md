@@ -125,6 +125,8 @@ This is rendered with  `Named after {name:etymology}`
 
 
 
+Show the images block at this location
+
 This tagrendering has no question and is thus read-only
 
 
@@ -176,6 +178,8 @@ This tagrendering is only visible in the popup if the following condition is met
 ### last_edit 
 
 
+
+Gives some metainfo about the last edit and who did edit it - rendering only
 
 This tagrendering has no question and is thus read-only
 

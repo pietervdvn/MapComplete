@@ -168,7 +168,6 @@ class LayerOverviewUtils extends Script {
                 <TagRenderingConfigJson>questions[key],
                 "questions.json:" + key
             )
-            delete config.description
             delete config["#"]
             validator.convertStrict(
                 config,

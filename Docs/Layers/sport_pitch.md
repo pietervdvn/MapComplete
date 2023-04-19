@@ -76,6 +76,8 @@ attribute | type | values which are supported by this layer
 
 
 
+This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`
+
 This tagrendering has no question and is thus read-only
 
 
@@ -223,6 +225,8 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
+Show the images block at this location
+
 This tagrendering has no question and is thus read-only
 
 
@@ -243,6 +247,8 @@ This tagrendering has no question and is thus read-only
 
 
 
+Shows a small map with the feature. Added by default to every popup
+
 This tagrendering has no question and is thus read-only
 
 
@@ -252,6 +258,8 @@ This tagrendering has no question and is thus read-only
 ### last_edit 
 
 
+
+Gives some metainfo about the last edit and who did edit it - rendering only
 
 This tagrendering has no question and is thus read-only
 

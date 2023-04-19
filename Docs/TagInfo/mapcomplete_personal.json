@@ -7153,6 +7153,35 @@
       "description": "Layer 'Hackerspace' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
+      "key": "level",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Hackerspace' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Hackerspace' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Hackerspace' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Hackerspace' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Hackerspace' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "-1"
+    },
+    {
       "key": "website",
       "description": "Layer 'Hackerspace' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
     },

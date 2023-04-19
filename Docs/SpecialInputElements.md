@@ -83,7 +83,11 @@ A geographical distance in meters (rounded at two points). Will give an extra mi
 
 
 
-A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl)
+A geographical direction, in degrees. 0° is north, 90° is east, ... Will return a value between 0 (incl) and 360 (excl).
+
+### Input helper
+
+This element has an input helper showing a map and 'viewport' indicating the direction. By default, this map is zoomed to zoomlevel 17, but this can be changed with the first argument
 
 
 

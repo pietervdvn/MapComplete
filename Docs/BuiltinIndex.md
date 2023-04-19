@@ -425,6 +425,7 @@
   - entrance
   - fitness_centre
   - food
+  - hackerspace
   - parking
   - picnic_table
   - railway_platforms
@@ -718,6 +719,7 @@
 
 
   - etymology
+  - hackerspace
   - play_forest
   - playground
   - shops
