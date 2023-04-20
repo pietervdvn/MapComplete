@@ -647,7 +647,7 @@
             "bench-backrest": {
                 "mappings": {
                     "0": {
-                        "then": "Tato lavička je oboustranná a má společné opěradlo."
+                        "then": "Tato lavička je oboustranná a má společné opěradlo"
                     },
                     "1": {
                         "then": "Má opěradlo"
