@@ -302,6 +302,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
                         })
                         return
                     }
+                    // We first clear the selection to make sure no weird state is around
+                    this.selectedLayer.setData(undefined)
+                    this.selectedElement.setData(undefined)
+
                     this.selectedElement.setData(feature)
                     this.selectedLayer.setData(last_click_layer.layerDef)
                 },

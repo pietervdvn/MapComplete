@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Store, UIEventSource } from "../Logic/UIEventSource";
+  import { UIEventSource } from "../Logic/UIEventSource";
   import { Map as MlMap } from "maplibre-gl";
   import MaplibreMap from "./Map/MaplibreMap.svelte";
   import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
@@ -32,19 +32,31 @@
   import ModalRight from "./Base/ModalRight.svelte";
   import { Utils } from "../Utils";
   import Hotkeys from "./Base/Hotkeys";
+  import { VariableUiElement } from "./Base/VariableUIElement";
+  import SvelteUIElement from "./Base/SvelteUIElement";
+  import { onDestroy } from "svelte";
 
   export let state: ThemeViewState;
   let layout = state.layout;
 
-  let selectedElementTags: Store<UIEventSource<Record<string, string>>> =
-    state.selectedElement.mapD((f) => {
-        return state.featureProperties.getStore(f.properties.id);
-      }
-    );
-
   let maplibremap: UIEventSource<MlMap> = state.map;
   let selectedElement: UIEventSource<Feature> = state.selectedElement;
   let selectedLayer: UIEventSource<LayerConfig> = state.selectedLayer;
+
+  const selectedViewElement = selectedElement.map(selectedElement => {
+    // Svelte doesn't properly reload some of the legacy UI-elements
+    // As such, we _reconstruct_ the selectedElementView every time a new feature is selected
+    // This is a bit wasteful, but until everything is a svelte-component, this should do the trick
+    const layer = selectedLayer.data;
+    if (selectedElement === undefined || layer === undefined) {
+      return undefined;
+    }
+    
+    const tags = state.featureProperties.getStore(selectedElement.properties.id);
+    return new SvelteUIElement(SelectedElementView, {state, layer, selectedElement, tags})
+  }, [selectedLayer]);
+
+
   let mapproperties: MapProperties = state.mapProperties;
   let featureSwitches: FeatureSwitchState = state.featureSwitches;
   let availableLayers = state.availableLayers;
@@ -101,13 +113,11 @@
   </If>
 </div>
 
-{#if $selectedElement !== undefined && $selectedLayer !== undefined}
+<If condition={selectedViewElement.map(v => v !== undefined)}>
   <ModalRight on:close={() => {selectedElement.setData(undefined)}}>
-    <SelectedElementView layer={$selectedLayer} selectedElement={$selectedElement}
-                         tags={$selectedElementTags} state={state} />
+    <ToSvelte construct={new VariableUiElement(selectedViewElement)}></ToSvelte>
   </ModalRight>
-
-{/if}
+</If>
 
 <If condition={state.guistate.themeIsOpened}>
   <!-- Theme page -->

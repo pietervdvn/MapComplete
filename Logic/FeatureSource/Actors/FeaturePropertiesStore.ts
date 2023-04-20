@@ -20,7 +20,6 @@ export default class FeaturePropertiesStore {
     public trackFeatureSource(source: FeatureSource) {
         const self = this
         source.features.addCallbackAndRunD((features) => {
-            console.log("Re-indexing features")
             for (const feature of features) {
                 const id = feature.properties.id
                 if (id === undefined) {
