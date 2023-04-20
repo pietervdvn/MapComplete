@@ -3,6 +3,7 @@ import { Utils } from "../../../Utils"
 import ScriptUtils from "../../../scripts/ScriptUtils"
 import { readFileSync } from "fs"
 import { describe, expect, it } from "vitest"
+import OsmObjectDownloader from "../../../Logic/Osm/OsmObjectDownloader"
 
 describe("OsmObject", () => {
     describe("download referencing ways", () => {
@@ -79,7 +80,8 @@ describe("OsmObject", () => {
         )
 
         it("should download referencing ways", async () => {
-            const ways = await OsmObject.DownloadReferencingWays("node/1124134958")
+            const downloader = new OsmObjectDownloader()
+            const ways = await downloader.DownloadReferencingWays("node/1124134958")
             expect(ways).toBeDefined()
             expect(ways).toHaveLength(4)
         })
@@ -90,7 +92,7 @@ describe("OsmObject", () => {
                 "https://www.openstreetmap.org/api/0.6/relation/5759328/full",
                 JSON.parse(readFileSync("./test/data/relation_5759328.json", { encoding: "utf-8" }))
             )
-            const r = await OsmObject.DownloadObjectAsync("relation/5759328").then((x) => x)
+            const r = await new OsmObjectDownloader().DownloadObjectAsync("relation/5759328").then((x) => x)
             const geojson = r.asGeoJson()
             expect(geojson.geometry.type).toBe("MultiPolygon")
         })

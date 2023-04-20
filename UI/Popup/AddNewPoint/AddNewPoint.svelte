@@ -21,10 +21,9 @@
   import LoginButton from "../../Base/LoginButton.svelte";
   import NewPointLocationInput from "../../BigComponents/NewPointLocationInput.svelte";
   import CreateNewNodeAction from "../../../Logic/Osm/Actions/CreateNewNodeAction";
-  import { OsmObject } from "../../../Logic/Osm/OsmObject";
+  import { OsmWay } from "../../../Logic/Osm/OsmObject";
   import { Tag } from "../../../Logic/Tags/Tag";
   import type { WayId } from "../../../Models/OsmFeature";
-  import { TagUtils } from "../../../Logic/Tags/TagUtils";
   import Loading from "../../Base/Loading.svelte";
 
   export let coordinate: { lon: number, lat: number };
@@ -75,12 +74,19 @@
     const tags: Tag[] = selectedPreset.preset.tags;
     console.log("Creating new point at", location, "snapped to", snapTo, "with tags", tags);
 
-    const snapToWay = snapTo === undefined ? undefined : await OsmObject.DownloadObjectAsync(snapTo, 0);
+    let snapToWay: undefined | OsmWay = undefined
+    if(snapTo !== undefined){
+      const downloaded = await state.osmObjectDownloader.DownloadObjectAsync(snapTo, 0);
+      if(downloaded !== "deleted"){
+        snapToWay = downloaded
+      }
+    }
 
-    const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {
+    const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon,
+      {
       theme: state.layout?.id ?? "unkown",
       changeType: "create",
-      snapOnto: snapToWay
+      snapOnto: snapToWay 
     });
     await state.changes.applyAction(newElementAction);
     // The 'changes' should have created a new point, which added this into the 'featureProperties'

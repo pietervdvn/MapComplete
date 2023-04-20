@@ -1,10 +1,11 @@
 import { Changes } from "../../Osm/Changes"
-import { OsmNode, OsmObject, OsmRelation, OsmWay } from "../../Osm/OsmObject"
+import { OsmNode, OsmRelation, OsmWay } from "../../Osm/OsmObject"
 import { IndexedFeatureSource, WritableFeatureSource } from "../FeatureSource"
 import { UIEventSource } from "../../UIEventSource"
 import { ChangeDescription } from "../../Osm/Actions/ChangeDescription"
 import { OsmId, OsmTags } from "../../../Models/OsmFeature"
 import { Feature } from "geojson"
+import OsmObjectDownloader from "../../Osm/OsmObjectDownloader"
 
 export class NewGeometryFromChangesFeatureSource implements WritableFeatureSource {
     // This class name truly puts the 'Java' into 'Javascript'
@@ -21,7 +22,7 @@ export class NewGeometryFromChangesFeatureSource implements WritableFeatureSourc
         const seenChanges = new Set<ChangeDescription>()
         const features = this.features.data
         const self = this
-
+        const backend = changes.backend
         changes.pendingChanges.stabilized(100).addCallbackAndRunD((changes) => {
             if (changes.length === 0) {
                 return
@@ -58,15 +59,20 @@ export class NewGeometryFromChangesFeatureSource implements WritableFeatureSourc
                     }
                     console.debug("Detected a reused point")
                     // The 'allElementsStore' does _not_ have this point yet, so we have to create it
-                    OsmObject.DownloadObjectAsync(change.type + "/" + change.id).then((feat) => {
-                        console.log("Got the reused point:", feat)
-                        for (const kv of change.tags) {
-                            feat.tags[kv.k] = kv.v
-                        }
-                        const geojson = feat.asGeoJson()
-                        self.features.data.push(geojson)
-                        self.features.ping()
-                    })
+                    new OsmObjectDownloader(backend)
+                        .DownloadObjectAsync(change.type + "/" + change.id)
+                        .then((feat) => {
+                            console.log("Got the reused point:", feat)
+                            if (feat === "deleted") {
+                                throw "Panic: snapping to a point, but this point has been deleted in the meantime"
+                            }
+                            for (const kv of change.tags) {
+                                feat.tags[kv.k] = kv.v
+                            }
+                            const geojson = feat.asGeoJson()
+                            self.features.data.push(geojson)
+                            self.features.ping()
+                        })
                     continue
                 } else if (change.id < 0 && change.changes === undefined) {
                     // The geometry is not described - not a new point

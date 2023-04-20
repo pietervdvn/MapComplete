@@ -1,7 +1,8 @@
 import OsmChangeAction from "./OsmChangeAction"
 import { Changes } from "../Changes"
 import { ChangeDescription } from "./ChangeDescription"
-import { OsmObject, OsmRelation, OsmWay } from "../OsmObject"
+import { OsmRelation, OsmWay } from "../OsmObject"
+import OsmObjectDownloader from "../OsmObjectDownloader"
 
 export interface RelationSplitInput {
     relation: OsmRelation
@@ -14,11 +15,13 @@ export interface RelationSplitInput {
 abstract class AbstractRelationSplitHandler extends OsmChangeAction {
     protected readonly _input: RelationSplitInput
     protected readonly _theme: string
+    protected readonly _objectDownloader: OsmObjectDownloader
 
-    constructor(input: RelationSplitInput, theme: string) {
+    constructor(input: RelationSplitInput, theme: string, objectDownloader: OsmObjectDownloader) {
         super("relation/" + input.relation.id, false)
         this._input = input
         this._theme = theme
+        this._objectDownloader = objectDownloader
     }
 
     /**
@@ -33,7 +36,9 @@ abstract class AbstractRelationSplitHandler extends OsmChangeAction {
             return member.ref
         }
         if (member.type === "way") {
-            const osmWay = <OsmWay>await OsmObject.DownloadObjectAsync("way/" + member.ref)
+            const osmWay = <OsmWay>(
+                await this._objectDownloader.DownloadObjectAsync("way/" + member.ref)
+            )
             const nodes = osmWay.nodes
             if (first) {
                 return nodes[0]
@@ -52,26 +57,30 @@ abstract class AbstractRelationSplitHandler extends OsmChangeAction {
  * When a way is split and this way is part of a relation, the relation should be updated too to have the new segment if relevant.
  */
 export default class RelationSplitHandler extends AbstractRelationSplitHandler {
-    constructor(input: RelationSplitInput, theme: string) {
-        super(input, theme)
+    constructor(input: RelationSplitInput, theme: string, objectDownloader: OsmObjectDownloader) {
+        super(input, theme, objectDownloader)
     }
 
     async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
         if (this._input.relation.tags["type"] === "restriction") {
             // This is a turn restriction
-            return new TurnRestrictionRSH(this._input, this._theme).CreateChangeDescriptions(
-                changes
-            )
+            return new TurnRestrictionRSH(
+                this._input,
+                this._theme,
+                this._objectDownloader
+            ).CreateChangeDescriptions(changes)
         }
-        return new InPlaceReplacedmentRTSH(this._input, this._theme).CreateChangeDescriptions(
-            changes
-        )
+        return new InPlaceReplacedmentRTSH(
+            this._input,
+            this._theme,
+            this._objectDownloader
+        ).CreateChangeDescriptions(changes)
     }
 }
 
 export class TurnRestrictionRSH extends AbstractRelationSplitHandler {
-    constructor(input: RelationSplitInput, theme: string) {
-        super(input, theme)
+    constructor(input: RelationSplitInput, theme: string, objectDownloader: OsmObjectDownloader) {
+        super(input, theme, objectDownloader)
     }
 
     public async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
@@ -91,9 +100,11 @@ export class TurnRestrictionRSH extends AbstractRelationSplitHandler {
 
         if (selfMember.role === "via") {
             // A via way can be replaced in place
-            return new InPlaceReplacedmentRTSH(this._input, this._theme).CreateChangeDescriptions(
-                changes
-            )
+            return new InPlaceReplacedmentRTSH(
+                this._input,
+                this._theme,
+                this._objectDownloader
+            ).CreateChangeDescriptions(changes)
         }
 
         // We have to keep only the way with a common point with the rest of the relation
@@ -166,8 +177,8 @@ export class TurnRestrictionRSH extends AbstractRelationSplitHandler {
  * Note that the feature might appear multiple times.
  */
 export class InPlaceReplacedmentRTSH extends AbstractRelationSplitHandler {
-    constructor(input: RelationSplitInput, theme: string) {
-        super(input, theme)
+    constructor(input: RelationSplitInput, theme: string, objectDownloader: OsmObjectDownloader) {
+        super(input, theme, objectDownloader)
     }
 
     async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {

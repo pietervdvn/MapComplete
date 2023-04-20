@@ -11,7 +11,6 @@ import { Translation } from "../i18n/Translation"
 import BaseUIElement from "../BaseUIElement"
 import Constants from "../../Models/Constants"
 import DeleteConfig from "../../Models/ThemeConfig/DeleteConfig"
-import { OsmObject } from "../../Logic/Osm/OsmObject"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import OsmChangeAction from "../../Logic/Osm/Actions/OsmChangeAction"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
@@ -20,12 +19,12 @@ import { RadioButton } from "../Input/RadioButton"
 import { FixedInputElement } from "../Input/FixedInputElement"
 import Title from "../Base/Title"
 import { SubstitutedTranslation } from "../SubstitutedTranslation"
-import TagRenderingQuestion from "./TagRenderingQuestion"
 import { OsmId, OsmTags } from "../../Models/OsmFeature"
 import { LoginToggle } from "./LoginButton"
 import { SpecialVisualizationState } from "../SpecialVisualization"
-import SvelteUIElement from "../Base/SvelteUIElement";
-import TagHint from "./TagHint.svelte";
+import SvelteUIElement from "../Base/SvelteUIElement"
+import TagHint from "./TagHint.svelte"
+import OsmObjectDownloader from "../../Logic/Osm/OsmObjectDownloader"
 
 export default class DeleteWizard extends Toggle {
     /**
@@ -53,6 +52,7 @@ export default class DeleteWizard extends Toggle {
         const deleteAbility = new DeleteabilityChecker(
             id,
             state.osmConnection,
+            state.osmObjectDownloader,
             options.neededChangesets
         )
 
@@ -227,7 +227,10 @@ export default class DeleteWizard extends Toggle {
                         // This is a retagging, not a deletion of any kind
                         return new Combine([
                             t.explanations.retagNoOtherThemes,
-                            new SvelteUIElement(TagHint, {osmConnection: state.osmConnection, tags: retag})
+                            new SvelteUIElement(TagHint, {
+                                osmConnection: state.osmConnection,
+                                tags: retag,
+                            }),
                         ])
                     }
 
@@ -285,11 +288,18 @@ export default class DeleteWizard extends Toggle {
 
 class DeleteabilityChecker {
     public readonly canBeDeleted: UIEventSource<{ canBeDeleted?: boolean; reason: Translation }>
+    private readonly objectDownloader: OsmObjectDownloader
     private readonly _id: OsmId
     private readonly _allowDeletionAtChangesetCount: number
     private readonly _osmConnection: OsmConnection
 
-    constructor(id: OsmId, osmConnection: OsmConnection, allowDeletionAtChangesetCount?: number) {
+    constructor(
+        id: OsmId,
+        osmConnection: OsmConnection,
+        objectDownloader: OsmObjectDownloader,
+        allowDeletionAtChangesetCount?: number
+    ) {
+        this.objectDownloader = objectDownloader
         this._id = id
         this._osmConnection = osmConnection
         this._allowDeletionAtChangesetCount = allowDeletionAtChangesetCount ?? Number.MAX_VALUE
@@ -366,11 +376,13 @@ class DeleteabilityChecker {
 
                 if (allByMyself.data === null && useTheInternet) {
                     // We kickoff the download here as it hasn't yet been downloaded. Note that this is mapped onto 'all by myself' above
-                    const hist = OsmObject.DownloadHistory(id).map((versions) =>
-                        versions.map((version) =>
-                            Number(version.tags["_last_edit:contributor:uid"])
+                    const hist = this.objectDownloader
+                        .DownloadHistory(id)
+                        .map((versions) =>
+                            versions.map((version) =>
+                                Number(version.tags["_last_edit:contributor:uid"])
+                            )
                         )
-                    )
                     hist.addCallbackAndRunD((hist) => previousEditors.setData(hist))
                 }
 
@@ -406,11 +418,11 @@ class DeleteabilityChecker {
             }
 
             // All right! We have arrived at a point that we should query OSM again to check that the point isn't a part of ways or relations
-            OsmObject.DownloadReferencingRelations(id).then((rels) => {
+            this.objectDownloader.DownloadReferencingRelations(id).then((rels) => {
                 hasRelations.setData(rels.length > 0)
             })
 
-            OsmObject.DownloadReferencingWays(id).then((ways) => {
+            this.objectDownloader.DownloadReferencingWays(id).then((ways) => {
                 hasWays.setData(ways.length > 0)
             })
             return true // unregister to only run once

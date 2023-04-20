@@ -1,10 +1,10 @@
 import { UIEventSource } from "../UIEventSource"
-import { OsmObject } from "../Osm/OsmObject"
 import Loc from "../../Models/Loc"
 import { ElementStorage } from "../ElementStorage"
 import FeaturePipeline from "../FeatureSource/FeaturePipeline"
 import { GeoOperations } from "../GeoOperations"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import OsmObjectDownloader from "../Osm/OsmObjectDownloader"
 
 /**
  * Makes sure the hash shows the selected element and vice-versa.
@@ -26,6 +26,7 @@ export default class SelectedFeatureHandler {
         allElements: ElementStorage
         locationControl: UIEventSource<Loc>
         layoutToUse: LayoutConfig
+        objectDownloader: OsmObjectDownloader
     }
 
     constructor(
@@ -36,6 +37,7 @@ export default class SelectedFeatureHandler {
             featurePipeline: FeaturePipeline
             locationControl: UIEventSource<Loc>
             layoutToUse: LayoutConfig
+            objectDownloader: OsmObjectDownloader
         }
     ) {
         this.hash = hash
@@ -65,8 +67,11 @@ export default class SelectedFeatureHandler {
             return
         }
 
-        OsmObject.DownloadObjectAsync(hash).then((obj) => {
+        this.state.objectDownloader.DownloadObjectAsync(hash).then((obj) => {
             try {
+                if (obj === "deleted") {
+                    return
+                }
                 console.log("Downloaded selected object from OSM-API for initial load: ", hash)
                 const geojson = obj.asGeoJson()
                 this.state.allElements.addOrGetElement(geojson)

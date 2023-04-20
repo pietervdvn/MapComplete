@@ -1,17 +1,13 @@
 import { Utils } from "../../Utils"
 import polygon_features from "../../assets/polygon-features.json"
-import { Store, UIEventSource } from "../UIEventSource"
-import { BBox } from "../BBox"
 import OsmToGeoJson from "osmtogeojson"
-import { NodeId, OsmFeature, OsmId, OsmTags, RelationId, WayId } from "../../Models/OsmFeature"
+import { OsmFeature, OsmId, OsmTags, WayId } from "../../Models/OsmFeature"
 import { Feature, LineString, Polygon } from "geojson"
 
 export abstract class OsmObject {
     private static defaultBackend = "https://www.openstreetmap.org/"
     protected static backendURL = OsmObject.defaultBackend
     private static polygonFeatures = OsmObject.constructPolygonFeatures()
-    private static objectCache = new Map<string, UIEventSource<OsmObject>>()
-    private static historyCache = new Map<string, UIEventSource<OsmObject[]>>()
     type: "node" | "way" | "relation"
     id: number
     /**
@@ -29,190 +25,6 @@ export abstract class OsmObject {
         this.tags = {
             id: `${this.type}/${id}`,
         }
-    }
-
-    public static SetBackendUrl(url: string) {
-        if (!url.endsWith("/")) {
-            throw "Backend URL must end with a '/'"
-        }
-        if (!url.startsWith("http")) {
-            throw "Backend URL must begin with http"
-        }
-        this.backendURL = url
-    }
-
-    public static DownloadObject(id: NodeId, forceRefresh?: boolean): Store<OsmNode>
-    public static DownloadObject(id: RelationId, forceRefresh?: boolean): Store<OsmRelation>
-    public static DownloadObject(id: WayId, forceRefresh?: boolean): Store<OsmWay>
-    public static DownloadObject(id: string, forceRefresh: boolean = false): Store<OsmObject> {
-        let src: UIEventSource<OsmObject>
-        if (OsmObject.objectCache.has(id)) {
-            src = OsmObject.objectCache.get(id)
-            if (forceRefresh) {
-                src.setData(undefined)
-            } else {
-                return src
-            }
-        } else {
-            src = UIEventSource.FromPromise(OsmObject.DownloadObjectAsync(id))
-        }
-
-        OsmObject.objectCache.set(id, src)
-        return src
-    }
-
-    static async DownloadPropertiesOf(id: string): Promise<OsmTags | "deleted"> {
-        const splitted = id.split("/")
-        const idN = Number(splitted[1])
-        if (idN < 0) {
-            return undefined
-        }
-
-        const url = `${OsmObject.backendURL}api/0.6/${id}`
-        const rawData = await Utils.downloadJsonCachedAdvanced(url, 1000)
-        if (rawData["error"] !== undefined && rawData["statuscode"] === 410) {
-            return "deleted"
-        }
-        // Tags is undefined if the element does not have any tags
-        return rawData["content"].elements[0].tags ?? {}
-    }
-
-    static async DownloadObjectAsync(
-        id: NodeId,
-        maxCacheAgeInSecs?: number
-    ): Promise<OsmNode | undefined>
-    static async DownloadObjectAsync(
-        id: WayId,
-        maxCacheAgeInSecs?: number
-    ): Promise<OsmWay | undefined>
-    static async DownloadObjectAsync(
-        id: RelationId,
-        maxCacheAgeInSecs?: number
-    ): Promise<OsmRelation | undefined>
-    static async DownloadObjectAsync(
-        id: OsmId,
-        maxCacheAgeInSecs?: number
-    ): Promise<OsmObject | undefined>
-    static async DownloadObjectAsync(
-        id: string,
-        maxCacheAgeInSecs?: number
-    ): Promise<OsmObject | undefined>
-    static async DownloadObjectAsync(
-        id: string,
-        maxCacheAgeInSecs?: number
-    ): Promise<OsmObject | undefined> {
-        const splitted = id.split("/")
-        const type = splitted[0]
-        const idN = Number(splitted[1])
-        if (idN < 0) {
-            return undefined
-        }
-
-        const full = !id.startsWith("node") ? "/full" : ""
-        const url = `${OsmObject.backendURL}api/0.6/${id}${full}`
-        const rawData = await Utils.downloadJsonCached(url, (maxCacheAgeInSecs ?? 10) * 1000)
-        if (rawData === undefined) {
-            return undefined
-        }
-        // A full query might contain more then just the requested object (e.g. nodes that are part of a way, where we only want the way)
-        const parsed = OsmObject.ParseObjects(rawData.elements)
-        // Lets fetch the object we need
-        for (const osmObject of parsed) {
-            if (osmObject.type !== type) {
-                continue
-            }
-            if (osmObject.id !== idN) {
-                continue
-            }
-            // Found the one!
-            return osmObject
-        }
-        throw "PANIC: requested object is not part of the response"
-    }
-
-    /**
-     * Downloads the ways that are using this node.
-     * Beware: their geometry will be incomplete!
-     */
-    public static DownloadReferencingWays(id: string): Promise<OsmWay[]> {
-        return Utils.downloadJsonCached(
-            `${OsmObject.backendURL}api/0.6/${id}/ways`,
-            60 * 1000
-        ).then((data) => {
-            return data.elements.map((wayInfo) => {
-                const way = new OsmWay(wayInfo.id)
-                way.LoadData(wayInfo)
-                return way
-            })
-        })
-    }
-
-    /**
-     * Downloads the relations that are using this feature.
-     * Beware: their geometry will be incomplete!
-     */
-    public static async DownloadReferencingRelations(id: string): Promise<OsmRelation[]> {
-        const data = await Utils.downloadJsonCached(
-            `${OsmObject.backendURL}api/0.6/${id}/relations`,
-            60 * 1000
-        )
-        return data.elements.map((wayInfo) => {
-            const rel = new OsmRelation(wayInfo.id)
-            rel.LoadData(wayInfo)
-            rel.SaveExtraData(wayInfo, undefined)
-            return rel
-        })
-    }
-
-    public static DownloadHistory(id: NodeId): UIEventSource<OsmNode[]>
-    public static DownloadHistory(id: WayId): UIEventSource<OsmWay[]>
-    public static DownloadHistory(id: RelationId): UIEventSource<OsmRelation[]>
-
-    public static DownloadHistory(id: OsmId): UIEventSource<OsmObject[]>
-    public static DownloadHistory(id: string): UIEventSource<OsmObject[]> {
-        if (OsmObject.historyCache.has(id)) {
-            return OsmObject.historyCache.get(id)
-        }
-        const splitted = id.split("/")
-        const type = splitted[0]
-        const idN = Number(splitted[1])
-        const src = new UIEventSource<OsmObject[]>([])
-        OsmObject.historyCache.set(id, src)
-        Utils.downloadJsonCached(
-            `${OsmObject.backendURL}api/0.6/${type}/${idN}/history`,
-            10 * 60 * 1000
-        ).then((data) => {
-            const elements: any[] = data.elements
-            const osmObjects: OsmObject[] = []
-            for (const element of elements) {
-                let osmObject: OsmObject = null
-                element.nodes = []
-                switch (type) {
-                    case "node":
-                        osmObject = new OsmNode(idN)
-                        break
-                    case "way":
-                        osmObject = new OsmWay(idN)
-                        break
-                    case "relation":
-                        osmObject = new OsmRelation(idN)
-                        break
-                }
-                osmObject?.LoadData(element)
-                osmObject?.SaveExtraData(element, [])
-                osmObjects.push(osmObject)
-            }
-            src.setData(osmObjects)
-        })
-        return src
-    }
-
-    // bounds should be: [[maxlat, minlon], [minlat, maxlon]] (same as Utils.tile_bounds)
-    public static async LoadArea(bbox: BBox): Promise<OsmObject[]> {
-        const url = `${OsmObject.backendURL}api/0.6/map.json?bbox=${bbox.minLon},${bbox.minLat},${bbox.maxLon},${bbox.maxLat}`
-        const data = await Utils.downloadJson(url)
-        const elements: any[] = data.elements
-        return OsmObject.ParseObjects(elements)
     }
 
     public static ParseObjects(elements: any[]): OsmObject[] {
@@ -357,12 +169,16 @@ export abstract class OsmObject {
         return 'version="' + this.version + '"'
     }
 
-    private LoadData(element: any): void {
-        this.tags = element.tags ?? this.tags
-        this.version = element.version
-        this.timestamp = element.timestamp
+    protected LoadData(element: any): void {
+        if (element === undefined) {
+            return
+        }
+        this.tags = element?.tags ?? this.tags
         const tgs = this.tags
-        if (element.tags === undefined) {
+        tgs["id"] = <OsmId>(this.type + "/" + this.id)
+        this.version = element?.version
+        this.timestamp = element?.timestamp
+        if (element?.tags === undefined) {
             // Simple node which is part of a way - not important
             return
         }
@@ -371,7 +187,6 @@ export abstract class OsmObject {
         tgs["_last_edit:changeset"] = element.changeset
         tgs["_last_edit:timestamp"] = element.timestamp
         tgs["_version_number"] = element.version
-        tgs["id"] = <OsmId>(this.type + "/" + this.id)
     }
 }
 
@@ -379,8 +194,9 @@ export class OsmNode extends OsmObject {
     lat: number
     lon: number
 
-    constructor(id: number) {
+    constructor(id: number, extraData?) {
         super("node", id)
+        this.LoadData(extraData)
     }
 
     ChangesetXML(changesetId: string): string {
@@ -431,8 +247,9 @@ export class OsmWay extends OsmObject {
     lat: number
     lon: number
 
-    constructor(id: number) {
+    constructor(id: number, wayInfo?) {
         super("way", id)
+        this.LoadData(wayInfo)
     }
 
     centerpoint(): [number, number] {
@@ -535,8 +352,9 @@ export class OsmRelation extends OsmObject {
 
     private geojson = undefined
 
-    constructor(id: number) {
+    constructor(id: number, extraInfo?: any) {
         super("relation", id)
+        this.LoadData(extraInfo)
     }
 
     centerpoint(): [number, number] {

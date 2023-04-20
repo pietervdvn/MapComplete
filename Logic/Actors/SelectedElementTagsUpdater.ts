@@ -3,13 +3,13 @@
  */
 import { UIEventSource } from "../UIEventSource"
 import { Changes } from "../Osm/Changes"
-import { OsmObject } from "../Osm/OsmObject"
 import { OsmConnection } from "../Osm/OsmConnection"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import SimpleMetaTagger from "../SimpleMetaTagger"
 import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
 import { Feature } from "geojson"
 import { OsmTags } from "../../Models/OsmFeature"
+import OsmObjectDownloader from "../Osm/OsmObjectDownloader"
 
 export default class SelectedElementTagsUpdater {
     private static readonly metatags = new Set([
@@ -27,6 +27,7 @@ export default class SelectedElementTagsUpdater {
         changes: Changes
         osmConnection: OsmConnection
         layout: LayoutConfig
+        osmObjectDownloader: OsmObjectDownloader
     }
 
     constructor(state: {
@@ -35,6 +36,7 @@ export default class SelectedElementTagsUpdater {
         changes: Changes
         osmConnection: OsmConnection
         layout: LayoutConfig
+        osmObjectDownloader: OsmObjectDownloader
     }) {
         this.state = state
         state.osmConnection.isLoggedIn.addCallbackAndRun((isLoggedIn) => {
@@ -70,8 +72,8 @@ export default class SelectedElementTagsUpdater {
                 return
             }
             try {
-                const latestTags = await OsmObject.DownloadPropertiesOf(id)
-                if (latestTags === "deleted") {
+                const osmObject = await state.osmObjectDownloader.DownloadObjectAsync(id)
+                if (osmObject === "deleted") {
                     console.warn("The current selected element has been deleted upstream!")
                     const currentTagsSource = state.featureProperties.getStore(id)
                     if (currentTagsSource.data["_deleted"] === "yes") {
@@ -81,6 +83,7 @@ export default class SelectedElementTagsUpdater {
                     currentTagsSource.ping()
                     return
                 }
+                const latestTags = osmObject.tags
                 this.applyUpdate(latestTags, id)
                 console.log("Updated", id)
             } catch (e) {

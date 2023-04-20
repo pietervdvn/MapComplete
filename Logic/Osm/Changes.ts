@@ -12,6 +12,7 @@ import { GeoOperations } from "../GeoOperations"
 import { ChangesetHandler, ChangesetTag } from "./ChangesetHandler"
 import { OsmConnection } from "./OsmConnection"
 import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
+import OsmObjectDownloader from "./OsmObjectDownloader"
 
 /**
  * Handles all changes made to OSM.
@@ -23,10 +24,10 @@ export class Changes {
     public readonly allChanges = new UIEventSource<ChangeDescription[]>(undefined)
     public readonly state: { allElements?: IndexedFeatureSource; osmConnection: OsmConnection }
     public readonly extraComment: UIEventSource<string> = new UIEventSource(undefined)
-
+    public readonly backend: string
     private readonly historicalUserLocations?: FeatureSource
     private _nextId: number = -1 // Newly assigned ID's are negative
-    private readonly isUploading = new UIEventSource(false)
+    public readonly isUploading = new UIEventSource(false)
     private readonly previouslyCreated: OsmObject[] = []
     private readonly _leftRightSensitive: boolean
     private readonly _changesetHandler: ChangesetHandler
@@ -47,6 +48,7 @@ export class Changes {
         // If a pending change contains a negative ID, we save that
         this._nextId = Math.min(-1, ...(this.pendingChanges.data?.map((pch) => pch.id) ?? []))
         this.state = state
+        this.backend = state.osmConnection.Backend()
         this._changesetHandler = new ChangesetHandler(
             state.dryRun,
             state.osmConnection,
@@ -147,274 +149,6 @@ export class Changes {
         this.pendingChanges.ping()
         this.allChanges.data.push(...changes)
         this.allChanges.ping()
-    }
-
-    private calculateDistanceToChanges(
-        change: OsmChangeAction,
-        changeDescriptions: ChangeDescription[]
-    ) {
-        const locations = this.historicalUserLocations?.features?.data
-        if (locations === undefined) {
-            // No state loaded or no locations -> we can't calculate...
-            return
-        }
-        if (!change.trackStatistics) {
-            // Probably irrelevant, such as a new helper node
-            return
-        }
-
-        const now = new Date()
-        const recentLocationPoints = locations
-            .filter((feat) => feat.geometry.type === "Point")
-            .filter((feat) => {
-                const visitTime = new Date(
-                    (<GeoLocationPointProperties>(<any>feat.properties)).date
-                )
-                // In seconds
-                const diff = (now.getTime() - visitTime.getTime()) / 1000
-                return diff < Constants.nearbyVisitTime
-            })
-        if (recentLocationPoints.length === 0) {
-            // Probably no GPS enabled/no fix
-            return
-        }
-
-        // The applicable points, contain information in their properties about location, time and GPS accuracy
-        // They are all GeoLocationPointProperties
-        // We walk every change and determine the closest distance possible
-        // Only if the change itself does _not_ contain any coordinates, we fall back and search the original feature in the state
-
-        const changedObjectCoordinates: [number, number][] = []
-
-        {
-            const feature = this.state.allElements?.featuresById?.data.get(change.mainObjectId)
-            if (feature !== undefined) {
-                changedObjectCoordinates.push(GeoOperations.centerpointCoordinates(feature))
-            }
-        }
-
-        for (const changeDescription of changeDescriptions) {
-            const chng:
-                | { lat: number; lon: number }
-                | { coordinates: [number, number][] }
-                | { members } = changeDescription.changes
-            if (chng === undefined) {
-                continue
-            }
-            if (chng["lat"] !== undefined) {
-                changedObjectCoordinates.push([chng["lat"], chng["lon"]])
-            }
-            if (chng["coordinates"] !== undefined) {
-                changedObjectCoordinates.push(...chng["coordinates"])
-            }
-        }
-
-        return Math.min(
-            ...changedObjectCoordinates.map((coor) =>
-                Math.min(
-                    ...recentLocationPoints.map((gpsPoint) => {
-                        const otherCoor = GeoOperations.centerpointCoordinates(gpsPoint)
-                        return GeoOperations.distanceBetween(coor, otherCoor)
-                    })
-                )
-            )
-        )
-    }
-
-    /**
-     * UPload the selected changes to OSM.
-     * Returns 'true' if successfull and if they can be removed
-     */
-    private async flushSelectChanges(
-        pending: ChangeDescription[],
-        openChangeset: UIEventSource<number>
-    ): Promise<boolean> {
-        const self = this
-        const neededIds = Changes.GetNeededIds(pending)
-
-        const osmObjects = Utils.NoNull(
-            await Promise.all(
-                neededIds.map(async (id) =>
-                    OsmObject.DownloadObjectAsync(id).catch((e) => {
-                        console.error(
-                            "Could not download OSM-object",
-                            id,
-                            " dropping it from the changes (" + e + ")"
-                        )
-                        pending = pending.filter((ch) => ch.type + "/" + ch.id !== id)
-                        return undefined
-                    })
-                )
-            )
-        )
-
-        if (this._leftRightSensitive) {
-            osmObjects.forEach((obj) => SimpleMetaTagger.removeBothTagging(obj.tags))
-        }
-
-        console.log("Got the fresh objects!", osmObjects, "pending: ", pending)
-        if (pending.length == 0) {
-            console.log("No pending changes...")
-            return true
-        }
-
-        const perType = Array.from(
-            Utils.Hist(
-                pending
-                    .filter(
-                        (descr) =>
-                            descr.meta.changeType !== undefined && descr.meta.changeType !== null
-                    )
-                    .map((descr) => descr.meta.changeType)
-            ),
-            ([key, count]) => ({
-                key: key,
-                value: count,
-                aggregate: true,
-            })
-        )
-        const motivations = pending
-            .filter((descr) => descr.meta.specialMotivation !== undefined)
-            .map((descr) => ({
-                key: descr.meta.changeType + ":" + descr.type + "/" + descr.id,
-                value: descr.meta.specialMotivation,
-            }))
-
-        const distances = Utils.NoNull(pending.map((descr) => descr.meta.distanceToObject))
-        distances.sort((a, b) => a - b)
-        const perBinCount = Constants.distanceToChangeObjectBins.map((_) => 0)
-
-        let j = 0
-        const maxDistances = Constants.distanceToChangeObjectBins
-        for (let i = 0; i < maxDistances.length; i++) {
-            const maxDistance = maxDistances[i]
-            // distances is sorted in ascending order, so as soon as one is to big, all the resting elements will be bigger too
-            while (j < distances.length && distances[j] < maxDistance) {
-                perBinCount[i]++
-                j++
-            }
-        }
-
-        const perBinMessage = Utils.NoNull(
-            perBinCount.map((count, i) => {
-                if (count === 0) {
-                    return undefined
-                }
-                const maxD = maxDistances[i]
-                let key = `change_within_${maxD}m`
-                if (maxD === Number.MAX_VALUE) {
-                    key = `change_over_${maxDistances[i - 1]}m`
-                }
-                return {
-                    key,
-                    value: count,
-                    aggregate: true,
-                }
-            })
-        )
-
-        // This method is only called with changedescriptions for this theme
-        const theme = pending[0].meta.theme
-        let comment = "Adding data with #MapComplete for theme #" + theme
-        if (this.extraComment.data !== undefined) {
-            comment += "\n\n" + this.extraComment.data
-        }
-
-        const metatags: ChangesetTag[] = [
-            {
-                key: "comment",
-                value: comment,
-            },
-            {
-                key: "theme",
-                value: theme,
-            },
-            ...perType,
-            ...motivations,
-            ...perBinMessage,
-        ]
-
-        await this._changesetHandler.UploadChangeset(
-            (csId, remappings) => {
-                if (remappings.size > 0) {
-                    console.log("Rewriting pending changes from", pending, "with", remappings)
-                    pending = pending.map((ch) => ChangeDescriptionTools.rewriteIds(ch, remappings))
-                    console.log("Result is", pending)
-                }
-                const changes: {
-                    newObjects: OsmObject[]
-                    modifiedObjects: OsmObject[]
-                    deletedObjects: OsmObject[]
-                } = self.CreateChangesetObjects(pending, osmObjects)
-                return Changes.createChangesetFor("" + csId, changes)
-            },
-            metatags,
-            openChangeset
-        )
-
-        console.log("Upload successfull!")
-        return true
-    }
-
-    private async flushChangesAsync(): Promise<void> {
-        const self = this
-        try {
-            // At last, we build the changeset and upload
-            const pending = self.pendingChanges.data
-
-            const pendingPerTheme = new Map<string, ChangeDescription[]>()
-            for (const changeDescription of pending) {
-                const theme = changeDescription.meta.theme
-                if (!pendingPerTheme.has(theme)) {
-                    pendingPerTheme.set(theme, [])
-                }
-                pendingPerTheme.get(theme).push(changeDescription)
-            }
-
-            const successes = await Promise.all(
-                Array.from(pendingPerTheme, async ([theme, pendingChanges]) => {
-                    try {
-                        const openChangeset = this.state.osmConnection
-                            .GetPreference("current-open-changeset-" + theme)
-                            .sync(
-                                (str) => {
-                                    const n = Number(str)
-                                    if (isNaN(n)) {
-                                        return undefined
-                                    }
-                                    return n
-                                },
-                                [],
-                                (n) => "" + n
-                            )
-                        console.log(
-                            "Using current-open-changeset-" +
-                                theme +
-                                " from the preferences, got " +
-                                openChangeset.data
-                        )
-
-                        return await self.flushSelectChanges(pendingChanges, openChangeset)
-                    } catch (e) {
-                        console.error("Could not upload some changes:", e)
-                        return false
-                    }
-                })
-            )
-
-            if (!successes.some((s) => s == false)) {
-                // All changes successfull, we clear the data!
-                this.pendingChanges.setData([])
-            }
-        } catch (e) {
-            console.error(
-                "Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those",
-                e
-            )
-            self.pendingChanges.setData([])
-        } finally {
-            self.isUploading.setData(false)
-        }
     }
 
     public CreateChangesetObjects(
@@ -583,5 +317,286 @@ export class Changes {
             "deleted"
         )
         return result
+    }
+
+    private calculateDistanceToChanges(
+        change: OsmChangeAction,
+        changeDescriptions: ChangeDescription[]
+    ) {
+        const locations = this.historicalUserLocations?.features?.data
+        if (locations === undefined) {
+            // No state loaded or no locations -> we can't calculate...
+            return
+        }
+        if (!change.trackStatistics) {
+            // Probably irrelevant, such as a new helper node
+            return
+        }
+
+        const now = new Date()
+        const recentLocationPoints = locations
+            .filter((feat) => feat.geometry.type === "Point")
+            .filter((feat) => {
+                const visitTime = new Date(
+                    (<GeoLocationPointProperties>(<any>feat.properties)).date
+                )
+                // In seconds
+                const diff = (now.getTime() - visitTime.getTime()) / 1000
+                return diff < Constants.nearbyVisitTime
+            })
+        if (recentLocationPoints.length === 0) {
+            // Probably no GPS enabled/no fix
+            return
+        }
+
+        // The applicable points, contain information in their properties about location, time and GPS accuracy
+        // They are all GeoLocationPointProperties
+        // We walk every change and determine the closest distance possible
+        // Only if the change itself does _not_ contain any coordinates, we fall back and search the original feature in the state
+
+        const changedObjectCoordinates: [number, number][] = []
+
+        {
+            const feature = this.state.allElements?.featuresById?.data.get(change.mainObjectId)
+            if (feature !== undefined) {
+                changedObjectCoordinates.push(GeoOperations.centerpointCoordinates(feature))
+            }
+        }
+
+        for (const changeDescription of changeDescriptions) {
+            const chng:
+                | { lat: number; lon: number }
+                | { coordinates: [number, number][] }
+                | { members } = changeDescription.changes
+            if (chng === undefined) {
+                continue
+            }
+            if (chng["lat"] !== undefined) {
+                changedObjectCoordinates.push([chng["lat"], chng["lon"]])
+            }
+            if (chng["coordinates"] !== undefined) {
+                changedObjectCoordinates.push(...chng["coordinates"])
+            }
+        }
+
+        return Math.min(
+            ...changedObjectCoordinates.map((coor) =>
+                Math.min(
+                    ...recentLocationPoints.map((gpsPoint) => {
+                        const otherCoor = GeoOperations.centerpointCoordinates(gpsPoint)
+                        return GeoOperations.distanceBetween(coor, otherCoor)
+                    })
+                )
+            )
+        )
+    }
+
+    /**
+     * Upload the selected changes to OSM.
+     * Returns 'true' if successful and if they can be removed
+     */
+    private async flushSelectChanges(
+        pending: ChangeDescription[],
+        openChangeset: UIEventSource<number>
+    ): Promise<boolean> {
+        const self = this
+        const neededIds = Changes.GetNeededIds(pending)
+        // We _do not_ pass in the Changes object itself - we want the data from OSM directly in order to apply the changes
+        const downloader = new OsmObjectDownloader(this.backend, undefined)
+        let osmObjects = await Promise.all<{ id: string; osmObj: OsmObject | "deleted" }>(
+            neededIds.map(async (id) => {
+                try {
+                    const osmObj = await downloader.DownloadObjectAsync(id)
+                    return { id, osmObj }
+                } catch (e) {
+                    console.error(
+                        "Could not download OSM-object",
+                        id,
+                        " dropping it from the changes (" + e + ")"
+                    )
+                    return undefined
+                }
+            })
+        )
+
+        osmObjects = Utils.NoNull(osmObjects)
+
+        for (const { osmObj, id } of osmObjects) {
+            if (osmObj === "deleted") {
+                pending = pending.filter((ch) => ch.type + "/" + ch.id !== id)
+            }
+        }
+
+        const objects = osmObjects
+            .filter((obj) => obj.osmObj !== "deleted")
+            .map((obj) => <OsmObject>obj.osmObj)
+
+        if (this._leftRightSensitive) {
+            objects.forEach((obj) => SimpleMetaTagger.removeBothTagging(obj.tags))
+        }
+
+        console.log("Got the fresh objects!", objects, "pending: ", pending)
+        if (pending.length == 0) {
+            console.log("No pending changes...")
+            return true
+        }
+
+        const perType = Array.from(
+            Utils.Hist(
+                pending
+                    .filter(
+                        (descr) =>
+                            descr.meta.changeType !== undefined && descr.meta.changeType !== null
+                    )
+                    .map((descr) => descr.meta.changeType)
+            ),
+            ([key, count]) => ({
+                key: key,
+                value: count,
+                aggregate: true,
+            })
+        )
+        const motivations = pending
+            .filter((descr) => descr.meta.specialMotivation !== undefined)
+            .map((descr) => ({
+                key: descr.meta.changeType + ":" + descr.type + "/" + descr.id,
+                value: descr.meta.specialMotivation,
+            }))
+
+        const distances = Utils.NoNull(pending.map((descr) => descr.meta.distanceToObject))
+        distances.sort((a, b) => a - b)
+        const perBinCount = Constants.distanceToChangeObjectBins.map((_) => 0)
+
+        let j = 0
+        const maxDistances = Constants.distanceToChangeObjectBins
+        for (let i = 0; i < maxDistances.length; i++) {
+            const maxDistance = maxDistances[i]
+            // distances is sorted in ascending order, so as soon as one is to big, all the resting elements will be bigger too
+            while (j < distances.length && distances[j] < maxDistance) {
+                perBinCount[i]++
+                j++
+            }
+        }
+
+        const perBinMessage = Utils.NoNull(
+            perBinCount.map((count, i) => {
+                if (count === 0) {
+                    return undefined
+                }
+                const maxD = maxDistances[i]
+                let key = `change_within_${maxD}m`
+                if (maxD === Number.MAX_VALUE) {
+                    key = `change_over_${maxDistances[i - 1]}m`
+                }
+                return {
+                    key,
+                    value: count,
+                    aggregate: true,
+                }
+            })
+        )
+
+        // This method is only called with changedescriptions for this theme
+        const theme = pending[0].meta.theme
+        let comment = "Adding data with #MapComplete for theme #" + theme
+        if (this.extraComment.data !== undefined) {
+            comment += "\n\n" + this.extraComment.data
+        }
+
+        const metatags: ChangesetTag[] = [
+            {
+                key: "comment",
+                value: comment,
+            },
+            {
+                key: "theme",
+                value: theme,
+            },
+            ...perType,
+            ...motivations,
+            ...perBinMessage,
+        ]
+
+        await this._changesetHandler.UploadChangeset(
+            (csId, remappings) => {
+                if (remappings.size > 0) {
+                    console.log("Rewriting pending changes from", pending, "with", remappings)
+                    pending = pending.map((ch) => ChangeDescriptionTools.rewriteIds(ch, remappings))
+                    console.log("Result is", pending)
+                }
+                const changes: {
+                    newObjects: OsmObject[]
+                    modifiedObjects: OsmObject[]
+                    deletedObjects: OsmObject[]
+                } = self.CreateChangesetObjects(pending, objects)
+                return Changes.createChangesetFor("" + csId, changes)
+            },
+            metatags,
+            openChangeset
+        )
+
+        console.log("Upload successfull!")
+        return true
+    }
+
+    private async flushChangesAsync(): Promise<void> {
+        const self = this
+        try {
+            // At last, we build the changeset and upload
+            const pending = self.pendingChanges.data
+
+            const pendingPerTheme = new Map<string, ChangeDescription[]>()
+            for (const changeDescription of pending) {
+                const theme = changeDescription.meta.theme
+                if (!pendingPerTheme.has(theme)) {
+                    pendingPerTheme.set(theme, [])
+                }
+                pendingPerTheme.get(theme).push(changeDescription)
+            }
+
+            const successes = await Promise.all(
+                Array.from(pendingPerTheme, async ([theme, pendingChanges]) => {
+                    try {
+                        const openChangeset = this.state.osmConnection
+                            .GetPreference("current-open-changeset-" + theme)
+                            .sync(
+                                (str) => {
+                                    const n = Number(str)
+                                    if (isNaN(n)) {
+                                        return undefined
+                                    }
+                                    return n
+                                },
+                                [],
+                                (n) => "" + n
+                            )
+                        console.log(
+                            "Using current-open-changeset-" +
+                                theme +
+                                " from the preferences, got " +
+                                openChangeset.data
+                        )
+
+                        return await self.flushSelectChanges(pendingChanges, openChangeset)
+                    } catch (e) {
+                        console.error("Could not upload some changes:", e)
+                        return false
+                    }
+                })
+            )
+
+            if (!successes.some((s) => s == false)) {
+                // All changes successfull, we clear the data!
+                this.pendingChanges.setData([])
+            }
+        } catch (e) {
+            console.error(
+                "Could not handle changes - probably an old, pending changeset in localstorage with an invalid format; erasing those",
+                e
+            )
+            self.pendingChanges.setData([])
+        } finally {
+            self.isUploading.setData(false)
+        }
     }
 }

@@ -8,6 +8,7 @@ import { And } from "../../Tags/And"
 import { Tag } from "../../Tags/Tag"
 import { OsmId } from "../../../Models/OsmFeature"
 import { Utils } from "../../../Utils"
+import OsmObjectDownloader from "../OsmObjectDownloader";
 
 export default class DeleteAction extends OsmChangeAction {
     private readonly _softDeletionTags: TagsFilter
@@ -71,8 +72,12 @@ export default class DeleteAction extends OsmChangeAction {
         changes: Changes,
         object?: OsmObject
     ): Promise<ChangeDescription[]> {
-        const osmObject = object ?? (await OsmObject.DownloadObjectAsync(this._id))
+        const osmObject = object ?? (await new OsmObjectDownloader(changes.backend, changes).DownloadObjectAsync(this._id))
 
+        if(osmObject === "deleted"){
+            // already deleted in the meantime - no more changes necessary
+            return []
+        }
         if (this._hardDelete) {
             return [
                 {

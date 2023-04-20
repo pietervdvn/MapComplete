@@ -12,13 +12,13 @@ import { VariableUiElement } from "../Base/VariableUIElement"
 import { LoginToggle } from "./LoginButton"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import WaySplitMap from "../BigComponents/WaySplitMap.svelte"
-import { OsmObject } from "../../Logic/Osm/OsmObject"
 import { Feature, Point } from "geojson"
 import { WayId } from "../../Models/OsmFeature"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import { Changes } from "../../Logic/Osm/Changes"
 import { IndexedFeatureSource } from "../../Logic/FeatureSource/FeatureSource"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
+import OsmObjectDownloader from "../../Logic/Osm/OsmObjectDownloader"
 
 export default class SplitRoadWizard extends Combine {
     public dialogIsOpened: UIEventSource<boolean>
@@ -34,6 +34,7 @@ export default class SplitRoadWizard extends Combine {
         state: {
             layout?: LayoutConfig
             osmConnection?: OsmConnection
+            osmObjectDownloader?: OsmObjectDownloader
             changes?: Changes
             indexedFeatures?: IndexedFeatureSource
             selectedElement?: UIEventSource<Feature>
@@ -52,7 +53,15 @@ export default class SplitRoadWizard extends Combine {
         const leafletMap = new UIEventSource<BaseUIElement>(undefined)
 
         function initMap() {
-            SplitRoadWizard.setupMapComponent(id, splitPoints).then((mapComponent) =>
+            ;(async function (
+                id: WayId,
+                splitPoints: UIEventSource<Feature[]>
+            ): Promise<BaseUIElement> {
+                return new SvelteUIElement(WaySplitMap, {
+                    osmWay: await state.osmObjectDownloader.DownloadObjectAsync(id),
+                    splitPoints,
+                })
+            })(id, splitPoints).then((mapComponent) =>
                 leafletMap.setData(mapComponent.SetClass("w-full h-80"))
             )
         }
@@ -130,17 +139,6 @@ export default class SplitRoadWizard extends Combine {
         splitButton.onClick(() => {
             splitClicked.setData(true)
             self.ScrollIntoView()
-        })
-    }
-
-    private static async setupMapComponent(
-        id: WayId,
-        splitPoints: UIEventSource<Feature[]>
-    ): Promise<BaseUIElement> {
-        const osmWay = await OsmObject.DownloadObjectAsync(id)
-        return new SvelteUIElement(WaySplitMap, {
-            osmWay,
-            splitPoints,
         })
     }
 }

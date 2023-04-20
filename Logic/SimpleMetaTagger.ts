@@ -14,12 +14,14 @@ import { OsmObject } from "./Osm/OsmObject"
 import { OsmTags } from "../Models/OsmFeature"
 import { UIEventSource } from "./UIEventSource"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import OsmObjectDownloader from "./Osm/OsmObjectDownloader"
 
 /**
  * All elements that are needed to perform metatagging
  */
 export interface MetataggingState {
     layout: LayoutConfig
+    osmObjectDownloader: OsmObjectDownloader
 }
 
 export abstract class SimpleMetaTagger {
@@ -97,7 +99,7 @@ export class ReferencingWaysMetaTagger extends SimpleMetaTagger {
         }
 
         Utils.AddLazyPropertyAsync(feature.properties, "_referencing_ways", async () => {
-            const referencingWays = await OsmObject.DownloadReferencingWays(id)
+            const referencingWays = await state.osmObjectDownloader.DownloadReferencingWays(id)
             const wayIds = referencingWays.map((w) => "way/" + w.id)
             wayIds.sort()
             return wayIds.join(";")

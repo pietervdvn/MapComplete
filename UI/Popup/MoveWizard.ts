@@ -233,13 +233,13 @@ export default class MoveWizard extends Toggle {
         } else if (id.startsWith("relation")) {
             moveDisallowedReason.setData(t.isRelation)
         } else if (id.indexOf("-") < 0) {
-            OsmObject.DownloadReferencingWays(id).then((referencing) => {
+            state.osmObjectDownloader.DownloadReferencingWays(id).then((referencing) => {
                 if (referencing.length > 0) {
                     console.log("Got a referencing way, move not allowed")
                     moveDisallowedReason.setData(t.partOfAWay)
                 }
             })
-            OsmObject.DownloadReferencingRelations(id).then((partOf) => {
+            state.osmObjectDownloader.DownloadReferencingRelations(id).then((partOf) => {
                 if (partOf.length > 0) {
                     moveDisallowedReason.setData(t.partOfRelation)
                 }

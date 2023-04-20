@@ -13,6 +13,7 @@ import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexe
 import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
 import { MenuState } from "../Models/MenuState";
+import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader";
 
 /**
  * The state needed to render a special Visualisation.
@@ -39,6 +40,7 @@ export interface SpecialVisualizationState {
     readonly featureSwitchUserbadge: Store<boolean>
     readonly featureSwitchIsTesting: Store<boolean>
     readonly changes: Changes
+    readonly osmObjectDownloader: OsmObjectDownloader
     /**
      * State of the main map
      */

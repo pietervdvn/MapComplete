@@ -82,7 +82,6 @@ export class OsmConnection {
             OsmConnection.oauth_configs[options.osmConfiguration ?? "osm"] ??
             OsmConnection.oauth_configs.osm
         console.debug("Using backend", this._oauth_config.url)
-        OsmObject.SetBackendUrl(this._oauth_config.url + "/")
         this._iframeMode = Utils.runningFromConsole ? false : window !== window.top
 
         this.userDetails = new UIEventSource<UserDetails>(

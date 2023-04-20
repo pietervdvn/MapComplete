@@ -42,6 +42,7 @@ import { MenuState } from "./MenuState"
 import MetaTagging from "../Logic/MetaTagging"
 import ChangeGeometryApplicator from "../Logic/FeatureSource/Sources/ChangeGeometryApplicator"
 import { NewGeometryFromChangesFeatureSource } from "../Logic/FeatureSource/Sources/NewGeometryFromChangesFeatureSource"
+import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader";
 
 /**
  *
@@ -64,6 +65,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly osmConnection: OsmConnection
     readonly selectedElement: UIEventSource<Feature>
     readonly mapProperties: MapProperties & ExportableMap
+    readonly osmObjectDownloader: OsmObjectDownloader
 
     readonly dataIsLoading: Store<boolean>
     readonly guistate: MenuState
@@ -212,6 +214,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.mapProperties.lastClickLocation,
             this.layout
         ))
+
+        this.osmObjectDownloader = new OsmObjectDownloader(this.osmConnection.Backend(), this.changes)
 
         this.initActors()
         this.drawSpecialLayers(lastClick)

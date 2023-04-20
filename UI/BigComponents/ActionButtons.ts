@@ -1,9 +1,5 @@
 import Combine from "../Base/Combine"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { Store } from "../../Logic/UIEventSource"
-import { BBox } from "../../Logic/BBox"
-import Loc from "../../Models/Loc"
-import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import Translations from "../i18n/Translations"
 import { SubtleButton } from "../Base/SubtleButton"
 import Svg from "../../Svg"
@@ -11,7 +7,7 @@ import { Utils } from "../../Utils"
 import { MapillaryLink } from "./MapillaryLink"
 import { OpenIdEditor, OpenJosm } from "./CopyrightPanel"
 import Toggle from "../Input/Toggle"
-import { DefaultGuiState } from "../DefaultGuiState"
+import { SpecialVisualizationState } from "../SpecialVisualization"
 
 export class BackToThemeOverview extends Toggle {
     constructor(
@@ -35,14 +31,7 @@ export class BackToThemeOverview extends Toggle {
 }
 
 export class ActionButtons extends Combine {
-    constructor(state: {
-        readonly layoutToUse: LayoutConfig
-        readonly currentBounds: Store<BBox>
-        readonly locationControl: Store<Loc>
-        readonly osmConnection: OsmConnection
-        readonly featureSwitchMoreQuests: Store<boolean>
-        readonly defaultGuiState: DefaultGuiState
-    }) {
+    constructor(state:SpecialVisualizationState) {
         const imgSize = "h-6 w-6"
         const iconStyle = "height: 1.5rem; width: 1.5rem"
         const t = Translations.t.general.attribution
@@ -76,7 +65,7 @@ export class ActionButtons extends Combine {
             }),
             new OpenIdEditor(state, iconStyle),
             new MapillaryLink(state, iconStyle),
-            new OpenJosm(state, iconStyle).SetClass("hidden-on-mobile"),
+            new OpenJosm(state.osmConnection,state.mapProperties.bounds, iconStyle).SetClass("hidden-on-mobile"),
         ])
         this.SetClass("block w-full link-no-underline")
     }

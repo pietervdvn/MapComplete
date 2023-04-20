@@ -4,9 +4,9 @@ import { ImmutableStore, Store, UIEventSource } from "../../UIEventSource"
 import { Tiles } from "../../../Models/TileRange"
 import { BBox } from "../../BBox"
 import { TagsFilter } from "../../Tags/TagsFilter"
-import { OsmObject } from "../../Osm/OsmObject"
 import { Feature } from "geojson"
 import FeatureSourceMerger from "../Sources/FeatureSourceMerger"
+import OsmObjectDownloader from "../../Osm/OsmObjectDownloader"
 
 /**
  * If a tile is needed (requested via the UIEventSource in the constructor), will download the appropriate tile and pass it via 'handleTile'
@@ -101,7 +101,17 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
 
             // This member is missing. We redownload the entire relation instead
             console.debug("Fetching incomplete relation " + feature.properties.id)
-            return (await OsmObject.DownloadObjectAsync(feature.properties.id)).asGeoJson()
+            const dfeature = await new OsmObjectDownloader(this._backend).DownloadObjectAsync(
+                feature.properties.id
+            )
+            if (dfeature === "deleted") {
+                console.warn(
+                    "This relation has been deleted in the meantime: ",
+                    feature.properties.id
+                )
+                return
+            }
+            return dfeature.asGeoJson()
         }
         return feature
     }
@@ -149,6 +159,7 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
                 for (let i = 0; i < features.length; i++) {
                     features[i] = await this.patchIncompleteRelations(features[i], osmJson)
                 }
+                features = Utils.NoNull(features)
                 features.forEach((f) => {
                     f.properties["_backend"] = this._backend
                 })
