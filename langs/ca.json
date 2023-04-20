@@ -88,7 +88,6 @@
     },
     "general": {
         "about": "Edita facilment i afegeix punts a OpenStreetMap d'una petició determinada",
-        "aboutMapcomplete": "<h3>Sobre</h3><p>Utilitza MapComplete per afegir informació a OpenStreetMap sobre un <b>únic tema.</b> Respon preguntes i en minuts les teves contribucions estaran disponibles a tot arreu. En molts temes pots afegir fotografies o fins i tot afegeix \"reviews\". El <b>mantenidor del tema</b> defineix els elements, preguntes i idiomes per a fer-ho possible.</p><h3>Troba més info</h3><p>MapComplete sempre <b>ofereix el següent pas</b> per aprendre'n més sobre OpenStreetMap.<ul><li>Quan està incrustat en un lloc web, l'iframe enllaça a un MapComplete a pantalla completa.</li><li>Aquesta versió ofereix informació sobre OpenStreetMap.</li><li>La visualització funciona sense iniciar sessió, però l'edició requereix un compte OSM.</li><li>Si no heu iniciat sessió, se us demanarà que ho feu</li><li>Un cop hagis respost una sola pregunta, pots afegir noves funcions al mapa</li><li>Després d'una estona, es mostraran les etiquetes actuals , i després els enllaços a la wiki.</li></ul></p><br/><p>Has trobat alguna <b>incidència</b>? Tens alguna <b> petició </b>? Vols <b>ajudar a traduir</b>? Vés a <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>per accedir al codi font</a> o al <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>registre d'incidències.</a> </p><p> Vols veure <b>els teus progressos </b>? Segueix el recompte d'edicions a <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
         "add": {
             "addNew": "Afegir {category} aquí",
             "backToSelect": "Selecciona una categoria diferent",
@@ -176,7 +175,6 @@
         "error": "Algo ha anat mal",
         "example": "Exemple",
         "examples": "Exemples",
-        "feelFreeToSkip": "Podeu afegir més informació a sota, però sentiu-vos lliures de <b>botar preguntes</b> que no conegueu la resposta.",
         "fewChangesBefore": "Contesta unes quantes preguntes sobre elements existents abans d'afegir-ne un de nou.",
         "getStartedLogin": "Entra a OpenStreetMap per començar",
         "getStartedNewAccount": " o <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">crea un nou compte</a>",
@@ -214,7 +212,6 @@
             "streetcomplete": "Una altra aplicació similar és <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "{category}: El seu nom és $$$",
-        "newlyCreated": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
         "next": "Següent",
         "noMatchingMapping": "No hi ha cap entrada que coincideixi amb la teva cerca…",
         "noNameCategory": "{category} sense nom",

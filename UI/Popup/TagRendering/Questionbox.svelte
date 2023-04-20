@@ -45,7 +45,6 @@
 
   let questionsToAsk = tags.map(tags => {
     const baseQuestions = (layer.tagRenderings ?? [])?.filter(tr => allowed(tr.labels) && tr.question !== undefined);
-    console.log("Determining questions for", baseQuestions)
     const questionsToAsk: TagRenderingConfig[] = [];
     for (const baseQuestion of baseQuestions) {
       if (skippedQuestions.data.has(baseQuestion.id) > 0) {

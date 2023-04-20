@@ -47,7 +47,8 @@
         "ja": "ルートの長さは平均で<b>{canonical(climbing:length)}</b>です",
         "fr": "Les voies font <b>{canonical(climbing:length)}</b> de long en moyenne",
         "it": "Le vie sono lunghe mediamente <b>{canonical(climbing:length)}</b>",
-        "es": "Las rutas miden <b>{canonical(climbing:length)}</b> de media"
+        "es": "Las rutas miden <b>{canonical(climbing:length)}</b> de media",
+        "ca": "Les rutes mesuren <b>{canonical(climbing:length)}</b> de mitja"
       },
       "question": {
         "de": "Wie lang sind die Routen (durchschnittlich) in Metern?",
@@ -56,7 +57,8 @@
         "ja": "ルートの(平均)長さはメートル単位でいくつですか?",
         "fr": "Quelle est la longueur moyenne des voies en mètres ?",
         "it": "Quale è la lunghezza (media) delle vie in metri?",
-        "es": "¿Cual es la longitud (media) de las rutas en metros?"
+        "es": "¿Cual es la longitud (media) de las rutas en metros?",
+        "ca": "Quina és la longitud (mitjana) de les rutes en metres?"
       },
       "freeform": {
         "key": "climbing:length",
@@ -129,7 +131,8 @@
         "ja": "ここでボルダリングはできますか?",
         "nb_NO": "Er buldring mulig her?",
         "fr": "L’escalade de bloc est-elle possible ici ?",
-        "it": "È possibile praticare ‘bouldering’ qua?"
+        "it": "È possibile praticare ‘bouldering’ qua?",
+        "ca": "És possible fer escalda en bloc aquí?"
       },
       "mappings": [
         {
@@ -141,7 +144,8 @@
             "ja": "ボルダリングはここで可能です",
             "nb_NO": "Buldring er mulig her",
             "fr": "L’escalade de bloc est possible",
-            "it": "L’arrampicata su massi è possibile qua"
+            "it": "L’arrampicata su massi è possibile qua",
+            "ca": "Aquí és possible l'escalada en bloc"
           }
         },
         {
@@ -153,7 +157,8 @@
             "ja": "ここではボルダリングはできません",
             "nb_NO": "Buldring er ikke mulig her",
             "fr": "L’escalade de bloc n’est pas possible",
-            "it": "L’arrampicata su massi non è possibile qua"
+            "it": "L’arrampicata su massi non è possibile qua",
+            "ca": "Aquí no és possible l'escalada en bloc"
           }
         },
         {
@@ -164,7 +169,8 @@
             "nl": "Bolderen kan hier, maar er zijn niet zoveel routes",
             "ja": "ボルダリングは可能ですが、少しのルートしかありません",
             "fr": "L’escalade de bloc est possible sur des voies précises",
-            "it": "L’arrampicata su massi è possibile anche se su poche vie"
+            "it": "L’arrampicata su massi è possibile anche se su poche vie",
+            "ca": "L'escalada en bloc és possible, tot i que només hi ha unes poques rutes"
           }
         },
         {
@@ -175,7 +181,8 @@
             "nl": "Er zijn hier {climbing:boulder} bolderroutes",
             "ja": "{climbing:boulder} ボルダールートがある",
             "fr": "Il y a {climbing:boulder} voies d’escalade de bloc",
-            "it": "Sono presenti {climbing:boulder} vie di arrampicata su massi"
+            "it": "Sono presenti {climbing:boulder} vie di arrampicata su massi",
+            "ca": "Hi han {climbing:boulder} rutes d'escalada en bloc"
           },
           "hideInAnswer": true
         }
@@ -355,14 +362,16 @@
         "es": "¿Se requiere una tasa para escalar aquí?",
         "de": "Ist das Klettern hier gebührenpflichtig?",
         "nl": "Moet men betalen om hier te klimmen?",
-        "fr": "Est-ce que la grimpe sur ce site est payante ?"
+        "fr": "Est-ce que la grimpe sur ce site est payante ?",
+        "ca": "Es requereix una tarifa per a pujar aquí?"
       },
       "render": {
         "en": "A fee of {charge} should be paid for climbing here",
         "de": "Zum Klettern wird eine Gebühr von {charge} erhoben",
         "es": "Se debe de pagar una tasa de {charge} para escalar aquí",
         "nl": "Men moet {charge} betalen om hier te klimmen",
-        "fr": "Une taxe de {charge} doit être payée pour grimper ici"
+        "fr": "Une taxe de {charge} doit être payée pour grimper ici",
+        "ca": "S'ha de pagar una tarifa de {charge} per a escalar aquí"
       },
       "freeform": {
         "key": "charge",
@@ -382,7 +391,8 @@
             "de": "Das Klettern ist hier kostenlos",
             "es": "La escalada es gratis",
             "nl": "Hier klimmen is gratis",
-            "fr": "Grimper ici est gratuit"
+            "fr": "Grimper ici est gratuit",
+            "ca": "L'escalada en bloc aquí és gratuïta"
           }
         },
         {
@@ -397,7 +407,8 @@
             "es": "Hay que pagar una tasa para escalar aquí",
             "de": "Zum Klettern ist eine Gebühr zu zahlen",
             "nl": "Men moet betalen om hier te klimmen",
-            "fr": "Il faut payer une taxe pour grimper ici"
+            "fr": "Il faut payer une taxe pour grimper ici",
+            "ca": "Cal pagar una quota per a escalar aquí"
           },
           "hideInAnswer": "charge~*"
         }

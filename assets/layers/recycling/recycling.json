@@ -945,7 +945,8 @@
           "then": {
             "en": "Printer cartridges can be recycled here",
             "nl": "Inktpatronen kunnen hier gerecycleerd worden",
-            "de": "Druckerpatronen können hier recycelt werden"
+            "de": "Druckerpatronen können hier recycelt werden",
+            "ca": "Els cartutxos d'impressora es poden reciclar aquí"
           },
           "icon": {
             "path": "./assets/layers/recycling/printer_cartridges.svg",

@@ -23,7 +23,7 @@ export class NewGeometryFromChangesFeatureSource implements WritableFeatureSourc
         const features = this.features.data
         const self = this
         const backend = changes.backend
-        changes.pendingChanges.stabilized(100).addCallbackAndRunD((changes) => {
+        changes.pendingChanges.addCallbackAndRunD((changes) => {
             if (changes.length === 0) {
                 return
             }
@@ -48,6 +48,7 @@ export class NewGeometryFromChangesFeatureSource implements WritableFeatureSourc
                     continue
                 }
 
+                console.log("Handling pending change")
                 if (change.id > 0) {
                     // This is an already existing object
                     // In _most_ of the cases, this means that this _isn't_ a new object
@@ -74,11 +75,9 @@ export class NewGeometryFromChangesFeatureSource implements WritableFeatureSourc
                             self.features.ping()
                         })
                     continue
-                } else if (change.id < 0 && change.changes === undefined) {
-                    // The geometry is not described - not a new point
-                    if (change.id < 0) {
-                        console.error("WARNING: got a new point without geometry!")
-                    }
+                } else if (change.changes === undefined) {
+                    // The geometry is not described - not a new point or geometry change, but probably a tagchange to a newly created point
+                    // Not something that should be handled here
                     continue
                 }
 

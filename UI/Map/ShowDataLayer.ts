@@ -9,7 +9,6 @@ import { OsmTags } from "../../Models/OsmFeature"
 import { FeatureSource } from "../../Logic/FeatureSource/FeatureSource"
 import { BBox } from "../../Logic/BBox"
 import { Feature, Point } from "geojson"
-import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 import LineRenderingConfig from "../../Models/ThemeConfig/LineRenderingConfig"
 import { Utils } from "../../Utils"
 import * as range_layer from "../../assets/layers/range/range.json"
@@ -360,7 +359,6 @@ export default class ShowDataLayer {
         drawMarkers?: true | boolean
         drawLines?: true | boolean
     }
-    private readonly _popupCache: Map<string, ScrollableFullScreen>
 
     constructor(
         map: Store<MlMap>,
@@ -372,7 +370,6 @@ export default class ShowDataLayer {
     ) {
         this._map = map
         this._options = options
-        this._popupCache = new Map()
         const self = this
         map.addCallbackAndRunD((map) => self.initDrawFeatures(map))
     }

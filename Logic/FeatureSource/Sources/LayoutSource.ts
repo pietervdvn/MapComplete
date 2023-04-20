@@ -43,7 +43,15 @@ export default class LayoutSource extends FeatureSourceMerger {
                     isActive: isDisplayed(l.id),
                 })
         )
-        const overpassSource = LayoutSource.setupOverpass(osmLayers, bounds, zoom, featureSwitches)
+
+        const overpassSource = LayoutSource.setupOverpass(
+            backend,
+            osmLayers,
+            bounds,
+            zoom,
+            featureSwitches
+        )
+
         const osmApiSource = LayoutSource.setupOsmApiSource(
             osmLayers,
             bounds,
@@ -121,6 +129,7 @@ export default class LayoutSource extends FeatureSourceMerger {
     }
 
     private static setupOverpass(
+        backend: string,
         osmLayers: LayerConfig[],
         bounds: Store<BBox>,
         zoom: Store<number>,

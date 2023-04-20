@@ -20,12 +20,12 @@ export default abstract class OsmChangeAction {
         this.mainObjectId = mainObjectId
     }
 
-    public Perform(changes: Changes) {
+    public async Perform(changes: Changes) {
         if (this.isUsed) {
             throw "This ChangeAction is already used"
         }
         this.isUsed = true
-        return this.CreateChangeDescriptions(changes)
+        return await this.CreateChangeDescriptions(changes)
     }
 
     protected abstract CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]>

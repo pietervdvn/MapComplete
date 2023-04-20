@@ -1164,6 +1164,16 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
     }
 
+    public static HomepageLink(): string {
+        if (typeof window === "undefined") {
+            return "https://mapcomplete.osm.be"
+        }
+        const path = window.location.href.split("/")
+        path.pop()
+        path.push("index.html")
+        return path.join("/")
+    }
+
     public static OsmChaLinkFor(daysInThePast, theme = undefined): string {
         const now = new Date()
         const lastWeek = new Date(now.getTime() - daysInThePast * 24 * 60 * 60 * 1000)

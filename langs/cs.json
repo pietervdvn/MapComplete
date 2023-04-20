@@ -88,10 +88,8 @@
     },
     "general": {
         "about": "Snadné úpravy a přidávání OpenStreetMap pro určité téma",
-        "aboutMapcomplete": "<h3>O službě</h3><p>Pomocí MapComplete můžete přidávat informace z OpenStreetMap na <b>samostatné téma</b>. Odpovězte na otázky a během několika minut jsou vaše příspěvky dostupné všude. Ve většině témat můžete přidávat obrázky nebo dokonce zanechat hodnocení. <b>Správce tématu</b> pro něj definuje prvky, otázky a jazyky.</p><h3>Další informace</h3><p>MapComplete vždy <b>nabízí další krok</b> k získání dalších informací o OpenStreetMap.<ul><li>Při vložení do webové stránky odkazuje iframe na MapComplete na celou obrazovku.</li><li>Verze na celou obrazovku nabízí informace o OpenStreetMap.</li><li>Prohlížení funguje bez přihlášení, ale editace vyžaduje účet OSM.</li><li>Pokud nejste přihlášeni, jste k tomu vyzváni</li><li>Po zodpovězení jedné otázky můžete do mapy přidávat nové funkce</li><li>Po chvíli se zobrazí aktuální značky OSM, později odkaz na wiki</li></ul></p><br/><p>Všimli jste si <b>problému</b>? Máte <b>požadavek na funkci</b>? Chcete <b>pomoci s překladem</b>? Přejděte na <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>zdrojový kód</a> nebo <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>sledovač problémů.</a> </p><p> Chcete se podívat na <b>svůj pokrok</b>? Sledujte počet úprav na <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
         "add": {
             "addNew": "Přidat {category}",
-            "addNewMapLabel": "Klikněte zde pro přidání nové položky",
             "backToSelect": "Vyberte jinou kategorii",
             "confirmButton": "Přidat kategorii {category}<br/><div class='alert'>Váš příspěvek je viditelný pro všechny</div>",
             "confirmIntro": "<h3>Přidat {title}?</h3>Funkce, kterou zde vytvoříte, bude <b>viditelná pro všechny</b>. Prosíme, přidávejte věci na mapu pouze tehdy, pokud skutečně existují. Tato data využívá mnoho aplikací.",

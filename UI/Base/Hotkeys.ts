@@ -99,14 +99,23 @@ export default class Hotkeys {
     }
 
     static generateDocumentation(): BaseUIElement {
-        const byKey: [string, string | Translation][] = Hotkeys._docs.data
+        let byKey: [string, string | Translation][] = Hotkeys._docs.data
             .map(({ key, documentation }) => {
                 const modifiers = Object.keys(key).filter((k) => k !== "nomod" && k !== "onUp")
-                const keycode: string = key["ctrl"] ?? key["shift"] ?? key["alt"] ?? key["nomod"]
+                let keycode: string = key["ctrl"] ?? key["shift"] ?? key["alt"] ?? key["nomod"]
+                if (keycode.length == 1) {
+                    keycode = keycode.toUpperCase()
+                }
                 modifiers.push(keycode)
                 return <[string, string | Translation]>[modifiers.join("+"), documentation]
             })
             .sort()
+        byKey = Utils.NoNull(byKey)
+        for (let i = byKey.length - 1; i > 0; i--) {
+            if (byKey[i - 1][0] === byKey[i][0]) {
+                byKey.splice(i, 1)
+            }
+        }
         const t = Translations.t.hotkeyDocumentation
         return new Combine([
             new Title(t.title, 1),

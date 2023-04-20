@@ -581,7 +581,7 @@
       "render": {
         "en": "More information on <a href='{website}' target='_blank'>this website</a>",
         "nl": "Meer informatie op <a href='{website}' target='_blank'>deze website</a>",
-        "fr": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>",
+        "fr": "Plus d'infos <a href='{website}' target='_blank'>sur ce site web</a>",
         "de": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>",
         "id": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini",
         "it": "Ulteriori informazioni su <a href='{website}' target='_blank'>questo sito web</a>",
@@ -632,7 +632,8 @@
         "pt": "A obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "es": "Esta obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "nb_NO": "Dette kunstverket viser {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
-        "ca": "Aquesta obra d'art representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+        "ca": "Aquesta obra d'art representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "fr": "Cette œuvre dépeint {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
       },
       "labels": [
         "artwork-question"
@@ -646,7 +647,8 @@
         "fr": "Cette oeuvre d'art sert-elle de banc ?",
         "nl": "Is dit kunstwerk ook een zitbank?",
         "nb_NO": "Tjener dette kunstverket funksjonen som benk?",
-        "ca": "Aquesta obra d'art serveix com a un banc?"
+        "ca": "Aquesta obra d'art serveix com a un banc?",
+        "cs": "Slouží toto umělecké dílo jako lavička?"
       },
       "mappings": [
         {
@@ -656,7 +658,8 @@
             "de": "Dieses Kunstwerk dient auch als Sitzbank",
             "fr": "Cette oeuvre d'art sert aussi de banc",
             "nl": "Dit kunstwerk doet ook dienst als zitbank",
-            "ca": "Aquesta obra d'art també serveix com a banc"
+            "ca": "Aquesta obra d'art també serveix com a banc",
+            "cs": "Toto umělecké dílo slouží také jako lavička"
           }
         },
         {
@@ -667,7 +670,8 @@
             "fr": "Cette oeuvre d'art ne sert pas de banc",
             "nl": "Dit kunstwerk doet geen dienst als zitbank",
             "nb_NO": "Dette kunstverket tjener ikke funksjonen som benk",
-            "ca": "Aquesta obra d'art no serveix com a banc"
+            "ca": "Aquesta obra d'art no serveix com a banc",
+            "cs": "Toto umělecké dílo neslouží jako lavička"
           }
         },
         {
@@ -678,7 +682,8 @@
             "fr": "Cette oeuvre d'art ne sert pas de banc",
             "nl": "Dit kunstwerk doet geen dienst als zitbank",
             "nb_NO": "Dette kunstverket tjener ikke den hensikten å være en benk",
-            "ca": "Aquesta obra d'art no serveix com a un banc"
+            "ca": "Aquesta obra d'art no serveix com a un banc",
+            "cs": "Toto umělecké dílo neslouží jako lavička"
           },
           "hideInAnswer": true
         }

@@ -240,13 +240,10 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                     container.style.height = document.documentElement.clientHeight + "px"
                 }
 
-                await html2canvas(
-                    map.getCanvasContainer(),
-                    {
-                        backgroundColor: "#00000000",
-                        canvas: drawOn,
-                    }
-                )
+                await html2canvas(map.getCanvasContainer(), {
+                    backgroundColor: "#00000000",
+                    canvas: drawOn,
+                })
             } catch (e) {
                 console.error(e)
             } finally {
@@ -261,7 +258,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
     private updateStores() {
         const map = this._maplibreMap.data
-        if (map === undefined) {
+        if (!map) {
             return
         }
         const dt = this.location.data

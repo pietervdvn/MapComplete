@@ -88,16 +88,18 @@
       changeType: "create",
       snapOnto: snapToWay 
     });
-    await state.changes.applyAction(newElementAction);
+    await state.changes.applyAction(newElementAction)
+    state.newFeatures.features.ping()
     // The 'changes' should have created a new point, which added this into the 'featureProperties'
     const newId = newElementAction.newElementId;
-    
+    console.log("Applied pending changes, fetching store for", newId)
     const tagsStore = state.featureProperties.getStore(newId);
     {
       // Set some metainfo
       const properties = tagsStore.data;
       if (snapTo) {
         // metatags (starting with underscore) are not uploaded, so we can safely mark this
+        delete properties["_referencing_ways"]
         properties["_referencing_ways"] = `["${snapTo}"]`;
       }
       properties["_backend"] = state.osmConnection.Backend()

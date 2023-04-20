@@ -4,7 +4,6 @@ import Combine from "./Base/Combine"
 import MoreScreen from "./BigComponents/MoreScreen"
 import Translations from "./i18n/Translations"
 import Constants from "../Models/Constants"
-import { Utils } from "../Utils"
 import LanguagePicker from "./LanguagePicker"
 import IndexText from "./BigComponents/IndexText"
 import { ImportViewerLinks } from "./BigComponents/UserInformation"
@@ -31,10 +30,8 @@ export default class AllThemesGui {
                     featureSwitchUserbadge: new ImmutableStore(true),
                 }),
                 new ImportViewerLinks(state.osmConnection),
-                Translations.t.general.aboutMapcomplete
-                    .Subs({ osmcha_link: Utils.OsmChaLinkFor(7) })
-                    .SetClass("link-underline"),
-                new FixedUiElement("v" + Constants.vNumber),
+                Translations.t.general.aboutMapComplete.intro.SetClass("link-underline"),
+                new FixedUiElement("v" + Constants.vNumber).SetClass("block"),
             ])
                 .SetClass("block m-5 lg:w-3/4 lg:ml-40")
                 .AttachTo("main")

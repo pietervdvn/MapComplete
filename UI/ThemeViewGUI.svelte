@@ -22,7 +22,6 @@
   import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte";
   import FloatOver from "./Base/FloatOver.svelte";
   import PrivacyPolicy from "./BigComponents/PrivacyPolicy";
-  import { Utils } from "../Utils";
   import Constants from "../Models/Constants";
   import TabbedGroup from "./Base/TabbedGroup.svelte";
   import UserRelatedState from "../Logic/State/UserRelatedState";
@@ -31,6 +30,8 @@
   import CopyrightPanel from "./BigComponents/CopyrightPanel";
   import { DownloadPanel } from "./BigComponents/DownloadPanel";
   import ModalRight from "./Base/ModalRight.svelte";
+  import { Utils } from "../Utils";
+  import Hotkeys from "./Base/Hotkeys";
 
   export let state: ThemeViewState;
   let layout = state.layout;
@@ -95,7 +96,8 @@
 
 <div class="absolute top-0 right-0 mt-4 mr-4">
   <If condition={state.featureSwitches.featureSwitchSearch}>
-    <Geosearch bounds={state.mapProperties.bounds} {selectedElement} {selectedLayer} perLayer={state.perLayer}></Geosearch>
+    <Geosearch bounds={state.mapProperties.bounds} perLayer={state.perLayer} {selectedElement}
+               {selectedLayer}></Geosearch>
   </If>
 </div>
 
@@ -152,20 +154,22 @@
           <RasterLayerPicker {availableLayers} value={mapproperties.rasterLayer}></RasterLayerPicker>
         </If>
       </div>
-      <div slot="title2" class="flex">
-        <img src="./assets/svg/download.svg" class="w-4 h-4"/>
-        <Tr t={Translations.t.general.download.title}/>
+      <div class="flex" slot="title2">
+        <If condition={state.featureSwitches.featureSwitchEnableExport}>
+          <img class="w-4 h-4" src="./assets/svg/download.svg" />
+          <Tr t={Translations.t.general.download.title} />
+        </If>
       </div>
       <div slot="content2">
-        <ToSvelte construct={() => new DownloadPanel(state)}/>
+        <ToSvelte construct={() => new DownloadPanel(state)} />
       </div>
-      
+
       <div slot="title3">
-        <Tr t={Translations.t.general.attribution.title}/>
+        <Tr t={Translations.t.general.attribution.title} />
       </div>
-      
-      <ToSvelte slot="content3" construct={() => new CopyrightPanel(state)}></ToSvelte>
-      
+
+      <ToSvelte construct={() => new CopyrightPanel(state)} slot="content3"></ToSvelte>
+
 
     </TabbedGroup>
   </FloatOver>
@@ -177,16 +181,42 @@
   <FloatOver on:close={() => state.guistate.menuIsOpened.setData(false)}>
     <TabbedGroup tab={state.guistate.menuViewTabIndex}>
       <div class="flex" slot="title0">
-        <Tr t={Translations.t.general.aboutMapcompleteTitle}></Tr>
+        <Tr t={Translations.t.general.menu.aboutMapComplete} />
       </div>
 
       <div class="flex flex-col" slot="content0">
-        <Tr t={Translations.t.general.aboutMapcomplete.Subs({
-                    osmcha_link: Utils.OsmChaLinkFor(7),
-                })}></Tr>
 
+        <Tr t={Translations.t.general.aboutMapComplete.intro} />
+
+        <a class="flex" href={Utils.HomepageLink()}>
+          <img class="w-6 h-6" src="./assets/svg/add.svg">
+          <Tr t={Translations.t.general.backToIndex} />
+        </a>
+
+        <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
+          <img class="w-6 h-6" src="./assets/svg/bug.svg">
+          <Tr t={Translations.t.general.attribution.openIssueTracker} />
+        </a>
+
+
+        <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
+          <img class="w-6 h-6" src="./assets/svg/mastodon.svg">
+          <Tr t={Translations.t.general.attribution.followOnMastodon} />
+        </a>
+
+        <a class="flex" href="https://liberapay.com/pietervdvn/" target="_blank">
+          <img class="w-6 h-6" src="./assets/svg/liberapay.svg">
+          <Tr t={Translations.t.general.attribution.donate} />
+        </a>
+
+        <a class="flex" href={Utils.OsmChaLinkFor(7)} target="_blank">
+          <img class="w-6 h-6" src="./assets/svg/statistics.svg">
+          <Tr t={Translations.t.general.attribution.openOsmcha.Subs({theme: "MapComplete"})} />
+        </a>
         {Constants.vNumber}
+        <ToSvelte construct={Hotkeys.generateDocumentationDynamic}></ToSvelte>
       </div>
+
 
       <If condition={state.osmConnection.isLoggedIn} slot="title1">
         <div class="flex">
@@ -199,16 +229,16 @@
         <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
         <LoginToggle {state}>
           <div slot="not-logged-in">
-            <Tr class="alert" t={Translations.t.userinfo.notLoggedIn}/>
+            <Tr class="alert" t={Translations.t.userinfo.notLoggedIn} />
             <LoginButton osmConnection={state.osmConnection}></LoginButton>
           </div>
           <SelectedElementView
-            layer={UserRelatedState.usersettingsConfig}
-            selectedElement={({
+            highlightedRendering={state.guistate.highlightedUserSetting}
+            layer={UserRelatedState.usersettingsConfig} selectedElement={({
         type:"Feature",properties: {}, geometry: {type:"Point", coordinates: [0,0]}
-        })} {state}
-            tags={state.userRelatedState.preferencesAsTags} 
-          highlightedRendering={state.guistate.highlightedUserSetting}
+        })}
+            {state}
+            tags={state.userRelatedState.preferencesAsTags}
           />
         </LoginToggle>
       </div>

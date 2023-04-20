@@ -16,7 +16,6 @@
     },
     "general": {
         "about": "特定のテーマに沿って、OpenStreetMapを簡単に編集し、情報を追加できます",
-        "aboutMapcomplete": "<h3>MapCompleteについて</h3><p>MapCompleteを使えば、<b>1つのテーマに関する情報でOpenStreetMapを充実させることができます。</b>いくつかの質問に答えると、数分以内にあなたの投稿が世界中で公開されます!<b>テーマメンテナ</b>は、テーマの要素、質問、言語を定義します。</p><h3>詳細情報を見る</h3><p>MapCompleteは常にOpenStreetMapについてさらに学ぶため<b>次のステップ</b>を提供します。</p><ul><li>Webサイトに埋め込まれるとiframeはフルスクリーンのMapCompleteにリンクします</li><li>フルスクリーン版はOpenStreetMapに関する情報を提供します</li><li>ログインせずに表示することはできますが、編集にはOSMログインが必要です。</li><li>ログインしていない場合は、ログインするように求められます</li><li>1つの質問に回答すると、マップに新しいポイントを追加できます</li><li>しばらくすると、実際のOSMタグが表示され、後でWikiにリンクされます</li></ul><p></p><br><p><b>問題</b>に気づきましたか?<b>機能要求</b>はありますか?<b>翻訳の手伝いをしますか?</b><a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">ソースコード</a>または<a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">問題追跡ツール</a>に移動します。</p><p><b>進捗状況</b>を確認しますか? <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>の編集数に従います。</p>",
         "add": {
             "addNew": "ここに新しい {category} を追加します",
             "confirmButton": "ここに{category}を追加します。<br><div class=\"alert\">追加内容はすべてのユーザーに表示されます。</div>",

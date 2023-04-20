@@ -23,10 +23,12 @@
   export let layer: LayerConfig;
   let trs: { then: Translation; icon?: string; iconClass?: string }[];
   $: trs = Utils.NoNull(config?.GetRenderValues(_tags));
+  let classes = ""
+  $:classes = config?.classes?.join(" ") ?? "";
 </script>
 
 {#if config !== undefined && (config?.condition === undefined || config.condition.matchesProperties(_tags))}
-  <div class="flex flex-col w-full">
+  <div class={"flex flex-col w-full "+classes}>
     {#if trs.length === 1}
       <TagRenderingMapping mapping={trs[0]} {tags} {state} {selectedElement} {layer}></TagRenderingMapping>
     {/if}

@@ -457,7 +457,8 @@
             "de": "Wie viele type_plural können hier gemietet werden?",
             "fr": "Combien de type_plural peuvent être loués ici ?",
             "cs": "Kolik typů kol si zde můžete pronajmout?",
-            "es": "¿Cuántas type_plural pueden alquilarse aquí?"
+            "es": "¿Cuántas type_plural pueden alquilarse aquí?",
+            "ca": "Quantes type_plural poden llogar-se aquí?"
           },
           "render": {
             "en": "{capacity:bicycle_type} type_plural can be rented here",
@@ -465,7 +466,8 @@
             "de": "{capacity:bicycle_type} type_plural können hier gemietet werden",
             "fr": "{capacity:bicycle_type} type_plural peuvent être loués ici",
             "cs": "{capacity:bicycle_type} typů si můžete pronajmout zde",
-            "es": "{capacity:bicycle_type} type_plural pueden alquilarse aquí"
+            "es": "{capacity:bicycle_type} type_plural pueden alquilarse aquí",
+            "ca": "{capacity:bicycle_type} type_plural es poden llogar aquí"
           },
           "freeform": {
             "key": "capacity:bicycle_type",

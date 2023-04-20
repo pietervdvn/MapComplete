@@ -191,7 +191,8 @@
         "en": "There are {capacity:disabled} disabled parking spots",
         "nl": "Er zijn {capacity:disabled} parkeerplaatsen voor gehandicapten",
         "de": "Es gibt {capacity:disabled} barrierefreie Stellplätze",
-        "fr": "Il y a {capacity:disabled} places de stationnement pour personnes à mobilité réduite"
+        "fr": "Il y a {capacity:disabled} places de stationnement pour personnes à mobilité réduite",
+        "ca": "Hi ha {capacity:disabled} places d'aparcament per a discapacitats"
       }
     },
     {

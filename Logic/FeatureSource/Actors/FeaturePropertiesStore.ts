@@ -12,6 +12,7 @@ export default class FeaturePropertiesStore {
         this._source = source
         const self = this
         source.features.addCallbackAndRunD((features) => {
+            console.log("Re-indexing features")
             for (const feature of features) {
                 const id = feature.properties.id
                 if (id === undefined) {
@@ -21,6 +22,7 @@ export default class FeaturePropertiesStore {
 
                 const source = self._elements.get(id)
                 if (source === undefined) {
+                    console.log("Adding feature store for", id)
                     self._elements.set(id, new UIEventSource<any>(feature.properties))
                     continue
                 }

@@ -65,7 +65,6 @@ export default class SplitRoadWizard extends Combine {
                 leafletMap.setData(mapComponent.SetClass("w-full h-80"))
             )
         }
-        initMap()
 
         // Toggle between splitmap
         const splitButton = new SubtleButton(
@@ -94,7 +93,6 @@ export default class SplitRoadWizard extends Combine {
             await state.changes?.applyAction(splitAction)
             // We throw away the old map and splitpoints, and create a new map from scratch
             splitPoints.setData([])
-            initMap()
 
             // Close the popup. The contributor has to select a segment again to make sure they continue editing the correct segment; see #1219
             state.selectedElement?.setData(undefined)
@@ -134,6 +132,11 @@ export default class SplitRoadWizard extends Combine {
             ),
             new Toggle(mapView, splitToggle, splitClicked),
         ])
+        splitClicked.addCallback((view) => {
+            if (view) {
+                initMap()
+            }
+        })
         this.dialogIsOpened = splitClicked
         const self = this
         splitButton.onClick(() => {

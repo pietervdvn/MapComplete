@@ -250,6 +250,7 @@ export default class UserRelatedState {
         const amendedPrefs = new UIEventSource<Record<string, string>>({
             _theme: layout?.id,
             _backend: this.osmConnection.Backend(),
+            _applicationOpened: new Date().toISOString(),
         })
 
         const osmConnection = this.osmConnection
@@ -299,7 +300,6 @@ export default class UserRelatedState {
                         "" + (total - untranslated_count)
                     amendedPrefs.data["_translation_percentage"] =
                         "" + Math.floor((100 * (total - untranslated_count)) / total)
-                    console.log("Setting zenLinks", zenLinks)
                     amendedPrefs.data["_translation_links"] = JSON.stringify(zenLinks)
                 }
                 amendedPrefs.ping()
@@ -355,7 +355,8 @@ export default class UserRelatedState {
 
         amendedPrefs.addCallbackD((tags) => {
             for (const key in tags) {
-                if (key.startsWith("_")) {
+                if (key.startsWith("_") || key === "mapcomplete-language") {
+                    // Language is managed seperately
                     continue
                 }
                 this.osmConnection.GetPreference(key, undefined, { prefix: "" }).setData(tags[key])

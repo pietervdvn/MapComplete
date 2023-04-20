@@ -59,7 +59,6 @@
     },
     "general": {
         "about": "Éditer facilement et ajouter OpenStreetMap pour un certain thème",
-        "aboutMapcomplete": "<h3>À propos de MapComplete</h3><p>Avec MapComplete vous pouvez enrichir OpenStreetMap d'informations sur un <b>thème unique.</b> Répondez à quelques questions, et en quelques minutes vos contributions seront disponibles dans le monde entier ! Le <b>concepteur du thème</b> définis les éléments, questions et langues pour le thème.</p><h3>En savoir plus</h3><p>MapComplete <b>propose toujours l'étape suivante</b> pour en apprendre plus sur OpenStreetMap.</p><ul><li>Lorsqu'il est intégré dans un site Web, l'<i>iframe</i> pointe vers MapComplete en plein écran</li><li>La version plein écran donne des informations sur OpenStreetMap</li><li>Il est possible de regarder sans se connecter, mais l'édition demande une connexion à OSM.</li><li>Si vous n'êtes pas connecté, il vous est demandé de le faire</li><li>Une fois que vous avez répondu à une seule question, vous pouvez ajouter de nouveaux points à la carte</li><li>Au bout d'un moment, les vrais tags OSM sont montrés, qui pointent ensuite vers le wiki</li></ul><p></p><br><p>Vous avez remarqué <b>un problème</b> ? Vous souhaitez <b>demander une fonctionnalité</b> ? Vous voulez <b>aider à traduire</b> ? Allez voir <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">le code source</a> ou le <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\"><i>gestionnaire de tickets</i></a>.</p><p> Vous voulez visualiser <b>votre progression</b> ? Suivez le compteur d'édition sur <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
         "add": {
             "addNew": "Ajouter {category}",
             "backToSelect": "Sélectionner une catégorie différente",
@@ -147,7 +146,6 @@
         "error": "Quelque chose ne s'est pas passé correctement",
         "example": "Exemple",
         "examples": "Exemples",
-        "feelFreeToSkip": "Vous pouvez ajouter ou mettre à jour d'autres informations ci-dessous, mais n'hésitez pas à <b>passer les questions</b> auxquels vous ne savez pas répondre.",
         "fewChangesBefore": "Merci de répondre à quelques questions à propos de points déjà existants avant d'ajouter de nouveaux points.",
         "getStartedLogin": "Connectez-vous avec OpenStreetMap pour commencer",
         "getStartedNewAccount": " ou <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">créez un compte</a>",
@@ -178,7 +176,6 @@
             "streetcomplete": "Une autre application similaire est <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "nameInlineQuestion": "Le nom de cet/cette {category} est $$$",
-        "newlyCreated": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
         "next": "Suivant",
         "noMatchingMapping": "Aucun résultat ne correspond à votre recherche…",
         "noNameCategory": "{category} sans nom",

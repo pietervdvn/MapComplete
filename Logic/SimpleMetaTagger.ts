@@ -556,6 +556,27 @@ export default class SimpleMetaTaggers {
             return true
         }
     )
+
+    private static timeSinceLastEdit = new InlineMetaTagger(
+        {
+            keys: ["_last_edit:passed_time"],
+            doc: "Gives the number of seconds since the last edit. Note that this will _not_ update, but rather be the number of seconds elapsed at the moment this tag is read first",
+            isLazy: true,
+            includesDates: true,
+        },
+        (feature, layer, tagsStore) => {
+            Utils.AddLazyProperty(feature.properties, "_last_edit:passed_time", () => {
+                const lastEditTimestamp = new Date(
+                    feature.properties["_last_edit:timestamp"]
+                ).getTime()
+                const now: number = Date.now()
+                const millisElapsed = now - lastEditTimestamp
+                return "" + millisElapsed / 1000
+            })
+            return true
+        }
+    )
+
     public static metatags: SimpleMetaTagger[] = [
         SimpleMetaTaggers.latlon,
         SimpleMetaTaggers.layerInfo,
@@ -572,6 +593,7 @@ export default class SimpleMetaTaggers {
         SimpleMetaTaggers.geometryType,
         SimpleMetaTaggers.levels,
         SimpleMetaTaggers.referencingWays,
+        SimpleMetaTaggers.timeSinceLastEdit,
     ]
 
     /**

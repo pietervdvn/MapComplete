@@ -18,7 +18,8 @@
     "cs": "Známé adresy v OSM",
     "pa_PK": "او‌ایس‌ایم وچ جاݨ پچھاݨے پتے",
     "ca": "Adreces conegudes a OSM",
-    "zgh": "ⴰⵏⵙⵉⵡⵏ ⵉⵜⵜⵡⴰⵙⵙⵏⵏ ⴳ OSM"
+    "zgh": "ⴰⵏⵙⵉⵡⵏ ⵉⵜⵜⵡⴰⵙⵙⵏⵏ ⴳ OSM",
+    "pt_BR": "Endereços conhecidos no OSM"
   },
   "minzoom": 18,
   "source": {
@@ -50,7 +51,8 @@
       "nb_NO": "Kjent adresse",
       "da": "Kendt adresse",
       "cs": "Známá adresa",
-      "ca": "Adreça coneguda"
+      "ca": "Adreça coneguda",
+      "pt_BR": "Endereço conhecido"
     }
   },
   "description": {
@@ -72,7 +74,8 @@
     "eo": "Adresoj",
     "cs": "Adresy",
     "pa_PK": "پتے",
-    "zgh": "ⴰⵏⵙⵉⵡⵏ"
+    "zgh": "ⴰⵏⵙⵉⵡⵏ",
+    "pt_BR": "Endereços"
   },
   "tagRenderings": [
     {
@@ -92,7 +95,8 @@
         "cs": "Číslo domu je <b>{addr:housenumber}</b>",
         "pt": "The house number is <b>{addr:housenumber}</b>",
         "nb_NO": "Husnummeret er <b>{addr:housenumber}</b>",
-        "ca": "El número de porta és <b>{addr:housenumber}</b>"
+        "ca": "El número de porta és <b>{addr:housenumber}</b>",
+        "pt_BR": "O número da casa é <b>{addr:housenumber}</b>"
       },
       "question": {
         "en": "What is the number of this house?",
@@ -109,7 +113,8 @@
         "cs": "Jaké je číslo tohoto domu?",
         "pt": "Qual é o número desta casa?",
         "nb_NO": "Hvilket husnummer har dette huset?",
-        "ca": "Quin és el número d'aquesta casa?"
+        "ca": "Quin és el número d'aquesta casa?",
+        "pt_BR": "Qual é o número desta casa?"
       },
       "freeform": {
         "key": "addr:housenumber",
@@ -140,7 +145,8 @@
             "cs": "Tato budova nemá číslo domu",
             "pt": "Este prédio não tem número",
             "nb_NO": "Denne bygningen har ikke noe husnummer",
-            "ca": "Aquest edifici no té número"
+            "ca": "Aquest edifici no té número",
+            "pt_BR": "Este prédio não tem número"
           }
         }
       ]
@@ -220,7 +226,8 @@
         "cs": "Co by se zde mělo opravit? Vysvětlete to, prosím",
         "pt": "O que deve ser corrigido aqui? Explique",
         "nb_NO": "Hva bør fikses her? Forklar.",
-        "ca": "Què s’hauria de corregir aquí? Exposa-ho"
+        "ca": "Què s’hauria de corregir aquí? Exposa-ho",
+        "pt_BR": "O que deve ser corrigido aqui? Explique"
       },
       "freeform": {
         "key": "fixme"

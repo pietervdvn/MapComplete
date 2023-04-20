@@ -19,6 +19,12 @@ export interface TagRenderingConfigJson {
     labels?: string[]
 
     /**
+     * A list of css-classes to apply to the entire tagRendering if the answer is known (not applied on the question).
+     * This is only for advanced users
+     */
+    classes?: string | string[]
+
+    /**
      * A human-readable text explaining what this tagRendering does
      */
     description?: string | Record<string, string>

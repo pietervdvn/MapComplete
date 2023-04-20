@@ -244,8 +244,9 @@ export abstract class Store<T> implements Readable<T> {
         const self = this
         condition = condition ?? ((t) => t !== undefined)
         return new Promise((resolve) => {
-            if (condition(self.data)) {
-                resolve(self.data)
+            const data = self.data
+            if (condition(data)) {
+                resolve(data)
             } else {
                 self.addCallbackD((data) => {
                     resolve(data)

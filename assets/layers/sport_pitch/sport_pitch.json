@@ -178,7 +178,8 @@
         "it": "Qual è la superficie di questo campo sportivo?",
         "ru": "Какое покрытие на этой спортивной площадке?",
         "de": "Welchen Belag hat der Sportplatz?",
-        "es": "¿Cual es la superficie de esta pista de deportes?"
+        "es": "¿Cual es la superficie de esta pista de deportes?",
+        "ca": "Quina és la superfície d'aquest camp esportiu?"
       },
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",
@@ -271,7 +272,7 @@
         "ru": "Есть ли свободный доступ к этой спортивной площадке?",
         "de": "Ist der Sportplatz öffentlich zugänglich?",
         "es": "¿Esta pista de deportes es accesible públicamente?",
-        "ca": "Aquesta pista d'esports és accessible públicament?"
+        "ca": "Aquesta pista d'esports és accessible al públic?"
       },
       "mappings": [
         {
@@ -613,7 +614,7 @@
             "en": "Publicly accessible",
             "nl": "Publiek toegankelijk",
             "de": "Öffentlich zugänglich",
-            "ca": "Accés lliure"
+            "ca": "Accessible al públic"
           },
           "osmTags": {
             "or": [

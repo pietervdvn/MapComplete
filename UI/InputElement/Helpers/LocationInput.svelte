@@ -14,7 +14,7 @@
   /**
    * Called when setup is done, can be used to add more layers to the map
    */
-  export let onCreated : (value: Store<{lon: number, lat: number}> , map: Store<MlMap>, mapProperties: MapProperties ) => void
+  export let onCreated : (value: Store<{lon: number, lat: number}> , map: Store<MlMap>, mapProperties: MapProperties ) => void = undefined
   
   export let map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined);
   let mla = new MapLibreAdaptor(map, mapProperties);

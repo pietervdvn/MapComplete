@@ -34,7 +34,8 @@
       "ru": "Велостанция (накачка шин и ремонт)",
       "es": "Estación de bicis (bomba y reparación)",
       "da": "Cykelstation (pumpe og reparation)",
-      "ca": "Estació de bicicletes (bomba i reparació)"
+      "ca": "Estació de bicicletes (bomba i reparació)",
+      "cs": "Cyklistická stanice (pumpa a opravna)"
     },
     "mappings": [
       {
@@ -887,7 +888,8 @@
         "pt": "Um aparelho para encher os seus pneus num local fixa no espaço público",
         "es": "Un dispositivo para inflar tus ruedas en una posición fija en el espacio público.",
         "da": "En anordning til at fylde dine dæk op på et fast sted i det offentlige rum.",
-        "cs": "Zařízení pro huštění pneumatik na pevném místě na veřejném místě."
+        "cs": "Zařízení pro huštění pneumatik na pevném místě na veřejném místě.",
+        "ca": "Un dispositiu per a unflar les teues rodes en una posició fixa a l'espai públic."
       },
       "exampleImages": [
         "./assets/layers/bike_repair_station/pump_example_round.jpg",

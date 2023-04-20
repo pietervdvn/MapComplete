@@ -591,6 +591,13 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
     ): { result: LayerConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
         json = JSON.parse(JSON.stringify(json))
 
+        if (
+            json.tagRenderings &&
+            !json.tagRenderings.some((tr) => tr === "just_created" || tr["id"] === "just_created")
+        ) {
+            json.tagRenderings.unshift(this._desugaring.tagRenderings.get("just_created"))
+        }
+
         if (json.allowSplit && !ValidationUtils.hasSpecialVisualisation(json, "split_button")) {
             json.tagRenderings.push({
                 id: "split-button",

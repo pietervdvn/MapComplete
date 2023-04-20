@@ -8,7 +8,6 @@ import { LoginToggle } from "../Popup/LoginButton"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import LoggedInUserIndicator from "../LoggedInUserIndicator"
-import { ActionButtons } from "./ActionButtons"
 import { BBox } from "../../Logic/BBox"
 import Loc from "../../Models/Loc"
 import { DefaultGuiState } from "../DefaultGuiState"
@@ -80,7 +79,6 @@ export default class ThemeIntroductionPanel extends Combine {
             layout.descriptionTail?.Clone().SetClass("block mt-4"),
 
             languagePicker?.SetClass("block mt-4 pb-8 border-b-2 border-dotted border-gray-400"),
-            new ActionButtons(state),
 
             ...layout.CustomCodeSnippets(),
         ])

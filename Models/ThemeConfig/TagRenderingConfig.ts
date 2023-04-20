@@ -69,7 +69,7 @@ export default class TagRenderingConfig {
 
     public readonly mappings?: Mapping[]
     public readonly labels: string[]
-
+    public readonly classes: string[]
     constructor(json: string | QuestionableTagRenderingConfigJson, context?: string) {
         if (json === undefined) {
             throw "Initing a TagRenderingConfig with undefined in " + context
@@ -110,6 +110,11 @@ export default class TagRenderingConfig {
         }
 
         this.labels = json.labels ?? []
+        if (typeof json.classes === "string") {
+            this.classes = json.classes.split(" ")
+        } else {
+            this.classes = json.classes ?? []
+        }
         this.render = Translations.T(<any>json.render, translationKey + ".render")
         this.question = Translations.T(json.question, translationKey + ".question")
         this.questionhint = Translations.T(json.questionHint, translationKey + ".questionHint")

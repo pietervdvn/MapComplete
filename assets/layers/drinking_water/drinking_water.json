@@ -60,7 +60,8 @@
         "it": "una acqua potabile",
         "ru": "питьевая вода",
         "id": "air minum",
-        "hu": "ivóvíz"
+        "hu": "ivóvíz",
+        "ca": "una font d'aigua potable"
       },
       "tags": [
         "amenity=drinking_water"
@@ -77,7 +78,8 @@
         "fr": "Ce point d'eau potable est-il toujours opérationnel ?",
         "de": "Ist diese Trinkwasserstelle noch in Betrieb?",
         "hu": "Működik-e még ez az ivóvíznyerő hely?",
-        "es": "¿Todavía esta operativo este punto de agua potable?"
+        "es": "¿Todavía esta operativo este punto de agua potable?",
+        "ca": "Aquest punt d'aigua potable continua operatiu?"
       },
       "render": {
         "en": "The operational status is <i>{operational_status}</i>",
@@ -86,7 +88,8 @@
         "fr": "L'état opérationnel est <i>{operational_status}</i>",
         "de": "Der Betriebsstatus ist <i>{operational_status}</i>",
         "hu": "Működési állapota: <i>{operational_status}</i>",
-        "es": "El estado operacional es <i>{operational_status}</i>"
+        "es": "El estado operacional es <i>{operational_status}</i>",
+        "ca": "L'estat operatiu és <i>{operational_status}</i>"
       },
       "freeform": {
         "key": "operational_status"
@@ -114,7 +117,8 @@
             "fr": "Cette fontaine est cassée",
             "de": "Diese Trinkwasserstelle ist kaputt",
             "hu": "Ez az ivóvízkút elromlott",
-            "es": "Esta agua potable está rota"
+            "es": "Esta agua potable está rota",
+            "ca": "Aquesta font d'aigua potable està trencada"
           }
         },
         {
@@ -126,7 +130,8 @@
             "fr": "Cette fontaine est fermée",
             "de": "Diese Trinkwasserstelle wurde geschlossen",
             "hu": "Ez az ivóvízkút el van zárva",
-            "es": "Esta agua potable está cerrada"
+            "es": "Esta agua potable está cerrada",
+            "ca": "Aquesta font d'aigua potable està tancada"
           }
         }
       ],
@@ -211,7 +216,8 @@
           "en": "This is a decorative fountain of which the water is not drinkable by humans",
           "nl": "Dit is een decoratieve fontein waarvan het water niet geschikt is om te drinken door mensen",
           "de": "Dies ist ein Zierbrunnen, dessen Wasser für den Menschen nicht trinkbar ist",
-          "es": "Esta es una fuente decorativa con agua no potable"
+          "es": "Esta es una fuente decorativa con agua no potable",
+          "ca": "Es tracta d'una font decorativa amb aigua no potable"
         }
       },
       {
@@ -226,7 +232,8 @@
           "en": "This is a water tap or water pump with non-drinkable water.<div class='subtle'>Examples are water taps with rain water to tap water for nearby plants</div>",
           "nl": "Dit is een waterkraan of waterpomp met ondrinkbaar water.<div class='subtle'>Bijvoorbeeld een waterkraan met regenwater om planten water mee te geven</div",
           "de": "Dies ist ein Wasserhahn oder eine Wasserpumpe mit nicht trinkbarem Wasser.<div class='subtle'>Beispiele sind Wasserhähne mit Regenwasser zum Zapfen von Wasser für nahe gelegene Pflanzen</div>",
-          "es": "Este es un grifo de agua o una bomba de agua con agua no potable.<div class='subtle'>Ejemplos son grifos con agua de lluvia o agua del grifo para plantas cercanas</div>"
+          "es": "Este es un grifo de agua o una bomba de agua con agua no potable.<div class='subtle'>Ejemplos son grifos con agua de lluvia o agua del grifo para plantas cercanas</div>",
+          "ca": "Es tracta d'una aixeta d'aigua o bomba d'aigua amb aigua no potable. <div class='subtle'> Per exemple les aixetes d'aigua amb aigua de pluja per aprofitar i regar les plantes properes</div>"
         }
       }
     ]
@@ -264,6 +271,7 @@
     "hu": "Ivóvizet adó kutakat megjelenítő réteg",
     "de": "Eine Ebene mit Trinkwasserbrunnen",
     "es": "Una capa que muestra fuentes de agua potable",
-    "fr": "Une couche montrant les fontaines d'eau potable"
+    "fr": "Une couche montrant les fontaines d'eau potable",
+    "ca": "Una capa que mostra fonts d'aigua potable"
   }
 }

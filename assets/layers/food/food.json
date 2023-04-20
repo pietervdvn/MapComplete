@@ -484,7 +484,8 @@
             "nl": "Eten kan hier afgehaald worden",
             "de": "Hier werden Gerichte auch zum Mitnehmen angeboten",
             "es": "Aquí es posible pedir para llevar",
-            "fr": "La vente à emporter est possible ici"
+            "fr": "La vente à emporter est possible ici",
+            "ca": "Aquí és possible demanar per emportar"
           }
         },
         {
@@ -494,7 +495,8 @@
             "nl": "Hier is geen afhaalmogelijkheid",
             "de": "Hier werden Gerichte nicht zum Mitnehmen angeboten",
             "es": "Aquí no es posible pedir para llevar",
-            "fr": "La vente à emporter n'est pas possible ici"
+            "fr": "La vente à emporter n'est pas possible ici",
+            "ca": "Aquí no és possible demanar per emportar"
           }
         }
       ],
@@ -516,7 +518,8 @@
             "en": "This business does home delivery (eventually via a third party)",
             "de": "Dieses Unternehmen liefert nach Hause (eventuell über eine dritte Partei)",
             "fr": "Ce restaurant effectue la livraison à domicile (éventuellement via un tiers)",
-            "nl": "Deze zaak levert aan huis (eventueel via een derde partij)"
+            "nl": "Deze zaak levert aan huis (eventueel via een derde partij)",
+            "ca": "Aquest negoci fa lliuraments a domicili (eventualment a través d'un tercer)"
           }
         },
         {
@@ -525,7 +528,8 @@
             "en": "This business does not deliver at home",
             "de": "Dieses Unternehmen liefert nicht nach Hause",
             "fr": "Ce restaurant ne livre pas à domicile",
-            "nl": "Deze zaak doet geen thuisleveringen"
+            "nl": "Deze zaak doet geen thuisleveringen",
+            "ca": "Aquest negoci no fa lliurament a casa"
           }
         }
       ]
@@ -536,7 +540,8 @@
         "en": "Does this restaurant have a vegetarian option?",
         "de": "Werden hier vegetarische Gerichte angeboten?",
         "es": "¿Este restaurante tiene una opción vegetariana?",
-        "fr": "Ce restaurant propose-t-il une option végétarienne ?"
+        "fr": "Ce restaurant propose-t-il une option végétarienne ?",
+        "ca": "Aquest restaurant té opció vegetariana?"
       },
       "mappings": [
         {
@@ -546,7 +551,8 @@
             "nl": "Geen vegetarische opties beschikbaar",
             "de": "Hier werden keine vegetarischen Gerichte angeboten",
             "es": "Sin opciones vegetarianas",
-            "fr": "Aucune option végétarienne n'est disponible"
+            "fr": "Aucune option végétarienne n'est disponible",
+            "ca": "No hi ha opcions vegetarianes disponibles"
           }
         },
         {
@@ -556,7 +562,8 @@
             "nl": "Beperkte vegetarische opties zijn beschikbaar",
             "de": "Hier werden nur wenige vegetarische Gerichte angeboten",
             "es": "Algunas opciones vegetarianas",
-            "fr": "Certaines options végétariennes sont disponibles"
+            "fr": "Certaines options végétariennes sont disponibles",
+            "ca": "Algunes opcions vegetarianes"
           }
         },
         {
@@ -566,7 +573,8 @@
             "nl": "Vegetarische opties zijn beschikbaar",
             "de": "Hier werden vegetarische Gerichte angeboten",
             "es": "Opciones vegetarianas disponibles",
-            "fr": "Des options végétariennes sont disponibles"
+            "fr": "Des options végétariennes sont disponibles",
+            "ca": "Hi ha opcions vegetarianes disponibles"
           }
         },
         {
@@ -576,7 +584,8 @@
             "nl": "Enkel vegetarische opties zijn beschikbaar",
             "de": "Hier werden ausschließlich vegetarische Gerichte angeboten",
             "es": "Todos los platos son vegetarianos",
-            "fr": "Tous les plats sont végétariens"
+            "fr": "Tous les plats sont végétariens",
+            "ca": "Tots els plats són vegetarians"
           }
         }
       ],
@@ -589,7 +598,8 @@
         "nl": "Heeft deze eetgelegenheid een veganistische optie?",
         "de": "Werden hier vegane Gerichte angeboten?",
         "es": "¿Este negocio sirve comida vegana?",
-        "fr": "Cet établissement sert-il des repas végétaliens ?"
+        "fr": "Cet établissement sert-il des repas végétaliens ?",
+        "ca": "Aquest negoci serveix menjars vegans?"
       },
       "mappings": [
         {
@@ -599,7 +609,8 @@
             "nl": "Geen veganistische opties beschikbaar",
             "de": "Hier werden keine veganen Gerichte angeboten",
             "es": "Sin opciones veganas disponibles",
-            "fr": "Aucune option végétalienne disponible"
+            "fr": "Aucune option végétalienne disponible",
+            "ca": "No hi ha opcions veganes disponibles"
           }
         },
         {
@@ -609,7 +620,8 @@
             "nl": "Beperkte veganistische opties zijn beschikbaar",
             "de": "Hier werden nur wenige vegane Gerichte angeboten",
             "es": "Alguna opciones veganas disponibles",
-            "fr": "Certaines options végétaliennes sont disponibles"
+            "fr": "Certaines options végétaliennes sont disponibles",
+            "ca": "Hi ha algunes opcions veganes disponibles"
           }
         },
         {
@@ -619,7 +631,8 @@
             "nl": "Veganistische opties zijn beschikbaar",
             "de": "Hier werden vegane Gerichte angeboten",
             "es": "Opciones veganas disponibles",
-            "fr": "Des options végétaliennes sont disponibles"
+            "fr": "Des options végétaliennes sont disponibles",
+            "ca": "Hi ha opcions veganes disponibles"
           }
         },
         {
@@ -629,7 +642,8 @@
             "nl": "Enkel veganistische opties zijn beschikbaar",
             "de": "Hier werden ausschließlich vegane Gerichte angeboten",
             "es": "Todos los platos son veganos",
-            "fr": "Tous les plats sont végétaliens"
+            "fr": "Tous les plats sont végétaliens",
+            "ca": "Tots els plats són vegans"
           }
         }
       ],
@@ -641,7 +655,8 @@
         "en": "Does this restaurant offer a halal menu?",
         "nl": "Heeft dit restaurant halal opties?",
         "de": "Werden hier halal Gerichte angeboten?",
-        "fr": "Ce restaurant propose-t-il un menu halal ?"
+        "fr": "Ce restaurant propose-t-il un menu halal ?",
+        "ca": "Aquest restaurant ofereix un menú halal?"
       },
       "mappings": [
         {
@@ -650,7 +665,8 @@
             "en": "There are no halal options available",
             "nl": "Er zijn geen halal opties aanwezig",
             "de": "Hier werden keine halal Gerichte angeboten",
-            "fr": "Il n'y a pas d'options halal disponibles"
+            "fr": "Il n'y a pas d'options halal disponibles",
+            "ca": "No hi ha opcions halal disponibles"
           }
         },
         {
@@ -659,7 +675,8 @@
             "en": "There is a small halal menu",
             "nl": "Er zijn een beperkt aantal halal opties",
             "de": "Hier werden nur wenige halal Gerichte angeboten",
-            "fr": "Il y a un petit menu halal"
+            "fr": "Il y a un petit menu halal",
+            "ca": "Hi ha un petit menú halal"
           }
         },
         {
@@ -668,7 +685,8 @@
             "nl": "Halal menu verkrijgbaar",
             "en": "There is a halal menu",
             "de": "Hier werden halal Gerichte angeboten",
-            "fr": "Il y a un menu halal"
+            "fr": "Il y a un menu halal",
+            "ca": "Hi ha un menú halal"
           }
         },
         {
@@ -677,7 +695,8 @@
             "nl": "Enkel halal opties zijn beschikbaar",
             "en": "Only halal options are available",
             "de": "Hier werden ausschließlich halal Gerichte angeboten",
-            "fr": "Seules les options halal sont disponibles"
+            "fr": "Seules les options halal sont disponibles",
+            "ca": "Només hi ha opcions halal disponibles"
           }
         }
       ],
@@ -690,7 +709,8 @@
         "en": "Does this restaurant offer organic food?",
         "de": "Bietet dieses Restaurant biologische Speisen an?",
         "nl": "Biedt dit restaurant biologisch eten?",
-        "fr": "Ce restaurant propose-t-il de la nourriture bio ?"
+        "fr": "Ce restaurant propose-t-il de la nourriture bio ?",
+        "ca": "Aquest restaurant ofereix menjar ecològic?"
       },
       "mappings": [
         {
@@ -699,7 +719,8 @@
             "en": "There are no organic options available",
             "de": "Es sind keine biologischen Produkte verfügbar",
             "nl": "Er zijn geen biologische opties beschikbaar",
-            "fr": "Il n'y a pas d'option bio disponible"
+            "fr": "Il n'y a pas d'option bio disponible",
+            "ca": "No hi ha opcions ecològiques disponibles"
           }
         },
         {
@@ -708,7 +729,8 @@
             "en": "There is an organic menu",
             "de": "Es gibt ein biologisches Menü",
             "nl": "Er is een biologisch menu",
-            "fr": "Il y a un menu bio"
+            "fr": "Il y a un menu bio",
+            "ca": "Hi ha un menú ecològic"
           }
         },
         {
@@ -717,7 +739,8 @@
             "en": "Only organic options are available",
             "de": "Nur biologische Produkte sind erhältlich",
             "nl": "Er zijn alleen biologische opties beschikbaar",
-            "fr": "Bio uniquement"
+            "fr": "Bio uniquement",
+            "ca": "Només hi ha opcions ecològiques disponibles"
           }
         }
       ],

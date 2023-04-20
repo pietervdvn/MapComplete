@@ -30,7 +30,6 @@ export default class FeatureSwitchState {
     public readonly featureSwitchFilter: UIEventSource<boolean>
     public readonly featureSwitchEnableExport: UIEventSource<boolean>
     public readonly featureSwitchFakeUser: UIEventSource<boolean>
-    public readonly featureSwitchExportAsPdf: UIEventSource<boolean>
     public readonly overpassUrl: UIEventSource<string[]>
     public readonly overpassTimeout: UIEventSource<number>
     public readonly overpassMaxZoom: UIEventSource<number>
@@ -125,13 +124,8 @@ export default class FeatureSwitchState {
 
         this.featureSwitchEnableExport = featSw(
             "fs-export",
-            (layoutToUse) => layoutToUse?.enableExportButton ?? false,
+            (layoutToUse) => layoutToUse?.enableExportButton ?? true,
             "Enable the export as GeoJSON and CSV button"
-        )
-        this.featureSwitchExportAsPdf = featSw(
-            "fs-pdf",
-            (layoutToUse) => layoutToUse?.enablePdfDownload ?? false,
-            "Enable the PDF download button"
         )
 
         this.featureSwitchApiURL = QueryParameters.GetQueryParameter(

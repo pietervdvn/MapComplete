@@ -475,7 +475,7 @@
             }
         },
         "overrideAll": {
-            "tagRenderings+": {
+            "+tagRenderings": {
                 "0": {
                     "mappings": {
                         "0": {

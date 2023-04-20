@@ -74,12 +74,10 @@ export default class SelectedElementTagsUpdater {
             try {
                 const osmObject = await state.osmObjectDownloader.DownloadObjectAsync(id)
                 if (osmObject === "deleted") {
-                    console.warn("The current selected element has been deleted upstream!")
+                    console.debug("The current selected element has been deleted upstream!", id)
                     const currentTagsSource = state.featureProperties.getStore(id)
-                    if (currentTagsSource.data["_deleted"] === "yes") {
-                        return
-                    }
                     currentTagsSource.data["_deleted"] = "yes"
+                    currentTagsSource.addCallbackAndRun((tags) => console.trace("Tags are", tags))
                     currentTagsSource.ping()
                     return
                 }

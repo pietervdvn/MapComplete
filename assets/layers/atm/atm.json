@@ -6,7 +6,8 @@
     "fr": "DABs",
     "nl": "Geldautomaten",
     "ca": "Caixers Automàtics",
-    "nb_NO": "Minibanker"
+    "nb_NO": "Minibanker",
+    "cs": "Bankomaty"
   },
   "description": {
     "en": "ATMs to withdraw money",
@@ -24,7 +25,8 @@
       "fr": "DAB",
       "nl": "Geldautomaat",
       "nb_NO": "Minibank",
-      "ca": "Caixer Automàtic"
+      "ca": "Caixer Automàtic",
+      "cs": "Bankomat"
     },
     "mappings": [
       {
@@ -35,7 +37,8 @@
           "fr": "DAB {brand}",
           "nl": "{brand} Geldautomaat",
           "nb_NO": "{brand}-minibank",
-          "ca": "Caixer automàtic {brand}"
+          "ca": "Caixer automàtic {brand}",
+          "cs": "Bankomat {brand}"
         }
       }
     ]
@@ -55,7 +58,8 @@
         "fr": "un DAB",
         "nl": "een geldautomaat",
         "ca": "un caixer automàtic",
-        "nb_NO": "en minibank"
+        "nb_NO": "en minibank",
+        "cs": "bankomat"
       }
     }
   ],
@@ -69,7 +73,8 @@
         "fr": "Le nom de ce DAB est {name}",
         "nl": "De naam van deze geldautomaat is {name}",
         "ca": "El nom d'aquest caixer és {name}",
-        "nb_NO": "Navnet på denne minibanken er {name}"
+        "nb_NO": "Navnet på denne minibanken er {name}",
+        "cs": "Název tohoto bankomatu je {name}"
       },
       "condition": "name~*"
     },
@@ -81,7 +86,8 @@
         "fr": "De quelle marque est ce DAB ?",
         "nl": "Van welk merk is deze geldautomaat?",
         "ca": "De quina marca és aquest caixer?",
-        "nb_NO": "Hvilet merke har denne minibanken?"
+        "nb_NO": "Hvilet merke har denne minibanken?",
+        "cs": "Jaká je značka bankomatu?"
       },
       "freeform": {
         "key": "brand",
@@ -92,7 +98,8 @@
           "fr": "Nom de marque",
           "nl": "Merknaam",
           "nb_NO": "Merkenavn",
-          "ca": "Nom de la marca"
+          "ca": "Nom de la marca",
+          "cs": "Obchodní značka"
         }
       },
       "render": {
@@ -101,7 +108,8 @@
         "fr": "La marque de ce DAB est {brand}",
         "nl": "Het merk van deze geldautomaat is {brand}",
         "nb_NO": "Merkenavnet for denne minibanken er {brand}",
-        "ca": "La marca d'aquest caixer és {brand}"
+        "ca": "La marca d'aquest caixer és {brand}",
+        "cs": "Značka tohoto bankomatu je {brand}"
       }
     },
     {
@@ -113,7 +121,8 @@
         "fr": "Quelle société exploite ce DAB ?",
         "nl": "Welk bedrijf beheert deze geldautomaat?",
         "nb_NO": "Hvilket selskap driver denne minibanken?",
-        "ca": "Quina companyia opera aquest caixer?"
+        "ca": "Quina companyia opera aquest caixer?",
+        "cs": "Která společnost provozuje tento bankomat?"
       },
       "freeform": {
         "key": "operator",
@@ -123,7 +132,8 @@
           "de": "Betreiber",
           "fr": "Opérateur",
           "nl": "Beheerder",
-          "ca": "Operador"
+          "ca": "Operador",
+          "cs": "Operátor"
         }
       },
       "render": {
@@ -132,7 +142,8 @@
         "fr": "Ce DAB est exploité par {operator}",
         "nl": "Deze geldautomaat wordt beheerd door {operator}",
         "nb_NO": "Minibanken drives av {operator}",
-        "ca": "{operator} opera aquest caixer"
+        "ca": "{operator} opera aquest caixer",
+        "cs": "Bankomat provozuje {operator}"
       }
     },
     "opening_hours",
@@ -143,7 +154,8 @@
         "de": "Kann man an diesem Geldautomaten Bargeld abheben?",
         "nl": "Kan je geld ophalen bij deze geldautomaat?",
         "nb_NO": "Kan man gjøre uttak fra denne minibanken?",
-        "ca": "Pots retirar diners des d'aquest caixer?"
+        "ca": "Pots retirar diners des d'aquest caixer?",
+        "cs": "Lze z tohoto bankomatu vybírat hotovost?"
       },
       "mappings": [
         {
@@ -153,7 +165,8 @@
             "de": "Sie können an diesem Geldautomaten Bargeld abheben",
             "nl": "Je kan geld ophalen bij deze geldautomaat",
             "ca": "Pots retirar diners a aquest caixer",
-            "nb_NO": "Du kan gjøre uttak i denne minibanken"
+            "nb_NO": "Du kan gjøre uttak i denne minibanken",
+            "cs": "Z tohoto bankomatu můžete vybírat hotovost"
           },
           "hideInAnswer": true
         },
@@ -163,7 +176,8 @@
             "en": "You can withdraw cash from this ATM",
             "de": "An diesem Geldautomaten können Sie Bargeld abheben",
             "nl": "Je kan geld ophalen bij deze geldautomaat",
-            "ca": "Pots retirar diners des d'aquest caixer"
+            "ca": "Pots retirar diners des d'aquest caixer",
+            "cs": "Z tohoto bankomatu můžete vybírat hotovost"
           }
         },
         {
@@ -172,7 +186,8 @@
             "en": "You cannot withdraw cash from this ATM",
             "de": "Sie können an diesem Geldautomaten kein Bargeld abheben",
             "nl": "Je kan geen geld ophalen bij deze geldautomaat",
-            "ca": "No pots retirar diners des d'aquest caixer"
+            "ca": "No pots retirar diners des d'aquest caixer",
+            "cs": "Z tohoto bankomatu nelze vybírat hotovost"
           }
         }
       ]
@@ -183,7 +198,9 @@
         "en": "Can you deposit cash into this ATM?",
         "de": "Kann man an diesem Geldautomaten Bargeld einzahlen?",
         "nl": "Kan je geld storten bij deze geldautomaat?",
-        "ca": "Pots dipositar diners a aquest caixer?"
+        "ca": "Pots dipositar diners a aquest caixer?",
+        "cs": "Můžete do tohoto bankomatu vložit hotovost?",
+        "fr": "Pouvez-vous déposer de l'argent liquide dans ce DAB ?"
       },
       "mappings": [
         {
@@ -193,7 +210,9 @@
             "de": "Sie können wahrscheinlich kein Bargeld in diesen Geldautomaten einzahlen",
             "nl": "Je kan waarschijnlijk geen geld deponeren in deze geldautomaat",
             "ca": "Probablement no pots ingressar diners a aquest caixer",
-            "nb_NO": "Du kan antagelig ikke gjøre innskudd i denne minibanken"
+            "nb_NO": "Du kan antagelig ikke gjøre innskudd i denne minibanken",
+            "cs": "Do tohoto bankomatu pravděpodobně nelze vložit hotovost",
+            "fr": "Vous ne pouvez probablement pas déposer d'argent liquide dans ce DAB"
           },
           "hideInAnswer": true
         },
@@ -204,7 +223,9 @@
             "de": "Sie können Bargeld in diesen Geldautomaten einzahlen",
             "nl": "Je kan geld deponeren in deze geldautomaat",
             "nb_NO": "Du kan ikke gjøre innskudd i denne minibanken",
-            "ca": "Pots dipositar diners a aquest caixer"
+            "ca": "Pots dipositar diners a aquest caixer",
+            "cs": "Do tohoto bankomatu můžete vkládat hotovost",
+            "fr": "Vous pouvez déposer de l'argent liquide dans ce DAB"
           }
         },
         {
@@ -214,7 +235,9 @@
             "de": "Sie können an diesem Geldautomaten kein Bargeld einzahlen",
             "nl": "Je kan geen geld deponeren in deze geldautomaat",
             "nb_NO": "Du kan ikke gjøre innskudd i denne minibanken",
-            "ca": "No pots dipositar diners a aquest caixer"
+            "ca": "No pots dipositar diners a aquest caixer",
+            "cs": "Do tohoto bankomatu nelze vkládat hotovost",
+            "fr": "Vous ne pouvez pas déposer d'agent liquide dans ce DAB"
           }
         }
       ]
@@ -225,7 +248,8 @@
         "en": "Does this ATM have speech output for visually impaired users?",
         "de": "Verfügt dieser Geldautomat über eine Sprachausgabe für sehbehinderte Benutzer?",
         "nl": "Heeft deze automaat spraak voor slechtziende en blinde gebruikers?",
-        "ca": "Aquest caixer té un lector de pantalla per a usuaris amb discapacitat visual?"
+        "ca": "Aquest caixer té un lector de pantalla per a usuaris amb discapacitat visual?",
+        "cs": "Má tento bankomat hlasový výstup pro zrakově postižené uživatele?"
       },
       "mappings": [
         {
@@ -234,7 +258,8 @@
             "en": "This ATM has speech output, usually available through a headphone jack",
             "de": "Dieser Geldautomat verfügt über eine Sprachausgabe, die normalerweise über eine Kopfhörerbuchse verfügbar ist",
             "nl": "Deze automaat heeft spraak, waarschijnlijk beschikbaar via een hoofdtelefoon-aansluiting",
-            "ca": "Aquest caixer té lector de pantalla, normalment disponible a través d'un connector d'auriculars \"jack\""
+            "ca": "Aquest caixer té lector de pantalla, normalment disponible a través d'un connector d'auriculars \"jack\"",
+            "cs": "Tento bankomat má řečový výstup, který je obvykle dostupný přes konektor pro sluchátka"
           }
         },
         {
@@ -243,7 +268,8 @@
             "en": "This ATM does not have speech output",
             "de": "Dieser Geldautomat hat keine Sprachausgabe",
             "nl": "Deze automaat heeft geen spraak",
-            "ca": "Aquest caixer no té lector de pantalla"
+            "ca": "Aquest caixer no té lector de pantalla",
+            "cs": "Tento bankomat nemá hlasový výstup"
           }
         }
       ]
@@ -259,19 +285,22 @@
             "en": "In which languages does this ATM have speech output?",
             "de": "In welchen Sprachen hat dieser Geldautomat eine Sprachausgabe?",
             "nl": "In welke taal is de srpaak van deze geldautomaat?",
-            "ca": "En quins idiomes té sortida de veu aquest caixer?"
+            "ca": "En quins idiomes té sortida de veu aquest caixer?",
+            "cs": "V jakých jazycích má tento bankomat řečový výstup?"
           },
           "render_list_item": {
             "en": "This ATM has speech output in {language():font-bold}",
             "de": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}",
             "nl": "Deze geldautomaat heeft spraak in {language():font-bold}",
-            "ca": "Aquest caixer té sortida de veu en {language():font-bold}"
+            "ca": "Aquest caixer té sortida de veu en {language():font-bold}",
+            "cs": "Tento bankomat má řečový výstup v {language():font-bold}"
           },
           "render_single_language": {
             "en": "This ATM has speech output in {language():font-bold}",
             "de": "Dieser Geldautomat hat eine Sprachausgabe in {language():font-bold}",
             "nl": "Deze automaat heeft spraak in {language():font-bold}",
-            "ca": "Aquest caixer té sortida de veu en {language():font-bold}"
+            "ca": "Aquest caixer té sortida de veu en {language():font-bold}",
+            "cs": "Tento bankomat má řečový výstup v {language():font-bold}"
           }
         }
       }
@@ -308,7 +337,8 @@
             "en": "With speech output",
             "de": "Mit Sprachausgabe",
             "nl": "Heeft spraak",
-            "ca": "Amb sortida de veu"
+            "ca": "Amb sortida de veu",
+            "cs": "S hlasovým výstupem"
           },
           "osmTags": "speech_output=yes"
         }

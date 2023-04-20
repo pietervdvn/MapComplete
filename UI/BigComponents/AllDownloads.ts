@@ -4,7 +4,6 @@ import Translations from "../i18n/Translations"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import BaseUIElement from "../BaseUIElement"
 import Toggle from "../Input/Toggle"
-import { DownloadPanel } from "./DownloadPanel"
 import { SubtleButton } from "../Base/SubtleButton"
 import Svg from "../../Svg"
 import ExportPDF from "../ExportPDF"
@@ -79,13 +78,6 @@ export default class AllDownloads extends ScrollableFullScreen {
             isExporting
         )
 
-        const pdf = new Toggle(
-            new SubtleButton(icon, text),
-            undefined,
-
-            state.featureSwitchExportAsPdf
-        )
-
-
-        return pdf
+        return new SubtleButton(icon, text)
+    }
 }

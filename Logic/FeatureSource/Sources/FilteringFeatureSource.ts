@@ -1,7 +1,6 @@
 import { Store, UIEventSource } from "../../UIEventSource"
 import FilteredLayer from "../../../Models/FilteredLayer"
 import { FeatureSource } from "../FeatureSource"
-import { TagsFilter } from "../../Tags/TagsFilter"
 import { Feature } from "geojson"
 import { GlobalFilter } from "../../../Models/GlobalFilter"
 
@@ -54,6 +53,7 @@ export default class FilteringFeatureSource implements FeatureSource {
 
         this.update()
     }
+
     private update() {
         const self = this
         const layer = this._layer
@@ -87,7 +87,7 @@ export default class FilteringFeatureSource implements FeatureSource {
             }
         }
 
-        // Something new has been found!
+        // Something new has been found (or something was deleted)!
         this.features.setData(newFeatures)
     }
 

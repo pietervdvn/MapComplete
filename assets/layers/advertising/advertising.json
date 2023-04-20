@@ -42,7 +42,8 @@
           "es": "Tablon de anuncios",
           "en": "Board",
           "de": "Brett",
-          "cs": "Deska"
+          "cs": "Deska",
+          "fr": "Petit panneau"
         }
       },
       {
@@ -71,7 +72,8 @@
           "en": "Column",
           "de": "Litfaßsäule",
           "cs": "Sloup",
-          "nl": "Aanplakzuil"
+          "nl": "Aanplakzuil",
+          "fr": "Colonne"
         }
       },
       {
@@ -86,7 +88,8 @@
           "en": "Flag",
           "de": "Flagge",
           "cs": "Vlajka",
-          "nl": "Vlag"
+          "nl": "Vlag",
+          "fr": "Drapeau"
         }
       },
       {
@@ -101,7 +104,8 @@
           "en": "Screen",
           "de": "Bildschirm",
           "cs": "Obrazovka",
-          "nl": "Scherm"
+          "nl": "Scherm",
+          "fr": "Écran"
         }
       },
       {
@@ -116,7 +120,8 @@
           "en": "Sculpture",
           "de": "Skulptur",
           "cs": "Socha",
-          "nl": "Sculptuur"
+          "nl": "Sculptuur",
+          "fr": "Sculpture"
         }
       },
       {
@@ -130,7 +135,9 @@
           "es": "Cartel",
           "en": "Sign",
           "de": "Schild",
-          "cs": "Cedule"
+          "cs": "Cedule",
+          "fr": "Enseigne",
+          "pt_BR": "Placa"
         }
       },
       {
@@ -145,7 +152,8 @@
           "en": "Tarp",
           "de": "Plane",
           "cs": "Plachta",
-          "nl": "Spandoek"
+          "nl": "Spandoek",
+          "fr": "Bâche"
         }
       },
       {
@@ -160,7 +168,8 @@
           "en": "Totem",
           "de": "Totem",
           "cs": "Totem",
-          "nl": "Aanplakzuil"
+          "nl": "Aanplakzuil",
+          "fr": "Totem"
         }
       },
       {
@@ -175,7 +184,8 @@
           "en": "Wall painting",
           "de": "Wandmalerei",
           "cs": "Nástěnná malba",
-          "nl": "Muurschildering"
+          "nl": "Muurschildering",
+          "fr": "Peinture murale"
         }
       }
     ]
@@ -262,7 +272,8 @@
             "de": "Dies ist eine Litfaßsäule",
             "cs": "Toto je sloup",
             "fr": "C'est une colonne",
-            "nl": "Dit is een aanplakzuil"
+            "nl": "Dit is een aanplakzuil",
+            "pt_BR": "Isto é uma coluna"
           },
           "icon": {
             "path": "./assets/themes/advertising/column.svg",
@@ -282,7 +293,8 @@
             "de": "Dies ist eine Flagge",
             "cs": "Toto je vlajka",
             "fr": "C'est un drapeau",
-            "nl": "Dit is een vlag"
+            "nl": "Dit is een vlag",
+            "pt_BR": "Isto é uma bandeira"
           },
           "icon": {
             "path": "./assets/themes/advertising/flag.svg",
@@ -358,7 +370,8 @@
             "en": "This is a sign",
             "de": "Dies ist ein Schild",
             "cs": "Toto je cedule",
-            "fr": "C'est une enseigne (indique le nom du lieu/magasin)"
+            "fr": "C'est une enseigne (indique le nom du lieu/magasin)",
+            "pt_BR": "Isto é uma placa"
           },
           "icon": {
             "path": "./assets/themes/advertising/sign.svg",
@@ -565,7 +578,8 @@
         "de": "Betrieben von {operator}",
         "cs": "Provozuje {operator}",
         "fr": "Exploité par {operator}",
-        "nl": "Uitgebaat door {operator}"
+        "nl": "Uitgebaat door {operator}",
+        "pt_BR": "Operado por {operator}"
       },
       "question": {
         "ca": "Qui opera aquest element?",
@@ -589,7 +603,8 @@
         "en": "What kind of message is shown?",
         "de": "Welche Art von Nachricht wird angezeigt?",
         "cs": "Jaký typ zprávy je zobrazen?",
-        "nl": "Wat voor boodschap wordt hier getoond?"
+        "nl": "Wat voor boodschap wordt hier getoond?",
+        "fr": "Quel est le type de message affiché ?"
       },
       "mappings": [
         {
@@ -601,7 +616,8 @@
             "en": "Commercial message",
             "de": "Werbebotschaft",
             "cs": "Komerční sdělení",
-            "fr": "Message commercial"
+            "fr": "Message commercial",
+            "pt_BR": "Mensagem comercial"
           }
         },
         {
@@ -704,7 +720,8 @@
             "de": "Religiöse Botschaft",
             "cs": "Náboženská zpráva",
             "fr": "Message religieux",
-            "nl": "Religieuze boodschap"
+            "nl": "Religieuze boodschap",
+            "pt_BR": "Mensagem religiosa"
           }
         },
         {
@@ -734,7 +751,8 @@
             "de": "eine Karte",
             "cs": "Mapa",
             "fr": "Une carte",
-            "nl": "Een kaart"
+            "nl": "Een kaart",
+            "pt_BR": "Um mapa"
           }
         }
       ],
@@ -767,8 +785,8 @@
           "if": "sides=1",
           "then": {
             "en": "This object has advertisements on a single side",
-            "ca": "Aquest mupi té publicitat a un únic costat",
-            "es": "Este mupi tiene publicidad en un único lado",
+            "ca": "Aquest objecte té publicitat a un únic costat",
+            "es": "Este objeto tiene publicidad en un único lado",
             "de": "Werbung wird nur auf einer Seite angezeigt",
             "cs": "Tento objekt má reklamy na jedné straně",
             "fr": "Cet objet a de la publicité sur un seul côté"
@@ -778,8 +796,8 @@
           "if": "sides=2",
           "then": {
             "en": "This object has advertisements on both sides",
-            "ca": "Aquest mupi té publicitat pels dos costas",
-            "es": "Este mupi tiene publicidad por los dos lados",
+            "ca": "Aquest objecte té publicitat pels dos costas",
+            "es": "Este objeto tiene publicidad por los dos lados",
             "de": "Werbung wird auf beiden Seiten angezeigt",
             "cs": "Tento objekt má reklamy na obou stranách",
             "fr": "Cet objet a de la publicité des deux côtés"
@@ -796,7 +814,8 @@
         "de": "Die Referenznummer lautet {ref}",
         "cs": "Referenční číslo je {ref}",
         "fr": "Le numéro de référence est {ref}",
-        "nl": "Het referentienummer is {ref}"
+        "nl": "Het referentienummer is {ref}",
+        "pt_BR": "O número de referência é {ref}"
       },
       "question": {
         "ca": "Quin és el número de refèrencia?",
@@ -1015,12 +1034,13 @@
         "advertising=board"
       ],
       "title": {
-        "ca": "un tauló d'anunis",
+        "ca": "un tauló d'anuncis",
         "es": "un tablón de anuncios",
         "en": "a board",
         "de": "ein Anschlagbrett",
         "cs": "billboard",
-        "nl": "een uithangbord"
+        "nl": "een uithangbord",
+        "fr": "un petit panneau"
       },
       "description": {
         "en": "Small billboard for neighbourhood advertising, generally intended for pedestrians",
@@ -1047,7 +1067,8 @@
         "en": "a column",
         "de": "eine Litfaßsäule",
         "cs": "sloup",
-        "nl": "een aanplakzuil"
+        "nl": "een aanplakzuil",
+        "fr": "une colonne"
       },
       "description": {
         "en": "A cylindrical outdoor structure which shows advertisements",
@@ -1074,7 +1095,8 @@
         "en": "a flag",
         "de": "eine Flagge",
         "cs": "vlajka",
-        "nl": "een vlag"
+        "nl": "een vlag",
+        "fr": "un drapeau"
       },
       "exampleImages": [
         "./assets/themes/advertising/Advertising_flag.jpg",
@@ -1091,7 +1113,8 @@
         "en": "a screen",
         "de": "einen Bildschirm",
         "cs": "obrazovka",
-        "nl": "een scherm"
+        "nl": "een scherm",
+        "fr": "un écran"
       },
       "exampleImages": [
         "./assets/themes/advertising/Screen_poster_box.jpg",
@@ -1108,7 +1131,8 @@
         "en": "a screen mounted on a wall",
         "de": "ein wandmontierter Bildschirm",
         "cs": "obrazovka připevněná na stěnu",
-        "nl": "een scherm op een muur"
+        "nl": "een scherm op een muur",
+        "fr": "un écran fixé au mur"
       },
       "preciseInput": {
         "preferredBackground": "map",
@@ -1131,7 +1155,8 @@
         "en": "a tarp",
         "de": "eine Plane",
         "cs": "plachta",
-        "nl": "een spandoek"
+        "nl": "een spandoek",
+        "fr": "une bâche"
       },
       "description": {
         "en": "A piece of waterproof textile with a printed message, permanently anchored on a wall",
@@ -1160,7 +1185,8 @@
         "es": "un tótem",
         "en": "a totem",
         "de": "ein Totem",
-        "cs": "totem"
+        "cs": "totem",
+        "fr": "un totem"
       },
       "exampleImages": [
         "./assets/themes/advertising/AdvertisingTotem_004.jpg",
@@ -1177,7 +1203,9 @@
         "es": "un lletrer",
         "en": "a sign",
         "de": "ein Schild",
-        "cs": "cedule"
+        "cs": "cedule",
+        "fr": "une enseigne",
+        "pt_BR": "uma placa"
       },
       "preciseInput": {
         "preferredBackground": "map",
@@ -1207,7 +1235,8 @@
         "es": "una escultura",
         "en": "a sculpture",
         "de": "eine Skulptur",
-        "cs": "socha"
+        "cs": "socha",
+        "fr": "une sculpture"
       },
       "exampleImages": [
         "./assets/themes/advertising/Aircraft_Sculpture.jpg",
@@ -1224,7 +1253,8 @@
         "es": "una pared pintada",
         "en": "a wall painting",
         "de": "eine Wandmalerei",
-        "cs": "nástěnná malba"
+        "cs": "nástěnná malba",
+        "fr": "une peinture murale"
       },
       "preciseInput": {
         "preferredBackground": "map",

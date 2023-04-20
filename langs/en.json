@@ -88,8 +88,9 @@
     },
     "general": {
         "about": "Easily edit and add OpenStreetMap for a certain theme",
-        "aboutMapcomplete": "<p>Use MapComplete to add OpenStreetMap info on a <b>single theme.</b> Answer questions, and within minutes your contributions are available everywhere. In most themes you can add pictures or even leave a review. The <b>theme maintainer</b> defines elements, questions and languages for it.</p><h3>Find out more</h3><p>MapComplete always <b>offers the next step</b> to learn more about OpenStreetMap.<ul><li>When embedded in a website, the iframe links to a full-screen MapComplete.</li><li>The fullscreen version offers info about OpenStreetMap.</li><li>Viewing works without login, but editing requires an OSM account.</li><li>If you are not logged in, you are asked to do so</li><li>Once you answered a single question, you can add new features to the map</li><li>After a while, actual OSM-tags are shown, later linking to the wiki</li></ul></p><br/><p>Did you notice <b>an issue</b>? Do you have a <b>feature request</b>? Want to <b>help translate</b>? Head over to <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>the source code</a> or <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>issue tracker.</a> </p><p> Want to see <b>your progress</b>? Follow the edit count on <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
-        "aboutMapcompleteTitle": "About MapComplete",
+        "aboutMapComplete": {
+            "intro": "Use MapComplete to add OpenStreetMap info on a <b>single theme.</b> Answer questions, and within minutes your contributions are available everywhere. In most themes you can add pictures or even leave a review. The <b>theme maintainer</b> defines elements, questions and languages for it."
+        },
         "add": {
             "addNew": "Add {category}",
             "backToSelect": "Select a different category",
@@ -181,7 +182,6 @@
         "error": "Something went wrong",
         "example": "Example",
         "examples": "Examples",
-        "feelFreeToSkip": "You can add or update more information below, but feel free <b>to skip questions</b> you don't know the answer to.",
         "fewChangesBefore": "Please, answer a few questions of existing features before adding a new feature.",
         "getStartedLogin": "Log in with OpenStreetMap to get started",
         "getStartedNewAccount": " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>",
@@ -223,7 +223,6 @@
             "streetcomplete": "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "nameInlineQuestion": "The name of this {category} is $$$",
-        "newlyCreated": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
         "next": "Next",
         "noMatchingMapping": "No entries match your search…",
         "noNameCategory": "{category} without a name",
