@@ -28,7 +28,7 @@ export default class GenerateImageAnalysis extends Script {
             tag,
             [],
             "https://overpass.kumi.systems/api/interpreter",
-            new ImmutableStore(180),
+            new ImmutableStore(500),
             undefined,
             false
         )
@@ -110,10 +110,10 @@ export default class GenerateImageAnalysis extends Script {
 
                 const msg = `${i}/${
                     allImages.size
-                } downloaded: ${d},skipped: ${s}, failed: ${f}, running: ${runningSecs}sec, ETA: ${estimatedActualMinutes}:${
+                } downloaded: ${d},skipped: ${s}, failed: ${f}, running: ${Math.floor(runningSecs)}sec, ETA: ${estimatedActualMinutes}:${
                     estimatedActualSeconds % 60
                 }`
-                ScriptUtils.erasableLog(msg)
+                ScriptUtils.erasableLog( "                                                                                                              ",  msg)
                 if (downloaded) {
                     d++
                 } else {
@@ -227,10 +227,10 @@ export default class GenerateImageAnalysis extends Script {
     }
 
     async main(args: string[]): Promise<void> {
-        const datapath = args[0] ?? "../MapComplete-data/ImageLicenseInfo"
+        const datapath = args[0] ?? "../../git/MapComplete-data/ImageLicenseInfo"
         await this.downloadData(datapath)
 
-        //await this.downloadMetadata(datapath)
+        await this.downloadMetadata(datapath)
         this.analyze(datapath)
     }
 }
