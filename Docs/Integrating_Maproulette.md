@@ -1,9 +1,11 @@
 # Integrating MapRoulette
 
-[MapRoulette](https://www.maproulette.org/) is a website which has challenges. A challenge is a collection of _microtasks_, i.e. mapping
-tasks which can be solved in a few minutes.
+[MapRoulette](https://www.maproulette.org/) is a website which has challenges. A challenge is a collection of _microtasks_, i.e. mapping tasks which can be solved in a few minutes.
 
-A perfect example of this is to setup such a challenge to e.g. import new points. [Important: always follow the import guidelines if you want to import data.](https://wiki.openstreetmap.org/wiki/Import/Guidelines)
+A perfect example of this is to setup such a challenge to e.g. import new points. 
+
+> [Important: always follow the import guidelines if you want to import data.](https://wiki.openstreetmap.org/wiki/Import/Guidelines)
+
 (Another approach to set up a guided import is to create a map note for every point with the [import helper](https://mapcomplete.osm.be/import_helper). This however litters the map notes and will upset mappers if used with to much points. However, this flow is easier to setup as no changes to theme files are needed, nor is a maproulette-account needed)
 
 ## The API
