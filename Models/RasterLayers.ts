@@ -123,7 +123,9 @@ export interface RasterLayerProperties {
     /**
      * The name of the imagery source
      */
-    readonly name: string
+    readonly name: string | Record<string, string>
+
+    readonly isOverlay?: boolean
 
     readonly id: string
 

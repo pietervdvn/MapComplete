@@ -29,7 +29,6 @@ export default class FeaturePropertiesStore {
 
                 const source = self._elements.get(id)
                 if (source === undefined) {
-                    console.log("Adding feature store for", id)
                     self._elements.set(id, new UIEventSource<any>(feature.properties))
                     continue
                 }

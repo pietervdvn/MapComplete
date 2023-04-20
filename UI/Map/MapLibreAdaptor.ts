@@ -1,6 +1,6 @@
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import type { Map as MLMap } from "maplibre-gl"
-import { Map as MlMap } from "maplibre-gl"
+import { Map as MlMap, SourceSpecification } from "maplibre-gl"
 import { RasterLayerPolygon, RasterLayerProperties } from "../../Models/RasterLayers"
 import { Utils } from "../../Utils"
 import { BBox } from "../../Logic/BBox"
@@ -37,6 +37,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     readonly allowZooming: UIEventSource<true | boolean | undefined>
     readonly lastClickLocation: Store<undefined | { lon: number; lat: number }>
     readonly minzoom: UIEventSource<number>
+    readonly maxzoom: UIEventSource<number>
     private readonly _maplibreMap: Store<MLMap>
     /**
      * Used for internal bookkeeping (to remove a rasterLayer when done loading)
@@ -50,12 +51,14 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.location = state?.location ?? new UIEventSource({ lon: 0, lat: 0 })
         this.zoom = state?.zoom ?? new UIEventSource(1)
         this.minzoom = state?.minzoom ?? new UIEventSource(0)
+        this.maxzoom = state?.maxzoom ?? new UIEventSource(24)
         this.zoom.addCallbackAndRunD((z) => {
             if (z < this.minzoom.data) {
                 this.zoom.setData(this.minzoom.data)
             }
-            if (z > 24) {
-                this.zoom.setData(24)
+            const max = Math.min(24, this.maxzoom.data ?? 24)
+            if (z > max) {
+                this.zoom.setData(max)
             }
         })
         this.maxbounds = state?.maxbounds ?? new UIEventSource(undefined)
@@ -90,6 +93,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 self.setAllowMoving(self.allowMoving.data)
                 self.setAllowZooming(self.allowZooming.data)
                 self.setMinzoom(self.minzoom.data)
+                self.setMaxzoom(self.maxzoom.data)
                 self.setBounds(self.bounds.data)
             })
             self.MoveMapToCurrentLoc(self.location.data)
@@ -98,6 +102,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             self.setAllowMoving(self.allowMoving.data)
             self.setAllowZooming(self.allowZooming.data)
             self.setMinzoom(self.minzoom.data)
+            self.setMaxzoom(self.maxzoom.data)
             self.setBounds(self.bounds.data)
             this.updateStores()
             map.on("moveend", () => this.updateStores())
@@ -146,10 +151,23 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
     }
 
+    public static prepareWmsSource(layer: RasterLayerProperties): SourceSpecification {
+        return {
+            type: "raster",
+            // use the tiles option to specify a 256WMS tile source URL
+            // https://maplibre.org/maplibre-gl-js-docs/style-spec/sources/
+            tiles: [MapLibreAdaptor.prepareWmsURL(layer.url, layer["tile-size"] ?? 256)],
+            tileSize: layer["tile-size"] ?? 256,
+            minzoom: layer["min_zoom"] ?? 1,
+            maxzoom: layer["max_zoom"] ?? 25,
+            //  scheme: background["type"] === "tms" ? "tms" : "xyz",
+        }
+    }
+
     /**
      * Prepares an ELI-URL to be compatible with mapbox
      */
-    private static prepareWmsURL(url: string, size: number = 256) {
+    private static prepareWmsURL(url: string, size: number = 256): string {
         // ELI:  LAYERS=OGWRGB13_15VL&STYLES=&FORMAT=image/jpeg&CRS={proj}&WIDTH={width}&HEIGHT={height}&BBOX={bbox}&VERSION=1.3.0&SERVICE=WMS&REQUEST=GetMap
         // PROD: SERVICE=WMS&REQUEST=GetMap&LAYERS=OGWRGB13_15VL&STYLES=&FORMAT=image/jpeg&TRANSPARENT=false&VERSION=1.3.0&WIDTH=256&HEIGHT=256&CRS=EPSG:3857&BBOX=488585.4847988467,6590094.830634755,489196.9810251281,6590706.32686104
 
@@ -342,16 +360,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             return
         }
 
-        map.addSource(background.id, {
-            type: "raster",
-            // use the tiles option to specify a 256WMS tile source URL
-            // https://maplibre.org/maplibre-gl-js-docs/style-spec/sources/
-            tiles: [MapLibreAdaptor.prepareWmsURL(background.url, background["tile-size"] ?? 256)],
-            tileSize: background["tile-size"] ?? 256,
-            minzoom: background["min_zoom"] ?? 1,
-            maxzoom: background["max_zoom"] ?? 25,
-            //  scheme: background["type"] === "tms" ? "tms" : "xyz",
-        })
+        map.addSource(background.id, MapLibreAdaptor.prepareWmsSource(background))
 
         map.addLayer(
             {
@@ -403,6 +412,14 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             return
         }
         map.setMinZoom(minzoom)
+    }
+
+    private setMaxzoom(maxzoom: number) {
+        const map = this._maplibreMap.data
+        if (map === undefined) {
+            return
+        }
+        map.setMaxZoom(maxzoom)
     }
 
     private setAllowZooming(allow: true | boolean | undefined) {

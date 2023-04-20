@@ -43,6 +43,7 @@ import MetaTagging from "../Logic/MetaTagging"
 import ChangeGeometryApplicator from "../Logic/FeatureSource/Sources/ChangeGeometryApplicator"
 import { NewGeometryFromChangesFeatureSource } from "../Logic/FeatureSource/Sources/NewGeometryFromChangesFeatureSource"
 import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"
+import ShowOverlayRasterLayer from "../UI/Map/ShowOverlayRasterLayer"
 
 /**
  *
@@ -82,6 +83,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly geolocation: GeoLocationHandler
 
     readonly lastClickObject: WritableFeatureSource
+    readonly overlayLayerStates: ReadonlyMap<
+        string,
+        { readonly isDisplayed: UIEventSource<boolean> }
+    >
 
     constructor(layout: LayoutConfig) {
         this.layout = layout
@@ -124,6 +129,21 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
         const self = this
         this.layerState = new LayerState(this.osmConnection, layout.layers, layout.id)
+
+        {
+            const overlayLayerStates = new Map<string, { isDisplayed: UIEventSource<boolean> }>()
+            for (const rasterInfo of this.layout.tileLayerSources) {
+                const isDisplayed = QueryParameters.GetBooleanQueryParameter(
+                    "overlay-" + rasterInfo.id,
+                    rasterInfo.defaultState ?? true,
+                    "Wether or not overlayer layer " + rasterInfo.id + " is shown"
+                )
+                const state = { isDisplayed }
+                overlayLayerStates.set(rasterInfo.id, state)
+                new ShowOverlayRasterLayer(rasterInfo, this.map, this.mapProperties, state)
+            }
+            this.overlayLayerStates = overlayLayerStates
+        }
 
         {
             /* Setup the layout source

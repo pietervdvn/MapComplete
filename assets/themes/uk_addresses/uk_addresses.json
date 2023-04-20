@@ -30,10 +30,10 @@
   "tileLayerSources": [
     {
       "id": "property-boundaries",
-      "source": "https://tiles.osmuk.org/PropertyBoundaries/{z}/{x}/{y}.png",
+      "url": "https://tiles.osmuk.org/PropertyBoundaries/{z}/{x}/{y}.png",
       "isOverlay": true,
-      "minZoom": 18,
-      "maxZoom": 20,
+      "min_zoom": 18,
+      "max_zoom": 20,
       "defaultState": false,
       "name": {
         "en": "Property boundaries by osmuk.org",

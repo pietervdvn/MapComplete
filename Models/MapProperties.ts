@@ -6,6 +6,7 @@ export interface MapProperties {
     readonly location: UIEventSource<{ lon: number; lat: number }>
     readonly zoom: UIEventSource<number>
     readonly minzoom: UIEventSource<number>
+    readonly maxzoom: UIEventSource<number>
     readonly bounds: UIEventSource<BBox>
     readonly rasterLayer: UIEventSource<RasterLayerPolygon | undefined>
     readonly maxbounds: UIEventSource<undefined | BBox>

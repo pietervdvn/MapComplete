@@ -34,7 +34,7 @@
   import Hotkeys from "./Base/Hotkeys";
   import { VariableUiElement } from "./Base/VariableUIElement";
   import SvelteUIElement from "./Base/SvelteUIElement";
-  import { onDestroy } from "svelte";
+  import OverlayToggle from "./BigComponents/OverlayToggle.svelte";
 
   export let state: ThemeViewState;
   let layout = state.layout;
@@ -51,9 +51,9 @@
     if (selectedElement === undefined || layer === undefined) {
       return undefined;
     }
-    
+
     const tags = state.featureProperties.getStore(selectedElement.properties.id);
-    return new SvelteUIElement(SelectedElementView, {state, layer, selectedElement, tags})
+    return new SvelteUIElement(SelectedElementView, { state, layer, selectedElement, tags });
   }, [selectedLayer]);
 
 
@@ -159,6 +159,14 @@
         {#each layout.layers as layer}
           <Filterview zoomlevel={state.mapProperties.zoom} filteredLayer={state.layerState.filteredLayers.get(layer.id)}
                       highlightedLayer={state.guistate.highlightedLayerInFilters}></Filterview>
+        {/each}
+        {#each layout.tileLayerSources as tilesource}
+          <OverlayToggle
+            layerproperties={tilesource}
+            state={state.overlayLayerStates.get(tilesource.id)}
+            highlightedLayer={state.guistate.highlightedLayerInFilters}
+            zoomlevel={state.mapProperties.zoom}
+             />
         {/each}
         <If condition={state.featureSwitches.featureSwitchBackgroundSelection}>
           <RasterLayerPicker {availableLayers} value={mapproperties.rasterLayer}></RasterLayerPicker>

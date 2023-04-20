@@ -3,11 +3,12 @@ import { LayoutConfigJson } from "./Json/LayoutConfigJson"
 import LayerConfig from "./LayerConfig"
 import { LayerConfigJson } from "./Json/LayerConfigJson"
 import Constants from "../Constants"
-import TilesourceConfig from "./TilesourceConfig"
 import { ExtractImages } from "./Conversion/FixImages"
 import ExtraLinkConfig from "./ExtraLinkConfig"
 import { Utils } from "../../Utils"
 import LanguageUtils from "../../Utils/LanguageUtils"
+import { RasterLayerProperties } from "../RasterLayers"
+
 /**
  * Minimal information about a theme
  **/
@@ -39,7 +40,7 @@ export default class LayoutConfig implements LayoutInformation {
     public widenFactor: number
     public defaultBackgroundId?: string
     public layers: LayerConfig[]
-    public tileLayerSources: TilesourceConfig[]
+    public tileLayerSources: (RasterLayerProperties & { defaultState?: true | boolean })[]
     public readonly hideFromOverview: boolean
     public lockLocation: boolean | [[number, number], [number, number]]
     public readonly enableUserBadge: boolean
@@ -161,9 +162,7 @@ export default class LayoutConfig implements LayoutInformation {
         this.widenFactor = json.widenFactor ?? 1.5
 
         this.defaultBackgroundId = json.defaultBackgroundId
-        this.tileLayerSources = (json.tileLayerSources ?? []).map(
-            (config, i) => new TilesourceConfig(config, `${this.id}.tileLayerSources[${i}]`)
-        )
+        this.tileLayerSources = json.tileLayerSources ?? []
         // At this point, layers should be expanded and validated either by the generateScript or the LegacyJsonConvert
         this.layers = json.layers.map(
             (lyrJson) =>

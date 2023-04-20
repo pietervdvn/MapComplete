@@ -75,6 +75,7 @@ export class MinimapViz implements SpecialVisualization {
         const mlmap = new UIEventSource(undefined)
         const mla = new MapLibreAdaptor(mlmap)
 
+        mla.maxzoom.setData(17)
         let zoom = 18
         if (args[0]) {
             const parsed = Number(args[0])

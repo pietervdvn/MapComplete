@@ -1,6 +1,6 @@
 import { LayerConfigJson } from "./LayerConfigJson"
-import TilesourceConfigJson from "./TilesourceConfigJson"
 import ExtraLinkConfigJson from "./ExtraLinkConfigJson"
+import { RasterLayerProperties } from "../../RasterLayers"
 
 /**
  * Defines the entire theme.
@@ -148,7 +148,7 @@ export interface LayoutConfigJson {
     /**
      * Define some (overlay) slippy map tilesources
      */
-    tileLayerSources?: TilesourceConfigJson[]
+    tileLayerSources?: (RasterLayerProperties & { defaultState?: true | boolean })[]
 
     /**
      * The layers to display.
