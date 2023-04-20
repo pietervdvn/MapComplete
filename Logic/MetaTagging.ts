@@ -1,4 +1,4 @@
-import SimpleMetaTaggers, { SimpleMetaTagger } from "./SimpleMetaTagger"
+import SimpleMetaTaggers, { MetataggingState, SimpleMetaTagger } from "./SimpleMetaTagger"
 import { ExtraFuncParams, ExtraFunctions } from "./ExtraFunctions"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import { Feature } from "geojson"
@@ -6,6 +6,7 @@ import FeaturePropertiesStore from "./FeatureSource/Actors/FeaturePropertiesStor
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
 import { GeoIndexedStoreForLayer } from "./FeatureSource/Actors/GeoIndexedStore"
 import { IndexedFeatureSource } from "./FeatureSource/FeatureSource"
+import OsmObjectDownloader from "./Osm/OsmObjectDownloader"
 
 /**
  * Metatagging adds various tags to the elements, e.g. lat, lon, surface area, ...
@@ -19,6 +20,7 @@ export default class MetaTagging {
 
     constructor(state: {
         layout: LayoutConfig
+        osmObjectDownloader: OsmObjectDownloader
         perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
         indexedFeatures: IndexedFeatureSource
         featureProperties: FeaturePropertiesStore
@@ -39,6 +41,7 @@ export default class MetaTagging {
                     params,
                     layer,
                     state.layout,
+                    state.osmObjectDownloader,
                     state.featureProperties
                 )
             })
@@ -56,6 +59,7 @@ export default class MetaTagging {
         params: ExtraFuncParams,
         layer: LayerConfig,
         layout: LayoutConfig,
+        osmObjectDownloader: OsmObjectDownloader,
         featurePropertiesStores?: FeaturePropertiesStore,
         options?: {
             includeDates?: true | boolean
@@ -83,7 +87,7 @@ export default class MetaTagging {
 
         // The calculated functions - per layer - which add the new keys
         const layerFuncs = this.createRetaggingFunc(layer)
-        const state = { layout }
+        const state: MetataggingState = { layout, osmObjectDownloader }
 
         let atLeastOneFeatureChanged = false
 

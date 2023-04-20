@@ -9,9 +9,7 @@ import InputElementMap from "../Input/InputElementMap"
 import { SaveButton } from "./SaveButton"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import Translations from "../i18n/Translations"
-import { FixedUiElement } from "../Base/FixedUiElement"
 import { Translation } from "../i18n/Translation"
-import Constants from "../../Models/Constants"
 import { SubstitutedTranslation } from "../SubstitutedTranslation"
 import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import { Tag } from "../../Logic/Tags/Tag"
@@ -19,7 +17,6 @@ import { And } from "../../Logic/Tags/And"
 import { TagUtils, UploadableTag } from "../../Logic/Tags/TagUtils"
 import BaseUIElement from "../BaseUIElement"
 import { DropDown } from "../Input/DropDown"
-import InputElementWrapper from "../Input/InputElementWrapper"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
 import TagRenderingConfig, { Mapping } from "../../Models/ThemeConfig/TagRenderingConfig"
 import { Unit } from "../../Models/Unit"
@@ -626,25 +623,11 @@ export default class TagRenderingQuestion extends Combine {
             }
         })
 
-        let inputTagsFilter: InputElement<UploadableTag> = new InputElementMap(
+        return new InputElementMap(
             input,
             (a, b) => a === b || (a?.shadows(b) ?? false),
             pickString,
             toString
         )
-
-        if (freeform.inline) {
-            inputTagsFilter.SetClass("w-48-imp")
-            inputTagsFilter = new InputElementWrapper(
-                inputTagsFilter,
-                configuration.render,
-                freeform.key,
-                tags,
-                state
-            )
-            inputTagsFilter.SetClass("block")
-        }
-
-        return inputTagsFilter
     }
 }

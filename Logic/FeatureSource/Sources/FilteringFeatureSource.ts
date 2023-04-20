@@ -61,7 +61,7 @@ export default class FilteringFeatureSource implements FeatureSource {
         const includedFeatureIds = new Set<string>()
         const globalFilters = self._globalFilters?.data?.map((f) => f)
         const newFeatures = (features ?? []).filter((f) => {
-            self.registerCallback(f)
+            self.registerCallback(f.properties.id)
 
             if (!layer.isShown(f.properties, globalFilters)) {
                 return false
@@ -91,11 +91,11 @@ export default class FilteringFeatureSource implements FeatureSource {
         this.features.setData(newFeatures)
     }
 
-    private registerCallback(feature: any) {
+    private registerCallback(featureId: string) {
         if (this._fetchStore === undefined) {
             return
         }
-        const src = this._fetchStore(feature)
+        const src = this._fetchStore(featureId)
         if (src == undefined) {
             return
         }

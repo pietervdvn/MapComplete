@@ -3,11 +3,11 @@ import FilteredLayer from "../../Models/FilteredLayer"
 import { BBox } from "../BBox"
 import { Feature } from "geojson"
 
-export interface FeatureSource {
-    features: Store<Feature[]>
+export interface FeatureSource<T extends Feature = Feature> {
+    features: Store<T[]>
 }
-export interface WritableFeatureSource extends FeatureSource {
-    features: UIEventSource<Feature[]>
+export interface WritableFeatureSource<T extends Feature = Feature> extends FeatureSource<T> {
+    features: UIEventSource<T[]>
 }
 
 export interface Tiled {

@@ -10,6 +10,8 @@ import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesSto
 import { Feature } from "geojson"
 import { OsmTags } from "../../Models/OsmFeature"
 import OsmObjectDownloader from "../Osm/OsmObjectDownloader"
+import { IndexedFeatureSource } from "../FeatureSource/FeatureSource"
+import { Utils } from "../../Utils"
 
 export default class SelectedElementTagsUpdater {
     private static readonly metatags = new Set([
@@ -28,11 +30,13 @@ export default class SelectedElementTagsUpdater {
         osmConnection: OsmConnection
         layout: LayoutConfig
         osmObjectDownloader: OsmObjectDownloader
+        indexedFeatures: IndexedFeatureSource
     }
 
     constructor(state: {
         selectedElement: UIEventSource<Feature>
         featureProperties: FeaturePropertiesStore
+        indexedFeatures: IndexedFeatureSource
         changes: Changes
         osmConnection: OsmConnection
         layout: LayoutConfig
@@ -82,7 +86,16 @@ export default class SelectedElementTagsUpdater {
                     return
                 }
                 const latestTags = osmObject.tags
+                const newGeometry = osmObject.asGeoJson()?.geometry
+                const oldFeature = state.indexedFeatures.featuresById.data.get(id)
+                const oldGeometry = oldFeature?.geometry
+                if (oldGeometry !== undefined && !Utils.SameObject(newGeometry, oldGeometry)) {
+                    console.log("Detected a difference in geometry for ", id)
+                    oldFeature.geometry = newGeometry
+                    state.featureProperties.getStore(id)?.ping()
+                }
                 this.applyUpdate(latestTags, id)
+
                 console.log("Updated", id)
             } catch (e) {
                 console.warn("Could not update", id, " due to", e)

@@ -92,13 +92,13 @@ export default class UploadTraceToOsmUI extends LoginToggle {
                         )
                         const descriptionStr = UploadTraceToOsmUI.createDefault(
                             description.GetValue().data,
-                            "Track created with MapComplete with theme " + state?.layoutToUse?.id
+                            "Track created with MapComplete with theme " + state?.layout?.id
                         )
                         await state?.osmConnection?.uploadGpxTrack(trace(title.GetValue().data), {
                             visibility: dropdown.GetValue().data,
                             description: descriptionStr,
                             filename: titleStr + ".gpx",
-                            labels: ["MapComplete", state?.layoutToUse?.id],
+                            labels: ["MapComplete", state?.layout?.id],
                         })
 
                         if (options?.whenUploaded !== undefined) {

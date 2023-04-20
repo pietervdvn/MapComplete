@@ -4,7 +4,7 @@ import Constants from "../../Models/Constants"
 import { GeoLocationPointProperties, GeoLocationState } from "../State/GeoLocationState"
 import { UIEventSource } from "../UIEventSource"
 import { Feature, LineString, Point } from "geojson"
-import { FeatureSource } from "../FeatureSource/FeatureSource"
+import { FeatureSource, WritableFeatureSource } from "../FeatureSource/FeatureSource"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { GeoOperations } from "../GeoOperations"
 import { OsmTags } from "../../Models/OsmFeature"
@@ -27,14 +27,14 @@ export default class GeoLocationHandler {
     /**
      * All previously visited points (as 'Point'-objects), with their metadata
      */
-    public historicalUserLocations: FeatureSource
+    public historicalUserLocations: WritableFeatureSource<Feature<Point>>
 
     /**
      * A featureSource containing a single linestring which has the GPS-history of the user.
      * However, metadata (such as when every single point was visited) is lost here (but is kept in `historicalUserLocations`.
      * Note that this featureSource is _derived_ from 'historicalUserLocations'
      */
-    public historicalUserLocationsTrack: FeatureSource
+    public readonly historicalUserLocationsTrack: FeatureSource
     public readonly mapHasMoved: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     private readonly selectedElement: UIEventSource<any>
     private readonly mapProperties?: MapProperties
@@ -90,7 +90,7 @@ export default class GeoLocationHandler {
         geolocationState.allowMoving.syncWith(mapProperties.allowMoving, true)
 
         this.CopyGeolocationIntoMapstate()
-        this.initUserLocationTrail()
+        this.historicalUserLocationsTrack = this.initUserLocationTrail()
     }
 
     /**
@@ -220,7 +220,7 @@ export default class GeoLocationHandler {
             features.ping()
         })
 
-        this.historicalUserLocations = new StaticFeatureSource(features)
+        this.historicalUserLocations = <any>new StaticFeatureSource(features)
 
         const asLine = features.map((allPoints) => {
             if (allPoints === undefined || allPoints.length < 2) {
@@ -242,6 +242,6 @@ export default class GeoLocationHandler {
             }
             return [feature]
         })
-        this.historicalUserLocationsTrack = new StaticFeatureSource(asLine)
+        return new StaticFeatureSource(asLine)
     }
 }

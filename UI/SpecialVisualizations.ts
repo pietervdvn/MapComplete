@@ -13,7 +13,6 @@ import { MinimapViz } from "./Popup/MinimapViz"
 import { ShareLinkViz } from "./Popup/ShareLinkViz"
 import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
 import { MultiApplyViz } from "./Popup/MultiApplyViz"
-import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
 import { AddNoteCommentViz } from "./Popup/AddNoteCommentViz"
 import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz"
 import { ConflateButton, ImportPointButton, ImportWayButton } from "./Popup/ImportButton"
@@ -80,6 +79,7 @@ import DeleteWizard from "./Popup/DeleteWizard"
 import { OsmId, OsmTags, WayId } from "../Models/OsmFeature"
 import MoveWizard from "./Popup/MoveWizard"
 import SplitRoadWizard from "./Popup/SplitRoadWizard"
+import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -597,9 +597,9 @@ export default class SpecialVisualizations {
                 },
             },
             new ShareLinkViz(),
+            new ExportAsGpxViz(),
             new UploadToOsmViz(),
             new MultiApplyViz(),
-            new ExportAsGpxViz(),
             new AddNoteCommentViz(),
             {
                 funcName: "open_note",
@@ -874,7 +874,7 @@ export default class SpecialVisualizations {
                 funcName: "export_as_geojson",
                 docs: "Exports the selected feature as GeoJson-file",
                 args: [],
-                constr: (state, tagSource) => {
+                constr: (state, tagSource, tagsSource, feature, layer) => {
                     const t = Translations.t.general.download
 
                     return new SubtleButton(
@@ -886,10 +886,8 @@ export default class SpecialVisualizations {
                     ).onClick(() => {
                         console.log("Exporting as Geojson")
                         const tags = tagSource.data
-                        const feature = state.indexedFeatures.featuresById.data.get(tags.id)
-                        const matchingLayer = state?.layout?.getMatchingLayer(tags)
                         const title =
-                            matchingLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "geojson"
+                            layer?.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "geojson"
                         const data = JSON.stringify(feature, null, "  ")
                         Utils.offerContentsAsDownloadableFile(
                             data,

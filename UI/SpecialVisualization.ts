@@ -6,7 +6,7 @@ import { OsmConnection } from "../Logic/Osm/OsmConnection";
 import { Changes } from "../Logic/Osm/Changes";
 import { ExportableMap, MapProperties } from "../Models/MapProperties";
 import LayerState from "../Logic/State/LayerState";
-import { Feature, Geometry } from "geojson";
+import { Feature, Geometry, Point } from "geojson";
 import FullNodeDatabaseSource from "../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource";
 import { MangroveIdentity } from "../Logic/Web/MangroveReviews";
 import { GeoIndexedStoreForLayer } from "../Logic/FeatureSource/Actors/GeoIndexedStore";
@@ -34,7 +34,7 @@ export interface SpecialVisualizationState {
      */
     readonly newFeatures: WritableFeatureSource
 
-    readonly historicalUserLocations: WritableFeatureSource
+    readonly historicalUserLocations: WritableFeatureSource<Feature<Point>>
 
     readonly osmConnection: OsmConnection
     readonly featureSwitchUserbadge: Store<boolean>

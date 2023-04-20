@@ -10,7 +10,7 @@ import {
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
 import { ExportableMap, MapProperties } from "./MapProperties"
 import LayerState from "../Logic/State/LayerState"
-import { Feature } from "geojson"
+import { Feature, Point } from "geojson"
 import FullNodeDatabaseSource from "../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
 import { Map as MlMap } from "maplibre-gl"
 import InitialMapPositioning from "../Logic/Actors/InitialMapPositioning"
@@ -42,7 +42,7 @@ import { MenuState } from "./MenuState"
 import MetaTagging from "../Logic/MetaTagging"
 import ChangeGeometryApplicator from "../Logic/FeatureSource/Sources/ChangeGeometryApplicator"
 import { NewGeometryFromChangesFeatureSource } from "../Logic/FeatureSource/Sources/NewGeometryFromChangesFeatureSource"
-import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader";
+import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"
 
 /**
  *
@@ -71,8 +71,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
     readonly guistate: MenuState
     readonly fullNodeDatabase?: FullNodeDatabaseSource // TODO
 
-    readonly historicalUserLocations: WritableFeatureSource
-    readonly indexedFeatures: IndexedFeatureSource
+    readonly historicalUserLocations: WritableFeatureSource<Feature<Point>>
+    readonly indexedFeatures: IndexedFeatureSource & LayoutSource
     readonly newFeatures: WritableFeatureSource
     readonly layerState: LayerState
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
@@ -152,6 +152,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 },
                 layout?.isLeftRightSensitive() ?? false
             )
+            this.historicalUserLocations = this.geolocation.historicalUserLocations
             this.newFeatures = new NewGeometryFromChangesFeatureSource(
                 this.changes,
                 indexedElements,
@@ -215,7 +216,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.layout
         ))
 
-        this.osmObjectDownloader = new OsmObjectDownloader(this.osmConnection.Backend(), this.changes)
+        this.osmObjectDownloader = new OsmObjectDownloader(
+            this.osmConnection.Backend(),
+            this.changes
+        )
 
         this.initActors()
         this.drawSpecialLayers(lastClick)
@@ -274,7 +278,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
     /**
      * Add the special layers to the map
-     * @private
      */
     private drawSpecialLayers(last_click: LastClickFeatureSource) {
         type AddedByDefaultTypes = typeof Constants.added_by_default[number]
@@ -283,10 +286,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
             // The last_click gets a _very_ special treatment
 
             const last_click_layer = this.layerState.filteredLayers.get("last_click")
-            this.featureProperties.addSpecial(
-                "last_click",
-                new UIEventSource<Record<string, string>>(last_click.properties)
-            )
+            this.featureProperties.trackFeatureSource(last_click)
+            this.indexedFeatures.addSource(last_click)
             new ShowDataLayer(this.map, {
                 features: new FilteringFeatureSource(last_click_layer, last_click),
                 doShowLayer: new ImmutableStore(true),
@@ -347,10 +348,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
             ?.isDisplayed?.syncWith(this.featureSwitches.featureSwitchIsTesting, true)
 
         this.layerState.filteredLayers.forEach((flayer) => {
-            const features = specialLayers[flayer.layerDef.id]
+            const features: FeatureSource = specialLayers[flayer.layerDef.id]
             if (features === undefined) {
                 return
             }
+
+            this.featureProperties.trackFeatureSource(features)
+            this.indexedFeatures.addSource(features)
             new ShowDataLayer(this.map, {
                 features,
                 doShowLayer: flayer.isDisplayed,

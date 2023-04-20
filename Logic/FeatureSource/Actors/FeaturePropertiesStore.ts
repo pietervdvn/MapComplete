@@ -5,11 +5,19 @@ import { UIEventSource } from "../../UIEventSource"
  * Constructs a UIEventStore for the properties of every Feature, indexed by id
  */
 export default class FeaturePropertiesStore {
-    private readonly _source: FeatureSource & IndexedFeatureSource
     private readonly _elements = new Map<string, UIEventSource<Record<string, string>>>()
 
-    constructor(source: FeatureSource & IndexedFeatureSource) {
-        this._source = source
+    constructor(...sources: FeatureSource[]) {
+        for (const source of sources) {
+            this.trackFeatureSource(source)
+        }
+    }
+
+    public getStore(id: string): UIEventSource<Record<string, string>> {
+        return this._elements.get(id)
+    }
+
+    public trackFeatureSource(source: FeatureSource) {
         const self = this
         source.features.addCallbackAndRunD((features) => {
             console.log("Re-indexing features")
@@ -39,14 +47,6 @@ export default class FeaturePropertiesStore {
                 }
             }
         })
-    }
-
-    public getStore(id: string): UIEventSource<Record<string, string>> {
-        return this._elements.get(id)
-    }
-
-    public addSpecial(id: string, store: UIEventSource<Record<string, string>>) {
-        this._elements.set(id, store)
     }
 
     /**
@@ -87,7 +87,6 @@ export default class FeaturePropertiesStore {
 
     // noinspection JSUnusedGlobalSymbols
     public addAlias(oldId: string, newId: string): void {
-        console.log("FeaturePropertiesStore: adding alias for", oldId, newId)
         if (newId === undefined) {
             // We removed the node/way/relation with type 'type' and id 'oldId' on openstreetmap!
             const element = this._elements.get(oldId)

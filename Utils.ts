@@ -1415,4 +1415,33 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     ) {
         return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b)
     }
+
+    static SameObject(a: any, b: any) {
+        if (a === b) {
+            return true
+        }
+        if (a === undefined || a === null || b === null || b === undefined) {
+            return false
+        }
+        if (typeof a === "object" && typeof b === "object") {
+            for (const aKey in a) {
+                if (!(aKey in b)) {
+                    return false
+                }
+            }
+
+            for (const bKey in b) {
+                if (!(bKey in a)) {
+                    return false
+                }
+            }
+            for (const k in a) {
+                if (!Utils.SameObject(a[k], b[k])) {
+                    return false
+                }
+            }
+            return true
+        }
+        return false
+    }
 }

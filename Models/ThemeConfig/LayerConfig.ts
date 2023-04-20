@@ -618,17 +618,26 @@ export default class LayerConfig extends WithContextLoader {
             filterDocs.push(new Title("Filters", 4))
             filterDocs.push(...this.filters.map((filter) => filter.GenerateDocs()))
         }
+
+        const tagsDescription = []
+        if (this.source === null) {
+            tagsDescription.push(
+                new Title("Basic tags for this layer", 2),
+                "Elements must have the all of following tags to be shown on this layer:",
+                new List(neededTags.map((t) => t.asHumanString(true, false, {}))),
+                overpassLink
+            )
+        } else {
+            tagsDescription.push("This is a special layer - data is not sourced from OpenStreetMap")
+        }
+
         return new Combine([
             new Combine([new Title(this.id, 1), iconImg, this.description, "\n"]).SetClass(
                 "flex flex-col"
             ),
             new List(extraProps),
             ...usingLayer,
-
-            new Title("Basic tags for this layer", 2),
-            "Elements must have the all of following tags to be shown on this layer:",
-            new List(neededTags.map((t) => t.asHumanString(true, false, {}))),
-            overpassLink,
+            ...tagsDescription,
             new Title("Supported attributes", 2),
             quickOverview,
             ...this.tagRenderings.map((tr) => tr.GenerateDocumentation()),

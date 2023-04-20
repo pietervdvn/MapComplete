@@ -1,7 +1,6 @@
 import { BBox } from "./BBox"
-import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import * as turf from "@turf/turf"
-import { AllGeoJSON, booleanWithin, Coord, Lines } from "@turf/turf"
+import { AllGeoJSON, booleanWithin, Coord } from "@turf/turf"
 import {
     Feature,
     FeatureCollection,
@@ -14,9 +13,8 @@ import {
     Polygon,
     Position,
 } from "geojson"
-import togpx from "togpx"
-import Constants from "../Models/Constants"
 import { Tiles } from "../Models/TileRange"
+import { Utils } from "../Utils"
 
 export class GeoOperations {
     private static readonly _earthRadius = 6378137
@@ -416,30 +414,55 @@ export class GeoOperations {
             .features.map((p) => <[number, number]>p.geometry.coordinates)
     }
 
-    public static AsGpx(
-        feature: Feature,
-        options?: { layer?: LayerConfig; gpxMetadata?: any }
-    ): string {
-        const metadata = options?.gpxMetadata ?? {}
-        metadata["time"] = metadata["time"] ?? new Date().toISOString()
-        const tags = feature.properties
-
-        if (options?.layer !== undefined) {
-            metadata["name"] = options?.layer.title?.GetRenderValue(tags)?.Subs(tags)?.txt
-            metadata["desc"] = "Generated with MapComplete layer " + options?.layer.id
-            if (tags._backend?.contains("openstreetmap")) {
-                metadata["copyright"] =
-                    "Data copyrighted by OpenStreetMap-contributors, freely available under ODbL. See https://www.openstreetmap.org/copyright"
-                metadata["author"] = tags["_last_edit:contributor"]
-                metadata["link"] = "https://www.openstreetmap.org/" + tags.id
-                metadata["time"] = tags["_last_edit:timestamp"]
-            }
+    public static toGpx(
+        locations:
+            | Feature<LineString>
+            | Feature<Point, { date?: string; altitude?: number | string }>[],
+        title?: string
+    ) {
+        title = title?.trim()
+        if (title === undefined || title === "") {
+            title = "Uploaded with MapComplete"
         }
-
-        return togpx(feature, {
-            creator: "MapComplete " + Constants.vNumber,
-            metadata,
-        })
+        title = Utils.EncodeXmlValue(title)
+        const trackPoints: string[] = []
+        let locationsWithMeta: Feature<Point, { date?: string; altitude?: number | string }>[]
+        if (Array.isArray(locations)) {
+            locationsWithMeta = locations
+        } else {
+            locationsWithMeta = locations.geometry.coordinates.map(
+                (p) =>
+                    <Feature<Point>>{
+                        type: "Feature",
+                        properties: {},
+                        geometry: {
+                            type: "Point",
+                            coordinates: p,
+                        },
+                    }
+            )
+        }
+        for (const l of locationsWithMeta) {
+            let trkpt = `    <trkpt lat="${l.geometry.coordinates[1]}" lon="${l.geometry.coordinates[0]}">`
+            if (l.properties.date) {
+                trkpt += `        <time>${l.properties.date}</time>`
+            }
+            if (l.properties.altitude) {
+                trkpt += `        <ele>${l.properties.altitude}</ele>`
+            }
+            trkpt += "    </trkpt>"
+            trackPoints.push(trkpt)
+        }
+        const header =
+            '<gpx version="1.1" creator="MapComplete.osm.be" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">'
+        return (
+            header +
+            "\n<name>" +
+            title +
+            "</name>\n<trk><trkseg>\n" +
+            trackPoints.join("\n") +
+            "\n</trkseg></trk></gpx>"
+        )
     }
 
     public static IdentifieCommonSegments(coordinatess: [number, number][][]): {
@@ -808,6 +831,31 @@ export class GeoOperations {
     }
 
     /**
+     * Creates a linestring object based on the outer ring of the given polygon
+     *
+     * Returns the argument if not a polygon
+     * @param p
+     */
+    public static outerRing<P>(p: Feature<Polygon | LineString, P>): Feature<LineString, P> {
+        if (p.geometry.type !== "Polygon") {
+            return <Feature<LineString, P>>p
+        }
+        return {
+            type: "Feature",
+            properties: p.properties,
+            geometry: {
+                type: "LineString",
+                coordinates: p.geometry.coordinates[0],
+            },
+        }
+    }
+
+    static centerpointCoordinatesObj(geojson: Feature) {
+        const [lon, lat] = GeoOperations.centerpointCoordinates(geojson)
+        return { lon, lat }
+    }
+
+    /**
      * Helper function which does the heavy lifting for 'inside'
      */
     private static pointInPolygonCoordinates(
@@ -955,30 +1003,5 @@ export class GeoOperations {
             }
         }
         throw "CalculateIntersection fallthrough: can not calculate an intersection between features"
-    }
-
-    /**
-     * Creates a linestring object based on the outer ring of the given polygon
-     *
-     * Returns the argument if not a polygon
-     * @param p
-     */
-    public static outerRing<P>(p: Feature<Polygon | LineString, P>): Feature<LineString, P> {
-        if (p.geometry.type !== "Polygon") {
-            return <Feature<LineString, P>>p
-        }
-        return {
-            type: "Feature",
-            properties: p.properties,
-            geometry: {
-                type: "LineString",
-                coordinates: p.geometry.coordinates[0],
-            },
-        }
-    }
-
-    static centerpointCoordinatesObj(geojson: Feature) {
-        const [lon, lat] = GeoOperations.centerpointCoordinates(geojson)
-        return { lon, lat }
     }
 }

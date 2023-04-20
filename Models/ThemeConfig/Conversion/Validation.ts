@@ -891,7 +891,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                     throw "A special layer cannot have presets"
                 }
                 // Check that a preset will be picked up by the layer itself
-                const baseTags = TagUtils.Tag(json.source.osmTags)
+                const baseTags = TagUtils.Tag(json.source["osmTags"])
                 for (let i = 0; i < json.presets.length; i++) {
                     const preset = json.presets[i]
                     const tags: { k: string; v: string }[] = new And(

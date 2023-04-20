@@ -5,7 +5,6 @@ import Img from "../Base/Img"
 import { FixedUiElement } from "../Base/FixedUiElement"
 import Combine from "../Base/Combine"
 import Link from "../Base/Link"
-import { SubstitutedTranslation } from "../SubstitutedTranslation"
 import { Utils } from "../../Utils"
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
 import { VariableUiElement } from "../Base/VariableUIElement"
@@ -25,6 +24,7 @@ import { MapLibreAdaptor } from "../Map/MapLibreAdaptor"
 import ShowDataLayer from "../Map/ShowDataLayer"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "../Map/MaplibreMap.svelte"
+import SpecialVisualizations from "../SpecialVisualizations"
 
 export interface AutoAction extends SpecialVisualization {
     supportsAutoAction: boolean
@@ -148,19 +148,22 @@ class ApplyButton extends UIElement {
                 const featureTags = this.state.featureProperties.getStore(targetFeatureId)
                 const rendering = this.tagRenderingConfig.GetRenderValue(featureTags.data).txt
                 const specialRenderings = Utils.NoNull(
-                    SubstitutedTranslation.ExtractSpecialComponents(rendering).map((x) => x.special)
-                ).filter((v) => v.func["supportsAutoAction"] === true)
+                    SpecialVisualizations.constructSpecification(rendering)
+                ).filter((v) => typeof v !== "string" && v.func["supportsAutoAction"] === true)
 
                 if (specialRenderings.length == 0) {
                     console.warn(
                         "AutoApply: feature " +
-                        targetFeatureId +
-                        " got a rendering without supported auto actions:",
+                            targetFeatureId +
+                            " got a rendering without supported auto actions:",
                         rendering
                     )
                 }
 
                 for (const specialRendering of specialRenderings) {
+                    if (typeof specialRendering === "string") {
+                        continue
+                    }
                     const action = <AutoAction>specialRendering.func
                     await action.applyActionOn(this.state, featureTags, specialRendering.args)
                 }
@@ -225,7 +228,7 @@ export default class AutoApplyButton implements SpecialVisualization {
             "To effectively use this button, you'll need some ingredients:",
             new List([
                 "A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: " +
-                supportedActions.join(", "),
+                    supportedActions.join(", "),
                 "A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the layer ",
                 new Link("current_view", "./BuiltinLayers.md#current_view"),
                 "Then, use a calculated tag on the host feature to determine the overlapping object ids",
@@ -245,7 +248,7 @@ export default class AutoApplyButton implements SpecialVisualization {
                 !(
                     state.featureSwitchIsTesting.data ||
                     state.osmConnection._oauth_config.url ===
-                    OsmConnection.oauth_configs["osm-test"].url
+                        OsmConnection.oauth_configs["osm-test"].url
                 )
             ) {
                 const t = Translations.t.general.add.import
