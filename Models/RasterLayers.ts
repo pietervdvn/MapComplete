@@ -45,6 +45,7 @@ export class AvailableRasterLayers {
         },
         geometry: BBox.global.asGeometry(),
     }
+
     public static layersAvailableAt(
         location: Store<{ lon: number; lat: number }>
     ): Store<RasterLayerPolygon[]> {
@@ -77,44 +78,35 @@ export class AvailableRasterLayers {
 }
 
 export class RasterLayerUtils {
+    /**
+     * Selects, from the given list of available rasterLayerPolygons, a rasterLayer.
+     * This rasterlayer will be of type 'preferredCategory' and will be of the 'best'-layer (if available).
+     * Returns 'undefined' if no such layer is available
+     * @param available
+     * @param preferredCategory
+     * @param ignoreLayer
+     */
     public static SelectBestLayerAccordingTo(
         available: RasterLayerPolygon[],
-        preferredCategory: string | string[]
+        preferredCategory: string,
+        ignoreLayer?: RasterLayerPolygon
     ): RasterLayerPolygon {
-        available = [...available]
-
-        if (preferredCategory === undefined) {
-            return available[0]
-        }
-
-        let prefered: string[]
-        if (typeof preferredCategory === "string") {
-            prefered = [preferredCategory]
-        } else {
-            prefered = preferredCategory
-        }
-
-        for (let i = prefered.length - 1; i >= 0; i--) {
-            const category = prefered[i]
-            //Then sort all layers of the preferred type to the top. Stability of the sorting will force a 'best' photo layer on top
-            available.sort((ap, bp) => {
-                const a = ap.properties
-                const b = bp.properties
-                if (a.category === category && b.category === category) {
-                    return 0
+        let secondBest: RasterLayerPolygon = undefined
+        for (const rasterLayer of available) {
+            if (rasterLayer === ignoreLayer) {
+                continue
+            }
+            const p = rasterLayer.properties
+            if (p.category === preferredCategory) {
+                if (p.best) {
+                    return rasterLayer
                 }
-                if (a.category !== category) {
-                    return 1
+                if (!secondBest) {
+                    secondBest = rasterLayer
                 }
-
-                return -1
-            })
+            }
         }
-        const best = available.find((l) => l.properties.best)
-        if (best) {
-            return best
-        }
-        return available[0]
+        return secondBest
     }
 }
 

@@ -23,20 +23,24 @@ export default class BackgroundLayerResetter {
         availableLayers.addCallbackAndRunD((availableLayers) => {
             // We only check on move/on change of the availableLayers
             const currentBgPolygon: RasterLayerPolygon | undefined = currentBackgroundLayer.data
+            if (currentBackgroundLayer === undefined) {
+                return
+            }
 
             if (availableLayers.findIndex((available) => currentBgPolygon == available) >= 0) {
                 // Still available!
                 return
             }
 
+            console.log("Current layer properties:", currentBgPolygon)
             // Oops, we panned out of range for this layer!
             // What is the 'best' map of the same category which is available?
             const availableInSameCat = RasterLayerUtils.SelectBestLayerAccordingTo(
                 availableLayers,
-                currentBgPolygon?.properties?.category ?? "osmbasedmap"
+                currentBgPolygon?.properties?.category
             )
             console.log("Selecting a different layer:", availableInSameCat.properties.id)
-            currentBackgroundLayer.setData(availableInSameCat ?? AvailableRasterLayers.osmCarto)
+            currentBackgroundLayer.setData(availableInSameCat)
         })
     }
 }

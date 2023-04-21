@@ -343,7 +343,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             // already the correct background layer, nothing to do
             return
         }
-        await this.awaitStyleIsLoaded()
+        // await this.awaitStyleIsLoaded()
 
         if (background !== this.rasterLayer?.data?.properties) {
             // User selected another background in the meantime... abort

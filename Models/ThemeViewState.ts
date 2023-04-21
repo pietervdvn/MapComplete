@@ -21,7 +21,7 @@ import { QueryParameters } from "../Logic/Web/QueryParameters"
 import UserRelatedState from "../Logic/State/UserRelatedState"
 import LayerConfig from "./ThemeConfig/LayerConfig"
 import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
-import { AvailableRasterLayers, RasterLayerPolygon } from "./RasterLayers"
+import { AvailableRasterLayers, RasterLayerPolygon, RasterLayerUtils } from "./RasterLayers"
 import LayoutSource from "../Logic/FeatureSource/Sources/LayoutSource"
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource"
 import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropertiesStore"
@@ -46,6 +46,7 @@ import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"
 import ShowOverlayRasterLayer from "../UI/Map/ShowOverlayRasterLayer"
 import { Utils } from "../Utils"
 import { EliCategory } from "./RasterLayerProperties"
+import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
 
 /**
  *
@@ -300,34 +301,16 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.mapProperties.rasterLayer.setData(AvailableRasterLayers.osmCarto)
             }
         )
-        const self = this
-
-        function setLayerCategory(category: EliCategory) {
-            const available = self.availableLayers.data
-            const matchingCategoryLayers = available.filter(
-                (l) => l.properties.category === category
+        const setLayerCategory = (category: EliCategory) => {
+            const available = this.availableLayers.data
+            const current = this.mapProperties.rasterLayer
+            const best = RasterLayerUtils.SelectBestLayerAccordingTo(
+                available,
+                category,
+                current.data
             )
-            const best =
-                matchingCategoryLayers.find((l) => l.properties.best) ?? matchingCategoryLayers[0]
-            const rasterLayer = self.mapProperties.rasterLayer
-            if (rasterLayer.data !== best) {
-                rasterLayer.setData(best)
-                return
-            }
-
-            // The current layer is already selected...
-            // We switch the layers again
-
-            if (category === "osmbasedmap") {
-                rasterLayer.setData(undefined)
-            } else {
-                // search the _second_ best layer
-                const secondbest = matchingCategoryLayers.find(
-                    (l) => l.properties.best && l !== best
-                )
-                const secondNotBest = matchingCategoryLayers.find((l) => l !== best)
-                rasterLayer.setData(secondbest ?? secondNotBest)
-            }
+            console.log("Best layer for category", category, "is", best.properties.id)
+            current.setData(best)
         }
 
         Hotkeys.RegisterHotkey(
@@ -454,5 +437,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
         new ChangeToElementsActor(this.changes, this.featureProperties)
         new PendingChangesUploader(this.changes, this.selectedElement)
         new SelectedElementTagsUpdater(this)
+        new BackgroundLayerResetter(this.mapProperties.rasterLayer, this.availableLayers)
     }
 }
