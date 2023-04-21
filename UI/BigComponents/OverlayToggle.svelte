@@ -7,7 +7,7 @@ import { UIEventSource } from "../../Logic/UIEventSource";
 import Tr from "../Base/Tr.svelte";
 import Translations from "../i18n/Translations";
 import { Translation } from "../i18n/Translation";
-import { RasterLayerProperties } from "../../Models/RasterLayerProperties";
+import type { RasterLayerProperties } from "../../Models/RasterLayerProperties";
 
 export let layerproperties : RasterLayerProperties
 export let state: {isDisplayed: UIEventSource<boolean>};
