@@ -240,6 +240,12 @@ export abstract class Store<T> implements Readable<T> {
         return newSource
     }
 
+    /**
+     * Converts the uiEventSource into a promise.
+     * The promise will return the value of the store if the given condition evaluates to true
+     * @param condition: an optional condition, default to 'store.value !== undefined'
+     * @constructor
+     */
     public AsPromise(condition?: (t: T) => boolean): Promise<T> {
         const self = this
         condition = condition ?? ((t) => t !== undefined)

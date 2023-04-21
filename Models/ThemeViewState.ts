@@ -47,6 +47,7 @@ import ShowOverlayRasterLayer from "../UI/Map/ShowOverlayRasterLayer"
 import { Utils } from "../Utils"
 import { EliCategory } from "./RasterLayerProperties"
 import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
+import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
 
 /**
  *
@@ -204,13 +205,13 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.perLayer = perLayer.perLayer
         }
         this.perLayer.forEach((fs) => {
-            /* TODO enable   new SaveFeatureSourceToLocalStorage(
+            new SaveFeatureSourceToLocalStorage(
                 this.osmConnection.Backend(),
                 fs.layer.layerDef.id,
                 15,
                 fs,
                 this.featureProperties
-            )//*/
+            )
 
             const filtered = new FilteringFeatureSource(
                 fs.layer,

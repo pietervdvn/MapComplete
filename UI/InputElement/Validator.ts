@@ -57,6 +57,11 @@ export abstract class Validator {
         return true
     }
 
+    /**
+     * Reformats for the human
+     * @param s
+     * @param country
+     */
     public reformat(s: string, country?: () => string): string {
         return s
     }

@@ -11,6 +11,7 @@ import { UIEventSource } from "../../UIEventSource"
 export default class TileLocalStorage<T> {
     private static perLayer: Record<string, TileLocalStorage<any>> = {}
     private readonly _layername: string
+    private readonly inUse = new UIEventSource(false)
     private readonly cachedSources: Record<number, UIEventSource<T> & { flush: () => void }> = {}
 
     private constructor(layername: string) {
@@ -49,7 +50,10 @@ export default class TileLocalStorage<T> {
 
     private async SetIdb(tileIndex: number, data: any): Promise<void> {
         try {
+            await this.inUse.AsPromise((inUse) => !inUse)
+            this.inUse.setData(true)
             await IdbLocalStorage.SetDirectly(this._layername + "_" + tileIndex, data)
+            this.inUse.setData(false)
         } catch (e) {
             console.error(
                 "Could not save tile to indexed-db: ",

@@ -181,7 +181,7 @@ export default abstract class BaseUIElement {
                     // @ts-ignore
                     e.consumed = true
                 }
-                el.classList.add("pointer-events-none", "cursor-pointer")
+                el.classList.add("cursor-pointer")
             }
 
             return el
