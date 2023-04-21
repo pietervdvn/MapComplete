@@ -69,6 +69,14 @@
       ],
       "additionalProperties": false
     },
+    "Record<string,string>": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "Record<string,string|Record<string,string>>": {
+      "type": "object",
+      "additionalProperties": false
+    },
     "DenominationConfigJson": {
       "type": "object",
       "properties": {
@@ -131,10 +139,6 @@
       "required": [
         "canonicalDenomination"
       ],
-      "additionalProperties": false
-    },
-    "Record<string,string>": {
-      "type": "object",
       "additionalProperties": false
     }
   },

@@ -3,7 +3,7 @@ export default {
   "type": "object",
   "properties": {
     "location": {
-      "description": "All the locations that this point should be rendered at.\nUsing `location: [\"point\", \"centroid\"] will always render centerpoint.\n'projected_centerpoint' will show an item on the line itself, near the middle of the line. (LineStrings only)",
+      "description": "All the locations that this point should be rendered at.\nPossible values are:\n- `point`: only renders points at their location\n- `centroid`: show a symbol at the centerpoint of a (multi)Linestring and (multi)polygon. Points will _not_ be rendered with this\n- `projected_centerpoint`: Only on (multi)linestrings: calculate the centerpoint and snap it to the way\n- `start` and `end`: only on linestrings: add a point to the first/last coordinate of the LineString",
       "type": "array",
       "items": {
         "type": "string"
@@ -82,7 +82,7 @@ export default {
       ]
     },
     "css": {
-      "description": "A snippet of css code",
+      "description": "A snippet of css code which is applied onto the container of the entire marker",
       "anyOf": [
         {
           "$ref": "#/definitions/TagRenderingConfigJson"
@@ -93,12 +93,64 @@ export default {
       ]
     },
     "cssClasses": {
-      "description": "A snippet of css-classes. They can be space-separated",
+      "description": "A snippet of css-classes which are applied onto the container of the entire marker. They can be space-separated",
       "anyOf": [
         {
           "$ref": "#/definitions/TagRenderingConfigJson"
         },
         {
+          "type": "string"
+        }
+      ]
+    },
+    "labelCss": {
+      "description": "Css that is applied onto the label",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/TagRenderingConfigJson"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "labelCssClasses": {
+      "description": "Css classes that are applied onto the label; can be space-separated",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/TagRenderingConfigJson"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "pitchAlignment": {
+      "description": "If the map is pitched, the marker will stay parallel to the screen.\nSet to 'map' if you want to put it flattened on the map",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/TagRenderingConfigJson"
+        },
+        {
+          "enum": [
+            "canvas",
+            "map"
+          ],
+          "type": "string"
+        }
+      ]
+    },
+    "rotationAlignment": {
+      "description": "If the map is rotated, the icon will still point to the north if no rotation was applied",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/TagRenderingConfigJson"
+        },
+        {
+          "enum": [
+            "canvas",
+            "map"
+          ],
           "type": "string"
         }
       ]
@@ -164,6 +216,12 @@ export default {
         "or"
       ]
     },
+    "Record<string,string>": {
+      "type": "object"
+    },
+    "Record<string,string|Record<string,string>>": {
+      "type": "object"
+    },
     "DenominationConfigJson": {
       "type": "object",
       "properties": {
@@ -227,19 +285,12 @@ export default {
         "canonicalDenomination"
       ]
     },
-    "Record<string,string>": {
-      "type": "object"
-    },
     "TagRenderingConfigJson": {
       "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
       "type": "object",
       "properties": {
         "id": {
           "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)",
-          "type": "string"
-        },
-        "group": {
-          "description": "If 'group' is defined on many tagRenderings, these are grouped together when shown. The questions are grouped together as well.\nThe first tagRendering of a group will always be a sticky element.",
           "type": "string"
         },
         "labels": {
@@ -249,14 +300,86 @@ export default {
             "type": "string"
           }
         },
+        "classes": {
+          "description": "A list of css-classes to apply to the entire tagRendering if the answer is known (not applied on the question).\nThis is only for advanced users",
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
         "description": {
-          "description": "A human-readable text explaining what this tagRendering does"
+          "description": "A human-readable text explaining what this tagRendering does",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "render": {
-          "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered"
+          "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "special": {
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/Record<string,string|Record<string,string>>"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "special"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "condition": {
           "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/AndTagConfigJson",
+              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+            },
+            {
+              "$ref": "#/definitions/OrTagConfigJson",
+              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "metacondition": {
+          "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
           "anyOf": [
             {
               "$ref": "#/definitions/AndTagConfigJson",
@@ -295,7 +418,15 @@ export default {
                 "description": "If this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
               },
               "then": {
-                "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\nType: rendered"
+                "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\nType: rendered",
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/Record<string,string>"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
               },
               "icon": {
                 "description": "An icon supporting this mapping; typically shown pretty small\nType: icon",

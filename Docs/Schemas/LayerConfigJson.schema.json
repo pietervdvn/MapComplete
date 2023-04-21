@@ -7,90 +7,80 @@
       "type": "string"
     },
     "name": {
-      "description": "The name of this layer\nUsed in the layer control panel and the 'Personal theme'.\n\nIf not given, will be hidden (and thus not toggable) in the layer control"
-    },
-    "description": {
-      "description": "A description for this layer.\nShown in the layer selections and in the personel theme"
-    },
-    "source": {
-      "description": "This determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.",
+      "description": "The name of this layer\nUsed in the layer control panel and the 'Personal theme'.\n\nIf not given, will be hidden (and thus not toggable) in the layer control",
       "anyOf": [
         {
-          "allOf": [
-            {
-              "type": "object",
-              "properties": {
-                "osmTags": {
-                  "$ref": "#/definitions/TagConfigJson",
-                  "description": "Every source must set which tags have to be present in order to load the given layer."
-                },
-                "maxCacheAge": {
-                  "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
-                  "type": "number"
-                }
-              },
-              "required": [
-                "osmTags"
-              ]
+          "$ref": "#/definitions/Record<string,string>"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "description": {
+      "description": "A description for this layer.\nShown in the layer selections and in the personel theme",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Record<string,string>"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "source": {
+      "description": "This determines where the data for the layer is fetched: from OSM or from an external geojson dataset.\n\nIf no 'geojson' is defined, data will be fetched from overpass and the OSM-API.\n\nEvery source _must_ define which tags _must_ be present in order to be picked up.\n\nNote: a source must always be defined. 'special' is only allowed if this is a builtin-layer",
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "osmTags": {
+              "$ref": "#/definitions/TagConfigJson",
+              "description": "Every source must set which tags have to be present in order to load the given layer."
             },
-            {
-              "type": "object",
-              "properties": {
-                "overpassScript": {
-                  "description": "If set, this custom overpass-script will be used instead of building one by using the OSM-tags.\nSpecifying OSM-tags is still obligatory and will still hide non-matching items and they will be used for the rest of the pipeline.\n_This should be really rare_.\n\nFor example, when you want to fetch all grass-areas in parks and which are marked as publicly accessible:\n```\n\"source\": {\n  \"overpassScript\":\n     \"way[\\\"leisure\\\"=\\\"park\\\"];node(w);is_in;area._[\\\"leisure\\\"=\\\"park\\\"];(way(area)[\\\"landuse\\\"=\\\"grass\\\"]; node(w); );\",\n     \"osmTags\": \"access=yes\"\n}\n```",
-                  "type": "string"
-                }
-              }
+            "maxCacheAge": {
+              "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
+              "type": "number"
             }
+          },
+          "required": [
+            "osmTags"
           ]
         },
         {
-          "allOf": [
-            {
-              "type": "object",
-              "properties": {
-                "osmTags": {
-                  "$ref": "#/definitions/TagConfigJson",
-                  "description": "Every source must set which tags have to be present in order to load the given layer."
-                },
-                "maxCacheAge": {
-                  "description": "The maximum amount of seconds that a tile is allowed to linger in the cache",
-                  "type": "number"
-                }
-              },
-              "required": [
-                "osmTags"
-              ]
+          "type": "object",
+          "properties": {
+            "geoJson": {
+              "description": "The actual source of the data to load, if loaded via geojson.\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}",
+              "type": "string"
             },
-            {
-              "type": "object",
-              "properties": {
-                "geoJson": {
-                  "description": "The actual source of the data to load, if loaded via geojson.\n\n# A single geojson-file\nsource: {geoJson: \"https://my.source.net/some-geo-data.geojson\"}\n fetches a geojson from a third party source\n\n# A tiled geojson source\nsource: {geoJson: \"https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson\", geoJsonZoomLevel: 14}\n to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer\n\nSome API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}",
-                  "type": "string"
-                },
-                "geoJsonZoomLevel": {
-                  "description": "To load a tiled geojson layer, set the zoomlevel of the tiles",
-                  "type": "number"
-                },
-                "isOsmCache": {
-                  "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache",
-                  "type": "boolean"
-                },
-                "mercatorCrs": {
-                  "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this",
-                  "type": "boolean"
-                },
-                "idKey": {
-                  "description": "Some API's have an id-field, but give it a different name.\nSetting this key will rename this field into 'id'",
-                  "type": "string"
-                }
-              },
-              "required": [
-                "geoJson"
-              ]
+            "geoJsonZoomLevel": {
+              "description": "To load a tiled geojson layer, set the zoomlevel of the tiles",
+              "type": "number"
+            },
+            "isOsmCache": {
+              "description": "Indicates that the upstream geojson data is OSM-derived.\nUseful for e.g. merging or for scripts generating this cache",
+              "type": "boolean"
+            },
+            "mercatorCrs": {
+              "description": "Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this",
+              "type": "boolean"
+            },
+            "idKey": {
+              "description": "Some API's have an id-field, but give it a different name.\nSetting this key will rename this field into 'id'",
+              "type": "string"
             }
+          },
+          "required": [
+            "geoJson"
           ]
+        },
+        {
+          "enum": [
+            "special",
+            "special:library"
+          ],
+          "type": "string"
         }
       ]
     },
@@ -214,7 +204,15 @@
         "type": "object",
         "properties": {
           "title": {
-            "description": "The title - shown on the 'add-new'-button.\n\nThis should include the article of the noun, e.g. 'a hydrant', 'a bicycle pump'.\nThis text will be inserted into `Add {category} here`, becoming `Add a hydrant here`.\n\nDo _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!"
+            "description": "The title - shown on the 'add-new'-button.\n\nThis should include the article of the noun, e.g. 'a hydrant', 'a bicycle pump'.\nThis text will be inserted into `Add {category} here`, becoming `Add a hydrant here`.\n\nDo _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/Record<string,string>"
+              },
+              {
+                "type": "string"
+              }
+            ]
           },
           "tags": {
             "description": "The tags to add. It determines the icon too",
@@ -224,7 +222,15 @@
             }
           },
           "description": {
-            "description": "The _first sentence_ of the description is shown on the button of the `add` menu.\nThe full description is shown in the confirmation dialog.\n\n(The first sentence is until the first '.'-character in the description)"
+            "description": "The _first sentence_ of the description is shown on the button of the `add` menu.\nThe full description is shown in the confirmation dialog.\n\n(The first sentence is until the first '.'-character in the description)",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/Record<string,string>"
+              },
+              {
+                "type": "string"
+              }
+            ]
           },
           "exampleImages": {
             "description": "Example images, which show real-life pictures of what such a feature might look like\n\nType: image",
@@ -299,6 +305,9 @@
           {
             "type": "object",
             "properties": {
+              "id": {
+                "type": "string"
+              },
               "builtin": {
                 "anyOf": [
                   {
@@ -318,28 +327,6 @@
             },
             "required": [
               "builtin",
-              "override"
-            ]
-          },
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "builtin": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "override": {
-                "$ref": "#/definitions/Partial<QuestionableTagRenderingConfigJson>"
-              }
-            },
-            "required": [
-              "builtin",
-              "id",
               "override"
             ]
           },
@@ -507,6 +494,14 @@
       ],
       "additionalProperties": false
     },
+    "Record<string,string>": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "Record<string,string|Record<string,string>>": {
+      "type": "object",
+      "additionalProperties": false
+    },
     "DenominationConfigJson": {
       "type": "object",
       "properties": {
@@ -571,20 +566,12 @@
       ],
       "additionalProperties": false
     },
-    "Record<string,string>": {
-      "type": "object",
-      "additionalProperties": false
-    },
     "TagRenderingConfigJson": {
       "description": "A TagRenderingConfigJson is a single piece of code which converts one ore more tags into a HTML-snippet.\nFor an _editable_ tagRendering, use 'QuestionableTagRenderingConfigJson' instead, which extends this one",
       "type": "object",
       "properties": {
         "id": {
           "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)",
-          "type": "string"
-        },
-        "group": {
-          "description": "If 'group' is defined on many tagRenderings, these are grouped together when shown. The questions are grouped together as well.\nThe first tagRendering of a group will always be a sticky element.",
           "type": "string"
         },
         "labels": {
@@ -594,14 +581,86 @@
             "type": "string"
           }
         },
+        "classes": {
+          "description": "A list of css-classes to apply to the entire tagRendering if the answer is known (not applied on the question).\nThis is only for advanced users",
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
         "description": {
-          "description": "A human-readable text explaining what this tagRendering does"
+          "description": "A human-readable text explaining what this tagRendering does",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "render": {
-          "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered"
+          "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "special": {
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/Record<string,string|Record<string,string>>"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "special"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "condition": {
           "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/AndTagConfigJson",
+              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+            },
+            {
+              "$ref": "#/definitions/OrTagConfigJson",
+              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "metacondition": {
+          "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
           "anyOf": [
             {
               "$ref": "#/definitions/AndTagConfigJson",
@@ -640,7 +699,15 @@
                 "description": "If this condition is met, then the text under `then` will be shown.\nIf no value matches, and the user selects this mapping as an option, then these tags will be uploaded to OSM.\n\nFor example: {'if': 'diet:vegetarion=yes', 'then':'A vegetarian option is offered here'}\n\nThis can be an substituting-tag as well, e.g. {'if': 'addr:street:={_calculated_nearby_streetname}', 'then': '{_calculated_nearby_streetname}'}"
               },
               "then": {
-                "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\nType: rendered"
+                "description": "If the condition `if` is met, the text `then` will be rendered.\nIf not known yet, the user will be presented with `then` as an option\nType: rendered",
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/Record<string,string>"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
               },
               "icon": {
                 "description": "An icon supporting this mapping; typically shown pretty small\nType: icon",
@@ -796,7 +863,7 @@
       "type": "object",
       "properties": {
         "location": {
-          "description": "All the locations that this point should be rendered at.\nUsing `location: [\"point\", \"centroid\"] will always render centerpoint.\n'projected_centerpoint' will show an item on the line itself, near the middle of the line. (LineStrings only)",
+          "description": "All the locations that this point should be rendered at.\nPossible values are:\n- `point`: only renders points at their location\n- `centroid`: show a symbol at the centerpoint of a (multi)Linestring and (multi)polygon. Points will _not_ be rendered with this\n- `projected_centerpoint`: Only on (multi)linestrings: calculate the centerpoint and snap it to the way\n- `start` and `end`: only on linestrings: add a point to the first/last coordinate of the LineString",
           "type": "array",
           "items": {
             "type": "string"
@@ -875,7 +942,7 @@
           ]
         },
         "css": {
-          "description": "A snippet of css code",
+          "description": "A snippet of css code which is applied onto the container of the entire marker",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
@@ -886,12 +953,64 @@
           ]
         },
         "cssClasses": {
-          "description": "A snippet of css-classes. They can be space-separated",
+          "description": "A snippet of css-classes which are applied onto the container of the entire marker. They can be space-separated",
           "anyOf": [
             {
               "$ref": "#/definitions/TagRenderingConfigJson"
             },
             {
+              "type": "string"
+            }
+          ]
+        },
+        "labelCss": {
+          "description": "Css that is applied onto the label",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TagRenderingConfigJson"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "labelCssClasses": {
+          "description": "Css classes that are applied onto the label; can be space-separated",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TagRenderingConfigJson"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "pitchAlignment": {
+          "description": "If the map is pitched, the marker will stay parallel to the screen.\nSet to 'map' if you want to put it flattened on the map",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TagRenderingConfigJson"
+            },
+            {
+              "enum": [
+                "canvas",
+                "map"
+              ],
+              "type": "string"
+            }
+          ]
+        },
+        "rotationAlignment": {
+          "description": "If the map is rotated, the icon will still point to the north if no rotation was applied",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TagRenderingConfigJson"
+            },
+            {
+              "enum": [
+                "canvas",
+                "map"
+              ],
               "type": "string"
             }
           ]
@@ -1101,7 +1220,7 @@
               }
             },
             "inline": {
-              "description": "When set, influences the way a question is asked.\nInstead of showing a full-widht text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.",
+              "description": "When set, influences the way a question is asked.\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nNote that this will be set automatically if no special elements are present.",
               "type": "boolean"
             },
             "default": {
@@ -1128,10 +1247,6 @@
           "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)",
           "type": "string"
         },
-        "group": {
-          "description": "If 'group' is defined on many tagRenderings, these are grouped together when shown. The questions are grouped together as well.\nThe first tagRendering of a group will always be a sticky element.",
-          "type": "string"
-        },
         "labels": {
           "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
           "type": "array",
@@ -1139,14 +1254,86 @@
             "type": "string"
           }
         },
+        "classes": {
+          "description": "A list of css-classes to apply to the entire tagRendering if the answer is known (not applied on the question).\nThis is only for advanced users",
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
         "description": {
-          "description": "A human-readable text explaining what this tagRendering does"
+          "description": "A human-readable text explaining what this tagRendering does",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "render": {
-          "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered"
+          "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "special": {
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/Record<string,string|Record<string,string>>"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "special"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "condition": {
           "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/AndTagConfigJson",
+              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+            },
+            {
+              "$ref": "#/definitions/OrTagConfigJson",
+              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "metacondition": {
+          "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
           "anyOf": [
             {
               "$ref": "#/definitions/AndTagConfigJson",
@@ -1216,7 +1403,7 @@
               }
             },
             "inline": {
-              "description": "When set, influences the way a question is asked.\nInstead of showing a full-widht text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.",
+              "description": "When set, influences the way a question is asked.\nInstead of showing a full-width text field, the text field will be shown within the rendering of the question.\n\nThis combines badly with special input elements, as it'll distort the layout.\nNote that this will be set automatically if no special elements are present.",
               "type": "boolean"
             },
             "default": {
@@ -1243,10 +1430,6 @@
           "description": "The id of the tagrendering, should be an unique string.\nUsed to keep the translations in sync. Only used in the tagRenderings-array of a layerConfig, not requered otherwise.\n\nUse 'questions' to trigger the question box of this group (if a group is defined)",
           "type": "string"
         },
-        "group": {
-          "description": "If 'group' is defined on many tagRenderings, these are grouped together when shown. The questions are grouped together as well.\nThe first tagRendering of a group will always be a sticky element.",
-          "type": "string"
-        },
         "labels": {
           "description": "A list of labels. These are strings that are used for various purposes, e.g. to filter them away",
           "type": "array",
@@ -1254,14 +1437,86 @@
             "type": "string"
           }
         },
+        "classes": {
+          "description": "A list of css-classes to apply to the entire tagRendering if the answer is known (not applied on the question).\nThis is only for advanced users",
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
         "description": {
-          "description": "A human-readable text explaining what this tagRendering does"
+          "description": "A human-readable text explaining what this tagRendering does",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "render": {
-          "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered"
+          "description": "Renders this value. Note that \"{key}\"-parts are substituted by the corresponding values of the element.\nIf neither 'textFieldQuestion' nor 'mappings' are defined, this text is simply shown as default value.\n\nNote that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`\ntype: rendered",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "special": {
+                  "allOf": [
+                    {
+                      "$ref": "#/definitions/Record<string,string|Record<string,string>>"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "special"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "condition": {
           "description": "Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.\n\nThis is useful to ask a follow-up question.\nFor example, within toilets, asking _where_ the diaper changing table is is only useful _if_ there is one.\nThis can be done by adding `\"condition\": \"changing_table=yes\"`\n\nA full example would be:\n```json\n    {\n      \"question\": \"Where is the changing table located?\",\n      \"render\": \"The changing table is located at {changing_table:location}\",\n      \"condition\": \"changing_table=yes\",\n      \"freeform\": {\n        \"key\": \"changing_table:location\",\n        \"inline\": true\n      },\n      \"mappings\": [\n        {\n          \"then\": \"The changing table is in the toilet for women.\",\n          \"if\": \"changing_table:location=female_toilet\"\n        },\n        {\n          \"then\": \"The changing table is in the toilet for men.\",\n          \"if\": \"changing_table:location=male_toilet\"\n        },\n        {\n          \"if\": \"changing_table:location=wheelchair_toilet\",\n          \"then\": \"The changing table is in the toilet for wheelchair users.\",\n        },\n        {\n          \"if\": \"changing_table:location=dedicated_room\",\n          \"then\": \"The changing table is in a dedicated room. \",\n        }\n      ],\n      \"id\": \"toilet-changing_table:location\"\n    },\n```",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/AndTagConfigJson",
+              "description": "Chain many tags, to match, a single of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+            },
+            {
+              "$ref": "#/definitions/OrTagConfigJson",
+              "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "metacondition": {
+          "description": "If set, this tag will be evaluated agains the _usersettings/application state_ table.\nEnable 'show debug info' in user settings to see available options.\nNote that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_",
           "anyOf": [
             {
               "$ref": "#/definitions/AndTagConfigJson",
