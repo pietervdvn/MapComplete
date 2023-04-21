@@ -1,8 +1,8 @@
-import { RasterLayerProperties } from "../../Models/RasterLayers"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import { Map as MlMap } from "maplibre-gl"
 import { Utils } from "../../Utils"
 import { MapLibreAdaptor } from "./MapLibreAdaptor"
+import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
 
 export default class ShowOverlayRasterLayer {
     private readonly _map: UIEventSource<MlMap>

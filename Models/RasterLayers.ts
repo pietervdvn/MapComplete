@@ -4,6 +4,7 @@ import * as globallayers from "../assets/global-raster-layers.json"
 import { BBox } from "../Logic/BBox"
 import { Store, Stores } from "../Logic/UIEventSource"
 import { GeoOperations } from "../Logic/GeoOperations"
+import { RasterLayerProperties } from "./RasterLayerProperties"
 
 export class AvailableRasterLayers {
     public static EditorLayerIndex: (Feature<Polygon, EditorLayerIndexProperties> &
@@ -118,41 +119,6 @@ export class RasterLayerUtils {
 }
 
 export type RasterLayerPolygon = Feature<Polygon, RasterLayerProperties>
-
-export interface RasterLayerProperties {
-    /**
-     * The name of the imagery source
-     */
-    readonly name: string | Record<string, string>
-
-    readonly isOverlay?: boolean
-
-    readonly id: string
-
-    readonly url: string
-    readonly category?:
-        | string
-        | "photo"
-        | "map"
-        | "historicmap"
-        | "osmbasedmap"
-        | "historicphoto"
-        | "qa"
-        | "elevation"
-        | "other"
-
-    readonly attribution?: {
-        readonly url?: string
-        readonly text?: string
-        readonly html?: string
-        readonly required?: boolean
-    }
-
-    readonly min_zoom?: number
-    readonly max_zoom?: number
-
-    readonly best?: boolean
-}
 
 /**
  * Information about a raster tile layer

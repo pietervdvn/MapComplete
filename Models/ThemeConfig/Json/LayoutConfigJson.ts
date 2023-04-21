@@ -1,6 +1,7 @@
 import { LayerConfigJson } from "./LayerConfigJson"
 import ExtraLinkConfigJson from "./ExtraLinkConfigJson"
-import { RasterLayerProperties } from "../../RasterLayers"
+
+import { RasterLayerProperties } from "../../RasterLayerProperties"
 
 /**
  * Defines the entire theme.
