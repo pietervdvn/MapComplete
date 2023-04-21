@@ -14,7 +14,6 @@ export default abstract class BaseUIElement {
 
     public onClick(f: () => void) {
         this._onClick = f
-        this.SetClass("clickable")
         if (this._constructedHtmlElement !== undefined) {
             this._constructedHtmlElement.onclick = f
         }

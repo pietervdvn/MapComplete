@@ -209,18 +209,6 @@ input[type="range"].vertical {
   border-top-right-radius: 999rem;
 }
 
-.w-16-imp {
-  width: 4rem !important;
-}
-
-.w-32-imp {
-  width: 8rem !important;
-}
-
-.w-48-imp {
-  width: 12rem !important;
-}
-
 .link-underline a {
   text-decoration: underline 1px var(--foreground-color);
 }
@@ -286,34 +274,12 @@ li::marker {
   border: 5px solid var(--catch-detail-color);
 }
 
-.border-invisible {
-  border: 5px solid #00000000;
-}
-
 .border-attention {
   border-color: var(--catch-detail-color);
 }
 
 .direction-svg svg path {
   fill: var(--catch-detail-color) !important;
-}
-
-
-.single-layer-selection-toggle {
-  position: relative;
-  width: 2em;
-  height: 2em;
-  flex-shrink: 0;
-}
-
-.single-layer-selection-toggle img {
-  max-height: 2em !important;
-  max-width: 2em !important;
-}
-
-.single-layer-selection-toggle svg {
-  max-height: 2em !important;
-  max-width: 2em !important;
 }
 
 .block-ruby {
@@ -392,14 +358,6 @@ li::marker {
   padding: 0.15em 0.3em;
 }
 
-.clickable {
-  pointer-events: all;
-}
-
-.unclickable {
-  pointer-events: none !important;
-}
-
 @keyframes slide {
   /* This is the animation on the marker to add a new point - it slides through all the possible presets */
   from {
@@ -419,24 +377,7 @@ input {
   color: var(--foreground-color);
 }
 
-.floating-element-width {
-  max-width: calc(100vw - 5em);
-  width: 40em;
-}
-
-
-/****** ShareScreen *****/
-
 .literal-code {
-  display: inline-block;
-  background-color: lightgray;
-  padding: 0.5em;
-  word-break: break-word;
-  color: black;
-  box-sizing: border-box;
-}
-
-.code {
   display: inline-block;
   background-color: lightgray;
   padding: 0.5em;
@@ -470,9 +411,6 @@ input {
   background-color: #f2f2f2;
 }
 
-.layer-toggle {
-  /* The checkbox that toggles a single layer */
-}
 
 .glowing-shadow {
   -webkit-animation: glowing 1s ease-in-out infinite alternate;
