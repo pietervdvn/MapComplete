@@ -70,9 +70,11 @@ export class ImageUploadFlow extends Toggle {
         const label = new Combine([
             Svg.camera_plus_ui().SetClass("block w-12 h-12 p-1 text-4xl "),
             labelContent,
-        ]).SetClass(
-            "p-2 border-4 border-detail rounded-full font-bold h-full align-middle w-full flex justify-center"
-        )
+        ])
+            .SetClass(
+                "p-2 border-4 border-detail rounded-full font-bold h-full align-middle w-full flex justify-center"
+            )
+            .SetStyle(" border-color: var(--foreground-color);")
         const licenseStore = state?.osmConnection?.GetPreference(
             Constants.OsmPreferenceKeyPicturesLicense,
             "CC0"

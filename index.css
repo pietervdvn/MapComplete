@@ -111,56 +111,27 @@ img {
   height: 100%;
 }
 
-.titleicon img {
-  width: unset;
-}
-
-.titleicon svg {
-  width: unset;
-}
-.svg-catch svg path {
-  fill: var(--catch-detail-color) !important;
-  stroke: var(--catch-detail-color) !important;
-}
-
-.svg-unsubtle svg path {
-  fill: var(--unsubtle-detail-color) !important;
-  stroke: var(--unsubtle-detail-color) !important;
-}
-
-.svg-subtle svg path {
-  fill: var(--subtle-detail-color) !important;
-  stroke: var(--subtle-detail-color) !important;
-}
-
-.svg-foreground svg path {
-  fill: var(--foreground-color) !important;
-  stroke: var(--foreground-color) !important;
-}
-
 .no-images img {
+  /* Used solely in 'imageAttribution' */
   display: none;
 }
+
+.text-white a {
+  /* Used solely in 'imageAttribution' */
+  color: var(--background-color);
+}
+
+
 
 .weblate-link {
   /* Weblate-links are the little translation icon next to translatable sentences. Due to their special nature, they are exempt from some rules */
 }
 
-.mapcontrol svg path {
-  fill: var(--subtle-detail-color-contrast) !important;
-}
-
-.red-svg svg path {
-  stroke: #d71010 !important;
-}
 
 a {
   color: var(--foreground-color);
 }
 
-.text-white a {
-  color: var(--background-color);
-}
 
 .btn {
   line-height: 1.25rem;
@@ -204,10 +175,6 @@ a {
   border: 3px solid var(--unsubtle-detail-color);
 }
 
-.h-min {
-  height: min-content;
-}
-
 /* slider */
 input[type="range"].vertical {
   writing-mode: bt-lr; /* IE */
@@ -230,14 +197,6 @@ input[type="range"].vertical {
     border-image: linear-gradient(to right, black 50%, transparent 50%) 100% 1;
     padding-bottom: 5px;
   }
-}
-
-.border-detail {
-  border-color: var(--foreground-color);
-}
-
-.w-min {
-  width: min-content;
 }
 
 .rounded-left-full {
