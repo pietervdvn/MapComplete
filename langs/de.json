@@ -362,7 +362,6 @@
         "intro": "MapComplete unterstützt folgende Tastaturbefehle:",
         "key": "Tastenkombination",
         "openLayersPanel": "Öffnet das Bedienfeld Hintergrund, Ebenen und Filter",
-        "selectBackground": "Wählen Sie eine Hintergrundebene der Kategorie {category} aus",
         "selectMapnik": "Setzt die Hintergrundebene auf OpenStreetMap-carto",
         "selectSearch": "Suchleiste auswählen, um nach Orten zu suchen",
         "title": "Tastaturbefehle"

@@ -207,7 +207,6 @@
         "intro": "MapComplete podporuje následující klávesy:",
         "key": "Kombinace kláves",
         "openLayersPanel": "Otevře panel Pozadí, vrstvy a filtry",
-        "selectBackground": "Vybrat vrstvu pozadí kategorie {category}",
         "selectMapnik": "Nastaví vrstvu pozadí na OpenStreetMap-carto",
         "selectSearch": "Vybere vyhledávací řádek pro vyhledávání míst",
         "title": "Klávesové zkratky"

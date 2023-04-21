@@ -362,7 +362,6 @@
         "intro": "MapComplete ondersteunt de volgende sneltoetsen:",
         "key": "Toets-combinatie",
         "openLayersPanel": "Open het paneel met lagen, filters en achtergrondkaart",
-        "selectBackground": "Selecteer een achtergrondlaag van category {category}",
         "selectMapnik": "Selecteer OpenStreetMap-carto als achtergrondlaag",
         "selectSearch": "Selecteer de zoekbalk om locaties te zoeken",
         "title": "Sneltoetsen"

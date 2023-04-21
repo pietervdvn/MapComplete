@@ -45,6 +45,7 @@ import { NewGeometryFromChangesFeatureSource } from "../Logic/FeatureSource/Sour
 import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"
 import ShowOverlayRasterLayer from "../UI/Map/ShowOverlayRasterLayer"
 import { Utils } from "../Utils"
+import { EliCategory } from "./RasterLayerProperties"
 
 /**
  *
@@ -291,14 +292,59 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 }
             }
         )
-        /*
+
         Hotkeys.RegisterHotkey(
             { shift: "O" },
             Translations.t.hotkeyDocumentation.selectMapnik,
             () => {
-                this.state.backgroundLayer.setData(AvailableBaseLayers.osmCarto)
+                this.mapProperties.rasterLayer.setData(AvailableRasterLayers.osmCarto)
             }
-        )//*/
+        )
+        const self = this
+
+        function setLayerCategory(category: EliCategory) {
+            const available = self.availableLayers.data
+            const matchingCategoryLayers = available.filter(
+                (l) => l.properties.category === category
+            )
+            const best =
+                matchingCategoryLayers.find((l) => l.properties.best) ?? matchingCategoryLayers[0]
+            const rasterLayer = self.mapProperties.rasterLayer
+            if (rasterLayer.data !== best) {
+                rasterLayer.setData(best)
+                return
+            }
+
+            // The current layer is already selected...
+            // We switch the layers again
+
+            if (category === "osmbasedmap") {
+                rasterLayer.setData(undefined)
+            } else {
+                // search the _second_ best layer
+                const secondbest = matchingCategoryLayers.find(
+                    (l) => l.properties.best && l !== best
+                )
+                const secondNotBest = matchingCategoryLayers.find((l) => l !== best)
+                rasterLayer.setData(secondbest ?? secondNotBest)
+            }
+        }
+
+        Hotkeys.RegisterHotkey(
+            { nomod: "O" },
+            Translations.t.hotkeyDocumentation.selectOsmbasedmap,
+            () => setLayerCategory("osmbasedmap")
+        )
+
+        Hotkeys.RegisterHotkey({ nomod: "M" }, Translations.t.hotkeyDocumentation.selectMap, () =>
+            setLayerCategory("map")
+        )
+
+        Hotkeys.RegisterHotkey(
+            { nomod: "P" },
+            Translations.t.hotkeyDocumentation.selectAerial,
+            () => setLayerCategory("photo")
+        )
     }
 
     /**

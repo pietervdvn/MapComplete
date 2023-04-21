@@ -362,7 +362,6 @@
         "intro": "MapComplete admet les tecles següents:",
         "key": "Combinació de tecles",
         "openLayersPanel": "Obre el panell de fons, capes i filtres",
-        "selectBackground": "Seleccioneu una capa de fons de la categoria {category}",
         "selectMapnik": "Estableix la capa de fons OpenStreetMap-carto",
         "selectSearch": "Seleccioneu la barra de cerca per cercar ubicacions",
         "title": "Dreceres"

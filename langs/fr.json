@@ -311,7 +311,6 @@
         "closeSidebar": "Fermer la barre latérale",
         "key": "Combinaison de touches",
         "openLayersPanel": "Ouvre le panneau fond-de-plan, couches et filtres",
-        "selectBackground": "Sélectionnez un fond de carte de type {category}",
         "selectMapnik": "Appliquer le fond de carte OpenStreetMap-carto",
         "selectSearch": "Sélectionner la barre de recherche de lieux",
         "title": "Raccourcis clavier"

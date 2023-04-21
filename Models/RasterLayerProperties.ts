@@ -1,3 +1,12 @@
+export type EliCategory =
+    | "photo"
+    | "map"
+    | "historicmap"
+    | "osmbasedmap"
+    | "historicphoto"
+    | "qa"
+    | "elevation"
+    | "other"
 export interface RasterLayerProperties {
     /**
      * The name of the imagery source
@@ -9,16 +18,7 @@ export interface RasterLayerProperties {
     readonly id: string
 
     readonly url: string
-    readonly category?:
-        | string
-        | "photo"
-        | "map"
-        | "historicmap"
-        | "osmbasedmap"
-        | "historicphoto"
-        | "qa"
-        | "elevation"
-        | "other"
+    readonly category?: string | EliCategory
 
     readonly attribution?: {
         readonly url?: string

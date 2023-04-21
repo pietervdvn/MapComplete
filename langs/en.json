@@ -386,8 +386,10 @@
         "intro": "MapComplete supports the following keys:",
         "key": "Key combination",
         "openLayersPanel": "Opens the Background, layers and filters panel",
-        "selectBackground": "Select a background layer of category {category}",
-        "selectMapnik": "Sets the background layer to OpenStreetMap-carto",
+        "selectAerial": "Set the background to aerial or satellite imagery. Toggles between the two best, available layers",
+        "selectMap": "Set the background to a map from external sources. Toggles between the two best, available layers",
+        "selectMapnik": "Set the background layer to OpenStreetMap-carto",
+        "selectOsmbasedmap": "Set the background layer to on OpenStreetMap-based map (or disable the background raster layer)",
         "selectSearch": "Select the search bar to search locations",
         "title": "Hotkeys"
     },
