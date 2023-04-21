@@ -131,6 +131,13 @@
             "question": "Quin és el nom de la xarxa per a l'accés inalàmbric a internet?",
             "render": "El nom de la xarxa és <b>{internet_access:ssid}</b>"
         },
+        "just_created": {
+            "mappings": {
+                "0": {
+                    "then": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món."
+                }
+            }
+        },
         "level": {
             "mappings": {
                 "0": {

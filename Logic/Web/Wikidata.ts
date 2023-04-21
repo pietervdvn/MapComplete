@@ -1,5 +1,5 @@
 import { Utils } from "../../Utils"
-import { UIEventSource } from "../UIEventSource"
+import { Store, UIEventSource } from "../UIEventSource"
 import * as wds from "wikidata-sdk"
 
 export class WikidataResponse {
@@ -131,11 +131,10 @@ export default class Wikidata {
         "Lexeme:",
     ].map((str) => str.toLowerCase())
 
-    private static readonly _cache = new Map<
+    private static readonly _storeCache = new Map<
         string,
-        UIEventSource<{ success: WikidataResponse } | { error: any }>
+        Store<{ success: WikidataResponse } | { error: any }>
     >()
-
     /**
      * Same as LoadWikidataEntry, but wrapped into a UIEventSource
      * @param value
@@ -143,14 +142,14 @@ export default class Wikidata {
      */
     public static LoadWikidataEntry(
         value: string | number
-    ): UIEventSource<{ success: WikidataResponse } | { error: any }> {
+    ): Store<{ success: WikidataResponse } | { error: any }> {
         const key = this.ExtractKey(value)
-        const cached = Wikidata._cache.get(key)
-        if (cached !== undefined) {
+        const cached = Wikidata._storeCache.get(key)
+        if (cached) {
             return cached
         }
         const src = UIEventSource.FromPromiseWithErr(Wikidata.LoadWikidataEntryAsync(key))
-        Wikidata._cache.set(key, src)
+        Wikidata._storeCache.set(key, src)
         return src
     }
 
@@ -278,6 +277,9 @@ export default class Wikidata {
      *
      * Wikidata.ExtractKey("https://www.wikidata.org/wiki/Lexeme:L614072") // => "L614072"
      * Wikidata.ExtractKey("http://www.wikidata.org/entity/Q55008046") // => "Q55008046"
+     * Wikidata.ExtractKey("Q55008046") // => "Q55008046"
+     * Wikidata.ExtractKey("A55008046") // => undefined
+     * Wikidata.ExtractKey("Q55008046X") // => undefined
      */
     public static ExtractKey(value: string | number): string {
         if (typeof value === "number") {
@@ -385,11 +387,24 @@ export default class Wikidata {
         return result.results.bindings
     }
 
+    private static _cache = new Map<string, Promise<WikidataResponse>>()
+    public static async LoadWikidataEntryAsync(value: string | number): Promise<WikidataResponse> {
+        const key = "" + value
+        const cached = Wikidata._cache.get(key)
+        if (cached) {
+            return cached
+        }
+        const uncached = Wikidata.LoadWikidataEntryUncachedAsync(value)
+        Wikidata._cache.set(key, uncached)
+        return uncached
+    }
     /**
      * Loads a wikidata page
      * @returns the entity of the given value
      */
-    public static async LoadWikidataEntryAsync(value: string | number): Promise<WikidataResponse> {
+    private static async LoadWikidataEntryUncachedAsync(
+        value: string | number
+    ): Promise<WikidataResponse> {
         const id = Wikidata.ExtractKey(value)
         if (id === undefined) {
             console.warn("Could not extract a wikidata entry from", value)

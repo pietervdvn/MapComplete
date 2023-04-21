@@ -1,15 +1,11 @@
-import { Utils } from "../Utils"
 import Toggle from "./Input/Toggle"
 import LeftControls from "./BigComponents/LeftControls"
 import RightControls from "./BigComponents/RightControls"
 import CenterMessageBox from "./CenterMessageBox"
-import ScrollableFullScreen from "./Base/ScrollableFullScreen"
-import Translations from "./i18n/Translations"
 import { DefaultGuiState } from "./DefaultGuiState"
 import Combine from "./Base/Combine"
 import ExtraLinkButton from "./BigComponents/ExtraLinkButton"
 import GeoLocationHandler from "../Logic/Actors/GeoLocationHandler"
-import CopyrightPanel from "./BigComponents/CopyrightPanel"
 
 /**
  * The default MapComplete GUI initializer
@@ -25,17 +21,6 @@ export default class DefaultGUI {
     }
 
     public setup() {
-        this.SetupUIElements()
-
-        if (
-            this.state.layoutToUse.customCss !== undefined &&
-            window.location.pathname.indexOf("index") >= 0
-        ) {
-            Utils.LoadCustomCss(this.state.layoutToUse.customCss)
-        }
-    }
-
-    private SetupUIElements() {
         const extraLink = Toggle.If(
             state.featureSwitchExtraLinkEnabled,
             () => new ExtraLinkButton(state, state.layoutToUse.extraLink)

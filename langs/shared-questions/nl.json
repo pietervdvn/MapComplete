@@ -131,6 +131,13 @@
             "question": "Wat is de netwerknaam voor de draadloze internettoegang?",
             "render": "De netwerknaam is <b>{internet_access:ssid}</b>"
         },
+        "just_created": {
+            "mappings": {
+                "0": {
+                    "then": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen."
+                }
+            }
+        },
         "last_edit": {
             "render": {
                 "special": {

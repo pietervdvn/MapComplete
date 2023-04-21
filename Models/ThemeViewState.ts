@@ -44,6 +44,7 @@ import ChangeGeometryApplicator from "../Logic/FeatureSource/Sources/ChangeGeome
 import { NewGeometryFromChangesFeatureSource } from "../Logic/FeatureSource/Sources/NewGeometryFromChangesFeatureSource"
 import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader"
 import ShowOverlayRasterLayer from "../UI/Map/ShowOverlayRasterLayer"
+import { Utils } from "../Utils"
 
 /**
  *
@@ -263,6 +264,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
             }
             this.lastClickObject.features.setData([])
         })
+
+        if (this.layout.customCss !== undefined && window.location.pathname.indexOf("theme") >= 0) {
+            Utils.LoadCustomCss(this.layout.customCss)
+        }
     }
 
     private initHotkeys() {
@@ -371,14 +376,19 @@ export default class ThemeViewState implements SpecialVisualizationState {
             .get("range")
             ?.isDisplayed?.syncWith(this.featureSwitches.featureSwitchIsTesting, true)
 
+        // The following layers are _not_ indexed; they trigger to much and thus trigger the metatagging
+        const dontInclude = new Set(["gps_location", "gps_location_history", "gps_track"])
         this.layerState.filteredLayers.forEach((flayer) => {
-            const features: FeatureSource = specialLayers[flayer.layerDef.id]
+            const id = flayer.layerDef.id
+            const features: FeatureSource = specialLayers[id]
             if (features === undefined) {
                 return
             }
 
-            this.featureProperties.trackFeatureSource(features)
-            this.indexedFeatures.addSource(features)
+            if (!dontInclude.has(id)) {
+                this.featureProperties.trackFeatureSource(features)
+                this.indexedFeatures.addSource(features)
+            }
             new ShowDataLayer(this.map, {
                 features,
                 doShowLayer: flayer.isDisplayed,

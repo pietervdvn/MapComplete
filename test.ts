@@ -9,10 +9,12 @@ import { UIEventSource } from "./Logic/UIEventSource"
 import { VariableUiElement } from "./UI/Base/VariableUIElement"
 import { FixedUiElement } from "./UI/Base/FixedUiElement"
 import Title from "./UI/Base/Title"
-import WaySplitMap from "./UI/BigComponents/WaySplitMap.svelte"
+import { WikipediaBoxOptions } from "./UI/Wikipedia/WikipediaBoxOptions"
+import Wikipedia from "./Logic/Web/Wikipedia"
+import WikipediaPanel from "./UI/Wikipedia/WikipediaPanel.svelte"
 import SvelteUIElement from "./UI/Base/SvelteUIElement"
-import { OsmObject } from "./Logic/Osm/OsmObject"
-import SplitRoadWizard from "./UI/Popup/SplitRoadWizard"
+import LanguagePicker from "./UI/LanguagePicker"
+import { Utils } from "./Utils"
 
 function testspecial() {
     const layout = new LayoutConfig(<any>theme, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
@@ -47,7 +49,12 @@ function testinput() {
 }
 
 async function testWaySplit() {
-    new SplitRoadWizard("way/28717919", {}).SetClass("w-full h-full").AttachTo("maindiv")
+    const ids = new UIEventSource(["Q42", "Q1"])
+    new SvelteUIElement(WikipediaPanel, { wikiIds: ids, addEntry: true }).AttachTo("maindiv")
+    new LanguagePicker(["en", "nl"]).AttachTo("extradiv")
+    await Utils.waitFor(5000)
+    ids.data.push("Q430")
+    ids.ping()
 }
 testWaySplit().then((_) => console.log("inited"))
 //testinput()

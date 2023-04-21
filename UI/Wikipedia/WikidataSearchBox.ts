@@ -8,20 +8,12 @@ import Locale from "../i18n/Locale"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import WikidataPreviewBox from "./WikidataPreviewBox"
 import Title from "../Base/Title"
-import WikipediaBox from "./WikipediaBox"
 import Svg from "../../Svg"
 import Loading from "../Base/Loading"
 import Table from "../Base/Table"
 
 export default class WikidataSearchBox extends InputElement<string> {
-    private static readonly _searchCache = new Map<string, Promise<WikidataResponse[]>>()
-    private readonly wikidataId: UIEventSource<string>
-    private readonly searchText: UIEventSource<string>
-    private readonly instanceOf?: number[]
-    private readonly notInstanceOf?: number[]
-
     public static docs = new Combine([
-        ,
         new Title("Helper arguments"),
         new Table(
             ["name", "doc"],
@@ -100,6 +92,11 @@ Another example is to search for species and trees:
 \`\`\`
 `,
     ])
+    private static readonly _searchCache = new Map<string, Promise<WikidataResponse[]>>()
+    private readonly wikidataId: UIEventSource<string>
+    private readonly searchText: UIEventSource<string>
+    private readonly instanceOf?: number[]
+    private readonly notInstanceOf?: number[]
 
     constructor(options?: {
         searchText?: UIEventSource<string>
@@ -207,25 +204,15 @@ Another example is to search for species and trees:
             )
         )
 
-        const full = new Combine([
+        return new Combine([
             new Title(Translations.t.general.wikipedia.searchWikidata, 3).SetClass("m-2"),
             new Combine([
                 Svg.search_ui().SetStyle("width: 1.5rem"),
                 searchField.SetClass("m-2 w-full"),
             ]).SetClass("flex"),
             previews,
-        ]).SetClass("flex flex-col border-2 border-black rounded-xl m-2 p-2")
-
-        return new Combine([
-            new VariableUiElement(
-                selectedWikidataId.map((wid) => {
-                    if (wid === undefined) {
-                        return undefined
-                    }
-                    return new WikipediaBox(wid.split(";"))
-                })
-            ).SetStyle("max-height:12.5rem"),
-            full,
-        ]).ConstructElement()
+        ])
+            .SetClass("flex flex-col border-2 border-black rounded-xl m-2 p-2")
+            .ConstructElement()
     }
 }

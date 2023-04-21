@@ -131,6 +131,13 @@
             "question": "Quel est le nom du réseau pour l'accès Internet sans fil ?",
             "render": "Le nom du réseau est <b>{internet_access:ssid}</b>"
         },
+        "just_created": {
+            "mappings": {
+                "0": {
+                    "then": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes."
+                }
+            }
+        },
         "level": {
             "mappings": {
                 "0": {

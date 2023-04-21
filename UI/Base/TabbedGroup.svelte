@@ -66,3 +66,15 @@
     </TabPanel>
   </TabPanels>
 </TabGroup>
+
+<style>
+    .tab-selected {
+        background-color: rgb(59 130 246);
+        color: rgb(255 255 255);
+    }
+
+    .tab-unselected {
+        background-color: rgb(255 255 255);
+        color: rgb(0 0 0);
+    }
+</style>

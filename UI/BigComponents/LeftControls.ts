@@ -6,8 +6,6 @@ import AllDownloads from "./AllDownloads"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import Lazy from "../Base/Lazy"
 import { VariableUiElement } from "../Base/VariableUIElement"
-import FeatureInfoBox from "../Popup/FeatureInfoBox"
-import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
 import { DefaultGuiState } from "../DefaultGuiState"
 
 export default class LeftControls extends Combine {
@@ -56,8 +54,6 @@ export default class LeftControls extends Combine {
         )
 
         new AllDownloads(guiState.downloadControlIsOpened, state)
-
-
 
         super([currentViewAction])
 

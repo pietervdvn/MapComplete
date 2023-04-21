@@ -362,6 +362,7 @@
             "general": "On this map, you can see, edit and add <i>points of interest</i>. Zoom around to see the POI, tap one to see or edit the information. All data is sourced from and saved to OpenStreetMap, which can be freely reused."
         },
         "wikipedia": {
+            "addEntry": "Add another Wikipedia page",
             "createNewWikidata": "Create a new Wikidata item",
             "doSearch": "Search above to see results",
             "failed": "Loading the Wikipedia entry failed",

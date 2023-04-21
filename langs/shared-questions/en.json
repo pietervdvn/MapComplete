@@ -131,6 +131,13 @@
             "question": "What is the network name for the wireless internet access?",
             "render": "The network name is <b>{internet_access:ssid}</b>"
         },
+        "just_created": {
+            "mappings": {
+                "0": {
+                    "then": "You just created this element! Thanks for sharing this info with the world and helping people worldwide."
+                }
+            }
+        },
         "last_edit": {
             "render": {
                 "special": {

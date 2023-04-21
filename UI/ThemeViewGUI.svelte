@@ -276,17 +276,3 @@
   </FloatOver>
 </If>
 
-
-<style>
-    /* WARNING: This is just for demonstration.
-        Using :global() in this way can be risky. */
-    :global(.tab-selected) {
-        background-color: rgb(59 130 246);
-        color: rgb(255 255 255);
-    }
-
-    :global(.tab-unselected) {
-        background-color: rgb(255 255 255);
-        color: rgb(0 0 0);
-    }
-</style>

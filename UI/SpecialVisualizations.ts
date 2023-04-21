@@ -19,14 +19,13 @@ import { ConflateButton, ImportPointButton, ImportWayButton } from "./Popup/Impo
 import TagApplyButton from "./Popup/TagApplyButton"
 import { CloseNoteButton } from "./Popup/CloseNoteButton"
 import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
-import { Stores, UIEventSource } from "../Logic/UIEventSource"
+import { Store, Stores, UIEventSource } from "../Logic/UIEventSource"
 import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders"
 import { ImageCarousel } from "./Image/ImageCarousel"
 import { ImageUploadFlow } from "./Image/ImageUploadFlow"
 import { VariableUiElement } from "./Base/VariableUIElement"
 import { Utils } from "../Utils"
-import WikipediaBox from "./Wikipedia/WikipediaBox"
 import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata"
 import { Translation } from "./i18n/Translation"
 import Translations from "./i18n/Translations"
@@ -80,6 +79,7 @@ import { OsmId, OsmTags, WayId } from "../Models/OsmFeature"
 import MoveWizard from "./Popup/MoveWizard"
 import SplitRoadWizard from "./Popup/SplitRoadWizard"
 import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
+import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte"
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -628,7 +628,7 @@ export default class SpecialVisualizations {
 
             {
                 funcName: "wikipedia",
-                docs: "A box showing the corresponding wikipedia article - based on the wikidata tag",
+                docs: "A box showing the corresponding wikipedia article(s) - based on the **wikidata** tag.",
                 args: [
                     {
                         name: "keyToShowWikipediaFor",
@@ -638,23 +638,15 @@ export default class SpecialVisualizations {
                 ],
                 example:
                     "`{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height",
-                constr: (_, tagsSource, args) => {
+                constr: (_, tagsSource, args, feature, layer) => {
                     const keys = args[0].split(";").map((k) => k.trim())
-                    return new VariableUiElement(
-                        tagsSource
-                            .map((tags) => {
-                                const key = keys.find(
-                                    (k) => tags[k] !== undefined && tags[k] !== ""
-                                )
-                                return tags[key]
-                            })
-                            .map((wikidata) => {
-                                const wikidatas: string[] = Utils.NoEmpty(
-                                    wikidata?.split(";")?.map((wd) => wd.trim()) ?? []
-                                )
-                                return new WikipediaBox(wikidatas)
-                            })
-                    )
+                    const wikiIds: Store<string[]> = tagsSource.map((tags) => {
+                        const key = keys.find((k) => tags[k] !== undefined && tags[k] !== "")
+                        return tags[key]?.split(";")?.map((id) => id.trim())
+                    })
+                    return new SvelteUIElement(WikipediaPanel, {
+                        wikiIds,
+                    })
                 },
             },
             {

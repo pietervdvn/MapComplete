@@ -11,32 +11,14 @@ import Loc from "../../Models/Loc"
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
 import Toggle from "../Input/Toggle"
 import { VariableUiElement } from "../Base/VariableUIElement"
-import { FixedUiElement } from "../Base/FixedUiElement"
 import { FlowStep } from "./FlowStep"
-import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 import Title from "../Base/Title"
 import CheckBoxes from "../Input/Checkboxes"
-import AllTagsPanel from "../Popup/AllTagsPanel.svelte"
 import { Feature, Point } from "geojson"
 import DivContainer from "../Base/DivContainer"
-import SvelteUIElement from "../Base/SvelteUIElement"
 import { AvailableRasterLayers, RasterLayerPolygon } from "../../Models/RasterLayers"
 import { MapLibreAdaptor } from "../Map/MapLibreAdaptor"
 import ShowDataLayer from "../Map/ShowDataLayer"
-
-class PreviewPanel extends ScrollableFullScreen {
-    constructor(tags: UIEventSource<any>) {
-        super(
-            (_) => new FixedUiElement("Element to import"),
-            (_) =>
-                new Combine([
-                    "The tags are:",
-                    new SvelteUIElement(AllTagsPanel, { tags }),
-                ]).SetClass("flex flex-col"),
-            "element"
-        )
-    }
-}
 
 /**
  * Shows the data to import on a map, asks for the correct layer to be selected
@@ -111,7 +93,6 @@ export class MapPreview
         const currentBounds = new UIEventSource<BBox>(undefined)
         const { ui, mapproperties, map } = MapLibreAdaptor.construct()
 
-
         ui.SetClass("w-full").SetStyle("height: 500px")
 
         layerPicker.GetValue().addCallbackAndRunD((layerToShow) => {
@@ -119,7 +100,6 @@ export class MapPreview
                 layer: layerToShow,
                 zoomToFeatures: true,
                 features: new StaticFeatureSource(matching),
-                buildPopup: (tag) => new PreviewPanel(tag),
             })
         })
 

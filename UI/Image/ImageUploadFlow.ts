@@ -14,8 +14,6 @@ import { VariableUiElement } from "../Base/VariableUIElement"
 import Loading from "../Base/Loading"
 import { LoginToggle } from "../Popup/LoginButton"
 import Constants from "../../Models/Constants"
-import { DefaultGuiState } from "../DefaultGuiState"
-import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 import { SpecialVisualizationState } from "../SpecialVisualization"
 
 export class ImageUploadFlow extends Toggle {
