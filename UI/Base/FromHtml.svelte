@@ -6,8 +6,8 @@
   export let src: string;
   let htmlElem: HTMLElement;
   $: {
-    if(htmlElem){
-    htmlElem.innerHTML = src
+    if (htmlElem) {
+      htmlElem.innerHTML = src;
     }
   }
 

@@ -36,10 +36,7 @@
     max-width: 100%;
 }
 
-.question-subtext {
-    font-size: medium;
-    font-weight: normal;
-}
+
 
 .question-option-with-border {
     border: 2px solid lightgray;

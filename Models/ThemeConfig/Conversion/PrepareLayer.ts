@@ -632,6 +632,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
             const trc: TagRenderingConfigJson = {
                 id: "all-tags",
                 render: { "*": "{all_tags()}" },
+
                 metacondition: {
                     or: [
                         "__featureSwitchIsTesting=true",

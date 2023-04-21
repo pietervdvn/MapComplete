@@ -16,9 +16,9 @@
   export let wikipediaDetails: Store<FullWikipediaDetails>;
 </script>
 
-<a href={$wikipediaDetails.articleUrl} target="_blank" rel="noreferrer" class="flex">
-  <img src="./assets/svg/wikipedia.svg" class="w-6 h-6"/>
-  <Tr t={Translations.t.general.wikipedia.fromWikipedia}/>
+<a class="flex" href={$wikipediaDetails.articleUrl} rel="noreferrer" target="_blank">
+  <img class="w-6 h-6" src="./assets/svg/wikipedia.svg" />
+  <Tr t={Translations.t.general.wikipedia.fromWikipedia} />
 </a>
 
 {#if $wikipediaDetails.wikidata}
@@ -26,15 +26,16 @@
 {/if}
 
 {#if $wikipediaDetails.firstParagraph === "" || $wikipediaDetails.firstParagraph === undefined}
-  <Loading >
-    <Tr t={Translations.t.general.wikipedia.loading}/>
+  <Loading>
+    <Tr t={Translations.t.general.wikipedia.loading} />
   </Loading>
 {:else}
+  <span class="wikipedia-article">
   <FromHtml src={$wikipediaDetails.firstParagraph} />
   <Disclosure let:open>
     <DisclosureButton>
       <span class="flex">
-      <ChevronRightIcon class="w-6 h-6" style={open ? "transform: rotate(90deg);" : ""} />
+      <ChevronRightIcon style={(open ? "transform: rotate(90deg); " : "") +"  transition: all .25s linear; width: 1.5rem; height: 1.5rem"} />
       Read the rest of the article
         
       </span>
@@ -43,4 +44,5 @@
       <FromHtml src={$wikipediaDetails.restOfArticle} />
     </DisclosurePanel>
   </Disclosure>
+  </span>
 {/if}
