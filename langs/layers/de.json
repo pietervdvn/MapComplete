@@ -8063,6 +8063,9 @@
                     "mappings+": {
                         "0": {
                             "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
+                        },
+                        "1": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
                         }
                     }
                 }
@@ -8279,6 +8282,11 @@
         },
         "name": "Toiletten in anderen Einrichtungen",
         "tagRenderings": {
+            "opening_hours": {
+                "override": {
+                    "question": "Wann ist die Einrichtung, in der sich diese Toiletten befinden, geöffnet?"
+                }
+            },
             "toilet-access": {
                 "mappings": {
                     "0": {
