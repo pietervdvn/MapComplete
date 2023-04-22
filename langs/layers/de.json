@@ -7641,7 +7641,8 @@
             },
             "multilevels": {
                 "override": {
-                    "question": "Zwischen welchen Stockwerken befinden sich diese Treppen?"
+                    "question": "Zwischen welchen Stockwerken befinden sich diese Treppen?",
+                    "render": "Diese Stufen befinden sich zwischen den Stockwerken {level}"
                 }
             },
             "ramp": {
@@ -8056,6 +8057,15 @@
                     }
                 },
                 "render": "Dieser Fahrkartenentwerter ist Teil einer Zugangsbarriere vom Typ {barrier}"
+            },
+            "payment-options": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert OV-Chipkaart"
+                        }
+                    }
+                }
             },
             "validator-operator": {
                 "freeform": {
