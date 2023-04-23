@@ -836,5 +836,8 @@
         "render": "1"
       }
     }
+  ],
+  "filter": [
+    "open_now"
   ]
 }
