@@ -406,8 +406,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             .get("range")
             ?.isDisplayed?.syncWith(this.featureSwitches.featureSwitchIsTesting, true)
 
-        // The following layers are _not_ indexed; they trigger to much and thus trigger the metatagging
-        const dontInclude = new Set(["gps_location", "gps_location_history", "gps_track"])
         this.layerState.filteredLayers.forEach((flayer) => {
             const id = flayer.layerDef.id
             const features: FeatureSource = specialLayers[id]
@@ -415,10 +413,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 return
             }
 
-            if (!dontInclude.has(id)) {
-                this.featureProperties.trackFeatureSource(features)
-                this.indexedFeatures.addSource(features)
-            }
+            this.featureProperties.trackFeatureSource(features)
+            //  this.indexedFeatures.addSource(features)
             new ShowDataLayer(this.map, {
                 features,
                 doShowLayer: flayer.isDisplayed,
