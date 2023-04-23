@@ -9,6 +9,7 @@
   import ProfessionalServicesButton from "./ProfessionalServicesButton.svelte"
   import ThemeButton from "./ThemeButton.svelte"
   import { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+  import MoreScreen from "./MoreScreen";
 
   export let search: UIEventSource<string>
   export let themes: LayoutInformation[]
@@ -18,26 +19,7 @@
   export let hideThemes: boolean = true
 
   // Filter theme based on search value
-  $: filteredThemes = themes.filter((theme) => {
-    if ($search === undefined || $search === "") return true
-
-    const srch = $search.toLocaleLowerCase()
-    if (theme.id.toLowerCase().indexOf(srch) >= 0) {
-      return true
-    }
-    const entitiesToSearch = [theme.shortDescription, theme.title, ...(theme.keywords ?? [])]
-    for (const entity of entitiesToSearch) {
-      if (entity === undefined) {
-        continue
-      }
-      const term = entity["*"] ?? entity[Locale.language.data]
-      if (term?.toLowerCase()?.indexOf(search) >= 0) {
-        return true
-      }
-    }
-
-    return false
-  })
+  $: filteredThemes = themes.filter((theme) => MoreScreen.MatchesLayout(theme, $search))
 </script>
 
 <section>
