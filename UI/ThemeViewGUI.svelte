@@ -76,7 +76,7 @@
                  {selectedLayer}></Geosearch>
     </div>
   </If>
-  <div class="float-left ml-1 sm:m-2 md:m-4">
+  <div class="float-left m-1 sm:mt-2">
     <MapControlButton on:click={() => state.guistate.themeIsOpened.setData(true)}>
       <div class="flex m-0.5 mx-1 sm:mx-1 md:mx-2 items-center cursor-pointer">
         <img class="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 block mr-0.5 sm:mr-1 md:mr-2" src={layout.icon}>
