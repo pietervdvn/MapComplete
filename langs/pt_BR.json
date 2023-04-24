@@ -5,6 +5,9 @@
         "retrying": "Falha ao carregar dados. Tentando novamente em {count} segundos…",
         "zoomIn": "Amplie para ver ou editar os dados"
     },
+    "communityIndex": {
+        "notAvailable": "Esta comunidade não fala {nativo}"
+    },
     "delete": {
         "cancel": "Cancelar",
         "cannotBeDeleted": "Este recurso não pode ser excluído",
@@ -132,13 +135,26 @@
             "tuesday": "Terça",
             "wednesday": "Quanta"
         },
-        "welcomeBack": "Você está logado, seja bem-vindo de volta!"
+        "welcomeBack": "Você está logado, seja bem-vindo de volta!",
+        "welcomeExplanation": {
+            "addNew": "Toque no mapa para adicionar um novo POI.",
+            "general": "Neste mapa, você pode ver, editar e adicionar <i>pontos de interesse</i>. Amplie para ver o POI, toque em um para ver ou editar as informações. Todos os dados são originados e salvos no OpenStreetMap, que pode ser reutilizado livremente."
+        },
+        "wikipedia": {
+            "createNewWikidata": "Criar um novo item Wikidata",
+            "doSearch": "Pesquise acima para ver os resultados",
+            "noResults": "Nada encontrado para <i>{search}</i>",
+            "searchWikidata": "Pesquisar no Wikidata"
+        }
     },
     "image": {
         "addPicture": "Adicionar imagem",
         "doDelete": "Remover imagem",
         "dontDelete": "Cancelar",
         "isDeleted": "Excluída",
+        "nearbyPictures": {
+            "browseNearby": "Navegue pelas imagens próximas…"
+        },
         "pleaseLogin": "Faça login para adicionar uma imagem",
         "respectPrivacy": "Não fotografe pessoas e nem placas de veículos. Não faça upload do Google Maps, Google Streetview ou outras fontes protegidas por direitos autorais.",
         "uploadDone": "<span class=\"thanks\">Sua foto foi adicionada. Obrigado por ajudar!</span>",
