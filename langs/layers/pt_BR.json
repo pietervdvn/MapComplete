@@ -14,6 +14,10 @@
                 },
                 "question": "Qual é o número desta casa?",
                 "render": "O número da casa é <b>{addr:housenumber}</b>"
+            },
+            "street": {
+                "question": "Em que rua fica esse endereço?",
+                "render": "Este endereço fica na rua <b>{addr:street}</b>"
             }
         },
         "title": {
@@ -613,6 +617,38 @@
         },
         "title": {
             "render": "Bicicleta fantasma"
+        }
+    },
+    "tree_node": {
+        "name": "Árvore",
+        "presets": {
+            "2": {
+                "title": "uma árvore"
+            }
+        },
+        "tagRenderings": {
+            "circumference": {
+                "question": "Qual é a circunferência do tronco da árvore?",
+                "questionHint": "Isso é medido a uma altura de 1,30m",
+                "render": "O tronco da árvore tem uma circunferência de {circunferência} metro"
+            },
+            "height": {
+                "question": "Qual a altura dessa árvore?",
+                "render": "Esta árvore tem {height} metros de altura"
+            },
+            "tree-decidouous": {
+                "question": "Essa árvore é perene ou caducifólia?"
+            },
+            "tree-denotation": {
+                "mappings": {
+                    "6": {
+                        "then": "A árvore está em uma área urbana."
+                    }
+                }
+            },
+            "tree-species-wikidata": {
+                "question": "Que espécie é esta árvore?"
+            }
         }
     }
 }
