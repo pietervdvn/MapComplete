@@ -286,7 +286,7 @@ export default class LayoutConfig implements LayoutInformation {
 
         return { untranslated, total }
     }
-    public getMatchingLayer(tags: any): LayerConfig | undefined {
+    public getMatchingLayer(tags: Record<string, string>): LayerConfig | undefined {
         if (tags === undefined) {
             return undefined
         }

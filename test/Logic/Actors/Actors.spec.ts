@@ -1,16 +1,12 @@
 import { Utils } from "../../../Utils"
-import UserRelatedState from "../../../Logic/State/UserRelatedState"
 import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
 import SelectedElementTagsUpdater from "../../../Logic/Actors/SelectedElementTagsUpdater"
 
 import * as bookcaseJson from "../../../assets/generated/themes/bookcases.json"
-import { UIEventSource } from "../../../Logic/UIEventSource"
-import Loc from "../../../Models/Loc"
-import SelectedFeatureHandler from "../../../Logic/Actors/SelectedFeatureHandler"
 import { OsmTags } from "../../../Models/OsmFeature"
 import { Feature, Geometry } from "geojson"
 import { expect, it } from "vitest"
-import ThemeViewState from "../../../Models/ThemeViewState";
+import ThemeViewState from "../../../Models/ThemeViewState"
 
 const latestTags = {
     amenity: "public_bookcase",
@@ -85,28 +81,4 @@ it("should download the latest version", () => {
     expect(feature.properties.name).toEqual("Stubbekwartier-buurtbibliotheek")
     // The fixme should be removed
     expect(feature.properties.fixme).toBeUndefined()
-})
-it("Hash without selected element should download geojson from OSM-API", async () => {
-    const hash = new UIEventSource("node/5568693115")
-    const selected = new UIEventSource(undefined)
-    const loc = new UIEventSource<Loc>({
-        lat: 0,
-        lon: 0,
-        zoom: 0,
-    })
-
-    loc.addCallback((_) => {
-        expect(selected.data.properties.id).toEqual("node/5568693115")
-        expect(loc.data.zoom).toEqual(14)
-        expect(loc.data.lat).toEqual(51.2179199)
-    }
-
-
-    new SelectedFeatureHandler(hash, {
-        selectedElement: selected,
-        allElements: new(),
-        featurePipeline: undefined,
-        locationControl: loc,
-        layoutToUse: undefined,
-    })
 })

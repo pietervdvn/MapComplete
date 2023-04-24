@@ -48,6 +48,7 @@ import { Utils } from "../Utils"
 import { EliCategory } from "./RasterLayerProperties"
 import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
 import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
+import Hash from "../Logic/Web/Hash"
 
 /**
  *
@@ -429,6 +430,30 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Setup various services for which no reference are needed
      */
     private initActors() {
+        this.selectedElement.addCallback((selected) => {
+            Hash.hash.setData(selected?.properties?.id)
+        })
+
+        Hash.hash.mapD(
+            (hash) => {
+                console.log("Searching for an id:", hash)
+                if (this.selectedElement.data?.properties?.id === hash) {
+                    // We already have the correct hash
+                    return
+                }
+
+                const found = this.indexedFeatures.featuresById.data?.get(hash)
+                console.log("Found:", found)
+                if (!found) {
+                    return
+                }
+                const layer = this.layout.getMatchingLayer(found.properties)
+                this.selectedElement.setData(found)
+                this.selectedLayer.setData(layer)
+            },
+            [this.indexedFeatures.featuresById]
+        )
+
         new MetaTagging(this)
         new TitleHandler(this.selectedElement, this.selectedLayer, this.featureProperties, this)
         new ChangeToElementsActor(this.changes, this.featureProperties)
