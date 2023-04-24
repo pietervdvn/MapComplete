@@ -69,7 +69,7 @@
 
 </script>
 
-<div class="flex normal-background rounded-full pl-2">
+<div class="flex normal-background rounded-full pl-2 justify-between">
   <form>
 
     {#if isRunning}
@@ -89,7 +89,7 @@
     {/if}
 
   </form>
-  <div class="w-6 h-6" on:click={performSearch}>
+  <div class="w-6 h-6 self-end" on:click={performSearch}>
     <ToSvelte construct={Svg.search_ui}></ToSvelte>
   </div>
 </div>

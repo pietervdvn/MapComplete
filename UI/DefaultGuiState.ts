@@ -48,7 +48,7 @@ export class DefaultGuiState {
         }
     }
 
-    public closeAll() {
+    public closeAll(except) {
         for (const sourceKey in this.sources) {
             this.sources[sourceKey].setData(false)
         }

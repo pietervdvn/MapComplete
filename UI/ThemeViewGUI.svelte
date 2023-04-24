@@ -64,27 +64,37 @@
 </script>
 
 
-<div class="h-screen w-screen absolute top-0 left-0 flex">
+<div class="h-screen w-screen absolute top-0 left-0 overflow-hidden">
   <MaplibreMap map={maplibremap}></MaplibreMap>
 </div>
 
-<div class="absolute top-0 left-0 mt-2 ml-2">
-  <MapControlButton on:click={() => state.guistate.themeIsOpened.setData(true)}>
-    <div class="flex mr-2 items-center cursor-pointer">
-      <img class="w-8 h-8 block mr-2" src={layout.icon}>
-      <b>
-        <Tr t={layout.title}></Tr>
-      </b>
+<div class="absolute top-0 left-0 w-full ">
+  <!-- Top components -->
+  <If condition={state.featureSwitches.featureSwitchSearch}>
+    <div class="sm:w-min float-right m-1 sm:m-2 max-[320px]:w-full">
+      <Geosearch bounds={state.mapProperties.bounds} perLayer={state.perLayer} {selectedElement}
+                 {selectedLayer}></Geosearch>
     </div>
-  </MapControlButton>
-  <MapControlButton on:click={() =>state.guistate.menuIsOpened.setData(true)}>
-    <MenuIcon class="w-8 h-8 cursor-pointer"></MenuIcon>
-  </MapControlButton>
-  <If condition={state.featureSwitchIsTesting}>
+  </If>
+  <div class="float-left m-1 sm:m-2 md:m-4">
+    <MapControlButton on:click={() => state.guistate.themeIsOpened.setData(true)}>
+      <div class="flex m-0.5 mx-1 sm:mx-1 md:mx-2 items-center cursor-pointer">
+        <img class="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 block mr-0.5 sm:mr-1 md:mr-2" src={layout.icon}>
+        <b class="mr-1">
+          <Tr t={layout.title}></Tr>
+        </b>
+      </div>
+    </MapControlButton>
+    <MapControlButton on:click={() =>state.guistate.menuIsOpened.setData(true)}>
+      <MenuIcon class="w-6 h-6 md:w-8 md:h-8 cursor-pointer"></MenuIcon>
+    </MapControlButton>
+    <If condition={state.featureSwitchIsTesting}>
     <span class="alert">
       Testmode
     </span>
-  </If>
+    </If>
+
+  </div>
 </div>
 
 <div class="absolute bottom-0 left-0 mb-4 ml-4">
@@ -93,23 +103,16 @@
 
 <div class="absolute bottom-0 right-0 mb-4 mr-4">
   <MapControlButton on:click={() => mapproperties.zoom.update(z => z+1)}>
-    <ToSvelte construct={Svg.plus_ui}></ToSvelte>
+    <img src="./assets/svg/plus.svg" class="w-6 h-6 md:w-8 md:h-8"/>
   </MapControlButton>
   <MapControlButton on:click={() => mapproperties.zoom.update(z => z-1)}>
-    <ToSvelte construct={Svg.min_ui}></ToSvelte>
+    <img src="./assets/svg/min.svg" class="w-6 h-6 md:w-8 md:h-8"/>
   </MapControlButton>
   <If condition={featureSwitches.featureSwitchGeolocation}>
     <MapControlButton>
       <ToSvelte
-        construct={new GeolocationControl(state.geolocation, mapproperties).SetClass("block w-8 h-8")}></ToSvelte>
+        construct={new GeolocationControl(state.geolocation, mapproperties).SetClass("block w-6 h-6 md:w-8 md:h-8")}></ToSvelte>
     </MapControlButton>
-  </If>
-</div>
-
-<div class="absolute top-0 right-0 mt-4 mr-4">
-  <If condition={state.featureSwitches.featureSwitchSearch}>
-    <Geosearch bounds={state.mapProperties.bounds} perLayer={state.perLayer} {selectedElement}
-               {selectedLayer}></Geosearch>
   </If>
 </div>
 
@@ -166,7 +169,7 @@
             state={state.overlayLayerStates.get(tilesource.id)}
             highlightedLayer={state.guistate.highlightedLayerInFilters}
             zoomlevel={state.mapProperties.zoom}
-             />
+          />
         {/each}
         <If condition={state.featureSwitches.featureSwitchBackgroundSelection}>
           <RasterLayerPicker {availableLayers} value={mapproperties.rasterLayer}></RasterLayerPicker>

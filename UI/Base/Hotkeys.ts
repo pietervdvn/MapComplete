@@ -123,7 +123,7 @@ export default class Hotkeys {
             new Table(
                 [t.key, t.action],
                 byKey.map(([key, doc]) => {
-                    return [new FixedUiElement(key).SetClass("code"), doc]
+                    return [new FixedUiElement(key).SetClass("literal-code"), doc]
                 })
             ),
         ])

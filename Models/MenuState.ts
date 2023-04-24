@@ -54,6 +54,17 @@ export class MenuState {
                 this.highlightedLayerInFilters.setData(undefined)
             }
         })
+
+        this.menuIsOpened.addCallbackAndRunD((opened) => {
+            if (opened) {
+                this.themeIsOpened.setData(false)
+            }
+        })
+        this.themeIsOpened.addCallbackAndRunD((opened) => {
+            if (opened) {
+                this.menuIsOpened.setData(false)
+            }
+        })
     }
     public openFilterView(highlightLayer?: LayerConfig | string) {
         this.themeIsOpened.setData(true)

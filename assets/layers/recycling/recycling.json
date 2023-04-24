@@ -23,7 +23,7 @@
   "calculatedTags": [
     "_waste_amount=Object.values(Object.keys(feat.properties).filter((key) => key.startsWith('recycling:')).reduce((cur, key) => { return Object.assign(cur, { [key]: feat.properties[key] })}, {})).reduce((n, x) => n + (x == \"yes\"), 0);"
   ],
-  "minzoom": 12,
+  "minzoom": 11,
   "title": {
     "render": {
       "en": "Recycling facility",
@@ -36,12 +36,7 @@
       {
         "if": "name~*",
         "then": {
-          "*": "{name}",
-          "en": "Recycling centre",
-          "nl": "Recyclingcentrum",
-          "de": "Wertstoffhof",
-          "es": "Centro de reciclaje",
-          "it": "Centro di riciclo rifiuti"
+          "*": "{name}"
         }
       },
       {
