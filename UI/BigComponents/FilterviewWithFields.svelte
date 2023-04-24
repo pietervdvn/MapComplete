@@ -17,7 +17,7 @@
   let fieldValues: Record<string, UIEventSource<string>> = {};
   let fieldTypes: Record<string, string> = {};
   let appliedFilter = <UIEventSource<string>>filteredLayer.appliedFilters.get(id);
-  let initialState: Record<string, string> = JSON.parse(appliedFilter.data ?? "{}");
+  let initialState: Record<string, string> = JSON.parse(appliedFilter?.data ?? "{}");
 
   function setFields() {
     const properties: Record<string, string> = {};
@@ -30,7 +30,7 @@
         properties[k] = v;
       }
     }
-    appliedFilter.setData(FilteredLayer.fieldsToString(properties));
+    appliedFilter?.setData(FilteredLayer.fieldsToString(properties));
   }
 
   for (const field of option.fields) {
@@ -38,7 +38,7 @@
     fieldTypes[field.name + "}"] = field.type;
     const src = new UIEventSource<string>(initialState[field.name] ?? "");
     fieldValues[field.name + "}"] = src;
-    onDestroy(src.addCallback(() => {
+    onDestroy(src.stabilized(200).addCallback(() => {
       setFields();
     }));
   }

@@ -10,14 +10,14 @@ import type { Writable } from "svelte/store";
 import If from "../Base/If.svelte";
 import Dropdown from "../Base/Dropdown.svelte";
 import { onDestroy } from "svelte";
-import { UIEventSource } from "../../Logic/UIEventSource";
+import { ImmutableStore, Store } from "../../Logic/UIEventSource";
 import FilterviewWithFields from "./FilterviewWithFields.svelte";
 import Tr from "../Base/Tr.svelte";
 import Translations from "../i18n/Translations";
 
 export let filteredLayer: FilteredLayer;
-export let highlightedLayer: UIEventSource<string> | undefined;
-export let zoomlevel: UIEventSource<number>;
+export let highlightedLayer: Store<string | undefined>  = new ImmutableStore(undefined);
+export let zoomlevel: Store<number> = new ImmutableStore(22);
 let layer: LayerConfig = filteredLayer.layerDef;
 let isDisplayed: boolean = filteredLayer.isDisplayed.data;
 onDestroy(filteredLayer.isDisplayed.addCallbackAndRunD(d => {

@@ -25,7 +25,13 @@ export class StackedRenderingChart extends ChartJs {
             groupToOtherCutoff: options?.groupToOtherCutoff,
         })
         if (labels === undefined || data === undefined) {
-            console.error("Could not extract data and labels for ", tr, " with features", features)
+            console.error(
+                "Could not extract data and labels for ",
+                tr,
+                " with features",
+                features,
+                ": no labels or no data"
+            )
             throw "No labels or data given..."
         }
         // labels: ["cyclofix", "buurtnatuur", ...]; data : [ ["cyclofix-changeset", "cyclofix-changeset", ...], ["buurtnatuur-cs", "buurtnatuur-cs"], ... ]

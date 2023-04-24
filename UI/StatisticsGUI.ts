@@ -7,24 +7,25 @@ import Loading from "./Base/Loading"
 import { Utils } from "../Utils"
 import Combine from "./Base/Combine"
 import { StackedRenderingChart } from "./BigComponents/TagRenderingChart"
-import { LayerFilterPanel } from "./BigComponents/FilterView"
-import MapState from "../Logic/State/MapState"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import { FixedUiElement } from "./Base/FixedUiElement"
 import List from "./Base/List"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
 import mcChanges from "../assets/generated/themes/mapcomplete-changes.json"
+import SvelteUIElement from "./Base/SvelteUIElement"
+import Filterview from "./BigComponents/Filterview.svelte"
+import FilteredLayer from "../Models/FilteredLayer"
+
 class StatisticsForOverviewFile extends Combine {
     constructor(homeUrl: string, paths: string[]) {
         paths = paths.filter((p) => !p.endsWith("file-overview.json"))
         const layer = new LayoutConfig(<any>mcChanges, true).layers[0]
-        const filteredLayer = MapState.InitializeFilteredLayers(
-            { id: "statistics-view", layers: [layer] },
-            undefined
-        )[0]
-        const filterPanel = new LayerFilterPanel(undefined, filteredLayer)
-        const appliedFilters = filteredLayer.appliedFilters
+        const filteredLayer = new FilteredLayer(layer)
+        const filterPanel = new Combine([
+            new Title("Filters"),
+            new SvelteUIElement(Filterview, { filteredLayer }),
+        ])
 
         const downloaded = new UIEventSource<{ features: ChangeSetData[] }[]>([])
 
@@ -63,20 +64,10 @@ class StatisticsForOverviewFile extends Combine {
                             return loading
                         }
 
-                        let overview = ChangesetsOverview.fromDirtyData(
+                        const overview = ChangesetsOverview.fromDirtyData(
                             [].concat(...downloaded.map((d) => d.features))
-                        )
-                        if (appliedFilters.data.size > 0) {
-                            appliedFilters.data.forEach((filterSpec) => {
-                                const tf = filterSpec?.currentFilter
-                                if (tf === undefined) {
-                                    return
-                                }
-                                overview = overview.filter((cs) =>
-                                    tf.matchesProperties(cs.properties)
-                                )
-                            })
-                        }
+                        ).filter((cs) => filteredLayer.isShown(<any>cs.properties))
+                        console.log("Overview is", overview)
 
                         if (overview._meta.length === 0) {
                             return "No data matched the filter"
@@ -143,6 +134,10 @@ class StatisticsForOverviewFile extends Combine {
                             new Title("Breakdown"),
                         ]
                         for (const tr of trs) {
+                            if (tr.question === undefined) {
+                                continue
+                            }
+                            console.log(tr)
                             let total = undefined
                             if (tr.freeform?.key !== undefined) {
                                 total = new Set(
@@ -174,7 +169,7 @@ class StatisticsForOverviewFile extends Combine {
 
                         return new Combine(elements)
                     },
-                    [appliedFilters]
+                    [filteredLayer.currentFilter]
                 )
             ).SetClass("block w-full h-full"),
         ])
@@ -232,30 +227,12 @@ class ChangesetsOverview {
     }
     public readonly _meta: ChangeSetData[]
 
-    public static fromDirtyData(meta: ChangeSetData[]) {
-        return new ChangesetsOverview(meta?.map((cs) => ChangesetsOverview.cleanChangesetData(cs)))
-    }
-
     private constructor(meta: ChangeSetData[]) {
         this._meta = Utils.NoNull(meta)
     }
 
-    public filter(predicate: (cs: ChangeSetData) => boolean) {
-        return new ChangesetsOverview(this._meta.filter(predicate))
-    }
-
-    public sum(key: string, excludeThemes: Set<string>): number {
-        let s = 0
-        for (const feature of this._meta) {
-            if (excludeThemes.has(feature.properties.theme)) {
-                continue
-            }
-            const parsed = Number(feature.properties[key])
-            if (!isNaN(parsed)) {
-                s += parsed
-            }
-        }
-        return s
+    public static fromDirtyData(meta: ChangeSetData[]) {
+        return new ChangesetsOverview(meta?.map((cs) => ChangesetsOverview.cleanChangesetData(cs)))
     }
 
     private static cleanChangesetData(cs: ChangeSetData): ChangeSetData {
@@ -285,6 +262,24 @@ class ChangesetsOverview {
             cs.properties.host = new URL(cs.properties.host).host
         } catch (e) {}
         return cs
+    }
+
+    public filter(predicate: (cs: ChangeSetData) => boolean) {
+        return new ChangesetsOverview(this._meta.filter(predicate))
+    }
+
+    public sum(key: string, excludeThemes: Set<string>): number {
+        let s = 0
+        for (const feature of this._meta) {
+            if (excludeThemes.has(feature.properties.theme)) {
+                continue
+            }
+            const parsed = Number(feature.properties[key])
+            if (!isNaN(parsed)) {
+                s += parsed
+            }
+        }
+        return s
     }
 }
 
@@ -323,3 +318,5 @@ interface ChangeSetData {
         language: string
     }
 }
+
+new StatisticsGUI().AttachTo("main")
