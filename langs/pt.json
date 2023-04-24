@@ -99,6 +99,7 @@
             "translatedBy": "O MapComplete foi traduzido por {contributors} e <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} mais utilizadores</a>"
         },
         "back": "Voltar",
+        "backToIndex": "Volte para a visão geral com todos os mapas temáticos",
         "backToMapcomplete": "Voltar à visão geral do tema",
         "backgroundMap": "Mapa de fundo",
         "cancel": "Cancelar",
