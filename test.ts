@@ -9,12 +9,8 @@ import { UIEventSource } from "./Logic/UIEventSource"
 import { VariableUiElement } from "./UI/Base/VariableUIElement"
 import { FixedUiElement } from "./UI/Base/FixedUiElement"
 import Title from "./UI/Base/Title"
-import { WikipediaBoxOptions } from "./UI/Wikipedia/WikipediaBoxOptions"
-import Wikipedia from "./Logic/Web/Wikipedia"
-import WikipediaPanel from "./UI/Wikipedia/WikipediaPanel.svelte"
 import SvelteUIElement from "./UI/Base/SvelteUIElement"
-import LanguagePicker from "./UI/LanguagePicker"
-import { Utils } from "./Utils"
+import ValidatedInput from "./UI/InputElement/ValidatedInput.svelte"
 
 function testspecial() {
     const layout = new LayoutConfig(<any>theme, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
@@ -37,10 +33,13 @@ function testinput() {
             },
         })
 
+        const feedback: UIEventSource<any> = new UIEventSource<any>(undefined)
         els.push(
             new Combine([
                 new Title(key),
+                new SvelteUIElement(ValidatedInput, { value, type: key, feedback }),
                 helper,
+                new VariableUiElement(feedback),
                 new VariableUiElement(value.map((v) => new FixedUiElement(v))),
             ]).SetClass("flex flex-col p-1 border-3 border-gray-500")
         )
@@ -48,14 +47,7 @@ function testinput() {
     new Combine(els).SetClass("flex flex-col").AttachTo("maindiv")
 }
 
-async function testWaySplit() {
-    const ids = new UIEventSource(["Q42", "Q1"])
-    new SvelteUIElement(WikipediaPanel, { wikiIds: ids, addEntry: true }).AttachTo("maindiv")
-    new LanguagePicker(["en", "nl"]).AttachTo("extradiv")
-    await Utils.waitFor(5000)
-    ids.data.push("Q430")
-    ids.ping()
-}
-testWaySplit().then((_) => console.log("inited"))
-//testinput()
-// testspecial()
+testinput()
+/*/
+testspecial()
+//*/

@@ -10,6 +10,11 @@ export default class DateValidator extends Validator {
     }
 
     reformat(str: string) {
+        console.log("Reformatting", str)
+        if (!this.isValid(str)) {
+            // The date is invalid - we return the string as is
+            return str
+        }
         const d = new Date(str)
         let month = "" + (d.getMonth() + 1)
         let day = "" + d.getDate()

@@ -76,7 +76,7 @@ export default class InputHelpers {
             mapProperties = { ...mapProperties, location }
         }
         let zoom = 17
-        if (properties.args[0]) {
+        if (properties?.args?.[0] !== undefined) {
             zoom = Number(properties.args[0])
             if (isNaN(zoom)) {
                 throw "Invalid zoom level for argument at 'length'-input"

@@ -10,7 +10,7 @@
   export let value: UIEventSource<string>;
   // Internal state, only copied to 'value' so that no invalid values leak outside
   let _value = new UIEventSource(value.data ?? "");
-  onDestroy(value.addCallbackAndRun(v => _value.setData(v ?? "")));
+  onDestroy(value.addCallbackAndRunD(v => _value.setData(v ?? "")));
   export let type: ValidatorType;
   let validator = Validators.get(type);
   export let feedback: UIEventSource<Translation> | undefined = undefined;
@@ -34,12 +34,8 @@
 
   let dispatch = createEventDispatcher<{ selected }>();
   $: {
-    console.log(htmlElem);
     if (htmlElem !== undefined) {
-      htmlElem.onfocus = () => {
-        console.log("Dispatching selected event");
-        return dispatch("selected");
-      };
+      htmlElem.onfocus = () => dispatch("selected");
     }
   }
 </script>
