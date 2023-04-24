@@ -1223,7 +1223,7 @@
             },
             "bike_repair_station-operator": {
                 "question": "Qui maintient cette pompe à vélo ?",
-                "render": "Mantenue par {operator}"
+                "render": "Maintenue par {operator}"
             },
             "bike_repair_station-phone": {
                 "question": "Quel est le numéro de téléphone du service de maintenance ?"
