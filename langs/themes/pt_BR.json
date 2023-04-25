@@ -184,6 +184,7 @@
         "title": "Bicicleta fantasma"
     },
     "trees": {
-        "description": "Mapeie todas as árvores!"
+        "description": "Mapeie todas as árvores!",
+        "title": "Árvores"
     }
 }
