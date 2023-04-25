@@ -346,7 +346,10 @@
         },
         "wikipedia": {
             "createNewWikidata": "Vytvořit novou položku Wikidata",
-            "doSearch": "Pro zobrazení výsledků vyhledávejte výše"
+            "doSearch": "Pro zobrazení výsledků vyhledávejte výše",
+            "failed": "Načítání záznamu ve Wikipedii se nezdařilo",
+            "fromWikipedia": "Z Wikipedie, svobodné encyklopedie",
+            "loading": "Načítání Wikipedie…"
         }
     },
     "hotkeyDocumentation": {
@@ -377,6 +380,56 @@
         "pleaseLogin": "Pro přidání fotky se prosím přihlaste",
         "uploadDone": "Vaše fotka byla přidána. Děkujeme za pomoc!",
         "uploadMultipleDone": "Bylo přidáno {count} fotek. Děkujeme za pomoc!"
+    },
+    "importHelper": {
+        "askMetadata": {
+            "giveDescription": "Napište prosím malý popis pro někoho, kdo poznámku vidí. Dobrá poznámka popisuje, co musí přispěvatel udělat, např.; <i>Tady by mohla být lavička. Pokud jste poblíž, mohli byste prosím zkontrolovat a uvést, zda lavička existuje nebo ne?</i> (Odkaz na MapComplete bude přidán automaticky)",
+            "giveSource": "Jaký je zdroj těchto údajů? Pokud je ve funkci nastaven \"source\", tato hodnota se ignoruje",
+            "giveWikilink": "Na které wikistránce lze najít další informace o tomto importu?",
+            "shouldBeUrl": "Neplatná adresa URL",
+            "shouldNotBeHomepage": "Ne, domovská stránka také není povolena. Zadejte URL správné wikistránky, která dokumentuje váš import",
+            "title": "Nastavit metadata"
+        },
+        "compareToAlreadyExistingNotes": {
+            "completelyImported": "Všechny navrhované body již mají (nebo měly) poznámku o dovozu",
+            "loading": "Získávání poznámek z OSM…",
+            "loadingFailed": "Načítání poznámek se nezdařilo kvůli {error}",
+            "mapExplanation": "Červené prvky na další mapě jsou všechny datové body z vaší datové sady. Vaše datová sada obsahuje prvky <b>{length}</b>.",
+            "noPreviousNotesFound": "Nebyly nalezeny žádné předchozí poznámky pro import",
+            "nothingNearby": "Žádný z navrhovaných bodů nemá v blízkosti poznámku o importu",
+            "someNearby": "{hasNearby} body mají již existující poznámku o importu v rámci {distance} metru",
+            "title": "Porovnání se stávajícími poznámkami",
+            "titleLong": "Porovnat s již existujícími poznámkami \"to-import\"-notes",
+            "wontBeImported": "Tyto datové body se <i>neimportují</i> a na mapě níže jsou zobrazeny jako červené tečky"
+        },
+        "confirmProcess": {
+            "contactedCommunity": "Kontaktoval jsem (místní) komunitu ohledně tohoto importu",
+            "licenseIsCompatible": "Licence dat k importu umožňuje jejich import do OSM. Je povoleno jejich komerční šíření, pouze s minimálním uvedením autorství",
+            "readImportGuidelines": "Přečetl jsem si pokyny k importu na OSM wiki",
+            "title": "Licence a komunita",
+            "titleLong": "Prošli jste procesem importu?",
+            "wikipageIsMade": "Postup je zdokumentován na OSM-wiki (tento odkaz budete potřebovat později)"
+        },
+        "conflationChecker": {
+            "cacheExpired": "Platnost mezipaměti vypršela",
+            "downloadOverpassData": "Stáhněte si načtený GeoJSON z aplikace Overpass",
+            "importCandidatesCount": "Červené prvky {count} na následující mapě jsou všechny vaše kandidáty na import.",
+            "loadedDataAge": "Načtená data pocházejí z mezipaměti a jsou {old} stará",
+            "mapShowingNearbyIntro": "Následující mapa zobrazuje prvky k importu, které mají funkci OSM v rámci ",
+            "nearbyWarn": "Červené prvky {count} na následující mapě nebudou <b>importovány</b>!",
+            "nothingLoaded": "Z OpenStreetMap nejsou načteny žádné prvky, které by odpovídaly aktuální vrstvě {name}",
+            "osmLoaded": "Z OpenStreetMap je načteno {count} prvků, které odpovídají vrstvě <b>{name}</b>.",
+            "reloadTheCache": "Vymažte mezipaměť a znovu položte databázový dotaz na Overpass",
+            "setRangeToZero": "Pokud je chcete importovat všechny, nastavte rozsah na 0 nebo 1",
+            "showOsmLayerInConflationMap": "Zobrazit data OSM",
+            "states": {
+                "error": "Nepodařilo se načíst nejnovější data z Overpass kvůli {error}",
+                "idle": "Kontrola lokálního úložiště…",
+                "running": "Dotazování na Overpass…",
+                "unexpected": "Neočekávaný stav {state}"
+            },
+            "title": "Porovnání s existujícími údaji"
+        }
     },
     "index": {
         "intro": "MapComplete je prohlížeč a editor OpenStreetMap, který zobrazuje informace o prvcích konkrétního tématu a umožňuje je aktualizovat.",
