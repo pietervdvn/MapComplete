@@ -195,8 +195,8 @@ export default class LayoutConfig implements LayoutInformation {
         this.enableAddNewPoints = json.enableAddNewPoints ?? true
         this.enableBackgroundLayerSelection = json.enableBackgroundLayerSelection ?? true
         this.enableShowAllQuestions = json.enableShowAllQuestions ?? false
-        this.enableExportButton = json.enableDownload ?? false
-        this.enablePdfDownload = json.enablePdfDownload ?? false
+        this.enableExportButton = json.enableDownload ?? true
+        this.enablePdfDownload = json.enablePdfDownload ?? true
         this.customCss = json.customCss
         this.overpassUrl = Constants.defaultOverpassUrls
         if (json.overpassUrl !== undefined) {

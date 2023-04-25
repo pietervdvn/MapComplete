@@ -276,11 +276,11 @@ export interface LayoutConfigJson {
     /**
      * If set to true, download button for the data will be shown (offers downloading as geojson and csv)
      */
-    enableDownload?: false | boolean
+    enableDownload?: true | boolean
     /**
      * If set to true, exporting a pdf is enabled
      */
-    enablePdfDownload?: false | boolean
+    enablePdfDownload?: true | boolean
 
     /**
      * If true, notes will be loaded and parsed. If a note is an import (as created by the import_helper.html-tool from mapcomplete),
