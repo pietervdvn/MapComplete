@@ -294,6 +294,17 @@
         "testing": "Testování - změny se neuloží",
         "uploadGpx": {
             "choosePermission": "Níže vyberte, zda má být vaše stopa sdílena:",
+            "confirm": "Potvrdit nahrávání",
+            "gpxServiceOffline": "Služba GPX je v současné době offline - nahrávání není v současné době možné. Zkuste to později.",
+            "intro0": "Nahráním stopy si OpenStreetMap.org ponechá její úplnou kopii.",
+            "intro1": "Budete si moci znovu stáhnout své stopy a načíst je do editačních programů OpenStreetMap",
+            "meta": {
+                "descriptionIntro": "Volitelně můžete zadat popis stopy:",
+                "descriptionPlaceHolder": "Zadejte popis své stopy",
+                "intro": "Přidejte název stopy:",
+                "title": "Název a popis",
+                "titlePlaceholder": "Zadejte název své stopy"
+            },
             "modes": {
                 "private": {
                     "docs": "Body vaší stopy budou sdíleny a agregovány mezi ostatními stopami. Celá stopa bude viditelná a budete ji moci načíst do jiných editačních programů. OpenStreetMap.org si uchová kopii vaší stopy",
@@ -309,6 +320,7 @@
             "uploading": "Nahrávání stopy…"
         },
         "useSearch": "Pro zobrazení předvoleb použijte vyhledávání výše",
+        "useSearchForMore": "Pomocí funkce hledání můžete v rámci {total} vyhledat více hodnot…",
         "weekdays": {
             "abbreviations": {
                 "friday": "Pá",
@@ -318,7 +330,14 @@
                 "thursday": "Čt",
                 "tuesday": "Út",
                 "wednesday": "St"
-            }
+            },
+            "friday": "Pátek",
+            "monday": "Pondělí",
+            "saturday": "Sobota",
+            "sunday": "Neděle",
+            "thursday": "Čtvrtek",
+            "tuesday": "Úterý",
+            "wednesday": "Středa"
         },
         "welcomeBack": "Vítejte zpět!",
         "welcomeExplanation": {
