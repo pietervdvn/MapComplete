@@ -5,6 +5,10 @@
         "retrying": "Surgiu uma falha ao carregar os dados. A tentar novamente dentro de {count} segundos…",
         "zoomIn": "Amplie para ver ou editar os dados"
     },
+    "communityIndex": {
+        "available": "Esta comunidade fala {native}",
+        "intro": "Entre em contato com outras pessoas para conhecê-las, aprender com elas,..."
+    },
     "delete": {
         "cancel": "Cancelar",
         "cannotBeDeleted": "Este elemento não pode ser eliminado",
@@ -461,5 +465,8 @@
         "loginToSplit": "Tem de estar autenticado para dividir uma estrada",
         "split": "Dividir",
         "splitTitle": "Escolha no mapa onde dividir esta estrada"
+    },
+    "translations": {
+        "activateButton": "Ajude a traduzir MapComplete"
     }
 }
