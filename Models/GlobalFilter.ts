@@ -8,6 +8,7 @@ export interface GlobalFilter {
     id: string
     onNewPoint: {
         safetyCheck: Translation
+        icon: string
         confirmAddNew: TypedTranslation<{ preset: Translation }>
         tags: Tag[]
     }

@@ -13,9 +13,6 @@ import { OsmServiceState } from "../../Logic/Osm/OsmConnection"
  * Generates all the questions, one by one
  */
 export default class QuestionBox extends VariableUiElement {
-    public readonly skippedQuestions: UIEventSource<number[]>
-    public readonly restingQuestions: Store<BaseUIElement[]>
-
     constructor(
         state,
         options: {
@@ -29,10 +26,6 @@ export default class QuestionBox extends VariableUiElement {
 
         const tagsSource = options.tagsSource
         const units = options.units
-        options.showAllQuestionsAtOnce = options.showAllQuestionsAtOnce ?? false
-        const tagRenderings = options.tagRenderings
-            .filter((tr) => tr.question !== undefined)
-            .filter((tr) => tr.question !== null)
 
         let focus: () => void = () => {}
 
@@ -59,9 +52,6 @@ export default class QuestionBox extends VariableUiElement {
                 )
         )
 
-        const skippedQuestionsButton = Translations.t.general.skippedQuestions.onClick(() => {
-            skippedQuestions.setData([])
-        })
         tagsSource.map(
             (tags) => {
                 if (tags === undefined) {
@@ -136,18 +126,12 @@ export default class QuestionBox extends VariableUiElement {
                         els.push(allQuestions[0])
                     }
 
-                    if (skippedQuestions.data.length > 0) {
-                        els.push(skippedQuestionsButton)
-                    }
-
                     return new Combine(els).SetClass("block mb-8")
                 },
                 [state.osmConnection.apiIsOnline]
             )
         )
 
-        this.skippedQuestions = skippedQuestions
-        this.restingQuestions = questionsToAsk
         focus = () => this.ScrollIntoView()
     }
 }

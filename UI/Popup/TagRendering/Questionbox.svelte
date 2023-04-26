@@ -72,6 +72,9 @@
   let answered: number = 0;
   let skipped: number = 0;
 
+  function focus(){
+    
+  }
   function skip(question: TagRenderingConfig, didAnswer: boolean = false) {
     skippedQuestions.data.add(question.id);
     skippedQuestions.ping();

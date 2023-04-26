@@ -92,6 +92,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
         string,
         { readonly isDisplayed: UIEventSource<boolean> }
     >
+    /**
+     * All 'level'-tags that are available with the current features
+     */
+    readonly floors: Store<string[]>
 
     constructor(layout: LayoutConfig) {
         this.layout = layout
@@ -214,16 +218,28 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.featureProperties
             )
 
+            const doShowLayer = this.mapProperties.zoom.map(
+                (z) =>
+                    (fs.layer.isDisplayed?.data ?? true) && z >= (fs.layer.layerDef?.minzoom ?? 0),
+                [fs.layer.isDisplayed]
+            )
+
+            if (
+                !doShowLayer.data &&
+                (this.featureSwitches.featureSwitchFilter.data === false || !fs.layer.layerDef.name)
+            ) {
+                /* This layer is hidden and there is no way to enable it (filterview is disabled or this layer doesn't show up in the filter view as the name is not defined)
+                 *
+                 * This means that we don't have to filter it, nor do we have to display it
+                 * */
+                return
+            }
+
             const filtered = new FilteringFeatureSource(
                 fs.layer,
                 fs,
                 (id) => this.featureProperties.getStore(id),
                 this.layerState.globalFilters
-            )
-            const doShowLayer = this.mapProperties.zoom.map(
-                (z) =>
-                    (fs.layer.isDisplayed?.data ?? true) && z >= (fs.layer.layerDef?.minzoom ?? 0),
-                [fs.layer.isDisplayed]
             )
 
             new ShowDataLayer(this.map, {
@@ -234,6 +250,33 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 selectedLayer: this.selectedLayer,
                 fetchStore: (id) => this.featureProperties.getStore(id),
             })
+        })
+
+        this.floors = this.indexedFeatures.features.stabilized(500).map((features) => {
+            if (!features) {
+                return []
+            }
+            const floors = new Set<string>()
+            for (const feature of features) {
+                const level = feature.properties["level"]
+                if (level) {
+                    floors.add(level)
+                }
+            }
+            const sorted = Array.from(floors)
+            // Sort alphabetically first, to deal with floor "A", "B" and "C"
+            sorted.sort()
+            sorted.sort((a, b) => {
+                // We use the laxer 'parseInt' to deal with floor '1A'
+                const na = parseInt(a)
+                const nb = parseInt(b)
+                if (isNaN(na) || isNaN(nb)) {
+                    return 0
+                }
+                return na - nb
+            })
+            sorted.reverse(/* new list, no side-effects */)
+            return sorted
         })
 
         const lastClick = (this.lastClickObject = new LastClickFeatureSource(
@@ -443,7 +486,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 }
 
                 const found = this.indexedFeatures.featuresById.data?.get(hash)
-                console.log("Found:", found)
                 if (!found) {
                     return
                 }
@@ -451,7 +493,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.selectedElement.setData(found)
                 this.selectedLayer.setData(layer)
             },
-            [this.indexedFeatures.featuresById]
+            [this.indexedFeatures.featuresById.stabilized(250)]
         )
 
         new MetaTagging(this)

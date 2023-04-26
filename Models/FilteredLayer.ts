@@ -186,6 +186,12 @@ export default class FilteredLayer {
         if (properties._deleted === "yes") {
             return false
         }
+        for (const globalFilter of globalFilters ?? []) {
+            const neededTags = globalFilter.osmTags
+            if (neededTags !== undefined && !neededTags.matchesProperties(properties)) {
+                return false
+            }
+        }
         {
             const isShown: TagsFilter = this.layerDef.isShown
             if (isShown !== undefined && !isShown.matchesProperties(properties)) {
@@ -200,12 +206,6 @@ export default class FilteredLayer {
             }
         }
 
-        for (const globalFilter of globalFilters ?? []) {
-            const neededTags = globalFilter.osmTags
-            if (neededTags !== undefined && !neededTags.matchesProperties(properties)) {
-                return false
-            }
-        }
         return true
     }
 

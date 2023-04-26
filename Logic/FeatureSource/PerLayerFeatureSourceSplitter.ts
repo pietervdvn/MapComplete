@@ -1,8 +1,7 @@
-import { FeatureSource, FeatureSourceForLayer } from "./FeatureSource"
+import { FeatureSource, IndexedFeatureSource } from "./FeatureSource"
 import FilteredLayer from "../../Models/FilteredLayer"
 import SimpleFeatureSource from "./Sources/SimpleFeatureSource"
 import { Feature } from "geojson"
-import { Utils } from "../../Utils"
 import { UIEventSource } from "../UIEventSource"
 
 /**
@@ -10,9 +9,7 @@ import { UIEventSource } from "../UIEventSource"
  * If this is the case, multiple objects with a different _matching_layer_id are generated.
  * In any case, this featureSource marks the objects with _matching_layer_id
  */
-export default class PerLayerFeatureSourceSplitter<
-    T extends FeatureSourceForLayer = SimpleFeatureSource
-> {
+export default class PerLayerFeatureSourceSplitter<T extends FeatureSource = FeatureSource> {
     public readonly perLayer: ReadonlyMap<string, T>
     constructor(
         layers: FilteredLayer[],
@@ -23,6 +20,11 @@ export default class PerLayerFeatureSourceSplitter<
         }
     ) {
         const knownLayers = new Map<string, T>()
+        /**
+         * Keeps track of the ids that are included per layer.
+         * Used to know if the downstream feature source needs to be pinged
+         */
+        let layerIndexes: ReadonlySet<string>[] = layers.map((_) => new Set<string>())
         this.perLayer = knownLayers
         const layerSources = new Map<string, UIEventSource<Feature[]>>()
         const constructStore =
@@ -41,6 +43,12 @@ export default class PerLayerFeatureSourceSplitter<
             // We try to figure out (for each feature) in which feature store it should be saved.
 
             const featuresPerLayer = new Map<string, Feature[]>()
+            /**
+             * Indexed on layer-position
+             * Will be true if a new id pops up
+             */
+            const hasChanged: boolean[] = layers.map((_) => false)
+            const newIndices: Set<string>[] = layers.map((_) => new Set<string>())
             const noLayerFound: Feature[] = []
 
             for (const layer of layers) {
@@ -49,9 +57,14 @@ export default class PerLayerFeatureSourceSplitter<
 
             for (const f of features) {
                 let foundALayer = false
-                for (const layer of layers) {
+                for (let i = 0; i < layers.length; i++) {
+                    const layer = layers[i]
                     if (layer.layerDef.source.osmTags.matchesProperties(f.properties)) {
+                        const id = f.properties.id
                         // We have found our matching layer!
+                        const previousIndex = layerIndexes[i]
+                        hasChanged[i] = hasChanged[i] || !previousIndex.has(id)
+                        newIndices[i].add(id)
                         featuresPerLayer.get(layer.layerDef.id).push(f)
                         foundALayer = true
                         if (!layer.layerDef.passAllFeatures) {
@@ -67,7 +80,8 @@ export default class PerLayerFeatureSourceSplitter<
 
             // At this point, we have our features per layer as a list
             // We assign them to the correct featureSources
-            for (const layer of layers) {
+            for (let i = 0; i < layers.length; i++) {
+                const layer = layers[i]
                 const id = layer.layerDef.id
                 const features = featuresPerLayer.get(id)
                 if (features === undefined) {
@@ -75,13 +89,16 @@ export default class PerLayerFeatureSourceSplitter<
                     continue
                 }
 
-                const src = layerSources.get(id)
-
-                if (Utils.sameList(src.data, features)) {
+                if (!hasChanged[i] && layerIndexes[i].size === newIndices[i].size) {
+                    // No new id has been added and the sizes are the same (thus: nothing has been removed as well)
+                    // We can safely assume that no changes were made
                     continue
                 }
-                src.setData(features)
+
+                layerSources.get(id).setData(features)
             }
+
+            layerIndexes = newIndices
 
             // AT last, the leftovers are handled
             if (options?.handleLeftovers !== undefined && noLayerFound.length > 0) {
@@ -90,7 +107,7 @@ export default class PerLayerFeatureSourceSplitter<
         })
     }
 
-    public forEach(f: (featureSource: FeatureSourceForLayer) => void) {
+    public forEach(f: (featureSource: FeatureSource) => void) {
         for (const fs of this.perLayer.values()) {
             f(fs)
         }

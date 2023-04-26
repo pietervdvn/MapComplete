@@ -5,7 +5,6 @@
   import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
   import MapControlButton from "./Base/MapControlButton.svelte";
   import ToSvelte from "./Base/ToSvelte.svelte";
-  import Svg from "../Svg";
   import If from "./Base/If.svelte";
   import { GeolocationControl } from "./BigComponents/GeolocationControl";
   import type { Feature } from "geojson";
@@ -35,6 +34,7 @@
   import { VariableUiElement } from "./Base/VariableUIElement";
   import SvelteUIElement from "./Base/SvelteUIElement";
   import OverlayToggle from "./BigComponents/OverlayToggle.svelte";
+  import LevelSelector from "./BigComponents/LevelSelector.svelte";
 
   export let state: ThemeViewState;
   let layout = state.layout;
@@ -71,14 +71,14 @@
 <div class="absolute top-0 left-0 w-full ">
   <!-- Top components -->
   <If condition={state.featureSwitches.featureSwitchSearch}>
-    <div class="sm:w-min float-right mt-1 px-1 sm:m-2 max-[320px]:w-full">
+    <div class="max-[480px]:w-full float-right mt-1 px-1 sm:m-2">
       <Geosearch bounds={state.mapProperties.bounds} perLayer={state.perLayer} {selectedElement}
                  {selectedLayer}></Geosearch>
     </div>
   </If>
   <div class="float-left m-1 sm:mt-2">
     <MapControlButton on:click={() => state.guistate.themeIsOpened.setData(true)}>
-      <div class="flex m-0.5 mx-1 sm:mx-1 md:mx-2 items-center cursor-pointer">
+      <div class="flex m-0.5 mx-1 sm:mx-1 md:mx-2 items-center cursor-pointer max-[480px]:w-full">
         <img class="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 block mr-0.5 sm:mr-1 md:mr-2" src={layout.icon}>
         <b class="mr-1">
           <Tr t={layout.title}></Tr>
@@ -101,7 +101,12 @@
 
 </div>
 
-<div class="absolute bottom-0 right-0 mb-4 mr-4">
+<div class="absolute bottom-0 right-0 mb-4 mr-4 flex flex-col items-end">
+  <If condition={state.floors.map(f => f.length > 1)}>
+    <div class="mr-0.5">
+    <LevelSelector floors={state.floors} layerState={state.layerState} zoom={state.mapProperties.zoom}/>
+    </div>
+  </If>
   <MapControlButton on:click={() => mapproperties.zoom.update(z => z+1)}>
     <img src="./assets/svg/plus.svg" class="w-6 h-6 md:w-8 md:h-8"/>
   </MapControlButton>

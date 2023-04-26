@@ -25,22 +25,36 @@
   import { Tag } from "../../../Logic/Tags/Tag";
   import type { WayId } from "../../../Models/OsmFeature";
   import Loading from "../../Base/Loading.svelte";
+  import type { GlobalFilter } from "../../../Models/GlobalFilter";
+  import { onDestroy } from "svelte";
 
   export let coordinate: { lon: number, lat: number };
   export let state: SpecialVisualizationState;
 
-  let selectedPreset: { preset: PresetConfig, layer: LayerConfig, icon: string, tags: Record<string, string> } = undefined;
-
+  let selectedPreset: {
+    preset: PresetConfig,
+    layer: LayerConfig,
+    icon: string,
+    tags: Record<string, string>
+  } = undefined;
+  let checkedOfGlobalFilters : number = 0
   let confirmedCategory = false;
   $: if (selectedPreset === undefined) {
     confirmedCategory = false;
     creating = false;
+    checkedOfGlobalFilters = 0
+    
   }
 
   let flayer: FilteredLayer = undefined;
   let layerIsDisplayed: UIEventSource<boolean> | undefined = undefined;
   let layerHasFilters: Store<boolean> | undefined = undefined;
-
+  let globalFilter: UIEventSource<GlobalFilter[]> = state.layerState.globalFilters;
+  let _globalFilter: GlobalFilter[];
+  onDestroy(globalFilter.addCallbackAndRun(globalFilter => {
+    console.log("Global filters are", globalFilter);
+    _globalFilter = globalFilter ?? [];
+  }));
   $:{
     flayer = state.layerState.filteredLayers.get(selectedPreset?.layer?.id);
     layerIsDisplayed = flayer?.isDisplayed;
@@ -71,38 +85,38 @@
     creating = true;
     const location: { lon: number; lat: number } = preciseCoordinate.data;
     const snapTo: WayId | undefined = <WayId>snappedToObject.data;
-    const tags: Tag[] = selectedPreset.preset.tags;
+    const tags: Tag[] = selectedPreset.preset.tags.concat(..._globalFilter.map(f => f.onNewPoint.tags));
     console.log("Creating new point at", location, "snapped to", snapTo, "with tags", tags);
 
-    let snapToWay: undefined | OsmWay = undefined
-    if(snapTo !== undefined){
+    let snapToWay: undefined | OsmWay = undefined;
+    if (snapTo !== undefined) {
       const downloaded = await state.osmObjectDownloader.DownloadObjectAsync(snapTo, 0);
-      if(downloaded !== "deleted"){
-        snapToWay = downloaded
+      if (downloaded !== "deleted") {
+        snapToWay = downloaded;
       }
     }
 
     const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon,
       {
-      theme: state.layout?.id ?? "unkown",
-      changeType: "create",
-      snapOnto: snapToWay 
-    });
-    await state.changes.applyAction(newElementAction)
-    state.newFeatures.features.ping()
+        theme: state.layout?.id ?? "unkown",
+        changeType: "create",
+        snapOnto: snapToWay
+      });
+    await state.changes.applyAction(newElementAction);
+    state.newFeatures.features.ping();
     // The 'changes' should have created a new point, which added this into the 'featureProperties'
     const newId = newElementAction.newElementId;
-    console.log("Applied pending changes, fetching store for", newId)
+    console.log("Applied pending changes, fetching store for", newId);
     const tagsStore = state.featureProperties.getStore(newId);
     {
       // Set some metainfo
       const properties = tagsStore.data;
       if (snapTo) {
         // metatags (starting with underscore) are not uploaded, so we can safely mark this
-        delete properties["_referencing_ways"]
+        delete properties["_referencing_ways"];
         properties["_referencing_ways"] = `["${snapTo}"]`;
       }
-      properties["_backend"] = state.osmConnection.Backend()
+      properties["_backend"] = state.osmConnection.Backend();
       properties["_last_edit:timestamp"] = new Date().toISOString();
       const userdetails = state.osmConnection.userDetails.data;
       properties["_last_edit:contributor"] = userdetails.name;
@@ -113,13 +127,17 @@
     abort();
     state.selectedLayer.setData(selectedPreset.layer);
     state.selectedElement.setData(feature);
-    tagsStore.ping()
+    tagsStore.ping();
 
   }
 
 </script>
 
 <LoginToggle ignoreLoading={true} {state}>
+  <!-- This component is basically one big if/then/else flow checking for many conditions and edge cases that (in some cases) have to be handled;
+  1. the first (and outermost) is of course: are we logged in?
+  2. What do we want to add?
+  3. Are all elements of this category visible? (i.e. there are no filters possibly hiding this, is the data still loading, ...) -->
   <LoginButton osmConnection={state.osmConnection} slot="not-logged-in">
     <Tr slot="message" t={Translations.t.general.add.pleaseLogin} />
   </LoginButton>
@@ -163,7 +181,7 @@
 
 
   {:else if $layerHasFilters}
-    <!-- Some filters are enabled. The feature to add might already be mapped, but hiddne -->
+    <!-- Some filters are enabled. The feature to add might already be mapped, but hidden -->
     <div class="alert flex justify-center items-center">
       <EyeOffIcon class="w-8" />
       <Tr t={Translations.t.general.add.disableFiltersExplanation} />
@@ -230,6 +248,16 @@
       <div slot="message">
         <Tr t={t.backToSelect} />
       </div>
+    </SubtleButton>
+  {:else if _globalFilter.length > checkedOfGlobalFilters}
+      <Tr t={_globalFilter[checkedOfGlobalFilters].onNewPoint?.safetyCheck} />
+      <SubtleButton on:click={() => {checkedOfGlobalFilters = checkedOfGlobalFilters + 1}}>
+        <img slot="image" src={_globalFilter[checkedOfGlobalFilters].onNewPoint?.icon ?? "./assets/svg/confirm.svg"} class="w-12 h-12">
+        <Tr slot="message" t={_globalFilter[checkedOfGlobalFilters].onNewPoint?.confirmAddNew.Subs({preset: selectedPreset.preset})} />
+      </SubtleButton>
+    <SubtleButton on:click={() => {globalFilter.setData([]); abort()}}>
+      <img slot="image" src="./assets/svg/close.svg" class="w-8 h-8"/>
+      <Tr slot="message" t={Translations.t.general.cancel}/>
     </SubtleButton>
   {:else if !creating}
     <NewPointLocationInput value={preciseCoordinate} snappedTo={snappedToObject} {state} {coordinate}

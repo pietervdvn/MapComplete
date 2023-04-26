@@ -35,7 +35,18 @@ export default class MetaTagging {
                 continue
             }
             const featureSource = state.perLayer.get(layer.id)
-            featureSource.features?.addCallbackAndRunD((features) => {
+            featureSource.features?.stabilized(1000)?.addCallbackAndRunD((features) => {
+                if (!(features?.length > 0)) {
+                    // No features to handle
+                    return
+                }
+                console.trace(
+                    "Recalculating metatags for layer ",
+                    layer.id,
+                    "due to a change in the upstream features. Contains ",
+                    features.length,
+                    "items"
+                )
                 MetaTagging.addMetatags(
                     features,
                     params,
@@ -71,7 +82,6 @@ export default class MetaTagging {
             return
         }
 
-        console.debug("Recalculating metatags...")
         const metatagsToApply: SimpleMetaTagger[] = []
         for (const metatag of SimpleMetaTaggers.metatags) {
             if (metatag.includesDates) {

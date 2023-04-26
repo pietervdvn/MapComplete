@@ -1,6 +1,5 @@
 import Toggle from "./Input/Toggle"
 import LeftControls from "./BigComponents/LeftControls"
-import RightControls from "./BigComponents/RightControls"
 import CenterMessageBox from "./CenterMessageBox"
 import { DefaultGuiState } from "./DefaultGuiState"
 import Combine from "./Base/Combine"
@@ -42,7 +41,6 @@ export default class DefaultGUI {
 
         const guiState = this.guiState
         new LeftControls(state, guiState).AttachTo("bottom-left")
-        new RightControls(state, this.geolocationHandler).AttachTo("bottom-right")
 
         new CenterMessageBox(state).AttachTo("centermessage")
         document?.getElementById("centermessage")?.classList?.add("pointer-events-none")

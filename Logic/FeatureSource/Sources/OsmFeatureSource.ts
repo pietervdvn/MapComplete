@@ -122,7 +122,7 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
             throw "This is an absurd high zoom level"
         }
 
-        if (z < 14) {
+        if (z < 15) {
             throw `Zoom ${z} is too much for OSM to handle! Use a higher zoom level!`
         }
         const index = Tiles.tile_index(z, x, y)

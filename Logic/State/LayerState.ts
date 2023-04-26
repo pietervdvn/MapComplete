@@ -3,6 +3,8 @@ import { GlobalFilter } from "../../Models/GlobalFilter"
 import FilteredLayer from "../../Models/FilteredLayer"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { OsmConnection } from "../Osm/OsmConnection"
+import { Tag } from "../Tags/Tag"
+import Translations from "../../UI/i18n/Translations"
 
 /**
  * The layer state keeps track of:
@@ -41,6 +43,45 @@ export default class LayerState {
         }
         this.filteredLayers = filteredLayers
         layers.forEach((l) => LayerState.linkFilterStates(l, filteredLayers))
+
+        this.globalFilters.data.push({
+            id: "level",
+            osmTags: undefined,
+            state: undefined,
+            onNewPoint: undefined,
+        })
+    }
+
+    /**
+     * Sets the global filter which looks to the 'level'-tag.
+     * Only features with the given 'level' will be shown.
+     *
+     * If undefined is passed, _all_ levels will be shown
+     * @param level
+     */
+    public setLevelFilter(level?: string) {
+        // Remove all previous
+        const l = this.globalFilters.data.length
+        this.globalFilters.data = this.globalFilters.data.filter((f) => f.id !== "level")
+        if (!level) {
+            if (l !== this.globalFilters.data.length) {
+                this.globalFilters.ping()
+            }
+            return
+        }
+        const t = Translations.t.general.levelSelection
+        this.globalFilters.data.push({
+            id: "level",
+            state: level,
+            osmTags: new Tag("level", level),
+            onNewPoint: {
+                tags: [new Tag("level", level)],
+                icon: "./assets/svg/elevator.svg",
+                confirmAddNew: t.confirmLevel.PartialSubs({ level }),
+                safetyCheck: t.addNewOnLevel.Subs({ level }),
+            },
+        })
+        this.globalFilters.ping()
     }
 
     /**

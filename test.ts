@@ -5,12 +5,13 @@ import Combine from "./UI/Base/Combine"
 import SpecialVisualizations from "./UI/SpecialVisualizations"
 import InputHelpers from "./UI/InputElement/InputHelpers"
 import BaseUIElement from "./UI/BaseUIElement"
-import { UIEventSource } from "./Logic/UIEventSource"
+import { ImmutableStore, UIEventSource } from "./Logic/UIEventSource"
 import { VariableUiElement } from "./UI/Base/VariableUIElement"
 import { FixedUiElement } from "./UI/Base/FixedUiElement"
 import Title from "./UI/Base/Title"
 import SvelteUIElement from "./UI/Base/SvelteUIElement"
 import ValidatedInput from "./UI/InputElement/ValidatedInput.svelte"
+import LevelSelector from "./UI/InputElement/Helpers/LevelSelector.svelte"
 
 function testspecial() {
     const layout = new LayoutConfig(<any>theme, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
@@ -47,7 +48,14 @@ function testinput() {
     new Combine(els).SetClass("flex flex-col").AttachTo("maindiv")
 }
 
-testinput()
+function testElevator() {
+    const floors = new ImmutableStore(["0", "1", "1.5", "2"])
+    const value = new UIEventSource<string>(undefined)
+    new SvelteUIElement(LevelSelector, { floors, value }).AttachTo("maindiv")
+    new VariableUiElement(value).AttachTo("extradiv")
+}
+testElevator()
+//testinput()
 /*/
 testspecial()
 //*/
