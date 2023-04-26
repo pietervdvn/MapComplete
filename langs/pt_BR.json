@@ -8,7 +8,7 @@
     "communityIndex": {
         "available": "Esta comunidade fala {native}",
         "intro": "Entre em contato com outras pessoas para conhecê-las, aprender com elas,...",
-        "notAvailable": "Esta comunidade não fala {nativo}",
+        "notAvailable": "Esta comunidade não fala {native}",
         "title": "índice da comunidade"
     },
     "delete": {
