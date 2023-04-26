@@ -1188,7 +1188,7 @@ export default class SpecialVisualizations {
                             .map(
                                 (l) => {
                                     const fs = state.perLayer.get(l.id)
-                                    const bbox = state.mapProperties.bounds.data
+                                    const bbox = state.mapProperties.bounds
                                     const fsBboxed = new BBoxFeatureSourceForLayer(fs, bbox)
                                     return new StatisticsPanel(fsBboxed)
                                 },

@@ -79,14 +79,14 @@
   <div class="float-left m-1 sm:mt-2">
     <MapControlButton on:click={() => state.guistate.themeIsOpened.setData(true)}>
       <div class="flex m-0.5 mx-1 sm:mx-1 md:mx-2 items-center cursor-pointer max-[480px]:w-full">
-        <img class="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 block mr-0.5 sm:mr-1 md:mr-2" src={layout.icon}>
+        <img class="w-6 h-6 md:w-8 md:h-8 block mr-0.5 sm:mr-1 md:mr-2" src={layout.icon}>
         <b class="mr-1">
           <Tr t={layout.title}></Tr>
         </b>
       </div>
     </MapControlButton>
     <MapControlButton on:click={() =>state.guistate.menuIsOpened.setData(true)}>
-      <MenuIcon class="w-6 h-6 md:w-8 md:h-8 cursor-pointer"></MenuIcon>
+      <MenuIcon class="w-8 h-8 cursor-pointer"></MenuIcon>
     </MapControlButton>
     <If condition={state.featureSwitchIsTesting}>
     <span class="alert">
@@ -108,15 +108,15 @@
     </div>
   </If>
   <MapControlButton on:click={() => mapproperties.zoom.update(z => z+1)}>
-    <img src="./assets/svg/plus.svg" class="w-6 h-6 md:w-8 md:h-8"/>
+    <img src="./assets/svg/plus.svg" class="w-8 h-8"/>
   </MapControlButton>
   <MapControlButton on:click={() => mapproperties.zoom.update(z => z-1)}>
-    <img src="./assets/svg/min.svg" class="w-6 h-6 md:w-8 md:h-8"/>
+    <img src="./assets/svg/min.svg" class="w-8 h-8"/>
   </MapControlButton>
   <If condition={featureSwitches.featureSwitchGeolocation}>
     <MapControlButton>
       <ToSvelte
-        construct={new GeolocationControl(state.geolocation, mapproperties).SetClass("block w-6 h-6 md:w-8 md:h-8")}></ToSvelte>
+        construct={new GeolocationControl(state.geolocation, mapproperties).SetClass("block w-8 h-8")}></ToSvelte>
     </MapControlButton>
   </If>
 </div>

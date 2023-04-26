@@ -49,6 +49,7 @@ import { EliCategory } from "./RasterLayerProperties"
 import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
 import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
 import Hash from "../Logic/Web/Hash"
+import BBoxFeatureSource from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 
 /**
  *
@@ -79,6 +80,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
     readonly historicalUserLocations: WritableFeatureSource<Feature<Point>>
     readonly indexedFeatures: IndexedFeatureSource & LayoutSource
+    readonly featuresInView: FeatureSource
     readonly newFeatures: WritableFeatureSource
     readonly layerState: LayerState
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
@@ -167,6 +169,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 (id) => self.layerState.filteredLayers.get(id).isDisplayed
             )
             this.indexedFeatures = layoutSource
+            this.featuresInView = new BBoxFeatureSource(layoutSource, this.mapProperties.bounds)
             this.dataIsLoading = layoutSource.isLoading
 
             const indexedElements = this.indexedFeatures
@@ -252,7 +255,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             })
         })
 
-        this.floors = this.indexedFeatures.features.stabilized(500).map((features) => {
+        this.floors = this.featuresInView.features.stabilized(500).map((features) => {
             if (!features) {
                 return []
             }

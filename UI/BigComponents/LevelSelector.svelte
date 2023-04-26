@@ -22,7 +22,7 @@
       layerState.setLevelFilter(floor)
     }
   }, [floors, zoom])
-
+  
 </script>
 {#if $zoom >= maxZoom}
 <FloorSelector {floors} value={selectedFloor} />
