@@ -43,12 +43,45 @@
         "panelIntro": "<h3>O seu tema pessoal</h3>Ative as suas camadas favoritas a partir de todos os temas oficiais",
         "reload": "Recarregar dados"
     },
+    "flyer": {
+        "callToAction": "Teste em mapcomplete.osm.be",
+        "cyclofix": "Bombas de bicicleta, estações de reparação, água potável e lojas de bicicletas estão na CycloFix",
+        "editing": {
+            "ex": "Um exemplo simplificado de como isso se parece para uma reserva natural é mostrado abaixo.",
+            "intro": "O usuário é recebido por um mapa com características. Ao selecionar um, as informações sobre esse recurso são mostradas.",
+            "title": "Como é a interface?"
+        },
+        "examples": "Existem muitos mapas temáticos disponíveis, alguns deles impressos aqui.\n\nExistem muitos outros mapas temáticos online: sobre cuidados de saúde, navegação interior, acessibilidade para cadeiras de rodas, instalações de resíduos, estantes públicas, passagens para peões com uma pintura de arco-íris,... Descubra todos eles em mapcomplete.osm.be",
+        "fakeui": {
+            "add_images": "Adicione imagens com alguns cliques",
+            "attributes": "Mostra atributos de forma amigável",
+            "edit": "Informações erradas ou desatualizadas? O botão de edição está ali.",
+            "question": "Se um atributo ainda não for conhecido, MapComplete mostra uma pergunta",
+            "see_images": "Mostra imagens de contribuidores anteriores, Wikipedia, Mapillary, ... ",
+            "wikipedia": "Os artigos vinculados da Wikipédia são exibidos"
+        },
+        "frontParagraph": "O MapComplete é um aplicativo da Web fácil de usar para coletar dados geográficos no OpenStreetMap, permitindo coletar e gerenciar dados relevantes de maneira aberta, colaborativa e reutilizável.\n\nNovas categorias e atributos podem ser adicionados mediante solicitação.",
+        "mapcomplete": {
+            "li0": "Mostrar onde estão os POI",
+            "li1": "Adicione novos pontos e atualize as informações dos existentes",
+            "li2": "Adicione informações de contato e horário de funcionamento facilmente",
+            "li3": "Pode ser colocado em outros sites como iFrame",
+            "li4": "Incorporado no ecossistema OpenStreetMap, que tem muitas ferramentas disponíveis",
+            "li5": "Funcionalidade para importar conjuntos de dados existentes",
+            "li6": "Muitos recursos avançados, como detecção de árvores e métodos de entrada avançados",
+            "li7": "Software livre com copyleft (licença GPL) e de uso gratuito",
+            "title": "O que é o MapComplete?"
+        },
+        "onwheels": "Mapas internos para usuários de cadeira de rodas também estão disponíveis.",
+        "osm": "OpenStreetMap é um mapa on-line que pode ser editado e reutilizado por qualquer pessoa para qualquer finalidade, desde que a atribuição seja dada e os dados sejam mantidos abertos.\nÉ o maior banco de dados geoespacial do mundo e é reutilizado por milhares de aplicativos e sites."
+    },
     "general": {
         "about": "Edite e adicione facilmente o OpenStreetMap para um determinado tema",
         "aboutMapcomplete": "<h3>Sobre</h3><p>Use o MapComplete para adicionar informações ao OpenStreetMap <b>sobre um tema específico</b>. Responda a perguntas e em poucos minutos as suas contribuições estão disponíveis em todos os lugares. Na maioria dos temas pode adicionar imagens ou mesmo deixar uma avaliação. O <b>responsável pelo tema</b> define os elementos, as perguntas e os idiomas disponíveis nele.</p> <h3>Descubra mais</h3><p>O MapComplete <b>mostra sempre o próximo passo</b> para saber mais sobre o OpenStreetMap.</p><ul> <li>Quando incorporado num site, o iframe liga-se ao MapComplete em ecrã cheio.</li><li>A versão ecrã cheio fornece informações sobre o OpenStreetMap</li><li>A visualização funciona sem ser preciso autenticar-se, mas a edição requer uma conta no OpenStreetMap.</li> <li>Se não estiver autenticado, é solicitado a fazê-lo</li><li>Após responder a uma pergunta, pode adicionar novos elementos ao mapa</li><li>Depois de um tempo, as etiquetas reais do OpenStreetMap são mostradas, mais tarde vinculando-se à wiki</li></ul><p></p><br><p>Deparou-se com <b>um problema</b>? Quer uma <b>nova funcionalidade</b>? Quer <b>ajudar a traduzir</b>? Vá ao <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">código-fonte</a> ou <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">rastreador de problemas</a>. </p> <p>Quer ver <b>o seu progresso</b>? Veja a contagem de edições em <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
         "add": {
             "addNew": "Adicionar {category} aqui",
             "addNewMapLabel": "Adicionar novo item",
+            "backToSelect": "Selecione uma categoria diferente",
             "confirmButton": "Adicione uma {category} aqui.<br><div class=\"alert\">Esta adição será visível a todos</div>",
             "confirmIntro": "<h3>Adicionar {title} aqui?</h3>O elemento que criar aqui será <b>visível a todos</b>. Por favor, só adicione coisas ao mapa se elas realmente existirem. Muitas aplicações usam estes dados.",
             "disableFilters": "Desativar todos os filtros",
@@ -132,6 +165,7 @@
         "error": "Algo correu mal",
         "example": "Exemplo",
         "examples": "Exemplos",
+        "feelFreeToSkip": "Você pode adicionar ou atualizar mais informações abaixo, mas sinta-se à vontade <b>para pular perguntas</b> para as quais não sabe a resposta.",
         "fewChangesBefore": "Por favor, responda a algumas perguntas sobre os elementos existentes antes de adicionar um novo elemento.",
         "getStartedLogin": "Entrar com OpenStreetMap para começar",
         "getStartedNewAccount": " ou <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">crie uma conta</a>",
@@ -162,6 +196,7 @@
             "streetcomplete": "Outra aplicação semelhante é o <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "O nome desta {category} é $$$",
+        "newlyCreated": "Você acabou de criar este elemento! Obrigado por compartilhar esta informação com o mundo e ajudar as pessoas em todo o mundo.",
         "next": "Seguinte",
         "noNameCategory": "{category} sem nome",
         "noTagsSelected": "Nenhuma etiqueta selecionada",
@@ -279,6 +314,7 @@
     },
     "image": {
         "addPicture": "Adicionar imagem",
+        "currentLicense": "Suas imagens serão publicadas sob {license}",
         "doDelete": "Remover imagem",
         "dontDelete": "Cancelar",
         "isDeleted": "Eliminada",
@@ -405,7 +441,11 @@
             "errDuplicate": "Algumas colunas têm o mesmo nome",
             "errNoLatOrLon": "O cabeçalho não contém `lat' ou `lon'",
             "errNoName": "Algumas colunas não têm um nome"
-        }
+        },
+        "title": "Auxiliar de importação"
+    },
+    "importInspector": {
+        "title": "Inspecionar e gerenciar notas de importação"
     },
     "index": {
         "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado",
@@ -442,6 +482,14 @@
     "multi_apply": {
         "autoApply": "Ao alterar os atributos {attr_names}, estes atributos serão alterados automaticamente em {count} outros objetos também"
     },
+    "plantDetection": {
+        "poweredByPlantnet": "Distribuído por <a href='https://plantnet.org' target='_blank'>plantnet.org</a>"
+    },
+    "professional": {
+        "indexPage": {
+            "hook": "Precisa de suporte profissional?"
+        }
+    },
     "reviews": {
         "affiliated_reviewer_warning": "(avaliação de afiliado)",
         "attribution": "As avaliações são fornecidas por <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> e estão disponíveis sob a licença <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
@@ -468,5 +516,9 @@
     },
     "translations": {
         "activateButton": "Ajude a traduzir MapComplete"
+    },
+    "userinfo": {
+        "gotoInbox": "Abra sua caixa de entrada",
+        "gotoSettings": "Vá para suas configurações no OpenStreetMap.org"
     }
 }
