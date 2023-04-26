@@ -5,6 +5,10 @@
         "retrying": "Surgiu uma falha ao carregar os dados. A tentar novamente dentro de {count} segundos…",
         "zoomIn": "Amplie para ver ou editar os dados"
     },
+    "communityIndex": {
+        "available": "Esta comunidade fala {native}",
+        "intro": "Entre em contato com outras pessoas para conhecê-las, aprender com elas,..."
+    },
     "delete": {
         "cancel": "Cancelar",
         "cannotBeDeleted": "Este elemento não pode ser eliminado",
@@ -99,6 +103,7 @@
             "translatedBy": "O MapComplete foi traduzido por {contributors} e <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} mais utilizadores</a>"
         },
         "back": "Voltar",
+        "backToIndex": "Volte para a visão geral com todos os mapas temáticos",
         "backToMapcomplete": "Voltar à visão geral do tema",
         "backgroundMap": "Mapa de fundo",
         "cancel": "Cancelar",
@@ -460,5 +465,8 @@
         "loginToSplit": "Tem de estar autenticado para dividir uma estrada",
         "split": "Dividir",
         "splitTitle": "Escolha no mapa onde dividir esta estrada"
+    },
+    "translations": {
+        "activateButton": "Ajude a traduzir MapComplete"
     }
 }

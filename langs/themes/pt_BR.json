@@ -1,4 +1,7 @@
 {
+    "advertising": {
+        "description": "Você já se perguntou quantas propagandas existem em nossas ruas e estradas? Com este mapa você pode encontrar e adicionar informações sobre todos os recursos de publicidade que você pode encontrar na rua"
+    },
     "aed": {
         "description": "Neste mapa, pode-se encontrar e marcar desfibriladores próximos",
         "title": "Abrir mapa AED"
@@ -179,5 +182,9 @@
     },
     "ghostbikes": {
         "title": "Bicicleta fantasma"
+    },
+    "trees": {
+        "description": "Mapeie todas as árvores!",
+        "title": "Árvores"
     }
 }
