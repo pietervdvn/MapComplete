@@ -172,6 +172,9 @@
         "pickTheme": "Escolha um tema abaixo para começar.",
         "title": "Bem-vindo(a) ao MapComplete"
     },
+    "plantDetection": {
+        "poweredByPlantnet": "Desenvolvido por <a href='https://plantnet.org' target='_blank'>plantnet.org</a>"
+    },
     "reviews": {
         "affiliated_reviewer_warning": "(Revisão de afiliados)",
         "attribution": "As resenhas são fornecidas por <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> e estão disponíveis em <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
