@@ -414,7 +414,7 @@
             "cacheExpired": "Platnost mezipaměti vypršela",
             "downloadOverpassData": "Stáhněte si načtený GeoJSON z aplikace Overpass",
             "importCandidatesCount": "Červené prvky {count} na následující mapě jsou všechny vaše kandidáty na import.",
-            "loadedDataAge": "Načtená data pocházejí z mezipaměti a jsou {old} stará",
+            "loadedDataAge": "Načtená data pocházejí z mezipaměti a jsou {age} stará",
             "mapShowingNearbyIntro": "Následující mapa zobrazuje prvky k importu, které mají funkci OSM v rámci ",
             "nearbyWarn": "Červené prvky {count} na následující mapě nebudou <b>importovány</b>!",
             "nothingLoaded": "Z OpenStreetMap nejsou načteny žádné prvky, které by odpovídaly aktuální vrstvě {name}",
