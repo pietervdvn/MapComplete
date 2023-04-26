@@ -3053,12 +3053,26 @@
         }
     },
     "ghost_bike": {
-        "name": "Bicicleta blanca",
+        "name": "Bicicleta fantasma",
+        "presets": {
+            "0": {
+                "title": "una bicicleta fantasma"
+            }
+        },
         "tagRenderings": {
+            "ghost-bike-explanation": {
+                "render": "Una <b>bicicleta fantasma</b> és un memorial per a un ciclista que va morir en un accident de trànsit, en forma de bicicleta blanca col·locada permanentment a prop del lloc de l'accident."
+            },
             "ghost_bike-inscription": {
+                "question": "Quina és la inscripció d'aquesta bicicleta fantasma?",
                 "render": "<i>{inscription}</i>"
             },
             "ghost_bike-name": {
+                "mappings": {
+                    "0": {
+                        "then": "No hi ha cap nom marcat a la bicicleta"
+                    }
+                },
                 "questionHint": "Si us plau, respecteu la privadesa: només ompliu el nom si està àmpliament publicat o marcat a la bicicleta. Opta per deixar de banda el cognom."
             },
             "ghost_bike-source": {
@@ -3079,7 +3093,12 @@
         }
     },
     "gps_track": {
-        "name": "La teva traça recorreguda"
+        "name": "La teva traça recorreguda",
+        "tagRenderings": {
+            "Privacy notice": {
+                "render": "Aquest és el camí que heu recorregut des que s'ha obert aquest lloc web. No et preocupis: això només és visible per a tu i ningú més. Les vostres dades d'ubicació mai s'envien fora del dispositiu."
+            }
+        }
     },
     "grass_in_parks": {
         "description": "Cerques per a tots els camins d'herba accessibles dins dels parcs públics - aquests són «groenzones»"
@@ -4240,6 +4259,9 @@
             }
         }
     },
+    "selected_element": {
+        "description": "Ressalta l'element seleccionat actualment. Anul·leu aquesta capa per tenir diferents colors"
+    },
     "shelter": {
         "name": "Refugi"
     },
@@ -5089,6 +5111,17 @@
                     }
                 },
                 "question": "Sota quina llicència vols publicar les teves fotos?"
+            },
+            "show_debug": {
+                "mappings": {
+                    "0": {
+                        "then": "Mostra la informació de depuració"
+                    },
+                    "1": {
+                        "then": "No mostris informació de depuració"
+                    }
+                },
+                "question": "Vols mostrar la informació de depuració de la configuració de l'usuari?"
             },
             "translation-completeness": {
                 "mappings": {
