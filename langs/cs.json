@@ -349,7 +349,16 @@
             "doSearch": "Pro zobrazení výsledků vyhledávejte výše",
             "failed": "Načítání záznamu ve Wikipedii se nezdařilo",
             "fromWikipedia": "Z Wikipedie, svobodné encyklopedie",
-            "loading": "Načítání Wikipedie…"
+            "loading": "Načítání Wikipedie…",
+            "noResults": "Pro <i>{search}</i> nebylo nic nalezeno",
+            "noWikipediaPage": "Tato položka Wikidat zatím nemá odpovídající stránku na Wikipedii.",
+            "previewbox": {
+                "born": "Narozen: {value}",
+                "died": "Zemřel: {value}"
+            },
+            "searchToShort": "Váš vyhledávací dotaz je příliš krátký, zadejte delší text",
+            "searchWikidata": "Hledat na Wikidatech",
+            "wikipediaboxTitle": "Wikipedie"
         }
     },
     "hotkeyDocumentation": {
@@ -366,26 +375,42 @@
     },
     "image": {
         "addPicture": "Přidat fotku",
+        "currentLicense": "Vaše snímky budou zveřejněny pod {license}",
+        "doDelete": "Odebrat obrázek",
         "dontDelete": "Zrušit",
+        "isDeleted": "Smazáno",
         "nearbyPictures": {
+            "allFiltered": "Filtru neodpovídají žádné obrázky",
             "browseNearby": "Procházet obrázky z okolí…",
             "confirm": "Na vybraném obrázku je vidět {title()}",
             "hasMatchingPicture": "Odpovídá obrázek objektu? Vyberte jej níže",
             "loadMore": "Načíst další obrázky",
             "loading": "Načítání obrázků z okolí…",
             "noImageSelected": "Výběrem obrázku jej propojíte s objektem",
+            "nothingFound": "V okolí nebyly nalezeny žádné obrázky…",
             "onlyTowards": "Zobrazit pouze fotky pořízené směrem k tomuto objektu",
+            "removeFilters": "Kliknutím sem odstraníte filtry",
+            "title": "Obrázky v okolí",
             "withinRadius": "Zobrazit pouze fotky pořízené v okruhu {radius} metrů kolem tohoto objektu"
         },
         "pleaseLogin": "Pro přidání fotky se prosím přihlaste",
+        "respectPrivacy": "Nefotografujte osoby ani poznávací značky. Nevkládejte Mapy Google, Google Streetview ani jiné zdroje chráněné autorskými právy.",
+        "toBig": "Váš obrázek je příliš velký, protože má velikost {actual_size}. Používejte prosím obrázky o maximální velikosti {max_size}",
         "uploadDone": "Vaše fotka byla přidána. Děkujeme za pomoc!",
-        "uploadMultipleDone": "Bylo přidáno {count} fotek. Děkujeme za pomoc!"
+        "uploadFailed": "Obrázek se nepodařilo nahrát. Jste připojeni k internetu a máte povoleno rozhraní API třetích stran? Prohlížeč Brave nebo zásuvný modul uMatrix je mohou blokovat.",
+        "uploadMultipleDone": "Bylo přidáno {count} fotek. Děkujeme za pomoc!",
+        "uploadingMultiple": "Nahrávání {count} obrázků…",
+        "uploadingPicture": "Nahrávání obrázku…"
     },
     "importHelper": {
         "askMetadata": {
+            "downloadGeojson": "Stažení GeoJSON",
             "giveDescription": "Napište prosím malý popis pro někoho, kdo poznámku vidí. Dobrá poznámka popisuje, co musí přispěvatel udělat, např.; <i>Tady by mohla být lavička. Pokud jste poblíž, mohli byste prosím zkontrolovat a uvést, zda lavička existuje nebo ne?</i> (Odkaz na MapComplete bude přidán automaticky)",
             "giveSource": "Jaký je zdroj těchto údajů? Pokud je ve funkci nastaven \"source\", tato hodnota se ignoruje",
             "giveWikilink": "Na které wikistránce lze najít další informace o tomto importu?",
+            "intro": "Před přidáním {count} poznámek uveďte několik dalších informací.",
+            "orDownload": "Můžete si také stáhnout datovou sadu a importovat ji přímo",
+            "shouldBeOsmWikilink": "Očekávaný odkaz na stránku na wiki.openstreetmap.org",
             "shouldBeUrl": "Neplatná adresa URL",
             "shouldNotBeHomepage": "Ne, domovská stránka také není povolena. Zadejte URL správné wikistránky, která dokumentuje váš import",
             "title": "Nastavit metadata"
@@ -428,7 +453,24 @@
                 "running": "Dotazování na Overpass…",
                 "unexpected": "Neočekávaný stav {state}"
             },
-            "title": "Porovnání s existujícími údaji"
+            "title": "Porovnání s existujícími údaji",
+            "titleLive": "Živá data na OSM",
+            "titleNearby": "Objekty v okolí",
+            "zoomIn": "Aktuální úroveň přiblížení je {current}",
+            "zoomLevelSelection": "Živá data se zobrazí, pokud je úroveň přiblížení alespoň: "
+        },
+        "createNotes": {
+            "creating": "Vytvořeno <b>{count}</b> poznámek z {total}",
+            "done": "Všech {count} poznámek bylo vytvořeno!",
+            "loading": "Vydržte, než se načte…",
+            "openImportViewer": "Zkontrolujte průběh svých poznámek v 'import_viewer'",
+            "title": "Vytvoření poznámky"
+        },
+        "gotoImportViewer": "Kontrola předchozích importů",
+        "introduction": {
+            "description": "Pomocník pro import převede externí datovou sadu na poznámky. Externí datová sada musí odpovídat jedné z existujících vrstev MapComplete. Pro každou položku, kterou vložíte do importéru, bude vytvořena jedna poznámka. Tyto poznámky budou zobrazeny spolu s příslušnými prvky v těchto mapách, abyste je mohli snadno přidat.",
+            "importFormat": "Text v poznámce by měl mít následující formát, aby mohl být zachycen",
+            "title": "Úvod"
         }
     },
     "index": {
