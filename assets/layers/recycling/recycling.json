@@ -36,7 +36,12 @@
       {
         "if": "name~*",
         "then": {
-          "*": "{name}"
+          "*": "{name}",
+          "de": "Wertstoffhof",
+          "en": "Recycling centre",
+          "es": "Centro de reciclaje",
+          "it": "Centro di riciclo rifiuti",
+          "nl": "Recyclingcentrum"
         }
       },
       {
