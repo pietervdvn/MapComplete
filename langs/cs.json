@@ -471,9 +471,77 @@
             "description": "Pomocník pro import převede externí datovou sadu na poznámky. Externí datová sada musí odpovídat jedné z existujících vrstev MapComplete. Pro každou položku, kterou vložíte do importéru, bude vytvořena jedna poznámka. Tyto poznámky budou zobrazeny spolu s příslušnými prvky v těchto mapách, abyste je mohli snadno přidat.",
             "importFormat": "Text v poznámce by měl mít následující formát, aby mohl být zachycen",
             "title": "Úvod"
-        }
+        },
+        "login": {
+            "lockNotice": "Tato stránka je uzamčena. Před přístupem sem potřebujete {importHelperUnlock} sad změn.",
+            "loggedInWith": "V současné době jste přihlášeni jako <b>{name}</b> a provedli jste {csCount} sad změn",
+            "loginIsCorrect": "<b>{name}</b> je správný účet pro vytvoření poznámek k importu.",
+            "loginRequired": "Pro pokračování musíte být přihlášeni",
+            "title": "Přihlášení",
+            "userAccountTitle": "Vyberte uživatelský účet"
+        },
+        "mapPreview": {
+            "autodetected": "Vrstva byla automaticky odečtena na základě jejích vlastností",
+            "confirm": "Funkce jsou na mapě umístěny správně",
+            "mismatch": "{count} prvků neodpovídá vybrané vrstvě. Ujistěte se, že jsou přítomny značky pro označení typu, konkrétně {tags}",
+            "selectLayer": "Které vrstvě odpovídá tento import?",
+            "title": "Náhled mapy"
+        },
+        "noteParts": {
+            "datasource": "Původní údaje ze {source}",
+            "importEasily": "Tento bod můžete snadno přidat pomocí aplikace MapComplete:",
+            "wikilink": "Další informace o tomto importu naleznete na adrese {wikilink}"
+        },
+        "previewAttributes": {
+            "allAttributesSame": "Všechny funkce pro import mají tuto značku",
+            "inspectDataTitle": "Zkontrolovat údaje o {count} funkcích, které se mají importovat",
+            "inspectLooksCorrect": "Tyto hodnoty vypadají správně",
+            "someHaveSame": "Tuto značku má {count} funkcí k importu, to je {percentage} % z celkového počtu",
+            "title": "Zkontrolovat atributy"
+        },
+        "selectFile": {
+            "description": "Vyberte soubor .csv nebo .geojson a začněte",
+            "errDuplicate": "Některé sloupce mají stejný název",
+            "errNoLatOrLon": "Záhlaví neobsahuje `lat` nebo `lon`",
+            "errNoName": "Některé sloupce nemají název",
+            "errNotFeatureCollection": "Načtený soubor JSON není geojson-featurecollection",
+            "errPointsOnly": "Načtený soubor JSON by měl obsahovat pouze body",
+            "fileFormatDescription": "Vyberte soubor <b class='code'>.csv</b> nebo <b class='code'>.geojson</b>",
+            "fileFormatDescriptionCsv": "V souboru CSV by měl být sloupec <span class='literal-code'>lat</span> a <span class='literal-code'>lon</span> se souřadnicemi ve WGS84. Pro každý atribut by měl existovat další sloupec.",
+            "fileFormatDescriptionGeoJson": "V souboru geojson by měly být pouze body. Vlastnosti by měly být přesně ty, které by měly jít do OpenStreetMap",
+            "loadedFilesAre": "Aktuálně načtený soubor je {file}",
+            "noFilesLoaded": "V současné době není načten žádný soubor",
+            "title": "Vyberte soubor"
+        },
+        "selectTheme": {
+            "displayNonMatchingCount": "objekty {length} neodpovídají žádným předvolbám",
+            "intro": "Ve všech následujících tématech se zobrazí poznámky k importu. Poznámka na OpenStreetMap však může odkazovat pouze na jedno jediné téma. Vyberte, ke kterému tématu se vytvořené poznámky budou odkazovat",
+            "misMatch": "Vlastnost s klíčem {k} nemá očekávanou hodnotu {v}; místo toho má hodnotu {properties}",
+            "missing": "Očekávané {k}={v}, ale zcela chybí",
+            "needsTags": "{title} potřebuje tagy {tags}",
+            "noMatchingPresets": "Toto téma nemá načtené žádné předvolby. V důsledku toho zde nebudou fungovat importy",
+            "notApplicable": "Předvolba {title} není použitelná:",
+            "title": "Vyberte téma",
+            "unmatchedTitle": "Následující prvky neodpovídají žádné z předvoleb"
+        },
+        "testMode": "Testovací režim - ve skutečnosti neimportuje poznámky",
+        "title": "Pomocník pro import"
+    },
+    "importInspector": {
+        "title": "Kontrola a správa poznámek k importu"
+    },
+    "importLayer": {
+        "alreadyMapped": "Na mapě se již nachází {title} - tento bod je duplicitní",
+        "description": "Vrstva, která importuje položky pro {title}",
+        "importButton": "import_button({layerId}, _tags, Našel jsem {title} zde - přidejte ji do mapy,./assets/svg/addSmall.svg,,,id)",
+        "importHandled": "<div class='thanks'>Tato funkce byla zpracována! Děkujeme za vaši snahu</div>",
+        "layerName": "Možný {title}",
+        "nearbyImagesIntro": "<h3>Obrázky z okolí</h3>Následující obrázky jsou geograficky označené obrázky z různých online služeb. Mohly by vám pomoci při řešení této poznámky.{nearby_images(open)}",
+        "notFound": "Nepodařilo se mi najít {title} - odstraňte jej",
+        "popupTitle": "Zde by mohl být {title}"
     },
     "index": {
+        "#": "Tyto texty se zobrazují nad tlačítky motivu, pokud není načten žádný motiv",
         "intro": "MapComplete je prohlížeč a editor OpenStreetMap, který zobrazuje informace o prvcích konkrétního tématu a umožňuje je aktualizovat.",
         "logIn": "Přihlaste se, abyste viděli další témata, která jste dříve navštívili",
         "pickTheme": "Vyberte si téma níže a začněte.",
