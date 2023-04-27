@@ -2094,6 +2094,31 @@ li::marker {
   display: none;
 }
 
+.selected svg path.selectable {
+  stroke: white !important;
+  stroke-width: 20px !important;
+  /* filter: drop-shadow(5px 5px 40px rgb(0 0 0 / 0.6));*/
+  overflow: visible !important;
+  -webkit-animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
+  animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
+}
+
+.selected svg {
+  overflow: visible !important;
+}
+
+@-webkit-keyframes glowing-drop-shadow {
+  from {
+    -webkit-filter: drop-shadow(5px 5px 60px rgb(128 128 128 / 0.6));
+            filter: drop-shadow(5px 5px 60px rgb(128 128 128 / 0.6));
+  }
+
+  to {
+    -webkit-filter: drop-shadow(5px 5px 80px rgb(0.5 0.5 0.5 / 0.8));
+            filter: drop-shadow(5px 5px 80px rgb(0.5 0.5 0.5 / 0.8));
+  }
+}
+
 /**************** GENERIC ****************/
 
 .alert {
@@ -2355,16 +2380,8 @@ input {
     height: 6rem;
   }
 
-  .sm\:h-6 {
-    height: 1.5rem;
-  }
-
   .sm\:w-24 {
     width: 6rem;
-  }
-
-  .sm\:w-6 {
-    width: 1.5rem;
   }
 
   .sm\:max-w-xl {

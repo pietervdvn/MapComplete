@@ -107,7 +107,7 @@ export default class PerLayerFeatureSourceSplitter<T extends FeatureSource = Fea
         })
     }
 
-    public forEach(f: (featureSource: FeatureSource) => void) {
+    public forEach(f: (featureSource: T) => void) {
         for (const fs of this.perLayer.values()) {
             f(fs)
         }

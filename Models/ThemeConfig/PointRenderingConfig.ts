@@ -13,7 +13,7 @@ import Combine from "../../UI/Base/Combine"
 import { VariableUiElement } from "../../UI/Base/VariableUIElement"
 
 export default class PointRenderingConfig extends WithContextLoader {
-    private static readonly allowed_location_codes = new Set<string>([
+    static readonly allowed_location_codes: ReadonlySet<string> = new Set<string>([
         "point",
         "centroid",
         "start",

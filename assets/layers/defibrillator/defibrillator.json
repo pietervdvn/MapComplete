@@ -650,11 +650,11 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "./assets/themes/aed/aed.svg",
+        "render": "square:#008754;./assets/layers/defibrillator/defibrillator.svg",
         "mappings": [
           {
             "if": "_recently_surveyed=true",
-            "then": "./assets/layers/defibrillator/aed_checked.svg"
+            "then": "square:#28ba3d;./assets/layers/defibrillator/defibrillator.svg"
           }
         ]
       },

@@ -476,29 +476,45 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Setup various services for which no reference are needed
      */
     private initActors() {
-        this.selectedElement.addCallback((selected) => {
-            Hash.hash.setData(selected?.properties?.id)
-        })
+        {
+            // Set the hash based on the selected element...
+            this.selectedElement.addCallback((selected) => {
+                Hash.hash.setData(selected?.properties?.id)
+            })
+            // ... search and select an element based on the hash
+            Hash.hash.mapD(
+                (hash) => {
+                    console.log("Searching for an id:", hash)
+                    if (this.selectedElement.data?.properties?.id === hash) {
+                        // We already have the correct hash
+                        return
+                    }
 
-        Hash.hash.mapD(
-            (hash) => {
-                console.log("Searching for an id:", hash)
-                if (this.selectedElement.data?.properties?.id === hash) {
-                    // We already have the correct hash
+                    const found = this.indexedFeatures.featuresById.data?.get(hash)
+                    if (!found) {
+                        return
+                    }
+                    const layer = this.layout.getMatchingLayer(found.properties)
+                    this.selectedElement.setData(found)
+                    this.selectedLayer.setData(layer)
+                },
+                [this.indexedFeatures.featuresById.stabilized(250)]
+            )
+        }
+
+        {
+            // Unselect the selected element if it is panned out of view
+            this.mapProperties.bounds.stabilized(250).addCallbackD((bounds) => {
+                const selected = this.selectedElement.data
+                if (selected === undefined) {
                     return
                 }
-
-                const found = this.indexedFeatures.featuresById.data?.get(hash)
-                if (!found) {
-                    return
+                const bbox = BBox.get(selected)
+                if (!bbox.overlapsWith(bounds)) {
+                    this.selectedElement.setData(undefined)
                 }
-                const layer = this.layout.getMatchingLayer(found.properties)
-                this.selectedElement.setData(found)
-                this.selectedLayer.setData(layer)
-            },
-            [this.indexedFeatures.featuresById.stabilized(250)]
-        )
-
+            })
+        }
         new MetaTagging(this)
         new TitleHandler(this.selectedElement, this.selectedLayer, this.featureProperties, this)
         new ChangeToElementsActor(this.changes, this.featureProperties)

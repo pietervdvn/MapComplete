@@ -304,6 +304,30 @@ li::marker {
   display: none;
 }
 
+.selected svg path.selectable {
+  stroke: white !important;
+  stroke-width: 20px !important;
+  overflow: visible !important;
+  -webkit-animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
+  -moz-animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
+  animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
+}
+
+.selected svg {
+  overflow: visible !important;
+}
+
+
+@-webkit-keyframes glowing-drop-shadow {
+  from {
+    filter: drop-shadow(5px 5px 60px rgb(128 128 128 / 0.6));
+  }
+  to {
+    filter: drop-shadow(5px 5px 80px rgb(0.5 0.5 0.5 / 0.8));
+  }
+}
+
+
 /**************** GENERIC ****************/
 
 .alert {

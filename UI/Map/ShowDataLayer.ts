@@ -6,7 +6,7 @@ import { GeoOperations } from "../../Logic/GeoOperations"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import PointRenderingConfig from "../../Models/ThemeConfig/PointRenderingConfig"
 import { OsmTags } from "../../Models/OsmFeature"
-import { FeatureSource } from "../../Logic/FeatureSource/FeatureSource"
+import { FeatureSource, FeatureSourceForLayer } from "../../Logic/FeatureSource/FeatureSource"
 import { BBox } from "../../Logic/BBox"
 import { Feature, Point } from "geojson"
 import LineRenderingConfig from "../../Models/ThemeConfig/LineRenderingConfig"
@@ -15,7 +15,7 @@ import * as range_layer from "../../assets/layers/range/range.json"
 import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
 import FilteredLayer from "../../Models/FilteredLayer"
-import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
+import SimpleFeatureSource from "../../Logic/FeatureSource/Sources/SimpleFeatureSource"
 
 class PointRenderingLayer {
     private readonly _config: PointRenderingConfig
@@ -24,6 +24,8 @@ class PointRenderingLayer {
     private readonly _map: MlMap
     private readonly _onClick: (feature: Feature) => void
     private readonly _allMarkers: Map<string, Marker> = new Map<string, Marker>()
+    private readonly _selectedElement: Store<{ properties: { id?: string } }>
+    private readonly _markedAsSelected: HTMLElement[] = []
     private _dirty = false
 
     constructor(
@@ -32,13 +34,15 @@ class PointRenderingLayer {
         config: PointRenderingConfig,
         visibility?: Store<boolean>,
         fetchStore?: (id: string) => Store<Record<string, string>>,
-        onClick?: (feature: Feature) => void
+        onClick?: (feature: Feature) => void,
+        selectedElement?: Store<{ properties: { id?: string } }>
     ) {
         this._visibility = visibility
         this._config = config
         this._map = map
         this._fetchStore = fetchStore
         this._onClick = onClick
+        this._selectedElement = selectedElement
         const self = this
 
         features.features.addCallbackAndRunD((features) => self.updateFeatures(features))
@@ -47,6 +51,24 @@ class PointRenderingLayer {
                 self.updateFeatures(features.features.data)
             }
             self.setVisibility(visible)
+        })
+        selectedElement?.addCallbackAndRun((selected) => {
+            this._markedAsSelected.forEach((el) => el.classList.remove("selected"))
+            this._markedAsSelected.splice(0, this._markedAsSelected.length)
+            if (selected === undefined) {
+                return
+            }
+            PointRenderingConfig.allowed_location_codes.forEach((code) => {
+                const marker = this._allMarkers
+                    .get(selected.properties?.id + "-" + code)
+                    ?.getElement()
+                if (marker === undefined) {
+                    return
+                }
+                console.log("Marking", marker, "as selected for config", config)
+                marker?.classList?.add("selected")
+                this._markedAsSelected.push(marker)
+            })
         })
     }
 
@@ -91,6 +113,10 @@ class PointRenderingLayer {
                 }
 
                 const marker = this.addPoint(feature, loc)
+                if (this._selectedElement?.data === feature.properties.id) {
+                    marker.getElement().classList.add("selected")
+                    this._markedAsSelected.push(marker.getElement())
+                }
                 cache.set(id, marker)
             }
         }
@@ -179,6 +205,7 @@ class LineRenderingLayer {
     private readonly _onClick?: (feature: Feature) => void
     private readonly _layername: string
     private readonly _listenerInstalledOn: Set<string> = new Set<string>()
+    private currentSourceData
 
     constructor(
         map: MlMap,
@@ -228,7 +255,6 @@ class LineRenderingLayer {
         return calculatedProps
     }
 
-    private currentSourceData
     private async update(featureSource: Store<Feature[]>) {
         const map = this._map
         while (!map.isStyleLoaded()) {
@@ -380,10 +406,14 @@ export default class ShowDataLayer {
         layers: LayerConfig[],
         options?: Partial<ShowDataLayerOptions>
     ) {
-        const perLayer = new PerLayerFeatureSourceSplitter(
-            layers.filter((l) => l.source !== null).map((l) => new FilteredLayer(l)),
-            new StaticFeatureSource(features)
-        )
+        const perLayer: PerLayerFeatureSourceSplitter<FeatureSourceForLayer> =
+            new PerLayerFeatureSourceSplitter(
+                layers.filter((l) => l.source !== null).map((l) => new FilteredLayer(l)),
+                features,
+                {
+                    constructStore: (features, layer) => new SimpleFeatureSource(layer, features),
+                }
+            )
         perLayer.forEach((fs) => {
             new ShowDataLayer(mlmap, {
                 layer: fs.layer.layerDef,
@@ -445,7 +475,8 @@ export default class ShowDataLayer {
                     pointRenderingConfig,
                     doShowLayer,
                     fetchStore,
-                    onClick
+                    onClick,
+                    selectedElement
                 )
             }
         }

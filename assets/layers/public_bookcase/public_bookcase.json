@@ -521,7 +521,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "./assets/themes/bookcases/bookcase.svg"
+        "render": "circle:#ffffff;./assets/themes/bookcases/bookcase.svg"
       },
       "label": {
         "mappings": [
