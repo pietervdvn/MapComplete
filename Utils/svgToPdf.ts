@@ -1,6 +1,5 @@
 import jsPDF, { Matrix } from "jspdf"
 import { Translation, TypedTranslation } from "../UI/i18n/Translation"
-import FeaturePipelineState from "../Logic/State/FeaturePipelineState"
 import { PngMapCreator } from "./pngMapCreator"
 import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
 import { Store } from "../Logic/UIEventSource"
@@ -12,6 +11,7 @@ import Translations from "../UI/i18n/Translations"
 import { Utils } from "../Utils"
 import Constants from "../Models/Constants"
 import Hash from "../Logic/Web/Hash"
+import ThemeViewState from "../Models/ThemeViewState"
 
 class SvgToPdfInternals {
     private readonly doc: jsPDF
@@ -711,16 +711,16 @@ export class SvgToPdfPage {
         Hash.hash.setData(undefined)
         //  QueryParameters.ClearAll()
 
-        const state = new FeaturePipelineState(layout)
-        state.locationControl.setData({
-            zoom,
+        const state = new ThemeViewState(layout)
+        state.mapProperties.location.setData({
             lat: this.options?.overrideLocation?.lat ?? Number(params["lat"] ?? 51.05016),
             lon: this.options?.overrideLocation?.lon ?? Number(params["lon"] ?? 3.717842),
         })
+        state.mapProperties.zoom.setData(zoom)
 
         console.log("Params are", params, params["layers"] === "none")
 
-        const fl = state.filteredLayers.data
+        const fl = Array.from(state.layerState.filteredLayers.values())
         for (const filteredLayer of fl) {
             if (params["layer-" + filteredLayer.layerDef.id] !== undefined) {
                 filteredLayer.isDisplayed.setData(
@@ -738,7 +738,7 @@ export class SvgToPdfPage {
                 const layerName = paramsKey.substring("layer-".length)
                 const key = params[paramsKey].toLowerCase().trim()
                 const isDisplayed = key === "true" || key === "force"
-                const layer = state.filteredLayers.data.find((l) => l.layerDef.id === layerName)
+                const layer = fl.find((l) => l.layerDef.id === layerName)
                 console.log(
                     "Setting ",
                     layer?.layerDef?.id,
