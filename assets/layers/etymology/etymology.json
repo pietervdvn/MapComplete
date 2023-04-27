@@ -71,24 +71,28 @@
                 "avenue (des |de la |de l'|de |du )?",
                 "bibliothèque (des |de la |de l'|de |du )?",
                 "boulevard (des |de la |de l'|de |du )?",
-                "centre (culturel |sportif )?(des |de la |de l'|de |du )?",
+                "centre (culturel |sportif |nautique )?(des |de la |de l'|de |du )?",
                 "chaussée (des |de la |de l'|de |du )?",
                 "chemin (des |de la |de l'|de |du )?",
                 "clos (des |de la |de l'|de |du )?",
                 "collège (privé |public )?(des |de la |de l'|de |du )?",
                 "complexe sportif (des |de la |de l'|de |du )?",
+                "cours (des |de la |de l'|de |du )?",
                 "drève (des |de la |de l'|de |du )?",
-                "école (maternelle |primaire |élémentaire)?(privée |publique )?(des |de la |de l'|de |du )?",
+                "école (maternelle |primaire |élémentaire |secondaire )?(privée |publique )?(des |de la |de l'|de |du )?",
                 "esplanade (des |de la |de l'|de |du )?",
                 "groupe scolaire (privé |public )?(des |de la |de l'|de |du )?",
                 "gymnase (des |de la |de l'|de |du )?",
                 "impasse (des |de la |de l'|de |du )?",
-                "lycée (privé |public )?(des |de la |de l'|de |du )?",
+                "lycée (privé |public |technologique |professionel )*(des |de la |de l'|de |du )?",
                 "mail (des |de la |de l'|de |du )?",
                 "médiathèque (des |de la |de l'|de |du )?",
                 "musée (des |de la |de l'|de |du )?",
                 "parc (des |de la |de l'|de |du )?",
+                "passage (des |de la |de l'|de |du )?",
+                "passerelle (des |de la |de l'|de |du )?",
                 "place (des |de la |de l'|de |du )?",
+                "quai (des |de la |de l'|de |du )?",
                 "résidence (des |de la |de l'|de |du )?",
                 "route (des |de la |de l'|de |du )?",
                 "rue (des |de la |de l'|de |du )?",
@@ -122,20 +126,25 @@
                 "parque"
               ],
               "de": [
-                "straße",
-                "platz",
                 "gasse",
-                "weg",
+                "graben",
                 "grundschule",
                 "gymnasium",
-                "schule"
+                "platz",
+                "rain",
+                "schule",
+                "(-)?straße",
+                "(-)?strasse",
+                "weg"
               ],
               "en": [
-                "street",
+                "avenue",
+                "boulevard",
+                "church",
                 "path",
                 "plaza",
                 "square",
-                "church"
+                "street"
               ]
             }
           }
