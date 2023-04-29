@@ -1457,10 +1457,22 @@
                 "mappings": {
                     "0": {
                         "then": "Tento obchod prodává použitá jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod neprodává kola z druhé ruky"
+                    },
+                    "2": {
+                        "then": "Tento obchod prodává pouze kola z druhé ruky"
                     }
-                }
+                },
+                "question": "Prodává tento obchod použitá jízdní kola?"
             },
             "bike_repair_tools-service": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod nabízí nářadí pro kutilské opravy"
+                    }
+                },
                 "question": "Jsou zde nástroje na opravu vlastního kola?"
             },
             "bike_shop-access": {
