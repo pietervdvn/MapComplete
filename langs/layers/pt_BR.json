@@ -630,7 +630,7 @@
             "circumference": {
                 "question": "Qual é a circunferência do tronco da árvore?",
                 "questionHint": "Isso é medido a uma altura de 1,30m",
-                "render": "O tronco da árvore tem uma circunferência de {circunferência} metro"
+                "render": "O tronco da árvore tem uma circunferência de {circumference} metro"
             },
             "height": {
                 "question": "Qual a altura dessa árvore?",
