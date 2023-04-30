@@ -823,6 +823,107 @@
     }
   ],
   "filter": [
-    "open_now"
+    {
+      "open_now"
+    },
+    {
+      "id": "sells_second-hand",
+      "options": [
+        {
+          "question": {
+            "en": "Sells second hand bicycles",
+            "de": "Verkauft gebrauchte Fahrräder",
+            "nl": "Verkoopt twedehands fietsen",
+            "it": "Vende biciclette usate"
+          }
+        },
+        {
+          "question": {
+            "en": "Sells second hand bicycles",
+            "de": "Verkauft gebrauchte Fahrräder",
+            "nl": "Verkoopt twedehands fietsen",
+            "it": "Vende biciclette usate"
+          },
+          "osmTags": {
+            "or": [
+              "service:bicycle:second_hand=yes",
+              "service:bicycle:second_hand=only"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "Only sells second hand bicycles",
+            "de": "Verkauft nur gebrauchte Fahrräder",
+            "nl": "Verkoopt enkel twedehands fietsen",
+            "it": "Vende solo biciclette usate"
+          },
+          "osmTags":"service:bicycle:second_hand=only"
+        },
+        {
+          "question": {
+            "en": "Doesn't sell second hand bicycles",
+            "de": "Verkauft keine gebrauchten Fahrräder",
+            "nl": "Verkoopt geen twedehands fietsen",
+            "it": "Non vende biciclette usate"
+          },
+          "osmTags":"service:bicycle:second_hand=no"
+        },
+        {
+          "question": {
+            "en": "No information about used bicycles yet",
+            "de": "Keine Information über gebrauchte Fahrräder",
+            "nl": "Geen informatie over twedehands fietsen",
+            "it": "Nessuna informazione sulle biciclette usate"
+          },
+          "osmTags": "service:bicycle:second_hand="
+        }
+      ]
+    },
+    {
+      "id": "offers_diy_repair",
+      "options": [
+        {
+          "question": {
+            "en": "Offers DIY bike repair",
+            "de": "Bietet Selbstreparatur an",
+            "nl": "Biedt doe-het-zelfreparaties aan",
+            "it": "Offre riparazioni fai da te"
+          }
+        },
+        {
+          "question": {
+            "en": "Offers DIY bike repair and provides tools",
+            "de": "Bietet Selbstreparatur an and stellt Werkzeug zur Verfügung",
+            "nl": "biedt doe-het-zelfreparaties aan en stelt gereedschap ter beschikking",
+            "it": "Offre riparazioni fai da te e fornisce strumenti"
+          },
+          "osmTags": {
+            "or": [
+              "service:bicycle:diy=yes",
+              "service:bicycle:diy=only"
+            ]
+          }
+        },
+        {
+          "question": {
+            "en": "Doesn't offer DIY bike repair",
+            "de": "Bietet keine Selbstreparatur an",
+            "nl": "Biedt doe-het-zelfreparaties aan",
+            "it": "Non offre riparazioni fai da te"
+          },
+          "osmTags":"service:bicycle:diy=no"
+        },
+        {
+          "question": {
+            "en": "No information about DIY bike repair",
+            "de": "Keine Information über Selbstreparatur",
+            "nl": "Geen informatie over doe-het-zelfreparaties",
+            "it": "Nessuna informazione sulle riparazioni fai da te"
+          },
+          "osmTags":"service:bicycle:diy="
+        }
+      ]
+    }
   ]
 }
