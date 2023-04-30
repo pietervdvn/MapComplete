@@ -1429,6 +1429,59 @@
                 "mappings": {
                     "0": {
                         "then": "Tento obchod pronajímá jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod nepronajímá kola"
+                    }
+                },
+                "question": "Pronajímá tento obchod kola?"
+            },
+            "bike_repair_repairs-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod opravuje jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod neopravuje jízdní kola"
+                    },
+                    "2": {
+                        "then": "Tento obchod opravuje pouze zde zakoupená kola"
+                    },
+                    "3": {
+                        "then": "Tento obchod opravuje pouze kola určité značky"
+                    }
+                },
+                "question": "Opravuje tento obchod jízdní kola?"
+            },
+            "bike_repair_second-hand-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod prodává použitá jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod neprodává kola z druhé ruky"
+                    },
+                    "2": {
+                        "then": "Tento obchod prodává pouze kola z druhé ruky"
+                    }
+                },
+                "question": "Prodává tento obchod použitá jízdní kola?"
+            },
+            "bike_repair_tools-service": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod nabízí nářadí pro kutilské opravy"
+                    }
+                },
+                "question": "Jsou zde nástroje na opravu vlastního kola?"
+            },
+            "bike_shop-access": {
+                "render": "Přístupné pouze pro {access}"
+            },
+            "bike_shop-is-bicycle_shop": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato firma se zaměřuje na pronájem"
                     }
                 }
             }

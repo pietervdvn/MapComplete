@@ -1745,7 +1745,7 @@
                         "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     },
                     "4": {
-                        "question": "Té un connector de <div style='display: inline-block'>Tipus 1 amb cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
+                        "question": "Té un connector de <div style='display: inline-block'><b><b>Tipus 1 amb cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
                     "5": {
                         "question": "Té un connecgtor de <div style='display: inline-block'><b>Tipus 1<i>sense</i>cable (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
@@ -2005,7 +2005,7 @@
                     }
                 },
                 "question": "Quina corrent ofereixen els connectors amb <div style='display: inline-block'><b><b>USB</b>per a carrega telèfons i dispositius electrònics petits</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
-                "render": "<div style='display: inline-block'><b><b>USB</b>per a carregar telèfons i petits dispositius electrònics</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/>\ncom a màxim a {socket:USB-A:current}A"
+                "render": "<div style='display: inline-block'><b><b>USB</b>per a carregar telèfons i petits dispositius electrònics</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> com a màxim a {socket:USB-A:current}A"
             },
             "email": {
                 "question": "Quin és el correu electrònic de l'operadora?"
@@ -3053,12 +3053,26 @@
         }
     },
     "ghost_bike": {
-        "name": "Bicicleta blanca",
+        "name": "Bicicleta fantasma",
+        "presets": {
+            "0": {
+                "title": "una bicicleta fantasma"
+            }
+        },
         "tagRenderings": {
+            "ghost-bike-explanation": {
+                "render": "Una <b>bicicleta fantasma</b> és un memorial per a un ciclista que va morir en un accident de trànsit, en forma de bicicleta blanca col·locada permanentment a prop del lloc de l'accident."
+            },
             "ghost_bike-inscription": {
+                "question": "Quina és la inscripció d'aquesta bicicleta fantasma?",
                 "render": "<i>{inscription}</i>"
             },
             "ghost_bike-name": {
+                "mappings": {
+                    "0": {
+                        "then": "No hi ha cap nom marcat a la bicicleta"
+                    }
+                },
                 "questionHint": "Si us plau, respecteu la privadesa: només ompliu el nom si està àmpliament publicat o marcat a la bicicleta. Opta per deixar de banda el cognom."
             },
             "ghost_bike-source": {
@@ -3079,7 +3093,12 @@
         }
     },
     "gps_track": {
-        "name": "La teva traça recorreguda"
+        "name": "La teva traça recorreguda",
+        "tagRenderings": {
+            "Privacy notice": {
+                "render": "Aquest és el camí que heu recorregut des que s'ha obert aquest lloc web. No et preocupis: això només és visible per a tu i ningú més. Les vostres dades d'ubicació mai s'envien fora del dispositiu."
+            }
+        }
     },
     "grass_in_parks": {
         "description": "Cerques per a tots els camins d'herba accessibles dins dels parcs públics - aquests són «groenzones»"
@@ -3281,11 +3300,35 @@
                 },
                 "question": "Hi ha una superfície podotàctil a aquest gual?"
             }
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "centímetres",
+                        "humanSingular": "centímetre"
+                    },
+                    "1": {
+                        "human": "metres",
+                        "humanSingular": "metre"
+                    }
+                }
+            }
         }
     },
     "kindergarten_childcare": {
+        "name": "Llars d'infants i guarderies",
+        "presets": {
+            "0": {
+                "title": "una llar d'infants"
+            },
+            "1": {
+                "title": "una guarderia"
+            }
+        },
         "tagRenderings": {
             "capacity": {
+                "question": "Quants nens (com a màxim) es poden inscriure aquí?",
                 "render": "Aquesta instal·lació té espai per a {capacity} nens"
             },
             "childcare-type": {
@@ -4240,6 +4283,9 @@
             }
         }
     },
+    "selected_element": {
+        "description": "Ressalta l'element seleccionat actualment. Anul·leu aquesta capa per tenir diferents colors"
+    },
     "shelter": {
         "name": "Refugi"
     },
@@ -5089,6 +5135,17 @@
                     }
                 },
                 "question": "Sota quina llicència vols publicar les teves fotos?"
+            },
+            "show_debug": {
+                "mappings": {
+                    "0": {
+                        "then": "Mostra la informació de depuració"
+                    },
+                    "1": {
+                        "then": "No mostris informació de depuració"
+                    }
+                },
+                "question": "Vols mostrar la informació de depuració de la configuració de l'usuari?"
             },
             "translation-completeness": {
                 "mappings": {
