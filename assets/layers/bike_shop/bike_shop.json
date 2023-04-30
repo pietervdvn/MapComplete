@@ -823,9 +823,9 @@
     }
   ],
   "filter": [
-    {
+    
       "open_now"
-    },
+    
     {
       "id": "sells_second-hand",
       "options": [
