@@ -3,7 +3,7 @@ import { Utils } from "../Utils"
 export type PriviligedLayerType = typeof Constants.priviliged_layers[number]
 
 export default class Constants {
-    public static vNumber = "0.30.0"
+    public static vNumber = "0.30.1"
 
     public static ImgurApiKey = "7070e7167f0a25a"
     public static readonly mapillary_client_token_v4 =
