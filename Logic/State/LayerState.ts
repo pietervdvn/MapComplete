@@ -5,6 +5,8 @@ import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import { OsmConnection } from "../Osm/OsmConnection"
 import { Tag } from "../Tags/Tag"
 import Translations from "../../UI/i18n/Translations"
+import { RegexTag } from "../Tags/RegexTag"
+import { Or } from "../Tags/Or"
 
 /**
  * The layer state keeps track of:
@@ -43,13 +45,6 @@ export default class LayerState {
         }
         this.filteredLayers = filteredLayers
         layers.forEach((l) => LayerState.linkFilterStates(l, filteredLayers))
-
-        this.globalFilters.data.push({
-            id: "level",
-            osmTags: undefined,
-            state: undefined,
-            onNewPoint: undefined,
-        })
     }
 
     /**
@@ -73,7 +68,10 @@ export default class LayerState {
         this.globalFilters.data.push({
             id: "level",
             state: level,
-            osmTags: new Tag("level", level),
+            osmTags: new Or([
+                new Tag("level", "" + level),
+                new RegexTag("level", new RegExp("(.*;)?" + level + "(;.*)?")),
+            ]),
             onNewPoint: {
                 tags: [new Tag("level", level)],
                 icon: "./assets/svg/elevator.svg",
