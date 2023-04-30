@@ -72,6 +72,9 @@
   }
 
   Stores.Chronic(50).addCallback(_ => stabilize());
+  floors.addCallback(floors => {
+    forceIndex = floors.findIndex(s => s === value.data)
+  })
 
   let image: HTMLImageElement;
   $:{

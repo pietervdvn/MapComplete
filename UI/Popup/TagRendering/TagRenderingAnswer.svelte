@@ -22,7 +22,9 @@
   }
   export let layer: LayerConfig;
   let trs: { then: Translation; icon?: string; iconClass?: string }[];
-  $: trs = Utils.NoNull(config?.GetRenderValues(_tags));
+  $:{
+    trs = Utils.NoNull(config?.GetRenderValues(_tags));
+  }
   let classes = ""
   $:classes = config?.classes?.join(" ") ?? "";
 </script>

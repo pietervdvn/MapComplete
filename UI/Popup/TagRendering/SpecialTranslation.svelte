@@ -11,6 +11,7 @@
   import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
   import WeblateLink from "../../Base/WeblateLink.svelte";
   import FromHtml from "../../Base/FromHtml.svelte";
+  import BaseUIElement from "../../BaseUIElement";
 
   /**
    * The 'specialTranslation' renders a `Translation`-object, but interprets the special values as well
@@ -27,10 +28,26 @@
   }));
   let specs: RenderingSpecification[] = [];
   $: {
-    if (txt !== undefined) {
-      specs = SpecialVisualizations.constructSpecification(txt);
+    try {
+
+      if (txt !== undefined) {
+        specs = SpecialVisualizations.constructSpecification(txt);
+      }
+    } catch (e) {
+      console.error("Could not construct a specification and with arguments", txt);
     }
   }
+
+  function createVisualisation(specpart: Exclude<RenderingSpecification, string>): BaseUIElement {
+    {
+      try {
+        return specpart.func.constr(state, tags, specpart.args, feature, layer);
+      } catch (e) {
+        console.error("Could not construct a special visualisation with specification", specpart, "and tags", tags);
+      }
+    }
+  }
+
 </script>
 
 {#each specs as specpart}
@@ -40,6 +57,6 @@
     <WeblateLink context={t.context} />
     </span>
   {:else if $tags !== undefined }
-    <ToSvelte construct={specpart.func.constr(state, tags, specpart.args, feature, layer)}></ToSvelte>
+    <ToSvelte construct={createVisualisation(specpart)}></ToSvelte>
   {/if}
 {/each}

@@ -121,7 +121,7 @@
   </If>
 </div>
 
-<If condition={selectedViewElement.map(v => v !== undefined)}>
+<If condition={selectedViewElement.map(v => v !== undefined && selectedLayer.data !== undefined,[ selectedLayer] )}>
   <ModalRight on:close={() => {selectedElement.setData(undefined)}}>
     <ToSvelte construct={new VariableUiElement(selectedViewElement)}></ToSvelte>
   </ModalRight>

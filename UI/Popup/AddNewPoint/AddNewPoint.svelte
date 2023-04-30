@@ -50,7 +50,7 @@
   let layerIsDisplayed: UIEventSource<boolean> | undefined = undefined;
   let layerHasFilters: Store<boolean> | undefined = undefined;
   let globalFilter: UIEventSource<GlobalFilter[]> = state.layerState.globalFilters;
-  let _globalFilter: GlobalFilter[];
+  let _globalFilter: GlobalFilter[] = [];
   onDestroy(globalFilter.addCallbackAndRun(globalFilter => {
     console.log("Global filters are", globalFilter);
     _globalFilter = globalFilter ?? [];
@@ -85,7 +85,7 @@
     creating = true;
     const location: { lon: number; lat: number } = preciseCoordinate.data;
     const snapTo: WayId | undefined = <WayId>snappedToObject.data;
-    const tags: Tag[] = selectedPreset.preset.tags.concat(..._globalFilter.map(f => f.onNewPoint.tags));
+    const tags: Tag[] = selectedPreset.preset.tags.concat(..._globalFilter.map(f => f?.onNewPoint?.tags ?? []));
     console.log("Creating new point at", location, "snapped to", snapTo, "with tags", tags);
 
     let snapToWay: undefined | OsmWay = undefined;
@@ -249,7 +249,7 @@
         <Tr t={t.backToSelect} />
       </div>
     </SubtleButton>
-  {:else if _globalFilter.length > checkedOfGlobalFilters}
+  {:else if _globalFilter?.length > 0 && _globalFilter?.length > checkedOfGlobalFilters}
       <Tr t={_globalFilter[checkedOfGlobalFilters].onNewPoint?.safetyCheck} />
       <SubtleButton on:click={() => {checkedOfGlobalFilters = checkedOfGlobalFilters + 1}}>
         <img slot="image" src={_globalFilter[checkedOfGlobalFilters].onNewPoint?.icon ?? "./assets/svg/confirm.svg"} class="w-12 h-12">

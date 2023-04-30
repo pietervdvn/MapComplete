@@ -61,6 +61,7 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
             if (kv.length == 2) {
                 tgsSpec.push(<[string, string]>kv)
             } else if (kv.length < 2) {
+                console.error("Invalid key spec: no '=' found in " + spec)
                 throw "Invalid key spec: no '=' found in " + spec
             } else {
                 throw "Invalid key spec: multiple '=' found in " + spec

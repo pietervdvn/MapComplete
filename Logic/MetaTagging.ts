@@ -164,7 +164,11 @@ export default class MetaTagging {
             }
 
             if (somethingChanged) {
-                featurePropertiesStores?.getStore(feature.properties.id)?.ping()
+                try {
+                    featurePropertiesStores?.getStore(feature.properties.id)?.ping()
+                } catch (e) {
+                    console.error("Could not ping a store for a changed property due to", e)
+                }
                 atLeastOneFeatureChanged = true
             }
         }
