@@ -263,7 +263,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
             for (const feature of features) {
                 const level = feature.properties["level"]
                 if (level) {
-                    floors.add(level)
+                    const levels = level.split(";")
+                    for (const l of levels) {
+                        floors.add(l)
+                    }
                 }
             }
             const sorted = Array.from(floors)
@@ -378,42 +381,53 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
     }
 
+    private addLastClick(last_click: LastClickFeatureSource) {
+        // The last_click gets a _very_ special treatment as it interacts with various parts
+
+        const last_click_layer = this.layerState.filteredLayers.get("last_click")
+        this.featureProperties.trackFeatureSource(last_click)
+        this.indexedFeatures.addSource(last_click)
+
+        last_click.features.addCallbackAndRunD((features) => {
+            if (this.selectedLayer.data?.id === "last_click") {
+                // The last-click location moved, but we have selected the last click of the previous location
+                // So, we update _after_ clearing the selection to make sure no stray data is sticking around
+                this.selectedElement.setData(undefined)
+                this.selectedElement.setData(features[0])
+            }
+        })
+
+        new ShowDataLayer(this.map, {
+            features: new FilteringFeatureSource(last_click_layer, last_click),
+            doShowLayer: new ImmutableStore(true),
+            layer: last_click_layer.layerDef,
+            selectedElement: this.selectedElement,
+            selectedLayer: this.selectedLayer,
+            onClick: (feature: Feature) => {
+                if (this.mapProperties.zoom.data < Constants.minZoomLevelToAddNewPoint) {
+                    this.map.data.flyTo({
+                        zoom: Constants.minZoomLevelToAddNewPoint,
+                        center: this.mapProperties.lastClickLocation.data,
+                    })
+                    return
+                }
+                // We first clear the selection to make sure no weird state is around
+                this.selectedLayer.setData(undefined)
+                this.selectedElement.setData(undefined)
+
+                this.selectedElement.setData(feature)
+                this.selectedLayer.setData(last_click_layer.layerDef)
+            },
+        })
+    }
+
     /**
      * Add the special layers to the map
      */
     private drawSpecialLayers(last_click: LastClickFeatureSource) {
         type AddedByDefaultTypes = typeof Constants.added_by_default[number]
         const empty = []
-        {
-            // The last_click gets a _very_ special treatment
-
-            const last_click_layer = this.layerState.filteredLayers.get("last_click")
-            this.featureProperties.trackFeatureSource(last_click)
-            this.indexedFeatures.addSource(last_click)
-            new ShowDataLayer(this.map, {
-                features: new FilteringFeatureSource(last_click_layer, last_click),
-                doShowLayer: new ImmutableStore(true),
-                layer: last_click_layer.layerDef,
-                selectedElement: this.selectedElement,
-                selectedLayer: this.selectedLayer,
-                onClick: (feature: Feature) => {
-                    if (this.mapProperties.zoom.data < Constants.minZoomLevelToAddNewPoint) {
-                        this.map.data.flyTo({
-                            zoom: Constants.minZoomLevelToAddNewPoint,
-                            center: this.mapProperties.lastClickLocation.data,
-                        })
-                        return
-                    }
-                    // We first clear the selection to make sure no weird state is around
-                    this.selectedLayer.setData(undefined)
-                    this.selectedElement.setData(undefined)
-
-                    this.selectedElement.setData(feature)
-                    this.selectedLayer.setData(last_click_layer.layerDef)
-                },
-            })
-        }
-
+        this.addLastClick(last_click)
         /**
          * A listing which maps the layerId onto the featureSource
          */
@@ -494,7 +508,19 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     if (!found) {
                         return
                     }
+                    if (found.properties.id === "last_click") {
+                        return
+                    }
                     const layer = this.layout.getMatchingLayer(found.properties)
+                    console.log(
+                        "Setting selected element based on hash",
+                        hash,
+                        "; found",
+                        found,
+                        "got matching layer",
+                        layer.id,
+                        ""
+                    )
                     this.selectedElement.setData(found)
                     this.selectedLayer.setData(layer)
                 },
