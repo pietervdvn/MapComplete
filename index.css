@@ -304,7 +304,7 @@ li::marker {
   display: none;
 }
 
-.selected svg path.selectable {
+.selected svg:not(.noselect *) path.selectable {
   stroke: white !important;
   stroke-width: 20px !important;
   overflow: visible !important;

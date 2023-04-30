@@ -2094,10 +2094,9 @@ li::marker {
   display: none;
 }
 
-.selected svg path.selectable {
+.selected svg:not(.noselect *) path.selectable {
   stroke: white !important;
   stroke-width: 20px !important;
-  /* filter: drop-shadow(5px 5px 40px rgb(0 0 0 / 0.6));*/
   overflow: visible !important;
   -webkit-animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
   animation: glowing-drop-shadow 1s ease-in-out infinite alternate;
