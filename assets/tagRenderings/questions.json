@@ -1425,7 +1425,13 @@
     "condition": {
       "and": [
         "_backend~*",
-        "_last_edit:passed_time<300"
+        "_last_edit:passed_time<300",
+        {
+          "or": [
+            "_version_number=",
+            "_version_number=1"
+          ]
+        }
       ]
     },
     "metacondition": {
