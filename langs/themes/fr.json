@@ -544,7 +544,7 @@
         "title": "Enseignement"
     },
     "etymology": {
-        "description": "Retrouvez sur cette carte l’origine du nom d’un élément. Les rues, bâtiments, etc. proviennent d’OpenStreetMap et sont liés aux données venant de Wikidata. La fenêtre pop-up affiche l’article Wikipedia (s’il existe) ou l’infobox Wikidata de l’objet dont provient le nom. Si l’objet a sa propre page Wikipedia, elle sera aussi affichée.<br/><br/><b>Vous pouvez contribuer aussi !</b>Zoomez suffisamment et <i>toutes</i> les rues seront affichées. Cliquez sur l'une d'elles et une boîte de recherche Wikidata apparaîtra. En quelques clics, vous pouvez ajouter un lien étymologique. Vous devez disposer d’un compte OpenStreetMap gratuit.",
+        "description": "Retrouvez sur cette carte l’origine du nom d’un élément. Les rues, bâtiments, etc. proviennent d’OpenStreetMap et sont liés aux données venant de Wikidata. La fenêtre pop-up affiche l’article Wikipedia (s’il existe) ou l’infobox Wikidata de l’objet dont provient le nom. Si l’objet a sa propre page Wikipedia, elle sera aussi affichée.<br/><br/><b>Vous pouvez contribuer aussi ! </b>Zoomez suffisamment et <i>toutes</i> les rues seront affichées. Cliquez sur l'une d'elles et une boîte de recherche Wikidata apparaîtra. En quelques clics, vous pouvez ajouter un lien étymologique. Vous devez disposer d’un compte OpenStreetMap gratuit.",
         "layers": {
             "1": {
                 "override": {
@@ -796,6 +796,33 @@
     "onwheels": {
         "description": "Sur cette carte nous pouvons voir et ajouter les différents endroits publiques accessibles aux chaises roulantes",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistiques"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Importation"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Ajouter tous les attributs suggérés"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -837,33 +864,6 @@
             "8": {
                 "override": {
                     "name": "Places de stationnement pour personnes handicapées"
-                }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistiques"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Importation"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Ajouter tous les attributs suggérés"
-                                }
-                            }
-                        }
-                    }
                 }
             }
         },
@@ -1023,10 +1023,6 @@
     "stations": {
         "description": "Voir, modifier et ajouter des détails à une gare ferroviaire",
         "layers": {
-            "3": {
-                "description": "Couche montrant les gares",
-                "name": "Gares ferroviaires"
-            },
             "15": {
                 "description": "Panneau affichant les trains au départ depuis cette gare",
                 "name": "Panneaux des départs",
@@ -1055,6 +1051,10 @@
                 "title": {
                     "render": "Tableau des départs"
                 }
+            },
+            "3": {
+                "description": "Couche montrant les gares",
+                "name": "Gares ferroviaires"
             }
         },
         "title": "Gares ferroviaires"

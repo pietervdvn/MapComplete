@@ -349,7 +349,16 @@
             "doSearch": "Pro zobrazení výsledků vyhledávejte výše",
             "failed": "Načítání záznamu ve Wikipedii se nezdařilo",
             "fromWikipedia": "Z Wikipedie, svobodné encyklopedie",
-            "loading": "Načítání Wikipedie…"
+            "loading": "Načítání Wikipedie…",
+            "noResults": "Pro <i>{search}</i> nebylo nic nalezeno",
+            "noWikipediaPage": "Tato položka Wikidat zatím nemá odpovídající stránku na Wikipedii.",
+            "previewbox": {
+                "born": "Narozen: {value}",
+                "died": "Zemřel: {value}"
+            },
+            "searchToShort": "Váš vyhledávací dotaz je příliš krátký, zadejte delší text",
+            "searchWikidata": "Hledat na Wikidatech",
+            "wikipediaboxTitle": "Wikipedie"
         }
     },
     "hotkeyDocumentation": {
@@ -366,26 +375,42 @@
     },
     "image": {
         "addPicture": "Přidat fotku",
+        "currentLicense": "Vaše snímky budou zveřejněny pod {license}",
+        "doDelete": "Odebrat obrázek",
         "dontDelete": "Zrušit",
+        "isDeleted": "Smazáno",
         "nearbyPictures": {
+            "allFiltered": "Filtru neodpovídají žádné obrázky",
             "browseNearby": "Procházet obrázky z okolí…",
             "confirm": "Na vybraném obrázku je vidět {title()}",
             "hasMatchingPicture": "Odpovídá obrázek objektu? Vyberte jej níže",
             "loadMore": "Načíst další obrázky",
             "loading": "Načítání obrázků z okolí…",
             "noImageSelected": "Výběrem obrázku jej propojíte s objektem",
+            "nothingFound": "V okolí nebyly nalezeny žádné obrázky…",
             "onlyTowards": "Zobrazit pouze fotky pořízené směrem k tomuto objektu",
+            "removeFilters": "Kliknutím sem odstraníte filtry",
+            "title": "Obrázky v okolí",
             "withinRadius": "Zobrazit pouze fotky pořízené v okruhu {radius} metrů kolem tohoto objektu"
         },
         "pleaseLogin": "Pro přidání fotky se prosím přihlaste",
+        "respectPrivacy": "Nefotografujte osoby ani poznávací značky. Nevkládejte Mapy Google, Google Streetview ani jiné zdroje chráněné autorskými právy.",
+        "toBig": "Váš obrázek je příliš velký, protože má velikost {actual_size}. Používejte prosím obrázky o maximální velikosti {max_size}",
         "uploadDone": "Vaše fotka byla přidána. Děkujeme za pomoc!",
-        "uploadMultipleDone": "Bylo přidáno {count} fotek. Děkujeme za pomoc!"
+        "uploadFailed": "Obrázek se nepodařilo nahrát. Jste připojeni k internetu a máte povoleno rozhraní API třetích stran? Prohlížeč Brave nebo zásuvný modul uMatrix je mohou blokovat.",
+        "uploadMultipleDone": "Bylo přidáno {count} fotek. Děkujeme za pomoc!",
+        "uploadingMultiple": "Nahrávání {count} obrázků…",
+        "uploadingPicture": "Nahrávání obrázku…"
     },
     "importHelper": {
         "askMetadata": {
+            "downloadGeojson": "Stažení GeoJSON",
             "giveDescription": "Napište prosím malý popis pro někoho, kdo poznámku vidí. Dobrá poznámka popisuje, co musí přispěvatel udělat, např.; <i>Tady by mohla být lavička. Pokud jste poblíž, mohli byste prosím zkontrolovat a uvést, zda lavička existuje nebo ne?</i> (Odkaz na MapComplete bude přidán automaticky)",
             "giveSource": "Jaký je zdroj těchto údajů? Pokud je ve funkci nastaven \"source\", tato hodnota se ignoruje",
             "giveWikilink": "Na které wikistránce lze najít další informace o tomto importu?",
+            "intro": "Před přidáním {count} poznámek uveďte několik dalších informací.",
+            "orDownload": "Můžete si také stáhnout datovou sadu a importovat ji přímo",
+            "shouldBeOsmWikilink": "Očekávaný odkaz na stránku na wiki.openstreetmap.org",
             "shouldBeUrl": "Neplatná adresa URL",
             "shouldNotBeHomepage": "Ne, domovská stránka také není povolena. Zadejte URL správné wikistránky, která dokumentuje váš import",
             "title": "Nastavit metadata"
@@ -428,10 +453,95 @@
                 "running": "Dotazování na Overpass…",
                 "unexpected": "Neočekávaný stav {state}"
             },
-            "title": "Porovnání s existujícími údaji"
-        }
+            "title": "Porovnání s existujícími údaji",
+            "titleLive": "Živá data na OSM",
+            "titleNearby": "Objekty v okolí",
+            "zoomIn": "Aktuální úroveň přiblížení je {current}",
+            "zoomLevelSelection": "Živá data se zobrazí, pokud je úroveň přiblížení alespoň: "
+        },
+        "createNotes": {
+            "creating": "Vytvořeno <b>{count}</b> poznámek z {total}",
+            "done": "Všech {count} poznámek bylo vytvořeno!",
+            "loading": "Vydržte, než se načte…",
+            "openImportViewer": "Zkontrolujte průběh svých poznámek v 'import_viewer'",
+            "title": "Vytvoření poznámky"
+        },
+        "gotoImportViewer": "Kontrola předchozích importů",
+        "introduction": {
+            "description": "Pomocník pro import převede externí datovou sadu na poznámky. Externí datová sada musí odpovídat jedné z existujících vrstev MapComplete. Pro každou položku, kterou vložíte do importéru, bude vytvořena jedna poznámka. Tyto poznámky budou zobrazeny spolu s příslušnými prvky v těchto mapách, abyste je mohli snadno přidat.",
+            "importFormat": "Text v poznámce by měl mít následující formát, aby mohl být zachycen",
+            "title": "Úvod"
+        },
+        "login": {
+            "lockNotice": "Tato stránka je uzamčena. Před přístupem sem potřebujete {importHelperUnlock} sad změn.",
+            "loggedInWith": "V současné době jste přihlášeni jako <b>{name}</b> a provedli jste {csCount} sad změn",
+            "loginIsCorrect": "<b>{name}</b> je správný účet pro vytvoření poznámek k importu.",
+            "loginRequired": "Pro pokračování musíte být přihlášeni",
+            "title": "Přihlášení",
+            "userAccountTitle": "Vyberte uživatelský účet"
+        },
+        "mapPreview": {
+            "autodetected": "Vrstva byla automaticky odečtena na základě jejích vlastností",
+            "confirm": "Funkce jsou na mapě umístěny správně",
+            "mismatch": "{count} prvků neodpovídá vybrané vrstvě. Ujistěte se, že jsou přítomny značky pro označení typu, konkrétně {tags}",
+            "selectLayer": "Které vrstvě odpovídá tento import?",
+            "title": "Náhled mapy"
+        },
+        "noteParts": {
+            "datasource": "Původní údaje ze {source}",
+            "importEasily": "Tento bod můžete snadno přidat pomocí aplikace MapComplete:",
+            "wikilink": "Další informace o tomto importu naleznete na adrese {wikilink}"
+        },
+        "previewAttributes": {
+            "allAttributesSame": "Všechny funkce pro import mají tuto značku",
+            "inspectDataTitle": "Zkontrolovat údaje o {count} funkcích, které se mají importovat",
+            "inspectLooksCorrect": "Tyto hodnoty vypadají správně",
+            "someHaveSame": "Tuto značku má {count} funkcí k importu, to je {percentage} % z celkového počtu",
+            "title": "Zkontrolovat atributy"
+        },
+        "selectFile": {
+            "description": "Vyberte soubor .csv nebo .geojson a začněte",
+            "errDuplicate": "Některé sloupce mají stejný název",
+            "errNoLatOrLon": "Záhlaví neobsahuje `lat` nebo `lon`",
+            "errNoName": "Některé sloupce nemají název",
+            "errNotFeatureCollection": "Načtený soubor JSON není geojson-featurecollection",
+            "errPointsOnly": "Načtený soubor JSON by měl obsahovat pouze body",
+            "fileFormatDescription": "Vyberte soubor <b class='code'>.csv</b> nebo <b class='code'>.geojson</b>",
+            "fileFormatDescriptionCsv": "V souboru CSV by měl být sloupec <span class='literal-code'>lat</span> a <span class='literal-code'>lon</span> se souřadnicemi ve WGS84. Pro každý atribut by měl existovat další sloupec.",
+            "fileFormatDescriptionGeoJson": "V souboru geojson by měly být pouze body. Vlastnosti by měly být přesně ty, které by měly jít do OpenStreetMap",
+            "loadedFilesAre": "Aktuálně načtený soubor je {file}",
+            "noFilesLoaded": "V současné době není načten žádný soubor",
+            "title": "Vyberte soubor"
+        },
+        "selectTheme": {
+            "displayNonMatchingCount": "objekty {length} neodpovídají žádným předvolbám",
+            "intro": "Ve všech následujících tématech se zobrazí poznámky k importu. Poznámka na OpenStreetMap však může odkazovat pouze na jedno jediné téma. Vyberte, ke kterému tématu se vytvořené poznámky budou odkazovat",
+            "misMatch": "Vlastnost s klíčem {k} nemá očekávanou hodnotu {v}; místo toho má hodnotu {properties}",
+            "missing": "Očekávané {k}={v}, ale zcela chybí",
+            "needsTags": "{title} potřebuje tagy {tags}",
+            "noMatchingPresets": "Toto téma nemá načtené žádné předvolby. V důsledku toho zde nebudou fungovat importy",
+            "notApplicable": "Předvolba {title} není použitelná:",
+            "title": "Vyberte téma",
+            "unmatchedTitle": "Následující prvky neodpovídají žádné z předvoleb"
+        },
+        "testMode": "Testovací režim - ve skutečnosti neimportuje poznámky",
+        "title": "Pomocník pro import"
+    },
+    "importInspector": {
+        "title": "Kontrola a správa poznámek k importu"
+    },
+    "importLayer": {
+        "alreadyMapped": "Na mapě se již nachází {title} - tento bod je duplicitní",
+        "description": "Vrstva, která importuje položky pro {title}",
+        "importButton": "import_button({layerId}, _tags, Našel jsem {title} zde - přidejte ji do mapy,./assets/svg/addSmall.svg,,,id)",
+        "importHandled": "<div class='thanks'>Tato funkce byla zpracována! Děkujeme za vaši snahu</div>",
+        "layerName": "Možný {title}",
+        "nearbyImagesIntro": "<h3>Obrázky z okolí</h3>Následující obrázky jsou geograficky označené obrázky z různých online služeb. Mohly by vám pomoci při řešení této poznámky.{nearby_images(open)}",
+        "notFound": "Nepodařilo se mi najít {title} - odstraňte jej",
+        "popupTitle": "Zde by mohl být {title}"
     },
     "index": {
+        "#": "Tyto texty se zobrazují nad tlačítky motivu, pokud není načten žádný motiv",
         "intro": "MapComplete je prohlížeč a editor OpenStreetMap, který zobrazuje informace o prvcích konkrétního tématu a umožňuje je aktualizovat.",
         "logIn": "Přihlaste se, abyste viděli další témata, která jste dříve navštívili",
         "pickTheme": "Vyberte si téma níže a začněte.",
