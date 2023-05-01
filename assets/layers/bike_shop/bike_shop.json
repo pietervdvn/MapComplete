@@ -823,9 +823,7 @@
     }
   ],
   "filter": [
-    
-      "open_now",
-
+    "open_now",
     {
       "id": "sells_second-hand",
       "options": [
@@ -854,13 +852,13 @@
             "de": "Bietet Selbstreparatur an",
             "nl": "Biedt doe-het-zelfreparaties aan",
             "it": "Offre riparazioni fai da te"
+          },
+          "osmTags": {
+            "or": [
+              "service:bicycle:diy=yes",
+              "service:bicycle:diy=only"
+            ]
           }
-        },
-        "osmTags": {
-          "or": [
-            "service:bicycle:diy=yes",
-            "service:bicycle:diy=only"
-          ]
         }
       ]
     }
