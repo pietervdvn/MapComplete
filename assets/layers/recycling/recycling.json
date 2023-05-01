@@ -986,7 +986,8 @@
           "then": {
             "en": "Printer cartridges can be recycled here",
             "nl": "Inktpatronen kunnen hier gerecycleerd worden",
-            "de": "Druckerpatronen können hier recycelt werden"
+            "de": "Druckerpatronen können hier recycelt werden",
+            "ca": "Els cartutxos d'impressora es poden reciclar aquí"
           },
           "icon": {
             "path": "./assets/layers/recycling/printer_cartridges.svg",
@@ -1425,8 +1426,11 @@
         },
         {
           "question": {
-            "en": "Recycling of printer cartridges",
-            "nl": "Recycling van inktpatronen"
+            "en": "Recycling of residual waste",
+            "nl": "Recycling van restafval",
+            "ca": "Reciclatge del rebuig",
+            "de": "Recycling von Restabfällen",
+            "it": "Riciclo di secco"
           },
           "osmTags": "recycling:printer_cartridges=yes"
         },

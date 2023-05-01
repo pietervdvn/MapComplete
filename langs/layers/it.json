@@ -626,6 +626,22 @@
     },
     "bike_shop": {
         "description": "Un negozio che vende specificatamente biciclette o articoli similari",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Vende biciclette usate"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Offre riparazioni fai da te"
+                    }
+                }
+            }
+        },
         "name": "Venditore/riparatore bici",
         "presets": {
             "0": {

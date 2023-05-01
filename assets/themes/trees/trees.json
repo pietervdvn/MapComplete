@@ -17,7 +17,8 @@
     "es": "Árboles",
     "da": "Træer",
     "pa_PK": "رُکھ",
-    "cs": "Stromy"
+    "cs": "Stromy",
+    "pt_BR": "Árvores"
   },
   "shortDescription": {
     "en": "Map all the trees",
@@ -50,7 +51,8 @@
     "ca": "Mapeja tots els arbres!",
     "es": "¡Mapa de los Árboles!",
     "da": "Kortlæg alle træerne!",
-    "cs": "Zmapujte všechny stromy!"
+    "cs": "Zmapujte všechny stromy!",
+    "pt_BR": "Mapeie todas as árvores!"
   },
   "icon": "./assets/themes/trees/logo.svg",
   "startLat": 50.642,

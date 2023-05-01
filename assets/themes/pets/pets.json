@@ -18,7 +18,7 @@
     "fr": "Retrouvez sur cette carte des points d’intérêts pour votre animal : vétérinaires, parcs à chien, animaleries, restaurants acceptant les chiens, etc.",
     "ca": "A aquest mapa, trobaràs diferents llocs interesants per a les teves mascotes: veterinaris, parcs per a gossos, botigues d'animals, restaurants amables amb gossos, ...",
     "es": "En este mapa, encontrarás varios lugares interesantes para tus mascotas: veterinarios, parques para perros, tiendas de mascotas, restaurantes aptos para perros, ...",
-    "cs": "Na této mapě najdete různá zajímavá místa pro vaše domácí mazlíčky: veterináře, psí parky, obchody pro zvířata, restaurace pro psy, ..."
+    "cs": "Na této mapě najdete různá zajímavá místa pro vaše domácí mazlíčky: veterináře, psí parky, obchody pro zvířata, restaurace vhodné pro vstup se psy, ..."
   },
   "icon": "./assets/layers/dogpark/dog-park.svg",
   "startZoom": 10,

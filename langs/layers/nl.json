@@ -177,6 +177,9 @@
         "presets": {
             "0": {
                 "title": "een kunstwerk"
+            },
+            "1": {
+                "title": "een kunstwerk op een muur"
             }
         },
         "tagRenderings": {
@@ -342,7 +345,7 @@
             "speech_output_language": {
                 "render": {
                     "special": {
-                        "question": "In welke taal is de srpaak van deze geldautomaat?",
+                        "question": "In welke taal is de spraak van deze geldautomaat?",
                         "render_list_item": "Deze geldautomaat heeft spraak in {language():font-bold}",
                         "render_single_language": "Deze automaat heeft spraak in {language():font-bold}"
                     }
@@ -1277,6 +1280,22 @@
     },
     "bike_shop": {
         "description": "Een winkel die hoofdzakelijk fietsen en fietstoebehoren verkoopt",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Verkoopt tweedehands fietsen"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Biedt doe-het-zelfreparaties aan"
+                    }
+                }
+            }
+        },
         "name": "Fietszaak",
         "presets": {
             "0": {
@@ -6605,6 +6624,9 @@
                     },
                     "20": {
                         "question": "Recycling van restafval"
+                    },
+                    "21": {
+                        "question": "Recycling van fietsen"
                     }
                 }
             },
@@ -6737,6 +6759,9 @@
                     },
                     "23": {
                         "then": "Restafval kan hier gerecycled worden"
+                    },
+                    "24": {
+                        "then": "Fietsen (en fietswrakken) kunnen hier gerecycled worden"
                     }
                 },
                 "question": "Wat kan hier gerecycled worden?"
@@ -6760,6 +6785,12 @@
                     },
                     "2": {
                         "then": "Afvalcontainer voor restafval"
+                    },
+                    "3": {
+                        "then": "Dit is een verzamelplaats zonder container waar het afval later opgepikt wordt."
+                    },
+                    "4": {
+                        "then": "Dit is een afvalhoop waar het afvalmateriaal bovenop elkaar gestapeld wordt."
                     }
                 },
                 "question": "Wat voor soort recycling is dit?"

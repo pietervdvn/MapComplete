@@ -74,7 +74,8 @@
           "pt_BR": "Café de bicicleta <i>{name}</i>",
           "pt": "Café de bicicleta <i>{name}</i>",
           "da": "Cykelcafé <i>{name}</i>",
-          "cs": "Cyklokavárna <i>{name}</i>"
+          "cs": "Cyklokavárna <i>{name}</i>",
+          "ca": "Cafè ciclista <i>{name}</i>"
         }
       }
     ]
@@ -207,7 +208,8 @@
             "pt_BR": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo",
             "pt": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo",
             "da": "Denne cykelcafé tilbyder værktøj til gør-det-selv-reparation",
-            "cs": "Tato cyklokavárna nabízí nářadí pro kutilské opravy"
+            "cs": "Tato cyklokavárna nabízí nářadí pro kutilské opravy",
+            "ca": "Aquest cafè ciclista ofereix ferramentes per a la reparació DIY"
           }
         },
         {
@@ -225,7 +227,8 @@
             "pt_BR": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo",
             "pt": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo",
             "da": "Denne cykelcafé tilbyder ikke værktøj til gør-det-selv-reparation",
-            "cs": "Tato cyklokavárna nenabízí nářadí pro kutilské opravy"
+            "cs": "Tato cyklokavárna nenabízí nářadí pro kutilské opravy",
+            "ca": "Aquest cafè ciclista no ofereix ferramentes per a la reparació DIY"
           }
         }
       ]

@@ -264,7 +264,8 @@
             "it": "È ad accesso libero",
             "ru": "Свободный доступ",
             "hu": "Nyilvánosan használható",
-            "es": "Accesible públicamente"
+            "es": "Accesible públicamente",
+            "ca": "Accessible al públic"
           },
           "if": "access=yes"
         },

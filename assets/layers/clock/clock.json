@@ -32,7 +32,8 @@
         "en": "In what way is the clock mounted?",
         "nl": "Hoe is de klok bevestigd?",
         "de": "Wie ist die Uhr montiert?",
-        "ca": "De quina forma està muntat aquest rellotge?"
+        "ca": "De quina forma està muntat aquest rellotge?",
+        "fr": "De quelle manière est fixée cette horloge ?"
       },
       "mappings": [
         {
@@ -41,7 +42,8 @@
             "en": "This clock is mounted on a pole",
             "nl": "Deze klok is bevestigd aan een paal",
             "de": "Diese Uhr ist auf einem Mast montiert",
-            "ca": "Aquest rellotge està muntat en un pal"
+            "ca": "Aquest rellotge està muntat en un pal",
+            "fr": "Cette horloge est montée sur un poteau"
           }
         },
         {
@@ -50,7 +52,8 @@
             "en": "This clock is mounted on a wall",
             "nl": "Deze klok is bevestigd aan een muur",
             "de": "Diese Uhr ist an einer Wand montiert",
-            "ca": "Aquest rellotge està muntat en una paret"
+            "ca": "Aquest rellotge està muntat en una paret",
+            "fr": "Cette horloge est fixée sur un mur"
           }
         },
         {
@@ -59,7 +62,8 @@
             "en": "This clock is part of a billboard",
             "nl": "Deze klok is onderdeel van een reclamebord",
             "de": "Diese Uhr ist Teil einer Werbetafel",
-            "ca": "Aquest rellotge està muntat en una tanca publicitària"
+            "ca": "Aquest rellotge està muntat en una tanca publicitària",
+            "fr": "Cette horloge fait partie d'un panneau publicitaire"
           }
         },
         {
@@ -68,7 +72,8 @@
             "en": "This clock is on the ground",
             "nl": "Deze klok staat op de grond",
             "de": "Diese Uhr befindet sich auf dem Boden",
-            "ca": "Aquest rellotge està al sòl"
+            "ca": "Aquest rellotge està al sòl",
+            "fr": "Cette horloge est posée au sol"
           }
         }
       ]
@@ -79,7 +84,8 @@
         "en": "How does this clock display the time?",
         "nl": "Hoe toont deze klok de tijd?",
         "de": "Wie zeigt diese Uhr die Zeit an?",
-        "ca": "Com mostra aquest rellotge l'hora?"
+        "ca": "Com mostra aquest rellotge l'hora?",
+        "fr": "Comment cette horloge indique-t-elle l'heure ?"
       },
       "mappings": [
         {
@@ -88,7 +94,8 @@
             "en": "This clock displays the time with hands",
             "nl": "Deze klok toont de tijd met wijzers",
             "de": "Diese Uhr zeigt die Zeit mit Zeigern an",
-            "ca": "Aquest rellotge mostra l'hora amb mans"
+            "ca": "Aquest rellotge mostra l'hora amb mans",
+            "fr": "Cette horloge indique l'heure avec des aiguilles"
           }
         },
         {
@@ -97,7 +104,8 @@
             "en": "This clock displays the time with digits",
             "nl": "Deze klok toont de tijd met cijfers",
             "de": "Diese Uhr zeigt die Zeit mit Ziffern an",
-            "ca": "Aquest rellotge mostra l'hora amb dígits"
+            "ca": "Aquest rellotge mostra l'hora amb dígits",
+            "fr": "Cette horloges indique l'heure avec des chiffres numériques"
           }
         },
         {
@@ -106,7 +114,8 @@
             "en": "This clock displays the time with a sundial",
             "nl": "Deze klok toont de tijd met een zonnewijzer",
             "de": "Diese Uhr zeigt die Zeit mit einer Sonnenuhr an",
-            "ca": "Aquest rellotge mostra l'hora amb un rellotge de sol"
+            "ca": "Aquest rellotge mostra l'hora amb un rellotge de sol",
+            "fr": "Cette horloge indique l'heure grâce au soleil"
           }
         },
         {
@@ -115,7 +124,8 @@
             "en": "This clock displays the time in a non-standard way, e.g using binary, water or something else",
             "nl": "Deze klok toont de tijd op een niet-standaard manier, bijvoorbeeld met binaire cijfers, water of iets anders",
             "de": "Diese Uhr zeigt die Zeit auf eine nicht standardisierte Weise an, z. B. mit Binärzeichen, Wasser oder etwas anderem",
-            "ca": "Aquest rellotge mostra l'hora d'una manera no estàndard, p.e. utilitzant binari, aigua o quelcom més"
+            "ca": "Aquest rellotge mostra l'hora d'una manera no estàndard, p.e. utilitzant binari, aigua o quelcom més",
+            "fr": "Cette horloge indique l'heure d'une manière inhabituelle, par ex. en binaire, avec de l'eau, ou autre"
           }
         }
       ]
@@ -164,7 +174,8 @@
         "en": "Does this clock also display the date?",
         "nl": "Toont deze klok ook de datum?",
         "de": "Zeigt diese Uhr auch das Datum an?",
-        "ca": "Aquest rellotge també mostra la data?"
+        "ca": "Aquest rellotge també mostra la data?",
+        "fr": "Cette horloge indique-t-elle également la date ?"
       },
       "mappings": [
         {
@@ -173,7 +184,8 @@
             "en": "This clock also displays the date",
             "nl": "Deze klok toont ook de datum",
             "de": "Diese Uhr zeigt auch das Datum an",
-            "ca": "Aquest rellotge també mostra la data"
+            "ca": "Aquest rellotge també mostra la data",
+            "fr": "Cette horloge indique également la date"
           }
         },
         {
@@ -182,7 +194,8 @@
             "en": "This clock does not display the date",
             "nl": "Deze klok toont de datum niet",
             "de": "Diese Uhr zeigt kein Datum an",
-            "ca": "Aquest rellotge no mostra la data"
+            "ca": "Aquest rellotge no mostra la data",
+            "fr": "Cette horloge n'indique pas la date"
           }
         },
         {
@@ -230,7 +243,8 @@
             "en": "This clock does probably not display the temperature",
             "nl": "Deze klok toont de temperatuur waarschijnlijk niet",
             "de": "Diese Uhr zeigt wahrscheinlich nicht die Temperatur an",
-            "ca": "Aquest rellotge probablement no mostra la temperatura"
+            "ca": "Aquest rellotge probablement no mostra la temperatura",
+            "fr": "Cette horloge n'indique probablement pas la date"
           },
           "hideInAnswer": true
         }
@@ -281,7 +295,8 @@
         "en": "Does this clock also display the humidity?",
         "nl": "Toont deze klok ook de luchtvochtigheid?",
         "de": "Zeigt diese Uhr auch die Luftfeuchtigkeit an?",
-        "ca": "Aquest rellotge també mostra la humitat?"
+        "ca": "Aquest rellotge també mostra la humitat?",
+        "fr": "Cette horloge indique-t-elle également l'humidité ?"
       },
       "mappings": [
         {
@@ -290,7 +305,8 @@
             "en": "This clock also displays the humidity",
             "nl": "Deze klok toont ook de luchtvochtigheid",
             "de": "Diese Uhr zeigt auch die Luftfeuchtigkeit an",
-            "ca": "Aquest rellotge també mostra la humitat"
+            "ca": "Aquest rellotge també mostra la humitat",
+            "fr": "Cette horloge indique également l'humidité"
           }
         },
         {
@@ -299,7 +315,8 @@
             "en": "This clock does not display the humidity",
             "nl": "Deze klok toont de luchtvochtigheid niet",
             "de": "Diese Uhr zeigt nicht die Luftfeuchtigkeit an",
-            "ca": "Aquest rellotge no mostra la humitat"
+            "ca": "Aquest rellotge no mostra la humitat",
+            "fr": "Cette horloge n'indique pas l'humidité"
           }
         },
         {
@@ -308,7 +325,8 @@
             "en": "This clock does probably not display the humidity",
             "nl": "Deze klok toont de luchtvochtigheid waarschijnlijk niet",
             "de": "Diese Uhr zeigt wahrscheinlich nicht die Luftfeuchtigkeit an",
-            "ca": "Aquest rellotge probablement no mostra la humitat"
+            "ca": "Aquest rellotge probablement no mostra la humitat",
+            "fr": "Cette horloge n'indique probablement pas l'humidité"
           },
           "hideInAnswer": true
         }
@@ -320,7 +338,8 @@
         "en": "How many faces does this clock have?",
         "nl": "Hoeveel klokken heeft deze klok?",
         "de": "Wie viele Zifferblätter hat diese Uhr?",
-        "ca": "Quantes cares té aquest rellotge?"
+        "ca": "Quantes cares té aquest rellotge?",
+        "fr": "Combien de faces a cette horloge ?"
       },
       "freeform": {
         "key": "faces",
@@ -337,7 +356,8 @@
         "en": "This clock has {faces} faces",
         "nl": "Deze klok heeft {faces} klokken",
         "de": "Diese Uhr hat {faces} Zifferblätter",
-        "ca": "Aquest rellotge té {faces} cares"
+        "ca": "Aquest rellotge té {faces} cares",
+        "fr": "Cette horloge a {faces} faces"
       },
       "mappings": [
         {
@@ -346,7 +366,8 @@
             "en": "This clock has one face",
             "nl": "Deze klok heeft één klok",
             "de": "Diese Uhr hat ein Zifferblatt",
-            "ca": "Aquest rellotge té una cara"
+            "ca": "Aquest rellotge té una cara",
+            "fr": "Cette horloge a une face"
           }
         },
         {
@@ -355,7 +376,8 @@
             "en": "This clock has two faces",
             "nl": "Deze klok heeft twee klokken",
             "de": "Diese Uhr hat zwei Zifferblätter",
-            "ca": "Aquest rellotge té dues cares"
+            "ca": "Aquest rellotge té dues cares",
+            "fr": "Cette horloge a deux faces"
           }
         },
         {
@@ -364,7 +386,8 @@
             "en": "This clock has four faces",
             "nl": "Deze klok heeft vier klokken",
             "de": "Diese Uhr hat vier Zifferblätter",
-            "ca": "Aquest rellotge té quatre cares"
+            "ca": "Aquest rellotge té quatre cares",
+            "fr": "Cette horloge a quatre faces"
           }
         }
       ]
@@ -409,7 +432,8 @@
         "en": "A publicly visible clock mounted on a wall",
         "nl": "Een publiekelijk zichtbare klok aan een muur",
         "de": "Eine öffentlich sichtbare Uhr an einer Wand",
-        "ca": "Un rellotge visible públicament muntat en una paret"
+        "ca": "Un rellotge visible públicament muntat en una paret",
+        "fr": "Une horloge publique fixée sur un mur"
       },
       "preciseInput": {
         "preferredBackground": [

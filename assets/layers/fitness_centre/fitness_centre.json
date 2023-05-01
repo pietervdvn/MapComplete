@@ -57,7 +57,8 @@
       "render": {
         "en": "This fitness centre is called {name}",
         "de": "Das Fitnessstudio heißt {name}",
-        "nl": "Dit fitness-centrum heet {name}"
+        "nl": "Dit fitness-centrum heet {name}",
+        "ca": "Aquest gimnàs / centre de fitness s'anomena {name}"
       }
     },
     "images",

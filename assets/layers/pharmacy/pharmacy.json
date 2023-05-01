@@ -178,6 +178,6 @@
       }
     }
   ],
-"deletion": true,
-"allowMove": true
+  "deletion": true,
+  "allowMove": true
 }

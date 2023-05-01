@@ -75,7 +75,8 @@
             "en": "This bench is two-sided and shares the backrest",
             "nl": "Dit is een dubbele bank waarbij de rugleuning gedeeld wordt",
             "de": "Diese Bank ist zweiseitig und teilt sich die Rückenlehne",
-            "ca": "Aquest banc té dues cares i comparteix el respatller"
+            "ca": "Aquest banc té dues cares i comparteix el respatller",
+            "cs": "Tato lavička je oboustranná a má společné opěradlo"
           },
           "icon": {
             "path": "./assets/layers/bench/two_sided.svg",
@@ -127,7 +128,7 @@
             "fi": "Selkänoja: ei",
             "pl": "Oparcie: Nie",
             "pt_BR": "Encosto: Não",
-            "pt": "Encosto: Não",
+            "pt": "Não <b>not</b> tem um encosto",
             "ca": "<b>No</b> té espatller",
             "da": "Har <b>ikke</b> et ryglæn",
             "cs": "<b>nemá</b> opěradlo"
@@ -174,7 +175,7 @@
         "nb_NO": "{seats} seter",
         "pl": "{seats} siedzeń",
         "pt_BR": "{seats} assentos",
-        "pt": "{seats} assentos",
+        "pt": "{seats} lugares",
         "ca": "{seats} seients",
         "da": "{seats} pladser",
         "cs": "{seats} míst k sezení",
@@ -198,7 +199,7 @@
         "nb_NO": "Hvor mange sitteplasser har denne benken?",
         "pl": "Ile siedzeń ma ta ławka?",
         "pt_BR": "Quantos assentos este banco tem?",
-        "pt": "Quantos assentos este banco tem?",
+        "pt": "Quantos lugares este banco tem?",
         "da": "Hvor mange pladser har denne bænk?",
         "cs": "Kolik má tato lavice míst k sezení?",
         "ca": "Quants seients té aquest banc?"
@@ -216,7 +217,9 @@
             "de": "Diese Bank hat keine getrennten Sitze",
             "fr": "Ce banc n'a pas de sièges séparés",
             "es": "Este banco no tiene asientos separados",
-            "ca": "Aquest banc no té els seients separats"
+            "ca": "Aquest banc no té els seients separats",
+            "cs": "Tato lavička nemá oddělená sedadla",
+            "pt": "Este banco não tem assentos separados"
           }
         }
       ]
@@ -757,7 +760,9 @@
             "nl": "Vandaag nagekeken!",
             "de": "Heute geprüft!",
             "fr": "Vérifié sur le terrain aujourd'hui !",
-            "ca": "Inspeccionat avui!"
+            "ca": "Inspeccionat avui!",
+            "cs": "Zjištěno dnes!",
+            "pt": "Pesquisado hoje!"
           }
         }
       ],
@@ -776,14 +781,18 @@
         "nl": "Deze bank heeft een inscriptie: <br/><p><i>{inscription}</i></p>",
         "de": "Diese Bank hat folgende Inschrift:<br/><p><i>{inscription}</i></p>",
         "fr": "Ce banc a l'inscription suivante :<br/><p><i>{inscription}</i></p>",
-        "ca": "Aquest banc té la següent inscripció:<br/><p><i>{inscription}</i></p>"
+        "ca": "Aquest banc té la següent inscripció:<br/><p><i>{inscription}</i></p>",
+        "cs": "Tato lavice má následující nápis:<br/><p><i>{inscription}</i></p>",
+        "pt": "Este banco tem a seguinte inscrição:<br/><p><i>{inscription}</i></p>"
       },
       "question": {
         "en": "Does this bench have an inscription?",
         "nl": "Heeft deze bank een inscriptie?",
         "de": "Hat diese Bank eine Inschrift? ",
         "fr": "Est-ce que ce banc possède une inscription ?",
-        "ca": "Aquest banc té una inscripció?"
+        "ca": "Aquest banc té una inscripció?",
+        "cs": "Má tato lavička nápis?",
+        "pt": "Esse banco tem inscrição?"
       },
       "freeform": {
         "key": "inscription",
@@ -800,7 +809,9 @@
             "nl": "Deze bank heeft geen inscriptie",
             "de": "Diese Bank hat keine Inschrift",
             "fr": "Ce banc n'a pas d'inscription",
-            "ca": "Aquest banc no té cap inscripció"
+            "ca": "Aquest banc no té cap inscripció",
+            "cs": "Tato lavička nemá nápis",
+            "pt": "Este banco não tem inscrição"
           },
           "addExtraTags": [
             "inscription="
@@ -814,7 +825,8 @@
             "de": "Diese Bank hat <span class='subtle'>(wahrscheinlich)</span> keine Inschrift",
             "fr": "Ce banc n'a<span class='subtle'>(probablement)</span> pas d'inscription",
             "es": "Este banco <span class='subtle'>(probablemente)</span> no tiene inscripción",
-            "ca": "Aquest banc <span class='subtle'>(probablement)</span> no té cap inscripció"
+            "ca": "Aquest banc <span class='subtle'>(probablement)</span> no té cap inscripció",
+            "cs": "Tato lavička <span class='subtle'>(pravděpodobně)</span> nemá nápis"
           },
           "hideInAnswer": true
         }
@@ -824,7 +836,9 @@
         "nl": "Bijvoorbeeld op een aangebracht plakkaat, ingesneden in de rugleuning, ...",
         "de": "Z.B. auf einer angebrachten Plakette, in der Rückenlehne, ... ",
         "fr": "Par exemple, sur une plaque accrochée, sur le dossier, ...",
-        "ca": "P. ex. en una placa, al respatller, ..."
+        "ca": "P. ex. en una placa, al respatller, ...",
+        "cs": "Např. na připevněné desce, v opěradle, ...",
+        "pt": "Por exemplo: em placa montada, no encosto, ..."
       }
     },
     {
@@ -833,7 +847,8 @@
         "en": "Does this bench have an artistic element?",
         "nl": "Heeft deze bank een geïntegreerd kunstwerk?",
         "de": "Hat diese Bank ein künstlerisches Element? ",
-        "ca": "Aquest banc té algun element artístic?"
+        "ca": "Aquest banc té algun element artístic?",
+        "cs": "Má tato lavička umělecké prvky?"
       },
       "mappings": [
         {
@@ -843,7 +858,8 @@
             "nl": "Deze bank heeft een geïntegreerd kunstwerk",
             "de": "Diese Bank hat ein integriertes Kunstwerk",
             "fr": "Une oeuvre d'art est intégrée à ce banc",
-            "ca": "Aquest banc té integrada una obra d'art"
+            "ca": "Aquest banc té integrada una obra d'art",
+            "cs": "Tato lavička má integrované umělecké dílo"
           }
         },
         {
@@ -854,7 +870,8 @@
             "de": "Diese Bank hat kein integriertes Kunstwerk",
             "fr": "Ce banc n'a pas d'oeuvre d'art intégrée",
             "es": "Este banco no tiene una obra de arte integrada",
-            "ca": "Aquest banc no té una obra d'art integrada"
+            "ca": "Aquest banc no té una obra d'art integrada",
+            "cs": "Tato lavička nemá integrované umělecké dílo"
           }
         }
       ],
@@ -862,7 +879,8 @@
         "en": "E.g. it has an integrated painting, statue or other non-trivial, creative work",
         "nl": "Bijvoorbeeld een standbeeld, schildering of ander, niet-triviaal kunstwerk",
         "de": "Z.B. hat es ein integriertes Gemälde, eine Statue oder eine andere nicht triviale, kreative Arbeit",
-        "ca": "P.e. té una pintura integrada, estatua o altres treballs no trivials i creatius"
+        "ca": "P.e. té una pintura integrada, estatua o altres treballs no trivials i creatius",
+        "cs": "Např. má integrovaný obraz, sochu nebo jiné netriviální tvůrčí dílo"
       }
     },
     {
@@ -883,7 +901,9 @@
         "nl": "Is deze bank een gedenkteken voor iemand of iets?",
         "de": "Dient diese Bank als Denkmal für jemanden oder etwas?",
         "fr": "Ce banc sert-il de mémorial pour quelqu'un ou quelque chose ?",
-        "ca": "Aquest banc actua com a memorial per a algú o algo?"
+        "ca": "Aquest banc actua com a memorial per a algú o algo?",
+        "cs": "Slouží tato lavička jako památník někoho nebo něčeho?",
+        "pt": "Este banco serve como memorial para alguém ou algo?"
       },
       "mappings": [
         {
@@ -893,7 +913,9 @@
             "nl": "Deze bank is een gedenkteken aan iemand of iets",
             "de": "Diese Bank ist ein Denkmal für jemanden oder etwas",
             "fr": "Ce banc est un mémorial pour quelqu'un ou quelque chose",
-            "ca": "Aquest banc és un memorial per a algú o alguna cosa"
+            "ca": "Aquest banc és un memorial per a algú o alguna cosa",
+            "cs": "Tato lavička je pomníkem pro někoho nebo něco",
+            "pt": "Este banco é um memorial para alguém ou algo"
           },
           "addExtraTags": [
             "memorial=bench"
@@ -911,7 +933,9 @@
             "nl": "Deze bank is <b>geen</b> gedenkteken aan iemand of iets",
             "de": "Diese Bank ist <b>kein</b> Denkmal für jemanden oder etwas",
             "fr": "Ce banc n'est <b>pas</b> un mémorial pour quelqu'un ou quelque chose",
-            "ca": "Aquest banc <b>no</b> és un memorial per a algú o alguna cosa"
+            "ca": "Aquest banc <b>no</b> és un memorial per a algú o alguna cosa",
+            "cs": "Tato lavička <b>není</b> pro někoho nebo něco památníkem",
+            "pt": "Este banco <b>não é</b> um memorial para alguém ou algo"
           },
           "addExtraTags": [
             "memorial="
@@ -1005,7 +1029,8 @@
             "nl": "is een gedenkteken",
             "de": "ist ein Denkmal",
             "fr": "est un mémorial",
-            "ca": "és un memorial"
+            "ca": "és un memorial",
+            "cs": "je památník"
           }
         }
       ]
@@ -1019,7 +1044,8 @@
             "nl": "Met en zonder rugleuning",
             "de": "Mit und ohne Rückenlehne",
             "fr": "Avec et sans dossier",
-            "ca": "Amb i sense respatller"
+            "ca": "Amb i sense respatller",
+            "cs": "S opěradlem a bez opěradla"
           }
         },
         {
@@ -1029,7 +1055,8 @@
             "nl": "Heeft een rugleuning",
             "de": "Mit Rückenlehne",
             "fr": "A un dossier",
-            "ca": "Té un respatller"
+            "ca": "Té un respatller",
+            "cs": "Má opěradlo"
           }
         },
         {
@@ -1039,7 +1066,8 @@
             "nl": "Heeft geen rugleuning",
             "de": "Ohne Rückenlehne",
             "fr": "N'a pas de dossier",
-            "ca": "No té respatller"
+            "ca": "No té respatller",
+            "cs": "Nemá opěradlo"
           }
         }
       ]

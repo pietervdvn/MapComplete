@@ -34,7 +34,8 @@
       "de": "Mit Fahrrad zusammenhängendes Objekt",
       "it": "Oggetto relativo alle bici",
       "es": "Objeto relacionado con bicis",
-      "da": "Cykelrelateret objekt"
+      "da": "Cykelrelateret objekt",
+      "ca": "Objecte relacionat amb bicis"
     },
     "mappings": [
       {
@@ -94,6 +95,7 @@
     "de": "Eine Ebene mit Objekten zum Thema Fahrrad, die zu keiner anderen Ebene passen",
     "es": "Una capa con los objetos relacionados con bicis pero que no coinciden con ninguna otra capa",
     "fr": "Une couche sur le thème des vélos mais qui ne correspondent à aucune autre couche",
-    "da": "Et lag med objekter med cykeltema, men som ikke matcher noget andet lag"
+    "da": "Et lag med objekter med cykeltema, men som ikke matcher noget andet lag",
+    "ca": "Una capa amb els objectes relacionats amb bicis però que no coinxideixen amb cap altra capa"
   }
 }

@@ -19,7 +19,7 @@
     "sv": "Spökcykel",
     "zh_Hant": "幽靈單車",
     "pt": "Bicicleta fantasma",
-    "ca": "Bicicleta blanca"
+    "ca": "Bicicleta fantasma"
   },
   "source": {
     "osmTags": "memorial=ghost_bike"
@@ -80,7 +80,8 @@
         "pt_BR": "uma bicicleta fantasma",
         "ru": "Велосипед ghost",
         "sv": "Spökcykel",
-        "zh_Hant": "幽靈單車"
+        "zh_Hant": "幽靈單車",
+        "ca": "una bicicleta fantasma"
       },
       "tags": [
         "historic=memorial",
@@ -96,7 +97,8 @@
         "nl": "Een <b>Witte Fiets</b> (of Spookfiets) is een aandenken aan een fietser die bij een verkeersongeval om het leven kwam. Het gaat over een witgeschilderde fiets die geplaatst werd in de buurt van het ongeval.",
         "de": "Ein <b>Geisterrad</b> ist ein Denkmal für einen Radfahrer, der bei einem Verkehrsunfall ums Leben kam, in Form eines weißen Fahrrades, das dauerhaft in der Nähe des Unfallortes aufgestellt wird.",
         "it": "Una <b>bici fantasma</b> è il memoriale di un ciclista che è morto in un incidente stradale e che ha la forma di una bicicletta bianca piazzata in maniera stabile vicino al luogo dell’incidente.",
-        "fr": "Un <b>vélo fantôme</b> est un monument commémoratif pour un cycliste décédé dans un accident de la route, sous la forme d'un vélo blanc placé en permanence près du lieu de l'accident."
+        "fr": "Un <b>vélo fantôme</b> est un monument commémoratif pour un cycliste décédé dans un accident de la route, sous la forme d'un vélo blanc placé en permanence près du lieu de l'accident.",
+        "ca": "Una <b>bicicleta fantasma</b> és un memorial per a un ciclista que va morir en un accident de trànsit, en forma de bicicleta blanca col·locada permanentment a prop del lloc de l'accident."
       }
     },
     "images",
@@ -127,7 +129,8 @@
             "nl": "De naam is niet aangeduid op de fiets",
             "de": "Am Fahrrad ist kein Name angegeben",
             "it": "Nessun nome scritto sulla bici",
-            "fr": "Aucun nom n'est marqué sur le vélo"
+            "fr": "Aucun nom n'est marqué sur le vélo",
+            "ca": "No hi ha cap nom marcat a la bicicleta"
           }
         }
       ],
@@ -172,7 +175,8 @@
         "nl": "Wat is het opschrift op deze witte fiets?",
         "de": "Wie lautet die Inschrift auf diesem Geisterrad?",
         "it": "Che cosa è scritto sulla bici fantasma?",
-        "fr": "Quelle est l'inscription sur ce vélo fantôme ?"
+        "fr": "Quelle est l'inscription sur ce vélo fantôme ?",
+        "ca": "Quina és la inscripció d'aquesta bicicleta fantasma?"
       },
       "render": {
         "en": "<i>{inscription}</i>",

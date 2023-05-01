@@ -35,16 +35,6 @@
             "1": {
                 "title": "uma caixa de pôster independente"
             },
-            "10": {
-                "description": "Usado para sinais publicitários, sinais de néon, logotipos e sinais de entrada institucionais",
-                "title": "um sinal"
-            },
-            "11": {
-                "title": "uma escultura"
-            },
-            "12": {
-                "title": "uma pintura de parede"
-            },
             "2": {
                 "title": "uma caixa de pôster montada em uma parede"
             },
@@ -71,6 +61,16 @@
             },
             "9": {
                 "title": "um totem"
+            },
+            "10": {
+                "description": "Usado para sinais publicitários, sinais de néon, logotipos e sinais de entrada institucionais",
+                "title": "um sinal"
+            },
+            "11": {
+                "title": "uma escultura"
+            },
+            "12": {
+                "title": "uma pintura de parede"
             }
         },
         "tagRenderings": {
@@ -194,15 +194,6 @@
                     "1": {
                         "then": "Mural"
                     },
-                    "10": {
-                        "then": "Azulejo (azulejo decorativo espanhol e português)"
-                    },
-                    "11": {
-                        "then": "Ladrilhos"
-                    },
-                    "12": {
-                        "then": "Entalhe em madeira"
-                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -226,6 +217,15 @@
                     },
                     "9": {
                         "then": "Relevo"
+                    },
+                    "10": {
+                        "then": "Azulejo (azulejo decorativo espanhol e português)"
+                    },
+                    "11": {
+                        "then": "Ladrilhos"
+                    },
+                    "12": {
+                        "then": "Entalhe em madeira"
                     }
                 },
                 "question": "Qual é o tipo desta obra de arte?",
