@@ -7,7 +7,7 @@
     "fr": "Panneaux d'informations",
     "de": "Informationstafeln",
     "ru": "Информационные щиты",
-    "ca": "Taulers informatius",
+    "ca": "Panells d'informació",
     "es": "Paneles informativos"
   },
   "minzoom": 12,
@@ -26,7 +26,7 @@
       "fr": "Panneau d'informations",
       "de": "Informationstafel",
       "ru": "Информационный щит",
-      "ca": "Tauler informatiu",
+      "ca": "Panell d'informació",
       "es": "Panel informativo"
     }
   },

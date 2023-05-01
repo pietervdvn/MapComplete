@@ -30,10 +30,12 @@
                 "description": "Un grand équipement extérieur, principalement disposé dans les zones à fort trafic comme une route"
             },
             "3": {
-                "description": "Petit panneau pour l’affichage de proximité, généralement à destination des piétons"
+                "description": "Petit panneau pour l’affichage de proximité, généralement à destination des piétons",
+                "title": "un petit panneau"
             },
             "4": {
-                "description": "Une structure extérieure cylindrique qui affiche de la publicité"
+                "description": "Une structure extérieure cylindrique qui affiche de la publicité",
+                "title": "une colonne"
             },
             "5": {
                 "title": "un drapeau"
@@ -122,7 +124,8 @@
                     "9": {
                         "then": "Une carte"
                     }
-                }
+                },
+                "question": "Quel est le type de message affiché ?"
             },
             "operator": {
                 "question": "Qui exploite ce dispositif ?",
@@ -170,7 +173,6 @@
                 },
                 "question": "De quel type de dispositif publicitaire s'agit-il ?"
             }
-<<<<<<< HEAD
         },
         "title": {
             "mappings": {
@@ -202,8 +204,6 @@
                     "then": "Peinture murale"
                 }
             }
-=======
->>>>>>> develop
         }
     },
     "ambulancestation": {
@@ -322,7 +322,8 @@
                 "render": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>"
             },
             "artwork_subject": {
-                "question": "Que représente cette oeuvre d'art ?"
+                "question": "Que représente cette oeuvre d'art ?",
+                "render": "Cette œuvre dépeint {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
             },
             "doubles_as_bench": {
                 "mappings": {
@@ -363,6 +364,20 @@
                 },
                 "question": "De quelle marque est ce DAB ?",
                 "render": "La marque de ce DAB est {brand}"
+            },
+            "cash_in": {
+                "mappings": {
+                    "0": {
+                        "then": "Vous ne pouvez probablement pas déposer d'argent liquide dans ce DAB"
+                    },
+                    "1": {
+                        "then": "Vous pouvez déposer de l'argent liquide dans ce DAB"
+                    },
+                    "2": {
+                        "then": "Vous ne pouvez pas déposer d'agent liquide dans ce DAB"
+                    }
+                },
+                "question": "Pouvez-vous déposer de l'argent liquide dans ce DAB ?"
             },
             "name": {
                 "render": "Le nom de ce DAB est {name}"
@@ -2000,6 +2015,96 @@
                 }
             },
             "render": "Voie d’escalade"
+        }
+    },
+    "clock": {
+        "presets": {
+            "1": {
+                "description": "Une horloge publique fixée sur un mur"
+            }
+        },
+        "tagRenderings": {
+            "date": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette horloge indique également la date"
+                    },
+                    "1": {
+                        "then": "Cette horloge n'indique pas la date"
+                    }
+                },
+                "question": "Cette horloge indique-t-elle également la date ?"
+            },
+            "display": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette horloge indique l'heure avec des aiguilles"
+                    },
+                    "1": {
+                        "then": "Cette horloges indique l'heure avec des chiffres numériques"
+                    },
+                    "2": {
+                        "then": "Cette horloge indique l'heure grâce au soleil"
+                    },
+                    "3": {
+                        "then": "Cette horloge indique l'heure d'une manière inhabituelle, par ex. en binaire, avec de l'eau, ou autre"
+                    }
+                },
+                "question": "Comment cette horloge indique-t-elle l'heure ?"
+            },
+            "faces": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette horloge a une face"
+                    },
+                    "1": {
+                        "then": "Cette horloge a deux faces"
+                    },
+                    "2": {
+                        "then": "Cette horloge a quatre faces"
+                    }
+                },
+                "question": "Combien de faces a cette horloge ?",
+                "render": "Cette horloge a {faces} faces"
+            },
+            "hygrometer": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette horloge indique également l'humidité"
+                    },
+                    "1": {
+                        "then": "Cette horloge n'indique pas l'humidité"
+                    },
+                    "2": {
+                        "then": "Cette horloge n'indique probablement pas l'humidité"
+                    }
+                },
+                "question": "Cette horloge indique-t-elle également l'humidité ?"
+            },
+            "support": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette horloge est montée sur un poteau"
+                    },
+                    "1": {
+                        "then": "Cette horloge est fixée sur un mur"
+                    },
+                    "2": {
+                        "then": "Cette horloge fait partie d'un panneau publicitaire"
+                    },
+                    "3": {
+                        "then": "Cette horloge est posée au sol"
+                    }
+                },
+                "question": "De quelle manière est fixée cette horloge ?"
+            },
+            "thermometer": {
+                "mappings": {
+                    "2": {
+                        "then": "Cette horloge n'indique probablement pas la date"
+                    }
+                }
+            }
         }
     },
     "crossings": {

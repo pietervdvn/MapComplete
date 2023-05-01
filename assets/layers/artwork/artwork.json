@@ -589,7 +589,7 @@
       "render": {
         "en": "More information on <a href='{website}' target='_blank'>this website</a>",
         "nl": "Meer informatie op <a href='{website}' target='_blank'>deze website</a>",
-        "fr": "Plus d'infos <a href='{website}' target='_blank'>sur ce site web</a>",
+        "fr": "Plus d'info <a href='{website}' target='_blank'>sûr ce site web</a>",
         "de": "Weitere Informationen auf <a href='{website}' target='_blank'>dieser Webseite</a>",
         "id": "Info lanjut tersedia di <a href='{website}' target='_blank'>laman web</a> ini",
         "it": "Ulteriori informazioni su <a href='{website}' target='_blank'>questo sito web</a>",

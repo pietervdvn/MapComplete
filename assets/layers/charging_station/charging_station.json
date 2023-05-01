@@ -942,7 +942,7 @@
             "nl": "<b>Tesla Supercharger (destination)</b>",
             "da": "<b> Tesla Supercharger (destination)</b>",
             "de": "<b>Tesla Supercharger (Destination)</b>",
-            "es": "<b>Supercargador Tesla (destino)</b>",
+            "es": "<b>Supercargador Tesla (destino</b>",
             "ca": "<b>Supercarregador Tesla (destí)</b>"
           },
           "icon": {
@@ -4448,7 +4448,7 @@
             "nl": "Hier wordt op dit moment een oplaadpunt gebouwd",
             "da": "Her er opført en ladestation",
             "de": "Die Station ist aktuell im Bau",
-            "es": "Aquí se está construyendo una estación de carga",
+            "es": "Aquí está construida una estación de carga",
             "ca": "Aquí està construint-se una estació de càrrega"
           }
         },
@@ -4810,7 +4810,7 @@
             "nl": "Heeft een <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>",
             "da": "Har en <div style='display: inline-block'><b><b> Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> connector",
             "de": "Hat einen <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss",
-            "es": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 CCS</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+            "es": "Tiene un conector <div style='display: inline-block'><b>Tipo 2 CCS</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
           },
           "osmTags": "socket:type2_combo~*"
         },

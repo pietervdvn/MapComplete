@@ -2,7 +2,7 @@
   "id": "maproulette_challenge",
   "name": null,
   "description": {
-    "en": "Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to the documentation on how to do this.",
+    "en": "Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to [the documentation](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) on how to do this.",
     "de": "Ebene mit Aufgaben einer einzelnen MapRoulette-Herausforderung. Diese Ebene soll in Themen wiederverwendet und erweitert werden; Informationen dazu finden Sie in der Dokumentation.",
     "nl": "Laag met taken van een MapRoulette uitdaging"
   },

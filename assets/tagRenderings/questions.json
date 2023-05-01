@@ -504,7 +504,7 @@
           "hu": "Kutya bevihető és szabadon szaladgálhat",
           "it": "I cani sono ammessi e possono andare in giro liberamente",
           "nb_NO": "Hunder tillates og kan gå fritt",
-          "ca": "S'accepten gossos i poden estar solts",
+          "ca": "S'accepten gossos lliures",
           "sv": "Hundar tillåts och får springa fritt omkring",
           "zh_Hant": "允許犬隻而且可以自由跑動",
           "ru": "Собак свободно впускают",
@@ -1995,7 +1995,7 @@
           "ca": "Aquest objecte està il·luminat externament, p.e. amb un focus o altres llums",
           "cs": "Tento objekt je osvětlen zvenčí, např. pomocí reflektoru nebo jiných světel",
           "de": "Das Objekt wird von außen beleuchtet, z. B. durch Scheinwerfer oder andere Lichter",
-          "es": "Este objeto está iluminado desde el exterior, por ejemplo, por un foco u otras luces",
+          "es": "Este objeto recibe iluminación, por ejemplo por un foco u otras luces",
           "fr": "Cet objet est éclairé par l'extérieur, par ex. par un projecteur ou d'autres lumières",
           "pl": "Ten obiekt jest oświetlony zewnętrznie, np. przez reflektor lub inne światła"
         },
@@ -2015,7 +2015,7 @@
           "ca": "Aquest objecte no emet llum i no està il·luminat externament",
           "cs": "Tento objekt nevyzařuje světlo a není osvětlen zvenčí",
           "de": "Das Objekt wird weder von außen beleuchtet, noch leuchtet es selbst",
-          "es": "Este objeto no emite luz y no está iluminado por fuentes externas",
+          "es": "Este objeto ni emite luz ni es iluminado",
           "fr": "Cet objet n'émet pas de lumière et n'est pas éclairé par l'extérieur",
           "pl": "Obiekt ten nie emituje światła i nie jest oświetlany z zewnątrz"
         }
