@@ -102,7 +102,7 @@
         {
           "if": "shop=rental",
           "then": {
-            "en": "This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus",
+            "en": "This is a rental business which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus",
             "nl": "Dit is een zaak die verschillende voorwerpen en/of voertuigen verhuurt, waaronder ook fietsen; al zijn fietsen niet de hoofdfocus",
             "de": "Dies ist ein Geschäft, das verschiedene Gegenstände und/oder Fahrzeuge vermietet. Es vermietet auch Fahrräder, aber das ist nicht der Hauptschwerpunkt",
             "es": "Este es un negocio de alquileres que alquila varios objetos y/o vehículos. También alquila bicicletas, pero este no es el enfoque principal",
@@ -133,7 +133,7 @@
         {
           "if": "bicycle_rental=docking_station",
           "then": {
-            "en": "This is an automated docking station, where a bicycle is mechanically locked into a structure",
+            "en": "This is an automated docking station, where a bicycle is mechanically locked to a structure",
             "nl": "Dit is een docking station waar de fietsen mechanisch in een grotere structuur worden vastgemaakt",
             "de": "Dies ist eine automatisierte Radstation, bei der Fahrräder mechanisch in einer Struktur verriegelt werden",
             "es": "Esta es una estación automática, en la que una bici se asegura mecánicamente a una estructura",
@@ -160,7 +160,7 @@
         {
           "if": "bicycle_rental=dropoff_point",
           "then": {
-            "en": "This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only",
+            "en": "This is a dropoff point, e.g. a reserved parking to place the bicycles clearly marked as being for the rental service only",
             "nl": "Dit is een dropzone, bv. een fietsparkeerplaats die is voorbehouden voor fietsverhuur",
             "de": "Dies ist ein Rückgabepunkt, z. B. ein reservierter Fahrradstellplatz, der deutlich als solcher gekennzeichnet ist",
             "es": "Este es un punto de entrega, ej. un aparcamiento reservado para colocar las bicicletas, claramente marcado como solo para el servicio de alquiler",
@@ -235,7 +235,7 @@
           "then": {
             "en": "Normal city bikes can be rented here",
             "nl": "Gewone stadsfietsen kunnen hier gehuurd worden",
-            "de": "Normale Stadtfahrräder können geliehen werden",
+            "de": "Normale Stadtfahrräder können ausgeliehen werden",
             "es": "Aquí se pueden alquilar bicis normales",
             "da": "Her kan man leje almindelige bycykler",
             "fr": "Des vélos de ville peuvent être loués ici",
@@ -248,7 +248,7 @@
           "then": {
             "en": "Electrical bikes can be rented here",
             "nl": "Elektrische fietsen kunnen hier gehuurd worden",
-            "de": "Elektrofahrräder können geliehen werden",
+            "de": "Elektrofahrräder können ausgeliehen werden",
             "es": "Aquí se pueden alquilar bicis eléctricas",
             "da": "El-cykler kan lejes her",
             "fr": "Des vélos électriques peuvent être loués ici",
@@ -261,7 +261,7 @@
           "then": {
             "en": "BMX bikes can be rented here",
             "nl": "BMX-fietsen kunnen hier gehuurd worden",
-            "de": "BMX-Räder können geliehen werden",
+            "de": "BMX-Räder können ausgeliehen werden",
             "es": "Aquí se pueden alquilar bicis BMX",
             "da": "BMX cykler kan lejes her",
             "fr": "Des BMX peuvent être loués ici",
@@ -274,7 +274,7 @@
           "then": {
             "en": "Mountainbikes can be rented here",
             "nl": "Mountainbikes kunnen hier gehuurd worden",
-            "de": "Mountainbikes können geliehen werden",
+            "de": "Mountainbikes können ausgeliehen werden",
             "es": "Aquí se pueden alquilar bicis de montaña",
             "da": "Mountainbikes kan lejes her",
             "fr": "Des vélos de montagne peuvent être loués ici",
@@ -287,7 +287,7 @@
           "then": {
             "en": "Bikes for children can be rented here",
             "nl": "Kinderfietsen kunnen hier gehuurd worden",
-            "de": "Kinderfahrräder können geliehen werden",
+            "de": "Kinderfahrräder können ausgeliehen werden",
             "es": "Aquí se pueden alquilar bicis infantiles",
             "da": "Børnecykler kan lejes her",
             "fr": "Des vélos d'enfants peuvent être loués ici",
@@ -300,7 +300,7 @@
           "then": {
             "en": "Tandem bicycles can be rented here",
             "nl": "Tandems kunnen hier gehuurd worden",
-            "de": "Tandems können geliehen werden",
+            "de": "Tandems können ausgeliehen werden",
             "da": "Tandemcykler kan lejes her",
             "fr": "Des tandems peuvent être loués ici",
             "es": "Aquí se pueden alquilar tándems",
@@ -313,7 +313,7 @@
           "then": {
             "en": "Race bicycles can be rented here",
             "nl": "Wielerfietsen (sportfietsen) kunnen hier gehuurd worden",
-            "de": "Rennräder können geliehen werden",
+            "de": "Rennräder können ausgeliehen werden",
             "es": "Aquí se pueden alquilar bicicletas de carreras",
             "da": "Racercykler kan lejes her",
             "fr": "Des vélos de course peuvent être loués ici",
@@ -327,7 +327,7 @@
             "en": "Bike helmets can be rented here",
             "nl": "Fietshelmen kunnen hier gehuurd worden",
             "es": "Aquí se pueden alquilar cascos",
-            "de": "Fahrradhelme können geliehen werden",
+            "de": "Fahrradhelme können ausgeliehen werden",
             "fr": "Des casques de vélos peuvent être loués ici",
             "da": "Cykelhjelme kan lejes her",
             "cs": "Zde si můžete půjčit cyklistické přilby",
@@ -406,9 +406,9 @@
           [
             "mtb",
             {
-              "en": "mountainbike",
-              "nl": "mountainbike",
-              "ca": "bicicleta de muntanya",
+              "en": "mountainbikes",
+              "nl": "mountainbikes",
+              "ca": "bicicletas de muntanya",
               "de": "Mountainbikes",
               "es": "bicis de montaña",
               "da": "mountainbike",
@@ -452,7 +452,7 @@
             "bicycle_rental"
           ],
           "question": {
-            "en": "How much type_plural can be rented here?",
+            "en": "How many type_plural can be rented here?",
             "nl": "Hoeveel type_plural kunnen hier uitgeleend worden?",
             "de": "Wie viele type_plural können hier gemietet werden?",
             "fr": "Combien de type_plural peuvent être loués ici ?",

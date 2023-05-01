@@ -448,7 +448,7 @@
         "name": "Estações de bicicletas (reparo, bomba ou ambos)",
         "presets": {
             "0": {
-                "description": "Um dispositivo para encher seus pneus em um local fixa no espaço público",
+                "description": "Um dispositivo para encher seus pneus em um local fixa no espaço público.",
                 "title": "uma bomba de bicicleta"
             }
         },

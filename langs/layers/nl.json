@@ -844,7 +844,7 @@
                             "1": "BMX-fietsen"
                         },
                         "4": {
-                            "1": "mountainbike"
+                            "1": "mountainbikes"
                         },
                         "5": {
                             "1": "fietstassen"
@@ -6623,7 +6623,7 @@
                         "question": "Recycling van restafval"
                     },
                     "20": {
-                        "question": "Recycling van restafval"
+                        "question": "Recycling van inktpatronen"
                     },
                     "21": {
                         "question": "Recycling van fietsen"

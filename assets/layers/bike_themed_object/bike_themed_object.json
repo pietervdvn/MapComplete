@@ -28,10 +28,10 @@
   },
   "title": {
     "render": {
-      "en": "Bike related object",
+      "en": "Bike-related object",
       "nl": "Fietsgerelateerd object",
       "fr": "Objet cycliste",
-      "de": "Mit Fahrrad zusammenhängendes Objekt",
+      "de": "Fahrradbezogenes Objekt",
       "it": "Oggetto relativo alle bici",
       "es": "Objeto relacionado con bicis",
       "da": "Cykelrelateret objekt",

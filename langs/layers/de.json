@@ -882,28 +882,28 @@
             "bicycle-types": {
                 "mappings": {
                     "0": {
-                        "then": "Normale Stadtfahrräder können geliehen werden"
+                        "then": "Normale Stadtfahrräder können ausgeliehen werden"
                     },
                     "1": {
-                        "then": "Elektrofahrräder können geliehen werden"
+                        "then": "Elektrofahrräder können ausgeliehen werden"
                     },
                     "2": {
-                        "then": "BMX-Räder können geliehen werden"
+                        "then": "BMX-Räder können ausgeliehen werden"
                     },
                     "3": {
-                        "then": "Mountainbikes können geliehen werden"
+                        "then": "Mountainbikes können ausgeliehen werden"
                     },
                     "4": {
-                        "then": "Kinderfahrräder können geliehen werden"
+                        "then": "Kinderfahrräder können ausgeliehen werden"
                     },
                     "5": {
-                        "then": "Tandems können geliehen werden"
+                        "then": "Tandems können ausgeliehen werden"
                     },
                     "6": {
-                        "then": "Rennräder können geliehen werden"
+                        "then": "Rennräder können ausgeliehen werden"
                     },
                     "7": {
-                        "then": "Fahrradhelme können geliehen werden"
+                        "then": "Fahrradhelme können ausgeliehen werden"
                     }
                 },
                 "question": "Welche Fahrräder und welches Zubehör kann hier geliehen werden?",
@@ -977,7 +977,7 @@
     },
     "bicycle_tube_vending_machine": {
         "description": "Eine Ebene mit Automaten für Fahrradschläuche (entweder spezielle Fahrradschlauch-Automaten oder klassische Automaten mit Fahrradschläuchen und optional zusätzlichen fahrradbezogenen Gegenständen wie Lampen, Handschuhe, Schlösser, …)",
-        "name": "Automaten für Fahrradschläuche",
+        "name": "Automat für Fahrradschläuche",
         "presets": {
             "0": {
                 "title": "einen Fahrradschlauch-Automaten"
@@ -1022,10 +1022,10 @@
                         "then": "Das Fahrrad-Café hat keine Fahrradpumpe, die von jedem benutzt werden kann"
                     }
                 },
-                "question": "Hat das Fahrrad-Café eine Fahrradpumpe, die von jedem benutzt werden kann?"
+                "question": "Hat dieses Fahrrad-Café eine Fahrradpumpe, die von jedem benutzt werden kann?"
             },
             "bike_cafe-name": {
-                "question": "Wie heißt das Fahrrad-Café?",
+                "question": "Wie heißt dieses Fahrrad-Café?",
                 "render": "Das Fahrrad-Café heißt {name}"
             },
             "bike_cafe-repair-service": {
@@ -1037,7 +1037,7 @@
                         "then": "Das Fahrrad-Café repariert keine Fahrräder"
                     }
                 },
-                "question": "Repariert das Fahrrad-Café Fahrräder?"
+                "question": "Repariert dieses Fahrrad-Café Fahrräder?"
             },
             "bike_cafe-repair-tools": {
                 "mappings": {
@@ -1340,7 +1340,7 @@
             "bike_repair_station-valves": {
                 "mappings": {
                     "0": {
-                        "then": "Sklaverand-/Presta-Ventile (für Rennräder)"
+                        "then": "Sclaverand-/Presta-Ventile (für Rennräder)"
                     },
                     "1": {
                         "then": "Dunlopventile"
@@ -1425,7 +1425,7 @@
                         "then": "Es gibt eine Luftpumpe, sie ist als separater Punkt eingetragen"
                     }
                 },
-                "question": "Gibt es im Geschäft eine öffentlich nutzbare Luftpumpe?"
+                "question": "Gibt es in diesem Geschäft eine öffentlich nutzbare Luftpumpe?"
             },
             "bike_repair_bike-wash": {
                 "mappings": {
@@ -1439,7 +1439,7 @@
                         "then": "Das Geschäft bietet keine Fahrradreinigungen an"
                     }
                 },
-                "question": "Bietet das Geschäft Fahrradreinigungen an?"
+                "question": "Bietet dieses Geschäft Fahrradreinigungen an?"
             },
             "bike_repair_rents-bikes": {
                 "mappings": {
@@ -1450,7 +1450,7 @@
                         "then": "Das Geschäft vermietet keine Fahrräder"
                     }
                 },
-                "question": "Vermietet das Geschäft Fahrräder?"
+                "question": "Vermietet dieses Geschäft Fahrräder?"
             },
             "bike_repair_repairs-bikes": {
                 "mappings": {
@@ -1467,7 +1467,7 @@
                         "then": "Das Geschäft repariert nur Fahrräder einer bestimmten Marke"
                     }
                 },
-                "question": "Repariert das Geschäft Fahrräder?"
+                "question": "Repariert dieses Geschäft Fahrräder?"
             },
             "bike_repair_second-hand-bikes": {
                 "mappings": {
@@ -1481,7 +1481,7 @@
                         "then": "Das Geschäft verkauft ausschließlich gebrauchte Fahrräder"
                     }
                 },
-                "question": "Verkauft das Geschäft gebrauchte Fahrräder?"
+                "question": "Verkauft dieses Geschäft gebrauchte Fahrräder?"
             },
             "bike_repair_sells-bikes": {
                 "mappings": {
@@ -1492,7 +1492,7 @@
                         "then": "Das Geschäft verkauft keine Fahrräder"
                     }
                 },
-                "question": "Verkauft das Geschäft Fahrräder?"
+                "question": "Verkauft dieses Geschäft Fahrräder?"
             },
             "bike_repair_tools-service": {
                 "mappings": {
@@ -1520,7 +1520,7 @@
                 "render": "Dieses Geschäft ist auf den Verkauf von {shop} spezialisiert und im Bereich Fahrrad tätig"
             },
             "bike_shop-name": {
-                "question": "Wie heißt das Geschäft?",
+                "question": "Wie heißt dieses Geschäft?",
                 "render": "Das Geschäft heißt {name}"
             }
         },
@@ -1533,7 +1533,7 @@
                     "then": "Geschäfte"
                 },
                 "2": {
-                    "then": "Fahrradverleih<i>{name}</i>"
+                    "then": "Fahrradverleih <i>{name}</i>"
                 },
                 "3": {
                     "then": "Fahrradwerkstatt <i>{name}</i>"
@@ -1542,10 +1542,10 @@
                     "then": "Fahrradgeschäft <i>{name}</i>"
                 },
                 "5": {
-                    "then": "Fahrradwerkstatt/geschäft <i>{name}</i>"
+                    "then": "Fahrradwerkstatt/-geschäft <i>{name}</i>"
                 }
             },
-            "render": "Fahrradwerkstatt/geschäft"
+            "render": "Fahrradwerkstatt/-geschäft"
         }
     },
     "bike_themed_object": {
@@ -1557,7 +1557,7 @@
                     "then": "Radweg"
                 }
             },
-            "render": "Mit Fahrrad zusammenhängendes Objekt"
+            "render": "Fahrradbezogenes Objekt"
         }
     },
     "binocular": {
@@ -4330,14 +4330,14 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Aktuell geöffnet"
+                        "question": "Jetzt geöffnet"
                     }
                 }
             },
             "1": {
                 "options": {
                     "0": {
-                        "question": "Akzeptiert Bargeld"
+                        "question": "Akzeptiert Barzahlung"
                     }
                 }
             },
@@ -4371,13 +4371,13 @@
             "5": {
                 "options": {
                     "0": {
-                        "question": "Mit oder ohne taktilem Pflaster"
+                        "question": "Mit oder ohne taktiles Pflaster"
                     },
                     "1": {
                         "question": "Mit taktilem Pflaster"
                     },
                     "2": {
-                        "question": "Ohne taktilem Pflaster"
+                        "question": "Ohne taktiles Pflaster"
                     },
                     "3": {
                         "question": "Keine Informationen über taktiles Pflaster"
@@ -4702,7 +4702,7 @@
                         "then": "Hier werden thailändische Gerichte serviert"
                     }
                 },
-                "question": "Welches Essen gibt es hier?",
+                "question": "Was für Essen gibt es hier?",
                 "render": "An diesem Ort gibt es hauptsächlich {cuisine}"
             },
             "Fastfood vs restaurant": {
@@ -4740,13 +4740,13 @@
             "Takeaway": {
                 "mappings": {
                     "0": {
-                        "then": "Hier werden Gerichte ausschließlich zum Mitnehmen angeboten"
+                        "then": "Hier werden ausschließlich Gerichte zum Mitnehmen angeboten"
                     },
                     "1": {
-                        "then": "Hier werden Gerichte auch zum Mitnehmen angeboten"
+                        "then": "Hier werden unter anderem Gerichte zum Mitnehmen angeboten"
                     },
                     "2": {
-                        "then": "Hier werden Gerichte nicht zum Mitnehmen angeboten"
+                        "then": "Hier werden keine Gerichte zum Mitnehmen angeboten"
                     }
                 },
                 "question": "Werden Gerichte zum Mitnehmen angeboten?"
@@ -4794,7 +4794,7 @@
                         "then": "Dieses Unternehmen liefert nicht nach Hause"
                     }
                 },
-                "question": "Liefert {title()} ihr Essen nach Hause?"
+                "question": "Liefert {title()} Essen nach Hause?"
             },
             "friture-oil": {
                 "mappings": {
@@ -4816,7 +4816,7 @@
                         "then": "Es sind keine biologischen Snacks erhältlich"
                     },
                     "2": {
-                        "then": "Nur biologische Snacks sind erhältlich"
+                        "then": "Es sind nur biologische Snacks erhältlich"
                     }
                 },
                 "question": "Bietet diese Pommesbude biologische Snacks an?"
@@ -4841,7 +4841,7 @@
                         "then": "Vegane Snacks sind erhältlich"
                     },
                     "1": {
-                        "then": "Eine kleine Auswahl an veganen Snacks ist verfügbar"
+                        "then": "Nur eine kleine Auswahl an veganen Snacks ist erhältlich"
                     },
                     "2": {
                         "then": "Es sind keine veganen Snacks verfügbar"
@@ -4855,7 +4855,7 @@
                         "then": "Vegetarische Snacks sind erhältlich"
                     },
                     "1": {
-                        "then": "Nur eine kleine Auswahl an Snacks ist vegetarisch"
+                        "then": "Nur eine kleine Auswahl an vegetarischen Snacks ist erhältlich"
                     },
                     "2": {
                         "then": "Es sind keine vegetarischen Snacks erhältlich"
@@ -4915,7 +4915,7 @@
         "name": "Geisterräder",
         "presets": {
             "0": {
-                "title": "eine geisterrad"
+                "title": "ein Geisterrad"
             }
         },
         "tagRenderings": {
@@ -6944,9 +6944,6 @@
                         "question": "Recycling von Elektrokleingeräten"
                     },
                     "19": {
-                        "question": "Recycling von Restabfällen"
-                    },
-                    "20": {
                         "question": "Recycling von Restabfällen"
                     }
                 }

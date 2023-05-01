@@ -77,10 +77,10 @@
             "Sides": {
                 "mappings": {
                     "0": {
-                        "then": "Este objeto tiene publicidad en un único lado"
+                        "then": "Este mupi tiene publicidad en un único lado"
                     },
                     "1": {
-                        "then": "Este objeto tiene publicidad por los dos lados"
+                        "then": "Este mupi tiene publicidad por los dos lados"
                     }
                 },
                 "question": "¿Por cuantos lados puedes ver publicidad?"
@@ -1446,7 +1446,7 @@
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
                     },
                     "9": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 CCS</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+                        "question": "Tiene un conector <div style='display: inline-block'><b>Tipo 2 CCS</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
                     },
                     "10": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 con cable</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
@@ -1583,7 +1583,7 @@
                         "then": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)"
                     },
                     "22": {
-                        "then": "<b>Supercargador Tesla (destino)</b>"
+                        "then": "<b>Supercargador Tesla (destino</b>"
                     },
                     "23": {
                         "then": "<b>Supercargador Tesla (destino)</b>"
@@ -1639,7 +1639,7 @@
                         "then": "Aquí está planeada una estación de carga"
                     },
                     "3": {
-                        "then": "Aquí se está construyendo una estación de carga"
+                        "then": "Aquí está construida una estación de carga"
                     },
                     "4": {
                         "then": "Esta estación de carga se ha deshabilitado de forma permanente y ya no está en uso pero todavía es visible"
