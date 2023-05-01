@@ -442,7 +442,7 @@
     "bike_repair_station": {
         "presets": {
             "0": {
-                "description": "Um aparelho para encher os seus pneus num local fixa no espaço público"
+                "description": "Um aparelho para encher os seus pneus num local fixa no espaço público."
             }
         },
         "tagRenderings": {
