@@ -1,17 +1,17 @@
 import Svg from "../../Svg"
 import Combine from "../Base/Combine"
-import { SubtleButton } from "../Base/SubtleButton"
+import {SubtleButton} from "../Base/SubtleButton"
 import Translations from "../i18n/Translations"
 import BaseUIElement from "../BaseUIElement"
-import LayoutConfig, { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
-import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
+import LayoutConfig, {LayoutInformation} from "../../Models/ThemeConfig/LayoutConfig"
+import {ImmutableStore, Store, UIEventSource} from "../../Logic/UIEventSource"
 import Loc from "../../Models/Loc"
 import UserRelatedState from "../../Logic/State/UserRelatedState"
-import { Utils } from "../../Utils"
+import {Utils} from "../../Utils"
 import Title from "../Base/Title"
 import themeOverview from "../../assets/generated/theme_overview.json"
-import { Translation } from "../i18n/Translation"
-import { TextField } from "../Input/TextField"
+import {Translation} from "../i18n/Translation"
+import {TextField} from "../Input/TextField"
 import Locale from "../i18n/Locale"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import ThemesList from "./ThemesList.svelte"
@@ -37,7 +37,7 @@ export default class MoreScreen extends Combine {
             searchTerm = searchTerm.toLowerCase()
             if (searchTerm === "personal") {
                 window.location.href = MoreScreen.createUrlFor(
-                    { id: "personal" },
+                    {id: "personal"},
                     false,
                     state
                 ).data
@@ -59,13 +59,13 @@ export default class MoreScreen extends Combine {
                 (th) =>
                     th.hideFromOverview == false &&
                     th.id !== "personal" &&
-                    MoreScreen.MatchesLayoutFunc(th)(searchTerm)
+                    MoreScreen.MatchesLayout(th, searchTerm)
             )
             if (publicTheme !== undefined) {
                 window.location.href = MoreScreen.createUrlFor(publicTheme, false, state).data
             }
             const hiddenTheme = MoreScreen.officialThemes.find(
-                (th) => th.id !== "personal" && MoreScreen.MatchesLayoutFunc(th)(searchTerm)
+                (th) => th.id !== "personal" && MoreScreen.MatchesLayout(th, searchTerm)
             )
             if (hiddenTheme !== undefined) {
                 window.location.href = MoreScreen.createUrlFor(hiddenTheme, false, state).data
@@ -107,6 +107,85 @@ export default class MoreScreen extends Combine {
             }),
             tr.streetcomplete.Clone().SetClass("block text-base mx-10 my-3 mb-10"),
         ])
+    }
+
+    /**
+     * Creates a button linking to the given theme
+     * @private
+     */
+    public static createLinkButton(
+        state: {
+            locationControl?: UIEventSource<Loc>
+            layoutToUse?: LayoutConfig
+        },
+        layout: {
+            id: string
+            icon: string
+            title: any
+            shortDescription: any
+            definition?: any
+            mustHaveLanguage?: boolean
+        },
+        isCustom: boolean = false
+    ): BaseUIElement {
+        const url = MoreScreen.createUrlFor(layout, isCustom, state)
+        let content = new Combine([
+            new Translation(
+                layout.title,
+                !isCustom && !layout.mustHaveLanguage ? "themes:" + layout.id + ".title" : undefined
+            ),
+            new Translation(layout.shortDescription)?.SetClass("subtle") ?? "",
+        ]).SetClass("overflow-hidden flex flex-col")
+
+        if (state.layoutToUse === undefined) {
+            // Currently on the index screen: we style the buttons equally large
+            content = new Combine([content]).SetClass("flex flex-col justify-center h-24")
+        }
+
+        return new SubtleButton(layout.icon, content, {url, newTab: false})
+    }
+
+    public static CreateProffessionalSerivesButton() {
+        const t = Translations.t.professional.indexPage
+        return new Combine([
+            new Title(t.hook, 4),
+            t.hookMore,
+            new SubtleButton(undefined, t.button, {url: "./professional.html"}),
+        ]).SetClass("flex flex-col border border-gray-300 p-2 rounded-lg")
+    }
+
+    public static MatchesLayout(layout: {
+        id: string
+        title: any
+        shortDescription: any
+        keywords?: any[]
+    }, search: string): boolean {
+        if(search === undefined){
+            return true
+        }
+        search = search.toLocaleLowerCase()
+        if (search.length > 3 && layout.id.toLowerCase().indexOf(search) >= 0) {
+            return true
+        }
+        if(layout.id === "personal"){
+            return false
+        }
+        const entitiesToSearch = [
+            layout.shortDescription,
+            layout.title,
+            ...(layout.keywords ?? []),
+        ]
+        for (const entity of entitiesToSearch) {
+            if (entity === undefined) {
+                continue
+            }
+            const term = entity["*"] ?? entity[Locale.language.data]
+            if (term?.toLowerCase()?.indexOf(search) >= 0) {
+                return true
+            }
+        }
+
+        return false
     }
 
     private static createUrlFor(
@@ -163,80 +242,5 @@ export default class MoreScreen extends Combine {
                 return `${linkPrefix}${params}${hash}`
             }) ?? new ImmutableStore<string>(`${linkPrefix}`)
         )
-    }
-
-    /**
-     * Creates a button linking to the given theme
-     * @private
-     */
-    public static createLinkButton(
-        state: {
-            locationControl?: UIEventSource<Loc>
-            layoutToUse?: LayoutConfig
-        },
-        layout: {
-            id: string
-            icon: string
-            title: any
-            shortDescription: any
-            definition?: any
-            mustHaveLanguage?: boolean
-        },
-        isCustom: boolean = false
-    ): BaseUIElement {
-        const url = MoreScreen.createUrlFor(layout, isCustom, state)
-        let content = new Combine([
-            new Translation(
-                layout.title,
-                !isCustom && !layout.mustHaveLanguage ? "themes:" + layout.id + ".title" : undefined
-            ),
-            new Translation(layout.shortDescription)?.SetClass("subtle") ?? "",
-        ]).SetClass("overflow-hidden flex flex-col")
-
-        if (state.layoutToUse === undefined) {
-            // Currently on the index screen: we style the buttons equally large
-            content = new Combine([content]).SetClass("flex flex-col justify-center h-24")
-        }
-
-        return new SubtleButton(layout.icon, content, { url, newTab: false })
-    }
-
-    public static CreateProffessionalSerivesButton() {
-        const t = Translations.t.professional.indexPage
-        return new Combine([
-            new Title(t.hook, 4),
-            t.hookMore,
-            new SubtleButton(undefined, t.button, { url: "./professional.html" }),
-        ]).SetClass("flex flex-col border border-gray-300 p-2 rounded-lg")
-    }
-
-    private static MatchesLayoutFunc(layout: {
-        id: string
-        title: any
-        shortDescription: any
-        keywords?: any[]
-    }): (search: string) => boolean {
-        return (search: string) => {
-            search = search.toLocaleLowerCase()
-            if (layout.id.toLowerCase().indexOf(search) >= 0) {
-                return true
-            }
-            const entitiesToSearch = [
-                layout.shortDescription,
-                layout.title,
-                ...(layout.keywords ?? []),
-            ]
-            for (const entity of entitiesToSearch) {
-                if (entity === undefined) {
-                    continue
-                }
-                const term = entity["*"] ?? entity[Locale.language.data]
-                if (term?.toLowerCase()?.indexOf(search) >= 0) {
-                    return true
-                }
-            }
-
-            return false
-        }
     }
 }

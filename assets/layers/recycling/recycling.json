@@ -273,6 +273,15 @@
               ]
             },
             "then": "circle:white;./assets/layers/waste_disposal/waste_disposal.svg"
+          },
+          {
+            "if": {
+              "and": [
+                "_waste_amount=1",
+                "recycling:needles=yes"
+              ]
+            },
+            "then": "circle:white;./assets/layers/recycling/needles.svg"
           }
         ]
       },
@@ -475,6 +484,24 @@
             ]
           },
           "then": "circle:white;./assets/layers/waste_disposal/waste_disposal.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:needles=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/needles.svg"
+        },
+        {
+          "if": {
+            "and": [
+              "_waste_amount>1",
+              "recycling:bicycles=yes"
+            ]
+          },
+          "then": "circle:white;./assets/layers/recycling/bicycles.svg"
         }
       ]
     }
@@ -576,6 +603,20 @@
             "recycling:small_electrical_appliances=",
             "recycling:waste="
           ]
+        },
+        {
+          "if": "recycling_type=pickup_point",
+          "then": {
+            "en": "This is a pickup point. The waste material is placed here without placing it in a dedicated container.",
+            "nl": "Dit is een verzamelplaats zonder container waar het afval later opgepikt wordt."
+          }
+        },
+        {
+          "if": "recycling_type=dump",
+          "then": {
+            "en": "This is a dump where the waste material is stacked.",
+            "nl": "Dit is een afvalhoop waar het afvalmateriaal bovenop elkaar gestapeld wordt."
+          }
         }
       ]
     },
@@ -1024,6 +1065,10 @@
             "de": "Nadeln können hier recycelt werden",
             "it": "Aghi e oggetti appuntiti",
             "ca": "Aquí es poden reciclar agulles"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/needles.svg",
+            "class": "medium"
           }
         },
         {
@@ -1041,6 +1086,18 @@
             "class": "medium"
           },
           "hideInAnswer": "recycling_type=container"
+        },
+        {
+          "if": "recycling:bicycles=yes",
+          "ifnot": "recycling:bicycles=",
+          "then": {
+            "en": "Bicycles can be recycled here",
+            "nl": "Fietsen (en fietswrakken) kunnen hier gerecycled worden"
+          },
+          "icon": {
+            "path": "./assets/layers/recycling/bicycles.svg",
+            "class": "medium"
+          }
         }
       ]
     },
@@ -1338,7 +1395,7 @@
             "it": "Riciclo di rottami metallici",
             "ca": "Reciclatge de ferralla"
           },
-          "osmTags": "recycling:printer_cartridges=yes"
+          "osmTags": "recycling:scrap_metal=yes"
         },
         {
           "question": {
@@ -1348,16 +1405,6 @@
             "es": "Reciclaje de pequeños electrodomésticos",
             "it": "Riciclo di piccoli elettrodomestici",
             "ca": "Reciclatge de petits electrodomèstics"
-          },
-          "osmTags": "recycling:scrap_metal=yes"
-        },
-        {
-          "question": {
-            "en": "Recycling of residual waste",
-            "nl": "Recycling van restafval",
-            "de": "Recycling von Restabfällen",
-            "it": "Riciclo di secco",
-            "ca": "Reciclatge del rebuig"
           },
           "osmTags": {
             "or": [
@@ -1375,6 +1422,20 @@
             "ca": "Reciclatge del rebuig"
           },
           "osmTags": "recycling:waste=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of printer cartridges",
+            "nl": "Recycling van inktpatronen"
+          },
+          "osmTags": "recycling:printer_cartridges=yes"
+        },
+        {
+          "question": {
+            "en": "Recycling of bicycles",
+            "nl": "Recycling van fietsen"
+          },
+          "osmTags": "recycling:bicycles=yes"
         }
       ]
     },
