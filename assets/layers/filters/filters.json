@@ -11,9 +11,9 @@
       "options": [
         {
           "question": {
-            "en": "Opened now",
+            "en": "Open now",
             "nl": "Nu geopened",
-            "de": "Aktuell geöffnet",
+            "de": "Jetzt geöffnet",
             "ca": "Obert ara",
             "es": "Abierta ahora",
             "fr": "Ouvert maintenant",
@@ -34,7 +34,7 @@
           "osmTags": "payment:cash=yes",
           "question": {
             "en": "Accepts cash",
-            "de": "Akzeptiert Bargeld",
+            "de": "Akzeptiert Barzahlung",
             "nl": "Accepteert cash",
             "es": "Acepta efectivo",
             "fr": "Accepte les espèces"
@@ -124,7 +124,7 @@
         {
           "question": {
             "en": "With or without tactile paving",
-            "de": "Mit oder ohne taktilem Pflaster",
+            "de": "Mit oder ohne taktiles Pflaster",
             "fr": "Avec ou sans revêtement podotactile",
             "nl": "Met of zonder voelbare bestrating"
           }
@@ -141,7 +141,7 @@
         {
           "question": {
             "en": "Without tactile paving",
-            "de": "Ohne taktilem Pflaster",
+            "de": "Ohne taktiles Pflaster",
             "fr": "Sans revêtement podotactile",
             "nl": "Zonder voelbare bestrating"
           },
