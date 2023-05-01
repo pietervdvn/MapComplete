@@ -823,6 +823,44 @@
     }
   ],
   "filter": [
-    "open_now"
+    "open_now",
+    {
+      "id": "sells_second-hand",
+      "options": [
+        {
+          "question": {
+            "en": "Sells second hand bicycles",
+            "de": "Verkauft gebrauchte Fahrräder",
+            "nl": "Verkoopt twedehands fietsen",
+            "it": "Vende biciclette usate"
+          },
+          "osmTags": {
+            "or": [
+              "service:bicycle:second_hand=yes",
+              "service:bicycle:second_hand=only"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "offers_diy_repair",
+      "options": [
+        {
+          "question": {
+            "en": "Offers DIY bike repair",
+            "de": "Bietet Selbstreparatur an",
+            "nl": "Biedt doe-het-zelfreparaties aan",
+            "it": "Offre riparazioni fai da te"
+          },
+          "osmTags": {
+            "or": [
+              "service:bicycle:diy=yes",
+              "service:bicycle:diy=only"
+            ]
+          }
+        }
+      ]
+    }
   ]
 }
