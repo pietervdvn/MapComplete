@@ -15,7 +15,6 @@ import Translations from "../i18n/Translations"
 import BaseUIElement from "../BaseUIElement"
 
 export default class OpeningHoursInput extends InputElement<string> {
-    public readonly IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     private readonly _value: UIEventSource<string>
     private readonly _element: BaseUIElement
 
@@ -104,7 +103,7 @@ export default class OpeningHoursInput extends InputElement<string> {
                 str += leftoverRules.data.join(";") + ";"
 
                 str = str.trim()
-                if (str.endsWith(";")) {
+                while (str.endsWith(";")) {
                     str = str.substring(0, str.length - 1)
                 }
                 if (str.startsWith(";")) {
