@@ -177,6 +177,7 @@ export default class MoveWizard extends Toggle {
 
                 state.featureProperties.getStore(id).ping()
                 currentStep.setData("moved")
+                state.mapProperties.location.setData(loc)
             })
             const zoomInFurhter = t.zoomInFurther.SetClass("alert block m-6")
             return new Combine([

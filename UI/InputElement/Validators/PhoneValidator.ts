@@ -1,12 +1,28 @@
-import { parsePhoneNumberFromString } from "libphonenumber-js"
-import { Validator } from "../Validator"
+import {parsePhoneNumberFromString} from "libphonenumber-js"
+import {Validator} from "../Validator"
+import {Translation} from "../../i18n/Translation";
+import Translations from "../../i18n/Translations";
 
 export default class PhoneValidator extends Validator {
     constructor() {
         super("phone", "A phone number", "tel")
     }
 
-    isValid(str, country: () => string): boolean {
+
+    getFeedback(s: string, requestCountry?: () => string): Translation {
+        const tr = Translations.t.validation.phone
+        const generic = tr.feedback
+        if(requestCountry){
+        const country = requestCountry()
+            if(country){
+                return  tr.feedbackCountry.Subs({country})
+            }
+        }
+
+        return generic
+    }
+
+    public isValid(str, country: () => string): boolean {
         if (str === undefined) {
             return false
         }
@@ -20,13 +36,17 @@ export default class PhoneValidator extends Validator {
         return parsePhoneNumberFromString(str, countryCode)?.isValid() ?? false
     }
 
-    reformat = (str, country: () => string) => {
+    public reformat(str, country: () => string) {
         if (str.startsWith("tel:")) {
             str = str.substring("tel:".length)
         }
+        let countryCode = undefined
+        if(country){
+            countryCode = country()
+        }
         return parsePhoneNumberFromString(
             str,
-            country()?.toUpperCase() as any
+            countryCode?.toUpperCase() as any
         )?.formatInternational()
     }
 }

@@ -498,7 +498,7 @@ export class OH {
                 lat: tags._lat,
                 lon: tags._lon,
                 address: {
-                    country_code: tags._country.toLowerCase(),
+                    country_code: tags._country?.toLowerCase(),
                     state: undefined,
                 },
             },

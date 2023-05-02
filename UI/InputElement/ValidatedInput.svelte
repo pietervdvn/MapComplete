@@ -6,29 +6,43 @@
   import { ExclamationIcon } from "@rgossiaux/svelte-heroicons/solid";
   import { Translation } from "../i18n/Translation";
   import { createEventDispatcher, onDestroy } from "svelte";
+  import {Validator} from "./Validator";
 
   export let value: UIEventSource<string>;
   // Internal state, only copied to 'value' so that no invalid values leak outside
   let _value = new UIEventSource(value.data ?? "");
   onDestroy(value.addCallbackAndRunD(v => _value.setData(v ?? "")));
   export let type: ValidatorType;
-  let validator = Validators.get(type);
   export let feedback: UIEventSource<Translation> | undefined = undefined;
+  export let getCountry: () => string | undefined
+  let validator : Validator = Validators.get(type)
+  $: {
+    // The type changed -> reset some values
+    validator = Validators.get(type)
+    _value.setData("")
+    feedback =  feedback?.setData(validator?.getFeedback(_value.data, getCountry));
+  }
+  
+  onDestroy(value.addCallbackAndRun(v => {
+    if(v === undefined || v === ""){
+      _value.setData("")
+    }
+  }))
   onDestroy(_value.addCallbackAndRun(v => {
-    if (validator.isValid(v)) {
+    if (validator.isValid(v, getCountry)) {
       feedback?.setData(undefined);
       value.setData(v);
       return;
     }
     value.setData(undefined);
-    feedback?.setData(validator.getFeedback(v));
+    feedback?.setData(validator.getFeedback(v, getCountry));
   }))
 
   if (validator === undefined) {
     throw "Not a valid type for a validator:" + type;
   }
 
-  const isValid = _value.map(v => validator.isValid(v));
+  const isValid = _value.map(v => validator.isValid(v, getCountry));
 
   let htmlElem: HTMLInputElement;
 

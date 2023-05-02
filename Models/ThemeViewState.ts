@@ -296,7 +296,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
 
         this.initActors()
-        this.drawSpecialLayers(lastClick)
+        this.addLastClick(lastClick)
+        this.drawSpecialLayers()
         this.initHotkeys()
         this.miscSetup()
         console.log("State setup completed", this)
@@ -424,10 +425,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
     /**
      * Add the special layers to the map
      */
-    private drawSpecialLayers(last_click: LastClickFeatureSource) {
+    private drawSpecialLayers() {
         type AddedByDefaultTypes = typeof Constants.added_by_default[number]
         const empty = []
-        this.addLastClick(last_click)
         /**
          * A listing which maps the layerId onto the featureSource
          */

@@ -1006,7 +1006,8 @@
         },
         "phone": {
             "description": "a phone number",
-            "feedback": "This is not a valid phone number"
+            "feedback": "This is not a valid phone number",
+            "feedbackCountry": "This is not a valid phone number (for country {country})"
         },
         "pnat": {
             "description": "a positive, whole number",

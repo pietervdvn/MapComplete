@@ -15,7 +15,6 @@ export default class BBoxFeatureSource extends StaticFeatureSource {
                     if (mustTouch.data === undefined) {
                         return features
                     }
-                    console.log("UPdating touching bbox")
                     const box = mustTouch.data
                     return features.filter((feature) => {
                         if (feature.geometry.type === "Point") {

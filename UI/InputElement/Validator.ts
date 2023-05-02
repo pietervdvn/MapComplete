@@ -44,9 +44,8 @@ export abstract class Validator {
     /**
      * Gets a piece of feedback. By default, validation.<type> will be used, resulting in a generic 'not a valid <type>'.
      * However, inheritors might overwrite this to give more specific feedback
-     * @param s
      */
-    public getFeedback(s: string): Translation {
+    public getFeedback(s: string, requestCountry?: () => string): Translation {
         const tr = Translations.t.validation[this.name]
         if (tr !== undefined) {
             return tr["feedback"]

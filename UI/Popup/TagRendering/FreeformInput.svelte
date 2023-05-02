@@ -19,17 +19,20 @@
 
   let dispatch = createEventDispatcher<{ "selected" }>();
   onDestroy(value.addCallbackD(() => {dispatch("selected")}))
+  function getCountry() {
+    return tags.data["_country"]
+  }
 </script>
 
 <div class="inline-flex flex-col">
 
   {#if config.freeform.inline}
     <Inline key={config.freeform.key} {tags} template={config.render}>
-      <ValidatedInput {feedback} on:selected={() => dispatch("selected")}
+      <ValidatedInput {feedback} {getCountry} on:selected={() => dispatch("selected")}
                       type={config.freeform.type} {value}></ValidatedInput>
     </Inline>
   {:else}
-    <ValidatedInput {feedback} on:selected={() => dispatch("selected")}
+    <ValidatedInput {feedback} {getCountry} on:selected={() => dispatch("selected")}
                     type={config.freeform.type} {value}></ValidatedInput>
 
   {/if}

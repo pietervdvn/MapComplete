@@ -10,6 +10,8 @@ import Lazy from "../Base/Lazy"
 import { OsmServiceState } from "../../Logic/Osm/OsmConnection"
 
 /**
+ * @deprecated
+ * This element is getting stripped and is not used anymore
  * Generates all the questions, one by one
  */
 export default class QuestionBox extends VariableUiElement {

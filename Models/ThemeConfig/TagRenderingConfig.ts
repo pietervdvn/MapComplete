@@ -1,22 +1,20 @@
-import { Translation, TypedTranslation } from "../../UI/i18n/Translation"
-import { TagsFilter } from "../../Logic/Tags/TagsFilter"
+import {Translation, TypedTranslation} from "../../UI/i18n/Translation"
+import {TagsFilter} from "../../Logic/Tags/TagsFilter"
 import Translations from "../../UI/i18n/Translations"
-import { TagUtils, UploadableTag } from "../../Logic/Tags/TagUtils"
-import { And } from "../../Logic/Tags/And"
-import { Utils } from "../../Utils"
-import { Tag } from "../../Logic/Tags/Tag"
+import {TagUtils, UploadableTag} from "../../Logic/Tags/TagUtils"
+import {And} from "../../Logic/Tags/And"
+import {Utils} from "../../Utils"
+import {Tag} from "../../Logic/Tags/Tag"
 import BaseUIElement from "../../UI/BaseUIElement"
 import Combine from "../../UI/Base/Combine"
 import Title from "../../UI/Base/Title"
 import Link from "../../UI/Base/Link"
 import List from "../../UI/Base/List"
-import {
-    MappingConfigJson,
-    QuestionableTagRenderingConfigJson,
-} from "./Json/QuestionableTagRenderingConfigJson"
-import { FixedUiElement } from "../../UI/Base/FixedUiElement"
-import { Paragraph } from "../../UI/Base/Paragraph"
+import {MappingConfigJson, QuestionableTagRenderingConfigJson,} from "./Json/QuestionableTagRenderingConfigJson"
+import {FixedUiElement} from "../../UI/Base/FixedUiElement"
+import {Paragraph} from "../../UI/Base/Paragraph"
 import Svg from "../../Svg"
+import Validators, {ValidatorType} from "../../UI/InputElement/Validators";
 
 export interface Mapping {
     readonly if: UploadableTag
@@ -623,13 +621,19 @@ export default class TagRenderingConfig {
      *
      * @param singleSelectedMapping (Only used if multiAnswer == false): the single mapping to apply. Use (mappings.length) for the freeform
      * @param multiSelectedMapping (Only used if multiAnswer == true): all the mappings that must be applied. Set multiSelectedMapping[mappings.length] to use the freeform as well
+     * @param currentProperties: The current properties of the object for which the question should be answered
      */
     public constructChangeSpecification(
         freeformValue: string | undefined,
         singleSelectedMapping: number,
-        multiSelectedMapping: boolean[] | undefined
+        multiSelectedMapping: boolean[] | undefined,
+        currentProperties: Record<string, string>
     ): UploadableTag {
         freeformValue = freeformValue?.trim()
+        const validator = Validators.get(<ValidatorType> this.freeform?.type)
+        if(validator && freeformValue){
+            freeformValue = validator.reformat(freeformValue,() => currentProperties["_country"])
+        }
         if (freeformValue === "") {
             freeformValue = undefined
         }
@@ -666,7 +670,7 @@ export default class TagRenderingConfig {
                 .filter((_, i) => !multiSelectedMapping[i])
                 .map((m) => m.ifnot)
 
-            if (multiSelectedMapping.at(-1)) {
+            if (multiSelectedMapping.at(-1) && this.freeform) {
                 // The freeform value was selected as well
                 selectedMappings.push(
                     new And([
@@ -677,22 +681,29 @@ export default class TagRenderingConfig {
             }
             return TagUtils.FlattenMultiAnswer([...selectedMappings, ...unselectedMappings])
         } else {
-            if (singleSelectedMapping === undefined) {
-                return undefined
-            }
-            if (singleSelectedMapping === this.mappings.length) {
-                if (freeformValue === undefined) {
-                    return undefined
+            // Is at least one mapping shown in the answer?
+            const someMappingIsShown = this.mappings.some(m => {
+                if(typeof m.hideInAnswer === "boolean"){
+                    return !m.hideInAnswer
                 }
+                const isHidden = m.hideInAnswer.matchesProperties(currentProperties)
+                return !isHidden
+            }  )
+            // If all mappings are hidden for the current tags, we can safely assume that we should use the freeform key
+            const useFreeform = freeformValue !== undefined && (singleSelectedMapping === this.mappings.length || !someMappingIsShown)
+            if (useFreeform) {
                 return new And([
                     new Tag(this.freeform.key, freeformValue),
                     ...(this.freeform.addExtraTags ?? []),
                 ])
-            } else {
+            } else if(singleSelectedMapping) {
                 return new And([
                     this.mappings[singleSelectedMapping].if,
                     ...(this.mappings[singleSelectedMapping].addExtraTags ?? []),
                 ])
+            }else{
+                console.log("TagRenderingConfig.ConstructSpecification has a weird fallback for", {freeformValue, singleSelectedMapping, multiSelectedMapping, currentProperties})
+                return undefined
             }
         }
     }

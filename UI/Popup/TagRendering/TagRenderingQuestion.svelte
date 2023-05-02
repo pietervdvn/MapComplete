@@ -16,6 +16,7 @@
   import { ExclamationIcon } from "@rgossiaux/svelte-heroicons/solid";
   import SpecialTranslation from "./SpecialTranslation.svelte";
   import TagHint from "../TagHint.svelte";
+  import Validators from "../../InputElement/Validators";
 
   export let config: TagRenderingConfig;
   export let tags: UIEventSource<Record<string, string>>;
@@ -34,9 +35,12 @@
   let selectedMapping: number = undefined;
   let checkedMappings: boolean[];
   $: {
+    // We received a new config -> reinit
+    console.log("Initing checkedMappings for", config)
     if (config.mappings?.length > 0 && (checkedMappings === undefined || checkedMappings?.length < config.mappings.length)) {
       checkedMappings = [...config.mappings.map(_ => false), false /*One element extra in case a freeform value is added*/];
     }
+    freeformInput.setData(undefined)
   }
   let selectedTags: TagsFilter = undefined;
 
@@ -54,9 +58,10 @@
   $: {
     mappings = config.mappings?.filter(m => !mappingIsHidden(m));
     try {
-      selectedTags = config?.constructChangeSpecification($freeformInput, selectedMapping, checkedMappings);
+      let freeformInputValue = $freeformInput
+      selectedTags = config?.constructChangeSpecification(freeformInputValue, selectedMapping, checkedMappings, tags.data);
     } catch (e) {
-      console.debug("Could not calculate changeSpecification:", e);
+      console.error("Could not calculate changeSpecification:", e);
       selectedTags = undefined;
     }
   }
@@ -99,7 +104,7 @@
       }
     );
     freeformInput.setData(undefined);
-    selectedMapping = 0;
+    selectedMapping = undefined;
     selectedTags = undefined;
 
     change.CreateChangeDescriptions().then(changes =>
@@ -139,14 +144,14 @@
         {#each config.mappings as mapping, i (mapping.then)}
           <!-- Even though we have a list of 'mappings' already, we still iterate over the list as to keep the original indices-->
           {#if !mappingIsHidden(mapping)  }
-            <label>
+            <label class="flex">
               <input type="radio" bind:group={selectedMapping} name={"mappings-radio-"+config.id} value={i}>
               <TagRenderingMapping {mapping} {tags} {state} {selectedElement} {layer}></TagRenderingMapping>
             </label>
           {/if}
         {/each}
         {#if config.freeform?.key}
-          <label>
+          <label class="flex">
             <input type="radio" bind:group={selectedMapping} name={"mappings-radio-"+config.id}
                    value={config.mappings.length}>
             <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput}
@@ -159,13 +164,14 @@
       <div class="flex flex-col">
         {#each config.mappings as mapping, i (mapping.then)}
           {#if !mappingIsHidden(mapping)}
-            <label>
+            <label class="flex">
               <input type="checkbox" name={"mappings-checkbox-"+config.id+"-"+i} bind:checked={checkedMappings[i]}>
               <TagRenderingMapping {mapping} {tags} {state} {selectedElement}></TagRenderingMapping>
-            </label>{/if}
+            </label>
+          {/if}
         {/each}
         {#if config.freeform?.key}
-          <label>
+          <label class="flex">
             <input type="checkbox" name={"mappings-checkbox-"+config.id+"-"+config.mappings.length}
                    bind:checked={checkedMappings[config.mappings.length]}>
             <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput}
@@ -184,7 +190,7 @@
           <Tr t={Translations.t.general.save}></Tr>
         </button>
       {:else }
-        <div class="w-6 h-6">
+        <div class="inline-flex w-6 h-6">
           <!-- Invalid value; show an inactive button or something like that-->
           <ExclamationIcon/>
         </div>

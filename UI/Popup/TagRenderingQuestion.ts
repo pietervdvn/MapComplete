@@ -29,6 +29,7 @@ import { SearchablePillsSelector } from "../Input/SearchableMappingsSelector"
 import { OsmTags } from "../../Models/OsmFeature"
 
 /**
+ * @deprecated: getting stripped and getting ported
  * Shows the question element.
  * Note that the value _migh_ already be known, e.g. when selected or when changing the value
  */
