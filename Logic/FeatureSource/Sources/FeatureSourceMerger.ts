@@ -16,7 +16,7 @@ export default class FeatureSourceMerger implements IndexedFeatureSource {
      * In case that multiple features have the same id, the latest `_version_number` will be used. Otherwise, we will take the last one
      */
     constructor(...sources: FeatureSource[]) {
-        this._featuresById = new UIEventSource<Map<string, Feature>>(undefined)
+        this._featuresById = new UIEventSource<Map<string, Feature>>(new Map<string, Feature>())
         this.featuresById = this._featuresById
         const self = this
         sources = Utils.NoNull(sources)
