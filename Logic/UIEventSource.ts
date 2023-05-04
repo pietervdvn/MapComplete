@@ -407,7 +407,8 @@ class MappedStore<TIn, T> extends Store<T> {
         f: (t: TIn) => T,
         extraStores: Store<any>[],
         upstreamListenerHandler: ListenerTracker<TIn> | undefined,
-        initialState: T
+        initialState: T,
+        onDestroy?: (f: () => void) => void
     ) {
         super()
         this._upstream = upstream
@@ -417,6 +418,9 @@ class MappedStore<TIn, T> extends Store<T> {
         this._upstreamPingCount = upstreamListenerHandler?.pingCount
         this._extraStores = extraStores
         this.registerCallbacksToUpstream()
+        if(onDestroy !== undefined){
+            onDestroy(() => this.unregisterFromUpstream())
+        }
     }
 
     private _data: T
@@ -677,6 +681,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
      * Given a function 'f', will construct a new UIEventSource where the contents will always be "f(this.data)'
      * @param f: The transforming function
      * @param extraSources: also trigger the update if one of these sources change
+     * @param onDestroy: a callback that can trigger the destroy function
      *
      * const src = new UIEventSource<number>(10)
      * const store = src.map(i => i * 2)
@@ -695,8 +700,8 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
      * srcSeen // => 21
      * lastSeen // => 42
      */
-    public map<J>(f: (t: T) => J, extraSources: Store<any>[] = []): Store<J> {
-        return new MappedStore(this, f, extraSources, this._callbacks, f(this.data))
+    public map<J>(f: (t: T) => J, extraSources: Store<any>[] = [], onDestroy?: (f : () => void ) => void): Store<J> {
+        return new MappedStore(this, f, extraSources, this._callbacks, f(this.data), onDestroy)
     }
     /**
      * Monoidal map which results in a read-only store. 'undefined' is passed 'as is'
