@@ -45,10 +45,6 @@ export default class UrlValidator extends Validator {
                 cleaned = cleaned.substr(0, cleaned.length - 1)
             }
 
-            if (!str.startsWith("http") && cleaned.startsWith("https://")) {
-                cleaned = cleaned.substr("https://".length)
-            }
-
             return cleaned
         } catch (e) {
             console.error(e)

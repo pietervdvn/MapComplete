@@ -11,10 +11,10 @@
   export let value: UIEventSource<string>;
   // Internal state, only copied to 'value' so that no invalid values leak outside
   let _value = new UIEventSource(value.data ?? "");
-  onDestroy(value.addCallbackAndRunD(v => _value.setData(v ?? "")));
   export let type: ValidatorType;
   export let feedback: UIEventSource<Translation> | undefined = undefined;
   export let getCountry: () => string | undefined
+  
   let validator : Validator = Validators.get(type)
   $: {
     // The type changed -> reset some values
@@ -23,11 +23,6 @@
     feedback =  feedback?.setData(validator?.getFeedback(_value.data, getCountry));
   }
   
-  onDestroy(value.addCallbackAndRun(v => {
-    if(v === undefined || v === ""){
-      _value.setData("")
-    }
-  }))
   onDestroy(_value.addCallbackAndRun(v => {
     if (validator.isValid(v, getCountry)) {
       feedback?.setData(undefined);
