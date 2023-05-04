@@ -1,201 +1,226 @@
 <script lang="ts">
-  import { UIEventSource } from "../../../Logic/UIEventSource";
-  import type { SpecialVisualizationState } from "../../SpecialVisualization";
-  import Tr from "../../Base/Tr.svelte";
-  import If from "../../Base/If.svelte";
-  import TagRenderingMapping from "./TagRenderingMapping.svelte";
-  import type { Feature } from "geojson";
-  import type { Mapping } from "../../../Models/ThemeConfig/TagRenderingConfig";
-  import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig";
-  import { TagsFilter } from "../../../Logic/Tags/TagsFilter";
-  import FreeformInput from "./FreeformInput.svelte";
-  import Translations from "../../i18n/Translations.js";
-  import ChangeTagAction from "../../../Logic/Osm/Actions/ChangeTagAction";
-  import { createEventDispatcher, onDestroy } from "svelte";
-  import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
-  import { ExclamationIcon } from "@rgossiaux/svelte-heroicons/solid";
-  import SpecialTranslation from "./SpecialTranslation.svelte";
-  import TagHint from "../TagHint.svelte";
-  import Validators from "../../InputElement/Validators";
+    import {UIEventSource} from "../../../Logic/UIEventSource";
+    import type {SpecialVisualizationState} from "../../SpecialVisualization";
+    import Tr from "../../Base/Tr.svelte";
+    import If from "../../Base/If.svelte";
+    import TagRenderingMapping from "./TagRenderingMapping.svelte";
+    import type {Feature} from "geojson";
+    import type {Mapping} from "../../../Models/ThemeConfig/TagRenderingConfig";
+    import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig";
+    import {TagsFilter} from "../../../Logic/Tags/TagsFilter";
+    import FreeformInput from "./FreeformInput.svelte";
+    import Translations from "../../i18n/Translations.js";
+    import ChangeTagAction from "../../../Logic/Osm/Actions/ChangeTagAction";
+    import {createEventDispatcher, onDestroy} from "svelte";
+    import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
+    import {ExclamationIcon} from "@rgossiaux/svelte-heroicons/solid";
+    import SpecialTranslation from "./SpecialTranslation.svelte";
+    import TagHint from "../TagHint.svelte";
+    import LoginToggle from "../../Base/LoginToggle.svelte";
+    import SubtleButton from "../../Base/SubtleButton.svelte";
+    import Loading from "../../Base/Loading.svelte";
+    import type {Writable} from "svelte/store";
 
-  export let config: TagRenderingConfig;
-  export let tags: UIEventSource<Record<string, string>>;
-  export let selectedElement: Feature;
-  export let state: SpecialVisualizationState;
-  export let layer: LayerConfig;
+    export let config: TagRenderingConfig;
+    export let tags: UIEventSource<Record<string, string>>;
+    export let selectedElement: Feature;
+    export let state: SpecialVisualizationState;
+    export let layer: LayerConfig;
 
-  // Will be bound if a freeform is available
-  let freeformInput = new UIEventSource<string>(undefined);
-  onDestroy(tags.addCallbackAndRunD(tags => {
-    // initialize with the previous value
-    if (config.freeform?.key) {
-      freeformInput.setData(tags[config.freeform.key]);
-    }
-  }));
-  let selectedMapping: number = undefined;
-  let checkedMappings: boolean[];
-  $: {
-    // We received a new config -> reinit
-    console.log("Initing checkedMappings for", config)
-    if (config.mappings?.length > 0 && (checkedMappings === undefined || checkedMappings?.length < config.mappings.length)) {
-      checkedMappings = [...config.mappings.map(_ => false), false /*One element extra in case a freeform value is added*/];
-    }
-    freeformInput.setData(undefined)
-  }
-  let selectedTags: TagsFilter = undefined;
-
-  function mappingIsHidden(mapping: Mapping): boolean {
-    if (mapping.hideInAnswer === undefined || mapping.hideInAnswer === false) {
-      return false;
-    }
-    if (mapping.hideInAnswer === true) {
-      return true;
-    }
-    return (<TagsFilter>mapping.hideInAnswer).matchesProperties(tags.data);
-  }
-
-  let mappings: Mapping[];
-  $: {
-    mappings = config.mappings?.filter(m => !mappingIsHidden(m));
-    try {
-      let freeformInputValue = $freeformInput
-      selectedTags = config?.constructChangeSpecification(freeformInputValue, selectedMapping, checkedMappings, tags.data);
-    } catch (e) {
-      console.error("Could not calculate changeSpecification:", e);
-      selectedTags = undefined;
-    }
-  }
-
-
-  let dispatch = createEventDispatcher<{
-    "saved": {
-      config: TagRenderingConfig,
-      applied: TagsFilter
-    }
-  }>();
-
-  function onSave() {
-
-    if (layer.source === null) {
-      /**
-       * This is a special, priviliged layer.
-       * We simply apply the tags onto the records
-       */
-      const kv = selectedTags.asChange(tags.data);
-      for (const { k, v } of kv) {
-        if (v === undefined) {
-          delete tags.data[k];
-        } else {
-          tags.data[k] = v;
+    // Will be bound if a freeform is available
+    let freeformInput = new UIEventSource<string>(undefined);
+    onDestroy(tags.addCallbackAndRunD(tags => {
+        // initialize with the previous value
+        if (config.freeform?.key) {
+            freeformInput.setData(tags[config.freeform.key]);
         }
-      }
-      tags.ping();
-      return;
+    }));
+    let selectedMapping: number = undefined;
+    let checkedMappings: boolean[];
+    $: {
+        // We received a new config -> reinit
+        console.log("Initing checkedMappings for", config)
+        if (config.mappings?.length > 0 && (checkedMappings === undefined || checkedMappings?.length < config.mappings.length)) {
+            checkedMappings = [...config.mappings.map(_ => false), false /*One element extra in case a freeform value is added*/];
+        }
+        freeformInput.setData(undefined)
+    }
+    let selectedTags: TagsFilter = undefined;
+
+    function mappingIsHidden(mapping: Mapping): boolean {
+        if (mapping.hideInAnswer === undefined || mapping.hideInAnswer === false) {
+            return false;
+        }
+        if (mapping.hideInAnswer === true) {
+            return true;
+        }
+        return (<TagsFilter>mapping.hideInAnswer).matchesProperties(tags.data);
     }
 
-    dispatch("saved", { config, applied: selectedTags });
-    const change = new ChangeTagAction(
-      tags.data.id,
-      selectedTags,
-      tags.data,
-      {
-        theme: state.layout.id,
-        changeType: "answer"
-      }
-    );
-    freeformInput.setData(undefined);
-    selectedMapping = undefined;
-    selectedTags = undefined;
+    let mappings: Mapping[];
+    let searchTerm: Writable<string> = new UIEventSource("")
+    $:{console.log("Seachterm:", $searchTerm)}
+    
+    $: {
+        mappings = config.mappings?.filter(m => !mappingIsHidden(m));
+        try {
+            let freeformInputValue = $freeformInput
+            selectedTags = config?.constructChangeSpecification(freeformInputValue, selectedMapping, checkedMappings, tags.data);
+        } catch (e) {
+            console.error("Could not calculate changeSpecification:", e);
+            selectedTags = undefined;
+        }
+    }
 
-    change.CreateChangeDescriptions().then(changes =>
-      state.changes.applyChanges(changes)
-    ).catch(console.error);
-  }
+
+    let dispatch = createEventDispatcher<{
+        "saved": {
+            config: TagRenderingConfig,
+            applied: TagsFilter
+        }
+    }>();
+
+    function onSave() {
+
+        if (layer.source === null) {
+            /**
+             * This is a special, priviliged layer.
+             * We simply apply the tags onto the records
+             */
+            const kv = selectedTags.asChange(tags.data);
+            for (const {k, v} of kv) {
+                if (v === undefined) {
+                    delete tags.data[k];
+                } else {
+                    tags.data[k] = v;
+                }
+            }
+            tags.ping();
+            return;
+        }
+
+        dispatch("saved", {config, applied: selectedTags});
+        const change = new ChangeTagAction(
+            tags.data.id,
+            selectedTags,
+            tags.data,
+            {
+                theme: state.layout.id,
+                changeType: "answer"
+            }
+        );
+        freeformInput.setData(undefined);
+        selectedMapping = undefined;
+        selectedTags = undefined;
+
+        change.CreateChangeDescriptions().then(changes =>
+            state.changes.applyChanges(changes)
+        ).catch(console.error);
+    }
 
 
 </script>
 
 {#if config.question !== undefined}
-  <div class="border border-black subtle-background flex flex-col">
-    <If condition={state.featureSwitchIsTesting}>
-      <div class="flex justify-between">
+    <div class="border border-black subtle-background flex flex-col">
+        <If condition={state.featureSwitchIsTesting}>
+            <div class="flex justify-between">
         <span>
           <SpecialTranslation t={config.question} {tags} {state} {layer} feature={selectedElement}></SpecialTranslation>
         </span>
-        <span class="alert">{config.id}</span>
-      </div>
-      <SpecialTranslation slot="else" t={config.question} {tags} {state} {layer}
-                          feature={selectedElement}></SpecialTranslation>
-    </If>
+                <span class="alert">{config.id}</span>
+            </div>
+            <SpecialTranslation slot="else" t={config.question} {tags} {state} {layer}
+                                feature={selectedElement}></SpecialTranslation>
+        </If>
 
-    {#if config.questionhint}
-      <div class="subtle">
-        <SpecialTranslation t={config.questionhint} {tags} {state} {layer}
-                            feature={selectedElement}></SpecialTranslation>
-      </div>
-    {/if}
-
-    {#if config.freeform?.key && !(mappings?.length > 0)}
-      <!-- There are no options to choose from, simply show the input element: fill out the text field -->
-      <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput} />
-    {:else if mappings !== undefined && !config.multiAnswer}
-      <!-- Simple radiobuttons as mapping -->
-      <div class="flex flex-col">
-        {#each config.mappings as mapping, i (mapping.then)}
-          <!-- Even though we have a list of 'mappings' already, we still iterate over the list as to keep the original indices-->
-          {#if !mappingIsHidden(mapping)  }
-            <label class="flex">
-              <input type="radio" bind:group={selectedMapping} name={"mappings-radio-"+config.id} value={i}>
-              <TagRenderingMapping {mapping} {tags} {state} {selectedElement} {layer}></TagRenderingMapping>
-            </label>
-          {/if}
-        {/each}
-        {#if config.freeform?.key}
-          <label class="flex">
-            <input type="radio" bind:group={selectedMapping} name={"mappings-radio-"+config.id}
-                   value={config.mappings.length}>
-            <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput}
-                           on:selected={() => selectedMapping = config.mappings.length } />
-          </label>
+        {#if config.questionhint}
+            <div class="subtle">
+                <SpecialTranslation t={config.questionhint} {tags} {state} {layer}
+                                    feature={selectedElement}></SpecialTranslation>
+            </div>
         {/if}
-      </div>
-    {:else if mappings !== undefined && config.multiAnswer}
-      <!-- Multiple answers can be chosen: checkboxes -->
-      <div class="flex flex-col">
-        {#each config.mappings as mapping, i (mapping.then)}
-          {#if !mappingIsHidden(mapping)}
-            <label class="flex">
-              <input type="checkbox" name={"mappings-checkbox-"+config.id+"-"+i} bind:checked={checkedMappings[i]}>
-              <TagRenderingMapping {mapping} {tags} {state} {selectedElement}></TagRenderingMapping>
-            </label>
-          {/if}
-        {/each}
-        {#if config.freeform?.key}
-          <label class="flex">
-            <input type="checkbox" name={"mappings-checkbox-"+config.id+"-"+config.mappings.length}
-                   bind:checked={checkedMappings[config.mappings.length]}>
-            <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput}
-                           on:selected={() => checkedMappings[config.mappings.length] = true} />
-          </label>
-        {/if}
-      </div>
-    {/if}
 
-    <TagHint osmConnection={state.osmConnection} tags={selectedTags}></TagHint>
-    <div>
-      <!-- TagRenderingQuestion-buttons -->
-      <slot name="cancel"></slot>
-      {#if selectedTags !== undefined}
-        <button on:click={onSave}>
-          <Tr t={Translations.t.general.save}></Tr>
-        </button>
-      {:else }
-        <div class="inline-flex w-6 h-6">
-          <!-- Invalid value; show an inactive button or something like that-->
-          <ExclamationIcon/>
-        </div>
-      {/if}
+
+        {#if config.mappings?.length >= 8}
+            <input type="text" bind:value={$searchTerm}>
+        {/if}
+        
+
+        {#if config.freeform?.key && !(mappings?.length > 0)}
+            <!-- There are no options to choose from, simply show the input element: fill out the text field -->
+            <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput}/>
+            <img src="./assets/svg/search.svg" class="w-4 h-4"/>
+        {:else if mappings !== undefined && !config.multiAnswer}
+            <!-- Simple radiobuttons as mapping -->
+            <div class="flex flex-col">
+                {#each config.mappings as mapping, i (mapping.then)}
+                    <!-- Even though we have a list of 'mappings' already, we still iterate over the list as to keep the original indices-->
+                    {#if !mappingIsHidden(mapping)  }
+                        <label class="flex">
+                            <input type="radio" bind:group={selectedMapping} name={"mappings-radio-"+config.id}
+                                   value={i}>
+                            <TagRenderingMapping {mapping} {tags} {state} {selectedElement}
+                                                 {layer}></TagRenderingMapping>
+                        </label>
+                    {/if}
+                {/each}
+                {#if config.freeform?.key}
+                    <label class="flex">
+                        <input type="radio" bind:group={selectedMapping} name={"mappings-radio-"+config.id}
+                               value={config.mappings.length}>
+                        <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput}
+                                       on:selected={() => selectedMapping = config.mappings.length }/>
+                    </label>
+                {/if}
+            </div>
+        {:else if mappings !== undefined && config.multiAnswer}
+            <!-- Multiple answers can be chosen: checkboxes -->
+            <div class="flex flex-col">
+                {#each config.mappings as mapping, i (mapping.then)}
+                    {#if !mappingIsHidden(mapping)}
+                        <label class="flex">
+                            <input type="checkbox" name={"mappings-checkbox-"+config.id+"-"+i}
+                                   bind:checked={checkedMappings[i]}>
+                            <TagRenderingMapping {mapping} {tags} {state} {selectedElement}></TagRenderingMapping>
+                        </label>
+                    {/if}
+                {/each}
+                {#if config.freeform?.key}
+                    <label class="flex">
+                        <input type="checkbox" name={"mappings-checkbox-"+config.id+"-"+config.mappings.length}
+                               bind:checked={checkedMappings[config.mappings.length]}>
+                        <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput}
+                                       on:selected={() => checkedMappings[config.mappings.length] = true}/>
+                    </label>
+                {/if}
+            </div>
+        {/if}
+
+        <LoginToggle {state}>
+            <Loading slot="loading"/>
+            <SubtleButton slot="not-logged-in" on:click={() => state.osmConnection.AttemptLogin()}>
+                <img slot="image" src="./assets/svg/login.svg" class="w-8 h-8"/>
+                <Tr t={Translations.t.general.loginToStart} slot="message"></Tr>
+            </SubtleButton>
+
+
+            <TagHint osmConnection={state.osmConnection} tags={selectedTags}></TagHint>
+            <div>
+                <!-- TagRenderingQuestion-buttons -->
+                <slot name="cancel"></slot>
+
+                {#if selectedTags !== undefined}
+                    <button on:click={onSave}>
+                        <Tr t={Translations.t.general.save}></Tr>
+                    </button>
+                {:else }
+                    <div class="inline-flex w-6 h-6">
+                        <!-- Invalid value; show an inactive button or something like that-->
+                        <ExclamationIcon/>
+                    </div>
+                {/if}
+            </div>
+        </LoginToggle>
     </div>
-
-  </div>
 {/if}
