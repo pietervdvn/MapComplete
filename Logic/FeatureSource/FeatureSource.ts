@@ -18,7 +18,7 @@ export interface Tiled {
 /**
  * A feature source which only contains features for the defined layer
  */
-export interface FeatureSourceForLayer extends FeatureSource {
+export interface FeatureSourceForLayer<T extends Feature = Feature> extends FeatureSource<T> {
     readonly layer: FilteredLayer
 }
 

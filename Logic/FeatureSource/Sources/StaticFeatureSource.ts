@@ -1,30 +1,28 @@
-import { FeatureSource , FeatureSourceForLayer, Tiled } from "../FeatureSource"
-import { ImmutableStore, Store } from "../../UIEventSource"
-import FilteredLayer from "../../../Models/FilteredLayer"
-import { BBox } from "../../BBox"
-import { Feature } from "geojson"
+import {FeatureSource} from "../FeatureSource"
+import {ImmutableStore, Store} from "../../UIEventSource"
+import {Feature} from "geojson"
 
 /**
  * A simple, read only feature store.
  */
-export default class StaticFeatureSource implements FeatureSource {
-    public readonly features: Store<Feature[]>
+export default class StaticFeatureSource<T extends Feature = Feature> implements FeatureSource<T> {
+    public readonly features: Store<T[]>
 
     constructor(
         features:
-            | Store<Feature[]>
-            | Feature[]
-            | { features: Feature[] }
-            | { features: Store<Feature[]> }
+            | Store<T[]>
+            | T[]
+            | { features: T[] }
+            | { features: Store<T[]> }
     ) {
         if (features === undefined) {
             throw "Static feature source received undefined as source"
         }
-        let feats: Feature[] | Store<Feature[]>
+        let feats: T[] | Store<T[]>
         if (features["features"]) {
             feats = features["features"]
         } else {
-            feats = <Feature[] | Store<Feature[]>>features
+            feats = <T[] | Store<T[]>>features
         }
 
         if (Array.isArray(feats)) {
@@ -34,23 +32,7 @@ export default class StaticFeatureSource implements FeatureSource {
         }
     }
 
-    public static fromGeojson(geojson: Feature[]): StaticFeatureSource {
+    public static fromGeojson<T extends Feature>(geojson: T[]): StaticFeatureSource<T> {
         return new StaticFeatureSource(geojson)
-    }
-}
-
-export class TiledStaticFeatureSource
-    extends StaticFeatureSource
-    implements Tiled, FeatureSourceForLayer
-{
-    public readonly bbox: BBox = BBox.global
-    public readonly tileIndex: number
-    public readonly layer: FilteredLayer
-
-    constructor(features: Store<Feature[]>, layer: FilteredLayer, tileIndex: number = 0) {
-        super(features)
-        this.tileIndex = tileIndex
-        this.layer = layer
-        this.bbox = BBox.fromTileIndex(this.tileIndex)
     }
 }
