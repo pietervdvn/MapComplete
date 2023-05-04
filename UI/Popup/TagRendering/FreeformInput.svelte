@@ -36,7 +36,7 @@
                     type={config.freeform.type} {value}></ValidatedInput>
 
   {/if}
-  <InputHelper args={config.freeform.helperArgs} {config} {feature} type={config.freeform.type} {value}></InputHelper>
+  <InputHelper args={config.freeform.helperArgs} {feature} type={config.freeform.type} {value}/>
 </div>
 
 {#if $feedback !== undefined}
