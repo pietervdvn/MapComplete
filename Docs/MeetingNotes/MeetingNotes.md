@@ -2,7 +2,123 @@
 
 As of February 2023, regular meetings with Fix My City Berlin (and the wider community) are organized.
 
-Meeting notes are tracked here.
+Meeting notes are tracked here and on [hackMD](https://hackmd.io/txPbPJbYRYGd51n4r4PHNQ)
+
+
+The video room is https://osmvideo.cloud68.co/user/pie-j4g-vrt-qu4
+
+
+# 2023-05-03
+
+Present: Paulbrunner, RLin, Pieter, Tordans
+
+
+## What has been done
+
+- More work on the MapLibre branch
+    + field-testing has started (and still many bugs)
+    + Level-selector works again
+    + Download-buttons enabled by default
+    + Highligted elements
+- Filters on cyclofix by Paul
+
+### Style by designer of Fix My City
+
+https://www.figma.com/file/j0Dxgbl7yx5RVqAWQbf5zH/Wireframes-MapComplete?node-id=203-3933
+
+
+
+
+## Todo
+
+Styling of MapLibre branch!
+
+
+
+
+# 2023-04-19
+
+Present: Paulbrunner, Tobials, Pieter
+
+## Misc
+
+Paul has a question about creating filters
+width
+
+
+## Social
+
+- CCC-Camp? P will pass by Berlin
+- Mapcomplete hack week? (Mid-july in Ghent?): T -> probably not, away 'till 13th
+
+
+## What has been done?
+
+- P: More refactoring on the maplibre branch
+- P: Experimentation with MapRoulette to import _big_ datasets (openbenches.org)
+
+
+## Open Questions
+
+- P: styleguide! The MapLibre port is getting to a point that styling is needed to finish it up. T: ticket is in the works, Tobias will ask the designer to plan tomorrow - will probably have something to talk about in two weeks, maybe even sooner
+
+- P: style: how to show the 'currently selected'-element on the map? Previously a somewhat ugly red 'blob', but better options must surely exist
+
+  -> Add a border to the builtin icons (pin, square, circle, teardrop)
+  -> Use a good fallback if no default icon is used
+
+- P: some smaller, hard bugs - any hints? NO
+
+## Planned todos
+
+T: information architecture spreadsheet
+
+
+# 2023-04-05
+
+## What was done?
+
+- P: Refactoring with MapLibre&Svelte in progress, small demo
+- T: More design work
+
+
+## Design updates
+
+### Add new item
+
+
+
+# 2023-03-22
+
+
+## What was done?
+
+- Svelte is in production!
+- some cleanup of the themes, improvement of the documentation
+- review of 'setting up the development-environment', tested on a fresh machine, some tweaks fixed
+- user census results are published
+- Advertisement-theme is merged and deployed
+- Work on MapLibre has started (T: feel free to ask questions)
+- T: contact with OpenCage
+
+## OpenCage advertisement
+
+Tobias did a follow-up on this
+
+- Target someone with a big community and let them do the advertising
+- "MapComplete is a great tool for organisation and topics if they want to work with OSM and want to keep data up to date -> Use MC as a tool for your audience"
+
+## Geocoding by OpenCage
+
+- Cities and neighbourhoods only, too limited
+
+## Wireframes and next steps
+
+- Via screensharee, see https://www.figma.com/file/j0Dxgbl7yx5RVqAWQbf5zH/Wireframes-MapComplete?node-id=242-7735&t=LdSserLloT9X19G4-0
+
+## Next meeting
+
+5th of april, 14:00, BigBlueButton
 
 
 # 2023-03-08
