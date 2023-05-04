@@ -49,7 +49,8 @@
     }
 
     let linkPrefix = `${path}/${layout.id.toLowerCase()}.html?`
-    if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+    if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.port === "1234") {
+      // Redirect to 'theme.html?layout=* instead of 'layout.html'. This is probably a debug run, where the routing does not work
       linkPrefix = `${path}/theme.html?layout=${layout.id}&`
     }
 
