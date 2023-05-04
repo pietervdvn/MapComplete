@@ -69,6 +69,7 @@ export default class LayerConfig extends WithContextLoader {
     public readonly syncSelection: typeof LayerConfig.syncSelectionAllowed[number] // this is a trick to conver a constant array of strings into a type union of these values
 
     public readonly _needsFullNodeDatabase = false
+    public readonly popupInFloatover
 
     constructor(json: LayerConfigJson, context?: string, official: boolean = true) {
         context = context + "." + json.id
@@ -414,6 +415,8 @@ export default class LayerConfig extends WithContextLoader {
                 ": showIf. Did you mean 'isShown' instead?"
             )
         }
+        this.popupInFloatover = json.popupInFloatover ?? false
+
     }
 
     public defaultIcon(): BaseUIElement | undefined {

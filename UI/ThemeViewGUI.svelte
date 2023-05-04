@@ -121,10 +121,16 @@
   </If>
 </div>
 
-<If condition={selectedViewElement.map(v => v !== undefined && selectedLayer.data !== undefined,[ selectedLayer] )}>
+<If condition={selectedViewElement.map(v => v !== undefined && selectedLayer.data !== undefined && !selectedLayer.data.popupInFloatover,[ selectedLayer] )}>
   <ModalRight on:close={() => {selectedElement.setData(undefined)}}>
     <ToSvelte construct={new VariableUiElement(selectedViewElement)}></ToSvelte>
   </ModalRight>
+</If>
+
+<If condition={selectedViewElement.map(v => v !== undefined && selectedLayer.data !== undefined && selectedLayer.data.popupInFloatover,[ selectedLayer] )}>
+  <FloatOver on:close={() => {selectedElement.setData(undefined)}}>
+    <ToSvelte construct={new VariableUiElement(selectedViewElement)}></ToSvelte>
+  </FloatOver>
 </If>
 
 <If condition={state.guistate.themeIsOpened}>

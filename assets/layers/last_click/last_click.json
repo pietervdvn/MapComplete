@@ -10,6 +10,7 @@
   },
   "name": null,
   "titleIcons": [],
+  "popupInFloatover": true,
   "title": {
     "mappings": [
       {

@@ -399,4 +399,9 @@ export interface LayerConfigJson {
      * no-question-hint-check: disables a check in MiscTagRenderingChecks which complains about 'div', 'span' or 'class=subtle'-HTML elements in the tagRendering
      */
     "#"?: string | "no-question-hint-check"
+
+    /**
+     * If set, open the selectedElementView in a floatOver instead of on the right
+     */
+    popupInFloatover?: boolean
 }
