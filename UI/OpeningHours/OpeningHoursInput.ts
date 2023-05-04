@@ -70,6 +70,9 @@ export default class OpeningHoursInput extends InputElement<string> {
                 if (OH.ParsePHRule(rule) !== null) {
                     continue
                 }
+                if(leftOvers.indexOf(rule) >= 0){
+                    continue
+                }
                 leftOvers.push(rule)
             }
             return leftOvers
