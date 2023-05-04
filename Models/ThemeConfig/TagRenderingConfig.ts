@@ -696,13 +696,13 @@ export default class TagRenderingConfig {
                     new Tag(this.freeform.key, freeformValue),
                     ...(this.freeform.addExtraTags ?? []),
                 ])
-            } else if(singleSelectedMapping) {
+            } else if(singleSelectedMapping !== undefined) {
                 return new And([
                     this.mappings[singleSelectedMapping].if,
                     ...(this.mappings[singleSelectedMapping].addExtraTags ?? []),
                 ])
             }else{
-                console.log("TagRenderingConfig.ConstructSpecification has a weird fallback for", {freeformValue, singleSelectedMapping, multiSelectedMapping, currentProperties})
+                console.warn("TagRenderingConfig.ConstructSpecification has a weird fallback for", {freeformValue, singleSelectedMapping, multiSelectedMapping, currentProperties})
                 return undefined
             }
         }
