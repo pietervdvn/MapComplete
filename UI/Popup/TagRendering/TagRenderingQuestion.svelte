@@ -1,9 +1,8 @@
 <script lang="ts">
-    import {UIEventSource} from "../../../Logic/UIEventSource";
+    import {Store, UIEventSource} from "../../../Logic/UIEventSource";
     import type {SpecialVisualizationState} from "../../SpecialVisualization";
     import Tr from "../../Base/Tr.svelte";
     import If from "../../Base/If.svelte";
-    import TagRenderingMapping from "./TagRenderingMapping.svelte";
     import type {Feature} from "geojson";
     import type {Mapping} from "../../../Models/ThemeConfig/TagRenderingConfig";
     import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig";
@@ -19,7 +18,7 @@
     import LoginToggle from "../../Base/LoginToggle.svelte";
     import SubtleButton from "../../Base/SubtleButton.svelte";
     import Loading from "../../Base/Loading.svelte";
-    import type {Writable} from "svelte/store";
+    import TagRenderingMappingInput from "./TagRenderingMappingInput.svelte";
 
     export let config: TagRenderingConfig;
     export let tags: UIEventSource<Record<string, string>>;
@@ -38,6 +37,7 @@
     let selectedMapping: number = undefined;
     let checkedMappings: boolean[];
     $: {
+        mappings = config.mappings
         // We received a new config -> reinit
         console.log("Initing checkedMappings for", config)
         if (config.mappings?.length > 0 && (checkedMappings === undefined || checkedMappings?.length < config.mappings.length)) {
@@ -47,25 +47,16 @@
     }
     let selectedTags: TagsFilter = undefined;
 
-    function mappingIsHidden(mapping: Mapping): boolean {
-        if (mapping.hideInAnswer === undefined || mapping.hideInAnswer === false) {
-            return false;
-        }
-        if (mapping.hideInAnswer === true) {
-            return true;
-        }
-        return (<TagsFilter>mapping.hideInAnswer).matchesProperties(tags.data);
+
+    let mappings: Mapping[] = config?.mappings;
+    let searchTerm: Store<string> = new UIEventSource("")
+    $:{
+        console.log("Seachterm:", $searchTerm)
     }
 
-    let mappings: Mapping[];
-    let searchTerm: Writable<string> = new UIEventSource("")
-    $:{console.log("Seachterm:", $searchTerm)}
-    
     $: {
-        mappings = config.mappings?.filter(m => !mappingIsHidden(m));
         try {
-            let freeformInputValue = $freeformInput
-            selectedTags = config?.constructChangeSpecification(freeformInputValue, selectedMapping, checkedMappings, tags.data);
+            selectedTags = config?.constructChangeSpecification($freeformInput, selectedMapping, checkedMappings, tags.data);
         } catch (e) {
             console.error("Could not calculate changeSpecification:", e);
             selectedTags = undefined;
@@ -143,27 +134,27 @@
 
 
         {#if config.mappings?.length >= 8}
-            <input type="text" bind:value={$searchTerm}>
+            <div class="flex w-full">
+                <img src="./assets/svg/search.svg" class="w-6 h-6"/>
+                <input type="text" bind:value={$searchTerm} class="w-full">
+            </div>
         {/if}
-        
+
 
         {#if config.freeform?.key && !(mappings?.length > 0)}
             <!-- There are no options to choose from, simply show the input element: fill out the text field -->
             <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput}/>
-            <img src="./assets/svg/search.svg" class="w-4 h-4"/>
         {:else if mappings !== undefined && !config.multiAnswer}
             <!-- Simple radiobuttons as mapping -->
             <div class="flex flex-col">
                 {#each config.mappings as mapping, i (mapping.then)}
                     <!-- Even though we have a list of 'mappings' already, we still iterate over the list as to keep the original indices-->
-                    {#if !mappingIsHidden(mapping)  }
-                        <label class="flex">
-                            <input type="radio" bind:group={selectedMapping} name={"mappings-radio-"+config.id}
-                                   value={i}>
-                            <TagRenderingMapping {mapping} {tags} {state} {selectedElement}
-                                                 {layer}></TagRenderingMapping>
-                        </label>
-                    {/if}
+                    <TagRenderingMappingInput {mapping} {tags} {state} {selectedElement}
+                                              {layer} {searchTerm} mappingIsSelected={selectedMapping === i}>
+                        <input type="radio" bind:group={selectedMapping} name={"mappings-radio-"+config.id}
+                               value={i}>
+
+                    </TagRenderingMappingInput>
                 {/each}
                 {#if config.freeform?.key}
                     <label class="flex">
@@ -178,13 +169,11 @@
             <!-- Multiple answers can be chosen: checkboxes -->
             <div class="flex flex-col">
                 {#each config.mappings as mapping, i (mapping.then)}
-                    {#if !mappingIsHidden(mapping)}
-                        <label class="flex">
-                            <input type="checkbox" name={"mappings-checkbox-"+config.id+"-"+i}
-                                   bind:checked={checkedMappings[i]}>
-                            <TagRenderingMapping {mapping} {tags} {state} {selectedElement}></TagRenderingMapping>
-                        </label>
-                    {/if}
+                    <TagRenderingMappingInput {mapping} {tags} {state} {selectedElement}
+                                              {layer} {searchTerm} mappingIsSelected={checkedMappings[i]}>
+                        <input type="checkbox" name={"mappings-checkbox-"+config.id+"-"+i}
+                               bind:checked={checkedMappings[i]}>
+                    </TagRenderingMappingInput>
                 {/each}
                 {#if config.freeform?.key}
                     <label class="flex">
