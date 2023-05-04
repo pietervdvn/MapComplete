@@ -37,7 +37,12 @@
     let selectedMapping: number = undefined;
     let checkedMappings: boolean[];
     $: {
-        mappings = config.mappings
+        mappings = config.mappings?.filter(m => {
+            if(typeof m.hideInAnswer === "boolean"){
+                return !m.hideInAnswer
+            }
+            return m.hideInAnswer.matchesProperties(tags.data)
+        })
         // We received a new config -> reinit
         console.log("Initing checkedMappings for", config)
         if (config.mappings?.length > 0 && (checkedMappings === undefined || checkedMappings?.length < config.mappings.length)) {
