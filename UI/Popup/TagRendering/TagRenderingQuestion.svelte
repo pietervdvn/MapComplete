@@ -27,13 +27,7 @@
     export let layer: LayerConfig;
 
     // Will be bound if a freeform is available
-    let freeformInput = new UIEventSource<string>(undefined);
-    onDestroy(tags.addCallbackAndRunD(tags => {
-        // initialize with the previous value
-        if (config.freeform?.key) {
-            freeformInput.setData(tags[config.freeform.key]);
-        }
-    }));
+    let freeformInput = new UIEventSource<string>(tags?.[config.freeform?.key]);
     let selectedMapping: number = undefined;
     let checkedMappings: boolean[];
     $: {
@@ -44,20 +38,20 @@
             return m.hideInAnswer.matchesProperties(tags.data)
         })
         // We received a new config -> reinit
-        console.log("Initing checkedMappings for", config)
         if (config.mappings?.length > 0 && (checkedMappings === undefined || checkedMappings?.length < config.mappings.length)) {
             checkedMappings = [...config.mappings.map(_ => false), false /*One element extra in case a freeform value is added*/];
         }
-        freeformInput.setData(undefined)
+        if (config.freeform?.key) {
+            freeformInput.setData(tags.data[config.freeform.key]);
+        }else{
+            freeformInput.setData(undefined)
+        }
     }
     let selectedTags: TagsFilter = undefined;
 
 
     let mappings: Mapping[] = config?.mappings;
     let searchTerm: Store<string> = new UIEventSource("")
-    $:{
-        console.log("Seachterm:", $searchTerm)
-    }
 
     $: {
         try {

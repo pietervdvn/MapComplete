@@ -19,7 +19,7 @@
   $: {
     // The type changed -> reset some values
     validator = Validators.get(type)
-    _value.setData("")
+    _value.setData(value.data ?? "")
     feedback =  feedback?.setData(validator?.getFeedback(_value.data, getCountry));
   }
   
