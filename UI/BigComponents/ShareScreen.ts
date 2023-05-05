@@ -1,22 +1,19 @@
-import { VariableUiElement } from "../Base/VariableUIElement"
-import { Translation } from "../i18n/Translation"
+import {VariableUiElement} from "../Base/VariableUIElement"
+import {Translation} from "../i18n/Translation"
 import Svg from "../../Svg"
 import Combine from "../Base/Combine"
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import { Utils } from "../../Utils"
+import {Store, UIEventSource} from "../../Logic/UIEventSource"
+import {Utils} from "../../Utils"
 import Translations from "../i18n/Translations"
 import BaseUIElement from "../BaseUIElement"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import Loc from "../../Models/Loc"
-import FilteredLayer from "../../Models/FilteredLayer"
-import { InputElement } from "../Input/InputElement"
-import { CheckBox } from "../Input/Checkboxes"
-import { SubtleButton } from "../Base/SubtleButton"
+import {InputElement} from "../Input/InputElement"
+import {CheckBox} from "../Input/Checkboxes"
+import {SubtleButton} from "../Base/SubtleButton"
 import LZString from "lz-string"
-import { SpecialVisualizationState } from "../SpecialVisualization"
+import {SpecialVisualizationState} from "../SpecialVisualization"
 
-export default class ShareScreen extends Combine {
+class ShareScreen extends Combine{
     constructor(state: SpecialVisualizationState) {
         const layout = state?.layout
         const tr = Translations.t.general.sharescreen
@@ -63,7 +60,7 @@ export default class ShareScreen extends Combine {
             return "layer-" + flayer.layerDef.id + "=" + flayer.isDisplayed.data
         }
 
-        const currentLayer: Store<{ id: string; name: string } | undefined> =
+        const currentLayer: Store<{ id: string; name: string | Record<string, string> } | undefined> =
             state.mapProperties.rasterLayer.map((l) => l?.properties)
         const currentBackground = new VariableUiElement(
             currentLayer.map((layer) => {
@@ -93,13 +90,13 @@ export default class ShareScreen extends Combine {
                 (includeLayerSelection) => {
                     if (includeLayerSelection) {
                         return Utils.NoNull(
-                            state.layerState.filteredLayers.map(fLayerToParam)
+                           Array.from( state.layerState.filteredLayers.values()).map(fLayerToParam)
                         ).join("&")
                     } else {
                         return null
                     }
                 },
-                state.filteredLayers.data.map((flayer) => flayer.isDisplayed)
+                Array.from(state.layerState.filteredLayers.values()).map((flayer) => flayer.isDisplayed)
             )
         )
 

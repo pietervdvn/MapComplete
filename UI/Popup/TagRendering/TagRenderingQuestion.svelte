@@ -164,9 +164,9 @@
                 {#if config.freeform?.key}
                     <label class="flex">
                         <input type="radio" bind:group={selectedMapping} name={"mappings-radio-"+config.id}
-                               value={config.mappings.length}>
+                               value={config.mappings?.length}>
                         <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput}
-                                       on:selected={() => selectedMapping = config.mappings.length }/>
+                                       on:selected={() => selectedMapping = config.mappings?.length }/>
                     </label>
                 {/if}
             </div>
@@ -182,7 +182,7 @@
                 {/each}
                 {#if config.freeform?.key}
                     <label class="flex">
-                        <input type="checkbox" name={"mappings-checkbox-"+config.id+"-"+config.mappings.length}
+                        <input type="checkbox" name={"mappings-checkbox-"+config.id+"-"+config.mappings?.length}
                                bind:checked={checkedMappings[config.mappings.length]}>
                         <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput}
                                        on:selected={() => checkedMappings[config.mappings.length] = true}/>

@@ -5,12 +5,14 @@ import Combine from "./UI/Base/Combine"
 import SpecialVisualizations from "./UI/SpecialVisualizations"
 import InputHelpers from "./UI/InputElement/InputHelpers"
 import BaseUIElement from "./UI/BaseUIElement"
-import { ImmutableStore, UIEventSource } from "./Logic/UIEventSource"
+import { UIEventSource } from "./Logic/UIEventSource"
 import { VariableUiElement } from "./UI/Base/VariableUIElement"
 import { FixedUiElement } from "./UI/Base/FixedUiElement"
 import Title from "./UI/Base/Title"
 import SvelteUIElement from "./UI/Base/SvelteUIElement"
 import ValidatedInput from "./UI/InputElement/ValidatedInput.svelte"
+import { SvgToPdf } from "./Utils/svgToPdf"
+import { Utils } from "./Utils"
 
 function testspecial() {
     const layout = new LayoutConfig(<any>theme, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
@@ -47,6 +49,17 @@ function testinput() {
     new Combine(els).SetClass("flex flex-col").AttachTo("maindiv")
 }
 
+async function testPdf() {
+    const svgs = await Promise.all(
+        SvgToPdf.templates["flyer_a4"].pages.map((url) => Utils.download(url))
+    )
+    console.log("Building svg")
+    const pdf = new SvgToPdf("Test", svgs, {})
+    new VariableUiElement(pdf.status).AttachTo("maindiv")
+    await pdf.ConvertSvg("nl")
+}
+
+testPdf().then((_) => console.log("All done"))
 //testinput()
 /*/
 testspecial()

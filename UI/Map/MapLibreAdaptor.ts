@@ -196,7 +196,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
     async exportAsPng(): Promise<Blob> {
         const map = this._maplibreMap.data
-        if (map === undefined) {
+        if (!map) {
             return undefined
         }
 
@@ -317,7 +317,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
     private async awaitStyleIsLoaded(): Promise<void> {
         const map = this._maplibreMap.data
-        if (map === undefined) {
+        if (!map) {
             return
         }
         while (!map?.isStyleLoaded()) {
@@ -335,7 +335,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
     private async setBackground() {
         const map = this._maplibreMap.data
-        if (map === undefined) {
+        if (!map) {
             return
         }
         const background: RasterLayerProperties = this.rasterLayer?.data?.properties
@@ -381,7 +381,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
     private setMaxBounds(bbox: undefined | BBox) {
         const map = this._maplibreMap.data
-        if (map === undefined) {
+        if (!map) {
             return
         }
         if (bbox) {
@@ -393,7 +393,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
     private setAllowMoving(allow: true | boolean | undefined) {
         const map = this._maplibreMap.data
-        if (map === undefined) {
+        if (!map) {
             return
         }
         if (allow === false) {
@@ -409,7 +409,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
     private setMinzoom(minzoom: number) {
         const map = this._maplibreMap.data
-        if (map === undefined) {
+        if (!map) {
             return
         }
         map.setMinZoom(minzoom)
@@ -417,7 +417,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
     private setMaxzoom(maxzoom: number) {
         const map = this._maplibreMap.data
-        if (map === undefined) {
+        if (!map) {
             return
         }
         map.setMaxZoom(maxzoom)
@@ -425,7 +425,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
     private setAllowZooming(allow: true | boolean | undefined) {
         const map = this._maplibreMap.data
-        if (map === undefined) {
+        if (!map) {
             return
         }
         if (allow === false) {
@@ -441,7 +441,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
     private setBounds(bounds: BBox) {
         const map = this._maplibreMap.data
-        if (map === undefined || bounds === undefined) {
+        if (!map || bounds === undefined) {
             return
         }
         const oldBounds = map.getBounds()

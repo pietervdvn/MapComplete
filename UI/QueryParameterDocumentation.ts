@@ -3,10 +3,9 @@ import Combine from "./Base/Combine"
 import Title from "./Base/Title"
 import List from "./Base/List"
 import Translations from "./i18n/Translations"
-import { QueryParameters } from "../Logic/Web/QueryParameters"
+import {QueryParameters} from "../Logic/Web/QueryParameters"
 import FeatureSwitchState from "../Logic/State/FeatureSwitchState"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
-import { DefaultGuiState } from "./DefaultGuiState"
 
 export default class QueryParameterDocumentation {
     private static QueryParamDocsIntro = [
@@ -48,7 +47,6 @@ export default class QueryParameterDocumentation {
                 },
             ],
         })
-        new DefaultGuiState() // Init a featureSwitchState to init all the parameters
         new FeatureSwitchState(dummyLayout)
 
         QueryParameters.GetQueryParameter(

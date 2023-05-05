@@ -465,7 +465,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
                     changeType: "conflation",
                 }
             )
-            allChanges.push(...(await addExtraTags.CreateChangeDescriptions(changes)))
+            allChanges.push(...(await addExtraTags.CreateChangeDescriptions()))
         }
 
         const newCoordinates = [...this.targetCoordinates]

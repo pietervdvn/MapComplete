@@ -6,7 +6,6 @@ import Translations from "./i18n/Translations"
 import Constants from "../Models/Constants"
 import LanguagePicker from "./LanguagePicker"
 import IndexText from "./BigComponents/IndexText"
-import { ImportViewerLinks } from "./BigComponents/UserInformation"
 import { LoginToggle } from "./Popup/LoginButton"
 import { ImmutableStore } from "../Logic/UIEventSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
@@ -29,7 +28,6 @@ export default class AllThemesGui {
                     osmConnection,
                     featureSwitchUserbadge: new ImmutableStore(true),
                 }),
-                new ImportViewerLinks(state.osmConnection),
                 Translations.t.general.aboutMapComplete.intro.SetClass("link-underline"),
                 new FixedUiElement("v" + Constants.vNumber).SetClass("block"),
             ])

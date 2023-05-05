@@ -36,6 +36,7 @@
     import OverlayToggle from "./BigComponents/OverlayToggle.svelte";
     import LevelSelector from "./BigComponents/LevelSelector.svelte";
     import Svg from "../Svg";
+    import ExtraLinkButton from "./BigComponents/ExtraLinkButton";
 
     export let state: ThemeViewState;
     let layout = state.layout;
@@ -97,10 +98,11 @@
                         construct={() =>(currentViewLayer.defaultIcon() ??  Svg.checkbox_empty_svg()).SetClass("w-8 h-8 cursor-pointer")}/>
             </MapControlButton>
         {/if}
+        <ToSvelte construct={() => new ExtraLinkButton(state, layout.extraLink)}></ToSvelte>
         <If condition={state.featureSwitchIsTesting}>
-    <span class="alert">
-      Testmode
-    </span>
+            <span class="alert">
+              Testmode
+            </span>
         </If>
 
     </div>

@@ -2,20 +2,21 @@ import jsPDF, { Matrix } from "jspdf"
 import { Translation, TypedTranslation } from "../UI/i18n/Translation"
 import { PngMapCreator } from "./pngMapCreator"
 import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
-import { Store } from "../Logic/UIEventSource"
-import "../assets/templates/Ubuntu-M-normal.js"
-import "../assets/templates/Ubuntu-L-normal.js"
-import "../assets/templates/UbuntuMono-B-bold.js"
+import "../assets/fonts/Ubuntu-M-normal.js"
+import "../assets/fonts/Ubuntu-L-normal.js"
+import "../assets/fonts/UbuntuMono-B-bold.js"
 import { makeAbsolute, parseSVG } from "svg-path-parser"
 import Translations from "../UI/i18n/Translations"
 import { Utils } from "../Utils"
 import Constants from "../Models/Constants"
 import Hash from "../Logic/Web/Hash"
 import ThemeViewState from "../Models/ThemeViewState"
+import { Store, UIEventSource } from "../Logic/UIEventSource"
+import { FixedUiElement } from "../UI/Base/FixedUiElement"
 
 class SvgToPdfInternals {
-    private readonly doc: jsPDF
     private static readonly dummyDoc: jsPDF = new jsPDF()
+    private readonly doc: jsPDF
     private readonly matrices: Matrix[] = []
     private readonly matricesInverted: Matrix[] = []
 
@@ -38,26 +39,6 @@ class SvgToPdfInternals {
         this.extractTranslation = (s) => extractTranslation(s)?.replace(/&nbsp;/g, " ")
         this.currentMatrix = this.doc.unitMatrix
         this.currentMatrixInverted = this.doc.unitMatrix
-    }
-
-    applyMatrices(): void {
-        let multiplied = this.doc.unitMatrix
-        let multipliedInv = this.doc.unitMatrix
-        for (const matrix of this.matrices) {
-            multiplied = this.doc.matrixMult(multiplied, matrix)
-        }
-        for (const matrix of this.matricesInverted) {
-            multipliedInv = this.doc.matrixMult(multiplied, matrix)
-        }
-        this.currentMatrix = multiplied
-        this.currentMatrixInverted = multipliedInv
-    }
-
-    addMatrix(m: Matrix) {
-        this.matrices.push(m)
-        this.matricesInverted.push(m.inversed())
-        this.doc.setCurrentTransformationMatrix(m)
-        this.applyMatrices()
     }
 
     public static extractMatrix(element: Element): Matrix {
@@ -107,22 +88,6 @@ class SvgToPdfInternals {
         return null
     }
 
-    public setTransform(element: Element): boolean {
-        const m = SvgToPdfInternals.extractMatrix(element)
-        if (m === null) {
-            return false
-        }
-        this.addMatrix(m)
-        return true
-    }
-
-    public undoTransform(): void {
-        this.matrices.pop()
-        const i = this.matricesInverted.pop()
-        this.doc.setCurrentTransformationMatrix(i)
-        this.applyMatrices()
-    }
-
     public static parseCss(styleContent: string, separator: string = ";"): Record<string, string> {
         if (styleContent === undefined || styleContent === null) {
             return {}
@@ -137,41 +102,36 @@ class SvgToPdfInternals {
         return r
     }
 
-    private drawRect(element: SVGRectElement) {
-        const x = Number(element.getAttribute("x"))
-        const y = Number(element.getAttribute("y"))
-        const width = Number(element.getAttribute("width"))
-        const height = Number(element.getAttribute("height"))
-        const ry = SvgToPdfInternals.attrNumber(element, "ry", false) ?? 0
-        const rx = SvgToPdfInternals.attrNumber(element, "rx", false) ?? 0
-        const css = SvgToPdfInternals.css(element)
-        if (css["fill-opacity"] !== "0" && css["fill"] !== "none") {
-            this.doc.setFillColor(css["fill"] ?? "black")
-            this.doc.roundedRect(x, y, width, height, rx, ry, "F")
+    static attrNumber(element: Element, name: string, recurseup: boolean = true): number {
+        const a = SvgToPdfInternals.attr(element, name, recurseup)
+        const n = parseFloat(a)
+        if (!isNaN(n)) {
+            return n
         }
-        if (css["stroke"] && css["stroke"] !== "none") {
-            this.doc.setLineWidth(Number(css["stroke-width"] ?? 1))
-            this.doc.setDrawColor(css["stroke"] ?? "black")
-            this.doc.roundedRect(x, y, width, height, rx, ry, "S")
-        }
-        return
+        return undefined
     }
 
-    private drawCircle(element: SVGCircleElement) {
-        const x = Number(element.getAttribute("cx"))
-        const y = Number(element.getAttribute("cy"))
-        const r = Number(element.getAttribute("r"))
-        const css = SvgToPdfInternals.css(element)
-        if (css["fill-opacity"] !== "0" && css["fill"] !== "none") {
-            this.doc.setFillColor(css["fill"] ?? "black")
-            this.doc.circle(x, y, r, "F")
-        }
-        if (css["stroke"] && css["stroke"] !== "none") {
-            this.doc.setLineWidth(Number(css["stroke-width"] ?? 1))
-            this.doc.setDrawColor(css["stroke"] ?? "black")
-            this.doc.circle(x, y, r, "S")
-        }
-        return
+    /**
+     * Helper function to calculate where the given point will end up.
+     * ALl the transforms of the parent elements are taking into account
+     * @param mapSpec
+     * @constructor
+     */
+    static GetActualXY(mapSpec: SVGTSpanElement): { x: number; y: number } {
+        let runningM = SvgToPdfInternals.dummyDoc.unitMatrix
+
+        let e: Element = mapSpec
+        do {
+            const m = SvgToPdfInternals.extractMatrix(e)
+            if (m !== null) {
+                runningM = SvgToPdfInternals.dummyDoc.matrixMult(runningM, m)
+            }
+            e = e.parentElement
+        } while (e !== null && e.parentElement != e)
+
+        const x = SvgToPdfInternals.attrNumber(mapSpec, "x")
+        const y = SvgToPdfInternals.attrNumber(mapSpec, "y")
+        return runningM.applyToPoint({ x, y })
     }
 
     private static attr(
@@ -214,13 +174,119 @@ class SvgToPdfInternals {
         return css
     }
 
-    static attrNumber(element: Element, name: string, recurseup: boolean = true): number {
-        const a = SvgToPdfInternals.attr(element, name, recurseup)
-        const n = parseFloat(a)
-        if (!isNaN(n)) {
-            return n
+    applyMatrices(): void {
+        let multiplied = this.doc.unitMatrix
+        let multipliedInv = this.doc.unitMatrix
+        for (const matrix of this.matrices) {
+            multiplied = this.doc.matrixMult(multiplied, matrix)
         }
-        return undefined
+        for (const matrix of this.matricesInverted) {
+            multipliedInv = this.doc.matrixMult(multiplied, matrix)
+        }
+        this.currentMatrix = multiplied
+        this.currentMatrixInverted = multipliedInv
+    }
+
+    addMatrix(m: Matrix) {
+        this.matrices.push(m)
+        this.matricesInverted.push(m.inversed())
+        this.doc.setCurrentTransformationMatrix(m)
+        this.applyMatrices()
+    }
+
+    public setTransform(element: Element): boolean {
+        const m = SvgToPdfInternals.extractMatrix(element)
+        if (m === null) {
+            return false
+        }
+        this.addMatrix(m)
+        return true
+    }
+
+    public undoTransform(): void {
+        this.matrices.pop()
+        const i = this.matricesInverted.pop()
+        this.doc.setCurrentTransformationMatrix(i)
+        this.applyMatrices()
+    }
+
+    public handleElement(element: SVGSVGElement | Element): void {
+        const isTransformed = this.setTransform(element)
+        try {
+            if (element.tagName === "tspan") {
+                if (element.childElementCount == 0) {
+                    this.drawTspan(element)
+                } else {
+                    for (let child of Array.from(element.children)) {
+                        this.handleElement(child)
+                    }
+                }
+            }
+
+            if (element.tagName === "image") {
+                this.drawImage(element)
+            }
+
+            if (element.tagName === "path") {
+                this.drawPath(<any>element)
+            }
+
+            if (element.tagName === "g" || element.tagName === "text") {
+                for (let child of Array.from(element.children)) {
+                    this.handleElement(child)
+                }
+            }
+
+            if (element.tagName === "rect") {
+                this.drawRect(<any>element)
+            }
+
+            if (element.tagName === "circle") {
+                this.drawCircle(<any>element)
+            }
+        } catch (e) {
+            console.error("Could not handle element", element, "due to", e)
+        }
+        if (isTransformed) {
+            this.undoTransform()
+        }
+    }
+
+    private drawRect(element: SVGRectElement) {
+        const x = Number(element.getAttribute("x"))
+        const y = Number(element.getAttribute("y"))
+        const width = Number(element.getAttribute("width"))
+        const height = Number(element.getAttribute("height"))
+        const ry = SvgToPdfInternals.attrNumber(element, "ry", false) ?? 0
+        const rx = SvgToPdfInternals.attrNumber(element, "rx", false) ?? 0
+        const css = SvgToPdfInternals.css(element)
+        if (css["fill-opacity"] !== "0" && css["fill"] !== "none") {
+            this.doc.setFillColor(css["fill"] ?? "black")
+            this.doc.roundedRect(x, y, width, height, rx, ry, "F")
+        }
+        if (css["stroke"] && css["stroke"] !== "none") {
+            this.doc.setLineWidth(Number(css["stroke-width"] ?? 1))
+            this.doc.setDrawColor(css["stroke"] ?? "black")
+            this.doc.roundedRect(x, y, width, height, rx, ry, "S")
+        }
+        return
+    }
+
+    private drawCircle(element: SVGCircleElement) {
+        const x = Number(element.getAttribute("cx"))
+        const y = Number(element.getAttribute("cy"))
+        const r = Number(element.getAttribute("r"))
+        const css = SvgToPdfInternals.css(element)
+        if (css["fill-opacity"] !== "0" && css["fill"] !== "none") {
+            this.doc.setFillColor(css["fill"] ?? "black")
+            this.doc.circle(x, y, r, "F")
+        }
+        if (css["stroke"] && css["stroke"] !== "none") {
+            this.doc.setLineWidth(Number(css["stroke-width"] ?? 1))
+            this.doc.setDrawColor(css["stroke"] ?? "black")
+            this.doc.circle(x, y, r, "S")
+        }
+        return
     }
 
     private drawTspan(tspan: Element) {
@@ -427,129 +493,43 @@ class SvgToPdfInternals {
             this.doc.fill()
         }
     }
-
-    public handleElement(element: SVGSVGElement | Element): void {
-        const isTransformed = this.setTransform(element)
-        try {
-            if (element.tagName === "tspan") {
-                if (element.childElementCount == 0) {
-                    this.drawTspan(element)
-                } else {
-                    for (let child of Array.from(element.children)) {
-                        this.handleElement(child)
-                    }
-                }
-            }
-
-            if (element.tagName === "image") {
-                this.drawImage(element)
-            }
-
-            if (element.tagName === "path") {
-                this.drawPath(<any>element)
-            }
-
-            if (element.tagName === "g" || element.tagName === "text") {
-                for (let child of Array.from(element.children)) {
-                    this.handleElement(child)
-                }
-            }
-
-            if (element.tagName === "rect") {
-                this.drawRect(<any>element)
-            }
-
-            if (element.tagName === "circle") {
-                this.drawCircle(<any>element)
-            }
-        } catch (e) {
-            console.error("Could not handle element", element, "due to", e)
-        }
-        if (isTransformed) {
-            this.undoTransform()
-        }
-    }
-
-    /**
-     * Helper function to calculate where the given point will end up.
-     * ALl the transforms of the parent elements are taking into account
-     * @param mapSpec
-     * @constructor
-     */
-    static GetActualXY(mapSpec: SVGTSpanElement): { x: number; y: number } {
-        let runningM = SvgToPdfInternals.dummyDoc.unitMatrix
-
-        let e: Element = mapSpec
-        do {
-            const m = SvgToPdfInternals.extractMatrix(e)
-            if (m !== null) {
-                runningM = SvgToPdfInternals.dummyDoc.matrixMult(runningM, m)
-            }
-            e = e.parentElement
-        } while (e !== null && e.parentElement != e)
-
-        const x = SvgToPdfInternals.attrNumber(mapSpec, "x")
-        const y = SvgToPdfInternals.attrNumber(mapSpec, "y")
-        return runningM.applyToPoint({ x, y })
-    }
 }
 
 export interface SvgToPdfOptions {
-    getFreeDiv: () => string
     disableMaps?: false | true
     textSubstitutions?: Record<string, string>
     beforePage?: (i: number) => void
     overrideLocation?: { lat: number; lon: number }
 }
 
-export class SvgToPdfPage {
+class SvgToPdfPage {
+    public readonly _svgRoot: SVGSVGElement
     private images: Record<string, HTMLImageElement> = {}
     private rects: Record<string, SVGRectElement> = {}
-    public readonly _svgRoot: SVGSVGElement
-    public readonly currentState: Store<string>
     private readonly importedTranslations: Record<string, string> = {}
     private readonly layerTranslations: Record<string, Record<string, any>> = {}
     private readonly options: SvgToPdfOptions
+    /**
+     * Small indicator for humans
+     * @private
+     */
+    private readonly _state: UIEventSource<string>
+    private _isPrepared = false
+    private state: UIEventSource<string>
 
-    constructor(page: string, options?: SvgToPdfOptions) {
+    constructor(page: string, state: UIEventSource<string>, options?: SvgToPdfOptions) {
+        this._state = state
         this.options = options ?? <SvgToPdfOptions>{}
         const parser = new DOMParser()
         const xmlDoc = parser.parseFromString(page, "image/svg+xml")
         this._svgRoot = xmlDoc.getElementsByTagName("svg")[0]
     }
 
-    private loadImage(element: Element): Promise<void> {
-        const xlink = element.getAttribute("xlink:href")
-        let img = document.createElement("img")
-
-        if (xlink.startsWith("data:image/svg+xml;")) {
-            const base64src = xlink
-            let svgXml = atob(
-                base64src.substring(base64src.indexOf(";base64,") + ";base64,".length)
-            )
-            const parser = new DOMParser()
-            const xmlDoc = parser.parseFromString(svgXml, "text/xml")
-            const svgRoot = xmlDoc.getElementsByTagName("svg")[0]
-            const svgWidthStr = svgRoot.getAttribute("width")
-            const svgHeightStr = svgRoot.getAttribute("height")
-            const svgWidth = parseFloat(svgWidthStr)
-            const svgHeight = parseFloat(svgHeightStr)
-            if (!svgWidthStr.endsWith("px")) {
-                svgRoot.setAttribute("width", svgWidth + "px")
-            }
-            if (!svgHeightStr.endsWith("px")) {
-                svgRoot.setAttribute("height", svgHeight + "px")
-            }
-            img.src = "data:image/svg+xml;base64," + btoa(svgRoot.outerHTML)
-        } else {
-            img.src = xlink
-        }
-
-        this.images[xlink] = img
-        return new Promise((resolve) => {
-            img.onload = (_) => {
-                resolve()
-            }
+    private static blobToBase64(blob): Promise<string> {
+        return new Promise((resolve, _) => {
+            const reader = new FileReader()
+            reader.onloadend = () => resolve(<string>reader.result)
+            reader.readAsDataURL(blob)
         })
     }
 
@@ -626,166 +606,6 @@ export class SvgToPdfPage {
                 await this.prepareElement(child, mapTextSpecs)
             }
         }
-    }
-
-    private _isPrepared = false
-
-    private async prepareMap(mapSpec: SVGTSpanElement): Promise<void> {
-        // Upper left point of the tspan
-        const { x, y } = SvgToPdfInternals.GetActualXY(mapSpec)
-
-        let textElement: Element = mapSpec
-        // We recurse up to get the actual, full specification
-        while (textElement.tagName !== "text") {
-            textElement = textElement.parentElement
-        }
-        const spec = textElement.textContent
-        const match = spec.match(/\$map\(([^)]+)\)$/)
-        if (match === null) {
-            throw "Invalid mapspec:" + spec
-        }
-        const params = SvgToPdfInternals.parseCss(match[1], ",")
-
-        let smallestRect: SVGRectElement = undefined
-        let smallestSurface: number = undefined
-        // We iterate over all the rectangles and pick the smallest (by surface area) that contains the upper left point of the tspan
-        for (const id in this.rects) {
-            const rect = this.rects[id]
-            const rx = SvgToPdfInternals.attrNumber(rect, "x")
-            const ry = SvgToPdfInternals.attrNumber(rect, "y")
-            const w = SvgToPdfInternals.attrNumber(rect, "width")
-            const h = SvgToPdfInternals.attrNumber(rect, "height")
-            const inBounds = rx <= x && x <= rx + w && ry <= y && y <= ry + h
-            if (!inBounds) {
-                continue
-            }
-            const surface = w * h
-            if (smallestSurface === undefined || smallestSurface > surface) {
-                smallestSurface = surface
-                smallestRect = rect
-            }
-        }
-
-        if (smallestRect === undefined) {
-            throw (
-                "No rectangle found around " +
-                spec +
-                ". Draw a rectangle around it, the map will be projected on that one"
-            )
-        }
-
-        const svgImage = document.createElement("image")
-        svgImage.setAttribute("x", smallestRect.getAttribute("x"))
-        svgImage.setAttribute("y", smallestRect.getAttribute("y"))
-        const width = SvgToPdfInternals.attrNumber(smallestRect, "width")
-        const height = SvgToPdfInternals.attrNumber(smallestRect, "height")
-        svgImage.setAttribute("width", "" + width)
-        svgImage.setAttribute("height", "" + height)
-
-        let layout = AllKnownLayouts.allKnownLayouts.get(params["theme"])
-        if (layout === undefined) {
-            console.error("Could not show map with parameters", params)
-            throw (
-                "Theme not found:" + params["theme"] + ". Use theme: to define which theme to use. "
-            )
-        }
-        layout.widenFactor = 0
-        layout.overpassTimeout = 600
-        layout.defaultBackgroundId = params["background"] ?? layout.defaultBackgroundId
-        for (const paramsKey in params) {
-            if (paramsKey.startsWith("layer-")) {
-                const layerName = paramsKey.substring("layer-".length)
-                const key = params[paramsKey].toLowerCase().trim()
-                const layer = layout.layers.find((l) => l.id === layerName)
-                if (layer === undefined) {
-                    throw "No layer found for " + paramsKey
-                }
-                if (key === "force") {
-                    layer.minzoom = 0
-                    layer.minzoomVisible = 0
-                }
-            }
-        }
-        const zoom = Number(params["zoom"] ?? params["z"] ?? 14)
-
-        Hash.hash.setData(undefined)
-        //  QueryParameters.ClearAll()
-
-        const state = new ThemeViewState(layout)
-        state.mapProperties.location.setData({
-            lat: this.options?.overrideLocation?.lat ?? Number(params["lat"] ?? 51.05016),
-            lon: this.options?.overrideLocation?.lon ?? Number(params["lon"] ?? 3.717842),
-        })
-        state.mapProperties.zoom.setData(zoom)
-
-        console.log("Params are", params, params["layers"] === "none")
-
-        const fl = Array.from(state.layerState.filteredLayers.values())
-        for (const filteredLayer of fl) {
-            if (params["layer-" + filteredLayer.layerDef.id] !== undefined) {
-                filteredLayer.isDisplayed.setData(
-                    params["layer-" + filteredLayer.layerDef.id].trim().toLowerCase() !== "false"
-                )
-            } else if (params["layers"] === "none") {
-                filteredLayer.isDisplayed.setData(false)
-            } else if (filteredLayer.layerDef.id.startsWith("note_import")) {
-                filteredLayer.isDisplayed.setData(false)
-            }
-        }
-
-        for (const paramsKey in params) {
-            if (paramsKey.startsWith("layer-")) {
-                const layerName = paramsKey.substring("layer-".length)
-                const key = params[paramsKey].toLowerCase().trim()
-                const isDisplayed = key === "true" || key === "force"
-                const layer = fl.find((l) => l.layerDef.id === layerName)
-                console.log(
-                    "Setting ",
-                    layer?.layerDef?.id,
-                    " to visibility",
-                    isDisplayed,
-                    "(minzoom:",
-                    layer?.layerDef?.minzoomVisible,
-                    layer?.layerDef?.minzoom,
-                    ")"
-                )
-                layer.isDisplayed.setData(isDisplayed)
-                if (key === "force") {
-                    layer.layerDef.minzoom = 0
-                    layer.layerDef.minzoomVisible = 0
-                    layer.isDisplayed.addCallback((isDisplayed) => {
-                        if (!isDisplayed) {
-                            console.warn("Forcing layer " + paramsKey + " as true")
-                            layer.isDisplayed.setData(true)
-                        }
-                    })
-                }
-            }
-        }
-
-        const pngCreator = new PngMapCreator(state, {
-            width,
-            height,
-            scaling: Number(params["scaling"] ?? 1.5),
-            divId: this.options.getFreeDiv(),
-            dummyMode: this.options.disableMaps,
-        })
-        const png = await pngCreator.CreatePng("image")
-
-        svgImage.setAttribute("xlink:href", png)
-        smallestRect.parentElement.insertBefore(svgImage, smallestRect)
-        await this.prepareElement(svgImage, [])
-
-        const smallestRectCss = SvgToPdfInternals.parseCss(smallestRect.getAttribute("style"))
-        smallestRectCss["fill-opacity"] = "0"
-        smallestRect.setAttribute(
-            "style",
-            Object.keys(smallestRectCss)
-                .map((k) => k + ":" + smallestRectCss[k])
-                .join(";")
-        )
-
-        textElement.parentElement.removeChild(textElement)
     }
 
     public async PrepareLanguage(language: string) {
@@ -888,31 +708,219 @@ export class SvgToPdfPage {
             console.error("Could not get textFor from ", t, "for path", text)
         }
     }
+
+    private loadImage(element: Element): Promise<void> {
+        const xlink = element.getAttribute("xlink:href")
+        let img = document.createElement("img")
+
+        if (xlink.startsWith("data:image/svg+xml;")) {
+            const base64src = xlink
+            let svgXml = atob(
+                base64src.substring(base64src.indexOf(";base64,") + ";base64,".length)
+            )
+            const parser = new DOMParser()
+            const xmlDoc = parser.parseFromString(svgXml, "text/xml")
+            const svgRoot = xmlDoc.getElementsByTagName("svg")[0]
+            const svgWidthStr = svgRoot.getAttribute("width")
+            const svgHeightStr = svgRoot.getAttribute("height")
+            const svgWidth = parseFloat(svgWidthStr)
+            const svgHeight = parseFloat(svgHeightStr)
+            if (!svgWidthStr.endsWith("px")) {
+                svgRoot.setAttribute("width", svgWidth + "px")
+            }
+            if (!svgHeightStr.endsWith("px")) {
+                svgRoot.setAttribute("height", svgHeight + "px")
+            }
+            img.src = "data:image/svg+xml;base64," + btoa(svgRoot.outerHTML)
+        } else {
+            img.src = xlink
+        }
+
+        this.images[xlink] = img
+        return new Promise((resolve) => {
+            img.onload = (_) => {
+                resolve()
+            }
+        })
+    }
+
+    private async prepareMap(mapSpec: SVGTSpanElement): Promise<void> {
+        // Upper left point of the tspan
+        const { x, y } = SvgToPdfInternals.GetActualXY(mapSpec)
+
+        let textElement: Element = mapSpec
+        // We recurse up to get the actual, full specification
+        while (textElement.tagName !== "text") {
+            textElement = textElement.parentElement
+        }
+        const spec = textElement.textContent
+        const match = spec.match(/\$map\(([^)]+)\)$/)
+        if (match === null) {
+            throw "Invalid mapspec:" + spec
+        }
+        const params = SvgToPdfInternals.parseCss(match[1], ",")
+
+        let smallestRect: SVGRectElement = undefined
+        let smallestSurface: number = undefined
+        // We iterate over all the rectangles and pick the smallest (by surface area) that contains the upper left point of the tspan
+        for (const id in this.rects) {
+            const rect = this.rects[id]
+            const rx = SvgToPdfInternals.attrNumber(rect, "x")
+            const ry = SvgToPdfInternals.attrNumber(rect, "y")
+            const w = SvgToPdfInternals.attrNumber(rect, "width")
+            const h = SvgToPdfInternals.attrNumber(rect, "height")
+            const inBounds = rx <= x && x <= rx + w && ry <= y && y <= ry + h
+            if (!inBounds) {
+                continue
+            }
+            const surface = w * h
+            if (smallestSurface === undefined || smallestSurface > surface) {
+                smallestSurface = surface
+                smallestRect = rect
+            }
+        }
+
+        if (smallestRect === undefined) {
+            throw (
+                "No rectangle found around " +
+                spec +
+                ". Draw a rectangle around it, the map will be projected on that one"
+            )
+        }
+
+        const svgImage = document.createElement("image")
+        svgImage.setAttribute("x", smallestRect.getAttribute("x"))
+        svgImage.setAttribute("y", smallestRect.getAttribute("y"))
+        const width = SvgToPdfInternals.attrNumber(smallestRect, "width")
+        const height = SvgToPdfInternals.attrNumber(smallestRect, "height")
+        svgImage.setAttribute("width", "" + width)
+        svgImage.setAttribute("height", "" + height)
+
+        let layout = AllKnownLayouts.allKnownLayouts.get(params["theme"])
+        if (layout === undefined) {
+            console.error("Could not show map with parameters", params)
+            throw (
+                "Theme not found:" + params["theme"] + ". Use theme: to define which theme to use. "
+            )
+        }
+        layout.widenFactor = 0
+        layout.overpassTimeout = 600
+        layout.defaultBackgroundId = params["background"] ?? layout.defaultBackgroundId
+        for (const paramsKey in params) {
+            if (paramsKey.startsWith("layer-")) {
+                const layerName = paramsKey.substring("layer-".length)
+                const key = params[paramsKey].toLowerCase().trim()
+                const layer = layout.layers.find((l) => l.id === layerName)
+                if (layer === undefined) {
+                    throw "No layer found for " + paramsKey
+                }
+                if (key === "force") {
+                    layer.minzoom = 0
+                    layer.minzoomVisible = 0
+                }
+            }
+        }
+        const zoom = Number(params["zoom"] ?? params["z"] ?? 14)
+
+        Hash.hash.setData(undefined)
+        //  QueryParameters.ClearAll()
+        const state = new ThemeViewState(layout)
+        state.mapProperties.location.setData({
+            lat: this.options?.overrideLocation?.lat ?? Number(params["lat"] ?? 51.05016),
+            lon: this.options?.overrideLocation?.lon ?? Number(params["lon"] ?? 3.717842),
+        })
+        state.mapProperties.zoom.setData(zoom)
+
+        console.log("Params are", params, params["layers"] === "none")
+
+        const fl = Array.from(state.layerState.filteredLayers.values())
+        for (const filteredLayer of fl) {
+            if (params["layer-" + filteredLayer.layerDef.id] !== undefined) {
+                filteredLayer.isDisplayed.setData(
+                    params["layer-" + filteredLayer.layerDef.id].trim().toLowerCase() !== "false"
+                )
+            } else if (params["layers"] === "none") {
+                filteredLayer.isDisplayed.setData(false)
+            } else if (filteredLayer.layerDef.id.startsWith("note_import")) {
+                filteredLayer.isDisplayed.setData(false)
+            }
+        }
+
+        for (const paramsKey in params) {
+            if (paramsKey.startsWith("layer-")) {
+                const layerName = paramsKey.substring("layer-".length)
+                const key = params[paramsKey].toLowerCase().trim()
+                const isDisplayed = key === "true" || key === "force"
+                const layer = fl.find((l) => l.layerDef.id === layerName)
+                console.log(
+                    "Setting ",
+                    layer?.layerDef?.id,
+                    " to visibility",
+                    isDisplayed,
+                    "(minzoom:",
+                    layer?.layerDef?.minzoomVisible,
+                    layer?.layerDef?.minzoom,
+                    ")"
+                )
+                layer.isDisplayed.setData(isDisplayed)
+                if (key === "force") {
+                    layer.layerDef.minzoom = 0
+                    layer.layerDef.minzoomVisible = 0
+                    layer.isDisplayed.addCallback((isDisplayed) => {
+                        if (!isDisplayed) {
+                            console.warn("Forcing layer " + paramsKey + " as true")
+                            layer.isDisplayed.setData(true)
+                        }
+                    })
+                }
+            }
+        }
+        console.log("Creating a map width ", width, height, params.scalingFactor)
+        const pngCreator = new PngMapCreator(state, {
+            width: width * 4,
+            height: height * 4,
+        })
+        const png = await pngCreator.CreatePng(this._state)
+        svgImage.setAttribute("xlink:href", await SvgToPdfPage.blobToBase64(png))
+        smallestRect.parentElement.insertBefore(svgImage, smallestRect)
+        await this.prepareElement(svgImage, [])
+        const smallestRectCss = SvgToPdfInternals.parseCss(smallestRect.getAttribute("style"))
+        smallestRectCss["fill-opacity"] = "0"
+        smallestRect.setAttribute(
+            "style",
+            Object.keys(smallestRectCss)
+                .map((k) => k + ":" + smallestRectCss[k])
+                .join(";")
+        )
+
+        textElement.parentElement.removeChild(textElement)
+    }
 }
 
 export class SvgToPdf {
     public static readonly templates: Record<
-        string,
+        "flyer_a4" | "poster_a3" | "poster_a2",
         { pages: string[]; description: string | Translation }
     > = {
         flyer_a4: {
             pages: [
-                "/assets/templates/MapComplete-flyer.svg",
-                "/assets/templates/MapComplete-flyer.back.svg",
+                "./assets/templates/MapComplete-flyer.svg",
+                "./assets/templates/MapComplete-flyer.back.svg",
             ],
             description: Translations.t.flyer.description,
         },
         poster_a3: {
-            pages: ["/assets/templates/MapComplete-poster-a3.svg"],
+            pages: ["./assets/templates/MapComplete-poster-a3.svg"],
             description: "A basic A3 poster (similar to the flyer)",
         },
         poster_a2: {
-            pages: ["/assets/templates/MapComplete-poster-a2.svg"],
+            pages: ["./assets/templates/MapComplete-poster-a2.svg"],
             description: "A basic A2 poster (similar to the flyer); scaled up from the A3 poster",
         },
     }
+    public readonly status: Store<string>
+    public readonly _status: UIEventSource<string>
     private readonly _title: string
-
     private readonly _pages: SvgToPdfPage[]
 
     constructor(title: string, pages: string[], options?: SvgToPdfOptions) {
@@ -926,24 +934,34 @@ export class SvgToPdf {
             ).length
         options.textSubstitutions["mapCount"] = mapCount
 
-        this._pages = pages.map((page) => new SvgToPdfPage(page, options))
+        const state = new UIEventSource<string>("Initializing...")
+        this.status = state
+        this._status = state
+        this._pages = pages.map((page) => new SvgToPdfPage(page, state, options))
     }
 
     public async ConvertSvg(language: string): Promise<void> {
+        console.log("Building svg...")
         const firstPage = this._pages[0]._svgRoot
         const width = SvgToPdfInternals.attrNumber(firstPage, "width")
         const height = SvgToPdfInternals.attrNumber(firstPage, "height")
         const mode = width > height ? "landscape" : "portrait"
 
         await this.Prepare()
+        console.log("Global prepare done")
         for (const page of this._pages) {
             await page.Prepare()
             await page.PrepareLanguage(language)
         }
 
+        this._status.setData("Maps are rendered, building pdf")
+        new FixedUiElement("").AttachTo("extradiv")
+        console.log("Pages are prepared")
+
         const doc = new jsPDF(mode, undefined, [width, height])
         doc.advancedAPI((advancedApi) => {
             for (let i = 0; i < this._pages.length; i++) {
+                console.log("Rendering page", i)
                 if (i > 0) {
                     const page = this._pages[i]._svgRoot
                     const width = SvgToPdfInternals.attrNumber(page, "width")
@@ -967,6 +985,7 @@ export class SvgToPdf {
                 this._pages[i].drawPage(advancedApi, i, language)
             }
         })
+        console.log("Exporting...")
         await doc.save(this._title + "." + language + ".pdf")
     }
 

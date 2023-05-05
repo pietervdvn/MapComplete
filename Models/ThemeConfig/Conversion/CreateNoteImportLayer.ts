@@ -1,9 +1,9 @@
-import { Conversion } from "./Conversion"
+import {Conversion} from "./Conversion"
 import LayerConfig from "../LayerConfig"
-import { LayerConfigJson } from "../Json/LayerConfigJson"
+import {LayerConfigJson} from "../Json/LayerConfigJson"
 import Translations from "../../../UI/i18n/Translations"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
-import { Translation, TypedTranslation } from "../../../UI/i18n/Translation"
+import {Translation, TypedTranslation} from "../../../UI/i18n/Translation"
 
 export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, LayerConfigJson> {
     /**
@@ -82,7 +82,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             return { ...translation.translations, _context: translation.context }
         }
 
-        function trs<T>(translation: TypedTranslation<T>, subs: T): object {
+        function trs<T>(translation: TypedTranslation<T>, subs: T): Record<string, string> {
             return { ...translation.Subs(subs).translations, _context: translation.context }
         }
 
