@@ -14,13 +14,16 @@
   export let type: ValidatorType;
   export let feedback: UIEventSource<Translation> | undefined = undefined;
   export let getCountry: () => string | undefined
-  
+  export let placeholder: string | Translation | undefined
   let validator : Validator = Validators.get(type)
+  let _placeholder = placeholder ?? validator?.getPlaceholder() ?? type
+  
   $: {
     // The type changed -> reset some values
     validator = Validators.get(type)
     _value.setData(value.data ?? "")
     feedback =  feedback?.setData(validator?.getFeedback(_value.data, getCountry));
+    _placeholder = placeholder ?? validator?.getPlaceholder() ?? type
   }
   
   onDestroy(_value.addCallbackAndRun(v => {
@@ -50,10 +53,10 @@
 </script>
 
 {#if validator.textArea}
-  <textarea class="w-full" bind:value={$_value} inputmode={validator.inputmode ?? "text"}></textarea>
+  <textarea class="w-full" bind:value={$_value} inputmode={validator.inputmode ?? "text"} placeholder={_placeholder}></textarea>
 {:else }
   <span class="inline-flex">
-    <input bind:this={htmlElem} bind:value={$_value} inputmode={validator.inputmode ?? "text"}>
+    <input bind:this={htmlElem} bind:value={$_value} inputmode={validator.inputmode ?? "text"} placeholder={_placeholder}>
     {#if !$isValid}
       <ExclamationIcon class="h-6 w-6 -ml-6"></ExclamationIcon>
     {/if}

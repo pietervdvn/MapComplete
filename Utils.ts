@@ -1,4 +1,5 @@
 import colors from "./assets/colors.json"
+import {HTMLElement} from "node-html-parser";
 
 export class Utils {
     /**
@@ -1365,7 +1366,25 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         d.setUTCMinutes(0)
     }
 
-    public static findParentWithScrolling(element: HTMLElement): HTMLElement {
+    public static scrollIntoView(element: HTMLBaseElement){
+        console.log("Scrolling into view:", element)
+        // Is the element completely in the view?
+        const parentRect = Utils.findParentWithScrolling(
+            element
+        ).getBoundingClientRect()
+        const elementRect = element.getBoundingClientRect()
+
+        // Check if the element is within the vertical bounds of the parent element
+        const topIsVisible = elementRect.top >= parentRect.top
+        const bottomIsVisible = elementRect.bottom <= parentRect.bottom
+        const inView = topIsVisible && bottomIsVisible
+        if (inView) {
+            return
+        }
+        console.log("Actually scrolling...")
+        element.scrollIntoView({behavior: "smooth", block: "nearest"})
+    }
+    public static findParentWithScrolling(element: HTMLBaseElement): HTMLBaseElement {
         // Check if the element itself has scrolling
         if (element.scrollHeight > element.clientHeight) {
             return element
@@ -1377,7 +1396,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
 
         // If the element has a parent, repeat the process for the parent element
-        return Utils.findParentWithScrolling(element.parentElement)
+        return Utils.findParentWithScrolling(<HTMLBaseElement> element.parentElement)
     }
 
     /**

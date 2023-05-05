@@ -3,10 +3,8 @@
     import SpecialTranslation from "./SpecialTranslation.svelte";
     import type {SpecialVisualizationState} from "../../SpecialVisualization";
     import type {Feature} from "geojson";
-    import {Store, UIEventSource} from "../../../Logic/UIEventSource";
+    import {UIEventSource} from "../../../Logic/UIEventSource";
     import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
-    import Locale from "../../i18n/Locale";
-    import {onDestroy} from "svelte";
 
     export let selectedElement: Feature
     export let tags: UIEventSource<Record<string, string>>;

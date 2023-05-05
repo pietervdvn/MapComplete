@@ -63,9 +63,3 @@
 <section>
   <ToSvelte construct={tagsTable} />
 </section>
-
-<style lang="scss">
-  section {
-    @apply border border-solid border-black rounded-2xl p-4 block;
-  }
-</style>

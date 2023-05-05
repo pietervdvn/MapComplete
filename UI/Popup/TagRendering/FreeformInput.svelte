@@ -14,6 +14,11 @@
   export let tags: UIEventSource<Record<string, string>>;
 
   export let feature: Feature = undefined;
+  
+  let placeholder = config.freeform?.placeholder
+  $: {
+    placeholder = config.freeform?.placeholder
+  }
 
   let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined);
 
@@ -29,11 +34,11 @@
   {#if config.freeform.inline}
     <Inline key={config.freeform.key} {tags} template={config.render}>
       <ValidatedInput {feedback} {getCountry} on:selected={() => dispatch("selected")}
-                      type={config.freeform.type} {value}></ValidatedInput>
+                      type={config.freeform.type} {placeholder} {value}></ValidatedInput>
     </Inline>
   {:else}
     <ValidatedInput {feedback} {getCountry} on:selected={() => dispatch("selected")}
-                    type={config.freeform.type} {value}></ValidatedInput>
+                    type={config.freeform.type} {placeholder} {value}></ValidatedInput>
 
   {/if}
   <InputHelper args={config.freeform.helperArgs} {feature} type={config.freeform.type} {value}/>

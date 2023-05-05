@@ -131,14 +131,12 @@
             </div>
         {/if}
 
-
         {#if config.mappings?.length >= 8}
             <div class="flex w-full">
                 <img src="./assets/svg/search.svg" class="w-6 h-6"/>
                 <input type="text" bind:value={$searchTerm} class="w-full">
             </div>
         {/if}
-
 
         {#if config.freeform?.key && !(mappings?.length > 0)}
             <!-- There are no options to choose from, simply show the input element: fill out the text field -->

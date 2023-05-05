@@ -1,59 +1,55 @@
 import Combine from "./Base/Combine"
-import { FixedUiElement } from "./Base/FixedUiElement"
+import {FixedUiElement} from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import Table from "./Base/Table"
-import {
-    RenderingSpecification,
-    SpecialVisualization,
-    SpecialVisualizationState,
-} from "./SpecialVisualization"
-import { HistogramViz } from "./Popup/HistogramViz"
-import { MinimapViz } from "./Popup/MinimapViz"
-import { ShareLinkViz } from "./Popup/ShareLinkViz"
-import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
-import { MultiApplyViz } from "./Popup/MultiApplyViz"
-import { AddNoteCommentViz } from "./Popup/AddNoteCommentViz"
-import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz"
-import { ConflateButton, ImportPointButton, ImportWayButton } from "./Popup/ImportButton"
+import {RenderingSpecification, SpecialVisualization, SpecialVisualizationState,} from "./SpecialVisualization"
+import {HistogramViz} from "./Popup/HistogramViz"
+import {MinimapViz} from "./Popup/MinimapViz"
+import {ShareLinkViz} from "./Popup/ShareLinkViz"
+import {UploadToOsmViz} from "./Popup/UploadToOsmViz"
+import {MultiApplyViz} from "./Popup/MultiApplyViz"
+import {AddNoteCommentViz} from "./Popup/AddNoteCommentViz"
+import {PlantNetDetectionViz} from "./Popup/PlantNetDetectionViz"
+import {ConflateButton, ImportPointButton, ImportWayButton} from "./Popup/ImportButton"
 import TagApplyButton from "./Popup/TagApplyButton"
-import { CloseNoteButton } from "./Popup/CloseNoteButton"
-import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
-import { Store, Stores, UIEventSource } from "../Logic/UIEventSource"
+import {CloseNoteButton} from "./Popup/CloseNoteButton"
+import {MapillaryLinkVis} from "./Popup/MapillaryLinkVis"
+import {Store, Stores, UIEventSource} from "../Logic/UIEventSource"
 import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders"
-import { ImageCarousel } from "./Image/ImageCarousel"
-import { ImageUploadFlow } from "./Image/ImageUploadFlow"
-import { VariableUiElement } from "./Base/VariableUIElement"
-import { Utils } from "../Utils"
-import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata"
-import { Translation } from "./i18n/Translation"
+import {ImageCarousel} from "./Image/ImageCarousel"
+import {ImageUploadFlow} from "./Image/ImageUploadFlow"
+import {VariableUiElement} from "./Base/VariableUIElement"
+import {Utils} from "../Utils"
+import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata"
+import {Translation} from "./i18n/Translation"
 import Translations from "./i18n/Translations"
 import ReviewForm from "./Reviews/ReviewForm"
 import ReviewElement from "./Reviews/ReviewElement"
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 import LiveQueryHandler from "../Logic/Web/LiveQueryHandler"
-import { SubtleButton } from "./Base/SubtleButton"
+import {SubtleButton} from "./Base/SubtleButton"
 import Svg from "../Svg"
-import { OpenIdEditor, OpenJosm } from "./BigComponents/CopyrightPanel"
+import {OpenIdEditor, OpenJosm} from "./BigComponents/CopyrightPanel"
 import Hash from "../Logic/Web/Hash"
 import NoteCommentElement from "./Popup/NoteCommentElement"
 import ImgurUploader from "../Logic/ImageProviders/ImgurUploader"
 import FileSelectorButton from "./Input/FileSelectorButton"
-import { LoginToggle } from "./Popup/LoginButton"
+import {LoginToggle} from "./Popup/LoginButton"
 import Toggle from "./Input/Toggle"
-import { SubstitutedTranslation } from "./SubstitutedTranslation"
+import {SubstitutedTranslation} from "./SubstitutedTranslation"
 import List from "./Base/List"
 import StatisticsPanel from "./BigComponents/StatisticsPanel"
 import AutoApplyButton from "./Popup/AutoApplyButton"
-import { LanguageElement } from "./Popup/LanguageElement"
+import {LanguageElement} from "./Popup/LanguageElement"
 import FeatureReviews from "../Logic/Web/MangroveReviews"
 import Maproulette from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
-import { BBoxFeatureSourceForLayer } from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
+import {BBoxFeatureSourceForLayer} from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
 import QuestionViz from "./Popup/QuestionViz"
-import { Feature, Point } from "geojson"
-import { GeoOperations } from "../Logic/GeoOperations"
+import {Feature, Point} from "geojson"
+import {GeoOperations} from "../Logic/GeoOperations"
 import CreateNewNote from "./Popup/CreateNewNote.svelte"
 import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
 import UserProfile from "./BigComponents/UserProfile.svelte"
@@ -61,25 +57,21 @@ import LanguagePicker from "./LanguagePicker"
 import Link from "./Base/Link"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
-import EditableTagRendering from "./Popup/EditableTagRendering"
-import NearbyImages, {
-    NearbyImageOptions,
-    P4CPicture,
-    SelectOneNearbyImage,
-} from "./Popup/NearbyImages"
-import { Tag } from "../Logic/Tags/Tag"
+import NearbyImages, {NearbyImageOptions, P4CPicture, SelectOneNearbyImage,} from "./Popup/NearbyImages"
+import {Tag} from "../Logic/Tags/Tag"
 import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction"
-import { And } from "../Logic/Tags/And"
-import { SaveButton } from "./Popup/SaveButton"
+import {And} from "../Logic/Tags/And"
+import {SaveButton} from "./Popup/SaveButton"
 import Lazy from "./Base/Lazy"
-import { CheckBox } from "./Input/Checkboxes"
+import {CheckBox} from "./Input/Checkboxes"
 import Slider from "./Input/Slider"
 import DeleteWizard from "./Popup/DeleteWizard"
-import { OsmId, OsmTags, WayId } from "../Models/OsmFeature"
+import {OsmId, OsmTags, WayId} from "../Models/OsmFeature"
 import MoveWizard from "./Popup/MoveWizard"
 import SplitRoadWizard from "./Popup/SplitRoadWizard"
-import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
+import {ExportAsGpxViz} from "./Popup/ExportAsGpxViz"
 import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte"
+import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svelte";
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -250,22 +242,22 @@ class StealViz implements SpecialVisualization {
                     return undefined
                 }
                 const otherTags = state.featureProperties.getStore(featureId)
+                const otherFeature = state.indexedFeatures.featuresById.data.get(featureId);
                 const elements: BaseUIElement[] = []
                 for (const [layer, tagRendering] of tagRenderings) {
-                    const el = new EditableTagRendering(
-                        otherTags,
-                        tagRendering,
-                        layer.units,
+                    elements.push(new SvelteUIElement(TagRenderingEditable, {
+                        config: tagRendering,
+                        tags: otherTags,
+                        selectedElement: otherFeature,
                         state,
-                        {}
-                    )
-                    elements.push(el)
+                        layer
+                    }))
                 }
                 if (elements.length === 1) {
                     return elements[0]
                 }
                 return new Combine(elements).SetClass("flex flex-col")
-            })
+            }, [state.indexedFeatures.featuresById])
         )
     }
 
@@ -638,7 +630,7 @@ export default class SpecialVisualizations {
                 ],
                 example:
                     "`{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height",
-                constr: (_, tagsSource, args, feature, layer) => {
+                constr: (_, tagsSource, args) => {
                     const keys = args[0].split(";").map((k) => k.trim())
                     const wikiIds: Store<string[]> = tagsSource.map((tags) => {
                         const key = keys.find((k) => tags[k] !== undefined && tags[k] !== "")

@@ -52,6 +52,10 @@ export abstract class Validator {
         }
     }
 
+    public getPlaceholder(){
+        return Translations.t.validation[this.name].description
+    }
+
     public isValid(string: string, requestCountry?: () => string): boolean {
         return true
     }
