@@ -251,6 +251,7 @@ export default class UserRelatedState {
             _theme: layout?.id,
             _backend: this.osmConnection.Backend(),
             _applicationOpened: new Date().toISOString(),
+            _supports_sharing: window.navigator.share ? "yes" : "no"
         })
 
         const osmConnection = this.osmConnection

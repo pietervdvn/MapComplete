@@ -20,7 +20,6 @@
   onDestroy(tags.addCallbackAndRun(tags => {
     _tags = tags;
   }));
-  console.log(layer.titleIcons.map(tr => tr.id));
 
   let _metatags: Record<string, string>;
   onDestroy(state.userRelatedState.preferencesAsTags.addCallbackAndRun(tags => {
@@ -41,7 +40,7 @@
 
       <div class="flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2">
         {#each layer.titleIcons as titleIconConfig}
-          {#if titleIconConfig.IsKnown(_tags)}
+          {#if ( titleIconConfig.condition?.matchesProperties(_tags) ?? true) && (titleIconConfig.metacondition?.matchesProperties(_tags) ?? true) && titleIconConfig.IsKnown(_tags)}
             <div class="w-8 h-8">
               <TagRenderingAnswer config={titleIconConfig} {tags} {selectedElement} {state}
                                   {layer}></TagRenderingAnswer>

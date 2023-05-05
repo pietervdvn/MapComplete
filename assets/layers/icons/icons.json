@@ -100,7 +100,8 @@
       "labels": [
         "defaults"
       ],
-      "render": "{share_link()}"
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
     },
     {
       "id": "osmlink",
