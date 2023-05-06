@@ -28,6 +28,17 @@
     "sources": []
   },
   {
+    "path": "drinking_water.svg",
+    "license": "CC0",
+    "authors": [
+      "Andy Allan",
+      "Michael Glanznig"
+    ],
+    "sources": [
+      "https://github.com/gravitystorm/openstreetmap-carto/blob/master/symbols/amenity/drinking_water.svg"
+    ]
+  },
+  {
     "path": "public_transport_tickets.svg",
     "license": "CC0",
     "authors": [

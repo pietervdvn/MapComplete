@@ -232,7 +232,8 @@
         "entrance",
         "elevator",
         "waste_basket",
-        "atm"
+        "atm",
+        "clock"
       ],
       "override": {
         "minzoom": 19
@@ -245,6 +246,17 @@
         "mapRendering": [
           {
             "icon": "./assets/themes/stations/bench.svg"
+          }
+        ]
+      }
+    },
+    {
+      "builtin": "drinking_water",
+      "override": {
+        "minzoom": 19,
+        "mapRendering": [
+          {
+            "icon": "circle:white;./assets/themes/stations/drinking_water.svg"
           }
         ]
       }
@@ -291,6 +303,7 @@
         }
       },
       "tagRenderings": [
+        "images",
         {
           "id": "type",
           "question": {
