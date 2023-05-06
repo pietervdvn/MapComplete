@@ -1035,7 +1035,7 @@
                 "description": "Capa que mostra les estacions de tren",
                 "name": "Estació de tren"
             },
-            "15": {
+            "16": {
                 "description": "Pantalles que mostren els trens que sortiran de l'estació",
                 "name": "Taulers de sortides",
                 "presets": {
