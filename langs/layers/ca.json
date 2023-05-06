@@ -3693,7 +3693,7 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "{marca} bústia intel·ligent"
+                    "then": "{brand} bústia intel·ligent"
                 }
             },
             "render": "Bústia intel·ligent"
@@ -4094,7 +4094,7 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Prestatgeria pública <i>{nom}</i>"
+                    "then": "Prestatgeria pública <i>{name}</i>"
                 }
             },
             "render": "Bústia per llibres"
@@ -4440,7 +4440,7 @@
         "tagRenderings": {
             "capacity": {
                 "question": "Quants alumnes poden matricular-se com a màxim a aquesta escola?",
-                "render": "A aquesta escola poden inscriure's com a màxim {capacitat} estudiants"
+                "render": "A aquesta escola poden inscriure's com a màxim {capacity} estudiants"
             },
             "education-level-belgium": {
                 "mappings": {
