@@ -56,7 +56,21 @@
           "de": "Name des Betreibers",
           "nl": "Naam van de beheerder"
         }
-      }
+      },
+      "mappings": [
+        {
+          "if": "operator=Nederlandse Spoorwegen",
+          "then": {
+            "en": "Dutch Railways (NS)",
+            "nl": "Nederlandse Spoorwegen (NS)",
+            "de": "Niederländische Eisenbahn (NS)"
+          },
+          "addExtraTags": [
+            "operator:wikidata=Q23076"
+          ],
+          "hideInAnswer": "_country!=nl"
+        }
+      ]
     },
     {
       "builtin": "payment-options",
@@ -106,5 +120,7 @@
         "centroid"
       ]
     }
-  ]
+  ],
+  "allowMove": true,
+  "deletion": true
 }

@@ -1027,7 +1027,7 @@
                 "description": "Couche montrant les gares",
                 "name": "Gares ferroviaires"
             },
-            "15": {
+            "16": {
                 "description": "Panneau affichant les trains au départ depuis cette gare",
                 "name": "Panneaux des départs",
                 "presets": {

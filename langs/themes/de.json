@@ -1035,7 +1035,7 @@
                 "description": "Ebene mit Bahnhöfen",
                 "name": "Bahnhöfe"
             },
-            "15": {
+            "16": {
                 "description": "Anzeigen der Züge, die von diesem Bahnhof abfahren",
                 "name": "Abfahrtstafeln",
                 "presets": {

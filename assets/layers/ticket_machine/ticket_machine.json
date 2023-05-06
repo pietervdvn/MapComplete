@@ -92,5 +92,7 @@
         "centroid"
       ]
     }
-  ]
+  ],
+  "allowMove": true,
+  "deletion": true
 }
