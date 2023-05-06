@@ -1171,10 +1171,6 @@ video {
   flex-shrink: 0;
 }
 
-.flex-grow {
-  flex-grow: 1;
-}
-
 .grow {
   flex-grow: 1;
 }
@@ -1301,12 +1297,6 @@ video {
   row-gap: 0.25rem;
 }
 
-.space-x-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
 .self-end {
   align-self: flex-end;
 }
@@ -1323,8 +1313,8 @@ video {
   overflow: hidden;
 }
 
-.overflow-scroll {
-  overflow: scroll;
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .truncate {
@@ -1374,10 +1364,6 @@ video {
   border-radius: 0.375rem;
 }
 
-.rounded-2xl {
-  border-radius: 1rem;
-}
-
 .rounded-sm {
   border-radius: 0.125rem;
 }
@@ -1407,8 +1393,8 @@ video {
   border-bottom-width: 1px;
 }
 
-.border-solid {
-  border-style: solid;
+.border-b-2 {
+  border-bottom-width: 2px;
 }
 
 .border-dashed {
@@ -1600,12 +1586,12 @@ video {
   padding-left: 0.75rem;
 }
 
-.pl-1 {
-  padding-left: 0.25rem;
-}
-
 .pr-0 {
   padding-right: 0px;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
 }
 
 .pr-1 {
@@ -1769,6 +1755,12 @@ video {
 
 .blur {
   --tw-blur: blur(8px);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.drop-shadow-2xl {
+  --tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -2128,7 +2120,7 @@ li::marker {
 }
 
 .shadow {
-  box-shadow: 0 0 10px var(--shadow-color);
+  box-shadow: 0 0 20px var(--shadow-color);
 }
 
 .title-font span {
@@ -2376,10 +2368,6 @@ input {
 
   .sm\:max-w-xl {
     max-width: 36rem;
-  }
-
-  .sm\:flex-row {
-    flex-direction: row;
   }
 
   .sm\:items-stretch {

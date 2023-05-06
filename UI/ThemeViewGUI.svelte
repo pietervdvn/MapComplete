@@ -134,7 +134,7 @@
 
 <If condition={selectedViewElement.map(v => v !== undefined && selectedLayer.data !== undefined && !selectedLayer.data.popupInFloatover,[ selectedLayer] )}>
     <ModalRight on:close={() => {selectedElement.setData(undefined)}}>
-        <ToSvelte construct={new VariableUiElement(selectedViewElement)}></ToSvelte>
+        <ToSvelte construct={new VariableUiElement(selectedViewElement).SetClass("w-full h-full")}></ToSvelte>
     </ModalRight>
 </If>
 

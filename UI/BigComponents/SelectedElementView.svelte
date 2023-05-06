@@ -32,7 +32,7 @@
 {#if _tags._deleted === "yes"}
     <Tr t={ Translations.t.delete.isDeleted}/>
 {:else}
-    <div class="absolute flex flex-col h-full normal-background">
+    <div class="absolute flex flex-col h-full w-full normal-background">
         <div class="flex border-b-2 border-black shadow justify-between items-center">
             <div class="flex flex-col">
 

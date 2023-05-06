@@ -344,7 +344,7 @@ li::marker {
 }
 
 .shadow {
-    box-shadow: 0 0 10px var(--shadow-color);
+    box-shadow: 0 0 20px var(--shadow-color);
 }
 
 .title-font span {

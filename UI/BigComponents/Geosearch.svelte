@@ -43,7 +43,7 @@
       }
       const result = await Geocoding.Search(searchContents, bounds.data);
       if (result.length == 0) {
-        feedback = Translations.t.search.nothing.txt;
+        feedback = Translations.t.general.search.nothing.txt;
         return;
       }
       const poi = result[0];
@@ -61,7 +61,7 @@
       }
     } catch (e) {
       console.error(e);
-      feedback = Translations.t.search.error.txt;
+      feedback = Translations.t.general.search.error.txt;
     } finally {
       isRunning = false;
     }
@@ -70,7 +70,7 @@
 </script>
 
 <div class="flex normal-background rounded-full pl-2 justify-between">
-  <form>
+  <form class="w-full">
 
     {#if isRunning}
       <Loading>{Translations.t.general.search.searching}</Loading>
@@ -81,6 +81,7 @@
     {:else }
       <input
         type="search"
+        class="w-full"
         bind:this={inputElement}
         on:keypress={keypr => keypr.key === "Enter" ? performSearch() : undefined}
 

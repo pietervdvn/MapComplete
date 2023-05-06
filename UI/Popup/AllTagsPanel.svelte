@@ -57,7 +57,7 @@
   onDestroy(allTags.addCallbackAndRunD(allTags => {
     _allTags = allTags;
   }));
-  const tagsTable = new Table(["Key", "Value"], _allTags).SetClass("zebra-table");
+  const tagsTable = new Table(["Key", "Value"], _allTags).SetClass("zebra-table break-all");
 </script>
 
 <section>
