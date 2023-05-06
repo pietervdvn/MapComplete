@@ -8,10 +8,11 @@
   },
   "description": "This layer shows notes on OpenStreetMap. Having this layer in your theme will trigger the 'add new note' functionality in the 'addNewPoint'-popup (or if your theme has no presets, it'll enable adding notes)",
   "source": {
-    "osmTags": "id~*",
+    "osmTags": "date_created~*",
     "geoJson": "https://api.openstreetmap.org/api/0.6/notes.json?limit=10000&closed=7&bbox={x_min},{y_min},{x_max},{y_max}",
     "geoJsonZoomLevel": 12,
-    "maxCacheAge": 0
+    "maxCacheAge": 0,
+    "isOsmCache": false
   },
   "minzoom": 10,
   "title": {

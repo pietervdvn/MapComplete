@@ -30,6 +30,7 @@
   "clustering": false,
   "enableDownload": true,
   "layers": [
-    "note"
+    "note",
+    "fixme"
   ]
 }
