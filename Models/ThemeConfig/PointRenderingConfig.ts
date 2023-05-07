@@ -11,6 +11,7 @@ import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Img from "../../UI/Base/Img"
 import Combine from "../../UI/Base/Combine"
 import { VariableUiElement } from "../../UI/Base/VariableUIElement"
+import Constants from "../Constants";
 
 export default class PointRenderingConfig extends WithContextLoader {
     static readonly allowed_location_codes: ReadonlySet<string> = new Set<string>([
@@ -86,7 +87,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         const iconPath = this.icon?.GetRenderValue({ id: "node/-1" })?.txt
         if (iconPath !== undefined && iconPath.startsWith(Utils.assets_path)) {
             const iconKey = iconPath.substr(Utils.assets_path.length)
-            if (Svg.All[iconKey] === undefined) {
+            if (Constants.defaultPinIcons.indexOf(iconKey) < 0) {
                 throw context + ": builtin SVG asset not found: " + iconPath
             }
         }
@@ -109,7 +110,7 @@ export default class PointRenderingConfig extends WithContextLoader {
             return undefined
         }
         const match = htmlSpec.match(/([a-zA-Z0-9_]*):([^;]*)/)
-        if (match !== null && Svg.All[match[1] + ".svg"] !== undefined) {
+        if (match !== null && Constants.defaultPinIcons.indexOf(match[1] ) >= 0) {
             const svg = Svg.All[match[1] + ".svg"] as string
             const targetColor = match[2]
             const img = new Img(

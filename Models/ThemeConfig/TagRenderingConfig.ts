@@ -15,6 +15,7 @@ import {FixedUiElement} from "../../UI/Base/FixedUiElement"
 import {Paragraph} from "../../UI/Base/Paragraph"
 import Svg from "../../Svg"
 import Validators, {ValidatorType} from "../../UI/InputElement/Validators";
+import Constants from "../Constants";
 
 export interface Mapping {
     readonly if: UploadableTag
@@ -374,9 +375,12 @@ export default class TagRenderingConfig {
         let iconClass = commonSize
         if (mapping.icon !== undefined) {
             if (typeof mapping.icon === "string" && mapping.icon !== "") {
+                let stripped = mapping.icon
+                if (stripped.endsWith(".svg")) {
+                    stripped = stripped.substring(0, stripped.length - 4)
+                }
                 if (
-                    Svg.All[mapping.icon] !== undefined ||
-                    Svg.All[mapping.icon + ".svg"] !== undefined
+                    Constants.defaultPinIcons.indexOf(stripped)
                 ) {
                     icon = "./assets/svg/" + mapping.icon
                     if (!icon.endsWith(".svg")) {

@@ -1,5 +1,6 @@
-import { Utils } from "../Utils"
+import {Utils} from "../Utils"
 import * as meta from "../package.json"
+
 export type PriviligedLayerType = typeof Constants.priviliged_layers[number]
 
 export default class Constants {
@@ -115,6 +116,11 @@ export default class Constants {
     static countryCoderEndpoint: string =
         "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country"
     public static readonly OsmPreferenceKeyPicturesLicense = "pictures-license"
+    /**
+     * These are the values that are allowed to use as 'backdrop' icon for a map pin
+     */
+    private static readonly _defaultPinIcons = ["square", "circle", "none", "pin", "person", "plus", "ring", "star", "teardrop", "triangle", "crosshair",] as const
+    public static readonly defaultPinIcons: string[] = <any>Constants._defaultPinIcons
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {
@@ -125,8 +131,8 @@ export default class Constants {
         return (
             (window.matchMedia &&
                 (window.matchMedia(
-                    "only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 75.6dpcm)"
-                ).matches ||
+                        "only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 75.6dpcm)"
+                    ).matches ||
                     window.matchMedia(
                         "only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)"
                     ).matches)) ||
