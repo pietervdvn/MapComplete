@@ -33,7 +33,7 @@
     <span>
       <SubtleButton>
         <span slot="image">
-          <ToSvelte construct={Svg.search_disable_ui()} />
+          <ToSvelte construct={Svg.search_disable_svg().SetClass("w-6 mr-2")} />
         </span>
         <span slot="message">{t.noSearch.toString()}</span>
       </SubtleButton>

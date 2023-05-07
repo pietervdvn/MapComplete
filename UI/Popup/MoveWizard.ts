@@ -95,14 +95,14 @@ export default class MoveWizard extends Toggle {
             })
         } else {
             moveButton = new SubtleButton(
-                Svg.move_ui().SetStyle("width: 1.5rem; height: 1.5rem"),
+                Svg.move_svg().SetStyle("width: 1.5rem; height: 1.5rem"),
                 t.inviteToMove.generic
             ).onClick(() => {
                 currentStep.setData("reason")
             })
         }
 
-        const moveAgainButton = new SubtleButton(Svg.move_ui(), t.inviteToMoveAgain).onClick(() => {
+        const moveAgainButton = new SubtleButton(Svg.move_svg(), t.inviteToMoveAgain).onClick(() => {
             currentStep.setData("reason")
         })
 

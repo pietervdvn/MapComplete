@@ -509,7 +509,7 @@ export default class SpecialVisualizations {
                 args: [],
                 docs: "Shows a button where the user can log out",
                 constr(state: SpecialVisualizationState): BaseUIElement {
-                    return new SubtleButton(Svg.logout_ui(), Translations.t.general.logout, {
+                    return new SubtleButton(Svg.logout_svg(), Translations.t.general.logout, {
                         imgSize: "w-6 h-6",
                     }).onClick(() => {
                         state.osmConnection.LogOut()
@@ -862,7 +862,7 @@ export default class SpecialVisualizations {
                     const t = Translations.t.general.download
 
                     return new SubtleButton(
-                        Svg.download_ui(),
+                        Svg.download_svg(),
                         new Combine([
                             t.downloadFeatureAsGeojson.SetClass("font-bold text-lg"),
                             t.downloadGeoJsonHelper.SetClass("subtle"),
@@ -986,7 +986,7 @@ export default class SpecialVisualizations {
                     })
 
                     const label = new Combine([
-                        Svg.camera_plus_ui().SetClass("block w-12 h-12 p-1 text-4xl "),
+                        Svg.camera_plus_svg().SetClass("block w-12 h-12 p-1 text-4xl "),
                         Translations.t.image.addPicture,
                     ]).SetClass(
                         "p-2 border-4 border-black rounded-full font-bold h-full align-center w-full flex justify-center"

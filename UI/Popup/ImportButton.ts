@@ -161,7 +161,7 @@ ${Utils.special_visualizations_importRequirementDocs}
         if (args.icon !== undefined && args.icon !== "") {
             img = new Img(args.icon)
         } else {
-            img = Svg.add_ui()
+            img = Svg.add_svg()
         }
         const inviteToImportButton = new SubtleButton(img, args.text)
 
@@ -318,7 +318,7 @@ ${Utils.special_visualizations_importRequirementDocs}
             }
         })
 
-        const cancel = new SubtleButton(Svg.close_ui(), Translations.t.general.cancel).onClick(
+        const cancel = new SubtleButton(Svg.close_svg(), Translations.t.general.cancel).onClick(
             onCancel
         )
         return new Combine([confirmationMap, confirmButton, cancel]).SetClass("flex flex-col")

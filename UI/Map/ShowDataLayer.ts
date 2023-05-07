@@ -1,18 +1,18 @@
-import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import type { Map as MlMap } from "maplibre-gl"
-import { GeoJSONSource, Marker } from "maplibre-gl"
-import { ShowDataLayerOptions } from "./ShowDataLayerOptions"
-import { GeoOperations } from "../../Logic/GeoOperations"
+import {ImmutableStore, Store, UIEventSource} from "../../Logic/UIEventSource"
+import type {Map as MlMap} from "maplibre-gl"
+import {GeoJSONSource, Marker} from "maplibre-gl"
+import {ShowDataLayerOptions} from "./ShowDataLayerOptions"
+import {GeoOperations} from "../../Logic/GeoOperations"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import PointRenderingConfig from "../../Models/ThemeConfig/PointRenderingConfig"
-import { OsmTags } from "../../Models/OsmFeature"
-import { FeatureSource, FeatureSourceForLayer } from "../../Logic/FeatureSource/FeatureSource"
-import { BBox } from "../../Logic/BBox"
-import { Feature, Point } from "geojson"
+import {OsmTags} from "../../Models/OsmFeature"
+import {FeatureSource, FeatureSourceForLayer} from "../../Logic/FeatureSource/FeatureSource"
+import {BBox} from "../../Logic/BBox"
+import {Feature, Point} from "geojson"
 import LineRenderingConfig from "../../Models/ThemeConfig/LineRenderingConfig"
-import { Utils } from "../../Utils"
+import {Utils} from "../../Utils"
 import * as range_layer from "../../assets/layers/range/range.json"
-import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
+import {LayerConfigJson} from "../../Models/ThemeConfig/Json/LayerConfigJson"
 import PerLayerFeatureSourceSplitter from "../../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
 import FilteredLayer from "../../Models/FilteredLayer"
 import SimpleFeatureSource from "../../Logic/FeatureSource/Sources/SimpleFeatureSource"
@@ -144,8 +144,11 @@ class PointRenderingLayer {
         } else {
             store = new ImmutableStore(<OsmTags>feature.properties)
         }
-        const { html, iconAnchor } = this._config.RenderIcon(store, true)
-        html.SetClass("marker cursor-pointer")
+        const {html, iconAnchor} = this._config.RenderIcon(store, true)
+        html.SetClass("marker")
+        if (this._onClick !== undefined) {
+            html.SetClass("cursor-pointer")
+        }
         const el = html.ConstructElement()
 
         if (this._onClick) {
@@ -174,7 +177,7 @@ class PointRenderingLayer {
                 if (newloc[0] === oldLoc.lng && newloc[1] === oldLoc.lat) {
                     return
                 }
-                marker.setLngLat({ lon: newloc[0], lat: newloc[1] })
+                marker.setLngLat({lon: newloc[0], lat: newloc[1]})
             })
         }
         return marker
@@ -357,7 +360,7 @@ class LineRenderingLayer {
             }
             if (this._fetchStore === undefined) {
                 map.setFeatureState(
-                    { source: this._layername, id },
+                    {source: this._layername, id},
                     this.calculatePropsFor(feature.properties)
                 )
             } else {
@@ -365,7 +368,7 @@ class LineRenderingLayer {
                 this._listenerInstalledOn.add(id)
                 tags.addCallbackAndRunD((properties) => {
                     map.setFeatureState(
-                        { source: this._layername, id },
+                        {source: this._layername, id},
                         this.calculatePropsFor(properties)
                     )
                 })
@@ -440,19 +443,19 @@ export default class ShowDataLayer {
             const features = this._options.features.features.data
             const bbox = BBox.bboxAroundAll(features.map(BBox.get))
             map.fitBounds(bbox.toLngLat(), {
-                padding: { top: 10, bottom: 10, left: 10, right: 10 },
+                padding: {top: 10, bottom: 10, left: 10, right: 10},
             })
         }
     }
 
     private initDrawFeatures(map: MlMap) {
-        let { features, doShowLayer, fetchStore, selectedElement, selectedLayer } = this._options
+        let {features, doShowLayer, fetchStore, selectedElement, selectedLayer} = this._options
         const onClick =
             this._options.onClick ??
-            ((feature: Feature) => {
+            (this._options.layer.title === undefined ? undefined : ((feature: Feature) => {
                 selectedElement?.setData(feature)
                 selectedLayer?.setData(this._options.layer)
-            })
+            }))
         if (this._options.drawLines !== false) {
             for (let i = 0; i < this._options.layer.lineRendering.length; i++) {
                 const lineRenderingConfig = this._options.layer.lineRendering[i]

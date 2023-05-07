@@ -26,7 +26,7 @@ export class ExportAsGpxViz implements SpecialVisualization {
             return undefined
         }
         return new SubtleButton(
-            Svg.download_ui(),
+            Svg.download_svg(),
             new Combine([
                 t.downloadFeatureAsGpx.SetClass("font-bold text-lg"),
                 t.downloadGpxHelper.SetClass("subtle"),

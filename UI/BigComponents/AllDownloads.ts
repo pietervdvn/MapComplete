@@ -1,13 +1,13 @@
 import Combine from "../Base/Combine"
 import Translations from "../i18n/Translations"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import {UIEventSource} from "../../Logic/UIEventSource"
 import Toggle from "../Input/Toggle"
-import { SubtleButton } from "../Base/SubtleButton"
+import {SubtleButton} from "../Base/SubtleButton"
 import Svg from "../../Svg"
 import ExportPDF from "../ExportPDF"
 import FilteredLayer from "../../Models/FilteredLayer"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import { BBox } from "../../Logic/BBox"
+import {BBox} from "../../Logic/BBox"
 import Loc from "../../Models/Loc"
 
 export default class AllDownloads extends SubtleButton {
@@ -35,7 +35,7 @@ export default class AllDownloads extends SubtleButton {
         const loading = Svg.loading_svg().SetClass("animate-rotate")
 
         const dloadTrans = Translations.t.general.download
-        const icon = new Toggle(loading, Svg.floppy_ui(), isExporting)
+        const icon = new Toggle(loading, Svg.floppy_svg(), isExporting)
         const text = new Toggle(
             dloadTrans.exporting.Clone(),
             new Combine([

@@ -35,9 +35,10 @@
     import SvelteUIElement from "./Base/SvelteUIElement";
     import OverlayToggle from "./BigComponents/OverlayToggle.svelte";
     import LevelSelector from "./BigComponents/LevelSelector.svelte";
-    import Svg from "../Svg";
     import ExtraLinkButton from "./BigComponents/ExtraLinkButton";
     import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte";
+    import Svg from "../Svg";
+    import {ShareScreen} from "./BigComponents/ShareScreen";
 
     export let state: ThemeViewState;
     let layout = state.layout;
@@ -53,6 +54,10 @@
         const layer = selectedLayer.data;
         if (selectedElement === undefined || layer === undefined) {
             return undefined;
+        }
+
+        if (!(layer.tagRenderings?.length > 0) || layer.title === undefined) {
+            return undefined
         }
 
         const tags = state.featureProperties.getStore(selectedElement.properties.id);
@@ -109,7 +114,7 @@
             <MapControlButton
                     on:click={() => {selectedLayer.setData(currentViewLayer); selectedElement.setData(state.currentView.features?.data?.[0])}}>
                 <ToSvelte
-                        construct={() =>(currentViewLayer.defaultIcon() ??  Svg.checkbox_empty_svg()).SetClass("w-8 h-8 cursor-pointer")}/>
+                        construct={() =>(currentViewLayer.defaultIcon()).SetClass("w-8 h-8 cursor-pointer")}/>
             </MapControlButton>
         {/if}
         <ToSvelte construct={() => new ExtraLinkButton(state, layout.extraLink)}></ToSvelte>
@@ -133,10 +138,10 @@
         </div>
     </If>
     <MapControlButton on:click={() => mapproperties.zoom.update(z => z+1)}>
-        <img class="w-8 h-8" src="./assets/svg/plus.svg"/>
+        <ToSvelte construct={Svg.plus_svg().SetClass("w-8 h-8")}/>
     </MapControlButton>
     <MapControlButton on:click={() => mapproperties.zoom.update(z => z-1)}>
-        <img class="w-8 h-8" src="./assets/svg/min.svg"/>
+        <ToSvelte construct={Svg.min_svg().SetClass("w-8 h-8")}/>
     </MapControlButton>
     <If condition={featureSwitches.featureSwitchGeolocation}>
         <MapControlButton>
@@ -174,7 +179,10 @@
                 <XCircleIcon class="w-8 h-8 mr-2" on:click={() => state.guistate.themeIsOpened.setData(false)}/>
             </div>
 
-            <Tr slot="title0" t={layout.title}/>
+            <div class="flex" slot="title0">
+                <img class="w-4 h-4 block" src={layout.icon}>
+                <Tr t={layout.title}/>
+            </div>
 
             <div slot="content0">
 
@@ -201,7 +209,7 @@
 
             <div class="flex" slot="title1">
                 <If condition={state.featureSwitches.featureSwitchFilter}>
-                    <img class="w-4 h-4" src="./assets/svg/filter.svg">
+                    <ToSvelte construct={Svg.filter_svg().SetClass("w-4 h-4")}/>
                     <Tr t={Translations.t.general.menu.filter}/>
                 </If>
             </div>
@@ -226,7 +234,7 @@
             </div>
             <div class="flex" slot="title2">
                 <If condition={state.featureSwitches.featureSwitchEnableExport}>
-                    <img class="w-4 h-4" src="./assets/svg/download.svg"/>
+                    <ToSvelte construct={Svg.download_svg().SetClass("w-4 h-4")}/>
                     <Tr t={Translations.t.general.download.title}/>
                 </If>
             </div>
@@ -240,7 +248,11 @@
 
             <ToSvelte construct={() => new CopyrightPanel(state)} slot="content3"></ToSvelte>
 
-
+            <div slot="title4">
+                <Tr t={Translations.t.general.sharescreen.title}/>
+            </div>
+            <ToSvelte construct={() => new ShareScreen(state)} slot="content4"/> 
+            
         </TabbedGroup>
     </FloatOver>
 </If>
@@ -315,7 +327,7 @@
             </div>
 
             <div class="flex" slot="title2">
-                <img class="w-6" src="./assets/svg/community.svg">
+                <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")}/>
                 Get in touch with others
             </div>
             <CommunityIndexView location={state.mapProperties.location} slot="content2"></CommunityIndexView>

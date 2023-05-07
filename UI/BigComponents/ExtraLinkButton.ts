@@ -61,7 +61,7 @@ export default class ExtraLinkButton extends UIElement {
             return Utils.SubstituteKeys(c.href, subs)
         }, [this.state.mapProperties.zoom])
 
-        let img: BaseUIElement = Svg.pop_out_ui()
+        let img: BaseUIElement = Svg.pop_out_svg()
         if (c.icon !== undefined) {
             img = new Img(c.icon).SetClass("h-6")
         }

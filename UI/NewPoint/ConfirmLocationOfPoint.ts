@@ -12,6 +12,9 @@ import { WayId } from "../../Models/OsmFeature"
 import { Translation } from "../i18n/Translation"
 import { SpecialVisualizationState } from "../SpecialVisualization"
 
+/**
+ * @deprecated
+ */
 export default class ConfirmLocationOfPoint extends Combine {
     constructor(
         state: SpecialVisualizationState,

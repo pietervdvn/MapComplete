@@ -68,7 +68,7 @@ export class ImageUploadFlow extends Toggle {
             )
         }
         const label = new Combine([
-            Svg.camera_plus_ui().SetClass("block w-12 h-12 p-1 text-4xl "),
+            Svg.camera_plus_svg().SetClass("block w-12 h-12 p-1 text-4xl "),
             labelContent,
         ])
             .SetClass(

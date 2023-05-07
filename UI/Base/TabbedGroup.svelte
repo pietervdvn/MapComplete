@@ -19,7 +19,7 @@
 <div class="tabbedgroup w-full h-full">
     <TabGroup class="h-full w-full flex flex-col" defaultIndex={1}
               on:change={(e) =>{if(e.detail >= 0){tab.setData( e.detail); }} }>
-        <div class="flex bg-gray-300 items-center justify-between sticky top-0">
+        <div class="tablist flex bg-gray-300 items-center justify-between sticky top-0">
             <TabList class="flex flex-wrap">
                 {#if $$slots.title1}
                     <Tab class={({selected}) => "tab "+(selected ? "tab-selected" : "tab-unselected")}>
@@ -90,7 +90,7 @@
         max-height: 100vh;
         height: 100%;
     }
-    
+
     :global(.tab) {
         margin: 0.25rem;
         padding: 0.25rem;
@@ -111,8 +111,12 @@
     }
 
     :global(.tab-selected) {
-        background-color: rgb(59 130 246);
-        color: rgb(255 255 255);
+        background-color: var(--catch-detail-color);
+        color: var(--catch-detail-color-contrast);
+    }
+
+    :global(.tab-selected svg) {
+        fill: var(--catch-detail-color-contrast);
     }
 
     :global(.tab-unselected) {

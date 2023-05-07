@@ -91,6 +91,6 @@
 
   </form>
   <div class="w-6 h-6 self-end" on:click={performSearch}>
-    <ToSvelte construct={Svg.search_ui}></ToSvelte>
+    <ToSvelte construct={Svg.search_svg}></ToSvelte>
   </div>
 </div>

@@ -13,7 +13,7 @@ import {SubtleButton} from "../Base/SubtleButton"
 import LZString from "lz-string"
 import {SpecialVisualizationState} from "../SpecialVisualization"
 
-class ShareScreen extends Combine{
+export class ShareScreen extends Combine{
     constructor(state: SpecialVisualizationState) {
         const layout = state?.layout
         const tr = Translations.t.general.sharescreen

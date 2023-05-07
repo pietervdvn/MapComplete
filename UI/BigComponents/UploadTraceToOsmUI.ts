@@ -127,7 +127,7 @@ export default class UploadTraceToOsmUI extends LoginToggle {
                     uploadFinished
                 ),
                 new Combine([
-                    Svg.invalid_ui().SetClass("w-8 h-8 m-2"),
+                    Svg.invalid_svg().SetClass("w-8 h-8 m-2"),
                     t.gpxServiceOffline.SetClass("p-2"),
                 ]).SetClass("flex border alert items-center"),
                 state.osmConnection.gpxServiceIsOnline.map(

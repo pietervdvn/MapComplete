@@ -207,7 +207,7 @@ Another example is to search for species and trees:
         return new Combine([
             new Title(Translations.t.general.wikipedia.searchWikidata, 3).SetClass("m-2"),
             new Combine([
-                Svg.search_ui().SetStyle("width: 1.5rem"),
+                Svg.search_svg().SetStyle("width: 1.5rem"),
                 searchField.SetClass("m-2 w-full"),
             ]).SetClass("flex"),
             previews,

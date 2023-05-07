@@ -28,7 +28,7 @@ export class DownloadPanel extends Toggle {
         const metaisIncluded = includeMetaToggle.GetValue().map((selected) => selected.length > 0)
 
         const buttonGeoJson = new SubtleButton(
-            Svg.floppy_ui(),
+            Svg.floppy_svg(),
             new Combine([
                 t.downloadGeojson.SetClass("font-bold"),
                 t.downloadGeoJsonHelper,
@@ -45,7 +45,7 @@ export class DownloadPanel extends Toggle {
         })
 
         const buttonCSV = new SubtleButton(
-            Svg.floppy_ui(),
+            Svg.floppy_svg(),
             new Combine([t.downloadCSV.SetClass("font-bold"), t.downloadCSVHelper]).SetClass(
                 "flex flex-col"
             )
@@ -63,7 +63,7 @@ export class DownloadPanel extends Toggle {
         })
 
         const buttonSvg = new SubtleButton(
-            Svg.floppy_ui(),
+            Svg.floppy_svg(),
             new Combine([t.downloadAsSvg.SetClass("font-bold"), t.downloadAsSvgHelper]).SetClass(
                 "flex flex-col"
             )
@@ -88,7 +88,7 @@ export class DownloadPanel extends Toggle {
         })
 
         const buttonPng = new SubtleButton(
-            Svg.floppy_ui(),
+            Svg.floppy_svg(),
             new Combine([t.downloadAsPng.SetClass("font-bold"), t.downloadAsPngHelper])
         ).OnClickWithLoading(t.exporting, async () => {
             const gpsLayer = state.layerState.filteredLayers.get(

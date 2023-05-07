@@ -134,7 +134,7 @@ export default class DeleteWizard extends Toggle {
             new Toggle(
                 new Toggle(
                     deleteDialog,
-                    new SubtleButton(Svg.envelope_ui(), t.readMessages),
+                    new SubtleButton(Svg.envelope_svg(), t.readMessages),
                     state.osmConnection.userDetails.map(
                         (ud) =>
                             ud.csCount >
@@ -192,12 +192,12 @@ export default class DeleteWizard extends Toggle {
     ): BaseUIElement {
         const t = Translations.t.delete
         const btn = new Combine([
-            Svg.delete_icon_ui().SetClass("w-6 h-6 mr-3 block"),
+            Svg.delete_icon_svg().SetClass("w-6 h-6 mr-3 block"),
             t.delete,
         ]).SetClass("flex btn bg-red-500")
 
         const btnNonActive = new Combine([
-            Svg.delete_icon_ui().SetClass("w-6 h-6 mr-3 block"),
+            Svg.delete_icon_svg().SetClass("w-6 h-6 mr-3 block"),
             t.delete,
         ]).SetClass("flex btn btn-disabled bg-red-200")
 

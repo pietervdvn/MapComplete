@@ -15,7 +15,7 @@ export class MapillaryLink extends VariableUiElement {
                     location?.lat ?? 0
                 }&lng=${location?.lon ?? 0}&z=${Math.max((location?.zoom ?? 2) - 1, 1)}`
                 return new SubtleButton(
-                    Svg.mapillary_black_ui().SetStyle(iconStyle),
+                    Svg.mapillary_black_svg().SetStyle(iconStyle),
                     new Combine([t.openMapillary.SetClass("font-bold"), t.mapillaryHelp]).SetClass(
                         "flex flex-col link-no-underline"
                     ),

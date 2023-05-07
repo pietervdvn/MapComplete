@@ -68,7 +68,7 @@ export default class SplitRoadWizard extends Combine {
 
         // Toggle between splitmap
         const splitButton = new SubtleButton(
-            Svg.scissors_ui().SetStyle("height: 1.5rem; width: auto"),
+            Svg.scissors_svg().SetStyle("height: 1.5rem; width: auto"),
             new Toggle(
                 t.splitAgain.Clone().SetClass("text-lg font-bold"),
                 t.inviteToSplit.Clone().SetClass("text-lg font-bold"),

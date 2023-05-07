@@ -48,7 +48,7 @@ export class OpenIdEditor extends VariableUiElement {
                     const idLink = `https://www.openstreetmap.org/edit?editor=id${elementSelect}#map=${
                         mapProperties.zoom?.data ?? 0
                     }/${location?.lat ?? 0}/${location?.lon ?? 0}`
-                    return new SubtleButton(Svg.pencil_ui().SetStyle(iconStyle), t.editId, {
+                    return new SubtleButton(Svg.pencil_svg().SetStyle(iconStyle), t.editId, {
                         url: idLink,
                         newTab: true,
                     })
@@ -81,7 +81,7 @@ export class OpenJosm extends Combine {
         )
 
         const toggle = new Toggle(
-            new SubtleButton(Svg.josm_logo_ui().SetStyle(iconStyle), t.editJosm).onClick(() => {
+            new SubtleButton(Svg.josm_logo_svg().SetStyle(iconStyle), t.editJosm).onClick(() => {
                 const bbox = bounds.data
                 if (bbox === undefined) {
                     return
