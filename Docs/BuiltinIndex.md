@@ -46,6 +46,7 @@
     + [multilevels](#multilevels)
     + [induction-loop](#induction-loop)
     + [questions](#questions)
+    + [all_tags](#all_tags)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
@@ -724,6 +725,17 @@
   - playground
   - shops
   - sport_pitch
+
+
+
+
+### all_tags 
+
+
+
+
+
+  - fixme
 
 
 

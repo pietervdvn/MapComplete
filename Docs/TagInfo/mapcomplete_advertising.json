@@ -15,6 +15,10 @@
       "description": "The MapComplete theme Open Advertising Map has a layer Advertise showing features with this tag"
     },
     {
+      "key": "id",
+      "description": "Layer 'Advertise' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Open Advertising Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Advertise allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },

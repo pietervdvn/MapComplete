@@ -180,7 +180,8 @@
             "da": "Stå-op bænk",
             "es": "Banco de pié",
             "cs": "Stojící lavička",
-            "ca": "Banc dempeus"
+            "ca": "Banc dempeus",
+            "pt": "banco de pé"
           }
         },
         {
@@ -232,7 +233,8 @@
           "fr": "Cette station de bus n'a pas de banc (il n'y en a jamais eu ou il a été retiré)",
           "nl": "Deze bushalte heeft geen zitbank (er is er nooit een geweest of deze is verwijderd)",
           "ca": "Aquesta para de bus no té un banc (mai n'ha tingut un o ha estat eliminat)",
-          "cs": "Na této autobusové zastávce není lavička (nikdy zde nebyla nebo byla odstraněna)"
+          "cs": "Na této autobusové zastávce není lavička (nikdy zde nebyla nebo byla odstraněna)",
+          "pt": "Este ponto de ônibus não tem banco (nunca houve ou foi removido)"
         }
       }
     ],
@@ -245,7 +247,8 @@
           "fr": "Cette station de bus n'est plus utilisée",
           "nl": "Deze bushalte wordt niet meer gebruikt",
           "ca": "Aquesta parada de bus no s'utilitza més",
-          "cs": "Tato autobusová zastávka se již nepoužívá"
+          "cs": "Tato autobusová zastávka se již nepoužívá",
+          "pt": "Este ponto de ônibus não é mais usado"
         }
       }
     ],
@@ -264,6 +267,7 @@
     "de": "Eine Ebene mit allen Haltestellen des öffentlichen Nahverkehrs, die über eine Sitzbank verfügen",
     "da": "Et lag, der viser alle offentlige stoppesteder, som har en bænk",
     "cs": "Vrstva zobrazující všechny zastávky veřejné dopravy, které mají lavičku",
-    "ca": "Una capa que mostra totes les parades de transport públic que tenen bancs"
+    "ca": "Una capa que mostra totes les parades de transport públic que tenen bancs",
+    "pt": "Uma camada mostrando todas as paradas de transporte público que possuem um banco"
   }
 }

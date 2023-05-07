@@ -15,6 +15,10 @@
       "description": "The MapComplete theme Personal theme has a layer Advertise showing features with this tag"
     },
     {
+      "key": "id",
+      "description": "Layer 'Advertise' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Advertise allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -223,6 +227,10 @@
       "value": "ambulance_station"
     },
     {
+      "key": "id",
+      "description": "Layer 'Map of ambulance stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "name",
       "description": "Layer 'Map of ambulance stations' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -282,6 +290,10 @@
       "key": "tourism",
       "description": "The MapComplete theme Personal theme has a layer Artworks showing features with this tag",
       "value": "artwork"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Artworks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -562,6 +574,10 @@
       "value": "atm"
     },
     {
+      "key": "id",
+      "description": "Layer 'ATMs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'ATMs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -635,6 +651,10 @@
       "value": "bank"
     },
     {
+      "key": "id",
+      "description": "Layer 'Banks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "atm",
       "description": "Layer 'Banks' shows atm=yes with a fixed text, namely 'This bank has an ATM' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
@@ -658,6 +678,10 @@
       "key": "barrier",
       "description": "The MapComplete theme Personal theme has a layer Barriers showing features with this tag",
       "value": "cycle_barrier"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Barriers' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -760,6 +784,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Benches showing features with this tag",
       "value": "bench"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Benches' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -1037,6 +1065,10 @@
       "value": "stand_up_bench"
     },
     {
+      "key": "id",
+      "description": "Layer 'Benches at public transport stops' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Benches at public transport stops allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -1075,6 +1107,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Bicycle library showing features with this tag",
       "value": "bicycle_library"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bicycle library' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -1184,6 +1220,10 @@
     {
       "key": "rental",
       "description": "The MapComplete theme Personal theme has a layer Bicycle rental showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bicycle rental' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -1381,6 +1421,10 @@
       "description": "The MapComplete theme Personal theme has a layer Bicycle tube vending machine showing features with this tag"
     },
     {
+      "key": "id",
+      "description": "Layer 'Bicycle tube vending machine' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Bicycle tube vending machine allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -1528,6 +1572,10 @@
       "value": "bicycle"
     },
     {
+      "key": "id",
+      "description": "Layer 'Bike cafe' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Bike cafe allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -1626,6 +1674,10 @@
       "value": "bike_wash"
     },
     {
+      "key": "id",
+      "description": "Layer 'Bike cleaning service' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Bike cleaning service allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -1678,6 +1730,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Bike parking showing features with this tag",
       "value": "bicycle_parking"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bike parking' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -1815,6 +1871,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Bicycle pump and repair showing features with this tag",
       "value": "bicycle_repair_station"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bicycle pump and repair' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -2035,6 +2095,10 @@
       "key": "sport",
       "description": "The MapComplete theme Personal theme has a layer Bike repair/shop showing features with this tag",
       "value": ""
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bike repair/shop' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -2334,6 +2398,10 @@
       "value": "cycling"
     },
     {
+      "key": "id",
+      "description": "Layer 'Bike-related object' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Bike-related object allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -2387,6 +2455,10 @@
       "value": "binoculars"
     },
     {
+      "key": "id",
+      "description": "Layer 'Binoculars' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Binoculars allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -2424,6 +2496,10 @@
       "key": "leisure",
       "description": "The MapComplete theme Personal theme has a layer Bird watching places showing features with this tag",
       "value": "bird_hide"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Bird watching places' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -2554,6 +2630,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Cafés and pubs showing features with this tag",
       "value": "nightclub"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Cafés and pubs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -2815,6 +2895,10 @@
       "key": "construction:amenity",
       "description": "The MapComplete theme Personal theme has a layer Charging stations showing features with this tag",
       "value": "charging_station"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Charging stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -4060,6 +4144,10 @@
       "value": "climbing"
     },
     {
+      "key": "id",
+      "description": "Layer 'Climbing opportunities' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Climbing opportunities allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -4174,6 +4262,10 @@
       "description": "The MapComplete theme Personal theme has a layer Climbing club showing features with this tag"
     },
     {
+      "key": "id",
+      "description": "Layer 'Climbing club' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "name",
       "description": "Layer 'Climbing club' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -4214,6 +4306,10 @@
       "key": "leisure",
       "description": "The MapComplete theme Personal theme has a layer Climbing gyms showing features with this tag",
       "value": "sports_centre"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Climbing gyms' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -4415,6 +4511,10 @@
       "value": ""
     },
     {
+      "key": "id",
+      "description": "Layer 'Climbing opportunities?' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "sport",
       "description": "Layer 'Climbing opportunities?' shows sport=climbing with a fixed text, namely 'Climbing is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "climbing"
@@ -4428,6 +4528,10 @@
       "key": "climbing",
       "description": "The MapComplete theme Personal theme has a layer Climbing routes showing features with this tag",
       "value": "route"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Climbing routes' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -4484,6 +4588,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Clocks showing features with this tag",
       "value": "clock"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Clocks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -4644,6 +4752,10 @@
       "key": "highway",
       "description": "The MapComplete theme Personal theme has a layer Crossings showing features with this tag",
       "value": "crossing"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Crossings' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -4910,6 +5022,10 @@
       "key": "bicycle",
       "description": "The MapComplete theme Personal theme has a layer Cycleways and roads showing features with this tag",
       "value": "designated"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Cycleways and roads' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "cycleway",
@@ -5375,6 +5491,10 @@
       "value": "defibrillator"
     },
     {
+      "key": "id",
+      "description": "Layer 'Defibrillators' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Defibrillators allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -5538,6 +5658,10 @@
       "value": "dentist"
     },
     {
+      "key": "id",
+      "description": "Layer 'Dentist' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Dentist allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -5594,9 +5718,17 @@
       "description": "The MapComplete theme Personal theme has a layer Direction visualization showing features with this tag"
     },
     {
+      "key": "id",
+      "description": "Layer 'Direction visualization' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Doctors showing features with this tag",
       "value": "doctors"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Doctors' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -5695,6 +5827,10 @@
       "value": "unleashed"
     },
     {
+      "key": "id",
+      "description": "Layer 'dog parks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "barrier",
       "description": "Layer 'dog parks' shows barrier=fence with a fixed text, namely 'This dogpark is fenced all around' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "fence"
@@ -5745,6 +5881,10 @@
       "value": "yes"
     },
     {
+      "key": "id",
+      "description": "Layer 'Drinking water' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Drinking water allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -5793,6 +5933,10 @@
       "key": "highway",
       "description": "The MapComplete theme Personal theme has a layer Elevator showing features with this tag",
       "value": "elevator"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Elevator' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -5893,6 +6037,10 @@
     {
       "key": "door",
       "description": "The MapComplete theme Personal theme has a layer Entrance showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Entrance' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -6121,6 +6269,10 @@
       "description": "The MapComplete theme Personal theme has a layer Has etymology showing features with this tag"
     },
     {
+      "key": "id",
+      "description": "Layer 'Has etymology' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Has etymology shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -6171,6 +6323,10 @@
       "value": "fire_extinguisher"
     },
     {
+      "key": "id",
+      "description": "Layer 'Map of fire extinguishers' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "location",
       "description": "Layer 'Map of fire extinguishers' shows and asks freeform values for key 'location' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -6204,6 +6360,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Map of fire stations showing features with this tag",
       "value": "fire_station"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Map of fire stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "name",
@@ -6275,6 +6435,10 @@
       "key": "leisure",
       "description": "The MapComplete theme Personal theme has a layer Fitness Centres showing features with this tag",
       "value": "fitness_centre"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Fitness Centres' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "name",
@@ -6382,6 +6546,10 @@
       "key": "leisure",
       "description": "The MapComplete theme Personal theme has a layer Fitness Stations showing features with this tag",
       "value": "fitness_station"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Fitness Stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -6550,6 +6718,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Restaurants and fast food showing features with this tag",
       "value": "restaurant"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Restaurants and fast food' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -7032,6 +7204,10 @@
       "value": "ghost_bike"
     },
     {
+      "key": "id",
+      "description": "Layer 'Ghost bikes' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Ghost bikes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -7072,6 +7248,10 @@
       "key": "office",
       "description": "The MapComplete theme Personal theme has a layer governments showing features with this tag",
       "value": "government"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'governments' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -7121,6 +7301,10 @@
       "key": "leisure",
       "description": "The MapComplete theme Personal theme has a layer Hackerspace showing features with this tag",
       "value": "hackerspace"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Hackerspace' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -7289,6 +7473,10 @@
       "value": "clinic"
     },
     {
+      "key": "id",
+      "description": "Layer 'Hospitals' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "name",
       "description": "Layer 'Hospitals' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -7330,6 +7518,10 @@
       "key": "tourism",
       "description": "The MapComplete theme Personal theme has a layer Hotels showing features with this tag",
       "value": "hotel"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Hotels' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -7448,6 +7640,10 @@
       "key": "emergency",
       "description": "The MapComplete theme Personal theme has a layer Map of hydrants showing features with this tag",
       "value": "fire_hydrant"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Map of hydrants' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "colour",
@@ -7585,6 +7781,10 @@
       "value": "level"
     },
     {
+      "key": "id",
+      "description": "Layer 'Indoors' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Indoors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -7614,6 +7814,10 @@
       "value": "board"
     },
     {
+      "key": "id",
+      "description": "Layer 'Information boards' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Information boards allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -7633,6 +7837,10 @@
       "key": "barrier",
       "description": "The MapComplete theme Personal theme has a layer Kerbs showing features with this tag",
       "value": "kerb"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Kerbs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -7715,6 +7923,10 @@
       "value": "early_childhood"
     },
     {
+      "key": "id",
+      "description": "Layer 'Kindergartens and childcare' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "amenity",
       "description": "Layer 'Kindergartens and childcare' shows amenity=kindergarten with a fixed text, namely 'This is a kindergarten (also known as <i>preschool</i>) where small kids receive early education.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "kindergarten"
@@ -7769,6 +7981,10 @@
       "key": "information",
       "description": "The MapComplete theme Personal theme has a layer Maps showing features with this tag",
       "value": "map"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Maps' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -7896,6 +8112,10 @@
       "value": "motorway_link"
     },
     {
+      "key": "id",
+      "description": "Layer 'Maxspeed' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "maxspeed",
       "description": "Layer 'Maxspeed' shows and asks freeform values for key 'maxspeed' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -7918,6 +8138,10 @@
       "key": "boundary",
       "description": "The MapComplete theme Personal theme has a layer Nature reserve showing features with this tag",
       "value": "protected_area"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Nature reserve' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -8093,6 +8317,10 @@
       "value": "observation"
     },
     {
+      "key": "id",
+      "description": "Layer 'Observation towers' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Observation towers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -8230,6 +8458,10 @@
       "value": "parcel_pickup;parcel_mail_in"
     },
     {
+      "key": "id",
+      "description": "Layer 'Parcel Lockers' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Parcel Lockers allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -8310,6 +8542,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Parking showing features with this tag",
       "value": "parking"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Parking' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -8435,6 +8671,10 @@
       "value": "parking_space"
     },
     {
+      "key": "id",
+      "description": "Layer 'Parking Spaces' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Parking Spaces allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -8539,6 +8779,10 @@
       "key": "vending",
       "description": "The MapComplete theme Personal theme has a layer Parking Ticket Machines showing features with this tag",
       "value": "parking_tickets"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Parking Ticket Machines' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -8696,6 +8940,10 @@
       "value": "pharmacy"
     },
     {
+      "key": "id",
+      "description": "Layer 'Pharmacies' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Pharmacies allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -8764,6 +9012,10 @@
       "value": "physiotherapist"
     },
     {
+      "key": "id",
+      "description": "Layer 'Physiotherapist' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Physiotherapist allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -8824,6 +9076,10 @@
       "key": "leisure",
       "description": "The MapComplete theme Personal theme has a layer Picnic tables showing features with this tag",
       "value": "picnic_table"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Picnic tables' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -8893,6 +9149,10 @@
       "key": "leisure",
       "description": "The MapComplete theme Personal theme has a layer Playgrounds showing features with this tag",
       "value": "playground"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Playgrounds' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -9057,6 +9317,10 @@
       "value": "post_box"
     },
     {
+      "key": "id",
+      "description": "Layer 'Postboxes' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Postboxes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -9081,6 +9345,10 @@
       "key": "post_office",
       "description": "The MapComplete theme Personal theme has a layer Post offices showing features with this tag",
       "value": "post_partner"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Post offices' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -9232,6 +9500,10 @@
       "value": "public_bookcase"
     },
     {
+      "key": "id",
+      "description": "Layer 'Bookcases' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Bookcases allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -9365,6 +9637,10 @@
       "value": "crossing"
     },
     {
+      "key": "id",
+      "description": "Layer 'Crossings with rainbow paintings' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Crossings with rainbow paintings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -9394,6 +9670,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Reception desks showing features with this tag",
       "value": "reception_desk"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Reception desks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -9458,6 +9738,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Recycling showing features with this tag",
       "value": "recycling"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Recycling' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -9696,6 +9980,10 @@
       "value": "school"
     },
     {
+      "key": "id",
+      "description": "Layer 'Primary and secondary schools' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "name",
       "description": "Layer 'Primary and secondary schools' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -9837,6 +10125,10 @@
       "value": "shelter"
     },
     {
+      "key": "id",
+      "description": "Layer 'Shelter' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "shelter_type",
       "description": "Layer 'Shelter' shows and asks freeform values for key 'shelter_type' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -9878,6 +10170,10 @@
     {
       "key": "shop",
       "description": "The MapComplete theme Personal theme has a layer Shop showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Shop' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -10865,6 +11161,10 @@
       "value": "speed_camera"
     },
     {
+      "key": "id",
+      "description": "Layer 'Speed Camera' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "maxspeed",
       "description": "Layer 'Speed Camera' shows and asks freeform values for key 'maxspeed' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -10872,6 +11172,10 @@
       "key": "highway",
       "description": "The MapComplete theme Personal theme has a layer Speed Display showing features with this tag",
       "value": "speed_display"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Speed Display' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "maxspeed",
@@ -10885,6 +11189,10 @@
       "key": "leisure",
       "description": "The MapComplete theme Personal theme has a layer Sport pitches showing features with this tag",
       "value": "pitch"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Sport pitches' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -11038,6 +11346,10 @@
       "value": "sports_centre"
     },
     {
+      "key": "id",
+      "description": "Layer 'Sports centres' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Sports centres allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -11105,6 +11417,10 @@
       "key": "highway",
       "description": "The MapComplete theme Personal theme has a layer Stairs showing features with this tag",
       "value": "steps"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Stairs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -11215,6 +11531,10 @@
       "key": "highway",
       "description": "The MapComplete theme Personal theme has a layer Street Lamps showing features with this tag",
       "value": "street_lamp"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Street Lamps' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -11419,6 +11739,10 @@
       "value": "ANPR"
     },
     {
+      "key": "id",
+      "description": "Layer 'Surveillance camera's' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Surveillance camera's allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -11587,6 +11911,10 @@
       "description": "The MapComplete theme Personal theme has a layer Colleges and universities showing features with this tag"
     },
     {
+      "key": "id",
+      "description": "Layer 'Colleges and universities' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "amenity",
       "description": "Layer 'Colleges and universities' shows amenity=college with a fixed text, namely 'This is an institution of post-secondary, non-tertiary education. One has to have completed secondary education to enroll here, but no bachelor (or higher) degrees are awarded here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "college"
@@ -11663,6 +11991,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Toilets showing features with this tag",
       "value": "toilets"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Toilets' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -11894,6 +12226,10 @@
       "value": "yes"
     },
     {
+      "key": "id",
+      "description": "Layer 'Toilets at other amenities' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Toilets at other amenities allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -12093,6 +12429,10 @@
       "value": "bus"
     },
     {
+      "key": "id",
+      "description": "Layer 'Bus lines' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "name",
       "description": "Layer 'Bus lines' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -12124,6 +12464,10 @@
       "key": "highway",
       "description": "The MapComplete theme Personal theme has a layer Transit Stops showing features with this tag",
       "value": "bus_stop"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Transit Stops' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "name",
@@ -12274,6 +12618,10 @@
       "key": "natural",
       "description": "The MapComplete theme Personal theme has a layer Tree showing features with this tag",
       "value": "tree"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Tree' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -12440,6 +12788,10 @@
       "value": "veterinary"
     },
     {
+      "key": "id",
+      "description": "Layer 'veterinary' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "website",
       "description": "Layer 'veterinary' shows and asks freeform values for key 'website' (in the MapComplete.osm.be theme 'Personal theme')"
     },
@@ -12467,6 +12819,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Waste Basket showing features with this tag",
       "value": "waste_basket"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Waste Basket' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -12550,6 +12906,10 @@
       "value": "waste_disposal"
     },
     {
+      "key": "id",
+      "description": "Layer 'Waste Disposal Bins' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Waste Disposal Bins allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -12613,6 +12973,10 @@
       "key": "generator:source",
       "description": "The MapComplete theme Personal theme has a layer wind turbine showing features with this tag",
       "value": "wind"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'wind turbine' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "generator:output:electricity",

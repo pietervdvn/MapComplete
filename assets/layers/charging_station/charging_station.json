@@ -287,6 +287,7 @@
           "then": {
             "en": "<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)",
             "nl": "<b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)",
+            "ca": "<b>Endoll de paret Schuko</b> sense pin a terra (CEE7/4 tipus F)",
             "da": "<b>Schuko vægstik</b> uden jordstift (CEE7/4 type F)",
             "de": "<b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)",
             "es": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)",
@@ -319,6 +320,7 @@
           "then": {
             "en": "<b>Schuko wall plug</b> without ground pin (CEE7/4 type F)",
             "nl": "<b>Schuko stekker</b> zonder aardingspin (CEE7/4 type F)",
+            "ca": "<b>Endoll de paret Schuko</b> sense pin a terra (CEE7/4 tipus F)",
             "da": "<b>Schuko vægstik</b> uden jordstift (CEE7/4 type F)",
             "de": "<b>Schuko-Stecker</b> ohne Erdungsstift (CEE7/4 Typ F)",
             "es": "<b>Enchufe de pared Schuko</b> sin pin de tierra (CEE7/4 tipo F)",
@@ -860,6 +862,7 @@
           "then": {
             "en": "<b>Type 2 with cable</b> (mennekes)",
             "nl": "<b>Type 2 met kabel</b> (J1772)",
+            "ca": "<b>Tipus 2 amb cable</b> (mennekes)",
             "da": "<b>Type 2 med kabel</b> (mennekes)",
             "de": "<b>Typ 2 mit Kabel</b> (mennekes)",
             "es": "<b>Tipo 2 con cable</b> (mennekes)",
@@ -923,6 +926,7 @@
           "then": {
             "en": "<b>Tesla Supercharger CCS</b> (a branded type2_css)",
             "nl": "<b>Tesla Supercharger CCS</b> (een type2 CCS met Tesla-logo)",
+            "ca": "<b>CSS Supercarregador Tesla</b> (un tipus2_css de la marca)",
             "da": "<b>Tesla Supercharger CCS</b> (en mærkevare type2_css)",
             "de": "<b>Tesla Supercharger CCS</b> (ein Markenzeichen von type2_css)",
             "es": "<b>CCS Supercargador Tesla</b> (un tipo2_css con marca)",
@@ -940,6 +944,7 @@
           "then": {
             "en": "<b>Tesla Supercharger (destination)</b>",
             "nl": "<b>Tesla Supercharger (destination)</b>",
+            "ca": "<b>Supercarregador Tesla (destí)</b>",
             "da": "<b> Tesla Supercharger (destination)</b>",
             "de": "<b>Tesla Supercharger (Destination)</b>",
             "es": "<b>Supercargador Tesla (destino)</b>",
@@ -992,6 +997,7 @@
           "then": {
             "en": "<b>Tesla Supercharger (destination)</b>",
             "nl": "<b>Tesla Supercharger (destination)</b>",
+            "ca": "<b>Supercarregador Tesla (destí)</b>",
             "da": "<b> Tesla Supercharger (destination)</b>",
             "de": "<b>Tesla Supercharger (Destination)</b>",
             "es": "<b>Supercargador Tesla (destino)</b>",
@@ -1397,14 +1403,14 @@
       "question": {
         "en": "How much plugs of type <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> are available here?",
         "nl": "Hoeveel stekkers van type <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> heeft dit oplaadpunt?",
-        "de": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> sind hier vorhanden?",
-        "ca": "Quants endolls del tipus <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> hi ha disponibles aquí?"
+        "ca": "Quants endolls del tipus <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> hi ha disponibles aquí?",
+        "de": "Wie viele Stecker des Typs <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> sind hier vorhanden?"
       },
       "render": {
         "en": "There are <b class='text-xl'>{socket:type2}</b> plugs of type <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> available here",
         "nl": "Hier zijn <b class='text-xl'>{socket:type2}</b> stekkers van het type <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>",
-        "de": "Hier sind <b class='text-xl'>{socket:type2}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> vorhanden",
-        "ca": "Hi ha <b class='text-xl'>{socket:type2}</b> endolls del tipus <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> disponibles aquí"
+        "ca": "Hi ha <b class='text-xl'>{socket:type2}</b> endolls del tipus <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> disponibles aquí",
+        "de": "Hier sind <b class='text-xl'>{socket:type2}</b> Stecker des Typs <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> vorhanden"
       },
       "freeform": {
         "key": "socket:type2",
@@ -3642,6 +3648,7 @@
       "question": {
         "en": "What current do the plugs with <div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> offer?",
         "nl": "Welke stroom levert de stekker van type <div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
+        "ca": "Quina corrent ofereixen els connectors amb <div style='display: inline-block'><b><b>USB</b>per a carrega telèfons i dispositius electrònics petits</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
         "da": "Hvilken strømstyrke har stikkene med <div style='display: inline-block'><b><b> USB</b> til opladning af telefoner og småt elektronikudstyr</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> ?",
         "de": "Welche Stromstärke liefern die Stecker mit <div style='display: inline-block'><b><b>USB</b> zum Laden von Handys und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
         "es": "¿Qué corriente ofrecen los conectores con <div style='display:i nline-block'><b><b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños</b> <img style='width:1rem;display:inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div>?",
@@ -3650,6 +3657,7 @@
       "render": {
         "en": "<div style='display: inline-block'><b><b>USB</b> to charge phones and small electronics</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> outputs at most {socket:USB-A:current}A",
         "nl": "<div style='display: inline-block'><b><b>USB</b> om GSMs en kleine electronica op te laden</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> levert een stroom van maximaal {socket:USB-A:current}A",
+        "ca": "<div style='display: inline-block'><b><b>USB</b>per a carregar telèfons i petits dispositius electrònics</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> com a màxim a {socket:USB-A:current}A",
         "da": "<div style='display: inline-block'><b><b>USB</b> til opladning af telefoner og småt elektronikudstyr</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> udsender højst {socket:USB-A:current}A",
         "de": "<div style='display: inline-block'><b><b>USB</b> zum Aufladen von Telefonen und kleinen Elektrogeräten</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/usb_port.svg'/></div> liefert maximal {socket:USB-A:current} A",
         "es": "<div style='display: inline-block'><b><b>USB</b> para carga teléfonos y dispositivos electrónicos pequeños</b> <img style='width:1rem; display: inline-block' src='./assets/layers/changing_station/usb_port.svg'></div> salida de hasta {socket:USB-A:current}A",
@@ -3665,6 +3673,7 @@
           "then": {
             "en": "<b>USB</b> to charge phones and small electronics outputs at most 1 A",
             "nl": "<b>USB</b> om GSMs en kleine electronica op te laden levert een stroom van maximaal 1 A",
+            "ca": "<b>USB</b> per a carregar telèfons i dispositius petits fins a 1 A",
             "da": "<b>USB</b> til opladning af telefoner og mindre elektronik yder højst 1 A",
             "de": "<b>USB</b> zum Laden von Handys und kleinen Elektrogeräten liefert maximal 1 A",
             "es": "<b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños hasta 1 A",
@@ -3680,6 +3689,7 @@
           "then": {
             "en": "<b>USB</b> to charge phones and small electronics outputs at most 2 A",
             "nl": "<b>USB</b> om GSMs en kleine electronica op te laden levert een stroom van maximaal 2 A",
+            "ca": "<b>USB</b> per a carregar telèfons i dispositius petits fins a 2 A",
             "da": "<b>USB</b> til opladning af telefoner og små elektroniske apparater yder højst 2 A",
             "de": "<b>USB</b> zum Laden von Handys und kleinen Elektrogeräten liefert maximal 2 A",
             "es": "<b>USB</b> para cargar teléfonos y dispositivos electrónicos pequeños hasta 1 A",
@@ -4061,6 +4071,7 @@
       "question": {
         "en": "What kind of authentication is available at the charging station?",
         "nl": "Hoe kan men zich aanmelden aan dit oplaadstation?",
+        "ca": "Quin tipus d'autenticació hi ha disponible a l'estació de càrrega?",
         "da": "Hvilken form for godkendelse er tilgængelig ved ladestationen?",
         "de": "Welche Art der Authentifizierung ist an der Ladestation möglich?",
         "es": "¿Qué tipo de autenticación está disponible en esta estación de carga?",
@@ -4075,6 +4086,7 @@
           "then": {
             "en": "Authentication by a membership card",
             "nl": "Aanmelden met een lidkaart is mogelijk",
+            "ca": "Autenticació mitjançant una targeta de soci",
             "da": "Godkendelse med et medlemskort",
             "de": "Authentifizierung per Mitgliedskarte",
             "es": "Autenticación mediante tarjeta de membresía",
@@ -4088,6 +4100,7 @@
           "then": {
             "en": "Authentication by an app",
             "nl": "Aanmelden via een applicatie is mogelijk",
+            "ca": "Autenticació mitjançant una aplicació",
             "da": "Godkendelse med en app",
             "de": "Authentifizierung per App",
             "es": "Autenticación mediante aplicación",
@@ -4101,6 +4114,7 @@
           "then": {
             "en": "Authentication via phone call is available",
             "nl": "Aanmelden door te bellen naar een telefoonnummer is mogelijk",
+            "ca": "L'autenticació per trucada telefònica està disponible",
             "da": "Godkendelse via telefonopkald er tilgængelig",
             "de": "Authentifizierung per Anruf ist möglich",
             "es": "Autenticación mediante llamada telefónica disponible",
@@ -4114,6 +4128,7 @@
           "then": {
             "en": "Authentication via SMS is available",
             "nl": "Aanmelden via SMS is mogelijk",
+            "ca": "L'autenticació per SMS està disponible",
             "da": "Godkendelse via SMS er tilgængelig",
             "de": "Authentifizierung per SMS ist möglich",
             "es": "Autenticación mediante SMS disponible",
@@ -4127,6 +4142,7 @@
           "then": {
             "en": "Authentication via NFC is available",
             "nl": "Aanmelden via NFC is mogelijk",
+            "ca": "L'autenticació via NFC està disponible",
             "da": "Godkendelse via NFC er tilgængelig",
             "de": "Authentifizierung per NFC ist möglich",
             "es": "Autenticación mediante NFC disponible",
@@ -4163,6 +4179,7 @@
           "then": {
             "en": "Charging here is (also) possible without authentication",
             "nl": "Hier opladen is (ook) mogelijk zonder aan te melden",
+            "ca": "Carregar aquí (també) és possible sense autenticació",
             "da": "Opladning her er (også) muligt uden godkendelse",
             "de": "Das Laden ist hier (auch) ohne Authentifizierung möglich",
             "es": "La carga aquí (también) es posible sin autenticación",
@@ -4183,6 +4200,7 @@
       "render": {
         "en": "Authenticate by calling or SMS'ing to <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
         "nl": "Aanmelden door te bellen of te SMS'en naar <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
+        "ca": "Autentiqueu-vos trucant o enviant SMS a <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
         "da": "Godkend dig ved at ringe eller sende en sms til <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
         "de": "Authentifizierung durch Anruf oder SMS an <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>",
         "ca": "Autentiqueu-vos trucant o enviant SMS a <a href='tel:{authentication:phone_call:number}'>{authentication:phone_call:number}</a>"
@@ -4190,6 +4208,7 @@
       "question": {
         "en": "What's the phone number for authentication call or SMS?",
         "nl": "Wat is het telefoonnummer dat men moet bellen of SMS'en om zich aan te melden?",
+        "ca": "Quin és el número de telèfon per a la trucada d'autenticació o SMS?",
         "da": "Hvad er telefonnummeret til godkendelsesopkald eller SMS?",
         "de": "Wie lautet die Telefonnummer für den Authentifizierungsanruf oder die SMS?",
         "es": "¿Cual es el número de teléfono para la llamada de autenticación o SMS?",
@@ -4222,6 +4241,7 @@
       "render": {
         "en": "One can stay at most <b>{canonical(maxstay)}</b>",
         "nl": "De maximale parkeertijd hier is <b>{canonical(maxstay)}</b>",
+        "ca": "Un pot quedar-se com a màxim <b>{canonical(maxstay)}</b>",
         "da": "Man kan højst blive <b>{canonical(maxstay)}</b>",
         "de": "Die maximale Parkdauer beträgt <b>{canonical(maxstay)}</b>",
         "es": "Se puede estar como máximo <b>{canonical(maxstay)}</b>",
@@ -4427,8 +4447,8 @@
       "question": {
         "en": "What is the website where one can find more information about this charging station?",
         "nl": "Wat is de website waar men meer info kan vinden over dit oplaadpunt?",
-        "de": "Auf welcher Webseite kann man weitere Informationen über diese Ladestation finden?",
-        "ca": "Quina és la pàgina web on es pot trobar més informació sobre aquest punt de recàrrega?"
+        "ca": "Quina és la pàgina web on es pot trobar més informació sobre aquest punt de recàrrega?",
+        "de": "Auf welcher Webseite kann man weitere Informationen über diese Ladestation finden?"
       },
       "render": {
         "en": "More info on <a href='{website}'>{website}</a>",
@@ -4466,6 +4486,7 @@
       "question": {
         "en": "Is this charging point in use?",
         "nl": "Is dit oplaadpunt operationeel?",
+        "ca": "Està en ús aquest punt de recàrrega?",
         "da": "Er denne ladestander i brug?",
         "de": "Ist die Station in Betrieb?",
         "es": "¿Está en uso este punto de carga?",
@@ -4542,6 +4563,7 @@
           "then": {
             "en": "A charging station is constructed here",
             "nl": "Hier wordt op dit moment een oplaadpunt gebouwd",
+            "ca": "Aquí està construint-se una estació de càrrega",
             "da": "Her er opført en ladestation",
             "de": "Die Station ist aktuell im Bau",
             "es": "Aquí se está construyendo una estación de carga",
@@ -4561,6 +4583,7 @@
           "then": {
             "en": "This charging station has beed permanently disabled and is not in use anymore but is still visible",
             "nl": "Dit oplaadpunt is niet meer in gebruik maar is wel nog aanwezig",
+            "ca": "Aquesta estació de recàrrega s'ha desactivat permanentment i ja no s'utilitza, però encara és visible",
             "da": "Denne ladestation er blevet permanent deaktiveret og er ikke længere i brug, men er stadig synlig",
             "de": "Die Station ist dauerhaft geschlossen und nicht mehr in Nutzung, aber noch sichtbar",
             "es": "Esta estación de carga se ha deshabilitado de forma permanente y ya no está en uso pero todavía es visible",
@@ -4701,6 +4724,7 @@
       "title": {
         "en": "a charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)",
         "nl": "een oplaadpunt voor elektrische fietsen met een gewoon Europees stopcontact <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (speciaal bedoeld voor fietsen)",
+        "ca": "una estació de càrrega per a bicicletes elèctriques amb un endoll de paret europeu normal<img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (destinat a carregar bicicletes elèctriques)",
         "da": "en ladestation til elektriske cykler med et normalt europæisk vægstik <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (beregnet til opladning af elektriske cykler)",
         "de": "eine Ladestation für Elektrofahrräder mit einer normalen europäischen Steckdose <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (zum Laden von Elektrofahrrädern)",
         "es": "una estación de carga para bicicletas eléctricas con un enchufe de pared europeo normal <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (pensado para cargar bicicletas eléctricas)",
@@ -4719,6 +4743,7 @@
       "title": {
         "en": "a charging station for cars",
         "nl": "een oplaadstation voor elektrische auto's",
+        "ca": "una estació de càrrega per a cotxes",
         "da": "en ladestation til biler",
         "de": "Eine Ladestation für Elektrofahrzeuge",
         "es": "una estación de carga para coches",
@@ -4846,6 +4871,7 @@
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Type 1 with cable</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>Type 1 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>",
+            "ca": "Té un connector de <div style='display: inline-block'><b><b>Tipus 1 amb cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>",
             "da": "Har et <div style='display: inline-block'><b><b> Type 1 med kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> stik",
             "de": "Verfügt über einen <div style='display: inline-block'><b><b>Typ 1 </b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div> Stecker mit Kabel",
             "es": "Tiene un conector de <div style='display: inline-block'><b><b>Tipo 1 con cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>",
@@ -4880,6 +4906,7 @@
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>",
+            "ca": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>",
             "da": "Har et <div style='display: inline-block'><b><b> Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> stik",
             "de": "Verfügt über einen <div style='display: inline-block'><b><b>Tesla Supercharger</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div> Stecker",
             "es": "Tiene un conector <div style='display: inline-block'><b><b>Tesla Supercharger</b></b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Tesla-hpwc-model-s.svg'/></div>",
@@ -4891,6 +4918,7 @@
           "question": {
             "en": "Has a <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> connector",
             "nl": "Heeft een <div style='display: inline-block'><b><b>Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>",
+            "ca": "Té un connector <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>",
             "da": "Har en <div style='display: inline-block'><b><b> Type 2</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> connector",
             "de": "Hat einen <div style='display: inline-block'><b><b>Typ 2</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div> Anschluss",
             "es": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>",
@@ -4904,7 +4932,7 @@
             "nl": "Heeft een <div style='display: inline-block'><b><b>Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>",
             "da": "Har en <div style='display: inline-block'><b><b> Type 2 CCS</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> connector",
             "de": "Hat einen <div style='display: inline-block'><b><b>Typ 2 CCS</b> (Mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div> Anschluss",
-            "es": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 CCS</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+            "es": "Tiene un conector <div style='display: inline-block'><b>Tipo 2 CCS</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
           },
           "osmTags": "socket:type2_combo~*"
         },

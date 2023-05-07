@@ -1137,7 +1137,7 @@
                 "description": "Layer showing train stations",
                 "name": "Train Stations"
             },
-            "15": {
+            "16": {
                 "description": "Displays showing the trains that will leave from this station",
                 "name": "Departures boards",
                 "presets": {

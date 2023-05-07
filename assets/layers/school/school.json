@@ -61,7 +61,8 @@
         "en": "This school can enroll at most {capacity} students",
         "nl": "Deze school kan maximaal {capacity} studenten lesgeven",
         "de": "Diese Schule kann höchstens {capacity} Schüler aufnehmen",
-        "fr": "Cette école peut accueillir au maximum {capacity} étudiants"
+        "fr": "Cette école peut accueillir au maximum {capacity} étudiants",
+        "ca": "A aquesta escola poden inscriure's com a màxim {capacity} estudiants"
       },
       "freeform": {
         "key": "capacity",
@@ -84,7 +85,8 @@
             "en": "This is a school with a kindergarten section where young kids receive some education which prepares reading and writing.",
             "nl": "Dit is een school die ook een kleuterschool bevat",
             "de": "Es handelt sich um eine Schule mit einer Kindergartenabteilung, in der kleine Kinder eine Ausbildung erhalten, die auf das Lesen und Schreiben vorbereitet.",
-            "fr": "Il s'agit d'une école avec une section maternelle où les jeunes enfants reçoivent un enseignement qui prépare à la lecture et à l'écriture."
+            "fr": "Il s'agit d'une école avec une section maternelle où les jeunes enfants reçoivent un enseignement qui prépare à la lecture et à l'écriture.",
+            "ca": "Aquesta és una escola amb una secció d’educació infantil on els més petits reben una educació que prepara la lectura i l’escriptura."
           }
         },
         {
@@ -367,7 +369,8 @@
         "en": "a primary or secondary school",
         "nl": "een lagere of middelbare school",
         "de": "eine Grundschule oder weiterführende Schule",
-        "fr": "une école primaire ou secondaire"
+        "fr": "une école primaire ou secondaire",
+        "ca": "una escola de primària o secundària"
       }
     }
   ],

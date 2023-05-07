@@ -37,21 +37,7 @@ All infrastructure that someone can cycle over, accompanied with questions about
   - [rainbow_crossings](https://mapcomplete.osm.be/rainbow_crossings)
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcycleway' target='_blank'>cycleway</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane' target='_blank'>lane</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dshared_lane' target='_blank'>shared_lane</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:cycleway' target='_blank'>cycleway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack' target='_blank'>track</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:cyclestreet' target='_blank'>cyclestreet</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes' target='_blank'>yes</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dresidential' target='_blank'>residential</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtertiary' target='_blank'>tertiary</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dunclassified' target='_blank'>unclassified</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dprimary' target='_blank'>primary</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsecondary' target='_blank'>secondary</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtertiary_link' target='_blank'>tertiary_link</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dprimary_link' target='_blank'>primary_link</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dsecondary_link' target='_blank'>secondary_link</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dservice' target='_blank'>service</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway' target='_blank'>footway</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dpedestrian' target='_blank'>pedestrian</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dliving_street' target='_blank'>living_street</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dpath' target='_blank'>path</a>&<a href='https://wiki.openstreetmap.org/wiki/Key:bicycle' target='_blank'>bicycle</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:bicycle%3Ddesignated' target='_blank'>designated</a>
-
-
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22cyclestreet%22%3D%22yes%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22cycleway%22%3D%22lane%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22cycleway%22%3D%22shared_lane%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22cycleway%22%3D%22track%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22cycleway%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22residential%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22tertiary%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22unclassified%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22primary%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22secondary%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22tertiary_link%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22primary_link%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22secondary_link%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22service%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22footway%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22pedestrian%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22highway%22%3D%22living_street%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22bicycle%22%3D%22designated%22%5D%5B%22highway%22%3D%22path%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -68,6 +54,7 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cycleway#values) [cycleway](https://wiki.openstreetmap.org/wiki/Key:cycleway) | Multiple choice | [shared_lane](https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dshared_lane) [lane](https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dlane) [track](https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dtrack) [separate](https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dseparate) [no](https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dno) [no](https://wiki.openstreetmap.org/wiki/Tag:cycleway%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/lit#values) [lit](https://wiki.openstreetmap.org/wiki/Key:lit) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:lit%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:lit%3Dno) [24/7](https://wiki.openstreetmap.org/wiki/Tag:lit%3D24/7)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cyclestreet#values) [cyclestreet](https://wiki.openstreetmap.org/wiki/Key:cyclestreet) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3Dyes) [](https://wiki.openstreetmap.org/wiki/Tag:cyclestreet%3D)
@@ -83,6 +70,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cycleway:separation#values) [cycleway:separation](https://wiki.openstreetmap.org/wiki/Key:cycleway:separation) | Multiple choice | [dashed_line](https://wiki.openstreetmap.org/wiki/Tag:cycleway:separation%3Ddashed_line) [solid_line](https://wiki.openstreetmap.org/wiki/Tag:cycleway:separation%3Dsolid_line) [parking_lane](https://wiki.openstreetmap.org/wiki/Tag:cycleway:separation%3Dparking_lane) [kerb](https://wiki.openstreetmap.org/wiki/Tag:cycleway:separation%3Dkerb)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/separation#values) [separation](https://wiki.openstreetmap.org/wiki/Key:separation) | Multiple choice | [dashed_line](https://wiki.openstreetmap.org/wiki/Tag:separation%3Ddashed_line) [solid_line](https://wiki.openstreetmap.org/wiki/Tag:separation%3Dsolid_line) [parking_lane](https://wiki.openstreetmap.org/wiki/Tag:separation%3Dparking_lane) [kerb](https://wiki.openstreetmap.org/wiki/Tag:separation%3Dkerb)
 
+
+
+
+### just_created 
+
+
+
+This element shows a 'thank you' that the contributor has recently created this element
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
 
 
 
@@ -465,6 +471,16 @@ This tagrendering has no question and is thus read-only
 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+` 
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+
+
+
+### all-tags 
+
+
+
+This tagrendering has no question and is thus read-only
+
+ 
 
 This document is autogenerated from [assets/layers/cycleways_and_roads/cycleways_and_roads.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/cycleways_and_roads/cycleways_and_roads.json)

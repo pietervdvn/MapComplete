@@ -27,7 +27,8 @@
     "nl": "Deze laag toont autoparkings",
     "de": "Eine Ebene mit Parkplätzen",
     "es": "Una capa que muestra aparcamientos para coches",
-    "fr": "Un calque montrant les parkings"
+    "fr": "Un calque montrant les parkings",
+    "ca": "Una capa que mostra aparcaments per a cotxes"
   },
   "tagRenderings": [
     "images",
@@ -145,7 +146,8 @@
           "en": "Amount of parking spots reserved for disabled people",
           "nl": "Aantal parkeerplaatsen voor gehandicapten",
           "de": "Anzahl barrierefreier Stellplätze",
-          "fr": "Nombre de places de stationnement réservées aux personnes à mobilité réduite"
+          "fr": "Nombre de places de stationnement réservées aux personnes à mobilité réduite",
+          "ca": "Quantitat de places d'aparcament reservades per a persones amb mobilitat reduïda"
         }
       },
       "mappings": [
@@ -155,7 +157,8 @@
             "en": "There are disabled parking spots, but it is not known how many",
             "nl": "Er zijn parkeerplaatsen voor gehandicapten, maar het is niet bekend hoeveel er zijn",
             "de": "Es gibt barrierefreie Stellplätze, aber die Anzahl ist unbekannt",
-            "fr": "Il y a des places de stationnement pour personnes à mobilité réduite, mais on ne sait pas combien"
+            "fr": "Il y a des places de stationnement pour personnes à mobilité réduite, mais on ne sait pas combien",
+            "ca": "Hi ha places d'aparcament per a gent amb mobilitat reduïda, però no es sap quantes"
           },
           "hideInAnswer": true
         },
@@ -176,7 +179,7 @@
             "nl": "Er zijn geen parkeerplaatsen voor gehandicapten",
             "de": "Es gibt keine barrierefreien Stellplätze",
             "fr": "Il n'y a pas de places de stationnement pour personnes à mobilité réduite",
-            "ca": "No hi han places d'aparcament per a persones amb mobilitat reduïda"
+            "ca": "No hi ha places d'aparcament per a persones amb mobilitat reduïda"
           }
         }
       ],
@@ -204,7 +207,8 @@
           "en": "Amount of parking spots",
           "nl": "Aantal parkeerplaatsen",
           "de": "Anzahl der Parkplätze",
-          "fr": "Nombre de places de stationnement"
+          "fr": "Nombre de places de stationnement",
+          "ca": "Quantitat de places d'aparcament"
         }
       },
       "question": {

@@ -16,6 +16,10 @@
       "value": "hackerspace"
     },
     {
+      "key": "id",
+      "description": "Layer 'Hackerspace' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Hackerspaces') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Hackerspace allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },

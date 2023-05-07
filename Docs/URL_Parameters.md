@@ -24,7 +24,6 @@
   - [fs-geolocation](#fs-geolocation)
   - [fs-all-questions](#fs-all-questions)
   - [fs-export](#fs-export)
-  - [fs-pdf](#fs-pdf)
   - [backend](#backend)
   - [test](#test)
   - [debug](#debug)
@@ -164,14 +163,7 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
  fs-export 
 -----------
 
- Enable the export as GeoJSON and CSV button The default value is _false_
-
-
-
- fs-pdf 
---------
-
- Enable the PDF download button The default value is _false_
+ Enable the export as GeoJSON and CSV button The default value is _true_
 
 
 

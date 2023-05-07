@@ -3,7 +3,8 @@
   "name": {
     "en": "Kindergartens and childcare",
     "nl": "Kleuterscholen en kinderopvang",
-    "de": "Kindergärten und Kinderkrippen"
+    "de": "Kindergärten und Kinderkrippen",
+    "ca": "Llars d'infants i guarderies"
   },
   "description": "Shows kindergartens and preschools. Both are grouped in one layer, as they are regularly confused with each other",
   "minzoom": 12,
@@ -109,7 +110,8 @@
       "question": {
         "en": "How much kids (at most) can be enrolled here?",
         "nl": "Hoeveel kinderen kunnen hier terecht?",
-        "de": "Wie viele Kinder können hier maximal angemeldet werden?"
+        "de": "Wie viele Kinder können hier maximal angemeldet werden?",
+        "ca": "Quants nens (com a màxim) es poden inscriure aquí?"
       },
       "render": {
         "en": "This facility has room for {capacity} kids",
@@ -129,7 +131,8 @@
         "en": "a kindergarten",
         "nl": "een kleuterschool",
         "de": "einen Kindergarten",
-        "ru": "детский сад"
+        "ru": "детский сад",
+        "ca": "una llar d'infants"
       },
       "description": "A kindergarten (also known as <i>preschool</i>) is a school where small kids receive early education.",
       "tags": [
@@ -142,7 +145,8 @@
       "title": {
         "en": "a childcare",
         "nl": "een kinderopvang",
-        "de": "eine Kinderkrippe"
+        "de": "eine Kinderkrippe",
+        "ca": "una guarderia"
       },
       "description": "A childcare (also known as <i>a nursery</i> or <i>daycare</i>) is a facility which looks after small kids, but does not offer them an education program.",
       "tags": [

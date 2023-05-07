@@ -30,21 +30,7 @@ An open map of statues, busts, graffitis and other artwork all over the world
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>
-
-
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22tourism%22%3D%22artwork%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -61,6 +47,7 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/artwork_type#values) [artwork_type](https://wiki.openstreetmap.org/wiki/Key:artwork_type) | [string](../SpecialInputElements.md#string) | [architecture](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Darchitecture) [mural](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dmural) [painting](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dpainting) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dsculpture) [statue](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstatue) [bust](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dbust) [stone](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstone) [installation](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dinstallation) [graffiti](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dgraffiti) [relief](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Drelief) [azulejo](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dazulejo) [tilework](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dtilework) [woodcarving](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dwoodcarving)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/artist:wikidata#values) [artist:wikidata](https://wiki.openstreetmap.org/wiki/Key:artist:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/artist_name#values) [artist_name](https://wiki.openstreetmap.org/wiki/Key:artist_name) | [string](../SpecialInputElements.md#string) | 
@@ -77,6 +64,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/inscription#values) [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [text](../SpecialInputElements.md#text) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/historic#values) [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [memorial](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D)
 
+
+
+
+### just_created 
+
+
+
+This element shows a 'thank you' that the contributor has recently created this element
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
 
 
 
@@ -463,16 +469,6 @@ This tagrendering has no question and is thus read-only
 
 
 
-### all-tags 
-
-
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
 ### last_edit 
 
 
@@ -484,6 +480,16 @@ This tagrendering has no question and is thus read-only
 
 
 This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+
+
+
+### all-tags 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
 
 
 

@@ -72,12 +72,12 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of delete_button](#example-usage-of-delete_button)
     + [share_link](#share_link)
       * [Example usage of share_link](#example-usage-of-share_link)
+    + [export_as_gpx](#export_as_gpx)
+      * [Example usage of export_as_gpx](#example-usage-of-export_as_gpx)
     + [upload_to_osm](#upload_to_osm)
       * [Example usage of upload_to_osm](#example-usage-of-upload_to_osm)
     + [multi_apply](#multi_apply)
       * [Example usage of multi_apply](#example-usage-of-multi_apply)
-    + [export_as_gpx](#export_as_gpx)
-      * [Example usage of export_as_gpx](#example-usage-of-export_as_gpx)
     + [add_note_comment](#add_note_comment)
       * [Example usage of add_note_comment](#example-usage-of-add_note_comment)
     + [open_note](#open_note)
@@ -302,6 +302,16 @@ url | _undefined_ | The url to share (default: current URL)
 
 
 
+### export_as_gpx 
+
+ Exports the selected feature as GPX-file 
+
+#### Example usage of export_as_gpx 
+
+ `{export_as_gpx()}`
+
+
+
 ### upload_to_osm 
 
  Uploads the GPS-history as GPX to OpenStreetMap.org; clears the history afterwards. The actual feature is ignored. 
@@ -328,16 +338,6 @@ overwrite | _undefined_ | If set to 'true', the tags on the other objects will a
 #### Example usage of multi_apply 
 
  {multi_apply(_features_with_the_same_name_within_100m, name:etymology:wikidata;name:etymology, Apply etymology information on all nearby objects with the same name)}
-
-
-
-### export_as_gpx 
-
- Exports the selected feature as GPX-file 
-
-#### Example usage of export_as_gpx 
-
- `{export_as_gpx()}`
 
 
 
@@ -649,7 +649,7 @@ mapillary | true | If 'true', includes a link to mapillary on this location.
 
 ### wikipedia 
 
- A box showing the corresponding wikipedia article - based on the wikidata tag 
+ A box showing the corresponding wikipedia article(s) - based on the **wikidata** tag. 
 
 name | default | description
 ------ | --------- | -------------

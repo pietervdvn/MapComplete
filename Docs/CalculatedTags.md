@@ -24,6 +24,7 @@
     + [_geometry:type](#_geometrytype)
     + [_level](#_level)
     + [_referencing_ways](#_referencing_ways)
+    + [_last_edit:passed_time](#_last_editpassed_time)
     + [distanceTo](#distanceto)
     + [overlapWith](#overlapwith)
     + [enclosingFeatures](#enclosingfeatures)
@@ -196,6 +197,16 @@ Extract the 'level'-tag into a normalized, ';'-separated value
 
 
 _referencing_ways contains - for a node - which ways use this this node as point in their geometry. 
+
+This is a lazy metatag and is only calculated when needed
+
+
+
+### _last_edit:passed_time 
+
+
+
+Gives the number of seconds since the last edit. Note that this will _not_ update, but rather be the number of seconds elapsed at the moment this tag is read first
 
 This is a lazy metatag and is only calculated when needed
 

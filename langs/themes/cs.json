@@ -1035,7 +1035,7 @@
                 "description": "Vrstva zobrazující vlaková nádraží",
                 "name": "Vlaková nádraží"
             },
-            "15": {
+            "16": {
                 "description": "Zobrazuje vlaky odjíždějící z této stanice",
                 "name": "Odjezdové tabule",
                 "presets": {

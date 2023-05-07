@@ -36,6 +36,10 @@
       "value": "nightclub"
     },
     {
+      "key": "id",
+      "description": "Layer 'Cafés and pubs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Cafés and pubs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -290,6 +294,10 @@
       "description": "The MapComplete theme OnWheels has a layer Entrance showing features with this tag"
     },
     {
+      "key": "id",
+      "description": "Layer 'Entrance' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Entrance allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -516,6 +524,10 @@
       "key": "amenity",
       "description": "The MapComplete theme OnWheels has a layer Restaurants and fast food showing features with this tag",
       "value": "restaurant"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Restaurants and fast food' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -998,6 +1010,10 @@
       "value": "kerb"
     },
     {
+      "key": "id",
+      "description": "Layer 'Kerbs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Kerbs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -1066,6 +1082,10 @@
       "key": "amenity",
       "description": "The MapComplete theme OnWheels has a layer Parking showing features with this tag",
       "value": "parking"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Parking' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -1191,6 +1211,10 @@
       "value": "disabled"
     },
     {
+      "key": "id",
+      "description": "Layer 'Disabled parking spaces' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Disabled parking spaces allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -1209,6 +1233,10 @@
     {
       "key": "shop",
       "description": "The MapComplete theme OnWheels has a layer Shop showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Shop' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -2196,6 +2224,10 @@
       "value": "toilets"
     },
     {
+      "key": "id",
+      "description": "Layer 'Toilets' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Toilets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -2425,6 +2457,10 @@
       "value": "pharmacy"
     },
     {
+      "key": "id",
+      "description": "Layer 'Pharmacies' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Pharmacies allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -2491,6 +2527,10 @@
       "key": "amenity",
       "description": "The MapComplete theme OnWheels has a layer Doctors showing features with this tag",
       "value": "doctors"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Doctors' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -2584,6 +2624,10 @@
       "value": "clinic"
     },
     {
+      "key": "id",
+      "description": "Layer 'Hospitals' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "name",
       "description": "Layer 'Hospitals' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'OnWheels')"
     },
@@ -2625,6 +2669,10 @@
       "key": "amenity",
       "description": "The MapComplete theme OnWheels has a layer Reception desks showing features with this tag",
       "value": "reception_desk"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Reception desks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -2689,6 +2737,10 @@
       "key": "highway",
       "description": "The MapComplete theme OnWheels has a layer Elevator showing features with this tag",
       "value": "elevator"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Elevator' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -2781,6 +2833,10 @@
       "key": "tourism",
       "description": "The MapComplete theme OnWheels has a layer Hotels showing features with this tag",
       "value": "hotel"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Hotels' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -2899,6 +2955,10 @@
       "key": "office",
       "description": "The MapComplete theme OnWheels has a layer governments showing features with this tag",
       "value": "government"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'governments' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",

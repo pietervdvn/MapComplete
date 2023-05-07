@@ -1,17 +1,17 @@
 import Svg from "../../Svg"
 import Combine from "../Base/Combine"
-import {SubtleButton} from "../Base/SubtleButton"
+import { SubtleButton } from "../Base/SubtleButton"
 import Translations from "../i18n/Translations"
 import BaseUIElement from "../BaseUIElement"
-import LayoutConfig, {LayoutInformation} from "../../Models/ThemeConfig/LayoutConfig"
-import {ImmutableStore, Store, UIEventSource} from "../../Logic/UIEventSource"
+import LayoutConfig, { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
+import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
 import Loc from "../../Models/Loc"
 import UserRelatedState from "../../Logic/State/UserRelatedState"
-import {Utils} from "../../Utils"
+import { Utils } from "../../Utils"
 import Title from "../Base/Title"
 import themeOverview from "../../assets/generated/theme_overview.json"
-import {Translation} from "../i18n/Translation"
-import {TextField} from "../Input/TextField"
+import { Translation } from "../i18n/Translation"
+import { TextField } from "../Input/TextField"
 import Locale from "../i18n/Locale"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import ThemesList from "./ThemesList.svelte"
@@ -37,7 +37,7 @@ export default class MoreScreen extends Combine {
             searchTerm = searchTerm.toLowerCase()
             if (searchTerm === "personal") {
                 window.location.href = MoreScreen.createUrlFor(
-                    {id: "personal"},
+                    { id: "personal" },
                     false,
                     state
                 ).data
@@ -142,7 +142,7 @@ export default class MoreScreen extends Combine {
             content = new Combine([content]).SetClass("flex flex-col justify-center h-24")
         }
 
-        return new SubtleButton(layout.icon, content, {url, newTab: false})
+        return new SubtleButton(layout.icon, content, { url, newTab: false })
     }
 
     public static CreateProffessionalSerivesButton() {
@@ -150,31 +150,30 @@ export default class MoreScreen extends Combine {
         return new Combine([
             new Title(t.hook, 4),
             t.hookMore,
-            new SubtleButton(undefined, t.button, {url: "./professional.html"}),
+            new SubtleButton(undefined, t.button, { url: "./professional.html" }),
         ]).SetClass("flex flex-col border border-gray-300 p-2 rounded-lg")
     }
 
-    public static MatchesLayout(layout: {
-        id: string
-        title: any
-        shortDescription: any
-        keywords?: any[]
-    }, search: string): boolean {
-        if(search === undefined){
+    public static MatchesLayout(
+        layout: {
+            id: string
+            title: any
+            shortDescription: any
+            keywords?: any[]
+        },
+        search: string
+    ): boolean {
+        if (search === undefined) {
             return true
         }
         search = search.toLocaleLowerCase()
         if (search.length > 3 && layout.id.toLowerCase().indexOf(search) >= 0) {
             return true
         }
-        if(layout.id === "personal"){
+        if (layout.id === "personal") {
             return false
         }
-        const entitiesToSearch = [
-            layout.shortDescription,
-            layout.title,
-            ...(layout.keywords ?? []),
-        ]
+        const entitiesToSearch = [layout.shortDescription, layout.title, ...(layout.keywords ?? [])]
         for (const entity of entitiesToSearch) {
             if (entity === undefined) {
                 continue

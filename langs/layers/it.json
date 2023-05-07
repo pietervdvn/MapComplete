@@ -307,63 +307,63 @@
         }
     },
     "bike_cafe": {
-        "name": "Caffè in bici",
+        "name": "Cafè per ciclisti",
         "presets": {
             "0": {
-                "title": "una caffè in bici"
+                "title": "un cafè per ciclisti"
             }
         },
         "tagRenderings": {
             "bike_cafe-bike-pump": {
                 "mappings": {
                     "0": {
-                        "then": "Questo caffè in bici offre una pompa per bici liberamente utilizzabile"
+                        "then": "Questo cafè per ciclisti offre una pompa per bici liberamente utilizzabile"
                     },
                     "1": {
-                        "then": "Questo caffè in bici non offre una pompa per bici liberamente utilizzabile"
+                        "then": "Questo cafè per ciclisti non offre una pompa per bici liberamente utilizzabile"
                     }
                 },
-                "question": "Questo caffè in bici offre una pompa per bici che chiunque può utilizzare?"
+                "question": "Questo cafè per ciclisti offre una pompa per bici che chiunque può utilizzare?"
             },
             "bike_cafe-name": {
-                "question": "Qual è il nome di questo caffè in bici?",
-                "render": "Questo caffè in bici è chiamato {name}"
+                "question": "Come si chiama questo cafè per ciclisti?",
+                "render": "Questo cafè per ciclisti si chiama {name}"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
                     "0": {
-                        "then": "Questo caffè in bici ripara le bici"
+                        "then": "Questo cafè per ciclisti ripara le bici"
                     },
                     "1": {
-                        "then": "Questo caffè in bici non ripara le bici"
+                        "then": "Questo cafè per ciclisti non ripara le bici"
                     }
                 },
-                "question": "Questo caffè in bici ripara le bici?"
+                "question": "Questo cafè per ciclisti ripara le bici?"
             },
             "bike_cafe-repair-tools": {
                 "mappings": {
                     "0": {
-                        "then": "Questo caffè in bici fornisce degli attrezzi per la riparazione fai-da-te"
+                        "then": "Questo cafè per ciclisti fornisce degli attrezzi per la riparazione fai-da-te"
                     },
                     "1": {
-                        "then": "Questo caffè in bici non fornisce degli attrezzi per la riparazione fai-da-te"
+                        "then": "Questo cafè per ciclisti non fornisce degli attrezzi per la riparazione fai-da-te"
                     }
                 },
                 "question": "Ci sono degli strumenti per riparare la propria bicicletta?"
             },
             "opening_hours": {
                 "override": {
-                    "question": "Quando è aperto questo caffè in bici?"
+                    "question": "Quando è aperto questo cafè per ciclisti?"
                 }
             }
         },
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Caffè in bici <i>{name}</i>"
+                    "then": "Cafè per ciclisti <i>{name}</i>"
                 }
             },
-            "render": "Caffè in bici"
+            "render": "Cafè per ciclisti"
         }
     },
     "bike_cleaning": {
@@ -626,7 +626,23 @@
     },
     "bike_shop": {
         "description": "Un negozio che vende specificatamente biciclette o articoli similari",
-        "name": "Venditore/riparatore bici",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Vende biciclette usate"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Offre riparazioni fai da te"
+                    }
+                }
+            }
+        },
+        "name": "Venditore/riparatore di biciclette",
         "presets": {
             "0": {
                 "title": "una negozio/riparatore di bici"
@@ -717,13 +733,13 @@
             "bike_repair_tools-service": {
                 "mappings": {
                     "0": {
-                        "then": "Questo negozio offre degli attrezzi per la riparazione fai-da-te"
+                        "then": "Questo negozio offre degli attrezzi per la riparazione fai da te"
                     },
                     "1": {
-                        "then": "Questo negozio non offre degli attrezzi per la riparazione fai-da-te"
+                        "then": "Questo negozio non offre degli attrezzi per la riparazione fai da te"
                     },
                     "2": {
-                        "then": "Gli attrezzi per la riparazione fai-da-te sono disponibili solamente se hai acquistato/noleggiato la bici nel negozio"
+                        "then": "Gli attrezzi per la riparazione fai da te sono disponibili solamente se hai acquistato/noleggiato la bici nel negozio"
                     }
                 },
                 "question": "Sono presenti degli attrezzi per riparare la propria bici?"
@@ -732,8 +748,8 @@
                 "render": "Questo negozio è specializzato nella vendita di {shop} ed effettua attività relative alle biciclette"
             },
             "bike_shop-name": {
-                "question": "Qual è il nome di questo negozio di biciclette?",
-                "render": "Questo negozio di biciclette è chiamato {name}"
+                "question": "Come si chiama questo negozio di biciclette?",
+                "render": "Questo negozio di biciclette si chiama {name}"
             }
         },
         "title": {
@@ -745,16 +761,16 @@
                     "then": "Noleggio di biciclette <i>{name}</i>"
                 },
                 "3": {
-                    "then": "Riparazione biciclette <i>{name}</i>"
+                    "then": "Riparazione di biciclette <i>{name}</i>"
                 },
                 "4": {
                     "then": "Negozio di biciclette <i>{name}</i>"
                 },
                 "5": {
-                    "then": "Venditore/riparatore bici <i>{name}</i>"
+                    "then": "Venditore/riparatore di biciclette <i>{name}</i>"
                 }
             },
-            "render": "Venditore/riparatore bici"
+            "render": "Venditore/riparatore di biciclette"
         }
     },
     "bike_themed_object": {

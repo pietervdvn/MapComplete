@@ -5,6 +5,10 @@
         "retrying": "Surgiu uma falha ao carregar os dados. A tentar novamente dentro de {count} segundos…",
         "zoomIn": "Amplie para ver ou editar os dados"
     },
+    "communityIndex": {
+        "available": "Esta comunidade fala {native}",
+        "intro": "Entre em contato com outras pessoas para conhecê-las, aprender com elas,..."
+    },
     "delete": {
         "cancel": "Cancelar",
         "cannotBeDeleted": "Este elemento não pode ser eliminado",
@@ -39,10 +43,43 @@
         "panelIntro": "<h3>O seu tema pessoal</h3>Ative as suas camadas favoritas a partir de todos os temas oficiais",
         "reload": "Recarregar dados"
     },
+    "flyer": {
+        "callToAction": "Teste em mapcomplete.osm.be",
+        "cyclofix": "Bombas de bicicleta, estações de reparação, água potável e lojas de bicicletas estão na CycloFix",
+        "editing": {
+            "ex": "Um exemplo simplificado de como isso se parece para uma reserva natural é mostrado abaixo.",
+            "intro": "O usuário é recebido por um mapa com características. Ao selecionar um, as informações sobre esse recurso são mostradas.",
+            "title": "Como é a interface?"
+        },
+        "examples": "Existem muitos mapas temáticos disponíveis, alguns deles impressos aqui.\n\nExistem muitos outros mapas temáticos online: sobre cuidados de saúde, navegação interior, acessibilidade para cadeiras de rodas, instalações de resíduos, estantes públicas, passagens para peões com uma pintura de arco-íris,... Descubra todos eles em mapcomplete.osm.be",
+        "fakeui": {
+            "add_images": "Adicione imagens com alguns cliques",
+            "attributes": "Mostra atributos de forma amigável",
+            "edit": "Informações erradas ou desatualizadas? O botão de edição está ali.",
+            "question": "Se um atributo ainda não for conhecido, MapComplete mostra uma pergunta",
+            "see_images": "Mostra imagens de contribuidores anteriores, Wikipedia, Mapillary, ... ",
+            "wikipedia": "Os artigos vinculados da Wikipédia são exibidos"
+        },
+        "frontParagraph": "O MapComplete é um aplicativo da Web fácil de usar para coletar dados geográficos no OpenStreetMap, permitindo coletar e gerenciar dados relevantes de maneira aberta, colaborativa e reutilizável.\n\nNovas categorias e atributos podem ser adicionados mediante solicitação.",
+        "mapcomplete": {
+            "li0": "Mostrar onde estão os POI",
+            "li1": "Adicione novos pontos e atualize as informações dos existentes",
+            "li2": "Adicione informações de contato e horário de funcionamento facilmente",
+            "li3": "Pode ser colocado em outros sites como iFrame",
+            "li4": "Incorporado no ecossistema OpenStreetMap, que tem muitas ferramentas disponíveis",
+            "li5": "Funcionalidade para importar conjuntos de dados existentes",
+            "li6": "Muitos recursos avançados, como detecção de árvores e métodos de entrada avançados",
+            "li7": "Software livre com copyleft (licença GPL) e de uso gratuito",
+            "title": "O que é o MapComplete?"
+        },
+        "onwheels": "Mapas internos para usuários de cadeira de rodas também estão disponíveis.",
+        "osm": "OpenStreetMap é um mapa on-line que pode ser editado e reutilizado por qualquer pessoa para qualquer finalidade, desde que a atribuição seja dada e os dados sejam mantidos abertos.\nÉ o maior banco de dados geoespacial do mundo e é reutilizado por milhares de aplicativos e sites."
+    },
     "general": {
         "about": "Edite e adicione facilmente o OpenStreetMap para um determinado tema",
         "add": {
             "addNew": "Adicionar {category} aqui",
+            "backToSelect": "Selecione uma categoria diferente",
             "confirmButton": "Adicione uma {category} aqui.<br><div class=\"alert\">Esta adição será visível a todos</div>",
             "confirmIntro": "<h3>Adicionar {title} aqui?</h3>O elemento que criar aqui será <b>visível a todos</b>. Por favor, só adicione coisas ao mapa se elas realmente existirem. Muitas aplicações usam estes dados.",
             "disableFilters": "Desativar todos os filtros",
@@ -97,6 +134,7 @@
             "translatedBy": "O MapComplete foi traduzido por {contributors} e <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} mais utilizadores</a>"
         },
         "back": "Voltar",
+        "backToIndex": "Volte para a visão geral com todos os mapas temáticos",
         "backToMapcomplete": "Voltar à visão geral do tema",
         "backgroundMap": "Mapa de fundo",
         "cancel": "Cancelar",
@@ -125,6 +163,7 @@
         "error": "Algo correu mal",
         "example": "Exemplo",
         "examples": "Exemplos",
+        "feelFreeToSkip": "Você pode adicionar ou atualizar mais informações abaixo, mas sinta-se à vontade <b>para pular perguntas</b> para as quais não sabe a resposta.",
         "fewChangesBefore": "Por favor, responda a algumas perguntas sobre os elementos existentes antes de adicionar um novo elemento.",
         "getStartedLogin": "Entrar com OpenStreetMap para começar",
         "getStartedNewAccount": " ou <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">crie uma conta</a>",
@@ -155,6 +194,7 @@
             "streetcomplete": "Outra aplicação semelhante é o <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "O nome desta {category} é $$$",
+        "newlyCreated": "Você acabou de criar este elemento! Obrigado por compartilhar esta informação com o mundo e ajudar as pessoas em todo o mundo.",
         "next": "Seguinte",
         "noNameCategory": "{category} sem nome",
         "noTagsSelected": "Nenhuma etiqueta selecionada",
@@ -270,6 +310,7 @@
     },
     "image": {
         "addPicture": "Adicionar imagem",
+        "currentLicense": "Suas imagens serão publicadas sob {license}",
         "doDelete": "Remover imagem",
         "dontDelete": "Cancelar",
         "isDeleted": "Eliminada",
@@ -396,7 +437,11 @@
             "errDuplicate": "Algumas colunas têm o mesmo nome",
             "errNoLatOrLon": "O cabeçalho não contém `lat' ou `lon'",
             "errNoName": "Algumas colunas não têm um nome"
-        }
+        },
+        "title": "Auxiliar de importação"
+    },
+    "importInspector": {
+        "title": "Inspecionar e gerenciar notas de importação"
     },
     "index": {
         "#": "Estes textos são mostrados acima dos botões do tema quando nenhum tema é carregado",
@@ -433,6 +478,14 @@
     "multi_apply": {
         "autoApply": "Ao alterar os atributos {attr_names}, estes atributos serão alterados automaticamente em {count} outros objetos também"
     },
+    "plantDetection": {
+        "poweredByPlantnet": "Distribuído por <a href='https://plantnet.org' target='_blank'>plantnet.org</a>"
+    },
+    "professional": {
+        "indexPage": {
+            "hook": "Precisa de suporte profissional?"
+        }
+    },
     "reviews": {
         "affiliated_reviewer_warning": "(avaliação de afiliado)",
         "attribution": "As avaliações são fornecidas por <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> e estão disponíveis sob a licença <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
@@ -456,5 +509,12 @@
         "loginToSplit": "Tem de estar autenticado para dividir uma estrada",
         "split": "Dividir",
         "splitTitle": "Escolha no mapa onde dividir esta estrada"
+    },
+    "translations": {
+        "activateButton": "Ajude a traduzir MapComplete"
+    },
+    "userinfo": {
+        "gotoInbox": "Abra sua caixa de entrada",
+        "gotoSettings": "Vá para suas configurações no OpenStreetMap.org"
     }
 }

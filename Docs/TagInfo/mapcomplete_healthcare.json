@@ -16,6 +16,10 @@
       "value": "doctors"
     },
     {
+      "key": "id",
+      "description": "Layer 'Doctors' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Healthcare') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Doctors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -102,6 +106,10 @@
       "value": "physiotherapist"
     },
     {
+      "key": "id",
+      "description": "Layer 'Physiotherapist' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Healthcare') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Physiotherapist allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -164,6 +172,10 @@
       "value": "dentist"
     },
     {
+      "key": "id",
+      "description": "Layer 'Dentist' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Healthcare') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Dentist allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -222,6 +234,10 @@
       "value": "clinic"
     },
     {
+      "key": "id",
+      "description": "Layer 'Hospitals' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Healthcare') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "name",
       "description": "Layer 'Hospitals' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Healthcare')"
     },
@@ -263,6 +279,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Healthcare has a layer Pharmacies showing features with this tag",
       "value": "pharmacy"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Pharmacies' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Healthcare') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -345,6 +365,10 @@
       "key": "shop",
       "description": "The MapComplete theme Healthcare has a layer Shop showing features with this tag",
       "value": "optician"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Shop' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Healthcare') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -1329,6 +1353,10 @@
     {
       "key": "shop",
       "description": "The MapComplete theme Healthcare has a layer Shop showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Shop' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Healthcare') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",

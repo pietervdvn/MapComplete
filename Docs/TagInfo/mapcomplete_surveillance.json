@@ -19,6 +19,10 @@
       "description": "The MapComplete theme Surveillance under Surveillance has a layer Direction visualization showing features with this tag"
     },
     {
+      "key": "id",
+      "description": "Layer 'Direction visualization' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Surveillance under Surveillance') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "man_made",
       "description": "The MapComplete theme Surveillance under Surveillance has a layer Surveillance camera's showing features with this tag",
       "value": "surveillance"
@@ -37,6 +41,10 @@
       "key": "surveillance:type",
       "description": "The MapComplete theme Surveillance under Surveillance has a layer Surveillance camera's showing features with this tag",
       "value": "ANPR"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Surveillance camera's' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Surveillance under Surveillance') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",

@@ -34,6 +34,10 @@
       "description": "The MapComplete theme Education has a layer Colleges and universities showing features with this tag"
     },
     {
+      "key": "id",
+      "description": "Layer 'Colleges and universities' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Education') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "amenity",
       "description": "Layer 'Colleges and universities' shows amenity=college with a fixed text, namely 'This is an institution of post-secondary, non-tertiary education. One has to have completed secondary education to enroll here, but no bachelor (or higher) degrees are awarded here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Education')",
       "value": "college"
@@ -110,6 +114,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Education has a layer Primary and secondary schools showing features with this tag",
       "value": "school"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Primary and secondary schools' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Education') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "name",
@@ -261,6 +269,10 @@
       "key": "isced:level:2011",
       "description": "The MapComplete theme Education has a layer Kindergartens and childcare showing features with this tag",
       "value": "early_childhood"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Kindergartens and childcare' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Education') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "amenity",

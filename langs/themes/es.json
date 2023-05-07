@@ -1035,7 +1035,7 @@
                 "description": "Capa que muestra las estaciones de tren",
                 "name": "Estación de Tren"
             },
-            "15": {
+            "16": {
                 "description": "Pantallas que muestran los trenes que saldrán de esta estación",
                 "name": "Tableros de salidas",
                 "presets": {

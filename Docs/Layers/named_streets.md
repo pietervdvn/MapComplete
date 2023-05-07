@@ -23,22 +23,7 @@ Hidden layer with all streets which have a name. Useful to detect addresses
   - This layer is needed as dependency for layer [address](#address)
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - highway~.+
-  - name~.+
-
-
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22name%22%5D%5B%22highway%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 

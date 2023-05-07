@@ -263,7 +263,7 @@
         {
           "if": "bicycle_parking=floor",
           "then": {
-            "en": "An area on the floor which is  marked for bicycle parking",
+            "en": "An area on the floor which is marked for bicycle parking",
             "nl": "Een oppervlakte die gemarkeerd is om fietsen te parkeren",
             "fr": "Zone au sol qui est marquée pour le stationnement des vélos",
             "it": "Una zona del pavimento che è marcata per il parcheggio delle bici",

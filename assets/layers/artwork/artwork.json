@@ -133,7 +133,9 @@
       ],
       "title": {
         "en": "an artwork on a wall",
-        "nl": "een kunstwerk op een muur"
+        "nl": "een kunstwerk op een muur",
+        "ca": "una obra d'art en una paret",
+        "de": "ein Kunstwerk an einer Wand"
       },
       "preciseInput": {
         "snapToLayer": "walls_and_buildings"
@@ -210,7 +212,8 @@
             "es": "Arquitectura",
             "ca": "Arquitectura",
             "da": "Arkitektur",
-            "cs": "Architektura"
+            "cs": "Architektura",
+            "pt_BR": "Arquitetura"
           }
         },
         {
@@ -233,7 +236,8 @@
             "ca": "Mural",
             "da": "Vægmaleri",
             "cs": "Nástěnná malba",
-            "pa_PK": "کندھ چتر"
+            "pa_PK": "کندھ چتر",
+            "pt_BR": "Mural"
           }
         },
         {
@@ -278,7 +282,8 @@
             "ca": "Escultura",
             "da": "Skulptur",
             "cs": "Plastika",
-            "pa_PK": "مورتی"
+            "pa_PK": "مورتی",
+            "pt_BR": "Escultura"
           }
         },
         {
@@ -299,7 +304,8 @@
             "es": "Estatua",
             "ca": "Estàtua",
             "da": "Statue",
-            "cs": "Socha"
+            "cs": "Socha",
+            "pt_BR": "Estátua"
           }
         },
         {
@@ -320,7 +326,8 @@
             "es": "Busto",
             "ca": "Bust",
             "da": "Buste",
-            "cs": "Busta"
+            "cs": "Busta",
+            "pt_BR": "Busto"
           }
         },
         {
@@ -343,7 +350,8 @@
             "es": "Piedra",
             "da": "Sten",
             "pa_PK": "پتھر",
-            "cs": "Kámen"
+            "cs": "Kámen",
+            "pt_BR": "Pedra"
           }
         },
         {
@@ -365,7 +373,8 @@
             "es": "Instalación",
             "ca": "Instal·lació",
             "da": "Installation",
-            "cs": "Instalace"
+            "cs": "Instalace",
+            "pt_BR": "Instalação"
           }
         },
         {
@@ -381,7 +390,7 @@
             "zh_Hant": "塗鴨",
             "nb_NO": "Graffiti",
             "id": "Graffiti",
-            "pt": "Graffiti",
+            "pt": "Grafite",
             "hu": "Graffiti",
             "pl": "Graffiti",
             "es": "Grafiti",
@@ -528,7 +537,8 @@
         "es": "¿Que artista creó esto?",
         "da": "Hvilken kunstner har lavet dette?",
         "cs": "Který umělec to vytvořil?",
-        "ca": "Quin artista va crear açò?"
+        "ca": "Quin artista va crear açò?",
+        "pt_BR": "Que artista criou isto?"
       },
       "render": {
         "en": "Created by {artist_name}",

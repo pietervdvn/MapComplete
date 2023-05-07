@@ -20,6 +20,14 @@
     ]
   },
   {
+    "path": "bicycles.svg",
+    "license": "CC0",
+    "authors": [
+      "Antwerpenize Bike Font"
+    ],
+    "sources": []
+  },
+  {
     "path": "cans.svg",
     "license": "CC-BY-SA",
     "authors": [
@@ -111,6 +119,14 @@
     ],
     "sources": [
       "https://openclipart.org/detail/175842/basic-light-bulb"
+    ]
+  },
+  {
+    "path": "needles.svg",
+    "license": "CC0",
+    "authors": [],
+    "sources": [
+      "https://svgsilh.com/image/1294131.html"
     ]
   },
   {

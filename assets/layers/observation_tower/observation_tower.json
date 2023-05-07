@@ -185,7 +185,8 @@
         "en": "How much individual steps does one have to climb to reach the top of this tower?",
         "nl": "Hoeveel treden moet men beklimmen op de top van de toren te bereiken?",
         "de": "Wie viele einzelne Stufen muss man erklimmen, um die Spitze des Turms zu erreichen?",
-        "es": "¿Cuántos escalones hay que subir para llegar a la cima de esta torre?"
+        "es": "¿Cuántos escalones hay que subir para llegar a la cima de esta torre?",
+        "ca": "Quants esglaons individuals cal pujar per arribar al cim d'aquesta torre?"
       },
       "freeform": {
         "key": "step_count",
@@ -195,7 +196,8 @@
         "en": "This tower has {step_count} steps to reach the top",
         "nl": "Deze toren heeft {step_count} traptredes",
         "de": "Dieser Turm hat {step_count} Stufen, um die Spitze zu erreichen",
-        "es": "Esta torre tiene {step_count} escalones para lllegar a l a cima"
+        "es": "Esta torre tiene {step_count} escalones para lllegar a l a cima",
+        "ca": "Aquesta torre té {step_count} esglaons per arribar al cim"
       },
       "condition": {
         "or": [

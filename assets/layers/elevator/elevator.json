@@ -93,7 +93,8 @@
         "en": "What is the width of this elevator's entrance?",
         "fr": "Quelle est la largeur de l'entrée de cet ascenseur ?",
         "de": "Wie breit ist die Tür dieses Aufzugs?",
-        "nl": "Wat is de breedte van de liftdeur?"
+        "nl": "Wat is de breedte van de liftdeur?",
+        "ca": "Quina és l'amplada de l'entrada d'aquest ascensor?"
       },
       "freeform": {
         "key": "door:width",
@@ -159,6 +160,27 @@
             "en": "This elevator has tactile writing in {language():font-bold}",
             "de": "Der Aufzug hat taktile Schrift in {language():font-bold}",
             "nl": "Deze lift heeft voelbaar schrift in het {language():font-bold}"
+          }
+        }
+      }
+    },
+    {
+      "id": "speech_output",
+      "render": {
+        "special": {
+          "type": "language_chooser",
+          "key": "speech_output",
+          "question": {
+            "en": "In which languages does this elevator have speech output?",
+            "nl": "In welke talen heeft deze lift gesproken tekst?"
+          },
+          "render_list_item": {
+            "en": "This elevator has speech output in {language():font-bold}",
+            "nl": "Deze lift heeft gesproken tekst in het {language():font-bold}"
+          },
+          "render_single_language": {
+            "en": "This elevator has speech output in {language():font-bold}",
+            "nl": "Deze lift heeft gesproken tekst in het {language():font-bold}"
           }
         }
       }

@@ -29,6 +29,10 @@
       "description": "The MapComplete theme Open Climbing Map has a layer Climbing club showing features with this tag"
     },
     {
+      "key": "id",
+      "description": "Layer 'Climbing club' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "name",
       "description": "Layer 'Climbing club' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Open Climbing Map')"
     },
@@ -98,6 +102,10 @@
       "key": "leisure",
       "description": "The MapComplete theme Open Climbing Map has a layer Climbing gyms showing features with this tag",
       "value": "sports_centre"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Climbing gyms' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -298,6 +306,10 @@
       "value": "route"
     },
     {
+      "key": "id",
+      "description": "Layer 'Climbing routes' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Climbing routes allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -381,6 +393,10 @@
       "key": "sport",
       "description": "The MapComplete theme Open Climbing Map has a layer Climbing opportunities showing features with this tag",
       "value": "climbing"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Climbing opportunities' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -541,6 +557,10 @@
       "key": "climbing",
       "description": "The MapComplete theme Open Climbing Map has a layer Climbing opportunities? showing features with this tag",
       "value": ""
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Climbing opportunities?' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Open Climbing Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "sport",

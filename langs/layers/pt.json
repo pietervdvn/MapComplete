@@ -1,614 +1,1012 @@
 {
-    "address": {
-        "description": "Endereços",
-        "name": "Endereços conhecidos no OSM",
-        "tagRenderings": {
-            "fixme": {
-                "question": "O que deve ser corrigido aqui? Explique"
-            },
-            "housenumber": {
-                "mappings": {
-                    "0": {
-                        "then": "Este prédio não tem número"
-                    }
-                },
-                "question": "Qual é o número desta casa?",
-                "render": "The house number is <b>{addr:housenumber}</b>"
-            }
-        }
+  "address": {
+    "description": "Endereços",
+    "name": "Endereços conhecidos no OSM",
+    "tagRenderings": {
+      "fixme": {
+        "question": "O que deve ser corrigido aqui? Explique"
+      },
+      "housenumber": {
+        "mappings": {
+          "0": {
+            "then": "Este prédio não tem número"
+          }
+        },
+        "question": "Qual é o número desta casa?",
+        "render": "O número da casa é <b>{addr:housenumber}</b>"
+      },
+      "street": {
+        "question": "Em que rua fica esse endereço?",
+        "render": "Este endereço é na rua <b>{addr:street}</b>"
+      }
     },
-    "artwork": {
-        "description": "Diversas obras de arte",
-        "name": "Obras de arte",
-        "presets": {
-            "0": {
-                "title": "uma obra de arte"
-            }
-        },
-        "tagRenderings": {
-            "artwork-artist-wikidata": {
-                "question": "Quem fez essa obra de arte?",
-                "render": "Esta obra de arte foi feita por {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
-            },
-            "artwork-artist_name": {
-                "question": "Que artista criou isto?",
-                "render": "Criado por {artist_name}"
-            },
-            "artwork-artwork_type": {
-                "mappings": {
-                    "0": {
-                        "then": "Arquitetura"
-                    },
-                    "1": {
-                        "then": "Mural"
-                    },
-                    "2": {
-                        "then": "Pintura"
-                    },
-                    "3": {
-                        "then": "Escultura"
-                    },
-                    "4": {
-                        "then": "Estátua"
-                    },
-                    "5": {
-                        "then": "Busto"
-                    },
-                    "6": {
-                        "then": "Pedra"
-                    },
-                    "7": {
-                        "then": "Instalação"
-                    },
-                    "8": {
-                        "then": "Graffiti"
-                    },
-                    "9": {
-                        "then": "Relevo"
-                    },
-                    "10": {
-                        "then": "Azulejo (azulejo decorativo espanhol e português)"
-                    },
-                    "11": {
-                        "then": "Ladrilhos"
-                    },
-                    "12": {
-                        "then": "Entalhe em madeira"
-                    }
-                },
-                "question": "Qual é o tipo desta obra de arte?",
-                "render": "Isto é um(a) {artwork_type}"
-            },
-            "artwork-website": {
-                "question": "Existe um site com mais informações sobre esta obra de arte?",
-                "render": "Mais informações <a href='{website}' target='_blank'>neste site</a>"
-            },
-            "artwork_subject": {
-                "question": "O que esta obra de arte representa?",
-                "render": "A obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Obra de arte <i>{name}</i>"
-                }
-            },
-            "render": "Obra de arte"
-        }
-    },
-    "barrier": {
-        "tagRenderings": {
-            "MaxWidth": {
-                "render": "Largura máxima: {maxwidth:physical} m"
-            }
-        }
-    },
-    "bench": {
-        "name": "Bancos",
-        "presets": {
-            "0": {
-                "title": "uma banco"
-            }
-        },
-        "tagRenderings": {
-            "bench-backrest": {
-                "mappings": {
-                    "1": {
-                        "then": "Encosto: Sim"
-                    },
-                    "2": {
-                        "then": "Encosto: Não"
-                    }
-                },
-                "question": "Este assento tem um escosto?"
-            },
-            "bench-colour": {
-                "mappings": {
-                    "0": {
-                        "then": "Cor: castanho"
-                    },
-                    "1": {
-                        "then": "Cor: verde"
-                    },
-                    "2": {
-                        "then": "Cor: cinzento"
-                    },
-                    "3": {
-                        "then": "Cor: branco"
-                    },
-                    "4": {
-                        "then": "Cor: vermelho"
-                    },
-                    "5": {
-                        "then": "Cor: preto"
-                    },
-                    "6": {
-                        "then": "Cor: azul"
-                    },
-                    "7": {
-                        "then": "Cor: amarelo"
-                    }
-                },
-                "question": "Qual a cor dessa bancada?",
-                "render": "Cor: {colour}"
-            },
-            "bench-direction": {
-                "question": "Em que direção olha quando está sentado no banco?",
-                "render": "Ao sentar-se no banco, olha-se para {direction} °."
-            },
-            "bench-material": {
-                "mappings": {
-                    "0": {
-                        "then": "Material: madeira"
-                    },
-                    "1": {
-                        "then": "Material: metal"
-                    },
-                    "2": {
-                        "then": "Material: pedra"
-                    },
-                    "3": {
-                        "then": "Material: concreto"
-                    },
-                    "4": {
-                        "then": "Material: plástico"
-                    },
-                    "5": {
-                        "then": "Material: aço"
-                    }
-                },
-                "question": "De que é feito o banco (assento)?",
-                "render": "Material: {material}"
-            },
-            "bench-seats": {
-                "question": "Quantos assentos este banco tem?",
-                "render": "{seats} assentos"
-            },
-            "bench-survey:date": {
-                "question": "Quando esta bancada foi pesquisada pela última vez?",
-                "render": "Esta bancada foi pesquisada pela última vez em {survey:date}"
-            }
-        },
-        "title": {
-            "render": "Banco"
-        }
-    },
-    "bench_at_pt": {
-        "name": "Bancos em pontos de transporte público",
-        "tagRenderings": {
-            "bench_at_pt-bench_type": {
-                "mappings": {
-                    "2": {
-                        "then": "Não há nenhum banco aqui"
-                    }
-                },
-                "question": "Que tipo de banco é este?"
-            },
-            "bench_at_pt-name": {
-                "render": "{name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Banco em ponto de transporte público"
-                },
-                "1": {
-                    "then": "Banco em abrigo"
-                }
-            },
-            "render": "Banco"
-        }
-    },
-    "bicycle_library": {
-        "description": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
-        "name": "Biblioteca de bicicleta",
-        "presets": {
-            "0": {
-                "title": "uma biblioteca de bicicletas"
-            }
-        },
-        "tagRenderings": {
-            "bicycle-library-target-group": {
-                "mappings": {
-                    "0": {
-                        "then": "Bicicletas para crianças disponíveis"
-                    },
-                    "1": {
-                        "then": "Bicicletas para adulto disponíveis"
-                    },
-                    "2": {
-                        "then": "Bicicletas para deficientes físicos disponíveis"
-                    }
-                },
-                "question": "Quem pode emprestar bicicletas aqui?"
-            },
-            "bicycle_library-charge": {
-                "mappings": {
-                    "0": {
-                        "then": "Emprestar uma bicicleta é grátis"
-                    },
-                    "1": {
-                        "then": "Emprestar uma bicicleta custa €20/ano e €20 de garantia"
-                    }
-                },
-                "question": "Quanto custa um empréstimo de bicicleta?",
-                "render": "Custos de empréstimo de bicicleta {charge}"
-            },
-            "bicycle_library-name": {
-                "question": "Qual o nome desta biblioteca de bicicleta?",
-                "render": "Esta biblioteca de bicicleta é chamada de {name}"
-            }
-        },
-        "title": {
-            "render": "Biblioteca de bicicleta"
-        }
-    },
-    "bicycle_tube_vending_machine": {
-        "name": "Máquina de venda automática de tubos de bicicleta",
-        "presets": {
-            "0": {
-                "title": "uma máquina de venda automática de tubos de bicicleta"
-            }
-        },
-        "tagRenderings": {
-            "Still in use?": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta máquina de venda automática funciona"
-                    },
-                    "1": {
-                        "then": "Esta máquina de venda automática está quebrada"
-                    },
-                    "2": {
-                        "then": "Esta máquina de venda automática está fechada"
-                    }
-                },
-                "question": "Esta máquina de venda automática ainda está operacional?",
-                "render": "O estado operacional é: <i>{operational_status}</i>"
-            }
-        },
-        "title": {
-            "render": "Máquina de venda automática de tubos de bicicleta"
-        }
-    },
-    "bike_cafe": {
-        "name": "Café de bicicletas",
-        "presets": {
-            "0": {
-                "title": "uma café de bicicleta"
-            }
-        },
-        "tagRenderings": {
-            "bike_cafe-name": {
-                "question": "Qual o nome deste café de bicicleta?",
-                "render": "Este café de bicicleta se chama {name}"
-            },
-            "bike_cafe-repair-service": {
-                "mappings": {
-                    "0": {
-                        "then": "Este café de bicicleta conserta bicicletas"
-                    },
-                    "1": {
-                        "then": "Este café de bicicleta não conserta bicicletas"
-                    }
-                },
-                "question": "Este café de bicicleta conserta bicicletas?"
-            },
-            "bike_cafe-repair-tools": {
-                "mappings": {
-                    "0": {
-                        "then": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo"
-                    },
-                    "1": {
-                        "then": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo"
-                    }
-                },
-                "question": "Há ferramentas aqui para consertar a sua própria bicicleta?"
-            },
-            "opening_hours": {
-                "override": {
-                    "question": "Quando este café de bicicleta abre?"
-                }
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Café de bicicleta <i>{name}</i>"
-                }
-            },
-            "render": "Café de bicicleta"
-        }
-    },
-    "bike_cleaning": {
-        "name": "Serviço de limpeza de bicicletas",
-        "presets": {
-            "0": {
-                "title": "uma serviço de limpeza de bicicletas"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Serviço de limpeza de bicicletas <i>{name}</i>"
-                }
-            },
-            "render": "Serviço de limpeza de bicicletas"
-        }
-    },
-    "bike_parking": {
-        "name": "Estacionamento de bicicletas",
-        "presets": {
-            "0": {
-                "title": "uma estacionamento de bicicletas"
-            }
-        },
-        "tagRenderings": {
-            "Access": {
-                "mappings": {
-                    "0": {
-                        "then": "Acessível ao público"
-                    },
-                    "1": {
-                        "then": "Acesso é principalmente para visitantes de uma empresa"
-                    },
-                    "2": {
-                        "then": "Acesso é limitado aos membros de uma escola, companhia ou organização"
-                    }
-                },
-                "question": "Quem pode usar este estacionamento de bicicletas?",
-                "render": "{access}"
-            },
-            "Bicycle parking type": {
-                "question": "Qual o tipo deste estacionamento de bicicletas?",
-                "render": "Este é um estacionamento de bicicletas do tipo: {bicycle_parking}"
-            },
-            "Capacity": {
-                "render": "Lugar para {capacity} bicicletas"
-            },
-            "Cargo bike capacity?": {
-                "question": "Quantas bicicletas de carga cabem neste estacionamento de bicicletas?",
-                "render": "Neste estacionamento cabem {capacity:cargo_bike} bicicletas de carga"
-            },
-            "Cargo bike spaces?": {
-                "mappings": {
-                    "0": {
-                        "then": "Este estacionamento tem vagas para bicicletas de carga"
-                    },
-                    "1": {
-                        "then": "Este estacionamento tem vagas (oficiais) projetadas para bicicletas de carga."
-                    },
-                    "2": {
-                        "then": "Não tem permissão para estacionar bicicletas de carga"
-                    }
-                },
-                "question": "O estacionamento de bicicletas tem vagas para bicicletas de carga?"
-            },
-            "Is covered?": {
-                "mappings": {
-                    "0": {
-                        "then": "Este estacionamento é coberto (tem um telhado)"
-                    },
-                    "1": {
-                        "then": "Este estacionamento não é coberto"
-                    }
-                },
-                "question": "Este estacionamento é coberto? Também selecione \"coberto\" para estacionamentos internos."
-            },
-            "Underground?": {
-                "mappings": {
-                    "0": {
-                        "then": "Estacionamento subterrâneo"
-                    },
-                    "1": {
-                        "then": "Estacionamento de superfície"
-                    },
-                    "2": {
-                        "then": "Estacionamento no telhado"
-                    },
-                    "3": {
-                        "then": "Estacionamento ao nível da superfície"
-                    }
-                },
-                "question": "Qual a localização relativa deste estacionamento de bicicletas?"
-            }
-        },
-        "title": {
-            "render": "Estacionamento de bicicletas"
-        }
-    },
-    "bike_repair_station": {
-        "presets": {
-            "0": {
-                "description": "Um aparelho para encher os seus pneus num local fixa no espaço público"
-            }
-        },
-        "tagRenderings": {
-            "bike_repair_station-available-services": {
-                "mappings": {
-                    "0": {
-                        "then": "Há somente uma bomba presente"
-                    },
-                    "1": {
-                        "then": "Há somente ferramentas (chaves de fenda, alicates...) presentes"
-                    },
-                    "2": {
-                        "then": "Há tanto ferramentas e uma bomba presente"
-                    }
-                },
-                "question": "Quais serviços estão disponíveis nesta estação de bicicletas?"
-            },
-            "bike_repair_station-bike-chain-tool": {
-                "mappings": {
-                    "0": {
-                        "then": "Há uma ferramenta de corrente"
-                    },
-                    "1": {
-                        "then": "Não há uma ferramenta de corrente"
-                    }
-                }
-            },
-            "bike_repair_station-bike-stand": {
-                "mappings": {
-                    "0": {
-                        "then": "Há um gancho ou um suporte"
-                    },
-                    "1": {
-                        "then": "Não há um gancho ou um suporte"
-                    }
-                }
-            },
-            "bike_repair_station-electrical_pump": {
-                "mappings": {
-                    "0": {
-                        "then": "Bomba manual"
-                    },
-                    "1": {
-                        "then": "Bomba elétrica"
-                    }
-                }
-            },
-            "bike_repair_station-manometer": {
-                "mappings": {
-                    "0": {
-                        "then": "Há um manômetro"
-                    },
-                    "1": {
-                        "then": "Não há um manômetro"
-                    },
-                    "2": {
-                        "then": "Há um manômetro mas está quebrado"
-                    }
-                }
-            },
-            "bike_repair_station-operator": {
-                "question": "Quem faz a manutenção desta bomba de ciclo?",
-                "render": "Mantida por {operator}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Estação de reparo de bicicletas"
-                },
-                "1": {
-                    "then": "Estação de reparo de bicicletas"
-                }
-            }
-        }
-    },
-    "bike_shop": {
-        "description": "Uma loja que vende especificamente bicicletas ou itens relacionados",
-        "name": "Reparo/loja de bicicletas",
-        "tagRenderings": {
-            "bike_repair_rents-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta loja aluga bicicletas"
-                    },
-                    "1": {
-                        "then": "Esta loja não aluga bicicletas"
-                    }
-                },
-                "question": "Esta loja aluga bicicletas?"
-            },
-            "bike_repair_repairs-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta loja conserta bicicletas"
-                    },
-                    "1": {
-                        "then": "Esta loja não conserta bicicletas"
-                    },
-                    "2": {
-                        "then": "Esta loja conserta bicicletas compradas aqui"
-                    },
-                    "3": {
-                        "then": "Esta loja conserta bicicletas de uma certa marca"
-                    }
-                },
-                "question": "Esta loja conserta bicicletas?"
-            },
-            "bike_repair_sells-bikes": {
-                "mappings": {
-                    "0": {
-                        "then": "Esta loja vende bicicletas"
-                    },
-                    "1": {
-                        "then": "Esta loja não vende bicicletas"
-                    }
-                },
-                "question": "Esta loja vende bicicletas?"
-            },
-            "bike_shop-is-bicycle_shop": {
-                "render": "Esta loja é especializada em vender {shop} e faz atividades relacionadas à bicicletas"
-            },
-            "bike_shop-name": {
-                "question": "Qual o nome desta loja de bicicletas?",
-                "render": "Esta loja de bicicletas se chama {name}"
-            }
-        },
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "Loja de equipamentos desportivos <i>{name}</i>"
-                },
-                "2": {
-                    "then": "Aluguel de bicicletas <i>{name}</i>"
-                },
-                "3": {
-                    "then": "Reparo de bicicletas <i>{name}</i>"
-                },
-                "4": {
-                    "then": "Loja de bicicletas <i>{name}</i>"
-                },
-                "5": {
-                    "then": "Loja/reparo de bicicletas <i>{name}</i>"
-                }
-            },
-            "render": "Reparo/loja de bicicletas"
-        }
-    },
-    "ghost_bike": {
-        "name": "Bicicleta fantasma",
-        "presets": {
-            "0": {
-                "title": "uma bicicleta fantasma"
-            }
-        },
-        "title": {
-            "render": "Bicicleta fantasma"
-        }
-    },
-    "last_click": {
-        "mapRendering": {
-            "0": {
-                "label": {
-                    "render": "Adicionar novo item"
-                }
-            }
-        }
+    "title": {
+      "render": "Endereço conhecido"
     }
+  },
+  "advertising": {
+    "description": "Iremos completar os dados das funcionalidades publicitárias com referência, operador e iluminado",
+    "name": "Anunciar",
+    "presets": {
+      "0": {
+        "description": "Uma grande estrutura de publicidade ao ar livre, normalmente encontrada em áreas de alto tráfego, como ao longo de estradas movimentadas",
+        "title": "um outdoor"
+      },
+      "1": {
+        "title": "uma caixa de pôster independente"
+      },
+      "2": {
+        "title": "uma caixa de pôster montada em uma parede"
+      },
+      "3": {
+        "description": "Pequeno outdoor para publicidade de bairro, geralmente destinado a pedestres",
+        "title": "a bordo"
+      },
+      "4": {
+        "description": "Uma estrutura exterior cilíndrica que mostra anúncios",
+        "title": "uma coluna"
+      },
+      "5": {
+        "title": "uma bandeira"
+      },
+      "6": {
+        "title": "uma tela"
+      },
+      "7": {
+        "title": "uma tela montada em uma parede"
+      },
+      "8": {
+        "description": "Uma peça de tecido impermeável com uma mensagem impressa, permanentemente ancorada na parede",
+        "title": "uma lona"
+      },
+      "9": {
+        "title": "um totem"
+      },
+      "10": {
+        "description": "Usado para sinais publicitários, sinais de néon, logotipos e sinais de entrada institucionais",
+        "title": "um sinal"
+      },
+      "11": {
+        "title": "uma escultura"
+      },
+      "12": {
+        "title": "uma pintura de parede"
+      }
+    },
+    "tagRenderings": {
+      "Sides": {
+        "mappings": {
+          "0": {
+            "then": "Este objeto tem anúncios em um único lado"
+          },
+          "1": {
+            "then": "Este objeto tem anúncios em ambos os lados"
+          }
+        },
+        "question": "De quantos lados você pode assistir a anúncios?"
+      },
+      "animated": {
+        "mappings": {
+          "0": {
+            "then": "<b> Static</b>, mostra sempre a mesma mensagem"
+          },
+          "1": {
+            "then": "Este objeto possui um <b>digital display</b> embutido para mostrar preços ou alguma outra mensagem"
+          },
+          "2": {
+            "then": "<b>Trivision</b> - o outdoor consiste em muitos prismas triangulares que giram regularmente"
+          },
+          "3": {
+            "then": "Pôsteres de <b>rolagem</b>"
+          },
+          "4": {
+            "then": "<b>Gira</b> sobre si mesmo"
+          }
+        },
+        "question": "Este anúncio percorre várias mensagens?"
+      },
+      "luminous_or_lit_advertising": {
+        "override": {
+          "+mappings": {
+            "0": {
+              "then": "Esta é uma luz de tubo de néon"
+            }
+          }
+        }
+      },
+      "message_type": {
+        "mappings": {
+          "0": {
+            "then": "Mensagem comercial"
+          },
+          "1": {
+            "then": "Informação local"
+          },
+          "2": {
+            "then": "Informação segura"
+          },
+          "3": {
+            "then": "Propaganda eleitoral"
+          },
+          "4": {
+            "then": "Informações relacionadas com teatro, concertos, ..."
+          },
+          "5": {
+            "then": "Mensagem de organizações sem fins lucrativos"
+          },
+          "6": {
+            "then": "Para expressar sua opinião"
+          },
+          "7": {
+            "then": "Mensagem religiosa"
+          },
+          "8": {
+            "then": "sinal de financiamento"
+          },
+          "9": {
+            "then": "Um mapa"
+          }
+        },
+        "question": "Que tipo de mensagem é mostrada?"
+      },
+      "operator": {
+        "question": "Quem opera esse elemento?",
+        "render": "Operado por {operator}"
+      },
+      "ref": {
+        "question": "Qual é o número de referência?",
+        "render": "O número de referência é {ref}"
+      },
+      "type": {
+        "mappings": {
+          "0": {
+            "then": "Isso é um outdoor"
+          },
+          "1": {
+            "then": "Isso é uma placa"
+          }
+        }
+      }
+    }
+  },
+  "artwork": {
+    "description": "Diversas obras de arte",
+    "name": "Obras de arte",
+    "presets": {
+      "0": {
+        "title": "uma obra de arte"
+      }
+    },
+    "tagRenderings": {
+      "artwork-artist-wikidata": {
+        "question": "Quem fez essa obra de arte?",
+        "render": "Esta obra de arte foi feita por {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+      },
+      "artwork-artist_name": {
+        "question": "Que artista criou isto?",
+        "render": "Criado por {artist_name}"
+      },
+      "artwork-artwork_type": {
+        "mappings": {
+          "0": {
+            "then": "Arquitetura"
+          },
+          "1": {
+            "then": "Mural"
+          },
+          "2": {
+            "then": "Pintura"
+          },
+          "3": {
+            "then": "Escultura"
+          },
+          "4": {
+            "then": "Estátua"
+          },
+          "5": {
+            "then": "Busto"
+          },
+          "6": {
+            "then": "Pedra"
+          },
+          "7": {
+            "then": "Instalação"
+          },
+          "8": {
+            "then": "Grafite"
+          },
+          "9": {
+            "then": "Relevo"
+          },
+          "10": {
+            "then": "Azulejo (azulejo decorativo espanhol e português)"
+          },
+          "11": {
+            "then": "Ladrilhos"
+          },
+          "12": {
+            "then": "Entalhe em madeira"
+          }
+        },
+        "question": "Qual é o tipo desta obra de arte?",
+        "render": "Isto é um(a) {artwork_type}"
+      },
+      "artwork-website": {
+        "question": "Existe um site com mais informações sobre esta obra de arte?",
+        "render": "Mais informações <a href='{website}' target='_blank'>neste site</a>"
+      },
+      "artwork_subject": {
+        "question": "O que esta obra de arte representa?",
+        "render": "A obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+      }
+    },
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "Obra de arte <i>{name}</i>"
+        }
+      },
+      "render": "Obra de arte"
+    }
+  },
+  "barrier": {
+    "tagRenderings": {
+      "MaxWidth": {
+        "render": "Largura máxima: {maxwidth:physical} m"
+      }
+    }
+  },
+  "bench": {
+    "name": "Bancos",
+    "presets": {
+      "0": {
+        "title": "uma banco"
+      }
+    },
+    "tagRenderings": {
+      "bench-backrest": {
+        "mappings": {
+          "1": {
+            "then": "Encosto: Sim"
+          },
+          "2": {
+            "then": "Não <b>not</b> tem um encosto"
+          }
+        },
+        "question": "Este assento tem um escosto?"
+      },
+      "bench-colour": {
+        "mappings": {
+          "0": {
+            "then": "Cor: castanho"
+          },
+          "1": {
+            "then": "Cor: verde"
+          },
+          "2": {
+            "then": "Cor: cinzento"
+          },
+          "3": {
+            "then": "Cor: branco"
+          },
+          "4": {
+            "then": "Cor: vermelho"
+          },
+          "5": {
+            "then": "Cor: preto"
+          },
+          "6": {
+            "then": "Cor: azul"
+          },
+          "7": {
+            "then": "Cor: amarelo"
+          }
+        },
+        "question": "Qual a cor dessa bancada?",
+        "render": "Cor: {colour}"
+      },
+      "bench-direction": {
+        "question": "Em que direção olha quando está sentado no banco?",
+        "render": "Ao sentar-se no banco, olha-se para {direction} °."
+      },
+      "bench-inscription": {
+        "mappings": {
+          "0": {
+            "then": "Este banco não tem inscrição"
+          }
+        },
+        "question": "Esse banco tem inscrição?",
+        "questionHint": "Por exemplo: em placa montada, no encosto, ...",
+        "render": "Este banco tem a seguinte inscrição:<br/><p><i>{inscription}</i></p>"
+      },
+      "bench-material": {
+        "mappings": {
+          "0": {
+            "then": "Material: madeira"
+          },
+          "1": {
+            "then": "Material: metal"
+          },
+          "2": {
+            "then": "Material: pedra"
+          },
+          "3": {
+            "then": "Material: concreto"
+          },
+          "4": {
+            "then": "Material: plástico"
+          },
+          "5": {
+            "then": "Material: aço"
+          }
+        },
+        "question": "De que é feito o banco (assento)?",
+        "render": "Material: {material}"
+      },
+      "bench-memorial": {
+        "mappings": {
+          "0": {
+            "then": "Este banco é um memorial para alguém ou algo"
+          },
+          "1": {
+            "then": "Este banco <b>não é</b> um memorial para alguém ou algo"
+          }
+        },
+        "question": "Este banco serve como memorial para alguém ou algo?"
+      },
+      "bench-seats": {
+        "mappings": {
+          "0": {
+            "then": "Este banco não tem assentos separados"
+          }
+        },
+        "question": "Quantos lugares este banco tem?",
+        "render": "{seats} lugares"
+      },
+      "bench-survey:date": {
+        "mappings": {
+          "0": {
+            "then": "Pesquisado hoje!"
+          }
+        },
+        "question": "Quando esta bancada foi pesquisada pela última vez?",
+        "render": "Esta bancada foi pesquisada pela última vez em {survey:date}"
+      }
+    },
+    "title": {
+      "render": "Banco"
+    }
+  },
+  "bench_at_pt": {
+    "deletion": {
+      "extraDeleteReasons": {
+        "0": {
+          "explanation": "Este ponto de ônibus não é mais usado"
+        }
+      },
+      "nonDeleteMappings": {
+        "0": {
+          "then": "Este ponto de ônibus não tem banco (nunca houve ou foi removido)"
+        }
+      }
+    },
+    "description": "Uma camada mostrando todas as paradas de transporte público que possuem um banco",
+    "name": "Bancos em pontos de transporte público",
+    "tagRenderings": {
+      "bench_at_pt-bench_type": {
+        "mappings": {
+          "1": {
+            "then": "banco de pé"
+          },
+          "2": {
+            "then": "Não há nenhum banco aqui"
+          }
+        },
+        "question": "Que tipo de banco é este?"
+      },
+      "bench_at_pt-name": {
+        "render": "{name}"
+      }
+    },
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "Banco em ponto de transporte público"
+        },
+        "1": {
+          "then": "Banco em abrigo"
+        }
+      },
+      "render": "Banco"
+    }
+  },
+  "bicycle_library": {
+    "description": "Uma instalação onde as bicicletas podem ser emprestadas por períodos mais longos",
+    "name": "Biblioteca de bicicleta",
+    "presets": {
+      "0": {
+        "description": "Uma \"biblioteca de bicicletas\" tem uma coleção de bicicletas que podem ser emprestadas",
+        "title": "uma biblioteca de bicicletas"
+      }
+    },
+    "tagRenderings": {
+      "bicycle-library-target-group": {
+        "mappings": {
+          "0": {
+            "then": "Bicicletas para crianças disponíveis"
+          },
+          "1": {
+            "then": "Bicicletas para adulto disponíveis"
+          },
+          "2": {
+            "then": "Bicicletas para deficientes físicos disponíveis"
+          }
+        },
+        "question": "Quem pode emprestar bicicletas aqui?"
+      },
+      "bicycle_library-charge": {
+        "mappings": {
+          "0": {
+            "then": "Emprestar uma bicicleta é grátis"
+          },
+          "1": {
+            "then": "Emprestar uma bicicleta custa €20/ano e €20 de garantia"
+          }
+        },
+        "question": "Quanto custa um empréstimo de bicicleta?",
+        "render": "Custos de empréstimo de bicicleta {charge}"
+      },
+      "bicycle_library-name": {
+        "question": "Qual o nome desta biblioteca de bicicleta?",
+        "render": "Esta biblioteca de bicicleta é chamada de {name}"
+      }
+    },
+    "title": {
+      "render": "Biblioteca de bicicleta"
+    }
+  },
+  "bicycle_tube_vending_machine": {
+    "name": "Máquina de venda automática de tubos de bicicleta",
+    "presets": {
+      "0": {
+        "title": "uma máquina de venda automática de tubos de bicicleta"
+      }
+    },
+    "tagRenderings": {
+      "Still in use?": {
+        "mappings": {
+          "0": {
+            "then": "Esta máquina de venda automática funciona"
+          },
+          "1": {
+            "then": "Esta máquina de venda automática está quebrada"
+          },
+          "2": {
+            "then": "Esta máquina de venda automática está fechada"
+          }
+        },
+        "question": "Esta máquina de venda automática ainda está operacional?",
+        "render": "O estado operacional é: <i>{operational_status}</i>"
+      }
+    },
+    "title": {
+      "render": "Máquina de venda automática de tubos de bicicleta"
+    }
+  },
+  "bike_cafe": {
+    "name": "Café de bicicletas",
+    "presets": {
+      "0": {
+        "title": "uma café de bicicleta"
+      }
+    },
+    "tagRenderings": {
+      "bike_cafe-name": {
+        "question": "Qual o nome deste café de bicicleta?",
+        "render": "Este café de bicicleta se chama {name}"
+      },
+      "bike_cafe-repair-service": {
+        "mappings": {
+          "0": {
+            "then": "Este café de bicicleta conserta bicicletas"
+          },
+          "1": {
+            "then": "Este café de bicicleta não conserta bicicletas"
+          }
+        },
+        "question": "Este café de bicicleta conserta bicicletas?"
+      },
+      "bike_cafe-repair-tools": {
+        "mappings": {
+          "0": {
+            "then": "Este café de bicicleta oferece ferramentas de reparo faça você mesmo"
+          },
+          "1": {
+            "then": "Este café de bicicleta não oferece ferramentas de reparo faça você mesmo"
+          }
+        },
+        "question": "Há ferramentas aqui para consertar a sua própria bicicleta?"
+      },
+      "opening_hours": {
+        "override": {
+          "question": "Quando este café de bicicleta abre?"
+        }
+      }
+    },
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "Café de bicicleta <i>{name}</i>"
+        }
+      },
+      "render": "Café de bicicleta"
+    }
+  },
+  "bike_cleaning": {
+    "name": "Serviço de limpeza de bicicletas",
+    "presets": {
+      "0": {
+        "title": "uma serviço de limpeza de bicicletas"
+      }
+    },
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "Serviço de limpeza de bicicletas <i>{name}</i>"
+        }
+      },
+      "render": "Serviço de limpeza de bicicletas"
+    }
+  },
+  "bike_parking": {
+    "name": "Estacionamento de bicicletas",
+    "presets": {
+      "0": {
+        "title": "uma estacionamento de bicicletas"
+      }
+    },
+    "tagRenderings": {
+      "Access": {
+        "mappings": {
+          "0": {
+            "then": "Acessível ao público"
+          },
+          "1": {
+            "then": "Acesso é principalmente para visitantes de uma empresa"
+          },
+          "2": {
+            "then": "Acesso é limitado aos membros de uma escola, companhia ou organização"
+          }
+        },
+        "question": "Quem pode usar este estacionamento de bicicletas?",
+        "render": "{access}"
+      },
+      "Bicycle parking type": {
+        "question": "Qual o tipo deste estacionamento de bicicletas?",
+        "render": "Este é um estacionamento de bicicletas do tipo: {bicycle_parking}"
+      },
+      "Capacity": {
+        "render": "Lugar para {capacity} bicicletas"
+      },
+      "Cargo bike capacity?": {
+        "question": "Quantas bicicletas de carga cabem neste estacionamento de bicicletas?",
+        "render": "Neste estacionamento cabem {capacity:cargo_bike} bicicletas de carga"
+      },
+      "Cargo bike spaces?": {
+        "mappings": {
+          "0": {
+            "then": "Este estacionamento tem vagas para bicicletas de carga"
+          },
+          "1": {
+            "then": "Este estacionamento tem vagas (oficiais) projetadas para bicicletas de carga."
+          },
+          "2": {
+            "then": "Não tem permissão para estacionar bicicletas de carga"
+          }
+        },
+        "question": "O estacionamento de bicicletas tem vagas para bicicletas de carga?"
+      },
+      "Is covered?": {
+        "mappings": {
+          "0": {
+            "then": "Este estacionamento é coberto (tem um telhado)"
+          },
+          "1": {
+            "then": "Este estacionamento não é coberto"
+          }
+        },
+        "question": "Este estacionamento é coberto? Também selecione \"coberto\" para estacionamentos internos."
+      },
+      "Underground?": {
+        "mappings": {
+          "0": {
+            "then": "Estacionamento subterrâneo"
+          },
+          "1": {
+            "then": "Estacionamento de superfície"
+          },
+          "2": {
+            "then": "Estacionamento no telhado"
+          },
+          "3": {
+            "then": "Estacionamento ao nível da superfície"
+          }
+        },
+        "question": "Qual a localização relativa deste estacionamento de bicicletas?"
+      }
+    },
+    "title": {
+      "render": "Estacionamento de bicicletas"
+    }
+  },
+  "bike_repair_station": {
+    "presets": {
+      "0": {
+        "description": "Um aparelho para encher os seus pneus num local fixa no espaço público."
+      }
+    },
+    "tagRenderings": {
+      "bike_repair_station-available-services": {
+        "mappings": {
+          "0": {
+            "then": "Há somente uma bomba presente"
+          },
+          "1": {
+            "then": "Há somente ferramentas (chaves de fenda, alicates...) presentes"
+          },
+          "2": {
+            "then": "Há tanto ferramentas e uma bomba presente"
+          }
+        },
+        "question": "Quais serviços estão disponíveis nesta estação de bicicletas?"
+      },
+      "bike_repair_station-bike-chain-tool": {
+        "mappings": {
+          "0": {
+            "then": "Há uma ferramenta de corrente"
+          },
+          "1": {
+            "then": "Não há uma ferramenta de corrente"
+          }
+        }
+      },
+      "bike_repair_station-bike-stand": {
+        "mappings": {
+          "0": {
+            "then": "Há um gancho ou um suporte"
+          },
+          "1": {
+            "then": "Não há um gancho ou um suporte"
+          }
+        }
+      },
+      "bike_repair_station-electrical_pump": {
+        "mappings": {
+          "0": {
+            "then": "Bomba manual"
+          },
+          "1": {
+            "then": "Bomba elétrica"
+          }
+        }
+      },
+      "bike_repair_station-manometer": {
+        "mappings": {
+          "0": {
+            "then": "Há um manômetro"
+          },
+          "1": {
+            "then": "Não há um manômetro"
+          },
+          "2": {
+            "then": "Há um manômetro mas está quebrado"
+          }
+        }
+      },
+      "bike_repair_station-operator": {
+        "question": "Quem faz a manutenção desta bomba de ciclo?",
+        "render": "Mantida por {operator}"
+      }
+    },
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "Estação de reparo de bicicletas"
+        },
+        "1": {
+          "then": "Estação de reparo de bicicletas"
+        }
+      }
+    }
+  },
+  "bike_shop": {
+    "description": "Uma loja que vende especificamente bicicletas ou itens relacionados",
+    "name": "Reparo/loja de bicicletas",
+    "tagRenderings": {
+      "bike_repair_rents-bikes": {
+        "mappings": {
+          "0": {
+            "then": "Esta loja aluga bicicletas"
+          },
+          "1": {
+            "then": "Esta loja não aluga bicicletas"
+          }
+        },
+        "question": "Esta loja aluga bicicletas?"
+      },
+      "bike_repair_repairs-bikes": {
+        "mappings": {
+          "0": {
+            "then": "Esta loja conserta bicicletas"
+          },
+          "1": {
+            "then": "Esta loja não conserta bicicletas"
+          },
+          "2": {
+            "then": "Esta loja conserta bicicletas compradas aqui"
+          },
+          "3": {
+            "then": "Esta loja conserta bicicletas de uma certa marca"
+          }
+        },
+        "question": "Esta loja conserta bicicletas?"
+      },
+      "bike_repair_sells-bikes": {
+        "mappings": {
+          "0": {
+            "then": "Esta loja vende bicicletas"
+          },
+          "1": {
+            "then": "Esta loja não vende bicicletas"
+          }
+        },
+        "question": "Esta loja vende bicicletas?"
+      },
+      "bike_shop-is-bicycle_shop": {
+        "render": "Esta loja é especializada em vender {shop} e faz atividades relacionadas à bicicletas"
+      },
+      "bike_shop-name": {
+        "question": "Qual o nome desta loja de bicicletas?",
+        "render": "Esta loja de bicicletas se chama {name}"
+      }
+    },
+    "title": {
+      "mappings": {
+        "0": {
+          "then": "Loja de equipamentos desportivos <i>{name}</i>"
+        },
+        "2": {
+          "then": "Aluguel de bicicletas <i>{name}</i>"
+        },
+        "3": {
+          "then": "Reparo de bicicletas <i>{name}</i>"
+        },
+        "4": {
+          "then": "Loja de bicicletas <i>{name}</i>"
+        },
+        "5": {
+          "then": "Loja/reparo de bicicletas <i>{name}</i>"
+        }
+      },
+      "render": "Reparo/loja de bicicletas"
+    }
+  },
+  "ghost_bike": {
+    "name": "Bicicleta fantasma",
+    "presets": {
+      "0": {
+        "title": "uma bicicleta fantasma"
+      }
+    },
+    "title": {
+      "render": "Bicicleta fantasma"
+    }
+  },
+  "last_click": {
+    "mapRendering": {
+      "0": {
+        "label": {
+          "render": "Adicionar novo item"
+        }
+      }
+    }
+  },
+  "tree_node": {
+    "presets": {
+      "0": {
+        "description": "Uma árvore de uma espécie com folhas, como carvalho ou populus.",
+        "title": "uma árvore de folhas largas"
+      },
+      "1": {
+        "title": "uma árvore com folhas de agulha"
+      },
+      "2": {
+        "title": "uma árvore"
+      }
+    },
+    "tagRenderings": {
+      "circumference": {
+        "question": "Qual é a circunferência do tronco da árvore?",
+        "render": "O tronco da árvore tem uma circunferência de <b>{circumference}</b> metros"
+      },
+      "height": {
+        "question": "Qual a altura dessa árvore?",
+        "render": "Esta árvore tem {height} metros de altura"
+      },
+      "tree-decidouous": {
+        "mappings": {
+          "0": {
+            "then": "Caducifólia: a árvore perde as folhas em alguma época do ano."
+          },
+          "1": {
+            "then": "Perene."
+          }
+        },
+        "question": "Essa árvore é perene ou caducifólia?"
+      },
+      "tree-denotation": {
+        "mappings": {
+          "0": {
+            "then": "A árvore é notável devido ao seu tamanho ou localização proeminente. É útil para navegação."
+          },
+          "1": {
+            "then": "A árvore é um monumento natural, por ex. porque é especialmente antigo ou de uma espécie valiosa."
+          },
+          "2": {
+            "then": "A árvore é utilizada para fins agrícolas, por ex. em um pomar."
+          },
+          "3": {
+            "then": "A árvore está em um parque ou similar (cemitério, pátio da escola, …)."
+          },
+          "4": {
+            "then": "A árvore está em um jardim residencial."
+          },
+          "5": {
+            "then": "Esta é uma árvore ao longo de uma avenida."
+          },
+          "6": {
+            "then": "A árvore está em uma área urbana."
+          },
+          "7": {
+            "then": "A árvore está fora de uma área urbana."
+          }
+        },
+        "question": "Quão significativa é esta árvore? Escolha a primeira resposta que se aplica."
+      },
+      "tree-heritage": {
+        "mappings": {
+          "0": {
+            "then": "Registrado como patrimônio por <i>Onroerend Erfgoed</i> Flanders"
+          },
+          "1": {
+            "then": "Registrado como patrimônio por <i>Direction du Patrimoine culturel</i> Brussels"
+          },
+          "2": {
+            "then": "Registrado como patrimônio por uma organização diferente"
+          },
+          "3": {
+            "then": "Não registrado como patrimônio"
+          },
+          "4": {
+            "then": "Registrado como patrimônio por uma organização diferente"
+          }
+        },
+        "question": "Esta árvore é patrimônio tombado?"
+      },
+      "tree-leaf_type": {
+        "mappings": {
+          "0": {
+            "then": "Folha larga"
+          },
+          "2": {
+            "then": "permanentemente sem folhas"
+          }
+        },
+        "question": "Esta é uma árvore de folhas largas ou acículas?"
+      },
+      "tree-species-wikidata": {
+        "question": "Que espécie é esta árvore?"
+      },
+      "tree_node-name": {
+        "mappings": {
+          "0": {
+            "then": "A árvore não tem nome."
+          }
+        },
+        "question": "A árvore tem nome?",
+        "render": "Nome: {name}"
+      },
+      "tree_node-ref:OnroerendErfgoed": {
+        "question": "Qual é o ID emitido por Onroerend Erfgoed Flanders?"
+      },
+      "tree_node-wikidata": {
+        "question": "Qual é o ID do Wikidata para esta árvore?"
+      }
+    },
+    "title": {
+      "render": "Árvore"
+    }
+  },
+  "usersettings": {
+    "description": "Uma camada especial que não deve ser mostrada em um mapa, mas que é usada para definir as configurações do usuário",
+    "tagRenderings": {
+      "all-questions-at-once": {
+        "mappings": {
+          "0": {
+            "then": "Mostrar todas as perguntas na caixa de informações juntas"
+          },
+          "1": {
+            "then": "Mostrar perguntas uma a uma"
+          }
+        },
+        "question": "As perguntas para campos de dados desconhecidos devem aparecer uma a uma ou juntas?"
+      },
+      "cscount-thanks": {
+        "mappings": {
+          "0": {
+            "then": "Você fez alterações em {_csCount} ocasiões diferentes! Isso é incrível!"
+          }
+        }
+      },
+      "picture-license": {
+        "mappings": {
+          "0": {
+            "then": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade. <span class='subtle'>Esta é a escolha padrão.</span>"
+          },
+          "1": {
+            "then": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade."
+          },
+          "2": {
+            "then": "As fotos que você tirar serão licenciadas com <b>CC-BY 4.0</b>, que exige que todos que usam sua foto atribuam a você"
+          },
+          "3": {
+            "then": "As fotos que você tirar serão licenciadas com <b>CC-BY-SA 4.0</b>, o que significa que todos que usarem sua foto devem atribuí-lo e que os derivados de sua foto devem ser compartilhados novamente com a mesma licença."
+          }
+        },
+        "question": "Sob que licença você deseja publicar suas fotos?"
+      },
+      "show_debug": {
+        "mappings": {
+          "0": {
+            "then": "Mostrar informações de depuração"
+          },
+          "1": {
+            "then": "Não mostrar informações de depuração"
+          },
+          "2": {
+            "then": "Não mostrar informações de depuração"
+          }
+        },
+        "question": "Mostrar informações de depuração das configurações do usuário?"
+      },
+      "translation-completeness": {
+        "mappings": {
+          "0": {
+            "then": "Traduzido completamente"
+          }
+        }
+      },
+      "translation-mode": {
+        "mappings": {
+          "0": {
+            "then": "Não mostrar um botão para alterar as traduções rapidamente"
+          },
+          "1": {
+            "then": "Mostrar um botão para abrir traduções rapidamente ao usar o MapComplete em uma tela grande"
+          },
+          "2": {
+            "then": "Mostrar sempre os botões de tradução, inclusive no celular"
+          }
+        },
+        "question": "Quer ajudar na tradução do MapComplete?"
+      },
+      "translation-thanks": {
+        "mappings": {
+          "0": {
+            "then": "Você contribuiu para a tradução do MapComplete! Fantástico!"
+          }
+        }
+      }
+    }
+  }
 }

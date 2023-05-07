@@ -16,6 +16,10 @@
       "value": "waste_basket"
     },
     {
+      "key": "id",
+      "description": "Layer 'Waste Basket' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Waste') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Waste Basket allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -95,6 +99,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Waste has a layer Recycling showing features with this tag",
       "value": "recycling"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Recycling' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Waste') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -331,6 +339,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Waste has a layer Waste Disposal Bins showing features with this tag",
       "value": "waste_disposal"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Waste Disposal Bins' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Waste') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",

@@ -26,6 +26,10 @@
       "value": "unleashed"
     },
     {
+      "key": "id",
+      "description": "Layer 'dog parks' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "barrier",
       "description": "Layer 'dog parks' shows barrier=fence with a fixed text, namely 'This dogpark is fenced all around' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "fence"
@@ -89,6 +93,10 @@
       "key": "dog",
       "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog friendly eateries showing features with this tag",
       "value": "yes"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Dog friendly eateries' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -583,6 +591,10 @@
       "key": "shop",
       "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer Dog-friendly shops showing features with this tag",
       "value": "pet"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Dog-friendly shops' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -1568,6 +1580,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Veterinarians, dog parks and other pet-amenities has a layer veterinary showing features with this tag",
       "value": "veterinary"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'veterinary' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "website",

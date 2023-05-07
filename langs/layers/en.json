@@ -123,7 +123,7 @@
                         "then": "Local information"
                     },
                     "2": {
-                        "then": "Securty information"
+                        "then": "Security information"
                     },
                     "3": {
                         "then": "Electoral advertising"
@@ -918,19 +918,19 @@
                         "then": "This is a shop whose main focus is bicycle rental"
                     },
                     "1": {
-                        "then": "This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus"
+                        "then": "This is a rental business which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus"
                     },
                     "2": {
                         "then": "This is a shop which sells or repairs bicycles, but also rents out bicycles"
                     },
                     "3": {
-                        "then": "This is an automated docking station, where a bicycle is mechanically locked into a structure"
+                        "then": "This is an automated docking station, where a bicycle is mechanically locked to a structure"
                     },
                     "4": {
                         "then": "A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby"
                     },
                     "5": {
-                        "then": "This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only"
+                        "then": "This is a dropoff point, e.g. a reserved parking to place the bicycles clearly marked as being for the rental service only"
                     }
                 },
                 "question": "What kind of bicycle rental is this?"
@@ -938,7 +938,7 @@
             "rental_types": {
                 "renderings": {
                     "0": {
-                        "question": "How much type_plural can be rented here?",
+                        "question": "How many type_plural can be rented here?",
                         "render": "{capacity:bicycle_type} type_plural can be rented here"
                     }
                 },
@@ -957,7 +957,7 @@
                             "1": "BMX bikes"
                         },
                         "4": {
-                            "1": "mountainbike"
+                            "1": "mountainbikes"
                         },
                         "5": {
                             "1": "bicycle panniers"
@@ -1051,7 +1051,7 @@
                         "then": "This bike cafe doesn't offer tools for DIY repair"
                     }
                 },
-                "question": "Are there tools here to repair your own bike?"
+                "question": "Are tools offered to repair your own bike?"
             },
             "opening_hours": {
                 "override": {
@@ -1159,7 +1159,7 @@
                         "then": "Bollard"
                     },
                     "7": {
-                        "then": "An area on the floor which is  marked for bicycle parking"
+                        "then": "An area on the floor which is marked for bicycle parking"
                     }
                 },
                 "question": "What is the type of this bicycle parking?",
@@ -1393,6 +1393,22 @@
     },
     "bike_shop": {
         "description": "A shop specifically selling bicycles or related items",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Sells second-hand bicycles"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Offers DIY bike repair"
+                    }
+                }
+            }
+        },
         "name": "Bike repair/shop",
         "presets": {
             "0": {
@@ -1514,13 +1530,13 @@
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Sport gear shop <i>{name}</i>"
+                    "then": "Sports gear shop <i>{name}</i>"
                 },
                 "1": {
                     "then": "Winkel"
                 },
                 "2": {
-                    "then": "Bicycle rental <i>{name}</i>"
+                    "then": "Bicycle rental shop <i>{name}</i>"
                 },
                 "3": {
                     "then": "Bike repair <i>{name}</i>"
@@ -1544,7 +1560,7 @@
                     "then": "Cycle track"
                 }
             },
-            "render": "Bike related object"
+            "render": "Bike-related object"
         }
     },
     "binocular": {
@@ -4095,6 +4111,15 @@
                 },
                 "question": "Does this elevator work?"
             },
+            "speech_output": {
+                "render": {
+                    "special": {
+                        "question": "In which languages does this elevator have speech output?",
+                        "render_list_item": "This elevator has speech output in {language():font-bold}",
+                        "render_single_language": "This elevator has speech output in {language():font-bold}"
+                    }
+                }
+            },
             "tactile_writing_language": {
                 "render": {
                     "special": {
@@ -4317,7 +4342,7 @@
             "0": {
                 "options": {
                     "0": {
-                        "question": "Opened now"
+                        "question": "Open now"
                     }
                 }
             },
@@ -4576,6 +4601,21 @@
                 }
             },
             "render": "Fitness Station"
+        }
+    },
+    "fixme": {
+        "description": "OSM objects that likely need to be fixed, based on a FIXME tag.",
+        "name": "OSM objects with FIXME tags",
+        "tagRenderings": {
+            "fixme": {
+                "render": "Fixme Text: {fixme}"
+            },
+            "note": {
+                "render": "Note Text: {note}"
+            }
+        },
+        "title": {
+            "render": "OSM object with FIXME tag"
         }
     },
     "food": {
@@ -5597,7 +5637,7 @@
         }
     },
     "maproulette_challenge": {
-        "description": "Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to the documentation on how to do this.",
+        "description": "Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to [the documentation](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) on how to do this.",
         "filter": {
             "0": {
                 "options": {
@@ -6958,7 +6998,10 @@
                         "question": "Recycling of residual waste"
                     },
                     "20": {
-                        "question": "Recycling of residual waste"
+                        "question": "Recycling of printer cartridges"
+                    },
+                    "21": {
+                        "question": "Recycling of bicycles"
                     }
                 }
             },
@@ -7091,6 +7134,9 @@
                     },
                     "23": {
                         "then": "Residual waste can be recycled here"
+                    },
+                    "24": {
+                        "then": "Bicycles can be recycled here"
                     }
                 },
                 "question": "What can be recycled here?"
@@ -7114,6 +7160,12 @@
                     },
                     "2": {
                         "then": "Waste disposal container for residual waste"
+                    },
+                    "3": {
+                        "then": "This is a pickup point. The waste material is placed here without placing it in a dedicated container."
+                    },
+                    "4": {
+                        "then": "This is a dump where the waste material is stacked."
                     }
                 },
                 "question": "What type of recycling is this?"
@@ -8100,6 +8152,11 @@
             "validator-operator": {
                 "freeform": {
                     "placeholder": "Name of the operator"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Dutch Railways (NS)"
+                    }
                 },
                 "question": "Who is the operator of this ticket validator?",
                 "render": "This ticket validator is operated by {operator}"

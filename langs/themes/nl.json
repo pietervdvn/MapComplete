@@ -1202,7 +1202,7 @@
                 "description": "Laag met treinstations",
                 "name": "Treinstations"
             },
-            "15": {
+            "16": {
                 "description": "Schermen die treinen tonen die van dit station vertrekken",
                 "name": "Vertrektijdenborden",
                 "presets": {

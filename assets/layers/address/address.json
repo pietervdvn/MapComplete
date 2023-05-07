@@ -52,6 +52,7 @@
       "da": "Kendt adresse",
       "cs": "Známá adresa",
       "ca": "Adreça coneguda",
+      "pt": "Endereço conhecido",
       "pt_BR": "Endereço conhecido"
     }
   },
@@ -93,7 +94,7 @@
         "es": "El número de puerta es <b>{addr:housenumber}</b>",
         "da": "Husnummeret er <b>{addr:housenumber}</b>",
         "cs": "Číslo domu je <b>{addr:housenumber}</b>",
-        "pt": "The house number is <b>{addr:housenumber}</b>",
+        "pt": "O número da casa é <b>{addr:housenumber}</b>",
         "nb_NO": "Husnummeret er <b>{addr:housenumber}</b>",
         "ca": "El número de porta és <b>{addr:housenumber}</b>",
         "pt_BR": "O número da casa é <b>{addr:housenumber}</b>"
@@ -165,7 +166,9 @@
         "es": "La dirección está en esta calle <b>{addr:street}</b>",
         "da": "Denne adresse er på gaden <b>{addr:street}</b>",
         "cs": "Tato adresa se nachází v ulici <b>{addr:street}</b>",
-        "ca": "L'adreça està a aquest carrer <b>{addr:street}</b>"
+        "ca": "L'adreça està a aquest carrer <b>{addr:street}</b>",
+        "pt": "Este endereço é na rua <b>{addr:street}</b>",
+        "pt_BR": "Este endereço fica na rua <b>{addr:street}</b>"
       },
       "question": {
         "en": "What street is this address located in?",
@@ -180,7 +183,9 @@
         "id": "Alamat ini di jalan apa?",
         "da": "Hvilken gade ligger denne adresse på?",
         "cs": "V jaké ulici se nachází tato adresa?",
-        "ca": "A quin carrer es troba l'adreça?"
+        "ca": "A quin carrer es troba l'adreça?",
+        "pt": "Em que rua fica esse endereço?",
+        "pt_BR": "Em que rua fica esse endereço?"
       },
       "freeform": {
         "key": "addr:street"

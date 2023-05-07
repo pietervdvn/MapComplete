@@ -9,7 +9,8 @@
     "de": "Bäume",
     "ca": "Arbre",
     "es": "Árbol",
-    "da": "Træ"
+    "da": "Træ",
+    "pt_BR": "Árvore"
   },
   "minzoom": 16,
   "source": {
@@ -30,7 +31,8 @@
       "eo": "Arbo",
       "ca": "Arbre",
       "es": "Árbol",
-      "da": "Træ"
+      "da": "Træ",
+      "pt": "Árvore"
     },
     "mappings": [
       {
@@ -84,7 +86,9 @@
         "es": "¿De qué especie es este árbol?",
         "nl": "Wat is de boomsoort?",
         "fr": "Quelle est l'espèce de cet arbre ?",
-        "da": "Hvilken art er dette træ?"
+        "da": "Hvilken art er dette træ?",
+        "pt": "Que espécie é esta árvore?",
+        "pt_BR": "Que espécie é esta árvore?"
       },
       "render": {
         "*": "{wikipedia(species:wikidata):max-height: 25rem}"
@@ -123,14 +127,18 @@
         "de": "Wie groß ist der Umfang des Baumstammes?",
         "fr": "Quelle est la circonférence du tronc ?",
         "nl": "Wat is de omtrek van de boomstam? ",
-        "es": "¿Cuál es la circunferencia del tronco del árbol?"
+        "es": "¿Cuál es la circunferencia del tronco del árbol?",
+        "pt": "Qual é a circunferência do tronco da árvore?",
+        "pt_BR": "Qual é a circunferência do tronco da árvore?"
       },
       "render": {
         "en": "The tree trunk has a circumference of {circumference} meter",
         "de": "Der Baumstamm hat einen Umfang von {circumference} Meter",
         "fr": "Le tronc a une circonférence de {circumference} mètre(s)",
         "nl": "De boomstam heeft een omtrek van {circumference} meter",
-        "es": "El tronco del árbol tiene una circunferencia de {circumference} metros"
+        "es": "El tronco del árbol tiene una circunferencia de {circumference} metros",
+        "pt": "O tronco da árvore tem uma circunferência de <b>{circumference}</b> metros",
+        "pt_BR": "O tronco da árvore tem uma circunferência de {circumference} metro"
       },
       "freeform": {
         "key": "circumference",
@@ -143,7 +151,8 @@
         "fr": "La mesure est effectuée à 1,30 m de hauteur",
         "nl": "Dit wordt 1.30m boven de grond gemeten",
         "es": "Se mide a una altura de 1,30 m",
-        "ca": "Es mesura a una alçada d'1,30 m"
+        "ca": "Es mesura a una alçada d'1,30 m",
+        "pt_BR": "Isso é medido a uma altura de 1,30m"
       }
     },
     {
@@ -152,7 +161,9 @@
         "en": "What is the height of this tree?",
         "de": "Wie hoch ist dieser Baum?",
         "fr": "Quelle est la hauteur de cette arbre ?",
-        "nl": "Wat is de hoogte van deze boom?"
+        "nl": "Wat is de hoogte van deze boom?",
+        "pt": "Qual a altura dessa árvore?",
+        "pt_BR": "Qual a altura dessa árvore?"
       },
       "freeform": {
         "key": "height",
@@ -164,7 +175,9 @@
         "de": "Dieser Baum ist {height} Meter hoch",
         "fr": "Cet arbre a une hauteur de {height} mètre(s)",
         "nl": "Deze boom is {height} meter hoog",
-        "es": "Este árbol tiene {height} metros de altura"
+        "es": "Este árbol tiene {height} metros de altura",
+        "pt": "Esta árvore tem {height} metros de altura",
+        "pt_BR": "Esta árvore tem {height} metros de altura"
       }
     },
     {
@@ -176,7 +189,8 @@
         "fr": "Quelle est l'importance de cet arbre ? Choisissez la première réponse qui s'applique.",
         "de": "Wie bedeutsam ist dieser Baum? Wählen Sie die erste Antwort, die zutrifft.",
         "es": "¿Qué importancia tiene este árbol? Elige la primera respuesta que corresponda.",
-        "da": "Hvor vigtigt er dette træ? Vælg det første svar, der passer."
+        "da": "Hvor vigtigt er dette træ? Vælg det første svar, der passer.",
+        "pt": "Quão significativa é esta árvore? Escolha a primeira resposta que se aplica."
       },
       "mappings": [
         {
@@ -192,7 +206,8 @@
             "fr": "L'arbre est remarquable en raison de sa taille ou de son emplacement proéminent. Il est utile pour la navigation.",
             "de": "Der Baum ist aufgrund seiner Größe oder seiner markanten Lage bedeutsam. Er ist nützlich zur Orientierung.",
             "es": "El árbol es notable debido a su tamaño o ubicación prominente. Es útil para la navegación.",
-            "da": "Træet er bemærkelsesværdigt på grund af sin størrelse eller sin fremtrædende placering. Det er nyttigt til navigation."
+            "da": "Træet er bemærkelsesværdigt på grund af sin størrelse eller sin fremtrædende placering. Det er nyttigt til navigation.",
+            "pt": "A árvore é notável devido ao seu tamanho ou localização proeminente. É útil para navegação."
           }
         },
         {
@@ -208,7 +223,8 @@
             "fr": "Cet arbre est un monument naturel (p.ex. : âge, espèce, etc).",
             "de": "Der Baum ist ein Naturdenkmal, z. B. weil er besonders alt ist oder zu einer wertvollen Art gehört.",
             "es": "El árbol es un monumento natural, por ejemplo, porque es especialmente antiguo, o de una especie valiosa.",
-            "da": "Træet er et naturmonument, f.eks. fordi den er særlig gammel eller af en værdifuld art."
+            "da": "Træet er et naturmonument, f.eks. fordi den er særlig gammel eller af en værdifuld art.",
+            "pt": "A árvore é um monumento natural, por ex. porque é especialmente antigo ou de uma espécie valiosa."
           }
         },
         {
@@ -224,7 +240,8 @@
             "fr": "Cet arbre est utilisé à but agricole (p.ex. : dans un verger).",
             "de": "Der Baum wird für landwirtschaftliche Zwecke genutzt, z. B. in einer Obstplantage.",
             "es": "El árbol se utiliza con fines agrícolas, por ejemplo, en un huerto.",
-            "da": "Træet anvendes til landbrugsformål, f.eks. i en frugtplantage."
+            "da": "Træet anvendes til landbrugsformål, f.eks. i en frugtplantage.",
+            "pt": "A árvore é utilizada para fins agrícolas, por ex. em um pomar."
           }
         },
         {
@@ -240,7 +257,8 @@
             "fr": "Cet arbre est dans un parc ou une aire similaire (ex : cimetière, cour d’école, …).",
             "de": "Der Baum steht in einem Park oder ähnlichem (Friedhof, Schulgelände, ...).",
             "es": "El árbol está en un parque o similar (cementerio, recinto escolar, ...).",
-            "da": "Træet står i en park eller lignende (kirkegård, skoleområde, ...)."
+            "da": "Træet står i en park eller lignende (kirkegård, skoleområde, ...).",
+            "pt": "A árvore está em um parque ou similar (cemitério, pátio da escola, …)."
           }
         },
         {
@@ -257,7 +275,8 @@
             "es": "El árbol está en un jardín privado o residencial.",
             "de": "Der Baum steht in einem Wohngarten.",
             "da": "Træet står i en villahave.",
-            "ca": "L'arbre està en un jardí residencial."
+            "ca": "L'arbre està en un jardí residencial.",
+            "pt": "A árvore está em um jardim residencial."
           }
         },
         {
@@ -273,7 +292,8 @@
             "fr": "C'est un arbre le long d'une avenue.",
             "de": "Dieser Baum steht entlang einer Straße.",
             "es": "El árbol está en bandejón de una avenida.",
-            "da": "Dette er et træ langs en allé."
+            "da": "Dette er et træ langs en allé.",
+            "pt": "Esta é uma árvore ao longo de uma avenida."
           }
         },
         {
@@ -290,7 +310,9 @@
             "es": "El árbol está en un zona urbana.",
             "de": "Der Baum steht in einem städtischen Gebiet.",
             "da": "Træet står i et byområde.",
-            "ca": "L'arbre està en una àrea urbana."
+            "ca": "L'arbre està en una àrea urbana.",
+            "pt": "A árvore está em uma área urbana.",
+            "pt_BR": "A árvore está em uma área urbana."
           }
         },
         {
@@ -306,7 +328,8 @@
             "fr": "Cet arbre est en zone rurale.",
             "de": "Dieser Baum steht außerhalb eines städtischen Gebiets.",
             "es": "El árbol está fuera de una zona urbana.",
-            "da": "Træet står uden for et byområde."
+            "da": "Træet står uden for et byområde.",
+            "pt": "A árvore está fora de uma área urbana."
           }
         }
       ]
@@ -319,7 +342,8 @@
         "it": "Si tratta di un albero latifoglia o aghifoglia?",
         "fr": "Cet arbre est-il un feuillu ou un résineux ?",
         "de": "Ist dies ein Laub- oder Nadelbaum?",
-        "es": "¿Es un árbol de hoja ancha o de hoja aguja?"
+        "es": "¿Es un árbol de hoja ancha o de hoja aguja?",
+        "pt": "Esta é uma árvore de folhas largas ou acículas?"
       },
       "mappings": [
         {
@@ -337,7 +361,8 @@
             "ca": "De fulla ampla",
             "es": "Latifoliada",
             "id": "Berdaun lebar",
-            "da": "Bredbladet"
+            "da": "Bredbladet",
+            "pt": "Folha larga"
           },
           "icon": {
             "path": "./assets/layers/tree_node/broadleaved.svg",
@@ -379,7 +404,8 @@
             "de": "Dauerhaft blattlos",
             "es": "Permanentemente sin hojas",
             "id": "Tanpa daun permanen",
-            "da": "Permanent bladløs"
+            "da": "Permanent bladløs",
+            "pt": "permanentemente sem folhas"
           },
           "hideInAnswer": true,
           "icon": {
@@ -405,7 +431,9 @@
         "fr": "L’arbre est-il à feuillage persistant ou caduc ?",
         "de": "Ist dies ein Nadelbaum oder ein Laubbaum?",
         "es": "¿El árbol es Siempreverde o Caduco?",
-        "da": "Er dette træ stedsegrønt eller løvfældende?"
+        "da": "Er dette træ stedsegrønt eller løvfældende?",
+        "pt": "Essa árvore é perene ou caducifólia?",
+        "pt_BR": "Essa árvore é perene ou caducifólia?"
       },
       "mappings": [
         {
@@ -422,7 +450,8 @@
             "fr": "Caduc : l’arbre perd son feuillage une partie de l’année.",
             "de": "Laubabwerfend: Der Baum verliert für eine gewisse Zeit des Jahres seine Blätter.",
             "es": "Caduco o Deciduo: el árbol pierde las hojas en un período del año",
-            "da": "Løvfældende: træet mister bladene i en periode af året."
+            "da": "Løvfældende: træet mister bladene i en periode af året.",
+            "pt": "Caducifólia: a árvore perde as folhas em alguma época do ano."
           }
         },
         {
@@ -440,7 +469,8 @@
             "de": "immergrüner Baum.",
             "ca": "Perenne.",
             "es": "Siempreverde.",
-            "da": "Stedsegrøn."
+            "da": "Stedsegrøn.",
+            "pt": "Perene."
           }
         }
       ],
@@ -463,7 +493,8 @@
         "de": "Name: {name}",
         "eo": "Nomo: {name}",
         "es": "Nombre: {name}",
-        "da": "Navn: {name}"
+        "da": "Navn: {name}",
+        "pt": "Nome: {name}"
       },
       "question": {
         "nl": "Heeft de boom een naam?",
@@ -474,7 +505,8 @@
         "de": "Hat der Baum einen Namen?",
         "es": "¿Tiene nombre este árbol?",
         "id": "Apakah pohon ini memiliki nama?",
-        "da": "Har træet et navn?"
+        "da": "Har træet et navn?",
+        "pt": "A árvore tem nome?"
       },
       "freeform": {
         "key": "name",
@@ -499,7 +531,8 @@
             "de": "Der Baum hat keinen Namen.",
             "es": "No identificas la especie.",
             "id": "Pohon ini tidak memiliki nama.",
-            "da": "Træet har ikke et navn."
+            "da": "Træet har ikke et navn.",
+            "pt": "A árvore não tem nome."
           }
         }
       ],
@@ -522,7 +555,8 @@
         "de": "Ist dieser Baum ein Naturdenkmal?",
         "es": "¿Este árbol es patrimonio registrado?",
         "id": "Apakah pohon ini merupakan warisan yang terdaftar?",
-        "da": "Er dette træ registreret som kulturarv?"
+        "da": "Er dette træ registreret som kulturarv?",
+        "pt": "Esta árvore é patrimônio tombado?"
       },
       "mappings": [
         {
@@ -539,7 +573,8 @@
             "fr": "Inscrit au registre du Patrimoine Immobilier (<i>Onroerend Erfgoed</i>) Flammand",
             "de": "Als Denkmal registriert von der <i>Onroerend Erfgoed</i> Flandern",
             "es": "Registrado como patrimonio por <i>Onroerend Erfgoed</i> Flandes",
-            "id": "Terdaftar sebagai warisan oleh <i>Onroerend Erfgoed</i> Flanders"
+            "id": "Terdaftar sebagai warisan oleh <i>Onroerend Erfgoed</i> Flanders",
+            "pt": "Registrado como patrimônio por <i>Onroerend Erfgoed</i> Flanders"
           },
           "icon": {
             "path": "./assets/layers/tree_node/Onroerend_Erfgoed_logo_without_text.svg",
@@ -561,7 +596,8 @@
             "de": "Als Denkmal registriert von der <i>Direction du Patrimoine culturel</i> Brüssel",
             "es": "Registrado como patrimonio por la <i>Dirección de Patrimonio Cultural</i> de Bruselas",
             "id": "Terdaftar sebagai warisan budaya oleh <i>Direction du Patrimoine culturel</i> Brussels",
-            "da": "Registreret som kulturarv af <i>Direction du Patrimoine culturel</i> Bruxelles"
+            "da": "Registreret som kulturarv af <i>Direction du Patrimoine culturel</i> Bruxelles",
+            "pt": "Registrado como patrimônio por <i>Direction du Patrimoine culturel</i> Brussels"
           }
         },
         {
@@ -579,7 +615,8 @@
             "de": "Von einer anderen Organisation als Denkmal registriert",
             "es": "Registrado como patrimonio por una organización diferente",
             "id": "Terdaftar sebagai warisan oleh organisasi yang berbeda",
-            "da": "Registreret som kulturarv af en anden organisation"
+            "da": "Registreret som kulturarv af en anden organisation",
+            "pt": "Registrado como patrimônio por uma organização diferente"
           }
         },
         {
@@ -597,7 +634,8 @@
             "de": "Nicht als Denkmal registriert",
             "es": "No registrado como patrimonio",
             "id": "Tidak terdaftar sebagai warisan",
-            "da": "Ikke registreret som kulturarv"
+            "da": "Ikke registreret som kulturarv",
+            "pt": "Não registrado como patrimônio"
           }
         },
         {
@@ -614,7 +652,8 @@
             "de": "Von einer anderen Organisation als Denkmal registriert",
             "es": "Registrado como patrimonio por un organización diferente",
             "id": "Terdaftar sebagai warisan oleh organisasi yang berbeda",
-            "da": "Registreret som kulturarv af en anden organisation"
+            "da": "Registreret som kulturarv af en anden organisation",
+            "pt": "Registrado como patrimônio por uma organização diferente"
           },
           "hideInAnswer": true
         }
@@ -643,7 +682,8 @@
         "fr": "Quel est son identifiant donné par Onroerend Erfgoed ?",
         "de": "Wie lautet die Kennung der Onroerend Erfgoed Flanders?",
         "es": "¿Cuál es el número de identificación emitido por Onroerend Erfgoed Flandes?",
-        "da": "Hvad er ID udstedt af Onroerend Erfgoed Flanders?"
+        "da": "Hvad er ID udstedt af Onroerend Erfgoed Flanders?",
+        "pt": "Qual é o ID emitido por Onroerend Erfgoed Flanders?"
       },
       "freeform": {
         "key": "ref:OnroerendErfgoed",
@@ -675,7 +715,8 @@
         "fr": "Quel est l'identifiant Wikidata de cet arbre ?",
         "de": "Was ist das passende Wikidata Element zu diesem Baum?",
         "es": "¿Cuál es el ID de Wikidata para este árbol?",
-        "da": "Hvad er Wikidata-id'et for dette træ?"
+        "da": "Hvad er Wikidata-id'et for dette træ?",
+        "pt": "Qual é o ID do Wikidata para esta árvore?"
       },
       "freeform": {
         "key": "wikidata",
@@ -705,7 +746,8 @@
         "ru": "Лиственное дерево",
         "de": "ein Laubbaum",
         "es": "árbol de hoja ancha",
-        "da": "et løvtræ"
+        "da": "et løvtræ",
+        "pt": "uma árvore de folhas largas"
       },
       "description": {
         "nl": "Een boom van een soort die blaadjes heeft, bijvoorbeeld eik of populier.",
@@ -713,7 +755,8 @@
         "it": "Un albero di una specie con foglie larghe come la quercia o il pioppo.",
         "fr": "Un arbre d'une espèce avec de larges feuilles, comme le chêne ou le peuplier.",
         "de": "Ein Baum mit Blättern, z. B. Eiche oder Buche.",
-        "es": "Un árbol de hojas como el Roble o el Álamo."
+        "es": "Un árbol de hojas como el Roble o el Álamo.",
+        "pt": "Uma árvore de uma espécie com folhas, como carvalho ou populus."
       },
       "preciseInput": {
         "preferredBackground": "photo"
@@ -732,7 +775,8 @@
         "fr": "une arbre résineux",
         "de": "ein Nadelbaum",
         "es": "Árbol tipo Conífera",
-        "da": "et nåletræ"
+        "da": "et nåletræ",
+        "pt": "uma árvore com folhas de agulha"
       },
       "description": {
         "nl": "Een boom van een soort met naalden, bijvoorbeeld den of spar.",
@@ -762,7 +806,9 @@
         "de": "ein Baum",
         "ca": "un arbre",
         "es": "un árbol",
-        "da": "et træ"
+        "da": "et træ",
+        "pt": "uma árvore",
+        "pt_BR": "uma árvore"
       },
       "description": {
         "nl": "Wanneer je niet zeker bent of het nu een loof- of naaldboom is.",

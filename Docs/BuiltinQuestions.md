@@ -35,6 +35,7 @@ The following items can be easily reused in your layers
     + [denominations-coins](#denominations-coins)
     + [denominations-notes](#denominations-notes)
     + [all_tags](#all_tags)
+    + [just_created](#just_created)
     + [multilevels](#multilevels)
     + [level](#level)
     + [smoking](#smoking)
@@ -387,6 +388,19 @@ what notes can you use to pay here?
 {all_tags()}
 
 *Read-only tagrendering*
+
+
+
+### just_created 
+
+
+
+*Read-only tagrendering*
+
+
+
+  - You just created this element! Thanks for sharing this info with the world and helping people worldwide.
+
 
 
 

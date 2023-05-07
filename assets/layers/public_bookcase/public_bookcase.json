@@ -45,7 +45,8 @@
           "fr": "Microbibliothèque <i>{name}</i>",
           "ru": "Общественный книжный шкаф <i>{name}</i>",
           "it": "Microbiblioteca pubblica <i>{name}</i>",
-          "hu": "A nyilvános könyvespolc neve: <i>{name}</i>"
+          "hu": "A nyilvános könyvespolc neve: <i>{name}</i>",
+          "ca": "Prestatgeria pública <i>{name}</i>"
         }
       }
     ]
@@ -383,7 +384,8 @@
         "de": "Wie lautet die Referenznummer dieses öffentlichen Bücherschranks?",
         "fr": "Quelle est le numéro de référence de cette microbibliothèque ?",
         "it": "Qual è il numero identificativo di questa microbiblioteca?",
-        "hu": "Mi az azonosító száma ennek a nyilvános könyvespolcnak?"
+        "hu": "Mi az azonosító száma ennek a nyilvános könyvespolcnak?",
+        "ca": "Quin és el número de referència d'aquesta prestatgeria pública?"
       },
       "condition": "brand~*",
       "freeform": {
@@ -418,7 +420,8 @@
         "fr": "Quand a été installée cette microbibliothèque ?",
         "it": "Quando è stata inaugurata questa microbiblioteca?",
         "ru": "Когда был установлен этот общественный книжный шкаф?",
-        "hu": "Mikor állították fel ezt a nyilvános könyvespolcot?"
+        "hu": "Mikor állították fel ezt a nyilvános könyvespolcot?",
+        "ca": "Quan es va instal·lar aquesta prestatgeria pública?"
       },
       "render": {
         "en": "Installed on {start_date}",
@@ -427,7 +430,8 @@
         "fr": "Installée le {start_date}",
         "it": "È stata inaugurata il {start_date}",
         "ru": "Установлен {start_date}",
-        "hu": "Telepítés dátuma: {start_date}"
+        "hu": "Telepítés dátuma: {start_date}",
+        "ca": "Instal·lat el dia {start_date}"
       },
       "freeform": {
         "key": "start_date",
@@ -452,7 +456,8 @@
         "fr": "Y a-t-il un site web avec plus d'informations sur cette microbibliothèque ?",
         "it": "C'è un sito web con maggiori informazioni su questa microbiblioteca?",
         "ru": "Есть ли веб-сайт с более подробной информацией об этом общественном книжном шкафе?",
-        "hu": "Van-e olyan weboldal, ahol további információ található erről a nyilvános könyvespolcról?"
+        "hu": "Van-e olyan weboldal, ahol további információ található erről a nyilvános könyvespolcról?",
+        "ca": "Hi ha algun lloc web amb més informació sobre aquesta prestatgeria pública?"
       },
       "freeform": {
         "key": "website",

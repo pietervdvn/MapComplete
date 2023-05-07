@@ -9,7 +9,7 @@
   import ProfessionalServicesButton from "./ProfessionalServicesButton.svelte"
   import ThemeButton from "./ThemeButton.svelte"
   import { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
-  import MoreScreen from "./MoreScreen";
+  import MoreScreen from "./MoreScreen"
 
   export let search: UIEventSource<string>
   export let themes: LayoutInformation[]
