@@ -125,7 +125,7 @@
       "question": {
         "en": "What is the circumference of the tree trunk?",
         "de": "Wie groß ist der Umfang des Baumstammes?",
-        "fr": "Quelle est la circonférence du tronc ?",
+        "fr": "Quelle est la circonférence du tronc ? ",
         "nl": "Wat is de omtrek van de boomstam? ",
         "es": "¿Cuál es la circunferencia del tronco del árbol?",
         "pt": "Qual é a circunferência do tronco da árvore?",
@@ -148,7 +148,7 @@
       "questionHint": {
         "en": "This is measured at a height of 1.30m",
         "de": "Dies wird in einer Höhe von 1,30 m gemessen",
-        "fr": "La mesure est effectuée à 1,30 m de hauteur",
+        "fr": "La mesure est effectuée à 1.30m de hauteur",
         "nl": "Dit wordt 1.30m boven de grond gemeten",
         "es": "Se mide a una altura de 1,30 m",
         "ca": "Es mesura a una alçada d'1,30 m",

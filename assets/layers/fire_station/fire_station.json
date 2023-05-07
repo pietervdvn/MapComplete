@@ -209,7 +209,7 @@
             "nl": "Dit station wordt beheerd door de overheid.",
             "de": "Die Station wird von einer Behörde betrieben.",
             "es": "Este parque de bomberos lo opera el gobierno.",
-            "ca": "Aquest parc el gestiona el govern."
+            "ca": "Aquest parc l'opera el govern."
           }
         },
         {
@@ -225,7 +225,7 @@
             "it": "Questa stazione è gestita dalla comunità oppure un’associazione informale.",
             "nl": "Dit station wordt beheerd door een informele of gemeenschapsorganisatie.",
             "de": "Die Feuerwache wird von einer gemeinnützigen Organisation betrieben.",
-            "ca": "Aquesta estació la gestiona una comunitat o organització informal."
+            "ca": "Aquesta estació l'opera una comunitat o organització informal."
           }
         },
         {
@@ -241,7 +241,7 @@
             "it": "Questa stazione è gestita da un gruppo di volontari ufficiale.",
             "nl": "Dit station wordt beheerd door een formele groep vrijwilligers.",
             "de": "Die Feuerwache wird von einer Freiwilligenorganisation betrieben.",
-            "ca": "Aquesta estació la gestiona un grup formal de voluntaris."
+            "ca": "Aquest operació l'opera un grup formal de voluntaris."
           }
         },
         {
@@ -257,7 +257,7 @@
             "it": "Questa stazione è gestita da privati.",
             "nl": "Dit station wordt door private organisatie beheerd.",
             "de": "Die Feuerwache wird von einer privaten Organisation betrieben.",
-            "ca": "Aquesta estació la gestiona una entitat privada."
+            "ca": "Aquesta estació l'opera una entitat privada."
           }
         }
       ]

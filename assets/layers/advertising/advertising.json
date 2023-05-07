@@ -810,8 +810,8 @@
           "if": "sides=1",
           "then": {
             "en": "This object has advertisements on a single side",
-            "ca": "Aquest objecte té publicitat a un únic costat",
-            "es": "Este objeto tiene publicidad en un único lado",
+            "ca": "Aquest mupi té publicitat a un únic costat",
+            "es": "Este mupi tiene publicidad en un único lado",
             "de": "Werbung wird nur auf einer Seite angezeigt",
             "cs": "Tento objekt má reklamy na jedné straně",
             "fr": "Cet objet a de la publicité sur un seul côté",
@@ -822,8 +822,8 @@
           "if": "sides=2",
           "then": {
             "en": "This object has advertisements on both sides",
-            "ca": "Aquest objecte té publicitat pels dos costas",
-            "es": "Este objeto tiene publicidad por los dos lados",
+            "ca": "Aquest mupi té publicitat pels dos costas",
+            "es": "Este mupi tiene publicidad por los dos lados",
             "de": "Werbung wird auf beiden Seiten angezeigt",
             "cs": "Tento objekt má reklamy na obou stranách",
             "fr": "Cet objet a de la publicité des deux côtés",
@@ -1067,7 +1067,7 @@
         "advertising=board"
       ],
       "title": {
-        "ca": "un tauló d'anuncis",
+        "ca": "un tauló d'anunis",
         "es": "un tablón de anuncios",
         "en": "a board",
         "de": "ein Anschlagbrett",
