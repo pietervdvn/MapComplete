@@ -460,7 +460,8 @@
         "it": "Qual è il numero identificativo ufficiale di questo dispositivo? (se visibile sul dispositivo)",
         "de": "Wie lautet die offizielle Identifikationsnummer des Geräts? (falls am Gerät sichtbar)",
         "sl": "Kakšna je uradna identifikacijska številka te naprave? (če je vidna na napravi)",
-        "es": "¿Cual es el número de identificación oficial de este dispositivo? (si está visible en el dispositivo)"
+        "es": "¿Cual es el número de identificación oficial de este dispositivo? (si está visible en el dispositivo)",
+        "ca": "Quin és el número d'identificació oficial del dispositiu? (si està visible al dispositiu)"
       },
       "freeform": {
         "type": "text",
@@ -510,7 +511,8 @@
         "it": "Qual è il numero di telefono per le domande riguardanti questo defibrillatore?",
         "de": "Wie lautet die Telefonnummer für Fragen zu diesem Defibrillator?",
         "sl": "Kakšna je telefonska številka za vprašanja o tem defibrilatorju?",
-        "es": "¿Cual es el número de teléfono para preguntas sobre este desfibrilador?"
+        "es": "¿Cual es el número de teléfono para preguntas sobre este desfibrilador?",
+        "ca": "Quin és el número de telèfon on preguntar sobre aquest desfibril·lador?"
       },
       "freeform": {
         "key": "phone",
@@ -622,7 +624,8 @@
         "it": "C’è qualcosa di sbagliato riguardante come è stato mappato, che non si è potuto correggere qua? (lascia una nota agli esperti di OpenStreetMap)",
         "de": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlasse eine Notiz für OpenStreetMap-Experten)",
         "sl": "Ali je kaj narobe s tem vnosom na zemljevid, in tega niste mogli sami popraviti tu? (pustite opombo OpenStreetMap strokovnjakom)",
-        "es": "¿Hay algo mal con como esta mapeado, que no pudiste arreglar aquí? (deja una nota para los expertos de OpenStreetMap)"
+        "es": "¿Hay algo mal con como esta mapeado, que no pudiste arreglar aquí? (deja una nota para los expertos de OpenStreetMap)",
+        "ca": "Hi ha alguna cosa malament en la manera de com està mapejat això, que no heu pogut solucionar aquí? (deixeu una nota als experts d'OpenStreetMap)"
       },
       "freeform": {
         "key": "fixme",

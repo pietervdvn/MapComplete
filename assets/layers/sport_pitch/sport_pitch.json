@@ -178,7 +178,8 @@
         "it": "Qual è la superficie di questo campo sportivo?",
         "ru": "Какое покрытие на этой спортивной площадке?",
         "de": "Welchen Belag hat der Sportplatz?",
-        "es": "¿Cual es la superficie de esta pista de deportes?"
+        "es": "¿Cual es la superficie de esta pista de deportes?",
+        "ca": "Quina és la superfície d'aquest camp esportiu?"
       },
       "render": {
         "nl": "De ondergrond is <b>{surface}</b>",

@@ -4,14 +4,16 @@
     "en": "A financial institution to deposit money",
     "de": "Ein Finanzinstitut, um Geld einzuzahlen",
     "nl": "Een financiële instelling waar je geld kunt",
-    "ca": "Una institució financera per a dipositar diners"
+    "ca": "Una institució financera per a dipositar diners",
+    "cs": "Finanční instituce pro ukládání peněz"
   },
   "name": {
     "en": "Banks",
     "de": "Banken",
     "ca": "Bancs",
     "nb_NO": "Banker",
-    "nl": "Banken"
+    "nl": "Banken",
+    "cs": "Banky"
   },
   "title": {
     "render": "Bank",
@@ -42,7 +44,8 @@
         "de": "Hat diese Bank einen Geldautomaten?",
         "nb_NO": "Har denne banken en minibank?",
         "nl": "Heeft deze bank een bankautomaat?",
-        "ca": "Aquest banc té un caixer automàtic?"
+        "ca": "Aquest banc té un caixer automàtic?",
+        "cs": "Má tato banka bankomat?"
       },
       "mappings": [
         {
@@ -52,7 +55,8 @@
             "de": "Diese Bank hat einen Geldautomaten",
             "nb_NO": "Denne banken har en minibank",
             "nl": "Deze bank heeft een bankautomaat",
-            "ca": "Aquest banc té un caixer automàtic"
+            "ca": "Aquest banc té un caixer automàtic",
+            "cs": "Tato banka má bankomat"
           }
         },
         {
@@ -62,7 +66,8 @@
             "de": "Diese Bank hat <b>keinen</b> Geldautomaten",
             "nb_NO": "Denne banken har <b>ikke</b> en minibank",
             "nl": "Deze bank heeft <b>geen</b> bankautomaaat",
-            "ca": "Aquest banc <b>no</b> té un caixer automàtic"
+            "ca": "Aquest banc <b>no</b> té un caixer automàtic",
+            "cs": "Tato banka <b>nemá bankomat</b>"
           }
         },
         {
@@ -71,7 +76,8 @@
             "en": "This bank does have an ATM, but it is mapped as a different icon",
             "de": "Diese Bank hat zwar einen Geldautomaten, aber dieser ist mit einem anderen Symbol dargestellt",
             "nl": "Deze bank heeft een bankautomaat, maar deze staat apart op de kaart aangeduid",
-            "ca": "Aquest banc té un caixer, però està mapejat com a un element diferent"
+            "ca": "Aquest banc té un caixer, però està mapejat com a un element diferent",
+            "cs": "Tato banka má bankomat, ale je namapován jako jiná ikona"
           }
         }
       ]
@@ -88,7 +94,8 @@
             "de": "Mit Geldautomat",
             "nb_NO": "Med en minibank",
             "nl": "Met een bankautomaat",
-            "ca": "Amb un caixer automàtic"
+            "ca": "Amb un caixer automàtic",
+            "cs": "S bankomatem"
           },
           "osmTags": "atm=yes"
         }

@@ -185,7 +185,8 @@
           "if": "post_office:brand=DHL Paketshop",
           "then": {
             "en": "This location is a DHL Paketshop",
-            "de": "Dieser Standort ist ein DHL Paketshop"
+            "de": "Dieser Standort ist ein DHL Paketshop",
+            "ca": "Aquesta ubicació és una botiga DHL Paketshop"
           },
           "hideInAnswer": "_country!=de"
         },
@@ -193,7 +194,8 @@
           "if": "post_office:brand=Hermes PaketShop",
           "then": {
             "en": "This location is a Hermes PaketShop",
-            "de": "Dieser Standort ist ein Hermes PaketShop"
+            "de": "Dieser Standort ist ein Hermes PaketShop",
+            "ca": "Aquesta ubicació és una botiga Hermes PaketShop"
           },
           "hideInAnswer": "_country!=de"
         },
@@ -202,7 +204,8 @@
           "then": {
             "en": "This location is a PostNL-point",
             "de": "Dieser Standort ist ein PostNL-Punkt",
-            "nl": "Deze locatie is een PostNL-punt"
+            "nl": "Deze locatie is een PostNL-punt",
+            "ca": "Aquesta ubicació és un punt PostNL"
           },
           "hideInAnswer": {
             "and": [
@@ -306,7 +309,8 @@
       },
       "question": {
         "en": "Can you pick up missed parcels here?",
-        "de": "Können Sie hier verpasste Pakete abholen?"
+        "de": "Können Sie hier verpasste Pakete abholen?",
+        "ca": "Es poden recollir els paquets perduts aquí?"
       },
       "freeform": {
         "key": "post_office:parcel_pickup",
@@ -317,14 +321,16 @@
           "if": "post_office:parcel_pickup=yes",
           "then": {
             "en": "You can pick up missed parcels here",
-            "de": "Hier können Sie verpasste Pakete abholen"
+            "de": "Hier können Sie verpasste Pakete abholen",
+            "ca": "Podeu recollir els paquets perduts aquí"
           }
         },
         {
           "if": "post_office:parcel_pickup=no",
           "then": {
             "en": "You can't pick up missed parcels here",
-            "de": "Sie können hier keine verpassten Pakete abholen"
+            "de": "Sie können hier keine verpassten Pakete abholen",
+            "ca": "No podeu recollir paquets perduts aquí"
           }
         }
       ]

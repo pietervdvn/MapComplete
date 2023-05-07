@@ -40,7 +40,8 @@
         "ru": "общественный туалет ",
         "it": "una servizi igienici aperti al pubblico",
         "es": "un baño público",
-        "da": "et offentligt toilet"
+        "da": "et offentligt toilet",
+        "ca": "un lavabo públic"
       },
       "tags": [
         "amenity=toilets"
@@ -54,7 +55,8 @@
         "nl": "een rolstoeltoegankelijke, publiek toilet",
         "it": "una servizi igienici accessibili per persone in sedia a rotelle",
         "ru": "tуалет с доступом для пользователей кресел-колясок",
-        "da": "et toilet med kørestolsvenligt toilet"
+        "da": "et toilet med kørestolsvenligt toilet",
+        "ca": "un lavabo amb lavabo accessible per a cadires de rodes"
       },
       "tags": [
         "amenity=toilets",
@@ -222,7 +224,8 @@
         "it": "Quanto costa l'accesso a questi servizi igienici?",
         "ru": "Сколько стоит посещение туалета?",
         "es": "¿Cuánto hay que pagar para estos baños?",
-        "da": "Hvor meget skal man betale for disse toiletter?"
+        "da": "Hvor meget skal man betale for disse toiletter?",
+        "ca": "Quant s'ha de pagar per aquests lavabos?"
       },
       "render": {
         "en": "The fee is {charge}",
@@ -232,7 +235,8 @@
         "it": "La tariffa è {charge}",
         "ru": "Стоимость {charge}",
         "es": "La tasa es {charge}",
-        "da": "Gebyret er {charge}"
+        "da": "Gebyret er {charge}",
+        "ca": "La taxa és {charge}"
       },
       "condition": "fee=yes",
       "freeform": {
@@ -412,7 +416,8 @@
         "fr": "Ces toilettes disposent-elles d'une table à langer ?",
         "nl": "Is er een luiertafel beschikbaar?",
         "it": "È disponibile un fasciatoio (per cambiare i pannolini)?",
-        "da": "Findes der puslebord (til bleskift)?"
+        "da": "Findes der puslebord (til bleskift)?",
+        "ca": "Hi ha un canviador per a nadons (per a canviar bolquers) disponible?"
       },
       "mappings": [
         {
@@ -423,7 +428,8 @@
             "nl": "Er is een luiertafel",
             "it": "È disponibile un fasciatoio",
             "es": "Hay un cambiador",
-            "da": "Et puslebord er tilgængeligt"
+            "da": "Et puslebord er tilgængeligt",
+            "ca": "Hi ha un canviador per a nadons"
           },
           "if": "changing_table=yes"
         },

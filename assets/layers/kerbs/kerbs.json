@@ -344,7 +344,8 @@
             "de": "Zentimeter",
             "fr": "centimètres",
             "pa_PK": "سینٹیمیٹر",
-            "ru": "сантиметры"
+            "ru": "сантиметры",
+            "ca": "centímetres"
           },
           "humanSingular": {
             "en": "centimeter",
@@ -352,7 +353,8 @@
             "de": "Zentimeter",
             "fr": "centimètre",
             "pa_PK": "سینٹیمیٹر",
-            "ru": "сантиметр"
+            "ru": "сантиметр",
+            "ca": "centímetre"
           }
         },
         {
@@ -367,7 +369,8 @@
             "de": "Meter",
             "fr": "mètres",
             "pa_PK": "میٹر",
-            "ru": "метры"
+            "ru": "метры",
+            "ca": "metres"
           },
           "humanSingular": {
             "en": "meter",
@@ -375,7 +378,8 @@
             "de": "Meter",
             "fr": "mètre",
             "pa_PK": "میٹر",
-            "ru": "метр"
+            "ru": "метр",
+            "ca": "metre"
           }
         }
       ],

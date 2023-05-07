@@ -93,7 +93,8 @@
         "en": "What is the width of this elevator's entrance?",
         "fr": "Quelle est la largeur de l'entrée de cet ascenseur ?",
         "de": "Wie breit ist die Tür dieses Aufzugs?",
-        "nl": "Wat is de breedte van de liftdeur?"
+        "nl": "Wat is de breedte van de liftdeur?",
+        "ca": "Quina és l'amplada de l'entrada d'aquest ascensor?"
       },
       "freeform": {
         "key": "door:width",

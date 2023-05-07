@@ -3,7 +3,8 @@
   "description": {
     "en": "A special layer which is not meant to be shown on a map, but which is used to set user settings",
     "de": "Eine spezielle Ebene, die nicht für die Darstellung auf einer Karte gedacht ist, sondern für die Festlegung von Benutzereinstellungen verwendet wird",
-    "nl": "Een speciale lag die niet getoond wordt op de kaart, maar die de instellingen van de gebruiker weergeeft"
+    "nl": "Een speciale lag die niet getoond wordt op de kaart, maar die de instellingen van de gebruiker weergeeft",
+    "pt": "Uma camada especial que não deve ser mostrada em um mapa, mas que é usada para definir as configurações do usuário"
   },
   "title": null,
   "source": {
@@ -24,7 +25,8 @@
         "en": "Under what license do you want to publish your pictures?",
         "de": "Unter welcher Lizenz möchten Sie Ihre Bilder veröffentlichen?",
         "nl": "Met welke licentie wil je je afbeeldingen toevoegen?",
-        "ca": "Sota quina llicència vols publicar les teves fotos?"
+        "ca": "Sota quina llicència vols publicar les teves fotos?",
+        "pt": "Sob que licença você deseja publicar suas fotos?"
       },
       "mappings": [
         {
@@ -34,7 +36,8 @@
             "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC0</b> lizenziert und der Public Domain hinzugefügt. Das bedeutet, dass jeder Ihre Bilder für jeden Zweck verwenden kann. <span class='subtle'>Dies ist die Standardeinstellung.</span>",
             "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik. <span class='subtle'>Dit is de standaard-instelling</span>",
             "cs": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu. <span class='subtle'>Toto je výchozí volba.</span>",
-            "ca": "Les imatges que feu tindran llicència <b>CC0</b> i s'afegiran al domini públic. Això vol dir que tothom pot utilitzar les vostres imatges per a qualsevol propòsit. <span class='subtle'>Aquesta és l'opció predeterminada. </span>"
+            "ca": "Les imatges que feu tindran llicència <b>CC0</b> i s'afegiran al domini públic. Això vol dir que tothom pot utilitzar les vostres imatges per a qualsevol propòsit. <span class='subtle'>Aquesta és l'opció predeterminada. </span>",
+            "pt": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade. <span class='subtle'>Esta é a escolha padrão.</span>"
           },
           "hideInAnswer": true
         },
@@ -46,7 +49,9 @@
             "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC0</b>-licentie en dus aan het publieke domein toegevoegd worden. Dit betekent dat iedereen je afbeeldingen kan gebruiken voor elk mogelijks gebruik.",
             "ru": "Изображения будут опубликованы под лицензией <b>CC0</b> и перейдут в общественное достояние. Это значит, что кто угодно имеет право использовать их без ограничений.",
             "cs": "Pořízené fotografie budou licencovány pod <b>CC0</b> a přidány do veřejné domény. To znamená, že kdokoli může vaše snímky použít k jakémukoli účelu.",
-            "ca": "Les imatges que feu tindran llicència <b>CC0</b> i s'afegiran al domini públic. Això vol dir que tothom pot utilitzar les vostres imatges per a qualsevol propòsit."
+            "ca": "Les imatges que feu tindran llicència <b>CC0</b> i s'afegiran al domini públic. Això vol dir que tothom pot utilitzar les vostres imatges per a qualsevol propòsit.",
+            "es": "Las fotografías que tome tendrán una licencia con <b>CC0</b> y se agregarán al dominio público. Esto significa que todos pueden usar sus imágenes para cualquier propósito.",
+            "pt": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade."
           }
         },
         {
@@ -56,7 +61,8 @@
             "ca": "Les fotografies que facis es publicaran sota <b>CC-BY 4.0</b> que requereix que qualsevol que utilitzi la vostra imatge us ha de donar crèdits",
             "de": "Die von Ihnen aufgenommenen Bilder werden mit <b>CC-BY 4.0</b> lizenziert, was bedeutet, dass jeder, der Ihr Bild verwendet, Sie als Urheber nennen muss",
             "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam",
-            "cs": "Pořízené fotografie budou licencovány pod <b>CC-BY 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku"
+            "cs": "Pořízené fotografie budou licencovány pod <b>CC-BY 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku",
+            "pt": "As fotos que você tirar serão licenciadas com <b>CC-BY 4.0</b>, que exige que todos que usam sua foto atribuam a você"
           }
         },
         {
@@ -67,7 +73,8 @@
             "nl": "Afbeeldingen die je toevoegt zullen gepubliceerd worden met de <b>CC-BY-SA 4.0</b>-licentie. Dit betekent dat iedereen je afbeelding mag gebruiken voor elke toepassing mits het vermelden van je naam en dat afgeleide werken van je afbeelding ook ondere deze licentie moeten gepubliceerd worden.",
             "cs": "Pořízené fotografie budou licencovány pod <b>CC-BY-SA 4.0</b>, což vyžaduje, aby vás uvedl každý, kdo použije vaší fotku a že odvozené fotky musí být dále sdíleny se stejnou licencí.",
             "ca": "Les imatges que feu tindran una llicència amb <b>CC-BY-SA 4.0</b> el que significa que tothom que utilitzi la vostra imatge us ha d'atribuir i que els derivats de la vostra imatge s'han de tornar a compartir amb la mateixa llicència.",
-            "fr": "Les photos que vous prenez seront sous la licence <b>CC-BY-SA 4.0</b> ce qui signifie que quiconque utilisant votre photo doit vous créditer et que les modifications apportées à votre photo doivent être repartagées avec la même licence."
+            "fr": "Les photos que vous prenez seront sous la licence <b>CC-BY-SA 4.0</b> ce qui signifie que quiconque utilisant votre photo doit vous créditer et que les modifications apportées à votre photo doivent être repartagées avec la même licence.",
+            "pt": "As fotos que você tirar serão licenciadas com <b>CC-BY-SA 4.0</b>, o que significa que todos que usarem sua foto devem atribuí-lo e que os derivados de sua foto devem ser compartilhados novamente com a mesma licença."
           }
         }
       ]
@@ -77,7 +84,8 @@
       "question": {
         "en": "Should questions for unknown data fields appear one-by-one or together?",
         "de": "Sollen Fragen für unbekannte Datenfelder einzeln oder zusammen angezeigt werden?",
-        "fr": "Est-ce que les questions pour les champs sans donnée doivent apparaître une à une ou toutes ensembles ?"
+        "fr": "Est-ce que les questions pour les champs sans donnée doivent apparaître une à une ou toutes ensembles ?",
+        "pt": "As perguntas para campos de dados desconhecidos devem aparecer uma a uma ou juntas?"
       },
       "mappings": [
         {
@@ -86,7 +94,8 @@
             "en": "Show all questions in the infobox together",
             "de": "Alle Fragen in der Infobox zusammen anzeigen",
             "ca": "Mostra totes les preguntes juntes a la caixa d'informació",
-            "fr": "Afficher toutes les question en même temps dans l'infobox"
+            "fr": "Afficher toutes les question en même temps dans l'infobox",
+            "pt": "Mostrar todas as perguntas na caixa de informações juntas"
           }
         },
         {
@@ -95,7 +104,8 @@
             "en": "Show questions one-by-one",
             "de": "Fragen der Reihe nach anzeigen",
             "ca": "Mostra les preguntes una per una",
-            "fr": "Afficher les questions une à une"
+            "fr": "Afficher les questions une à une",
+            "pt": "Mostrar perguntas uma a uma"
           }
         }
       ]
@@ -113,7 +123,8 @@
         "de": "Möchten Sie bei der Übersetzung von MapComplete helfen?",
         "cs": "Chcete pomoci s překladem MapComplete?",
         "ca": "Vols ajudar a traduir MapComplete?",
-        "fr": "Voulez-vous aider à traduire MapComplete ?"
+        "fr": "Voulez-vous aider à traduire MapComplete ?",
+        "pt": "Quer ajudar na tradução do MapComplete?"
       },
       "mappings": [
         {
@@ -122,7 +133,8 @@
             "en": "Don't show a button to quickly change translations",
             "de": "Keine Schaltfläche zum schnellen Wechseln von Übersetzungen anzeigen",
             "ca": "No mostris cap botó per a canviar ràpidament les traduccions",
-            "fr": "Ne pas afficher de bouton pour modifier les traductions rapidement"
+            "fr": "Ne pas afficher de bouton pour modifier les traductions rapidement",
+            "pt": "Não mostrar um botão para alterar as traduções rapidamente"
           }
         },
         {
@@ -131,7 +143,8 @@
             "en": "Show a button to quickly open translations when using MapComplete on a big screen",
             "de": "Schaltfläche anzeigen zum schnellen Öffnen von Übersetzungen beim Verwenden von MapComplete auf einem großen Bildschirm",
             "fr": "Afficher un bouton pour ouvrir rapidement les traductions lorsque vous utilisez MapComplete sur un grand écran",
-            "ca": "Mostra un botó per a obrir ràpidament les traduccions quan utilitzes MapComplet en una pantalla gran"
+            "ca": "Mostra un botó per a obrir ràpidament les traduccions quan utilitzes MapComplet en una pantalla gran",
+            "pt": "Mostrar um botão para abrir traduções rapidamente ao usar o MapComplete em uma tela grande"
           }
         },
         {
@@ -140,7 +153,8 @@
             "en": "Always show the translation buttons, including on mobile",
             "de": "Übersetzungsschaltflächen immer anzeigen, auch auf dem Handy",
             "ca": "Mostra sempre els botons de traducció, fins i tot al mòbil",
-            "fr": "Toujours afficher les boutons de traduction, même sur mobile"
+            "fr": "Toujours afficher les boutons de traduction, même sur mobile",
+            "pt": "Mostrar sempre os botões de tradução, inclusive no celular"
           }
         }
       ]
@@ -201,7 +215,8 @@
             "en": "Completely translated",
             "nl": "Volledig vertaald",
             "de": "Vollständig übersetzt",
-            "ca": "Completament traduït"
+            "ca": "Completament traduït",
+            "pt": "Traduzido completamente"
           }
         }
       ]
@@ -262,7 +277,8 @@
             "en": "You have made changes on {_csCount} different occasions! That is awesome!",
             "de": "Sie haben bei {_csCount} verschiedenen Gelegenheiten Änderungen vorgenommen! Das ist großartig!",
             "ca": "Has fet {_csCount} en diferents ocasions! Això és sorprenent!",
-            "fr": "Vous avez fait {_csCount} modifications ! C'est génial !"
+            "fr": "Vous avez fait {_csCount} modifications ! C'est génial !",
+            "pt": "Você fez alterações em {_csCount} ocasiões diferentes! Isso é incrível!"
           },
           "icon": "party"
         }
@@ -278,7 +294,8 @@
             "ca": "Has contribuït a traduir MapComplete! Això és fantàstic!",
             "de": "Sie haben dazu beigetragen, MapComplete zu übersetzen! Das ist großartig!",
             "nl": "Je hebt MapComplete helpen vertalen! Dat is fantastisch! Bedankt hiervoor!",
-            "cs": "Přispěli jste k překladu MapComplete! To je úžasné!"
+            "cs": "Přispěli jste k překladu MapComplete! To je úžasné!",
+            "pt": "Você contribuiu para a tradução do MapComplete! Fantástico!"
           },
           "icon": "party"
         }
@@ -305,7 +322,9 @@
       "question": {
         "en": "Show user settings debug info?",
         "de": "Debug-Informationen zu den Benutzereinstellungen anzeigen?",
-        "cs": "Zobrazit informace o ladění v nastavení?"
+        "cs": "Zobrazit informace o ladění v nastavení?",
+        "ca": "Vols mostrar la informació de depuració de la configuració de l'usuari?",
+        "pt": "Mostrar informações de depuração das configurações do usuário?"
       },
       "mappings": [
         {
@@ -313,7 +332,9 @@
           "then": {
             "en": "Show debug info",
             "de": "Debug-Informationen anzeigen",
-            "cs": "Zobrazit informace o ladění"
+            "cs": "Zobrazit informace o ladění",
+            "ca": "Mostra la informació de depuració",
+            "pt": "Mostrar informações de depuração"
           }
         },
         {
@@ -321,7 +342,9 @@
           "then": {
             "en": "Don't show debug info",
             "de": "Keine Debug-Informationen anzeigen",
-            "cs": "Nezobrazovat informace o ladění"
+            "cs": "Nezobrazovat informace o ladění",
+            "ca": "No mostris informació de depuració",
+            "pt": "Não mostrar informações de depuração"
           }
         },
         {
@@ -329,7 +352,8 @@
           "then": {
             "en": "Don't show debug info",
             "de": "Keine Debug-Informationen anzeigen",
-            "cs": "Nezobrazovat informace o ladění"
+            "cs": "Nezobrazovat informace o ladění",
+            "pt": "Não mostrar informações de depuração"
           },
           "hideInAnswer": true
         }

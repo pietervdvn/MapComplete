@@ -290,6 +290,9 @@
         "presets": {
             "0": {
                 "title": "ein Kunstwerk"
+            },
+            "1": {
+                "title": "ein Kunstwerk an einer Wand"
             }
         },
         "tagRenderings": {
@@ -921,13 +924,13 @@
                         "then": "Dies ist ein Geschäft, das Fahrräder verkauft oder repariert, aber auch Fahrräder vermietet"
                     },
                     "3": {
-                        "then": "Dies ist eine automatisierte Radstation, bei der Fahrräder mechanisch in einer Struktur verriegelt werden"
+                        "then": "Dies ist eine automatisierte Radstation, bei der ein Fahrrad mechanisch an einer Struktur befestigt wird"
                     },
                     "4": {
                         "then": "Dies ist ein Automat, der Schlüssel ausgibt und annimmt, eventuell nach Authentifizierung und/oder Bezahlung. Die Fahrräder sind in der Nähe geparkt"
                     },
                     "5": {
-                        "then": "Dies ist ein Rückgabepunkt, z. B. ein reservierter Fahrradstellplatz, der deutlich als solcher gekennzeichnet ist"
+                        "then": "Dies ist ein Rückgabepunkt, z.B. ein reservierter Parkplatz, um die Fahrräder abzustellen, die eindeutig als nur für den Verleih gekennzeichnet sind"
                     }
                 },
                 "question": "Was ist das für ein Fahrradverleih?"
@@ -1048,7 +1051,7 @@
                         "then": "Das Fahrrad-Café bietet kein Werkzeug für die selbständige Reparatur an"
                     }
                 },
-                "question": "Gibt es hier Werkzeug, um das eigene Fahrrad zu reparieren?"
+                "question": "Gibt es Werkzeug, um das eigene Fahrrad zu reparieren?"
             },
             "opening_hours": {
                 "override": {
@@ -5586,7 +5589,7 @@
         }
     },
     "maproulette_challenge": {
-        "description": "Ebene mit Aufgaben einer einzelnen MapRoulette-Herausforderung. Diese Ebene soll in Themen wiederverwendet und erweitert werden; Informationen dazu finden Sie in der Dokumentation.",
+        "description": "Ebene mit Aufgaben einer einzelnen MapRoulette-Herausforderung. Diese Ebene soll in Themen wiederverwendet und erweitert werden; Informationen dazu finden Sie in der [Dokumentation](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md).",
         "filter": {
             "0": {
                 "options": {
@@ -6945,6 +6948,12 @@
                     },
                     "19": {
                         "question": "Recycling von Restabfällen"
+                    },
+                    "20": {
+                        "question": "Recycling von Druckerpatronen"
+                    },
+                    "21": {
+                        "question": "Recycling von Fahrrädern"
                     }
                 }
             },
@@ -7077,6 +7086,9 @@
                     },
                     "23": {
                         "then": "Restmüll kann hier recycelt werden"
+                    },
+                    "24": {
+                        "then": "Fahrräder können hier recycelt werden"
                     }
                 },
                 "question": "Was kann hier recycelt werden?"
@@ -7100,6 +7112,9 @@
                     },
                     "2": {
                         "then": "Dies ist ein Abfallbehälter für Restmüll"
+                    },
+                    "3": {
+                        "then": "Dies ist ein Abholpunkt. Abfälle werden hier abgelegt, ohne sie in einen speziellen Behälter zu geben."
                     }
                 },
                 "question": "Um welche Recyclingeinrichtung handelt es sich?"

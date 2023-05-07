@@ -345,7 +345,7 @@
             "speech_output_language": {
                 "render": {
                     "special": {
-                        "question": "In welke taal is de srpaak van deze geldautomaat?",
+                        "question": "In welke taal is de spraak van deze geldautomaat?",
                         "render_list_item": "Deze geldautomaat heeft spraak in {language():font-bold}",
                         "render_single_language": "Deze automaat heeft spraak in {language():font-bold}"
                     }
@@ -1284,7 +1284,7 @@
             "1": {
                 "options": {
                     "0": {
-                        "question": "Verkoopt twedehands fietsen"
+                        "question": "Verkoopt tweedehands fietsen"
                     }
                 }
             },

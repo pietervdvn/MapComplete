@@ -60,7 +60,8 @@
       "question": {
         "en": "Is this nature reserve accessible to the public?",
         "nl": "Is dit gebied toegankelijk?",
-        "de": "Ist das Gebiet öffentlich zugänglich?"
+        "de": "Ist das Gebiet öffentlich zugänglich?",
+        "ca": "Aquesta reserva natural és accessible al públic?"
       },
       "freeform": {
         "key": "access:description"
@@ -76,7 +77,8 @@
           "then": {
             "en": "Publicly accessible",
             "nl": "Vrij toegankelijk",
-            "de": "Das Gebiet ist öffentlich zugänglich"
+            "de": "Das Gebiet ist öffentlich zugänglich",
+            "ca": "Accessible al públic"
           }
         },
         {
@@ -90,7 +92,8 @@
             "en": "Not accessible",
             "nl": "Niet toegankelijk",
             "de": "Das Gebiet ist nicht zugänglich",
-            "es": "No accesible"
+            "es": "No accesible",
+            "ca": "No accessible"
           }
         },
         {
@@ -104,7 +107,8 @@
             "en": "Not accessible as this is a private area",
             "nl": "Niet toegankelijk, want privégebied",
             "de": "Das Gebiet ist privat und nicht zugänglich",
-            "es": "No accesible, ya que es una área privada"
+            "es": "No accesible, ya que es una área privada",
+            "ca": "No accessible perquè es tracta d'una zona privada"
           }
         },
         {
@@ -118,7 +122,8 @@
             "en": "Accessible despite being a privately owned area",
             "nl": "Toegankelijk, ondanks dat het privegebied is",
             "de": "Das Gebiet ist privat aber zugänglich",
-            "es": "Accesible a pesar de ser una área privada"
+            "es": "Accesible a pesar de ser una área privada",
+            "ca": "Accessible tot i ser una propietat privada"
           }
         },
         {
@@ -132,7 +137,8 @@
             "en": "Only accessible with a guide or during organised activities",
             "nl": "Enkel toegankelijk met een gids of tijdens een activiteit",
             "de": "Das Gebiet ist nur während Führungen oder organisierten Aktivitäten zugänglich",
-            "es": "Solo accesible con un guía o durante actividades organizadas"
+            "es": "Solo accesible con un guía o durante actividades organizadas",
+            "ca": "Només accessible amb guia o durant les activitats organitzades"
           }
         },
         {
@@ -146,7 +152,8 @@
             "en": "Accessible with fee",
             "nl": "Toegankelijk mits betaling",
             "de": "Das Gebiet ist nur gegen Bezahlung zugänglich",
-            "es": "Accesible con una tasa"
+            "es": "Accesible con una tasa",
+            "ca": "Accessible amb una taxa"
           }
         }
       ],
@@ -163,7 +170,8 @@
         "en": "Who operates this area?",
         "nl": "Wie beheert dit gebied?",
         "de": "Wer betreibt das Gebiet?",
-        "es": "¿Quién opera esta área?"
+        "es": "¿Quién opera esta área?",
+        "ca": "Qui gestiona aquesta àrea?"
       },
       "freeform": {
         "key": "operator"
@@ -179,7 +187,8 @@
             "en": "Operated by Natuurpunt",
             "nl": "Dit gebied wordt beheerd door Natuurpunt",
             "de": "Das Gebiet wird betrieben von Natuurpunt",
-            "es": "Operado por NatuurPunt"
+            "es": "Operado por NatuurPunt",
+            "ca": "Gestionat per NatuurPunt"
           },
           "icon": "./assets/layers/nature_reserve/Natuurpunt.jpg"
         },
@@ -207,7 +216,8 @@
           "then": {
             "en": "Operated by <i>Agentschap Natuur en Bos</i>",
             "nl": "Dit gebied wordt beheerd door het <i>Agentschap Natuur en Bos</i>",
-            "de": "Das Gebiet wird betrieben von <i>Agentschap Natuur en Bos</i>"
+            "de": "Das Gebiet wird betrieben von <i>Agentschap Natuur en Bos</i>",
+            "ca": "Gestionat per <i>Agentschap Natuur en Bos</i>"
           },
           "icon": "./assets/layers/nature_reserve/ANB.jpg"
         }
@@ -316,7 +326,8 @@
         "en": "Whom is the curator of this nature reserve?",
         "it": "Chi è il curatore di questa riserva naturale?",
         "fr": "Qui est en charge de la conservation de la réserve ?",
-        "de": "Wer verwaltet dieses Gebiet?"
+        "de": "Wer verwaltet dieses Gebiet?",
+        "ca": "Qui és el conservador d'aquesta reserva natural?"
       },
       "render": {
         "nl": "{curator} is de beheerder van dit gebied",
@@ -345,7 +356,8 @@
         "en": "What email adress can one send to with questions and problems with this nature reserve?",
         "it": "Qual è l’indirizzo email a cui scrivere per fare domande o segnalare problemi su questa riserva naturale?",
         "fr": "À quelle adresse courriel peut-on envoyer des questions et des problèmes concernant cette réserve naturelle ? ",
-        "de": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Gebiet wenden?"
+        "de": "An welche Email-Adresse kann man sich bei Fragen und Problemen zu diesem Gebiet wenden?",
+        "ca": "A quina adreça de correu electrònic es pot enviar amb preguntes i problemes amb aquest parc natural?"
       },
       "render": {
         "nl": "<a href='mailto:{email}' target='_blank'>{email}</a>",
@@ -377,7 +389,8 @@
         "en": "What phone number can one call to with questions and problems with this nature reserve?",
         "it": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/>",
         "fr": "Quel numéro de téléphone peut-on appeler pour poser des questions et résoudre des problèmes concernant cette réserve naturelle ? ",
-        "de": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Gebiet anrufen?"
+        "de": "Welche Telefonnummer kann man bei Fragen und Problemen zu diesem Gebiet anrufen?",
+        "ca": "A quin número de telèfon es pot trucar amb preguntes i problemes amb aquest parc natural?"
       },
       "render": {
         "*": "<a href='tel:{phone}' target='_blank'>{phone}</a>"
@@ -413,7 +426,8 @@
         "en": "Is there some extra info?",
         "nl": "Is er extra info die je kwijt wil?",
         "de": "Gibt es zusätzliche Informationen?",
-        "es": "¿Hay alguna información adicional?"
+        "es": "¿Hay alguna información adicional?",
+        "ca": "Hi ha alguna informació addicional?"
       },
       "render": {
         "en": "Extra info: <i>{description:0}</i>",
@@ -450,12 +464,14 @@
       "title": {
         "en": "a nature reserve",
         "nl": "een natuurreservaat",
-        "de": "ein Schutzgebiet"
+        "de": "ein Schutzgebiet",
+        "ca": "una reserva natural"
       },
       "description": {
         "en": "Add a missing nature reserve",
         "nl": "Voeg een ontbrekend, erkend natuurreservaat toe, bv. een gebied dat beheerd wordt door het ANB of natuurpunt",
-        "de": "Ein fehlendes Naturschutzgebiet hinzufügen"
+        "de": "Ein fehlendes Naturschutzgebiet hinzufügen",
+        "ca": "Afegeix una reserva natural que falta"
       }
     }
   ],
@@ -487,7 +503,8 @@
           "question": {
             "en": "Dogs are allowed to roam freely",
             "nl": "Honden mogen vrij rondlopen",
-            "de": "Hunde dürfen frei herumlaufen"
+            "de": "Hunde dürfen frei herumlaufen",
+            "ca": "Els gossos poden anar lliurement"
           },
           "osmTags": "dog=yes"
         },
@@ -495,7 +512,8 @@
           "question": {
             "en": "Dogs are allowed if they are leashed",
             "nl": "Honden welkom aan de leiband",
-            "de": "Hunde nur erlaubt, wenn sie angeleint sind"
+            "de": "Hunde nur erlaubt, wenn sie angeleint sind",
+            "ca": "S'admeten gossos si van lligats"
           },
           "osmTags": {
             "or": [

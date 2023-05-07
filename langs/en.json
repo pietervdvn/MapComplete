@@ -169,7 +169,7 @@
             "downloadGpxHelper": "A GPX-file can be used with most navigation devices and applications",
             "exporting": "Exporting…",
             "includeMetaData": "Include metadata (last editor, calculated values, …)",
-            "licenseInfo": "<h3>Copyright notice</h3>The provided data is available under ODbL. Reusing it is gratis for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b> is required</li><li>Any change must be use the license</li></ul> Please read the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details.",
+            "licenseInfo": "<h3>Copyright notice</h3>The provided data is available under ODbL. Reusing it is gratis for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b> must be shown<li><li>Any change must be published under the same license</li></ul> Please read the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details.",
             "noDataLoaded": "No data is loaded yet. Download will be available soon",
             "title": "Download visible data",
             "uploadGpx": "Upload your track to OpenStreetMap"

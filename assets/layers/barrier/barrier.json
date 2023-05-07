@@ -407,7 +407,8 @@
             "fr": "Poire, l’espace en hauteur est plus faible qu’au sol",
             "es": "Barrera de seguridad, el espacio es menor en la parte superior que en la inferior",
             "da": "Squeeze gate, mellemrummet er mindre i toppen end i bunden",
-            "ca": "Barrera de seguretat, l'espai és menor a la part superior que a l'inferior"
+            "ca": "Barrera de seguretat, l'espai és menor a la part superior que a l'inferior",
+            "cs": "Zúžená brána, mezera nahoře je menší než dole"
           },
           "icon": {
             "path": "./assets/themes/cycle_infra/Cycle_barrier_squeeze.png",

@@ -353,6 +353,20 @@
             "artwork_subject": {
                 "question": "Co zobrazuje toto umělecké dílo?",
                 "render": "Toto dílo zobrazuje {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+            },
+            "doubles_as_bench": {
+                "mappings": {
+                    "0": {
+                        "then": "Toto umělecké dílo slouží také jako lavička"
+                    },
+                    "1": {
+                        "then": "Toto umělecké dílo neslouží jako lavička"
+                    },
+                    "2": {
+                        "then": "Toto umělecké dílo neslouží jako lavička"
+                    }
+                },
+                "question": "Slouží toto umělecké dílo jako lavička?"
             }
         },
         "title": {
@@ -365,7 +379,126 @@
         }
     },
     "atm": {
-        "description": "Bankomaty pro výběr peněz"
+        "description": "Bankomaty pro výběr peněz",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "S hlasovým výstupem"
+                    }
+                }
+            }
+        },
+        "name": "Bankomaty",
+        "presets": {
+            "0": {
+                "title": "bankomat"
+            }
+        },
+        "tagRenderings": {
+            "brand": {
+                "freeform": {
+                    "placeholder": "Obchodní značka"
+                },
+                "question": "Jaká je značka bankomatu?",
+                "render": "Značka tohoto bankomatu je {brand}"
+            },
+            "cash_in": {
+                "mappings": {
+                    "0": {
+                        "then": "Do tohoto bankomatu pravděpodobně nelze vložit hotovost"
+                    },
+                    "1": {
+                        "then": "Do tohoto bankomatu můžete vkládat hotovost"
+                    },
+                    "2": {
+                        "then": "Do tohoto bankomatu nelze vkládat hotovost"
+                    }
+                },
+                "question": "Můžete do tohoto bankomatu vložit hotovost?"
+            },
+            "cash_out": {
+                "mappings": {
+                    "0": {
+                        "then": "Z tohoto bankomatu můžete vybírat hotovost"
+                    },
+                    "1": {
+                        "then": "Z tohoto bankomatu můžete vybírat hotovost"
+                    },
+                    "2": {
+                        "then": "Z tohoto bankomatu nelze vybírat hotovost"
+                    }
+                },
+                "question": "Lze z tohoto bankomatu vybírat hotovost?"
+            },
+            "name": {
+                "render": "Název tohoto bankomatu je {name}"
+            },
+            "operator": {
+                "freeform": {
+                    "placeholder": "Operátor"
+                },
+                "question": "Která společnost provozuje tento bankomat?",
+                "render": "Bankomat provozuje {operator}"
+            },
+            "speech_output": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento bankomat má řečový výstup, který je obvykle dostupný přes konektor pro sluchátka"
+                    },
+                    "1": {
+                        "then": "Tento bankomat nemá hlasový výstup"
+                    }
+                },
+                "question": "Má tento bankomat hlasový výstup pro zrakově postižené uživatele?"
+            },
+            "speech_output_language": {
+                "render": {
+                    "special": {
+                        "question": "V jakých jazycích má tento bankomat řečový výstup?",
+                        "render_list_item": "Tento bankomat má řečový výstup v {language():font-bold}",
+                        "render_single_language": "Tento bankomat má řečový výstup v {language():font-bold}"
+                    }
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Bankomat {brand}"
+                }
+            },
+            "render": "Bankomat"
+        }
+    },
+    "bank": {
+        "description": "Finanční instituce pro ukládání peněz",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "S bankomatem"
+                    }
+                }
+            }
+        },
+        "name": "Banky",
+        "tagRenderings": {
+            "has_atm": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato banka má bankomat"
+                    },
+                    "1": {
+                        "then": "Tato banka <b>nemá bankomat</b>"
+                    },
+                    "2": {
+                        "then": "Tato banka má bankomat, ale je namapován jako jiná ikona"
+                    }
+                },
+                "question": "Má tato banka bankomat?"
+            }
+        }
     },
     "barrier": {
         "description": "Překážky při jízdě na kole, jako jsou patníky a zábrany pro cyklisty",
@@ -411,6 +544,9 @@
                     },
                     "2": {
                         "then": "Trojitá, tři bariéry za sebou"
+                    },
+                    "3": {
+                        "then": "Zúžená brána, mezera nahoře je menší než dole"
                     }
                 },
                 "question": "O jakou cyklistickou bariéru se jedná?"
@@ -467,6 +603,28 @@
     },
     "bench": {
         "description": "Lavička je dřevěná, kovová, kamenná, ... plocha, na které může člověk sedět. Tato vrstva je vizualizuje a klade si o nich několik otázek.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "je památník"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "S opěradlem a bez opěradla"
+                    },
+                    "1": {
+                        "question": "Má opěradlo"
+                    },
+                    "2": {
+                        "question": "Nemá opěradlo"
+                    }
+                }
+            }
+        },
         "name": "Lavičky",
         "presets": {
             "0": {
@@ -474,8 +632,23 @@
             }
         },
         "tagRenderings": {
+            "bench-artwork": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato lavička má integrované umělecké dílo"
+                    },
+                    "1": {
+                        "then": "Tato lavička nemá integrované umělecké dílo"
+                    }
+                },
+                "question": "Má tato lavička umělecké prvky?",
+                "questionHint": "Např. má integrovaný obraz, sochu nebo jiné netriviální tvůrčí dílo"
+            },
             "bench-backrest": {
                 "mappings": {
+                    "0": {
+                        "then": "Tato lavička je oboustranná a má společné opěradlo"
+                    },
                     "1": {
                         "then": "Má opěradlo"
                     },
@@ -519,6 +692,19 @@
                 "question": "Kterým směrem se díváte, když sedíte na lavičce?",
                 "render": "Když sedíte na lavičce, díváte se směrem v úhlu {direction}°."
             },
+            "bench-inscription": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato lavička nemá nápis"
+                    },
+                    "1": {
+                        "then": "Tato lavička <span class='subtle'>(pravděpodobně)</span> nemá nápis"
+                    }
+                },
+                "question": "Má tato lavička nápis?",
+                "questionHint": "Např. na připevněné desce, v opěradle, ...",
+                "render": "Tato lavice má následující nápis:<br/><p><i>{inscription}</i></p>"
+            },
             "bench-material": {
                 "mappings": {
                     "0": {
@@ -543,11 +729,32 @@
                 "question": "Z čeho je vyrobena lavice (sedadlo)?",
                 "render": "Materiál: {material}"
             },
+            "bench-memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato lavička je pomníkem pro někoho nebo něco"
+                    },
+                    "1": {
+                        "then": "Tato lavička <b>není</b> pro někoho nebo něco památníkem"
+                    }
+                },
+                "question": "Slouží tato lavička jako památník někoho nebo něčeho?"
+            },
             "bench-seats": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato lavička nemá oddělená sedadla"
+                    }
+                },
                 "question": "Kolik má tato lavice míst k sezení?",
                 "render": "{seats} míst k sezení"
             },
             "bench-survey:date": {
+                "mappings": {
+                    "0": {
+                        "then": "Zjištěno dnes!"
+                    }
+                },
                 "question": "Kdy byla tato lavička naposledy kontrolována?",
                 "render": "Tato lavička byla naposledy zkontrolována dne {survey:date}"
             }
@@ -557,6 +764,18 @@
         }
     },
     "bench_at_pt": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "Tato autobusová zastávka se již nepoužívá"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Na této autobusové zastávce není lavička (nikdy zde nebyla nebo byla odstraněna)"
+                }
+            }
+        },
         "description": "Vrstva zobrazující všechny zastávky veřejné dopravy, které mají lavičku",
         "name": "Lavičky na zastávkách veřejné dopravy",
         "tagRenderings": {
@@ -854,6 +1073,9 @@
                 "mappings": {
                     "0": {
                         "then": "Tato mycí služba je bezplatná"
+                    },
+                    "1": {
+                        "then": "Tato úklidová služba je placená"
                     }
                 },
                 "question": "Kolik stojí využívání služby mytí?",
@@ -1156,6 +1378,106 @@
                 },
                 "4": {
                     "then": "Vzduchový kompresor"
+                }
+            },
+            "render": "Cyklistická stanice (pumpa a opravna)"
+        }
+    },
+    "bike_shop": {
+        "description": "Obchod zaměřený na prodej jízdních kol nebo souvisejících předmětů",
+        "name": "Opravna/obchod s jízdními koly",
+        "presets": {
+            "0": {
+                "title": "opravna/obchod s jízdními koly"
+            }
+        },
+        "tagRenderings": {
+            "bike_repair_bike-pump-service": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod nabízí pumpu na kolo pro každého"
+                    },
+                    "1": {
+                        "then": "Tento obchod nenabízí pumpičku na kolo pro každého"
+                    },
+                    "2": {
+                        "then": "K dispozici je pumpa na jízdní kola, je zobrazena jako samostatný bod"
+                    }
+                },
+                "question": "Nabízí tento obchod pumpu na kolo k použití pro kohokoli?"
+            },
+            "bike_repair_bike-wash": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod čistí jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod má zařízení, kde si můžete sami vyčistit jízdní kola"
+                    },
+                    "2": {
+                        "then": "Tento obchod nenabízí čištění jízdních kol"
+                    }
+                },
+                "question": "Myjí se zde jízdní kola?"
+            },
+            "bike_repair_rents-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod pronajímá jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod nepronajímá kola"
+                    }
+                },
+                "question": "Pronajímá tento obchod kola?"
+            },
+            "bike_repair_repairs-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod opravuje jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod neopravuje jízdní kola"
+                    },
+                    "2": {
+                        "then": "Tento obchod opravuje pouze zde zakoupená kola"
+                    },
+                    "3": {
+                        "then": "Tento obchod opravuje pouze kola určité značky"
+                    }
+                },
+                "question": "Opravuje tento obchod jízdní kola?"
+            },
+            "bike_repair_second-hand-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod prodává použitá jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod neprodává kola z druhé ruky"
+                    },
+                    "2": {
+                        "then": "Tento obchod prodává pouze kola z druhé ruky"
+                    }
+                },
+                "question": "Prodává tento obchod použitá jízdní kola?"
+            },
+            "bike_repair_tools-service": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod nabízí nářadí pro kutilské opravy"
+                    }
+                },
+                "question": "Jsou zde nástroje na opravu vlastního kola?"
+            },
+            "bike_shop-access": {
+                "render": "Přístupné pouze pro {access}"
+            },
+            "bike_shop-is-bicycle_shop": {
+                "mappings": {
+                    "0": {
+                        "then": "Tato firma se zaměřuje na pronájem"
+                    }
                 }
             }
         }

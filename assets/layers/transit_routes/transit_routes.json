@@ -86,7 +86,8 @@
         "de": "Die Buslinie startet von {from}",
         "nl": "Deze buslijn begint bij {from}",
         "da": "Denne buslinje starter kl. {from}",
-        "fr": "Cette ligne de bus commence à {from}"
+        "fr": "Cette ligne de bus commence à {from}",
+        "ca": "Aquesta línia d'autobús comença a {from}"
       },
       "question": {
         "en": "What is the starting point for this bus line?",
@@ -128,7 +129,8 @@
         "de": "Der Endpunkt der Buslinie ist {to}",
         "nl": "Deze buslijn eindigt bij {to}",
         "da": "Denne buslinje slutter ved {to}",
-        "fr": "Cette ligne de bus termine à {to}"
+        "fr": "Cette ligne de bus termine à {to}",
+        "ca": "Aquesta línia d'autobús acaba a {to}"
       },
       "question": {
         "en": "What is the ending point for this bus line?",

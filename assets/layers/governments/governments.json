@@ -41,7 +41,8 @@
       "render": {
         "en": "This Governmental Office is called {name}",
         "de": "Der Name der Behörde lautet {name}",
-        "nl": "Deze overheidsdienst heet {name}"
+        "nl": "Deze overheidsdienst heet {name}",
+        "ca": "Aquesta Oficina Governamental s'anomena {name}"
       },
       "freeform": {
         "key": "name"

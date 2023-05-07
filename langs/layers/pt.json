@@ -13,7 +13,159 @@
                     }
                 },
                 "question": "Qual é o número desta casa?",
-                "render": "The house number is <b>{addr:housenumber}</b>"
+                "render": "O número da casa é <b>{addr:housenumber}</b>"
+            },
+            "street": {
+                "question": "Em que rua fica esse endereço?",
+                "render": "Este endereço é na rua <b>{addr:street}</b>"
+            }
+        },
+        "title": {
+            "render": "Endereço conhecido"
+        }
+    },
+    "advertising": {
+        "description": "Iremos completar os dados das funcionalidades publicitárias com referência, operador e iluminado",
+        "name": "Anunciar",
+        "presets": {
+            "0": {
+                "description": "Uma grande estrutura de publicidade ao ar livre, normalmente encontrada em áreas de alto tráfego, como ao longo de estradas movimentadas",
+                "title": "um outdoor"
+            },
+            "1": {
+                "title": "uma caixa de pôster independente"
+            },
+            "2": {
+                "title": "uma caixa de pôster montada em uma parede"
+            },
+            "3": {
+                "description": "Pequeno outdoor para publicidade de bairro, geralmente destinado a pedestres",
+                "title": "a bordo"
+            },
+            "4": {
+                "description": "Uma estrutura exterior cilíndrica que mostra anúncios",
+                "title": "uma coluna"
+            },
+            "5": {
+                "title": "uma bandeira"
+            },
+            "6": {
+                "title": "uma tela"
+            },
+            "7": {
+                "title": "uma tela montada em uma parede"
+            },
+            "8": {
+                "description": "Uma peça de tecido impermeável com uma mensagem impressa, permanentemente ancorada na parede",
+                "title": "uma lona"
+            },
+            "9": {
+                "title": "um totem"
+            },
+            "10": {
+                "description": "Usado para sinais publicitários, sinais de néon, logotipos e sinais de entrada institucionais",
+                "title": "um sinal"
+            },
+            "11": {
+                "title": "uma escultura"
+            },
+            "12": {
+                "title": "uma pintura de parede"
+            }
+        },
+        "tagRenderings": {
+            "Sides": {
+                "mappings": {
+                    "0": {
+                        "then": "Este objeto tem anúncios em um único lado"
+                    },
+                    "1": {
+                        "then": "Este objeto tem anúncios em ambos os lados"
+                    }
+                },
+                "question": "De quantos lados você pode assistir a anúncios?"
+            },
+            "animated": {
+                "mappings": {
+                    "0": {
+                        "then": "<b> Static</b>, mostra sempre a mesma mensagem"
+                    },
+                    "1": {
+                        "then": "Este objeto possui um <b>digital display</b> embutido para mostrar preços ou alguma outra mensagem"
+                    },
+                    "2": {
+                        "then": "<b>Trivision</b> - o outdoor consiste em muitos prismas triangulares que giram regularmente"
+                    },
+                    "3": {
+                        "then": "Pôsteres de <b>rolagem</b>"
+                    },
+                    "4": {
+                        "then": "<b>Gira</b> sobre si mesmo"
+                    }
+                },
+                "question": "Este anúncio percorre várias mensagens?"
+            },
+            "luminous_or_lit_advertising": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "Esta é uma luz de tubo de néon"
+                        }
+                    }
+                }
+            },
+            "message_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Mensagem comercial"
+                    },
+                    "1": {
+                        "then": "Informação local"
+                    },
+                    "2": {
+                        "then": "Informação segura"
+                    },
+                    "3": {
+                        "then": "Propaganda eleitoral"
+                    },
+                    "4": {
+                        "then": "Informações relacionadas com teatro, concertos, ..."
+                    },
+                    "5": {
+                        "then": "Mensagem de organizações sem fins lucrativos"
+                    },
+                    "6": {
+                        "then": "Para expressar sua opinião"
+                    },
+                    "7": {
+                        "then": "Mensagem religiosa"
+                    },
+                    "8": {
+                        "then": "sinal de financiamento"
+                    },
+                    "9": {
+                        "then": "Um mapa"
+                    }
+                },
+                "question": "Que tipo de mensagem é mostrada?"
+            },
+            "operator": {
+                "question": "Quem opera esse elemento?",
+                "render": "Operado por {operator}"
+            },
+            "ref": {
+                "question": "Qual é o número de referência?",
+                "render": "O número de referência é {ref}"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Isso é um outdoor"
+                    },
+                    "1": {
+                        "then": "Isso é uma placa"
+                    }
+                }
             }
         }
     },
@@ -61,7 +213,7 @@
                         "then": "Instalação"
                     },
                     "8": {
-                        "then": "Graffiti"
+                        "then": "Grafite"
                     },
                     "9": {
                         "then": "Relevo"
@@ -118,7 +270,7 @@
                         "then": "Encosto: Sim"
                     },
                     "2": {
-                        "then": "Encosto: Não"
+                        "then": "Não <b>not</b> tem um encosto"
                     }
                 },
                 "question": "Este assento tem um escosto?"
@@ -157,6 +309,16 @@
                 "question": "Em que direção olha quando está sentado no banco?",
                 "render": "Ao sentar-se no banco, olha-se para {direction} °."
             },
+            "bench-inscription": {
+                "mappings": {
+                    "0": {
+                        "then": "Este banco não tem inscrição"
+                    }
+                },
+                "question": "Esse banco tem inscrição?",
+                "questionHint": "Por exemplo: em placa montada, no encosto, ...",
+                "render": "Este banco tem a seguinte inscrição:<br/><p><i>{inscription}</i></p>"
+            },
             "bench-material": {
                 "mappings": {
                     "0": {
@@ -181,11 +343,32 @@
                 "question": "De que é feito o banco (assento)?",
                 "render": "Material: {material}"
             },
+            "bench-memorial": {
+                "mappings": {
+                    "0": {
+                        "then": "Este banco é um memorial para alguém ou algo"
+                    },
+                    "1": {
+                        "then": "Este banco <b>não é</b> um memorial para alguém ou algo"
+                    }
+                },
+                "question": "Este banco serve como memorial para alguém ou algo?"
+            },
             "bench-seats": {
-                "question": "Quantos assentos este banco tem?",
-                "render": "{seats} assentos"
+                "mappings": {
+                    "0": {
+                        "then": "Este banco não tem assentos separados"
+                    }
+                },
+                "question": "Quantos lugares este banco tem?",
+                "render": "{seats} lugares"
             },
             "bench-survey:date": {
+                "mappings": {
+                    "0": {
+                        "then": "Pesquisado hoje!"
+                    }
+                },
                 "question": "Quando esta bancada foi pesquisada pela última vez?",
                 "render": "Esta bancada foi pesquisada pela última vez em {survey:date}"
             }
@@ -195,10 +378,26 @@
         }
     },
     "bench_at_pt": {
+        "deletion": {
+            "extraDeleteReasons": {
+                "0": {
+                    "explanation": "Este ponto de ônibus não é mais usado"
+                }
+            },
+            "nonDeleteMappings": {
+                "0": {
+                    "then": "Este ponto de ônibus não tem banco (nunca houve ou foi removido)"
+                }
+            }
+        },
+        "description": "Uma camada mostrando todas as paradas de transporte público que possuem um banco",
         "name": "Bancos em pontos de transporte público",
         "tagRenderings": {
             "bench_at_pt-bench_type": {
                 "mappings": {
+                    "1": {
+                        "then": "banco de pé"
+                    },
                     "2": {
                         "then": "Não há nenhum banco aqui"
                     }
@@ -226,6 +425,7 @@
         "name": "Biblioteca de bicicleta",
         "presets": {
             "0": {
+                "description": "Uma \"biblioteca de bicicletas\" tem uma coleção de bicicletas que podem ser emprestadas",
                 "title": "uma biblioteca de bicicletas"
             }
         },
@@ -600,6 +800,204 @@
         },
         "title": {
             "render": "Bicicleta fantasma"
+        }
+    },
+    "tree_node": {
+        "presets": {
+            "0": {
+                "description": "Uma árvore de uma espécie com folhas, como carvalho ou populus.",
+                "title": "uma árvore de folhas largas"
+            },
+            "1": {
+                "title": "uma árvore com folhas de agulha"
+            },
+            "2": {
+                "title": "uma árvore"
+            }
+        },
+        "tagRenderings": {
+            "circumference": {
+                "question": "Qual é a circunferência do tronco da árvore?",
+                "render": "O tronco da árvore tem uma circunferência de <b>{circumference}</b> metros"
+            },
+            "height": {
+                "question": "Qual a altura dessa árvore?",
+                "render": "Esta árvore tem {height} metros de altura"
+            },
+            "tree-decidouous": {
+                "mappings": {
+                    "0": {
+                        "then": "Caducifólia: a árvore perde as folhas em alguma época do ano."
+                    },
+                    "1": {
+                        "then": "Perene."
+                    }
+                },
+                "question": "Essa árvore é perene ou caducifólia?"
+            },
+            "tree-denotation": {
+                "mappings": {
+                    "0": {
+                        "then": "A árvore é notável devido ao seu tamanho ou localização proeminente. É útil para navegação."
+                    },
+                    "1": {
+                        "then": "A árvore é um monumento natural, por ex. porque é especialmente antigo ou de uma espécie valiosa."
+                    },
+                    "2": {
+                        "then": "A árvore é utilizada para fins agrícolas, por ex. em um pomar."
+                    },
+                    "3": {
+                        "then": "A árvore está em um parque ou similar (cemitério, pátio da escola, …)."
+                    },
+                    "4": {
+                        "then": "A árvore está em um jardim residencial."
+                    },
+                    "5": {
+                        "then": "Esta é uma árvore ao longo de uma avenida."
+                    },
+                    "6": {
+                        "then": "A árvore está em uma área urbana."
+                    },
+                    "7": {
+                        "then": "A árvore está fora de uma área urbana."
+                    }
+                },
+                "question": "Quão significativa é esta árvore? Escolha a primeira resposta que se aplica."
+            },
+            "tree-heritage": {
+                "mappings": {
+                    "0": {
+                        "then": "Registrado como patrimônio por <i>Onroerend Erfgoed</i> Flanders"
+                    },
+                    "1": {
+                        "then": "Registrado como patrimônio por <i>Direction du Patrimoine culturel</i> Brussels"
+                    },
+                    "2": {
+                        "then": "Registrado como patrimônio por uma organização diferente"
+                    },
+                    "3": {
+                        "then": "Não registrado como patrimônio"
+                    },
+                    "4": {
+                        "then": "Registrado como patrimônio por uma organização diferente"
+                    }
+                },
+                "question": "Esta árvore é patrimônio tombado?"
+            },
+            "tree-leaf_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Folha larga"
+                    },
+                    "2": {
+                        "then": "permanentemente sem folhas"
+                    }
+                },
+                "question": "Esta é uma árvore de folhas largas ou acículas?"
+            },
+            "tree-species-wikidata": {
+                "question": "Que espécie é esta árvore?"
+            },
+            "tree_node-name": {
+                "mappings": {
+                    "0": {
+                        "then": "A árvore não tem nome."
+                    }
+                },
+                "question": "A árvore tem nome?",
+                "render": "Nome: {name}"
+            },
+            "tree_node-ref:OnroerendErfgoed": {
+                "question": "Qual é o ID emitido por Onroerend Erfgoed Flanders?"
+            },
+            "tree_node-wikidata": {
+                "question": "Qual é o ID do Wikidata para esta árvore?"
+            }
+        },
+        "title": {
+            "render": "Árvore"
+        }
+    },
+    "usersettings": {
+        "description": "Uma camada especial que não deve ser mostrada em um mapa, mas que é usada para definir as configurações do usuário",
+        "tagRenderings": {
+            "all-questions-at-once": {
+                "mappings": {
+                    "0": {
+                        "then": "Mostrar todas as perguntas na caixa de informações juntas"
+                    },
+                    "1": {
+                        "then": "Mostrar perguntas uma a uma"
+                    }
+                },
+                "question": "As perguntas para campos de dados desconhecidos devem aparecer uma a uma ou juntas?"
+            },
+            "cscount-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Você fez alterações em {_csCount} ocasiões diferentes! Isso é incrível!"
+                    }
+                }
+            },
+            "picture-license": {
+                "mappings": {
+                    "0": {
+                        "then": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade. <span class='subtle'>Esta é a escolha padrão.</span>"
+                    },
+                    "1": {
+                        "then": "As fotos que você tirar serão licenciadas com <b>CC0</b> e adicionadas ao domínio público. Isso significa que todos podem usar suas fotos para qualquer finalidade."
+                    },
+                    "2": {
+                        "then": "As fotos que você tirar serão licenciadas com <b>CC-BY 4.0</b>, que exige que todos que usam sua foto atribuam a você"
+                    },
+                    "3": {
+                        "then": "As fotos que você tirar serão licenciadas com <b>CC-BY-SA 4.0</b>, o que significa que todos que usarem sua foto devem atribuí-lo e que os derivados de sua foto devem ser compartilhados novamente com a mesma licença."
+                    }
+                },
+                "question": "Sob que licença você deseja publicar suas fotos?"
+            },
+            "show_debug": {
+                "mappings": {
+                    "0": {
+                        "then": "Mostrar informações de depuração"
+                    },
+                    "1": {
+                        "then": "Não mostrar informações de depuração"
+                    },
+                    "2": {
+                        "then": "Não mostrar informações de depuração"
+                    }
+                },
+                "question": "Mostrar informações de depuração das configurações do usuário?"
+            },
+            "translation-completeness": {
+                "mappings": {
+                    "0": {
+                        "then": "Traduzido completamente"
+                    }
+                }
+            },
+            "translation-mode": {
+                "mappings": {
+                    "0": {
+                        "then": "Não mostrar um botão para alterar as traduções rapidamente"
+                    },
+                    "1": {
+                        "then": "Mostrar um botão para abrir traduções rapidamente ao usar o MapComplete em uma tela grande"
+                    },
+                    "2": {
+                        "then": "Mostrar sempre os botões de tradução, inclusive no celular"
+                    }
+                },
+                "question": "Quer ajudar na tradução do MapComplete?"
+            },
+            "translation-thanks": {
+                "mappings": {
+                    "0": {
+                        "then": "Você contribuiu para a tradução do MapComplete! Fantástico!"
+                    }
+                }
+            }
         }
     }
 }

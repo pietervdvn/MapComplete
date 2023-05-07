@@ -133,7 +133,9 @@
       ],
       "title": {
         "en": "an artwork on a wall",
-        "nl": "een kunstwerk op een muur"
+        "nl": "een kunstwerk op een muur",
+        "ca": "una obra d'art en una paret",
+        "de": "ein Kunstwerk an einer Wand"
       },
       "preciseInput": {
         "snapToLayer": "walls_and_buildings"
@@ -210,7 +212,8 @@
             "es": "Arquitectura",
             "ca": "Arquitectura",
             "da": "Arkitektur",
-            "cs": "Architektura"
+            "cs": "Architektura",
+            "pt_BR": "Arquitetura"
           }
         },
         {
@@ -233,7 +236,8 @@
             "ca": "Mural",
             "da": "Vægmaleri",
             "cs": "Nástěnná malba",
-            "pa_PK": "کندھ چتر"
+            "pa_PK": "کندھ چتر",
+            "pt_BR": "Mural"
           }
         },
         {
@@ -278,7 +282,8 @@
             "ca": "Escultura",
             "da": "Skulptur",
             "cs": "Plastika",
-            "pa_PK": "مورتی"
+            "pa_PK": "مورتی",
+            "pt_BR": "Escultura"
           }
         },
         {
@@ -299,7 +304,8 @@
             "es": "Estatua",
             "ca": "Estàtua",
             "da": "Statue",
-            "cs": "Socha"
+            "cs": "Socha",
+            "pt_BR": "Estátua"
           }
         },
         {
@@ -320,7 +326,8 @@
             "es": "Busto",
             "ca": "Bust",
             "da": "Buste",
-            "cs": "Busta"
+            "cs": "Busta",
+            "pt_BR": "Busto"
           }
         },
         {
@@ -343,7 +350,8 @@
             "es": "Piedra",
             "da": "Sten",
             "pa_PK": "پتھر",
-            "cs": "Kámen"
+            "cs": "Kámen",
+            "pt_BR": "Pedra"
           }
         },
         {
@@ -365,7 +373,8 @@
             "es": "Instalación",
             "ca": "Instal·lació",
             "da": "Installation",
-            "cs": "Instalace"
+            "cs": "Instalace",
+            "pt_BR": "Instalação"
           }
         },
         {
@@ -381,7 +390,7 @@
             "zh_Hant": "塗鴨",
             "nb_NO": "Graffiti",
             "id": "Graffiti",
-            "pt": "Graffiti",
+            "pt": "Grafite",
             "hu": "Graffiti",
             "pl": "Graffiti",
             "es": "Grafiti",
@@ -528,7 +537,8 @@
         "es": "¿Que artista creó esto?",
         "da": "Hvilken kunstner har lavet dette?",
         "cs": "Který umělec to vytvořil?",
-        "ca": "Quin artista va crear açò?"
+        "ca": "Quin artista va crear açò?",
+        "pt_BR": "Que artista criou isto?"
       },
       "render": {
         "en": "Created by {artist_name}",
@@ -632,7 +642,8 @@
         "pt": "A obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "es": "Esta obra de arte representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
         "nb_NO": "Dette kunstverket viser {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
-        "ca": "Aquesta obra d'art representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
+        "ca": "Aquesta obra d'art representa {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}",
+        "fr": "Cette œuvre dépeint {wikidata_label(subject:wikidata)}{wikipedia(subject:wikidata)}"
       },
       "labels": [
         "artwork-question"
@@ -646,7 +657,8 @@
         "fr": "Cette oeuvre d'art sert-elle de banc ?",
         "nl": "Is dit kunstwerk ook een zitbank?",
         "nb_NO": "Tjener dette kunstverket funksjonen som benk?",
-        "ca": "Aquesta obra d'art serveix com a un banc?"
+        "ca": "Aquesta obra d'art serveix com a un banc?",
+        "cs": "Slouží toto umělecké dílo jako lavička?"
       },
       "mappings": [
         {
@@ -656,7 +668,8 @@
             "de": "Dieses Kunstwerk dient auch als Sitzbank",
             "fr": "Cette oeuvre d'art sert aussi de banc",
             "nl": "Dit kunstwerk doet ook dienst als zitbank",
-            "ca": "Aquesta obra d'art també serveix com a banc"
+            "ca": "Aquesta obra d'art també serveix com a banc",
+            "cs": "Toto umělecké dílo slouží také jako lavička"
           }
         },
         {
@@ -667,7 +680,8 @@
             "fr": "Cette oeuvre d'art ne sert pas de banc",
             "nl": "Dit kunstwerk doet geen dienst als zitbank",
             "nb_NO": "Dette kunstverket tjener ikke funksjonen som benk",
-            "ca": "Aquesta obra d'art no serveix com a banc"
+            "ca": "Aquesta obra d'art no serveix com a banc",
+            "cs": "Toto umělecké dílo neslouží jako lavička"
           }
         },
         {
@@ -678,7 +692,8 @@
             "fr": "Cette oeuvre d'art ne sert pas de banc",
             "nl": "Dit kunstwerk doet geen dienst als zitbank",
             "nb_NO": "Dette kunstverket tjener ikke den hensikten å være en benk",
-            "ca": "Aquesta obra d'art no serveix com a un banc"
+            "ca": "Aquesta obra d'art no serveix com a un banc",
+            "cs": "Toto umělecké dílo neslouží jako lavička"
           },
           "hideInAnswer": true
         }

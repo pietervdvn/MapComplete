@@ -197,7 +197,8 @@
         "en": "What kind of lighting does this lamp use?",
         "nl": "Wat voor verlichting gebruikt deze lantaarn?",
         "de": "Mit welcher Art von Beleuchtung arbeitet diese Straßenlaterne?",
-        "es": "¿Qué tipo de iluminación utiliza esta lámpara?"
+        "es": "¿Qué tipo de iluminación utiliza esta lámpara?",
+        "ca": "Quin tipus d'il·luminació utilitza aquest fanal?"
       },
       "mappings": [
         {
@@ -383,7 +384,8 @@
       "question": {
         "en": "How many fixtures does this light have?",
         "nl": "Hoeveel lampen heeft deze lantaarn?",
-        "de": "Wie viele Leuchten hat diese Straßenlaterne?"
+        "de": "Wie viele Leuchten hat diese Straßenlaterne?",
+        "ca": "Quants accessoris té aquest fanal?"
       },
       "condition": "support=pole",
       "freeform": {

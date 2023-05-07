@@ -2,12 +2,14 @@
   "id": "osm_community_index",
   "name": {
     "en": "OSM Community Index",
-    "de": "OSM-Community-Index"
+    "de": "OSM-Community-Index",
+    "ca": "Índex de comunitats d'OSM"
   },
   "title": {
     "render": {
       "en": "OSM Community Index",
-      "de": "OSM-Community-Index"
+      "de": "OSM-Community-Index",
+      "ca": "Índex de comunitats d'OSM"
     }
   },
   "source": {
@@ -58,7 +60,8 @@
           "question": {
             "en": "Country",
             "de": "Land",
-            "nl": "Land"
+            "nl": "Land",
+            "ca": "País"
           },
           "osmTags": "level=country"
         }
@@ -70,7 +73,8 @@
         {
           "question": {
             "en": "Sub Country Group",
-            "de": "Regionale Gruppe"
+            "de": "Regionale Gruppe",
+            "ca": "Subgrup de països"
           },
           "osmTags": "level=subcountryGroup"
         }
@@ -83,7 +87,8 @@
           "question": {
             "en": "Region",
             "de": "Region",
-            "nl": "Regio"
+            "nl": "Regio",
+            "ca": "Regió"
           },
           "osmTags": "level=region"
         }
@@ -95,7 +100,8 @@
         {
           "question": {
             "en": "Intermediate Region",
-            "de": "Mittlere Region"
+            "de": "Mittlere Region",
+            "ca": "Regió intermèdia"
           },
           "osmTags": "level=intermediateRegion"
         }
@@ -107,7 +113,8 @@
         {
           "question": {
             "en": "Territory",
-            "de": "Gebiet"
+            "de": "Gebiet",
+            "ca": "Territori"
           },
           "osmTags": "level=territory"
         }
@@ -120,7 +127,8 @@
           "question": {
             "en": "World",
             "de": "Welt",
-            "nl": "Wereld"
+            "nl": "Wereld",
+            "ca": "Món"
           },
           "osmTags": "level=world"
         }
@@ -132,7 +140,8 @@
         {
           "question": {
             "en": "Other Communities",
-            "de": "Andere Communities"
+            "de": "Andere Communities",
+            "ca": "Altres Comunitats"
           },
           "osmTags": "level="
         }
@@ -141,6 +150,7 @@
   ],
   "description": {
     "en": "A layer showing the OpenStreetMap Communities",
-    "de": "Eine Ebene aller OpenStreetMap-Communities"
+    "de": "Eine Ebene aller OpenStreetMap-Communities",
+    "ca": "Una capa que mostra les comunitats d'OpenStreetMap"
   }
 }

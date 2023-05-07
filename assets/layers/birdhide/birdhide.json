@@ -6,7 +6,8 @@
     "de": "Orte zur Vogelbeobachtung",
     "es": "Lugares para ver pájaros",
     "da": "Steder til fugleobservation",
-    "fr": "Lieu pour observer des oiseaux"
+    "fr": "Lieu pour observer des oiseaux",
+    "ca": "Llocs per a vore ocells"
   },
   "minzoom": 14,
   "source": {
@@ -77,7 +78,8 @@
     "nl": "Een vogelkijkhut",
     "da": "Et fugleskjul",
     "de": "Ein Vogelbeobachtungsturm",
-    "fr": "Un observatoire ornithologique"
+    "fr": "Un observatoire ornithologique",
+    "ca": "Un observatori d'ocells"
   },
   "tagRenderings": [
     "images",
@@ -120,7 +122,8 @@
             "nl": "Vogelkijkhut",
             "da": "Fugleskjul",
             "de": "Vogelbeobachtungsturm",
-            "fr": "Observatoire ornithologique"
+            "fr": "Observatoire ornithologique",
+            "ca": "Observatori d'ocells"
           }
         },
         {
@@ -286,7 +289,8 @@
         "nl": "een vogelkijkhut",
         "da": "et fugleskjul",
         "de": "ein Gebäude zur Vogelbeobachtung",
-        "fr": "un observatoire ornithologique"
+        "fr": "un observatoire ornithologique",
+        "ca": "un observatori d'ocells"
       },
       "description": {
         "en": "A covered shelter where one can watch birds comfortably",
@@ -294,7 +298,8 @@
         "de": "Ein überdachter Unterstand, in dem man bequem Vögel beobachten kann",
         "es": "Un refugio cubierto donde se pueden ver pájaros confortablemente",
         "da": "Et overdækket ly, hvor man kan se fugle i ro og mag",
-        "fr": "Un abris couvert pour observer les oiseaux confortablement"
+        "fr": "Un abris couvert pour observer les oiseaux confortablement",
+        "ca": "Un refugi cobert on es poden veure ocells confortablement"
       }
     },
     {
@@ -316,7 +321,8 @@
         "es": "Una pantalla o pared con aperturas para ver pájaros",
         "da": "En skærm eller væg med åbninger til at se på fugle",
         "de": "Ein Schirm oder eine Wand mit Öffnungen zum Beobachten von Vögeln",
-        "fr": "Un écran ou un mur avec des ouvertures pour observer les oiseaux"
+        "fr": "Un écran ou un mur avec des ouvertures pour observer les oiseaux",
+        "ca": "Una pantalla o paret amb obertures per a observar ocells"
       }
     }
   ],
@@ -353,7 +359,8 @@
             "nl": "Enkel overdekte kijkhutten",
             "de": "Nur überdachte Vogelbeobachtungsstellen",
             "da": "Kun overdækkede fugleskjul",
-            "fr": "Seulement les observatoires ornithologiques couverts"
+            "fr": "Seulement les observatoires ornithologiques couverts",
+            "ca": "Només observatoris d'ocells coberts"
           },
           "osmTags": {
             "and": [
