@@ -35,7 +35,11 @@ export default class GeoLocationHandler {
      * Note that this featureSource is _derived_ from 'historicalUserLocations'
      */
     public readonly historicalUserLocationsTrack: FeatureSource
-    public readonly mapHasMoved: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+
+    /**
+     * The last moment that the map has moved
+     */
+    public readonly mapHasMoved: UIEventSource<Date | undefined> = new UIEventSource<Date | undefined>(undefined)
     private readonly selectedElement: UIEventSource<any>
     private readonly mapProperties?: MapProperties
     private readonly gpsLocationHistoryRetentionTime?: UIEventSource<number>
@@ -58,7 +62,7 @@ export default class GeoLocationHandler {
             if (new Date().getTime() - initTime.getTime() < 250) {
                 return
             }
-            self.mapHasMoved.setData(true)
+            self.mapHasMoved.setData(new Date())
             return true // Unsubscribe
         })
 
@@ -66,7 +70,7 @@ export default class GeoLocationHandler {
             QueryParameters.wasInitialized("lat") || QueryParameters.wasInitialized("lon")
         if (latLonGivenViaUrl) {
             // The URL counts as a 'user interaction'
-            this.mapHasMoved.setData(true)
+            this.mapHasMoved.setData(new Date())
         }
 
         this.geolocationState.currentGPSLocation.addCallbackAndRunD((_) => {
@@ -76,7 +80,10 @@ export default class GeoLocationHandler {
                 // The map hasn't moved yet; we received our first coordinates, so let's move there!
                 self.MoveMapToCurrentLocation()
             }
-            if (timeSinceLastRequest < Constants.zoomToLocationTimeout) {
+            if (timeSinceLastRequest < Constants.zoomToLocationTimeout &&
+                (this.mapHasMoved.data === undefined || this.mapHasMoved.data.getTime() < geolocationState.requestMoment.data?.getTime() )
+            ) {
+                // still within request time and the map hasn't moved since requesting to jump to the current location
                 self.MoveMapToCurrentLocation()
             }
 
@@ -132,7 +139,7 @@ export default class GeoLocationHandler {
         })
         const zoom = this.mapProperties.zoom
         zoom.setData(Math.max(zoom.data, 16))
-        this.mapHasMoved.setData(true)
+        this.mapHasMoved.setData(new Date())
         this.geolocationState.requestMoment.setData(undefined)
     }
 
