@@ -29,13 +29,15 @@
   {:else}
     <UserCircleIcon class="w-12 h-12" />
   {/if}
-  <div class="flex flex-col relative">
+  <div class="flex flex-col">
     <h3>{$userdetails.name}</h3>
     {#if description}
       <FromHtml src={description} />
-      <a href={osmConnection.Backend() + "/profile/edit"} target="_blank">
-        <PencilAltIcon class="p-2 w-6 h-6 subtle-background rounded-full absolute right-1 bottom-1" />
+      <a href={osmConnection.Backend() + "/profile/edit"} target="_blank" class="link-no-underline flex subtle-background items-center w-fit self-end">
+        <PencilAltIcon slot="image" class="p-2 w-8 h-8" />
+        <Tr slot="message" t={Translations.t.userinfo.editDescription} />
       </a>
+
     {:else}
       <Tr t={Translations.t. userinfo.noDescription} />
       <a href={osmConnection.Backend() + "/profile/edit"} target="_blank" class="flex subtle-background items-center">

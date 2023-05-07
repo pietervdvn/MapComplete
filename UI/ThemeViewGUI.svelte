@@ -16,7 +16,7 @@
     import type {MapProperties} from "../Models/MapProperties";
     import Geosearch from "./BigComponents/Geosearch.svelte";
     import Translations from "./i18n/Translations";
-    import {CogIcon, EyeIcon, MenuIcon} from "@rgossiaux/svelte-heroicons/solid";
+    import {CogIcon, EyeIcon, MenuIcon, XCircleIcon} from "@rgossiaux/svelte-heroicons/solid";
     import Tr from "./Base/Tr.svelte";
     import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte";
     import FloatOver from "./Base/FloatOver.svelte";
@@ -149,9 +149,12 @@
 <If condition={selectedElementView.map(v => v !== undefined && selectedLayer.data !== undefined && !selectedLayer.data.popupInFloatover,[ selectedLayer] )}>
     <ModalRight on:close={() => {selectedElement.setData(undefined)}}>
         <div class="absolute flex flex-col h-full w-full normal-background">
-            <ToSvelte construct={new VariableUiElement(selectedElementTitle)}></ToSvelte>
-
-            <ToSvelte construct={new VariableUiElement(selectedElementView)}></ToSvelte>
+            <ToSvelte construct={new VariableUiElement(selectedElementTitle)}>
+                <!-- Title -->
+            </ToSvelte>
+            <ToSvelte construct={new VariableUiElement(selectedElementView).SetClass("overflow-auto")}>
+                <!-- Main view -->
+            </ToSvelte>
         </div>
     </ModalRight>
 </If>
@@ -163,9 +166,14 @@
 </If>
 
 <If condition={state.guistate.themeIsOpened}>
-    <!-- Theme page -->
-    <FloatOver on:close={() => state.guistate.themeIsOpened.setData(false)}>
+    <!-- Theme menu -->
+    <FloatOver>
+        <span slot="close-button"><!-- Disable the close button --></span>
         <TabbedGroup tab={state.guistate.themeViewTabIndex}>
+            <div slot="post-tablist">
+                <XCircleIcon class="w-8 h-8 mr-2" on:click={() => state.guistate.themeIsOpened.setData(false)}/>
+            </div>
+
             <Tr slot="title0" t={layout.title}/>
 
             <div slot="content0">
@@ -240,8 +248,12 @@
 
 <If condition={state.guistate.menuIsOpened}>
     <!-- Menu page -->
-    <FloatOver on:close={() => state.guistate.menuIsOpened.setData(false)}>
+    <FloatOver>
+        <span slot="close-button"><!-- Hide the default close button --></span>
         <TabbedGroup tab={state.guistate.menuViewTabIndex}>
+            <div slot="post-tablist">
+                <XCircleIcon class="w-8 h-8 mr-2" on:click={() => state.guistate.menuIsOpened.setData(false)}/>
+            </div>
             <div class="flex" slot="title0">
                 <Tr t={Translations.t.general.menu.aboutMapComplete}/>
             </div>
@@ -276,16 +288,13 @@
                     <Tr t={Translations.t.general.attribution.openOsmcha.Subs({theme: "MapComplete"})}/>
                 </a>
                 {Constants.vNumber}
-                <ToSvelte construct={Hotkeys.generateDocumentationDynamic}></ToSvelte>
             </div>
 
 
-            <If condition={state.osmConnection.isLoggedIn} slot="title1">
-                <div class="flex">
-                    <CogIcon class="w-6 h-6"/>
-                    <Tr t={UserRelatedState.usersettingsConfig.title.GetRenderValue({})}/>
-                </div>
-            </If>
+            <div class="flex" slot="title1">
+                <CogIcon class="w-6 h-6"/>
+                <Tr t={UserRelatedState.usersettingsConfig.title.GetRenderValue({})}/>
+            </div>
 
             <div slot="content1">
                 <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
@@ -316,6 +325,12 @@
                 <Tr t={Translations.t.privacy.title}></Tr>
             </div>
             <ToSvelte construct={() => new PrivacyPolicy()} slot="content3"></ToSvelte>
+
+            <Tr slot="title4" t={Translations.t.advanced.title}/>
+            <div class="flex flex-col" slot="content4">
+                <ToSvelte construct={Hotkeys.generateDocumentationDynamic}></ToSvelte>
+
+            </div>
         </TabbedGroup>
     </FloatOver>
 </If>
