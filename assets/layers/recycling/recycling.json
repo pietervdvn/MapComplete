@@ -29,8 +29,9 @@
       "en": "Recycling facility",
       "nl": "Recyclingfaciliteit",
       "de": "Recyclinganlage",
-      "es": "Facilidad de reciclaje",
-      "it": "Impianti di riciclo"
+      "es": "Instalación de reciclaje",
+      "it": "Impianti di riciclo",
+      "ca": "Instal·lació de reciclatge"
     },
     "mappings": [
       {
@@ -41,7 +42,8 @@
           "nl": "Recyclingcentrum",
           "de": "Wertstoffhof",
           "es": "Centro de reciclaje",
-          "it": "Centro di riciclo rifiuti"
+          "it": "Centro di riciclo rifiuti",
+          "ca": "Centre de reciclatge"
         }
       },
       {
@@ -51,7 +53,8 @@
           "nl": "Recyclingcentrum",
           "de": "Wertstoffhof",
           "es": "Centro de reciclaje",
-          "it": "Centro di riciclo rifiuti"
+          "it": "Centro di riciclo rifiuti",
+          "ca": "Centre de reciclatge"
         }
       },
       {
@@ -61,7 +64,8 @@
           "nl": "Recyclingcontainer",
           "de": "Recyclingcontainer",
           "es": "Contenedor de reciclaje",
-          "it": "Contenitore per il riciclo"
+          "it": "Contenitore per il riciclo",
+          "ca": "Contenidor de reciclatge"
         }
       }
     ]
@@ -608,14 +612,17 @@
           "if": "recycling_type=pickup_point",
           "then": {
             "en": "This is a pickup point. The waste material is placed here without placing it in a dedicated container.",
-            "nl": "Dit is een verzamelplaats zonder container waar het afval later opgepikt wordt."
+            "nl": "Dit is een verzamelplaats zonder container waar het afval later opgepikt wordt.",
+            "ca": "Aquest és un punt de recollida. El rebuig es col·loca aquí sense col·locar-lo en un contenidor dedicat.",
+            "de": "Dies ist ein Abholpunkt. Abfälle werden hier abgelegt, ohne sie in einen speziellen Behälter zu geben."
           }
         },
         {
           "if": "recycling_type=dump",
           "then": {
             "en": "This is a dump where the waste material is stacked.",
-            "nl": "Dit is een afvalhoop waar het afvalmateriaal bovenop elkaar gestapeld wordt."
+            "nl": "Dit is een afvalhoop waar het afvalmateriaal bovenop elkaar gestapeld wordt.",
+            "ca": "Es tracta d’un abocador on s’apilen els residus."
           }
         }
       ]
@@ -627,7 +634,8 @@
         "nl": "Wat is de naam van dit recyclagecentrum?",
         "de": "Wie lautet der Name dieses Wertstoffhofs?",
         "es": "¿Cual es el nombre de este centro de reciclaje?",
-        "it": "Come si chiama questo centro raccolta e riciclo rifiuti?"
+        "it": "Come si chiama questo centro raccolta e riciclo rifiuti?",
+        "ca": "Quin és el nom d’aquest centre de reciclatge?"
       },
       "render": {
         "en": "This recycling centre is named <b>{name}</b>",
@@ -648,7 +656,8 @@
             "nl": "Dit recyclagecentrum heeft geen specifieke naam",
             "de": "Dieser Wertstoffhof hat keinen bestimmten Namen",
             "es": "Este centro de reciclaje no tiene un nombre específico",
-            "it": "Questo centro raccolta e riciclo rifiuti non ha un nome specifico"
+            "it": "Questo centro raccolta e riciclo rifiuti non ha un nome specifico",
+            "ca": "Aquest centre de reciclatge no té un nom específic"
           }
         }
       ],
@@ -1093,7 +1102,9 @@
           "ifnot": "recycling:bicycles=",
           "then": {
             "en": "Bicycles can be recycled here",
-            "nl": "Fietsen (en fietswrakken) kunnen hier gerecycled worden"
+            "nl": "Fietsen (en fietswrakken) kunnen hier gerecycled worden",
+            "ca": "Aquí es poden reciclar bicicletes",
+            "de": "Fahrräder können hier recycelt werden"
           },
           "icon": {
             "path": "./assets/layers/recycling/bicycles.svg",
@@ -1428,8 +1439,8 @@
           "question": {
             "en": "Recycling of printer cartridges",
             "nl": "Recycling van inktpatronen",
-            "ca": "Reciclatge del rebuig",
-            "de": "Recycling von Restabfällen",
+            "ca": "Reciclatge de cartutxos d'impressora",
+            "de": "Recycling von Druckerpatronen",
             "it": "Riciclo di secco"
           },
           "osmTags": "recycling:printer_cartridges=yes"
@@ -1437,7 +1448,9 @@
         {
           "question": {
             "en": "Recycling of bicycles",
-            "nl": "Recycling van fietsen"
+            "nl": "Recycling van fietsen",
+            "ca": "Reciclatge de bicicletes",
+            "de": "Recycling von Fahrrädern"
           },
           "osmTags": "recycling:bicycles=yes"
         }

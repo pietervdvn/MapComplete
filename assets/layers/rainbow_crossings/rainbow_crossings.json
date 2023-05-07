@@ -3,7 +3,8 @@
   "name": {
     "en": "Crossings with rainbow paintings",
     "de": "Fußgängerüberwege in Regenbogenfarben",
-    "fr": "Passages avec peinture arc-en-ciel"
+    "fr": "Passages avec peinture arc-en-ciel",
+    "ca": "Pasos de vianants pintats amb l'arc de Sant Martí"
   },
   "description": {
     "en": "A layer showing pedestrian crossings with rainbow paintings",
@@ -39,7 +40,8 @@
         "en": "Pedestrian crossing",
         "de": "Fußgängerüberweg",
         "nl": "Voetgangersoversteekplaats",
-        "fr": "Passage piéton"
+        "fr": "Passage piéton",
+        "ca": "Pas de vianants"
       },
       "preciseInput": {
         "preferredBackground": [
@@ -57,7 +59,8 @@
       "question": {
         "en": "Does this crossing has rainbow paintings?",
         "de": "Hat der Überweg eine Markierung in Regenbogenfarben?",
-        "fr": "Ce passage a-t-il une peinture arc-en-ciel ?"
+        "fr": "Ce passage a-t-il une peinture arc-en-ciel ?",
+        "ca": "Aquest pas de vianants està pintat amb l'arc de Sant Martí?"
       },
       "condition": "highway=crossing",
       "mappings": [
@@ -66,7 +69,8 @@
           "then": {
             "en": "This crossing has rainbow paintings",
             "de": "Der Überweg hat eine Markierung in Regenbogenfarben",
-            "fr": "Ce passage a une peinture arc-en-ciel"
+            "fr": "Ce passage a une peinture arc-en-ciel",
+            "ca": "Aquest pas de vianants està pintat amb l'arc de Sant Martí"
           },
           "icon": {
             "path": "./assets/themes/rainbow_crossings/logo.svg",
@@ -78,7 +82,8 @@
           "then": {
             "en": "No rainbow paintings here",
             "de": "Hier gibt es kein Markierung in Regenbogenfarben",
-            "fr": "Pas de peinture arc-en-ciel ici"
+            "fr": "Pas de peinture arc-en-ciel ici",
+            "ca": "No està pintat amb l'arc de Sant Martí"
           },
           "icon": "./assets/themes/rainbow_crossings/crossing.svg"
         },
@@ -87,7 +92,8 @@
           "then": {
             "en": "No rainbow paintings here",
             "de": "Hier gibt es kein Markierung in Regenbogenfarben",
-            "fr": "Pas de peinture arc-en-ciel ici"
+            "fr": "Pas de peinture arc-en-ciel ici",
+            "ca": "No està pintat amb l'arc de Sant Martí"
           },
           "icon": "./assets/themes/rainbow_crossings/crossing.svg",
           "hideInAnswer": true

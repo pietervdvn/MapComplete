@@ -135,7 +135,7 @@
           "then": {
             "en": "This is an automated docking station, where a bicycle is mechanically locked to a structure",
             "nl": "Dit is een docking station waar de fietsen mechanisch in een grotere structuur worden vastgemaakt",
-            "de": "Dies ist eine automatisierte Radstation, bei der Fahrräder mechanisch in einer Struktur verriegelt werden",
+            "de": "Dies ist eine automatisierte Radstation, bei der ein Fahrrad mechanisch an einer Struktur befestigt wird",
             "es": "Esta es una estación automática, en la que una bici se asegura mecánicamente a una estructura",
             "fr": "Ceci est un point d’attache automatisé où le vélo est attaché mécaniquement à une structure",
             "da": "Dette er en automatiseret dockingstation, hvor en cykel låses mekanisk fast i en struktur",
@@ -162,7 +162,7 @@
           "then": {
             "en": "This is a dropoff point, e.g. a reserved parking to place the bicycles clearly marked as being for the rental service only",
             "nl": "Dit is een dropzone, bv. een fietsparkeerplaats die is voorbehouden voor fietsverhuur",
-            "de": "Dies ist ein Rückgabepunkt, z. B. ein reservierter Fahrradstellplatz, der deutlich als solcher gekennzeichnet ist",
+            "de": "Dies ist ein Rückgabepunkt, z.B. ein reservierter Parkplatz, um die Fahrräder abzustellen, die eindeutig als nur für den Verleih gekennzeichnet sind",
             "es": "Este es un punto de entrega, ej. un aparcamiento reservado para colocar las bicicletas, claramente marcado como solo para el servicio de alquiler",
             "fr": "Ceci est un point de dépôt, p.ex. un emplacement de parking réservé aux vélos de location",
             "da": "Dette er et afleveringssted, f.eks. en reserveret parkeringsplads til cykler, som er tydeligt markeret som værende forbeholdt udlejningstjenesten",
@@ -458,7 +458,7 @@
             "fr": "Combien de type_plural peuvent être loués ici ?",
             "cs": "Kolik typů kol si zde můžete pronajmout?",
             "es": "¿Cuántas type_plural pueden alquilarse aquí?",
-            "ca": "Quantes type_plural poden llogar-se aquí?"
+            "ca": "Quants type_plural es poden llogar aquí?"
           },
           "render": {
             "en": "{capacity:bicycle_type} type_plural can be rented here",

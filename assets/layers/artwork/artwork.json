@@ -133,7 +133,9 @@
       ],
       "title": {
         "en": "an artwork on a wall",
-        "nl": "een kunstwerk op een muur"
+        "nl": "een kunstwerk op een muur",
+        "ca": "una obra d'art en una paret",
+        "de": "ein Kunstwerk an einer Wand"
       },
       "preciseInput": {
         "snapToLayer": "walls_and_buildings"

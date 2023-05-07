@@ -118,7 +118,7 @@
           "pt": "Aluguel de bicicletas <i>{name}</i>",
           "es": "Alquiler de bicicletas <i>{name}</i>",
           "da": "Cykeludlejning <i>{name}</i>",
-          "ca": "Lloguer de bicicletes <i>{name}</i>"
+          "ca": "Botiga de lloguer de bicicletes <i>{name}</i>"
         }
       },
       {
@@ -862,7 +862,8 @@
             "en": "Sells second-hand bicycles",
             "de": "Verkauft gebrauchte Fahrräder",
             "nl": "Verkoopt tweedehands fietsen",
-            "it": "Vende biciclette usate"
+            "it": "Vende biciclette usate",
+            "ca": "Ven bicicletes de segona mà"
           },
           "osmTags": {
             "or": [
