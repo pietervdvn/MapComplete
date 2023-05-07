@@ -163,7 +163,6 @@
         "error": "Algo correu mal",
         "example": "Exemplo",
         "examples": "Exemplos",
-        "feelFreeToSkip": "Você pode adicionar ou atualizar mais informações abaixo, mas sinta-se à vontade <b>para pular perguntas</b> para as quais não sabe a resposta.",
         "fewChangesBefore": "Por favor, responda a algumas perguntas sobre os elementos existentes antes de adicionar um novo elemento.",
         "getStartedLogin": "Entrar com OpenStreetMap para começar",
         "getStartedNewAccount": " ou <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">crie uma conta</a>",
@@ -194,7 +193,6 @@
             "streetcomplete": "Outra aplicação semelhante é o <a class=\"underline hover:text-blue-800\" href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "O nome desta {category} é $$$",
-        "newlyCreated": "Você acabou de criar este elemento! Obrigado por compartilhar esta informação com o mundo e ajudar as pessoas em todo o mundo.",
         "next": "Seguinte",
         "noNameCategory": "{category} sem nome",
         "noTagsSelected": "Nenhuma etiqueta selecionada",

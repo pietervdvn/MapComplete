@@ -308,7 +308,8 @@
             "fsUserbadge": "Enable the login button",
             "fsWelcomeMessage": "Show the welcome message popup and associated tabs",
             "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
-            "thanksForSharing": "Thanks for sharing!"
+            "thanksForSharing": "Thanks for sharing!",
+            "title": "Share this map"
         },
         "skip": "Skip this question",
         "testing": "Testing - changes won't be saved",

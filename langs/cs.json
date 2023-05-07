@@ -175,7 +175,6 @@
         "error": "Něco se pokazilo",
         "example": "Příklad",
         "examples": "Příklady",
-        "feelFreeToSkip": "Níže můžete přidat nebo aktualizovat další informace, ale neváhejte <b>vynechat otázky</b>, na které neznáte odpověď.",
         "fewChangesBefore": "Před přidáním nové funkce prosím odpovězte na několik otázek týkajících se stávajících funkcí.",
         "getStartedLogin": "Přihlaste se pomocí OpenStreetMap a začněte",
         "getStartedNewAccount": " nebo <a href='https://www.openstreetmap.org/user/new' target='_blank'>vytvořte nový účet</a>",
@@ -213,14 +212,12 @@
             "streetcomplete": "Další podobnou aplikací je <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "nameInlineQuestion": "Název této {category} je $$$",
-        "newlyCreated": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě.",
         "next": "Další",
         "noMatchingMapping": "Žádné záznamy neodpovídají vašemu vyhledávání…",
         "noNameCategory": "{category} bez názvu",
         "noTagsSelected": "Nejsou vybrány žádné štítky",
         "notValid": "Pro pokračování vyberte platnou hodnotu",
         "number": "číslo",
-        "oneSkippedQuestion": "Jedna otázka je vynechána",
         "openStreetMapIntro": "<h3>Otevřená mapa</h3><p>Takovou, kterou může každý volně používat a upravovat. Jediné místo pro uložení všech geoinformací. Různé, malé, nekompatibilní a zastaralé mapy nejsou nikde potřeba.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b > není nepřátelská mapa. Mapová data lze volně používat (s <a href='https://osm.org/copyright' target='_blank'>přiřazením a zveřejněním změn těchto dat</a>). Každý může přidávat nová data a opravovat chyby. Tento web používá OpenStreetMap. Všechna data jsou odtud a vaše odpovědi a opravy se používají všude.</p><p>Mnoho lidí a aplikací již OpenStreetMap používá: <a href='https://organicmaps.app/' target='_blank '>Organické mapy</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, ale také mapy na Facebooku, Instagramu, Apple-maps a Bing-maps jsou (částečně) poháněny OpenStreetMap.</p>",
         "openTheMap": "Otevřít mapu",
         "opening_hours": {

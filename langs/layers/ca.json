@@ -4244,14 +4244,10 @@
                         "question": "Reciclatge del rebuig"
                     },
                     "20": {
-<<<<<<< HEAD
-                        "question": "Reciclatge del rebuig"
-=======
                         "question": "Reciclatge de cartutxos d'impressora"
                     },
                     "21": {
                         "question": "Reciclatge de bicicletes"
->>>>>>> develop
                     }
                 }
             },
@@ -4379,12 +4375,9 @@
                     },
                     "23": {
                         "then": "Ací es pot reciclar el rebuig"
-<<<<<<< HEAD
-=======
                     },
                     "24": {
                         "then": "Aquí es poden reciclar bicicletes"
->>>>>>> develop
                     }
                 },
                 "question": "Què es pot reciclar aquí?"
