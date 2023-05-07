@@ -427,6 +427,7 @@
   - entrance
   - fitness_centre
   - food
+  - hackerspace
   - parking
   - picnic_table
   - railway_platforms
@@ -684,6 +685,7 @@
 
 
   - cluster_style
+  - fixme
 
 
 
@@ -731,6 +733,7 @@
 
 
   - etymology
+  - hackerspace
   - play_forest
   - playground
   - shops

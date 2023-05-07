@@ -11,6 +11,7 @@ This theme contains the following layers:
 
 
 
+  - [walls_and_buildings](../Layers/walls_and_buildings.md)
   - [artwork](../Layers/artwork.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)

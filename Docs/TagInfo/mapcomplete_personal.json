@@ -165,7 +165,7 @@
     },
     {
       "key": "message",
-      "description": "Layer 'Advertise' shows message=safety with a fixed text, namely 'Securty information' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Advertise' shows message=safety with a fixed text, namely 'Security information' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "safety"
     },
     {
@@ -1213,7 +1213,7 @@
     },
     {
       "key": "shop",
-      "description": "Layer 'Bicycle rental' shows shop=rental with a fixed text, namely 'This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if amenity=bicycle_rental)",
+      "description": "Layer 'Bicycle rental' shows shop=rental with a fixed text, namely 'This is a rental business which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if amenity=bicycle_rental)",
       "value": "rental"
     },
     {
@@ -1228,7 +1228,7 @@
     },
     {
       "key": "bicycle_rental",
-      "description": "Layer 'Bicycle rental' shows bicycle_rental=docking_station with a fixed text, namely 'This is an automated docking station, where a bicycle is mechanically locked into a structure' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if amenity=bicycle_rental)",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=docking_station with a fixed text, namely 'This is an automated docking station, where a bicycle is mechanically locked to a structure' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if amenity=bicycle_rental)",
       "value": "docking_station"
     },
     {
@@ -1238,7 +1238,7 @@
     },
     {
       "key": "bicycle_rental",
-      "description": "Layer 'Bicycle rental' shows bicycle_rental=dropoff_point with a fixed text, namely 'This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if amenity=bicycle_rental)",
+      "description": "Layer 'Bicycle rental' shows bicycle_rental=dropoff_point with a fixed text, namely 'This is a dropoff point, e.g. a reserved parking to place the bicycles clearly marked as being for the rental service only' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if amenity=bicycle_rental)",
       "value": "dropoff_point"
     },
     {
@@ -1736,7 +1736,7 @@
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=floor with a fixed text, namely 'An area on the floor which is  marked for bicycle parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=floor with a fixed text, namely 'An area on the floor which is marked for bicycle parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "floor"
     },
     {
@@ -6534,6 +6534,14 @@
       "description": "Layer 'Fitness Stations' shows and asks freeform values for key 'opening_hours' (in the MapComplete.osm.be theme 'Personal theme')"
     },
     {
+      "key": "fixme",
+      "description": "The MapComplete theme Personal theme has a layer OSM objects with FIXME tags showing features with this tag"
+    },
+    {
+      "key": "FIXME",
+      "description": "The MapComplete theme Personal theme has a layer OSM objects with FIXME tags showing features with this tag"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Personal theme has a layer Restaurants and fast food showing features with this tag",
       "value": "fast_food"
@@ -7143,6 +7151,35 @@
     {
       "key": "name",
       "description": "Layer 'Hackerspace' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Hackerspace' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'Personal theme')"
+    },
+    {
+      "key": "location",
+      "description": "Layer 'Hackerspace' shows location=underground with a fixed text, namely 'Located underground' (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "underground"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Hackerspace' shows level=0 with a fixed text, namely 'Located on the ground floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "0"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Hackerspace' shows  with a fixed text, namely 'Located on the ground floor' (in the MapComplete.osm.be theme 'Personal theme') Picking this answer will delete the key level.",
+      "value": ""
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Hackerspace' shows level=1 with a fixed text, namely 'Located on the first floor' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "1"
+    },
+    {
+      "key": "level",
+      "description": "Layer 'Hackerspace' shows level=-1 with a fixed text, namely 'Located on the first basement level' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "-1"
     },
     {
       "key": "website",
@@ -9454,6 +9491,16 @@
       "value": "waste_disposal"
     },
     {
+      "key": "recycling_type",
+      "description": "Layer 'Recycling' shows recycling_type=pickup_point with a fixed text, namely 'This is a pickup point. The waste material is placed here without placing it in a dedicated container.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "pickup_point"
+    },
+    {
+      "key": "recycling_type",
+      "description": "Layer 'Recycling' shows recycling_type=dump with a fixed text, namely 'This is a dump where the waste material is stacked.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "dump"
+    },
+    {
       "key": "name",
       "description": "Layer 'Recycling' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Personal theme') (This is only shown if recycling_type=centre)"
     },
@@ -9595,6 +9642,11 @@
     {
       "key": "recycling:waste",
       "description": "Layer 'Recycling' shows recycling:waste=yes with a fixed text, namely 'Residual waste can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:bicycles",
+      "description": "Layer 'Recycling' shows recycling:bicycles=yes with a fixed text, namely 'Bicycles can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "yes"
     },
     {

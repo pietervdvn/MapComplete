@@ -21,6 +21,7 @@ Special builtin layer providing all walls and buildings. This layer is useful in
   - Not rendered on the map by default. If you want to rendering this on the map, override `mapRenderings`
   - This layer will automatically load  [entrance](./entrance.md)  into the layout as it depends on it:  a calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _entrance_properties)
   - This layer is needed as dependency for layer [advertising](#advertising)
+  - This layer is needed as dependency for layer [artwork](#artwork)
   - This layer is needed as dependency for layer [clock](#clock)
   - This layer is needed as dependency for layer [defibrillator](#defibrillator)
   - This layer is needed as dependency for layer [entrance](#entrance)
@@ -37,6 +38,7 @@ Special builtin layer providing all walls and buildings. This layer is useful in
 
   - [advertising](https://mapcomplete.osm.be/advertising)
   - [aed](https://mapcomplete.osm.be/aed)
+  - [artwork](https://mapcomplete.osm.be/artwork)
   - [clock](https://mapcomplete.osm.be/clock)
   - [indoors](https://mapcomplete.osm.be/indoors)
   - [onwheels](https://mapcomplete.osm.be/onwheels)

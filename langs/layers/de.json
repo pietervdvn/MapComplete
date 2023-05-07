@@ -8084,6 +8084,11 @@
                 "freeform": {
                     "placeholder": "Name des Betreibers"
                 },
+                "mappings": {
+                    "0": {
+                        "then": "Niederländische Eisenbahn (NS)"
+                    }
+                },
                 "question": "Wer ist der Betreiber dieses Fahrkartenentwerters?",
                 "render": "Dieser Fahrkartenentwerter wird betrieben von {operator}"
             }

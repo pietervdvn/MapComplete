@@ -4111,6 +4111,15 @@
                 },
                 "question": "Does this elevator work?"
             },
+            "speech_output": {
+                "render": {
+                    "special": {
+                        "question": "In which languages does this elevator have speech output?",
+                        "render_list_item": "This elevator has speech output in {language():font-bold}",
+                        "render_single_language": "This elevator has speech output in {language():font-bold}"
+                    }
+                }
+            },
             "tactile_writing_language": {
                 "render": {
                     "special": {
@@ -4592,6 +4601,21 @@
                 }
             },
             "render": "Fitness Station"
+        }
+    },
+    "fixme": {
+        "description": "OSM objects that likely need to be fixed, based on a FIXME tag.",
+        "name": "OSM objects with FIXME tags",
+        "tagRenderings": {
+            "fixme": {
+                "render": "Fixme Text: {fixme}"
+            },
+            "note": {
+                "render": "Note Text: {note}"
+            }
+        },
+        "title": {
+            "render": "OSM object with FIXME tag"
         }
     },
     "food": {
@@ -8104,6 +8128,11 @@
             "validator-operator": {
                 "freeform": {
                     "placeholder": "Name of the operator"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Dutch Railways (NS)"
+                    }
                 },
                 "question": "Who is the operator of this ticket validator?",
                 "render": "This ticket validator is operated by {operator}"

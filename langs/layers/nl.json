@@ -3995,6 +3995,15 @@
                 },
                 "question": "Werkt deze lift?"
             },
+            "speech_output": {
+                "render": {
+                    "special": {
+                        "question": "In welke talen heeft deze lift gesproken tekst?",
+                        "render_list_item": "Deze lift heeft gesproken tekst in het {language():font-bold}",
+                        "render_single_language": "Deze lift heeft gesproken tekst in het {language():font-bold}"
+                    }
+                }
+            },
             "tactile_writing_language": {
                 "render": {
                     "special": {
@@ -7759,6 +7768,11 @@
             "validator-operator": {
                 "freeform": {
                     "placeholder": "Naam van de beheerder"
+                },
+                "mappings": {
+                    "0": {
+                        "then": "Nederlandse Spoorwegen (NS)"
+                    }
                 }
             }
         }

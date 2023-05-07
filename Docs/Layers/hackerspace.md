@@ -62,6 +62,7 @@ attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/hackerspace#values) [hackerspace](https://wiki.openstreetmap.org/wiki/Key:hackerspace) | Multiple choice | [makerspace](https://wiki.openstreetmap.org/wiki/Tag:hackerspace%3Dmakerspace) [](https://wiki.openstreetmap.org/wiki/Tag:hackerspace%3D)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/website#values) [website](https://wiki.openstreetmap.org/wiki/Key:website) | [url](../SpecialInputElements.md#url) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/email#values) [email](https://wiki.openstreetmap.org/wiki/Key:email) | [email](../SpecialInputElements.md#email) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/phone#values) [phone](https://wiki.openstreetmap.org/wiki/Key:phone) | [phone](../SpecialInputElements.md#phone) | 
@@ -114,6 +115,31 @@ This rendering asks information about the property  [name](https://wiki.openstre
 
 This is rendered with  `This hackerspace is named <b>{name}</b>`
 
+
+
+
+
+### level 
+
+
+
+The question is  *On what level is this feature located?*
+
+This rendering asks information about the property  [level](https://wiki.openstreetmap.org/wiki/Key:level) 
+
+This is rendered with  `Located on the {level}th floor`
+
+
+
+
+
+  - *Located underground*  corresponds with  `location=underground`
+  - This option cannot be chosen as answer
+  - *Located on the ground floor*  corresponds with  `level=0`
+  - *Located on the ground floor*  corresponds with  ``
+  - This option cannot be chosen as answer
+  - *Located on the first floor*  corresponds with  `level=1`
+  - *Located on the first basement level*  corresponds with  `level=-1`
 
 
 
@@ -245,18 +271,6 @@ The question is  *Is a CNC drill available at this hackerspace?*
 
 
 
-### reviews 
-
-
-
-Shows the reviews module (including the possibility to leave a review)
-
-This tagrendering has no question and is thus read-only
-
-
-
-
-
 ### wheelchair-access 
 
 
@@ -300,6 +314,28 @@ The question is  *When was this hackerspace founded?*
 This rendering asks information about the property  [start_date](https://wiki.openstreetmap.org/wiki/Key:start_date) 
 
 This is rendered with  `This hackerspace was founded at {start_date}`
+
+
+
+
+
+### questions 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### reviews 
+
+
+
+Shows the reviews module (including the possibility to leave a review)
+
+This tagrendering has no question and is thus read-only
 
  
 

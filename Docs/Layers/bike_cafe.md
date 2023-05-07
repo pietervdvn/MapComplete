@@ -119,7 +119,7 @@ The question is  *Does this bike cafe offer a bike pump for use by anyone?*
 
 
 
-The question is  *Are there tools here to repair your own bike?*
+The question is  *Are tools offered to repair your own bike?*
 
 
 

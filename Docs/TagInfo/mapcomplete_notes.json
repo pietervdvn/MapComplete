@@ -6,8 +6,17 @@
     "project_url": "https://mapcomplete.osm.be/notes",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/themes/notes/logo.svg",
-    "contact_name": "Pieter Vander Vennet, MapComplete",
+    "contact_name": "Pieter Vander Vennet",
     "contact_email": "pietervdvn@posteo.net"
   },
-  "tags": []
+  "tags": [
+    {
+      "key": "fixme",
+      "description": "The MapComplete theme Notes on OpenStreetMap has a layer OSM objects with FIXME tags showing features with this tag"
+    },
+    {
+      "key": "FIXME",
+      "description": "The MapComplete theme Notes on OpenStreetMap has a layer OSM objects with FIXME tags showing features with this tag"
+    }
+  ]
 }

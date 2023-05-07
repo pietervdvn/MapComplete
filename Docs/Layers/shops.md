@@ -534,7 +534,7 @@ This tagrendering has no question and is thus read-only
 
 id | question | osmTags
 ---- | ---------- | ---------
-open_now.0 | Opened now | _isOpen=yes
+open_now.0 | Open now | _isOpen=yes
 
 
 

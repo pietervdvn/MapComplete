@@ -208,7 +208,7 @@ This tagrendering is only visible in the popup if the following condition is met
 
 id | question | osmTags
 ---- | ---------- | ---------
-open_now.0 | Opened now | _isOpen=yes
+open_now.0 | Open now | _isOpen=yes
 
 
 

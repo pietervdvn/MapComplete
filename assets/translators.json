@@ -1,15 +1,15 @@
 {
   "contributors": [
     {
-      "commits": 266,
+      "commits": 271,
       "contributor": "kjon"
     },
     {
-      "commits": 256,
+      "commits": 264,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 120,
+      "commits": 137,
       "contributor": "paunofu"
     },
     {
@@ -17,7 +17,7 @@
       "contributor": "Allan Nordhøy"
     },
     {
-      "commits": 67,
+      "commits": 68,
       "contributor": "Robin van der Linde"
     },
     {
@@ -41,8 +41,12 @@
       "contributor": "Artem"
     },
     {
-      "commits": 27,
+      "commits": 28,
       "contributor": "Supaplex"
+    },
+    {
+      "commits": 25,
+      "contributor": "Jiří Podhorecký"
     },
     {
       "commits": 25,
@@ -55,6 +59,10 @@
     {
       "commits": 21,
       "contributor": "SC"
+    },
+    {
+      "commits": 18,
+      "contributor": "Lucas"
     },
     {
       "commits": 18,
@@ -78,10 +86,6 @@
     },
     {
       "commits": 13,
-      "contributor": "Lucas"
-    },
-    {
-      "commits": 13,
       "contributor": "Olivier"
     },
     {
@@ -94,7 +98,7 @@
     },
     {
       "commits": 11,
-      "contributor": "Jiří Podhorecký"
+      "contributor": "Túllio Franca"
     },
     {
       "commits": 10,
@@ -150,6 +154,14 @@
     },
     {
       "commits": 6,
+      "contributor": "Felipe Nogueira"
+    },
+    {
+      "commits": 6,
+      "contributor": "David Haberthür"
+    },
+    {
+      "commits": 6,
       "contributor": "Ettore Atalan"
     },
     {
@@ -186,6 +198,10 @@
     },
     {
       "commits": 5,
+      "contributor": "gallegonovato"
+    },
+    {
+      "commits": 5,
       "contributor": "ⵣⵓⵀⵉⵔ ⴰⵎⴰⵣⵉⵖ ZOUHIR DEHBI"
     },
     {
@@ -210,19 +226,11 @@
     },
     {
       "commits": 5,
-      "contributor": "David Haberthür"
-    },
-    {
-      "commits": 5,
       "contributor": "Piotr"
     },
     {
       "commits": 5,
       "contributor": "Alexey Shabanov"
-    },
-    {
-      "commits": 4,
-      "contributor": "gallegonovato"
     },
     {
       "commits": 4,
@@ -315,10 +323,6 @@
     {
       "commits": 2,
       "contributor": "HO Gin Wang"
-    },
-    {
-      "commits": 2,
-      "contributor": "Felipe Nogueira"
     },
     {
       "commits": 2,

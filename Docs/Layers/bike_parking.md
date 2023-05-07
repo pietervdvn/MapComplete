@@ -105,7 +105,7 @@ This is rendered with  `This is a bicycle parking of the type: {bicycle_parking}
   - *Two-tiered*  corresponds with  `bicycle_parking=two_tier`
   - *Shed*  corresponds with  `bicycle_parking=shed`
   - *Bollard*  corresponds with  `bicycle_parking=bollard`
-  - *An area on the floor which is  marked for bicycle parking*  corresponds with  `bicycle_parking=floor`
+  - *An area on the floor which is marked for bicycle parking*  corresponds with  `bicycle_parking=floor`
 
 
 

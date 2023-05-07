@@ -110,10 +110,13 @@ export default class GenerateImageAnalysis extends Script {
 
                 const msg = `${i}/${
                     allImages.size
-                } downloaded: ${d},skipped: ${s}, failed: ${f}, running: ${Math.floor(runningSecs)}sec, ETA: ${estimatedActualMinutes}:${
-                    estimatedActualSeconds % 60
-                }`
-                ScriptUtils.erasableLog( "                                                                                                              ",  msg)
+                } downloaded: ${d},skipped: ${s}, failed: ${f}, running: ${Math.floor(
+                    runningSecs
+                )}sec, ETA: ${estimatedActualMinutes}:${estimatedActualSeconds % 60}`
+                ScriptUtils.erasableLog(
+                    "                                                                                                              ",
+                    msg
+                )
                 if (downloaded) {
                     d++
                 } else {

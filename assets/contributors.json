@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 5262,
+      "commits": 5306,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 352,
+      "commits": 359,
       "contributor": "Robin van der Linde"
     },
     {
@@ -34,15 +34,15 @@
     },
     {
       "commits": 26,
+      "contributor": "riQQ"
+    },
+    {
+      "commits": 26,
       "contributor": "Joost"
     },
     {
       "commits": 26,
       "contributor": "karelleketers"
-    },
-    {
-      "commits": 25,
-      "contributor": "riQQ"
     },
     {
       "commits": 24,
@@ -74,11 +74,11 @@
     },
     {
       "commits": 18,
-      "contributor": "Arno Deceuninck"
+      "contributor": "dependabot[bot]"
     },
     {
-      "commits": 17,
-      "contributor": "dependabot[bot]"
+      "commits": 18,
+      "contributor": "Arno Deceuninck"
     },
     {
       "commits": 17,
@@ -114,6 +114,10 @@
     },
     {
       "commits": 8,
+      "contributor": "Mateusz Konieczny"
+    },
+    {
+      "commits": 8,
       "contributor": "Thibault Molleman"
     },
     {
@@ -122,11 +126,11 @@
     },
     {
       "commits": 7,
-      "contributor": "OliNau"
+      "contributor": "Codain"
     },
     {
       "commits": 7,
-      "contributor": "Mateusz Konieczny"
+      "contributor": "OliNau"
     },
     {
       "commits": 7,
@@ -149,10 +153,6 @@
       "contributor": "pelderson"
     },
     {
-      "commits": 5,
-      "contributor": "Codain"
-    },
-    {
       "commits": 4,
       "contributor": "Nadhem"
     },
@@ -171,6 +171,10 @@
     {
       "commits": 3,
       "contributor": "Léo Villeveygoux"
+    },
+    {
+      "commits": 2,
+      "contributor": "Paul Brunner"
     },
     {
       "commits": 2,
@@ -219,6 +223,10 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "brunnerpaul"
     },
     {
       "commits": 1,

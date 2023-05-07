@@ -260,7 +260,7 @@
     },
     {
       "key": "bicycle_parking",
-      "description": "Layer 'Bike parking' shows bicycle_parking=floor with a fixed text, namely 'An area on the floor which is  marked for bicycle parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
+      "description": "Layer 'Bike parking' shows bicycle_parking=floor with a fixed text, namely 'An area on the floor which is marked for bicycle parking' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bus routes')",
       "value": "floor"
     },
     {
