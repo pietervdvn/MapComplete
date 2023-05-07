@@ -30,6 +30,13 @@ export let mappingIsSelected: boolean
  * This is the searchterm where it might hide
  */
 export let searchTerm: undefined | UIEventSource<string>
+
+$: {
+    if(selectedElement !== undefined || mapping !== undefined){
+        searchTerm.setData(undefined)
+    }
+}
+
 let matchesTerm: Store<boolean> | undefined = searchTerm?.map(search => {
     if (!search) {
         return true
@@ -45,7 +52,7 @@ let matchesTerm: Store<boolean> | undefined = searchTerm?.map(search => {
     if (mapping.then.txt.toLowerCase().indexOf(search) >= 0) {
         return true
     }
-    const searchTerms = mapping?.searchTerms[Locale.language.data]
+    const searchTerms = mapping?.searchTerms?.[Locale.language.data]
     if (searchTerms?.some(t => t.toLowerCase().indexOf(search) >= 0)) {
         return true
     }

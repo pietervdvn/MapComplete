@@ -30,6 +30,9 @@ export default class FeatureSourceMerger implements IndexedFeatureSource {
     }
 
     public addSource(source: FeatureSource) {
+        if(!source){
+            return
+        }
         this._sources.push(source)
         source.features.addCallbackAndRun(() => {
             this.addData(this._sources.map((s) => s.features.data))

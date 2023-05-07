@@ -37,6 +37,7 @@
     import LevelSelector from "./BigComponents/LevelSelector.svelte";
     import Svg from "../Svg";
     import ExtraLinkButton from "./BigComponents/ExtraLinkButton";
+    import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte";
 
     export let state: ThemeViewState;
     let layout = state.layout;
@@ -45,7 +46,7 @@
     let selectedElement: UIEventSource<Feature> = state.selectedElement;
     let selectedLayer: UIEventSource<LayerConfig> = state.selectedLayer;
 
-    const selectedViewElement = selectedElement.map(selectedElement => {
+    const selectedElementView = selectedElement.map(selectedElement => {
         // Svelte doesn't properly reload some of the legacy UI-elements
         // As such, we _reconstruct_ the selectedElementView every time a new feature is selected
         // This is a bit wasteful, but until everything is a svelte-component, this should do the trick
@@ -55,7 +56,20 @@
         }
 
         const tags = state.featureProperties.getStore(selectedElement.properties.id);
-        return new SvelteUIElement(SelectedElementView, {state, layer, selectedElement, tags});
+        return new SvelteUIElement(SelectedElementView, {state, layer, selectedElement, tags})
+    }, [selectedLayer]);
+
+    const selectedElementTitle = selectedElement.map(selectedElement => {
+        // Svelte doesn't properly reload some of the legacy UI-elements
+        // As such, we _reconstruct_ the selectedElementView every time a new feature is selected
+        // This is a bit wasteful, but until everything is a svelte-component, this should do the trick
+        const layer = selectedLayer.data;
+        if (selectedElement === undefined || layer === undefined) {
+            return undefined;
+        }
+
+        const tags = state.featureProperties.getStore(selectedElement.properties.id);
+        return new SvelteUIElement(SelectedElementTitle, {state, layer, selectedElement, tags})
     }, [selectedLayer]);
 
 
@@ -132,15 +146,19 @@
     </If>
 </div>
 
-<If condition={selectedViewElement.map(v => v !== undefined && selectedLayer.data !== undefined && !selectedLayer.data.popupInFloatover,[ selectedLayer] )}>
+<If condition={selectedElementView.map(v => v !== undefined && selectedLayer.data !== undefined && !selectedLayer.data.popupInFloatover,[ selectedLayer] )}>
     <ModalRight on:close={() => {selectedElement.setData(undefined)}}>
-        <ToSvelte construct={new VariableUiElement(selectedViewElement).SetClass("w-full h-full")}></ToSvelte>
+        <div class="absolute flex flex-col h-full w-full normal-background">
+            <ToSvelte construct={new VariableUiElement(selectedElementTitle)}></ToSvelte>
+
+            <ToSvelte construct={new VariableUiElement(selectedElementView)}></ToSvelte>
+        </div>
     </ModalRight>
 </If>
 
-<If condition={selectedViewElement.map(v => v !== undefined && selectedLayer.data !== undefined && selectedLayer.data.popupInFloatover,[ selectedLayer] )}>
+<If condition={selectedElementView.map(v => v !== undefined && selectedLayer.data !== undefined && selectedLayer.data.popupInFloatover,[ selectedLayer] )}>
     <FloatOver on:close={() => {selectedElement.setData(undefined)}}>
-        <ToSvelte construct={new VariableUiElement(selectedViewElement)}></ToSvelte>
+        <ToSvelte construct={new VariableUiElement(selectedElementView)}></ToSvelte>
     </FloatOver>
 </If>
 
