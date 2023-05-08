@@ -111,8 +111,12 @@
     }
 
     :global(.tab-selected) {
-        background-color: var(--catch-detail-color);
-        color: var(--catch-detail-color-contrast);
+        /**
+        For some reason, the exported tailwind style takes priority in production (but not in development)
+        As the tabs are buttons, tailwind restyles them
+         */
+        background-color: var(--catch-detail-color) !important;
+        color: var(--catch-detail-color-contrast) !important;
     }
 
     :global(.tab-selected svg) {
@@ -120,7 +124,7 @@
     }
 
     :global(.tab-unselected) {
-        background-color: rgb(255 255 255);
-        color: rgb(0 0 0);
+        background-color: var(--background-color) !important;
+        color: var(--foreground-color) !important;
     }
 </style>
