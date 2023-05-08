@@ -15,7 +15,6 @@ import {FixedUiElement} from "../../UI/Base/FixedUiElement"
 import {Paragraph} from "../../UI/Base/Paragraph"
 import Svg from "../../Svg"
 import Validators, {ValidatorType} from "../../UI/InputElement/Validators";
-import Constants from "../Constants";
 
 export interface Mapping {
     readonly if: UploadableTag
@@ -69,6 +68,7 @@ export default class TagRenderingConfig {
     public readonly mappings?: Mapping[]
     public readonly labels: string[]
     public readonly classes: string[]
+
     constructor(json: string | QuestionableTagRenderingConfigJson, context?: string) {
         if (json === undefined) {
             throw "Initing a TagRenderingConfig with undefined in " + context
@@ -118,9 +118,9 @@ export default class TagRenderingConfig {
         this.question = Translations.T(json.question, translationKey + ".question")
         this.questionhint = Translations.T(json.questionHint, translationKey + ".questionHint")
         this.description = Translations.T(json.description, translationKey + ".description")
-        this.condition = TagUtils.Tag(json.condition ?? { and: [] }, `${context}.condition`)
+        this.condition = TagUtils.Tag(json.condition ?? {and: []}, `${context}.condition`)
         this.metacondition = TagUtils.Tag(
-            json.metacondition ?? { and: [] },
+            json.metacondition ?? {and: []},
             `${context}.metacondition`
         )
         if (json.freeform) {
@@ -379,9 +379,7 @@ export default class TagRenderingConfig {
                 if (stripped.endsWith(".svg")) {
                     stripped = stripped.substring(0, stripped.length - 4)
                 }
-                if (
-                    Constants.defaultPinIcons.indexOf(stripped)
-                ) {
+                if (Svg.All[stripped + ".svg"] !== undefined) {
                     icon = "./assets/svg/" + mapping.icon
                     if (!icon.endsWith(".svg")) {
                         icon += ".svg"
@@ -544,7 +542,7 @@ export default class TagRenderingConfig {
             this.freeform?.key === undefined ||
             tags[this.freeform.key] !== undefined
         ) {
-            return { then: this.render }
+            return {then: this.render}
         }
 
         return undefined
@@ -634,9 +632,9 @@ export default class TagRenderingConfig {
         currentProperties: Record<string, string>
     ): UploadableTag {
         freeformValue = freeformValue?.trim()
-        const validator = Validators.get(<ValidatorType> this.freeform?.type)
-        if(validator && freeformValue){
-            freeformValue = validator.reformat(freeformValue,() => currentProperties["_country"])
+        const validator = Validators.get(<ValidatorType>this.freeform?.type)
+        if (validator && freeformValue) {
+            freeformValue = validator.reformat(freeformValue, () => currentProperties["_country"])
         }
         if (freeformValue === "") {
             freeformValue = undefined
@@ -687,12 +685,12 @@ export default class TagRenderingConfig {
         } else {
             // Is at least one mapping shown in the answer?
             const someMappingIsShown = this.mappings.some(m => {
-                if(typeof m.hideInAnswer === "boolean"){
+                if (typeof m.hideInAnswer === "boolean") {
                     return !m.hideInAnswer
                 }
                 const isHidden = m.hideInAnswer.matchesProperties(currentProperties)
                 return !isHidden
-            }  )
+            })
             // If all mappings are hidden for the current tags, we can safely assume that we should use the freeform key
             const useFreeform = freeformValue !== undefined && (singleSelectedMapping === this.mappings.length || !someMappingIsShown)
             if (useFreeform) {
@@ -700,13 +698,18 @@ export default class TagRenderingConfig {
                     new Tag(this.freeform.key, freeformValue),
                     ...(this.freeform.addExtraTags ?? []),
                 ])
-            } else if(singleSelectedMapping !== undefined) {
+            } else if (singleSelectedMapping !== undefined) {
                 return new And([
                     this.mappings[singleSelectedMapping].if,
                     ...(this.mappings[singleSelectedMapping].addExtraTags ?? []),
                 ])
-            }else{
-                console.warn("TagRenderingConfig.ConstructSpecification has a weird fallback for", {freeformValue, singleSelectedMapping, multiSelectedMapping, currentProperties})
+            } else {
+                console.warn("TagRenderingConfig.ConstructSpecification has a weird fallback for", {
+                    freeformValue,
+                    singleSelectedMapping,
+                    multiSelectedMapping,
+                    currentProperties
+                })
                 return undefined
             }
         }
@@ -751,7 +754,7 @@ export default class TagRenderingConfig {
                         if (m.ifnot !== undefined) {
                             msgs.push(
                                 "Unselecting this answer will add " +
-                                    m.ifnot.asHumanString(true, false, {})
+                                m.ifnot.asHumanString(true, false, {})
                             )
                         }
                         return msgs
@@ -781,12 +784,12 @@ export default class TagRenderingConfig {
             this.description,
             this.question !== undefined
                 ? new Combine([
-                      "The question is ",
-                      new FixedUiElement(this.question.txt).SetClass("font-bold bold"),
-                  ])
+                    "The question is ",
+                    new FixedUiElement(this.question.txt).SetClass("font-bold bold"),
+                ])
                 : new FixedUiElement(
-                      "This tagrendering has no question and is thus read-only"
-                  ).SetClass("italic"),
+                    "This tagrendering has no question and is thus read-only"
+                ).SetClass("italic"),
             new Combine(withRender),
             mappings,
             condition,
