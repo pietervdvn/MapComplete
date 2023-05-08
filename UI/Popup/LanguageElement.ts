@@ -143,7 +143,7 @@ export class LanguageElement implements SpecialVisualization {
 
             const saveButton = new SaveButton(
                 selector.GetValue().map((lngs) => (lngs.length > 0 ? "true" : undefined)),
-                state.osmConnection
+                state
             ).onClick(() => {
                 const selectedLanguages = selector.GetValue().data
                 const currentLanguages = foundLanguages.data

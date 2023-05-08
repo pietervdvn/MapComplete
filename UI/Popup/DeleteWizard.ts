@@ -108,9 +108,7 @@ export default class DeleteWizard extends Toggle {
         const deleteOptionPicker = DeleteWizard.constructMultipleChoice(options, tagsSource, state)
         const deleteDialog = new Combine([
             new Title(
-                new SubstitutedTranslation(t.whyDelete, tagsSource, state).SetClass(
-                    "question-text"
-                ),
+                new SubstitutedTranslation(t.whyDelete, tagsSource, state),
                 3
             ),
             deleteOptionPicker,

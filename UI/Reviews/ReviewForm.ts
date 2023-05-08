@@ -44,9 +44,7 @@ export default class ReviewForm extends LoginToggle {
 
         const saveButton = new Toggle(
             Translations.t.reviews.no_rating.SetClass("block alert"),
-            new SubtleButton(Svg.confirm_svg(), Translations.t.reviews.save, {
-                extraClasses: "border-attention-catch",
-            })
+            new SubtleButton(Svg.confirm_svg(), Translations.t.reviews.save)
                 .OnClickWithLoading(
                     Translations.t.reviews.saving_review.SetClass("alert"),
                     async () => {

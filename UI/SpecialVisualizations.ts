@@ -129,7 +129,7 @@ class NearbyImageVis implements SpecialVisualization {
             }
             saveButton = new SaveButton(
                 selectedImage,
-                state.osmConnection,
+                state,
                 confirmText,
                 t.noImageSelected
             )

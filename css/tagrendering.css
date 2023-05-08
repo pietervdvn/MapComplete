@@ -1,4 +1,8 @@
 
+/**
+ Some utility functions which are only used to render data
+ */
+
 .question .form-text-field > input {
     width: 100%;
     box-sizing: border-box;
@@ -26,43 +30,53 @@
     height: 100%;
 }
 
-.question-text {
-    font-size: larger;
-    font-weight: bold;
-    margin-bottom: 0.5em;
+
+
+
+.mapping-icon-small-height {
+    /* A mapping icon type */
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    width: unset;
 }
 
-.question-text img {
-    max-width: 100%;
+.mapping-icon-medium-height {
+    /* A mapping icon type */
+    height: 3rem;
+    margin-right: 0.5rem;
+    width: unset;
 }
 
-
-
-.question-option-with-border {
-    border: 2px solid lightgray;
-    border-radius: 0.5em;
-    display: block;
-    width: 100%;
-    margin: 5px;
-    box-sizing: border-box;
-    padding: 0.5em;
+.mapping-icon-large-height {
+    /* A mapping icon type */
+    height: 5rem;
+    margin-right: 0.5rem;
+    width: unset;
 }
 
-input:checked + label .question-option-with-border {
-    border: 2px solid var(--subtle-detail-color-contrast);
+.mapping-icon-small {
+    /* A mapping icon type */
+    width: 1.5rem;
+    max-height: 1.5rem;
+    margin-right: 0.5rem;
 }
 
-.login-button-friendly {
-    display: inline-block;
-    background-color: var(--catch-detail-color);
-    color: var(--catch-detail-color-contrast);
-    border: solid var(--catch-detail-color-contrast) 2px;
-    padding: 0.2em 0.6em;
-    font-size: large;
-    font-weight: bold;
-    border-radius: 1.5em;
-    box-sizing: border-box;
-    width: 100%;
+.mapping-icon-medium {
+    /* A mapping icon type */
+    width: 3rem;
+    max-height: 3rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.mapping-icon-large {
+    /* A mapping icon type */
+    width: 6rem;
+    max-height: 5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
 }
 
 

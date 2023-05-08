@@ -13,13 +13,15 @@ export default class SingleReview extends Combine {
         const reviewAuthor =
             review.metadata.nickname ??
             (review.metadata.given_name ?? "") + (review.metadata.family_name ?? "")
+        const authorElement =   new FixedUiElement(reviewAuthor).SetClass("font-bold")
+
         super([
             new Combine([SingleReview.GenStars(review.rating)]),
             new FixedUiElement(review.opinion),
             new Combine([
                 new Combine([
-                    new FixedUiElement(reviewAuthor).SetClass("font-bold"),
-                    review.metadata.is_affiliated
+                    authorElement,
+                     review.metadata.is_affiliated
                         ? Translations.t.reviews.affiliated_reviewer_warning
                         : "",
                 ]).SetStyle("margin-right: 0.5em"),
@@ -29,15 +31,15 @@ export default class SingleReview extends Combine {
                     )}-${Utils.TwoDigits(date.getDate())} ${Utils.TwoDigits(
                         date.getHours()
                     )}:${Utils.TwoDigits(date.getMinutes())}`
-                ).SetClass("subtle-lighter"),
+                ).SetClass("subtle"),
             ]).SetClass("flex mb-4 justify-end"),
         ])
         this.SetClass("block p-2 m-4 rounded-xl subtle-background review-element")
         review.madeByLoggedInUser.addCallbackAndRun((madeByUser) => {
             if (madeByUser) {
-                this.SetClass("border-attention-catch")
+                authorElement.SetClass("thanks")
             } else {
-                this.RemoveClass("border-attention-catch")
+                authorElement.RemoveClass("thanks")
             }
         })
     }

@@ -1,10 +1,11 @@
-import { ImmutableStore, Store } from "../../Logic/UIEventSource"
+import {Store} from "../../Logic/UIEventSource"
 import Translations from "../i18n/Translations"
-import { OsmConnection } from "../../Logic/Osm/OsmConnection"
+import {OsmConnection} from "../../Logic/Osm/OsmConnection"
 import Toggle from "../Input/Toggle"
 import BaseUIElement from "../BaseUIElement"
 import Combine from "../Base/Combine"
 import Svg from "../../Svg"
+import {LoginToggle} from "./LoginButton";
 
 export class EditButton extends Toggle {
     constructor(osmConnection: OsmConnection, onClick: () => void) {
@@ -19,21 +20,19 @@ export class EditButton extends Toggle {
     }
 }
 
-export class SaveButton extends Toggle {
+export class SaveButton extends LoginToggle {
     constructor(
         value: Store<any>,
-        osmConnection: OsmConnection,
+        state: {
+            readonly osmConnection?: OsmConnection
+            readonly featureSwitchUserbadge?: Store<boolean>
+        },
         textEnabled?: BaseUIElement,
         textDisabled?: BaseUIElement
     ) {
         if (value === undefined) {
             throw "No event source for savebutton, something is wrong"
         }
-
-        const pleaseLogin = Translations.t.general.loginToStart
-            .Clone()
-            .SetClass("login-button-friendly")
-            .onClick(() => osmConnection?.AttemptLogin())
 
         const isSaveable = value.map((v) => v !== false && (v ?? "") !== "")
 
@@ -43,6 +42,6 @@ export class SaveButton extends Toggle {
         )
 
         const save = new Toggle(saveEnabled, saveDisabled, isSaveable)
-        super(save, pleaseLogin, osmConnection?.isLoggedIn ?? new ImmutableStore(false))
+        super(save, Translations.t.general.loginToStart, state)
     }
 }
