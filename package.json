@@ -12,7 +12,7 @@
     "strt": "vite --host",
     "strttest": "export NODE_OPTIONS=--max_old_space_size=8364 && parcel serve test.html assets/templates/*.svg assets/templates/fonts/*.ttf",
     "watch:css": "tailwindcss -i index.css -o css/index-tailwind-output.css --watch",
-    "generate:css": "tailwindcss -i index.css -o css/index-tailwind-output.css",
+    "generate:css": "tailwindcss -i index.css -o public/css/index-tailwind-output.css",
     "generate:doctests": "doctest-ts-improved . --ignore .*.spec.ts --ignore .*ConfigJson.ts",
     "test:run-only": "vitest --run test",
     "test": "npm run clean:tests && (npm run generate:doctests 2>&1 | grep -v \"No doctests found in\") && npm run test:run-only && npm run clean:tests",
