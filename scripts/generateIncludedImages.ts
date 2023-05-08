@@ -39,10 +39,8 @@ function genImages(dryrun = false) {
         let rawName = name
 
         module += `    public static ${name} = "${svg}"\n`
-        module += `    public static ${name}_img = Img.AsImageElement(Svg.${rawName})\n`
         module += `    public static ${name}_svg() { return new Img(Svg.${rawName}, true);}\n`
-       // module += `    /**@deprecated*/ public static ${name}_ui() { return new FixedUiElement(Svg.${rawName}_img);}\n\n`
-        if (Constants.defaultPinIcons.indexOf(name) >= 0 && !dryrun) {
+        if (!dryrun) {
             allNames.push(`"${path}": Svg.${name}`)
         }
     }
@@ -52,4 +50,4 @@ function genImages(dryrun = false) {
     console.log("Done")
 }
 
-genImages(false)
+genImages()

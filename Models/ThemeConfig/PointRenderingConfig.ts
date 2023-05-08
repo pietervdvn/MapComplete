@@ -87,7 +87,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         const iconPath = this.icon?.GetRenderValue({ id: "node/-1" })?.txt
         if (iconPath !== undefined && iconPath.startsWith(Utils.assets_path)) {
             const iconKey = iconPath.substr(Utils.assets_path.length)
-            if (Constants.defaultPinIcons.indexOf(iconKey) < 0) {
+            if (Svg.All[iconKey] === undefined) {
                 throw context + ": builtin SVG asset not found: " + iconPath
             }
         }

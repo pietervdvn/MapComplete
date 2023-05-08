@@ -73,7 +73,7 @@ export class WikimediaImageProvider extends ImageProvider {
         }
 
         return new Link(
-            Svg.wikimedia_commons_white_img,
+            Svg.wikimedia_commons_white_svg(),
             `https://commons.wikimedia.org/wiki/${backlink}`,
             true
         )
