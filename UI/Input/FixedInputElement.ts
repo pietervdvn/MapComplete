@@ -3,6 +3,9 @@ import { UIEventSource } from "../../Logic/UIEventSource"
 import Translations from "../i18n/Translations"
 import BaseUIElement from "../BaseUIElement"
 
+/**
+ * @deprecated
+ */
 export class FixedInputElement<T> extends InputElement<T> {
     private readonly value: UIEventSource<T>
     private readonly _comparator: (t0: T, t1: T) => boolean

@@ -2,6 +2,9 @@ import { InputElement } from "./InputElement"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import { Utils } from "../../Utils"
 
+/**
+ * @deprecated
+ */
 export class RadioButton<T> extends InputElement<T> {
     private static _nextId = 0
 

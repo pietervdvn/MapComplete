@@ -1,6 +1,9 @@
 import { InputElement } from "./InputElement"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
 
+/**
+ * @deprecated
+ */
 export default class InputElementMap<T, X> extends InputElement<X> {
     private readonly _inputElement: InputElement<T>
     private isSame: (x0: X, x1: X) => boolean

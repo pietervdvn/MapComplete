@@ -5,6 +5,9 @@ import BaseUIElement from "../BaseUIElement"
 import InputElementMap from "./InputElementMap"
 import Translations from "../i18n/Translations"
 
+/**
+ * @deprecated
+ */
 export class CheckBox extends InputElementMap<number[], boolean> {
     constructor(el: BaseUIElement | string, defaultValue?: boolean) {
         super(

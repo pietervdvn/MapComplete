@@ -2,6 +2,9 @@ import BaseUIElement from "../BaseUIElement"
 import { InputElement } from "./InputElement"
 import { UIEventSource } from "../../Logic/UIEventSource"
 
+/**
+ * @deprecated
+ */
 export default class FileSelectorButton extends InputElement<FileList> {
     private static _nextid
     private readonly _value = new UIEventSource<FileList>(undefined)

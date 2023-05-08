@@ -4,6 +4,9 @@ import BaseUIElement from "../BaseUIElement"
 import { Translation } from "../i18n/Translation"
 import Locale from "../i18n/Locale"
 
+/**
+ * @deprecated
+ */
 interface TextFieldOptions {
     placeholder?: string | Store<string> | Translation
     value?: UIEventSource<string>
@@ -15,6 +18,9 @@ interface TextFieldOptions {
     isValid?: (s: string) => boolean
 }
 
+/**
+ * @deprecated
+ */
 export class TextField extends InputElement<string> {
     public readonly enterPressed = new UIEventSource<string>(undefined)
     private readonly value: UIEventSource<string>
@@ -124,11 +130,6 @@ export class TextField extends InputElement<string> {
         this.value.addCallbackAndRunD((value) => {
             // We leave the textfield as is in the case of undefined or null (handled by addCallbackAndRunD) - make sure we do not erase it!
             field["value"] = value
-            if (self.IsValid(value)) {
-                self.RemoveClass("invalid")
-            } else {
-                self.SetClass("invalid")
-            }
         })
 
         field.oninput = () => {

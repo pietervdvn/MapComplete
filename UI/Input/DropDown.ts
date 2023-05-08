@@ -3,6 +3,9 @@ import Translations from "../i18n/Translations"
 import { UIEventSource } from "../../Logic/UIEventSource"
 import BaseUIElement from "../BaseUIElement"
 
+/**
+ * @deprecated
+ */
 export class DropDown<T> extends InputElement<T> {
     private static _nextDropdownId = 0
     public IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false)
