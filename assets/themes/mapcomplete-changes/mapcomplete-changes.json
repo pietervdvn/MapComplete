@@ -287,10 +287,6 @@
                 "then": "./assets/themes/nature/logo.svg"
               },
               {
-                "if": "theme=natuurpunt",
-                "then": "./assets/themes/natuurpunt/natuurpunt.png"
-              },
-              {
                 "if": "theme=notes",
                 "then": "./assets/themes/notes/logo.svg"
               },
