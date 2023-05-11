@@ -31,7 +31,7 @@
 {#if _tags._deleted === "yes"}
     <Tr t={ Translations.t.delete.isDeleted}/>
 {:else}
-        <div class="flex border-b-2 border-black shadow justify-between items-center">
+        <div class="flex border-b-2 border-black drop-shadow-md justify-between items-center low-interaction px-3 active-links">
             <div class="flex flex-col">
 
                 <!-- Title element-->
@@ -40,12 +40,12 @@
                                         {layer}></TagRenderingAnswer>
                 </h3>
 
-                <div class="flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2">
+                <div class="flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2 gap-x-0.5 p-1">
                     {#each layer.titleIcons as titleIconConfig}
                         {#if (titleIconConfig.condition?.matchesProperties(_tags) ?? true) && (titleIconConfig.metacondition?.matchesProperties({..._metatags, ..._tags}) ?? true) && titleIconConfig.IsKnown(_tags)}
-                            <div class="w-8 h-8">
+                            <div class="w-8 h-8 flex items-center">
                                 <TagRenderingAnswer config={titleIconConfig} {tags} {selectedElement} {state}
-                                                    {layer}></TagRenderingAnswer>
+                                                    {layer} extraClasses="h-full justify-center" ></TagRenderingAnswer>
                             </div>
                         {/if}
                     {/each}
@@ -55,3 +55,7 @@
             <XCircleIcon class="w-8 h-8 cursor-pointer" on:click={() => state.selectedElement.setData(undefined)}/>
         </div>
 {/if}
+
+<style>
+  
+</style>

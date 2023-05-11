@@ -22,7 +22,6 @@
     // The type changed -> reset some values
     validator = Validators.get(type)
     _value.setData(value.data ?? "")
-    console.log("REseting validated input, _value is ", _value.data, validator?.getFeedback(_value.data, getCountry))
     feedback =  feedback?.setData(validator?.getFeedback(_value.data, getCountry));
     _placeholder = placeholder ?? validator?.getPlaceholder() ?? type
   }

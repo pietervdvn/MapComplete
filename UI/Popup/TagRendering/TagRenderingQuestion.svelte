@@ -26,7 +26,6 @@
     export let layer: LayerConfig;
 
     let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined);
-    feedback.addCallbackAndRunD(f => console.trace("Feedback is now", f.txt))
 
     // Will be bound if a freeform is available
     let freeformInput = new UIEventSource<string>(tags?.[config.freeform?.key]);

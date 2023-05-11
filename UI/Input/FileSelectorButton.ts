@@ -11,17 +11,20 @@ export default class FileSelectorButton extends InputElement<FileList> {
     private readonly _label: BaseUIElement
     private readonly _acceptType: string
     private readonly allowMultiple: boolean
+    private readonly _labelClasses: string;
 
     constructor(
         label: BaseUIElement,
         options?: {
             acceptType: "image/*" | string
-            allowMultiple: true | boolean
+            allowMultiple: true | boolean,
+            labelClasses?: string
         }
     ) {
         super()
         this._label = label
         this._acceptType = options?.acceptType ?? "image/*"
+        this._labelClasses=  options?.labelClasses ?? ""
         this.SetClass("block cursor-pointer")
         label.SetClass("cursor-pointer")
         this.allowMultiple = options?.allowMultiple ?? true
@@ -40,6 +43,7 @@ export default class FileSelectorButton extends InputElement<FileList> {
         const el = document.createElement("form")
         const label = document.createElement("label")
         label.appendChild(this._label.ConstructElement())
+        label.classList.add(...this._labelClasses.split(" ").filter(t => t !== ""))
         el.appendChild(label)
 
         const actualInputElement = document.createElement("input")

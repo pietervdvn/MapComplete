@@ -71,25 +71,22 @@
 <div bind:this={htmlElem} class="">
     {#if config.question && $editingEnabled}
         {#if editMode}
-            <div class="m-1 mx-2">
-                <TagRenderingQuestion {config} {tags} {selectedElement} {state} {layer}>
-                    <button slot="cancel" class="secondary" on:click={() => {editMode = false}}>
-                        <Tr t={Translations.t.general.cancel}/>
-                    </button>
-                    <XCircleIcon slot="upper-right" class="w-8 h-8" on:click={() => {editMode = false}}/>
-                </TagRenderingQuestion>
-            </div>
+            <TagRenderingQuestion {config} {tags} {selectedElement} {state} {layer}>
+                <button slot="cancel" class="secondary" on:click={() => {editMode = false}}>
+                    <Tr t={Translations.t.general.cancel}/>
+                </button>
+                <XCircleIcon slot="upper-right" class="w-8 h-8" on:click={() => {editMode = false}}/>
+            </TagRenderingQuestion>
         {:else}
-            <div class="flex justify-between low-interaction items-center m-1 mx-2 p-1 px-2 rounded">
+            <div class="flex justify-between low-interaction items-center rounded px-2">
                 <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer}/>
-                <button on:click={() => {editMode = true}} class="shrink-0 w-8 h-8 rounded-full p-1 secondary self-start">
+                <button on:click={() => {editMode = true}}
+                        class="shrink-0 w-8 h-8 rounded-full p-1 secondary self-start">
                     <PencilAltIcon/>
                 </button>
             </div>
         {/if}
     {:else }
-        <div class="m-1 p-1 px-2 mx-2">
-            <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer}/>
-        </div>
+        <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer}/>
     {/if}
 </div>

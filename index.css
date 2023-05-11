@@ -34,7 +34,7 @@
     --interactive-foreground: black;
     --interactive-contrast: #ff00ff;
 
-    --button-background: #737373;
+    --button-background: black;
     --button-foreground: white;
 
     /**
@@ -172,7 +172,6 @@ button.disabled:hover {
     color: unset;
 }
 
-
 button:hover {
     border: 2px solid var(--catch-detail-color-contrast);
     background-color: var(--catch-detail-color);
@@ -183,7 +182,6 @@ button:hover img {
     background: var(--low-interaction-background);
     border-radius: 100rem;
 }
-
 
 button {
     display: inline-flex;
@@ -317,6 +315,34 @@ label:hover svg path {
 
 label.checked {
     border: 2px solid var(--foreground-color);
+}
+
+
+
+.active-links a{
+    /*
+    * Let a 'link' mimick a secondary button, but not entirely
+    */
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 3px;
+    margin: 0;
+    background: var(--low-interaction-background);
+    color: var(--low-interaction-foreground);
+    border: 2px solid var(--interactive-background);
+    border-radius: 0.5rem;
+}
+
+
+.active-links a:hover {
+    background-color: var(--interactive-background);
+    color: var(--catch-detail-foregroundcolor);
+    border-color: var(--catch-detail-color-contrast);
+}
+
+.active-links a:hover svg path {
+    fill: var(--catch-detail-foregroundcolor) !important;
 }
 
 /************************* OTHER CATEGORIES ********************************/

@@ -1,20 +1,20 @@
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import {Store, UIEventSource} from "../../Logic/UIEventSource"
 import Combine from "../Base/Combine"
 import Translations from "../i18n/Translations"
 import Svg from "../../Svg"
-import { Tag } from "../../Logic/Tags/Tag"
+import {Tag} from "../../Logic/Tags/Tag"
 import BaseUIElement from "../BaseUIElement"
 import Toggle from "../Input/Toggle"
 import FileSelectorButton from "../Input/FileSelectorButton"
 import ImgurUploader from "../../Logic/ImageProviders/ImgurUploader"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import { FixedUiElement } from "../Base/FixedUiElement"
-import { VariableUiElement } from "../Base/VariableUIElement"
+import {FixedUiElement} from "../Base/FixedUiElement"
+import {VariableUiElement} from "../Base/VariableUIElement"
 import Loading from "../Base/Loading"
-import { LoginToggle } from "../Popup/LoginButton"
+import {LoginToggle} from "../Popup/LoginButton"
 import Constants from "../../Models/Constants"
-import { SpecialVisualizationState } from "../SpecialVisualization"
+import {SpecialVisualizationState} from "../SpecialVisualization"
 
 export class ImageUploadFlow extends Toggle {
     private static readonly uploadCountsPerId = new Map<string, UIEventSource<number>>()
@@ -70,17 +70,22 @@ export class ImageUploadFlow extends Toggle {
         const label = new Combine([
             Svg.camera_plus_svg().SetClass("block w-12 h-12 p-1 text-4xl "),
             labelContent,
-        ])
-            .SetClass(
-                "p-2 border-4 border-detail rounded-full font-bold h-full align-middle w-full flex justify-center"
-            )
-            .SetStyle(" border-color: var(--foreground-color);")
+        ]).SetClass("w-full flex justify-center items-center")
+
         const licenseStore = state?.osmConnection?.GetPreference(
             Constants.OsmPreferenceKeyPicturesLicense,
             "CC0"
         )
 
-        const fileSelector = new FileSelectorButton(label)
+        const fileSelector = new FileSelectorButton(label, {
+            acceptType: "image/*",
+            allowMultiple: true,
+            labelClasses: "rounded-full border-2 border-black font-bold"
+        })
+     /*    fileSelector.SetClass(
+            "p-2 border-4 border-detail rounded-full font-bold h-full align-middle w-full flex justify-center"
+        )
+            .SetStyle(" border-color: var(--foreground-color);")*/
         fileSelector.GetValue().addCallback((filelist) => {
             if (filelist === undefined || filelist.length === 0) {
                 return
@@ -139,7 +144,7 @@ export class ImageUploadFlow extends Toggle {
                             return new Loading(t.uploadingPicture).SetClass("alert")
                         } else {
                             return new Loading(
-                                t.uploadingMultiple.Subs({ count: "" + l })
+                                t.uploadingMultiple.Subs({count: "" + l})
                             ).SetClass("alert")
                         }
                     })
@@ -163,7 +168,7 @@ export class ImageUploadFlow extends Toggle {
                     if (l == 1) {
                         return t.uploadDone.Clone().SetClass("thanks block")
                     }
-                    return t.uploadMultipleDone.Subs({ count: l }).SetClass("thanks block")
+                    return t.uploadMultipleDone.Subs({count: l}).SetClass("thanks block")
                 })
             ),
 
@@ -172,7 +177,7 @@ export class ImageUploadFlow extends Toggle {
                 Translations.t.image.respectPrivacy,
                 new VariableUiElement(
                     licenseStore.map((license) =>
-                        Translations.t.image.currentLicense.Subs({ license })
+                        Translations.t.image.currentLicense.Subs({license})
                     )
                 )
                     .onClick(() => {

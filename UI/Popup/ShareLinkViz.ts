@@ -1,9 +1,10 @@
 import { UIEventSource } from "../../Logic/UIEventSource"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import ShareButton from "../BigComponents/ShareButton"
 import Svg from "../../Svg"
 import { FixedUiElement } from "../Base/FixedUiElement"
 import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization";
+import SvelteUIElement from "../Base/SvelteUIElement";
+import ShareButton from "../Base/ShareButton.svelte";
 
 export class ShareLinkViz implements SpecialVisualization {
     funcName = "share_link"
@@ -18,7 +19,6 @@ export class ShareLinkViz implements SpecialVisualization {
     ]
 
     public constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, args: string[]) {
-        if (window.navigator.share) {
             const generateShareData = () => {
                 const title = state?.layout?.title?.txt ?? "MapComplete"
 
@@ -45,9 +45,7 @@ export class ShareLinkViz implements SpecialVisualization {
                 }
             }
 
-            return new ShareButton(Svg.share_svg().SetClass("w-8 h-8"), generateShareData)
-        } else {
-            return new FixedUiElement("")
-        }
+            return new SvelteUIElement(ShareButton, {generateShareData})
+            //return new ShareButton(Svg.share_svg().SetClass("w-8 h-8"), generateShareData)
     }
 }

@@ -30,7 +30,7 @@
 {#if _tags._deleted === "yes"}
     <Tr t={ Translations.t.delete.isDeleted}/>
 {:else}
-        <div class="flex flex-col overflow-y-auto">
+        <div class="flex flex-col overflow-y-auto p-1 px-2 gap-y-2">
             {#each layer.tagRenderings as config (config.id)}
                 {#if (config.condition === undefined || config.condition.matchesProperties(_tags)) && (config.metacondition === undefined || config.metacondition.matchesProperties({..._tags, ..._metatags}))}
                     {#if config.IsKnown(_tags)}
