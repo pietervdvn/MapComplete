@@ -10,6 +10,9 @@ export default class PhoneValidator extends Validator {
 
 
     getFeedback(s: string, requestCountry?: () => string): Translation {
+        if(this.isValid(s, requestCountry)){
+            return undefined
+        }
         const tr = Translations.t.validation.phone
         const generic = tr.feedback
         if(requestCountry){

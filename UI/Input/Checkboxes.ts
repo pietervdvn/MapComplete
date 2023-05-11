@@ -28,7 +28,6 @@ export class CheckBox extends InputElementMap<number[], boolean> {
  */
 export default class CheckBoxes extends InputElement<number[]> {
     private static _nextId = 0
-    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     private readonly value: UIEventSource<number[]>
     private readonly _elements: BaseUIElement[]
 
@@ -65,12 +64,12 @@ export default class CheckBoxes extends InputElement<number[]> {
 
             const label = document.createElement("label")
             label.htmlFor = input.id
+            label.appendChild(input)
             label.appendChild(inputI.ConstructElement())
             label.classList.add("block", "w-full", "p-2", "cursor-pointer", "bg-red")
 
             const wrapper = document.createElement("div")
             wrapper.classList.add("wrapper", "flex", "w-full", "border", "border-gray-400", "mb-1")
-            wrapper.appendChild(input)
             wrapper.appendChild(label)
             formTag.appendChild(wrapper)
 
@@ -78,11 +77,9 @@ export default class CheckBoxes extends InputElement<number[]> {
                 input.checked = selectedValues.indexOf(i) >= 0
 
                 if (input.checked) {
-                    wrapper.classList.remove("border-gray-400")
-                    wrapper.classList.add("border-black")
+                    wrapper.classList.add("checked")
                 } else {
-                    wrapper.classList.add("border-gray-400")
-                    wrapper.classList.remove("border-black")
+                    wrapper.classList.remove("checked")
                 }
             })
 

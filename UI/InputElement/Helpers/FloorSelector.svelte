@@ -69,6 +69,7 @@
     if (index.data === forceIndex) {
       forceIndex = undefined;
     }
+    top = Math.max(top, 0)
   }
 
   Stores.Chronic(50).addCallback(_ => stabilize());
@@ -103,7 +104,7 @@
   <div class="h-full absolute w-min right-0">
     {#each $floors as floor, i}
       <button style={`height: ${HEIGHT}px; width: ${HEIGHT}px`}
-              class={"border-2 border-gray-300 flex content-box justify-center items-center "+(i === (forceIndex ?? $index) ? "selected": "normal-background" )
+              class={"m-0 border-2 border-gray-300 flex content-box justify-center items-center "+(i === (forceIndex ?? $index) ? "selected": "" )
            }
               on:click={() => {forceIndex = i}}
       > {floor}</button>
@@ -119,11 +120,6 @@
 <svelte:window on:mousemove={onMove} on:mouseup={unclick} />
 
 <style>
-    .selected {
-        background: var(--subtle-detail-color);
-        font-weight: bold;
-        border-color: black;
-    }
 
     .draggable {
         user-select: none;

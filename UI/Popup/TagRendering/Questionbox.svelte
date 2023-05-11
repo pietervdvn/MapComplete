@@ -143,7 +143,7 @@
                     <TagRenderingQuestion
                             config={_firstQuestion} {layer} {selectedElement} {state} {tags}
                             on:saved={() => {skip(_firstQuestion, true)}}>
-                        <button on:click={() => {skip(_firstQuestion)} }
+                        <button class="secondary" on:click={() => {skip(_firstQuestion)} }
                                 slot="cancel">
                             <Tr t={Translations.t.general.skip}></Tr>
                         </button>

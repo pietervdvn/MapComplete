@@ -14,6 +14,7 @@ import usersettings from "../../assets/generated/layers/usersettings.json"
 import Locale from "../../UI/i18n/Locale"
 import LinkToWeblate from "../../UI/Base/LinkToWeblate"
 import FeatureSwitchState from "./FeatureSwitchState"
+import Constants from "../../Models/Constants";
 
 /**
  * The part of the state which keeps track of user-related stuff, e.g. the OSM-connection,
@@ -32,6 +33,9 @@ export default class UserRelatedState {
     public readonly installedUserThemes: Store<string[]>
 
     public readonly showAllQuestionsAtOnce: UIEventSource<boolean>
+    public readonly showTags:  UIEventSource<"no" | undefined | "always" | "yes">;
+
+
     public readonly homeLocation: FeatureSource
 
     /**
@@ -88,6 +92,7 @@ export default class UserRelatedState {
                     "Either 'true' or 'false'. If set, all questions will be shown all at once",
             })
         )
+        this.showTags = <UIEventSource<any>> this.osmConnection.GetPreference("show_tags")
 
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove")
@@ -253,6 +258,10 @@ export default class UserRelatedState {
             _applicationOpened: new Date().toISOString(),
             _supports_sharing: window.navigator.share ? "yes" : "no"
         })
+
+        for (const key in Constants.userJourney) {
+            amendedPrefs.data["__userjourney_"+key] = Constants.userJourney[key]
+        }
 
         const osmConnection = this.osmConnection
         osmConnection.preferencesHandler.preferences.addCallback((newPrefs) => {

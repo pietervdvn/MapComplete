@@ -1,0 +1,24 @@
+[
+  {
+    "path": "translate_disabled.svg",
+    "license": "CC-BY-SA 3.0",
+    "authors": [
+      "MGalloway (WMF)"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_language-ltr.svg"
+    ]
+  },
+  {
+    "path": "translate_mobile.svg",
+    "license": "CC-BY-SA 3.0",
+    "authors": [
+      "MGalloway (WMF)",
+      "@ tyskrat"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_language-ltr.svg",
+      "https://www.onlinewebfonts.com/icon/1059"
+    ]
+  }
+]

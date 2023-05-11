@@ -63,6 +63,7 @@ export interface SpecialVisualizationState {
 
     readonly perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer>
     readonly userRelatedState: {
+        readonly showTags:  UIEventSource<"no" | undefined | "always" | "yes">;
         readonly mangroveIdentity: MangroveIdentity
         readonly showAllQuestionsAtOnce: UIEventSource<boolean>
         readonly preferencesAsTags: Store<Record<string, string>>

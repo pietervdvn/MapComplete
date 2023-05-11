@@ -26,28 +26,38 @@
     --alert-color: #fee4d1;
     --alert-foreground-color: var(--foreground-color);
 
+    --low-interaction-background: #eeeeee;
+    --low-interaction-foreground: black;
+    --low-interaction-contrast: #ff00ff;
+
+    --interactive-background: #dddddd;
+    --interactive-foreground: black;
+    --interactive-contrast: #ff00ff;
+
+    --button-background: #737373;
+    --button-foreground: white;
+
     /**
      * Base colour of interactive elements, mainly the 'subtle button'
+     * @deprecated
      */
     --subtle-detail-color: #dbeafe;
     --subtle-detail-color-contrast: black;
     --subtle-detail-color-light-contrast: lightgrey;
 
-    /**
-       * A stronger variant of the 'subtle-detail-colour'
-       * Used as subtle button hover
-       */
-    --unsubtle-detail-color: #bfdbfe;
-    --unsubtle-detail-color-contrast: black;
 
-    --catch-detail-color: #3a3aeb;
-    --catch-detail-color-contrast: white;
+    --catch-detail-color: black; /*#3a3aeb;*/
+    --catch-detail-foregroundcolor: white;
+    --catch-detail-color-contrast: #fb3afb;
 
 
     --image-carousel-height: 350px;
 
 }
 
+/***********************************************************************\
+* Various tweaks and settings to make some behaviours more predictable *
+\***********************************************************************/
 html,
 body {
     height: 100%;
@@ -60,7 +70,6 @@ body {
     font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-
 svg,
 img {
     box-sizing: content-box;
@@ -68,95 +77,14 @@ img {
     height: 100%;
 }
 
-.no-images img {
-    /* Used solely in 'imageAttribution' */
-    display: none;
-}
-
-.text-white a {
-    /* Used solely in 'imageAttribution' */
-    color: var(--background-color);
-}
-
-
-.weblate-link {
-    /* Weblate-links are the little translation icon next to translatable sentences. Due to their special nature, they are exempt from some rules */
-}
-
-
-a {
-    color: var(--foreground-color);
-}
-
-
-.btn {
-    line-height: 1.25rem;
-    --tw-text-opacity: 1;
-    color: var(--catch-detail-color-contrast);
-    --tw-bg-opacity: 1;
-    background-color: var(--catch-detail-color);
-    display: inline-flex;
-    border-radius: 1.5rem;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    font-size: large;
-    font-weight: bold;
-    transition: 100ms;
-    /*-- invisible border: rendered on hover*/
-    border: 3px solid var(--unsubtle-detail-color);
-}
-
-.btn:hover {
-    border: 3px solid var(--catch-detail-color);
-}
-
-.btn-secondary {
-    background-color: var(--catch-detail-color);
-    filter: saturate(0.5);
-}
-
-.btn-secondary:hover {
-    background-color: var(--catch-detail-color);
-    filter: unset;
-}
-
-.btn-disabled {
-    filter: saturate(0.3);
-    cursor: default;
-}
-
-.btn-disabled:hover {
-    border: 3px solid var(--unsubtle-detail-color);
-}
-
-.rounded-left-full {
-    border-bottom-left-radius: 999rem;
-    border-top-left-radius: 999rem;
-}
-
-.rounded-right-full {
-    border-bottom-right-radius: 999rem;
-    border-top-right-radius: 999rem;
-}
-
-.link-underline a {
-    text-decoration: underline 1px var(--foreground-color);
-}
-
-a.link-underline {
-    text-decoration: underline 1px var(--foreground-color);
-}
-
-.link-no-underline a {
-    text-decoration: none;
-}
-
 li {
     margin-left: 0.5em;
     padding-left: 0.2em;
     margin-top: 0.1em;
+}
+
+li::marker {
+    content: "•";
 }
 
 h1 {
@@ -181,20 +109,21 @@ h3 {
     font-weight: bold;
 }
 
-h3 {
-    font-size: larger;
-    margin-top: 0.6em;
-    margin-bottom: 0;
-    font-weight: bolder;
-}
-
 p {
     padding-top: 0.1em;
 }
 
-li::marker {
-    content: "•";
+input {
+    color: var(--foreground-color);
 }
+
+/************************* BIG CATEGORIES ********************************/
+
+/**
+ * The main classes that dictate the structure of the entire app,
+ * and some interactive elements
+ */
+
 
 .subtle-background {
     background: var(--subtle-detail-color);
@@ -206,8 +135,289 @@ li::marker {
     color: var(--foreground-color);
 }
 
+.low-interaction {
+    background: var(--low-interaction-background);
+    color: var(--low-interaction-foreground)
+}
+
+.interactive {
+    background: var(--interactive-background);
+    color: var(--interactive-foreground)
+}
+
+.border-interactive {
+    border: 2px dashed var(--catch-detail-color-contrast);
+    border-radius: 0.5rem;
+}
+
+
+/******************* Styling of input elements **********************/
+
+/**
+ * This very important section defines what the various input elements look like within the 'low-interaction' and 'interactive'-blocks
+ */
+
+button.disabled {
+    cursor: default;
+    border: 2px dashed var(--button-background);
+    background: unset;
+    color: unset;
+    box-shadow: none;
+}
+
+button.disabled:hover {
+    cursor: default;
+    border: 2px dashed var(--button-background);
+    background: unset;
+    color: unset;
+}
+
+
+button:hover {
+    border: 2px solid var(--catch-detail-color-contrast);
+    background-color: var(--catch-detail-color);
+    color: var(--catch-detail-foregroundcolor);
+}
+
+button:hover img {
+    background: var(--low-interaction-background);
+    border-radius: 100rem;
+}
+
+
+button {
+    display: inline-flex;
+    line-height: 1.25rem;
+    margin: 0.2rem;
+    padding: 0.4rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    font-size: large;
+    font-weight: bold;
+    color: var(--button-foreground);
+    background: var(--button-background);
+    /*-- invisible border: rendered on hover*/
+    border: 2px solid var(--button-background);
+    border-radius: 0.5rem;
+    transition: all 250ms;
+    --tw-text-opacity: 1;
+    --tw-bg-opacity: 1;
+}
+
+button .button-shadow {
+    box-shadow: 0 5px 10px #88888888;
+}
+
+button.selected {
+    background-color: var(--catch-detail-color);
+    border-color: var(--catch-detail-color);
+
+    color: var(--catch-detail-foregroundcolor);
+}
+
+button.selected svg path {
+    fill: var(--catch-detail-foregroundcolor) !important;
+}
+
+button svg path {
+    fill: var(--button-foreground) !important;;
+}
+
+.interactive button.disabled svg path {
+    fill: var(--interactive-foreground) !important;;
+}
+
+.low-interaction button.disabled svg path {
+    fill: var(--low-interaction-foreground) !important;;
+}
+
+.normal-background button.disabled svg path {
+    fill: var(--foreground-color) !important;
+}
+
+button.disabled.secondary:hover {
+    background: unset;
+    color: unset;
+}
+
+button.secondary {
+    background: var(--low-interaction-background);
+    color: var(--low-interaction-foreground);
+    border-color: var(--button-background);
+}
+
+.interactive button.secondary {
+    background: var(--interactive-background);
+    color: var(--interactive-foreground);
+}
+
+button.secondary svg path {
+    fill: var(--low-interaction-foreground) !important;
+    transition: all 250ms;
+}
+
+button.secondary.disabled {
+    background: unset;
+    color: var(--low-interaction-foreground);
+}
+
+button.secondary.disabled svg path {
+    fill: var(--low-interaction-foreground) !important;
+}
+
+button.secondary:hover {
+    background-color: var(--catch-detail-color);
+    color: var(--catch-detail-foregroundcolor);
+    border-color: var(--catch-detail-color-contrast);
+}
+
+button.secondary:hover svg path {
+    fill: var(--catch-detail-foregroundcolor) !important;;
+}
+
+button.secondary.disabled:hover svg path {
+    fill: var(--low-interaction-foreground) !important;;
+}
+
+label {
+    /**
+     * Label should _contain_ the input element
+     */
+    border: 2px solid var(--interactive-background);
+    padding: 0.25rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--low-interaction-background);
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    transition: all 250ms;
+}
+
+label:hover {
+    background-color: var(--catch-detail-color);
+    color: var(--catch-detail-foregroundcolor);
+    border: 2px solid var(--interactive-contrast)
+}
+
+label img {
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    background: var(--low-interaction-background);
+}
+
+label svg path {
+    transition: all 250ms;
+}
+
+label:hover svg path {
+    fill: var(--catch-detail-foregroundcolor) !important;
+}
+
+label.checked {
+    border: 2px solid var(--foreground-color);
+}
+
+/************************* OTHER CATEGORIES ********************************/
+
+/**
+ * Smaller categories which convey some semantic information but don't define bigger blocks.
+ * As they are _semantic_ categories, they can be styled
+ */
+
+.thanks {
+    /* The class to indicate 'operation successful' or 'thank you for contributing' */
+    background-color: #43d904;
+    font-weight: bold;
+    border-radius: 1em;
+    margin: 0.25em;
+    text-align: center;
+    padding: 0.15em 0.3em;
+}
+
+.alert {
+    /* The class to convey important information, e.g. 'invalid', 'something went wrong', 'warning: testmode', ... */
+    background-color: var(--alert-color);
+    color: var(--alert-foreground-color);
+    font-weight: bold;
+    border-radius: 1em;
+    margin: 0.25em;
+    text-align: center;
+    padding: 0.15em 0.3em;
+}
+
+.subtle {
+    /* For all information that is not important for 99% of the users */
+    color: #999;
+}
+
+.link-underline .subtle a {
+    text-decoration: underline 1px #7193bb88;
+    color: #7193bb;
+}
+
+
+.literal-code {
+    /* A codeblock */
+    display: inline-block;
+    background-color: lightgray;
+    padding: 0.1rem;
+    padding-left: 0.35rem;
+    padding-right: 0.35rem;
+    word-break: break-word;
+    color: black;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+.interactive .literal-code {
+    background-color: #b3b3b3;
+}
+
+/************************** UTILITY ************************/
+
+/** 
+ * Utility classes are there for a specific function to pin down browser behaviour (and cannot be changed)
+ */
+
+
+.text-white a {
+    /* Used solely in 'imageAttribution'  and in many themes*/
+    color: var(--background-color);
+}
+
 .block-ruby {
     display: block ruby;
+}
+
+
+.rounded-left-full {
+    border-bottom-left-radius: 999rem;
+    border-top-left-radius: 999rem;
+}
+
+.rounded-right-full {
+    border-bottom-right-radius: 999rem;
+    border-top-right-radius: 999rem;
+}
+
+
+.no-images img {
+    /* Used solely in 'imageAttribution' and in many themes for the label*/
+    display: none;
+}
+
+.link-underline a {
+    text-decoration: underline 1px var(--foreground-color);
+}
+
+a.link-underline {
+    text-decoration: underline 1px var(--foreground-color);
+}
+
+.link-no-underline a {
+    text-decoration: none;
 }
 
 .disable-links a {
@@ -229,6 +439,13 @@ li::marker {
 }
 
 
+.zebra-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+/************************* MISC ELEMENTS *************************/
+
 .selected svg:not(.noselect *) path.selectable {
     /* A marker on the map gets the 'selected' class when it's properties are displayed
     */
@@ -246,7 +463,6 @@ li::marker {
     overflow: visible !important;
 }
 
-
 @-webkit-keyframes glowing-drop-shadow {
     from {
         filter: drop-shadow(5px 5px 60px rgb(128 128 128 / 0.6));
@@ -254,37 +470,6 @@ li::marker {
     to {
         filter: drop-shadow(5px 5px 80px rgb(0.5 0.5 0.5 / 0.8));
     }
-}
-
-
-/**************** GENERIC ****************/
-
-.alert {
-    background-color: var(--alert-color);
-    color: var(--alert-foreground-color);
-    font-weight: bold;
-    border-radius: 1em;
-    margin: 0.25em;
-    text-align: center;
-    padding: 0.15em 0.3em;
-}
-
-.subtle {
-    color: #999;
-}
-
-.link-underline .subtle a {
-    text-decoration: underline 1px #7193bb88;
-    color: #7193bb;
-}
-
-.thanks {
-    background-color: #43d904;
-    font-weight: bold;
-    border-radius: 1em;
-    margin: 0.25em;
-    text-align: center;
-    padding: 0.15em 0.3em;
 }
 
 @keyframes slide {
@@ -297,48 +482,6 @@ li::marker {
         transform: translateX(calc(-100% + 42px));
     }
 }
-
-
-/***************** Info box (box containing features and questions ******************/
-
-input {
-    color: var(--foreground-color);
-}
-
-.literal-code {
-    display: inline-block;
-    background-color: lightgray;
-    padding: 0.5em;
-    word-break: break-word;
-    color: black;
-    box-sizing: border-box;
-}
-
-/** Switch layout **/
-.small-image img {
-    height: 1em;
-    max-width: 1em;
-}
-
-.small-image {
-    height: 1em;
-    max-width: 1em;
-}
-
-.slideshow-item img {
-    height: var(--image-carousel-height);
-    width: unset;
-}
-
-.animate-height {
-    transition: max-height 0.5s ease-in-out;
-    overflow-y: hidden;
-}
-
-.zebra-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
 
 .glowing-shadow {
     -webkit-animation: glowing 1s ease-in-out infinite alternate;
@@ -354,4 +497,21 @@ input {
         box-shadow: 0 0 20px 20px #eaaf2588, inset 0 0 5px 1px #eaaf25;
     }
 }
+
+
+/************************* LEGACY MARKER - CLEANUP BELOW ********************************/
+
+
+.slideshow-item img {
+    /* Legacy: should be replace when the image element is ported to Svelte*/
+    height: var(--image-carousel-height);
+    width: unset;
+}
+
+.animate-height {
+    /* Legacy: should be replaced by headlessui disclosure in time */
+    transition: max-height 0.5s ease-in-out;
+    overflow-y: hidden;
+}
+
 

@@ -109,51 +109,6 @@ export default class MoreScreen extends Combine {
         ])
     }
 
-    /**
-     * Creates a button linking to the given theme
-     * @private
-     */
-    public static createLinkButton(
-        state: {
-            locationControl?: UIEventSource<Loc>
-            layoutToUse?: LayoutConfig
-        },
-        layout: {
-            id: string
-            icon: string
-            title: any
-            shortDescription: any
-            definition?: any
-            mustHaveLanguage?: boolean
-        },
-        isCustom: boolean = false
-    ): BaseUIElement {
-        const url = MoreScreen.createUrlFor(layout, isCustom, state)
-        let content = new Combine([
-            new Translation(
-                layout.title,
-                !isCustom && !layout.mustHaveLanguage ? "themes:" + layout.id + ".title" : undefined
-            ),
-            new Translation(layout.shortDescription)?.SetClass("subtle") ?? "",
-        ]).SetClass("overflow-hidden flex flex-col")
-
-        if (state.layoutToUse === undefined) {
-            // Currently on the index screen: we style the buttons equally large
-            content = new Combine([content]).SetClass("flex flex-col justify-center h-24")
-        }
-
-        return new SubtleButton(layout.icon, content, { url, newTab: false })
-    }
-
-    public static CreateProffessionalSerivesButton() {
-        const t = Translations.t.professional.indexPage
-        return new Combine([
-            new Title(t.hook, 4),
-            t.hookMore,
-            new SubtleButton(undefined, t.button, { url: "./professional.html" }),
-        ]).SetClass("flex flex-col border border-gray-300 p-2 rounded-lg")
-    }
-
     public static MatchesLayout(
         layout: {
             id: string

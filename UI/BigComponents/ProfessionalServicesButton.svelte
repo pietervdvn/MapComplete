@@ -1,8 +1,9 @@
 <script lang="ts">
-  import SubtleButton from "../Base/SubtleButton.svelte"
   import Title from "../Base/Title"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Translations from "../i18n/Translations"
+  import SubtleLink from "../Base/SubtleLink.svelte";
+  import Tr from "../Base/Tr.svelte";
 
   const t = Translations.t.professional.indexPage
 </script>
@@ -12,9 +13,9 @@
   <span>
     {t.hookMore.toString()}
   </span>
-  <SubtleButton options={{ url: "./professional.html" }}>
-    <span slot="message">{t.button.toString()}</span>
-  </SubtleButton>
+  <SubtleLink href="./professional.html">
+    <Tr slot="message" t={t.button} />
+  </SubtleLink>
 </div>
 
 <style lang="scss">

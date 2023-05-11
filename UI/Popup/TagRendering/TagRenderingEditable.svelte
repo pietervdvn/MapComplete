@@ -4,7 +4,7 @@
     import type {Feature} from "geojson";
     import type {SpecialVisualizationState} from "../../SpecialVisualization";
     import TagRenderingAnswer from "./TagRenderingAnswer.svelte";
-    import {PencilAltIcon} from "@rgossiaux/svelte-heroicons/solid";
+    import {PencilAltIcon, XCircleIcon} from "@rgossiaux/svelte-heroicons/solid";
     import TagRenderingQuestion from "./TagRenderingQuestion.svelte";
     import {onDestroy} from "svelte";
     import Tr from "../../Base/Tr.svelte";
@@ -33,10 +33,10 @@
         if (editMode && htmlElem !== undefined) {
             // EditMode switched to true, so the person wants to make a change
             // Make sure that the question is in the scrollview!
-            
+
             // Some delay is applied to give Svelte the time to render the _question_
             window.setTimeout(() => {
-                
+
                 Utils.scrollIntoView(htmlElem)
             }, 50)
         }
@@ -68,23 +68,28 @@
 
 </script>
 
-<div bind:this={htmlElem}>
+<div bind:this={htmlElem} class="">
     {#if config.question && $editingEnabled}
         {#if editMode}
-            <TagRenderingQuestion {config} {tags} {selectedElement} {state} {layer}>
-                <button slot="cancel" on:click={() => {editMode = false}}>
-                    <Tr t={Translations.t.general.cancel}/>
-                </button>
-            </TagRenderingQuestion>
+            <div class="m-1 mx-2">
+                <TagRenderingQuestion {config} {tags} {selectedElement} {state} {layer}>
+                    <button slot="cancel" class="secondary" on:click={() => {editMode = false}}>
+                        <Tr t={Translations.t.general.cancel}/>
+                    </button>
+                    <XCircleIcon slot="upper-right" class="w-8 h-8" on:click={() => {editMode = false}}/>
+                </TagRenderingQuestion>
+            </div>
         {:else}
-            <div class="flex justify-between">
+            <div class="flex justify-between low-interaction items-center m-1 mx-2 p-1 px-2 rounded">
                 <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer}/>
-                <button on:click={() => {editMode = true}} class="shrink-0 w-6 h-6 rounded-full subtle-background p-1">
+                <button on:click={() => {editMode = true}} class="shrink-0 w-8 h-8 rounded-full p-1 secondary self-start">
                     <PencilAltIcon/>
                 </button>
             </div>
         {/if}
     {:else }
-        <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer}/>
+        <div class="m-1 p-1 px-2 mx-2">
+            <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer}/>
+        </div>
     {/if}
 </div>

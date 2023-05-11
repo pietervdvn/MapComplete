@@ -2,7 +2,6 @@
     import {Store, UIEventSource} from "../../../Logic/UIEventSource";
     import type {SpecialVisualizationState} from "../../SpecialVisualization";
     import Tr from "../../Base/Tr.svelte";
-    import If from "../../Base/If.svelte";
     import type {Feature} from "geojson";
     import type {Mapping} from "../../../Models/ThemeConfig/TagRenderingConfig";
     import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig";
@@ -10,15 +9,15 @@
     import FreeformInput from "./FreeformInput.svelte";
     import Translations from "../../i18n/Translations.js";
     import ChangeTagAction from "../../../Logic/Osm/Actions/ChangeTagAction";
-    import {createEventDispatcher, onDestroy} from "svelte";
+    import {createEventDispatcher} from "svelte";
     import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
-    import {ExclamationIcon} from "@rgossiaux/svelte-heroicons/solid";
     import SpecialTranslation from "./SpecialTranslation.svelte";
     import TagHint from "../TagHint.svelte";
     import LoginToggle from "../../Base/LoginToggle.svelte";
     import SubtleButton from "../../Base/SubtleButton.svelte";
     import Loading from "../../Base/Loading.svelte";
     import TagRenderingMappingInput from "./TagRenderingMappingInput.svelte";
+    import {Translation} from "../../i18n/Translation";
 
     export let config: TagRenderingConfig;
     export let tags: UIEventSource<Record<string, string>>;
@@ -26,13 +25,16 @@
     export let state: SpecialVisualizationState;
     export let layer: LayerConfig;
 
+    let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined);
+    feedback.addCallbackAndRunD(f => console.trace("Feedback is now", f.txt))
+
     // Will be bound if a freeform is available
     let freeformInput = new UIEventSource<string>(tags?.[config.freeform?.key]);
     let selectedMapping: number = undefined;
     let checkedMappings: boolean[];
     $: {
         mappings = config.mappings?.filter(m => {
-            if(typeof m.hideInAnswer === "boolean"){
+            if (typeof m.hideInAnswer === "boolean") {
                 return !m.hideInAnswer
             }
             return m.hideInAnswer.matchesProperties(tags.data)
@@ -43,9 +45,10 @@
         }
         if (config.freeform?.key) {
             freeformInput.setData(tags.data[config.freeform.key]);
-        }else{
+        } else {
             freeformInput.setData(undefined)
         }
+        feedback.setData(undefined)
     }
     let selectedTags: TagsFilter = undefined;
 
@@ -108,24 +111,24 @@
         ).catch(console.error);
     }
 
-
+    let featureSwitchIsTesting = state.featureSwitchIsTesting
+    let featureSwitchIsDebugging = state.featureSwitches.featureSwitchIsDebugging
+    let showTags = state.userRelatedState.showTags
 </script>
 
 {#if config.question !== undefined}
-    <div class="border border-black subtle-background flex flex-col">
-        <If condition={state.featureSwitchIsTesting}>
-            <div class="flex justify-between">
-        <span>
-          <SpecialTranslation t={config.question} {tags} {state} {layer} feature={selectedElement}></SpecialTranslation>
-        </span>
-                <span class="alert">{config.id}</span>
-            </div>
-            <SpecialTranslation slot="else" t={config.question} {tags} {state} {layer}
-                                feature={selectedElement}></SpecialTranslation>
-        </If>
+    <div class="interactive border-interactive p-1 px-2 flex flex-col">
+        <div class="flex justify-between">
+            <span class="font-bold">
+              <SpecialTranslation t={config.question} {tags} {state} {layer}
+                                  feature={selectedElement}></SpecialTranslation>
+            </span>
+            <slot name="upper-right"/>
+
+        </div>
 
         {#if config.questionhint}
-            <div class="subtle">
+            <div>
                 <SpecialTranslation t={config.questionhint} {tags} {state} {layer}
                                     feature={selectedElement}></SpecialTranslation>
             </div>
@@ -140,7 +143,7 @@
 
         {#if config.freeform?.key && !(mappings?.length > 0)}
             <!-- There are no options to choose from, simply show the input element: fill out the text field -->
-            <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput}/>
+            <FreeformInput {config} {tags} {feedback} feature={selectedElement} value={freeformInput}/>
         {:else if mappings !== undefined && !config.multiAnswer}
             <!-- Simple radiobuttons as mapping -->
             <div class="flex flex-col">
@@ -176,7 +179,7 @@
                     <label class="flex">
                         <input type="checkbox" name={"mappings-checkbox-"+config.id+"-"+config.mappings?.length}
                                bind:checked={checkedMappings[config.mappings.length]}>
-                        <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput}
+                        <FreeformInput {config} {tags} {feedback} feature={selectedElement} value={freeformInput}
                                        on:selected={() => checkedMappings[config.mappings.length] = true}/>
                     </label>
                 {/if}
@@ -189,24 +192,34 @@
                 <img slot="image" src="./assets/svg/login.svg" class="w-8 h-8"/>
                 <Tr t={Translations.t.general.loginToStart} slot="message"></Tr>
             </SubtleButton>
-
-
-            <TagHint osmConnection={state.osmConnection} tags={selectedTags}></TagHint>
-            <div>
+            <div class="flex justify-end">
                 <!-- TagRenderingQuestion-buttons -->
-                <slot name="cancel"></slot>
-
-                {#if selectedTags !== undefined}
-                    <button on:click={onSave}>
-                        <Tr t={Translations.t.general.save}></Tr>
-                    </button>
-                {:else }
-                    <div class="inline-flex w-6 h-6">
-                        <!-- Invalid value; show an inactive button or something like that-->
-                        <ExclamationIcon/>
+                {#if $feedback !== undefined}
+                    <div class="alert">
+                        <Tr t={$feedback}/>
                     </div>
                 {/if}
+
+                <slot name="cancel"></slot>
+
+                <button on:click={onSave} class={selectedTags === undefined ? "disabled" : "button-shadow"}>
+                    <Tr t={Translations.t.general.save}></Tr>
+                </button>
             </div>
+            {#if $showTags === "yes" || $showTags === "always" || $featureSwitchIsTesting || $featureSwitchIsDebugging}
+                <span class="flex justify-between flex-wrap">
+                    <TagHint {state} tags={selectedTags}></TagHint>
+                    <span class="flex flex-wrap">
+                        {#if $featureSwitchIsTesting}
+                        Testmode &nbsp;
+                        {/if}
+                        {#if $featureSwitchIsTesting || $featureSwitchIsDebugging}
+                            <span class="subtle">{config.id}</span>
+                        {/if}
+                           
+                    </span>
+                </span>
+            {/if}
         </LoginToggle>
     </div>
 {/if}

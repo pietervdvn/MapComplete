@@ -17,6 +17,7 @@
   import SubtleButton from "../Base/SubtleButton.svelte"
   import ToSvelte from "../Base/ToSvelte.svelte"
   import Translations from "../i18n/Translations"
+  import Tr from "../Base/Tr.svelte";
 
   export let search: UIEventSource<string>
 
@@ -30,14 +31,12 @@
       search.setData("")
     }}
   >
-    <span>
       <SubtleButton>
         <span slot="image">
           <ToSvelte construct={Svg.search_disable_svg().SetClass("w-6 mr-2")} />
         </span>
-        <span slot="message">{t.noSearch.toString()}</span>
+        <Tr t={t.noSearch} slot="message"/>
       </SubtleButton>
-    </span>
   </button>
 </span>
 

@@ -637,6 +637,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
                     or: [
                         "__featureSwitchIsTesting=true",
                         "__featureSwitchIsDebugging=true",
+                        "mapcomplete-show_tags=full",
                         "mapcomplete-show_debug=yes",
                     ],
                 },

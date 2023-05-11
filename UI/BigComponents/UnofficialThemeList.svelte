@@ -17,7 +17,9 @@
   const t = Translations.t.general
   const currentIds: Store<string[]> = state.installedUserThemes
   const stableIds = Stores.ListStabilized<string>(currentIds)
+  let customThemes
   $: customThemes = Utils.NoNull($stableIds.map((id) => state.GetUnofficialTheme(id)))
+  $: console.log("Custom themes are", customThemes)
 </script>
 
 <ThemesList

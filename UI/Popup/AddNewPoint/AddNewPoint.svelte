@@ -230,7 +230,7 @@
       {/each}
       </span>
     {/if}
-    <TagHint embedIn={tags => t.presetInfo.Subs({tags})} osmConnection={state.osmConnection}
+    <TagHint embedIn={tags => t.presetInfo.Subs({tags})} {state}
              tags={new And(selectedPreset.preset.tags)}></TagHint>
 
 

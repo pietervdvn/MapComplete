@@ -75,7 +75,7 @@ let mappingIsHidden: Store<boolean> = tags.map(tags => {
 
 {#if $matchesTerm && !$mappingIsHidden }
 
-    <label class="flex">
+    <label class={"flex "+ (mappingIsSelected ? "checked": "")}>
         <slot/>
         <TagRenderingMapping {mapping} {tags} {state} {selectedElement}
                              {layer}></TagRenderingMapping>
