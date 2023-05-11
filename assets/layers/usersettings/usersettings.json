@@ -143,6 +143,41 @@
       ]
     },
     {
+      "id": "show_tags",
+      "question": {
+        "en": "Show the raw OpenStreetMap-tags?"
+      },
+      "questionHint": {
+        "en": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference."
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-show_tags=no",
+          "then": {
+            "en": "Never show the tags."
+          }
+        },
+        {
+          "if": "mapcomplete-show_tags=",
+          "then": {
+            "en": "Show the tags that will be applied once I have made {__userjourney_tagsVisibleAt} changesets"
+          }
+        },
+        {
+          "if": "mapcomplete-show_tags=yes",
+          "then": {
+            "en": "Show the tags that will be applied when making a change"
+          }
+        },
+        {
+          "if": "mapcomplete-show_tags=full",
+          "then": {
+            "en": "Show the tags that will be applied when making a change and show the tags table on every feature"
+          }
+        }
+      ]
+    },
+    {
       "id": "all-questions-at-once",
       "question": {
         "en": "Should questions for unknown data fields appear one-by-one or together?",
@@ -196,6 +231,7 @@
       "mappings": [
         {
           "if": "mapcomplete-translation-mode=false",
+          "icon": "./assets/layers/usersettings/translate_disabled.svg",
           "then": {
             "en": "Don't show a button to quickly change translations",
             "de": "Keine Schaltfläche zum schnellen Wechseln von Übersetzungen anzeigen",
@@ -206,6 +242,7 @@
         },
         {
           "if": "mapcomplete-translation-mode=true",
+          "icon": "./assets/svg/translate.svg",
           "then": {
             "en": "Show a button to quickly open translations when using MapComplete on a big screen",
             "de": "Schaltfläche anzeigen zum schnellen Öffnen von Übersetzungen beim Verwenden von MapComplete auf einem großen Bildschirm",
@@ -216,6 +253,7 @@
         },
         {
           "if": "mapcomplete-translation-mode=mobile",
+          "icon": "./assets/layers/usersettings/translate_mobile.svg",
           "then": {
             "en": "Always show the translation buttons, including on mobile",
             "de": "Übersetzungsschaltflächen immer anzeigen, auch auf dem Handy",
