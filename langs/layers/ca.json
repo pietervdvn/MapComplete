@@ -4958,7 +4958,8 @@
                         "then": "Aquesta càmera està posicionada a un arbre"
                     }
                 },
-                "question": "Com està posicionada aquesta càmera?"
+                "question": "Com està posicionada aquesta càmera?",
+                "render": "Mètode de muntatge: {camera:mount}"
             },
             "camera_direction": {
                 "question": "En quina direcció geogràfica apunta aquesta càmera?",

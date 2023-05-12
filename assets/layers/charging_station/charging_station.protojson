@@ -801,8 +801,8 @@
         "socket:typee=1"
       ],
       "title": {
-        "en": "charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/TypeE.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)",
-        "nl": "oplaadpunt voor elektrische fietsen"
+        "en": "charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/TypeE.svg' class="w-4 h-4 mx-1 bg-white rounded-full"/>",
+        "nl": "oplaadpunt voor elektrische fietsen met een gewone, europese stekker <img src='./assets/layers/charging_station/TypeE.svg' class="w-4 h-4 mx-1 bg-white rounded-full"/>"
       },
       "preciseInput": {
         "preferredBackground": "map"
