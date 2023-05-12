@@ -4605,12 +4605,12 @@
         "socket:typee=1"
       ],
       "title": {
-        "en": "a charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (meant to charge electrical bikes)",
-        "nl": "een oplaadpunt voor elektrische fietsen met een gewoon Europees stopcontact <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (speciaal bedoeld voor fietsen)",
-        "ca": "una estació de càrrega per a bicicletes elèctriques amb un endoll de paret europeu normal<img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (destinat a carregar bicicletes elèctriques)",
-        "da": "en ladestation til elektriske cykler med et normalt europæisk vægstik <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (beregnet til opladning af elektriske cykler)",
-        "de": "eine Ladestation für Elektrofahrräder mit einer normalen europäischen Steckdose <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (zum Laden von Elektrofahrrädern)",
-        "es": "una estación de carga para bicicletas eléctricas con un enchufe de pared europeo normal <img src='./assets/layers/charging_station/typee.svg' style='width: 2rem; height: 2rem; float: left; background: white; border-radius: 1rem; margin-right: 0.5rem'/> (pensado para cargar bicicletas eléctricas)"
+        "en": "a charging station for electrical bikes with a normal european wall plug  <img src='./assets/layers/charging_station/TypeE.svg' class=\"w-4 h-4 mx-1 bg-white rounded-full\"/>",
+        "nl": "een oplaadpunt voor elektrische fietsen met een gewoon Europees stopcontact  <img src='./assets/layers/charging_station/TypeE.svg' class=\"w-4 h-4 mx-1 bg-white rounded-full\"/>",
+        "ca": "una estació de càrrega per a bicicletes elèctriques amb un endoll de paret europeu normal  <img src='./assets/layers/charging_station/TypeE.svg' class=\"w-4 h-4 mx-1 bg-white rounded-full\"/>",
+        "da": "en ladestation til elektriske cykler med et normalt europæisk vægstik  <img src='./assets/layers/charging_station/TypeE.svg' class=\"w-4 h-4 mx-1 bg-white rounded-full\"/>",
+        "de": "eine Ladestation für Elektrofahrräder mit einer normalen europäischen Steckdose  <img src='./assets/layers/charging_station/TypeE.svg' class=\"w-4 h-4 mx-1 bg-white rounded-full\"/>",
+        "es": "una estación de carga para bicicletas eléctricas con un enchufe de pared europeo normal  <img src='./assets/layers/charging_station/TypeE.svg' class=\"w-4 h-4 mx-1 bg-white rounded-full\"/>"
       },
       "preciseInput": {
         "preferredBackground": "map"
