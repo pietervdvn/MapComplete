@@ -29,6 +29,8 @@
     import {onDestroy} from "svelte";
     import NextButton from "../../Base/NextButton.svelte";
     import BackButton from "../../Base/BackButton.svelte";
+    import ToSvelte from "../../Base/ToSvelte.svelte";
+    import Svg from "../../../Svg";
 
     export let coordinate: { lon: number, lat: number };
     export let state: SpecialVisualizationState;
@@ -160,27 +162,26 @@
 
     {:else if !$layerIsDisplayed}
         <!-- Check that the layer is enabled, so that we don't add a duplicate -->
-        <div class="alert flex justify-center items-center">
+        <div class="alert flex  justify-center items-center">
             <EyeOffIcon class="w-8"/>
             <Tr t={Translations.t.general.add.layerNotEnabled
                     .Subs({ layer: selectedPreset.layer.name })
                    }/>
         </div>
 
-        <SubtleButton on:click={() => {
-      layerIsDisplayed.setData(true)
-      abort()
-    }}>
-            <EyeIcon slot="image" class="w-8"/>
-            <Tr slot="message" t={Translations.t.general.add.enableLayer.Subs({name: selectedPreset.layer.name})}/>
-        </SubtleButton>
+        <div class="flex flex-wrap-reverse md:flex-nowrap">
 
-        <SubtleButton on:click={() => {
-      abort()
-      state.guistate.openFilterView(selectedPreset.layer)    }    }>
-            <img src="./assets/svg/layers.svg" slot="image" class="w-6">
-            <Tr slot="message" t={Translations.t.general.add.openLayerControl}></Tr>
-        </SubtleButton>
+            <button class="flex w-full gap-x-1"
+                    on:click={() => {abort();state.guistate.openFilterView(selectedPreset.layer)}}>
+                <ToSvelte construct={Svg.layers_svg().SetClass("w-12")}/>
+                <Tr t={Translations.t.general.add.openLayerControl}/>
+            </button>
+
+            <button class="flex w-full gap-x-1 primary" on:click={() => {layerIsDisplayed.setData(true);abort()}}>
+                <EyeIcon class="w-12"/>
+                <Tr t={Translations.t.general.add.enableLayer.Subs({name: selectedPreset.layer.name})}/>
+            </button>
+        </div>
 
 
     {:else if $layerHasFilters}
@@ -189,33 +190,24 @@
             <EyeOffIcon class="w-8"/>
             <Tr t={Translations.t.general.add.disableFiltersExplanation}/>
         </div>
-
-        <SubtleButton on:click={() => {
-      abort()
-      const flayer = state.layerState.filteredLayers.get(selectedPreset.layer.id)
-      flayer.disableAllFilters()
-    }
-    }>
-            <EyeOffIcon class="w-8"/>
-            <Tr slot="message" t={Translations.t.general.add.disableFilters}></Tr>
-        </SubtleButton>
-
-
-        <SubtleButton options={{extraClasses:"secondary"}} on:click={() => {
-      abort()
-      state.guistate.openFilterView(selectedPreset.layer)
-    }
-    }>
-            <img src="./assets/svg/layers.svg" slot="image" class="w-6">
-            <Tr slot="message" t={Translations.t.general.add.openLayerControl}></Tr>
-        </SubtleButton>
+        <div class="flex flex-wrap-reverse md:flex-nowrap">
+            <button class="flex w-full gap-x-1 primary"
+                    on:click={() => {abort(); state.layerState.filteredLayers.get(selectedPreset.layer.id).disableAllFilters()}    }>
+                <EyeOffIcon class="w-12"/>
+                <Tr t={Translations.t.general.add.disableFilters}/>
+            </button>
+            <button class="flex w-full gap-x-1" on:click={() => {abort();state.guistate.openFilterView(selectedPreset.layer)}}>
+                <ToSvelte construct={Svg.layers_svg().SetClass("w-12")}/>
+                <Tr t={Translations.t.general.add.openLayerControl}/>
+            </button>
+        </div>
 
     {:else if !confirmedCategory  }
         <!-- Second, confirm the category -->
         <h2>
             <Tr t={Translations.t.general.add.confirmTitle.Subs({title: selectedPreset.preset.title})}/>
         </h2>
-        
+
         <Tr t={Translations.t.general.add.confirmIntro}/>
 
 
@@ -240,7 +232,7 @@
         <TagHint embedIn={tags => t.presetInfo.Subs({tags})} {state}
                  tags={new And(selectedPreset.preset.tags)}></TagHint>
 
-        <div class="flex w-full">
+        <div class="flex w-full flex-wrap-reverse md:flex-nowrap">
 
             <BackButton on:click={() => selectedPreset = undefined} clss="w-full">
                 <Tr slot="message" t={t.backToSelect}/>
@@ -272,18 +264,18 @@
     {:else if !creating}
         <NewPointLocationInput value={preciseCoordinate} snappedTo={snappedToObject} {state} {coordinate}
                                targetLayer={selectedPreset.layer}
-                               snapToLayers={selectedPreset.preset.preciseInput.snapToLayers}></NewPointLocationInput>
-        <div class="flex">
-            
-        <BackButton on:click={() => selectedPreset = undefined} clss="w-full">
-            <Tr slot="message" t={t.backToSelect}/>
-        </BackButton>
+                               snapToLayers={selectedPreset.preset.preciseInput.snapToLayers}/>
+        <div class="flex flex-wrap-reverse md:flex-nowrap">
 
-        <NextButton on:click={confirm} clss="primary w-full">
-            <div class="w-full flex justify-end gap-x-2">
-            <Tr t={Translations.t.general.add.confirmLocation}/>
-            </div>
-        </NextButton>
+            <BackButton on:click={() => selectedPreset = undefined} clss="w-full">
+                <Tr slot="message" t={t.backToSelect}/>
+            </BackButton>
+
+            <NextButton on:click={confirm} clss="primary w-full">
+                <div class="w-full flex justify-end gap-x-2">
+                    <Tr t={Translations.t.general.add.confirmLocation}/>
+                </div>
+            </NextButton>
         </div>
     {:else}
         <Loading>Creating point...</Loading>

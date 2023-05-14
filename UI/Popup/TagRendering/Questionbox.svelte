@@ -124,8 +124,8 @@
             {/if}
 
             {#if skipped > 0 }
-                <button on:click={() => {skippedQuestions.setData(new Set()); skipped=0}}>
-                    Re-activate skipped questions
+                <button class="w-full" on:click={() => {skippedQuestions.setData(new Set()); skipped=0}}>
+                    <Tr t={Translations.t.general.questionBox.reactivate }/>
                 </button>
             {/if}
         {/if}

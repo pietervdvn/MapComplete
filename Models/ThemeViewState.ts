@@ -497,7 +497,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
             // ... search and select an element based on the hash
             Hash.hash.mapD(
                 (hash) => {
-                    console.log("Searching for an id:", hash)
                     if (this.selectedElement.data?.properties?.id === hash) {
                         // We already have the correct hash
                         return

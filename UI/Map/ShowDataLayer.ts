@@ -65,7 +65,6 @@ class PointRenderingLayer {
                 if (marker === undefined) {
                     return
                 }
-                console.log("Marking", marker, "as selected for config", config)
                 marker?.classList?.add("selected")
                 this._markedAsSelected.push(marker)
             })

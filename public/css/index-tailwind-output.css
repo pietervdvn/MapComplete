@@ -1304,6 +1304,11 @@ video {
   row-gap: 0.5rem;
 }
 
+.gap-x-1 {
+  -webkit-column-gap: 0.25rem;
+          column-gap: 0.25rem;
+}
+
 .self-start {
   align-self: flex-start;
 }
@@ -2541,6 +2546,10 @@ a.link-underline {
 
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:flex-nowrap {
+    flex-wrap: nowrap;
   }
 
   .md\:border-t-2 {
