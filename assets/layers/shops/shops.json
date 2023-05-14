@@ -16,7 +16,8 @@
   "source": {
     "osmTags": {
       "and": [
-        "shop~*"
+        "shop~*",
+        "shop!=mall"
       ]
     }
   },
