@@ -1,15 +1,17 @@
 <script lang="ts">
-  import { OsmConnection } from "../../Logic/Osm/OsmConnection";
-  import SubtleButton from "./SubtleButton.svelte";
-  import Translations from "../i18n/Translations.js";
-  import Tr from "./Tr.svelte";
+    import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+    import Translations from "../i18n/Translations.js";
+    import Tr from "./Tr.svelte";
+    import ToSvelte from "./ToSvelte.svelte";
+    import Svg from "../../Svg";
 
-  export let osmConnection: OsmConnection
+    export let osmConnection: OsmConnection
+    export let clss = ""
 </script>
 
-<SubtleButton on:click={() => osmConnection.AttemptLogin()}>
-  <img slot="image" src="./assets/svg/login.svg" class="w-8"/>
-  <slot name="message" slot="message">
-    <Tr  t={Translations.t.general.loginWithOpenStreetMap}/>
-  </slot>
-</SubtleButton>
+<button class={clss} on:click={() => osmConnection.AttemptLogin()}>
+    <ToSvelte construct={Svg.login_svg().SetClass("w-12 m-1")}/>
+    <slot name="message">
+        <Tr t={Translations.t.general.loginWithOpenStreetMap}/>
+    </slot>
+</button>

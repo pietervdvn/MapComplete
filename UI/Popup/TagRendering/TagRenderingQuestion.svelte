@@ -201,7 +201,7 @@
 
                 <slot name="cancel"></slot>
 
-                <button on:click={onSave} class={selectedTags === undefined ? "disabled" : "button-shadow"}>
+                <button on:click={onSave} class={(selectedTags === undefined ? "disabled" : "button-shadow")+" primary"}>
                     <Tr t={Translations.t.general.save}></Tr>
                 </button>
             </div>

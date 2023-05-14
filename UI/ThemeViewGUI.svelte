@@ -39,6 +39,8 @@
     import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte";
     import Svg from "../Svg";
     import {ShareScreen} from "./BigComponents/ShareScreen";
+    import NextButton from "./Base/NextButton.svelte";
+    import IfNot from "./Base/IfNot.svelte";
 
     export let state: ThemeViewState;
     let layout = state.layout;
@@ -83,6 +85,21 @@
     let availableLayers = state.availableLayers;
     let userdetails = state.osmConnection.userDetails;
     let currentViewLayer = layout.layers.find(l => l.id === "current_view")
+
+    function jumpToCurrentLocation() {
+        const glstate = state.geolocation.geolocationState
+        if (glstate.currentGPSLocation.data !== undefined) {
+            const c: GeolocationCoordinates = glstate.currentGPSLocation.data
+            state.guistate.themeIsOpened.setData(false)
+            const coor = {lon: c.longitude, lat: c.latitude}
+            state.mapProperties.location.setData(coor)
+        }
+        if (glstate.permission.data !== "granted") {
+            glstate.requestPermission()
+            return
+        }
+
+    }
 </script>
 
 
@@ -95,7 +112,7 @@
     <If condition={state.featureSwitches.featureSwitchSearch}>
         <div class="max-[480px]:w-full float-right mt-1 px-1 sm:m-2">
             <Geosearch bounds={state.mapProperties.bounds} perLayer={state.perLayer} {selectedElement}
-                       {selectedLayer}></Geosearch>
+                       {selectedLayer}/>
         </div>
     </If>
     <div class="float-left m-1 sm:mt-2">
@@ -184,7 +201,7 @@
                 <Tr t={layout.title}/>
             </div>
 
-            <div slot="content0">
+            <div class="m-4" slot="content0">
 
                 <Tr t={layout.description}></Tr>
                 <Tr t={Translations.t.general.welcomeExplanation.general}/>
@@ -198,11 +215,30 @@
                 loginStatus.SetClass("block mt-6 pt-2 md:border-t-2 border-dotted border-gray-400"),
                 -->
                 <Tr t={layout.descriptionTail}></Tr>
-                <div class="m-x-8">
-                    <button class="subtle-background rounded w-full p-4"
-                            on:click={() => state.guistate.themeIsOpened.setData(false)}>
+                <NextButton clss="primary w-full" on:click={() => state.guistate.themeIsOpened.setData(false)}>
+                    <div class="flex justify-center w-full text-2xl">
                         <Tr t={Translations.t.general.openTheMap}/>
-                    </button>
+                    </div>
+                </NextButton>
+
+                <div class="flex w-full">
+                    <IfNot condition={state.geolocation.geolocationState.permission.map(p => p === "denied")}>
+                        <button class="flex w-full gap-x-2 items-center" on:click={jumpToCurrentLocation}>
+                            <ToSvelte construct={Svg.crosshair_svg().SetClass("w-8 h-8")}/>
+                            <span>
+                            Jump to your location
+                        </span>
+                        </button>
+                    </IfNot>
+
+                    <div class="flex flex-col w-full border rounded low-interactive">
+                        Search for a location:
+                        <Geosearch bounds={state.mapProperties.bounds}
+                                   on:searchCompleted={() => state.guistate.themeIsOpened.setData(false)}
+                                   perLayer={state.perLayer}
+                                   {selectedElement}
+                                   {selectedLayer}/>
+                    </div>
                 </div>
 
             </div>
@@ -238,7 +274,7 @@
                     <Tr t={Translations.t.general.download.title}/>
                 </If>
             </div>
-            <div slot="content2">
+            <div class="m-4" slot="content2">
                 <ToSvelte construct={() => new DownloadPanel(state)}/>
             </div>
 
@@ -251,8 +287,8 @@
             <div slot="title4">
                 <Tr t={Translations.t.general.sharescreen.title}/>
             </div>
-            <ToSvelte construct={() => new ShareScreen(state)} slot="content4"/> 
-            
+            <ToSvelte construct={() => new ShareScreen(state)} slot="content4"/>
+
         </TabbedGroup>
     </FloatOver>
 </If>
@@ -270,7 +306,7 @@
                 <Tr t={Translations.t.general.menu.aboutMapComplete}/>
             </div>
 
-            <div class="flex flex-col" slot="content0">
+            <div class="flex flex-col m-2 links-as-button links-w-full gap-y-1" slot="content0">
 
                 <Tr t={Translations.t.general.aboutMapComplete.intro}/>
 
@@ -308,12 +344,12 @@
                 <Tr t={UserRelatedState.usersettingsConfig.title.GetRenderValue({})}/>
             </div>
 
-            <div slot="content1">
+            <div class="links-as-button" slot="content1">
                 <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
                 <LoginToggle {state}>
-                    <div slot="not-logged-in">
+                    <div slot="not-logged-in" class="flex flex-col">
                         <Tr class="alert" t={Translations.t.userinfo.notLoggedIn}/>
-                        <LoginButton osmConnection={state.osmConnection}></LoginButton>
+                        <LoginButton osmConnection={state.osmConnection} clss="primary"/>
                     </div>
                     <SelectedElementView
                             highlightedRendering={state.guistate.highlightedUserSetting}
@@ -330,16 +366,20 @@
                 <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")}/>
                 Get in touch with others
             </div>
-            <CommunityIndexView location={state.mapProperties.location} slot="content2"></CommunityIndexView>
+            <div class="m-2" slot="content2">
+                <CommunityIndexView location={state.mapProperties.location}></CommunityIndexView>
+            </div>
 
             <div class="flex" slot="title3">
                 <EyeIcon class="w-6"/>
                 <Tr t={Translations.t.privacy.title}></Tr>
             </div>
-            <ToSvelte construct={() => new PrivacyPolicy()} slot="content3"></ToSvelte>
+            <div class="m-2" slot="content3">
+                <ToSvelte construct={() => new PrivacyPolicy()}/>
+            </div>
 
             <Tr slot="title4" t={Translations.t.advanced.title}/>
-            <div class="flex flex-col" slot="content4">
+            <div class="flex flex-col m-2" slot="content4">
                 <ToSvelte construct={Hotkeys.generateDocumentationDynamic}></ToSvelte>
 
             </div>

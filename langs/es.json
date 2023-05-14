@@ -44,7 +44,6 @@
         "add": {
             "addNew": "Añadir {category}",
             "confirmButton": "Añadir una {category} .<br><div class=\"alert\">Tu contribución es visible para todos</div>",
-            "confirmIntro": "<h3>Añadir {title} aquí?</h3>El punto que estás creando <b>lo verá todo el mundo</b>. Sólo añade cosas que realmente existan. Muchas aplicaciones usan estos datos.",
             "disableFilters": "Desactivar todos los filtros",
             "disableFiltersExplanation": "Algunas características pueden estar ocultas por un filtro",
             "hasBeenImported": "Este punto ya ha sido importado",

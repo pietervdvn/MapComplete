@@ -42,7 +42,6 @@
         "add": {
             "addNew": "Új {category} hozzáadása",
             "confirmButton": "{category} hozzáadása.<br><div class=\"alert\">A hozzáadott objektum mindenki számára látható lesz</div>",
-            "confirmIntro": "<h3>Felrajzolsz egy {title} objektumot?</h3>Az itt létrehozandó térképelemet <b>mindenki láthatja majd</b>. Kérjük, csak valóban létező dolgokat rajzolj fel a térképre. Ezeket az adatokat sok alkalmazás használja.",
             "disableFilters": "Minden szűrő kikapcsolása",
             "disableFiltersExplanation": "Lehet, hogy a szűrő miatt egyes térképelemek nem látszanak",
             "hasBeenImported": "Ezt a térképelemet már importálták",

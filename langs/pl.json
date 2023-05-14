@@ -25,7 +25,6 @@
         "add": {
             "addNew": "Dodaj nową {category} tutaj",
             "confirmButton": "Dodaj tutaj {category}.<br><div class=\"alert\">Twój dodatek jest widoczny dla wszystkich</div>",
-            "confirmIntro": "<h3>Czy dodać tutaj {title}?</h3> Punkt, który tutaj utworzysz, będzie <b>widoczny dla wszystkich<b>. Proszę, dodawaj rzeczy do mapy tylko wtedy, gdy naprawdę istnieją. Wiele aplikacji korzysta z tych danych.</b></b>",
             "intro": "Kliknąłeś gdzieś, gdzie nie są jeszcze znane żadne dane.<br>",
             "layerNotEnabled": "Warstwa {layer} nie jest włączona. Włącz tę warstwę, aby dodać punkt",
             "openLayerControl": "Otwórz okno sterowania warstwą",

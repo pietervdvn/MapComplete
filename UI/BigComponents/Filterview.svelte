@@ -111,17 +111,3 @@ $:  onDestroy(
     </div>
 {/if}
 
-<style>
-
-    :global(.no-image-background * img) {
-        background: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    :global(.no-image-background * svg) {
-        background: none;
-        margin: 0;
-        padding: 0;
-    }
-</style>

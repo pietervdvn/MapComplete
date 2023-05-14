@@ -44,7 +44,6 @@
         "add": {
             "addNew": "Tilføj {category}",
             "confirmButton": "Tilføj en {category}<br><div class=\"alert\">Din tilføjelse er synlig for alle</div>",
-            "confirmIntro": "<h3>Tilføj en {title}?</h3>Punktet du opretter her vil være <b>synligt for alle</b>. Tilføj kun ting til kortet, hvis de virkelig findes. Mange programmer bruger disse data.",
             "disableFilters": "Slå alle filtre fra",
             "disableFiltersExplanation": "Nogle elementer kan være skjult af et filter",
             "hasBeenImported": "Punktet er allerede importeret",

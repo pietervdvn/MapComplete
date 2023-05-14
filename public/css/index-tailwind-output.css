@@ -909,10 +909,6 @@ video {
   margin-bottom: 2rem;
 }
 
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-
 .-ml-6 {
   margin-left: -1.5rem;
 }
@@ -927,6 +923,10 @@ video {
 
 .-mt-12 {
   margin-top: -3rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
 }
 
 .box-border {
@@ -1281,6 +1281,11 @@ video {
   gap: 1rem;
 }
 
+.gap-x-2 {
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+}
+
 .gap-y-1 {
   row-gap: 0.25rem;
 }
@@ -1445,9 +1450,9 @@ video {
   border-color: rgb(252 165 165 / var(--tw-border-opacity));
 }
 
-.border-lime-500 {
+.border-gray-600 {
   --tw-border-opacity: 1;
-  border-color: rgb(132 204 22 / var(--tw-border-opacity));
+  border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
 .border-opacity-50 {
@@ -1537,14 +1542,14 @@ video {
   padding-bottom: 1rem;
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .px-4 {
@@ -1669,6 +1674,10 @@ video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-normal {
+  font-weight: 400;
 }
 
 .uppercase {
@@ -1812,12 +1821,6 @@ video {
   transition-duration: 150ms;
 }
 
-.transition-\[color\2c background-color\2c box-shadow\] {
-  transition-property: color,background-color,box-shadow;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .transition-colors {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1826,6 +1829,12 @@ video {
 
 .transition-shadow {
   transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-\[color\2c background-color\2c box-shadow\] {
+  transition-property: color,background-color,box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1910,14 +1919,14 @@ li::marker {
 }
 
 h1 {
-  font-size: x-large;
+  font-size: xx-large;
   margin-top: 0.6em;
   margin-bottom: 0.4em;
   font-weight: bold;
 }
 
 h2 {
-  font-size: large;
+  font-size: x-large;
   margin-top: 0.5em;
   margin-bottom: 0.3em;
   font-weight: bold;
@@ -1976,32 +1985,6 @@ input {
  * This very important section defines what the various input elements look like within the 'low-interaction' and 'interactive'-blocks
  */
 
-button.disabled {
-  cursor: default;
-  border: 2px dashed var(--button-background);
-  background: unset;
-  color: unset;
-  box-shadow: none;
-}
-
-button.disabled:hover {
-  cursor: default;
-  border: 2px dashed var(--button-background);
-  background: unset;
-  color: unset;
-}
-
-button:hover {
-  border: 2px solid var(--catch-detail-color-contrast);
-  background-color: var(--catch-detail-color);
-  color: var(--catch-detail-foregroundcolor);
-}
-
-button:hover img {
-  background: var(--low-interaction-background);
-  border-radius: 100rem;
-}
-
 button {
   display: inline-flex;
   line-height: 1.25rem;
@@ -2011,14 +1994,14 @@ button {
   padding-right: 0.6rem;
   font-size: large;
   font-weight: bold;
-  color: var(--button-foreground);
-  background: var(--button-background);
   /*-- invisible border: rendered on hover*/
   border: 2px solid var(--button-background);
   border-radius: 0.5rem;
   transition: all 250ms;
   --tw-text-opacity: 1;
   --tw-bg-opacity: 1;
+  background: var(--low-interaction-background);
+  color: var(--low-interaction-foreground);
 }
 
 button .button-shadow {
@@ -2035,8 +2018,58 @@ button.selected svg path {
   fill: var(--catch-detail-foregroundcolor) !important;
 }
 
-button svg path {
+button:not(.no-image-background) svg path {
+  fill: var(--interactive-foreground) !important;
+  transition: all 250ms;
+}
+
+.interactive button {
+  background: var(--interactive-background);
+  color: var(--interactive-foreground);
+}
+
+button:hover {
+  background-color: var(--catch-detail-color);
+  color: var(--catch-detail-foregroundcolor);
+  border: 2px solid var(--catch-detail-color-contrast);
+}
+
+button:hover:not(.no-image-background) img {
+  background: var(--low-interaction-background);
+  border-radius: 100rem;
+}
+
+button:hover:not(.no-image-background) svg path {
+  fill: var(--catch-detail-foregroundcolor) !important;
+}
+
+button.disabled:hover:not(.no-image-background) svg path {
+  fill: var(--low-interaction-foreground) !important;
+}
+
+button.primary {
+  color: var(--button-foreground);
+  background: var(--button-background);
+}
+
+button.primary:not(.no-image-background) svg path {
   fill: var(--button-foreground) !important;
+  transition: all 250ms;
+}
+
+button.disabled {
+  cursor: default;
+  border: 2px dashed var(--button-background);
+  background: unset;
+  color: unset;
+  box-shadow: none;
+}
+
+button.disabled:hover {
+  cursor: default;
+  border: 2px dashed var(--button-background);
+  background: unset;
+  color: unset;
 }
 
 .interactive button.disabled svg path {
@@ -2049,50 +2082,6 @@ button svg path {
 
 .normal-background button.disabled svg path {
   fill: var(--foreground-color) !important;
-}
-
-button.disabled.secondary:hover {
-  background: unset;
-  color: unset;
-}
-
-button.secondary {
-  background: var(--low-interaction-background);
-  color: var(--low-interaction-foreground);
-  border-color: var(--button-background);
-}
-
-.interactive button.secondary {
-  background: var(--interactive-background);
-  color: var(--interactive-foreground);
-}
-
-button.secondary svg path {
-  fill: var(--low-interaction-foreground) !important;
-  transition: all 250ms;
-}
-
-button.secondary.disabled {
-  background: unset;
-  color: var(--low-interaction-foreground);
-}
-
-button.secondary.disabled svg path {
-  fill: var(--low-interaction-foreground) !important;
-}
-
-button.secondary:hover {
-  background-color: var(--catch-detail-color);
-  color: var(--catch-detail-foregroundcolor);
-  border-color: var(--catch-detail-color-contrast);
-}
-
-button.secondary:hover svg path {
-  fill: var(--catch-detail-foregroundcolor) !important;
-}
-
-button.secondary.disabled:hover svg path {
-  fill: var(--low-interaction-foreground) !important;
 }
 
 label {
@@ -2135,13 +2124,19 @@ label.checked {
   border: 2px solid var(--foreground-color);
 }
 
-.active-links a{
-  /*
-    * Let a 'link' mimick a secondary button, but not entirely
-    */
-  display: block;
+.links-w-full a {
+  display: flex;
+  -webkit-column-gap: 0.25rem;
+          column-gap: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   width: 100%;
-  height: 100%;
+}
+
+.links-as-button a{
+  /*
+    * Let a 'link' mimick a button, but not entirely
+    */
   padding: 3px;
   margin: 0;
   background: var(--low-interaction-background);
@@ -2150,13 +2145,13 @@ label.checked {
   border-radius: 0.5rem;
 }
 
-.active-links a:hover {
+.links-as-button a:hover {
   background-color: var(--interactive-background);
   color: var(--catch-detail-foregroundcolor);
   border-color: var(--catch-detail-color-contrast);
 }
 
-.active-links a:hover svg path {
+.links-as-button a:hover svg path {
   fill: var(--catch-detail-foregroundcolor) !important;
 }
 
@@ -2169,12 +2164,15 @@ label.checked {
 
 .thanks {
   /* The class to indicate 'operation successful' or 'thank you for contributing' */
-  background-color: #43d904;
   font-weight: bold;
   border-radius: 1em;
   margin: 0.25em;
   text-align: center;
-  padding: 0.15em 0.3em;
+  padding: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border: 3px dotted #58cd27;
+  background-color: #58cd2722;
 }
 
 .alert {
@@ -2186,6 +2184,7 @@ label.checked {
   margin: 0.25em;
   text-align: center;
   padding: 0.15em 0.3em;
+  border: 2px dotted #ff9143;
 }
 
 .subtle {

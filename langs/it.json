@@ -44,7 +44,6 @@
         "add": {
             "addNew": "Aggiungi {category} qua",
             "confirmButton": "Aggiungi una {category} qua.<br><div class=\"alert\">La tua aggiunta è visibile a chiunque</div>",
-            "confirmIntro": "<h3>Aggiungere un {title}?</h3>L'elemento che hai creato qui sarà <b>visibile da chiunque</b>. Per favore, aggiungi sulla mappa solo oggetti realmente esistenti. Molte applicazioni usano questi dati.",
             "disableFilters": "Disabilita tutti i filtri",
             "disableFiltersExplanation": "Alcuni oggetti potrebbero essere nascosti da un filtro",
             "hasBeenImported": "Questo elemento è stato già importato",

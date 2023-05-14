@@ -12,11 +12,10 @@
 
   let imgClasses = "block justify-center shrink-0 mr-4 " + (options?.imgSize ?? "h-11 w-11");
   const dispatch = createEventDispatcher<{click}>()
-  console.log("Slots:", $$slots)
 </script>
 
 <button
-  class={(options.extraClasses??"") + 'flex hover:shadow-xl transition-[color,background-color,box-shadow] hover:bg-unsubtle cursor-pointer'}
+  class={(options.extraClasses??"") + ' secondary no-image-background'}
   target={options?.newTab ? "_blank" : ""}
   on:click={(e) => dispatch("click", e)}
 >
@@ -30,16 +29,3 @@
 
   <slot name="message"/>
 </button>
-
-<style lang="scss">
-  span,
-  a {
-    @apply flex p-3 my-2 py-4 rounded-lg shrink-0;
-    @apply items-center w-full no-underline;
-    @apply bg-subtle text-black;
-
-    :global(span) {
-      @apply block text-ellipsis;
-    }
-  }
-</style>

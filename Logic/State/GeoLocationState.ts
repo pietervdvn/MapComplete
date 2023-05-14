@@ -2,7 +2,7 @@ import { UIEventSource } from "../UIEventSource"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { QueryParameters } from "../Web/QueryParameters"
 
-type GeolocationState = "prompt" | "requested" | "granted" | "denied"
+export type GeolocationPermissionState = "prompt" | "requested" | "granted" | "denied"
 
 export interface GeoLocationPointProperties extends GeolocationCoordinates {
     id: "gps"
@@ -21,7 +21,7 @@ export class GeoLocationState {
      * 'granted' means that it is granted
      * 'denied' means that we don't have access
      */
-    public readonly permission: UIEventSource<GeolocationState> = new UIEventSource("prompt")
+    public readonly permission: UIEventSource<GeolocationPermissionState> = new UIEventSource("prompt")
 
     /**
      * Important to determine e.g. if we move automatically on fix or not

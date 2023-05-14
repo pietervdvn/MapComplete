@@ -55,7 +55,6 @@
         "add": {
             "addNew": "在這裡新增新的 {category}",
             "confirmButton": "在此新增 {category}。<br><div class=\"alert\">大家都可以看到您新增的內容</div>",
-            "confirmIntro": "<h3>在這裡新增 {title} ？</h3>你在這裡新增的圖徵<b>所有人都看得到</b>。請只有在確定有物件存在的情形下才新增上去，許多應用程式都使用這份資料。",
             "disableFilters": "關閉所有篩選器",
             "disableFiltersExplanation": "有些圖徵可能被篩選器隱藏",
             "hasBeenImported": "這個圖徵已經被匯入了",

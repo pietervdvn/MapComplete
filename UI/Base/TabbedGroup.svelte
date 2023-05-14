@@ -22,7 +22,7 @@
         <div class="interactive flex items-center justify-between sticky top-0">
             <TabList class="flex flex-wrap">
                 {#if $$slots.title1}
-                    <Tab class={({selected}) => "tab "+(selected ? "selected" : "secondary")}>
+                    <Tab class={({selected}) => "tab "+(selected ? "primary" : "")}>
                         <div bind:this={tabElements[0]} class="flex">
                             <slot name="title0">
                                 Tab 0
@@ -31,28 +31,28 @@
                     </Tab>
                 {/if}
                 {#if $$slots.title1}
-                    <Tab class={({selected}) => "tab "+(selected ? "selected" : "secondary")}>
+                    <Tab class={({selected}) => "tab "+(selected ? "primary" : "")}>
                         <div bind:this={tabElements[1]} class="flex">
                             <slot name="title1"/>
                         </div>
                     </Tab>
                 {/if}
                 {#if $$slots.title2}
-                    <Tab class={({selected}) => "tab "+(selected ? "selected" : "secondary")}>
+                    <Tab class={({selected}) => "tab "+(selected ? "primary" : "")}>
                         <div bind:this={tabElements[2]} class="flex">
                             <slot name="title2"/>
                         </div>
                     </Tab>
                 {/if}
                 {#if $$slots.title3}
-                    <Tab class={({selected}) => "tab "+(selected ? "selected" : "secondary")}>
+                    <Tab class={({selected}) => "tab "+(selected ? "primary" : "")}>
                         <div bind:this={tabElements[3]} class="flex">
                             <slot name="title3"/>
                         </div>
                     </Tab>
                 {/if}
                 {#if $$slots.title4}
-                    <Tab class={({selected}) => "tab "+(selected ? "selected" : "secondary")}>
+                    <Tab class={({selected}) => "tab "+(selected ? "primary" : "")}>
                         <div bind:this={tabElements[4]} class="flex">
                             <slot name="title4"/>
                         </div>

@@ -92,7 +92,6 @@
             "addNew": "Přidat {category}",
             "backToSelect": "Vyberte jinou kategorii",
             "confirmButton": "Přidat kategorii {category}<br/><div class='alert'>Váš příspěvek je viditelný pro všechny</div>",
-            "confirmIntro": "<h3>Přidat {title}?</h3>Funkce, kterou zde vytvoříte, bude <b>viditelná pro všechny</b>. Prosíme, přidávejte věci na mapu pouze tehdy, pokud skutečně existují. Tato data využívá mnoho aplikací.",
             "disableFilters": "Vypnout všechny filtry",
             "disableFiltersExplanation": "Některé funkce mohou být filtrem skryty",
             "hasBeenImported": "Tato funkce již byla importována",

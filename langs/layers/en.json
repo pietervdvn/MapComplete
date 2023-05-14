@@ -8870,6 +8870,24 @@
                 },
                 "question": "Show user settings debug info?"
             },
+            "show_tags": {
+                "mappings": {
+                    "0": {
+                        "then": "Never show the tags."
+                    },
+                    "1": {
+                        "then": "Show the tags that will be applied once I have made {__userjourney_tagsVisibleAt} changesets"
+                    },
+                    "2": {
+                        "then": "Show the tags that will be applied when making a change"
+                    },
+                    "3": {
+                        "then": "Show the tags that will be applied when making a change and show the tags table on every feature"
+                    }
+                },
+                "question": "Show the raw OpenStreetMap-tags?",
+                "questionHint": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference."
+            },
             "translation-completeness": {
                 "mappings": {
                     "0": {

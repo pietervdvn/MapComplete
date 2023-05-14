@@ -11,6 +11,7 @@
   import { Geocoding } from "../../Logic/Osm/Geocoding";
   import { BBox } from "../../Logic/BBox";
   import { GeoIndexedStoreForLayer } from "../../Logic/FeatureSource/Actors/GeoIndexedStore";
+  import {createEventDispatcher} from "svelte";
 
   export let perLayer: ReadonlyMap<string, GeoIndexedStoreForLayer> | undefined = undefined;
   export let bounds: UIEventSource<BBox>;
@@ -34,6 +35,8 @@
     }
   );
 
+  const dispatch = createEventDispatcher<{searchCompleted}>()
+  
   async function performSearch() {
     try {
       isRunning = true;
@@ -59,6 +62,7 @@
 
         }
       }
+      dispatch("searchCompleted")
     } catch (e) {
       console.error(e);
       feedback = Translations.t.general.search.error.txt;

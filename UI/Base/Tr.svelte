@@ -10,6 +10,7 @@
   import WeblateLink from "./WeblateLink.svelte";
 
   export let t: Translation;
+  export let cls: string = ""
   export let tags: Record<string, string> | undefined = undefined;
   // Text for the current language
   let txt: string | undefined;
@@ -29,7 +30,7 @@
 </script>
 
 {#if t}
-  <span class="inline-flex items-center">
+  <span class={"inline-flex items-center "+cls}>
   <FromHtml src={txt}></FromHtml>
   <WeblateLink context={t.context}></WeblateLink>
   </span>

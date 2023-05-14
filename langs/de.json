@@ -92,7 +92,6 @@
             "addNew": "{category} hinzufügen",
             "backToSelect": "Wählen Sie eine andere Kategorie",
             "confirmButton": "Eine {category} hinzufügen.<br><div class=\"alert\">Ihre Ergänzung ist für alle sichtbar</div>",
-            "confirmIntro": "<h3>Einen {title} hinzufügen?</h3>Das Objekt, das Sie erstellen wird <b>für alle sichtbar sein</b>. Bitte nur Dinge hinzufügen, die wirklich existieren. Viele Anwendungen verwenden diese Daten.",
             "disableFilters": "Alle Filter deaktivieren",
             "disableFiltersExplanation": "Einige Elemente können durch einen Filter ausgeblendet sein",
             "hasBeenImported": "Dieses Objekt wurde bereits importiert",

@@ -31,21 +31,21 @@
         </p>
 
         <div class="flex">
-            <button>
+            <button class="primary">
                 <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")}/>
                 Main action
             </button>
-            <button class="disabled">
+            <button class="primary disabled">
                 <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")}/>
                 Main action (disabled)
             </button>
         </div>
         <div class="flex">
-            <button class="secondary">
+            <button>
                 <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")}/>
                 Secondary action
             </button>
-            <button class="secondary disabled">
+            <button class="disabled">
                 <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")}/>
                 Secondary action (disabled)
             </button>
@@ -79,21 +79,21 @@
         </p>
 
         <div class="flex">
-            <button>
+            <button class="primary">
                 <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")}/>
                 Main action
             </button>
-            <button class="disabled">
+            <button class="primary disabled">
                 <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")}/>
                 Main action (disabled)
             </button>
         </div>
         <div class="flex">
-            <button class="secondary">
+            <button>
                 <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")}/>
                 Secondary action
             </button>
-            <button class="secondary disabled">
+            <button class="disabled">
                 <ToSvelte construct={Svg.community_svg().SetClass("w-6 h-6")}/>
                 Secondary action (disabled)
             </button>

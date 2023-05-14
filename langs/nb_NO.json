@@ -75,7 +75,6 @@
             "addNew": "Legg til {category} her",
             "backToSelect": "Velg en annen kategori",
             "confirmButton": "Legg til en {category} her.<br/><div class='alert'>Din endring er synlig for alle</div>",
-            "confirmIntro": "<h3>Legg til {title} her?</h3>Punktet du oppretter her vil være <b>synlig for alle</b>. Kun legg til ting på kartet hvis de virkelig finnes. Mange programmer bruker denne dataen.",
             "disableFilters": "Skru av alle filtre",
             "disableFiltersExplanation": "Det kan hende noen funksjoner er skjult av et filter",
             "hasBeenImported": "Dette punktet har allerede blitt importert",

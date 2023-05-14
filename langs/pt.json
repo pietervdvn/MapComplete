@@ -81,7 +81,6 @@
             "addNew": "Adicionar {category} aqui",
             "backToSelect": "Selecione uma categoria diferente",
             "confirmButton": "Adicione uma {category} aqui.<br><div class=\"alert\">Esta adição será visível a todos</div>",
-            "confirmIntro": "<h3>Adicionar {title} aqui?</h3>O elemento que criar aqui será <b>visível a todos</b>. Por favor, só adicione coisas ao mapa se elas realmente existirem. Muitas aplicações usam estes dados.",
             "disableFilters": "Desativar todos os filtros",
             "disableFiltersExplanation": "Alguns elementos podem estar escondidos por um filtro",
             "hasBeenImported": "Este elemento já foi importado",

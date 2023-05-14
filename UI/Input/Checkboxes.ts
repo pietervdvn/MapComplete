@@ -1,6 +1,6 @@
-import { InputElement } from "./InputElement"
-import { UIEventSource } from "../../Logic/UIEventSource"
-import { Utils } from "../../Utils"
+import {InputElement} from "./InputElement"
+import {UIEventSource} from "../../Logic/UIEventSource"
+import {Utils} from "../../Utils"
 import BaseUIElement from "../BaseUIElement"
 import InputElementMap from "./InputElementMap"
 import Translations from "../i18n/Translations"
@@ -68,18 +68,15 @@ export default class CheckBoxes extends InputElement<number[]> {
             label.appendChild(inputI.ConstructElement())
             label.classList.add("block", "w-full", "p-2", "cursor-pointer", "bg-red")
 
-            const wrapper = document.createElement("div")
-            wrapper.classList.add("wrapper", "flex", "w-full", "border", "border-gray-400", "mb-1")
-            wrapper.appendChild(label)
-            formTag.appendChild(wrapper)
+            formTag.appendChild(label)
 
             value.addCallbackAndRunD((selectedValues) => {
                 input.checked = selectedValues.indexOf(i) >= 0
 
                 if (input.checked) {
-                    wrapper.classList.add("checked")
+                    label.classList.add("checked")
                 } else {
-                    wrapper.classList.remove("checked")
+                    label.classList.remove("checked")
                 }
             })
 

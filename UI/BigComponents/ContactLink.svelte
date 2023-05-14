@@ -40,9 +40,9 @@
         </a>
         {resource.resolved?.description}
         {#if resource.languageCodes?.indexOf($language) >= 0}
-          <span class="border-2 rounded-full border-lime-500 text-sm w-fit px-2">
+          <div class="thanks w-fit">
             <ToSvelte construct={() => availableTranslation.Clone()} />
-          </span>
+          </div>
         {/if}
       </div>
     </div>

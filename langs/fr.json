@@ -63,7 +63,6 @@
             "addNew": "Ajouter {category}",
             "backToSelect": "Sélectionner une catégorie différente",
             "confirmButton": "Ajouter un/une {category} ici.<br><div class=\"alert\">Votre ajout sera visible par tout le monde</div>",
-            "confirmIntro": "<h3>Ajouter un/une {title} ici ?</h3>L’élément que vous ajouterez sera <b>visible par tout le monde</b>. Merci de vous assurer que celui-ci existe réellement. Beaucoup d'autres applications utilisent ces données.",
             "disableFilters": "Désactiver tous les filtres",
             "disableFiltersExplanation": "Certains élément peuvent être filtrés",
             "hasBeenImported": "Cet élément a déjà été importé",

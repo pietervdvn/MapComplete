@@ -39,7 +39,6 @@
         "add": {
             "addNew": "Adicione {category} aqui",
             "confirmButton": "Adicione uma {category} aqui.<br><div class=\"alert\">Sua adição é visível para todos</div>",
-            "confirmIntro": "<h3>Adicionar um {title} aqui?</h3>O ponto que você criar aqui será <b>visível para todos</b>. Por favor, só adicione coisas ao mapa se elas realmente existirem. Muitos aplicativos usam esses dados.",
             "intro": "Você clicou em algum lugar onde ainda não há dados conhecidos.<br>",
             "layerNotEnabled": "A camada {layer} não está habilitada. Habilite esta camada para adicionar um ponto",
             "openLayerControl": "Abra a caixa de controle da camada",

@@ -42,7 +42,6 @@
         "add": {
             "addNew": "Tambahkan {category}",
             "confirmButton": "Tambahkan {category}<br><div class=\"alert\">Penambahan Anda akan terlihat oleh semua orang</div>",
-            "confirmIntro": "<h3>Tambahkan {title}?</h3>Fitur yang Anda buat di sini akan <b>terlihat oleh semua orang</b>. Harap menambahkan sesuatu ke peta hanya jika ia benar-benar ada. Banyak aplikasi menggunakan data ini.",
             "disableFiltersExplanation": "Beberapa fitur mungkin disembunyikan oleh penyaringan",
             "hasBeenImported": "Fitur ini sudah diimpor",
             "import": {

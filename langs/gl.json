@@ -19,7 +19,6 @@
         "add": {
             "addNew": "Engadir {category} aquí",
             "confirmButton": "Engadir {category} aquí",
-            "confirmIntro": "<h3>Engadir {title} aquí?</h3>O punto que estás a crear <b>será ollado por todo o mundo</b>. Só engade cousas que realmente existan. Moitas aplicacións empregan estes datos.",
             "import": {},
             "intro": "Marcaches un lugar onde non coñecemos os datos.<br/>",
             "layerNotEnabled": "A capa {layer} non está activada. Faino para poder engadir un punto nesta capa",

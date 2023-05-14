@@ -92,7 +92,6 @@
             "addNew": "Afegir {category} aquí",
             "backToSelect": "Selecciona una categoria diferent",
             "confirmButton": "Afegir una {category}<br/><div class='alert'>La teva atribució és visible per a tots</div>",
-            "confirmIntro": "<h3>Afegir {title} aquí?</h3>L'element que estàs creant <b>el veurà tothom</b>. Només afegeix coses que realment existeixen. Moltes aplicacions fan servir aquestes dades.",
             "disableFilters": "Deshabilitar tots els filtres",
             "disableFiltersExplanation": "Alguns elements s'amagaran en passar un filtre",
             "hasBeenImported": "Aquest element ja ha estat importat",

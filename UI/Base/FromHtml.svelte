@@ -11,9 +11,10 @@
     }
   }
 
+  export let clss = ""
 </script>
 
 {#if src !== undefined}
-  <span bind:this={htmlElem}></span>
+  <span bind:this={htmlElem} class={clss}></span>
 {/if}
 

@@ -8,6 +8,6 @@
 </script>
 
 
-<button on:click={e => dispatch("click", e)} class="secondary rounded-full h-fit w-fit m-0.5 md:m-1 p-0.5 sm:p-1">
+<button on:click={e => dispatch("click", e)} class="rounded-full h-fit w-fit m-0.5 md:m-1 p-0.5 sm:p-1">
   <slot/>
 </button>

@@ -42,7 +42,6 @@
         "add": {
             "addNew": "Dagdagan ng {category}",
             "confirmButton": "Magdagdag ng {category}<br><div class=\"alert\">Makikita ng lahat ang idinagdag mo</div>",
-            "confirmIntro": "<h3>Mag-dagdag ng {title}?</h3>Ang tampók na ida-dagdag mo ay <b>makikita ng lahat</b>. Paki-usap, mag-dagdag lamang ng mga bagay na tutuong umiiral. Marami pang mga aplikasyon ang gumagamit ng datos na ito.",
             "disableFilters": "Huwag paganahin ang lahat ng filter",
             "disableFiltersExplanation": "May mga tampók na maaring nai-tago ng filter",
             "hasBeenImported": "Ang bukóng ito ay nai-angkat na",
