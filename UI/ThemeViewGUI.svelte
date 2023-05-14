@@ -250,11 +250,11 @@
                 </If>
             </div>
 
-            <div class="flex flex-col" slot="content1">
+            <div class="flex flex-col m-2" slot="content1">
                 {#each layout.layers as layer}
                     <Filterview zoomlevel={state.mapProperties.zoom}
                                 filteredLayer={state.layerState.filteredLayers.get(layer.id)}
-                                highlightedLayer={state.guistate.highlightedLayerInFilters}></Filterview>
+                                highlightedLayer={state.guistate.highlightedLayerInFilters}/>
                 {/each}
                 {#each layout.tileLayerSources as tilesource}
                     <OverlayToggle
@@ -347,9 +347,9 @@
             <div class="links-as-button" slot="content1">
                 <!-- All shown components are set by 'usersettings.json', which happily uses some special visualisations created specifically for it -->
                 <LoginToggle {state}>
-                    <div slot="not-logged-in" class="flex flex-col">
+                    <div class="flex flex-col" slot="not-logged-in">
                         <Tr class="alert" t={Translations.t.userinfo.notLoggedIn}/>
-                        <LoginButton osmConnection={state.osmConnection} clss="primary"/>
+                        <LoginButton clss="primary" osmConnection={state.osmConnection}/>
                     </div>
                     <SelectedElementView
                             highlightedRendering={state.guistate.highlightedUserSetting}

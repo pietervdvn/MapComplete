@@ -290,7 +290,7 @@ label:hover {
     border: 2px solid var(--interactive-contrast)
 }
 
-label img {
+label:not(.no-image-background) img {
     padding: 0.25rem;
     border-radius: 0.25rem;
     background: var(--low-interaction-background);
@@ -300,7 +300,7 @@ label svg path {
     transition: all 250ms;
 }
 
-label:hover svg path {
+label:hover:not(.no-image-background) svg path {
     fill: var(--catch-detail-foregroundcolor) !important;
 }
 

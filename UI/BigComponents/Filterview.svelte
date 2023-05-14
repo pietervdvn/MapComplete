@@ -19,11 +19,7 @@ export let filteredLayer: FilteredLayer;
 export let highlightedLayer: Store<string | undefined> = new ImmutableStore(undefined);
 export let zoomlevel: Store<number> = new ImmutableStore(22);
 let layer: LayerConfig = filteredLayer.layerDef;
-let isDisplayed: boolean = filteredLayer.isDisplayed.data;
-onDestroy(filteredLayer.isDisplayed.addCallbackAndRunD(d => {
-    isDisplayed = d;
-    return false;
-}));
+let isDisplayed: Store<boolean> = filteredLayer.isDisplayed;
 
 /**
  * Gets a UIEventSource as boolean for the given option, to be used with a checkbox
@@ -52,9 +48,9 @@ $:  onDestroy(
 );
 </script>
 {#if filteredLayer.layerDef.name}
-    <div bind:this={mainElem}>
-        <label class="flex gap-1">
-            <Checkbox selected={filteredLayer.isDisplayed}/>
+    <div bind:this={mainElem} class="mb-1.5">
+        <label class="flex gap-1 no-image-background">
+            <Checkbox selected={isDisplayed}/>
             <If condition={filteredLayer.isDisplayed}>
                 <ToSvelte
                         construct={() => layer.defaultIcon()?.SetClass("block h-6 w-6 no-image-background")}></ToSvelte>
@@ -72,9 +68,8 @@ $:  onDestroy(
 
         </label>
 
-
-        <If condition={filteredLayer.isDisplayed}>
-            <div id="subfilters" class="flex flex-col gap-y-1 mb-4 ml-4">
+        {#if $isDisplayed && filteredLayer.layerDef.filters?.length > 0}
+            <div id="subfilters" class="flex flex-col gap-y-1 ml-4">
                 {#each filteredLayer.layerDef.filters as filter}
                     <div>
 
@@ -106,8 +101,7 @@ $:  onDestroy(
                     </div>
                 {/each}
             </div>
-        </If>
-
+        {/if}
     </div>
 {/if}
 
