@@ -35,6 +35,16 @@
             "1": {
                 "title": "un mupi"
             },
+            "10": {
+                "description": "S'utilitza per a cartells publicitaris, retols de neó, logotips i cartells en entrades institucionals",
+                "title": "un lletrer"
+            },
+            "11": {
+                "title": "una escupltura"
+            },
+            "12": {
+                "title": "una paret pintada"
+            },
             "2": {
                 "title": "un mupi sobre la paret"
             },
@@ -61,16 +71,6 @@
             },
             "9": {
                 "title": "un tòtem"
-            },
-            "10": {
-                "description": "S'utilitza per a cartells publicitaris, retols de neó, logotips i cartells en entrades institucionals",
-                "title": "un lletrer"
-            },
-            "11": {
-                "title": "una escupltura"
-            },
-            "12": {
-                "title": "una paret pintada"
             }
         },
         "tagRenderings": {
@@ -165,6 +165,9 @@
                     "1": {
                         "then": "Açò és un tauló d'anunis"
                     },
+                    "10": {
+                        "then": "Açò és una paret pintada"
+                    },
                     "2": {
                         "then": "Açò és una columna"
                     },
@@ -188,9 +191,6 @@
                     },
                     "9": {
                         "then": "Açò és un tòtem"
-                    },
-                    "10": {
-                        "then": "Açò és una paret pintada"
                     }
                 },
                 "question": "Quin tipus d'element publicitari és aquest?",
@@ -204,6 +204,9 @@
                 },
                 "1": {
                     "then": "Tauló d'anuncis"
+                },
+                "10": {
+                    "then": "Paret Pintada"
                 },
                 "2": {
                     "then": "Mupi"
@@ -228,9 +231,6 @@
                 },
                 "9": {
                     "then": "Tòtem"
-                },
-                "10": {
-                    "then": "Paret Pintada"
                 }
             }
         }
@@ -312,6 +312,15 @@
                     "1": {
                         "then": "Mural"
                     },
+                    "10": {
+                        "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
+                    },
+                    "11": {
+                        "then": "Enrajolat"
+                    },
+                    "12": {
+                        "then": "Tallat a la fusta"
+                    },
                     "2": {
                         "then": "Pintura"
                     },
@@ -335,15 +344,6 @@
                     },
                     "9": {
                         "then": "Relleu"
-                    },
-                    "10": {
-                        "then": "Azulejo (Rajoles decoratives espanyoles i portugueses)"
-                    },
-                    "11": {
-                        "then": "Enrajolat"
-                    },
-                    "12": {
-                        "then": "Tallat a la fusta"
                     }
                 },
                 "question": "Quin tipus d'obra és aquesta peça?",
@@ -1743,6 +1743,9 @@
                     "1": {
                         "question": "Té un connector <div style='display: inline-block'><b><b>Schuko</b> sense pin de terra (CEE7/4 tipus F)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/CEE7_4F.svg'/></div> connector"
                     },
+                    "13": {
+                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
+                    },
                     "4": {
                         "question": "Té un connector de <div style='display: inline-block'><b><b>Tipus 1 amb cable</b> (J1772)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type1_J1772.svg'/></div>"
                     },
@@ -1757,9 +1760,6 @@
                     },
                     "8": {
                         "question": "Té un connector <div style='display: inline-block'><b><b>Tipus 2</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
-                    },
-                    "13": {
-                        "question": "Té un connector <div style='display: inline-block'><b><b>Tesla Supercharger (Destination)</b> (Tipus 2 amb un cable de marca tesla)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
                     }
                 }
             }
@@ -1809,30 +1809,6 @@
                     "1": {
                         "then": "<b>Endoll de paret Schuko</b> sense pin a terra (CEE7/4 tipus F)"
                     },
-                    "2": {
-                        "then": "<b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)"
-                    },
-                    "3": {
-                        "then": "<b>Endoll de paret Europeu</b> amb pin a terra (CEE7/4 tipus E)"
-                    },
-                    "4": {
-                        "then": "<b>CHAdeMo</b>"
-                    },
-                    "5": {
-                        "then": "<b>Chademo</b>"
-                    },
-                    "6": {
-                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
-                    },
-                    "7": {
-                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
-                    },
-                    "8": {
-                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
-                    },
-                    "9": {
-                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
-                    },
                     "10": {
                         "then": "<b>CSS 1Tipus 1</b> (també conegut com Tipus 1 combo)"
                     },
@@ -1863,6 +1839,9 @@
                     "19": {
                         "then": "<b>Tipus 2 amb cable</b> (mennekes)"
                     },
+                    "2": {
+                        "then": "<b>Endoll de paret Europeu</b> amb pin de terra (CEE7/4 tipus E)"
+                    },
                     "20": {
                         "then": "<b>CSS Supercarregador Tesla</b> (tipus2_css de la marca)"
                     },
@@ -1880,6 +1859,27 @@
                     },
                     "26": {
                         "then": "<b>USB</b> per a carregar mòbils i dispositius petits"
+                    },
+                    "3": {
+                        "then": "<b>Endoll de paret Europeu</b> amb pin a terra (CEE7/4 tipus E)"
+                    },
+                    "4": {
+                        "then": "<b>CHAdeMo</b>"
+                    },
+                    "5": {
+                        "then": "<b>Chademo</b>"
+                    },
+                    "6": {
+                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
+                    },
+                    "7": {
+                        "then": "<b>Tipus 1 amb cable</b> (J1772)"
+                    },
+                    "8": {
+                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
+                    },
+                    "9": {
+                        "then": "<b>Tipus 1 <i>sense</i> cable</b> (J1772)"
                     }
                 },
                 "question": "Quins tipus de connexions de càrrega estan disponibles aquí?"
@@ -2557,7 +2557,8 @@
                 "question": "Quin és el correu electrònic on preguntar sobre aquest desfibril·lador?"
             },
             "defibrillator-fixme": {
-                "question": "Hi ha alguna cosa malament en la manera de com està mapejat això, que no heu pogut solucionar aquí? (deixeu una nota als experts d'OpenStreetMap)"
+                "question": "Hi ha alguna cosa malament en la manera de com està mapejat això, que no heu pogut solucionar aquí? (deixeu una nota als experts d'OpenStreetMap)",
+                "render": "Informació addicional per als experts en OpenStreetMap: {fixme}"
             },
             "defibrillator-indoors": {
                 "mappings": {
@@ -2583,10 +2584,12 @@
                 "render": "Aquest desfibril·lador és a la planta {level}"
             },
             "defibrillator-phone": {
-                "question": "Quin és el número de telèfon on preguntar sobre aquest desfibril·lador?"
+                "question": "Quin és el número de telèfon on preguntar sobre aquest desfibril·lador?",
+                "render": "Telèfon per a dubtes sobre aquest desfibril·lador: <a href='tel:{phone}'>{telèfon}</a>"
             },
             "defibrillator-ref": {
-                "question": "Quin és el número d'identificació oficial del dispositiu? (si està visible al dispositiu)"
+                "question": "Quin és el número d'identificació oficial del dispositiu? (si està visible al dispositiu)",
+                "render": "Número d'identificació oficial del dispositiu: <i>{ref}</i>"
             },
             "defibrillator-survey:date": {
                 "mappings": {
@@ -2594,7 +2597,13 @@
                         "then": "Comprovat avui!"
                     }
                 },
+                "question": "Quan es va explorar per última vegada aquest desfibril·lador?",
                 "render": "El desfibrilador és va sondejar per ultima vegada el {survey:date}"
+            },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "En quins horaris està disponible aquest desfibril·lador?"
+                }
             }
         },
         "title": {
@@ -2774,6 +2783,20 @@
                 "title": "un extintor"
             }
         },
+        "tagRenderings": {
+            "extinguisher-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Es troba a l'interior."
+                    },
+                    "1": {
+                        "then": "Es troba a l'aire lliure."
+                    }
+                },
+                "question": "On està situat?",
+                "render": "Ubicació: {location}"
+            }
+        },
         "title": {
             "render": "Extintors"
         }
@@ -2800,6 +2823,11 @@
         },
         "tagRenderings": {
             "station-agency": {
+                "mappings": {
+                    "0": {
+                        "then": "Bureau of Fire Protection (Filipines)"
+                    }
+                },
                 "question": "Quina agència opera aquesta estació?",
                 "render": "{operator} opera aquest parc."
             },
@@ -2830,7 +2858,8 @@
                 "render": "Aquesta estació es troba dins de {addr:place}."
             },
             "station-street": {
-                "question": " Quin és el nom del carrer on es troba aquesta estació?"
+                "question": " Quin és el nom del carrer on es troba aquesta estació?",
+                "render": "Aquesta estació es troba al llarg d'una carretera anomenada {addr:street}."
             }
         },
         "title": {
@@ -2870,6 +2899,21 @@
                     "1": {
                         "then": "Això és una fregiduria"
                     },
+                    "10": {
+                        "then": "Aquí es serveixen plats xinesos"
+                    },
+                    "11": {
+                        "then": "Aquí es serveixen plats grecs"
+                    },
+                    "12": {
+                        "then": "Aquí es serveixen plats indis"
+                    },
+                    "13": {
+                        "then": "Aquí es serveixen plats turcs"
+                    },
+                    "14": {
+                        "then": "Aquí es serveixen plats tailandesos"
+                    },
                     "2": {
                         "then": "Principalment serveix pasta"
                     },
@@ -2890,21 +2934,6 @@
                     },
                     "9": {
                         "then": "Aquí es serveixen plats francesos"
-                    },
-                    "10": {
-                        "then": "Aquí es serveixen plats xinesos"
-                    },
-                    "11": {
-                        "then": "Aquí es serveixen plats grecs"
-                    },
-                    "12": {
-                        "then": "Aquí es serveixen plats indis"
-                    },
-                    "13": {
-                        "then": "Aquí es serveixen plats turcs"
-                    },
-                    "14": {
-                        "then": "Aquí es serveixen plats tailandesos"
                     }
                 },
                 "question": "Quin menjar es serveix aquí?",
@@ -3178,6 +3207,9 @@
                 "render": "L'hidrant és de color {colour}"
             },
             "hydrant-couplings": {
+                "freeform": {
+                    "placeholder": "Tipus d'acoblament"
+                },
                 "mappings": {
                     "0": {
                         "then": "Acoblament Storz"
@@ -3189,13 +3221,22 @@
                         "then": "Acoblament Barcelona"
                     }
                 },
-                "question": "Quin tipus d‘acoblament té aquest hidrant?"
+                "question": "Quin tipus d‘acoblament té aquest hidrant?",
+                "render": "Acoblaments: {couplings:type}"
             },
             "hydrant-couplings-diameters": {
-                "question": "Quin és el diàmetre dels acoblaments d'aquest hidrant?"
+                "freeform": {
+                    "placeholder": "Diàmetres d'acoblament"
+                },
+                "question": "Quin és el diàmetre dels acoblaments d'aquest hidrant?",
+                "render": "Diàmetres d'acoblament: {couplings:diameters}"
             },
             "hydrant-diameter": {
-                "question": "Quin és el diàmetre d'aquest hidrant?"
+                "freeform": {
+                    "placeholder": "Diàmetre de la canonada"
+                },
+                "question": "Quin és el diàmetre d'aquest hidrant?",
+                "render": "Diàmetre de la canonada: {canonical(fire_hydrant:diameter)}"
             },
             "hydrant-number-of-couplings": {
                 "freeform": {
@@ -4183,30 +4224,6 @@
                     "1": {
                         "question": "Reciclatge de piles"
                     },
-                    "2": {
-                        "question": "Reciclatge de cartrons de begudes"
-                    },
-                    "3": {
-                        "question": "Reciclatge de llaunes"
-                    },
-                    "4": {
-                        "question": "Reciclatge de roba"
-                    },
-                    "5": {
-                        "question": "Reciclatge d'oli de cuina"
-                    },
-                    "6": {
-                        "question": "Reciclatge d'oli de motor"
-                    },
-                    "7": {
-                        "question": "Reciclatge de tubs fluorescents"
-                    },
-                    "8": {
-                        "question": "Reciclatge de residus verds"
-                    },
-                    "9": {
-                        "question": "Reciclatge d'ampolles de vidre"
-                    },
                     "10": {
                         "question": "Reciclatge de vidre"
                     },
@@ -4237,11 +4254,35 @@
                     "19": {
                         "question": "Reciclatge del rebuig"
                     },
+                    "2": {
+                        "question": "Reciclatge de cartrons de begudes"
+                    },
                     "20": {
                         "question": "Reciclatge de cartutxos d'impressora"
                     },
                     "21": {
                         "question": "Reciclatge de bicicletes"
+                    },
+                    "3": {
+                        "question": "Reciclatge de llaunes"
+                    },
+                    "4": {
+                        "question": "Reciclatge de roba"
+                    },
+                    "5": {
+                        "question": "Reciclatge d'oli de cuina"
+                    },
+                    "6": {
+                        "question": "Reciclatge d'oli de motor"
+                    },
+                    "7": {
+                        "question": "Reciclatge de tubs fluorescents"
+                    },
+                    "8": {
+                        "question": "Reciclatge de residus verds"
+                    },
+                    "9": {
+                        "question": "Reciclatge d'ampolles de vidre"
                     }
                 }
             },
@@ -4292,6 +4333,11 @@
                 },
                 "question": "On es troba aquest contenidor?"
             },
+            "opening_hours_24_7": {
+                "override": {
+                    "question": "A quines hores obri aquesta instal·lació de reciclatge?"
+                }
+            },
             "operator": {
                 "question": "Quina empresa opera aquesta infraestructura de reciclatge?",
                 "render": "Aquesta infraestuctura de reciclatge està operada per {operator}"
@@ -4303,30 +4349,6 @@
                     },
                     "1": {
                         "then": "Aquí es poden reciclar els cartons de begudes"
-                    },
-                    "2": {
-                        "then": "Aquí es poden reciclar llaunes"
-                    },
-                    "3": {
-                        "then": "Aquí es pot reciclar roba"
-                    },
-                    "4": {
-                        "then": "Aquí es pot reciclar oli de cuina"
-                    },
-                    "5": {
-                        "then": "Aquí es pot reciclar oli de motor"
-                    },
-                    "6": {
-                        "then": "Aquí es poden reciclar tub fluroescents"
-                    },
-                    "7": {
-                        "then": "Aquí es poden reciclar residus verds"
-                    },
-                    "8": {
-                        "then": "Ací es poden reciclar residus orgànics"
-                    },
-                    "9": {
-                        "then": "Aquí es poden reciclar ampolles de vidre"
                     },
                     "10": {
                         "then": "Aquí es pot reciclar vidre"
@@ -4358,6 +4380,9 @@
                     "19": {
                         "then": "Aquí es poden reciclar sabates"
                     },
+                    "2": {
+                        "then": "Aquí es poden reciclar llaunes"
+                    },
                     "20": {
                         "then": "Aquí es poden reciclar petits electrodomèstics"
                     },
@@ -4372,6 +4397,27 @@
                     },
                     "24": {
                         "then": "Aquí es poden reciclar bicicletes"
+                    },
+                    "3": {
+                        "then": "Aquí es pot reciclar roba"
+                    },
+                    "4": {
+                        "then": "Aquí es pot reciclar oli de cuina"
+                    },
+                    "5": {
+                        "then": "Aquí es pot reciclar oli de motor"
+                    },
+                    "6": {
+                        "then": "Aquí es poden reciclar tub fluroescents"
+                    },
+                    "7": {
+                        "then": "Aquí es poden reciclar residus verds"
+                    },
+                    "8": {
+                        "then": "Ací es poden reciclar residus orgànics"
+                    },
+                    "9": {
+                        "then": "Aquí es poden reciclar ampolles de vidre"
                     }
                 },
                 "question": "Què es pot reciclar aquí?"
@@ -4402,7 +4448,8 @@
                     "4": {
                         "then": "Es tracta d’un abocador on s’apilen els residus."
                     }
-                }
+                },
+                "question": "Quin tipus de reciclatge és aquest?"
             }
         },
         "title": {
@@ -4833,6 +4880,12 @@
                     "1": {
                         "then": "Aquest fanal utilitza LED"
                     },
+                    "10": {
+                        "then": "Aquest fanal utilitza làmpades de sodi d'alta pressió (taronja amb blanc)"
+                    },
+                    "11": {
+                        "then": "Aquest fanal s'il·lumina amb gas"
+                    },
                     "2": {
                         "then": "Aquest fanal utilitza il·luminació incandescent"
                     },
@@ -4856,12 +4909,6 @@
                     },
                     "9": {
                         "then": "Aquest fanal utilitza làmpades de sodi de baixa pressió (taronja monocroma)"
-                    },
-                    "10": {
-                        "then": "Aquest fanal utilitza làmpades de sodi d'alta pressió (taronja amb blanc)"
-                    },
-                    "11": {
-                        "then": "Aquest fanal s'il·lumina amb gas"
                     }
                 },
                 "question": "Quin tipus d'il·luminació utilitza aquest fanal?"
@@ -5452,10 +5499,69 @@
         }
     },
     "walls_and_buildings": {
-        "description": "Capa construïda especial que proporciona totes les parets i edificis. Aquesta capa és útil als predefinits per a objectes que es poden col·locar a les parets (p. ex. DEA, bústies de correus, entrades, adreces, càmeres de vigilància, ...). Aquesta capa és invisible per defecte i no es pot activar per l'usuari."
+        "description": "Capa construïda especial que proporciona totes les parets i edificis. Aquesta capa és útil als predefinits per a objectes que es poden col·locar a les parets (p. ex. DEA, bústies de correus, entrades, adreces, càmeres de vigilància, ...). Aquesta capa és invisible per defecte i no es pot activar per l'usuari.",
+        "tagRenderings": {
+            "entrance_info": {
+                "mappings": {
+                    "0": {
+                        "then": "No s'ha senyalitzat cap entrada"
+                    },
+                    "1": {
+                        "then": "Cap de les entrades de {_entrance_count} encara no tenen informació de l'ampalda"
+                    }
+                },
+                "render": {
+                    "before": "<h3>Entrades</h3>Aquest edifici té {_entrances_count} entrades:",
+                    "special": {
+                        "tagrendering": "Una <a href='#{id}'>entrada </a> de {canonical(width)}"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Paret o edifici"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "metre"
+                    },
+                    "1": {
+                        "human": "centimetre"
+                    }
+                }
+            }
+        }
     },
     "waste_basket": {
+        "description": "Es tracta d'una paperera pública, una paperera, on pots llençar la teva paperera.",
         "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Tots els tipus"
+                    },
+                    "1": {
+                        "question": "Paperera per a cigarrets"
+                    },
+                    "2": {
+                        "question": "Paperera per a medicaments"
+                    },
+                    "3": {
+                        "question": "Paperera per a excrements de gossos"
+                    },
+                    "4": {
+                        "question": "Paperera per a brossa"
+                    },
+                    "5": {
+                        "question": "Paperera per a objectes punxants"
+                    },
+                    "6": {
+                        "question": "Paperera per a plàstics"
+                    }
+                }
+            },
             "1": {
                 "options": {
                     "0": {
@@ -5464,10 +5570,60 @@
                 }
             }
         },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Paperera"
+                        }
+                    }
+                }
+            }
+        },
         "name": "Paperera",
         "presets": {
             "0": {
                 "title": "una paperera"
+            }
+        },
+        "tagRenderings": {
+            "dispensing_dog_bags": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta paperera té un dispensador per a bosses d'excrements (de gossos)"
+                    },
+                    "1": {
+                        "then": "Aquesta paperera <b>no</b> té un dispensador per a bosses d'excrements (gossos)"
+                    }
+                },
+                "question": "Aquesta paperera té un dispensador per a bosses per a excrements de gossos?"
+            },
+            "waste-basket-waste-types": {
+                "mappings": {
+                    "0": {
+                        "then": "Una paperera per a residus generals"
+                    },
+                    "1": {
+                        "then": "Una paperera per a residus generals"
+                    },
+                    "2": {
+                        "then": "Una paperera per a excrements de gossos"
+                    },
+                    "3": {
+                        "then": "Una paperera per a cigarrets"
+                    },
+                    "4": {
+                        "then": "Una paperera per a medicaments"
+                    },
+                    "5": {
+                        "then": "Una paperera per a agulles i altres objectes punxants"
+                    },
+                    "6": {
+                        "then": "Una paperera per a plàstic"
+                    }
+                },
+                "question": "Quin tipus de paperera és aquesta?"
             }
         },
         "title": {
@@ -5487,6 +5643,7 @@
         "name": "Contenidor de brossa",
         "presets": {
             "0": {
+                "description": "Contenidor mitjà o gran per a dipositar residus (domèstics)",
                 "title": "un contenidor de basura"
             }
         },
@@ -5503,7 +5660,8 @@
                         "then": "Aquest contenidor és només per als residents"
                     }
                 },
-                "question": "Qui pot utilitzar aquest contenidor de brossa?"
+                "question": "Qui pot utilitzar aquest contenidor de brossa?",
+                "render": "Accés: {access}"
             },
             "disposal-location": {
                 "mappings": {
