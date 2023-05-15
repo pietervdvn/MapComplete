@@ -7,8 +7,8 @@ import { describe, it } from "vitest"
  * @param reason
  * @private
  */
-function detectInCode(forbidden: string, reason: string): (done: () => void) => void {
-    return (done: () => void) => {
+function detectInCode(forbidden: string, reason: string): Promise<void> {
+    return new Promise<void>((done) => {
         const excludedDirs = [
             ".git",
             "node_modules",
@@ -49,14 +49,23 @@ function detectInCode(forbidden: string, reason: string): (done: () => void) => 
                     console.error(found.length, "issues found")
                     throw msg
                 }
-                done()
             }
         )
-    }
+    })
+}
+
+function wrap(promise: Promise<void>): ((done: () => void) => void) {
+    return (done => {
+        promise.then(done)
+    })
+}
+
+function itAsync(name: string, promise: Promise<void>){
+    it(name, wrap(promise))
 }
 
 describe("Code quality", () => {
-    it(
+    itAsync(
         "should not contain reverse",
         detectInCode(
             "reverse()",
@@ -64,12 +73,12 @@ describe("Code quality", () => {
         )
     )
 
-    it(
+    itAsync(
         "should not contain 'constructor.name'",
         detectInCode("constructor\\.name", "This is not allowed, as minification does erase names.")
     )
 
-    it(
+    itAsync(
         "should not contain 'innerText'",
         detectInCode(
             "innerText",
@@ -77,7 +86,7 @@ describe("Code quality", () => {
         )
     )
 
-    it(
+    itAsync(
         "should not contain 'import * as name from \"xyz.json\"'",
         detectInCode(
             'import \\* as [a-zA-Z0-9_]\\+ from \\"[.-_/a-zA-Z0-9]\\+\\.json\\"',
@@ -85,7 +94,7 @@ describe("Code quality", () => {
         )
     )
 
-    it(
+    itAsync(
         "should not contain '[\"default\"]'",
         detectInCode('\\[\\"default\\"\\]', "Possible leftover of faulty default import")
     )
