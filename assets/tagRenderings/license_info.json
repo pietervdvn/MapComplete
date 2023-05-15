@@ -266,6 +266,16 @@
     ]
   },
   {
+    "path": "qrcode.svg",
+    "license": "MIT",
+    "authors": [
+      "Ionic Team"
+    ],
+    "sources": [
+      "https://commons.wikimedia.org/wiki/File:Ionicons_qr-code-outline.svg"
+    ]
+  },
+  {
     "path": "send_email.svg",
     "license": "CC0; trivial",
     "authors": [],

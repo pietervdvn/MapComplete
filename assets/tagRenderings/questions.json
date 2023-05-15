@@ -880,6 +880,15 @@
           "da": "Betalingskort accepteres her",
           "cs": "Jsou zde přijímány platební karty"
         }
+      },
+      {
+        "if": "payment:qr_code=yes",
+        "ifnot": "payment:qr_code=no",
+        "icon": "./assets/tagRenderings/qrcode.svg",
+        "then": {
+          "en": "Payment by QR-code is possible here",
+          "nl": "Betalen via een QR-code is hier mogelijk"
+        }
       }
     ]
   },
