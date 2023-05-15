@@ -1,10 +1,10 @@
-import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
-import { And } from "../../../Logic/Tags/And"
-import { Tag } from "../../../Logic/Tags/Tag"
-import { TagUtils } from "../../../Logic/Tags/TagUtils"
-import { Or } from "../../../Logic/Tags/Or"
-import { RegexTag } from "../../../Logic/Tags/RegexTag"
-import { describe, expect, it } from "vitest"
+import {TagsFilter} from "../../../Logic/Tags/TagsFilter"
+import {And} from "../../../Logic/Tags/And"
+import {Tag} from "../../../Logic/Tags/Tag"
+import {TagUtils} from "../../../Logic/Tags/TagUtils"
+import {Or} from "../../../Logic/Tags/Or"
+import {RegexTag} from "../../../Logic/Tags/RegexTag"
+import {describe, expect, it} from "vitest"
 
 describe("Tag optimalization", () => {
     describe("And", () => {
@@ -69,6 +69,14 @@ describe("Tag optimalization", () => {
             const t = new And([new Tag("bicycle", "yes"), new Tag("amenity", "binoculars")])
             const opt = <TagsFilter>t.optimize()
             expect(TagUtils.toString(opt)).toBe("amenity=binoculars&bicycle=yes")
+        })
+
+        it("should correctly optimize key=A&key!=B into key=A", () => {
+            const t = new And([new Tag("shop", "sports"), new RegexTag("shop", "mall", true)])
+            const opt = t.optimize()
+            expect(typeof opt !== "boolean").true
+            expect(TagUtils.toString(<TagsFilter>opt)).toBe("shop=sports")
+
         })
 
         it("should optimize nested ORs", () => {
@@ -263,7 +271,7 @@ describe("Tag optimalization", () => {
                 or: [
                     "club=climbing",
                     {
-                        and: ["sport=climbing", { or: ["club~*", "office~*"] }],
+                        and: ["sport=climbing", {or: ["club~*", "office~*"]}],
                     },
                     {
                         and: [
