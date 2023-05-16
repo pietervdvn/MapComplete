@@ -27,8 +27,8 @@
         "isOsmCache": false
       },
       "calculatedTags": [
-        "_closest_osm_waste_basket=feat.closest('waste_basket')?.properties?.id",
-        "_closest_osm_waste_basket_distance=feat.distanceTo(feat.properties._closest_osm_waste_basket)",
+        "_closest_osm_waste_basket=closest(feat)('waste_basket')?.properties?.id",
+        "_closest_osm_waste_basket_distance=distanceTo(feat)(feat.properties._closest_osm_waste_basket)",
         "_has_closeby_feature=Number(feat.properties._closest_osm_waste_basket_distance) < 10 ? 'yes' : 'no'"
       ],
       "title": "Afvalbak in dataset",
@@ -65,10 +65,10 @@
         "isOsmCache": false
       },
       "calculatedTags": [
-        "_closest_osm_recycling=feat.closest('recycling')?.properties?.id",
-        "_closest_osm_waste_disposal=feat.closest('waste_disposal')?.properties?.id",
-        "_closest_osm_recycling_distance=feat.distanceTo(feat.properties._closest_osm_recycling)",
-        "_closest_osm_waste_disposal_distance=feat.distanceTo(feat.properties._closest_osm_waste_disposal)",
+        "_closest_osm_recycling=closest(feat)('recycling')?.properties?.id",
+        "_closest_osm_waste_disposal=closest(feat)('waste_disposal')?.properties?.id",
+        "_closest_osm_recycling_distance=distanceTo(feat)(feat.properties._closest_osm_recycling)",
+        "_closest_osm_waste_disposal_distance=distanceTo(feat)(feat.properties._closest_osm_waste_disposal)",
         "_has_closeby_recycling=Number(feat.properties._closest_osm_recycling_distance) < 10 ? 'yes' : 'no'",
         "_has_closeby_waste_disposal=Number(feat.properties._closest_osm_waste_disposal_distance) < 10 ? 'yes' : 'no'"
       ],

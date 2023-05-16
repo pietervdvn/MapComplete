@@ -52,13 +52,13 @@
     }
   ],
   "calculatedTags": [
-    "_entrance_properties=feat.overlapWith('entrance')?.map(e => e.feat.properties)?.filter(p => p !== undefined && p.indoor !== 'door')",
-    "_entrance_properties_with_width=feat.get('_entrance_properties')?.filter(p => p['width'] !== undefined)",
-    "_entrances_count=feat.get('_entrance_properties').length",
-    "_entrances_count_without_width_count= feat.get('_entrances_count') - feat.get('_entrance_properties_with_width').length",
-    "_biggest_width= Math.max( feat.get('_entrance_properties').map(p => p.width))",
-    "_biggest_width_properties= /* Can be a list! */ feat.get('_entrance_properties').filter(p => p.width === feat.get('_biggest_width'))",
-    "_biggest_width_id=feat.get('_biggest_width_properties').id"
+    "_entrance_properties=overlapWith(feat)('entrance')?.map(e => e.feat.properties)?.filter(p => p !== undefined && p.indoor !== 'door')",
+    "_entrance_properties_with_width=get(feat)('_entrance_properties')?.filter(p => p['width'] !== undefined)",
+    "_entrances_count=get(feat)('_entrance_properties').length",
+    "_entrances_count_without_width_count= get(feat)('_entrances_count') - get(feat)('_entrance_properties_with_width').length",
+    "_biggest_width= Math.max( get(feat)('_entrance_properties').map(p => p.width))",
+    "_biggest_width_properties= /* Can be a list! */ get(feat)('_entrance_properties').filter(p => p.width === get(feat)('_biggest_width'))",
+    "_biggest_width_id=get(feat)('_biggest_width_properties').id"
   ],
   "units": [
     {

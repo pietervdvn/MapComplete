@@ -56,7 +56,7 @@
         },
         "minzoom": 12,
         "calculatedTags": [
-          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''",
+          "_is_shadowed=overlapWith(feat)('shadow').length > 0 ? 'yes': ''",
           "_video:id= feat.properties.video === undefined ? undefined : new URL(feat.properties.video).searchParams.get('v')"
         ]
       }
@@ -72,7 +72,7 @@
           "isOsmCache": true
         },
         "calculatedTags": [
-          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''",
+          "_is_shadowed=overlapWith(feat)('shadow').length > 0 ? 'yes': ''",
           "_video:id=feat.properties.video === undefined ? undefined : new URL(feat.properties.video).searchParams.get('v')"
         ]
       }
@@ -88,7 +88,7 @@
           "isOsmCache": true
         },
         "calculatedTags": [
-          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''",
+          "_is_shadowed=overlapWith(feat)('shadow').length > 0 ? 'yes': ''",
           "_video:id=feat.properties.video === undefined ? undefined : new URL(feat.properties.video).searchParams.get('v')"
         ]
       }
@@ -104,7 +104,7 @@
           "isOsmCache": true
         },
         "calculatedTags": [
-          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''",
+          "_is_shadowed=overlapWith(feat)('shadow').length > 0 ? 'yes': ''",
           "_video:id=feat.properties.video === undefined ? undefined : new URL(feat.properties.video).searchParams.get('v')"
         ]
       }
@@ -113,7 +113,7 @@
       "builtin": "slow_roads",
       "override": {
         "calculatedTags": [
-          "_is_shadowed=feat.overlapWith('shadow').length > 0 ? 'yes': ''"
+          "_is_shadowed=overlapWith(feat)('shadow').length > 0 ? 'yes': ''"
         ],
         "source": {
           "geoJsonLocal": "http://127.0.0.1:8080/speelplekken_{layer}_{z}_{x}_{y}.geojson",

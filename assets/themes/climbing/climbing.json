@@ -99,7 +99,7 @@
           }
         ],
         "+calculatedTags": [
-          "_embedding_feature_properties=feat.overlapWith('climbing_area').map(f => f.feat.properties).filter(p => p !== undefined).map(p => {return{access: p.access, id: p.id, name: p.name, climbing: p.climbing, 'access:description': p['access:description']}})",
+          "_embedding_feature_properties=overlapWith(feat)('climbing_area').map(f => f.feat.properties).filter(p => p !== undefined).map(p => {return{access: p.access, id: p.id, name: p.name, climbing: p.climbing, 'access:description': p['access:description']}})",
           "_embedding_features_with_access=feat.get('_embedding_feature_properties')?.filter(p => p.access !== undefined)?.at(0)",
           "_embedding_feature_with_rock=feat.get('_embedding_feature_properties')?.filter(p => p.rock !== undefined)?.at(0)",
           "_embedding_features_with_rock:rock=feat.get('_embedding_feature_with_rock')?.rock",

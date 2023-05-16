@@ -53,7 +53,7 @@
       },
       "minzoom": 18,
       "calculatedTags": [
-        "_has_address=feat.overlapWith('address').length > 0"
+        "_has_address=overlapWith(feat)('address').length > 0"
       ],
       "mapRendering": [
         {
@@ -135,10 +135,10 @@
         }
       ],
       "calculatedTags": [
-        "_embedding_object=feat.overlapWith('address')[0]?.feat?.properties ?? null",
+        "_embedding_object=overlapWith(feat)('address')[0]?.feat?.properties ?? null",
         "_embedding_object:addr:housenumber=JSON.parse(feat.properties._embedding_object)?.['addr:housenumber']",
         "_embedding_object:addr:street=JSON.parse(feat.properties._embedding_object)?.['addr:street']",
-        "_embedding_inspire_polygon_has_address=feat.overlapWith('raw_inspire_polygons')[0]?.feat?.properties?._has_address",
+        "_embedding_inspire_polygon_has_address=overlapWith(feat)('raw_inspire_polygons')[0]?.feat?.properties?._has_address",
         "_embedding_object:id=feat.get('_embedding_object')?.id ?? feat.properties._embedding_inspire_polygon_has_address"
       ],
       "filter": [
@@ -233,7 +233,7 @@
         "hu": "Címek"
       },
       "calculatedTags": [
-        "_closest_3_street_names=feat.closestn('named_streets',3, 'name').map(f => f.feat.properties.name)",
+        "_closest_3_street_names=closestn(feat)('named_streets',3, 'name').map(f => f.feat.properties.name)",
         "_closest_street:0:name=JSON.parse(feat.properties._closest_3_street_names)[0]",
         "_closest_street:1:name=JSON.parse(feat.properties._closest_3_street_names)[1]",
         "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]"

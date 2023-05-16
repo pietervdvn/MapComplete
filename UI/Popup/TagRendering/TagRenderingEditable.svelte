@@ -75,7 +75,7 @@
                 <button slot="cancel" class="secondary" on:click={() => {editMode = false}}>
                     <Tr t={Translations.t.general.cancel}/>
                 </button>
-                <XCircleIcon slot="upper-right" class="w-8 h-8" on:click={() => {editMode = false}}/>
+                <XCircleIcon slot="upper-right" class="w-8 h-8 cursor-pointer" on:click={() => {editMode = false}}/>
             </TagRenderingQuestion>
         {:else}
             <div class="flex justify-between low-interaction items-center rounded px-2">

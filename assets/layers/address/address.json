@@ -31,7 +31,7 @@
     }
   },
   "calculatedTags": [
-    "_closest_3_street_names=feat.closestn('named_streets',3, 'name').map(f => f.feat.properties.name)",
+    "_closest_3_street_names=closestn(feat)('named_streets',3, 'name').map(f => f.feat.properties.name)",
     "_closest_street:0:name=JSON.parse(feat.properties._closest_3_street_names)[0]",
     "_closest_street:1:name=JSON.parse(feat.properties._closest_3_street_names)[1]",
     "_closest_street:2:name=JSON.parse(feat.properties._closest_3_street_names)[2]"

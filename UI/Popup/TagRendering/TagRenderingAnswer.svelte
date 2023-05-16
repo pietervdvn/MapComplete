@@ -31,7 +31,7 @@
 </script>
 
 {#if config !== undefined && (config?.condition === undefined || config.condition.matchesProperties(_tags))}
-  <div class={"flex flex-col w-full "+classes+" "+extraClasses}>
+  <div class={"link-underline flex flex-col w-full "+classes+" "+extraClasses}>
     {#if trs.length === 1}
       <TagRenderingMapping mapping={trs[0]} {tags} {state} {selectedElement} {layer}></TagRenderingMapping>
     {/if}

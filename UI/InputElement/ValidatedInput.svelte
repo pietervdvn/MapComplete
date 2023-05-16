@@ -56,7 +56,7 @@
   <textarea class="w-full" bind:value={$_value} inputmode={validator.inputmode ?? "text"} placeholder={_placeholder}></textarea>
 {:else }
   <span class="inline-flex">
-    <input bind:this={htmlElem} bind:value={$_value} inputmode={validator.inputmode ?? "text"} placeholder={_placeholder}>
+    <input bind:this={htmlElem} bind:value={$_value} class="w-full" inputmode={validator.inputmode ?? "text"} placeholder={_placeholder}>
     {#if !$isValid}
       <ExclamationIcon class="h-6 w-6 -ml-6"></ExclamationIcon>
     {/if}

@@ -1091,6 +1091,12 @@ video {
   width: 100vw;
 }
 
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .w-4 {
   width: 1rem;
 }
@@ -1103,18 +1109,16 @@ video {
   width: 0.75rem;
 }
 
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
 .w-7 {
   width: 1.75rem;
 }
 
 .w-11 {
   width: 2.75rem;
+}
+
+.w-24 {
+  width: 6rem;
 }
 
 .w-1\/2 {
@@ -1128,10 +1132,6 @@ video {
 
 .w-96 {
   width: 24rem;
-}
-
-.w-24 {
-  width: 6rem;
 }
 
 .w-10 {
@@ -1956,6 +1956,10 @@ input {
   color: var(--foreground-color);
 }
 
+input[type=text]{
+  width: 100%;
+}
+
 /************************* BIG CATEGORIES ********************************/
 
 /**
@@ -2449,6 +2453,10 @@ a.link-underline {
 
   .sm\:max-w-xl {
     max-width: 36rem;
+  }
+
+  .sm\:flex-nowrap {
+    flex-wrap: nowrap;
   }
 
   .sm\:items-stretch {

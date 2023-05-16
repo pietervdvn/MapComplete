@@ -328,13 +328,13 @@
       "builtin": "crab_address",
       "override": {
         "calculatedTags+": [
-          "_embedded_in=feat.overlapWith('osm-buildings').filter(b => /* Do not match newly created objects */ b.feat.properties.id.indexOf('-') < 0)[0]?.feat?.properties ?? {}",
+          "_embedded_in=overlapWith(feat)('osm-buildings').filter(b => /* Do not match newly created objects */ b.feat.properties.id.indexOf('-') < 0)[0]?.feat?.properties ?? {}",
           "_embedding_nr=feat.get('_embedded_in')['addr:housenumber']+(feat.get('_embedded_in')['addr:unit'] ?? '')",
           "_embedding_street=feat.get('_embedded_in')['addr:street']",
           "_embedding_id=feat.get('_embedded_in').id",
-          "_closeby_addresses=feat.closestn('address',10,undefined,50).map(f => f.feat).filter(addr => addr.properties['addr:street'] == feat.properties['STRAATNM'] && feat.properties['HNRLABEL'] == addr.properties['addr:housenumber'] + (addr.properties['addr:unit']??'') ).length",
+          "_closeby_addresses=closestn(feat)('address',10,undefined,50).map(f => f.feat).filter(addr => addr.properties['addr:street'] == feat.properties['STRAATNM'] && feat.properties['HNRLABEL'] == addr.properties['addr:housenumber'] + (addr.properties['addr:unit']??'') ).length",
           "_has_identical_closeby_address=feat.get('_closeby_addresses') >= 1 ? 'yes' : 'no'",
-          "_embedded_in_grb=feat.overlapWith('grb')[0]?.feat?.properties ?? {}",
+          "_embedded_in_grb=overlapWith(feat)('grb')[0]?.feat?.properties ?? {}",
           "_embedding_nr_grb=feat.get('_embedded_in_grb')['addr:housenumber']",
           "_embedding_street_grb=feat.get('_embedded_in_grb')['addr:street']"
         ],
@@ -465,7 +465,7 @@
       "name": "GRB geometries",
       "title": "GRB outline",
       "calculatedTags": [
-        "_overlaps_with_buildings=feat.overlapWith('osm-buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
+        "_overlaps_with_buildings=overlapWith(feat)('osm-buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
         "_overlaps_with=feat.get('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
         "_osm_obj:source:ref=feat.get('_overlaps_with')?.feat?.properties['source:geometry:ref']",
         "_osm_obj:id=feat.get('_overlaps_with')?.feat?.properties?.id",
@@ -483,7 +483,7 @@
         "_imported_osm_still_fresh= feat.properties['_osm_obj:source:date'] == feat.properties._grb_date",
         "_target_building_type=feat.properties['_osm_obj:building'] === 'yes' ? feat.properties.building : (feat.properties['_osm_obj:building'] ?? feat.properties.building)",
         "_building:min_level= feat.properties['fixme']?.startsWith('verdieping, correct the building tag, add building:level and building:min_level before upload in JOSM!') ? '1' : ''",
-        "_intersects_with_other_features=feat.intersectionsWith('generic_osm_object').map(f => \"<a href='https://osm.org/\"+f.feat.properties.id+\"' target='_blank'>\" + f.feat.properties.id + \"</a>\").join(', ')"
+        "_intersects_with_other_features=intersectionsWith(feat)('generic_osm_object').map(f => \"<a href='https://osm.org/\"+f.feat.properties.id+\"' target='_blank'>\" + f.feat.properties.id + \"</a>\").join(', ')"
       ],
       "tagRenderings": [
         {
@@ -699,7 +699,7 @@
       "builtin": "current_view",
       "override": {
         "calculatedTags": [
-          "_overlapping=Number(feat.properties.zoom) >= 16 ? feat.overlapWith('grb').map(ff => ff.feat.properties) : undefined",
+          "_overlapping=Number(feat.properties.zoom) >= 16 ? overlapWith(feat)('grb').map(ff => ff.feat.properties) : undefined",
           "_applicable=feat.get('_overlapping')?.filter(p => (p._imported_osm_object_found === 'true' || p._intersects_with_other_features === ''))?.map(p => p.id)",
           "_applicable_count=feat.get('_applicable')?.length"
         ],

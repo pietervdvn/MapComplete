@@ -1169,7 +1169,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         if (typeof window === "undefined") {
             return "https://mapcomplete.osm.be"
         }
-        const path = window.location.href.split("/")
+        const path = (window.location.protocol+ window.location.host + window.location.pathname) .split("/")
         path.pop()
         path.push("index.html")
         return path.join("/")

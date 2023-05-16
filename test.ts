@@ -59,7 +59,7 @@ async function testPdf() {
     await pdf.ConvertSvg("nl")
 }
 
-testPdf().then((_) => console.log("All done"))
+// testPdf().then((_) => console.log("All done"))
 //testinput()
 /*/
 testspecial()

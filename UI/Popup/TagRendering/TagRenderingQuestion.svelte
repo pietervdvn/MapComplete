@@ -73,7 +73,9 @@
     }>();
 
     function onSave() {
-
+        if(selectedTags === undefined){
+            return
+        }
         if (layer.source === null) {
             /**
              * This is a special, priviliged layer.
@@ -191,16 +193,14 @@
                 <img slot="image" src="./assets/svg/login.svg" class="w-8 h-8"/>
                 <Tr t={Translations.t.general.loginToStart} slot="message"></Tr>
             </SubtleButton>
-            <div class="flex justify-end">
+            {#if $feedback !== undefined}
+                <div class="alert">
+                    <Tr t={$feedback}/>
+                </div>
+            {/if}
+            <div class="flex justify-end flex-wrap-reverse sm:flex-nowrap items-stretch">
                 <!-- TagRenderingQuestion-buttons -->
-                {#if $feedback !== undefined}
-                    <div class="alert">
-                        <Tr t={$feedback}/>
-                    </div>
-                {/if}
-
                 <slot name="cancel"></slot>
-
                 <button on:click={onSave} class={(selectedTags === undefined ? "disabled" : "button-shadow")+" primary"}>
                     <Tr t={Translations.t.general.save}></Tr>
                 </button>

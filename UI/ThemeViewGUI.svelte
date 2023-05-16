@@ -41,6 +41,7 @@
     import {ShareScreen} from "./BigComponents/ShareScreen";
     import NextButton from "./Base/NextButton.svelte";
     import IfNot from "./Base/IfNot.svelte";
+    import BackgroundSwitcher from "./BigComponents/BackgroundSwitcher.svelte";
 
     export let state: ThemeViewState;
     let layout = state.layout;
@@ -115,7 +116,7 @@
                        {selectedLayer}/>
         </div>
     </If>
-    <div class="float-left m-1 sm:mt-2">
+    <div class="float-left m-1 sm:mt-2 flex flex-col">
         <MapControlButton on:click={() => state.guistate.themeIsOpened.setData(true)}>
             <div class="flex m-0.5 mx-1 sm:mx-1 md:mx-2 items-center cursor-pointer max-[480px]:w-full">
                 <img class="w-6 h-6 md:w-8 md:h-8 block mr-0.5 sm:mr-1 md:mr-2" src={layout.icon}>
@@ -136,16 +137,16 @@
         {/if}
         <ToSvelte construct={() => new ExtraLinkButton(state, layout.extraLink)}></ToSvelte>
         <If condition={state.featureSwitchIsTesting}>
-            <span class="alert">
+            <div class="alert w-fit">
               Testmode
-            </span>
+            </div>
         </If>
 
     </div>
 </div>
 
 <div class="absolute bottom-0 left-0 mb-4 ml-4">
-
+    <BackgroundSwitcher availableRasterLayers={state.availableLayers} mapproperties={state.mapProperties} normalMap={state.map}/>
 </div>
 
 <div class="absolute bottom-0 right-0 mb-4 mr-4 flex flex-col items-end">

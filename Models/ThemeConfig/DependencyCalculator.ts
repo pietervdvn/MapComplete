@@ -96,16 +96,15 @@ export default class DependencyCalculator {
                     return []
                 },
             }
-            // Init the extra patched functions...
-            ExtraFunctions.FullPatchFeature(params, obj)
+            const helpers = ExtraFunctions.constructHelpers(params)
             // ... Run the calculated tag code, which will trigger the getFeaturesWithin above...
             for (let i = 0; i < layer.calculatedTags.length; i++) {
                 const [key, code] = layer.calculatedTags[i]
                 currentLine = i // Leak the state...
                 currentKey = key
                 try {
-                    const func = new Function("feat", "return " + code + ";")
-                    const result = func(obj)
+                    const func = new Function("feat", "{"+ExtraFunctions.types.join(",")+"}", "return " + code + ";")
+                    const result = func(obj, helpers)
                     obj.properties[key] = JSON.stringify(result)
                 } catch (e) {}
             }

@@ -1,12 +1,14 @@
-import SimpleMetaTaggers, { MetataggingState, SimpleMetaTagger } from "./SimpleMetaTagger"
-import { ExtraFuncParams, ExtraFunctions } from "./ExtraFunctions"
+import SimpleMetaTaggers, {MetataggingState, SimpleMetaTagger} from "./SimpleMetaTagger"
+import {ExtraFuncParams, ExtraFunctions, ExtraFuncType} from "./ExtraFunctions"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
-import { Feature } from "geojson"
+import {Feature} from "geojson"
 import FeaturePropertiesStore from "./FeatureSource/Actors/FeaturePropertiesStore"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
-import { GeoIndexedStoreForLayer } from "./FeatureSource/Actors/GeoIndexedStore"
-import { IndexedFeatureSource } from "./FeatureSource/FeatureSource"
+import {GeoIndexedStoreForLayer} from "./FeatureSource/Actors/GeoIndexedStore"
+import {IndexedFeatureSource} from "./FeatureSource/FeatureSource"
 import OsmObjectDownloader from "./Osm/OsmObjectDownloader"
+import {Utils} from "../Utils";
+import {GeoJSONFeature} from "maplibre-gl";
 
 /**
  * Metatagging adds various tags to the elements, e.g. lat, lon, surface area, ...
@@ -27,8 +29,16 @@ export default class MetaTagging {
     }) {
         const params: ExtraFuncParams = {
             getFeatureById: (id) => state.indexedFeatures.featuresById.data.get(id),
-            getFeaturesWithin: (layerId, bbox) =>
-                state.perLayer.get(layerId).GetFeaturesWithin(bbox),
+            getFeaturesWithin: (layerId, bbox) => {
+                if(layerId === '*' || layerId === null || layerId === undefined){
+                    const feats: Feature[][] = []
+                    state.perLayer.forEach((layer) => {
+                        feats.push(layer.GetFeaturesWithin(bbox))
+                    })
+                    return feats
+                }
+                return [state.perLayer.get(layerId).GetFeaturesWithin(bbox)];
+            },
         }
         for (const layer of state.layout.layers) {
             if (layer.source === null) {
@@ -60,7 +70,7 @@ export default class MetaTagging {
     }
 
     /**
-     * This method (re)calculates all metatags and calculated tags on every given object.
+     * This method (re)calculates all metatags and calculated tags on every given feature.
      * The given features should be part of the given layer
      *
      * Returns true if at least one feature has changed properties
@@ -96,16 +106,26 @@ export default class MetaTagging {
         }
 
         // The calculated functions - per layer - which add the new keys
-        const layerFuncs = this.createRetaggingFunc(layer)
+        // Calculated functions are defined by the layer
+        const layerFuncs = this.createRetaggingFunc(layer, ExtraFunctions.constructHelpers(params))
         const state: MetataggingState = { layout, osmObjectDownloader }
 
         let atLeastOneFeatureChanged = false
-
+        let strictlyEvaluated = 0
         for (let i = 0; i < features.length; i++) {
             const feature = features[i]
             const tags = featurePropertiesStores?.getStore(feature.properties.id)
             let somethingChanged = false
             let definedTags = new Set(Object.getOwnPropertyNames(feature.properties))
+            if (layerFuncs !== undefined) {
+                let retaggingChanged = false
+                try {
+                    retaggingChanged = layerFuncs(feature)
+                } catch (e) {
+                    console.error(e)
+                }
+                somethingChanged = somethingChanged || retaggingChanged
+            }
             for (const metatag of metatagsToApply) {
                 try {
                     if (!metatag.keys.some((key) => !(key in feature.properties))) {
@@ -123,7 +143,10 @@ export default class MetaTagging {
                         metatag.applyMetaTagsOnFeature(feature, layer, tags, state)
                         if (options?.evaluateStrict) {
                             for (const key of metatag.keys) {
-                                feature.properties[key]
+                                const evaluated = feature.properties[key]
+                                if(evaluated !== undefined){
+                                    strictlyEvaluated++
+                                }
                             }
                         }
                     } else {
@@ -153,15 +176,7 @@ export default class MetaTagging {
                 }
             }
 
-            if (layerFuncs !== undefined) {
-                let retaggingChanged = false
-                try {
-                    retaggingChanged = layerFuncs(params, feature)
-                } catch (e) {
-                    console.error(e)
-                }
-                somethingChanged = somethingChanged || retaggingChanged
-            }
+
 
             if (somethingChanged) {
                 try {
@@ -175,91 +190,83 @@ export default class MetaTagging {
         return atLeastOneFeatureChanged
     }
 
-    private static createFunctionsForFeature(
-        layerId: string,
-        calculatedTags: [string, string, boolean][]
-    ): ((feature: any) => void)[] {
-        const functions: ((feature: any) => any)[] = []
-        for (const entry of calculatedTags) {
-            const key = entry[0]
-            const code = entry[1]
-            const isStrict = entry[2]
-            if (code === undefined) {
-                continue
-            }
+    /**
+     * Creates a function that implements that calculates a property and adds this property onto the feature properties
+     * @param specification
+     * @param helperFunctions
+     * @param layerId
+     * @private
+     */
+    private static createFunctionForFeature( [key, code, isStrict]: [string, string, boolean],
+                                            helperFunctions: Record<ExtraFuncType, (feature: Feature) => Function>,
+                                            layerId: string = "unkown layer"
+                                            ): ((feature: GeoJSONFeature) => void) | undefined {
+        if (code === undefined) {
+            return undefined
+        }
 
-            const calculateAndAssign: (feat: any) => any = (feat) => {
-                try {
-                    let result = new Function("feat", "return " + code + ";")(feat)
-                    if (result === "") {
-                        result === undefined
-                    }
-                    if (result !== undefined && typeof result !== "string") {
-                        // Make sure it is a string!
-                        result = JSON.stringify(result)
-                    }
-                    delete feat.properties[key]
-                    feat.properties[key] = result
-                    return result
-                } catch (e) {
-                    if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
-                        console.warn(
-                            "Could not calculate a " +
-                                (isStrict ? "strict " : "") +
-                                " calculated tag for key " +
-                                key +
-                                " defined by " +
-                                code +
-                                " (in layer" +
-                                layerId +
-                                ") due to \n" +
-                                e +
-                                "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features",
-                            e,
-                            e.stack
-                        )
-                        MetaTagging.errorPrintCount++
-                        if (MetaTagging.errorPrintCount == MetaTagging.stopErrorOutputAt) {
-                            console.error(
-                                "Got ",
-                                MetaTagging.stopErrorOutputAt,
-                                " errors calculating this metatagging - stopping output now"
-                            )
-                        }
-                    }
-                    return undefined
+
+
+        const calculateAndAssign: ((feat: GeoJSONFeature) => (string | undefined)) = (feat) => {
+            try {
+                let result = new Function("feat", "{"+ExtraFunctions.types.join(", ")+"}",  "return " + code + ";")(feat, helperFunctions)
+                if (result === "") {
+                    result = undefined
                 }
-            }
-
-            if (isStrict) {
-                functions.push(calculateAndAssign)
-                continue
-            }
-
-            // Lazy function
-            const f = (feature: any) => {
-                delete feature.properties[key]
-                Object.defineProperty(feature.properties, key, {
-                    configurable: true,
-                    enumerable: false, // By setting this as not enumerable, the localTileSaver will _not_ calculate this
-                    get: function () {
-                        return calculateAndAssign(feature)
-                    },
-                })
+                if (result !== undefined && typeof result !== "string") {
+                    // Make sure it is a string!
+                    result = JSON.stringify(result)
+                }
+                delete feat.properties[key]
+                feat.properties[key] = result
+                return result
+            } catch (e) {
+                if (MetaTagging.errorPrintCount < MetaTagging.stopErrorOutputAt) {
+                    console.warn(
+                        "Could not calculate a " +
+                        (isStrict ? "strict " : "") +
+                        " calculated tag for key " +
+                        key +
+                        " defined by " +
+                        code +
+                        " (in layer" +
+                        layerId +
+                        ") due to \n" +
+                        e +
+                        "\n. Are you the theme creator? Doublecheck your code. Note that the metatags might not be stable on new features",
+                        e,
+                        e.stack
+                    )
+                    MetaTagging.errorPrintCount++
+                    if (MetaTagging.errorPrintCount == MetaTagging.stopErrorOutputAt) {
+                        console.error(
+                            "Got ",
+                            MetaTagging.stopErrorOutputAt,
+                            " errors calculating this metatagging - stopping output now"
+                        )
+                    }
+                }
                 return undefined
             }
-
-            functions.push(f)
         }
-        return functions
+
+        if(isStrict){
+            return calculateAndAssign
+        }
+        return (feature: any) => {
+            delete feature.properties[key]
+            Utils.AddLazyProperty(feature.properties, key, () => calculateAndAssign(feature))
+            return undefined
+        }
     }
 
     /**
      * Creates the function which adds all the calculated tags to a feature. Called once per layer
      */
     private static createRetaggingFunc(
-        layer: LayerConfig
-    ): (params: ExtraFuncParams, feature: any) => boolean {
+        layer: LayerConfig,
+        helpers: Record<ExtraFuncType, (feature: Feature) => Function>
+    ): (feature: any) => boolean {
         const calculatedTags: [string, string, boolean][] = layer.calculatedTags
         if (calculatedTags === undefined || calculatedTags.length === 0) {
             return undefined
@@ -267,18 +274,17 @@ export default class MetaTagging {
 
         let functions: ((feature: Feature) => void)[] = MetaTagging.retaggingFuncCache.get(layer.id)
         if (functions === undefined) {
-            functions = MetaTagging.createFunctionsForFeature(layer.id, calculatedTags)
+            functions = calculatedTags.map(spec => this.createFunctionForFeature(spec, helpers, layer.id))
             MetaTagging.retaggingFuncCache.set(layer.id, functions)
         }
 
-        return (params: ExtraFuncParams, feature) => {
+        return (feature: Feature) => {
             const tags = feature.properties
             if (tags === undefined) {
                 return
             }
 
             try {
-                ExtraFunctions.FullPatchFeature(params, feature)
                 for (const f of functions) {
                     f(feature)
                 }

@@ -16,7 +16,7 @@
    */
   export let map:  Writable<MaplibreMap>
 
-  export let attribution = true
+  export let attribution = false
   let center = {};
 
   onMount(() => {
