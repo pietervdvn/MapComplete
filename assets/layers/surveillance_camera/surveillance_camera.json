@@ -460,7 +460,8 @@
         "fr": "Méthode de montage : {camera:mount}",
         "it": "Metodo di montaggio: {camera:mount}",
         "de": "Montageart: {camera:mount}",
-        "da": "Monteringsmetode: {camera:mount}"
+        "da": "Monteringsmetode: {camera:mount}",
+        "ca": "Mètode de muntatge: {camera:mount}"
       },
       "freeform": {
         "key": "camera:mount"

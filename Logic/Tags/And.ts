@@ -243,7 +243,9 @@ export class And extends TagsFilter {
                     properties[opt.key] = opt.value
                 }
             }
-            for (const opt of optimized) {
+
+            for (let i = 0; i < optimized.length; i++){
+                const opt = optimized[i];
                 if (opt instanceof Tag) {
                     const k = opt.key
                     const v = properties[k]
@@ -264,7 +266,23 @@ export class And extends TagsFilter {
                     if (v === undefined) {
                         continue
                     }
-                    if (v !== opt.value) {
+                    if(opt.invert){
+                        // We should _not_ match this value
+                        // If 'v' is given, we already know what value it should be
+                        // If 'v' is the not-expected value, we have a conflict and return false
+                        // Otherwise, we can safely drop this value
+
+                        const doesMatch = (typeof opt.value === "string" && v === opt.value) ||
+                            (v.match(<RegExp> opt.value) !== null)
+
+                        if(doesMatch){
+                            // We have a conflict as 'opt' is inverted
+                            return false
+                        }else{
+                            optimized.splice(i, 1)
+                            i--
+                        }
+                    }else if (v !== opt.value) {
                         // detected an internal conflict
                         return false
                     }
