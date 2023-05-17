@@ -14,6 +14,7 @@ export default class TileLocalStorage<T> {
     private readonly inUse = new UIEventSource(false)
     private readonly cachedSources: Record<number, UIEventSource<T> & { flush: () => void }> = {}
 
+    private static readonly useIndexedDb = typeof indexedDB !== "undefined"
     private constructor(layername: string) {
         this._layername = layername
     }
@@ -49,6 +50,9 @@ export default class TileLocalStorage<T> {
     }
 
     private async SetIdb(tileIndex: number, data: any): Promise<void> {
+        if(!TileLocalStorage.useIndexedDb){
+            return
+        }
         try {
             await this.inUse.AsPromise((inUse) => !inUse)
             this.inUse.setData(true)
@@ -69,6 +73,9 @@ export default class TileLocalStorage<T> {
     }
 
     private GetIdb(tileIndex: number): Promise<any> {
+        if(!TileLocalStorage.useIndexedDb){
+            return undefined
+        }
         return IdbLocalStorage.GetDirectly(this._layername + "_" + tileIndex)
     }
 }

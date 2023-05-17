@@ -32,7 +32,7 @@ export class LastClickFeatureSource implements WritableFeatureSource {
             }
 
         const renderings = Utils.Dedup(
-            allPresets.map((uiElem) => uiElem.ConstructElement().innerHTML)
+            allPresets.map((uiElem) => Utils.runningFromConsole ? "" : uiElem.ConstructElement().innerHTML)
         )
 
         const properties = {
