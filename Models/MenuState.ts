@@ -4,6 +4,9 @@ import UserRelatedState from "../Logic/State/UserRelatedState"
 import { Utils } from "../Utils"
 import { LocalStorageSource } from "../Logic/Web/LocalStorageSource"
 
+export type ThemeViewTabStates = typeof MenuState._themeviewTabs[number]
+export type MenuViewTabStates = typeof MenuState._menuviewTabs[number]
+
 /**
  * Indicates if a menu is open, and if so, which tab is selected;
  * Some tabs allow to highlight an element.
@@ -11,15 +14,15 @@ import { LocalStorageSource } from "../Logic/Web/LocalStorageSource"
  * Some convenience methods are provided for this as well
  */
 export class MenuState {
-    private static readonly _themeviewTabs = ["intro", "filters", "download", "copyright"] as const
+    public static readonly _themeviewTabs = ["intro", "filters", "download", "copyright"] as const
     public readonly themeIsOpened: UIEventSource<boolean>
     public readonly themeViewTabIndex: UIEventSource<number>
-    public readonly themeViewTab: UIEventSource<typeof MenuState._themeviewTabs[number]>
+    public readonly themeViewTab: UIEventSource<ThemeViewTabStates>
 
-    private static readonly _menuviewTabs = ["about", "settings", "community", "privacy"] as const
+    public static readonly _menuviewTabs = ["about", "settings", "community", "privacy"] as const
     public readonly menuIsOpened: UIEventSource<boolean>
     public readonly menuViewTabIndex: UIEventSource<number>
-    public readonly menuViewTab: UIEventSource<typeof MenuState._menuviewTabs[number]>
+    public readonly menuViewTab: UIEventSource<MenuViewTabStates>
 
     public readonly highlightedLayerInFilters: UIEventSource<string> = new UIEventSource<string>(
         undefined
