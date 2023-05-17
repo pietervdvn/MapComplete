@@ -297,6 +297,9 @@ export class Fuse<T> extends DesugaringStep<T> {
             const step = this.steps[i]
             try {
                 let r = step.convert(json, "While running step " + step.name + ": " + context)
+                if(r.result["tagRenderings"]?.some(tr => tr === undefined)){
+                    throw step.name+" introduced an undefined tagRendering"
+                }
                 errors.push(...(r.errors ?? []))
                 warnings.push(...(r.warnings ?? []))
                 information.push(...(r.information ?? []))

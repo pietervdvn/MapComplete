@@ -1,8 +1,8 @@
-import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
-import { Utils } from "../../../Utils"
+import {TagRenderingConfigJson} from "../Json/TagRenderingConfigJson"
+import {Utils} from "../../../Utils"
 import SpecialVisualizations from "../../../UI/SpecialVisualizations"
-import { RenderingSpecification, SpecialVisualization } from "../../../UI/SpecialVisualization"
-import { LayerConfigJson } from "../Json/LayerConfigJson"
+import {RenderingSpecification, SpecialVisualization} from "../../../UI/SpecialVisualization"
+import {LayerConfigJson} from "../Json/LayerConfigJson"
 
 export default class ValidationUtils {
     public static hasSpecialVisualisation(
@@ -10,10 +10,14 @@ export default class ValidationUtils {
         specialVisualisation: string
     ): boolean {
         return (
-            layer.tagRenderings?.some((tagRendering) =>
-                ValidationUtils.getSpecialVisualisations(<TagRenderingConfigJson>tagRendering).some(
-                    (vis) => vis.funcName === specialVisualisation
-                )
+            layer.tagRenderings?.some((tagRendering) => {
+                    if(tagRendering === undefined){
+                        return false
+                    }
+
+                    const spec = ValidationUtils.getSpecialVisualisations(<TagRenderingConfigJson>tagRendering)
+                    return spec.some((vis) => vis.funcName === specialVisualisation);
+                }
             ) ?? false
         )
     }
@@ -40,7 +44,7 @@ export default class ValidationUtils {
         const all: RenderingSpecification[] = []
         for (let translation of translations) {
             if (typeof translation == "string") {
-                translation = { "*": translation }
+                translation = {"*": translation}
             }
 
             for (const key in translation) {

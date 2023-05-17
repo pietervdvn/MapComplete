@@ -593,6 +593,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
 
         if (
             json.tagRenderings &&
+            this._desugaring.tagRenderings.has("just_created") &&
             !json.tagRenderings.some((tr) => tr === "just_created" || tr["id"] === "just_created")
         ) {
             json.tagRenderings.unshift(this._desugaring.tagRenderings.get("just_created"))
@@ -623,6 +624,7 @@ export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
             json.source !== "special" &&
             json.source !== "special:library" &&
             json.tagRenderings &&
+            this._desugaring.tagRenderings.has("last_edit") &&
             !json.tagRenderings.some((tr) => tr["id"] === "last_edit")
         ) {
             json.tagRenderings.push(this._desugaring.tagRenderings.get("last_edit"))
@@ -1161,7 +1163,14 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
         if (!hasMinimap) {
             layerConfig = { ...layerConfig }
             layerConfig.tagRenderings = [...layerConfig.tagRenderings]
-            layerConfig.tagRenderings.push(state.tagRenderings.get("minimap"))
+            const minimap = state.tagRenderings.get("minimap")
+            if(minimap === undefined){
+                if(state.tagRenderings.size > 0){
+                    throw "The 'minimap'-builtin tagrendering is not defined. As such, it cannot be added automatically"
+                }
+            }else{
+                layerConfig.tagRenderings.push()
+            }
         }
 
         return {
