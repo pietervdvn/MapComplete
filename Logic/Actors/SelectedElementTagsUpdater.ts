@@ -44,7 +44,7 @@ export default class SelectedElementTagsUpdater {
     }) {
         this.state = state
         state.osmConnection.isLoggedIn.addCallbackAndRun((isLoggedIn) => {
-            if (!isLoggedIn) {
+            if (!isLoggedIn && !Utils.runningFromConsole) {
                 return
             }
             this.installCallback()
