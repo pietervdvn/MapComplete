@@ -53,7 +53,7 @@
         <input type="text">
 
         <div>
-            <label for="html" class="checked">
+            <label class="checked" for="html">
                 <input id="html" name="fav_language" type="radio" value="HTML">
                 HTML (mimicks a <span class="literal-code">checked</span>-element)</label>
             <label for="css">
@@ -115,6 +115,13 @@
                 JavaScript
             </label>
         </div>
+
+        <select>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+
     </div>
 
 </div>
