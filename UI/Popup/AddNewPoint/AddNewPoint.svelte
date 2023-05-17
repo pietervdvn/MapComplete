@@ -262,9 +262,13 @@
             <Tr slot="message" t={Translations.t.general.cancel}/>
         </SubtleButton>
     {:else if !creating}
-        <NewPointLocationInput value={preciseCoordinate} snappedTo={snappedToObject} {state} {coordinate}
-                               targetLayer={selectedPreset.layer}
-                               snapToLayers={selectedPreset.preset.preciseInput.snapToLayers}/>
+        <div class="w-full p-1">
+            <div class="w-full h-96 max-h-screen rounded-xl overflow-hidden">
+            <NewPointLocationInput value={preciseCoordinate} snappedTo={snappedToObject} {state} {coordinate}
+                                   targetLayer={selectedPreset.layer}
+                                   snapToLayers={selectedPreset.preset.preciseInput.snapToLayers}/>
+            </div>
+        </div>
         <div class="flex flex-wrap-reverse md:flex-nowrap">
 
             <BackButton on:click={() => selectedPreset = undefined} clss="w-full">

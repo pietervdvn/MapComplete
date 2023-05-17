@@ -94,7 +94,6 @@
 
 </script>
 
-<div class="w-full h-64">
+
   <LocationInput {map} mapProperties={initialMapProperties}
                  value={preciseLocation}></LocationInput>
-</div>
