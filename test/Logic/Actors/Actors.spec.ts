@@ -7,6 +7,7 @@ import { OsmTags } from "../../../Models/OsmFeature"
 import { Feature, Geometry } from "geojson"
 import { expect, it } from "vitest"
 import ThemeViewState from "../../../Models/ThemeViewState"
+import ScriptUtils from "../../../scripts/ScriptUtils";
 
 const latestTags = {
     amenity: "public_bookcase",
@@ -43,7 +44,7 @@ Utils.injectJsonDownloadForTests("https://www.openstreetmap.org/api/0.6/node/556
     ],
 })
 
-it("should download the latest version", () => {
+it("should download the latest version", async () => {
     const state = new ThemeViewState(new LayoutConfig(<any>bookcaseJson, true))
     const feature: Feature<Geometry, OsmTags> = {
         type: "Feature",
@@ -71,11 +72,15 @@ it("should download the latest version", () => {
     }
     state.newFeatures.features.data.push(feature)
     state.newFeatures.features.ping()
-    new SelectedElementTagsUpdater(state)
+    // The 'selectedElementsTagsUpdater' is the functionality which is tested here
+    // However, one is initialized in the 'ThemeViewState' as well; and I'm to lazy to partially construct one here
+    // new SelectedElementTagsUpdater()
 
     // THis should trigger a download of the latest feaures and update the tags
     // However, this doesn't work with ts-node for some reason
     state.selectedElement.setData(feature)
+
+    await ScriptUtils.sleep(50)
 
     // The name should be updated
     expect(feature.properties.name).toEqual("Stubbekwartier-buurtbibliotheek")

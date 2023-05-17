@@ -1,7 +1,6 @@
-import { ExtraFuncParams, ExtraFunctions } from "../../Logic/ExtraFunctions"
-import { OsmFeature } from "../../Models/OsmFeature"
-import { describe, expect, it } from "vitest"
-import {GeoJSONFeature} from "maplibre-gl";
+import {ExtraFuncParams, ExtraFunctions} from "../../Logic/ExtraFunctions"
+import {OsmFeature} from "../../Models/OsmFeature"
+import {describe, expect, it} from "vitest"
 import {Feature} from "geojson";
 
 describe("OverlapFunc", () => {
@@ -110,7 +109,7 @@ describe("OverlapFunc", () => {
 
         const params: ExtraFuncParams = {
             getFeatureById: () => undefined,
-            getFeaturesWithin: () => [door],
+            getFeaturesWithin: () => [[door]],
         }
         const helpers = ExtraFunctions.constructHelpers(params)
 

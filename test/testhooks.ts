@@ -11,6 +11,6 @@ beforeEach(async () => {
 
     // Block internet access
     Utils.externalDownloadFunction = async (url) => {
-        throw "Fetching " + url + "blocked in tests, use Utils.injectJsonDownloadForTests instead"
+        throw "Fetching " + url + " blocked in tests, use Utils.injectJsonDownloadForTests instead"
     }
 })
