@@ -105,7 +105,7 @@ export class BBox {
      * Constructs a tilerange which fully contains this bbox (thus might be a bit larger)
      * @param zoomlevel
      */
-    public containingTileRange(zoomlevel): TileRange {
+    public containingTileRange(zoomlevel: number): TileRange {
         return Tiles.TileRangeBetween(zoomlevel, this.minLat, this.minLon, this.maxLat, this.maxLon)
     }
 
