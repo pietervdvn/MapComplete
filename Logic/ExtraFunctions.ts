@@ -92,7 +92,7 @@ class OverlapFunc implements ExtraFunction {
         "The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point.",
         "The resulting list is sorted in descending order by overlap. The feature with the most overlap will thus be the first in the list.",
         "",
-        "For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=feat.overlapWith('climbing_route')`",
+        "For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=overlapWith(feat)('climbing_route')`",
         "",
         "Also see [enclosingFeatures](#enclosingFeatures) which can be used to get all objects which fully contain this feature",
     ].join("\n")
@@ -157,7 +157,7 @@ class IntersectionFunc implements ExtraFunction {
                     continue
                 }
                 for (const otherFeature of otherLayers) {
-                    const intersections = GeoOperations.LineIntersections(feat, otherFeature)
+                    const intersections = GeoOperations.LineIntersections(feat, <any> otherFeature)
                     if (intersections.length === 0) {
                         continue
                     }
@@ -458,7 +458,7 @@ export class ExtraFunctions {
             "`area` contains the surface area (in square meters) of the object",
             "`lat` and `lon` contain the latitude and longitude",
         ]),
-        "Some advanced functions are available on **feat** as well:",
+        "Some advanced functions are available as well. Due to technical reasons, they should be used as `funcname(feat)(arguments)`.",
     ])
         .SetClass("flex-col")
         .AsMarkdown()

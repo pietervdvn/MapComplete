@@ -50,7 +50,7 @@ export default class MetaTagging {
                     // No features to handle
                     return
                 }
-                console.trace(
+                console.debug(
                     "Recalculating metatags for layer ",
                     layer.id,
                     "due to a change in the upstream features. Contains ",
