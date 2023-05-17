@@ -1,30 +1,30 @@
 /**
  * Generates a collection of geojson files based on an overpass query for a given theme
  */
-import { Utils } from "../Utils"
-import { Overpass } from "../Logic/Osm/Overpass"
-import { existsSync, readFileSync, writeFileSync } from "fs"
-import { TagsFilter } from "../Logic/Tags/TagsFilter"
-import { Or } from "../Logic/Tags/Or"
-import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
+import {Utils} from "../Utils"
+import {Overpass} from "../Logic/Osm/Overpass"
+import {existsSync, readFileSync, writeFileSync} from "fs"
+import {TagsFilter} from "../Logic/Tags/TagsFilter"
+import {Or} from "../Logic/Tags/Or"
+import {AllKnownLayouts} from "../Customizations/AllKnownLayouts"
 import * as OsmToGeoJson from "osmtogeojson"
 import MetaTagging from "../Logic/MetaTagging"
-import { ImmutableStore, UIEventSource } from "../Logic/UIEventSource"
-import { TileRange, Tiles } from "../Models/TileRange"
+import {ImmutableStore, UIEventSource} from "../Logic/UIEventSource"
+import {TileRange, Tiles} from "../Models/TileRange"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
 import ScriptUtils from "./ScriptUtils"
 import PerLayerFeatureSourceSplitter from "../Logic/FeatureSource/PerLayerFeatureSourceSplitter"
 import FilteredLayer from "../Models/FilteredLayer"
-import FeatureSource, { FeatureSourceForLayer } from "../Logic/FeatureSource/FeatureSource"
 import StaticFeatureSource from "../Logic/FeatureSource/Sources/StaticFeatureSource"
-import TiledFeatureSource from "../Logic/FeatureSource/TiledFeatureSource/TiledFeatureSource"
 import Constants from "../Models/Constants"
-import { GeoOperations } from "../Logic/GeoOperations"
-import SimpleMetaTaggers, { ReferencingWaysMetaTagger } from "../Logic/SimpleMetaTagger"
+import {GeoOperations} from "../Logic/GeoOperations"
+import SimpleMetaTaggers, {ReferencingWaysMetaTagger} from "../Logic/SimpleMetaTagger"
 import FilteringFeatureSource from "../Logic/FeatureSource/Sources/FilteringFeatureSource"
-import Loc from "../Models/Loc"
-import { Feature } from "geojson"
-import { BBox } from "../Logic/BBox"
+import {Feature} from "geojson"
+import {BBox} from "../Logic/BBox"
+import {FeatureSource, FeatureSourceForLayer} from "../Logic/FeatureSource/FeatureSource";
+import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader";
+import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropertiesStore";
 
 ScriptUtils.fixUtils()
 
@@ -41,7 +41,10 @@ function createOverpassObject(
         if (layer.doNotDownload) {
             continue
         }
-        if (layer.source.geojsonSource !== undefined) {
+        if (!layer.source) {
+            continue
+        }
+        if (layer.source.geojsonSource) {
             // This layer defines a geoJson-source
             // SHould it be cached?
             if (layer.source.isOsmCacheLayer !== true) {
@@ -124,14 +127,14 @@ async function downloadRaw(
             )
             const url = overpass.buildQuery(
                 "[bbox:" +
-                    bounds.south +
-                    "," +
-                    bounds.west +
-                    "," +
-                    bounds.north +
-                    "," +
-                    bounds.east +
-                    "]"
+                bounds.south +
+                "," +
+                bounds.west +
+                "," +
+                bounds.north +
+                "," +
+                bounds.east +
+                "]"
             )
 
             try {
@@ -156,12 +159,12 @@ async function downloadRaw(
                     "Could not download - probably hit the rate limit; waiting a bit. (" + err + ")"
                 )
                 failed++
-                await ScriptUtils.sleep(1000)
+                await ScriptUtils.sleep(1)
             }
         }
     }
 
-    return { failed: failed, skipped: skipped }
+    return {failed: failed, skipped: skipped}
 }
 
 /*
@@ -171,12 +174,16 @@ async function downloadRaw(
 async function downloadExtraData(theme: LayoutConfig) /* : any[] */ {
     const allFeatures: any[] = []
     for (const layer of theme.layers) {
-        const source = layer.source.geojsonSource
-        if (source === undefined) {
+        if(!layer.source?.geojsonSource){
             continue
         }
+        const source = layer.source.geojsonSource
         if (layer.source.isOsmCacheLayer !== undefined && layer.source.isOsmCacheLayer !== false) {
             // Cached layers are not considered here
+            continue
+        }
+        if(source.startsWith("https://api.openstreetmap.org/api/0.6/notes.json")){
+            // We ignore map notes
             continue
         }
         console.log("Downloading extra data: ", source)
@@ -204,7 +211,7 @@ function loadAllTiles(
             }
 
             // We read the raw OSM-file and convert it to a geojson
-            const rawOsm = JSON.parse(readFileSync(filename, { encoding: "utf8" }))
+            const rawOsm = JSON.parse(readFileSync(filename, {encoding: "utf8"}))
 
             // Create and save the geojson file - which is the main chunk of the data
             const geojson = OsmToGeoJson.default(rawOsm)
@@ -219,17 +226,19 @@ function loadAllTiles(
 /**
  * Load all the tiles into memory from disk
  */
-function sliceToTiles(
+async function sliceToTiles(
     allFeatures: FeatureSource,
     theme: LayoutConfig,
     targetdir: string,
     pointsOnlyLayers: string[],
-    clip: boolean
+    clip: boolean,
+    targetzoomLevel: number = 9
 ) {
     const skippedLayers = new Set<string>()
 
     const indexedFeatures: Map<string, any> = new Map<string, any>()
     let indexisBuilt = false
+    const osmObjectDownloader = new OsmObjectDownloader()
 
     function buildIndex() {
         for (const f of allFeatures.features.data) {
@@ -245,102 +254,102 @@ function sliceToTiles(
         return indexedFeatures.get(id)
     }
 
-    async function handleLayer(source: FeatureSourceForLayer) {
-        const layer = source.layer.layerDef
-        const targetZoomLevel = layer.source.geojsonZoomLevel ?? 0
 
-        const layerId = layer.id
-        if (layer.source.isOsmCacheLayer !== true) {
-            console.log("Skipping layer ", layerId, ": not a caching layer")
-            skippedLayers.add(layer.id)
-            return
-        }
-        console.log(
-            "Handling layer ",
-            layerId,
-            "which has",
-            source.features.data.length,
-            "features"
-        )
-        if (source.features.data.length === 0) {
-            return
-        }
-        MetaTagging.addMetatags(
-            source.features.data,
-            {
-                getFeaturesWithin: (_) => {
-                    return <any> [allFeatures.features.data]
-                },
-                getFeatureById: getFeatureById,
-            },
-            layer,
-            {},
-            {
-                includeDates: false,
-                includeNonDates: true,
-                evaluateStrict: true,
+    const flayers: FilteredLayer[] = theme.layers.map((l) => new FilteredLayer(l))
+    const perLayer = new PerLayerFeatureSourceSplitter(
+        flayers,
+        allFeatures,
+    )
+    for (const [layerId, source] of perLayer.perLayer) {
+            const layer = flayers.find(flayer => flayer.layerDef.id === layerId).layerDef
+            const targetZoomLevel = layer.source.geojsonZoomLevel ?? targetzoomLevel
+
+            if (layer.source.geojsonSource && layer.source.isOsmCacheLayer !== true) {
+                console.log("Skipping layer ", layerId, ": not a caching layer")
+                skippedLayers.add(layer.id)
+                continue
             }
-        )
-
-        while (SimpleMetaTaggers.country.runningTasks.size > 0) {
+            const flayer: FilteredLayer = new FilteredLayer(layer)
             console.log(
-                "Still waiting for ",
-                SimpleMetaTaggers.country.runningTasks.size,
-                " features which don't have a country yet"
+                "Handling layer ",
+                layerId,
+                "which has",
+                source.features.data.length,
+                "features"
             )
-            await ScriptUtils.sleep(1)
-        }
+            if (source.features.data.length === 0) {
+                continue
+            }
+            const featureProperties: FeaturePropertiesStore = new FeaturePropertiesStore(source)
 
-        const createdTiles = []
-        // At this point, we have all the features of the entire area.
-        // However, we want to export them per tile of a fixed size, so we use a dynamicTileSOurce to split it up
-        TiledFeatureSource.createHierarchy(source, {
-            minZoomLevel: targetZoomLevel,
-            maxZoomLevel: targetZoomLevel,
-            maxFeatureCount: undefined,
-            registerTile: (tile) => {
-                const tileIndex = tile.tileIndex
-                const bbox = BBox.fromTileIndex(tileIndex).asGeoJson({})
-                console.log("Got tile:", tileIndex, tile.layer.layerDef.id)
-                if (tile.features.data.length === 0) {
-                    return
-                }
-
-                const filteredTile = new FilteringFeatureSource(
-                    {
-                        locationControl: new ImmutableStore<Loc>(undefined),
-                        allElements: undefined,
-                        selectedElement: new ImmutableStore<any>(undefined),
-                        globalFilters: new ImmutableStore([]),
+            MetaTagging.addMetatags(
+                source.features.data,
+                {
+                    getFeaturesWithin: (_) => {
+                        return <any>[allFeatures.features.data]
                     },
-                    tileIndex,
-                    tile,
-                    new UIEventSource<any>(undefined)
-                )
+                    getFeatureById: getFeatureById,
+                },
+                layer,
+                theme,
+                osmObjectDownloader,
+                featureProperties,
+                {
+                    includeDates: false,
+                    includeNonDates: true,
+                    evaluateStrict: true,
+                }
+            )
 
+            while (SimpleMetaTaggers.country.runningTasks.size > 0) {
+                console.log(
+                    "Still waiting for ",
+                    SimpleMetaTaggers.country.runningTasks.size,
+                    " features which don't have a country yet"
+                )
+                await ScriptUtils.sleep(250)
+            }
+
+            const createdTiles = []
+            // At this point, we have all the features of the entire area.
+            // However, we want to export them per tile of a fixed size, so we use a dynamicTileSOurce to split it up
+            const features = source.features.data
+            const perBbox = GeoOperations.spreadIntoBboxes(features, targetZoomLevel)
+
+            for (let [tileIndex, features] of perBbox) {
+                const bbox = BBox.fromTileIndex(tileIndex).asGeoJson({})
+                console.log("Got tile:", tileIndex, layer.id)
+                if (features.length === 0) {
+                    continue
+                }
+                const filteredTile = new FilteringFeatureSource(
+                    flayer,
+                    new StaticFeatureSource(features)
+                )
                 console.log(
                     "Tile " +
-                        layer.id +
-                        "." +
-                        tileIndex +
-                        " contains " +
-                        filteredTile.features.data.length +
-                        " features after filtering (" +
-                        tile.features.data.length +
-                        ") features before"
+                    layer.id +
+                    "." +
+                    tileIndex +
+                    " contains " +
+                    filteredTile.features.data.length +
+                    " features after filtering (" +
+                    features.length +
+                    ") features before"
                 )
                 if (filteredTile.features.data.length === 0) {
-                    return
+                    continue
                 }
+
                 let strictlyCalculated = 0
                 let featureCount = 0
-                let features: Feature[] = filteredTile.features.data
+
                 for (const feature of features) {
                     // Some cleanup
 
-                    if (tile.layer.layerDef.calculatedTags !== undefined) {
+                    if (layer.calculatedTags !== undefined) {
                         // Evaluate all the calculated tags strictly
-                        const calculatedTagKeys = tile.layer.layerDef.calculatedTags.map(
+                        const calculatedTagKeys = layer.calculatedTags.map(
                             (ct) => ct[0]
                         )
                         featureCount++
@@ -379,7 +388,6 @@ function sliceToTiles(
                         ...features.map((f: Feature) => GeoOperations.clipWith(<any>f, bbox))
                     )
                 }
-
                 // Lets save this tile!
                 const [z, x, y] = Tiles.tile_from_index(tileIndex)
                 // console.log("Writing tile ", z, x, y, layerId)
@@ -398,93 +406,76 @@ function sliceToTiles(
                     )
                 )
                 console.log("Written tile", targetPath, "with", filteredTile.features.data.length)
-            },
-        })
 
-        // All the tiles are written at this point
-        // Only thing left to do is to create the index
-        const path = targetdir + "_" + layerId + "_" + targetZoomLevel + "_overview.json"
-        const perX = {}
-        createdTiles
-            .map((i) => Tiles.tile_from_index(i))
-            .forEach(([z, x, y]) => {
-                const key = "" + x
-                if (perX[key] === undefined) {
-                    perX[key] = []
-                }
-                perX[key].push(y)
-            })
-        console.log("Written overview: ", path, "with ", createdTiles.length, "tiles")
-        writeFileSync(path, JSON.stringify(perX))
+            }
 
-        // And, if needed, to create a points-only layer
-        if (pointsOnlyLayers.indexOf(layer.id) >= 0) {
-            const filtered = new FilteringFeatureSource(
-                {
-                    locationControl: new ImmutableStore<Loc>(undefined),
-                    allElements: undefined,
-                    selectedElement: new ImmutableStore<any>(undefined),
-                    globalFilters: new ImmutableStore([]),
-                },
-                Tiles.tile_index(0, 0, 0),
-                source,
-                new UIEventSource<any>(undefined)
-            )
-            const features = filtered.features.data
 
-            const points = features.map((feature) => GeoOperations.centerpoint(feature))
-            console.log("Writing points overview for ", layerId)
-            const targetPath = targetdir + "_" + layerId + "_points.geojson"
-            // This is the geojson file containing all features for this tile
-            writeFileSync(
-                targetPath,
-                JSON.stringify(
-                    {
-                        type: "FeatureCollection",
-                        features: points,
-                    },
-                    null,
-                    " "
+            // All the tiles are written at this point
+            // Only thing left to do is to create the index
+            const path = targetdir + "_" + layerId + "_" + targetZoomLevel + "_overview.json"
+            const perX = {}
+            createdTiles
+                .map((i) => Tiles.tile_from_index(i))
+                .forEach(([z, x, y]) => {
+                    const key = "" + x
+                    if (perX[key] === undefined) {
+                        perX[key] = []
+                    }
+                    perX[key].push(y)
+                })
+            console.log("Written overview: ", path, "with ", createdTiles.length, "tiles")
+            writeFileSync(path, JSON.stringify(perX))
+
+            // And, if needed, to create a points-only layer
+            if (pointsOnlyLayers.indexOf(layer.id) >= 0) {
+                const filtered = new FilteringFeatureSource(
+                    flayer,
+                    source
                 )
-            )
-        }
-    }
+                const features = filtered.features.data
 
-    new PerLayerFeatureSourceSplitter(
-        new UIEventSource<FilteredLayer[]>(
-            theme.layers.map((l) => ({
-                layerDef: l,
-                isDisplayed: new UIEventSource<boolean>(true),
-                appliedFilters: new UIEventSource(undefined),
-            }))
-        ),
-        handleLayer,
-        allFeatures
-    )
+                const points = features.map((feature) => GeoOperations.centerpoint(feature))
+                console.log("Writing points overview for ", layerId)
+                const targetPath = targetdir + "_" + layerId + "_points.geojson"
+                // This is the geojson file containing all features for this tile
+                writeFileSync(
+                    targetPath,
+                    JSON.stringify(
+                        {
+                            type: "FeatureCollection",
+                            features: points,
+                        },
+                        null,
+                        " "
+                    )
+                )
+            }
+        }
 
     const skipped = Array.from(skippedLayers)
     if (skipped.length > 0) {
         console.warn(
             "Did not save any cache files for layers " +
-                skipped.join(", ") +
-                " as these didn't set the flag `isOsmCache` to true"
+            skipped.join(", ") +
+            " as these didn't set the flag `isOsmCache` to true"
         )
     }
 }
 
 export async function main(args: string[]) {
-    console.log("Cache builder started with args ", args.join(", "))
+    console.log("Cache builder started with args ", args.join(" "))
     ReferencingWaysMetaTagger.enabled = false
     if (args.length < 6) {
         console.error(
             "Expected arguments are: theme zoomlevel targetdirectory lat0 lon0 lat1 lon1 [--generate-point-overview layer-name,layer-name,...] [--force-zoom-level z] [--clip]" +
-                "--force-zoom-level causes non-cached-layers to be donwnloaded\n" +
-                "--clip will erase parts of the feature falling outside of the bounding box"
+            "--force-zoom-level causes non-cached-layers to be donwnloaded\n" +
+            "--clip will erase parts of the feature falling outside of the bounding box"
         )
         return
     }
     const themeName = args[0]
     const zoomlevel = Number(args[1])
+    console.log("Target zoomlevel for the tiles is",zoomlevel,"; this can be overridden by the individual layers")
 
     const targetdir = args[2] + "/" + themeName
     if (!existsSync(args[2])) {
@@ -531,6 +522,9 @@ export async function main(args: string[]) {
         return
     }
 
+    theme.layers = theme.layers.filter(l => Constants.priviliged_layers.indexOf(<any> l.id) < 0 && !l.id.startsWith("note_import_"))
+    console.log("Layers to download:", theme.layers.map(l => l.id).join(", "))
+
     let generatePointLayersFor = []
     if (args[7] == "--generate-point-overview") {
         if (args[8] === undefined) {
@@ -559,16 +553,22 @@ export async function main(args: string[]) {
 
     let failed = 0
     do {
+        try{
+
         const cachingResult = await downloadRaw(targetdir, tileRange, theme)
         failed = cachingResult.failed
         if (failed > 0) {
             await ScriptUtils.sleep(30000)
         }
+        }catch(e){
+            console.error(e)
+            return
+        }
     } while (failed > 0)
 
     const extraFeatures = await downloadExtraData(theme)
     const allFeaturesSource = loadAllTiles(targetdir, tileRange, theme, extraFeatures)
-    sliceToTiles(allFeaturesSource, theme, targetdir, generatePointLayersFor, clip)
+    await sliceToTiles(allFeaturesSource, theme, targetdir, generatePointLayersFor, clip, zoomlevel)
 }
 
 let args = [...process.argv]

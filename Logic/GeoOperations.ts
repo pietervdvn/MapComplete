@@ -408,12 +408,38 @@ export class GeoOperations {
     /**
      * Calculates line intersection between two features.
      */
-    public static LineIntersections(feature, otherFeature): [number, number][] {
+    public static LineIntersections(feature: Feature<LineString | MultiLineString | Polygon | MultiPolygon>, otherFeature: Feature<LineString | MultiLineString | Polygon | MultiPolygon>): [number, number][] {
         return turf
             .lineIntersect(feature, otherFeature)
             .features.map((p) => <[number, number]>p.geometry.coordinates)
     }
 
+    /**
+     * Given a list of features, will construct a map of slippy map tile-indices.
+     * Features of which the BBOX overlaps with the corresponding slippy map tile are added to the corresponding array
+     * @param features
+     * @param zoomlevel
+     */
+    public static spreadIntoBboxes(features: Feature[], zoomlevel: number) : Map<number, Feature[]> {
+
+        const perBbox = new Map<number, Feature[]>()
+
+        for (const feature of features) {
+            const bbox = BBox.get(feature)
+            const tilerange = bbox.expandToTileBounds(zoomlevel).containingTileRange(zoomlevel)
+            Tiles.MapRange(tilerange, (x, y) => {
+                const tileNumber = Tiles.tile_index(zoomlevel, x, y)
+                let newFeatureList = perBbox.get(tileNumber)
+                if(newFeatureList === undefined){
+                    newFeatureList = []
+                    perBbox.set(tileNumber, newFeatureList)
+                }
+                newFeatureList.push(feature)
+            })
+        }
+
+        return perBbox
+    }
     public static toGpx(
         locations:
             | Feature<LineString>
