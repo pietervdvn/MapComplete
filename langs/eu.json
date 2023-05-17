@@ -1,0 +1,19 @@
+{
+    "centerMessage": {
+        "loadingData": "Datuak kargatzen…",
+        "ready": "Egina!",
+        "retrying": "Datuak kargatzen akatsa egon da. Saia zaitez berriro {count} segundotan…",
+        "zoomIn": "Zooma gerturatu datuak ikusi edo aldatu ahal izateko"
+    },
+    "communityIndex": {
+        "available": "Komunitate honek {native} hitz egiten du",
+        "intro": "Jar zaitez harremanetan beste pertsona batzuekin, ezagutu itzazu eta ikasi eurengandik...",
+        "notAvailable": "Komunitate honek ez du {native} hitz egiten",
+        "title": "Komunitatearen indizea"
+    },
+    "delete": {
+        "cancel": "Ezeztatu",
+        "cannotBeDeleted": "Ezaugarri hau ezin da ezabatu",
+        "delete": "Ezabatu"
+    }
+}
