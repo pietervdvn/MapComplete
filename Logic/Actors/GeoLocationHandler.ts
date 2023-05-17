@@ -138,7 +138,8 @@ export default class GeoLocationHandler {
             lat: newLocation.latitude,
         })
         const zoom = this.mapProperties.zoom
-        zoom.setData(Math.max(zoom.data, 16))
+        zoom.setData(Math.min(Math.max(zoom.data, 14), 18))
+
         this.mapHasMoved.setData(new Date())
         this.geolocationState.requestMoment.setData(undefined)
     }
