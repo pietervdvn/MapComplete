@@ -2585,7 +2585,7 @@
             },
             "defibrillator-phone": {
                 "question": "Quin és el número de telèfon on preguntar sobre aquest desfibril·lador?",
-                "render": "Telèfon per a dubtes sobre aquest desfibril·lador: <a href='tel:{phone}'>{telèfon}</a>"
+                "render": "Telèfon per a dubtes sobre aquest desfibril·lador: <a href='tel:{phone}'>{phone}</a>"
             },
             "defibrillator-ref": {
                 "question": "Quin és el número d'identificació oficial del dispositiu? (si està visible al dispositiu)",
