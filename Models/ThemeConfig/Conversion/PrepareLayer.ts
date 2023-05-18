@@ -1169,7 +1169,7 @@ export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
                     throw "The 'minimap'-builtin tagrendering is not defined. As such, it cannot be added automatically"
                 }
             }else{
-                layerConfig.tagRenderings.push()
+                layerConfig.tagRenderings.push(minimap)
             }
         }
 
