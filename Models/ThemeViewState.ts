@@ -541,6 +541,14 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 }
             })
         }
+        {
+            this.selectedElement.addCallback(selected => {
+                if(selected === undefined){
+                    // We did _unselect_ an item - we always remove the lastclick-object
+                    this.lastClickObject.features.setData([])
+                }
+            })
+        }
         new MetaTagging(this)
         new TitleHandler(this.selectedElement, this.selectedLayer, this.featureProperties, this)
         new ChangeToElementsActor(this.changes, this.featureProperties)
