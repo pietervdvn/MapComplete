@@ -104,10 +104,10 @@
     <MaplibreMap map={maplibremap}></MaplibreMap>
 </div>
 
-<div class="absolute top-0 left-0 w-full ">
+<div class="absolute top-0 left-0 w-full pointer-events-none">
     <!-- Top components -->
     <If condition={state.featureSwitches.featureSwitchSearch}>
-        <div class="max-[480px]:w-full float-right mt-1 px-1 sm:m-2">
+        <div class="max-[480px]:w-full float-right mt-1 px-1 sm:m-2 pointer-events-auto">
             <Geosearch bounds={state.mapProperties.bounds} perLayer={state.perLayer} {selectedElement}
                        {selectedLayer}/>
         </div>
@@ -131,7 +131,7 @@
                         construct={() =>(currentViewLayer.defaultIcon()).SetClass("w-8 h-8 cursor-pointer")}/>
             </MapControlButton>
         {/if}
-        <ToSvelte construct={() => new ExtraLinkButton(state, layout.extraLink)}></ToSvelte>
+        <ToSvelte construct={() => new ExtraLinkButton(state, layout.extraLink).SetClass("pointer-events-auto")}></ToSvelte>
         <If condition={state.featureSwitchIsTesting}>
             <div class="alert w-fit">
                 Testmode
@@ -141,14 +141,14 @@
     </div>
 </div>
 
-<div class="absolute bottom-0 left-0 mb-4 w-screen">
+<div class="absolute bottom-0 left-0 mb-4 w-screen pointer-events-none">
     <div class="w-full flex justify-between px-4 items-end">
         <div>
             <!-- bottom left elements -->
             <MapControlButton on:click={() => state.guistate.backgroundLayerSelectionIsOpened.setData(true)}>
                 <Square3Stack3dIcon class="w-6 h-6"/>
             </MapControlButton>
-            <a class="opacity-50 hover:opacity-100 text-white cursor-pointer bg-black-transparent px-1 rounded-2xl" 
+            <a class="pointer-events-auto opacity-50 hover:opacity-100 text-white cursor-pointer bg-black-transparent px-1 rounded-2xl" 
                on:click={() =>{ state.guistate.themeViewTab.setData("copyright"); state.guistate.themeIsOpened.setData(true)}}>
                 © OpenStreetMap | <span class="w-24">{rasterLayerName}</span>
             </a>
