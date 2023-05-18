@@ -118,7 +118,7 @@
         "back": "Retour",
         "backToIndex": "Revenir vers l'aperçu de toutes les cartes thématiques",
         "backToMapcomplete": "Retour à l'aperçu du thème",
-        "backgroundMap": "Carte de fonds",
+        "backgroundMap": "Fond de plan",
         "cancel": "Annuler",
         "confirm": "Confirmer",
         "customThemeIntro": "<h3>Thèmes personnalisés</h3>Vous avez déjà visité ces thèmes personnalisés.",
@@ -154,7 +154,7 @@
         },
         "layerSelection": {
             "title": "Selectionner des couches",
-            "zoomInToSeeThisLayer": "Aggrandissez la carte pour voir cette couche"
+            "zoomInToSeeThisLayer": "Zoomer pour voir cette couche"
         },
         "loading": "Chargement…",
         "loadingTheme": "Chargement de {theme}…",

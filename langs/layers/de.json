@@ -4108,6 +4108,15 @@
                 },
                 "question": "Ist dieser Aufzug in Betrieb?"
             },
+            "speech_output": {
+                "render": {
+                    "special": {
+                        "question": "In welchen Sprachen verfügt der Aufzug über eine Sprachausgabe?",
+                        "render_list_item": "Der Aufzug hat eine Sprachausgabe in {language():font-bold}",
+                        "render_single_language": "Der Aufzug hat eine Sprachausgabe in {language():font-bold}"
+                    }
+                }
+            },
             "tactile_writing_language": {
                 "render": {
                     "special": {
@@ -4589,6 +4598,21 @@
                 }
             },
             "render": "Fitness-Station"
+        }
+    },
+    "fixme": {
+        "description": "OSM-Objekte, die wahrscheinlich korrigiert werden müssen, basierend auf einem FIXME-Tag.",
+        "name": "OSM-Objekte mit FIXME-Tags",
+        "tagRenderings": {
+            "fixme": {
+                "render": "Fixme Text: {fixme}"
+            },
+            "note": {
+                "render": "Notiz Text: {note}"
+            }
+        },
+        "title": {
+            "render": "OSM-Objekt mit FIXME-Tags"
         }
     },
     "food": {
@@ -7118,6 +7142,9 @@
                     },
                     "3": {
                         "then": "Dies ist ein Abholpunkt. Abfälle werden hier abgelegt, ohne sie in einen speziellen Behälter zu geben."
+                    },
+                    "4": {
+                        "then": "Dies ist eine Deponie, auf der die Abfälle gelagert werden."
                     }
                 },
                 "question": "Um welche Recyclingeinrichtung handelt es sich?"

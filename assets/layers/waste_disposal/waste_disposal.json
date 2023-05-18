@@ -7,14 +7,16 @@
     "it": "Contenitori per la raccolta differenziata",
     "id": "Tempat Pembuangan Limbah",
     "da": "Affaldsspande",
-    "ca": "Contenidor de brossa"
+    "ca": "Contenidor de brossa",
+    "fr": "Réceptacles destinés à recevoir des déchets"
   },
   "description": {
     "en": "Waste Disposal Bin, medium to large bin for disposal of (household) waste",
     "nl": "Een grote afvalcontainer voor (huishoudelijk) afval",
     "de": "Entsorgungsbehälter, mittlerer bis großer Behälter zur Entsorgung von (Haushalts-)Abfällen",
     "it": "Cestino per lo smaltimento dei rifiuti, contenitore di dimensioni medio grandi per lo smaltimento dei rifiuti (domestici)",
-    "da": "Affaldsspande, mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald"
+    "da": "Affaldsspande, mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald",
+    "fr": "Réceptacle destiné à recevoir des déchets (domestiques) enveloppés dans des sacs en plastique"
   },
   "source": {
     "osmTags": "amenity=waste_disposal"
@@ -60,7 +62,8 @@
         "de": "Mittlere bis große Mülltonne für die Entsorgung von (Haushalts-)Abfällen",
         "it": "Cestino di dimensioni medio-grandi per lo smaltimento dei rifiuti (domestici)",
         "id": "Tempat sampah sedang hingga besar untuk pembuangan limbah (rumah tangga)",
-        "da": "Mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald"
+        "da": "Mellemstor til stor skraldespand til bortskaffelse af (husholdnings)affald",
+        "ca": "Contenidor mitjà o gran per a dipositar residus (domèstics)"
       }
     }
   ],
@@ -104,7 +107,8 @@
         "de": "Zugang: {access}",
         "it": "Accesso: {access}",
         "id": "Akses: {access}",
-        "da": "Adgang: {access}"
+        "da": "Adgang: {access}",
+        "ca": "Accés: {access}"
       },
       "question": {
         "en": "Who can use this waste disposal bin?",

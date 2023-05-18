@@ -451,7 +451,8 @@
         "it": "Numero identificativo ufficiale di questo dispositivo:<i>{ref}</i>",
         "de": "Offizielle Identifikationsnummer des Geräts: <i>{ref}</i>",
         "sl": "Uradna identifikacijska številka te naprave: <i>{ref}</i>",
-        "es": "Número de identificación oficial del dispositivo: <i>{ref}</i>"
+        "es": "Número de identificación oficial del dispositivo: <i>{ref}</i>",
+        "ca": "Número d'identificació oficial del dispositiu: <i>{ref}</i>"
       },
       "question": {
         "en": "What is the official identification number of the device? (if visible on device)",
@@ -502,7 +503,8 @@
         "nl": "Telefoonnummer voor vragen over deze defibrillator: <a href='tel:{phone}'>{phone}</a>",
         "it": "Numero di telefono per le domande su questo defibrillatore:<a href='tel:{phone}'>{phone}</a>",
         "de": "Telefonnummer für Fragen zu diesem Defibrillator: <a href='tel:{phone}'>{phone}</a>",
-        "sl": "Telefonska številka za vprašanja o tem defibrilatorju: <a href='tel:{phone}'>{phone}</a>"
+        "sl": "Telefonska številka za vprašanja o tem defibrilatorju: <a href='tel:{phone}'>{phone}</a>",
+        "ca": "Telèfon per a dubtes sobre aquest desfibril·lador: <a href='tel:{phone}'>{phone}</a>"
       },
       "question": {
         "en": "What is the phone number for questions about this defibrillator?",
@@ -572,7 +574,8 @@
         "it": "Quando è stato verificato per l’ultima volta questo defibrillatore?",
         "de": "Wann wurde der Defibrillator zuletzt überprüft?",
         "sl": "Kdaj je bil ta defibrilator nazadnje opažen?",
-        "es": "¿Cuándo se sondeó por última vez este desfibrilador?"
+        "es": "¿Cuándo se sondeó por última vez este desfibrilador?",
+        "ca": "Quan es va explorar per última vegada aquest desfibril·lador?"
       },
       "render": {
         "en": "This defibrillator was last surveyed on {survey:date}",
@@ -615,7 +618,8 @@
         "de": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}",
         "ru": "Дополнительная информация для экспертов OpenStreetMap: {fixme}",
         "sl": "Dodatne informacije za OpenStreetMap strokovnjake: {fixme}",
-        "es": "Información extra para expertos en OpenStreetMap: {fixme}"
+        "es": "Información extra para expertos en OpenStreetMap: {fixme}",
+        "ca": "Informació addicional per als experts en OpenStreetMap: {fixme}"
       },
       "question": {
         "en": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)",

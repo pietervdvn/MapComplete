@@ -1,15 +1,15 @@
 {
   "contributors": [
     {
-      "commits": 271,
+      "commits": 272,
       "contributor": "kjon"
     },
     {
-      "commits": 264,
+      "commits": 266,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 137,
+      "commits": 140,
       "contributor": "paunofu"
     },
     {
@@ -319,6 +319,14 @@
     {
       "commits": 3,
       "contributor": "SiegbjornSitumeang"
+    },
+    {
+      "commits": 2,
+      "contributor": "lmagreault"
+    },
+    {
+      "commits": 2,
+      "contributor": "galder158@hotmail.com"
     },
     {
       "commits": 2,

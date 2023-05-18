@@ -76,7 +76,7 @@
             "nl": "Dit is een binnendeur, die een kamer of een gang volledig binnen hetzelfde gebouw afsluit",
             "de": "Dies ist eine Innentür, die Räume oder Gänge innerhalb eines Gebäudes verbindet",
             "es": "Esta es una puerta interior, que separa una habitación o pasillo dentro de un único edificio",
-            "fr": "Il s'agit d'une porte intérieure, séparant une pièce ou un couloir d'un même bâtiment"
+            "fr": "C'est une porte intérieure, séparant une pièce ou un couloir d'un même bâtiment"
           }
         },
         {
@@ -106,7 +106,7 @@
             "nl": "Dit is een secundaire ingang",
             "de": "Dies ist ein Nebeneingang",
             "es": "Esta es una entrada secundaria",
-            "fr": "Ceci est une entrée secondaire"
+            "fr": "C'est une entrée secondaire"
           }
         },
         {
@@ -121,7 +121,7 @@
             "nl": "Dit is een dienstingang - normaal gezien enkel gebruikt door werknemers, leveranciers, …",
             "de": "Dies ist ein Diensteingang - normalerweise nur für Mitarbeiter, Anlieferung, …",
             "es": "Esta es una entrada de servicio - normalmente solo la utilizan empleados, repartidores, …",
-            "fr": "Ceci est une entrée de service - normalement utilisée uniquement pour les employés, la livraison, …",
+            "fr": "C'est une entrée de service - normalement utilisée uniquement pour les employés, la livraison, …",
             "ca": "Aquesta és una entrada de servei - normalment utilitzada per empleats, repartidors, …"
           }
         },
@@ -137,7 +137,7 @@
             "nl": "Dit is enkel een uitgang, je kan hier niet naar binnen",
             "de": "Dies ist ein Ausgang, ohne Zutrittsmöglichkeit",
             "es": "Esta es una salida por la cual no se puede entrar",
-            "fr": "Ceci est une sortie où l'on ne peut pas entrer"
+            "fr": "C'est une sortie où l'on ne peut pas entrer"
           }
         },
         {
@@ -167,7 +167,7 @@
             "nl": "Dit is een nooduitgang",
             "de": "Dies ist ein Notausgang",
             "es": "Esta es una salida de emergencia",
-            "fr": "Ceci est la sortie de secours"
+            "fr": "C'est la sortie de secours"
           }
         },
         {

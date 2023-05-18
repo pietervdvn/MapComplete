@@ -95,6 +95,15 @@
                 },
                 "question": "Est-ce que cette publicité fait défiler différent messages ?"
             },
+            "luminous_or_lit_advertising": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "C'est une lampe à tube néon"
+                        }
+                    }
+                }
+            },
             "message_type": {
                 "mappings": {
                     "0": {
@@ -815,13 +824,13 @@
                         "then": "C'est un magasin qui vend ou répare des vélos mais peut également en louer"
                     },
                     "3": {
-                        "then": "Ceci est un point d’attache automatisé où le vélo est attaché mécaniquement à une structure"
+                        "then": "C'est un point d’attache automatisé où le vélo est attaché mécaniquement à une structure"
                     },
                     "4": {
                         "then": "Il y a un distributeur qui distribue et accepte les clés, éventuellement après identification et/ou payement. Les vélos sont stationnés à proximité"
                     },
                     "5": {
-                        "then": "Ceci est un point de dépôt, p.ex. un emplacement de parking réservé aux vélos de location"
+                        "then": "C'est un point de dépôt, p.ex. un emplacement de parking réservé aux vélos de location"
                     }
                 },
                 "question": "De quel type de location de vélo s'agit-il ?"
@@ -1051,7 +1060,7 @@
                     }
                 },
                 "question": "Quel type de parking à vélos est-ce ?",
-                "render": "Ceci est un parking à vélo de type {bicycle_parking}"
+                "render": "C'est un parking à vélo de type {bicycle_parking}"
             },
             "Capacity": {
                 "question": "Combien de vélos entrent dans ce parking à vélos (y compris les éventuels vélos de transport) ?",
@@ -1599,7 +1608,7 @@
                         "then": "Un espace ouvert où la bière est servie, typiquement vu en Allemagne"
                     },
                     "5": {
-                        "then": "Il s'agit d'une <b>boîte de nuit</b> ou discothèque avec un accent sur la danse, la musique d'un DJ avec un spectacle de lumière et un bar pour prendre des boissons (alcoolisées)"
+                        "then": "C'est une <b>boîte de nuit</b> ou discothèque orientée danse, la musique d'un DJ avec un spectacle de lumière et un bar pour prendre des boissons (alcoolisées)"
                     }
                 },
                 "question": "Quel genre de café est-ce ?"
@@ -2319,7 +2328,7 @@
             "Is this a cyclestreet? (For a road)": {
                 "mappings": {
                     "0": {
-                        "then": "Ceci est une rue cyclable, et une zone à 30 km/h"
+                        "then": "C'est une rue cyclable, et une zone à 30 km/h."
                     },
                     "1": {
                         "then": "Ceci est une route cyclable"
@@ -2898,25 +2907,25 @@
                         "then": "Aucun type d'entrée spécifique n'est connu"
                     },
                     "1": {
-                        "then": "Il s'agit d'une porte intérieure, séparant une pièce ou un couloir d'un même bâtiment"
+                        "then": "C'est une porte intérieure, séparant une pièce ou un couloir d'un même bâtiment"
                     },
                     "2": {
                         "then": "Ceci est l'entrée principale"
                     },
                     "3": {
-                        "then": "Ceci est une entrée secondaire"
+                        "then": "C'est une entrée secondaire"
                     },
                     "4": {
-                        "then": "Ceci est une entrée de service - normalement utilisée uniquement pour les employés, la livraison, …"
+                        "then": "C'est une entrée de service - normalement utilisée uniquement pour les employés, la livraison, …"
                     },
                     "5": {
-                        "then": "Ceci est une sortie où l'on ne peut pas entrer"
+                        "then": "C'est une sortie où l'on ne peut pas entrer"
                     },
                     "6": {
                         "then": "C'est une entrée où l'on ne peut qu'entrer (mais pas sortir)"
                     },
                     "7": {
-                        "then": "Ceci est la sortie de secours"
+                        "then": "C'est la sortie de secours"
                     },
                     "8": {
                         "then": "C'est l'entrée d'une maison privée"
@@ -3229,7 +3238,7 @@
                         "then": "Des sushis sont servis ici"
                     },
                     "7": {
-                        "then": "Ceci est un café"
+                        "then": "C'est un café"
                     },
                     "8": {
                         "then": "C'est un Restaurant Italien (qui sert plus que des pâtes et des pizzas)"
@@ -3291,7 +3300,7 @@
             "Takeaway": {
                 "mappings": {
                     "0": {
-                        "then": "Ceci est un resto uniquement de vente à emporter"
+                        "then": "Ce restaurant ne propose que de la vente à emporter"
                     },
                     "1": {
                         "then": "La vente à emporter est possible ici"
@@ -3805,34 +3814,34 @@
             "parking-type": {
                 "mappings": {
                     "0": {
-                        "then": "Il s'agit d'un parking en surface"
+                        "then": "C'est un parking en surface"
                     },
                     "1": {
-                        "then": "Ceci est un lieu de stationnement à côté d'une route"
+                        "then": "C'est un lieu de stationnement à côté d'une route"
                     },
                     "2": {
-                        "then": "Il s'agit d'un parking souterrain"
+                        "then": "C'est un parking souterrain"
                     },
                     "3": {
-                        "then": "Il s'agit d'un parking à plusieurs étages"
+                        "then": "C'est un parking à plusieurs étages"
                     },
                     "4": {
-                        "then": "Il s'agit d'un parking sur le toit"
+                        "then": "C'est un parking sur le toit"
                     },
                     "5": {
-                        "then": "Il s'agit d'une voie de stationnement sur la route"
+                        "then": "C'est une voie de stationnement sur la route"
                     },
                     "6": {
-                        "then": "Il s'agit d'un parking couvert par des carports"
+                        "then": "C'est un parking couvert avec des abris auto"
                     },
                     "7": {
-                        "then": "Il s'agit d'un parking composé de box de garage"
+                        "then": "C'est un parking composé de box de garage"
                     },
                     "8": {
-                        "then": "Ceci est un parking sur une aire de stationnement"
+                        "then": "C'est un parking sur une aire de stationnement"
                     },
                     "9": {
-                        "then": "Il s'agit d'un parking composé de cabanons"
+                        "then": "C'est un parking composé de cabanons"
                     }
                 },
                 "question": "De quel type de stationnement s'agit-il ?"
@@ -4239,6 +4248,255 @@
             }
         }
     },
+    "recycling": {
+        "description": "Une couche avec des conteneurs de recyclage et des déchèteries",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Tout type de recyclage"
+                    },
+                    "1": {
+                        "question": "Recyclage de piles et batteries domestiques"
+                    },
+                    "2": {
+                        "question": "Recyclage d'emballage de boissons"
+                    },
+                    "3": {
+                        "question": "Recyclage de boites de conserve et de canettes"
+                    },
+                    "4": {
+                        "question": "Recyclage de vêtements"
+                    },
+                    "5": {
+                        "question": "Recyclage des huiles de friture"
+                    },
+                    "6": {
+                        "question": "Recyclage des huiles de moteur"
+                    },
+                    "7": {
+                        "question": "Recyclage des lampes fluorescentes"
+                    },
+                    "8": {
+                        "question": "Recyclage des déchets verts"
+                    },
+                    "9": {
+                        "question": "Recyclage des bouteilles en verre et des bocaux"
+                    },
+                    "10": {
+                        "question": "Recyclage de tout type de verre"
+                    },
+                    "11": {
+                        "question": "Recyclage des lampes basse consommation"
+                    },
+                    "12": {
+                        "question": "Recyclage des journaux"
+                    },
+                    "13": {
+                        "question": "Recyclage du papier"
+                    },
+                    "14": {
+                        "question": "Recyclage des bouteilles en plastique"
+                    },
+                    "15": {
+                        "question": "Recyclage des emballages en plastique"
+                    },
+                    "16": {
+                        "question": "Recyclage du plastique"
+                    },
+                    "17": {
+                        "question": "Recyclage de la ferraille"
+                    },
+                    "18": {
+                        "question": "Recyclage des petits appareils électriques"
+                    },
+                    "19": {
+                        "question": "Recyclage des autres déchets"
+                    },
+                    "20": {
+                        "question": "Recyclage des cartouches d'imprimante"
+                    },
+                    "21": {
+                        "question": "Recyclage des vélos"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Accès public uniquement"
+                    }
+                }
+            }
+        },
+        "name": "Recyclage",
+        "presets": {
+            "0": {
+                "title": "un conteneur de recyclage"
+            },
+            "1": {
+                "title": "une déchèterie"
+            }
+        },
+        "tagRenderings": {
+            "access": {
+                "mappings": {
+                    "0": {
+                        "then": "Tout le monde peut utiliser ce point de recyclage"
+                    },
+                    "1": {
+                        "then": "Seuls les résidents peuvent utiliser ce point de recyclage"
+                    },
+                    "2": {
+                        "then": "Ce point de recyclage est réservé à un usage privé"
+                    }
+                },
+                "question": "Qui peut utiliser ce point de recyclage ?",
+                "render": "Ce point de recyclage peut être utilisé par {access}"
+            },
+            "container-location": {
+                "mappings": {
+                    "0": {
+                        "then": "C'est un conteneur enterré"
+                    },
+                    "1": {
+                        "then": "Ce conteneur est situé en intérieur"
+                    },
+                    "2": {
+                        "then": "Ce conteneur est situé à l'extérieur"
+                    }
+                },
+                "question": "Où ce conteneur est-il situé ?"
+            },
+            "operator": {
+                "question": "Quelle entreprise gère ce point de recyclage ?",
+                "render": "Ce point de recyclage est géré par {operator}"
+            },
+            "recycling-accepts": {
+                "mappings": {
+                    "0": {
+                        "then": "Les piles et batteries domestiques peuvent être recyclées ici"
+                    },
+                    "1": {
+                        "then": "Les briques alimentaires en carton peuvent être recyclées ici"
+                    },
+                    "2": {
+                        "then": "Les boites de conserve et canettes peuvent être recyclées ici"
+                    },
+                    "3": {
+                        "then": "Les vêtements peuvent être recyclés ici"
+                    },
+                    "4": {
+                        "then": "Les huiles de friture peuvent être recyclées ici"
+                    },
+                    "5": {
+                        "then": "Les huiles de moteur peuvent être recyclées ici"
+                    },
+                    "6": {
+                        "then": "Les lampes fluorescentes peuvent être recyclées ici"
+                    },
+                    "7": {
+                        "then": "Les déchets verts peuvent être recyclés ici"
+                    },
+                    "8": {
+                        "then": "Les déchets organiques peuvent être recyclés ici"
+                    },
+                    "9": {
+                        "then": "Les bouteilles en verre et bocaux peuvent être recyclés ici"
+                    },
+                    "10": {
+                        "then": "Tout type de verre peut être recyclé ici"
+                    },
+                    "11": {
+                        "then": "Les lampes basse consommation peuvent être recyclées ici"
+                    },
+                    "12": {
+                        "then": "Les journaux peuvent être recyclés ici"
+                    },
+                    "13": {
+                        "then": "Le papier peut être recyclé ici"
+                    },
+                    "14": {
+                        "then": "Les bouteilles en plastique peuvent être recyclées ici"
+                    },
+                    "15": {
+                        "then": "Les emballages plastiques peuvent être recyclés ici"
+                    },
+                    "16": {
+                        "then": "Le plastique peut être recyclé ici"
+                    },
+                    "17": {
+                        "then": "Les cartouches d'imprimante peuvent être recyclées ici"
+                    },
+                    "18": {
+                        "then": "La ferraille peut être recyclée ici"
+                    },
+                    "19": {
+                        "then": "Les chaussures peuvent être recyclées ici"
+                    },
+                    "20": {
+                        "then": "Les petits appareils électriques peuvent être recyclés ici"
+                    },
+                    "21": {
+                        "then": "Les petits appareils électriques peuvent être recyclés ici"
+                    },
+                    "22": {
+                        "then": "Les aiguilles peuvent être recyclées ici"
+                    },
+                    "23": {
+                        "then": "Les autres déchets peuvent être déposés ici"
+                    },
+                    "24": {
+                        "then": "Les vélos peuvent être recyclés ici"
+                    }
+                },
+                "question": "Que peut-on recycler ici ?"
+            },
+            "recycling-centre-name": {
+                "mappings": {
+                    "0": {
+                        "then": "Cette déchèterie n'a pas de nom spécifique"
+                    }
+                },
+                "question": "Quel est le nom de cette déchèterie ?",
+                "render": "Le nom de cette déchèterie est <b>{name}</b>"
+            },
+            "recycling-type": {
+                "mappings": {
+                    "0": {
+                        "then": "C'est un conteneur de recyclage"
+                    },
+                    "1": {
+                        "then": "C'est une déchèterie"
+                    },
+                    "2": {
+                        "then": "Conteneur à déchets pour déchets résiduels"
+                    },
+                    "3": {
+                        "then": "C'est un point de ramassage. Les déchets y sont déposés sans être placés dans un conteneur spécifique."
+                    },
+                    "4": {
+                        "then": "C'est une décharge où les déchets sont empilés."
+                    }
+                },
+                "question": "De quel type d’installation de recyclage s’agit-il ?"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Déchèterie"
+                },
+                "1": {
+                    "then": "Déchèterie"
+                },
+                "2": {
+                    "then": "Conteneur de recyclage"
+                }
+            },
+            "render": "Point de recyclage"
+        }
+    },
     "school": {
         "name": "Écoles primaires et secondaires",
         "presets": {
@@ -4254,22 +4512,22 @@
             "education-level-belgium": {
                 "mappings": {
                     "0": {
-                        "then": "Il s'agit d'une école avec une section maternelle où les jeunes enfants reçoivent un enseignement qui prépare à la lecture et à l'écriture."
+                        "then": "C'est une école avec une section maternelle où les jeunes enfants reçoivent un enseignement qui prépare à la lecture et à l'écriture."
                     },
                     "1": {
-                        "then": "Il s'agit d'une école où l'on apprend les compétences primaires telles que l'alphabétisation de base et les compétences numériques.. <div class='subtle'>Les élèves s'inscrivent généralement de 6 à 12 ans.</div>"
+                        "then": "C'est une école où l'on apprend les compétences primaires telles que l'alphabétisation de base et les compétences numériques.. <div class='subtle'>Les élèves s'inscrivent généralement de 6 à 12 ans.</div>"
                     },
                     "2": {
-                        "then": "Il s'agit d'une école secondaire qui offre toutes les classes"
+                        "then": "C'est une école secondaire qui offre toutes les classes"
                     },
                     "3": {
-                        "then": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la première et la deuxième</b> années"
+                        "then": "C'est une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la première et la deuxième</b> années"
                     },
                     "4": {
-                        "then": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la troisième et la quatrième</b> années"
+                        "then": "C'est une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la troisième et la quatrième</b> années"
                     },
                     "5": {
-                        "then": "Il s'agit d'une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la cinquième et la sixième</b> années"
+                        "then": "C'est une école secondaire qui n'a <i>pas</i> toutes les classes, mais qui offre <b>la cinquième et la sixième</b> années"
                     },
                     "6": {
                         "then": "Cette école propose un enseignement post-secondaire (par exemple une septième ou huitième année de spécialisation)"
@@ -4309,31 +4567,31 @@
             "target-audience": {
                 "mappings": {
                     "0": {
-                        "then": "Ceci est un établissement scolaire où les étudiants acquièrent des compétences à un niveau adapté à leur âge. <div>Il y a peu ou pas d'adaptations spéciales pour aider les étudiants ayant des besoins particuliers, ou les installations sont ad-hoc</div> Remark: isn't it contradictory to say there's no special facility + the facilities are ad-hoc?"
+                        "then": "C'est un établissement scolaire où les étudiants acquièrent des compétences à un niveau adapté à leur âge. <div>Il y a peu ou pas d'adaptations spéciales pour aider les étudiants ayant des besoins particuliers, ou les installations sont ad-hoc</div> Remark: isn't it contradictory to say there's no special facility + the facilities are ad-hoc?"
                     },
                     "1": {
-                        "then": "Ceci est un établissement scolaire pour étudiants sans besoins partucliers. <div class='subtle'>Sont inclus les étudiants qui peuvent suivre les cours avec de petites adaptations.</div>"
+                        "then": "C'est un établissement scolaire pour étudiants sans besoins particuliers. <div class='subtle'>Sont inclus les étudiants qui peuvent suivre les cours avec de petites adaptations.</div>"
                     },
                     "2": {
-                        "then": "Ceci est un établissement où des adultes sont formés au niveau mentionné."
+                        "then": "C'est un établissement où des adultes sont formés au niveau mentionné."
                     },
                     "3": {
-                        "then": "Ceci est un établissement scolaire pour les étudiants ayant un trouble du spectre de l’autisme (TSA)"
+                        "then": "C'est un établissement scolaire pour les étudiants ayant un trouble du spectre de l’autisme (TSA)"
                     },
                     "4": {
-                        "then": "Ceci est un établissement scolaire pour les étudiants ayant des troubles dapprentissage"
+                        "then": "C'est un établissement scolaire pour les étudiants ayant des troubles d’apprentissage"
                     },
                     "5": {
-                        "then": "Ceci est un établissement scolaire pour les étudiants aveugles ou malvoyants"
+                        "then": "C'est un établissement scolaire pour les étudiants aveugles ou malvoyants"
                     },
                     "6": {
-                        "then": "Ceci est un établissement scolaire pour les étudiants sourds ou malentendants"
+                        "then": "C'est un établissement scolaire pour les étudiants sourds ou malentendants"
                     },
                     "7": {
-                        "then": "Ceci est un établissement scolaire pour les étudiants en situation de handicap"
+                        "then": "C'est un établissement scolaire pour les étudiants en situation de handicap"
                     },
                     "8": {
-                        "then": "Ceci est un établissement scolaire pour les étudiants ayant des besoins particuliers"
+                        "then": "C'est un établissement scolaire pour les étudiants ayant des besoins particuliers"
                     }
                 },
                 "question": "Est-ce que cet établissement scolaire s'adresse aux étudiants ayant des besoins particuliers? Quels types d'installation est-ce que cet établissement possède?",
@@ -4695,10 +4953,10 @@
             "institution-kind": {
                 "mappings": {
                     "0": {
-                        "then": "Il s'agit d'un établissement d'enseignement post-secondaire, non tertiaire. Il faut avoir terminé l'enseignement secondaire pour s'inscrire ici, mais aucun baccalauréat (ou diplôme supérieur) n'est délivré ici"
+                        "then": "C'est un établissement d'enseignement post-secondaire, non tertiaire. Il faut avoir terminé l'enseignement secondaire pour s'inscrire ici, mais aucun baccalauréat (ou diplôme supérieur) n'est délivré ici"
                     },
                     "1": {
-                        "then": "Il s'agit d'une université, d'un établissement d'enseignement supérieur où sont délivrés des diplômes de bachelor ou plus."
+                        "then": "C'est une université, d'un établissement d'enseignement supérieur où sont délivrés des diplômes de bachelor ou plus."
                     }
                 },
                 "question": "De quel type d'établissement s'agit-il ?"
@@ -5376,10 +5634,56 @@
         }
     },
     "waste_basket": {
-        "description": "c'est une poubelle publique dans laquelle vous pouvez jeter vos mégots.",
+        "description": "C'est une poubelle dans laquelle vous pouvez jeter vos mégots.",
+        "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Tout type"
+                    },
+                    "1": {
+                        "question": "Poubelle pour mégots"
+                    },
+                    "2": {
+                        "question": "Poubelle pour médicaments"
+                    },
+                    "3": {
+                        "question": "Poubelle pour déjections canines"
+                    },
+                    "4": {
+                        "question": "Poubelle pour les déchets"
+                    },
+                    "5": {
+                        "question": "Poubelle pour objets tranchants"
+                    },
+                    "6": {
+                        "question": "Poubelle pour plastiques"
+                    }
+                }
+            },
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Poubelle avec distributeur de sacs pour ramasser les déjections canines"
+                    }
+                }
+            }
+        },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Poubelle"
+                        }
+                    }
+                }
+            }
+        },
+        "name": "Poubelle",
         "presets": {
             "0": {
-                "title": "un poubelle"
+                "title": "une poubelle"
             }
         },
         "tagRenderings": {
@@ -5387,6 +5691,9 @@
                 "mappings": {
                     "0": {
                         "then": "Cette poubelle a un distributeur de sacs pour ramasser les déjections canines"
+                    },
+                    "1": {
+                        "then": "Cette poubelle <b>n'a pas</b> un distributeur de sacs pour ramasser les déjections canines"
                     },
                     "2": {
                         "then": "Cette poubelle <b>n'a pas</b> de distributeur de sac pour ramasser les déjections canines"
@@ -5396,25 +5703,38 @@
             },
             "waste-basket-waste-types": {
                 "mappings": {
+                    "0": {
+                        "then": "Une poubelle pour tout type d'ordures"
+                    },
                     "1": {
-                        "then": "Un poubelle pour tout type d'ordures"
+                        "then": "Une poubelle pour tout type d'ordures"
                     },
                     "2": {
-                        "then": "Un poubelle pour les déjections canines"
+                        "then": "Une poubelle pour déjections canines"
                     },
                     "3": {
-                        "then": "Un cendrier"
+                        "then": "Une poubelle pour mégots"
+                    },
+                    "4": {
+                        "then": "Une poubelle pour médicaments"
                     },
                     "5": {
-                        "then": "Un poubelle pour les aiguilles et autres objets pointus"
+                        "then": "Une poubelle pour aiguilles et autres objets tranchants"
                     },
                     "6": {
-                        "then": "Un poubelle pour le plastique"
+                        "then": "Une poubelle pour plastiques"
                     }
                 },
                 "question": "De quel type de poubelle s'agit-il ?"
             }
+        },
+        "title": {
+            "render": "Poubelle"
         }
+    },
+    "waste_disposal": {
+        "description": "Réceptacle destiné à recevoir des déchets (domestiques) enveloppés dans des sacs en plastique",
+        "name": "Réceptacles destinés à recevoir des déchets"
     },
     "windturbine": {
         "name": "Éolienne",

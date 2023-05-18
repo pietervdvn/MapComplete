@@ -2557,7 +2557,8 @@
                 "question": "Quin és el correu electrònic on preguntar sobre aquest desfibril·lador?"
             },
             "defibrillator-fixme": {
-                "question": "Hi ha alguna cosa malament en la manera de com està mapejat això, que no heu pogut solucionar aquí? (deixeu una nota als experts d'OpenStreetMap)"
+                "question": "Hi ha alguna cosa malament en la manera de com està mapejat això, que no heu pogut solucionar aquí? (deixeu una nota als experts d'OpenStreetMap)",
+                "render": "Informació addicional per als experts en OpenStreetMap: {fixme}"
             },
             "defibrillator-indoors": {
                 "mappings": {
@@ -2583,10 +2584,12 @@
                 "render": "Aquest desfibril·lador és a la planta {level}"
             },
             "defibrillator-phone": {
-                "question": "Quin és el número de telèfon on preguntar sobre aquest desfibril·lador?"
+                "question": "Quin és el número de telèfon on preguntar sobre aquest desfibril·lador?",
+                "render": "Telèfon per a dubtes sobre aquest desfibril·lador: <a href='tel:{phone}'>{phone}</a>"
             },
             "defibrillator-ref": {
-                "question": "Quin és el número d'identificació oficial del dispositiu? (si està visible al dispositiu)"
+                "question": "Quin és el número d'identificació oficial del dispositiu? (si està visible al dispositiu)",
+                "render": "Número d'identificació oficial del dispositiu: <i>{ref}</i>"
             },
             "defibrillator-survey:date": {
                 "mappings": {
@@ -2594,6 +2597,7 @@
                         "then": "Comprovat avui!"
                     }
                 },
+                "question": "Quan es va explorar per última vegada aquest desfibril·lador?",
                 "render": "El desfibrilador és va sondejar per ultima vegada el {survey:date}"
             }
         },
@@ -2774,6 +2778,20 @@
                 "title": "un extintor"
             }
         },
+        "tagRenderings": {
+            "extinguisher-location": {
+                "mappings": {
+                    "0": {
+                        "then": "Es troba a l'interior."
+                    },
+                    "1": {
+                        "then": "Es troba a l'aire lliure."
+                    }
+                },
+                "question": "On està situat?",
+                "render": "Ubicació: {location}"
+            }
+        },
         "title": {
             "render": "Extintors"
         }
@@ -2800,6 +2818,11 @@
         },
         "tagRenderings": {
             "station-agency": {
+                "mappings": {
+                    "0": {
+                        "then": "Bureau of Fire Protection (Filipines)"
+                    }
+                },
                 "question": "Quina agència opera aquesta estació?",
                 "render": "{operator} opera aquest parc."
             },
@@ -2830,7 +2853,8 @@
                 "render": "Aquesta estació es troba dins de {addr:place}."
             },
             "station-street": {
-                "question": " Quin és el nom del carrer on es troba aquesta estació?"
+                "question": " Quin és el nom del carrer on es troba aquesta estació?",
+                "render": "Aquesta estació es troba al llarg d'una carretera anomenada {addr:street}."
             }
         },
         "title": {
@@ -3175,6 +3199,9 @@
                 "render": "L'hidrant és de color {colour}"
             },
             "hydrant-couplings": {
+                "freeform": {
+                    "placeholder": "Tipus d'acoblament"
+                },
                 "mappings": {
                     "0": {
                         "then": "Acoblament Storz"
@@ -3186,13 +3213,22 @@
                         "then": "Acoblament Barcelona"
                     }
                 },
-                "question": "Quin tipus d‘acoblament té aquest hidrant?"
+                "question": "Quin tipus d‘acoblament té aquest hidrant?",
+                "render": "Acoblaments: {couplings:type}"
             },
             "hydrant-couplings-diameters": {
-                "question": "Quin és el diàmetre dels acoblaments d'aquest hidrant?"
+                "freeform": {
+                    "placeholder": "Diàmetres d'acoblament"
+                },
+                "question": "Quin és el diàmetre dels acoblaments d'aquest hidrant?",
+                "render": "Diàmetres d'acoblament: {couplings:diameters}"
             },
             "hydrant-diameter": {
-                "question": "Quin és el diàmetre d'aquest hidrant?"
+                "freeform": {
+                    "placeholder": "Diàmetre de la canonada"
+                },
+                "question": "Quin és el diàmetre d'aquest hidrant?",
+                "render": "Diàmetre de la canonada: {canonical(fire_hydrant:diameter)}"
             },
             "hydrant-number-of-couplings": {
                 "freeform": {
@@ -4408,7 +4444,8 @@
                     "4": {
                         "then": "Es tracta d’un abocador on s’apilen els residus."
                     }
-                }
+                },
+                "question": "Quin tipus de reciclatge és aquest?"
             }
         },
         "title": {
@@ -5458,10 +5495,69 @@
         }
     },
     "walls_and_buildings": {
-        "description": "Capa construïda especial que proporciona totes les parets i edificis. Aquesta capa és útil als predefinits per a objectes que es poden col·locar a les parets (p. ex. DEA, bústies de correus, entrades, adreces, càmeres de vigilància, ...). Aquesta capa és invisible per defecte i no es pot activar per l'usuari."
+        "description": "Capa construïda especial que proporciona totes les parets i edificis. Aquesta capa és útil als predefinits per a objectes que es poden col·locar a les parets (p. ex. DEA, bústies de correus, entrades, adreces, càmeres de vigilància, ...). Aquesta capa és invisible per defecte i no es pot activar per l'usuari.",
+        "tagRenderings": {
+            "entrance_info": {
+                "mappings": {
+                    "0": {
+                        "then": "No s'ha senyalitzat cap entrada"
+                    },
+                    "1": {
+                        "then": "Cap de les entrades de {_entrance_count} encara no tenen informació de l'ampalda"
+                    }
+                },
+                "render": {
+                    "before": "<h3>Entrades</h3>Aquest edifici té {_entrances_count} entrades:",
+                    "special": {
+                        "tagrendering": "Una <a href='#{id}'>entrada </a> de {canonical(width)}"
+                    }
+                }
+            }
+        },
+        "title": {
+            "render": "Paret o edifici"
+        },
+        "units": {
+            "0": {
+                "applicableUnits": {
+                    "0": {
+                        "human": "metre"
+                    },
+                    "1": {
+                        "human": "centimetre"
+                    }
+                }
+            }
+        }
     },
     "waste_basket": {
+        "description": "Es tracta d'una paperera pública, una paperera, on pots llençar la teva paperera.",
         "filter": {
+            "0": {
+                "options": {
+                    "0": {
+                        "question": "Tots els tipus"
+                    },
+                    "1": {
+                        "question": "Paperera per a cigarrets"
+                    },
+                    "2": {
+                        "question": "Paperera per a medicaments"
+                    },
+                    "3": {
+                        "question": "Paperera per a excrements de gossos"
+                    },
+                    "4": {
+                        "question": "Paperera per a brossa"
+                    },
+                    "5": {
+                        "question": "Paperera per a objectes punxants"
+                    },
+                    "6": {
+                        "question": "Paperera per a plàstics"
+                    }
+                }
+            },
             "1": {
                 "options": {
                     "0": {
@@ -5470,10 +5566,60 @@
                 }
             }
         },
+        "mapRendering": {
+            "0": {
+                "iconSize": {
+                    "mappings": {
+                        "0": {
+                            "then": "Paperera"
+                        }
+                    }
+                }
+            }
+        },
         "name": "Paperera",
         "presets": {
             "0": {
                 "title": "una paperera"
+            }
+        },
+        "tagRenderings": {
+            "dispensing_dog_bags": {
+                "mappings": {
+                    "0": {
+                        "then": "Aquesta paperera té un dispensador per a bosses d'excrements (de gossos)"
+                    },
+                    "1": {
+                        "then": "Aquesta paperera <b>no</b> té un dispensador per a bosses d'excrements (gossos)"
+                    }
+                },
+                "question": "Aquesta paperera té un dispensador per a bosses per a excrements de gossos?"
+            },
+            "waste-basket-waste-types": {
+                "mappings": {
+                    "0": {
+                        "then": "Una paperera per a residus generals"
+                    },
+                    "1": {
+                        "then": "Una paperera per a residus generals"
+                    },
+                    "2": {
+                        "then": "Una paperera per a excrements de gossos"
+                    },
+                    "3": {
+                        "then": "Una paperera per a cigarrets"
+                    },
+                    "4": {
+                        "then": "Una paperera per a medicaments"
+                    },
+                    "5": {
+                        "then": "Una paperera per a agulles i altres objectes punxants"
+                    },
+                    "6": {
+                        "then": "Una paperera per a plàstic"
+                    }
+                },
+                "question": "Quin tipus de paperera és aquesta?"
             }
         },
         "title": {
@@ -5493,6 +5639,7 @@
         "name": "Contenidor de brossa",
         "presets": {
             "0": {
+                "description": "Contenidor mitjà o gran per a dipositar residus (domèstics)",
                 "title": "un contenidor de basura"
             }
         },
@@ -5509,7 +5656,8 @@
                         "then": "Aquest contenidor és només per als residents"
                     }
                 },
-                "question": "Qui pot utilitzar aquest contenidor de brossa?"
+                "question": "Qui pot utilitzar aquest contenidor de brossa?",
+                "render": "Accés: {access}"
             },
             "disposal-location": {
                 "mappings": {

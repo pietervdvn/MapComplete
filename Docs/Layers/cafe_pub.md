@@ -149,7 +149,7 @@ The question is  *What kind of cafe is this?*
   - *A pub, mostly for drinking beers in a warm, relaxed interior*  corresponds with  `amenity=pub`
   - *A more modern and commercial <b>bar</b>, possibly with a music and light installation*  corresponds with  `amenity=bar`
   - *A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment*  corresponds with  `amenity=cafe`
-  - *A <b>restuarant</b> where one can get a proper meal*  corresponds with  `amenity=restaurant`
+  - *A <b>restaurant</b> where one can get a proper meal*  corresponds with  `amenity=restaurant`
   - *An open space where beer is served, typically seen in Germany*  corresponds with  `amenity=biergarten`
   - *This is a <b>nightclub</b> or disco with a focus on dancing, music by a DJ with accompanying light show and a bar to get (alcoholic) drinks*  corresponds with  `amenity=nightclub`
 
