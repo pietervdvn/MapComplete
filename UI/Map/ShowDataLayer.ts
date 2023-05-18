@@ -228,30 +228,46 @@ class LineRenderingLayer {
         features.features.addCallbackAndRunD(() => self.update(features.features))
     }
 
+    public destruct(): void {
+        this._map.removeLayer(this._layername + "_polygon")
+    }
+
+    /**
+     * Calculate the feature-state for maplibre
+     * @param properties
+     * @private
+     */
     private calculatePropsFor(
         properties: Record<string, string>
     ): Partial<Record<typeof LineRenderingLayer.lineConfigKeys[number], string>> {
-        const calculatedProps = {}
         const config = this._config
 
+        const calculatedProps: Record<string, string | number> = {}
         for (const key of LineRenderingLayer.lineConfigKeys) {
             calculatedProps[key] = config[key]?.GetRenderValue(properties)?.Subs(properties).txt
         }
+        calculatedProps.fillColor = calculatedProps.fillColor ?? calculatedProps.lineColor
+
         for (const key of LineRenderingLayer.lineConfigKeysColor) {
-            let v = config[key]?.GetRenderValue(properties)?.Subs(properties).txt
+            let v = <string>calculatedProps[key]
             if (v === undefined) {
                 continue
             }
             if (v.length == 9 && v.startsWith("#")) {
                 // This includes opacity
-                calculatedProps[key + "-opacity"] = parseInt(v.substring(7), 16) / 256
+                calculatedProps[`${key}-opacity`] = parseInt(v.substring(7), 16) / 256
                 v = v.substring(0, 7)
+                if (v.length == 9 && v.startsWith("#")) {
+                    // This includes opacity
+                    calculatedProps[`${key}-opacity`] = parseInt(v.substring(7), 16) / 256
+                    v = v.substring(0, 7)
+                }
             }
-            calculatedProps[key] = v
         }
+        calculatedProps["fillColor-opacity"] = calculatedProps["fillColor-opacity"] ?? 0.1
+
         for (const key of LineRenderingLayer.lineConfigKeysNumber) {
-            const v = config[key]?.GetRenderValue(properties)?.Subs(properties).txt
-            calculatedProps[key] = Number(v)
+            calculatedProps[key] = Number(calculatedProps[key])
         }
 
         return calculatedProps
@@ -303,6 +319,7 @@ class LineRenderingLayer {
                 this._onClick(e.features[0])
             })
             const polylayer = this._layername + "_polygon"
+
             map.addLayer({
                 source: this._layername,
                 id: polylayer,
@@ -311,13 +328,15 @@ class LineRenderingLayer {
                 layout: {},
                 paint: {
                     "fill-color": ["feature-state", "fillColor"],
-                    "fill-opacity": 0.1,
+                    "fill-opacity": ["feature-state", "fillColor-opacity"],
                 },
             })
-            map.on("click", polylayer, (e) => {
-                e.originalEvent["consumed"] = true
-                this._onClick(e.features[0])
-            })
+            if (this._onClick) {
+                map.on("click", polylayer, (e) => {
+                    e.originalEvent["consumed"] = true
+                    this._onClick(e.features[0])
+                })
+            }
 
             this._visibility?.addCallbackAndRunD((visible) => {
                 try {
@@ -388,6 +407,8 @@ export default class ShowDataLayer {
         drawLines?: true | boolean
     }
 
+    private onDestroy: (() => void)[] = []
+
     constructor(
         map: Store<MlMap>,
         options: ShowDataLayerOptions & {
@@ -399,7 +420,7 @@ export default class ShowDataLayer {
         this._map = map
         this._options = options
         const self = this
-        map.addCallbackAndRunD((map) => self.initDrawFeatures(map))
+        this.onDestroy.push(map.addCallbackAndRunD((map) => self.initDrawFeatures(map)))
     }
 
     public static showMultipleLayers(
@@ -437,6 +458,10 @@ export default class ShowDataLayer {
         })
     }
 
+    public destruct() {
+
+    }
+
     private zoomToCurrentFeatures(map: MlMap) {
         if (this._options.zoomToFeatures) {
             const features = this._options.features.features.data
@@ -458,7 +483,7 @@ export default class ShowDataLayer {
         if (this._options.drawLines !== false) {
             for (let i = 0; i < this._options.layer.lineRendering.length; i++) {
                 const lineRenderingConfig = this._options.layer.lineRendering[i]
-                new LineRenderingLayer(
+                const l = new LineRenderingLayer(
                     map,
                     features,
                     this._options.layer.id + "_linerendering_" + i,
@@ -467,6 +492,7 @@ export default class ShowDataLayer {
                     fetchStore,
                     onClick
                 )
+                this.onDestroy.push(l.destruct)
             }
         }
         if (this._options.drawMarkers !== false) {

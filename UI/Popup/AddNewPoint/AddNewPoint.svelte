@@ -31,6 +31,7 @@
     import BackButton from "../../Base/BackButton.svelte";
     import ToSvelte from "../../Base/ToSvelte.svelte";
     import Svg from "../../../Svg";
+    import RasterLayerOverview from "../../Map/RasterLayerOverview.svelte";
 
     export let coordinate: { lon: number, lat: number };
     export let state: SpecialVisualizationState;
@@ -281,6 +282,9 @@
                 </div>
             </NextButton>
         </div>
+        
+        <RasterLayerOverview />
+        
     {:else}
         <Loading>Creating point...</Loading>
     {/if}

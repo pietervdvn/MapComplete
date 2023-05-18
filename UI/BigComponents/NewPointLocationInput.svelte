@@ -8,7 +8,6 @@
     import type {MapProperties} from "../../Models/MapProperties";
     import ShowDataLayer from "../Map/ShowDataLayer";
     import type {FeatureSource, FeatureSourceForLayer} from "../../Logic/FeatureSource/FeatureSource";
-
     import SnappingFeatureSource from "../../Logic/FeatureSource/Sources/SnappingFeatureSource";
     import FeatureSourceMerger from "../../Logic/FeatureSource/Sources/FeatureSourceMerger";
     import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
@@ -31,6 +30,7 @@
     export let maxSnapDistance: number = undefined;
 
     export let snappedTo: UIEventSource<string | undefined>;
+    
     export let value: UIEventSource<{ lon: number, lat: number }>;
     if (value.data === undefined) {
         value.setData(coordinate);
@@ -39,7 +39,8 @@
     let preciseLocation: UIEventSource<{ lon: number, lat: number }> = new UIEventSource<{
         lon: number;
         lat: number
-    }>(coordinate);
+    }>(undefined);
+    
     const xyz = Tiles.embedded_tile(coordinate.lat, coordinate.lon, 16);
     const map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined);
     let initialMapProperties: Partial<MapProperties> = {
@@ -52,14 +53,19 @@
         bounds: new UIEventSource<BBox>(undefined),
         allowMoving: new UIEventSource<boolean>(true),
         allowZooming: new UIEventSource<boolean>(true),
-        minzoom: new UIEventSource<number>(18)
+        minzoom: new UIEventSource<number>(18),
+        rasterLayer: UIEventSource.feedFrom(state.mapProperties.rasterLayer)
     };
   
-    initialMapProperties.bounds.addCallbackAndRunD((bounds: BBox) => {
-        const max = bounds.pad(3).squarify();
-        initialMapProperties.maxbounds.setData(max);
-        return true; // unregister
-    });
+    
+    const featuresForLayer = state.perLayer.get(targetLayer.id)
+    if(featuresForLayer){
+        new ShowDataLayer(map, {
+            layer: targetLayer,
+            features: featuresForLayer
+        })
+    }
+    
 
     if (snapToLayers?.length > 0) {
 
@@ -99,4 +105,4 @@
 
 
 <LocationInput {map} mapProperties={initialMapProperties}
-               value={preciseLocation}></LocationInput>
+               value={preciseLocation} initialCoordinate={{...coordinate}} maxDistanceInMeters=50 />

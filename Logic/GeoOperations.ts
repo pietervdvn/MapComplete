@@ -701,6 +701,20 @@ export class GeoOperations {
         return turf.bearing(a, b)
     }
 
+    public static along(a: Coord, b: Coord, distanceMeter: number): Coord {
+        return turf.along(
+            <any> {
+                type:"Feature",
+                geometry:{
+                    type:"LineString",
+                    coordinates: [a, b]
+                }
+            }, distanceMeter, {units: "meters"}
+
+        ).geometry.coordinates
+    }
+
+
     /**
      * Returns 'true' if one feature contains the other feature
      *

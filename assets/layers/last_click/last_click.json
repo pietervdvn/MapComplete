@@ -77,7 +77,7 @@
         ],
         "render": "<div class='relative'> <img src='./assets/svg/add_pin.svg' class='absolute' style='height: 50px'> <div class='absolute top-0 left-0 rounded-full overflow-hidden noselect' style='width: 40px; height: 40px'><div class='flex slide min-w-min' style='animation: slide linear {number_of_presets}s infinite; width: calc( (1 + {number_of_presets}) * 40px ); height: 40px'>{renderings}{first_preset}</div></div></div>"
       },
-      "labelCssClasses": "text-sm min-w-min pl-1 pr-1 rounded-3xl text-white opacity-65 whitespace-nowrap block-ruby",
+      "labelCssClasses": "text-sm min-w-min px-2 rounded-full text-white opacity-65 whitespace-nowrap block-ruby",
       "labelCss": "background: #00000088",
       "label": {
         "render": {

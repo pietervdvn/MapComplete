@@ -31,14 +31,11 @@ export default interface LineRenderingConfigJson {
      */
     lineCap?: "round" | "square" | "butt" | string | TagRenderingConfigJson
 
-    /**
-     * Whether or not to fill polygons
-     */
-    fill?: "yes" | "no" | TagRenderingConfigJson
 
     /**
      * The color to fill a polygon with.
-     * If undefined, this will be slightly more opaque version of the stroke line
+     * If undefined, this will be slightly more opaque version of the stroke line.
+     * Use '#00000000' to make the fill invisible
      */
     fillColor?: string | TagRenderingConfigJson
 
