@@ -2621,7 +2621,7 @@
     },
     {
       "key": "amenity",
-      "description": "Layer 'Cafés and pubs' shows amenity=restaurant with a fixed text, namely 'A <b>restuarant</b> where one can get a proper meal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
+      "description": "Layer 'Cafés and pubs' shows amenity=restaurant with a fixed text, namely 'A <b>restaurant</b> where one can get a proper meal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Personal theme')",
       "value": "restaurant"
     },
     {

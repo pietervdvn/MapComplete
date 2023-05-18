@@ -42,7 +42,7 @@
             "en": "This is a surface parking lot",
             "nl": "Dit is een bovengronds parkeerterrein",
             "de": "Dies ist ein oberirdischer Parkplatz",
-            "fr": "Il s'agit d'un parking en surface",
+            "fr": "C'est un parking en surface",
             "ca": "Aquest és un aparcament en superfície"
           }
         },
@@ -52,7 +52,7 @@
             "en": "This is a parking bay next to a street",
             "nl": "Dit is een parkeerplek langs een weg",
             "de": "Dies ist eine Parkbucht neben einer Straße",
-            "fr": "Ceci est un lieu de stationnement à côté d'une route"
+            "fr": "C'est un lieu de stationnement à côté d'une route"
           }
         },
         {
@@ -61,7 +61,7 @@
             "en": "This is an underground parking garage",
             "nl": "Dit is een ondergrondse parkeergarage",
             "de": "Dies ist eine Tiefgarage",
-            "fr": "Il s'agit d'un parking souterrain",
+            "fr": "C'est un parking souterrain",
             "ca": "Aquest és un aparcament subterrani"
           }
         },
@@ -71,7 +71,7 @@
             "en": "This is a multi-storey parking garage",
             "nl": "Dit is een bovengrondse parkeergarage met meerdere verdiepingen",
             "de": "Dies ist ein mehrstöckiges oberirdisches Parkhaus",
-            "fr": "Il s'agit d'un parking à plusieurs étages"
+            "fr": "C'est un parking à plusieurs étages"
           }
         },
         {
@@ -80,7 +80,7 @@
             "en": "This is a rooftop parking deck",
             "nl": "Dit is een parkeerdek op een dak",
             "de": "Dies ist ein Parkdeck auf dem Dach",
-            "fr": "Il s'agit d'un parking sur le toit"
+            "fr": "C'est un parking sur le toit"
           }
         },
         {
@@ -89,7 +89,7 @@
             "en": "This is a lane for parking on the road",
             "nl": "Dit is een strook voor parkeren op de weg",
             "de": "Dies ist eine Fahrspur zum Parken auf der Straße",
-            "fr": "Il s'agit d'une voie de stationnement sur la route"
+            "fr": "C'est une voie de stationnement sur la route"
           }
         },
         {
@@ -98,7 +98,7 @@
             "en": "This is parking covered by carports",
             "nl": "Dit is parking overdekt met carports",
             "de": "Dies ist ein durch Carports überdachter Parkplatz",
-            "fr": "Il s'agit d'un parking couvert par des carports"
+            "fr": "C'est un parking couvert avec des abris auto"
           }
         },
         {
@@ -107,7 +107,7 @@
             "en": "This a parking consisting of garage boxes",
             "nl": "Dit is een parking bestaande uit garageboxen",
             "de": "Dies ist ein Parkplatz bestehend aus Garagenboxen",
-            "fr": "Il s'agit d'un parking composé de box de garage"
+            "fr": "C'est un parking composé de box de garage"
           }
         },
         {
@@ -116,7 +116,7 @@
             "en": "This is a parking on a layby",
             "nl": "Dit is een parkeerplek op een layby",
             "de": "Hier gibt es Parkmöglichkeiten auf einem kleinen Rastplatz",
-            "fr": "Ceci est un parking sur une aire de stationnement"
+            "fr": "C'est un parking sur une aire de stationnement"
           }
         },
         {
@@ -125,7 +125,7 @@
             "en": "This is a parking consisting of sheds",
             "nl": "Dit is een parking bestaande uit schuren",
             "de": "Hier gibt es Parkmöglichkeiten unter einer offenen Dachkonstruktion",
-            "fr": "Il s'agit d'un parking composé de cabanons"
+            "fr": "C'est un parking composé de cabanons"
           }
         }
       ],

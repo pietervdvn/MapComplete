@@ -60,7 +60,8 @@
         "eo": "Loko: {location}",
         "it": "Posizione: {location}",
         "nl": "Locatie: {location}",
-        "es": "Localización: {location}"
+        "es": "Localización: {location}",
+        "ca": "Ubicació: {location}"
       },
       "question": {
         "en": "Where is it positioned?",
@@ -71,7 +72,8 @@
         "it": "Dove è posizionato?",
         "nl": "Op welke locatie staat dit?",
         "da": "Hvor er den placeret?",
-        "es": "¿Dónde se encuentra?"
+        "es": "¿Dónde se encuentra?",
+        "ca": "On està situat?"
       },
       "mappings": [
         {
@@ -89,7 +91,8 @@
             "it": "Si trova all’interno.",
             "nl": "In een gebouw.",
             "da": "Findes indendørs.",
-            "es": "Se encuentra en el interior."
+            "es": "Se encuentra en el interior.",
+            "ca": "Es troba a l'interior."
           }
         },
         {
@@ -107,7 +110,8 @@
             "it": "Si trova all’esterno.",
             "nl": "In open lucht.",
             "da": "Findes udendørs.",
-            "es": "Se encuentra en el exterior."
+            "es": "Se encuentra en el exterior.",
+            "ca": "Es troba a l'aire lliure."
           }
         }
       ],

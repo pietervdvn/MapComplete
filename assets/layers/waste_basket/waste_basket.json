@@ -9,7 +9,8 @@
     "ca": "Paperera",
     "it": "Cestino dei rifiuti",
     "id": "Keranjang Sampah",
-    "da": "Affaldskurv"
+    "da": "Affaldskurv",
+    "fr": "Poubelle"
   },
   "minzoom": 17,
   "source": {
@@ -28,7 +29,8 @@
       "ca": "Paperera",
       "it": "Cestino dei rifiuti",
       "id": "Keranjang Sampah",
-      "da": "Affaldskurv"
+      "da": "Affaldskurv",
+      "fr": "Poubelle"
     }
   },
   "description": {
@@ -39,7 +41,8 @@
     "it": "Questo è un cestino dei rifiuti pubblico, un bidone della spazzatura, dove puoi buttare via la tua spazzatura",
     "es": "Esta es una papelera pública, donde puedes tirar tu basura.",
     "da": "Dette er en offentlig affaldskurv, en skraldespand, hvor du kan smide dit affald.",
-    "fr": "c'est une poubelle publique dans laquelle vous pouvez jeter vos mégots."
+    "fr": "C'est une poubelle dans laquelle vous pouvez jeter vos mégots.",
+    "ca": "Es tracta d'una paperera pública, una paperera, on pots llençar la teva paperera."
   },
   "tagRenderings": [
     "images",
@@ -52,7 +55,8 @@
         "it": "Che tipo di cestino dei rifiuti è questo?",
         "id": "Keranjang sampah macam apa ini?",
         "da": "Hvad er det for en affaldskurv?",
-        "fr": "De quel type de poubelle s'agit-il ?"
+        "fr": "De quel type de poubelle s'agit-il ?",
+        "ca": "Quin tipus de paperera és aquesta?"
       },
       "multiAnswer": true,
       "mappings": [
@@ -64,7 +68,9 @@
             "de": "Ein Abfalleimer für allgemeinen Müll",
             "it": "Un cestino rifiuti per uso generico",
             "id": "Keranjang sampah untuk sampah umum",
-            "da": "En affaldskurv til almindeligt affald"
+            "da": "En affaldskurv til almindeligt affald",
+            "ca": "Una paperera per a residus generals",
+            "fr": "Une poubelle pour tout type d'ordures"
           },
           "hideInAnswer": true
         },
@@ -77,7 +83,8 @@
             "it": "Un cestino rifiuti per uso generico",
             "id": "Keranjang sampah untuk sampah umum",
             "da": "En affaldskurv til almindeligt affald",
-            "fr": "Un poubelle pour tout type d'ordures"
+            "fr": "Une poubelle pour tout type d'ordures",
+            "ca": "Una paperera per a residus generals"
           }
         },
         {
@@ -89,7 +96,8 @@
             "it": "Un cestino rifiuti per escrementi di cani",
             "id": "Keranjang sampah untuk kotoran anjing",
             "da": "En affaldskurv til hundeekskrementer",
-            "fr": "Un poubelle pour les déjections canines"
+            "fr": "Une poubelle pour déjections canines",
+            "ca": "Una paperera per a excrements de gossos"
           }
         },
         {
@@ -101,7 +109,8 @@
             "it": "Un cestino rifiuti per sigarette",
             "id": "Keranjang sampah untuk rokok",
             "da": "En affaldskurv til cigaretter",
-            "fr": "Un cendrier"
+            "fr": "Une poubelle pour mégots",
+            "ca": "Una paperera per a cigarrets"
           }
         },
         {
@@ -112,7 +121,9 @@
             "de": "Der Abfalleimer ist für Drogen",
             "it": "Un cestino rifiuti per medicinali",
             "id": "Keranjang sampah untuk obat-obatan",
-            "da": "En affaldskurv til stoffer"
+            "da": "En affaldskurv til stoffer",
+            "ca": "Una paperera per a medicaments",
+            "fr": "Une poubelle pour médicaments"
           }
         },
         {
@@ -124,7 +135,8 @@
             "it": "Un cestino rifiuti per aghi e altri oggetti appuntiti",
             "id": "Keranjang sampah untuk jarum dan benda tajam lainnya",
             "da": "En affaldskurv til nåle og andre skarpe genstande",
-            "fr": "Un poubelle pour les aiguilles et autres objets pointus"
+            "fr": "Une poubelle pour aiguilles et autres objets tranchants",
+            "ca": "Una paperera per a agulles i altres objectes punxants"
           }
         },
         {
@@ -136,7 +148,8 @@
             "it": "Un cestino rifiuti per la plastica",
             "id": "Keranjang sampah untuk plastik",
             "da": "En affaldskurv til plast",
-            "fr": "Un poubelle pour le plastique"
+            "fr": "Une poubelle pour plastiques",
+            "ca": "Una paperera per a plàstic"
           }
         }
       ]
@@ -150,7 +163,8 @@
         "it": "Questo cestino ha un distributore di sacchetti per escrementi dei cani?",
         "id": "Apakah keranjang sampah ini memiliki dispenser untuk kantong kotoran anjing?",
         "da": "Har denne affaldskurv en dispenser til poser med ekskrementer til hunde?",
-        "fr": "Est-ce que cette poubelle a un distributeur de sacs pour ramasser les déjections canines ?"
+        "fr": "Est-ce que cette poubelle a un distributeur de sacs pour ramasser les déjections canines ?",
+        "ca": "Aquesta paperera té un dispensador per a bosses per a excrements de gossos?"
       },
       "condition": {
         "or": [
@@ -174,7 +188,8 @@
             "it": "Questo cestino ha un distributore di sacchetti per escrementi dei cani",
             "id": "Keranjang sampah ini memiliki dispenser untuk kantong kotoran (anjing)",
             "da": "Denne affaldskurv har en dispenser til poser til (hunde)ekskrementer",
-            "fr": "Cette poubelle a un distributeur de sacs pour ramasser les déjections canines"
+            "fr": "Cette poubelle a un distributeur de sacs pour ramasser les déjections canines",
+            "ca": "Aquesta paperera té un dispensador per a bosses d'excrements (de gossos)"
           }
         },
         {
@@ -190,7 +205,9 @@
             "de": "Der Abfalleimer <b>hat keinen</b> Spender für (Hunde-)Kotbeutel",
             "it": "Questo cestino <b>non</b> ha un distributore di sacchetti per escrementi dei cani",
             "id": "Keranjang sampah ini <b> tidak</b> memiliki dispenser untuk kantong kotoran (anjing)",
-            "da": "Denne affaldskurv <b>har ikke</b> en dispenser til poser til (hunde)ekskrementer"
+            "da": "Denne affaldskurv <b>har ikke</b> en dispenser til poser til (hunde)ekskrementer",
+            "ca": "Aquesta paperera <b>no</b> té un dispensador per a bosses d'excrements (gossos)",
+            "fr": "Cette poubelle <b>n'a pas</b> un distributeur de sacs pour ramasser les déjections canines"
           }
         },
         {
@@ -224,7 +241,7 @@
         "id": "sebuah keranjang sampah",
         "da": "en affaldskurv",
         "ca": "una paperera",
-        "fr": "un poubelle"
+        "fr": "une poubelle"
       },
       "presiceInput": {
         "preferredBackground": "photo"
@@ -242,7 +259,9 @@
             "de": "Alle Typen",
             "es": "Todos los tipos",
             "it": "Tutti i tipi",
-            "da": "Alle typer"
+            "da": "Alle typer",
+            "ca": "Tots els tipus",
+            "fr": "Tout type"
           }
         },
         {
@@ -252,7 +271,9 @@
             "de": "Mülleimer für Zigaretten",
             "es": "Papelera para cigarrillos",
             "it": "Cestino per sigarette",
-            "da": "Affaldskurv til cigaretter"
+            "da": "Affaldskurv til cigaretter",
+            "ca": "Paperera per a cigarrets",
+            "fr": "Poubelle pour mégots"
           },
           "osmTags": "waste~i~.*cigarettes.*"
         },
@@ -262,7 +283,9 @@
             "nl": "Vuilnisbak voor (vervallen) medicatie en drugs",
             "de": "Mülleimer für Drogen",
             "it": "Cestino per medicinali",
-            "da": "Affaldskurv til stoffer"
+            "da": "Affaldskurv til stoffer",
+            "ca": "Paperera per a medicaments",
+            "fr": "Poubelle pour médicaments"
           },
           "osmTags": "waste~i~.*drugs.*"
         },
@@ -273,7 +296,9 @@
             "de": "Mülleimer für Hundekot",
             "es": "Papelera para excrementos de perro",
             "it": "Cestino per escrementi dei cani",
-            "da": "Affaldskurv til hundeekskrementer"
+            "da": "Affaldskurv til hundeekskrementer",
+            "ca": "Paperera per a excrements de gossos",
+            "fr": "Poubelle pour déjections canines"
           },
           "osmTags": "waste~i~.*dog_excrement.*"
         },
@@ -284,7 +309,9 @@
             "de": "Mülleimer für allgemeinen Müll",
             "es": "Papelera para basura",
             "it": "Cestino per la spazzatura",
-            "da": "Affaldskurv til affald"
+            "da": "Affaldskurv til affald",
+            "ca": "Paperera per a brossa",
+            "fr": "Poubelle pour les déchets"
           },
           "osmTags": "waste~i~.*trash.*"
         },
@@ -294,7 +321,9 @@
             "nl": "Vuilnisbak voor injectienaalden en andere scherpe voorwerpen",
             "de": "Mülleimer für Nadeln und andere scharfe Gegenstände",
             "it": "Cestino dei rifiuti per oggetti taglienti",
-            "da": "Affaldskurv til spidse og skarpe genstande"
+            "da": "Affaldskurv til spidse og skarpe genstande",
+            "ca": "Paperera per a objectes punxants",
+            "fr": "Poubelle pour objets tranchants"
           },
           "osmTags": "waste~i~.*sharps.*"
         },
@@ -305,7 +334,9 @@
             "de": "Mülleimer für Plastik",
             "es": "Papelera para plástico",
             "it": "Cestino per la plastica",
-            "da": "Affaldskurv til plast"
+            "da": "Affaldskurv til plast",
+            "ca": "Paperera per a plàstics",
+            "fr": "Poubelle pour plastiques"
           },
           "osmTags": "waste~i~.*plastic.*"
         }
@@ -322,7 +353,8 @@
             "es": "Papelera con dispensador de bolsas de excrementos (para perros)",
             "it": "Cestino per rifiuti con dispenser per sacchetti per escrementi dei cani",
             "da": "Affaldskurv med dispenser til poser til (hunde)ekskrementer",
-            "ca": "Papereres amb dispensador de bosses d'excrements (per a gossos)"
+            "ca": "Papereres amb dispensador de bosses d'excrements (per a gossos)",
+            "fr": "Poubelle avec distributeur de sacs pour ramasser les déjections canines"
           },
           "osmTags": "vending=dog_excrement_bag"
         }
@@ -364,7 +396,9 @@
               "id": "Keranjang Sampah",
               "es": "Papelera",
               "it": "Cestino dei rifiuti",
-              "da": "Affaldskurv"
+              "da": "Affaldskurv",
+              "ca": "Paperera",
+              "fr": "Poubelle"
             }
           }
         ]

@@ -95,7 +95,7 @@
       "render": {
         "en": "This is a bicycle parking of the type: {bicycle_parking}",
         "nl": "Dit is een fietsparking van het type: {bicycle_parking}",
-        "fr": "Ceci est un parking à vélo de type {bicycle_parking}",
+        "fr": "C'est un parking à vélo de type {bicycle_parking}",
         "gl": "Este é un aparcadoiro de bicicletas do tipo: {bicycle_parking}",
         "de": "Dies ist ein Fahrrad-Parkplatz der Art: {bicycle_parking}",
         "hu": "Ez egy {bicycle_parking} típusú kerékpártároló",

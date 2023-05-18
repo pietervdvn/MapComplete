@@ -97,7 +97,8 @@
         "fr": "La station fait partie de la {addr:street}.",
         "it": "La stazione si trova in una strada chiamata {addr:street}.",
         "nl": "Dit station ligt aan {addr:street}.",
-        "de": "Die Feuerwache liegt an der Straße namens {addr:street}."
+        "de": "Die Feuerwache liegt an der Straße namens {addr:street}.",
+        "ca": "Aquesta estació es troba al llarg d'una carretera anomenada {addr:street}."
       }
     },
     {
@@ -165,7 +166,8 @@
             "fr": "Brigade de Protection du Feu",
             "de": "Brandschutzbehörde",
             "it": "Servizio antincendio governativo",
-            "nl": "Brandveiligheidsbureau"
+            "nl": "Brandveiligheidsbureau",
+            "ca": "Bureau of Fire Protection (Filipines)"
           }
         }
       ]

@@ -567,7 +567,8 @@
               "de": "Dies ist eine Neonröhrenleuchte",
               "cs": "Jedná se o neonové světlo",
               "nl": "Dit is een neonlamp",
-              "pt": "Esta é uma luz de tubo de néon"
+              "pt": "Esta é uma luz de tubo de néon",
+              "fr": "C'est une lampe à tube néon"
             },
             "hideInAnswer": "advertising!=sign"
           }

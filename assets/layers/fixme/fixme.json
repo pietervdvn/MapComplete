@@ -1,11 +1,13 @@
 {
   "id": "fixme",
   "name": {
-    "en": "OSM objects with FIXME tags"
+    "en": "OSM objects with FIXME tags",
+    "de": "OSM-Objekte mit FIXME-Tags"
   },
   "minzoom": 12,
   "description": {
-    "en": "OSM objects that likely need to be fixed, based on a FIXME tag."
+    "en": "OSM objects that likely need to be fixed, based on a FIXME tag.",
+    "de": "OSM-Objekte, die wahrscheinlich korrigiert werden müssen, basierend auf einem FIXME-Tag."
   },
   "shownByDefault": false,
   "syncSelection": "theme-only",
@@ -19,21 +21,24 @@
   },
   "title": {
     "render": {
-      "en": "OSM object with FIXME tag"
+      "en": "OSM object with FIXME tag",
+      "de": "OSM-Objekt mit FIXME-Tags"
     }
   },
   "tagRenderings": [
     {
       "id": "fixme",
       "render": {
-        "en": "Fixme Text: {fixme}"
+        "en": "Fixme Text: {fixme}",
+        "de": "Fixme Text: {fixme}"
       }
     },
     {
       "id": "note",
       "condition": "note~*",
       "render": {
-        "en": "Note Text: {note}"
+        "en": "Note Text: {note}",
+        "de": "Notiz Text: {note}"
       }
     },
     "all_tags"

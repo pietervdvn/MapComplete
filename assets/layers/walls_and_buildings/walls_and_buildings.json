@@ -8,7 +8,8 @@
       "de": "Wand oder Gebäude",
       "es": "Pared o edificio",
       "fr": "Mur ou bâtiment",
-      "da": "Mur eller bygning"
+      "da": "Mur eller bygning",
+      "ca": "Paret o edifici"
     }
   },
   "description": {
@@ -79,7 +80,8 @@
             "fr": "mètre",
             "de": "Meter",
             "da": "meter",
-            "nl": "meter"
+            "nl": "meter",
+            "ca": "metre"
           }
         },
         {
@@ -93,7 +95,8 @@
             "fr": "centimètre",
             "de": "Zentimeter",
             "da": "centimeter",
-            "nl": "centimeter"
+            "nl": "centimeter",
+            "ca": "centimetre"
           }
         }
       ]
@@ -107,7 +110,8 @@
           "en": "<h3>Entrances</h3>This building has {_entrances_count} entrances:",
           "de": "<h3>Eingänge</h3>Das Gebäude hat {_entrances_count} Eingänge:",
           "da": "<h3>Indgange</h3>Denne bygning har {_entrances_count} indgange:",
-          "nl": "<h3>Ingangen</h3>Dit gebouw heeft {_entrances_count} ingangen:"
+          "nl": "<h3>Ingangen</h3>Dit gebouw heeft {_entrances_count} ingangen:",
+          "ca": "<h3>Entrades</h3>Aquest edifici té {_entrances_count} entrades:"
         },
         "after": {
           "en": "{_entrances_count_without_width_count} entrances don't have width information yet",
@@ -122,7 +126,8 @@
             "en": "An <a href='#{id}'>entrance</a> of {canonical(width)}",
             "de": "Ein <a href='#{id}'>Eingang</a> von {canonical(width)}",
             "da": "En <a href='#{id}'>indgang</a> på {canonical(width)}",
-            "nl": "Een <a href='#{id}'>ingang</a> van {canonical(width)}"
+            "nl": "Een <a href='#{id}'>ingang</a> van {canonical(width)}",
+            "ca": "Una <a href='#{id}'>entrada </a> de {canonical(width)}"
           }
         }
       },
@@ -133,7 +138,8 @@
             "en": "No entrance has been marked",
             "de": "Es wurde kein Eingang markiert",
             "da": "Der er ikke markeret nogen indgang",
-            "nl": "Geen ingang is gemarkeerd"
+            "nl": "Geen ingang is gemarkeerd",
+            "ca": "No s'ha senyalitzat cap entrada"
           }
         },
         {
@@ -142,7 +148,8 @@
             "en": "None of the {_entrance_count} entrances have width information yet",
             "de": "Keiner der {_entrance_count} Eingänge hat bisher Angaben zur Breite",
             "da": "Ingen af {_entrance_count}-indgangene har oplysninger om bredde endnu",
-            "nl": "Geen van de {_entrance_count} ingangen hebben al informatie over de breedte"
+            "nl": "Geen van de {_entrance_count} ingangen hebben al informatie over de breedte",
+            "ca": "Cap de les entrades de {_entrance_count} encara no tenen informació de l'ampalda"
           }
         }
       ]
