@@ -1,14 +1,14 @@
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import type { Map as MLMap } from "maplibre-gl"
-import { Map as MlMap, SourceSpecification } from "maplibre-gl"
-import { RasterLayerPolygon } from "../../Models/RasterLayers"
-import { Utils } from "../../Utils"
-import { BBox } from "../../Logic/BBox"
-import { ExportableMap, MapProperties } from "../../Models/MapProperties"
+import {Store, UIEventSource} from "../../Logic/UIEventSource"
+import type {Map as MLMap} from "maplibre-gl"
+import {Map as MlMap, SourceSpecification} from "maplibre-gl"
+import {RasterLayerPolygon} from "../../Models/RasterLayers"
+import {Utils} from "../../Utils"
+import {BBox} from "../../Logic/BBox"
+import {ExportableMap, MapProperties} from "../../Models/MapProperties"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "./MaplibreMap.svelte"
 import html2canvas from "html2canvas"
-import { RasterLayerProperties } from "../../Models/RasterLayerProperties"
+import {RasterLayerProperties} from "../../Models/RasterLayerProperties"
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
@@ -49,7 +49,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     constructor(maplibreMap: Store<MLMap>, state?: Partial<MapProperties>) {
         this._maplibreMap = maplibreMap
 
-        this.location = state?.location ?? new UIEventSource({ lon: 0, lat: 0 })
+        this.location = state?.location ?? new UIEventSource({lon: 0, lat: 0})
         this.zoom = state?.zoom ?? new UIEventSource(1)
         this.minzoom = state?.minzoom ?? new UIEventSource(0)
         this.maxzoom = state?.maxzoom ?? new UIEventSource(24)
@@ -81,12 +81,11 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             console.log(e)
             const lon = e.lngLat.lng
             const lat = e.lngLat.lat
-            lastClickLocation.setData({ lon, lat })
+            lastClickLocation.setData({lon, lat})
         }
 
         maplibreMap.addCallbackAndRunD((map) => {
             map.on("load", () => {
-                this.updateStores()
                 self.setBackground()
                 self.MoveMapToCurrentLoc(self.location.data)
                 self.SetZoom(self.zoom.data)
@@ -96,6 +95,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 self.setMinzoom(self.minzoom.data)
                 self.setMaxzoom(self.maxzoom.data)
                 self.setBounds(self.bounds.data)
+                this.updateStores(true)
             })
             self.MoveMapToCurrentLoc(self.location.data)
             self.SetZoom(self.zoom.data)
@@ -105,7 +105,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             self.setMinzoom(self.minzoom.data)
             self.setMaxzoom(self.maxzoom.data)
             self.setBounds(self.bounds.data)
-            this.updateStores()
+            this.updateStores(true)
             map.on("moveend", () => this.updateStores())
             map.on("click", (e) => {
                 handleClick(e)
@@ -275,22 +275,26 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         return new Promise<Blob>((resolve) => drawOn.toBlob((data) => resolve(data)))
     }
 
-    private updateStores(): void {
+    private updateStores(isSetup: boolean = false): void {
         const map = this._maplibreMap.data
         if (!map) {
             return
         }
-        const dt = this.location.data
-        dt.lon = map.getCenter().lng
-        dt.lat = map.getCenter().lat
-        this.location.ping()
+        if (!isSetup || this.location.data === undefined) {
+            const dt = this.location.data
+            dt.lon = map.getCenter().lng
+            dt.lat = map.getCenter().lat
+            this.location.ping()
+        }
         this.zoom.setData(Math.round(map.getZoom() * 10) / 10)
         const bounds = map.getBounds()
         const bbox = new BBox([
             [bounds.getEast(), bounds.getNorth()],
             [bounds.getWest(), bounds.getSouth()],
         ])
-        this.bounds.setData(bbox)
+        if (this.bounds.data === undefined || !isSetup) {
+            this.bounds.setData(bbox)
+        }
     }
 
     private SetZoom(z: number): void {
@@ -311,7 +315,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
         const center = map.getCenter()
         if (center.lng !== loc.lon || center.lat !== loc.lat) {
-            map.setCenter({ lng: loc.lon, lat: loc.lat })
+            map.setCenter({lng: loc.lon, lat: loc.lat})
         }
     }
 
