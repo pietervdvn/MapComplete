@@ -172,15 +172,18 @@
           "key": "speech_output",
           "question": {
             "en": "In which languages does this elevator have speech output?",
-            "nl": "In welke talen heeft deze lift gesproken tekst?"
+            "nl": "In welke talen heeft deze lift gesproken tekst?",
+            "de": "In welchen Sprachen verfügt der Aufzug über eine Sprachausgabe?"
           },
           "render_list_item": {
             "en": "This elevator has speech output in {language():font-bold}",
-            "nl": "Deze lift heeft gesproken tekst in het {language():font-bold}"
+            "nl": "Deze lift heeft gesproken tekst in het {language():font-bold}",
+            "de": "Der Aufzug hat eine Sprachausgabe in {language():font-bold}"
           },
           "render_single_language": {
             "en": "This elevator has speech output in {language():font-bold}",
-            "nl": "Deze lift heeft gesproken tekst in het {language():font-bold}"
+            "nl": "Deze lift heeft gesproken tekst in het {language():font-bold}",
+            "de": "Der Aufzug hat eine Sprachausgabe in {language():font-bold}"
           }
         }
       }

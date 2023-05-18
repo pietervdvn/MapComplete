@@ -324,7 +324,8 @@
           "en": "Pipe diameter",
           "de": "Rohrdurchmesser",
           "nl": "Pijpdiameter",
-          "ru": "Диаметр трубы"
+          "ru": "Диаметр трубы",
+          "ca": "Diàmetre de la canonada"
         },
         "type": "int"
       },
@@ -332,7 +333,8 @@
         "en": "Pipe diameter: {canonical(fire_hydrant:diameter)}",
         "de": "Rohrdurchmesser: {canonical(fire_hydrant:diameter)}",
         "nl": "Pijpdiameter:{canonical(fire_hydrant:diameter)}",
-        "ru": "Диаметр трубы: {canonical(fire_hydrant:diameter)}"
+        "ru": "Диаметр трубы: {canonical(fire_hydrant:diameter)}",
+        "ca": "Diàmetre de la canonada: {canonical(fire_hydrant:diameter)}"
       }
     },
     {
@@ -375,7 +377,8 @@
           "en": "Coupling type",
           "de": "Art der Kupplung",
           "nl": "Soort koppeling",
-          "ru": "Тип соединительной головки"
+          "ru": "Тип соединительной головки",
+          "ca": "Tipus d'acoblament"
         },
         "type": "string"
       },
@@ -424,7 +427,8 @@
         "en": "Couplings: {couplings:type}",
         "de": "Kupplungen: {couplings:type}",
         "nl": "Koppelingen:{couplings:type}",
-        "ru": "Соединительные головки: {couplings:type}"
+        "ru": "Соединительные головки: {couplings:type}",
+        "ca": "Acoblaments: {couplings:type}"
       }
     },
     {
@@ -442,14 +446,16 @@
           "en": "Coupling diameters",
           "de": "Kupplungsdurchmesser",
           "nl": "Koppeldiameters",
-          "ru": "Диаметры соединительных головок"
+          "ru": "Диаметры соединительных головок",
+          "ca": "Diàmetres d'acoblament"
         }
       },
       "render": {
         "en": "Coupling diameters: {couplings:diameters}",
         "de": "Kupplungsdurchmesser: {couplings:diameters}",
         "nl": "Koppelingdiameters:{couplings:diameters}",
-        "ru": "Диаметр соединительных головок: {couplings:diameters}"
+        "ru": "Диаметр соединительных головок: {couplings:diameters}",
+        "ca": "Diàmetres d'acoblament: {couplings:diameters}"
       }
     },
     "images"

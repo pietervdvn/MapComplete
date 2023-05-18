@@ -361,7 +361,7 @@
             "nl": "Dit is een fietsstraat, en dus een 30km/h zone",
             "de": "Dies ist eine Fahrradstraße in einer 30km/h Zone.",
             "es": "Esta es una ciclocalle, y una zona 30km/h.",
-            "fr": "Ceci est une rue cyclable, et une zone à 30 km/h"
+            "fr": "C'est une rue cyclable, et une zone à 30 km/h."
           },
           "addExtraTags": [
             "overtaking:motor_vehicle=no",

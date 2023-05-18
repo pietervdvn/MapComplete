@@ -320,7 +320,7 @@
             "nl": "Dit is een koffiezaak",
             "de": "Hier wird Kaffee serviert",
             "es": "Aquí se sirve café",
-            "fr": "Ceci est un café",
+            "fr": "C'est un café",
             "ca": "Aquí es serveix cafè"
           }
         },
@@ -473,7 +473,7 @@
             "nl": "Hier is enkel afhaal mogelijk",
             "de": "Hier werden ausschließlich Gerichte zum Mitnehmen angeboten",
             "es": "Este es un negocio solo para pedir para llevar",
-            "fr": "Ceci est un resto uniquement de vente à emporter",
+            "fr": "Ce restaurant ne propose que de la vente à emporter",
             "ca": "Aquest és un negoci només per emportar"
           }
         },

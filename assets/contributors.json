@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 5306,
+      "commits": 5313,
       "contributor": "Pieter Vander Vennet"
     },
     {
-      "commits": 359,
+      "commits": 360,
       "contributor": "Robin van der Linde"
     },
     {
@@ -223,6 +223,10 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "galder158@hotmail.com"
     },
     {
       "commits": 1,
