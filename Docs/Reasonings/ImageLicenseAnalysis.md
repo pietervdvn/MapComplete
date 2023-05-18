@@ -1,3 +1,5 @@
+(To rerun the analysis: use 'scripts/generateImageAnalysis'. Delete 'features_with_*.geojson' first to force updating the OSM-dataset)
+
 # What licenses are used?
 
 Now that MapComplete is three-and-a-half year old, it's a good time to see what license people are using to upload their images.
