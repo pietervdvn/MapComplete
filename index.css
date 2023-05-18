@@ -434,6 +434,10 @@ select:hover {
     color: var(--background-color);
 }
 
+.bg-black-transparent {
+    background-color: #00000088;
+}
+
 .block-ruby {
     display: block ruby;
 }
@@ -455,6 +459,9 @@ select:hover {
     display: none;
 }
 
+.no-weblate weblate {
+    display: none;
+}
 .link-underline a {
     text-decoration: underline 1px var(--foreground-color);
 }

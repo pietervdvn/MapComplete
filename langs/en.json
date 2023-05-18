@@ -132,6 +132,8 @@
             "isApplied": "The changes are applied"
         },
         "attribution": {
+            "attributionBackgroundLayer": "The current background layer is {name}",
+            "attributionBackgroundLayerWithCopyright": "The current background layer is {name}: {copyright}",
             "attributionContent": "<p>All data is provided by <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, freely reusable under <a href='https://osm.org/copyright' target='_blank'>the Open DataBase License</a>.</p>",
             "attributionTitle": "Attribution notice",
             "codeContributionsBy": "MapComplete has been built by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>",
@@ -158,7 +160,7 @@
         "back": "Back",
         "backToIndex": "Go back to the overview with all thematic maps",
         "backToMapcomplete": "Back to the theme overview",
-        "backgroundMap": "Background map",
+        "backgroundMap": "Select a background layer",
         "cancel": "Cancel",
         "confirm": "Confirm",
         "customThemeIntro": "<h3>Custom themes</h3>These are previously visited user-generated themes.",
@@ -236,6 +238,7 @@
         "number": "number",
         "openStreetMapIntro": "<h3>An Open Map</h3><p>One that everyone can use and edit freely. A single place to store all geo-info. Different, small, incompatible and outdated maps are not needed anywhere.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is not the enemy map. The map data can be used freely (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>). Everyone can add new data and fix errors. This website uses OpenStreetMap. All the data is from there, and your answers and corrections are used all over.</p><p>Many people and apps already use OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Instagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap.</p>",
         "openTheMap": "Open the map",
+        "openTheMapAtGeolocation": "Zoom to your location",
         "opening_hours": {
             "closed_permanently": "Closed for an unkown duration",
             "closed_until": "Closed until {date}",
@@ -289,6 +292,7 @@
             "error": "Something went wrong…",
             "nothing": "Nothing found…",
             "search": "Search a location",
+            "searchShort": "Search…",
             "searching": "Searching…"
         },
         "sharescreen": {

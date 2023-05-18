@@ -24,6 +24,8 @@ export class MenuState {
     public readonly menuViewTabIndex: UIEventSource<number>
     public readonly menuViewTab: UIEventSource<MenuViewTabStates>
 
+    public readonly backgroundLayerSelectionIsOpened: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+
     public readonly highlightedLayerInFilters: UIEventSource<string> = new UIEventSource<string>(
         undefined
     )
@@ -102,5 +104,7 @@ export class MenuState {
     public closeAll() {
         this.menuIsOpened.setData(false)
         this.themeIsOpened.setData(false)
+        this.backgroundLayerSelectionIsOpened.setData(false)
     }
+
 }

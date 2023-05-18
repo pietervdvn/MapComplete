@@ -39,7 +39,7 @@
                                     {layer}></TagRenderingAnswer>
             </h3>
 
-            <div class="title-icons flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2 gap-x-0.5 p-1 links-as-button">
+            <div class="no-weblate title-icons flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2 gap-x-0.5 p-1 links-as-button">
                 {#each layer.titleIcons as titleIconConfig}
                     {#if (titleIconConfig.condition?.matchesProperties(_tags) ?? true) && (titleIconConfig.metacondition?.matchesProperties({..._metatags, ..._tags}) ?? true) && titleIconConfig.IsKnown(_tags)}
                         <div class="w-8 h-8 flex items-center">

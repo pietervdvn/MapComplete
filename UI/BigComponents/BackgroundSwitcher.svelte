@@ -3,13 +3,13 @@
     import type {RasterLayerPolygon} from "../../Models/RasterLayers";
     import {AvailableRasterLayers} from "../../Models/RasterLayers";
     import Tr from "../Base/Tr.svelte";
-    import {onDestroy} from "svelte";
+    import {createEventDispatcher, onDestroy} from "svelte";
     import Translations from "../i18n/Translations";
     import Svg from "../../Svg";
     import {Map as MlMap} from "maplibre-gl"
-    import MaplibreMap from "../Map/MaplibreMap.svelte";
-    import {MapLibreAdaptor} from "../Map/MapLibreAdaptor";
     import type {MapProperties} from "../../Models/MapProperties";
+    import OverlayMap from "../Map/OverlayMap.svelte";
+    import RasterLayerPicker from "../Map/RasterLayerPicker.svelte";
 
     export let mapproperties: MapProperties
     export let normalMap: UIEventSource<MlMap>
@@ -28,63 +28,55 @@
      */
     export let availableRasterLayers: Store<RasterLayerPolygon[]>
 
-    let altmap: UIEventSource<MlMap> = new UIEventSource(undefined)
-    let altproperties = new MapLibreAdaptor(altmap, {zoom: UIEventSource.feedFrom(mapproperties.zoom)})
-    altproperties.allowMoving.setData(false)
-    altproperties.allowZooming.setData(false)
-    let altmap0: UIEventSource<MlMap> = new UIEventSource(undefined)
-    let altproperties0 = new MapLibreAdaptor(altmap0, {zoom: altproperties.zoom})
-  //  altproperties0.allowMoving.setData(false)
-   // altproperties0.allowZooming.setData(false)
+    let raster0 = new UIEventSource<RasterLayerPolygon>(undefined)
+
+    let raster1 = new UIEventSource<RasterLayerPolygon>(undefined)
+
+    let currentLayer: RasterLayerPolygon
 
     function updatedAltLayer() {
         const available = availableRasterLayers.data
         const current = rasterLayer.data
         const defaultLayer = AvailableRasterLayers.maplibre
-        const firstOther = available.find(l => l !== current && l !== defaultLayer)
-
-        altproperties.rasterLayer.setData(firstOther)
-        const secondOther = available.find(l => l !== current && l !== firstOther && l !== defaultLayer)
-        altproperties0.rasterLayer.setData(secondOther)
-
+        const firstOther = available.find(l => l !== defaultLayer)
+        const secondOther = available.find(l => l !== defaultLayer && l !== firstOther)
+        raster0.setData(firstOther === current ? defaultLayer : firstOther)
+        raster1.setData(secondOther === current ? defaultLayer : secondOther)
     }
 
+    updatedAltLayer()
+    onDestroy(mapproperties.rasterLayer.addCallbackAndRunD(updatedAltLayer))
     onDestroy(availableRasterLayers.addCallbackAndRunD(updatedAltLayer))
-    onDestroy(rasterLayer.addCallbackAndRunD(updatedAltLayer))
 
-    function pixelCenterOf(map: UIEventSource<MlMap>): [number, number] {
-        const rect = map?.data?.getCanvas()?.getBoundingClientRect()
-        if (!rect) {
-            return undefined
+    function use(rasterLayer: UIEventSource<RasterLayerPolygon>): (() => void) {
+        return () => {
+            currentLayer = undefined
+            mapproperties.rasterLayer.setData(rasterLayer.data)
         }
-        const x = (rect.left + rect.right) / 2
-        const y = (rect.top + rect.bottom) / 2
-        return [x, y]
     }
 
-    mapproperties.location.addCallbackAndRunD(({lon, lat}) => {
-        if (!normalMap.data || !altmap.data) {
-            return
-        }
-        const altMapCenter = pixelCenterOf(altmap)
-        const c = normalMap.data.unproject(altMapCenter)
-        altproperties.location.setData({lon: c.lng, lat: c.lat})
 
-        const altMapCenter0 = pixelCenterOf(altmap0)
-        const c0 = normalMap.data.unproject(altMapCenter0)
-        altproperties0.location.setData({lon: c0.lng, lat: c0.lat})
-    })
+    const dispatch = createEventDispatcher<{ copyright_clicked }>()
 
 </script>
-<div class="flex">
-    <div class="w-32 h-32 overflow-hidden border-interactive">
-        <MaplibreMap map={altmap}/>
+<div class="flex items-end opacity-50 hover:opacity-100">
+    <div class="flex flex-col md:flex-row">
+        <button class="w-16 h-12 md:w-16 md:h-16 overflow-hidden m-0 p-0"
+                on:click={use(raster0)}>
+            <OverlayMap placedOverMap={normalMap} placedOverMapProperties={mapproperties} rasterLayer={raster0}/>
+        </button>
+        <button class="w-16 h-12 md:w-16 md:h-16 overflow-hidden m-0 p-0 " on:click={use(raster1)}>
+            <OverlayMap placedOverMap={normalMap} placedOverMapProperties={mapproperties} rasterLayer={raster1}/>
+        </button>
     </div>
-    <div class="w-32 h-32 overflow-hidden border-interactive">
-        <MaplibreMap map={altmap0}/>
-    </div>
-    <div class="low-interaction flex flex-col">
-        <b>Current background:</b>
-        <Tr t={Translations.T(name)}/>
+    <div class="text-sm flex flex-col gap-y-1 h-fit ml-1">
+        
+        <div class="low-interaction rounded p-1 w-64">
+            <RasterLayerPicker availableLayers={availableRasterLayers} value={mapproperties.rasterLayer}></RasterLayerPicker>
+        </div>
+        
+        <button class="small" on:click={() => dispatch("copyright_clicked")}>
+            © OpenStreetMap
+        </button>
     </div>
 </div>

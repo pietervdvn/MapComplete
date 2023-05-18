@@ -13,7 +13,7 @@
   export let onMainScreen: boolean = true
 
   const prefix = "mapcomplete-hidden-theme-"
-  const hiddenThemes: LayoutInformation[] = themeOverview["default"].filter(
+  const hiddenThemes: LayoutInformation[] = themeOverview.filter(
     (layout) => layout.hideFromOverview
   )
   const userPreferences = state.osmConnection.preferencesHandler.preferences

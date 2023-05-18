@@ -275,7 +275,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         return new Promise<Blob>((resolve) => drawOn.toBlob((data) => resolve(data)))
     }
 
-    private updateStores() {
+    private updateStores(): void {
         const map = this._maplibreMap.data
         if (!map) {
             return
@@ -293,7 +293,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this.bounds.setData(bbox)
     }
 
-    private SetZoom(z: number) {
+    private SetZoom(z: number): void {
         const map = this._maplibreMap.data
         if (!map || z === undefined) {
             return
@@ -303,7 +303,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
     }
 
-    private MoveMapToCurrentLoc(loc: { lat: number; lon: number }) {
+    private MoveMapToCurrentLoc(loc: { lat: number; lon: number }): void {
         const map = this._maplibreMap.data
         if (!map || loc === undefined) {
             return
@@ -325,7 +325,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
     }
 
-    private removeCurrentLayer(map: MLMap) {
+    private removeCurrentLayer(map: MLMap): void {
         if (this._currentRasterLayer) {
             // hide the previous layer
             map.removeLayer(this._currentRasterLayer)
@@ -333,7 +333,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
     }
 
-    private async setBackground() {
+    private async setBackground(): Promise<void> {
         const map = this._maplibreMap.data
         if (!map) {
             return
@@ -363,6 +363,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
 
         map.addSource(background.id, MapLibreAdaptor.prepareWmsSource(background))
 
+        map.resize()
         map.addLayer(
             {
                 id: background.id,

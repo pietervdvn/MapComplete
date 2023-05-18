@@ -11,12 +11,13 @@
     import SelectedElementView from "./BigComponents/SelectedElementView.svelte";
     import LayerConfig from "../Models/ThemeConfig/LayerConfig";
     import Filterview from "./BigComponents/Filterview.svelte";
-    import RasterLayerPicker from "./Map/RasterLayerPicker.svelte";
     import ThemeViewState from "../Models/ThemeViewState";
     import type {MapProperties} from "../Models/MapProperties";
     import Geosearch from "./BigComponents/Geosearch.svelte";
     import Translations from "./i18n/Translations";
     import {CogIcon, EyeIcon, MenuIcon, XCircleIcon} from "@rgossiaux/svelte-heroicons/solid";
+    import {Square3Stack3dIcon} from "@babeard/svelte-heroicons/solid";
+
     import Tr from "./Base/Tr.svelte";
     import CommunityIndexView from "./BigComponents/CommunityIndexView.svelte";
     import FloatOver from "./Base/FloatOver.svelte";
@@ -39,9 +40,12 @@
     import SelectedElementTitle from "./BigComponents/SelectedElementTitle.svelte";
     import Svg from "../Svg";
     import {ShareScreen} from "./BigComponents/ShareScreen";
-    import NextButton from "./Base/NextButton.svelte";
-    import IfNot from "./Base/IfNot.svelte";
-    import BackgroundSwitcher from "./BigComponents/BackgroundSwitcher.svelte";
+    import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte";
+    import type {Readable} from "svelte/store";
+    import type {RasterLayerPolygon} from "../Models/RasterLayers";
+    import RasterLayerPicker from "./Map/RasterLayerPicker.svelte";
+    import RasterLayerOverview from "./Map/RasterLayerOverview.svelte";
+    import IfHidden from "./Base/IfHidden.svelte";
 
     export let state: ThemeViewState;
     let layout = state.layout;
@@ -86,21 +90,7 @@
     let availableLayers = state.availableLayers;
     let userdetails = state.osmConnection.userDetails;
     let currentViewLayer = layout.layers.find(l => l.id === "current_view")
-
-    function jumpToCurrentLocation() {
-        const glstate = state.geolocation.geolocationState
-        if (glstate.currentGPSLocation.data !== undefined) {
-            const c: GeolocationCoordinates = glstate.currentGPSLocation.data
-            state.guistate.themeIsOpened.setData(false)
-            const coor = {lon: c.longitude, lat: c.latitude}
-            state.mapProperties.location.setData(coor)
-        }
-        if (glstate.permission.data !== "granted") {
-            glstate.requestPermission()
-            return
-        }
-
-    }
+    let rasterLayer: Readable<RasterLayerPolygon> = state.mapProperties.rasterLayer
 </script>
 
 
@@ -138,35 +128,48 @@
         <ToSvelte construct={() => new ExtraLinkButton(state, layout.extraLink)}></ToSvelte>
         <If condition={state.featureSwitchIsTesting}>
             <div class="alert w-fit">
-              Testmode
+                Testmode
             </div>
         </If>
 
     </div>
 </div>
 
-<div class="absolute bottom-0 left-0 mb-4 ml-4">
-    <BackgroundSwitcher availableRasterLayers={state.availableLayers} mapproperties={state.mapProperties} normalMap={state.map}/>
-</div>
-
-<div class="absolute bottom-0 right-0 mb-4 mr-4 flex flex-col items-end">
-    <If condition={state.floors.map(f => f.length > 1)}>
-        <div class="mr-0.5">
-            <LevelSelector floors={state.floors} layerState={state.layerState} zoom={state.mapProperties.zoom}/>
+<div class="absolute bottom-0 left-0 mb-4 w-screen">
+    <div class="w-full flex justify-between px-4 items-end">
+        <div>
+            <!-- bottom left elements -->
+            <MapControlButton on:click={() => state.guistate.backgroundLayerSelectionIsOpened.setData(true)}>
+                <Square3Stack3dIcon class="w-6 h-6"/>
+            </MapControlButton>
+            <a class="opacity-50 hover:opacity-100 text-white cursor-pointer bg-black-transparent px-1 rounded-2xl" 
+               on:click={() =>{ state.guistate.themeViewTab.setData("copyright"); state.guistate.themeIsOpened.setData(true)}}>
+                © OpenStreetMap | <span class="w-24">{$rasterLayer.properties.name}</span>
+            </a>
         </div>
-    </If>
-    <MapControlButton on:click={() => mapproperties.zoom.update(z => z+1)}>
-        <ToSvelte construct={Svg.plus_svg().SetClass("w-8 h-8")}/>
-    </MapControlButton>
-    <MapControlButton on:click={() => mapproperties.zoom.update(z => z-1)}>
-        <ToSvelte construct={Svg.min_svg().SetClass("w-8 h-8")}/>
-    </MapControlButton>
-    <If condition={featureSwitches.featureSwitchGeolocation}>
-        <MapControlButton>
-            <ToSvelte
-                    construct={new GeolocationControl(state.geolocation, mapproperties).SetClass("block w-8 h-8")}></ToSvelte>
-        </MapControlButton>
-    </If>
+
+        <div class="flex flex-col items-end">
+            <!-- bottom right elements -->
+            <If condition={state.floors.map(f => f.length > 1)}>
+                <div class="mr-0.5">
+                    <LevelSelector floors={state.floors} layerState={state.layerState} zoom={state.mapProperties.zoom}/>
+                </div>
+            </If>
+            <MapControlButton on:click={() => mapproperties.zoom.update(z => z+1)}>
+                <ToSvelte construct={Svg.plus_svg().SetClass("w-8 h-8")}/>
+            </MapControlButton>
+            <MapControlButton on:click={() => mapproperties.zoom.update(z => z-1)}>
+                <ToSvelte construct={Svg.min_svg().SetClass("w-8 h-8")}/>
+            </MapControlButton>
+            <If condition={featureSwitches.featureSwitchGeolocation}>
+                <MapControlButton>
+                    <ToSvelte
+                            construct={new GeolocationControl(state.geolocation, mapproperties).SetClass("block w-8 h-8")}></ToSvelte>
+                </MapControlButton>
+            </If>
+        </div>
+    </div>
+
 </div>
 
 <If condition={selectedElementView.map(v => v !== undefined && selectedLayer.data !== undefined && !selectedLayer.data.popupInFloatover,[ selectedLayer] )}>
@@ -204,43 +207,7 @@
 
             <div class="m-4" slot="content0">
 
-                <Tr t={layout.description}></Tr>
-                <Tr t={Translations.t.general.welcomeExplanation.general}/>
-                {#if layout.layers.some((l) => l.presets?.length > 0)}
-                    <If condition={state.featureSwitches.featureSwitchAddNew}>
-                        <Tr t={Translations.t.general.welcomeExplanation.addNew}/>
-                    </If>
-                {/if}
-
-                <!--toTheMap,
-                loginStatus.SetClass("block mt-6 pt-2 md:border-t-2 border-dotted border-gray-400"),
-                -->
-                <Tr t={layout.descriptionTail}></Tr>
-                <NextButton clss="primary w-full" on:click={() => state.guistate.themeIsOpened.setData(false)}>
-                    <div class="flex justify-center w-full text-2xl">
-                        <Tr t={Translations.t.general.openTheMap}/>
-                    </div>
-                </NextButton>
-
-                <div class="flex w-full">
-                    <IfNot condition={state.geolocation.geolocationState.permission.map(p => p === "denied")}>
-                        <button class="flex w-full gap-x-2 items-center" on:click={jumpToCurrentLocation}>
-                            <ToSvelte construct={Svg.crosshair_svg().SetClass("w-8 h-8")}/>
-                            <span>
-                            Jump to your location
-                        </span>
-                        </button>
-                    </IfNot>
-
-                    <div class="flex flex-col w-full border rounded low-interactive">
-                        Search for a location:
-                        <Geosearch bounds={state.mapProperties.bounds}
-                                   on:searchCompleted={() => state.guistate.themeIsOpened.setData(false)}
-                                   perLayer={state.perLayer}
-                                   {selectedElement}
-                                   {selectedLayer}/>
-                    </div>
-                </div>
+                <ThemeIntroPanel {state}/>
 
             </div>
 
@@ -265,9 +232,6 @@
                             zoomlevel={state.mapProperties.zoom}
                     />
                 {/each}
-                <If condition={state.featureSwitches.featureSwitchBackgroundSelection}>
-                    <RasterLayerPicker {availableLayers} value={mapproperties.rasterLayer}></RasterLayerPicker>
-                </If>
             </div>
             <div class="flex" slot="title2">
                 <If condition={state.featureSwitches.featureSwitchEnableExport}>
@@ -288,12 +252,22 @@
             <div slot="title4">
                 <Tr t={Translations.t.general.sharescreen.title}/>
             </div>
-            <ToSvelte construct={() => new ShareScreen(state)} slot="content4"/>
+            <div class="m-2" slot="content4">
+                <ToSvelte construct={() => new ShareScreen(state)}/>
+            </div>
 
         </TabbedGroup>
     </FloatOver>
 </If>
 
+<IfHidden condition={state.guistate.backgroundLayerSelectionIsOpened}>
+    <!-- background layer selector -->
+    <FloatOver on:close={() => state.guistate.backgroundLayerSelectionIsOpened.setData(false)}>
+        <div class="p-2 h-full">
+            <RasterLayerOverview userstate={state.userRelatedState} mapproperties={state.mapProperties} map={state.map} {availableLayers} visible={state.guistate.backgroundLayerSelectionIsOpened}/>
+        </div>
+    </FloatOver>
+</IfHidden>
 
 <If condition={state.guistate.menuIsOpened}>
     <!-- Menu page -->

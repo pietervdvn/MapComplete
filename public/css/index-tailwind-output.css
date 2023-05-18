@@ -715,12 +715,12 @@ video {
   bottom: 0px;
 }
 
-.right-0 {
-  right: 0px;
-}
-
 .right-1\/3 {
   right: 33.333333%;
+}
+
+.right-0 {
+  right: 0px;
 }
 
 .right-10 {
@@ -1105,6 +1105,10 @@ video {
   width: fit-content;
 }
 
+.w-24 {
+  width: 6rem;
+}
+
 .w-4 {
   width: 1rem;
 }
@@ -1140,10 +1144,6 @@ video {
 
 .w-96 {
   width: 24rem;
-}
-
-.w-24 {
-  width: 6rem;
 }
 
 .w-10 {
@@ -1245,6 +1245,14 @@ video {
   resize: both;
 }
 
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -1295,6 +1303,10 @@ video {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-y-1 {
@@ -1386,6 +1398,10 @@ video {
 
 .rounded-xl {
   border-radius: 0.75rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
 .rounded-lg {
@@ -1554,6 +1570,11 @@ video {
   padding-right: 0.25rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -1567,11 +1588,6 @@ video {
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .pb-12 {
@@ -1722,6 +1738,11 @@ video {
   letter-spacing: -0.025em;
 }
 
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
@@ -1740,11 +1761,6 @@ video {
 .text-green-600 {
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity));
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2270,6 +2286,10 @@ select:hover {
   color: var(--background-color);
 }
 
+.bg-black-transparent {
+  background-color: #00000088;
+}
+
 .block-ruby {
   display: block ruby;
 }
@@ -2286,6 +2306,10 @@ select:hover {
 
 .no-images img {
   /* Used solely in 'imageAttribution' and in many themes for the label*/
+  display: none;
+}
+
+.no-weblate weblate {
   display: none;
 }
 

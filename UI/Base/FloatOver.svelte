@@ -10,7 +10,7 @@
 
 <div class="absolute top-0 right-0 w-screen h-screen p-4 md:p-6" style="background-color: #00000088">
     <div class="content normal-background">
-        <div class="rounded-xl">
+        <div class="rounded-xl h-full">
             <slot></slot>
         </div>
         <slot name="close-button">

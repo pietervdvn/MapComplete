@@ -303,7 +303,9 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.drawSpecialLayers()
         this.initHotkeys()
         this.miscSetup()
-        console.log("State setup completed", this)
+        if(!Utils.runningFromConsole){
+            console.log("State setup completed", this)
+        }
     }
 
     /**

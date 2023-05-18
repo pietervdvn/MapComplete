@@ -22,6 +22,7 @@ import ContributorCount from "../../Logic/ContributorCount"
 import Img from "../Base/Img"
 import { TypedTranslation } from "../i18n/Translation"
 import GeoIndexedStore from "../../Logic/FeatureSource/Actors/GeoIndexedStore"
+import {RasterLayerPolygon} from "../../Models/RasterLayers";
 
 export class OpenIdEditor extends VariableUiElement {
     constructor(
@@ -113,7 +114,7 @@ export default class CopyrightPanel extends Combine {
 
     constructor(state: {
         layout: LayoutConfig
-        mapProperties: { bounds: Store<BBox> }
+        mapProperties: { readonly bounds: Store<BBox>, readonly rasterLayer: Store<RasterLayerPolygon> }
         osmConnection: OsmConnection
         dataIsLoading: Store<boolean>
         perLayer: ReadonlyMap<string, GeoIndexedStore>
@@ -173,6 +174,29 @@ export default class CopyrightPanel extends Combine {
             [
                 new Title(t.attributionTitle),
                 t.attributionContent,
+
+                new VariableUiElement(state.mapProperties.rasterLayer.mapD(layer => {
+                    const props = layer.properties
+                    const attrUrl = props.attribution?.url
+                    const attrText = props.attribution?.text
+
+                    let bgAttr: BaseUIElement | string = undefined
+                    if(attrText && attrUrl){
+                        bgAttr = "<a href='"+attrUrl+"' target='_blank'>"+attrText+"</a>"
+                    }else if(attrUrl){
+                        bgAttr = attrUrl
+                    }else{
+                        bgAttr = attrText
+                    }
+                    if(bgAttr){
+                        return Translations.t.general.attribution.attributionBackgroundLayerWithCopyright.Subs({
+                            name: props.name,
+                            copyright: bgAttr
+                        })
+                    }
+                    return Translations.t.general.attribution.attributionBackgroundLayer.Subs(props)
+                })),
+
                 maintainer,
                 dataContributors,
                 CopyrightPanel.CodeContributors(contributors, t.codeContributionsBy),

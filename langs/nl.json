@@ -149,7 +149,7 @@
         "back": "Vorige",
         "backToIndex": "Keer terug naar het overzicht met alle thematische kaarten",
         "backToMapcomplete": "Terug naar het themaoverzicht",
-        "backgroundMap": "Achtergrondkaart",
+        "backgroundMap": "Selecteer een achtergrondlaag",
         "cancel": "Annuleren",
         "confirm": "Bevestigen",
         "customThemeIntro": "<h3>Onofficiële thema's</h3>De onderstaande thema's heb je eerder bezocht en zijn gemaakt door andere OpenStreetMappers.",
@@ -221,6 +221,7 @@
         "number": "getal",
         "openStreetMapIntro": "<h3>Een open kaart</h3><p>Zou het niet fantastisch zijn als er een open kaart zou zijn die door iedereen aangepast én gebruikt kan worden? Een kaart waar iedereen zijn interesses aan zou kunnen toevoegen? Dan zouden er geen duizend-en-één verschillende kleine kaartjes, websites, ... meer nodig zijn</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> is deze open kaart. Je mag de kaartdata gratis gebruiken (mits <a href=\"https://osm.org/copyright\" target=\"_blank\">bronvermelding en herpublicatie van aanpassingen</a>). Daarenboven mag je de kaart ook gratis aanpassen als je een account maakt. Ook deze website is gebaseerd op OpenStreetMap. Als je hier een vraag beantwoord, gaat het antwoord daar ook naartoe</p><p>Tenslotte zijn er reeds vele gebruikers van OpenStreetMap. Denk maar <a href=\"https://organicmaps.app//\" target=\"_blank\">Organic Maps</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, verschillende gespecialiseerde routeplanners, de achtergrondkaarten op Facebook, Instagram,...<br/>;Zelfs Apple Maps en Bing-Maps gebruiken OpenStreetMap in hun kaarten!</p><p></p><p>Kortom, als je hier een punt toevoegd of een vraag beantwoord, zal dat na een tijdje ook in al dié applicaties te zien zijn.</p>",
         "openTheMap": "Raadpleeg de kaart",
+        "openTheMapAtGeolocation": "Ga naar jouw locatie",
         "opening_hours": {
             "closed_permanently": "Gesloten voor onbepaalde tijd",
             "closed_until": "Gesloten - open op {date}",
@@ -262,6 +263,7 @@
             "error": "Niet gelukt…",
             "nothing": "Niets gevonden…",
             "search": "Zoek naar een locatie",
+            "searchShort": "Zoek…",
             "searching": "Aan het zoeken…"
         },
         "sharescreen": {

@@ -16,11 +16,11 @@
 
 {#if context}
   {#if $linkOnMobile}
-    <a href={LinkToWeblate.hrefToWeblate($language, context)} target="_blank" class="mx-1">
+    <a href={LinkToWeblate.hrefToWeblate($language, context)} target="_blank" class="mx-1 weblate-link">
       <img src="./assets/svg/translate.svg" class="w-3 h-3 rounded-full font-gray" />
     </a>
   {:else if $linkToWeblate}
-    <a href={LinkToWeblate.hrefToWeblate($language, context)} class="hidden-on-mobile mx-1" target="_blank">
+    <a href={LinkToWeblate.hrefToWeblate($language, context)} class="weblate-link hidden-on-mobile mx-1" target="_blank">
       <img src="./assets/svg/translate.svg" class="w-3 h-3 rounded-full font-gray" />
     </a>
   {/if}
