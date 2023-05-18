@@ -39,6 +39,9 @@ export default class BackgroundLayerResetter {
                 availableLayers,
                 currentBgPolygon?.properties?.category
             )
+            if(!availableInSameCat){
+                return
+            }
             console.log("Selecting a different layer:", availableInSameCat.properties.id)
             currentBackgroundLayer.setData(availableInSameCat)
         })

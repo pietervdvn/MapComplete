@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {UIEventSource} from "../Logic/UIEventSource";
+    import {Store, UIEventSource} from "../Logic/UIEventSource";
     import {Map as MlMap} from "maplibre-gl";
     import MaplibreMap from "./Map/MaplibreMap.svelte";
     import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
@@ -46,6 +46,8 @@
     import RasterLayerPicker from "./Map/RasterLayerPicker.svelte";
     import RasterLayerOverview from "./Map/RasterLayerOverview.svelte";
     import IfHidden from "./Base/IfHidden.svelte";
+    import {onDestroy} from "svelte";
+    import {AvailableRasterLayers} from "../Models/RasterLayers";
 
     export let state: ThemeViewState;
     let layout = state.layout;
@@ -90,7 +92,11 @@
     let availableLayers = state.availableLayers;
     let userdetails = state.osmConnection.userDetails;
     let currentViewLayer = layout.layers.find(l => l.id === "current_view")
-    let rasterLayer: Readable<RasterLayerPolygon> = state.mapProperties.rasterLayer
+    let rasterLayer: Store<RasterLayerPolygon> = state.mapProperties.rasterLayer
+    let rasterLayerName = rasterLayer.data?.properties?.name ?? AvailableRasterLayers.maplibre.properties.name
+    onDestroy(rasterLayer.addCallbackAndRunD(l => {
+        rasterLayerName = l.properties.name
+    }))
 </script>
 
 
@@ -144,7 +150,7 @@
             </MapControlButton>
             <a class="opacity-50 hover:opacity-100 text-white cursor-pointer bg-black-transparent px-1 rounded-2xl" 
                on:click={() =>{ state.guistate.themeViewTab.setData("copyright"); state.guistate.themeIsOpened.setData(true)}}>
-                © OpenStreetMap | <span class="w-24">{$rasterLayer.properties.name}</span>
+                © OpenStreetMap | <span class="w-24">{rasterLayerName}</span>
             </a>
         </div>
 

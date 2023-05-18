@@ -1,10 +1,10 @@
-import { Feature, Polygon } from "geojson"
+import {Feature, Polygon} from "geojson"
 import * as editorlayerindex from "../assets/editor-layer-index.json"
 import * as globallayers from "../assets/global-raster-layers.json"
-import { BBox } from "../Logic/BBox"
-import { Store, Stores } from "../Logic/UIEventSource"
-import { GeoOperations } from "../Logic/GeoOperations"
-import { RasterLayerProperties } from "./RasterLayerProperties"
+import {BBox} from "../Logic/BBox"
+import {Store, Stores} from "../Logic/UIEventSource"
+import {GeoOperations} from "../Logic/GeoOperations"
+import {RasterLayerProperties} from "./RasterLayerProperties"
 
 export class AvailableRasterLayers {
     public static EditorLayerIndex: (Feature<Polygon, EditorLayerIndexProperties> &
@@ -39,9 +39,15 @@ export class AvailableRasterLayers {
 
     public static readonly maplibre: RasterLayerPolygon = {
         type: "Feature",
-        properties: <any>{
-            name: "MapLibre",
+        properties: {
+            name: "MapTiler",
             url: null,
+            category: "osmbasedmap",
+            id: "maptiler",
+            attribution: {
+                text: "Maptiler",
+                url: "https://www.maptiler.com/copyright/"
+            }
         },
         geometry: BBox.global.asGeometry(),
     }
