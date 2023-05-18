@@ -546,6 +546,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 if(selected === undefined){
                     // We did _unselect_ an item - we always remove the lastclick-object
                     this.lastClickObject.features.setData([])
+                    this.selectedLayer.setData(undefined)
                 }
             })
         }
