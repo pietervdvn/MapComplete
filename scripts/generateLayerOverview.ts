@@ -421,10 +421,11 @@ class LayerOverviewUtils extends Script {
         })
 
         const skippedThemes: string[] = []
-        for (const themeInfo of themeFiles) {
+        for (let i = 0; i < themeFiles.length; i++){
+            const themeInfo = themeFiles[i];
             const themePath = themeInfo.path
             let themeFile = themeInfo.parsed
-
+            console.log(`Validating ${i}/${themeFiles.length} '${themeInfo.parsed.id}'`)
             {
                 const targetPath =
                     LayerOverviewUtils.themePath +
