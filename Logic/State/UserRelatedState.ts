@@ -1,16 +1,16 @@
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import { OsmConnection } from "../Osm/OsmConnection"
-import { MangroveIdentity } from "../Web/MangroveReviews"
-import { Store, Stores, UIEventSource } from "../UIEventSource"
+import {OsmConnection} from "../Osm/OsmConnection"
+import {MangroveIdentity} from "../Web/MangroveReviews"
+import {Store, Stores, UIEventSource} from "../UIEventSource"
 import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource"
-import { FeatureSource } from "../FeatureSource/FeatureSource"
-import { Feature } from "geojson"
-import { Utils } from "../../Utils"
+import {FeatureSource} from "../FeatureSource/FeatureSource"
+import {Feature} from "geojson"
+import {Utils} from "../../Utils"
 import translators from "../../assets/translators.json"
 import codeContributors from "../../assets/contributors.json"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import { LayerConfigJson } from "../../Models/ThemeConfig/Json/LayerConfigJson"
-import usersettings from "../../assets/generated/layers/usersettings.json"
+import {LayerConfigJson} from "../../Models/ThemeConfig/Json/LayerConfigJson"
+import usersettings from "../../assets/generated/usersettings.json"
 import Locale from "../../UI/i18n/Locale"
 import LinkToWeblate from "../../UI/Base/LinkToWeblate"
 import FeatureSwitchState from "./FeatureSwitchState"
@@ -21,6 +21,9 @@ import Constants from "../../Models/Constants";
  * which layers they enabled, ...
  */
 export default class UserRelatedState {
+    public static readonly usersettingsConfig = UserRelatedState.initUserRelatedState()
+    public static readonly availableUserSettingsIds: string[] =
+        UserRelatedState.usersettingsConfig?.tagRenderings?.map((tr) => tr.id) ?? []
     /**
      The user credentials
      */
@@ -29,15 +32,10 @@ export default class UserRelatedState {
      * The key for mangrove
      */
     public readonly mangroveIdentity: MangroveIdentity
-
     public readonly installedUserThemes: Store<string[]>
-
     public readonly showAllQuestionsAtOnce: UIEventSource<boolean>
-    public readonly showTags:  UIEventSource<"no" | undefined | "always" | "yes">;
-
-
+    public readonly showTags: UIEventSource<"no" | undefined | "always" | "yes">;
     public readonly homeLocation: FeatureSource
-
     /**
      * The number of seconds that the GPS-locations are stored in memory.
      * Time in seconds
@@ -46,18 +44,11 @@ export default class UserRelatedState {
         7 * 24 * 60 * 60,
         "gps_location_retention"
     )
-
     /**
      * Preferences as tags exposes many preferences and state properties as record.
      * This is used to bridge the internal state with the usersettings.json layerconfig file
      */
     public readonly preferencesAsTags: UIEventSource<Record<string, string>>
-    public static readonly usersettingsConfig = new LayerConfig(
-        <LayerConfigJson>usersettings,
-        "userinformationpanel"
-    )
-    public static readonly availableUserSettingsIds: string[] =
-        UserRelatedState.usersettingsConfig.tagRenderings.map((tr) => tr.id)
 
     constructor(
         osmConnection: OsmConnection,
@@ -92,7 +83,7 @@ export default class UserRelatedState {
                     "Either 'true' or 'false'. If set, all questions will be shown all at once",
             })
         )
-        this.showTags = <UIEventSource<any>> this.osmConnection.GetPreference("show_tags")
+        this.showTags = <UIEventSource<any>>this.osmConnection.GetPreference("show_tags")
 
         this.mangroveIdentity = new MangroveIdentity(
             this.osmConnection.GetLongPreference("identity", "mangrove")
@@ -107,15 +98,27 @@ export default class UserRelatedState {
         this.preferencesAsTags = this.initAmendedPrefs(layout, featureSwitches)
     }
 
+    private static initUserRelatedState(): LayerConfig {
+        try{
+
+        return new LayerConfig(
+            <LayerConfigJson>usersettings,
+            "userinformationpanel"
+        )
+        }catch(e){
+            return undefined
+        }
+    }
+
     public GetUnofficialTheme(id: string):
         | {
-              id: string
-              icon: string
-              title: any
-              shortDescription: any
-              definition?: any
-              isOfficial: boolean
-          }
+        id: string
+        icon: string
+        title: any
+        shortDescription: any
+        definition?: any
+        isOfficial: boolean
+    }
         | undefined {
         console.log("GETTING UNOFFICIAL THEME")
         const pref = this.osmConnection.GetLongPreference("unofficial-theme-" + id)
@@ -140,8 +143,8 @@ export default class UserRelatedState {
         } catch (e) {
             console.warn(
                 "Removing theme " +
-                    id +
-                    " as it could not be parsed from the preferences; the content is:",
+                id +
+                " as it could not be parsed from the preferences; the content is:",
                 str
             )
             pref.setData(null)
@@ -260,7 +263,7 @@ export default class UserRelatedState {
         })
 
         for (const key in Constants.userJourney) {
-            amendedPrefs.data["__userjourney_"+key] = Constants.userJourney[key]
+            amendedPrefs.data["__userjourney_" + key] = Constants.userJourney[key]
         }
 
         const osmConnection = this.osmConnection
@@ -291,13 +294,13 @@ export default class UserRelatedState {
                     const zenLinks: { link: string; id: string }[] = Utils.NoNull([
                         hasMissingTheme
                             ? {
-                                  id: "theme:" + layout.id,
-                                  link: LinkToWeblate.hrefToWeblateZen(
-                                      language,
-                                      "themes",
-                                      layout.id
-                                  ),
-                              }
+                                id: "theme:" + layout.id,
+                                link: LinkToWeblate.hrefToWeblateZen(
+                                    language,
+                                    "themes",
+                                    layout.id
+                                ),
+                            }
                             : undefined,
                         ...missingLayers.map((id) => ({
                             id: "layer:" + id,
@@ -369,7 +372,7 @@ export default class UserRelatedState {
                     // Language is managed seperately
                     continue
                 }
-                this.osmConnection.GetPreference(key, undefined, { prefix: "" }).setData(tags[key])
+                this.osmConnection.GetPreference(key, undefined, {prefix: ""}).setData(tags[key])
             }
         })
 
