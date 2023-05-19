@@ -46,7 +46,7 @@ jobs:
         run: npm run prepare-deploy
         shell: bash
         
-        - name: Clone deployment repo
+      - name: Clone deployment repo
         env:
           DEPLOY_KEY_PIETERVDVN: ${{ secrets.DEPLOY_KEY_PIETERVDVN }}
         run: |
