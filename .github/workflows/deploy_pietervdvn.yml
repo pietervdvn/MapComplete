@@ -11,10 +11,42 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup and validate themes
-        uses: ./.github/actions/setup-and-validate
-
-      - name: Clone deployment repo
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: "npm"
+          cache-dependency-path: package-lock.json
+  
+      - name: install deps
+        run: npm ci
+        shell: bash
+  
+      - name: create generated dir
+        run: mkdir ./assets/generated
+        shell: bash
+  
+      - name: create dependencies
+        run: npm run generate:licenses; npm run generate:images; npm run generate:charging-stations; npm run generate:service-worker
+        shell: bash
+  
+      - name: sync translations
+        run: npm run generate:translations
+        shell: bash
+  
+      - name: generate layeroverview
+        run: npm run reset:layeroverview
+        shell: bash
+  
+      - name: run tests
+        run: npm run test
+        shell: bash
+  
+      - name: Prepare deploy
+        run: npm run prepare-deploy
+        shell: bash
+        
+        - name: Clone deployment repo
         env:
           DEPLOY_KEY_PIETERVDVN: ${{ secrets.DEPLOY_KEY_PIETERVDVN }}
         run: |
