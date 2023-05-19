@@ -50,6 +50,11 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this._maplibreMap = maplibreMap
 
         this.location = state?.location ?? new UIEventSource({lon: 0, lat: 0})
+        if(this.location.data){
+            // The MapLibre adaptor updates the element in the location and then pings them
+            // Often, code setting this up doesn't expect the object they pass in to be changed, so we create a copy
+            this.location.setData({...this.location.data})
+        }
         this.zoom = state?.zoom ?? new UIEventSource(1)
         this.minzoom = state?.minzoom ?? new UIEventSource(0)
         this.maxzoom = state?.maxzoom ?? new UIEventSource(24)
