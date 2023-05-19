@@ -245,7 +245,7 @@
         {
           "if": "amenity=restaurant",
           "then": {
-            "en": "A <b>restuarant</b> where one can get a proper meal",
+            "en": "A <b>restaurant</b> where one can get a proper meal",
             "nl": "Dit is een <b>restaurant</b> waar men een maaltijd geserveerd krijgt",
             "de": "Ein <b>Restaurant</b>, in dem man ordentlich essen kann",
             "da": "En <b>restaurant</b>, hvor man kan få et ordentligt måltid",
