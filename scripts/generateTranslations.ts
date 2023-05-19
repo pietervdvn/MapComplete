@@ -112,7 +112,6 @@ class TranslationPart {
             const v = object[key]
 
             if (v == null) {
-                console.warn("Got a null value for key ", key)
                 continue
             }
             if (typeof v !== "object") {
