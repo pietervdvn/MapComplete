@@ -34,7 +34,7 @@
 <a
   class={(options.extraClasses??"") + 'flex hover:shadow-xl transition-[color,background-color,box-shadow] hover:bg-unsubtle cursor-pointer'}
   {href}
-  target={newTab ? "_blank" : ""}}
+  target={(newTab ? "_blank" : undefined) }
 >
   <slot name="image">
     {#if imageUrl !== undefined}
