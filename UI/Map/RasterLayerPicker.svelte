@@ -17,7 +17,7 @@
     
     let dispatch = createEventDispatcher<{appliedLayer}>()
     
-    export let favourite : UIEventSource<string> = undefined
+    export let favourite : UIEventSource<string> | undefined = undefined
     
 
     let rasterLayer = new UIEventSource<RasterLayerPolygon>(availableLayers.data?.[0])
@@ -39,11 +39,11 @@
             }
             rasterLayer.setData(fav)
         }))
-    }
     
-    onDestroy(rasterLayer.addCallbackAndRunD(selected => {
-        favourite?.setData(selected.properties.id)
-    }))
+        onDestroy(rasterLayer.addCallbackAndRunD(selected => {
+            favourite?.setData(selected.properties.id)
+        }))
+    }
 
     let rasterLayerOnMap = UIEventSource.feedFrom(rasterLayer)
     

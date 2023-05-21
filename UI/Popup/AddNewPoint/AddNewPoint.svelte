@@ -31,7 +31,8 @@
     import BackButton from "../../Base/BackButton.svelte";
     import ToSvelte from "../../Base/ToSvelte.svelte";
     import Svg from "../../../Svg";
-    import RasterLayerOverview from "../../Map/RasterLayerOverview.svelte";
+    import MapControlButton from "../../Base/MapControlButton.svelte";
+    import {Square3Stack3dIcon} from "@babeard/svelte-heroicons/solid";
 
     export let coordinate: { lon: number, lat: number };
     export let state: SpecialVisualizationState;
@@ -197,7 +198,8 @@
                 <EyeOffIcon class="w-12"/>
                 <Tr t={Translations.t.general.add.disableFilters}/>
             </button>
-            <button class="flex w-full gap-x-1" on:click={() => {abort();state.guistate.openFilterView(selectedPreset.layer)}}>
+            <button class="flex w-full gap-x-1"
+                    on:click={() => {abort();state.guistate.openFilterView(selectedPreset.layer)}}>
                 <ToSvelte construct={Svg.layers_svg().SetClass("w-12")}/>
                 <Tr t={Translations.t.general.add.openLayerControl}/>
             </button>
@@ -263,11 +265,16 @@
             <Tr slot="message" t={Translations.t.general.cancel}/>
         </SubtleButton>
     {:else if !creating}
-        <div class="w-full p-1">
+        <div class="relative w-full p-1">
             <div class="w-full h-96 max-h-screen rounded-xl overflow-hidden">
-            <NewPointLocationInput value={preciseCoordinate} snappedTo={snappedToObject} {state} {coordinate}
-                                   targetLayer={selectedPreset.layer}
-                                   snapToLayers={selectedPreset.preset.preciseInput.snapToLayers}/>
+                <NewPointLocationInput value={preciseCoordinate} snappedTo={snappedToObject} {state} {coordinate}
+                                       targetLayer={selectedPreset.layer}
+                                       snapToLayers={selectedPreset.preset.preciseInput.snapToLayers}/>
+            </div>
+            <div class="absolute bottom-0 left-0 p-4">
+                <MapControlButton on:click={() => state.guistate.backgroundLayerSelectionIsOpened.setData(true)}>
+                    <Square3Stack3dIcon class="w-6 h-6"/>
+                </MapControlButton>
             </div>
         </div>
         <div class="flex flex-wrap-reverse md:flex-nowrap">
@@ -282,9 +289,7 @@
                 </div>
             </NextButton>
         </div>
-        
-        <RasterLayerOverview />
-        
+
     {:else}
         <Loading>Creating point...</Loading>
     {/if}

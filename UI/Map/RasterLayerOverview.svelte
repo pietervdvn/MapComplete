@@ -45,8 +45,8 @@
         visible.setData(false)
     }
 
-    function getPref(type: CategoryType): UIEventSource<string> {
-        return userstate.osmConnection.GetPreference("preferred-layer-" + type)
+    function getPref(type: CategoryType): undefined | UIEventSource<string> {
+        return userstate?.osmConnection?.GetPreference("preferred-layer-" + type)
     }
 
 </script>

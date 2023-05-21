@@ -14,6 +14,7 @@ import LayerConfig from "../Models/ThemeConfig/LayerConfig";
 import FeatureSwitchState from "../Logic/State/FeatureSwitchState";
 import { MenuState } from "../Models/MenuState";
 import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader";
+import {RasterLayerPolygon} from "../Models/RasterLayers";
 
 /**
  * The state needed to render a special Visualisation.
@@ -69,6 +70,8 @@ export interface SpecialVisualizationState {
         readonly preferencesAsTags: Store<Record<string, string>>
     }
     readonly lastClickObject: WritableFeatureSource
+
+    readonly availableLayers: Store<RasterLayerPolygon[]>
 }
 
 export interface SpecialVisualization {
