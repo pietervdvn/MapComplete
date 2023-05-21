@@ -8113,6 +8113,18 @@
                 },
                 "render": "Dieser Fahrkartenentwerter ist Teil einer Zugangsbarriere vom Typ {barrier}"
             },
+            "payment-options": {
+                "override": {
+                    "mappings+": {
+                        "0": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert die OV-Chipkaart"
+                        },
+                        "1": {
+                            "then": "Dieser Fahrkartenentwerter akzeptiert die OV-Chipkaart"
+                        }
+                    }
+                }
+            },
             "validator-operator": {
                 "freeform": {
                     "placeholder": "Name des Betreibers"
