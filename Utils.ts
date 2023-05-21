@@ -704,10 +704,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             if (Array.isArray(leaf)) {
                 for (let i = 0; i < (<any[]>leaf).length; i++) {
                     const l = (<any[]>leaf)[i]
-                    collectedList.push({ leaf: l, path: [...travelledPath, "" + i] })
+                    collectedList.push({leaf: l, path: [...travelledPath, "" + i]})
                 }
             } else {
-                collectedList.push({ leaf, path: travelledPath })
+                collectedList.push({leaf, path: travelledPath})
             }
             return collectedList
         }
@@ -785,7 +785,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             })
         }
 
-        const cp = { ...json }
+        const cp = {...json}
         for (const key in json) {
             cp[key] = Utils.WalkJson(json[key], f, isLeaf, [...path, key])
         }
@@ -915,11 +915,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             const xhr = new XMLHttpRequest()
             xhr.onload = () => {
                 if (xhr.status == 200) {
-                    resolve({ content: xhr.response })
+                    resolve({content: xhr.response})
                 } else if (xhr.status === 302) {
-                    resolve({ redirect: xhr.getResponseHeader("location") })
+                    resolve({redirect: xhr.getResponseHeader("location")})
                 } else if (xhr.status === 509 || xhr.status === 429) {
-                    resolve({ error: "rate limited", url, statuscode: xhr.status })
+                    resolve({error: "rate limited", url, statuscode: xhr.status})
                 } else {
                     resolve({
                         error: "other error: " + xhr.statusText,
@@ -989,10 +989,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         const promise =
             /*NO AWAIT as we work with the promise directly */ Utils.downloadJsonAdvanced(
-                url,
-                headers
-            )
-        Utils._download_cache.set(url, { promise, timestamp: new Date().getTime() })
+            url,
+            headers
+        )
+        Utils._download_cache.set(url, {promise, timestamp: new Date().getTime()})
         return await promise
     }
 
@@ -1011,11 +1011,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
             console.log("Using injected resource for test for URL", url)
-            return new Promise((resolve, _) => resolve({ content: injected }))
+            return new Promise((resolve, _) => resolve({content: injected}))
         }
         const result = await Utils.downloadAdvanced(
             url,
-            Utils.Merge({ accept: "application/json" }, headers ?? {})
+            Utils.Merge({accept: "application/json"}, headers ?? {})
         )
         if (result["error"] !== undefined) {
             return <{ error: string; url: string; statuscode?: number }>result
@@ -1023,12 +1023,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         const data = result["content"]
         try {
             if (typeof data === "string") {
-                return { content: JSON.parse(data) }
+                return {content: JSON.parse(data)}
             }
-            return { content: data }
+            return {content: data}
         } catch (e) {
             console.error("Could not parse ", data, "due to", e, "\n", e.stack)
-            return { error: "malformed", url }
+            return {error: "malformed", url}
         }
     }
 
@@ -1052,7 +1052,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         const element = document.createElement("a")
         let file
         if (typeof contents === "string") {
-            file = new Blob([contents], { type: options?.mimetype ?? "text/plain" })
+            file = new Blob([contents], {type: options?.mimetype ?? "text/plain"})
         } else {
             file = contents
         }
@@ -1169,7 +1169,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         if (typeof window === "undefined") {
             return "https://mapcomplete.osm.be"
         }
-        const path = (window.location.protocol+ window.location.host + window.location.pathname) .split("/")
+        const path = (window.location.protocol + "//" + window.location.host + window.location.pathname).split("/")
         path.pop()
         path.push("index.html")
         return path.join("/")
@@ -1318,7 +1318,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             if (match == undefined) {
                 return undefined
             }
-            return { r: Number(match[1]), g: Number(match[2]), b: Number(match[3]) }
+            return {r: Number(match[1]), g: Number(match[2]), b: Number(match[3])}
         }
 
         if (!hex.startsWith("#")) {
@@ -1366,7 +1366,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         d.setUTCMinutes(0)
     }
 
-    public static scrollIntoView(element: HTMLBaseElement){
+    public static scrollIntoView(element: HTMLBaseElement) {
         console.log("Scrolling into view:", element)
         // Is the element completely in the view?
         const parentRect = Utils.findParentWithScrolling(
@@ -1384,6 +1384,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         console.log("Actually scrolling...")
         element.scrollIntoView({behavior: "smooth", block: "nearest"})
     }
+
     public static findParentWithScrolling(element: HTMLBaseElement): HTMLBaseElement {
         // Check if the element itself has scrolling
         if (element.scrollHeight > element.clientHeight) {
@@ -1396,7 +1397,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
 
         // If the element has a parent, repeat the process for the parent element
-        return Utils.findParentWithScrolling(<HTMLBaseElement> element.parentElement)
+        return Utils.findParentWithScrolling(<HTMLBaseElement>element.parentElement)
     }
 
     /**
@@ -1428,12 +1429,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         return true
     }
-    private static colorDiff(
-        c0: { r: number; g: number; b: number },
-        c1: { r: number; g: number; b: number }
-    ) {
-        return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b)
-    }
 
     static SameObject(a: any, b: any) {
         if (a === b) {
@@ -1462,5 +1457,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             return true
         }
         return false
+    }
+
+    private static colorDiff(
+        c0: { r: number; g: number; b: number },
+        c1: { r: number; g: number; b: number }
+    ) {
+        return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b)
     }
 }

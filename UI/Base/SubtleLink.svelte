@@ -32,7 +32,7 @@
 </script>
 
 <a
-  class={(options.extraClasses??"") + 'flex hover:shadow-xl transition-[color,background-color,box-shadow] hover:bg-unsubtle cursor-pointer'}
+  class={(options.extraClasses??"") + ' button text-ellipsis'}
   {href}
   target={(newTab ? "_blank" : undefined) }
 >
@@ -48,16 +48,3 @@
 
   <slot/>
 </a>
-
-<style lang="scss">
-  span,
-  a {
-    @apply flex p-3 my-2 py-4 rounded-lg shrink-0;
-    @apply items-center w-full no-underline;
-    @apply bg-subtle text-black;
-
-    :global(span) {
-      @apply block text-ellipsis;
-    }
-  }
-</style>

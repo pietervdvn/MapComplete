@@ -13,9 +13,9 @@
   export let onMainScreen: boolean = true
 
   const prefix = "mapcomplete-hidden-theme-"
-  const hiddenThemes: LayoutInformation[] = themeOverview.filter(
+  const hiddenThemes: LayoutInformation[] = (themeOverview["default"] ?? themeOverview)?.filter(
     (layout) => layout.hideFromOverview
-  )
+  ) ?? []
   const userPreferences = state.osmConnection.preferencesHandler.preferences
   const t = Translations.t.general.morescreen
 
@@ -45,3 +45,4 @@
     </p>
   </svelte:fragment>
 </ThemesList>
+

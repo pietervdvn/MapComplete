@@ -21,7 +21,7 @@
   $: filteredThemes = themes.filter((theme) => MoreScreen.MatchesLayout(theme, $search))
 </script>
 
-<section>
+<section class="w-full">
   <slot name="title" />
   {#if onMainScreen}
     <div class="md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -51,13 +51,7 @@
     </div>
   {/if}
 
-  {#if filteredThemes.length == 0}
+  {#if filteredThemes.length === 0}
     <NoThemeResultButton {search} />
   {/if}
 </section>
-
-<style lang="scss">
-  section {
-    @apply flex flex-col;
-  }
-</style>

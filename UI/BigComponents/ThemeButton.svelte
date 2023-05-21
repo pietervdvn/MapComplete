@@ -86,7 +86,7 @@
         <img slot="image" src={theme.icon} class="block h-11 w-11 bg-red mx-4" alt=""/>
         <span class="flex flex-col text-ellipsis overflow-hidden">
           <Tr t={title}/>
-          <span class="subtle max-h-12">
+          <span class="subtle max-h-12 truncate text-ellipsis">
             <Tr t={description}/>
           </span>
       </span>

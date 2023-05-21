@@ -13,13 +13,13 @@
   <span>
     {t.hookMore.toString()}
   </span>
+  <div class="w-full">
+    
   <SubtleLink href="./professional.html">
-    <Tr slot="message" t={t.button} />
+    <div class="w-full">
+      <Tr slot="message" t={t.button} />
+    </div>
   </SubtleLink>
+  </div>
 </div>
 
-<style lang="scss">
-  div {
-    @apply flex flex-col border border-gray-300 p-2 rounded-lg;
-  }
-</style>

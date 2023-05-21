@@ -4,13 +4,15 @@ import { UIElement } from "../UIElement"
 import { VariableUiElement } from "./VariableUIElement"
 import Lazy from "./Lazy"
 import Loading from "./Loading"
-import SubtleButtonSvelte from "./SubtleButton.svelte"
 import SvelteUIElement from "./SvelteUIElement"
 import SubtleLink from "./SubtleLink.svelte";
 import Translations from "../i18n/Translations";
 import Combine from "./Combine";
 import Img from "./Img";
 
+/**
+ * @deprecated
+ */
 export class SubtleButton extends UIElement {
     private readonly imageUrl: string | BaseUIElement
     private readonly message: string | BaseUIElement
@@ -42,7 +44,7 @@ export class SubtleButton extends UIElement {
             return new SvelteUIElement(SubtleLink, {href: this.options.url, newTab: this.options.newTab})
         }
 
-        const classes = "block flex p-3 my-2 bg-subtle rounded-lg hover:shadow-xl hover:bg-unsubtle transition-colors transition-shadow link-no-underline";
+        const classes = "button";
         const message = Translations.W(this.message)?.SetClass("block overflow-ellipsis no-images flex-shrink");
         let img;
         const imgClasses = "block justify-center flex-none mr-4 " + (this.options?.imgSize ?? "h-11 w-11")

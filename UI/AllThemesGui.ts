@@ -27,7 +27,7 @@ export default class AllThemesGui {
                 new LoginToggle(undefined, Translations.t.index.logIn, {
                     osmConnection,
                     featureSwitchUserbadge: new ImmutableStore(true),
-                }),
+                }).SetClass("flex justify-center w-full"),
                 Translations.t.general.aboutMapComplete.intro.SetClass("link-underline"),
                 new FixedUiElement("v" + Constants.vNumber).SetClass("block"),
             ])
