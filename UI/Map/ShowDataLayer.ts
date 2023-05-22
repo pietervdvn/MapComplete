@@ -153,8 +153,9 @@ class PointRenderingLayer {
         if (this._onClick) {
             const self = this
             el.addEventListener("click", function (ev) {
-                self._onClick(feature)
                 ev.preventDefault()
+                self._onClick(feature)
+                console.log("Got click:", feature)
                 // Workaround to signal the MapLibreAdaptor to ignore this click
                 ev["consumed"] = true
             })
@@ -246,7 +247,7 @@ class LineRenderingLayer {
         for (const key of LineRenderingLayer.lineConfigKeys) {
             calculatedProps[key] = config[key]?.GetRenderValue(properties)?.Subs(properties).txt
         }
-        calculatedProps.fillColor = calculatedProps.fillColor ?? calculatedProps.lineColor
+        calculatedProps.fillColor = calculatedProps.fillColor ?? calculatedProps.color
 
         for (const key of LineRenderingLayer.lineConfigKeysColor) {
             let v = <string>calculatedProps[key]
@@ -256,12 +257,7 @@ class LineRenderingLayer {
             if (v.length == 9 && v.startsWith("#")) {
                 // This includes opacity
                 calculatedProps[`${key}-opacity`] = parseInt(v.substring(7), 16) / 256
-                v = v.substring(0, 7)
-                if (v.length == 9 && v.startsWith("#")) {
-                    // This includes opacity
-                    calculatedProps[`${key}-opacity`] = parseInt(v.substring(7), 16) / 256
-                    v = v.substring(0, 7)
-                }
+                calculatedProps[key] = v.substring(0, 7)
             }
         }
         calculatedProps["fillColor-opacity"] = calculatedProps["fillColor-opacity"] ?? 0.1
@@ -315,6 +311,7 @@ class LineRenderingLayer {
             })
 
             map.on("click", linelayer, (e) => {
+                // line-layer-listener
                 e.originalEvent["consumed"] = true
                 this._onClick(e.features[0])
             })
@@ -333,7 +330,13 @@ class LineRenderingLayer {
             })
             if (this._onClick) {
                 map.on("click", polylayer, (e) => {
+                    // polygon-layer-listener
+                    if(e.originalEvent["consumed"]){
+                        // This is a polygon beneath a marker, we can ignore it
+                        return
+                    }
                     e.originalEvent["consumed"] = true
+                    console.log("Got features:", e.features, e)
                     this._onClick(e.features[0])
                 })
             }
