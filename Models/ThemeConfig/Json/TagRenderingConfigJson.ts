@@ -16,6 +16,8 @@ export interface TagRenderingConfigJson {
     /**
      * If 'group' is defined on many tagRenderings, these are grouped together when shown. The questions are grouped together as well.
      * The first tagRendering of a group will always be a sticky element.
+     *
+     * @deprecated
      */
     group?: string
 
