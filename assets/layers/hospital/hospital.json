@@ -15,7 +15,13 @@
       "nl": "Ziekenhuis",
       "pa_PK": "ہسپتال",
       "ru": "Больница"
-    }
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": "{name}"
+      }
+    ]
   },
   "description": {
     "en": "A layer showing hospital grounds",
