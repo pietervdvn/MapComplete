@@ -35,6 +35,16 @@
             "1": {
                 "title": "volně stojící plakátovací skříň"
             },
+            "10": {
+                "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
+                "title": "cedule"
+            },
+            "11": {
+                "title": "socha"
+            },
+            "12": {
+                "title": "nástěnná malba"
+            },
             "2": {
                 "title": "plakátovací skříň připevněná na stěnu"
             },
@@ -61,16 +71,6 @@
             },
             "9": {
                 "title": "totem"
-            },
-            "10": {
-                "description": "Používá se pro reklamní nápisy, neonové nápisy, loga a vstupní nápisy institucí",
-                "title": "cedule"
-            },
-            "11": {
-                "title": "socha"
-            },
-            "12": {
-                "title": "nástěnná malba"
             }
         },
         "tagRenderings": {
@@ -165,6 +165,9 @@
                     "1": {
                         "then": "Toto je deska"
                     },
+                    "10": {
+                        "then": "Toto je nástěnná malba"
+                    },
                     "2": {
                         "then": "Toto je sloup"
                     },
@@ -188,9 +191,6 @@
                     },
                     "9": {
                         "then": "Toto je totem"
-                    },
-                    "10": {
-                        "then": "Toto je nástěnná malba"
                     }
                 },
                 "question": "O jaký typ reklamního prvku se jedná?",
@@ -204,6 +204,9 @@
                 },
                 "1": {
                     "then": "Deska"
+                },
+                "10": {
+                    "then": "Nástěnná malba"
                 },
                 "2": {
                     "then": "Skříň na plakáty"
@@ -228,9 +231,6 @@
                 },
                 "9": {
                     "then": "Totem"
-                },
-                "10": {
-                    "then": "Nástěnná malba"
                 }
             }
         }
@@ -290,6 +290,9 @@
         "presets": {
             "0": {
                 "title": "umělecké dílo"
+            },
+            "1": {
+                "title": "umělecké dílo na zdi"
             }
         },
         "tagRenderings": {
@@ -308,6 +311,15 @@
                     },
                     "1": {
                         "then": "Nástěnná malba"
+                    },
+                    "10": {
+                        "then": "Azulejo (španělské dekorativní dlaždice)"
+                    },
+                    "11": {
+                        "then": "Obklady a dlažba"
+                    },
+                    "12": {
+                        "then": "Dřevořezba"
                     },
                     "2": {
                         "then": "Malba"
@@ -332,15 +344,6 @@
                     },
                     "9": {
                         "then": "Reliéf"
-                    },
-                    "10": {
-                        "then": "Azulejo (španělské dekorativní dlaždice)"
-                    },
-                    "11": {
-                        "then": "Obklady a dlažba"
-                    },
-                    "12": {
-                        "then": "Dřevořezba"
                     }
                 },
                 "question": "Jaký je typ tohoto uměleckého díla?",
@@ -915,13 +918,13 @@
                         "then": "Jedná se o obchod, jehož hlavním zaměřením je půjčování jízdních kol"
                     },
                     "1": {
-                        "then": "Jedná se o pronájem různých předmětů a/nebo vozidel. Pronajímá také jízdní kola, ale to není hlavní náplní"
+                        "then": "Jedná se o půjčovnu, která pronajímá různé předměty a/nebo vozidla. Pronajímá také jízdní kola, ale to není hlavní náplní"
                     },
                     "2": {
                         "then": "Jedná se o prodejnu, která prodává nebo opravuje jízdní kola, ale také je pronajímá"
                     },
                     "3": {
-                        "then": "Jedná se o automatickou dokovací stanici, kde je jízdní kolo mechanicky uzamčeno do konstrukce"
+                        "then": "Jedná se o automatickou dokovací stanici, kde je jízdní kolo mechanicky uzamčeno ke konstrukci"
                     },
                     "4": {
                         "then": "Přítomný je automat, který vydává a přijímá klíče, případně po ověření pravosti a/nebo zaplacení. Jízdní kola jsou zaparkována v blízkosti"
@@ -954,7 +957,7 @@
                             "1": "BMX kola"
                         },
                         "4": {
-                            "1": "horské kolo"
+                            "1": "horská kola"
                         },
                         "5": {
                             "1": "brašny na kolo"
@@ -1048,7 +1051,12 @@
                         "then": "Tato cyklokavárna nenabízí nářadí pro kutilské opravy"
                     }
                 },
-                "question": "Jsou zde nástroje na opravu vlastního kola?"
+                "question": "Je nabízeno nářadí k opravě vlastního kola?"
+            },
+            "opening_hours": {
+                "override": {
+                    "question": "Kdy byla tato cyklistická kavárna otevřena?"
+                }
             }
         },
         "title": {
@@ -1385,6 +1393,22 @@
     },
     "bike_shop": {
         "description": "Obchod zaměřený na prodej jízdních kol nebo souvisejících předmětů",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Prodává použitá jízdní kola"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Nabízí opravy kol \"Udělej si sám\""
+                    }
+                }
+            }
+        },
         "name": "Opravna/obchod s jízdními koly",
         "presets": {
             "0": {
@@ -1461,6 +1485,16 @@
                     }
                 },
                 "question": "Prodává tento obchod použitá jízdní kola?"
+            },
+            "bike_repair_sells-bikes": {
+                "mappings": {
+                    "0": {
+                        "then": "Tento obchod prodává jízdní kola"
+                    },
+                    "1": {
+                        "then": "Tento obchod neprodává jízdní kola"
+                    }
+                }
             },
             "bike_repair_tools-service": {
                 "mappings": {
