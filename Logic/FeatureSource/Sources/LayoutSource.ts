@@ -63,8 +63,6 @@ export default class LayoutSource extends FeatureSourceMerger {
             LayoutSource.setupGeojsonSource(l, mapProperties, isDisplayed(l.id))
         )
 
-        const expiryInSeconds = Math.min(...(layers?.map((l) => l.maxAgeOfCache) ?? []))
-
         super(overpassSource, osmApiSource, ...geojsonSources, ...fromCache)
 
         const self = this
@@ -84,7 +82,7 @@ export default class LayoutSource extends FeatureSourceMerger {
     ): FeatureSource {
         const source = layer.source
         isActive = mapProperties.zoom.map(
-            (z) => (isActive?.data ?? true) && z >= layer.maxzoom,
+            (z) => (isActive?.data ?? true) && z >= layer.minzoom,
             [isActive]
         )
         if (source.geojsonZoomLevel === undefined) {

@@ -1,14 +1,14 @@
 /**
  * Fetches a geojson file somewhere and passes it along
  */
-import { Store, UIEventSource } from "../../UIEventSource"
-import { Utils } from "../../../Utils"
-import { FeatureSource } from "../FeatureSource"
-import { BBox } from "../../BBox"
-import { GeoOperations } from "../../GeoOperations"
-import { Feature } from "geojson"
+import {Store, UIEventSource} from "../../UIEventSource"
+import {Utils} from "../../../Utils"
+import {FeatureSource} from "../FeatureSource"
+import {BBox} from "../../BBox"
+import {GeoOperations} from "../../GeoOperations"
+import {Feature} from "geojson"
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
-import { Tiles } from "../../../Models/TileRange"
+import {Tiles} from "../../../Models/TileRange"
 
 export default class GeoJsonSource implements FeatureSource {
     public readonly features: Store<Feature[]>
@@ -67,7 +67,7 @@ export default class GeoJsonSource implements FeatureSource {
                 this.LoadJSONFrom(url, eventsource, layer)
                     .then((_) => console.log("Loaded geojson " + url))
                     .catch((err) => console.error("Could not load ", url, "due to", err))
-                return true
+                return true // data is loaded, we can safely unregister
             })
         } else {
             this.LoadJSONFrom(url, eventsource, layer)
@@ -77,13 +77,20 @@ export default class GeoJsonSource implements FeatureSource {
         this.features = eventsource
     }
 
+    /**
+     * Init the download, write into the specified event source for the given layer.
+     * Note this method caches the requested geojson for five minutes
+     */
     private async LoadJSONFrom(
         url: string,
         eventSource: UIEventSource<Feature[]>,
-        layer: LayerConfig
-    ): Promise<void> {
+        layer: LayerConfig,
+        options?: {
+            maxCacheAgeSec?: number | 300
+        }
+    ): Promise<Feature[]> {
         const self = this
-        let json = await Utils.downloadJsonCached(url, 60 * 60)
+        let json = await Utils.downloadJsonCached(url, (options?.maxCacheAgeSec ?? 300) * 1000)
 
         if (json.features === undefined || json.features === null) {
             json.features = []
@@ -134,5 +141,6 @@ export default class GeoJsonSource implements FeatureSource {
         }
 
         eventSource.setData(newFeatures)
+        return newFeatures
     }
 }
