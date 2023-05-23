@@ -548,34 +548,6 @@
         "pickTheme": "Vyberte si téma níže a začněte.",
         "title": "Vítejte v MapComplete"
     },
-    "matrixbot": {
-        "commandFailed": "Omlouváme se, při spouštění <code>{cmd}</code> se něco pokazilo",
-        "commandNotFound": "Nerozuměl jsem vaší žádosti. Možná jste chtěli napsat {0}, {1}, {2} nebo {2}? <p>Zadáním <code>help</code> zobrazíte přehled všech příkazů</p>",
-        "commands": {
-            "dm": {
-                "argbody": "Vlastní tělo příkazu",
-                "argto": "ID, komu se má výstup odeslat",
-                "commandNotFound": "Příkaz {key} nebyl nalezen - viz <code>help</code> pro všechny příkazy",
-                "docs": "Provede příkaz a odešle výstup někomu jinému",
-                "executing": "Spuštění <code>{_}</code> a odeslání výsledku na <b>{to}</b>…",
-                "failed": "Nelze provést <code>{cmd}</code> z důvodu {message}",
-                "noDm": "Nemohl jsem vytvořit místo v {to}"
-            },
-            "info": {
-                "closed": "Zavřeno",
-                "closedTodayAndTomorrow": "Zavřeno dnes a zítra"
-            },
-            "language": {
-                "helpTranslating": "Pomozte přeložit mé odpovědi na Weblate."
-            },
-            "search": {
-                "docs": "Vyhledá bod zájmu v nebo poblíž místa"
-            },
-            "welcome": {
-                "docs": "Zobrazí přátelskou uvítací zprávu"
-            }
-        }
-    },
     "move": {
         "cancel": "Zrušit přesun",
         "inviteToMove": {
