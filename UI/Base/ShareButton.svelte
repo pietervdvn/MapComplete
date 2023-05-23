@@ -9,13 +9,12 @@ export let generateShareData: () => {
     url: string
 }
 function share(){
-    alert("Sharing...")
     if (!navigator.share) {
         console.log("web share not supported")
         return;
     }
     navigator
-        .share(this._shareData())
+        .share(generateShareData())
         .then(() => {
             console.log("Thanks for sharing!")
         })

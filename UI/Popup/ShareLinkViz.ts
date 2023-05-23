@@ -1,8 +1,6 @@
-import { UIEventSource } from "../../Logic/UIEventSource"
+import {UIEventSource} from "../../Logic/UIEventSource"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import Svg from "../../Svg"
-import { FixedUiElement } from "../Base/FixedUiElement"
-import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization";
+import {SpecialVisualization, SpecialVisualizationState} from "../SpecialVisualization";
 import SvelteUIElement from "../Base/SvelteUIElement";
 import ShareButton from "../Base/ShareButton.svelte";
 
@@ -46,6 +44,5 @@ export class ShareLinkViz implements SpecialVisualization {
             }
 
             return new SvelteUIElement(ShareButton, {generateShareData})
-            //return new ShareButton(Svg.share_svg().SetClass("w-8 h-8"), generateShareData)
     }
 }
