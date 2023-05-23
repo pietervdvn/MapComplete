@@ -1430,7 +1430,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return true
     }
 
-    static SameObject(a: any, b: any) {
+   public static SameObject(a: any, b: any) {
         if (a === b) {
             return true
         }
@@ -1464,5 +1464,30 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         c1: { r: number; g: number; b: number }
     ) {
         return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b)
+    }
+
+    /**
+     *
+     * Utils.splitIntoSubstitutionParts("abc") // => [{message: "abc"}]
+     * Utils.splitIntoSubstitutionParts("abc {search} def") // => [{message: "abc "}, {subs: "search"}, {message: " def"}]
+     *
+     */
+    public static splitIntoSubstitutionParts(template: string): ({ message: string } | {subs: string})[]{
+        const preparts = template.split("{")
+        const spec : ({ message: string } | {subs: string})[] = []
+        for (const prepart of preparts) {
+            const postParts = prepart.split("}")
+            if(postParts.length === 1){
+                // This was a normal part
+                spec.push({message: postParts[0]})
+            }else{
+                const [subs, message] = postParts
+                spec.push({subs})
+                if(message !== ""){
+                    spec.push({message})
+                }
+            }
+        }
+        return spec
     }
 }
