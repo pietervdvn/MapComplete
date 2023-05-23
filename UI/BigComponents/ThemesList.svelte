@@ -4,8 +4,6 @@
   import {OsmConnection} from "../../Logic/Osm/OsmConnection"
   import {UIEventSource} from "../../Logic/UIEventSource"
   import type Loc from "../../Models/Loc"
-  import CustomGeneratorButton from "./CustomGeneratorButton.svelte"
-  import ProfessionalServicesButton from "./ProfessionalServicesButton.svelte"
   import ThemeButton from "./ThemeButton.svelte"
   import {LayoutInformation} from "../../Models/ThemeConfig/LayoutConfig"
   import MoreScreen from "./MoreScreen"
@@ -25,11 +23,6 @@
   <slot name="title" />
   {#if onMainScreen}
     <div class="md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {#if ($search === undefined || $search === "") && !isCustom && hideThemes}
-        <CustomGeneratorButton userDetails={state.osmConnection.userDetails} />
-        <ProfessionalServicesButton />
-      {/if}
-
       {#each filteredThemes as theme (theme.id)}
         {#if theme !== undefined && !(hideThemes && theme?.hideFromOverview)}
           <ThemeButton {theme} {isCustom} userDetails={state.osmConnection.userDetails} {state} />
@@ -38,10 +31,6 @@
     </div>
   {:else}
     <div>
-      {#if ($search === undefined || $search === "") && !isCustom && hideThemes}
-        <CustomGeneratorButton userDetails={state.osmConnection.userDetails} />
-        <ProfessionalServicesButton />
-      {/if}
 
       {#each filteredThemes as theme (theme.id)}
         {#if theme !== undefined && !(hideThemes && theme?.hideFromOverview)}

@@ -5,14 +5,16 @@
   import { Translation } from "../i18n/Translation";
   import Translations from "../i18n/Translations";
   import Tr from "./Tr.svelte";
+  import {OsmConnection} from "../../Logic/Osm/OsmConnection";
+  import {ImmutableStore, UIEventSource} from "../../Logic/UIEventSource";
 
-  export let state: SpecialVisualizationState;
+  export let state: {osmConnection: OsmConnection, featureSwitches?: { featureSwitchUserbadge?: UIEventSource<boolean>}};
   /**
    * If set, 'loading' will act as if we are already logged in.
    */
   export let ignoreLoading: boolean = false
   let loadingStatus = state.osmConnection.loadingStatus;
-  let badge = state.featureSwitches.featureSwitchUserbadge;
+  let badge = state.featureSwitches?.featureSwitchUserbadge ?? new ImmutableStore(true);
   const t = Translations.t.general;
   const offlineModes: Partial<Record<OsmServiceState, Translation>> = {
     offline: t.loginFailedOfflineMode,
