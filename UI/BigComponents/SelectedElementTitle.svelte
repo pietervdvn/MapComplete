@@ -56,10 +56,6 @@
 {/if}
 
 <style>
-    .title-icons {
-
-    }
-
     :global(.title-icons a) {
         display: block !important;
     }

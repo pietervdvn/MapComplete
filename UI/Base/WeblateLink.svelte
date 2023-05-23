@@ -21,7 +21,7 @@
     </a>
   {:else if $linkToWeblate}
     <a href={LinkToWeblate.hrefToWeblate($language, context)} class="weblate-link hidden-on-mobile mx-1" target="_blank">
-      <img src="./assets/svg/translate.svg" class="w-3 h-3 rounded-full font-gray" />
+      <img src="./assets/svg/translate.svg" class="w-3 h-3 rounded-full font-gray inline-block" />
     </a>
   {/if}
 {/if}

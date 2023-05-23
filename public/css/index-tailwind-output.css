@@ -2281,8 +2281,21 @@ select:hover {
   display: none;
 }
 
-.no-weblate weblate {
-  display: none;
+.weblate-link {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0.25rem;
+  border: unset;
+  border-radius: 5rem;
+  -webkit-backdrop-filter: var(--low-interaction-background);
+          backdrop-filter: var(--low-interaction-background);
+}
+
+.no-weblate .weblate-link {
+  display: none !important;
 }
 
 .link-underline a {
