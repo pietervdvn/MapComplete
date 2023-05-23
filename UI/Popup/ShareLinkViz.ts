@@ -24,7 +24,7 @@ export class ShareLinkViz implements SpecialVisualization {
                     tagSource?.data
                 )
                 let name =
-                    matchingLayer?.title?.GetRenderValue(tagSource.data)?.txt ??
+                    matchingLayer?.title?.GetRenderValue(tagSource.data)?.Subs(tagSource.data)?.txt ??
                     tagSource.data?.name ??
                     "POI"
                 if (name) {
