@@ -373,23 +373,6 @@
         "pickTheme": "Choisissez un thème ci-dessous pour commencer.",
         "title": "Bienvenue sur MapComplete"
     },
-    "matrixbot": {
-        "commands": {
-            "dm": {
-                "failed": "Je n'ai pas pu exécuter <code>{cmd}</code> à cause de {message}"
-            },
-            "documentation": {
-                "file": {
-                    "plural": "fichiers",
-                    "singular": "fichier"
-                },
-                "theme": {
-                    "plural": "thèmes",
-                    "singular": "thème"
-                }
-            }
-        }
-    },
     "move": {
         "cancel": "Annuler le déplacement",
         "cannotBeMoved": "Cet élément ne peut être déplacé.",

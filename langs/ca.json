@@ -500,28 +500,6 @@
         "pickTheme": "Tria una petició a sota per començar.",
         "title": "Benvingut/da a MapComplete"
     },
-    "matrixbot": {
-        "commandFailed": "Ho sentim, hi ha hagut un error en executar <code>{cmd}</code>",
-        "commandNotFound": "No he entès la teva petició. Potser volies escriure {0}, {1}, {2} o {2}? <p>Escriviu <code>help</code> per veure una visió general de totes les ordres</p>",
-        "commands": {
-            "language": {
-                "notFound": "No s'ha trobat l'idioma {language}"
-            },
-            "role": {
-                "allRevoked": "Tots els drets de <b>{user}</b> s'han revocat"
-            },
-            "wiki": {
-                "noWiki": "Si us plau, especifiqueu una pàgina de la wiki per a cercar",
-                "nothingFound": "No s'ha pogut trobar res a {backend} per a {search}",
-                "searching": "Cercant a {backend}…"
-            }
-        },
-        "decryptionFailed": "Ho sento, no he pogut desxifrar el teu missatge. Pots provar de sortir d'aquest canal i tornar a connectar-te",
-        "noSufficientRights": "Aquesta ordre només està disponible per als administradors o usuaris que tenen aquesta funció",
-        "subcommanNotFound": "No he entès la teva petició. Aquesta ordre necessita un verb per executar-se, però <code>{verb}</code> no és un verb que jo conegui. Conec els verbs {known_verbs}",
-        "subcommandNotGiven": "No he entès la teva petició. Aquesta ordre necessita un verb per executar-se, però no n'heu donat cap. Prova un dels {known_verbs}",
-        "tooLongForPublic": "Ho sentim, aquest missatge és massa llarg per a una sala pública: envieu-me un missatge directe"
-    },
     "move": {
         "cancel": "Cancel·lar moviment",
         "cannotBeMoved": "Aquest element no es pot moure.",
