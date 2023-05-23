@@ -608,7 +608,7 @@
                 "docs": "Vypíše informace o podporovaných příkazech",
                 "insufficientRights": "V současné době nemáte dostatečná oprávnění ke spuštění tohoto příkazu.",
                 "notFound": "Nenašel jsem <code>{cmd}</code>. Možná jste měl na mysli jeden z {closest}?",
-                "p0": "Ahoj! Jsem MapComplete-bot {bot_verze} (postavený na MapComplete {mc_verze}).",
+                "p0": "Ahoj! Jsem MapComplete-bot {bot_version} (postavený na MapComplete {mc_version}).",
                 "p1": "Pošlete mi příkaz a já odpovím něčím užitečným: dejte mi příkaz prostřednictvím soukromé zprávy nebo před příkaz ve veřejné místnosti vložte <code>!</code>.",
                 "priviligedComand": "Privilegovaný příkaz",
                 "supported": "Moje podporované příkazy:"
@@ -621,7 +621,7 @@
                 "docs": "Získá informace o objektu OSM. Buď zadejte id, NEBO vyhledávací řetězec; objekty jsou interpretovány a zobrazí se známé hodnoty.",
                 "editWith": "Upravte tento prvek pomocí {title}",
                 "fetchingInfoAbout": "Získání dat o {id}…",
-                "foundResults": "Nalezeno {celkem} výsledků pro <code>{search}</code>, načtení podrobností o nich…",
+                "foundResults": "Nalezeno {total} výsledků pro <code>{search}</code>, načtení podrobností o nich…",
                 "noEditPossible": "Tento prvek nepodporují žádná témata MapComplete",
                 "noInfo": "Zatím žádné relevantní informace",
                 "noOpeningHours": "Otevírací doba není známa.",
