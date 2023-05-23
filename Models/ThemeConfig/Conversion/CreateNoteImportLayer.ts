@@ -101,6 +101,10 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                 geoJsonZoomLevel: 10,
                 maxCacheAge: 0,
             },
+             /* We need to set 'pass_all_features'
+             There are probably many note_import-layers, and we don't want the first one to gobble up all notes and then discard them...
+             */
+            passAllFeatures: true,
             minzoom: Math.min(12, layerJson.minzoom - 2),
             title: {
                 render: trs(t.popupTitle, { title }),
@@ -170,6 +174,17 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                     id: "nearby_images",
                     render: tr(t.nearbyImagesIntro),
                 },
+                {
+                    id:"all_tags",
+                    render: "{all_tags()}",
+                    metacondition: {
+                        or: [
+                            "__featureSwitchIsDebugging=true",
+                            "mapcomplete-show_tags=full",
+                            "mapcomplete-show_debug=yes",
+                        ],
+                    },
+                }
             ],
             mapRendering: [
                 {
