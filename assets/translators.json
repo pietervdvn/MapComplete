@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 272,
+      "commits": 273,
       "contributor": "kjon"
     },
     {
-      "commits": 266,
+      "commits": 269,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -45,7 +45,7 @@
       "contributor": "Supaplex"
     },
     {
-      "commits": 25,
+      "commits": 27,
       "contributor": "Jiří Podhorecký"
     },
     {
@@ -138,6 +138,10 @@
     },
     {
       "commits": 7,
+      "contributor": "Ettore Atalan"
+    },
+    {
+      "commits": 7,
       "contributor": "Jaime Marquínez Ferrándiz"
     },
     {
@@ -159,10 +163,6 @@
     {
       "commits": 6,
       "contributor": "David Haberthür"
-    },
-    {
-      "commits": 6,
-      "contributor": "Ettore Atalan"
     },
     {
       "commits": 6,
