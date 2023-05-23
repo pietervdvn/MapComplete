@@ -135,7 +135,8 @@
         "en": "an artwork on a wall",
         "nl": "een kunstwerk op een muur",
         "ca": "una obra d'art en una paret",
-        "de": "ein Kunstwerk an einer Wand"
+        "de": "ein Kunstwerk an einer Wand",
+        "cs": "umělecké dílo na zdi"
       },
       "preciseInput": {
         "snapToLayer": "walls_and_buildings"

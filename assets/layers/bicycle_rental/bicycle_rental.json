@@ -108,7 +108,7 @@
             "es": "Este es un negocio de alquileres que alquila varios objetos y/o vehículos. También alquila bicicletas, pero este no es el enfoque principal",
             "da": "Dette er en udlejningsvirksomhed, som udlejer forskellige genstande og/eller køretøjer. Den udlejer også cykler, men det er ikke det primære fokus",
             "fr": "C'est une agence louant diverses choses et/ou voitures. Elle loue également des vélos, mais ce n'est pas sa principale activité",
-            "cs": "Jedná se o pronájem různých předmětů a/nebo vozidel. Pronajímá také jízdní kola, ale to není hlavní náplní",
+            "cs": "Jedná se o půjčovnu, která pronajímá různé předměty a/nebo vozidla. Pronajímá také jízdní kola, ale to není hlavní náplní",
             "ca": "Es tracta d'una empresa de lloguer que lloga diversos objectes i/o vehicles. També lloga bicicletes, però aquest no és l'objectiu principal"
           }
         },
@@ -139,7 +139,7 @@
             "es": "Esta es una estación automática, en la que una bici se asegura mecánicamente a una estructura",
             "fr": "C'est un point d’attache automatisé où le vélo est attaché mécaniquement à une structure",
             "da": "Dette er en automatiseret dockingstation, hvor en cykel låses mekanisk fast i en struktur",
-            "cs": "Jedná se o automatickou dokovací stanici, kde je jízdní kolo mechanicky uzamčeno do konstrukce",
+            "cs": "Jedná se o automatickou dokovací stanici, kde je jízdní kolo mechanicky uzamčeno ke konstrukci",
             "ca": "Es tracta d'una estació d'acoblament automatitzada, on una bicicleta es bloqueja mecànicament a una estructura"
           }
         },
@@ -414,7 +414,7 @@
               "da": "mountainbike",
               "eo": "montobicikloj",
               "fr": "vélos de montagne",
-              "cs": "horské kolo"
+              "cs": "horská kola"
             }
           ],
           [

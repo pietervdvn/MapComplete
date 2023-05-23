@@ -344,7 +344,8 @@
             "pt": "Esta loja vende bicicletas",
             "es": "Esta tienda vende bicis",
             "da": "Denne butik sælger cykler",
-            "ca": "Aquesta botiga ven bicis"
+            "ca": "Aquesta botiga ven bicis",
+            "cs": "Tento obchod prodává jízdní kola"
           }
         },
         {
@@ -361,7 +362,8 @@
             "pt": "Esta loja não vende bicicletas",
             "es": "Esta tienda no vende bicis",
             "da": "Denne butik sælger ikke cykler",
-            "ca": "Aquesta botiga no ven bicis"
+            "ca": "Aquesta botiga no ven bicis",
+            "cs": "Tento obchod neprodává jízdní kola"
           }
         }
       ]
@@ -863,7 +865,8 @@
             "de": "Verkauft gebrauchte Fahrräder",
             "nl": "Verkoopt tweedehands fietsen",
             "it": "Vende biciclette usate",
-            "ca": "Ven bicicletes de segona mà"
+            "ca": "Ven bicicletes de segona mà",
+            "cs": "Prodává použitá jízdní kola"
           },
           "osmTags": {
             "or": [
@@ -882,7 +885,8 @@
             "en": "Offers DIY bike repair",
             "de": "Bietet Selbstreparatur an",
             "nl": "Biedt doe-het-zelfreparaties aan",
-            "it": "Offre riparazioni fai da te"
+            "it": "Offre riparazioni fai da te",
+            "cs": "Nabízí opravy kol \"Udělej si sám\""
           },
           "osmTags": {
             "or": [

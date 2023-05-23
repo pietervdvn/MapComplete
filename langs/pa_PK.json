@@ -125,31 +125,6 @@
         },
         "title": "ایمپورٹ کرن مددگار"
     },
-    "matrixbot": {
-        "commands": {
-            "documentation": {
-                "file": {
-                    "plural": "فائیلاں",
-                    "singular": "فائیل"
-                },
-                "inputElement": {
-                    "plural": "تت پایو",
-                    "singular": "تت پایو"
-                },
-                "layer": {
-                    "plural": "کج",
-                    "singular": "کج"
-                },
-                "theme": {
-                    "plural": "تھیم",
-                    "singular": "تھیم"
-                }
-            },
-            "info": {
-                "closed": "بند"
-            }
-        }
-    },
     "move": {
         "cancel": "چلݨ رد کرو"
     },

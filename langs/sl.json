@@ -92,30 +92,6 @@
         "pickTheme": "Za začetek spodaj izberite tematiko.",
         "title": "Dobrodošli na MapComplete"
     },
-    "matrixbot": {
-        "commands": {
-            "dm": {},
-            "documentation": {
-                "file": {},
-                "inputElement": {},
-                "layer": {},
-                "theme": {},
-                "url_parameter": {},
-                "visualisation": {}
-            },
-            "dream": {},
-            "help": {},
-            "info": {},
-            "language": {},
-            "role": {},
-            "scheme": {},
-            "search": {},
-            "shutdown": {},
-            "tags": {},
-            "welcome": {},
-            "wiki": {}
-        }
-    },
     "move": {
         "inviteToMove": {},
         "reasons": {}

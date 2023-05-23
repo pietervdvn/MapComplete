@@ -294,30 +294,6 @@
         "pickTheme": "Válassz egy témát lent a kezdéshez.",
         "title": "Isten hozott a MapComplete-en"
     },
-    "matrixbot": {
-        "commands": {
-            "dm": {},
-            "documentation": {
-                "file": {},
-                "inputElement": {},
-                "layer": {},
-                "theme": {},
-                "url_parameter": {},
-                "visualisation": {}
-            },
-            "dream": {},
-            "help": {},
-            "info": {},
-            "language": {},
-            "role": {},
-            "scheme": {},
-            "search": {},
-            "shutdown": {},
-            "tags": {},
-            "welcome": {},
-            "wiki": {}
-        }
-    },
     "move": {
         "cancel": "Áthelyezés megszakítása",
         "cannotBeMoved": "Ez a térképelem nem mozdítható el.",

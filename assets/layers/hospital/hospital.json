@@ -15,7 +15,13 @@
       "nl": "Ziekenhuis",
       "pa_PK": "ہسپتال",
       "ru": "Больница"
-    }
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": "{name}"
+      }
+    ]
   },
   "description": {
     "en": "A layer showing hospital grounds",
@@ -83,9 +89,23 @@
         "ca": "Un pacient hospitalitzat és un pacient que roman diversos dies a la instal·lació"
       }
     },
-    "phone",
-    "email",
-    "website"
+    "contact",
+    {
+      "id": "oh-visitor",
+      "question": {
+        "en": "When are visitors allowed to visit?"
+      },
+      "questionHint": {
+        "en": "These are the regular visitor hours. Some wands have different visitor hours or might allow visitors in emergencies"
+      },
+      "freeform": {
+        "key": "opening_hours:visitors",
+        "type": "opening_hours"
+      },
+      "render": {
+        "en": "<h3>Opening hours for visitors</h3>Regular visitors are allowed at the following moments: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Some wands might have different opening hours. Many hospitals allow visits during emergencies too.</p>"
+      }
+    }
   ],
   "mapRendering": [
     {
