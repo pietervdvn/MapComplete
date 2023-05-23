@@ -1,6 +1,6 @@
-import { TagUtils } from "../../../Logic/Tags/TagUtils"
-import { equal } from "assert"
-import { describe, expect, it } from "vitest"
+import {TagUtils} from "../../../Logic/Tags/TagUtils"
+import {equal} from "assert"
+import {describe, expect, it} from "vitest"
 
 describe("TagUtils", () => {
     describe("ParseTag", () => {
@@ -43,6 +43,15 @@ describe("TagUtils", () => {
             const filter = TagUtils.Tag("date_created<2022-01-07")
             expect(filter.matchesProperties({ date_created: "2022-01-08" })).toBe(false)
             expect(filter.matchesProperties({ date_created: "2022-01-01" })).toBe(true)
+        })
+    })
+    describe("regextag", () => {
+        it("should match tags", () => {
+            const t = TagUtils.Tag(   "_tags~(^|.*;)leisure=picnic_table($|;.*)")
+            const properties = {
+                _tags: 'leisure=picnic_table'
+            }
+            expect(t.matchesProperties(properties)).toBe(true)
         })
     })
 })
