@@ -6,6 +6,7 @@ import { UIEventSource } from "../../UIEventSource"
 import { FeatureSource, IndexedFeatureSource } from "../FeatureSource"
 import { ChangeDescription, ChangeDescriptionTools } from "../../Osm/Actions/ChangeDescription"
 import { Feature } from "geojson"
+import {Utils} from "../../../Utils";
 
 export default class ChangeGeometryApplicator implements FeatureSource {
     public readonly features: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
@@ -69,6 +70,11 @@ export default class ChangeGeometryApplicator implements FeatureSource {
             // We only apply the last change as that one'll have the latest geometry
             const change = changesForFeature[changesForFeature.length - 1]
             copy.geometry = ChangeDescriptionTools.getGeojsonGeometry(change)
+            if(Utils.SameObject(copy.geometry, feature.geometry)){
+                // No actual changes: pass along the original
+                newFeatures.push(feature)
+                continue
+            }
             console.log(
                 "Applying a geometry change onto:",
                 feature,
