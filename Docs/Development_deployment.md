@@ -24,25 +24,26 @@ the switch ;) ). If you are using Visual Studio Code you can use
 a [WSL Remote](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) window, or use the
 Devcontainer (see more details later).
 
-You need at least 3Gb available to run MapComplete.
+You need at least 3Gb RAM available to run MapComplete, but you'll preferably have 8GB of free RAM available.
 
 To develop and build MapComplete, you
 
 0. Make a fork and clone the repository. (We recommend a shallow clone with `git clone --filter=blob:none <repo>`)
-1. Install `python3` if you do not have it already
-    - On linux: `sudo apt install python3`
-    - On windows: find the latest download on the [Python Releases for Windows page](https://www.python.org/downloads/windows/)
-2. Install the nodejs version specified in [/.tool-versions](/.tool-versions)
-    - On linux: install npm first `sudo apt install npm`, then install `n` using npm: ` npm install -g n`, which can
-      then install node with `n install <node-version>`. You can [use asdf to manage your runtime versions](https://asdf-vm.com/).
-    - Windows: install nodeJS: https://nodejs.org/en/download/
-3. Run `npm run init` which …
-    - runs `npm install`
-    - generates some additional dependencies and files
-4. Run `npm run start` to host a local testversion at http://localhost:1234/index.html
-5. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename`
+1. Install `python3` if you do not have it already - On linux: `sudo apt install python3`
+2. Install `nvm` to easily install node:
+   - `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash`
+   - Restart your terminal
+   - Run `nvm install` and `nvm use` to install and use the correct version of node. (_Note: nvm might complain that the relevant version is not yet installed. It'll have it installed only for the current user account but not system-wide - which is fine)
+4. Run `npm run init` (including **run**, not ~~`npm init`~~)which …
+   - runs `npm ci` for you
+   - generates some additional dependencies and files
+   - does various housekeeping and setup. This can take a few minutes the first time as some pngs need to be created
+5. Run `npm run start` to host a local testversion at http://localhost:1234/
+6. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename`
    or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (
    e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
+
+The previous instructions were tested on 2023-03-09 on a Ubuntu 22.04 machine
 
 Development using Windows
 ------------------------

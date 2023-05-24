@@ -113,6 +113,7 @@
     "render": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
   },
   "phone": {
+    "labels": ["contact"],
     "question": {
       "en": "What is the phone number of {title()}?",
       "nl": "Wat is het telefoonnummer van {title()}?",
@@ -163,60 +164,8 @@
       }
     ]
   },
-  "wikipedialink": {
-    "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/wikipedia.svg' alt='WP'/></a>",
-    "question": {
-      "en": "What is the corresponding item on Wikipedia?",
-      "nl": "Welk Wikipedia-artikel beschrijft dit object?",
-      "de": "Wie lautet der zugehörige Wikipedia Artikel?",
-      "pt": "Qual é o item correspondente na Wikipédia?",
-      "hu": "Mi a megfelelő szócikk a Wikipédián?",
-      "it": "Qual è il corrispondente elemento su Wikipedia?",
-      "nb_NO": "Hva er respektivt element på Wikipedia?",
-      "ca": "Quin és l'ítem a Viquipèdia?",
-      "sv": "Vad är det motsvarande objektet på Wikipedia?",
-      "zh_Hant": "維基百科上對應的項目是什麼？",
-      "fr": "Quel est l’élément Wikipédia correspondant ?",
-      "pl": "Jaki jest link do strony Wikipedii?",
-      "ja": "Wikipediaの該当項目は何ですか？",
-      "fil": "Ano ang nau-ukol na partida sa Wikipedia?",
-      "es": "¿Cual es el ítem correspondiente en Wikipedia?",
-      "zh_Hans": "在维基百科上对应的条目是什么？",
-      "da": "Hvad er det tilsvarende emne på Wikipedia?",
-      "cs": "Jaká je odpovídající položka ve Wikipedii?"
-    },
-    "mappings": [
-      {
-        "if": "wikidata=",
-        "then": {
-          "en": "Not linked with Wikipedia",
-          "nl": "Nog geen Wikipedia-artikel bekend",
-          "de": "Nicht mit Wikipedia verknüpft",
-          "pt": "Não vinculado à Wikipédia",
-          "hu": "Nincs belinkelve a Wikipédiához",
-          "it": "Non collegato a Wikipedia",
-          "nb_NO": "Ikke lenket med Wikipedia",
-          "fr": "Non lié avec Wikipedia",
-          "ca": "No enllaçat amb Viquipèdia",
-          "sv": "Inte länkad med Wikipedia",
-          "zh_Hant": "沒有連結到維基百科",
-          "pl": "Brak linku do strony Wikipedii",
-          "ja": "ウィキペディアと連動していない",
-          "fil": "Hindi naka-ugnay sa Wikipedia",
-          "es": "No enlazado con Wikipedia",
-          "zh_Hans": "不要连接到维基百科",
-          "da": "Ikke linket til Wikipedia",
-          "id": "Tidak ditautkan dengan Wikipedia",
-          "cs": "Není propojeno s Wikipedií"
-        }
-      }
-    ],
-    "freeform": {
-      "key": "wikidata",
-      "type": "wikidata"
-    }
-  },
   "email": {
+    "labels": ["contact"],
     "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
     "question": {
       "nl": "Wat is het e-mailadres van {title()}?",
@@ -259,6 +208,7 @@
     }
   },
   "website": {
+    "labels": ["contact"],
     "question": {
       "en": "What is the website of {title()}?",
       "nl": "Wat is de website van {title()}?",
@@ -576,31 +526,54 @@
   },
   "description": {
     "question": {
-      "nl": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.<br/><span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>",
-      "fr": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.<br/><span style='font-size: small'>Ne répétez pas des réponses déjà données</span>",
-      "en": "Is there still something relevant you couldn't give in the previous questions? Add it here.<br/><span style='font-size: small'>Don't repeat already stated facts</span>",
-      "nb_NO": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.<br/><span style='font-size: small'>Ikke gjenta fakta som allerede er nevnt</span>",
-      "ru": "Есть ли ещё что-то важное, о чём вы не смогли рассказать в предыдущих вопросах? Добавьте это здесь.<br/><span style='font-size: small'>Не повторяйте уже изложенные факты</span>",
-      "zh_Hant": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。<br/><span style='font-size: small'>不要重覆答覆已經知道的事情</span>",
-      "it": "C'è ancora qualche informazione importante che non è stato possibile fornire nelle domande precedenti? Aggiungila qui.<br/><span style='font-size: small'>Non ripetere informazioni già fornite</span>",
-      "de": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.<br/><span style='font-size: small'>Bitte keine bereits erhobenen Informationen.</span>",
-      "pl": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.<br/><span style='font-size: small'>Nie powtarzaj już podanych faktów</span>",
-      "pt_BR": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.<br/><span style='font-size: small'> Não repita fatos já declarados</span>",
-      "pt": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.<br/><span style='font-size: small'>Não repita factos já declarados</span>",
-      "hu": "Van-e még valami lényeges, amit nem tudott megadni az előző kérdésekben? Itt megteheti.<br/><span style='font-size: small'>Ne ismételjen meg már megadott tényeket</span>",
-      "ca": "Hi ha quelcom rellevant que no t'hem preguntat? Afegeix-ho aquí. <br/><span style='font-size: small'>No repeteixis informació que ja hi és</span>",
-      "sv": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.<br/><span style='font-size: small'>Repetera inte redan angivna fakta</span>",
-      "id": "Apakah masih ada sesuatu yang relevan yang tidak dapat Anda berikan dalam pertanyaan sebelumnya? Tambahkan di sini. <br/> <span style='font-size: small'> Jangan ulangi fakta yang sudah dinyatakan </span>",
-      "ja": "前の質問で伝えきれなかった関連事項がまだありますか？ここに追加してください。<br/><span style='font-size: small'>今後表示しない</span>",
-      "es": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.<br/><span style='font-size: small'>No repita datos ya expresados</span>",
-      "sl": "Ali je še kaj pomembnega, česar niste mogli povedati v prejšnjih vprašanjih? Dopišite tukaj.<br/><span style='font-size: small'>Ne ponavljajte že navedenih dejstev</span>",
-      "fil": "Mayroon pa bang mga bagay na nau-ugnay at hindi mo maibigay sa mga nakaraang tanong? Idagdag dito.<br/><span style='font-size: small'>Huwag ulitin ang mga nai-saad na</span>",
-      "da": "Er der stadig noget relevant, du ikke kunne give i de foregående spørgsmål? Tilføj det her.<br/><span style='font-size: small'>Gentag ikke allerede nævnte fakta</span>",
-      "cs": "Je ještě něco relevantního, co jste nemohli uvést v předchozích otázkách? Přidejte to sem.<br/><span style='font-size: small'>Neopakujte již uvedená fakta</span>"
+      "nl": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.",
+      "fr": "Y a-t-il quelque chose de pertinent que vous n'avez pas pu donner à la dernière question ? Ajoutez-le ici.",
+      "en": "Is there still something relevant you couldn't give in the previous questions? Add it here.",
+      "nb_NO": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.",
+      "ru": "Есть ли ещё что-то важное, о чём вы не смогли рассказать в предыдущих вопросах? Добавьте это здесь.",
+      "zh_Hant": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。",
+      "it": "C'è ancora qualche informazione importante che non è stato possibile fornire nelle domande precedenti? Aggiungila qui.",
+      "de": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.",
+      "pl": "Czy jest jeszcze coś istotnego, czego nie mogłeś podać w poprzednich pytaniach? Dodaj to tutaj.",
+      "pt_BR": "Ainda há algo de relevante que não pôde dar nas perguntas anteriores? Adicione aqui.",
+      "pt": "Ainda há algo de relevante que não tenha podido dar nas perguntas anteriores? Adicione-o aqui.",
+      "hu": "Van-e még valami lényeges, amit nem tudott megadni az előző kérdésekben? Itt megteheti.",
+      "ca": "Hi ha quelcom rellevant que no t'hem preguntat? Afegeix-ho aquí.",
+      "sv": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.",
+      "id": "Apakah masih ada sesuatu yang relevan yang tidak dapat Anda berikan dalam pertanyaan sebelumnya? Tambahkan di sini. ",
+      "ja": "前の質問で伝えきれなかった関連事項がまだありますか？ここに追加してください。",
+      "es": "¿Aún hay algo relevante que no ha encajado en las preguntas anteriores? Compártalo aquí.",
+      "sl": "Ali je še kaj pomembnega, česar niste mogli povedati v prejšnjih vprašanjih? Dopišite tukaj.",
+      "fil": "Mayroon pa bang mga bagay na nau-ugnay at hindi mo maibigay sa mga nakaraang tanong? Idagdag dito.",
+      "da": "Er der stadig noget relevant, du ikke kunne give i de foregående spørgsmål? Tilføj det her.",
+      "cs": "Je ještě něco relevantního, co jste nemohli uvést v předchozích otázkách? Přidejte to sem."
     },
     "render": "{description}",
     "freeform": {
       "key": "description"
+    },
+    "questionHint": {
+      "nl": "Herhaal geen antwoorden die je reeds gaf",
+      "fr": "Ne répétez pas des réponses déjà données",
+      "en": "Don't repeat already stated facts",
+      "nb_NO": "Ikke gjenta fakta som allerede er nevnt",
+      "ru": "Не повторяйте уже изложенные факты",
+      "zh_Hant": "不要重覆答覆已經知道的事情",
+      "it": "Non ripetere informazioni già fornite",
+      "de": "Bitte keine bereits erhobenen Informationen.",
+      "pl": "Nie powtarzaj już podanych faktów",
+      "pt_BR": " Não repita fatos já declarados",
+      "pt": "Não repita factos já declarados",
+      "hu": "Ne ismételjen meg már megadott tényeket",
+      "ca": "No repeteixis informació que ja hi és",
+      "sv": "Repetera inte redan angivna fakta",
+      "id": "  Jangan ulangi fakta yang sudah dinyatakan ",
+      "ja": "今後表示しない",
+      "es": "No repita datos ya expresados",
+      "sl": "Ne ponavljajte že navedenih dejstev",
+      "fil": "Huwag ulitin ang mga nai-saad na",
+      "da": "Gentag ikke allerede nævnte fakta",
+      "cs": "Neopakujte již uvedená fakta"
     }
   },
   "opening_hours": {
@@ -676,7 +649,8 @@
             "fr": "Ouvert 24h/24 (jours fériés compris)",
             "nb_NO": "Døgnåpent (inkludert helligdager)",
             "cs": "Otevřeno 24/7 (včetně svátků)",
-            "ca": "Obert 24/7 (incloent-hi festius)"
+            "ca": "Obert 24/7 (incloent-hi festius)",
+            "pl": "Otwarte 24/7 (również w święta)"
           }
         }
       ]
@@ -694,7 +668,10 @@
             "nl": "Alleen op afspraak",
             "fr": "Uniquement sur rendez-vous",
             "ca": "Sols amb cita prèvia",
-            "es": "Sólo con cita previa"
+            "es": "Sólo con cita previa",
+            "nb_NO": "Kun ved avtale",
+            "pl": "Tylko po wcześniejszym umówieniu się",
+            "cs": "Pouze po domluvě"
           }
         },
         {
@@ -705,7 +682,10 @@
             "nl": "Alleen op afspraak",
             "fr": "Uniquement sur rendez-vous",
             "ca": "Sols amb cita prèvia",
-            "es": "Sólo con cita previa"
+            "es": "Sólo con cita previa",
+            "nb_NO": "Kun ved avtale",
+            "pl": "Tylko po wcześniejszym umówieniu się",
+            "cs": "Pouze po domluvě"
           },
           "hideInAnswer": true
         }
@@ -901,7 +881,16 @@
           "es": "Aquí se acepta el pago por tarjeta",
           "zh_Hans": "可用信用卡",
           "da": "Betalingskort accepteres her",
-          "cs": "Zde jsou přijímány platební karty"
+          "cs": "Jsou zde přijímány platební karty"
+        }
+      },
+      {
+        "if": "payment:qr_code=yes",
+        "ifnot": "payment:qr_code=no",
+        "icon": "./assets/tagRenderings/qrcode.svg",
+        "then": {
+          "en": "Payment by QR-code is possible here",
+          "nl": "Betalen via een QR-code is hier mogelijk"
         }
       }
     ]
@@ -930,7 +919,10 @@
             "de": "Münzen werden hier akzeptiert",
             "fr": "Les pièces sont acceptées ici",
             "ca": "Aquí s'accepten monedes",
-            "es": "Aquí se aceptan monedas"
+            "es": "Aquí se aceptan monedas",
+            "nb_NO": "Mynter aksepteres her",
+            "pl": "Monety są tutaj akceptowane",
+            "cs": "Jsou zde přijímány mince"
           }
         },
         {
@@ -943,7 +935,10 @@
             "de": "Geldscheine werden hier akzeptiert",
             "fr": "Les billets de banque sont acceptés ici",
             "ca": "Aquí s'accepten bitllets",
-            "es": "Aquí se aceptan billetes"
+            "es": "Aquí se aceptan billetes",
+            "nb_NO": "Sedler aksepteres her",
+            "pl": "Banknoty są tutaj akceptowane",
+            "cs": "Jsou zde přijímány bankovky"
           }
         },
         {
@@ -956,7 +951,10 @@
             "de": "Debitkarten werden hier akzeptiert",
             "fr": "Les cartes de débit sont acceptées ici",
             "ca": "Aquí s'accepten targetes de dèbit",
-            "es": "Aquí se aceptan tarjetas de débito"
+            "es": "Aquí se aceptan tarjetas de débito",
+            "nb_NO": "Debetkort aksepteres her",
+            "pl": "Akceptowane są tutaj karty debetowe",
+            "cs": "Jsou zde přijímány debetní karty"
           }
         },
         {
@@ -969,7 +967,10 @@
             "de": "Kreditkarten werden hier akzeptiert",
             "fr": "Les cartes de crédit sont acceptées ici",
             "ca": "Aquí s'accepten targetes de crèdit",
-            "es": "Aquí se aceptan tarjetas de crédito"
+            "es": "Aquí se aceptan tarjetas de crédito",
+            "nb_NO": "Kredittkort aksepteres her",
+            "pl": "Akceptowane są tutaj karty kredytowe",
+            "cs": "Jsou zde přijímány kreditní karty"
           }
         }
       ]
@@ -1000,7 +1001,8 @@
             "pt": "O pagamento é feito utilizando uma aplicação dedicada",
             "it": "Pagamento effettuato utilizzando un'app dedicata",
             "id": "Pembayaran dilakukan dengan aplikasi khusus",
-            "cs": "Platba se provádí pomocí speciální aplikace"
+            "cs": "Platba se provádí pomocí speciální aplikace",
+            "pl": "Płatność odbywa się za pomocą dedykowanej aplikacji"
           }
         },
         {
@@ -1023,7 +1025,8 @@
             "da": "Betaling sker med medlemskort",
             "pt": "O pagamento é feito usando um cartão de membro",
             "id": "Pembayaran dilakukan dengan kartu anggota",
-            "cs": "Platba se provádí pomocí členské karty"
+            "cs": "Platba se provádí pomocí členské karty",
+            "pl": "Płatność odbywa się za pomocą karty członkowskiej"
           }
         }
       ]
@@ -1071,7 +1074,9 @@
       "fr": "Quelles pièces peut-on utiliser pour payer ici ?",
       "pl": "Jakimi monetami można tutaj zapłacić?",
       "ca": "Quines monedes es poden utilitzar per a pagar aquí?",
-      "es": "¿Qué monedas se pueden usar aquí para pagar?"
+      "es": "¿Qué monedas se pueden usar aquí para pagar?",
+      "nb_NO": "Hvilke mynter kan brukes til betaling her?",
+      "cs": "Jakými mincemi zde lze platit?"
     },
     "multiAnswer": true,
     "mappings": [
@@ -1086,7 +1091,9 @@
           "fr": "Les pièces d'1 cent sont acceptées",
           "pl": "Akceptowane są monety 1 centowe",
           "ca": "S'accepten monedes de 1 cèntim",
-          "es": "Se aceptan monedas de 1 céntimo"
+          "es": "Se aceptan monedas de 1 céntimo",
+          "cs": "Jsou přijímány mince v hodnotě 1 centu",
+          "id": "1 koin sen diterima"
         }
       },
       {
@@ -1100,7 +1107,9 @@
           "fr": "Les pièces de 2 cents sont acceptées",
           "pl": "Akceptowane są monety 2 centowe",
           "ca": "S'accepten monedes de 2 cèntims",
-          "es": "Se aceptan monedas de 2 céntimos"
+          "es": "Se aceptan monedas de 2 céntimos",
+          "cs": "Jsou přijímány mince v hodnotě 2 centů",
+          "id": "Koin 2 sen diterima"
         }
       },
       {
@@ -1114,7 +1123,9 @@
           "fr": "Les pièces de 5 cents sont acceptées",
           "pl": "Akceptowane są monety 5 centowe",
           "ca": "S'accepten monedes de 5 cèntims",
-          "es": "Se aceptan monedas de 5 céntimos"
+          "es": "Se aceptan monedas de 5 céntimos",
+          "cs": "Jsou přijímány mince v hodnotě 5 centů",
+          "id": "Koin 5 sen diterima"
         }
       },
       {
@@ -1128,7 +1139,9 @@
           "fr": "Les pièces de 10 cents sont acceptées",
           "pl": "Akceptowane są monety 10-centowe",
           "ca": "S'accepten monedes de 10 cèntims",
-          "es": "Se aceptan monedas de 10 céntimos"
+          "es": "Se aceptan monedas de 10 céntimos",
+          "cs": "Jsou přijímány mince v hodnotě 10 centů",
+          "id": "Koin 10 sen diterima"
         }
       },
       {
@@ -1142,7 +1155,9 @@
           "fr": "Les pièces de 20 cents sont acceptées",
           "pl": "Akceptowane są monety 20-centowe",
           "ca": "S'accepten monedes de 20 cèntims",
-          "es": "Se aceptan monedas de 20 céntimos"
+          "es": "Se aceptan monedas de 20 céntimos",
+          "cs": "Jsou přijímány mince v hodnotě 20 centů",
+          "id": "Koin 20 sen diterima"
         }
       },
       {
@@ -1156,7 +1171,9 @@
           "fr": "Les pièces de 50 cents sont acceptées",
           "pl": "Akceptowane są monety 50-centowe",
           "ca": "S'accepten monedes de 50 cèntims",
-          "es": "Se aceptan monedas de 50 céntimos"
+          "es": "Se aceptan monedas de 50 céntimos",
+          "cs": "Jsou přijímány mince v hodnotě 50 centů",
+          "id": "Koin 50 sen diterima"
         }
       },
       {
@@ -1170,7 +1187,8 @@
           "fr": "Les pièces de 1 euro sont acceptées",
           "pl": "Akceptowane są monety 1 euro",
           "ca": "S'accepten monedes de 1 euro",
-          "es": "Se aceptan monedas de 1 euro"
+          "es": "Se aceptan monedas de 1 euro",
+          "cs": "Jsou přijímány mince v hodnotě 1 eura"
         }
       },
       {
@@ -1184,7 +1202,155 @@
           "fr": "Les pièces de 2 euros sont acceptées",
           "pl": "Akceptowane są monety 2 euro",
           "ca": "S'accepten monedes de 2 euros",
-          "es": "Se aceptan monedas de 2 euros"
+          "es": "Se aceptan monedas de 2 euros",
+          "cs": "Jsou přijímány mince v hodnotě 2 euro"
+        }
+      }
+    ]
+  },
+  "denominations-notes": {
+    "condition": {
+      "and": [
+        {
+          "or": [
+            "payment:notes=yes",
+            "payment:cash=yes"
+          ]
+        },
+        {
+          "or": [
+            "_country=at",
+            "_country=be",
+            "_country=cy",
+            "_country=de",
+            "_country=ee",
+            "_country=es",
+            "_country=fi",
+            "_country=fr",
+            "_country=gr",
+            "_country=hr",
+            "_country=ie",
+            "_country=it",
+            "_country=lt",
+            "_country=lu",
+            "_country=lv",
+            "_country=mt",
+            "_country=nl",
+            "_country=pt",
+            "_country=si",
+            "_country=sk"
+          ]
+        }
+      ]
+    },
+    "question": {
+      "en": "what notes can you use to pay here?",
+      "nl": "Met welke bankbiljetten kan je hier betalen?",
+      "de": "Mit welchen Banknoten kann man hier bezahlen?",
+      "es": "¿con qué billetes se puede pagar aquí?",
+      "pl": "Jakimi banknotami można tu zapłacić?",
+      "cs": "Jakými bankovkami zde lze platit?",
+      "ca": "Amb quins bitllets pot pagar aquí?",
+      "fr": "quels billets pouvez vous utiliser pour payer ici ?"
+    },
+    "multiAnswer": true,
+    "mappings": [
+      {
+        "if": "payment:notes:denominations=5 EUR",
+        "icon": "./assets/tagRenderings/5euro.svg",
+        "then": {
+          "en": "5 euro notes are accepted",
+          "nl": "Biljetten van 5 euro worden geaccepteerd",
+          "de": "5-Euro-Scheine werden angenommen",
+          "es": "Se aceptan billetes de 5 euros",
+          "pl": "Banknoty 5 euro są akceptowane",
+          "cs": "Jsou přijímány bankovky v hodnotě 5 euro",
+          "ca": "S'accepten billets de 5 euros",
+          "fr": "Les billets de 5 euros ne sont pas acceptés"
+        }
+      },
+      {
+        "if": "payment:notes:denominations=10 EUR",
+        "icon": "./assets/tagRenderings/10euro.svg",
+        "then": {
+          "en": "10 euro notes are accepted",
+          "nl": "Biljetten van 10 euro worden geaccepteerd",
+          "de": "10-Euro-Scheine werden angenommen",
+          "es": "Se aceptan billetes de 10 euros",
+          "pl": "Banknoty 10 euro są akceptowane",
+          "cs": "Jsou přijímány bankovky v hodnotě 10 euro",
+          "ca": "S'accepten bitllets de 10 euros",
+          "fr": "Les billets de 10 euros sont acceptés"
+        }
+      },
+      {
+        "if": "payment:notes:denominations=20 EUR",
+        "icon": "./assets/tagRenderings/20euro.svg",
+        "then": {
+          "en": "20 euro notes are accepted",
+          "nl": "Biljetten van 20 euro worden geaccepteerd",
+          "de": "20-Euro-Scheine werden angenommen",
+          "es": "Se aceptan billetes de 20 euros",
+          "pl": "Banknoty 20 euro są akceptowane",
+          "cs": "Jsou přijímány bankovky v hodnotě 20 euro",
+          "ca": "S'accepten bitllets de 20 euros",
+          "fr": "Les billets de 20 euros sont acceptés"
+        }
+      },
+      {
+        "if": "payment:notes:denominations=50 EUR",
+        "icon": "./assets/tagRenderings/50euro.svg",
+        "then": {
+          "en": "50 euro notes are accepted",
+          "nl": "Biljetten van 50 euro worden geaccepteerd",
+          "de": "50-Euro-Scheine werden angenommen",
+          "es": "Se aceptan billetes de 50 euros",
+          "pl": "Banknoty 50 euro są akceptowane",
+          "cs": "Jsou přijímány bankovky v hodnotě 50 euro",
+          "ca": "S'accepten bitllets de 50 euros",
+          "fr": "Les billets de 50 euros sont acceptés"
+        }
+      },
+      {
+        "if": "payment:notes:denominations=100 EUR",
+        "icon": "./assets/tagRenderings/100euro.svg",
+        "then": {
+          "en": "100 euro notes are accepted",
+          "nl": "Biljetten van 100 euro worden geaccepteerd",
+          "de": "100-Euro-Scheine werden angenommen",
+          "es": "Se aceptan billetes de 100 euros",
+          "pl": "Banknoty 100 euro są akceptowane",
+          "cs": "Jsou přijímány bankovky v hodnotě 100 euro",
+          "ca": "S'accepten bitllets de 100 euros",
+          "fr": "Les billets de 100 euros sont acceptés"
+        }
+      },
+      {
+        "if": "payment:notes:denominations=200 EUR",
+        "icon": "./assets/tagRenderings/200euro.svg",
+        "then": {
+          "en": "200 euro notes are accepted",
+          "nl": "Biljetten van 200 euro worden geaccepteerd",
+          "de": "200-Euro-Scheine werden angenommen",
+          "es": "Se aceptan billetes de 200 euros",
+          "pl": "Banknoty 200 euro są akceptowane",
+          "cs": "Jsou přijímány bankovky v hodnotě 200 euro",
+          "ca": "S'accepten bitllets de 200 euros",
+          "fr": "Les billets de 200 euros sont acceptés"
+        }
+      },
+      {
+        "if": "payment:notes:denominations=500 EUR",
+        "icon": "./assets/tagRenderings/500euro.svg",
+        "then": {
+          "en": "500 euro notes are accepted",
+          "nl": "Biljetten van 500 euro worden geaccepteerd",
+          "de": "500-Euro-Scheine werden angenommen",
+          "es": "Se aceptan billetes de 500 euros",
+          "pl": "Banknoty 500 euro są akceptowane",
+          "cs": "Jsou přijímány bankovky v hodnotě 500 euro",
+          "ca": "S'accepten bitllets de 500 euros",
+          "fr": "Les billets de 500 euros sont acceptés"
         }
       }
     ]
@@ -1212,7 +1378,8 @@
         "nb_NO": "Hvilke etasjer går heisen til?",
         "nl": "Naar welke verdiepingen gaat deze lift?",
         "es": "¿A qué pisos va este ascensor?",
-        "ca": "A quins pisos va aquest ascensor?"
+        "ca": "A quins pisos va aquest ascensor?",
+        "pl": "Na jakie poziomy jedzie ta winda?"
       },
       "render": {
         "en": "This elevator goes to floors {level}",
@@ -1225,7 +1392,8 @@
         "nb_NO": "Heisen går til etasje {level}",
         "nl": "Deze lift gaat naar de verdiepingen {level}",
         "es": "Este ascensor va a los pisos {level}",
-        "ca": "Aquest ascensor va als pisos {level}"
+        "ca": "Aquest ascensor va als pisos {level}",
+        "pl": "Ta winda jedzie na piętra {level}"
       },
       "freeform": {
         "key": "level",
@@ -1358,7 +1526,7 @@
           "hu": "A földszinten",
           "it": "Si trova al pianoterra",
           "nb_NO": "På gateplan",
-          "ca": "Situat a planta zero",
+          "ca": "Situat a la planta zero",
           "ja": "1階にあります",
           "id": "Terletak di lantai dasar",
           "sl": "Nahaja se v pritličju",
@@ -1412,7 +1580,8 @@
           "nb_NO": "Er å finne på første kjellernivå",
           "pt": "Localizado no primeiro nível da cave",
           "da": "Beliggende på første kælderetage",
-          "cs": "Nachází se v prvním suterénu"
+          "cs": "Nachází se v prvním suterénu",
+          "pl": "Położone na pierwszym poziomie piwnicy"
         }
       }
     ]
@@ -1429,7 +1598,8 @@
       "id": "Apa diizinkan untuk merokok di {title()}?",
       "nl": "Is roken toegestaan bij {title()}?",
       "cs": "Je na {title()} povoleno kouřit?",
-      "ca": "Està permés fumar a {title()}?"
+      "ca": "Està permés fumar a {title()}?",
+      "pl": "Czy w {title()} wolno palić?"
     },
     "#condition": "Based on https://en.wikipedia.org/wiki/List_of_smoking_bans",
     "condition": "_country!~al|be",
@@ -1452,7 +1622,8 @@
           "nl": "Roken is <b>toegestaan</b>",
           "cs": "Kouření je <b>povoleno</b>",
           "pa_PK": "سِگرٹ پیݨ دی ‫<b>‬؜اِجازت‬‫</b>‬ ؜اے",
-          "ca": "Està <b>permès</b> fumar"
+          "ca": "Està <b>permès</b> fumar",
+          "pl": "Palenie jest <b>dozwolone</b>"
         }
       },
       {
@@ -1472,7 +1643,8 @@
           "id": "Merokok <b>dilarang</b>",
           "nl": "Roken is <b>niet toegestaan</b>",
           "cs": "Kouření <b>není povoleno</b>",
-          "ca": "<b>No</b> està permés fumar"
+          "ca": "<b>No</b> està permés fumar",
+          "pl": "Palenie jest <b>zakazane</b>"
         }
       },
       {
@@ -1488,7 +1660,8 @@
           "id": "Merokok <b>diizinkan di luar ruangan</b>.",
           "nl": "Roken is <b>buiten toegestaan</b>.",
           "cs": "Kouření je <b>povoleno venku</b>.",
-          "ca": "Està permés fumar <b>a l'exterior</b>."
+          "ca": "Està permés fumar <b>a l'exterior</b>.",
+          "pl": "Palenie jest <b>dozwolone na zewnątrz</b>."
         }
       }
     ]
@@ -1503,7 +1676,9 @@
       "cs": "Má toto místo zvukovou indukční smyčku pro osoby se sluchovým postižením?",
       "nb_NO": "Har stedet en teleslynge for folk med redusert hørsel?",
       "nl": "Heeft deze plaats een ringleiding voor slechthorenden?",
-      "ca": "Aquest lloc té un bucle magnètic per a la gent amb dificultats auditives?"
+      "ca": "Aquest lloc té un bucle magnètic per a la gent amb dificultats auditives?",
+      "es": "¿Este lugar tiene un bucle auditivo para personas con discapacidad auditiva?",
+      "pl": "Czy to miejsce ma pętlę indukcyjną dźwięku dla osób niedosłyszących?"
     },
     "mappings": [
       {
@@ -1517,7 +1692,8 @@
           "nb_NO": "Dette stedet har en teleslynge",
           "nl": "Deze plaats heeft een ringleiding",
           "pl": "To miejsce ma pętlę indukcyjną audio",
-          "ca": "El lloc té un bucle magnètic"
+          "ca": "El lloc té un bucle magnètic",
+          "es": "Este lugar tiene un bucle auditivo"
         },
         "icon": {
           "path": "./assets/tagRenderings/audio_induction_loop.svg",
@@ -1534,7 +1710,9 @@
           "cs": "Toto místo <b>nemá indukční zvukovou smyčku</b>",
           "nb_NO": "Dette stedet <b>har ikke</b> en teleslynge",
           "nl": "Deze plaats heeft <b>geen</b> ringleiding",
-          "ca": "El lloc <b>no</b> té un bucle magnètic"
+          "ca": "El lloc <b>no</b> té un bucle magnètic",
+          "es": "Este lugar <b>no</b> tiene bucle auditivo",
+          "pl": "To miejsce <b>nie ma</b> pętli indukcyjnej dźwięku"
         },
         "icon": {
           "path": "./assets/tagRenderings/audio_induction_loop_missing.svg",
@@ -1555,7 +1733,8 @@
       "nb_NO": "Tilbyr dette stedet tilgang til Internett?",
       "es": "¿Ofrece este lugar acceso a internet?",
       "fr": "Cet endroit offre-t-il un accès à Internet ?",
-      "ca": "Aquest lloc ofereix accés a internet?"
+      "ca": "Aquest lloc ofereix accés a internet?",
+      "pl": "Czy to miejsce oferuje dostęp do Internetu?"
     },
     "mappings": [
       {
@@ -1571,7 +1750,8 @@
           "cs": "Toto místo nabízí bezdrátové připojení k internetu",
           "nb_NO": "Dette stedet tilbyr trådløs tilgang til Internett",
           "es": "Este lugar ofrece acceso a internet inalámbrico",
-          "ca": "Aquest lloc ofereix accés a internet inalàmbric"
+          "ca": "Aquest lloc ofereix accés a internet inalàmbric",
+          "pl": "To miejsce oferuje bezprzewodowy dostęp do Internetu"
         }
       },
       {
@@ -1587,7 +1767,8 @@
           "cs": "Toto místo <b>neposkytuje</b> připojení k internetu",
           "nb_NO": "Dette stedet tilbyr <b>ikke</b> tilgang til Internett",
           "es": "Este lugar <b>no</b> ofrece acceso a internet",
-          "ca": "Aquest lloc <b>no</b> ofereix accés a internet"
+          "ca": "Aquest lloc <b>no</b> ofereix accés a internet",
+          "pl": "To miejsce <b>nie</b> oferuje dostępu do Internetu"
         }
       },
       {
@@ -1603,7 +1784,8 @@
           "cs": "Toto místo nabízí přístup k internetu",
           "nb_NO": "Dette stedet tilbyr tilgang til Internett",
           "es": "Este lugar ofrece acceso a internet",
-          "ca": "Aquest lloc ofereix accés a internet"
+          "ca": "Aquest lloc ofereix accés a internet",
+          "pl": "To miejsce oferuje dostęp do Internetu"
         },
         "hideInAnswer": true
       },
@@ -1620,7 +1802,8 @@
           "nb_NO": "Dette stedet tilbyr tilgang til Internett via en terminal eller datamaskin",
           "es": "Este lugar ofrece acceso a internet a través de una terminal o un ordenador",
           "fr": "Cet endroit offre un accès à Internet via un terminal ou un ordinateur",
-          "ca": "Aquest lloc ofereix accés a internet a través d'una terminal o ordinador"
+          "ca": "Aquest lloc ofereix accés a internet a través d'una terminal o ordinador",
+          "pl": "To miejsce oferuje dostęp do Internetu za pośrednictwem terminala lub komputera"
         }
       },
       {
@@ -1636,7 +1819,8 @@
           "nb_NO": "Dette stedet tilbyr trådbunden tilgang til Internett",
           "es": "Este lugar ofrece acceso a internet por cable",
           "fr": "Cet endroit offre un accès Internet filaire",
-          "ca": "Aquest lloc ofereix accés a internet per cable"
+          "ca": "Aquest lloc ofereix accés a internet per cable",
+          "pl": "To miejsce oferuje przewodowy dostęp do Internetu"
         }
       }
     ]
@@ -1659,7 +1843,8 @@
       "nb_NO": "Er det et gebyr for bruk av Internett?",
       "fr": "L'accès à l'internet est-il payant ?",
       "ca": "Hi ha que pagar per a accedir a internet?",
-      "es": "¿Hay que pagar para acceder a internet?"
+      "es": "¿Hay que pagar para acceder a internet?",
+      "pl": "Czy dostęp do Internetu jest płatny?"
     },
     "mappings": [
       {
@@ -1675,7 +1860,8 @@
           "nb_NO": "Det er et gebyr for tilgang til Internett på dette stedet",
           "fr": "L'accès à l'internet est payant à cet endroit",
           "ca": "Aquí hi ha que pagar per a accedir a internet",
-          "es": "Hay que pagar para acceder a internet en este lugar"
+          "es": "Hay que pagar para acceder a internet en este lugar",
+          "pl": "W tym miejscu dostęp do Internetu jest płatny"
         }
       },
       {
@@ -1691,7 +1877,8 @@
           "nb_NO": "Tilgang til Internett er gratis på dette stedet",
           "es": "El acceso a internet es gratuito en este lugar",
           "fr": "L'accès à Internet est gratuit dans cet endroit",
-          "ca": "Aquí l'accés a internet és gratuït"
+          "ca": "Aquí l'accés a internet és gratuït",
+          "pl": "Dostęp do Internetu jest w tym miejscu bezpłatny"
         }
       },
       {
@@ -1707,7 +1894,8 @@
           "nb_NO": "Tilgang til Internett på dette stedet er gratis, men kun for kunder",
           "es": "El acceso a internet es gratis en este lugar, solamente para clientes",
           "fr": "L'accès à l'internet dans cet endroit est gratuit pour les clients uniquement",
-          "ca": "Aquí l'accés a internet és gratuït sols per als clients"
+          "ca": "Aquí l'accés a internet és gratuït sols per als clients",
+          "pl": "Dostęp do Internetu jest w tym miejscu bezpłatny, tylko dla klientów"
         }
       }
     ]
@@ -1725,7 +1913,8 @@
       "nb_NO": "Hva er nettverksnavnet for det trådløse nettverket?",
       "es": "¿Cuál es el nombre de red para el acceso inalámbrico a internet?",
       "fr": "Quel est le nom du réseau pour l'accès Internet sans fil ?",
-      "ca": "Quin és el nom de la xarxa per a l'accés inalàmbric a internet?"
+      "ca": "Quin és el nom de la xarxa per a l'accés inalàmbric a internet?",
+      "pl": "Jaka jest nazwa sieci dla bezprzewodowego dostępu do Internetu?"
     },
     "freeform": {
       "key": "internet_access:ssid",
@@ -1742,7 +1931,8 @@
         "pa_PK": "نیٹورک دا ناں پایو",
         "es": "Introduzca el nombre de red",
         "fr": "Entrez le nom du réseau",
-        "ca": "Intruduixca el nom de la xarxa"
+        "ca": "Intruduixca el nom de la xarxa",
+        "pl": "Wprowadź nazwę sieci"
       }
     },
     "mappings": [
@@ -1763,7 +1953,85 @@
       "nb_NO": "Nettverksnavnet er <b>{internet_access:ssid}</b>",
       "es": "El nombre de red es <b>{internet_access:ssid}</b>",
       "fr": "Le nom du réseau est <b>{internet_access:ssid}</b>",
-      "ca": "El nom de la xarxa és <b>{internet_access:ssid}</b>"
+      "ca": "El nom de la xarxa és <b>{internet_access:ssid}</b>",
+      "pl": "Nazwa sieci to <b>{internet_access:ssid}</b>"
     }
+  },
+  "luminous_or_lit": {
+    "question": {
+      "en": "Is this object lit or does it emit light?",
+      "ca": "Aquest objecte està il·luminat o emet llum?",
+      "cs": "Je tento objekt osvětlený nebo vyzařuje světlo?",
+      "de": "Wird das Objekt beleuchtet oder leuchtet es selbst?",
+      "es": "¿Está este objeto iluminado o emite luz?",
+      "fr": "Cet objet est-il éclairé ou émet-il de la lumière ?",
+      "pl": "Czy ten obiekt jest oświetlony lub emituje światło?"
+    },
+    "mappings": [
+      {
+        "if": {
+          "and": [
+            "lit=yes",
+            "luminous=yes"
+          ]
+        },
+        "then": {
+          "en": "This object both emits light and is lighted by an external light source",
+          "ca": "Aquest objecte emet llum i també està il·luminat externament",
+          "cs": "Tento objekt vyzařuje světlo a je osvětlen vnějším zdrojem světla",
+          "de": "Das Objekt leuchtet selbst und wird von außen beleuchtet",
+          "es": "Este objeto emite luz y es también iluminado por una fuente de luz externa",
+          "fr": "Cet objet émet de la lumière et est éclairé par l'extérieur",
+          "pl": "Ten obiekt zarówno emituje światło, jak i jest oświetlany przez zewnętrzne źródło światła"
+        }
+      },
+      {
+        "if": "luminous=yes",
+        "then": {
+          "en": "This object emits light",
+          "ca": "Aquest objecte emet llum",
+          "cs": "Tento objekt vyzařuje světlo",
+          "de": "Das Objekt leuchtet selbst",
+          "es": "Este objeto emite luz",
+          "fr": "Cet objet émet de la lumière",
+          "pl": "Ten obiekt emituje światło"
+        },
+        "addExtraTags": [
+          "lit=no"
+        ]
+      },
+      {
+        "if": "lit=yes",
+        "then": {
+          "en": "This object is lit externally, e.g. by a spotlight or other lights",
+          "ca": "Aquest objecte està il·luminat externament, p.e. amb un focus o altres llums",
+          "cs": "Tento objekt je osvětlen zvenčí, např. pomocí reflektoru nebo jiných světel",
+          "de": "Das Objekt wird von außen beleuchtet, z. B. durch Scheinwerfer oder andere Lichter",
+          "es": "Este objeto recibe iluminación, por ejemplo por un foco u otras luces",
+          "fr": "Cet objet est éclairé par l'extérieur, par ex. par un projecteur ou d'autres lumières",
+          "pl": "Ten obiekt jest oświetlony zewnętrznie, np. przez reflektor lub inne światła"
+        },
+        "addExtraTags": [
+          "luminous=no"
+        ]
+      },
+      {
+        "if": {
+          "and": [
+            "lit=no",
+            "luminous=no"
+          ]
+        },
+        "then": {
+          "en": "This object does not emit light and is not lighted by externally",
+          "ca": "Aquest objecte no emet llum i no està il·luminat externament",
+          "cs": "Tento objekt nevyzařuje světlo a není osvětlen zvenčí",
+          "de": "Das Objekt wird weder von außen beleuchtet, noch leuchtet es selbst",
+          "es": "Este objeto ni emite luz ni es iluminado",
+          "fr": "Cet objet n'émet pas de lumière et n'est pas éclairé par l'extérieur",
+          "pl": "Obiekt ten nie emituje światła i nie jest oświetlany z zewnątrz"
+        }
+      }
+    ]
   }
 }

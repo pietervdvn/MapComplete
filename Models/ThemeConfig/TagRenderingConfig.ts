@@ -47,6 +47,7 @@ export default class TagRenderingConfig {
     public readonly group: string
     public readonly render?: TypedTranslation<object>
     public readonly question?: TypedTranslation<object>
+    public readonly questionhint?: TypedTranslation<object>
     public readonly condition?: TagsFilter
     public readonly description?: Translation
 
@@ -119,6 +120,7 @@ export default class TagRenderingConfig {
         this.labels = json.labels ?? []
         this.render = Translations.T(json.render, translationKey + ".render")
         this.question = Translations.T(json.question, translationKey + ".question")
+        this.questionhint = Translations.T(json.questionHint, translationKey + ".questionHint")
         this.description = Translations.T(json.description, translationKey + ".description")
         this.condition = TagUtils.Tag(json.condition ?? { and: [] }, `${context}.condition`)
         if (json.freeform) {
@@ -332,6 +334,10 @@ export default class TagRenderingConfig {
             allKeys = Utils.Dedup(allKeys)
             if (allKeys.length > 1 && !allHaveIfNot) {
                 throw `${context}: A multi-answer is defined, which generates values over multiple keys. Please define ifnot-tags too on every mapping`
+            }
+
+            if (allKeys.length > 1 && this.freeform?.key !== undefined) {
+                throw `${context}: A multi-answer is defined, which generates values over multiple keys. This is incompatible with having a freeform key`
             }
         }
     }

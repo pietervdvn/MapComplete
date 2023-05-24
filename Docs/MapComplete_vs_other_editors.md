@@ -54,10 +54,6 @@ working like SC".
 Also, MapComplete has no requirement to make question easy to answer, making both possible to ask more questions than
 StreetComplete but making it more complicated to use.
 
-No support for splitting ways in MapComplete (as of now - hopefully it'll get added one day).
-
-MapComplete allows the addition of new points, whereas StreetComplete does not.
-
 ## MapContrib
 
 MapContrib is another very similar editor which served as inspiration. MapContrib offers - just like MapComplete - an

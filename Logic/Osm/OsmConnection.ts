@@ -161,9 +161,12 @@ export class OsmConnection {
     public GetPreference(
         key: string,
         defaultValue: string = undefined,
-        prefix: string = "mapcomplete-"
+        options?: {
+            documentation?: string
+            prefix?: string
+        }
     ): UIEventSource<string> {
-        return this.preferencesHandler.GetPreference(key, defaultValue, prefix)
+        return this.preferencesHandler.GetPreference(key, defaultValue, options)
     }
 
     public GetLongPreference(key: string, prefix: string = "mapcomplete-"): UIEventSource<string> {

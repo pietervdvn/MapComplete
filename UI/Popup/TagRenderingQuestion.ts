@@ -85,6 +85,14 @@ export default class TagRenderingQuestion extends Combine {
             ),
             3
         )
+        let questionHint = undefined
+        if (configuration.questionhint !== undefined) {
+            questionHint = new SubstitutedTranslation(
+                configuration.questionhint,
+                tags,
+                state
+            ).SetClass("font-bold subtle")
+        }
 
         const feedback = new UIEventSource<Translation>(undefined)
         const inputElement: ReadonlyInputElement<UploadableTag> = new VariableInputElement(
@@ -139,22 +147,21 @@ export default class TagRenderingQuestion extends Combine {
         }
         super([
             question,
+            questionHint,
             inputElement,
-            new Combine([
-                new VariableUiElement(
-                    feedback.map(
-                        (t) =>
-                            t
-                                ?.SetStyle("padding-left: 0.75rem; padding-right: 0.75rem")
-                                ?.SetClass("alert flex") ?? bottomTags
-                    )
-                ),
-                new Combine([new Combine([options.cancelButton]), saveButton]).SetClass(
-                    "flex justify-end flex-wrap-reverse"
-                ),
-            ]).SetClass("flex mt-2 justify-between"),
+            new VariableUiElement(
+                feedback.map(
+                    (t) =>
+                        t
+                            ?.SetStyle("padding-left: 0.75rem; padding-right: 0.75rem")
+                            ?.SetClass("alert flex") ?? bottomTags
+                )
+            ),
+            new Combine([options.cancelButton, saveButton]).SetClass(
+                "flex justify-end flex-wrap-reverse"
+            ),
             new Toggle(
-                Translations.t.general.testing.SetClass("alert"),
+                Translations.t.general.testing.SetClass("block alert"),
                 undefined,
                 state?.featureSwitchIsTesting
             ),

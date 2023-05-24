@@ -1,7 +1,8 @@
 {
     "shared_questions": {
         "description": {
-            "question": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。<br/><span style='font-size: small'>不要重覆答覆已經知道的事情</span>"
+            "question": "有什麼相關的資訊你無法在先前的問題回應的嗎？請加在這邊吧。",
+            "questionHint": "不要重覆答覆已經知道的事情"
         },
         "dog-access": {
             "mappings": {
@@ -130,14 +131,6 @@
                 }
             },
             "question": "對應的維基資料項目是？"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "沒有連結到維基百科"
-                }
-            },
-            "question": "維基百科上對應的項目是什麼？"
         }
     }
 }

@@ -1,7 +1,8 @@
 {
     "shared_questions": {
         "description": {
-            "question": "Er der stadig noget relevant, du ikke kunne give i de foregående spørgsmål? Tilføj det her.<br/><span style='font-size: small'>Gentag ikke allerede nævnte fakta</span>"
+            "question": "Er der stadig noget relevant, du ikke kunne give i de foregående spørgsmål? Tilføj det her.",
+            "questionHint": "Gentag ikke allerede nævnte fakta"
         },
         "dog-access": {
             "mappings": {
@@ -193,14 +194,6 @@
                 }
             },
             "question": "Hvad er den tilsvarende Wikidata-enhed?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Ikke linket til Wikipedia"
-                }
-            },
-            "question": "Hvad er det tilsvarende emne på Wikipedia?"
         }
     }
 }

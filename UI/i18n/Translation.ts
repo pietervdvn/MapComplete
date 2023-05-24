@@ -2,6 +2,7 @@ import Locale from "./Locale"
 import { Utils } from "../../Utils"
 import BaseUIElement from "../BaseUIElement"
 import LinkToWeblate from "../Base/LinkToWeblate"
+import { SvelteComponent } from "svelte"
 
 export class Translation extends BaseUIElement {
     public static forcedLanguage = undefined

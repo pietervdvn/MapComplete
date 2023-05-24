@@ -5,6 +5,10 @@
         "retrying": "Gagal memuat data. Mencoba lagi dalam {count} detik…",
         "zoomIn": "Perbesar untuk melihat atau menyunting data"
     },
+    "communityIndex": {
+        "available": "Komunitas ini berbicara bahasa {native}",
+        "intro": "Berhubungan dengan orang lain untuk mengenal mereka, belajar dari mereka, ..."
+    },
     "delete": {
         "cancel": "Batal",
         "cannotBeDeleted": "Fitur ini tidak dapat dihapus",
@@ -75,16 +79,12 @@
         },
         "backgroundMap": "Peta latar belakang",
         "cancel": "Batal",
-        "download": {},
         "getStartedLogin": "Masuk dengan OpenStreetMap untuk memulai",
         "getStartedNewAccount": " atau <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">membuat akun baru</a>",
         "goToInbox": "Buka kotak masuk",
-        "histogram": {},
         "layerSelection": {
             "title": "Pilih lapisan"
         },
-        "levelSelection": {},
-        "morescreen": {},
         "nameInlineQuestion": "Name {category} ini adalah $$$",
         "noTagsSelected": "Tidak ada tag yang dipilih",
         "opening_hours": {
@@ -97,7 +97,6 @@
             "ph_not_known": " ",
             "ph_open": "buka"
         },
-        "pdf": {},
         "pickLanguage": "Pilih bahasa: ",
         "questions": {
             "emailOf": "Apa alamat email {category}?",
@@ -139,10 +138,6 @@
             "thursday": "Kamis",
             "tuesday": "Selasa",
             "wednesday": "Rabu"
-        },
-        "welcomeExplanation": {},
-        "wikipedia": {
-            "previewbox": {}
         }
     },
     "image": {
@@ -150,63 +145,15 @@
         "doDelete": "Buang gambar",
         "dontDelete": "Batal",
         "isDeleted": "Dihapus",
-        "nearbyPictures": {},
         "pleaseLogin": "Silakan masuk untuk menambah gambar",
         "uploadingMultiple": "Mengunggah {count} gambar…",
         "uploadingPicture": "Mengunggah gambar Anda…"
     },
-    "importHelper": {
-        "askMetadata": {},
-        "compareToAlreadyExistingNotes": {},
-        "confirmProcess": {},
-        "conflationChecker": {
-            "states": {}
-        },
-        "createNotes": {},
-        "introduction": {},
-        "login": {},
-        "mapPreview": {},
-        "noteParts": {},
-        "previewAttributes": {},
-        "selectFile": {},
-        "selectTheme": {}
-    },
-    "importInspector": {},
-    "importLayer": {},
     "index": {
         "intro": "MapComplete adalah penampil dan penyunting OpenStreetMap, yang menunjukkan informasi tentang fitur pada tema tertentu dan memungkinkan Anda untuk memperbaruinya.",
         "pickTheme": "Pilih tema di bawah ini untuk memulai.",
         "title": "Selamat datang di MapComplete"
     },
-    "matrixbot": {
-        "commands": {
-            "dm": {},
-            "documentation": {
-                "file": {},
-                "inputElement": {},
-                "layer": {},
-                "theme": {},
-                "url_parameter": {},
-                "visualisation": {}
-            },
-            "dream": {},
-            "help": {},
-            "info": {},
-            "language": {},
-            "role": {},
-            "scheme": {},
-            "search": {},
-            "shutdown": {},
-            "tags": {},
-            "welcome": {},
-            "wiki": {}
-        }
-    },
-    "move": {
-        "inviteToMove": {},
-        "reasons": {}
-    },
-    "multi_apply": {},
     "notes": {
         "addCommentAndClose": "Tambah komentar dan tutup",
         "addCommentPlaceholder": "Tambahkan komentar...",
@@ -223,29 +170,6 @@
         "loginToClose": "Masuk untuk menutup catatan ini",
         "noteIsPublic": "Ini akan terlihat oleh semua orang",
         "noteLayerDoEnable": "Aktifkan lapisan yang menunjukkan catatan"
-    },
-    "privacy": {},
-    "professional": {
-        "aboutMc": {
-            "internalUse": {},
-            "layers": {},
-            "survey": {}
-        },
-        "aboutOsm": {
-            "aboutOsm": {},
-            "benefits": {},
-            "license": {},
-            "vandalism": {}
-        },
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseGatheringOpenData": {},
-                "usecaseMapDifferentSources": {}
-            },
-            "unsuitedData": {}
-        },
-        "indexPage": {},
-        "services": {}
     },
     "reviews": {
         "attribution": "Ulasan didukung oleh <a href=\"https://mangrove.reviews/\" target=\"_blank\"> Mangrove Reviews</a> dan tersedia di bawah <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
@@ -265,19 +189,15 @@
     },
     "translations": {
         "allMissing": "Belum ada terjemahan",
-        "completeness": "Terjemahan untuk {theme} dalam {language} masih {percentage}%: {translated} string dari {total} diterjemahkan",
-        "isTranslator": "Mode terjemahan aktif karena nama pengguna Anda cocok dengan nama penerjemah sebelumnya",
         "notImmediate": "Terjemahan tidak diperbarui secara langsung. Biasanya memakan waktu beberapa hari"
     },
     "validation": {
-        "color": {},
         "date": {
             "description": "Tanggal, dimulai dari tahun"
         },
         "direction": {
             "description": "Orientasi"
         },
-        "distance": {},
         "email": {
             "description": "alamat email",
             "feedback": "Ini bukan alamat email yang valid"
@@ -293,12 +213,6 @@
             "mustBePositive": "Angka ini harus positif",
             "notANumber": "Masukkan nomor"
         },
-        "opening_hours": {},
-        "pfloat": {},
-        "phone": {},
-        "pnat": {},
-        "string": {},
-        "text": {},
         "url": {
             "description": "tautan ke situs web",
             "feedback": "Ini bukan alamat web yang valid"

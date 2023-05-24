@@ -1,30 +1,29 @@
-import { describe } from "mocha"
-import { expect } from "chai"
-import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
-import { And } from "../../../Logic/Tags/And"
-import { Tag } from "../../../Logic/Tags/Tag"
-import { TagUtils } from "../../../Logic/Tags/TagUtils"
-import { Or } from "../../../Logic/Tags/Or"
-import { RegexTag } from "../../../Logic/Tags/RegexTag"
+import {TagsFilter} from "../../../Logic/Tags/TagsFilter"
+import {And} from "../../../Logic/Tags/And"
+import {Tag} from "../../../Logic/Tags/Tag"
+import {TagUtils} from "../../../Logic/Tags/TagUtils"
+import {Or} from "../../../Logic/Tags/Or"
+import {RegexTag} from "../../../Logic/Tags/RegexTag"
+import {describe, expect, it} from "vitest"
 
 describe("Tag optimalization", () => {
     describe("And", () => {
         it("with condition and nested and should be flattened", () => {
             const t = new And([new And([new Tag("x", "y")]), new Tag("a", "b")])
             const opt = <TagsFilter>t.optimize()
-            expect(TagUtils.toString(opt)).eq(`a=b&x=y`)
+            expect(TagUtils.toString(opt)).toBe(`a=b&x=y`)
         })
 
         it("should be 'true' if no conditions are given", () => {
             const t = new And([])
             const opt = t.optimize()
-            expect(opt).eq(true)
+            expect(opt).toBe(true)
         })
 
         it("should return false on conflicting tags", () => {
             const t = new And([new Tag("key", "a"), new Tag("key", "b")])
             const opt = t.optimize()
-            expect(opt).eq(false)
+            expect(opt).toBe(false)
         })
 
         it("with nested ors and common property should be extracted", () => {
@@ -35,7 +34,7 @@ describe("Tag optimalization", () => {
                 new Or([new Tag("x", "y"), new Tag("c", "d")]),
             ])
             const opt = <TagsFilter>t.optimize()
-            expect(TagUtils.toString(opt)).eq("foo=bar& (x=y| (a=b&c=d) )")
+            expect(TagUtils.toString(opt)).toBe("foo=bar& (x=y| (a=b&c=d) )")
         })
 
         it("with nested ors and common regextag should be extracted", () => {
@@ -46,7 +45,7 @@ describe("Tag optimalization", () => {
                 new Or([new RegexTag("x", "y"), new RegexTag("c", "d")]),
             ])
             const opt = <TagsFilter>t.optimize()
-            expect(TagUtils.toString(opt)).eq("foo=bar& ( (a=b&c=d) |x=y)")
+            expect(TagUtils.toString(opt)).toBe("foo=bar& ( (a=b&c=d) |x=y)")
         })
 
         it("with nested ors and inverted regextags should _not_ be extracted", () => {
@@ -57,19 +56,27 @@ describe("Tag optimalization", () => {
                 new Or([new RegexTag("x", "y", true), new RegexTag("c", "d")]),
             ])
             const opt = <TagsFilter>t.optimize()
-            expect(TagUtils.toString(opt)).eq("foo=bar& (a=b|x=y) & (c=d|x!=y)")
+            expect(TagUtils.toString(opt)).toBe("foo=bar& (a=b|x=y) & (c=d|x!=y)")
         })
 
         it("should move regextag to the end", () => {
             const t = new And([new RegexTag("x", "y"), new Tag("a", "b")])
             const opt = <TagsFilter>t.optimize()
-            expect(TagUtils.toString(opt)).eq("a=b&x=y")
+            expect(TagUtils.toString(opt)).toBe("a=b&x=y")
         })
 
         it("should sort tags by their popularity (least popular first)", () => {
             const t = new And([new Tag("bicycle", "yes"), new Tag("amenity", "binoculars")])
             const opt = <TagsFilter>t.optimize()
-            expect(TagUtils.toString(opt)).eq("amenity=binoculars&bicycle=yes")
+            expect(TagUtils.toString(opt)).toBe("amenity=binoculars&bicycle=yes")
+        })
+
+        it("should correctly optimize key=A&key!=B into key=A", () => {
+            const t = new And([new Tag("shop", "sports"), new RegexTag("shop", "mall", true)])
+            const opt = t.optimize()
+            expect(typeof opt !== "boolean").true
+            expect(TagUtils.toString(<TagsFilter>opt)).toBe("shop=sports")
+
         })
 
         it("should optimize nested ORs", () => {
@@ -163,17 +170,17 @@ describe("Tag optimalization", () => {
                 "leisure=playground&playground!=forest",
             ]
 
-            expect((<Or>opt).or.map((f) => TagUtils.toString(f))).deep.eq(expected)
+            expect((<Or>opt).or.map((f) => TagUtils.toString(f))).toEqual(expected)
         })
 
         it("should detect conflicting tags", () => {
             const q = new And([new Tag("key", "value"), new RegexTag("key", "value", true)])
-            expect(q.optimize()).eq(false)
+            expect(q.optimize()).toBe(false)
         })
 
         it("should detect conflicting tags with a regex", () => {
             const q = new And([new Tag("key", "value"), new RegexTag("key", /value/, true)])
-            expect(q.optimize()).eq(false)
+            expect(q.optimize()).toBe(false)
         })
     })
 
@@ -184,17 +191,17 @@ describe("Tag optimalization", () => {
                 new And([new Tag("foo", "bar"), new Tag("x", "y")]),
             ])
             const opt = <TagsFilter>t.optimize()
-            expect(TagUtils.toString(opt)).eq("foo=bar")
+            expect(TagUtils.toString(opt)).toBe("foo=bar")
         })
 
         it("should flatten nested ors", () => {
             const t = new Or([new Or([new Tag("x", "y")])]).optimize()
-            expect(t).deep.eq(new Tag("x", "y"))
+            expect(t).toEqual(new Tag("x", "y"))
         })
 
         it("should flatten nested ors", () => {
             const t = new Or([new Tag("a", "b"), new Or([new Tag("x", "y")])]).optimize()
-            expect(t).deep.eq(new Or([new Tag("a", "b"), new Tag("x", "y")]))
+            expect(t).toEqual(new Or([new Tag("a", "b"), new Tag("x", "y")]))
         })
     })
 
@@ -259,12 +266,12 @@ describe("Tag optimalization", () => {
          )
          */
 
-        expect(opt).deep.eq(
+        expect(opt).toEqual(
             TagUtils.Tag({
                 or: [
                     "club=climbing",
                     {
-                        and: ["sport=climbing", { or: ["club~*", "office~*"] }],
+                        and: ["sport=climbing", {or: ["club~*", "office~*"]}],
                     },
                     {
                         and: [

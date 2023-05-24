@@ -237,10 +237,10 @@
         "tagRenderings": {
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Van háttámlája"
                     },
-                    "1": {
+                    "2": {
                         "then": "<b>Nincs</b> háttámlája"
                     }
                 },

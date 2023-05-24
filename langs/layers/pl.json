@@ -101,10 +101,10 @@
         "tagRenderings": {
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Oparcie: Tak"
                     },
-                    "1": {
+                    "2": {
                         "then": "Oparcie: Nie"
                     }
                 },

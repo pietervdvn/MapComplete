@@ -37,7 +37,7 @@ export default class SelectTheme
 
     constructor(params: { features: any[]; layer: LayerConfig; bbox: BBox }) {
         const t = Translations.t.importHelper.selectTheme
-        let options: InputElement<string>[] = AllKnownLayouts.layoutsList
+        let options: InputElement<string>[] = Array.from(AllKnownLayouts.allKnownLayouts.values())
             .filter((th) => th.layers.some((l) => l.id === params.layer.id))
             .filter((th) => th.id !== "personal")
             .map(
@@ -60,7 +60,7 @@ export default class SelectTheme
                 return []
             }
             // we get the layer with the correct ID via the actual theme config, as the actual theme might have different presets due to overrides
-            const themeConfig = AllKnownLayouts.layoutsList.find((th) => th.id === theme)
+            const themeConfig = AllKnownLayouts.allKnownLayouts.get(theme)
             const layer = themeConfig.layers.find((l) => l.id === params.layer.id)
             return layer.presets
         })

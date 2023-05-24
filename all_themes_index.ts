@@ -40,17 +40,16 @@ const mode = QueryParameters.GetQueryParameter(
     "map",
     "The mode the application starts in, e.g. 'statistics'"
 )
-
+const cm = document.getElementById("centermessage")
+cm.parentElement.removeChild(cm)
 if (mode.data === "statistics") {
     console.log("Statistics mode!")
-    new FixedUiElement("").AttachTo("centermessage")
-    new StatisticsGUI().SetClass("w-full h-full pointer-events-auto").AttachTo("topleft-tools")
+    new StatisticsGUI().SetClass("w-full h-full pointer-events-auto").AttachTo("top-left")
 } else if (mode.data === "pdf") {
     MinimapImplementation.initialize()
-    new FixedUiElement("").AttachTo("centermessage")
     const div = document.createElement("div")
     div.id = "extra_div_for_maps"
-    new PdfExportGui(div.id).SetClass("pointer-events-auto").AttachTo("topleft-tools")
+    new PdfExportGui(div.id).SetClass("pointer-events-auto").AttachTo("top-left")
     document.getElementById("topleft-tools").appendChild(div)
 } else {
     new AllThemesGui().setup()

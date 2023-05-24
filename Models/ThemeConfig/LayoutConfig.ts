@@ -7,8 +7,23 @@ import TilesourceConfig from "./TilesourceConfig"
 import { ExtractImages } from "./Conversion/FixImages"
 import ExtraLinkConfig from "./ExtraLinkConfig"
 import { Utils } from "../../Utils"
-import * as used_languages from "../../assets/generated/used_languages.json"
-export default class LayoutConfig {
+import LanguageUtils from "../../Utils/LanguageUtils"
+
+/**
+ * Minimal information about a theme
+ **/
+export class LayoutInformation {
+    id: string
+    icon: string
+    title: any
+    shortDescription: any
+    definition?: any
+    mustHaveLanguage?: boolean
+    hideFromOverview?: boolean
+    keywords?: any[]
+}
+
+export default class LayoutConfig implements LayoutInformation {
     public static readonly defaultSocialImage = "assets/SocialImage.png"
     public readonly id: string
     public readonly credits?: string
@@ -82,10 +97,12 @@ export default class LayoutConfig {
         this.credits = json.credits
         this.language = json.mustHaveLanguage ?? Object.keys(json.title)
         this.usedImages = Array.from(
-            new ExtractImages(official, undefined).convertStrict(
-                json,
-                "while extracting the images of " + json.id + " " + context ?? ""
-            )
+            new ExtractImages(official, undefined)
+                .convertStrict(
+                    json,
+                    "while extracting the images of " + json.id + " " + context ?? ""
+                )
+                .map((i) => i.path)
         ).sort()
         {
             if (typeof json.title === "string") {
@@ -237,13 +254,11 @@ export default class LayoutConfig {
     }
 
     public missingTranslations(): {
-        completeness: Map<string, number>
         untranslated: Map<string, string[]>
         total: number
     } {
         const layout = this
         let total = 0
-        const completeness = new Map<string, number>()
         const untranslated = new Map<string, string[]>()
 
         Utils.WalkObject(
@@ -259,18 +274,26 @@ export default class LayoutConfig {
                 }
 
                 total++
-                used_languages.languages.forEach((ln) => {
+                LanguageUtils.usedLanguagesSorted.forEach((ln) => {
                     const trans = translation.translations
                     if (trans["*"] !== undefined) {
+                        return
+                    }
+                    if (translation.context.indexOf(":") < 0) {
                         return
                     }
                     if (trans[ln] === undefined) {
                         if (!untranslated.has(ln)) {
                             untranslated.set(ln, [])
                         }
-                        untranslated.get(ln).push(translation.context)
-                    } else {
-                        completeness.set(ln, 1 + (completeness.get(ln) ?? 0))
+                        untranslated
+                            .get(ln)
+                            .push(
+                                translation.context.replace(
+                                    /^note_import_[a-zA-Z0-9_]*/,
+                                    "note_import"
+                                )
+                            )
                     }
                 })
             },
@@ -282,7 +305,7 @@ export default class LayoutConfig {
             }
         )
 
-        return { completeness, untranslated, total }
+        return { untranslated, total }
     }
     public getMatchingLayer(tags: any): LayerConfig | undefined {
         if (tags === undefined) {

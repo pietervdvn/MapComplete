@@ -6,6 +6,7 @@ import { BBox } from "../../Logic/BBox"
 import Loc from "../../Models/Loc"
 import Hotkeys from "../Base/Hotkeys"
 import Translations from "../i18n/Translations"
+import Constants from "../../Models/Constants"
 
 /**
  * Displays an icon depending on the state of the geolocation.
@@ -20,6 +21,9 @@ export class GeolocationControl extends VariableUiElement {
         }
     ) {
         const lastClick = new UIEventSource<Date>(undefined)
+        lastClick.addCallbackD((date) => {
+            geolocationHandler.geolocationState.requestMoment.setData(date)
+        })
         const lastClickWithinThreeSecs = lastClick.map((lastClick) => {
             if (lastClick === undefined) {
                 return false
@@ -27,9 +31,19 @@ export class GeolocationControl extends VariableUiElement {
             const timeDiff = (new Date().getTime() - lastClick.getTime()) / 1000
             return timeDiff <= 3
         })
-        const geolocationState = geolocationHandler.geolocationState
+        const lastRequestWithinTimeout = geolocationHandler.geolocationState.requestMoment.map(
+            (date) => {
+                if (date === undefined) {
+                    return false
+                }
+                const timeDiff = (new Date().getTime() - date.getTime()) / 1000
+                console.log("Timediff", timeDiff)
+                return timeDiff <= Constants.zoomToLocationTimeout
+            }
+        )
+        const geolocationState = geolocationHandler?.geolocationState
         super(
-            geolocationState.permission.map(
+            geolocationState?.permission?.map(
                 (permission) => {
                     if (permission === "denied") {
                         return Svg.location_refused_svg()
@@ -43,9 +57,10 @@ export class GeolocationControl extends VariableUiElement {
                             return Svg.location_empty_svg()
                         }
                         // Position not yet found, but permission is either requested or granted: we spin to indicate activity
-                        const icon = !geolocationHandler.mapHasMoved.data
-                            ? Svg.location_svg()
-                            : Svg.location_empty_svg()
+                        const icon =
+                            !geolocationHandler.mapHasMoved.data || lastRequestWithinTimeout.data
+                                ? Svg.location_svg()
+                                : Svg.location_empty_svg()
                         return icon
                             .SetClass("cursor-wait")
                             .SetStyle("animation: spin 4s linear infinite;")
@@ -65,6 +80,7 @@ export class GeolocationControl extends VariableUiElement {
                     geolocationState.isLocked,
                     geolocationHandler.mapHasMoved,
                     lastClickWithinThreeSecs,
+                    lastRequestWithinTimeout,
                 ]
             )
         )
@@ -74,6 +90,8 @@ export class GeolocationControl extends VariableUiElement {
                 geolocationState.permission.data !== "granted" &&
                 geolocationState.currentGPSLocation.data === undefined
             ) {
+                lastClick.setData(new Date())
+                geolocationState.requestMoment.setData(new Date())
                 await geolocationState.requestPermission()
             }
 
@@ -85,6 +103,7 @@ export class GeolocationControl extends VariableUiElement {
 
             if (geolocationState.currentGPSLocation.data === undefined) {
                 // No location is known yet, not much we can do
+                lastClick.setData(new Date())
                 return
             }
 
@@ -123,6 +142,13 @@ export class GeolocationControl extends VariableUiElement {
             window.setTimeout(() => {
                 if (lastClickWithinThreeSecs.data) {
                     lastClick.ping()
+                }
+            }, 500)
+        })
+        geolocationHandler.geolocationState.requestMoment.addCallbackAndRunD((_) => {
+            window.setTimeout(() => {
+                if (lastRequestWithinTimeout.data) {
+                    geolocationHandler.geolocationState.requestMoment.ping()
                 }
             }, 500)
         })

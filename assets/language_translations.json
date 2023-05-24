@@ -63,6 +63,7 @@
   "abq": {
     "ca": "abazí",
     "cs": "abazština",
+    "da": "abazinsk",
     "de": "Abasinisch",
     "en": "Abaza",
     "eo": "abaza lingvo",
@@ -210,6 +211,28 @@
       ]
     }
   },
+  "ajp": {
+    "ca": "àrab llevantí",
+    "cs": "levantská arabština",
+    "de": "levantinisches Arabisch",
+    "en": "Levantine Arabic",
+    "eo": "Levantenia araba dialekto",
+    "es": "árabe levantino",
+    "fr": "arabe levantin",
+    "id": "Arab Levantin",
+    "it": "lingue arabe levantine",
+    "ja": "アラビア語レバント方言",
+    "nl": "Levantijns Arabisch",
+    "pl": "dialekty syryjsko-palestyńskie języka arabskiego",
+    "pt": "Árabe levantino",
+    "ru": "Левантийский диалект арабского языка",
+    "sv": "Nordlevantinsk arabiska",
+    "_meta": {
+      "dir": [
+        "right-to-left"
+      ]
+    }
+  },
   "ak": {
     "ca": "àkan",
     "cs": "akanština",
@@ -219,7 +242,7 @@
     "es": "lenguas akánicas",
     "fi": "akanin kieli",
     "fr": "akan",
-    "gl": "Lingua akán",
+    "gl": "Lingua akan",
     "hu": "akan",
     "it": "akan",
     "ja": "アカン語",
@@ -333,7 +356,7 @@
     }
   },
   "alt": {
-    "ca": "altai meridional",
+    "ca": "altaic meridional",
     "de": "Südaltaisch",
     "en": "Altai",
     "eo": "sudaltaja lingvo",
@@ -341,6 +364,7 @@
     "gl": "Lingua altai meridional",
     "it": "lingua altai meridionale",
     "ja": "南アルタイ語",
+    "nb_NO": "Søraltaisk",
     "nl": "Zuid-Altajs",
     "ru": "aлтайский язык",
     "zh_Hant": "南阿爾泰語",
@@ -436,7 +460,7 @@
     }
   },
   "aoc": {
-    "ca": "Pemon",
+    "ca": "arekuna",
     "de": "Pemón",
     "en": "Pemon",
     "eo": "pemona lingvo",
@@ -452,6 +476,28 @@
     "_meta": {
       "dir": [
         "left-to-right"
+      ]
+    }
+  },
+  "apc": {
+    "ca": "àrab llevantí",
+    "cs": "levantská arabština",
+    "de": "levantinisches Arabisch",
+    "en": "Levantine Arabic",
+    "eo": "Levantenia araba dialekto",
+    "es": "árabe levantino",
+    "fr": "arabe levantin",
+    "id": "Arab Levantin",
+    "it": "lingue arabe levantine",
+    "ja": "アラビア語レバント方言",
+    "nl": "Levantijns Arabisch",
+    "pl": "dialekty syryjsko-palestyńskie języka arabskiego",
+    "pt": "Árabe levantino",
+    "ru": "Левантийский диалект арабского языка",
+    "sv": "Nordlevantinsk arabiska",
+    "_meta": {
+      "dir": [
+        "right-to-left"
       ]
     }
   },
@@ -476,7 +522,7 @@
     "pt": "árabe",
     "pt_BR": "árabe",
     "ru": "арабский язык",
-    "sl": "Arabščina",
+    "sl": "arabščina",
     "sv": "arabiska",
     "zh_Hans": "阿拉伯语",
     "zh_Hant": "阿拉伯語",
@@ -657,7 +703,7 @@
     "de": "American Sign Language",
     "en": "American Sign Language",
     "eo": "usona signolingvo",
-    "es": "lengua de señas americana",
+    "es": "lengua de señas estadounidense",
     "fi": "amerikkalainen viittomakieli",
     "fr": "langue des signes américaine",
     "gl": "Lingua de signos americana",
@@ -717,7 +763,7 @@
     "es": "atikamekw",
     "fi": "Atikamekw",
     "fr": "atikamekw",
-    "gl": "atikamekw",
+    "gl": "Lingua atikamekw",
     "it": "lingua atikamekw",
     "ja": "アティカメク語",
     "nb_NO": "atikamekw",
@@ -736,7 +782,7 @@
     "ca": "àvar",
     "cs": "avarština",
     "de": "Awarisch",
-    "en": "Avaric",
+    "en": "Avar",
     "eo": "avara lingvo",
     "es": "ávaro",
     "fi": "Avaarin kieli",
@@ -978,14 +1024,14 @@
     "cs": "Batak Toba",
     "da": "Batak Toba",
     "de": "Toba Batak",
-    "en": "Toba Batak",
+    "en": "Batak Toba",
     "eo": "Batak Toba",
     "es": "Batak Toba",
     "fi": "Batak Toba",
     "fr": "batak toba",
     "gl": "Lingua toba batak",
     "hu": "Batak Toba",
-    "id": "Batak Toba",
+    "id": "Bahasa Batak Toba",
     "it": "lingua batak toba",
     "ja": "バタク・トバ語",
     "nb_NO": "Batak Toba",
@@ -1006,6 +1052,7 @@
     "de": "West Coast Bajau",
     "en": "West Coast Bajau",
     "fr": "bajau de la côte occidentale",
+    "nb_NO": "vestkystbajau",
     "_meta": {
       "dir": [
         "left-to-right"
@@ -1032,6 +1079,28 @@
       "dir": [
         "right-to-left",
         "left-to-right"
+      ]
+    }
+  },
+  "bfi": {
+    "cs": "britský znakový jazyk",
+    "de": "Britische Gebärdensprache",
+    "en": "British Sign Language",
+    "eo": "brita signolingvo",
+    "es": "Lengua de señas británica",
+    "fi": "brittiläinen viittomakieli",
+    "fr": "langue des signes britannique",
+    "id": "Bahasa Isyarat Britania",
+    "it": "lingua dei segni britannica",
+    "ja": "イギリス手話",
+    "nl": "Britse gebarentaal",
+    "pl": "brytyjski język migowy",
+    "pt": "língua de sinais britânica",
+    "ru": "британский жестовый язык",
+    "sv": "brittiskt teckenspråk",
+    "_meta": {
+      "dir": [
+        "vertical left-to-right"
       ]
     }
   },
@@ -1118,6 +1187,35 @@
       ]
     }
   },
+  "bho": {
+    "ca": "bhojpuri",
+    "cs": "bhódžpurština",
+    "da": "Bhojpuri",
+    "de": "Bhojpuri",
+    "en": "Bhojpuri",
+    "eo": "bhojpura lingvo",
+    "es": "Idioma bopurí",
+    "fi": "Bhodžpurin kieli",
+    "fr": "bhodjpouri",
+    "gl": "Lingua bhojpuri",
+    "hu": "bhódzspurí",
+    "id": "Bahasa Bhojpuri",
+    "it": "bhojpuri",
+    "ja": "ボージュプリー語",
+    "nb_NO": "Bhojpuri",
+    "nl": "Bhojpuri",
+    "pl": "język bhodźpuri",
+    "pt": "Língua bhojpuri",
+    "ru": "бходжпури",
+    "sv": "bhojpuri",
+    "zh_Hans": "博杰普尔语",
+    "zh_Hant": "博杰普爾語",
+    "_meta": {
+      "dir": [
+        "left-to-right"
+      ]
+    }
+  },
   "bi": {
     "ca": "bislama",
     "cs": "bislamština",
@@ -1172,7 +1270,7 @@
     }
   },
   "bm": {
-    "ca": "bambara",
+    "ca": "bàmbara",
     "cs": "bambarština",
     "da": "Bambara",
     "de": "Bambara",
@@ -1281,7 +1379,7 @@
     }
   },
   "bpy": {
-    "ca": "Bishnupriya manipuri",
+    "ca": "bishnupriya manipuri",
     "cs": "Bišnuprijskomanipurština",
     "de": "Bishnupriya Manipuri",
     "en": "Bishnupriya Manipuri",
@@ -1309,9 +1407,9 @@
   },
   "bqi": {
     "de": "Bachtiarisch",
-    "en": "Bakhtiari",
+    "en": "Bakhtiari-Hakhamanesh",
     "fr": "bakhtiari",
-    "it": "dialetto bakhtiari",
+    "it": "dialetto Bakhtiari-Hakhamanesh",
     "ja": "バフティヤーリー語",
     "nl": "Bachtiarisch",
     "pl": "Język bachtiarski",
@@ -1378,6 +1476,25 @@
       ]
     }
   },
+  "bsa": {
+    "ca": "abinomn",
+    "cs": "abinomn",
+    "en": "Abinomn",
+    "es": "Idioma abinomn",
+    "fi": "Abinomn",
+    "fr": "abinomn",
+    "gl": "Lingua abinomn",
+    "id": "Abinomn",
+    "ja": "アビノムン語",
+    "nl": "Abinomn",
+    "pl": "Język abinomn",
+    "ru": "абиномн",
+    "_meta": {
+      "dir": [
+        "left-to-right"
+      ]
+    }
+  },
   "bsk": {
     "ca": "buruixaski",
     "cs": "Burušaskí",
@@ -1402,7 +1519,6 @@
     "zh_Hant": "布魯夏斯基語",
     "_meta": {
       "dir": [
-        "right-to-left",
         "left-to-right"
       ]
     }
@@ -1423,9 +1539,10 @@
     }
   },
   "btm": {
+    "cs": "mandailing",
     "en": "Mandailing",
     "fr": "batak mandailing",
-    "id": "Bahasa Mandailing",
+    "id": "Mandailing",
     "ja": "バタク・マンダイリン語",
     "pl": "język batak mandailing",
     "zh_Hans": "曼代灵语",
@@ -1549,6 +1666,7 @@
   },
   "cak": {
     "ca": "kaqtxikel",
+    "cs": "kakčikelština",
     "de": "Cakchiquel-Sprache",
     "en": "Kaqchikel",
     "eo": "kakĉikela lingvo",
@@ -1676,7 +1794,7 @@
     "eo": "cebua lingvo",
     "es": "cebuano",
     "fi": "Cebun kieli",
-    "fr": "cebuano",
+    "fr": "cebouan",
     "gl": "Lingua cebuana",
     "hu": "szebuano",
     "id": "bahasa Sugbo",
@@ -1855,10 +1973,11 @@
   "ckt": {
     "ca": "txuktxi",
     "cs": "čukština",
+    "da": "tjuktjisk",
     "de": "Tschuktschisch",
     "en": "Chukchi",
     "eo": "Ĉukĉa lingvo",
-    "es": "chucoto",
+    "es": "Idioma chucoto",
     "fi": "Tšuktšin kieli",
     "fr": "tchouktche",
     "gl": "Lingua Chukoto",
@@ -1919,21 +2038,6 @@
       ]
     }
   },
-  "cps": {
-    "da": "kapisansk",
-    "en": "Capiznon",
-    "es": "idioma capizano",
-    "fi": "Capiznon",
-    "fr": "capiznon",
-    "ja": "カピス語",
-    "nl": "Capiznon",
-    "pt": "Língua capiznon",
-    "_meta": {
-      "dir": [
-        "left-to-right"
-      ]
-    }
-  },
   "cpx": {
     "de": "Pu-Xian",
     "en": "Pu-Xian Min",
@@ -1943,6 +2047,8 @@
     "pl": "Język puxian",
     "pt": "Língua putian",
     "ru": "Пусяньский язык",
+    "zh_Hans": "莆仙语",
+    "zh_Hant": "莆仙語",
     "_meta": {
       "dir": [
         "top-to-bottom"
@@ -2167,6 +2273,7 @@
     "ru": "валлийский язык",
     "sl": "Valižanščina",
     "sv": "kymriska",
+    "zh_Hans": "威尔士语",
     "zh_Hant": "威爾士語",
     "_meta": {
       "dir": [
@@ -2186,7 +2293,7 @@
     "fr": "danois",
     "gl": "lingua dinamarquesa",
     "hu": "dán",
-    "id": "Bahasa Denmark",
+    "id": "bahasa Denmark",
     "it": "danese",
     "ja": "デンマーク語",
     "nb_NO": "dansk",
@@ -2211,16 +2318,19 @@
   "dag": {
     "ca": "dagbani",
     "cs": "dagbani",
-    "da": "Dagbani",
+    "da": "dagbani",
     "de": "Dagbani",
     "en": "Dagbani",
     "eo": "Dagbania lingvo",
     "es": "dagbani",
+    "fi": "Dagbanin kieli",
     "fr": "dagbani",
     "gl": "Lingua dagbani",
     "it": "Dagbani",
     "ja": "ダバニ語",
+    "nb_NO": "dagbani",
     "nl": "Dagbani",
+    "pl": "język dagbani",
     "pt": "Língua dagbani",
     "pt_BR": "Língua dagbani",
     "ru": "дагбани",
@@ -2469,7 +2579,7 @@
     "en": "Dzongkha",
     "eo": "dzonka lingvo",
     "es": "dzongkha",
-    "fi": "Dzongkhan kieli",
+    "fi": "dzongkha",
     "fr": "dzongkha",
     "gl": "Lingua dzongkha",
     "hu": "dzongkha",
@@ -2503,7 +2613,7 @@
     "eo": "evea lingvo",
     "es": "ewé",
     "fi": "ewen kieli",
-    "fr": "ewe",
+    "fr": "ewé",
     "gl": "Lingua ewe",
     "hu": "eve",
     "id": "Bahasa Ewe",
@@ -2524,17 +2634,19 @@
   "efi": {
     "ca": "efik",
     "de": "Efik",
-    "en": "Efik",
+    "en": "Ibibio",
     "eo": "efika lingvo",
     "es": "Idioma efik",
     "fi": "Efik",
     "fr": "efik",
+    "gl": "Lingua efik",
     "id": "Bahasa Efik",
     "it": "lingua Efik",
     "ja": "エフィク語",
     "nb_NO": "Efik",
     "nl": "Efik",
     "pt": "Língua efik",
+    "zh_Hant": "艾菲克語",
     "_meta": {
       "dir": [
         "left-to-right"
@@ -2588,11 +2700,10 @@
     "sl": "grščina",
     "sv": "nygrekiska",
     "zh_Hans": "希腊语",
-    "zh_Hant": "現代希臘語",
+    "zh_Hant": "希臘語",
     "_meta": {
       "countries": [
-        "CY",
-        "GR"
+        "CY"
       ],
       "dir": [
         "left-to-right"
@@ -2611,7 +2722,7 @@
     "fr": "anglais",
     "gl": "lingua inglesa",
     "hu": "angol",
-    "id": "Inggris",
+    "id": "bahasa Inggris",
     "it": "inglese",
     "ja": "英語",
     "nb_NO": "engelsk",
@@ -2665,6 +2776,7 @@
         "NZ",
         "PG",
         "PH",
+        "PK",
         "PW",
         "RW",
         "SB",
@@ -2810,7 +2922,7 @@
     "fr": "estonien",
     "gl": "lingua estoniana",
     "hu": "észt",
-    "id": "Esti",
+    "id": "bahasa Esti",
     "it": "estone",
     "ja": "エストニア語",
     "nb_NO": "estisk",
@@ -2989,7 +3101,7 @@
     "fr": "finnois",
     "gl": "finés",
     "hu": "finn",
-    "id": "Finlandia",
+    "id": "bahasa Suomi",
     "it": "finlandese",
     "ja": "フィンランド語",
     "nb_NO": "finsk",
@@ -3020,10 +3132,10 @@
     "eo": "filipina lingvo",
     "es": "idioma filipino",
     "fi": "filipino",
-    "fr": "Philippin",
+    "fr": "philippin",
     "gl": "Lingua filipina",
     "hu": "filippínó",
-    "id": "Bahasa Filipino",
+    "id": "bahasa Filipino",
     "it": "filippino",
     "ja": "フィリピン語",
     "nb_NO": "filippinsk",
@@ -3035,14 +3147,16 @@
     "sv": "Filipino",
     "zh_Hant": "菲律賓語",
     "_meta": {
-      "dir": []
+      "dir": [
+        "left-to-right"
+      ]
     }
   },
   "fit": {
     "ca": "meänkieli",
     "cs": "Meänkieli",
     "da": "Tornedalsfinsk",
-    "de": "Meänkieli",
+    "de": "Tornedalfinnisch",
     "en": "Meänkieli",
     "eo": "tornival-finna lingvo",
     "es": "meänkieli",
@@ -3166,7 +3280,7 @@
     "fr": "féroïen",
     "gl": "lingua feroesa",
     "hu": "feröeri",
-    "id": "Bahasa Faroe",
+    "id": "bahasa Faroe",
     "it": "faroese",
     "ja": "フェロー語",
     "nb_NO": "færøysk",
@@ -3176,6 +3290,7 @@
     "ru": "фарерский язык",
     "sl": "Ferščina",
     "sv": "färöiska",
+    "zh_Hans": "法罗语",
     "_meta": {
       "dir": [
         "left-to-right"
@@ -3219,7 +3334,7 @@
     "fr": "français",
     "gl": "lingua francesa",
     "hu": "francia",
-    "id": "Prancis",
+    "id": "bahasa Prancis",
     "it": "francese",
     "ja": "フランス語",
     "nb_NO": "fransk",
@@ -3295,7 +3410,7 @@
     "ca": "francoprovençal",
     "cs": "franko-provensálština",
     "de": "Frankoprovenzalisch",
-    "en": "Franco-Provençal",
+    "en": "Arpitan",
     "eo": "arpitana lingvo",
     "es": "franco-provenzal",
     "fi": "Arpitaani",
@@ -3734,6 +3849,34 @@
       ]
     }
   },
+  "gsg": {
+    "ca": "llengua de signes alemanya",
+    "da": "Tysk tegnsprog",
+    "de": "Deutsche Gebärdensprache",
+    "en": "German Sign Language",
+    "eo": "germana signolingvo",
+    "es": "lengua de señas alemana",
+    "fi": "saksalainen viittomakieli",
+    "fr": "langue des signes allemande",
+    "hu": "német jelnyelv",
+    "id": "Bahasa Isyarat Jerman",
+    "it": "lingua dei segni tedesca",
+    "ja": "ドイツ手話",
+    "nb_NO": "tysk tegnspråk",
+    "nl": "Duitse gebarentaal",
+    "pl": "niemiecki język migowy",
+    "pt": "língua gestual alemã",
+    "pt_BR": "língua de sinais alemã",
+    "ru": "германский жестовый язык",
+    "sv": "tyskt teckenspråk",
+    "zh_Hans": "德国手语",
+    "zh_Hant": "德國手語",
+    "_meta": {
+      "dir": [
+        "vertical left-to-right"
+      ]
+    }
+  },
   "gsw-fr": {
     "ca": "alsacià",
     "cs": "alsaština",
@@ -3745,7 +3888,7 @@
     "fr": "alsacien",
     "gl": "Lingua alsaciana",
     "hu": "elzászi",
-    "id": "Bahasa Elsass",
+    "id": "bahasa Elsass",
     "it": "dialetto alsaziano",
     "ja": "アルザス語",
     "nb_NO": "elsassisk",
@@ -3814,9 +3957,11 @@
     "ca": "gun",
     "de": "Gun",
     "en": "Gun",
+    "es": "Idioma Gungbe",
     "fr": "gun-gbe",
     "gl": "Lingua gun",
     "ja": "グン語",
+    "nb_NO": "gun",
     "ru": "гун",
     "_meta": {
       "dir": [
@@ -3874,6 +4019,7 @@
     "pt_BR": "língua hauçá",
     "ru": "хауса",
     "sv": "hausa",
+    "zh_Hant": "豪薩語",
     "_meta": {
       "dir": [
         "right-to-left",
@@ -3986,7 +4132,7 @@
     "pt": "hebraico",
     "pt_BR": "hebraico",
     "ru": "иврит",
-    "sl": "Hebrejščina",
+    "sl": "hebrejščina",
     "sv": "hebreiska",
     "zh_Hans": "希伯来语",
     "zh_Hant": "希伯來語",
@@ -4060,7 +4206,7 @@
     }
   },
   "hil": {
-    "ca": "híligaynon",
+    "ca": "ilongo",
     "da": "hiligajisk",
     "de": "Hiligaynon",
     "en": "Hiligaynon",
@@ -4080,6 +4226,27 @@
     "_meta": {
       "dir": [
         "left-to-right"
+      ]
+    }
+  },
+  "hno": {
+    "ca": "hindko",
+    "da": "hindko",
+    "de": "Hindko",
+    "en": "Hindko",
+    "fi": "Hindko",
+    "fr": "hindko",
+    "id": "Bahasa Hindko",
+    "it": "Hindko",
+    "ja": "ヒンドコ語",
+    "nb_NO": "hindko",
+    "ru": "хиндко",
+    "sv": "hindko",
+    "zh_Hans": "印德科语",
+    "zh_Hant": "印德科語",
+    "_meta": {
+      "dir": [
+        "right-to-left"
       ]
     }
   },
@@ -4139,6 +4306,7 @@
     "eo": "Sudriogranda germana dialekto",
     "es": "Riograndenser Hunsrückisch",
     "fr": "hunsrik",
+    "gl": "Hunsrik",
     "it": "lingua hunsrik",
     "ja": "フンスリュック方言",
     "nl": "Riograndenser Hunsrückisch",
@@ -4238,6 +4406,7 @@
     "ru": "венгерский язык",
     "sl": "madžarščina",
     "sv": "ungerska",
+    "zh_Hans": "匈牙利语",
     "zh_Hant": "匈牙利語",
     "_meta": {
       "countries": [
@@ -4509,7 +4678,7 @@
     "fr": "islandais",
     "gl": "lingua islandesa",
     "hu": "izlandi",
-    "id": "Bahasa Islan",
+    "id": "bahasa Islandia",
     "it": "islandese",
     "ja": "アイスランド語",
     "nb_NO": "islandsk",
@@ -4543,7 +4712,7 @@
     "fr": "italien",
     "gl": "lingua italiana",
     "hu": "olasz",
-    "id": "Italia",
+    "id": "bahasa Italia",
     "it": "italiano",
     "ja": "イタリア語",
     "nb_NO": "italiensk",
@@ -4605,7 +4774,7 @@
     "de": "Japanisch",
     "en": "Japanese",
     "eo": "japana lingvo",
-    "es": "Japonés",
+    "es": "japonés",
     "fi": "japani",
     "fr": "japonais",
     "gl": "lingua xaponesa",
@@ -4816,6 +4985,8 @@
     "pt": "Língua cabardiana",
     "ru": "кабардино-черкесский язык",
     "sv": "kabardinska",
+    "zh_Hans": "卡巴尔达语",
+    "zh_Hant": "卡巴爾達語",
     "_meta": {
       "dir": [
         "left-to-right",
@@ -4851,7 +5022,7 @@
     "en": "Tyap",
     "es": "Katab",
     "fi": "Tyap",
-    "fr": "Katab",
+    "fr": "katab",
     "gl": "Lingua tyap",
     "ja": "カタブ語",
     "nl": "Tyap",
@@ -4864,6 +5035,7 @@
   "kea": {
     "ca": "crioll capverdià",
     "cs": "Kapverdská kreolština",
+    "da": "Kap Verde-kreol",
     "de": "Kapverdisches Kreol",
     "en": "Cape Verdean Creole",
     "eo": "Kabo-Verda kreolo",
@@ -4877,7 +5049,7 @@
     "nl": "Kaapverdisch Creools",
     "pl": "Język kreolski Wysp Zielonego Przylądka",
     "pt": "crioulo cabo-verdiano",
-    "ru": "Кабувердьяну",
+    "ru": "кабувердьяну",
     "sv": "krioli",
     "_meta": {
       "dir": [
@@ -4914,6 +5086,7 @@
   },
   "kha": {
     "ca": "khasi",
+    "cs": "khasiština",
     "de": "Khasi",
     "en": "Khasi",
     "eo": "kasia lingvo",
@@ -5003,7 +5176,7 @@
     "en": "Kwanyama",
     "eo": "kuanjama lingvo",
     "es": "idioma kuanyama",
-    "fr": "kuanyama",
+    "fr": "kwanyama",
     "gl": "Lingua kwanyama",
     "hu": "kvanyama",
     "it": "kwanyama",
@@ -5015,6 +5188,22 @@
     "sv": "kwanyama",
     "zh_Hans": "夸摩马语",
     "zh_Hant": "誇摩馬語",
+    "_meta": {
+      "dir": [
+        "left-to-right"
+      ]
+    }
+  },
+  "kjg": {
+    "de": "Khmu",
+    "en": "Khmu",
+    "es": "Idioma khmu",
+    "fr": "khmu",
+    "ja": "クム語",
+    "pl": "Język khmu",
+    "pt": "Língua Khmu",
+    "ru": "Кхму (язык)",
+    "sv": "Kammu",
     "_meta": {
       "dir": [
         "left-to-right"
@@ -5071,7 +5260,7 @@
     }
   },
   "kl": {
-    "ca": "grenlandès",
+    "ca": "Groenlandès",
     "cs": "grónština",
     "da": "grønlandsk",
     "de": "Grönländisch",
@@ -5257,7 +5446,7 @@
     "de": "Karatschai-Balkarisch",
     "en": "Karachay-Balkar",
     "eo": "karaĉaja-balkara lingvo",
-    "es": "idioma karachayo-bálkaro",
+    "es": "idioma karachái-bálkaro",
     "fi": "Karatšai-balkaarin kieli",
     "fr": "karatchaï-balkar",
     "gl": "Lingua carachaio-bálcara",
@@ -5271,6 +5460,8 @@
     "pt": "Língua carachaio-bálcara",
     "ru": "карачаево-балкарский язык",
     "sv": "karatjajbalkariska",
+    "zh_Hans": "卡拉恰伊－巴尔卡尔语",
+    "zh_Hant": "卡拉恰伊－巴爾卡爾語",
     "_meta": {
       "dir": [
         "left-to-right"
@@ -5278,6 +5469,7 @@
     }
   },
   "kri": {
+    "ca": "Crioll serralleonès",
     "cs": "Krio",
     "de": "Krio",
     "en": "Krio",
@@ -5304,10 +5496,10 @@
   "krj": {
     "da": "harajansk",
     "de": "Kinaray-a",
-    "en": "Kinaray-a",
+    "en": "Karay-a",
     "es": "harayo",
     "fi": "Kinaray-a",
-    "fr": "kinaray-a",
+    "fr": "harayen",
     "id": "bahasa Karaik’a",
     "it": "kinaray-a",
     "ja": "キナライア語",
@@ -5334,7 +5526,7 @@
     "fr": "carélien",
     "gl": "Lingua carelia",
     "hu": "karjalai",
-    "id": "Bahasa Karelia",
+    "id": "bahasa Karelia",
     "it": "careliano",
     "ja": "カレリア語",
     "nb_NO": "karelsk",
@@ -5409,7 +5601,7 @@
     "ca": "kurd",
     "cs": "kurdština",
     "da": "kurdisk",
-    "de": "Kurmandschi",
+    "de": "Kurdisch",
     "en": "Kurdish",
     "eo": "kurda lingvo",
     "es": "kurdo",
@@ -5426,10 +5618,10 @@
     "pt": "língua curda",
     "pt_BR": "língua curda",
     "ru": "курдские языки",
-    "sl": "Severnokurdski jezik",
-    "sv": "nordkurdiska",
+    "sl": "Kurdski jeziki",
+    "sv": "kurdiska",
     "zh_Hans": "库尔德语",
-    "zh_Hant": "北庫德語",
+    "zh_Hant": "庫德語",
     "_meta": {
       "countries": [
         "IQ"
@@ -5513,6 +5705,34 @@
       ]
     }
   },
+  "kvr": {
+    "ca": "kerinci",
+    "cs": "Kerinci",
+    "da": "Kerinci",
+    "de": "Kerinci",
+    "en": "Kerinci",
+    "eo": "Kerinci",
+    "es": "Kerinci",
+    "fi": "Kerinci",
+    "fr": "kerinci",
+    "gl": "Kerinci",
+    "hu": "Kerinci",
+    "id": "Bahasa Kerinci",
+    "it": "kerinci",
+    "ja": "クリンチ語",
+    "nb_NO": "Kerinci",
+    "nl": "Kerinci",
+    "pl": "język kerinci",
+    "pt": "Kerinci",
+    "pt_BR": "Kerinci",
+    "sl": "Kerinci",
+    "sv": "Kerinci",
+    "_meta": {
+      "dir": [
+        "left-to-right"
+      ]
+    }
+  },
   "kw": {
     "ca": "còrnic",
     "cs": "kornština",
@@ -5564,6 +5784,7 @@
     "pt": "quirguiz",
     "pt_BR": "Língua quirguiz",
     "ru": "киргизский язык",
+    "sl": "Kirgiščina",
     "sv": "kirgiziska",
     "zh_Hans": "柯尔克孜语",
     "zh_Hant": "吉爾吉斯語",
@@ -5611,7 +5832,7 @@
     "en": "Rangi",
     "eo": "rangia lingvo",
     "fi": "Lango",
-    "fr": "langi",
+    "fr": "Langi (langue de Tanzanie)",
     "ja": "ランギ語",
     "nb_NO": "Rangi",
     "nl": "Langi",
@@ -5628,7 +5849,7 @@
     "da": "Letzeburgsk",
     "de": "Luxemburgisch",
     "en": "Luxembourgish",
-    "eo": "luksemburga lingvo",
+    "eo": "leceburga lingvo",
     "es": "luxemburgués",
     "fi": "luxemburg",
     "fr": "luxembourgeois",
@@ -5656,6 +5877,7 @@
   },
   "lez": {
     "ca": "lesguià",
+    "cs": "lezginština",
     "de": "Lesgisch",
     "en": "Lezgian",
     "eo": "lezga lingvo",
@@ -5913,7 +6135,7 @@
     "fr": "lao",
     "gl": "Lingua laosiana",
     "hu": "lao",
-    "id": "Bahasa Laos",
+    "id": "bahasa Laos",
     "it": "lao",
     "ja": "ラーオ語",
     "nb_NO": "laotisk",
@@ -5988,7 +6210,7 @@
     "fr": "lituanien",
     "gl": "lingua lituana",
     "hu": "litván",
-    "id": "Bahasa Lituavi",
+    "id": "bahasa Lituavi",
     "it": "lituano",
     "ja": "リトアニア語",
     "nb_NO": "litauisk",
@@ -6151,6 +6373,7 @@
   },
   "mad": {
     "ca": "madurès",
+    "cs": "madurština",
     "de": "Madura",
     "en": "Madurese",
     "eo": "madura lingvo",
@@ -6228,6 +6451,7 @@
     }
   },
   "mfe": {
+    "cs": "mauricijština",
     "de": "Morisyen",
     "en": "Mauritian Creole",
     "eo": "maŭricia kreola lingvo",
@@ -6269,6 +6493,7 @@
     "pt_BR": "Língua malgaxe",
     "ru": "малагасийский язык",
     "sv": "malagassiska",
+    "zh_Hant": "馬達加斯加語",
     "_meta": {
       "countries": [
         "MG"
@@ -6386,6 +6611,7 @@
   },
   "min": {
     "ca": "minangkabau",
+    "cs": "Minangkabauština",
     "de": "Minangkabauisch",
     "en": "Minangkabau",
     "eo": "minankabaŭa lingvo",
@@ -6488,7 +6714,7 @@
     "fr": "mongol",
     "gl": "Lingua mongol",
     "hu": "mongol",
-    "id": "Bahasa Mongol",
+    "id": "bahasa Mongol",
     "it": "mongolo",
     "ja": "モンゴル語",
     "nb_NO": "mongolsk",
@@ -6498,6 +6724,7 @@
     "pt_BR": "Língua mongol",
     "ru": "монгольский язык",
     "sv": "mongoliska",
+    "zh_Hans": "蒙古语",
     "zh_Hant": "蒙古語",
     "_meta": {
       "countries": [
@@ -6529,6 +6756,8 @@
     "pt": "Língua manchu",
     "ru": "маньчжурский язык",
     "sv": "manchuiska",
+    "zh_Hans": "满语",
+    "zh_Hant": "滿語",
     "_meta": {
       "dir": [
         "vertical left-to-right"
@@ -6537,6 +6766,7 @@
   },
   "mni": {
     "ca": "manipuri",
+    "cs": "manipurština",
     "de": "Meitei",
     "en": "Meitei",
     "eo": "manipura lingvo",
@@ -6661,7 +6891,7 @@
     }
   },
   "mrh": {
-    "ca": "lakher",
+    "ca": "Lakher",
     "en": "Mara",
     "fr": "mara",
     "ja": "マラ語",
@@ -6758,6 +6988,24 @@
       "countries": [
         "MT"
       ],
+      "dir": [
+        "left-to-right"
+      ]
+    }
+  },
+  "mui": {
+    "de": "Musi",
+    "en": "Musi",
+    "fi": "Musi",
+    "fr": "musi",
+    "id": "Musi",
+    "ja": "ムシ語",
+    "nb_NO": "Musi (språk)",
+    "nl": "Moesi",
+    "pl": "język musi",
+    "pt": "Musi",
+    "ru": "Муси",
+    "_meta": {
       "dir": [
         "left-to-right"
       ]
@@ -7134,7 +7382,7 @@
     }
   },
   "ng": {
-    "cs": "Ndonga",
+    "cs": "ndondština",
     "de": "Ndonga",
     "en": "Ndonga",
     "eo": "ndonga lingvo",
@@ -7215,7 +7463,7 @@
     "fr": "néerlandais",
     "gl": "lingua neerlandesa",
     "hu": "holland",
-    "id": "Belanda",
+    "id": "bahasa Belanda",
     "it": "olandese",
     "ja": "オランダ語",
     "nb_NO": "nederlandsk",
@@ -7283,7 +7531,7 @@
     "fr": "norvégien",
     "gl": "lingua norueguesa",
     "hu": "norvég",
-    "id": "Norwegia",
+    "id": "bahasa Norwegia",
     "it": "norvegese",
     "ja": "ノルウェー語",
     "nb_NO": "norsk",
@@ -7294,6 +7542,7 @@
     "ru": "норвежский язык",
     "sl": "Norveščina",
     "sv": "norska",
+    "zh_Hans": "挪威语",
     "zh_Hant": "挪威語",
     "_meta": {
       "countries": [
@@ -7406,6 +7655,7 @@
     "es": "guernseyés",
     "fi": "Guernésiais",
     "fr": "guernesiais",
+    "id": "bahasa Guernésiais",
     "it": "dialetto guernesiais",
     "ja": "ガーンジー島方言",
     "nb_NO": "guernésiais",
@@ -7423,6 +7673,7 @@
   },
   "nso": {
     "ca": "pedi",
+    "cs": "severní sotho",
     "de": "Nord-Sotho",
     "en": "Northern Sotho",
     "eo": "peda lingvo",
@@ -7441,6 +7692,7 @@
     "pt_BR": "língua soto do norte",
     "ru": "северный сото",
     "sv": "nordsotho",
+    "zh_Hant": "北索托語",
     "_meta": {
       "dir": [
         "left-to-right"
@@ -7550,6 +7802,7 @@
   },
   "oj": {
     "ca": "idioma ojibwa",
+    "cs": "odžibvejština",
     "da": "Ojibwa",
     "de": "Ojibwe",
     "en": "Ojibwe",
@@ -7725,6 +7978,7 @@
     "da": "elvdalsk",
     "de": "Älvdalisch",
     "en": "Elfdalian",
+    "eo": "Elfdalia lingvo",
     "es": "idioma dalecarliano",
     "fi": "älvdalska",
     "fr": "dalécarlien",
@@ -7744,40 +7998,45 @@
     }
   },
   "pa_PK": {
-    "ca": "panjabi",
-    "cs": "paňdžábština",
-    "da": "Punjabi",
-    "de": "Panjabi",
-    "en": "Punjabi",
-    "eo": "panĝaba lingvo",
-    "es": "panyabí",
-    "fi": "punjabin kieli",
-    "fr": "pendjabi",
-    "gl": "lingua punjabi",
-    "hu": "pandzsábi",
-    "id": "Bahasa Punjab",
-    "it": "punjabi",
-    "ja": "パンジャーブ語",
-    "nb_NO": "panjabi",
-    "nl": "Punjabi",
-    "pl": "język pendżabski",
-    "pt": "Língua panjabi",
-    "ru": "панджаби",
-    "sv": "punjabi",
-    "zh_Hant": "旁遮普語",
+    "ca": "panjabi (Shahmukhi)",
+    "cs": "paňdžábština (Shahmukhi)",
+    "da": "Punjabi (Shahmukhi)",
+    "de": "Panjabi (Shahmukhi)",
+    "en": "Punjabi (Shahmukhi)",
+    "eo": "panĝaba lingvo (Ŝahmuĥi-ortografio)",
+    "es": "panyabí (alfabeto shahmuji)",
+    "fi": "punjabin kieli (Shahmukhi)",
+    "fr": "pendjabi (Shahmukhi)",
+    "gl": "lingua punjabi (Shahmukhi)",
+    "hu": "pandzsábi (Shahmukhi)",
+    "id": "Bahasa Punjab (Shahmukhi)",
+    "it": "punjabi (Shahmukhī)",
+    "ja": "パンジャーブ語 (シャームキー文字)",
+    "nb_NO": "panjabi (Shahmukhi)",
+    "nl": "Punjabi (Shahmukhī alphabet)",
+    "pl": "język pendżabski (szachmukhi)",
+    "pt": "Língua panjabi (Shahmukhi)",
+    "ru": "панджаби (Шахмукхи)",
+    "sv": "punjabi (Shahmukhi)",
+    "zh_Hans": "旁遮普语 (Shahmukhi)",
+    "zh_Hant": "旁遮普語 (Shahmukhi)",
     "_meta": {
-      "dir": []
+      "dir": [
+        "right-to-left",
+        "left-to-right"
+      ]
     }
   },
   "pag": {
     "ca": "pangasinan",
+    "cs": "pangasinan",
     "da": "pangasinansk",
     "de": "Pangasinensisch",
     "en": "Pangasinan",
     "eo": "pangasina lingvo",
     "es": "pangasinense",
     "fi": "Pangasinanin kieli",
-    "fr": "pangasinan",
+    "fr": "pangassinais",
     "gl": "Lingua pangasinesa",
     "hu": "pangasinan",
     "id": "bahasa Pangasinan",
@@ -7816,6 +8075,7 @@
     "pl": "Język papiamento",
     "pt": "Papiamento",
     "ru": "папьяменто",
+    "sl": "Papiamento",
     "sv": "papiamento",
     "zh_Hans": "帕皮阿门托语",
     "zh_Hant": "帕皮阿門托語",
@@ -8032,6 +8292,23 @@
       ]
     }
   },
+  "pnb": {
+    "de": "Westliches Panjabi",
+    "en": "Western Punjabi",
+    "eo": "okcidenta panĝaba lingvo",
+    "fr": "pendjabi de l'Ouest",
+    "it": "lingua punjabi occidentale",
+    "ja": "西パンジャーブ語",
+    "nl": "West-Punjabi",
+    "pl": "Język zachodniopendżabski",
+    "ru": "западный панджаби",
+    "sv": "västpunjabi",
+    "_meta": {
+      "dir": [
+        "right-to-left"
+      ]
+    }
+  },
   "pnt": {
     "ca": "pòntic",
     "cs": "Pontština",
@@ -8109,6 +8386,7 @@
     "sl": "paštunščina",
     "sv": "pashto",
     "zh_Hans": "普什图语",
+    "zh_Hant": "普什圖語",
     "_meta": {
       "countries": [
         "AF"
@@ -8185,7 +8463,9 @@
     "zh_Hans": "巴西葡萄牙语",
     "zh_Hant": "巴西葡萄牙語",
     "_meta": {
-      "dir": []
+      "dir": [
+        "left-to-right"
+      ]
     }
   },
   "qu": {
@@ -8278,6 +8558,7 @@
     "es": "romañol",
     "fi": "romagnolin kieli",
     "fr": "romagnol",
+    "id": "bahasa Romagnol",
     "it": "romagnolo",
     "ja": "ロマーニャ語",
     "nl": "Romagnools",
@@ -8315,15 +8596,17 @@
     }
   },
   "rki": {
+    "ca": "arakanès",
     "en": "Arakanese",
     "fr": "arakanais",
+    "gl": "Lingua arakanesa",
     "id": "Bahasa Arakan",
     "ja": "ラカイン語",
     "pl": "Język arakański",
     "pt": "Língua arracanesa",
     "ru": "Араканский язык",
-    "zh_Hans": "阿拉干语",
-    "zh_Hant": "阿拉幹語",
+    "zh_Hans": "若开语",
+    "zh_Hant": "若開語",
     "_meta": {
       "dir": [
         "left-to-right"
@@ -8392,7 +8675,7 @@
     "id": "Bahasa Romani",
     "it": "romaní",
     "ja": "ロマ語",
-    "nb_NO": "romanes",
+    "nb_NO": "romanés",
     "nl": "Romani",
     "pl": "język romski",
     "pt": "Romani",
@@ -8528,7 +8811,7 @@
     "pt": "Língua rusyn",
     "pt_BR": "Língua rusyn",
     "ru": "русинский язык",
-    "sl": "Rusinščina",
+    "sl": "rusinščina",
     "sv": "rusinska",
     "_meta": {
       "dir": [
@@ -8601,18 +8884,19 @@
     "eo": "okinava lingvo",
     "es": "okinawense",
     "fi": "Okinawan kieli",
-    "fr": "okinawanais",
+    "fr": "okinawaïen",
     "gl": "Lingua okinawana",
-    "hu": "okinavai",
+    "hu": "okinavai nyelv",
     "id": "Bahasa Okinawa",
     "it": "lingua di Okinawa",
-    "ja": "沖縄方言",
+    "ja": "沖縄語",
     "nb_NO": "Okinawa",
     "nl": "Okinawaans",
     "pl": "Język okinawski",
     "pt": "okinawano",
     "ru": "Окинавский язык",
     "sv": "okinawianska",
+    "zh_Hans": "冲绳语",
     "zh_Hant": "沖繩語",
     "_meta": {
       "dir": [
@@ -8625,7 +8909,7 @@
     "ca": "iacut",
     "cs": "jakutština",
     "de": "Jakutisch",
-    "en": "Sakha",
+    "en": "Yakut",
     "eo": "jakuta lingvo",
     "es": "Idioma yakuto",
     "fi": "jakuutti",
@@ -8649,6 +8933,7 @@
   },
   "sat": {
     "ca": "santali",
+    "cs": "santálština",
     "da": "Santali",
     "de": "Santali",
     "en": "Santali",
@@ -8763,35 +9048,6 @@
       ]
     }
   },
-  "sd": {
-    "ca": "sindhi",
-    "cs": "sindhština",
-    "da": "sindhi",
-    "de": "Sindhi",
-    "en": "Sindhi",
-    "eo": "sinda lingvo",
-    "es": "sindhi",
-    "fi": "sindhi",
-    "fr": "sindhi",
-    "gl": "Lingua sindhi",
-    "hu": "szindhi",
-    "id": "Bahasa Sindhi",
-    "it": "sindhi",
-    "ja": "シンド語",
-    "nb_NO": "sindhi",
-    "nl": "Sindhi",
-    "pl": "sindhi",
-    "pt": "língua sindi",
-    "pt_BR": "Língua sindi",
-    "ru": "синдхи",
-    "sv": "sindhi",
-    "_meta": {
-      "dir": [
-        "right-to-left",
-        "left-to-right"
-      ]
-    }
-  },
   "sdc": {
     "ca": "sasserès",
     "de": "Sassaresisch",
@@ -8875,6 +9131,7 @@
     "en": "Seri",
     "es": "seri",
     "fr": "seri",
+    "gl": "Lingua seri",
     "id": "Bahasa Seri",
     "it": "seri",
     "ja": "セリ語",
@@ -9018,7 +9275,7 @@
     "eo": "sinhala lingvo",
     "es": "cingalés",
     "fi": "Sinhali",
-    "fr": "cingalais",
+    "fr": "singhalais",
     "gl": "Lingua cingalesa",
     "hu": "szingaléz",
     "id": "Sinhala",
@@ -9341,34 +9598,6 @@
       ]
     }
   },
-  "sms": {
-    "ca": "sami skolt",
-    "cs": "skoltská sámština",
-    "de": "Skoltsamisch",
-    "en": "Skolt Sami",
-    "eo": "skolt-samea lingvo",
-    "es": "sami skolt",
-    "fi": "koltansaame",
-    "fr": "same skolt",
-    "gl": "Lingua saami de Skolt",
-    "hu": "kolta számi",
-    "it": "lingua sami skolt",
-    "ja": "スコルト・サーミ語",
-    "nb_NO": "skoltesamisk",
-    "nl": "Skolt-Samisch",
-    "pl": "język skolt",
-    "pt": "kíngua sami de Skolt",
-    "pt_BR": "Língua sami de Skolt",
-    "ru": "колтта-саамский язык",
-    "sv": "skoltsamiska",
-    "zh_Hans": "斯科尔特萨米语",
-    "zh_Hant": "斯科爾特薩米語",
-    "_meta": {
-      "dir": [
-        "left-to-right"
-      ]
-    }
-  },
   "sn": {
     "ca": "xona",
     "cs": "šonština",
@@ -9597,6 +9826,30 @@
       ]
     }
   },
+  "sth": {
+    "ca": "shelta",
+    "cs": "Shelta",
+    "de": "Shelta",
+    "en": "Shelta",
+    "es": "shelta",
+    "fi": "Shelta",
+    "fr": "shelta",
+    "gl": "Shelta",
+    "id": "bahasa Shelta",
+    "it": "lingua shelta",
+    "ja": "シェルタ語",
+    "nb_NO": "Shelta",
+    "nl": "Shelta",
+    "pl": "Język shelta",
+    "pt": "Língua shelta",
+    "ru": "шелта",
+    "sv": "Shelta",
+    "_meta": {
+      "dir": [
+        "left-to-right"
+      ]
+    }
+  },
   "stq": {
     "ca": "frisó oriental",
     "cs": "sater-fríština",
@@ -9637,7 +9890,7 @@
     "fr": "soundanais",
     "gl": "Sunda",
     "hu": "szundai",
-    "id": "Sunda",
+    "id": "Bahasa Sunda",
     "it": "sunda",
     "ja": "スンダ語",
     "nb_NO": "sundanesisk",
@@ -9666,7 +9919,7 @@
     "fr": "suédois",
     "gl": "lingua sueca",
     "hu": "svéd",
-    "id": "Swedia",
+    "id": "bahasa Swedia",
     "it": "svedese",
     "ja": "スウェーデン語",
     "nb_NO": "svensk",
@@ -9726,6 +9979,25 @@
       ]
     }
   },
+  "syl": {
+    "de": "Sylheti",
+    "en": "Sylheti",
+    "es": "Idioma sylheti",
+    "fi": "Sylheti",
+    "fr": "sylheti",
+    "gl": "Lingua sylheti",
+    "it": "lingua silotica",
+    "ja": "シレット語",
+    "nb_NO": "Sylhetti",
+    "nl": "taal van Sylhet",
+    "ru": "силхетский язык",
+    "sv": "Syloti",
+    "_meta": {
+      "dir": [
+        "left-to-right"
+      ]
+    }
+  },
   "szl": {
     "ca": "silesià",
     "cs": "slezština",
@@ -9755,6 +10027,7 @@
     }
   },
   "szy": {
+    "ca": "sakizaya",
     "cs": "sakizayština",
     "en": "Sakizaya",
     "fr": "sakizaya",
@@ -9812,7 +10085,7 @@
     "de": "Atayal",
     "en": "Atayal",
     "es": "lengua atayal",
-    "fi": "Atayalin kieli",
+    "fi": "atayalin kieli",
     "fr": "atayal",
     "gl": "Lingua atayal",
     "hu": "atajal",
@@ -9876,6 +10149,7 @@
     "pt_BR": "Língua telugu",
     "ru": "телугу",
     "sv": "telugu",
+    "zh_Hans": "泰卢固语",
     "zh_Hant": "泰盧固語",
     "_meta": {
       "dir": [
@@ -9931,6 +10205,7 @@
     "pt": "Língua tadjique",
     "pt_BR": "Língua tadjique",
     "ru": "таджикский язык",
+    "sl": "Tadžiščina",
     "sv": "tadzjikiska",
     "_meta": {
       "countries": [
@@ -9965,6 +10240,7 @@
     "ru": "тайский язык",
     "sl": "tajščina",
     "sv": "thai",
+    "zh_Hans": "泰语",
     "zh_Hant": "泰語",
     "_meta": {
       "countries": [
@@ -9997,6 +10273,7 @@
     "ru": "тигринья",
     "sl": "Tigrajščina",
     "sv": "tigrinska",
+    "zh_Hant": "提格利尼亞語",
     "_meta": {
       "countries": [
         "ER"
@@ -10050,16 +10327,16 @@
     "es": "tagalo",
     "fi": "tagalog",
     "fr": "tagalog",
-    "gl": "Lingua tagala",
+    "gl": "lingua tagala",
     "hu": "tagalog",
-    "id": "Bahasa Tagalog",
+    "id": "bahasa Tagalog",
     "it": "tagalog",
     "ja": "タガログ語",
     "nb_NO": "tagalog",
     "nl": "Tagalog",
     "pl": "język tagalski",
     "pt": "língua tagalo",
-    "pt_BR": "Língua tagalo",
+    "pt_BR": "língua tagalo",
     "ru": "тагальский язык",
     "sv": "tagalog",
     "zh_Hant": "他加祿語",
@@ -10396,7 +10673,7 @@
     "en": "Tahitian",
     "eo": "tahitia lingvo",
     "es": "tahitiano",
-    "fi": "tahitin kieli",
+    "fi": "tahiti",
     "fr": "tahitien",
     "gl": "Lingua tahitiana",
     "hu": "tahiti",
@@ -10547,7 +10824,7 @@
     "pt": "ucraniano",
     "pt_BR": "língua ucraniana",
     "ru": "украинский язык",
-    "sl": "Ukrajinščina",
+    "sl": "ukrajinščina",
     "sv": "ukrainska",
     "zh_Hans": "乌克兰语",
     "zh_Hant": "烏克蘭語",
@@ -10630,6 +10907,7 @@
     "ru": "венда",
     "sv": "venda",
     "zh_Hans": "文达语",
+    "zh_Hant": "文達語",
     "_meta": {
       "countries": [
         "ZA",
@@ -10793,6 +11071,34 @@
     "sv": "votiska",
     "zh_Hans": "瓦佳语",
     "zh_Hant": "瓦佳語",
+    "_meta": {
+      "dir": [
+        "left-to-right"
+      ]
+    }
+  },
+  "vro": {
+    "ca": "võro",
+    "cs": "võruština",
+    "da": "Võro",
+    "de": "Võro",
+    "en": "Võro",
+    "eo": "voroa lingvo",
+    "es": "Idioma võro",
+    "fi": "võro",
+    "fr": "võro",
+    "gl": "Lingua võro",
+    "hu": "võro",
+    "id": "Bahasa Võro",
+    "it": "võro",
+    "ja": "ヴォロ語",
+    "nb_NO": "sørestisk",
+    "nl": "Võro",
+    "pl": "język võro",
+    "pt": "Língua võro",
+    "ru": "выруский диалект",
+    "sv": "võro",
+    "zh_Hans": "沃罗语",
     "_meta": {
       "dir": [
         "left-to-right"
@@ -11126,7 +11432,7 @@
     "nl": "Yapees",
     "pl": "Język yap",
     "pt": "Língua yap",
-    "ru": "Япский язык",
+    "ru": "япский язык",
     "_meta": {
       "dir": [
         "left-to-right"
@@ -11169,7 +11475,7 @@
     "da": "jiddisch",
     "de": "Jiddisch",
     "en": "Yiddish",
-    "eo": "jida lingvo",
+    "eo": "jido",
     "es": "yidis",
     "fi": "jiddiš",
     "fr": "yiddish",
@@ -11202,7 +11508,7 @@
     "es": "yoruba",
     "fi": "joruban kieli",
     "fr": "yoruba",
-    "gl": "Lingua ioruba",
+    "gl": "Lingua yoruba",
     "hu": "joruba",
     "id": "Bahasa Yoruba",
     "it": "yoruba",
@@ -11304,6 +11610,7 @@
     "pt": "Língua zhuang",
     "ru": "чжуанский язык",
     "sv": "zhuang",
+    "zh_Hans": "壮语",
     "zh_Hant": "壯語",
     "_meta": {
       "dir": [
@@ -11375,14 +11682,13 @@
     "pt": "língua chinesa",
     "pt_BR": "língua chinesa",
     "ru": "китайский язык",
-    "sl": "Kitajščina",
+    "sl": "kitajščina",
     "sv": "kinesiska",
     "zh_Hans": "中文",
     "zh_Hant": "漢語",
     "_meta": {
       "countries": [
-        "CN",
-        "TW"
+        "CN"
       ],
       "dir": [
         "left-to-right",
@@ -11439,11 +11745,14 @@
     "pl": "język chiński uproszczony",
     "pt": "chinês simplificado",
     "ru": "упрощённый китайский",
+    "sl": "poenostavljena kitajščina",
     "sv": "förenklad kinesiska",
     "zh_Hans": "简体中文",
     "zh_Hant": "簡體中文",
     "_meta": {
-      "dir": []
+      "dir": [
+        "left-to-right"
+      ]
     }
   },
   "zu": {
@@ -11488,6 +11797,7 @@
     "hu": "zuni",
     "it": "zuni",
     "ja": "ズニ語",
+    "nb_NO": "zunispråket",
     "nl": "Zuni",
     "pl": "Język zuni",
     "pt": "Língua zuni",

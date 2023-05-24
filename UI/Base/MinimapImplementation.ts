@@ -23,7 +23,7 @@ import StrayClickHandler from "../../Logic/Actors/StrayClickHandler"
  * The stray-click-hanlders adds a marker to the map if no feature was clicked.
  * Shows the given uiToShow-element in the messagebox
  */
-export class StrayClickHandlerImplementation {
+class StrayClickHandlerImplementation {
     private _lastMarker
 
     constructor(
@@ -91,6 +91,7 @@ export class StrayClickHandlerImplementation {
         })
     }
 }
+
 export default class MinimapImplementation extends BaseUIElement implements MinimapObj {
     private static _nextId = 0
     public readonly leafletMap: UIEventSource<Map>

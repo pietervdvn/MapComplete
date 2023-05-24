@@ -1,9 +1,9 @@
 import * as fs from "fs"
-import { existsSync, lstatSync, readdirSync, readFileSync } from "fs"
-import { Utils } from "../Utils"
+import {existsSync, lstatSync, readdirSync, readFileSync} from "fs"
+import {Utils} from "../Utils"
 import * as https from "https"
-import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
-import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
+import {LayoutConfigJson} from "../Models/ThemeConfig/Json/LayoutConfigJson"
+import {LayerConfigJson} from "../Models/ThemeConfig/Json/LayerConfigJson"
 import xml2js from "xml2js"
 
 export default class ScriptUtils {
@@ -37,14 +37,16 @@ export default class ScriptUtils {
         return result
     }
 
-    public static DownloadFileTo(url, targetFilePath: string): void {
-        console.log("Downloading ", url, "to", targetFilePath)
-        https.get(url, (res) => {
-            const filePath = fs.createWriteStream(targetFilePath)
-            res.pipe(filePath)
-            filePath.on("finish", () => {
-                filePath.close()
-                console.log("Download Completed")
+    public static DownloadFileTo(url, targetFilePath: string): Promise<void> {
+        ScriptUtils.erasableLog("Downloading", url, "to", targetFilePath)
+        return new Promise<void>((resolve, err) => {
+            https.get(url, (res) => {
+                const filePath = fs.createWriteStream(targetFilePath)
+                res.pipe(filePath)
+                filePath.on("finish", () => {
+                    filePath.close()
+                    resolve()
+                })
             })
         })
     }
@@ -78,13 +80,13 @@ export default class ScriptUtils {
             .filter((path) => path.indexOf("license_info.json") < 0)
             .map((path) => {
                 try {
-                    const contents = readFileSync(path, { encoding: "utf8" })
+                    const contents = readFileSync(path, {encoding: "utf8"})
                     if (contents === "") {
                         throw "The file " + path + " is empty, did you properly save?"
                     }
 
                     const parsed = JSON.parse(contents)
-                    return { parsed, path }
+                    return {parsed, path}
                 } catch (e) {
                     console.error("Could not parse file ", "./assets/layers/" + path, "due to ", e)
                     throw e
@@ -101,12 +103,12 @@ export default class ScriptUtils {
     public static getThemeFiles(): { parsed: LayoutConfigJson; path: string }[] {
         return this.getThemePaths().map((path) => {
             try {
-                const contents = readFileSync(path, { encoding: "utf8" })
+                const contents = readFileSync(path, {encoding: "utf8"})
                 if (contents === "") {
                     throw "The file " + path + " is empty, did you properly save?"
                 }
                 const parsed = JSON.parse(contents)
-                return { parsed: parsed, path: path }
+                return {parsed: parsed, path: path}
             } catch (e) {
                 console.error("Could not read file ", path, "due to ", e)
                 throw e
@@ -125,14 +127,14 @@ export default class ScriptUtils {
         if (!existsSync(path)) {
             throw "File not found: " + path
         }
-        const root = await xml2js.parseStringPromise(readFileSync(path, { encoding: "utf8" }))
+        const root = await xml2js.parseStringPromise(readFileSync(path, {encoding: "utf8"}))
         return root.svg
     }
 
     public static ReadSvgSync(path: string, callback: (svg: any) => void): any {
         xml2js.parseString(
-            readFileSync(path, { encoding: "utf8" }),
-            { async: false },
+            readFileSync(path, {encoding: "utf8"}),
+            {async: false},
             (err, root) => {
                 if (err) {
                     throw err
@@ -171,7 +173,7 @@ export default class ScriptUtils {
                         })
 
                         res.addListener("end", function () {
-                            resolve({ content: parts.join("") })
+                            resolve({content: parts.join("")})
                         })
                     }
                 )

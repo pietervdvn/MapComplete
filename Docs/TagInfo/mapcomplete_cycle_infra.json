@@ -591,12 +591,12 @@
     },
     {
       "key": "bicycle",
-      "description": "Layer 'Barriers' shows bicycle=yes with a fixed text, namely 'A cyclist can go past this.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+      "description": "Layer 'Barriers' shows bicycle=yes with a fixed text, namely 'A cyclist can go past this.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure') (This is only shown if _referencing_ways~.+)",
       "value": "yes"
     },
     {
       "key": "bicycle",
-      "description": "Layer 'Barriers' shows bicycle=no with a fixed text, namely 'A cyclist can not go past this.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure')",
+      "description": "Layer 'Barriers' shows bicycle=no with a fixed text, namely 'A cyclist can not go past this.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Bicycle infrastructure') (This is only shown if _referencing_ways~.+)",
       "value": "no"
     },
     {
@@ -656,7 +656,7 @@
     },
     {
       "key": "maxwidth:physical",
-      "description": "Layer 'Barriers' shows and asks freeform values for key 'maxwidth:physical' (in the MapComplete.osm.be theme 'Bicycle infrastructure') (This is only shown if cycle_barrier!=double&cycle_barrier!=triple)"
+      "description": "Layer 'Barriers' shows and asks freeform values for key 'maxwidth:physical' (in the MapComplete.osm.be theme 'Bicycle infrastructure') (This is only shown if cycle_barrier!=double&cycle_barrier!=triple&_referencing_ways~.+)"
     },
     {
       "key": "width:separation",

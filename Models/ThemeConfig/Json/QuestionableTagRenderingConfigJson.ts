@@ -26,7 +26,7 @@ export interface MappingConfigJson {
               /**
                * Size of the image
                */
-              class: "small" | "medium" | "large" | string
+              class?: "small" | "medium" | "large" | string
           }
 
     /**
@@ -128,6 +128,13 @@ export interface MappingConfigJson {
      * Use this sparingly
      */
     priorityIf?: TagConfigJson
+
+    /**
+     * Used for comments or to disable a validation
+     *
+     * ignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed
+     */
+    "#"?: string | "ignore-image-in-then"
 }
 
 /**
@@ -139,7 +146,13 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
      * If it turns out that this tagRendering doesn't match _any_ value, then we show this question.
      * If undefined, the question is never asked and this tagrendering is read-only
      */
-    question?: string | any
+    question?: string | Record<string, string>
+
+    /**
+     * A hint which is shown in subtle text under the question.
+     * This can give some extra information on what the answer should ook like
+     */
+    questionHint?: string | Record<string, string>
 
     /**
      * Allow freeform text input from the user

@@ -29,8 +29,35 @@
             },
             "question": "Mit welchen Münzen kann man hier bezahlen?"
         },
+        "denominations-notes": {
+            "mappings": {
+                "0": {
+                    "then": "5-Euro-Scheine werden angenommen"
+                },
+                "1": {
+                    "then": "10-Euro-Scheine werden angenommen"
+                },
+                "2": {
+                    "then": "20-Euro-Scheine werden angenommen"
+                },
+                "3": {
+                    "then": "50-Euro-Scheine werden angenommen"
+                },
+                "4": {
+                    "then": "100-Euro-Scheine werden angenommen"
+                },
+                "5": {
+                    "then": "200-Euro-Scheine werden angenommen"
+                },
+                "6": {
+                    "then": "500-Euro-Scheine werden angenommen"
+                }
+            },
+            "question": "Mit welchen Banknoten kann man hier bezahlen?"
+        },
         "description": {
-            "question": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.<br/><span style='font-size: small'>Bitte keine bereits erhobenen Informationen.</span>"
+            "question": "Gibt es noch etwas, das die vorhergehenden Fragen nicht abgedeckt haben? Hier wäre Platz dafür.",
+            "questionHint": "Bitte keine bereits erhobenen Informationen."
         },
         "dog-access": {
             "mappings": {
@@ -124,6 +151,23 @@
             },
             "question": "Auf welcher Ebene befindet sich das Objekt?",
             "render": "Das Objekt befindet sich im {level}. Geschoss"
+        },
+        "luminous_or_lit": {
+            "mappings": {
+                "0": {
+                    "then": "Das Objekt leuchtet selbst und wird von außen beleuchtet"
+                },
+                "1": {
+                    "then": "Das Objekt leuchtet selbst"
+                },
+                "2": {
+                    "then": "Das Objekt wird von außen beleuchtet, z. B. durch Scheinwerfer oder andere Lichter"
+                },
+                "3": {
+                    "then": "Das Objekt wird weder von außen beleuchtet, noch leuchtet es selbst"
+                }
+            },
+            "question": "Wird das Objekt beleuchtet oder leuchtet es selbst?"
         },
         "multilevels": {
             "override": {
@@ -261,14 +305,6 @@
                 }
             },
             "question": "Wie lautet das zugehörige Wikidata Element?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Nicht mit Wikipedia verknüpft"
-                }
-            },
-            "question": "Wie lautet der zugehörige Wikipedia Artikel?"
         }
     }
 }

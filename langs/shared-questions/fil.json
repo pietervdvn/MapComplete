@@ -1,7 +1,8 @@
 {
     "shared_questions": {
         "description": {
-            "question": "Mayroon pa bang mga bagay na nau-ugnay at hindi mo maibigay sa mga nakaraang tanong? Idagdag dito.<br/><span style='font-size: small'>Huwag ulitin ang mga nai-saad na</span>"
+            "question": "Mayroon pa bang mga bagay na nau-ugnay at hindi mo maibigay sa mga nakaraang tanong? Idagdag dito.",
+            "questionHint": "Huwag ulitin ang mga nai-saad na"
         },
         "dog-access": {
             "mappings": {
@@ -121,14 +122,6 @@
                 }
             },
             "question": "Ano ang nau-ukol na entidad sa Wikidata?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Hindi naka-ugnay sa Wikipedia"
-                }
-            },
-            "question": "Ano ang nau-ukol na partida sa Wikipedia?"
         }
     }
 }

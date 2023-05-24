@@ -7,13 +7,13 @@ import { RegexTag } from "./RegexTag"
 import SubstitutingTag from "./SubstitutingTag"
 import { Or } from "./Or"
 import { TagConfigJson } from "../../Models/ThemeConfig/Json/TagConfigJson"
-import * as key_counts from "../../assets/key_totals.json"
+import key_counts from "../../assets/key_totals.json"
 
 type Tags = Record<string, string>
 export type UploadableTag = Tag | SubstitutingTag | And
 
 export class TagUtils {
-    private static keyCounts: { keys: any; tags: any } = key_counts["default"] ?? key_counts
+    private static keyCounts: { keys: any; tags: any } = key_counts
     private static comparators: [string, (a: number, b: number) => boolean][] = [
         ["<=", (a, b) => a <= b],
         [">=", (a, b) => a >= b],

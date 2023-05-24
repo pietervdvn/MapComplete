@@ -52,10 +52,6 @@ export class TextFieldDef {
         }
     }
 
-    protectedisValid(s: string, _: (() => string) | undefined): boolean {
-        return true
-    }
-
     public getFeedback(s: string): Translation {
         const tr = Translations.t.validation[this.name]
         if (tr !== undefined) {
@@ -82,6 +78,9 @@ export class TextFieldDef {
         }
 
         options["textArea"] = this.name === "text"
+        if (this.name === "text") {
+            options["htmlType"] = "area"
+        }
 
         const self = this
 
@@ -258,11 +257,11 @@ class WikidataTextField extends TextFieldDef {
                                     [
                                         [
                                             "removePrefixes",
-                                            "remove these snippets of text from the start of the passed string to search. This is either a list OR a hash of languages to a list",
+                                            "remove these snippets of text from the start of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes",
                                         ],
                                         [
                                             "removePostfixes",
-                                            "remove these snippets of text from the end of the passed string to search. This is either a list OR a hash of languages to a list",
+                                            "remove these snippets of text from the end of the passed string to search. This is either a list OR a hash of languages to a list. The individual strings are interpreted as case ignoring regexes.",
                                         ],
                                         [
                                             "instanceOf",
@@ -295,7 +294,8 @@ class WikidataTextField extends TextFieldDef {
                 "square",
                 "plaza",
             ],
-             "nl": ["straat","plein","pad","weg",laan"]
+             "nl": ["straat","plein","pad","weg",laan"],
+             "fr":["route (de|de la|de l'| de le)"]
              },
 
             "#": "Remove streets and parks from the search results:"
@@ -361,29 +361,34 @@ Another example is to search for species and trees:
         if (searchFor !== undefined && options !== undefined) {
             const prefixes = <string[] | Record<string, string[]>>options["removePrefixes"] ?? []
             const postfixes = <string[] | Record<string, string[]>>options["removePostfixes"] ?? []
+            const defaultValueCandidate = Locale.language.map((lg) => {
+                const prefixesUnrwapped: RegExp[] = (
+                    Array.isArray(prefixes) ? prefixes : prefixes[lg] ?? []
+                ).map((s) => new RegExp("^" + s, "i"))
+                const postfixesUnwrapped: RegExp[] = (
+                    Array.isArray(postfixes) ? postfixes : postfixes[lg] ?? []
+                ).map((s) => new RegExp(s + "$", "i"))
+                let clipped = searchFor
 
-            Locale.language
-                .map((lg) => {
-                    const prefixesUnrwapped: string[] = prefixes[lg] ?? prefixes
-                    const postfixesUnwrapped: string[] = postfixes[lg] ?? postfixes
-                    let clipped = searchFor
-
-                    for (const postfix of postfixesUnwrapped) {
-                        if (searchFor.endsWith(postfix)) {
-                            clipped = searchFor.substring(0, searchFor.length - postfix.length)
-                            break
-                        }
+                for (const postfix of postfixesUnwrapped) {
+                    const match = searchFor.match(postfix)
+                    if (match !== null) {
+                        clipped = searchFor.substring(0, searchFor.length - match[0].length)
+                        break
                     }
+                }
 
-                    for (const prefix of prefixesUnrwapped) {
-                        if (searchFor.startsWith(prefix)) {
-                            clipped = searchFor.substring(prefix.length)
-                            break
-                        }
+                for (const prefix of prefixesUnrwapped) {
+                    const match = searchFor.match(prefix)
+                    if (match !== null) {
+                        clipped = searchFor.substring(match[0].length)
+                        break
                     }
-                    return clipped
-                })
-                .addCallbackAndRun((clipped) => searchForValue.setData(clipped))
+                }
+                return clipped
+            })
+
+            defaultValueCandidate.addCallbackAndRun((clipped) => searchForValue.setData(clipped))
         }
 
         let instanceOf: number[] = Utils.NoNull(
@@ -421,7 +426,7 @@ class OpeningHoursTextField extends TextFieldDef {
                                     [
                                         [
                                             "prefix",
-                                            "Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse",
+                                            "Piece of text that will always be added to the front of the generated opening hours. If the OSM-data does not start with this, it will fail to parse.",
                                         ],
                                         [
                                             "postfix",
@@ -584,7 +589,7 @@ class StringTextField extends TextFieldDef {
 class TextTextField extends TextFieldDef {
     declare inputmode: "text"
     constructor() {
-        super("text", "A longer piece of text")
+        super("text", "A longer piece of text. Uses an textArea instead of a textField")
     }
 }
 

@@ -1,7 +1,6 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import { Utils } from "../../../Utils"
 import Wikidata from "../../../Logic/Web/Wikidata"
+import { describe, expect, it } from "vitest"
 
 const Q140 = {
     entities: {
@@ -9464,21 +9463,20 @@ Utils.injectJsonDownloadForTests(
 describe("Wikidata", () => {
     it("should download Q140 (lion)", async () => {
         const wikidata = await Wikidata.LoadWikidataEntryAsync("Q140")
-        expect(wikidata.claims.get("P18")).length(2)
+        expect(wikidata.claims.get("P18")).toHaveLength(2)
     })
 
     it("should download wikidata", async () => {
         const wdata = await Wikidata.LoadWikidataEntryAsync(14517013)
-        expect(wdata.wikisites).to.have.key("nl")
-        expect(wdata.wikisites.get("nl")).eq("Vredesmolen")
+        expect(wdata.wikisites.get("nl")).toBe("Vredesmolen")
     })
 
     it("should download a lexeme", async () => {
         const response = await Wikidata.LoadWikidataEntryAsync(
             "https://www.wikidata.org/wiki/Lexeme:L614072"
         )
-        expect(response).not.undefined
-        expect(response.labels).to.have.key("nl")
-        expect(response.labels).to.contains("Groen")
+
+        expect(response).toBeDefined()
+        expect(response.labels).toEqual(new Map<string, string>([["nl", "Groen"]]))
     })
 })

@@ -108,7 +108,10 @@ class SingleLayerSelectionButton extends Toggle {
             // Is the previous layer still valid? If so, we don't bother to switch
             if (
                 previousLayer.data.feature === null ||
-                GeoOperations.inside(locationControl.data, previousLayer.data.feature)
+                GeoOperations.inside(
+                    [locationControl.data.lon, locationControl.data.lat],
+                    previousLayer.data.feature
+                )
             ) {
                 return
             }

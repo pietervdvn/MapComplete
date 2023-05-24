@@ -3,18 +3,24 @@
   "name": {
     "en": "Railway Platforms",
     "de": "Bahnsteige",
-    "nl": "Treinperrons"
+    "nl": "Treinperrons",
+    "fr": "Quais de gare",
+    "ca": "Andanes ferroviàries"
   },
   "description": {
     "en": "Find every platform in the station, and the train routes that use them.",
     "de": "Finden Sie alle Bahnsteige im Bahnhof und die Zugstrecken, die sie benutzen.",
-    "nl": "Vind elk perron in het station, en de routes die ze gebruiken."
+    "nl": "Vind elk perron in het station, en de routes die ze gebruiken.",
+    "fr": "Trouvez tous les quais dans la gare, et les lignes ferroviaires qui les utilisent.",
+    "ca": "Trobeu totes les andanes de l'estació i les rutes de tren que les fan servir."
   },
   "title": {
     "render": {
       "en": "Platform",
       "de": "Bahnsteig",
-      "nl": "Perron"
+      "nl": "Perron",
+      "fr": "Quai",
+      "ca": "Andana"
     },
     "mappings": [
       {
@@ -22,7 +28,9 @@
         "then": {
           "en": "Platform {ref}",
           "de": "Bahnsteig {ref}",
-          "nl": "Perron {ref}"
+          "nl": "Perron {ref}",
+          "fr": "Quai {ref}",
+          "ca": "Andana {ref}"
         }
       }
     ]
@@ -41,7 +49,9 @@
       "question": {
         "en": "What is the number for this platform?",
         "de": "Wie lautet die Nummer dieses Bahnsteigs?",
-        "nl": "Wat is het nummer van dit perron?"
+        "nl": "Wat is het nummer van dit perron?",
+        "fr": "Quel est le numéro de ce quai ?",
+        "ca": "Quin és el número d'aquesta andana?"
       },
       "freeform": {
         "key": "ref",
@@ -49,13 +59,17 @@
         "placeholder": {
           "en": "Platform number",
           "de": "Bahnsteignummer",
-          "nl": "Perronnummer"
+          "nl": "Perronnummer",
+          "fr": "Numéro de quai",
+          "ca": "Nombre d'andana"
         }
       },
       "render": {
         "en": "Platform {ref}",
         "de": "Bahnsteig {ref}",
-        "nl": "Perron {ref}"
+        "nl": "Perron {ref}",
+        "fr": "Quai {ref}",
+        "ca": "Andana {ref}"
       }
     },
     "level"

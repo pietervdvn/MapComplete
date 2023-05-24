@@ -29,8 +29,35 @@
             },
             "question": "Met welke munten kan je hier betalen?"
         },
+        "denominations-notes": {
+            "mappings": {
+                "0": {
+                    "then": "Biljetten van 5 euro worden geaccepteerd"
+                },
+                "1": {
+                    "then": "Biljetten van 10 euro worden geaccepteerd"
+                },
+                "2": {
+                    "then": "Biljetten van 20 euro worden geaccepteerd"
+                },
+                "3": {
+                    "then": "Biljetten van 50 euro worden geaccepteerd"
+                },
+                "4": {
+                    "then": "Biljetten van 100 euro worden geaccepteerd"
+                },
+                "5": {
+                    "then": "Biljetten van 200 euro worden geaccepteerd"
+                },
+                "6": {
+                    "then": "Biljetten van 500 euro worden geaccepteerd"
+                }
+            },
+            "question": "Met welke bankbiljetten kan je hier betalen?"
+        },
         "description": {
-            "question": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.<br/><span style='font-size: small'>Herhaal geen antwoorden die je reeds gaf</span>"
+            "question": "Zijn er nog andere relevante zaken die je niet in de bovenstaande vragen kwijt kon? Vul ze hier in.",
+            "questionHint": "Herhaal geen antwoorden die je reeds gaf"
         },
         "dog-access": {
             "mappings": {
@@ -261,14 +288,6 @@
                 }
             },
             "question": "Welk Wikidata-item komt overeen met dit object?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Nog geen Wikipedia-artikel bekend"
-                }
-            },
-            "question": "Welk Wikipedia-artikel beschrijft dit object?"
         }
     }
 }

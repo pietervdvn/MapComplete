@@ -127,10 +127,10 @@
         "tagRenderings": {
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Schienale: Sì"
                     },
-                    "1": {
+                    "2": {
                         "then": "Schienale: No"
                     }
                 },
@@ -307,63 +307,63 @@
         }
     },
     "bike_cafe": {
-        "name": "Caffè in bici",
+        "name": "Cafè per ciclisti",
         "presets": {
             "0": {
-                "title": "una caffè in bici"
+                "title": "un cafè per ciclisti"
             }
         },
         "tagRenderings": {
             "bike_cafe-bike-pump": {
                 "mappings": {
                     "0": {
-                        "then": "Questo caffè in bici offre una pompa per bici liberamente utilizzabile"
+                        "then": "Questo cafè per ciclisti offre una pompa per bici liberamente utilizzabile"
                     },
                     "1": {
-                        "then": "Questo caffè in bici non offre una pompa per bici liberamente utilizzabile"
+                        "then": "Questo cafè per ciclisti non offre una pompa per bici liberamente utilizzabile"
                     }
                 },
-                "question": "Questo caffè in bici offre una pompa per bici che chiunque può utilizzare?"
+                "question": "Questo cafè per ciclisti offre una pompa per bici che chiunque può utilizzare?"
             },
             "bike_cafe-name": {
-                "question": "Qual è il nome di questo caffè in bici?",
-                "render": "Questo caffè in bici è chiamato {name}"
+                "question": "Come si chiama questo cafè per ciclisti?",
+                "render": "Questo cafè per ciclisti si chiama {name}"
             },
             "bike_cafe-repair-service": {
                 "mappings": {
                     "0": {
-                        "then": "Questo caffè in bici ripara le bici"
+                        "then": "Questo cafè per ciclisti ripara le bici"
                     },
                     "1": {
-                        "then": "Questo caffè in bici non ripara le bici"
+                        "then": "Questo cafè per ciclisti non ripara le bici"
                     }
                 },
-                "question": "Questo caffè in bici ripara le bici?"
+                "question": "Questo cafè per ciclisti ripara le bici?"
             },
             "bike_cafe-repair-tools": {
                 "mappings": {
                     "0": {
-                        "then": "Questo caffè in bici fornisce degli attrezzi per la riparazione fai-da-te"
+                        "then": "Questo cafè per ciclisti fornisce degli attrezzi per la riparazione fai-da-te"
                     },
                     "1": {
-                        "then": "Questo caffè in bici non fornisce degli attrezzi per la riparazione fai-da-te"
+                        "then": "Questo cafè per ciclisti non fornisce degli attrezzi per la riparazione fai-da-te"
                     }
                 },
                 "question": "Ci sono degli strumenti per riparare la propria bicicletta?"
             },
             "opening_hours": {
                 "override": {
-                    "question": "Quando è aperto questo caffè in bici?"
+                    "question": "Quando è aperto questo cafè per ciclisti?"
                 }
             }
         },
         "title": {
             "mappings": {
                 "0": {
-                    "then": "Caffè in bici <i>{name}</i>"
+                    "then": "Cafè per ciclisti <i>{name}</i>"
                 }
             },
-            "render": "Caffè in bici"
+            "render": "Cafè per ciclisti"
         }
     },
     "bike_cleaning": {
@@ -626,7 +626,23 @@
     },
     "bike_shop": {
         "description": "Un negozio che vende specificatamente biciclette o articoli similari",
-        "name": "Venditore/riparatore bici",
+        "filter": {
+            "1": {
+                "options": {
+                    "0": {
+                        "question": "Vende biciclette usate"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Offre riparazioni fai da te"
+                    }
+                }
+            }
+        },
+        "name": "Venditore/riparatore di biciclette",
         "presets": {
             "0": {
                 "title": "una negozio/riparatore di bici"
@@ -717,13 +733,13 @@
             "bike_repair_tools-service": {
                 "mappings": {
                     "0": {
-                        "then": "Questo negozio offre degli attrezzi per la riparazione fai-da-te"
+                        "then": "Questo negozio offre degli attrezzi per la riparazione fai da te"
                     },
                     "1": {
-                        "then": "Questo negozio non offre degli attrezzi per la riparazione fai-da-te"
+                        "then": "Questo negozio non offre degli attrezzi per la riparazione fai da te"
                     },
                     "2": {
-                        "then": "Gli attrezzi per la riparazione fai-da-te sono disponibili solamente se hai acquistato/noleggiato la bici nel negozio"
+                        "then": "Gli attrezzi per la riparazione fai da te sono disponibili solamente se hai acquistato/noleggiato la bici nel negozio"
                     }
                 },
                 "question": "Sono presenti degli attrezzi per riparare la propria bici?"
@@ -732,8 +748,8 @@
                 "render": "Questo negozio è specializzato nella vendita di {shop} ed effettua attività relative alle biciclette"
             },
             "bike_shop-name": {
-                "question": "Qual è il nome di questo negozio di biciclette?",
-                "render": "Questo negozio di biciclette è chiamato {name}"
+                "question": "Come si chiama questo negozio di biciclette?",
+                "render": "Questo negozio di biciclette si chiama {name}"
             }
         },
         "title": {
@@ -745,16 +761,16 @@
                     "then": "Noleggio di biciclette <i>{name}</i>"
                 },
                 "3": {
-                    "then": "Riparazione biciclette <i>{name}</i>"
+                    "then": "Riparazione di biciclette <i>{name}</i>"
                 },
                 "4": {
                     "then": "Negozio di biciclette <i>{name}</i>"
                 },
                 "5": {
-                    "then": "Venditore/riparatore bici <i>{name}</i>"
+                    "then": "Venditore/riparatore di biciclette <i>{name}</i>"
                 }
             },
-            "render": "Venditore/riparatore bici"
+            "render": "Venditore/riparatore di biciclette"
         }
     },
     "bike_themed_object": {
@@ -839,7 +855,8 @@
                         "then": "Sono presenti {climbing:traditional} vie di arrampicata tradizionale"
                     }
                 },
-                "question": "È possibile arrampicarsi in maniera tradizionale qua (usando attrezzi propri, ad es. dadi)?"
+                "question": "È possibile arrampicarsi in maniera tradizionale qua?",
+                "questionHint": "usando attrezzi propri, ad es. dadi"
             },
             "website": {
                 "question": "C’è un sito web (anche non ufficiale) con qualche informazione in più (ad es. topografie)?"
@@ -1318,7 +1335,8 @@
                         "then": "Nessun nome scritto sulla bici"
                     }
                 },
-                "question": "A chi è dedicata questa bici fantasma?<span class='question-subtext'><br/>Rispetta la privacy (compila solo il nome se questo è stato ampiamente pubblicato o se è scritto sulla bici). Decidi se è il caso di non inserire il cognome.</span>",
+                "question": "A chi è dedicata questa bici fantasma?",
+                "questionHint": "Rispetta la privacy (compila solo il nome se questo è stato ampiamente pubblicato o se è scritto sulla bici). Decidi se è il caso di non inserire il cognome.",
                 "render": "In ricordo di {name}"
             },
             "ghost_bike-source": {
@@ -1352,12 +1370,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "Il colore dell’idrante è sconosciuto."
-                    },
-                    "1": {
                         "then": "Il colore dell’idrante è giallo."
                     },
-                    "2": {
+                    "1": {
                         "then": "L'idrante è rosso."
                     }
                 },
@@ -1381,18 +1396,15 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "Il tipo di idrante è sconosciuto."
-                    },
-                    "1": {
                         "then": "Soprasuolo."
                     },
-                    "2": {
+                    "1": {
                         "then": "Tubo."
                     },
-                    "3": {
+                    "2": {
                         "then": "A muro."
                     },
-                    "4": {
+                    "3": {
                         "then": "Sottosuolo."
                     }
                 },
@@ -1462,7 +1474,8 @@
     "nature_reserve": {
         "tagRenderings": {
             "Curator": {
-                "question": "Chi è il curatore di questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)",
+                "question": "Chi è il curatore di questa riserva naturale?",
+                "questionHint": "Rispetta la privacy (scrivi il nome solo se questo è noto pubblicamente)",
                 "render": "{curator} è il curatore di questa riserva naturale"
             },
             "Dogs?": {
@@ -1480,14 +1493,16 @@
                 "question": "I cani sono ammessi in questa riserva naturale?"
             },
             "Email": {
-                "question": "Qual è l’indirizzo email a cui scrivere per fare domande o segnalare problemi su questa riserva naturale?<br/><span class='subtle'>Rispetta la privacy (compila l’indirizzo email personale solo se è stato reso pubblico)",
+                "question": "Qual è l’indirizzo email a cui scrivere per fare domande o segnalare problemi su questa riserva naturale?",
+                "questionHint": "Rispetta la privacy (compila l’indirizzo email personale solo se è stato reso pubblico)",
                 "render": "<a href='mailto:{email}' target='_blank'>{email}</a>"
             },
             "Surface area": {
                 "render": "Area: {_surface:ha} ha"
             },
             "phone": {
-                "question": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/><span class='subtle'>Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)"
+                "question": "Quale numero di telefono comporre per fare domande o segnalare problemi riguardanti questa riserva naturale?br/>",
+                "questionHint": "Rispetta la privacy (inserisci il numero di telefono privato solo se questo è noto pubblicamente)"
             }
         }
     },
@@ -1626,7 +1641,8 @@
                         "then": "La superficie è <b>pavimentato</b>"
                     }
                 },
-                "question": "Qual è la superficie di questo parco giochi?<br/><i>Se ve ne è più di una, seleziona quella predominante</i>",
+                "question": "Qual è la superficie di questo parco giochi?",
+                "questionHint": "Se ve ne è più di una, seleziona quella predominante",
                 "render": "La superficie è <b>{surface}</b>"
             }
         },
@@ -1798,6 +1814,16 @@
                     },
                     "19": {
                         "question": "Riciclo di secco"
+                    },
+                    "20": {
+                        "question": "Riciclo di secco"
+                    }
+                }
+            },
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Solo accesso pubblico"
                     }
                 }
             }
@@ -1882,22 +1908,22 @@
                     "16": {
                         "then": "Plastica"
                     },
-                    "17": {
+                    "18": {
                         "then": "Rottami metallici"
                     },
-                    "18": {
-                        "then": "Scarpe"
-                    },
                     "19": {
-                        "then": "Piccoli elettrodomestici"
+                        "then": "Scarpe"
                     },
                     "20": {
                         "then": "Piccoli elettrodomestici"
                     },
                     "21": {
-                        "then": "Aghi e oggetti appuntiti"
+                        "then": "Piccoli elettrodomestici"
                     },
                     "22": {
+                        "then": "Aghi e oggetti appuntiti"
+                    },
+                    "23": {
                         "then": "Secco"
                     }
                 },

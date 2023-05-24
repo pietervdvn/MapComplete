@@ -1,5 +1,5 @@
 import { Utils } from "../../Utils"
-import * as polygon_features from "../../assets/polygon-features.json"
+import polygon_features from "../../assets/polygon-features.json"
 import { Store, UIEventSource } from "../UIEventSource"
 import { BBox } from "../BBox"
 import OsmToGeoJson from "osmtogeojson"
@@ -163,6 +163,11 @@ export abstract class OsmObject {
         })
     }
 
+    public static DownloadHistory(id: NodeId): UIEventSource<OsmNode[]>
+    public static DownloadHistory(id: WayId): UIEventSource<OsmWay[]>
+    public static DownloadHistory(id: RelationId): UIEventSource<OsmRelation[]>
+
+    public static DownloadHistory(id: OsmId): UIEventSource<OsmObject[]>
     public static DownloadHistory(id: string): UIEventSource<OsmObject[]> {
         if (OsmObject.historyCache.has(id)) {
             return OsmObject.historyCache.get(id)
@@ -180,6 +185,7 @@ export abstract class OsmObject {
             const osmObjects: OsmObject[] = []
             for (const element of elements) {
                 let osmObject: OsmObject = null
+                element.nodes = []
                 switch (type) {
                     case "node":
                         osmObject = new OsmNode(idN)
@@ -290,7 +296,7 @@ export abstract class OsmObject {
         { values: Set<string>; blacklist: boolean }
     > {
         const result = new Map<string, { values: Set<string>; blacklist: boolean }>()
-        for (const polygonFeature of polygon_features["default"] ?? polygon_features) {
+        for (const polygonFeature of polygon_features) {
             const key = polygonFeature.key
 
             if (polygonFeature.polygon === "all") {

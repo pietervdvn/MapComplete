@@ -3,7 +3,26 @@ export default {
   "type": "object",
   "properties": {
     "question": {
-      "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
+      "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Record<string,string>"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "questionHint": {
+      "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Record<string,string>"
+        },
+        {
+          "type": "string"
+        }
+      ]
     },
     "freeform": {
       "description": "Allow freeform text input from the user",
@@ -299,7 +318,6 @@ export default {
                       }
                     },
                     "required": [
-                      "class",
                       "path"
                     ]
                   },
@@ -346,7 +364,6 @@ export default {
                 }
               },
               "required": [
-                "class",
                 "path"
               ]
             },
@@ -416,6 +433,10 @@ export default {
               "type": "string"
             }
           ]
+        },
+        "#": {
+          "description": "Used for comments or to disable a validation\n\nignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed",
+          "type": "string"
         }
       },
       "required": [

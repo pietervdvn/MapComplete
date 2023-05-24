@@ -1,7 +1,8 @@
 {
     "shared_questions": {
         "description": {
-            "question": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.<br/><span style='font-size: small'>Repetera inte redan angivna fakta</span>"
+            "question": "Finns det fortfarande någonting relevant som du inte kunde ge i de föregående frågorna? Lägg till det här.",
+            "questionHint": "Repetera inte redan angivna fakta"
         },
         "dog-access": {
             "mappings": {
@@ -106,14 +107,6 @@
                 }
             },
             "question": "Vad är den motsvarande Wikidata-enheten?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Inte länkad med Wikipedia"
-                }
-            },
-            "question": "Vad är det motsvarande objektet på Wikipedia?"
         }
     }
 }

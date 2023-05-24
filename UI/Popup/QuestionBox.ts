@@ -22,7 +22,7 @@ export default class QuestionBox extends VariableUiElement {
             tagsSource: UIEventSource<any>
             tagRenderings: TagRenderingConfig[]
             units: Unit[]
-            showAllQuestionsAtOnce?: boolean | UIEventSource<boolean>
+            showAllQuestionsAtOnce?: boolean | Store<boolean>
         }
     ) {
         const skippedQuestions: UIEventSource<number[]> = new UIEventSource<number[]>([])

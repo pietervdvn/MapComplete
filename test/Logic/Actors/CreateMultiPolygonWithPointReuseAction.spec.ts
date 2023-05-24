@@ -1,8 +1,7 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import CreateMultiPolygonWithPointReuseAction from "../../../Logic/Osm/Actions/CreateMultiPolygonWithPointReuseAction"
 import { Tag } from "../../../Logic/Tags/Tag"
 import { Changes } from "../../../Logic/Osm/Changes"
+import { describe, expect, it } from "vitest"
 
 describe("CreateMultiPolygonWithPointReuseAction", () => {
     it("should produce a correct changeset", () => {
@@ -106,21 +105,29 @@ describe("CreateMultiPolygonWithPointReuseAction", () => {
             const descriptions = await action.Perform(new Changes())
 
             const ways = descriptions.filter((d) => d.type === "way")
-            expect(ways[0].id == -18, "unexpected id").true
-            expect(ways[1].id == -27, "unexpected id").true
+            // "unexpected id"
+            expect(ways[0].id == -18).toBe(true)
+            // "unexpected id"
+            expect(ways[1].id == -27).toBe(true)
             const outer = ways[0].changes["coordinates"]
-            expect(outer).deep.equal(feature.geometry.coordinates[0])
+            expect(outer).toEqual(feature.geometry.coordinates[0])
             const inner = ways[1].changes["coordinates"]
-            expect(inner).deep.equal(feature.geometry.coordinates[1])
+            expect(inner).toEqual(feature.geometry.coordinates[1])
             const members = <{ type: string; role: string; ref: number }[]>(
                 descriptions.find((d) => d.type === "relation").changes["members"]
             )
-            expect(members[0].role, "incorrect role").eq("outer")
-            expect(members[1].role, "incorrect role").eq("inner")
-            expect(members[0].type, "incorrect type").eq("way")
-            expect(members[1].type, "incorrect type").eq("way")
-            expect(members[0].ref, "incorrect id").eq(-18)
-            expect(members[1].ref, "incorrect id").eq(-27)
+            // "incorrect role"
+            expect(members[0].role).toBe("outer")
+            // "incorrect role"
+            expect(members[1].role).toBe("inner")
+            // "incorrect type"
+            expect(members[0].type).toBe("way")
+            // "incorrect type"
+            expect(members[1].type).toBe("way")
+            // "incorrect id"
+            expect(members[0].ref).toBe(-18)
+            // "incorrect id"
+            expect(members[1].ref).toBe(-27)
         }
     })
 })

@@ -983,7 +983,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -1349,7 +1348,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -1763,7 +1761,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -2218,7 +2215,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -2590,7 +2586,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -2960,7 +2955,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -3330,7 +3324,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -3700,7 +3693,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -4070,7 +4062,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -4448,7 +4439,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -4821,7 +4811,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -5191,7 +5180,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -5561,7 +5549,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -5935,7 +5922,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -6305,7 +6291,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -6675,7 +6660,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -7096,7 +7080,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -7580,7 +7563,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -7977,7 +7959,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -8372,7 +8353,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -8767,7 +8747,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -9162,7 +9141,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -9557,7 +9535,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -9961,7 +9938,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -10359,7 +10335,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -10754,7 +10729,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -11149,7 +11123,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -11548,7 +11521,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -11943,7 +11915,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -12338,7 +12309,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -12742,7 +12712,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -13140,7 +13109,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -13535,7 +13503,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -13930,7 +13897,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -14329,7 +14295,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -14724,7 +14689,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -15119,7 +15083,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -15534,7 +15497,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -16018,7 +15980,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -16415,7 +16376,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -16810,7 +16770,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -17205,7 +17164,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -17600,7 +17558,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -17995,7 +17952,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -18280,7 +18236,31 @@
       "tagRenderings",
       "question"
     ],
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "questionHint"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like"
   },
   {
     "path": [
@@ -18452,7 +18432,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -18920,6 +18899,16 @@
     ],
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "mappings",
+      "#"
+    ],
+    "type": "string",
+    "description": "Used for comments or to disable a validation\n\nignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed"
   },
   {
     "path": [
@@ -19105,7 +19094,32 @@
       "override",
       "question"
     ],
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "override",
+      "questionHint"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like"
   },
   {
     "path": [
@@ -19291,7 +19305,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -19786,6 +19799,17 @@
     ],
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "override",
+      "mappings",
+      "#"
+    ],
+    "type": "string",
+    "description": "Used for comments or to disable a validation\n\nignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed"
   },
   {
     "path": [
@@ -19984,7 +20008,32 @@
       "override",
       "question"
     ],
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "override",
+      "questionHint"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like"
   },
   {
     "path": [
@@ -20170,7 +20219,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -20665,6 +20713,17 @@
     ],
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "override",
+      "mappings",
+      "#"
+    ],
+    "type": "string",
+    "description": "Used for comments or to disable a validation\n\nignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed"
   },
   {
     "path": [
@@ -20880,7 +20939,32 @@
       "renderings",
       "question"
     ],
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "questionHint"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like"
   },
   {
     "path": [
@@ -21066,7 +21150,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -21561,6 +21644,17 @@
     ],
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "mappings",
+      "#"
+    ],
+    "type": "string",
+    "description": "Used for comments or to disable a validation\n\nignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed"
   },
   {
     "path": [
@@ -21760,7 +21854,33 @@
       "override",
       "question"
     ],
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
     "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "override",
+      "questionHint"
+    ],
+    "type": [
+      {
+        "$ref": "#/definitions/Record<string,string>"
+      },
+      {
+        "type": "string"
+      }
+    ],
+    "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like"
   },
   {
     "path": [
@@ -21960,7 +22080,6 @@
           }
         },
         "required": [
-          "class",
           "path"
         ]
       },
@@ -22482,6 +22601,18 @@
     ],
     "type": "object",
     "description": "Chain many tags, to match, all of these should be true\nSee https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Tags_format.md for documentation"
+  },
+  {
+    "path": [
+      "layers",
+      "tagRenderings",
+      "renderings",
+      "override",
+      "mappings",
+      "#"
+    ],
+    "type": "string",
+    "description": "Used for comments or to disable a validation\n\nignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed"
   },
   {
     "path": [
@@ -22717,7 +22848,7 @@
         ]
       }
     ],
-    "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in 'filters.json' for the appropriate filter"
+    "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in 'filters.json' for the appropriate filter or will try to parse it as `layername.filterid` and us that one"
   },
   {
     "path": [
@@ -22735,7 +22866,7 @@
       "options"
     ],
     "type": "array",
-    "description": "The options for a filter\nIf there are multiple options these will be a list of radio buttons\nIf there is only one option this will be a checkbox\nFiltering is done based on the given osmTags that are compared to the objects in that layer."
+    "description": "The options for a filter\nIf there are multiple options these will be a list of radio buttons\nIf there is only one option this will be a checkbox\nFiltering is done based on the given osmTags that are compared to the objects in that layer.\n\nAn example which searches by name:\n\n```\n{\n      \"id\": \"shop-name\",\n      \"options\": [\n        {\n          \"fields\": [\n            {\n              \"name\": \"search\",\n              \"type\": \"string\"\n            }\n          ],\n          \"osmTags\": \"name~i~.*{search}.*\",\n          \"question\": {\n            \"en\": \"Only show shops with name {search}\",\n          }\n        }\n      ]\n    }\n    ```"
   },
   {
     "path": [
@@ -22888,6 +23019,15 @@
     ],
     "type": "string",
     "description": "If name is `search`, use  \"_first_comment~.*{search}.*\" as osmTags"
+  },
+  {
+    "path": [
+      "layers",
+      "filter",
+      "#"
+    ],
+    "type": "string",
+    "description": "Used for comments or to disable a check\n\n\"ignore-possible-duplicate\": disables a check in `DetectDuplicateFilters` which complains that a filter can be replaced by a filter from the `filters`-library-layer"
   },
   {
     "path": [
@@ -23339,6 +23479,14 @@
     ],
     "type": "string",
     "description": "If set, synchronizes whether or not this layer is enabled.\n\nno: Do not sync at all, always revert to default\nlocal: keep selection on local storage\ntheme-only: sync via OSM, but this layer will only be toggled in this theme\nglobal: all layers with this ID will be synced accross all themes"
+  },
+  {
+    "path": [
+      "layers",
+      "#"
+    ],
+    "type": "string",
+    "description": "Used for comments and/or to disable some checks\n\nno-question-hint-check: disables a check in MiscTagRenderingChecks which complains about 'div', 'span' or 'class=subtle'-HTML elements in the tagRendering"
   },
   {
     "path": [

@@ -20,6 +20,14 @@
     ]
   },
   {
+    "path": "bicycles.svg",
+    "license": "CC0",
+    "authors": [
+      "Antwerpenize Bike Font"
+    ],
+    "sources": []
+  },
+  {
     "path": "cans.svg",
     "license": "CC-BY-SA",
     "authors": [
@@ -114,6 +122,14 @@
     ]
   },
   {
+    "path": "needles.svg",
+    "license": "CC0",
+    "authors": [],
+    "sources": [
+      "https://svgsilh.com/image/1294131.html"
+    ]
+  },
+  {
     "path": "newspaper.svg",
     "license": "CC-BY-SA",
     "authors": [
@@ -162,6 +178,17 @@
     ],
     "sources": [
       "https://github.com/streetcomplete/StreetComplete/blob/master/res/graphics/recycling%20icons/plastic_packaging.svg"
+    ]
+  },
+  {
+    "path": "printer_cartridges.svg",
+    "license": "CC-BY",
+    "authors": [
+      "Noun Project",
+      "Zach Bogart"
+    ],
+    "sources": [
+      "https://thenounproject.com/icon/ink-4963274/"
     ]
   },
   {

@@ -1,7 +1,6 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import LayoutConfig from "../../../../Models/ThemeConfig/LayoutConfig"
 import { FixLegacyTheme } from "../../../../Models/ThemeConfig/Conversion/LegacyJsonConvert"
+import { describe, expect, it } from "vitest"
 
 describe("FixLegacyTheme", () => {
     it("should create a working theme config", () => {
@@ -135,8 +134,9 @@ describe("FixLegacyTheme", () => {
             ],
         }
         const fixed = new FixLegacyTheme().convert(<any>walking_node_theme, "While testing")
-        expect(fixed.errors, "Could not fix the legacy theme").empty
+        // "Could not fix the legacy theme"
+        expect(fixed.errors).empty
         const theme = new LayoutConfig(fixed.result, false)
-        expect(theme).not.undefined
+        expect(theme).toBeDefined()
     })
 })

@@ -1,0 +1,128 @@
+{
+  "id": "icons",
+  "description": {
+    "en": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI",
+    "de": "Eine Ebene, die als Bibliothek für Symbol-Tag-Renderings dient, insbesondere um als Abzeichen neben einem POI angezeigt zu werden"
+  },
+  "source": {
+    "osmTags": "id~*"
+  },
+  "title": null,
+  "tagRenderings": [
+    {
+      "id": "wikipedialink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "<a href='https://wikipedia.org/wiki/{wikipedia}' target='_blank'><img src='./assets/svg/wikipedia.svg' textmode='📖' alt='Wikipedia'/></a>",
+      "condition": {
+        "or": [
+          "wikipedia~*",
+          "wikidata~*"
+        ]
+      },
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "wikipedia=",
+          "then": "<a href='https://www.wikidata.org/wiki/{wikidata}' target='_blank'><img src='./assets/svg/wikidata.svg' alt='WD'/></a>"
+        }
+      ]
+    },
+    {
+      "id": "isOpen",
+      "#": "Shows a coloured clock if opening hours are parsed. Uses the metatagging, suitable to use as a (badged) overlay",
+      "mappings": [
+        {
+          "if": "_isOpen=yes",
+          "then": "clock:#0f0;ring:#0f0"
+        },
+        {
+          "if": "_isOpen=no",
+          "then": "circle:#f00;clock:#fff"
+        },
+        {
+          "#": "Still loading the country",
+          "if": {
+            "and": [
+              "_isOpen=",
+              "opening_hours~*"
+            ]
+          },
+          "then": "clock:#ff0;ring:#ff0"
+        },
+        {
+          "#": "Still loading the country",
+          "if": {
+            "and": [
+              "_isOpen=parse_error",
+              "opening_hours~*"
+            ]
+          },
+          "then": "circle:#f0f;clock:#fff"
+        }
+      ]
+    },
+    {
+      "id": "phonelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "<a href='tel:{phone}'><img textmode='📞' alt='phone' src='./assets/tagRenderings/phone.svg'/></a>",
+      "condition": "phone~*"
+    },
+    {
+      "id": "emaillink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "<a href='mailto:{email}'><img textmode='✉️' alt='email' src='./assets/tagRenderings/send_email.svg'/></a>",
+      "condition": "email~*"
+    },
+    {
+      "id": "smokingicon",
+      "labels": [
+        "defaults"
+      ],
+      "mappings": [
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=no",
+          "then": "<img textmode='🚭️' alt='no-smoking' src='./assets/tagRenderings/no_smoking.svg'/>"
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "smoking=yes",
+          "then": "<img textmode='🚬️' alt='smoking-allowed' src='./assets/tagRenderings/smoking.svg'/>"
+        }
+      ]
+    },
+    {
+      "id": "sharelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "{share_link()}"
+    },
+    {
+      "id": "osmlink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img alt='on osm' textmode='🗺️' src='./assets/svg/osm-logo-us.svg'/></a>",
+      "mappings": [
+        {
+          "if": "id~.*/-.*",
+          "then": ""
+        },
+        {
+          "#": "ignore-image-in-then",
+          "if": "_backend~*",
+          "then": "<a href='{_backend}/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>"
+        }
+      ],
+      "condition": "id~(node|way|relation)/[0-9]*"
+    }
+  ],
+  "mapRendering": null
+}

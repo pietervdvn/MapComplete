@@ -227,7 +227,7 @@ export class DownloadPanel extends Toggle {
             bbox,
             new Set(neededLayers)
         )
-        outer: for (const tile of featureList) {
+        for (const tile of featureList) {
             if (Constants.priviliged_layers.indexOf(tile.layer) >= 0) {
                 continue
             }
@@ -238,7 +238,7 @@ export class DownloadPanel extends Toggle {
             }
             const featureList = perLayer.get(tile.layer)
             const filters = layer.appliedFilters.data
-            for (const feature of tile.features) {
+            perfeature: for (const feature of tile.features) {
                 if (!bbox.overlapsWith(BBox.get(feature))) {
                     continue
                 }
@@ -250,7 +250,7 @@ export class DownloadPanel extends Toggle {
                             continue
                         }
                         if (!filter.currentFilter.matchesProperties(feature.properties)) {
-                            continue outer
+                            continue perfeature
                         }
                     }
                 }
@@ -281,7 +281,7 @@ export class DownloadPanel extends Toggle {
                     delete feature.properties[key]
                 }
 
-                featureList.push(feature)
+                featureList.push(cleaned)
             }
         }
 

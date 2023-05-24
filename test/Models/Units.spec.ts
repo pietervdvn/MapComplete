@@ -1,7 +1,6 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import { Unit } from "../../Models/Unit"
 import { Denomination } from "../../Models/Denomination"
+import { describe, expect, it } from "vitest"
 
 describe("Unit", () => {
     it("should convert a value back and forth", () => {
@@ -19,10 +18,10 @@ describe("Unit", () => {
         )
 
         const canonical = denomintion.canonicalValue("5", true)
-        expect(canonical).eq("5 MW")
+        expect(canonical).toBe("5 MW")
         const units = new Unit(["key"], [denomintion], false)
         const [detected, detectedDenom] = units.findDenomination("5 MW", () => "be")
-        expect(detected).eq("5")
-        expect(detectedDenom).eq(denomintion)
+        expect(detected).toBe("5")
+        expect(detectedDenom).toBe(denomintion)
     })
 })

@@ -303,8 +303,11 @@ export interface LayerConfigJson {
      */
     tagRenderings?: (
         | string
-        | { builtin: string | string[]; override: Partial<QuestionableTagRenderingConfigJson> }
-        | { id: string; builtin: string[]; override: Partial<QuestionableTagRenderingConfigJson> }
+        | {
+              id?: string
+              builtin: string | string[]
+              override: Partial<QuestionableTagRenderingConfigJson>
+          }
         | QuestionableTagRenderingConfigJson
         | (RewritableConfigJson<
               (
@@ -317,7 +320,7 @@ export interface LayerConfigJson {
 
     /**
      * All the extra questions for filtering.
-     * If a string is given, mapComplete will search in 'filters.json' for the appropriate filter
+     * If a string is given, mapComplete will search in 'filters.json' for the appropriate filter or will try to parse it as `layername.filterid` and us that one
      */
     filter?: (FilterConfigJson | string)[] | { sameAs: string }
 
@@ -402,4 +405,11 @@ export interface LayerConfigJson {
      * global: all layers with this ID will be synced accross all themes
      */
     syncSelection?: "no" | "local" | "theme-only" | "global"
+
+    /**
+     * Used for comments and/or to disable some checks
+     *
+     * no-question-hint-check: disables a check in MiscTagRenderingChecks which complains about 'div', 'span' or 'class=subtle'-HTML elements in the tagRendering
+     */
+    "#"?: string | "no-question-hint-check"
 }

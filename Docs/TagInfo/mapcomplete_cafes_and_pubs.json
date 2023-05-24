@@ -2,7 +2,7 @@
   "data_format": 1,
   "project": {
     "name": "MapComplete Cafés and pubs",
-    "description": "Pubs and bars",
+    "description": "Coffeehouses, pubs and bars",
     "project_url": "https://mapcomplete.osm.be/cafes_and_pubs",
     "doc_url": "https://github.com/pietervdvn/MapComplete/tree/master/assets/themes/",
     "icon_url": "https://mapcomplete.osm.be/assets/layers/cafe_pub/pub.svg",
@@ -101,7 +101,7 @@
     },
     {
       "key": "amenity",
-      "description": "Layer 'Cafés and pubs' shows amenity=restaurant with a fixed text, namely 'A <b>restuarant</b> where one can get a proper meal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
+      "description": "Layer 'Cafés and pubs' shows amenity=restaurant with a fixed text, namely 'A <b>restaurant</b> where one can get a proper meal' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cafés and pubs')",
       "value": "restaurant"
     },
     {

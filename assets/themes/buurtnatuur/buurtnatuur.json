@@ -549,7 +549,8 @@
       },
       {
         "id": "Editable description",
-        "question": "Is er extra info die je kwijt wil?<br/><span class='subtle'>De <i>naam</i> van het gebied wordt in de volgende vraag gesteld</span>",
+        "question": "Is er extra info die je kwijt wil?",
+        "questionHint": "De <i>naam</i> van het gebied wordt in de volgende vraag gesteld",
         "render": {
           "nl": "Extra info via buurtnatuur.be: <i>{description:0}</i>"
         },

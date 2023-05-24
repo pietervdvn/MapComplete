@@ -8,13 +8,15 @@
     "it": "pala eolica",
     "zh_Hant": "風機",
     "hu": "Szélerőmű",
-    "da": "vindmølle"
+    "da": "vindmølle",
+    "ca": "Turbina Eòlica"
   },
   "description": {
     "en": "Modern windmills generating electricity",
     "de": "Moderne Windmühlen zur Stromerzeugung",
     "nl": "Windturbines (moderne windmolens die elektriciteit genereren)",
-    "da": "Moderne vindmøller til produktion af elektricitet"
+    "da": "Moderne vindmøller til produktion af elektricitet",
+    "ca": "Molins de vent moderns que generen electricitat"
   },
   "source": {
     "osmTags": "generator:source=wind"
@@ -118,7 +120,8 @@
         "zh_Hant": "這風機的總高度 (包括風葉直徑) 是 {height} 公尺。",
         "hu": "A szélerőmű teljes (rotor sugarával együtt számított) magassága: {height} méter.",
         "de": "Die Gesamthöhe dieses Windrads beträgt (einschließlich Rotorradius) {height} Meter.",
-        "da": "Den samlede højde (inklusive rotorradius) for denne vindmølle er {height} meter."
+        "da": "Den samlede højde (inklusive rotorradius) for denne vindmølle er {height} meter.",
+        "nl": "De totale hoogte (inclusief rotor-radius) van deze windturbine is {height} meter"
       },
       "question": {
         "en": "What is the total height of this wind turbine (including rotor radius), in metres?",
@@ -127,7 +130,8 @@
         "zh_Hant": "這個風機的總高度是多少 (包括風葉大小) 公尺？",
         "hu": "Hány méter a szélerőmű teljes magassága (a rotor sugarával együtt)?",
         "de": "Wie hoch ist das Windrad (inklusive Rotorradius) in Metern?",
-        "da": "Hvad er den samlede højde af denne vindmølle (inklusive rotorradius), i meter?"
+        "da": "Hvad er den samlede højde af denne vindmølle (inklusive rotorradius), i meter?",
+        "nl": "Wat is de totale hoogte in meter van deze windturbine (inclusief rotor-radius)?"
       },
       "freeform": {
         "key": "height",
@@ -144,7 +148,8 @@
         "hu": "A szélturbina rotorátmérője: {rotor:diameter} méter.",
         "de": "Der Rotordurchmesser der Windturbine ist {rotor:diameter} Meter.",
         "nl": "De rotordiameter van deze windturbine is {rotor:diameter} meter.",
-        "da": "Rotordiameteren på denne vindmølle er {rotor:diameter} meter."
+        "da": "Rotordiameteren på denne vindmølle er {rotor:diameter} meter.",
+        "ca": "El diàmetre del rotor d'aquest aerogenerador és de {rotor:diameter} metres."
       },
       "question": {
         "en": "What is the rotor diameter of this wind turbine, in metres?",
@@ -154,7 +159,8 @@
         "hu": "Hány méter a rotorátmérője ennek a szélturbinának?",
         "de": "Wie groß ist der Rotordurchmesser der Windturbine in Meter?",
         "nl": "Wat is de rotordiameter van deze windturbine?",
-        "da": "Hvad er rotordiameteren på denne vindmølle i meter?"
+        "da": "Hvad er rotordiameteren på denne vindmølle i meter?",
+        "ca": "Quin és el diàmetre del rotor d'aquest aerogenerador en metres?"
       },
       "freeform": {
         "key": "rotor:diameter",
@@ -199,11 +205,13 @@
         "de": "Zusätzliche Informationen für OpenStreetMap-Experten: {fixme}",
         "ru": "Дополнительная информация для экспертов OpenStreetMap: {fixme}",
         "sl": "Dodatne informacije za OpenStreetMap strokovnjake: {fixme}",
-        "es": "Información extra para expertos en OpenStreetMap: {fixme}"
+        "es": "Información extra para expertos en OpenStreetMap: {fixme}",
+        "ca": "Informació addicional per als experts en OpenStreetMap: {fixme}"
       },
       "question": {
         "en": "Is there something wrong with how this is mapped, that you weren't able to fix here? (leave a note to OpenStreetMap experts)",
-        "nl": "Is er iets mis met de informatie over deze windturbine dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)"
+        "nl": "Is er iets mis met de informatie over deze windturbine dat je hier niet opgelost kreeg? (laat hier een berichtje achter voor OpenStreetMap experts)",
+        "de": "Gibt es einen Fehler in der Kartierung, den Sie hier nicht beheben konnten? (hinterlassen Sie eine Nachricht an OpenStreetMap-Experten)"
       },
       "freeform": {
         "key": "fixme",
@@ -227,7 +235,8 @@
         "it": "una pala eolica",
         "zh_Hant": "風機",
         "hu": "Szélerőmű",
-        "da": "en vindmølle"
+        "da": "en vindmølle",
+        "ca": "una turbina eòlica"
       }
     }
   ],

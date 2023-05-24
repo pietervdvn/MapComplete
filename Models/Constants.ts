@@ -1,7 +1,7 @@
 import { Utils } from "../Utils"
 
 export default class Constants {
-    public static vNumber = "0.26.0"
+    public static vNumber = "0.27.4"
 
     public static ImgurApiKey = "7070e7167f0a25a"
     public static readonly mapillary_client_token_v4 =
@@ -106,7 +106,7 @@ export default class Constants {
      *
      * In seconds
      */
-    static zoomToLocationTimeout = 60
+    static zoomToLocationTimeout = 15
     static countryCoderEndpoint: string =
         "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country"
     public static readonly OsmPreferenceKeyPicturesLicense = "pictures-license"

@@ -31,6 +31,23 @@
                 "description": "向地图中添加一个救护车站",
                 "title": "救护车站"
             }
+        },
+        "tagRenderings": {
+            "ambulance-agency": {
+                "question": "哪家机构运营这个站点？",
+                "render": "这个站点由 {operator}运营"
+            },
+            "ambulance-name": {
+                "question": "这个救护车站叫什么名字？",
+                "render": "这个站点名为 {name}."
+            },
+            "ambulance-operator-type": {
+                "mappings": {
+                    "0": {
+                        "then": "这个站点由政府运营。"
+                    }
+                }
+            }
         }
     },
     "artwork": {
@@ -46,10 +63,10 @@
         "tagRenderings": {
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "有靠背"
                     },
-                    "1": {
+                    "2": {
                         "then": "<b>没有</b>靠背"
                     }
                 },

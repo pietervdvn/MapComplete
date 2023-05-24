@@ -130,7 +130,7 @@
             },
             "artwork-website": {
                 "question": "Er der et websted med mere information om dette kunstværk?",
-                "render": "Yderligere oplysninger på <a href='{website}' target='_blank'>dette websted</a>"
+                "render": "Yderligere oplysninger på <a href='{website}' target='_blank'> dette websted</a>"
             }
         },
         "title": {
@@ -254,10 +254,10 @@
         "tagRenderings": {
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Har et ryglæn"
                     },
-                    "1": {
+                    "2": {
                         "then": "Har <b>ikke</b> et ryglæn"
                     }
                 },
@@ -2065,6 +2065,17 @@
     "gps_track": {
         "name": "Dit tilbagelagte spor"
     },
+    "recycling": {
+        "filter": {
+            "2": {
+                "options": {
+                    "0": {
+                        "question": "Kun offentlig adgang"
+                    }
+                }
+            }
+        }
+    },
     "surveillance_camera": {
         "tagRenderings": {
             "Surveillance type: public, outdoor, indoor": {
@@ -2376,13 +2387,6 @@
                 "options": {
                     "0": {
                         "question": "Tilgængelig for kørestolsbrugere"
-                    }
-                }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Har et puslebord"
                     }
                 }
             },
@@ -2724,6 +2728,20 @@
         },
         "title": {
             "render": "Træ"
+        }
+    },
+    "usersettings": {
+        "tagRenderings": {
+            "translation-completeness": {
+                "render": "Oversættelser for {_theme} i {_language} er på {_translation_percentage}%: {_translation_translated_count} strenge ud af {_translation_total} er oversat"
+            },
+            "translation-help": {
+                "mappings": {
+                    "0": {
+                        "then": "Klik på 'oversæt'-ikonet ved siden af en streng for at indtaste eller opdatere et stykke tekst. Du skal have en Weblate-konto for at kunne gøre dette. Opret en med dit OSM-brugernavn for automatisk at låse oversættelsestilstanden op."
+                    }
+                }
+            }
         }
     },
     "veterinary": {

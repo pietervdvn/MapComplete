@@ -1,9 +1,7 @@
-import { TileLayer } from "leaflet"
-
 export default interface BaseLayer {
     id: string
     name: string
-    layer: () => TileLayer
+    layer: () => any /*leaflet.TileLayer - not importing as it breaks scripts*/
     max_zoom: number
     min_zoom: number
     feature: any

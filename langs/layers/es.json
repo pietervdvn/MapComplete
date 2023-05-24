@@ -24,6 +24,217 @@
             "render": "Domicilio conocido"
         }
     },
+    "advertising": {
+        "description": "Completaremos los datos de los elementos publicitarios con referencia, operador y iluminación",
+        "name": "Publicidad",
+        "presets": {
+            "0": {
+                "description": "Una estructura publicitaria grande al aire libre, que normalmente se encuentra en áreas transitadas como carreteras con mucha intensidad",
+                "title": "una valla publicitària"
+            },
+            "1": {
+                "title": "un mupi"
+            },
+            "2": {
+                "title": "un mupi sobre la pared"
+            },
+            "3": {
+                "description": "Un pequeño tablón de anuncios para anuncios del vecindario, normalmente destinado a peatones",
+                "title": "un tablón de anuncios"
+            },
+            "4": {
+                "description": "Una estructura cilíndrica exterior que muestra publicidad",
+                "title": "una columna"
+            },
+            "5": {
+                "title": "una bandera"
+            },
+            "6": {
+                "title": "una pantalla"
+            },
+            "7": {
+                "title": "una pantalla sobre una pared"
+            },
+            "8": {
+                "description": "Una pieza de tela impermeable con un mensaje impreso, anclada permanentemente en una pared",
+                "title": "una lona"
+            },
+            "9": {
+                "title": "un tótem"
+            },
+            "10": {
+                "description": "Se utiliza para carteles publicitarios, letreros de neón, logotipos y carteles en entradas institucionales",
+                "title": "un lletrer"
+            },
+            "11": {
+                "title": "una escultura"
+            },
+            "12": {
+                "title": "una pared pintada"
+            }
+        },
+        "tagRenderings": {
+            "Sides": {
+                "mappings": {
+                    "0": {
+                        "then": "Este mupi tiene publicidad en un único lado"
+                    },
+                    "1": {
+                        "then": "Este mupi tiene publicidad por los dos lados"
+                    }
+                },
+                "question": "¿Por cuantos lados puedes ver publicidad?"
+            },
+            "animated": {
+                "mappings": {
+                    "0": {
+                        "then": "<b>Estático</b>, siempre muestra el mismo mensaje"
+                    },
+                    "1": {
+                        "then": "Este objeto tiene una <b>pantalla digital</b> incorporada para mostrar precios o algún otro mensaje"
+                    },
+                    "2": {
+                        "then": "<b>Trivision</b> - la valla publicitaria consta de muchos prismas triangulares que giran regularmente"
+                    },
+                    "3": {
+                        "then": "Cartells <b>Rotatius</b>"
+                    },
+                    "4": {
+                        "then": "<b>Rota</b> sobre si mismo"
+                    }
+                },
+                "question": "¿Como cambian los anuncios de este elemento?"
+            },
+            "luminous_or_lit_advertising": {
+                "override": {
+                    "+mappings": {
+                        "0": {
+                            "then": "Esta es una luz de tubo de neón."
+                        }
+                    }
+                }
+            },
+            "message_type": {
+                "mappings": {
+                    "0": {
+                        "then": "Mensaje comercial"
+                    },
+                    "1": {
+                        "then": "Información municipal"
+                    },
+                    "2": {
+                        "then": "Información de seguridad"
+                    },
+                    "3": {
+                        "then": "Publicidad electoral"
+                    },
+                    "4": {
+                        "then": "Información sobre teatros, conciertos, ..."
+                    },
+                    "5": {
+                        "then": "Mensaje de organizaciones sin ánimo de lucro"
+                    },
+                    "6": {
+                        "then": "Para expresar tu opinión"
+                    },
+                    "7": {
+                        "then": "Mensaje religioso"
+                    },
+                    "8": {
+                        "then": "Cartel de financiación"
+                    },
+                    "9": {
+                        "then": "un mapa"
+                    }
+                },
+                "question": "Que tipo de mensaje se muestra?"
+            },
+            "operator": {
+                "question": "¿Quien opera este elemento?",
+                "render": "El operador es {operator}"
+            },
+            "ref": {
+                "question": "¿Cual es el número de referencia?",
+                "render": "El número de referencia es {ref}"
+            },
+            "type": {
+                "mappings": {
+                    "0": {
+                        "then": "Esto es una valla publicitaria"
+                    },
+                    "1": {
+                        "then": "Esto es un tablón de anuncios"
+                    },
+                    "2": {
+                        "then": "Esto es una columna"
+                    },
+                    "3": {
+                        "then": "Esto es una bndera"
+                    },
+                    "4": {
+                        "then": "Esto es un mupi"
+                    },
+                    "5": {
+                        "then": "Esto es una pantalla"
+                    },
+                    "6": {
+                        "then": "Esto es una escultura"
+                    },
+                    "7": {
+                        "then": "Esto es un cartel"
+                    },
+                    "8": {
+                        "then": "Esto es una lona (una pieza de tela resistente a la intemperie con un mensaje publicitario)"
+                    },
+                    "9": {
+                        "then": "Esto es un tótem"
+                    },
+                    "10": {
+                        "then": "Esto es una pared pintada"
+                    }
+                },
+                "question": "¿Qué tipo de elemento publicitario es?",
+                "render": "Esto es un {advertising}"
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Valla publicitaria"
+                },
+                "1": {
+                    "then": "Tablon de anuncios"
+                },
+                "2": {
+                    "then": "Mupi"
+                },
+                "3": {
+                    "then": "Columna"
+                },
+                "4": {
+                    "then": "Bandera"
+                },
+                "5": {
+                    "then": "Pantalla"
+                },
+                "6": {
+                    "then": "Escultura"
+                },
+                "7": {
+                    "then": "Cartel"
+                },
+                "8": {
+                    "then": "Lona"
+                },
+                "9": {
+                    "then": "Tótem"
+                },
+                "10": {
+                    "then": "Pared Pintada"
+                }
+            }
+        }
+    },
     "ambulancestation": {
         "description": "Una estación de ambulancias es una zona para almacenar vehículos de ambulancia, equipamiento médico, equipos de protección personal y otros suministros médicos.",
         "name": "Mapa de estaciones de ambulancias",
@@ -58,7 +269,7 @@
                     }
                 },
                 "question": "¿Como está clasificada la operadora de la estación?",
-                "render": "La operador a no es una entidad de tipo {operator:type}."
+                "render": "La operadora es una entidad de tipo {operator:type}."
             },
             "ambulance-place": {
                 "question": "¿Dónde se encuentra la estación? (ej. nombre del barrio, pueblo o ciudad)",
@@ -66,7 +277,7 @@
             },
             "ambulance-street": {
                 "question": "¿Cual es el nombre de la calle en la que se encuentra la estación?",
-                "render": "Esta estación se encuentra al lado de una autovía llamada {addr:street}."
+                "render": "Esta estación se encuentra al lado de una via llamada {addr:street}."
             }
         },
         "title": {
@@ -74,7 +285,7 @@
         }
     },
     "artwork": {
-        "description": "Un mapa abierto de estatus, bustos, grafitis y otras obras de arte en todo el mundo",
+        "description": "Un mapa abierto de Estatuas, bustos, Graffitis y otras Obras de Arte en todo el mundo",
         "name": "Obras de arte",
         "presets": {
             "0": {
@@ -84,7 +295,7 @@
         "tagRenderings": {
             "artwork-artist-wikidata": {
                 "question": "¿Quién creó esta obra de arte?",
-                "render": "Esta obra de la creó {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
+                "render": "Esta obra de arte la creó {wikidata_label(artist:wikidata):font-weight:bold}<br/>{wikipedia(artist:wikidata)}"
             },
             "artwork-artist_name": {
                 "question": "¿Que artista creó esto?",
@@ -173,7 +384,7 @@
                         "then": "Bolardo fijo"
                     },
                     "2": {
-                        "then": "Bolardo que se puede doblar"
+                        "then": "Bolardo retráctil"
                     },
                     "3": {
                         "then": "Bolardo flexible, normalmente plástico"
@@ -214,7 +425,7 @@
                 "render": "Espacio entre barreras (a lo largo de la longitud de la carretera): {width:separation} m"
             },
             "Width of opening (cyclebarrier)": {
-                "question": "¿Cómo de año es la apertura más pequeña al lado de las barreras?",
+                "question": "¿Que amplitud tiene la apertura más pequeña al lado de las barreras?",
                 "render": "Anchura de la apertura: {width:opening} m"
             },
             "barrier_type": {
@@ -236,7 +447,7 @@
                         "then": "Un ciclista no puede pasar esto."
                     }
                 },
-                "question": "¿Puede pasar una bicicleta esta barrera?"
+                "question": "¿Una bicicleta puede pasar esta barrera?"
             }
         },
         "title": {
@@ -260,12 +471,19 @@
             }
         },
         "tagRenderings": {
+            "bench-artwork": {
+                "mappings": {
+                    "1": {
+                        "then": "Este banco no tiene una obra de arte integrada"
+                    }
+                }
+            },
             "bench-backrest": {
                 "mappings": {
-                    "0": {
+                    "1": {
                         "then": "Tiene respaldo"
                     },
-                    "1": {
+                    "2": {
                         "then": "<b>No</b> tiene respaldo"
                     }
                 },
@@ -302,8 +520,15 @@
                 "render": "Color: {colour}"
             },
             "bench-direction": {
-                "question": "¿En qué dirección se mira al sentarse en el banco?",
-                "render": "¿Cuando está sentado en el banco, uno mira hacia {direction}º."
+                "question": "¿En qué dirección miras sentado en el banco?",
+                "render": "Cuando se está sentado en el banco, se mira hacia a {direction}º."
+            },
+            "bench-inscription": {
+                "mappings": {
+                    "1": {
+                        "then": "Este banco <span class='subtle'>(probablemente)</span> no tiene inscripción"
+                    }
+                }
             },
             "bench-material": {
                 "mappings": {
@@ -330,6 +555,11 @@
                 "render": "Material: {material}"
             },
             "bench-seats": {
+                "mappings": {
+                    "0": {
+                        "then": "Este banco no tiene asientos separados"
+                    }
+                },
                 "question": "¿Cuántos asientos tiene este banco?",
                 "render": "{seats} asientos"
             },
@@ -377,7 +607,7 @@
         }
     },
     "bicycle_library": {
-        "description": "Una facilidad donde se pueden alquilar bicicletas durante largos periodos de tiempo",
+        "description": "Una instalación donde se pueden alquilar bicicletas durante largos periodos de tiempo",
         "name": "Biblioteca de bicicletas",
         "presets": {
             "0": {
@@ -414,7 +644,7 @@
             },
             "bicycle_library-name": {
                 "question": "¿Cuál es el nombre de esta biblioteca de bicicletas?",
-                "render": "Esta biblioteca de bicicletas se llama  {name}"
+                "render": "Esta biblioteca de bicicletas se llama {name}"
             }
         },
         "title": {
@@ -556,7 +786,7 @@
                         "then": "Esta máquina exprendedora está cerrada"
                     }
                 },
-                "question": "¿Todavía es operacional esta máquina exprendedora?",
+                "question": "¿Todavía funciona esta máquina expendedora?",
                 "render": "El estado operacional es <i>{operational_status}</i></i>"
             }
         }
@@ -569,7 +799,7 @@
         }
     },
     "bike_cleaning": {
-        "description": "Una capa que muestra facilidades en las que uno puede limpiar su bici",
+        "description": "Una capa que muestra instalaciones en las que uno puede limpiar su bici",
         "name": "Servicio de limpieza de bicis",
         "presets": {
             "0": {
@@ -670,7 +900,7 @@
                         "then": "No está permitido aparcar bicicletas de carga"
                     }
                 },
-                "question": "¿Este aparcamiento de bicicletas tiene huevos para bicicletas de carga?"
+                "question": "¿Este aparcamiento de bicicletas tiene huecos para bicicletas de carga?"
             },
             "Is covered?": {
                 "mappings": {
@@ -726,13 +956,13 @@
             "Operational status": {
                 "mappings": {
                     "0": {
-                        "then": "La bomba de bicicletas está rota"
+                        "then": "La bomba para bicicletas está rota"
                     },
                     "1": {
-                        "then": "La bomba de bicicletas está operativa"
+                        "then": "La bomba para bicicletas está operativa"
                     }
                 },
-                "question": "¿Todavía está operativa la bomba de bicicletas?"
+                "question": "¿Todavía está operativa la bomba para bicicletas?"
             },
             "access": {
                 "mappings": {
@@ -771,7 +1001,7 @@
             "bike_repair_station-bike-chain-tool": {
                 "mappings": {
                     "0": {
-                        "then": "Hay una herramienta de cadenas"
+                        "then": "Hay una herramienta para cadenas"
                     },
                     "1": {
                         "then": "No hay herramienta de cadenas"
@@ -799,7 +1029,7 @@
                         "then": "Bomba eléctrica"
                     }
                 },
-                "question": "¿Hay una bomba eléctrica para bicis?"
+                "question": "¿Es una bomba eléctrica para bicis?"
             },
             "bike_repair_station-email": {
                 "question": "¿Es esta la dirección de correo electrónico del mantenedor?"
@@ -1116,7 +1346,7 @@
                 "title": "un bar"
             },
             "1": {
-                "description": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz",
+                "description": "Un <b>bar de copas</b> más moderno y comercial, posiblemente con una instalación de música y luz",
                 "title": "un bar de copas"
             },
             "2": {
@@ -1135,7 +1365,7 @@
                         "then": "Un bar, principalmente para beber cervezas en un interior cálido y relajado"
                     },
                     "1": {
-                        "then": "Un <b>bar</b> más moderno y comercial, posiblemente con una instalación de música y luz"
+                        "then": "Un <b>bar de copas</b> más moderno y comercial, posiblemente con una instalación de música y luz"
                     },
                     "2": {
                         "then": "Una <b>cafetería</b> para beber té, café o una bebida alcohólica en un ambiente tranquilo"
@@ -1216,7 +1446,7 @@
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_socket.svg'/></div>"
                     },
                     "9": {
-                        "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 CCS</b> (mennekes</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
+                        "question": "Tiene un conector <div style='display: inline-block'><b>Tipo 2 CCS</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_CCS.svg'/></div>"
                     },
                     "10": {
                         "question": "Tiene un conector <div style='display: inline-block'><b><b>Tipo 2 con cable</b> (mennekes)</b><img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>"
@@ -1314,7 +1544,7 @@
                         "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
                     },
                     "9": {
-                        "then": "<b>Tipo 1<i>sin</i> cable</b> (J1772)"
+                        "then": "<b>Tipo 1 <i>sin</i> cable</b> (J1772)"
                     },
                     "10": {
                         "then": "<b>CSS Tipo 1</b> (también conocido como Tipo 1 Combo)"
@@ -1406,10 +1636,10 @@
                         "then": "Esta estación de carga está rota"
                     },
                     "2": {
-                        "then": "Una estación de carga está planeada aquí"
+                        "then": "Aquí está planeada una estación de carga"
                     },
                     "3": {
-                        "then": "Una estación de carga está construida aquí"
+                        "then": "Aquí está construida una estación de carga"
                     },
                     "4": {
                         "then": "Esta estación de carga se ha deshabilitado de forma permanente y ya no está en uso pero todavía es visible"
@@ -2065,6 +2295,9 @@
             "render": "Desfibrilador"
         }
     },
+    "dentist": {
+        "name": "Dentista"
+    },
     "dogpark": {
         "name": "parques de perros",
         "presets": {
@@ -2178,7 +2411,8 @@
                         "then": "Esta es una entrada sin una puerta física"
                     }
                 },
-                "question": "¿Cual es el tipo de esta puerta?<br/><span class='subtle'>Si la puerta está automatizada o no se pregunta en la siguiente pregunta</span>"
+                "question": "¿Cual es el tipo de esta puerta?",
+                "questionHint": "En la siguiente pregunta se pregunta si la puerta está automatizada o no"
             },
             "Entrance type": {
                 "mappings": {
@@ -2342,7 +2576,7 @@
                 }
             }
         },
-        "description": "Una capa que muestra restaurantes y facilidades de comida rápida",
+        "description": "Una capa que muestra restaurantes y locales de comida rápida (con un renderizado especial para freidurías)",
         "filter": {
             "2": {
                 "options": {
@@ -2504,7 +2738,7 @@
                         "then": "<b>Debes</b> de traer tu propio recipiente para pedir aquí."
                     }
                 },
-                "question": "Si traes tu propio recipiente (como ollas de cocina y ollas pequeñas), ¿se utiliza para empaquetar tu pedido?<br/>"
+                "question": "Si traes tu propio recipiente (como ollas de cocina y ollas pequeñas), ¿se utiliza para empaquetar tu pedido?"
             }
         },
         "title": {
@@ -2594,12 +2828,9 @@
             "hydrant-color": {
                 "mappings": {
                     "0": {
-                        "then": "Se desconoce el color de la boca de incendios."
-                    },
-                    "1": {
                         "then": "La boca de incendios es amarilla."
                     },
-                    "2": {
+                    "1": {
                         "then": "La boca de incendios es roja."
                     }
                 },
@@ -2623,18 +2854,15 @@
             "hydrant-type": {
                 "mappings": {
                     "0": {
-                        "then": "Se desconoce el tipo de la boca de incendios"
-                    },
-                    "1": {
                         "then": "De pilar."
                     },
-                    "2": {
+                    "1": {
                         "then": "De tubería."
                     },
-                    "3": {
+                    "2": {
                         "then": "De pared."
                     },
-                    "4": {
+                    "3": {
                         "then": "Bajo tierra."
                     }
                 },
@@ -2725,6 +2953,7 @@
         }
     },
     "nature_reserve": {
+        "name": "Reserva Natural",
         "tagRenderings": {
             "Access tag": {
                 "mappings": {
@@ -3212,6 +3441,9 @@
                     },
                     "17": {
                         "question": "Reciclaje de chatarra"
+                    },
+                    "18": {
+                        "question": "Reciclaje de pequeños electrodomésticos"
                     }
                 }
             }
@@ -3290,10 +3522,10 @@
                     "16": {
                         "then": "Aquí se puede reciclar plástico"
                     },
-                    "17": {
+                    "18": {
                         "then": "Aquí se puede reciclar chatarra"
                     },
-                    "18": {
+                    "19": {
                         "then": "Aquí se pueden reciclar zapatos"
                     }
                 },
@@ -3331,7 +3563,7 @@
                     "then": "Contenedor de reciclaje"
                 }
             },
-            "render": "Facilidad de reciclaje"
+            "render": "Instalación de reciclaje"
         }
     },
     "shops": {
@@ -3758,7 +3990,7 @@
                         "then": "Estos baños <b>no</b> tienen una pileta para lavarse las manos"
                     }
                 },
-                "question": "¿Esto baños tienen una pileta para lavarte los baños?"
+                "question": "¿Esto baños tienen una pileta para lavarte las manos?"
             },
             "toilet-has-paper": {
                 "mappings": {
@@ -3822,13 +4054,6 @@
                         "question": "Accesible con sillas de ruedas"
                     }
                 }
-            },
-            "1": {
-                "options": {
-                    "0": {
-                        "question": "Tiene un cambiador"
-                    }
-                }
             }
         },
         "tagRenderings": {
@@ -3887,6 +4112,14 @@
             }
         },
         "tagRenderings": {
+            "circumference": {
+                "question": "¿Cuál es la circunferencia del tronco del árbol?",
+                "questionHint": "Se mide a una altura de 1,30 m",
+                "render": "El tronco del árbol tiene una circunferencia de {circumference} metros"
+            },
+            "height": {
+                "render": "Este árbol tiene {height} metros de altura"
+            },
             "tree-decidouous": {
                 "mappings": {
                     "0": {
@@ -3985,6 +4218,27 @@
             "render": "Árbol"
         }
     },
+    "usersettings": {
+        "tagRenderings": {
+            "picture-license": {
+                "mappings": {
+                    "1": {
+                        "then": "Las fotografías que tome tendrán una licencia con <b>CC0</b> y se agregarán al dominio público. Esto significa que todos pueden usar sus imágenes para cualquier propósito."
+                    }
+                }
+            },
+            "translation-completeness": {
+                "render": "Las traducciones para {_theme} en {_language} están al {_translation_percentage}%: {_translation_translated_count} cadenas de {_translation_total} están traducidas"
+            },
+            "translation-help": {
+                "mappings": {
+                    "0": {
+                        "then": "Haz clic en el icono 'traducir' al lado de una cadena para introducir o actualizar un texto. Necesitas una cuenta de Weblate para esto. Crea una con tu usuario de OSM para desbloquear el modo de traducción automáticamente."
+                    }
+                }
+            }
+        }
+    },
     "veterinary": {
         "name": "veterinario",
         "presets": {
@@ -4024,6 +4278,7 @@
         }
     },
     "walls_and_buildings": {
+        "description": "Capa especial incorporada que proporciona todas las paredes y edificios. Esta capa es útil en los preajustes para objetos que pueden colocarse contra las paredes (por ejemplo: AEDs, buzones de correos, entradas, direcciones, cámaras de vigilancia, ...). Esta capa es invisible por defecto y no puede ser activada por el usuario.",
         "title": {
             "render": "Pared o edificio"
         }

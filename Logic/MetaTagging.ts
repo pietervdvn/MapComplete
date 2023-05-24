@@ -234,7 +234,6 @@ export default class MetaTagging {
                 for (const f of functions) {
                     f(feature)
                 }
-                state?.allElements?.getEventSourceById(feature.properties.id)?.ping()
             } catch (e) {
                 console.error("Invalid syntax in calculated tags or some other error: ", e)
             }

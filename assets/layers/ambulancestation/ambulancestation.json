@@ -14,7 +14,8 @@
     "es": "Mapa de estaciones de ambulancias",
     "da": "Kort over ambulancestationer",
     "cs": "Mapa stanic rychlé záchranné služby",
-    "ca": "Mapa d'estacions d'ambulàncies"
+    "ca": "Mapa d'estacions d'ambulàncies",
+    "nb_NO": "Kart over ambulansestasjoner"
   },
   "minzoom": 12,
   "source": {
@@ -36,7 +37,9 @@
       "nl": "Ambulancestation",
       "es": "Estación de Ambulancias",
       "da": "Ambulancestation",
-      "cs": "Stanice rychlé záchranné služby"
+      "cs": "Stanice rychlé záchranné služby",
+      "ca": "Estació d'Ambulàncies",
+      "nb_NO": "Ambulansestasjon"
     }
   },
   "description": {
@@ -71,7 +74,9 @@
         "es": "¿Cual es el nombre de esta estación de ambulancias?",
         "nb_NO": "Hva er navnet på denne ambulansestasjonen?",
         "da": "Hvad hedder denne ambulancestation?",
-        "cs": "Jak se jmenuje tato stanice záchranné služby?"
+        "cs": "Jak se jmenuje tato stanice záchranné služby?",
+        "ca": "Quin és el nom d'aquesta estació d'ambulàncies?",
+        "zh_Hans": "这个救护车站叫什么名字？"
       },
       "render": {
         "en": "This station is called {name}.",
@@ -85,7 +90,9 @@
         "es": "Esta estación se llama {name}.",
         "nb_NO": "Denne stasjonen heter {name}.",
         "da": "Denne station hedder {name}.",
-        "cs": "Tato stanice se jmenuje {name}."
+        "cs": "Tato stanice se jmenuje {name}.",
+        "ca": "Aquesta estació es diu {name}.",
+        "zh_Hans": "这个站点名为 {name}."
       }
     },
     {
@@ -116,9 +123,10 @@
         "de": "Dieser Bahnhof liegt an der Straße {addr:street}.",
         "hu": "Ez az állomás a következő utcában van: {addr:street}.",
         "nl": "Straat waar dit station ligt: {addr:street}",
-        "es": "Esta estación se encuentra al lado de una autovía llamada {addr:street}.",
+        "es": "Esta estación se encuentra al lado de una via llamada {addr:street}.",
         "da": "Denne station ligger langs en vej, der hedder {addr:street}.",
-        "cs": "Tato stanice se nachází podél dálnice s názvem {addr:street}."
+        "cs": "Tato stanice se nachází podél dálnice s názvem {addr:street}.",
+        "ca": "Aquesta estació es troba al costat d'una via anomenada {addr:street}."
       }
     },
     {
@@ -134,7 +142,8 @@
         "nl": "Waar ligt het station? (v.b. naam van de buurt, dorp of stad)",
         "es": "¿Dónde se encuentra la estación? (ej. nombre del barrio, pueblo o ciudad)",
         "da": "Hvor ligger stationen? (f.eks. navn på kvarter, landsby eller by)",
-        "cs": "Kde se stanice nachází? (např. název čtvrti, obce nebo města)"
+        "cs": "Kde se stanice nachází? (např. název čtvrti, obce nebo města)",
+        "ca": "On es troba aquesta estació? (p.e. nom del barri, poble o ciutat)"
       },
       "freeform": {
         "key": "addr:place"
@@ -149,7 +158,8 @@
         "nl": "Dit station ligt in {addr:place}.",
         "es": "Esta estación se encuentra en {addr:place}.",
         "da": "Denne station findes i {addr:place}.",
-        "cs": "Tato stanice se nachází v rámci {addr:place}."
+        "cs": "Tato stanice se nachází v rámci {addr:place}.",
+        "ca": "Aquesta estació es troba a {addr:place}."
       }
     },
     {
@@ -166,7 +176,8 @@
         "es": "¿Qué agencia opera esta estación?",
         "da": "Hvilket agentur driver denne station?",
         "cs": "Jaká organizace tuto stanici provozuje?",
-        "ca": "Quina agència opera aquesta estació?"
+        "ca": "Quina agència opera aquesta estació?",
+        "zh_Hans": "哪家机构运营这个站点？"
       },
       "render": {
         "en": "This station is operated by {operator}.",
@@ -179,7 +190,9 @@
         "nl": "Dit station wordt beheerd door {operator}.",
         "es": "Esta estación la opera {operator}.",
         "da": "Denne station drives af {operator}.",
-        "cs": "Tuto stanici provozuje společnost {operator}."
+        "cs": "Tuto stanici provozuje společnost {operator}.",
+        "ca": "Aquesta estació l'opera {operator}.",
+        "zh_Hans": "这个站点由 {operator}运营"
       },
       "freeform": {
         "key": "operator"
@@ -198,7 +211,8 @@
         "nl": "Wat voor een organisatie is de beheerder van dit station?",
         "es": "¿Como está clasificada la operadora de la estación?",
         "da": "Hvordan klassificeres stationsoperatøren?",
-        "cs": "Jak je klasifikován provozovatel stanice?"
+        "cs": "Jak je klasifikován provozovatel stanice?",
+        "ca": "Com es classifica l'operador de l'estació?"
       },
       "render": {
         "en": "The operator is a(n) {operator:type} entity.",
@@ -208,9 +222,10 @@
         "de": "Der Betreiber ist eine {operator:type}.",
         "hu": "Az üzemeltető egy {operator:type} jellegű szervezet.",
         "nl": "De beheerder is van het type {operator:type}.",
-        "es": "La operador a no es una entidad de tipo {operator:type}.",
+        "es": "La operadora es una entidad de tipo {operator:type}.",
         "da": "Operatøren er en (n) {operator:type} enhed.",
-        "cs": "Operátor je {operator:type} entita."
+        "cs": "Operátor je {operator:type} entita.",
+        "ca": "L'operadora és una entitat del tipus {operator:type}."
       },
       "freeform": {
         "key": "operator:type"
@@ -233,7 +248,9 @@
             "nl": "Dit station wordt beheerd door de overheid.",
             "es": "La estación la opera el govierno.",
             "da": "Stationen drives af staten.",
-            "cs": "Provozovatelem stanice je vláda."
+            "cs": "Provozovatelem stanice je vláda.",
+            "ca": "El govern opera aquesta estació.",
+            "zh_Hans": "这个站点由政府运营。"
           }
         },
         {
@@ -253,7 +270,8 @@
             "nl": "Dit station wordt beheerd door een informele of community organisatie.",
             "es": "La estación la opera una organización basada en la comunidad o informal.",
             "da": "Stationen drives af en samfundsbaseret eller uformel organisation.",
-            "cs": "Provozovatelem stanice je komunitní nebo neformální organizace."
+            "cs": "Provozovatelem stanice je komunitní nebo neformální organizace.",
+            "ca": "Aquesta estació l'opera una comunitat o organització informal."
           }
         },
         {
@@ -272,7 +290,8 @@
             "nl": "Dit station wordt beheerd door een formele groep vrijwilligers.",
             "es": "La estación la opera un grupo formal de voluntarios.",
             "da": "Stationen drives af en formel gruppe af frivillige.",
-            "cs": "Stanice je provozována formální skupinou dobrovolníků."
+            "cs": "Stanice je provozována formální skupinou dobrovolníků.",
+            "ca": "Aquesta estació l'opera un grup formal de voluntaris."
           }
         },
         {
@@ -291,7 +310,8 @@
             "nl": "Dit station wordt beheerd door een privé-organisatie.",
             "es": "La estación se opera privadamente.",
             "da": "Stationen er privatdrevet.",
-            "cs": "Stanice je provozována soukromým subjektem."
+            "cs": "Stanice je provozována soukromým subjektem.",
+            "ca": "Aquesta estació l'opera una entitat privada."
           }
         }
       ]

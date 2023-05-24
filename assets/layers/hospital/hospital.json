@@ -5,15 +5,23 @@
     "de": "Krankenhäuser",
     "nl": "Ziekenhuizen",
     "pa_PK": "ہسپتال",
-    "ca": "Hospitals"
+    "ca": "Hospitals",
+    "ru": "Больницы"
   },
   "title": {
     "render": {
       "en": "Hospital",
       "de": "Krankenhaus",
       "nl": "Ziekenhuis",
-      "pa_PK": "ہسپتال"
-    }
+      "pa_PK": "ہسپتال",
+      "ru": "Больница"
+    },
+    "mappings": [
+      {
+        "if": "name~*",
+        "then": "{name}"
+      }
+    ]
   },
   "description": {
     "en": "A layer showing hospital grounds",
@@ -22,7 +30,12 @@
   },
   "minzoom": 12,
   "source": {
-    "osmTags": "amenity=hospital"
+    "osmTags": {
+      "or": [
+        "amenity=hospital",
+        "amenity=clinic"
+      ]
+    }
   },
   "tagRenderings": [
     {
@@ -31,21 +44,68 @@
         "en": "This hospital is called {name}",
         "ca": "Aquest hospital s'anomena {name}",
         "de": "Der Name des Krankenhauses lautet {name}",
-        "nl": "Dit ziekenhuis heet {name}"
+        "nl": "Dit ziekenhuis heet {name}",
+        "ru": "Эта больница называется {name}"
       },
       "question": {
         "en": "What is the name of this hospital?",
         "de": "Wie lautet der Name des Krankenhauses?",
         "nl": "Wat is de naam van dit ziekenhuis?",
-        "ca": "Quin és el nom d'aquest hospital?"
+        "ca": "Quin és el nom d'aquest hospital?",
+        "ru": "Как называется эта больница?"
       },
       "freeform": {
         "key": "name"
       }
     },
-    "phone",
-    "email",
-    "website"
+    {
+      "id": "inpatient",
+      "question": {
+        "en": "Does this facility admit inpatients?",
+        "de": "Nimmt die Einrichtung stationäre Patienten auf?",
+        "ca": "Aquesta instal·lació admet hospitalitzacions?"
+      },
+      "mappings": [
+        {
+          "if": "amenity=clinic",
+          "then": {
+            "en": "This is a clinic - patients can not stay overnight",
+            "de": "Dies ist ein Medizinisches Versorgungszentrum - Patienten können nicht über Nacht bleiben",
+            "ca": "Açò és una clínica: els pacients no poden passar la nit"
+          }
+        },
+        {
+          "if": "amenity=hospital",
+          "then": {
+            "en": "This is a hospital - patients can be admitted here for multiple days",
+            "de": "Dies ist ein Krankenhaus - Patienten können hier für mehrere Tage aufgenommen werden",
+            "ca": "Es tracta d'un hospital: els pacients poden estar ingressats aquí durant diversos dies"
+          }
+        }
+      ],
+      "questionHint": {
+        "en": "An inpatient is a patient which stays for multiple days in the facility",
+        "de": "Ein stationärer Patient ist ein Patient, der mehrere Tage in der Einrichtung bleibt",
+        "ca": "Un pacient hospitalitzat és un pacient que roman diversos dies a la instal·lació"
+      }
+    },
+    "contact",
+    {
+      "id": "oh-visitor",
+      "question": {
+        "en": "When are visitors allowed to visit?"
+      },
+      "questionHint": {
+        "en": "These are the regular visitor hours. Some wands have different visitor hours or might allow visitors in emergencies"
+      },
+      "freeform": {
+        "key": "opening_hours:visitors",
+        "type": "opening_hours"
+      },
+      "render": {
+        "en": "<h3>Opening hours for visitors</h3>Regular visitors are allowed at the following moments: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Some wands might have different opening hours. Many hospitals allow visits during emergencies too.</p>"
+      }
+    }
   ],
   "mapRendering": [
     {

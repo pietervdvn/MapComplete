@@ -1,8 +1,6 @@
 import { UIEventSource } from "../UIEventSource"
 import UserDetails, { OsmConnection } from "./OsmConnection"
 import { Utils } from "../../Utils"
-import { DomEvent } from "leaflet"
-import preventDefault = DomEvent.preventDefault
 
 export class OsmPreferences {
     public preferences = new UIEventSource<Record<string, string>>({}, "all-osm-preferences")
@@ -33,8 +31,9 @@ export class OsmPreferences {
         this.longPreferences[prefix + key] = source
 
         const allStartWith = prefix + key + "-combined"
+        const subOptions = { prefix: "" }
         // Gives the number of combined preferences
-        const length = this.GetPreference(allStartWith + "-length", "", "")
+        const length = this.GetPreference(allStartWith + "-length", "", subOptions)
 
         if ((allStartWith + "-length").length > 255) {
             throw (
@@ -56,9 +55,9 @@ export class OsmPreferences {
                 let count = parseInt(length.data)
                 for (let i = 0; i < count; i++) {
                     // Delete all the preferences
-                    self.GetPreference(allStartWith + "-" + i, "", "").setData("")
+                    self.GetPreference(allStartWith + "-" + i, "", subOptions).setData("")
                 }
-                self.GetPreference(allStartWith + "-length", "", "").setData("")
+                self.GetPreference(allStartWith + "-length", "", subOptions).setData("")
                 return
             }
 
@@ -70,7 +69,9 @@ export class OsmPreferences {
                 if (i > 100) {
                     throw "This long preference is getting very long... "
                 }
-                self.GetPreference(allStartWith + "-" + i, "", "").setData(str.substr(0, 255))
+                self.GetPreference(allStartWith + "-" + i, "", subOptions).setData(
+                    str.substr(0, 255)
+                )
                 str = str.substr(255)
                 i++
             }
@@ -116,8 +117,12 @@ export class OsmPreferences {
     public GetPreference(
         key: string,
         defaultValue: string = undefined,
-        prefix: string = "mapcomplete-"
+        options?: {
+            documentation?: string
+            prefix?: string
+        }
     ): UIEventSource<string> {
+        const prefix: string = options?.prefix ?? "mapcomplete-"
         if (key.startsWith(prefix) && prefix !== "") {
             console.trace(
                 "A preference was requested which has a duplicate prefix in its key. This is probably a bug"
@@ -173,7 +178,7 @@ export class OsmPreferences {
                 const matches = prefixes.some((prefix) => key.startsWith(prefix))
                 if (matches) {
                     console.log("Clearing ", key)
-                    self.GetPreference(key, "", "").setData("")
+                    self.GetPreference(key, "", { prefix: "" }).setData("")
                 }
             }
             isRunning = false

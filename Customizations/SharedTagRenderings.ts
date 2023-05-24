@@ -1,5 +1,4 @@
-import * as questions from "../assets/tagRenderings/questions.json"
-import * as icons from "../assets/tagRenderings/icons.json"
+import questions from "../assets/tagRenderings/questions.json"
 import { Utils } from "../Utils"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
@@ -14,11 +13,9 @@ export default class SharedTagRenderings {
         SharedTagRenderings.generatedSharedFields()
     public static SharedTagRenderingJson: Map<string, TagRenderingConfigJson> =
         SharedTagRenderings.generatedSharedFieldsJsons()
-    public static SharedIcons: Map<string, TagRenderingConfig> =
-        SharedTagRenderings.generatedSharedFields(true)
 
-    private static generatedSharedFields(iconsOnly = false): Map<string, TagRenderingConfig> {
-        const configJsons = SharedTagRenderings.generatedSharedFieldsJsons(iconsOnly)
+    private static generatedSharedFields(): Map<string, TagRenderingConfig> {
+        const configJsons = SharedTagRenderings.generatedSharedFieldsJsons()
         const d = new Map<string, TagRenderingConfig>()
         for (const key of Array.from(configJsons.keys())) {
             try {
@@ -31,7 +28,7 @@ export default class SharedTagRenderings {
                     console.error(
                         "BUG: could not parse",
                         key,
-                        " from questions.json or icons.json - this error happened during the build step of the SharedTagRenderings",
+                        " from questions.json - this error happened during the build step of the SharedTagRenderings",
                         e
                     )
                 }
@@ -40,24 +37,14 @@ export default class SharedTagRenderings {
         return d
     }
 
-    private static generatedSharedFieldsJsons(
-        iconsOnly = false
-    ): Map<string, TagRenderingConfigJson> {
+    private static generatedSharedFieldsJsons(): Map<string, TagRenderingConfigJson> {
         const dict = new Map<string, TagRenderingConfigJson>()
 
-        if (!iconsOnly) {
-            for (const key in questions) {
-                if (key === "id") {
-                    continue
-                }
-                dict.set(key, <TagRenderingConfigJson>questions[key])
-            }
-        }
-        for (const key in icons) {
+        for (const key in questions) {
             if (key === "id") {
                 continue
             }
-            dict.set(key, <TagRenderingConfigJson>icons[key])
+            dict.set(key, <TagRenderingConfigJson>questions[key])
         }
 
         dict.forEach((value, key) => {

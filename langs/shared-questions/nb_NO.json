@@ -26,10 +26,12 @@
                 "7": {
                     "then": "2-euro mynter aksepteres"
                 }
-            }
+            },
+            "question": "Hvilke mynter kan brukes til betaling her?"
         },
         "description": {
-            "question": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.<br/><span style='font-size: small'>Ikke gjenta fakta som allerede er nevnt</span>"
+            "question": "Er det noe mer som er relevant du ikke kunne opplyse om i tidligere svar? Legg det til her.",
+            "questionHint": "Ikke gjenta fakta som allerede er nevnt"
         },
         "dog-access": {
             "mappings": {
@@ -143,6 +145,18 @@
                 }
             }
         },
+        "opening_hours_by_appointment": {
+            "override": {
+                "mappings": {
+                    "0": {
+                        "then": "Kun ved avtale"
+                    },
+                    "1": {
+                        "then": "Kun ved avtale"
+                    }
+                }
+            }
+        },
         "payment-options": {
             "mappings": {
                 "0": {
@@ -162,6 +176,24 @@
                     },
                     "1": {
                         "then": "Betaling utføres med et medlemskort"
+                    }
+                }
+            }
+        },
+        "payment-options-split": {
+            "override": {
+                "mappings+": {
+                    "0": {
+                        "then": "Mynter aksepteres her"
+                    },
+                    "1": {
+                        "then": "Sedler aksepteres her"
+                    },
+                    "2": {
+                        "then": "Debetkort aksepteres her"
+                    },
+                    "3": {
+                        "then": "Kredittkort aksepteres her"
                     }
                 }
             }
@@ -230,14 +262,6 @@
                 }
             },
             "question": "Hva er respektivt Wikipedia-element?"
-        },
-        "wikipedialink": {
-            "mappings": {
-                "0": {
-                    "then": "Ikke lenket med Wikipedia"
-                }
-            },
-            "question": "Hva er respektivt element på Wikipedia?"
         }
     }
 }

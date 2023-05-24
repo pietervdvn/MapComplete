@@ -205,7 +205,7 @@ function main() {
 
     const files = []
 
-    for (const layout of AllKnownLayouts.layoutsList) {
+    for (const layout of AllKnownLayouts.allKnownLayouts.values()) {
         if (layout.hideFromOverview) {
             continue
         }

@@ -1,0 +1,94 @@
+{
+  "id": "parking_ticket_machine",
+  "name": {
+    "en": "Parking Ticket Machines",
+    "nl": "Parkeerkaartautomaten",
+    "de": "Parkscheinautomaten"
+  },
+  "description": {
+    "en": "Layer with parking ticket machines to pay for parking.",
+    "nl": "Laag met parkeerkaartautomaten om voor parkeren te betalen.",
+    "de": "Ebene mit Parkscheinautomaten zum Bezahlen des Parkens."
+  },
+  "title": {
+    "render": {
+      "en": "Parking Ticket Machine",
+      "nl": "Parkeerkaartautomaat",
+      "de": "Parkscheinautomat"
+    }
+  },
+  "source": {
+    "osmTags": {
+      "and": [
+        "amenity=vending_machine",
+        "vending=parking_tickets"
+      ]
+    }
+  },
+  "minzoom": 16,
+  "presets": [
+    {
+      "tags": [
+        "amenity=vending_machine",
+        "vending=parking_tickets"
+      ],
+      "title": {
+        "en": "a parking ticket machine",
+        "nl": "een parkeerkaartautomaat",
+        "de": "Ein Parkscheinautomat",
+        "ca": "una màquina de tiquets d'aparcament"
+      }
+    }
+  ],
+  "tagRenderings": [
+    "images",
+    "payment-options-split",
+    "denominations-coins",
+    "denominations-notes",
+    {
+      "id": "ref",
+      "question": {
+        "en": "What is the reference number of this parking ticket machine?",
+        "nl": "Wat is het referentienummer van deze parkeerkaartautomaat?",
+        "de": "Wie lautet die Referenznummer dieses Parkscheinautomaten?"
+      },
+      "freeform": {
+        "key": "ref",
+        "type": "string",
+        "placeholder": {
+          "en": "Reference number",
+          "nl": "Referentienummer",
+          "de": "Referenznummer",
+          "ca": "Número de referència"
+        }
+      },
+      "render": {
+        "en": "This parking ticket machine has the reference number {ref}",
+        "nl": "Deze parkeerkaartautomaat heeft het referentienummer {ref}",
+        "de": "Dieser Parkscheinautomat hat die Referenznummer {ref}",
+        "ca": "Aquesta màquina de tiquets d'aparcament té el número de referència {ref}"
+      },
+      "mappings": [
+        {
+          "if": "noref=yes",
+          "then": {
+            "en": "This parking ticket machine has no reference number",
+            "nl": "Deze parkeerkaartautomaat heeft geen referentienummer",
+            "de": "Dieser Parkscheinautomat hat keine Referenznummer",
+            "ca": "Aquesta màquina de tiquets d'aparcament no té número de referència"
+          }
+        }
+      ]
+    }
+  ],
+  "mapRendering": [
+    {
+      "location": [
+        "point",
+        "centroid"
+      ],
+      "icon": "square:white;./assets/layers/parking_ticket_machine/parking_tickets.svg",
+      "iconSize": "20,20,center"
+    }
+  ]
+}

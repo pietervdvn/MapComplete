@@ -3,19 +3,18 @@ import { LayerConfigJson } from "../Json/LayerConfigJson"
 import LayerConfig from "../LayerConfig"
 import { Utils } from "../../../Utils"
 import Constants from "../../Constants"
-import { Translation } from "../../../UI/i18n/Translation"
+import { Translation, TypedTranslation } from "../../../UI/i18n/Translation"
 import { LayoutConfigJson } from "../Json/LayoutConfigJson"
 import LayoutConfig from "../LayoutConfig"
 import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
 import { TagUtils } from "../../../Logic/Tags/TagUtils"
 import { ExtractImages } from "./FixImages"
-import ScriptUtils from "../../../scripts/ScriptUtils"
 import { And } from "../../../Logic/Tags/And"
 import Translations from "../../../UI/i18n/Translations"
 import Svg from "../../../Svg"
-import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 import FilterConfigJson from "../Json/FilterConfigJson"
 import DeleteConfig from "../DeleteConfig"
+import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
     private readonly _languages: string[]
@@ -61,13 +60,16 @@ class ValidateLanguageCompleteness extends DesugaringStep<any> {
 
 export class DoesImageExist extends DesugaringStep<string> {
     private readonly _knownImagePaths: Set<string>
+    private readonly _ignore?: Set<string>
     private readonly doesPathExist: (path: string) => boolean = undefined
 
     constructor(
         knownImagePaths: Set<string>,
-        checkExistsSync: (path: string) => boolean = undefined
+        checkExistsSync: (path: string) => boolean = undefined,
+        ignore?: Set<string>
     ) {
         super("Checks if an image exists", [], "DoesImageExist")
+        this._ignore = ignore
         this._knownImagePaths = knownImagePaths
         this.doesPathExist = checkExistsSync
     }
@@ -76,6 +78,10 @@ export class DoesImageExist extends DesugaringStep<string> {
         image: string,
         context: string
     ): { result: string; errors?: string[]; warnings?: string[]; information?: string[] } {
+        if (this._ignore?.has(image)) {
+            return { result: image }
+        }
+
         const errors = []
         const warnings = []
         const information = []
@@ -125,20 +131,23 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
      */
     private readonly _path?: string
     private readonly _isBuiltin: boolean
-    private _sharedTagRenderings: Map<string, any>
+    //private readonly _sharedTagRenderings: Map<string, any>
     private readonly _validateImage: DesugaringStep<string>
+    private readonly _extractImages: ExtractImages = undefined
 
     constructor(
         doesImageExist: DoesImageExist,
         path: string,
         isBuiltin: boolean,
-        sharedTagRenderings: Map<string, any>
+        sharedTagRenderings?: Set<string>
     ) {
         super("Doesn't change anything, but emits warnings and errors", [], "ValidateTheme")
         this._validateImage = doesImageExist
         this._path = path
         this._isBuiltin = isBuiltin
-        this._sharedTagRenderings = sharedTagRenderings
+        if (sharedTagRenderings) {
+            this._extractImages = new ExtractImages(this._isBuiltin, sharedTagRenderings)
+        }
     }
 
     convert(
@@ -170,13 +179,10 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
                 }
             }
         }
-        if (this._isBuiltin) {
+        if (this._isBuiltin && this._extractImages !== undefined) {
             // Check images: are they local, are the licenses there, is the theme icon square, ...
-            const images = new ExtractImages(
-                this._isBuiltin,
-                this._sharedTagRenderings
-            ).convertStrict(json, "validation")
-            const remoteImages = images.filter((img) => img.indexOf("http") == 0)
+            const images = this._extractImages.convertStrict(json, "validation")
+            const remoteImages = images.filter((img) => img.path.indexOf("http") == 0)
             for (const remoteImage of remoteImages) {
                 errors.push(
                     "Found a remote image: " +
@@ -188,8 +194,8 @@ class ValidateTheme extends DesugaringStep<LayoutConfigJson> {
             }
             for (const image of images) {
                 this._validateImage.convertJoin(
-                    image,
-                    context === undefined ? "" : ` in a layer defined in the theme ${context}`,
+                    image.path,
+                    context === undefined ? "" : ` in the theme ${context} at ${image.context}`,
                     errors,
                     warnings,
                     information
@@ -269,7 +275,7 @@ export class ValidateThemeAndLayers extends Fuse<LayoutConfigJson> {
         doesImageExist: DoesImageExist,
         path: string,
         isBuiltin: boolean,
-        sharedTagRenderings: Map<string, any>
+        sharedTagRenderings?: Set<string>
     ) {
         super(
             "Validates a theme and the contained layers",
@@ -365,7 +371,7 @@ export class PrevalidateTheme extends Fuse<LayoutConfigJson> {
     }
 }
 
-export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRenderingConfigJson> {
+export class DetectShadowedMappings extends DesugaringStep<TagRenderingConfigJson> {
     private readonly _calculatedTagNames: string[]
 
     constructor(layerConfig?: LayerConfigJson) {
@@ -425,9 +431,9 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
      * r.errors[0].indexOf("The mapping key=value&x=y is fully matched by a previous mapping (namely 0)") >= 0 // => true
      */
     convert(
-        json: QuestionableTagRenderingConfigJson,
+        json: TagRenderingConfigJson,
         context: string
-    ): { result: QuestionableTagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
+    ): { result: TagRenderingConfigJson; errors?: string[]; warnings?: string[] } {
         const errors = []
         const warnings = []
         if (json.mappings === undefined || json.mappings.length === 0) {
@@ -441,12 +447,9 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
         const parsedConditions = json.mappings.map((m, i) => {
             const ctx = `${context}.mappings[${i}]`
             const ifTags = TagUtils.Tag(m.if, ctx)
-            if (
-                m.hideInAnswer !== undefined &&
-                m.hideInAnswer !== false &&
-                m.hideInAnswer !== true
-            ) {
-                let conditionTags = TagUtils.Tag(m.hideInAnswer)
+            const hideInAnswer = m["hideInAnswer"]
+            if (hideInAnswer !== undefined && hideInAnswer !== false && hideInAnswer !== true) {
+                let conditionTags = TagUtils.Tag(hideInAnswer)
                 // Merge the condition too!
                 return new And([conditionTags, ifTags])
             }
@@ -467,8 +470,8 @@ export class DetectShadowedMappings extends DesugaringStep<QuestionableTagRender
                 const doesMatch = parsedConditions[j].matchesProperties(properties)
                 if (
                     doesMatch &&
-                    json.mappings[j].hideInAnswer === true &&
-                    json.mappings[i].hideInAnswer !== true
+                    json.mappings[j]["hideInAnswer"] === true &&
+                    json.mappings[i]["hideInAnswer"] !== true
                 ) {
                     warnings.push(
                         `At ${context}: Mapping ${i} is shadowed by mapping ${j}. However, mapping ${j} has 'hideInAnswer' set, which will result in a different rendering in question-mode.`
@@ -590,12 +593,14 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
 }
 
 class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
-    constructor() {
-        super("Miscellanious checks on the tagrendering", ["special"], "MiscTagREnderingChecksRew")
+    private _options: { noQuestionHintCheck: boolean }
+    constructor(options: { noQuestionHintCheck: boolean }) {
+        super("Miscellaneous checks on the tagrendering", ["special"], "MiscTagRenderingChecks")
+        this._options = options
     }
 
     convert(
-        json: TagRenderingConfigJson,
+        json: TagRenderingConfigJson | QuestionableTagRenderingConfigJson,
         context: string
     ): {
         result: TagRenderingConfigJson
@@ -603,6 +608,7 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
         warnings?: string[]
         information?: string[]
     } {
+        const warnings = []
         const errors = []
         if (json["special"] !== undefined) {
             errors.push(
@@ -611,19 +617,45 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     ': detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
             )
         }
+        if (json["question"] && !this._options?.noQuestionHintCheck) {
+            const question = Translations.T(
+                new TypedTranslation(json["question"]),
+                context + ".question"
+            )
+            for (const lng of question.SupportedLanguages()) {
+                const html = document.createElement("p")
+                html.innerHTML = question.textFor(lng)
+                const divs = Array.from(html.getElementsByTagName("div"))
+                const spans = Array.from(html.getElementsByTagName("span"))
+                const brs = Array.from(html.getElementsByTagName("br"))
+                const subtles = Array.from(html.getElementsByClassName("subtle"))
+                if (divs.length + spans.length + brs.length + subtles.length > 0) {
+                    warnings.push(
+                        `At ${context}: the question for ${lng} contains a div, a span, a br or an element with class 'subtle'. Please, use a \`questionHint\` instead.
+    The question is: ${question.textFor(lng)}`
+                    )
+                }
+            }
+        }
         return {
             result: json,
             errors,
+            warnings,
         }
     }
 }
 
 export class ValidateTagRenderings extends Fuse<TagRenderingConfigJson> {
-    constructor(layerConfig?: LayerConfigJson, doesImageExist?: DoesImageExist) {
+    constructor(
+        layerConfig?: LayerConfigJson,
+        doesImageExist?: DoesImageExist,
+        options?: { noQuestionHintCheck: boolean }
+    ) {
         super(
             "Various validation on tagRenderingConfigs",
             new DetectShadowedMappings(layerConfig),
-            new DetectMappingsWithImages(doesImageExist)
+            new DetectMappingsWithImages(doesImageExist),
+            new MiscTagRenderingChecks(options)
         )
     }
 }
@@ -688,7 +720,6 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 `At ${context}: minzoom is ${json.minzoom}, this should be at most ${Constants.userJourney.minZoomLevelToAddNewPoints} as a preset is set. Why? Selecting the pin for a new item will zoom in to level before adding the point. Having a greater minzoom will hide the points, resulting in possible duplicates`
             )
         }
-
         {
             // duplicate ids in tagrenderings check
             const duplicates = Utils.Dedup(
@@ -810,7 +841,11 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             if (json.tagRenderings !== undefined) {
                 const r = new On(
                     "tagRenderings",
-                    new Each(new ValidateTagRenderings(json, this._doesImageExist))
+                    new Each(
+                        new ValidateTagRenderings(json, this._doesImageExist, {
+                            noQuestionHintCheck: json["#"]?.indexOf("no-question-hint-check") >= 0,
+                        })
+                    )
                 ).convert(json, context)
                 warnings.push(...(r.warnings ?? []))
                 errors.push(...(r.errors ?? []))
@@ -882,53 +917,6 @@ export class DetectDuplicateFilters extends DesugaringStep<{
         )
     }
 
-    /**
-     * Add all filter options into 'perOsmTag'
-     */
-    private addLayerFilters(
-        layer: LayerConfigJson,
-        perOsmTag: Map<
-            string,
-            {
-                layer: LayerConfigJson
-                layout: LayoutConfigJson | undefined
-                filter: FilterConfigJson
-            }[]
-        >,
-        layout?: LayoutConfigJson | undefined
-    ): void {
-        if (layer.filter === undefined || layer.filter === null) {
-            return
-        }
-        if (layer.filter["sameAs"] !== undefined) {
-            return
-        }
-        for (const filter of <(string | FilterConfigJson)[]>layer.filter) {
-            if (typeof filter === "string") {
-                continue
-            }
-
-            if (filter["#"]?.indexOf("ignore-possible-duplicate") >= 0) {
-                continue
-            }
-
-            for (const option of filter.options) {
-                if (option.osmTags === undefined) {
-                    continue
-                }
-                const key = JSON.stringify(option.osmTags)
-                if (!perOsmTag.has(key)) {
-                    perOsmTag.set(key, [])
-                }
-                perOsmTag.get(key).push({
-                    layer,
-                    filter,
-                    layout,
-                })
-            }
-        }
-    }
-
     convert(
         json: { layers: LayerConfigJson[]; themes: LayoutConfigJson[] },
         context: string
@@ -993,6 +981,53 @@ export class DetectDuplicateFilters extends DesugaringStep<{
             errors,
             warnings,
             information,
+        }
+    }
+
+    /**
+     * Add all filter options into 'perOsmTag'
+     */
+    private addLayerFilters(
+        layer: LayerConfigJson,
+        perOsmTag: Map<
+            string,
+            {
+                layer: LayerConfigJson
+                layout: LayoutConfigJson | undefined
+                filter: FilterConfigJson
+            }[]
+        >,
+        layout?: LayoutConfigJson | undefined
+    ): void {
+        if (layer.filter === undefined || layer.filter === null) {
+            return
+        }
+        if (layer.filter["sameAs"] !== undefined) {
+            return
+        }
+        for (const filter of <(string | FilterConfigJson)[]>layer.filter) {
+            if (typeof filter === "string") {
+                continue
+            }
+
+            if (filter["#"]?.indexOf("ignore-possible-duplicate") >= 0) {
+                continue
+            }
+
+            for (const option of filter.options) {
+                if (option.osmTags === undefined) {
+                    continue
+                }
+                const key = JSON.stringify(option.osmTags)
+                if (!perOsmTag.has(key)) {
+                    perOsmTag.set(key, [])
+                }
+                perOsmTag.get(key).push({
+                    layer,
+                    filter,
+                    layout,
+                })
+            }
         }
     }
 }

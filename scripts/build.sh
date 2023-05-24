@@ -9,6 +9,8 @@ rm -rf .cache
 mkdir dist 2> /dev/null
 mkdir dist/assets 2> /dev/null
 
+export NODE_OPTIONS="--max-old-space-size=8192"
+
 # This script ends every line with '&&' to chain everything. A failure will thus stop the build
 npm run generate:editor-layer-index &&
 npm run generate &&
@@ -33,9 +35,17 @@ then
     echo "Source maps are enabled"
 fi
 
-ASSET_URL="mc/$BRANCH"
-export ASSET_URL
-echo "$ASSET_URL"
+if [ $BRANCH = "master" ]
+then
+    ASSET_URL="./"
+    export ASSET_URL
+    echo "$ASSET_URL"
+else
+  ASSET_URL="mc/$BRANCH"
+  export ASSET_URL
+  echo "$ASSET_URL"
+fi
+
 export NODE_OPTIONS=--max-old-space-size=6500
 vite build $SRC_MAPS 
 
@@ -48,3 +58,5 @@ cp -r assets/templates/ dist/assets/templates/
 cp -r assets/tagRenderings/ dist/assets/tagRenderings/
 cp assets/*.png dist/assets/
 cp assets/*.svg dist/assets/
+
+export NODE_OPTIONS=""

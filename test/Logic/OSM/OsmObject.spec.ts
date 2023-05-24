@@ -1,9 +1,8 @@
-import { describe } from "mocha"
-import { expect } from "chai"
 import { OsmObject } from "../../../Logic/Osm/OsmObject"
 import { Utils } from "../../../Utils"
 import ScriptUtils from "../../../scripts/ScriptUtils"
 import { readFileSync } from "fs"
+import { describe, expect, it } from "vitest"
 
 describe("OsmObject", () => {
     describe("download referencing ways", () => {
@@ -81,8 +80,8 @@ describe("OsmObject", () => {
 
         it("should download referencing ways", async () => {
             const ways = await OsmObject.DownloadReferencingWays("node/1124134958")
-            expect(ways).not.undefined
-            expect(ways).length(4)
+            expect(ways).toBeDefined()
+            expect(ways).toHaveLength(4)
         })
 
         it("should download full OSM-relations", async () => {
@@ -93,7 +92,7 @@ describe("OsmObject", () => {
             )
             const r = await OsmObject.DownloadObjectAsync("relation/5759328").then((x) => x)
             const geojson = r.asGeoJson()
-            expect(geojson.geometry.type).eq("MultiPolygon")
+            expect(geojson.geometry.type).toBe("MultiPolygon")
         })
     })
 })

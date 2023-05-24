@@ -1,7 +1,7 @@
 /**
  * Asks to add a feature at the last clicked location, at least if zoom is sufficient
  */
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
 import Svg from "../../Svg"
 import { SubtleButton } from "../Base/SubtleButton"
 import Combine from "../Base/Combine"
@@ -26,7 +26,7 @@ import BaseLayer from "../../Models/BaseLayer"
 import Loading from "../Base/Loading"
 import Hash from "../../Logic/Web/Hash"
 import { GlobalFilter } from "../../Logic/State/MapState"
-import { WayId } from "../../Models/OsmFeature"
+import { OsmTags, WayId } from "../../Models/OsmFeature"
 import { Tag } from "../../Logic/Tags/Tag"
 import { LoginToggle } from "../Popup/LoginButton"
 
@@ -101,6 +101,9 @@ export default class SimpleAddUI extends LoginToggle {
             snapOntoWay?: OsmWay
         ): Promise<void> {
             tags.push(new Tag(Tag.newlyCreated.key, new Date().toISOString()))
+            if (snapOntoWay) {
+                tags.push(new Tag("_referencing_ways", "way/" + snapOntoWay.id))
+            }
             const newElementAction = new CreateNewNodeAction(tags, location.lat, location.lon, {
                 theme: state.layoutToUse?.id ?? "unkown",
                 changeType: "create",
@@ -283,9 +286,16 @@ export default class SimpleAddUI extends LoginToggle {
             const presets = layer.layerDef.presets
             for (const preset of presets) {
                 const tags = TagUtils.KVtoProperties(preset.tags ?? [])
+                const isSnapping = preset.preciseInput.snapToLayers?.length > 0
                 let icon: () => BaseUIElement = () =>
                     layer.layerDef.mapRendering[0]
-                        .GenerateLeafletStyle(new UIEventSource<any>(tags), false)
+                        .GenerateLeafletStyle(
+                            new ImmutableStore<OsmTags>(
+                                isSnapping ? { _referencing_ways: '["way/-1"]', ...tags } : tags
+                            ),
+                            false,
+                            { noSize: true }
+                        )
                         .html.SetClass("w-12 h-12 block relative")
                 const presetInfo: PresetInfo = {
                     layerToAddTo: layer,

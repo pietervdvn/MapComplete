@@ -9,6 +9,7 @@ import { VariableUiElement } from "../Base/VariableUIElement"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { BBox } from "../../Logic/BBox"
 import { Utils } from "../../Utils"
+import Translations from "../i18n/Translations"
 
 /**
  * The bottom right attribution panel in the leaflet map
@@ -58,7 +59,13 @@ export default class Attribution extends Combine {
             true
         )
 
-        let editWithJosm = new VariableUiElement(
+        const mapDataByOsm = new Link(
+            Translations.t.general.attribution.mapDataByOsm,
+            "https://openstreetmap.org/copyright",
+            true
+        )
+
+        const editWithJosm = new VariableUiElement(
             userDetails.map(
                 (userDetails) => {
                     if (userDetails.csCount < Constants.userJourney.tagsVisibleAndWikiLinked) {
@@ -79,7 +86,7 @@ export default class Attribution extends Combine {
                 [location, currentBounds]
             )
         )
-        super([mapComplete, reportBug, stats, editHere, editWithJosm, mapillary])
+        super([mapComplete, reportBug, stats, editHere, editWithJosm, mapillary, mapDataByOsm])
         this.SetClass("flex")
     }
 }

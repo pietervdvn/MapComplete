@@ -11,6 +11,7 @@ import Toggle from "../Input/Toggle"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import FeaturePipeline from "../../Logic/FeatureSource/FeaturePipeline"
 import FilteredLayer from "../../Models/FilteredLayer"
+import Hash from "../../Logic/Web/Hash"
 
 export default class NewNoteUi extends Toggle {
     constructor(
@@ -33,7 +34,7 @@ export default class NewNoteUi extends Toggle {
         text.SetClass("border rounded-sm border-grey-500")
 
         const postNote = new SubtleButton(Svg.addSmall_svg().SetClass("max-h-7"), t.createNote)
-        postNote.onClick(async () => {
+        postNote.OnClickWithLoading(t.creating, async () => {
             let txt = text.GetValue().data
             if (txt === undefined || txt === "") {
                 return
@@ -63,6 +64,7 @@ export default class NewNoteUi extends Toggle {
             }
             state?.featurePipeline?.InjectNewPoint(feature)
             state.selectedElement?.setData(feature)
+            Hash.hash.setData(feature.properties.id)
             text.GetValue().setData("")
             isCreated.setData(true)
         })
@@ -73,12 +75,12 @@ export default class NewNoteUi extends Toggle {
             new Combine([
                 new Toggle(
                     undefined,
-                    t.warnAnonymous.SetClass("alert"),
+                    t.warnAnonymous.SetClass("block alert"),
                     state?.osmConnection?.isLoggedIn
                 ),
                 new Toggle(
                     postNote,
-                    t.textNeeded.SetClass("alert"),
+                    t.textNeeded.SetClass("block alert"),
                     text.GetValue().map((txt) => txt?.length > 3)
                 ),
             ]).SetClass("flex justify-end items-center"),

@@ -1,6 +1,7 @@
 import * as turf from "@turf/turf"
 import { TileRange, Tiles } from "../Models/TileRange"
 import { GeoOperations } from "./GeoOperations"
+import { Feature, Polygon } from "geojson"
 
 export class BBox {
     static global: BBox = new BBox([
@@ -185,22 +186,26 @@ export class BBox {
         ]
     }
 
-    asGeoJson(properties: any): any {
+    public asGeoJson<T>(properties: T): Feature<Polygon, T> {
         return {
             type: "Feature",
             properties: properties,
-            geometry: {
-                type: "Polygon",
-                coordinates: [
-                    [
-                        [this.minLon, this.minLat],
-                        [this.maxLon, this.minLat],
-                        [this.maxLon, this.maxLat],
-                        [this.minLon, this.maxLat],
-                        [this.minLon, this.minLat],
-                    ],
+            geometry: this.asGeometry(),
+        }
+    }
+
+    public asGeometry(): Polygon {
+        return {
+            type: "Polygon",
+            coordinates: [
+                [
+                    [this.minLon, this.minLat],
+                    [this.maxLon, this.minLat],
+                    [this.maxLon, this.maxLat],
+                    [this.minLon, this.maxLat],
+                    [this.minLon, this.minLat],
                 ],
-            },
+            ],
         }
     }
 

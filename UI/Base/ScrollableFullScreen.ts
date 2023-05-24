@@ -143,7 +143,7 @@ export default class ScrollableFullScreen {
         )
 
         const contentWrapper = new Combine([content]).SetClass(
-            "block p-2 md:pt-4 w-full h-full overflow-y-auto desktop:max-h-65vh"
+            "block p-2 md:pt-4 w-full h-full overflow-y-auto"
         )
 
         this._resetScrollSignal.addCallback((_) => {
@@ -159,7 +159,7 @@ export default class ScrollableFullScreen {
                 // We add an ornament which takes around 5em. This is in order to make sure the Web UI doesn't hide
             ]).SetClass("flex flex-col h-full relative bg-white"),
         ]).SetClass(
-            "fixed top-0 left-0 right-0 h-screen w-screen desktop:max-h-65vh md:w-auto md:relative z-above-controls md:rounded-xl overflow-hidden"
+            "fixed top-0 left-0 right-0 h-screen w-screen md:w-auto md:relative z-above-controls md:rounded-xl overflow-hidden"
         )
     }
 

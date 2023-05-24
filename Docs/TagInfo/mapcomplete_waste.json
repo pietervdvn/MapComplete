@@ -128,6 +128,16 @@
       "value": "waste_disposal"
     },
     {
+      "key": "recycling_type",
+      "description": "Layer 'Recycling' shows recycling_type=pickup_point with a fixed text, namely 'This is a pickup point. The waste material is placed here without placing it in a dedicated container.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "pickup_point"
+    },
+    {
+      "key": "recycling_type",
+      "description": "Layer 'Recycling' shows recycling_type=dump with a fixed text, namely 'This is a dump where the waste material is stacked.' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "dump"
+    },
+    {
       "key": "name",
       "description": "Layer 'Recycling' shows and asks freeform values for key 'name' (in the MapComplete.osm.be theme 'Waste') (This is only shown if recycling_type=centre)"
     },
@@ -237,6 +247,11 @@
       "value": "yes"
     },
     {
+      "key": "recycling:printer_cartridges",
+      "description": "Layer 'Recycling' shows recycling:printer_cartridges=yes with a fixed text, namely 'Printer cartridges can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
       "key": "recycling:scrap_metal",
       "description": "Layer 'Recycling' shows recycling:scrap_metal=yes with a fixed text, namely 'Scrap metal can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
       "value": "yes"
@@ -264,6 +279,11 @@
     {
       "key": "recycling:waste",
       "description": "Layer 'Recycling' shows recycling:waste=yes with a fixed text, namely 'Residual waste can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "recycling:bicycles",
+      "description": "Layer 'Recycling' shows recycling:bicycles=yes with a fixed text, namely 'Bicycles can be recycled here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
       "value": "yes"
     },
     {
@@ -304,9 +324,54 @@
       "value": "24/7"
     },
     {
+      "key": "access",
+      "description": "Layer 'Recycling' shows and asks freeform values for key 'access' (in the MapComplete.osm.be theme 'Waste')"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Recycling' shows access=yes with a fixed text, namely 'Everyone can use this recycling facility' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "yes"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Recycling' shows access=residents with a fixed text, namely 'Only residents can use this recycling facility' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "residents"
+    },
+    {
+      "key": "access",
+      "description": "Layer 'Recycling' shows access=private with a fixed text, namely 'This recycling facility is only for private use' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "private"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Waste has a layer Waste Disposal Bins showing features with this tag",
       "value": "waste_disposal"
+    },
+    {
+      "key": "image",
+      "description": "The layer 'Waste Disposal Bins allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "mapillary",
+      "description": "The layer 'Waste Disposal Bins allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikidata",
+      "description": "The layer 'Waste Disposal Bins allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "wikipedia",
+      "description": "The layer 'Waste Disposal Bins allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Waste Disposal Bins' shows amenity=waste_disposal with a fixed text, namely 'This is a medium to large bin for disposal of (household) waste' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "waste_disposal"
+    },
+    {
+      "key": "amenity",
+      "description": "Layer 'Waste Disposal Bins' shows amenity=recycling with a fixed text, namely 'This is actually a recycling container' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Waste')",
+      "value": "recycling"
     },
     {
       "key": "access",

@@ -1,0 +1,60 @@
+{
+  "id": "fixme",
+  "name": {
+    "en": "OSM objects with FIXME tags",
+    "de": "OSM-Objekte mit FIXME-Tags"
+  },
+  "minzoom": 12,
+  "description": {
+    "en": "OSM objects that likely need to be fixed, based on a FIXME tag.",
+    "de": "OSM-Objekte, die wahrscheinlich korrigiert werden müssen, basierend auf einem FIXME-Tag."
+  },
+  "shownByDefault": false,
+  "syncSelection": "theme-only",
+  "source": {
+    "osmTags": {
+      "or": [
+        "fixme~*",
+        "FIXME~*"
+      ]
+    }
+  },
+  "title": {
+    "render": {
+      "en": "OSM object with FIXME tag",
+      "de": "OSM-Objekt mit FIXME-Tags"
+    }
+  },
+  "tagRenderings": [
+    {
+      "id": "fixme",
+      "render": {
+        "en": "Fixme Text: {fixme}",
+        "de": "Fixme Text: {fixme}"
+      }
+    },
+    {
+      "id": "note",
+      "condition": "note~*",
+      "render": {
+        "en": "Note Text: {note}",
+        "de": "Notiz Text: {note}"
+      }
+    },
+    "all_tags"
+  ],
+  "mapRendering": [
+    {
+      "location": [
+        "centroid",
+        "point"
+      ],
+      "icon": "./assets/svg/bug.svg"
+    },
+    {
+      "color": "#ff0000",
+      "dashArray": "5,5",
+      "width": 2
+    }
+  ]
+}

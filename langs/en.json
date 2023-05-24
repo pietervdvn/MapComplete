@@ -5,6 +5,12 @@
         "retrying": "Loading data failed. Trying again in {count} seconds…",
         "zoomIn": "Zoom in to view or edit the data"
     },
+    "communityIndex": {
+        "available": "This community speaks {native}",
+        "intro": "Get in touch with other people to get to know them, learn from them, ...",
+        "notAvailable": "This community does not speak {native}",
+        "title": "Community index"
+    },
     "delete": {
         "cancel": "Cancel",
         "cannotBeDeleted": "This feature can not be deleted",
@@ -53,7 +59,7 @@
         "fakeui": {
             "add_images": "Add images with a few clicks",
             "attributes": "Shows attributes in a friendly way",
-            "edit": "Wrong or outdated info? The edit button is right there",
+            "edit": "Wrong or outdated info? The edit button is right there.",
             "question": "If an attribute is not yet known, MapComplete shows a question",
             "see_images": "Shows images from previous contributors, Wikipedia, Mapillary, ... ",
             "wikipedia": "Linked Wikipedia articles are shown"
@@ -70,12 +76,12 @@
             "li4": "Embedded within the OpenStreetMap-ecosystem, which has many tools available",
             "li5": "Functionality to import existing datasets",
             "li6": "Many advanced features, such as tree detection and advanced input methods",
-            "li7": "Fully open source (GPL) and free to use",
+            "li7": "Copylefted libre software (GPL licensed) and gratis to use",
             "title": "What is MapComplete?"
         },
         "onwheels": "Indoor maps for wheelchair users are available as well.",
         "osm": "OpenStreetMap is an online map which can be edited and reused by anyone for any purpose as long as attribution is given and the data is kept open.\n\nIt is the biggest geospatial database in the world and is reused by thousands of applications and websites.",
-        "tagline": "Collect geodata easily with OpenStreetMap",
+        "tagline": "Collect geodata with OpenStreetMap",
         "title": "MapComplete.osm.be",
         "toerisme_vlaanderen": "For joint project with Visit Flanders, 'Pin your point' was created. Over 160 contributors added a few thousand benches and picnictables and spotted 100 charging station for bicycles.",
         "whatIsOsm": "What is OpenStreetMap?"
@@ -133,6 +139,7 @@
             "josmOpened": "JOSM is opened",
             "mapContributionsBy": "The current visible data has edits made by {contributors}",
             "mapContributionsByAndHidden": "The current visible data has edits made by {contributors} and {hiddenCount} more contributors",
+            "mapDataByOsm": "Map data: OpenStreetMap",
             "mapillaryHelp": "<b>Mapillary</b> is an online service which gathers street-level pictures and offers them under a free license. Contributors are allowed to use these pictures to improve OpenStreetMap",
             "openIssueTracker": "File a bug",
             "openMapillary": "Open Mapillary here",
@@ -162,7 +169,7 @@
             "downloadGpxHelper": "A GPX-file can be used with most navigation devices and applications",
             "exporting": "Exporting…",
             "includeMetaData": "Include metadata (last editor, calculated values, …)",
-            "licenseInfo": "<h3>Copyright notice</h3>The provided data is available under ODbL. Reusing it is gratis for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b> is required</li><li>Any change must be use the license</li></ul> Please read the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details.",
+            "licenseInfo": "<h3>Copyright notice</h3>The provided data is available under ODbL. Reusing it is gratis for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b> must be shown<li><li>Any change must be published under the same license</li></ul> Please read the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details.",
             "noDataLoaded": "No data is loaded yet. Download will be available soon",
             "title": "Download visible data",
             "uploadGpx": "Upload your track to OpenStreetMap"
@@ -225,13 +232,13 @@
             "loadingCountry": "Determining country…",
             "not_all_rules_parsed": "These opening hours are complicated. The following rules are ignored in the input element:",
             "openTill": "till",
-            "open_24_7": "Opened around the clock",
+            "open_24_7": "Open around the clock",
             "open_during_ph": "During a public holiday, this is",
             "opensAt": "from",
             "ph_closed": "closed",
             "ph_not_known": " ",
-            "ph_open": "opened",
-            "ph_open_as_usual": "opened as usual"
+            "ph_open": "open",
+            "ph_open_as_usual": "open, as usual"
         },
         "osmLinkTooltip": "Browse this object on OpenStreetMap for history and more editing options",
         "pdf": {
@@ -541,172 +548,6 @@
         "pickTheme": "Pick a theme below to get started.",
         "title": "Welcome to MapComplete"
     },
-    "matrixbot": {
-        "commandFailed": "Sorry, something went wrong while running <code>{cmd}</code>",
-        "commandNotFound": "I didn't understand your request. Did you perhaps mean to type {0}, {1}, {2} or {2}? <p>Type <code>help</code> to see an overview of all commands</p>",
-        "commands": {
-            "dm": {
-                "argbody": "The actual command body of the command",
-                "argto": "The ID of whom to send the output to",
-                "commandNotFound": "Command {key} not found - see <code>help</code> for all commands",
-                "docs": "Executes a command and send the output to someone else",
-                "executing": "Executing <code>{_}</code> and sending the result to <b>{to}</b>…",
-                "failed": "Could not execute <code>{cmd}</code> due to {message}",
-                "noDm": "I couldn't create a room with {to}",
-                "receipt": "Message delivered to {to}",
-                "selectValidCommand": "Specify a valid command",
-                "selectValidUser": "Specify a valid target user",
-                "sendReason": "I sent you this message because <b>{sender}</b> requested me to send this with <code>{cmd}</code>"
-            },
-            "documentation": {
-                "argid": "The id of a {list} or {list_end} of which the docs are needed. Alternatively, write one of {coded_list} to see available ids.",
-                "didYouMean": "Did you mean",
-                "docs": "Gets documentation about a MapComplete layer, theme or URL-parameter",
-                "file": {
-                    "plural": "files",
-                    "singular": "file"
-                },
-                "inputElement": {
-                    "plural": "input elements",
-                    "singular": "input element"
-                },
-                "layer": {
-                    "plural": "layers",
-                    "singular": "layer"
-                },
-                "noIdIntro": "Give an ID to get more info about a MapComplete-programming related item. Known types are {list}",
-                "notFound": "No {singular} found with name <code>{id}</code>",
-                "overview": "The following {plural} exist:",
-                "theme": {
-                    "plural": "themes",
-                    "singular": "theme"
-                },
-                "urlParam": "URL-parameter <code>{id}<code>",
-                "url_parameter": {
-                    "plural": "URL-parameters",
-                    "singular": "URL-parameter"
-                },
-                "visualisation": {
-                    "plural": "visualisations",
-                    "singular": "visualisation"
-                }
-            },
-            "dream": {
-                "docs": "Sends a computer-generated text",
-                "generatedBy": "This text was generated by {bot}, which is a Machine-learning based bot active on Reddit."
-            },
-            "help": {
-                "argcmd": "The command you want more information about",
-                "askRights": "Ask {admins} to give you sufficient permissions",
-                "docs": "Prints info about supported commands",
-                "insufficientRights": "You currently don't have sufficient permissions to run this command.",
-                "notFound": "I didn't find <code>{cmd}</code>. Perhaps you meant one of {closest}?",
-                "p0": "Hi! I'm MapComplete-bot {bot_version} (built upon MapComplete {mc_version}).",
-                "p1": "Send a command to me and I'll answer with something useful: give me a command via a private message or put <code>!</code> before the command in a public room.",
-                "priviligedComand": "Priviliged command",
-                "supported": "My supported commands are:"
-            },
-            "info": {
-                "argsearch": "The ID of the OSM-object or a search query",
-                "closed": "Closed",
-                "closedTodayAndTomorrow": "Closed today and tomorrow",
-                "couldNotDownload": "Could not download <code>{id}</code>",
-                "docs": "Gets info about an OSM-object. Either give an id OR a search string; the objects are interpreted and known values are shown.",
-                "editWith": "Edit this element with {title}",
-                "fetchingInfoAbout": "Fetching data about {id}…",
-                "foundResults": "Found {total} results for <code>{search}</code>, fetching details about them…",
-                "noEditPossible": "No MapComplete themes support this element",
-                "noInfo": "No relevant information yet",
-                "noOpeningHours": "No opening hours are known.",
-                "nothingFound": "Nothing found for <code>{_}</code>",
-                "provideSearch": "Please, provide a search term of id to use this command",
-                "searchingWorldwide": "Searching OpenStreetMap.org for your search <code>{_}</code>"
-            },
-            "language": {
-                "arglang": "The language to be used from now on",
-                "currentLanguage": "The current room language is {language}",
-                "docs": "Sets the language of the responses for this room",
-                "hasBeenSet": "Language set to {language}.",
-                "helpTranslating": "Help to translate my responses on Weblate.",
-                "knownLanguages": "You can pick one of the following languages:",
-                "notFound": "The language {language} was not found"
-            },
-            "role": {
-                "allRevoked": "All rights of <b>{user}</b> have been revoked",
-                "allRolesIntro": "All users which have rights are:",
-                "argrole": "Which role to add; must be a command name",
-                "arguser": "Whom to change roles for. Will default to the one asking for some commands",
-                "argverb": "Wether to <code>add</code> or <code>remove</code> a role from a user. Use <code>list</code> to see all roles a user has",
-                "docs": "Change what a user can or cannot do",
-                "noPreviousRoles": "<b>{user}</b> did not have any previous roles",
-                "noRightsNeeded": "The command <code>{role}</code> can be executed by anyone, you don't need to set rights for it",
-                "noRolesYet": "<b>{user}</b> currently has no roles.",
-                "noSuchRole": "The role <code>{role}</code> cannot be given to <code>{user}</code>. A role is the same as a command name, type <code>help</code> to see all commands.",
-                "userHasRoles": "<b>{user}</b> currently has the following roles:",
-                "verbadd": "Adds a role to the specified user",
-                "verbdefault": "List the roles of the user",
-                "verblist": "List all the user roles of the specified user",
-                "verbremove": "Removes a role from the specified uer",
-                "verbrevoke": "Revokes all rights of a user"
-            },
-            "scheme": {
-                "argkey": "The name of the key",
-                "docs": "Gives information about a key in a theme-config-file",
-                "noMatchingLayer": "No matching keys found, maybe you meant one of:",
-                "notype": "no type specificied",
-                "title": "{key} (used at <code>{path}</code>, {type})"
-            },
-            "search": {
-                "announceLimited": "<p><i>I'm only showing the {cutoff} items closest to the <a href='{href}' target='_blank'>searched location</a>.</i></p>",
-                "arglayerid": "The name of a layer OR a single search term",
-                "argsearch": "The search term",
-                "argverb": "Either search in a geographical area (e.g. a city) or search near a POI",
-                "docs": "Searches for POI in or near a location",
-                "noMatchingLayer": "I didn't find a matching layer",
-                "noNearOrIn": "Sorry, I didn't understand your command as I didn't find a <code>near</code> or <code>in</code> in your search query.\n Try something as <code>search drinking water in London</code>, <code>search friture in Brussels</code></p>\n <p>Alternatively, try <code>info {cmd}</code> to get info about a single object.",
-                "nothingFound": "Sorry, I couldn't find anything for <code>{search}</code>, so I can't search for {layerTitle}",
-                "overview": "I found {length} matching items.",
-                "searching": "Searching {layerTitle} {mode} <code>{search}</code>…"
-            },
-            "shutdown": {
-                "argmode": "Indicates if the service should be restarted, must be one of {verbs}",
-                "docs": "Shuts down the bot",
-                "goodbye": "Shutting down… See you later!",
-                "notYetShuttingDown": "I'm not restarting yet as I just booted only {uptime} seconds ago. I'll wait at least {min_uptime} before rebooting.",
-                "verbshutdown": "Shuts down the bot",
-                "verbupdate": "Attempts to update the embedded MapComplete-codebase, shuts down afterwards"
-            },
-            "tags": {
-                "announceSearch": "<code>{id}</code> doesn't seem to be a valid OSM-id - searching worldwide instead for {search}…",
-                "argsearch": "The ID of the OSM-object or a search query",
-                "docs": "Show the tags of an OSM-object. Either give an id OR a search string; the objects are interpreted and known values are shown.",
-                "noSearchGiven": "Please, provide a search term of id to use this command",
-                "nothingFound": "Nothing found for {_}"
-            },
-            "welcome": {
-                "docs": "Gives a friendly welcome message",
-                "p0": "Hi! I'm MapComplete-bot. I'm a computer program which searches OpenStreetMap and which can give some information about <a href='https://mapcomplete.osm.be'>MapComplete</a>, which is a website and app that shows thematic maps. If information is missing, you can add it easily over there.",
-                "p1": "Send me <code>info [searchterm]</code> and I'll search OpenStreetMap for you. I'll show you the information on what I found.",
-                "p2": "Alternatively, use <code>search [ojecttype] near [placename]</code> or <code>search [objecttype] in [placename]</code> to search for more places. Supported object types are those that can be found in MapComplete. More categories will be added in the future - and if you are up to the challenge, <a href='https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Making_Your_Own_Theme.md'>you can create your thematic map and thus category too</a>",
-                "p3": "There are a few more commands, send <code>help</code> to see all of them."
-            },
-            "wiki": {
-                "argsearch": "The title of the page or the search term",
-                "docs": "Searches and prints (a part of) the specified page from {backend}. In public rooms, it'll print the first paragraph; in a DM the entire page will be sent.",
-                "foundMatching": "Found a matching wiki page, namely {title}",
-                "gotResults": "Got {count} results for search query <code>{search}</code>:",
-                "loadingFailed": "Sorry, the page <code>{pagename}</code> could not be loaded",
-                "noWiki": "Please, specify a wiki page to search for",
-                "nothingFound": "I couldn't find anything on {backend} for {search}",
-                "searching": "Searching on {backend}…"
-            }
-        },
-        "decryptionFailed": "Sorry, I couldn't decrypt your message. You can try to leave this channel and to connect again",
-        "noSufficientRights": "This command is only available to administrators or users who have this role",
-        "subcommanNotFound": "I didn't understand your request. This command needs a verb to execute, but <code>{verb}</code> is not a verb that I known. I do know the verbs {known_verbs}",
-        "subcommandNotGiven": "I didn't understand your request. This command needs a verb to execute, but you didn't give any. Try one of {known_verbs}",
-        "tooLongForPublic": "Sorry, this message is too long for a public room - send me a direct message instead"
-    },
     "move": {
         "cancel": "Cancel move",
         "cannotBeMoved": "This feature cannot be moved.",
@@ -745,6 +586,7 @@
         "createNote": "Create a new note",
         "createNoteIntro": "Is something wrong or missing on the map? Create a note here. These will be checked by volunteers.",
         "createNoteTitle": "Create a new note here",
+        "creating": "Creating note...",
         "disableAllNoteFilters": "Disable all filters",
         "isClosed": "This note is resolved",
         "isCreated": "Your note has been created!",
@@ -775,7 +617,7 @@
         },
         "loadingWikidata": "Loading information about {species}…",
         "matchPercentage": "{match}% match",
-        "overviewIntro": "The AI on <a href='https://plantnet.org/' target='_blank'>PlantNet.org</a> thinks the images show the species below.",
+        "overviewIntro": "The AI on <a href='https://plantnet.org/' target='_blank'>plantnet.org</a> thinks the images show the species below.",
         "overviewTitle": "Automatically detected species",
         "overviewVerify": "Please verify that correct species and link it to the tree",
         "poweredByPlantnet": "Powered by <a href='https://plantnet.org' target='_blank'>plantnet.org</a>",
@@ -929,10 +771,6 @@
     "translations": {
         "activateButton": "Help translate MapComplete",
         "allMissing": "No translations yet",
-        "completeness": "Translations for {theme} in {language} are at {percentage}%: {translated} strings out of {total} are translated",
-        "deactivate": "Disable translation buttons",
-        "help": "Click the 'translate'-icon next to a string to enter or update a piece of text. You need a Weblate-account for this. Create one with your OSM-username to automatically unlock translation mode.",
-        "isTranslator": "Translation mode is active as your username matches the name of a previous translator",
         "missing": "{count} untranslated strings",
         "notImmediate": "Translations are not updated directly. This typically takes a few days"
     },
@@ -962,7 +800,7 @@
         "email": {
             "description": "e-mail address",
             "feedback": "This is not a valid email address",
-            "noAt": "An e-mail address should contain an @"
+            "noAt": "An e-mail address must contain an @"
         },
         "float": {
             "description": "a number",

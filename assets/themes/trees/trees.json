@@ -16,7 +16,9 @@
     "ca": "Arbres",
     "es": "Árboles",
     "da": "Træer",
-    "pa_PK": "رُکھ"
+    "pa_PK": "رُکھ",
+    "cs": "Stromy",
+    "pt_BR": "Árvores"
   },
   "shortDescription": {
     "en": "Map all the trees",
@@ -32,7 +34,8 @@
     "hu": "Az összes fa feltérképezése",
     "ca": "Mapeja tots els arbres",
     "es": "Mapa de los Árboles",
-    "da": "Kortlæg alle træer"
+    "da": "Kortlæg alle træer",
+    "cs": "Zmapujte všechny stromy"
   },
   "description": {
     "nl": "Breng bomen in kaart!",
@@ -46,8 +49,10 @@
     "nb_NO": "Kartlegg trærne.",
     "hu": "Térképezzünk fel minden fát!",
     "ca": "Mapeja tots els arbres!",
-    "es": "Mapa de todos los Árboles",
-    "da": "Kortlæg alle træerne!"
+    "es": "¡Mapa de los Árboles!",
+    "da": "Kortlæg alle træerne!",
+    "cs": "Zmapujte všechny stromy!",
+    "pt_BR": "Mapeie todas as árvores!"
   },
   "icon": "./assets/themes/trees/logo.svg",
   "startLat": 50.642,

@@ -16,6 +16,8 @@ export interface TagRenderingConfigJson {
     /**
      * If 'group' is defined on many tagRenderings, these are grouped together when shown. The questions are grouped together as well.
      * The first tagRendering of a group will always be a sticky element.
+     *
+     * @deprecated
      */
     group?: string
 
@@ -125,7 +127,7 @@ export interface TagRenderingConfigJson {
                    * A hint to mapcomplete on how to render this icon within the mapping.
                    * This is translated to 'mapping-icon-<classtype>', so defining your own in combination with a custom CSS is possible (but discouraged)
                    */
-                  class: "small" | "medium" | "large" | string
+                  class?: "small" | "medium" | "large" | string
               }
     }[]
 }

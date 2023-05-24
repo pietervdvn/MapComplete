@@ -484,7 +484,6 @@ export default {
                       }
                     },
                     "required": [
-                      "class",
                       "path"
                     ]
                   },
@@ -531,7 +530,6 @@ export default {
                 }
               },
               "required": [
-                "class",
                 "path"
               ]
             },
@@ -601,6 +599,10 @@ export default {
               "type": "string"
             }
           ]
+        },
+        "#": {
+          "description": "Used for comments or to disable a validation\n\nignore-image-in-then: normally, a `then`-clause is not allowed to have an `img`-html-element as icons are preferred. In some cases (most notably title-icons), this is allowed",
+          "type": "string"
         }
       },
       "required": [
@@ -870,7 +872,26 @@ export default {
       "type": "object",
       "properties": {
         "question": {
-          "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
+          "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "questionHint": {
+          "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "freeform": {
           "description": "Allow freeform text input from the user",
@@ -965,7 +986,26 @@ export default {
       "type": "object",
       "properties": {
         "question": {
-          "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only"
+          "description": "If it turns out that this tagRendering doesn't match _any_ value, then we show this question.\nIf undefined, the question is never asked and this tagrendering is read-only",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "questionHint": {
+          "description": "A hint which is shown in subtle text under the question.\nThis can give some extra information on what the answer should ook like",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Record<string,string>"
+            },
+            {
+              "type": "string"
+            }
+          ]
         },
         "freeform": {
           "description": "Allow freeform text input from the user",
@@ -1124,7 +1164,7 @@ export default {
           "type": "string"
         },
         "options": {
-          "description": "The options for a filter\nIf there are multiple options these will be a list of radio buttons\nIf there is only one option this will be a checkbox\nFiltering is done based on the given osmTags that are compared to the objects in that layer.",
+          "description": "The options for a filter\nIf there are multiple options these will be a list of radio buttons\nIf there is only one option this will be a checkbox\nFiltering is done based on the given osmTags that are compared to the objects in that layer.\n\nAn example which searches by name:\n\n```\n{\n      \"id\": \"shop-name\",\n      \"options\": [\n        {\n          \"fields\": [\n            {\n              \"name\": \"search\",\n              \"type\": \"string\"\n            }\n          ],\n          \"osmTags\": \"name~i~.*{search}.*\",\n          \"question\": {\n            \"en\": \"Only show shops with name {search}\",\n          }\n        }\n      ]\n    }\n    ```",
           "type": "array",
           "items": {
             "type": "object",
@@ -1172,6 +1212,10 @@ export default {
               "question"
             ]
           }
+        },
+        "#": {
+          "description": "Used for comments or to disable a check\n\n\"ignore-possible-duplicate\": disables a check in `DetectDuplicateFilters` which complains that a filter can be replaced by a filter from the `filters`-library-layer",
+          "type": "string"
         }
       },
       "required": [
@@ -1704,7 +1748,7 @@ export default {
           }
         },
         "filter": {
-          "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in 'filters.json' for the appropriate filter",
+          "description": "All the extra questions for filtering.\nIf a string is given, mapComplete will search in 'filters.json' for the appropriate filter or will try to parse it as `layername.filterid` and us that one",
           "anyOf": [
             {
               "type": "array",
@@ -1772,6 +1816,10 @@ export default {
             "no",
             "theme-only"
           ],
+          "type": "string"
+        },
+        "#": {
+          "description": "Used for comments and/or to disable some checks\n\nno-question-hint-check: disables a check in MiscTagRenderingChecks which complains about 'div', 'span' or 'class=subtle'-HTML elements in the tagRendering",
           "type": "string"
         }
       },

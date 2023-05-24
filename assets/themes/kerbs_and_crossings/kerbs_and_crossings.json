@@ -5,14 +5,23 @@
     "nl": "Stoepranden en oversteekplaatsen",
     "de": "Bordsteine und Überwege",
     "fr": "Ressauts et traversées",
-    "da": "Kantsten og overgange"
+    "da": "Kantsten og overgange",
+    "cs": "Obrubníky a přechody",
+    "nb_NO": "Fortauskanter og fotgjengerfelt.",
+    "ru": "Бордюры и пешеходные переходы",
+    "es": "Bordillos y cruces",
+    "ca": "Vorals i encreuaments"
   },
   "description": {
     "en": "A map showing kerbs and crossings.",
     "nl": "Een kaart met stoepranden en oversteekplaatsen.",
     "de": "Eine Karte mit Bordsteinen und Überwegen.",
     "fr": "Une carte affichant les ressauts et traversées.",
-    "da": "Et kort, der viser kantsten og overgange."
+    "da": "Et kort, der viser kantsten og overgange.",
+    "cs": "Mapa zobrazující obrubníky a přechody.",
+    "nb_NO": "Fortauskanter og fotgjengerfelt.",
+    "es": "Un mapa que muestra bordillos y cruces.",
+    "ca": "Un mapa amb voreres i encreuaments."
   },
   "icon": "./assets/layers/kerbs/KerbIcon.svg",
   "startZoom": 19,

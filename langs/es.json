@@ -1,7 +1,7 @@
 {
     "centerMessage": {
         "loadingData": "Cargando datos…",
-        "ready": "Hecho.",
+        "ready": "Hecho!",
         "retrying": "La carga de datos ha fallado. Volviéndolo a probar en {count} segundos…",
         "zoomIn": "Amplía para ver o editar los datos"
     },
@@ -59,7 +59,7 @@
                 "zoomInMore": "Ampliar más para importar este elemento"
             },
             "importTags": "El elemento recibirá {tags}",
-            "intro": "Has marcado un lugar del que no conocemos los datos.<br>",
+            "intro": "Has marcado un lugar del que no conocemos los datos.<br/>",
             "layerNotEnabled": "La capa {layer} no está habilitada. Hazlo para poder añadir un punto en esta capa",
             "openLayerControl": "Abrir el control de capas",
             "pleaseLogin": "Por favor inicia sesión para añadir un nuevo punto",
@@ -225,7 +225,7 @@
             "fsUserbadge": "Activar el botón de entrada",
             "fsWelcomeMessage": "Muestra el mensaje emergente de bienvenida y pestañas asociadas",
             "intro": "<h3>Comparte este mapa</h3> Comparte este mapa copiando el enlace de debajo y enviándolo a amigos y familia:",
-            "thanksForSharing": "Gracias por compartir"
+            "thanksForSharing": "Gracias por compartir!"
         },
         "skip": "Saltar esta pregunta",
         "skippedQuestions": "Has ignorado algunas preguntas",
@@ -249,6 +249,10 @@
             "wednesday": "Miércoles"
         },
         "welcomeBack": "Has entrado, bienvenido.",
+        "welcomeExplanation": {
+            "addNew": "Toque el mapa para añadir un nuevo POI.",
+            "general": "En este mapa, puedes ver, editar y agregar <i>puntos de interés</i>. Haz zoom para ver los POI, toca uno para ver o editar la información. Todos los datos proceden y se guardan en OpenStreetMap, que puede reutilizarse libremente."
+        },
         "wikipedia": {
             "createNewWikidata": "Crear un nuevo ítem Wikidata",
             "doSearch": "Busca arriba para ver los resultados",
@@ -267,6 +271,7 @@
     },
     "image": {
         "addPicture": "Añadir foto",
+        "currentLicense": "Tus imágenes se publicarán bajo {license}",
         "doDelete": "Borrar imagen",
         "dontDelete": "Cancelar",
         "isDeleted": "Borrada",
@@ -287,9 +292,9 @@
         "pleaseLogin": "Acceda para cargar una imagen",
         "respectPrivacy": "No fotografíe personas ni matrículas. No cargue datos de Google Maps, Google StreetView u otras fuentes protegidas por derechos de autor.",
         "toBig": "Tu imagen es demasiado grande, ya que pesa {actual_size}. Por favor utiliza imágenes de como máximo {max_size}",
-        "uploadDone": "Se ha añadido la imagen. Gracias por ayudar.",
+        "uploadDone": "Se ha añadido la imagen. Gracias por ayudar!",
         "uploadFailed": "No se pudo cargar la imagen. ¿Tiene Internet y se permiten las API de terceros? El navegador Brave o uMatrix podría bloquearlas.",
-        "uploadMultipleDone": "Se han añadido {count} imágenes. Gracias por ayudar.",
+        "uploadMultipleDone": "Se han añadido {count} imágenes. Gracias por ayudar!",
         "uploadingMultiple": "Cargando {count} imágenes…",
         "uploadingPicture": "Cargando la imagen…"
     },
@@ -428,92 +433,6 @@
         "logIn": "Inicia sesión para ver otros temas que visitaste anteriormente",
         "pickTheme": "Elige un tema de abajo para empezar.",
         "title": "Le damos la bienvenida a MapComplete"
-    },
-    "matrixbot": {
-        "commandFailed": "Lo siento, algo fue mal mientras se ejecutaba <code>{cmd}</code>",
-        "commandNotFound": "No entendí tu petición. ¿Puede que quisieras teclear {0}, {1}, {2} o {2}? <p>Escribe <code>help</code> para ver una vista general de todos los comandos</p>",
-        "commands": {
-            "dm": {
-                "failed": "No pude ejecutar <code>{cmd}</code> debido a {message}",
-                "sendReason": "Te envié este mensaje porque <b>{sender}</b> me pidió que te enviara esto con <code>{cmd}</code>"
-            },
-            "documentation": {
-                "docs": "Obtiene la documentación sobre una capa, un tema o un parámetro de URL de Mapcomplete",
-                "noIdIntro": "Da un id para obtener más información sobre un ítem relacionado con la programación de MapComplete. Los tipos conocidos son {list}",
-                "urlParam": "Parámetro de URL <code>{id}</code>"
-            },
-            "dream": {
-                "docs": "Envía un texto generado por ordenador",
-                "generatedBy": "Este texto fue generado por {bot}, que es un bot basado en el aprendizaje de máquina activo en Reddit."
-            },
-            "help": {
-                "argcmd": "El comando sobre el que quieres más información",
-                "askRights": "Pedir a {admins} que te de suficientes permisos",
-                "docs": "Imprime información sobre los comandos soportados",
-                "insufficientRights": "No tienes suficientes permisos para ejecutar este comando.",
-                "notFound": "No encontré <code>{cmd}</code>. Puede que te refirieras a uno de {closest}?",
-                "p0": "¡Hola! Soy MapComplete-bot {bot_version} (construido sobre MapComplete {mc_version}).",
-                "p1": "Envíame un comando y contestaré algo útil: dame un comando a través de un mensaje privado o escribe <code>!</code> antes de un comando en una sala pública.",
-                "priviligedComand": "Comando privilegiado",
-                "supported": "Mis comandos soportados son:"
-            },
-            "info": {
-                "closed": "Cerrado",
-                "closedTodayAndTomorrow": "Cerrado hoy y mañana",
-                "couldNotDownload": "No se pudo descargar <code>{id}</code>",
-                "editWith": "Editar este elemento con {title}",
-                "fetchingInfoAbout": "Recopilando datos sobre {id}…",
-                "foundResults": "Se encontraron {total} resultados para <code>{search}</code>, recopilando datos sobre ellos…",
-                "noEditPossible": "Ningún tema de MapComplete soporta este elemento",
-                "noInfo": "Aún no hay información relevante",
-                "noOpeningHours": "No se conocen los horarios de apertura.",
-                "nothingFound": "No se encontró nada para <code>{_}</code>",
-                "provideSearch": "Por favor, provee un término de búsqueda de un id para utilizar este comando"
-            },
-            "language": {
-                "arglang": "El idioma que se utilizará a partir de ahora",
-                "currentLanguage": "El idioma actual de la sala es {language}",
-                "docs": "Configura el idioma de las respuestas para esta sala",
-                "helpTranslating": "Ayuda a traducir mis respuestas en Weblate.",
-                "knownLanguages": "Puedes escoger uno de los siguientes temas:",
-                "notFound": "El idioma {language} no se encontró"
-            },
-            "role": {
-                "allRevoked": "Todos los derechos de <b>{user}</b> han sido revocados",
-                "allRolesIntro": "Todos los usuarios que tienen derechos son:",
-                "argrole": "Rol a añadir; debe de ser el nombre de un comando",
-                "docs": "Cambiar qué y qué no puede hacer un usuario",
-                "noPreviousRoles": "<b>{user}</b> no tiene ningunos roles anteriores",
-                "noRightsNeeded": "El comando <code>{role}</code> puede ejecutarse por cualquiera, no necesitas configurar permisos para él",
-                "noRolesYet": "<b>{user}</b> actualmente no tiene roles.",
-                "userHasRoles": "<b>{user}</b> actualmente tiene los siguientes roles:"
-            },
-            "search": {
-                "searching": "Buscando {layerTitle} {mode} <code>{search}</code>…"
-            },
-            "shutdown": {
-                "argmode": "Inidica si el servicio debe de ser reiniciado, debe de ser uno de {verbs}",
-                "docs": "Apaga el bot",
-                "goodbye": "Apagando… ¡Hasta luego!",
-                "notYetShuttingDown": "Aún no me voy a reiniciar, solo me inicié hace {uptime} segundos. Esperaré por lo menos {min_uptime} antes de reiniciarme."
-            },
-            "tags": {
-                "announceSearch": "<code>{id}</code> no parece ser un id de OSM válido - buscando en todo el mundo en lugar de para {search}…"
-            },
-            "welcome": {
-                "p0": "¡Hola! Soy MapComplete-bot. Soy un programa informático que busca OpenStreetMap y que puede dar alguna información sobre <a href=\"https://mapcomplete.osm.be\">MapComplete</a>, que es un sitio web y aplicación que muestra mapas temáticos. Si falta información puedes añadirla fácilmente allí.",
-                "p1": "Envíame <code>info [searchterm]</code> y lo buscaré en OpenStreetMap por ti. Te mostraré la información que encuentre.",
-                "p3": "Hay unos pocos comandos más, envía <code>help</code> para verlos todos."
-            },
-            "wiki": {
-                "docs": "Busca e imprime (una parte de) la página especificada desde {backend}. En salas públicas, imprimirá el primer párrafo; en un MD se enviará la página entera."
-            }
-        },
-        "decryptionFailed": "Lo siento, no puede descifrar tu mensaje. Puedes probar a dejar este canal y conectarte de nuevo",
-        "noSufficientRights": "Este comando solo está disponible a administradores o usuarios que tienen este rol",
-        "subcommanNotFound": "No entendí tu petición. Este comando necesita un verbo para ejecutarse, pero <code>{verb}</code> no es un verbo que conozca. Sé lo verbos {known_verbs}",
-        "subcommandNotGiven": "No entendí tu petición. Este comando necesita un verbo para ejecutarse, pero no diste ninguno. Prueba uno de {known_verbs}",
-        "tooLongForPublic": "Lo siento, este mensaje es demasiado largo para una sala pública - envíame un mensaje directo"
     },
     "move": {
         "cancel": "Cancelar movimiento",
@@ -708,12 +627,11 @@
     "translations": {
         "activateButton": "Ayuda a traducir MapComplete",
         "allMissing": "Aún sin traducciónes",
-        "completeness": "Las traducciones para {theme} en {language} están al {percentage}%: {translated} cadenas de {total} están traducidas",
-        "deactivate": "Deshabilitar los botones de traducción",
-        "help": "Haz clic en el icono 'traducir' al lado de una cadena para introducir o actualizar un texto. Necesitas una cuenta de Weblate para esto. Crea una con tu usuario de OSM para desbloquear el modo de traducción automáticamente.",
-        "isTranslator": "El modo de traducción está activo si tu nombre de usuario coincide con el nombre de un traductor anterior",
         "missing": "{count} cadenas sin traducir",
         "notImmediate": "Las traducciones no se actualizan directamente. Habitualmente esto lleva unos días"
+    },
+    "userinfo": {
+        "welcome": "Bienvenido {name}"
     },
     "validation": {
         "color": {
