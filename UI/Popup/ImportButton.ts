@@ -671,9 +671,12 @@ export class ImportPointButton extends AbstractImportButton {
         ) {
             originalFeatureTags.data["_imported"] = "yes"
             originalFeatureTags.ping() // will set isImported as per its definition
-            let snapOnto: OsmObject = undefined
+            let snapOnto: OsmObject | "deleted" = undefined
             if (snapOntoWayId !== undefined) {
-                snapOnto = await OsmObject.DownloadObjectAsync(snapOntoWayId)
+                snapOnto = await state.osmObjectDownloader.DownloadObjectAsync(snapOntoWayId)
+            }
+            if(snapOnto === "deleted"){
+                return new FixedUiElement("Error - way is deleted. Refresh the page").SetClass("alert")
             }
             let specialMotivation = undefined
 
@@ -746,7 +749,7 @@ export class ImportPointButton extends AbstractImportButton {
         const [lon, lat] = <[number, number]>feature.geometry.coordinates
         return new ConfirmLocationOfPoint(
             state,
-            state.guistate.filterViewIsOpened,
+            state.guistate.themeIsOpened ,
             presetInfo,
             Translations.W(args.text),
             {

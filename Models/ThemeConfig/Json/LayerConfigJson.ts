@@ -139,7 +139,7 @@ export interface LayerConfigJson {
     forceLoad?: false | boolean
 
     /**
-     * The minimum needed zoomlevel required before loading of the data start
+     * The minimum needed zoomlevel required before loading the data
      * Default: 0
      */
     minzoom?: number

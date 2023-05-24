@@ -34,7 +34,7 @@
         specs = SpecialVisualizations.constructSpecification(txt);
       }
     } catch (e) {
-      console.error("Could not construct a specification and with arguments", txt);
+      console.error("Could not construct a specification and with arguments", txt,"due to",e);
     }
   }
 
@@ -43,7 +43,7 @@
       try {
         return specpart.func.constr(state, tags, specpart.args, feature, layer);
       } catch (e) {
-        console.error("Could not construct a special visualisation with specification", specpart, "and tags", tags);
+        console.error("Could not construct a special visualisation with specification", specpart, "and tags", tags,"due to", e);
       }
     }
   }

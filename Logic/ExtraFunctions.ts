@@ -156,12 +156,14 @@ class IntersectionFunc implements ExtraFunction {
                 if (otherLayers.length === 0) {
                     continue
                 }
-                for (const otherFeature of otherLayers) {
-                    const intersections = GeoOperations.LineIntersections(feat, <any> otherFeature)
-                    if (intersections.length === 0) {
-                        continue
+                for (const otherFeatures of otherLayers) {
+                    for (const otherFeature of otherFeatures) {
+                        const intersections = GeoOperations.LineIntersections(feat, <Feature<any, Record<string, string>>>otherFeature)
+                        if (intersections.length === 0) {
+                            continue
+                        }
+                        result.push({feat: otherFeature, intersections})
                     }
-                    result.push({feat: otherFeature, intersections})
                 }
             }
 

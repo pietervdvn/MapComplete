@@ -26,18 +26,28 @@
     "maxZoom": 15
   },
   "overrideAll": {
-    "minzoom": 19
+    "minzoom": 17
   },
   "layers": [
     {
       "id": "osm-buildings",
       "name": "All OSM-buildings",
       "source": {
-        "osmTags": "building~*",
+        "osmTags": {
+          "and": [
+            {
+              "or": [
+                "id~way/.*",
+                "id~relation/.*"
+              ]
+            },
+            "building~*"
+          ]
+        },
         "maxCacheAge": 0
       },
       "calculatedTags": [
-        "_surface:strict:=feat.get('_surface')"
+        "_surface:strict:=get(feat)('_surface')"
       ],
       "mapRendering": [
         {
@@ -193,6 +203,13 @@
           }
         },
         {
+          "id": "grb-reference",
+          "render": {
+            "en": "Has been imported from GRB, reference number is {source:geometry:ref}"
+          },
+          "condition": "source:geometry:ref~*"
+        },
+        {
           "id": "grb-fixme",
           "render": {
             "nl": "De fixme is <b>{fixme}</b>"
@@ -258,201 +275,12 @@
       ]
     },
     {
-      "id": "service_ways",
-      "name": "Service roads",
-      "description": "A seperate layer with service roads, as to remove them from the intersection testing",
-      "source": {
-        "osmTags": "highway=service"
-      },
-      "mapRendering": [
-        {
-          "width": 4,
-          "color": "#888888"
-        }
-      ],
-      "title": {
-        "render": "Service road"
-      },
-      "tagRenderings": []
-    },
-    {
-      "id": "generic_osm_object",
-      "name": "All OSM Objects",
-      "source": {
-        "osmTags": {
-          "and": [
-            "id~*",
-            "place=",
-            "disused:power=",
-            "power=",
-            "type!=boundary",
-            "boundary=",
-            {
-              "or": [
-                "level=",
-                "level=0"
-              ]
-            },
-            {
-              "or": [
-                "layer=0",
-                "layer="
-              ]
-            }
-          ]
-        },
-        "maxCacheAge": 0
-      },
-      "mapRendering": [
-        {
-          "color": {
-            "render": "#ccc"
-          },
-          "width": {
-            "render": "1"
-          },
-          "fill": "no"
-        }
-      ],
-      "title": {
-        "render": {
-          "*": "Other OSM-Object"
-        }
-      },
-      "tagRenderings": [
-        "all_tags"
-      ]
-    },
-    "address",
-    {
-      "builtin": "crab_address",
-      "override": {
-        "calculatedTags+": [
-          "_embedded_in=overlapWith(feat)('osm-buildings').filter(b => /* Do not match newly created objects */ b.feat.properties.id.indexOf('-') < 0)[0]?.feat?.properties ?? {}",
-          "_embedding_nr=feat.get('_embedded_in')['addr:housenumber']+(feat.get('_embedded_in')['addr:unit'] ?? '')",
-          "_embedding_street=feat.get('_embedded_in')['addr:street']",
-          "_embedding_id=feat.get('_embedded_in').id",
-          "_closeby_addresses=closestn(feat)('address',10,undefined,50).map(f => f.feat).filter(addr => addr.properties['addr:street'] == feat.properties['STRAATNM'] && feat.properties['HNRLABEL'] == addr.properties['addr:housenumber'] + (addr.properties['addr:unit']??'') ).length",
-          "_has_identical_closeby_address=feat.get('_closeby_addresses') >= 1 ? 'yes' : 'no'",
-          "_embedded_in_grb=overlapWith(feat)('grb')[0]?.feat?.properties ?? {}",
-          "_embedding_nr_grb=feat.get('_embedded_in_grb')['addr:housenumber']",
-          "_embedding_street_grb=feat.get('_embedded_in_grb')['addr:street']"
-        ],
-        "filter": [
-          {
-            "id": "show_matched_addresses",
-            "options": [
-              {
-                "question": "Show all CRAB-addresses (including already matched ones)"
-              },
-              {
-                "question": "Only show unmatched addresses",
-                "osmTags": {
-                  "and": [
-                    "_has_identical_closeby_address!=yes",
-                    {
-                      "#": "Matches the embedding OSM object",
-                      "or": [
-                        "_embedding_nr!:={HUISNR}",
-                        "_embedding_street!:={STRAATNM}"
-                      ]
-                    },
-                    {
-                      "#": "Matches the embedding GRB object",
-                      "or": [
-                        "_embedding_nr_grb!:={HUISNR}",
-                        "_embedding_street_grb!:={STRAATNM}"
-                      ]
-                    }
-                  ]
-                },
-                "default": true
-              }
-            ]
-          }
-        ],
-        "tagRenderings+": [
-          {
-            "id": "render_embedded",
-            "render": "Dit CRAB-adres ligt in <a href='https://osm.org/{_embedding_id}' target='_blank'>OSM-gebouw {_embedding_id}</a>",
-            "mappings": [
-              {
-                "if": "_embedding_id=",
-                "then": {
-                  "nl": "Geen omliggend OSM-gebouw gevonden"
-                }
-              }
-            ]
-          },
-          {
-            "id": "embedded_address",
-            "render": "Het omliggende OSM-gebouw heeft geen volledig address",
-            "mappings": [
-              {
-                "if": {
-                  "and": [
-                    "_embedding_street~*",
-                    "_embedding_nr~*"
-                  ]
-                },
-                "then": "Het omliggende object met addres heeft <b>{_embedding_street}</b> {_embedding_nr}"
-              }
-            ],
-            "condition": "_embedding_id~*"
-          },
-          {
-            "id": "apply-button",
-            "render": "{tag_apply(addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL,Apply this address on the OSM-building,,_embedding_id)}",
-            "condition": {
-              "and": [
-                "_embedding_id!=",
-                {
-                  "or": [
-                    "_embedding_street!:={STRAATNM}",
-                    "_embedding_nr!:={_HNRLABEL}"
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "id": "import-button",
-            "render": {
-              "special": {
-                "type": "import_button",
-                "targetLayer": "address",
-                "tags": "addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL",
-                "text": {
-                  "nl": "Voeg dit adres als een nieuw adrespunt toe"
-                },
-                "snap_onto_layers": "osm-buildings"
-              }
-            },
-            "mappings": [
-              {
-                "if": "_embedding_id=",
-                "then": {
-                  "nl": "Geen omliggend OSM-gebouw gevonden. Een omliggend gebouw is nodig om dit punt als adres punt toe te voegen. <div class=subtle>Importeer eerst de gebouwen. Vernieuw dan de pagina om losse adressen toe te voegen</div>"
-                }
-              }
-            ],
-            "condition": {
-              "or": [
-                "_embedding_street!:={STRAATNM}",
-                "_embedding_nr!:={_HNRLABEL}"
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
       "id": "grb",
       "description": "Geometry which comes from GRB with tools to import them",
       "source": {
         "osmTags": {
           "and": [
-            "HUISNR~*",
+            "osm_id~*",
             "man_made!=mast"
           ]
         },
@@ -466,17 +294,17 @@
       "title": "GRB outline",
       "calculatedTags": [
         "_overlaps_with_buildings=overlapWith(feat)('osm-buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
-        "_overlaps_with=feat.get('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
-        "_osm_obj:source:ref=feat.get('_overlaps_with')?.feat?.properties['source:geometry:ref']",
-        "_osm_obj:id=feat.get('_overlaps_with')?.feat?.properties?.id",
-        "_osm_obj:source:date=(feat.get('_overlaps_with')?.feat?.properties ?? {})['source:geometry:date']?.replace(/\\//g, '-')",
-        "_osm_obj:building=feat.get('_overlaps_with')?.feat?.properties?.building",
-        "_osm_obj:addr:street=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:street']",
-        "_osm_obj:addr:housenumber=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:housenumber']",
-        "_osm_obj:surface=(feat.get('_overlaps_with')?.feat?.properties ?? {})['_surface:strict']",
-        "_overlap_absolute=feat.get('_overlaps_with')?.overlap",
-        "_reverse_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_surface'))",
-        "_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_osm_obj:surface'))",
+        "_overlaps_with=get(feat)('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
+        "_osm_obj:source:ref=get(feat)('_overlaps_with')?.feat?.properties['source:geometry:ref']",
+        "_osm_obj:id=get(feat)('_overlaps_with')?.feat?.properties?.id",
+        "_osm_obj:source:date=(get(feat)('_overlaps_with')?.feat?.properties ?? {})['source:geometry:date']?.replace(/\\//g, '-')",
+        "_osm_obj:building=get(feat)('_overlaps_with')?.feat?.properties?.building",
+        "_osm_obj:addr:street=(get(feat)('_overlaps_with')?.feat?.properties ?? {})['addr:street']",
+        "_osm_obj:addr:housenumber=(get(feat)('_overlaps_with')?.feat?.properties ?? {})['addr:housenumber']",
+        "_osm_obj:surface=(get(feat)('_overlaps_with')?.feat?.properties ?? {})['_surface:strict']",
+        "_overlap_absolute=get(feat)('_overlaps_with')?.overlap",
+        "_reverse_overlap_percentage=Math.round(100 * get(feat)('_overlap_absolute') / get(feat)('_surface'))",
+        "_overlap_percentage=Math.round(100 * get(feat)('_overlap_absolute') / get(feat)('_osm_obj:surface'))",
         "_grb_ref=feat.properties['source:geometry:entity'] + '/' + feat.properties['source:geometry:oidn']",
         "_imported_osm_object_found= feat.properties['_osm_obj:source:ref'] == feat.properties._grb_ref",
         "_grb_date=feat.properties['source:geometry:date'].replace(/\\//g,'-')",
@@ -695,13 +523,205 @@
         }
       ]
     },
+
+    {
+      "id": "service_ways",
+      "name": "Service roads",
+      "description": "A seperate layer with service roads, as to remove them from the intersection testing",
+      "source": {
+        "osmTags": "highway=service"
+      },
+      "mapRendering": [
+        {
+          "width": 4,
+          "color": "#888888"
+        }
+      ],
+      "title": {
+        "render": "Service road"
+      },
+      "tagRenderings": []
+    },
+    {
+      "id": "generic_osm_object",
+      "name": "All OSM Objects",
+      "source": {
+        "osmTags": {
+          "and": [
+            "id~*",
+            "place=",
+            "disused:power=",
+            "power=",
+            "type!=boundary",
+            "type!=route",
+            "type!=waterway",
+            "boundary=",
+            {
+              "or": [
+                "level=",
+                "level=0"
+              ]
+            },
+            {
+              "or": [
+                "layer=0",
+                "layer="
+              ]
+            }
+          ]
+        },
+        "maxCacheAge": 0
+      },
+      "mapRendering": [
+        {
+          "color": {
+            "render": "#ccc"
+          },
+          "width": {
+            "render": "1"
+          },
+          "fill": "no"
+        }
+      ],
+      "title": {
+        "render": {
+          "*": "Other OSM-Object"
+        }
+      },
+      "tagRenderings": [
+        "all_tags"
+      ]
+    },
+    "address",
+    {
+      "builtin": "crab_address",
+      "override": {
+        "calculatedTags+": [
+          "_embedded_in=overlapWith(feat)('osm-buildings').filter(b => /* Do not match newly created objects */ b.feat.properties.id.indexOf('-') < 0)[0]?.feat?.properties ?? {}",
+          "_embedding_nr=get(feat)('_embedded_in')['addr:housenumber']+(get(feat)('_embedded_in')['addr:unit'] ?? '')",
+          "_embedding_street=get(feat)('_embedded_in')['addr:street']",
+          "_embedding_id=get(feat)('_embedded_in').id",
+          "_closeby_addresses=closestn(feat)('address',10,undefined,50).map(f => f.feat).filter(addr => addr.properties['addr:street'] == feat.properties['STRAATNM'] && feat.properties['HNRLABEL'] == addr.properties['addr:housenumber'] + (addr.properties['addr:unit']??'') ).length",
+          "_has_identical_closeby_address=get(feat)('_closeby_addresses') >= 1 ? 'yes' : 'no'",
+          "_embedded_in_grb=overlapWith(feat)('grb')[0]?.feat?.properties ?? {}",
+          "_embedding_nr_grb=get(feat)('_embedded_in_grb')['addr:housenumber']",
+          "_embedding_street_grb=get(feat)('_embedded_in_grb')['addr:street']"
+        ],
+        "filter": [
+          {
+            "id": "show_matched_addresses",
+            "options": [
+              {
+                "question": "Show all CRAB-addresses (including already matched ones)"
+              },
+              {
+                "question": "Only show unmatched addresses",
+                "osmTags": {
+                  "and": [
+                    "_has_identical_closeby_address!=yes",
+                    {
+                      "#": "Matches the embedding OSM object",
+                      "or": [
+                        "_embedding_nr!:={HUISNR}",
+                        "_embedding_street!:={STRAATNM}"
+                      ]
+                    },
+                    {
+                      "#": "Matches the embedding GRB object",
+                      "or": [
+                        "_embedding_nr_grb!:={HUISNR}",
+                        "_embedding_street_grb!:={STRAATNM}"
+                      ]
+                    }
+                  ]
+                },
+                "default": true
+              }
+            ]
+          }
+        ],
+        "tagRenderings+": [
+          {
+            "id": "render_embedded",
+            "render": "Dit CRAB-adres ligt in <a href='https://osm.org/{_embedding_id}' target='_blank'>OSM-gebouw {_embedding_id}</a>",
+            "mappings": [
+              {
+                "if": "_embedding_id=",
+                "then": {
+                  "nl": "Geen omliggend OSM-gebouw gevonden"
+                }
+              }
+            ]
+          },
+          {
+            "id": "embedded_address",
+            "render": "Het omliggende OSM-gebouw heeft geen volledig address",
+            "mappings": [
+              {
+                "if": {
+                  "and": [
+                    "_embedding_street~*",
+                    "_embedding_nr~*"
+                  ]
+                },
+                "then": "Het omliggende object met addres heeft <b>{_embedding_street}</b> {_embedding_nr}"
+              }
+            ],
+            "condition": "_embedding_id~*"
+          },
+          {
+            "id": "apply-button",
+            "render": "{tag_apply(addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL,Apply this address on the OSM-building,,_embedding_id)}",
+            "condition": {
+              "and": [
+                "_embedding_id!=",
+                {
+                  "or": [
+                    "_embedding_street!:={STRAATNM}",
+                    "_embedding_nr!:={_HNRLABEL}"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "import-button",
+            "render": {
+              "special": {
+                "type": "import_button",
+                "targetLayer": "address",
+                "tags": "addr:street=$STRAATNM; addr:housenumber=$_HNRLABEL",
+                "text": {
+                  "nl": "Voeg dit adres als een nieuw adrespunt toe"
+                },
+                "snap_onto_layers": "osm-buildings"
+              }
+            },
+            "mappings": [
+              {
+                "if": "_embedding_id=",
+                "then": {
+                  "nl": "Geen omliggend OSM-gebouw gevonden. Een omliggend gebouw is nodig om dit punt als adres punt toe te voegen. <div class=subtle>Importeer eerst de gebouwen. Vernieuw dan de pagina om losse adressen toe te voegen</div>"
+                }
+              }
+            ],
+            "condition": {
+              "or": [
+                "_embedding_street!:={STRAATNM}",
+                "_embedding_nr!:={_HNRLABEL}"
+              ]
+            }
+          }
+        ]
+      }
+    },
     {
       "builtin": "current_view",
       "override": {
         "calculatedTags": [
           "_overlapping=Number(feat.properties.zoom) >= 16 ? overlapWith(feat)('grb').map(ff => ff.feat.properties) : undefined",
-          "_applicable=feat.get('_overlapping')?.filter(p => (p._imported_osm_object_found === 'true' || p._intersects_with_other_features === ''))?.map(p => p.id)",
-          "_applicable_count=feat.get('_applicable')?.length"
+          "_applicable=get(feat)('_overlapping')?.filter(p => (p._imported_osm_object_found === 'true' || p._intersects_with_other_features === ''))?.map(p => p.id)",
+          "_applicable_count=get(feat)('_applicable')?.length"
         ],
         "tagRenderings+": [
           {

@@ -25,6 +25,7 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
         if (source.geojsonSource === undefined) {
             throw "Invalid layer: geojsonSource expected"
         }
+        console.log("Creating a dynamic geojson source for", layer.source.geojsonSource)
 
         let whitelist = undefined
         if (source.geojsonSource.indexOf("{x}_{y}.geojson") > 0) {

@@ -22,6 +22,7 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
 
     private readonly _downloadedTiles: Set<number> = new Set<number>()
     private readonly _downloadedData: Feature[][] = []
+    private readonly _patchRelations: boolean;
     /**
      * Downloads data directly from the OSM-api within the given bounds.
      * All features which match the TagsFilter 'allowedFeatures' are kept and converted into geojson
@@ -33,7 +34,8 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
         /**
          * If given: this featureSwitch will not update if the store contains 'false'
          */
-        isActive?: Store<boolean>
+        isActive?: Store<boolean>,
+        patchRelations?: true | boolean
     }) {
         super()
         this._bounds = options.bounds
@@ -41,6 +43,7 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
         this.isActive = options.isActive ?? new ImmutableStore(true)
         this._backend = options.backend ?? "https://www.openstreetmap.org"
         this._bounds.addCallbackAndRunD((bbox) => this.loadData(bbox))
+        this._patchRelations = options?.patchRelations ?? true
     }
 
     private async loadData(bbox: BBox) {
@@ -78,13 +81,13 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
      * The requested tile might only contain part of the relation.
      *
      * This method will download the full relation and return it as geojson if it was incomplete.
-     * If the feature is already complete (or is not a relation), the feature will be returned
+     * If the feature is already complete (or is not a relation), the feature will be returned as is
      */
     private async patchIncompleteRelations(
         feature: { properties: { id: string } },
         originalJson: { elements: { type: "node" | "way" | "relation"; id: number }[] }
     ): Promise<any> {
-        if (!feature.properties.id.startsWith("relation")) {
+        if (!feature.properties.id.startsWith("relation") || !this._patchRelations) {
             return feature
         }
         const relationSpec = originalJson.elements.find(
