@@ -5,10 +5,10 @@
     "nl": "Verkeersborden"
   },
   "description": {
-    "en": "Map showing traffic signs.",
-    "nl": "Kaart met verkeersborden."
+    "en": "Map showing traffic signs. Currently supports Dutch and some Belgian traffic signs.",
+    "nl": "Kaart met verkeersborden. Ondersteunt momenteel Nederlandse en enkele Belgische verkeersborden."
   },
-  "hideFromOverview": false,
+  "hideFromOverview": true,
   "icon": "./assets/themes/traffic_sign/icon.svg",
   "startLat": 0,
   "startLon": 0,

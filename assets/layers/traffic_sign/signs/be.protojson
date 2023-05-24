@@ -606,6 +606,209 @@
       "image": {
         "file": "E/Belgian_traffic_sign_E11.svg"
       }
+    },
+    {
+      "id": "BE:F5",
+      "name": "Start of motorway",
+      "image": {
+        "file": "F/Belgian_road_sign_F5.svg"
+      }
+    },
+    {
+      "id": "BE:F7",
+      "name": "End of motorway",
+      "image": {
+        "file": "F/Belgian_road_sign_F7.svg"
+      }
+    },
+    {
+      "id": "BE:F8",
+      "name": "Tunnel",
+      "image": {
+        "file": "F/Belgian_road_sign_F8.svg"
+      }
+    },
+    {
+      "id": "BE:F9",
+      "name": "Start of motorroad",
+      "image": {
+        "file": "F/Belgian_road_sign_F9.svg"
+      }
+    },
+    {
+      "id": "BE:F11",
+      "name": "End of motorroad",
+      "image": {
+        "file": "F/Belgian_road_sign_F11.svg"
+      }
+    },
+    {
+      "id": "BE:F12a",
+      "name": "Woonerf",
+      "image": {
+        "file": "F/Belgian_road_sign_F12a.svg"
+      }
+    },
+    {
+      "id": "BE:F12b",
+      "name": "End of woonerf",
+      "image": {
+        "file": "F/Belgian_road_sign_F12b.svg"
+      }
+    },
+    {
+      "id": "BE:F14",
+      "name": "Advanced stop line (ASL) for cyclists",
+      "image": {
+        "file": "F/Belgian_road_sign_F14.svg"
+      }
+    },
+    {
+      "id": "BE:F19",
+      "name": "One-way street",
+      "image": {
+        "file": "F/Belgian_road_sign_F19.svg"
+      }
+    },
+    {
+      "id": "BE:F21",
+      "name": "Passing allowed on both sides of the sign",
+      "image": {
+        "file": "F/Belgian_road_sign_F21.svg"
+      }
+    },
+    {
+      "id": "BE:F45",
+      "name": "Dead end",
+      "image": {
+        "file": "F/Belgian_road_sign_F45.svg"
+      }
+    },
+    {
+      "id": "BE:F45b",
+      "name": "Dead end, except for pedestrians and cyclists",
+      "image": {
+        "file": "F/Belgian_road_sign_F45b.svg"
+      }
+    },
+    {
+      "id": "BE:F49",
+      "name": "Pedestrian crossing",
+      "image": {
+        "file": "F/Belgian_road_sign_F49.svg"
+      }
+    },
+    {
+      "id": "BE:F50",
+      "name": "Cyclist crossing",
+      "image": {
+        "file": "F/Belgian_road_sign_F50.svg"
+      }
+    },
+    {
+      "id": "BE:F87",
+      "name": "Speed bump",
+      "image": {
+        "file": "F/Belgian_road_sign_F87.svg"
+      }
+    },
+    {
+      "id": "BE:F99a",
+      "name": "Path for pedestrians, cyclists and horse riders",
+      "image": {
+        "file": "F/Belgian_road_sign_F99a.svg"
+      }
+    },
+    {
+      "id": "BE:F99b",
+      "name": "Path for pedestrians and cyclists",
+      "image": {
+        "file": "F/Belgian_road_sign_F99b.svg"
+      }
+    },
+    {
+      "id": "BE:F99c",
+      "name": "Path for agricultural vehicles, pedestrians, cyclists and horse riders",
+      "image": {
+        "file": "F/Belgian_road_sign_F99c.svg"
+      }
+    },
+    {
+      "id": "BE:F101a",
+      "name": "End of path for pedestrians, cyclists and horse riders",
+      "image": {
+        "file": "F/Belgian_road_sign_F101a.svg"
+      }
+    },
+    {
+      "id": "BE:F101b",
+      "name": "End of path for pedestrians and cyclists",
+      "image": {
+        "file": "F/Belgian_road_sign_F101b.svg"
+      }
+    },
+    {
+      "id": "BE:F101c",
+      "name": "End of path for agricultural vehicles, pedestrians, cyclists and horse riders",
+      "image": {
+        "file": "F/Belgian_road_sign_F101c.svg"
+      }
+    },
+    {
+      "id": "BE:F103",
+      "name": "Start of pedestrian zone",
+      "image": {
+        "file": "F/Belgian_road_sign_F103.svg"
+      }
+    },
+    {
+      "id": "BE:F105",
+      "name": "End of pedestrian zone",
+      "image": {
+        "file": "F/Belgian_road_sign_F105.svg"
+      }
+    },
+    {
+      "id": "BE:F111",
+      "name": "Start of cycle zone",
+      "image": {
+        "file": "F/Belgian_road_sign_F111.svg"
+      }
+    },
+    {
+      "id": "BE:F113",
+      "name": "End of cycle zone",
+      "image": {
+        "file": "F/Belgian_road_sign_F113.svg"
+      }
+    },
+    {
+      "id": "BE:F117",
+      "name": "Start of low emission zone",
+      "image": {
+        "file": "F/Belgian_traffic_sign_F117.svg"
+      }
+    },
+    {
+      "id": "BE:F118",
+      "name": "End of low emission zone",
+      "image": {
+        "file": "F/Belgian_traffic_sign_F118.svg"
+      }
+    },
+    {
+      "id": "BE:F119",
+      "name": "Start of airport zone",
+      "image": {
+        "file": "F/Belgian_traffic_sign_F119.png"
+      }
+    },
+    {
+      "id": "BE:F120",
+      "name": "End of airport zone",
+      "image": {
+        "file": "F/Belgian_traffic_sign_F120.png"
+      }
     }
   ]
 }
