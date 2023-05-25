@@ -157,7 +157,7 @@
         <div class="flex flex-col items-end">
             <!-- bottom right elements -->
             <If condition={state.floors.map(f => f.length > 1)}>
-                <div class="mr-0.5">
+                <div class="mr-0.5 pointer-events-auto">
                     <LevelSelector floors={state.floors} layerState={state.layerState} zoom={state.mapProperties.zoom}/>
                 </div>
             </If>
