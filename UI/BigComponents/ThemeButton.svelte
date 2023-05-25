@@ -82,7 +82,7 @@
 </script>
 
 {#if theme.id !== personal.id || $userDetails.csCount > Constants.userJourney.personalLayoutUnlock}
-    <SubtleLink href={ $href  }>
+    <SubtleLink href={$href} options={{extraClasses: "w-full"}}>
         <img slot="image" src={theme.icon} class="block h-11 w-11 bg-red mx-4" alt=""/>
         <span class="flex flex-col text-ellipsis overflow-hidden">
           <Tr t={title}/>
