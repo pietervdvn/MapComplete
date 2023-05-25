@@ -280,7 +280,8 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
         .replace(
             /<!-- DESCRIPTION START -->.*<!-- DESCRIPTION END -->/s,
             asLangSpan(layout.shortDescription)
-        )
+        )  .replace(/<!-- IMAGE-START -->.*<!-- IMAGE-END-->/s, "<img class='p-8 h-32 w-32 self-start' src='"+ icon+"' />")
+
         .replace(
             '<script type="module" src="./index.ts"></script>',
             `<script type="module"  src='./index_${layout.id}.ts'></script>`

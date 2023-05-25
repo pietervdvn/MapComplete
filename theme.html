@@ -33,53 +33,68 @@
     <link href="./assets/generated/images/assets_svg_mapcomplete_logo72.png" rel="apple-touch-icon" sizes="72x72">
 
     <!-- THEME-SPECIFIC-END-->
-    
+
 </head>
 <body>
 
 
 <span class="absolute" id="belowmap" style="z-index: -1; visibility: hidden">Below</span>
-<div id="maindiv" class="h-full">
-    <div id="default-main">
-        
-        <span id="default-title">Loading MapComplete, hang on...</span>
-        
-        <!-- DESCRIPTION START -->
-        MapComplete is an easy to use map viewer and map editor
-        <!-- DESCRIPTION END -->
+<div class="h-full" id="maindiv">
+    <div id="default-main h-full">
+        <div class="w-full h-screen flex flex-col items-center justify-between">
+            <div class="w-full h-full flex flex-col items-center">
+                
+            <h1 id="default-title">Loading MapComplete, hang on...</h1>
+
+            <p class="text-xl">
+                <!-- DESCRIPTION START -->
+                MapComplete is an easy to use map viewer and map editor
+                <!-- DESCRIPTION END -->
+            </p>
+            <p>
+                Made with OpenStreetMap
+            </p>
+            </div>
+            
+            <!-- IMAGE-START -->
+                <img class="p-8 h-32 w-32 self-start" src="./assets/svg/add.svg">
+            <!-- IMAGE-END -->
+        </div>
     </div>
 </div>
 
 <script>
 
-    let lang  = ((navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || 'en').substr(0, 2);
-    function filterLangs(maindiv){
+    let lang = ((navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || 'en').substr(0, 2);
+
+    function filterLangs(maindiv) {
         let foundLangs = 0
-        for(const child of Array.from(maindiv.children)){
-            if(child.attributes.lang?.value === lang){
-                foundLangs ++
+        for (const child of Array.from(maindiv.children)) {
+            if (child.attributes.lang?.value === lang) {
+                foundLangs++
             }
         }
-        if(foundLangs === 0){
+        if (foundLangs === 0) {
             lang = "en"
         }
-        for(const child of Array.from(maindiv.children)){
+        for (const child of Array.from(maindiv.children)) {
             const childLang = child.attributes.lang
-            if(childLang === undefined){
+            if (childLang === undefined) {
                 continue
             }
-            if(childLang.value === lang){
+            if (childLang.value === lang) {
                 continue
             }
             child.parentElement.removeChild(child)
-        }   
+        }
     }
-    filterLangs( document.getElementById("default-main"))
-    filterLangs( document.getElementById("default-title"))
+
+    filterLangs(document.getElementById("default-main"))
+    filterLangs(document.getElementById("default-title"))
 </script>
 
 
-<script type="module" src="./index.ts"></script>
+<script src="./index.ts" type="module"></script>
 <script async data-goatcounter="https://pietervdvn.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
 
 <script>
