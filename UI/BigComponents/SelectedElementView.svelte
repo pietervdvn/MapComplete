@@ -29,6 +29,9 @@
 
 {#if _tags._deleted === "yes"}
     <Tr t={ Translations.t.delete.isDeleted}/>
+    <button class="w-full" on:click={() => state.selectedElement.setData(undefined)}>
+        <Tr t={ Translations.t.general.returnToTheMap}/>
+    </button>
 {:else}
         <div class="flex flex-col overflow-y-auto p-1 px-2 gap-y-2">
             {#each layer.tagRenderings as config (config.id)}
