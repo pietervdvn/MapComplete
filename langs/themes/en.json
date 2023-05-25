@@ -698,10 +698,13 @@
                 "tagRenderings": {
                     "building type": {
                         "question": "What kind of building is this?"
+                    },
+                    "grb-reference": {
+                        "render": "Has been imported from GRB, reference number is {source:geometry:ref}"
                     }
                 }
             },
-            "5": {
+            "1": {
                 "tagRenderings": {
                     "Import-button": {
                         "mappings": {

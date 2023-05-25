@@ -780,7 +780,21 @@
                     }
                 }
             },
-            "4": {
+            "1": {
+                "tagRenderings": {
+                    "Import-button": {
+                        "mappings": {
+                            "0": {
+                                "then": "Metatags nog niet berekend... Heropen deze pop-up"
+                            },
+                            "1": {
+                                "then": "Dit gebouw heeft openingen en is gemodelleerd als een relatie. Bijgevolg kan het niet worden samengevoegd. Voeg het manueel samen via <a href='https://buildings.osm.be/#/'>de export-site voor gebouwen</a> {open_in_josm()}"
+                            }
+                        }
+                    }
+                }
+            },
+            "5": {
                 "override": {
                     "tagRenderings+": {
                         "0": {
@@ -800,20 +814,6 @@
                                 "special": {
                                     "text": "Voeg dit adres als een nieuw adrespunt toe"
                                 }
-                            }
-                        }
-                    }
-                }
-            },
-            "5": {
-                "tagRenderings": {
-                    "Import-button": {
-                        "mappings": {
-                            "0": {
-                                "then": "Metatags nog niet berekend... Heropen deze pop-up"
-                            },
-                            "1": {
-                                "then": "Dit gebouw heeft openingen en is gemodelleerd als een relatie. Bijgevolg kan het niet worden samengevoegd. Voeg het manueel samen via <a href='https://buildings.osm.be/#/'>de export-site voor gebouwen</a> {open_in_josm()}"
                             }
                         }
                     }
