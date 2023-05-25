@@ -270,6 +270,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     for (const l of levels) {
                         floors.add(l)
                     }
+                }else{
+                    floors.add("0") // '0' is the default and is thus _always_ present
                 }
             }
             const sorted = Array.from(floors)
