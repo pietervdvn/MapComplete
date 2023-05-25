@@ -9,11 +9,22 @@ import IndexText from "./BigComponents/IndexText"
 import { LoginToggle } from "./Popup/LoginButton"
 import { ImmutableStore } from "../Logic/UIEventSource"
 import { OsmConnection } from "../Logic/Osm/OsmConnection"
+import {QueryParameters} from "../Logic/Web/QueryParameters";
+import {OsmConnectionFeatureSwitches} from "../Logic/State/FeatureSwitchState";
 
 export default class AllThemesGui {
     setup() {
         try {
-            const osmConnection = new OsmConnection()
+            const featureSwitches = new OsmConnectionFeatureSwitches()
+            const osmConnection = new OsmConnection({
+                fakeUser: featureSwitches.featureSwitchFakeUser.data,
+                oauth_token: QueryParameters.GetQueryParameter(
+                    "oauth_token",
+                    undefined,
+                    "Used to complete the login"
+                ),
+                osmConfiguration: <"osm" | "osm-test">featureSwitches.featureSwitchApiURL.data,
+            })
             const state = new UserRelatedState(osmConnection)
             const intro = new Combine([
                 new LanguagePicker(Translations.t.index.title.SupportedLanguages(), "").SetClass(
