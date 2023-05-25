@@ -273,14 +273,14 @@ async function createLandingPage(layout: LayoutConfig, manifest, whiteIcons, alr
     let output = template
         .replace("Loading MapComplete, hang on...", asLangSpan(loadingText, "h1"))
         .replace(
-            "Powered by OpenStreetMap",
+            "Made with OpenStreetMap",
             Translations.t.general.poweredByOsm.textFor(targetLanguage)
         )
         .replace(/<!-- THEME-SPECIFIC -->.*<!-- THEME-SPECIFIC-END-->/s, themeSpecific)
         .replace(
             /<!-- DESCRIPTION START -->.*<!-- DESCRIPTION END -->/s,
             asLangSpan(layout.shortDescription)
-        )  .replace(/<!-- IMAGE-START -->.*<!-- IMAGE-END-->/s, "<img class='p-8 h-32 w-32 self-start' src='"+ icon+"' />")
+        )  .replace(/<!-- IMAGE-START -->.*<!-- IMAGE-END -->/s, "<img class='p-8 h-32 w-32 self-start' src='"+ icon+"' />")
 
         .replace(
             '<script type="module" src="./index.ts"></script>',
