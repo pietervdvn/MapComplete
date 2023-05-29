@@ -124,7 +124,7 @@
         <MapControlButton on:click={() =>state.guistate.menuIsOpened.setData(true)}>
             <MenuIcon class="w-8 h-8 cursor-pointer"></MenuIcon>
         </MapControlButton>
-        {#if currentViewLayer?.tagRenderings}
+        {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
             <MapControlButton
                     on:click={() => {selectedLayer.setData(currentViewLayer); selectedElement.setData(state.currentView.features?.data?.[0])}}>
                 <ToSvelte
