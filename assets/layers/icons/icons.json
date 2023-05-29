@@ -82,7 +82,7 @@
       "labels": [
         "defaults"
       ],
-      "render": "<a href='{website}' target='_blank'><img textmode='\uD83C\uDF10' alt='website' src='./assets/layers/icons/website.svg'/></a>",
+      "render": "<a href='{website}' target='_blank'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>",
       "condition": "website~*"
     },
     {

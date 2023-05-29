@@ -129,7 +129,9 @@
     }
   },
   "phone": {
-    "labels": ["contact"],
+    "labels": [
+      "contact"
+    ],
     "question": {
       "en": "What is the phone number of {title()}?",
       "nl": "Wat is het telefoonnummer van {title()}?",
@@ -188,7 +190,9 @@
     "render": {
       "*": "<a href='mailto:{email}' target='_blank'>{email}</a>"
     },
-    "labels": ["contact"],
+    "labels": [
+      "contact"
+    ],
     "question": {
       "nl": "Wat is het e-mailadres van {title()}?",
       "fr": "Quelle est l'adresse courriel de {title()} ?",
@@ -230,7 +234,9 @@
     }
   },
   "website": {
-    "labels": ["contact"],
+    "labels": [
+      "contact"
+    ],
     "question": {
       "en": "What is the website of {title()}?",
       "nl": "Wat is de website van {title()}?",
