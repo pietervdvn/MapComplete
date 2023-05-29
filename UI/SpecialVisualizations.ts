@@ -11,7 +11,7 @@ import {UploadToOsmViz} from "./Popup/UploadToOsmViz"
 import {MultiApplyViz} from "./Popup/MultiApplyViz"
 import {AddNoteCommentViz} from "./Popup/AddNoteCommentViz"
 import {PlantNetDetectionViz} from "./Popup/PlantNetDetectionViz"
-import {ConflateButton, ImportPointButton, ImportWayButton} from "./Popup/ImportButton"
+import {ConflateButton, ImportWayButton} from "./Popup/ImportButton"
 import TagApplyButton from "./Popup/TagApplyButton"
 import {CloseNoteButton} from "./Popup/CloseNoteButton"
 import {MapillaryLinkVis} from "./Popup/MapillaryLinkVis"
@@ -72,6 +72,7 @@ import SplitRoadWizard from "./Popup/SplitRoadWizard"
 import {ExportAsGpxViz} from "./Popup/ExportAsGpxViz"
 import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte"
 import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svelte";
+import {ImportPointButton} from "./Popup/ImportButtons/ImportPointButton";
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -175,7 +176,7 @@ class NearbyImageVis implements SpecialVisualization {
                 towardsCenter,
                 new Combine([
                     new VariableUiElement(
-                        radius.GetValue().map((radius) => t.withinRadius.Subs({ radius }))
+                        radius.GetValue().map((radius) => t.withinRadius.Subs({radius}))
                     ),
                     radius,
                 ]).SetClass("flex justify-between"),
@@ -325,7 +326,7 @@ export default class SpecialVisualizations {
                     matched[1],
                     extraMappings
                 )
-                const argument = matched[2].trim()
+                const argument = matched[2] /* .trim()  // We don't trim, as spaces might be relevant, e.g. "what is ... of {title()}"*/
                 const style = matched[3]?.substring(1) ?? ""
                 const partAfter = SpecialVisualizations.constructSpecification(
                     matched[4],
@@ -355,13 +356,19 @@ export default class SpecialVisualizations {
         // Let's to a small sanity check to help the theme designers:
         if (template.search(/{[^}]+\([^}]*\)}/) >= 0) {
             // Hmm, we might have found an invalid rendering name
+
+            let suggestion = ""
+            if (SpecialVisualizations.specialVisualizations?.length > 0) {
+                suggestion =
+                    "did you mean one of: " +
+                    SpecialVisualizations.specialVisualizations
+                        .map((sp) => sp.funcName + "()")
+                        .join(", ")
+            }
+
             console.warn(
                 "Found a suspicious special rendering value in: ",
-                template,
-                " did you mean one of: "
-                /*SpecialVisualizations.specialVisualizations
-                        .map((sp) => sp.funcName + "()")
-                        .join(", ")*/
+                template, suggestion
             )
         }
 
@@ -381,24 +388,24 @@ export default class SpecialVisualizations {
             viz.docs,
             viz.args.length > 0
                 ? new Table(
-                      ["name", "default", "description"],
-                      viz.args.map((arg) => {
-                          let defaultArg = arg.defaultValue ?? "_undefined_"
-                          if (defaultArg == "") {
-                              defaultArg = "_empty string_"
-                          }
-                          return [arg.name, defaultArg, arg.doc]
-                      })
-                  )
+                    ["name", "default", "description"],
+                    viz.args.map((arg) => {
+                        let defaultArg = arg.defaultValue ?? "_undefined_"
+                        if (defaultArg == "") {
+                            defaultArg = "_empty string_"
+                        }
+                        return [arg.name, defaultArg, arg.doc]
+                    })
+                )
                 : undefined,
             new Title("Example usage of " + viz.funcName, 4),
             new FixedUiElement(
                 viz.example ??
-                    "`{" +
-                        viz.funcName +
-                        "(" +
-                        viz.args.map((arg) => arg.defaultValue).join(",") +
-                        ")}`"
+                "`{" +
+                viz.funcName +
+                "(" +
+                viz.args.map((arg) => arg.defaultValue).join(",") +
+                ")}`"
             ).SetClass("literal-code"),
         ])
     }
@@ -457,14 +464,14 @@ export default class SpecialVisualizations {
             s.structuredExamples === undefined
                 ? []
                 : s.structuredExamples().map((e) => {
-                      return s.constr(
-                          state,
-                          new UIEventSource<Record<string, string>>(e.feature.properties),
-                          e.args,
-                          e.feature,
-                          undefined
-                      )
-                  })
+                    return s.constr(
+                        state,
+                        new UIEventSource<Record<string, string>>(e.feature.properties),
+                        e.args,
+                        e.feature,
+                        undefined
+                    )
+                })
         return new Combine([new Title(s.funcName), s.docs, ...examples])
     }
 
@@ -479,7 +486,7 @@ export default class SpecialVisualizations {
                     let [lon, lat] = GeoOperations.centerpointCoordinates(feature)
                     return new SvelteUIElement(AddNewPoint, {
                         state,
-                        coordinate: { lon, lat },
+                        coordinate: {lon, lat},
                     })
                 },
             },
@@ -604,7 +611,7 @@ export default class SpecialVisualizations {
                     feature: Feature
                 ): BaseUIElement {
                     const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
-                    return new SvelteUIElement(CreateNewNote, { state, coordinate: { lon, lat } })
+                    return new SvelteUIElement(CreateNewNote, {state, coordinate: {lon, lat}})
                 },
             },
             new CloseNoteButton(),
@@ -681,7 +688,7 @@ export default class SpecialVisualizations {
                 docs: "Prints all key-value pairs of the object - used for debugging",
                 args: [],
                 constr: (state, tags: UIEventSource<any>) =>
-                    new SvelteUIElement(AllTagsPanel, { tags, state }),
+                    new SvelteUIElement(AllTagsPanel, {tags, state}),
             },
             {
                 funcName: "image_carousel",
@@ -1027,7 +1034,7 @@ export default class SpecialVisualizations {
                             if (title === undefined) {
                                 return undefined
                             }
-                            return new SubstitutedTranslation(title, tagsSource, state)
+                            return new SubstitutedTranslation(title, tagsSource, state).SetClass("px-1")
                         })
                     ),
             },
@@ -1306,7 +1313,7 @@ export default class SpecialVisualizations {
                 ],
                 constr(state, featureTags, args) {
                     const [key, tr] = args
-                    const translation = new Translation({ "*": tr })
+                    const translation = new Translation({"*": tr})
                     return new VariableUiElement(
                         featureTags.map((tags) => {
                             const properties: object[] = JSON.parse(tags[key])
@@ -1329,7 +1336,7 @@ export default class SpecialVisualizations {
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
 
         const invalid = specialVisualizations
-            .map((sp, i) => ({ sp, i }))
+            .map((sp, i) => ({sp, i}))
             .filter((sp) => sp.sp.funcName === undefined)
         if (invalid.length > 0) {
             throw (
