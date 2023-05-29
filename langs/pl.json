@@ -5,12 +5,20 @@
         "retrying": "Wczytywanie danych nie powiodło się. Spróbujemy ponownie za {count} sekund…",
         "zoomIn": "Przybliż żeby zobaczyć lub edytować"
     },
+    "communityIndex": {
+        "available": "Ta społeczność mówi {native}",
+        "intro": "Skontaktuj się z innymi ludźmi, aby ich poznać, uczyć się od nich, ...",
+        "notAvailable": "Ta społeczność nie mówi w języku {native}",
+        "title": "Indeks społeczności"
+    },
     "delete": {
         "cancel": "Anuluj",
         "cannotBeDeleted": "Ten obiekt nie może zostać usunięty",
         "delete": "Usuń",
         "explanations": {
-            "hardDelete": "Ta funkcja zostanie usunięta w OpenStreetMap. Może zostać odzyskana przez doświadczonego współtwórcę"
+            "hardDelete": "Ta funkcja zostanie usunięta w OpenStreetMap. Może zostać odzyskana przez doświadczonego współtwórcę",
+            "retagNoOtherThemes": "Ta funkcja zostanie przeklasyfikowana i ukryta w tej aplikacji",
+            "retagOtherThemes": "Ta funkcja zostanie ponownie oznaczona i będzie widoczna w {otherThemes}"
         },
         "isDeleted": "Ten obiekt został usunięty",
         "loading": "Sprawdzanie właściwości w celu sprawdzenia, czy tę funkcję można usunąć."
