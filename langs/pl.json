@@ -18,7 +18,8 @@
         "explanations": {
             "hardDelete": "Ta funkcja zostanie usunięta w OpenStreetMap. Może zostać odzyskana przez doświadczonego współtwórcę",
             "retagNoOtherThemes": "Ta funkcja zostanie przeklasyfikowana i ukryta w tej aplikacji",
-            "retagOtherThemes": "Ta funkcja zostanie ponownie oznaczona i będzie widoczna w {otherThemes}"
+            "retagOtherThemes": "Ta funkcja zostanie ponownie oznaczona i będzie widoczna w {otherThemes}",
+            "selectReason": "Wybierz, dlaczego ta funkcja powinna zostać usunięta"
         },
         "isDeleted": "Ten obiekt został usunięty",
         "loading": "Sprawdzanie właściwości w celu sprawdzenia, czy tę funkcję można usunąć."
