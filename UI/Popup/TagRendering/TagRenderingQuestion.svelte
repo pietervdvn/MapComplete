@@ -9,7 +9,7 @@
     import FreeformInput from "./FreeformInput.svelte";
     import Translations from "../../i18n/Translations.js";
     import ChangeTagAction from "../../../Logic/Osm/Actions/ChangeTagAction";
-    import {createEventDispatcher} from "svelte";
+    import {createEventDispatcher, onDestroy} from "svelte";
     import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
     import SpecialTranslation from "./SpecialTranslation.svelte";
     import TagHint from "../TagHint.svelte";
@@ -18,6 +18,7 @@
     import Loading from "../../Base/Loading.svelte";
     import TagRenderingMappingInput from "./TagRenderingMappingInput.svelte";
     import {Translation} from "../../i18n/Translation";
+    import Constants from "../../../Models/Constants";
 
     export let config: TagRenderingConfig;
     export let tags: UIEventSource<Record<string, string>>;
@@ -115,6 +116,10 @@
     let featureSwitchIsTesting = state.featureSwitchIsTesting
     let featureSwitchIsDebugging = state.featureSwitches.featureSwitchIsDebugging
     let showTags = state.userRelatedState.showTags
+    let numberOfCs = state.osmConnection.userDetails.data.csCount
+    onDestroy(state.osmConnection.userDetails.addCallbackAndRun(ud => {
+        numberOfCs = ud.csCount
+    }))
 </script>
 
 {#if config.question !== undefined}
@@ -205,7 +210,7 @@
                     <Tr t={Translations.t.general.save}></Tr>
                 </button>
             </div>
-            {#if $showTags === "yes" || $showTags === "always" || $featureSwitchIsTesting || $featureSwitchIsDebugging}
+            {#if $showTags === "yes" || $showTags === "always" || ($showTags === "" && numberOfCs >= Constants.userJourney.tagsVisibleAt) || $featureSwitchIsTesting || $featureSwitchIsDebugging}
                 <span class="flex justify-between flex-wrap">
                     <TagHint {state} tags={selectedTags}></TagHint>
                     <span class="flex flex-wrap">
