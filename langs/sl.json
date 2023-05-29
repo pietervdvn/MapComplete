@@ -69,22 +69,6 @@
         "isDeleted": "Izbrisana",
         "nearbyPictures": {}
     },
-    "importHelper": {
-        "askMetadata": {},
-        "compareToAlreadyExistingNotes": {},
-        "confirmProcess": {},
-        "conflationChecker": {
-            "states": {}
-        },
-        "createNotes": {},
-        "introduction": {},
-        "login": {},
-        "mapPreview": {},
-        "noteParts": {},
-        "previewAttributes": {},
-        "selectFile": {},
-        "selectTheme": {}
-    },
     "importInspector": {},
     "importLayer": {},
     "index": {

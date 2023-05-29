@@ -295,52 +295,6 @@
         "uploadingMultiple": "Caricamento di {count} foto…",
         "uploadingPicture": "Caricamento della tua foto…"
     },
-    "importHelper": {
-        "askMetadata": {
-            "downloadGeojson": "Scarica Geo JSON",
-            "giveDescription": "Per favore, scrivi una breve descrizione per chi vede la nota. Una buona nota descrive ciò che il contributore dovrebbe fare, per esempio <i>Qui dovrebbe esserci una panchina. Se sei nei paraggi, puoi controllare e indicare se la panchina esiste o no?</i> (Verrà aggiunto automaticamente un link a MapComplete)",
-            "giveSource": "Qual è la fonte di questi dati? Se 'source' è impostata nell'elemento, questo valore sarà ignorato",
-            "giveWikilink": "Su quale pagina wiki si possono trovare informazioni riguardo questa importazione?",
-            "intro": "Prima di aggiungere {count} note, per favore fornisci alcune informazioni aggiuntive.",
-            "orDownload": "In alternativa, puoi scaricare i dati per importarli direttamente",
-            "shouldBeOsmWikilink": "È necessario un link ad una pagina su wiki.openstreetmap.org",
-            "shouldBeUrl": "Non è un URL valido"
-        },
-        "confirmProcess": {
-            "contactedCommunity": "Ho contattato la community (locale) a proposito di questa importazione",
-            "licenseIsCompatible": "I dati da importare hanno una licenza che ne permette l'importazione in OSM. È permesso distribuirli anche per scopi commerciali, con una minima attribuzione",
-            "readImportGuidelines": "Ho letto le linee guida per le importazioni sul wiki di OSM",
-            "title": "Licenza e community",
-            "titleLong": "Hai seguito la procedura di importazione?",
-            "wikipageIsMade": "Il processo è documentato sul wiki di OSM (più tardi avrai bisogno di questo link)"
-        },
-        "conflationChecker": {
-            "cacheExpired": "La cache è scaduta",
-            "downloadOverpassData": "Scarica il GeoJSON caricato da Overpass",
-            "importCandidatesCount": "I {count} elementi in rosso sulla mappa seguente sono tutti i tuoi candidati per l'importazione.",
-            "loadedDataAge": "I dati caricati provengono dalla cache e sono vecchi {age}",
-            "mapShowingNearbyIntro": "Le mappe seguenti mostrano elementi da poter importare che hanno all'interno un elemento OSM ",
-            "nearbyWarn": "I {count} elementi in rosso sulla mappa seguente <b>not</b> saranno importati!",
-            "nothingLoaded": "Non ci sono elementi caricati da OpenStreetMap che corrispondono al livello corrente {name}",
-            "osmLoaded": "{count} elementi sono stati caricati da OpenStreetMap e corrispondono al livello <b>{name}</b>.",
-            "reloadTheCache": "Svuota la cache e lancia nuovamente la richiesta Overpass",
-            "setRangeToZero": "Imposta l'intervallo a 0 oppure 1 se vuoi importarli tutti",
-            "states": {
-                "error": "Errore elaborando i dati da Overpass a causa di {error}",
-                "idle": "Controllo della memoria persistente locale…",
-                "running": "Richiesta Overpass in corso…",
-                "unexpected": "Stato {state} non previsto"
-            },
-            "title": "Confronta con i dati esistenti",
-            "titleLive": "Dati in tempo reale su OSM",
-            "titleNearby": "Elementi vicini",
-            "zoomIn": "Il livello attuale di zoom è {current}"
-        },
-        "createNotes": {
-            "creating": "Create <b>{count}</b> note su {total}",
-            "done": "Tutte le {count} note sono state create!"
-        }
-    },
     "index": {
         "#": "Questi testi sono mostrati sopra ai pulsanti del tema quando nessun tema è stato caricato",
         "featuredThemeTitle": "Questa settimana in vetrina",

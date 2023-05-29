@@ -170,11 +170,6 @@
         "uploadingMultiple": "Загружаем {count} изображений…",
         "uploadingPicture": "Загружаем изображение…"
     },
-    "importHelper": {
-        "askMetadata": {
-            "shouldBeUrl": "Недопустимый URL"
-        }
-    },
     "index": {
         "#": "Эти надписи отображаются над кнопками тем, когда тема не загружена",
         "featuredThemeTitle": "Интересное на этой неделе",

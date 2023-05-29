@@ -342,22 +342,6 @@
         "uploadingMultiple": "Mise en ligne de {count} photos…",
         "uploadingPicture": "Mise en ligne de votre photo…"
     },
-    "importHelper": {
-        "askMetadata": {
-            "giveDescription": "Merci d'écrire une petite description pour la personne qui lira la note. Une bonne note décrit ce que le contributeur devra faire, par ex. <i>Il pourrait y avoir un banc ici. Si vous êtes dans le coin, pouvez-vous vérifier et indiquer si le banc est présent ou non ?</i> (Un lien vers MapComplete sera ajouté automatiquement)",
-            "intro": "Avant d'ajouter {count} notes, merci de fournir quelques informations supplémentaires.",
-            "shouldBeUrl": "URL invalide"
-        },
-        "login": {
-            "loginRequired": "Connectez-vous pour continuer",
-            "title": "Se connecter"
-        },
-        "selectFile": {
-            "errDuplicate": "Certaines colonnes portent le même nom",
-            "errNoName": "Certains colonnes n'ont pas de nom"
-        },
-        "title": "Assistant d'importation"
-    },
     "index": {
         "#": "Ces textes sont affichés au dessus des boutons de thème quand aucun thème n'est chargé",
         "featuredThemeTitle": "Thème de la semaine",

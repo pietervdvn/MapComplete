@@ -157,22 +157,6 @@
         "uploadingMultiple": "{count} 枚の写真をアップロードします…",
         "uploadingPicture": "写真をアップロードします…"
     },
-    "importHelper": {
-        "askMetadata": {},
-        "compareToAlreadyExistingNotes": {},
-        "confirmProcess": {},
-        "conflationChecker": {
-            "states": {}
-        },
-        "createNotes": {},
-        "introduction": {},
-        "login": {},
-        "mapPreview": {},
-        "noteParts": {},
-        "previewAttributes": {},
-        "selectFile": {},
-        "selectTheme": {}
-    },
     "importInspector": {},
     "importLayer": {},
     "index": {

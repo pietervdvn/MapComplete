@@ -157,22 +157,6 @@
         "uploadingMultiple": "Subindo {count} das túas imaxes...",
         "uploadingPicture": "Subindo a túa imaxe..."
     },
-    "importHelper": {
-        "askMetadata": {},
-        "compareToAlreadyExistingNotes": {},
-        "confirmProcess": {},
-        "conflationChecker": {
-            "states": {}
-        },
-        "createNotes": {},
-        "introduction": {},
-        "login": {},
-        "mapPreview": {},
-        "noteParts": {},
-        "previewAttributes": {},
-        "selectFile": {},
-        "selectTheme": {}
-    },
     "importInspector": {},
     "importLayer": {},
     "index": {

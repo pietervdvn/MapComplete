@@ -264,26 +264,6 @@
         "uploadingMultiple": "{count} kép feltöltése folyamatban…",
         "uploadingPicture": "Kép feltöltése folyamatban…"
     },
-    "importHelper": {
-        "askMetadata": {},
-        "compareToAlreadyExistingNotes": {},
-        "confirmProcess": {},
-        "conflationChecker": {
-            "states": {}
-        },
-        "createNotes": {},
-        "introduction": {
-            "description": "Az importálási segédprogram egy külső adatkészletet konvertál OSM-jegyzetekké. A külső adatkészletnek meg kell felelnie a MapComplete egyik meglévő rétegének. Az importálóba helyezett minden egyes elemhez egyetlen jegyzet fog létrejönni. Ezek a jegyzetek a megfelelő térképelemekkel együtt fognak megjelenni ezeken a térképekben, hogy könnyen fel lehessen rajzolni őket a térképre."
-        },
-        "login": {},
-        "mapPreview": {},
-        "noteParts": {},
-        "previewAttributes": {
-            "allAttributesSame": "Ez a címke minden importálandó térképelemen szerepel"
-        },
-        "selectFile": {},
-        "selectTheme": {}
-    },
     "importInspector": {},
     "importLayer": {},
     "index": {

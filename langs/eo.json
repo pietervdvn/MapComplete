@@ -101,22 +101,6 @@
         "uploadingMultiple": "Alŝutante {count} bildojn…",
         "uploadingPicture": "Alŝutante vian bildon…"
     },
-    "importHelper": {
-        "askMetadata": {},
-        "compareToAlreadyExistingNotes": {},
-        "confirmProcess": {},
-        "conflationChecker": {
-            "states": {}
-        },
-        "createNotes": {},
-        "introduction": {},
-        "login": {},
-        "mapPreview": {},
-        "noteParts": {},
-        "previewAttributes": {},
-        "selectFile": {},
-        "selectTheme": {}
-    },
     "importInspector": {},
     "importLayer": {},
     "index": {
