@@ -1,10 +1,8 @@
 <script lang="ts">
     import {TagsFilter} from "../../Logic/Tags/TagsFilter";
     import FromHtml from "../Base/FromHtml.svelte";
-    import Constants from "../../Models/Constants.js";
     import {Translation} from "../i18n/Translation";
     import Tr from "../Base/Tr.svelte";
-    import {onDestroy} from "svelte";
     import type {SpecialVisualizationState} from "../SpecialVisualization";
 
     /**
@@ -18,12 +16,8 @@
      */
     export let embedIn: (() => Translation) | undefined = undefined;
     const userDetails = state.osmConnection.userDetails;
-    let linkToWiki = false;
-    onDestroy(state.osmConnection.userDetails.addCallbackAndRunD(userdetails => {
-        linkToWiki = userdetails.csCount > Constants.userJourney.tagsVisibleAndWikiLinked;
-    }));
     let tagsExplanation = "";
-    $: tagsExplanation = tags?.asHumanString(linkToWiki, false, {});
+    $: tagsExplanation = tags?.asHumanString(true, false, {});
 </script>
 
 {#if $userDetails.loggedIn}
