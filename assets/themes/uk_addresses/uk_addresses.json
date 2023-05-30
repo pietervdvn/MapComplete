@@ -128,8 +128,7 @@
               "targetLayer": "address",
               "tags": "urpn_count=$urpn_count;ref:GB:uprn=$ref:GB:uprn$",
               "text": "Add this address",
-              "icon": "./assets/themes/uk_addresses/housenumber_add.svg",
-              "location_picker": "none"
+              "icon": "./assets/themes/uk_addresses/housenumber_add.svg"
             }
           }
         }

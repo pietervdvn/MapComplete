@@ -61,7 +61,7 @@
         "tagRenderings+": [
           {
             "id": "import",
-            "render": "{import_button(street_lamps,tags,Import,./assets/svg/addSmall.svg,,,,photo,mr_taskId)}"
+            "render": "{import_button(street_lamps,tags,Import,./assets/svg/addSmall.svg,,,,mr_taskId)}"
           }
         ]
       }

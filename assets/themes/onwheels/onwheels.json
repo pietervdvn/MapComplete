@@ -446,7 +446,6 @@
                   "es": "Importar"
                 },
                 "icon": "./assets/svg/addSmall.svg",
-                "location_picker": "photo",
                 "maproulette_id": "mr_taskId"
               }
             }

@@ -232,7 +232,18 @@
       "tagRenderings": [
         {
           "id": "Import button",
-          "render": "{import_way_button(osm:buildings, building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Upload this building to OpenStreetMap)}",
+          "render": {
+            "special": {
+              "type":               "import_way_button",
+              "targetLayer": "osm:buildings",
+              "tags": "building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date",
+              "text": {
+                "*": "Upload this building to OpenStreetMap"
+              }
+            }
+          }, 
+          
+          
           "mappings": [
             {
               "#": "Something went wrong calculating the tags - don't show an import button",

@@ -99,8 +99,8 @@ ${Utils.special_visualizations_importRequirementDocs}
      * Others (e.g.: snapOnto-layers) are not to be handled here
      * @param argsRaw
      */
-    public static getLayerDependencies(argsRaw: string[]) {
-        const args: ImportFlowArguments = <any>Utils.ParseVisArgs(ImportFlowUtils.generalArguments, argsRaw)
+    public static getLayerDependencies(argsRaw: string[], argSpec?) {
+        const args: ImportFlowArguments = <any>Utils.ParseVisArgs(argSpec ?? ImportFlowUtils.generalArguments, argsRaw)
         return [args.targetLayer]
     }
 
@@ -108,7 +108,7 @@ ${Utils.special_visualizations_importRequirementDocs}
         name: string,
         defaultValue?: string
     }[], argsRaw: string[]): string[] {
-        const deps = ImportFlowUtils.getLayerDependencies(argsRaw)
+        const deps = ImportFlowUtils.getLayerDependencies(argsRaw, argSpec)
         const argsParsed: PointImportFlowArguments = <any>Utils.ParseVisArgs(argSpec, argsRaw)
         const snapOntoLayers = argsParsed.snap_onto_layers?.split(";")?.map(l => l.trim()) ?? []
         deps.push(...snapOntoLayers)
