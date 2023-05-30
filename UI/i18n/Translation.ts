@@ -16,9 +16,11 @@ export class Translation extends BaseUIElement {
             throw `Translation without content (${context})`
         }
         this.context = translations["_context"] ?? context
+
         if (typeof translations === "string") {
             translations = { "*": translations }
         }
+
         let count = 0
         for (const translationsKey in translations) {
             if (!translations.hasOwnProperty(translationsKey)) {

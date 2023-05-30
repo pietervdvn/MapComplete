@@ -30,7 +30,7 @@
 </script>
 
 {#if t}
-  <span class={"inline-flex items-center "+cls}>
+  <span class={cls}>
   <FromHtml src={txt}></FromHtml>
   <WeblateLink context={t.context}></WeblateLink>
   </span>

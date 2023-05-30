@@ -388,7 +388,7 @@ export default class LayerConfig extends WithContextLoader {
             readOnlyMode: true,
         })
 
-        this.title = this.tr("title", undefined)
+        this.title = this.tr("title", undefined, translationContext)
         this.isShown = TagUtils.TagD(json.isShown, context + ".isShown")
 
         this.deletion = null

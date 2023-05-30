@@ -76,6 +76,7 @@ export default class OpeningHoursVisualization extends Toggle {
             new Loading(Translations.t.general.opening_hours.loadingCountry),
             tags.map((tgs) => tgs._country !== undefined)
         )
+        this.SetClass("no-weblate")
     }
 
     private static CreateFullVisualisation(oh: any): BaseUIElement {

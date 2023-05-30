@@ -2150,7 +2150,7 @@ label.checked {
   border: 2px solid var(--foreground-color);
 }
 
-.links-w-full a {
+.links-w-full a:not(.weblate-link) {
   display: flex;
   -webkit-column-gap: 0.25rem;
           column-gap: 0.25rem;
@@ -2286,12 +2286,12 @@ select:hover {
 }
 
 .weblate-link {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  display: inline-block;
   flex-shrink: 0;
   margin: 0;
   padding: 0.25rem;
+  width: 1.2rem;
+  height: 1.2rem;
   border: unset;
   border-radius: 5rem;
   -webkit-backdrop-filter: var(--low-interaction-background);

@@ -52,7 +52,7 @@
 
 {#each specs as specpart}
   {#if typeof specpart === "string"} 
-    <span class="inline-flex items-center">
+    <span>
     <FromHtml src={Utils.SubstituteKeys(specpart, $tags)} />
     <WeblateLink context={t.context} />
     </span>
