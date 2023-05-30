@@ -9,7 +9,7 @@
   "images": {
     "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`",
     "render": {
-      "*": "{image_carousel()}{image_upload()}{nearby_images(expandable)}"
+      "*": "{image_carousel()}{image_upload()}"
     }
   },
   "mapillary": {
