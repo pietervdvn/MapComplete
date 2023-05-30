@@ -80,7 +80,7 @@ export interface SpecialVisualization {
     readonly example?: string
 
     /**
-     * Indicates that this special visualsiation will make requests to the 'alLNodesDatabase' and that it thus should be included
+     * Indicates that this special visualisation will make requests to the 'alLNodesDatabase' and that it thus should be included
      */
     readonly needsNodeDatabase?: boolean
     readonly args: {

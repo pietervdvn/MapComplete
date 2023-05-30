@@ -153,8 +153,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     public static ParseVisArgs(
         specs: { name: string; defaultValue?: string }[],
         args: string[]
-    ): any {
-        const parsed = {}
+    ): Record<string, string> {
+        const parsed: Record<string, string> = {}
         if (args.length > specs.length) {
             throw (
                 "To much arguments for special visualization: got " +

@@ -1,6 +1,7 @@
 <script lang="ts">
     /**
      * Wrapper around 'subtleButton' with an arrow pointing to the right
+     * See also: BackButton
      */
     import SubtleButton from "./SubtleButton.svelte";
     import {ChevronRightIcon} from "@rgossiaux/svelte-heroicons/solid";

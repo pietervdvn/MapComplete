@@ -18,13 +18,13 @@
      * - Show more layers
      * - Snap to layers
      *
-     * This one is mostly used to insert new points
+     * This one is mostly used to insert new points, including when importing
      */
     export let state: SpecialVisualizationState;
     /**
      * The start coordinate
      */
-    export let coordinate: { lon: number, lat: number };
+    export let  coordinate: { lon: number, lat: number };
     export let snapToLayers: string[] | undefined;
     export let targetLayer: LayerConfig;
     export let maxSnapDistance: number = undefined;
@@ -105,4 +105,4 @@
 
 
 <LocationInput {map} mapProperties={initialMapProperties}
-               value={preciseLocation} initialCoordinate={{...coordinate}} maxDistanceInMeters=50 />
+               value={preciseLocation} initialCoordinate={coordinate} maxDistanceInMeters=50 />

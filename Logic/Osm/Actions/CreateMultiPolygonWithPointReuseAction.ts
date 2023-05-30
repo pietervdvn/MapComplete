@@ -1,13 +1,15 @@
-import { OsmCreateAction } from "./OsmChangeAction"
-import { Tag } from "../../Tags/Tag"
-import { Changes } from "../Changes"
-import { ChangeDescription } from "./ChangeDescription"
+import {OsmCreateAction} from "./OsmChangeAction"
+import {Tag} from "../../Tags/Tag"
+import {Changes} from "../Changes"
+import {ChangeDescription} from "./ChangeDescription"
 import CreateNewWayAction from "./CreateNewWayAction"
-import CreateWayWithPointReuseAction, { MergePointConfig } from "./CreateWayWithPointReuseAction"
-import { And } from "../../Tags/And"
-import { TagUtils } from "../../Tags/TagUtils"
-import { SpecialVisualizationState } from "../../../UI/SpecialVisualization"
-import { FeatureSource } from "../../FeatureSource/FeatureSource"
+import CreateWayWithPointReuseAction, {MergePointConfig} from "./CreateWayWithPointReuseAction"
+import {And} from "../../Tags/And"
+import {TagUtils} from "../../Tags/TagUtils"
+import {IndexedFeatureSource} from "../../FeatureSource/FeatureSource"
+import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig";
+import {Position} from "geojson";
+import FullNodeDatabaseSource from "../../FeatureSource/TiledFeatureSource/FullNodeDatabaseSource";
 
 /**
  * More or less the same as 'CreateNewWay', except that it'll try to reuse already existing points
@@ -24,9 +26,14 @@ export default class CreateMultiPolygonWithPointReuseAction extends OsmCreateAct
 
     constructor(
         tags: Tag[],
-        outerRingCoordinates: [number, number][],
-        innerRingsCoordinates: [number, number][][],
-        state: SpecialVisualizationState,
+        outerRingCoordinates: Position[],
+        innerRingsCoordinates: Position[][],
+        state: {
+            layout: LayoutConfig;
+            changes: Changes;
+            indexedFeatures: IndexedFeatureSource,
+            fullNodeDatabase?: FullNodeDatabaseSource
+        },
         config: MergePointConfig[],
         changeType: "import" | "create" | string
     ) {
@@ -36,7 +43,7 @@ export default class CreateMultiPolygonWithPointReuseAction extends OsmCreateAct
         this.theme = state?.layout?.id ?? ""
         this.createOuterWay = new CreateWayWithPointReuseAction(
             [],
-            outerRingCoordinates,
+            <[number,number][]> outerRingCoordinates,
             state,
             config
         )
@@ -57,10 +64,6 @@ export default class CreateMultiPolygonWithPointReuseAction extends OsmCreateAct
                 coordinates: [outerRingCoordinates, ...innerRingsCoordinates],
             },
         }
-    }
-
-    public async getPreview(): Promise<FeatureSource> {
-        return undefined
     }
 
     protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {

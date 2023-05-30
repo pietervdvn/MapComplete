@@ -14,11 +14,11 @@
     import {onDestroy} from "svelte";
 
     /**
-     * A visualisation to pick a direction on a map background
+     * A visualisation to pick a location on a map background
      */
     export let value: UIEventSource<{ lon: number, lat: number }>;
     export let initialCoordinate : {lon: number, lat :number}
-    initialCoordinate = initialCoordinate ?? value .data
+    initialCoordinate = initialCoordinate ?? value.data
     export let maxDistanceInMeters: number = undefined
     export let mapProperties: Partial<MapProperties> & {
         readonly location: UIEventSource<{ lon: number; lat: number }>

@@ -25,11 +25,13 @@ import ShowDataLayer from "../Map/ShowDataLayer"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "../Map/MaplibreMap.svelte"
 import SpecialVisualizations from "../SpecialVisualizations"
+import {Feature} from "geojson";
 
 export interface AutoAction extends SpecialVisualization {
     supportsAutoAction: boolean
 
     applyActionOn(
+        feature: Feature,
         state: {
             layout: LayoutConfig
             changes: Changes

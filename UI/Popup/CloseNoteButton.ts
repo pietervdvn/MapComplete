@@ -57,7 +57,7 @@ export class CloseNoteButton implements SpecialVisualization {
             comment: string
             minZoom: string
             zoomButton: string
-        } = Utils.ParseVisArgs(this.args, args)
+        } = <any> Utils.ParseVisArgs(this.args, args)
 
         let icon = Svg.checkmark_svg()
         if (params.icon !== "checkmark.svg" && (args[2] ?? "") !== "") {

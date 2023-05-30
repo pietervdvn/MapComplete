@@ -1,18 +1,15 @@
 import LayoutConfig from "./Models/ThemeConfig/LayoutConfig"
-import * as theme from "./assets/generated/themes/shops.json"
+import * as theme from "./assets/generated/themes/bookcases.json"
 import ThemeViewState from "./Models/ThemeViewState"
 import Combine from "./UI/Base/Combine"
 import SpecialVisualizations from "./UI/SpecialVisualizations"
-import InputHelpers from "./UI/InputElement/InputHelpers"
-import BaseUIElement from "./UI/BaseUIElement"
-import { UIEventSource } from "./Logic/UIEventSource"
-import { VariableUiElement } from "./UI/Base/VariableUIElement"
-import { FixedUiElement } from "./UI/Base/FixedUiElement"
-import Title from "./UI/Base/Title"
+import {VariableUiElement} from "./UI/Base/VariableUIElement"
 import SvelteUIElement from "./UI/Base/SvelteUIElement"
-import ValidatedInput from "./UI/InputElement/ValidatedInput.svelte"
-import { SvgToPdf } from "./Utils/svgToPdf"
-import { Utils } from "./Utils"
+import {SvgToPdf} from "./Utils/svgToPdf"
+import {Utils} from "./Utils"
+import {PointImportFlowState} from "./UI/Popup/ImportButtons/PointImportFlowState";
+import PointImportFlow from "./UI/Popup/ImportButtons/PointImportFlow.svelte";
+import {Feature, Point} from "geojson";
 
 function testspecial() {
     const layout = new LayoutConfig(<any>theme, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
@@ -24,30 +21,6 @@ function testspecial() {
     new Combine(all).AttachTo("maindiv")
 }
 
-function testinput() {
-    const els: BaseUIElement[] = []
-    for (const key in InputHelpers.AvailableInputHelpers) {
-        const value = new UIEventSource<string>(undefined)
-        const helper = InputHelpers.AvailableInputHelpers[key](value, {
-            mapProperties: {
-                zoom: new UIEventSource(16),
-                location: new UIEventSource({ lat: 51.1, lon: 3.2 }),
-            },
-        })
-
-        const feedback: UIEventSource<any> = new UIEventSource<any>(undefined)
-        els.push(
-            new Combine([
-                new Title(key),
-                new SvelteUIElement(ValidatedInput, { value, type: key, feedback }),
-                helper,
-                new VariableUiElement(feedback),
-                new VariableUiElement(value.map((v) => new FixedUiElement(v))),
-            ]).SetClass("flex flex-col p-1 border-3 border-gray-500")
-        )
-    }
-    new Combine(els).SetClass("flex flex-col").AttachTo("maindiv")
-}
 
 async function testPdf() {
     const svgs = await Promise.all(
@@ -59,8 +32,31 @@ async function testPdf() {
     await pdf.ConvertSvg("nl")
 }
 
+function testImportButton() {
+    const layout = new LayoutConfig(<any>theme, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
+    const state = new ThemeViewState(layout)
+    const originalFeature: Feature<Point> = {
+        type: "Feature",
+        properties: {
+            id: "note/-1"
+        },
+        geometry: {
+            type: "Point",
+            coordinates: [3.2255, 51.2112]
+        }
+    }
+    const importFlow = new PointImportFlowState(state, originalFeature, {
+        text: "Import this point",
+        newTags: undefined,
+        targetLayer: "public_bookcase"
+    }, tagsToApply)
+    new SvelteUIElement(PointImportFlow, {
+        importFlow
+    }).SetClass("h-full").AttachTo("maindiv")
+}
+
+testImportButton()
 // testPdf().then((_) => console.log("All done"))
-//testinput()
 /*/
 testspecial()
 //*/

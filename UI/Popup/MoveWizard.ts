@@ -130,6 +130,7 @@ export default class MoveWizard extends Toggle {
                 zoom: new UIEventSource(reason?.startZoom ?? 16),
                 location: new UIEventSource({ lon, lat }),
                 bounds: new UIEventSource(undefined),
+                rasterLayer: state.mapProperties.rasterLayer
             }
             const value = new UIEventSource<{ lon: number; lat: number }>(undefined)
             const locationInput = new SvelteUIElement(LocationInput, {

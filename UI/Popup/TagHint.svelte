@@ -14,7 +14,7 @@
     /**
      * If given, this function will be called to embed the given tags hint into this translation
      */
-    export let embedIn: (() => Translation) | undefined = undefined;
+    export let embedIn: ((string: string) => Translation) | undefined = undefined;
     const userDetails = state.osmConnection.userDetails;
     let tagsExplanation = "";
     $: tagsExplanation = tags?.asHumanString(true, false, {});

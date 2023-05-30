@@ -283,7 +283,7 @@ export class DownloadPanel extends Toggle {
 
         for (const neededLayer of neededLayers) {
             const indexedFeatureSource = state.perLayer.get(neededLayer)
-            let features = indexedFeatureSource.GetFeaturesWithin(bbox, true)
+            let features = indexedFeatureSource.GetFeaturesWithin(bbox)
             // The 'indexedFeatureSources' contains _all_ features, they are not filtered yet
             const filter = state.layerState.filteredLayers.get(neededLayer)
             features = features.filter((f) =>

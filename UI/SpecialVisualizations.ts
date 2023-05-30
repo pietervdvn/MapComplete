@@ -11,7 +11,6 @@ import {UploadToOsmViz} from "./Popup/UploadToOsmViz"
 import {MultiApplyViz} from "./Popup/MultiApplyViz"
 import {AddNoteCommentViz} from "./Popup/AddNoteCommentViz"
 import {PlantNetDetectionViz} from "./Popup/PlantNetDetectionViz"
-import {ConflateButton, ImportWayButton} from "./Popup/ImportButton"
 import TagApplyButton from "./Popup/TagApplyButton"
 import {CloseNoteButton} from "./Popup/CloseNoteButton"
 import {MapillaryLinkVis} from "./Popup/MapillaryLinkVis"
@@ -72,7 +71,8 @@ import SplitRoadWizard from "./Popup/SplitRoadWizard"
 import {ExportAsGpxViz} from "./Popup/ExportAsGpxViz"
 import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte"
 import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svelte";
-import {ImportPointButton} from "./Popup/ImportButtons/ImportPointButton";
+import {ImportPointButtonViz} from "./Popup/ImportButtons/ImportPointButtonViz";
+import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz";
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -619,9 +619,9 @@ export default class SpecialVisualizations {
 
             new TagApplyButton(),
 
-            new ImportPointButton(),
-            new ImportWayButton(),
-            new ConflateButton(),
+            new ImportPointButtonViz(),
+            new WayImportButtonViz(),
+        // TODO    new ConflateButton(),
 
             new NearbyImageVis(),
 

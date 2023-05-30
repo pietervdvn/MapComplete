@@ -1,15 +1,17 @@
-import { OsmCreateAction } from "./OsmChangeAction"
-import { Tag } from "../../Tags/Tag"
-import { Changes } from "../Changes"
-import { ChangeDescription } from "./ChangeDescription"
-import { BBox } from "../../BBox"
-import { TagsFilter } from "../../Tags/TagsFilter"
-import { GeoOperations } from "../../GeoOperations"
-import { FeatureSource } from "../../FeatureSource/FeatureSource"
+import {OsmCreateAction} from "./OsmChangeAction"
+import {Tag} from "../../Tags/Tag"
+import {Changes} from "../Changes"
+import {ChangeDescription} from "./ChangeDescription"
+import {BBox} from "../../BBox"
+import {TagsFilter} from "../../Tags/TagsFilter"
+import {GeoOperations} from "../../GeoOperations"
+import {FeatureSource, IndexedFeatureSource} from "../../FeatureSource/FeatureSource"
 import StaticFeatureSource from "../../FeatureSource/Sources/StaticFeatureSource"
 import CreateNewNodeAction from "./CreateNewNodeAction"
 import CreateNewWayAction from "./CreateNewWayAction"
-import { SpecialVisualizationState } from "../../../UI/SpecialVisualization"
+import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig";
+import FullNodeDatabaseSource from "../../FeatureSource/TiledFeatureSource/FullNodeDatabaseSource";
+import {Position} from "geojson";
 
 export interface MergePointConfig {
     withinRangeOfM: number
@@ -63,13 +65,23 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
      * @private
      */
     private readonly _coordinateInfo: CoordinateInfo[]
-    private readonly _state: SpecialVisualizationState
+    private readonly _state: {
+        layout: LayoutConfig;
+        changes: Changes;
+        indexedFeatures: IndexedFeatureSource,
+        fullNodeDatabase?: FullNodeDatabaseSource
+    }
     private readonly _config: MergePointConfig[]
 
     constructor(
         tags: Tag[],
-        coordinates: [number, number][],
-        state: SpecialVisualizationState,
+        coordinates: Position[],
+        state: {
+            layout: LayoutConfig;
+            changes: Changes;
+            indexedFeatures: IndexedFeatureSource,
+            fullNodeDatabase?: FullNodeDatabaseSource
+        },
         config: MergePointConfig[]
     ) {
         super(null, true)
@@ -78,7 +90,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
         this._config = config
 
         // The main logic of this class: the coordinateInfo contains all the changes
-        this._coordinateInfo = this.CalculateClosebyNodes(coordinates)
+        this._coordinateInfo = this.CalculateClosebyNodes(<[number,number][]> coordinates)
     }
 
     public async getPreview(): Promise<FeatureSource> {
@@ -233,7 +245,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
                     },
                 })
             }
-            nodeIdsToUse.push({ lat, lon, nodeId: id })
+            nodeIdsToUse.push({lat, lon, nodeId: id})
         }
 
         const newWay = new CreateNewWayAction(this._tags, nodeIdsToUse, {
@@ -252,7 +264,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
     private CalculateClosebyNodes(coordinates: [number, number][]): CoordinateInfo[] {
         const bbox = new BBox(coordinates)
         const state = this._state
-        const allNodes =state.fullNodeDatabase?.getNodesWithin(bbox.pad(1.2))
+        const allNodes = state.fullNodeDatabase?.getNodesWithin(bbox.pad(1.2)) ?? []
         const maxDistance = Math.max(...this._config.map((c) => c.withinRangeOfM))
 
         // Init coordianteinfo with undefined but the same length as coordinates
@@ -309,7 +321,7 @@ export default class CreateWayWithPointReuseAction extends OsmCreateAction {
                     if (!config.ifMatches.matchesProperties(node.properties)) {
                         continue
                     }
-                    closebyNodes.push({ node, d, config })
+                    closebyNodes.push({node, d, config})
                 }
             }
 
