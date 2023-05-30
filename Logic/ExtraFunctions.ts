@@ -253,7 +253,6 @@ class ClosestNObjectFunc implements ExtraFunction {
         const maxFeatures = options?.maxFeatures ?? 1
         const maxDistance = options?.maxDistance ?? 500
         const uniqueTag: string | undefined = options?.uniqueTag
-        console.log("Calculating 'closestn' features")
         let allFeatures: Feature[][]
         if (typeof features === "string") {
             const name = features
