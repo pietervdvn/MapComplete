@@ -82,9 +82,9 @@ export class Tag extends TagsFilter {
         if (shorten) {
             v = Utils.EllipsesAfter(v, 25)
         }
-        if (v === "" || (v === undefined && currentProperties !== undefined)) {
+        if ((v === "" || v === undefined) && currentProperties !== undefined) {
             // This tag will be removed if in the properties, so we indicate this with special rendering
-            if (currentProperties !== undefined && (currentProperties[this.key] ?? "") === "") {
+            if ((currentProperties[this.key] ?? "") === "") {
                 // This tag is not present in the current properties, so this tag doesn't change anything
                 return ""
             }

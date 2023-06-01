@@ -11,13 +11,15 @@
      */
     export let tags: TagsFilter;
     export let state: SpecialVisualizationState;
+    
+    export let currentProperties: Record<string, string | any> = {}
     /**
      * If given, this function will be called to embed the given tags hint into this translation
      */
     export let embedIn: ((string: string) => Translation) | undefined = undefined;
     const userDetails = state.osmConnection.userDetails;
     let tagsExplanation = "";
-    $: tagsExplanation = tags?.asHumanString(true, false, {});
+    $: tagsExplanation = tags?.asHumanString(true, false, currentProperties);
 </script>
 
 {#if $userDetails.loggedIn}

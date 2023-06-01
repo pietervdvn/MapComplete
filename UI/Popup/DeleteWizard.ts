@@ -228,6 +228,7 @@ export default class DeleteWizard extends Toggle {
                             new SvelteUIElement(TagHint, {
                                 osmConnection: state.osmConnection,
                                 tags: retag,
+                                currentProperties: currentTags.data
                             }),
                         ])
                     }

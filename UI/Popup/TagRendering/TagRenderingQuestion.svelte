@@ -212,7 +212,7 @@
             </div>
             {#if $showTags === "yes" || $showTags === "always" || ($showTags === "" && numberOfCs >= Constants.userJourney.tagsVisibleAt) || $featureSwitchIsTesting || $featureSwitchIsDebugging}
                 <span class="flex justify-between flex-wrap">
-                    <TagHint {state} tags={selectedTags}></TagHint>
+                    <TagHint {state} tags={selectedTags} currentProperties={$tags}></TagHint>
                     <span class="flex flex-wrap">
                         {#if $featureSwitchIsTesting}
                         Testmode &nbsp;
