@@ -59,9 +59,10 @@ export default class SaveFeatureSourceToLocalStorage {
         layername: string,
         zoomlevel: number,
         features: FeatureSource,
-        featureProperties: FeaturePropertiesStore
+        featureProperties: FeaturePropertiesStore,
+        maxCacheAge: number
     ) {
-        const storage = TileLocalStorage.construct<Feature[]>(backend, layername)
+        const storage = TileLocalStorage.construct<Feature[]>(backend, layername, maxCacheAge)
         const singleTileSavers: Map<number, SingleTileSaver> = new Map<number, SingleTileSaver>()
         features.features.addCallbackAndRunD((features) => {
             const sliced = GeoOperations.slice(zoomlevel, features)

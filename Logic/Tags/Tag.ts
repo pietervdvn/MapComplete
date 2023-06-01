@@ -35,9 +35,9 @@ export class Tag extends TagsFilter {
      * isEmpty.matchesProperties({"other_key": "value"}) // => true
      * isEmpty.matchesProperties({"key": undefined}) // => true
      *
-     * const isTrue = new Tag("key", "true")
-     * isTrue.matchesProperties({"key","true"}) // => true
-     * isTrue.matchesProperteis({"key", true}) // => true
+     * const isTrue = new Tag("key": "true")
+     * isTrue.matchesProperties({"key":"true"}) // => true
+     * isTrue.matchesProperties({"key": true}) // => true
      */
     matchesProperties(properties: Record<string, string>): boolean {
         let foundValue = properties[this.key]
