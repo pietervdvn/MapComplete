@@ -136,7 +136,8 @@
         "nl": "een kunstwerk op een muur",
         "ca": "una obra d'art en una paret",
         "de": "ein Kunstwerk an einer Wand",
-        "cs": "umělecké dílo na zdi"
+        "cs": "umělecké dílo na zdi",
+        "es": "Una obra de arte en la pared"
       },
       "preciseInput": {
         "snapToLayer": "walls_and_buildings"
@@ -475,7 +476,8 @@
             "pt": "Entalhe em madeira",
             "fr": "Sculpture sur bois",
             "nb_NO": "Treskjæring",
-            "ca": "Tallat a la fusta"
+            "ca": "Tallat a la fusta",
+            "es": "Tallado en madera"
           }
         }
       ],

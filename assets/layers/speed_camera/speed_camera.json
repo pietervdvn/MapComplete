@@ -3,18 +3,21 @@
   "name": {
     "en": "Speed Camera",
     "de": "Blitzer",
-    "nl": "Flitspaal"
+    "nl": "Flitspaal",
+    "es": "Cámara de velocidad"
   },
   "description": {
     "en": "Layer showing speed cameras",
     "de": "Ebene mit Blitzern",
-    "nl": "Laag met flitspalen"
+    "nl": "Laag met flitspalen",
+    "es": "Capa con cámaras de velocidad"
   },
   "title": {
     "render": {
       "en": "Speed Camera",
       "de": "Blitzer",
-      "nl": "Flitspaal"
+      "nl": "Flitspaal",
+      "es": "Cámara de velocidad"
     }
   },
   "minzoom": 12,
@@ -27,7 +30,8 @@
       "question": {
         "en": "What is the maximum speed allowed at this speed camera?",
         "de": "Wie hoch ist die zulässige Höchstgeschwindigkeit an diesem Blitzer?",
-        "nl": "Wat is de maximum toegestane snelheid bij deze flitspaal?"
+        "nl": "Wat is de maximum toegestane snelheid bij deze flitspaal?",
+        "es": "¿Cuál es la velocidad máxima permitida en este radar?"
       },
       "freeform": {
         "key": "maxspeed",
@@ -35,13 +39,15 @@
         "placeholder": {
           "en": "Maximum speed allowed",
           "de": "Zulässige Höchstgeschwindigkeit",
-          "nl": "Maximum toegestane snelheid"
+          "nl": "Maximum toegestane snelheid",
+          "es": "Velocidad máxima permitida"
         }
       },
       "render": {
         "en": "The maximum speed allowed is {canonical(maxspeed)}",
         "de": "Die zulässige Höchstgeschwindigkeit beträgt {canonical(maxspeed)}",
-        "nl": "De maximum toegestane snelheid is {canonical(maxspeed)}"
+        "nl": "De maximum toegestane snelheid is {canonical(maxspeed)}",
+        "es": "La velocidad máxima permitida es {canonical(maxspeed)}"
       }
     },
     {
@@ -49,7 +55,8 @@
       "render": {
         "en": "The reference number of this speed camera is {ref}",
         "de": "Die Referenznummer dieses Blitzers ist {ref}",
-        "nl": "De referentie van deze flitspaal is {ref}"
+        "nl": "De referentie van deze flitspaal is {ref}",
+        "es": "El número de referencia de este radar de velocidad es {ref}"
       },
       "condition": "ref~*"
     }
@@ -62,7 +69,8 @@
       "title": {
         "en": "a speed camera",
         "de": "einen Blitzer",
-        "nl": "een flitspaal"
+        "nl": "een flitspaal",
+        "es": "una cámara de velocidad"
       },
       "preciseInput": {
         "preferredBackground": "photo",

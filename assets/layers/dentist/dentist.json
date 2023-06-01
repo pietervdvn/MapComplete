@@ -19,7 +19,7 @@
     "render": {
       "en": "Dentist Office {name}",
       "de": "Arztpraxis {name}",
-      "nl": "Dokterspraktijk {name}",
+      "nl": "Tandartspraktijk {name}",
       "fr": "Cabinet medical {name}"
     }
   },
