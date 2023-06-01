@@ -434,6 +434,32 @@
                 },
                 "question": "Can you withdraw cash from this ATM?"
             },
+            "cash_out-denominations-notes": {
+                "mappings": {
+                    "0": {
+                        "then": "5 euro notes can be withdrawn"
+                    },
+                    "1": {
+                        "then": "10 euro notes can be withdrawn"
+                    },
+                    "2": {
+                        "then": "20 euro notes can be withdrawn"
+                    },
+                    "3": {
+                        "then": "50 euro notes can be withdrawn"
+                    },
+                    "4": {
+                        "then": "100 euro notes can be withdrawn"
+                    },
+                    "5": {
+                        "then": "200 euro notes can be withdrawn"
+                    },
+                    "6": {
+                        "then": "500 euro notes can be withdrawn"
+                    }
+                },
+                "question": "What notes can you withdraw here?"
+            },
             "name": {
                 "render": "The name of this ATM is {name}"
             },
@@ -5119,6 +5145,11 @@
             "name": {
                 "question": "What is the name of this hospital?",
                 "render": "This hospital is called {name}"
+            },
+            "oh-visitor": {
+                "question": "When are visitors allowed to visit?",
+                "questionHint": "These are the regular visitor hours. Some wands have different visitor hours or might allow visitors in emergencies",
+                "render": "<h3>Opening hours for visitors</h3>Regular visitors are allowed at the following moments: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Some wands might have different opening hours. Many hospitals allow visits during emergencies too.</p>"
             }
         },
         "title": {

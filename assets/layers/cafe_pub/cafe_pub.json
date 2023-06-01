@@ -233,7 +233,7 @@
         {
           "if": "amenity=cafe",
           "then": {
-            "en": "A <b>cafe</b> to drink tea, coffee or an alcoholic beverage in a quiet environment",
+            "en": "A <b>cafe</b> to drink tea, coffee or an alcoholical bevarage in a quiet environment",
             "nl": "Dit is een <b>cafe</b> - een plaats waar men rustig kan zitten om een thee, koffie of alcoholische drank te nuttigen.",
             "de": "Ein <b>Café</b>, um in ruhiger Umgebung Tee, Kaffee oder ein alkoholisches Getränk zu trinken",
             "da": "En <b>café</b> til at drikke te, kaffe eller en alkoholisk drik i rolige omgivelser",

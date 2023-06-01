@@ -190,6 +190,9 @@
                 },
                 "1": {
                     "then": "Betalen met bankkaarten kan hier"
+                },
+                "2": {
+                    "then": "Betalen via een QR-code is hier mogelijk"
                 }
             },
             "question": "Welke betaalmiddelen worden hier geaccepteerd?"

@@ -3923,6 +3923,127 @@
             "render": "Lámpara Callejera"
         }
     },
+    "surveillance_camera": {
+        "description": "Esta capa muestra las cámaras de vigilancia y permite a quien colabora, actualizar la información y agregar nuevas cámaras",
+        "name": "Cámaras de vigilancia",
+        "presets": {
+            "0": {
+                "title": "una cámara de vigilancia"
+            },
+            "1": {
+                "title": "una cámara de vigilancia montada en una pared"
+            }
+        },
+        "tagRenderings": {
+            "Camera type: fixed; panning; dome": {
+                "mappings": {
+                    "0": {
+                        "then": "Cámara fija (no móvil)"
+                    },
+                    "1": {
+                        "then": "Cámara con domo (que se puede girar)"
+                    },
+                    "2": {
+                        "then": "Cámara panorámica"
+                    }
+                },
+                "question": "¿Qué tipo de cámara es?"
+            },
+            "Level": {
+                "question": "¿A qué nivel está colocada esta cámara?",
+                "render": "Está colocada a nivel {level}"
+            },
+            "Operator": {
+                "question": "¿Quién opera el sistema de esta cámara?",
+                "render": "Operado por {operator}"
+            },
+            "Surveillance type: public, outdoor, indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Es un área pública, como una calle, un puente, una plaza, un parque, una estación de tren, un corredor público o túnel, ..."
+                    },
+                    "1": {
+                        "then": "Es un área exterior pero privada (ej: estacionamiento, gasolinera, patio, entrada, camino privado, ...)"
+                    },
+                    "2": {
+                        "then": "La vigilancia ocurre en un lugar interior privado, por ejemplo una tienda, un estacionamiento privado subterráneo, ..."
+                    }
+                },
+                "question": "¿Qué tipo de vigilancia aplica a esta cámara?"
+            },
+            "Surveillance:zone": {
+                "mappings": {
+                    "0": {
+                        "then": "Vigila un estacionamiento"
+                    },
+                    "1": {
+                        "then": "Vigila el tránsito"
+                    },
+                    "2": {
+                        "then": "Vigila una entrada"
+                    },
+                    "3": {
+                        "then": "Vigila un corredor"
+                    },
+                    "4": {
+                        "then": "Vigila una parada de transporte público"
+                    },
+                    "5": {
+                        "then": "Vigila una tienda"
+                    }
+                },
+                "question": "¿Qué se vigila aquí exactamente?",
+                "render": "Vigila un/a {surveillance:zone}"
+            },
+            "camera:mount": {
+                "mappings": {
+                    "0": {
+                        "then": "Está cámara está colocada sobre una pared"
+                    },
+                    "1": {
+                        "then": "Esta cámara está colocada en un poste"
+                    },
+                    "2": {
+                        "then": "Esta cámara está colocada en un techo"
+                    },
+                    "3": {
+                        "then": "Esta cámara está colocada sobre una farola"
+                    },
+                    "4": {
+                        "then": "Esta cámara está colocada en un árbol"
+                    }
+                },
+                "question": "¿Cómo está colocada la cámara?",
+                "render": "Método de montaje: {camera:mount}"
+            },
+            "camera_direction": {
+                "mappings": {
+                    "0": {
+                        "then": "Graba en dirección a {direction}"
+                    }
+                },
+                "question": "¿A qué dirección geográfica apunta esta cámara?",
+                "render": "Graba en dirección a {camera:direction}"
+            },
+            "is_indoor": {
+                "mappings": {
+                    "0": {
+                        "then": "Esta cámara está ubicada en un lugar interior"
+                    },
+                    "1": {
+                        "then": "Esta cámara está ubicada en un lugar exterior"
+                    },
+                    "2": {
+                        "then": "Esta cámara está probablemente colocada en el exterior"
+                    }
+                },
+                "question": "¿El espacio público vigilado por esta cámara es un espacio interior o exterior?"
+            }
+        },
+        "title": {
+            "render": "Cámara de vigilancia"
+        }
+    },
     "toilet": {
         "description": "Una capa que muestra baños (públicos)",
         "filter": {
