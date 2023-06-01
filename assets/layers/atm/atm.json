@@ -243,6 +243,108 @@
       ]
     },
     {
+      "id": "cash_out-denominations-notes",
+      "condition": {
+        "and": [
+          {
+            "or": [
+              "cash_out=",
+              "cash_out=yes"
+            ]
+          },
+          {
+            "or": [
+              "_country=",
+              "_country=at",
+              "_country=be",
+              "_country=cy",
+              "_country=de",
+              "_country=ee",
+              "_country=es",
+              "_country=fi",
+              "_country=fr",
+              "_country=gr",
+              "_country=hr",
+              "_country=ie",
+              "_country=it",
+              "_country=lt",
+              "_country=lu",
+              "_country=lv",
+              "_country=mt",
+              "_country=nl",
+              "_country=pt",
+              "_country=si",
+              "_country=sk"
+            ]
+          }
+        ]
+      },
+      "question": {
+        "en": "What notes can you withdraw here?",
+        "nl": "Welke bankbiljetten kan je hier afhalen?",
+        "fr": "Quels billets pouvez-vous retirer ici ?"
+      },
+      "multiAnswer": true,
+      "mappings": [
+        {
+          "if": "cash_out:notes:denominations=5 EUR",
+          "icon": "./assets/tagRenderings/5euro.svg",
+          "then": {
+            "en": "5 euro notes can be withdrawn",
+            "nl": "Je kunt biljetten van 5 euro afhalen"
+          }
+        },
+        {
+          "if": "cash_out:notes:denominations=10 EUR",
+          "icon": "./assets/tagRenderings/10euro.svg",
+          "then": {
+            "en": "10 euro notes can be withdrawn",
+            "nl": "Je kunt biljetten van 10 euro afhalen"
+          }
+        },
+        {
+          "if": "cash_out:notes:denominations=20 EUR",
+          "icon": "./assets/tagRenderings/20euro.svg",
+          "then": {
+            "en": "20 euro notes can be withdrawn",
+            "nl": "Je kunt biljetten van 20 euro afhalen"
+          }
+        },
+        {
+          "if": "cash_out:notes:denominations=50 EUR",
+          "icon": "./assets/tagRenderings/50euro.svg",
+          "then": {
+            "en": "50 euro notes can be withdrawn",
+            "nl": "Je kunt biljetten van 50 euro afhalen"
+          }
+        },
+        {
+          "if": "cash_out:notes:denominations=100 EUR",
+          "icon": "./assets/tagRenderings/100euro.svg",
+          "then": {
+            "en": "100 euro notes can be withdrawn",
+            "nl": "Je kunt biljetten van 100 euro afhalen"
+          }
+        },
+        {
+          "if": "cash_out:notes:denominations=200 EUR",
+          "icon": "./assets/tagRenderings/200euro.svg",
+          "then": {
+            "en": "200 euro notes can be withdrawn",
+            "nl": "Je kunt biljetten van 200 euro afhalen"
+          }
+        },
+        {
+          "if": "cash_out:notes:denominations=500 EUR",
+          "icon": "./assets/tagRenderings/500euro.svg",
+          "then": {
+            "en": "500 euro notes can be withdrawn",
+            "nl": "Je kunt biljetten van 500 euro afhalen"
+          }
+        }
+      ]
+    },
+    {
       "id": "speech_output",
       "question": {
         "en": "Does this ATM have speech output for visually impaired users?",
