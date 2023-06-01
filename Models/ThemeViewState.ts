@@ -237,7 +237,8 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 fs.layer.layerDef.id,
                 15,
                 fs,
-                this.featureProperties
+                this.featureProperties,
+                fs.layer.layerDef.maxAgeOfCache
             )
 
             const doShowLayer = this.mapProperties.zoom.map(
