@@ -58,8 +58,9 @@ export default class SourceConfig {
                     "Error at " +
                     context +
                     ": the specified tags are conflicting with each other: they will never match anything at all.\n" +
-                    "\tThe offending tags are: "+params.osmTags.asHumanString(false, false, {})+
-                        "\tThey optmize into 'false' "
+                    "\tThe offending tags are: " +
+                    params.osmTags.asHumanString(false, false, {}) +
+                    "\tThey optmize into 'false' "
                 )
             }
             if (optimized === true) {
