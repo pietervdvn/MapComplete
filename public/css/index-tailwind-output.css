@@ -1005,6 +1005,12 @@ video {
   height: 1.5rem;
 }
 
+.h-fit {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .h-4 {
   height: 1rem;
 }
@@ -1015,12 +1021,6 @@ video {
 
 .h-3 {
   height: 0.75rem;
-}
-
-.h-fit {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
 }
 
 .h-7 {
@@ -1055,6 +1055,10 @@ video {
   height: 24rem;
 }
 
+.max-h-2 {
+  max-height: 0.5rem;
+}
+
 .max-h-12 {
   max-height: 3rem;
 }
@@ -1069,6 +1073,14 @@ video {
 
 .max-h-screen {
   max-height: 100vh;
+}
+
+.max-h-4 {
+  max-height: 1rem;
+}
+
+.max-h-6 {
+  max-height: 1.5rem;
 }
 
 .w-full {
