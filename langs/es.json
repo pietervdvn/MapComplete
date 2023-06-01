@@ -64,7 +64,7 @@
             "openLayerControl": "Abrir el control de capas",
             "pleaseLogin": "Por favor inicia sesión para añadir un nuevo punto",
             "presetInfo": "El nuevo POI tendrá {tags}",
-            "stillLoading": "Los datos se siguen cargando. Espera un poco antes de añadir ningún punto.",
+            "stillLoading": "Los datos se siguen cargando. Espera un poco antes de añadir una nueva función.",
             "title": "Quieres añadir un punto?",
             "warnVisibleForEveryone": "Su adición será visible para todos",
             "wrongType": "Este elemento no es un punto o una vía y no puede ser importado",
@@ -98,6 +98,7 @@
             "translatedBy": "MapComplete ha sido traducido por {contributors} y <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} más contribuidores</a>"
         },
         "back": "Atrás",
+        "backToIndex": "Volver a la vista general con todos los mapas temáticos",
         "backToMapcomplete": "Volver a la vista de temas",
         "backgroundMap": "Mapa de fondo",
         "cancel": "Cancelar",
@@ -230,6 +231,11 @@
         "skip": "Saltar esta pregunta",
         "skippedQuestions": "Has ignorado algunas preguntas",
         "testing": "Probando - los cambios no se guardarán",
+        "uploadGpx": {
+            "gpxServiceOffline": "El servicio GPX está actualmente fuera de línea - la carga no es posible en este momento. Vuelva a intentarlo más tarde.",
+            "intro0": "Al subir tu trazado, OpenStreetMap.org conservará una copia completa del mismo.",
+            "uploading": "Cargando su trazo…"
+        },
         "weekdays": {
             "abbreviations": {
                 "friday": "Vie",
@@ -313,7 +319,7 @@
         },
         "compareToAlreadyExistingNotes": {
             "completelyImported": "Todos los puntos propuestos ya tienen (o tenían) una nota de importación",
-            "loading": "Cargando las notas desde OSM",
+            "loading": "Cargando las notas desde OSM…",
             "loadingFailed": "La carga de las notas falló debido a {error}",
             "mapExplanation": "Los elementos rojos en el siguiente mapa son todos los puntos de datos de tu conjunto de datos. Hay <b>{length}</b> elementos en tu conjunto de datos.",
             "noPreviousNotesFound": "No se han encontrado notas de importación previas",
@@ -489,6 +495,9 @@
         "typeText": "Teclea algún texto para añadir un comentario",
         "warnAnonymous": "No has iniciado sesión. No podremos contactarte para resolver tu problema."
     },
+    "plantDetection": {
+        "loadingWikidata": "Cargando información sobre {species}…"
+    },
     "privacy": {
         "editing": "Cuando efectúas un cambio al mapa, este cambio se grabas en OpenStreetMap y está disponible públicamente a cualquiera. Un conjunto de cambios hecho con MapComplete incluye los siguientes datos: <ul><li> Los cambios que has hecho</li><li>Tu nombre de usuario</li><li>Cuándo se efectuó el cambio</li><li>El tema que utilizaste mientras que hacías el cambio</li><li>El idioma de la interfaz de usuario</li><li>Una indicación de como de cerca estabas a los objetos cambiados. Otros mapeadores pueden utilizar esta información para determina si un cambio se hizo basándose en un sondeo o en una investigación remota</li></ul> Por favor ve a ",
         "editingTitle": "Cuando se hagan cambios",
@@ -585,7 +594,8 @@
         },
         "indexPage": {
             "button": "Descubre nuestros servicios",
-            "hook": "¿Necesitas ayuda profesional?"
+            "hook": "¿Necesitas ayuda profesional?",
+            "hookMore": "Podemos ayudarle a realizar encuestas, importar datos y asesorarle sobre OpenStreetMap"
         },
         "intro": "El desarrollador de MapComplete ofrece soporte profesional. Este documento resume algunas de las posibilidades, preguntas frecuentes y los límites de MapComplete",
         "osmTitle": "¿Qué pueden hacer OpenStreetMap y MapComplete para tú organización?",
