@@ -4,8 +4,6 @@ import {BBox} from "../../BBox"
 import TileLocalStorage from "../Actors/TileLocalStorage"
 import {Feature} from "geojson"
 import StaticFeatureSource from "../Sources/StaticFeatureSource"
-import {constants} from "http2";
-import HTTP_STATUS_CONTINUE = module
 
 export default class LocalStorageFeatureSource extends DynamicTileSource {
     constructor(

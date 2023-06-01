@@ -150,7 +150,7 @@
             </MapControlButton>
             <a class="pointer-events-auto opacity-50 hover:opacity-100 text-white cursor-pointer bg-black-transparent pl-1 pr-2 rounded-2xl h-fit max-h-12 overflow-hidden self-end" 
                on:click={() =>{ state.guistate.themeViewTab.setData("copyright"); state.guistate.themeIsOpened.setData(true)}}>
-                © OpenStreetMap <span class="w-24">{rasterLayerName}</span>
+                © OpenStreetMap, <span class="w-24">{rasterLayerName}</span>
             </a>
         </div>
 

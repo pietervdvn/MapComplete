@@ -26,7 +26,7 @@
     "maxZoom": 15
   },
   "overrideAll": {
-    "minzoom": 17
+    "minzoom": 15
   },
   "layers": [
     {
@@ -380,7 +380,6 @@
           "id": "Building info",
           "render": "This is a <b>{building}</b> <span class='subtle'>detected by {detection_method}</span>"
         },
-        
         {
           "id": "overlapping building address",
           "render": "The overlapping openstreetmap-building has no address information at all",
@@ -724,7 +723,7 @@
       "builtin": "current_view",
       "override": {
         "calculatedTags+": [
-          "_overlapping=Number(feat.properties.zoom) >= 16 ? overlapWith(feat)('grb').map(ff => ff.feat.properties) : undefined",
+          "_overlapping=Number(feat.properties.zoom) >= 14 ? overlapWith(feat)('grb').map(ff => ff.feat.properties) : undefined",
           "_applicable_conflate=get(feat)('_overlapping')?.filter(p => p._imported !== 'yes' && (!p['_imported_osm_still_fresh'] || !p['_imported_osm_object_found']) && p['_overlap_absolute'] > 10 && p['_overlap_percentage'] > 80 && p['_reverse_overlap_percentage'] > 80)?.map(p => p.id)",
           "_applicable=feat.properties._overlapping.filter(p => p._imported !== 'yes' && p._imported_osm_object_found === false && !(p['_overlap_absolute'] > 5) && !p._intersects_with_other_features)?.map(p => p.id)",
           "_applicable_count=get(feat)('_applicable')?.length",
@@ -751,23 +750,11 @@
           },
           {
             "id": "autoapply",
-            "render": "{auto_apply(grb, _applicable, Import-button, Import all non-conflicting buildings in view)}",
-            "mappings": [
-              {
-                "if": "zoom<16",
-                "then": "Zoom in more to import"
-              }
-            ]
+            "render": "{auto_apply(grb, _applicable, Import-button, Import all non-conflicting buildings in view)}"
           },
           {
             "id": "autoapply_conflate",
-            "render": "{auto_apply(grb, _applicable_conflate, Import-button, Conflate all non-conflicting buildings in view)}",
-            "mappings": [
-              {
-                "if": "zoom<16",
-                "then": "Zoom in more to import"
-              }
-            ]
+            "render": "{auto_apply(grb, _applicable_conflate, Import-button, Conflate all non-conflicting buildings in view)}"
           }
         ],
         "+mapRendering": [
@@ -780,14 +767,13 @@
             },
             "iconSize": "15,15,center"
           }
-          
         ]
       }
     }
   ],
   "hideFromOverview": true,
   "defaultBackgroundId": "AGIVFlandersGRB",
-  "overpassMaxZoom": 17,
+  "overpassMaxZoom": 15,
   "osmApiTileSize": 17,
   "credits": "Pieter Vander Vennet"
 }
