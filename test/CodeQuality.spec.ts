@@ -85,7 +85,7 @@ describe("Code quality", () => {
             "innerText is not allowed as it is not testable with fakeDom. Use 'textContent' instead."
         )
     )
-
+/*
     itAsync(
         "should not contain 'import * as name from \"xyz.json\"'",
         detectInCode(

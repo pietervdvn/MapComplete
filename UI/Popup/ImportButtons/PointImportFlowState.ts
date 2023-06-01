@@ -20,12 +20,10 @@ export interface PointImportFlowArguments extends ImportFlowArguments {
 export class PointImportFlowState extends ImportFlow<PointImportFlowArguments> {
     public readonly startCoordinate: [number, number]
     private readonly _originalFeature: Feature<Point>;
-    private readonly _originalFeatureTags: UIEventSource<Record<string, string>>
 
-    constructor(state: SpecialVisualizationState, originalFeature: Feature<Point>, args: PointImportFlowArguments, tagsToApply: Store<Tag[]>) {
-        super(state, args, tagsToApply);
+    constructor(state: SpecialVisualizationState, originalFeature: Feature<Point>, args: PointImportFlowArguments, tagsToApply: Store<Tag[]>, originalFeatureTags: UIEventSource<Record<string, string>>) {
+        super(state, args, tagsToApply, originalFeatureTags);
         this._originalFeature = originalFeature;
-        this._originalFeatureTags = state.featureProperties.getStore(originalFeature.properties.id)
         this.startCoordinate = GeoOperations.centerpointCoordinates(originalFeature)
     }
 

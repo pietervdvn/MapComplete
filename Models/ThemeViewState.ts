@@ -146,7 +146,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     rasterInfo.defaultState ?? true,
                     "Wether or not overlayer layer " + rasterInfo.id + " is shown"
                 )
-                const state = { isDisplayed }
+                const state = {isDisplayed}
                 overlayLayerStates.set(rasterInfo.id, state)
                 new ShowOverlayRasterLayer(rasterInfo, this.map, this.mapProperties, state)
             }
@@ -158,18 +158,34 @@ export default class ThemeViewState implements SpecialVisualizationState {
              * A bit tricky, as this is heavily intertwined with the 'changes'-element, which generate a stream of new and changed features too
              */
 
+
+            if(this.layout.layers.some(l => l._needsFullNodeDatabase)){
+                this.fullNodeDatabase = new FullNodeDatabaseSource()
+            }
+
             const layoutSource = new LayoutSource(
                 layout.layers,
                 this.featureSwitches,
                 this.mapProperties,
                 this.osmConnection.Backend(),
-                (id) => self.layerState.filteredLayers.get(id).isDisplayed
+                (id) => self.layerState.filteredLayers.get(id).isDisplayed,
+                this.fullNodeDatabase
             )
             this.indexedFeatures = layoutSource
             const empty = []
+            let currentViewIndex = 0
             this.currentView = new StaticFeatureSource(
-                this.mapProperties.bounds.map((bbox) =>
-                    bbox === undefined ? empty : <Feature[]>[bbox.asGeoJson({ id: "current_view" })]
+                this.mapProperties.bounds.map((bbox) => {
+                        if (!bbox) {
+                            return empty
+                        }
+                        currentViewIndex++
+                        return <Feature[]>[bbox.asGeoJson({
+                            zoom: this.mapProperties.zoom.data,
+                            ...this.mapProperties.location.data,
+                            id: "current_view" }
+                        )];
+                    }
                 )
             )
             this.featuresInView = new BBoxFeatureSource(layoutSource, this.mapProperties.bounds)
@@ -270,7 +286,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                     for (const l of levels) {
                         floors.add(l)
                     }
-                }else{
+                } else {
                     floors.add("0") // '0' is the default and is thus _always_ present
                 }
             }
@@ -305,7 +321,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         this.drawSpecialLayers()
         this.initHotkeys()
         this.miscSetup()
-        if(!Utils.runningFromConsole){
+        if (!Utils.runningFromConsole) {
             console.log("State setup completed", this)
         }
     }
@@ -333,7 +349,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
 
     private initHotkeys() {
         Hotkeys.RegisterHotkey(
-            { nomod: "Escape", onUp: true },
+            {nomod: "Escape", onUp: true},
             Translations.t.hotkeyDocumentation.closeSidebar,
             () => {
                 this.selectedElement.setData(undefined)
@@ -354,7 +370,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         )
 
         Hotkeys.RegisterHotkey(
-            { shift: "O" },
+            {shift: "O"},
             Translations.t.hotkeyDocumentation.selectMapnik,
             () => {
                 this.mapProperties.rasterLayer.setData(AvailableRasterLayers.osmCarto)
@@ -373,17 +389,17 @@ export default class ThemeViewState implements SpecialVisualizationState {
         }
 
         Hotkeys.RegisterHotkey(
-            { nomod: "O" },
+            {nomod: "O"},
             Translations.t.hotkeyDocumentation.selectOsmbasedmap,
             () => setLayerCategory("osmbasedmap")
         )
 
-        Hotkeys.RegisterHotkey({ nomod: "M" }, Translations.t.hotkeyDocumentation.selectMap, () =>
+        Hotkeys.RegisterHotkey({nomod: "M"}, Translations.t.hotkeyDocumentation.selectMap, () =>
             setLayerCategory("map")
         )
 
         Hotkeys.RegisterHotkey(
-            { nomod: "P" },
+            {nomod: "P"},
             Translations.t.hotkeyDocumentation.selectAerial,
             () => setLayerCategory("photo")
         )
@@ -451,7 +467,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             ),
             range: new StaticFeatureSource(
                 this.mapProperties.maxbounds.map((bbox) =>
-                    bbox === undefined ? empty : <Feature[]>[bbox.asGeoJson({ id: "range" })]
+                    bbox === undefined ? empty : <Feature[]>[bbox.asGeoJson({id: "range"})]
                 )
             ),
             current_view: this.currentView
@@ -464,6 +480,14 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 new StaticFeatureSource([bbox.asGeoJson({})]),
                 this.featureSwitches.featureSwitchIsTesting
             )
+        }
+        const currentViewLayer = this.layout.layers.find(l => l.id === "current_view")
+        if (currentViewLayer?.tagRenderings?.length > 0) {
+            const params = MetaTagging.createExtraFuncParams(this)
+            this.featureProperties.trackFeatureSource(specialLayers.current_view)
+            specialLayers.current_view.features.addCallbackAndRunD(features => {
+                MetaTagging.addMetatags(features, params, currentViewLayer, this.layout, this.osmObjectDownloader, this.featureProperties)
+            })
         }
 
         this.layerState.filteredLayers
@@ -545,7 +569,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
         }
         {
             this.selectedElement.addCallback(selected => {
-                if(selected === undefined){
+                if (selected === undefined) {
                     // We did _unselect_ an item - we always remove the lastclick-object
                     this.lastClickObject.features.setData([])
                     this.selectedLayer.setData(undefined)

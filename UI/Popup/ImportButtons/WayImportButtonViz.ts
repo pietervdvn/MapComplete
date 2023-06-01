@@ -22,48 +22,41 @@ import FullNodeDatabaseSource from "../../../Logic/FeatureSource/TiledFeatureSou
 export default class WayImportButtonViz implements AutoAction, SpecialVisualization {
 
 
-    public readonly funcName: string
-    public readonly docs: string | BaseUIElement
-    public readonly example?: string
-    public readonly args: { name: string; defaultValue?: string; doc: string }[]
+    public readonly funcName: string= "import_way_button"
+    public readonly docs: string  = "This button will copy the data from an external dataset into OpenStreetMap, copying the geometry and adding it as a 'line'" + ImportFlowUtils.documentationGeneral
+    public readonly args: { name: string; defaultValue?: string; doc: string }[]= [
+        ...ImportFlowUtils.generalArguments,
+        {
+            name: "snap_to_point_if",
+            doc: "Points with the given tags will be snapped to or moved",
+        },
+        {
+            name: "max_snap_distance",
+            doc: "If the imported object is a LineString or (Multi)Polygon, already existing OSM-points will be reused to construct the geometry of the newly imported way",
+            defaultValue: "0.05",
+        },
+        {
+            name: "move_osm_point_if",
+            doc: "Moves the OSM-point to the newly imported point if these conditions are met",
+        },
+        {
+            name: "max_move_distance",
+            doc: "If an OSM-point is moved, the maximum amount of meters it is moved. Capped on 20m",
+            defaultValue: "0.05",
+        },
+        {
+            name: "snap_onto_layers",
+            doc: "If no existing nearby point exists, but a line of a specified layer is closeby, snap to this layer instead",
+        },
+        {
+            name: "snap_to_layer_max_distance",
+            doc: "Distance to distort the geometry to snap to this layer",
+            defaultValue: "0.1",
+        },
+    ]
 
     public readonly supportsAutoAction = true
     public readonly needsNodeDatabase = true
-
-    constructor() {
-        this.funcName = "import_way_button"
-        this.docs = "This button will copy the data from an external dataset into OpenStreetMap, copying the geometry and adding it as a 'line'" + ImportFlowUtils.documentationGeneral
-        this.args = [
-            ...ImportFlowUtils.generalArguments,
-            {
-                name: "snap_to_point_if",
-                doc: "Points with the given tags will be snapped to or moved",
-            },
-            {
-                name: "max_snap_distance",
-                doc: "If the imported object is a LineString or (Multi)Polygon, already existing OSM-points will be reused to construct the geometry of the newly imported way",
-                defaultValue: "0.05",
-            },
-            {
-                name: "move_osm_point_if",
-                doc: "Moves the OSM-point to the newly imported point if these conditions are met",
-            },
-            {
-                name: "max_move_distance",
-                doc: "If an OSM-point is moved, the maximum amount of meters it is moved. Capped on 20m",
-                defaultValue: "0.05",
-            },
-            {
-                name: "snap_onto_layers",
-                doc: "If no existing nearby point exists, but a line of a specified layer is closeby, snap to this layer instead",
-            },
-            {
-                name: "snap_to_layer_max_distance",
-                doc: "Distance to distort the geometry to snap to this layer",
-                defaultValue: "0.1",
-            },
-        ]
-    }
 
     constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
         const geometry = feature.geometry
@@ -100,8 +93,10 @@ export default class WayImportButtonViz implements AutoAction, SpecialVisualizat
 
         const args: WayImportFlowArguments = <any>Utils.ParseVisArgs(this.args, argument)
         const tagsToApply = ImportFlowUtils.getTagsToApply(tagSource, args)
-        const mergeConfigs = WayImportFlowState.GetMergeConfig(args, tagsToApply)
+        const mergeConfigs = WayImportFlowState.GetMergeConfig(args)
         const action = WayImportFlowState.CreateAction(<Feature<LineString | Polygon >>feature, args, state, tagsToApply, mergeConfigs)
+        tagSource.data["_imported"] = "yes"
+        tagSource.ping()
         await state.changes.applyAction(action)
     }
 

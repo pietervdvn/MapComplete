@@ -68,7 +68,7 @@ export default class LayerConfig extends WithContextLoader {
     public readonly forceLoad: boolean
     public readonly syncSelection: typeof LayerConfig.syncSelectionAllowed[number] // this is a trick to conver a constant array of strings into a type union of these values
 
-    public readonly _needsFullNodeDatabase = false
+    public readonly _needsFullNodeDatabase: boolean
     public readonly popupInFloatover
 
     constructor(json: LayerConfigJson, context?: string, official: boolean = true) {
@@ -217,6 +217,7 @@ export default class LayerConfig extends WithContextLoader {
         this.doNotDownload = json.doNotDownload ?? false
         this.passAllFeatures = json.passAllFeatures ?? false
         this.minzoom = json.minzoom ?? 0
+        this._needsFullNodeDatabase = json.fullNodeDatabase ?? false
         if (json["minZoom"] !== undefined) {
             throw "At " + context + ": minzoom is written all lowercase"
         }

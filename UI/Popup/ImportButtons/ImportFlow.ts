@@ -149,11 +149,13 @@ export default abstract class ImportFlow<ArgT extends ImportFlowArguments> {
     public readonly args: ArgT;
     public readonly targetLayer: FilteredLayer;
     public readonly tagsToApply: Store<Tag[]>
+    protected readonly _originalFeatureTags: UIEventSource<Record<string, string>>;
 
-    constructor(state: SpecialVisualizationState, args: ArgT, tagsToApply: Store<Tag[]>) {
+    constructor(state: SpecialVisualizationState, args: ArgT, tagsToApply: Store<Tag[]>, originalTags: UIEventSource<Record<string, string>>) {
         this.state = state;
         this.args = args;
         this.tagsToApply = tagsToApply;
+        this._originalFeatureTags = originalTags;
         this.targetLayer = state.layerState.filteredLayers.get(args.targetLayer)
 
 
@@ -166,6 +168,11 @@ export default abstract class ImportFlow<ArgT extends ImportFlowArguments> {
         const state = this.state
         return state.featureSwitchIsTesting.map(isTesting => {
             const t = Translations.t.general.add.import
+
+            if(this._originalFeatureTags.data["_imported"] === "yes"){
+                return {error: t.hasBeenImported}
+            }
+
             const usesTestUrl = this.state.osmConnection._oauth_config.url === OsmConnection.oauth_configs["osm-test"].url
             if (!state.layout.official && !(isTesting || usesTestUrl)) {
                 // Unofficial theme - imports not allowed
@@ -191,7 +198,7 @@ export default abstract class ImportFlow<ArgT extends ImportFlowArguments> {
             }
 
             return undefined
-        }, [state.mapProperties.zoom, state.dataIsLoading])
+        }, [state.mapProperties.zoom, state.dataIsLoading, this._originalFeatureTags])
 
 
     }

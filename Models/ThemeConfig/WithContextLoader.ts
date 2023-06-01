@@ -15,7 +15,7 @@ export default class WithContextLoader {
      *
      * The found value is interpreted as a tagrendering and fetched/parsed
      * */
-    public tr(key: string, deflt: undefined, translationContext?: string) {
+    public tr(key: string, deflt?: string, translationContext?: string) {
         const v = this._json[key]
         if (v === undefined || v === null) {
             if (deflt === undefined) {

@@ -1,5 +1,5 @@
-import { Tag } from "./Tag"
-import { TagsFilter } from "./TagsFilter"
+import {Tag} from "./Tag"
+import {TagsFilter} from "./TagsFilter"
 
 export class RegexTag extends TagsFilter {
     public readonly key: RegExp | string
@@ -15,7 +15,20 @@ export class RegexTag extends TagsFilter {
         this.matchesEmpty = RegexTag.doesMatch("", this.value)
     }
 
-    private static doesMatch(fromTag: string, possibleRegex: string | RegExp): boolean {
+    /**
+     *
+     * Checks that the value provided by the object properties (`fromTag`) match the specified regex `possibleRegex
+     *
+     * RegexTag.doesMatch("abc", /abc/) // => true
+     * RegexTag.doesMatch("ab", /abc/) // => false
+     * RegexTag.doesMatch("", /.+/) // => false
+     * RegexTag.doesMatch("", new RegExp(".*")) // => true
+     *
+     * @param fromTag
+     * @param possibleRegex
+     * @private
+     */
+    private static doesMatch(fromTag: string | number, possibleRegex: string | RegExp): boolean {
         if (fromTag === undefined) {
             return
         }
@@ -25,11 +38,8 @@ export class RegexTag extends TagsFilter {
         if (typeof possibleRegex === "string") {
             return fromTag === possibleRegex
         }
-        if (typeof fromTag.match !== "function") {
-            console.error("Error: fromTag is not a regex: ", fromTag, possibleRegex)
-            throw "Error: fromTag is not a regex: " + fromTag + possibleRegex
-        }
-        return fromTag.match(possibleRegex) !== null
+        return possibleRegex.test(fromTag)
+
     }
 
     private static source(r: string | RegExp) {
@@ -125,10 +135,38 @@ export class RegexTag extends TagsFilter {
      *
      * new RegexTag("key","value").matchesProperties({"otherkey":"value"}) // => false
      * new RegexTag("key","value",true).matchesProperties({"otherkey":"something"}) // => true
+     *
+     * const v: string = <any> {someJson: ""}
+     * new RegexTag("key", new RegExp(".*")).matchesProperties({"key": v}) // => true
+     * new RegexTag("key", new RegExp(".*")).matchesProperties({"key": ""}) // => true
+     * new RegexTag("key", new RegExp(".*")).matchesProperties({"key": null}) // => true
+     * new RegexTag("key", new RegExp(".*")).matchesProperties({"key": undefined}) // => true
+     *
+     * const v: string = <any> {someJson: ""}
+     * new RegexTag("key", new RegExp(".+")).matchesProperties({"key": null}) // => false
+     * new RegexTag("key", new RegExp(".+")).matchesProperties({"key": undefined}) // => false
+     * new RegexTag("key", new RegExp(".+")).matchesProperties({"key": v}) // => false
+     * new RegexTag("key", new RegExp(".+")).matchesProperties({"key": ""}) // => false
      */
     matchesProperties(tags: Record<string, string>): boolean {
         if (typeof this.key === "string") {
-            const value = tags[this.key] ?? ""
+            const value = tags[this.key]
+            if(!value || value === ""){
+                // No tag is known, so we assume the empty string
+                // If this regexTag matches the empty string, we return true, otherwise false
+                // (Note: if inverted, we must reverse this)
+                return this.invert !== this.matchesEmpty
+            }
+            if(typeof value !== "string"){
+                if(typeof this.value !== "string"){
+                    const regExp = this.value
+                    if(regExp.source === ".*"){
+                        // We match anything, and we do have a value
+                        return !this.invert
+                    }
+                    return RegexTag.doesMatch(value, JSON.stringify(this.value)) != this.invert
+                }
+            }
             return RegexTag.doesMatch(value, this.value) != this.invert
         }
 

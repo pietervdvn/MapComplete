@@ -7,6 +7,7 @@ import { TagsFilter } from "../../Tags/TagsFilter"
 import { Feature } from "geojson"
 import FeatureSourceMerger from "../Sources/FeatureSourceMerger"
 import OsmObjectDownloader from "../../Osm/OsmObjectDownloader"
+import FullNodeDatabaseSource from "../TiledFeatureSource/FullNodeDatabaseSource";
 
 /**
  * If a tile is needed (requested via the UIEventSource in the constructor), will download the appropriate tile and pass it via 'handleTile'
@@ -16,9 +17,19 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
     private readonly isActive: Store<boolean>
     private readonly _backend: string
     private readonly allowedTags: TagsFilter
+    private options: {
+        bounds: Store<BBox>
+        readonly allowedFeatures: TagsFilter
+        backend?: "https://openstreetmap.org/" | string
+        /**
+         * If given: this featureSwitch will not update if the store contains 'false'
+         */
+        isActive?: Store<boolean>,
+        patchRelations?: true | boolean,
+        fullNodeDatabase?: FullNodeDatabaseSource
+    };
 
     public readonly isRunning: UIEventSource<boolean> = new UIEventSource<boolean>(false)
-    public rawDataHandlers: ((osmJson: any, tileIndex: number) => void)[] = []
 
     private readonly _downloadedTiles: Set<number> = new Set<number>()
     private readonly _downloadedData: Feature[][] = []
@@ -35,9 +46,11 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
          * If given: this featureSwitch will not update if the store contains 'false'
          */
         isActive?: Store<boolean>,
-        patchRelations?: true | boolean
+        patchRelations?: true | boolean,
+        fullNodeDatabase?: FullNodeDatabaseSource
     }) {
         super()
+        this.options = options;
         this._bounds = options.bounds
         this.allowedTags = options.allowedFeatures
         this.isActive = options.isActive ?? new ImmutableStore(true)
@@ -119,7 +132,7 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
         return feature
     }
 
-    private async LoadTile(z, x, y): Promise<void> {
+    private async LoadTile(z: number, x: number, y: number): Promise<void> {
         console.log("OsmFeatureSource: loading ", z, x, y, "from", this._backend)
         if (z >= 22) {
             throw "This is an absurd high zoom level"
@@ -141,9 +154,7 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
         try {
             const osmJson = await Utils.downloadJsonCached(url, 2000)
             try {
-                this.rawDataHandlers.forEach((handler) =>
-                    handler(osmJson, Tiles.tile_index(z, x, y))
-                )
+                this.options?.fullNodeDatabase?.handleOsmJson(osmJson, z, x, y)
                 let features = <Feature<any, { id: string }>[]>OsmToGeoJson(
                     osmJson,
                     // @ts-ignore
@@ -181,7 +192,7 @@ export default class OsmFeatureSource extends FeatureSourceMerger {
                 y,
                 "due to",
                 e,
-                "; retrying with smaller bounds"
+                e === "rate limited" ? "; stopping now" : "; retrying with smaller bounds"
             )
             if (e === "rate limited") {
                 return

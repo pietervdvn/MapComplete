@@ -10,6 +10,7 @@ import FeatureSourceMerger from "./FeatureSourceMerger"
 import DynamicGeoJsonTileSource from "../TiledFeatureSource/DynamicGeoJsonTileSource"
 import {BBox} from "../../BBox"
 import LocalStorageFeatureSource from "../TiledFeatureSource/LocalStorageFeatureSource"
+import FullNodeDatabaseSource from "../TiledFeatureSource/FullNodeDatabaseSource";
 
 /**
  * This source will fetch the needed data from various sources for the given layout.
@@ -27,7 +28,8 @@ export default class LayoutSource extends FeatureSourceMerger {
         featureSwitches: FeatureSwitchState,
         mapProperties: { bounds: Store<BBox>; zoom: Store<number> },
         backend: string,
-        isDisplayed: (id: string) => Store<boolean>
+        isDisplayed: (id: string) => Store<boolean>,
+        fullNodeDatabaseSource?: FullNodeDatabaseSource
     ) {
         const { bounds, zoom } = mapProperties
         // remove all 'special' layers
@@ -39,6 +41,7 @@ export default class LayoutSource extends FeatureSourceMerger {
             (l) =>
                 new LocalStorageFeatureSource(backend, l.id, 15, mapProperties, {
                     isActive: isDisplayed(l.id),
+                    maxAge: l.maxAgeOfCache
                 })
         )
 
@@ -55,7 +58,8 @@ export default class LayoutSource extends FeatureSourceMerger {
             bounds,
             zoom,
             backend,
-            featureSwitches
+            featureSwitches,
+            fullNodeDatabaseSource
         )
         const geojsonSources: FeatureSource[] = geojsonlayers.map((l) =>
             LayoutSource.setupGeojsonSource(l, mapProperties, isDisplayed(l.id))
@@ -96,7 +100,8 @@ export default class LayoutSource extends FeatureSourceMerger {
         bounds: Store<BBox>,
         zoom: Store<number>,
         backend: string,
-        featureSwitches: FeatureSwitchState
+        featureSwitches: FeatureSwitchState,
+        fullNodeDatabase: FullNodeDatabaseSource
     ): OsmFeatureSource | undefined {
         if (osmLayers.length == 0) {
             return undefined
@@ -121,8 +126,8 @@ export default class LayoutSource extends FeatureSourceMerger {
             bounds,
             backend,
             isActive,
-            patchRelations: true
-
+            patchRelations: true,
+            fullNodeDatabase
         })
     }
 

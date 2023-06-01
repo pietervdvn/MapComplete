@@ -14,6 +14,9 @@ import { Tag } from "../../Logic/Tags/Tag"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import { Changes } from "../../Logic/Osm/Changes"
 import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import {IndexedFeatureSource} from "../../Logic/FeatureSource/FeatureSource";
+import {Feature} from "geojson";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
 
 export default class TagApplyButton implements AutoAction, SpecialVisualization {
     public readonly funcName = "tag_apply"
@@ -111,13 +114,16 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
         })
     }
 
-    async applyActionOn(
+    public async applyActionOn(
+        feature: Feature,
         state: {
             layout: LayoutConfig
             changes: Changes
+            indexedFeatures: IndexedFeatureSource
         },
         tags: UIEventSource<any>,
-        args: string[]
+        args: string[],
+
     ): Promise<void> {
         const tagsToApply = TagApplyButton.generateTagsToApply(args[0], tags)
         const targetIdKey = args[3]
@@ -138,7 +144,9 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
     public constr(
         state: SpecialVisualizationState,
         tags: UIEventSource<Record<string, string>>,
-        args: string[]
+        args: string[],
+        feature: Feature,
+        layer: LayerConfig
     ): BaseUIElement {
         const tagsToApply = TagApplyButton.generateTagsToApply(args[0], tags)
         const msg = args[1]
@@ -167,7 +175,7 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
             new Combine([msg, tagsExplanation]).SetClass("flex flex-col")
         ).onClick(async () => {
             applied.setData(true)
-            await self.applyActionOn(state, tags, args)
+            await self.applyActionOn(feature, state, tags, args)
         })
 
         return new Toggle(

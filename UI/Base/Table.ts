@@ -78,6 +78,9 @@ export default class Table extends BaseUIElement {
             for (let j = 0; j < row.length; j++) {
                 try {
                     let elem = row[j]
+                    if(elem?.ConstructElement === undefined){
+                        continue
+                    }
                     const htmlElem = elem?.ConstructElement()
                     if (htmlElem === undefined) {
                         continue

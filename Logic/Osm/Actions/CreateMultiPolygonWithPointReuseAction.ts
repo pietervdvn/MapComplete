@@ -1,4 +1,4 @@
-import {OsmCreateAction} from "./OsmChangeAction"
+import {OsmCreateAction, PreviewableAction} from "./OsmChangeAction"
 import {Tag} from "../../Tags/Tag"
 import {Changes} from "../Changes"
 import {ChangeDescription} from "./ChangeDescription"
@@ -6,7 +6,7 @@ import CreateNewWayAction from "./CreateNewWayAction"
 import CreateWayWithPointReuseAction, {MergePointConfig} from "./CreateWayWithPointReuseAction"
 import {And} from "../../Tags/And"
 import {TagUtils} from "../../Tags/TagUtils"
-import {IndexedFeatureSource} from "../../FeatureSource/FeatureSource"
+import {FeatureSource, IndexedFeatureSource} from "../../FeatureSource/FeatureSource"
 import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig";
 import {Position} from "geojson";
 import FullNodeDatabaseSource from "../../FeatureSource/TiledFeatureSource/FullNodeDatabaseSource";
@@ -14,7 +14,7 @@ import FullNodeDatabaseSource from "../../FeatureSource/TiledFeatureSource/FullN
 /**
  * More or less the same as 'CreateNewWay', except that it'll try to reuse already existing points
  */
-export default class CreateMultiPolygonWithPointReuseAction extends OsmCreateAction {
+export default class CreateMultiPolygonWithPointReuseAction extends OsmCreateAction implements PreviewableAction {
     public newElementId: string = undefined
     public newElementIdNumber: number = undefined
     private readonly _tags: Tag[]
@@ -67,7 +67,6 @@ export default class CreateMultiPolygonWithPointReuseAction extends OsmCreateAct
     }
 
     protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
-        console.log("Running CMPWPRA")
         const descriptions: ChangeDescription[] = []
         descriptions.push(...(await this.createOuterWay.CreateChangeDescriptions(changes)))
         for (const innerWay of this.createInnerWays) {
@@ -102,5 +101,9 @@ export default class CreateMultiPolygonWithPointReuseAction extends OsmCreateAct
         })
 
         return descriptions
+    }
+
+    getPreview(): Promise<FeatureSource> {
+        return undefined
     }
 }

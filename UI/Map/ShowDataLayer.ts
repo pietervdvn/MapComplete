@@ -330,6 +330,7 @@ class LineRenderingLayer {
             })
             if (this._onClick) {
                 map.on("click", polylayer, (e) => {
+                    console.log("Got polylayer click:", e)
                     // polygon-layer-listener
                     if(e.originalEvent["consumed"]){
                         // This is a polygon beneath a marker, we can ignore it
@@ -469,8 +470,10 @@ export default class ShowDataLayer {
         if (this._options.zoomToFeatures) {
             const features = this._options.features.features.data
             const bbox = BBox.bboxAroundAll(features.map(BBox.get))
+            map.resize()
             map.fitBounds(bbox.toLngLat(), {
                 padding: {top: 10, bottom: 10, left: 10, right: 10},
+                animate: false
             })
         }
     }

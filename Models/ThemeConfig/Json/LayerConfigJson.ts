@@ -124,9 +124,6 @@ export interface LayerConfigJson {
      * If set, only features matching this extra tag will be shown.
      * This is useful to hide certain features from view.
      *
-     * Important: hiding features does not work dynamically, but is only calculated when the data is first renders.
-     * This implies that it is not possible to hide a feature after a tagging change
-     *
      * The default value is 'yes'
      */
     isShown?: TagConfigJson
@@ -404,4 +401,9 @@ export interface LayerConfigJson {
      * If set, open the selectedElementView in a floatOver instead of on the right
      */
     popupInFloatover?: boolean
+
+    /**
+     * _Set automatically by MapComplete, please ignore_
+     */
+    fullNodeDatabase?: boolean
 }

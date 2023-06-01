@@ -13,7 +13,7 @@ import Translations from "../../i18n/Translations";
 /**
  * The wrapper to make the special visualisation for the PointImportFlow
  */
-export class ImportPointButtonViz implements SpecialVisualization {
+export class PointImportButtonViz implements SpecialVisualization {
 
     public readonly funcName: string
     public readonly docs: string | BaseUIElement
@@ -51,7 +51,7 @@ export class ImportPointButtonViz implements SpecialVisualization {
         }
         const baseArgs: PointImportFlowArguments = <any> Utils.ParseVisArgs(this.args, argument)
         const tagsToApply = ImportFlowUtils.getTagsToApply(tagSource , baseArgs)
-        const importFlow = new PointImportFlowState(state, <Feature<Point>> feature, baseArgs, tagsToApply)
+        const importFlow = new PointImportFlowState(state, <Feature<Point>> feature, baseArgs, tagsToApply, tagSource)
 
         return new SvelteUIElement(
             PointImportFlow, {
@@ -60,7 +60,5 @@ export class ImportPointButtonViz implements SpecialVisualization {
         )
     }
 
-    getLayerDependencies(argsRaw: string[]): string[] {
-        return ImportFlowUtils.getLayerDependenciesWithSnapOnto(this.args, argsRaw)
-    }
+
 }

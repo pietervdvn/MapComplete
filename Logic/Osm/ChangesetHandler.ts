@@ -129,9 +129,9 @@ export class ChangesetHandler {
                 const csId = await this.OpenChangeset(extraMetaTags)
                 openChangeset.setData(csId)
                 const changeset = generateChangeXML(csId, this._remappings)
-                console.trace(
+                console.log(
                     "Opened a new changeset (openChangeset.data is undefined):",
-                    changeset
+                    changeset, extraMetaTags
                 )
                 const changes = await this.UploadChange(csId, changeset)
                 const hasSpecialMotivationChanges = ChangesetHandler.rewriteMetaTags(

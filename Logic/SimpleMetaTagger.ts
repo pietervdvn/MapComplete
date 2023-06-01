@@ -306,22 +306,26 @@ export default class SimpleMetaTaggers {
     )
     private static surfaceArea = new InlineMetaTagger(
         {
-            keys: ["_surface", "_surface:ha"],
-            doc: "The surface area of the feature, in square meters and in hectare. Not set on points and ways",
+            keys: ["_surface"],
+            doc: "The surface area of the feature in square meters. Not set on points and ways",
             isLazy: true,
         },
         (feature) => {
-            Object.defineProperty(feature.properties, "_surface", {
-                enumerable: false,
-                configurable: true,
-                get: () => {
-                    const sqMeters = "" + GeoOperations.surfaceAreaInSqMeters(feature)
-                    delete feature.properties["_surface"]
-                    feature.properties["_surface"] = sqMeters
-                    return sqMeters
-                },
+            Utils.AddLazyProperty(feature.properties, "_surface", () => {
+               return "" + GeoOperations.surfaceAreaInSqMeters(feature)
+
             })
 
+            return true
+        }
+    )
+    private static surfaceAreaHa = new InlineMetaTagger(
+        {
+            keys: ["_surface:ha"],
+            doc: "The surface area of the feature in hectare. Not set on points and ways",
+            isLazy: true,
+        },
+        (feature) => {
             Utils.AddLazyProperty(feature.properties, "_surface:ha", () => {
                 const sqMeters = GeoOperations.surfaceAreaInSqMeters(feature)
                 return "" + Math.floor(sqMeters / 1000) / 10
@@ -581,6 +585,7 @@ export default class SimpleMetaTaggers {
         SimpleMetaTaggers.latlon,
         SimpleMetaTaggers.layerInfo,
         SimpleMetaTaggers.surfaceArea,
+        SimpleMetaTaggers.surfaceAreaHa,
         SimpleMetaTaggers.lngth,
         SimpleMetaTaggers.canonicalize,
         SimpleMetaTaggers.country,

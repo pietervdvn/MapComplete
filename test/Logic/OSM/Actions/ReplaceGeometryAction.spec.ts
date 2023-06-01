@@ -6,6 +6,7 @@ import { describe, expect, it } from "vitest"
 import { OsmConnection } from "../../../../Logic/Osm/OsmConnection"
 import { ImmutableStore } from "../../../../Logic/UIEventSource"
 import { Changes } from "../../../../Logic/Osm/Changes"
+import FullNodeDatabaseSource from "../../../../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource";
 
 describe("ReplaceGeometryAction", () => {
     const grbStripped = {
@@ -873,10 +874,6 @@ describe("ReplaceGeometryAction", () => {
     )
 
     it("should move nodes accordingly", async () => {
-        /**
-         * TODO this is disabled - enable it again when the code works!
-         */
-        return
         const layout = new LayoutConfig(<any>grbStripped)
 
         const bbox = new BBox([
@@ -885,8 +882,8 @@ describe("ReplaceGeometryAction", () => {
         ])
         const url = `https://www.openstreetmap.org/api/0.6/map.json?bbox=${bbox.minLon},${bbox.minLat},${bbox.maxLon},${bbox.maxLat}`
         const data = await Utils.downloadJson(url)
-        const fullNodeDatabase = undefined // TODO new FullNodeDatabaseSource(undefined)
-        // TODO fullNodeDatabase.handleOsmJson(data, 0)
+        const fullNodeDatabase = new FullNodeDatabaseSource()
+        fullNodeDatabase.handleOsmJson(data, 0, 0, 0)
         const changes = new Changes({
             dryRun: new ImmutableStore(true),
             osmConnection: new OsmConnection()

@@ -97,6 +97,16 @@ export class Tiles {
         )
     }
 
+    /**
+     * Construct a tilerange which (at least) contains the given coordinates.
+     * This means that the actual iterated area might be a bit bigger then the the passed in coordinates
+     * @param zoomlevel
+     * @param lat0
+     * @param lon0
+     * @param lat1
+     * @param lon1
+     * @constructor
+     */
     static TileRangeBetween(
         zoomlevel: number,
         lat0: number,

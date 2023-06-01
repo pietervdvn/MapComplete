@@ -15,6 +15,9 @@
     import TagHint from "../TagHint.svelte";
     import {TagsFilter} from "../../../Logic/Tags/TagsFilter";
     import {Store} from "../../../Logic/UIEventSource";
+    import Svg from "../../../Svg";
+    import ToSvelte from "../../Base/ToSvelte.svelte";
+    import {EyeIcon, EyeOffIcon} from "@rgossiaux/svelte-heroicons/solid";
 
     export let importFlow: ImportFlow
     let state = importFlow.state
@@ -24,16 +27,74 @@
     const isLoading = state.dataIsLoading
     const dispatch = createEventDispatcher<{ confirm }>()
     const canBeImported = importFlow.canBeImported()
-    const tags : Store<TagsFilter> = importFlow.tagsToApply.map(tags => new And(tags))
+    const tags: Store<TagsFilter> = importFlow.tagsToApply.map(tags => new And(tags))
 
     const isDisplayed = importFlow.targetLayer.isDisplayed
-    const hasFilter = importFlow.targetLayer.appliedFilters
+    const hasFilter = importFlow.targetLayer.hasFilter
+
+    function abort() {
+        state.selectedElement.setData(undefined)
+        state.selectedLayer.setData(undefined)
+    }
+
 </script>
 
 
 <LoginToggle {state}>
 
-    {#if currentFlowStep === "start"}
+
+    {#if $canBeImported !== true && $canBeImported !== undefined}
+        <Tr cls="alert w-full flex justify-center" t={$canBeImported.error}/>
+        {#if $canBeImported.extraHelp}
+            <Tr t={$canBeImported.extraHelp}/>
+        {/if}
+    {:else if !$isDisplayed}
+        <!-- Check that the layer is enabled, so that we don't add a duplicate -->
+        <div class="alert flex  justify-center items-center">
+            <EyeOffIcon class="w-8"/>
+            <Tr t={Translations.t.general.add.layerNotEnabled
+                    .Subs({ layer: importFlow.targetLayer.layerDef.name })
+                   }/>
+        </div>
+
+        <div class="flex flex-wrap-reverse md:flex-nowrap">
+
+            <button class="flex w-full gap-x-1"
+                    on:click={() => {abort();state.guistate.openFilterView(importFlow.targetLayer.layerDef)}}>
+                <ToSvelte construct={Svg.layers_svg().SetClass("w-12")}/>
+                <Tr t={Translations.t.general.add.openLayerControl}/>
+            </button>
+
+            <button class="flex w-full gap-x-1 primary" on:click={() => {isDisplayed.setData(true);abort()}}>
+                <EyeIcon class="w-12"/>
+                <Tr t={Translations.t.general.add.enableLayer.Subs({name: importFlow.targetLayer.layerDef.name})}/>
+            </button>
+        </div>
+    {:else if $hasFilter}
+        <!-- Some filters are enabled. The feature to add might already be mapped, but hidden -->
+        <div class="alert flex justify-center items-center">
+            <EyeOffIcon class="w-8"/>
+            <Tr t={Translations.t.general.add.disableFiltersExplanation}/>
+        </div>
+        <div class="flex flex-wrap-reverse md:flex-nowrap">
+            <button class="flex w-full gap-x-1 primary"
+                    on:click={() => {abort(); importFlow.targetLayer.disableAllFilters()}}>
+                <EyeOffIcon class="w-12"/>
+                <Tr t={Translations.t.general.add.disableFilters}/>
+            </button>
+            <button class="flex w-full gap-x-1"
+                    on:click={() => {abort();state.guistate.openFilterView(importFlow.targetLayer.layerDef)}}>
+                <ToSvelte construct={Svg.layers_svg().SetClass("w-12")}/>
+                <Tr t={Translations.t.general.add.openLayerControl}/>
+            </button>
+        </div>
+
+    {:else if $isLoading}
+        <Loading>
+            <Tr t={Translations.t.general.add.stillLoading}/>
+        </Loading>
+
+    {:else if currentFlowStep === "start"}
         <NextButton clss="primary w-full" on:click={() => currentFlowStep = "confirm"}>
             <slot name="start-flow-text">
                 {#if importFlow?.args?.icon}
@@ -42,15 +103,6 @@
                 {importFlow.args.text}
             </slot>
         </NextButton>
-    {:else if $canBeImported !== true && $canBeImported !== undefined}
-        <Tr cls="alert w-full flex justify-center" t={$canBeImported.error}/>
-        {#if $canBeImported.extraHelp}
-            <Tr t={$canBeImported.extraHelp}/>
-        {/if}
-    {:else if $isLoading}
-        <Loading>
-            <Tr t={Translations.t.general.add.stillLoading}/>
-        </Loading>
     {:else if currentFlowStep === "confirm"}
         <div class="h-full w-full flex flex-col">
             <div class="w-full h-full">

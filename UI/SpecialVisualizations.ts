@@ -71,8 +71,9 @@ import SplitRoadWizard from "./Popup/SplitRoadWizard"
 import {ExportAsGpxViz} from "./Popup/ExportAsGpxViz"
 import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte"
 import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svelte";
-import {ImportPointButtonViz} from "./Popup/ImportButtons/ImportPointButtonViz";
+import {PointImportButtonViz} from "./Popup/ImportButtons/PointImportButtonViz";
 import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz";
+import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonViz";
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -619,9 +620,9 @@ export default class SpecialVisualizations {
 
             new TagApplyButton(),
 
-            new ImportPointButtonViz(),
+            new PointImportButtonViz(),
             new WayImportButtonViz(),
-        // TODO    new ConflateButton(),
+            new ConflateImportButtonViz(),
 
             new NearbyImageVis(),
 

@@ -414,6 +414,9 @@ class GetParsed implements ExtraFunction {
             if (value === undefined) {
                 return undefined
             }
+            if(typeof value !== "string"){
+                return value
+            }
             try {
                 const parsed = JSON.parse(value)
                 if (parsed === null) {

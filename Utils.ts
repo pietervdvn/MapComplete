@@ -216,29 +216,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     /**
-     * Converts a number to a string with one number after the comma
+     * Converts a number to a number with precisely 7 decimals
      *
-     * Utils.Round(15) // => "15.0"
-     * Utils.Round(1) // => "1.0"
-     * Utils.Round(1.5) // => "1.5"
-     * Utils.Round(0.5) // => "0.5"
-     * Utils.Round(1.6) // => "1.6"
-     * Utils.Round(-15) // => "-15.0"
-     * Utils.Round(-1) // => "-1.0"
-     * Utils.Round(-1.5) // => "-1.5"
-     * Utils.Round(-0.5) // => "-0.5"
-     * Utils.Round(-1.6) // => "-1.6"
-     * Utils.Round(-1531.63543) // =>"-1531.6"
+     * Utils.Round7(12.123456789) // => 12.1234568
      */
-    public static Round(i: number): string {
-        if (i < 0) {
-            return "-" + Utils.Round(-i)
-        }
-        const j = "" + Math.floor(i * 10)
-        if (j.length == 1) {
-            return "0." + j
-        }
-        return j.substr(0, j.length - 1) + "." + j.substr(j.length - 1, j.length)
+    public static Round7(i: number): number {
+        return Math.round(i * 10000000) / 10000000
     }
 
     public static Times(f: (i: number) => string, count: number): string {

@@ -1,5 +1,7 @@
 <script lang="ts">
-
+    /**
+     * Can be used for both WayImportFlow and ConflateImportFlow
+     */
     import WayImportFlowState from "./WayImportFlowState";
     import ImportFlow from "./ImportFlow.svelte";
     import MapControlButton from "../../Base/MapControlButton.svelte";
@@ -12,7 +14,8 @@
     import StaticFeatureSource from "../../../Logic/FeatureSource/Sources/StaticFeatureSource";
     import {ImportFlowUtils} from "./ImportFlow";
     import {GeoOperations} from "../../../Logic/GeoOperations";
-    export let importFlow: WayImportFlowState
+    import ConflateImportFlowState from "./ConflateImportFlowState";
+    export let importFlow: WayImportFlowState | ConflateImportFlowState
     
     const state = importFlow.state
     const map = new UIEventSource<MlMap>(undefined)

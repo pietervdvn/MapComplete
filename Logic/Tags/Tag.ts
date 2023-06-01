@@ -35,15 +35,27 @@ export class Tag extends TagsFilter {
      * isEmpty.matchesProperties({"other_key": "value"}) // => true
      * isEmpty.matchesProperties({"key": undefined}) // => true
      *
+     * const isTrue = new Tag("key", "true")
+     * isTrue.matchesProperties({"key","true"}) // => true
+     * isTrue.matchesProperteis({"key", true}) // => true
      */
     matchesProperties(properties: Record<string, string>): boolean {
-        const foundValue = properties[this.key]
+        let foundValue = properties[this.key]
+
         if (foundValue === undefined && (this.value === "" || this.value === undefined)) {
             // The tag was not found
             // and it shouldn't be found!
             return true
         }
-
+        if(typeof foundValue !== "string"){
+            if(foundValue === true && (this.value === "true" || this.value === "yes" )){
+                return true
+            }
+            if(foundValue === false && (this.value === "false" || this.value === "no" )){
+                return true
+            }
+            foundValue = ""+foundValue
+        }
         return foundValue === this.value
     }
 

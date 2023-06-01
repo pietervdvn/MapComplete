@@ -1,9 +1,11 @@
 import DynamicTileSource from "./DynamicTileSource"
-import { Store } from "../../UIEventSource"
-import { BBox } from "../../BBox"
+import {Store} from "../../UIEventSource"
+import {BBox} from "../../BBox"
 import TileLocalStorage from "../Actors/TileLocalStorage"
-import { Feature } from "geojson"
+import {Feature} from "geojson"
 import StaticFeatureSource from "../Sources/StaticFeatureSource"
+import {constants} from "http2";
+import HTTP_STATUS_CONTINUE = module
 
 export default class LocalStorageFeatureSource extends DynamicTileSource {
     constructor(
@@ -15,18 +17,25 @@ export default class LocalStorageFeatureSource extends DynamicTileSource {
             zoom: Store<number>
         },
         options?: {
-            isActive?: Store<boolean>
+            isActive?: Store<boolean>,
+            maxAge?: number // In seconds
         }
     ) {
-        const storage = TileLocalStorage.construct<Feature[]>(backend, layername)
+        const storage = TileLocalStorage.construct<Feature[]>(backend, layername, options?.maxAge ?? 24 * 60 * 60)
         super(
             zoomlevel,
             (tileIndex) =>
                 new StaticFeatureSource(
                     storage
                         .getTileSource(tileIndex)
-                        .map((features) =>
-                            features?.filter((f) => !f.properties.id.match(/(node|way)\/-[0-9]+/))
+                        .mapD((features) => {
+                                if (features.length === undefined) {
+                                    console.trace("These are not features:", features)
+                                    storage.invalidate(zoomlevel, tileIndex)
+                                    return []
+                                }
+                                return features.filter((f) => !f.properties.id.match(/(node|way)\/-[0-9]+/));
+                            }
                         )
                 ),
             mapProperties,

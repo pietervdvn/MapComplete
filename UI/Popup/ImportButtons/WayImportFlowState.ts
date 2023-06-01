@@ -8,14 +8,14 @@ import CreateWayWithPointReuseAction, {
     MergePointConfig
 } from "../../../Logic/Osm/Actions/CreateWayWithPointReuseAction";
 import {TagUtils} from "../../../Logic/Tags/TagUtils";
-import {OsmCreateAction} from "../../../Logic/Osm/Actions/OsmChangeAction";
+import {OsmCreateAction, PreviewableAction} from "../../../Logic/Osm/Actions/OsmChangeAction";
 import {FeatureSource, IndexedFeatureSource} from "../../../Logic/FeatureSource/FeatureSource";
 import CreateMultiPolygonWithPointReuseAction from "../../../Logic/Osm/Actions/CreateMultiPolygonWithPointReuseAction";
 import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig";
 import {Changes} from "../../../Logic/Osm/Changes";
 import FullNodeDatabaseSource from "../../../Logic/FeatureSource/TiledFeatureSource/FullNodeDatabaseSource";
 
-export interface WayImportFlowArguments extends ImportFlowArguments {
+export interface WayImportFlowArguments extends ImportFlowArguments  {
     max_snap_distance: string
     snap_onto_layers: string,
     snap_to_layer_max_distance: string,
@@ -28,13 +28,11 @@ export default class WayImportFlowState extends ImportFlow<WayImportFlowArgument
     public readonly originalFeature: Feature<LineString | Polygon>;
 
     private readonly action: OsmCreateAction & { getPreview?(): Promise<FeatureSource>; }
-    private readonly _originalFeatureTags: UIEventSource<Record<string, string>>;
 
     constructor(state: SpecialVisualizationState, originalFeature: Feature<LineString | Polygon>, args: WayImportFlowArguments, tagsToApply: Store<Tag[]>, originalFeatureTags: UIEventSource<Record<string, string>>) {
-        super(state, args, tagsToApply);
+        super(state, args, tagsToApply, originalFeatureTags);
         this.originalFeature = originalFeature;
-        this._originalFeatureTags = originalFeatureTags;
-        const mergeConfigs = WayImportFlowState.GetMergeConfig(args, tagsToApply)
+        const mergeConfigs = WayImportFlowState.GetMergeConfig(args)
         this.action = WayImportFlowState.CreateAction(originalFeature, args, state, tagsToApply, mergeConfigs)
     }
 
@@ -49,7 +47,7 @@ export default class WayImportFlowState extends ImportFlow<WayImportFlowArgument
         },
         tagsToApply: Store<Tag[]>,
         mergeConfigs: MergePointConfig[]
-    ): OsmCreateAction & { getPreview?(): Promise<FeatureSource>; newElementId?: string } {
+    ): OsmCreateAction & PreviewableAction & { newElementId?: string } {
         if (feature.geometry.type === "Polygon" && feature.geometry.coordinates.length > 1) {
             const coors = (<Polygon>feature.geometry).coordinates
             const outer = coors[0]
@@ -76,7 +74,7 @@ export default class WayImportFlowState extends ImportFlow<WayImportFlowArgument
         }
     }
 
-    public static GetMergeConfig(args: WayImportFlowArguments, newTags: Store<Tag[]>): MergePointConfig[] {
+    public static GetMergeConfig(args: WayImportFlowArguments): MergePointConfig[] {
         const nodesMustMatch = args.snap_to_point_if
             ?.split(";")
             ?.map((tag, i) => TagUtils.Tag(tag, "TagsSpec for import button " + i))
@@ -108,6 +106,7 @@ export default class WayImportFlowState extends ImportFlow<WayImportFlowArgument
         return mergeConfigs
     }
 
+    // noinspection JSUnusedGlobalSymbols
     public async onConfirm() {
         const originalFeatureTags = this._originalFeatureTags
         originalFeatureTags.data["_imported"] = "yes"

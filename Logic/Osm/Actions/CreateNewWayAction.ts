@@ -1,5 +1,5 @@
 import { ChangeDescription } from "./ChangeDescription"
-import { OsmCreateAction } from "./OsmChangeAction"
+import {OsmCreateAction, PreviewableAction} from "./OsmChangeAction"
 import { Changes } from "../Changes"
 import { Tag } from "../../Tags/Tag"
 import CreateNewNodeAction from "./CreateNewNodeAction"

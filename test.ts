@@ -32,30 +32,7 @@ async function testPdf() {
     await pdf.ConvertSvg("nl")
 }
 
-function testImportButton() {
-    const layout = new LayoutConfig(<any>theme, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
-    const state = new ThemeViewState(layout)
-    const originalFeature: Feature<Point> = {
-        type: "Feature",
-        properties: {
-            id: "note/-1"
-        },
-        geometry: {
-            type: "Point",
-            coordinates: [3.2255, 51.2112]
-        }
-    }
-    const importFlow = new PointImportFlowState(state, originalFeature, {
-        text: "Import this point",
-        newTags: undefined,
-        targetLayer: "public_bookcase"
-    }, tagsToApply)
-    new SvelteUIElement(PointImportFlow, {
-        importFlow
-    }).SetClass("h-full").AttachTo("maindiv")
-}
 
-testImportButton()
 // testPdf().then((_) => console.log("All done"))
 /*/
 testspecial()

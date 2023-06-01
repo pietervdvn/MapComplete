@@ -4,6 +4,7 @@
  */
 import { Changes } from "../Changes"
 import { ChangeDescription } from "./ChangeDescription"
+import {FeatureSource} from "../../FeatureSource/FeatureSource";
 
 export default abstract class OsmChangeAction {
     public readonly trackStatistics: boolean
@@ -34,4 +35,8 @@ export default abstract class OsmChangeAction {
 export abstract class OsmCreateAction extends OsmChangeAction {
     public newElementId: string
     public newElementIdNumber: number
+}
+
+export interface PreviewableAction {
+    getPreview(): Promise<FeatureSource>
 }

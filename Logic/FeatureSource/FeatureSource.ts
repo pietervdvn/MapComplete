@@ -10,11 +10,6 @@ export interface WritableFeatureSource<T extends Feature = Feature> extends Feat
     features: UIEventSource<T[]>
 }
 
-export interface Tiled {
-    tileIndex: number
-    bbox: BBox
-}
-
 /**
  * A feature source which only contains features for the defined layer
  */

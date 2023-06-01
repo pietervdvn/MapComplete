@@ -46,9 +46,6 @@
         },
         "maxCacheAge": 0
       },
-      "calculatedTags": [
-        "_surface:strict:=get(feat)('_surface')"
-      ],
       "mapRendering": [
         {
           "width": {
@@ -293,24 +290,24 @@
       "name": "GRB geometries",
       "title": "GRB outline",
       "calculatedTags": [
-        "_overlaps_with_buildings=overlapWith(feat)('osm-buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
+        "_overlaps_with_buildings=overlapWith(feat)('osm-buildings').filter(f => f.feat.properties.id.indexOf('-') < 0) ?? []",
         "_overlaps_with=get(feat)('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
         "_osm_obj:source:ref=get(feat)('_overlaps_with')?.feat?.properties['source:geometry:ref']",
         "_osm_obj:id=get(feat)('_overlaps_with')?.feat?.properties?.id",
-        "_osm_obj:source:date=(get(feat)('_overlaps_with')?.feat?.properties ?? {})['source:geometry:date']?.replace(/\\//g, '-')",
+        "_osm_obj:source:date=(feat.properties['_overlaps_with']?.feat?.properties ?? {})['source:geometry:date']?.replace(/\\//g, '-')",
         "_osm_obj:building=get(feat)('_overlaps_with')?.feat?.properties?.building",
         "_osm_obj:addr:street=(get(feat)('_overlaps_with')?.feat?.properties ?? {})['addr:street']",
         "_osm_obj:addr:housenumber=(get(feat)('_overlaps_with')?.feat?.properties ?? {})['addr:housenumber']",
-        "_osm_obj:surface=(get(feat)('_overlaps_with')?.feat?.properties ?? {})['_surface:strict']",
+        "_osm_obj:surface=(get(feat)('_overlaps_with')?.feat?.properties ?? {})['_surface']",
         "_overlap_absolute=get(feat)('_overlaps_with')?.overlap",
         "_reverse_overlap_percentage=Math.round(100 * get(feat)('_overlap_absolute') / get(feat)('_surface'))",
         "_overlap_percentage=Math.round(100 * get(feat)('_overlap_absolute') / get(feat)('_osm_obj:surface'))",
         "_grb_ref=feat.properties['source:geometry:entity'] + '/' + feat.properties['source:geometry:oidn']",
-        "_imported_osm_object_found= feat.properties['_osm_obj:source:ref'] == feat.properties._grb_ref",
+        "_imported_osm_object_found=feat.properties['_osm_obj:source:ref'] === feat.properties['_grb_ref']",
         "_grb_date=feat.properties['source:geometry:date'].replace(/\\//g,'-')",
-        "_imported_osm_still_fresh= feat.properties['_osm_obj:source:date'] == feat.properties._grb_date",
+        "_imported_osm_still_fresh=feat.properties['_osm_obj:source:date'] == feat.properties._grb_date",
         "_target_building_type=feat.properties['_osm_obj:building'] === 'yes' ? feat.properties.building : (feat.properties['_osm_obj:building'] ?? feat.properties.building)",
-        "_building:min_level= feat.properties['fixme']?.startsWith('verdieping, correct the building tag, add building:level and building:min_level before upload in JOSM!') ? '1' : ''",
+        "_building:min_level=feat.properties['fixme']?.startsWith('verdieping, correct the building tag, add building:level and building:min_level before upload in JOSM!') ? '1' : ''",
         "_intersects_with_other_features=intersectionsWith(feat)('generic_osm_object').map(f => \"<a href='https://osm.org/\"+f.feat.properties.id+\"' target='_blank'>\" + f.feat.properties.id + \"</a>\").join(', ')"
       ],
       "tagRenderings": [
@@ -358,7 +355,6 @@
                 "and": [
                   "_overlap_percentage>50",
                   "_reverse_overlap_percentage>50",
-                  "_overlaps_with!=",
                   "_osm_obj:addr:street=",
                   "_osm_obj:addr:housenumber=",
                   "addr:street~*",
@@ -373,8 +369,7 @@
               "if": {
                 "and": [
                   "_overlap_percentage>50",
-                  "_reverse_overlap_percentage>50",
-                  "_overlaps_with!="
+                  "_reverse_overlap_percentage>50"
                 ]
               },
               "then": "{conflate_button(osm-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Replace the geometry in OpenStreetMap,,_osm_obj:id)}"
@@ -385,6 +380,7 @@
           "id": "Building info",
           "render": "This is a <b>{building}</b> <span class='subtle'>detected by {detection_method}</span>"
         },
+        
         {
           "id": "overlapping building address",
           "render": "The overlapping openstreetmap-building has no address information at all",
@@ -436,9 +432,19 @@
           }
         },
         {
+          "id": "overlapping building id",
+          "render": "The overlapping <a href='https://osm.org/{_osm_obj:id}' target='_blank'>openstreetmap-building has id {_osm_obj:id}</a>",
+          "condition": "_osm_obj:id~*"
+        },
+        {
           "id": "overlapping building type",
-          "render": "<div>The overlapping <a href='https://osm.org/{_osm_obj:id}' target='_blank'>openstreetmap-building</a> is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the GRB building.<br/>The GRB-building covers <b>{_reverse_overlap_percentage}%</b> of the OSM building<div><h3>GRB geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}",
-          "condition": "_overlaps_with!="
+          "render": "The overlapping building is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the GRB building. <br/>The GRB-building covers <b>{_reverse_overlap_percentage}%</b> of the OSM building<br/>The OSM-building is based on GRB-data from {_osm_obj:source:date}.",
+          "condition": "_osm_obj:id~*"
+        },
+        {
+          "id": "overlapping building map",
+          "render": "<h3>GRB geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}",
+          "condition": "_osm_obj:id~*"
         },
         {
           "id": "apply-id",
@@ -717,15 +723,17 @@
     {
       "builtin": "current_view",
       "override": {
-        "calculatedTags": [
+        "calculatedTags+": [
           "_overlapping=Number(feat.properties.zoom) >= 16 ? overlapWith(feat)('grb').map(ff => ff.feat.properties) : undefined",
-          "_applicable=get(feat)('_overlapping')?.filter(p => (p._imported_osm_object_found === 'true' || p._intersects_with_other_features === ''))?.map(p => p.id)",
-          "_applicable_count=get(feat)('_applicable')?.length"
+          "_applicable_conflate=get(feat)('_overlapping')?.filter(p => p._imported !== 'yes' && (!p['_imported_osm_still_fresh'] || !p['_imported_osm_object_found']) && p['_overlap_absolute'] > 10 && p['_overlap_percentage'] > 80 && p['_reverse_overlap_percentage'] > 80)?.map(p => p.id)",
+          "_applicable=feat.properties._overlapping.filter(p => p._imported !== 'yes' && p._imported_osm_object_found === false && !(p['_overlap_absolute'] > 5) && !p._intersects_with_other_features)?.map(p => p.id)",
+          "_applicable_count=get(feat)('_applicable')?.length",
+          "_applicable_conflate_count=get(feat)('_applicable_conflate')?.length"
         ],
         "tagRenderings+": [
           {
             "id": "hw",
-            "render": "There are {_applicable_count} applicable elements in view",
+            "render": "There are {_applicable_count} non-overlapping buildings in view and {_applicable_conflate_count} conflatable buildings",
             "mappings": [
               {
                 "if": "zoom<14",
@@ -737,13 +745,23 @@
               },
               {
                 "if": "_applicable_count=0",
-                "then": "No importable buildins in view"
+                "then": "No importable buildings in view"
               }
             ]
           },
           {
             "id": "autoapply",
-            "render": "{auto_apply(grb, _applicable, Import-button, Import or conflate all non-conflicting buildings in view)}",
+            "render": "{auto_apply(grb, _applicable, Import-button, Import all non-conflicting buildings in view)}",
+            "mappings": [
+              {
+                "if": "zoom<16",
+                "then": "Zoom in more to import"
+              }
+            ]
+          },
+          {
+            "id": "autoapply_conflate",
+            "render": "{auto_apply(grb, _applicable_conflate, Import-button, Conflate all non-conflicting buildings in view)}",
             "mappings": [
               {
                 "if": "zoom<16",
@@ -762,6 +780,7 @@
             },
             "iconSize": "15,15,center"
           }
+          
         ]
       }
     }

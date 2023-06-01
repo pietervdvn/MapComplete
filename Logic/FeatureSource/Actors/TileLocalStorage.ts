@@ -1,5 +1,5 @@
-import { IdbLocalStorage } from "../../Web/IdbLocalStorage"
-import { UIEventSource } from "../../UIEventSource"
+import {IdbLocalStorage} from "../../Web/IdbLocalStorage"
+import {UIEventSource} from "../../UIEventSource"
 
 /**
  * A class which allows to read/write a tile to local storage.
@@ -10,23 +10,25 @@ import { UIEventSource } from "../../UIEventSource"
  */
 export default class TileLocalStorage<T> {
     private static perLayer: Record<string, TileLocalStorage<any>> = {}
+    private static readonly useIndexedDb = typeof indexedDB !== "undefined"
     private readonly _layername: string
     private readonly inUse = new UIEventSource(false)
     private readonly cachedSources: Record<number, UIEventSource<T> & { flush: () => void }> = {}
+    private readonly _maxAgeSeconds: number;
 
-    private static readonly useIndexedDb = typeof indexedDB !== "undefined"
-    private constructor(layername: string) {
+    private constructor(layername: string, maxAgeSeconds: number) {
         this._layername = layername
+        this._maxAgeSeconds = maxAgeSeconds;
     }
 
-    public static construct<T>(backend: string, layername: string): TileLocalStorage<T> {
+    public static construct<T>(backend: string, layername: string, maxAgeS: number): TileLocalStorage<T> {
         const key = backend + "_" + layername
         const cached = TileLocalStorage.perLayer[key]
         if (cached) {
             return cached
         }
 
-        const tls = new TileLocalStorage<T>(key)
+        const tls = new TileLocalStorage<T>(key, maxAgeS)
         TileLocalStorage.perLayer[key] = tls
         return tls
     }
@@ -50,13 +52,15 @@ export default class TileLocalStorage<T> {
     }
 
     private async SetIdb(tileIndex: number, data: any): Promise<void> {
-        if(!TileLocalStorage.useIndexedDb){
+        if (!TileLocalStorage.useIndexedDb) {
             return
         }
         try {
             await this.inUse.AsPromise((inUse) => !inUse)
             this.inUse.setData(true)
             await IdbLocalStorage.SetDirectly(this._layername + "_" + tileIndex, data)
+            await IdbLocalStorage.SetDirectly(this._layername + "_" + tileIndex + "_date", Date.now())
+
             this.inUse.setData(false)
         } catch (e) {
             console.error(
@@ -72,10 +76,24 @@ export default class TileLocalStorage<T> {
         }
     }
 
-    private GetIdb(tileIndex: number): Promise<any> {
-        if(!TileLocalStorage.useIndexedDb){
+    private async GetIdb(tileIndex: number): Promise<any> {
+        if (!TileLocalStorage.useIndexedDb) {
             return undefined
         }
-        return IdbLocalStorage.GetDirectly(this._layername + "_" + tileIndex)
+        const date = <any>await IdbLocalStorage.GetDirectly(this._layername + "_" + tileIndex + "_date")
+        const maxAge = this._maxAgeSeconds
+        const timeDiff = Date.now() - date
+        if (timeDiff >= maxAge) {
+            console.log("Dropping cache for", this._layername, tileIndex, "out of date")
+            await IdbLocalStorage.SetDirectly(this._layername + "_" + tileIndex, undefined)
+
+            return undefined
+        }
+        const data = await IdbLocalStorage.GetDirectly(this._layername + "_" + tileIndex)
+        return <any>data
+    }
+
+    invalidate(zoomlevel: number, tileIndex) {
+        this.getTileSource(tileIndex).setData(undefined)
     }
 }

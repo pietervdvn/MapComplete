@@ -43,7 +43,7 @@ export class IdbLocalStorage {
         return idb.set(key, copy)
     }
 
-    static GetDirectly(key: string): Promise<void> {
+    static GetDirectly(key: string): Promise<any> {
         return idb.get(key)
     }
 }

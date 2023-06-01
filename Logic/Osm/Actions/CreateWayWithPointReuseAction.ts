@@ -1,4 +1,4 @@
-import {OsmCreateAction} from "./OsmChangeAction"
+import {OsmCreateAction, PreviewableAction} from "./OsmChangeAction"
 import {Tag} from "../../Tags/Tag"
 import {Changes} from "../Changes"
 import {ChangeDescription} from "./ChangeDescription"
@@ -56,7 +56,7 @@ interface CoordinateInfo {
 /**
  * More or less the same as 'CreateNewWay', except that it'll try to reuse already existing points
  */
-export default class CreateWayWithPointReuseAction extends OsmCreateAction {
+export default class CreateWayWithPointReuseAction extends OsmCreateAction implements PreviewableAction {
     public newElementId: string = undefined
     public newElementIdNumber: number = undefined
     private readonly _tags: Tag[]
