@@ -50,7 +50,7 @@
         }
         feedback.setData(undefined)
     }
-    let selectedTags: TagsFilter = undefined;
+    export let selectedTags: TagsFilter = undefined;
 
 
     let mappings: Mapping[] = config?.mappings;
@@ -206,9 +206,11 @@
             <div class="flex justify-end flex-wrap-reverse sm:flex-nowrap items-stretch">
                 <!-- TagRenderingQuestion-buttons -->
                 <slot name="cancel"></slot>
-                <button on:click={onSave} class={(selectedTags === undefined ? "disabled" : "button-shadow")+" primary"}>
-                    <Tr t={Translations.t.general.save}></Tr>
-                </button>
+                <slot name="save-button" {selectedTags}>
+                    <button on:click={onSave} class={(selectedTags === undefined ? "disabled" : "button-shadow")+" primary"}>
+                        <Tr t={Translations.t.general.save}/>
+                    </button>
+                </slot>
             </div>
             {#if $showTags === "yes" || $showTags === "always" || ($showTags === "" && numberOfCs >= Constants.userJourney.tagsVisibleAt) || $featureSwitchIsTesting || $featureSwitchIsDebugging}
                 <span class="flex justify-between flex-wrap">
@@ -224,6 +226,7 @@
                     </span>
                 </span>
             {/if}
+            <slot name="under-buttons"/>
         </LoginToggle>
     </div>
 {/if}

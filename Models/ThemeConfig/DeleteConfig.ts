@@ -3,8 +3,14 @@ import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import { DeleteConfigJson } from "./Json/DeleteConfigJson"
 import Translations from "../../UI/i18n/Translations"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
+import TagRenderingEditable from "../../UI/Popup/TagRendering/TagRenderingEditable.svelte";
+import TagRenderingConfig from "./TagRenderingConfig";
+import {QuestionableTagRenderingConfigJson} from "./Json/QuestionableTagRenderingConfigJson";
+import {TagConfigJson} from "./Json/TagConfigJson";
+import {del} from "idb-keyval";
 
 export default class DeleteConfig {
+    public static readonly deleteReasonKey = "_delete_reason"
     private static readonly defaultDeleteReasons: {
         changesetMessage: string
         explanation: Translation
@@ -32,7 +38,7 @@ export default class DeleteConfig {
         changesetMessage: string
     }[]
 
-    public readonly nonDeleteMappings?: { if: TagsFilter; then: TypedTranslation<object> }[]
+    private readonly nonDeleteMappings?: { if: TagConfigJson; then: Translation }[]
 
     public readonly softDeletionTags?: TagsFilter
     public readonly neededChangesets?: number
@@ -61,8 +67,9 @@ export default class DeleteConfig {
 
         this.nonDeleteMappings = (json.nonDeleteMappings ?? []).map((nonDelete, i) => {
             const ctx = `${context}.extraDeleteReasons[${i}]`
+            TagUtils.Tag(nonDelete.if, ctx + ".if") // for validation only
             return {
-                if: TagUtils.Tag(nonDelete.if, ctx + ".if"),
+                if: nonDelete.if,
                 then: Translations.T(nonDelete.then, ctx + ".then"),
             }
         })
@@ -87,5 +94,30 @@ export default class DeleteConfig {
             throw `You probably meant 'softDeletionTags' instead of 'hardDeletionTags' (at ${context})`
         }
         this.neededChangesets = json.neededChangesets
+    }
+
+    public constructTagRendering(): TagRenderingConfig {
+        const t = Translations.t.delete
+
+        const mappings: {if: TagConfigJson, then: Record<string, string>} []= []
+        for (const nonDeleteMapping of this.nonDeleteMappings) {
+            mappings.push({
+                if: nonDeleteMapping.if,
+                then: nonDeleteMapping.then.translations
+            })
+        }
+
+        for (const deleteReason of this.deleteReasons) {
+            mappings.push({
+                if: DeleteConfig.deleteReasonKey+ "="+ deleteReason.changesetMessage,
+                then: deleteReason.explanation.translations
+            })
+        }
+
+        const config: QuestionableTagRenderingConfigJson = {
+            question: t.whyDelete.translations,
+            mappings
+        }
+        return new TagRenderingConfig(config)
     }
 }

@@ -64,7 +64,6 @@ import {SaveButton} from "./Popup/SaveButton"
 import Lazy from "./Base/Lazy"
 import {CheckBox} from "./Input/Checkboxes"
 import Slider from "./Input/Slider"
-import DeleteWizard from "./Popup/DeleteWizard"
 import {OsmId, OsmTags, WayId} from "../Models/OsmFeature"
 import MoveWizard from "./Popup/MoveWizard"
 import SplitRoadWizard from "./Popup/SplitRoadWizard"
@@ -74,6 +73,8 @@ import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svel
 import {PointImportButtonViz} from "./Popup/ImportButtons/PointImportButtonViz";
 import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz";
 import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonViz";
+import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte";
+import {UIElement} from "./UIElement";
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -581,19 +582,13 @@ export default class SpecialVisualizations {
                     feature: Feature,
                     layer: LayerConfig
                 ): BaseUIElement {
-                    return new VariableUiElement(
-                        tagSource
-                            .map((tags) => tags.id)
-                            .map(
-                                (id) =>
-                                    new DeleteWizard(
-                                        <OsmId>id,
-                                        <UIEventSource<OsmTags>>tagSource,
-                                        state,
-                                        layer.deletion // Reading the configuration from the layerconfig is a bit cheating and should be factored out
-                                    )
-                            )
-                    )
+                    return new SvelteUIElement(DeleteWizard, {
+                        tags: tagSource,
+                        deleteConfig: layer.deletion,
+                        state,
+                        feature,
+                        layer
+                    })
                 },
             },
             new ShareLinkViz(),

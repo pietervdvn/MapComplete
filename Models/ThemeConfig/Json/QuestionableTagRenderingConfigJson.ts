@@ -10,7 +10,7 @@ export interface MappingConfigJson {
      * Shown if the 'if is fulfilled
      * Type: rendered
      */
-    then: string | any
+    then: string | Record<string, string>
     /**
      * An extra icon supporting the choice
      * Type: icon
