@@ -14,7 +14,7 @@
             "retagNoOtherThemes": "Esta característica será reclasificada y ocultada en esta aplicación",
             "retagOtherThemes": "Esta característica será reetiquetada y visible en {otherThemes}",
             "selectReason": "Por favor, seleccione el motivo por el que esta característica debe ser eliminada",
-            "softDelete": "Esta característica se actualizará y ocultará en esta aplicación. &lt;spann class='subtle'&gt;{reason}"
+            "softDelete": "Esta característica se actualizará y se ocultará de esta aplicación. <span class='subtle'>{reason}</span>"
         },
         "isDeleted": "Esta función se ha eliminado",
         "isntAPoint": "Solo los nodos pueden ser eliminados, esta característica es una vía, área o relación.",
@@ -40,11 +40,12 @@
         "reload": "Recargar datos"
     },
     "general": {
-        "about": "Edita fácilmente y añade puntos en OpenStreetMap de un tema concreto",
+        "about": "Edita OpenStreetMap fácilmente y añade puntos sobre un tema concreto",
         "aboutMapcomplete": "<h3>Aceca de MapComplete</h3><p>Lo utilizamos para añadir información de OpenStreetMap en un <b>único tema. Responde preguntas, y en minutos tus contribuciones estarán disponibles en todos lados. El <b>mantenedor del tema</b> define elementos, preguntas e idiomas para él.</b></p><h3><b>Descubre más</b></h3><p><b>MapComplete siempre <b>ofrece el siguiente paso</b> para aprender más sobre OpenStreetMap.</b></p><ul><li><b>Cuando se embebe en un sitio web, el iframe enlaza a un MapComplete a pantalla completa</b></li><li><b>La versión a pantalla completa ofrece información sobre OpenStreetMpa</b></li><li><b>Se puede ver el trabajo sin iniciar sesión, pero la edición requiere una cuenta de OSM.</b></li><li><b>Si no has iniciado sesión, se te pedirá que lo hagas</b></li><li><b>Una vez que hayas respondido a una simple pregunta, podrás añadir nuevos puntos al mapa</b></li><li><b>Después de un poco, las etiquetas de OSM se mostrarán, después de enlazar a la wiki</b></li></ul><p></p><b><br><p>¿Te fijaste en <b>un problema</b>? Tienes una <b>petición de característica</b>?¿Quieres ayudar a traducir? Ve <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\"> al código fuente</a> o <a href=\"https://github/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker.</a> </p><p>¿Quieres ver <b>tu progreso</b>? Sigue a la cuenta de ediciones en <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p></b>",
         "add": {
             "addNew": "Añadir {category}",
             "addNewMapLabel": "Haga clic aquí para añadir un nuevo ítem",
+            "backToSelect": "Selecciones una categoría distinta",
             "confirmButton": "Añadir una {category} .<br><div class=\"alert\">Tu contribución es visible para todos</div>",
             "confirmIntro": "<h3>Añadir {title} aquí?</h3>El punto que estás creando <b>lo verá todo el mundo</b>. Sólo añade cosas que realmente existan. Muchas aplicaciones usan estos datos.",
             "disableFilters": "Desactivar todos los filtros",
@@ -64,7 +65,7 @@
             "openLayerControl": "Abrir el control de capas",
             "pleaseLogin": "Por favor inicia sesión para añadir un nuevo punto",
             "presetInfo": "El nuevo POI tendrá {tags}",
-            "stillLoading": "Los datos se siguen cargando. Espera un poco antes de añadir ningún punto.",
+            "stillLoading": "Los datos se siguen cargando. Espera un poco antes de añadir una nueva función.",
             "title": "Quieres añadir un punto?",
             "warnVisibleForEveryone": "Su adición será visible para todos",
             "wrongType": "Este elemento no es un punto o una vía y no puede ser importado",
@@ -98,6 +99,7 @@
             "translatedBy": "MapComplete ha sido traducido por {contributors} y <a href=\"https://github.com/pietervdvn/MapComplete/graphs/contributors\" target=\"_blank\">{hiddenCount} más contribuidores</a>"
         },
         "back": "Atrás",
+        "backToIndex": "Volver a la vista general con todos los mapas temáticos",
         "backToMapcomplete": "Volver a la vista de temas",
         "backgroundMap": "Mapa de fondo",
         "cancel": "Cancelar",
@@ -230,6 +232,11 @@
         "skip": "Saltar esta pregunta",
         "skippedQuestions": "Has ignorado algunas preguntas",
         "testing": "Probando - los cambios no se guardarán",
+        "uploadGpx": {
+            "gpxServiceOffline": "El servicio GPX está actualmente fuera de línea - la carga no es posible en este momento. Vuelva a intentarlo más tarde.",
+            "intro0": "Al subir tu trazado, OpenStreetMap.org conservará una copia completa del mismo.",
+            "uploading": "Cargando su trazo…"
+        },
         "weekdays": {
             "abbreviations": {
                 "friday": "Vie",
@@ -313,7 +320,7 @@
         },
         "compareToAlreadyExistingNotes": {
             "completelyImported": "Todos los puntos propuestos ya tienen (o tenían) una nota de importación",
-            "loading": "Cargando las notas desde OSM",
+            "loading": "Cargando las notas desde OSM…",
             "loadingFailed": "La carga de las notas falló debido a {error}",
             "mapExplanation": "Los elementos rojos en el siguiente mapa son todos los puntos de datos de tu conjunto de datos. Hay <b>{length}</b> elementos en tu conjunto de datos.",
             "noPreviousNotesFound": "No se han encontrado notas de importación previas",
@@ -489,6 +496,9 @@
         "typeText": "Teclea algún texto para añadir un comentario",
         "warnAnonymous": "No has iniciado sesión. No podremos contactarte para resolver tu problema."
     },
+    "plantDetection": {
+        "loadingWikidata": "Cargando información sobre {species}…"
+    },
     "privacy": {
         "editing": "Cuando efectúas un cambio al mapa, este cambio se grabas en OpenStreetMap y está disponible públicamente a cualquiera. Un conjunto de cambios hecho con MapComplete incluye los siguientes datos: <ul><li> Los cambios que has hecho</li><li>Tu nombre de usuario</li><li>Cuándo se efectuó el cambio</li><li>El tema que utilizaste mientras que hacías el cambio</li><li>El idioma de la interfaz de usuario</li><li>Una indicación de como de cerca estabas a los objetos cambiados. Otros mapeadores pueden utilizar esta información para determina si un cambio se hizo basándose en un sondeo o en una investigación remota</li></ul> Por favor ve a ",
         "editingTitle": "Cuando se hagan cambios",
@@ -585,7 +595,8 @@
         },
         "indexPage": {
             "button": "Descubre nuestros servicios",
-            "hook": "¿Necesitas ayuda profesional?"
+            "hook": "¿Necesitas ayuda profesional?",
+            "hookMore": "Podemos ayudarle a realizar encuestas, importar datos y asesorarle sobre OpenStreetMap"
         },
         "intro": "El desarrollador de MapComplete ofrece soporte profesional. Este documento resume algunas de las posibilidades, preguntas frecuentes y los límites de MapComplete",
         "osmTitle": "¿Qué pueden hacer OpenStreetMap y MapComplete para tú organización?",
