@@ -388,6 +388,9 @@
                 },
                 "question": "Pouvez-vous déposer de l'argent liquide dans ce DAB ?"
             },
+            "cash_out-denominations-notes": {
+                "question": "Quels billets pouvez-vous retirer ici ?"
+            },
             "name": {
                 "render": "Le nom de ce DAB est {name}"
             },

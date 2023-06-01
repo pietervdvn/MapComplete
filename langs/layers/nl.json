@@ -321,6 +321,32 @@
                 },
                 "question": "Kan je geld ophalen bij deze geldautomaat?"
             },
+            "cash_out-denominations-notes": {
+                "mappings": {
+                    "0": {
+                        "then": "Je kunt biljetten van 5 euro afhalen"
+                    },
+                    "1": {
+                        "then": "Je kunt biljetten van 10 euro afhalen"
+                    },
+                    "2": {
+                        "then": "Je kunt biljetten van 20 euro afhalen"
+                    },
+                    "3": {
+                        "then": "Je kunt biljetten van 50 euro afhalen"
+                    },
+                    "4": {
+                        "then": "Je kunt biljetten van 100 euro afhalen"
+                    },
+                    "5": {
+                        "then": "Je kunt biljetten van 200 euro afhalen"
+                    },
+                    "6": {
+                        "then": "Je kunt biljetten van 500 euro afhalen"
+                    }
+                },
+                "question": "Welke bankbiljetten kan je hier afhalen?"
+            },
             "name": {
                 "render": "De naam van deze geldautomaat is {name}"
             },

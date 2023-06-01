@@ -49,7 +49,7 @@
         "ru": "Какая это камера?",
         "de": "Um welchen Kameratyp handelt es sich?",
         "ca": "Quin tipus de càmera és aquesta?",
-        "es": "¿Qué tipo de cámara es esta?"
+        "es": "¿Qué tipo de cámara es?"
       },
       "mappings": [
         {
@@ -65,7 +65,7 @@
             "it": "Una videocamera fissa (non semovente)",
             "de": "Eine fest montierte (nicht bewegliche) Kamera",
             "ca": "Una càmera fixa (no movible)",
-            "es": "Una cámara fija (sin movimiento)"
+            "es": "Cámara fija (no móvil)"
           }
         },
         {
@@ -82,7 +82,7 @@
             "ru": "Камера с поворотным механизмом",
             "de": "Eine Kuppelkamera (drehbar)",
             "ca": "Càmera de cúpula (que pot girar)",
-            "es": "Una cámara domo (que puede girar)"
+            "es": "Cámara con domo (que se puede girar)"
           }
         },
         {
@@ -99,7 +99,7 @@
             "it": "Una videocamera panoramica",
             "de": "Eine bewegliche Kamera",
             "ca": "Una càmera panoràmica",
-            "es": "Una cámara panorámica"
+            "es": "Cámara panorámica"
           }
         }
       ],
@@ -215,7 +215,7 @@
             "de": "Die Kamera überwacht einen öffentlichen Bereich, z. B. Straßen, Brücken, Plätze, Parks, Bahnhöfe, öffentliche Gänge oder Tunnel, …",
             "da": "Et offentligt område overvåges, f.eks. en gade, en bro, et torv, en park, en togstation, en offentlig korridor eller en tunnel, …",
             "ca": "Es vigila una àrea pública, com un carrer, un pont, una plaça, un parc, una estació de tren, un túnel públic, …",
-            "es": "Es un área pública, como una calle, un puente, una plaza, un parque, una estación de tren, un corredor público o túnel, …"
+            "es": "Es un área pública, como una calle, un puente, una plaza, un parque, una estación de tren, un corredor público o túnel, ..."
           }
         },
         {
@@ -249,7 +249,7 @@
             "de": "Die Kamera überwacht einen privaten Innenbereich, z. B. Geschäfte, private Tiefgaragen, …",
             "da": "Et privat indendørs område overvåges, f.eks. en butik, en privat parkeringskælder, …",
             "ca": "Es vigila una àrea interior privada, p.e. una botiga, un parking subterrani privat, …",
-            "es": "La vigilancia ocurre en un lugar interior privado, por ejemplo una tienda, un estacionamiento privado subterráneo, …"
+            "es": "La vigilancia ocurre en un lugar interior privado, por ejemplo una tienda, un estacionamiento privado subterráneo, ..."
           }
         }
       ],
@@ -320,7 +320,7 @@
         "fr": "À quel niveau se trouve cette caméra ?",
         "it": "A che piano si trova questa videocamera?",
         "de": "Auf welcher Ebene befindet sich diese Kamera?",
-        "es": "¿En qué nivel se encuentra esta cámara?"
+        "es": "¿A qué nivel está colocada esta cámara?"
       },
       "render": {
         "en": "Located on level {level}",
@@ -328,7 +328,7 @@
         "fr": "Situé au niveau {level}",
         "it": "Si trova al piano {level}",
         "de": "Befindet sich auf Ebene {level}",
-        "es": "Situado en el nivel {level}"
+        "es": "Está colocada a nivel {level}"
       },
       "freeform": {
         "key": "level",
@@ -666,6 +666,6 @@
     "en": "This layer shows surveillance cameras and allows a contributor to update information and add new cameras",
     "nl": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen",
     "de": "Diese Ebene zeigt die Überwachungskameras an und ermöglicht es, Informationen zu aktualisieren und neue Kameras hinzuzufügen",
-    "es": "Esta capa muestra las cámaras de vigilancia y permite que un colaborador actualice la información y agregue nuevas cámaras"
+    "es": "Esta capa muestra las cámaras de vigilancia y permite a quien colabora, actualizar la información y agregar nuevas cámaras"
   }
 }

@@ -3961,7 +3961,7 @@
         }
     },
     "surveillance_camera": {
-        "description": "Esta capa muestra las cámaras de vigilancia y permite que un colaborador actualice la información y agregue nuevas cámaras",
+        "description": "Esta capa muestra las cámaras de vigilancia y permite a quien colabora, actualizar la información y agregar nuevas cámaras",
         "name": "Cámaras de vigilancia",
         "presets": {
             "0": {
@@ -3975,20 +3975,20 @@
             "Camera type: fixed; panning; dome": {
                 "mappings": {
                     "0": {
-                        "then": "Una cámara fija (sin movimiento)"
+                        "then": "Cámara fija (no móvil)"
                     },
                     "1": {
-                        "then": "Una cámara domo (que puede girar)"
+                        "then": "Cámara con domo (que se puede girar)"
                     },
                     "2": {
-                        "then": "Una cámara panorámica"
+                        "then": "Cámara panorámica"
                     }
                 },
-                "question": "¿Qué tipo de cámara es esta?"
+                "question": "¿Qué tipo de cámara es?"
             },
             "Level": {
-                "question": "¿En qué nivel se encuentra esta cámara?",
-                "render": "Situado en el nivel {level}"
+                "question": "¿A qué nivel está colocada esta cámara?",
+                "render": "Está colocada a nivel {level}"
             },
             "Operator": {
                 "question": "¿Quién opera el sistema de esta cámara?",
@@ -3997,13 +3997,13 @@
             "Surveillance type: public, outdoor, indoor": {
                 "mappings": {
                     "0": {
-                        "then": "Es un área pública, como una calle, un puente, una plaza, un parque, una estación de tren, un corredor público o túnel, …"
+                        "then": "Es un área pública, como una calle, un puente, una plaza, un parque, una estación de tren, un corredor público o túnel, ..."
                     },
                     "1": {
                         "then": "Es un área exterior pero privada (ej: estacionamiento, gasolinera, patio, entrada, camino privado, ...)"
                     },
                     "2": {
-                        "then": "La vigilancia ocurre en un lugar interior privado, por ejemplo una tienda, un estacionamiento privado subterráneo, …"
+                        "then": "La vigilancia ocurre en un lugar interior privado, por ejemplo una tienda, un estacionamiento privado subterráneo, ..."
                     }
                 },
                 "question": "¿Qué tipo de vigilancia aplica a esta cámara?"

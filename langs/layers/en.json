@@ -434,6 +434,32 @@
                 },
                 "question": "Can you withdraw cash from this ATM?"
             },
+            "cash_out-denominations-notes": {
+                "mappings": {
+                    "0": {
+                        "then": "5 euro notes can be withdrawn"
+                    },
+                    "1": {
+                        "then": "10 euro notes can be withdrawn"
+                    },
+                    "2": {
+                        "then": "20 euro notes can be withdrawn"
+                    },
+                    "3": {
+                        "then": "50 euro notes can be withdrawn"
+                    },
+                    "4": {
+                        "then": "100 euro notes can be withdrawn"
+                    },
+                    "5": {
+                        "then": "200 euro notes can be withdrawn"
+                    },
+                    "6": {
+                        "then": "500 euro notes can be withdrawn"
+                    }
+                },
+                "question": "What notes can you withdraw here?"
+            },
             "name": {
                 "render": "The name of this ATM is {name}"
             },
