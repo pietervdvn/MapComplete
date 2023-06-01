@@ -260,6 +260,10 @@
       "description": "Layer 'Hospitals' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'Healthcare')"
     },
     {
+      "key": "opening_hours:visitors",
+      "description": "Layer 'Hospitals' shows and asks freeform values for key 'opening_hours:visitors' (in the MapComplete.osm.be theme 'Healthcare')"
+    },
+    {
       "key": "amenity",
       "description": "The MapComplete theme Healthcare has a layer Pharmacies showing features with this tag",
       "value": "pharmacy"
@@ -1206,6 +1210,11 @@
     {
       "key": "payment:cards",
       "description": "Layer 'Shop' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Healthcare')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Shop' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Healthcare')",
       "value": "yes"
     },
     {
@@ -2190,6 +2199,11 @@
     {
       "key": "payment:cards",
       "description": "Layer 'Shop' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Healthcare')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Shop' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Healthcare')",
       "value": "yes"
     },
     {

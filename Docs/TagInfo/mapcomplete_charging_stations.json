@@ -973,6 +973,11 @@
       "value": "yes"
     },
     {
+      "key": "payment:qr_code",
+      "description": "Layer 'Charging stations' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') (This is only shown if fee=yes|charge~.+)",
+      "value": "yes"
+    },
+    {
       "key": "payment:app",
       "description": "Layer 'Charging stations' shows payment:app=yes with a fixed text, namely 'Payment is done using a dedicated app' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Charging stations') (This is only shown if fee=yes|charge~.+)",
       "value": "yes"

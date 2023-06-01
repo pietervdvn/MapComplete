@@ -129,6 +129,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
   - This option cannot be chosen as answer
 
 
+This tagrendering has labels  `contact`
+
 
 
 ### email 
@@ -149,6 +151,8 @@ This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
   - This option cannot be chosen as answer
 
 
+This tagrendering has labels  `contact`
+
 
 
 ### phone 
@@ -168,6 +172,8 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
   - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
   - This option cannot be chosen as answer
 
+
+This tagrendering has labels  `contact`
 
 
 
@@ -201,6 +207,8 @@ The question is  *Which methods of payment are accepted here?*
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
   - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
 
 
 This tagrendering is only visible in the popup if the following condition is met: `shop~.+`
@@ -221,6 +229,8 @@ The question is  *Which methods of payment are accepted here?*
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
   - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
   - *Payment is done using a dedicated app*  corresponds with  `payment:app=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dno' target='_blank'>no</a>
   - *Payment is done using a membership card*  corresponds with  `payment:membership_card=yes`

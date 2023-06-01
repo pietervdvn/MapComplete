@@ -518,6 +518,11 @@
       "value": "yes"
     },
     {
+      "key": "payment:qr_code",
+      "description": "Layer 'Bicycle rental' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') (This is only shown if shop~.+)",
+      "value": "yes"
+    },
+    {
       "key": "payment:cash",
       "description": "Layer 'Bicycle rental' shows payment:cash=yes with a fixed text, namely 'Cash is accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "yes"
@@ -525,6 +530,11 @@
     {
       "key": "payment:cards",
       "description": "Layer 'Bicycle rental' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Bicycle rental' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists')",
       "value": "yes"
     },
     {
@@ -2340,6 +2350,11 @@
     {
       "key": "payment:cards",
       "description": "Layer 'Charging stations' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') (This is only shown if fee=yes|charge~.+)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Charging stations' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Cyclofix - an open map for cyclists') (This is only shown if fee=yes|charge~.+)",
       "value": "yes"
     },
     {

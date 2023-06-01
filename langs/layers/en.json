@@ -5119,6 +5119,11 @@
             "name": {
                 "question": "What is the name of this hospital?",
                 "render": "This hospital is called {name}"
+            },
+            "oh-visitor": {
+                "question": "When are visitors allowed to visit?",
+                "questionHint": "These are the regular visitor hours. Some wands have different visitor hours or might allow visitors in emergencies",
+                "render": "<h3>Opening hours for visitors</h3>Regular visitors are allowed at the following moments: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Some wands might have different opening hours. Many hospitals allow visits during emergencies too.</p>"
             }
         },
         "title": {

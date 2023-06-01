@@ -207,6 +207,9 @@
                 },
                 "1": {
                     "then": "Payment cards are accepted here"
+                },
+                "2": {
+                    "then": "Payment by QR-code is possible here"
                 }
             },
             "question": "Which methods of payment are accepted here?"

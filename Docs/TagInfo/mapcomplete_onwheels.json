@@ -153,6 +153,11 @@
       "value": "yes"
     },
     {
+      "key": "payment:qr_code",
+      "description": "Layer 'Cafés and pubs' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "value": "yes"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Cafés and pubs' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
       "value": "designated"
@@ -612,6 +617,11 @@
     {
       "key": "payment:cards",
       "description": "Layer 'Restaurants and fast food' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Restaurants and fast food' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
       "value": "yes"
     },
     {
@@ -2073,6 +2083,11 @@
       "value": "yes"
     },
     {
+      "key": "payment:qr_code",
+      "description": "Layer 'Shop' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels')",
+      "value": "yes"
+    },
+    {
       "key": "level",
       "description": "Layer 'Shop' shows and asks freeform values for key 'level' (in the MapComplete.osm.be theme 'OnWheels')"
     },
@@ -2291,6 +2306,11 @@
     {
       "key": "payment:cards",
       "description": "Layer 'Toilets' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Toilets' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OnWheels') (This is only shown if fee=yes)",
       "value": "yes"
     },
     {
@@ -2620,6 +2640,10 @@
     {
       "key": "contact:website",
       "description": "Layer 'Hospitals' shows contact:website~.+ with a fixed text, namely '<a href='{contact:website}' rel='nofollow noopener noreferrer' target='_blank'>{contact:website}</a>' (in the MapComplete.osm.be theme 'OnWheels')"
+    },
+    {
+      "key": "opening_hours:visitors",
+      "description": "Layer 'Hospitals' shows and asks freeform values for key 'opening_hours:visitors' (in the MapComplete.osm.be theme 'OnWheels')"
     },
     {
       "key": "amenity",

@@ -142,6 +142,8 @@ The question is  *Which methods of payment are accepted here?*
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
   - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
   - *This ticket validator accepts OV-Chipkaart*  corresponds with  `payment:OV-Chipkaart=yes`
   - This option cannot be chosen as answer
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:OV-Chipkaart' target='_blank'>payment:OV-Chipkaart</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:OV-Chipkaart%3Dno' target='_blank'>no</a>

@@ -40,6 +40,7 @@ Elements must have the all of following tags to be shown on this layer:
 
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:shop' target='_blank'>shop</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsports' target='_blank'>sports</a>
+  - shop!=mall
 
 
 [Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22shop%22%3D%22sports%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
@@ -310,6 +311,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
   - This option cannot be chosen as answer
 
 
+This tagrendering has labels  `contact`
+
 
 
 ### email 
@@ -329,6 +332,8 @@ This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
   - *<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>*  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
+
+This tagrendering has labels  `contact`
 
 
 
@@ -350,6 +355,8 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
   - This option cannot be chosen as answer
 
 
+This tagrendering has labels  `contact`
+
 
 
 ### payment-options 
@@ -366,6 +373,8 @@ The question is  *Which methods of payment are accepted here?*
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
   - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
 
 
 

@@ -149,6 +149,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
   - This option cannot be chosen as answer
 
 
+This tagrendering has labels  `contact`
+
 
 
 ### phone 
@@ -169,6 +171,8 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
   - This option cannot be chosen as answer
 
 
+This tagrendering has labels  `contact`
+
 
 
 ### email 
@@ -188,6 +192,8 @@ This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
   - *<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>*  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
+
+This tagrendering has labels  `contact`
 
 
 

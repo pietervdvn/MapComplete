@@ -877,6 +877,11 @@
       "value": "yes"
     },
     {
+      "key": "payment:qr_code",
+      "description": "Layer 'Toilets' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if fee=yes)",
+      "value": "yes"
+    },
+    {
       "key": "payment:coins",
       "description": "Layer 'Toilets' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Into nature') (This is only shown if fee=yes)",
       "value": "yes"

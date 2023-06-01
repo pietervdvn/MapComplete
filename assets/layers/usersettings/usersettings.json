@@ -105,7 +105,8 @@
             "de": "Fragen der Reihe nach anzeigen",
             "ca": "Mostra les preguntes una per una",
             "fr": "Afficher les questions une à une",
-            "pt": "Mostrar perguntas uma a uma"
+            "pt": "Mostrar perguntas uma a uma",
+            "nl": "Toon de vragen één per één"
           }
         }
       ]
@@ -278,7 +279,8 @@
             "de": "Sie haben bei {_csCount} verschiedenen Gelegenheiten Änderungen vorgenommen! Das ist großartig!",
             "ca": "Has fet {_csCount} en diferents ocasions! Això és sorprenent!",
             "fr": "Vous avez fait {_csCount} modifications ! C'est génial !",
-            "pt": "Você fez alterações em {_csCount} ocasiões diferentes! Isso é incrível!"
+            "pt": "Você fez alterações em {_csCount} ocasiões diferentes! Isso é incrível!",
+            "nl": "Je hebt {_csCount} verschillende keren bijgedragen! Dat is indrukwekkend!"
           },
           "icon": "party"
         }

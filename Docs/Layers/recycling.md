@@ -243,6 +243,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
 
 This tagrendering is only visible in the popup if the following condition is met: `recycling_type=centre`
 
+This tagrendering has labels  `contact`
+
 
 
 ### email 
@@ -265,6 +267,8 @@ This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 This tagrendering is only visible in the popup if the following condition is met: `recycling_type=centre`
 
+This tagrendering has labels  `contact`
+
 
 
 ### phone 
@@ -286,6 +290,8 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `recycling_type=centre`
+
+This tagrendering has labels  `contact`
 
 
 

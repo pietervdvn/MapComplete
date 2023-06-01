@@ -271,6 +271,11 @@
       "value": "yes"
     },
     {
+      "key": "payment:qr_code",
+      "description": "Layer 'Parking Ticket Machines' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
+      "value": "yes"
+    },
+    {
       "key": "payment:coins",
       "description": "Layer 'Parking Ticket Machines' shows payment:coins=yes with a fixed text, namely 'Coins are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Parking')",
       "value": "yes"

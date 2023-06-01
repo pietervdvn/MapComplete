@@ -188,6 +188,8 @@ The question is  *Which methods of payment are accepted here?*
   - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
   - This option cannot be chosen as answer
   - Unselecting this answer will add 
+  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
   - *Coins are accepted here*  corresponds with  `payment:coins=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:coins' target='_blank'>payment:coins</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:coins%3Dno' target='_blank'>no</a>
   - *Bank notes are accepted here*  corresponds with  `payment:notes=yes`

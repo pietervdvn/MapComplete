@@ -1,15 +1,15 @@
 import Script from "./Script"
-import {Overpass} from "../Logic/Osm/Overpass"
-import {RegexTag} from "../Logic/Tags/RegexTag"
-import {ImmutableStore} from "../Logic/UIEventSource"
-import {BBox} from "../Logic/BBox"
+import { Overpass } from "../Logic/Osm/Overpass"
+import { RegexTag } from "../Logic/Tags/RegexTag"
+import { ImmutableStore } from "../Logic/UIEventSource"
+import { BBox } from "../Logic/BBox"
 import * as fs from "fs"
-import {Feature} from "geojson"
+import { Feature } from "geojson"
 import ScriptUtils from "./ScriptUtils"
-import {Imgur} from "../Logic/ImageProviders/Imgur"
-import {LicenseInfo} from "../Logic/ImageProviders/LicenseInfo"
-import {Utils} from "../Utils"
-import Constants from "../Models/Constants";
+import { Imgur } from "../Logic/ImageProviders/Imgur"
+import { LicenseInfo } from "../Logic/ImageProviders/LicenseInfo"
+import { Utils } from "../Utils"
+import Constants from "../Models/Constants"
 
 export default class GenerateImageAnalysis extends Script {
     constructor() {
@@ -35,7 +35,12 @@ export default class GenerateImageAnalysis extends Script {
         )
         console.log("Starting query...")
         const data = await overpass.queryGeoJson(BBox.global)
-        console.log("Got data:", data[0].features.length, "items; timestamp:", data[1].toISOString())
+        console.log(
+            "Got data:",
+            data[0].features.length,
+            "items; timestamp:",
+            data[1].toISOString()
+        )
         fs.writeFileSync(targetPath, JSON.stringify(data[0]), "utf8")
         console.log("Written", targetPath)
     }
@@ -97,7 +102,7 @@ export default class GenerateImageAnalysis extends Script {
         return true
     }
 
-    loadImageUrls(datapath: string): { allImages: Set<string>, imageSource: Map<string, string> } {
+    loadImageUrls(datapath: string): { allImages: Set<string>; imageSource: Map<string, string> } {
         let allImages = new Set<string>()
         const features = this.loadData(datapath)
         let imageSource: Map<string, string> = new Map<string, string>()
@@ -106,22 +111,25 @@ export default class GenerateImageAnalysis extends Script {
             allImages.add(feature.properties["image"])
             imageSource[feature.properties["image"]] = feature.properties.id
             allImages.add(feature.properties["image:streetsign"])
-            imageSource[feature.properties["image:streetsign"]] = feature.properties.id + " (streetsign)"
+            imageSource[feature.properties["image:streetsign"]] =
+                feature.properties.id + " (streetsign)"
 
             for (let i = 0; i < 10; i++) {
                 allImages.add(feature.properties["image:" + i])
-                imageSource[feature.properties["image:" + i]] = `${feature.properties.id} (image:${i})`
+                imageSource[
+                    feature.properties["image:" + i]
+                ] = `${feature.properties.id} (image:${i})`
             }
         }
         allImages.delete(undefined)
         allImages.delete(null)
         imageSource.delete(undefined)
         imageSource.delete(null)
-        return {allImages, imageSource}
+        return { allImages, imageSource }
     }
 
     async downloadMetadata(datapath: string): Promise<void> {
-        const {allImages, imageSource} = this.loadImageUrls(datapath)
+        const { allImages, imageSource } = this.loadImageUrls(datapath)
         console.log("Detected", allImages.size, "images")
         let i = 0
         let d = 0
@@ -143,7 +151,7 @@ export default class GenerateImageAnalysis extends Script {
                 } downloaded: ${d},skipped: ${s}, failed: ${f}, running: ${Math.floor(
                     runningSecs
                 )}sec, ETA: ${estimatedActualMinutes}:${estimatedActualSeconds % 60}`
-                if (d + f % 1000 === 1 || downloaded) {
+                if (d + (f % 1000) === 1 || downloaded) {
                     ScriptUtils.erasableLog(msg)
                 }
                 if (downloaded) {
@@ -157,7 +165,11 @@ export default class GenerateImageAnalysis extends Script {
                 }
             } catch (e) {
                 // console.log(e)
-                console.log("Offending image hash is", image, "from https://openstreetmap.org/" + imageSource[image])
+                console.log(
+                    "Offending image hash is",
+                    image,
+                    "from https://openstreetmap.org/" + imageSource[image]
+                )
                 f++
             }
         }
@@ -187,23 +199,23 @@ export default class GenerateImageAnalysis extends Script {
     }
 
     async downloadAllImages(datapath: string, imagePath: string): Promise<void> {
-        const {allImages} = this.loadImageUrls(datapath)
+        const { allImages } = this.loadImageUrls(datapath)
         let skipped = 0
         let failed = 0
         let downloaded = 0
         let invalid = 0
         const startTime = Date.now()
-        const urls = Array.from(allImages).filter(url => url.startsWith("https://i.imgur.com"))
+        const urls = Array.from(allImages).filter((url) => url.startsWith("https://i.imgur.com"))
         for (const url of urls) {
-            const runningTime = ((Date.now()) - startTime) / 1000
+            const runningTime = (Date.now() - startTime) / 1000
             const handled = skipped + downloaded + failed
             const itemsLeft = allImages.size - handled
             const speed = handled / runningTime
             const timeLeft = Math.round(itemsLeft * speed)
             try {
-                const downloadedStatus = await Promise.all(url.split(";").map(url =>
-                    this.downloadImage(url.trim(), imagePath),
-                ))
+                const downloadedStatus = await Promise.all(
+                    url.split(";").map((url) => this.downloadImage(url.trim(), imagePath))
+                )
 
                 for (const b of downloadedStatus) {
                     if (b) {
@@ -213,16 +225,19 @@ export default class GenerateImageAnalysis extends Script {
                     }
                 }
 
-                if (downloadedStatus.some(i => i) || skipped % 10000 === 0) {
-
-                    console.log("Handled", url, JSON.stringify({
-                        skipped,
-                        failed,
-                        downloaded,
-                        invalid,
-                        total: allImages.size,
-                        eta: timeLeft + "s"
-                    }))
+                if (downloadedStatus.some((i) => i) || skipped % 10000 === 0) {
+                    console.log(
+                        "Handled",
+                        url,
+                        JSON.stringify({
+                            skipped,
+                            failed,
+                            downloaded,
+                            invalid,
+                            total: allImages.size,
+                            eta: timeLeft + "s",
+                        })
+                    )
                 }
             } catch (e) {
                 console.log(e)
@@ -240,7 +255,7 @@ export default class GenerateImageAnalysis extends Script {
             if (!file.endsWith(".json")) {
                 continue
             }
-            const attr = <LicenseInfo>JSON.parse(fs.readFileSync(file, {encoding: "utf8"}))
+            const attr = <LicenseInfo>JSON.parse(fs.readFileSync(file, { encoding: "utf8" }))
             const license = attr.licenseShortName
 
             if (license === undefined || attr.artist === undefined) {
@@ -319,7 +334,13 @@ export default class GenerateImageAnalysis extends Script {
             ...Array.from(licenseByAuthor.get("CC-BY-SA 4.0").values()),
         ]
 
-        console.log("Total number of correctly licenses pictures: ", totalLicensedImages, "(out of ", files.length, " images)")
+        console.log(
+            "Total number of correctly licenses pictures: ",
+            totalLicensedImages,
+            "(out of ",
+            files.length,
+            " images)"
+        )
         console.log("Total number of authors:", byAuthor.size)
         console.log(
             "Total number of authors which used a valid, non CC0 license at one point in time",
@@ -332,7 +353,7 @@ export default class GenerateImageAnalysis extends Script {
         console.log("Usage: [--cached] to use the cached osm data")
         console.log("Args are", args)
         const cached = args.indexOf("--cached") < 0
-        args = args.filter(a => a !== "--cached")
+        args = args.filter((a) => a !== "--cached")
         const datapath = args[0] ?? "../../git/MapComplete-data/ImageLicenseInfo"
         await this.downloadData(datapath, cached)
 

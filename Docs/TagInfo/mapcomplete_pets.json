@@ -188,6 +188,11 @@
       "value": "yes"
     },
     {
+      "key": "payment:qr_code",
+      "description": "Layer 'Dog friendly eateries' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
       "key": "wheelchair",
       "description": "Layer 'Dog friendly eateries' shows wheelchair=designated with a fixed text, namely 'This place is specially adapted for wheelchair users' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "designated"
@@ -1444,6 +1449,11 @@
     {
       "key": "payment:cards",
       "description": "Layer 'Dog-friendly shops' shows payment:cards=yes with a fixed text, namely 'Payment cards are accepted here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
+      "value": "yes"
+    },
+    {
+      "key": "payment:qr_code",
+      "description": "Layer 'Dog-friendly shops' shows payment:qr_code=yes with a fixed text, namely 'Payment by QR-code is possible here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Veterinarians, dog parks and other pet-amenities')",
       "value": "yes"
     },
     {

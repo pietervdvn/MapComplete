@@ -50,6 +50,7 @@
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
+    + [contact](#contact)
     + [payment-options-split](#payment-options-split)
     + [denominations-coins](#denominations-coins)
     + [denominations-notes](#denominations-notes)
@@ -265,7 +266,6 @@
   - food
   - governments
   - hackerspace
-  - hospital
   - hotel
   - kindergarten_childcare
   - nature_reserve
@@ -304,7 +304,6 @@
   - food
   - governments
   - hackerspace
-  - hospital
   - hotel
   - kindergarten_childcare
   - pharmacy
@@ -340,7 +339,6 @@
   - food
   - governments
   - hackerspace
-  - hospital
   - hotel
   - kindergarten_childcare
   - pharmacy
@@ -771,6 +769,17 @@
 
 
   - gps_track
+
+
+
+
+### contact 
+
+
+
+
+
+  - hospital
 
 
 

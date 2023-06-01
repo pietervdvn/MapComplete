@@ -113,7 +113,9 @@
     "render": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
   },
   "phone": {
-    "labels": ["contact"],
+    "labels": [
+      "contact"
+    ],
     "question": {
       "en": "What is the phone number of {title()}?",
       "nl": "Wat is het telefoonnummer van {title()}?",
@@ -165,7 +167,9 @@
     ]
   },
   "email": {
-    "labels": ["contact"],
+    "labels": [
+      "contact"
+    ],
     "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
     "question": {
       "nl": "Wat is het e-mailadres van {title()}?",
@@ -208,7 +212,9 @@
     }
   },
   "website": {
-    "labels": ["contact"],
+    "labels": [
+      "contact"
+    ],
     "question": {
       "en": "What is the website of {title()}?",
       "nl": "Wat is de website van {title()}?",
