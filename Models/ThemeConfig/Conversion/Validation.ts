@@ -302,7 +302,7 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
 
     convert(
         json: LayoutConfigJson,
-        context: string
+        _: string
     ): { result: LayoutConfigJson; errors?: string[]; warnings?: string[] } {
         const overrideAll = json.overrideAll
         if (overrideAll === undefined) {
@@ -973,7 +973,7 @@ export class DetectDuplicateFilters extends DesugaringStep<{
 
     convert(
         json: { layers: LayerConfigJson[]; themes: LayoutConfigJson[] },
-        context: string
+        __: string
     ): {
         result: { layers: LayerConfigJson[]; themes: LayoutConfigJson[] }
         errors?: string[]

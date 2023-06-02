@@ -47,7 +47,7 @@ export abstract class Validator {
      *
      * Returns 'undefined' if the element is valid
      */
-    public getFeedback(s: string, requestCountry?: () => string): Translation | undefined {
+    public getFeedback(s: string, _?: () => string): Translation | undefined {
         if(this.isValid(s)){
             return undefined
         }
@@ -61,16 +61,14 @@ export abstract class Validator {
         return Translations.t.validation[this.name].description
     }
 
-    public isValid(string: string, requestCountry?: () => string): boolean {
+    public isValid(_: string, __?: () => string): boolean {
         return true
     }
 
     /**
      * Reformats for the human
-     * @param s
-     * @param country
      */
-    public reformat(s: string, country?: () => string): string {
+    public reformat(s: string, _?: () => string): string {
         return s
     }
 }

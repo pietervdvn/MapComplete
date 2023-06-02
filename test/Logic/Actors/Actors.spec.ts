@@ -1,11 +1,10 @@
-import { Utils } from "../../../Utils"
+import {Utils} from "../../../Utils"
 import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
-import SelectedElementTagsUpdater from "../../../Logic/Actors/SelectedElementTagsUpdater"
 
 import * as bookcaseJson from "../../../assets/generated/themes/bookcases.json"
-import { OsmTags } from "../../../Models/OsmFeature"
-import { Feature, Geometry } from "geojson"
-import { expect, it } from "vitest"
+import {OsmTags} from "../../../Models/OsmFeature"
+import {Feature, Geometry} from "geojson"
+import {expect, it} from "vitest"
 import ThemeViewState from "../../../Models/ThemeViewState"
 import ScriptUtils from "../../../scripts/ScriptUtils";
 

@@ -1,6 +1,5 @@
 <script lang="ts">
   import Loading from "./Loading.svelte";
-  import type { SpecialVisualizationState } from "../SpecialVisualization";
   import type { OsmServiceState } from "../../Logic/Osm/OsmConnection";
   import { Translation } from "../i18n/Translation";
   import Translations from "../i18n/Translations";

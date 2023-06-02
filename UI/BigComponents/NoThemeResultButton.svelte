@@ -14,7 +14,6 @@
 <script lang="ts">
     import {UIEventSource} from "../../Logic/UIEventSource"
     import Svg from "../../Svg"
-    import SubtleButton from "../Base/SubtleButton.svelte"
     import ToSvelte from "../Base/ToSvelte.svelte"
     import Translations from "../i18n/Translations"
     import Tr from "../Base/Tr.svelte";

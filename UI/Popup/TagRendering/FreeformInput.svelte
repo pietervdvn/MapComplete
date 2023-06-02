@@ -2,7 +2,6 @@
     import {UIEventSource} from "../../../Logic/UIEventSource";
     import {Translation} from "../../i18n/Translation";
     import ValidatedInput from "../../InputElement/ValidatedInput.svelte";
-    import Tr from "../../Base/Tr.svelte";
     import TagRenderingConfig from "../../../Models/ThemeConfig/TagRenderingConfig";
     import Inline from "./Inline.svelte";
     import {createEventDispatcher, onDestroy} from "svelte";

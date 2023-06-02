@@ -58,7 +58,7 @@ export default class WayImportButtonViz implements AutoAction, SpecialVisualizat
     public readonly supportsAutoAction = true
     public readonly needsNodeDatabase = true
 
-    constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, layer: LayerConfig): BaseUIElement {
+    constr(state: SpecialVisualizationState, tagSource: UIEventSource<Record<string, string>>, argument: string[], feature: Feature, _: LayerConfig): BaseUIElement {
         const geometry = feature.geometry
         if (!(geometry.type == "LineString" || geometry.type === "Polygon")) {
             console.error("Invalid type to import", geometry.type)

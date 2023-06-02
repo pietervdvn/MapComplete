@@ -1,9 +1,9 @@
-import { ChangeDescription } from "./ChangeDescription"
-import {OsmCreateAction, PreviewableAction} from "./OsmChangeAction"
-import { Changes } from "../Changes"
-import { Tag } from "../../Tags/Tag"
+import {ChangeDescription} from "./ChangeDescription"
+import {OsmCreateAction} from "./OsmChangeAction"
+import {Changes} from "../Changes"
+import {Tag} from "../../Tags/Tag"
 import CreateNewNodeAction from "./CreateNewNodeAction"
-import { And } from "../../Tags/And"
+import {And} from "../../Tags/And"
 
 export default class CreateNewWayAction extends OsmCreateAction {
     public newElementId: string = undefined

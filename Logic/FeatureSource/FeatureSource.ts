@@ -1,6 +1,5 @@
 import { Store, UIEventSource } from "../UIEventSource"
 import FilteredLayer from "../../Models/FilteredLayer"
-import { BBox } from "../BBox"
 import { Feature } from "geojson"
 
 export interface FeatureSource<T extends Feature = Feature> {

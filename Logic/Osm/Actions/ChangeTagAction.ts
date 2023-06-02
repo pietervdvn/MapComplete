@@ -1,5 +1,4 @@
 import OsmChangeAction from "./OsmChangeAction"
-import { Changes } from "../Changes"
 import { ChangeDescription } from "./ChangeDescription"
 import { TagsFilter } from "../../Tags/TagsFilter"
 import { OsmTags } from "../../../Models/OsmFeature"

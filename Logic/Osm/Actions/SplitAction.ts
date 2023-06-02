@@ -1,10 +1,10 @@
-import { OsmObject, OsmWay } from "../OsmObject"
-import { Changes } from "../Changes"
-import { GeoOperations } from "../../GeoOperations"
+import {OsmWay} from "../OsmObject"
+import {Changes} from "../Changes"
+import {GeoOperations} from "../../GeoOperations"
 import OsmChangeAction from "./OsmChangeAction"
-import { ChangeDescription } from "./ChangeDescription"
+import {ChangeDescription} from "./ChangeDescription"
 import RelationSplitHandler from "./RelationSplitHandler"
-import { Feature, LineString } from "geojson"
+import {Feature, LineString} from "geojson"
 import OsmObjectDownloader from "../OsmObjectDownloader"
 
 interface SplitInfo {

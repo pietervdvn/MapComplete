@@ -4,7 +4,6 @@
     import type PresetConfig from "../../../Models/ThemeConfig/PresetConfig";
     import Tr from "../../Base/Tr.svelte";
     import Translations from "../../i18n/Translations.js";
-    import SubtleButton from "../../Base/SubtleButton.svelte";
     import {Translation} from "../../i18n/Translation";
     import type {SpecialVisualizationState} from "../../SpecialVisualization";
     import {ImmutableStore} from "../../../Logic/UIEventSource";

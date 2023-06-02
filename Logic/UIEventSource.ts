@@ -264,10 +264,8 @@ export abstract class Store<T> implements Readable<T> {
 
     /**
      * Same as 'addCallbackAndRun', added to be compatible with Svelte
-     * @param run
-     * @param invalidate
      */
-    public subscribe(run: Subscriber<T> & ((value: T) => void), invalidate?): Unsubscriber {
+    public subscribe(run: Subscriber<T> & ((value: T) => void), _?): Unsubscriber {
         // We don't need to do anything with 'invalidate', see
         // https://github.com/sveltejs/svelte/issues/3859
 
@@ -288,7 +286,7 @@ export class ImmutableStore<T> extends Store<T> {
         this.data = data
     }
 
-    addCallback(callback: (data: T) => void): () => void {
+    addCallback(_: (data: T) => void): () => void {
         // pass: data will never change
         return ImmutableStore.pass
     }
@@ -307,7 +305,7 @@ export class ImmutableStore<T> extends Store<T> {
         return ImmutableStore.pass
     }
 
-    addCallbackD(callback: (data: T) => void): () => void {
+    addCallbackD(_: (data: T) => void): () => void {
         // pass: data will never change
         return ImmutableStore.pass
     }

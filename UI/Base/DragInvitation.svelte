@@ -3,8 +3,6 @@
    * This overlay element will regularly show a hand that swipes over the underlying element.
    * This element will hide as soon as the Store 'hideSignal' receives a change (which is not undefined)
    */
-  import ToSvelte from "./ToSvelte.svelte";
-  import Svg from "../../Svg";
   import { Store } from "../../Logic/UIEventSource";
   import { onDestroy } from "svelte";
 

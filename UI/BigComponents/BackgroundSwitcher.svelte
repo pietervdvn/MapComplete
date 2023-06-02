@@ -2,9 +2,7 @@
     import {Store, UIEventSource} from "../../Logic/UIEventSource";
     import type {RasterLayerPolygon} from "../../Models/RasterLayers";
     import {AvailableRasterLayers} from "../../Models/RasterLayers";
-    import Tr from "../Base/Tr.svelte";
     import {createEventDispatcher, onDestroy} from "svelte";
-    import Translations from "../i18n/Translations";
     import Svg from "../../Svg";
     import {Map as MlMap} from "maplibre-gl"
     import type {MapProperties} from "../../Models/MapProperties";

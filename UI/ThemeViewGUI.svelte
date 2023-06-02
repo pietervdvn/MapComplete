@@ -41,9 +41,7 @@
     import Svg from "../Svg";
     import {ShareScreen} from "./BigComponents/ShareScreen";
     import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte";
-    import type {Readable} from "svelte/store";
     import type {RasterLayerPolygon} from "../Models/RasterLayers";
-    import RasterLayerPicker from "./Map/RasterLayerPicker.svelte";
     import RasterLayerOverview from "./Map/RasterLayerOverview.svelte";
     import IfHidden from "./Base/IfHidden.svelte";
     import {onDestroy} from "svelte";

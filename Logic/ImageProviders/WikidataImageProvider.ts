@@ -12,8 +12,8 @@ export class WikidataImageProvider extends ImageProvider {
         super()
     }
 
-    public SourceIcon(backlinkSource?: string): BaseUIElement {
-        throw Svg.wikidata_svg()
+    public SourceIcon(_?: string): BaseUIElement {
+        return Svg.wikidata_svg()
     }
 
     public async ExtractUrls(key: string, value: string): Promise<Promise<ProvidedImage>[]> {
@@ -48,7 +48,7 @@ export class WikidataImageProvider extends ImageProvider {
         return allImages
     }
 
-    public DownloadAttribution(url: string): Promise<any> {
+    public DownloadAttribution(_: string): Promise<any> {
         throw new Error("Method not implemented; shouldn't be needed!")
     }
 }

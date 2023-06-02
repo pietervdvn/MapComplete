@@ -9,7 +9,7 @@ import {Or} from "../Logic/Tags/Or"
 import {AllKnownLayouts} from "../Customizations/AllKnownLayouts"
 import * as OsmToGeoJson from "osmtogeojson"
 import MetaTagging from "../Logic/MetaTagging"
-import {ImmutableStore, UIEventSource} from "../Logic/UIEventSource"
+import {UIEventSource} from "../Logic/UIEventSource"
 import {TileRange, Tiles} from "../Models/TileRange"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
 import ScriptUtils from "./ScriptUtils"
@@ -22,7 +22,7 @@ import SimpleMetaTaggers, {ReferencingWaysMetaTagger} from "../Logic/SimpleMetaT
 import FilteringFeatureSource from "../Logic/FeatureSource/Sources/FilteringFeatureSource"
 import {Feature} from "geojson"
 import {BBox} from "../Logic/BBox"
-import {FeatureSource, FeatureSourceForLayer} from "../Logic/FeatureSource/FeatureSource";
+import {FeatureSource} from "../Logic/FeatureSource/FeatureSource";
 import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader";
 import FeaturePropertiesStore from "../Logic/FeatureSource/Actors/FeaturePropertiesStore";
 

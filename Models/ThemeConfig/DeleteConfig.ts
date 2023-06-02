@@ -3,11 +3,9 @@ import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import { DeleteConfigJson } from "./Json/DeleteConfigJson"
 import Translations from "../../UI/i18n/Translations"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
-import TagRenderingEditable from "../../UI/Popup/TagRendering/TagRenderingEditable.svelte";
 import TagRenderingConfig from "./TagRenderingConfig";
 import {QuestionableTagRenderingConfigJson} from "./Json/QuestionableTagRenderingConfigJson";
 import {TagConfigJson} from "./Json/TagConfigJson";
-import {del} from "idb-keyval";
 
 export default class DeleteConfig {
     public static readonly deleteReasonKey = "_delete_reason"

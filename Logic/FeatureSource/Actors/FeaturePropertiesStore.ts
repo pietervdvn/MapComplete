@@ -1,5 +1,5 @@
-import { FeatureSource, IndexedFeatureSource } from "../FeatureSource"
-import { UIEventSource } from "../../UIEventSource"
+import {FeatureSource} from "../FeatureSource"
+import {UIEventSource} from "../../UIEventSource"
 
 /**
  * Constructs a UIEventStore for the properties of every Feature, indexed by id

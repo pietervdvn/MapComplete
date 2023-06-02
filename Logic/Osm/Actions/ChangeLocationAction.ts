@@ -1,6 +1,5 @@
 import { ChangeDescription } from "./ChangeDescription"
 import OsmChangeAction from "./OsmChangeAction"
-import { Changes } from "../Changes"
 
 export default class ChangeLocationAction extends OsmChangeAction {
     private readonly _id: number

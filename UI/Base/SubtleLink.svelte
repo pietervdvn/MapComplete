@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {createEventDispatcher, onMount} from "svelte";
+  import {onMount} from "svelte";
   import BaseUIElement from "../BaseUIElement";
   import Img from "./Img";
 

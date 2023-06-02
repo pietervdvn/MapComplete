@@ -1,6 +1,5 @@
 import ScriptUtils from "./ScriptUtils"
 import { appendFileSync, readFileSync, writeFileSync } from "fs"
-import { OsmObject } from "../Logic/Osm/OsmObject"
 import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader";
 
 ScriptUtils.fixUtils()

@@ -2,7 +2,6 @@ import osmAuth from "osm-auth"
 import { Store, Stores, UIEventSource } from "../UIEventSource"
 import { OsmPreferences } from "./OsmPreferences"
 import { Utils } from "../../Utils"
-import { OsmObject } from "./OsmObject"
 
 export default class UserDetails {
     public loggedIn = false

@@ -64,7 +64,7 @@ import {SaveButton} from "./Popup/SaveButton"
 import Lazy from "./Base/Lazy"
 import {CheckBox} from "./Input/Checkboxes"
 import Slider from "./Input/Slider"
-import {OsmId, OsmTags, WayId} from "../Models/OsmFeature"
+import {OsmTags, WayId} from "../Models/OsmFeature"
 import MoveWizard from "./Popup/MoveWizard"
 import SplitRoadWizard from "./Popup/SplitRoadWizard"
 import {ExportAsGpxViz} from "./Popup/ExportAsGpxViz"
@@ -74,7 +74,6 @@ import {PointImportButtonViz} from "./Popup/ImportButtons/PointImportButtonViz";
 import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz";
 import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonViz";
 import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte";
-import {UIElement} from "./UIElement";
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests

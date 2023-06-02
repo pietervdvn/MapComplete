@@ -1,7 +1,3 @@
-import { Utils } from "../../Utils"
-import { Feature } from "geojson"
-import { Point } from "@turf/turf"
-import { GeoLocationPointProperties } from "../../Logic/State/GeoLocationState"
 import UploadTraceToOsmUI from "../BigComponents/UploadTraceToOsmUI"
 import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
 import { UIEventSource } from "../../Logic/UIEventSource"
@@ -18,8 +14,8 @@ export class UploadToOsmViz implements SpecialVisualization {
 
     constr(
         state: SpecialVisualizationState,
-        featureTags: UIEventSource<Record<string, string>>,
-        args: string[]
+        _: UIEventSource<Record<string, string>>,
+        __: string[]
     ) {
         const locations = state.historicalUserLocations.features.data
         return new UploadTraceToOsmUI((title) => GeoOperations.toGpx(locations, title), state, {

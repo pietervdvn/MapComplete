@@ -127,7 +127,7 @@ export class StackedRenderingChart extends ChartJs {
         let earliest: Date = undefined
         let latest: Date = undefined
         let allDates = new Set<string>()
-        features.forEach((value, key) => {
+        features.forEach((value) => {
             const d = new Date(value.properties.date)
             Utils.SetMidnight(d)
 

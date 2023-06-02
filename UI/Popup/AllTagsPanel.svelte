@@ -1,11 +1,11 @@
 <script lang="ts">
   import ToSvelte from "../Base/ToSvelte.svelte";
   import Table from "../Base/Table";
-  import { UIEventSource } from "../../Logic/UIEventSource";
+  import {UIEventSource} from "../../Logic/UIEventSource";
   import SimpleMetaTaggers from "../../Logic/SimpleMetaTagger";
-  import { FixedUiElement } from "../Base/FixedUiElement";
-  import { onDestroy } from "svelte";
-  import Toggle, { ClickableToggle } from "../Input/Toggle";
+  import {FixedUiElement} from "../Base/FixedUiElement";
+  import {onDestroy} from "svelte";
+  import Toggle from "../Input/Toggle";
   import Lazy from "../Base/Lazy";
   import BaseUIElement from "../BaseUIElement";
 

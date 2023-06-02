@@ -1,8 +1,5 @@
 import Combine from "../../Base/Combine"
 import Wikidata from "../../../Logic/Web/Wikidata"
-import { UIEventSource } from "../../../Logic/UIEventSource"
-import Locale from "../../i18n/Locale"
-import { Utils } from "../../../Utils"
 import WikidataSearchBox from "../../Wikipedia/WikidataSearchBox"
 import { Validator } from "../Validator"
 

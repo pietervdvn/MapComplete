@@ -1,5 +1,4 @@
 import * as fs from "fs"
-import Constants from "../Models/Constants";
 
 function genImages(dryrun = false) {
     console.log("Generating images")

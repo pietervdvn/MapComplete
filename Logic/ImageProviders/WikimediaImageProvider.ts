@@ -80,7 +80,6 @@ export class WikimediaImageProvider extends ImageProvider {
     }
 
     public PrepUrl(value: string): ProvidedImage {
-        const hasCommonsPrefix = WikimediaImageProvider.startsWithCommonsPrefix(value)
         value = WikimediaImageProvider.removeCommonsPrefix(value)
 
         if (value.startsWith("File:")) {
