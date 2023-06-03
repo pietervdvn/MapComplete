@@ -7,8 +7,8 @@ import {BBox} from "../../Logic/BBox"
 import {ExportableMap, MapProperties} from "../../Models/MapProperties"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import MaplibreMap from "./MaplibreMap.svelte"
-import html2canvas from "html2canvas"
 import {RasterLayerProperties} from "../../Models/RasterLayerProperties"
+import * as htmltoimage from 'html-to-image';
 
 /**
  * The 'MapLibreAdaptor' bridges 'MapLibre' with the various properties of the `MapProperties`
@@ -50,7 +50,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         this._maplibreMap = maplibreMap
 
         this.location = state?.location ?? new UIEventSource({lon: 0, lat: 0})
-        if(this.location.data){
+        if (this.location.data) {
             // The MapLibre adaptor updates the element in the location and then pings them
             // Often, code setting this up doesn't expect the object they pass in to be changed, so we create a copy
             this.location.setData({...this.location.data})
@@ -199,85 +199,95 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         return url
     }
 
-    async exportAsPng(): Promise<Blob> {
+    private static setDpi(drawOn: HTMLCanvasElement, ctx: CanvasRenderingContext2D, dpiFactor: number) {
+        drawOn.style.width = drawOn.style.width || drawOn.width + "px"
+        drawOn.style.height = drawOn.style.height || drawOn.height + "px"
+
+
+        // Resize canvas and scale future draws.
+        drawOn.width = Math.ceil(drawOn.width * dpiFactor)
+        drawOn.height = Math.ceil(drawOn.height * dpiFactor)
+        ctx.scale(dpiFactor, dpiFactor)
+        console.log("Resizing canvas with setDPI:", drawOn.width, drawOn.height, drawOn.style.width, drawOn.style.height)
+    }
+
+    public async exportAsPng(dpiFactor: number): Promise<Blob> {
         const map = this._maplibreMap.data
         if (!map) {
             return undefined
         }
+        const drawOn = document.createElement("canvas")
+        drawOn.width = map.getCanvas().width
+        drawOn.height = map.getCanvas().height
 
-        function setDPI(canvas, dpi) {
-            // Set up CSS size.
-            canvas.style.width = canvas.style.width || canvas.width + "px"
-            canvas.style.height = canvas.style.height || canvas.height + "px"
+        console.log("Canvas size:", drawOn.width, drawOn.height)
+        const ctx = drawOn.getContext("2d")
+        // Set up CSS size.
+        MapLibreAdaptor.setDpi(drawOn, ctx, dpiFactor)
 
-            // Resize canvas and scale future draws.
-            const scaleFactor = dpi / 96
-            canvas.width = Math.ceil(canvas.width * scaleFactor)
-            canvas.height = Math.ceil(canvas.height * scaleFactor)
-            const ctx = canvas.getContext("2d")
-            ctx?.scale(scaleFactor, scaleFactor)
-        }
+        await this.exportBackgroundOnCanvas(drawOn, ctx, dpiFactor)
+
+        drawOn.toBlob(blob => {
+            Utils.offerContentsAsDownloadableFile(blob, "bg.png")
+        })
+        console.log("Getting markers")
+        // MapLibreAdaptor.setDpi(drawOn, ctx, 1)
+        const markers = await this.drawMarkers(dpiFactor)
+        console.log("Drawing markers (" + markers.width + "*" + markers.height + ") onto drawOn (" + drawOn.width + "*" + drawOn.height + ")")
+        ctx.scale(1/dpiFactor,1/dpiFactor   )
+        ctx.drawImage(markers, 0, 0, drawOn.width, drawOn.height)
+        ctx.scale(dpiFactor, dpiFactor)
+        markers.toBlob(blob => {
+            Utils.offerContentsAsDownloadableFile(blob, "markers.json")
+        })
+        this._maplibreMap.data?.resize()
+        return await new Promise<Blob>(resolve => drawOn.toBlob(blob => resolve(blob)))
+    }
+
+    /**
+     * Exports the background map and lines to PNG.
+     * Markers are _not_ rendered
+     */
+    private async exportBackgroundOnCanvas(drawOn: HTMLCanvasElement, ctx: CanvasRenderingContext2D, dpiFactor: number = 1): Promise<void> {
+        const map = this._maplibreMap.data
+        // We draw the maplibre-map onto the canvas. This does not export markers
+        // Inspiration by https://github.com/mapbox/mapbox-gl-js/issues/2766
 
         // Total hack - see https://stackoverflow.com/questions/42483449/mapbox-gl-js-export-map-to-png-or-pdf
-
-        const drawOn = document.createElement("canvas")
-        drawOn.width = document.documentElement.clientWidth
-        drawOn.height = document.documentElement.clientHeight
-
-        setDPI(drawOn, 4 * 96)
-
-        const destinationCtx = drawOn.getContext("2d")
-        {
-            // First, we draw the maplibre-map onto the canvas. This does not export markers
-            // Inspiration by https://github.com/mapbox/mapbox-gl-js/issues/2766
-
-            const promise = new Promise<void>((resolve) => {
-                map.once("render", () => {
-                    destinationCtx.drawImage(map.getCanvas(), 0, 0)
-                    resolve()
-                })
+        const promise = new Promise<void>((resolve) => {
+            map.once("render", () => {
+                ctx.drawImage(map.getCanvas(), 0, 0)
+                resolve()
             })
+        })
 
-            while (!map.isStyleLoaded()) {
-                console.log("Waiting to fully load the style...")
-                await Utils.waitFor(100)
-            }
-            map.triggerRepaint()
-            await promise
-            // Reset the canvas width and height
-            map.resize()
+        while (!map.isStyleLoaded()) {
+            console.log("Waiting to fully load the style...")
+            await Utils.waitFor(100)
         }
-        {
-            // now, we draw the markers on top of the map
+        map.triggerRepaint()
+        await promise
+        map.resize()
+    }
 
-            /* We use html2canvas for this, but disable the map canvas object itself:
-             * it cannot deal with this canvas object.
-             *
-             * We also have to patch up a few more objects
-             * */
-            const container = map.getCanvasContainer()
-            const origHeight = container.style.height
-            const origStyle = map.getCanvas().style.display
-            try {
-                map.getCanvas().style.display = "none"
-                if (!container.style.height) {
-                    container.style.height = document.documentElement.clientHeight + "px"
-                }
-
-                await html2canvas(map.getCanvasContainer(), {
-                    backgroundColor: "#00000000",
-                    canvas: drawOn,
-                })
-            } catch (e) {
-                console.error(e)
-            } finally {
-                map.getCanvas().style.display = origStyle
-                container.style.height = origHeight
-            }
+    private async drawMarkers(dpiFactor: number): Promise<HTMLCanvasElement> {
+        const map = this._maplibreMap.data
+        if (!map) {
+            return undefined
         }
-
-        // At last, we return the actual blob
-        return new Promise<Blob>((resolve) => drawOn.toBlob((data) => resolve(data)))
+        const width = map.getCanvas().clientWidth
+        const height = map.getCanvas().clientHeight
+        console.log("Canvas size markers:", map.getCanvas().width, map.getCanvas().height, "canvasClientRect:", width, height)
+        map.getCanvas().style.display = "none"
+        const img = await htmltoimage.toCanvas(map.getCanvasContainer(), {
+            pixelRatio: dpiFactor,
+            canvasWidth: width,
+            canvasHeight: height,
+            width: width,
+            height: height,
+        })
+        map.getCanvas().style.display = "unset"
+        return img
     }
 
     private updateStores(isSetup: boolean = false): void {

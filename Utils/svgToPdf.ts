@@ -1,18 +1,18 @@
-import jsPDF, { Matrix } from "jspdf"
-import { Translation, TypedTranslation } from "../UI/i18n/Translation"
-import { PngMapCreator } from "./pngMapCreator"
-import { AllKnownLayouts } from "../Customizations/AllKnownLayouts"
+import jsPDF, {Matrix} from "jspdf"
+import {Translation, TypedTranslation} from "../UI/i18n/Translation"
+import {PngMapCreator} from "./pngMapCreator"
+import {AllKnownLayouts} from "../Customizations/AllKnownLayouts"
 import "../assets/fonts/Ubuntu-M-normal.js"
 import "../assets/fonts/Ubuntu-L-normal.js"
 import "../assets/fonts/UbuntuMono-B-bold.js"
-import { makeAbsolute, parseSVG } from "svg-path-parser"
+import {makeAbsolute, parseSVG} from "svg-path-parser"
 import Translations from "../UI/i18n/Translations"
-import { Utils } from "../Utils"
+import {Utils} from "../Utils"
 import Constants from "../Models/Constants"
 import Hash from "../Logic/Web/Hash"
 import ThemeViewState from "../Models/ThemeViewState"
-import { Store, UIEventSource } from "../Logic/UIEventSource"
-import { FixedUiElement } from "../UI/Base/FixedUiElement"
+import {Store, UIEventSource} from "../Logic/UIEventSource"
+import {FixedUiElement} from "../UI/Base/FixedUiElement"
 
 class SvgToPdfInternals {
     private static readonly dummyDoc: jsPDF = new jsPDF()
@@ -131,7 +131,7 @@ class SvgToPdfInternals {
 
         const x = SvgToPdfInternals.attrNumber(mapSpec, "x")
         const y = SvgToPdfInternals.attrNumber(mapSpec, "y")
-        return runningM.applyToPoint({ x, y })
+        return runningM.applyToPoint({x, y})
     }
 
     private static attr(
@@ -409,7 +409,7 @@ class SvgToPdfInternals {
         const base64img = canvas.toDataURL("image/png")
 
         this.addMatrix(this.doc.Matrix(width / svgWidth, 0, 0, height / svgHeight, 0, 0))
-        const p = this.currentMatrixInverted.applyToPoint({ x, y })
+        const p = this.currentMatrixInverted.applyToPoint({x, y})
         this.doc.addImage(
             base64img,
             "png",
@@ -443,24 +443,24 @@ class SvgToPdfInternals {
 
         for (const c of parsed) {
             if (c.code === "C" || c.code === "c") {
-                const command = { op: "c", c: [c.x1, c.y1, c.x2, c.y2, c.x, c.y] }
+                const command = {op: "c", c: [c.x1, c.y1, c.x2, c.y2, c.x, c.y]}
                 this.doc.path([command])
                 continue
             }
 
             if (c.code === "H") {
-                const command = { op: "l", c: [c.x, c.y] }
+                const command = {op: "l", c: [c.x, c.y]}
                 this.doc.path([command])
                 continue
             }
 
             if (c.code === "V") {
-                const command = { op: "l", c: [c.x, c.y] }
+                const command = {op: "l", c: [c.x, c.y]}
                 this.doc.path([command])
                 continue
             }
 
-            this.doc.path([{ op: c.code.toLowerCase(), c: [c.x, c.y] }])
+            this.doc.path([{op: c.code.toLowerCase(), c: [c.x, c.y]}])
         }
         //"fill:#ffffff;stroke:#000000;stroke-width:0.8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:20"
 
@@ -499,7 +499,8 @@ export interface SvgToPdfOptions {
     disableMaps?: false | true
     textSubstitutions?: Record<string, string>
     beforePage?: (i: number) => void
-    overrideLocation?: { lat: number; lon: number }
+    overrideLocation?: { lat: number; lon: number },
+    disableDataLoading?: boolean | false
 }
 
 class SvgToPdfPage {
@@ -556,6 +557,11 @@ class SvgToPdfPage {
         return translations
     }
 
+    /**
+     * Does some preparatory work, most importantly gathering the map specifications into parameter `mapTextSpecs` and substituting translations
+     * @param element
+     * @param mapTextSpecs
+     */
     public async prepareElement(
         element: SVGSVGElement | Element,
         mapTextSpecs: SVGTSpanElement[]
@@ -612,14 +618,14 @@ class SvgToPdfPage {
         // Always fetch the remote data - it's cached anyway
         this.layerTranslations[language] = await Utils.downloadJsonCached(
             "https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/langs/layers/" +
-                language +
-                ".json",
+            language +
+            ".json",
             24 * 60 * 60 * 1000
         )
         const shared_questions = await Utils.downloadJsonCached(
             "https://raw.githubusercontent.com/pietervdvn/MapComplete/develop/langs/shared-questions/" +
-                language +
-                ".json",
+            language +
+            ".json",
             24 * 60 * 60 * 1000
         )
         this.layerTranslations[language]["shared-questions"] = shared_questions["shared_questions"]
@@ -636,7 +642,7 @@ class SvgToPdfPage {
         }
 
         for (const mapSpec of mapSpecs) {
-            await this.prepareMap(mapSpec)
+            await this.prepareMap(mapSpec,! this.options?.disableDataLoading)
         }
     }
 
@@ -692,7 +698,7 @@ class SvgToPdfPage {
         }
 
         if (typeof t === "string") {
-            t = new TypedTranslation({ "*": t })
+            t = new TypedTranslation({"*": t})
         }
         if (t instanceof TypedTranslation) {
             if (strict && (t.translations[language] ?? t.translations["*"]) === undefined) {
@@ -744,9 +750,15 @@ class SvgToPdfPage {
         })
     }
 
-    private async prepareMap(mapSpec: SVGTSpanElement): Promise<void> {
+    /**
+     * Replaces a mapSpec with the appropriate map
+     * @param mapSpec
+     * @private
+     */
+
+    private async prepareMap(mapSpec: SVGTSpanElement, loadData: boolean = true): Promise<void> {
         // Upper left point of the tspan
-        const { x, y } = SvgToPdfInternals.GetActualXY(mapSpec)
+        const {x, y} = SvgToPdfInternals.GetActualXY(mapSpec)
 
         let textElement: Element = mapSpec
         // We recurse up to get the actual, full specification
@@ -791,6 +803,7 @@ class SvgToPdfPage {
         const svgImage = document.createElement("image")
         svgImage.setAttribute("x", smallestRect.getAttribute("x"))
         svgImage.setAttribute("y", smallestRect.getAttribute("y"))
+        // width and height are in mm
         const width = SvgToPdfInternals.attrNumber(smallestRect, "width")
         const height = SvgToPdfInternals.attrNumber(smallestRect, "height")
         svgImage.setAttribute("width", "" + width)
@@ -837,7 +850,7 @@ class SvgToPdfPage {
         for (const filteredLayer of fl) {
             if (params["layer-" + filteredLayer.layerDef.id] !== undefined) {
                 filteredLayer.isDisplayed.setData(
-                    params["layer-" + filteredLayer.layerDef.id].trim().toLowerCase() !== "false"
+                    loadData && params["layer-" + filteredLayer.layerDef.id].trim().toLowerCase() !== "false"
                 )
             } else if (params["layers"] === "none") {
                 filteredLayer.isDisplayed.setData(false)
@@ -850,20 +863,24 @@ class SvgToPdfPage {
             if (paramsKey.startsWith("layer-")) {
                 const layerName = paramsKey.substring("layer-".length)
                 const key = params[paramsKey].toLowerCase().trim()
-                const isDisplayed = key === "true" || key === "force"
+                const isDisplayed = loadData && (key === "true" || key === "force")
                 const layer = fl.find((l) => l.layerDef.id === layerName)
-                console.log(
-                    "Setting ",
-                    layer?.layerDef?.id,
-                    " to visibility",
-                    isDisplayed,
-                    "(minzoom:",
-                    layer?.layerDef?.minzoomVisible,
-                    layer?.layerDef?.minzoom,
-                    ")"
-                )
-                layer.isDisplayed.setData(isDisplayed)
-                if (key === "force") {
+                if (!loadData) {
+                    console.log("Not loading map data as 'loadData' is falsed, this is probably a test run")
+                } else {
+                    console.log(
+                        "Setting ",
+                        layer?.layerDef?.id,
+                        " to visibility",
+                        isDisplayed,
+                        "(minzoom:",
+                        layer?.layerDef?.minzoomVisible,
+                        layer?.layerDef?.minzoom,
+                        ")"
+                    )
+                }
+                layer.isDisplayed.setData(loadData && isDisplayed)
+                if (key === "force" && loadData) {
                     layer.layerDef.minzoom = 0
                     layer.layerDef.minzoomVisible = 0
                     layer.isDisplayed.addCallback((isDisplayed) => {
@@ -877,8 +894,8 @@ class SvgToPdfPage {
         }
         console.log("Creating a map width ", width, height, params.scalingFactor)
         const pngCreator = new PngMapCreator(state, {
-            width: width * 4,
-            height: height * 4,
+            width: 4 * width,
+            height: 4 * height,
         })
         const png = await pngCreator.CreatePng(this._state)
         svgImage.setAttribute("xlink:href", await SvgToPdfPage.blobToBase64(png))
@@ -899,8 +916,8 @@ class SvgToPdfPage {
 
 export class SvgToPdf {
     public static readonly templates: Record<
-        "flyer_a4" | "poster_a3" | "poster_a2",
-        { pages: string[]; description: string | Translation }
+        "flyer_a4" | "poster_a3" | "poster_a2" | "current_view_a4",
+        { pages: string[]; description: string | Translation; isPublic: boolean }
     > = {
         flyer_a4: {
             pages: [
@@ -908,15 +925,23 @@ export class SvgToPdf {
                 "./assets/templates/MapComplete-flyer.back.svg",
             ],
             description: Translations.t.flyer.description,
+            isPublic: false
         },
         poster_a3: {
             pages: ["./assets/templates/MapComplete-poster-a3.svg"],
             description: "A basic A3 poster (similar to the flyer)",
+            isPublic: false
         },
         poster_a2: {
             pages: ["./assets/templates/MapComplete-poster-a2.svg"],
             description: "A basic A2 poster (similar to the flyer); scaled up from the A3 poster",
+            isPublic: false
         },
+        current_view_a4: {
+            pages:["./assets/templates/CurrentMapWithHeaderA4.svg"],
+            description: "Export a PDF (A4, portrait) of the current view",
+            isPublic: true
+        }
     }
     public readonly status: Store<string>
     public readonly _status: UIEventSource<string>
@@ -947,12 +972,9 @@ export class SvgToPdf {
         const height = SvgToPdfInternals.attrNumber(firstPage, "height")
         const mode = width > height ? "landscape" : "portrait"
 
-        await this.Prepare()
+        await this.Prepare(language)
         console.log("Global prepare done")
-        for (const page of this._pages) {
-            await page.Prepare()
-            await page.PrepareLanguage(language)
-        }
+
 
         this._status.setData("Maps are rendered, building pdf")
         new FixedUiElement("").AttachTo("extradiv")
@@ -1002,11 +1024,11 @@ export class SvgToPdf {
 
     /**
      * Prepares all the minimaps
-     * @constructor
      */
-    public async Prepare(): Promise<SvgToPdf> {
+    public async Prepare(language1: string): Promise<SvgToPdf> {
         for (const page of this._pages) {
             await page.Prepare()
+            await page.PrepareLanguage(language1)
         }
         return this
     }

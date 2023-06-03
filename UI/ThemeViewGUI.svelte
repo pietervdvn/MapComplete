@@ -28,7 +28,7 @@
     import LoginToggle from "./Base/LoginToggle.svelte";
     import LoginButton from "./Base/LoginButton.svelte";
     import CopyrightPanel from "./BigComponents/CopyrightPanel";
-    import {DownloadPanel} from "./BigComponents/DownloadPanel";
+    import DownloadPanel from "./DownloadFlow/DownloadPanel.svelte";
     import ModalRight from "./Base/ModalRight.svelte";
     import {Utils} from "../Utils";
     import Hotkeys from "./Base/Hotkeys";
@@ -42,10 +42,10 @@
     import {ShareScreen} from "./BigComponents/ShareScreen";
     import ThemeIntroPanel from "./BigComponents/ThemeIntroPanel.svelte";
     import type {RasterLayerPolygon} from "../Models/RasterLayers";
+    import {AvailableRasterLayers} from "../Models/RasterLayers";
     import RasterLayerOverview from "./Map/RasterLayerOverview.svelte";
     import IfHidden from "./Base/IfHidden.svelte";
     import {onDestroy} from "svelte";
-    import {AvailableRasterLayers} from "../Models/RasterLayers";
 
     export let state: ThemeViewState;
     let layout = state.layout;
@@ -244,7 +244,7 @@
                 </If>
             </div>
             <div class="m-4" slot="content2">
-                <ToSvelte construct={() => new DownloadPanel(state)}/>
+                <DownloadPanel {state}/>
             </div>
 
             <div slot="title3">

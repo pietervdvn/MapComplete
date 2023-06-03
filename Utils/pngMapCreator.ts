@@ -35,9 +35,10 @@ export class PngMapCreator {
         const map = this._state.map
         new SvelteUIElement(MaplibreMap, { map })
             .SetStyle(
-                "width: " + this._options.width + "mm; height: " + this._options.height + "mm"
+                "width: " + this._options.width + "mm; height: " + this._options.height + "mm; border: 2px solid red;"
             )
             .AttachTo("extradiv")
+        map.data.resize()
         setState("Waiting for the data")
         await this._state.dataIsLoading.AsPromise((loading) => !loading)
         setState("Waiting for styles to be fully loaded")
@@ -48,6 +49,7 @@ export class PngMapCreator {
         await Utils.waitFor(1000)
         setState("Exporting png")
         console.log("Loading for", this._state.layout.id, "is done")
-        return this._state.mapProperties.exportAsPng()
+        console.log("Map export: starting actual export, target size is", this._options.width,"mm * ",this._options.height+"mm")
+        return this._state.mapProperties.exportAsPng(4)
     }
 }

@@ -18,5 +18,5 @@ export interface MapProperties {
 }
 
 export interface ExportableMap {
-    exportAsPng(): Promise<Blob>
+    exportAsPng(dpiFactor: number): Promise<Blob>
 }
