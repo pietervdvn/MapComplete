@@ -10,6 +10,7 @@ import { Imgur } from "../Logic/ImageProviders/Imgur"
 import { LicenseInfo } from "../Logic/ImageProviders/LicenseInfo"
 import { Utils } from "../Utils"
 import Constants from "../Models/Constants"
+import {concat} from "svelte-preprocess/dist/modules/utils";
 
 export default class GenerateImageAnalysis extends Script {
     constructor() {
@@ -213,8 +214,9 @@ export default class GenerateImageAnalysis extends Script {
             const speed = handled / runningTime
             const timeLeft = Math.round(itemsLeft * speed)
             try {
+                const urls = url.split(/[;,]/)
                 const downloadedStatus = await Promise.all(
-                    url.split(";").map((url) => this.downloadImage(url.trim(), imagePath))
+                    urls.map((url) => this.downloadImage(url.trim(), imagePath))
                 )
 
                 for (const b of downloadedStatus) {
