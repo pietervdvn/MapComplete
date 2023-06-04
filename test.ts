@@ -23,9 +23,11 @@ async function testPdf() {
         SvgToPdf.templates["flyer_a4"].pages.map((url) => Utils.download(url))
     )
     console.log("Building svg")
-    const pdf = new SvgToPdf("Test", svgs, {})
+    const pdf = new SvgToPdf("Test", svgs, {
+        freeComponentId:"extradiv"
+    })
     new VariableUiElement(pdf.status).AttachTo("maindiv")
-    await pdf.ConvertSvg("nl")
+    await pdf.ExportPdf("nl")
 }
 
 testPdf().then((_) => console.log("All done"))

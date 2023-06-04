@@ -159,7 +159,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
              */
 
 
-            if(this.layout.layers.some(l => l._needsFullNodeDatabase)){
+            if (this.layout.layers.some(l => l._needsFullNodeDatabase)) {
                 this.fullNodeDatabase = new FullNodeDatabaseSource()
             }
 
@@ -181,9 +181,10 @@ export default class ThemeViewState implements SpecialVisualizationState {
                         }
                         currentViewIndex++
                         return <Feature[]>[bbox.asGeoJson({
-                            zoom: this.mapProperties.zoom.data,
-                            ...this.mapProperties.location.data,
-                            id: "current_view" }
+                                zoom: this.mapProperties.zoom.data,
+                                ...this.mapProperties.location.data,
+                                id: "current_view"
+                            }
                         )];
                     }
                 )
@@ -240,39 +241,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 this.featureProperties,
                 fs.layer.layerDef.maxAgeOfCache
             )
-
-            const doShowLayer = this.mapProperties.zoom.map(
-                (z) =>
-                    (fs.layer.isDisplayed?.data ?? true) && z >= (fs.layer.layerDef?.minzoom ?? 0),
-                [fs.layer.isDisplayed]
-            )
-
-            if (
-                !doShowLayer.data &&
-                (this.featureSwitches.featureSwitchFilter.data === false || !fs.layer.layerDef.name)
-            ) {
-                /* This layer is hidden and there is no way to enable it (filterview is disabled or this layer doesn't show up in the filter view as the name is not defined)
-                 *
-                 * This means that we don't have to filter it, nor do we have to display it
-                 * */
-                return
-            }
-
-            const filtered = new FilteringFeatureSource(
-                fs.layer,
-                fs,
-                (id) => this.featureProperties.getStore(id),
-                this.layerState.globalFilters
-            )
-
-            new ShowDataLayer(this.map, {
-                layer: fs.layer.layerDef,
-                features: filtered,
-                doShowLayer,
-                selectedElement: this.selectedElement,
-                selectedLayer: this.selectedLayer,
-                fetchStore: (id) => this.featureProperties.getStore(id),
-            })
         })
 
         this.floors = this.featuresInView.features.stabilized(500).map((features) => {
@@ -317,6 +285,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
             this.changes
         )
 
+        this.showNormalDataOn(this.map)
         this.initActors()
         this.addLastClick(lastClick)
         this.drawSpecialLayers()
@@ -325,6 +294,42 @@ export default class ThemeViewState implements SpecialVisualizationState {
         if (!Utils.runningFromConsole) {
             console.log("State setup completed", this)
         }
+    }
+
+    public showNormalDataOn(map: Store<MlMap>) {
+        this.perLayer.forEach((fs) => {
+            const doShowLayer = this.mapProperties.zoom.map(
+                (z) =>
+                    (fs.layer.isDisplayed?.data ?? true) && z >= (fs.layer.layerDef?.minzoom ?? 0),
+                [fs.layer.isDisplayed]
+            )
+
+            if (
+                !doShowLayer.data &&
+                (this.featureSwitches.featureSwitchFilter.data === false || !fs.layer.layerDef.name)
+            ) {
+                /* This layer is hidden and there is no way to enable it (filterview is disabled or this layer doesn't show up in the filter view as the name is not defined)
+                 *
+                 * This means that we don't have to filter it, nor do we have to display it
+                 * */
+                return
+            }
+            const filtered = new FilteringFeatureSource(
+                fs.layer,
+                fs,
+                (id) => this.featureProperties.getStore(id),
+                this.layerState.globalFilters
+            )
+
+            new ShowDataLayer(map, {
+                layer: fs.layer.layerDef,
+                features: filtered,
+                doShowLayer,
+                selectedElement: this.selectedElement,
+                selectedLayer: this.selectedLayer,
+                fetchStore: (id) => this.featureProperties.getStore(id),
+            })
+        })
     }
 
     /**

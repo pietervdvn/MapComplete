@@ -10,12 +10,13 @@
     import DownloadHelper from "./DownloadHelper";
     import {Utils} from "../../Utils";
     import type {PriviligedLayerType} from "../../Models/Constants";
+    import {UIEventSource} from "../../Logic/UIEventSource";
 
     export let state: SpecialVisualizationState
 
     export let extension: string
     export let mimetype: string
-    export let construct: (geojsonCleaned: FeatureCollection) => (Blob | string) | Promise<void>
+    export let construct: (geojsonCleaned: FeatureCollection, title: string) => (Blob | string) | Promise<void>
     export let mainText: Translation
     export let helperText: Translation
     export let metaIsIncluded: boolean
@@ -26,51 +27,63 @@
     let isExporting = false
     let isError = false
 
+    let status: UIEventSource<string> = new UIEventSource<string>(undefined)
+
     async function clicked() {
         isExporting = true
         const gpsLayer = state.layerState.filteredLayers.get(
             <PriviligedLayerType>"gps_location"
         )
         state.lastClickObject.features.setData([])
-        
+
         const gpsIsDisplayed = gpsLayer.isDisplayed.data
         try {
             gpsLayer.isDisplayed.setData(false)
             const geojson: FeatureCollection = downloadHelper.getCleanGeoJson(metaIsIncluded)
             const name = state.layout.id
 
-            const promise = construct(geojson)
+            const title = `MapComplete_${name}_export_${new Date().toISOString().substr(0, 19)}.${extension}`
+            const promise = construct(geojson, title)
             let data: Blob | string
             if (typeof promise === "string") {
                 data = promise
             } else if (typeof promise["then"] === "function") {
-                data = await <Promise<Blob | string>> promise
+                data = await <Promise<Blob | string>>promise
             } else {
                 data = <Blob>promise
+            }
+            if (!data) {
+                return
             }
             console.log("Got data", data)
             Utils.offerContentsAsDownloadableFile(
                 data,
-                `MapComplete_${name}_export_${new Date().toISOString().substr(0, 19)}.${extension}`,
+                title,
                 {
                     mimetype,
                 }
             )
         } catch (e) {
             isError = true
+            console.error(e)
+        } finally {
+            isExporting = false
+            gpsLayer.isDisplayed.setData(gpsIsDisplayed)
         }
-        gpsLayer.isDisplayed.setData(gpsIsDisplayed)
 
-        isExporting = false
     }
 
 </script>
 
 {#if isError}
-    <Tr cls="alert" t={Translations.t.error}/>
+    <Tr cls="alert" t={Translations.t.general.error}/>
 {:else if isExporting}
     <Loading>
-        <Tr t={t.exporting}/>
+        {#if $status}
+            {$status}
+        {:else}
+            <Tr t={t.exporting}/>
+        {/if}
     </Loading>
 {:else}
     <button class="flex w-full" on:click={clicked}>

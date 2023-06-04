@@ -8,6 +8,7 @@
   import { Map } from "@onsvisual/svelte-maps";
   import type { Map as MaplibreMap } from "maplibre-gl";
   import type { Writable } from "svelte/store";
+  import {AvailableRasterLayers} from "../../Models/RasterLayers";
 
 
   /**
@@ -24,7 +25,7 @@
      $map.resize();
     });
   });
-  const styleUrl = "https://api.maptiler.com/maps/15cc8f61-0353-4be6-b8da-13daea5f7432/style.json?key=GvoVAJgu46I5rZapJuAy";
+  const styleUrl = AvailableRasterLayers.maplibre.properties.url;
 </script>
 <main>
   <Map bind:center={center}

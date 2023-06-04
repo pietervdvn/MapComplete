@@ -199,7 +199,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         return url
     }
 
-    private static setDpi(drawOn: HTMLCanvasElement, ctx: CanvasRenderingContext2D, dpiFactor: number) {
+    public static setDpi(drawOn: HTMLCanvasElement, ctx: CanvasRenderingContext2D, dpiFactor: number) {
         drawOn.style.width = drawOn.style.width || drawOn.width + "px"
         drawOn.style.height = drawOn.style.height || drawOn.height + "px"
 
@@ -223,23 +223,16 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         console.log("Canvas size:", drawOn.width, drawOn.height)
         const ctx = drawOn.getContext("2d")
         // Set up CSS size.
-        MapLibreAdaptor.setDpi(drawOn, ctx, dpiFactor)
+        MapLibreAdaptor.setDpi(drawOn, ctx, dpiFactor / map.getPixelRatio())
 
-        await this.exportBackgroundOnCanvas(drawOn, ctx, dpiFactor)
+        await this.exportBackgroundOnCanvas(ctx)
 
-        drawOn.toBlob(blob => {
-            Utils.offerContentsAsDownloadableFile(blob, "bg.png")
-        })
         console.log("Getting markers")
         // MapLibreAdaptor.setDpi(drawOn, ctx, 1)
         const markers = await this.drawMarkers(dpiFactor)
         console.log("Drawing markers (" + markers.width + "*" + markers.height + ") onto drawOn (" + drawOn.width + "*" + drawOn.height + ")")
-        ctx.scale(1/dpiFactor,1/dpiFactor   )
         ctx.drawImage(markers, 0, 0, drawOn.width, drawOn.height)
         ctx.scale(dpiFactor, dpiFactor)
-        markers.toBlob(blob => {
-            Utils.offerContentsAsDownloadableFile(blob, "markers.json")
-        })
         this._maplibreMap.data?.resize()
         return await new Promise<Blob>(resolve => drawOn.toBlob(blob => resolve(blob)))
     }
@@ -248,7 +241,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
      * Exports the background map and lines to PNG.
      * Markers are _not_ rendered
      */
-    private async exportBackgroundOnCanvas(drawOn: HTMLCanvasElement, ctx: CanvasRenderingContext2D, dpiFactor: number = 1): Promise<void> {
+    private async exportBackgroundOnCanvas(ctx: CanvasRenderingContext2D): Promise<void> {
         const map = this._maplibreMap.data
         // We draw the maplibre-map onto the canvas. This does not export markers
         // Inspiration by https://github.com/mapbox/mapbox-gl-js/issues/2766

@@ -84,7 +84,7 @@ export default class TileLocalStorage<T> {
         const maxAge = this._maxAgeSeconds
         const timeDiff = Date.now() - date
         if (timeDiff >= maxAge) {
-            console.log("Dropping cache for", this._layername, tileIndex, "out of date")
+            console.debug("Dropping cache for", this._layername, tileIndex, "out of date")
             await IdbLocalStorage.SetDirectly(this._layername + "_" + tileIndex, undefined)
 
             return undefined

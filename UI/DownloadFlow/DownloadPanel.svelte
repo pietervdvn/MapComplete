@@ -1,14 +1,21 @@
 <script lang="ts">
 
-    import type {SpecialVisualizationState} from "../SpecialVisualization";
     import Loading from "../Base/Loading.svelte";
     import Translations from "../i18n/Translations";
     import Tr from "../Base/Tr.svelte";
     import DownloadHelper from "./DownloadHelper";
     import DownloadButton from "./DownloadButton.svelte";
     import {GeoOperations} from "../../Logic/GeoOperations";
+    import {SvgToPdf} from "../../Utils/svgToPdf";
+    import Locale from "../i18n/Locale";
+    import ThemeViewState from "../../Models/ThemeViewState";
+    import {Utils} from "../../Utils";
+    import Constants from "../../Models/Constants";
+    import {Translation} from "../i18n/Translation";
+    import {AvailableRasterLayers} from "../../Models/RasterLayers";
+    import {UIEventSource} from "../../Logic/UIEventSource";
 
-    export let state: SpecialVisualizationState
+    export let state: ThemeViewState
     let isLoading = state.dataIsLoading
 
     const t = Translations.t.general.download
@@ -28,6 +35,30 @@
             width: maindiv.offsetWidth,
             height: maindiv.offsetHeight,
         })
+    }
+
+    async function constructPdf(_, title: string, status: UIEventSource<string>) {
+        const templateUrls = SvgToPdf.templates["current_view_a3"].pages
+        const templates: string[] = await Promise.all(templateUrls.map(url => Utils.download(url)))
+        console.log("Templates are", templates)
+        const bg = state.mapProperties.rasterLayer.data ?? AvailableRasterLayers.maplibre
+        const creator = new SvgToPdf(title, templates, {
+            state,
+            freeComponentId: "belowmap",
+            textSubstitutions: <Record<string, string>> {
+                "layout.title": state.layout.title,
+                title: state.layout.title,
+                layoutImg: state.layout.icon,
+                version: Constants.vNumber,
+                date: new Date().toISOString().substring(0,16),
+                background: new Translation(bg.properties.name).txt
+            }
+        })
+        
+        const unsub = creator.status.addCallbackAndRunD(s => status?.setData(s))
+        await creator.ExportPdf(Locale.language.data)
+        unsub()
+        return undefined
     }
 
 </script>
@@ -85,7 +116,7 @@
                     extension="pdf"
                     mainText={t.downloadAsPdf}
                     helperText={t.downloadAsPdfHelper}
-                    construct={_ => state.mapProperties.exportAsPng(4)}
+                    construct={constructPdf}
     />
 
 

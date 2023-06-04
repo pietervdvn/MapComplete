@@ -65,14 +65,14 @@ export default class GeoJsonSource implements FeatureSource {
                     return
                 }
                 this.LoadJSONFrom(url, eventsource, layer)
-                    .then((fs) => console.log("Loaded",fs.length, "features from", url))
-                    .catch((err) => console.error("Could not load ", url, "due to", err))
+                    .then((fs) => console.debug("Loaded",fs.length, "features from", url))
+                    .catch((err) => console.warn("Could not load ", url, "due to", err))
                 return true // data is loaded, we can safely unregister
             })
         } else {
             this.LoadJSONFrom(url, eventsource, layer)
-                .then((fs) => console.log("Loaded",fs.length, "features from", url))
-                .catch((err) => console.error("Could not load ", url, "due to", err))
+                .then((fs) => console.debug("Loaded",fs.length, "features from", url))
+                .catch((err) => console.warn("Could not load ", url, "due to", err))
         }
         this.features = eventsource
     }
