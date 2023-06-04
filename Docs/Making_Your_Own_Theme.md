@@ -249,16 +249,27 @@ Loading your theme
 
 If you have your JSON file, there are three ways to distribute your theme:
 
-- Take the entire JSON file and [base64](https://www.base64encode.org/) encode it. Then open up the
-  URL `https://mapcomplete.osm.be?userlayout=true#<base64-encoded-json-here>`. Yes, this URL will be huge; and updates
-  are difficult to distribute as you have to send a new URL to everyone. This is however excellent to have a 'quick and
-  dirty' test version up and running as these links can be generated from the customThemeGenerator and can be quickly
-  shared with a few other contributors.
-- Host the JSON file on a publicly accessible webserver (e.g. GitHub) and open
-  up `https://mapcomplete.osm.be?userlayout=<url-to-the-raw.json>`
-- Ask to have your theme included into the official MapComplete - requirements below
+### a. base64 the JSON file
 
-### Getting your theme included into the official MapComplete
+Take the entire JSON file and [base64](https://www.base64encode.org/) encode it.
+
+Then open up the URL `https://mapcomplete.osm.be?userlayout=true#<base64-encoded-json-here>`.
+
+Yes, this URL will be huge; and updates are difficult to distribute as you have to send a new URL to everyone.
+
+This is however excellent to have a 'quick and dirty' test version up and running as these links can be generated from the customThemeGenerator and can be quickly shared with a few other contributors.
+
+You can use the community maintained [ThemeHelper](https://github.com/tordans/MapComplete-ThemeHelper) to make this process easier. This uses `lzString.compressToBase64` which is the counterpart to how MapComplete decompresses the base64 input.
+
+### b. Host the JSON file
+
+Host the JSON file on a publicly accessible webserver (e.g. GitHub) and open up `https://mapcomplete.osm.be?userlayout=<url-to-the-raw.json>`
+
+_Gotcha:_ Make sure the server that hosts your JSON has liberal caching settings. Otherwise one version of the file might get cached in the users' browser cache for a long time and updates are not destributed for this user.
+
+### c. Make it official
+
+Get your theme included into the official MapComplete:
 
 Did you make an awesome theme that you want to share with the OpenStreetMap community? Have it included in the main
 application. This makes sure that:
