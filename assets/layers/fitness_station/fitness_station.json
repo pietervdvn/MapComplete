@@ -370,7 +370,7 @@
         "nl": "Dit fitness-toestel wordt beheerd door {operator}"
       }
     },
-    "opening_hours"
+    "opening_hours_24_7"
   ],
   "presets": [
     {
@@ -409,5 +409,9 @@
   ],
   "filter": [
     "open_now"
-  ]
+  ],
+  "allowMove": {
+    "enableRelocation": false,
+    "enableImproveAccuracy": true
+  }
 }
