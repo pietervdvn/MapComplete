@@ -302,6 +302,7 @@ class SvgToPdfInternals {
         return
     }
 
+
     private drawTspan(tspan: Element) {
         const txt = tspan.textContent
         if (txt == "") {
@@ -310,27 +311,18 @@ class SvgToPdfInternals {
         const x = SvgToPdfInternals.attrNumber(tspan, "x")
         const y = SvgToPdfInternals.attrNumber(tspan, "y")
 
-        const css = SvgToPdfInternals.css(tspan)
-        const imageMatch = txt.match(/\$img\(([^)])+\)/)
-        if (imageMatch) {
-            const [key, width, height] = imageMatch[1].split(",").map(s => s.trim())
-            const url = key.startsWith("http") ? key : this.extractTranslation("${" + key + "}")
-            const img = this._images[url]
-            console.log("Drawing an injected image", {key, url, img: img.src})
-            this.doc.addImage(
-                img.src
-                , x, y, Number(width), Number(height)
-            )
-            return
-        }
-
         let maxWidth: number = undefined
+        let maxHeight: number = undefined
+        const css = SvgToPdfInternals.css(tspan)
+
         if (css["shape-inside"]) {
             const matched = css["shape-inside"].match(/url\(#([a-zA-Z0-9-]+)\)/)
             if (matched !== null) {
                 const rectId = matched[1]
                 const rect = this._rects[rectId]
                 maxWidth = SvgToPdfInternals.attrNumber(rect, "width", false)
+                maxHeight = SvgToPdfInternals.attrNumber(rect, "height", false)
+
             }
         }
 
@@ -537,7 +529,7 @@ export interface SvgToPdfOptions {
     /**
      * Override all the maps to generate with this map
      */
-    state?: ThemeViewState
+    state?: ThemeViewState,
 }
 
 class SvgToPdfPage {
@@ -553,11 +545,10 @@ class SvgToPdfPage {
      */
     private readonly _state: UIEventSource<string>
     private _isPrepared = false
-    private state: UIEventSource<string>
 
-    constructor(page: string, state: UIEventSource<string>, options?: SvgToPdfOptions) {
+    constructor(page: string, state: UIEventSource<string>, options: SvgToPdfOptions) {
         this._state = state
-        this.options = options ?? <SvgToPdfOptions>{}
+        this.options = options
         const parser = new DOMParser()
         const xmlDoc = parser.parseFromString(page, "image/svg+xml")
         this._svgRoot = xmlDoc.getElementsByTagName("svg")[0]
@@ -613,13 +604,6 @@ class SvgToPdfPage {
         if (element.tagName === "tspan" && element.childElementCount == 0) {
             const specialValues = element.textContent.split(" ").filter((t) => t.startsWith("$"))
             for (let specialValue of specialValues) {
-                const imageMatch = element.textContent.match(/\$img\(([^)])+\)/)
-                if (imageMatch) {
-                    const key = imageMatch[1]
-                    const url = key.startsWith("http") ? key : this.extractTranslation("${" + key + "}", `en`, false)
-                    await this.loadImage(url)
-                    continue
-                }
 
                 const importMatch = element.textContent.match(
                     /\$import ([a-zA-Z-_0-9.? ]+) as ([a-zA-Z0-9]+)/
@@ -687,10 +671,10 @@ class SvgToPdfPage {
         }
 
         for (const mapSpec of mapSpecs) {
-            try{
+            try {
 
-            await this.prepareMap(mapSpec, !this.options?.disableDataLoading)
-            }catch(e){
+                await this.prepareMap(mapSpec, !this.options?.disableDataLoading)
+            } catch (e) {
                 console.error("Couldn't prepare a map:", e)
             }
         }
@@ -706,7 +690,7 @@ class SvgToPdfPage {
         }
         const self = this
         const internal = new SvgToPdfInternals(advancedApi, this.images, this.rects, (key) =>
-            self.extractTranslation(key, language)
+                self.extractTranslation(key, language)
         )
         for (let child of Array.from(this._svgRoot.children)) {
             internal.handleElement(<any>child)
@@ -863,7 +847,7 @@ class SvgToPdfPage {
         if (this.options.state !== undefined) {
             png = await (new PngMapCreator(this.options.state, {
                 width, height,
-            }).CreatePng(this.options.freeComponentId))
+            }).CreatePng(this.options.freeComponentId, this._state))
         } else {
             const match = spec.match(/\$map\(([^)]*)\)$/)
             if (match === null) {
@@ -959,7 +943,7 @@ class SvgToPdfPage {
                 height: 4 * height,
             })
             png = await pngCreator.CreatePng(this.options.freeComponentId, this._state)
-            if(!png){
+            if (!png) {
                 throw "PngCreator did not output anything..."
             }
         }
@@ -1005,12 +989,13 @@ export class SvgToPdf {
         },
         current_view_a4: {
             pages: ["./assets/templates/CurrentMapWithHeaderA4.svg"],
-            description: "Export a PDF (A4, landscape) of the current view",
+            description: Translations.t.general.download.pdf.current_view_a4,
+
             isPublic: true
         },
         current_view_a3: {
             pages: ["./assets/templates/CurrentMapWithHeaderA3.svg"],
-            description: "Export a PDF (A3, portrait) of the current view",
+            description: Translations.t.general.download.pdf.current_view_a3,
             isPublic: true
         }
     }
@@ -1019,16 +1004,13 @@ export class SvgToPdf {
     private readonly _title: string
     private readonly _pages: SvgToPdfPage[]
 
-    constructor(title: string, pages: string[], options?: SvgToPdfOptions) {
+    constructor(title: string, pages: string[], options) {
         this._title = title
-        options = options ?? <SvgToPdfOptions>{}
         options.textSubstitutions = options.textSubstitutions ?? {}
-        const mapCount =
-            "" +
+        options.textSubstitutions["mapCount"] = "" +
             Array.from(AllKnownLayouts.allKnownLayouts.values()).filter(
                 (th) => !th.hideFromOverview
             ).length
-        options.textSubstitutions["mapCount"] = mapCount
 
         const state = new UIEventSource<string>("Initializing...")
         this.status = state
@@ -1054,7 +1036,6 @@ export class SvgToPdf {
 
         const doc = new jsPDF(mode, undefined, [width, height])
         doc.advancedAPI((advancedApi) => {
-            const canvas = advancedApi.canvas
             for (let i = 0; i < this._pages.length; i++) {
                 console.log("Rendering page", i)
                 if (i > 0) {

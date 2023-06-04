@@ -29,51 +29,55 @@ export class PngMapCreator {
         div.id = "mapdiv-" + PngMapCreator.id
         div.style.width = this._options.width + "mm"
         div.style.height = this._options.height + "mm"
-
         PngMapCreator.id++
-        const layout = this._state.layout
+        try {
+            const layout = this._state.layout
 
-        function setState(msg: string) {
-            status?.setData(layout.id + ": " + msg)
+            function setState(msg: string) {
+                status?.setData(layout.id + ": " + msg)
+            }
+
+            setState("Initializing map")
+
+            const settings = this._state.mapProperties
+            const l = settings.location.data
+
+            document.getElementById(freeComponentId).appendChild(div)
+            const mapElem = new MlMap({
+                container: div.id,
+                style: AvailableRasterLayers.maplibre.properties.url,
+                center: [l.lon, l.lat],
+                zoom: settings.zoom.data,
+                pixelRatio: 6
+            });
+
+            const map = new UIEventSource<MlMap>(mapElem)
+            const mla = new MapLibreAdaptor(map)
+            mla.zoom.setData(settings.zoom.data)
+            mla.location.setData(settings.location.data)
+            mla.rasterLayer.setData(settings.rasterLayer.data)
+            mla.allowZooming.setData(false)
+            mla.allowMoving.setData(false)
+
+
+            this._state?.showNormalDataOn(map)
+            console.log("Creating a map with size", this._options.width, this._options.height)
+
+            setState("Waiting for the data")
+            await this._state.dataIsLoading.AsPromise((loading) => !loading)
+            setState("Waiting for styles to be fully loaded")
+            while (!map?.data?.isStyleLoaded()) {
+                console.log("Waiting for the style to be loaded...")
+                await Utils.waitFor(250)
+            }
+            // Some extra buffer...
+            await Utils.waitFor(1000)
+            setState("Exporting png")
+            console.log("Loading for", this._state.layout.id, "is done")
+            const png = await mla.exportAsPng(6)
+            return png
+        } finally {
+            div.parentElement.removeChild(div)
         }
-
-        setState("Initializing map")
-
-        const settings = this._state.mapProperties
-        const l = settings.location.data
-
-        document.getElementById(freeComponentId).appendChild(div)
-        const mapElem = new MlMap({
-            container: div.id,
-            style: AvailableRasterLayers.maplibre.properties.url,
-            center: [l.lon, l.lat],
-            zoom: settings.zoom.data,
-            pixelRatio: 6
-        });
-
-        const map = new UIEventSource<MlMap>(mapElem)
-        const mla = new MapLibreAdaptor(map)
-        mla.zoom.setData(settings.zoom.data)
-        mla.location.setData(settings.location.data)
-        mla.rasterLayer.setData(settings.rasterLayer.data)
-
-        this._state?.showNormalDataOn(map)
-        console.log("Creating a map with size", this._options.width, this._options.height)
-
-        setState("Waiting for the data")
-        await this._state.dataIsLoading.AsPromise((loading) => !loading)
-        setState("Waiting for styles to be fully loaded")
-        while (!map?.data?.isStyleLoaded()) {
-            console.log("Waiting for the style to be loaded...")
-            await Utils.waitFor(250)
-        }
-        // Some extra buffer...
-        await Utils.waitFor(1000)
-        setState("Exporting png")
-        console.log("Loading for", this._state.layout.id, "is done")
-        const png = await mla.exportAsPng(6)
-        div.parentElement.removeChild(div)
-        Utils.offerContentsAsDownloadableFile(png, "test.png")
-        return png
     }
 }

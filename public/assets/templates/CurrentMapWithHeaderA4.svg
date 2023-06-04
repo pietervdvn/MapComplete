@@ -16,6 +16,12 @@
   <defs
      id="defs33">
     <rect
+       x="39.439771"
+       y="61.24773"
+       width="104.91111"
+       height="99.590532"
+       id="rect7785" />
+    <rect
        x="41.547712"
        y="103.43336"
        width="118.76163"
@@ -35,14 +41,14 @@
      borderopacity="1"
      inkscape:pageshadow="0"
      inkscape:pageopacity="1"
-     inkscape:pagecheckerboard="1"
+     inkscape:pagecheckerboard="true"
      inkscape:document-units="mm"
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="0.48119622"
-     inkscape:cx="338.73915"
-     inkscape:cy="424.98255"
+     inkscape:zoom="1.3296534"
+     inkscape:cx="4.5124542"
+     inkscape:cy="96.641727"
      inkscape:window-width="1920"
      inkscape:window-height="995"
      inkscape:window-x="0"
@@ -89,33 +95,33 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect56707);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"><tspan
          x="0"
          y="0"
-         id="tspan28903"><tspan
+         id="tspan2018"><tspan
            style="font-size:13.3333px;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan28901">$map(current)</tspan></tspan></text>
+           id="tspan2016">$map(current)</tspan></tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,12.08115,27.672609)"
+       transform="matrix(0.26458333,0,0,0.26458333,38.20272,27.672609)"
        id="text3510"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:0;font-family:sans-serif;white-space:pre;shape-inside:url(#rect3512);fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1"><tspan
          x="0"
          y="0"
-         id="tspan28907"><tspan
+         id="tspan2022"><tspan
            style="font-size:16px;line-height:1.05;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan28905">$general.pdf.attr
+           id="tspan2020">$general.pdf.attr
 </tspan></tspan><tspan
          x="0"
          y="16.799999"
-         id="tspan28911"><tspan
+         id="tspan2026"><tspan
            style="font-size:16px;line-height:1.05;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan28909">$general.pdf.attrBackground
+           id="tspan2024">$general.pdf.attrBackground
 </tspan></tspan><tspan
          x="0"
          y="35.692733"
-         id="tspan28917"><tspan
+         id="tspan2032"><tspan
            style="font-size:16px;line-height:1.05;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan28913">$general.pdf.generatedWith</tspan><tspan
+           id="tspan2028">$general.pdf.generatedWith</tspan><tspan
            style="font-size:18.6667px;line-height:1.05;-inkscape-font-specification:'sans-serif, Normal'"
-           id="tspan28915">
+           id="tspan2030">
 </tspan></tspan></text>
     <text
        xml:space="preserve"
@@ -129,9 +135,21 @@
        style="font-size:16px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:end;white-space:pre;shape-inside:url(#rect10143);fill:#000000;fill-opacity:0.914749;stroke:#ff0000;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"><tspan
          x="1182.4844"
          y="871.91602"
-         id="tspan28921"><tspan
+         id="tspan2036"><tspan
            style="fill-opacity:1;stroke:none"
-           id="tspan28919">$general.pdf.versionInfo</tspan></tspan></text>
+           id="tspan2034">$general.pdf.versionInfo</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-1.5395742,-2.3571711)"
+       id="text7783"
+       style="font-size:16px;line-height:1.05;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;white-space:pre;shape-inside:url(#rect7785);fill:#000000;stroke-width:3.77953;stroke-linecap:round;stroke-linejoin:round"
+       x="-98.273438"
+       y="0"><tspan
+         x="39.439453"
+         y="73.804296"
+         id="tspan2040"><tspan
+           style="font-size:8px"
+           id="tspan2038">$img(layouticon)</tspan></tspan></text>
   </g>
   <g
      inkscape:label="Layer 1"
@@ -161,14 +179,14 @@
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect81706);fill:#000000;fill-opacity:1;stroke:none" />
     <text
        xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,11.738978,20.267151)"
+       transform="matrix(0.26458333,0,0,0.26458333,37.860548,20.267151)"
        id="text135030"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect135032);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="0"
          y="0"
-         id="tspan28925"><tspan
+         id="tspan2044"><tspan
            style="font-weight:bold;font-size:34.6667px;-inkscape-font-specification:'sans-serif, Bold'"
-           id="tspan28923">${title}</tspan></tspan></text>
+           id="tspan2042">${title}</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"

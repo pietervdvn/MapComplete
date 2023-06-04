@@ -23,8 +23,8 @@ export default class DownloadHelper {
     private static cleanFeature(f: Feature): Feature {
         f = {
             type: f.type,
-            geometry: { ...f.geometry },
-            properties: { ...f.properties },
+            geometry: {...f.geometry},
+            properties: {...f.properties},
         }
 
         for (const key in f.properties) {
@@ -48,8 +48,7 @@ export default class DownloadHelper {
 
     public getCleanGeoJson(
         includeMetaData: boolean
-    ): FeatureCollection {
-        const state = this._state
+    ): string | FeatureCollection {
         const featuresPerLayer = this.getCleanGeoJsonPerLayer(includeMetaData)
         const features = [].concat(...Array.from(featuresPerLayer.values()))
         return {
@@ -92,7 +91,7 @@ export default class DownloadHelper {
             throw "Invalid width of height, they should be > 0"
         }
         const unit = options.unit ?? "px"
-        const mapExtent = { left: -180, bottom: -90, right: 180, top: 90 }
+        const mapExtent = {left: -180, bottom: -90, right: 180, top: 90}
         if (options.mapExtent !== undefined) {
             const bbox = options.mapExtent
             mapExtent.left = bbox.minLon
@@ -100,7 +99,7 @@ export default class DownloadHelper {
             mapExtent.bottom = bbox.minLat
             mapExtent.top = bbox.maxLat
         }
-        console.log("Generateing svg, extent:", { mapExtent, width, height })
+        console.log("Generateing svg, extent:", {mapExtent, width, height})
         const elements: string[] = []
 
         for (const layer of Array.from(perLayer.keys())) {
@@ -113,7 +112,7 @@ export default class DownloadHelper {
             const rendering = layerDef?.lineRendering[0]
 
             const converter = geojson2svg({
-                viewportSize: { width, height },
+                viewportSize: {width, height},
                 mapExtent,
                 output: "svg",
                 attributes: [
@@ -133,11 +132,10 @@ export default class DownloadHelper {
             for (const feature of features) {
                 const stroke =
                     rendering?.color?.GetRenderValue(feature.properties)?.txt ?? "#ff0000"
-                const color = Utils.colorAsHex(Utils.color(stroke))
-                feature.properties.stroke = color
+                feature.properties.stroke = Utils.colorAsHex(Utils.color(stroke))
             }
 
-            const groupPaths: string[] = converter.convert({ type: "FeatureCollection", features })
+            const groupPaths: string[] = converter.convert({type: "FeatureCollection", features})
             const group =
                 `    <g id="${layer}" inkscape:groupmode="layer" inkscape:label="${layer}">\n` +
                 groupPaths.map((p) => "        " + p).join("\n") +
@@ -150,8 +148,6 @@ export default class DownloadHelper {
         const header = `<svg width="${w}${unit}" height="${h}${unit}" viewBox="0 0 ${w} ${h}">`
         return header + "\n" + elements.join("\n") + "\n</svg>"
     }
-
-
 
     public getCleanGeoJsonPerLayer(
         includeMetaData: boolean
