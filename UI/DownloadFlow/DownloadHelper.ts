@@ -60,7 +60,10 @@ export default class DownloadHelper {
     /**
      * Converts a geojson to an SVG
      *
-     * const feature = {
+     *
+     * import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource";
+     *
+     * const feature: Feature = {
      *       "type": "Feature",
      *       "properties": {},
      *       "geometry": {
@@ -71,8 +74,10 @@ export default class DownloadHelper {
      *         ]
      *       }
      * }
-     * const perLayer = new Map<string, any[]>([["testlayer", [feature]]])
-     * DownloadHelper.asSvg(perLayer).replace(/\n/g, "") // => `<svg width="1000px" height="1000px" viewBox="0 0 1000 1000">    <g id="testlayer" inkscape:groupmode="layer" inkscape:label="testlayer">        <path d="M0,27.77777777777778 1000,472.22222222222223" style="fill:none;stroke-width:1" stroke="#ff0000"/>    </g></svg>`
+     * const features = new StaticFeatureSource([feature])
+     * const perLayer = new Map<string, any>()
+     * perLayer.set("testlayer", features)
+     * new DownloadHelper(<any> {perLayer}).asSvg().replace(/\n/g, "") // => `<svg width="1000px" height="1000px" viewBox="0 0 1000 1000">    <g id="testlayer" inkscape:groupmode="layer" inkscape:label="testlayer">        <path d="M0,27.77777777777778 1000,472.22222222222223" style="fill:none;stroke-width:1" stroke="#ff0000"/>    </g></svg>`
      */
     public asSvg(
         options?: {
