@@ -27,7 +27,7 @@ export default class AllThemesGui {
             })
             const state = new UserRelatedState(osmConnection)
             const intro = new Combine([
-                new LanguagePicker(Translations.t.index.title.SupportedLanguages(), "").SetClass(
+                new LanguagePicker(Translations.t.index.title.SupportedLanguages(), state.language).SetClass(
                     "flex absolute top-2 right-3"
                 ),
                 new IndexText(),

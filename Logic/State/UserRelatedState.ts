@@ -36,6 +36,7 @@ export default class UserRelatedState {
     public readonly showAllQuestionsAtOnce: UIEventSource<boolean>
     public readonly showTags: UIEventSource<"no" | undefined | "always" | "yes">;
     public readonly homeLocation: FeatureSource
+    public readonly language: UIEventSource<string>
     /**
      * The number of seconds that the GPS-locations are stored in memory.
      * Time in seconds
@@ -83,6 +84,7 @@ export default class UserRelatedState {
                     "Either 'true' or 'false'. If set, all questions will be shown all at once",
             })
         )
+        this.language = this.osmConnection.GetPreference("language")
         this.showTags = <UIEventSource<any>>this.osmConnection.GetPreference("show_tags")
 
         this.mangroveIdentity = new MangroveIdentity(
@@ -181,7 +183,7 @@ export default class UserRelatedState {
     }
 
     private InitializeLanguage(availableLanguages?: string[]) {
-        Locale.language.syncWith(this.osmConnection.GetPreference("language"))
+        this.language.addCallbackAndRunD(language => Locale.language.setData(language))
         Locale.language.addCallback((currentLanguage) => {
             if (Locale.showLinkToWeblate.data) {
                 return true // Disable auto switching as we are in translators mode

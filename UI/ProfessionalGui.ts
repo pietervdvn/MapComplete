@@ -8,6 +8,7 @@ import BaseUIElement from "./BaseUIElement"
 import LanguagePicker from "./LanguagePicker"
 import TableOfContents from "./Base/TableOfContents"
 import LeftIndex from "./Base/LeftIndex"
+import Locale from "./i18n/Locale";
 
 class Snippet extends Toggleable {
     constructor(translations, ...extraContent: BaseUIElement[]) {
@@ -89,8 +90,7 @@ class ProfessionalGui extends LeftIndex {
             }).SetClass("subtle"),
 
             new LanguagePicker(
-                Translations.t.professional.title.SupportedLanguages(),
-                ""
+                Translations.t.professional.title.SupportedLanguages(), Locale.language
             )?.SetClass("mt-4 self-end flex-col"),
         ].map((el) => el?.SetClass("pl-4"))
 
