@@ -30,7 +30,6 @@ import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 import LiveQueryHandler from "../Logic/Web/LiveQueryHandler"
 import {SubtleButton} from "./Base/SubtleButton"
 import Svg from "../Svg"
-import {OpenIdEditor, OpenJosm} from "./BigComponents/CopyrightPanel"
 import Hash from "../Logic/Web/Hash"
 import NoteCommentElement from "./Popup/NoteCommentElement"
 import ImgurUploader from "../Logic/ImageProviders/ImgurUploader"
@@ -74,6 +73,8 @@ import {PointImportButtonViz} from "./Popup/ImportButtons/PointImportButtonViz";
 import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz";
 import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonViz";
 import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte";
+import {OpenJosm} from "./BigComponents/OpenJosm";
+import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte";
 
 class NearbyImageVis implements SpecialVisualization {
     // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
@@ -508,7 +509,7 @@ export default class SpecialVisualizations {
                 constr(state: SpecialVisualizationState): BaseUIElement {
                     return new LanguagePicker(
                         state.layout.language,
-                        Translations.t.general.pickLanguage.Clone()
+                        state.userRelatedState.language
                     )
                 },
             },
@@ -890,7 +891,8 @@ export default class SpecialVisualizations {
                 docs: "Opens the current view in the iD-editor",
                 args: [],
                 constr: (state, feature) => {
-                    return new OpenIdEditor(state.mapProperties, undefined, feature.data.id)
+                    return new SvelteUIElement(OpenIdEditor,
+                        { mapProperties: state.mapProperties, objectId: feature.data.id})
                 },
             },
             {

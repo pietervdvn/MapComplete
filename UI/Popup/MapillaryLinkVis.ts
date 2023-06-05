@@ -1,10 +1,10 @@
-import { GeoOperations } from "../../Logic/GeoOperations"
-import { MapillaryLink } from "../BigComponents/MapillaryLink"
-import { UIEventSource } from "../../Logic/UIEventSource"
-import Loc from "../../Models/Loc"
-import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
-import { Feature } from "geojson"
+import {GeoOperations} from "../../Logic/GeoOperations"
+import {ImmutableStore, UIEventSource} from "../../Logic/UIEventSource"
+import {SpecialVisualization, SpecialVisualizationState} from "../SpecialVisualization"
+import {Feature} from "geojson"
 import BaseUIElement from "../BaseUIElement"
+import SvelteUIElement from "../Base/SvelteUIElement";
+import MapillaryLink from "../BigComponents/MapillaryLink.svelte";
 
 export class MapillaryLinkVis implements SpecialVisualization {
     funcName = "mapillary_link"
@@ -28,12 +28,12 @@ export class MapillaryLinkVis implements SpecialVisualization {
         if (isNaN(zoom)) {
             zoom = 18
         }
-        return new MapillaryLink({
-            locationControl: new UIEventSource<Loc>({
+        return new SvelteUIElement(MapillaryLink, {
+            mapProperties: {
                 lat,
-                lon,
-                zoom,
-            }),
+                lon
+            },
+            zoom: new ImmutableStore(zoom)
         })
     }
 }

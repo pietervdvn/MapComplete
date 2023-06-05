@@ -46,6 +46,9 @@
     import RasterLayerOverview from "./Map/RasterLayerOverview.svelte";
     import IfHidden from "./Base/IfHidden.svelte";
     import {onDestroy} from "svelte";
+    import {OpenJosm} from "./BigComponents/OpenJosm";
+    import MapillaryLink from "./BigComponents/MapillaryLink.svelte";
+    import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte";
 
     export let state: ThemeViewState;
     let layout = state.layout;
@@ -359,7 +362,10 @@
 
             <Tr slot="title4" t={Translations.t.advanced.title}/>
             <div class="flex flex-col m-2" slot="content4">
-                <ToSvelte construct={Hotkeys.generateDocumentationDynamic}></ToSvelte>
+                <OpenIdEditor mapProperties={state.mapProperties}/>
+                <ToSvelte construct={() => new OpenJosm(state.osmConnection, state.mapProperties.bounds).SetClass("w-full")}/>
+                <MapillaryLink mapProperties={state.mapProperties}/>
+                <ToSvelte construct={Hotkeys.generateDocumentationDynamic}/>
 
             </div>
         </TabbedGroup>

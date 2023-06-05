@@ -1,113 +1,28 @@
 import Combine from "../Base/Combine"
 import Translations from "../i18n/Translations"
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import { FixedUiElement } from "../Base/FixedUiElement"
+import {Store} from "../../Logic/UIEventSource"
+import {FixedUiElement} from "../Base/FixedUiElement"
 import licenses from "../../assets/generated/license_info.json"
 import SmallLicense from "../../Models/smallLicense"
-import { Utils } from "../../Utils"
+import {Utils} from "../../Utils"
 import Link from "../Base/Link"
-import { VariableUiElement } from "../Base/VariableUIElement"
+import {VariableUiElement} from "../Base/VariableUIElement"
 import contributors from "../../assets/contributors.json"
 import translators from "../../assets/translators.json"
 import BaseUIElement from "../BaseUIElement"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import Title from "../Base/Title"
-import { SubtleButton } from "../Base/SubtleButton"
-import Svg from "../../Svg"
-import { BBox } from "../../Logic/BBox"
-import Toggle from "../Input/Toggle"
-import { OsmConnection } from "../../Logic/Osm/OsmConnection"
+import {BBox} from "../../Logic/BBox"
+import {OsmConnection} from "../../Logic/Osm/OsmConnection"
 import Constants from "../../Models/Constants"
 import ContributorCount from "../../Logic/ContributorCount"
 import Img from "../Base/Img"
-import { TypedTranslation } from "../i18n/Translation"
+import {TypedTranslation} from "../i18n/Translation"
 import GeoIndexedStore from "../../Logic/FeatureSource/Actors/GeoIndexedStore"
 import {RasterLayerPolygon} from "../../Models/RasterLayers";
 
-export class OpenIdEditor extends VariableUiElement {
-    constructor(
-        mapProperties: { location: Store<{ lon: number; lat: number }>; zoom: Store<number> },
-        iconStyle?: string,
-        objectId?: string
-    ) {
-        const t = Translations.t.general.attribution
-        super(
-            mapProperties.location.map(
-                (location) => {
-                    let elementSelect = ""
-                    if (objectId !== undefined) {
-                        const parts = objectId.split("/")
-                        const tp = parts[0]
-                        if (
-                            parts.length === 2 &&
-                            !isNaN(Number(parts[1])) &&
-                            (tp === "node" || tp === "way" || tp === "relation")
-                        ) {
-                            elementSelect = "&" + tp + "=" + parts[1]
-                        }
-                    }
-                    const idLink = `https://www.openstreetmap.org/edit?editor=id${elementSelect}#map=${
-                        mapProperties.zoom?.data ?? 0
-                    }/${location?.lat ?? 0}/${location?.lon ?? 0}`
-                    return new SubtleButton(Svg.pencil_svg().SetStyle(iconStyle), t.editId, {
-                        url: idLink,
-                        newTab: true,
-                    })
-                },
-                [mapProperties.zoom]
-            )
-        )
-    }
-}
-
-export class OpenJosm extends Combine {
-    constructor(osmConnection: OsmConnection, bounds: Store<BBox>, iconStyle?: string) {
-        const t = Translations.t.general.attribution
-
-        const josmState = new UIEventSource<string>(undefined)
-        // Reset after 15s
-        josmState.stabilized(15000).addCallbackD((_) => josmState.setData(undefined))
-
-        const stateIndication = new VariableUiElement(
-            josmState.map((state) => {
-                if (state === undefined) {
-                    return undefined
-                }
-                state = state.toUpperCase()
-                if (state === "OK") {
-                    return t.josmOpened.SetClass("thanks")
-                }
-                return t.josmNotOpened.SetClass("alert")
-            })
-        )
-
-        const toggle = new Toggle(
-            new SubtleButton(Svg.josm_logo_svg().SetStyle(iconStyle), t.editJosm).onClick(() => {
-                const bbox = bounds.data
-                if (bbox === undefined) {
-                    return
-                }
-                const top = bbox.getNorth()
-                const bottom = bbox.getSouth()
-                const right = bbox.getEast()
-                const left = bbox.getWest()
-                const josmLink = `http://127.0.0.1:8111/load_and_zoom?left=${left}&right=${right}&top=${top}&bottom=${bottom}`
-                Utils.download(josmLink)
-                    .then((answer) => josmState.setData(answer.replace(/\n/g, "").trim()))
-                    .catch((_) => josmState.setData("ERROR"))
-            }),
-            undefined,
-            osmConnection.userDetails.map(
-                (ud) => ud.loggedIn && ud.csCount >= Constants.userJourney.historyLinkVisible
-            )
-        )
-
-        super([stateIndication, toggle])
-    }
-}
-
 /**
- * The attribution panel shown on mobile
+ * The attribution panel in the theme menu.
  */
 export default class CopyrightPanel extends Combine {
     private static LicenseObject = CopyrightPanel.GenerateLicenses()
