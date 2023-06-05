@@ -5,6 +5,10 @@
         "retrying": "La carga de datos ha fallado. Volviéndolo a probar en {count} segundos…",
         "zoomIn": "Amplía para ver o editar los datos"
     },
+    "communityIndex": {
+        "available": "Esta comunidad habla {native}",
+        "intro": "Ponte en contacto con otras personas para conocerlas, aprender de ellas, ..."
+    },
     "delete": {
         "cancel": "Cancelar",
         "cannotBeDeleted": "Esta función no puede ser eliminada",
@@ -41,12 +45,12 @@
     },
     "general": {
         "about": "Edita OpenStreetMap fácilmente y añade puntos sobre un tema concreto",
-        "aboutMapcomplete": "<h3>Aceca de MapComplete</h3><p>Lo utilizamos para añadir información de OpenStreetMap en un <b>único tema. Responde preguntas, y en minutos tus contribuciones estarán disponibles en todos lados. El <b>mantenedor del tema</b> define elementos, preguntas e idiomas para él.</b></p><h3><b>Descubre más</b></h3><p><b>MapComplete siempre <b>ofrece el siguiente paso</b> para aprender más sobre OpenStreetMap.</b></p><ul><li><b>Cuando se embebe en un sitio web, el iframe enlaza a un MapComplete a pantalla completa</b></li><li><b>La versión a pantalla completa ofrece información sobre OpenStreetMpa</b></li><li><b>Se puede ver el trabajo sin iniciar sesión, pero la edición requiere una cuenta de OSM.</b></li><li><b>Si no has iniciado sesión, se te pedirá que lo hagas</b></li><li><b>Una vez que hayas respondido a una simple pregunta, podrás añadir nuevos puntos al mapa</b></li><li><b>Después de un poco, las etiquetas de OSM se mostrarán, después de enlazar a la wiki</b></li></ul><p></p><b><br><p>¿Te fijaste en <b>un problema</b>? Tienes una <b>petición de característica</b>?¿Quieres ayudar a traducir? Ve <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\"> al código fuente</a> o <a href=\"https://github/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker.</a> </p><p>¿Quieres ver <b>tu progreso</b>? Sigue a la cuenta de ediciones en <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p></b>",
+        "aboutMapcomplete": "<h3>Acerca de MapComplete</h3><p>Lo utilizamos para añadir información de OpenStreetMap en un <b>único tema. Responde preguntas, y en minutos tus contribuciones estarán disponibles en todos lados. El <b>mantenedor del tema</b> define elementos, preguntas e idiomas para él.</b></p><h3><b>Descubre más</b></h3><p><b>MapComplete siempre <b>ofrece el siguiente paso</b> para aprender más sobre OpenStreetMap.</b></p><ul><li><b>Cuando se embebe en un sitio web, el iframe enlaza a un MapComplete a pantalla completa</b></li><li><b>La versión a pantalla completa ofrece información sobre OpenStreetMpa</b></li><li><b>Se puede ver el trabajo sin iniciar sesión, pero la edición requiere una cuenta de OSM.</b></li><li><b>Si no has iniciado sesión, se te pedirá que lo hagas</b></li><li><b>Una vez que hayas respondido a una simple pregunta, podrás añadir nuevos puntos al mapa</b></li><li><b>Después de un poco, las etiquetas de OSM se mostrarán, después de enlazar a la wiki</b></li></ul><p></p><b><br><p>¿Te fijaste en <b>un problema</b>? Tienes una <b>petición de característica</b>?¿Quieres ayudar a traducir? Ve <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\"> al código fuente</a> o <a href=\"https://github/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker.</a> </p><p>¿Quieres ver <b>tu progreso</b>? Sigue a la cuenta de ediciones en <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p></b>",
         "add": {
             "addNew": "Añadir {category}",
             "addNewMapLabel": "Haga clic aquí para añadir un nuevo ítem",
             "backToSelect": "Selecciones una categoría distinta",
-            "confirmButton": "Añadir una {category} .<br><div class=\"alert\">Tu contribución es visible para todos</div>",
+            "confirmButton": "Añadir una {category}<br><div class='alert'>Tu contribución es visible para todos</div>",
             "confirmIntro": "<h3>Añadir {title} aquí?</h3>El punto que estás creando <b>lo verá todo el mundo</b>. Sólo añade cosas que realmente existan. Muchas aplicaciones usan estos datos.",
             "disableFilters": "Desactivar todos los filtros",
             "disableFiltersExplanation": "Algunas características pueden estar ocultas por un filtro",
@@ -147,13 +151,13 @@
         "loginWithOpenStreetMap": "Acceder con OpenStreetMap",
         "logout": "Cerrar la sesión",
         "morescreen": {
-            "createYourOwnTheme": "Crea tu propia petición completa de MapComplete desde cero.",
+            "createYourOwnTheme": "Crea tu propia petición completa de MapComplete desde cero",
             "hiddenExplanation": "Estos temas solo son visibles para aquellos con el enlace. Has descubierto {hidden_discovered} de {total_hidden} temas ocultos.",
             "intro": "<h3>Más peticiones</h3>Te gusta captar datos? <br/>Hay más capas disponibles.",
             "noMatchingThemes": "Ningún tema coincide con tus criterios de búsqueda",
             "noSearch": "Mostrar todos los temas",
             "previouslyHiddenTitle": "Temas ocultos previamente visitados",
-            "requestATheme": "Si quieres que te hagamos una petición propia , pídela <a href='https://github.com/pietervdvn/MapComplete/issues' class='underline hover:text-blue-800' target='_blank'>aquí</a>.",
+            "requestATheme": "Si quieres que te hagamos una petición propia , pídela <a href='https://github.com/pietervdvn/MapComplete/issues' class='underline hover:text-blue-800' target='_blank'>aquí</a>",
             "searchForATheme": "Buscar un tema",
             "streetcomplete": "Otra aplicación similar es <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
@@ -164,7 +168,7 @@
         "notValid": "Selecciona un valor válido para continuar",
         "number": "número",
         "oneSkippedQuestion": "Has ignorado una pregunta",
-        "openStreetMapIntro": "<h3>Un mapa abierto</h3><p></p>¿No sería genial si hubiera un solo mapa, que todos pudieran usar y editar libremente?¿Un solo lugar para almacenar toda la información geográfica? Entonces, todos esos sitios web con mapas diferentes, pequeños e incompatibles (que siempre están desactualizados) ya no serían necesarios.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> es ese mapa. Los datos del mapa se pueden utilizar de forma gratuita (con <a href='https://osm.org/copyright' target='_blank'> atribución y publicación de cambios en esos datos</a>). Además de eso, todos pueden agregar libremente nuevos datos y corregir errores. Este sitio web también usa OpenStreetMap. Todos los datos provienen de allí, y tus respuestas y correcciones también se añadirán allí.</p><p>Muchas personas y aplicaciones ya usan OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, pero también los mapas de Facebook, Instagram, Apple y Bing son (en parte) impulsados ​​por OpenStreetMap. Si cambias algo aquí, también se reflejará en esas aplicaciones, en su próxima actualización</p>",
+        "openStreetMapIntro": "<h3>Un mapa abierto</h3><p>¿No sería genial si hubiera un solo mapa, que todos pudieran usar y editar libremente?¿Un solo lugar para almacenar toda la información geográfica? Entonces, todos esos sitios web con mapas diferentes, pequeños e incompatibles (que siempre están desactualizados) ya no serían necesarios.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> es ese mapa. Los datos del mapa se pueden utilizar de forma gratuita (con <a href='https://osm.org/copyright' target='_blank'> atribución y publicación de cambios en esos datos</a>). Además de eso, todos pueden agregar libremente nuevos datos y corregir errores. Este sitio web también usa OpenStreetMap. Todos los datos provienen de allí, y tus respuestas y correcciones también se añadirán allí.</p><p>Muchas personas y aplicaciones ya usan OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, pero también los mapas de Facebook, Instagram, Apple y Bing son (en parte) impulsados por OpenStreetMap. Si cambias algo aquí, también se reflejará en esas aplicaciones, en su próxima actualización</p>",
         "openTheMap": "Abrir el mapa",
         "opening_hours": {
             "closed_permanently": "Cerrado - sin día de apertura conocido",
@@ -203,8 +207,8 @@
         "save": "Guardar",
         "screenToSmall": "Abrir {theme} en una ventana nueva",
         "search": {
-            "error": "Alguna cosa no ha ido bien...",
-            "nothing": "Nada encontrado.",
+            "error": "Alguna cosa no ha ido bien…",
+            "nothing": "Nada encontrado…",
             "search": "Busca una ubicación",
             "searching": "Buscando…"
         },
@@ -255,7 +259,7 @@
             "tuesday": "Martes",
             "wednesday": "Miércoles"
         },
-        "welcomeBack": "Has entrado, bienvenido.",
+        "welcomeBack": "¡Bienvenido de nuevo!",
         "welcomeExplanation": {
             "addNew": "Toque el mapa para añadir un nuevo POI.",
             "general": "En este mapa, puedes ver, editar y agregar <i>puntos de interés</i>. Haz zoom para ver los POI, toca uno para ver o editar la información. Todos los datos proceden y se guardan en OpenStreetMap, que puede reutilizarse libremente."
