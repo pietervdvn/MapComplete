@@ -2,8 +2,7 @@ import Svg from "../../Svg"
 import Combine from "../Base/Combine"
 import Translations from "../i18n/Translations"
 import LayoutConfig, {LayoutInformation} from "../../Models/ThemeConfig/LayoutConfig"
-import {ImmutableStore, Store, UIEventSource} from "../../Logic/UIEventSource"
-import Loc from "../../Models/Loc"
+import {ImmutableStore, Store} from "../../Logic/UIEventSource"
 import UserRelatedState from "../../Logic/State/UserRelatedState"
 import {Utils} from "../../Utils"
 import themeOverview from "../../assets/generated/theme_overview.json"
@@ -19,7 +18,6 @@ export default class MoreScreen extends Combine {
 
     constructor(
         state: UserRelatedState & {
-            locationControl?: UIEventSource<Loc>
             layoutToUse?: LayoutConfig
         },
         onMainScreen: boolean = false
@@ -141,7 +139,7 @@ export default class MoreScreen extends Combine {
     private static createUrlFor(
         layout: { id: string; definition?: string },
         isCustom: boolean,
-        state?: { locationControl?: UIEventSource<{ lat; lon; zoom }>; layoutToUse?: { id } }
+        state?: { layoutToUse?: { id } }
     ): Store<string> {
         if (layout === undefined) {
             return undefined
@@ -154,8 +152,6 @@ export default class MoreScreen extends Combine {
         if (layout.id === state?.layoutToUse?.id) {
             return undefined
         }
-
-        const currentLocation = state?.locationControl
 
         let path = window.location.pathname
         // Path starts with a '/' and contains everything, e.g. '/dir/dir/page.html'
@@ -179,18 +175,6 @@ export default class MoreScreen extends Combine {
             hash = "#" + btoa(JSON.stringify(layout.definition))
         }
 
-        return (
-            currentLocation?.map((currentLocation) => {
-                const params = [
-                    ["z", currentLocation?.zoom],
-                    ["lat", currentLocation?.lat],
-                    ["lon", currentLocation?.lon],
-                ]
-                    .filter((part) => part[1] !== undefined)
-                    .map((part) => part[0] + "=" + part[1])
-                    .join("&")
-                return `${linkPrefix}${params}${hash}`
-            }) ?? new ImmutableStore<string>(`${linkPrefix}`)
-        )
+        return new ImmutableStore<string>(`${linkPrefix}${hash}`)
     }
 }

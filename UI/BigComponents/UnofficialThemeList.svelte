@@ -1,7 +1,6 @@
 <script lang="ts">
     import {OsmConnection} from "../../Logic/Osm/OsmConnection"
     import {Store, Stores, UIEventSource} from "../../Logic/UIEventSource"
-    import type Loc from "../../Models/Loc"
     import {Utils} from "../../Utils"
     import ThemesList from "./ThemesList.svelte"
     import Translations from "../i18n/Translations"
@@ -10,7 +9,6 @@
     export let search: UIEventSource<string>
     export let state: UserRelatedState & {
         osmConnection: OsmConnection
-        locationControl?: UIEventSource<Loc>
     }
     export let onMainScreen: boolean = true
 

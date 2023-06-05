@@ -4,7 +4,6 @@
     import {ImmutableStore, Store, UIEventSource} from "../../Logic/UIEventSource"
     import UserDetails, {OsmConnection} from "../../Logic/Osm/OsmConnection"
     import Constants from "../../Models/Constants"
-    import type Loc from "../../Models/Loc"
     import type {LayoutInformation} from "../../Models/ThemeConfig/LayoutConfig"
     import Tr from "../Base/Tr.svelte"
     import SubtleLink from "../Base/SubtleLink.svelte";
@@ -12,7 +11,7 @@
     export let theme: LayoutInformation
     export let isCustom: boolean = false
     export let userDetails: UIEventSource<UserDetails>
-    export let state: { osmConnection: OsmConnection; locationControl?: UIEventSource<Loc> }
+    export let state: { layoutToUse: {id: string}, osmConnection: OsmConnection }
 
     $: title = new Translation(
         theme.title,
@@ -24,7 +23,7 @@
     function createUrl(
         layout: { id: string; definition?: string },
         isCustom: boolean,
-        state?: { locationControl?: UIEventSource<{ lat; lon; zoom }>; layoutToUse?: { id } }
+        state?: { layoutToUse?: { id } }
     ): Store<string> {
         if (layout === undefined) {
             return undefined
@@ -38,7 +37,6 @@
             return undefined
         }
 
-        const currentLocation = state?.locationControl
 
         let path = window.location.pathname
         // Path starts with a '/' and contains everything, e.g. '/dir/dir/page.html'
@@ -63,19 +61,7 @@
             hash = "#" + btoa(JSON.stringify(layout.definition))
         }
 
-        return (
-            currentLocation?.map((currentLocation) => {
-                const params = [
-                    ["z", currentLocation?.zoom],
-                    ["lat", currentLocation?.lat],
-                    ["lon", currentLocation?.lon],
-                ]
-                    .filter((part) => part[1] !== undefined)
-                    .map((part) => part[0] + "=" + part[1])
-                    .join("&")
-                return `${linkPrefix}${params}${hash}`
-            }) ?? new ImmutableStore<string>(`${linkPrefix}`)
-        )
+        return new ImmutableStore<string>(`${linkPrefix}${hash}`)
     }
 
     let href = createUrl(theme, isCustom, state)

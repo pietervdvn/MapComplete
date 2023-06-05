@@ -3,14 +3,13 @@
 
   import {OsmConnection} from "../../Logic/Osm/OsmConnection"
   import {UIEventSource} from "../../Logic/UIEventSource"
-  import type Loc from "../../Models/Loc"
   import ThemeButton from "./ThemeButton.svelte"
   import {LayoutInformation} from "../../Models/ThemeConfig/LayoutConfig"
   import MoreScreen from "./MoreScreen"
 
   export let search: UIEventSource<string>
   export let themes: LayoutInformation[]
-  export let state: { osmConnection: OsmConnection; locationControl?: UIEventSource<Loc> }
+  export let state: { osmConnection: OsmConnection }
   export let isCustom: boolean = false
   export let onMainScreen: boolean = true
   export let hideThemes: boolean = true

@@ -1,7 +1,6 @@
 <script lang="ts">
     import {OsmConnection} from "../../Logic/Osm/OsmConnection"
     import {UIEventSource} from "../../Logic/UIEventSource"
-    import type Loc from "../../Models/Loc"
     import * as themeOverview from "../../assets/generated/theme_overview.json"
     import {Utils} from "../../Utils"
     import ThemesList from "./ThemesList.svelte"
@@ -10,7 +9,7 @@
     import LoginToggle from "../Base/LoginToggle.svelte";
 
     export let search: UIEventSource<string>
-    export let state: { osmConnection: OsmConnection; locationControl?: UIEventSource<Loc> }
+    export let state: { osmConnection: OsmConnection }
     export let onMainScreen: boolean = true
 
     const prefix = "mapcomplete-hidden-theme-"
