@@ -375,11 +375,6 @@
     "plantDetection": {
         "poweredByPlantnet": "Distribuído por <a href='https://plantnet.org' target='_blank'>plantnet.org</a>"
     },
-    "professional": {
-        "indexPage": {
-            "hook": "Precisa de suporte profissional?"
-        }
-    },
     "reviews": {
         "affiliated_reviewer_warning": "(avaliação de afiliado)",
         "attribution": "As avaliações são fornecidas por <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> e estão disponíveis sob a licença <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",

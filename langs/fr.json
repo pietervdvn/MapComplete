@@ -419,13 +419,6 @@
         "tracking": "Afin d'avoir une idée des personnes qui visitent notre site web, certaines informations techniques sont collectées. Il s'agit notamment du pays depuis lequel vous avez visité la page Web, du site Web qui vous a renvoyé vers MapComplete, du type de votre appareil et de la taille de l'écran. Un cookie est placé sur votre appareil pour indiquer que vous avez visité MapComplete plus tôt dans la journée. Ces données ne sont pas suffisamment détaillées pour vous identifier personnellement. Ces statistiques ne sont accessibles à quiconque que sous forme agrégée et sont <a href='https://pietervdvn.goatcounter.com' target='_blank'>accessible à tout le monde</a>",
         "trackingTitle": "Données statistiques"
     },
-    "professional": {
-        "indexPage": {
-            "button": "Découvrez nos offres",
-            "hook": "Besoin d’un accompagnement professionnel ?",
-            "hookMore": "Nous pouvons aider à la mise en place de relevés, l’importation de données et toute question relative à l’environnement OpenStreetMap"
-        }
-    },
     "reviews": {
         "affiliated_reviewer_warning": "(Avis affilié)",
         "attribution": "Les avis sont fournis par <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> et sont disponibles sous licence <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",

@@ -432,18 +432,6 @@
     "notes": {
         "isClosed": "Tato poznámka je vyřešena"
     },
-    "professional": {
-        "drawbacks": {
-            "unsuitedData": {
-                "li0": "Subjektivní data (například recenze) nejsou pro OpenStreetMap vhodná. MapComplete má však integraci se službou <a href='https://mangrove.reviews/'>Mangrove.reviews</a>, webem s otevřenou licencí pro recenze"
-            }
-        },
-        "indexPage": {
-            "button": "Objevte naše služby",
-            "hook": "Potřebujete profesionální podporu?",
-            "hookMore": "Můžeme vám pomoci s průzkumy, importem dat a poradenstvím v oblasti OpenStreetMap"
-        }
-    },
     "reviews": {
         "affiliated_reviewer_warning": "(Recenze od zaměstnance)",
         "attribution": "Recenze jsou poskytovány službou <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> a jsou k dispozici pod licencí <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>.",

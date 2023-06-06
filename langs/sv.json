@@ -95,28 +95,6 @@
     "multi_apply": {},
     "notes": {},
     "privacy": {},
-    "professional": {
-        "aboutMc": {
-            "internalUse": {},
-            "layers": {},
-            "survey": {}
-        },
-        "aboutOsm": {
-            "aboutOsm": {},
-            "benefits": {},
-            "license": {},
-            "vandalism": {}
-        },
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseGatheringOpenData": {},
-                "usecaseMapDifferentSources": {}
-            },
-            "unsuitedData": {}
-        },
-        "indexPage": {},
-        "services": {}
-    },
     "reviews": {},
     "split": {
         "cancel": "Avbryt",

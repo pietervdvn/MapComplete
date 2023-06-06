@@ -311,49 +311,6 @@
         "tracking": "Ahhoz, hogy némi betekintést nyerünk abba, hogy ki látogatja meg weboldalunkat, néhány technikai adatot gyűjtünk. Ez tartalmazza azt az országot, ahonnan meglátogattad a weboldalt, azt a webhelyet, amely a MapComplete-re irányított, az eszközöd típusát és képernyőméretét. Egy cookie kerül elhelyezésre a készülékeden, amely jelzi, hogy ma meglátogatta a MapComplete-et. Ezek az adatok nem elég részletesek ahhoz, hogy személyesen azonosítsanak. A statisztika csak összesítetten érhető el, és <a href=\"https://pietervdvn.goatcounter.com\" target=\"_blank\">mindenkinek nyilvános</a>",
         "trackingTitle": "Statisztikai adatok"
     },
-    "professional": {
-        "aboutMc": {
-            "internalUse": {},
-            "layers": {},
-            "survey": {}
-        },
-        "aboutOsm": {
-            "aboutOsm": {
-                "intro": "Az OpenStreetMap egy önkéntesek által épített, megosztott, globális adatbázis. Az OpenStreetMaphez minden földrajzi adat hozzáadható, amennyiben <b>a helyszínen ellenőrizhető</b>.<br> Az OpenStreetMap hatalmas és mély adattárrá nőtte ki magát: több ezer objektumkategória adatait tartalmazza. Egy-egy objektumnak is nagyon sok tulajdonsága lehet, amivel rengeteg finom részlet ábrázolható, például:",
-                "li0": "Az utcáknak nem csak egy mértani alakja van a térképen, hanem tartalmazhat adatokat az ott érvényes sebességkorlátozásról, a burkolatáról, arról, hogy van-e rajta közvilágítás, mi a neve, van-e esetleg Wikipédia-szócikk róla, melyik turistautak, kerékpár- és buszútvonalak vezetnek erre és így tovább…",
-                "li1": "Az üzleteknél és egyéb létesítményeknél megadható a nyitvatartási idejük, a telefonszámuk, a weboldalukra mutató link, az általuk elfogadott fizetési módok, az árusított termékek vagy az általuk kínált szolgáltatások stb.",
-                "li2": "A mosdókon lehet információ az akadálymentességükről, az ott megtalálható pelenkázóasztalokról, arról, hogy kell-e fizetni a használatukért et caetera",
-                "li3": "és még sok-sok minden más…",
-                "title": "Mi az OpenStreetMap?"
-            },
-            "benefits": {
-                "li1": "Az adatai minden eddiginél nagyobb közönséghez jutnak el, hiszen ezt használja a Bing Maps (Microsoft), az Apple Maps, a Facebook, az Instagram, a Pokémon Go, az OsmAnd, az Organic Maps, a Maps.me, a Mapbox, a Komoot, szinte minden kerékpáros alkalmazás és még sok más weboldal és applikáció…"
-            },
-            "license": {},
-            "vandalism": {
-                "intro": "Mivel az adatokat bárki szerkesztheti, előfordulhat, hogy rosszindulatú változtatás történik. Ez azonban néhány okból rendkívül ritka:",
-                "li0": "magasak a változtatások technikai akadályai, vagyis nem olyan könnyű a térképet szerkeszteni",
-                "li1": "egy kis rosszindulatú változtatásnak alacsony a hatása, így a vandál számára csekély a jutalom"
-            }
-        },
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseGatheringOpenData": {},
-                "usecaseMapDifferentSources": {}
-            },
-            "unsuitedData": {}
-        },
-        "indexPage": {
-            "button": "Szolgáltatásaink",
-            "hookMore": "Tudunk segítséget nyújtani felmérésekhez, adatimportáláshoz és OpenStreetMap-tanácsadáshoz"
-        },
-        "intro": "A MapComplete fejlesztője szakmai támogatást is kínál. Ez a dokumentum felvázol néhány lehetőséget, megválaszol pár gyakori kérdést és bemutatja a MapComplete határait",
-        "osmTitle": "Mire lehet jó az OpenStreetMap és a MapComplete a szervezeted számára?",
-        "services": {},
-        "text0": "<p>A naprakész földrajzi adatok karbantartása nehéz, hibaveszélyes és költséges.<br>A nehézségeket tetézi, hogy sok szervezet egymástól függetlenül gyűjti ugyanazokat az adatokat, ami párhuzamos erőfeszítéseket, nem szabványosított adatformátumokat és sok hiányos, karbantartatlan adathalmazt eredményez.</p><p>Létezik viszont egy hatalmas közösség, amely rengeteg földrajzi adatot gyűjt egy közös, globális és szabványosított adatbázisba: ez az OpenStreetMap.org.</p>",
-        "text1": "<p>A MapComplete olyan térképszerkesztő alkalmazás, amely megkönnyíti az OpenStreetMap adatokkal való feltöltését.</p>",
-        "title": "Szakmai támogatás a MapComplete segítségével"
-    },
     "reviews": {
         "affiliated_reviewer_warning": "(Kapcsolódó személy véleménye)",
         "attribution": "A véleményeket <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> tárolja, és a <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0 licenc</a> szerint érhetők el.",

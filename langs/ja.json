@@ -172,28 +172,6 @@
     "multi_apply": {},
     "notes": {},
     "privacy": {},
-    "professional": {
-        "aboutMc": {
-            "internalUse": {},
-            "layers": {},
-            "survey": {}
-        },
-        "aboutOsm": {
-            "aboutOsm": {},
-            "benefits": {},
-            "license": {},
-            "vandalism": {}
-        },
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseGatheringOpenData": {},
-                "usecaseMapDifferentSources": {}
-            },
-            "unsuitedData": {}
-        },
-        "indexPage": {},
-        "services": {}
-    },
     "reviews": {
         "affiliated_reviewer_warning": "(関係者のレビュー)",
         "attribution": "レビューは、<a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> and are available under <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>で公開されます。",

@@ -172,28 +172,6 @@
     "multi_apply": {},
     "notes": {},
     "privacy": {},
-    "professional": {
-        "aboutMc": {
-            "internalUse": {},
-            "layers": {},
-            "survey": {}
-        },
-        "aboutOsm": {
-            "aboutOsm": {},
-            "benefits": {},
-            "license": {},
-            "vandalism": {}
-        },
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseGatheringOpenData": {},
-                "usecaseMapDifferentSources": {}
-            },
-            "unsuitedData": {}
-        },
-        "indexPage": {},
-        "services": {}
-    },
     "reviews": {
         "affiliated_reviewer_warning": "(Recensión de afiliado)",
         "name_required": "Requírese un nome para amosar e crear recensións",

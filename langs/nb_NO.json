@@ -417,52 +417,6 @@
         "trackingTitle": "Statistisk data",
         "whileYoureHere": "Bryr du deg om personvern?"
     },
-    "professional": {
-        "aboutMc": {
-            "internalUse": {
-                "title": "Bruk av data i interne prosesser"
-            },
-            "survey": {
-                "title": "Undersøkelsesmuligheter"
-            },
-            "title": "Bruk av MapComplete i din organisasjon"
-        },
-        "aboutOsm": {
-            "aboutOsm": {
-                "li3": "og mye, mye mer …",
-                "title": "Hva er OpenStreetMap?"
-            },
-            "license": {
-                "title": "Lisensen"
-            },
-            "vandalism": {
-                "li0": "Den tekniske barrieren for utføring av endringer er høy",
-                "title": "Hva med vandalisme?"
-            }
-        },
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseMapDifferentSources": {
-                    "title": "Oppretter et kart fra forskjellige kilder"
-                }
-            },
-            "title": "Noen ulemper å ha i minne"
-        },
-        "indexPage": {
-            "button": "Oppdag tjenestetilbudet vårt",
-            "hook": "Trenger du profesjonell støtte?",
-            "hookMore": "Oppsett av spørreundersøkelser, dataimport, og OpenStreetMap-konsulenttjenester"
-        },
-        "osmTitle": "Hva kan OpenStreetMap og MapComplete gjøre for din organisasjon?",
-        "services": {
-            "intro": "Utvikleren av MapComplete kan hjelpe deg med følgende tjenestetilbud:",
-            "li0": "Setter opp et tema skreddersydd for dine behov",
-            "li2": "Opplæring i databidrag med MapComplete",
-            "li3": "Avansert opplæring (f.eks. for GIS-laget) om hvordan man legger til avansert data på OpenStreetMap",
-            "title": "MapComplete-tjenester"
-        },
-        "title": "Profesjonell støtte med MapComplete"
-    },
     "reviews": {
         "affiliated_reviewer_warning": "(Tilknyttet vurdering)",
         "attribution": "Vurderinger er muliggjort av <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> og er tilgjengelige som <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
