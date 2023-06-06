@@ -262,7 +262,7 @@
         "pdf": {
             "attr": "Map data © OpenStreetMap Contributors, reusable under ODbL",
             "attrBackground": "Background layer: {background}",
-            "generatedWith": "Generated with MapComplete.osm.be",
+            "generatedWith": "Generated with MapComplete.osm.be/{layoutid}",
             "versionInfo": "v{version} - generated on {date}"
         },
         "pickLanguage": "Choose a language: ",

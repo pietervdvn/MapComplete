@@ -9,7 +9,6 @@ import {makeAbsolute, parseSVG} from "svg-path-parser"
 import Translations from "../UI/i18n/Translations"
 import {Utils} from "../Utils"
 import Constants from "../Models/Constants"
-import Hash from "../Logic/Web/Hash"
 import ThemeViewState from "../Models/ThemeViewState"
 import {Store, UIEventSource} from "../Logic/UIEventSource"
 
@@ -22,19 +21,17 @@ class SvgToPdfInternals {
     private currentMatrix: Matrix
     private currentMatrixInverted: Matrix
 
-    private readonly _images: Record<string, HTMLImageElement>
-    private readonly _rects: Record<string, SVGRectElement>
     private readonly extractTranslation: (string) => string
+    private readonly page: SvgToPdfPage;
+    private readonly usedRectangles = new Set<string>()
 
     constructor(
         advancedApi: jsPDF,
-        images: Record<string, HTMLImageElement>,
-        rects: Record<string, SVGRectElement>,
+        page: SvgToPdfPage,
         extractTranslation: (string) => string
     ) {
+        this.page = page;
         this.doc = advancedApi
-        this._images = images
-        this._rects = rects
         this.extractTranslation = (s) => extractTranslation(s)?.replace(/&nbsp;/g, " ")
         this.currentMatrix = this.doc.unitMatrix
         this.currentMatrixInverted = this.doc.unitMatrix
@@ -55,7 +52,6 @@ class SvgToPdfInternals {
         if (translateMatch !== null) {
             const dx = Number(translateMatch[1])
             const dy = Number(translateMatch[2])
-            console.log("Translating", dx, dy)
             return SvgToPdfInternals.dummyDoc.Matrix(1, 0, 0, 1, dx, dy)
         }
 
@@ -211,6 +207,7 @@ class SvgToPdfInternals {
 
     public handleElement(element: SVGSVGElement | Element): void {
         const isTransformed = this.setTransform(element)
+        this.page.status.set("Handling element "+element.tagName+" "+element.id)
         try {
             if (element.tagName === "tspan") {
                 if (element.childElementCount == 0) {
@@ -237,7 +234,9 @@ class SvgToPdfInternals {
             }
 
             if (element.tagName === "rect") {
-                this.drawRect(<any>element)
+                if (!this.usedRectangles.has(element.id)) {
+                    this.drawRect(<SVGRectElement>element)
+                }
             }
 
             if (element.tagName === "circle") {
@@ -267,7 +266,6 @@ class SvgToPdfInternals {
                 opacity = Number(css["fill-opacity"])
                 this.doc.setGState(this.doc.GState({opacity: opacity}))
             }
-            console.log("Fill color is:", color, opacity)
 
             this.doc.setFillColor(color)
             this.doc.roundedRect(x, y, width, height, rx, ry, "F")
@@ -308,8 +306,46 @@ class SvgToPdfInternals {
         if (txt == "") {
             return
         }
-        const x = SvgToPdfInternals.attrNumber(tspan, "x")
-        const y = SvgToPdfInternals.attrNumber(tspan, "y")
+        let x = SvgToPdfInternals.attrNumber(tspan, "x")
+        let y = SvgToPdfInternals.attrNumber(tspan, "y")
+        const m = SvgToPdfInternals.extractMatrix(tspan.parentElement)
+        const p = m?.inversed()?.applyToPoint({x, y})
+        x = p?.x ?? x
+        y = p?.y ?? y
+        const imageMatch = txt.match(/^\$img\(([^)]*)\)$/)
+        if (imageMatch) {
+            // We want to draw a special image
+            const [_, key] = imageMatch
+            console.log("Creating image with key", key, "searching rect in", x, y)
+            const rectangle: SVGRectElement = this.page.findSmallestRectContaining(x, y, false)
+            console.log("Got rect", rectangle)
+            let w = SvgToPdfInternals.attrNumber(rectangle, "width")
+            let h = SvgToPdfInternals.attrNumber(rectangle, "height")
+            x = SvgToPdfInternals.attrNumber(rectangle, "x")
+            y = SvgToPdfInternals.attrNumber(rectangle, "y")
+
+            // Actually, dots per mm, not dots per inch ;)
+            let dpi = 60
+            const img = this.page.options.createImage(key, dpi * w + "px", dpi * h + "px")
+
+            const canvas = document.createElement("canvas")
+            const ctx = canvas.getContext("2d")
+
+            canvas.width = w * dpi
+            canvas.height = h * dpi
+            img.style.width = `${w * dpi}px`
+            img.style.height = `${h * dpi}px`
+
+            ctx.drawImage(img, 0, 0, w * dpi, h * dpi)
+            const base64img = canvas.toDataURL("image/png")
+            // Don't ask me why this magicFactor transformation is needed - but it works
+            const magicFactor = 3.8
+            this.addMatrix(this.doc.Matrix(1 / magicFactor, 0, 0, 1 / magicFactor, 0, 0))
+            this.doc.addImage(base64img, "png", x, y, w, h)
+            this.undoTransform()
+            this.usedRectangles.add(rectangle.id)
+            return
+        }
 
         let maxWidth: number = undefined
         let maxHeight: number = undefined
@@ -319,9 +355,11 @@ class SvgToPdfInternals {
             const matched = css["shape-inside"].match(/url\(#([a-zA-Z0-9-]+)\)/)
             if (matched !== null) {
                 const rectId = matched[1]
-                const rect = this._rects[rectId]
-                maxWidth = SvgToPdfInternals.attrNumber(rect, "width", false)
-                maxHeight = SvgToPdfInternals.attrNumber(rect, "height", false)
+                const rect = this.page.rects[rectId]?.rect
+                if (rect) {
+                    maxWidth = SvgToPdfInternals.attrNumber(rect, "width", false)
+                    maxHeight = SvgToPdfInternals.attrNumber(rect, "height", false)
+                }
 
             }
         }
@@ -375,7 +413,6 @@ class SvgToPdfInternals {
             const list = text.match(/\$list\(([a-zA-Z0-9_.-]+)\)/)
             if (list) {
                 const key = list[1]
-                console.log("Generating a list with key" + key)
                 let r = this.extractTranslation("$" + key + "0")
                 let i = 0
                 result += "\n"
@@ -395,13 +432,15 @@ class SvgToPdfInternals {
                 addSpace = true
             }
         }
+        const options = {}
+        if (maxWidth) {
+            options["maxWidth"] = maxWidth
+        }
         this.doc.text(
             result,
             x,
             y,
-            {
-                maxWidth,
-            },
+            options,
             this.currentMatrix
         )
     }
@@ -409,8 +448,8 @@ class SvgToPdfInternals {
     private drawSvgViaCanvas(element: Element): void {
         const x = SvgToPdfInternals.attrNumber(element, "x")
         const y = SvgToPdfInternals.attrNumber(element, "y")
-        const width = SvgToPdfInternals.attrNumber(element, "width")
         const height = SvgToPdfInternals.attrNumber(element, "height")
+        const width = SvgToPdfInternals.attrNumber(element, "width")
         const base64src = SvgToPdfInternals.attr(element, "xlink:href")
         const svgXml = atob(base64src.substring(base64src.indexOf(";base64,") + ";base64,".length))
         const parser = new DOMParser()
@@ -419,7 +458,7 @@ class SvgToPdfInternals {
         const svgWidth = SvgToPdfInternals.attrNumber(svgRoot, "width")
         const svgHeight = SvgToPdfInternals.attrNumber(svgRoot, "height")
 
-        let img = this._images[base64src]
+        let img = this.page.images[base64src]
         // This is an svg image, we use the canvas to convert it to a png
         const canvas = document.createElement("canvas")
         const ctx = canvas.getContext("2d")
@@ -530,25 +569,29 @@ export interface SvgToPdfOptions {
      * Override all the maps to generate with this map
      */
     state?: ThemeViewState,
+
+    createImage(key: string, width: string, height: string): HTMLImageElement
 }
 
 class SvgToPdfPage {
     public readonly _svgRoot: SVGSVGElement
-    private images: Record<string, HTMLImageElement> = {}
-    private rects: Record<string, SVGRectElement> = {}
+    images: Record<string, HTMLImageElement> = {}
+    rects: Record<string, { rect: SVGRectElement, isInDef: boolean }> = {}
+    readonly options: SvgToPdfOptions
     private readonly importedTranslations: Record<string, string> = {}
     private readonly layerTranslations: Record<string, Record<string, any>> = {}
-    private readonly options: SvgToPdfOptions
     /**
      * Small indicator for humans
      * @private
      */
     private readonly _state: UIEventSource<string>
     private _isPrepared = false
+    public readonly status: UIEventSource<string>;
 
-    constructor(page: string, state: UIEventSource<string>, options: SvgToPdfOptions) {
+    constructor(page: string, state: UIEventSource<string>, options: SvgToPdfOptions, status: UIEventSource<string>) {
         this._state = state
         this.options = options
+        this.status = status;
         const parser = new DOMParser()
         const xmlDoc = parser.parseFromString(page, "image/svg+xml")
         this._svgRoot = xmlDoc.getElementsByTagName("svg")[0]
@@ -567,7 +610,6 @@ class SvgToPdfPage {
             (t) => t.textContent
         )
         const translations = new Set<string>()
-        console.log("Extracting translations, contents are", textContents)
         for (const tc of textContents) {
             const parts = tc.split(" ").filter((p) => p.startsWith("$") && p.indexOf("(") < 0)
             for (let part of parts) {
@@ -581,21 +623,19 @@ class SvgToPdfPage {
                 }
             }
         }
-        console.log("Translations keys are", translations)
         return translations
     }
 
     /**
      * Does some preparatory work, most importantly gathering the map specifications into parameter `mapTextSpecs` and substituting translations
-     * @param element
-     * @param mapTextSpecs
      */
     public async prepareElement(
         element: SVGSVGElement | Element,
-        mapTextSpecs: SVGTSpanElement[]
+        mapTextSpecs: SVGTSpanElement[],
+        inDefs: boolean
     ): Promise<void> {
         if (element.tagName === "rect") {
-            this.rects[element.id] = <SVGRectElement>element
+            this.rects[element.id] = {rect: <SVGRectElement>element, isInDef: inDefs}
         }
         if (element.tagName === "image") {
             await this.loadImage(element)
@@ -612,17 +652,13 @@ class SvgToPdfPage {
                     const [, pathRaw, as] = importMatch
                     this.importedTranslations[as] = pathRaw
                 }
+
                 const setPropertyMatch = element.textContent.match(
                     /\$set\(([a-zA-Z-_0-9.?:]+),(.+)\)/
                 )
                 if (setPropertyMatch) {
                     this.options.textSubstitutions[setPropertyMatch[1].trim()] =
                         setPropertyMatch[2].trim()
-                    console.log(
-                        "Setting a property:",
-                        setPropertyMatch,
-                        this.options.textSubstitutions
-                    )
                 }
 
                 if (element.textContent.startsWith("$map(")) {
@@ -638,7 +674,7 @@ class SvgToPdfPage {
             element.tagName === "defs"
         ) {
             for (let child of Array.from(element.children)) {
-                await this.prepareElement(child, mapTextSpecs)
+                await this.prepareElement(child, mapTextSpecs, inDefs || element.tagName === "defs")
             }
         }
     }
@@ -667,16 +703,11 @@ class SvgToPdfPage {
         this._isPrepared = true
         const mapSpecs: SVGTSpanElement[] = []
         for (let child of Array.from(this._svgRoot.children)) {
-            await this.prepareElement(<any>child, mapSpecs)
+            await this.prepareElement(<any>child, mapSpecs, child.tagName === "defs")
         }
 
         for (const mapSpec of mapSpecs) {
-            try {
-
-                await this.prepareMap(mapSpec, !this.options?.disableDataLoading)
-            } catch (e) {
-                console.error("Couldn't prepare a map:", e)
-            }
+            await this.prepareMap(mapSpec, !this.options?.disableDataLoading)
         }
     }
 
@@ -689,12 +720,13 @@ class SvgToPdfPage {
             this.options.beforePage(i)
         }
         const self = this
-        const internal = new SvgToPdfInternals(advancedApi, this.images, this.rects, (key) =>
-                self.extractTranslation(key, language)
+        const internal = new SvgToPdfInternals(advancedApi, this, (key) =>
+            self.extractTranslation(key, language)
         )
         for (let child of Array.from(this._svgRoot.children)) {
             internal.handleElement(<any>child)
         }
+
     }
 
     extractTranslation(text: string, language: string, strict: boolean = false) {
@@ -753,6 +785,33 @@ class SvgToPdfPage {
         }
     }
 
+    public findSmallestRectContaining(x: number, y: number, shouldBeInDefinitionSection: boolean) {
+        let smallestRect: SVGRectElement = undefined
+        let smallestSurface: number = undefined
+        // We iterate over all the rectangles and pick the smallest (by surface area) that contains the upper left point of the tspan
+        for (const id in this.rects) {
+            const {rect, isInDef} = this.rects[id]
+            if (shouldBeInDefinitionSection !== isInDef) {
+                continue
+            }
+            const rx = SvgToPdfInternals.attrNumber(rect, "x")
+            const ry = SvgToPdfInternals.attrNumber(rect, "y")
+            const w = SvgToPdfInternals.attrNumber(rect, "width")
+            const h = SvgToPdfInternals.attrNumber(rect, "height")
+            const inBounds = rx <= x && x <= rx + w && ry <= y && y <= ry + h
+            if (!inBounds) {
+                continue
+            }
+            const surface = w * h
+            if (smallestSurface === undefined || smallestSurface > surface) {
+                smallestSurface = surface
+                smallestRect = rect
+            }
+        }
+
+        return smallestRect
+    }
+
     private loadImage(element: Element | string): Promise<void> {
         const xlink = typeof element === "string" ? element : element.getAttribute("xlink:href")
         let img = document.createElement("img")
@@ -805,27 +864,7 @@ class SvgToPdfPage {
         }
         const spec = textElement.textContent
 
-        let smallestRect: SVGRectElement = undefined
-        let smallestSurface: number = undefined
-        // We iterate over all the rectangles and pick the smallest (by surface area) that contains the upper left point of the tspan
-        for (const id in this.rects) {
-            const rect = this.rects[id]
-            const rx = SvgToPdfInternals.attrNumber(rect, "x")
-            const ry = SvgToPdfInternals.attrNumber(rect, "y")
-            const w = SvgToPdfInternals.attrNumber(rect, "width")
-            const h = SvgToPdfInternals.attrNumber(rect, "height")
-            const inBounds = rx <= x && x <= rx + w && ry <= y && y <= ry + h
-            if (!inBounds) {
-                console.log("Not in bounds: rectangle", id)
-                continue
-            }
-            const surface = w * h
-            if (smallestSurface === undefined || smallestSurface > surface) {
-                smallestSurface = surface
-                smallestRect = rect
-            }
-        }
-
+        const smallestRect = this.findSmallestRectContaining(x, y, false)
         if (smallestRect === undefined) {
             throw (
                 "No rectangle found around " +
@@ -833,7 +872,6 @@ class SvgToPdfPage {
                 ". Draw a rectangle around it, the map will be projected on that one"
             )
         }
-
         const svgImage = document.createElement("image")
         svgImage.setAttribute("x", smallestRect.getAttribute("x"))
         svgImage.setAttribute("y", smallestRect.getAttribute("y"))
@@ -880,16 +918,12 @@ class SvgToPdfPage {
             }
             const zoom = Number(params["zoom"] ?? params["z"] ?? 14)
 
-            Hash.hash.setData(undefined)
-            //  QueryParameters.ClearAll()
             const state = new ThemeViewState(layout)
             state.mapProperties.location.setData({
                 lat: this.options?.overrideLocation?.lat ?? Number(params["lat"] ?? 51.05016),
                 lon: this.options?.overrideLocation?.lon ?? Number(params["lon"] ?? 3.717842),
             })
             state.mapProperties.zoom.setData(zoom)
-
-            console.log("Params are", params, params["layers"] === "none")
 
             const fl = Array.from(state.layerState.filteredLayers.values())
             for (const filteredLayer of fl) {
@@ -937,7 +971,6 @@ class SvgToPdfPage {
                     }
                 }
             }
-            console.log("Creating a map width ", width, height, params.scalingFactor)
             const pngCreator = new PngMapCreator(state, {
                 width: 4 * width,
                 height: 4 * height,
@@ -950,7 +983,7 @@ class SvgToPdfPage {
 
         svgImage.setAttribute("xlink:href", await SvgToPdfPage.blobToBase64(png))
         smallestRect.parentElement.insertBefore(svgImage, smallestRect)
-        await this.prepareElement(svgImage, [])
+        await this.prepareElement(svgImage, [], false)
         const smallestRectCss = SvgToPdfInternals.parseCss(smallestRect.getAttribute("style"))
         smallestRectCss["fill-opacity"] = "0"
         smallestRect.setAttribute(
@@ -964,36 +997,51 @@ class SvgToPdfPage {
     }
 }
 
+export interface PdfTemplateInfo{ pages: string[];
+    description: string | Translation;
+    format: "a3" | "a4" | "a2",
+    orientation: "portrait" | "landscape"
+    isPublic: boolean }
 export class SvgToPdf {
     public static readonly templates: Record<
         "flyer_a4" | "poster_a3" | "poster_a2" | "current_view_a4" | "current_view_a3",
-        { pages: string[]; description: string | Translation; isPublic: boolean }
+        PdfTemplateInfo
     > = {
         flyer_a4: {
             pages: [
                 "./assets/templates/MapComplete-flyer.svg",
                 "./assets/templates/MapComplete-flyer.back.svg",
             ],
+            format: "a4",
+            orientation: "landscape",
             description: Translations.t.flyer.description,
             isPublic: false
         },
         poster_a3: {
+            format: "a3",
+            orientation: "portrait",
             pages: ["./assets/templates/MapComplete-poster-a3.svg"],
             description: "A basic A3 poster (similar to the flyer)",
             isPublic: false
         },
         poster_a2: {
+            format: "a2",
+            orientation: "portrait",
             pages: ["./assets/templates/MapComplete-poster-a2.svg"],
             description: "A basic A2 poster (similar to the flyer); scaled up from the A3 poster",
             isPublic: false
         },
         current_view_a4: {
+            format: "a4",
+            orientation: "landscape",
             pages: ["./assets/templates/CurrentMapWithHeaderA4.svg"],
             description: Translations.t.general.download.pdf.current_view_a4,
 
             isPublic: true
         },
         current_view_a3: {
+            format: "a3",
+            orientation: "portrait",
             pages: ["./assets/templates/CurrentMapWithHeaderA3.svg"],
             description: Translations.t.general.download.pdf.current_view_a3,
             isPublic: true
@@ -1004,7 +1052,7 @@ export class SvgToPdf {
     private readonly _title: string
     private readonly _pages: SvgToPdfPage[]
 
-    constructor(title: string, pages: string[], options) {
+    constructor(title: string, pages: string[], options: SvgToPdfOptions) {
         this._title = title
         options.textSubstitutions = options.textSubstitutions ?? {}
         options.textSubstitutions["mapCount"] = "" +
@@ -1015,7 +1063,7 @@ export class SvgToPdf {
         const state = new UIEventSource<string>("Initializing...")
         this.status = state
         this._status = state
-        this._pages = pages.map((page) => new SvgToPdfPage(page, state, options))
+        this._pages = pages.map((page) => new SvgToPdfPage(page, state, options, this._status))
     }
 
     /**
@@ -1029,15 +1077,13 @@ export class SvgToPdf {
         const mode = width > height ? "landscape" : "portrait"
 
         await this.Prepare(language)
-        console.log("Global prepare done")
 
         this._status.setData("Maps are rendered, building pdf")
-        console.log("Pages are prepared")
 
         const doc = new jsPDF(mode, undefined, [width, height])
         doc.advancedAPI((advancedApi) => {
             for (let i = 0; i < this._pages.length; i++) {
-                console.log("Rendering page", i)
+                this._status.set("Rendering page "+ i)
                 if (i > 0) {
                     const page = this._pages[i]._svgRoot
                     const width = SvgToPdfInternals.attrNumber(page, "width")
@@ -1061,7 +1107,6 @@ export class SvgToPdf {
                 this._pages[i].drawPage(advancedApi, i, language)
             }
         })
-        console.log("Exporting...")
         await doc.save(this._title + "." + language + ".pdf")
     }
 

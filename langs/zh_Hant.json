@@ -191,7 +191,7 @@
         "pdf": {
             "attr": "地圖資料 @ 開放街圖貢獻者，採用 ODbL 授權可再利用",
             "attrBackground": "背景圖層：{background}",
-            "generatedWith": "用 MapComplete.osm.be 產生的",
+            "generatedWith": "用 MapComplete.osm.be/{layoutid} 產生的",
             "versionInfo": "v{version} - {date} 產生的"
         },
         "pickLanguage": "選擇語言： ",

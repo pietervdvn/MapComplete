@@ -87,7 +87,7 @@
             <div class="flex flex-col">
                 {#each Object.keys(SvgToPdf.templates) as key}
                     {#if SvgToPdf.templates[key].isPublic}
-                        <DownloadPdf {state} templateName={key}></DownloadPdf>
+                        <DownloadPdf {state} templateName={key}/>
                     {/if}
                 {/each}
             </div>

@@ -179,7 +179,7 @@
         "pdf": {
             "attr": "Datos cartográficos © colaboradores de OpenStreetMap, reutilizables en virtud de la ODbL",
             "attrBackground": "Capa de fondo: {background}",
-            "generatedWith": "Generado como MapComplete.osm.be",
+            "generatedWith": "Generado como MapComplete.osm.be/{layoutid}",
             "versionInfo": "v{version} - generado el {date}"
         },
         "pickLanguage": "Escoge idioma: ",

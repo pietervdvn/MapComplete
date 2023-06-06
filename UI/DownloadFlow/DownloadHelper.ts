@@ -48,7 +48,7 @@ export default class DownloadHelper {
 
     public getCleanGeoJson(
         includeMetaData: boolean
-    ): string | FeatureCollection {
+    ): FeatureCollection {
         const featuresPerLayer = this.getCleanGeoJsonPerLayer(includeMetaData)
         const features = [].concat(...Array.from(featuresPerLayer.values()))
         return {
@@ -179,4 +179,24 @@ export default class DownloadHelper {
         return featuresPerLayer
     }
 
+    /**
+     * Creates an image for the given key.
+     * @param key
+     * @param width (in mm)
+     * @param height (in mm)
+     */
+    createImage(key: string, width: string, height: string): HTMLImageElement {
+        const img = document.createElement("img")
+        const sources = {
+            "layouticon":this._state.layout.icon
+        }
+        img.src = sources[key]
+        if(!img.src){
+            throw "Invalid key for 'createImage': "+key+"; try one of: "+Object.keys(sources).join(", ")
+        }
+        img.style.width = width
+        img.style.height = height
+        console.log("Fetching an image with src", img.src)
+        return img;
+    }
 }

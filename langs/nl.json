@@ -241,7 +241,7 @@
         "pdf": {
             "attr": "Kaartgegevens © OpenStreetMap-bijdragers, herbruikbaar volgens ODbL",
             "attrBackground": "Achtergrondlaag: {background}",
-            "generatedWith": "Gemaakt met MapComplete.osm.be",
+            "generatedWith": "Gemaakt met MapComplete.osm.be/{layoutid}",
             "versionInfo": "v{version} - gemaakt op {date}"
         },
         "pickLanguage": "Kies je taal: ",

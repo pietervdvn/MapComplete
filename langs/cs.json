@@ -238,7 +238,7 @@
         "pdf": {
             "attr": "Mapová data © OpenStreetMap Contributors, opakovaně použitelná pod ODbL",
             "attrBackground": "Vrstva pozadí: {background}",
-            "generatedWith": "Generováno pomocí MapComplete.osm.be",
+            "generatedWith": "Generováno pomocí MapComplete.osm.be/{layoutid}",
             "versionInfo": "v{version} - vygenerováno {date}"
         },
         "pickLanguage": "Vyberte si jazyk: ",

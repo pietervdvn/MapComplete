@@ -179,7 +179,7 @@
         "pdf": {
             "attr": "Kortdata © OpenStreetMap Contributors, bearbejdelser under ODbL",
             "attrBackground": "Baggrundslag: {background}",
-            "generatedWith": "Genereret med MapComplete.osm.be",
+            "generatedWith": "Genereret med MapComplete.osm.be/{layoutid}",
             "versionInfo": "v{version} - genereret den {date}"
         },
         "pickLanguage": "Vælg et sprog: ",

@@ -202,7 +202,7 @@
         "pdf": {
             "attr": "Données par © les contributeurs &amp; contributrices OpenStreetMap sous licence libre ODbL",
             "attrBackground": "Couche d’arrière plan : {background}",
-            "generatedWith": "Généré à l’aide de MapComplete.osm.be",
+            "generatedWith": "Généré à l’aide de MapComplete.osm.be/{layoutid}",
             "versionInfo": "v{version} - générée le {date}"
         },
         "pickLanguage": "Choisir la langue : ",

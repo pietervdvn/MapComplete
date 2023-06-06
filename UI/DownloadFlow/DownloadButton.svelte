@@ -16,7 +16,7 @@
 
     export let extension: string
     export let mimetype: string
-    export let construct: (geojsonCleaned: FeatureCollection, title: string) => (Blob | string) | Promise<void>
+    export let construct: (geojsonCleaned: FeatureCollection, title: string, status?: UIEventSource<string>) => (Blob | string) | Promise<void>
     export let mainText: Translation
     export let helperText: Translation
     export let metaIsIncluded: boolean
@@ -43,7 +43,7 @@
             const name = state.layout.id
 
             const title = `MapComplete_${name}_export_${new Date().toISOString().substr(0, 19)}.${extension}`
-            const promise = construct(geojson, title)
+            const promise = construct(geojson, title, status)
             let data: Blob | string
             if (typeof promise === "string") {
                 data = promise
@@ -88,7 +88,7 @@
 {:else}
     <button class="flex w-full" on:click={clicked}>
         <slot name="image">
-            <ArrowDownTrayIcon class="w-12 h-12 mr-2"/>
+            <ArrowDownTrayIcon class="w-12 h-12 mr-2 shrink-0"/>
         </slot>
         <span class="flex flex-col items-start">
             <Tr t={mainText}/>

@@ -206,7 +206,7 @@
         "pdf": {
             "attr": "Kartdata © OpenStreetMap-bidragsytere, gjenbrukbart med ODbL-lisens",
             "attrBackground": "Bakgrunnslag: {background}",
-            "generatedWith": "Generert av MapComplete.osm.be",
+            "generatedWith": "Generert av MapComplete.osm.be/{layoutid}",
             "versionInfo": "v{version}. Generert {date}"
         },
         "pickLanguage": "Velg språk: ",

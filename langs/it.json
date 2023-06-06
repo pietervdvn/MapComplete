@@ -180,7 +180,7 @@
         "pdf": {
             "attr": "Dati della mappa © OpenStreetMap Contributors, riutilizzabile con licenza ODbL",
             "attrBackground": "Livello di sfondo: {background}",
-            "generatedWith": "Generato con MapComplete.osm.be",
+            "generatedWith": "Generato con MapComplete.osm.be/{layoutid}",
             "versionInfo": "v{version} - generato il {date}"
         },
         "pickLanguage": "Scegli una lingua: ",

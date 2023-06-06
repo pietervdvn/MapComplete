@@ -173,7 +173,7 @@
         "pdf": {
             "attr": "Térképadatok: © OpenStreetMap-közreműködők; az ODbL licenc szerint újrafelhasználható",
             "attrBackground": "Háttérréteg: {background}",
-            "generatedWith": "Létrehozva a MapComplete.be segítségével",
+            "generatedWith": "Létrehozva a MapComplete.osm.be/{layoutid} segítségével",
             "versionInfo": "{version} verzió – létrehozva: {date}"
         },
         "pickLanguage": "Nyelv kiválasztása: ",

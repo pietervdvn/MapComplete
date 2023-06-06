@@ -43,12 +43,13 @@ export class PngMapCreator {
             const l = settings.location.data
 
             document.getElementById(freeComponentId).appendChild(div)
+            const pixelRatio = 4
             const mapElem = new MlMap({
                 container: div.id,
                 style: AvailableRasterLayers.maplibre.properties.url,
                 center: [l.lon, l.lat],
                 zoom: settings.zoom.data,
-                pixelRatio: 6
+                pixelRatio
             });
 
             const map = new UIEventSource<MlMap>(mapElem)
@@ -71,11 +72,11 @@ export class PngMapCreator {
                 await Utils.waitFor(250)
             }
             // Some extra buffer...
+            setState("One second pause to make sure all images are loaded...")
             await Utils.waitFor(1000)
-            setState("Exporting png")
-            console.log("Loading for", this._state.layout.id, "is done")
-            const png = await mla.exportAsPng(6)
-            return png
+            const dpiFactor = 1
+            setState("Exporting png (" + this._options.width + "mm * " + this._options.height + "mm , dpiFactor:" + dpiFactor + ", maplibre-canvas-pixelratio: " + pixelRatio + ")")
+            return await mla.exportAsPng(dpiFactor)
         } finally {
             div.parentElement.removeChild(div)
         }

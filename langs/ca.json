@@ -238,7 +238,7 @@
         "pdf": {
             "attr": "Dades del mapa © Contribuïdors d'OpenStreetMap, reutilitzable sota ODbL",
             "attrBackground": "Capa de fons: {background}",
-            "generatedWith": "Generat amb MapComplete.osm.be",
+            "generatedWith": "Generat amb MapComplete.osm.be/{layoutid}",
             "versionInfo": "v{version} - generat el {date}"
         },
         "pickLanguage": "Tria idioma: ",
