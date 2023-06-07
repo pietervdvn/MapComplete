@@ -280,7 +280,7 @@
         <div class="flex flex-wrap-reverse md:flex-nowrap">
 
             <BackButton on:click={() => selectedPreset = undefined} clss="w-full">
-                <Tr slot="message" t={t.backToSelect}/>
+                <Tr t={t.backToSelect}/>
             </BackButton>
 
             <NextButton on:click={confirm} clss="primary w-full">
