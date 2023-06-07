@@ -1,15 +1,15 @@
-import { QueryParameters } from "../Web/QueryParameters"
-import { BBox } from "../BBox"
+import {QueryParameters} from "../Web/QueryParameters"
+import {BBox} from "../BBox"
 import Constants from "../../Models/Constants"
-import { GeoLocationPointProperties, GeoLocationState } from "../State/GeoLocationState"
-import { UIEventSource } from "../UIEventSource"
-import { Feature, LineString, Point } from "geojson"
-import { FeatureSource, WritableFeatureSource } from "../FeatureSource/FeatureSource"
-import { LocalStorageSource } from "../Web/LocalStorageSource"
-import { GeoOperations } from "../GeoOperations"
-import { OsmTags } from "../../Models/OsmFeature"
+import {GeoLocationState} from "../State/GeoLocationState"
+import {UIEventSource} from "../UIEventSource"
+import {Feature, LineString, Point} from "geojson"
+import {FeatureSource, WritableFeatureSource} from "../FeatureSource/FeatureSource"
+import {LocalStorageSource} from "../Web/LocalStorageSource"
+import {GeoOperations} from "../GeoOperations"
+import {OsmTags} from "../../Models/OsmFeature"
 import StaticFeatureSource from "../FeatureSource/Sources/StaticFeatureSource"
-import { MapProperties } from "../../Models/MapProperties"
+import {MapProperties} from "../../Models/MapProperties"
 
 /**
  * The geolocation-handler takes a map-location and a geolocation state.
@@ -147,31 +147,35 @@ export default class GeoLocationHandler {
     private CopyGeolocationIntoMapstate() {
         const features: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
         this.currentUserLocation = new StaticFeatureSource(features)
-        // For some weird reason, the 'Object.keys' method doesn't work for the 'location: GeolocationCoordinates'-object and will thus not copy all the properties when using {...location}
-        // As such, they are copied here
         const keysToCopy = ["speed", "accuracy", "altitude", "altitudeAccuracy", "heading"]
+        let i = 0
         this.geolocationState.currentGPSLocation.addCallbackAndRun((location) => {
             if (location === undefined) {
                 return
             }
 
+            const properties =  {
+                id: "gps-"+i,
+                "user:location": "yes",
+                date: new Date().toISOString(),
+            }
+            i++
+
+            for (const k in keysToCopy) {
+                // For some weird reason, the 'Object.keys' method doesn't work for the 'location: GeolocationCoordinates'-object and will thus not copy all the properties when using {...location}
+                // As such, they are copied here
+                if(location[k]){
+                    properties[k] = location[k]
+                }
+            }
+
             const feature = <Feature>{
                 type: "Feature",
-                properties: <GeoLocationPointProperties>{
-                    id: "gps",
-                    "user:location": "yes",
-                    date: new Date().toISOString(),
-                    ...location,
-                },
+                properties,
                 geometry: {
                     type: "Point",
                     coordinates: [location.longitude, location.latitude],
                 },
-            }
-            for (const key of keysToCopy) {
-                if (location[key] !== null) {
-                    feature.properties[key] = location[key]
-                }
             }
 
             features.setData([feature])

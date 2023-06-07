@@ -32,6 +32,9 @@ export class GeoLocationState {
      */
     public readonly allowMoving: UIEventSource<boolean> = new UIEventSource<boolean>(true)
 
+    /**
+     * The latest GeoLocationCoordinates, as given by the WebAPI
+     */
     public readonly currentGPSLocation: UIEventSource<GeolocationCoordinates | undefined> =
         new UIEventSource<GeolocationCoordinates | undefined>(undefined)
 
