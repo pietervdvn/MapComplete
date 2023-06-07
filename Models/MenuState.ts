@@ -55,7 +55,6 @@ export class MenuState {
             [],
             (str) => MenuState._menuviewTabs.indexOf(<any>str)
         )
-        this.menuViewTab.addCallbackAndRunD(s => console.trace("Menu view tab state is", s, this.menuIsOpened.data))
         this.menuIsOpened.addCallbackAndRun((isOpen) => {
             if (!isOpen) {
                 this.highlightedUserSetting.setData(undefined)

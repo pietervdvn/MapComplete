@@ -45,7 +45,7 @@ import {EliCategory} from "./RasterLayerProperties"
 import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
 import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
 import BBoxFeatureSource from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
-import NavigatorBackButtonHandler from "../Logic/Web/NavigatorBackButtonHandler";
+import ThemeViewStateHashActor from "../Logic/Web/ThemeViewStateHashActor";
 
 /**
  *
@@ -545,7 +545,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 }
             })
         }
-        new NavigatorBackButtonHandler(this)
+        new ThemeViewStateHashActor(this)
         new MetaTagging(this)
         new TitleHandler(this.selectedElement, this.selectedLayer, this.featureProperties, this)
         new ChangeToElementsActor(this.changes, this.featureProperties)

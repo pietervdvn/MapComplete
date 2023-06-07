@@ -1,11 +1,13 @@
 import ThemeViewState from "../../Models/ThemeViewState";
 import Hash from "./Hash";
 
-export default class NavigatorBackButtonHandler {
+export default class ThemeViewStateHashActor {
     private readonly _state: ThemeViewState;
 
     /**
-     * Handles the 'back'-button events.
+     * Converts the hash to the appropriate themeview state and, vice versa, sets the hash.
+     *
+     * As the navigator-back-button changes the hash first, this class thus also handles the 'back'-button events.
      *
      * Note that there is no "real" way to intercept the back button, we can only detect the removal of the hash.
      * As such, we use a change in the hash to close the appropriate windows
@@ -15,9 +17,20 @@ export default class NavigatorBackButtonHandler {
     constructor(state: ThemeViewState) {
         this._state = state;
 
+        // First of all, try to recover the selected element
+        if (Hash.hash.data) {
+            const hash = Hash.hash.data
+            this.loadStateFromHash(hash)
+            Hash.hash.setData(hash) // reapply the previous hash
+            state.indexedFeatures.featuresById.addCallbackAndRunD(_ => {
+                let unregister = this.loadSelectedElementFromHash(hash);
+                // once that we have found a matching element, we can be sure the indexedFeaturesource was popuplated and that the job is done
+                return unregister
+            })
+        }
 
+        // Register a hash change listener to correctly handle the back button
         Hash.hash.addCallback(hash => {
-            console.log("Current hash", hash)
             if (!!hash) {
                 // There is still a hash
                 // We _only_ have to (at most) close the overlays in this case
@@ -31,22 +44,18 @@ export default class NavigatorBackButtonHandler {
             }
         })
 
-        state.selectedElement.addCallbackAndRun(_ => this.setHash())
+        // At last, register callbacks on the state to update the hash when they change.
+        // Note: these should use 'addCallback', not 'addCallbackAndRun'
+        state.selectedElement.addCallback(_ => this.setHash())
         state.guistate.allToggles.forEach(({toggle, submenu}) => {
             submenu?.addCallback(_ => this.setHash())
             toggle.addCallback(_ => this.setHash());
         })
 
-        if (Hash.hash.data) {
-            const hash = Hash.hash.data
-            this.loadStateFromHash(hash)
-            Hash.hash.setData(hash) // reapply the previous hash
-            state.indexedFeatures.featuresById.addCallbackAndRunD(_ => {
-                let unregister = this.loadSelectedElementFromHash(hash);
-                // once that we have found a matching element, we can be sure the indexedFeaturesource was popuplated and that the job is done
-                return unregister
-            })
-        }
+        // When all is done, set the hash. This must happen last to give the code above correct info
+        this.setHash()
+
+
     }
 
     /**
