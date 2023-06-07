@@ -310,7 +310,7 @@ export default class SpecialVisualizations {
 
         if (template["type"] !== undefined) {
             console.trace(
-                "Got a non-expanded template while constructing the specification:",
+                "Got a non-expanded template while constructing the specification, it still has a 'special-key':",
                 template
             )
             throw "Got a non-expanded template while constructing the specification"

@@ -3,6 +3,7 @@ import DetermineLayout from "./Logic/DetermineLayout"
 import ThemeViewState from "./Models/ThemeViewState"
 import SvelteUIElement from "./UI/Base/SvelteUIElement"
 import ThemeViewGUI from "./UI/ThemeViewGUI.svelte"
+import {FixedUiElement} from "./UI/Base/FixedUiElement";
 
 // Miscelleanous
 Utils.DisableLongPresses()
@@ -16,4 +17,5 @@ DetermineLayout.GetLayout()
     })
     .catch((err) => {
         console.error("Error while initializing: ", err, err.stack)
+        new FixedUiElement(err).SetClass("block alert").AttachTo("maindiv")
     })
