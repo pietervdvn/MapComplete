@@ -31,7 +31,7 @@ export default class PublicHolidayInput extends InputElement<string> {
             { shown: Translations.t.general.opening_hours.ph_closed.Clone(), value: "off" },
             { shown: Translations.t.general.opening_hours.ph_open_as_usual.Clone(), value: "open" },
             { shown: Translations.t.general.opening_hours.ph_open.Clone(), value: " " },
-        ]).SetClass("inline-block")
+        ]).SetClass("inline-block w-full")
         /*
          * Either "" (unknown), " " (opened) or "off" (closed)
          * */
