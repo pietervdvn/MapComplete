@@ -71,7 +71,7 @@
 </script>
 
 <div class="flex flex-col w-full">
-    <h2>
+    <h2 class="mr-12"> <!-- The title gets a big right margin to give place to the 'close'-button, see https://github.com/pietervdvn/MapComplete/issues/1445 -->
         <Tr t={Translations.t.general.add.intro}/>
     </h2>
     

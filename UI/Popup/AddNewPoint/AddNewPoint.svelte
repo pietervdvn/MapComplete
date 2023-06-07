@@ -207,7 +207,7 @@
 
     {:else if !confirmedCategory  }
         <!-- Second, confirm the category -->
-        <h2>
+        <h2 class="mr-12">
             <Tr t={Translations.t.general.add.confirmTitle.Subs({title: selectedPreset.preset.title})}/>
         </h2>
 
@@ -253,7 +253,7 @@
         </div>
 
     {:else if _globalFilter?.length > 0 && _globalFilter?.length > checkedOfGlobalFilters}
-        <Tr t={_globalFilter[checkedOfGlobalFilters].onNewPoint?.safetyCheck}/>
+        <Tr t={_globalFilter[checkedOfGlobalFilters].onNewPoint?.safetyCheck} cls="mx-12"/>
         <SubtleButton on:click={() => {checkedOfGlobalFilters = checkedOfGlobalFilters + 1}}>
             <img slot="image" src={_globalFilter[checkedOfGlobalFilters].onNewPoint?.icon ?? "./assets/svg/confirm.svg"}
                  class="w-12 h-12">
