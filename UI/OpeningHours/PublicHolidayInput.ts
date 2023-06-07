@@ -59,7 +59,7 @@ export default class PublicHolidayInput extends InputElement<string> {
 
         this.SetupDataSync(mode, start.GetValue(), end.GetValue())
 
-        return new Combine([dropdown, askHours]).ConstructElement()
+        return new Combine([dropdown, askHours]).SetClass("w-full flex").ConstructElement()
     }
 
     private SetupDataSync(
