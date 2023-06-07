@@ -19,6 +19,7 @@
     import TagRenderingMappingInput from "./TagRenderingMappingInput.svelte";
     import {Translation} from "../../i18n/Translation";
     import Constants from "../../../Models/Constants";
+    import {TagUtils} from "../../../Logic/Tags/TagUtils";
 
     export let config: TagRenderingConfig;
     export let tags: UIEventSource<Record<string, string>>;
@@ -44,7 +45,9 @@
             checkedMappings = [...config.mappings.map(_ => false), false /*One element extra in case a freeform value is added*/];
         }
         if (config.freeform?.key) {
-            freeformInput.setData(tags.data[config.freeform.key]);
+            if(!config.multiAnswer){ // Somehow, setting multianswer freeform values is broken if this is not set
+                freeformInput.setData(tags.data[config.freeform.key]);
+            }
         } else {
             freeformInput.setData(undefined)
         }
@@ -166,7 +169,7 @@
                     <label class="flex">
                         <input type="radio" bind:group={selectedMapping} name={"mappings-radio-"+config.id}
                                value={config.mappings?.length}>
-                        <FreeformInput {config} {tags} feature={selectedElement} value={freeformInput}
+                        <FreeformInput {config} {tags} {feedback} feature={selectedElement} value={freeformInput}
                                        on:selected={() => selectedMapping = config.mappings?.length }/>
                     </label>
                 {/if}
