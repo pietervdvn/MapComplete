@@ -376,16 +376,23 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         map.addSource(background.id, MapLibreAdaptor.prepareWmsSource(background))
 
         map.resize()
+
+        let addLayerBeforeId = "aeroway_fill"// this is the first non-landuse item in the stylesheet, we add the raster layer before the roads but above the landuse
+        if(background.category === "osmbasedmap" || background.category === "map"){
+            // The background layer is already an OSM-based map or another map, so we don't want anything from the baselayer
+            let layers = map.getStyle().layers
+            // THe last index of the maptiler layers
+            let lastIndex = layers.findIndex(layer => layer.id === "housenumber")
+            addLayerBeforeId = layers[lastIndex + 1]?.id ?? "housenumber"
+        }
+
         map.addLayer(
             {
                 id: background.id,
                 type: "raster",
                 source: background.id,
                 paint: {},
-            },
-            background.category === "osmbasedmap" || background.category === "map"
-                ? undefined
-                : "aeroway_fill"
+            },addLayerBeforeId
         )
         await this.awaitStyleIsLoaded()
         this.removeCurrentLayer(map)
