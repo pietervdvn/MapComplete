@@ -17,11 +17,12 @@
     export let bounds: UIEventSource<BBox>;
     export let selectedElement: UIEventSource<Feature> | undefined = undefined;
     export let selectedLayer: UIEventSource<LayerConfig> | undefined = undefined;
+    
+    export let clearAfterView: boolean = true
 
     let searchContents: string = ""
     export let triggerSearch: UIEventSource<any> = new UIEventSource<any>(undefined)
     onDestroy(triggerSearch.addCallback(_ => {
-        console.log("TriggerRun pinged")
         performSearch()
     }))
 
@@ -76,7 +77,9 @@
 
                 }
             }
-            searchContents = ""
+            if(clearAfterView){
+                searchContents = ""
+            }
             dispatch("searchIsValid", false)
             dispatch("searchCompleted")
         } catch (e) {
