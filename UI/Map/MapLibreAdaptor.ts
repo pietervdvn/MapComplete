@@ -49,7 +49,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
     constructor(maplibreMap: Store<MLMap>, state?: Partial<MapProperties>) {
         this._maplibreMap = maplibreMap
 
-        this.location = state?.location ?? new UIEventSource({lon: 0, lat: 0})
+        this.location = state?.location ?? new UIEventSource(undefined)
         if (this.location.data) {
             // The MapLibre adaptor updates the element in the location and then pings them
             // Often, code setting this up doesn't expect the object they pass in to be changed, so we create a copy
@@ -170,6 +170,18 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
     }
 
+    public static setDpi(drawOn: HTMLCanvasElement, ctx: CanvasRenderingContext2D, dpiFactor: number) {
+        drawOn.style.width = drawOn.style.width || drawOn.width + "px"
+        drawOn.style.height = drawOn.style.height || drawOn.height + "px"
+
+
+        // Resize canvas and scale future draws.
+        drawOn.width = Math.ceil(drawOn.width * dpiFactor)
+        drawOn.height = Math.ceil(drawOn.height * dpiFactor)
+        ctx.scale(dpiFactor, dpiFactor)
+        console.log("Resizing canvas with setDPI:", drawOn.width, drawOn.height, drawOn.style.width, drawOn.style.height)
+    }
+
     /**
      * Prepares an ELI-URL to be compatible with mapbox
      */
@@ -197,18 +209,6 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         }
 
         return url
-    }
-
-    public static setDpi(drawOn: HTMLCanvasElement, ctx: CanvasRenderingContext2D, dpiFactor: number) {
-        drawOn.style.width = drawOn.style.width || drawOn.width + "px"
-        drawOn.style.height = drawOn.style.height || drawOn.height + "px"
-
-
-        // Resize canvas and scale future draws.
-        drawOn.width = Math.ceil(drawOn.width * dpiFactor)
-        drawOn.height = Math.ceil(drawOn.height * dpiFactor)
-        ctx.scale(dpiFactor, dpiFactor)
-        console.log("Resizing canvas with setDPI:", drawOn.width, drawOn.height, drawOn.style.width, drawOn.style.height)
     }
 
     public async exportAsPng(dpiFactor: number): Promise<Blob> {
@@ -288,7 +288,13 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         if (!map) {
             return
         }
-        if (!isSetup || this.location.data === undefined) {
+        const {lng, lat} = map.getCenter()
+        if (lng === 0 && lat === 0) {
+            return
+        }
+        if (this.location.data === undefined) {
+            this.location.setData({lon: lng, lat})
+        } else if (!isSetup) {
             const dt = this.location.data
             dt.lon = map.getCenter().lng
             dt.lat = map.getCenter().lat
@@ -378,7 +384,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
         map.resize()
 
         let addLayerBeforeId = "aeroway_fill"// this is the first non-landuse item in the stylesheet, we add the raster layer before the roads but above the landuse
-        if(background.category === "osmbasedmap" || background.category === "map"){
+        if (background.category === "osmbasedmap" || background.category === "map") {
             // The background layer is already an OSM-based map or another map, so we don't want anything from the baselayer
             let layers = map.getStyle().layers
             // THe last index of the maptiler layers
@@ -392,7 +398,7 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
                 type: "raster",
                 source: background.id,
                 paint: {},
-            },addLayerBeforeId
+            }, addLayerBeforeId
         )
         await this.awaitStyleIsLoaded()
         this.removeCurrentLayer(map)
