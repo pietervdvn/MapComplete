@@ -44,8 +44,8 @@ import {Utils} from "../Utils"
 import {EliCategory} from "./RasterLayerProperties"
 import BackgroundLayerResetter from "../Logic/Actors/BackgroundLayerResetter"
 import SaveFeatureSourceToLocalStorage from "../Logic/FeatureSource/Actors/SaveFeatureSourceToLocalStorage"
-import Hash from "../Logic/Web/Hash"
 import BBoxFeatureSource from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
+import NavigatorBackButtonHandler from "../Logic/Web/NavigatorBackButtonHandler";
 
 /**
  *
@@ -524,43 +524,6 @@ export default class ThemeViewState implements SpecialVisualizationState {
      */
     private initActors() {
         {
-            // Set the hash based on the selected element...
-            this.selectedElement.addCallback((selected) => {
-                Hash.hash.setData(selected?.properties?.id)
-            })
-            // ... search and select an element based on the hash
-            Hash.hash.mapD(
-                (hash) => {
-                    if (this.selectedElement.data?.properties?.id === hash) {
-                        // We already have the correct hash
-                        return
-                    }
-
-                    const found = this.indexedFeatures.featuresById.data?.get(hash)
-                    if (!found) {
-                        return
-                    }
-                    if (found.properties.id === "last_click") {
-                        return
-                    }
-                    const layer = this.layout.getMatchingLayer(found.properties)
-                    console.log(
-                        "Setting selected element based on hash",
-                        hash,
-                        "; found",
-                        found,
-                        "got matching layer",
-                        layer.id,
-                        ""
-                    )
-                    this.selectedElement.setData(found)
-                    this.selectedLayer.setData(layer)
-                },
-                [this.indexedFeatures.featuresById.stabilized(250)]
-            )
-        }
-
-        {
             // Unselect the selected element if it is panned out of view
             this.mapProperties.bounds.stabilized(250).addCallbackD((bounds) => {
                 const selected = this.selectedElement.data
@@ -582,6 +545,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
                 }
             })
         }
+        new NavigatorBackButtonHandler(this)
         new MetaTagging(this)
         new TitleHandler(this.selectedElement, this.selectedLayer, this.featureProperties, this)
         new ChangeToElementsActor(this.changes, this.featureProperties)

@@ -30,7 +30,6 @@ import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 import LiveQueryHandler from "../Logic/Web/LiveQueryHandler"
 import {SubtleButton} from "./Base/SubtleButton"
 import Svg from "../Svg"
-import Hash from "../Logic/Web/Hash"
 import NoteCommentElement from "./Popup/NoteCommentElement"
 import ImgurUploader from "../Logic/ImageProviders/ImgurUploader"
 import FileSelectorButton from "./Input/FileSelectorButton"
@@ -913,7 +912,7 @@ export default class SpecialVisualizations {
                         Translations.t.general.removeLocationHistory
                     ).onClick(() => {
                         state.historicalUserLocations.features.setData([])
-                        Hash.hash.setData(undefined)
+                        state.selectedElement.setData(undefined)
                     })
                 },
             },

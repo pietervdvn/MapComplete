@@ -74,9 +74,8 @@ export class PngMapCreator {
             // Some extra buffer...
             setState("One second pause to make sure all images are loaded...")
             await Utils.waitFor(1000)
-            const dpiFactor = 1
-            setState("Exporting png (" + this._options.width + "mm * " + this._options.height + "mm , dpiFactor:" + dpiFactor + ", maplibre-canvas-pixelratio: " + pixelRatio + ")")
-            return await mla.exportAsPng(dpiFactor)
+            setState("Exporting png (" + this._options.width + "mm * " + this._options.height + "mm , maplibre-canvas-pixelratio: " + pixelRatio + ")")
+            return await mla.exportAsPng(pixelRatio)
         } finally {
             div.parentElement.removeChild(div)
         }
