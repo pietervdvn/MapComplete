@@ -78,6 +78,7 @@
     {
       "builtin": "climbing.fee"
     },
+    "payment-options",
     "opening_hours",
     {
       "id": "shoe_rental",
@@ -205,7 +206,10 @@
           "hideInAnswer": true
         }
       ]
-    }
+    },
+    "internet",
+    "internet-fee",
+    "internet-ssid"
   ],
   "mapRendering": [
     {
