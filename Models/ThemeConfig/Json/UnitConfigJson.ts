@@ -60,7 +60,7 @@ export default interface UnitConfigJson {
     /**
      * Every key from this list will be normalized.
      *
-     * To render a united value properly, use
+     * To render the value properly (with a human readable denomination), use `{canonical(<key>)}`
      */
     appliesToKey: string[]
     /**
