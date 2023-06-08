@@ -147,25 +147,37 @@ export class RegexTag extends TagsFilter {
      * new RegexTag("key", new RegExp(".+")).matchesProperties({"key": undefined}) // => false
      * new RegexTag("key", new RegExp(".+")).matchesProperties({"key": v}) // => false
      * new RegexTag("key", new RegExp(".+")).matchesProperties({"key": ""}) // => false
+     *
+     * // Show work with non-string objects
+     * new RegexTag("key", "true").matchesProperties({"key": true}) // => true
+     * new RegexTag("key", "true", true).matchesProperties({"key": true}) // => false
      */
-    matchesProperties(tags: Record<string, string>): boolean {
+    matchesProperties(tags: Record<string, string | number | boolean>): boolean {
         if (typeof this.key === "string") {
-            const value = tags[this.key]
+            let value = tags[this.key]
             if(!value || value === ""){
                 // No tag is known, so we assume the empty string
                 // If this regexTag matches the empty string, we return true, otherwise false
                 // (Note: if inverted, we must reverse this)
                 return this.invert !== this.matchesEmpty
             }
-            if(typeof value !== "string"){
-                if(typeof this.value !== "string"){
-                    const regExp = this.value
-                    if(regExp.source === ".*"){
-                        // We match anything, and we do have a value
-                        return !this.invert
-                    }
-                    return RegexTag.doesMatch(value, JSON.stringify(this.value)) != this.invert
+
+            if (typeof value === "string") {
+                return RegexTag.doesMatch(value, this.value) != this.invert
+            }
+
+            // The value under test is _not_ a string; it can be a culculated tag, thus be e.g. a number or a boolean
+            // It might also be an object
+
+            if (typeof this.value !== "string") {
+                const regExp = this.value
+                if (regExp.source === ".*") {
+                    // We match anything, and we do have some value
+                    return !this.invert
                 }
+            }
+            if(typeof value !== "string"){
+                value = JSON.stringify(value)
             }
             return RegexTag.doesMatch(value, this.value) != this.invert
         }
@@ -175,7 +187,10 @@ export class RegexTag extends TagsFilter {
                 continue
             }
             if (RegexTag.doesMatch(key, this.key)) {
-                const value = tags[key] ?? ""
+                let value = tags[key] ?? ""
+                if(typeof value !== "string"){
+                    value = JSON.stringify(value)
+                }
                 return RegexTag.doesMatch(value, this.value) != this.invert
             }
         }

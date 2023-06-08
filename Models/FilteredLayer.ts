@@ -180,7 +180,10 @@ export default class FilteredLayer {
     }
 
     /**
-     * Returns true if the given tags match the current filters (and the specified 'global filters')
+     * Returns true if the given tags match
+     * - the current filters
+     * - the specified 'global filters'
+     * - the 'isShown'-filter set by the layer
      */
     public isShown(properties: Record<string, string>, globalFilters?: GlobalFilter[]): boolean {
         if (properties._deleted === "yes") {
