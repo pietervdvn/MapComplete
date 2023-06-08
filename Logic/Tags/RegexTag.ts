@@ -145,7 +145,7 @@ export class RegexTag extends TagsFilter {
      * const v: string = <any> {someJson: ""}
      * new RegexTag("key", new RegExp(".+")).matchesProperties({"key": null}) // => false
      * new RegexTag("key", new RegExp(".+")).matchesProperties({"key": undefined}) // => false
-     * new RegexTag("key", new RegExp(".+")).matchesProperties({"key": v}) // => false
+     * new RegexTag("key", new RegExp(".+")).matchesProperties({"key": v}) // => true
      * new RegexTag("key", new RegExp(".+")).matchesProperties({"key": ""}) // => false
      *
      * // Show work with non-string objects
