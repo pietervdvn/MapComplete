@@ -1,34 +1,32 @@
 import Combine from "../Base/Combine"
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import { BBox } from "../../Logic/BBox"
+import {Store, UIEventSource} from "../../Logic/UIEventSource"
+import {BBox} from "../../Logic/BBox"
 import UserRelatedState from "../../Logic/State/UserRelatedState"
 import Translations from "../i18n/Translations"
-import { AllKnownLayouts } from "../../Customizations/AllKnownLayouts"
 import Constants from "../../Models/Constants"
-import { DropDown } from "../Input/DropDown"
-import { Utils } from "../../Utils"
+import {DropDown} from "../Input/DropDown"
+import {Utils} from "../../Utils"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
 import BaseLayer from "../../Models/BaseLayer"
 import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
 import Loc from "../../Models/Loc"
 import Minimap from "../Base/Minimap"
 import Attribution from "../BigComponents/Attribution"
-import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer"
-import FilteredLayer, { FilterState } from "../../Models/FilteredLayer"
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
 import Toggle from "../Input/Toggle"
-import { VariableUiElement } from "../Base/VariableUIElement"
-import { FixedUiElement } from "../Base/FixedUiElement"
-import { FlowStep } from "./FlowStep"
+import {VariableUiElement} from "../Base/VariableUIElement"
+import {FixedUiElement} from "../Base/FixedUiElement"
+import {FlowStep} from "./FlowStep"
 import ScrollableFullScreen from "../Base/ScrollableFullScreen"
 import Title from "../Base/Title"
 import CheckBoxes from "../Input/Checkboxes"
 import AllTagsPanel from "../AllTagsPanel.svelte"
 import BackgroundMapSwitch from "../BigComponents/BackgroundMapSwitch"
-import { Feature, Point } from "geojson"
+import {Feature, Point} from "geojson"
 import DivContainer from "../Base/DivContainer"
 import ShowDataLayer from "../ShowDataLayer/ShowDataLayer"
 import SvelteUIElement from "../Base/SvelteUIElement"
+import {AllSharedLayers} from "../../Customizations/AllSharedLayers";
 
 class PreviewPanel extends ScrollableFullScreen {
     constructor(tags: UIEventSource<any>) {
@@ -62,7 +60,7 @@ export class MapPreview
             Object.keys(f.properties).forEach((key) => propertyKeys.add(key))
         }
 
-        const availableLayers = AllKnownLayouts.AllPublicLayers().filter(
+        const availableLayers = AllSharedLayers.AllPublicLayers().filter(
             (l) => l.name !== undefined && Constants.priviliged_layers.indexOf(l.id) < 0
         )
         const layerPicker = new DropDown(
