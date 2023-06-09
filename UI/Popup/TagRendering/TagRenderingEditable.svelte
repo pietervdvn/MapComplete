@@ -78,7 +78,7 @@
                 <XCircleIcon slot="upper-right" class="w-8 h-8 cursor-pointer" on:click={() => {editMode = false}}/>
             </TagRenderingQuestion>
         {:else}
-            <div class="flex justify-between low-interaction items-center rounded px-2">
+            <div class="flex justify-between low-interaction items-center rounded px-2 overflow-hidden">
                 <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer}/>
                 <button on:click={() => {editMode = true}}
                         class="shrink-0 w-8 h-8 rounded-full p-1 secondary self-start">
@@ -87,6 +87,8 @@
             </div>
         {/if}
     {:else }
+        <div class="p-2 overflow-hidden">
         <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer}/>
+        </div>
     {/if}
 </div>

@@ -72,4 +72,23 @@ export default class Maproulette {
             throw `Failed to close task: ${response.status}`
         }
     }
+
+    /**
+     * Converts a status text into the corresponding number
+     *
+     * Maproulette.codeToIndex("Created") // => 0
+     * Maproulette.codeToIndex("qdsf") // => undefined
+     *
+     */
+    public static codeToIndex(code: string) : number | undefined{
+        if(code === "Created"){
+            return Maproulette.STATUS_OPEN
+        }
+        for (let i = 0; i < 9; i++) {
+            if(Maproulette.STATUS_MEANING[""+i] === code){
+                return i
+            }
+        }
+        return undefined
+    }
 }

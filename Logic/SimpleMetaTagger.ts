@@ -132,6 +132,10 @@ class CountryTagger extends SimpleMetaTagger {
         CountryTagger.coder
             .GetCountryCodeAsync(lon, lat)
             .then((countries) => {
+                if(!countries){
+                    console.warn("Country coder returned ", countries)
+                    return
+                }
                 const oldCountry = feature.properties["_country"]
                 const newCountry = countries[0].trim().toLowerCase()
                 if (oldCountry !== newCountry) {

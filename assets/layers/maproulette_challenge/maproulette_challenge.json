@@ -77,7 +77,6 @@
     },
     {
       "id": "status",
-      "render": "Current status: {status}",
       "mappings": [
         {
           "if": "mr_taskStatus=Created",

@@ -959,24 +959,6 @@ export default class SpecialVisualizations {
                         defaultValue: "id",
                     },
                 ],
-                example:
-                    " The following example sets the status to '2' (false positive)\n" +
-                    "\n" +
-                    "```json\n" +
-                    "{\n" +
-                    '   "id": "mark_duplicate",\n' +
-                    '   "render": {\n' +
-                    '      "special": {\n' +
-                    '         "type": "maproulette_set_status",\n' +
-                    '         "message": {\n' +
-                    '            "en": "Mark as not found or false positive"\n' +
-                    "         },\n" +
-                    '         "status": "2",\n' +
-                    '         "image": "close"\n' +
-                    "      }\n" +
-                    "   }\n" +
-                    "}\n" +
-                    "```",
                 constr: (state, tags, args) => {
                     const isUploading = new UIEventSource(false)
                     const t = Translations.t.notes
@@ -1080,6 +1062,24 @@ export default class SpecialVisualizations {
             {
                 funcName: "maproulette_set_status",
                 docs: "Change the status of the given MapRoulette task",
+                example:
+                    " The following example sets the status to '2' (false positive)\n" +
+                    "\n" +
+                    "```json\n" +
+                    "{\n" +
+                    '   "id": "mark_duplicate",\n' +
+                    '   "render": {\n' +
+                    '      "special": {\n' +
+                    '         "type": "maproulette_set_status",\n' +
+                    '         "message": {\n' +
+                    '            "en": "Mark as not found or false positive"\n' +
+                    "         },\n" +
+                    '         "status": "2",\n' +
+                    '         "image": "close"\n' +
+                    "      }\n" +
+                    "   }\n" +
+                    "}\n" +
+                    "```",
                 args: [
                     {
                         name: "message",
@@ -1110,11 +1110,14 @@ export default class SpecialVisualizations {
                     if (image === "") {
                         image = "confirm"
                     }
+                    if(maproulette_id_key === "" || maproulette_id_key === undefined){
+                        maproulette_id_key = "mr_taskId"
+                    }
                     if (Svg.All[image] !== undefined || Svg.All[image + ".svg"] !== undefined) {
                         if (image.endsWith(".svg")) {
                             image = image.substring(0, image.length - 4)
                         }
-                        image = Svg[image + "_ui"]()
+                        image = Svg[image + "_svg"]()
                     }
                     const failed = new UIEventSource(false)
 
@@ -1122,7 +1125,7 @@ export default class SpecialVisualizations {
                         Translations.t.general.loading,
                         async () => {
                             const maproulette_id =
-                                tagsSource.data[maproulette_id_key] ?? tagsSource.data.id
+                                tagsSource.data[maproulette_id_key] ?? tagsSource.data.mr_taskId ?? tagsSource.data.id
                             try {
                                 await Maproulette.singleton.closeTask(
                                     Number(maproulette_id),
@@ -1150,13 +1153,19 @@ export default class SpecialVisualizations {
                     return new VariableUiElement(
                         tagsSource
                             .map(
-                                (tgs) =>
-                                    tgs["status"] ??
-                                    Maproulette.STATUS_MEANING[tgs["mr_taskStatus"]]
+                                (tgs) => {
+                                    if(tgs["status"]){
+                                        return tgs["status"]
+                                    }
+                                    const code = tgs["mr_taskStatus"]
+                                    console.log("Code is", code, Maproulette.codeToIndex(code))
+                                    return Maproulette.codeToIndex(code)
+                                }
                             )
                             .map(Number)
                             .map(
                                 (status) => {
+                                    console.log("Close MR button: status is", status)
                                     if (failed.data) {
                                         return new FixedUiElement(
                                             "ERROR - could not close the MapRoulette task"

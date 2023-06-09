@@ -1,6 +1,6 @@
 import {SpecialVisualizationState} from "../../SpecialVisualization";
 import {Utils} from "../../../Utils";
-import {Store, UIEventSource} from "../../../Logic/UIEventSource";
+import {ImmutableStore, Store, UIEventSource} from "../../../Logic/UIEventSource";
 import {Tag} from "../../../Logic/Tags/Tag";
 import TagApplyButton from "../TagApplyButton";
 import {PointImportFlowArguments} from "./PointImportFlowState";
@@ -11,6 +11,7 @@ import FilteredLayer from "../../../Models/FilteredLayer";
 import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
 import {LayerConfigJson} from "../../../Models/ThemeConfig/Json/LayerConfigJson";
 import conflation_json from "../../../assets/layers/conflation/conflation.json";
+import {And} from "../../../Logic/Tags/And";
 
 export interface ImportFlowArguments {
     readonly  text: string
@@ -85,6 +86,15 @@ ${Utils.special_visualizations_importRequirementDocs}
                 "] of this object, namely ",
                 items
             )
+
+            if(items.startsWith("{")){
+                // This is probably a JSON
+                const properties: Record<string, string> = JSON.parse(items)
+                const keys = Object.keys(properties)
+                const tags = keys.map(k => new Tag(k, properties[k]))
+                return new ImmutableStore((tags))
+            }
+
             newTags = TagApplyButton.generateTagsToApply(items, originalFeatureTags)
         } else {
             newTags = TagApplyButton.generateTagsToApply(tags, originalFeatureTags)

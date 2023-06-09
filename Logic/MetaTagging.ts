@@ -8,7 +8,6 @@ import {GeoIndexedStoreForLayer} from "./FeatureSource/Actors/GeoIndexedStore"
 import {IndexedFeatureSource} from "./FeatureSource/FeatureSource"
 import OsmObjectDownloader from "./Osm/OsmObjectDownloader"
 import {Utils} from "../Utils";
-import {GeoJSONFeature} from "maplibre-gl";
 import {UIEventSource} from "./UIEventSource";
 
 /**
@@ -206,13 +205,13 @@ export default class MetaTagging {
     private static createFunctionForFeature([key, code, isStrict]: [string, string, boolean],
                                             helperFunctions: Record<ExtraFuncType, (feature: Feature) => Function>,
                                             layerId: string = "unkown layer"
-    ): ((feature: GeoJSONFeature, propertiesStore?: UIEventSource<any>) => void) | undefined {
+    ): ((feature: Feature, propertiesStore?: UIEventSource<any>) => void) | undefined {
         if (code === undefined) {
             return undefined
         }
 
 
-        const calculateAndAssign: ((feat: GeoJSONFeature, store?: UIEventSource<any>) => string | any) = (feat, store) => {
+        const calculateAndAssign: ((feat: Feature, store?: UIEventSource<any>) => string | any) = (feat, store) => {
             try {
                 let result = new Function("feat", "{" + ExtraFunctions.types.join(", ") + "}", "return " + code + ";")(feat, helperFunctions)
                 if (result === "") {
@@ -259,7 +258,7 @@ export default class MetaTagging {
         if (isStrict) {
             return calculateAndAssign
         }
-        return (feature: any, store?: UIEventSource<any>) => {
+        return (feature: Feature, store?: UIEventSource<any>) => {
             delete feature.properties[key]
             Utils.AddLazyProperty(feature.properties, key, () => calculateAndAssign(feature, store))
         }

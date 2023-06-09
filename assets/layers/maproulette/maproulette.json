@@ -60,7 +60,6 @@
   "tagRenderings": [
     {
       "id": "status",
-      "render": "Current status: {status}",
       "mappings": [
         {
           "if": "status=0",
@@ -130,6 +129,7 @@
       ]
     },
     {
+      "labels": ["controls"],
       "id": "mark_fixed",
       "render": {
         "special": {
@@ -144,6 +144,7 @@
     },
     {
       "id": "mark_duplicate",
+      "labels": ["controls"],
       "render": {
         "special": {
           "type": "maproulette_set_status",
@@ -159,6 +160,7 @@
     },
     {
       "id": "mark_too_hard",
+      "labels": ["controls"],
       "render": {
         "special": {
           "type": "maproulette_set_status",

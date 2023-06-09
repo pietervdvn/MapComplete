@@ -105,6 +105,10 @@ export default class GeoJsonSource implements FeatureSource {
         let i = 0
         let skipped = 0
         for (const feature of json.features) {
+            if(feature.geometry.type === "Point"){
+                // See https://github.com/maproulette/maproulette-backend/issues/242
+                feature.geometry.coordinates = feature.geometry.coordinates.map(Number)
+            }
             const props = feature.properties
             for (const key in props) {
                 if (props[key] === null) {

@@ -538,7 +538,6 @@ export default class TagRenderingConfig {
         }
 
         if (
-            this.id === "questions" ||
             this.freeform?.key === undefined ||
             tags[this.freeform.key] !== undefined
         ) {

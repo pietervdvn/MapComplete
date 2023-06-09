@@ -116,11 +116,12 @@
                     currentFlowStep = "imported"
                     dispatch("confirm")
                 }}>
-                    <span slot="image">
-                        
-                    {#if importFlow.args.icon}
-                        <img src={importFlow.args.icon}>
-                    {/if}
+                    <span slot="image" class="w-8 h-8 pr-4">
+                        {#if importFlow.args.icon}
+                            <img src={importFlow.args.icon}>
+                        {:else}
+                            <ToSvelte construct={Svg.confirm_svg().SetClass("w-8 h-8 pr-4")}/>
+                        {/if}
                     </span>
                     <slot name="confirm-text">
                         {importFlow.args.text}
