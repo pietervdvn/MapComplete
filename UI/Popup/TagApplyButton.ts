@@ -162,6 +162,8 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
             await Maproulette.singleton.closeTask(maproulette_id, Maproulette.STATUS_FIXED,   {
                 comment: "Tags are copied onto "+targetId+" with MapComplete"
             })
+            tags.data["mr_taskStatus"] = "Fixed"
+            tags.ping()
         }
     }
 
@@ -193,7 +195,7 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
             })
         ).SetClass("subtle")
         const self = this
-        const applied = new UIEventSource(false)
+        const applied = new UIEventSource(tags?.data?.["mr_taskStatus"] !== "Created") // This will default to 'false' for non-maproulette challenges
         const applyButton = new SubtleButton(
             image,
             new Combine([msg, tagsExplanation]).SetClass("flex flex-col")
