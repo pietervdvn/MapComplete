@@ -199,7 +199,7 @@ export class Unit {
             ) {
                 continue
             }
-            let countries: string | string[] = country()
+            let countries: string | string[] = country() ?? []
             if (typeof countries === "string") {
                 countries = countries.split(",")
             }

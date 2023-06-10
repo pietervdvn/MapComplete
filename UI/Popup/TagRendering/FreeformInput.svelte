@@ -7,17 +7,20 @@
     import {createEventDispatcher, onDestroy} from "svelte";
     import InputHelper from "../../InputElement/InputHelper.svelte";
     import type {Feature} from "geojson";
+    import {Unit} from "../../../Models/Unit";
 
     export let value: UIEventSource<string>;
     export let config: TagRenderingConfig;
     export let tags: UIEventSource<Record<string, string>>;
 
     export let feature: Feature = undefined;
+    export let unit: Unit | undefined
 
     let placeholder = config.freeform?.placeholder
     $: {
         placeholder = config.freeform?.placeholder
     }
+    let inline = config.freeform.inline
 
     export let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined);
 
@@ -35,13 +38,14 @@
 
     {#if config.freeform.inline}
         <Inline key={config.freeform.key} {tags} template={config.render}>
-            <ValidatedInput {feedback} {getCountry} on:selected={() => dispatch("selected")}
+            <ValidatedInput {feedback} {getCountry} {unit} on:selected={() => dispatch("selected")}
                             type={config.freeform.type} {placeholder} {value}></ValidatedInput>
         </Inline>
     {:else}
-        <ValidatedInput {feedback} {getCountry} on:selected={() => dispatch("selected")}
+        <ValidatedInput {feedback} {getCountry} {unit} on:selected={() => dispatch("selected")}
                         type={config.freeform.type} {placeholder} {value}></ValidatedInput>
 
     {/if}
+    
     <InputHelper args={config.freeform.helperArgs} {feature} type={config.freeform.type} {value}/>
 </div>

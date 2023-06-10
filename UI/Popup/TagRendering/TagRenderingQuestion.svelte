@@ -19,7 +19,7 @@
     import TagRenderingMappingInput from "./TagRenderingMappingInput.svelte";
     import {Translation} from "../../i18n/Translation";
     import Constants from "../../../Models/Constants";
-    import {TagUtils} from "../../../Logic/Tags/TagUtils";
+    import {Unit} from "../../../Models/Unit";
 
     export let config: TagRenderingConfig;
     export let tags: UIEventSource<Record<string, string>>;
@@ -28,6 +28,8 @@
     export let layer: LayerConfig;
 
     let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined);
+
+    let unit: Unit = layer.units?.find(unit => unit.appliesToKeys.has(config.freeform?.key))
 
     // Will be bound if a freeform is available
     let freeformInput = new UIEventSource<string>(tags?.[config.freeform?.key]);
@@ -41,11 +43,13 @@
             return m.hideInAnswer.matchesProperties(tags.data)
         })
         // We received a new config -> reinit
+        unit = layer.units.find(unit => unit.appliesToKeys.has(config.freeform?.key))
+
         if (config.mappings?.length > 0 && (checkedMappings === undefined || checkedMappings?.length < config.mappings.length)) {
             checkedMappings = [...config.mappings.map(_ => false), false /*One element extra in case a freeform value is added*/];
         }
         if (config.freeform?.key) {
-            if(!config.multiAnswer){ // Somehow, setting multianswer freeform values is broken if this is not set
+            if (!config.multiAnswer) { // Somehow, setting multianswer freeform values is broken if this is not set
                 freeformInput.setData(tags.data[config.freeform.key]);
             }
         } else {
@@ -77,7 +81,7 @@
     }>();
 
     function onSave() {
-        if(selectedTags === undefined){
+        if (selectedTags === undefined) {
             return
         }
         if (layer.source === null) {
@@ -152,7 +156,7 @@
 
         {#if config.freeform?.key && !(mappings?.length > 0)}
             <!-- There are no options to choose from, simply show the input element: fill out the text field -->
-            <FreeformInput {config} {tags} {feedback} feature={selectedElement} value={freeformInput}/>
+            <FreeformInput {config} {tags} {feedback} {unit} feature={selectedElement} value={freeformInput}/>
         {:else if mappings !== undefined && !config.multiAnswer}
             <!-- Simple radiobuttons as mapping -->
             <div class="flex flex-col">
@@ -169,7 +173,7 @@
                     <label class="flex">
                         <input type="radio" bind:group={selectedMapping} name={"mappings-radio-"+config.id}
                                value={config.mappings?.length}>
-                        <FreeformInput {config} {tags} {feedback} feature={selectedElement} value={freeformInput}
+                        <FreeformInput {config} {tags} {feedback} {unit} feature={selectedElement} value={freeformInput}
                                        on:selected={() => selectedMapping = config.mappings?.length }/>
                     </label>
                 {/if}
@@ -188,7 +192,7 @@
                     <label class="flex">
                         <input type="checkbox" name={"mappings-checkbox-"+config.id+"-"+config.mappings?.length}
                                bind:checked={checkedMappings[config.mappings.length]}>
-                        <FreeformInput {config} {tags} {feedback} feature={selectedElement} value={freeformInput}
+                        <FreeformInput {config} {tags} {feedback} {unit} feature={selectedElement} value={freeformInput}
                                        on:selected={() => checkedMappings[config.mappings.length] = true}/>
                     </label>
                 {/if}
@@ -210,7 +214,8 @@
                 <!-- TagRenderingQuestion-buttons -->
                 <slot name="cancel"></slot>
                 <slot name="save-button" {selectedTags}>
-                    <button on:click={onSave} class={(selectedTags === undefined ? "disabled" : "button-shadow")+" primary"}>
+                    <button on:click={onSave}
+                            class={(selectedTags === undefined ? "disabled" : "button-shadow")+" primary"}>
                         <Tr t={Translations.t.general.save}/>
                     </button>
                 </slot>
