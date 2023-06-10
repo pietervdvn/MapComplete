@@ -17,11 +17,15 @@
     export let unit: Unit | undefined
 
     let placeholder = config.freeform?.placeholder
+    let inline = config.freeform?.inline
     $: {
+        console.log("Config is", config)
         placeholder = config.freeform?.placeholder
+        inline = false
+        inline = config.freeform?.inline
     }
-    let inline = config.freeform.inline
 
+    console.log("Inline is", inline )
     export let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined);
 
     let dispatch = createEventDispatcher<{ "selected" }>();
@@ -36,7 +40,7 @@
 
 <div class="inline-flex flex-col">
 
-    {#if config.freeform.inline}
+    {#if inline}
         <Inline key={config.freeform.key} {tags} template={config.render}>
             <ValidatedInput {feedback} {getCountry} {unit} on:selected={() => dispatch("selected")}
                             type={config.freeform.type} {placeholder} {value}></ValidatedInput>
@@ -46,6 +50,6 @@
                         type={config.freeform.type} {placeholder} {value}></ValidatedInput>
 
     {/if}
-    
+
     <InputHelper args={config.freeform.helperArgs} {feature} type={config.freeform.type} {value}/>
 </div>
