@@ -3129,9 +3129,6 @@
             }
         }
     },
-    "grass_in_parks": {
-        "description": "Cerques per a tots els camins d'herba accessibles dins dels parcs públics - aquests són «groenzones»"
-    },
     "hackerspace": {
         "presets": {
             "1": {
@@ -3382,6 +3379,15 @@
             "name": {
                 "question": "Com s'anomena aquesta instal·lació?",
                 "render": "Aquesta instal·lació s'anomena <b>{name}</b>"
+            }
+        }
+    },
+    "last_click": {
+        "mapRendering": {
+            "0": {
+                "label": {
+                    "render": "Afegir nou element"
+                }
             }
         }
     },

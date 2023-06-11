@@ -1,0 +1,10 @@
+@media only screen and (max-width: 768px), only screen and (max-height: 700px) {
+    .hidden-on-mobile {
+        display: none !important;
+    }
+}
+
+
+
+
+

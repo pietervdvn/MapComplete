@@ -1,10 +1,13 @@
 import { Utils } from "../../../Utils"
 import { ChangesetHandler, ChangesetTag } from "../../../Logic/Osm/ChangesetHandler"
-import { UIEventSource } from "../../../Logic/UIEventSource"
+import {ImmutableStore, UIEventSource} from "../../../Logic/UIEventSource"
 import { OsmConnection } from "../../../Logic/Osm/OsmConnection"
-import { ElementStorage } from "../../../Logic/ElementStorage"
 import { Changes } from "../../../Logic/Osm/Changes"
 import { describe, expect, it } from "vitest"
+
+function elstorage() {
+    return { addAlias: (a, b) => {} }
+}
 
 describe("ChangesetHanlder", () => {
     describe("RewriteTagsOf", () => {
@@ -12,9 +15,11 @@ describe("ChangesetHanlder", () => {
             const changesetHandler = new ChangesetHandler(
                 new UIEventSource<boolean>(true),
                 new OsmConnection({}),
-                new ElementStorage(),
-                new Changes(),
-                new UIEventSource(undefined)
+                elstorage(),
+                new Changes({
+                    dryRun: new ImmutableStore(true),
+                    osmConnection: new OsmConnection()
+                })
             )
 
             const oldChangesetMeta = {
@@ -72,9 +77,11 @@ describe("ChangesetHanlder", () => {
             const changesetHandler = new ChangesetHandler(
                 new UIEventSource<boolean>(true),
                 new OsmConnection({}),
-                new ElementStorage(),
-                new Changes(),
-                new UIEventSource(undefined)
+                elstorage(),
+                new Changes({
+                    dryRun: new ImmutableStore(true),
+                    osmConnection: new OsmConnection()
+                })
             )
             const oldChangesetMeta = {
                 type: "changeset",
@@ -131,9 +138,11 @@ describe("ChangesetHanlder", () => {
             const changesetHandler = new ChangesetHandler(
                 new UIEventSource<boolean>(true),
                 new OsmConnection({}),
-                new ElementStorage(),
-                new Changes(),
-                new UIEventSource(undefined)
+                elstorage(),
+                new Changes({
+                    dryRun: new ImmutableStore(true),
+                    osmConnection: new OsmConnection()
+                })
             )
             const oldChangesetMeta = {
                 type: "changeset",

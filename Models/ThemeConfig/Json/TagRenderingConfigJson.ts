@@ -14,22 +14,20 @@ export interface TagRenderingConfigJson {
     id?: string
 
     /**
-     * If 'group' is defined on many tagRenderings, these are grouped together when shown. The questions are grouped together as well.
-     * The first tagRendering of a group will always be a sticky element.
-     *
-     * @deprecated
-     */
-    group?: string
-
-    /**
      * A list of labels. These are strings that are used for various purposes, e.g. to filter them away
      */
     labels?: string[]
 
     /**
+     * A list of css-classes to apply to the entire tagRendering if the answer is known (not applied on the question).
+     * This is only for advanced users
+     */
+    classes?: string | string[]
+
+    /**
      * A human-readable text explaining what this tagRendering does
      */
-    description?: string | any
+    description?: string | Record<string, string>
 
     /**
      * Renders this value. Note that "{key}"-parts are substituted by the corresponding values of the element.
@@ -38,7 +36,10 @@ export interface TagRenderingConfigJson {
      * Note that this is a HTML-interpreted value, so you can add links as e.g. '<a href='{website}'>{website}</a>' or include images such as `This is of type A <br><img src='typeA-icon.svg' />`
      * type: rendered
      */
-    render?: string | any
+    render?:
+        | string
+        | Record<string, string>
+        | { special: Record<string, string | Record<string, string>> & { type: string } }
 
     /**
      * Only show this tagrendering (or ask the question) if the selected object also matches the tags specified as `condition`.
@@ -82,6 +83,13 @@ export interface TagRenderingConfigJson {
     condition?: TagConfigJson
 
     /**
+     * If set, this tag will be evaluated agains the _usersettings/application state_ table.
+     * Enable 'show debug info' in user settings to see available options.
+     * Note that values with an underscore depicts _application state_ (including metainfo about the user) whereas values without an underscore depict _user settings_
+     */
+    metacondition?: TagConfigJson
+
+    /**
      * Allow freeform text input from the user
      */
     freeform?: {
@@ -110,7 +118,7 @@ export interface TagRenderingConfigJson {
          * If not known yet, the user will be presented with `then` as an option
          * Type: rendered
          */
-        then: string | any
+        then: string | Record<string, string>
         /**
          * An icon supporting this mapping; typically shown pretty small
          * Type: icon

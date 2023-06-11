@@ -1,6 +1,7 @@
 import { LayerConfigJson } from "./LayerConfigJson"
-import TilesourceConfigJson from "./TilesourceConfigJson"
 import ExtraLinkConfigJson from "./ExtraLinkConfigJson"
+
+import { RasterLayerProperties } from "../../RasterLayerProperties"
 
 /**
  * Defines the entire theme.
@@ -41,23 +42,23 @@ export interface LayoutConfigJson {
     /**
      * The title, as shown in the welcome message and the more-screen.
      */
-    title: string | any
+    title: string | Record<string, string>
 
     /**
      * A short description, showed as social description and in the 'more theme'-buttons.
      * Note that if this one is not defined, the first sentence of 'description' is used
      */
-    shortDescription?: string | any
+    shortDescription?: string | Record<string, string>
 
     /**
      * The description, as shown in the welcome message and the more-screen
      */
-    description: string | any
+    description: string | Record<string, string>
 
     /**
      * A part of the description, shown under the login-button.
      */
-    descriptionTail?: string | any
+    descriptionTail?: string | Record<string, string>
 
     /**
      * The icon representing this theme.
@@ -148,7 +149,7 @@ export interface LayoutConfigJson {
     /**
      * Define some (overlay) slippy map tilesources
      */
-    tileLayerSources?: TilesourceConfigJson[]
+    tileLayerSources?: (RasterLayerProperties & { defaultState?: true | boolean })[]
 
     /**
      * The layers to display.
@@ -196,7 +197,7 @@ export interface LayoutConfigJson {
         | string
         | {
               builtin: string | string[]
-              override: any
+              override: Partial<LayerConfigJson>
               /**
                * TagRenderings with any of these labels will be removed from the layer.
                * Note that the 'id' and 'group' are considered labels too
@@ -204,25 +205,6 @@ export interface LayoutConfigJson {
               hideTagRenderingsWithLabels?: string[]
           }
     )[]
-
-    /**
-     * If defined, data will be clustered.
-     * Defaults to {maxZoom: 16, minNeeded: 500}
-     */
-    clustering?:
-        | {
-              /**
-               * All zoom levels above 'maxzoom' are not clustered anymore.
-               * Defaults to 18
-               */
-              maxZoom?: number
-              /**
-               * The number of elements per tile needed to start clustering
-               * If clustering is defined, defaults to 250
-               */
-              minNeededElements?: number
-          }
-        | false
 
     /**
      * The URL of a custom CSS stylesheet to modify the layout
@@ -294,11 +276,11 @@ export interface LayoutConfigJson {
     /**
      * If set to true, download button for the data will be shown (offers downloading as geojson and csv)
      */
-    enableDownload?: false | boolean
+    enableDownload?: true | boolean
     /**
      * If set to true, exporting a pdf is enabled
      */
-    enablePdfDownload?: false | boolean
+    enablePdfDownload?: true | boolean
 
     /**
      * If true, notes will be loaded and parsed. If a note is an import (as created by the import_helper.html-tool from mapcomplete),
@@ -316,4 +298,12 @@ export interface LayoutConfigJson {
      * Set a different timeout for overpass queries - in seconds. Default: 30s
      */
     overpassTimeout?: number
+
+    /**
+     * Enables tracking of all nodes when data is loaded.
+     * This is useful for the 'ImportWay' and 'ConflateWay'-buttons who need this database.
+     *
+     * Note: this flag will be automatically set.
+     */
+    enableNodeDatabase?: boolean
 }

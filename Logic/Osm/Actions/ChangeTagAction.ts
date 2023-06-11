@@ -1,5 +1,4 @@
 import OsmChangeAction from "./OsmChangeAction"
-import { Changes } from "../Changes"
 import { ChangeDescription } from "./ChangeDescription"
 import { TagsFilter } from "../../Tags/TagsFilter"
 import { OsmTags } from "../../../Models/OsmFeature"
@@ -71,7 +70,7 @@ export default class ChangeTagAction extends OsmChangeAction {
         return { k: key.trim(), v: value.trim() }
     }
 
-    async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
+    async CreateChangeDescriptions(): Promise<ChangeDescription[]> {
         const changedTags: { k: string; v: string }[] = this._tagsFilter
             .asChange(this._currentTags)
             .map(ChangeTagAction.checkChange)

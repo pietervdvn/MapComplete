@@ -16,6 +16,10 @@
       "value": "street_lamp"
     },
     {
+      "key": "id",
+      "description": "Layer 'Street Lamps' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Street Lighting') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Street Lamps allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -206,6 +210,10 @@
       "description": "The MapComplete theme Street Lighting has a layer Lit streets showing features with this tag"
     },
     {
+      "key": "id",
+      "description": "Layer 'Lit streets' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Street Lighting') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Lit streets allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -244,6 +252,10 @@
     {
       "key": "highway",
       "description": "The MapComplete theme Street Lighting has a layer All streets showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'All streets' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Street Lighting') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",

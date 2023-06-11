@@ -1520,6 +1520,15 @@
     "indoors": {
         "description": "Základní mapování interiérů: zobrazuje obrysy místností"
     },
+    "last_click": {
+        "mapRendering": {
+            "0": {
+                "label": {
+                    "render": "Klikněte zde pro přidání nové položky"
+                }
+            }
+        }
+    },
     "maxspeed": {
         "description": "Zobrazuje povolenou rychlost pro každou silnici"
     },

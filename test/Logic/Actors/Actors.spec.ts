@@ -1,16 +1,12 @@
-import { Utils } from "../../../Utils"
-import UserRelatedState from "../../../Logic/State/UserRelatedState"
+import {Utils} from "../../../Utils"
 import LayoutConfig from "../../../Models/ThemeConfig/LayoutConfig"
-import SelectedElementTagsUpdater from "../../../Logic/Actors/SelectedElementTagsUpdater"
 
 import * as bookcaseJson from "../../../assets/generated/themes/bookcases.json"
-import { UIEventSource } from "../../../Logic/UIEventSource"
-import Loc from "../../../Models/Loc"
-import SelectedFeatureHandler from "../../../Logic/Actors/SelectedFeatureHandler"
-import { ElementStorage } from "../../../Logic/ElementStorage"
-import { OsmTags } from "../../../Models/OsmFeature"
-import { Feature, Geometry } from "geojson"
-import { describe, expect, it } from "vitest"
+import {OsmTags} from "../../../Models/OsmFeature"
+import {Feature, Geometry} from "geojson"
+import {expect, it} from "vitest"
+import ThemeViewState from "../../../Models/ThemeViewState"
+import ScriptUtils from "../../../scripts/ScriptUtils";
 
 const latestTags = {
     amenity: "public_bookcase",
@@ -47,8 +43,8 @@ Utils.injectJsonDownloadForTests("https://www.openstreetmap.org/api/0.6/node/556
     ],
 })
 
-it("should download the latest version", () => {
-    const state = new UserRelatedState(new LayoutConfig(<any>bookcaseJson, true))
+it("should download the latest version", async () => {
+    const state = new ThemeViewState(new LayoutConfig(<any>bookcaseJson, true))
     const feature: Feature<Geometry, OsmTags> = {
         type: "Feature",
         id: "node/5568693115",
@@ -73,40 +69,20 @@ it("should download the latest version", () => {
             coordinates: [3.2154662, 51.2179199],
         },
     }
-    state.allElements.addOrGetElement(feature)
-    SelectedElementTagsUpdater.installCallback(state)
+    state.newFeatures.features.data.push(feature)
+    state.newFeatures.features.ping()
+    // The 'selectedElementsTagsUpdater' is the functionality which is tested here
+    // However, one is initialized in the 'ThemeViewState' as well; and I'm to lazy to partially construct one here
+    // new SelectedElementTagsUpdater()
 
     // THis should trigger a download of the latest feaures and update the tags
     // However, this doesn't work with ts-node for some reason
     state.selectedElement.setData(feature)
 
-    SelectedElementTagsUpdater.applyUpdate(state, latestTags, feature.properties.id)
+    await ScriptUtils.sleep(50)
 
     // The name should be updated
     expect(feature.properties.name).toEqual("Stubbekwartier-buurtbibliotheek")
     // The fixme should be removed
     expect(feature.properties.fixme).toBeUndefined()
-})
-it("Hash without selected element should download geojson from OSM-API", async () => {
-    const hash = new UIEventSource("node/5568693115")
-    const selected = new UIEventSource(undefined)
-    const loc = new UIEventSource<Loc>({
-        lat: 0,
-        lon: 0,
-        zoom: 0,
-    })
-
-    loc.addCallback((_) => {
-        expect(selected.data.properties.id).toEqual("node/5568693115")
-        expect(loc.data.zoom).toEqual(14)
-        expect(loc.data.lat).toEqual(51.2179199)
-    })
-
-    new SelectedFeatureHandler(hash, {
-        selectedElement: selected,
-        allElements: new ElementStorage(),
-        featurePipeline: undefined,
-        locationControl: loc,
-        layoutToUse: undefined,
-    })
 })

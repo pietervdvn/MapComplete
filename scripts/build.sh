@@ -14,9 +14,6 @@ export NODE_OPTIONS="--max-old-space-size=8192"
 # This script ends every line with '&&' to chain everything. A failure will thus stop the build
 npm run generate:editor-layer-index &&
 npm run generate &&
-npm run generate:translations &&
-npm run test &&
-npm run generate:layeroverview &&
 npm run generate:layouts
 
 if [ $? -ne 0 ]; then
@@ -54,7 +51,6 @@ vite build $SRC_MAPS
 cp -r assets/layers/ dist/assets/layers/
 cp -r assets/themes/ dist/assets/themes/
 cp -r assets/svg/ dist/assets/svg/
-cp -r assets/templates/ dist/assets/templates/
 cp -r assets/tagRenderings/ dist/assets/tagRenderings/
 cp assets/*.png dist/assets/
 cp assets/*.svg dist/assets/

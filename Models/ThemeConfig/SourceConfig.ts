@@ -3,7 +3,6 @@ import { RegexTag } from "../../Logic/Tags/RegexTag"
 
 export default class SourceConfig {
     public osmTags?: TagsFilter
-    public readonly overpassScript?: string
     public geojsonSource?: string
     public geojsonZoomLevel?: number
     public isOsmCacheLayer: boolean
@@ -20,7 +19,6 @@ export default class SourceConfig {
             geojsonSourceLevel?: number
             idKey?: string
         },
-        isSpecialLayer: boolean,
         context?: string
     ) {
         let defined = 0
@@ -51,7 +49,7 @@ export default class SourceConfig {
                 throw `Source defines a geojson-zoomLevel, but does not specify {x} nor {y} (or equivalent), this is probably a bug (in context ${context})`
             }
         }
-        if (params.osmTags !== undefined && !isSpecialLayer) {
+        if (params.osmTags !== undefined) {
             const optimized = params.osmTags.optimize()
             if (optimized === false) {
                 throw (
@@ -72,7 +70,6 @@ export default class SourceConfig {
             }
         }
         this.osmTags = params.osmTags ?? new RegexTag("id", /.*/)
-        this.overpassScript = params.overpassScript
         this.geojsonSource = params.geojsonSource
         this.geojsonZoomLevel = params.geojsonSourceLevel
         this.isOsmCacheLayer = params.isOsmCache ?? false

@@ -12,19 +12,20 @@ This theme contains the following layers:
 
 
   - [named_streets](../Layers/named_streets.md)
-  - [type_node](../Layers/type_node.md)
   - [osm-buildings](../Layers/osm-buildings.md)
+  - [grb](../Layers/grb.md)
   - [service_ways](../Layers/service_ways.md)
   - [generic_osm_object](../Layers/generic_osm_object.md)
   - [address](../Layers/address.md)
   - [crab_address](../Layers/crab_address.md)
-  - [grb](../Layers/grb.md)
   - [current_view](../Layers/current_view.md)
   - [selected_element](../Layers/selected_element.md)
   - [gps_location](../Layers/gps_location.md)
   - [gps_location_history](../Layers/gps_location_history.md)
   - [home_location](../Layers/home_location.md)
   - [gps_track](../Layers/gps_track.md)
+  - [range](../Layers/range.md)
+  - [last_click](../Layers/last_click.md)
 
 
 Available languages:

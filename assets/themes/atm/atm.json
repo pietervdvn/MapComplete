@@ -34,6 +34,7 @@
       "override": {
         "id": "banks_with_atm",
         "name": null,
+        "minzoom": 14,
         "source": {
           "osmTags": {
             "and+": [
@@ -53,6 +54,68 @@
         "filter": {
           "sameAs": "bank"
         }
+      }
+    },
+    {
+      "builtin": "maproulette_challenge",
+      "override": {
+        "minzoom": 5,
+        "source": {
+          "geoJson": "https://maproulette.org/api/v2/challenge/view/39519"
+        },
+        "isShown": "mr_taskStatus=Created",
+        "calculatedTags": [
+          "_closest_osm_poi=closest(feat)('atm')?.properties?.id",
+          "_closest_osm_poi_distance=Math.round(distanceTo(feat)(feat.properties._closest_osm_poi))",
+          "_has_closeby_feature=Number(feat.properties._closest_osm_poi_distance) < 50 ? 'yes' : 'no'"
+        ],
+        "=tagRenderings": [
+          {
+            "id": "import-button",
+            "condition": "_has_closeby_feature=no",
+            "render": {
+              "special": {
+                "type": "import_button",
+                "targetLayer": "atm",
+                "tags": "tags",
+                "maproulette_id": "mr_taskId",
+                "text": {
+                  "en": "Import this ATM"
+                },
+                "icon": "./assets/svg/addSmall.svg"
+              }
+            }
+          },
+          {
+            "id": "closeness-indicator",
+            "condition": "_has_closeby_feature=yes",
+            "render": {
+              "en": "OpenStreetMap knows about <a href='#{_closest_osm_poi}'>an ATM which is {_closest_osm_poi_distance} meter away.</a> "
+            }
+          },
+          {
+            "id": "tag-apply-button",
+            "condition": "_has_closeby_feature=yes",
+            "render": {
+              "special": {
+                "type": "tag_apply",
+                "tags_to_apply": "$tags",
+                "id_of_object_to_apply_this_one": "_closest_osm_poi",
+                "message": {
+                  "en": "Add all the suggested tags to the closest ATM"
+                },
+                "image": "./assets/svg/addSmall.svg",
+                "maproulette_task_id": "mr_taskId"
+              }
+            }
+          },
+          "maproulette.controls",
+          {
+            "id": "minimap_with_atm",
+            "render": "{minimap(18, id, _closest_osm_poi)}"
+          },
+          "all_tags"
+        ]
       }
     }
   ]

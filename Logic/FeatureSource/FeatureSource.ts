@@ -1,26 +1,18 @@
 import { Store, UIEventSource } from "../UIEventSource"
 import FilteredLayer from "../../Models/FilteredLayer"
-import { BBox } from "../BBox"
-import { Feature, Geometry } from "@turf/turf"
-import { OsmFeature } from "../../Models/OsmFeature"
+import { Feature } from "geojson"
 
-export default interface FeatureSource {
-    features: Store<{ feature: OsmFeature; freshness: Date }[]>
-    /**
-     * Mainly used for debuging
-     */
-    name: string
+export interface FeatureSource<T extends Feature = Feature> {
+    features: Store<T[]>
 }
-
-export interface Tiled {
-    tileIndex: number
-    bbox: BBox
+export interface WritableFeatureSource<T extends Feature = Feature> extends FeatureSource<T> {
+    features: UIEventSource<T[]>
 }
 
 /**
  * A feature source which only contains features for the defined layer
  */
-export interface FeatureSourceForLayer extends FeatureSource {
+export interface FeatureSourceForLayer<T extends Feature = Feature> extends FeatureSource<T> {
     readonly layer: FilteredLayer
 }
 
@@ -28,5 +20,5 @@ export interface FeatureSourceForLayer extends FeatureSource {
  * A feature source which is aware of the indexes it contains
  */
 export interface IndexedFeatureSource extends FeatureSource {
-    readonly containedIds: Store<Set<string>>
+    readonly featuresById: Store<Map<string, Feature>>
 }

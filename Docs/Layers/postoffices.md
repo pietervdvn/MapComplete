@@ -29,21 +29,7 @@ A layer showing post offices.
   - [postboxes](https://mapcomplete.osm.be/postboxes)
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dpost_office' target='_blank'>post_office</a>|<a href='https://wiki.openstreetmap.org/wiki/Key:post_office' target='_blank'>post_office</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner' target='_blank'>post_partner</a>
-
-
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22post_office%22%5D(%7B%7Bbbox%7D%7D)%3B%0A%20%20%20%20nwr%5B%22post_office%22%3D%22post_partner%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -60,6 +46,7 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office#values) [post_office](https://wiki.openstreetmap.org/wiki/Key:post_office) | Multiple choice | [post_partner](https://wiki.openstreetmap.org/wiki/Tag:post_office%3Dpost_partner) [](https://wiki.openstreetmap.org/wiki/Tag:post_office%3D)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:brand#values) [post_office:brand](https://wiki.openstreetmap.org/wiki/Key:post_office:brand) | [string](../SpecialInputElements.md#string) | [DHL](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL) [DPD](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDPD) [GLS](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DGLS) [UPS](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DUPS) [DHL Paketshop](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DDHL Paketshop) [Hermes PaketShop](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DHermes PaketShop) [PostNL](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3DPostNL) [bpost](https://wiki.openstreetmap.org/wiki/Tag:post_office:brand%3Dbpost)
@@ -69,6 +56,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:parcel_to#values) [post_office:parcel_to](https://wiki.openstreetmap.org/wiki/Key:post_office:parcel_to) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:parcel_to%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/post_office:stamps#values) [post_office:stamps](https://wiki.openstreetmap.org/wiki/Key:post_office:stamps) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:post_office:stamps%3Dno)
 
+
+
+
+### just_created 
+
+
+
+This element shows a 'thank you' that the contributor has recently created this element
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
 
 
 
@@ -250,6 +256,40 @@ This is rendered with  `You can buy stamps from companies: {post_office:stamps}`
 
   - *You can buy stamps here*  corresponds with  `post_office:stamps=yes`
   - *You can't buy stamps here*  corresponds with  `post_office:stamps=no`
+
+
+
+
+### leftover-questions 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### last_edit 
+
+
+
+Gives some metainfo about the last edit and who did edit it - rendering only
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+
+
+
+### all-tags 
+
+
+
+This tagrendering has no question and is thus read-only
+
 
 
 

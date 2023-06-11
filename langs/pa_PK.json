@@ -93,38 +93,6 @@
             "title": "نیڑے تیڑے تے تصویراں"
         }
     },
-    "importHelper": {
-        "askMetadata": {
-            "downloadGeojson": "جیوجےسون ڈاؤن‌لوڈ کرو",
-            "title": "میٹا ڈیٹا چݨو"
-        },
-        "confirmProcess": {
-            "title": "لائیسنس تے لوکاں دی جاݨکاری"
-        },
-        "conflationChecker": {
-            "states": {
-                "running": "اورپاس پرشان بھیجیا جا رہا اے۔ ۔ ۔"
-            },
-            "titleNearby": "نیڑے تیڑے تے نشان"
-        },
-        "createNotes": {
-            "title": "نوٹ بݨاؤݨ"
-        },
-        "introduction": {
-            "title": "جاݨ پچھاݨ"
-        },
-        "login": {
-            "title": "لوگ‌این کرو",
-            "userAccountTitle": "ورتنوالے دا کھاتہ چݨو"
-        },
-        "selectFile": {
-            "title": "فائل چݨو"
-        },
-        "selectTheme": {
-            "title": "تھیم چݨو"
-        },
-        "title": "ایمپورٹ کرن مددگار"
-    },
     "move": {
         "cancel": "چلݨ رد کرو"
     },
@@ -132,13 +100,6 @@
         "addAComment": "ٹپݨی کرو",
         "addCommentPlaceholder": "ٹپݨی کرو۔ ۔ ۔",
         "closeNote": "نوٹ بند کرو"
-    },
-    "professional": {
-        "aboutOsm": {
-            "aboutOsm": {
-                "title": "اوپن‌سٹریٹ‌میپ کیہ اے؟"
-            }
-        }
     },
     "reviews": {
         "saving_review": "سامبھیا جا رہا اے…"

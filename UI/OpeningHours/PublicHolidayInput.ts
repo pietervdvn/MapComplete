@@ -25,27 +25,13 @@ export default class PublicHolidayInput extends InputElement<string> {
         return true
     }
 
-    /**
-     *
-     * // should construct an element
-     * const html = new PublicHolidayInput().InnerConstructElement()
-     * html !== undefined // => true
-     *
-     * // should construct an element despite having an invalid input
-     * const html = new PublicHolidayInput(new UIEventSource("invalid")).InnerConstructElement()
-     * html !== undefined // => true
-     *
-     * // should construct an element despite having null as input
-     * const html = new PublicHolidayInput(new UIEventSource(null)).InnerConstructElement()
-     * html !== undefined // => true
-     */
     protected InnerConstructElement(): HTMLElement {
         const dropdown = new DropDown(Translations.t.general.opening_hours.open_during_ph.Clone(), [
             { shown: Translations.t.general.opening_hours.ph_not_known.Clone(), value: "" },
             { shown: Translations.t.general.opening_hours.ph_closed.Clone(), value: "off" },
             { shown: Translations.t.general.opening_hours.ph_open_as_usual.Clone(), value: "open" },
             { shown: Translations.t.general.opening_hours.ph_open.Clone(), value: " " },
-        ]).SetClass("inline-block")
+        ]).SetClass("inline-block w-full")
         /*
          * Either "" (unknown), " " (opened) or "off" (closed)
          * */
@@ -73,7 +59,7 @@ export default class PublicHolidayInput extends InputElement<string> {
 
         this.SetupDataSync(mode, start.GetValue(), end.GetValue())
 
-        return new Combine([dropdown, askHours]).ConstructElement()
+        return new Combine([dropdown, askHours]).SetClass("w-full flex").ConstructElement()
     }
 
     private SetupDataSync(

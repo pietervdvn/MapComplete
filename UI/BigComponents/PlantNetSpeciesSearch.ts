@@ -7,7 +7,6 @@ import WikidataPreviewBox from "../Wikipedia/WikidataPreviewBox"
 import { Button } from "../Base/Button"
 import Combine from "../Base/Combine"
 import Title from "../Base/Title"
-import WikipediaBox from "../Wikipedia/WikipediaBox"
 import Translations from "../i18n/Translations"
 import List from "../Base/List"
 import Svg from "../../Svg"
@@ -97,7 +96,7 @@ export default class PlantNetSpeciesSearch extends VariableUiElement {
                             if (wikidataSpecies === undefined) {
                                 return plantOverview
                             }
-                            const buttons = new Combine([
+                            return new Combine([
                                 new Button(
                                     new Combine([
                                         Svg.back_svg().SetClass(
@@ -120,15 +119,6 @@ export default class PlantNetSpeciesSearch extends VariableUiElement {
                                     }
                                 ).SetClass("btn"),
                             ]).SetClass("flex justify-between")
-
-                            return new Combine([
-                                new WikipediaBox([wikidataSpecies], {
-                                    firstParagraphOnly: false,
-                                    noImages: false,
-                                    addHeader: false,
-                                }).SetClass("h-96"),
-                                buttons,
-                            ]).SetClass("flex flex-col self-end")
                         })
                     )
                 })

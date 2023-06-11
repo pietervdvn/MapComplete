@@ -30,8 +30,8 @@ export default class OpeningHoursRange extends BaseUIElement {
             Utils.TwoDigits(oh.endHour) + ":" + Utils.TwoDigits(oh.endMinutes)
         )
 
-        const deleteRange = Svg.delete_icon_ui()
-            .SetClass("rounded-full w-6 h-6 block bg-black")
+        const deleteRange = Svg.delete_icon_svg()
+            .SetClass("rounded-full w-6 h-6 block bg-black pointer-events-auto  ")
             .onClick(() => {
                 this._onDelete()
             })

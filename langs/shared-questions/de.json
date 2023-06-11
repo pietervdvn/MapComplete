@@ -131,6 +131,13 @@
             "question": "Wie lautet der Netzwerkname für den drahtlosen Internetzugang?",
             "render": "Der Netzwerkname lautet <b>{internet_access:ssid}</b>"
         },
+        "just_created": {
+            "mappings": {
+                "0": {
+                    "then": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen."
+                }
+            }
+        },
         "level": {
             "mappings": {
                 "0": {

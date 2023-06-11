@@ -29,21 +29,7 @@ A layer showing (public) toilets located at different places.
   - [toilets](https://mapcomplete.osm.be/toilets)
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:toilets' target='_blank'>toilets</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:toilets%3Dyes' target='_blank'>yes</a>
-
-
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22toilets%22%3D%22yes%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -60,6 +46,7 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/toilets:access#values) [toilets:access](https://wiki.openstreetmap.org/wiki/Key:toilets:access) | [string](../SpecialInputElements.md#string) | [yes](https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dyes) [customers](https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dcustomers) [no](https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dno) [key](https://wiki.openstreetmap.org/wiki/Tag:toilets:access%3Dkey)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/toilets:fee#values) [toilets:fee](https://wiki.openstreetmap.org/wiki/Key:toilets:fee) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:toilets:fee%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:toilets:fee%3Dno)
@@ -67,13 +54,27 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/toilets:wheelchair#values) [toilets:wheelchair](https://wiki.openstreetmap.org/wiki/Key:toilets:wheelchair) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Dno) [designated](https://wiki.openstreetmap.org/wiki/Tag:toilets:wheelchair%3Ddesignated)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/toilets:door:width#values) [toilets:door:width](https://wiki.openstreetmap.org/wiki/Key:toilets:door:width) | [pfloat](../SpecialInputElements.md#pfloat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/toilets:position#values) [toilets:position](https://wiki.openstreetmap.org/wiki/Key:toilets:position) | Multiple choice | [seated](https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dseated) [urinal](https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Durinal) [squat](https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dsquat) [seated;urinal](https://wiki.openstreetmap.org/wiki/Tag:toilets:position%3Dseated;urinal)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/changing_table#values) [changing_table](https://wiki.openstreetmap.org/wiki/Key:changing_table) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:changing_table%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/changing_table:location#values) [changing_table:location](https://wiki.openstreetmap.org/wiki/Key:changing_table:location) | [string](../SpecialInputElements.md#string) | [female_toilet](https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dfemale_toilet) [male_toilet](https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dmale_toilet) [wheelchair_toilet](https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Dwheelchair_toilet) [dedicated_room](https://wiki.openstreetmap.org/wiki/Tag:changing_table:location%3Ddedicated_room)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/toilets:handwashing#values) [toilets:handwashing](https://wiki.openstreetmap.org/wiki/Key:toilets:handwashing) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:toilets:handwashing%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/toilets:paper_supplied#values) [toilets:paper_supplied](https://wiki.openstreetmap.org/wiki/Key:toilets:paper_supplied) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:toilets:paper_supplied%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/toilets:description#values) [toilets:description](https://wiki.openstreetmap.org/wiki/Key:toilets:description) | [string](../SpecialInputElements.md#string) | 
 
+
+
+
+### just_created 
+
+
+
+This element shows a 'thank you' that the contributor has recently created this element
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
 
 
 
@@ -217,92 +218,52 @@ This tagrendering is only visible in the popup if the following condition is met
 
 
 
-### toilets-type 
+### toilettoiletstype 
 
 
 
-The question is  *Which kind of toilets are this?*
-
-
-
-
-
-  - *There are only seated toilets*  corresponds with  `toilets:position=seated`
-  - *There are only urinals here*  corresponds with  `toilets:position=urinal`
-  - *There are only squat toilets here*  corresponds with  `toilets:position=squat`
-  - *Both seated toilets and urinals are available here*  corresponds with  `toilets:position=seated;urinal`
-
-
-
-
-### toilets-changing-table 
-
-
-
-The question is  *Is a changing table (to change diapers) available?*
+This tagrendering has no question and is thus read-only
 
 
 
 
 
-  - *A changing table is available*  corresponds with  `changing_table=yes`
-  - *No changing table is available*  corresponds with  `changing_table=no`
+### toilettoiletschangingtable 
 
 
 
-
-### toilet-changing_table:location 
-
-
-
-The question is  *Where is the changing table located?*
-
-This rendering asks information about the property  [changing_table:location](https://wiki.openstreetmap.org/wiki/Key:changing_table:location) 
-
-This is rendered with  `The changing table is located at {changing_table:location}`
+This tagrendering has no question and is thus read-only
 
 
 
 
 
-  - *The changing table is in the toilet for women. *  corresponds with  `changing_table:location=female_toilet`
-  - *The changing table is in the toilet for men. *  corresponds with  `changing_table:location=male_toilet`
-  - *The changing table is in the toilet for wheelchair users. *  corresponds with  `changing_table:location=wheelchair_toilet`
-  - *The changing table is in a dedicated room. *  corresponds with  `changing_table:location=dedicated_room`
-
-
-This tagrendering is only visible in the popup if the following condition is met: `changing_table=yes`
+### toilettoiletchangingtablelocation 
 
 
 
-### toilet-handwashing 
-
-
-
-The question is  *Do these toilets have a sink to wash your hands?*
+This tagrendering has no question and is thus read-only
 
 
 
 
 
-  - *This toilets have a sink to wash your hands*  corresponds with  `toilets:handwashing=yes`
-  - *This toilets <b>don't</b> have a sink to wash your hands*  corresponds with  `toilets:handwashing=no`
+### toilettoilethandwashing 
 
 
 
-
-### toilet-has-paper 
-
-
-
-The question is  *Does one have to bring their own toilet paper to this toilet?*
+This tagrendering has no question and is thus read-only
 
 
 
 
 
-  - *This toilet is equipped with toilet paper*  corresponds with  `toilets:paper_supplied=yes`
-  - *You have to bring your own toilet paper to this toilet*  corresponds with  `toilets:paper_supplied=no`
+### toilettoilethaspaper 
+
+
+
+This tagrendering has no question and is thus read-only
+
 
 
 
@@ -321,6 +282,62 @@ This is rendered with  `{toilets:description}`
 
 
 
+### leftover-questions 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### minimap 
+
+
+
+Shows a small map with the feature. Added by default to every popup
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### delete-button 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### last_edit 
+
+
+
+Gives some metainfo about the last edit and who did edit it - rendering only
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+
+
+
+### all-tags 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
 #### Filters 
 
 
@@ -330,13 +347,6 @@ This is rendered with  `{toilets:description}`
 id | question | osmTags
 ---- | ---------- | ---------
 wheelchair.0 | Wheelchair accessible | toilets:wheelchair=yes\|toilets:wheelchair=designated
-
-
-
-
-id | question | osmTags
----- | ---------- | ---------
-changing_table.0 | Has a changing table | changing_table=yes
 
 
 

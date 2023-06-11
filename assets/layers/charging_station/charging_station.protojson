@@ -721,11 +721,10 @@
       "id": "questions"
     },
     {
-      "id": "questions",
-      "group": "technical",
+      "id": "questions-technical",
       "render": {
-        "en": "<h3>Technical questions</h3>The questions below are very technical. Feel free to ignore them<br/>{questions}",
-        "nl": "<h3>Technische vragen</h3>De vragen hieronder zijn erg technisch - sla deze over indien je hier geen tijd voor hebt<br/>{questions}"
+        "en": "<h3>Technical questions</h3>The questions below are very technical. Feel free to ignore them<br/>{questions(technical)}",
+        "nl": "<h3>Technische vragen</h3>De vragen hieronder zijn erg technisch - sla deze over indien je hier geen tijd voor hebt<br/>{questions(technical)}"
       }
     }
   ],
@@ -801,8 +800,8 @@
         "socket:typee=1"
       ],
       "title": {
-        "en": "charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/TypeE.svg' class="w-4 h-4 mx-1 bg-white rounded-full"/>",
-        "nl": "oplaadpunt voor elektrische fietsen met een gewone, europese stekker <img src='./assets/layers/charging_station/TypeE.svg' class="w-4 h-4 mx-1 bg-white rounded-full"/>"
+        "en": "charging station for electrical bikes with a normal european wall plug <img src='./assets/layers/charging_station/TypeE.svg' class='w-4 h-4 mx-1 bg-white rounded-full'/>",
+        "nl": "oplaadpunt voor elektrische fietsen met een gewone, europese stekker <img src='./assets/layers/charging_station/TypeE.svg' class='w-4 h-4 mx-1 bg-white rounded-full'/>"
       },
       "preciseInput": {
         "preferredBackground": "map"

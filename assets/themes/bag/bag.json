@@ -46,7 +46,7 @@
       },
       "minzoom": 19,
       "calculatedTags": [
-        "_surface:strict:=feat.get('_surface')"
+        "_surface:strict:=feat(get)('_surface')"
       ],
       "mapRendering": [
         {
@@ -192,20 +192,20 @@
       },
       "minzoom": 19,
       "calculatedTags": [
-        "_overlaps_with_buildings=feat.overlapWith('osm:buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
-        "_overlaps_with=feat.get('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
-        "_overlaps_with_properties=feat.get('_overlaps_with')?.feat?.properties",
-        "_overlap_percentage=Math.round(100 * (feat.get('_overlaps_with')?.overlap / feat.get('_overlaps_with_properties')['_surface:strict']))",
-        "_reverse_overlap_percentage=Math.round(100 * (feat.get('_overlaps_with')?.overlap / feat.get('_surface')))",
+        "_overlaps_with_buildings=overlapWith(feat)('osm:buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
+        "_overlaps_with=feat(get)('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
+        "_overlaps_with_properties=feat(get)('_overlaps_with')?.feat?.properties",
+        "_overlap_percentage=Math.round(100 * (feat(get)('_overlaps_with')?.overlap / feat(get)('_overlaps_with_properties')['_surface:strict']))",
+        "_reverse_overlap_percentage=Math.round(100 * (feat(get)('_overlaps_with')?.overlap / feat(get)('_surface')))",
         "_bag_obj:in_construction=feat.properties.status.startsWith('Bouwvergunning verleend') || feat.properties.status.startsWith('Bouw gestart')",
         "_bag_obj:construction=(feat.properties.gebruiksdoel == 'woonfunctie') ? ((Number(feat.properties.aantal_verblijfsobjecten) == 1) ? 'house' : 'apartments') : 'yes'",
         "_bag_obj:building=(feat.properties.status.startsWith('Bouwvergunning verleend') || feat.properties.status.startsWith('Bouw gestart')) ? 'construction' : feat.properties['_bag_obj:construction']",
         "_bag_obj:ref:bag=Number(feat.properties.identificatie)",
         "_bag_obj:source:date=new Date().toISOString().split('T')[0]",
         "_bag_obj:start_date=feat.properties.bouwjaar",
-        "_osm_obj:id=feat.get('_overlaps_with_properties')?.id",
-        "_osm_obj:building=feat.get('_overlaps_with_properties')?.building",
-        "_imported_osm_object_found:=Number(feat.properties.identificatie)==Number(feat.get('_overlaps_with_properties')['ref:bag'])"
+        "_osm_obj:id=feat(get)('_overlaps_with_properties')?.id",
+        "_osm_obj:building=feat(get)('_overlaps_with_properties')?.building",
+        "_imported_osm_object_found:=Number(feat.properties.identificatie)==Number(feat(get)('_overlaps_with_properties')['ref:bag'])"
       ],
       "mapRendering": [
         {
@@ -232,7 +232,16 @@
       "tagRenderings": [
         {
           "id": "Import button",
-          "render": "{import_way_button(osm:buildings, building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date, Upload this building to OpenStreetMap)}",
+          "render": {
+            "special": {
+              "type": "import_way_button",
+              "targetLayer": "osm:buildings",
+              "tags": "building=$_bag_obj:building; ref:bag=$_bag_obj:ref:bag; source=BAG; source:date=$_bag_obj:source:date; start_date=$_bag_obj:start_date",
+              "text": {
+                "*": "Upload this building to OpenStreetMap"
+              }
+            }
+          },
           "mappings": [
             {
               "#": "Something went wrong calculating the tags - don't show an import button",
@@ -365,15 +374,15 @@
       },
       "minzoom": 19,
       "calculatedTags": [
-        "_closed_osm_addr:=feat.closest('osm:adresses').properties",
+        "_closed_osm_addr:=closest(feat)('osm:adresses').properties",
         "_bag_obj:addr:housenumber=`${feat.properties.huisnummer}${feat.properties.huisletter}${(feat.properties.toevoeging != '') ? '-' : ''}${feat.properties.toevoeging}`",
         "_bag_obj:ref:bag=Number(feat.properties.identificatie)",
         "_bag_obj:source:date=new Date().toISOString().split('T')[0]",
-        "_osm_obj:addr:city:=feat.get('_closed_osm_addr')['addr:city']",
-        "_osm_obj:addr:housenumber:=feat.get('_closed_osm_addr')['addr:housenumber']",
-        "_osm_obj:addr:postcode:=feat.get('_closed_osm_addr')['addr:postcode']",
-        "_osm_obj:addr:street:=feat.get('_closed_osm_addr')['addr:street']",
-        "_imported_osm_object_found:=(feat.properties.woonplaats==feat.get('_closed_osm_addr')['addr:city'])&&(feat.get('_bag_obj:addr:housenumber')==feat.get('_closed_osm_addr')['addr:housenumber'])&&(feat.properties.postcode==feat.get('_closed_osm_addr')['addr:postcode'])&&(feat.properties.openbare_ruimte==feat.get('_closed_osm_addr')['addr:street'])"
+        "_osm_obj:addr:city:=feat(get)('_closed_osm_addr')['addr:city']",
+        "_osm_obj:addr:housenumber:=feat(get)('_closed_osm_addr')['addr:housenumber']",
+        "_osm_obj:addr:postcode:=feat(get)('_closed_osm_addr')['addr:postcode']",
+        "_osm_obj:addr:street:=feat(get)('_closed_osm_addr')['addr:street']",
+        "_imported_osm_object_found:=(feat.properties.woonplaats==feat(get)('_closed_osm_addr')['addr:city'])&&(feat(get)('_bag_obj:addr:housenumber')==feat(get)('_closed_osm_addr')['addr:housenumber'])&&(feat.properties.postcode==feat(get)('_closed_osm_addr')['addr:postcode'])&&(feat.properties.openbare_ruimte==feat(get)('_closed_osm_addr')['addr:street'])"
       ],
       "mapRendering": [
         {

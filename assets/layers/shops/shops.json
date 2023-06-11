@@ -12,7 +12,7 @@
     "es": "Tienda",
     "pa_PK": "دکان"
   },
-  "minzoom": 16,
+  "minzoom": 12,
   "source": {
     "osmTags": {
       "and": [

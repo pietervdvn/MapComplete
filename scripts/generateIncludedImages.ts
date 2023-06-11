@@ -32,18 +32,13 @@ function genImages(dryrun = false) {
         const name = path.substring(0, path.length - 4).replace(/[ -]/g, "_")
 
         if (dryrun) {
-            svg = "xxx"
+            svg = "<omitting svg - dryrun>"
         }
 
         let rawName = name
-        if (dryrun) {
-            rawName = "add"
-        }
 
         module += `    public static ${name} = "${svg}"\n`
-        module += `    public static ${name}_img = Img.AsImageElement(Svg.${rawName})\n`
         module += `    public static ${name}_svg() { return new Img(Svg.${rawName}, true);}\n`
-        module += `    public static ${name}_ui() { return new FixedUiElement(Svg.${rawName}_img);}\n\n`
         if (!dryrun) {
             allNames.push(`"${path}": Svg.${name}`)
         }

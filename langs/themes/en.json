@@ -14,6 +14,31 @@
     },
     "atm": {
         "description": "This map shows ATMs to withdraw or deposit money",
+        "layers": {
+            "3": {
+                "override": {
+                    "=tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import this ATM"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": "OpenStreetMap knows about <a href='#{_closest_osm_poi}'>an ATM which is {_closest_osm_poi_distance} meter away.</a> "
+                        },
+                        "2": {
+                            "render": {
+                                "special": {
+                                    "message": "Add all the suggested tags to the closest ATM"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "title": "ATM Machines"
     },
     "bag": {
@@ -475,7 +500,7 @@
             }
         },
         "overrideAll": {
-            "tagRenderings+": {
+            "+tagRenderings": {
                 "0": {
                     "mappings": {
                         "0": {
@@ -694,14 +719,17 @@
     "grb": {
         "description": "This theme is an attempt to help automating the GRB import.",
         "layers": {
-            "1": {
+            "0": {
                 "tagRenderings": {
                     "building type": {
                         "question": "What kind of building is this?"
+                    },
+                    "grb-reference": {
+                        "render": "Has been imported from GRB, reference number is {source:geometry:ref}"
                     }
                 }
             },
-            "6": {
+            "1": {
                 "tagRenderings": {
                     "Import-button": {
                         "mappings": {
@@ -862,8 +890,8 @@
             },
             "1": {
                 "override": {
-                    "tagRenderings": {
-                        "link_to_more": {
+                    "tagRenderings+": {
+                        "0": {
                             "render": "More statistics can be found <a href='https://github.com/pietervdvn/MapComplete/tree/develop/Docs/Tools/graphs' target='_blank'>here</a>"
                         }
                     }

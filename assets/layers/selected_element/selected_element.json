@@ -7,10 +7,7 @@
     "fr": "Met en surbrillance l'élément actuellement sélectioné. Surcharger cette couche pour avoir d'autres couleurs.",
     "ca": "Ressalta l'element seleccionat actualment. Anul·leu aquesta capa per tenir diferents colors"
   },
-  "source": {
-    "osmTags": "selected=yes",
-    "maxCacheAge": 0
-  },
+  "source": "special",
   "mapRendering": [
     {
       "icon": "circle:red",

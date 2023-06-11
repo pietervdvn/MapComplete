@@ -2,12 +2,16 @@
  * This actor will download the latest version of the selected element from OSM and update the tags if necessary.
  */
 import { UIEventSource } from "../UIEventSource"
-import { ElementStorage } from "../ElementStorage"
 import { Changes } from "../Osm/Changes"
-import { OsmObject } from "../Osm/OsmObject"
 import { OsmConnection } from "../Osm/OsmConnection"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import SimpleMetaTagger from "../SimpleMetaTagger"
+import FeaturePropertiesStore from "../FeatureSource/Actors/FeaturePropertiesStore"
+import { Feature } from "geojson"
+import { OsmTags } from "../../Models/OsmFeature"
+import OsmObjectDownloader from "../Osm/OsmObjectDownloader"
+import { IndexedFeatureSource } from "../FeatureSource/FeatureSource"
+import { Utils } from "../../Utils"
 
 export default class SelectedElementTagsUpdater {
     private static readonly metatags = new Set([
@@ -19,30 +23,43 @@ export default class SelectedElementTagsUpdater {
         "id",
     ])
 
-    constructor(state: {
-        selectedElement: UIEventSource<any>
-        allElements: ElementStorage
+    private readonly state: {
+        selectedElement: UIEventSource<Feature>
+        featureProperties: FeaturePropertiesStore
         changes: Changes
         osmConnection: OsmConnection
-        layoutToUse: LayoutConfig
+        layout: LayoutConfig
+        osmObjectDownloader: OsmObjectDownloader
+        indexedFeatures: IndexedFeatureSource
+    }
+
+    constructor(state: {
+        selectedElement: UIEventSource<Feature>
+        featureProperties: FeaturePropertiesStore
+        indexedFeatures: IndexedFeatureSource
+        changes: Changes
+        osmConnection: OsmConnection
+        layout: LayoutConfig
+        osmObjectDownloader: OsmObjectDownloader
     }) {
+        this.state = state
         state.osmConnection.isLoggedIn.addCallbackAndRun((isLoggedIn) => {
-            if (isLoggedIn) {
-                SelectedElementTagsUpdater.installCallback(state)
-                return true
+            if (!isLoggedIn && !Utils.runningFromConsole) {
+                return
             }
+            this.installCallback()
+            // We only have to do this once...
+            return true
         })
     }
 
-    public static installCallback(state: {
-        selectedElement: UIEventSource<any>
-        allElements: ElementStorage
-        changes: Changes
-        osmConnection: OsmConnection
-        layoutToUse: LayoutConfig
-    }) {
+    private installCallback() {
+        const state = this.state
         state.selectedElement.addCallbackAndRunD(async (s) => {
             let id = s.properties?.id
+            if (!id) {
+                return
+            }
 
             const backendUrl = state.osmConnection._oauth_config.url
             if (id.startsWith(backendUrl)) {
@@ -59,38 +76,36 @@ export default class SelectedElementTagsUpdater {
                 return
             }
             try {
-                const latestTags = await OsmObject.DownloadPropertiesOf(id)
-                if (latestTags === "deleted") {
-                    console.warn("The current selected element has been deleted upstream!")
-                    const currentTagsSource = state.allElements.getEventSourceById(id)
-                    if (currentTagsSource.data["_deleted"] === "yes") {
-                        return
-                    }
+                const osmObject = await state.osmObjectDownloader.DownloadObjectAsync(id)
+                if (osmObject === "deleted") {
+                    console.debug("The current selected element has been deleted upstream!", id)
+                    const currentTagsSource = state.featureProperties.getStore(id)
                     currentTagsSource.data["_deleted"] = "yes"
+                    currentTagsSource.addCallbackAndRun((tags) => console.trace("Tags are", tags))
                     currentTagsSource.ping()
                     return
                 }
-                SelectedElementTagsUpdater.applyUpdate(state, latestTags, id)
+                const latestTags = osmObject.tags
+                const newGeometry = osmObject.asGeoJson()?.geometry
+                const oldFeature = state.indexedFeatures.featuresById.data.get(id)
+                const oldGeometry = oldFeature?.geometry
+                if (oldGeometry !== undefined && !Utils.SameObject(newGeometry, oldGeometry)) {
+                    console.log("Detected a difference in geometry for ", id)
+                    oldFeature.geometry = newGeometry
+                    state.featureProperties.getStore(id)?.ping()
+                }
+                this.applyUpdate(latestTags, id)
+
                 console.log("Updated", id)
             } catch (e) {
                 console.warn("Could not update", id, " due to", e)
             }
         })
     }
-
-    public static applyUpdate(
-        state: {
-            selectedElement: UIEventSource<any>
-            allElements: ElementStorage
-            changes: Changes
-            osmConnection: OsmConnection
-            layoutToUse: LayoutConfig
-        },
-        latestTags: any,
-        id: string
-    ) {
+    private applyUpdate(latestTags: OsmTags, id: string) {
+        const state = this.state
         try {
-            const leftRightSensitive = state.layoutToUse.isLeftRightSensitive()
+            const leftRightSensitive = state.layout.isLeftRightSensitive()
 
             if (leftRightSensitive) {
                 SimpleMetaTagger.removeBothTagging(latestTags)
@@ -115,7 +130,7 @@ export default class SelectedElementTagsUpdater {
 
             // With the changes applied, we merge them onto the upstream object
             let somethingChanged = false
-            const currentTagsSource = state.allElements.getEventSourceById(id)
+            const currentTagsSource = state.featureProperties.getStore(id)
             const currentTags = currentTagsSource.data
             for (const key in latestTags) {
                 let osmValue = latestTags[key]
@@ -135,7 +150,7 @@ export default class SelectedElementTagsUpdater {
                 if (currentKey.startsWith("_")) {
                     continue
                 }
-                if (this.metatags.has(currentKey)) {
+                if (SelectedElementTagsUpdater.metatags.has(currentKey)) {
                     continue
                 }
                 if (currentKey in latestTags) {

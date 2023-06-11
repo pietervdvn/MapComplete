@@ -3,7 +3,7 @@ import { LayerConfigJson } from "../Json/LayerConfigJson"
 import LayerConfig from "../LayerConfig"
 import { Utils } from "../../../Utils"
 import Constants from "../../Constants"
-import { Translation, TypedTranslation } from "../../../UI/i18n/Translation"
+import { Translation } from "../../../UI/i18n/Translation"
 import { LayoutConfigJson } from "../Json/LayoutConfigJson"
 import LayoutConfig from "../LayoutConfig"
 import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
@@ -15,6 +15,7 @@ import Svg from "../../../Svg"
 import FilterConfigJson from "../Json/FilterConfigJson"
 import DeleteConfig from "../DeleteConfig"
 import { QuestionableTagRenderingConfigJson } from "../Json/QuestionableTagRenderingConfigJson"
+import Validators from "../../../UI/InputElement/Validators"
 
 class ValidateLanguageCompleteness extends DesugaringStep<any> {
     private readonly _languages: string[]
@@ -98,6 +99,11 @@ export class DoesImageExist extends DesugaringStep<string> {
                 // This is a builtin img, e.g. 'checkmark' or 'crosshair'
                 return { result: image }
             }
+        }
+
+        if (image.startsWith("<") && image.endsWith(">")) {
+            // This is probably HTML, you're on your own here
+            return { result: image }
         }
 
         if (!this._knownImagePaths.has(image)) {
@@ -296,7 +302,7 @@ class OverrideShadowingCheck extends DesugaringStep<LayoutConfigJson> {
 
     convert(
         json: LayoutConfigJson,
-        context: string
+        _: string
     ): { result: LayoutConfigJson; errors?: string[]; warnings?: string[] } {
         const overrideAll = json.overrideAll
         if (overrideAll === undefined) {
@@ -594,6 +600,7 @@ export class DetectMappingsWithImages extends DesugaringStep<TagRenderingConfigJ
 
 class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
     private _options: { noQuestionHintCheck: boolean }
+
     constructor(options: { noQuestionHintCheck: boolean }) {
         super("Miscellaneous checks on the tagrendering", ["special"], "MiscTagRenderingChecks")
         this._options = options
@@ -617,24 +624,26 @@ class MiscTagRenderingChecks extends DesugaringStep<TagRenderingConfigJson> {
                     ': detected `special` on the top level. Did you mean `{"render":{ "special": ... }}`'
             )
         }
-        if (json["question"] && !this._options?.noQuestionHintCheck) {
-            const question = Translations.T(
-                new TypedTranslation(json["question"]),
-                context + ".question"
+        if (json["group"]) {
+            errors.push(
+                "At " +
+                    context +
+                    ': groups are deprecated, use `"label": ["' +
+                    json["group"] +
+                    '"]` instead'
             )
-            for (const lng of question.SupportedLanguages()) {
-                const html = document.createElement("p")
-                html.innerHTML = question.textFor(lng)
-                const divs = Array.from(html.getElementsByTagName("div"))
-                const spans = Array.from(html.getElementsByTagName("span"))
-                const brs = Array.from(html.getElementsByTagName("br"))
-                const subtles = Array.from(html.getElementsByClassName("subtle"))
-                if (divs.length + spans.length + brs.length + subtles.length > 0) {
-                    warnings.push(
-                        `At ${context}: the question for ${lng} contains a div, a span, a br or an element with class 'subtle'. Please, use a \`questionHint\` instead.
-    The question is: ${question.textFor(lng)}`
-                    )
-                }
+        }
+        const freeformType = json["freeform"]?.["type"]
+        if (freeformType) {
+            if (Validators.availableTypes.indexOf(freeformType) < 0) {
+                throw (
+                    "At " +
+                    context +
+                    ".freeform.type is an unknown type: " +
+                    freeformType +
+                    "; try one of " +
+                    Validators.availableTypes.join(", ")
+                )
             }
         }
         return {
@@ -692,6 +701,17 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
         }
 
+        if (json.source === "special") {
+            if (!Constants.priviliged_layers.find((x) => x == json.id)) {
+                errors.push(
+                    context +
+                        ": layer " +
+                        json.id +
+                        " uses 'special' as source.osmTags. However, this layer is not a priviliged layer"
+                )
+            }
+        }
+
         if (json.tagRenderings !== undefined && json.tagRenderings.length > 0) {
             if (json.title === undefined) {
                 errors.push(
@@ -715,9 +735,9 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
         }
 
-        if (json.minzoom > Constants.userJourney.minZoomLevelToAddNewPoints) {
+        if (json.minzoom > Constants.minZoomLevelToAddNewPoint) {
             ;(json.presets?.length > 0 ? errors : warnings).push(
-                `At ${context}: minzoom is ${json.minzoom}, this should be at most ${Constants.userJourney.minZoomLevelToAddNewPoints} as a preset is set. Why? Selecting the pin for a new item will zoom in to level before adding the point. Having a greater minzoom will hide the points, resulting in possible duplicates`
+                `At ${context}: minzoom is ${json.minzoom}, this should be at most ${Constants.minZoomLevelToAddNewPoint} as a preset is set. Why? Selecting the pin for a new item will zoom in to level before adding the point. Having a greater minzoom will hide the points, resulting in possible duplicates`
             )
         }
         {
@@ -830,7 +850,7 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
                 }
 
                 if (json.description === undefined) {
-                    if (Constants.priviliged_layers.indexOf(json.id) >= 0) {
+                    if (typeof json.source === null) {
                         errors.push(context + ": A priviliged layer must have a description")
                     } else {
                         warnings.push(context + ": A builtin layer should have a description")
@@ -867,8 +887,11 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
             }
 
             if (json.presets !== undefined) {
+                if (typeof json.source === "string") {
+                    throw "A special layer cannot have presets"
+                }
                 // Check that a preset will be picked up by the layer itself
-                const baseTags = TagUtils.Tag(json.source.osmTags)
+                const baseTags = TagUtils.Tag(json.source["osmTags"])
                 for (let i = 0; i < json.presets.length; i++) {
                     const preset = json.presets[i]
                     const tags: { k: string; v: string }[] = new And(
@@ -905,6 +928,37 @@ export class ValidateLayer extends DesugaringStep<LayerConfigJson> {
     }
 }
 
+export class ValidateFilter extends DesugaringStep<FilterConfigJson> {
+    constructor() {
+        super("Detect common errors in the filters", [], "ValidateFilter")
+    }
+
+    convert(
+        filter: FilterConfigJson,
+        context: string
+    ): {
+        result: FilterConfigJson
+        errors?: string[]
+        warnings?: string[]
+        information?: string[]
+    } {
+        const errors = []
+        for (const option of filter.options) {
+            for (let i = 0; i < option.fields.length; i++) {
+                const field = option.fields[i]
+                const type = field.type ?? "string"
+                if (Validators.availableTypes.find((t) => t === type) === undefined) {
+                    const err = `Invalid filter: ${type} is not a valid textfield type (at ${context}.fields[${i}])\n\tTry one of ${Array.from(
+                        Validators.availableTypes
+                    ).join(",")}`
+                    errors.push(err)
+                }
+            }
+        }
+        return { result: filter, errors }
+    }
+}
+
 export class DetectDuplicateFilters extends DesugaringStep<{
     layers: LayerConfigJson[]
     themes: LayoutConfigJson[]
@@ -919,7 +973,7 @@ export class DetectDuplicateFilters extends DesugaringStep<{
 
     convert(
         json: { layers: LayerConfigJson[]; themes: LayoutConfigJson[] },
-        context: string
+        __: string
     ): {
         result: { layers: LayerConfigJson[]; themes: LayoutConfigJson[] }
         errors?: string[]

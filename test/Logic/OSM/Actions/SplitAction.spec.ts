@@ -2,6 +2,8 @@ import { Utils } from "../../../../Utils"
 import SplitAction from "../../../../Logic/Osm/Actions/SplitAction"
 import { Changes } from "../../../../Logic/Osm/Changes"
 import { describe, expect, it } from "vitest"
+import {OsmConnection} from "../../../../Logic/Osm/OsmConnection";
+import {ImmutableStore} from "../../../../Logic/UIEventSource";
 
 describe("SplitAction", () => {
     {
@@ -2687,7 +2689,10 @@ describe("SplitAction", () => {
         const splitter = new SplitAction(id, [splitPoint], {
             theme: "test",
         })
-        const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
+        const changeDescription = await splitter.CreateChangeDescriptions(new Changes({
+            dryRun: new ImmutableStore(true),
+            osmConnection: new OsmConnection()
+        }))
 
         expect(changeDescription[0].type).toBe("node")
         expect(changeDescription[0].id).toBe(-1)
@@ -2712,7 +2717,10 @@ describe("SplitAction", () => {
         const splitter = new SplitAction(id, [splitPoint], {
             theme: "test",
         })
-        const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
+        const changeDescription = await splitter.CreateChangeDescriptions(new Changes({
+            dryRun: new ImmutableStore(true),
+            osmConnection: new OsmConnection()
+        }))
 
         expect(changeDescription.length).toBe(2)
         expect(changeDescription[0].type).toBe("way")
@@ -2729,7 +2737,10 @@ describe("SplitAction", () => {
         const splitter = new SplitAction(id, [splitPoint], {
             theme: "test",
         })
-        const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
+        const changeDescription = await splitter.CreateChangeDescriptions(new Changes({
+            dryRun: new ImmutableStore(true),
+            osmConnection: new OsmConnection()
+        }))
 
         // Should be a new node
         expect(changeDescription[0].type).toBe("node")
@@ -2742,7 +2753,10 @@ describe("SplitAction", () => {
         const splitAction = new SplitAction("way/941079939", [splitPointAroundP3], {
             theme: "test",
         })
-        const changes = await splitAction.Perform(new Changes())
+        const changes = await splitAction.Perform(new Changes({
+            dryRun: new ImmutableStore(true),
+            osmConnection: new OsmConnection()
+        }))
         console.log(changes)
         // 8715440368 is the expected point of the split
 
@@ -2780,7 +2794,10 @@ describe("SplitAction", () => {
             { theme: "test" },
             1
         )
-        const changes = await splitAction.Perform(new Changes())
+        const changes = await splitAction.Perform(new Changes({
+            dryRun: new ImmutableStore(true),
+            osmConnection: new OsmConnection()
+        }))
 
         // THe first change is the creation of the new node
         expect(changes[0].type).toEqual("node")

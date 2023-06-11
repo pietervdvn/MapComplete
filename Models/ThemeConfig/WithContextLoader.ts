@@ -15,13 +15,13 @@ export default class WithContextLoader {
      *
      * The found value is interpreted as a tagrendering and fetched/parsed
      * */
-    public tr(key: string, deflt) {
+    public tr(key: string, deflt?: string, translationContext?: string) {
         const v = this._json[key]
         if (v === undefined || v === null) {
             if (deflt === undefined) {
                 return undefined
             }
-            return new TagRenderingConfig(deflt, `${this._context}.${key}.default value`)
+            return new TagRenderingConfig(deflt, `${translationContext ?? this._context}.${key}.default value`)
         }
         if (typeof v === "string") {
             const shared = SharedTagRenderings.SharedTagRendering.get(v)
@@ -29,7 +29,7 @@ export default class WithContextLoader {
                 return shared
             }
         }
-        return new TagRenderingConfig(v, `${this._context}.${key}`)
+        return new TagRenderingConfig(v, `${translationContext ?? this._context}.${key}`)
     }
 
     /**

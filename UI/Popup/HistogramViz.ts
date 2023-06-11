@@ -1,13 +1,13 @@
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import { FixedUiElement } from "../Base/FixedUiElement"
-// import Histogram from "../BigComponents/Histogram";
-// import {SpecialVisualization} from "../SpecialVisualization";
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import Histogram from "../BigComponents/Histogram"
+import { Feature } from "geojson"
 
-export class HistogramViz {
+export class HistogramViz implements SpecialVisualization {
     funcName = "histogram"
     docs = "Create a histogram for a list of given values, read from the properties."
     example =
-        "`{histogram('some_key')}` with properties being `{some_key: ['a','b','a','c']} to create a histogram"
+        '`{histogram(\'some_key\')}` with properties being `{some_key: ["a","b","a","c"]} to create a histogram'
     args = [
         {
             name: "key",
@@ -30,7 +30,27 @@ export class HistogramViz {
         },
     ]
 
-    constr(state, tagSource: UIEventSource<any>, args: string[]) {
+    structuredExamples(): { feature: Feature; args: string[] }[] {
+        return [
+            {
+                feature: <Feature>{
+                    type: "Feature",
+                    properties: { values: `["a","b","a","b","b","b","c","c","c","d","d"]` },
+                    geometry: {
+                        type: "Point",
+                        coordinates: [0, 0],
+                    },
+                },
+                args: ["values"],
+            },
+        ]
+    }
+
+    constr(
+        state: SpecialVisualizationState,
+        tagSource: UIEventSource<Record<string, string>>,
+        args: string[]
+    ) {
         let assignColors = undefined
         if (args.length >= 3) {
             const colors = [...args]
@@ -63,10 +83,8 @@ export class HistogramViz {
                 return undefined
             }
         })
-        return new FixedUiElement("HISTORGRAM")
-        /*
         return new Histogram(listSource, args[1], args[2], {
             assignColor: assignColors,
-        })*/
+        })
     }
 }

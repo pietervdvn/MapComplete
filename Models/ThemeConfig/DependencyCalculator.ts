@@ -1,8 +1,8 @@
-import { SubstitutedTranslation } from "../../UI/SubstitutedTranslation"
 import TagRenderingConfig from "./TagRenderingConfig"
 import { ExtraFuncParams, ExtraFunctions } from "../../Logic/ExtraFunctions"
 import LayerConfig from "./LayerConfig"
 import { SpecialVisualization } from "../../UI/SpecialVisualization"
+import SpecialVisualizations from "../../UI/SpecialVisualizations"
 
 export default class DependencyCalculator {
     public static GetTagRenderingDependencies(tr: TagRenderingConfig): string[] {
@@ -16,8 +16,9 @@ export default class DependencyCalculator {
 
         for (const part of parts) {
             const specialVizs: { func: SpecialVisualization; args: string[] }[] =
-                SubstitutedTranslation.ExtractSpecialComponents(part)
-                    .map((o) => o.special)
+                SpecialVisualizations.constructSpecification(part)
+                    .filter((p) => typeof p !== "string")
+                    .map((p) => <{ func: SpecialVisualization; args: string[] }>p)
                     .filter((o) => o?.func?.getLayerDependencies !== undefined)
             for (const specialViz of specialVizs) {
                 deps.push(...specialViz.func.getLayerDependencies(specialViz.args))
@@ -94,18 +95,16 @@ export default class DependencyCalculator {
 
                     return []
                 },
-                memberships: undefined,
             }
-            // Init the extra patched functions...
-            ExtraFunctions.FullPatchFeature(params, obj)
+            const helpers = ExtraFunctions.constructHelpers(params)
             // ... Run the calculated tag code, which will trigger the getFeaturesWithin above...
             for (let i = 0; i < layer.calculatedTags.length; i++) {
                 const [key, code] = layer.calculatedTags[i]
                 currentLine = i // Leak the state...
                 currentKey = key
                 try {
-                    const func = new Function("feat", "return " + code + ";")
-                    const result = func(obj)
+                    const func = new Function("feat", "{"+ExtraFunctions.types.join(",")+"}", "return " + code + ";")
+                    const result = func(obj, helpers)
                     obj.properties[key] = JSON.stringify(result)
                 } catch (e) {}
             }

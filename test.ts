@@ -1,25 +1,26 @@
-import ContactLink from "./UI/BigComponents/ContactLink.svelte"
-import SvelteUIElement from "./UI/Base/SvelteUIElement"
-import { Utils } from "./Utils"
-import List from "./UI/Base/List"
-import { GeoOperations } from "./Logic/GeoOperations"
-import { Tiles } from "./Models/TileRange"
-import { Stores } from "./Logic/UIEventSource"
+import LayoutConfig from "./Models/ThemeConfig/LayoutConfig"
+import * as theme from "./assets/generated/themes/bookcases.json"
+import ThemeViewState from "./Models/ThemeViewState"
+import Combine from "./UI/Base/Combine"
+import SpecialVisualizations from "./UI/SpecialVisualizations"
+import ValidatedInput from "./UI/InputElement/ValidatedInput.svelte";
+import SvelteUIElement from "./UI/Base/SvelteUIElement";
+import {UIEventSource} from "./Logic/UIEventSource";
+import {Unit} from "./Models/Unit";
+import {Denomination} from "./Models/Denomination";
+import {VariableUiElement} from "./UI/Base/VariableUIElement";
+import {FixedUiElement} from "./UI/Base/FixedUiElement";
 
-async function main() {
-    const location: [number, number] = [3.21, 51.2]
-    const t = Tiles.embedded_tile(location[1], location[0], 6)
-    const url = `https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/tile_${t.z}_${t.x}_${t.y}.geojson`
-    const be = Stores.FromPromise(Utils.downloadJson(url)).mapD(
-        (data) => data.features.find((f) => GeoOperations.inside(location, f)).properties
+function testspecial() {
+    const layout = new LayoutConfig(<any>theme, true) // qp.data === "" ?  : new AllKnownLayoutsLazy().get(qp.data)
+    const state = new ThemeViewState(layout)
+
+    const all = SpecialVisualizations.specialVisualizations.map((s) =>
+        SpecialVisualizations.renderExampleOfSpecial(state, s)
     )
-    new SvelteUIElement(ContactLink, { country: be }).AttachTo("maindiv")
-    /*
-    const links = data.features
-        .filter((f) => GeoOperations.inside(location, f))
-        .map((f) => new SvelteUIElement(ContactLink, { country: f.properties }))
-    new List(links).AttachTo("maindiv")
-    //*/
+    new Combine(all).AttachTo("maindiv")
 }
 
-main().then((_) => {})
+/*/
+testspecial()
+//*/

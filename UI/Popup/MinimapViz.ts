@@ -1,9 +1,14 @@
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import Loc from "../../Models/Loc"
-import Minimap from "../Base/Minimap"
-import ShowDataMultiLayer from "../ShowDataLayer/ShowDataMultiLayer"
 import StaticFeatureSource from "../../Logic/FeatureSource/Sources/StaticFeatureSource"
-import { SpecialVisualization } from "../SpecialVisualization"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import { Feature } from "geojson"
+import { MapLibreAdaptor } from "../Map/MapLibreAdaptor"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import MaplibreMap from "../Map/MaplibreMap.svelte"
+import ShowDataLayer from "../Map/ShowDataLayer"
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
+import { GeoOperations } from "../../Logic/GeoOperations"
+import { BBox } from "../../Logic/BBox"
 
 export class MinimapViz implements SpecialVisualization {
     funcName = "minimap"
@@ -22,16 +27,25 @@ export class MinimapViz implements SpecialVisualization {
     ]
     example: "`{minimap()}`, `{minimap(17, id, _list_of_embedded_feature_ids_calculated_by_calculated_tag):height:10rem; border: 2px solid black}`"
 
-    constr(state, tagSource, args, _) {
-        if (state === undefined) {
+    constr(
+        state: SpecialVisualizationState,
+        tagSource: UIEventSource<Record<string, string>>,
+        args: string[],
+        feature: Feature,
+        layer: LayerConfig
+    ) {
+        if (state === undefined || feature === undefined || layer.source === undefined) {
             return undefined
         }
         const keys = [...args]
         keys.splice(0, 1)
-        const featureStore = state.allElements.ContainingFeatures
-        const featuresToShow: Store<{ freshness: Date; feature: any }[]> = tagSource.map(
-            (properties) => {
-                const features: { freshness: Date; feature: any }[] = []
+        const featuresToShow: Store<Feature[]> = state.indexedFeatures.featuresById.map(
+            (featuresById) => {
+                if (featuresById === undefined) {
+                    return []
+                }
+                const properties = tagSource.data
+                const features: Feature[] = []
                 for (const key of keys) {
                     const value = properties[key]
                     if (value === undefined || value === null) {
@@ -45,21 +59,23 @@ export class MinimapViz implements SpecialVisualization {
                     }
 
                     for (const id of idList) {
-                        const feature = featureStore.get(id)
+                        const feature = featuresById.get(id)
                         if (feature === undefined) {
                             console.warn("No feature found for id ", id)
                             continue
                         }
-                        features.push({
-                            freshness: new Date(),
-                            feature,
-                        })
+                        features.push(feature)
                     }
                 }
                 return features
-            }
+            },
+            [tagSource]
         )
-        const properties = tagSource.data
+
+        const mlmap = new UIEventSource(undefined)
+        const mla = new MapLibreAdaptor(mlmap)
+
+        mla.maxzoom.setData(17)
         let zoom = 18
         if (args[0]) {
             const parsed = Number(args[0])
@@ -67,33 +83,27 @@ export class MinimapViz implements SpecialVisualization {
                 zoom = parsed
             }
         }
-        const locationSource = new UIEventSource<Loc>({
-            lat: Number(properties._lat),
-            lon: Number(properties._lon),
-            zoom: zoom,
-        })
-        const minimap = Minimap.createMiniMap({
-            background: state.backgroundLayer,
-            location: locationSource,
-            allowMoving: false,
-        })
-
-        locationSource.addCallback((loc) => {
-            if (loc.zoom > zoom) {
-                // We zoom back
-                locationSource.data.zoom = zoom
-                locationSource.ping()
+        featuresToShow.addCallbackAndRunD((features) => {
+            if (features.length === 0) {
+                return
             }
+            const bboxGeojson = GeoOperations.bbox({ features, type: "FeatureCollection" })
+            const [lon, lat] = GeoOperations.centerpointCoordinates(bboxGeojson)
+            mla.bounds.setData(BBox.get(bboxGeojson))
+            mla.location.setData({ lon, lat })
         })
+        mla.zoom.setData(zoom)
+        mla.allowMoving.setData(false)
+        mla.allowZooming.setData(false)
 
-        new ShowDataMultiLayer({
-            leafletMap: minimap["leafletMap"],
-            zoomToFeatures: true,
-            layers: state.filteredLayers,
-            features: new StaticFeatureSource(featuresToShow),
-        })
+        ShowDataLayer.showMultipleLayers(
+            mlmap,
+            new StaticFeatureSource(featuresToShow),
+            state.layout.layers
+        )
 
-        minimap.SetStyle("overflow: hidden; pointer-events: none;")
-        return minimap
+        return new SvelteUIElement(MaplibreMap, { map: mlmap })
+            .SetClass("h-40 rounded")
+            .SetStyle("overflow: hidden; pointer-events: none;")
     }
 }

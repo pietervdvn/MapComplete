@@ -13,9 +13,10 @@ import Translations from "../i18n/Translations"
 import { Mapillary } from "../../Logic/ImageProviders/Mapillary"
 import { SubtleButton } from "../Base/SubtleButton"
 import { GeoOperations } from "../../Logic/GeoOperations"
-import { ElementStorage } from "../../Logic/ElementStorage"
 import Lazy from "../Base/Lazy"
 import P4C from "pic4carto"
+import { IndexedFeatureSource } from "../../Logic/FeatureSource/FeatureSource"
+
 export interface P4CPicture {
     pictureUrl: string
     date?: number
@@ -47,15 +48,15 @@ export interface NearbyImageOptions {
 }
 
 class ImagesInLoadedDataFetcher {
-    private allElements: ElementStorage
+    private indexedFeatures: IndexedFeatureSource
 
-    constructor(state: { allElements: ElementStorage }) {
-        this.allElements = state.allElements
+    constructor(indexedFeatures: IndexedFeatureSource) {
+        this.indexedFeatures = indexedFeatures
     }
 
     public fetchAround(loc: { lon: number; lat: number; searchRadius?: number }): P4CPicture[] {
         const foundImages: P4CPicture[] = []
-        this.allElements.ContainingFeatures.forEach((feature) => {
+        this.indexedFeatures.features.data.forEach((feature) => {
             const props = feature.properties
             const images = []
             if (props.image) {
@@ -100,7 +101,7 @@ class ImagesInLoadedDataFetcher {
 }
 
 export default class NearbyImages extends Lazy {
-    constructor(options: NearbyImageOptions, state?: { allElements: ElementStorage }) {
+    constructor(options: NearbyImageOptions, state?: IndexedFeatureSource) {
         super(() => {
             const t = Translations.t.image.nearbyPictures
             const shownImages = options.shownImagesCount ?? new UIEventSource(25)
@@ -171,10 +172,7 @@ export default class NearbyImages extends Lazy {
             )
     }
 
-    private static buildPictureFetcher(
-        options: NearbyImageOptions,
-        state?: { allElements: ElementStorage }
-    ) {
+    private static buildPictureFetcher(options: NearbyImageOptions, state?: IndexedFeatureSource) {
         const picManager = new P4C.PicturesManager({})
         const searchRadius = options.searchRadius ?? 500
 
@@ -283,7 +281,7 @@ export class SelectOneNearbyImage extends NearbyImages implements InputElement<P
 
     constructor(
         options: NearbyImageOptions & { value?: UIEventSource<P4CPicture> },
-        state?: { allElements: ElementStorage }
+        state?: IndexedFeatureSource
     ) {
         super(options, state)
         this.value = options.value ?? new UIEventSource<P4CPicture>(undefined)

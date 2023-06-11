@@ -1,6 +1,6 @@
 import BaseUIElement from "../BaseUIElement"
 import { VariableUiElement } from "./VariableUIElement"
-import { Stores, UIEventSource } from "../../Logic/UIEventSource"
+import { Stores } from "../../Logic/UIEventSource"
 import Loading from "./Loading"
 
 export default class AsyncLazy extends BaseUIElement {

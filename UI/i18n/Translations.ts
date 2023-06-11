@@ -1,23 +1,38 @@
-import { FixedUiElement } from "../Base/FixedUiElement"
-import { Translation, TypedTranslation } from "./Translation"
+import {FixedUiElement} from "../Base/FixedUiElement"
+import {Translation, TypedTranslation} from "./Translation"
 import BaseUIElement from "../BaseUIElement"
 import CompiledTranslations from "../../assets/generated/CompiledTranslations"
 import LanguageUtils from "../../Utils/LanguageUtils"
+import {ClickableToggle} from "../Input/Toggle";
 
 export default class Translations {
-    static readonly t: typeof CompiledTranslations.t & Readonly<typeof CompiledTranslations.t> =
-        CompiledTranslations.t
+    static readonly t: Readonly<typeof CompiledTranslations.t> = CompiledTranslations.t
     private static knownLanguages = LanguageUtils.usedLanguages
+
     constructor() {
         throw "Translations is static. If you want to intitialize a new translation, use the singular form"
     }
 
-    public static W(s: string | number | BaseUIElement): BaseUIElement {
+    public static W(s: string | number | boolean | BaseUIElement): BaseUIElement {
         if (typeof s === "string") {
             return new FixedUiElement(s)
         }
         if (typeof s === "number") {
-            return new FixedUiElement("" + s)
+            return new FixedUiElement("" + s).SetClass("font-bold")
+        }
+        if (typeof s === "boolean") {
+            return new FixedUiElement("" + s).SetClass("font-bold")
+        }
+        if (typeof s === "object") {
+            if (s.ConstructElement) {
+                return s
+            }
+            const v = JSON.stringify(s)
+            if (v.length > 100) {
+                const shortened = v.substring(0, 100) + "..."
+                return new ClickableToggle(v, shortened).ToggleOnClick().SetClass("literal-code button")
+            }
+            return new FixedUiElement(v).SetClass("literal-code")
         }
         return s
     }
@@ -58,7 +73,7 @@ export default class Translations {
             t = "" + t
         }
         if (typeof t === "string") {
-            return new TypedTranslation<object>({ "*": t }, context)
+            return new TypedTranslation<object>({"*": t}, context)
         }
         if (t["render"] !== undefined) {
             const msg =

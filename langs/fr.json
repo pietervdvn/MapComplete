@@ -59,13 +59,10 @@
     },
     "general": {
         "about": "Éditer facilement et ajouter OpenStreetMap pour un certain thème",
-        "aboutMapcomplete": "<h3>À propos de MapComplete</h3><p>Avec MapComplete vous pouvez enrichir OpenStreetMap d'informations sur un <b>thème unique.</b> Répondez à quelques questions, et en quelques minutes vos contributions seront disponibles dans le monde entier ! Le <b>concepteur du thème</b> définis les éléments, questions et langues pour le thème.</p><h3>En savoir plus</h3><p>MapComplete <b>propose toujours l'étape suivante</b> pour en apprendre plus sur OpenStreetMap.</p><ul><li>Lorsqu'il est intégré dans un site Web, l'<i>iframe</i> pointe vers MapComplete en plein écran</li><li>La version plein écran donne des informations sur OpenStreetMap</li><li>Il est possible de regarder sans se connecter, mais l'édition demande une connexion à OSM.</li><li>Si vous n'êtes pas connecté, il vous est demandé de le faire</li><li>Une fois que vous avez répondu à une seule question, vous pouvez ajouter de nouveaux points à la carte</li><li>Au bout d'un moment, les vrais tags OSM sont montrés, qui pointent ensuite vers le wiki</li></ul><p></p><br><p>Vous avez remarqué <b>un problème</b> ? Vous souhaitez <b>demander une fonctionnalité</b> ? Vous voulez <b>aider à traduire</b> ? Allez voir <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">le code source</a> ou le <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\"><i>gestionnaire de tickets</i></a>.</p><p> Vous voulez visualiser <b>votre progression</b> ? Suivez le compteur d'édition sur <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
         "add": {
             "addNew": "Ajouter {category}",
-            "addNewMapLabel": "Cliquez ici pour ajouter un élément",
             "backToSelect": "Sélectionner une catégorie différente",
             "confirmButton": "Ajouter un/une {category} ici.<br><div class=\"alert\">Votre ajout sera visible par tout le monde</div>",
-            "confirmIntro": "<h3>Ajouter un/une {title} ici ?</h3>L’élément que vous ajouterez sera <b>visible par tout le monde</b>. Merci de vous assurer que celui-ci existe réellement. Beaucoup d'autres applications utilisent ces données.",
             "disableFilters": "Désactiver tous les filtres",
             "disableFiltersExplanation": "Certains élément peuvent être filtrés",
             "hasBeenImported": "Cet élément a déjà été importé",
@@ -148,7 +145,6 @@
         "error": "Quelque chose ne s'est pas passé correctement",
         "example": "Exemple",
         "examples": "Exemples",
-        "feelFreeToSkip": "Vous pouvez ajouter ou mettre à jour d'autres informations ci-dessous, mais n'hésitez pas à <b>passer les questions</b> auxquels vous ne savez pas répondre.",
         "fewChangesBefore": "Merci de répondre à quelques questions à propos de points déjà existants avant d'ajouter de nouveaux points.",
         "getStartedLogin": "Connectez-vous avec OpenStreetMap pour commencer",
         "getStartedNewAccount": " ou <a href=\"https://www.openstreetmap.org/user/new\" target=\"_blank\">créez un compte</a>",
@@ -179,14 +175,12 @@
             "streetcomplete": "Une autre application similaire est <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "nameInlineQuestion": "Le nom de cet/cette {category} est $$$",
-        "newlyCreated": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
         "next": "Suivant",
         "noMatchingMapping": "Aucun résultat ne correspond à votre recherche…",
         "noNameCategory": "{category} sans nom",
         "noTagsSelected": "Aucune balise sélectionnée",
         "notValid": "Sélectionnez une valeur valide pour continuer",
         "number": "nombre",
-        "oneSkippedQuestion": "Une question a été passée",
         "openStreetMapIntro": "<h3>Une carte ouverte</h3><p>Utilisable et éditable librement. Une seule et unique plateforme regroupant toutes les informations géographiques ? Toutes ces différentes cartes isolées, incompatibles et obsolètes ne sont plus utiles.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> n’est pas un énième concurrent. Toutes les données de cette carte peuvent être utilisé librement (avec <a href=\"https://osm.org/copyright\" target=\"_blank\"> attribution et publication des changements de données</a>). De plus tout le monde est libre d'ajouter de nouvelles données et corriger les erreurs. Ce site utilise également OpenStreetMap. Toutes les données en proviennent et tous les ajouts et modifications y seront également ajoutés.</p><p>De nombreux individus et applications utilisent déjà OpenStreetMap : <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, mais aussi les cartes de Facebook, Instagram, Apple Maps et Bing Maps sont (en partie) alimentées par OpenStreetMap</p>",
         "openTheMap": "Ouvrir la carte",
         "opening_hours": {
@@ -208,7 +202,7 @@
         "pdf": {
             "attr": "Données par © les contributeurs &amp; contributrices OpenStreetMap sous licence libre ODbL",
             "attrBackground": "Couche d’arrière plan : {background}",
-            "generatedWith": "Généré à l’aide de MapComplete.osm.be",
+            "generatedWith": "Généré à l’aide de MapComplete.osm.be/{layoutid}",
             "versionInfo": "v{version} - générée le {date}"
         },
         "pickLanguage": "Choisir la langue : ",
@@ -254,7 +248,6 @@
             "thanksForSharing": "Merci d'avoir partagé !"
         },
         "skip": "Passer la question",
-        "skippedQuestions": "Questions passées",
         "testing": "Test - les changements ne seront pas sauvegardés",
         "uploadGpx": {
             "meta": {
@@ -317,7 +310,6 @@
         "closeSidebar": "Fermer la barre latérale",
         "key": "Combinaison de touches",
         "openLayersPanel": "Ouvre le panneau fond-de-plan, couches et filtres",
-        "selectBackground": "Sélectionnez un fond de carte de type {category}",
         "selectMapnik": "Appliquer le fond de carte OpenStreetMap-carto",
         "selectSearch": "Sélectionner la barre de recherche de lieux",
         "title": "Raccourcis clavier"
@@ -349,22 +341,6 @@
         "uploadMultipleDone": "{count} images ont été ajoutées. Merci de votre contribution !",
         "uploadingMultiple": "Mise en ligne de {count} photos…",
         "uploadingPicture": "Mise en ligne de votre photo…"
-    },
-    "importHelper": {
-        "askMetadata": {
-            "giveDescription": "Merci d'écrire une petite description pour la personne qui lira la note. Une bonne note décrit ce que le contributeur devra faire, par ex. <i>Il pourrait y avoir un banc ici. Si vous êtes dans le coin, pouvez-vous vérifier et indiquer si le banc est présent ou non ?</i> (Un lien vers MapComplete sera ajouté automatiquement)",
-            "intro": "Avant d'ajouter {count} notes, merci de fournir quelques informations supplémentaires.",
-            "shouldBeUrl": "URL invalide"
-        },
-        "login": {
-            "loginRequired": "Connectez-vous pour continuer",
-            "title": "Se connecter"
-        },
-        "selectFile": {
-            "errDuplicate": "Certaines colonnes portent le même nom",
-            "errNoName": "Certains colonnes n'ont pas de nom"
-        },
-        "title": "Assistant d'importation"
     },
     "index": {
         "#": "Ces textes sont affichés au dessus des boutons de thème quand aucun thème n'est chargé",
@@ -443,13 +419,6 @@
         "tracking": "Afin d'avoir une idée des personnes qui visitent notre site web, certaines informations techniques sont collectées. Il s'agit notamment du pays depuis lequel vous avez visité la page Web, du site Web qui vous a renvoyé vers MapComplete, du type de votre appareil et de la taille de l'écran. Un cookie est placé sur votre appareil pour indiquer que vous avez visité MapComplete plus tôt dans la journée. Ces données ne sont pas suffisamment détaillées pour vous identifier personnellement. Ces statistiques ne sont accessibles à quiconque que sous forme agrégée et sont <a href='https://pietervdvn.goatcounter.com' target='_blank'>accessible à tout le monde</a>",
         "trackingTitle": "Données statistiques"
     },
-    "professional": {
-        "indexPage": {
-            "button": "Découvrez nos offres",
-            "hook": "Besoin d’un accompagnement professionnel ?",
-            "hookMore": "Nous pouvons aider à la mise en place de relevés, l’importation de données et toute question relative à l’environnement OpenStreetMap"
-        }
-    },
     "reviews": {
         "affiliated_reviewer_warning": "(Avis affilié)",
         "attribution": "Les avis sont fournis par <a href=\"https://mangrove.reviews/\" target=\"_blank\">Mangrove Reviews</a> et sont disponibles sous licence <a href=\"https://mangrove.reviews/terms#8-licensing-of-content\" target=\"_blank\">CC-BY 4.0</a>.",
@@ -480,9 +449,7 @@
     },
     "userinfo": {
         "gotoInbox": "Ouvrir sa boite de réception",
-        "gotoSettings": "Paramètres sur OpenStreetMap.org",
-        "moveToHome": "Déplacez la carte vers votre emplacement",
-        "welcome": "Bienvenue {name}"
+        "gotoSettings": "Paramètres sur OpenStreetMap.org"
     },
     "validation": {
         "email": {

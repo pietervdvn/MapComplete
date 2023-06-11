@@ -1,4 +1,7 @@
 {
+    "advanced": {
+        "title": "Advanced features"
+    },
     "centerMessage": {
         "loadingData": "Loading data…",
         "ready": "Done!",
@@ -88,15 +91,19 @@
     },
     "general": {
         "about": "Easily edit and add OpenStreetMap for a certain theme",
-        "aboutMapcomplete": "<h3>About</h3><p>Use MapComplete to add OpenStreetMap info on a <b>single theme.</b> Answer questions, and within minutes your contributions are available everywhere. In most themes you can add pictures or even leave a review. The <b>theme maintainer</b> defines elements, questions and languages for it.</p><h3>Find out more</h3><p>MapComplete always <b>offers the next step</b> to learn more about OpenStreetMap.<ul><li>When embedded in a website, the iframe links to a full-screen MapComplete.</li><li>The fullscreen version offers info about OpenStreetMap.</li><li>Viewing works without login, but editing requires an OSM account.</li><li>If you are not logged in, you are asked to do so</li><li>Once you answered a single question, you can add new features to the map</li><li>After a while, actual OSM-tags are shown, later linking to the wiki</li></ul></p><br/><p>Did you notice <b>an issue</b>? Do you have a <b>feature request</b>? Want to <b>help translate</b>? Head over to <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>the source code</a> or <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>issue tracker.</a> </p><p> Want to see <b>your progress</b>? Follow the edit count on <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
+        "aboutMapComplete": {
+            "intro": "Use MapComplete to add OpenStreetMap info on a <b>single theme.</b> Answer questions, and within minutes your contributions are available everywhere. In most themes you can add pictures or even leave a review. The <b>theme maintainer</b> defines elements, questions and languages for it."
+        },
         "add": {
             "addNew": "Add {category}",
-            "addNewMapLabel": "Click here to add a new item",
             "backToSelect": "Select a different category",
             "confirmButton": "Add a {category}<br/><div class='alert'>Your addition is visible for everyone</div>",
-            "confirmIntro": "<h3>Add a {title}?</h3>The feature you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
+            "confirmLocation": "Confirm this location",
+            "confirmTitle": "Add a {title}?",
+            "confirmWarning": "The feature you create here will be <b>visible for everyone</b>. Please, only add things on to the map if they truly exist. A lot of applications use this data.",
             "disableFilters": "Disable all filters",
             "disableFiltersExplanation": "Some features might be hidden by a filter",
+            "enableLayer": "Enable layer {name}",
             "hasBeenImported": "This feature has already been imported",
             "import": {
                 "hasBeenImported": "This object has been imported",
@@ -125,6 +132,8 @@
             "isApplied": "The changes are applied"
         },
         "attribution": {
+            "attributionBackgroundLayer": "The current background layer is {name}",
+            "attributionBackgroundLayerWithCopyright": "The current background layer is {name}: {copyright}",
             "attributionContent": "<p>All data is provided by <a href='https://osm.org' target='_blank'>OpenStreetMap</a>, freely reusable under <a href='https://osm.org/copyright' target='_blank'>the Open DataBase License</a>.</p>",
             "attributionTitle": "Attribution notice",
             "codeContributionsBy": "MapComplete has been built by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>",
@@ -145,20 +154,23 @@
             "openMapillary": "Open Mapillary here",
             "openOsmcha": "See latest edits made with {theme}",
             "themeBy": "Theme maintained by {author}",
+            "title": "Copyright and attribution",
             "translatedBy": "MapComplete has been translated by {contributors} and <a href='https://github.com/pietervdvn/MapComplete/graphs/contributors' target='_blank'>{hiddenCount} more contributors</a>"
         },
         "back": "Back",
         "backToIndex": "Go back to the overview with all thematic maps",
         "backToMapcomplete": "Back to the theme overview",
-        "backgroundMap": "Background map",
+        "backgroundMap": "Select a background layer",
         "cancel": "Cancel",
         "confirm": "Confirm",
         "customThemeIntro": "<h3>Custom themes</h3>These are previously visited user-generated themes.",
         "download": {
             "downloadAsPdf": "Download a PDF of the current map",
             "downloadAsPdfHelper": "Ideal to print the current map",
+            "downloadAsPng": "Download as image",
+            "downloadAsPngHelper": "Ideal to include in reports",
             "downloadAsSvg": "Download an SVG of the current map",
-            "downloadAsSvgHelper": "Compatible Inkscape or Adobe Illustrator; will need further processing  ",
+            "downloadAsSvgHelper": "Compatible Inkscape or Adobe Illustrator; will need further processing",
             "downloadCSV": "Download visible data as CSV",
             "downloadCSVHelper": "Compatible with LibreOffice Calc, Excel, …",
             "downloadFeatureAsGeojson": "Download as GeoJSON-file",
@@ -171,13 +183,16 @@
             "includeMetaData": "Include metadata (last editor, calculated values, …)",
             "licenseInfo": "<h3>Copyright notice</h3>The provided data is available under ODbL. Reusing it is gratis for any purpose, but <ul><li>the attribution <b>© OpenStreetMap contributors</b> must be shown<li><li>Any change must be published under the same license</li></ul> Please read the full <a href='https://www.openstreetmap.org/copyright' target='_blank'>copyright notice</a> for details.",
             "noDataLoaded": "No data is loaded yet. Download will be available soon",
-            "title": "Download visible data",
+            "pdf": {
+                "current_view_a3": "Export a PDF (A3, portrait) of the current view",
+                "current_view_a4": "Export a PDF (A4, landscape) of the current view"
+            },
+            "title": "Download",
             "uploadGpx": "Upload your track to OpenStreetMap"
         },
         "error": "Something went wrong",
         "example": "Example",
         "examples": "Examples",
-        "feelFreeToSkip": "You can add or update more information below, but feel free <b>to skip questions</b> you don't know the answer to.",
         "fewChangesBefore": "Please, answer a few questions of existing features before adding a new feature.",
         "getStartedLogin": "Log in with OpenStreetMap to get started",
         "getStartedNewAccount": " or <a href='https://www.openstreetmap.org/user/new' target='_blank'>create a new account</a>",
@@ -203,6 +218,10 @@
         "loginToStart": "Log in to answer this question",
         "loginWithOpenStreetMap": "Login with OpenStreetMap",
         "logout": "Log out",
+        "menu": {
+            "aboutMapComplete": "About MapComplete",
+            "filter": "Filter data"
+        },
         "morescreen": {
             "createYourOwnTheme": "Create your own MapComplete theme from scratch",
             "hiddenExplanation": "These themes are only accessible to those with the link. You have discovered {hidden_discovered} of {total_hidden} hidden themes.",
@@ -215,16 +234,15 @@
             "streetcomplete": "Another, similar application is <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "nameInlineQuestion": "The name of this {category} is $$$",
-        "newlyCreated": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
         "next": "Next",
         "noMatchingMapping": "No entries match your search…",
         "noNameCategory": "{category} without a name",
         "noTagsSelected": "No tags selected",
         "notValid": "Select a valid value to continue",
         "number": "number",
-        "oneSkippedQuestion": "One question is skipped",
         "openStreetMapIntro": "<h3>An Open Map</h3><p>One that everyone can use and edit freely. A single place to store all geo-info. Different, small, incompatible and outdated maps are not needed anywhere.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> is not the enemy map. The map data can be used freely (with <a href='https://osm.org/copyright' target='_blank'>attribution and publication of changes to that data</a>). Everyone can add new data and fix errors. This website uses OpenStreetMap. All the data is from there, and your answers and corrections are used all over.</p><p>Many people and apps already use OpenStreetMap: <a href='https://organicmaps.app/' target='_blank'>Organic Maps</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, but also the maps at Facebook, Instagram, Apple-maps and Bing-maps are (partly) powered by OpenStreetMap.</p>",
         "openTheMap": "Open the map",
+        "openTheMapAtGeolocation": "Zoom to your location",
         "opening_hours": {
             "closed_permanently": "Closed for an unkown duration",
             "closed_until": "Closed until {date}",
@@ -244,11 +262,23 @@
         "pdf": {
             "attr": "Map data © OpenStreetMap Contributors, reusable under ODbL",
             "attrBackground": "Background layer: {background}",
-            "generatedWith": "Generated with MapComplete.osm.be",
+            "generatedWith": "Generated with MapComplete.osm.be/{layoutid}",
             "versionInfo": "v{version} - generated on {date}"
         },
         "pickLanguage": "Choose a language: ",
         "poweredByOsm": "Powered by OpenStreetMap",
+        "questionBox": {
+            "answeredMultiple": "You answered {answered} questions",
+            "answeredMultipleSkippedMultiple": "You answered {answered} questions and skipped {skipped} questions",
+            "answeredMultipleSkippedOne": "You answered {answered} questions and skipped one question",
+            "answeredOne": "You answered one question",
+            "answeredOneSkippedMultiple": "You answered one question and skipped {skipped} questions",
+            "answeredOneSkippedOne": "You answered one and skipped one question",
+            "done": "No more questions! Thank you!",
+            "reactivate": "Reactive skipped questions",
+            "skippedMultiple": "You skipped {skipped} questions",
+            "skippedOne": "You skipped one question"
+        },
         "questions": {
             "emailIs": "The email address of this {category} is <a href='mailto:{email}' target='_blank'>{email}</a>",
             "emailOf": "What is the email address of {category}?",
@@ -266,6 +296,7 @@
             "error": "Something went wrong…",
             "nothing": "Nothing found…",
             "search": "Search a location",
+            "searchShort": "Search…",
             "searching": "Searching…"
         },
         "sharescreen": {
@@ -287,10 +318,10 @@
             "fsUserbadge": "Enable the login button",
             "fsWelcomeMessage": "Show the welcome message popup and associated tabs",
             "intro": "<h3>Share this map</h3> Share this map by copying the link below and sending it to friends and family:",
-            "thanksForSharing": "Thanks for sharing!"
+            "thanksForSharing": "Thanks for sharing!",
+            "title": "Share this map"
         },
         "skip": "Skip this question",
-        "skippedQuestions": "Some questions are skipped",
         "testing": "Testing - changes won't be saved",
         "uploadGpx": {
             "choosePermission": "Choose below if your track should be shared:",
@@ -345,6 +376,7 @@
             "general": "On this map, you can see, edit and add <i>points of interest</i>. Zoom around to see the POI, tap one to see or edit the information. All data is sourced from and saved to OpenStreetMap, which can be freely reused."
         },
         "wikipedia": {
+            "addEntry": "Add another Wikipedia page",
             "createNewWikidata": "Create a new Wikidata item",
             "doSearch": "Search above to see results",
             "failed": "Loading the Wikipedia entry failed",
@@ -368,8 +400,10 @@
         "intro": "MapComplete supports the following keys:",
         "key": "Key combination",
         "openLayersPanel": "Opens the Background, layers and filters panel",
-        "selectBackground": "Select a background layer of category {category}",
-        "selectMapnik": "Sets the background layer to OpenStreetMap-carto",
+        "selectAerial": "Set the background to aerial or satellite imagery. Toggles between the two best, available layers",
+        "selectMap": "Set the background to a map from external sources. Toggles between the two best, available layers",
+        "selectMapnik": "Set the background layer to OpenStreetMap-carto",
+        "selectOsmbasedmap": "Set the background layer to on OpenStreetMap-based map (or disable the background raster layer)",
         "selectSearch": "Select the search bar to search locations",
         "title": "Hotkeys"
     },
@@ -401,131 +435,6 @@
         "uploadMultipleDone": "{count} pictures have been added. Thanks for helping out!",
         "uploadingMultiple": "Uploading {count} pictures…",
         "uploadingPicture": "Uploading your picture…"
-    },
-    "importHelper": {
-        "askMetadata": {
-            "downloadGeojson": "Download GeoJSON",
-            "giveDescription": "Please, write a small description for someone who sees the note. A good note describes what the contributor has to do, e.g; <i>There might be a bench here. If you are around, could you please check and indicate if the bench exists or not?</i> (A link to MapComplete will be added automatically)",
-            "giveSource": "What is the source of this data? If 'source' is set in the feature, this value will be ignored",
-            "giveWikilink": "On what wikipage can one find more information about this import?",
-            "intro": "Before adding {count} notes, please provide some extra information.",
-            "orDownload": "Alternatively, you can download the dataset to import directly",
-            "shouldBeOsmWikilink": "Expected a link to a page on wiki.openstreetmap.org",
-            "shouldBeUrl": "Not a valid URL",
-            "shouldNotBeHomepage": "Nope, the home page isn't allowed either. Enter the URL of a proper wikipage documenting your import",
-            "title": "Set metadata"
-        },
-        "compareToAlreadyExistingNotes": {
-            "completelyImported": "All of the proposed points have (or had) an import note already",
-            "loading": "Fetching notes from OSM…",
-            "loadingFailed": "Loading notes failed due to {error}",
-            "mapExplanation": "The red elements on the next map are all the data points from your dataset. There are <b>{length}</b> elements in your dataset.",
-            "noPreviousNotesFound": "No previous import notes found",
-            "nothingNearby": "None of the proposed points have an import note nearby",
-            "someNearby": "{hasNearby} points do have an already existing import note within {distance} meter",
-            "title": "Compare with existing notes",
-            "titleLong": "Compare with already existing 'to-import'-notes",
-            "wontBeImported": "These data points will <i>not</i> be imported and are shown as red dots on the map below"
-        },
-        "confirmProcess": {
-            "contactedCommunity": "I did contact the (local) community about this import",
-            "licenseIsCompatible": "The license of the data to import allows it to be imported into OSM. They are allowed to be redistributed commercially, with only minimal attribution",
-            "readImportGuidelines": "I have read the import guidelines on the OSM wiki",
-            "title": "License and community",
-            "titleLong": "Did you go through the import process?",
-            "wikipageIsMade": "The process is documented on the OSM-wiki (you'll need this link later)"
-        },
-        "conflationChecker": {
-            "cacheExpired": "Cache was expired",
-            "downloadOverpassData": "Download the loaded GeoJSON from Overpass",
-            "importCandidatesCount": "The {count} red elements on the following map are all your import candidates.",
-            "loadedDataAge": "Loaded data is from the cache and is {age} old",
-            "mapShowingNearbyIntro": "The following map shows features to import which have an OSM-feature within ",
-            "nearbyWarn": "The {count} red elements on the following map will <b>not</b> be imported!",
-            "nothingLoaded": "No elements are loaded from OpenStreetMap which match the current layer {name}",
-            "osmLoaded": "{count} elements are loaded from OpenStreetMap which match the layer <b>{name}</b>.",
-            "reloadTheCache": "Clear the cache and query Overpass again",
-            "setRangeToZero": "Set the range to 0 or 1 if you want to import them all",
-            "showOsmLayerInConflationMap": "Show the OSM data",
-            "states": {
-                "error": "Could not load latest data from Overpass due to {error}",
-                "idle": "Checking local storage…",
-                "running": "Querying Overpass…",
-                "unexpected": "Unexpected state {state}"
-            },
-            "title": "Compare with existing data",
-            "titleLive": "Live data on OSM",
-            "titleNearby": "Nearby features",
-            "zoomIn": "The current zoom level is {current}",
-            "zoomLevelSelection": "The live data is shown if the zoomlevel is at least: "
-        },
-        "createNotes": {
-            "creating": "Created <b>{count}</b> notes out of {total}",
-            "done": "All {count} notes have been created!",
-            "loading": "Hang on while we are loading…",
-            "openImportViewer": "Inspect the progress of your notes in the 'import_viewer'",
-            "title": "Note creation"
-        },
-        "gotoImportViewer": "Inspect your previous imports",
-        "introduction": {
-            "description": "The import helper converts an external dataset to notes. The external dataset must match one of the existing MapComplete layers. For every item you put in the importer, a single note will be created. These notes will be shown together with the relevant features in these maps to easily add them.",
-            "importFormat": "A text in a note should have the following format in order to be picked up",
-            "title": "Introduction"
-        },
-        "login": {
-            "lockNotice": "This page is locked. You need {importHelperUnlock} changesets before you can access here.",
-            "loggedInWith": "You are currently logged in as <b>{name}</b> and have made {csCount} changesets",
-            "loginIsCorrect": "<b>{name}</b> is the correct account to create the import notes with.",
-            "loginRequired": "You have to be logged in to continue",
-            "title": "Log in",
-            "userAccountTitle": "Select user account"
-        },
-        "mapPreview": {
-            "autodetected": "The layer was automatically deducted based on its properties",
-            "confirm": "The features are in the correct location on the map",
-            "mismatch": "{count} features did not match the selected layer. Make sure that the tags to indicate the type are present, namely {tags}",
-            "selectLayer": "Which layer does this import match with?",
-            "title": "Map preview"
-        },
-        "noteParts": {
-            "datasource": "Original data from {source}",
-            "importEasily": "Add this point easily with MapComplete:",
-            "wikilink": "More information about this import can be found at {wikilink}"
-        },
-        "previewAttributes": {
-            "allAttributesSame": "All features to import have this tag",
-            "inspectDataTitle": "Inspect data of {count} features to import",
-            "inspectLooksCorrect": "These values look correct",
-            "someHaveSame": "{count} features to import have this tag, this is {percentage}% of the total",
-            "title": "Inspect attributes"
-        },
-        "selectFile": {
-            "description": "Select a .csv or .geojson file to get started",
-            "errDuplicate": "Some columns have the same name",
-            "errNoLatOrLon": "The header does not contain `lat` or `lon`",
-            "errNoName": "Some columns don't have a name",
-            "errNotFeatureCollection": "The loaded JSON-file is not a geojson-featurecollection",
-            "errPointsOnly": "The loaded JSON-file should only contain points",
-            "fileFormatDescription": "Select a <b class='code'>.csv</b> or a <b class='code'>.geojson</b> file",
-            "fileFormatDescriptionCsv": "In the CSV-file, there should be a column <span class='literal-code'>lat</span> and <span class='literal-code'>lon</span> with the coordinates in WGS84. There should be an additional column for every attribute.",
-            "fileFormatDescriptionGeoJson": "In the geojson file, only points should be present. The properties should be exactly those properties that should go into OpenStreetMap",
-            "loadedFilesAre": "Currently loaded file is {file}",
-            "noFilesLoaded": "No file is currently loaded",
-            "title": "Select file"
-        },
-        "selectTheme": {
-            "displayNonMatchingCount": "{length} objects dont match any presets",
-            "intro": "All of the following themes will show the import notes. However, the note on OpenStreetMap can link to only one single theme. Choose which theme that the created notes will link to",
-            "misMatch": "Property with key {k} does not have expected value {v}; instead it is {properties}",
-            "missing": "Expected {k}={v}, but it is completely missing",
-            "needsTags": "{title} needs tags {tags}",
-            "noMatchingPresets": "This theme has no presets loaded. As a result, imports won't work here",
-            "notApplicable": "Preset {title} is not applicable:",
-            "title": "Select a theme",
-            "unmatchedTitle": "The following elements don't match any of the presets"
-        },
-        "testMode": "Testmode - won't actually import notes",
-        "title": "Import helper"
     },
     "importInspector": {
         "title": "Inspect and manage import notes"
@@ -639,109 +548,6 @@
         "trackingTitle": "Statistical data",
         "whileYoureHere": "Do you care about privacy?"
     },
-    "professional": {
-        "aboutMc": {
-            "internalUse": {
-                "intro": "<p>Once the data is in OpenStreetMap, you'll probably want to use the data as well. Your MapComplete theme can have a convenient <i>export</i>-button, offering to download the data in many open formats usable in QGis, ArcGis, Excel, LibreOffice-calc, …</p><p>Someone with basic spreadsheet-skills can thus easily create graphs and insights about the data, whereas the GIS-experts within your organisation can easily work with this data in their preferred application.</p><p>If an automated setup is needed, a free-to-use, community-run API is available.</p>",
-                "title": "Using the data in internal processes"
-            },
-            "layers": {
-                "intro": "<p>MapComplete has a powerful templating system, which allows to quickly create a map showing precisely those features that you need and showing relevant attributes in the popups.</p><p>This data can be fetched from <b>OpenStreetMap</b> directly, but MapComplete can also use <b>external datasets</b> - e.g. to compare OpenStreetMap with another dataset or to show data that is not suited for OpenStreetMap (planned activities, statistics, …)",
-                "title": "What data can be shown with MapComplete?"
-            },
-            "survey": {
-                "intro": "<p>MapComplete is an easy to use <i>survey</i> tool. It is ideal to collect the necessary in a few clicks, both on desktop and on mobile. This data is contributed directly into OpenStreetMap.</p><p>We can setup a <b>custom survey tool</b>, asking precisely the data you need in a future-proof way.</p><p>Do you have a dataset that has to be (re)surveyed? This is the perfect moment to make the switch to OpenStreetMap. MapComplete can show your dataset and OpenStreetMap at the same time, making it easier to visit all the locations and to see what the community already contributed.</p>\n",
-                "title": "Survey possibilities"
-            },
-            "text0": "If an existing MapComplete theme is what you, feel free to use it or embed it on your website. Embedding the public themes is free and always will be.",
-            "text1": "Do you need some other data, but does the theme not exist yet? The MapComplete-developers can <b>build it for you</b> on a decent budget. Get in touch via <a href='mailto:pietervdvn@posteo.net'>email</a>, <a href='https://github.com/pietervdvn/MapComplete/issues'>github</a> or <a href='https://www.openstreetmap.org/message/new/Pieter%20Vander%20Vennet'>send a message via osm.org</a>",
-            "text2": "If you still feel unsure, the possibilities are outlined below. Additionally, some common questions are answered",
-            "title": "Using MapComplete in your organization"
-        },
-        "aboutOsm": {
-            "aboutOsm": {
-                "intro": "OpenStreetMap is a shared, global database, built by volunteers. All geodata can be contributed to OpenStreetMap, as long as <b>it can be verified on the ground</b>.<br/> OpenStreetMap has grown to be a very broad and deep dataset as it contains data over thousands of categories of objects.An individual object might also have a ton of attributes, bringing a lot of nuance, e.g.:",
-                "li0": "Streets have geometry, but might also have information about the speed limit, surface, whether they are lit, their name, a link to Wikipedia, a link to what they are named after, which hiking-, cycle- and bus routes run there, …",
-                "li1": "Shops and other amenities might have opening hours, a phone number, a link to the website, which payment methods are supported, what they sell, which services they offer, …",
-                "li2": "Toilets might have information about wheelchair accessibility, a changing table, if payment is needed, …",
-                "li3": "and much, much more…",
-                "title": "What is OpenStreetMap?"
-            },
-            "benefits": {
-                "intro": "It can be very hard to leave your own dataset behind, as building this dataset often took a lot of time and effort.<br/>However, the benefits of switching over to OSM are huge:",
-                "li0": "You are not alone anymore to gather and maintain this dataset - a whole community is at your side",
-                "li1": "Your data will reach a bigger audience then ever via Bing Maps, Apple Maps, Facebook, Instagram, Pokemon Go, OsmAnd, Organic Maps, Maps.me, Mapbox, Komoot, nearly all cycle-applications, …",
-                "li2": "Many governement organisations and municipalities use OpenStreetMap on their websites too",
-                "title": "Benefits of the OSM-ecosystem"
-            },
-            "license": {
-                "intro": "OpenStreetMap is licensed under the Open Database License. The <a href='https://osm.org/copyright' target='_blank'>full copyright text</a> can be summarized as following:",
-                "li0": "A product using OpenStreetMap data must give attribution.",
-                "li1": "OpenStreetMap-data must remain <i>open</i>. This means that data of a map containing OpenStreetMap data can be copied again.",
-                "outro": "The license has a few implications - these are explained below.",
-                "title": "The license"
-            },
-            "vandalism": {
-                "intro": "As anyone can edit the data, it is indeed possible that a malicious change is made. However, this is extremely rare for a few reasons:",
-                "li0": "the technical barrier to make changes is high",
-                "li1": "a small malicious change has low impact, thus little reward for a vandal",
-                "li2": "a high impact change is quickly noticed and reverted since so many people use this data",
-                "li3": "all changes are tracked and tied to a single user. A repeating offender is quickly banned",
-                "li4": "In Belgium (and some other countries), the first edit by a new contributor is systematically checked and corrected if needed.",
-                "title": "What about vandalism?"
-            }
-        },
-        "drawbacks": {
-            "intro": "While joining this community has tremendous benefits, there are a few topics to carefully consider.",
-            "licenseNuances": {
-                "intro": "OpenStreetMap is licensed under the Open Database License which states that:",
-                "li0": "All data can be reused for any purpose - including commercial purposes",
-                "li1": "Applications or products using OpenStreetMap should give a clear copyright notice",
-                "li2": "Any dataset or product which contains OpenStreetMap-data must be republished under ODbL too, including modifications to this dataset and in a usable format.",
-                "outro": "This has a few implications which should be considered for some usecases, as explained below",
-                "title": "Implications of ODbL: some use cases",
-                "usecaseGatheringOpenData": {
-                    "intro": "MapComplete is an excellent way to create Open Data, also for governments. By default, this data will be freely redistributable under the ODbL. However, if there is a requirement to publish the gathered data under a <i>public domain</i>-license (where <b>all</b> rights are granted to the public and no attribution is required), the ODbL is too restrictive. In this case, one can ask the contributors to add data as Public Domain (e.g. by informing them in the mapcomplete theme).",
-                    "title": "Gathering open data"
-                },
-                "usecaseMapDifferentSources": {
-                    "intro": "<p>For example, one could make a map with all benches in some city, based on the benches known by OpenStreetMap. This printed map needs a clear statement that the map data is based on OpenStreetMap. Selling these maps is permitted.If the mapmaker notices that the benches are missing in some area and adds them on the printed map, the data on the missing benches are automatically open data too. This means that an OpenStreetMap-contributor is allowed to take the paper map and use it to add the missing benches back into OpenStreetMap.</p><p>This contributor also has the right to ask for the dataset of the missing benches, which should be provided too.</p><p>If the mapmaker notices that the benches are missing in some area and adds them on the printed map, the data on the missing benches are automatically open data too. This means that an OpenStreetMap-contributor is allowed to take the paper map and use it to add the missing benches back into OpenStreetMap. This contributor also has the right to ask for the dataset of the missing benches, which should be provided too.</p><p>Of course, a map with only benches can be boring. The mapmaker might also decide to add in a layer with shops, possibly sourced from another geodata provider under another license. This is permitted to, if the map clearly states that the benches are sourced from OSM (under ODBL) and the shops have a different source (eventually with an all rights reserved).</p><p>However, mixing two datasets into one undistinguishible layer might not be permitted. For example, the mapmaker migth find that OSM has excellent data on benches in one part of the city and the closed-source provider might have excellent data on benches in another part of the city, merging these datasets into one could be problematic: </p>",
-                    "li0": "the open license would require the modifications to be openly republished…",
-                    "li1": "…whereas the all-rights-reserved license would prohibit this.",
-                    "outro": "As a result, this kind of mixing is not allowed",
-                    "title": "Creating a map from different sources"
-                }
-            },
-            "title": "A few drawbacks to keep in mind",
-            "unsuitedData": {
-                "intro": "The basic rule for OpenStreetMap is that all data must be <b>verifiable on the ground</b> and are somewhat permanent. This implies that some data <i>cannot</i> be sent to OpenStreetMap directly - but some workarounds exist.",
-                "li0": "Subjective data (such as reviews) are not suited for OpenStreetMap. However, MapComplete has an integration with <a href='https://mangrove.reviews/'>Mangrove.reviews</a>, an openly licensed review website",
-                "li1": "Events are <i>not</i> recorded, neither are road works which only last a few days.",
-                "li2": "Temporal data (e.g. statistics of air quality, traffic intensity, …) can not stored on OpenStreetMap as they are hard to verify by a volunteer. Note that, if this data is available elsewhere, it can still be visualized within MapComplete as extra layer.",
-                "title": "Data not suited for OpenStreetMap"
-            }
-        },
-        "indexPage": {
-            "button": "Discover our services",
-            "hook": "Need professional support?",
-            "hookMore": "We can help with setting up surveys, data imports and OpenStreetMap-consultancy"
-        },
-        "intro": "The developer of MapComplete offers professional support. This document outlines some of the possibilities, common questions and the boundaries of MapComplete",
-        "osmTitle": "What can OpenStreetMap and MapComplete do for your organisation?",
-        "services": {
-            "intro": "The developer of MapComplete can help you with the following services:",
-            "li0": "Setting up a theme tailored for your need",
-            "li1": "Help with setting up the internal data flow to integrate OpenStreetMap",
-            "li2": "Training on how to contribute data with MapComplete",
-            "li3": "Advanced training (e.g. for the GIS-team) on how to add advanced data to OpenStreetMap",
-            "li4": "Training on how to download filtered data from OpenStreetMap",
-            "outro": "These services are offered at competitive prices. A simple theme without extra support can be setup for as little €2000, and a small additional yearly hosting cost.",
-            "title": "MapComplete services"
-        },
-        "text0": "<p>Maintaining a set of up-to-date geodata is hard, error prone and expensive.<br/>To add insult to injury, many organizations end up collecting the same data independently - resulting in duplicated efforts, non-standardized data formats and many incomplete, unmaintained datasets.</p><p>At the same time, there is a huge community which gathers a lot of geodata into one shared, global and standardized database - namely OpenStreetMap.org.</p>",
-        "text1": "<p>MapComplete is the editor to make contributing data to OpenStreetMap easy.</p>",
-        "title": "Professional support with MapComplete"
-    },
     "reviews": {
         "affiliated_reviewer_warning": "(Affiliated review)",
         "attribution": "Reviews are powered by <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> and are available under <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>.",
@@ -775,14 +581,12 @@
         "notImmediate": "Translations are not updated directly. This typically takes a few days"
     },
     "userinfo": {
+        "editDescription": "Edit your profile description",
         "gotoInbox": "Open your inbox",
         "gotoSettings": "Go to your settings on OpenStreetMap.org",
-        "moveToHome": "Move the map to your home location",
-        "newMessages": "you have new messages",
         "noDescription": "You don't have a description on your profile yet",
         "noDescriptionCallToAction": "Add a profile description",
-        "titleNotLoggedIn": "Welcome",
-        "welcome": "Welcome {name}"
+        "notLoggedIn": "You have logged out"
     },
     "validation": {
         "color": {
@@ -823,7 +627,8 @@
         },
         "phone": {
             "description": "a phone number",
-            "feedback": "This is not a valid phone number"
+            "feedback": "This is not a valid phone number",
+            "feedbackCountry": "This is not a valid phone number (for country {country})"
         },
         "pnat": {
             "description": "a positive, whole number",

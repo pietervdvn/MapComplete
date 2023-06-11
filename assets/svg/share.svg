@@ -1,9 +1,38 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="374px" height="365px" viewBox="0 0 374 365" version="1.1">
-  <g id="surface1">
-    <path style="fill:none;stroke-width:2.438635;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:4;" d="M 19.212394 278.175203 L 7.243369 283.695664 L 19.18221 289.202531 " transform="matrix(18.635995,0,0,18.679091,-62.085051,-5111.07542)"/>
-    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 145.808594 188.101562 C 145.808594 228.460938 113.167969 261.175781 72.902344 261.175781 C 32.640625 261.175781 0 228.460938 0 188.101562 C 0 147.746094 32.640625 115.03125 72.902344 115.03125 C 113.167969 115.03125 145.808594 147.746094 145.808594 188.101562 Z M 145.808594 188.101562 "/>
-    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 374 291.453125 C 374 331.8125 341.359375 364.527344 301.097656 364.527344 C 260.832031 364.527344 228.191406 331.8125 228.191406 291.453125 C 228.191406 251.097656 260.832031 218.382812 301.097656 218.382812 C 341.359375 218.382812 374 251.097656 374 291.453125 Z M 374 291.453125 "/>
-    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 374 73.546875 C 374 113.902344 341.359375 146.617188 301.097656 146.617188 C 260.832031 146.617188 228.191406 113.902344 228.191406 73.546875 C 228.191406 33.1875 260.832031 0.472656 301.097656 0.472656 C 341.359375 0.472656 374 33.1875 374 73.546875 Z M 374 73.546875 "/>
-  </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="374px"
+   height="365px"
+   viewBox="0 0 374 365"
+   version="1.1"
+   id="svg11"
+   sodipodi:docname="share.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs15" />
+  <sodipodi:namedview
+     id="namedview13"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="2.0958904"
+     inkscape:cx="187.03268"
+     inkscape:cy="182.5"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg11" />
+  <path
+     id="path2"
+     style="color:#000000;fill:#000000;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none"
+     d="M 301.09766 0.47265625 C 260.83203 0.47265625 228.19141 33.1875 228.19141 73.546875 C 228.19141 79.329826 228.8815 84.948384 230.14844 90.34375 L 126.28711 138.35938 C 112.97544 124.01509 93.990177 115.03125 72.902344 115.03125 C 32.640625 115.03125 0 147.74609 0 188.10156 C -9.4739031e-15 228.46094 32.640625 261.17578 72.902344 261.17578 C 93.990661 261.17578 112.97735 252.19308 126.28906 237.84766 L 228.48438 285.09375 C 228.30377 287.19139 228.19141 289.30857 228.19141 291.45312 C 228.19141 331.8125 260.83203 364.52734 301.09766 364.52734 C 341.35937 364.52734 374 331.8125 374 291.45312 C 374 251.09766 341.35937 218.38281 301.09766 218.38281 C 279.27697 218.38281 259.71055 228.00393 246.34961 243.22852 L 145.3125 196.51562 C 145.62871 193.75286 145.80859 190.94925 145.80859 188.10156 C 145.80859 185.2553 145.62846 182.45285 145.3125 179.69141 L 254.10547 129.39648 C 266.79684 140.13431 283.18811 146.61719 301.09766 146.61719 C 341.35937 146.61719 374 113.90234 374 73.546875 C 374 33.1875 341.35937 0.47265625 301.09766 0.47265625 z " />
 </svg>

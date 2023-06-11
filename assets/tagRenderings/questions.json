@@ -2,27 +2,39 @@
   "id": "shared_questions",
   "questions": {
     "description": "Show the images block at this location",
-    "id": "questions"
+    "render": {
+      "*": "{questions()}"
+    }
   },
   "images": {
     "description": "This block shows the known images which are linked with the `image`-keys, but also via `mapillary` and `wikidata`",
-    "render": "{image_carousel()}{image_upload()}{nearby_images(expandable)}"
+    "render": {
+      "*": "{image_carousel()}{image_upload()}"
+    }
   },
   "mapillary": {
     "description": "Shows a button to open Mapillary on this location",
-    "render": "{mapillary()}"
+    "render": {
+      "*": "{mapillary()}"
+    }
   },
   "export_as_gpx": {
     "description": "Shows a button to export this feature as GPX. Especially useful for route relations",
-    "render": "{export_as_gpx()}"
+    "render": {
+      "*": "{export_as_gpx()}"
+    }
   },
   "export_as_geojson": {
     "description": "Shows a button to export this feature as geojson. Especially useful for debugging or using this in other programs",
-    "render": "{export_as_geojson()}"
+    "render": {
+      "*": "{export_as_geojson()}"
+    }
   },
   "wikipedia": {
     "description": "Shows a wikipedia box with the corresponding wikipedia article; the wikidata-item link can be changed by a contributor",
-    "render": "{wikipedia():max-height:25rem}",
+    "render": {
+      "*": "{wikipedia():max-height:25rem}"
+    },
     "question": {
       "en": "What is the corresponding Wikidata entity?",
       "nl": "Welk Wikidata-item komt overeen met dit object?",
@@ -106,11 +118,15 @@
   },
   "reviews": {
     "description": "Shows the reviews module (including the possibility to leave a review)",
-    "render": "{reviews()}"
+    "render": {
+      "*": "{reviews()}"
+    }
   },
   "minimap": {
     "description": "Shows a small map with the feature. Added by default to every popup",
-    "render": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+    "render": {
+      "*": "{minimap(18, id): width:100%; height:8rem; border-radius:2rem; overflow: hidden; pointer-events: none;}"
+    }
   },
   "phone": {
     "labels": [
@@ -141,7 +157,9 @@
       "da": "Hvad er telefonnummeret til {title()}?",
       "cs": "Jaké je telefonní číslo {title()}?"
     },
-    "render": "<a href='tel:{phone}'>{phone}</a>",
+    "render": {
+      "*": "<a href='tel:{phone}'>{phone}</a>"
+    },
     "mappings": [
       {
         "if": "contact:phone~*",
@@ -158,7 +176,9 @@
     }
   },
   "osmlink": {
-    "render": "<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>",
+    "render": {
+      "*": "<a href='https://openstreetmap.org/{id}' target='_blank'><img src='./assets/svg/osm-logo-us.svg'/></a>"
+    },
     "mappings": [
       {
         "if": "id~=-",
@@ -167,10 +187,12 @@
     ]
   },
   "email": {
+    "render": {
+      "*": "<a href='mailto:{email}' target='_blank'>{email}</a>"
+    },
     "labels": [
       "contact"
     ],
-    "render": "<a href='mailto:{email}' target='_blank'>{email}</a>",
     "question": {
       "nl": "Wat is het e-mailadres van {title()}?",
       "fr": "Quelle est l'adresse courriel de {title()} ?",
@@ -240,7 +262,9 @@
       "da": "Hvad er webstedet for {title()}?",
       "cs": "Jaká je webová stránka {title()}?"
     },
-    "render": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>",
+    "render": {
+      "*": "<a href='{website}' rel='nofollow noopener noreferrer' target='_blank'>{website}</a>"
+    },
     "freeform": {
       "key": "website",
       "type": "url",
@@ -554,7 +578,9 @@
       "da": "Er der stadig noget relevant, du ikke kunne give i de foregående spørgsmål? Tilføj det her.",
       "cs": "Je ještě něco relevantního, co jste nemohli uvést v předchozích otázkách? Přidejte to sem."
     },
-    "render": "{description}",
+    "render": {
+      "*": "{description}"
+    },
     "freeform": {
       "key": "description"
     },
@@ -1364,13 +1390,78 @@
     ]
   },
   "last_edit": {
-    "#": "Gives some metainfo about the last edit and who did edit it - rendering only",
-    "condition": "_last_edit:contributor~*",
-    "render": "<div class='subtle' style='font-size: small; margin-top: 2em; margin-bottom: 0.5em;'><a href='https://www.openStreetMap.org/changeset/{_last_edit:changeset}' target='_blank'>Last edited on {_last_edit:timestamp}</a> by <a href='https://www.openStreetMap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a></div>"
+    "description": "Gives some metainfo about the last edit and who did edit it - rendering only",
+    "condition": {
+      "and": [
+        "_last_edit:contributor~*",
+        "_last_edit:changeset~*"
+      ]
+    },
+    "metacondition": {
+      "or": [
+        "__featureSwitchIsTesting=true",
+        "__featureSwitchIsDebugging=true",
+        "mapcomplete-show_debug=yes",
+        "_csCount>=10"
+      ]
+    },
+    "render": {
+      "special": {
+        "type": "link",
+        "href": "{_backend}/changeset/{_last_edit:changeset}",
+        "text": {
+          "en": "Last edited on {_last_edit:timestamp} by {_last_edit:contributor}",
+          "nl": "Laatst gewijzigd op {_last_edit:timestamp} door {_last_edit:contributor} "
+        },
+        "class": "subtle font-small"
+      }
+    }
   },
   "all_tags": {
     "description": "Shows a table with all the tags of the feature",
-    "render": "{all_tags()}"
+    "render": {
+      "*": "{all_tags()}"
+    }
+  },
+  "just_created": {
+    "description": "This element shows a 'thank you' that the contributor has recently created this element",
+    "classes": "rounded-xl thanks",
+    "mappings": [
+      {
+        "if": "id~*",
+        "icon": "./assets/svg/party.svg",
+        "then": {
+          "ca": "Acabeu de crear aquest element! Gràcies per compartir aquesta informació amb el mon i ajudar a persones al voltant del món.",
+          "de": "Sie haben gerade dieses Element erstellt! Vielen Dank, dass Sie diese Informationen mit der Welt teilen und Menschen weltweit helfen.",
+          "en": "You just created this element! Thanks for sharing this info with the world and helping people worldwide.",
+          "fr": "Vous venez de créer cet élément ! Merci d'avoir partagé cette information avec le monde et d'aider les autres personnes.",
+          "nl": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen."
+        }
+      }
+    ],
+    "condition": {
+      "and": [
+        "_backend~*",
+        "_last_edit:passed_time<300",
+        {
+          "or": [
+            "_version_number=",
+            "_version_number=1"
+          ]
+        }
+      ]
+    },
+    "metacondition": {
+      "and": [
+        {
+          "#": "if _last_edit:contributor:uid is unset, then the point hasn't been uploaded yet",
+          "or": [
+            "_last_edit:contributor:uid:={_uid}",
+            "_last_edit:contributor:uid="
+          ]
+        }
+      ]
+    }
   },
   "multilevels": {
     "builtin": "level",

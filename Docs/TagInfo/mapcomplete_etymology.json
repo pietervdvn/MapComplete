@@ -19,6 +19,10 @@
       "description": "The MapComplete theme Open Etymology Map has a layer Has etymology showing features with this tag"
     },
     {
+      "key": "id",
+      "description": "Layer 'Has etymology' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Has etymology shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -70,6 +74,10 @@
     {
       "key": "highway",
       "description": "The MapComplete theme Open Etymology Map has a layer Streets without etymology information showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Streets without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -129,6 +137,10 @@
       "key": "landuse",
       "description": "The MapComplete theme Open Etymology Map has a layer Parks and forests without etymology information showing features with this tag",
       "value": "forest"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Parks and forests without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -205,6 +217,10 @@
       "value": "education"
     },
     {
+      "key": "id",
+      "description": "Layer 'Education institutions without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Education institutions without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -279,6 +295,10 @@
       "value": "theatre"
     },
     {
+      "key": "id",
+      "description": "Layer 'Cultural places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Cultural places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -348,6 +368,10 @@
       "value": "zoo"
     },
     {
+      "key": "id",
+      "description": "Layer 'Toursistic places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Toursistic places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -412,6 +436,10 @@
       "value": "social_facility"
     },
     {
+      "key": "id",
+      "description": "Layer 'Health and social places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Health and social places without etymology information shows images based on the keys image, image:0, image:1,... and  wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -474,6 +502,10 @@
       "key": "leisure",
       "description": "The MapComplete theme Open Etymology Map has a layer Sport places without etymology information showing features with this tag",
       "value": "swimming_pool"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Sport places without etymology information' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Open Etymology Map') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",

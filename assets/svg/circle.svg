@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="375px" height="375px" viewBox="0 0 375 375" version="1.1">
-  <g id="surface1">
-    <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 375 187.5 C 375 291.054688 291.054688 375 187.5 375 C 83.945312 375 0 291.054688 0 187.5 C 0 83.945312 83.945312 0 187.5 0 C 291.054688 0 375 83.945312 375 187.5 Z M 375 187.5 "/>
-  </g>
+    <g id="surface1">
+        <path
+                style="fill:#000000;"
+                class="selectable"
+              d="M 375 187.5 C 375 291.054688 291.054688 375 187.5 375 C 83.945312 375 0 291.054688 0 187.5 C 0 83.945312 83.945312 0 187.5 0 C 291.054688 0 375 83.945312 375 187.5 Z M 375 187.5 "/>
+    </g>
 </svg>

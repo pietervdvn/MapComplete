@@ -1,130 +1,83 @@
-import FeaturePipelineState from "../Logic/State/FeaturePipelineState"
-import MinimapImplementation from "../UI/Base/MinimapImplementation"
-import { UIEventSource } from "../Logic/UIEventSource"
-import Loc from "../Models/Loc"
-import ShowDataLayer from "../UI/ShowDataLayer/ShowDataLayer"
-import { BBox } from "../Logic/BBox"
-import Minimap from "../UI/Base/Minimap"
-import AvailableBaseLayers from "../Logic/Actors/AvailableBaseLayers"
-import { Utils } from "../Utils"
+import ThemeViewState from "../Models/ThemeViewState"
+import {Utils} from "../Utils"
+import {UIEventSource} from "../Logic/UIEventSource"
+import {Map as MlMap} from "maplibre-gl"
+import {MapLibreAdaptor} from "../UI/Map/MapLibreAdaptor";
+import {AvailableRasterLayers} from "../Models/RasterLayers";
 
 export interface PngMapCreatorOptions {
-    readonly divId: string
     readonly width: number
     readonly height: number
-    readonly scaling?: 1 | number
-    readonly dummyMode?: boolean
 }
 
 export class PngMapCreator {
-    private readonly _state: FeaturePipelineState | undefined
+    private static id = 0
     private readonly _options: PngMapCreatorOptions
+    private readonly _state: ThemeViewState
 
-    constructor(state: FeaturePipelineState | undefined, options: PngMapCreatorOptions) {
+    constructor(state: ThemeViewState, options: PngMapCreatorOptions) {
         this._state = state
-        this._options = { ...options, scaling: options.scaling ?? 1 }
-    }
-
-    /**
-     * Creates a minimap, waits till all needed tiles are loaded before returning
-     * @private
-     */
-    private async createAndLoadMinimap(): Promise<MinimapImplementation> {
-        const state = this._state
-        const options = this._options
-        const baselayer =
-            AvailableBaseLayers.layerOverview.find(
-                (bl) => bl.id === state.layoutToUse.defaultBackgroundId
-            ) ?? AvailableBaseLayers.osmCarto
-        return new Promise((resolve) => {
-            const minimap = Minimap.createMiniMap({
-                location: new UIEventSource<Loc>(state.locationControl.data), // We remove the link between the old and the new UI-event source as moving the map while the export is running fucks up the screenshot
-                background: new UIEventSource(baselayer),
-                allowMoving: false,
-                onFullyLoaded: (_) =>
-                    window.setTimeout(() => {
-                        resolve(<MinimapImplementation>minimap)
-                    }, 250),
-            })
-            const style = `width: ${options.width * options.scaling}mm; height: ${
-                options.height * options.scaling
-            }mm;`
-            minimap.SetStyle(style)
-            minimap.AttachTo(options.divId)
-        })
+        this._options = options
     }
 
     /**
      * Creates a base64-encoded PNG image
      * @constructor
      */
-    public async CreatePng(format: "image"): Promise<string>
-    public async CreatePng(format: "blob"): Promise<Blob>
-    public async CreatePng(format: "image" | "blob"): Promise<string | Blob>
-    public async CreatePng(format: "image" | "blob"): Promise<string | Blob> {
-        // Lets first init the minimap and wait for all background tiles to load
-        const minimap = await this.createAndLoadMinimap()
-        const state = this._state
-        const dummyMode = this._options.dummyMode ?? false
-        return new Promise<string | Blob>((resolve, reject) => {
-            // Next: we prepare the features. Only fully contained features are shown
-            minimap.leafletMap.addCallbackAndRunD(async (leaflet) => {
-                // Ping the featurepipeline to download what is needed
-                if (dummyMode) {
-                    console.warn("Dummy mode is active - not loading map layers")
-                } else {
-                    const bounds = BBox.fromLeafletBounds(
-                        leaflet.getBounds().pad(0.1).pad(-state.layoutToUse.widenFactor)
-                    )
-                    state.currentBounds.setData(bounds)
-                    if (!state.featurePipeline.sufficientlyZoomed.data) {
-                        console.warn("Not sufficiently zoomed!")
-                    }
+    public async CreatePng(freeComponentId: string, status?: UIEventSource<string>): Promise<Blob> {
+        const div = document.createElement("div")
+        div.id = "mapdiv-" + PngMapCreator.id
+        div.style.width = this._options.width + "mm"
+        div.style.height = this._options.height + "mm"
+        PngMapCreator.id++
+        try {
+            const layout = this._state.layout
 
-                    if (state.featurePipeline.runningQuery.data) {
-                        // A query is running!
-                        // Let's wait for it to complete
-                        console.log("Waiting for the query to complete")
-                        await state.featurePipeline.runningQuery.AsPromise(
-                            (isRunning) => !isRunning
-                        )
-                        console.log("Query has completeted!")
-                    }
+            function setState(msg: string) {
+                status?.setData(layout.id + ": " + msg)
+            }
 
-                    state.featurePipeline.GetTilesPerLayerWithin(bounds, (tile) => {
-                        if (tile.layer.layerDef.id.startsWith("note_import")) {
-                            // Don't export notes to import
-                            return
-                        }
-                        new ShowDataLayer({
-                            features: tile,
-                            leafletMap: minimap.leafletMap,
-                            layerToShow: tile.layer.layerDef,
-                            doShowLayer: tile.layer.isDisplayed,
-                            state: undefined,
-                        })
-                    })
-                    await Utils.waitFor(2000)
-                }
-                minimap
-                    .TakeScreenshot(format)
-                    .then(async (result) => {
-                        const divId = this._options.divId
-                        await Utils.waitFor(250)
-                        document
-                            .getElementById(divId)
-                            .removeChild(
-                                /*Will fetch the cached htmlelement:*/ minimap.ConstructElement()
-                            )
-                        return resolve(result)
-                    })
-                    .catch((failreason) => {
-                        console.error("Could no make a screenshot due to ", failreason)
-                        reject(failreason)
-                    })
-            })
+            setState("Initializing map")
 
-            state.AddAllOverlaysToMap(minimap.leafletMap)
-        })
+            const settings = this._state.mapProperties
+            const l = settings.location.data
+
+            document.getElementById(freeComponentId).appendChild(div)
+            const pixelRatio = 4
+            const mapElem = new MlMap({
+                container: div.id,
+                style: AvailableRasterLayers.maplibre.properties.url,
+                center: [l.lon, l.lat],
+                zoom: settings.zoom.data,
+                pixelRatio
+            });
+
+            const map = new UIEventSource<MlMap>(mapElem)
+            const mla = new MapLibreAdaptor(map)
+            mla.zoom.setData(settings.zoom.data)
+            mla.location.setData(settings.location.data)
+            mla.rasterLayer.setData(settings.rasterLayer.data)
+            mla.allowZooming.setData(false)
+            mla.allowMoving.setData(false)
+
+
+            this._state?.showNormalDataOn(map)
+            console.log("Creating a map with size", this._options.width, this._options.height)
+
+            setState("Waiting for the data")
+            await this._state.dataIsLoading.AsPromise((loading) => !loading)
+            setState("Waiting for styles to be fully loaded")
+            while (!map?.data?.isStyleLoaded()) {
+                console.log("Waiting for the style to be loaded...")
+                await Utils.waitFor(250)
+            }
+            // Some extra buffer...
+            setState("One second pause to make sure all images are loaded...")
+            await Utils.waitFor(1000)
+            setState("Exporting png (" + this._options.width + "mm * " + this._options.height + "mm , maplibre-canvas-pixelratio: " + pixelRatio + ")")
+            return await mla.exportAsPng(pixelRatio)
+        } finally {
+            div.parentElement.removeChild(div)
+        }
     }
 }

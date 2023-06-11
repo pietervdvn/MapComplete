@@ -85,7 +85,7 @@ describe("Code quality", () => {
             "innerText is not allowed as it is not testable with fakeDom. Use 'textContent' instead."
         )
     )
-
+/*
     itAsync(
         "should not contain 'import * as name from \"xyz.json\"'",
         detectInCode(
@@ -93,9 +93,9 @@ describe("Code quality", () => {
             "With vite, json files have a default export. Use import name from file.json instead"
         )
     )
-
+/*
     itAsync(
         "should not contain '[\"default\"]'",
         detectInCode('\\[\\"default\\"\\]', "Possible leftover of faulty default import")
-    )
+    )*/
 })

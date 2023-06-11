@@ -1,4 +1,4 @@
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import { Store } from "../../Logic/UIEventSource"
 import BaseUIElement from "../BaseUIElement"
 import { Utils } from "../../Utils"
 import Combine from "../Base/Combine"

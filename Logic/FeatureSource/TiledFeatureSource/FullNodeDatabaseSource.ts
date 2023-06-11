@@ -1,28 +1,24 @@
-import TileHierarchy from "./TileHierarchy"
-import FeatureSource, { FeatureSourceForLayer, Tiled } from "../FeatureSource"
-import { OsmNode, OsmObject, OsmWay } from "../../Osm/OsmObject"
-import SimpleFeatureSource from "../Sources/SimpleFeatureSource"
-import FilteredLayer from "../../../Models/FilteredLayer"
-import { UIEventSource } from "../../UIEventSource"
+import {OsmNode, OsmObject, OsmWay} from "../../Osm/OsmObject"
+import {UIEventSource} from "../../UIEventSource"
+import {BBox} from "../../BBox";
+import StaticFeatureSource from "../Sources/StaticFeatureSource";
+import {Tiles} from "../../../Models/TileRange";
 
-export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSource & Tiled> {
-    public readonly loadedTiles = new Map<number, FeatureSource & Tiled>()
-    private readonly onTileLoaded: (tile: Tiled & FeatureSourceForLayer) => void
-    private readonly layer: FilteredLayer
+export default class FullNodeDatabaseSource {
+
+    private readonly loadedTiles = new Map<number, Map<number, OsmNode>>()
     private readonly nodeByIds = new Map<number, OsmNode>()
     private readonly parentWays = new Map<number, UIEventSource<OsmWay[]>>()
 
-    constructor(layer: FilteredLayer, onTileLoaded: (tile: Tiled & FeatureSourceForLayer) => void) {
-        this.onTileLoaded = onTileLoaded
-        this.layer = layer
-        if (this.layer === undefined) {
-            throw "Layer is undefined"
-        }
-    }
+    private smallestZoom = 99
+    private largestZoom = 0
 
-    public handleOsmJson(osmJson: any, tileId: number) {
+    public handleOsmJson(osmJson: any, z: number, x: number, y: number) : void {
         const allObjects = OsmObject.ParseObjects(osmJson.elements)
         const nodesById = new Map<number, OsmNode>()
+
+        this.smallestZoom = Math.min(this.smallestZoom, z)
+        this.largestZoom = Math.max(this.largestZoom, z)
 
         for (const osmObj of allObjects) {
             if (osmObj.type !== "node") {
@@ -53,16 +49,13 @@ export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSour
                 src.ping()
             }
         }
-        const now = new Date()
-        const asGeojsonFeatures = Array.from(nodesById.values()).map((osmNode) => ({
-            feature: osmNode.asGeoJson(),
-            freshness: now,
-        }))
+        const asGeojsonFeatures = Array.from(nodesById.values()).map((osmNode) =>
+            osmNode.asGeoJson()
+        )
 
-        const featureSource = new SimpleFeatureSource(this.layer, tileId)
-        featureSource.features.setData(asGeojsonFeatures)
-        this.loadedTiles.set(tileId, featureSource)
-        this.onTileLoaded(featureSource)
+        const featureSource = new StaticFeatureSource(asGeojsonFeatures)
+        const tileId = Tiles.tile_index(z, x, y)
+        this.loadedTiles.set(tileId, nodesById)
     }
 
     /**
@@ -76,11 +69,28 @@ export default class FullNodeDatabaseSource implements TileHierarchy<FeatureSour
     }
 
     /**
-     * Gets the parent way list
+     * Gets all the ways that the given node is a part of
      * @param nodeId
      * @constructor
      */
     public GetParentWays(nodeId: number): UIEventSource<OsmWay[]> {
         return this.parentWays.get(nodeId)
+    }
+
+    /**
+     * Gets (at least) all nodes which are part of this BBOX; might also return some nodes that fall outside of the bbox but are closeby
+     * @param bbox
+     */
+    getNodesWithin(bbox: BBox) : Map<number, OsmNode>{
+        const allById = new Map<number, OsmNode>()
+        for (let z = this.smallestZoom; z < this.largestZoom; z++) {
+            const range = Tiles.tileRangeFrom(bbox, z)
+            Tiles.MapRange(range, (x, y ) => {
+                const tileId = Tiles.tile_index(z, x, y)
+                const nodesById = this.loadedTiles.get(tileId)
+                nodesById?.forEach((v,k) => allById.set(k,v))
+            })
+        }
+        return allById
     }
 }

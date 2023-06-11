@@ -10,25 +10,155 @@ import { CountryCoder } from "latlon2country"
 import Constants from "../Models/Constants"
 import { TagUtils } from "./Tags/TagUtils"
 import { Feature, LineString } from "geojson"
-import { OsmObject } from "./Osm/OsmObject"
+import { OsmTags } from "../Models/OsmFeature"
+import { UIEventSource } from "./UIEventSource"
+import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
+import OsmObjectDownloader from "./Osm/OsmObjectDownloader"
 
-export class SimpleMetaTagger {
+/**
+ * All elements that are needed to perform metatagging
+ */
+export interface MetataggingState {
+    layout: LayoutConfig
+    osmObjectDownloader: OsmObjectDownloader
+}
+
+export abstract class SimpleMetaTagger {
     public readonly keys: string[]
     public readonly doc: string
     public readonly isLazy: boolean
     public readonly includesDates: boolean
-    public readonly applyMetaTagsOnFeature: (
-        feature: any,
-        freshness: Date,
-        layer: LayerConfig,
-        state
-    ) => boolean
 
     /***
      * A function that adds some extra data to a feature
      * @param docs: what does this extra data do?
-     * @param f: apply the changes. Returns true if something changed
      */
+    protected constructor(docs: {
+        keys: string[]
+        doc: string
+        /**
+         * Set this flag if the data is volatile or date-based.
+         * It'll _won't_ be cached in this case
+         */
+        includesDates?: boolean
+        isLazy?: boolean
+        cleanupRetagger?: boolean
+    }) {
+        this.keys = docs.keys
+        this.doc = docs.doc
+        this.isLazy = docs.isLazy
+        this.includesDates = docs.includesDates ?? false
+        if (!docs.cleanupRetagger) {
+            for (const key of docs.keys) {
+                if (!key.startsWith("_") && key.toLowerCase().indexOf("theme") < 0) {
+                    throw `Incorrect key for a calculated meta value '${key}': it should start with underscore (_)`
+                }
+            }
+        }
+    }
+
+    /**
+     * Applies the metatag-calculation, returns 'true' if the upstream source needs to be pinged
+     * @param feature
+     * @param layer
+     * @param tagsStore
+     * @param state
+     */
+    public abstract applyMetaTagsOnFeature(
+        feature: any,
+        layer: LayerConfig,
+        tagsStore: UIEventSource<Record<string, string>>,
+        state: MetataggingState
+    ): boolean
+}
+
+export class ReferencingWaysMetaTagger extends SimpleMetaTagger {
+    /**
+     * Disable this metatagger, e.g. for caching or tests
+     * This is a bit a work-around
+     */
+    public static enabled = true
+
+    constructor() {
+        super({
+            keys: ["_referencing_ways"],
+            isLazy: true,
+            doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry. ",
+        })
+    }
+
+    public applyMetaTagsOnFeature(feature, layer, tags, state) {
+        if (!ReferencingWaysMetaTagger.enabled) {
+            return false
+        }
+        //this function has some extra code to make it work in SimpleAddUI.ts to also work for newly added points
+        const id = feature.properties.id
+        if (!id.startsWith("node/")) {
+            return false
+        }
+
+        Utils.AddLazyPropertyAsync(feature.properties, "_referencing_ways", async () => {
+            const referencingWays = await state.osmObjectDownloader.DownloadReferencingWays(id)
+            const wayIds = referencingWays.map((w) => "way/" + w.id)
+            wayIds.sort()
+            return wayIds.join(";")
+        })
+
+        return true
+    }
+}
+
+class CountryTagger extends SimpleMetaTagger {
+    private static readonly coder = new CountryCoder(
+        Constants.countryCoderEndpoint,
+        Utils.downloadJson
+    )
+    public runningTasks: Set<any> = new Set<any>()
+
+    constructor() {
+        super({
+            keys: ["_country"],
+            doc: "The country code of the property (with latlon2country)",
+            includesDates: false,
+        })
+    }
+
+    applyMetaTagsOnFeature(feature, _, tagsSource) {
+        let centerPoint: any = GeoOperations.centerpoint(feature)
+        const runningTasks = this.runningTasks
+        const lat = centerPoint.geometry.coordinates[1]
+        const lon = centerPoint.geometry.coordinates[0]
+        runningTasks.add(feature)
+        CountryTagger.coder
+            .GetCountryCodeAsync(lon, lat)
+            .then((countries) => {
+                if(!countries){
+                    console.warn("Country coder returned ", countries)
+                    return
+                }
+                const oldCountry = feature.properties["_country"]
+                const newCountry = countries[0].trim().toLowerCase()
+                if (oldCountry !== newCountry) {
+                    tagsSource.data["_country"] = newCountry
+                    tagsSource?.ping()
+                }
+            })
+            .catch((e) => {
+                console.warn(e)
+            })
+            .finally(() => runningTasks.delete(feature))
+        return false
+    }
+}
+
+class InlineMetaTagger extends SimpleMetaTagger {
+    public readonly applyMetaTagsOnFeature: (
+        feature: any,
+        layer: LayerConfig,
+        tagsStore: UIEventSource<OsmTags>,
+        state: MetataggingState
+    ) => boolean
+
     constructor(
         docs: {
             keys: string[]
@@ -41,121 +171,21 @@ export class SimpleMetaTagger {
             isLazy?: boolean
             cleanupRetagger?: boolean
         },
-        f: (feature: any, freshness: Date, layer: LayerConfig, state) => boolean
+        f: (
+            feature: any,
+            layer: LayerConfig,
+            tagsStore: UIEventSource<OsmTags>,
+            state: MetataggingState
+        ) => boolean
     ) {
-        this.keys = docs.keys
-        this.doc = docs.doc
-        this.isLazy = docs.isLazy
+        super(docs)
         this.applyMetaTagsOnFeature = f
-        this.includesDates = docs.includesDates ?? false
-        if (!docs.cleanupRetagger) {
-            for (const key of docs.keys) {
-                if (!key.startsWith("_") && key.toLowerCase().indexOf("theme") < 0) {
-                    throw `Incorrect key for a calculated meta value '${key}': it should start with underscore (_)`
-                }
-            }
-        }
     }
 }
 
-export class ReferencingWaysMetaTagger extends SimpleMetaTagger {
-    /**
-     * Disable this metatagger, e.g. for caching or tests
-     * This is a bit a work-around
-     */
-    public static enabled = true
+class RewriteMetaInfoTags extends SimpleMetaTagger {
     constructor() {
-        super(
-            {
-                keys: ["_referencing_ways"],
-                isLazy: true,
-                doc: "_referencing_ways contains - for a node - which ways use this this node as point in their geometry. If the preset has 'snapToLayer' defined, the icon will be calculated based on the preset tags with `_referencing_ways=[\"way/-1\"]` added.",
-            },
-            (feature, _, __, state) => {
-                if (!ReferencingWaysMetaTagger.enabled) {
-                    return false
-                }
-                //this function has some extra code to make it work in SimpleAddUI.ts to also work for newly added points
-                const id = feature.properties.id
-                if (!id.startsWith("node/")) {
-                    return false
-                }
-
-                const currentTagsSource = state.allElements?.getEventSourceById(id)
-                if (currentTagsSource === undefined) {
-                    return
-                }
-                Utils.AddLazyPropertyAsync(
-                    currentTagsSource.data,
-                    "_referencing_ways",
-                    async () => {
-                        const referencingWays = await OsmObject.DownloadReferencingWays(id)
-                        const wayIds = referencingWays.map((w) => "way/" + w.id)
-                        wayIds.sort()
-                        const wayIdsStr = wayIds.join(";")
-                        if (wayIdsStr !== "" && currentTagsSource.data[""] !== wayIdsStr) {
-                            currentTagsSource.data["_referencing_ways"] = wayIdsStr
-                            currentTagsSource.ping()
-                        }
-                    }
-                )
-
-                return true
-            }
-        )
-    }
-}
-
-export class CountryTagger extends SimpleMetaTagger {
-    private static readonly coder = new CountryCoder(
-        Constants.countryCoderEndpoint,
-        Utils.downloadJson
-    )
-    public runningTasks: Set<any>
-
-    constructor() {
-        const runningTasks = new Set<any>()
-        super(
-            {
-                keys: ["_country"],
-                doc: "The country code of the property (with latlon2country)",
-                includesDates: false,
-            },
-            (feature, _, __, state) => {
-                let centerPoint: any = GeoOperations.centerpoint(feature)
-                const lat = centerPoint.geometry.coordinates[1]
-                const lon = centerPoint.geometry.coordinates[0]
-                runningTasks.add(feature)
-                CountryTagger.coder
-                    .GetCountryCodeAsync(lon, lat)
-                    .then((countries) => {
-                        runningTasks.delete(feature)
-                        try {
-                            const oldCountry = feature.properties["_country"]
-                            feature.properties["_country"] = countries[0].trim().toLowerCase()
-                            if (oldCountry !== feature.properties["_country"]) {
-                                const tagsSource = state?.allElements?.getEventSourceById(
-                                    feature.properties.id
-                                )
-                                tagsSource?.ping()
-                            }
-                        } catch (e) {
-                            console.warn(e)
-                        }
-                    })
-                    .catch((_) => {
-                        runningTasks.delete(feature)
-                    })
-                return false
-            }
-        )
-        this.runningTasks = runningTasks
-    }
-}
-
-export default class SimpleMetaTaggers {
-    public static readonly objectMetaInfo = new SimpleMetaTagger(
-        {
+        super({
             keys: [
                 "_last_edit:contributor",
                 "_last_edit:contributor:uid",
@@ -164,33 +194,42 @@ export default class SimpleMetaTaggers {
                 "_version_number",
                 "_backend",
             ],
-            doc: "Information about the last edit of this object.",
-        },
-        (feature) => {
-            /*Note: also called by 'UpdateTagsFromOsmAPI'*/
+            doc: "Information about the last edit of this object. This object will actually _rewrite_ some tags for features coming from overpass",
+        })
+    }
 
-            const tgs = feature.properties
-            let movedSomething = false
+    applyMetaTagsOnFeature(feature: Feature): boolean {
+        /*Note: also called by 'UpdateTagsFromOsmAPI'*/
 
-            function move(src: string, target: string) {
-                if (tgs[src] === undefined) {
-                    return
-                }
-                tgs[target] = tgs[src]
-                delete tgs[src]
-                movedSomething = true
+        const tgs = feature.properties
+        let movedSomething = false
+
+        function move(src: string, target: string) {
+            if (tgs[src] === undefined) {
+                return
             }
-
-            move("user", "_last_edit:contributor")
-            move("uid", "_last_edit:contributor:uid")
-            move("changeset", "_last_edit:changeset")
-            move("timestamp", "_last_edit:timestamp")
-            move("version", "_version_number")
-            return movedSomething
+            tgs[target] = tgs[src]
+            delete tgs[src]
+            movedSomething = true
         }
-    )
+
+        move("user", "_last_edit:contributor")
+        move("uid", "_last_edit:contributor:uid")
+        move("changeset", "_last_edit:changeset")
+        move("timestamp", "_last_edit:timestamp")
+        move("version", "_version_number")
+        feature.properties._backend = feature.properties._backend ?? "https://openstreetmap.org"
+        return movedSomething
+    }
+}
+
+export default class SimpleMetaTaggers {
+    /**
+     * A simple metatagger which rewrites various metatags as needed
+     */
+    public static readonly objectMetaInfo = new RewriteMetaInfoTags()
     public static country = new CountryTagger()
-    public static geometryType = new SimpleMetaTagger(
+    public static geometryType = new InlineMetaTagger(
         {
             keys: ["_geometry:type"],
             doc: "Adds the geometry type as property. This is identical to the GoeJson geometry type and is one of `Point`,`LineString`, `Polygon` and exceptionally `MultiPolygon` or `MultiLineString`",
@@ -201,6 +240,7 @@ export default class SimpleMetaTaggers {
             return changed
         }
     )
+    public static referencingWays = new ReferencingWaysMetaTagger()
     private static readonly cardinalDirections = {
         N: 0,
         NNE: 22.5,
@@ -219,7 +259,7 @@ export default class SimpleMetaTaggers {
         NW: 315,
         NNW: 337.5,
     }
-    private static latlon = new SimpleMetaTagger(
+    private static latlon = new InlineMetaTagger(
         {
             keys: ["_lat", "_lon"],
             doc: "The latitude and longitude of the point (or centerpoint in the case of a way/area)",
@@ -230,18 +270,16 @@ export default class SimpleMetaTaggers {
             const lon = centerPoint.geometry.coordinates[0]
             feature.properties["_lat"] = "" + lat
             feature.properties["_lon"] = "" + lon
-            feature._lon = lon // This is dirty, I know
-            feature._lat = lat
             return true
         }
     )
-    private static layerInfo = new SimpleMetaTagger(
+    private static layerInfo = new InlineMetaTagger(
         {
             doc: "The layer-id to which this feature belongs. Note that this might be return any applicable if `passAllFeatures` is defined.",
             keys: ["_layer"],
             includesDates: false,
         },
-        (feature, freshness, layer) => {
+        (feature, layer) => {
             if (feature.properties._layer === layer.id) {
                 return false
             }
@@ -249,7 +287,7 @@ export default class SimpleMetaTaggers {
             return true
         }
     )
-    private static noBothButLeftRight = new SimpleMetaTagger(
+    private static noBothButLeftRight = new InlineMetaTagger(
         {
             keys: [
                 "sidewalk:left",
@@ -261,7 +299,7 @@ export default class SimpleMetaTaggers {
             includesDates: false,
             cleanupRetagger: true,
         },
-        (feature, state, layer) => {
+        (feature, layer) => {
             if (!layer.lineRendering.some((lr) => lr.leftRightSensitive)) {
                 return
             }
@@ -269,24 +307,28 @@ export default class SimpleMetaTaggers {
             return SimpleMetaTaggers.removeBothTagging(feature.properties)
         }
     )
-    private static surfaceArea = new SimpleMetaTagger(
+    private static surfaceArea = new InlineMetaTagger(
         {
-            keys: ["_surface", "_surface:ha"],
-            doc: "The surface area of the feature, in square meters and in hectare. Not set on points and ways",
+            keys: ["_surface"],
+            doc: "The surface area of the feature in square meters. Not set on points and ways",
             isLazy: true,
         },
         (feature) => {
-            Object.defineProperty(feature.properties, "_surface", {
-                enumerable: false,
-                configurable: true,
-                get: () => {
-                    const sqMeters = "" + GeoOperations.surfaceAreaInSqMeters(feature)
-                    delete feature.properties["_surface"]
-                    feature.properties["_surface"] = sqMeters
-                    return sqMeters
-                },
+            Utils.AddLazyProperty(feature.properties, "_surface", () => {
+               return "" + GeoOperations.surfaceAreaInSqMeters(feature)
+
             })
 
+            return true
+        }
+    )
+    private static surfaceAreaHa = new InlineMetaTagger(
+        {
+            keys: ["_surface:ha"],
+            doc: "The surface area of the feature in hectare. Not set on points and ways",
+            isLazy: true,
+        },
+        (feature) => {
             Utils.AddLazyProperty(feature.properties, "_surface:ha", () => {
                 const sqMeters = GeoOperations.surfaceAreaInSqMeters(feature)
                 return "" + Math.floor(sqMeters / 1000) / 10
@@ -295,7 +337,7 @@ export default class SimpleMetaTaggers {
             return true
         }
     )
-    private static levels = new SimpleMetaTagger(
+    private static levels = new InlineMetaTagger(
         {
             doc: "Extract the 'level'-tag into a normalized, ';'-separated value",
             keys: ["_level"],
@@ -314,15 +356,14 @@ export default class SimpleMetaTaggers {
             return true
         }
     )
-
-    private static canonicalize = new SimpleMetaTagger(
+    private static canonicalize = new InlineMetaTagger(
         {
             doc: "If 'units' is defined in the layoutConfig, then this metatagger will rewrite the specified keys to have the canonical form (e.g. `1meter` will be rewritten to `1m`; `1` will be rewritten to `1m` as well)",
             keys: ["Theme-defined keys"],
         },
         (feature, _, __, state) => {
             const units = Utils.NoNull(
-                [].concat(...(state?.layoutToUse?.layers?.map((layer) => layer.units) ?? []))
+                [].concat(...(state?.layout?.layers?.map((layer) => layer.units) ?? []))
             )
             if (units.length == 0) {
                 return
@@ -372,7 +413,7 @@ export default class SimpleMetaTaggers {
             return rewritten
         }
     )
-    private static lngth = new SimpleMetaTagger(
+    private static lngth = new InlineMetaTagger(
         {
             keys: ["_length", "_length:km"],
             doc: "The total length of a feature in meters (and in kilometers, rounded to one decimal for '_length:km'). For a surface, the length of the perimeter",
@@ -386,14 +427,14 @@ export default class SimpleMetaTaggers {
             return true
         }
     )
-    private static isOpen = new SimpleMetaTagger(
+    private static isOpen = new InlineMetaTagger(
         {
             keys: ["_isOpen"],
             doc: "If 'opening_hours' is present, it will add the current state of the feature (being 'yes' or 'no')",
             includesDates: true,
             isLazy: true,
         },
-        (feature, _, __, state) => {
+        (feature) => {
             if (Utils.runningFromConsole) {
                 // We are running from console, thus probably creating a cache
                 // isOpen is irrelevant
@@ -443,7 +484,7 @@ export default class SimpleMetaTaggers {
             })
         }
     )
-    private static directionSimplified = new SimpleMetaTagger(
+    private static directionSimplified = new InlineMetaTagger(
         {
             keys: ["_direction:numerical", "_direction:leftright"],
             doc: "_direction:numerical is a normalized, numerical direction based on 'camera:direction' or on 'direction'; it is only present if a valid direction is found (e.g. 38.5 or NE). _direction:leftright is either 'left' or 'right', which is left-looking on the map or 'right-looking' on the map",
@@ -467,8 +508,7 @@ export default class SimpleMetaTaggers {
             return true
         }
     )
-
-    private static directionCenterpoint = new SimpleMetaTagger(
+    private static directionCenterpoint = new InlineMetaTagger(
         {
             keys: ["_direction:centerpoint"],
             isLazy: true,
@@ -501,19 +541,14 @@ export default class SimpleMetaTaggers {
             return true
         }
     )
-
-    private static currentTime = new SimpleMetaTagger(
+    private static currentTime = new InlineMetaTagger(
         {
-            keys: ["_now:date", "_now:datetime", "_loaded:date", "_loaded:_datetime"],
+            keys: ["_now:date", "_now:datetime"],
             doc: "Adds the time that the data got loaded - pretty much the time of downloading from overpass. The format is YYYY-MM-DD hh:mm, aka 'sortable' aka ISO-8601-but-not-entirely",
             includesDates: true,
         },
-        (feature, freshness) => {
+        (feature) => {
             const now = new Date()
-
-            if (typeof freshness === "string") {
-                freshness = new Date(freshness)
-            }
 
             function date(d: Date) {
                 return d.toISOString().slice(0, 10)
@@ -525,18 +560,35 @@ export default class SimpleMetaTaggers {
 
             feature.properties["_now:date"] = date(now)
             feature.properties["_now:datetime"] = datetime(now)
-            feature.properties["_loaded:date"] = date(freshness)
-            feature.properties["_loaded:datetime"] = datetime(freshness)
             return true
         }
     )
 
-    public static referencingWays = new ReferencingWaysMetaTagger()
+    private static timeSinceLastEdit = new InlineMetaTagger(
+        {
+            keys: ["_last_edit:passed_time"],
+            doc: "Gives the number of seconds since the last edit. Note that this will _not_ update, but rather be the number of seconds elapsed at the moment this tag is read first",
+            isLazy: true,
+            includesDates: true,
+        },
+        (feature, layer, tagsStore) => {
+            Utils.AddLazyProperty(feature.properties, "_last_edit:passed_time", () => {
+                const lastEditTimestamp = new Date(
+                    feature.properties["_last_edit:timestamp"]
+                ).getTime()
+                const now: number = Date.now()
+                const millisElapsed = now - lastEditTimestamp
+                return "" + millisElapsed / 1000
+            })
+            return true
+        }
+    )
 
     public static metatags: SimpleMetaTagger[] = [
         SimpleMetaTaggers.latlon,
         SimpleMetaTaggers.layerInfo,
         SimpleMetaTaggers.surfaceArea,
+        SimpleMetaTaggers.surfaceAreaHa,
         SimpleMetaTaggers.lngth,
         SimpleMetaTaggers.canonicalize,
         SimpleMetaTaggers.country,
@@ -549,10 +601,8 @@ export default class SimpleMetaTaggers {
         SimpleMetaTaggers.geometryType,
         SimpleMetaTaggers.levels,
         SimpleMetaTaggers.referencingWays,
+        SimpleMetaTaggers.timeSinceLastEdit,
     ]
-    public static readonly lazyTags: string[] = [].concat(
-        ...SimpleMetaTaggers.metatags.filter((tagger) => tagger.isLazy).map((tagger) => tagger.keys)
-    )
 
     /**
      * Edits the given object to rewrite 'both'-tagging into a 'left-right' tagging scheme.

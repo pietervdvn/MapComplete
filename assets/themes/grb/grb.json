@@ -26,42 +26,26 @@
     "maxZoom": 15
   },
   "overrideAll": {
-    "minzoom": 19
+    "minzoom": 15
   },
   "layers": [
-    {
-      "builtin": "type_node",
-      "override": {
-        "calculatedTags": [
-          "_is_part_of_building=feat.get('parent_ways')?.some(p => p.building !== undefined && p.building !== '') ?? false",
-          "_is_part_of_grb_building=feat.get('parent_ways')?.some(p => p['source:geometry:ref'] !== undefined) ?? false",
-          "_is_part_of_building_passage=feat.get('parent_ways')?.some(p => p.tunnel === 'building_passage') ?? false",
-          "_is_part_of_highway=!feat.get('is_part_of_building_passage') && (feat.get('parent_ways')?.some(p => p.highway !== undefined && p.highway !== '') ?? false)",
-          "_is_part_of_landuse=feat.get('parent_ways')?.some(p => (p.landuse !== undefined && p.landuse !== '') || (p.natural !== undefined && p.natural !== '')) ?? false",
-          "_moveable=feat.get('_is_part_of_building') && !feat.get('_is_part_of_grb_building')"
-        ],
-        "mapRendering": [
-          {
-            "icon": "square:#cc0",
-            "iconSize": "5,5,center",
-            "location": [
-              "point"
-            ]
-          }
-        ],
-        "passAllFeatures": true
-      }
-    },
     {
       "id": "osm-buildings",
       "name": "All OSM-buildings",
       "source": {
-        "osmTags": "building~*",
+        "osmTags": {
+          "and": [
+            {
+              "or": [
+                "id~way/.*",
+                "id~relation/.*"
+              ]
+            },
+            "building~*"
+          ]
+        },
         "maxCacheAge": 0
       },
-      "calculatedTags": [
-        "_surface:strict:=feat.get('_surface')"
-      ],
       "mapRendering": [
         {
           "width": {
@@ -216,6 +200,13 @@
           }
         },
         {
+          "id": "grb-reference",
+          "render": {
+            "en": "Has been imported from GRB, reference number is {source:geometry:ref}"
+          },
+          "condition": "source:geometry:ref~*"
+        },
+        {
           "id": "grb-fixme",
           "render": {
             "nl": "De fixme is <b>{fixme}</b>"
@@ -281,6 +272,263 @@
       ]
     },
     {
+      "id": "grb",
+      "description": "Geometry which comes from GRB with tools to import them",
+      "source": {
+        "osmTags": {
+          "and": [
+            "osm_id~*",
+            "man_made!=mast"
+          ]
+        },
+        "geoJson": "https://betadata.grbosm.site/grb?bbox={x_min},{y_min},{x_max},{y_max}",
+        "geoJsonZoomLevel": 18,
+        "mercatorCrs": true,
+        "maxCacheAge": 0,
+        "idKey": "osm_id"
+      },
+      "name": "GRB geometries",
+      "title": "GRB outline",
+      "calculatedTags": [
+        "_overlaps_with_buildings=overlapWith(feat)('osm-buildings').filter(f => f.feat.properties.id.indexOf('-') < 0) ?? []",
+        "_overlaps_with=get(feat)('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
+        "_osm_obj:source:ref=get(feat)('_overlaps_with')?.feat?.properties['source:geometry:ref']",
+        "_osm_obj:id=get(feat)('_overlaps_with')?.feat?.properties?.id",
+        "_osm_obj:source:date=(feat.properties['_overlaps_with']?.feat?.properties ?? {})['source:geometry:date']?.replace(/\\//g, '-')",
+        "_osm_obj:building=get(feat)('_overlaps_with')?.feat?.properties?.building",
+        "_osm_obj:addr:street=(get(feat)('_overlaps_with')?.feat?.properties ?? {})['addr:street']",
+        "_osm_obj:addr:housenumber=(get(feat)('_overlaps_with')?.feat?.properties ?? {})['addr:housenumber']",
+        "_osm_obj:surface=(get(feat)('_overlaps_with')?.feat?.properties ?? {})['_surface']",
+        "_overlap_absolute=get(feat)('_overlaps_with')?.overlap",
+        "_reverse_overlap_percentage=Math.round(100 * get(feat)('_overlap_absolute') / get(feat)('_surface'))",
+        "_overlap_percentage=Math.round(100 * get(feat)('_overlap_absolute') / get(feat)('_osm_obj:surface'))",
+        "_grb_ref=feat.properties['source:geometry:entity'] + '/' + feat.properties['source:geometry:oidn']",
+        "_imported_osm_object_found=feat.properties['_osm_obj:source:ref'] === feat.properties['_grb_ref']",
+        "_grb_date=feat.properties['source:geometry:date'].replace(/\\//g,'-')",
+        "_imported_osm_still_fresh=feat.properties['_osm_obj:source:date'] == feat.properties._grb_date",
+        "_target_building_type=feat.properties['_osm_obj:building'] === 'yes' ? feat.properties.building : (feat.properties['_osm_obj:building'] ?? feat.properties.building)",
+        "_building:min_level=feat.properties['fixme']?.startsWith('verdieping, correct the building tag, add building:level and building:min_level before upload in JOSM!') ? '1' : ''",
+        "_intersects_with_other_features=intersectionsWith(feat)('generic_osm_object').map(f => \"<a href='https://osm.org/\"+f.feat.properties.id+\"' target='_blank'>\" + f.feat.properties.id + \"</a>\").join(', ')"
+      ],
+      "tagRenderings": [
+        {
+          "id": "Import-button",
+          "render": "{import_way_button(osm-buildings,building=$building;man_made=$man_made; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap,,_is_part_of_building=true,1,_moveable=true)}",
+          "mappings": [
+            {
+              "#": "Failsafe",
+              "if": "_grb_ref=",
+              "then": {
+                "en": "Did not yet calculate the metatags... Reopen this popup",
+                "de": "Metatags noch nicht berechnet... Dieses Fenster erneut öffnen",
+                "nl": "Metatags nog niet berekend... Heropen deze pop-up",
+                "fr": "Les balises meta ne sont pas encore calculées ... Rouvrir cette fenêtre pop-up",
+                "da": "Har endnu ikke beregnet metatags... Genåbn denne popup",
+                "cs": "Metatags ještě nebyly vypočítány... Znovu otevřete toto vyskakovací okno",
+                "es": "Aún no se han calculado los metatags... Reabrir esta ventana emergente",
+                "ca": "Encara no s'han calculat les metaetiquetes... Torneu a obrir aquesta finestra emergent"
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "id~relation/*",
+                  "_overlap_percentage>50",
+                  "_reverse_overlap_percentage>50",
+                  "_overlaps_with!="
+                ]
+              },
+              "then": {
+                "en": "This building has holes and is modeled as a relation. As such, it cannot be conflated. Conflate it manually via <a href='https://buildings.osm.be/#/'>the building export site</a> {open_in_josm()}",
+                "de": "Dieses Gebäude hat Löcher und ist als Relation modelliert. Als solches kann es nicht zusammengeführt werden. Es kann manuell zusammengeführt werden über die <a href='https://buildings.osm.be/#/'>Gebäudeexportseite</a> {open_in_josm()}",
+                "es": "Este edificio tiene agujeros y está modelado como una relación. Por lo tanto, no se puede combinar. Combínalo manualmente a través <a href='https://buildings.osm.be/#/'>el sitio de exportación de edificios</a> {open_in_josm()}",
+                "fr": "Ce bâtiment a des ouvertures et est modélisé comme une relation. Il ne peut être fusionné. Fusionnez-le manuellement via <a href='https://buildings.osm.be/#/'>le site d’export de bâtiment</a> {open_in_josm()}",
+                "nl": "Dit gebouw heeft openingen en is gemodelleerd als een relatie. Bijgevolg kan het niet worden samengevoegd. Voeg het manueel samen via <a href='https://buildings.osm.be/#/'>de export-site voor gebouwen</a> {open_in_josm()}",
+                "da": "Denne bygning har huller og er modelleret som en relation. Som sådan kan det ikke sammenblandes. Sammensæt det manuelt via <a href='https://buildings.osm.be/#/'>bygningseksportwebstedet</a> {open_in_josm()}",
+                "cs": "Tato budova má otvory a je modelována jako vztah. Jako takovou ji nelze spojovat. Spojte ji ručně pomocí <a href='https://buildings.osm.be/#/'>exportní stránky budovy</a> {open_in_josm()}",
+                "ca": "Aquest edifici té forats i està modelat com una relació. Com a tal, no es pot combinar. Combineu-lo manualment mitjançant <a href='https://buildings.osm.be/#/'>el lloc d'exportació de l'edifici</a> {open_in_josm()}"
+              }
+            },
+            {
+              "#": "Actually the same as below, except that the text shows 'add the address' too",
+              "if": {
+                "and": [
+                  "_overlap_percentage>50",
+                  "_reverse_overlap_percentage>50",
+                  "_osm_obj:addr:street=",
+                  "_osm_obj:addr:housenumber=",
+                  "addr:street~*",
+                  "addr:housenumber~*",
+                  "addr:street!:={_osm_obj:addr:street}",
+                  "addr:housenumber!:={_osm_obj:addr:housenumber}"
+                ]
+              },
+              "then": "{conflate_button(osm-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber, Replace the geometry in OpenStreetMap and add the address,,_osm_obj:id)}"
+            },
+            {
+              "if": {
+                "and": [
+                  "_overlap_percentage>50",
+                  "_reverse_overlap_percentage>50"
+                ]
+              },
+              "then": "{conflate_button(osm-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Replace the geometry in OpenStreetMap,,_osm_obj:id)}"
+            }
+          ]
+        },
+        {
+          "id": "Building info",
+          "render": "This is a <b>{building}</b> <span class='subtle'>detected by {detection_method}</span>"
+        },
+        {
+          "id": "overlapping building address",
+          "render": "The overlapping openstreetmap-building has no address information at all",
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "_osm_obj:addr:street~*",
+                  "_osm_obj:addr:housenumber~*"
+                ]
+              },
+              "then": "The overlapping openstreetmap-building has address {_osm_obj:addr:street} {_osm_obj:addr:housenumber}"
+            },
+            {
+              "if": "_osm_obj:addr:street~*",
+              "then": "The overlapping building only has a street known: {_osm_obj:addr:street}"
+            },
+            {
+              "if": "_osm_obj:addr:housenumber~*",
+              "then": "The overlapping building only has a housenumber known: {_osm_obj:addr:housenumber}"
+            },
+            {
+              "if": "_osm_obj:id=",
+              "then": "No overlapping OpenStreetMap-building found"
+            }
+          ]
+        },
+        {
+          "id": "grb_address_diff",
+          "render": "<div>The overlapping openstreetmap-building has a different address then this GRB-object: {addr:street} {addr:housenumber}<br/>{tag_apply(addr:street=$addr:street; addr:housenumber=$addr:housenumber,Copy the GRB-address onto the OSM-object,,_osm_obj:id)}",
+          "condition": {
+            "and": [
+              "_osm_obj:id~*",
+              "addr:street~*",
+              "addr:housenumber~*",
+              {
+                "or": [
+                  "addr:street~*",
+                  "addr:housenumber~*"
+                ]
+              },
+              {
+                "or": [
+                  "addr:street!:={_osm_obj:addr:street}",
+                  "addr:housenumber!:={_osm_obj:addr:housenumber}"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "overlapping building id",
+          "render": "The overlapping <a href='https://osm.org/{_osm_obj:id}' target='_blank'>openstreetmap-building has id {_osm_obj:id}</a>",
+          "condition": "_osm_obj:id~*"
+        },
+        {
+          "id": "overlapping building type",
+          "render": "The overlapping building is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the GRB building. <br/>The GRB-building covers <b>{_reverse_overlap_percentage}%</b> of the OSM building<br/>The OSM-building is based on GRB-data from {_osm_obj:source:date}.",
+          "condition": "_osm_obj:id~*"
+        },
+        {
+          "id": "overlapping building map",
+          "render": "<h3>GRB geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}",
+          "condition": "_osm_obj:id~*"
+        },
+        {
+          "id": "apply-id",
+          "render": "{tag_apply(source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref,Mark the OSM-building as imported,,_osm_obj:id)}",
+          "condition": {
+            "and": [
+              "_overlaps_with!=",
+              "_imported!=yes"
+            ]
+          }
+        },
+        {
+          "id": "apply-building-type",
+          "render": "{tag_apply(building=$building,Use the building type from GRB,,_osm_obj:id)}",
+          "condition": {
+            "and": [
+              "_overlaps_with!=",
+              "_osm_obj:building=yes",
+              "building!=yes"
+            ]
+          }
+        }
+      ],
+      "isShown": {
+        "or": [
+          "_imported_osm_object_found!=true",
+          "_imported_osm_still_fresh!=true"
+        ]
+      },
+      "mapRendering": [
+        {
+          "label": {
+            "render": "<div style='margin-top: -42px; color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
+            "condition": "addr:housenumber~*"
+          },
+          "iconSize": "50,50,center",
+          "icon": {
+            "mappings": [
+              {
+                "if": "_intersects_with_other_features~*",
+                "then": "./assets/themes/grb/warning.svg"
+              },
+              {
+                "if": "addr:housenumber~*",
+                "then": "./assets/themes/grb/housenumber_blank.svg"
+              }
+            ]
+          },
+          "location": [
+            "point",
+            "centroid"
+          ]
+        },
+        {
+          "width": {
+            "render": 5,
+            "mappings": [
+              {
+                "if": "_imported=yes",
+                "then": "1"
+              }
+            ]
+          },
+          "color": {
+            "render": "#00a",
+            "mappings": [
+              {
+                "if": "_imported=yes",
+                "then": "#00ff00"
+              },
+              {
+                "if": {
+                  "and": [
+                    "_imported_osm_object_found=true",
+                    "_imported_osm_still_fresh=true"
+                  ]
+                },
+                "then": "#0f0"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "service_ways",
       "name": "Service roads",
       "description": "A seperate layer with service roads, as to remove them from the intersection testing",
@@ -309,6 +557,8 @@
             "disused:power=",
             "power=",
             "type!=boundary",
+            "type!=route",
+            "type!=waterway",
             "boundary=",
             {
               "or": [
@@ -351,15 +601,15 @@
       "builtin": "crab_address",
       "override": {
         "calculatedTags+": [
-          "_embedded_in=feat.overlapWith('osm-buildings').filter(b => /* Do not match newly created objects */ b.feat.properties.id.indexOf('-') < 0)[0]?.feat?.properties ?? {}",
-          "_embedding_nr=feat.get('_embedded_in')['addr:housenumber']+(feat.get('_embedded_in')['addr:unit'] ?? '')",
-          "_embedding_street=feat.get('_embedded_in')['addr:street']",
-          "_embedding_id=feat.get('_embedded_in').id",
-          "_closeby_addresses=feat.closestn('address',10,undefined,50).map(f => f.feat).filter(addr => addr.properties['addr:street'] == feat.properties['STRAATNM'] && feat.properties['HNRLABEL'] == addr.properties['addr:housenumber'] + (addr.properties['addr:unit']??'') ).length",
-          "_has_identical_closeby_address=feat.get('_closeby_addresses') >= 1 ? 'yes' : 'no'",
-          "_embedded_in_grb=feat.overlapWith('grb')[0]?.feat?.properties ?? {}",
-          "_embedding_nr_grb=feat.get('_embedded_in_grb')['addr:housenumber']",
-          "_embedding_street_grb=feat.get('_embedded_in_grb')['addr:street']"
+          "_embedded_in=overlapWith(feat)('osm-buildings').filter(b => /* Do not match newly created objects */ b.feat.properties.id.indexOf('-') < 0)[0]?.feat?.properties ?? {}",
+          "_embedding_nr=get(feat)('_embedded_in')['addr:housenumber']+(get(feat)('_embedded_in')['addr:unit'] ?? '')",
+          "_embedding_street=get(feat)('_embedded_in')['addr:street']",
+          "_embedding_id=get(feat)('_embedded_in').id",
+          "_closeby_addresses=closestn(feat)('address',10,undefined,50).map(f => f.feat).filter(addr => addr.properties['addr:street'] == feat.properties['STRAATNM'] && feat.properties['HNRLABEL'] == addr.properties['addr:housenumber'] + (addr.properties['addr:unit']??'') ).length",
+          "_has_identical_closeby_address=get(feat)('_closeby_addresses') >= 1 ? 'yes' : 'no'",
+          "_embedded_in_grb=overlapWith(feat)('grb')[0]?.feat?.properties ?? {}",
+          "_embedding_nr_grb=get(feat)('_embedded_in_grb')['addr:housenumber']",
+          "_embedding_street_grb=get(feat)('_embedded_in_grb')['addr:street']"
         ],
         "filter": [
           {
@@ -470,266 +720,19 @@
       }
     },
     {
-      "id": "grb",
-      "description": "Geometry which comes from GRB with tools to import them",
-      "source": {
-        "osmTags": {
-          "and": [
-            "HUISNR~*",
-            "man_made!=mast"
-          ]
-        },
-        "geoJson": "https://betadata.grbosm.site/grb?bbox={x_min},{y_min},{x_max},{y_max}",
-        "geoJsonZoomLevel": 18,
-        "mercatorCrs": true,
-        "maxCacheAge": 0,
-        "idKey": "osm_id"
-      },
-      "name": "GRB geometries",
-      "title": "GRB outline",
-      "calculatedTags": [
-        "_overlaps_with_buildings=feat.overlapWith('osm-buildings').filter(f => f.feat.properties.id.indexOf('-') < 0)",
-        "_overlaps_with=feat.get('_overlaps_with_buildings').find(f => f.overlap > 1 /* square meter */ )",
-        "_osm_obj:source:ref=feat.get('_overlaps_with')?.feat?.properties['source:geometry:ref']",
-        "_osm_obj:id=feat.get('_overlaps_with')?.feat?.properties?.id",
-        "_osm_obj:source:date=(feat.get('_overlaps_with')?.feat?.properties ?? {})['source:geometry:date']?.replace(/\\//g, '-')",
-        "_osm_obj:building=feat.get('_overlaps_with')?.feat?.properties?.building",
-        "_osm_obj:addr:street=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:street']",
-        "_osm_obj:addr:housenumber=(feat.get('_overlaps_with')?.feat?.properties ?? {})['addr:housenumber']",
-        "_osm_obj:surface=(feat.get('_overlaps_with')?.feat?.properties ?? {})['_surface:strict']",
-        "_overlap_absolute=feat.get('_overlaps_with')?.overlap",
-        "_reverse_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_surface'))",
-        "_overlap_percentage=Math.round(100 * feat.get('_overlap_absolute') / feat.get('_osm_obj:surface'))",
-        "_grb_ref=feat.properties['source:geometry:entity'] + '/' + feat.properties['source:geometry:oidn']",
-        "_imported_osm_object_found= feat.properties['_osm_obj:source:ref'] == feat.properties._grb_ref",
-        "_grb_date=feat.properties['source:geometry:date'].replace(/\\//g,'-')",
-        "_imported_osm_still_fresh= feat.properties['_osm_obj:source:date'] == feat.properties._grb_date",
-        "_target_building_type=feat.properties['_osm_obj:building'] === 'yes' ? feat.properties.building : (feat.properties['_osm_obj:building'] ?? feat.properties.building)",
-        "_building:min_level= feat.properties['fixme']?.startsWith('verdieping, correct the building tag, add building:level and building:min_level before upload in JOSM!') ? '1' : ''",
-        "_intersects_with_other_features=feat.intersectionsWith('generic_osm_object').map(f => \"<a href='https://osm.org/\"+f.feat.properties.id+\"' target='_blank'>\" + f.feat.properties.id + \"</a>\").join(', ')"
-      ],
-      "tagRenderings": [
-        {
-          "id": "Import-button",
-          "render": "{import_way_button(osm-buildings,building=$building;man_made=$man_made; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber; building:min_level=$_building:min_level, Upload this building to OpenStreetMap,,_is_part_of_building=true,1,_moveable=true)}",
-          "mappings": [
-            {
-              "#": "Failsafe",
-              "if": "_grb_ref=",
-              "then": {
-                "en": "Did not yet calculate the metatags... Reopen this popup",
-                "de": "Metatags noch nicht berechnet... Dieses Fenster erneut öffnen",
-                "nl": "Metatags nog niet berekend... Heropen deze pop-up",
-                "fr": "Les balises meta ne sont pas encore calculées ... Rouvrir cette fenêtre pop-up",
-                "da": "Har endnu ikke beregnet metatags... Genåbn denne popup",
-                "cs": "Metatags ještě nebyly vypočítány... Znovu otevřete toto vyskakovací okno",
-                "es": "Aún no se han calculado los metatags... Reabrir esta ventana emergente",
-                "ca": "Encara no s'han calculat les metaetiquetes... Torneu a obrir aquesta finestra emergent"
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "id~relation/*",
-                  "_overlap_percentage>50",
-                  "_reverse_overlap_percentage>50",
-                  "_overlaps_with!="
-                ]
-              },
-              "then": {
-                "en": "This building has holes and is modeled as a relation. As such, it cannot be conflated. Conflate it manually via <a href='https://buildings.osm.be/#/'>the building export site</a> {open_in_josm()}",
-                "de": "Dieses Gebäude hat Löcher und ist als Relation modelliert. Als solches kann es nicht zusammengeführt werden. Es kann manuell zusammengeführt werden über die <a href='https://buildings.osm.be/#/'>Gebäudeexportseite</a> {open_in_josm()}",
-                "es": "Este edificio tiene agujeros y está modelado como una relación. Por lo tanto, no se puede combinar. Combínalo manualmente a través <a href='https://buildings.osm.be/#/'>el sitio de exportación de edificios</a> {open_in_josm()}",
-                "fr": "Ce bâtiment a des ouvertures et est modélisé comme une relation. Il ne peut être fusionné. Fusionnez-le manuellement via <a href='https://buildings.osm.be/#/'>le site d’export de bâtiment</a> {open_in_josm()}",
-                "nl": "Dit gebouw heeft openingen en is gemodelleerd als een relatie. Bijgevolg kan het niet worden samengevoegd. Voeg het manueel samen via <a href='https://buildings.osm.be/#/'>de export-site voor gebouwen</a> {open_in_josm()}",
-                "da": "Denne bygning har huller og er modelleret som en relation. Som sådan kan det ikke sammenblandes. Sammensæt det manuelt via <a href='https://buildings.osm.be/#/'>bygningseksportwebstedet</a> {open_in_josm()}",
-                "cs": "Tato budova má otvory a je modelována jako vztah. Jako takovou ji nelze spojovat. Spojte ji ručně pomocí <a href='https://buildings.osm.be/#/'>exportní stránky budovy</a> {open_in_josm()}",
-                "ca": "Aquest edifici té forats i està modelat com una relació. Com a tal, no es pot combinar. Combineu-lo manualment mitjançant <a href='https://buildings.osm.be/#/'>el lloc d'exportació de l'edifici</a> {open_in_josm()}"
-              }
-            },
-            {
-              "#": "Actually the same as below, except that the text shows 'add the address' too",
-              "if": {
-                "and": [
-                  "_overlap_percentage>50",
-                  "_reverse_overlap_percentage>50",
-                  "_overlaps_with!=",
-                  "_osm_obj:addr:street=",
-                  "_osm_obj:addr:housenumber=",
-                  "addr:street~*",
-                  "addr:housenumber~*",
-                  "addr:street!:={_osm_obj:addr:street}",
-                  "addr:housenumber!:={_osm_obj:addr:housenumber}"
-                ]
-              },
-              "then": "{conflate_button(osm-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref; addr:street=$addr:street; addr:housenumber=$addr:housenumber, Replace the geometry in OpenStreetMap and add the address,,_osm_obj:id)}"
-            },
-            {
-              "if": {
-                "and": [
-                  "_overlap_percentage>50",
-                  "_reverse_overlap_percentage>50",
-                  "_overlaps_with!="
-                ]
-              },
-              "then": "{conflate_button(osm-buildings,building=$_target_building_type; source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref, Replace the geometry in OpenStreetMap,,_osm_obj:id)}"
-            }
-          ]
-        },
-        {
-          "id": "Building info",
-          "render": "This is a <b>{building}</b> <span class='subtle'>detected by {detection_method}</span>"
-        },
-        {
-          "id": "overlapping building address",
-          "render": "The overlapping openstreetmap-building has no address information at all",
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "_osm_obj:addr:street~*",
-                  "_osm_obj:addr:housenumber~*"
-                ]
-              },
-              "then": "The overlapping openstreetmap-building has address {_osm_obj:addr:street} {_osm_obj:addr:housenumber}"
-            },
-            {
-              "if": "_osm_obj:addr:street~*",
-              "then": "The overlapping building only has a street known: {_osm_obj:addr:street}"
-            },
-            {
-              "if": "_osm_obj:addr:housenumber~*",
-              "then": "The overlapping building only has a housenumber known: {_osm_obj:addr:housenumber}"
-            },
-            {
-              "if": "_osm_obj:id=",
-              "then": "No overlapping OpenStreetMap-building found"
-            }
-          ]
-        },
-        {
-          "id": "grb_address_diff",
-          "render": "<div>The overlapping openstreetmap-building has a different address then this GRB-object: {addr:street} {addr:housenumber}<br/>{tag_apply(addr:street=$addr:street; addr:housenumber=$addr:housenumber,Copy the GRB-address onto the OSM-object,,_osm_obj:id)}",
-          "condition": {
-            "and": [
-              "_osm_obj:id~*",
-              "addr:street~*",
-              "addr:housenumber~*",
-              {
-                "or": [
-                  "addr:street~*",
-                  "addr:housenumber~*"
-                ]
-              },
-              {
-                "or": [
-                  "addr:street!:={_osm_obj:addr:street}",
-                  "addr:housenumber!:={_osm_obj:addr:housenumber}"
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "id": "overlapping building type",
-          "render": "<div>The overlapping <a href='https://osm.org/{_osm_obj:id}' target='_blank'>openstreetmap-building</a> is a <b>{_osm_obj:building}</b> and covers <b>{_overlap_percentage}%</b> of the GRB building.<br/>The GRB-building covers <b>{_reverse_overlap_percentage}%</b> of the OSM building<div><h3>GRB geometry:</h3>{minimap(21, id):height:10rem;border-radius:1rem;overflow:hidden}<h3>OSM geometry:</h3>{minimap(21,_osm_obj:id):height:10rem;border-radius:1rem;overflow:hidden}",
-          "condition": "_overlaps_with!="
-        },
-        {
-          "id": "apply-id",
-          "render": "{tag_apply(source:geometry:date=$_grb_date; source:geometry:ref=$_grb_ref,Mark the OSM-building as imported,,_osm_obj:id)}",
-          "condition": {
-            "and": [
-              "_overlaps_with!=",
-              "_imported!=yes"
-            ]
-          }
-        },
-        {
-          "id": "apply-building-type",
-          "render": "{tag_apply(building=$building,Use the building type from GRB,,_osm_obj:id)}",
-          "condition": {
-            "and": [
-              "_overlaps_with!=",
-              "_osm_obj:building=yes",
-              "building!=yes"
-            ]
-          }
-        }
-      ],
-      "isShown": {
-        "or": [
-          "_imported_osm_object_found!=true",
-          "_imported_osm_still_fresh!=true"
-        ]
-      },
-      "mapRendering": [
-        {
-          "label": {
-            "render": "<div style='margin-top: -42px; color: black' class='rounded-full p-1 font-bold relative'>{addr:housenumber}</div>",
-            "condition": "addr:housenumber~*"
-          },
-          "iconSize": "50,50,center",
-          "icon": {
-            "mappings": [
-              {
-                "if": "_intersects_with_other_features~*",
-                "then": "./assets/themes/grb/warning.svg"
-              },
-              {
-                "if": "addr:housenumber~*",
-                "then": "./assets/themes/grb/housenumber_blank.svg"
-              }
-            ]
-          },
-          "location": [
-            "point",
-            "centroid"
-          ]
-        },
-        {
-          "width": {
-            "render": 5,
-            "mappings": [
-              {
-                "if": "_imported=yes",
-                "then": "1"
-              }
-            ]
-          },
-          "color": {
-            "render": "#00a",
-            "mappings": [
-              {
-                "if": "_imported=yes",
-                "then": "#00ff00"
-              },
-              {
-                "if": {
-                  "and": [
-                    "_imported_osm_object_found=true",
-                    "_imported_osm_still_fresh=true"
-                  ]
-                },
-                "then": "#0f0"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
       "builtin": "current_view",
       "override": {
-        "calculatedTags": [
-          "_overlapping=Number(feat.properties.zoom) >= 16 ? feat.overlapWith('grb').map(ff => ff.feat.properties) : undefined",
-          "_applicable=feat.get('_overlapping')?.filter(p => (p._imported_osm_object_found === 'true' || p._intersects_with_other_features === ''))?.map(p => p.id)",
-          "_applicable_count=feat.get('_applicable')?.length"
+        "calculatedTags+": [
+          "_overlapping=Number(feat.properties.zoom) >= 14 ? overlapWith(feat)('grb').map(ff => ff.feat.properties) : undefined",
+          "_applicable_conflate=get(feat)('_overlapping')?.filter(p => p._imported !== 'yes' && (!p['_imported_osm_still_fresh'] || !p['_imported_osm_object_found']) && p['_overlap_absolute'] > 10 && p['_overlap_percentage'] > 80 && p['_reverse_overlap_percentage'] > 80)?.map(p => p.id)",
+          "_applicable=feat.properties._overlapping.filter(p => p._imported !== 'yes' && p._imported_osm_object_found === false && !(p['_overlap_absolute'] > 5) && !p._intersects_with_other_features)?.map(p => p.id)",
+          "_applicable_count=get(feat)('_applicable')?.length",
+          "_applicable_conflate_count=get(feat)('_applicable_conflate')?.length"
         ],
-        "tagRenderings": [
+        "tagRenderings+": [
           {
             "id": "hw",
-            "render": "There are {_applicable_count} applicable elements in view",
+            "render": "There are {_applicable_count} non-overlapping buildings in view and {_applicable_conflate_count} conflatable buildings",
             "mappings": [
               {
                 "if": "zoom<14",
@@ -741,19 +744,17 @@
               },
               {
                 "if": "_applicable_count=0",
-                "then": "No importable buildins in view"
+                "then": "No importable buildings in view"
               }
             ]
           },
           {
             "id": "autoapply",
-            "render": "{auto_apply(grb, _applicable, Import-button, Import or conflate all non-conflicting buildings in view)}",
-            "mappings": [
-              {
-                "if": "zoom<16",
-                "then": "Zoom in more to import"
-              }
-            ]
+            "render": "{auto_apply(grb, _applicable, Import-button, Import all non-conflicting buildings in view)}"
+          },
+          {
+            "id": "autoapply_conflate",
+            "render": "{auto_apply(grb, _applicable_conflate, Import-button, Conflate all non-conflicting buildings in view)}"
           }
         ],
         "+mapRendering": [
@@ -772,7 +773,7 @@
   ],
   "hideFromOverview": true,
   "defaultBackgroundId": "AGIVFlandersGRB",
-  "overpassMaxZoom": 17,
+  "overpassMaxZoom": 15,
   "osmApiTileSize": 17,
   "credits": "Pieter Vander Vennet"
 }

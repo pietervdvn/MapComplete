@@ -29,21 +29,7 @@ Find a fitness station near you, and add missing ones.
   - [sports](https://mapcomplete.osm.be/sports)
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:leisure' target='_blank'>leisure</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dfitness_station' target='_blank'>fitness_station</a>
-
-
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22leisure%22%3D%22fitness_station%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -60,11 +46,31 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fitness_station#values) [fitness_station](https://wiki.openstreetmap.org/wiki/Key:fitness_station) | Multiple choice | [horizontal_bar](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhorizontal_bar) [sign](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dsign) [sit-up](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dsit-up) [push-up](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dpush-up) [stretch_bars](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dstretch_bars) [hyperextension](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhyperextension) [rings](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Drings) [horizontal_ladder](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhorizontal_ladder) [wall_bars](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dwall_bars) [slalom](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dslalom) [stepping_stones](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dstepping_stones) [leapfrog](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dleapfrog) [beam_jump](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbeam_jump) [hurdling](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhurdling) [wall](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dwall) [balance_beam](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbalance_beam) [log_lifting](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dlog_lifting) [captains_chair](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dcaptains_chair) [box](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbox) [battling_ropes](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbattling_ropes) [excercise_bike](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dexcercise_bike) [elliptical_trainer](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Delliptical_trainer) [air_walker](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dair_walker) [rower](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Drower) [slackline](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dslackline)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
 
+
+
+
+### just_created 
+
+
+
+This element shows a 'thank you' that the contributor has recently created this element
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
 
 
 
@@ -167,6 +173,62 @@ This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours
 
 
   - *24/7 opened (including holidays)*  corresponds with  `opening_hours=24/7`
+
+
+
+
+### leftover-questions 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### minimap 
+
+
+
+Shows a small map with the feature. Added by default to every popup
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### move-button 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### last_edit 
+
+
+
+Gives some metainfo about the last edit and who did edit it - rendering only
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+
+
+
+### all-tags 
+
+
+
+This tagrendering has no question and is thus read-only
+
 
 
 

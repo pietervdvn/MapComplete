@@ -1,29 +1,28 @@
-import { SubtleButton } from "../Base/SubtleButton"
+import {SubtleButton} from "../Base/SubtleButton"
 import Combine from "../Base/Combine"
 import Svg from "../../Svg"
-import { OsmConnection } from "../../Logic/Osm/OsmConnection"
 import Toggle from "../Input/Toggle"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import {UIEventSource} from "../../Logic/UIEventSource"
 import Translations from "../i18n/Translations"
-import { VariableUiElement } from "../Base/VariableUIElement"
-import { Translation } from "../i18n/Translation"
+import {VariableUiElement} from "../Base/VariableUIElement"
+import {Translation} from "../i18n/Translation"
 import BaseUIElement from "../BaseUIElement"
-import LocationInput from "../Input/LocationInput"
-import Loc from "../../Models/Loc"
-import { GeoOperations } from "../../Logic/GeoOperations"
-import { OsmObject } from "../../Logic/Osm/OsmObject"
-import { Changes } from "../../Logic/Osm/Changes"
+import {GeoOperations} from "../../Logic/GeoOperations"
 import ChangeLocationAction from "../../Logic/Osm/Actions/ChangeLocationAction"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import MoveConfig from "../../Models/ThemeConfig/MoveConfig"
-import { ElementStorage } from "../../Logic/ElementStorage"
-import AvailableBaseLayers from "../../Logic/Actors/AvailableBaseLayers"
-import BaseLayer from "../../Models/BaseLayer"
-import SearchAndGo from "../BigComponents/SearchAndGo"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
-import { And } from "../../Logic/Tags/And"
-import { Tag } from "../../Logic/Tags/Tag"
-import { LoginToggle } from "./LoginButton"
+import {And} from "../../Logic/Tags/And"
+import {Tag} from "../../Logic/Tags/Tag"
+import {LoginToggle} from "./LoginButton"
+import {SpecialVisualizationState} from "../SpecialVisualization"
+import {Feature, Point} from "geojson"
+import {OsmTags} from "../../Models/OsmFeature"
+import SvelteUIElement from "../Base/SvelteUIElement"
+import {MapProperties} from "../../Models/MapProperties"
+import LocationInput from "../InputElement/Helpers/LocationInput.svelte"
+import Geosearch from "../BigComponents/Geosearch.svelte"
+import Constants from "../../Models/Constants"
+import OpenBackgroundSelectorButton from "../BigComponents/OpenBackgroundSelectorButton.svelte";
 
 interface MoveReason {
     text: Translation | string
@@ -43,22 +42,12 @@ export default class MoveWizard extends Toggle {
      * The UI-element which helps moving a point
      */
     constructor(
-        featureToMove: any,
-        state: {
-            osmConnection: OsmConnection
-            featureSwitchUserbadge: UIEventSource<boolean>
-            changes: Changes
-            layoutToUse: LayoutConfig
-            allElements: ElementStorage
-        },
+        featureToMove: Feature<Point>,
+        tags: UIEventSource<OsmTags>,
+        state: SpecialVisualizationState,
         options: MoveConfig
     ) {
         const t = Translations.t.move
-        const loginButton = new Toggle(
-            t.loginToMove.SetClass("btn").onClick(() => state.osmConnection.AttemptLogin()),
-            undefined,
-            state.featureSwitchUserbadge
-        )
 
         const reasons: MoveReason[] = []
         if (options.enableRelocation) {
@@ -106,14 +95,14 @@ export default class MoveWizard extends Toggle {
             })
         } else {
             moveButton = new SubtleButton(
-                Svg.move_ui().SetStyle("width: 1.5rem; height: 1.5rem"),
+                Svg.move_svg().SetStyle("width: 1.5rem; height: 1.5rem"),
                 t.inviteToMove.generic
             ).onClick(() => {
                 currentStep.setData("reason")
             })
         }
 
-        const moveAgainButton = new SubtleButton(Svg.move_ui(), t.inviteToMoveAgain).onClick(() => {
+        const moveAgainButton = new SubtleButton(Svg.move_svg(), t.inviteToMoveAgain).onClick(() => {
             currentStep.setData("reason")
         })
 
@@ -135,56 +124,46 @@ export default class MoveWizard extends Toggle {
             if (reason === undefined) {
                 return undefined
             }
-            const loc = new UIEventSource<Loc>({
-                lon: lon,
-                lat: lat,
-                zoom: reason?.startZoom ?? 16,
-            })
 
-            let background: string[]
-            if (typeof reason.background == "string") {
-                background = [reason.background]
-            } else {
-                background = reason.background
+            const mapProperties: Partial<MapProperties> = {
+                minzoom: new UIEventSource(reason.minZoom),
+                zoom: new UIEventSource(reason?.startZoom ?? 16),
+                location: new UIEventSource({lon, lat}),
+                bounds: new UIEventSource(undefined),
+                rasterLayer: state.mapProperties.rasterLayer
             }
+            const value = new UIEventSource<{ lon: number; lat: number }>(undefined)
+            const locationInput =
+                new Combine([
 
-            const preferredBackground = AvailableBaseLayers.SelectBestLayerAccordingTo(
-                loc,
-                new UIEventSource(background)
-            ).data
+                    new SvelteUIElement(LocationInput, {
+                        mapProperties,
+                        value,
+                    }).SetClass("w-full h-full"),
+                    new SvelteUIElement(OpenBackgroundSelectorButton, {state}).SetClass("absolute bottom-0 left-0")
 
-            const locationInput = new LocationInput({
-                minZoom: reason.minZoom,
-                centerLocation: loc,
-                mapBackground: new UIEventSource<BaseLayer>(preferredBackground), // We detach the layer
-                state: <any>state,
-            })
+                ]).SetClass("relative w-full h-full")
 
-            if (reason.lockBounds) {
-                locationInput.installBounds(0.05, true)
-            }
 
             let searchPanel: BaseUIElement = undefined
             if (reason.includeSearch) {
-                searchPanel = new SearchAndGo({
-                    leafletMap: locationInput.leafletMap,
-                })
+                searchPanel = new SvelteUIElement(Geosearch, {bounds: mapProperties.bounds, clearAfterView: false})
             }
 
             locationInput.SetStyle("height: 17.5rem")
 
             const confirmMove = new SubtleButton(Svg.move_confirm_svg(), t.confirmMove)
             confirmMove.onClick(async () => {
-                const loc = locationInput.GetValue().data
+                const loc = value.data
                 await state.changes.applyAction(
                     new ChangeLocationAction(featureToMove.properties.id, [loc.lon, loc.lat], {
                         reason: reason.changesetCommentValue,
-                        theme: state.layoutToUse.id,
+                        theme: state.layout.id,
                     })
                 )
                 featureToMove.properties._lat = loc.lat
                 featureToMove.properties._lon = loc.lon
-
+                featureToMove.geometry.coordinates = [loc.lon, loc.lat]
                 if (reason.eraseAddressFields) {
                     await state.changes.applyAction(
                         new ChangeTagAction(
@@ -198,14 +177,15 @@ export default class MoveWizard extends Toggle {
                             featureToMove.properties,
                             {
                                 changeType: "relocated",
-                                theme: state.layoutToUse.id,
+                                theme: state.layout.id,
                             }
                         )
                     )
                 }
 
-                state.allElements.getEventSourceById(id).ping()
+                state.featureProperties.getStore(id).ping()
                 currentStep.setData("moved")
+                state.mapProperties.location.setData(loc)
             })
             const zoomInFurhter = t.zoomInFurther.SetClass("alert block m-6")
             return new Combine([
@@ -214,7 +194,7 @@ export default class MoveWizard extends Toggle {
                 new Toggle(
                     confirmMove,
                     zoomInFurhter,
-                    locationInput.GetValue().map((l) => l.zoom >= 19)
+                    mapProperties.zoom.map((zoom) => zoom >= Constants.minZoomLevelToAddNewPoint)
                 ),
             ]).SetClass("flex flex-col")
         })
@@ -262,13 +242,13 @@ export default class MoveWizard extends Toggle {
         } else if (id.startsWith("relation")) {
             moveDisallowedReason.setData(t.isRelation)
         } else if (id.indexOf("-") < 0) {
-            OsmObject.DownloadReferencingWays(id).then((referencing) => {
+            state.osmObjectDownloader.DownloadReferencingWays(id).then((referencing) => {
                 if (referencing.length > 0) {
                     console.log("Got a referencing way, move not allowed")
                     moveDisallowedReason.setData(t.partOfAWay)
                 }
             })
-            OsmObject.DownloadReferencingRelations(id).then((partOf) => {
+            state.osmObjectDownloader.DownloadReferencingRelations(id).then((partOf) => {
                 if (partOf.length > 0) {
                     moveDisallowedReason.setData(t.partOfRelation)
                 }

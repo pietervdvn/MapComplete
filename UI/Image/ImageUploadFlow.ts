@@ -1,36 +1,27 @@
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import {Store, UIEventSource} from "../../Logic/UIEventSource"
 import Combine from "../Base/Combine"
 import Translations from "../i18n/Translations"
 import Svg from "../../Svg"
-import { Tag } from "../../Logic/Tags/Tag"
+import {Tag} from "../../Logic/Tags/Tag"
 import BaseUIElement from "../BaseUIElement"
 import Toggle from "../Input/Toggle"
 import FileSelectorButton from "../Input/FileSelectorButton"
 import ImgurUploader from "../../Logic/ImageProviders/ImgurUploader"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
 import LayerConfig from "../../Models/ThemeConfig/LayerConfig"
-import { FixedUiElement } from "../Base/FixedUiElement"
-import { VariableUiElement } from "../Base/VariableUIElement"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import { OsmConnection } from "../../Logic/Osm/OsmConnection"
-import { Changes } from "../../Logic/Osm/Changes"
+import {FixedUiElement} from "../Base/FixedUiElement"
+import {VariableUiElement} from "../Base/VariableUIElement"
 import Loading from "../Base/Loading"
-import { LoginToggle } from "../Popup/LoginButton"
+import {LoginToggle} from "../Popup/LoginButton"
 import Constants from "../../Models/Constants"
-import { DefaultGuiState } from "../DefaultGuiState"
-import ScrollableFullScreen from "../Base/ScrollableFullScreen"
+import {SpecialVisualizationState} from "../SpecialVisualization"
 
 export class ImageUploadFlow extends Toggle {
     private static readonly uploadCountsPerId = new Map<string, UIEventSource<number>>()
 
     constructor(
         tagsSource: Store<any>,
-        state: {
-            osmConnection: OsmConnection
-            layoutToUse: LayoutConfig
-            changes: Changes
-            featureSwitchUserbadge: Store<boolean>
-        },
+        state: SpecialVisualizationState,
         imagePrefix: string = "image",
         text: string = undefined
     ) {
@@ -56,7 +47,7 @@ export class ImageUploadFlow extends Toggle {
             await state.changes.applyAction(
                 new ChangeTagAction(tags.id, new Tag(key, url), tagsSource.data, {
                     changeType: "add-image",
-                    theme: state.layoutToUse.id,
+                    theme: state.layout.id,
                 })
             )
             console.log("Adding image:" + key, url)
@@ -77,17 +68,24 @@ export class ImageUploadFlow extends Toggle {
             )
         }
         const label = new Combine([
-            Svg.camera_plus_ui().SetClass("block w-12 h-12 p-1 text-4xl "),
+            Svg.camera_plus_svg().SetClass("block w-12 h-12 p-1 text-4xl "),
             labelContent,
-        ]).SetClass(
-            "p-2 border-4 border-detail rounded-full font-bold h-full align-middle w-full flex justify-center"
-        )
+        ]).SetClass("w-full flex justify-center items-center")
+
         const licenseStore = state?.osmConnection?.GetPreference(
             Constants.OsmPreferenceKeyPicturesLicense,
             "CC0"
         )
 
-        const fileSelector = new FileSelectorButton(label)
+        const fileSelector = new FileSelectorButton(label, {
+            acceptType: "image/*",
+            allowMultiple: true,
+            labelClasses: "rounded-full border-2 border-black font-bold"
+        })
+     /*    fileSelector.SetClass(
+            "p-2 border-4 border-detail rounded-full font-bold h-full align-middle w-full flex justify-center"
+        )
+            .SetStyle(" border-color: var(--foreground-color);")*/
         fileSelector.GetValue().addCallback((filelist) => {
             if (filelist === undefined || filelist.length === 0) {
                 return
@@ -111,7 +109,7 @@ export class ImageUploadFlow extends Toggle {
 
             const tags = tagsSource.data
 
-            const layout = state?.layoutToUse
+            const layout = state?.layout
             let matchingLayer: LayerConfig = undefined
             for (const layer of layout?.layers ?? []) {
                 if (layer.source.osmTags.matchesProperties(tags)) {
@@ -146,7 +144,7 @@ export class ImageUploadFlow extends Toggle {
                             return new Loading(t.uploadingPicture).SetClass("alert")
                         } else {
                             return new Loading(
-                                t.uploadingMultiple.Subs({ count: "" + l })
+                                t.uploadingMultiple.Subs({count: "" + l})
                             ).SetClass("alert")
                         }
                     })
@@ -170,7 +168,7 @@ export class ImageUploadFlow extends Toggle {
                     if (l == 1) {
                         return t.uploadDone.Clone().SetClass("thanks block")
                     }
-                    return t.uploadMultipleDone.Subs({ count: l }).SetClass("thanks block")
+                    return t.uploadMultipleDone.Subs({count: l}).SetClass("thanks block")
                 })
             ),
 
@@ -179,14 +177,12 @@ export class ImageUploadFlow extends Toggle {
                 Translations.t.image.respectPrivacy,
                 new VariableUiElement(
                     licenseStore.map((license) =>
-                        Translations.t.image.currentLicense.Subs({ license })
+                        Translations.t.image.currentLicense.Subs({license})
                     )
                 )
                     .onClick(() => {
                         console.log("Opening the license settings... ")
-                        ScrollableFullScreen.collapse()
-                        DefaultGuiState.state.userInfoIsOpened.setData(true)
-                        DefaultGuiState.state.userInfoFocusedQuestion.setData("picture-license")
+                        state.guistate.openUsersettings("picture-license")
                     })
                     .SetClass("underline"),
             ]).SetStyle("font-size:small;"),

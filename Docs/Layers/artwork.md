@@ -30,21 +30,7 @@ An open map of statues, busts, graffitis and other artwork all over the world
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:tourism' target='_blank'>tourism</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:tourism%3Dartwork' target='_blank'>artwork</a>
-
-
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22tourism%22%3D%22artwork%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -61,6 +47,7 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/artwork_type#values) [artwork_type](https://wiki.openstreetmap.org/wiki/Key:artwork_type) | [string](../SpecialInputElements.md#string) | [architecture](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Darchitecture) [mural](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dmural) [painting](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dpainting) [sculpture](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dsculpture) [statue](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstatue) [bust](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dbust) [stone](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dstone) [installation](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dinstallation) [graffiti](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dgraffiti) [relief](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Drelief) [azulejo](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dazulejo) [tilework](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dtilework) [woodcarving](https://wiki.openstreetmap.org/wiki/Tag:artwork_type%3Dwoodcarving)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/artist:wikidata#values) [artist:wikidata](https://wiki.openstreetmap.org/wiki/Key:artist:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/artist_name#values) [artist_name](https://wiki.openstreetmap.org/wiki/Key:artist_name) | [string](../SpecialInputElements.md#string) | 
@@ -68,15 +55,26 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/wikidata#values) [wikidata](https://wiki.openstreetmap.org/wiki/Key:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/subject:wikidata#values) [subject:wikidata](https://wiki.openstreetmap.org/wiki/Key:subject:wikidata) | [wikidata](../SpecialInputElements.md#wikidata) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/amenity#values) [amenity](https://wiki.openstreetmap.org/wiki/Key:amenity) | Multiple choice | [bench](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbench) [](https://wiki.openstreetmap.org/wiki/Tag:amenity%3D)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/backrest#values) [backrest](https://wiki.openstreetmap.org/wiki/Key:backrest) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:backrest%3Dno)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/seats#values) [seats](https://wiki.openstreetmap.org/wiki/Key:seats) | [nat](../SpecialInputElements.md#nat) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/material#values) [material](https://wiki.openstreetmap.org/wiki/Key:material) | [string](../SpecialInputElements.md#string) | [wood](https://wiki.openstreetmap.org/wiki/Tag:material%3Dwood) [metal](https://wiki.openstreetmap.org/wiki/Tag:material%3Dmetal) [stone](https://wiki.openstreetmap.org/wiki/Tag:material%3Dstone) [concrete](https://wiki.openstreetmap.org/wiki/Tag:material%3Dconcrete) [plastic](https://wiki.openstreetmap.org/wiki/Tag:material%3Dplastic) [steel](https://wiki.openstreetmap.org/wiki/Tag:material%3Dsteel)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/direction#values) [direction](https://wiki.openstreetmap.org/wiki/Key:direction) | [direction](../SpecialInputElements.md#direction) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/colour#values) [colour](https://wiki.openstreetmap.org/wiki/Key:colour) | [color](../SpecialInputElements.md#color) | [brown](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dbrown) [green](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgreen) [gray](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dgray) [white](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dwhite) [red](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dred) [black](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblack) [blue](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dblue) [yellow](https://wiki.openstreetmap.org/wiki/Tag:colour%3Dyellow)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/survey:date#values) [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) | [date](../SpecialInputElements.md#date) | [](https://wiki.openstreetmap.org/wiki/Tag:survey:date%3D)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/inscription#values) [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) | [text](../SpecialInputElements.md#text) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/historic#values) [historic](https://wiki.openstreetmap.org/wiki/Key:historic) | Multiple choice | [memorial](https://wiki.openstreetmap.org/wiki/Tag:historic%3Dmemorial) [](https://wiki.openstreetmap.org/wiki/Tag:historic%3D)
 
+
+
+
+### just_created 
+
+
+
+This element shows a 'thank you' that the contributor has recently created this element
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
 
 
 
@@ -233,191 +231,69 @@ The question is  *Does this artwork serve as a bench?*
 
 
 
-### bench-backrest 
+### leftover-questions 
 
 
 
-The question is  *Does this bench have a backrest?*
+This tagrendering has no question and is thus read-only
 
 
 
 
 
-  - *This bench is two-sided and shares the backrest*  corresponds with  `backrest=yes&two_sided=yes`
-  - *Does have a backrest*  corresponds with  `backrest=yes`
-  - *Does <b>not</b> have a backrest*  corresponds with  `backrest=no`
+### minimap 
 
 
-This tagrendering is only visible in the popup if the following condition is met: `amenity=bench`
 
-This tagrendering has labels  `bench-questions`
+Shows a small map with the feature. Added by default to every popup
 
+This tagrendering has no question and is thus read-only
 
 
-### bench-seats 
 
 
 
-The question is  *How many seats does this bench have?*
+### move-button 
 
-This rendering asks information about the property  [seats](https://wiki.openstreetmap.org/wiki/Key:seats) 
 
-This is rendered with  `{seats} seats`
 
+This tagrendering has no question and is thus read-only
 
 
 
 
-  - *This bench does not have separated seats*  corresponds with  `seats:separated=no`
 
+### delete-button 
 
-This tagrendering is only visible in the popup if the following condition is met: `amenity=bench`
 
-This tagrendering has labels  `bench-questions`
 
+This tagrendering has no question and is thus read-only
 
 
-### bench-material 
 
 
 
-The question is  *What is the bench (seating) made from?*
+### last_edit 
 
-This rendering asks information about the property  [material](https://wiki.openstreetmap.org/wiki/Key:material) 
 
-This is rendered with  `Material: {material}`
 
+Gives some metainfo about the last edit and who did edit it - rendering only
 
+This tagrendering has no question and is thus read-only
 
 
 
-  - *The seating is made from wood*  corresponds with  `material=wood`
-  - *The seating is made from metal*  corresponds with  `material=metal`
-  - *The seating is made from stone*  corresponds with  `material=stone`
-  - *The seating is made from concrete*  corresponds with  `material=concrete`
-  - *The seating is made from plastic*  corresponds with  `material=plastic`
-  - *The seating is made from steel*  corresponds with  `material=steel`
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
 
 
-This tagrendering is only visible in the popup if the following condition is met: `amenity=bench`
 
-This tagrendering has labels  `bench-questions`
+### all-tags 
 
 
 
-### bench-direction 
+This tagrendering has no question and is thus read-only
 
 
-
-The question is  *In which direction are you looking when sitting on the bench?*
-
-This rendering asks information about the property  [direction](https://wiki.openstreetmap.org/wiki/Key:direction) 
-
-This is rendered with  `When sitting on the bench, one looks towards {direction}°.`
-
-
-
-This tagrendering is only visible in the popup if the following condition is met: `amenity=bench`
-
-This tagrendering has labels  `bench-questions`
-
-
-
-### bench-colour 
-
-
-
-The question is  *Which colour does this bench have?*
-
-This rendering asks information about the property  [colour](https://wiki.openstreetmap.org/wiki/Key:colour) 
-
-This is rendered with  `Colour: {colour}`
-
-
-
-
-
-  - *Colour: brown*  corresponds with  `colour=brown`
-  - *Colour: green*  corresponds with  `colour=green`
-  - *Colour: gray*  corresponds with  `colour=gray`
-  - *Colour: white*  corresponds with  `colour=white`
-  - *Colour: red*  corresponds with  `colour=red`
-  - *Colour: black*  corresponds with  `colour=black`
-  - *Colour: blue*  corresponds with  `colour=blue`
-  - *Colour: yellow*  corresponds with  `colour=yellow`
-
-
-This tagrendering is only visible in the popup if the following condition is met: `amenity=bench`
-
-This tagrendering has labels  `bench-questions`
-
-
-
-### bench-survey:date 
-
-
-
-The question is  *When was this bench last surveyed?*
-
-This rendering asks information about the property  [survey:date](https://wiki.openstreetmap.org/wiki/Key:survey:date) 
-
-This is rendered with  `This bench was last surveyed on {survey:date}`
-
-
-
-
-
-  - *Surveyed today!*  corresponds with  `survey:date=`
-
-
-This tagrendering is only visible in the popup if the following condition is met: `amenity=bench`
-
-This tagrendering has labels  `bench-questions`
-
-
-
-### bench-inscription 
-
-
-
-The question is  *Does this bench have an inscription?*
-
-This rendering asks information about the property  [inscription](https://wiki.openstreetmap.org/wiki/Key:inscription) 
-
-This is rendered with  `This bench does have the following inscription:<br/><p><i>{inscription}</i></p>`
-
-
-
-
-
-  - *This bench does not have an inscription*  corresponds with  `not:inscription=yes`
-  - *This bench does <span class='subtle'>(probably)</span> not have an inscription*  corresponds with  ``
-  - This option cannot be chosen as answer
-
-
-This tagrendering is only visible in the popup if the following condition is met: `amenity=bench`
-
-This tagrendering has labels  `bench-questions`
-
-
-
-### bench-memorial 
-
-
-
-The question is  *Does this bench act as memorial for someone or something?*
-
-
-
-
-
-  - *This bench is a memorial for someone or something*  corresponds with  `historic=memorial`
-  - *This bench is a <b>not</b> a memorial for someone or something*  corresponds with  `not:historic=memorial`
-
-
-This tagrendering is only visible in the popup if the following condition is met: `amenity=bench`
-
-This tagrendering has labels  `bench-questions`
 
 
 

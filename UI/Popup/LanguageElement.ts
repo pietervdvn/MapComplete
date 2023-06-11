@@ -1,9 +1,7 @@
-import { SpecialVisualization } from "../SpecialVisualization"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
 import BaseUIElement from "../BaseUIElement"
 import { UIEventSource } from "../../Logic/UIEventSource"
-import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
 import { VariableUiElement } from "../Base/VariableUIElement"
-import { OsmTags } from "../../Models/OsmFeature"
 import all_languages from "../../assets/language_translations.json"
 import { Translation } from "../i18n/Translation"
 import Combine from "../Base/Combine"
@@ -16,10 +14,9 @@ import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
 import { And } from "../../Logic/Tags/And"
 import { Tag } from "../../Logic/Tags/Tag"
 import { EditButton, SaveButton } from "./SaveButton"
-import { FixedUiElement } from "../Base/FixedUiElement"
 import Translations from "../i18n/Translations"
 import Toggle from "../Input/Toggle"
-import { On } from "../../Models/ThemeConfig/Conversion/Conversion"
+import { Feature } from "geojson"
 
 export class LanguageElement implements SpecialVisualization {
     funcName: string = "language_chooser"
@@ -79,9 +76,10 @@ export class LanguageElement implements SpecialVisualization {
     `
 
     constr(
-        state: FeaturePipelineState,
-        tagSource: UIEventSource<OsmTags>,
-        argument: string[]
+        state: SpecialVisualizationState,
+        tagSource: UIEventSource<Record<string, string>>,
+        argument: string[],
+        feature: Feature
     ): BaseUIElement {
         let [key, question, item_render, single_render, all_render, on_no_known_languages, mode] =
             argument
@@ -145,7 +143,7 @@ export class LanguageElement implements SpecialVisualization {
 
             const saveButton = new SaveButton(
                 selector.GetValue().map((lngs) => (lngs.length > 0 ? "true" : undefined)),
-                state.osmConnection
+                state
             ).onClick(() => {
                 const selectedLanguages = selector.GetValue().data
                 const currentLanguages = foundLanguages.data
@@ -172,7 +170,7 @@ export class LanguageElement implements SpecialVisualization {
                                 new And(selection),
                                 tagSource.data,
                                 {
-                                    theme: state?.layoutToUse?.id ?? "unkown",
+                                    theme: state?.layout?.id ?? "unkown",
                                     changeType: "answer",
                                 }
                             )

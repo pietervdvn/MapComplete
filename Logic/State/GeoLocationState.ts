@@ -2,7 +2,7 @@ import { UIEventSource } from "../UIEventSource"
 import { LocalStorageSource } from "../Web/LocalStorageSource"
 import { QueryParameters } from "../Web/QueryParameters"
 
-type GeolocationState = "prompt" | "requested" | "granted" | "denied"
+export type GeolocationPermissionState = "prompt" | "requested" | "granted" | "denied"
 
 export interface GeoLocationPointProperties extends GeolocationCoordinates {
     id: "gps"
@@ -21,7 +21,7 @@ export class GeoLocationState {
      * 'granted' means that it is granted
      * 'denied' means that we don't have access
      */
-    public readonly permission: UIEventSource<GeolocationState> = new UIEventSource("prompt")
+    public readonly permission: UIEventSource<GeolocationPermissionState> = new UIEventSource("prompt")
 
     /**
      * Important to determine e.g. if we move automatically on fix or not
@@ -30,8 +30,11 @@ export class GeoLocationState {
     /**
      * If true: the map will center (and re-center) to this location
      */
-    public readonly isLocked: UIEventSource<boolean> = new UIEventSource<boolean>(false)
+    public readonly allowMoving: UIEventSource<boolean> = new UIEventSource<boolean>(true)
 
+    /**
+     * The latest GeoLocationCoordinates, as given by the WebAPI
+     */
     public readonly currentGPSLocation: UIEventSource<GeolocationCoordinates | undefined> =
         new UIEventSource<GeolocationCoordinates | undefined>(undefined)
 
@@ -72,7 +75,6 @@ export class GeoLocationState {
                 self._previousLocationGrant.setData("false")
             }
         })
-
         console.log("Previous location grant:", this._previousLocationGrant.data)
         if (this._previousLocationGrant.data === "true") {
             // A previous visit successfully granted permission. Chance is high that we are allowed to use it again!
@@ -87,7 +89,6 @@ export class GeoLocationState {
             }
             this.requestPermission()
         }
-        window["geolocation_state"] = this
     }
 
     /**

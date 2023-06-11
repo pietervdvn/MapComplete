@@ -1,84 +1,60 @@
-import { UIEventSource } from "../../UIEventSource"
-import FeatureSource, { FeatureSourceForLayer, IndexedFeatureSource, Tiled } from "../FeatureSource"
-import FilteredLayer from "../../../Models/FilteredLayer"
-import { Tiles } from "../../../Models/TileRange"
-import { BBox } from "../../BBox"
+import { Store, UIEventSource } from "../../UIEventSource"
+import { FeatureSource, IndexedFeatureSource } from "../FeatureSource"
+import { Feature } from "geojson"
+import { Utils } from "../../../Utils"
 
-export default class FeatureSourceMerger
-    implements FeatureSourceForLayer, Tiled, IndexedFeatureSource
-{
-    public features: UIEventSource<{ feature: any; freshness: Date }[]> = new UIEventSource<
-        { feature: any; freshness: Date }[]
-    >([])
-    public readonly name
-    public readonly layer: FilteredLayer
-    public readonly tileIndex: number
-    public readonly bbox: BBox
-    public readonly containedIds: UIEventSource<Set<string>> = new UIEventSource<Set<string>>(
-        new Set()
-    )
-    private readonly _sources: UIEventSource<FeatureSource[]>
+/**
+ *
+ */
+export default class FeatureSourceMerger implements IndexedFeatureSource {
+    public features: UIEventSource<Feature[]> = new UIEventSource([])
+    public readonly featuresById: Store<Map<string, Feature>>
+    private readonly _featuresById: UIEventSource<Map<string, Feature>>
+    private readonly _sources: FeatureSource[] = []
     /**
-     * Merges features from different featureSources for a single layer
-     * Uses the freshest feature available in the case multiple sources offer data with the same identifier
+     * Merges features from different featureSources.
+     * In case that multiple features have the same id, the latest `_version_number` will be used. Otherwise, we will take the last one
      */
-    constructor(
-        layer: FilteredLayer,
-        tileIndex: number,
-        bbox: BBox,
-        sources: UIEventSource<FeatureSource[]>
-    ) {
-        this.tileIndex = tileIndex
-        this.bbox = bbox
-        this._sources = sources
-        this.layer = layer
-        this.name =
-            "FeatureSourceMerger(" +
-            layer.layerDef.id +
-            ", " +
-            Tiles.tile_from_index(tileIndex).join(",") +
-            ")"
+    constructor(...sources: FeatureSource[]) {
+        this._featuresById = new UIEventSource<Map<string, Feature>>(new Map<string, Feature>())
+        this.featuresById = this._featuresById
         const self = this
+        sources = Utils.NoNull(sources)
+        for (let source of sources) {
+            source.features.addCallback(() => {
+                self.addData(sources.map((s) => s.features.data))
+            })
+        }
+        this.addData(sources.map((s) => s.features.data))
+        this._sources = sources
+    }
 
-        const handledSources = new Set<FeatureSource>()
-
-        sources.addCallbackAndRunD((sources) => {
-            let newSourceRegistered = false
-            for (let i = 0; i < sources.length; i++) {
-                let source = sources[i]
-                if (handledSources.has(source)) {
-                    continue
-                }
-                handledSources.add(source)
-                newSourceRegistered = true
-                source.features.addCallback(() => {
-                    self.Update()
-                })
-                if (newSourceRegistered) {
-                    self.Update()
-                }
-            }
+    public addSource(source: FeatureSource) {
+        if(!source){
+            return
+        }
+        this._sources.push(source)
+        source.features.addCallbackAndRun(() => {
+            this.addData(this._sources.map((s) => s.features.data))
         })
     }
 
-    private Update() {
+    protected addData(featuress: Feature[][]) {
+        featuress = Utils.NoNull(featuress)
         let somethingChanged = false
-        const all: Map<string, { feature: any; freshness: Date }> = new Map<
-            string,
-            { feature: any; freshness: Date }
-        >()
+        const all: Map<string, Feature> = new Map()
+        const unseen = new Set<string>()
         // We seed the dictionary with the previously loaded features
         const oldValues = this.features.data ?? []
         for (const oldValue of oldValues) {
-            all.set(oldValue.feature.id, oldValue)
+            all.set(oldValue.properties.id, oldValue)
+            unseen.add(oldValue.properties.id)
         }
 
-        for (const source of this._sources.data) {
-            if (source?.features?.data === undefined) {
-                continue
-            }
-            for (const f of source.features.data) {
-                const id = f.feature.properties.id
+        for (const features of featuress) {
+            for (const f of features) {
+                const id = f.properties.id
+                unseen.delete(id)
                 if (!all.has(id)) {
                     // This is a new feature
                     somethingChanged = true
@@ -89,13 +65,16 @@ export default class FeatureSourceMerger
                 // This value has been seen already, either in a previous run or by a previous datasource
                 // Let's figure out if something changed
                 const oldV = all.get(id)
-                if (oldV.freshness < f.freshness) {
-                    // Jup, this feature is fresher
-                    all.set(id, f)
-                    somethingChanged = true
+                if (oldV == f) {
+                    continue
                 }
+                all.set(id, f)
+                somethingChanged = true
             }
         }
+
+        somethingChanged ||= unseen.size > 0
+        unseen.forEach((id) => all.delete(id))
 
         if (!somethingChanged) {
             // We don't bother triggering an update
@@ -103,10 +82,10 @@ export default class FeatureSourceMerger
         }
 
         const newList = []
-        all.forEach((value, _) => {
+        all.forEach((value, key) => {
             newList.push(value)
         })
-        this.containedIds.setData(new Set(all.keys()))
         this.features.setData(newList)
+        this._featuresById.setData(all)
     }
 }

@@ -20,9 +20,14 @@ import { FixImages } from "../Models/ThemeConfig/Conversion/FixImages"
 import Svg from "../Svg"
 import {
     DoesImageExist,
-    PrevalidateTheme,
+    PrevalidateTheme, ValidateTagRenderings,
     ValidateThemeAndLayers,
 } from "../Models/ThemeConfig/Conversion/Validation"
+import {DesugaringContext, Each, On} from "../Models/ThemeConfig/Conversion/Conversion";
+import {PrepareLayer, RewriteSpecial} from "../Models/ThemeConfig/Conversion/PrepareLayer";
+import {AllSharedLayers} from "../Customizations/AllSharedLayers";
+import {TagRenderingConfigJson} from "../Models/ThemeConfig/Json/TagRenderingConfigJson";
+import questions from "../assets/tagRenderings/questions.json";
 
 export default class DetermineLayout {
     private static readonly _knownImages = new Set(Array.from(licenses).map((l) => l.path))
@@ -62,7 +67,11 @@ export default class DetermineLayout {
             layoutId,
             "The layout to load into MapComplete"
         ).data
-        return AllKnownLayouts.allKnownLayouts.get(layoutId?.toLowerCase())
+        const layout = AllKnownLayouts.allKnownLayouts.get(layoutId?.toLowerCase())
+        if (layout === undefined) {
+            throw "No builtin map theme with name " + layoutId + " exists"
+        }
+        return layout
     }
 
     public static LoadLayoutFromHash(userLayoutParam: UIEventSource<string>): LayoutConfig | null {
@@ -142,9 +151,41 @@ export default class DetermineLayout {
                 : undefined,
         ])
             .SetClass("flex flex-col clickable")
-            .AttachTo("centermessage")
+            .AttachTo("maindiv")
     }
 
+    private static getSharedTagRenderings(): Map<string, TagRenderingConfigJson> {
+        const dict = new Map<string, TagRenderingConfigJson>()
+
+        const prep = new RewriteSpecial()
+        const validator = new ValidateTagRenderings()
+        for (const key in questions) {
+            if (key === "id") {
+                continue
+            }
+            questions[key].id = key
+            questions[key]["source"] = "shared-questions"
+            const config = prep.convertStrict(
+                <TagRenderingConfigJson>questions[key],
+                "questions.json:" + key
+            )
+            delete config["#"]
+            validator.convertStrict(
+                config,
+                "generate-layer-overview:tagRenderings/questions.json:" + key
+            )
+            dict.set(key, config)
+        }
+
+        dict.forEach((value, key) => {
+            if (key === "id") {
+                return
+            }
+            value.id = value.id ?? key
+        })
+
+        return dict
+    }
     private static prepCustomTheme(json: any, sourceUrl?: string, forceId?: string): LayoutConfig {
         if (json.layers === undefined && json.tagRenderings !== undefined) {
             const iconTr = json.mapRendering.map((mr) => mr.icon).find((icon) => icon !== undefined)
@@ -166,8 +207,8 @@ export default class DetermineLayout {
             const layer = known_layers.layers[key]
             knownLayersDict.set(layer.id, <LayerConfigJson>layer)
         }
-        const converState = {
-            tagRenderings: SharedTagRenderings.SharedTagRenderingJson,
+        const convertState: DesugaringContext = {
+            tagRenderings: DetermineLayout.getSharedTagRenderings(),
             sharedLayers: knownLayersDict,
             publicLayers: new Set<string>(),
         }
@@ -179,7 +220,7 @@ export default class DetermineLayout {
             "While fixing the images"
         )
         json.enableNoteImports = json.enableNoteImports ?? false
-        json = new PrepareTheme(converState).convertStrict(json, "While preparing a dynamic theme")
+        json = new PrepareTheme(convertState).convertStrict(json, "While preparing a dynamic theme")
         console.log("The layoutconfig is ", json)
 
         json.id = forceId ?? json.id
@@ -210,7 +251,7 @@ export default class DetermineLayout {
         console.log("Downloading map theme from ", link)
 
         new FixedUiElement(`Downloading the theme from the <a href="${link}">link</a>...`).AttachTo(
-            "centermessage"
+            "maindiv"
         )
 
         try {

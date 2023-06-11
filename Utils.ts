@@ -1,4 +1,5 @@
 import colors from "./assets/colors.json"
+import {HTMLElement} from "node-html-parser";
 
 export class Utils {
     /**
@@ -152,8 +153,8 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     public static ParseVisArgs(
         specs: { name: string; defaultValue?: string }[],
         args: string[]
-    ): any {
-        const parsed = {}
+    ): Record<string, string> {
+        const parsed: Record<string, string> = {}
         if (args.length > specs.length) {
             throw (
                 "To much arguments for special visualization: got " +
@@ -215,29 +216,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     /**
-     * Converts a number to a string with one number after the comma
+     * Converts a number to a number with precisely 7 decimals
      *
-     * Utils.Round(15) // => "15.0"
-     * Utils.Round(1) // => "1.0"
-     * Utils.Round(1.5) // => "1.5"
-     * Utils.Round(0.5) // => "0.5"
-     * Utils.Round(1.6) // => "1.6"
-     * Utils.Round(-15) // => "-15.0"
-     * Utils.Round(-1) // => "-1.0"
-     * Utils.Round(-1.5) // => "-1.5"
-     * Utils.Round(-0.5) // => "-0.5"
-     * Utils.Round(-1.6) // => "-1.6"
-     * Utils.Round(-1531.63543) // =>"-1531.6"
+     * Utils.Round7(12.123456789) // => 12.1234568
      */
-    public static Round(i: number): string {
-        if (i < 0) {
-            return "-" + Utils.Round(-i)
-        }
-        const j = "" + Math.floor(i * 10)
-        if (j.length == 1) {
-            return "0." + j
-        }
-        return j.substr(0, j.length - 1) + "." + j.substr(j.length - 1, j.length)
+    public static Round7(i: number): number {
+        return Math.round(i * 10000000) / 10000000
     }
 
     public static Times(f: (i: number) => string, count: number): string {
@@ -307,13 +291,21 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
      * @param init
      * @constructor
      */
-    public static AddLazyProperty(object: any, name: string, init: () => any) {
+    public static AddLazyProperty(
+        object: any,
+        name: string,
+        init: () => any,
+        whenDone?: () => void
+    ) {
         Object.defineProperty(object, name, {
             enumerable: false,
             configurable: true,
             get: () => {
                 delete object[name]
                 object[name] = init()
+                if (whenDone) {
+                    whenDone()
+                }
                 return object[name]
             },
         })
@@ -332,6 +324,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             enumerable: false,
             configurable: true,
             get: () => {
+                console.trace("Property", name, "got requested")
                 init().then((r) => {
                     delete object[name]
                     object[name] = r
@@ -351,6 +344,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         return str
     }
 
+    /**
+     * Creates a new array with all elements from 'arr' in such a way that every element will be kept only once
+     * Elements are returned in the same order as they appear in the lists
+     * @param arr
+     * @constructor
+     */
     public static Dedup(arr: string[]): string[] {
         if (arr === undefined) {
             return undefined
@@ -688,10 +687,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             if (Array.isArray(leaf)) {
                 for (let i = 0; i < (<any[]>leaf).length; i++) {
                     const l = (<any[]>leaf)[i]
-                    collectedList.push({ leaf: l, path: [...travelledPath, "" + i] })
+                    collectedList.push({leaf: l, path: [...travelledPath, "" + i]})
                 }
             } else {
-                collectedList.push({ leaf, path: travelledPath })
+                collectedList.push({leaf, path: travelledPath})
             }
             return collectedList
         }
@@ -769,7 +768,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             })
         }
 
-        const cp = { ...json }
+        const cp = {...json}
         for (const key in json) {
             cp[key] = Utils.WalkJson(json[key], f, isLeaf, [...path, key])
         }
@@ -899,11 +898,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             const xhr = new XMLHttpRequest()
             xhr.onload = () => {
                 if (xhr.status == 200) {
-                    resolve({ content: xhr.response })
+                    resolve({content: xhr.response})
                 } else if (xhr.status === 302) {
-                    resolve({ redirect: xhr.getResponseHeader("location") })
+                    resolve({redirect: xhr.getResponseHeader("location")})
                 } else if (xhr.status === 509 || xhr.status === 429) {
-                    resolve({ error: "rate limited", url, statuscode: xhr.status })
+                    resolve({error: "rate limited", url, statuscode: xhr.status})
                 } else {
                     resolve({
                         error: "other error: " + xhr.statusText,
@@ -973,10 +972,10 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
         const promise =
             /*NO AWAIT as we work with the promise directly */ Utils.downloadJsonAdvanced(
-                url,
-                headers
-            )
-        Utils._download_cache.set(url, { promise, timestamp: new Date().getTime() })
+            url,
+            headers
+        )
+        Utils._download_cache.set(url, {promise, timestamp: new Date().getTime()})
         return await promise
     }
 
@@ -995,11 +994,11 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         const injected = Utils.injectedDownloads[url]
         if (injected !== undefined) {
             console.log("Using injected resource for test for URL", url)
-            return new Promise((resolve, _) => resolve({ content: injected }))
+            return new Promise((resolve, _) => resolve({content: injected}))
         }
         const result = await Utils.downloadAdvanced(
             url,
-            Utils.Merge({ accept: "application/json" }, headers ?? {})
+            Utils.Merge({accept: "application/json"}, headers ?? {})
         )
         if (result["error"] !== undefined) {
             return <{ error: string; url: string; statuscode?: number }>result
@@ -1007,12 +1006,12 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         const data = result["content"]
         try {
             if (typeof data === "string") {
-                return { content: JSON.parse(data) }
+                return {content: JSON.parse(data)}
             }
-            return { content: data }
+            return {content: data}
         } catch (e) {
             console.error("Could not parse ", data, "due to", e, "\n", e.stack)
-            return { error: "malformed", url }
+            return {error: "malformed", url}
         }
     }
 
@@ -1030,12 +1029,13 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
                 | "application/vnd.geo+json"
                 | "{gpx=application/gpx+xml}"
                 | "application/json"
+                | "image/png"
         }
     ) {
         const element = document.createElement("a")
         let file
         if (typeof contents === "string") {
-            file = new Blob([contents], { type: options?.mimetype ?? "text/plain" })
+            file = new Blob([contents], {type: options?.mimetype ?? "text/plain"})
         } else {
             file = contents
         }
@@ -1146,6 +1146,16 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             // This is a total workaround, as 'preventDefault' and everything above seems to be not working
             event.originalEvent["dismissed"] = true
         }
+    }
+
+    public static HomepageLink(): string {
+        if (typeof window === "undefined") {
+            return "https://mapcomplete.osm.be"
+        }
+        const path = (window.location.protocol + "//" + window.location.host + window.location.pathname).split("/")
+        path.pop()
+        path.push("index.html")
+        return path.join("/")
     }
 
     public static OsmChaLinkFor(daysInThePast, theme = undefined): string {
@@ -1291,7 +1301,7 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
             if (match == undefined) {
                 return undefined
             }
-            return { r: Number(match[1]), g: Number(match[2]), b: Number(match[3]) }
+            return {r: Number(match[1]), g: Number(match[2]), b: Number(match[3])}
         }
 
         if (!hex.startsWith("#")) {
@@ -1339,7 +1349,26 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         d.setUTCMinutes(0)
     }
 
-    public static findParentWithScrolling(element: HTMLElement): HTMLElement {
+    public static scrollIntoView(element: HTMLBaseElement) {
+        console.log("Scrolling into view:", element)
+        // Is the element completely in the view?
+        const parentRect = Utils.findParentWithScrolling(
+            element
+        ).getBoundingClientRect()
+        const elementRect = element.getBoundingClientRect()
+
+        // Check if the element is within the vertical bounds of the parent element
+        const topIsVisible = elementRect.top >= parentRect.top
+        const bottomIsVisible = elementRect.bottom <= parentRect.bottom
+        const inView = topIsVisible && bottomIsVisible
+        if (inView) {
+            return
+        }
+        console.log("Actually scrolling...")
+        element.scrollIntoView({behavior: "smooth", block: "nearest"})
+    }
+
+    public static findParentWithScrolling(element: HTMLBaseElement): HTMLBaseElement {
         // Check if the element itself has scrolling
         if (element.scrollHeight > element.clientHeight) {
             return element
@@ -1351,7 +1380,66 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         }
 
         // If the element has a parent, repeat the process for the parent element
-        return Utils.findParentWithScrolling(element.parentElement)
+        return Utils.findParentWithScrolling(<HTMLBaseElement>element.parentElement)
+    }
+
+    /**
+     * Returns true if the contents of `a` are the same (and in the same order) as `b`.
+     * Might have false negatives in some cases
+     * @param a
+     * @param b
+     */
+    public static sameList<T>(a: ReadonlyArray<T>, b: ReadonlyArray<T>) {
+        if (a == b) {
+            return true
+        }
+        if (a === undefined || a === null || b === undefined || b === null) {
+            return false
+        }
+        if (a.length !== b.length) {
+            return false
+        }
+        for (let i = 0; i < a.length; i++) {
+            let ai = a[i]
+            let bi = b[i]
+            if (ai == bi) {
+                continue
+            }
+            if (ai === bi) {
+                continue
+            }
+            return false
+        }
+        return true
+    }
+
+   public static SameObject(a: any, b: any) {
+        if (a === b) {
+            return true
+        }
+        if (a === undefined || a === null || b === null || b === undefined) {
+            return false
+        }
+        if (typeof a === "object" && typeof b === "object") {
+            for (const aKey in a) {
+                if (!(aKey in b)) {
+                    return false
+                }
+            }
+
+            for (const bKey in b) {
+                if (!(bKey in a)) {
+                    return false
+                }
+            }
+            for (const k in a) {
+                if (!Utils.SameObject(a[k], b[k])) {
+                    return false
+                }
+            }
+            return true
+        }
+        return false
     }
 
     private static colorDiff(
@@ -1359,5 +1447,30 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         c1: { r: number; g: number; b: number }
     ) {
         return Math.abs(c0.r - c1.r) + Math.abs(c0.g - c1.g) + Math.abs(c0.b - c1.b)
+    }
+
+    /**
+     *
+     * Utils.splitIntoSubstitutionParts("abc") // => [{message: "abc"}]
+     * Utils.splitIntoSubstitutionParts("abc {search} def") // => [{message: "abc "}, {subs: "search"}, {message: " def"}]
+     *
+     */
+    public static splitIntoSubstitutionParts(template: string): ({ message: string } | {subs: string})[]{
+        const preparts = template.split("{")
+        const spec : ({ message: string } | {subs: string})[] = []
+        for (const prepart of preparts) {
+            const postParts = prepart.split("}")
+            if(postParts.length === 1){
+                // This was a normal part
+                spec.push({message: postParts[0]})
+            }else{
+                const [subs, message] = postParts
+                spec.push({subs})
+                if(message !== ""){
+                    spec.push({message})
+                }
+            }
+        }
+        return spec
     }
 }

@@ -30,7 +30,7 @@ export class UpdateLegacyLayer extends DesugaringStep<
             config.source = config.source ?? {
                 osmTags: config["overpassTags"],
             }
-            config.source.osmTags = config["overpassTags"]
+            config.source["osmTags"] = config["overpassTags"]
             delete config["overpassTags"]
         }
 

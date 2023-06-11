@@ -86,6 +86,12 @@ export default {
         "or"
       ]
     },
+    "Record<string,string>": {
+      "type": "object"
+    },
+    "Record<string,string|Record<string,string>>": {
+      "type": "object"
+    },
     "DenominationConfigJson": {
       "type": "object",
       "properties": {
@@ -148,9 +154,6 @@ export default {
       "required": [
         "canonicalDenomination"
       ]
-    },
-    "Record<string,string>": {
-      "type": "object"
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#"

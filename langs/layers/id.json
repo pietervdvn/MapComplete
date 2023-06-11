@@ -356,6 +356,15 @@
             }
         }
     },
+    "last_click": {
+        "mapRendering": {
+            "0": {
+                "label": {
+                    "render": "Klik di sini untuk menambahkan item baru"
+                }
+            }
+        }
+    },
     "nature_reserve": {
         "tagRenderings": {
             "Email": {

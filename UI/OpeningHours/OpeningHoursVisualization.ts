@@ -10,6 +10,7 @@ import { VariableUiElement } from "../Base/VariableUIElement"
 import Table from "../Base/Table"
 import { Translation } from "../i18n/Translation"
 import { OsmConnection } from "../../Logic/Osm/OsmConnection"
+import Loading from "../Base/Loading";
 
 export default class OpeningHoursVisualization extends Toggle {
     private static readonly weekdays: Translation[] = [
@@ -23,12 +24,13 @@ export default class OpeningHoursVisualization extends Toggle {
     ]
 
     constructor(
-        tags: UIEventSource<any>,
+        tags: UIEventSource<Record<string, string>>,
         state: { osmConnection?: OsmConnection },
         key: string,
         prefix = "",
         postfix = ""
     ) {
+        const country = tags.map(tags => tags._country)
         const ohTable = new VariableUiElement(
             tags
                 .map((tags) => {
@@ -49,7 +51,7 @@ export default class OpeningHoursVisualization extends Toggle {
                     }
                     try {
                         return OpeningHoursVisualization.CreateFullVisualisation(
-                            OH.CreateOhObject(tags.data, ohtext)
+                            OH.CreateOhObject(<any>tags.data, ohtext)
                         )
                     } catch (e) {
                         console.warn(e, e.stack)
@@ -66,14 +68,15 @@ export default class OpeningHoursVisualization extends Toggle {
                             ),
                         ])
                     }
-                })
+                }, [country])
         )
 
         super(
             ohTable,
-            Translations.t.general.opening_hours.loadingCountry.Clone(),
+            new Loading(Translations.t.general.opening_hours.loadingCountry),
             tags.map((tgs) => tgs._country !== undefined)
         )
+        this.SetClass("no-weblate")
     }
 
     private static CreateFullVisualisation(oh: any): BaseUIElement {
@@ -160,7 +163,7 @@ export default class OpeningHoursVisualization extends Toggle {
         const weekdayStyles = []
         for (let i = 0; i < 7; i++) {
             const day = OpeningHoursVisualization.weekdays[i].Clone()
-            day.SetClass("w-full h-full block")
+            day.SetClass("w-full h-full flex")
 
             const rangesForDay = ranges[i].map((range) =>
                 OpeningHoursVisualization.CreateRangeElem(

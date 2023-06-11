@@ -1,3 +1,5 @@
+import { BBox } from "../Logic/BBox"
+
 export interface TileRange {
     xstart: number
     ystart: number
@@ -82,9 +84,29 @@ export class Tiles {
      * Return x, y of the tile containing (lat, lon) on the given zoom level
      */
     static embedded_tile(lat: number, lon: number, z: number): { x: number; y: number; z: number } {
-        return { x: Tiles.lon2tile(lon, z), y: Tiles.lat2tile(lat, z), z: z }
+        return { x: Tiles.lon2tile(lon, z), y: Tiles.lat2tile(lat, z), z }
     }
 
+    static tileRangeFrom(bbox: BBox, zoomlevel: number) {
+        return Tiles.TileRangeBetween(
+            zoomlevel,
+            bbox.getNorth(),
+            bbox.getWest(),
+            bbox.getSouth(),
+            bbox.getEast()
+        )
+    }
+
+    /**
+     * Construct a tilerange which (at least) contains the given coordinates.
+     * This means that the actual iterated area might be a bit bigger then the the passed in coordinates
+     * @param zoomlevel
+     * @param lat0
+     * @param lon0
+     * @param lat1
+     * @param lon1
+     * @constructor
+     */
     static TileRangeBetween(
         zoomlevel: number,
         lat0: number,

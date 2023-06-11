@@ -42,11 +42,11 @@
     + [climbing.max_difficulty](#climbingmax_difficulty)
     + [climbing.sportclimbing](#climbingsportclimbing)
     + [climbing.max_bolts](#climbingmax_bolts)
-    + [all_tags](#all_tags)
     + [opening_hours_by_appointment](#opening_hours_by_appointment)
     + [multilevels](#multilevels)
     + [induction-loop](#induction-loop)
     + [questions](#questions)
+    + [all_tags](#all_tags)
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
@@ -120,7 +120,6 @@
   - food
   - ghost_bike
   - governments
-  - grass_in_parks
   - hackerspace
   - hotel
   - hydrant
@@ -375,6 +374,7 @@
 
   - bicycle_rental
   - cafe_pub
+  - climbing_gym
   - food
   - observation_tower
   - shops
@@ -522,6 +522,7 @@
 
 
   - cafe_pub
+  - climbing_gym
   - food
   - hotel
   - shops
@@ -536,6 +537,7 @@
 
 
   - cafe_pub
+  - climbing_gym
   - food
   - hotel
   - shops
@@ -550,6 +552,7 @@
 
 
   - cafe_pub
+  - climbing_gym
   - food
   - hotel
   - shops
@@ -676,18 +679,6 @@
 
 
 
-### all_tags 
-
-
-
-
-
-  - cluster_style
-  - fixme
-
-
-
-
 ### opening_hours_by_appointment 
 
 
@@ -736,6 +727,17 @@
   - playground
   - shops
   - sport_pitch
+
+
+
+
+### all_tags 
+
+
+
+
+
+  - fixme
 
 
 

@@ -105,7 +105,7 @@ export class BBox {
      * Constructs a tilerange which fully contains this bbox (thus might be a bit larger)
      * @param zoomlevel
      */
-    public containingTileRange(zoomlevel): TileRange {
+    public containingTileRange(zoomlevel: number): TileRange {
         return Tiles.TileRangeBetween(zoomlevel, this.minLat, this.minLon, this.maxLat, this.maxLon)
     }
 
@@ -136,6 +136,45 @@ export class BBox {
             return false
         }
         return true
+    }
+
+    squarify(): BBox {
+        const w = this.maxLon - this.minLon
+        const h = this.maxLat - this.minLat
+        const s = Math.sqrt(w * h)
+        const lon = (this.maxLon + this.minLon) / 2
+        const lat = (this.maxLat + this.minLat) / 2
+        // we want to have a more-or-less equal surface, so the new side 's' should be
+        // w * h = s * s
+        // The ratio for w is:
+
+        return new BBox([
+            [lon - s / 2, lat - s / 2],
+            [lon + s / 2, lat + s / 2],
+        ])
+    }
+
+    isNearby(location: [number, number], maxRange: number): boolean {
+        if (this.contains(location)) {
+            return true
+        }
+        const [lon, lat] = location
+        // We 'project' the point onto the near edges. If they are close to a horizontal _and_ vertical edge, it is nearby
+        // Vertically nearby: either wihtin minLat range or at most maxRange away
+        const nearbyVertical =
+            (this.minLat <= lat &&
+                this.maxLat >= lat &&
+                GeoOperations.distanceBetween(location, [lon, this.minLat]) <= maxRange) ||
+            GeoOperations.distanceBetween(location, [lon, this.maxLat]) <= maxRange
+        if (!nearbyVertical) {
+            return false
+        }
+        const nearbyHorizontal =
+            (this.minLon <= lon &&
+                this.maxLon >= lon &&
+                GeoOperations.distanceBetween(location, [this.minLon, lat]) <= maxRange) ||
+            GeoOperations.distanceBetween(location, [this.maxLon, lat]) <= maxRange
+        return nearbyHorizontal
     }
 
     getEast() {
@@ -179,14 +218,21 @@ export class BBox {
         ])
     }
 
-    toLeaflet(): [[number, number], [number, number]] {
+    toLngLat(): [[number, number], [number, number]] {
         return [
-            [this.minLat, this.minLon],
-            [this.maxLat, this.maxLon],
+            [this.minLon, this.minLat],
+            [this.maxLon, this.maxLat],
         ]
     }
 
-    public asGeoJson<T>(properties: T): Feature<Polygon, T> {
+    public asGeojsonCached() {
+        if (this["geojsonCache"] === undefined) {
+            this["geojsonCache"] = this.asGeoJson({})
+        }
+        return this["geojsonCache"]
+    }
+
+    public asGeoJson<T = {}>(properties?: T): Feature<Polygon, T> {
         return {
             type: "Feature",
             properties: properties,
@@ -214,6 +260,9 @@ export class BBox {
      * @param zoomlevel
      */
     expandToTileBounds(zoomlevel: number): BBox {
+        if (zoomlevel === undefined) {
+            return this
+        }
         const ul = Tiles.embedded_tile(this.minLat, this.minLon, zoomlevel)
         const lr = Tiles.embedded_tile(this.maxLat, this.maxLon, zoomlevel)
         const boundsul = Tiles.tile_bounds_lon_lat(ul.z, ul.x, ul.y)

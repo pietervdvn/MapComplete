@@ -4,7 +4,6 @@ import licenses from "../assets/generated/license_info.json"
 import { LayoutConfigJson } from "../Models/ThemeConfig/Json/LayoutConfigJson"
 import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
 import Constants from "../Models/Constants"
-import * as fakedom from "fake-dom"
 import {
     DetectDuplicateFilters,
     DoesImageExist,
@@ -17,7 +16,7 @@ import { Translation } from "../UI/i18n/Translation"
 import { TagRenderingConfigJson } from "../Models/ThemeConfig/Json/TagRenderingConfigJson"
 import questions from "../assets/tagRenderings/questions.json"
 import PointRenderingConfigJson from "../Models/ThemeConfig/Json/PointRenderingConfigJson"
-import { PrepareLayer } from "../Models/ThemeConfig/Conversion/PrepareLayer"
+import { PrepareLayer, RewriteSpecial } from "../Models/ThemeConfig/Conversion/PrepareLayer"
 import { PrepareTheme } from "../Models/ThemeConfig/Conversion/PrepareTheme"
 import { DesugaringContext } from "../Models/ThemeConfig/Conversion/Conversion"
 import { Utils } from "../Utils"
@@ -157,6 +156,7 @@ class LayerOverviewUtils extends Script {
     getSharedTagRenderings(doesImageExist: DoesImageExist): Map<string, TagRenderingConfigJson> {
         const dict = new Map<string, TagRenderingConfigJson>()
 
+        const prep = new RewriteSpecial()
         const validator = new ValidateTagRenderings(undefined, doesImageExist)
         for (const key in questions) {
             if (key === "id") {
@@ -164,7 +164,11 @@ class LayerOverviewUtils extends Script {
             }
             questions[key].id = key
             questions[key]["source"] = "shared-questions"
-            const config = <TagRenderingConfigJson>questions[key]
+            const config = prep.convertStrict(
+                <TagRenderingConfigJson>questions[key],
+                "questions.json:" + key
+            )
+            delete config["#"]
             validator.convertStrict(
                 config,
                 "generate-layer-overview:tagRenderings/questions.json:" + key
@@ -230,9 +234,6 @@ class LayerOverviewUtils extends Script {
     }
 
     async main(args: string[]) {
-        if (fakedom === undefined) {
-            throw "Fakedom not initialized"
-        }
         const forceReload = args.some((a) => a == "--force")
 
         const licensePaths = new Set<string>()
@@ -241,6 +242,18 @@ class LayerOverviewUtils extends Script {
         }
         const doesImageExist = new DoesImageExist(licensePaths, existsSync)
         const sharedLayers = this.buildLayerIndex(doesImageExist, forceReload)
+
+        const priviliged = new Set<string>(Constants.priviliged_layers)
+        sharedLayers.forEach((_, key) => {
+            priviliged.delete(key)
+        })
+        if (priviliged.size > 0) {
+            throw (
+                "Priviliged layer " +
+                Array.from(priviliged).join(", ") +
+                " has no definition file, create it at `assets/layers/<layername>/<layername.json>"
+            )
+        }
         const recompiledThemes: string[] = []
         const sharedThemes = this.buildThemeIndex(
             licensePaths,
@@ -343,8 +356,13 @@ class LayerOverviewUtils extends Script {
             const context = "While building builtin layer " + sharedLayerPath
             const fixed = prepLayer.convertStrict(parsed, context)
 
-            if (fixed.source.osmTags["and"] === undefined) {
-                fixed.source.osmTags = { and: [fixed.source.osmTags] }
+            if(!fixed.source){
+                console.error(sharedLayerPath,"has no source configured:",fixed)
+                throw sharedLayerPath+" layer has no source configured"
+            }
+
+            if (typeof fixed.source !== "string" && fixed.source["osmTags"] && fixed.source["osmTags"]["and"] === undefined) {
+                fixed.source["osmTags"] = { and: [fixed.source["osmTags"]] }
             }
 
             const validator = new ValidateLayer(sharedLayerPath, true, doesImageExist)
@@ -408,10 +426,11 @@ class LayerOverviewUtils extends Script {
         })
 
         const skippedThemes: string[] = []
-        for (const themeInfo of themeFiles) {
+        for (let i = 0; i < themeFiles.length; i++){
+            const themeInfo = themeFiles[i];
             const themePath = themeInfo.path
             let themeFile = themeInfo.parsed
-
+            console.log(`Validating ${i}/${themeFiles.length} '${themeInfo.parsed.id}'`)
             {
                 const targetPath =
                     LayerOverviewUtils.themePath +

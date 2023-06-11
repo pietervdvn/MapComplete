@@ -11,26 +11,27 @@
   - [Metatags calculated by MapComplete](#metatags-calculated-by-mapcomplete)
     + [_lat, _lon](#_lat,-_lon)
     + [_layer](#_layer)
-    + [_surface, _surface:ha](#_surface,-_surfaceha)
+    + [_surface](#_surface)
+    + [_surface:ha](#_surfaceha)
     + [_length, _length:km](#_length,-_lengthkm)
     + [Theme-defined keys](#theme-defined-keys)
     + [_country](#_country)
     + [_isOpen](#_isopen)
     + [_direction:numerical, _direction:leftright](#_directionnumerical,-_direction:leftright)
     + [_direction:centerpoint](#_directioncenterpoint)
-    + [_now:date, _now:datetime, _loaded:date, _loaded:_datetime](#_nowdate,-_now:datetime,-_loaded:date,-_loaded:_datetime)
+    + [_now:date, _now:datetime](#_nowdate,-_now:datetime)
     + [_last_edit:contributor, _last_edit:contributor:uid, _last_edit:changeset, _last_edit:timestamp, _version_number, _backend](#_last_editcontributor,-_last_edit:contributor:uid,-_last_edit:changeset,-_last_edit:timestamp,-_version_number,-_backend)
     + [sidewalk:left, sidewalk:right, generic_key:left:property, generic_key:right:property](#sidewalkleft,-sidewalk:right,-generic_key:left:property,-generic_key:right:property)
     + [_geometry:type](#_geometrytype)
     + [_level](#_level)
     + [_referencing_ways](#_referencing_ways)
+    + [_last_edit:passed_time](#_last_editpassed_time)
     + [distanceTo](#distanceto)
     + [overlapWith](#overlapwith)
     + [enclosingFeatures](#enclosingfeatures)
     + [intersectionsWith](#intersectionswith)
     + [closest](#closest)
     + [closestn](#closestn)
-    + [memberships](#memberships)
     + [get](#get)
 
 
@@ -72,11 +73,21 @@ The layer-id to which this feature belongs. Note that this might be return any a
 
 
 
-### _surface, _surface:ha 
+### _surface 
 
 
 
-The surface area of the feature, in square meters and in hectare. Not set on points and ways
+The surface area of the feature in square meters. Not set on points and ways
+
+This is a lazy metatag and is only calculated when needed
+
+
+
+### _surface:ha 
+
+
+
+The surface area of the feature in hectare. Not set on points and ways
 
 This is a lazy metatag and is only calculated when needed
 
@@ -142,7 +153,7 @@ This is a lazy metatag and is only calculated when needed
 
 
 
-### _now:date, _now:datetime, _loaded:date, _loaded:_datetime 
+### _now:date, _now:datetime 
 
 
 
@@ -156,7 +167,7 @@ Adds the time that the data got loaded - pretty much the time of downloading fro
 
 
 
-Information about the last edit of this object.
+Information about the last edit of this object. This object will actually _rewrite_ some tags for features coming from overpass
 
 
 
@@ -196,7 +207,17 @@ Extract the 'level'-tag into a normalized, ';'-separated value
 
 
 
-_referencing_ways contains - for a node - which ways use this this node as point in their geometry. If the preset has 'snapToLayer' defined, the icon will be calculated based on the preset tags with `_referencing_ways=["way/-1"]` added.
+_referencing_ways contains - for a node - which ways use this this node as point in their geometry. 
+
+This is a lazy metatag and is only calculated when needed
+
+
+
+### _last_edit:passed_time 
+
+
+
+Gives the number of seconds since the last edit. Note that this will _not_ update, but rather be the number of seconds elapsed at the moment this tag is read first
 
 This is a lazy metatag and is only calculated when needed
 
@@ -232,7 +253,7 @@ To enable this feature,  add a field `calculatedTags` in the layer object, e.g.:
 
     "name=feat.properties.name ?? feat.properties.ref ?? feat.properties.operator",
 
-    "_distanceCloserThen3Km=feat.distanceTo( some_lon, some_lat) < 3 ? 'yes' : 'no'" 
+    "_distanceCloserThen3Km=distanceTo(feat)( some_lon, some_lat) < 3 ? 'yes' : 'no'" 
 
   ]
 
@@ -248,7 +269,7 @@ The above code will be executed for every feature in the layer. The feature is a
   - `lat` and `lon` contain the latitude and longitude
 
 
-Some advanced functions are available on **feat** as well: 
+Some advanced functions are available as well. Due to technical reasons, they should be used as `funcname(feat)(arguments)`. 
 
   - [distanceTo](#distanceTo)
   - [overlapWith](#overlapWith)
@@ -256,7 +277,6 @@ Some advanced functions are available on **feat** as well:
   - [intersectionsWith](#intersectionsWith)
   - [closest](#closest)
   - [closestn](#closestn)
-  - [memberships](#memberships)
   - [get](#get)
  
 
@@ -276,7 +296,7 @@ If the current feature is a point, all features that this point is embeded in ar
 The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point.
 The resulting list is sorted in descending order by overlap. The feature with the most overlap will thus be the first in the list.
 
-For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=feat.overlapWith('climbing_route')`
+For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=overlapWith(feat)('climbing_route')`
 
 Also see [enclosingFeatures](#enclosingFeatures) which can be used to get all objects which fully contain this feature 
 
@@ -322,15 +342,6 @@ If a 'unique tag key' is given, the tag with this key will only appear once (e.g
   1. amount of features
   2. unique tag key (optional)
   3. maxDistanceInMeters (optional)
- 
-
-### memberships 
-
- Gives a list of `{role: string, relation: Relation}`-objects, containing all the relations that this feature is part of. 
-
-For example: `_part_of_walking_routes=feat.memberships().map(r => r.relation.tags.name).join(';')` 
-
-
  
 
 ### get 

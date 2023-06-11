@@ -1,13 +1,7 @@
 import osmAuth from "osm-auth"
 import { Store, Stores, UIEventSource } from "../UIEventSource"
 import { OsmPreferences } from "./OsmPreferences"
-import { ChangesetHandler } from "./ChangesetHandler"
-import { ElementStorage } from "../ElementStorage"
-import Svg from "../../Svg"
-import Img from "../../UI/Base/Img"
 import { Utils } from "../../Utils"
-import { OsmObject } from "./OsmObject"
-import { Changes } from "./Changes"
 
 export default class UserDetails {
     public loggedIn = false
@@ -64,7 +58,7 @@ export class OsmConnection {
         oauth_secret: string
         url: string
     }
-    private readonly _dryRun: UIEventSource<boolean>
+    private readonly _dryRun: Store<boolean>
     private fakeUser: boolean
     private _onLoggedIn: ((userDetails: UserDetails) => void)[] = []
     private readonly _iframeMode: Boolean | boolean
@@ -72,7 +66,7 @@ export class OsmConnection {
     private isChecking = false
 
     constructor(options?: {
-        dryRun?: UIEventSource<boolean>
+        dryRun?: Store<boolean>
         fakeUser?: false | boolean
         oauth_token?: UIEventSource<string>
         // Used to keep multiple changesets open and to write to the correct changeset
@@ -87,7 +81,6 @@ export class OsmConnection {
             OsmConnection.oauth_configs[options.osmConfiguration ?? "osm"] ??
             OsmConnection.oauth_configs.osm
         console.debug("Using backend", this._oauth_config.url)
-        OsmObject.SetBackendUrl(this._oauth_config.url + "/")
         this._iframeMode = Utils.runningFromConsole ? false : window !== window.top
 
         this.userDetails = new UIEventSource<UserDetails>(
@@ -146,16 +139,6 @@ export class OsmConnection {
         } else {
             console.log("Not authenticated")
         }
-    }
-
-    public CreateChangesetHandler(allElements: ElementStorage, changes: Changes) {
-        return new ChangesetHandler(
-            this._dryRun,
-            <any>/*casting is needed to make the tests work*/ this,
-            allElements,
-            changes,
-            this.auth
-        )
     }
 
     public GetPreference(
@@ -252,7 +235,7 @@ export class OsmConnection {
                     userInfo.getElementsByTagName("changesets")[0].getAttribute("count") ?? 0
                 )
                 data.tracesCount = Number.parseInt(
-                    userInfo.getElementsByTagName("changesets")[0].getAttribute("count") ?? 0
+                    userInfo.getElementsByTagName("traces")[0].getAttribute("count") ?? 0
                 )
 
                 data.img = undefined
@@ -288,6 +271,57 @@ export class OsmConnection {
         )
     }
 
+    /**
+     * Interact with the API.
+     *
+     * @param path: the path to query, without host and without '/api/0.6'. Example 'notes/1234/close'
+     */
+    public async interact(
+        path: string,
+        method: "GET" | "POST" | "PUT" | "DELETE",
+        header?: Record<string, string | number>,
+        content?: string
+    ): Promise<any> {
+        return new Promise((ok, error) => {
+            this.auth.xhr(
+                {
+                    method,
+                    options: {
+                        header,
+                    },
+                    content,
+                    path: `/api/0.6/${path}`,
+                },
+                function (err, response) {
+                    if (err !== null) {
+                        error(err)
+                    } else {
+                        ok(response)
+                    }
+                }
+            )
+        })
+    }
+
+    public async post(
+        path: string,
+        content?: string,
+        header?: Record<string, string | number>
+    ): Promise<any> {
+        return await this.interact(path, "POST", header, content)
+    }
+    public async put(
+        path: string,
+        content?: string,
+        header?: Record<string, string | number>
+    ): Promise<any> {
+        return await this.interact(path, "PUT", header, content)
+    }
+
+    public async get(path: string, header?: Record<string, string | number>): Promise<any> {
+        return await this.interact(path, "GET", header)
+    }
+
     public closeNote(id: number | string, text?: string): Promise<void> {
         let textSuffix = ""
         if ((text ?? "") !== "") {
@@ -299,21 +333,7 @@ export class OsmConnection {
                 ok()
             })
         }
-        return new Promise((ok, error) => {
-            this.auth.xhr(
-                {
-                    method: "POST",
-                    path: `/api/0.6/notes/${id}/close${textSuffix}`,
-                },
-                function (err, _) {
-                    if (err !== null) {
-                        error(err)
-                    } else {
-                        ok()
-                    }
-                }
-            )
-        })
+        return this.post(`notes/${id}/close${textSuffix}`)
     }
 
     public reopenNote(id: number | string, text?: string): Promise<void> {
@@ -327,24 +347,10 @@ export class OsmConnection {
         if ((text ?? "") !== "") {
             textSuffix = "?text=" + encodeURIComponent(text)
         }
-        return new Promise((ok, error) => {
-            this.auth.xhr(
-                {
-                    method: "POST",
-                    path: `/api/0.6/notes/${id}/reopen${textSuffix}`,
-                },
-                function (err, _) {
-                    if (err !== null) {
-                        error(err)
-                    } else {
-                        ok()
-                    }
-                }
-            )
-        })
+        return this.post(`notes/${id}/reopen${textSuffix}`)
     }
 
-    public openNote(lat: number, lon: number, text: string): Promise<{ id: number }> {
+    public async openNote(lat: number, lon: number, text: string): Promise<{ id: number }> {
         if (this._dryRun.data) {
             console.warn("Dryrun enabled - not actually opening note with text ", text)
             return new Promise<{ id: number }>((ok) => {
@@ -356,29 +362,13 @@ export class OsmConnection {
         }
         const auth = this.auth
         const content = { lat, lon, text }
-        return new Promise((ok, error) => {
-            auth.xhr(
-                {
-                    method: "POST",
-                    path: `/api/0.6/notes.json`,
-                    options: {
-                        header: { "Content-Type": "application/json" },
-                    },
-                    content: JSON.stringify(content),
-                },
-                function (err, response: string) {
-                    console.log("RESPONSE IS", response)
-                    if (err !== null) {
-                        error(err)
-                    } else {
-                        const parsed = JSON.parse(response)
-                        const id = parsed.properties.id
-                        console.log("OPENED NOTE", id)
-                        ok({ id })
-                    }
-                }
-            )
+        const response = await this.post("notes.json", JSON.stringify(content), {
+            "Content-Type": "application/json",
         })
+        const parsed = JSON.parse(response)
+        const id = parsed.properties
+        console.log("OPENED NOTE", id)
+        return id
     }
 
     public async uploadGpxTrack(
@@ -434,31 +424,13 @@ export class OsmConnection {
         }
         body += "--" + boundary + "--\r\n"
 
-        return new Promise((ok, error) => {
-            auth.xhr(
-                {
-                    method: "POST",
-                    path: `/api/0.6/gpx/create`,
-                    options: {
-                        header: {
-                            "Content-Type": "multipart/form-data; boundary=" + boundary,
-                            "Content-Length": body.length,
-                        },
-                    },
-                    content: body,
-                },
-                function (err, response: string) {
-                    console.log("RESPONSE IS", response)
-                    if (err !== null) {
-                        error(err)
-                    } else {
-                        const parsed = JSON.parse(response)
-                        console.log("Uploaded GPX track", parsed)
-                        ok({ id: parsed })
-                    }
-                }
-            )
+        const response = await this.post("gpx/create", body, {
+            "Content-Type": "multipart/form-data; boundary=" + boundary,
+            "Content-Length": body.length,
         })
+        const parsed = JSON.parse(response)
+        console.log("Uploaded GPX track", parsed)
+        return { id: parsed }
     }
 
     public addCommentToNote(id: number | string, text: string): Promise<void> {

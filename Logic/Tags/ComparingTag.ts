@@ -15,11 +15,11 @@ export default class ComparingTag implements TagsFilter {
         this._representation = representation
     }
 
-    asChange(properties: any): { k: string; v: string }[] {
+    asChange(properties: Record<string, string>): { k: string; v: string }[] {
         throw "A comparable tag can not be used to be uploaded to OSM"
     }
 
-    asHumanString(linkToWiki: boolean, shorten: boolean, properties: any) {
+    asHumanString(linkToWiki: boolean, shorten: boolean, properties: Record<string, string>) {
         return this._key + this._representation
     }
 
@@ -44,7 +44,7 @@ export default class ComparingTag implements TagsFilter {
      * t.matchesProperties({key: 0}) // => true
      * t.matchesProperties({differentKey: 42}) // => false
      */
-    matchesProperties(properties: any): boolean {
+    matchesProperties(properties: Record<string, string>): boolean {
         return this._predicate(properties[this._key])
     }
 

@@ -1,10 +1,13 @@
-import { InputElement } from "./InputElement"
-import { UIEventSource } from "../../Logic/UIEventSource"
-import { Utils } from "../../Utils"
+import {InputElement} from "./InputElement"
+import {UIEventSource} from "../../Logic/UIEventSource"
+import {Utils} from "../../Utils"
 import BaseUIElement from "../BaseUIElement"
 import InputElementMap from "./InputElementMap"
 import Translations from "../i18n/Translations"
 
+/**
+ * @deprecated
+ */
 export class CheckBox extends InputElementMap<number[], boolean> {
     constructor(el: BaseUIElement | string, defaultValue?: boolean) {
         super(
@@ -25,7 +28,6 @@ export class CheckBox extends InputElementMap<number[], boolean> {
  */
 export default class CheckBoxes extends InputElement<number[]> {
     private static _nextId = 0
-    IsSelected: UIEventSource<boolean> = new UIEventSource<boolean>(false)
     private readonly value: UIEventSource<number[]>
     private readonly _elements: BaseUIElement[]
 
@@ -62,24 +64,19 @@ export default class CheckBoxes extends InputElement<number[]> {
 
             const label = document.createElement("label")
             label.htmlFor = input.id
+            label.appendChild(input)
             label.appendChild(inputI.ConstructElement())
             label.classList.add("block", "w-full", "p-2", "cursor-pointer", "bg-red")
 
-            const wrapper = document.createElement("div")
-            wrapper.classList.add("wrapper", "flex", "w-full", "border", "border-gray-400", "mb-1")
-            wrapper.appendChild(input)
-            wrapper.appendChild(label)
-            formTag.appendChild(wrapper)
+            formTag.appendChild(label)
 
             value.addCallbackAndRunD((selectedValues) => {
                 input.checked = selectedValues.indexOf(i) >= 0
 
                 if (input.checked) {
-                    wrapper.classList.remove("border-gray-400")
-                    wrapper.classList.add("border-black")
+                    label.classList.add("checked")
                 } else {
-                    wrapper.classList.add("border-gray-400")
-                    wrapper.classList.remove("border-black")
+                    label.classList.remove("checked")
                 }
             })
 

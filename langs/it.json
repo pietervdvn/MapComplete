@@ -41,12 +41,9 @@
     },
     "general": {
         "about": "Modifica e aggiungi con semplicità OpenStreetMap per un certo tema",
-        "aboutMapcomplete": "<h3>Informazioni</h3><p>Con MapComplete puoi arricchire OpenStreetMap con informazioni su un <b>singolo argomento</b>. Rispondi a poche domande e in pochi minuti i tuoi contributi saranno disponibili a tutto il mondo! L’utente <b>gestore del tema</b> definisce gli elementi, le domande e le lingue per quel tema.</p><h3>Scopri altro</h3><p>MapComplete <b>propone sempre un passo in più</b> per imparare qualcosa di nuovo su OpenStreetMap.</p><ul><li>Quando viene incorporato in un sito web, il collegamento dell’iframe punta a MapComplete a tutto schermo</li><li>La versione a tutto schermo fornisce informazioni su OpenStreetMap</li><li>La visualizzazione non necessita di alcun accesso ma per modificare occorre aver effettuato l’accesso su OSM.</li><li>Se non hai effettuato l’accesso, ti verrà richiesto di farlo</li><li>Dopo aver risposto ad una sola domanda potrai aggiungere dei nuovi punti alla mappa</li><li>Dopo qualche momento verranno mostrate le etichette effettive, in seguito i collegamenti alla wiki</li></ul><p></p><br><p>Hai trovato un <b>errore</b>? Vuoi richiedere <b>nuove funzionalità</b>? Vuoi aiutare con la <b>traduzione</b>? Dai un’occhiata al <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">codice sorgente</a> oppure al <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">tracker degli errori.</a></p><p>Vuoi vedere i <b>tuoi progressi</b>?Segui il contatore delle modifiche su <a href=\"{osmcha_link}\" target=\"_blank\">OsmCha</a>.</p>",
         "add": {
             "addNew": "Aggiungi {category} qua",
-            "addNewMapLabel": "Aggiungi nuovo elemento",
             "confirmButton": "Aggiungi una {category} qua.<br><div class=\"alert\">La tua aggiunta è visibile a chiunque</div>",
-            "confirmIntro": "<h3>Aggiungere un {title}?</h3>L'elemento che hai creato qui sarà <b>visibile da chiunque</b>. Per favore, aggiungi sulla mappa solo oggetti realmente esistenti. Molte applicazioni usano questi dati.",
             "disableFilters": "Disabilita tutti i filtri",
             "disableFiltersExplanation": "Alcuni oggetti potrebbero essere nascosti da un filtro",
             "hasBeenImported": "Questo elemento è stato già importato",
@@ -162,7 +159,6 @@
         "noTagsSelected": "Nessuna etichetta selezionata",
         "notValid": "Seleziona un valore valido per continuare",
         "number": "numero",
-        "oneSkippedQuestion": "Una domanda è stata scartata",
         "openStreetMapIntro": "<h3>Una mappa libera</h3><p>Non sarebbe perfetto se esistesse una carta geografica che chiunque può modificare e utilizzare liberamente? Un unico posto in un cui conservare tutte le informazioni geografiche? In questo modo tutti questi siti web con mappe diverse, piccole e incompatibili (che sono sempre obsolete) diverrebbero istantaneamente inutili.</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> è proprio questa mappa. I dati geografici possono essere usati liberamente (rispettando <a href=\"https://osm.org/copyright\" target=\"_blank\">l’attribuzione e la pubblicazione delle modifiche di quei dati</a>). In più, chiunque può aggiungere liberamente nuovi dati e correggere gli errori. Anche questo sito usa OpenStreetMap. Tutti i dati provengono da lì e le tue risposte e correzioni finiscono sempre lì.</p><p>Moltissime persone e applicazioni già usano OpenStreetmap: <a href=\"https://maps.me/\" target=\"_blank\">Maps.me</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a> ma anche le cartine di Facebook, Instagram, Apple e Bing si basano (parzialmente) su OpenStreetMap. Tutto quello che cambi qua si rifletterà anche su quelle applicazioni (non appena avranno aggiornato i loro dati!)</p>",
         "openTheMap": "Apri la mappa",
         "opening_hours": {
@@ -184,7 +180,7 @@
         "pdf": {
             "attr": "Dati della mappa © OpenStreetMap Contributors, riutilizzabile con licenza ODbL",
             "attrBackground": "Livello di sfondo: {background}",
-            "generatedWith": "Generato con MapComplete.osm.be",
+            "generatedWith": "Generato con MapComplete.osm.be/{layoutid}",
             "versionInfo": "v{version} - generato il {date}"
         },
         "pickLanguage": "Scegli una lingua: ",
@@ -230,7 +226,6 @@
             "thanksForSharing": "Grazie per la condivisione!"
         },
         "skip": "Salta questa domanda",
-        "skippedQuestions": "Alcune domande sono state scartate",
         "testing": "Prova (le modifiche non verranno salvate)",
         "weekdays": {
             "abbreviations": {
@@ -299,52 +294,6 @@
         "uploadMultipleDone": "Sono state aggiunte {count} immagini. Grazie per l’aiuto!",
         "uploadingMultiple": "Caricamento di {count} foto…",
         "uploadingPicture": "Caricamento della tua foto…"
-    },
-    "importHelper": {
-        "askMetadata": {
-            "downloadGeojson": "Scarica Geo JSON",
-            "giveDescription": "Per favore, scrivi una breve descrizione per chi vede la nota. Una buona nota descrive ciò che il contributore dovrebbe fare, per esempio <i>Qui dovrebbe esserci una panchina. Se sei nei paraggi, puoi controllare e indicare se la panchina esiste o no?</i> (Verrà aggiunto automaticamente un link a MapComplete)",
-            "giveSource": "Qual è la fonte di questi dati? Se 'source' è impostata nell'elemento, questo valore sarà ignorato",
-            "giveWikilink": "Su quale pagina wiki si possono trovare informazioni riguardo questa importazione?",
-            "intro": "Prima di aggiungere {count} note, per favore fornisci alcune informazioni aggiuntive.",
-            "orDownload": "In alternativa, puoi scaricare i dati per importarli direttamente",
-            "shouldBeOsmWikilink": "È necessario un link ad una pagina su wiki.openstreetmap.org",
-            "shouldBeUrl": "Non è un URL valido"
-        },
-        "confirmProcess": {
-            "contactedCommunity": "Ho contattato la community (locale) a proposito di questa importazione",
-            "licenseIsCompatible": "I dati da importare hanno una licenza che ne permette l'importazione in OSM. È permesso distribuirli anche per scopi commerciali, con una minima attribuzione",
-            "readImportGuidelines": "Ho letto le linee guida per le importazioni sul wiki di OSM",
-            "title": "Licenza e community",
-            "titleLong": "Hai seguito la procedura di importazione?",
-            "wikipageIsMade": "Il processo è documentato sul wiki di OSM (più tardi avrai bisogno di questo link)"
-        },
-        "conflationChecker": {
-            "cacheExpired": "La cache è scaduta",
-            "downloadOverpassData": "Scarica il GeoJSON caricato da Overpass",
-            "importCandidatesCount": "I {count} elementi in rosso sulla mappa seguente sono tutti i tuoi candidati per l'importazione.",
-            "loadedDataAge": "I dati caricati provengono dalla cache e sono vecchi {age}",
-            "mapShowingNearbyIntro": "Le mappe seguenti mostrano elementi da poter importare che hanno all'interno un elemento OSM ",
-            "nearbyWarn": "I {count} elementi in rosso sulla mappa seguente <b>not</b> saranno importati!",
-            "nothingLoaded": "Non ci sono elementi caricati da OpenStreetMap che corrispondono al livello corrente {name}",
-            "osmLoaded": "{count} elementi sono stati caricati da OpenStreetMap e corrispondono al livello <b>{name}</b>.",
-            "reloadTheCache": "Svuota la cache e lancia nuovamente la richiesta Overpass",
-            "setRangeToZero": "Imposta l'intervallo a 0 oppure 1 se vuoi importarli tutti",
-            "states": {
-                "error": "Errore elaborando i dati da Overpass a causa di {error}",
-                "idle": "Controllo della memoria persistente locale…",
-                "running": "Richiesta Overpass in corso…",
-                "unexpected": "Stato {state} non previsto"
-            },
-            "title": "Confronta con i dati esistenti",
-            "titleLive": "Dati in tempo reale su OSM",
-            "titleNearby": "Elementi vicini",
-            "zoomIn": "Il livello attuale di zoom è {current}"
-        },
-        "createNotes": {
-            "creating": "Create <b>{count}</b> note su {total}",
-            "done": "Tutte le {count} note sono state create!"
-        }
     },
     "index": {
         "#": "Questi testi sono mostrati sopra ai pulsanti del tema quando nessun tema è stato caricato",

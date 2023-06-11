@@ -11,9 +11,28 @@
   },
   "tags": [
     {
+      "key": "surface:colour",
+      "description": "The MapComplete theme Rainbow pedestrian crossings has a layer Crossings with rainbow paintings showing features with this tag",
+      "value": "rainbow"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Rainbow pedestrian crossings has a layer Crossings with rainbow paintings showing features with this tag",
+      "value": "crossing"
+    },
+    {
+      "key": "highway",
+      "description": "The MapComplete theme Rainbow pedestrian crossings has a layer Crossings with rainbow paintings showing features with this tag",
+      "value": "footway"
+    },
+    {
       "key": "footway",
       "description": "The MapComplete theme Rainbow pedestrian crossings has a layer Crossings with rainbow paintings showing features with this tag",
       "value": "crossing"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Crossings with rainbow paintings' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",

@@ -25,7 +25,13 @@ export class StackedRenderingChart extends ChartJs {
             groupToOtherCutoff: options?.groupToOtherCutoff,
         })
         if (labels === undefined || data === undefined) {
-            console.error("Could not extract data and labels for ", tr, " with features", features)
+            console.error(
+                "Could not extract data and labels for ",
+                tr,
+                " with features",
+                features,
+                ": no labels or no data"
+            )
             throw "No labels or data given..."
         }
         // labels: ["cyclofix", "buurtnatuur", ...]; data : [ ["cyclofix-changeset", "cyclofix-changeset", ...], ["buurtnatuur-cs", "buurtnatuur-cs"], ... ]
@@ -121,7 +127,7 @@ export class StackedRenderingChart extends ChartJs {
         let earliest: Date = undefined
         let latest: Date = undefined
         let allDates = new Set<string>()
-        features.forEach((value, key) => {
+        features.forEach((value) => {
             const d = new Date(value.properties.date)
             Utils.SetMidnight(d)
 

@@ -475,7 +475,7 @@
             }
         },
         "overrideAll": {
-            "tagRenderings+": {
+            "+tagRenderings": {
                 "0": {
                     "mappings": {
                         "0": {
@@ -694,14 +694,14 @@
     "grb": {
         "description": "Ce thème tente d’aider l’import automatique GRB.",
         "layers": {
-            "1": {
+            "0": {
                 "tagRenderings": {
                     "building type": {
                         "question": "De quel type de bâtiment s’agit-il ?"
                     }
                 }
             },
-            "6": {
+            "1": {
                 "tagRenderings": {
                     "Import-button": {
                         "mappings": {

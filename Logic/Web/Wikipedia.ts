@@ -1,9 +1,17 @@
-/**
- * Some usefull utility functions around the wikipedia API
- */
 import { Utils } from "../../Utils"
-import { UIEventSource } from "../UIEventSource"
-import { WikipediaBoxOptions } from "../../UI/Wikipedia/WikipediaBox"
+import Wikidata, { WikidataResponse } from "./Wikidata"
+import { Store, UIEventSource } from "../UIEventSource"
+
+export interface FullWikipediaDetails {
+    articleUrl?: string
+    language?: string
+    pagename?: string
+    fullArticle?: string
+    firstParagraph?: string
+    restOfArticle?: string
+    wikidata?: WikidataResponse
+    title?: string
+}
 
 export default class Wikipedia {
     /**
@@ -26,11 +34,8 @@ export default class Wikipedia {
 
     private static readonly idsToRemove = ["sjabloon_zie"]
 
-    private static readonly _cache = new Map<
-        string,
-        UIEventSource<{ success: string } | { error: any }>
-    >()
-
+    private static readonly _cache = new Map<string, Promise<string>>()
+    private static _fullDetailsCache = new Map<string, Store<FullWikipediaDetails>>()
     public readonly backend: string
 
     constructor(options?: { language?: "en" | string } | { backend?: string }) {
@@ -56,23 +61,81 @@ export default class Wikipedia {
     }
 
     /**
-     * Extracts the actual pagename; returns undefined if this came from a different wikimedia entry
+     * Fetch all useful information for the given entity.
      *
-     * new Wikipedia({backend: "https://wiki.openstreetmap.org"}).extractPageName("https://wiki.openstreetmap.org/wiki/NL:Speelbos") // => "NL:Speelbos"
-     * new Wikipedia().extractPageName("https://wiki.openstreetmap.org/wiki/NL:Speelbos") // => undefined
      */
-    public extractPageName(input: string): string | undefined {
-        if (!input.startsWith(this.backend)) {
-            return undefined
+    public static fetchArticleAndWikidata(
+        wikidataOrPageId: string,
+        preferedLanguage: string
+    ): Store<FullWikipediaDetails> {
+        const cachekey = preferedLanguage + wikidataOrPageId
+        const cached = Wikipedia._fullDetailsCache.get(cachekey)
+        if (cached) {
+            return cached
         }
-        input = input.substring(this.backend.length)
+        console.log("Constructing store for", cachekey)
+        const store = new UIEventSource<FullWikipediaDetails>({}, cachekey)
+        Wikipedia._fullDetailsCache.set(cachekey, store)
 
-        const matched = input.match("/?wiki/(.+)")
-        if (matched === undefined || matched === null) {
-            return undefined
+        // Are we dealing with a wikidata item?
+        const wikidataId = Wikidata.ExtractKey(wikidataOrPageId)
+        if (!wikidataId) {
+            // We are dealing with a wikipedia identifier, e.g. 'NL:articlename', 'https://nl.wikipedia.org/wiki/article', ...
+            const { language, pageName } = Wikipedia.extractLanguageAndName(wikidataOrPageId)
+            store.data.articleUrl = new Wikipedia({ language }).getPageUrl(pageName)
+            store.data.language = language
+            store.data.pagename = pageName
+            store.data.title = pageName
+        } else {
+            // Jup, this is a wikidata item
+            // Lets fetch the wikidata
+            store.data.title = wikidataId
+            Wikidata.LoadWikidataEntryAsync(wikidataId).then((wikidata) => {
+                store.data.wikidata = wikidata
+                store.ping()
+                // With the wikidata, we can search for the appropriate wikipedia page
+                const preferredLanguage = [
+                    preferedLanguage,
+                    "en",
+                    Array.from(wikidata.wikisites.keys())[0],
+                ]
+
+                for (const language of preferredLanguage) {
+                    const pagetitle = wikidata.wikisites.get(language)
+                    if (pagetitle) {
+                        store.data.articleUrl = new Wikipedia({ language }).getPageUrl(pagetitle)
+                        store.data.pagename = pagetitle
+                        store.data.language = language
+                        store.data.title = pagetitle
+                        store.ping()
+                        break
+                    }
+                }
+            })
         }
-        const [_, pageName] = matched
-        return pageName
+
+        // Now that the pageURL has been setup, we can focus on downloading the actual article
+        // We setup a listener. As soon as the article-URL is know, we'll fetch the actual page
+        // This url can either be set by the Wikidata-response or directly if we are dealing with a wikipedia-url
+        store.addCallbackAndRun((data) => {
+            if (data.language === undefined || data.pagename === undefined) {
+                return
+            }
+            const wikipedia = new Wikipedia({ language: data.language })
+            wikipedia.GetArticleHtml(data.pagename).then((article) => {
+                data.fullArticle = article
+                const content = document.createElement("div")
+                content.innerHTML = article
+                const firstParagraph = content.getElementsByTagName("p").item(0)
+                data.firstParagraph = firstParagraph.innerHTML
+                content.removeChild(firstParagraph)
+                data.restOfArticle = content.innerHTML
+                store.ping()
+            })
+            return true // unregister
+        })
+
+        return store
     }
 
     private static getBackendUrl(
@@ -90,18 +153,24 @@ export default class Wikipedia {
         return backend
     }
 
-    public GetArticle(
-        pageName: string,
-        options: WikipediaBoxOptions
-    ): UIEventSource<{ success: string } | { error: any }> {
-        const key = this.backend + ":" + pageName + ":" + (options.firstParagraphOnly ?? false)
-        const cached = Wikipedia._cache.get(key)
-        if (cached !== undefined) {
-            return cached
+    /**
+     * Extracts the actual pagename; returns undefined if this came from a different wikimedia entry
+     *
+     * new Wikipedia({backend: "https://wiki.openstreetmap.org"}).extractPageName("https://wiki.openstreetmap.org/wiki/NL:Speelbos") // => "NL:Speelbos"
+     * new Wikipedia().extractPageName("https://wiki.openstreetmap.org/wiki/NL:Speelbos") // => undefined
+     */
+    public extractPageName(input: string): string | undefined {
+        if (!input.startsWith(this.backend)) {
+            return undefined
         }
-        const v = UIEventSource.FromPromiseWithErr(this.GetArticleAsync(pageName, options))
-        Wikipedia._cache.set(key, v)
-        return v
+        input = input.substring(this.backend.length)
+
+        const matched = input.match("/?wiki/(.+)")
+        if (matched === undefined || matched === null) {
+            return undefined
+        }
+        const [_, pageName] = matched
+        return pageName
     }
 
     public getDataUrl(pageName: string): string {
@@ -172,12 +241,23 @@ export default class Wikipedia {
         })
     }
 
-    public async GetArticleAsync(
-        pageName: string,
-        options: {
-            firstParagraphOnly?: false | boolean
+    /**
+     * Returns the innerHTML for the given article as string.
+     * Some cleanup is applied to this.
+     *
+     * This method uses a static, local cache, so each article will be retrieved only once via the network
+     */
+    public GetArticleHtml(pageName: string): Promise<string> {
+        const cacheKey = this.backend + "/" + pageName
+        if (Wikipedia._cache.has(cacheKey)) {
+            return Wikipedia._cache.get(cacheKey)
         }
-    ): Promise<string | undefined> {
+        const promise = this.GetArticleUncachedAsync(pageName)
+        Wikipedia._cache.set(cacheKey, promise)
+        return promise
+    }
+
+    private async GetArticleUncachedAsync(pageName: string): Promise<string> {
         const response = await Utils.downloadJson(this.getDataUrl(pageName))
         if (response?.parse?.text === undefined) {
             return undefined
@@ -212,10 +292,6 @@ export default class Wikipedia {
                 // note: link.getAttribute("href") gets the textual value, link.href is the rewritten version which'll contain the host for relative paths
                 link.href = `${this.backend}${link.getAttribute("href")}`
             })
-
-        if (options?.firstParagraphOnly) {
-            return content.getElementsByTagName("p").item(0).innerHTML
-        }
 
         return content.innerHTML
     }

@@ -1,12 +1,13 @@
 import { Changes } from "../../Osm/Changes"
-import { OsmNode, OsmObject, OsmRelation, OsmWay } from "../../Osm/OsmObject"
-import FeatureSource from "../FeatureSource"
+import { OsmNode, OsmRelation, OsmWay } from "../../Osm/OsmObject"
+import { IndexedFeatureSource, WritableFeatureSource } from "../FeatureSource"
 import { UIEventSource } from "../../UIEventSource"
 import { ChangeDescription } from "../../Osm/Actions/ChangeDescription"
-import { ElementStorage } from "../../ElementStorage"
 import { OsmId, OsmTags } from "../../../Models/OsmFeature"
+import { Feature } from "geojson"
+import OsmObjectDownloader from "../../Osm/OsmObjectDownloader"
 
-export class NewGeometryFromChangesFeatureSource implements FeatureSource {
+export class NewGeometryFromChangesFeatureSource implements WritableFeatureSource {
     // This class name truly puts the 'Java' into 'Javascript'
 
     /**
@@ -15,29 +16,23 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
      * These elements are probably created by the 'SimpleAddUi' which generates a new point, but the import functionality might create a line or polygon too.
      * Other sources of new points are e.g. imports from nodes
      */
-    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> =
-        new UIEventSource<{ feature: any; freshness: Date }[]>([])
-    public readonly name: string = "newFeatures"
+    public readonly features: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
 
-    constructor(changes: Changes, allElementStorage: ElementStorage, backendUrl: string) {
+    constructor(changes: Changes, allElementStorage: IndexedFeatureSource, backendUrl: string) {
         const seenChanges = new Set<ChangeDescription>()
         const features = this.features.data
         const self = this
-
-        changes.pendingChanges.stabilized(100).addCallbackAndRunD((changes) => {
+        const backend = changes.backend
+        changes.pendingChanges.addCallbackAndRunD((changes) => {
             if (changes.length === 0) {
                 return
             }
 
-            const now = new Date()
             let somethingChanged = false
 
             function add(feature) {
                 feature.id = feature.properties.id
-                features.push({
-                    feature: feature,
-                    freshness: now,
-                })
+                features.push(feature)
                 somethingChanged = true
             }
 
@@ -53,33 +48,36 @@ export class NewGeometryFromChangesFeatureSource implements FeatureSource {
                     continue
                 }
 
+                console.log("Handling pending change")
                 if (change.id > 0) {
                     // This is an already existing object
                     // In _most_ of the cases, this means that this _isn't_ a new object
                     // However, when a point is snapped to an already existing point, we have to create a representation for this point!
                     // For this, we introspect the change
-                    if (allElementStorage.has(change.type + "/" + change.id)) {
+                    if (allElementStorage.featuresById.data.has(change.type + "/" + change.id)) {
                         // The current point already exists, we don't have to do anything here
                         continue
                     }
                     console.debug("Detected a reused point")
                     // The 'allElementsStore' does _not_ have this point yet, so we have to create it
-                    OsmObject.DownloadObjectAsync(change.type + "/" + change.id).then((feat) => {
-                        console.log("Got the reused point:", feat)
-                        for (const kv of change.tags) {
-                            feat.tags[kv.k] = kv.v
-                        }
-                        const geojson = feat.asGeoJson()
-                        allElementStorage.addOrGetElement(geojson)
-                        self.features.data.push({ feature: geojson, freshness: new Date() })
-                        self.features.ping()
-                    })
+                    new OsmObjectDownloader(backend)
+                        .DownloadObjectAsync(change.type + "/" + change.id)
+                        .then((feat) => {
+                            console.log("Got the reused point:", feat)
+                            if (feat === "deleted") {
+                                throw "Panic: snapping to a point, but this point has been deleted in the meantime"
+                            }
+                            for (const kv of change.tags) {
+                                feat.tags[kv.k] = kv.v
+                            }
+                            const geojson = feat.asGeoJson()
+                            self.features.data.push(geojson)
+                            self.features.ping()
+                        })
                     continue
-                } else if (change.id < 0 && change.changes === undefined) {
-                    // The geometry is not described - not a new point
-                    if (change.id < 0) {
-                        console.error("WARNING: got a new point without geometry!")
-                    }
+                } else if (change.changes === undefined) {
+                    // The geometry is not described - not a new point or geometry change, but probably a tagchange to a newly created point
+                    // Not something that should be handled here
                     continue
                 }
 

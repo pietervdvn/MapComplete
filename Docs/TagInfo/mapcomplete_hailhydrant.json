@@ -16,6 +16,10 @@
       "value": "fire_hydrant"
     },
     {
+      "key": "id",
+      "description": "Layer 'Map of hydrants' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "colour",
       "description": "Layer 'Map of hydrants' shows and asks freeform values for key 'colour' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')"
     },
@@ -131,6 +135,10 @@
       "value": "fire_extinguisher"
     },
     {
+      "key": "id",
+      "description": "Layer 'Map of fire extinguishers' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "location",
       "description": "Layer 'Map of fire extinguishers' shows and asks freeform values for key 'location' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations')"
     },
@@ -164,6 +172,10 @@
       "key": "amenity",
       "description": "The MapComplete theme Hydrants, Extinguishers, Fire stations, and Ambulance stations has a layer Map of fire stations showing features with this tag",
       "value": "fire_station"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Map of fire stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "name",
@@ -235,6 +247,10 @@
       "key": "emergency",
       "description": "The MapComplete theme Hydrants, Extinguishers, Fire stations, and Ambulance stations has a layer Map of ambulance stations showing features with this tag",
       "value": "ambulance_station"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Map of ambulance stations' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Hydrants, Extinguishers, Fire stations, and Ambulance stations') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "name",

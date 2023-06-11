@@ -1,62 +1,381 @@
 import Combine from "./Base/Combine"
-import { FixedUiElement } from "./Base/FixedUiElement"
+import {FixedUiElement} from "./Base/FixedUiElement"
 import BaseUIElement from "./BaseUIElement"
 import Title from "./Base/Title"
 import Table from "./Base/Table"
-import { SpecialVisualization } from "./SpecialVisualization"
-import { HistogramViz } from "./Popup/HistogramViz"
-import { StealViz } from "./Popup/StealViz"
-import { MinimapViz } from "./Popup/MinimapViz"
-import { SidedMinimap } from "./Popup/SidedMinimap"
-import { ShareLinkViz } from "./Popup/ShareLinkViz"
-import { UploadToOsmViz } from "./Popup/UploadToOsmViz"
-import { MultiApplyViz } from "./Popup/MultiApplyViz"
-import { ExportAsGpxViz } from "./Popup/ExportAsGpxViz"
-import { AddNoteCommentViz } from "./Popup/AddNoteCommentViz"
-import { PlantNetDetectionViz } from "./Popup/PlantNetDetectionViz"
-import { ConflateButton, ImportPointButton, ImportWayButton } from "./Popup/ImportButton"
+import {RenderingSpecification, SpecialVisualization, SpecialVisualizationState,} from "./SpecialVisualization"
+import {HistogramViz} from "./Popup/HistogramViz"
+import {MinimapViz} from "./Popup/MinimapViz"
+import {ShareLinkViz} from "./Popup/ShareLinkViz"
+import {UploadToOsmViz} from "./Popup/UploadToOsmViz"
+import {MultiApplyViz} from "./Popup/MultiApplyViz"
+import {AddNoteCommentViz} from "./Popup/AddNoteCommentViz"
+import {PlantNetDetectionViz} from "./Popup/PlantNetDetectionViz"
 import TagApplyButton from "./Popup/TagApplyButton"
-import { CloseNoteButton } from "./Popup/CloseNoteButton"
-import { NearbyImageVis } from "./Popup/NearbyImageVis"
-import { MapillaryLinkVis } from "./Popup/MapillaryLinkVis"
-import { Stores, UIEventSource } from "../Logic/UIEventSource"
-import AllTagsPanel from "./AllTagsPanel.svelte"
+import {CloseNoteButton} from "./Popup/CloseNoteButton"
+import {MapillaryLinkVis} from "./Popup/MapillaryLinkVis"
+import {Store, Stores, UIEventSource} from "../Logic/UIEventSource"
+import AllTagsPanel from "./Popup/AllTagsPanel.svelte"
 import AllImageProviders from "../Logic/ImageProviders/AllImageProviders"
-import { ImageCarousel } from "./Image/ImageCarousel"
-import { ImageUploadFlow } from "./Image/ImageUploadFlow"
-import { VariableUiElement } from "./Base/VariableUIElement"
-import { Utils } from "../Utils"
-import WikipediaBox from "./Wikipedia/WikipediaBox"
-import Wikidata, { WikidataResponse } from "../Logic/Web/Wikidata"
-import { Translation } from "./i18n/Translation"
+import {ImageCarousel} from "./Image/ImageCarousel"
+import {ImageUploadFlow} from "./Image/ImageUploadFlow"
+import {VariableUiElement} from "./Base/VariableUIElement"
+import {Utils} from "../Utils"
+import Wikidata, {WikidataResponse} from "../Logic/Web/Wikidata"
+import {Translation} from "./i18n/Translation"
 import Translations from "./i18n/Translations"
 import ReviewForm from "./Reviews/ReviewForm"
 import ReviewElement from "./Reviews/ReviewElement"
 import OpeningHoursVisualization from "./OpeningHours/OpeningHoursVisualization"
 import LiveQueryHandler from "../Logic/Web/LiveQueryHandler"
-import { SubtleButton } from "./Base/SubtleButton"
+import {SubtleButton} from "./Base/SubtleButton"
 import Svg from "../Svg"
-import { OpenIdEditor, OpenJosm } from "./BigComponents/CopyrightPanel"
-import Hash from "../Logic/Web/Hash"
 import NoteCommentElement from "./Popup/NoteCommentElement"
 import ImgurUploader from "../Logic/ImageProviders/ImgurUploader"
 import FileSelectorButton from "./Input/FileSelectorButton"
-import { LoginToggle } from "./Popup/LoginButton"
+import {LoginToggle} from "./Popup/LoginButton"
 import Toggle from "./Input/Toggle"
-import { SubstitutedTranslation } from "./SubstitutedTranslation"
+import {SubstitutedTranslation} from "./SubstitutedTranslation"
 import List from "./Base/List"
-import { OsmFeature } from "../Models/OsmFeature"
-import LayerConfig from "../Models/ThemeConfig/LayerConfig"
-import { GeoOperations } from "../Logic/GeoOperations"
 import StatisticsPanel from "./BigComponents/StatisticsPanel"
 import AutoApplyButton from "./Popup/AutoApplyButton"
-import { LanguageElement } from "./Popup/LanguageElement"
+import {LanguageElement} from "./Popup/LanguageElement"
 import FeatureReviews from "../Logic/Web/MangroveReviews"
 import Maproulette from "../Logic/Maproulette"
 import SvelteUIElement from "./Base/SvelteUIElement"
+import {BBoxFeatureSourceForLayer} from "../Logic/FeatureSource/Sources/TouchesBboxFeatureSource"
+import QuestionViz from "./Popup/QuestionViz"
+import {Feature, Point} from "geojson"
+import {GeoOperations} from "../Logic/GeoOperations"
+import CreateNewNote from "./Popup/CreateNewNote.svelte"
+import AddNewPoint from "./Popup/AddNewPoint/AddNewPoint.svelte"
+import UserProfile from "./BigComponents/UserProfile.svelte"
+import LanguagePicker from "./LanguagePicker"
+import Link from "./Base/Link"
+import LayerConfig from "../Models/ThemeConfig/LayerConfig"
+import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
+import NearbyImages, {NearbyImageOptions, P4CPicture, SelectOneNearbyImage,} from "./Popup/NearbyImages"
+import {Tag} from "../Logic/Tags/Tag"
+import ChangeTagAction from "../Logic/Osm/Actions/ChangeTagAction"
+import {And} from "../Logic/Tags/And"
+import {SaveButton} from "./Popup/SaveButton"
+import Lazy from "./Base/Lazy"
+import {CheckBox} from "./Input/Checkboxes"
+import Slider from "./Input/Slider"
+import {OsmTags, WayId} from "../Models/OsmFeature"
+import MoveWizard from "./Popup/MoveWizard"
+import SplitRoadWizard from "./Popup/SplitRoadWizard"
+import {ExportAsGpxViz} from "./Popup/ExportAsGpxViz"
+import WikipediaPanel from "./Wikipedia/WikipediaPanel.svelte"
+import TagRenderingEditable from "./Popup/TagRendering/TagRenderingEditable.svelte";
+import {PointImportButtonViz} from "./Popup/ImportButtons/PointImportButtonViz";
+import WayImportButtonViz from "./Popup/ImportButtons/WayImportButtonViz";
+import ConflateImportButtonViz from "./Popup/ImportButtons/ConflateImportButtonViz";
+import DeleteWizard from "./Popup/DeleteFlow/DeleteWizard.svelte";
+import {OpenJosm} from "./BigComponents/OpenJosm";
+import OpenIdEditor from "./BigComponents/OpenIdEditor.svelte";
+
+class NearbyImageVis implements SpecialVisualization {
+    // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
+    args: { name: string; defaultValue?: string; doc: string; required?: boolean }[] = [
+        {
+            name: "mode",
+            defaultValue: "expandable",
+            doc: "Indicates how this component is initialized. Options are: \n\n- `open`: always show and load the pictures\n- `collapsable`: show the pictures, but a user can collapse them\n- `expandable`: shown by default; but a user can collapse them.",
+        },
+        {
+            name: "mapillary",
+            defaultValue: "true",
+            doc: "If 'true', includes a link to mapillary on this location.",
+        },
+    ]
+    docs =
+        "A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature"
+    funcName = "nearby_images"
+
+    constr(
+        state: SpecialVisualizationState,
+        tagSource: UIEventSource<Record<string, string>>,
+        args: string[],
+        feature: Feature,
+        layer: LayerConfig
+    ): BaseUIElement {
+        const t = Translations.t.image.nearbyPictures
+        const mode: "open" | "expandable" | "collapsable" = <any>args[0]
+        const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
+        const id: string = tagSource.data["id"]
+        const canBeEdited: boolean = !!id?.match("(node|way|relation)/-?[0-9]+")
+        const selectedImage = new UIEventSource<P4CPicture>(undefined)
+
+        let saveButton: BaseUIElement = undefined
+        if (canBeEdited) {
+            const confirmText: BaseUIElement = new SubstitutedTranslation(
+                t.confirm,
+                tagSource,
+                state
+            )
+
+            const onSave = async () => {
+                console.log("Selected a picture...", selectedImage.data)
+                const osmTags = selectedImage.data.osmTags
+                const tags: Tag[] = []
+                for (const key in osmTags) {
+                    tags.push(new Tag(key, osmTags[key]))
+                }
+                await state?.changes?.applyAction(
+                    new ChangeTagAction(id, new And(tags), tagSource.data, {
+                        theme: state?.layout.id,
+                        changeType: "link-image",
+                    })
+                )
+            }
+            saveButton = new SaveButton(
+                selectedImage,
+                state,
+                confirmText,
+                t.noImageSelected
+            )
+                .onClick(onSave)
+                .SetClass("flex justify-end")
+        }
+
+        const nearby = new Lazy(() => {
+            const towardsCenter = new CheckBox(t.onlyTowards, false)
+
+            const maxSearchRadius = 100
+            const stepSize = 10
+            const defaultValue = Math.floor(maxSearchRadius / (2 * stepSize)) * stepSize
+            const fromOsmPreferences = state?.osmConnection
+                ?.GetPreference("nearby-images-radius", "" + defaultValue)
+                .sync(
+                    (s) => Number(s),
+                    [],
+                    (i) => "" + i
+                )
+            const radiusValue = new UIEventSource(fromOsmPreferences.data)
+            radiusValue.addCallbackAndRunD((v) => fromOsmPreferences.setData(v))
+
+            const radius = new Slider(stepSize, maxSearchRadius, {
+                value: radiusValue,
+                step: 10,
+            })
+            const alreadyInTheImage = AllImageProviders.LoadImagesFor(tagSource)
+            const options: NearbyImageOptions & { value } = {
+                lon,
+                lat,
+                searchRadius: maxSearchRadius,
+                shownRadius: radius.GetValue(),
+                value: selectedImage,
+                blacklist: alreadyInTheImage,
+                towardscenter: towardsCenter.GetValue(),
+                maxDaysOld: 365 * 3,
+            }
+            const slideshow = canBeEdited
+                ? new SelectOneNearbyImage(options, state.indexedFeatures)
+                : new NearbyImages(options, state.indexedFeatures)
+            const controls = new Combine([
+                towardsCenter,
+                new Combine([
+                    new VariableUiElement(
+                        radius.GetValue().map((radius) => t.withinRadius.Subs({radius}))
+                    ),
+                    radius,
+                ]).SetClass("flex justify-between"),
+            ]).SetClass("flex flex-col")
+            return new Combine([
+                slideshow,
+                controls,
+                saveButton,
+                new MapillaryLinkVis().constr(state, tagSource, [], feature).SetClass("mt-6"),
+            ])
+        })
+
+        let withEdit: BaseUIElement = nearby
+        if (canBeEdited) {
+            withEdit = new Combine([t.hasMatchingPicture, nearby]).SetClass("flex flex-col")
+        }
+
+        if (mode === "open") {
+            return withEdit
+        }
+        const toggleState = new UIEventSource<boolean>(mode === "collapsable")
+        return new Toggle(
+            new Combine([new Title(t.title), withEdit]),
+            new Title(t.browseNearby).onClick(() => toggleState.setData(true)),
+            toggleState
+        )
+    }
+}
+
+class StealViz implements SpecialVisualization {
+    // Class must be in SpecialVisualisations due to weird cyclical import that breaks the tests
+
+    funcName = "steal"
+    docs = "Shows a tagRendering from a different object as if this was the object itself"
+    args = [
+        {
+            name: "featureId",
+            doc: "The key of the attribute which contains the id of the feature from which to use the tags",
+            required: true,
+        },
+        {
+            name: "tagRenderingId",
+            doc: "The layer-id and tagRenderingId to render. Can be multiple value if ';'-separated (in which case every value must also contain the layerId, e.g. `layerId.tagRendering0; layerId.tagRendering1`). Note: this can cause layer injection",
+            required: true,
+        },
+    ]
+
+    constr(state: SpecialVisualizationState, featureTags, args) {
+        const [featureIdKey, layerAndtagRenderingIds] = args
+        const tagRenderings: [LayerConfig, TagRenderingConfig][] = []
+        for (const layerAndTagRenderingId of layerAndtagRenderingIds.split(";")) {
+            const [layerId, tagRenderingId] = layerAndTagRenderingId.trim().split(".")
+            const layer = state.layout.layers.find((l) => l.id === layerId)
+            const tagRendering = layer.tagRenderings.find((tr) => tr.id === tagRenderingId)
+            tagRenderings.push([layer, tagRendering])
+        }
+        if (tagRenderings.length === 0) {
+            throw "Could not create stolen tagrenddering: tagRenderings not found"
+        }
+        return new VariableUiElement(
+            featureTags.map((tags) => {
+                const featureId = tags[featureIdKey]
+                if (featureId === undefined) {
+                    return undefined
+                }
+                const otherTags = state.featureProperties.getStore(featureId)
+                const otherFeature = state.indexedFeatures.featuresById.data.get(featureId);
+                const elements: BaseUIElement[] = []
+                for (const [layer, tagRendering] of tagRenderings) {
+                    elements.push(new SvelteUIElement(TagRenderingEditable, {
+                        config: tagRendering,
+                        tags: otherTags,
+                        selectedElement: otherFeature,
+                        state,
+                        layer
+                    }))
+                }
+                if (elements.length === 1) {
+                    return elements[0]
+                }
+                return new Combine(elements).SetClass("flex flex-col")
+            }, [state.indexedFeatures.featuresById])
+        )
+    }
+
+    getLayerDependencies(args): string[] {
+        const [_, tagRenderingId] = args
+        if (tagRenderingId.indexOf(".") < 0) {
+            throw "Error: argument 'layerId.tagRenderingId' of special visualisation 'steal' should contain a dot"
+        }
+        const [layerId, __] = tagRenderingId.split(".")
+        return [layerId]
+    }
+}
 
 export default class SpecialVisualizations {
     public static specialVisualizations: SpecialVisualization[] = SpecialVisualizations.initList()
+
+    static undoEncoding(str: string) {
+        return str
+            .trim()
+            .replace(/&LPARENS/g, "(")
+            .replace(/&RPARENS/g, ")")
+            .replace(/&LBRACE/g, "{")
+            .replace(/&RBRACE/g, "}")
+            .replace(/&COMMA/g, ",")
+    }
+
+    /**
+     *
+     * For a given string, returns a specification what parts are fixed and what parts are special renderings.
+     * Note that _normal_ substitutions are ignored.
+     *
+     * // Return empty list on empty input
+     * SpecialVisualizations.constructSpecification("") // => []
+     *
+     * // Advanced cases with commas, braces and newlines should be handled without problem
+     * const templates = SpecialVisualizations.constructSpecification("{send_email(&LBRACEemail&RBRACE,Broken bicycle pump,Hello&COMMA\n\nWith this email&COMMA I'd like to inform you that the bicycle pump located at https://mapcomplete.osm.be/cyclofix?lat=&LBRACE_lat&RBRACE&lon=&LBRACE_lon&RBRACE&z=18#&LBRACEid&RBRACE is broken.\n\n Kind regards,Report this bicycle pump as broken)}")
+     * const templ = <Exclude<RenderingSpecification, string>> templates[0]
+     * templ.func.funcName // => "send_email"
+     * templ.args[0] = "{email}"
+     */
+    public static constructSpecification(
+        template: string,
+        extraMappings: SpecialVisualization[] = []
+    ): RenderingSpecification[] {
+        if (template === "") {
+            return []
+        }
+
+        if (template["type"] !== undefined) {
+            console.trace(
+                "Got a non-expanded template while constructing the specification, it still has a 'special-key':",
+                template
+            )
+            throw "Got a non-expanded template while constructing the specification"
+        }
+        const allKnownSpecials = extraMappings.concat(SpecialVisualizations.specialVisualizations)
+        for (const knownSpecial of allKnownSpecials) {
+            // Note: the '.*?' in the regex reads as 'any character, but in a non-greedy way'
+            const matched = template.match(
+                new RegExp(`(.*){${knownSpecial.funcName}\\((.*?)\\)(:.*)?}(.*)`, "s")
+            )
+            if (matched != null) {
+                // We found a special component that should be brought to live
+                const partBefore = SpecialVisualizations.constructSpecification(
+                    matched[1],
+                    extraMappings
+                )
+                const argument = matched[2] /* .trim()  // We don't trim, as spaces might be relevant, e.g. "what is ... of {title()}"*/
+                const style = matched[3]?.substring(1) ?? ""
+                const partAfter = SpecialVisualizations.constructSpecification(
+                    matched[4],
+                    extraMappings
+                )
+                const args = knownSpecial.args.map((arg) => arg.defaultValue ?? "")
+                if (argument.length > 0) {
+                    const realArgs = argument.split(",").map((str) => this.undoEncoding(str))
+                    for (let i = 0; i < realArgs.length; i++) {
+                        if (args.length <= i) {
+                            args.push(realArgs[i])
+                        } else {
+                            args[i] = realArgs[i]
+                        }
+                    }
+                }
+
+                const element: RenderingSpecification = {
+                    args: args,
+                    style: style,
+                    func: knownSpecial,
+                }
+                return [...partBefore, element, ...partAfter]
+            }
+        }
+
+        // Let's to a small sanity check to help the theme designers:
+        if (template.search(/{[^}]+\([^}]*\)}/) >= 0) {
+            // Hmm, we might have found an invalid rendering name
+
+            let suggestion = ""
+            if (SpecialVisualizations.specialVisualizations?.length > 0) {
+                suggestion =
+                    "did you mean one of: " +
+                    SpecialVisualizations.specialVisualizations
+                        .map((sp) => sp.funcName + "()")
+                        .join(", ")
+            }
+
+            console.warn(
+                "Found a suspicious special rendering value in: ",
+                template, suggestion
+            )
+        }
+
+        // IF we end up here, no changes have to be made - except to remove any resting {}
+        return [template]
+    }
 
     public static DocumentationFor(viz: string | SpecialVisualization): BaseUIElement | undefined {
         if (typeof viz === "string") {
@@ -70,24 +389,24 @@ export default class SpecialVisualizations {
             viz.docs,
             viz.args.length > 0
                 ? new Table(
-                      ["name", "default", "description"],
-                      viz.args.map((arg) => {
-                          let defaultArg = arg.defaultValue ?? "_undefined_"
-                          if (defaultArg == "") {
-                              defaultArg = "_empty string_"
-                          }
-                          return [arg.name, defaultArg, arg.doc]
-                      })
-                  )
+                    ["name", "default", "description"],
+                    viz.args.map((arg) => {
+                        let defaultArg = arg.defaultValue ?? "_undefined_"
+                        if (defaultArg == "") {
+                            defaultArg = "_empty string_"
+                        }
+                        return [arg.name, defaultArg, arg.doc]
+                    })
+                )
                 : undefined,
             new Title("Example usage of " + viz.funcName, 4),
             new FixedUiElement(
                 viz.example ??
-                    "`{" +
-                        viz.funcName +
-                        "(" +
-                        viz.args.map((arg) => arg.defaultValue).join(",") +
-                        ")}`"
+                "`{" +
+                viz.funcName +
+                "(" +
+                viz.args.map((arg) => arg.defaultValue).join(",") +
+                ")}`"
             ).SetClass("literal-code"),
         ])
     }
@@ -137,24 +456,226 @@ export default class SpecialVisualizations {
         ]).SetClass("flex flex-col")
     }
 
+    // noinspection JSUnusedGlobalSymbols
+    public static renderExampleOfSpecial(
+        state: SpecialVisualizationState,
+        s: SpecialVisualization
+    ): BaseUIElement {
+        const examples =
+            s.structuredExamples === undefined
+                ? []
+                : s.structuredExamples().map((e) => {
+                    return s.constr(
+                        state,
+                        new UIEventSource<Record<string, string>>(e.feature.properties),
+                        e.args,
+                        e.feature,
+                        undefined
+                    )
+                })
+        return new Combine([new Title(s.funcName), s.docs, ...examples])
+    }
+
     private static initList(): SpecialVisualization[] {
         const specialVisualizations: SpecialVisualization[] = [
+            new QuestionViz(),
+            {
+                funcName: "add_new_point",
+                docs: "An element which allows to add a new point on the 'last_click'-location. Only makes sense in the layer `last_click`",
+                args: [],
+                constr(state: SpecialVisualizationState, _, __, feature): BaseUIElement {
+                    let [lon, lat] = GeoOperations.centerpointCoordinates(feature)
+                    return new SvelteUIElement(AddNewPoint, {
+                        state,
+                        coordinate: {lon, lat},
+                    })
+                },
+            },
+            {
+                funcName: "user_profile",
+                args: [],
+                docs: "A component showing information about the currently logged in user (username, profile description, profile picture + link to edit them). Mostly meant to be used in the 'user-settings'",
+                constr(state: SpecialVisualizationState): BaseUIElement {
+                    return new SvelteUIElement(UserProfile, {
+                        osmConnection: state.osmConnection,
+                    })
+                },
+            },
+            {
+                funcName: "language_picker",
+                args: [],
+                docs: "A component to set the language of the user interface",
+                constr(state: SpecialVisualizationState): BaseUIElement {
+                    return new LanguagePicker(
+                        state.layout.language,
+                        state.userRelatedState.language
+                    )
+                },
+            },
+            {
+                funcName: "logout",
+                args: [],
+                docs: "Shows a button where the user can log out",
+                constr(state: SpecialVisualizationState): BaseUIElement {
+                    return new SubtleButton(Svg.logout_svg(), Translations.t.general.logout, {
+                        imgSize: "w-6 h-6",
+                    }).onClick(() => {
+                        state.osmConnection.LogOut()
+                    })
+                },
+            },
             new HistogramViz(),
             new StealViz(),
             new MinimapViz(),
-            new SidedMinimap(),
+            {
+                funcName: "split_button",
+                docs: "Adds a button which allows to split a way",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>
+                ): BaseUIElement {
+                    return new VariableUiElement(
+                        tagSource
+                            .map((tags) => tags.id)
+                            .map((id) => {
+                                if (id.startsWith("way/")) {
+                                    return new SplitRoadWizard(<WayId>id, state)
+                                }
+                                return undefined
+                            })
+                    )
+                },
+            },
+            {
+                funcName: "move_button",
+                docs: "Adds a button which allows to move the object to another location. The config will be read from the layer config",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    if (feature.geometry.type !== "Point") {
+                        return undefined
+                    }
+
+                    return new MoveWizard(
+                        <Feature<Point>>feature,
+                        <UIEventSource<OsmTags>>tagSource,
+                        state,
+                        layer.allowMove
+                    )
+                },
+            },
+            {
+                funcName: "delete_button",
+                docs: "Adds a button which allows to delete the object at this location. The config will be read from the layer config",
+                args: [],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature,
+                    layer: LayerConfig
+                ): BaseUIElement {
+                    return new SvelteUIElement(DeleteWizard, {
+                        tags: tagSource,
+                        deleteConfig: layer.deletion,
+                        state,
+                        feature,
+                        layer
+                    })
+                },
+            },
             new ShareLinkViz(),
+            new ExportAsGpxViz(),
             new UploadToOsmViz(),
             new MultiApplyViz(),
-            new ExportAsGpxViz(),
             new AddNoteCommentViz(),
-            new PlantNetDetectionViz(),
-            new ImportPointButton(),
-            new ImportWayButton(),
-            new ConflateButton(),
-            new TagApplyButton(),
+            {
+                funcName: "open_note",
+                args: [],
+                docs: "Creates a new map note on the given location. This options is placed in the 'last_click'-popup automatically if the 'notes'-layer is enabled",
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    argument: string[],
+                    feature: Feature
+                ): BaseUIElement {
+                    const [lon, lat] = GeoOperations.centerpointCoordinates(feature)
+                    return new SvelteUIElement(CreateNewNote, {state, coordinate: {lon, lat}})
+                },
+            },
             new CloseNoteButton(),
+            new PlantNetDetectionViz(),
+
+            new TagApplyButton(),
+
+            new PointImportButtonViz(),
+            new WayImportButtonViz(),
+            new ConflateImportButtonViz(),
+
             new NearbyImageVis(),
+
+            {
+                funcName: "wikipedia",
+                docs: "A box showing the corresponding wikipedia article(s) - based on the **wikidata** tag.",
+                args: [
+                    {
+                        name: "keyToShowWikipediaFor",
+                        doc: "Use the wikidata entry from this key to show the wikipedia article for. Multiple keys can be given (separated by ';'), in which case the first matching value is used",
+                        defaultValue: "wikidata;wikipedia",
+                    },
+                ],
+                example:
+                    "`{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height",
+                constr: (_, tagsSource, args) => {
+                    const keys = args[0].split(";").map((k) => k.trim())
+                    const wikiIds: Store<string[]> = tagsSource.map((tags) => {
+                        const key = keys.find((k) => tags[k] !== undefined && tags[k] !== "")
+                        return tags[key]?.split(";")?.map((id) => id.trim())
+                    })
+                    return new SvelteUIElement(WikipediaPanel, {
+                        wikiIds,
+                    })
+                },
+            },
+            {
+                funcName: "wikidata_label",
+                docs: "Shows the label of the corresponding wikidata-item",
+                args: [
+                    {
+                        name: "keyToShowWikidataFor",
+                        doc: "Use the wikidata entry from this key to show the label",
+                        defaultValue: "wikidata",
+                    },
+                ],
+                example:
+                    "`{wikidata_label()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the label itself",
+                constr: (_, tagsSource, args) =>
+                    new VariableUiElement(
+                        tagsSource
+                            .map((tags) => tags[args[0]])
+                            .map((wikidata) => {
+                                wikidata = Utils.NoEmpty(
+                                    wikidata?.split(";")?.map((wd) => wd.trim()) ?? []
+                                )[0]
+                                const entry = Wikidata.LoadWikidataEntry(wikidata)
+                                return new VariableUiElement(
+                                    entry.map((e) => {
+                                        if (e === undefined || e["success"] === undefined) {
+                                            return wikidata
+                                        }
+                                        const response = <WikidataResponse>e["success"]
+                                        return Translation.fromMap(response.labels)
+                                    })
+                                )
+                            })
+                    ),
+            },
             new MapillaryLinkVis(),
             new LanguageElement(),
             {
@@ -162,7 +683,7 @@ export default class SpecialVisualizations {
                 docs: "Prints all key-value pairs of the object - used for debugging",
                 args: [],
                 constr: (state, tags: UIEventSource<any>) =>
-                    new SvelteUIElement(AllTagsPanel, { tags, state }),
+                    new SvelteUIElement(AllTagsPanel, {tags, state}),
             },
             {
                 funcName: "image_carousel",
@@ -206,70 +727,6 @@ export default class SpecialVisualizations {
                 },
             },
             {
-                funcName: "wikipedia",
-                docs: "A box showing the corresponding wikipedia article - based on the wikidata tag",
-                args: [
-                    {
-                        name: "keyToShowWikipediaFor",
-                        doc: "Use the wikidata entry from this key to show the wikipedia article for. Multiple keys can be given (separated by ';'), in which case the first matching value is used",
-                        defaultValue: "wikidata;wikipedia",
-                    },
-                ],
-                example:
-                    "`{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height",
-                constr: (_, tagsSource, args) => {
-                    const keys = args[0].split(";").map((k) => k.trim())
-                    return new VariableUiElement(
-                        tagsSource
-                            .map((tags) => {
-                                const key = keys.find(
-                                    (k) => tags[k] !== undefined && tags[k] !== ""
-                                )
-                                return tags[key]
-                            })
-                            .map((wikidata) => {
-                                const wikidatas: string[] = Utils.NoEmpty(
-                                    wikidata?.split(";")?.map((wd) => wd.trim()) ?? []
-                                )
-                                return new WikipediaBox(wikidatas)
-                            })
-                    )
-                },
-            },
-            {
-                funcName: "wikidata_label",
-                docs: "Shows the label of the corresponding wikidata-item",
-                args: [
-                    {
-                        name: "keyToShowWikidataFor",
-                        doc: "Use the wikidata entry from this key to show the label",
-                        defaultValue: "wikidata",
-                    },
-                ],
-                example:
-                    "`{wikidata_label()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the label itself",
-                constr: (_, tagsSource, args) =>
-                    new VariableUiElement(
-                        tagsSource
-                            .map((tags) => tags[args[0]])
-                            .map((wikidata) => {
-                                wikidata = Utils.NoEmpty(
-                                    wikidata?.split(";")?.map((wd) => wd.trim()) ?? []
-                                )[0]
-                                const entry = Wikidata.LoadWikidataEntry(wikidata)
-                                return new VariableUiElement(
-                                    entry.map((e) => {
-                                        if (e === undefined || e["success"] === undefined) {
-                                            return wikidata
-                                        }
-                                        const response = <WikidataResponse>e["success"]
-                                        return Translation.fromMap(response.labels)
-                                    })
-                                )
-                            })
-                    ),
-            },
-            {
                 funcName: "reviews",
                 docs: "Adds an overview of the mangrove-reviews of this object. Mangrove.Reviews needs - in order to identify the reviewed object - a coordinate and a name. By default, the name of the object is given, but this can be overwritten",
                 example:
@@ -285,14 +742,18 @@ export default class SpecialVisualizations {
                         doc: "The identifier to use, if <i>tags[subjectKey]</i> as specified above is not available. This is effectively a fallback value",
                     },
                 ],
-                constr: (state, tags, args) => {
+                constr: (state, tags, args, feature) => {
                     const nameKey = args[0] ?? "name"
                     let fallbackName = args[1]
-                    const feature = state.allElements.ContainingFeatures.get(tags.data.id)
-                    const mangrove = FeatureReviews.construct(feature, state, {
-                        nameKey: nameKey,
-                        fallbackName,
-                    })
+                    const mangrove = FeatureReviews.construct(
+                        feature,
+                        tags,
+                        state.userRelatedState.mangroveIdentity,
+                        {
+                            nameKey: nameKey,
+                            fallbackName,
+                        }
+                    )
 
                     const form = new ReviewForm((r) => mangrove.createReview(r), state)
                     return new ReviewElement(mangrove, form)
@@ -350,7 +811,7 @@ export default class SpecialVisualizations {
                         doc: "The path (or shorthand) that should be returned",
                     },
                 ],
-                constr: (state, tagSource: UIEventSource<any>, args) => {
+                constr: (_, tagSource: UIEventSource<any>, args) => {
                     const url = args[0]
                     const shorthands = args[1]
                     const neededValue = args[2]
@@ -382,7 +843,7 @@ export default class SpecialVisualizations {
                                     return undefined
                                 }
                                 const allUnits = [].concat(
-                                    ...(state?.layoutToUse?.layers?.map((lyr) => lyr.units) ?? [])
+                                    ...(state?.layout?.layers?.map((lyr) => lyr.units) ?? [])
                                 )
                                 const unit = allUnits.filter((unit) =>
                                     unit.isApplicableToKey(key)
@@ -399,11 +860,11 @@ export default class SpecialVisualizations {
                 funcName: "export_as_geojson",
                 docs: "Exports the selected feature as GeoJson-file",
                 args: [],
-                constr: (state, tagSource) => {
+                constr: (state, tagSource, tagsSource, feature, layer) => {
                     const t = Translations.t.general.download
 
                     return new SubtleButton(
-                        Svg.download_ui(),
+                        Svg.download_svg(),
                         new Combine([
                             t.downloadFeatureAsGeojson.SetClass("font-bold text-lg"),
                             t.downloadGeoJsonHelper.SetClass("subtle"),
@@ -411,10 +872,8 @@ export default class SpecialVisualizations {
                     ).onClick(() => {
                         console.log("Exporting as Geojson")
                         const tags = tagSource.data
-                        const feature = state.allElements.ContainingFeatures.get(tags.id)
-                        const matchingLayer = state?.layoutToUse?.getMatchingLayer(tags)
                         const title =
-                            matchingLayer.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "geojson"
+                            layer?.title?.GetRenderValue(tags)?.Subs(tags)?.txt ?? "geojson"
                         const data = JSON.stringify(feature, null, "  ")
                         Utils.offerContentsAsDownloadableFile(
                             data,
@@ -431,15 +890,16 @@ export default class SpecialVisualizations {
                 docs: "Opens the current view in the iD-editor",
                 args: [],
                 constr: (state, feature) => {
-                    return new OpenIdEditor(state, undefined, feature.data.id)
+                    return new SvelteUIElement(OpenIdEditor,
+                        { mapProperties: state.mapProperties, objectId: feature.data.id})
                 },
             },
             {
                 funcName: "open_in_josm",
                 docs: "Opens the current view in the JOSM-editor",
                 args: [],
-                constr: (state, feature) => {
-                    return new OpenJosm(state)
+                constr: (state) => {
+                    return new OpenJosm(state.osmConnection, state.mapProperties.bounds)
                 },
             },
             {
@@ -452,7 +912,7 @@ export default class SpecialVisualizations {
                         Translations.t.general.removeLocationHistory
                     ).onClick(() => {
                         state.historicalUserLocations.features.setData([])
-                        Hash.hash.setData(undefined)
+                        state.selectedElement.setData(undefined)
                     })
                 },
             },
@@ -499,24 +959,6 @@ export default class SpecialVisualizations {
                         defaultValue: "id",
                     },
                 ],
-                example:
-                    " The following example sets the status to '2' (false positive)\n" +
-                    "\n" +
-                    "```json\n" +
-                    "{\n" +
-                    '   "id": "mark_duplicate",\n' +
-                    '   "render": {\n' +
-                    '      "special": {\n' +
-                    '         "type": "maproulette_set_status",\n' +
-                    '         "message": {\n' +
-                    '            "en": "Mark as not found or false positive"\n' +
-                    "         },\n" +
-                    '         "status": "2",\n' +
-                    '         "image": "close"\n' +
-                    "      }\n" +
-                    "   }\n" +
-                    "}\n" +
-                    "```",
                 constr: (state, tags, args) => {
                     const isUploading = new UIEventSource(false)
                     const t = Translations.t.notes
@@ -529,7 +971,7 @@ export default class SpecialVisualizations {
                     })
 
                     const label = new Combine([
-                        Svg.camera_plus_ui().SetClass("block w-12 h-12 p-1 text-4xl "),
+                        Svg.camera_plus_svg().SetClass("block w-12 h-12 p-1 text-4xl "),
                         Translations.t.image.addPicture,
                     ]).SetClass(
                         "p-2 border-4 border-black rounded-full font-bold h-full align-center w-full flex justify-center"
@@ -565,19 +1007,19 @@ export default class SpecialVisualizations {
                 constr: (state, tagsSource) =>
                     new VariableUiElement(
                         tagsSource.map((tags) => {
-                            const layer = state.layoutToUse.getMatchingLayer(tags)
+                            const layer = state.layout.getMatchingLayer(tags)
                             const title = layer?.title?.GetRenderValue(tags)
                             if (title === undefined) {
                                 return undefined
                             }
-                            return new SubstitutedTranslation(title, tagsSource, state)
+                            return new SubstitutedTranslation(title, tagsSource, state).SetClass("px-1")
                         })
                     ),
             },
             {
                 funcName: "maproulette_task",
                 args: [],
-                constr(state, tagSource, argument, guistate) {
+                constr(state, tagSource) {
                     let parentId = tagSource.data.mr_challengeId
                     if (parentId === undefined) {
                         console.warn("Element ", tagSource.data.id, " has no mr_challengeId")
@@ -620,6 +1062,24 @@ export default class SpecialVisualizations {
             {
                 funcName: "maproulette_set_status",
                 docs: "Change the status of the given MapRoulette task",
+                example:
+                    " The following example sets the status to '2' (false positive)\n" +
+                    "\n" +
+                    "```json\n" +
+                    "{\n" +
+                    '   "id": "mark_duplicate",\n' +
+                    '   "render": {\n' +
+                    '      "special": {\n' +
+                    '         "type": "maproulette_set_status",\n' +
+                    '         "message": {\n' +
+                    '            "en": "Mark as not found or false positive"\n' +
+                    "         },\n" +
+                    '         "status": "2",\n' +
+                    '         "image": "close"\n' +
+                    "      }\n" +
+                    "   }\n" +
+                    "}\n" +
+                    "```",
                 args: [
                     {
                         name: "message",
@@ -645,16 +1105,19 @@ export default class SpecialVisualizations {
                         defaultValue: "mr_taskId",
                     },
                 ],
-                constr: (state, tagsSource, args, guistate) => {
+                constr: (state, tagsSource, args) => {
                     let [message, image, message_closed, status, maproulette_id_key] = args
                     if (image === "") {
                         image = "confirm"
+                    }
+                    if(maproulette_id_key === "" || maproulette_id_key === undefined){
+                        maproulette_id_key = "mr_taskId"
                     }
                     if (Svg.All[image] !== undefined || Svg.All[image + ".svg"] !== undefined) {
                         if (image.endsWith(".svg")) {
                             image = image.substring(0, image.length - 4)
                         }
-                        image = Svg[image + "_ui"]()
+                        image = Svg[image + "_svg"]()
                     }
                     const failed = new UIEventSource(false)
 
@@ -662,13 +1125,13 @@ export default class SpecialVisualizations {
                         Translations.t.general.loading,
                         async () => {
                             const maproulette_id =
-                                tagsSource.data[maproulette_id_key] ?? tagsSource.data.id
+                                tagsSource.data[maproulette_id_key] ?? tagsSource.data.mr_taskId ?? tagsSource.data.id
                             try {
-                                await state.maprouletteConnection.closeTask(
+                                await Maproulette.singleton.closeTask(
                                     Number(maproulette_id),
                                     Number(status),
                                     {
-                                        tags: `MapComplete MapComplete:${state.layoutToUse.id}`,
+                                        tags: `MapComplete MapComplete:${state.layout.id}`,
                                     }
                                 )
                                 tagsSource.data["mr_taskStatus"] =
@@ -690,13 +1153,19 @@ export default class SpecialVisualizations {
                     return new VariableUiElement(
                         tagsSource
                             .map(
-                                (tgs) =>
-                                    tgs["status"] ??
-                                    Maproulette.STATUS_MEANING[tgs["mr_taskStatus"]]
+                                (tgs) => {
+                                    if(tgs["status"]){
+                                        return tgs["status"]
+                                    }
+                                    const code = tgs["mr_taskStatus"]
+                                    console.log("Code is", code, Maproulette.codeToIndex(code))
+                                    return Maproulette.codeToIndex(code)
+                                }
                             )
                             .map(Number)
                             .map(
                                 (status) => {
+                                    console.log("Close MR button: status is", status)
                                     if (failed.data) {
                                         return new FixedUiElement(
                                             "ERROR - could not close the MapRoulette task"
@@ -716,41 +1185,20 @@ export default class SpecialVisualizations {
                 funcName: "statistics",
                 docs: "Show general statistics about the elements currently in view. Intended to use on the `current_view`-layer",
                 args: [],
-                constr: (state, tagsSource, args, guiState) => {
-                    const elementsInview = new UIEventSource<
-                        {
-                            distance: number
-                            center: [number, number]
-                            element: OsmFeature
-                            layer: LayerConfig
-                        }[]
-                    >([])
-
-                    function update() {
-                        const mapCenter = <[number, number]>[
-                            state.locationControl.data.lon,
-                            state.locationControl.data.lon,
-                        ]
-                        const bbox = state.currentBounds.data
-                        const elements = state.featurePipeline
-                            .getAllVisibleElementsWithmeta(bbox)
-                            .map((el) => {
-                                const distance = GeoOperations.distanceBetween(el.center, mapCenter)
-                                return { ...el, distance }
-                            })
-                        elements.sort((e0, e1) => e0.distance - e1.distance)
-                        elementsInview.setData(elements)
-                    }
-
-                    state.currentBounds.addCallbackAndRun(update)
-                    state.featurePipeline.newDataLoadedSignal.addCallback(update)
-                    state.filteredLayers.addCallbackAndRun((fls) => {
-                        for (const fl of fls) {
-                            fl.isDisplayed.addCallback(update)
-                            fl.appliedFilters.addCallback(update)
-                        }
-                    })
-                    return new StatisticsPanel(elementsInview, state)
+                constr: (state) => {
+                    return new Combine(
+                        state.layout.layers
+                            .filter((l) => l.name !== null)
+                            .map(
+                                (l) => {
+                                    const fs = state.perLayer.get(l.id)
+                                    const bbox = state.mapProperties.bounds
+                                    const fsBboxed = new BBoxFeatureSourceForLayer(fs, bbox)
+                                    return new StatisticsPanel(fsBboxed)
+                                },
+                                [state.mapProperties.bounds]
+                            )
+                    )
                 },
             },
             {
@@ -779,7 +1227,7 @@ export default class SpecialVisualizations {
                         required: true,
                     },
                 ],
-                constr(state, tags, args) {
+                constr(__, tags, args) {
                     return new VariableUiElement(
                         tags.map((tags) => {
                             const [to, subject, body, button_text] = args.map((str) =>
@@ -796,6 +1244,42 @@ export default class SpecialVisualizations {
                                 url,
                             })
                         })
+                    )
+                },
+            },
+            {
+                funcName: "link",
+                docs: "Construct a link. By using the 'special' visualisation notation, translation should be easier",
+                args: [
+                    {
+                        name: "text",
+                        doc: "Text to be shown",
+                        required: true,
+                    },
+                    {
+                        name: "href",
+                        doc: "The URL to link to",
+                        required: true,
+                    },
+                    {
+                        name: "class",
+                        doc: "CSS-classes to add to the element",
+                    },
+                ],
+                constr(
+                    state: SpecialVisualizationState,
+                    tagSource: UIEventSource<Record<string, string>>,
+                    args: string[]
+                ): BaseUIElement {
+                    const [text, href, classnames] = args
+                    return new VariableUiElement(
+                        tagSource.map((tags) =>
+                            new Link(
+                                Utils.SubstituteKeys(text, tags),
+                                Utils.SubstituteKeys(href, tags),
+                                true
+                            ).SetClass(classnames)
+                        )
                     )
                 },
             },
@@ -834,7 +1318,7 @@ export default class SpecialVisualizations {
                 ],
                 constr(state, featureTags, args) {
                     const [key, tr] = args
-                    const translation = new Translation({ "*": tr })
+                    const translation = new Translation({"*": tr})
                     return new VariableUiElement(
                         featureTags.map((tags) => {
                             const properties: object[] = JSON.parse(tags[key])
@@ -857,7 +1341,7 @@ export default class SpecialVisualizations {
         specialVisualizations.push(new AutoApplyButton(specialVisualizations))
 
         const invalid = specialVisualizations
-            .map((sp, i) => ({ sp, i }))
+            .map((sp, i) => ({sp, i}))
             .filter((sp) => sp.sp.funcName === undefined)
         if (invalid.length > 0) {
             throw (

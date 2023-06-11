@@ -1,7 +1,10 @@
-import { Utils } from "../Utils"
+import {Utils} from "../Utils"
+import * as meta from "../package.json"
+
+export type PriviligedLayerType = typeof Constants.priviliged_layers[number]
 
 export default class Constants {
-    public static vNumber = "0.27.4"
+    public static vNumber = meta.version
 
     public static ImgurApiKey = "7070e7167f0a25a"
     public static readonly mapillary_client_token_v4 =
@@ -26,31 +29,34 @@ export default class Constants {
         // Doesn't support nwr: "https://overpass.openstreetmap.fr/api/interpreter"
     ]
 
-    public static readonly added_by_default: string[] = [
+    public static readonly added_by_default = [
         "selected_element",
         "gps_location",
         "gps_location_history",
         "home_location",
         "gps_track",
-    ]
-    public static readonly no_include: string[] = [
+        "range",
+        "last_click",
+    ] as const
+    /**
+     * Special layers which are not included in a theme by default
+     */
+    public static readonly no_include = [
         "conflation",
-        "left_right_style",
         "split_point",
+        "split_road",
         "current_view",
         "matchpoint",
-    ]
+        "import_candidate",
+        "usersettings",
+    ] as const
     /**
      * Layer IDs of layers which have special properties through built-in hooks
      */
-    public static readonly priviliged_layers: string[] = [
+    public static readonly priviliged_layers = [
         ...Constants.added_by_default,
-        "type_node",
-        "note",
-        "import_candidate",
-        "direction",
         ...Constants.no_include,
-    ]
+    ] as const
 
     // The user journey states thresholds when a new feature gets unlocked
     public static userJourney = {
@@ -65,10 +71,10 @@ export default class Constants {
         themeGeneratorReadOnlyUnlock: 50,
         themeGeneratorFullUnlock: 500,
         addNewPointWithUnreadMessagesUnlock: 500,
-        minZoomLevelToAddNewPoints: Constants.isRetina() ? 18 : 19,
 
         importHelperUnlock: 5000,
     }
+    static readonly minZoomLevelToAddNewPoint = Constants.isRetina() ? 18 : 19
     /**
      * Used by 'PendingChangesUploader', which waits this amount of seconds to upload changes.
      * (Note that pendingChanges might upload sooner if the popup is closed or similar)
@@ -110,6 +116,11 @@ export default class Constants {
     static countryCoderEndpoint: string =
         "https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/latlon2country"
     public static readonly OsmPreferenceKeyPicturesLicense = "pictures-license"
+    /**
+     * These are the values that are allowed to use as 'backdrop' icon for a map pin
+     */
+    private static readonly _defaultPinIcons = ["square", "circle", "none", "pin", "person", "plus", "ring", "star", "teardrop", "triangle", "crosshair",] as const
+    public static readonly defaultPinIcons: string[] = <any>Constants._defaultPinIcons
 
     private static isRetina(): boolean {
         if (Utils.runningFromConsole) {
@@ -120,8 +131,8 @@ export default class Constants {
         return (
             (window.matchMedia &&
                 (window.matchMedia(
-                    "only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 75.6dpcm)"
-                ).matches ||
+                        "only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 75.6dpcm)"
+                    ).matches ||
                     window.matchMedia(
                         "only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)"
                     ).matches)) ||

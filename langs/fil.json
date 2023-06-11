@@ -41,9 +41,7 @@
         "about": "Madaling i-edit at mag-dagdag sa OpenStreetMap gamit ang mga partikular na tikha",
         "add": {
             "addNew": "Dagdagan ng {category}",
-            "addNewMapLabel": "I-click ito para mag-dagdag ng bagong bagay",
             "confirmButton": "Magdagdag ng {category}<br><div class=\"alert\">Makikita ng lahat ang idinagdag mo</div>",
-            "confirmIntro": "<h3>Mag-dagdag ng {title}?</h3>Ang tampók na ida-dagdag mo ay <b>makikita ng lahat</b>. Paki-usap, mag-dagdag lamang ng mga bagay na tutuong umiiral. Marami pang mga aplikasyon ang gumagamit ng datos na ito.",
             "disableFilters": "Huwag paganahin ang lahat ng filter",
             "disableFiltersExplanation": "May mga tampók na maaring nai-tago ng filter",
             "hasBeenImported": "Ang bukóng ito ay nai-angkat na",
@@ -84,22 +82,6 @@
     "image": {
         "nearbyPictures": {}
     },
-    "importHelper": {
-        "askMetadata": {},
-        "compareToAlreadyExistingNotes": {},
-        "confirmProcess": {},
-        "conflationChecker": {
-            "states": {}
-        },
-        "createNotes": {},
-        "introduction": {},
-        "login": {},
-        "mapPreview": {},
-        "noteParts": {},
-        "previewAttributes": {},
-        "selectFile": {},
-        "selectTheme": {}
-    },
     "importInspector": {},
     "importLayer": {},
     "index": {},
@@ -110,28 +92,6 @@
     "multi_apply": {},
     "notes": {},
     "privacy": {},
-    "professional": {
-        "aboutMc": {
-            "internalUse": {},
-            "layers": {},
-            "survey": {}
-        },
-        "aboutOsm": {
-            "aboutOsm": {},
-            "benefits": {},
-            "license": {},
-            "vandalism": {}
-        },
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseGatheringOpenData": {},
-                "usecaseMapDifferentSources": {}
-            },
-            "unsuitedData": {}
-        },
-        "indexPage": {},
-        "services": {}
-    },
     "reviews": {},
     "split": {},
     "translations": {},

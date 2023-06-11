@@ -25,13 +25,13 @@ export interface LayerConfigJson {
      *
      * If not given, will be hidden (and thus not toggable) in the layer control
      */
-    name?: string | any
+    name?: string | Record<string, string>
 
     /**
      * A description for this layer.
      * Shown in the layer selections and in the personel theme
      */
-    description?: string | any
+    description?: string | Record<string, string>
 
     /**
      * This determines where the data for the layer is fetched: from OSM or from an external geojson dataset.
@@ -40,70 +40,57 @@ export interface LayerConfigJson {
      *
      * Every source _must_ define which tags _must_ be present in order to be picked up.
      *
+     * Note: a source must always be defined. 'special' is only allowed if this is a builtin-layer
      */
-    source: {
-        /**
-         * Every source must set which tags have to be present in order to load the given layer.
-         */
-        osmTags: TagConfigJson
-        /**
-         * The maximum amount of seconds that a tile is allowed to linger in the cache
-         */
-        maxCacheAge?: number
-    } & (
-        | {
-              /**
-               * If set, this custom overpass-script will be used instead of building one by using the OSM-tags.
-               * Specifying OSM-tags is still obligatory and will still hide non-matching items and they will be used for the rest of the pipeline.
-               * _This should be really rare_.
-               *
-               * For example, when you want to fetch all grass-areas in parks and which are marked as publicly accessible:
-               * ```
-               * "source": {
-               *   "overpassScript":
-               *      "way[\"leisure\"=\"park\"];node(w);is_in;area._[\"leisure\"=\"park\"];(way(area)[\"landuse\"=\"grass\"]; node(w); );",
-               *      "osmTags": "access=yes"
-               * }
-               * ```
-               *
-               */
-              overpassScript?: string
-          }
-        | {
-              /**
-               * The actual source of the data to load, if loaded via geojson.
-               *
-               * # A single geojson-file
-               * source: {geoJson: "https://my.source.net/some-geo-data.geojson"}
-               *  fetches a geojson from a third party source
-               *
-               * # A tiled geojson source
-               * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14}
-               *  to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
-               *
-               * Some API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}
-               */
-              geoJson: string
-              /**
-               * To load a tiled geojson layer, set the zoomlevel of the tiles
-               */
-              geoJsonZoomLevel?: number
-              /**
-               * Indicates that the upstream geojson data is OSM-derived.
-               * Useful for e.g. merging or for scripts generating this cache
-               */
-              isOsmCache?: boolean
-              /**
-               * Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this
-               */
-              mercatorCrs?: boolean
-              /**
-               * Some API's have an id-field, but give it a different name.
-               * Setting this key will rename this field into 'id'
-               */
-              idKey?: string
-          }
-    )
+    source:
+        | "special"
+        | "special:library"
+        | (
+              | {
+                    /**
+                     * Every source must set which tags have to be present in order to load the given layer.
+                     */
+                    osmTags: TagConfigJson
+                    /**
+                     * The maximum amount of seconds that a tile is allowed to linger in the cache
+                     */
+                    maxCacheAge?: number
+                }
+              | {
+                    /**
+                     * The actual source of the data to load, if loaded via geojson.
+                     *
+                     * # A single geojson-file
+                     * source: {geoJson: "https://my.source.net/some-geo-data.geojson"}
+                     *  fetches a geojson from a third party source
+                     *
+                     * # A tiled geojson source
+                     * source: {geoJson: "https://my.source.net/some-tile-geojson-{layer}-{z}-{x}-{y}.geojson", geoJsonZoomLevel: 14}
+                     *  to use a tiled geojson source. The web server must offer multiple geojsons. {z}, {x} and {y} are substituted by the location; {layer} is substituted with the id of the loaded layer
+                     *
+                     * Some API's use a BBOX instead of a tile, this can be used by specifying {y_min}, {y_max}, {x_min} and {x_max}
+                     */
+                    geoJson: string
+                    /**
+                     * To load a tiled geojson layer, set the zoomlevel of the tiles
+                     */
+                    geoJsonZoomLevel?: number
+                    /**
+                     * Indicates that the upstream geojson data is OSM-derived.
+                     * Useful for e.g. merging or for scripts generating this cache
+                     */
+                    isOsmCache?: boolean
+                    /**
+                     * Some API's use a mercator-projection (EPSG:900913) instead of WGS84. Set the flag `mercatorCrs: true`  in the source for this
+                     */
+                    mercatorCrs?: boolean
+                    /**
+                     * Some API's have an id-field, but give it a different name.
+                     * Setting this key will rename this field into 'id'
+                     */
+                    idKey?: string
+                }
+          )
 
     /**
      *
@@ -137,9 +124,6 @@ export interface LayerConfigJson {
      * If set, only features matching this extra tag will be shown.
      * This is useful to hide certain features from view.
      *
-     * Important: hiding features does not work dynamically, but is only calculated when the data is first renders.
-     * This implies that it is not possible to hide a feature after a tagging change
-     *
      * The default value is 'yes'
      */
     isShown?: TagConfigJson
@@ -152,7 +136,7 @@ export interface LayerConfigJson {
     forceLoad?: false | boolean
 
     /**
-     * The minimum needed zoomlevel required before loading of the data start
+     * The minimum needed zoomlevel required before loading the data
      * Default: 0
      */
     minzoom?: number
@@ -228,7 +212,7 @@ export interface LayerConfigJson {
          *
          * Do _not_ indicate 'new': 'add a new shop here' is incorrect, as the shop might have existed forever, it could just be unmapped!
          */
-        title: string | any
+        title: string | Record<string, string>
         /**
          * The tags to add. It determines the icon too
          */
@@ -239,7 +223,7 @@ export interface LayerConfigJson {
          *
          * (The first sentence is until the first '.'-character in the description)
          */
-        description?: string | any
+        description?: string | Record<string, string>
 
         /**
          * Example images, which show real-life pictures of what such a feature might look like
@@ -412,4 +396,14 @@ export interface LayerConfigJson {
      * no-question-hint-check: disables a check in MiscTagRenderingChecks which complains about 'div', 'span' or 'class=subtle'-HTML elements in the tagRendering
      */
     "#"?: string | "no-question-hint-check"
+
+    /**
+     * If set, open the selectedElementView in a floatOver instead of on the right
+     */
+    popupInFloatover?: boolean
+
+    /**
+     * _Set automatically by MapComplete, please ignore_
+     */
+    fullNodeDatabase?: boolean
 }

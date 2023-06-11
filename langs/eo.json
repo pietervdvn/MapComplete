@@ -45,7 +45,7 @@
         "pdf": {
             "attr": "Mapaj datenoj © Kontribuintoj al OpenStreetMap, reuzeblaj laŭ ODbL",
             "attrBackground": "Fona tavolo: {background}",
-            "generatedWith": "Generita per MapComplete.osm.be",
+            "generatedWith": "Generita per MapComplete.osm.be/{layoutid}",
             "versionInfo": "v{version} - generita je {date}"
         },
         "pickLanguage": "Elektu lingvon: ",
@@ -101,22 +101,6 @@
         "uploadingMultiple": "Alŝutante {count} bildojn…",
         "uploadingPicture": "Alŝutante vian bildon…"
     },
-    "importHelper": {
-        "askMetadata": {},
-        "compareToAlreadyExistingNotes": {},
-        "confirmProcess": {},
-        "conflationChecker": {
-            "states": {}
-        },
-        "createNotes": {},
-        "introduction": {},
-        "login": {},
-        "mapPreview": {},
-        "noteParts": {},
-        "previewAttributes": {},
-        "selectFile": {},
-        "selectTheme": {}
-    },
     "importInspector": {},
     "importLayer": {},
     "index": {
@@ -129,28 +113,6 @@
     "multi_apply": {},
     "notes": {},
     "privacy": {},
-    "professional": {
-        "aboutMc": {
-            "internalUse": {},
-            "layers": {},
-            "survey": {}
-        },
-        "aboutOsm": {
-            "aboutOsm": {},
-            "benefits": {},
-            "license": {},
-            "vandalism": {}
-        },
-        "drawbacks": {
-            "licenseNuances": {
-                "usecaseGatheringOpenData": {},
-                "usecaseMapDifferentSources": {}
-            },
-            "unsuitedData": {}
-        },
-        "indexPage": {},
-        "services": {}
-    },
     "reviews": {
         "saving_review": "Konservante…",
         "title": "{count} recenzoj",

@@ -16,6 +16,10 @@
       "value": "pitch"
     },
     {
+      "key": "id",
+      "description": "Layer 'Sport pitches' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Sport pitches') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Sport pitches allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -64,6 +68,11 @@
       "key": "sport",
       "description": "Layer 'Sport pitches' shows sport=basket with a fixed text, namely 'Basketball is played here' (in the MapComplete.osm.be theme 'Sport pitches')",
       "value": "basket"
+    },
+    {
+      "key": "sport",
+      "description": "Layer 'Sport pitches' shows sport=skateboard with a fixed text, namely 'This is a skatepark' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Sport pitches')",
+      "value": "skateboard"
     },
     {
       "key": "surface",

@@ -34,8 +34,8 @@ The following items can be easily reused in your layers
     + [payment-options-advanced](#payment-options-advanced)
     + [denominations-coins](#denominations-coins)
     + [denominations-notes](#denominations-notes)
-    + [last_edit](#last_edit)
     + [all_tags](#all_tags)
+    + [just_created](#just_created)
     + [multilevels](#multilevels)
     + [level](#level)
     + [smoking](#smoking)
@@ -53,6 +53,8 @@ The following items can be easily reused in your layers
 
 
 
+{questions()}
+
 *Read-only tagrendering*
 
 
@@ -61,7 +63,7 @@ The following items can be easily reused in your layers
 
 
 
-{image_carousel()}{image_upload()}{nearby_images(expandable)}
+{image_carousel()}{image_upload()}
 
 *Read-only tagrendering*
 
@@ -382,16 +384,6 @@ what notes can you use to pay here?
 
 
 
-### last_edit 
-
-
-
-<div class='subtle' style='font-size: small; margin-top: 2em; margin-bottom: 0.5em;'><a href='https://www.openStreetMap.org/changeset/{_last_edit:changeset}' target='_blank'>Last edited on {_last_edit:timestamp}</a> by <a href='https://www.openStreetMap.org/user/{_last_edit:contributor}' target='_blank'>{_last_edit:contributor}</a></div>
-
-*Read-only tagrendering*
-
-
-
 ### all_tags 
 
 
@@ -399,6 +391,19 @@ what notes can you use to pay here?
 {all_tags()}
 
 *Read-only tagrendering*
+
+
+
+### just_created 
+
+
+
+*Read-only tagrendering*
+
+
+
+  - You just created this element! Thanks for sharing this info with the world and helping people worldwide.
+
 
 
 

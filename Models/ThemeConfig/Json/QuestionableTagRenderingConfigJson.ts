@@ -10,7 +10,7 @@ export interface MappingConfigJson {
      * Shown if the 'if is fulfilled
      * Type: rendered
      */
-    then: string | any
+    then: string | Record<string, string>
     /**
      * An extra icon supporting the choice
      * Type: icon
@@ -186,9 +186,10 @@ export interface QuestionableTagRenderingConfigJson extends TagRenderingConfigJs
 
         /**
          * When set, influences the way a question is asked.
-         * Instead of showing a full-widht text field, the text field will be shown within the rendering of the question.
+         * Instead of showing a full-width text field, the text field will be shown within the rendering of the question.
          *
          * This combines badly with special input elements, as it'll distort the layout.
+         * Note that this will be set automatically if no special elements are present.
          */
         inline?: boolean
 

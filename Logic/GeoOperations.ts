@@ -1,27 +1,35 @@
 import { BBox } from "./BBox"
-import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import * as turf from "@turf/turf"
+import { AllGeoJSON, booleanWithin, Coord } from "@turf/turf"
 import {
-    AllGeoJSON,
-    booleanWithin,
-    Coord,
     Feature,
+    FeatureCollection,
+    GeoJSON,
     Geometry,
+    LineString,
+    MultiLineString,
     MultiPolygon,
+    Point,
     Polygon,
-} from "@turf/turf"
-import { GeoJSON, LineString, Point, Position } from "geojson"
-import togpx from "togpx"
-import Constants from "../Models/Constants"
+    Position,
+} from "geojson"
+import { Tiles } from "../Models/TileRange"
+import { Utils } from "../Utils"
 
 export class GeoOperations {
+    private static readonly _earthRadius = 6378137
+    private static readonly _originShift = (2 * Math.PI * GeoOperations._earthRadius) / 2
+
     /**
      * Create a union between two features
      */
-    static union = turf.union
-    static intersect = turf.intersect
-    private static readonly _earthRadius = 6378137
-    private static readonly _originShift = (2 * Math.PI * GeoOperations._earthRadius) / 2
+    public static union(f0: Feature, f1: Feature): Feature<Polygon | MultiPolygon> | null {
+        return turf.union(<any>f0, <any>f1)
+    }
+
+    public static intersect(f0: Feature, f1: Feature): Feature<Polygon | MultiPolygon> | null {
+        return turf.intersect(<any>f0, <any>f1)
+    }
 
     static surfaceAreaInSqMeters(feature: any) {
         return turf.area(feature)
@@ -234,7 +242,7 @@ export class GeoOperations {
         })
     }
 
-    static bbox(feature: any): Feature<LineString, {}> {
+    static bbox(feature: Feature | FeatureCollection): Feature<LineString, {}> {
         const [lon, lat, lon0, lat0] = turf.bbox(feature)
         return {
             type: "Feature",
@@ -263,15 +271,47 @@ export class GeoOperations {
      * @param way The road on which you want to find a point
      * @param point Point defined as [lon, lat]
      */
-    public static nearestPoint(way: Feature<LineString | Polygon>, point: [number, number]) {
+    public static nearestPoint(
+        way: Feature<LineString>,
+        point: [number, number]
+    ): Feature<
+        Point,
+        {
+            index: number
+            dist: number
+            location: number
+        }
+    > {
+        return <any>(
+            turf.nearestPointOnLine(<Feature<LineString>>way, point, { units: "kilometers" })
+        )
+    }
+
+    /**
+     * Helper method to reuse the coordinates of the way as LineString.
+     * Mostly used as helper for 'nearestPoint'
+     * @param way
+     */
+    public static forceLineString(way: Feature<LineString | Polygon>): Feature<LineString>
+    public static forceLineString(
+        way: Feature<MultiLineString | MultiPolygon>
+    ): Feature<MultiLineString>
+    public static forceLineString(
+        way: Feature<LineString | MultiLineString | Polygon | MultiPolygon>
+    ): Feature<LineString | MultiLineString> {
         if (way.geometry.type === "Polygon") {
             way = { ...way }
             way.geometry = { ...way.geometry }
             way.geometry.type = "LineString"
             way.geometry.coordinates = (<Polygon>way.geometry).coordinates[0]
+        } else if (way.geometry.type === "MultiPolygon") {
+            way = { ...way }
+            way.geometry = { ...way.geometry }
+            way.geometry.type = "MultiLineString"
+            way.geometry.coordinates = (<MultiPolygon>way.geometry).coordinates[0]
         }
 
-        return turf.nearestPointOnLine(<Feature<LineString>>way, point, { units: "kilometers" })
+        return <any>way
     }
 
     public static toCSV(features: any[]): string {
@@ -368,36 +408,87 @@ export class GeoOperations {
     /**
      * Calculates line intersection between two features.
      */
-    public static LineIntersections(feature, otherFeature): [number, number][] {
+    public static LineIntersections(feature: Feature<LineString | MultiLineString | Polygon | MultiPolygon>, otherFeature: Feature<LineString | MultiLineString | Polygon | MultiPolygon>): [number, number][] {
         return turf
             .lineIntersect(feature, otherFeature)
             .features.map((p) => <[number, number]>p.geometry.coordinates)
     }
 
-    public static AsGpx(
-        feature: Feature,
-        options?: { layer?: LayerConfig; gpxMetadata?: any }
-    ): string {
-        const metadata = options?.gpxMetadata ?? {}
-        metadata["time"] = metadata["time"] ?? new Date().toISOString()
-        const tags = feature.properties
+    /**
+     * Given a list of features, will construct a map of slippy map tile-indices.
+     * Features of which the BBOX overlaps with the corresponding slippy map tile are added to the corresponding array
+     * @param features
+     * @param zoomlevel
+     */
+    public static spreadIntoBboxes(features: Feature[], zoomlevel: number) : Map<number, Feature[]> {
 
-        if (options?.layer !== undefined) {
-            metadata["name"] = options?.layer.title?.GetRenderValue(tags)?.Subs(tags)?.txt
-            metadata["desc"] = "Generated with MapComplete layer " + options?.layer.id
-            if (tags._backend?.contains("openstreetmap")) {
-                metadata["copyright"] =
-                    "Data copyrighted by OpenStreetMap-contributors, freely available under ODbL. See https://www.openstreetmap.org/copyright"
-                metadata["author"] = tags["_last_edit:contributor"]
-                metadata["link"] = "https://www.openstreetmap.org/" + tags.id
-                metadata["time"] = tags["_last_edit:timestamp"]
-            }
+        const perBbox = new Map<number, Feature[]>()
+
+        for (const feature of features) {
+            const bbox = BBox.get(feature)
+            const tilerange = bbox.expandToTileBounds(zoomlevel).containingTileRange(zoomlevel)
+            Tiles.MapRange(tilerange, (x, y) => {
+                const tileNumber = Tiles.tile_index(zoomlevel, x, y)
+                let newFeatureList = perBbox.get(tileNumber)
+                if(newFeatureList === undefined){
+                    newFeatureList = []
+                    perBbox.set(tileNumber, newFeatureList)
+                }
+                newFeatureList.push(feature)
+            })
         }
 
-        return togpx(feature, {
-            creator: "MapComplete " + Constants.vNumber,
-            metadata,
-        })
+        return perBbox
+    }
+    public static toGpx(
+        locations:
+            | Feature<LineString>
+            | Feature<Point, { date?: string; altitude?: number | string }>[],
+        title?: string
+    ) {
+        title = title?.trim()
+        if (title === undefined || title === "") {
+            title = "Uploaded with MapComplete"
+        }
+        title = Utils.EncodeXmlValue(title)
+        const trackPoints: string[] = []
+        let locationsWithMeta: Feature<Point, { date?: string; altitude?: number | string }>[]
+        if (Array.isArray(locations)) {
+            locationsWithMeta = locations
+        } else {
+            locationsWithMeta = locations.geometry.coordinates.map(
+                (p) =>
+                    <Feature<Point>>{
+                        type: "Feature",
+                        properties: {},
+                        geometry: {
+                            type: "Point",
+                            coordinates: p,
+                        },
+                    }
+            )
+        }
+        for (const l of locationsWithMeta) {
+            let trkpt = `    <trkpt lat="${l.geometry.coordinates[1]}" lon="${l.geometry.coordinates[0]}">`
+            if (l.properties.date) {
+                trkpt += `        <time>${l.properties.date}</time>`
+            }
+            if (l.properties.altitude) {
+                trkpt += `        <ele>${l.properties.altitude}</ele>`
+            }
+            trkpt += "    </trkpt>"
+            trackPoints.push(trkpt)
+        }
+        const header =
+            '<gpx version="1.1" creator="MapComplete.osm.be" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">'
+        return (
+            header +
+            "\n<name>" +
+            title +
+            "</name>\n<trk><trkseg>\n" +
+            trackPoints.join("\n") +
+            "\n</trkseg></trk></gpx>"
+        )
     }
 
     public static IdentifieCommonSegments(coordinatess: [number, number][][]): {
@@ -610,6 +701,20 @@ export class GeoOperations {
         return turf.bearing(a, b)
     }
 
+    public static along(a: Coord, b: Coord, distanceMeter: number): Coord {
+        return turf.along(
+            <any> {
+                type:"Feature",
+                geometry:{
+                    type:"LineString",
+                    coordinates: [a, b]
+                }
+            }, distanceMeter, {units: "meters"}
+
+        ).geometry.coordinates
+    }
+
+
     /**
      * Returns 'true' if one feature contains the other feature
      *
@@ -641,14 +746,14 @@ export class GeoOperations {
      */
     static completelyWithin(
         feature: Feature<Geometry, any>,
-        possiblyEncloingFeature: Feature<Polygon | MultiPolygon, any>
+        possiblyEnclosingFeature: Feature<Polygon | MultiPolygon, any>
     ): boolean {
-        return booleanWithin(feature, possiblyEncloingFeature)
+        return booleanWithin(feature, possiblyEnclosingFeature)
     }
 
     /**
      * Create an intersection between two features.
-     * A new feature is returned based on 'toSplit', which'll have a geometry that is completely withing boundary
+     * One or multiple new feature is returned based on 'toSplit', which'll have a geometry that is completely withing boundary
      */
     public static clipWith(toSplit: Feature, boundary: Feature<Polygon>): Feature[] {
         if (toSplit.geometry.type === "Point") {
@@ -679,6 +784,115 @@ export class GeoOperations {
             return [splitup]
         }
         throw "Invalid geometry type with GeoOperations.clipWith: " + toSplit.geometry.type
+    }
+
+    /**
+     *
+     *
+     * const f = (type, feature: Feature) => GeoOperations.featureToCoordinateWithRenderingType(feature, type)
+     * const g = geometry => (<Feature> {type: "Feature", properties: {}, geometry})
+     * f("point", g({type:"Point", coordinates:[1,2]})) // => [1,2]
+     * f("centroid", g({type:"Point", coordinates:[1,2]})) // => undefined
+     * f("start", g({type:"Point", coordinates:[1,2]})) // => undefined
+     * f("centroid", g({type:"LineString", coordinates:[[1,2], [3,4]]})) // => [2,3]
+     * f("centroid", g({type:"Polygon", coordinates:[[[1,2], [3,4], [1,2]]]})) // => [2,3]
+     * f("projected_centerpoint", g({type:"LineString", coordinates:[[1,2], [3,4]]})) // => [1.9993137596003214,2.999313759600321]
+     * f("start", g({type:"LineString", coordinates:[[1,2], [3,4]]})) // => [1,2]
+     * f("end", g({type:"LineString", coordinates:[[1,2], [3,4]]})) // => [3,4]
+     *
+     */
+    public static featureToCoordinateWithRenderingType(
+        feature: Feature,
+        location: "point" | "centroid" | "start" | "end" | "projected_centerpoint" | string
+    ): [number, number] | undefined {
+        switch (location) {
+            case "point":
+                if (feature.geometry.type === "Point") {
+                    return <[number, number]>feature.geometry.coordinates
+                }
+                return undefined
+            case "centroid":
+                if (feature.geometry.type === "Point") {
+                    return undefined
+                }
+                return GeoOperations.centerpointCoordinates(feature)
+            case "projected_centerpoint":
+                if (
+                    feature.geometry.type === "LineString" ||
+                    feature.geometry.type === "MultiLineString"
+                ) {
+                    const centerpoint = GeoOperations.centerpointCoordinates(feature)
+                    const projected = GeoOperations.nearestPoint(
+                        <Feature<LineString>>feature,
+                        centerpoint
+                    )
+                    return <[number, number]>projected.geometry.coordinates
+                }
+                return undefined
+            case "start":
+                if (feature.geometry.type === "LineString") {
+                    return <[number, number]>feature.geometry.coordinates[0]
+                }
+                return undefined
+            case "end":
+                if (feature.geometry.type === "LineString") {
+                    return <[number, number]>feature.geometry.coordinates.at(-1)
+                }
+                return undefined
+            default:
+                throw "Unkown location type: " + location
+        }
+    }
+
+    /**
+     * Constructs all tiles where features overlap with and puts those features in them.
+     * Long features (e.g. lines or polygons) which overlap with multiple tiles are referenced in each tile they overlap with
+     * @param zoomlevel
+     * @param features
+     */
+    public static slice(zoomlevel: number, features: Feature[]): Map<number, Feature[]> {
+        const tiles = new Map<number, Feature[]>()
+
+        for (const feature of features) {
+            const bbox = BBox.get(feature)
+            Tiles.MapRange(Tiles.tileRangeFrom(bbox, zoomlevel), (x, y) => {
+                const i = Tiles.tile_index(zoomlevel, x, y)
+
+                let tiledata = tiles.get(i)
+                if (tiledata === undefined) {
+                    tiledata = []
+                    tiles.set(i, tiledata)
+                }
+                tiledata.push(feature)
+            })
+        }
+
+        return tiles
+    }
+
+    /**
+     * Creates a linestring object based on the outer ring of the given polygon
+     *
+     * Returns the argument if not a polygon
+     * @param p
+     */
+    public static outerRing<P>(p: Feature<Polygon | LineString, P>): Feature<LineString, P> {
+        if (p.geometry.type !== "Polygon") {
+            return <Feature<LineString, P>>p
+        }
+        return {
+            type: "Feature",
+            properties: p.properties,
+            geometry: {
+                type: "LineString",
+                coordinates: p.geometry.coordinates[0],
+            },
+        }
+    }
+
+    static centerpointCoordinatesObj(geojson: Feature) {
+        const [lon, lat] = GeoOperations.centerpointCoordinates(geojson)
+        return { lon, lat }
     }
 
     /**

@@ -1,6 +1,6 @@
 import ScriptUtils from "./ScriptUtils"
 import { appendFileSync, readFileSync, writeFileSync } from "fs"
-import { OsmObject } from "../Logic/Osm/OsmObject"
+import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader";
 
 ScriptUtils.fixUtils()
 
@@ -17,7 +17,7 @@ const ids = JSON.parse(readFileSync("export.geojson", "utf-8")).features.map(
 )
 console.log(ids)
 ids.map((id) =>
-    OsmObject.DownloadReferencingRelations(id).then((relations) => {
+    new OsmObjectDownloader().DownloadReferencingRelations(id).then((relations) => {
         console.log(relations)
         const changeparts = relations
             .filter(

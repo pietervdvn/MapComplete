@@ -23,7 +23,7 @@ export class Denomination {
         }
         this._canonicalSingular = json.canonicalDenominationSingular?.trim()
 
-        json.alternativeDenomination.forEach((v, i) => {
+        json.alternativeDenomination?.forEach((v, i) => {
             if ((v?.trim() ?? "") === "") {
                 throw `${context}.alternativeDenomination.${i}: invalid alternative denomination: undefined, null or only whitespace`
             }
@@ -51,12 +51,6 @@ export class Denomination {
         return (this._humanSingular ?? this._human).Clone()
     }
 
-    getToggledHuman(isSingular: Store<boolean>): BaseUIElement {
-        if (this._humanSingular === undefined) {
-            return this.human
-        }
-        return new Toggle(this.humanSingular, this.human, isSingular)
-    }
 
     /**
      * Create a representation of the given value
@@ -165,7 +159,7 @@ export class Denomination {
         return null
     }
 
-    isDefaultUnit(country: () => string) {
+    isDefaultDenomination(country: () => string) {
         if (this.useIfNoUnitGiven === true) {
             return true
         }

@@ -36,11 +36,9 @@
     },
     "general": {
         "about": "Edite e adicione facilmente o OpenStreetMap para um determinado tema",
-        "aboutMapcomplete": "<h3>Sobre</h3><p>Use o MapComplete para adicionar informações ao OpenStreetMap <b>sobre um tema específico.</b> Responda a algumas perguntas e, em poucos minutos, suas contribuições estarão disponíveis em todos os lugares. Na maioria dos temas você pode adicionar fotos ou até mesmo deixar uma avaliação. O <b>mantenedor do tema</b> define os elementos, questões e idiomas disponíveis para ele. </p><h3>Descubra mais</h3><p>O MapComplete sempre <b>mostra a próxima etapa</b> para aprender mais sobre o OpenStreetMap.<ul><li>Quando incorporada em um site, o iframe vincula-se a um MapComplete em tela inteira.</li><li>A versão em tela inteira oferece informações sobre o OpenStreetMap.</li><li>A visualização funciona sem login, mas a edição exige uma conta no OSM.</li><li>Se você não estiver conectado, será solicitado que você faça o login</li><li>Depois de responder a uma pergunta, você pode adicionar novos elementos no mapa</li><li>Depois de um tempo as tags OSM reais são mostradas e posteriormente vinculadas à wiki</li></ul></p><br/><p>Encontrou <b>um problema</b>? Tem uma <b>solicitação de novo recurso</b>? Quer ajudar a <b>traduzir</b>? Acesse o <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>código-fonte</a> ou o <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>rastreador de problemas.</a> </p><p> Quer ver <b>seu progresso</b>? Siga o contador de edições no <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
         "add": {
             "addNew": "Adicione {category} aqui",
             "confirmButton": "Adicione uma {category} aqui.<br><div class=\"alert\">Sua adição é visível para todos</div>",
-            "confirmIntro": "<h3>Adicionar um {title} aqui?</h3>O ponto que você criar aqui será <b>visível para todos</b>. Por favor, só adicione coisas ao mapa se elas realmente existirem. Muitos aplicativos usam esses dados.",
             "intro": "Você clicou em algum lugar onde ainda não há dados conhecidos.<br>",
             "layerNotEnabled": "A camada {layer} não está habilitada. Habilite esta camada para adicionar um ponto",
             "openLayerControl": "Abra a caixa de controle da camada",
@@ -67,7 +65,6 @@
         "noNameCategory": "{category} sem nome",
         "noTagsSelected": "Nenhuma tag selecionada",
         "number": "número",
-        "oneSkippedQuestion": "Uma pergunta foi pulada",
         "opening_hours": {
             "closed_permanently": "Fechado por tempo desconhecido",
             "closed_until": "Fechado até {date}",
@@ -120,7 +117,6 @@
             "thanksForSharing": "Obrigado por compartilhar!"
         },
         "skip": "Pule esta pergunta",
-        "skippedQuestions": "Algumas perguntas foram puladas",
         "weekdays": {
             "abbreviations": {
                 "friday": "Sex",

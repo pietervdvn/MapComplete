@@ -4,7 +4,6 @@ import { TagsFilter } from "./TagsFilter"
 export class Tag extends TagsFilter {
     public key: string
     public value: string
-    public static newlyCreated = new Tag("_newly_created", "yes")
     constructor(key: string, value: string) {
         super()
         this.key = key
@@ -36,15 +35,27 @@ export class Tag extends TagsFilter {
      * isEmpty.matchesProperties({"other_key": "value"}) // => true
      * isEmpty.matchesProperties({"key": undefined}) // => true
      *
+     * const isTrue = new Tag("key": "true")
+     * isTrue.matchesProperties({"key":"true"}) // => true
+     * isTrue.matchesProperties({"key": true}) // => true
      */
-    matchesProperties(properties: any): boolean {
-        const foundValue = properties[this.key]
+    matchesProperties(properties: Record<string, string>): boolean {
+        let foundValue = properties[this.key]
+
         if (foundValue === undefined && (this.value === "" || this.value === undefined)) {
             // The tag was not found
             // and it shouldn't be found!
             return true
         }
-
+        if(typeof foundValue !== "string"){
+            if(foundValue === true && (this.value === "true" || this.value === "yes" )){
+                return true
+            }
+            if(foundValue === false && (this.value === "false" || this.value === "no" )){
+                return true
+            }
+            foundValue = ""+foundValue
+        }
         return foundValue === this.value
     }
 
@@ -62,14 +73,18 @@ export class Tag extends TagsFilter {
      t.asHumanString() // => "key=value"
      t.asHumanString(true) // => "<a href='https://wiki.openstreetmap.org/wiki/Key:key' target='_blank'>key</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:key%3Dvalue' target='_blank'>value</a>"
      */
-    asHumanString(linkToWiki?: boolean, shorten?: boolean, currentProperties?: any) {
+    asHumanString(
+        linkToWiki?: boolean,
+        shorten?: boolean,
+        currentProperties?: Record<string, string>
+    ) {
         let v = this.value
         if (shorten) {
             v = Utils.EllipsesAfter(v, 25)
         }
-        if (v === "" || (v === undefined && currentProperties !== undefined)) {
+        if ((v === "" || v === undefined) && currentProperties !== undefined) {
             // This tag will be removed if in the properties, so we indicate this with special rendering
-            if (currentProperties !== undefined && (currentProperties[this.key] ?? "") === "") {
+            if ((currentProperties[this.key] ?? "") === "") {
                 // This tag is not present in the current properties, so this tag doesn't change anything
                 return ""
             }
@@ -122,7 +137,7 @@ export class Tag extends TagsFilter {
         return [this]
     }
 
-    asChange(properties: any): { k: string; v: string }[] {
+    asChange(): { k: string; v: string }[] {
         return [{ k: this.key, v: this.value }]
     }
 
@@ -134,7 +149,7 @@ export class Tag extends TagsFilter {
         return false
     }
 
-    visit(f: (TagsFilter) => void) {
+    visit(f: (tagsFilter: TagsFilter) => void) {
         f(this)
     }
 }

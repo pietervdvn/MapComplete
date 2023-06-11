@@ -29,21 +29,7 @@ A layer showing bicycle pumps and bicycle repair tool stands
   - [personal](https://mapcomplete.osm.be/personal)
 
 
-
-
- Basic tags for this layer 
----------------------------
-
-
-
-Elements must have the all of following tags to be shown on this layer:
-
-
-
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:amenity' target='_blank'>amenity</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dbicycle_repair_station' target='_blank'>bicycle_repair_station</a>
-
-
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22amenity%22%3D%22bicycle_repair_station%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+This is a special layer - data is not sourced from OpenStreetMap
 
 
 
@@ -60,6 +46,7 @@ this quick overview is incomplete
 
 attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:tools#values) [service:bicycle:tools](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:tools) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dno) [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes) [yes](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:tools%3Dyes)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/service:bicycle:pump:operational_status#values) [service:bicycle:pump:operational_status](https://wiki.openstreetmap.org/wiki/Key:service:bicycle:pump:operational_status) | Multiple choice | [broken](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Dbroken) [operational](https://wiki.openstreetmap.org/wiki/Tag:service:bicycle:pump:operational_status%3Doperational)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
@@ -74,6 +61,25 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/manometer#values) [manometer](https://wiki.openstreetmap.org/wiki/Key:manometer) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dno) [broken](https://wiki.openstreetmap.org/wiki/Tag:manometer%3Dbroken)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
 
+
+
+
+### just_created 
+
+
+
+This element shows a 'thank you' that the contributor has recently created this element
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+  - *You just created this element! Thanks for sharing this info with the world and helping people worldwide.*  corresponds with  `id~.+`
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_backend~.+&_last_edit:passed_time<300&|_version_number=1`
 
 
 
@@ -339,6 +345,72 @@ This is rendered with  `Located on the {level}th floor`
   - This option cannot be chosen as answer
   - *Located on the first floor*  corresponds with  `level=1`
   - *Located on the first basement level*  corresponds with  `level=-1`
+
+
+
+
+### leftover-questions 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### minimap 
+
+
+
+Shows a small map with the feature. Added by default to every popup
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### move-button 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### delete-button 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### last_edit 
+
+
+
+Gives some metainfo about the last edit and who did edit it - rendering only
+
+This tagrendering has no question and is thus read-only
+
+
+
+This tagrendering is only visible in the popup if the following condition is met: `_last_edit:contributor~.+&_last_edit:changeset~.+`
+
+
+
+### all-tags 
+
+
+
+This tagrendering has no question and is thus read-only
+
  
 
 This document is autogenerated from [assets/layers/bike_repair_station/bike_repair_station.json](https://github.com/pietervdvn/MapComplete/blob/develop/assets/layers/bike_repair_station/bike_repair_station.json)

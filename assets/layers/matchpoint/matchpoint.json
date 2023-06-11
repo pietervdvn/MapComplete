@@ -1,11 +1,7 @@
 {
   "id": "matchpoint",
   "description": "The default rendering for a locationInput which snaps onto another object",
-  "source": {
-    "osmTags": {
-      "and": []
-    }
-  },
+  "source": "special",
   "mapRendering": [
     {
       "location": [

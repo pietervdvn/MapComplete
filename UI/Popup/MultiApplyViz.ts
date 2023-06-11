@@ -1,6 +1,6 @@
-import { Store } from "../../Logic/UIEventSource"
+import { Store, UIEventSource } from "../../Logic/UIEventSource"
 import MultiApply from "./MultiApply"
-import { SpecialVisualization } from "../SpecialVisualization"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
 
 export class MultiApplyViz implements SpecialVisualization {
     funcName = "multi_apply"
@@ -31,7 +31,11 @@ export class MultiApplyViz implements SpecialVisualization {
     example =
         "{multi_apply(_features_with_the_same_name_within_100m, name:etymology:wikidata;name:etymology, Apply etymology information on all nearby objects with the same name)}"
 
-    constr(state, tagsSource, args) {
+    constr(
+        state: SpecialVisualizationState,
+        tagsSource: UIEventSource<Record<string, string>>,
+        args: string[]
+    ) {
         const featureIdsKey = args[0]
         const keysToApply = args[1].split(";")
         const text = args[2]

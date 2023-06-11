@@ -88,13 +88,12 @@
     },
     "general": {
         "about": "Bewerk en voeg data toe aan OpenStreetMap over een specifiek onderwerp op een gemakkelijke manier",
-        "aboutMapcomplete": "<h3>Over MapComplete</h3><p>Met MapComplete kun je OpenStreetMap verrijken met informatie over een bepaald thema. Beantwoord enkele vragen, en binnen een paar minuten is jouw bijdrage wereldwijd beschikbaar! In de meeste thema's kan je foto's toevoegen of zelfs een review achterlaten. De <b>maker van het thema</b> bepaalt de elementen, vragen en taalversies voor het thema.</p><h3>Ontdek meer</h3><p>MapComplete <b>biedt altijd de volgende stap</b> naar meer OpenStreetMap:</p><ul><li>Indien ingebed in een website linkt het iframe naar de volledige MapComplete</li><li>De volledige versie heeft uitleg over OpenStreetMap</li><li>Bekijken kan altijd, maar wijzigen vereist een OSM-account</li><li>Als je niet aangemeld bent, wordt je gevraagd dit te doen</li><li>Als je minstens één vraag hebt beantwoord, kan je ook elementen toevoegen</li><li>Heb je genoeg changesets, dan verschijnen de OSM-tags, nog later links naar de wiki</li></ul><p></p><p>Merk je <b>een bug</b> of wil je een <b>extra feature</b>? Wil je <b>helpen vertalen</b>? Bezoek dan de <a href=\"https://github.com/pietervdvn/MapComplete\" target=\"_blank\">broncode</a> en <a href=\"https://github.com/pietervdvn/MapComplete/issues\" target=\"_blank\">issue tracker</a>. </p><p></p>Wil je <b>je vorderingen</b> zien? Volg de edits <a href=\"{osmcha_link}\" target=\"_blank\">op OsmCha</a>.<p></p>",
         "add": {
             "addNew": "Voeg {category} toe",
-            "addNewMapLabel": "Klik hier om een item toe te voegen",
             "backToSelect": "Selecteer een andere categorie",
             "confirmButton": "Voeg een {category} toe<br><div class=\"alert\">Je toevoeging is voor iedereen zichtbaar</div>",
-            "confirmIntro": "<h3>Voeg een {title} toe?</h3>Het object dat je toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
+            "confirmTitle": "Voeg een {title} toe?",
+            "confirmWarning": "Het object dat je toevoegt, is <b>zichtbaar voor iedereen</b>. Veel applicaties gebruiken deze data, voeg dus enkel punten toe die echt bestaan.",
             "disableFilters": "Zet alle filters af",
             "disableFiltersExplanation": "Interessepunten kunnen verborgen zijn door een filter",
             "hasBeenImported": "Dit object is reeds geïmporteerd",
@@ -150,7 +149,7 @@
         "back": "Vorige",
         "backToIndex": "Keer terug naar het overzicht met alle thematische kaarten",
         "backToMapcomplete": "Terug naar het themaoverzicht",
-        "backgroundMap": "Achtergrondkaart",
+        "backgroundMap": "Selecteer een achtergrondlaag",
         "cancel": "Annuleren",
         "confirm": "Bevestigen",
         "customThemeIntro": "<h3>Onofficiële thema's</h3>De onderstaande thema's heb je eerder bezocht en zijn gemaakt door andere OpenStreetMappers.",
@@ -177,7 +176,6 @@
         "error": "Er ging iets mis",
         "example": "Voorbeeld",
         "examples": "Voorbeelden",
-        "feelFreeToSkip": "Je kan hieronder nog informatie toevoegen of updaten, maar <b>sla gerust vragen over</b> waarvoor je het antwoord niet kent.",
         "fewChangesBefore": "Gelieve eerst enkele vragen van bestaande objecten te beantwoorden vooraleer zelf objecten toe te voegen.",
         "getStartedLogin": "Login met OpenStreetMap om te beginnen",
         "getStartedNewAccount": " of <a href='https://www.openstreetmap.org/user/new' target='_blank'>maak een nieuwe account aan</a>",
@@ -215,16 +213,15 @@
             "streetcomplete": "Een andere, gelijkaardige Android applicatie is <a href=\"https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete\" class=\"underline hover:text-blue-800\" target=\"_blank\">StreetComplete</a>."
         },
         "nameInlineQuestion": "De naam van dit {category} is $$$",
-        "newlyCreated": "Je hebt dit punt net toegevoegd! Bedankt om deze info met iedereen te delen en om de mensen wereldwijd te helpen.",
         "next": "Volgende",
         "noMatchingMapping": "Geen overeenkomsten gevonden…",
         "noNameCategory": "{category} zonder naam",
         "noTagsSelected": "Geen tags geselecteerd",
         "notValid": "Kies een geldige waarde om verder te gaan",
         "number": "getal",
-        "oneSkippedQuestion": "Een vraag werd overgeslaan",
         "openStreetMapIntro": "<h3>Een open kaart</h3><p>Zou het niet fantastisch zijn als er een open kaart zou zijn die door iedereen aangepast én gebruikt kan worden? Een kaart waar iedereen zijn interesses aan zou kunnen toevoegen? Dan zouden er geen duizend-en-één verschillende kleine kaartjes, websites, ... meer nodig zijn</p><p><b><a href=\"https://OpenStreetMap.org\" target=\"_blank\">OpenStreetMap</a></b> is deze open kaart. Je mag de kaartdata gratis gebruiken (mits <a href=\"https://osm.org/copyright\" target=\"_blank\">bronvermelding en herpublicatie van aanpassingen</a>). Daarenboven mag je de kaart ook gratis aanpassen als je een account maakt. Ook deze website is gebaseerd op OpenStreetMap. Als je hier een vraag beantwoord, gaat het antwoord daar ook naartoe</p><p>Tenslotte zijn er reeds vele gebruikers van OpenStreetMap. Denk maar <a href=\"https://organicmaps.app//\" target=\"_blank\">Organic Maps</a>, <a href=\"https://osmAnd.net\" target=\"_blank\">OsmAnd</a>, verschillende gespecialiseerde routeplanners, de achtergrondkaarten op Facebook, Instagram,...<br/>;Zelfs Apple Maps en Bing-Maps gebruiken OpenStreetMap in hun kaarten!</p><p></p><p>Kortom, als je hier een punt toevoegd of een vraag beantwoord, zal dat na een tijdje ook in al dié applicaties te zien zijn.</p>",
         "openTheMap": "Raadpleeg de kaart",
+        "openTheMapAtGeolocation": "Ga naar jouw locatie",
         "opening_hours": {
             "closed_permanently": "Gesloten voor onbepaalde tijd",
             "closed_until": "Gesloten - open op {date}",
@@ -244,7 +241,7 @@
         "pdf": {
             "attr": "Kaartgegevens © OpenStreetMap-bijdragers, herbruikbaar volgens ODbL",
             "attrBackground": "Achtergrondlaag: {background}",
-            "generatedWith": "Gemaakt met MapComplete.osm.be",
+            "generatedWith": "Gemaakt met MapComplete.osm.be/{layoutid}",
             "versionInfo": "v{version} - gemaakt op {date}"
         },
         "pickLanguage": "Kies je taal: ",
@@ -266,6 +263,7 @@
             "error": "Niet gelukt…",
             "nothing": "Niets gevonden…",
             "search": "Zoek naar een locatie",
+            "searchShort": "Zoek…",
             "searching": "Aan het zoeken…"
         },
         "sharescreen": {
@@ -290,7 +288,6 @@
             "thanksForSharing": "Bedankt om te delen!"
         },
         "skip": "Sla deze vraag over",
-        "skippedQuestions": "Enkele vragen werden overgeslaan",
         "testing": "Testmode - wijzigingen worden niet opgeslaan",
         "uploadGpx": {
             "choosePermission": "Kies hieronder of je traject gedeeld moet worden:",
@@ -368,7 +365,6 @@
         "intro": "MapComplete ondersteunt de volgende sneltoetsen:",
         "key": "Toets-combinatie",
         "openLayersPanel": "Open het paneel met lagen, filters en achtergrondkaart",
-        "selectBackground": "Selecteer een achtergrondlaag van category {category}",
         "selectMapnik": "Selecteer OpenStreetMap-carto als achtergrondlaag",
         "selectSearch": "Selecteer de zoekbalk om locaties te zoeken",
         "title": "Sneltoetsen"
@@ -401,131 +397,6 @@
         "uploadMultipleDone": "{count} afbeeldingen zijn toegevoegd. Bedankt voor je bijdrage!",
         "uploadingMultiple": "Bezig met {count} foto's te uploaden…",
         "uploadingPicture": "Bezig met een foto te uploaden…"
-    },
-    "importHelper": {
-        "askMetadata": {
-            "downloadGeojson": "Download GeoJSON",
-            "giveDescription": "Gelieve een korte beschrijving te geven aan iemand die deze kaartnota ziet. Een goede kaartnota beschrijft wat een bijdrager moet doen, bijvoorbeeld: <i>Hier staat mogelijks een zitbank. Ben je in de buurt, zou je dan willen nakijken of de bank bestaat</i> (Een link naar het relevante MapComplete-thema wordt automatisch toegevoegd)",
-            "giveSource": "Wat is de bron van deze data? (Indien een object het attribuut &lt;code&gt;source&lt;code&gt; heeft, zal dit attribuut gebruikt worden)",
-            "giveWikilink": "Op welke wikipagina staat meer informatie over deze data-import?",
-            "intro": "Gelieve extra informatie te geven over deze {count} kaartnota's.",
-            "orDownload": "Je kan ook de dataset download om te importeren met een andere tool zoals JOSM",
-            "shouldBeOsmWikilink": "Dit hoort een link naar een pagina op wiki.opentreetmap.org te zijn",
-            "shouldBeUrl": "Geen geldige URL",
-            "shouldNotBeHomepage": "Foeifoei, zo makkelijk kom je er niet vanaf! Een link naar de homepagina van de wiki mag niet, dit moet een wikipagina zijn die je import documenteert.",
-            "title": "Metadata instellen"
-        },
-        "compareToAlreadyExistingNotes": {
-            "completelyImported": "Alle voorgestelde punten hebben reeds een importeer-kaartnota.",
-            "loading": "Kaarnota's aan het ophalen…",
-            "loadingFailed": "Kaartnota's ophalen is mislukt door {error}",
-            "mapExplanation": "De rode elementen op de volgende kaart zijn de datapunten uit je dataset die <b>{length}</b> elementen bevat.",
-            "noPreviousNotesFound": "Geen eerdere importeer-kaartnota's gevonden",
-            "nothingNearby": "Geen enkel te importeren punt heeft een importeer-kaartnota in de buurt",
-            "someNearby": "{hasNearby} punten hebben reeds een bestaande importeer-kaartnota op minder dan {distance} meter",
-            "title": "Vergelijking met bestaande kaartnota's",
-            "titleLong": "Vergelijking met reeds bestaande importeer-kaartnota's",
-            "wontBeImported": "Deze datapunten zullen <i>niet</i> geimporteerd worden en zijn hieronder in het rood aangeduid"
-        },
-        "confirmProcess": {
-            "contactedCommunity": "Ik heb de (lokale) OpenStreetMap-community gecontacteerd en heb goedkeuring voor deze import",
-            "licenseIsCompatible": "De licentie van de te importeren data  is compatibel met OpenStreetMap: ze staat commercieel hergebruik toe en heeft geen attributie nodig",
-            "readImportGuidelines": "Ik heb de import-guidelines op de OSM-wiki gelezen",
-            "title": "Licentie en community",
-            "titleLong": "Heb je het importeer-proces gevolgd?",
-            "wikipageIsMade": "Deze import is gedocumenteerd op de OSM-wiki (de link wordt in de volgende stap gevraagd)"
-        },
-        "conflationChecker": {
-            "cacheExpired": "Cache is verouderd",
-            "downloadOverpassData": "Download de data van Overpass als GeoJSON",
-            "importCandidatesCount": "De {count} rode elementen op de onderstaande kaart zijn alle importeer-kandidaten.",
-            "loadedDataAge": "Ingeladen data komt van de cache en is {age} oud",
-            "mapShowingNearbyIntro": "De onderstaande kaart toont te importeren objecten met een OSM-object in de buurt ",
-            "nearbyWarn": "De {count} rode elementen op de onderstaande kaart zullen <b>niet</b> geimporteerd worden",
-            "nothingLoaded": "Geen elementen gevonden in OpenStreetMap die in de huidige laag {name} zitten",
-            "osmLoaded": "{count} elementen werden uit OpenStreetMap ingeladen die laag in laag <b>{name}</b> zitten.",
-            "reloadTheCache": "Verwijder de cache en bevraag Overpass opnieuw",
-            "setRangeToZero": "Set de radius op 0 of 1 indien je toch alle punten wenst te importeren",
-            "showOsmLayerInConflationMap": "Toon objecten van OpenStreetMap",
-            "states": {
-                "error": "Kon geen recente data ophalen van Overpass door {error}",
-                "idle": "Cache bevragen…",
-                "running": "Overpass wordt bevraagd…",
-                "unexpected": "Onverwachte toestand {state}"
-            },
-            "title": "Vergelijking met bestaande data",
-            "titleLive": "Data van OSM",
-            "titleNearby": "Objecten in de buurt",
-            "zoomIn": "Het huidige zoomniveau is {current}",
-            "zoomLevelSelection": "De live data wordt getoond vanaf zoomlevel: "
-        },
-        "createNotes": {
-            "creating": "<b>{count}</b> van {total} kaartnota's werden gemaakt",
-            "done": "Alle {count} kaartnota's zijn gemaakt!",
-            "loading": "Aan het laden…",
-            "openImportViewer": "Bekijk de voortgang van je kaartnotas in de import_viewer",
-            "title": "Kaartnota's maken"
-        },
-        "gotoImportViewer": "Bekijk je vorige importeer-kaartnota's",
-        "introduction": {
-            "description": "De importeer-helper converteert een externe dataset in OSM-kaartnotas. De externe data moet overeenkomen met een bestaande MapComplete-laag. Voor elk item wordt er een kaartnota gemaakt. Deze notas worden dan samen met de relevante POI getoond en kunnen dan (via MapComplete) snel en eenvoudig toegevoegd worden.",
-            "importFormat": "Een kaartnota moet het volgende formaat hebben om gedetecteerd te worden binnen een laag: <br><div class=\"literal-code\">[Een introductietekst]<br>https://mapcomplete.osm.be/[themename].html?[parameters waaronder lon en lat]#import<br>[alle tags van het te importeren object] </div>",
-            "title": "Inleiding"
-        },
-        "login": {
-            "lockNotice": "Deze pagina is afgeschermd. Je hebt minstens {importHelperUnlock} changesets nodig voor je deze pagina mag gebruiken.",
-            "loggedInWith": "Je bent momenteel aangemeld als <b>{name}</b> and maakte {csCount} eerdere wijzigingen",
-            "loginIsCorrect": "<b>{name}</b> is de correcte account om de import-nota's mee te maken.",
-            "loginRequired": "Je moet ingelogd zijn om verder te gaan",
-            "title": "Aanmelden",
-            "userAccountTitle": "Selecteer een account"
-        },
-        "mapPreview": {
-            "autodetected": "Deze laag was automatisch gekozen gebaseerd op de aanwezige eigenschappen",
-            "confirm": "De objecten bevinden zich op de juiste locatie",
-            "mismatch": "{count} objecten hebben niet de juiste tags. Zorg ervoor dat de juiste tags om het type aan te geven aanwezig zijn, namelijk {tags}",
-            "selectLayer": "Met welke laag komt deze te importeren dataset overeen?",
-            "title": "Voorbeeldkaart"
-        },
-        "noteParts": {
-            "datasource": "Oorspronkelijke data van {source}",
-            "importEasily": "Voeg dit punt eenvoudig toe met MapComplete:",
-            "wikilink": "Meer informatie over deze import: {wikilink}"
-        },
-        "previewAttributes": {
-            "allAttributesSame": "Alle kaart-objecten om te importeren hebben deze tag",
-            "inspectDataTitle": "Bekijk de data van {count} te importeren objecten",
-            "inspectLooksCorrect": "Deze waardes zien er correct uit",
-            "someHaveSame": "{count} te importeren objecten hebben dit attribuut, dit is {percentage}% van het totaal",
-            "title": "Bekijk attributen"
-        },
-        "selectFile": {
-            "description": "Selecteer een .csv of .geojson-bestand",
-            "errDuplicate": "Sommige kolommen hebben dezelfde naam",
-            "errNoLatOrLon": "Geen enkele kolom heet `lat` of `lon`",
-            "errNoName": "De naam van sommige kolommen ontbreken",
-            "errNotFeatureCollection": "Het ingeladen JSON-bestand is geen geojson-featurecollection",
-            "errPointsOnly": "Het ingeladen JSON-bestand mag enkel punten bevatten",
-            "fileFormatDescription": "Selecteer een <b class=\"code\">.csv</b>- of een <b class=\"code\">.geojson</b>bestand",
-            "fileFormatDescriptionCsv": "Het CSV-bestand moet een kolom <span class=\"literal-code\">lat</span> en <span class=\"literal-code\">lon</span> bevatten die de coordinaten in WGS84 beschrijft. Bovendien moet er voor elk attribuut nog een kolom zijn..",
-            "fileFormatDescriptionGeoJson": "Het geojson-bestand mag enkel punten bevatten. De attributen moeten dezelfde zijn zoals in OpenStreetMap",
-            "loadedFilesAre": "{file} werd ingeladen",
-            "noFilesLoaded": "Geen bestand ingeladen op dit moment",
-            "title": "Selecteer bestand"
-        },
-        "selectTheme": {
-            "displayNonMatchingCount": "{length} objecten komen niet overeen met een preset",
-            "intro": "Elk van de volgende kaartthema's zal deze importeer-kaartnota's tonen. Echter, de kaartnota op OpenStreetMap kan slechts een link naar één thema tonen. Kies hier naar welk kaartthema de kaartnota's dienen te verwijzen",
-            "misMatch": "Attribuut {k} heeft waarde {properties} hoewel {v} werd verwacht",
-            "missing": "{k}={v} werd verwacht, maar is afwezig",
-            "needsTags": "{title} heeft tags {tags} nodig",
-            "noMatchingPresets": "Dit thema heeft geen presets om nieuwe punten toe te voegen. Ook imports zullen hier dus niet werken.",
-            "notApplicable": "Preset {title} is niet van toepassing:",
-            "title": "Selecteer een thema",
-            "unmatchedTitle": "De volgende elementen voldoen aan geen enkele preset"
-        },
-        "testMode": "Testmode - nota's zullen niet gemaakt worden",
-        "title": "Importeer-helper"
     },
     "importInspector": {
         "title": "Inspecteer en beheer importeer-notas"
@@ -638,109 +509,6 @@
         "trackingTitle": "Statistische informatie",
         "whileYoureHere": "Vind je privacy belangrijk?"
     },
-    "professional": {
-        "aboutMc": {
-            "internalUse": {
-                "intro": "<p>Wanneer de data in OpenStreetMap zit, zal je deze data waarschijnlijk ook willen gebruiken. Je MapComplete-kaart kan een handige <i>download</i>-knop krijgen waarmee je de data in open formaten kunt downloaden om ermee aan de slag te gaan in QGis, ArcGis, Excel, LibreOffice Calc, …</p><p>Iemand die met een spreadsheet kan werken, kan dus eenvoudig grafieken maken; maar ook de GIS-experten binnen je organisatie kunnen gemakkelijk aan de slag met de data in hun favoriete applicatie.</p><p>Ook voor automatische processen is er een gratis API beschikbaar, beheerd door de community</p>",
-                "title": "Data hergebruiken"
-            },
-            "layers": {
-                "intro": "<p>MapComplete heeft een krachtig templatesysteem om snel een kaart op te zetten die precies toont wat je nodig hebt</p>\n<p>Deze data kan opgehaald van <b>OpenStreetMap</b> of van <b>externe datasets</b> komen - bijvoorbeeld om datasets met elkaar te vergelijken of om data te tonen die niet in OpenStreetMap thuishoort (bijvoorbeeld evenementen, statistieken, …)</p>",
-                "title": "Welke data kan getoond worden met MapComplete?"
-            },
-            "survey": {
-                "intro": "<p>MapComplete is een makkelijk te gebruiken hulpmiddel om ter plaatste met een smartphone of vanop afstand met een PC data te verzamelen. Met enkele klikken kan de nodige data toegevoegd worden aan OpenStreetMap.</p>\n<p>Wij kunnen voor jou een <b>op maat gemaakte verzameltool</b> maken die precies de data vraagt die nodig is.</p>\n<p>Heb je een dataset die (opnieuw) opgemeten moet worden? Dat is het perfecte moment om de stap naar OpenStreetMap te maken. MapComplete kan je eigen dataset en OpenStreetMap samen tonen, wat het makkelijk maakt om zowel de eigen locaties als de bijdragen van de community na te kijken.</p>\n",
-                "title": "Mogelijkheden om data te verzamelen"
-            },
-            "text0": "Als je een bestaand MapComplete-thema wilt gebruiken of in je website wilt embedden, dan mag je dit gratis doen. Dit is gratis en zal dat altijd zijn.",
-            "text1": "Wil je andere data visualiseren, maar bestaat er nog geen geschikte kaart voor? De MapComplete-ontwikkelaars kunnen dit <b>op maat bouwen</b> voor een schappelijk budget. Stuur je vraag via <a href=\"mailto:pietervdvn@posteo.net\">email</a>, <a href=\"https://github.com/pietervdvn/MapComplete/issues\">github</a> of <a href=\"https://www.openstreetmap.org/message/new/Pieter%20Vander%20Vennet\">een bericht op osm.org</a>",
-            "text2": "Twijfel je nog? We sommen de mogelijkheden hieronder op en beantwoorden enkele veelvoorkomende vragen",
-            "title": "MapComplete gebruiken in je eigen organisatie"
-        },
-        "aboutOsm": {
-            "aboutOsm": {
-                "intro": "OpenStreetMap is een gedeelde, globale databank; gebouwd door vrijwilligers. Alle geodata is er welkom, als deze <b>ter plaatse geverifieerd</b> kan worden.<br>OpenStreetMap is zo uitgegroeid tot een uitgebreide databank: het bevat gegevens over miljoenen objecten binnen duizenden categorieën. Elk individueel object kan ook weer verschillende attributen hebben, waardoor veel nuance ontstaat:",
-                "li0": "Straten hebben een geometrie, maar kunnen ook informatie bevatten over de maximale toegestane snelheid, de wegbedekking, ofdat ze 's nachts verlicht zijn, een link naar Wikipedia, een link naar wat ze vernoemd zijn, welke wandel-, fiets- en busroutes er lopen, …",
-                "li1": "Sommige winkels hebben attibuten met openingsuren, telefoonnumer, een website, welke betaalmiddelen er geaccepteerd worden, wat ze verkopen, welke diensten ze aanbieden, …",
-                "li2": "Toiletten hebben mogelijks informatie over rolstoeltoegankelijkheid, luiertafel, hoeveel een toiletbezoek kost, …",
-                "li3": "en nog veel meer…",
-                "title": "Wat is OpenStreetMap?"
-            },
-            "benefits": {
-                "intro": "Het kan erg moeilijk zijn om een eigen dataset achter te laten, want het opbouwen ervan kostte vaak veel tijd en moeite.<br>Echter, de voordelen om over te schakelen naar OpenStreetMap zijn enorm:",
-                "li0": "Je bent niet langer alleen om deze data te verzamelen en te onderhouden - een hele community helpt je",
-                "li1": "Je data heeft een groter bereik dan ooit tevoren door de vele hergebruikers zoals Bing Maps, Apple Maps, Facebook, Instagram, Pokemon Go, OsmAnd, Organic Maps, Maps.me, Mapbox, Komoot, de meeste fietsrouteplanners, …",
-                "li2": "Veel overheidsorganisaties en gemeentes gebruiken OpenStreetMap op hun website",
-                "title": "Voordelen van het OpenStreetMap-ecosysteem"
-            },
-            "license": {
-                "intro": "OpenStreetMap wordt gepubliceerd onder de Open Database License. De <a href=\"https://osm.org/copyright\" target=\"_blank\">volledige licentie</a> kan als volgt worden samengevat:",
-                "li0": "Een product dat OpenStreetMap gebruikt moet de OpenStreetMap vermelden.",
-                "li1": "OpenStreetMap-data moet <i>open</i> blijven. Dit betekent dat een kaart met OpenStreetMap-data opnieuw gekopieerd mag worden.",
-                "outro": "De licentie heeft enkele gevolgen - deze worden hieronder toegelicht.",
-                "title": "De licentie"
-            },
-            "vandalism": {
-                "intro": "Omdat iedereen de data kan aanpassen, is het inderdaad mogelijk dat iemand opzettelijk een foute aanpassing maakt. Dit gebeurt in de praktijk echter nooit, want:",
-                "li0": "de technische drempel om een wijziging te maken is hoog",
-                "li1": "een kleine, foutieve wijziging heeft weinig impact en brengt dus weinig op voor een vandaal",
-                "li2": "een wijziging met een grote impact wordt snel opgemerkt omdat er zoveel datagebruikers zijn",
-                "li3": "alle wijzigingen worden bijgehouden en gelinkt aan de bijdrager die ze maakt. Een gebruiker die veelvuldig en opzettelijk de data kapot maakt, wordt verbannen",
-                "li4": "In België en verschillende andere landen wordt elke eerste wijziging van een nieuwe bijdrager systematisch gecontroleerd en gecorrigeerd.",
-                "title": "Is vandalisme een probleem?"
-            }
-        },
-        "drawbacks": {
-            "intro": "Aansluiten bij de OpenStreetMap-community heeft veel voordelen, toch zijn er enkele punten om rekening mee te houden.",
-            "licenseNuances": {
-                "intro": "OpenStreetMap wordt verspreid met de Open Database License. Deze houdt in dat:",
-                "li0": "Alle data mag hergebruikt worden voor alle doeleinden - inclusief commercieel gebruik",
-                "li1": "Applicaties en producten die OpenStreetMap gebruiken moeten een attributie tonen",
-                "li2": "Een dataset of kaartproduct die OpenStreetMap-data bevat moet deze data herpubliceren onder de ODbL, inclusief aanpassingen aan de data in een algemeen bruikbaar formaat.",
-                "outro": "Dit heeft enkele gevolgen voor sommige toepassingen zoals hieronder uitgelegd",
-                "title": "Gevolgen van de ODbL voor enkele toepassingen",
-                "usecaseGatheringOpenData": {
-                    "intro": "MapComplete is een uitstekende manier om Open Data te maken en te gebruiken - ook voor overheden. Alle verzamelde data is immers herbruikbaar onder de ODbL-licentie. Indien voor de verzamelde data een andere licentie nodig is (zoals <i>publiek domein</i>) dan kan ODbL te restrictief zijn. In dit geval kan men de bijdragers vragen om alsnog onder deze licentie hun bijdragen te maken.",
-                    "title": "Het verzamelen van Open Data"
-                },
-                "usecaseMapDifferentSources": {
-                    "intro": "<p>Bijvoorbeeld, een kaart met alle banken in een stad kan gemaakt worden met OpenStreetMap. Deze afgeprinte kaart moet dan duidelijk vermelden dat de kaartgegevens van OpenStreetMap komen. Deze kaarten verkopen is toegestaan. Indien de kaartenmaker opmerkt dat er enkele banken ontbreken en deze toevoegt aan de afgeprinte kaart, dan vallen deze nieuw toegevoegde banken ook onder de ODbL, wat inhoudt dat een OpenStreetMap-bijdrager deze toegevoegde banken kan gebruiken en deze terug aan OpenStreetMap kan toevoegen.</p><p>Deze bijdrager heeft ook het recht om de data van deze ontbrekende banken te vragen.</p><p>De kaartenmaker kan ook een laag met winkels toevoegen - mogelijks van een andere databron. Ook dit mag, indien duidelijk vermeld wordt dat de winkeldata van een andere bron komt.</p><p>Het &lt;b&gt;samenmixen&lt;/b&gt; van twee datasets in een niet te onderscheiden dataset is niet toegestaan. Indien de kaartenmaker ontdekt dat de gegevens van zitbanken in de ene wijk uitstekend op OpenStreetMap staat en dat de zitbanken in een andere wijk goed zijn opgetekend door private cartografische dienst, dan is het samenvoegen van deze data problematisch:</p>",
-                    "li0": "de open licentie verplicht het herpubliceren van de aanpassingen aan OSM-data…",
-                    "li1": "...maar de &lt;i&gt;alle rechten voorbehouden&lt;/i&gt; van de private dataset verbiedt dit.",
-                    "outro": "Dit soort samenvoegen is dus niet toegestaan",
-                    "title": "Een kaart maken van verschillende databronnen"
-                }
-            },
-            "title": "Enkele nadelen om rekening mee te houden",
-            "unsuitedData": {
-                "intro": "De basisregel is dat alle gegevens <b>ter plaatse verifieerbaar</b> moeten en ietwat <b>permanent</b> moeten zijn. Dit betekent dat sommige data <i>niet</i> in OpenStreetMap opgeslaan mogen worden - al bestaan hier oplossingen voor.",
-                "li0": "Subjectieve data (zoals reviews) zijn niet geschikt voor OpenStreetMap. MapComplete heeft een integratie met <a href=\"https://mangrove.reviews/\">Mangrove.reviews</a> waar iedereen reviews kan geven. Deze ratings en reviews worden met een open licentie gepubliceerd",
-                "li1": "Gebeurtenissen horen <i>niet</i> thuis in OpenStreetMap, net zoals kortstondige wegenwerken van enkele dagen of weken.",
-                "li2": "Tijdsgebonden data (bv. statistieken van luchtkwaliteit, verkeersintensiteit, …) kunnen niet bewaard worden op OpenStreetMap. Merk echter op dat MapComplete dit soort data kan visualiseren indien deze op een andere locatie opgeslaan is.",
-                "title": "Data die niet geschikt is voor OpenStreetMap"
-            }
-        },
-        "indexPage": {
-            "button": "Ontdek onze dienstverlening",
-            "hook": "Professionele ondersteuning nodig?",
-            "hookMore": "We kunnen helpen bij het opzetten van terreinwerk, integreren van datasets en algemene OpenStreetMap-consultancy"
-        },
-        "intro": "De ontwikkelaar van MapComplete bied professionele ondersteuning aan. Dit document toont enkele mogelijkheden, frequente vragen en de grenzen van wat MapComplete kan.",
-        "osmTitle": "Wat kunnen OpenStreetMap en MapComplete doen voor jouw organisatie?",
-        "services": {
-            "intro": "De ontwikkelaar van MapComplete kan je verderhelpen met de volgende diensten:",
-            "li0": "Het opzetten van een kaart, aangepast voor jou noden",
-            "li1": "Hulp bij het opzetten van interne dataflows om OpenStreetMap te integreren",
-            "li2": "Vormingen hoe data bijgedragen kan worden met MapComplete",
-            "li3": "Geavanceerdere training (bv. voor het GIS-team) hoe geavanceerdere data aan OpenStreetMap toegevoegd kan worden",
-            "li4": "Training hoe data van OpenStreetMap gefiltered en gedownload kan worden",
-            "outro": "Deze diensten worden aan een competitieve prijs aangeboden. Een simpel thema opzetten kan al vanaf €2000, waarna er een kleine jaarlijkse hostingkost is.",
-            "title": "Diensten met MapComplete"
-        },
-        "text0": "<p>Het onderhouden en updaten van geodata is moeilijk en duur.<br>Bovendien verzamelen veel organisaties dezelfde data, onafhankelijk van elkaar - waardoor hetzelfde werk verschillende keren wordt gedaan, de data in niet-standaard formaten wordt bijgehouden en ieder een onvolledige, niet onderhouden dataset heeft</p><p>Parallel hiermee is er ook een grote community die geodata verzameld in een globale, gestandaardiseerde databank: OpenStreetMap.org.</p>",
-        "text1": "<p>MapComplete is de editor die het gemakkelijk maakt om bij te dragen aan OpenStreetMap.</p>",
-        "title": "Professionele ondersteuning voor MapComplete"
-    },
     "reviews": {
         "affiliated_reviewer_warning": "(Review door betrokkene)",
         "attribution": "De beoordelingen worden voorzien door <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> en zijn beschikbaar onder de<a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0-licentie</a>. ",
@@ -775,12 +543,8 @@
     "userinfo": {
         "gotoInbox": "Open je inbox",
         "gotoSettings": "Ga naar je instellingen op OpenStreetMap.org",
-        "moveToHome": "Beweeg de kaart naar je thuislocatie",
-        "newMessages": "je hebt nieuwe berichten",
         "noDescription": "Je hebt nog geen beschrijving op je profiel",
-        "noDescriptionCallToAction": "Voeg een profielbeschrijving toe",
-        "titleNotLoggedIn": "Welkom",
-        "welcome": "Welkom {name}"
+        "noDescriptionCallToAction": "Voeg een profielbeschrijving toe"
     },
     "validation": {
         "color": {

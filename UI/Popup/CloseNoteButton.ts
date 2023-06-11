@@ -1,4 +1,3 @@
-import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
 import BaseUIElement from "../BaseUIElement"
 import Translations from "../i18n/Translations"
 import { Utils } from "../../Utils"
@@ -7,7 +6,8 @@ import Img from "../Base/Img"
 import { SubtleButton } from "../Base/SubtleButton"
 import Toggle from "../Input/Toggle"
 import { LoginToggle } from "./LoginButton"
-import { SpecialVisualization } from "../SpecialVisualization"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization"
+import { UIEventSource } from "../../Logic/UIEventSource"
 
 export class CloseNoteButton implements SpecialVisualization {
     public readonly funcName = "close_note"
@@ -43,7 +43,11 @@ export class CloseNoteButton implements SpecialVisualization {
         },
     ]
 
-    public constr(state: FeaturePipelineState, tags, args): BaseUIElement {
+    public constr(
+        state: SpecialVisualizationState,
+        tags: UIEventSource<Record<string, string>>,
+        args: string[]
+    ): BaseUIElement {
         const t = Translations.t.notes
 
         const params: {
@@ -53,7 +57,7 @@ export class CloseNoteButton implements SpecialVisualization {
             comment: string
             minZoom: string
             zoomButton: string
-        } = Utils.ParseVisArgs(this.args, args)
+        } = <any> Utils.ParseVisArgs(this.args, args)
 
         let icon = Svg.checkmark_svg()
         if (params.icon !== "checkmark.svg" && (args[2] ?? "") !== "") {
@@ -78,7 +82,7 @@ export class CloseNoteButton implements SpecialVisualization {
             closeButton = new Toggle(
                 closeButton,
                 params.zoomButton ?? "",
-                state.locationControl.map((l) => l.zoom >= Number(params.minZoom))
+                state.mapProperties.zoom.map((zoom) => zoom >= Number(params.minZoom))
             )
         }
 

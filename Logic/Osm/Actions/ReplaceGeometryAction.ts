@@ -1,28 +1,28 @@
-import OsmChangeAction from "./OsmChangeAction"
-import { Changes } from "../Changes"
-import { ChangeDescription } from "./ChangeDescription"
-import { Tag } from "../../Tags/Tag"
-import FeatureSource from "../../FeatureSource/FeatureSource"
-import { OsmNode, OsmObject, OsmWay } from "../OsmObject"
-import { GeoOperations } from "../../GeoOperations"
+import OsmChangeAction, {PreviewableAction} from "./OsmChangeAction"
+import {Changes} from "../Changes"
+import {ChangeDescription} from "./ChangeDescription"
+import {Tag} from "../../Tags/Tag"
+import {FeatureSource} from "../../FeatureSource/FeatureSource"
+import {OsmNode, OsmObject, OsmWay} from "../OsmObject"
+import {GeoOperations} from "../../GeoOperations"
 import StaticFeatureSource from "../../FeatureSource/Sources/StaticFeatureSource"
 import CreateNewNodeAction from "./CreateNewNodeAction"
 import ChangeTagAction from "./ChangeTagAction"
-import { And } from "../../Tags/And"
-import { Utils } from "../../../Utils"
-import { OsmConnection } from "../OsmConnection"
-import { Feature } from "@turf/turf"
-import FeaturePipeline from "../../FeatureSource/FeaturePipeline"
-import { Geometry, LineString, Point, Polygon } from "geojson"
+import {And} from "../../Tags/And"
+import {Utils} from "../../../Utils"
+import {OsmConnection} from "../OsmConnection"
+import {Feature} from "@turf/turf"
+import {Geometry, LineString, Point} from "geojson"
+import FullNodeDatabaseSource from "../../FeatureSource/TiledFeatureSource/FullNodeDatabaseSource"
 
-export default class ReplaceGeometryAction extends OsmChangeAction {
+export default class ReplaceGeometryAction extends OsmChangeAction implements PreviewableAction{
     /**
      * The target feature - mostly used for the metadata
      */
     private readonly feature: any
     private readonly state: {
         osmConnection: OsmConnection
-        featurePipeline: FeaturePipeline
+        fullNodeDatabase?: FullNodeDatabaseSource
     }
     private readonly wayToReplaceId: string
     private readonly theme: string
@@ -38,10 +38,15 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
     private readonly identicalTo: number[]
     private readonly newTags: Tag[] | undefined
 
+    /**
+     * Not really the 'new' element, but the target that has been applied.
+     * Added for compatibility with other systems
+     */
+    public readonly newElementId: string
     constructor(
         state: {
-            osmConnection: OsmConnection
-            featurePipeline: FeaturePipeline
+            osmConnection: OsmConnection,
+            fullNodeDatabase?: FullNodeDatabaseSource
         },
         feature: any,
         wayToReplaceId: string,
@@ -55,6 +60,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
         this.feature = feature
         this.wayToReplaceId = wayToReplaceId
         this.theme = options.theme
+        this.newElementId = wayToReplaceId
 
         const geom = this.feature.geometry
         let coordinates: [number, number][]
@@ -81,7 +87,6 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
         this.newTags = options.newTags
     }
 
-    // noinspection JSUnusedGlobalSymbols
     public async getPreview(): Promise<FeatureSource> {
         const { closestIds, allNodesById, detachedNodes, reprojectedNodes } =
             await this.GetClosestIds()
@@ -195,7 +200,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
     }> {
         // TODO FIXME: if a new point has to be created, snap to already existing ways
 
-        const nodeDb = this.state.featurePipeline.fullNodeDatabase
+        const nodeDb = this.state.fullNodeDatabase
         if (nodeDb === undefined) {
             throw "PANIC: replaceGeometryAction needs the FullNodeDatabase, which is undefined. This should be initialized by having the 'type_node'-layer enabled in your theme. (NB: the replacebutton has type_node as dependency)"
         }
@@ -415,7 +420,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
     }
 
     protected async CreateChangeDescriptions(changes: Changes): Promise<ChangeDescription[]> {
-        const nodeDb = this.state.featurePipeline.fullNodeDatabase
+        const nodeDb = this.state.fullNodeDatabase
         if (nodeDb === undefined) {
             throw "PANIC: replaceGeometryAction needs the FullNodeDatabase, which is undefined. This should be initialized by having the 'type_node'-layer enabled in your theme. (NB: the replacebutton has type_node as dependency)"
         }
@@ -455,6 +460,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
             }
         }
 
+            console.log("Adding tags", this.newTags,"to conflated way nr", this.wayToReplaceId)
         if (this.newTags !== undefined && this.newTags.length > 0) {
             const addExtraTags = new ChangeTagAction(
                 this.wayToReplaceId,
@@ -465,7 +471,7 @@ export default class ReplaceGeometryAction extends OsmChangeAction {
                     changeType: "conflation",
                 }
             )
-            allChanges.push(...(await addExtraTags.CreateChangeDescriptions(changes)))
+            allChanges.push(...(await addExtraTags.CreateChangeDescriptions()))
         }
 
         const newCoordinates = [...this.targetCoordinates]

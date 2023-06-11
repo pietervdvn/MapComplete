@@ -2,24 +2,25 @@ import Locale from "./Locale"
 import { Utils } from "../../Utils"
 import BaseUIElement from "../BaseUIElement"
 import LinkToWeblate from "../Base/LinkToWeblate"
-import { SvelteComponent } from "svelte"
 
 export class Translation extends BaseUIElement {
     public static forcedLanguage = undefined
 
     public readonly translations: Record<string, string>
-    context?: string
+    public readonly context?: string
 
-    constructor(translations: Record<string, string>, context?: string) {
+    constructor(translations: string | Record<string, string>, context?: string) {
         super()
         if (translations === undefined) {
             console.error("Translation without content at " + context)
             throw `Translation without content (${context})`
         }
         this.context = translations["_context"] ?? context
+
         if (typeof translations === "string") {
             translations = { "*": translations }
         }
+
         let count = 0
         for (const translationsKey in translations) {
             if (!translations.hasOwnProperty(translationsKey)) {
@@ -30,7 +31,14 @@ export class Translation extends BaseUIElement {
             }
             count++
             if (typeof translations[translationsKey] != "string") {
-                console.error("Non-string object in translation: ", translations[translationsKey])
+                console.error(
+                    "Non-string object at",
+                    context,
+                    "in translation: ",
+                    translations[translationsKey],
+                    "\n    current translations are: ",
+                    translations
+                )
                 throw (
                     "Error in an object depicting a translation: a non-string object was found. (" +
                     context +
@@ -50,10 +58,6 @@ export class Translation extends BaseUIElement {
 
     get txt(): string {
         return this.textFor(Translation.forcedLanguage ?? Locale.language.data)
-    }
-
-    public toString() {
-        return this.txt
     }
 
     static ExtractAllTranslationsFrom(
@@ -92,6 +96,10 @@ export class Translation extends BaseUIElement {
         return new Translation(translations)
     }
 
+    public toString() {
+        return this.txt
+    }
+
     Destroy() {
         super.Destroy()
         this.isDestroyed = true
@@ -119,23 +127,6 @@ export class Translation extends BaseUIElement {
         return ""
     }
 
-    /**
-     *
-     * // Should actually change the content based on the current language
-     * const tr = new Translation({"en":"English", nl: "Nederlands"})
-     * Locale.language.setData("en")
-     * const html = tr.InnerConstructElement()
-     * html.innerHTML // => "English"
-     * Locale.language.setData("nl")
-     * html.innerHTML // => "Nederlands"
-     *
-     * // Should include a link to weblate if context is set
-     * const tr = new Translation({"en":"English"}, "core:test.xyz")
-     * Locale.language.setData("nl")
-     * Locale.showLinkToWeblate.setData(true)
-     * const html = tr.InnerConstructElement()
-     * html.getElementsByTagName("a")[0].href // => "https://hosted.weblate.org/translate/mapcomplete/core/nl/?offset=1&q=context%3A%3D%22test.xyz%22"
-     */
     InnerConstructElement(): HTMLElement {
         const el = document.createElement("span")
         const self = this
@@ -235,7 +226,7 @@ export class Translation extends BaseUIElement {
                 continue
             }
             let txt = this.translations[lng]
-            txt = txt.replace(/\..*/, "")
+            txt = txt.replace(/[.<].*/, "")
             txt = Utils.EllipsesAfter(txt, 255)
             tr[lng] = txt
         }
@@ -299,7 +290,7 @@ export class Translation extends BaseUIElement {
     }
 }
 
-export class TypedTranslation<T> extends Translation {
+export class TypedTranslation<T extends Record<string, any>> extends Translation {
     constructor(translations: Record<string, string>, context?: string) {
         super(translations, context)
     }

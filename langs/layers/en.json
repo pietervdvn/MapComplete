@@ -2572,8 +2572,8 @@
                 "question": "What power output does a single plug of type <div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> offer?",
                 "render": "<div style='display: inline-block'><b><b>Type 2 with cable</b> (mennekes)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> outputs at most {socket:type2_cable:output}"
             },
-            "questions": {
-                "render": "<h3>Technical questions</h3>The questions below are very technical. Feel free to ignore them<br/>{questions}"
+            "questions-technical": {
+                "render": "<h3>Technical questions</h3>The questions below are very technical. Feel free to ignore them<br/>{questions(technical)}"
             },
             "ref": {
                 "question": "What is the reference number of this charging station?",
@@ -5044,9 +5044,6 @@
             }
         }
     },
-    "grass_in_parks": {
-        "description": "Searches for all accessible grass patches within public parks - these are 'groenzones'"
-    },
     "hackerspace": {
         "description": "Hackerspace",
         "name": "Hackerspace",
@@ -5501,6 +5498,33 @@
                 },
                 "1": {
                     "then": "Childcare {name}"
+                }
+            }
+        }
+    },
+    "last_click": {
+        "mapRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "Create a new map note"
+                        }
+                    },
+                    "render": "Click here to add a new item"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Add a new point or add a note"
+                },
+                "1": {
+                    "then": "Add a new note"
+                },
+                "2": {
+                    "then": "Add a new point"
                 }
             }
         }
@@ -8835,6 +8859,24 @@
                     }
                 }
             },
+            "inbox": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Open your inbox"
+                            }
+                        }
+                    },
+                    "1": {
+                        "then": {
+                            "special": {
+                                "text": "<b class='alert'>You have {_unreadMessages}</b><br/>Open your inbox"
+                            }
+                        }
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -8852,6 +8894,13 @@
                 },
                 "question": "Under what license do you want to publish your pictures?"
             },
+            "settings-link": {
+                "render": {
+                    "special": {
+                        "text": "Open your settings on OpenStreetMap.org"
+                    }
+                }
+            },
             "show_debug": {
                 "mappings": {
                     "0": {
@@ -8865,6 +8914,24 @@
                     }
                 },
                 "question": "Show user settings debug info?"
+            },
+            "show_tags": {
+                "mappings": {
+                    "0": {
+                        "then": "Never show the tags."
+                    },
+                    "1": {
+                        "then": "Show the tags that will be applied once I have made {__userjourney_tagsVisibleAt} changesets"
+                    },
+                    "2": {
+                        "then": "Show the tags that will be applied when making a change"
+                    },
+                    "3": {
+                        "then": "Show the tags that will be applied when making a change and show the tags table on every feature"
+                    }
+                },
+                "question": "Show the raw OpenStreetMap-tags?",
+                "questionHint": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference."
             },
             "translation-completeness": {
                 "mappings": {
@@ -8912,6 +8979,9 @@
                     }
                 }
             }
+        },
+        "title": {
+            "render": "Settings"
         }
     },
     "veterinary": {

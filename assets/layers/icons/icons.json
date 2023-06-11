@@ -4,9 +4,7 @@
     "en": "A layer acting as library for icon-tagrenderings, especially to show as badge next to a POI",
     "de": "Eine Ebene, die als Bibliothek für Symbol-Tag-Renderings dient, insbesondere um als Abzeichen neben einem POI angezeigt zu werden"
   },
-  "source": {
-    "osmTags": "id~*"
-  },
+  "source": "special:library",
   "title": null,
   "tagRenderings": [
     {
@@ -80,6 +78,14 @@
       "condition": "email~*"
     },
     {
+      "id": "websitelink",
+      "labels": [
+        "defaults"
+      ],
+      "render": "<a href='{website}' target='_blank'><img textmode='🌐' alt='website' src='./assets/layers/icons/website.svg'/></a>",
+      "condition": "website~*"
+    },
+    {
       "id": "smokingicon",
       "labels": [
         "defaults"
@@ -102,7 +108,8 @@
       "labels": [
         "defaults"
       ],
-      "render": "{share_link()}"
+      "render": "{share_link()}",
+      "metacondition": "_supports_sharing=yes"
     },
     {
       "id": "osmlink",

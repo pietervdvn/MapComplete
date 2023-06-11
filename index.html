@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
-    <link href="./vendor/leaflet.css" rel="stylesheet"/>
-    <link href="./css/userbadge.css" rel="stylesheet"/>
-    <link href="./css/tabbedComponent.css" rel="stylesheet"/>
     <link href="./css/mobile.css" rel="stylesheet"/>
     <link href="./css/openinghourstable.css" rel="stylesheet"/>
     <link href="./css/tagrendering.css" rel="stylesheet"/>
@@ -51,22 +48,8 @@
 </head>
 <body>
 
-<div id="decoration-desktop" style="position: fixed; left: 1em; bottom: 1em; width:35vh; height:35vh;">
-    <!-- A nice decoration while loading or on errors -->
-    <!-- DECORATION 0 START -->
-    <img src="./assets/svg/add.svg"/>
-    <!-- DECORATION 0 END -->
-</div>
 
-<div id="top-left">
-</div>
-
-<div class="clutter absolute h-24 left-24 right-24 top-56 text-xl text-center"
-     id="centermessage" style="z-index: 4000">
-    Loading MapComplete, hang on...
-</div>
-
-
+<div id="main"></div>
 <script type="module" src="./all_themes_index.ts"></script>
 <script async data-goatcounter="https://pietervdvn.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
 

@@ -1,20 +1,23 @@
-import { AutoAction } from "./AutoApplyButton"
+import {AutoAction} from "./AutoApplyButton"
 import Translations from "../i18n/Translations"
-import { VariableUiElement } from "../Base/VariableUIElement"
+import {VariableUiElement} from "../Base/VariableUIElement"
 import BaseUIElement from "../BaseUIElement"
-import { FixedUiElement } from "../Base/FixedUiElement"
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
-import { SubtleButton } from "../Base/SubtleButton"
+import {FixedUiElement} from "../Base/FixedUiElement"
+import {Store, UIEventSource} from "../../Logic/UIEventSource"
+import {SubtleButton} from "../Base/SubtleButton"
 import Combine from "../Base/Combine"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
-import { And } from "../../Logic/Tags/And"
+import {And} from "../../Logic/Tags/And"
 import Toggle from "../Input/Toggle"
-import { Utils } from "../../Utils"
-import { Tag } from "../../Logic/Tags/Tag"
-import FeaturePipelineState from "../../Logic/State/FeaturePipelineState"
+import {Utils} from "../../Utils"
+import {Tag} from "../../Logic/Tags/Tag"
 import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
-import { Changes } from "../../Logic/Osm/Changes"
-import { SpecialVisualization } from "../SpecialVisualization"
+import {Changes} from "../../Logic/Osm/Changes"
+import {SpecialVisualization, SpecialVisualizationState} from "../SpecialVisualization"
+import {IndexedFeatureSource} from "../../Logic/FeatureSource/FeatureSource";
+import {Feature} from "geojson";
+import LayerConfig from "../../Models/ThemeConfig/LayerConfig";
+import Maproulette from "../../Logic/Maproulette";
 
 export default class TagApplyButton implements AutoAction, SpecialVisualization {
     public readonly funcName = "tag_apply"
@@ -25,7 +28,7 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
     public readonly args = [
         {
             name: "tags_to_apply",
-            doc: "A specification of the tags to apply",
+            doc: "A specification of the tags to apply. This is either hardcoded in the layer or the `$name` of a property containing the tags to apply. If redirected and the value of the linked property starts with `{`, the other property will be interpreted as a json object",
         },
         {
             name: "message",
@@ -40,51 +43,39 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
             defaultValue: undefined,
             doc: "If specified, applies the the tags onto _another_ object. The id will be read from properties[id_of_object_to_apply_this_one] of the selected object. The tags are still calculated based on the tags of the _selected_ element",
         },
+        {
+            name:"maproulette_task_id",
+            defaultValue: undefined,
+            doc: "If specified, this maproulette-challenge will be closed when the tags are applied"
+        }
     ]
     public readonly example =
         "`{tag_apply(survey_date=$_now:date, Surveyed today!)}`, `{tag_apply(addr:street=$addr:street, Apply the address, apply_icon.svg, _closest_osm_id)"
 
-    /**
-     * Parses a tag specification
-     *
-     * TagApplyButton.parseTagSpec("key=value;key0=value0") // => [["key","value"],["key0","value0"]]
-     *
-     * // Should handle escaped ";"
-     * TagApplyButton.parseTagSpec("key=value;key0=value0\\;value1") // => [["key","value"],["key0","value0;value1"]]
-     */
-    private static parseTagSpec(spec: string): [string, string][] {
-        const tgsSpec: [string, string][] = []
-
-        while (spec.length > 0) {
-            const [part] = spec.match(/((\\;)|[^;])*/)
-            spec = spec.substring(part.length + 1) // +1 to remove the pending ';' as well
-            const kv = part.split("=").map((s) => s.trim().replace("\\;", ";"))
-            if (kv.length == 2) {
-                tgsSpec.push(<[string, string]>kv)
-            } else if (kv.length < 2) {
-                throw "Invalid key spec: no '=' found in " + spec
-            } else {
-                throw "Invalid key spec: multiple '=' found in " + spec
-            }
-        }
-
-        for (const spec of tgsSpec) {
-            if (spec[0].endsWith(":")) {
-                throw "The key for a tag specification for import or apply ends with ':'. The theme author probably wrote key:=otherkey instead of key=$otherkey"
-            }
-        }
-        return tgsSpec
-    }
-
-    public static generateTagsToApply(spec: string, tagSource: Store<any>): Store<Tag[]> {
+    public static generateTagsToApply(
+        spec: string,
+        tagSource: Store<Record<string, string>>
+    ): Store<Tag[]> {
         // Check whether we need to look up a single value
 
-        if (!spec.includes(";") && !spec.includes("=") && spec.includes("$")) {
+
+        if (!spec.includes(";") && !spec.includes("=") && spec.startsWith("$")) {
             // We seem to be dealing with a single value, fetch it
             spec = tagSource.data[spec.replace("$", "")]
+
         }
 
-        const tgsSpec = TagApplyButton.parseTagSpec(spec)
+        let tgsSpec: [string, string][]
+
+        if (spec.startsWith("{")) {
+            const properties = JSON.parse(spec)
+            tgsSpec = []
+            for (const key of Object.keys(properties)) {
+                tgsSpec.push([key, properties[key]])
+            }
+        } else {
+            tgsSpec = TagApplyButton.parseTagSpec(spec)
+        }
 
         return tagSource.map((tags) => {
             const newTags: Tag[] = []
@@ -108,13 +99,48 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
         })
     }
 
-    async applyActionOn(
+    /**
+     * Parses a tag specification
+     *
+     * TagApplyButton.parseTagSpec("key=value;key0=value0") // => [["key","value"],["key0","value0"]]
+     *
+     * // Should handle escaped ";"
+     * TagApplyButton.parseTagSpec("key=value;key0=value0\\;value1") // => [["key","value"],["key0","value0;value1"]]
+     */
+    private static parseTagSpec(spec: string): [string, string][] {
+        const tgsSpec: [string, string][] = []
+
+        while (spec.length > 0) {
+            const [part] = spec.match(/((\\;)|[^;])*/)
+            spec = spec.substring(part.length + 1) // +1 to remove the pending ';' as well
+            const kv = part.split("=").map((s) => s.trim().replace("\\;", ";"))
+            if (kv.length == 2) {
+                tgsSpec.push(<[string, string]>kv)
+            } else if (kv.length < 2) {
+                console.error("Invalid key spec: no '=' found in " + spec)
+                throw "Invalid key spec: no '=' found in " + spec
+            } else {
+                throw "Invalid key spec: multiple '=' found in " + spec
+            }
+        }
+
+        for (const spec of tgsSpec) {
+            if (spec[0].endsWith(":")) {
+                throw "The key for a tag specification for import or apply ends with ':'. The theme author probably wrote key:=otherkey instead of key=$otherkey"
+            }
+        }
+        return tgsSpec
+    }
+
+    public async applyActionOn(
+        feature: Feature,
         state: {
-            layoutToUse: LayoutConfig
+            layout: LayoutConfig
             changes: Changes
+            indexedFeatures: IndexedFeatureSource
         },
         tags: UIEventSource<any>,
-        args: string[]
+        args: string[],
     ): Promise<void> {
         const tagsToApply = TagApplyButton.generateTagsToApply(args[0], tags)
         const targetIdKey = args[3]
@@ -125,17 +151,28 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
             new And(tagsToApply.data),
             tags.data, // We pass in the tags of the selected element, not the tags of the target element!
             {
-                theme: state.layoutToUse.id,
+                theme: state.layout.id,
                 changeType: "answer",
             }
         )
         await state.changes.applyAction(changeAction)
+        const maproulette_id_key = args[4]
+        if(maproulette_id_key){
+            const maproulette_id = Number(tags.data[maproulette_id_key])
+            await Maproulette.singleton.closeTask(maproulette_id, Maproulette.STATUS_FIXED,   {
+                comment: "Tags are copied onto "+targetId+" with MapComplete"
+            })
+            tags.data["mr_taskStatus"] = "Fixed"
+            tags.ping()
+        }
     }
 
     public constr(
-        state: FeaturePipelineState,
-        tags: UIEventSource<any>,
-        args: string[]
+        state: SpecialVisualizationState,
+        tags: UIEventSource<Record<string, string>>,
+        args: string[],
+        feature: Feature,
+        _: LayerConfig
     ): BaseUIElement {
         const tagsToApply = TagApplyButton.generateTagsToApply(args[0], tags)
         const msg = args[1]
@@ -152,19 +189,19 @@ export default class TagApplyButton implements AutoAction, SpecialVisualization 
                 let el: BaseUIElement = new FixedUiElement(tagsStr)
                 if (targetIdKey !== undefined) {
                     const targetId = tags.data[targetIdKey] ?? tags.data.id
-                    el = t.appliedOnAnotherObject.Subs({ tags: tagsStr, id: targetId })
+                    el = t.appliedOnAnotherObject.Subs({tags: tagsStr, id: targetId})
                 }
                 return el
             })
         ).SetClass("subtle")
         const self = this
-        const applied = new UIEventSource(false)
+        const applied = new UIEventSource(tags?.data?.["mr_taskStatus"] !== "Created") // This will default to 'false' for non-maproulette challenges
         const applyButton = new SubtleButton(
             image,
             new Combine([msg, tagsExplanation]).SetClass("flex flex-col")
-        ).onClick(() => {
-            self.applyActionOn(state, tags, args)
+        ).onClick(async () => {
             applied.setData(true)
+            await self.applyActionOn(feature, state, tags, args)
         })
 
         return new Toggle(

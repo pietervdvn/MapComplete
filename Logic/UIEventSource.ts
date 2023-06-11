@@ -63,27 +63,10 @@ export class Stores {
                 stable.setData(undefined)
                 return
             }
-            const oldList = stable.data
-            if (oldList === list) {
+            if (Utils.sameList(stable.data, list)) {
                 return
             }
-            if (oldList == list) {
-                return
-            }
-            if (oldList === undefined || oldList.length !== list.length) {
-                stable.setData(list)
-                return
-            }
-
-            for (let i = 0; i < list.length; i++) {
-                if (oldList[i] !== list[i]) {
-                    stable.setData(list)
-                    return
-                }
-            }
-
-            // No actual changes, so we don't do anything
-            return
+            stable.setData(list)
         })
         return stable
     }
@@ -93,7 +76,7 @@ export abstract class Store<T> implements Readable<T> {
     abstract readonly data: T
 
     /**
-     * OPtional value giving a title to the UIEventSource, mainly used for debugging
+     * Optional value giving a title to the UIEventSource, mainly used for debugging
      */
     public readonly tag: string | undefined
 
@@ -257,12 +240,19 @@ export abstract class Store<T> implements Readable<T> {
         return newSource
     }
 
+    /**
+     * Converts the uiEventSource into a promise.
+     * The promise will return the value of the store if the given condition evaluates to true
+     * @param condition: an optional condition, default to 'store.value !== undefined'
+     * @constructor
+     */
     public AsPromise(condition?: (t: T) => boolean): Promise<T> {
         const self = this
         condition = condition ?? ((t) => t !== undefined)
         return new Promise((resolve) => {
-            if (condition(self.data)) {
-                resolve(self.data)
+            const data = self.data
+            if (condition(data)) {
+                resolve(data)
             } else {
                 self.addCallbackD((data) => {
                     resolve(data)
@@ -274,13 +264,15 @@ export abstract class Store<T> implements Readable<T> {
 
     /**
      * Same as 'addCallbackAndRun', added to be compatible with Svelte
-     * @param run
-     * @param invalidate
      */
-    public subscribe(run: Subscriber<T> & ((value: T) => void), invalidate?): Unsubscriber {
+    public subscribe(run: Subscriber<T> & ((value: T) => void), _?): Unsubscriber {
         // We don't need to do anything with 'invalidate', see
         // https://github.com/sveltejs/svelte/issues/3859
-        return this.addCallbackAndRun(run)
+
+        // Note: run is wrapped in an anonymous function. 'Run' returns the value. If this value happens to be true, it would unsubscribe
+        return this.addCallbackAndRun((v) => {
+            run(v)
+        })
     }
 }
 
@@ -294,7 +286,7 @@ export class ImmutableStore<T> extends Store<T> {
         this.data = data
     }
 
-    addCallback(callback: (data: T) => void): () => void {
+    addCallback(_: (data: T) => void): () => void {
         // pass: data will never change
         return ImmutableStore.pass
     }
@@ -313,7 +305,7 @@ export class ImmutableStore<T> extends Store<T> {
         return ImmutableStore.pass
     }
 
-    addCallbackD(callback: (data: T) => void): () => void {
+    addCallbackD(_: (data: T) => void): () => void {
         // pass: data will never change
         return ImmutableStore.pass
     }
@@ -413,7 +405,8 @@ class MappedStore<TIn, T> extends Store<T> {
         f: (t: TIn) => T,
         extraStores: Store<any>[],
         upstreamListenerHandler: ListenerTracker<TIn> | undefined,
-        initialState: T
+        initialState: T,
+        onDestroy?: (f: () => void) => void
     ) {
         super()
         this._upstream = upstream
@@ -423,6 +416,9 @@ class MappedStore<TIn, T> extends Store<T> {
         this._upstreamPingCount = upstreamListenerHandler?.pingCount
         this._extraStores = extraStores
         this.registerCallbacksToUpstream()
+        if(onDestroy !== undefined){
+            onDestroy(() => this.unregisterFromUpstream())
+        }
     }
 
     private _data: T
@@ -683,6 +679,7 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
      * Given a function 'f', will construct a new UIEventSource where the contents will always be "f(this.data)'
      * @param f: The transforming function
      * @param extraSources: also trigger the update if one of these sources change
+     * @param onDestroy: a callback that can trigger the destroy function
      *
      * const src = new UIEventSource<number>(10)
      * const store = src.map(i => i * 2)
@@ -701,8 +698,8 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
      * srcSeen // => 21
      * lastSeen // => 42
      */
-    public map<J>(f: (t: T) => J, extraSources: Store<any>[] = []): Store<J> {
-        return new MappedStore(this, f, extraSources, this._callbacks, f(this.data))
+    public map<J>(f: (t: T) => J, extraSources: Store<any>[] = [], onDestroy?: (f : () => void ) => void): Store<J> {
+        return new MappedStore(this, f, extraSources, this._callbacks, f(this.data), onDestroy)
     }
     /**
      * Monoidal map which results in a read-only store. 'undefined' is passed 'as is'
@@ -793,5 +790,15 @@ export class UIEventSource<T> extends Store<T> implements Writable<T> {
 
     update(f: Updater<T> & ((value: T) => T)): void {
         this.setData(f(this.data))
+    }
+
+    /**
+     * Create a new UIEVentSource. Whenever 'source' changes, the returned UIEventSource will get this value as well.
+     * However, this value can be overriden without affecting source
+     */
+    static feedFrom<T>(store: Store<T>): UIEventSource<T> {
+        const src = new UIEventSource(store.data)
+        store.addCallback((t) => src.setData(t))
+        return src
     }
 }

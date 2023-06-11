@@ -1,36 +1,38 @@
-import FilteredLayer from "../../../Models/FilteredLayer"
-import { FeatureSourceForLayer, Tiled } from "../FeatureSource"
-import { UIEventSource } from "../../UIEventSource"
+import { Store } from "../../UIEventSource"
 import DynamicTileSource from "./DynamicTileSource"
 import { Utils } from "../../../Utils"
 import GeoJsonSource from "../Sources/GeoJsonSource"
 import { BBox } from "../../BBox"
+import LayerConfig from "../../../Models/ThemeConfig/LayerConfig"
 
 export default class DynamicGeoJsonTileSource extends DynamicTileSource {
     private static whitelistCache = new Map<string, any>()
 
     constructor(
-        layer: FilteredLayer,
-        registerLayer: (layer: FeatureSourceForLayer & Tiled) => void,
-        state: {
-            locationControl?: UIEventSource<{ zoom?: number }>
-            currentBounds: UIEventSource<BBox>
+        layer: LayerConfig,
+        mapProperties: {
+            zoom: Store<number>
+            bounds: Store<BBox>
+        },
+        options?: {
+            isActive?: Store<boolean>
         }
     ) {
-        const source = layer.layerDef.source
+        const source = layer.source
         if (source.geojsonZoomLevel === undefined) {
             throw "Invalid layer: geojsonZoomLevel expected"
         }
         if (source.geojsonSource === undefined) {
             throw "Invalid layer: geojsonSource expected"
         }
+        console.log("Creating a dynamic geojson source for", layer.source.geojsonSource)
 
         let whitelist = undefined
         if (source.geojsonSource.indexOf("{x}_{y}.geojson") > 0) {
             const whitelistUrl = source.geojsonSource
                 .replace("{z}", "" + source.geojsonZoomLevel)
                 .replace("{x}_{y}.geojson", "overview.json")
-                .replace("{layer}", layer.layerDef.id)
+                .replace("{layer}", layer.id)
 
             if (DynamicGeoJsonTileSource.whitelistCache.has(whitelistUrl)) {
                 whitelist = DynamicGeoJsonTileSource.whitelistCache.get(whitelistUrl)
@@ -56,14 +58,13 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
                         DynamicGeoJsonTileSource.whitelistCache.set(whitelistUrl, whitelist)
                     })
                     .catch((err) => {
-                        console.warn("No whitelist found for ", layer.layerDef.id, err)
+                        console.warn("No whitelist found for ", layer.id, err)
                     })
             }
         }
 
         const blackList = new Set<string>()
         super(
-            layer,
             source.geojsonZoomLevel,
             (zxy) => {
                 if (whitelist !== undefined) {
@@ -71,32 +72,23 @@ export default class DynamicGeoJsonTileSource extends DynamicTileSource {
                     if (!isWhiteListed) {
                         console.debug(
                             "Not downloading tile",
-                            ...zxy,
+                                zxy,"for layer",layer.id,
                             "as it is not on the whitelist"
                         )
                         return undefined
                     }
                 }
 
-                const src = new GeoJsonSource(layer, zxy, {
+                return new GeoJsonSource(layer, {
+                    zxy,
                     featureIdBlacklist: blackList,
+                    isActive: options?.isActive,
                 })
-
-                registerLayer(src)
-                return src
             },
-            state
-        )
-    }
-
-    public static RegisterWhitelist(url: string, json: any) {
-        const data = new Map<number, Set<number>>()
-        for (const x in json) {
-            if (x === "zoom") {
-                continue
+            mapProperties,
+            {
+                isActive: options?.isActive,
             }
-            data.set(Number(x), new Set(json[x]))
-        }
-        DynamicGeoJsonTileSource.whitelistCache.set(url, data)
+        )
     }
 }

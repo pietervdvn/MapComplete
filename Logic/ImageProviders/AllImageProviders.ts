@@ -1,10 +1,10 @@
-import { Mapillary } from "./Mapillary"
-import { WikimediaImageProvider } from "./WikimediaImageProvider"
-import { Imgur } from "./Imgur"
-import GenericImageProvider from "./GenericImageProvider"
-import { Store, UIEventSource } from "../UIEventSource"
-import ImageProvider, { ProvidedImage } from "./ImageProvider"
-import { WikidataImageProvider } from "./WikidataImageProvider"
+import { Mapillary } from "./Mapillary";
+import { WikimediaImageProvider } from "./WikimediaImageProvider";
+import { Imgur } from "./Imgur";
+import GenericImageProvider from "./GenericImageProvider";
+import { Store, UIEventSource } from "../UIEventSource";
+import ImageProvider, { ProvidedImage } from "./ImageProvider";
+import { WikidataImageProvider } from "./WikidataImageProvider";
 
 /**
  * A generic 'from the interwebz' image picker, without attribution
@@ -44,7 +44,7 @@ export default class AllImageProviders {
         UIEventSource<ProvidedImage[]>
     >()
 
-    public static LoadImagesFor(tags: Store<any>, tagKey?: string[]): Store<ProvidedImage[]> {
+    public static LoadImagesFor(tags: Store<Record<string, string>>, tagKey?: string[]): Store<ProvidedImage[]> {
         if (tags.data.id === undefined) {
             return undefined
         }

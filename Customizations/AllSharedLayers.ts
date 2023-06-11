@@ -2,7 +2,6 @@ import LayerConfig from "../Models/ThemeConfig/LayerConfig"
 import { Utils } from "../Utils"
 import known_themes from "../assets/generated/known_layers.json"
 import { LayerConfigJson } from "../Models/ThemeConfig/Json/LayerConfigJson"
-import { ALL } from "dns"
 import { AllKnownLayouts } from "./AllKnownLayouts"
 export class AllSharedLayers {
     public static sharedLayers: Map<string, LayerConfig> = AllSharedLayers.getSharedLayers()

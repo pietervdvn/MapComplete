@@ -1,0 +1,82 @@
+<script lang="ts">
+    import {Store, UIEventSource} from "../../../Logic/UIEventSource";
+    import type {MapProperties} from "../../../Models/MapProperties";
+    import {Map as MlMap} from "maplibre-gl";
+    import {MapLibreAdaptor} from "../../Map/MapLibreAdaptor";
+    import MaplibreMap from "../../Map/MaplibreMap.svelte";
+    import DragInvitation from "../../Base/DragInvitation.svelte";
+    import {GeoOperations} from "../../../Logic/GeoOperations";
+    import ShowDataLayer from "../../Map/ShowDataLayer";
+    import * as boundsdisplay from "../../../assets/layers/range/range.json"
+    import StaticFeatureSource from "../../../Logic/FeatureSource/Sources/StaticFeatureSource";
+    import * as turf from "@turf/turf"
+    import LayerConfig from "../../../Models/ThemeConfig/LayerConfig";
+    import {onDestroy} from "svelte";
+
+    /**
+     * A visualisation to pick a location on a map background
+     */
+    export let value: UIEventSource<{ lon: number, lat: number }>;
+    export let initialCoordinate : {lon: number, lat :number}
+    initialCoordinate = initialCoordinate ?? value.data
+    export let maxDistanceInMeters: number = undefined
+    export let mapProperties: Partial<MapProperties> & {
+        readonly location: UIEventSource<{ lon: number; lat: number }>
+    } = undefined;
+    /**
+     * Called when setup is done, can be used to add more layers to the map
+     */
+    export let onCreated: (value: Store<{
+        lon: number,
+        lat: number
+    }>, map: Store<MlMap>, mapProperties: MapProperties) => void = undefined
+
+    export let map: UIEventSource<MlMap> = new UIEventSource<MlMap>(undefined);
+    let mla = new MapLibreAdaptor(map, mapProperties);
+    mapProperties.location.syncWith(value)
+    if (onCreated) {
+        onCreated(value, map, mla)
+    }
+
+    let rangeIsShown = false
+    if (maxDistanceInMeters) {
+        onDestroy(mla.location.addCallbackD(newLocation => {
+            const l = [newLocation.lon, newLocation.lat]
+            const c: [number, number] = [initialCoordinate.lon, initialCoordinate.lat]
+            const d = GeoOperations.distanceBetween(l, c)
+        console.log("distance is", d, l, c)
+            if (d <= maxDistanceInMeters) {
+                return
+            }
+            // This is too far away - let's move back
+            const correctLocation = GeoOperations.along(c, l, maxDistanceInMeters - 10)
+            window.setTimeout(() => {
+                mla.location.setData({lon: correctLocation[0], lat: correctLocation[1]})
+            }, 25)
+
+            if (!rangeIsShown) {
+
+                new ShowDataLayer(map, {
+                    layer: new LayerConfig(boundsdisplay),
+                    features: new StaticFeatureSource(
+                        [turf.circle(c, maxDistanceInMeters, {units: "meters", properties: {"range":"yes", id: "0"}}, )]
+                    )
+                })
+                rangeIsShown = true
+            }
+        }))
+    }
+</script>
+
+<div class="relative h-full min-h-32 cursor-pointer overflow-hidden">
+    <div class="w-full h-full absolute top-0 left-0 cursor-pointer">
+        <MaplibreMap {map}/>
+    </div>
+
+    <div class="w-full h-full absolute top-0 left-0 p-8 pointer-events-none opacity-50 flex items-center">
+        <img class="h-full max-h-24" src="./assets/svg/move-arrows.svg"/>
+    </div>
+
+    <DragInvitation hideSignal={mla.location.stabilized(3000)}></DragInvitation>
+
+</div>

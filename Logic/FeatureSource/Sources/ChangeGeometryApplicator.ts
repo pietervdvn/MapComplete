@@ -3,25 +3,21 @@
  */
 import { Changes } from "../../Osm/Changes"
 import { UIEventSource } from "../../UIEventSource"
-import { FeatureSourceForLayer, IndexedFeatureSource } from "../FeatureSource"
-import FilteredLayer from "../../../Models/FilteredLayer"
+import { FeatureSource, IndexedFeatureSource } from "../FeatureSource"
 import { ChangeDescription, ChangeDescriptionTools } from "../../Osm/Actions/ChangeDescription"
+import { Feature } from "geojson"
+import {Utils} from "../../../Utils";
 
-export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
-    public readonly features: UIEventSource<{ feature: any; freshness: Date }[]> =
-        new UIEventSource<{ feature: any; freshness: Date }[]>([])
-    public readonly name: string
-    public readonly layer: FilteredLayer
+export default class ChangeGeometryApplicator implements FeatureSource {
+    public readonly features: UIEventSource<Feature[]> = new UIEventSource<Feature[]>([])
     private readonly source: IndexedFeatureSource
     private readonly changes: Changes
 
-    constructor(source: IndexedFeatureSource & FeatureSourceForLayer, changes: Changes) {
+    constructor(source: IndexedFeatureSource, changes: Changes) {
         this.source = source
         this.changes = changes
-        this.layer = source.layer
 
-        this.name = "ChangesApplied(" + source.name + ")"
-        this.features = new UIEventSource<{ feature: any; freshness: Date }[]>(undefined)
+        this.features = new UIEventSource<Feature[]>(undefined)
 
         const self = this
         source.features.addCallbackAndRunD((_) => self.update())
@@ -31,10 +27,10 @@ export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
 
     private update() {
         const upstreamFeatures = this.source.features.data
-        const upstreamIds = this.source.containedIds.data
+        const upstreamIds = this.source.featuresById.data
         const changesToApply = this.changes.allChanges.data?.filter(
             (ch) =>
-                // Does upsteram have this element? If not, we skip
+                // Does upstream have this element? If not, we skip
                 upstreamIds.has(ch.type + "/" + ch.id) &&
                 // Are any (geometry) changes defined?
                 ch.changes !== undefined &&
@@ -58,11 +54,11 @@ export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
                 changesPerId.set(key, [ch])
             }
         }
-        const newFeatures: { feature: any; freshness: Date }[] = []
+        const newFeatures: Feature[] = []
         for (const feature of upstreamFeatures) {
-            const changesForFeature = changesPerId.get(feature.feature.properties.id)
+            const changesForFeature = changesPerId.get(feature.properties.id)
             if (changesForFeature === undefined) {
-                // No changes for this element
+                // No changes for this element - simply pass it along to downstream
                 newFeatures.push(feature)
                 continue
             }
@@ -73,7 +69,12 @@ export default class ChangeGeometryApplicator implements FeatureSourceForLayer {
             }
             // We only apply the last change as that one'll have the latest geometry
             const change = changesForFeature[changesForFeature.length - 1]
-            copy.feature.geometry = ChangeDescriptionTools.getGeojsonGeometry(change)
+            copy.geometry = ChangeDescriptionTools.getGeojsonGeometry(change)
+            if(Utils.SameObject(copy.geometry, feature.geometry)){
+                // No actual changes: pass along the original
+                newFeatures.push(feature)
+                continue
+            }
             console.log(
                 "Applying a geometry change onto:",
                 feature,

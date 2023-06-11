@@ -161,7 +161,7 @@ function run(file, protojson) {
 
         technicalQuestions.push({
             "id": "voltage-" + i,
-            group: "technical",
+            labels: ["technical"],
             question: {
                 en: `What voltage do the plugs with ${descrWithImage_en} offer?`,
                 nl: `Welke spanning levert de stekker van type ${descrWithImage_nl}`
@@ -195,7 +195,7 @@ function run(file, protojson) {
 
         technicalQuestions.push({
             "id": "current-" + i,
-            group:"technical",
+            labels:["technical"],
             question: {
                 en: `What current do the plugs with ${descrWithImage_en} offer?`,
                 nl: `Welke stroom levert de stekker van type ${descrWithImage_nl}?`,
@@ -229,7 +229,7 @@ function run(file, protojson) {
 
         technicalQuestions.push({
             "id": "power-output-" + i,
-            group:"technical",
+            labels:["technical"],
             question: {
                 en: `What power output does a single plug of type ${descrWithImage_en} offer?`,
                 nl: `Welk vermogen levert een enkele stekker van type ${descrWithImage_nl}?`,

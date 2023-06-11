@@ -2,17 +2,14 @@ import { Store } from "../../Logic/UIEventSource"
 import BaseUIElement from "../BaseUIElement"
 import Combine from "../Base/Combine"
 import { SubtleButton } from "../Base/SubtleButton"
-import { Changes } from "../../Logic/Osm/Changes"
 import { FixedUiElement } from "../Base/FixedUiElement"
 import Translations from "../i18n/Translations"
 import { VariableUiElement } from "../Base/VariableUIElement"
 import ChangeTagAction from "../../Logic/Osm/Actions/ChangeTagAction"
 import { Tag } from "../../Logic/Tags/Tag"
-import { ElementStorage } from "../../Logic/ElementStorage"
 import { And } from "../../Logic/Tags/And"
-import LayoutConfig from "../../Models/ThemeConfig/LayoutConfig"
 import Toggle from "../Input/Toggle"
-import { OsmConnection } from "../../Logic/Osm/OsmConnection"
+import { SpecialVisualizationState } from "../SpecialVisualization"
 
 export interface MultiApplyParams {
     featureIds: Store<string[]>
@@ -21,12 +18,7 @@ export interface MultiApplyParams {
     autoapply: boolean
     overwrite: boolean
     tagsSource: Store<any>
-    state: {
-        changes: Changes
-        allElements: ElementStorage
-        layoutToUse: LayoutConfig
-        osmConnection: OsmConnection
-    }
+    state: SpecialVisualizationState
 }
 
 class MultiApplyExecutor {
@@ -68,14 +60,14 @@ class MultiApplyExecutor {
         console.log("Multi-applying changes...")
         const featuresToChange = this.params.featureIds.data
         const changes = this.params.state.changes
-        const allElements = this.params.state.allElements
+        const allElements = this.params.state.featureProperties
         const keysToChange = this.params.keysToApply
         const overwrite = this.params.overwrite
         const selfTags = this.params.tagsSource.data
-        const theme = this.params.state.layoutToUse.id
+        const theme = this.params.state.layout.id
         for (const id of featuresToChange) {
             const tagsToApply: Tag[] = []
-            const otherFeatureTags = allElements.getEventSourceById(id).data
+            const otherFeatureTags = allElements.getStore(id).data
             for (const key of keysToChange) {
                 const newValue = selfTags[key]
                 if (newValue === undefined) {

@@ -1,19 +1,19 @@
 import PointRenderingConfigJson from "./Json/PointRenderingConfigJson"
 import TagRenderingConfig from "./TagRenderingConfig"
-import { TagsFilter } from "../../Logic/Tags/TagsFilter"
-import { TagUtils } from "../../Logic/Tags/TagUtils"
-import { Utils } from "../../Utils"
+import {TagsFilter} from "../../Logic/Tags/TagsFilter"
+import {TagUtils} from "../../Logic/Tags/TagUtils"
+import {Utils} from "../../Utils"
 import Svg from "../../Svg"
 import WithContextLoader from "./WithContextLoader"
-import { Store, UIEventSource } from "../../Logic/UIEventSource"
+import {Store} from "../../Logic/UIEventSource"
 import BaseUIElement from "../../UI/BaseUIElement"
-import { FixedUiElement } from "../../UI/Base/FixedUiElement"
+import {FixedUiElement} from "../../UI/Base/FixedUiElement"
 import Img from "../../UI/Base/Img"
 import Combine from "../../UI/Base/Combine"
-import { VariableUiElement } from "../../UI/Base/VariableUIElement"
+import {VariableUiElement} from "../../UI/Base/VariableUIElement"
 
 export default class PointRenderingConfig extends WithContextLoader {
-    private static readonly allowed_location_codes = new Set<string>([
+    static readonly allowed_location_codes: ReadonlySet<string> = new Set<string>([
         "point",
         "centroid",
         "start",
@@ -28,9 +28,13 @@ export default class PointRenderingConfig extends WithContextLoader {
     public readonly iconBadges: { if: TagsFilter; then: TagRenderingConfig }[]
     public readonly iconSize: TagRenderingConfig
     public readonly label: TagRenderingConfig
+    public readonly labelCss: TagRenderingConfig
+    public readonly labelCssClasses: TagRenderingConfig
     public readonly rotation: TagRenderingConfig
     public readonly cssDef: TagRenderingConfig
     public readonly cssClasses?: TagRenderingConfig
+    public readonly pitchAlignment?: TagRenderingConfig
+    public readonly rotationAlignment?: TagRenderingConfig
 
     constructor(json: PointRenderingConfigJson, context: string) {
         super(json, context)
@@ -70,6 +74,8 @@ export default class PointRenderingConfig extends WithContextLoader {
             this.cssDef = this.tr("css", undefined)
         }
         this.cssClasses = this.tr("cssClasses", undefined)
+        this.labelCss = this.tr("labelCss", undefined)
+        this.labelCssClasses = this.tr("labelCssClasses", undefined)
         this.iconBadges = (json.iconBadges ?? []).map((overlay, i) => {
             return {
                 if: TagUtils.Tag(overlay.if),
@@ -77,7 +83,7 @@ export default class PointRenderingConfig extends WithContextLoader {
             }
         })
 
-        const iconPath = this.icon?.GetRenderValue({ id: "node/-1" })?.txt
+        const iconPath = this.icon?.GetRenderValue({id: "node/-1"})?.txt
         if (iconPath !== undefined && iconPath.startsWith(Utils.assets_path)) {
             const iconKey = iconPath.substr(Utils.assets_path.length)
             if (Svg.All[iconKey] === undefined) {
@@ -87,6 +93,11 @@ export default class PointRenderingConfig extends WithContextLoader {
         this.iconSize = this.tr("iconSize", "40,40,center")
         this.label = this.tr("label", undefined)
         this.rotation = this.tr("rotation", "0")
+        this.pitchAlignment = this.tr("pitchAlignment", "canvas")
+        this.rotationAlignment = this.tr(
+            "rotationAlignment",
+            json.pitchAlignment === "map" ? "map" : "canvas"
+        )
     }
 
     /**
@@ -125,7 +136,10 @@ export default class PointRenderingConfig extends WithContextLoader {
         multiSpec: string,
         rotation: string,
         isBadge: boolean,
-        defaultElement: BaseUIElement = undefined
+        defaultElement: BaseUIElement = undefined,
+        options?: {
+            noFullWidth?: boolean
+        }
     ) {
         if (multiSpec === undefined) {
             return defaultElement
@@ -139,12 +153,22 @@ export default class PointRenderingConfig extends WithContextLoader {
         if (elements.length === 0) {
             return defaultElement
         } else {
-            return new Combine(elements).SetClass("relative block w-full h-full")
+            const combine = new Combine(elements).SetClass("relative block")
+            if (options?.noFullWidth) {
+                return combine
+            }
+            combine.SetClass("w-full h-full")
+            return combine
         }
     }
 
-    public GetBaseIcon(tags?: any): BaseUIElement {
-        tags = tags ?? { id: "node/-1" }
+    public GetBaseIcon(
+        tags?: Record<string, string>,
+        options?: {
+            noFullWidth?: boolean
+        }
+    ): BaseUIElement {
+        tags = tags ?? {id: "node/-1"}
         let defaultPin: BaseUIElement = undefined
         if (this.label === undefined) {
             defaultPin = Svg.teardrop_with_hole_green_svg()
@@ -161,10 +185,14 @@ export default class PointRenderingConfig extends WithContextLoader {
             // This layer doesn't want to show an icon right now
             return undefined
         }
-        return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation, false, defaultPin)
+        if (htmlDefs.startsWith("<") && htmlDefs.endsWith(">")) {
+            // This is probably already prepared HTML
+            return new FixedUiElement(Utils.SubstituteKeys(htmlDefs, tags))
+        }
+        return PointRenderingConfig.FromHtmlMulti(htmlDefs, rotation, false, defaultPin, options)
     }
 
-    public GetSimpleIcon(tags: Store<any>): BaseUIElement {
+    public GetSimpleIcon(tags: Store<Record<string, string>>): BaseUIElement {
         const self = this
         if (this.icon === undefined) {
             return undefined
@@ -174,8 +202,8 @@ export default class PointRenderingConfig extends WithContextLoader {
         )
     }
 
-    public GenerateLeafletStyle(
-        tags: Store<any>,
+    public RenderIcon(
+        tags: Store<Record<string, string>>,
         clickable: boolean,
         options?: {
             noSize?: false | boolean
@@ -183,11 +211,7 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
     ): {
         html: BaseUIElement
-        iconSize: [number, number]
         iconAnchor: [number, number]
-        popupAnchor: [number, number]
-        iconUrl: string
-        className: string
     } {
         function num(str, deflt = 40) {
             const n = Number(str)
@@ -211,20 +235,21 @@ export default class PointRenderingConfig extends WithContextLoader {
         let iconH = num(iconSize[1])
         const mode = iconSize[2]?.trim()?.toLowerCase() ?? "center"
 
-        let anchorW = iconW / 2
-        let anchorH = iconH / 2
+        // in MapLibre, the offset is relative to the _center_ of the object, with left = [-x, 0] and up = [0,-y]
+        let anchorW = 0
+        let anchorH = 0
         if (mode === "left") {
-            anchorW = 0
+            anchorW = -iconW / 2
         }
         if (mode === "right") {
-            anchorW = iconW
+            anchorW = iconW / 2
         }
 
         if (mode === "top") {
-            anchorH = 0
+            anchorH = iconH / 2
         }
         if (mode === "bottom") {
-            anchorH = iconH
+            anchorH = -iconH / 2
         }
 
         const icon = this.GetSimpleIcon(tags)
@@ -240,10 +265,11 @@ export default class PointRenderingConfig extends WithContextLoader {
             iconAndBadges.SetClass("w-full h-full")
         }
 
-        const css = this.cssDef?.GetRenderValue(tags, undefined)?.txt
-        const cssClasses = this.cssClasses?.GetRenderValue(tags, undefined)?.txt
+        const css = this.cssDef?.GetRenderValue(tags.data)?.txt
+        const cssClasses = this.cssClasses?.GetRenderValue(tags.data)?.txt
 
         let label = this.GetLabel(tags)
+
         let htmlEl: BaseUIElement
         if (icon === undefined && label === undefined) {
             htmlEl = undefined
@@ -264,15 +290,11 @@ export default class PointRenderingConfig extends WithContextLoader {
         }
         return {
             html: htmlEl,
-            iconSize: [iconW, iconH],
             iconAnchor: [anchorW, anchorH],
-            popupAnchor: [0, 3 - anchorH],
-            iconUrl: undefined,
-            className: clickable ? "leaflet-div-icon" : "leaflet-div-icon unclickable",
         }
     }
 
-    private GetBadges(tags: Store<any>): BaseUIElement {
+    private GetBadges(tags: Store<Record<string, string>>): BaseUIElement {
         if (this.iconBadges.length === 0) {
             return undefined
         }
@@ -288,6 +310,12 @@ export default class PointRenderingConfig extends WithContextLoader {
                         badge.then.GetRenderValue(tags)?.txt,
                         tags
                     )
+                    if (htmlDefs.startsWith("<") && htmlDefs.endsWith(">")) {
+                        // This is probably an HTML-element
+                        return new FixedUiElement(Utils.SubstituteKeys(htmlDefs, tags))
+                            .SetStyle("width: 1.5rem")
+                            .SetClass("block")
+                    }
                     const badgeElement = PointRenderingConfig.FromHtmlMulti(
                         htmlDefs,
                         "0",
@@ -304,18 +332,24 @@ export default class PointRenderingConfig extends WithContextLoader {
         ).SetClass("absolute bottom-0 right-1/3 h-1/2 w-0")
     }
 
-    private GetLabel(tags: Store<any>): BaseUIElement {
+    private GetLabel(tags: Store<Record<string, string>>): BaseUIElement {
         if (this.label === undefined) {
             return undefined
         }
+        const cssLabel = this.labelCss?.GetRenderValue(tags.data)?.txt
+        const cssClassesLabel = this.labelCssClasses?.GetRenderValue(tags.data)?.txt
         const self = this
         return new VariableUiElement(
             tags.map((tags) => {
                 const label = self.label
                     ?.GetRenderValue(tags)
                     ?.Subs(tags)
-                    ?.SetClass("block text-center")
-                return new Combine([label]).SetClass("flex flex-col items-center mt-1")
+                    ?.SetClass("block center absolute text-center ")
+                    ?.SetClass(cssClassesLabel)
+                if (cssLabel) {
+                    label.SetStyle(cssLabel)
+                }
+                return new Combine([label]).SetClass("flex flex-col items-center")
             })
         )
     }

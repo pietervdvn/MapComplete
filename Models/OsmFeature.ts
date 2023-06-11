@@ -1,4 +1,4 @@
-import { Feature, Geometry } from "@turf/turf"
+import { Feature, Geometry } from "geojson"
 
 export type RelationId = `relation/${number}`
 export type WayId = `way/${number}`

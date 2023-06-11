@@ -88,13 +88,10 @@
     },
     "general": {
         "about": "Snadné úpravy a přidávání OpenStreetMap pro určité téma",
-        "aboutMapcomplete": "<h3>O službě</h3><p>Pomocí MapComplete můžete přidávat informace z OpenStreetMap na <b>samostatné téma</b>. Odpovězte na otázky a během několika minut jsou vaše příspěvky dostupné všude. Ve většině témat můžete přidávat obrázky nebo dokonce zanechat hodnocení. <b>Správce tématu</b> pro něj definuje prvky, otázky a jazyky.</p><h3>Další informace</h3><p>MapComplete vždy <b>nabízí další krok</b> k získání dalších informací o OpenStreetMap.<ul><li>Při vložení do webové stránky odkazuje iframe na MapComplete na celou obrazovku.</li><li>Verze na celou obrazovku nabízí informace o OpenStreetMap.</li><li>Prohlížení funguje bez přihlášení, ale editace vyžaduje účet OSM.</li><li>Pokud nejste přihlášeni, jste k tomu vyzváni</li><li>Po zodpovězení jedné otázky můžete do mapy přidávat nové funkce</li><li>Po chvíli se zobrazí aktuální značky OSM, později odkaz na wiki</li></ul></p><br/><p>Všimli jste si <b>problému</b>? Máte <b>požadavek na funkci</b>? Chcete <b>pomoci s překladem</b>? Přejděte na <a href='https://github.com/pietervdvn/MapComplete' target='_blank'>zdrojový kód</a> nebo <a href='https://github.com/pietervdvn/MapComplete/issues' target='_blank'>sledovač problémů.</a> </p><p> Chcete se podívat na <b>svůj pokrok</b>? Sledujte počet úprav na <a href='{osmcha_link}' target='_blank' >OsmCha</a>.</p>",
         "add": {
             "addNew": "Přidat {category}",
-            "addNewMapLabel": "Klikněte zde pro přidání nové položky",
             "backToSelect": "Vyberte jinou kategorii",
             "confirmButton": "Přidat kategorii {category}<br/><div class='alert'>Váš příspěvek je viditelný pro všechny</div>",
-            "confirmIntro": "<h3>Přidat {title}?</h3>Funkce, kterou zde vytvoříte, bude <b>viditelná pro všechny</b>. Prosíme, přidávejte věci na mapu pouze tehdy, pokud skutečně existují. Tato data využívá mnoho aplikací.",
             "disableFilters": "Vypnout všechny filtry",
             "disableFiltersExplanation": "Některé funkce mohou být filtrem skryty",
             "hasBeenImported": "Tato funkce již byla importována",
@@ -177,7 +174,6 @@
         "error": "Něco se pokazilo",
         "example": "Příklad",
         "examples": "Příklady",
-        "feelFreeToSkip": "Níže můžete přidat nebo aktualizovat další informace, ale neváhejte <b>vynechat otázky</b>, na které neznáte odpověď.",
         "fewChangesBefore": "Před přidáním nové funkce prosím odpovězte na několik otázek týkajících se stávajících funkcí.",
         "getStartedLogin": "Přihlaste se pomocí OpenStreetMap a začněte",
         "getStartedNewAccount": " nebo <a href='https://www.openstreetmap.org/user/new' target='_blank'>vytvořte nový účet</a>",
@@ -215,14 +211,12 @@
             "streetcomplete": "Další podobnou aplikací je <a href='https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete' class='underline hover:text-blue-800' class='underline hover:text-blue-800' target='_blank'>StreetComplete</a>."
         },
         "nameInlineQuestion": "Název této {category} je $$$",
-        "newlyCreated": "Tento prvek jste právě vytvořili! Díky za sdílení těchto informací se světem a pomoc lidem po celém světě.",
         "next": "Další",
         "noMatchingMapping": "Žádné záznamy neodpovídají vašemu vyhledávání…",
         "noNameCategory": "{category} bez názvu",
         "noTagsSelected": "Nejsou vybrány žádné štítky",
         "notValid": "Pro pokračování vyberte platnou hodnotu",
         "number": "číslo",
-        "oneSkippedQuestion": "Jedna otázka je vynechána",
         "openStreetMapIntro": "<h3>Otevřená mapa</h3><p>Takovou, kterou může každý volně používat a upravovat. Jediné místo pro uložení všech geoinformací. Různé, malé, nekompatibilní a zastaralé mapy nejsou nikde potřeba.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b > není nepřátelská mapa. Mapová data lze volně používat (s <a href='https://osm.org/copyright' target='_blank'>přiřazením a zveřejněním změn těchto dat</a>). Každý může přidávat nová data a opravovat chyby. Tento web používá OpenStreetMap. Všechna data jsou odtud a vaše odpovědi a opravy se používají všude.</p><p>Mnoho lidí a aplikací již OpenStreetMap používá: <a href='https://organicmaps.app/' target='_blank '>Organické mapy</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, ale také mapy na Facebooku, Instagramu, Apple-maps a Bing-maps jsou (částečně) poháněny OpenStreetMap.</p>",
         "openTheMap": "Otevřít mapu",
         "opening_hours": {
@@ -244,7 +238,7 @@
         "pdf": {
             "attr": "Mapová data © OpenStreetMap Contributors, opakovaně použitelná pod ODbL",
             "attrBackground": "Vrstva pozadí: {background}",
-            "generatedWith": "Generováno pomocí MapComplete.osm.be",
+            "generatedWith": "Generováno pomocí MapComplete.osm.be/{layoutid}",
             "versionInfo": "v{version} - vygenerováno {date}"
         },
         "pickLanguage": "Vyberte si jazyk: ",
@@ -290,7 +284,6 @@
             "thanksForSharing": "Díky za sdílení!"
         },
         "skip": "Přeskočit tuto otázku",
-        "skippedQuestions": "Některé otázky byly přeskočeny",
         "testing": "Testování - změny se neuloží",
         "uploadGpx": {
             "choosePermission": "Níže vyberte, zda má být vaše stopa sdílena:",
@@ -368,7 +361,6 @@
         "intro": "MapComplete podporuje následující klávesy:",
         "key": "Kombinace kláves",
         "openLayersPanel": "Otevře panel Pozadí, vrstvy a filtry",
-        "selectBackground": "Vybrat vrstvu pozadí kategorie {category}",
         "selectMapnik": "Nastaví vrstvu pozadí na OpenStreetMap-carto",
         "selectSearch": "Vybere vyhledávací řádek pro vyhledávání míst",
         "title": "Klávesové zkratky"
@@ -401,131 +393,6 @@
         "uploadMultipleDone": "Bylo přidáno {count} fotek. Děkujeme za pomoc!",
         "uploadingMultiple": "Nahrávání {count} obrázků…",
         "uploadingPicture": "Nahrávání obrázku…"
-    },
-    "importHelper": {
-        "askMetadata": {
-            "downloadGeojson": "Stažení GeoJSON",
-            "giveDescription": "Napište prosím malý popis pro někoho, kdo poznámku vidí. Dobrá poznámka popisuje, co musí přispěvatel udělat, např.; <i>Tady by mohla být lavička. Pokud jste poblíž, mohli byste prosím zkontrolovat a uvést, zda lavička existuje nebo ne?</i> (Odkaz na MapComplete bude přidán automaticky)",
-            "giveSource": "Jaký je zdroj těchto údajů? Pokud je ve funkci nastaven \"source\", tato hodnota se ignoruje",
-            "giveWikilink": "Na které wikistránce lze najít další informace o tomto importu?",
-            "intro": "Před přidáním {count} poznámek uveďte několik dalších informací.",
-            "orDownload": "Můžete si také stáhnout datovou sadu a importovat ji přímo",
-            "shouldBeOsmWikilink": "Očekávaný odkaz na stránku na wiki.openstreetmap.org",
-            "shouldBeUrl": "Neplatná adresa URL",
-            "shouldNotBeHomepage": "Ne, domovská stránka také není povolena. Zadejte URL správné wikistránky, která dokumentuje váš import",
-            "title": "Nastavit metadata"
-        },
-        "compareToAlreadyExistingNotes": {
-            "completelyImported": "Všechny navrhované body již mají (nebo měly) poznámku o dovozu",
-            "loading": "Získávání poznámek z OSM…",
-            "loadingFailed": "Načítání poznámek se nezdařilo kvůli {error}",
-            "mapExplanation": "Červené prvky na další mapě jsou všechny datové body z vaší datové sady. Vaše datová sada obsahuje prvky <b>{length}</b>.",
-            "noPreviousNotesFound": "Nebyly nalezeny žádné předchozí poznámky pro import",
-            "nothingNearby": "Žádný z navrhovaných bodů nemá v blízkosti poznámku o importu",
-            "someNearby": "{hasNearby} body mají již existující poznámku o importu v rámci {distance} metru",
-            "title": "Porovnání se stávajícími poznámkami",
-            "titleLong": "Porovnat s již existujícími poznámkami \"to-import\"-notes",
-            "wontBeImported": "Tyto datové body se <i>neimportují</i> a na mapě níže jsou zobrazeny jako červené tečky"
-        },
-        "confirmProcess": {
-            "contactedCommunity": "Kontaktoval jsem (místní) komunitu ohledně tohoto importu",
-            "licenseIsCompatible": "Licence dat k importu umožňuje jejich import do OSM. Je povoleno jejich komerční šíření, pouze s minimálním uvedením autorství",
-            "readImportGuidelines": "Přečetl jsem si pokyny k importu na OSM wiki",
-            "title": "Licence a komunita",
-            "titleLong": "Prošli jste procesem importu?",
-            "wikipageIsMade": "Postup je zdokumentován na OSM-wiki (tento odkaz budete potřebovat později)"
-        },
-        "conflationChecker": {
-            "cacheExpired": "Platnost mezipaměti vypršela",
-            "downloadOverpassData": "Stáhněte si načtený GeoJSON z aplikace Overpass",
-            "importCandidatesCount": "Červené prvky {count} na následující mapě jsou všechny vaše kandidáty na import.",
-            "loadedDataAge": "Načtená data pocházejí z mezipaměti a jsou {age} stará",
-            "mapShowingNearbyIntro": "Následující mapa zobrazuje prvky k importu, které mají funkci OSM v rámci ",
-            "nearbyWarn": "Červené prvky {count} na následující mapě nebudou <b>importovány</b>!",
-            "nothingLoaded": "Z OpenStreetMap nejsou načteny žádné prvky, které by odpovídaly aktuální vrstvě {name}",
-            "osmLoaded": "Z OpenStreetMap je načteno {count} prvků, které odpovídají vrstvě <b>{name}</b>.",
-            "reloadTheCache": "Vymažte mezipaměť a znovu položte databázový dotaz na Overpass",
-            "setRangeToZero": "Pokud je chcete importovat všechny, nastavte rozsah na 0 nebo 1",
-            "showOsmLayerInConflationMap": "Zobrazit data OSM",
-            "states": {
-                "error": "Nepodařilo se načíst nejnovější data z Overpass kvůli {error}",
-                "idle": "Kontrola lokálního úložiště…",
-                "running": "Dotazování na Overpass…",
-                "unexpected": "Neočekávaný stav {state}"
-            },
-            "title": "Porovnání s existujícími údaji",
-            "titleLive": "Živá data na OSM",
-            "titleNearby": "Objekty v okolí",
-            "zoomIn": "Aktuální úroveň přiblížení je {current}",
-            "zoomLevelSelection": "Živá data se zobrazí, pokud je úroveň přiblížení alespoň: "
-        },
-        "createNotes": {
-            "creating": "Vytvořeno <b>{count}</b> poznámek z {total}",
-            "done": "Všech {count} poznámek bylo vytvořeno!",
-            "loading": "Vydržte, než se načte…",
-            "openImportViewer": "Zkontrolujte průběh svých poznámek v 'import_viewer'",
-            "title": "Vytvoření poznámky"
-        },
-        "gotoImportViewer": "Kontrola předchozích importů",
-        "introduction": {
-            "description": "Pomocník pro import převede externí datovou sadu na poznámky. Externí datová sada musí odpovídat jedné z existujících vrstev MapComplete. Pro každou položku, kterou vložíte do importéru, bude vytvořena jedna poznámka. Tyto poznámky budou zobrazeny spolu s příslušnými prvky v těchto mapách, abyste je mohli snadno přidat.",
-            "importFormat": "Text v poznámce by měl mít následující formát, aby mohl být zachycen",
-            "title": "Úvod"
-        },
-        "login": {
-            "lockNotice": "Tato stránka je uzamčena. Před přístupem sem potřebujete {importHelperUnlock} sad změn.",
-            "loggedInWith": "V současné době jste přihlášeni jako <b>{name}</b> a provedli jste {csCount} sad změn",
-            "loginIsCorrect": "<b>{name}</b> je správný účet pro vytvoření poznámek k importu.",
-            "loginRequired": "Pro pokračování musíte být přihlášeni",
-            "title": "Přihlášení",
-            "userAccountTitle": "Vyberte uživatelský účet"
-        },
-        "mapPreview": {
-            "autodetected": "Vrstva byla automaticky odečtena na základě jejích vlastností",
-            "confirm": "Funkce jsou na mapě umístěny správně",
-            "mismatch": "{count} prvků neodpovídá vybrané vrstvě. Ujistěte se, že jsou přítomny značky pro označení typu, konkrétně {tags}",
-            "selectLayer": "Které vrstvě odpovídá tento import?",
-            "title": "Náhled mapy"
-        },
-        "noteParts": {
-            "datasource": "Původní údaje ze {source}",
-            "importEasily": "Tento bod můžete snadno přidat pomocí aplikace MapComplete:",
-            "wikilink": "Další informace o tomto importu naleznete na adrese {wikilink}"
-        },
-        "previewAttributes": {
-            "allAttributesSame": "Všechny funkce pro import mají tuto značku",
-            "inspectDataTitle": "Zkontrolovat údaje o {count} funkcích, které se mají importovat",
-            "inspectLooksCorrect": "Tyto hodnoty vypadají správně",
-            "someHaveSame": "Tuto značku má {count} funkcí k importu, to je {percentage} % z celkového počtu",
-            "title": "Zkontrolovat atributy"
-        },
-        "selectFile": {
-            "description": "Vyberte soubor .csv nebo .geojson a začněte",
-            "errDuplicate": "Některé sloupce mají stejný název",
-            "errNoLatOrLon": "Záhlaví neobsahuje `lat` nebo `lon`",
-            "errNoName": "Některé sloupce nemají název",
-            "errNotFeatureCollection": "Načtený soubor JSON není geojson-featurecollection",
-            "errPointsOnly": "Načtený soubor JSON by měl obsahovat pouze body",
-            "fileFormatDescription": "Vyberte soubor <b class='code'>.csv</b> nebo <b class='code'>.geojson</b>",
-            "fileFormatDescriptionCsv": "V souboru CSV by měl být sloupec <span class='literal-code'>lat</span> a <span class='literal-code'>lon</span> se souřadnicemi ve WGS84. Pro každý atribut by měl existovat další sloupec.",
-            "fileFormatDescriptionGeoJson": "V souboru geojson by měly být pouze body. Vlastnosti by měly být přesně ty, které by měly jít do OpenStreetMap",
-            "loadedFilesAre": "Aktuálně načtený soubor je {file}",
-            "noFilesLoaded": "V současné době není načten žádný soubor",
-            "title": "Vyberte soubor"
-        },
-        "selectTheme": {
-            "displayNonMatchingCount": "objekty {length} neodpovídají žádným předvolbám",
-            "intro": "Ve všech následujících tématech se zobrazí poznámky k importu. Poznámka na OpenStreetMap však může odkazovat pouze na jedno jediné téma. Vyberte, ke kterému tématu se vytvořené poznámky budou odkazovat",
-            "misMatch": "Vlastnost s klíčem {k} nemá očekávanou hodnotu {v}; místo toho má hodnotu {properties}",
-            "missing": "Očekávané {k}={v}, ale zcela chybí",
-            "needsTags": "{title} potřebuje tagy {tags}",
-            "noMatchingPresets": "Toto téma nemá načtené žádné předvolby. V důsledku toho zde nebudou fungovat importy",
-            "notApplicable": "Předvolba {title} není použitelná:",
-            "title": "Vyberte téma",
-            "unmatchedTitle": "Následující prvky neodpovídají žádné z předvoleb"
-        },
-        "testMode": "Testovací režim - ve skutečnosti neimportuje poznámky",
-        "title": "Pomocník pro import"
     },
     "importInspector": {
         "title": "Kontrola a správa poznámek k importu"
@@ -565,18 +432,6 @@
     "notes": {
         "isClosed": "Tato poznámka je vyřešena"
     },
-    "professional": {
-        "drawbacks": {
-            "unsuitedData": {
-                "li0": "Subjektivní data (například recenze) nejsou pro OpenStreetMap vhodná. MapComplete má však integraci se službou <a href='https://mangrove.reviews/'>Mangrove.reviews</a>, webem s otevřenou licencí pro recenze"
-            }
-        },
-        "indexPage": {
-            "button": "Objevte naše služby",
-            "hook": "Potřebujete profesionální podporu?",
-            "hookMore": "Můžeme vám pomoci s průzkumy, importem dat a poradenstvím v oblasti OpenStreetMap"
-        }
-    },
     "reviews": {
         "affiliated_reviewer_warning": "(Recenze od zaměstnance)",
         "attribution": "Recenze jsou poskytovány službou <a href='https://mangrove.reviews/' target='_blank'>Mangrove Reviews</a> a jsou k dispozici pod licencí <a href='https://mangrove.reviews/terms#8-licensing-of-content' target='_blank'>CC-BY 4.0</a>.",
@@ -603,10 +458,7 @@
     "userinfo": {
         "gotoInbox": "Otevřít poštu",
         "gotoSettings": "Přejít do vašich nastavení na OpenStreetMap.org",
-        "moveToHome": "Přesunout mapu na vaší domovskou polohu",
         "noDescription": "Na svém profilu zatím nemáte popis",
-        "noDescriptionCallToAction": "Přidat popis profilu",
-        "titleNotLoggedIn": "Vítejte",
-        "welcome": "Vítejte, {name}"
+        "noDescriptionCallToAction": "Přidat popis profilu"
     }
 }

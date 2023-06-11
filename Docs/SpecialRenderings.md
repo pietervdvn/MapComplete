@@ -48,38 +48,58 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
 
 1. [Special tag renderings](#special-tag-renderings)
       * [Using expanded syntax](#using-expanded-syntax)
+    + [questions](#questions)
+      * [Example usage of questions](#example-usage-of-questions)
+    + [add_new_point](#add_new_point)
+      * [Example usage of add_new_point](#example-usage-of-add_new_point)
+    + [user_profile](#user_profile)
+      * [Example usage of user_profile](#example-usage-of-user_profile)
+    + [language_picker](#language_picker)
+      * [Example usage of language_picker](#example-usage-of-language_picker)
+    + [logout](#logout)
+      * [Example usage of logout](#example-usage-of-logout)
     + [histogram](#histogram)
       * [Example usage of histogram](#example-usage-of-histogram)
     + [steal](#steal)
       * [Example usage of steal](#example-usage-of-steal)
     + [minimap](#minimap)
       * [Example usage of minimap](#example-usage-of-minimap)
-    + [sided_minimap](#sided_minimap)
-      * [Example usage of sided_minimap](#example-usage-of-sided_minimap)
+    + [split_button](#split_button)
+      * [Example usage of split_button](#example-usage-of-split_button)
+    + [move_button](#move_button)
+      * [Example usage of move_button](#example-usage-of-move_button)
+    + [delete_button](#delete_button)
+      * [Example usage of delete_button](#example-usage-of-delete_button)
     + [share_link](#share_link)
       * [Example usage of share_link](#example-usage-of-share_link)
+    + [export_as_gpx](#export_as_gpx)
+      * [Example usage of export_as_gpx](#example-usage-of-export_as_gpx)
     + [upload_to_osm](#upload_to_osm)
       * [Example usage of upload_to_osm](#example-usage-of-upload_to_osm)
     + [multi_apply](#multi_apply)
       * [Example usage of multi_apply](#example-usage-of-multi_apply)
-    + [export_as_gpx](#export_as_gpx)
-      * [Example usage of export_as_gpx](#example-usage-of-export_as_gpx)
     + [add_note_comment](#add_note_comment)
       * [Example usage of add_note_comment](#example-usage-of-add_note_comment)
+    + [open_note](#open_note)
+      * [Example usage of open_note](#example-usage-of-open_note)
+    + [close_note](#close_note)
+      * [Example usage of close_note](#example-usage-of-close_note)
     + [plantnet_detection](#plantnet_detection)
       * [Example usage of plantnet_detection](#example-usage-of-plantnet_detection)
+    + [tag_apply](#tag_apply)
+      * [Example usage of tag_apply](#example-usage-of-tag_apply)
     + [import_button](#import_button)
       * [Example usage of import_button](#example-usage-of-import_button)
     + [import_way_button](#import_way_button)
       * [Example usage of import_way_button](#example-usage-of-import_way_button)
     + [conflate_button](#conflate_button)
       * [Example usage of conflate_button](#example-usage-of-conflate_button)
-    + [tag_apply](#tag_apply)
-      * [Example usage of tag_apply](#example-usage-of-tag_apply)
-    + [close_note](#close_note)
-      * [Example usage of close_note](#example-usage-of-close_note)
     + [nearby_images](#nearby_images)
       * [Example usage of nearby_images](#example-usage-of-nearby_images)
+    + [wikipedia](#wikipedia)
+      * [Example usage of wikipedia](#example-usage-of-wikipedia)
+    + [wikidata_label](#wikidata_label)
+      * [Example usage of wikidata_label](#example-usage-of-wikidata_label)
     + [mapillary_link](#mapillary_link)
       * [Example usage of mapillary_link](#example-usage-of-mapillary_link)
     + [language_chooser](#language_chooser)
@@ -90,10 +110,6 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of image_carousel](#example-usage-of-image_carousel)
     + [image_upload](#image_upload)
       * [Example usage of image_upload](#example-usage-of-image_upload)
-    + [wikipedia](#wikipedia)
-      * [Example usage of wikipedia](#example-usage-of-wikipedia)
-    + [wikidata_label](#wikidata_label)
-      * [Example usage of wikidata_label](#example-usage-of-wikidata_label)
     + [reviews](#reviews)
       * [Example usage of reviews](#example-usage-of-reviews)
     + [opening_hours_table](#opening_hours_table)
@@ -124,12 +140,70 @@ In other words: use `{ "before": ..., "after": ..., "special": {"type": ..., "ar
       * [Example usage of statistics](#example-usage-of-statistics)
     + [send_email](#send_email)
       * [Example usage of send_email](#example-usage-of-send_email)
+    + [link](#link)
+      * [Example usage of link](#example-usage-of-link)
     + [multi](#multi)
       * [Example usage of multi](#example-usage-of-multi)
     + [auto_apply](#auto_apply)
       * [Example usage of auto_apply](#example-usage-of-auto_apply)
 
 
+
+
+
+### questions 
+
+ The special element which shows the questions which are unkown. Added by default if not yet there 
+
+name | default | description
+------ | --------- | -------------
+labels | _undefined_ | One or more ';'-separated labels. If these are given, only questions with these labels will be given. Use `unlabeled` for all questions that don't have an explicit label. If none given, all questions will be shown
+blacklisted-labels | _undefined_ | One or more ';'-separated labels of questions which should _not_ be included
+ 
+
+#### Example usage of questions 
+
+ `{questions(,)}`
+
+
+
+### add_new_point 
+
+ An element which allows to add a new point on the 'last_click'-location. Only makes sense in the layer `last_click` 
+
+#### Example usage of add_new_point 
+
+ `{add_new_point()}`
+
+
+
+### user_profile 
+
+ A component showing information about the currently logged in user (username, profile description, profile picture + link to edit them). Mostly meant to be used in the 'user-settings' 
+
+#### Example usage of user_profile 
+
+ `{user_profile()}`
+
+
+
+### language_picker 
+
+ A component to set the language of the user interface 
+
+#### Example usage of language_picker 
+
+ `{language_picker()}`
+
+
+
+### logout 
+
+ Shows a button where the user can log out 
+
+#### Example usage of logout 
+
+ `{logout()}`
 
 
 
@@ -147,7 +221,7 @@ colors* | _undefined_ | (Matches all resting arguments - optional) Matches a reg
 
 #### Example usage of histogram 
 
- `{histogram('some_key')}` with properties being `{some_key: ['a','b','a','c']} to create a histogram
+ `{histogram('some_key')}` with properties being `{some_key: ["a","b","a","c"]} to create a histogram
 
 
 
@@ -183,18 +257,33 @@ idKey | id | (Matches all resting arguments) This argument should be the key of 
 
 
 
-### sided_minimap 
+### split_button 
 
- A small map showing _only one side_ the selected feature. *This features requires to have linerenderings with offset* as only linerenderings with a postive or negative offset will be shown. Note: in most cases, this map will be automatically introduced 
+ Adds a button which allows to split a way 
 
-name | default | description
------- | --------- | -------------
-side | _undefined_ | The side to show, either `left` or `right`
- 
+#### Example usage of split_button 
 
-#### Example usage of sided_minimap 
+ `{split_button()}`
 
- `{sided_minimap(left)}`
+
+
+### move_button 
+
+ Adds a button which allows to move the object to another location. The config will be read from the layer config 
+
+#### Example usage of move_button 
+
+ `{move_button()}`
+
+
+
+### delete_button 
+
+ Adds a button which allows to delete the object at this location. The config will be read from the layer config 
+
+#### Example usage of delete_button 
+
+ `{delete_button()}`
 
 
 
@@ -210,6 +299,16 @@ url | _undefined_ | The url to share (default: current URL)
 #### Example usage of share_link 
 
  {share_link()} to share the current page, {share_link(<some_url>)} to share the given url
+
+
+
+### export_as_gpx 
+
+ Exports the selected feature as GPX-file 
+
+#### Example usage of export_as_gpx 
+
+ `{export_as_gpx()}`
 
 
 
@@ -242,16 +341,6 @@ overwrite | _undefined_ | If set to 'true', the tags on the other objects will a
 
 
 
-### export_as_gpx 
-
- Exports the selected feature as GPX-file 
-
-#### Example usage of export_as_gpx 
-
- `{export_as_gpx()}`
-
-
-
 ### add_note_comment 
 
  A textfield to add a comment to a node (with the option to close the note). 
@@ -264,6 +353,36 @@ Id-key | id | The property name where the ID of the note to close can be found
 #### Example usage of add_note_comment 
 
  `{add_note_comment(id)}`
+
+
+
+### open_note 
+
+ Creates a new map note on the given location. This options is placed in the 'last_click'-popup automatically if the 'notes'-layer is enabled 
+
+#### Example usage of open_note 
+
+ `{open_note()}`
+
+
+
+### close_note 
+
+ Button to close a note. A predifined text can be defined to close the note with. If the note is already closed, will show a small text. 
+
+name | default | description
+------ | --------- | -------------
+text | _undefined_ | Text to show on this button
+icon | checkmark.svg | Icon to show
+idkey | id | The property name where the ID of the note to close can be found
+comment | _undefined_ | Text to add onto the note when closing
+minZoom | _undefined_ | If set, only show the closenote button if zoomed in enough
+zoomButton | _undefined_ | Text to show if not zoomed in enough
+ 
+
+#### Example usage of close_note 
+
+ `{close_note(,checkmark.svg,id,,,)}`
 
 
 
@@ -282,16 +401,49 @@ image_key | image,mapillary,image,wikidata,wikimedia_commons,image,image | The k
 
 
 
+### tag_apply 
+
+ Shows a big button; clicking this button will apply certain tags onto the feature.
+
+The first argument takes a specification of which tags to add.
+These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`.
+This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature.
+
+If a value to substitute is undefined, empty string will be used instead.
+
+This supports multiple values, e.g. `ref=$source:geometry:type/$source:geometry:ref`
+
+Remark that the syntax is slightly different then expected; it uses '$' to note a value to copy, followed by a name (matched with `[a-zA-Z0-9_:]*`). Sadly, delimiting with `{}` as these already mark the boundaries of the special rendering...
+
+Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
+  
+
+name | default | description
+------ | --------- | -------------
+tags_to_apply | _undefined_ | A specification of the tags to apply. This is either hardcoded in the layer or the `$name` of a property containing the tags to apply. If redirected and the value of the linked property starts with `{`, the other property will be interpreted as a json object
+message | _undefined_ | The text to show to the contributor
+image | _undefined_ | An image to show to the contributor on the button
+id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tags onto _another_ object. The id will be read from properties[id_of_object_to_apply_this_one] of the selected object. The tags are still calculated based on the tags of the _selected_ element
+maproulette_task_id | _undefined_ | If specified, this maproulette-challenge will be closed when the tags are applied
+ 
+
+#### Example usage of tag_apply 
+
+ `{tag_apply(survey_date=$_now:date, Surveyed today!)}`, `{tag_apply(addr:street=$addr:street, Apply the address, apply_icon.svg, _closest_osm_id)
+
+
+
 ### import_button 
 
  This button will copy the point from an external dataset into OpenStreetMap
 
+
 Note that the contributor must zoom to at least zoomlevel 18 to be able to use this functionality.
-It is only functional in official themes, but can be tested in unoffical themes.
+    It is only functional in official themes, but can be tested in unoffical themes.
 
 #### Specifying which tags to copy or add
 
-The argument `tags` of the import button takes a `;`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
+    The argument `tags` of the import button takes a `;`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
 
 These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`.
 This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature.
@@ -338,26 +490,26 @@ icon | ./assets/svg/addSmall.svg | A nice icon to show in the button
 snap_onto_layers | _undefined_ | If a way of the given layer(s) is closeby, will snap the new point onto this way (similar as preset might snap). To show multiple layers to snap onto, use a `;`-seperated list
 max_snap_distance | 5 | The maximum distance that the imported point will be moved to snap onto a way in an already existing layer (in meters). This is previewed to the contributor, similar to the 'add new point'-action of MapComplete
 note_id | _undefined_ | If given, this key will be read. The corresponding note on OSM will be closed, stating 'imported'
-location_picker | photo | Chooses the background for the precise location picker, options are 'map', 'photo' or 'osmbasedmap' or 'none' if the precise input picker should be disabled
 maproulette_id | _undefined_ | The property name of the maproulette_id - this is probably `mr_taskId`. If given, the maproulette challenge will be marked as fixed. Only use this if part of a maproulette-layer.
  
 
 #### Example usage of import_button 
 
- `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,,photo,)}`
+ `{import_button(,,Import this data into OpenStreetMap,./assets/svg/addSmall.svg,,5,,)}`
 
 
 
 ### import_way_button 
 
- This button will copy the data from an external dataset into OpenStreetMap
+ This button will copy the data from an external dataset into OpenStreetMap, copying the geometry and adding it as a 'line'
+
 
 Note that the contributor must zoom to at least zoomlevel 18 to be able to use this functionality.
-It is only functional in official themes, but can be tested in unoffical themes.
+    It is only functional in official themes, but can be tested in unoffical themes.
 
 #### Specifying which tags to copy or add
 
-The argument `tags` of the import button takes a `;`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
+    The argument `tags` of the import button takes a `;`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
 
 These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`.
 This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature.
@@ -419,12 +571,13 @@ snap_to_layer_max_distance | 0.1 | Distance to distort the geometry to snap to t
 
  This button will modify the geometry of an existing OSM way to match the specified geometry. This can conflate OSM-ways with LineStrings and Polygons (only simple polygons with one single ring). An attempt is made to move points with special values to a decent new location (e.g. entrances)
 
+
 Note that the contributor must zoom to at least zoomlevel 18 to be able to use this functionality.
-It is only functional in official themes, but can be tested in unoffical themes.
+    It is only functional in official themes, but can be tested in unoffical themes.
 
 #### Specifying which tags to copy or add
 
-The argument `tags` of the import button takes a `;`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
+    The argument `tags` of the import button takes a `;`-seperated list of tags to add (or the name of a property which contains a JSON-list of properties).
 
 These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`.
 This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature.
@@ -477,57 +630,6 @@ way_to_conflate | _undefined_ | The key, of which the corresponding value is the
 
 
 
-### tag_apply 
-
- Shows a big button; clicking this button will apply certain tags onto the feature.
-
-The first argument takes a specification of which tags to add.
-These can either be a tag to add, such as `amenity=fast_food` or can use a substitution, e.g. `addr:housenumber=$number`.
-This new point will then have the tags `amenity=fast_food` and `addr:housenumber` with the value that was saved in `number` in the original feature.
-
-If a value to substitute is undefined, empty string will be used instead.
-
-This supports multiple values, e.g. `ref=$source:geometry:type/$source:geometry:ref`
-
-Remark that the syntax is slightly different then expected; it uses '$' to note a value to copy, followed by a name (matched with `[a-zA-Z0-9_:]*`). Sadly, delimiting with `{}` as these already mark the boundaries of the special rendering...
-
-Note that these values can be prepare with javascript in the theme by using a [calculatedTag](calculatedTags.md#calculating-tags-with-javascript)
-  
-
-name | default | description
------- | --------- | -------------
-tags_to_apply | _undefined_ | A specification of the tags to apply
-message | _undefined_ | The text to show to the contributor
-image | _undefined_ | An image to show to the contributor on the button
-id_of_object_to_apply_this_one | _undefined_ | If specified, applies the the tags onto _another_ object. The id will be read from properties[id_of_object_to_apply_this_one] of the selected object. The tags are still calculated based on the tags of the _selected_ element
- 
-
-#### Example usage of tag_apply 
-
- `{tag_apply(survey_date=$_now:date, Surveyed today!)}`, `{tag_apply(addr:street=$addr:street, Apply the address, apply_icon.svg, _closest_osm_id)
-
-
-
-### close_note 
-
- Button to close a note. A predifined text can be defined to close the note with. If the note is already closed, will show a small text. 
-
-name | default | description
------- | --------- | -------------
-text | _undefined_ | Text to show on this button
-icon | checkmark.svg | Icon to show
-idkey | id | The property name where the ID of the note to close can be found
-comment | _undefined_ | Text to add onto the note when closing
-minZoom | _undefined_ | If set, only show the closenote button if zoomed in enough
-zoomButton | _undefined_ | Text to show if not zoomed in enough
- 
-
-#### Example usage of close_note 
-
- `{close_note(,checkmark.svg,id,,,)}`
-
-
-
 ### nearby_images 
 
  A component showing nearby images loaded from various online services such as Mapillary. In edit mode and when used on a feature, the user can select an image to add to the feature 
@@ -545,6 +647,36 @@ mapillary | true | If 'true', includes a link to mapillary on this location.
 #### Example usage of nearby_images 
 
  `{nearby_images(expandable,true)}`
+
+
+
+### wikipedia 
+
+ A box showing the corresponding wikipedia article(s) - based on the **wikidata** tag. 
+
+name | default | description
+------ | --------- | -------------
+keyToShowWikipediaFor | wikidata;wikipedia | Use the wikidata entry from this key to show the wikipedia article for. Multiple keys can be given (separated by ';'), in which case the first matching value is used
+ 
+
+#### Example usage of wikipedia 
+
+ `{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height
+
+
+
+### wikidata_label 
+
+ Shows the label of the corresponding wikidata-item 
+
+name | default | description
+------ | --------- | -------------
+keyToShowWikidataFor | wikidata | Use the wikidata entry from this key to show the label
+ 
+
+#### Example usage of wikidata_label 
+
+ `{wikidata_label()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the label itself
 
 
 
@@ -622,36 +754,6 @@ label | Add image | The text to show on the button
 #### Example usage of image_upload 
 
  `{image_upload(image,Add image)}`
-
-
-
-### wikipedia 
-
- A box showing the corresponding wikipedia article - based on the wikidata tag 
-
-name | default | description
------- | --------- | -------------
-keyToShowWikipediaFor | wikidata;wikipedia | Use the wikidata entry from this key to show the wikipedia article for. Multiple keys can be given (separated by ';'), in which case the first matching value is used
- 
-
-#### Example usage of wikipedia 
-
- `{wikipedia()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the wikipedia page of whom the feature was named after. Also remember that these can be styled, e.g. `{wikipedia():max-height: 10rem}` to limit the height
-
-
-
-### wikidata_label 
-
- Shows the label of the corresponding wikidata-item 
-
-name | default | description
------- | --------- | -------------
-keyToShowWikidataFor | wikidata | Use the wikidata entry from this key to show the label
- 
-
-#### Example usage of wikidata_label 
-
- `{wikidata_label()}` is a basic example, `{wikipedia(name:etymology:wikidata)}` to show the label itself
 
 
 
@@ -787,23 +889,7 @@ Id-key | id | The property name where the ID of the note to close can be found
 
 #### Example usage of add_image_to_note 
 
-  The following example sets the status to '2' (false positive)
-
-```json
-{
-   "id": "mark_duplicate",
-   "render": {
-      "special": {
-         "type": "maproulette_set_status",
-         "message": {
-            "en": "Mark as not found or false positive"
-         },
-         "status": "2",
-         "image": "close"
-      }
-   }
-}
-```
+ `{add_image_to_note(id)}`
 
 
 
@@ -844,7 +930,23 @@ maproulette_id | mr_taskId | The property name containing the maproulette id
 
 #### Example usage of maproulette_set_status 
 
- `{maproulette_set_status(,confirm,,1,mr_taskId)}`
+  The following example sets the status to '2' (false positive)
+
+```json
+{
+   "id": "mark_duplicate",
+   "render": {
+      "special": {
+         "type": "maproulette_set_status",
+         "message": {
+            "en": "Mark as not found or false positive"
+         },
+         "status": "2",
+         "image": "close"
+      }
+   }
+}
+```
 
 
 
@@ -873,6 +975,23 @@ button_text | _undefined_ | The text shown on the button in the UI
 #### Example usage of send_email 
 
  `{send_email(,,,)}`
+
+
+
+### link 
+
+ Construct a link. By using the 'special' visualisation notation, translation should be easier 
+
+name | default | description
+------ | --------- | -------------
+text | _undefined_ | Text to be shown
+href | _undefined_ | The URL to link to
+class | _undefined_ | CSS-classes to add to the element
+ 
+
+#### Example usage of link 
+
+ `{link(,,)}`
 
 
 
@@ -908,7 +1027,7 @@ tagrendering | _undefined_ | An entire tagRenderingConfig
 
  A button to run many actions for many features at once. To effectively use this button, you'll need some ingredients: 
 
-  - A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: import_way_button, tag_apply
+  - A target layer with features for which an action is defined in a tag rendering. The following special visualisations support an autoAction: tag_apply, import_way_button, conflate_button
   - A host feature to place the auto-action on. This can be a big outline (such as a city). Another good option for this is the layer 
   - [current_view](./BuiltinLayers.md#current_view)
   - Then, use a calculated tag on the host feature to determine the overlapping object ids

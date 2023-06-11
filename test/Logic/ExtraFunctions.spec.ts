@@ -1,6 +1,7 @@
-import { ExtraFuncParams, ExtraFunctions } from "../../Logic/ExtraFunctions"
-import { OsmFeature } from "../../Models/OsmFeature"
-import { describe, expect, it } from "vitest"
+import {ExtraFuncParams, ExtraFunctions} from "../../Logic/ExtraFunctions"
+import {OsmFeature} from "../../Models/OsmFeature"
+import {describe, expect, it} from "vitest"
+import {Feature} from "geojson";
 
 describe("OverlapFunc", () => {
     it("should give doors on the edge", () => {
@@ -21,7 +22,7 @@ describe("OverlapFunc", () => {
             },
         }
 
-        const hermanTeirlinck = {
+        const hermanTeirlinck: Feature = {
             type: "Feature",
             id: "way/444059131",
             properties: {
@@ -104,22 +105,15 @@ describe("OverlapFunc", () => {
                     ],
                 ],
             },
-            bbox: {
-                maxLat: 50.8668593,
-                maxLon: 4.3509055,
-                minLat: 50.8655878,
-                minLon: 4.3493369,
-            },
         }
 
         const params: ExtraFuncParams = {
-            getFeatureById: (id) => undefined,
+            getFeatureById: () => undefined,
             getFeaturesWithin: () => [[door]],
-            memberships: undefined,
         }
+        const helpers = ExtraFunctions.constructHelpers(params)
 
-        ExtraFunctions.FullPatchFeature(params, hermanTeirlinck)
-        const overlap = (<any>hermanTeirlinck).overlapWith("*")
+        const overlap = helpers.overlapWith(hermanTeirlinck)("*")
         console.log(JSON.stringify(overlap))
         expect(overlap[0].feat == door).toBe(true)
     })

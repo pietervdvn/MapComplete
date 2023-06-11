@@ -405,7 +405,7 @@
             "es": "Estadísticas"
           }
         },
-        "tagRenderings": [
+        "tagRenderings+": [
           {
             "id": "stats",
             "render": "{statistics()}"
@@ -420,8 +420,8 @@
           "geoJson": "https://maproulette.org/api/v2/challenge/view/28012"
         },
         "calculatedTags": [
-          "_closest_osm_hotel=feat.closest('hotel')?.properties?.id",
-          "_closest_osm_hotel_distance=feat.distanceTo(feat.properties._closest_osm_hotel)",
+          "_closest_osm_hotel=closest(feat)('hotel')?.properties?.id",
+          "_closest_osm_hotel_distance=distanceTo(feat)(feat.properties._closest_osm_hotel)",
           "_has_closeby_feature=Number(feat.properties._closest_osm_hotel_distance) < 50 ? 'yes' : 'no'"
         ],
         "+tagRenderings": [
@@ -446,7 +446,6 @@
                   "es": "Importar"
                 },
                 "icon": "./assets/svg/addSmall.svg",
-                "location_picker": "photo",
                 "maproulette_id": "mr_taskId"
               }
             }
@@ -480,7 +479,7 @@
   ],
   "overrideAll": {
     "+calculatedTags": [
-      "_enclosing_building=feat.enclosingFeatures('walls_and_buildings')?.map(f => f.feat.properties.id)?.at(0)"
+      "_enclosing_building=enclosingFeatures(feat)('walls_and_buildings')?.map(f => f.feat.properties.id)?.at(0)"
     ],
     "tagRenderings+": [
       {

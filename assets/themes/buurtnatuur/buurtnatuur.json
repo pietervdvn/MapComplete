@@ -150,7 +150,7 @@
         }
       },
       "calculatedTags": [
-        "_overlapWithUpperLayers=Math.max(...feat.overlapWith('nature_reserve_buurtnatuur').map(o => o.overlap))/feat.area",
+        "_overlapWithUpperLayers=Math.max(...overlapWith(feat)('nature_reserve_buurtnatuur').map(o => o.overlap))/feat.area",
         "_tooMuchOverlap=Number(feat.properties._overlapWithUpperLayers) > 0.1 ? 'yes' :'no'"
       ],
       "isShown": "_tooMuchOverlap!=yes",
@@ -250,7 +250,7 @@
         }
       },
       "calculatedTags": [
-        "_overlapWithUpperLayers=Math.max(...feat.overlapWith('parks','nature_reserve_buurtnatuur').map(o => o.overlap))/feat.area",
+        "_overlapWithUpperLayers=Math.max(...overlapWith(feat)('parks','nature_reserve_buurtnatuur').map(o => o.overlap))/feat.area",
         "_tooMuchOverlap=Number(feat.properties._overlapWithUpperLayers) > 0.1 ? 'yes' : 'no'"
       ],
       "isShown": "_tooMuchOverlap!=yes",

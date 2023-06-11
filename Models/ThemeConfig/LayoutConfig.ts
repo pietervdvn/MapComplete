@@ -3,11 +3,12 @@ import { LayoutConfigJson } from "./Json/LayoutConfigJson"
 import LayerConfig from "./LayerConfig"
 import { LayerConfigJson } from "./Json/LayerConfigJson"
 import Constants from "../Constants"
-import TilesourceConfig from "./TilesourceConfig"
 import { ExtractImages } from "./Conversion/FixImages"
 import ExtraLinkConfig from "./ExtraLinkConfig"
 import { Utils } from "../../Utils"
 import LanguageUtils from "../../Utils/LanguageUtils"
+
+import { RasterLayerProperties } from "../RasterLayerProperties"
 
 /**
  * Minimal information about a theme
@@ -40,11 +41,7 @@ export default class LayoutConfig implements LayoutInformation {
     public widenFactor: number
     public defaultBackgroundId?: string
     public layers: LayerConfig[]
-    public tileLayerSources: TilesourceConfig[]
-    public readonly clustering?: {
-        maxZoom: number
-        minNeededElements: number
-    }
+    public tileLayerSources: (RasterLayerProperties & { defaultState?: true | boolean })[]
     public readonly hideFromOverview: boolean
     public lockLocation: boolean | [[number, number], [number, number]]
     public readonly enableUserBadge: boolean
@@ -166,9 +163,7 @@ export default class LayoutConfig implements LayoutInformation {
         this.widenFactor = json.widenFactor ?? 1.5
 
         this.defaultBackgroundId = json.defaultBackgroundId
-        this.tileLayerSources = (json.tileLayerSources ?? []).map(
-            (config, i) => new TilesourceConfig(config, `${this.id}.tileLayerSources[${i}]`)
-        )
+        this.tileLayerSources = json.tileLayerSources ?? []
         // At this point, layers should be expanded and validated either by the generateScript or the LegacyJsonConvert
         this.layers = json.layers.map(
             (lyrJson) =>
@@ -189,22 +184,6 @@ export default class LayoutConfig implements LayoutInformation {
             context + ".extraLink"
         )
 
-        this.clustering = {
-            maxZoom: 16,
-            minNeededElements: 250,
-        }
-        if (json.clustering === false) {
-            this.clustering = {
-                maxZoom: 0,
-                minNeededElements: 100000,
-            }
-        } else if (json.clustering) {
-            this.clustering = {
-                maxZoom: json.clustering.maxZoom ?? 18,
-                minNeededElements: json.clustering.minNeededElements ?? 250,
-            }
-        }
-
         this.hideFromOverview = json.hideFromOverview ?? false
         this.lockLocation = <[[number, number], [number, number]]>json.lockLocation ?? undefined
         this.enableUserBadge = json.enableUserBadge ?? true
@@ -216,8 +195,8 @@ export default class LayoutConfig implements LayoutInformation {
         this.enableAddNewPoints = json.enableAddNewPoints ?? true
         this.enableBackgroundLayerSelection = json.enableBackgroundLayerSelection ?? true
         this.enableShowAllQuestions = json.enableShowAllQuestions ?? false
-        this.enableExportButton = json.enableDownload ?? false
-        this.enablePdfDownload = json.enablePdfDownload ?? false
+        this.enableExportButton = json.enableDownload ?? true
+        this.enablePdfDownload = json.enablePdfDownload ?? true
         this.customCss = json.customCss
         this.overpassUrl = Constants.defaultOverpassUrls
         if (json.overpassUrl !== undefined) {
@@ -307,11 +286,14 @@ export default class LayoutConfig implements LayoutInformation {
 
         return { untranslated, total }
     }
-    public getMatchingLayer(tags: any): LayerConfig | undefined {
+    public getMatchingLayer(tags: Record<string, string>): LayerConfig | undefined {
         if (tags === undefined) {
             return undefined
         }
         for (const layer of this.layers) {
+            if (!layer.source) {
+                continue
+            }
             if (layer.source.osmTags.matchesProperties(tags)) {
                 return layer
             }

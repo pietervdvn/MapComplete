@@ -17,7 +17,7 @@ export class Or extends TagsFilter {
         return new Or(or)
     }
 
-    matchesProperties(properties: any): boolean {
+    matchesProperties(properties: Record<string, string>): boolean {
         for (const tagsFilter of this.or) {
             if (tagsFilter.matchesProperties(properties)) {
                 return true
@@ -82,7 +82,7 @@ export class Or extends TagsFilter {
         return [].concat(...this.or.map((subkeys) => subkeys.usedTags()))
     }
 
-    asChange(properties: any): { k: string; v: string }[] {
+    asChange(properties: Record<string, string>): { k: string; v: string }[] {
         const result = []
         for (const tagsFilter of this.or) {
             result.push(...tagsFilter.asChange(properties))
@@ -260,7 +260,7 @@ export class Or extends TagsFilter {
         return this.or.some((t) => t.isNegative())
     }
 
-    visit(f: (TagsFilter: any) => void) {
+    visit(f: (tagsFilter: TagsFilter) => void) {
         f(this)
         this.or.forEach((t) => t.visit(f))
     }

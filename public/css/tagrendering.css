@@ -1,0 +1,82 @@
+
+/**
+ Some utility functions which are only used to render data
+ */
+
+.question .form-text-field > input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.question {
+    display: block;
+    margin-top: 1em;
+    background-color: var(--subtle-detail-color);
+    color: var(--subtle-detail-color-contrast);
+    padding: 1em;
+    border-radius: 0.75rem;
+    font-size: larger !important;
+    overflow-wrap: initial;
+}
+
+.question form {
+    display: inline-block;
+    max-width: 90vw;
+    width: 100%;
+}
+
+.question svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.mapping-icon-small-height {
+    /* A mapping icon type */
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    width: unset;
+}
+
+.mapping-icon-medium-height {
+    /* A mapping icon type */
+    height: 3rem;
+    margin-right: 0.5rem;
+    width: unset;
+}
+
+.mapping-icon-large-height {
+    /* A mapping icon type */
+    height: 5rem;
+    margin-right: 0.5rem;
+    width: unset;
+}
+
+.mapping-icon-small {
+    /* A mapping icon type */
+    width: 1.5rem;
+    max-height: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.mapping-icon-medium {
+    /* A mapping icon type */
+    width: 3rem;
+    max-height: 3rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.mapping-icon-large {
+    /* A mapping icon type */
+    width: 6rem;
+    max-height: 5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+

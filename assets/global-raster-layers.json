@@ -1,0 +1,97 @@
+{
+  "layers": [
+    {
+      "id": "Stamen.TonerLite",
+      "name": "Toner Lite (by Stamen)",
+      "url": "https://stamen-tiles-{switch:a,b,c,d}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png",
+      "category": "osmbasedmap",
+      "attribution": {
+        "html": "Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a> &mdash; Map data {attribution.OpenStreetMap}"
+      },
+      "min_zoom": 0,
+      "max_zoom": 20
+    },
+    {
+      "id": "Stamen.TonerBackground",
+      "name": "Toner Background - no labels (by Stamen)",
+      "category": "osmbasedmap",
+      "url": "https://stamen-tiles-{switch:a,b,c,d}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}.png",
+      "attribution": {
+        "html": "Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a> &mdash; Map data {attribution.OpenStreetMap}"
+      },
+      "min_zoom": 0,
+      "max_zoom": 20
+    },
+    {
+      "id": "Stamen.Watercolor",
+      "name": "Watercolor (by Stamen)",
+      "category": "osmbasedmap",
+      "url": "https://stamen-tiles-{switch:a,b,c,d}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png",
+      "attribution": {
+        "html": "Map tiles by <a href=\"http://stamen.com\">Stamen Design</a>, <a href=\"http://creativecommons.org/licenses/by/3.0\">CC BY 3.0</a> &mdash; Map data {attribution.OpenStreetMap}"
+      },
+      "min_zoom": 0,
+      "max_zoom": 20
+    },
+    {
+      "id": "CartoDB.Positron",
+      "name": "Positron (by CartoDB)",
+      "url": "https://{switch:a,b,c,d}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png",
+      "attribution": {
+        "html": "<a href=\"https://carto.com/attributions\">CARTO</a>"
+      },
+      "max_zoom": 20,
+      "category": "osmbasedmap"
+    },
+    {
+      "id": "CartoDB.PositronNoLabels",
+      "name": "Positron  - no labels (by CartoDB)",
+      "url": "https://{switch:a,b,c,d}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png",
+      "category": "osmbasedmap",
+      "attribution": {
+        "html": "<a href=\"https://carto.com/attributions\">CARTO</a>"
+      },
+      "max_zoom": 20
+    },
+    {
+      "id": "CartoDB.Voyager",
+      "name": "Voyager (by CartoDB)",
+      "url": "https://{switch:a,b,c,d}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png",
+      "category": "osmbasedmap",
+      "attribution": {
+        "html": "<a href=\"https://carto.com/attributions\">CARTO</a>"
+      },
+      "max_zoom": 20
+    },
+    {
+      "id": "CartoDB.VoyagerNoLabels",
+      "name": "Voyager  - no labels (by CartoDB)",
+      "url": "https://{switch:a,b,c,d}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}.png",
+      "category": "osmbasedmap",
+      "attribution": {
+        "html": "<a href=\"https://carto.com/attributions\">CARTO</a>"
+      },
+      "max_zoom": 20
+    },
+    {
+      "id": "CartoDB.DarkMatter",
+      "name": "Dark Matter (by CartoDB)",
+      "url": "https://{switch:a,b,c,d}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+      "category": "osmbasedmap",
+      "attribution": {
+        "html": "<a href=\"https://carto.com/attributions\">CARTO</a>"
+      },
+      "max_zoom": 20
+    },
+    {
+      "id": "CartoDB.DarkMatterNoLabels",
+      "name": "Dark Matter  - no labels (by CartoDB)",
+      "url": "https://{switch:a,b,c,d}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png",
+      "category": "osmbasedmap",
+      "attribution": {
+        "html": "<a href=\"https://carto.com/attributions\">CARTO</a>"
+      },
+      "max_zoom": 20
+    }
+  ]
+}

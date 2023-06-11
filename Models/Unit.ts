@@ -122,6 +122,10 @@ export class Unit {
                     `${ctx}.units[${i}]`
                 )
         )
+
+        if(json.defaultInput && !applicable.some(denom => denom.canonical.trim() === json.defaultInput)){
+            throw `${ctx}: no denomination has the specified default denomination. The default denomination is '${json.defaultInput}', but the available denominations are ${applicable.map(denom => denom.canonical).join(", ")}`
+        }
         return new Unit(appliesTo, applicable, json.eraseInvalidValues ?? false)
     }
 
@@ -199,7 +203,7 @@ export class Unit {
             ) {
                 continue
             }
-            let countries: string | string[] = country()
+            let countries: string | string[] = country() ?? []
             if (typeof countries === "string") {
                 countries = countries.split(",")
             }

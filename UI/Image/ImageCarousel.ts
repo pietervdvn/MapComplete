@@ -14,7 +14,7 @@ export class ImageCarousel extends Toggle {
     constructor(
         images: Store<{ key: string; url: string; provider: ImageProvider }[]>,
         tags: Store<any>,
-        state: { osmConnection?: OsmConnection; changes?: Changes; layoutToUse: LayoutConfig }
+        state: { osmConnection?: OsmConnection; changes?: Changes; layout: LayoutConfig }
     ) {
         const uiElements = images.map(
             (imageURLS: { key: string; url: string; provider: ImageProvider }[]) => {

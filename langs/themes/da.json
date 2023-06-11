@@ -362,7 +362,7 @@
             }
         },
         "overrideAll": {
-            "tagRenderings+": {
+            "+tagRenderings": {
                 "0": {
                     "mappings": {
                         "0": {
@@ -552,14 +552,14 @@
     "grb": {
         "description": "Dette tema er et forsøg på at hjælpe med at automatisere GRB-importen.",
         "layers": {
-            "1": {
+            "0": {
                 "tagRenderings": {
                     "building type": {
                         "question": "Hvad er det for en bygning?"
                     }
                 }
             },
-            "6": {
+            "1": {
                 "tagRenderings": {
                     "Import-button": {
                         "mappings": {

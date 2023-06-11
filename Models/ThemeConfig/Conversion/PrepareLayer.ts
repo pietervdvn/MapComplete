@@ -23,6 +23,9 @@ import predifined_filters from "../../../assets/layers/filters/filters.json"
 import { TagConfigJson } from "../Json/TagConfigJson"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
 import LineRenderingConfigJson from "../Json/LineRenderingConfigJson"
+import ValidationUtils from "./ValidationUtils"
+import {RenderingSpecification} from "../../../UI/SpecialVisualization"
+import {QuestionableTagRenderingConfigJson} from "../Json/QuestionableTagRenderingConfigJson"
 
 class ExpandFilter extends DesugaringStep<LayerConfigJson> {
     private static readonly predefinedFilters = ExpandFilter.load_filters()
@@ -235,7 +238,7 @@ class ExpandTagRendering extends Conversion<
             matchingTrs = layerTrs
         } else if (id.startsWith("*")) {
             const id_ = id.substring(1)
-            matchingTrs = layerTrs.filter((tr) => tr.group === id_ || tr.labels?.indexOf(id_) >= 0)
+            matchingTrs = layerTrs.filter((tr) => tr.labels?.indexOf(id_) >= 0)
         } else {
             matchingTrs = layerTrs.filter((tr) => tr.id === id || tr.labels?.indexOf(id) >= 0)
         }
@@ -245,10 +248,12 @@ class ExpandTagRendering extends Conversion<
             let found: TagRenderingConfigJson = Utils.Clone(matchingTrs[i])
             if (this._options?.applyCondition) {
                 // The matched tagRenderings are 'stolen' from another layer. This means that they must match the layer condition before being shown
-                if (found.condition === undefined) {
-                    found.condition = layer.source.osmTags
-                } else {
-                    found.condition = { and: [found.condition, layer.source.osmTags] }
+                if (typeof layer.source !== "string") {
+                    if (found.condition === undefined) {
+                        found.condition = layer.source["osmTags"]
+                    } else {
+                        found.condition = { and: [found.condition, layer.source["osmTags"]] }
+                    }
                 }
             }
 
@@ -269,13 +274,6 @@ class ExpandTagRendering extends Conversion<
         ctx: string
     ): TagRenderingConfigJson[] {
         const state = this._state
-        if (tr === "questions") {
-            return [
-                {
-                    id: "questions",
-                },
-            ]
-        }
 
         if (typeof tr === "string") {
             const lookup = this.lookup(tr)
@@ -426,6 +424,246 @@ class ExpandTagRendering extends Conversion<
         }
 
         return result
+    }
+}
+
+class DetectInline extends DesugaringStep<QuestionableTagRenderingConfigJson> {
+    constructor() {
+        super(
+            "If no 'inline' is set on the freeform key, it will be automatically added. If no special renderings are used, it'll be set to true",
+            ["freeform.inline"],
+            "DetectInline"
+        )
+    }
+
+    convert(
+        json: QuestionableTagRenderingConfigJson,
+        context: string
+    ): {
+        result: QuestionableTagRenderingConfigJson
+        errors?: string[]
+        warnings?: string[]
+        information?: string[]
+    } {
+        if (json.freeform === undefined) {
+            return {result: json}
+        }
+        let spec: Record<string, string>
+        if (typeof json.render === "string") {
+            spec = {"*": json.render}
+        } else {
+            spec = <Record<string, string>>json.render
+        }
+        const errors: string[] = []
+        for (const key in spec) {
+            if (spec[key].indexOf("<a ") >= 0) {
+                // We have a link element, it probably contains something that needs to be substituted...
+                // Let's play this safe and not inline it
+                return {result: json}
+            }
+            const fullSpecification = SpecialVisualizations.constructSpecification(spec[key])
+            if (fullSpecification.length > 1) {
+                // We found a special rendering!
+                if (json.freeform.inline === true) {
+                    errors.push(
+                        "At " +
+                        context +
+                        ": 'inline' is set, but the rendering contains a special visualisation...\n    " +
+                        spec[key]
+                    )
+                }
+                json = JSON.parse(JSON.stringify(json))
+                json.freeform.inline = false
+                return {result: json, errors}
+            }
+        }
+        json = JSON.parse(JSON.stringify(json))
+        json.freeform.inline ??= true
+        return {result: json, errors}
+    }
+}
+
+export class AddQuestionBox extends DesugaringStep<LayerConfigJson> {
+    constructor() {
+        super(
+            "Adds a 'questions'-object if no question element is added yet",
+            ["tagRenderings"],
+            "AddQuestionBox"
+        )
+    }
+
+    convert(
+        json: LayerConfigJson,
+        context: string
+    ): { result: LayerConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
+        if (
+            json.tagRenderings === undefined ||
+            json.tagRenderings.some((tr) => tr["id"] === "leftover-questions")
+        ) {
+            return {result: json}
+        }
+        json = JSON.parse(JSON.stringify(json))
+        const allSpecials: Exclude<RenderingSpecification, string>[] = []
+            .concat(
+                ...json.tagRenderings.map((tr) =>
+                    ValidationUtils.getSpecialVisualsationsWithArgs(<TagRenderingConfigJson>tr)
+                )
+            )
+            .filter((spec) => typeof spec !== "string")
+
+        const questionSpecials = allSpecials.filter((sp) => sp.func.funcName === "questions")
+        const noLabels = questionSpecials.filter(
+            (sp) => sp.args.length === 0 || sp.args[0].trim() === ""
+        )
+
+        const errors: string[] = []
+        const warnings: string[] = []
+        if (noLabels.length > 1) {
+            errors.push(
+                "At " +
+                context +
+                ": multiple 'questions'-visualisations found which would show _all_ questions. Don't do this"
+            )
+        }
+
+        // ALl labels that are used in this layer
+        const allLabels = new Set(
+            [].concat(...json.tagRenderings.map((tr) => (<TagRenderingConfigJson>tr).labels ?? []))
+        )
+        const seen = new Set()
+        for (const questionSpecial of questionSpecials) {
+            if (typeof questionSpecial === "string") {
+                continue
+            }
+            const used = questionSpecial.args[0]
+                ?.split(";")
+                ?.map((a) => a.trim())
+                ?.filter((s) => s != "")
+            const blacklisted = questionSpecial.args[1]
+                ?.split(";")
+                ?.map((a) => a.trim())
+                ?.filter((s) => s != "")
+            if (blacklisted?.length > 0 && used?.length > 0) {
+                errors.push(
+                    "At " +
+                    context +
+                    ": the {questions()}-special rendering only supports either a blacklist OR a whitelist, but not both." +
+                    "\n    Whitelisted: " +
+                    used.join(", ") +
+                    "\n    Blacklisted: " +
+                    blacklisted.join(", ")
+                )
+            }
+            for (const usedLabel of used) {
+                if (!allLabels.has(usedLabel)) {
+                    errors.push(
+                        "At " +
+                        context +
+                        ": this layers specifies a special question element for label `" +
+                        usedLabel +
+                        "`, but this label doesn't exist.\n" +
+                        "    Available labels are " +
+                        Array.from(allLabels).join(", ")
+                    )
+                }
+                seen.add(usedLabel)
+            }
+        }
+
+        if (noLabels.length == 0) {
+            /* At this point, we know which question labels are not yet handled and which already are handled, and we
+             * know there is no previous catch-all questions
+             */
+            const question: TagRenderingConfigJson = {
+                id: "leftover-questions",
+                render: {
+                    "*": `{questions( ,${Array.from(seen).join(";")})}`,
+                },
+            }
+            json.tagRenderings.push(question)
+        }
+        return {
+            result: json,
+            errors,
+            warnings,
+        }
+    }
+}
+
+export class AddEditingElements extends DesugaringStep<LayerConfigJson> {
+    private readonly _desugaring: DesugaringContext
+
+    constructor(desugaring: DesugaringContext) {
+        super(
+            "Add some editing elements, such as the delete button or the move button if they are configured. These used to be handled by the feature info box, but this has been replaced by special visualisation elements",
+            [],
+            "AddEditingElements"
+        )
+        this._desugaring = desugaring
+    }
+
+    convert(
+        json: LayerConfigJson,
+        context: string
+    ): { result: LayerConfigJson; errors?: string[]; warnings?: string[]; information?: string[] } {
+        json = JSON.parse(JSON.stringify(json))
+
+        if (
+            json.tagRenderings &&
+            this._desugaring.tagRenderings.has("just_created") &&
+            !json.tagRenderings.some((tr) => tr === "just_created" || tr["id"] === "just_created")
+        ) {
+            json.tagRenderings.unshift(this._desugaring.tagRenderings.get("just_created"))
+        }
+
+        if (json.allowSplit && !ValidationUtils.hasSpecialVisualisation(json, "split_button")) {
+            json.tagRenderings.push({
+                id: "split-button",
+                render: {"*": "{split_button()}"},
+            })
+            delete json.allowSplit
+        }
+
+        if (json.allowMove && !ValidationUtils.hasSpecialVisualisation(json, "move_button")) {
+            json.tagRenderings.push({
+                id: "move-button",
+                render: {"*": "{move_button()}"},
+            })
+        }
+        if (json.deletion && !ValidationUtils.hasSpecialVisualisation(json, "delete_button")) {
+            json.tagRenderings.push({
+                id: "delete-button",
+                render: {"*": "{delete_button()}"},
+            })
+        }
+
+        if (
+            json.source !== "special" &&
+            json.source !== "special:library" &&
+            json.tagRenderings &&
+            this._desugaring.tagRenderings.has("last_edit") &&
+            !json.tagRenderings.some((tr) => tr["id"] === "last_edit")
+        ) {
+            json.tagRenderings.push(this._desugaring.tagRenderings.get("last_edit"))
+        }
+
+        if (!ValidationUtils.hasSpecialVisualisation(json, "all_tags")) {
+            const trc: TagRenderingConfigJson = {
+                id: "all-tags",
+                render: {"*": "{all_tags()}"},
+
+                metacondition: {
+                    or: [
+                        "__featureSwitchIsDebugging=true",
+                        "mapcomplete-show_tags=full",
+                        "mapcomplete-show_debug=yes",
+                    ],
+                },
+            }
+            json.tagRenderings?.push(trc)
+        }
+
+        return {result: json}
     }
 }
 
@@ -719,7 +957,13 @@ export class RewriteSpecial extends DesugaringStep<TagRenderingConfigJson> {
             const param = special[arg.name]
             if (param === undefined) {
                 errors.push(
-                    `At ${context}: Obligated parameter '${arg.name}' in special rendering of type ${vis.funcName} not found.\n${arg.doc}`
+                    `At ${context}: Obligated parameter '${
+                        arg.name
+                    }' in special rendering of type ${
+                        vis.funcName
+                    } not found.\n    The full special rendering specification is: '${JSON.stringify(
+                        input
+                    )}'\n    ${arg.name}: ${arg.doc}`
                 )
             }
         }
@@ -915,6 +1159,73 @@ class PreparePointRendering extends Fuse<PointRenderingConfigJson | LineRenderin
     }
 }
 
+class SetFullNodeDatabase extends DesugaringStep<LayerConfigJson> {
+    constructor() {
+        super("sets the fullNodeDatabase-bit if needed",
+            ["fullNodeDatabase"],
+            "SetFullNodeDatabase")
+    }
+
+    convert(json: LayerConfigJson, context: string): {
+        result: LayerConfigJson;
+        errors?: string[];
+        warnings?: string[];
+        information?: string[]
+    } {
+        const needsSpecial = json.tagRenderings?.some(tr => {
+            if (typeof tr === "string") {
+                return false
+            }
+            const specs = ValidationUtils.getSpecialVisualisations(<TagRenderingConfigJson>tr)
+            return specs?.some(sp => sp.needsNodeDatabase)
+        }) ?? false
+        if (!needsSpecial) {
+            return {result: json}
+        }
+        return {
+            result: {...json, fullNodeDatabase: true},
+            information: ["Layer " + json.id + " needs the fullNodeDatabase"]
+        };
+    }
+}
+
+export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
+    private readonly _state: DesugaringContext
+
+    constructor(state: DesugaringContext) {
+        super(
+            "Adds a default 'minimap'-element to the tagrenderings if none of the elements define such a minimap",
+            ["tagRenderings"],
+            "AddMiniMap"
+        )
+        this._state = state
+    }
+
+    convert(layerConfig: LayerConfigJson, context: string): { result: LayerConfigJson } {
+        if (!layerConfig.tagRenderings || layerConfig.source === "special") {
+            return {result: layerConfig}
+        }
+        const state = this._state
+        const hasMinimap = ValidationUtils.hasSpecialVisualisation(layerConfig, "minimap")
+        if (!hasMinimap) {
+            layerConfig = {...layerConfig}
+            layerConfig.tagRenderings = [...layerConfig.tagRenderings]
+            const minimap = state.tagRenderings.get("minimap")
+            if (minimap === undefined) {
+                if (state.tagRenderings.size > 0) {
+                    throw "The 'minimap'-builtin tagrendering is not defined. As such, it cannot be added automatically"
+                }
+            } else {
+                layerConfig.tagRenderings.push(minimap)
+            }
+        }
+
+        return {
+            result: layerConfig,
+        }
+    }
+}
+
 export class PrepareLayer extends Fuse<LayerConfigJson> {
     constructor(state: DesugaringContext) {
         super(
@@ -922,6 +1233,11 @@ export class PrepareLayer extends Fuse<LayerConfigJson> {
             new On("tagRenderings", new Each(new RewriteSpecial())),
             new On("tagRenderings", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
             new On("tagRenderings", (layer) => new Concat(new ExpandTagRendering(state, layer))),
+            new On("tagRenderings", new Each(new DetectInline())),
+            new AddQuestionBox(),
+            new AddMiniMap(state),
+            new AddEditingElements(state),
+            new SetFullNodeDatabase(),
             new On("mapRendering", new Concat(new ExpandRewrite()).andThenF(Utils.Flatten)),
             new On<(PointRenderingConfigJson | LineRenderingConfigJson)[], LayerConfigJson>(
                 "mapRendering",

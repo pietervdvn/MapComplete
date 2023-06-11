@@ -99,20 +99,20 @@
           }
         ],
         "+calculatedTags": [
-          "_embedding_feature_properties=feat.overlapWith('climbing_area').map(f => f.feat.properties).filter(p => p !== undefined).map(p => {return{access: p.access, id: p.id, name: p.name, climbing: p.climbing, 'access:description': p['access:description']}})",
-          "_embedding_features_with_access=feat.get('_embedding_feature_properties')?.filter(p => p.access !== undefined)?.at(0)",
-          "_embedding_feature_with_rock=feat.get('_embedding_feature_properties')?.filter(p => p.rock !== undefined)?.at(0)",
-          "_embedding_features_with_rock:rock=feat.get('_embedding_feature_with_rock')?.rock",
-          "_embedding_features_with_rock:id=feat.get('_embedding_feature_with_rock')?.id",
-          "_embedding_feature:access=feat.get('_embedding_features_with_access')?.access",
-          "_embedding_feature:access:description=(feat.get('_embedding_features_with_access')??{})['access:description']",
-          "_embedding_feature:id=feat.get('_embedding_features_with_access')?.id",
+          "_embedding_feature_properties=overlapWith(feat)('climbing_area').map(f => f.feat.properties).filter(p => p !== undefined).map(p => {return{access: p.access, id: p.id, name: p.name, climbing: p.climbing, 'access:description': p['access:description']}})",
+          "_embedding_features_with_access=get(feat)('_embedding_feature_properties')?.filter(p => p.access !== undefined)?.at(0)",
+          "_embedding_feature_with_rock=get(feat)('_embedding_feature_properties')?.filter(p => p.rock !== undefined)?.at(0)",
+          "_embedding_features_with_rock:rock=get(feat)('_embedding_feature_with_rock')?.rock",
+          "_embedding_features_with_rock:id=get(feat)('_embedding_feature_with_rock')?.id",
+          "_embedding_feature:access=get(feat)('_embedding_features_with_access')?.access",
+          "_embedding_feature:access:description=(get(feat)('_embedding_features_with_access')??{})['access:description']",
+          "_embedding_feature:id=get(feat)('_embedding_features_with_access')?.id",
           "__difficulty_max= (feat.properties['climbing:grade:french:max'] ?? feat.properties['_difficulty_max'])?.substring(0,2)?.toUpperCase()",
           "__difficulty_min= (feat.properties['climbing:grade:french:min'] ?? feat.properties['_difficulty_min'])?.substring(0,2)?.toUpperCase()",
           "__difficulty_max:char= feat.properties['__difficulty_max']?.at(0)",
           "__difficulty_min:char= feat.properties['__difficulty_min']?.at(0)",
           "__difficulty:char= feat.properties['climbing:grade:french']?.at(0)",
-          "__bolts_max= feat.get('climbing:bolts:max') ?? feat.get('climbing:bolts') ?? feat.get('_bolts_max')"
+          "__bolts_max= get(feat)('climbing:bolts:max') ?? get(feat)('climbing:bolts') ?? get(feat)('_bolts_max')"
         ],
         "units+": [
           {

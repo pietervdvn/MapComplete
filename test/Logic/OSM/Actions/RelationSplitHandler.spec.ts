@@ -1,11 +1,14 @@
 import { Utils } from "../../../../Utils"
-import { OsmObject, OsmRelation } from "../../../../Logic/Osm/OsmObject"
+import { OsmRelation } from "../../../../Logic/Osm/OsmObject"
 import {
     InPlaceReplacedmentRTSH,
     TurnRestrictionRSH,
 } from "../../../../Logic/Osm/Actions/RelationSplitHandler"
 import { Changes } from "../../../../Logic/Osm/Changes"
 import { describe, expect, it } from "vitest"
+import OsmObjectDownloader from "../../../../Logic/Osm/OsmObjectDownloader"
+import { ImmutableStore } from "../../../../Logic/UIEventSource"
+import { OsmConnection } from "../../../../Logic/Osm/OsmConnection"
 
 describe("RelationSplitHandler", () => {
     Utils.injectJsonDownloadForTests("https://www.openstreetmap.org/api/0.6/node/1124134958/ways", {
@@ -624,8 +627,9 @@ describe("RelationSplitHandler", () => {
     it("should split all cycling relation (split 295132739)", async () => {
         // Lets mimic a split action of https://www.openstreetmap.org/way/295132739
 
+        const downloader = new OsmObjectDownloader()
         const relation: OsmRelation = <OsmRelation>(
-            await OsmObject.DownloadObjectAsync("relation/9572808")
+            await downloader.DownloadObjectAsync("relation/9572808")
         )
         const originalNodeIds = [
             5273988967, 170497153, 1507524582, 4524321710, 170497155, 170497157, 170497158,
@@ -645,9 +649,13 @@ describe("RelationSplitHandler", () => {
                 originalNodes: originalNodeIds,
                 allWaysNodesInOrder: withSplit,
             },
-            "no-theme"
+            "no-theme",
+            downloader
         )
-        const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
+        const changeDescription = await splitter.CreateChangeDescriptions(new Changes({
+            dryRun: new ImmutableStore(false),
+            osmConnection: new OsmConnection()
+        }))
         const allIds = changeDescription[0].changes["members"].map((m) => m.ref).join(",")
         const expected = "687866206,295132739,-1,690497698"
         // "didn't find the expected order of ids in the relation to test"
@@ -655,8 +663,9 @@ describe("RelationSplitHandler", () => {
     })
 
     it("should split turn restrictions (split of https://www.openstreetmap.org/way/143298912)", async () => {
+        const downloader = new OsmObjectDownloader()
         const relation: OsmRelation = <OsmRelation>(
-            await OsmObject.DownloadObjectAsync("relation/4374576")
+            await downloader.DownloadObjectAsync("relation/4374576")
         )
         const originalNodeIds = [
             1407529979, 1974988033, 3250129361, 1634435395, 8493044168, 875668688, 1634435396,
@@ -695,9 +704,13 @@ describe("RelationSplitHandler", () => {
                 originalNodes: originalNodeIds,
                 allWaysNodesInOrder: withSplit,
             },
-            "no-theme"
+            "no-theme",
+            downloader
         )
-        const changeDescription = await splitter.CreateChangeDescriptions(new Changes())
+        const changeDescription = await splitter.CreateChangeDescriptions(new Changes({
+            dryRun: new ImmutableStore(false),
+            osmConnection: new OsmConnection()
+        }))
         const allIds = changeDescription[0].changes["members"]
             .map((m) => m.type + "/" + m.ref + "-->" + m.role)
             .join(",")
@@ -713,9 +726,15 @@ describe("RelationSplitHandler", () => {
                 originalNodes: originalNodeIds,
                 allWaysNodesInOrder: withSplit,
             },
-            "no-theme"
+            "no-theme",
+            downloader
         )
-        const changesReverse = await splitterReverse.CreateChangeDescriptions(new Changes())
+        const changesReverse = await splitterReverse.CreateChangeDescriptions(
+            new Changes({
+                dryRun: new ImmutableStore(false),
+                osmConnection: new OsmConnection(),
+            })
+        )
         expect(changesReverse.length).toEqual(0)
     })
 })

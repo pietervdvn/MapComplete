@@ -106,6 +106,10 @@
       "value": "designated"
     },
     {
+      "key": "id",
+      "description": "Layer 'Cycleways and roads' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OSM for the blind') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "cycleway",
       "description": "Layer 'Cycleways and roads' shows cycleway=shared_lane with a fixed text, namely 'There is a shared lane' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'OSM for the blind') (This is only shown if highway!=cycleway&highway!=path&highway!=footway)",
       "value": "shared_lane"
@@ -574,6 +578,10 @@
       "value": "crossing"
     },
     {
+      "key": "id",
+      "description": "Layer 'Crossings' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OSM for the blind') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Crossings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -740,6 +748,10 @@
       "value": "kerb"
     },
     {
+      "key": "id",
+      "description": "Layer 'Kerbs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OSM for the blind') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Kerbs allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -808,6 +820,10 @@
       "key": "highway",
       "description": "The MapComplete theme OSM for the blind has a layer Transit Stops showing features with this tag",
       "value": "bus_stop"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Transit Stops' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OSM for the blind') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "name",
@@ -960,6 +976,10 @@
       "value": "elevator"
     },
     {
+      "key": "id",
+      "description": "Layer 'Elevator' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OSM for the blind') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Elevator allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -1050,6 +1070,10 @@
       "key": "highway",
       "description": "The MapComplete theme OSM for the blind has a layer Stairs showing features with this tag",
       "value": "steps"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Stairs' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'OSM for the blind') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",

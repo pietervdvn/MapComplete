@@ -379,7 +379,7 @@
   ],
   "overrideAll": {
     "allowSplit": true,
-    "tagRenderings+": [
+    "+tagRenderings": [
       {
         "id": "is_cyclestreet",
         "question": {

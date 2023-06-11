@@ -1,7 +1,7 @@
 /**
  * The full opening hours element, including the table, opening hours picker.
  * Keeps track of unparsed rules
- * Exports everything conventiently as a string, for direct use
+ * Exports everything conveniently as a string, for direct use
  */
 import OpeningHoursPicker from "./OpeningHoursPicker"
 import { Store, UIEventSource } from "../../Logic/UIEventSource"
@@ -68,6 +68,9 @@ export default class OpeningHoursInput extends InputElement<string> {
                     continue
                 }
                 if (OH.ParsePHRule(rule) !== null) {
+                    continue
+                }
+                if(leftOvers.indexOf(rule) >= 0){
                     continue
                 }
                 leftOvers.push(rule)

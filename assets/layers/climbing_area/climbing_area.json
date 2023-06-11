@@ -96,19 +96,19 @@
     ]
   },
   "calculatedTags": [
-    "_contained_climbing_routes_properties=feat.overlapWith('climbing_route').map(f => f.feat.properties).map(p => {return {id: p.id, name: p.name, 'climbing:grade:french': p['climbing:grade:french'], 'climbing:length': p['climbing:length']} })",
-    "_contained_climbing_routes=feat.get('_contained_climbing_routes_properties')?.map(p => `<li><a href='#${p.id}'>${p.name ?? 'climbing route'}</a> (<b class='climbing-${p['__difficulty:char']} rounded-full p-l-1 p-r-1'>${p['climbing:grade:french'] ?? 'unknown difficulty'}</b>, ${p['climbing:length'] ?? 'unkown length'} meter)</li>`).join('')",
-    "_contained_climbing_route_ids=feat.get('_contained_climbing_routes_properties')?.map(p => p.id)",
-    "_difficulty_hist=feat.get('_contained_climbing_routes_properties')?.map(p => p['climbing:grade:french'])?.filter(p => (p ?? null) !== null)?.sort()",
-    "_difficulty_max=feat.get('_difficulty_hist')?.at(-1)",
-    "_difficulty_min=feat.get('_difficulty_hist')?.at(0)",
-    "_length_hist=feat.get('_contained_climbing_routes_properties')?.map(p => p['climbing:length'])?.filter(p => (p ?? null)  !== null)?.sort()",
-    "_length_max=feat.get('_length_hist')?.at(-1)",
-    "_length_min=feat.get('_length_hist')?.at(0)",
-    "_bolts_hist=feat.get('_contained_climbing_routes_properties')?.map(p => p['climbing:bolts'])?.filter(p => (p ?? null)  !== null)?.sort()",
-    "_bolts_max=feat.get('_bolts_hist')?.at(-1)",
-    "_bolts_min=feat.get('_bolts_hist')?.at(0)",
-    "_contained_climbing_routes_count=feat.get('_contained_climbing_routes_properties')?.length"
+    "_contained_climbing_routes_properties=overlapWith(feat)('climbing_route').map(f => f.feat.properties).map(p => {return {id: p.id, name: p.name, 'climbing:grade:french': p['climbing:grade:french'], 'climbing:length': p['climbing:length']} })",
+    "_contained_climbing_routes=get(feat)('_contained_climbing_routes_properties')?.map(p => `<li><a href='#${p.id}'>${p.name ?? 'climbing route'}</a> (<b class='climbing-${p['__difficulty:char']} rounded-full p-l-1 p-r-1'>${p['climbing:grade:french'] ?? 'unknown difficulty'}</b>, ${p['climbing:length'] ?? 'unkown length'} meter)</li>`).join('')",
+    "_contained_climbing_route_ids=get(feat)('_contained_climbing_routes_properties')?.map(p => p.id)",
+    "_difficulty_hist=get(feat)('_contained_climbing_routes_properties')?.map(p => p['climbing:grade:french'])?.filter(p => (p ?? null) !== null)?.sort()",
+    "_difficulty_max=get(feat)('_difficulty_hist')?.at(-1)",
+    "_difficulty_min=get(feat)('_difficulty_hist')?.at(0)",
+    "_length_hist=get(feat)('_contained_climbing_routes_properties')?.map(p => p['climbing:length'])?.filter(p => (p ?? null)  !== null)?.sort()",
+    "_length_max=get(feat)('_length_hist')?.at(-1)",
+    "_length_min=get(feat)('_length_hist')?.at(0)",
+    "_bolts_hist=get(feat)('_contained_climbing_routes_properties')?.map(p => p['climbing:bolts'])?.filter(p => (p ?? null)  !== null)?.sort()",
+    "_bolts_max=get(feat)('_bolts_hist')?.at(-1)",
+    "_bolts_min=get(feat)('_bolts_hist')?.at(0)",
+    "_contained_climbing_routes_count=get(feat)('_contained_climbing_routes_properties')?.length"
   ],
   "tagRenderings": [
     "images",

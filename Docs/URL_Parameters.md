@@ -9,9 +9,9 @@
 
 1. [URL-parameters and URL-hash](#url-parameters-and-url-hash)
   - [What is a URL parameter?](#what-is-a-url-parameter)
-  - [language](#language)
   - [fs-translation-mode](#fs-translation-mode)
-  - [tab](#tab)
+  - [backend](#backend)
+  - [fake-user](#fake-user)
   - [fs-userbadge](#fs-userbadge)
   - [fs-search](#fs-search)
   - [fs-background](#fs-background)
@@ -25,11 +25,8 @@
   - [fs-geolocation](#fs-geolocation)
   - [fs-all-questions](#fs-all-questions)
   - [fs-export](#fs-export)
-  - [fs-pdf](#fs-pdf)
-  - [backend](#backend)
   - [test](#test)
   - [debug](#debug)
-  - [fake-user](#fake-user)
   - [overpassUrl](#overpassurl)
   - [overpassTimeout](#overpasstimeout)
   - [overpassMaxZoom](#overpassmaxzoom)
@@ -64,13 +61,6 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
 
 
 
- language 
-----------
-
- The language to display mapcomplete in. Will be ignored in case a logged-in-user did set their language before. If the specified language does not exist, it will default to the first language in the theme. No default value set
-
-
-
  fs-translation-mode 
 ---------------------
 
@@ -78,10 +68,17 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
 
 
 
- tab 
------
+ backend 
+---------
 
- The tab that is shown in the welcome-message. The default value is _0_
+ The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test' The default value is _osm_
+
+
+
+ fake-user 
+-----------
+
+ If true, 'dryrun' mode is activated and a fake user account is loaded The default value is _false_
 
 
 
@@ -172,21 +169,7 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
  fs-export 
 -----------
 
- Enable the export as GeoJSON and CSV button The default value is _false_
-
-
-
- fs-pdf 
---------
-
- Enable the PDF download button The default value is _false_
-
-
-
- backend 
----------
-
- The OSM backend to use - can be used to redirect mapcomplete to the testing backend when using 'osm-test' The default value is _osm_
+ Enable the export as GeoJSON and CSV button The default value is _true_
 
 
 
@@ -201,13 +184,6 @@ Finally, the URL-hash is the part after the `#`. It is `node/1234` in this case.
 -------
 
  If true, shows some extra debugging help such as all the available tags on every object The default value is _false_
-
-
-
- fake-user 
------------
-
- If true, 'dryrun' mode is activated and a fake user account is loaded The default value is _false_
 
 
 

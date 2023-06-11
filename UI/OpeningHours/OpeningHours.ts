@@ -488,7 +488,7 @@ export class OH {
     }
 
     public static CreateOhObject(
-        tags: object & { _lat: number; _lon: number; _country?: string },
+        tags: Record<string, string> & { _lat: number; _lon: number; _country?: string },
         textToParse: string
     ) {
         // noinspection JSPotentiallyInvalidConstructorUsage
@@ -498,7 +498,7 @@ export class OH {
                 lat: tags._lat,
                 lon: tags._lon,
                 address: {
-                    country_code: tags._country.toLowerCase(),
+                    country_code: tags._country?.toLowerCase(),
                     state: undefined,
                 },
             },

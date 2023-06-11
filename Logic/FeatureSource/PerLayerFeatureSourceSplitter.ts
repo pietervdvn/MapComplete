@@ -1,49 +1,74 @@
-import FeatureSource, { FeatureSourceForLayer, Tiled } from "./FeatureSource"
-import { Store } from "../UIEventSource"
+import {FeatureSource} from "./FeatureSource"
 import FilteredLayer from "../../Models/FilteredLayer"
 import SimpleFeatureSource from "./Sources/SimpleFeatureSource"
+import {Feature} from "geojson"
+import {UIEventSource} from "../UIEventSource"
 
 /**
  * In some rare cases, some elements are shown on multiple layers (when 'passthrough' is enabled)
  * If this is the case, multiple objects with a different _matching_layer_id are generated.
  * In any case, this featureSource marks the objects with _matching_layer_id
  */
-export default class PerLayerFeatureSourceSplitter {
+export default class PerLayerFeatureSourceSplitter<T extends FeatureSource = FeatureSource> {
+    public readonly perLayer: ReadonlyMap<string, T>
     constructor(
-        layers: Store<FilteredLayer[]>,
-        handleLayerData: (source: FeatureSourceForLayer & Tiled) => void,
+        layers: FilteredLayer[],
         upstream: FeatureSource,
         options?: {
-            tileIndex?: number
-            handleLeftovers?: (featuresWithoutLayer: any[]) => void
+            constructStore?: (features: UIEventSource<Feature[]>, layer: FilteredLayer) => T
+            handleLeftovers?: (featuresWithoutLayer: Feature[]) => void
         }
     ) {
-        const knownLayers = new Map<string, SimpleFeatureSource>()
+        const knownLayers = new Map<string, T>()
+        /**
+         * Keeps track of the ids that are included per layer.
+         * Used to know if the downstream feature source needs to be pinged
+         */
+        let layerIndexes: ReadonlySet<string>[] = layers.map((_) => new Set<string>())
+        this.perLayer = knownLayers
+        const layerSources = new Map<string, UIEventSource<Feature[]>>()
+        const constructStore =
+            options?.constructStore ?? ((store, layer) => new SimpleFeatureSource(layer, store))
+        for (const layer of layers) {
+            const src = new UIEventSource<Feature[]>([])
+            layerSources.set(layer.layerDef.id, src)
+            knownLayers.set(layer.layerDef.id, <T>constructStore(src, layer))
+        }
 
-        function update() {
-            const features = upstream.features?.data
-            if (features === undefined) {
-                return
-            }
-            if (layers.data === undefined || layers.data.length === 0) {
+        upstream.features.addCallbackAndRunD((features) => {
+            if (layers === undefined) {
                 return
             }
 
             // We try to figure out (for each feature) in which feature store it should be saved.
-            // Note that this splitter is only run when it is invoked by the overpass feature source, so we can't be sure in which layer it should go
 
-            const featuresPerLayer = new Map<string, { feature; freshness }[]>()
-            const noLayerFound = []
+            const featuresPerLayer = new Map<string, Feature[]>()
+            /**
+             * Indexed on layer-position
+             * Will be true if a new id pops up
+             */
+            const hasChanged: boolean[] = layers.map((_) => false)
+            const newIndices: Set<string>[] = layers.map((_) => new Set<string>())
+            const noLayerFound: Feature[] = []
 
-            for (const layer of layers.data) {
+            for (const layer of layers) {
                 featuresPerLayer.set(layer.layerDef.id, [])
             }
 
             for (const f of features) {
                 let foundALayer = false
-                for (const layer of layers.data) {
-                    if (layer.layerDef.source.osmTags.matchesProperties(f.feature.properties)) {
+                for (let i = 0; i < layers.length; i++) {
+                    const layer = layers[i]
+                    if(!layer.layerDef?.source){
+                        console.error("PerLayerFeatureSourceSplitter got a layer without a source:", layer.layerDef.id)
+                        continue
+                    }
+                    if (layer.layerDef.source.osmTags.matchesProperties(f.properties)) {
+                        const id = f.properties.id
                         // We have found our matching layer!
+                        const previousIndex = layerIndexes[i]
+                        hasChanged[i] = hasChanged[i] || !previousIndex.has(id)
+                        newIndices[i].add(id)
                         featuresPerLayer.get(layer.layerDef.id).push(f)
                         foundALayer = true
                         if (!layer.layerDef.passAllFeatures) {
@@ -59,7 +84,8 @@ export default class PerLayerFeatureSourceSplitter {
 
             // At this point, we have our features per layer as a list
             // We assign them to the correct featureSources
-            for (const layer of layers.data) {
+            for (let i = 0; i < layers.length; i++) {
+                const layer = layers[i]
                 const id = layer.layerDef.id
                 const features = featuresPerLayer.get(id)
                 if (features === undefined) {
@@ -67,25 +93,27 @@ export default class PerLayerFeatureSourceSplitter {
                     continue
                 }
 
-                let featureSource = knownLayers.get(id)
-                if (featureSource === undefined) {
-                    // Not yet initialized - now is a good time
-                    featureSource = new SimpleFeatureSource(layer, options?.tileIndex)
-                    featureSource.features.setData(features)
-                    knownLayers.set(id, featureSource)
-                    handleLayerData(featureSource)
-                } else {
-                    featureSource.features.setData(features)
+                if (!hasChanged[i] && layerIndexes[i].size === newIndices[i].size) {
+                    // No new id has been added and the sizes are the same (thus: nothing has been removed as well)
+                    // We can safely assume that no changes were made
+                    continue
                 }
+
+                layerSources.get(id).setData(features)
             }
+
+            layerIndexes = newIndices
 
             // AT last, the leftovers are handled
             if (options?.handleLeftovers !== undefined && noLayerFound.length > 0) {
                 options.handleLeftovers(noLayerFound)
             }
-        }
+        })
+    }
 
-        layers.addCallback((_) => update())
-        upstream.features.addCallbackAndRunD((_) => update())
+    public forEach(f: (featureSource: T) => void) {
+        for (const fs of this.perLayer.values()) {
+            f(fs)
+        }
     }
 }

@@ -26,18 +26,21 @@ import Table from "../../UI/Base/Table"
 import FilterConfigJson from "./Json/FilterConfigJson"
 import { And } from "../../Logic/Tags/And"
 import { Overpass } from "../../Logic/Osm/Overpass"
-import Constants from "../Constants"
 import { FixedUiElement } from "../../UI/Base/FixedUiElement"
 import Svg from "../../Svg"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import { ImmutableStore } from "../../Logic/UIEventSource"
 import { OsmTags } from "../OsmFeature"
+import Constants from "../Constants"
 
 export default class LayerConfig extends WithContextLoader {
     public static readonly syncSelectionAllowed = ["no", "local", "theme-only", "global"] as const
     public readonly id: string
     public readonly name: Translation
     public readonly description: Translation
-    public readonly source: SourceConfig
+    /**
+     * Only 'null' for special, privileged layers
+     */
+    public readonly source: SourceConfig | null
     public readonly calculatedTags: [string, string, boolean][]
     public readonly doNotDownload: boolean
     public readonly passAllFeatures: boolean
@@ -65,6 +68,9 @@ export default class LayerConfig extends WithContextLoader {
     public readonly forceLoad: boolean
     public readonly syncSelection: typeof LayerConfig.syncSelectionAllowed[number] // this is a trick to conver a constant array of strings into a type union of these values
 
+    public readonly _needsFullNodeDatabase: boolean
+    public readonly popupInFloatover
+
     constructor(json: LayerConfigJson, context?: string, official: boolean = true) {
         context = context + "." + json.id
         const translationContext = "layers:" + json.id
@@ -83,7 +89,9 @@ export default class LayerConfig extends WithContextLoader {
             throw "Layer " + this.id + " does not define a source section (" + context + ")"
         }
 
-        if (json.source.osmTags === undefined) {
+        if (json.source === "special" || json.source === "special:library") {
+            this.source = null
+        } else if (json.source["osmTags"] === undefined) {
             throw (
                 "Layer " +
                 this.id +
@@ -100,7 +108,6 @@ export default class LayerConfig extends WithContextLoader {
             throw `${context}: The id of a layer should match [a-z0-9-_]*: ${json.id}`
         }
 
-        this.maxAgeOfCache = json.source.maxCacheAge ?? 24 * 60 * 60 * 30
         if (
             json.syncSelection !== undefined &&
             LayerConfig.syncSelectionAllowed.indexOf(json.syncSelection) < 0
@@ -115,13 +122,28 @@ export default class LayerConfig extends WithContextLoader {
             )
         }
         this.syncSelection = json.syncSelection ?? "no"
-        const osmTags = TagUtils.Tag(json.source.osmTags, context + "source.osmTags")
+        if (typeof json.source !== "string") {
+            this.maxAgeOfCache = json.source["maxCacheAge"] ?? 24 * 60 * 60 * 30
+            const osmTags = TagUtils.Tag(json.source["osmTags"], context + "source.osmTags")
+            if (osmTags.isNegative()) {
+                throw (
+                    context +
+                    "The source states tags which give a very wide selection: it only uses negative expressions, which will result in too much and unexpected data. Add at least one required tag. The tags are:\n\t" +
+                    osmTags.asHumanString(false, false, {})
+                )
+            }
 
-        if (Constants.priviliged_layers.indexOf(this.id) < 0 && osmTags.isNegative()) {
-            throw (
-                context +
-                "The source states tags which give a very wide selection: it only uses negative expressions, which will result in too much and unexpected data. Add at least one required tag. The tags are:\n\t" +
-                osmTags.asHumanString(false, false, {})
+            this.source = new SourceConfig(
+                {
+                    osmTags: osmTags,
+                    geojsonSource: json.source["geoJson"],
+                    geojsonSourceLevel: json.source["geoJsonZoomLevel"],
+                    overpassScript: json.source["overpassScript"],
+                    isOsmCache: json.source["isOsmCache"],
+                    mercatorCrs: json.source["mercatorCrs"],
+                    idKey: json.source["idKey"],
+                },
+                json.id
             )
         }
 
@@ -132,20 +154,6 @@ export default class LayerConfig extends WithContextLoader {
         if (json.source["geojson"] !== undefined) {
             throw context + "Use 'geoJson' instead of 'geojson' (the J is a capital letter)"
         }
-
-        this.source = new SourceConfig(
-            {
-                osmTags: osmTags,
-                geojsonSource: json.source["geoJson"],
-                geojsonSourceLevel: json.source["geoJsonZoomLevel"],
-                overpassScript: json.source["overpassScript"],
-                isOsmCache: json.source["isOsmCache"],
-                mercatorCrs: json.source["mercatorCrs"],
-                idKey: json.source["idKey"],
-            },
-            Constants.priviliged_layers.indexOf(this.id) > 0,
-            json.id
-        )
 
         this.allowSplit = json.allowSplit ?? false
         this.name = Translations.T(json.name, translationContext + ".name")
@@ -209,6 +217,7 @@ export default class LayerConfig extends WithContextLoader {
         this.doNotDownload = json.doNotDownload ?? false
         this.passAllFeatures = json.passAllFeatures ?? false
         this.minzoom = json.minzoom ?? 0
+        this._needsFullNodeDatabase = json.fullNodeDatabase ?? false
         if (json["minZoom"] !== undefined) {
             throw "At " + context + ": minzoom is written all lowercase"
         }
@@ -316,7 +325,8 @@ export default class LayerConfig extends WithContextLoader {
             } else if (
                 !hasCenterRendering &&
                 this.lineRendering.length === 0 &&
-                !this.source.geojsonSource?.startsWith(
+                Constants.priviliged_layers.indexOf(<any>this.id) < 0 &&
+                !this.source?.geojsonSource?.startsWith(
                     "https://api.openstreetmap.org/api/0.6/notes.json"
                 )
             ) {
@@ -379,7 +389,7 @@ export default class LayerConfig extends WithContextLoader {
             readOnlyMode: true,
         })
 
-        this.title = this.tr("title", undefined)
+        this.title = this.tr("title", undefined, translationContext)
         this.isShown = TagUtils.TagD(json.isShown, context + ".isShown")
 
         this.deletion = null
@@ -406,6 +416,8 @@ export default class LayerConfig extends WithContextLoader {
                 ": showIf. Did you mean 'isShown' instead?"
             )
         }
+        this.popupInFloatover = json.popupInFloatover ?? false
+
     }
 
     public defaultIcon(): BaseUIElement | undefined {
@@ -416,11 +428,13 @@ export default class LayerConfig extends WithContextLoader {
         if (mapRendering === undefined) {
             return undefined
         }
-        return mapRendering.GetBaseIcon(this.GetBaseTags())
+        return mapRendering.GetBaseIcon(this.GetBaseTags(), { noFullWidth: true })
     }
 
-    public GetBaseTags(): any {
-        return TagUtils.changeAsProperties(this.source.osmTags.asChange({ id: "node/-1" }))
+    public GetBaseTags(): Record<string, string> {
+        return TagUtils.changeAsProperties(
+            this.source?.osmTags?.asChange({ id: "node/-1" }) ?? [{ k: "id", v: "node/-1" }]
+        )
     }
 
     public GenerateDocumentation(
@@ -470,7 +484,7 @@ export default class LayerConfig extends WithContextLoader {
                 )
             }
 
-            if (this.source.geojsonSource !== undefined) {
+            if (this.source?.geojsonSource !== undefined) {
                 extraProps.push(
                     new Combine([
                         Utils.runningFromConsole
@@ -520,8 +534,8 @@ export default class LayerConfig extends WithContextLoader {
             )
         }
 
-        let neededTags: TagsFilter[] = [this.source.osmTags]
-        if (this.source.osmTags["and"] !== undefined) {
+        let neededTags: TagsFilter[] = Utils.NoNull([this.source?.osmTags])
+        if (this.source?.osmTags["and"] !== undefined) {
             neededTags = this.source.osmTags["and"]
         }
 
@@ -584,17 +598,15 @@ export default class LayerConfig extends WithContextLoader {
                 .filter((mr) => mr.location.has("point"))
                 .map(
                     (mr) =>
-                        mr.GenerateLeafletStyle(
-                            new UIEventSource<OsmTags>({ id: "node/-1" }),
-                            false,
-                            { includeBadges: false }
-                        ).html
+                        mr.RenderIcon(new ImmutableStore<OsmTags>({ id: "node/-1" }), false, {
+                            includeBadges: false,
+                        }).html
                 )
                 .find((i) => i !== undefined)
         }
 
         let overpassLink: BaseUIElement = undefined
-        if (Constants.priviliged_layers.indexOf(this.id) < 0) {
+        if (this.source !== undefined) {
             try {
                 overpassLink = new Link(
                     "Execute on overpass",
@@ -610,17 +622,26 @@ export default class LayerConfig extends WithContextLoader {
             filterDocs.push(new Title("Filters", 4))
             filterDocs.push(...this.filters.map((filter) => filter.GenerateDocs()))
         }
+
+        const tagsDescription = []
+        if (this.source === null) {
+            tagsDescription.push(
+                new Title("Basic tags for this layer", 2),
+                "Elements must have the all of following tags to be shown on this layer:",
+                new List(neededTags.map((t) => t.asHumanString(true, false, {}))),
+                overpassLink
+            )
+        } else {
+            tagsDescription.push("This is a special layer - data is not sourced from OpenStreetMap")
+        }
+
         return new Combine([
             new Combine([new Title(this.id, 1), iconImg, this.description, "\n"]).SetClass(
                 "flex flex-col"
             ),
             new List(extraProps),
             ...usingLayer,
-
-            new Title("Basic tags for this layer", 2),
-            "Elements must have the all of following tags to be shown on this layer:",
-            new List(neededTags.map((t) => t.asHumanString(true, false, {}))),
-            overpassLink,
+            ...tagsDescription,
             new Title("Supported attributes", 2),
             quickOverview,
             ...this.tagRenderings.map((tr) => tr.GenerateDocumentation()),

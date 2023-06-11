@@ -60,18 +60,6 @@
     "sources": []
   },
   {
-    "path": "ampersand.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "ampersand.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
     "path": "back.svg",
     "license": "CC0",
     "authors": [
@@ -164,22 +152,6 @@
       "https://fontawesome.com/",
       "https://commons.wikimedia.org/wiki/File:Camera_font_awesome.svg"
     ]
-  },
-  {
-    "path": "checkbox-empty.svg",
-    "license": "CC0",
-    "authors": [
-      "Hannah Declerck"
-    ],
-    "sources": []
-  },
-  {
-    "path": "checkbox-filled.svg",
-    "license": "CC0",
-    "authors": [
-      "Hannah Declerck"
-    ],
-    "sources": []
   },
   {
     "path": "checkmark.svg",
@@ -285,36 +257,6 @@
   },
   {
     "path": "cross_bottom_right.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "crosshair-blue-center.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "crosshair-blue-center.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "crosshair-blue.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "crosshair-blue.svg",
-    "license": "CC0; trivial",
-    "authors": [],
-    "sources": []
-  },
-  {
-    "path": "crosshair-empty.svg",
     "license": "CC0; trivial",
     "authors": [],
     "sources": []

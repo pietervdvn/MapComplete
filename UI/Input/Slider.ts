@@ -1,6 +1,9 @@
 import { InputElement } from "./InputElement"
 import { UIEventSource } from "../../Logic/UIEventSource"
 
+/**
+ * @deprecated
+ */
 export default class Slider extends InputElement<number> {
     private readonly _value: UIEventSource<number>
     private readonly min: number

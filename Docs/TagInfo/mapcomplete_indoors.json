@@ -36,6 +36,10 @@
       "value": "level"
     },
     {
+      "key": "id",
+      "description": "Layer 'Indoors' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Indoors') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
+    },
+    {
       "key": "image",
       "description": "The layer 'Indoors allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
@@ -83,6 +87,10 @@
       "key": "highway",
       "description": "The MapComplete theme Indoors has a layer Elevator showing features with this tag",
       "value": "elevator"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Elevator' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Indoors') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",
@@ -183,6 +191,10 @@
     {
       "key": "door",
       "description": "The MapComplete theme Indoors has a layer Entrance showing features with this tag"
+    },
+    {
+      "key": "id",
+      "description": "Layer 'Entrance' shows id~.+ with a fixed text, namely 'You just created this element! Thanks for sharing this info with the world and helping people worldwide.' (in the MapComplete.osm.be theme 'Indoors') (This is only shown if _backend~.+&_last_edit:passed_time<300&|_version_number=1)"
     },
     {
       "key": "image",

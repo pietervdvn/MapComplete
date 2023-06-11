@@ -6,10 +6,13 @@
     "nl": "Een speciale lag die niet getoond wordt op de kaart, maar die de instellingen van de gebruiker weergeeft",
     "pt": "Uma camada especial que não deve ser mostrada em um mapa, mas que é usada para definir as configurações do usuário"
   },
-  "title": null,
-  "source": {
-    "osmTags": "id~*"
+  "title": {
+    "render": {
+      "en": "Settings",
+      "nl": "Instellingen"
+    }
   },
+  "source": "special",
   "calculatedTags": [
     "_mastodon_candidate_md=feat.properties._description.match(/\\[[^\\]]*\\]\\((.*(mastodon|en.osm.town).*)\\).*/)?.at(1)",
     "_d=feat.properties._description?.replace(/&lt;/g,'<')?.replace(/&gt;/g,'>') ?? ''",
@@ -18,6 +21,66 @@
     "_mastodon_candidate=feat.properties._mastodon_candidate_md ?? feat.properties._mastodon_candidate_a"
   ],
   "tagRenderings": [
+    {
+      "id": "profile",
+      "render": {
+        "*": "{user_profile()}"
+      }
+    },
+    {
+      "id": "language_picker",
+      "render": {
+        "*": "{language_picker()}"
+      }
+    },
+    {
+      "id": "inbox",
+      "mappings": [
+        {
+          "if": "_unreadMessages=0",
+          "then": {
+            "special": {
+              "type": "link",
+              "href": "{_backend}/messages/inbox",
+              "text": {
+                "en": "Open your inbox",
+                "nl": "Ga naar je inbox"
+              }
+            }
+          }
+        },
+        {
+          "if": "_unreadMessages>0",
+          "then": {
+            "special": {
+              "type": "link",
+              "text": {
+                "en": "<b class='alert'>You have {_unreadMessages}</b><br/>Open your inbox"
+              },
+              "href": "{_backend}/messages/inbox"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "settings-link",
+      "render": {
+        "special": {
+          "type": "link",
+          "text": {
+            "en": "Open your settings on OpenStreetMap.org"
+          },
+          "href": "{_backend}/account/edit"
+        }
+      }
+    },
+    {
+      "id": "logout",
+      "render": {
+        "*": "{logout()}"
+      }
+    },
     {
       "id": "picture-license",
       "description": "This question is not meant to be placed on an OpenStreetMap-element; however it is used in the user information panel to ask which license the user wants",
@@ -80,6 +143,41 @@
       ]
     },
     {
+      "id": "show_tags",
+      "question": {
+        "en": "Show the raw OpenStreetMap-tags?"
+      },
+      "questionHint": {
+        "en": "<b>Tags</b> are attributes that every element has. This is the technical data that is stored in the database. You don't need this information to edit with MapComplete, but advanced users might want to use this as reference."
+      },
+      "mappings": [
+        {
+          "if": "mapcomplete-show_tags=no",
+          "then": {
+            "en": "Never show the tags."
+          }
+        },
+        {
+          "if": "mapcomplete-show_tags=",
+          "then": {
+            "en": "Show the tags that will be applied once I have made {__userjourney_tagsVisibleAt} changesets"
+          }
+        },
+        {
+          "if": "mapcomplete-show_tags=yes",
+          "then": {
+            "en": "Show the tags that will be applied when making a change"
+          }
+        },
+        {
+          "if": "mapcomplete-show_tags=full",
+          "then": {
+            "en": "Show the tags that will be applied when making a change and show the tags table on every feature"
+          }
+        }
+      ]
+    },
+    {
       "id": "all-questions-at-once",
       "question": {
         "en": "Should questions for unknown data fields appear one-by-one or together?",
@@ -113,11 +211,15 @@
     },
     {
       "id": "translations-title",
-      "group": "translations",
+      "label": [
+        "translations"
+      ],
       "render": "<h3>Translating MapComplete</h3>"
     },
     {
-      "group": "translations",
+      "label": [
+        "translations"
+      ],
       "id": "translation-mode",
       "question": {
         "en": "Do you want to help translating MapComplete?",
@@ -130,6 +232,7 @@
       "mappings": [
         {
           "if": "mapcomplete-translation-mode=false",
+          "icon": "./assets/layers/usersettings/translate_disabled.svg",
           "then": {
             "en": "Don't show a button to quickly change translations",
             "de": "Keine Schaltfläche zum schnellen Wechseln von Übersetzungen anzeigen",
@@ -140,6 +243,7 @@
         },
         {
           "if": "mapcomplete-translation-mode=true",
+          "icon": "./assets/svg/translate.svg",
           "then": {
             "en": "Show a button to quickly open translations when using MapComplete on a big screen",
             "de": "Schaltfläche anzeigen zum schnellen Öffnen von Übersetzungen beim Verwenden von MapComplete auf einem großen Bildschirm",
@@ -150,6 +254,7 @@
         },
         {
           "if": "mapcomplete-translation-mode=mobile",
+          "icon": "./assets/layers/usersettings/translate_mobile.svg",
           "then": {
             "en": "Always show the translation buttons, including on mobile",
             "de": "Übersetzungsschaltflächen immer anzeigen, auch auf dem Handy",
@@ -161,7 +266,9 @@
       ]
     },
     {
-      "group": "translations",
+      "label": [
+        "translations"
+      ],
       "id": "translation-help",
       "mappings": [
         {
@@ -187,7 +294,9 @@
       ]
     },
     {
-      "group": "translations",
+      "label": [
+        "translations"
+      ],
       "id": "translation-completeness",
       "render": {
         "ca": "Les traduccions de {_theme} en {_language} tenen un {_translation_percentage}%: {_translation_translated_count} cadenes de {_translation_total} estan traduïdes",
@@ -224,7 +333,9 @@
     },
     {
       "id": "translation-links",
-      "group": "translations",
+      "label": [
+        "translations"
+      ],
       "condition": {
         "and": [
           "_translation_links~*",

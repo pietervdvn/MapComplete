@@ -681,7 +681,7 @@
   "mapRendering": [
     {
       "icon": {
-        "render": "./assets/layers/toilet/toilets.svg",
+        "render": "circle:#ffffff;./assets/layers/toilet/toilets.svg",
         "mappings": [
           {
             "if": {

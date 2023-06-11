@@ -3,25 +3,24 @@ import { TagsFilter } from "../../Logic/Tags/TagsFilter"
 import FilterConfigJson from "./Json/FilterConfigJson"
 import Translations from "../../UI/i18n/Translations"
 import { TagUtils } from "../../Logic/Tags/TagUtils"
-import ValidatedTextField from "../../UI/Input/ValidatedTextField"
 import { TagConfigJson } from "./Json/TagConfigJson"
 import { UIEventSource } from "../../Logic/UIEventSource"
-import { FilterState } from "../FilteredLayer"
 import { QueryParameters } from "../../Logic/Web/QueryParameters"
 import { Utils } from "../../Utils"
 import { RegexTag } from "../../Logic/Tags/RegexTag"
 import BaseUIElement from "../../UI/BaseUIElement"
 import Table from "../../UI/Base/Table"
 import Combine from "../../UI/Base/Combine"
-
+export type FilterConfigOption = {
+    question: Translation
+    osmTags: TagsFilter | undefined
+    /* Only set if fields are present. Used to create `osmTags` (which are used to _actually_ filter) when the field is written*/
+    readonly originalTagsSpec: TagConfigJson
+    fields: { name: string; type: string }[]
+}
 export default class FilterConfig {
     public readonly id: string
-    public readonly options: {
-        question: Translation
-        osmTags: TagsFilter | undefined
-        originalTagsSpec: TagConfigJson
-        fields: { name: string; type: string }[]
-    }[]
+    public readonly options: FilterConfigOption[]
     public readonly defaultSelection?: number
 
     constructor(json: FilterConfigJson, context: string) {
@@ -54,11 +53,7 @@ export default class FilterConfig {
 
             const fields: { name: string; type: string }[] = (option.fields ?? []).map((f, i) => {
                 const type = f.type ?? "string"
-                if (!ValidatedTextField.ForType(type) === undefined) {
-                    throw `Invalid filter: ${type} is not a valid validated textfield type (at ${ctx}.fields[${i}])\n\tTry one of ${Array.from(
-                        ValidatedTextField.AvailableTypes()
-                    ).join(",")}`
-                }
+                // Type is validated against 'ValidatedTextField' in Validation.ts, in ValidateFilterConfig
                 if (f.name === undefined || f.name === "" || f.name.match(/[a-z0-9_-]+/) == null) {
                     throw `Invalid filter: a variable name should match [a-z0-9_-]+ at ${ctx}.fields[${i}]`
                 }
@@ -149,36 +144,27 @@ export default class FilterConfig {
         })
     }
 
-    public initState(): UIEventSource<FilterState> {
-        function reset(state: FilterState): string {
-            if (state === undefined) {
-                return ""
-            }
-            return "" + state.state
-        }
-
+    public initState(layerId: string): UIEventSource<undefined | number | string> {
         let defaultValue = ""
         if (this.options.length > 1) {
             defaultValue = "" + (this.defaultSelection ?? 0)
+        } else if (this.options[0].fields?.length > 0) {
+            defaultValue = "{}"
         } else {
             // Only a single option
             if (this.defaultSelection === 0) {
                 defaultValue = "true"
+            } else {
+                defaultValue = "false"
             }
         }
         const qp = QueryParameters.GetQueryParameter(
-            "filter-" + this.id,
+            `filter-${layerId}-${this.id}`,
             defaultValue,
             "State of filter " + this.id
         )
 
         if (this.options.length > 1) {
-            // This is a multi-option filter; state should be a number which selects the correct entry
-            const possibleStates: FilterState[] = this.options.map((opt, i) => ({
-                currentFilter: opt.osmTags,
-                state: i,
-            }))
-
             // We map the query parameter for this case
             return qp.sync(
                 (str) => {
@@ -187,62 +173,29 @@ export default class FilterConfig {
                         // Nope, not a correct number!
                         return undefined
                     }
-                    return possibleStates[parsed]
+                    return parsed
                 },
                 [],
-                reset
+                (n) => "" + n
             )
         }
 
         const option = this.options[0]
 
         if (option.fields.length > 0) {
-            return qp.sync(
-                (str) => {
-                    // There are variables in play!
-                    // str should encode a json-hash
-                    try {
-                        const props = JSON.parse(str)
-
-                        const origTags = option.originalTagsSpec
-                        const rewrittenTags = Utils.WalkJson(origTags, (v) => {
-                            if (typeof v !== "string") {
-                                return v
-                            }
-                            for (const key in props) {
-                                v = (<string>v).replace("{" + key + "}", props[key])
-                            }
-                            return v
-                        })
-                        const parsed = TagUtils.Tag(rewrittenTags)
-                        return <FilterState>{
-                            currentFilter: parsed,
-                            state: str,
-                        }
-                    } catch (e) {
-                        return undefined
-                    }
-                },
-                [],
-                reset
-            )
+            return qp
         }
 
-        // The last case is pretty boring: it is checked or it isn't
-        const filterState: FilterState = {
-            currentFilter: option.osmTags,
-            state: "true",
-        }
         return qp.sync(
             (str) => {
                 // Only a single option exists here
                 if (str === "true") {
-                    return filterState
+                    return 0
                 }
                 return undefined
             },
             [],
-            reset
+            (n) => (n === undefined ? "false" : "true")
         )
     }
 

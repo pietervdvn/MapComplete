@@ -17,9 +17,9 @@ import Constants from "../../Constants"
 import CreateNoteImportLayer from "./CreateNoteImportLayer"
 import LayerConfig from "../LayerConfig"
 import { TagRenderingConfigJson } from "../Json/TagRenderingConfigJson"
-import { SubstitutedTranslation } from "../../../UI/SubstitutedTranslation"
 import DependencyCalculator from "../DependencyCalculator"
 import { AddContextToTranslations } from "./AddContextToTranslations"
+import ValidationUtils from "./ValidationUtils"
 
 class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJson[]> {
     private readonly _state: DesugaringContext
@@ -175,7 +175,7 @@ class SubstituteLayer extends Conversion<string | LayerConfigJson, LayerConfigJs
 }
 
 class AddDefaultLayers extends DesugaringStep<LayoutConfigJson> {
-    private _state: DesugaringContext
+    private readonly _state: DesugaringContext
 
     constructor(state: DesugaringContext) {
         super(
@@ -255,7 +255,7 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
         const creator = new CreateNoteImportLayer()
         for (let i1 = 0; i1 < allLayers.length; i1++) {
             const layer = allLayers[i1]
-            if (Constants.priviliged_layers.indexOf(layer.id) >= 0) {
+            if (layer.source === undefined) {
                 // Priviliged layers are skipped
                 continue
             }
@@ -295,80 +295,7 @@ class AddImportLayers extends DesugaringStep<LayoutConfigJson> {
     }
 }
 
-export class AddMiniMap extends DesugaringStep<LayerConfigJson> {
-    private readonly _state: DesugaringContext
-
-    constructor(state: DesugaringContext) {
-        super(
-            "Adds a default 'minimap'-element to the tagrenderings if none of the elements define such a minimap",
-            ["tagRenderings"],
-            "AddMiniMap"
-        )
-        this._state = state
-    }
-
-    /**
-     * Returns true if this tag rendering has a minimap in some language.
-     * Note: this minimap can be hidden by conditions
-     *
-     * AddMiniMap.hasMinimap({render: "{minimap()}"}) // => true
-     * AddMiniMap.hasMinimap({render: {en: "{minimap()}"}}) // => true
-     * AddMiniMap.hasMinimap({render: {en: "{minimap()}", nl: "{minimap()}"}}) // => true
-     * AddMiniMap.hasMinimap({render: {en: "{minimap()}", nl: "No map for the dutch!"}}) // => true
-     * AddMiniMap.hasMinimap({render: "{minimap()}"}) // => true
-     * AddMiniMap.hasMinimap({render: "{minimap(18,featurelist)}"}) // => true
-     * AddMiniMap.hasMinimap({mappings: [{if: "xyz=abc",then: "{minimap(18,featurelist)}"}]}) // => true
-     * AddMiniMap.hasMinimap({render: "Some random value {key}"}) // => false
-     * AddMiniMap.hasMinimap({render: "Some random value {minimap}"}) // => false
-     */
-    static hasMinimap(renderingConfig: TagRenderingConfigJson): boolean {
-        const translations: any[] = Utils.NoNull([
-            renderingConfig.render,
-            ...(renderingConfig.mappings ?? []).map((m) => m.then),
-        ])
-        for (let translation of translations) {
-            if (typeof translation == "string") {
-                translation = { "*": translation }
-            }
-
-            for (const key in translation) {
-                if (!translation.hasOwnProperty(key)) {
-                    continue
-                }
-
-                const template = translation[key]
-                const parts = SubstitutedTranslation.ExtractSpecialComponents(template)
-                const hasMiniMap = parts
-                    .filter((part) => part.special !== undefined)
-                    .some((special) => special.special.func.funcName === "minimap")
-                if (hasMiniMap) {
-                    return true
-                }
-            }
-        }
-        return false
-    }
-
-    convert(layerConfig: LayerConfigJson, context: string): { result: LayerConfigJson } {
-        const state = this._state
-        const hasMinimap =
-            layerConfig.tagRenderings?.some((tr) =>
-                AddMiniMap.hasMinimap(<TagRenderingConfigJson>tr)
-            ) ?? true
-        if (!hasMinimap) {
-            layerConfig = { ...layerConfig }
-            layerConfig.tagRenderings = [...layerConfig.tagRenderings]
-            layerConfig.tagRenderings.push(state.tagRenderings.get("questions"))
-            layerConfig.tagRenderings.push(state.tagRenderings.get("minimap"))
-        }
-
-        return {
-            result: layerConfig,
-        }
-    }
-}
-
-class AddContextToTransltionsInLayout extends DesugaringStep<LayoutConfigJson> {
+class AddContextToTranslationsInLayout extends DesugaringStep<LayoutConfigJson> {
     constructor() {
         super(
             "Adds context to translations, including the prefix 'themes:json.id'; this is to make sure terms in an 'overrides' or inline layer are linkable too",
@@ -430,7 +357,7 @@ class AddDependencyLayersToTheme extends DesugaringStep<LayoutConfigJson> {
     constructor(state: DesugaringContext) {
         super(
             `If a layer has a dependency on another layer, these layers are added automatically on the theme. (For example: defibrillator depends on 'walls_and_buildings' to snap onto. This layer is added automatically)
-            
+
             Note that these layers are added _at the start_ of the layer list, meaning that they will see _every_ feature.
             Furthermore, \`passAllFeatures\` will be set, so that they won't steal away features from further layers.
             Some layers (e.g. \`all_buildings_and_walls\' or \'streets_with_a_name\') are invisible, so by default, \'force_load\' is set too.
@@ -600,7 +527,7 @@ class PreparePersonalTheme extends DesugaringStep<LayoutConfigJson> {
         // All other preparations are done by the 'override-all'-block in personal.json
 
         json.layers = Array.from(this._state.sharedLayers.keys())
-            .filter((l) => Constants.priviliged_layers.indexOf(l) < 0)
+            .filter((l) => this._state.sharedLayers.get(l).source !== null)
             .filter((l) => this._state.publicLayers.has(l))
         return {
             result: json,
@@ -668,7 +595,7 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
         super(
             "Fully prepares and expands a theme",
 
-            new AddContextToTransltionsInLayout(),
+            new AddContextToTranslationsInLayout(),
             new PreparePersonalTheme(state),
             new WarnForUnsubstitutedLayersInTheme(),
             new On("layers", new Concat(new SubstituteLayer(state))),
@@ -683,8 +610,31 @@ export class PrepareTheme extends Fuse<LayoutConfigJson> {
                 ? new Pass("AddDefaultLayers is disabled due to the set flag")
                 : new AddDefaultLayers(state),
             new AddDependencyLayersToTheme(state),
-            new AddImportLayers(),
-            new On("layers", new Each(new AddMiniMap(state)))
+            new AddImportLayers()
         )
+    }
+
+    convert(
+        json: LayoutConfigJson,
+        context: string
+    ): { result: LayoutConfigJson; errors: string[]; warnings: string[]; information: string[] } {
+        const result = super.convert(json, context)
+
+        const needsNodeDatabase = result.result.layers?.some((l: LayerConfigJson) =>
+            l.tagRenderings?.some((tr: TagRenderingConfigJson) =>
+                ValidationUtils.getSpecialVisualisations(tr)?.some(
+                    (special) => special.needsNodeDatabase
+                )
+            )
+        )
+        if (needsNodeDatabase) {
+            result.information.push(
+                context +
+                    ": setting 'enableNodeDatabase' as this theme uses a special visualisation which needs to keep track of _all_ nodes"
+            )
+            result.result.enableNodeDatabase = true
+        }
+
+        return result
     }
 }

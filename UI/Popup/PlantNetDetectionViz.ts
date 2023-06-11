@@ -12,7 +12,7 @@ import Combine from "../Base/Combine"
 import Svg from "../../Svg"
 import Translations from "../i18n/Translations"
 import AllImageProviders from "../../Logic/ImageProviders/AllImageProviders"
-import { SpecialVisualization } from "../SpecialVisualization"
+import { SpecialVisualization, SpecialVisualizationState } from "../SpecialVisualization";
 
 export class PlantNetDetectionViz implements SpecialVisualization {
     funcName = "plantnet_detection"
@@ -27,7 +27,7 @@ export class PlantNetDetectionViz implements SpecialVisualization {
         },
     ]
 
-    public constr(state, tags, args) {
+    public constr(state: SpecialVisualizationState, tags: UIEventSource<Record<string, string>>, args: string[]) {
         let imagePrefixes: string[] = undefined
         if (args.length > 0) {
             imagePrefixes = [].concat(...args.map((a) => a.split(",")))
@@ -53,7 +53,7 @@ export class PlantNetDetectionViz implements SpecialVisualization {
                         ]),
                         tags.data,
                         {
-                            theme: state.layoutToUse.id,
+                            theme: state.layout.id,
                             changeType: "plantnet-ai-detection",
                         }
                     )

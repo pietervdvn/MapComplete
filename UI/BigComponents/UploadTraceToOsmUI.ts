@@ -17,7 +17,7 @@ export default class UploadTraceToOsmUI extends LoginToggle {
     constructor(
         trace: (title: string) => string,
         state: {
-            layoutToUse: LayoutConfig
+            layout: LayoutConfig
             osmConnection: OsmConnection
             readonly featureSwitchUserbadge: Store<boolean>
         },
@@ -92,13 +92,13 @@ export default class UploadTraceToOsmUI extends LoginToggle {
                         )
                         const descriptionStr = UploadTraceToOsmUI.createDefault(
                             description.GetValue().data,
-                            "Track created with MapComplete with theme " + state?.layoutToUse?.id
+                            "Track created with MapComplete with theme " + state?.layout?.id
                         )
                         await state?.osmConnection?.uploadGpxTrack(trace(title.GetValue().data), {
                             visibility: dropdown.GetValue().data,
                             description: descriptionStr,
                             filename: titleStr + ".gpx",
-                            labels: ["MapComplete", state?.layoutToUse?.id],
+                            labels: ["MapComplete", state?.layout?.id],
                         })
 
                         if (options?.whenUploaded !== undefined) {
@@ -127,7 +127,7 @@ export default class UploadTraceToOsmUI extends LoginToggle {
                     uploadFinished
                 ),
                 new Combine([
-                    Svg.invalid_ui().SetClass("w-8 h-8 m-2"),
+                    Svg.invalid_svg().SetClass("w-8 h-8 m-2"),
                     t.gpxServiceOffline.SetClass("p-2"),
                 ]).SetClass("flex border alert items-center"),
                 state.osmConnection.gpxServiceIsOnline.map(

@@ -12,8 +12,11 @@ import { TagConfigJson } from "./TagConfigJson"
 export default interface PointRenderingConfigJson {
     /**
      * All the locations that this point should be rendered at.
-     * Using `location: ["point", "centroid"] will always render centerpoint.
-     * 'projected_centerpoint' will show an item on the line itself, near the middle of the line. (LineStrings only)
+     * Possible values are:
+     * - `point`: only renders points at their location
+     * - `centroid`: show a symbol at the centerpoint of a (multi)Linestring and (multi)polygon. Points will _not_ be rendered with this
+     * - `projected_centerpoint`: Only on (multi)linestrings: calculate the centerpoint and snap it to the way
+     * - `start` and `end`: only on linestrings: add a point to the first/last coordinate of the LineString
      */
     location: ("point" | "centroid" | "start" | "end" | "projected_centerpoint" | string)[]
 
@@ -66,12 +69,33 @@ export default interface PointRenderingConfigJson {
     label?: string | TagRenderingConfigJson
 
     /**
-     * A snippet of css code
+     * A snippet of css code which is applied onto the container of the entire marker
      */
     css?: string | TagRenderingConfigJson
 
     /**
-     * A snippet of css-classes. They can be space-separated
+     * A snippet of css-classes which are applied onto the container of the entire marker. They can be space-separated
      */
     cssClasses?: string | TagRenderingConfigJson
+
+    /**
+     * Css that is applied onto the label
+     */
+    labelCss?: string | TagRenderingConfigJson
+
+    /**
+     * Css classes that are applied onto the label; can be space-separated
+     */
+    labelCssClasses?: string | TagRenderingConfigJson
+
+    /**
+     * If the map is pitched, the marker will stay parallel to the screen.
+     * Set to 'map' if you want to put it flattened on the map
+     */
+    pitchAlignment?: "canvas" | "map" | TagRenderingConfigJson
+
+    /**
+     * If the map is rotated, the icon will still point to the north if no rotation was applied
+     */
+    rotationAlignment?: "map" | "canvas" | TagRenderingConfigJson
 }

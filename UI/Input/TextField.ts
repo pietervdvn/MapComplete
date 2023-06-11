@@ -4,6 +4,9 @@ import BaseUIElement from "../BaseUIElement"
 import { Translation } from "../i18n/Translation"
 import Locale from "../i18n/Locale"
 
+/**
+ * @deprecated
+ */
 interface TextFieldOptions {
     placeholder?: string | Store<string> | Translation
     value?: UIEventSource<string>
@@ -15,6 +18,9 @@ interface TextFieldOptions {
     isValid?: (s: string) => boolean
 }
 
+/**
+ * @deprecated
+ */
 export class TextField extends InputElement<string> {
     public readonly enterPressed = new UIEventSource<string>(undefined)
     private readonly value: UIEventSource<string>
@@ -50,10 +56,6 @@ export class TextField extends InputElement<string> {
         return this.value
     }
 
-    GetRawValue(): UIEventSource<string> {
-        return this._rawValue
-    }
-
     IsValid(t: string): boolean {
         if (t === undefined || t === null) {
             return false
@@ -61,29 +63,6 @@ export class TextField extends InputElement<string> {
         return this._isValid(t)
     }
 
-    /**
-     *
-     * // should update placeholders dynamically
-     * const placeholder = new UIEventSource<string>("placeholder")
-     * const tf = new TextField({
-     *     placeholder
-     * })
-     * const html = <HTMLInputElement> tf.InnerConstructElement().children[0];
-     * html.placeholder // => 'placeholder'
-     * placeholder.setData("another piece of text")
-     * html.placeholder// => "another piece of text"
-     *
-     * // should update translated placeholders dynamically
-     * const placeholder = new Translation({nl: "Nederlands", en: "English"})
-     * Locale.language.setData("nl");
-     * const tf = new TextField({
-     *     placeholder
-     * })
-     * const html = <HTMLInputElement> tf.InnerConstructElement().children[0];
-     * html.placeholder// => "Nederlands"
-     * Locale.language.setData("en");
-     * html.placeholder // => 'English'
-     */
     protected InnerConstructElement(): HTMLElement {
         const options = this._options
         const self = this
@@ -151,11 +130,6 @@ export class TextField extends InputElement<string> {
         this.value.addCallbackAndRunD((value) => {
             // We leave the textfield as is in the case of undefined or null (handled by addCallbackAndRunD) - make sure we do not erase it!
             field["value"] = value
-            if (self.IsValid(value)) {
-                self.RemoveClass("invalid")
-            } else {
-                self.SetClass("invalid")
-            }
         })
 
         field.oninput = () => {

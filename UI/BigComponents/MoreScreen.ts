@@ -1,17 +1,12 @@
 import Svg from "../../Svg"
 import Combine from "../Base/Combine"
-import { SubtleButton } from "../Base/SubtleButton"
 import Translations from "../i18n/Translations"
-import BaseUIElement from "../BaseUIElement"
-import LayoutConfig, { LayoutInformation } from "../../Models/ThemeConfig/LayoutConfig"
-import { ImmutableStore, Store, UIEventSource } from "../../Logic/UIEventSource"
-import Loc from "../../Models/Loc"
+import LayoutConfig, {LayoutInformation} from "../../Models/ThemeConfig/LayoutConfig"
+import {ImmutableStore, Store} from "../../Logic/UIEventSource"
 import UserRelatedState from "../../Logic/State/UserRelatedState"
-import { Utils } from "../../Utils"
-import Title from "../Base/Title"
+import {Utils} from "../../Utils"
 import themeOverview from "../../assets/generated/theme_overview.json"
-import { Translation } from "../i18n/Translation"
-import { TextField } from "../Input/TextField"
+import {TextField} from "../Input/TextField"
 import Locale from "../i18n/Locale"
 import SvelteUIElement from "../Base/SvelteUIElement"
 import ThemesList from "./ThemesList.svelte"
@@ -23,7 +18,6 @@ export default class MoreScreen extends Combine {
 
     constructor(
         state: UserRelatedState & {
-            locationControl?: UIEventSource<Loc>
             layoutToUse?: LayoutConfig
         },
         onMainScreen: boolean = false
@@ -109,51 +103,6 @@ export default class MoreScreen extends Combine {
         ])
     }
 
-    /**
-     * Creates a button linking to the given theme
-     * @private
-     */
-    public static createLinkButton(
-        state: {
-            locationControl?: UIEventSource<Loc>
-            layoutToUse?: LayoutConfig
-        },
-        layout: {
-            id: string
-            icon: string
-            title: any
-            shortDescription: any
-            definition?: any
-            mustHaveLanguage?: boolean
-        },
-        isCustom: boolean = false
-    ): BaseUIElement {
-        const url = MoreScreen.createUrlFor(layout, isCustom, state)
-        let content = new Combine([
-            new Translation(
-                layout.title,
-                !isCustom && !layout.mustHaveLanguage ? "themes:" + layout.id + ".title" : undefined
-            ),
-            new Translation(layout.shortDescription)?.SetClass("subtle") ?? "",
-        ]).SetClass("overflow-hidden flex flex-col")
-
-        if (state.layoutToUse === undefined) {
-            // Currently on the index screen: we style the buttons equally large
-            content = new Combine([content]).SetClass("flex flex-col justify-center h-24")
-        }
-
-        return new SubtleButton(layout.icon, content, { url, newTab: false })
-    }
-
-    public static CreateProffessionalSerivesButton() {
-        const t = Translations.t.professional.indexPage
-        return new Combine([
-            new Title(t.hook, 4),
-            t.hookMore,
-            new SubtleButton(undefined, t.button, { url: "./professional.html" }),
-        ]).SetClass("flex flex-col border border-gray-300 p-2 rounded-lg")
-    }
-
     public static MatchesLayout(
         layout: {
             id: string
@@ -190,7 +139,7 @@ export default class MoreScreen extends Combine {
     private static createUrlFor(
         layout: { id: string; definition?: string },
         isCustom: boolean,
-        state?: { locationControl?: UIEventSource<{ lat; lon; zoom }>; layoutToUse?: { id } }
+        state?: { layoutToUse?: { id } }
     ): Store<string> {
         if (layout === undefined) {
             return undefined
@@ -203,8 +152,6 @@ export default class MoreScreen extends Combine {
         if (layout.id === state?.layoutToUse?.id) {
             return undefined
         }
-
-        const currentLocation = state?.locationControl
 
         let path = window.location.pathname
         // Path starts with a '/' and contains everything, e.g. '/dir/dir/page.html'
@@ -228,18 +175,6 @@ export default class MoreScreen extends Combine {
             hash = "#" + btoa(JSON.stringify(layout.definition))
         }
 
-        return (
-            currentLocation?.map((currentLocation) => {
-                const params = [
-                    ["z", currentLocation?.zoom],
-                    ["lat", currentLocation?.lat],
-                    ["lon", currentLocation?.lon],
-                ]
-                    .filter((part) => part[1] !== undefined)
-                    .map((part) => part[0] + "=" + part[1])
-                    .join("&")
-                return `${linkPrefix}${params}${hash}`
-            }) ?? new ImmutableStore<string>(`${linkPrefix}`)
-        )
+        return new ImmutableStore<string>(`${linkPrefix}${hash}`)
     }
 }

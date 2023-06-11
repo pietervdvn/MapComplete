@@ -1,6 +1,6 @@
 import * as fs from "fs"
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs"
-import { Utils } from "../Utils"
+import {existsSync, mkdirSync, readFileSync, writeFileSync} from "fs"
+import {Utils} from "../Utils"
 import ScriptUtils from "./ScriptUtils"
 
 const knownLanguages = ["en", "nl", "de", "fr", "es", "gl", "ca"]
@@ -12,7 +12,7 @@ class TranslationPart {
         const files = ScriptUtils.readDirRecSync(path, 1).filter((file) => file.endsWith(".json"))
         const rootTranslation = new TranslationPart()
         for (const file of files) {
-            const content = JSON.parse(readFileSync(file, { encoding: "utf8" }))
+            const content = JSON.parse(readFileSync(file, {encoding: "utf8"}))
             rootTranslation.addTranslation(file.substr(0, file.length - ".json".length), content)
         }
         return rootTranslation
@@ -52,10 +52,10 @@ class TranslationPart {
             if (typeof v != "string") {
                 console.error(
                     `Non-string object at ${context} in translation while trying to add the translation ` +
-                        JSON.stringify(v) +
-                        ` to '` +
-                        translationsKey +
-                        "'. The offending object which _should_ be a translation is: ",
+                    JSON.stringify(v) +
+                    ` to '` +
+                    translationsKey +
+                    "'. The offending object which _should_ be a translation is: ",
                     v,
                     "\n\nThe current object is (only showing en):",
                     this.toJson(),
@@ -94,9 +94,9 @@ class TranslationPart {
             if (noTranslate !== undefined) {
                 console.log(
                     "Ignoring some translations for " +
-                        context +
-                        ": " +
-                        dontTranslateKeys.join(", ")
+                    context +
+                    ": " +
+                    dontTranslateKeys.join(", ")
                 )
             }
         }
@@ -112,7 +112,6 @@ class TranslationPart {
             const v = object[key]
 
             if (v == null) {
-                console.warn("Got a null value for key ", key)
                 continue
             }
             if (typeof v !== "object") {
@@ -243,14 +242,14 @@ class TranslationPart {
                 }
                 subparts = subparts.map((p) => p.split(/\(.*\)/)[0])
                 for (const subpart of subparts) {
-                    neededSubparts.add({ part: subpart, usedByLanguage: lang })
+                    neededSubparts.add({part: subpart, usedByLanguage: lang})
                 }
             }
         })
 
         // Actually check for the needed sub-parts, e.g. that {key} isn't translated into {sleutel}
         this.contents.forEach((value, key) => {
-            neededSubparts.forEach(({ part, usedByLanguage }) => {
+            neededSubparts.forEach(({part, usedByLanguage}) => {
                 if (typeof value !== "string") {
                     return
                 }
@@ -444,6 +443,7 @@ function removeEmptyString(object: object) {
     }
     return object
 }
+
 /**
  * Formats the specified file, helps to prevent merge conflicts
  * */
@@ -659,7 +659,8 @@ function mergeLayerTranslations() {
     const layerFiles = ScriptUtils.getLayerFiles()
     for (const layerFile of layerFiles) {
         mergeLayerTranslation(layerFile.parsed, layerFile.path, loadTranslationFilesFrom("layers"))
-        writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "  ")) // layers use 2 spaces
+        const endsWithNewline = readFileSync(layerFile.path, {encoding: "utf8"})?.endsWith("\n") ?? true
+        writeFileSync(layerFile.path, JSON.stringify(layerFile.parsed, null, "  ") + (endsWithNewline ? "\n" : "")) // layers use 2 spaces
     }
 }
 
@@ -674,7 +675,8 @@ function mergeThemeTranslations() {
 
         const allTranslations = new TranslationPart()
         allTranslations.recursiveAdd(config, themeFile.path)
-        writeFileSync(themeFile.path, JSON.stringify(config, null, "  ")) // Themefiles use 2 spaces
+        const endsWithNewline = readFileSync(themeFile.path, {encoding: "utf8"})?.endsWith("\n") ?? true
+        writeFileSync(themeFile.path, JSON.stringify(config, null, "  ") + (endsWithNewline ? "\n" : "")) // Themefiles use 2 spaces
     }
 }
 
@@ -693,7 +695,8 @@ if (!themeOverwritesWeblate) {
         questionsPath,
         loadTranslationFilesFrom("shared-questions")
     )
-    writeFileSync(questionsPath, JSON.stringify(questionsParsed, null, "  "))
+    const endsWithNewline = readFileSync(questionsPath, {encoding: "utf8"}).endsWith("\n")
+    writeFileSync(questionsPath, JSON.stringify(questionsParsed, null, "  ") + (endsWithNewline ? "\n" : ""))
 } else {
     console.log("Ignore weblate")
 }
@@ -704,13 +707,13 @@ const l2 = generateTranslationsObjectFrom(
     "themes"
 )
 const l3 = generateTranslationsObjectFrom(
-    [{ path: questionsPath, parsed: questionsParsed }],
+    [{path: questionsPath, parsed: questionsParsed}],
     "shared-questions"
 )
 
 const usedLanguages: string[] = Utils.Dedup(l1.concat(l2).concat(l3)).filter((v) => v !== "*")
 usedLanguages.sort()
-fs.writeFileSync("./assets/used_languages.json", JSON.stringify({ languages: usedLanguages }))
+fs.writeFileSync("./assets/used_languages.json", JSON.stringify({languages: usedLanguages}))
 
 if (!themeOverwritesWeblate) {
     // Generates the core translations

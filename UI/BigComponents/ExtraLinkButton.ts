@@ -1,31 +1,30 @@
-import { UIElement } from "../UIElement"
+import {UIElement} from "../UIElement"
 import BaseUIElement from "../BaseUIElement"
-import { UIEventSource } from "../../Logic/UIEventSource"
+import {Store} from "../../Logic/UIEventSource"
 import ExtraLinkConfig from "../../Models/ThemeConfig/ExtraLinkConfig"
 import Img from "../Base/Img"
-import { SubtleButton } from "../Base/SubtleButton"
+import {SubtleButton} from "../Base/SubtleButton"
 import Toggle from "../Input/Toggle"
-import Loc from "../../Models/Loc"
 import Locale from "../i18n/Locale"
-import { Utils } from "../../Utils"
+import {Utils} from "../../Utils"
 import Svg from "../../Svg"
 import Translations from "../i18n/Translations"
-import { Translation } from "../i18n/Translation"
+import {Translation} from "../i18n/Translation"
 
+interface ExtraLinkButtonState {
+    layout: { id: string; title: Translation }
+    featureSwitches: { featureSwitchWelcomeMessage: Store<boolean> },
+    mapProperties: {
+        location: Store<{ lon: number, lat: number }>;
+        zoom: Store<number>
+    }
+}
 export default class ExtraLinkButton extends UIElement {
     private readonly _config: ExtraLinkConfig
-    private readonly state: {
-        layoutToUse: { id: string; title: Translation }
-        featureSwitchWelcomeMessage: UIEventSource<boolean>
-        locationControl: UIEventSource<Loc>
-    }
+    private readonly state: ExtraLinkButtonState
 
     constructor(
-        state: {
-            featureSwitchWelcomeMessage: UIEventSource<boolean>
-            locationControl: UIEventSource<Loc>
-            layoutToUse: { id: string; title: Translation }
-        },
+        state: ExtraLinkButtonState,
         config: ExtraLinkConfig
     ) {
         super()
@@ -41,19 +40,18 @@ export default class ExtraLinkButton extends UIElement {
         const c = this._config
 
         const isIframe = window !== window.top
-
         if (c.requirements?.has("iframe") && !isIframe) {
             return undefined
         }
 
         if (c.requirements?.has("no-iframe") && isIframe) {
-            return undefined
+           return undefined
         }
 
         let link: BaseUIElement
-        const theme = this.state.layoutToUse?.id ?? ""
+        const theme = this.state.layout?.id ?? ""
         const basepath = window.location.host
-        const href = this.state.locationControl.map((loc) => {
+        const href = this.state.mapProperties.location.map((loc) => {
             const subs = {
                 ...loc,
                 theme: theme,
@@ -61,9 +59,9 @@ export default class ExtraLinkButton extends UIElement {
                 language: Locale.language.data,
             }
             return Utils.SubstituteKeys(c.href, subs)
-        })
+        }, [this.state.mapProperties.zoom])
 
-        let img: BaseUIElement = Svg.pop_out_ui()
+        let img: BaseUIElement = Svg.pop_out_svg()
         if (c.icon !== undefined) {
             img = new Img(c.icon).SetClass("h-6")
         }
@@ -71,7 +69,7 @@ export default class ExtraLinkButton extends UIElement {
         let text: Translation
         if (c.text === undefined) {
             text = Translations.t.general.screenToSmall.Subs({
-                theme: this.state.layoutToUse.title,
+                theme: this.state.layout.title,
             })
         } else {
             text = c.text.Clone()
@@ -83,11 +81,11 @@ export default class ExtraLinkButton extends UIElement {
         })
 
         if (c.requirements?.has("no-welcome-message")) {
-            link = new Toggle(undefined, link, this.state.featureSwitchWelcomeMessage)
+            link = new Toggle(undefined, link, this.state.featureSwitches.featureSwitchWelcomeMessage)
         }
 
         if (c.requirements?.has("welcome-message")) {
-            link = new Toggle(link, undefined, this.state.featureSwitchWelcomeMessage)
+            link = new Toggle(link, undefined, this.state.featureSwitches.featureSwitchWelcomeMessage)
         }
 
         return link

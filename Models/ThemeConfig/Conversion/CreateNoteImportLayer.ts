@@ -1,9 +1,9 @@
-import { Conversion } from "./Conversion"
+import {Conversion} from "./Conversion"
 import LayerConfig from "../LayerConfig"
-import { LayerConfigJson } from "../Json/LayerConfigJson"
+import {LayerConfigJson} from "../Json/LayerConfigJson"
 import Translations from "../../../UI/i18n/Translations"
 import PointRenderingConfigJson from "../Json/PointRenderingConfigJson"
-import { Translation, TypedTranslation } from "../../../UI/i18n/Translation"
+import {Translation, TypedTranslation} from "../../../UI/i18n/Translation"
 
 export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, LayerConfigJson> {
     /**
@@ -82,7 +82,7 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
             return { ...translation.translations, _context: translation.context }
         }
 
-        function trs<T>(translation: TypedTranslation<T>, subs: T): object {
+        function trs<T>(translation: TypedTranslation<T>, subs: T): Record<string, string> {
             return { ...translation.Subs(subs).translations, _context: translation.context }
         }
 
@@ -101,16 +101,20 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                 geoJsonZoomLevel: 10,
                 maxCacheAge: 0,
             },
+             /* We need to set 'pass_all_features'
+             There are probably many note_import-layers, and we don't want the first one to gobble up all notes and then discard them...
+             */
+            passAllFeatures: true,
             minzoom: Math.min(12, layerJson.minzoom - 2),
             title: {
                 render: trs(t.popupTitle, { title }),
             },
             calculatedTags: [
-                "_first_comment=feat.get('comments')[0].text.toLowerCase()",
+                "_first_comment=get(feat)('comments')[0].text.toLowerCase()",
                 "_trigger_index=(() => {const lines = feat.properties['_first_comment'].split('\\n'); const matchesMapCompleteURL = lines.map(l => l.match(\".*https://mapcomplete.osm.be/\\([a-zA-Z_-]+\\)\\(.html\\)?.*#import\")); const matchedIndexes = matchesMapCompleteURL.map((doesMatch, i) => [doesMatch !== null, i]).filter(v => v[0]).map(v => v[1]); return matchedIndexes[0] })()",
-                "_comments_count=feat.get('comments').length",
-                "_intro=(() => {const lines = feat.get('comments')[0].text.split('\\n'); lines.splice(feat.get('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
-                "_tags=(() => {let lines = feat.get('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, feat.get('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()",
+                "_comments_count=get(feat)('comments').length",
+                "_intro=(() => {const lines = get(feat)('comments')[0].text.split('\\n'); lines.splice(get(feat)('_trigger_index')-1, lines.length); return lines.filter(l => l !== '').join('<br/>');})()",
+                "_tags=(() => {let lines = get(feat)('comments')[0].text.split('\\n').map(l => l.trim()); lines.splice(0, get(feat)('_trigger_index') + 1); lines = lines.filter(l => l != ''); return lines.join(';');})()",
             ],
             isShown: {
                 and: ["_trigger_index~*", { or: isShownIfAny }],
@@ -170,6 +174,17 @@ export default class CreateNoteImportLayer extends Conversion<LayerConfigJson, L
                     id: "nearby_images",
                     render: tr(t.nearbyImagesIntro),
                 },
+                {
+                    id:"all_tags",
+                    render: "{all_tags()}",
+                    metacondition: {
+                        or: [
+                            "__featureSwitchIsDebugging=true",
+                            "mapcomplete-show_tags=full",
+                            "mapcomplete-show_debug=yes",
+                        ],
+                    },
+                }
             ],
             mapRendering: [
                 {

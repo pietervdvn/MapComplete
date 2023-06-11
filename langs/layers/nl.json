@@ -2462,8 +2462,8 @@
                 "question": "Welk vermogen levert een enkele stekker van type <div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div>?",
                 "render": "<div style='display: inline-block'><b><b>Type 2 met kabel</b> (J1772)</b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Type2_tethered.svg'/></div> levert een vermogen van maximaal {socket:type2_cable:output}"
             },
-            "questions": {
-                "render": "<h3>Technische vragen</h3>De vragen hieronder zijn erg technisch - sla deze over indien je hier geen tijd voor hebt<br/>{questions}"
+            "questions-technical": {
+                "render": "<h3>Technische vragen</h3>De vragen hieronder zijn erg technisch - sla deze over indien je hier geen tijd voor hebt<br/>{questions(technical)}"
             },
             "ref": {
                 "question": "Wat is het referentienummer van dit oplaadstation?",
@@ -4826,18 +4826,6 @@
             }
         }
     },
-    "grass_in_parks": {
-        "description": "Dit zoekt naar alle toegankelijke grasvelden binnen publieke parken - dit zijn 'groenzones'",
-        "name": "Toegankelijke grasvelden in parken",
-        "title": {
-            "mappings": {
-                "0": {
-                    "then": "{name}"
-                }
-            },
-            "render": "Speelweide in een park"
-        }
-    },
     "hackerspace": {
         "description": "Hackerspace",
         "name": "Hackerspace",
@@ -5272,6 +5260,33 @@
                 },
                 "1": {
                     "then": "Kinderopvang {name}"
+                }
+            }
+        }
+    },
+    "last_click": {
+        "mapRendering": {
+            "0": {
+                "label": {
+                    "mappings": {
+                        "0": {
+                            "then": "Maak een nieuwe kaartnotitie"
+                        }
+                    },
+                    "render": "Klik hier om een item toe te voegen"
+                }
+            }
+        },
+        "title": {
+            "mappings": {
+                "0": {
+                    "then": "Voeg een nieuw punt of een nieuwe kaartnota toe"
+                },
+                "1": {
+                    "then": "Voeg een nieuwe kaartnota toe"
+                },
+                "2": {
+                    "then": "Voeg een nieuw punt toe"
                 }
             }
         }
@@ -8453,6 +8468,17 @@
                     }
                 }
             },
+            "inbox": {
+                "mappings": {
+                    "0": {
+                        "then": {
+                            "special": {
+                                "text": "Ga naar je inbox"
+                            }
+                        }
+                    }
+                }
+            },
             "picture-license": {
                 "mappings": {
                     "0": {
@@ -8502,6 +8528,9 @@
                     }
                 }
             }
+        },
+        "title": {
+            "render": "Instellingen"
         }
     },
     "veterinary": {

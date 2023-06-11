@@ -4,10 +4,8 @@ import { Translation } from "../UI/i18n/Translation"
 import { readFileSync, writeFileSync } from "fs"
 import LayoutConfig from "../Models/ThemeConfig/LayoutConfig"
 import LayerConfig from "../Models/ThemeConfig/LayerConfig"
-import Constants from "../Models/Constants"
 import { Utils } from "../Utils"
 import TagRenderingConfig from "../Models/ThemeConfig/TagRenderingConfig"
-import { And } from "../Logic/Tags/And"
 
 /**
  * Generates all the files in "Docs/TagInfo". These are picked up by the taginfo project, showing a link to the mapcomplete theme if the key is used
@@ -132,7 +130,7 @@ function generateLayerUsage(layer: LayerConfig, layout: LayoutConfig): any[] {
 function generateTagInfoEntry(layout: LayoutConfig): any {
     const usedTags = []
     for (const layer of layout.layers) {
-        if (Constants.priviliged_layers.indexOf(layer.id) >= 0) {
+        if (layer.source === null) {
             continue
         }
         if (layer.source.geojsonSource !== undefined && layer.source.isOsmCacheLayer !== true) {

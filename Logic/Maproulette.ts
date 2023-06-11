@@ -29,8 +29,9 @@ export default class Maproulette {
     /**
      * The API key to use for all requests
      */
-    private apiKey: string
+    private readonly apiKey: string
 
+    public static singleton = new Maproulette()
     /**
      * Creates a new Maproulette instance
      * @param endpoint The API endpoint to use
@@ -70,5 +71,24 @@ export default class Maproulette {
             console.log(`Failed to close task: ${response.status}`)
             throw `Failed to close task: ${response.status}`
         }
+    }
+
+    /**
+     * Converts a status text into the corresponding number
+     *
+     * Maproulette.codeToIndex("Created") // => 0
+     * Maproulette.codeToIndex("qdsf") // => undefined
+     *
+     */
+    public static codeToIndex(code: string) : number | undefined{
+        if(code === "Created"){
+            return Maproulette.STATUS_OPEN
+        }
+        for (let i = 0; i < 9; i++) {
+            if(Maproulette.STATUS_MEANING[""+i] === code){
+                return i
+            }
+        }
+        return undefined
     }
 }
