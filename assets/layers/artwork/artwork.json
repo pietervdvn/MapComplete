@@ -144,6 +144,9 @@
       }
     }
   ],
+  "calculatedTags": [
+    "website:=feat.properties.website ?? feat.properties.url"
+  ],
   "tagRenderings": [
     "images",
     {
@@ -612,7 +615,8 @@
       },
       "freeform": {
         "key": "website",
-        "type": "url"
+        "type": "url",
+        "addExtraTags": ["url="]
       },
       "id": "artwork-website",
       "labels": [
