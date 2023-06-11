@@ -34,7 +34,8 @@ export default class UserRelatedState {
     public readonly mangroveIdentity: MangroveIdentity
     public readonly installedUserThemes: Store<string[]>
     public readonly showAllQuestionsAtOnce: UIEventSource<boolean>
-    public readonly showTags: UIEventSource<"no" | undefined | "always" | "yes">;
+    public static readonly SHOW_TAGS_VALUES = ["always","yes","full"] as const
+    public readonly showTags: UIEventSource<"no" | undefined | "always" | "yes" | "full">;
     public readonly homeLocation: FeatureSource
     public readonly language: UIEventSource<string>
     /**

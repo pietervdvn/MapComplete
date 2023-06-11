@@ -20,6 +20,7 @@
     import {Translation} from "../../i18n/Translation";
     import Constants from "../../../Models/Constants";
     import {Unit} from "../../../Models/Unit";
+    import UserRelatedState from "../../../Logic/State/UserRelatedState";
 
     export let config: TagRenderingConfig;
     export let tags: UIEventSource<Record<string, string>>;
@@ -220,7 +221,7 @@
                     </button>
                 </slot>
             </div>
-            {#if $showTags === "yes" || $showTags === "always" || ($showTags === "" && numberOfCs >= Constants.userJourney.tagsVisibleAt) || $featureSwitchIsTesting || $featureSwitchIsDebugging}
+            {#if UserRelatedState.SHOW_TAGS_VALUES.indexOf($showTags) >= 0 || ($showTags === "" && numberOfCs >= Constants.userJourney.tagsVisibleAt) || $featureSwitchIsTesting || $featureSwitchIsDebugging}
                 <span class="flex justify-between flex-wrap">
                     <TagHint {state} tags={selectedTags} currentProperties={$tags}></TagHint>
                     <span class="flex flex-wrap">
