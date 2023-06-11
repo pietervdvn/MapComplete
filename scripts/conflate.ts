@@ -1,11 +1,11 @@
 import Script from "./Script"
 import fs from "fs"
-import { Feature } from "geojson"
-import { GeoOperations } from "../Logic/GeoOperations"
-import { Utils } from "../Utils"
-import { OsmObject } from "../Logic/Osm/OsmObject"
-import { PhoneTextField, UrlTextfieldDef } from "../UI/Input/ValidatedTextField"
-import { OsmId } from "../Models/OsmFeature"
+import {Feature} from "geojson"
+import {GeoOperations} from "../Logic/GeoOperations"
+import {Utils} from "../Utils"
+import {OsmObject} from "../Logic/Osm/OsmObject"
+import {PhoneTextField, UrlTextfieldDef} from "../UI/Input/ValidatedTextField"
+import {OsmId} from "../Models/OsmFeature"
 import ScriptUtils from "./ScriptUtils"
 
 interface PossibleMatch {
@@ -45,9 +45,25 @@ export class Conflate extends Script {
         )
     }
 
+    private static toXml(changedObjects: OsmObject[]): string {
+
+        return [
+            "<?xml version='1.0' encoding='UTF-8'?>",
+            "<osm version=\"0.6\" generator='mapcomplete-conflate-script'>",
+            ...changedObjects.map(obj =>
+                obj.ChangesetXML(undefined, ' action="modify" ')
+            ),
+            "</osm>"
+        ].join("\n");
+    }
+
     async main(args: string[]): Promise<void> {
+        if (args.length < 2) {
+            super.printHelp()
+            return
+        }
         const [osm_file_path, external_file_path] = args
-        let max_range = 50
+        let max_range = 25
         if (args.length === 3) {
             max_range = Number(args[2])
         }
@@ -66,10 +82,10 @@ export class Conflate extends Script {
         }
 
         const external_features: Feature[] = JSON.parse(
-            fs.readFileSync(external_file_path, { encoding: "utf-8" })
+            fs.readFileSync(external_file_path, {encoding: "utf-8"})
         ).features
         const osm_features: Feature[] = JSON.parse(
-            fs.readFileSync(osm_file_path, { encoding: "utf-8" })
+            fs.readFileSync(osm_file_path, {encoding: "utf-8"})
         ).features
 
         const bestMatches = await this.calculateMatches(external_features, osm_features, max_range)
@@ -86,31 +102,48 @@ export class Conflate extends Script {
                 "...properties_differences",
             ],
         ]
-        for (const { match, replayed } of bestMatches) {
-            const { external_feature, d, osm_feature } = match
-            const { possibly_imported, certainly_imported, resting_properties } = replayed
+
+        const changedObjects: OsmObject[] = []
+        for (const {match, replayed} of bestMatches) {
+            const {external_feature, d, osm_feature} = match
+            const {possibly_imported, certainly_imported, resting_properties} = replayed
             const status = resting_properties["status"]
             delete resting_properties["status"]
             if (Object.keys(resting_properties).length === 0) {
                 continue
             }
+            const id = osm_feature.properties["@id"]
             match_lengths.push([
-                osm_feature.properties["@id"],
+                id,
                 d,
                 osm_feature.properties.name,
                 certainly_imported ? "import" : possibly_imported ? "prob import" : "new",
                 status,
                 JSON.stringify(resting_properties),
             ])
+
+            const osmObj = await OsmObject.DownloadObjectAsync(id)
+            for (const key in resting_properties) {
+                osmObj.tags[key] = resting_properties[key]
+            }
+            changedObjects.push(osmObj)
         }
 
+        const targetDir = "../onwheels-data-prep/output"
+        console.log("Writing results to directory", targetDir)
+
         fs.writeFileSync(
-            "../onwheels-data-prep/matches.tsv",
+            targetDir + "/matches.tsv",
             match_lengths.map((l) => l.join("\t")).join("\n")
         )
 
-        fs.writeFileSync(
-            "../onwheels-data-prep/unmatched.geojson",
+        fs.writeFileSync(targetDir + "/changeset.xml",
+            Conflate.toXml(changedObjects)
+        )
+
+
+        fs.writeFileSync(targetDir +
+            "/unmatched.geojson",
             JSON.stringify(
                 {
                     type: "FeatureCollection",
@@ -158,7 +191,7 @@ export class Conflate extends Script {
             this.latestDate = latest
         }
 
-        return { earliestDateOfImport: earliest, latestDateOfImport: latest }
+        return {earliestDateOfImport: earliest, latestDateOfImport: latest}
     }
 
     private findPossibleMatchesFor(
@@ -189,10 +222,12 @@ export class Conflate extends Script {
         if (url.indexOf("facebook.com") > 0) {
             return true
         }
+        if (!fs.existsSync(this.historyCacheDir + "urls/")) {
+            fs.mkdirSync(this.historyCacheDir + "urls/")
+        }
         const cachePath = this.historyCacheDir + "/urls/    " + url.replace(/[/\\:]/g, "_")
         if (fs.existsSync(cachePath)) {
-            const online = JSON.parse(fs.readFileSync(cachePath, { encoding: "utf-8" }))
-            return online
+            return JSON.parse(fs.readFileSync(cachePath, {encoding: "utf-8"}))
         }
         let online: boolean | string = false
         try {
@@ -204,7 +239,7 @@ export class Conflate extends Script {
                 console.log("Maybe trying the homepage will help?")
             }
         }
-        fs.writeFileSync(cachePath, JSON.stringify(online, null, "  "), { encoding: "utf-8" })
+        fs.writeFileSync(cachePath, JSON.stringify(online, null, "  "), {encoding: "utf-8"})
         return online
     }
 
@@ -214,7 +249,9 @@ export class Conflate extends Script {
         }
         url = url.replace("http://", "https://")
         try {
-            const result = await ScriptUtils.Download(url)
+            const result = await ScriptUtils.Download(url, {
+                "User-agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/114.0"
+            })
             if (result["redirect"]) {
                 if (result["redirect"].startsWith("/")) {
                     return true
@@ -225,6 +262,7 @@ export class Conflate extends Script {
                 return true
             }
             console.error("Got a result, but no content?", url, result)
+            return false
         } catch (e) {
             console.log("Offline (error):", url, e.message)
             return false
@@ -232,12 +270,15 @@ export class Conflate extends Script {
     }
 
     private async historyCached(id): Promise<OsmObject[]> {
-        const cachePath = this.historyCacheDir + "/" + id.replace("/", "_")
+        const cachePath = this.historyCacheDir + id.replace("/", "_")
+        if (!fs.existsSync(this.historyCacheDir)) {
+            fs.mkdirSync(this.historyCacheDir)
+        }
         if (fs.existsSync(cachePath)) {
-            return JSON.parse(fs.readFileSync(cachePath, { encoding: "utf-8" }))
+            return JSON.parse(fs.readFileSync(cachePath, {encoding: "utf-8"}))
         }
         const history = await OsmObject.DownloadHistory(id).AsPromise((l) => l.length > 0)
-        fs.writeFileSync(cachePath, JSON.stringify(history, null, "  "), { encoding: "utf-8" })
+        fs.writeFileSync(cachePath, JSON.stringify(history, null, "  "), {encoding: "utf-8"})
         return history
     }
 
@@ -249,8 +290,12 @@ export class Conflate extends Script {
             let website = properties.website.toLowerCase()
             website
                 .replace("http://http://", "http://")
+                .replace("https://https://", "https://")
                 .replace("https//", "https://")
                 .replace("http://", "https://")
+            if (website.startsWith("https://")) {
+                website = "https://" + website
+            }
             const validator = new UrlTextfieldDef()
             if (validator.isValid(website)) {
                 properties.website = new UrlTextfieldDef().reformat(website)
@@ -278,7 +323,7 @@ export class Conflate extends Script {
         let certainly_imported = match.d < 0.0001
         let possibly_imported = false
 
-        const resting_properties = { ...match.external_feature.properties }
+        const resting_properties = {...match.external_feature.properties}
         await this.normalize(resting_properties)
 
         for (const historyElement of history) {

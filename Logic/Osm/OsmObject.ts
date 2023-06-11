@@ -1,10 +1,10 @@
-import { Utils } from "../../Utils"
+import {Utils} from "../../Utils"
 import polygon_features from "../../assets/polygon-features.json"
-import { Store, UIEventSource } from "../UIEventSource"
-import { BBox } from "../BBox"
+import {Store, UIEventSource} from "../UIEventSource"
+import {BBox} from "../BBox"
 import OsmToGeoJson from "osmtogeojson"
-import { NodeId, OsmFeature, OsmId, OsmTags, RelationId, WayId } from "../../Models/OsmFeature"
-import { Feature, LineString, Polygon } from "geojson"
+import {NodeId, OsmFeature, OsmId, OsmTags, RelationId, WayId} from "../../Models/OsmFeature"
+import {Feature, LineString, Polygon} from "geojson"
 
 export abstract class OsmObject {
     private static defaultBackend = "https://www.openstreetmap.org/"
@@ -346,8 +346,7 @@ export abstract class OsmObject {
         }
         return tags
     }
-
-    abstract ChangesetXML(changesetId: string): string
+    abstract ChangesetXML(changesetId: string, header?: string): string
 
     protected VersionXML() {
         if (this.version === undefined) {
@@ -382,15 +381,15 @@ export class OsmNode extends OsmObject {
         super("node", id)
     }
 
-    ChangesetXML(changesetId: string): string {
+    ChangesetXML(changesetId: string, header?: string): string {
         let tags = this.TagsXML()
 
         return (
             '    <node id="' +
             this.id +
-            '" changeset="' +
-            changesetId +
             '" ' +
+                (header ?? "") +
+            (changesetId ? ('" changeset="' + changesetId) : "" ) +
             this.VersionXML() +
             ' lat="' +
             this.lat +
@@ -438,7 +437,7 @@ export class OsmWay extends OsmObject {
         return [this.lat, this.lon]
     }
 
-    ChangesetXML(changesetId: string): string {
+    ChangesetXML(changesetId: string, header?: string): string {
         let tags = this.TagsXML()
         let nds = ""
         for (const node in this.nodes) {
@@ -448,8 +447,8 @@ export class OsmWay extends OsmObject {
         return (
             '    <way id="' +
             this.id +
-            '" changeset="' +
-            changesetId +
+            (header ?? "")+
+            (changesetId ? ('" changeset="' + changesetId) : "" ) +
             '" ' +
             this.VersionXML() +
             ">\n" +
@@ -542,7 +541,7 @@ export class OsmRelation extends OsmObject {
         return [0, 0] // TODO
     }
 
-    ChangesetXML(changesetId: string): string {
+    ChangesetXML(changesetId: string, header?: string): string {
         let members = ""
         for (const member of this.members) {
             members +=
@@ -560,7 +559,7 @@ export class OsmRelation extends OsmObject {
         if (changesetId !== undefined) {
             cs = `changeset="${changesetId}"`
         }
-        return `    <relation id="${this.id}" ${cs} ${this.VersionXML()}>
+        return `    <relation id="${this.id}" ${header ?? ""} ${cs} ${this.VersionXML()}>
 ${members}${tags}        </relation>
 `
     }
