@@ -129,7 +129,9 @@
       ]
     },
     {
-      "labels": ["controls"],
+      "labels": [
+        "controls"
+      ],
       "id": "mark_fixed",
       "render": {
         "special": {
@@ -144,7 +146,9 @@
     },
     {
       "id": "mark_duplicate",
-      "labels": ["controls"],
+      "labels": [
+        "controls"
+      ],
       "render": {
         "special": {
           "type": "maproulette_set_status",
@@ -160,7 +164,9 @@
     },
     {
       "id": "mark_too_hard",
-      "labels": ["controls"],
+      "labels": [
+        "controls"
+      ],
       "render": {
         "special": {
           "type": "maproulette_set_status",

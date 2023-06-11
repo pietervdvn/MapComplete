@@ -3023,6 +3023,17 @@
             "name": {
                 "question": "What is the name of this climbing gym?"
             },
+            "rope_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "A climbing rope can be rented here"
+                    },
+                    "1": {
+                        "then": "A climbing rope can <b>not</b> be rented here"
+                    }
+                },
+                "question": "Can one rent a climbing rope here?"
+            },
             "shoe_rental": {
                 "mappings": {
                     "0": {
@@ -7678,6 +7689,9 @@
                     },
                     "5": {
                         "then": "Basketball is played here"
+                    },
+                    "6": {
+                        "then": "This is a skatepark"
                     }
                 },
                 "question": "Which sport can be played here?",

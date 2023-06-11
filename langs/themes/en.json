@@ -14,6 +14,31 @@
     },
     "atm": {
         "description": "This map shows ATMs to withdraw or deposit money",
+        "layers": {
+            "3": {
+                "override": {
+                    "=tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import this ATM"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": "OpenStreetMap knows about <a href='#{_closest_osm_poi}'>an ATM which is {_closest_osm_poi_distance} meter away.</a> "
+                        },
+                        "2": {
+                            "render": {
+                                "special": {
+                                    "message": "Add all the suggested tags to the closest ATM"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "title": "ATM Machines"
     },
     "bag": {
