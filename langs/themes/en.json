@@ -2,15 +2,15 @@
     "advertising": {
         "description": "Have you ever wondered how many advertising there are in our streets and roads? With this map you could find and add information about all the advertising features that you can find on the street",
         "shortDescription": "Where I can find advertising features?",
-        "title": "Open Advertising Map"
+        "title": "Advertising"
     },
     "aed": {
         "description": "On this map, one can find and mark nearby defibrillators",
-        "title": "Open AED Map"
+        "title": "Defibrillators"
     },
     "artwork": {
         "description": "An open map of statues, busts, graffitis and other artwork all over the world",
-        "title": "Open Artwork Map"
+        "title": "Artwork"
     },
     "atm": {
         "description": "This map shows ATMs to withdraw or deposit money",
@@ -91,7 +91,7 @@
     },
     "bookcases": {
         "description": "A public bookcase is a small streetside cabinet, box, old phone booth or some other objects where books are stored. Everyone can place or take a book. This map aims to collect all these bookcases.",
-        "title": "Open Bookcase Map"
+        "title": "Public bookcases"
     },
     "cafes_and_pubs": {
         "description": "Coffeehouses, pubs and bars",
@@ -385,7 +385,7 @@
                 }
             }
         },
-        "title": "Open Climbing Map"
+        "title": "Climbing gyms, clubs and spots"
     },
     "clock": {
         "description": "Map showing all public clocks",
@@ -533,7 +533,7 @@
     },
     "cyclofix": {
         "description": "The goal of this map is to present cyclists with an easy-to-use solution to find the appropriate infrastructure for their needs.<br><br>You can track your precise location (mobile only) and select layers that are relevant for you in the bottom left corner. You can also use this tool to add or edit pins (points of interest) to the map and provide more data by answering the questions.<br><br>All changes you make will automatically be saved in the global database of OpenStreetMap and can be freely re-used by others.<br><br>For more information about the cyclofix project, go to <a href='https://cyclofix.osm.be/'>cyclofix.osm.be</a>.",
-        "title": "Cyclofix - an open map for cyclists"
+        "title": "Cyclofix - a map for cyclists"
     },
     "drinking_water": {
         "description": "On this map, publicly accessible drinking water spots are shown and can be easily added",
@@ -583,7 +583,7 @@
             }
         },
         "shortDescription": "What is the origin of a toponym?",
-        "title": "Open Etymology Map"
+        "title": "Etymology - what is a street named after?"
     },
     "facadegardens": {
         "description": "<a href='https://nl.wikipedia.org/wiki/Geveltuin' target=_blank>Facade gardens</a>, green facades and trees in the city not only bring peace and quiet, but also a more beautiful city, greater biodiversity, a cooling effect and better air quality. <br/> Klimaan VZW and Mechelen Klimaatneutraal want to map existing and new facade gardens as an example for people who want to build their own garden or for city walkers who love nature.<br/>More info about the project at <a href='https://klimaan.be/' target=_blank>klimaan.be</a>.",
@@ -842,7 +842,7 @@
                     },
                     "host": {
                         "question": "What host (website) was this change made with?",
-                        "render": "Change with with <a href='{host}'>{host}</a>"
+                        "render": "Change with <a href='{host}'>{host}</a>"
                     },
                     "locale": {
                         "question": "What locale (language) was this change made in?",
@@ -904,6 +904,33 @@
     "onwheels": {
         "description": "On this map, publicly weelchair accessible places are shown and can be easily added",
         "layers": {
+            "19": {
+                "override": {
+                    "=title": {
+                        "render": "Statistics"
+                    }
+                }
+            },
+            "20": {
+                "override": {
+                    "+tagRenderings": {
+                        "0": {
+                            "render": {
+                                "special": {
+                                    "text": "Import"
+                                }
+                            }
+                        },
+                        "1": {
+                            "render": {
+                                "special": {
+                                    "message": "Add all the suggested tags"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "4": {
                 "override": {
                     "filter": {
@@ -946,40 +973,13 @@
                 "override": {
                     "name": "Disabled parking spaces"
                 }
-            },
-            "19": {
-                "override": {
-                    "=title": {
-                        "render": "Statistics"
-                    }
-                }
-            },
-            "20": {
-                "override": {
-                    "+tagRenderings": {
-                        "0": {
-                            "render": {
-                                "special": {
-                                    "text": "Import"
-                                }
-                            }
-                        },
-                        "1": {
-                            "render": {
-                                "special": {
-                                    "message": "Add all the suggested tags"
-                                }
-                            }
-                        }
-                    }
-                }
             }
         },
         "title": "OnWheels"
     },
     "openwindpowermap": {
         "description": "A map for showing and editing wind turbines.",
-        "title": "OpenWindPowerMap"
+        "title": "WInd power generators"
     },
     "osm_community_index": {
         "description": "A list of resources for users of OpenStreetMap. 'Resources' can be links to forums, meetups, Slack groups, IRC channels, mailing lists, and so on. Anything that mappers, especially beginners, might find interesting or helpful.",
@@ -1065,7 +1065,7 @@
     "shops": {
         "description": "On this map, one can mark basic information about shops, add opening hours and phone numbers",
         "shortDescription": "An editable map with basic shop information",
-        "title": "Open Shop Map"
+        "title": "Shops"
     },
     "sidewalks": {
         "description": "Experimental theme",
@@ -1133,10 +1133,6 @@
     "stations": {
         "description": "View, edit and add details to a train station",
         "layers": {
-            "3": {
-                "description": "Layer showing train stations",
-                "name": "Train Stations"
-            },
             "16": {
                 "description": "Displays showing the trains that will leave from this station",
                 "name": "Departures boards",
@@ -1168,6 +1164,10 @@
                 "title": {
                     "render": "Departures board"
                 }
+            },
+            "3": {
+                "description": "Layer showing train stations",
+                "name": "Train Stations"
             }
         },
         "title": "Train Stations"
@@ -1235,7 +1235,7 @@
     },
     "toilets": {
         "description": "A map of public toilets",
-        "title": "Open Toilet Map"
+        "title": "Public toilets"
     },
     "transit": {
         "description": "Plan your trip with the help of the public transport system.",
