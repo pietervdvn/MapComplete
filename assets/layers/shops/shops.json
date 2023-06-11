@@ -322,7 +322,15 @@
       "icon": {
         "builtin": "id_presets.shop_rendering",
         "override": {
-          "render": "./assets/layers/id_presets/maki-shop.svg"
+          "render": "./assets/layers/id_presets/maki-shop.svg",
+          "+mappings": [
+            {
+              "if": {
+                "or": ["shop=vacant","shop=disused","disused:shop=yes"]
+              },
+              "then": "circle:white;./assets/layers/shops/shop-disused.svg"
+            }
+          ]
         }
       },
       "iconBadges": [
