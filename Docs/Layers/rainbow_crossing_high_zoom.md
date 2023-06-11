@@ -41,10 +41,10 @@ Elements must have the all of following tags to be shown on this layer:
 
 
   - <a href='https://wiki.openstreetmap.org/wiki/Key:highway' target='_blank'>highway</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:highway%3Dcrossing' target='_blank'>crossing</a>
-  - <a href='https://wiki.openstreetmap.org/wiki/Key:crossing:marking' target='_blank'>crossing:marking</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:crossing:marking%3Drainbow' target='_blank'>rainbow</a>
+  - <a href='https://wiki.openstreetmap.org/wiki/Key:surface:colour' target='_blank'>surface:colour</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:surface:colour%3Drainbow' target='_blank'>rainbow</a>
 
 
-[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22crossing%3Amarking%22%3D%22rainbow%22%5D%5B%22highway%22%3D%22crossing%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
+[Execute on overpass](http://overpass-turbo.eu/?Q=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B(%20%20%20%20nwr%5B%22surface%3Acolour%22%3D%22rainbow%22%5D%5B%22highway%22%3D%22crossing%22%5D(%7B%7Bbbox%7D%7D)%3B%0A)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B)
 
 
 
@@ -77,9 +77,9 @@ The question is  *Does this crossing has rainbow paintings?*
 
 
 
-  - *This crossing has rainbow paintings*  corresponds with  `crossing:marking=rainbow`
-  - *No rainbow paintings here*  corresponds with  `not:crossing:marking=rainbow`
-  - *No rainbow paintings here*  corresponds with  `crossing:marking!=rainbow`
+  - *This crossing has rainbow paintings*  corresponds with  `surface:colour=rainbow`
+  - *No rainbow paintings here*  corresponds with  `not:surface:colour=rainbow`
+  - *No rainbow paintings here*  corresponds with  `surface:colour!=rainbow`
   - This option cannot be chosen as answer
 
 
