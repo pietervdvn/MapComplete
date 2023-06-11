@@ -103,6 +103,8 @@ The question is  *What type of recycling is this?*
   - *This is a recycling container*  corresponds with  `recycling_type=container`
   - *This is a recycling centre*  corresponds with  `recycling_type=centre`
   - *Waste disposal container for residual waste*  corresponds with  `amenity=waste_disposal`
+  - *This is a pickup point. The waste material is placed here without placing it in a dedicated container.*  corresponds with  `recycling_type=pickup_point`
+  - *This is a dump where the waste material is stacked.*  corresponds with  `recycling_type=dump`
 
 
 
@@ -207,6 +209,8 @@ The question is  *What can be recycled here?*
   - Unselecting this answer will add 
   - *Residual waste can be recycled here*  corresponds with  `recycling:waste=yes`
   - Unselecting this answer will add 
+  - *Bicycles can be recycled here*  corresponds with  `recycling:bicycles=yes`
+  - Unselecting this answer will add 
 
 
 
@@ -245,6 +249,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
 
 This tagrendering is only visible in the popup if the following condition is met: `recycling_type=centre`
 
+This tagrendering has labels  `contact`
+
 
 
 ### email 
@@ -267,6 +273,8 @@ This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
 
 This tagrendering is only visible in the popup if the following condition is met: `recycling_type=centre`
 
+This tagrendering has labels  `contact`
+
 
 
 ### phone 
@@ -288,6 +296,8 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `recycling_type=centre`
+
+This tagrendering has labels  `contact`
 
 
 
@@ -405,7 +415,7 @@ This tagrendering has no question and is thus read-only
 
 id | question | osmTags
 ---- | ---------- | ---------
-open_now.0 | Opened now | _isOpen=yes
+open_now.0 | Open now | _isOpen=yes
 
 
 
@@ -429,10 +439,11 @@ recyclingType.13 | Recycling of paper | recycling:paper=yes
 recyclingType.14 | Recycling of plastic bottles | recycling:plastic_bottles=yes
 recyclingType.15 | Recycling of plastic packaging | recycling:plastic_packaging=yes
 recyclingType.16 | Recycling of plastic | recycling:plastic=yes
-recyclingType.17 | Recycling of scrap metal | recycling:printer_cartridges=yes
-recyclingType.18 | Recycling of small electrical appliances | recycling:scrap_metal=yes
-recyclingType.19 | Recycling of residual waste | recycling:small_appliances=yes\|recycling:small_electrical_appliances=yes
-recyclingType.20 | Recycling of residual waste | recycling:waste=yes
+recyclingType.17 | Recycling of scrap metal | recycling:scrap_metal=yes
+recyclingType.18 | Recycling of small electrical appliances | recycling:small_appliances=yes\|recycling:small_electrical_appliances=yes
+recyclingType.19 | Recycling of residual waste | recycling:waste=yes
+recyclingType.20 | Recycling of printer cartridges | recycling:printer_cartridges=yes
+recyclingType.21 | Recycling of bicycles | recycling:bicycles=yes
 
 
 

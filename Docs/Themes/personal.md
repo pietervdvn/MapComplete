@@ -54,6 +54,7 @@ This theme contains the following layers:
   - [fire_station](../Layers/fire_station.md)
   - [fitness_centre](../Layers/fitness_centre.md)
   - [fitness_station](../Layers/fitness_station.md)
+  - [fixme](../Layers/fixme.md)
   - [food](../Layers/food.md)
   - [ghost_bike](../Layers/ghost_bike.md)
   - [governments](../Layers/governments.md)

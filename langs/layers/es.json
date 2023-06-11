@@ -367,6 +367,9 @@
             "render": "Obra de arte"
         }
     },
+    "atm": {
+        "description": "Cajeros automáticos para retirar dinero"
+    },
     "barrier": {
         "description": "Obstáculos durante el uso de la bicicleta, como bolardos y barreras para bicicletas",
         "name": "Barreras",
@@ -486,6 +489,9 @@
             },
             "bench-backrest": {
                 "mappings": {
+                    "0": {
+                        "then": "Este banco tiene dos caras y comparte el respaldo"
+                    },
                     "1": {
                         "then": "Tiene respaldo"
                     },
@@ -4003,7 +4009,7 @@
                         "then": "Es un área exterior pero privada (ej: estacionamiento, gasolinera, patio, entrada, camino privado, ...)"
                     },
                     "2": {
-                        "then": "La vigilancia ocurre en un lugar interior privado, por ejemplo una tienda, un estacionamiento privado subterráneo, ..."
+                        "then": "La vigilancia ocurre en un lugar interior privado, por ejemplo una tienda, un estacionamiento privado subterráneo, …"
                     }
                 },
                 "question": "¿Qué tipo de vigilancia aplica a esta cámara?"

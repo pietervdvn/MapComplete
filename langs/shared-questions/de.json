@@ -214,6 +214,9 @@
                 },
                 "1": {
                     "then": "Hier wird Kartenzahlung akzeptiert"
+                },
+                "2": {
+                    "then": "Die Bezahlung per QR-Code ist hier möglich"
                 }
             },
             "question": "Welche Zahlungsmethoden werden hier akzeptiert?"

@@ -1,10 +1,10 @@
-import {TagsFilter} from "../../../Logic/Tags/TagsFilter"
-import {And} from "../../../Logic/Tags/And"
-import {Tag} from "../../../Logic/Tags/Tag"
-import {TagUtils} from "../../../Logic/Tags/TagUtils"
-import {Or} from "../../../Logic/Tags/Or"
-import {RegexTag} from "../../../Logic/Tags/RegexTag"
-import {describe, expect, it} from "vitest"
+import { TagsFilter } from "../../../Logic/Tags/TagsFilter"
+import { And } from "../../../Logic/Tags/And"
+import { Tag } from "../../../Logic/Tags/Tag"
+import { TagUtils } from "../../../Logic/Tags/TagUtils"
+import { Or } from "../../../Logic/Tags/Or"
+import { RegexTag } from "../../../Logic/Tags/RegexTag"
+import { describe, expect, it } from "vitest"
 
 describe("Tag optimalization", () => {
     describe("And", () => {
@@ -76,7 +76,6 @@ describe("Tag optimalization", () => {
             const opt = t.optimize()
             expect(typeof opt !== "boolean").true
             expect(TagUtils.toString(<TagsFilter>opt)).toBe("shop=sports")
-
         })
 
         it("should optimize nested ORs", () => {
@@ -271,7 +270,7 @@ describe("Tag optimalization", () => {
                 or: [
                     "club=climbing",
                     {
-                        and: ["sport=climbing", {or: ["club~*", "office~*"]}],
+                        and: ["sport=climbing", { or: ["club~*", "office~*"] }],
                     },
                     {
                         and: [

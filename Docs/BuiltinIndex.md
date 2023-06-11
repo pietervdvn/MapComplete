@@ -50,6 +50,7 @@
     + [export_as_gpx](#export_as_gpx)
     + [export_as_geojson](#export_as_geojson)
     + [minimap](#minimap)
+    + [contact](#contact)
     + [payment-options-split](#payment-options-split)
     + [denominations-coins](#denominations-coins)
     + [denominations-notes](#denominations-notes)
@@ -219,7 +220,6 @@
   - climbing_gym
   - dentist
   - fitness_centre
-  - fitness_station
   - food
   - kindergarten_childcare
   - pharmacy
@@ -264,7 +264,6 @@
   - food
   - governments
   - hackerspace
-  - hospital
   - hotel
   - kindergarten_childcare
   - nature_reserve
@@ -303,7 +302,6 @@
   - food
   - governments
   - hackerspace
-  - hospital
   - hotel
   - kindergarten_childcare
   - pharmacy
@@ -339,7 +337,6 @@
   - food
   - governments
   - hackerspace
-  - hospital
   - hotel
   - kindergarten_childcare
   - pharmacy
@@ -406,6 +403,7 @@
   - bike_repair_station
   - charging_station
   - defibrillator
+  - fitness_station
   - hackerspace
   - parcel_lockers
   - recycling
@@ -769,6 +767,17 @@
 
 
   - gps_track
+
+
+
+
+### contact 
+
+
+
+
+
+  - hospital
 
 
 

@@ -1,7 +1,7 @@
 Development and deployment
 ==========================
 
-There are various scripts to help setup MapComplete for deployment and develop-deployment.
+There are various scripts to help set up MapComplete for developing and for deployment.
 
 This documents attempts to shed some light on these scripts.
 
@@ -16,20 +16,22 @@ At its core, MapComplete is a static (!) website. There are no servers to host.
 The data is fetched from Overpass/OSM/Wikidata/Wikipedia/Mapillary/... and written there directly. This means that any
 static file server will do to create a self-hosted version of MapComplete.
 
-Development
------------
+Dependencies
+------------
 
-**Windows users**: All scripts are made for linux devices. Use the Ubuntu terminal for Windows (or even better - make
-the switch ;) ). If you are using Visual Studio Code you can use
-a [WSL Remote](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) window, or use the
-Devcontainer (see more details later).
+`make` , `python3`, `g++`
 
-You need at least 3Gb RAM available to run MapComplete, but you'll preferably have 8GB of free RAM available.
+(Nix users may run `nix-env -iA nixos.gnumake nixos.gdc nixos.python3`)
+
+Development using *NIX
+----------------------
+
+You need at least 3GB RAM available to run MapComplete, but you'll preferably have 8GB of free RAM available.
 
 To develop and build MapComplete, you
 
 0. Make a fork and clone the repository. (We recommend a shallow clone with `git clone --filter=blob:none <repo>`)
-1. Install `python3` if you do not have it already - On linux: `sudo apt install python3`
+1. Install `python3` if you do not have it already - On Linux: `sudo apt install python3`
 2. Install `nvm` to easily install node:
    - `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash`
    - Restart your terminal
@@ -37,16 +39,18 @@ To develop and build MapComplete, you
 4. Run `npm run init` (including **run**, not ~~`npm init`~~)which …
    - runs `npm ci` for you
    - generates some additional dependencies and files
-   - does various housekeeping and setup. This can take a few minutes the first time as some pngs need to be created
+   - does various housekeeping and setup. This can take a few minutes the first time as some PNGs need to be created
 5. Run `npm run start` to host a local testversion at http://localhost:1234/
 6. By default, a landing page with available themes is served. In order to load a single theme, use `layout=themename`
-   or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (
-   e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
+   or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs
+   (e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
 
-The previous instructions were tested on 2023-03-09 on a Ubuntu 22.04 machine
+The previous instructions were tested on 2023-03-09 on a Ubuntu 22.04 machine.
 
 Development using Windows
-------------------------
+-------------------------
+
+You need at least 3GB RAM available to run MapComplete, but you'll preferably have 8GB of free RAM available.
 
 For Windows you can use the devcontainer, or the WSL subsystem.
 
@@ -76,19 +80,12 @@ To use the WSL in Visual Studio Code:
    or `userlayout=true#<layout configuration>` as [Query parameter](URL_Parameters.md). Note that the shorter URLs (
    e.g. `bookcases.html`, `aed.html`, ...) _don't_ exist on the development version.
 
-Dependencies
-------------
-
-`make` , `python3` `g++`
-
-(Nix users may run `nix-env -iA nixos.gnumake nixos.gdc nixos.python3`)
-
 Automatic deployment
 --------------------
 
-Currently, the master branch is automatically deployed to 'mapcomplete.osm.be' by a github action.
+Currently, the master branch is automatically deployed to https://mapcomplete.osm.be/ by a GitHub action.
 
-Every branch is automatically built (upon push) to 'pietervdvn.github.io/mc/<branchname>' by a github action.
+Every branch is automatically built (upon push) to `https://pietervdvn.github.io/mc/<branchname>` by a GitHub action.
 
 
 Deploying a fork
@@ -96,7 +93,7 @@ Deploying a fork
 
 A script creates a webpage for every theme automatically, with some customizations in order to:
 
-- to have shorter urls
+- to have shorter URLs
 - have individual social images
 - have individual web manifests
 
@@ -112,7 +109,7 @@ If you want to deploy your fork:
 Weird errors
 ------------
 
-Try removing `node_modules`, `package-lock.json` and `.cache`
+Try removing `node_modules`, `package-lock.json` and `.cache`.
 
 Misc setup
 ----------
@@ -124,25 +121,25 @@ This merge driver is broken and would sometimes drop new questions or duplicate 
 Overview of package.json-scripts
 --------------------------------
 
-- `increase-memory`: this is a big (and memory-intensive) project to build and run, so we give nodejs some more RAM.
-- `start`: start a development server.
+- `increase-memory`: give Node.js some more RAM since this is a big (and memory intensive) project to build and run
+- `start`: start a development server
 - `test`: run the unit tests
-- `init`: Generates and downloads various assets which are needed to compile
-- `generate:editor-layer-index`: downloads the editor-layer-index-json from osmlab.github.io
-- `generate:images`: compiles the SVG's into an asset
-- `generate:translations`: compiles the translation file into a javascript file
-- `generate:layouts`: uses `index.html` as template to create all the theme index pages. You'll want to run `clean` when
+- `init`: generate and download various assets which are needed to compile
+- `generate:editor-layer-index`: download the editor-layer-index-json from osmlab.github.io
+- `generate:images`: compile the SVGs into an asset
+- `generate:translations`: compile the translation file into a JavaScript file
+- `generate:layouts`: use `index.html` as template to create all the theme index pages. You'll want to run `clean` when
   done
-- `generate:docs`: generates various documents, such as information about available metatags, information to put on
-  the [OSM-wiki](https://wiki.openstreetmap.org/wiki/MapComplete),...
-- `generate:report`: downloads statistics from OsmCha, compiles neat graphs
-- `generate:cache:speelplekken`: creates an offline copy of all the data required for one specific (paid for) theme
-- `generate:layeroverview`: reads all the theme- and layerconfigurations, compiles them into a single JSON.
-- `reset:layeroverview`: if something is wrong with the layeroverview, creates an empty one
-- `generate:licenses`: compiles all the license info of images into a single json
-- `optimize:images`: attempts to make smaller pngs - optional to run before a deployment
-- `generate`: run all the necesary generate-scripts
-- `build`: actually bundle all the files into a single `dist/`-folder
+- `generate:docs`: generate various documents, such as information about available metatags, information to put on
+  the [OSM wiki](https://wiki.openstreetmap.org/wiki/MapComplete), ...
+- `generate:report`: download statistics from OsmCha, compile neat graphs
+- `generate:cache:speelplekken`: create an offline copy of all the data required for one specific (paid for) theme
+- `generate:layeroverview`: read all the theme and layer configurations, compiles them into a single JSON.
+- `reset:layeroverview`: if something is wrong with the layer overview, create an empty one
+- `generate:licenses`: compile all the license info of images into a single JSON
+- `optimize:images`: attempt to make smaller PNGs - optional to run before a deployment
+- `generate`: run all the necessary generate-scripts
+- `build`: actually bundle all the files into a single `dist/` folder
 - `prepare-deploy`: create the layouts
 - `deploy:staging`,`deploy:pietervdvn`, `deploy:production`: deploy the latest code on various locations
 - `lint`: get depressed by the amount of warnings

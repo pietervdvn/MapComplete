@@ -187,7 +187,7 @@ The question is  *What kind of message is shown?*
   - Unselecting this answer will add 
   - *Local information*  corresponds with  `message=local`
   - Unselecting this answer will add 
-  - *Securty information*  corresponds with  `message=safety`
+  - *Security information*  corresponds with  `message=safety`
   - Unselecting this answer will add 
   - *Electoral advertising*  corresponds with  `message=political`
   - Unselecting this answer will add 

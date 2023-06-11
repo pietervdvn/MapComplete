@@ -1,5 +1,7 @@
 # Integrating MapRoulette
 
+## Importing points
+
 [MapRoulette](https://www.maproulette.org/) is a website which has challenges. A challenge is a collection of _microtasks_, i.e. mapping tasks which can be solved in a few minutes.
 
 A perfect example of this is to setup such a challenge to e.g. import new points. 
@@ -7,6 +9,12 @@ A perfect example of this is to setup such a challenge to e.g. import new points
 > [Important: always follow the import guidelines if you want to import data.](https://wiki.openstreetmap.org/wiki/Import/Guidelines)
 
 (Another approach to set up a guided import is to create a map note for every point with the [import helper](https://mapcomplete.osm.be/import_helper). This however litters the map notes and will upset mappers if used with to much points. However, this flow is easier to setup as no changes to theme files are needed, nor is a maproulette-account needed)
+
+## Preparing the data
+
+Convert your source data into a geojson. Use *`tags`* as field where all the OSM-properties should go. Make sure to include all tags there.
+
+Hint: MapRoulette has a button 'rebuild task', where you can first 'remove all incomplete tasks'. This is perfect to start over in case of small data errors.
 
 ## The API
 
@@ -21,6 +29,20 @@ To view the overview a single challenge, visit `https://maproulette.org/browse/c
 browser.
 The API endpoint for a single challenge is `https://maproulette.org/api/v2/challenge/view/<challenge-id>` which returns a
 geojson.
+
+Override the geojson-source in order to use the challenge:
+
+``` 
+{
+    "builtin": "maproulette_challenge",
+    "override" : {
+        "source": {
+            "geoJson": "https://maproulette.org/api/v2/challenge/view/<challenge-id>"
+        }
+    }
+}
+```
+
 
 ## Displaying MapRoulette data in MapComplete
 
@@ -37,9 +59,9 @@ The following example is to match hotels:
 
 ```
     "calculatedTags": [
-      "_closest_osm_hotel=feat.closest('hotel')?.properties?.id",
-      "_closest_osm_hotel_distance=feat.distanceTo(feat.properties._closest_osm_hotel)",
-      "_has_closeby_feature=Number(feat.properties._closest_osm_hotel_distance) < 50 ? 'yes' : 'no'"
+      "_closest_osm_poi=feat.closest('hotel')?.properties?.id",
+      "_closest_osm_poi_distance=feat.distanceTo(feat.properties._closest_osm_poi)",
+      "_has_closeby_feature=Number(feat.properties._closest_osm_poi_distance) < 50 ? 'yes' : 'no'"
     ], 
 ```
 
@@ -56,11 +78,12 @@ Note that the import button has support for MapRoulette and is able to close the
 ```json
 {
     "id": "import-button",
+    "condition": "_has_closeby_feature=no",
     "render": {
       "special": {
         "type": "import_button",
         "targetLayer": "<the layer in which the point should appear afterwards>",
-        "tags": "tags", -- should stay 'tags'
+        "tags": "tags", -- should stay 'tags', unless you took a different name while creating the data
         "maproulette_id": "mr_taskId",  -- important to get the task closed
         "text": {
           "en": "Import this point" -- or a nice message
@@ -88,7 +111,7 @@ The following example uses the calculated tags `_has_closeby_feature` and `_clos
       "special": {
         "type": "tag_apply",
         "tags_to_apply": "$tags", -- note the '$', property containing the tags
-        "id_of_object_to_apply_this_one": "_closest_osm_hotel" -- id of the feature to add those tags to
+        "id_of_object_to_apply_this_one": "_closest_osm_poi" -- id of the feature to add those tags to
         "message": {
           "en": "Add all the suggested tags"
         },

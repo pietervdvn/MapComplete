@@ -37,7 +37,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/level#values) [level](https://wiki.openstreetmap.org/wiki/Key:level) | [float](../SpecialInputElements.md#float) | [0](https://wiki.openstreetmap.org/wiki/Tag:level%3D0) [1](https://wiki.openstreetmap.org/wiki/Tag:level%3D1) [-1](https://wiki.openstreetmap.org/wiki/Tag:level%3D-1)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/barrier#values) [barrier](https://wiki.openstreetmap.org/wiki/Key:barrier) | Multiple choice | [gate](https://wiki.openstreetmap.org/wiki/Tag:barrier%3Dgate)
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | [Nederlandse Spoorwegen](https://wiki.openstreetmap.org/wiki/Tag:operator%3DNederlandse Spoorwegen)
 
 
 
@@ -129,6 +129,11 @@ This is rendered with  `This ticket validator is operated by {operator}`
 
 
 
+  - *Dutch Railways (NS)*  corresponds with  `operator=Nederlandse Spoorwegen`
+
+
+
+
 ### payment-options 
 
 
@@ -143,6 +148,8 @@ The question is  *Which methods of payment are accepted here?*
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
   - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
   - *This ticket validator accepts OV-Chipkaart*  corresponds with  `payment:OV-Chipkaart=yes`
   - This option cannot be chosen as answer
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:OV-Chipkaart' target='_blank'>payment:OV-Chipkaart</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:OV-Chipkaart%3Dno' target='_blank'>no</a>
@@ -167,6 +174,26 @@ This tagrendering has no question and is thus read-only
 
 
 Shows a small map with the feature. Added by default to every popup
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### move-button 
+
+
+
+This tagrendering has no question and is thus read-only
+
+
+
+
+
+### delete-button 
+
+
 
 This tagrendering has no question and is thus read-only
 

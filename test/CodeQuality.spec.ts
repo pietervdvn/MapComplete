@@ -54,13 +54,13 @@ function detectInCode(forbidden: string, reason: string): Promise<void> {
     })
 }
 
-function wrap(promise: Promise<void>): ((done: () => void) => void) {
-    return (done => {
+function wrap(promise: Promise<void>): (done: () => void) => void {
+    return (done) => {
         promise.then(done)
-    })
+    }
 }
 
-function itAsync(name: string, promise: Promise<void>){
+function itAsync(name: string, promise: Promise<void>) {
     it(name, wrap(promise))
 }
 

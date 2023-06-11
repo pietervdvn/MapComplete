@@ -104,11 +104,11 @@ The question is  *What kind of bicycle rental is this?*
 
 
   - *This is a shop whose main focus is bicycle rental*  corresponds with  `shop=rental&bicycle_rental=shop`
-  - *This is a rental buisiness which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus*  corresponds with  `shop=rental`
+  - *This is a rental business which rents out various objects and/or vehicles. It rents out bicycles too, but this is not the main focus*  corresponds with  `shop=rental`
   - *This is a shop which sells or repairs bicycles, but also rents out bicycles*  corresponds with  `service:bicycle:rental=yes&shop=bicycle`
-  - *This is an automated docking station, where a bicycle is mechanically locked into a structure*  corresponds with  `bicycle_rental=docking_station`
+  - *This is an automated docking station, where a bicycle is mechanically locked to a structure*  corresponds with  `bicycle_rental=docking_station`
   - *A machine is present which dispenses and accepts keys, eventually after authentication and/or payment. The bicycles are parked nearby*  corresponds with  `bicycle_rental=key_dispensing_machine`
-  - *This is a dropoff point, e.g. a reserved parking to place the bicycles which clearly marked as being for the rental service only*  corresponds with  `bicycle_rental=dropoff_point`
+  - *This is a dropoff point, e.g. a reserved parking to place the bicycles clearly marked as being for the rental service only*  corresponds with  `bicycle_rental=dropoff_point`
 
 
 This tagrendering is only visible in the popup if the following condition is met: `amenity=bicycle_rental`
@@ -133,6 +133,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
   - This option cannot be chosen as answer
 
 
+This tagrendering has labels  `contact`
+
 
 
 ### email 
@@ -153,6 +155,8 @@ This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
   - This option cannot be chosen as answer
 
 
+This tagrendering has labels  `contact`
+
 
 
 ### phone 
@@ -172,6 +176,8 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
   - *<a href='tel:{contact:phone}'>{contact:phone}</a>*  corresponds with  `contact:phone~.+`
   - This option cannot be chosen as answer
 
+
+This tagrendering has labels  `contact`
 
 
 
@@ -205,6 +211,8 @@ The question is  *Which methods of payment are accepted here?*
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
   - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
 
 
 This tagrendering is only visible in the popup if the following condition is met: `shop~.+`
@@ -225,6 +233,8 @@ The question is  *Which methods of payment are accepted here?*
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cash' target='_blank'>payment:cash</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cash%3Dno' target='_blank'>no</a>
   - *Payment cards are accepted here*  corresponds with  `payment:cards=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:cards' target='_blank'>payment:cards</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:cards%3Dno' target='_blank'>no</a>
+  - *Payment by QR-code is possible here*  corresponds with  `payment:qr_code=yes`
+  - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:qr_code' target='_blank'>payment:qr_code</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:qr_code%3Dno' target='_blank'>no</a>
   - *Payment is done using a dedicated app*  corresponds with  `payment:app=yes`
   - Unselecting this answer will add <a href='https://wiki.openstreetmap.org/wiki/Key:payment:app' target='_blank'>payment:app</a>=<a href='https://wiki.openstreetmap.org/wiki/Tag:payment:app%3Dno' target='_blank'>no</a>
   - *Payment is done using a membership card*  corresponds with  `payment:membership_card=yes`
@@ -265,7 +275,7 @@ This tagrendering has labels  `bicycle_rental`
 
 
 
-The question is  *How much city bikes can be rented here?*
+The question is  *How many city bikes can be rented here?*
 
 This rendering asks information about the property  [capacity:city_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:city_bike) 
 
@@ -283,7 +293,7 @@ This tagrendering has labels  `bicycle_rental`
 
 
 
-The question is  *How much electrical bikes can be rented here?*
+The question is  *How many electrical bikes can be rented here?*
 
 This rendering asks information about the property  [capacity:ebike](https://wiki.openstreetmap.org/wiki/Key:capacity:ebike) 
 
@@ -301,7 +311,7 @@ This tagrendering has labels  `bicycle_rental`
 
 
 
-The question is  *How much bikes for children can be rented here?*
+The question is  *How many bikes for children can be rented here?*
 
 This rendering asks information about the property  [capacity:kid_bike](https://wiki.openstreetmap.org/wiki/Key:capacity:kid_bike) 
 
@@ -319,7 +329,7 @@ This tagrendering has labels  `bicycle_rental`
 
 
 
-The question is  *How much BMX bikes can be rented here?*
+The question is  *How many BMX bikes can be rented here?*
 
 This rendering asks information about the property  [capacity:bmx](https://wiki.openstreetmap.org/wiki/Key:capacity:bmx) 
 
@@ -337,11 +347,11 @@ This tagrendering has labels  `bicycle_rental`
 
 
 
-The question is  *How much mountainbike can be rented here?*
+The question is  *How many mountainbikes can be rented here?*
 
 This rendering asks information about the property  [capacity:mtb](https://wiki.openstreetmap.org/wiki/Key:capacity:mtb) 
 
-This is rendered with  `{capacity:mtb} mountainbike can be rented here`
+This is rendered with  `{capacity:mtb} mountainbikes can be rented here`
 
 
 
@@ -355,7 +365,7 @@ This tagrendering has labels  `bicycle_rental`
 
 
 
-The question is  *How much bicycle panniers can be rented here?*
+The question is  *How many bicycle panniers can be rented here?*
 
 This rendering asks information about the property  [capacity:bicycle_pannier](https://wiki.openstreetmap.org/wiki/Key:capacity:bicycle_pannier) 
 
@@ -373,7 +383,7 @@ This tagrendering has labels  `bicycle_rental`
 
 
 
-The question is  *How much tandem can be rented here?*
+The question is  *How many tandem can be rented here?*
 
 This rendering asks information about the property  [capacity:tandem_bicycle](https://wiki.openstreetmap.org/wiki/Key:capacity:tandem_bicycle) 
 

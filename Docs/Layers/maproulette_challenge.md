@@ -7,7 +7,7 @@
 
 <img src='https://mapcomplete.osm.be/./assets/layers/maproulette/logomark.svg' height="100px"> 
 
-Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to the documentation on how to do this.
+Layer showing tasks of a single MapRoulette challenge. This layer is intended to be reused and extended in themes; refer to [the documentation](https://github.com/pietervdvn/MapComplete/blob/develop/Docs/Integrating_Maproulette.md) on how to do this.
 
 
 
@@ -27,6 +27,7 @@ Layer showing tasks of a single MapRoulette challenge. This layer is intended to
 
 
 
+  - [atm](https://mapcomplete.osm.be/atm)
   - [onwheels](https://mapcomplete.osm.be/onwheels)
   - [personal](https://mapcomplete.osm.be/personal)
 

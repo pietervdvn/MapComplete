@@ -304,6 +304,7 @@ Which methods of payment are accepted here?
 
   - Cash is accepted here
   - Payment cards are accepted here
+  - Payment by QR-code is possible here
 
 
 
@@ -318,6 +319,7 @@ Which methods of payment are accepted here?
 
   - Cash is accepted here
   - Payment cards are accepted here
+  - Payment by QR-code is possible here
   - Coins are accepted here
   - Bank notes are accepted here
   - Debit cards are accepted here
@@ -336,6 +338,7 @@ Which methods of payment are accepted here?
 
   - Cash is accepted here
   - Payment cards are accepted here
+  - Payment by QR-code is possible here
   - Payment is done using a dedicated app
   - Payment is done using a membership card
 

@@ -14,7 +14,7 @@ A financial institution to deposit money
 
 
 
-  - This layer is shown at zoomlevel **0** and higher
+  - This layer is shown at zoomlevel **14** and higher
   - Not visible in the layer selection by default. If you want to make this layer toggable, override `name`
 
 
@@ -142,7 +142,7 @@ This tagrendering has no question and is thus read-only
 
 id | question | osmTags
 ---- | ---------- | ---------
-open_now.0 | Opened now | _isOpen=yes
+open_now.0 | Open now | _isOpen=yes
 
 
 

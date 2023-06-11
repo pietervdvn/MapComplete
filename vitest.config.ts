@@ -6,6 +6,6 @@ export default defineConfig({
     test: {
         globals: true,
         setupFiles: ["./test/testhooks.ts"],
-        include: ["./test/*.spec.ts","./test/**/*.spec.ts", "./*.doctest.ts", "./**/*.doctest.ts"],
+        include: ["./test/*.spec.ts", "./test/**/*.spec.ts", "./*.doctest.ts", "./**/*.doctest.ts"],
     },
 })

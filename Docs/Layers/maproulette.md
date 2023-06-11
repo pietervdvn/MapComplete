@@ -90,6 +90,8 @@ This tagrendering has no question and is thus read-only
 
 
 
+This tagrendering has labels  `controls`
+
 
 
 ### mark_duplicate 
@@ -100,6 +102,8 @@ This tagrendering has no question and is thus read-only
 
 
 
+This tagrendering has labels  `controls`
+
 
 
 ### mark_too_hard 
@@ -109,6 +113,8 @@ This tagrendering has no question and is thus read-only
 This tagrendering has no question and is thus read-only
 
 
+
+This tagrendering has labels  `controls`
 
 
 

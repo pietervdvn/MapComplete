@@ -11,7 +11,8 @@
   - [Metatags calculated by MapComplete](#metatags-calculated-by-mapcomplete)
     + [_lat, _lon](#_lat,-_lon)
     + [_layer](#_layer)
-    + [_surface, _surface:ha](#_surface,-_surfaceha)
+    + [_surface](#_surface)
+    + [_surface:ha](#_surfaceha)
     + [_length, _length:km](#_length,-_lengthkm)
     + [Theme-defined keys](#theme-defined-keys)
     + [_country](#_country)
@@ -72,11 +73,21 @@ The layer-id to which this feature belongs. Note that this might be return any a
 
 
 
-### _surface, _surface:ha 
+### _surface 
 
 
 
-The surface area of the feature, in square meters and in hectare. Not set on points and ways
+The surface area of the feature in square meters. Not set on points and ways
+
+This is a lazy metatag and is only calculated when needed
+
+
+
+### _surface:ha 
+
+
+
+The surface area of the feature in hectare. Not set on points and ways
 
 This is a lazy metatag and is only calculated when needed
 
@@ -242,7 +253,7 @@ To enable this feature,  add a field `calculatedTags` in the layer object, e.g.:
 
     "name=feat.properties.name ?? feat.properties.ref ?? feat.properties.operator",
 
-    "_distanceCloserThen3Km=feat.distanceTo( some_lon, some_lat) < 3 ? 'yes' : 'no'" 
+    "_distanceCloserThen3Km=distanceTo(feat)( some_lon, some_lat) < 3 ? 'yes' : 'no'" 
 
   ]
 
@@ -258,7 +269,7 @@ The above code will be executed for every feature in the layer. The feature is a
   - `lat` and `lon` contain the latitude and longitude
 
 
-Some advanced functions are available on **feat** as well: 
+Some advanced functions are available as well. Due to technical reasons, they should be used as `funcname(feat)(arguments)`. 
 
   - [distanceTo](#distanceTo)
   - [overlapWith](#overlapWith)
@@ -285,7 +296,7 @@ If the current feature is a point, all features that this point is embeded in ar
 The returned value is `{ feat: GeoJSONFeature, overlap: number}[]` where `overlap` is the overlapping surface are (in m²) for areas, the overlapping length (in meter) if the current feature is a line or `undefined` if the current feature is a point.
 The resulting list is sorted in descending order by overlap. The feature with the most overlap will thus be the first in the list.
 
-For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=feat.overlapWith('climbing_route')`
+For example to get all objects which overlap or embed from a layer, use `_contained_climbing_routes_properties=overlapWith(feat)('climbing_route')`
 
 Also see [enclosingFeatures](#enclosingFeatures) which can be used to get all objects which fully contain this feature 
 

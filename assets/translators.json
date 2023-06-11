@@ -1,11 +1,11 @@
 {
   "contributors": [
     {
-      "commits": 273,
+      "commits": 276,
       "contributor": "kjon"
     },
     {
-      "commits": 269,
+      "commits": 270,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -134,11 +134,15 @@
     },
     {
       "commits": 8,
+      "contributor": "Ettore Atalan"
+    },
+    {
+      "commits": 8,
       "contributor": "Vinicius"
     },
     {
       "commits": 7,
-      "contributor": "Ettore Atalan"
+      "contributor": "Joost Schouppe"
     },
     {
       "commits": 7,
@@ -158,6 +162,10 @@
     },
     {
       "commits": 6,
+      "contributor": "Leonardo Gómez Berniga"
+    },
+    {
+      "commits": 6,
       "contributor": "Felipe Nogueira"
     },
     {
@@ -171,10 +179,6 @@
     {
       "commits": 6,
       "contributor": "ⵣⵓⵀⵉⵔ ⴰⵎⴰⵣⵉⵖ زهير أمازيغ"
-    },
-    {
-      "commits": 6,
-      "contributor": "Joost Schouppe"
     },
     {
       "commits": 6,
@@ -195,6 +199,10 @@
     {
       "commits": 6,
       "contributor": "lvgx"
+    },
+    {
+      "commits": 5,
+      "contributor": "Piotr Strebski"
     },
     {
       "commits": 5,
@@ -259,10 +267,6 @@
     {
       "commits": 4,
       "contributor": "Jan Zabel"
-    },
-    {
-      "commits": 3,
-      "contributor": "Piotr Strebski"
     },
     {
       "commits": 3,
@@ -403,6 +407,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "LuPa"
     },
     {
       "commits": 1,

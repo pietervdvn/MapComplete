@@ -15,8 +15,6 @@ Schools giving primary and secondary education and post-secondary, non-tertiary 
 
 
   - This layer is shown at zoomlevel **12** and higher
-  - This layer will automatically load  [school](./school.md)  into the layout as it depends on it:  a calculated tag loads features from this layer (calculatedTag[0] which calculates the value for _enclosing)
-  - This layer is needed as dependency for layer [school](#school)
 
 
 
@@ -197,6 +195,8 @@ This is rendered with  `<a href='{website}' rel='nofollow noopener noreferrer' t
   - This option cannot be chosen as answer
 
 
+This tagrendering has labels  `contact`
+
 
 
 ### phone 
@@ -217,6 +217,8 @@ This is rendered with  `<a href='tel:{phone}'>{phone}</a>`
   - This option cannot be chosen as answer
 
 
+This tagrendering has labels  `contact`
+
 
 
 ### email 
@@ -236,6 +238,8 @@ This is rendered with  `<a href='mailto:{email}' target='_blank'>{email}</a>`
   - *<a href='mailto:{contact:email}' target='_blank'>{contact:email}</a>*  corresponds with  `contact:email~.+`
   - This option cannot be chosen as answer
 
+
+This tagrendering has labels  `contact`
 
 
 
