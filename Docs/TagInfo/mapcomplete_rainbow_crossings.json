@@ -11,7 +11,7 @@
   },
   "tags": [
     {
-      "key": "highway",
+      "key": "footway",
       "description": "The MapComplete theme Rainbow pedestrian crossings has a layer Crossings with rainbow paintings showing features with this tag",
       "value": "crossing"
     },
@@ -32,13 +32,13 @@
       "description": "The layer 'Crossings with rainbow paintings allows to upload images and adds them under the 'image'-tag (and image:0, image:1, ... for multiple images). Furhtermore, this layer shows images based on the keys image, wikidata, wikipedia, wikimedia_commons and mapillary"
     },
     {
-      "key": "crossing:marking",
-      "description": "Layer 'Crossings with rainbow paintings' shows crossing:marking=rainbow with a fixed text, namely 'This crossing has rainbow paintings' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings') (This is only shown if highway=crossing)",
+      "key": "surface:colour",
+      "description": "Layer 'Crossings with rainbow paintings' shows surface:colour=rainbow with a fixed text, namely 'This crossing has rainbow paintings' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings') (This is only shown if footway=crossing)",
       "value": "rainbow"
     },
     {
-      "key": "not:crossing:marking",
-      "description": "Layer 'Crossings with rainbow paintings' shows not:crossing:marking=rainbow with a fixed text, namely 'No rainbow paintings here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings') (This is only shown if highway=crossing)",
+      "key": "not:surface:colour",
+      "description": "Layer 'Crossings with rainbow paintings' shows not:surface:colour=rainbow with a fixed text, namely 'No rainbow paintings here' and allows to pick this as a default answer (in the MapComplete.osm.be theme 'Rainbow pedestrian crossings') (This is only shown if footway=crossing)",
       "value": "rainbow"
     }
   ]
