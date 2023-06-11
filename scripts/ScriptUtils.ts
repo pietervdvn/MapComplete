@@ -146,17 +146,20 @@ export default class ScriptUtils {
 
     private static async DownloadJSON(url: string, headers?: any): Promise<any> {
         const data = await ScriptUtils.Download(url, headers)
-        return JSON.parse(data.content)
+        return JSON.parse(data["content"])
     }
 
-    private static Download(url: string, headers?: any): Promise<{ content: string }> {
+    public static Download(
+        url: string,
+        headers?: any
+    ): Promise<{ content: string } | { redirect: string }> {
         return new Promise((resolve, reject) => {
             try {
                 headers = headers ?? {}
                 headers.accept = "application/json"
-                console.log(" > ScriptUtils.DownloadJson(", url, ")")
+                console.log(" > ScriptUtils.Download(", url, ")")
                 const urlObj = new URL(url)
-                https.get(
+                const request = https.get(
                     {
                         host: urlObj.host,
                         path: urlObj.pathname + urlObj.search,
@@ -173,10 +176,26 @@ export default class ScriptUtils {
                         })
 
                         res.addListener("end", function () {
+                            if (res.statusCode === 301 || res.statusCode === 302) {
+                                console.log("Got a redirect:", res.headers.location)
+                                resolve({ redirect: res.headers.location })
+                            }
+                            if (res.statusCode >= 400) {
+                                console.log(
+                                    "Error while fetching ",
+                                    url,
+                                    "due to",
+                                    res.statusMessage
+                                )
+                                reject(res.statusCode)
+                            }
                             resolve({ content: parts.join("") })
                         })
                     }
                 )
+                request.on("error", function (e) {
+                    reject(e)
+                })
             } catch (e) {
                 reject(e)
             }

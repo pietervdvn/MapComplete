@@ -38,7 +38,7 @@
         "source": {
           "osmTags": {
             "and+": [
-              "crossing:marking=rainbow"
+              "surface:colour=rainbow"
             ]
           }
         }

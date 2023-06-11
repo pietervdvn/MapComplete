@@ -93,13 +93,13 @@ The question is  *Does this crossing has rainbow paintings?*
 
 
 
-  - *This crossing has rainbow paintings*  corresponds with  `crossing:marking=rainbow`
-  - *No rainbow paintings here*  corresponds with  `not:crossing:marking=rainbow`
-  - *No rainbow paintings here*  corresponds with  `crossing:marking!=rainbow`
+  - *This crossing has rainbow paintings*  corresponds with  `surface:colour=rainbow`
+  - *No rainbow paintings here*  corresponds with  `not:surface:colour=rainbow`
+  - *No rainbow paintings here*  corresponds with  `surface:colour!=rainbow`
   - This option cannot be chosen as answer
 
 
-This tagrendering is only visible in the popup if the following condition is met: `highway=crossing`
+This tagrendering is only visible in the popup if the following condition is met: `footway=crossing`
 
 
 

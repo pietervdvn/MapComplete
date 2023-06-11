@@ -15,4 +15,8 @@ export default abstract class Script {
         args.splice(0, 2)
         this.main(args).then((_) => console.log("All done"))
     }
+
+    public printHelp(){
+        console.log(this._docs)
+    }
 }

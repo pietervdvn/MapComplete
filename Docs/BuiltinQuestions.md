@@ -63,7 +63,7 @@ The following items can be easily reused in your layers
 
 
 
-{image_carousel()}{image_upload()}{nearby_images(expandable)}
+{image_carousel()}{image_upload()}
 
 *Read-only tagrendering*
 

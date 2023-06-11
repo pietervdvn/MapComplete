@@ -80,6 +80,7 @@
     + [settings-link](#settings-link)
     + [logout](#logout)
     + [picture-license](#picture-license)
+    + [show_tags](#show_tags)
     + [all-questions-at-once](#all-questions-at-once)
     + [translations-title](#translations-title)
     + [translation-mode](#translation-mode)
@@ -1043,6 +1044,7 @@ attribute | type | values which are supported by this layer
 ----------- | ------ | ------------------------------------------
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/id#values) [id](https://wiki.openstreetmap.org/wiki/Key:id) | Multiple choice | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-pictures-license#values) [mapcomplete-pictures-license](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-pictures-license) | Multiple choice | [CC0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC0) [CC-BY 4.0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC-BY 4.0) [CC-BY-SA 4.0](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-pictures-license%3DCC-BY-SA 4.0)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-show_tags#values) [mapcomplete-show_tags](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show_tags) | Multiple choice | [no](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_tags%3Dno) [](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_tags%3D) [yes](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_tags%3Dyes) [full](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show_tags%3Dfull)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-show-all-questions#values) [mapcomplete-show-all-questions](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-show-all-questions) | Multiple choice | [true](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show-all-questions%3Dtrue) [false](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-show-all-questions%3Dfalse)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-translation-mode#values) [mapcomplete-translation-mode](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode) | Multiple choice | [false](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dfalse) [true](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dtrue) [mobile](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dmobile)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/mapcomplete-translation-mode#values) [mapcomplete-translation-mode](https://wiki.openstreetmap.org/wiki/Key:mapcomplete-translation-mode) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:mapcomplete-translation-mode%3Dyes)
@@ -1144,6 +1146,24 @@ The question is  *Under what license do you want to publish your pictures?*
   - *Pictures you take will be licensed with <b>CC0</b> and added to the public domain. This means that everyone can use your pictures for any purpose.*  corresponds with  `mapcomplete-pictures-license=CC0`
   - *Pictures you take will be licensed with <b>CC-BY 4.0</b> which requires everyone using your picture that they have to attribute you*  corresponds with  `mapcomplete-pictures-license=CC-BY 4.0`
   - *Pictures you take will be licensed with <b>CC-BY-SA 4.0</b> which means that everyone using your picture must attribute you and that derivatives of your picture must be reshared with the same license.*  corresponds with  `mapcomplete-pictures-license=CC-BY-SA 4.0`
+
+
+
+
+### show_tags 
+
+
+
+The question is  *Show the raw OpenStreetMap-tags?*
+
+
+
+
+
+  - *Never show the tags.*  corresponds with  `mapcomplete-show_tags=no`
+  - *Show the tags that will be applied once I have made {__userjourney_tagsVisibleAt} changesets*  corresponds with  ``
+  - *Show the tags that will be applied when making a change*  corresponds with  `mapcomplete-show_tags=yes`
+  - *Show the tags that will be applied when making a change and show the tags table on every feature*  corresponds with  `mapcomplete-show_tags=full`
 
 
 
@@ -1395,6 +1415,7 @@ The following layers are included in MapComplete:
   - [fire_station](./Layers/fire_station.md)
   - [fitness_centre](./Layers/fitness_centre.md)
   - [fitness_station](./Layers/fitness_station.md)
+  - [fixme](./Layers/fixme.md)
   - [food](./Layers/food.md)
   - [ghost_bike](./Layers/ghost_bike.md)
   - [governments](./Layers/governments.md)

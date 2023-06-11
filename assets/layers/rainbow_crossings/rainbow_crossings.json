@@ -13,7 +13,18 @@
     "ca": "Una capa que mostra els passos de vianants pintats amb de l'arc de Sant Martí"
   },
   "source": {
-    "osmTags": "highway=crossing"
+    "osmTags": {
+      "or": [
+        "surface:colour=rainbow",
+        "highway=crossing",
+        {
+          "and": [
+            "highway=footway",
+            "footway=crossing"
+          ]
+        }
+      ]
+    }
   },
   "minzoom": 17,
   "title": {
@@ -34,7 +45,8 @@
         "fr": "un passage"
       },
       "tags": [
-        "highway=crossing"
+        "highway=footway",
+        "footway=crossing"
       ],
       "description": {
         "en": "Pedestrian crossing",
@@ -62,10 +74,10 @@
         "fr": "Ce passage a-t-il une peinture arc-en-ciel ?",
         "ca": "Aquest pas de vianants està pintat amb l'arc de Sant Martí?"
       },
-      "condition": "highway=crossing",
+      "condition": "footway=crossing",
       "mappings": [
         {
-          "if": "crossing:marking=rainbow",
+          "if": "surface:colour=rainbow",
           "then": {
             "en": "This crossing has rainbow paintings",
             "de": "Der Überweg hat eine Markierung in Regenbogenfarben",
@@ -78,7 +90,7 @@
           }
         },
         {
-          "if": "not:crossing:marking=rainbow",
+          "if": "not:surface:colour=rainbow",
           "then": {
             "en": "No rainbow paintings here",
             "de": "Hier gibt es kein Markierung in Regenbogenfarben",
@@ -88,7 +100,7 @@
           "icon": "./assets/themes/rainbow_crossings/crossing.svg"
         },
         {
-          "if": "crossing:marking!=rainbow",
+          "if": "surface:colour!=rainbow",
           "then": {
             "en": "No rainbow paintings here",
             "de": "Hier gibt es kein Markierung in Regenbogenfarben",
@@ -107,7 +119,7 @@
         "render": "./assets/themes/rainbow_crossings/crossing.svg",
         "mappings": [
           {
-            "if": "crossing:marking=rainbow",
+            "if": "surface:colour=rainbow",
             "then": "./assets/themes/rainbow_crossings/logo.svg"
           }
         ]
@@ -117,6 +129,12 @@
         "point",
         "centroid"
       ]
+    },
+    {
+      "color": "red",
+      "width": "5",
+      "dashArray": "10 2",
+      "lineCap": "square"
     }
   ]
 }

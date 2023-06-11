@@ -1,5 +1,9 @@
 import * as fs from "fs"
-import { OH } from "../UI/OpeningHours/OpeningHours"
+import { OH } from "../../UI/OpeningHours/OpeningHours"
+
+/*
+ * One-shot script to import data about bicycle rental from West-Flanders
+ */
 
 function extractValue(vs: { __value }[]) {
     if (vs === undefined) {
