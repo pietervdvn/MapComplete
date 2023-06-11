@@ -2913,6 +2913,17 @@
             "name": {
                 "question": "Wat is de naam van dit Klimzaal?"
             },
+            "rope_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Een klimtouw kan hier gehuurd worden"
+                    },
+                    "1": {
+                        "then": "Hier kunnen <b>geen</b> klimtouwen gehuurd worden"
+                    }
+                },
+                "question": "Kan een klimtouw hier gehuurd worden?"
+            },
             "shoe_rental": {
                 "mappings": {
                     "0": {
@@ -7332,6 +7343,9 @@
                     },
                     "5": {
                         "then": "Hier kan men basketbal beoefenen"
+                    },
+                    "6": {
+                        "then": "Dit is een skatepark"
                     }
                 },
                 "question": "Welke sporten kan men hier beoefenen?",

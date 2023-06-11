@@ -14,9 +14,15 @@
   },
   "source": {
     "osmTags": {
-      "and": [
-        "highway=footway",
-        "footway=crossing"
+      "or": [
+        "surface:colour=rainbow",
+        "highway=crossing",
+        {
+          "and": [
+            "highway=footway",
+            "footway=crossing"
+          ]
+        }
       ]
     }
   },
@@ -123,6 +129,12 @@
         "point",
         "centroid"
       ]
+    },
+    {
+      "color": "red",
+      "width": "5",
+      "dashArray": "10 2",
+      "lineCap": "square"
     }
   ]
 }
