@@ -39,6 +39,7 @@
         "fr": "un passage"
       },
       "tags": [
+        "highway=footway",
         "footway=crossing"
       ],
       "description": {
