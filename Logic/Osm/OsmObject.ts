@@ -198,23 +198,25 @@ export class OsmNode extends OsmObject {
         this.LoadData(extraData)
     }
 
+
+    /**
+     *
+     * const obj = new OsmNode(1234)
+     * obj.tags.key = "value"
+     * obj.lat = 1
+     * obj.lon = 2
+     * obj.ChangesetXML("123").trim() // => '<node id="1234"   changeset="123"  lat="1" lon="2">\n        <tag k="key" v="value"/>\n    </node>'
+     *
+     * @param changesetId
+     * @param header
+     * @constructor
+     */
     ChangesetXML(changesetId: string, header?: string): string {
         let tags = this.TagsXML()
-
         return (
-            '    <node id="' +
-            this.id +
-            '" ' +
-                (header ?? "") +
-            (changesetId ? ('" changeset="' + changesetId) : "" ) +
-            this.VersionXML() +
-            ' lat="' +
-            this.lat +
-            '" lon="' +
-            this.lon +
-            '">\n' +
-            tags +
-            "    </node>\n"
+            `    <node id="${this.id}" ${header ?? ""} ${changesetId ? (' changeset="' + changesetId+ '" ') : ""}${this.VersionXML()} lat="${this.lat}" lon="${this.lon}">
+${tags}    </node>
+`
         )
     }
 
@@ -255,6 +257,11 @@ export class OsmWay extends OsmObject {
         return [this.lat, this.lon]
     }
 
+    /**
+     * const obj = new OsmWay(1234)
+     * obj.tags.key = "value"
+     * obj.ChangesetXML("123").trim() // => '<way id="1234"  changeset="123"  >\n        <tag k="key" v="value"/>\n    </way>'
+     */
     ChangesetXML(changesetId: string, header?: string): string {
         let tags = this.TagsXML()
         let nds = ""
@@ -263,16 +270,9 @@ export class OsmWay extends OsmObject {
         }
 
         return (
-            '    <way id="' +
-            this.id +
-            (header ?? "")+
-            (changesetId ? ('" changeset="' + changesetId) : "" ) +
-            '" ' +
-            this.VersionXML() +
-            ">\n" +
-            nds +
-            tags +
-            "    </way>\n"
+            `    <way id="${this.id}" ${header ?? ""} ${changesetId ? ('changeset="' + changesetId + '" ') : ""} ${this.VersionXML()}>
+${nds}${tags}    </way>
+`
         )
     }
 
