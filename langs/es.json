@@ -47,10 +47,8 @@
         "about": "Edita OpenStreetMap fácilmente y añade puntos sobre un tema concreto",
         "add": {
             "addNew": "Añadir {category}",
-            "addNewMapLabel": "Haga clic aquí para añadir un nuevo ítem",
             "backToSelect": "Selecciones una categoría distinta",
             "confirmButton": "Añadir una {category}<br><div class='alert'>Tu contribución es visible para todos</div>",
-            "confirmIntro": "<h3>Añadir {title} aquí?</h3>El punto que estás creando <b>lo verá todo el mundo</b>. Sólo añade cosas que realmente existan. Muchas aplicaciones usan estos datos.",
             "disableFilters": "Desactivar todos los filtros",
             "disableFiltersExplanation": "Algunas características pueden estar ocultas por un filtro",
             "hasBeenImported": "Este punto ya ha sido importado",
@@ -166,7 +164,6 @@
         "noTagsSelected": "No se han seleccionado etiquetas",
         "notValid": "Selecciona un valor válido para continuar",
         "number": "número",
-        "oneSkippedQuestion": "Has ignorado una pregunta",
         "openStreetMapIntro": "<h3>Un mapa abierto</h3><p>¿No sería genial si hubiera un solo mapa, que todos pudieran usar y editar libremente?¿Un solo lugar para almacenar toda la información geográfica? Entonces, todos esos sitios web con mapas diferentes, pequeños e incompatibles (que siempre están desactualizados) ya no serían necesarios.</p><p><b><a href='https://OpenStreetMap.org' target='_blank'>OpenStreetMap</a></b> es ese mapa. Los datos del mapa se pueden utilizar de forma gratuita (con <a href='https://osm.org/copyright' target='_blank'> atribución y publicación de cambios en esos datos</a>). Además de eso, todos pueden agregar libremente nuevos datos y corregir errores. Este sitio web también usa OpenStreetMap. Todos los datos provienen de allí, y tus respuestas y correcciones también se añadirán allí.</p><p>Muchas personas y aplicaciones ya usan OpenStreetMap: <a href='https://maps.me/' target='_blank'>Maps.me</a>, <a href='https://osmAnd.net' target='_blank'>OsmAnd</a>, pero también los mapas de Facebook, Instagram, Apple y Bing son (en parte) impulsados por OpenStreetMap. Si cambias algo aquí, también se reflejará en esas aplicaciones, en su próxima actualización</p>",
         "openTheMap": "Abrir el mapa",
         "opening_hours": {
