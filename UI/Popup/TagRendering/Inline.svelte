@@ -24,7 +24,6 @@
         const splt = _template.split("{" + key + "}")
         before = splt[0]
         after = splt[1]
-        console.log("Updating template to", _template, before, after)
       }
     }))
 
@@ -34,13 +33,7 @@
             const splt = _template.split("{" + key + "}")
             before = splt[0]
             after = splt[1]
-            console.log("Updating template to", _template, before, after)
         }
-    }
-
-
-    $: {
-        console.log("B/A:", before, after)
     }
 </script>
 

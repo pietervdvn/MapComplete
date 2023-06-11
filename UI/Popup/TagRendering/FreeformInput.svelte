@@ -19,13 +19,11 @@
     let placeholder = config.freeform?.placeholder
     let inline = config.freeform?.inline
     $: {
-        console.log("Config is", config)
         placeholder = config.freeform?.placeholder
         inline = false
         inline = config.freeform?.inline
     }
 
-    console.log("Inline is", inline )
     export let feedback: UIEventSource<Translation> = new UIEventSource<Translation>(undefined);
 
     let dispatch = createEventDispatcher<{ "selected" }>();

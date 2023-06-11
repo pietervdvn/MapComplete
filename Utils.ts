@@ -1350,7 +1350,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
     }
 
     public static scrollIntoView(element: HTMLBaseElement) {
-        console.log("Scrolling into view:", element)
         // Is the element completely in the view?
         const parentRect = Utils.findParentWithScrolling(
             element
@@ -1364,7 +1363,6 @@ In the case that MapComplete is pointed to the testing grounds, the edit will be
         if (inView) {
             return
         }
-        console.log("Actually scrolling...")
         element.scrollIntoView({behavior: "smooth", block: "nearest"})
     }
 
