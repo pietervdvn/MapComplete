@@ -93,17 +93,20 @@
     {
       "id": "oh-visitor",
       "question": {
-        "en": "When are visitors allowed to visit?"
+        "en": "When are visitors allowed to visit?",
+        "de": "Wann ist der Besuch für Besucher gestattet?"
       },
       "questionHint": {
-        "en": "These are the regular visitor hours. Some wands have different visitor hours or might allow visitors in emergencies"
+        "en": "These are the regular visitor hours. Some wands have different visitor hours or might allow visitors in emergencies",
+        "de": "Dies sind die regulären Besuchszeiten. Einige Stationen haben andere Besuchszeiten oder erlauben Besucher in Notfällen"
       },
       "freeform": {
         "key": "opening_hours:visitors",
         "type": "opening_hours"
       },
       "render": {
-        "en": "<h3>Opening hours for visitors</h3>Regular visitors are allowed at the following moments: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Some wands might have different opening hours. Many hospitals allow visits during emergencies too.</p>"
+        "en": "<h3>Opening hours for visitors</h3>Regular visitors are allowed at the following moments: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Some wands might have different opening hours. Many hospitals allow visits during emergencies too.</p>",
+        "de": "<h3>Öffnungszeiten für Besucher</h3>Regelmäßige Besucher sind zu den folgenden Zeiten zugelassen: {opening_hours_table(opening_hours:visitors)}<p class='subtle'>Einige Krankenhäuser haben möglicherweise andere Öffnungszeiten. Viele Krankenhäuser erlauben Besuche auch in Notfällen.</p>"
       }
     }
   ],

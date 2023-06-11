@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 5335,
+      "commits": 5352,
       "contributor": "Pieter Vander Vennet"
     },
     {
@@ -174,6 +174,10 @@
     },
     {
       "commits": 2,
+      "contributor": "Lu"
+    },
+    {
+      "commits": 2,
       "contributor": "Paul Brunner"
     },
     {
@@ -223,6 +227,10 @@
     {
       "commits": 2,
       "contributor": "Stanislas Gueniffey"
+    },
+    {
+      "commits": 1,
+      "contributor": "M!dgard"
     },
     {
       "commits": 1,

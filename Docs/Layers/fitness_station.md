@@ -63,7 +63,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/name#values) [name](https://wiki.openstreetmap.org/wiki/Key:name) | [string](../SpecialInputElements.md#string) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/fitness_station#values) [fitness_station](https://wiki.openstreetmap.org/wiki/Key:fitness_station) | Multiple choice | [horizontal_bar](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhorizontal_bar) [sign](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dsign) [sit-up](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dsit-up) [push-up](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dpush-up) [stretch_bars](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dstretch_bars) [hyperextension](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhyperextension) [rings](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Drings) [horizontal_ladder](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhorizontal_ladder) [wall_bars](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dwall_bars) [slalom](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dslalom) [stepping_stones](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dstepping_stones) [leapfrog](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dleapfrog) [beam_jump](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbeam_jump) [hurdling](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dhurdling) [wall](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dwall) [balance_beam](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbalance_beam) [log_lifting](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dlog_lifting) [captains_chair](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dcaptains_chair) [box](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbox) [battling_ropes](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dbattling_ropes) [excercise_bike](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dexcercise_bike) [elliptical_trainer](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Delliptical_trainer) [air_walker](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dair_walker) [rower](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Drower) [slackline](https://wiki.openstreetmap.org/wiki/Tag:fitness_station%3Dslackline)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/operator#values) [operator](https://wiki.openstreetmap.org/wiki/Key:operator) | [string](../SpecialInputElements.md#string) | 
-[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | [24/7](https://wiki.openstreetmap.org/wiki/Tag:opening_hours%3D24/7)
 
 
 
@@ -152,7 +152,7 @@ This is rendered with  `The fitness station is maintained by {operator}.`
 
 
 
-### opening_hours 
+### opening_hours_24_7 
 
 
 
@@ -162,6 +162,11 @@ This rendering asks information about the property  [opening_hours](https://wiki
 
 This is rendered with  `<h3>Opening hours</h3>{opening_hours_table(opening_hours)}`
 
+
+
+
+
+  - *24/7 opened (including holidays)*  corresponds with  `opening_hours=24/7`
 
 
 

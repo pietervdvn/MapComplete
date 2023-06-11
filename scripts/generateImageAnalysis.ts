@@ -10,7 +10,7 @@ import { Imgur } from "../Logic/ImageProviders/Imgur"
 import { LicenseInfo } from "../Logic/ImageProviders/LicenseInfo"
 import { Utils } from "../Utils"
 import Constants from "../Models/Constants"
-import {concat} from "svelte-preprocess/dist/modules/utils";
+import { concat } from "svelte-preprocess/dist/modules/utils"
 
 export default class GenerateImageAnalysis extends Script {
     constructor() {

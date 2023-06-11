@@ -1,7 +1,7 @@
 {
   "contributors": [
     {
-      "commits": 274,
+      "commits": 276,
       "contributor": "kjon"
     },
     {
@@ -159,6 +159,10 @@
     {
       "commits": 7,
       "contributor": "Niels Elgaard Larsen"
+    },
+    {
+      "commits": 6,
+      "contributor": "Leonardo Gómez Berniga"
     },
     {
       "commits": 6,
@@ -403,6 +407,10 @@
     {
       "commits": 2,
       "contributor": "Leo Alcaraz"
+    },
+    {
+      "commits": 1,
+      "contributor": "LuPa"
     },
     {
       "commits": 1,

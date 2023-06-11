@@ -221,7 +221,6 @@
   - climbing_gym
   - dentist
   - fitness_centre
-  - fitness_station
   - food
   - kindergarten_childcare
   - pharmacy
@@ -405,6 +404,7 @@
   - bike_repair_station
   - charging_station
   - defibrillator
+  - fitness_station
   - hackerspace
   - parcel_lockers
   - recycling

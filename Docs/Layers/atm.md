@@ -65,6 +65,7 @@ attribute | type | values which are supported by this layer
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/opening_hours#values) [opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) | [opening_hours](../SpecialInputElements.md#opening_hours) | 
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cash_out#values) [cash_out](https://wiki.openstreetmap.org/wiki/Key:cash_out) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:cash_out%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:cash_out%3Dno)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cash_in#values) [cash_in](https://wiki.openstreetmap.org/wiki/Key:cash_in) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:cash_in%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:cash_in%3Dno)
+[<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/cash_out:notes:denominations#values) [cash_out:notes:denominations](https://wiki.openstreetmap.org/wiki/Key:cash_out:notes:denominations) | Multiple choice | [5 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D5 EUR) [10 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D10 EUR) [20 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D20 EUR) [50 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D50 EUR) [100 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D100 EUR) [200 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D200 EUR) [500 EUR](https://wiki.openstreetmap.org/wiki/Tag:cash_out:notes:denominations%3D500 EUR)
 [<img src='https://mapcomplete.osm.be/assets/svg/statistics.svg' height='18px'>](https://taginfo.openstreetmap.org/keys/speech_output#values) [speech_output](https://wiki.openstreetmap.org/wiki/Key:speech_output) | Multiple choice | [yes](https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dyes) [no](https://wiki.openstreetmap.org/wiki/Tag:speech_output%3Dno)
 
 
@@ -168,6 +169,27 @@ The question is  *Can you deposit cash into this ATM?*
   - This option cannot be chosen as answer
   - *You can deposit cash into this ATM*  corresponds with  `cash_in=yes`
   - *You cannot deposit cash into this ATM*  corresponds with  `cash_in=no`
+
+
+
+
+### cash_out-denominations-notes 
+
+
+
+The question is  *What notes can you withdraw here?*
+
+
+
+
+
+  - *5 euro notes can be withdrawn*  corresponds with  `cash_out:notes:denominations=5 EUR`
+  - *10 euro notes can be withdrawn*  corresponds with  `cash_out:notes:denominations=10 EUR`
+  - *20 euro notes can be withdrawn*  corresponds with  `cash_out:notes:denominations=20 EUR`
+  - *50 euro notes can be withdrawn*  corresponds with  `cash_out:notes:denominations=50 EUR`
+  - *100 euro notes can be withdrawn*  corresponds with  `cash_out:notes:denominations=100 EUR`
+  - *200 euro notes can be withdrawn*  corresponds with  `cash_out:notes:denominations=200 EUR`
+  - *500 euro notes can be withdrawn*  corresponds with  `cash_out:notes:denominations=500 EUR`
 
 
 

@@ -76,7 +76,8 @@
             "nl": "Dit is een dubbele bank waarbij de rugleuning gedeeld wordt",
             "de": "Diese Bank ist zweiseitig und teilt sich die Rückenlehne",
             "ca": "Aquest banc té dues cares i comparteix el respatller",
-            "cs": "Tato lavička je oboustranná a má společné opěradlo"
+            "cs": "Tato lavička je oboustranná a má společné opěradlo",
+            "es": "Este banco tiene dos caras y comparte el respaldo"
           },
           "icon": {
             "path": "./assets/layers/bench/two_sided.svg",
