@@ -979,7 +979,7 @@
     },
     "openwindpowermap": {
         "description": "A map for showing and editing wind turbines.",
-        "title": "WInd power generators"
+        "title": "Wind power generators"
     },
     "osm_community_index": {
         "description": "A list of resources for users of OpenStreetMap. 'Resources' can be links to forums, meetups, Slack groups, IRC channels, mailing lists, and so on. Anything that mappers, especially beginners, might find interesting or helpful.",
