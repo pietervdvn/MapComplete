@@ -46,7 +46,7 @@
         // We received a new config -> reinit
         unit = layer.units.find(unit => unit.appliesToKeys.has(config.freeform?.key))
 
-        if (config.mappings?.length > 0 && (checkedMappings === undefined || checkedMappings?.length < config.mappings.length)) {
+        if (config.mappings?.length > 0 && (checkedMappings === undefined || (checkedMappings?.length + 1) < config.mappings.length)) {
             checkedMappings = [...config.mappings.map(_ => false), false /*One element extra in case a freeform value is added*/];
         }
         if (config.freeform?.key) {

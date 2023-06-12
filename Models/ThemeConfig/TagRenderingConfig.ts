@@ -680,7 +680,11 @@ export default class TagRenderingConfig {
                     ])
                 )
             }
-            return TagUtils.FlattenMultiAnswer([...selectedMappings, ...unselectedMappings])
+            const and = TagUtils.FlattenMultiAnswer([...selectedMappings, ...unselectedMappings])
+            if(and.and.length === 0){
+                return undefined
+            }
+            return and
         } else {
             // Is at least one mapping shown in the answer?
             const someMappingIsShown = this.mappings.some(m => {
