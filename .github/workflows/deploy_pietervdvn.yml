@@ -5,6 +5,7 @@ on:
       - develop
       - feature/*
       - theme/*
+      - legacy/*
 jobs:
   build:
     runs-on: ubuntu-latest
