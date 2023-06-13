@@ -385,19 +385,9 @@ export class OsmNode extends OsmObject {
         let tags = this.TagsXML()
 
         return (
-            '    <node id="' +
-            this.id +
-            '" ' +
-                (header ?? "") +
-            (changesetId ? (' changeset="' + changesetId) : "" ) +
-            this.VersionXML() +
-            ' lat="' +
-            this.lat +
-            '" lon="' +
-            this.lon +
-            '">\n' +
-            tags +
-            "    </node>\n"
+            `    <node id="${this.id}" ${header ?? ""}${changesetId ? (' changeset="' + changesetId)+ "\"" : ""}${this.VersionXML()} lat="${this.lat}" lon="${this.lon}">
+${tags}    </node>
+`
         )
     }
 
@@ -445,16 +435,9 @@ export class OsmWay extends OsmObject {
         }
 
         return (
-            '    <way id="' +
-            this.id +
-            '" ' +
-            (header ?? "")+
-            (changesetId ? (' changeset="' + changesetId) : "" ) +
-            this.VersionXML() +
-            ">\n" +
-            nds +
-            tags +
-            "    </way>\n"
+            `    <way id="${this.id}" ${header ?? ""}${changesetId ? (` changeset="${changesetId}"`) : ""}${this.VersionXML()}>
+${nds}${tags}    </way>
+`
         )
     }
 
