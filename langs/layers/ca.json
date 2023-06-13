@@ -2086,7 +2086,7 @@
                 }
             },
             "questions": {
-                "render": "<h3>Preguntes tècniques</h3>Les preguntes següents són molt tècniques. No dubteu a ignorar-les<br/>{preguntes}"
+                "render": "<h3>Preguntes tècniques</h3>Les preguntes següents són molt tècniques. No dubteu a ignorar-les<br/>{questions}"
             },
             "ref": {
                 "question": "Quin és el número de referència d'aquest punt de càrrega?"
