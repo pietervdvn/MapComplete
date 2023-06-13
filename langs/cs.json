@@ -598,7 +598,26 @@
         "noteLayerHasFilters": "Některé poznámky mohou být skryty filtrem",
         "noteLayerNotEnabled": "Vrstva zobrazující poznámky není zapnuta. Chcete-li přidat novou poznámku, musí být tato vrstva povolena"
     },
+    "privacy": {
+        "title": "Zásady ochrany osobních údajů",
+        "tracking": "Abychom získali přehled o tom, kdo navštěvuje naše webové stránky, shromažďujeme některé technické informace. To zahrnuje zemi, ze které jste webovou stránku navštívili, která webová stránka vás odkázala na MapComplete, typ vašeho zařízení a velikost obrazovky. Do vašeho zařízení je umístěn soubor cookie, který označuje, že jste dnes navštívili MapComplete. Tyto údaje nejsou dostatečně podrobné, aby vás osobně identifikovaly. Tyto statistiky jsou dostupné komukoli pouze souhrnně a jsou <a href='https://pietervdvn.goatcounter.com' target='_blank'>veřejně dostupné komukoli</a>",
+        "trackingTitle": "Statistické údaje",
+        "whileYoureHere": "Záleží vám na soukromí?"
+    },
     "professional": {
+        "aboutMc": {
+            "internalUse": {
+                "intro": "<p>Jakmile budou data v OpenStreetMap, pravděpodobně je budete chtít použít také. Váš motiv MapComplete může mít pohodlné tlačítko <i>exportovat</i>, které nabízí stažení dat v mnoha otevřených formátech použitelných v QGis, ArcGis, Excel, LibreOffice-calc, …</p><p>Někdo se základními tabulkové procesory tak mohou snadno vytvářet grafy a náhledy na data, zatímco odborníci na GIS ve vaší organizaci mohou s těmito daty snadno pracovat ve své preferované aplikaci.</p><p>Pokud je potřeba automatizované nastavení, bezplatné k použití je k dispozici komunitní rozhraní API.</p>",
+                "title": "Využití dat v interních procesech"
+            },
+            "layers": {
+                "intro": "<p>MapComplete má výkonný systém šablon, který umožňuje rychle vytvořit mapu zobrazující přesně ty funkce, které potřebujete, a zobrazující relevantní atributy ve vyskakovacích oknech.</p><p>Tato data lze načíst z <b>OpenStreetMap< /b> přímo, ale MapComplete může také používat <b>externí datové sady</b> - např. porovnat OpenStreetMap s jinou datovou sadou nebo zobrazit data, která nejsou vhodná pro OpenStreetMap (plánované aktivity, statistiky, …)",
+                "title": "Jaká data lze zobrazit pomocí MapComplete?"
+            },
+            "survey": {
+                "intro": "<p>MapComplete je snadno použitelný nástroj pro <i>průzkumy</i>. Ideální je nasbírat potřebné na pár kliknutí jak na desktopu, tak na mobilu. Tato data jsou vložena přímo do OpenStreetMap.</p><p>Můžeme nastavit <b>vlastní průzkumný nástroj</b>, který se ptá přesně na ta data, která potřebujete, a to způsobem odolným vůči budoucnosti.</p><p> Máte datovou sadu, která musí být (znovu) prozkoumána? Toto je ideální okamžik pro přechod na OpenStreetMap. MapComplete může zobrazit vaši datovou sadu a OpenStreetMap současně, což usnadňuje návštěvu všech míst a zobrazení toho, čím komunita již přispěla.</p>\n"
+            }
+        },
         "drawbacks": {
             "unsuitedData": {
                 "li0": "Subjektivní data (například recenze) nejsou pro OpenStreetMap vhodná. MapComplete má však integraci se službou <a href='https://mangrove.reviews/'>Mangrove.reviews</a>, webem s otevřenou licencí pro recenze"
