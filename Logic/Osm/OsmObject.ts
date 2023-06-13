@@ -435,7 +435,7 @@ export class OsmWay extends OsmObject {
         }
 
         return (
-            `    <way id="${this.id}" ${header ?? ""}${changesetId ? (` changeset="${changesetId}"`) : ""}${this.VersionXML()}>
+            `    <way id="${this.id}" ${header ?? ""}${changesetId ? (` changeset="${changesetId}" `) : ""}${this.VersionXML()}>
 ${nds}${tags}    </way>
 `
         )
