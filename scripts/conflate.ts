@@ -4,9 +4,11 @@ import {Feature} from "geojson"
 import {GeoOperations} from "../Logic/GeoOperations"
 import {Utils} from "../Utils"
 import {OsmObject} from "../Logic/Osm/OsmObject"
-import {PhoneTextField, UrlTextfieldDef} from "../UI/Input/ValidatedTextField"
 import {OsmId} from "../Models/OsmFeature"
 import ScriptUtils from "./ScriptUtils"
+import OsmObjectDownloader from "../Logic/Osm/OsmObjectDownloader";
+import PhoneValidator from "../UI/InputElement/Validators/PhoneValidator";
+import UrlValidator from "../UI/InputElement/Validators/UrlValidator";
 
 interface PossibleMatch {
     /**
@@ -122,7 +124,10 @@ export class Conflate extends Script {
                 JSON.stringify(resting_properties),
             ])
 
-            const osmObj = await OsmObject.DownloadObjectAsync(id)
+            const osmObj = await new OsmObjectDownloader().DownloadObjectAsync(id)
+            if(osmObj === "deleted"){
+                return
+            }
             for (const key in resting_properties) {
                 osmObj.tags[key] = resting_properties[key]
             }
@@ -161,7 +166,7 @@ export class Conflate extends Script {
         osmName: string,
         osmId: OsmId
     ): Promise<{ earliestDateOfImport; latestDateOfImport }> {
-        const history = await OsmObject.DownloadHistory(osmId).AsPromise((h) => h.length > 0)
+        const history = await new OsmObjectDownloader().DownloadHistory(osmId).AsPromise((h) => h.length > 0)
         let earliest: Date = undefined
         let latest: Date = undefined
         for (const historyElement of history) {
@@ -277,14 +282,14 @@ export class Conflate extends Script {
         if (fs.existsSync(cachePath)) {
             return JSON.parse(fs.readFileSync(cachePath, {encoding: "utf-8"}))
         }
-        const history = await OsmObject.DownloadHistory(id).AsPromise((l) => l.length > 0)
+        const history = await new OsmObjectDownloader().DownloadHistory(id).AsPromise((l) => l.length > 0)
         fs.writeFileSync(cachePath, JSON.stringify(history, null, "  "), {encoding: "utf-8"})
         return history
     }
 
     private async normalize(properties: Record<string, string>) {
         if (properties["phone"]) {
-            properties["phone"] = new PhoneTextField().reformat(properties["phone"], () => "be")
+            properties["phone"] = new PhoneValidator().reformat(properties["phone"], () => "be")
         }
         if (properties["website"]) {
             let website = properties.website.toLowerCase()
@@ -296,9 +301,9 @@ export class Conflate extends Script {
             if (website.startsWith("https://")) {
                 website = "https://" + website
             }
-            const validator = new UrlTextfieldDef()
+            const validator = new UrlValidator()
             if (validator.isValid(website)) {
-                properties.website = new UrlTextfieldDef().reformat(website)
+                properties.website = validator.reformat(website)
                 const stillOnline = await this.stillOnline(website)
                 if (stillOnline === false) {
                     delete properties.website
