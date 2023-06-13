@@ -2059,7 +2059,7 @@
             },
             "phone": {
                 "question": "A quin número es pot cridar si hi ha algun problema amb aquest punt de càrrega?",
-                "render": "En cas de problemes, truqueu a <a href='tel:{phone}'>{telèfon}</a>"
+                "render": "En cas de problemes, truqueu a <a href='tel:{phone}'>{phone}</a>"
             },
             "plugs-2": {
                 "render": "Aquí hi ha <b class='text-xl'>{socket:chademo}</b> endolls del tipus <div style='display: inline-block'><b><b>Chademo</b></b> <img style='width:1rem; display: inline-block' src='./assets/layers/charging_station/Chademo_type4.svg'/></div> disponibles"
