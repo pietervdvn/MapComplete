@@ -21,7 +21,9 @@ Following the [standard test-protocol](Test_protocol.md)
 - _"What is a theme? I'll just click it and find out..."_
 - _"Waste seems a sub-functionality?"_
 
-> Tries to click the green 'search for a theme'
+> Tries to click the green 'pick a theme below for a theme'
+
+"This doesn't seem to do anything, it isn't a link?"
 
 > Search for nothing: opens up cyclofix
 
