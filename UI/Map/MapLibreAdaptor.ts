@@ -379,6 +379,12 @@ export class MapLibreAdaptor implements MapProperties, ExportableMap {
             return
         }
 
+        if(background.type === "vector"){
+            console.log("Background layer is vector")
+            map.setStyle(background.url)
+            return
+        }
+
         map.addSource(background.id, MapLibreAdaptor.prepareWmsSource(background))
 
         map.resize()

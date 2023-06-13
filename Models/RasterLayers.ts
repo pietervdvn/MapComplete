@@ -44,9 +44,26 @@ export class AvailableRasterLayers {
             url: "https://api.maptiler.com/maps/15cc8f61-0353-4be6-b8da-13daea5f7432/style.json?key=GvoVAJgu46I5rZapJuAy",
             category: "osmbasedmap",
             id: "maptiler",
+            type: "vector",
             attribution: {
                 text: "Maptiler",
                 url: "https://www.maptiler.com/copyright/"
+            }
+        },
+        geometry: BBox.global.asGeometry(),
+    }
+
+    public static readonly americana: RasterLayerPolygon = {
+        type: "Feature",
+        properties: {
+            name: "Americana",
+            url: "https://zelonewolf.github.io/openstreetmap-americana/style.json",
+            category: "osmbasedmap",
+            id: "americana",
+            type: "vector",
+            attribution: {
+                text: "Americana",
+                url: "https://github.com/ZeLonewolf/openstreetmap-americana/"
             }
         },
         geometry: BBox.global.asGeometry(),
@@ -74,6 +91,7 @@ export class AvailableRasterLayers {
                     return GeoOperations.inside(lonlat, eliPolygon)
                 })
                 matching.unshift(AvailableRasterLayers.osmCarto)
+                matching.unshift(AvailableRasterLayers.americana)
                 matching.unshift(AvailableRasterLayers.maplibre)
                 matching.push(...AvailableRasterLayers.globalLayers)
                 return matching
@@ -133,7 +151,7 @@ export interface EditorLayerIndexProperties extends RasterLayerProperties {
      * Whether the imagery name should be translated
      */
     readonly i18n?: boolean
-    readonly type: "tms" | "wms" | "bing" | "scanex" | "wms_endpoint" | "wmts"
+    readonly type: "tms" | "wms" | "bing" | "scanex" | "wms_endpoint" | "wmts" | "vector" /* Vector is not actually part of the ELI-spec, we add it for vector layers */
     /**
      * A rough categorisation of different types of layers. See https://github.com/osmlab/editor-layer-index/blob/gh-pages/CONTRIBUTING.md#categories for a description of the individual categories.
      */
