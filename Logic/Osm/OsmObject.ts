@@ -385,7 +385,7 @@ export class OsmNode extends OsmObject {
         let tags = this.TagsXML()
 
         return (
-            `    <node id="${this.id}" ${header ?? ""}${changesetId ? ` changeset="${changesetId}"` : ""}${this.VersionXML()} lat="${this.lat}" lon="${this.lon}">
+            `    <node id="${this.id}" ${header ?? ""}${changesetId ? ` changeset="${changesetId}" ` : ""}${this.VersionXML()} lat="${this.lat}" lon="${this.lon}">
 ${tags}    </node>
 `
         )
