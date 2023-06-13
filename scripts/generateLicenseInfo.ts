@@ -226,7 +226,13 @@ export class GenerateLicenseInfo extends Script {
             }
 
             licenses.sort((a, b) => (a.path < b.path ? -1 : 1))
-            writeFileSync(dir + "/license_info.json", JSON.stringify(licenses, null, 2))
+            const path = dir + "/license_info.json"
+            if(licenses.length === 0){
+                console.log("Removing",path,"as it is empty")
+                // No need to _actually_ unlik, this is done above
+            }else{
+                writeFileSync(path, JSON.stringify(licenses, null, 2))
+            }
         })
     }
 
