@@ -28,5 +28,4 @@ if (layout !== "") {
     )
 }
 
-Utils.DisableLongPresses()
 new AllThemesGui().setup()

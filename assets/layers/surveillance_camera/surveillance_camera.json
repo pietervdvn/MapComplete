@@ -662,6 +662,7 @@
       }
     }
   ],
+  "deletion": true,
   "description": {
     "en": "This layer shows surveillance cameras and allows a contributor to update information and add new cameras",
     "nl": "Deze laag toont bewakingscamera's en laat toe om de informatie te verrijken en om nieuwe camera\"s toe te voegen",

@@ -19,7 +19,7 @@ export default class IndexText extends Combine {
                 ),
 
                 Translations.t.index.pickTheme.SetClass(
-                    "mt-3 text-base text-green-600 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
+                    "mt-3 text-base sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
                 ),
             ]).SetClass("flex flex-col sm:text-center lg:text-left m-1 mt-2 md:m-2 md:mt-4"),
         ])

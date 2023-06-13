@@ -29,6 +29,9 @@ export default class MoreScreen extends Combine {
         })
         search.enterPressed.addCallbackD((searchTerm) => {
             searchTerm = searchTerm.toLowerCase()
+            if(!searchTerm){
+                return
+            }
             if (searchTerm === "personal") {
                 window.location.href = MoreScreen.createUrlFor(
                     { id: "personal" },

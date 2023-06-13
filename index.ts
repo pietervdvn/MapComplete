@@ -5,9 +5,6 @@ import SvelteUIElement from "./UI/Base/SvelteUIElement"
 import ThemeViewGUI from "./UI/ThemeViewGUI.svelte"
 import {FixedUiElement} from "./UI/Base/FixedUiElement";
 
-// Miscelleanous
-Utils.DisableLongPresses()
-
 // @ts-ignore
 DetermineLayout.GetLayout()
     .then((layout) => {
