@@ -389,7 +389,7 @@ export class OsmNode extends OsmObject {
             this.id +
             '" ' +
                 (header ?? "") +
-            (changesetId ? ('" changeset="' + changesetId) : "" ) +
+            (changesetId ? (' changeset="' + changesetId) : "" ) +
             this.VersionXML() +
             ' lat="' +
             this.lat +
@@ -447,9 +447,9 @@ export class OsmWay extends OsmObject {
         return (
             '    <way id="' +
             this.id +
-            (header ?? "")+
-            (changesetId ? ('" changeset="' + changesetId) : "" ) +
             '" ' +
+            (header ?? "")+
+            (changesetId ? (' changeset="' + changesetId) : "" ) +
             this.VersionXML() +
             ">\n" +
             nds +
