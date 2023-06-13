@@ -326,7 +326,11 @@
           "+mappings": [
             {
               "if": {
-                "or": ["shop=vacant","shop=disused","disused:shop=yes"]
+                "or": [
+                  "shop=vacant",
+                  "shop=disused",
+                  "disused:shop=yes"
+                ]
               },
               "then": "circle:white;./assets/layers/shops/shop-disused.svg"
             }

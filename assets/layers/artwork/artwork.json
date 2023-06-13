@@ -616,7 +616,9 @@
       "freeform": {
         "key": "website",
         "type": "url",
-        "addExtraTags": ["url="]
+        "addExtraTags": [
+          "url="
+        ]
       },
       "id": "artwork-website",
       "labels": [
