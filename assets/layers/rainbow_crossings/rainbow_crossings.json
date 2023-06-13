@@ -74,7 +74,6 @@
         "fr": "Ce passage a-t-il une peinture arc-en-ciel ?",
         "ca": "Aquest pas de vianants està pintat amb l'arc de Sant Martí?"
       },
-      "condition": "footway=crossing",
       "mappings": [
         {
           "if": "surface:colour=rainbow",
