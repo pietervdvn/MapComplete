@@ -3023,6 +3023,17 @@
             "name": {
                 "question": "Wie heißt diese Kletterhalle?"
             },
+            "rope_rental": {
+                "mappings": {
+                    "0": {
+                        "then": "Ein Kletterseil kann hier ausgeliehen werden"
+                    },
+                    "1": {
+                        "then": "Ein Kletterseil kann hier <b>nicht</b> ausgeliehen werden"
+                    }
+                },
+                "question": "Kann man hier ein Kletterseil ausleihen?"
+            },
             "shoe_rental": {
                 "mappings": {
                     "0": {
@@ -7654,6 +7665,9 @@
                     },
                     "5": {
                         "then": "Hier wird Basketball gespielt"
+                    },
+                    "6": {
+                        "then": "Dies ist ein Skatepark"
                     }
                 },
                 "question": "Welche Sportarten können hier gespielt werden?",
