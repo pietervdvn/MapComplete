@@ -19,7 +19,7 @@ import BaseUIElement from "../BaseUIElement"
 import Combine from "../Base/Combine"
 import Title from "../Base/Title"
 
-export type ValidatorType = typeof Validators.availableTypes[number]
+export type ValidatorType = (typeof Validators.availableTypes)[number]
 
 export default class Validators {
     public static readonly availableTypes = [

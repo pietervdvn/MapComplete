@@ -445,7 +445,7 @@ class GetParsed implements ExtraFunction {
     }
 }
 
-export type ExtraFuncType = typeof ExtraFunctions.types[number]
+export type ExtraFuncType = (typeof ExtraFunctions.types)[number]
 
 export class ExtraFunctions {
     static readonly intro = new Combine([

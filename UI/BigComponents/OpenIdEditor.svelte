@@ -26,7 +26,7 @@
   }/${$location?.lon ?? 0}`
 </script>
 
-<a class="flex button items-center" target="_blank" href={idLink}>
-  <PencilIcon class="w-12 h-12 p-2 pr-4" />
+<a class="button flex items-center" target="_blank" href={idLink}>
+  <PencilIcon class="h-12 w-12 p-2 pr-4" />
   <Tr t={Translations.t.general.attribution.editId} />
 </a>

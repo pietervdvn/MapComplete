@@ -17,7 +17,7 @@
 </script>
 
 <a class="flex" href={$wikipediaDetails.articleUrl} rel="noreferrer" target="_blank">
-  <img class="w-6 h-6" src="./assets/svg/wikipedia.svg" />
+  <img class="h-6 w-6" src="./assets/svg/wikipedia.svg" />
   <Tr t={Translations.t.general.wikipedia.fromWikipedia} />
 </a>
 

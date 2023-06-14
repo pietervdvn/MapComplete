@@ -10,7 +10,7 @@
 
 <button
   on:click={(e) => dispatch("click", e)}
-  class={"rounded-full h-fit w-fit m-0.5 md:m-1 p-0.5 sm:p-1 pointer-events-auto " + cls}
+  class={"pointer-events-auto m-0.5 h-fit w-fit rounded-full p-0.5 sm:p-1 md:m-1 " + cls}
 >
   <slot />
 </button>

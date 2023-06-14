@@ -66,7 +66,7 @@ export default class LayerConfig extends WithContextLoader {
     public readonly filters: FilterConfig[]
     public readonly filterIsSameAs: string
     public readonly forceLoad: boolean
-    public readonly syncSelection: typeof LayerConfig.syncSelectionAllowed[number] // this is a trick to conver a constant array of strings into a type union of these values
+    public readonly syncSelection: (typeof LayerConfig.syncSelectionAllowed)[number] // this is a trick to conver a constant array of strings into a type union of these values
 
     public readonly _needsFullNodeDatabase: boolean
     public readonly popupInFloatover

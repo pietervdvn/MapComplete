@@ -23,7 +23,7 @@
   }
 </script>
 
-<button on:click={share} class="secondary w-8 h-8 m-0 p-0">
+<button on:click={share} class="secondary m-0 h-8 w-8 p-0">
   <slot name="content">
     <ToSvelte construct={Svg.share_svg().SetClass("w-7 h-7 p-1")} />
   </slot>

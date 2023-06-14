@@ -240,7 +240,7 @@ class LineRenderingLayer {
      */
     private calculatePropsFor(
         properties: Record<string, string>
-    ): Partial<Record<typeof LineRenderingLayer.lineConfigKeys[number], string>> {
+    ): Partial<Record<(typeof LineRenderingLayer.lineConfigKeys)[number], string>> {
         const config = this._config
 
         const calculatedProps: Record<string, string | number> = {}

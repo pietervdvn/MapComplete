@@ -89,14 +89,14 @@
           <Tr t={Translations.t.notes.noteLayerHasFilters} />
         </div>
         <SubtleButton on:click={() => notelayer.disableAllFilters()}>
-          <img slot="image" src="./assets/svg/filter.svg" class="w-8 h-8 mr-4" />
+          <img slot="image" src="./assets/svg/filter.svg" class="mr-4 h-8 w-8" />
           <Tr slot="message" t={Translations.t.notes.disableAllNoteFilters} />
         </SubtleButton>
       </div>
     {:else}
       <div>
         <Tr t={Translations.t.notes.createNoteIntro} />
-        <div class="border rounded-sm border-grey-500">
+        <div class="border-grey-500 rounded-sm border">
           <div class="w-full p-1">
             <ValidatedInput type="text" value={comment} />
           </div>
@@ -110,7 +110,7 @@
 
           {#if $comment.length >= 3}
             <SubtleButton on:click={uploadNote}>
-              <img slot="image" src="./assets/svg/addSmall.svg" class="w-8 h-8 mr-4" />
+              <img slot="image" src="./assets/svg/addSmall.svg" class="mr-4 h-8 w-8" />
               <Tr slot="message" t={Translations.t.notes.createNote} />
             </SubtleButton>
           {:else}
@@ -127,7 +127,7 @@
         <Tr t={Translations.t.notes.noteLayerNotEnabled} />
       </div>
       <SubtleButton on:click={enableNoteLayer}>
-        <img slot="image" src="./assets/svg/layers.svg" class="w-8 h-8 mr-4" />
+        <img slot="image" src="./assets/svg/layers.svg" class="mr-4 h-8 w-8" />
         <Tr slot="message" t={Translations.t.notes.noteLayerDoEnable} />
       </SubtleButton>
     </div>

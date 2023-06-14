@@ -33,8 +33,8 @@
       <Loading />
     </slot>
   {:else if $loadingStatus === "error"}
-    <div class="flex items-center alert max-w-64">
-      <img src="./assets/svg/invalid.svg" class="w-8 h-8 m-2 shrink-0" />
+    <div class="alert max-w-64 flex items-center">
+      <img src="./assets/svg/invalid.svg" class="m-2 h-8 w-8 shrink-0" />
       <Tr t={offlineModes[$apiState]} />
     </div>
   {:else if $loadingStatus === "logged-in"}

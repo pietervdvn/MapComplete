@@ -60,14 +60,14 @@
 
 <div class="flex items-end opacity-50 hover:opacity-100">
   <div class="flex flex-col md:flex-row">
-    <button class="w-16 h-12 md:w-16 md:h-16 overflow-hidden m-0 p-0" on:click={use(raster0)}>
+    <button class="m-0 h-12 w-16 overflow-hidden p-0 md:h-16 md:w-16" on:click={use(raster0)}>
       <OverlayMap
         placedOverMap={normalMap}
         placedOverMapProperties={mapproperties}
         rasterLayer={raster0}
       />
     </button>
-    <button class="w-16 h-12 md:w-16 md:h-16 overflow-hidden m-0 p-0 " on:click={use(raster1)}>
+    <button class="m-0 h-12 w-16 overflow-hidden p-0 md:h-16 md:w-16" on:click={use(raster1)}>
       <OverlayMap
         placedOverMap={normalMap}
         placedOverMapProperties={mapproperties}
@@ -75,8 +75,8 @@
       />
     </button>
   </div>
-  <div class="text-sm flex flex-col gap-y-1 h-fit ml-1">
-    <div class="low-interaction rounded p-1 w-64">
+  <div class="ml-1 flex h-fit flex-col gap-y-1 text-sm">
+    <div class="low-interaction w-64 rounded p-1">
       <RasterLayerPicker
         availableLayers={availableRasterLayers}
         value={mapproperties.rasterLayer}

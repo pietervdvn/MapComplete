@@ -106,7 +106,7 @@
       placeholder={_placeholder}
     />
     {#if !$isValid}
-      <ExclamationIcon class="h-6 w-6 -ml-6" />
+      <ExclamationIcon class="-ml-6 h-6 w-6" />
     {/if}
 
     {#if unit !== undefined}

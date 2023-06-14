@@ -82,8 +82,8 @@
 </script>
 
 {#if $canBeDeleted === false && !hasSoftDeletion}
-  <div class="flex low-interaction">
-    <InformationCircleIcon class="w-6 h-6" />
+  <div class="low-interaction flex">
+    <InformationCircleIcon class="h-6 w-6" />
     <Tr t={$canBeDeletedReason} />
     <Tr class="subtle" t={t.useSomethingElse} />
   </div>
@@ -96,7 +96,7 @@
           currentState = "confirm"
         }}
       >
-        <TrashIcon class="w-6 h-6" />
+        <TrashIcon class="h-6 w-6" />
         <Tr t={t.delete} />
       </button>
     {:else if currentState === "confirm"}
@@ -111,10 +111,10 @@
         <button
           slot="save-button"
           on:click={onDelete}
-          class={(selectedTags === undefined ? "disabled" : "") + " flex primary bg-red-600"}
+          class={(selectedTags === undefined ? "disabled" : "") + " primary flex bg-red-600"}
         >
           <TrashIcon
-            class={"w-6 h-6 rounded-full p-1 ml-1 mr-2 " +
+            class={"ml-1 mr-2 h-6 w-6 rounded-full p-1 " +
               (selectedTags !== undefined ? "bg-red-600" : "")}
           />
           <Tr t={t.delete} />
@@ -124,7 +124,7 @@
         </button>
         <XCircleIcon
           slot="upper-right"
-          class="w-8 h-8 cursor-pointer"
+          class="h-8 w-8 cursor-pointer"
           on:click={() => {
             currentState = "start"
           }}
@@ -147,8 +147,8 @@
     {:else}
       <!-- currentState === 'deleted' -->
 
-      <div class="flex low-interaction">
-        <TrashIcon class="w-6 h-6" />
+      <div class="low-interaction flex">
+        <TrashIcon class="h-6 w-6" />
         <Tr t={t.isDeleted} />
       </div>
     {/if}

@@ -15,6 +15,6 @@
   on:click={() => dispatch("click")}
   options={{ extraClasses: clss + " flex items-center" }}
 >
-  <ChevronLeftIcon class="w-12 h-12" slot="image" />
+  <ChevronLeftIcon class="h-12 w-12" slot="image" />
   <slot slot="message" />
 </SubtleButton>

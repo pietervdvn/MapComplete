@@ -76,13 +76,13 @@
   }
 </script>
 
-<div class="relative h-full min-h-32 cursor-pointer overflow-hidden">
-  <div class="w-full h-full absolute top-0 left-0 cursor-pointer">
+<div class="min-h-32 relative h-full cursor-pointer overflow-hidden">
+  <div class="absolute top-0 left-0 h-full w-full cursor-pointer">
     <MaplibreMap {map} />
   </div>
 
   <div
-    class="w-full h-full absolute top-0 left-0 p-8 pointer-events-none opacity-50 flex items-center"
+    class="pointer-events-none absolute top-0 left-0 flex h-full w-full items-center p-8 opacity-50"
   >
     <img class="h-full max-h-24" src="./assets/svg/move-arrows.svg" />
   </div>

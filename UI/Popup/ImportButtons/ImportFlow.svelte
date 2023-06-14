@@ -46,7 +46,7 @@
     {/if}
   {:else if !$isDisplayed}
     <!-- Check that the layer is enabled, so that we don't add a duplicate -->
-    <div class="alert flex  justify-center items-center">
+    <div class="alert flex items-center justify-center">
       <EyeOffIcon class="w-8" />
       <Tr
         t={Translations.t.general.add.layerNotEnabled.Subs({
@@ -68,7 +68,7 @@
       </button>
 
       <button
-        class="flex w-full gap-x-1 primary"
+        class="primary flex w-full gap-x-1"
         on:click={() => {
           isDisplayed.setData(true)
           abort()
@@ -84,13 +84,13 @@
     </div>
   {:else if $hasFilter}
     <!-- Some filters are enabled. The feature to add might already be mapped, but hidden -->
-    <div class="alert flex justify-center items-center">
+    <div class="alert flex items-center justify-center">
       <EyeOffIcon class="w-8" />
       <Tr t={Translations.t.general.add.disableFiltersExplanation} />
     </div>
     <div class="flex flex-wrap-reverse md:flex-nowrap">
       <button
-        class="flex w-full gap-x-1 primary"
+        class="primary flex w-full gap-x-1"
         on:click={() => {
           abort()
           importFlow.targetLayer.disableAllFilters()
@@ -118,14 +118,14 @@
     <NextButton clss="primary w-full" on:click={() => (currentFlowStep = "confirm")}>
       <slot name="start-flow-text">
         {#if importFlow?.args?.icon}
-          <img class="w-8 h-8" src={importFlow.args.icon} />
+          <img class="h-8 w-8" src={importFlow.args.icon} />
         {/if}
         {importFlow.args.text}
       </slot>
     </NextButton>
   {:else if currentFlowStep === "confirm"}
-    <div class="h-full w-full flex flex-col">
-      <div class="w-full h-full">
+    <div class="flex h-full w-full flex-col">
+      <div class="h-full w-full">
         <slot name="map" />
       </div>
       <div class="flex flex-col-reverse md:flex-row">
@@ -139,7 +139,7 @@
             dispatch("confirm")
           }}
         >
-          <span slot="image" class="w-8 h-8 pr-4">
+          <span slot="image" class="h-8 w-8 pr-4">
             {#if importFlow.args.icon}
               <img src={importFlow.args.icon} />
             {:else}

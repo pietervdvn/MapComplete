@@ -16,9 +16,9 @@
   }
 </script>
 
-<div class="tabbedgroup w-full h-full">
+<div class="tabbedgroup h-full w-full">
   <TabGroup
-    class="h-full w-full flex flex-col"
+    class="flex h-full w-full flex-col"
     defaultIndex={1}
     on:change={(e) => {
       if (e.detail >= 0) {
@@ -26,7 +26,7 @@
       }
     }}
   >
-    <div class="interactive flex items-center justify-between sticky top-0">
+    <div class="interactive sticky top-0 flex items-center justify-between">
       <TabList class="flex flex-wrap">
         {#if $$slots.title1}
           <Tab class={({ selected }) => "tab " + (selected ? "primary" : "")}>
@@ -66,7 +66,7 @@
       </TabList>
       <slot name="post-tablist" />
     </div>
-    <div class="overflow-y-auto normal-background">
+    <div class="normal-background overflow-y-auto">
       <TabPanels defaultIndex={$tab}>
         <TabPanel>
           <slot name="content0">

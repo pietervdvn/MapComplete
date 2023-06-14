@@ -33,7 +33,7 @@
   <Tr t={Translations.t.delete.isDeleted} />
 {:else}
   <div
-    class="flex border-b-2 border-black drop-shadow-md justify-between items-center low-interaction px-3"
+    class="low-interaction flex items-center justify-between border-b-2 border-black px-3 drop-shadow-md"
   >
     <div class="flex flex-col">
       <!-- Title element-->
@@ -42,11 +42,11 @@
       </h3>
 
       <div
-        class="no-weblate title-icons flex flex-row flex-wrap pt-0.5 sm:pt-1 items-center mr-2 gap-x-0.5 p-1 links-as-button"
+        class="no-weblate title-icons links-as-button mr-2 flex flex-row flex-wrap items-center gap-x-0.5 p-1 pt-0.5 sm:pt-1"
       >
         {#each layer.titleIcons as titleIconConfig}
           {#if (titleIconConfig.condition?.matchesProperties(_tags) ?? true) && (titleIconConfig.metacondition?.matchesProperties( { ..._metatags, ..._tags } ) ?? true) && titleIconConfig.IsKnown(_tags)}
-            <div class="w-8 h-8 flex items-center">
+            <div class="flex h-8 w-8 items-center">
               <TagRenderingAnswer
                 config={titleIconConfig}
                 {tags}
@@ -61,7 +61,7 @@
       </div>
     </div>
     <XCircleIcon
-      class="w-8 h-8 cursor-pointer"
+      class="h-8 w-8 cursor-pointer"
       on:click={() => state.selectedElement.setData(undefined)}
     />
   </div>

@@ -24,11 +24,11 @@
   )
 </script>
 
-<div class="flex border border-gray-600 border-dashed m-1 p-1 rounded-md link-underline">
+<div class="link-underline m-1 flex rounded-md border border-dashed border-gray-600 p-1">
   {#if $userdetails.img}
-    <img src={$userdetails.img} class="rounded-full w-12 h-12 m-4" />
+    <img src={$userdetails.img} class="m-4 h-12 w-12 rounded-full" />
   {:else}
-    <UserCircleIcon class="w-12 h-12" />
+    <UserCircleIcon class="h-12 w-12" />
   {/if}
   <div class="flex flex-col">
     <h3>{$userdetails.name}</h3>
@@ -39,13 +39,13 @@
         target="_blank"
         class="link-no-underline flex items-center self-end"
       >
-        <PencilAltIcon slot="image" class="p-2 w-8 h-8" />
+        <PencilAltIcon slot="image" class="h-8 w-8 p-2" />
         <Tr slot="message" t={Translations.t.userinfo.editDescription} />
       </a>
     {:else}
       <Tr t={Translations.t.userinfo.noDescription} />
       <a href={osmConnection.Backend() + "/profile/edit"} target="_blank" class="flex items-center">
-        <PencilAltIcon slot="image" class="p-2 w-8 h-8" />
+        <PencilAltIcon slot="image" class="h-8 w-8 p-2" />
         <Tr slot="message" t={Translations.t.userinfo.noDescriptionCallToAction} />
       </a>
     {/if}

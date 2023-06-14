@@ -91,7 +91,7 @@
   }
 </script>
 
-<div class="flex normal-background rounded-full pl-2 justify-between">
+<div class="normal-background flex justify-between rounded-full pl-2">
   <form class="w-full">
     {#if isRunning}
       <Loading>{Translations.t.general.search.searching}</Loading>
@@ -110,7 +110,7 @@
       />
     {/if}
   </form>
-  <div class="w-6 h-6 self-end" on:click={performSearch}>
+  <div class="h-6 w-6 self-end" on:click={performSearch}>
     <ToSvelte construct={Svg.search_svg} />
   </div>
 </div>

@@ -50,14 +50,14 @@
   }
 </script>
 
-<div class="h-full flex flex-col">
+<div class="flex h-full flex-col">
   <slot name="title">
     <h2>
       <Tr t={Translations.t.general.backgroundMap} />
     </h2>
   </slot>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-2 h-full w-full">
+  <div class="grid h-full w-full grid-cols-1 gap-2 md:grid-cols-2">
     <RasterLayerPicker
       availableLayers={photoLayers}
       favourite={getPref("photo")}

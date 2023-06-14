@@ -85,7 +85,7 @@
 {:else}
   <button class="flex w-full" on:click={clicked}>
     <slot name="image">
-      <ArrowDownTrayIcon class="w-12 h-12 mr-2 shrink-0" />
+      <ArrowDownTrayIcon class="mr-2 h-12 w-12 shrink-0" />
     </slot>
     <span class="flex flex-col items-start">
       <Tr t={mainText} />

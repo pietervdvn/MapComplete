@@ -13,8 +13,7 @@
     <h2>Normal background</h2>
     There are a few styles, such as the
     <span class="literal-code">normal-background</span>
-    -style which is used if there is nothing special going on. Some general information, with at
-    most
+    -style which is used if there is nothing special going on. Some general information, with at most
     <a href="https://example.com" target="_blank">a link to someplace</a>
     .
     <span class="alert">Alert: something went wrong</span>
@@ -27,7 +26,7 @@
     <h2>Low interaction</h2>
     <p>
       There are <span class="literal-code">low-interaction</span>
-       areas, where some buttons might appear.
+      areas, where some buttons might appear.
     </p>
 
     <div class="flex">
@@ -80,7 +79,7 @@
     <h2>Interactive area</h2>
     <p>
       There are <span class="literal-code">interactive</span>
-       areas, where many buttons and input elements will appear.
+      areas, where many buttons and input elements will appear.
     </p>
 
     <div class="flex">

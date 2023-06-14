@@ -56,7 +56,7 @@
       on:click={() => state.guistate.backgroundLayerSelectionIsOpened.setData(true)}
       cls="absolute bottom-0"
     >
-      <Square3Stack3dIcon class="w-6 h-6" />
+      <Square3Stack3dIcon class="h-6 w-6" />
     </MapControlButton>
   </div>
 </ImportFlow>

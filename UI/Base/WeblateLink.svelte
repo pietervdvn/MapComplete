@@ -17,7 +17,7 @@
     <a
       href={LinkToWeblate.hrefToWeblate($language, context)}
       target="_blank"
-      class="mx-1 weblate-link"
+      class="weblate-link mx-1"
     >
       <img src="./assets/svg/translate.svg" class="font-gray" />
     </a>

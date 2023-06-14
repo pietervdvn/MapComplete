@@ -458,7 +458,7 @@ export default class ThemeViewState implements SpecialVisualizationState {
      * Add the special layers to the map
      */
     private drawSpecialLayers() {
-        type AddedByDefaultTypes = typeof Constants.added_by_default[number]
+        type AddedByDefaultTypes = (typeof Constants.added_by_default)[number]
         const empty = []
         /**
          * A listing which maps the layerId onto the featureSource

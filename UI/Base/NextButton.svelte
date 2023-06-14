@@ -17,8 +17,8 @@
   options={{ extraClasses: clss + " flex items-center" }}
 >
   <slot name="image" slot="image" />
-  <div class="w-full flex justify-between items-center" slot="message">
+  <div class="flex w-full items-center justify-between" slot="message">
     <slot />
-    <ChevronRightIcon class="w-12 h-12" />
+    <ChevronRightIcon class="h-12 w-12" />
   </div>
 </SubtleButton>

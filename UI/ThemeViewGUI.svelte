@@ -108,14 +108,14 @@
   )
 </script>
 
-<div class="h-screen w-screen absolute top-0 left-0 overflow-hidden">
+<div class="absolute top-0 left-0 h-screen w-screen overflow-hidden">
   <MaplibreMap map={maplibremap} />
 </div>
 
-<div class="absolute top-0 left-0 w-full pointer-events-none">
+<div class="pointer-events-none absolute top-0 left-0 w-full">
   <!-- Top components -->
   <If condition={state.featureSwitches.featureSwitchSearch}>
-    <div class="max-[480px]:w-full float-right mt-1 px-1 sm:m-2 pointer-events-auto">
+    <div class="pointer-events-auto float-right mt-1 px-1 max-[480px]:w-full sm:m-2">
       <Geosearch
         bounds={state.mapProperties.bounds}
         perLayer={state.perLayer}
@@ -124,17 +124,17 @@
       />
     </div>
   </If>
-  <div class="float-left m-1 sm:mt-2 flex flex-col">
+  <div class="float-left m-1 flex flex-col sm:mt-2">
     <MapControlButton on:click={() => state.guistate.themeIsOpened.setData(true)}>
-      <div class="flex m-0.5 mx-1 sm:mx-1 md:mx-2 items-center cursor-pointer max-[480px]:w-full">
-        <img class="w-6 h-6 md:w-8 md:h-8 block mr-0.5 sm:mr-1 md:mr-2" src={layout.icon} />
+      <div class="m-0.5 mx-1 flex cursor-pointer items-center max-[480px]:w-full sm:mx-1 md:mx-2">
+        <img class="mr-0.5 block h-6 w-6 sm:mr-1 md:mr-2 md:h-8 md:w-8" src={layout.icon} />
         <b class="mr-1">
           <Tr t={layout.title} />
         </b>
       </div>
     </MapControlButton>
     <MapControlButton on:click={() => state.guistate.menuIsOpened.setData(true)}>
-      <MenuIcon class="w-8 h-8 cursor-pointer" />
+      <MenuIcon class="h-8 w-8 cursor-pointer" />
     </MapControlButton>
     {#if currentViewLayer?.tagRenderings && currentViewLayer.defaultIcon()}
       <MapControlButton
@@ -157,17 +157,17 @@
   </div>
 </div>
 
-<div class="absolute bottom-0 left-0 mb-4 w-screen pointer-events-none">
-  <div class="w-full flex justify-between px-4 items-end">
+<div class="pointer-events-none absolute bottom-0 left-0 mb-4 w-screen">
+  <div class="flex w-full items-end justify-between px-4">
     <div class="flex">
       <!-- bottom left elements -->
       <MapControlButton
         on:click={() => state.guistate.backgroundLayerSelectionIsOpened.setData(true)}
       >
-        <Square3Stack3dIcon class="w-6 h-6" />
+        <Square3Stack3dIcon class="h-6 w-6" />
       </MapControlButton>
       <a
-        class="pointer-events-auto opacity-50 hover:opacity-100 text-white cursor-pointer bg-black-transparent pl-1 pr-2 rounded-2xl h-fit max-h-12 overflow-hidden self-end"
+        class="bg-black-transparent pointer-events-auto h-fit max-h-12 cursor-pointer self-end overflow-hidden rounded-2xl pl-1 pr-2 text-white opacity-50 hover:opacity-100"
         on:click={() => {
           state.guistate.themeViewTab.setData("copyright")
           state.guistate.themeIsOpened.setData(true)
@@ -180,7 +180,7 @@
     <div class="flex flex-col items-end">
       <!-- bottom right elements -->
       <If condition={state.floors.map((f) => f.length > 1)}>
-        <div class="mr-0.5 pointer-events-auto">
+        <div class="pointer-events-auto mr-0.5">
           <LevelSelector
             floors={state.floors}
             layerState={state.layerState}
@@ -219,7 +219,7 @@
       selectedElement.setData(undefined)
     }}
   >
-    <div class="absolute flex flex-col h-full w-full normal-background">
+    <div class="normal-background absolute flex h-full w-full flex-col">
       <ToSvelte construct={new VariableUiElement(selectedElementTitle)}>
         <!-- Title -->
       </ToSvelte>
@@ -253,13 +253,13 @@
     <TabbedGroup tab={state.guistate.themeViewTabIndex}>
       <div slot="post-tablist">
         <XCircleIcon
-          class="w-8 h-8 mr-2"
+          class="mr-2 h-8 w-8"
           on:click={() => state.guistate.themeIsOpened.setData(false)}
         />
       </div>
 
       <div class="flex" slot="title0">
-        <img class="w-4 h-4 block" src={layout.icon} />
+        <img class="block h-4 w-4" src={layout.icon} />
         <Tr t={layout.title} />
       </div>
 
@@ -274,7 +274,7 @@
         </If>
       </div>
 
-      <div class="flex flex-col m-2" slot="content1">
+      <div class="m-2 flex flex-col" slot="content1">
         {#each layout.layers as layer}
           <Filterview
             zoomlevel={state.mapProperties.zoom}
@@ -320,7 +320,7 @@
 <IfHidden condition={state.guistate.backgroundLayerSelectionIsOpened}>
   <!-- background layer selector -->
   <FloatOver on:close={() => state.guistate.backgroundLayerSelectionIsOpened.setData(false)}>
-    <div class="p-2 h-full">
+    <div class="h-full p-2">
       <RasterLayerOverview
         userstate={state.userRelatedState}
         mapproperties={state.mapProperties}
@@ -339,7 +339,7 @@
     <TabbedGroup tab={state.guistate.menuViewTabIndex}>
       <div slot="post-tablist">
         <XCircleIcon
-          class="w-8 h-8 mr-2"
+          class="mr-2 h-8 w-8"
           on:click={() => state.guistate.menuIsOpened.setData(false)}
         />
       </div>
@@ -347,38 +347,38 @@
         <Tr t={Translations.t.general.menu.aboutMapComplete} />
       </div>
 
-      <div class="flex flex-col m-2 links-as-button links-w-full gap-y-1" slot="content0">
+      <div class="links-as-button links-w-full m-2 flex flex-col gap-y-1" slot="content0">
         <Tr t={Translations.t.general.aboutMapComplete.intro} />
 
         <a class="flex" href={Utils.HomepageLink()}>
-          <img class="w-6 h-6" src="./assets/svg/add.svg" />
+          <img class="h-6 w-6" src="./assets/svg/add.svg" />
           <Tr t={Translations.t.general.backToIndex} />
         </a>
 
         <a class="flex" href="https://github.com/pietervdvn/MapComplete/issues" target="_blank">
-          <img class="w-6 h-6" src="./assets/svg/bug.svg" />
+          <img class="h-6 w-6" src="./assets/svg/bug.svg" />
           <Tr t={Translations.t.general.attribution.openIssueTracker} />
         </a>
 
         <a class="flex" href="https://en.osm.town/@MapComplete" target="_blank">
-          <img class="w-6 h-6" src="./assets/svg/mastodon.svg" />
+          <img class="h-6 w-6" src="./assets/svg/mastodon.svg" />
           <Tr t={Translations.t.general.attribution.followOnMastodon} />
         </a>
 
         <a class="flex" href="https://liberapay.com/pietervdvn/" target="_blank">
-          <img class="w-6 h-6" src="./assets/svg/liberapay.svg" />
+          <img class="h-6 w-6" src="./assets/svg/liberapay.svg" />
           <Tr t={Translations.t.general.attribution.donate} />
         </a>
 
         <a class="flex" href={Utils.OsmChaLinkFor(7)} target="_blank">
-          <img class="w-6 h-6" src="./assets/svg/statistics.svg" />
+          <img class="h-6 w-6" src="./assets/svg/statistics.svg" />
           <Tr t={Translations.t.general.attribution.openOsmcha.Subs({ theme: "MapComplete" })} />
         </a>
         {Constants.vNumber}
       </div>
 
       <div class="flex" slot="title1">
-        <CogIcon class="w-6 h-6" />
+        <CogIcon class="h-6 w-6" />
         <Tr t={UserRelatedState.usersettingsConfig.title.GetRenderValue({})} />
       </div>
 
@@ -420,7 +420,7 @@
       </div>
 
       <Tr slot="title4" t={Translations.t.advanced.title} />
-      <div class="flex flex-col m-2" slot="content4">
+      <div class="m-2 flex flex-col" slot="content4">
         <OpenIdEditor mapProperties={state.mapProperties} />
         <ToSvelte
           construct={() =>

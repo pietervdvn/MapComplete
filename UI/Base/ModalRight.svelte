@@ -9,13 +9,13 @@
 </script>
 
 <div
-  class="absolute top-0 right-0 h-screen overflow-auto w-full md:w-6/12 lg:w-5/12 xl:w-4/12 drop-shadow-2xl"
+  class="absolute top-0 right-0 h-screen w-full overflow-auto drop-shadow-2xl md:w-6/12 lg:w-5/12 xl:w-4/12"
   style="max-width: 100vw; max-height: 100vh"
 >
-  <div class="flex flex-col m-0 normal-background">
+  <div class="normal-background m-0 flex flex-col">
     <slot name="close-button">
       <div
-        class="w-8 h-8 absolute right-10 top-10 cursor-pointer"
+        class="absolute right-10 top-10 h-8 w-8 cursor-pointer"
         on:click={() => dispatch("close")}
       >
         <XCircleIcon />

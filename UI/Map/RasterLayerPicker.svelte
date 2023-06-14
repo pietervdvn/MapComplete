@@ -66,13 +66,13 @@
 </script>
 
 {#if hasLayers}
-  <div class="h-full w-full flex flex-col">
+  <div class="flex h-full w-full flex-col">
     <button
       on:click={() => {
         mapproperties.rasterLayer.setData(rasterLayer.data)
         dispatch("appliedLayer")
       }}
-      class="w-full h-full m-0 p-0"
+      class="m-0 h-full w-full p-0"
     >
       <OverlayMap
         rasterLayer={rasterLayerOnMap}

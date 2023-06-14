@@ -139,7 +139,7 @@
 </script>
 
 {#if config.question !== undefined}
-  <div class="interactive border-interactive p-1 px-2 flex flex-col">
+  <div class="interactive border-interactive flex flex-col p-1 px-2">
     <div class="flex justify-between">
       <span class="font-bold">
         <SpecialTranslation t={config.question} {tags} {state} {layer} feature={selectedElement} />
@@ -161,7 +161,7 @@
 
     {#if config.mappings?.length >= 8}
       <div class="flex w-full">
-        <img src="./assets/svg/search.svg" class="w-6 h-6" />
+        <img src="./assets/svg/search.svg" class="h-6 w-6" />
         <input type="text" bind:value={$searchTerm} class="w-full" />
       </div>
     {/if}
@@ -262,7 +262,7 @@
     <LoginToggle {state}>
       <Loading slot="loading" />
       <SubtleButton slot="not-logged-in" on:click={() => state.osmConnection.AttemptLogin()}>
-        <img slot="image" src="./assets/svg/login.svg" class="w-8 h-8" />
+        <img slot="image" src="./assets/svg/login.svg" class="h-8 w-8" />
         <Tr t={Translations.t.general.loginToStart} slot="message" />
       </SubtleButton>
       {#if $feedback !== undefined}
@@ -270,7 +270,7 @@
           <Tr t={$feedback} />
         </div>
       {/if}
-      <div class="flex justify-end flex-wrap-reverse sm:flex-nowrap items-stretch">
+      <div class="flex flex-wrap-reverse items-stretch justify-end sm:flex-nowrap">
         <!-- TagRenderingQuestion-buttons -->
         <slot name="cancel" />
         <slot name="save-button" {selectedTags}>
@@ -283,7 +283,7 @@
         </slot>
       </div>
       {#if UserRelatedState.SHOW_TAGS_VALUES.indexOf($showTags) >= 0 || ($showTags === "" && numberOfCs >= Constants.userJourney.tagsVisibleAt) || $featureSwitchIsTesting || $featureSwitchIsDebugging}
-        <span class="flex justify-between flex-wrap">
+        <span class="flex flex-wrap justify-between">
           <TagHint {state} tags={selectedTags} currentProperties={$tags} />
           <span class="flex flex-wrap">
             {#if $featureSwitchIsTesting}

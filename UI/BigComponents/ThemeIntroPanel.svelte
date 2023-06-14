@@ -50,20 +50,20 @@ loginStatus.SetClass("block mt-6 pt-2 md:border-t-2 border-dotted border-gray-40
 -->
 <Tr t={layout.descriptionTail} />
 <NextButton clss="primary w-full" on:click={() => state.guistate.themeIsOpened.setData(false)}>
-  <div class="flex justify-center w-full text-2xl">
+  <div class="flex w-full justify-center text-2xl">
     <Tr t={Translations.t.general.openTheMap} />
   </div>
 </NextButton>
 
 <div class="flex w-full flex-wrap sm:flex-nowrap">
   <IfNot condition={state.geolocation.geolocationState.permission.map((p) => p === "denied")}>
-    <button class="flex w-full gap-x-2 items-center" on:click={jumpToCurrentLocation}>
+    <button class="flex w-full items-center gap-x-2" on:click={jumpToCurrentLocation}>
       <ToSvelte construct={Svg.crosshair_svg().SetClass("w-8 h-8")} />
       <Tr t={Translations.t.general.openTheMapAtGeolocation} />
     </button>
   </IfNot>
 
-  <div class="flex gap-x-2 items-center w-full border rounded .button p-2 m-1 low-interaction">
+  <div class=".button low-interaction m-1 flex w-full items-center gap-x-2 rounded border p-2">
     <div class="w-full">
       <Geosearch
         bounds={state.mapProperties.bounds}
@@ -78,11 +78,11 @@ loginStatus.SetClass("block mt-6 pt-2 md:border-t-2 border-dotted border-gray-40
       />
     </div>
     <button
-      class={"flex gap-x-2 justify-between items-center " + (searchEnabled ? "" : "disabled")}
+      class={"flex items-center justify-between gap-x-2 " + (searchEnabled ? "" : "disabled")}
       on:click={() => triggerSearch.ping()}
     >
       <Tr t={Translations.t.general.search.searchShort} />
-      <SearchIcon class="w-6 h-6" />
+      <SearchIcon class="h-6 w-6" />
     </button>
   </div>
 </div>

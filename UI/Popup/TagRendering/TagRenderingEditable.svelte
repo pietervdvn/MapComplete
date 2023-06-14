@@ -81,27 +81,27 @@
         </button>
         <XCircleIcon
           slot="upper-right"
-          class="w-8 h-8 cursor-pointer"
+          class="h-8 w-8 cursor-pointer"
           on:click={() => {
             editMode = false
           }}
         />
       </TagRenderingQuestion>
     {:else}
-      <div class="flex justify-between low-interaction items-center rounded px-2 overflow-hidden">
+      <div class="low-interaction flex items-center justify-between overflow-hidden rounded px-2">
         <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer} />
         <button
           on:click={() => {
             editMode = true
           }}
-          class="shrink-0 w-8 h-8 rounded-full p-1 secondary self-start"
+          class="secondary h-8 w-8 shrink-0 self-start rounded-full p-1"
         >
           <PencilAltIcon />
         </button>
       </div>
     {/if}
   {:else}
-    <div class="p-2 overflow-hidden">
+    <div class="overflow-hidden p-2">
       <TagRenderingAnswer {config} {tags} {selectedElement} {state} {layer} />
     </div>
   {/if}

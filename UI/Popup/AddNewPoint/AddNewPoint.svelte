@@ -167,7 +167,7 @@
     />
   {:else if !$layerIsDisplayed}
     <!-- Check that the layer is enabled, so that we don't add a duplicate -->
-    <div class="alert flex  justify-center items-center">
+    <div class="alert flex items-center justify-center">
       <EyeOffIcon class="w-8" />
       <Tr
         t={Translations.t.general.add.layerNotEnabled.Subs({ layer: selectedPreset.layer.name })}
@@ -187,7 +187,7 @@
       </button>
 
       <button
-        class="flex w-full gap-x-1 primary"
+        class="primary flex w-full gap-x-1"
         on:click={() => {
           layerIsDisplayed.setData(true)
           abort()
@@ -199,13 +199,13 @@
     </div>
   {:else if $layerHasFilters}
     <!-- Some filters are enabled. The feature to add might already be mapped, but hidden -->
-    <div class="alert flex justify-center items-center">
+    <div class="alert flex items-center justify-center">
       <EyeOffIcon class="w-8" />
       <Tr t={Translations.t.general.add.disableFiltersExplanation} />
     </div>
     <div class="flex flex-wrap-reverse md:flex-nowrap">
       <button
-        class="flex w-full gap-x-1 primary"
+        class="primary flex w-full gap-x-1"
         on:click={() => {
           abort()
           state.layerState.filteredLayers.get(selectedPreset.layer.id).disableAllFilters()
@@ -249,7 +249,7 @@
       </h3>
       <span class="flex flex-wrap items-stretch">
         {#each selectedPreset.preset.exampleImages as src}
-          <img {src} class="h-64 m-1 w-auto rounded-lg" />
+          <img {src} class="m-1 h-64 w-auto rounded-lg" />
         {/each}
       </span>
     {/if}
@@ -267,7 +267,7 @@
       <NextButton on:click={() => (confirmedCategory = true)} clss="primary w-full">
         <div slot="image" class="relative">
           <FromHtml src={selectedPreset.icon} />
-          <img class="absolute bottom-0 right-0 w-4 h-4" src="./assets/svg/confirm.svg" />
+          <img class="absolute bottom-0 right-0 h-4 w-4" src="./assets/svg/confirm.svg" />
         </div>
         <div class="w-full">
           <Tr t={selectedPreset.text} />
@@ -284,7 +284,7 @@
       <img
         slot="image"
         src={_globalFilter[checkedOfGlobalFilters].onNewPoint?.icon ?? "./assets/svg/confirm.svg"}
-        class="w-12 h-12"
+        class="h-12 w-12"
       />
       <Tr
         slot="message"
@@ -299,12 +299,12 @@
         abort()
       }}
     >
-      <img slot="image" src="./assets/svg/close.svg" class="w-8 h-8" />
+      <img slot="image" src="./assets/svg/close.svg" class="h-8 w-8" />
       <Tr slot="message" t={Translations.t.general.cancel} />
     </SubtleButton>
   {:else if !creating}
     <div class="relative w-full p-1">
-      <div class="w-full h-96 max-h-screen rounded-xl overflow-hidden">
+      <div class="h-96 max-h-screen w-full overflow-hidden rounded-xl">
         <NewPointLocationInput
           value={preciseCoordinate}
           snappedTo={snappedToObject}
@@ -318,7 +318,7 @@
         <MapControlButton
           on:click={() => state.guistate.backgroundLayerSelectionIsOpened.setData(true)}
         >
-          <Square3Stack3dIcon class="w-6 h-6" />
+          <Square3Stack3dIcon class="h-6 w-6" />
         </MapControlButton>
       </div>
     </div>
@@ -328,7 +328,7 @@
       </BackButton>
 
       <NextButton on:click={confirm} clss="primary w-full">
-        <div class="w-full flex justify-end gap-x-2">
+        <div class="flex w-full justify-end gap-x-2">
           <Tr t={Translations.t.general.add.confirmLocation} />
         </div>
       </NextButton>

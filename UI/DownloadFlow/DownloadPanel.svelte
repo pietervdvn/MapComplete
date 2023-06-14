@@ -34,7 +34,7 @@
 {#if $isLoading}
   <Loading />
 {:else}
-  <div class="w-full flex flex-col" />
+  <div class="flex w-full flex-col" />
   <h3>
     <Tr t={t.title} />
   </h3>

@@ -4,8 +4,8 @@ import UserRelatedState from "../Logic/State/UserRelatedState"
 import { Utils } from "../Utils"
 import { LocalStorageSource } from "../Logic/Web/LocalStorageSource"
 
-export type ThemeViewTabStates = typeof MenuState._themeviewTabs[number]
-export type MenuViewTabStates = typeof MenuState._menuviewTabs[number]
+export type ThemeViewTabStates = (typeof MenuState._themeviewTabs)[number]
+export type MenuViewTabStates = (typeof MenuState._menuviewTabs)[number]
 
 /**
  * Indicates if a menu is open, and if so, which tab is selected;

@@ -21,7 +21,7 @@
 <section class="w-full">
   <slot name="title" />
   {#if onMainScreen}
-    <div class="md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="gap-4 md:grid md:grid-flow-row md:grid-cols-2 lg:grid-cols-3">
       {#each filteredThemes as theme (theme.id)}
         {#if theme !== undefined && !(hideThemes && theme?.hideFromOverview)}
           <ThemeButton {theme} {isCustom} userDetails={state.osmConnection.userDetails} {state} />

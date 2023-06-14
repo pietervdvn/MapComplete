@@ -41,7 +41,7 @@
 
 <div
   bind:this={mainElem}
-  class="relative w-48 h-48 cursor-pointer overflow-hidden"
+  class="relative h-48 w-48 cursor-pointer overflow-hidden"
   on:click={(e) => onPosChange(e.x, e.y)}
   on:mousedown={(e) => {
     isDown = true
@@ -58,11 +58,11 @@
   on:touchmove={(e) => onPosChange(e.touches[0].clientX, e.touches[0].clientY)}
   on:touchstart={(e) => onPosChange(e.touches[0].clientX, e.touches[0].clientY)}
 >
-  <div class="w-full h-full absolute top-0 left-0 cursor-pointer">
+  <div class="absolute top-0 left-0 h-full w-full cursor-pointer">
     <MaplibreMap {map} attribution={false} />
   </div>
 
-  <div bind:this={directionElem} class="absolute w-full h-full top-0 left-0">
+  <div bind:this={directionElem} class="absolute top-0 left-0 h-full w-full">
     <ToSvelte construct={Svg.direction_stroke_svg} />
   </div>
 </div>

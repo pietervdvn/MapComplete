@@ -27,7 +27,7 @@
   }
 </script>
 
-<div bind:this={mainElem} class="absolute bottom-0 right-0 w-full h-full">
+<div bind:this={mainElem} class="absolute bottom-0 right-0 h-full w-full">
   <div id="hand-container" class="pointer-events-none">
     <img src="./assets/svg/hand.svg" />
   </div>

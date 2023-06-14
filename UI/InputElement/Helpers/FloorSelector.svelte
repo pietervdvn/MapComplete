@@ -102,11 +102,11 @@
   class="relative"
   style={`height: calc(${HEIGHT}px * ${$floors.length}); width: 96px`}
 >
-  <div class="h-full absolute w-min right-0">
+  <div class="absolute right-0 h-full w-min">
     {#each $floors as floor, i}
       <button
         style={`height: ${HEIGHT}px; width: ${HEIGHT}px`}
-        class={"m-0 border-2 border-gray-300 flex content-box justify-center items-center " +
+        class={"content-box m-0 flex items-center justify-center border-2 border-gray-300 " +
           (i === (forceIndex ?? $index) ? "selected" : "")}
         on:click={() => {
           forceIndex = i

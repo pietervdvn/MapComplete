@@ -20,7 +20,7 @@
   }&z=${Math.max(($zoom ?? 2) - 1, 1)}`
 </script>
 
-<a class="flex button items-center" href={mapillaryLink} target="_blank">
+<a class="button flex items-center" href={mapillaryLink} target="_blank">
   <ToSvelte construct={() => Svg.mapillary_black_svg().SetClass("w-12 h-12 m-2 mr-4 shrink-0")} />
   <div class="flex flex-col">
     <Tr t={Translations.t.general.attribution.openMapillary} />

@@ -72,8 +72,8 @@
 
 {#if theme.id !== personal.id || $userDetails.csCount > Constants.userJourney.personalLayoutUnlock}
   <SubtleLink href={$href} options={{ extraClasses: "w-full" }}>
-    <img slot="image" src={theme.icon} class="block h-11 w-11 mx-4" alt="" />
-    <span class="flex flex-col text-ellipsis overflow-hidden">
+    <img slot="image" src={theme.icon} class="mx-4 block h-11 w-11" alt="" />
+    <span class="flex flex-col overflow-hidden text-ellipsis">
       <Tr t={title} />
       <span class="subtle max-h-12 truncate text-ellipsis">
         <Tr t={description} />

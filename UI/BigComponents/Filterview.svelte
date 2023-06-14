@@ -55,7 +55,7 @@
 
 {#if filteredLayer.layerDef.name}
   <div bind:this={mainElem} class="mb-1.5">
-    <label class="flex gap-1 no-image-background">
+    <label class="no-image-background flex gap-1">
       <Checkbox selected={isDisplayed} />
       <If condition={filteredLayer.isDisplayed}>
         <ToSvelte
@@ -78,7 +78,7 @@
     </label>
 
     {#if $isDisplayed && filteredLayer.layerDef.filters?.length > 0}
-      <div id="subfilters" class="flex flex-col gap-y-1 ml-4">
+      <div id="subfilters" class="ml-4 flex flex-col gap-y-1">
         {#each filteredLayer.layerDef.filters as filter}
           <div>
             <!-- There are three (and a half) modes of filters: a single checkbox, a radio button/dropdown or with searchable fields -->

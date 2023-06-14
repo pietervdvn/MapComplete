@@ -9,17 +9,17 @@
 </script>
 
 <div
-  class="absolute top-0 right-0 w-screen h-screen p-4 md:p-6"
+  class="absolute top-0 right-0 h-screen w-screen p-4 md:p-6"
   style="background-color: #00000088"
 >
   <div class="content normal-background">
-    <div class="rounded-xl h-full">
+    <div class="h-full rounded-xl">
       <slot />
     </div>
     <slot name="close-button">
       <!-- The close button is placed _after_ the default slot in order to always paint it on top -->
       <div
-        class="w-8 h-8 absolute right-10 top-10 cursor-pointer"
+        class="absolute right-10 top-10 h-8 w-8 cursor-pointer"
         on:click={() => dispatch("close")}
       >
         <XCircleIcon />

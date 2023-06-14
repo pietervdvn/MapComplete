@@ -29,9 +29,9 @@
     <h3>{country?.nameEn}</h3>
   {/if}
   {#each resources as resource}
-    <div class="flex link-underline items-center my-4">
+    <div class="link-underline my-4 flex items-center">
       <img
-        class="w-8 h-8 m-2"
+        class="m-2 h-8 w-8"
         src={`https://raw.githubusercontent.com/pietervdvn/MapComplete-data/main/community_index/${resource.type}.svg`}
       />
       <div class="flex flex-col">

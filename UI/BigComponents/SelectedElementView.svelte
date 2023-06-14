@@ -35,7 +35,7 @@
     <Tr t={Translations.t.general.returnToTheMap} />
   </button>
 {:else}
-  <div class="flex flex-col overflow-y-auto p-1 px-2 gap-y-2">
+  <div class="flex flex-col gap-y-2 overflow-y-auto p-1 px-2">
     {#each layer.tagRenderings as config (config.id)}
       {#if (config.condition === undefined || config.condition.matchesProperties(_tags)) && (config.metacondition === undefined || config.metacondition.matchesProperties( { ..._tags, ..._metatags } ))}
         {#if config.IsKnown(_tags)}
